@@ -21,7 +21,7 @@ public:
     MCAPI uint getActorInfoId(std::string const& name) const;
 
     // symbol: ?getActorInfoId@ActorInfoRegistry@@QEBAIAEB_K@Z
-    MCAPI uint getActorInfoId(uint64 const&) const;
+    MCAPI uint getActorInfoId(uint64 const& name) const;
 
     // symbol: ?getActorInfoList@ActorInfoRegistry@@QEBA?AV?$vector@UActorInfo@@V?$allocator@UActorInfo@@@std@@@std@@XZ
     MCAPI std::vector<struct ActorInfo> getActorInfoList() const;

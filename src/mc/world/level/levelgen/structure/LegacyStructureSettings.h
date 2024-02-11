@@ -31,8 +31,15 @@ public:
     // symbol: ?addSwapAuxValue@LegacyStructureSettings@@QEAAXHH@Z
     MCAPI void addSwapAuxValue(int oldvariation, int variation);
 
+    // symbol:
+    // ?getBlockRules@LegacyStructureSettings@@QEBAPEBV?$vector@V?$unique_ptr@VStructurePoolBlockRule@@U?$default_delete@VStructurePoolBlockRule@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePoolBlockRule@@U?$default_delete@VStructurePoolBlockRule@@@std@@@std@@@2@@std@@XZ
+    MCAPI std::vector<std::unique_ptr<class StructurePoolBlockRule>> const* getBlockRules() const;
+
     // symbol: ?getBoundingBox@LegacyStructureSettings@@QEAAAEBVBoundingBox@@XZ
     MCAPI class BoundingBox const& getBoundingBox();
+
+    // symbol: ?getIgnoreBlock@LegacyStructureSettings@@QEBAPEBVBlock@@XZ
+    MCAPI class Block const* getIgnoreBlock() const;
 
     // symbol: ?getMirror@LegacyStructureSettings@@QEBAAEBW4Mirror@@XZ
     MCAPI ::Mirror const& getMirror() const;
@@ -45,6 +52,15 @@ public:
 
     // symbol: ?getSwappedBlock@LegacyStructureSettings@@QEBAAEBVBlock@@AEBVBlockPalette@@AEBV2@@Z
     MCAPI class Block const& getSwappedBlock(class BlockPalette const& palette, class Block const& oldBlock) const;
+
+    // symbol: ?isIgnoreJigsawBlocks@LegacyStructureSettings@@QEBA_NXZ
+    MCAPI bool isIgnoreJigsawBlocks() const;
+
+    // symbol: ?isIgnoreStructureBlocks@LegacyStructureSettings@@QEBA_NXZ
+    MCAPI bool isIgnoreStructureBlocks() const;
+
+    // symbol: ?isPlacingWaterBelowSeaLevel@LegacyStructureSettings@@QEBA_NXZ
+    MCAPI bool isPlacingWaterBelowSeaLevel() const;
 
     // symbol: ?placeWaterBelowSeaLevel@LegacyStructureSettings@@QEAAX_N@Z
     MCAPI void placeWaterBelowSeaLevel(bool water);
@@ -73,7 +89,7 @@ public:
     MCAPI void setProjection(::Projection projection);
 
     // symbol: ?setRefPos@LegacyStructureSettings@@QEAAXAEBVBlockPos@@@Z
-    MCAPI void setRefPos(class BlockPos const&);
+    MCAPI void setRefPos(class BlockPos const& refPos);
 
     // symbol: ?setRotation@LegacyStructureSettings@@QEAAXW4Rotation@@@Z
     MCAPI void setRotation(::Rotation rotation);

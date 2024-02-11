@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptPushThroughComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptPushThroughComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptPushThroughComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptPushThroughComponent() = default;
 
     // vIndex: 1, symbol: ?_isValid@ScriptActorComponent@ScriptModuleMinecraft@@MEBA_NXZ
     virtual bool _isValid() const;

@@ -46,7 +46,7 @@ MCAPI void BasicAsciiLowercase(http_string&);
 MCAPI bool IsPathCharacter(char);
 
 // symbol: ?RunAsync@httpclient@xbox@@YAJ$$QEAV?$function@$$A6AXXZ@std@@PEAUXTaskQueueObject@@_K@Z
-MCAPI long RunAsync(std::function<void(void)>&&, struct XTaskQueueObject*, uint64);
+MCAPI long RunAsync(std::function<void()>&&, struct XTaskQueueObject*, uint64);
 
 // symbol: ?StringToUint4@httpclient@xbox@@YA_NPEBD0AEA_KH@Z
 MCAPI bool StringToUint4(char const*, char const*, uint64&, int);

@@ -28,17 +28,14 @@ public:
     // ?getName@BlockFlammableDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string const& getName() const;
 
-    // vIndex: 2, symbol: ?initializeComponent@BlockFlammableDescription@@UEBAXAEAVBlockComponentStorage@@@Z
+    // vIndex: 3, symbol: ?initializeComponent@BlockFlammableDescription@@UEBAXAEAVBlockComponentStorage@@@Z
     virtual void initializeComponent(class BlockComponentStorage&) const;
-
-    // vIndex: 3, symbol: __unk_vfn_3
-    virtual void __unk_vfn_3();
-
-    // vIndex: 5, symbol: __unk_vfn_5
-    virtual void __unk_vfn_5();
 
     // symbol: ?bindType@BlockFlammableDescription@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
+
+    // symbol: ?registerVersionUpgrades@BlockFlammableDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
+    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet&);
 
     // symbol: ?CATCH_CHANCE_DEFAULT@BlockFlammableDescription@@2HB
     MCAPI static int const CATCH_CHANCE_DEFAULT;

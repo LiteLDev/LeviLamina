@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptFireImmuneComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptFireImmuneComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptFireImmuneComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptFireImmuneComponent() = default;
 
     // vIndex: 1, symbol: ?_isValid@ScriptActorComponent@ScriptModuleMinecraft@@MEBA_NXZ
     virtual bool _isValid() const;

@@ -38,5 +38,11 @@ public:
     // vIndex: 7, symbol: ?getBiome@BiomeSource3d@@UEBAPEBVBiome@@HHH@Z
     virtual class Biome const* getBiome(int blockX, int, int blockZ) const;
 
+    // vIndex: 8, symbol: ?has@BiomeSource3d@@UEBA_N_K@Z
+    virtual bool has(uint64) const;
+
+    // vIndex: 9, symbol: ?hasByHashId@BiomeSource3d@@UEBA_N_K@Z
+    virtual bool hasByHashId(uint64) const;
+
     // NOLINTEND
 };

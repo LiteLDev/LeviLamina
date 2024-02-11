@@ -6,7 +6,7 @@
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/WeakRefT.h"
+#include "mc/common/wrapper/WeakRef.h"
 
 struct FeatureRefTraits;
 
@@ -58,9 +58,8 @@ public:
     MCAPI FeatureRegistry();
 
     // symbol:
-    // ?forEachFeature@FeatureRegistry@@QEBAXV?$function@$$A6AXAEBVHashedString@@V?$WeakRefT@UFeatureRefTraits@@@@@Z@std@@@Z
-    MCAPI void
-    forEachFeature(std::function<void(class HashedString const&, class WeakRefT<struct FeatureRefTraits>)> callback
+    // ?forEachFeature@FeatureRegistry@@QEBAXV?$function@$$A6AXAEBVHashedString@@V?$WeakRef@VIFeature@@@@@Z@std@@@Z
+    MCAPI void forEachFeature(std::function<void(class HashedString const&, class WeakRef<class IFeature>)> callback
     ) const;
 
     // symbol:
@@ -79,20 +78,20 @@ public:
     MCAPI void loadFromDefinitions(class IWorldRegistriesProvider&, class ResourcePackManager const&, bool);
 
     // symbol:
-    // ?lookupByName@FeatureRegistry@@QEBA?AV?$WeakRefT@UFeatureRefTraits@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class WeakRefT<struct FeatureRefTraits> lookupByName(std::string const& name) const;
+    // ?lookupByName@FeatureRegistry@@QEBA?AV?$WeakRef@VIFeature@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI class WeakRef<class IFeature> lookupByName(std::string const& name) const;
 
     // symbol:
-    // ?lookupOrReserveFeature@FeatureRegistry@@QEAA?AV?$WeakRefT@UFeatureRefTraits@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class WeakRefT<struct FeatureRefTraits> lookupOrReserveFeature(std::string const& name);
+    // ?lookupOrReserveFeature@FeatureRegistry@@QEAA?AV?$WeakRef@VIFeature@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI class WeakRef<class IFeature> lookupOrReserveFeature(std::string const& name);
 
     // symbol:
-    // ?reserveFeature@FeatureRegistry@@QEAA?AV?$WeakRefT@UFeatureRefTraits@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class WeakRefT<struct FeatureRefTraits> reserveFeature(std::string const& name);
+    // ?reserveFeature@FeatureRegistry@@QEAA?AV?$WeakRef@VIFeature@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI class WeakRef<class IFeature> reserveFeature(std::string const& name);
 
     // symbol:
-    // ?reverseLookupString@FeatureRegistry@@QEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVIFeature@@@Z
-    MCAPI std::string const& reverseLookupString(class IFeature const&);
+    // ?reverseLookupString@FeatureRegistry@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVIFeature@@@Z
+    MCAPI std::string const& reverseLookupString(class IFeature const&) const;
 
     // symbol:
     // ?setLargeFeaturePasses@FeatureRegistry@@QEAAXV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z

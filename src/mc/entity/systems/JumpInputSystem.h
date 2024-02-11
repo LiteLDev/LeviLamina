@@ -20,11 +20,11 @@ public:
     MCAPI static struct TickingSystemWithInfo createJumpInputSystem();
 
     // symbol:
-    // ?doJumpInputSystem@JumpInputSystem@@SAXAEBVStrictEntityContext@@V?$optional_ref@$$CBV?$FlagComponent@UAutoJumpingFlag@@@@@@AEBUAbilitiesComponent@@AEBUMoveInputComponent@@V?$EntityModifier@V?$FlagComponent@UMobIsJumpingFlag@@@@@@@Z
+    // ?doJumpInputSystem@JumpInputSystem@@SAXAEBVStrictEntityContext@@V?$optional_ref@$$CBV?$FlagComponent@UAutoJumpingFlag@@@@@@AEBUMovementAbilitiesComponent@@AEBUMoveInputComponent@@V?$EntityModifier@V?$FlagComponent@UMobIsJumpingFlag@@@@@@@Z
     MCAPI static void doJumpInputSystem(
         class StrictEntityContext const& context,
         class optional_ref<class FlagComponent<struct AutoJumpingFlag> const>,
-        struct AbilitiesComponent const&,
+        struct MovementAbilitiesComponent const&,
         struct MoveInputComponent const&,
         class EntityModifier<class FlagComponent<struct MobIsJumpingFlag>> mod
     );

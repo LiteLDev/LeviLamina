@@ -19,6 +19,12 @@ public:
         class JigsawEditorData
     );
 
+    // symbol: ?getFrontFacing@JigsawBlockInfo@@QEBAEXZ
+    MCAPI uchar getFrontFacing() const;
+
+    // symbol: ?getPoolName@JigsawBlockInfo@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    MCAPI std::string const& getPoolName() const;
+
     // symbol: ??4JigsawBlockInfo@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class JigsawBlockInfo& operator=(class JigsawBlockInfo&&);
 

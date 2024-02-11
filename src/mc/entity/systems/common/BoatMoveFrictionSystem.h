@@ -9,9 +9,9 @@
 namespace BoatMoveFrictionSystem {
 // NOLINTBEGIN
 // symbol:
-// ?boatMoveFriction@BoatMoveFrictionSystem@@YAXAEBVStrictEntityContext@@AEBUSynchedActorDataComponent@@AEAUBoatMovementComponent@@AEAUStateVectorComponent@@V?$Optional@$$CBVBuoyancyComponent@@@@V?$Optional@$$CBV?$FlagComponent@UOnGroundFlag@@@@@@AEBVIConstBlockSource@@@Z
+// ?boatMoveFriction@BoatMoveFrictionSystem@@YAXAEBVStrictEntityContext@@AEBUActorDataFlagComponent@@AEAUBoatMovementComponent@@AEAUStateVectorComponent@@V?$Optional@$$CBVBuoyancyComponent@@@@V?$Optional@$$CBV?$FlagComponent@UOnGroundFlag@@@@@@AEBVIConstBlockSource@@@Z
 MCAPI void
-boatMoveFriction(class StrictEntityContext const&, struct SynchedActorDataComponent const&, struct BoatMovementComponent&, struct StateVectorComponent&, class Optional<class BuoyancyComponent const>, class Optional<class FlagComponent<struct OnGroundFlag> const>, class IConstBlockSource const&);
+boatMoveFriction(class StrictEntityContext const&, struct ActorDataFlagComponent const&, struct BoatMovementComponent&, struct StateVectorComponent&, class Optional<class BuoyancyComponent const>, class Optional<class FlagComponent<struct OnGroundFlag> const>, class IConstBlockSource const&);
 
 // symbol: ?createSystem@BoatMoveFrictionSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createSystem();

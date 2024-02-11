@@ -32,9 +32,6 @@ public:
     // symbol: ??0CommonModuleFactory@Scripting@@QEAA@XZ
     MCAPI CommonModuleFactory();
 
-    // symbol: ?makeModuleDescriptorFor@CommonModuleFactory@Scripting@@SA?AUModuleDescriptor@2@UVersion@2@@Z
-    MCAPI static struct Scripting::ModuleDescriptor makeModuleDescriptorFor(struct Scripting::Version);
-
     // symbol: ?ModuleName@CommonModuleFactory@Scripting@@2PEBDEB
     MCAPI static char const* ModuleName;
 

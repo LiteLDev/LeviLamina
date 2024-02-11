@@ -23,8 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptOnFireComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptOnFireComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptOnFireComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptOnFireComponent() = default;
 
     // symbol: ?getOnFireTicksRemaining@ScriptOnFireComponent@ScriptModuleMinecraft@@QEBAHXZ
     MCAPI int getOnFireTicksRemaining() const;

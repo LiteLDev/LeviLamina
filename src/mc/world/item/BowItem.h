@@ -29,64 +29,18 @@ public:
     // vIndex: 0, symbol: __gen_??1BowItem@@UEAA@XZ
     virtual ~BowItem() = default;
 
-    // vIndex: 8, symbol: __unk_vfn_8
-    virtual void __unk_vfn_8();
-
-    // vIndex: 11, symbol: __unk_vfn_11
-    virtual void __unk_vfn_11();
-
-    // vIndex: 12, symbol: __unk_vfn_12
-    virtual void __unk_vfn_12();
-
-    // vIndex: 17, symbol: __unk_vfn_17
-    virtual void __unk_vfn_17();
-
-    // vIndex: 37, symbol: __unk_vfn_37
-    virtual void __unk_vfn_37();
-
-    // vIndex: 39, symbol: __unk_vfn_39
-    virtual void __unk_vfn_39();
-
-    // vIndex: 48, symbol: ?getEnchantSlot@BowItem@@UEBAHXZ
+    // vIndex: 49, symbol: ?getEnchantSlot@BowItem@@UEBAHXZ
     virtual int getEnchantSlot() const;
 
-    // vIndex: 52, symbol: __unk_vfn_52
-    virtual void __unk_vfn_52();
-
-    // vIndex: 56, symbol: __unk_vfn_56
-    virtual void __unk_vfn_56();
-
-    // vIndex: 57, symbol: __unk_vfn_57
-    virtual void __unk_vfn_57();
-
-    // vIndex: 58, symbol: __unk_vfn_58
-    virtual void __unk_vfn_58();
-
-    // vIndex: 61, symbol: __unk_vfn_61
-    virtual void __unk_vfn_61();
-
-    // vIndex: 65, symbol: __unk_vfn_65
-    virtual void __unk_vfn_65();
-
-    // vIndex: 66, symbol: __unk_vfn_66
-    virtual void __unk_vfn_66();
-
-    // vIndex: 95, symbol: ?enchantProjectile@BowItem@@UEBAXAEBVItemStackBase@@AEAVActor@@@Z
+    // vIndex: 96, symbol: ?enchantProjectile@BowItem@@UEBAXAEBVItemStackBase@@AEAVActor@@@Z
     virtual void enchantProjectile(class ItemStackBase const&, class Actor& projectile) const;
 
-    // vIndex: 98, symbol: __unk_vfn_98
-    virtual void __unk_vfn_98();
-
-    // vIndex: 99, symbol: __unk_vfn_99
-    virtual void __unk_vfn_99();
-
-    // vIndex: 102, symbol:
+    // vIndex: 103, symbol:
     // ?setIconInfo@BowItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     virtual class Item& setIconInfo(std::string const& name, int id);
 
-    // vIndex: 103, symbol: ?getIconInfo@BowItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-    virtual struct ResolvedItemIconInfo
-    getIconInfo(class ItemStackBase const& itemStack, int, bool inInventoryPane) const;
+    // vIndex: 104, symbol: ?getIconInfo@BowItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
+    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const& item, int, bool inInventoryPane) const;
 
     // symbol: ??0BowItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI BowItem(std::string const& name, int id);

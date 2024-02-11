@@ -23,7 +23,7 @@ public:
     virtual ~SetSpawnEggFunction() = default;
 
     // vIndex: 1, symbol: ?apply@SetSpawnEggFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
-    virtual void apply(class ItemStack& itemStack, class Random& random, class LootTableContext& context);
+    virtual void apply(class ItemStack& item, class Random& random, class LootTableContext& context);
 
     // vIndex: 3, symbol: ?apply@SetSpawnEggFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
     virtual void apply(class ItemInstance& itemInstance, class Random&, class LootTableContext& context);

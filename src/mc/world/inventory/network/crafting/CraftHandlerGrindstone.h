@@ -22,7 +22,7 @@ public:
 
     // vIndex: 4, symbol:
     // ?_handleCraftAction@CraftHandlerGrindstone@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z
-    virtual ::ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&);
+    virtual ::ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const& requestAction);
 
     // vIndex: 5, symbol: ?_postCraftRequest@CraftHandlerGrindstone@@EEAAX_N@Z
     virtual void _postCraftRequest(bool wasSuccess);

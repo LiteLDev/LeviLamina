@@ -17,12 +17,6 @@ public:
     // vIndex: 0, symbol: __gen_??1SetBlockReactionComponent@@UEAA@XZ
     virtual ~SetBlockReactionComponent() = default;
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
-
-    // vIndex: 2, symbol: __unk_vfn_2
-    virtual void __unk_vfn_2();
-
     // vIndex: 3, symbol: ?_onEnd@SetBlockReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z
     virtual void _onEnd(class LabTableReaction& owner, class BlockSource& region);
 

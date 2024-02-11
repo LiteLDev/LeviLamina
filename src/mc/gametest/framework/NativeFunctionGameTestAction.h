@@ -27,7 +27,7 @@ public:
 
     // symbol:
     // ??0NativeFunctionGameTestAction@gametest@@QEAA@V?$function@$$A6A?AV?$optional@UGameTestError@gametest@@@std@@XZ@std@@@Z
-    MCAPI explicit NativeFunctionGameTestAction(std::function<std::optional<struct gametest::GameTestError>(void)>);
+    MCAPI explicit NativeFunctionGameTestAction(std::function<std::optional<struct gametest::GameTestError>()>);
 
     // NOLINTEND
 };

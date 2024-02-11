@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/OwnerPtrT.h"
+#include "mc/common/wrapper/OwnerPtr.h"
 #include "mc/deps/puv/EquipmentSlot.h"
 #include "mc/entity/utilities/ActorDamageCause.h"
 #include "mc/entity/utilities/ActorFlags.h"
@@ -46,74 +46,38 @@ public:
     // vIndex: 13, symbol: ?remove@Slime@@UEAAXXZ
     virtual void remove();
 
-    // vIndex: 23, symbol: __unk_vfn_23
-    virtual void __unk_vfn_23();
-
-    // vIndex: 39, symbol: __unk_vfn_39
-    virtual void __unk_vfn_39();
-
-    // vIndex: 42, symbol: __unk_vfn_42
-    virtual void __unk_vfn_42();
-
-    // vIndex: 43, symbol: ?getShadowRadius@Slime@@UEBAMXZ
+    // vIndex: 41, symbol: ?getShadowRadius@Slime@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 47, symbol: __unk_vfn_47
-    virtual void __unk_vfn_47();
-
-    // vIndex: 60, symbol: __unk_vfn_60
-    virtual void __unk_vfn_60();
-
-    // vIndex: 61, symbol: __unk_vfn_61
-    virtual void __unk_vfn_61();
-
-    // vIndex: 62, symbol: __unk_vfn_62
-    virtual void __unk_vfn_62();
-
-    // vIndex: 107, symbol: __unk_vfn_107
-    virtual void __unk_vfn_107();
-
-    // vIndex: 112, symbol: ?onSynchedDataUpdate@Slime@@UEAAXH@Z
+    // vIndex: 109, symbol: ?onSynchedDataUpdate@Slime@@UEAAXH@Z
     virtual void onSynchedDataUpdate(int dataId);
 
-    // vIndex: 144, symbol: __unk_vfn_144
-    virtual void __unk_vfn_144();
-
-    // vIndex: 162, symbol: __unk_vfn_162
-    virtual void __unk_vfn_162();
-
-    // vIndex: 164, symbol: ?readAdditionalSaveData@Slime@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 159, symbol: ?readAdditionalSaveData@Slime@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 165, symbol: ?addAdditionalSaveData@Slime@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 160, symbol: ?addAdditionalSaveData@Slime@@MEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 167, symbol: __unk_vfn_167
-    virtual void __unk_vfn_167();
-
-    // vIndex: 168, symbol: __unk_vfn_168
-    virtual void __unk_vfn_168();
-
-    // vIndex: 177, symbol: ?aiStep@Slime@@UEAAXXZ
+    // vIndex: 171, symbol: ?aiStep@Slime@@UEAAXXZ
     virtual void aiStep();
 
-    // vIndex: 179, symbol: ?checkSpawnRules@Slime@@UEAA_N_N@Z
+    // vIndex: 173, symbol: ?checkSpawnRules@Slime@@UEAA_N_N@Z
     virtual bool checkSpawnRules(bool fromSpawner);
 
-    // vIndex: 204, symbol: ?_getWalkTargetValue@Slime@@MEAAMAEBVBlockPos@@@Z
+    // vIndex: 198, symbol: ?_getWalkTargetValue@Slime@@MEAAMAEBVBlockPos@@@Z
     virtual float _getWalkTargetValue(class BlockPos const& pos);
 
-    // vIndex: 211, symbol: ?doPlayLandSound@Slime@@MEAA_NXZ
+    // vIndex: 205, symbol: ?doPlayLandSound@Slime@@MEAA_NXZ
     virtual bool doPlayLandSound();
 
-    // vIndex: 212, symbol: ?playJumpSound@Slime@@MEAAXXZ
+    // vIndex: 206, symbol: ?playJumpSound@Slime@@MEAAXXZ
     virtual void playJumpSound();
 
-    // vIndex: 213, symbol: ?decreaseSquish@Slime@@MEAAXXZ
+    // vIndex: 207, symbol: ?decreaseSquish@Slime@@MEAAXXZ
     virtual void decreaseSquish();
 
-    // vIndex: 214, symbol: ?createChild@Slime@@MEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@H@Z
-    virtual class OwnerPtrT<struct EntityRefTraits> createChild(int i);
+    // vIndex: 208, symbol: ?createChild@Slime@@MEAA?AV?$OwnerPtr@VEntityContext@@@@H@Z
+    virtual class OwnerPtr<class EntityContext> createChild(int i);
 
     // symbol: ??0Slime@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Slime(
@@ -124,6 +88,9 @@ public:
 
     // symbol: ?getOldSquishValue@Slime@@QEBAMXZ
     MCAPI float getOldSquishValue() const;
+
+    // symbol: ?getSlimeSize@Slime@@QEBAHXZ
+    MCAPI int getSlimeSize() const;
 
     // symbol: ?getSquishValue@Slime@@QEBAMXZ
     MCAPI float getSquishValue() const;

@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptCanFlyComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptCanFlyComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptCanFlyComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptCanFlyComponent() = default;
 
     // vIndex: 1, symbol: ?_isValid@ScriptActorComponent@ScriptModuleMinecraft@@MEBA_NXZ
     virtual bool _isValid() const;

@@ -25,8 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptLeashableComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptLeashableComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptLeashableComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptLeashableComponent() = default;
 
     // vIndex: 1, symbol:
     // ?_isValid@?$ECSScriptActorComponent@VLeashableComponent@@VLeashableDefinition@@@ScriptModuleMinecraft@@MEBA_NXZ

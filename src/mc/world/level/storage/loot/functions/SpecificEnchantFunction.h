@@ -23,7 +23,7 @@ public:
     virtual ~SpecificEnchantFunction() = default;
 
     // vIndex: 1, symbol: ?apply@SpecificEnchantFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
-    virtual void apply(class ItemStack& itemStack, class Random& random, class LootTableContext& context);
+    virtual void apply(class ItemStack& item, class Random& random, class LootTableContext& context);
 
     // vIndex: 3, symbol: ?apply@SpecificEnchantFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
     virtual void apply(class ItemInstance& itemInstance, class Random& random, class LootTableContext& context);
@@ -39,7 +39,7 @@ public:
     // NOLINTBEGIN
     // symbol: ?_applyInner@SpecificEnchantFunction@@AEAAXAEAVItemStackBase@@AEAVRandom@@AEAVLootTableContext@@_N@Z
     MCAPI void
-    _applyInner(class ItemStackBase& itemStack, class Random& random, class LootTableContext&, bool allowNonVanilla);
+    _applyInner(class ItemStackBase& item, class Random& random, class LootTableContext&, bool allowNonVanilla);
 
     // NOLINTEND
 };

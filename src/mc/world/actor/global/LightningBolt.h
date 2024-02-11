@@ -46,50 +46,20 @@ public:
     // vIndex: 10, symbol: __gen_??1LightningBolt@@UEAA@XZ
     virtual ~LightningBolt() = default;
 
-    // vIndex: 23, symbol: __unk_vfn_23
-    virtual void __unk_vfn_23();
-
     // vIndex: 29, symbol: ?normalTick@LightningBolt@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 39, symbol: __unk_vfn_39
-    virtual void __unk_vfn_39();
-
-    // vIndex: 42, symbol: __unk_vfn_42
-    virtual void __unk_vfn_42();
-
-    // vIndex: 43, symbol: ?getShadowRadius@LightningBolt@@UEBAMXZ
+    // vIndex: 41, symbol: ?getShadowRadius@LightningBolt@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 47, symbol: __unk_vfn_47
-    virtual void __unk_vfn_47();
-
-    // vIndex: 60, symbol: __unk_vfn_60
-    virtual void __unk_vfn_60();
-
-    // vIndex: 61, symbol: __unk_vfn_61
-    virtual void __unk_vfn_61();
-
-    // vIndex: 62, symbol: __unk_vfn_62
-    virtual void __unk_vfn_62();
-
-    // vIndex: 107, symbol: __unk_vfn_107
-    virtual void __unk_vfn_107();
-
-    // vIndex: 144, symbol: __unk_vfn_144
-    virtual void __unk_vfn_144();
-
-    // vIndex: 162, symbol: __unk_vfn_162
-    virtual void __unk_vfn_162();
-
-    // vIndex: 164, symbol: ?readAdditionalSaveData@LightningBolt@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 159, symbol: ?readAdditionalSaveData@LightningBolt@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 165, symbol: ?addAdditionalSaveData@LightningBolt@@UEBAXAEAVCompoundTag@@@Z
+    // vIndex: 160, symbol: ?addAdditionalSaveData@LightningBolt@@UEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // symbol: ?shouldAlwaysRender@LightningBolt@@UEAA_NXZ
-    MCVAPI bool shouldAlwaysRender();
+    // vIndex: 163, symbol: ?shouldAlwaysRender@LightningBolt@@UEAA_NXZ
+    virtual bool shouldAlwaysRender();
 
     // symbol: ??0LightningBolt@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI LightningBolt(

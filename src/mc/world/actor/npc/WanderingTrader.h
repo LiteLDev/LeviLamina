@@ -39,47 +39,8 @@ public:
     // vIndex: 10, symbol: __gen_??1WanderingTrader@@UEAA@XZ
     virtual ~WanderingTrader() = default;
 
-    // vIndex: 23, symbol: __unk_vfn_23
-    virtual void __unk_vfn_23();
-
-    // vIndex: 39, symbol: __unk_vfn_39
-    virtual void __unk_vfn_39();
-
-    // vIndex: 42, symbol: __unk_vfn_42
-    virtual void __unk_vfn_42();
-
-    // vIndex: 47, symbol: __unk_vfn_47
-    virtual void __unk_vfn_47();
-
-    // vIndex: 60, symbol: __unk_vfn_60
-    virtual void __unk_vfn_60();
-
-    // vIndex: 61, symbol: __unk_vfn_61
-    virtual void __unk_vfn_61();
-
-    // vIndex: 62, symbol: __unk_vfn_62
-    virtual void __unk_vfn_62();
-
-    // vIndex: 107, symbol: __unk_vfn_107
-    virtual void __unk_vfn_107();
-
-    // vIndex: 144, symbol: __unk_vfn_144
-    virtual void __unk_vfn_144();
-
-    // vIndex: 160, symbol: ?updateEntitySpecificMolangVariables@WanderingTrader@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 156, symbol: ?updateEntitySpecificMolangVariables@WanderingTrader@@UEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
-
-    // vIndex: 162, symbol: __unk_vfn_162
-    virtual void __unk_vfn_162();
-
-    // vIndex: 167, symbol: __unk_vfn_167
-    virtual void __unk_vfn_167();
-
-    // vIndex: 168, symbol: __unk_vfn_168
-    virtual void __unk_vfn_168();
-
-    // symbol: ?interactPreventDefault@WanderingTrader@@UEAA_NXZ
-    MCVAPI bool interactPreventDefault();
 
     // symbol: ??0WanderingTrader@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI WanderingTrader(

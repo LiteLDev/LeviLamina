@@ -42,8 +42,5 @@ public:
     // symbol: ??0CameraPresetsPacket@@QEAA@XZ
     MCAPI CameraPresetsPacket();
 
-    // symbol: ??0CameraPresetsPacket@@QEAA@AEBVCameraPresets@@@Z
-    MCAPI explicit CameraPresetsPacket(class CameraPresets const&);
-
     // NOLINTEND
 };

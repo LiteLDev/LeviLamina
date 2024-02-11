@@ -8,9 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockPos;
 class Dimension;
-class ItemStackBase;
 class Vec3;
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -30,9 +30,9 @@ public:
     MCAPI ScriptPlayerPlaceBlockBeforeEvent(struct ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent const&);
 
     // symbol:
-    // ??0ScriptPlayerPlaceBlockBeforeEvent@ScriptModuleMinecraft@@QEAA@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@AEAVDimension@@AEBVBlockPos@@EAEBVVec3@@AEBVItemStackBase@@AEBVWeakLifetimeScope@3@@Z
+    // ??0ScriptPlayerPlaceBlockBeforeEvent@ScriptModuleMinecraft@@QEAA@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@AEAVDimension@@AEBVBlockPos@@EAEBVVec3@@AEBVBlock@@AEBVWeakLifetimeScope@3@@Z
     MCAPI
-    ScriptPlayerPlaceBlockBeforeEvent(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>, class Dimension&, class BlockPos const&, uchar, class Vec3 const&, class ItemStackBase const&, class Scripting::WeakLifetimeScope const&);
+    ScriptPlayerPlaceBlockBeforeEvent(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>, class Dimension&, class BlockPos const&, uchar, class Vec3 const&, class Block const&, class Scripting::WeakLifetimeScope const&);
 
     // symbol: ??4ScriptPlayerPlaceBlockBeforeEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent&

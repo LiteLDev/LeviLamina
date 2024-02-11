@@ -39,8 +39,8 @@ public:
     // symbol: ?getEnchantChanneling@ProjectileComponent@@QEBA_NXZ
     MCAPI bool getEnchantChanneling() const;
 
-    // symbol: ?getGravity@ProjectileComponent@@QEAAMXZ
-    MCAPI float getGravity();
+    // symbol: ?getGravity@ProjectileComponent@@QEBAMXZ
+    MCAPI float getGravity() const;
 
     // symbol: ?getIsDangerous@ProjectileComponent@@QEAA_NXZ
     MCAPI bool getIsDangerous();
@@ -62,6 +62,12 @@ public:
 
     // symbol: ?getShooterAngle@ProjectileComponent@@QEBA?AVVec3@@AEAVActor@@@Z
     MCAPI class Vec3 getShooterAngle(class Actor& shooter) const;
+
+    // symbol: ?getShouldBounce@ProjectileComponent@@QEBA_NXZ
+    MCAPI bool getShouldBounce() const;
+
+    // symbol: ?getStopOnHurt@ProjectileComponent@@QEBA_NXZ
+    MCAPI bool getStopOnHurt() const;
 
     // symbol: ?getThrowPower@ProjectileComponent@@QEBAMXZ
     MCAPI float getThrowPower() const;
@@ -109,14 +115,23 @@ public:
     MCAPI void
     readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // symbol: ?setActiveTarget@ProjectileComponent@@QEAAXAEAVActor@@PEAV2@@Z
-    MCAPI void setActiveTarget(class Actor& owner, class Actor* target);
+    // symbol: ?setActiveTarget@ProjectileComponent@@QEAAXAEBVActor@@PEAV2@@Z
+    MCAPI void setActiveTarget(class Actor const& owner, class Actor* target);
 
-    // symbol: ?setChanneling@ProjectileComponent@@QEAAXXZ
-    MCAPI void setChanneling();
+    // symbol: ?setCatchFire@ProjectileComponent@@QEAAX_N@Z
+    MCAPI void setCatchFire(bool);
+
+    // symbol: ?setChanneling@ProjectileComponent@@QEAAX_N@Z
+    MCAPI void setChanneling(bool);
 
     // symbol: ?setEnchantImpaler@ProjectileComponent@@QEAAXAEBH@Z
     MCAPI void setEnchantImpaler(int const& level);
+
+    // symbol: ?setGravity@ProjectileComponent@@QEAAXM@Z
+    MCAPI void setGravity(float);
+
+    // symbol: ?setHitSound@ProjectileComponent@@QEAAXW4LevelSoundEvent@Legacy@Puv@@@Z
+    MCAPI void setHitSound(::Puv::Legacy::LevelSoundEvent);
 
     // symbol: ?setKnockbackForce@ProjectileComponent@@QEAAXM@Z
     MCAPI void setKnockbackForce(float force);
@@ -130,8 +145,14 @@ public:
     // symbol: ?setPotionEffect@ProjectileComponent@@QEAAXH@Z
     MCAPI void setPotionEffect(int potionEffect);
 
+    // symbol: ?setShouldBounce@ProjectileComponent@@QEAAX_N@Z
+    MCAPI void setShouldBounce(bool bounce);
+
     // symbol: ?setSplashRange@ProjectileComponent@@QEAAXM@Z
     MCAPI void setSplashRange(float range);
+
+    // symbol: ?setStopOnHurt@ProjectileComponent@@QEAAX_N@Z
+    MCAPI void setStopOnHurt(bool);
 
     // symbol: ?shoot@ProjectileComponent@@QEAAXAEAVActor@@0@Z
     MCAPI void shoot(class Actor& owner, class Actor& shooter);
@@ -162,8 +183,8 @@ public:
     // symbol: ?_handleLightningOnHit@ProjectileComponent@@AEAAXAEAVActor@@@Z
     MCAPI void _handleLightningOnHit(class Actor& owner);
 
-    // symbol: ?_selectNextMoveDirection@ProjectileComponent@@AEAAXAEAVActor@@W4EAxis@1@@Z
-    MCAPI void _selectNextMoveDirection(class Actor& owner, ::ProjectileComponent::EAxis avoidAxis);
+    // symbol: ?_selectNextMoveDirection@ProjectileComponent@@AEAAXAEBVActor@@W4EAxis@1@@Z
+    MCAPI void _selectNextMoveDirection(class Actor const& owner, ::ProjectileComponent::EAxis avoidAxis);
 
     // NOLINTEND
 };

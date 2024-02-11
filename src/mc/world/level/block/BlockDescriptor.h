@@ -47,6 +47,13 @@ public:
 
     public:
         // NOLINTBEGIN
+        // symbol:
+        // ??0State@BlockDescriptor@@QEAA@VHashedString@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+        MCAPI State(class HashedString, std::string const&);
+
+        // symbol: ??0State@BlockDescriptor@@QEAA@VHashedString@@H@Z
+        MCAPI State(class HashedString, int);
+
         // symbol: ??0State@BlockDescriptor@@QEAA@VHashedString@@UCompound@1v1_20_50@Puv@@@Z
         MCAPI State(class HashedString, struct Puv::v1_20_50::BlockDescriptor::Compound);
 
@@ -141,7 +148,7 @@ public:
 
     // symbol:
     // ?fromTagExpression@BlockDescriptor@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4MolangVersion@@@Z
-    MCAPI static class BlockDescriptor fromTagExpression(std::string const&, ::MolangVersion);
+    MCAPI static class BlockDescriptor fromTagExpression(std::string const&, ::MolangVersion molangVersion);
 
     // symbol: ?JSON_NAME_FIELD@BlockDescriptor@@2QBDB
     MCAPI static char const JSON_NAME_FIELD[];

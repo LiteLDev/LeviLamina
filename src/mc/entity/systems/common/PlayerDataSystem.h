@@ -38,6 +38,10 @@ MCAPI std::unique_ptr<class CompoundTag>
       legacyLoadPlayer(class LevelStorage& storage, std::string const& clientUniqueName);
 
 // symbol:
+// ?loadLocalPlayerData@PlayerDataSystem@@YA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEAVLevelStorage@@@Z
+MCAPI std::unique_ptr<class CompoundTag> loadLocalPlayerData(class LevelStorage& storage);
+
+// symbol:
 // ?loadPlayerData@PlayerDataSystem@@YA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEAVLevelStorage@@AEBUPlayerStorageIds@@_N@Z
 MCAPI std::unique_ptr<class CompoundTag>
       loadPlayerData(class LevelStorage& storage, struct PlayerStorageIds const& playerIds, bool isHostingPlayer);

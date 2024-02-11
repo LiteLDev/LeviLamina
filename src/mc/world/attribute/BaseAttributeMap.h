@@ -14,24 +14,12 @@ public:
     MCAPI BaseAttributeMap();
 
     // symbol:
-    // ?begin@BaseAttributeMap@@QEBA?AV?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBIVAttributeInstance@@@std@@@std@@@std@@@std@@XZ
-    MCAPI std::_List_const_iterator<
-        std::_List_val<std::_List_simple_types<std::pair<uint const, class AttributeInstance>>>>
-    begin() const;
-
-    // symbol:
     // ?begin@BaseAttributeMap@@QEAA?AV?$_List_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBIVAttributeInstance@@@std@@@std@@@std@@@std@@XZ
     MCAPI std::_List_iterator<std::_List_val<std::_List_simple_types<std::pair<uint const, class AttributeInstance>>>>
           begin();
 
     // symbol: ?clearDirtyAttributes@BaseAttributeMap@@QEAAXXZ
     MCAPI void clearDirtyAttributes();
-
-    // symbol:
-    // ?end@BaseAttributeMap@@QEBA?AV?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBIVAttributeInstance@@@std@@@std@@@std@@@std@@XZ
-    MCAPI std::_List_const_iterator<
-        std::_List_val<std::_List_simple_types<std::pair<uint const, class AttributeInstance>>>>
-    end() const;
 
     // symbol:
     // ?end@BaseAttributeMap@@QEAA?AV?$_List_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBIVAttributeInstance@@@std@@@std@@@std@@@std@@XZ
@@ -67,19 +55,8 @@ public:
     // symbol: ?registerAttribute@BaseAttributeMap@@QEAAAEAVAttributeInstance@@AEBVAttribute@@@Z
     MCAPI class AttributeInstance& registerAttribute(class Attribute const& baseAttribute);
 
-    // symbol: ?size@BaseAttributeMap@@QEBA_KXZ
-    MCAPI uint64 size() const;
-
-    // symbol:
-    // ?updateAttribute@BaseAttributeMap@@QEAAXAEBVHashedString@@MMMMAEBV?$vector@VAttributeModifier@@V?$allocator@VAttributeModifier@@@std@@@std@@@Z
-    MCAPI void updateAttribute(
-        class HashedString const& attributeName,
-        float                     minVal,
-        float                     maxVal,
-        float,
-        float,
-        std::vector<class AttributeModifier> const& modifiers
-    );
+    // symbol: ?registerNoSyncAttribute@BaseAttributeMap@@QEAAAEAVAttributeInstance@@AEBVAttribute@@@Z
+    MCAPI class AttributeInstance& registerNoSyncAttribute(class Attribute const&);
 
     // symbol: ??1BaseAttributeMap@@QEAA@XZ
     MCAPI ~BaseAttributeMap();

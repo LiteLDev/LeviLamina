@@ -20,7 +20,7 @@ public:
     virtual ~WaterMovementDescription() = default;
 
     // vIndex: 2, symbol: ?deserializeData@WaterMovementDescription@@UEAAXUDeserializeDataParams@@@Z
-    virtual void deserializeData(struct DeserializeDataParams);
+    virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
     // symbol: ??0WaterMovementDescription@@QEAA@XZ
     MCAPI WaterMovementDescription();

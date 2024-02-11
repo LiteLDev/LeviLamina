@@ -23,7 +23,7 @@ public:
     MCAPI PropertyGroup();
 
     // symbol: ?getDefaultBoolValue@PropertyGroup@@QEBA_N_KAEAVRenderParams@@@Z
-    MCAPI bool getDefaultBoolValue(uint64, class RenderParams&) const;
+    MCAPI bool getDefaultBoolValue(uint64, class RenderParams& renderParams) const;
 
     // symbol:
     // ?getDefaultEnumIndexValue@PropertyGroup@@QEBA_K_KAEAVRenderParams@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -31,10 +31,10 @@ public:
     getDefaultEnumIndexValue(uint64, class RenderParams& renderParams, std::string const& propertyName) const;
 
     // symbol: ?getDefaultFloatValue@PropertyGroup@@QEBAM_KAEAVRenderParams@@@Z
-    MCAPI float getDefaultFloatValue(uint64, class RenderParams&) const;
+    MCAPI float getDefaultFloatValue(uint64, class RenderParams& renderParams) const;
 
     // symbol: ?getDefaultIntValue@PropertyGroup@@QEBAH_KAEAVRenderParams@@@Z
-    MCAPI int getDefaultIntValue(uint64, class RenderParams&) const;
+    MCAPI int getDefaultIntValue(uint64, class RenderParams& renderParams) const;
 
     // symbol: ?getNetworkSyncPropertyDescriptionsAsListTag@PropertyGroup@@QEBA?AVListTag@@XZ
     MCAPI class ListTag getNetworkSyncPropertyDescriptionsAsListTag() const;
@@ -97,7 +97,8 @@ public:
 
     // symbol:
     // ?_loadPropertyFromJson@PropertyGroup@@AEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVValue@Json@@W4MolangVersion@@_N@Z
-    MCAPI bool _loadPropertyFromJson(std::string const& name, class Json::Value const&, ::MolangVersion, bool);
+    MCAPI bool
+    _loadPropertyFromJson(std::string const& name, class Json::Value const&, ::MolangVersion molangVersion, bool);
 
     // symbol: ?_reserveSpaceForTypes@PropertyGroup@@AEAAXAEBV?$vector@_KV?$allocator@_K@std@@@std@@@Z
     MCAPI void _reserveSpaceForTypes(std::vector<uint64> const&);

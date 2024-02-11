@@ -20,6 +20,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ?getHash@ActorUniqueID@@QEBA_KXZ
+    MCAPI uint64 getHash() const;
+
     // symbol: ?fromUUID@ActorUniqueID@@SA?AU1@AEBVUUID@mce@@@Z
     MCAPI static struct ActorUniqueID fromUUID(class mce::UUID const&);
 

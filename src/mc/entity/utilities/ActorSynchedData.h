@@ -15,6 +15,9 @@ namespace ActorSynchedData {
 // symbol: ?updateAction@ActorSynchedData@@YAXAEAVActor@@@Z
 MCAPI void updateAction(class Actor& actor);
 
+// symbol: ?updateAlwaysShowNameTag@ActorSynchedData@@YAXAEAVEntityContext@@AEBVSynchedActorDataEntityWrapper@@@Z
+MCAPI void updateAlwaysShowNameTag(class EntityContext&, class SynchedActorDataEntityWrapper const&);
+
 // symbol: ?updateAmbientSound@ActorSynchedData@@YAXAEAVEntityContext@@@Z
 MCAPI void updateAmbientSound(class EntityContext& entity);
 

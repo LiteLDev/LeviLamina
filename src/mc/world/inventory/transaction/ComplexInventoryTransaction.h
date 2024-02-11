@@ -68,6 +68,13 @@ public:
 
     // NOLINTEND
 
+    // protected:
+    // NOLINTBEGIN
+    // symbol: ?_setDepenetrationOverride@ComplexInventoryTransaction@@IEBAXAEAVEntityContext@@@Z
+    MCAPI void _setDepenetrationOverride(class EntityContext&) const;
+
+    // NOLINTEND
+
 private:
     // NOLINTBEGIN
     // symbol:

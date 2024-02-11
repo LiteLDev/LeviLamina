@@ -46,5 +46,10 @@ public:
     // symbol: ??0GameDirectorEntityServerCommandOrigin@@QEAA@AEAVActor@@@Z
     MCAPI explicit GameDirectorEntityServerCommandOrigin(class Actor& origin);
 
+    // symbol:
+    // ?load@GameDirectorEntityServerCommandOrigin@@SA?AV?$unique_ptr@VGameDirectorEntityServerCommandOrigin@@U?$default_delete@VGameDirectorEntityServerCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVLevel@@@Z
+    MCAPI static std::unique_ptr<class GameDirectorEntityServerCommandOrigin>
+    load(class CompoundTag const& tag, class Level& level);
+
     // NOLINTEND
 };

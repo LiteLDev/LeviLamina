@@ -29,21 +29,6 @@ public:
         int                 tries
     );
 
-    // symbol: ?getPosInDirection@RandomPos@@SA_NAEAVVec3@@AEAVMob@@HHH_N2PEAV2@AEBUIntRange@@HW4SolidityCheckType@@@Z
-    MCAPI static bool getPosInDirection(
-        class Vec3&            outPos,
-        class Mob&             mob,
-        int                    xzDist,
-        int                    yDist,
-        int                    yOffset,
-        bool                   canFly,
-        bool                   canSwim,
-        class Vec3*            direction,
-        struct IntRange const& hoverHeight,
-        int                    tries,
-        ::SolidityCheckType    blockTest
-    );
-
     // symbol: ?getPosTowards@RandomPos@@SA_NAEAVVec3@@AEAVMob@@HHAEBV2@@Z
     MCAPI static bool
     getPosTowards(class Vec3& outPos, class Mob& mob, int xzDist, int yDist, class Vec3 const& towardsPos);

@@ -19,7 +19,7 @@ public:
     virtual ~ScreenHandlerHUD() = default;
 
     // vIndex: 1, symbol: ?handleAction@ScreenHandlerHUD@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestAction@@@Z
-    virtual ::ItemStackNetResult handleAction(class ItemStackRequestAction const&);
+    virtual ::ItemStackNetResult handleAction(class ItemStackRequestAction const& requestAction);
 
     // NOLINTEND
 };

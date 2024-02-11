@@ -23,10 +23,12 @@ public:
     RecipeUnlockingRequirement::UnlockingRule    mRule;
     RecipeUnlockingRequirement::UnlockingContext mContext;
     std::vector<class RecipeIngredient>          mValidIngredients;
-    RecipeUnlockingRequirement();
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0RecipeUnlockingRequirement@@QEAA@XZ
+    MCAPI RecipeUnlockingRequirement();
+
     // symbol:
     // ??0RecipeUnlockingRequirement@@QEAA@V?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@std@@@Z
     MCAPI explicit RecipeUnlockingRequirement(std::vector<class RecipeIngredient>);

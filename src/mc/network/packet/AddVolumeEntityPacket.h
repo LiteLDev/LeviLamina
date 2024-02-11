@@ -10,9 +10,9 @@
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/enums/MinecraftPacketIds.h"
-#include "mc/network/packet/AddEntityPacket.h"
+#include "mc/network/packet/Packet.h"
 
-class AddVolumeEntityPacket : public ::AddEntityPacket {
+class AddVolumeEntityPacket : public ::Packet {
 public:
     CompoundTag          mComponents;     // this+0x30
     std::string          mJsonIdentifier; // this+0x68

@@ -19,8 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0VersionRequestedBy@Scripting@@QEAA@UVersion@1@UModuleDescriptor@1@_N2@Z
-    MCAPI VersionRequestedBy(struct Scripting::Version, struct Scripting::ModuleDescriptor, bool, bool);
+    // symbol: ??0VersionRequestedBy@Scripting@@QEAA@UVersion@1@UModuleDescriptor@1@_N22@Z
+    MCAPI VersionRequestedBy(struct Scripting::Version, struct Scripting::ModuleDescriptor, bool, bool, bool);
 
     // NOLINTEND
 };

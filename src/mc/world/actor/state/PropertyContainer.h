@@ -33,10 +33,10 @@ public:
     setAliasProperties(std::unordered_map<class HashedString, std::shared_ptr<class Tag>> const&, std::string const&, std::string const&);
 
     // symbol: ?setFloatValue@PropertyContainer@@QEAAX_KM@Z
-    MCAPI void setFloatValue(uint64, float);
+    MCAPI void setFloatValue(uint64, float value);
 
     // symbol: ?setIntValue@PropertyContainer@@QEAAX_KH@Z
-    MCAPI void setIntValue(uint64, int);
+    MCAPI void setIntValue(uint64, int value);
 
     // symbol: ??1PropertyContainer@@QEAA@XZ
     MCAPI ~PropertyContainer();

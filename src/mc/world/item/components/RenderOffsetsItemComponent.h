@@ -53,7 +53,6 @@ public:
     // prevent constructor by default
     RenderOffsetsItemComponent& operator=(RenderOffsetsItemComponent const&);
     RenderOffsetsItemComponent(RenderOffsetsItemComponent const&);
-    RenderOffsetsItemComponent();
 
 public:
     // NOLINTBEGIN
@@ -62,9 +61,6 @@ public:
 
     // vIndex: 1, symbol: ?checkComponentDataForContentErrors@ItemComponent@@UEBA_NXZ
     virtual bool checkComponentDataForContentErrors() const;
-
-    // vIndex: 2, symbol: ?writeSettings@ItemComponent@@UEAAXXZ
-    virtual void writeSettings();
 
     // vIndex: 3, symbol: ?isNetworkComponent@InteractButtonItemComponent@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
@@ -89,6 +85,9 @@ public:
     // vIndex: 9, symbol: ?_initializeComponent@ItemComponent@@MEAAXXZ
     virtual void _initializeComponent();
 
+    // symbol: ??0RenderOffsetsItemComponent@@QEAA@XZ
+    MCAPI RenderOffsetsItemComponent();
+
     // symbol:
     // ?bindType@RenderOffsetsItemComponent@@SAXAEAUReflectionCtx@cereal@@AEBV?$vector@W4AllExperiments@@V?$allocator@W4AllExperiments@@@std@@@std@@V?$optional@VSemVersion@@@5@@Z
     MCAPI static void
@@ -96,6 +95,14 @@ public:
 
     // symbol: ?getIdentifier@RenderOffsetsItemComponent@@SAAEBVHashedString@@XZ
     MCAPI static class HashedString const& getIdentifier();
+
+    // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol:
+    // ?_fromString@RenderOffsetsItemComponent@@CAXAEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI static void _fromString(class RenderOffsetsItemComponent&, std::string const&);
 
     // NOLINTEND
 

@@ -23,40 +23,40 @@ public:
     virtual ~NewUniqueIdsDataLoadHelper();
 
     // vIndex: 1, symbol: ?loadPosition@NewUniqueIdsDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
-    virtual class Vec3 loadPosition(class Vec3 const&);
+    virtual class Vec3 loadPosition(class Vec3 const& position);
 
     // vIndex: 2, symbol: ?loadBlockPosition@NewUniqueIdsDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z
-    virtual class BlockPos loadBlockPosition(class BlockPos const&);
+    virtual class BlockPos loadBlockPosition(class BlockPos const& blockPos);
 
     // vIndex: 3, symbol: ?loadBlockPositionOffset@NewUniqueIdsDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z
-    virtual class BlockPos loadBlockPositionOffset(class BlockPos const&);
+    virtual class BlockPos loadBlockPositionOffset(class BlockPos const& blockPosOffset);
 
     // vIndex: 4, symbol: ?loadRotationDegreesX@NewUniqueIdsDataLoadHelper@@UEAAMM@Z
-    virtual float loadRotationDegreesX(float);
+    virtual float loadRotationDegreesX(float x);
 
     // vIndex: 5, symbol: ?loadRotationDegreesY@NewUniqueIdsDataLoadHelper@@UEAAMM@Z
-    virtual float loadRotationDegreesY(float);
+    virtual float loadRotationDegreesY(float y);
 
     // vIndex: 6, symbol: ?loadRotationRadiansX@NewUniqueIdsDataLoadHelper@@UEAAMM@Z
-    virtual float loadRotationRadiansX(float);
+    virtual float loadRotationRadiansX(float x);
 
     // vIndex: 7, symbol: ?loadRotationRadiansY@NewUniqueIdsDataLoadHelper@@UEAAMM@Z
-    virtual float loadRotationRadiansY(float);
+    virtual float loadRotationRadiansY(float y);
 
     // vIndex: 8, symbol: ?loadFacingID@NewUniqueIdsDataLoadHelper@@UEAAEE@Z
-    virtual uchar loadFacingID(uchar);
+    virtual uchar loadFacingID(uchar facing);
 
     // vIndex: 9, symbol: ?loadDirection@NewUniqueIdsDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
-    virtual class Vec3 loadDirection(class Vec3 const&);
+    virtual class Vec3 loadDirection(class Vec3 const& direction);
 
     // vIndex: 10, symbol: ?loadDirection@NewUniqueIdsDataLoadHelper@@UEAA?AW4Type@Direction@@W423@@Z
-    virtual ::Direction::Type loadDirection(::Direction::Type);
+    virtual ::Direction::Type loadDirection(::Direction::Type direction);
 
     // vIndex: 11, symbol: ?loadRotation@NewUniqueIdsDataLoadHelper@@UEAA?AW4Rotation@@W42@@Z
-    virtual ::Rotation loadRotation(::Rotation);
+    virtual ::Rotation loadRotation(::Rotation rotation);
 
     // vIndex: 12, symbol: ?loadMirror@NewUniqueIdsDataLoadHelper@@UEAA?AW4Mirror@@W42@@Z
-    virtual ::Mirror loadMirror(::Mirror);
+    virtual ::Mirror loadMirror(::Mirror mirror);
 
     // vIndex: 13, symbol: ?loadActorUniqueID@NewUniqueIdsDataLoadHelper@@UEAA?AUActorUniqueID@@U2@@Z
     virtual struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID id);

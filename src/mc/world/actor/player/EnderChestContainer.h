@@ -16,20 +16,11 @@ public:
     // vIndex: 0, symbol: __gen_??1EnderChestContainer@@UEAA@XZ
     virtual ~EnderChestContainer() = default;
 
-    // vIndex: 18, symbol: ?startOpen@EnderChestContainer@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 19, symbol: ?startOpen@EnderChestContainer@@UEAAXAEAVPlayer@@@Z
     virtual void startOpen(class Player& player);
 
-    // vIndex: 19, symbol: ?stopOpen@EnderChestContainer@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 20, symbol: ?stopOpen@EnderChestContainer@@UEAAXAEAVPlayer@@@Z
     virtual void stopOpen(class Player& player);
-
-    // vIndex: 25, symbol: __unk_vfn_25
-    virtual void __unk_vfn_25();
-
-    // vIndex: 26, symbol: __unk_vfn_26
-    virtual void __unk_vfn_26();
-
-    // vIndex: 34, symbol: __unk_vfn_34
-    virtual void __unk_vfn_34();
 
     // symbol: ??0EnderChestContainer@@QEAA@XZ
     MCAPI EnderChestContainer();

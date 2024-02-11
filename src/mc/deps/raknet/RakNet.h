@@ -26,6 +26,7 @@ namespace RakNet { class RakNetSocket2; }
 namespace RakNet { class RakPeer; }
 namespace RakNet { class RakPeerInterface; }
 namespace RakNet { class RakString; }
+namespace RakNet { class ShadowBanList; }
 namespace RakNet { class SocketLayerOverride; }
 namespace RakNet { class StringCompressor; }
 namespace RakNet { class StringTable; }
@@ -100,13 +101,13 @@ MCAPI uint UpdateNetworkLoop(void* arguments);
 MCAPI uint UpdateTCPInterfaceLoop(void* arguments);
 
 // symbol: ?_DLMallocDirectMMap@RakNet@@YAPEAX_K@Z
-MCAPI void* _DLMallocDirectMMap(uint64);
+MCAPI void* _DLMallocDirectMMap(uint64 size);
 
 // symbol: ?_DLMallocMMap@RakNet@@YAPEAX_K@Z
-MCAPI void* _DLMallocMMap(uint64);
+MCAPI void* _DLMallocMMap(uint64 size);
 
 // symbol: ?_DLMallocMUnmap@RakNet@@YAHPEAX_K@Z
-MCAPI int _DLMallocMUnmap(void*, uint64);
+MCAPI int _DLMallocMUnmap(void* p, uint64 size);
 
 // symbol: ?_RakFree@RakNet@@YAXPEAX@Z
 MCAPI void _RakFree(void* p);
@@ -115,13 +116,13 @@ MCAPI void _RakFree(void* p);
 MCAPI void _RakFree_Ex(void* p, char const* file, uint line);
 
 // symbol: ?_RakMalloc@RakNet@@YAPEAX_K@Z
-MCAPI void* _RakMalloc(uint64);
+MCAPI void* _RakMalloc(uint64 size);
 
 // symbol: ?_RakMalloc_Ex@RakNet@@YAPEAX_KPEBDI@Z
 MCAPI void* _RakMalloc_Ex(uint64 size, char const* file, uint line);
 
 // symbol: ?_RakRealloc@RakNet@@YAPEAXPEAX_K@Z
-MCAPI void* _RakRealloc(void*, uint64);
+MCAPI void* _RakRealloc(void* p, uint64 size);
 
 // symbol: ?_RakRealloc_Ex@RakNet@@YAPEAXPEAX_KPEBDI@Z
 MCAPI void* _RakRealloc_Ex(void* p, uint64 size, char const* file, uint line);

@@ -35,13 +35,10 @@ public:
     MCAPI static ::MolangVariableIndex getVariableIndex(uint64);
 
     // symbol: ?getVariableIndex@MolangVariable@@SA?AW4MolangVariableIndex@@_KPEBD_N@Z
-    MCAPI static ::MolangVariableIndex getVariableIndex(uint64, char const*, bool);
+    MCAPI static ::MolangVariableIndex getVariableIndex(uint64, char const* name, bool);
 
     // symbol: ?getVariableName@MolangVariable@@SAAEBVHashedString@@W4MolangVariableIndex@@@Z
     MCAPI static class HashedString const& getVariableName(::MolangVariableIndex index);
-
-    // symbol: ?initVariableMaps@MolangVariable@@SAXXZ
-    MCAPI static void initVariableMaps();
 
     // symbol: ?processWaterMark@MolangVariable@@SAXXZ
     MCAPI static void processWaterMark();

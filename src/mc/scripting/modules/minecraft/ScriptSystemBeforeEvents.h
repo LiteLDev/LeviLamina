@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/scripting/StrongTypedObjectHandle.h"
 #include "mc/external/scripting/TypedObjectHandle.h"
-#include "mc/external/scripting/WeakTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -33,8 +33,8 @@ public:
     MCAPI ScriptSystemBeforeEvents(class Scripting::WeakLifetimeScope const&, gsl::not_null<class ServerLevel*>);
 
     // symbol:
-    // ?onBeforeWatchdogTerminate@ScriptSystemBeforeEvents@ScriptModuleMinecraft@@QEAAXV?$WeakTypedObjectHandle@UScriptWatchdogTerminateBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@Z
-    MCAPI void onBeforeWatchdogTerminate(class Scripting::WeakTypedObjectHandle<
+    // ?onBeforeWatchdogTerminate@ScriptSystemBeforeEvents@ScriptModuleMinecraft@@QEAAXV?$StrongTypedObjectHandle@UScriptWatchdogTerminateBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@Z
+    MCAPI void onBeforeWatchdogTerminate(class Scripting::StrongTypedObjectHandle<
                                          struct ScriptModuleMinecraft::ScriptWatchdogTerminateBeforeEvent>);
 
     // symbol: ??4ScriptSystemBeforeEvents@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z

@@ -20,8 +20,8 @@ public:
     // vIndex: 1, symbol: ?registerEvents@LootSystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
     virtual void registerEvents(entt::dispatcher&);
 
-    // symbol: ?tick@LootSystem@@UEAAXAEAVEntityRegistry@@@Z
-    MCVAPI void tick(class EntityRegistry&);
+    // vIndex: 2, symbol: ?tick@LootSystem@@UEAAXAEAVEntityRegistry@@@Z
+    virtual void tick(class EntityRegistry&);
 
     // NOLINTEND
 };

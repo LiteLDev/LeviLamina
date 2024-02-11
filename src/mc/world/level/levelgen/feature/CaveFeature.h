@@ -108,7 +108,7 @@ public:
         bool              carved,
         class Vec3 const& originalStartPos,
         int,
-        class BlockPos
+        class BlockPos pos
     ) const;
 
     // symbol:

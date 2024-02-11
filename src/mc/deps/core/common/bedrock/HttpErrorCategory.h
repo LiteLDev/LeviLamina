@@ -36,7 +36,7 @@ public:
     virtual void __unk_vfn_6();
 
     // vIndex: 7, symbol: ?start@BufferedResponseBody@Http@Bedrock@@MEAA?AVerror_code@std@@V?$optional@_K@5@@Z
-    virtual std::error_code start(std::optional<uint64>);
+    virtual std::error_code start(std::optional<uint64> size);
 
     // vIndex: 8, symbol: ?write@BufferedResponseBody@Http@Bedrock@@MEAA?AVerror_code@std@@V?$span@$$CBE$0?0@gsl@@@Z
     virtual std::error_code write(gsl::span<uchar const> source);

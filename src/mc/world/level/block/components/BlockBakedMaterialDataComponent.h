@@ -17,8 +17,5 @@ public:
     // vIndex: 0, symbol: __gen_??1BlockBakedMaterialDataComponent@@UEAA@XZ
     virtual ~BlockBakedMaterialDataComponent() = default;
 
-    // symbol: ?usesNewComponentStorage@BlockBakedMaterialDataComponent@@SA_NXZ
-    MCAPI static bool usesNewComponentStorage();
-
     // NOLINTEND
 };

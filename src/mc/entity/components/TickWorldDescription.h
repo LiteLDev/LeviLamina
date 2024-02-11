@@ -20,7 +20,7 @@ public:
     virtual ~TickWorldDescription();
 
     // vIndex: 2, symbol: ?deserializeData@TickWorldDescription@@UEAAXUDeserializeDataParams@@@Z
-    virtual void deserializeData(struct DeserializeDataParams);
+    virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
     // symbol: ??0TickWorldDescription@@QEAA@XZ
     MCAPI TickWorldDescription();

@@ -9,6 +9,39 @@ class Player;
 
 class GameMode {
 public:
+    // GameMode inner types declare
+    // clang-format off
+    struct BuildContext;
+    struct BuildPlayerContext;
+    struct ContinueBuildData;
+    // clang-format on
+
+    // GameMode inner types define
+    struct BuildContext {
+    public:
+        // prevent constructor by default
+        BuildContext& operator=(BuildContext const&);
+        BuildContext(BuildContext const&);
+        BuildContext();
+    };
+
+    struct BuildPlayerContext {
+    public:
+        // prevent constructor by default
+        BuildPlayerContext& operator=(BuildPlayerContext const&);
+        BuildPlayerContext(BuildPlayerContext const&);
+        BuildPlayerContext();
+    };
+
+    struct ContinueBuildData {
+    public:
+        // prevent constructor by default
+        ContinueBuildData& operator=(ContinueBuildData const&);
+        ContinueBuildData(ContinueBuildData const&);
+        ContinueBuildData();
+    };
+
+public:
     // Player&                               mPlayer;                       // this+0x8
     // BlockPos                              mDestroyBlockPos;              // this+0x10
     // uchar                                 mDestroyBlockFace;             // this+0x1C
@@ -120,16 +153,25 @@ public:
 
     // symbol: ?_tickContinueDestroyBlock@GameMode@@QEAA_NAEBVBlockPos@@AEBVVec3@@EAEA_NAEBV?$function@$$A6AXXZ@std@@@Z
     MCAPI bool
-    _tickContinueDestroyBlock(class BlockPos const& hitPos, class Vec3 const& playerPos, uchar, bool& hasDestroyedBlock, std::function<void(void)> const&);
+    _tickContinueDestroyBlock(class BlockPos const& hitPos, class Vec3 const& playerPos, uchar, bool& hasDestroyedBlock, std::function<void()> const&);
 
     // symbol: ?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z
     MCAPI bool baseUseItem(class ItemStack& item);
 
     // symbol:
     // ?createBlockBreakCaptureScope@GameMode@@QEAA?AV?$final_action@V?$function@$$A6AXXZ@std@@@gsl@@V?$function@$$A6AXAEBVItemStack@@0AEBVBlockPos@@@Z@std@@@Z
-    MCAPI gsl::final_action<std::function<void(void)>> createBlockBreakCaptureScope(
+    MCAPI gsl::final_action<std::function<void()>> createBlockBreakCaptureScope(
         std::function<void(class ItemStack const&, class ItemStack const&, class BlockPos const&)> callback
     );
+
+    // symbol: ?getBuildContext@GameMode@@QEBAAEBUBuildContext@1@XZ
+    MCAPI struct GameMode::BuildContext const& getBuildContext() const;
+
+    // symbol: ?getContinueDirection@GameMode@@QEBAAEBVBlockPos@@XZ
+    MCAPI class BlockPos const& getContinueDirection() const;
+
+    // symbol: ?getContinueFacing@GameMode@@QEBAEXZ
+    MCAPI uchar getContinueFacing() const;
 
     // symbol: ?getDestroyBlockFace@GameMode@@QEBAEXZ
     MCAPI uchar getDestroyBlockFace() const;
@@ -146,8 +188,22 @@ public:
     // symbol: ?getMaxPickRangeSqr@GameMode@@QEAAMXZ
     MCAPI float getMaxPickRangeSqr();
 
+    // symbol: ?getNextContinuePos@GameMode@@QEBAAEBVBlockPos@@XZ
+    MCAPI class BlockPos const& getNextContinuePos() const;
+
+    // symbol: ?hasContinueDirection@GameMode@@QEBA_NXZ
+    MCAPI bool hasContinueDirection() const;
+
     // symbol: ?isLastBuildBlockInteractive@GameMode@@QEBA_NXZ
     MCAPI bool isLastBuildBlockInteractive() const;
+
+    // symbol: ?isLastBuildBlockSnappable@GameMode@@QEBA_NXZ
+    MCAPI bool isLastBuildBlockSnappable() const;
+
+    // symbol:
+    // ?getContinueBuildBlockContext@GameMode@@SA?AUContinueBuildData@1@AEBVHitResult@@AEBUBuildContext@1@AEBUBuildPlayerContext@1@@Z
+    MCAPI static struct GameMode::ContinueBuildData
+    getContinueBuildBlockContext(class HitResult const&, struct GameMode::BuildContext const&, struct GameMode::BuildPlayerContext const&);
 
     // symbol: ?PICKRANGE_CREATIVE_MAXIMUM@GameMode@@2MB
     MCAPI static float const PICKRANGE_CREATIVE_MAXIMUM;
@@ -195,11 +251,9 @@ public:
     // symbol: ?_enableBlockBreakDelay@GameMode@@AEBA_NXZ
     MCAPI bool _enableBlockBreakDelay() const;
 
-    // symbol:
-    // ?_sendTryUseItemOnEvent@GameMode@@AEBA?AVInteractionResult@@AEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@_N@Z
+    // symbol: ?_sendUseItemOnEvents@GameMode@@AEBA?AVInteractionResult@@AEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@@Z
     MCAPI class InteractionResult
-    _sendTryUseItemOnEvent(class ItemStack&, class BlockPos const&, uchar, class Vec3 const&, class Block const*, bool)
-        const;
+    _sendUseItemOnEvents(class ItemStack&, class BlockPos const&, uchar, class Vec3 const&) const;
 
     // NOLINTEND
 };

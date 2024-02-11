@@ -38,17 +38,17 @@ public:
 
     // vIndex: 3, symbol:
     // ?handleEvent@?$Impl@U?$type_list@$$CBU?$ActorGameplayEvent@X@@$$CBU?$ActorGameplayEvent@W4CoordinatorResult@@@@U?$MutableActorGameplayEvent@W4CoordinatorResult@@@@@entt@@@?$EventHandlerDispatcher@VActorGameplayHandler@@@Details@@MEAA?AW4HandlerResult@@AEBU?$ActorGameplayEvent@X@@@Z
-    virtual ::HandlerResult handleEvent(struct ActorGameplayEvent<void> const&);
+    virtual ::HandlerResult handleEvent(struct ActorGameplayEvent<void> const& event);
 
     // vIndex: 4, symbol:
     // ?handleEvent@?$Impl@U?$type_list@$$CBU?$ActorGameplayEvent@W4CoordinatorResult@@@@U?$MutableActorGameplayEvent@W4CoordinatorResult@@@@@entt@@@?$EventHandlerDispatcher@VActorGameplayHandler@@@Details@@MEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEBU?$ActorGameplayEvent@W4CoordinatorResult@@@@@Z
     virtual struct GameplayHandlerResult<::CoordinatorResult>
-    handleEvent(struct ActorGameplayEvent<::CoordinatorResult> const&);
+    handleEvent(struct ActorGameplayEvent<::CoordinatorResult> const& event);
 
     // vIndex: 5, symbol:
     // ?handleEvent@?$Impl@U?$type_list@U?$MutableActorGameplayEvent@W4CoordinatorResult@@@@@entt@@@?$EventHandlerDispatcher@VActorGameplayHandler@@@Details@@MEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAU?$MutableActorGameplayEvent@W4CoordinatorResult@@@@@Z
     virtual struct GameplayHandlerResult<::CoordinatorResult>
-    handleEvent(struct MutableActorGameplayEvent<::CoordinatorResult>&);
+    handleEvent(struct MutableActorGameplayEvent<::CoordinatorResult>& event);
 
     // vIndex: 6, symbol: __unk_vfn_6
     virtual void __unk_vfn_6();

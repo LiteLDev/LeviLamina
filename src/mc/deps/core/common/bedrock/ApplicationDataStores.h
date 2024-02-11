@@ -29,15 +29,15 @@ public:
     // vIndex: 1, symbol: ?init@ApplicationDataStores@Bedrock@@UEAAXXZ
     virtual void init();
 
-    // symbol:
-    // ?getDataStore@ApplicationDataStores@Bedrock@@UEBA?AV?$NonOwnerPointer@$$CBVDataStore@Bedrock@@@2@W4DataStores@IApplicationDataStores@2@@Z
-    MCVAPI class Bedrock::NonOwnerPointer<class Bedrock::DataStore const>
-    getDataStore(::Bedrock::IApplicationDataStores::DataStores which) const;
-
-    // symbol:
+    // vIndex: 2, symbol:
     // ?getDataStore@ApplicationDataStores@Bedrock@@UEAA?AV?$NonOwnerPointer@VDataStore@Bedrock@@@2@W4DataStores@IApplicationDataStores@2@@Z
-    MCVAPI class Bedrock::NonOwnerPointer<class Bedrock::DataStore>
+    virtual class Bedrock::NonOwnerPointer<class Bedrock::DataStore>
     getDataStore(::Bedrock::IApplicationDataStores::DataStores which);
+
+    // vIndex: 3, symbol:
+    // ?getDataStore@ApplicationDataStores@Bedrock@@UEBA?AV?$NonOwnerPointer@$$CBVDataStore@Bedrock@@@2@W4DataStores@IApplicationDataStores@2@@Z
+    virtual class Bedrock::NonOwnerPointer<class Bedrock::DataStore const>
+    getDataStore(::Bedrock::IApplicationDataStores::DataStores which) const;
 
     // NOLINTEND
 

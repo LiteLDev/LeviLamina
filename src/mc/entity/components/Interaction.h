@@ -26,9 +26,6 @@ public:
     // ?addLevelSoundEventByName@Interaction@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void addLevelSoundEventByName(std::string const& name);
 
-    // symbol: ?addVibrationByName@Interaction@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void addVibrationByName(std::string const& name);
-
     // symbol: ?setCooldown@Interaction@@QEAAXAEBM@Z
     MCAPI void setCooldown(float const& seconds);
 
@@ -40,6 +37,9 @@ public:
 
     // symbol: ?setTransformItem@Interaction@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void setTransformItem(std::string const& name);
+
+    // symbol: ?setVibrationByName@Interaction@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI void setVibrationByName(std::string const&);
 
     // symbol: ??1Interaction@@QEAA@XZ
     MCAPI ~Interaction();

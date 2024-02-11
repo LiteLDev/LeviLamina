@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/puv/EquipmentSlot.h"
+#include "mc/entity/utilities/ActorLocation.h"
 #include "mc/enums/AllExperiments.h"
 
 // auto generated forward declare list
@@ -25,9 +26,6 @@ public:
 
     // vIndex: 1, symbol: ?checkComponentDataForContentErrors@ItemComponent@@UEBA_NXZ
     virtual bool checkComponentDataForContentErrors() const;
-
-    // vIndex: 2, symbol: ?writeSettings@ItemComponent@@UEAAXXZ
-    virtual void writeSettings();
 
     // vIndex: 3, symbol: ?isNetworkComponent@InteractButtonItemComponent@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
@@ -58,8 +56,23 @@ public:
     // symbol: ?dispense@WearableItemComponent@@QEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
     MCAPI bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, uchar) const;
 
+    // symbol: ?getArmorValue@WearableItemComponent@@QEBAHXZ
+    MCAPI int getArmorValue() const;
+
+    // symbol: ?getEquipLocation@WearableItemComponent@@QEBA?AW4ActorLocation@@XZ
+    MCAPI ::ActorLocation getEquipLocation() const;
+
     // symbol: ?getSlot@WearableItemComponent@@QEBA?AW4EquipmentSlot@Legacy@Puv@@XZ
     MCAPI ::Puv::Legacy::EquipmentSlot getSlot() const;
+
+    // symbol: ?isArmor@WearableItemComponent@@QEBA_NXZ
+    MCAPI bool isArmor() const;
+
+    // symbol: ?shouldAllowStacking@WearableItemComponent@@QEBA_NXZ
+    MCAPI bool shouldAllowStacking() const;
+
+    // symbol: ?use@WearableItemComponent@@QEBA_NAEAVItemStack@@AEAVPlayer@@@Z
+    MCAPI bool use(class ItemStack& instance, class Player& player) const;
 
     // symbol:
     // ?bindType@WearableItemComponent@@SAXAEAUReflectionCtx@cereal@@AEBV?$vector@W4AllExperiments@@V?$allocator@W4AllExperiments@@@std@@@std@@V?$optional@VSemVersion@@@5@@Z
@@ -68,6 +81,9 @@ public:
 
     // symbol: ?getIdentifier@WearableItemComponent@@SAAEBVHashedString@@XZ
     MCAPI static class HashedString const& getIdentifier();
+
+    // symbol: ?registerVersionUpgrades@WearableItemComponent@@SAXAEAVCerealSchemaUpgradeSet@@@Z
+    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet&);
 
     // NOLINTEND
 };

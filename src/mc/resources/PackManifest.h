@@ -37,11 +37,11 @@ public:
     // symbol: ??0PackManifest@@QEAA@W4ManifestType@@@Z
     MCAPI explicit PackManifest(::ManifestType type);
 
+    // symbol: ?addModule@PackManifest@@QEAAXAEBVResourceInformation@@@Z
+    MCAPI void addModule(class ResourceInformation const& resourceInfo);
+
     // symbol: ?addPackDependency@PackManifest@@QEAAXAEBUPackIdVersion@@@Z
     MCAPI void addPackDependency(struct PackIdVersion const& packId);
-
-    // symbol: ?clearLegacyModuleDependencies@PackManifest@@QEAAXXZ
-    MCAPI void clearLegacyModuleDependencies();
 
     // symbol: ?getContentIdentity@PackManifest@@QEBAAEBVContentIdentity@@XZ
     MCAPI class ContentIdentity const& getContentIdentity() const;
@@ -58,10 +58,6 @@ public:
 
     // symbol: ?getIdentity@PackManifest@@QEBAAEBUPackIdVersion@@XZ
     MCAPI struct PackIdVersion const& getIdentity() const;
-
-    // symbol:
-    // ?getLegacyModuleDependencies@PackManifest@@QEBAAEBV?$vector@ULegacyPackIdVersion@@V?$allocator@ULegacyPackIdVersion@@@std@@@std@@XZ
-    MCAPI std::vector<struct LegacyPackIdVersion> const& getLegacyModuleDependencies() const;
 
     // symbol: ?getLocation@PackManifest@@QEBAAEBVResourceLocation@@XZ
     MCAPI class ResourceLocation const& getLocation() const;
@@ -107,11 +103,15 @@ public:
     // symbol: ?getPackType@PackManifest@@QEBA?AW4PackType@@XZ
     MCAPI ::PackType getPackType() const;
 
+    // symbol: ?getRequiredBaseGameVersion@PackManifest@@QEBAAEBVBaseGameVersion@@XZ
+    MCAPI class BaseGameVersion const& getRequiredBaseGameVersion() const;
+
+    // symbol:
+    // ?getTrustedCapabilities@PackManifest@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
+    MCAPI std::vector<std::string> getTrustedCapabilities() const;
+
     // symbol: ?hasClientScript@PackManifest@@QEBA_NXZ
     MCAPI bool hasClientScript() const;
-
-    // symbol: ?hasLegacyModuleDependencies@PackManifest@@QEBA_NXZ
-    MCAPI bool hasLegacyModuleDependencies() const;
 
     // symbol: ?hasModule@PackManifest@@QEBA_NAEBUPackIdVersion@@@Z
     MCAPI bool hasModule(struct PackIdVersion const& moduleIdentity) const;
@@ -121,9 +121,6 @@ public:
 
     // symbol: ?hasPlugins@PackManifest@@QEBA_NXZ
     MCAPI bool hasPlugins() const;
-
-    // symbol: ?isHidden@PackManifest@@QEBA_NXZ
-    MCAPI bool isHidden() const;
 
     // symbol: ?isPlatformLocked@PackManifest@@QEBA_NXZ
     MCAPI bool isPlatformLocked() const;
@@ -143,14 +140,11 @@ public:
     // symbol: ?setDescription@PackManifest@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void setDescription(std::string const& description);
 
-    // symbol: ?setHidden@PackManifest@@QEAAX_N@Z
-    MCAPI void setHidden(bool isHidden);
-
     // symbol: ?setIdentity@PackManifest@@QEAAXAEBUPackIdVersion@@@Z
     MCAPI void setIdentity(struct PackIdVersion const& identity);
 
     // symbol: ?setLastModifiedDate@PackManifest@@QEAAX_J@Z
-    MCAPI void setLastModifiedDate(int64);
+    MCAPI void setLastModifiedDate(int64 lastModifiedDate);
 
     // symbol:
     // ?setLocalizedNameKeywords@PackManifest@@QEAAXAEBV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@@Z
@@ -162,14 +156,8 @@ public:
     // symbol: ?setName@PackManifest@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void setName(std::string const& name);
 
-    // symbol: ?setPackCapabilitiesTrusted@PackManifest@@QEAAXXZ
-    MCAPI void setPackCapabilitiesTrusted();
-
     // symbol: ?setPackCategory@PackManifest@@QEAAXW4PackCategory@@@Z
     MCAPI void setPackCategory(::PackCategory packCategory);
-
-    // symbol: ?setPackOrigin@PackManifest@@QEAAXW4PackOrigin@@@Z
-    MCAPI void setPackOrigin(::PackOrigin packOrigin);
 
     // symbol: ?setPackType@PackManifest@@QEAAXW4PackType@@@Z
     MCAPI void setPackType(::PackType packType);

@@ -10,6 +10,10 @@ namespace RakNet { struct RakNetGUID; }
 
 class NetworkIdentifier {
 public:
+    // NetworkIdentifier inner types define
+    enum class Type {};
+
+public:
     enum class Type : int {
         RakNet    = 0x0,
         Address   = 0x1,
@@ -39,9 +43,6 @@ public:
     // symbol: ??0NetworkIdentifier@@QEAA@AEBUsockaddr_in6@@@Z
     MCAPI explicit NetworkIdentifier(struct sockaddr_in6 const& address);
 
-    // symbol: ??0NetworkIdentifier@@QEAA@_K@Z
-    MCAPI explicit NetworkIdentifier(uint64);
-
     // symbol: ?getAddress@NetworkIdentifier@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getAddress() const;
 
@@ -51,6 +52,18 @@ public:
 
     // symbol: ?getHash@NetworkIdentifier@@QEBA_KXZ
     MCAPI uint64 getHash() const;
+
+    // symbol: ?getRakNetGUID@NetworkIdentifier@@QEBAAEBURakNetGUID@RakNet@@XZ
+    MCAPI struct RakNet::RakNetGUID const& getRakNetGUID() const;
+
+    // symbol: ?getSocketAddress@NetworkIdentifier@@QEBAAEBUsockaddr_in@@XZ
+    MCAPI struct sockaddr_in const& getSocketAddress() const;
+
+    // symbol: ?getSocketAddress6@NetworkIdentifier@@QEBAAEBUsockaddr_in6@@XZ
+    MCAPI struct sockaddr_in6 const& getSocketAddress6() const;
+
+    // symbol: ?getType@NetworkIdentifier@@QEBA?AW4Type@1@XZ
+    MCAPI ::NetworkIdentifier::Type getType() const;
 
     // symbol: ?isUnassigned@NetworkIdentifier@@QEBA_NXZ
     MCAPI bool isUnassigned() const;

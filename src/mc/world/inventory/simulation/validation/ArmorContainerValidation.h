@@ -44,9 +44,6 @@ public:
     // vIndex: 7, symbol: ?canDestroy@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@@Z
     virtual bool canDestroy(class ContainerScreenContext const&) const;
 
-    // vIndex: 8, symbol: __unk_vfn_8
-    virtual void __unk_vfn_8();
-
     // vIndex: 9, symbol: ?getContainerSize@ArmorContainerValidation@@UEBAHAEBVContainerScreenContext@@AEBVContainer@@@Z
     virtual int getContainerSize(class ContainerScreenContext const&, class Container const& container) const;
 

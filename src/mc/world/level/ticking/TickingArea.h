@@ -3,8 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/SharePtrRefTraits.h"
-#include "mc/common/wrapper/WeakRefT.h"
+#include "mc/common/wrapper/WeakRef.h"
 #include "mc/enums/TickingAreaLoadMode.h"
 #include "mc/world/level/ticking/ITickingArea.h"
 
@@ -37,11 +36,11 @@ public:
     // vIndex: 4, symbol: ?isEntityOwned@TickingArea@@UEBA_NXZ
     virtual bool isEntityOwned() const;
 
-    // vIndex: 5, symbol: __unk_vfn_5
-    virtual void __unk_vfn_5();
+    // vIndex: 5, symbol: ?getBlockSource@TickingArea@@UEBA?BV?$WeakRef@VBlockSource@@@@XZ
+    virtual class WeakRef<class BlockSource> const getBlockSource() const;
 
-    // vIndex: 6, symbol: __unk_vfn_6
-    virtual void __unk_vfn_6();
+    // vIndex: 6, symbol: ?getBlockSource@TickingArea@@UEAA?AV?$WeakRef@VBlockSource@@@@XZ
+    virtual class WeakRef<class BlockSource> getBlockSource();
 
     // vIndex: 7, symbol: ?getBounds@TickingArea@@UEBAAEBUBounds@@XZ
     virtual struct Bounds const& getBounds() const;
@@ -52,11 +51,11 @@ public:
     // vIndex: 9, symbol: ?getMaxDistToPlayers@TickingArea@@UEBAMXZ
     virtual float getMaxDistToPlayers() const;
 
-    // vIndex: 10, symbol: __unk_vfn_10
-    virtual void __unk_vfn_10();
+    // vIndex: 10, symbol: ?getView@TickingArea@@UEBAAEBVITickingAreaView@@XZ
+    virtual class ITickingAreaView const& getView() const;
 
-    // vIndex: 11, symbol: __unk_vfn_11
-    virtual void __unk_vfn_11();
+    // vIndex: 11, symbol: ?getView@TickingArea@@UEAAAEAVITickingAreaView@@XZ
+    virtual class ITickingAreaView& getView();
 
     // vIndex: 12, symbol: ?getDescription@TickingArea@@UEBA?AUTickingAreaDescription@@XZ
     virtual struct TickingAreaDescription getDescription() const;
@@ -65,7 +64,7 @@ public:
     virtual ::TickingAreaLoadMode getLoadMode() const;
 
     // vIndex: 14, symbol: ?setLoadMode@TickingArea@@UEAAXW4TickingAreaLoadMode@@AEAVLevelStorage@@@Z
-    virtual void setLoadMode(::TickingAreaLoadMode, class LevelStorage& levelStorage);
+    virtual void setLoadMode(::TickingAreaLoadMode loadMode, class LevelStorage& levelStorage);
 
     // vIndex: 15, symbol: ?isPreloadDone@TickingArea@@UEBA_NXZ
     virtual bool isPreloadDone() const;
@@ -104,27 +103,15 @@ public:
     // vIndex: 26, symbol: ?updateBlockSourceCurrentTick@TickingArea@@UEAAXAEBUTick@@@Z
     virtual void updateBlockSourceCurrentTick(struct Tick const& currentTick);
 
-    // symbol: ?getBlockSource@TickingArea@@UEBA?BV?$WeakRefT@U?$SharePtrRefTraits@VBlockSource@@@@@@XZ
-    MCVAPI class WeakRefT<struct SharePtrRefTraits<class BlockSource>> const getBlockSource() const;
-
-    // symbol: ?getBlockSource@TickingArea@@UEAA?AV?$WeakRefT@U?$SharePtrRefTraits@VBlockSource@@@@@@XZ
-    MCVAPI class WeakRefT<struct SharePtrRefTraits<class BlockSource>> getBlockSource();
-
-    // symbol: ?getView@TickingArea@@UEAAAEAVITickingAreaView@@XZ
-    MCVAPI class ITickingAreaView& getView();
-
-    // symbol: ?getView@TickingArea@@UEBAAEBVITickingAreaView@@XZ
-    MCVAPI class ITickingAreaView const& getView() const;
-
     // symbol:
     // ??0TickingArea@@QEAA@AEAVDimension@@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUBounds@@_NW4TickingAreaLoadMode@@@Z
     MCAPI TickingArea(
-        class Dimension&     dimension,
-        class mce::UUID      uniqueId,
-        std::string const&   name,
-        struct Bounds const& bounds,
-        bool                 isCircle,
-        ::TickingAreaLoadMode
+        class Dimension&      dimension,
+        class mce::UUID       uniqueId,
+        std::string const&    name,
+        struct Bounds const&  bounds,
+        bool                  isCircle,
+        ::TickingAreaLoadMode loadMode
     );
 
     // NOLINTEND
@@ -134,15 +121,15 @@ public:
     // symbol:
     // ??0TickingArea@@AEAA@AEAVDimension@@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorUniqueID@@AEBUBounds@@_NM5W4TickingAreaLoadMode@@@Z
     MCAPI TickingArea(
-        class Dimension&     dimension,
-        class mce::UUID      uniqueId,
-        std::string const&   name,
-        struct ActorUniqueID entityId,
-        struct Bounds const& bounds,
-        bool                 isCircle,
-        float                maxDistToPlayers,
-        bool                 alwaysActive,
-        ::TickingAreaLoadMode
+        class Dimension&      dimension,
+        class mce::UUID       uniqueId,
+        std::string const&    name,
+        struct ActorUniqueID  entityId,
+        struct Bounds const&  bounds,
+        bool                  isCircle,
+        float                 maxDistToPlayers,
+        bool                  alwaysActive,
+        ::TickingAreaLoadMode loadMode
     );
 
     // symbol: ?_center@TickingArea@@AEAAXAEAVLevelStorage@@@Z

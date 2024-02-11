@@ -24,8 +24,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptLavaMovementComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptLavaMovementComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptLavaMovementComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptLavaMovementComponent() = default;
 
     // symbol:
     // ?bind@ScriptLavaMovementComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptLavaMovementComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z

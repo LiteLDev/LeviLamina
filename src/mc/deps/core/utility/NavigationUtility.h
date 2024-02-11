@@ -86,7 +86,7 @@ MCAPI bool isInLiquid(class Mob const& mob);
 MCAPI bool isInNode(class Mob const& mob, class BlockPos const& nodePos);
 
 // symbol: ?isLastNode@NavigationUtility@@YA_N_KAEBVPath@@@Z
-MCAPI bool isLastNode(uint64, class Path const&);
+MCAPI bool isLastNode(uint64 index, class Path const& path);
 
 // symbol: ?isStableDestination@NavigationUtility@@YA_NAEBVMob@@AEAVBlockPos@@@Z
 MCAPI bool isStableDestination(class Mob const& mob, class BlockPos& pos);

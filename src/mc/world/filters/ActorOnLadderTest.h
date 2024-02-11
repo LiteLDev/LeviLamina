@@ -16,7 +16,6 @@ public:
     // prevent constructor by default
     ActorOnLadderTest& operator=(ActorOnLadderTest const&);
     ActorOnLadderTest(ActorOnLadderTest const&);
-    ActorOnLadderTest();
 
 public:
     // NOLINTBEGIN
@@ -28,6 +27,9 @@ public:
 
     // vIndex: 4, symbol: ?getName@ActorOnLadderTest@@UEBA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@XZ
     virtual std::string_view getName() const;
+
+    // symbol: ??0ActorOnLadderTest@@QEAA@XZ
+    MCAPI ActorOnLadderTest();
 
     // NOLINTEND
 };

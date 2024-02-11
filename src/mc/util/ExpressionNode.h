@@ -45,21 +45,33 @@ public:
     MCAPI ExpressionNode(struct MolangScriptArg& value, ::ExpressionOp op);
 
     // symbol: ??0ExpressionNode@@QEAA@AEBVValue@Json@@AEBVSemVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z
-    MCAPI ExpressionNode(class Json::Value const& value, class SemVersion const&, gsl::span<class HashedString const>);
+    MCAPI ExpressionNode(
+        class Json::Value const&            value,
+        class SemVersion const&             molangVersion,
+        gsl::span<class HashedString const> querySetID
+    );
 
     // symbol: ??0ExpressionNode@@QEAA@AEBVValue@Json@@W4MolangVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z
-    MCAPI ExpressionNode(class Json::Value const& value, ::MolangVersion, gsl::span<class HashedString const>);
+    MCAPI ExpressionNode(
+        class Json::Value const&            value,
+        ::MolangVersion                     molangVersion,
+        gsl::span<class HashedString const> querySetID
+    );
 
     // symbol:
     // ??0ExpressionNode@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSemVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z
-    MCAPI ExpressionNode(std::string const& expression, class SemVersion const&, gsl::span<class HashedString const>);
+    MCAPI ExpressionNode(
+        std::string const&                  expression,
+        class SemVersion const&             molangVersion,
+        gsl::span<class HashedString const> querySetID
+    );
 
     // symbol:
     // ??0ExpressionNode@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4MolangVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z
     MCAPI ExpressionNode(
         std::string const& expression,
-        ::MolangVersion    version          = MolangVersion::Latest,
-        gsl::span<class HashedString const> = gsl::span<class HashedString const>{{HashedString{"default"}}}
+        ::MolangVersion    molangVersion = MolangVersion::Latest,
+        gsl::span<class HashedString const> querySetID = gsl::span<class HashedString const>{{HashedString{"default"}}}
     );
 
     // symbol: ?clear@ExpressionNode@@QEAAXXZ
@@ -91,7 +103,7 @@ public:
 
     // symbol:
     // ?hasDisallowedQueries@ExpressionNode@@QEBA_NAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-    MCAPI bool hasDisallowedQueries(std::vector<std::string> const&) const;
+    MCAPI bool hasDisallowedQueries(std::vector<std::string> const& allowedQueries) const;
 
     // symbol: ?hasMadd@ExpressionNode@@QEBA_NXZ
     MCAPI bool hasMadd() const;
@@ -109,7 +121,7 @@ public:
     MCAPI ::MolangCompileResult link() const;
 
     // symbol: ?link@ExpressionNode@@QEBA?AW4MolangCompileResult@@W4MolangVersion@@@Z
-    MCAPI ::MolangCompileResult link(::MolangVersion) const;
+    MCAPI ::MolangCompileResult link(::MolangVersion molangVersion) const;
 
     // symbol: ?moveConstantChildToValueIfFloatOrHashType@ExpressionNode@@QEAAXH@Z
     MCAPI void moveConstantChildToValueIfFloatOrHashType(int);
@@ -125,7 +137,8 @@ public:
 
     // symbol:
     // ?parse@ExpressionNode@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4MolangVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z
-    MCAPI bool parse(std::string const& inputExpression, ::MolangVersion, gsl::span<class HashedString const>);
+    MCAPI bool
+    parse(std::string const& inputExpression, ::MolangVersion molangVersion, gsl::span<class HashedString const>);
 
     // symbol: ??1ExpressionNode@@QEAA@XZ
     MCAPI ~ExpressionNode();
@@ -152,7 +165,7 @@ public:
     // ?queryFunctionAccessorFromString@ExpressionNode@@SAPEBV?$function@$$A6AAEBUMolangScriptArg@@AEAVRenderParams@@AEBV?$vector@VExpressionNode@@V?$allocator@VExpressionNode@@@std@@@std@@@Z@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4MolangVersion@@AEAW4MolangQueryFunctionReturnType@@_N@Z
     MCAPI static AccessorFnPointer queryFunctionAccessorFromString(
         std::string const& functionName,
-        ::MolangVersion,
+        ::MolangVersion    molangVersion,
         ::MolangQueryFunctionReturnType&,
         bool missingIsOkay_returnNullIfSo
     );
@@ -182,7 +195,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_buildTree@ExpressionNode@@AEAA_NAEBUExpressionOpBitField@@W4MolangVersion@@@Z
-    MCAPI bool _buildTree(struct ExpressionOpBitField const& usedTokenFlags, ::MolangVersion);
+    MCAPI bool _buildTree(struct ExpressionOpBitField const& usedTokenFlags, ::MolangVersion molangVersion);
 
     // symbol: ?_checkAllOperationsAreValid@ExpressionNode@@AEBA_NXZ
     MCAPI bool _checkAllOperationsAreValid() const;
@@ -191,8 +204,11 @@ public:
     // ?_hasDisallowedQueryPtrs@ExpressionNode@@AEBA_NAEBV?$vector@PEBV?$function@$$A6AAEBUMolangScriptArg@@AEAVRenderParams@@AEBV?$vector@VExpressionNode@@V?$allocator@VExpressionNode@@@std@@@std@@@Z@std@@V?$allocator@PEBV?$function@$$A6AAEBUMolangScriptArg@@AEAVRenderParams@@AEBV?$vector@VExpressionNode@@V?$allocator@VExpressionNode@@@std@@@std@@@Z@std@@@2@@std@@@Z
     MCAPI bool _hasDisallowedQueryPtrs(std::vector<AccessorFnPointer> const&) const;
 
+    // symbol: ?_logEvaluatedToNan@ExpressionNode@@AEBAXXZ
+    MCAPI void _logEvaluatedToNan() const;
+
     // symbol: ?_optimize@ExpressionNode@@AEAA_NW4MolangVersion@@AEAVRenderParams@@H@Z
-    MCAPI bool _optimize(::MolangVersion version, class RenderParams&, int);
+    MCAPI bool _optimize(::MolangVersion version, class RenderParams& outRenderParams, int);
 
     // symbol: ?_processBinaryExpressions@ExpressionNode@@AEAA_NV?$function@$$A6A_NW4ExpressionOp@@@Z@std@@@Z
     MCAPI bool _processBinaryExpressions(std::function<bool(::ExpressionOp)> predicate);
@@ -201,7 +217,8 @@ public:
     MCAPI bool _processTernaryAndConditionalExpressions();
 
     // symbol: ?_readNextToken@ExpressionNode@@AEAA_NAEAPEBDAEBV?$span@$$CBVHashedString@@$0?0@gsl@@W4MolangVersion@@@Z
-    MCAPI bool _readNextToken(char const*& expression, gsl::span<class HashedString const> const&, ::MolangVersion);
+    MCAPI bool
+    _readNextToken(char const*& expression, gsl::span<class HashedString const> const&, ::MolangVersion molangVersion);
 
     // symbol:
     // ?_setExpressionStringWithoutRelink@ExpressionNode@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -213,7 +230,7 @@ public:
         char const*                  expression,
         struct ExpressionOpBitField& usedTokenFlags,
         gsl::span<class HashedString const> const&,
-        ::MolangVersion
+        ::MolangVersion molangVersion
     );
 
     // symbol: ?_validate@ExpressionNode@@AEBA_NW4MolangVersion@@_NH@Z
@@ -222,8 +239,12 @@ public:
     // symbol: ?_validateChildrenAreNumerical@ExpressionNode@@AEBA_NW4MolangVersion@@@Z
     MCAPI bool _validateChildrenAreNumerical(::MolangVersion version) const;
 
+    // symbol: ?executeMolangProgram@ExpressionNode@@AEBAAEBUMolangScriptArg@@AEAVRenderParams@@AEAUMolangEvalParams@@@Z
+    MCAPI struct MolangScriptArg const&
+    executeMolangProgram(class RenderParams& renderParams, struct MolangEvalParams& state) const;
+
     // symbol: ?findClosingOp@ExpressionNode@@AEBA_NAEA_KW4ExpressionOp@@@Z
-    MCAPI bool findClosingOp(uint64&, ::ExpressionOp) const;
+    MCAPI bool findClosingOp(uint64& i, ::ExpressionOp endOp) const;
 
     // symbol: ?optimizeFunctionCallParams@ExpressionNode@@AEAA_NXZ
     MCAPI bool optimizeFunctionCallParams();
@@ -258,7 +279,7 @@ public:
     // symbol:
     // ?_buildProgram@ExpressionNode@@CA?AW4MolangCompileResult@@AEAUMolangProgramBuildState@@PEBV1@W4MolangVersion@@@Z
     MCAPI static ::MolangCompileResult
-    _buildProgram(struct MolangProgramBuildState&, class ExpressionNode const* node, ::MolangVersion);
+    _buildProgram(struct MolangProgramBuildState&, class ExpressionNode const* node, ::MolangVersion molangVersion);
 
     // symbol:
     // ?_getOrCreateReferencedMemberVariableScriptArg@ExpressionNode@@CAPEAUMolangScriptArg@@AEAUMolangEvalParams@@AEBV1@@Z
@@ -268,7 +289,7 @@ public:
     // symbol:
     // ?_getQueryFunctionAccessor@ExpressionNode@@CA_NAEAUMolangScriptArg@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4MolangVersion@@W4MolangQueryFunctionReturnType@@AEBVHashedString@@@Z
     MCAPI static bool
-    _getQueryFunctionAccessor(struct MolangScriptArg& arg, std::string const& functionName, ::MolangVersion, ::MolangQueryFunctionReturnType, class HashedString const&);
+    _getQueryFunctionAccessor(struct MolangScriptArg& arg, std::string const& functionName, ::MolangVersion molangVersion, ::MolangQueryFunctionReturnType, class HashedString const&);
 
     // symbol:
     // ?_getScriptArgFromMemberAccessedVariable@ExpressionNode@@CAPEBUMolangScriptArg@@AEAUMolangEvalParams@@AEBV1@@Z

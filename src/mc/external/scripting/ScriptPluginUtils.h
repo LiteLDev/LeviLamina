@@ -32,6 +32,10 @@ MCAPI extern std::string const JAVA_SCRIPT_RUNTIME_NAME;
 // ?JavaScriptModuleNameNormalizer@ScriptPluginUtils@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$basic_string_view@DU?$char_traits@D@std@@@3@AEBV23@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
 MCAPI std::string
       JavaScriptModuleNameNormalizer(std::string_view const&, std::string const&, std::vector<std::string> const&);
+
+// symbol:
+// ?ValidatePlugin@ScriptPluginUtils@@YA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBVScriptPlugin@@@Z
+MCAPI std::vector<std::string> ValidatePlugin(class ScriptPlugin const&);
 // NOLINTEND
 
 }; // namespace ScriptPluginUtils

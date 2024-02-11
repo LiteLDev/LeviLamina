@@ -34,24 +34,15 @@ public:
     // vIndex: 4, symbol: ?isItemAllowedToAdd@HorseEquipContainerValidation@@UEBA_NAEBVItemStack@@@Z
     virtual bool isItemAllowedToAdd(class ItemStack const& item) const;
 
-    // vIndex: 5, symbol: __unk_vfn_5
-    virtual void __unk_vfn_5();
-
     // vIndex: 6, symbol: ?canItemMoveToContainer@ContainerValidationBase@@UEBA_NAEBVItemStackBase@@@Z
     virtual bool canItemMoveToContainer(class ItemStackBase const& item) const;
 
     // vIndex: 7, symbol: ?canDestroy@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@@Z
     virtual bool canDestroy(class ContainerScreenContext const&) const;
 
-    // vIndex: 8, symbol: __unk_vfn_8
-    virtual void __unk_vfn_8();
-
     // vIndex: 9, symbol:
     // ?getContainerSize@HorseEquipContainerValidation@@UEBAHAEBVContainerScreenContext@@AEBVContainer@@@Z
     virtual int getContainerSize(class ContainerScreenContext const&, class Container const& container) const;
-
-    // symbol: ??0HorseEquipContainerValidation@@QEAA@AEBVContainerScreenContext@@@Z
-    MCAPI explicit HorseEquipContainerValidation(class ContainerScreenContext const&);
 
     // NOLINTEND
 };

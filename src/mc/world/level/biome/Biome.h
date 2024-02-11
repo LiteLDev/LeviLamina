@@ -69,13 +69,6 @@ public:
     // vIndex: 0, symbol: __gen_??1Biome@@UEAA@XZ
     virtual ~Biome() = default;
 
-    // symbol:
-    // ?addTag@Biome@@QEAAAEAV1@VHashedString@@AEAV?$TagRegistry@U?$IDType@UBiomeTagIDType@@@@U?$IDType@UBiomeTagSetIDType@@@@@@@Z
-    MCAPI class Biome& addTag(
-        class HashedString                                                                                tag,
-        class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>>& tagRegistry
-    );
-
     // symbol: ?cacheClientComponentData@Biome@@QEAAXXZ
     MCAPI void cacheClientComponentData();
 
@@ -87,6 +80,9 @@ public:
 
     // symbol: ?getBirchFoliageColor@Biome@@QEBAHAEBVBlockPos@@@Z
     MCAPI int getBirchFoliageColor(class BlockPos const& pos) const;
+
+    // symbol: ?getDefaultBiomeTemperature@Biome@@QEBAMXZ
+    MCAPI float getDefaultBiomeTemperature() const;
 
     // symbol: ?getDownfall@Biome@@QEBAMXZ
     MCAPI float getDownfall() const;

@@ -10,9 +10,9 @@
 namespace AutoStepFilterSystemImpl {
 // NOLINTBEGIN
 // symbol:
-// ?doAutoStepFilterSystem@AutoStepFilterSystemImpl@@YAXAEAVStrictEntityContext@@AEBUMoveRequestComponent@@AEBUMaxAutoStepComponent@@V?$Optional@$$CBV?$FlagComponent@UOnGroundFlag@@@@@@V?$Optional@$$CBUAbilitiesComponent@@@@V?$EntityModifier@V?$FlagComponent@UAutoStepRequestFlag@@@@@@@Z
+// ?doAutoStepFilterSystem@AutoStepFilterSystemImpl@@YAXAEBVStrictEntityContext@@AEBUMoveRequestComponent@@AEBUMaxAutoStepComponent@@V?$Optional@$$CBV?$FlagComponent@UOnGroundFlag@@@@@@V?$Optional@$$CBUMovementAbilitiesComponent@@@@V?$EntityModifier@V?$FlagComponent@UAutoStepRequestFlag@@@@@@@Z
 MCAPI void
-doAutoStepFilterSystem(class StrictEntityContext&, struct MoveRequestComponent const&, struct MaxAutoStepComponent const&, class Optional<class FlagComponent<struct OnGroundFlag> const>, class Optional<struct AbilitiesComponent const>, class EntityModifier<class FlagComponent<struct AutoStepRequestFlag>>);
+doAutoStepFilterSystem(class StrictEntityContext const&, struct MoveRequestComponent const&, struct MaxAutoStepComponent const&, class Optional<class FlagComponent<struct OnGroundFlag> const>, class Optional<struct MovementAbilitiesComponent const>, class EntityModifier<class FlagComponent<struct AutoStepRequestFlag>>);
 // NOLINTEND
 
 }; // namespace AutoStepFilterSystemImpl

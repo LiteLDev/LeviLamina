@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class Mob;
 class WeakEntityRef;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptComponent; }
@@ -23,6 +22,7 @@ namespace ScriptModuleMinecraft {
 class ScriptActorComponent : public ::ScriptModuleMinecraft::ScriptComponent {
 public:
     // prevent constructor by default
+    ScriptActorComponent& operator=(ScriptActorComponent const&);
     ScriptActorComponent();
 
 public:
@@ -49,10 +49,6 @@ public:
     MCAPI std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>
           getEntity() const;
 
-    // symbol: ??4ScriptActorComponent@ScriptModuleMinecraft@@QEAAAEAV01@AEBV01@@Z
-    MCAPI class ScriptModuleMinecraft::ScriptActorComponent&
-    operator=(class ScriptModuleMinecraft::ScriptActorComponent const&);
-
     // symbol:
     // ?bind@ScriptActorComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptActorComponent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptActorComponent> bind();
@@ -69,11 +65,16 @@ public:
     // ?_functionError@ScriptActorComponent@ScriptModuleMinecraft@@IEBA?AUError@Scripting@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     MCAPI struct Scripting::Error _functionError(std::string_view) const;
 
+    // symbol:
+    // ?_getPropertyError@ScriptActorComponent@ScriptModuleMinecraft@@IEBA?AUError@Scripting@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+    MCAPI struct Scripting::Error _getPropertyError(std::string_view) const;
+
+    // symbol:
+    // ?_setPropertyError@ScriptActorComponent@ScriptModuleMinecraft@@IEBA?AUError@Scripting@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+    MCAPI struct Scripting::Error _setPropertyError(std::string_view) const;
+
     // symbol: ?_tryGetOwner@ScriptActorComponent@ScriptModuleMinecraft@@IEBAPEAVActor@@XZ
     MCAPI class Actor* _tryGetOwner() const;
-
-    // symbol: ?_tryGetOwnerAsMob@ScriptActorComponent@ScriptModuleMinecraft@@IEBAPEAVMob@@XZ
-    MCAPI class Mob* _tryGetOwnerAsMob() const;
 
     // NOLINTEND
 };

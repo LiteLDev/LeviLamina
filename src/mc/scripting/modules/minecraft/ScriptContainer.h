@@ -100,6 +100,9 @@ public:
         std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>>
     addItem(class ScriptModuleMinecraft::ScriptItemStack const&) const;
 
+    // symbol: ?isValid@ScriptContainer@ScriptModuleMinecraft@@QEBA_NXZ
+    MCAPI bool isValid() const;
+
     // symbol:
     // ?transferItem@ScriptContainer@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@HAEAVScriptContainerWrapper@2@@Z
     MCAPI class Scripting::Result<

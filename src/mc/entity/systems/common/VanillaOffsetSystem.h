@@ -38,20 +38,20 @@ public:
     virtual void __unk_vfn_4();
 
     // vIndex: 5, symbol:
-    // ?tick@VanillaOffsetSystem@@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@U?$Read@UOffsetsComponent@@USynchedActorDataComponent@@V?$FlagComponent@UPlayerIsSleepingFlag@@@@@@U?$Write@UVanillaOffsetComponent@@@@U?$AddRemove@UIsHorizontalPoseFlagComponent@@@@U?$GlobalRead@UBaseGameVersionComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
+    // ?tick@VanillaOffsetSystem@@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@U?$Read@UOffsetsComponent@@UActorDataFlagComponent@@V?$FlagComponent@UPlayerIsSleepingFlag@@@@@@U?$Write@UVanillaOffsetComponent@@@@U?$AddRemove@UIsHorizontalPoseFlagComponent@@@@U?$GlobalRead@UBaseGameVersionComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
     virtual void tick(class StrictExecutionContext<
                       struct Filter<
                           class FlagComponent<struct PlayerComponentFlag>,
                           class FlagComponent<struct ActorMovementTickNeededFlag>>,
                       struct Read<
                           struct OffsetsComponent,
-                          struct SynchedActorDataComponent,
+                          struct ActorDataFlagComponent,
                           class FlagComponent<struct PlayerIsSleepingFlag>>,
                       struct Write<struct VanillaOffsetComponent>,
                       struct AddRemove<struct IsHorizontalPoseFlagComponent>,
                       struct GlobalRead<struct BaseGameVersionComponent>,
                       struct GlobalWrite<>,
-                      struct EntityFactoryT<>>& context);
+                      struct EntityFactoryT<>>&);
 
     // symbol: ?createSystem@VanillaOffsetSystem@@SA?AUTickingSystemWithInfo@@_N@Z
     MCAPI static struct TickingSystemWithInfo createSystem(bool);

@@ -74,7 +74,7 @@ MCAPI class StructureEditorData
 GetStructureEditorData(class StructureTemplate const& structure, ::Rotation const& rotation);
 
 // symbol: ?GetStructureRelativePos@StructureUtils@gametest@@YA?AVBlockPos@@AEBVStructureBlockActor@@AEBV3@@Z
-MCAPI class BlockPos GetStructureRelativePos(class StructureBlockActor const&, class BlockPos const&);
+MCAPI class BlockPos GetStructureRelativePos(class StructureBlockActor const&, class BlockPos const& pos);
 
 // symbol:
 // ?GetStructureTemplate@StructureUtils@gametest@@YAPEAVStructureTemplate@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVLevel@@@Z

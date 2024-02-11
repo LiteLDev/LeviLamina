@@ -25,8 +25,11 @@ public:
 
     // symbol:
     // ?registerNodePair@BehaviorFactory@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6A?AV?$unique_ptr@VBehaviorDefinition@@U?$default_delete@VBehaviorDefinition@@@std@@@std@@XZ@3@V?$function@$$A6A?AV?$unique_ptr@VBehaviorNode@@U?$default_delete@VBehaviorNode@@@std@@@std@@XZ@3@@Z
-    MCAPI void
-    registerNodePair(std::string const&, std::function<std::unique_ptr<class BehaviorDefinition>(void)>, std::function<std::unique_ptr<class BehaviorNode>(void)>);
+    MCAPI void registerNodePair(
+        std::string const&                                         id,
+        std::function<std::unique_ptr<class BehaviorDefinition>()> definitionCreator,
+        std::function<std::unique_ptr<class BehaviorNode>()>       nodeCreator
+    );
 
     // NOLINTEND
 

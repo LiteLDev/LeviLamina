@@ -6,6 +6,11 @@
 // auto generated inclusion list
 #include "mc/world/level/dimension/DimensionDocument.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 class DimensionDefinitionGroup {
 public:
     // DimensionDefinitionGroup inner types declare
@@ -26,8 +31,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0DimensionDefinitionGroup@@QEAA@QEAVResourcePackManager@@_N@Z
-    MCAPI DimensionDefinitionGroup(class ResourcePackManager* const rpm, bool);
+    // symbol: ??0DimensionDefinitionGroup@@QEAA@AEAUReflectionCtx@cereal@@QEAVResourcePackManager@@_N@Z
+    MCAPI DimensionDefinitionGroup(struct cereal::ReflectionCtx&, class ResourcePackManager* const, bool);
 
     // symbol:
     // ?getDimensionDefinition@DimensionDefinitionGroup@@QEBA?AV?$optional@UDimensionDefinition@DimensionDefinitionGroup@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
@@ -38,8 +43,8 @@ public:
     MCAPI bool isEmpty() const;
 
     // symbol:
-    // ?tryAddDimensionDefinitionByString@DimensionDefinitionGroup@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI bool tryAddDimensionDefinitionByString(std::string const&);
+    // ?tryAddDimensionDefinitionByString@DimensionDefinitionGroup@@QEAA_NAEAUReflectionCtx@cereal@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI bool tryAddDimensionDefinitionByString(struct cereal::ReflectionCtx&, std::string const&);
 
     // symbol: ??1DimensionDefinitionGroup@@QEAA@XZ
     MCAPI ~DimensionDefinitionGroup();

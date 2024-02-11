@@ -18,6 +18,9 @@ MCAPI float getScaledKnockbackForce(class Actor const& actor, float);
 // symbol: ?isKnockbackResistant@KnockbackRules@@YA_NAEBVActor@@@Z
 MCAPI bool isKnockbackResistant(class Actor const& actor);
 
+// symbol: ?shouldApplyKnockback@KnockbackRules@@YA_NAEBVMob@@@Z
+MCAPI bool shouldApplyKnockback(class Mob const& mob);
+
 // symbol: ?useLegacyKnockback@KnockbackRules@@YA_NAEBVLevel@@@Z
 MCAPI bool useLegacyKnockback(class Level const& level);
 // NOLINTEND

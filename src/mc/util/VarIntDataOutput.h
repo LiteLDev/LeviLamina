@@ -41,10 +41,10 @@ public:
     virtual void writeInt(int v);
 
     // vIndex: 8, symbol: ?writeLongLong@VarIntDataOutput@@UEAAX_J@Z
-    virtual void writeLongLong(int64);
+    virtual void writeLongLong(int64 v);
 
     // vIndex: 9, symbol: ?writeBytes@VarIntDataOutput@@UEAAXPEBX_K@Z
-    virtual void writeBytes(void const*, uint64);
+    virtual void writeBytes(void const* data, uint64 bytes);
 
     // NOLINTEND
 };

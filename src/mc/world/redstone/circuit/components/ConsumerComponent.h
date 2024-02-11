@@ -40,12 +40,6 @@ public:
     // vIndex: 14, symbol: ?evaluate@ConsumerComponent@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
     virtual bool evaluate(class CircuitSystem& system, class BlockPos const& pos);
 
-    // vIndex: 17, symbol: __unk_vfn_17
-    virtual void __unk_vfn_17();
-
-    // vIndex: 20, symbol: __unk_vfn_20
-    virtual void __unk_vfn_20();
-
     // vIndex: 21, symbol: ?isSecondaryPowered@ConsumerComponent@@UEBA_NXZ
     virtual bool isSecondaryPowered() const;
 

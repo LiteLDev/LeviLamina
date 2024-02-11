@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/ClassBindingBuilder.h"
+#include "mc/external/scripting/ClassBindingBuilderReadOnly.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -17,13 +17,15 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ?bind@ScriptWeatherChangedAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptWeatherChangedAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent>
+    // ?bind@ScriptWeatherChangedAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilderReadOnly@UScriptWeatherChangedAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
+    MCAPI static class Scripting::ClassBindingBuilderReadOnly<
+        struct ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent>
     bind();
 
     // symbol:
-    // ?bindV010@ScriptWeatherChangedAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptWeatherChangedAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent>
+    // ?bindV010@ScriptWeatherChangedAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilderReadOnly@UScriptWeatherChangedAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
+    MCAPI static class Scripting::ClassBindingBuilderReadOnly<
+        struct ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent>
     bindV010();
 
     // NOLINTEND

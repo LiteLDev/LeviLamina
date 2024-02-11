@@ -54,6 +54,9 @@ MCAPI extern bool const IsCreatorEditorBuild;
 // symbol: ?IsDevBuild@SharedConstants@@3_NB
 MCAPI extern bool const IsDevBuild;
 
+// symbol: ?IsPS4Platform@SharedConstants@@3_NB
+MCAPI extern bool const IsPS4Platform;
+
 // symbol: ?IsPlaytest@SharedConstants@@3_NB
 MCAPI extern bool const IsPlaytest;
 

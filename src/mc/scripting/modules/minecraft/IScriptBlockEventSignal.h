@@ -5,7 +5,7 @@
 namespace ScriptModuleMinecraft {
 
 template <typename T0, int T1>
-struct IScriptBlockEventSignal {
+class IScriptBlockEventSignal {
 public:
     // prevent constructor by default
     IScriptBlockEventSignal& operator=(IScriptBlockEventSignal const&);

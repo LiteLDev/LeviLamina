@@ -4,16 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/ClassBindingBuilder.h"
-#include "mc/scripting/modules/minecraft/ScriptItemChargeAfterEvent.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace ScriptModuleMinecraft { class ScriptItemChargeAfterEvent; }
-// clang-format on
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptItemStartUseAfterEvent : public ::ScriptModuleMinecraft::ScriptItemChargeAfterEvent {
+struct ScriptItemStartUseAfterEvent {
 public:
     // prevent constructor by default
     ScriptItemStartUseAfterEvent& operator=(ScriptItemStartUseAfterEvent const&);
@@ -22,9 +16,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptItemStartUseAfterEvent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptItemStartUseAfterEvent();
-
     // symbol:
     // ?bind@ScriptItemStartUseAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptItemStartUseAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemStartUseAfterEvent>

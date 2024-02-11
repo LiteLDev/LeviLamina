@@ -15,21 +15,16 @@ public:
     // prevent constructor by default
     RegistryManager& operator=(RegistryManager const&);
     RegistryManager(RegistryManager const&);
+    RegistryManager();
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0RegistryManager@Scripting@@QEAA@XZ
-    MCAPI RegistryManager();
-
     // symbol:
-    // ?createLifetimeRegistry@RegistryManager@Scripting@@QEAA?AV?$shared_ptr@VLifetimeRegistry@Scripting@@@std@@XZ
-    MCAPI std::shared_ptr<class Scripting::LifetimeRegistry> createLifetimeRegistry();
+    // ?createLifetimeRegistry@RegistryManager@Scripting@@QEAA?AV?$unique_ptr@VLifetimeRegistry@Scripting@@U?$default_delete@VLifetimeRegistry@Scripting@@@std@@@std@@XZ
+    MCAPI std::unique_ptr<class Scripting::LifetimeRegistry> createLifetimeRegistry();
 
     // symbol: ?getRegistryByContextId@RegistryManager@Scripting@@QEAAPEAVLifetimeRegistry@2@UContextId@2@@Z
     MCAPI class Scripting::LifetimeRegistry* getRegistryByContextId(struct Scripting::ContextId);
-
-    // symbol: ??1RegistryManager@Scripting@@QEAA@XZ
-    MCAPI ~RegistryManager();
 
     // NOLINTEND
 

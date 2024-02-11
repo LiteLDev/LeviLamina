@@ -47,13 +47,6 @@ public:
         DebugSpatialPacketModifiers& operator=(DebugSpatialPacketModifiers const&);
         DebugSpatialPacketModifiers(DebugSpatialPacketModifiers const&);
         DebugSpatialPacketModifiers();
-
-    public:
-        // NOLINTBEGIN
-        // symbol: ?getSavingsPercentage@DebugSpatialPacketModifiers@SpatialActorNetworkData@@QEBAMXZ
-        MCAPI float getSavingsPercentage() const;
-
-        // NOLINTEND
     };
 
 public:
@@ -99,9 +92,6 @@ public:
 
     // symbol: ?teleportEntity@SpatialActorNetworkData@@QEAAXAEBVVec3@@AEBVVec2@@M@Z
     MCAPI void teleportEntity(class Vec3 const& pos, class Vec2 const& rot, float yHeadRot);
-
-    // symbol: ?getDebugSpatialPacketModifiers@SpatialActorNetworkData@@SAAEAUDebugSpatialPacketModifiers@1@XZ
-    MCAPI static struct SpatialActorNetworkData::DebugSpatialPacketModifiers& getDebugSpatialPacketModifiers();
 
     // NOLINTEND
 

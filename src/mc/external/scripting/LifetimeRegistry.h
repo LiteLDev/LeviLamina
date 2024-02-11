@@ -4,6 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Scripting { class LifetimeRegistryReference; }
+namespace Scripting { struct ContextId; }
 namespace Scripting { struct ObjectHandle; }
 namespace Scripting::internal { struct FetchAsAnyComponent; }
 // clang-format on
@@ -19,6 +21,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0LifetimeRegistry@Scripting@@QEAA@UContextId@1@AEAVLifetimeRegistryReference@1@@Z
+    MCAPI LifetimeRegistry(struct Scripting::ContextId, class Scripting::LifetimeRegistryReference&);
+
     // symbol: ?addReference@LifetimeRegistry@Scripting@@QEAAXUObjectHandle@2@@Z
     MCAPI void addReference(struct Scripting::ObjectHandle handle);
 

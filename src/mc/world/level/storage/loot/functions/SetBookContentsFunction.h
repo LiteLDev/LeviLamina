@@ -23,7 +23,7 @@ public:
     virtual ~SetBookContentsFunction() = default;
 
     // vIndex: 1, symbol: ?apply@SetBookContentsFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
-    virtual void apply(class ItemStack& itemStack, class Random&, class LootTableContext&);
+    virtual void apply(class ItemStack& item, class Random&, class LootTableContext&);
 
     // vIndex: 3, symbol: ?apply@SetBookContentsFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
     virtual void apply(class ItemInstance& itemInstance, class Random&, class LootTableContext&);

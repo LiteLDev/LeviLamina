@@ -33,7 +33,7 @@ public:
     // vIndex: 2, symbol:
     // ?handleEvent@?$Impl@U?$type_list@U?$MutableServerNetworkGameplayEvent@W4CoordinatorResult@@@@@entt@@@?$EventHandlerDispatcher@VServerNetworkEventHandler@@@Details@@MEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAU?$MutableServerNetworkGameplayEvent@W4CoordinatorResult@@@@@Z
     virtual struct GameplayHandlerResult<::CoordinatorResult>
-    handleEvent(struct MutableServerNetworkGameplayEvent<::CoordinatorResult>&);
+    handleEvent(struct MutableServerNetworkGameplayEvent<::CoordinatorResult>& event);
 
     // NOLINTEND
 

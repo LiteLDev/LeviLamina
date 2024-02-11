@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/cereal/ResultCode.h"
 #include "mc/deps/cereal/SchemaReader.h"
 #include "mc/deps/cereal/SchemaReaderState.h"
 #include "mc/deps/cereal/SerializerContext.h"
 #include "mc/deps/cereal/internal/BasicSchema.h"
 #include "mc/deps/cereal/internal/ReflectedType.h"
-#include "mc/deps/cereal/internal/ResultCode.h"
 #include "mc/deps/core/common/bedrock/Result.h"
 
 // auto generated forward declare list
@@ -17,24 +17,29 @@ namespace cereal { class BasicLoader; }
 namespace cereal { class BasicSaver; }
 namespace cereal { class Constraint; }
 namespace cereal { class NumericConstraint; }
-namespace cereal { class SchemaFactory; }
 namespace cereal { class SerializerContext; }
 namespace cereal { class SerializerEnumMapping; }
 namespace cereal { class StringConstraint; }
 namespace cereal { struct ReflectionCtx; }
-namespace cereal { struct Schema; }
 namespace cereal { struct SchemaDescription; }
 namespace cereal { struct SchemaReader; }
 namespace cereal { struct SchemaWriter; }
 namespace cereal { struct SerializerTraits; }
+namespace cereal::ext { struct JSONSchema; }
+namespace cereal::ext::internal { struct JSONSchemaBody; }
+namespace cereal::ext::internal { struct JSONSchemaDef; }
+namespace cereal::ext::internal { struct JSONSchemaInfo; }
+namespace cereal::ext::internal { struct JSONSchemaValidation; }
 namespace cereal::internal { class BasicCompositeSchema; }
 namespace cereal::internal { class BasicSchema; }
+namespace cereal::internal { class SchemaFactory; }
 namespace cereal::internal { class UndefinedSchema; }
 namespace cereal::internal { struct ConstraintDescription; }
 namespace cereal::internal { struct ExtendedSchemaInfo; }
 namespace cereal::internal { struct ReflectionContext; }
-namespace cereal::internal { struct SchemaId; }
+namespace cereal::internal { struct Schema; }
 namespace cereal::internal { struct SchemaInfo; }
+namespace cereal::internal { struct SchemaName; }
 // clang-format on
 
 namespace cereal {
@@ -44,6 +49,21 @@ MCAPI uint enttHash(std::string const&);
 
 // symbol: ?fillOptional@cereal@@YA?AVmeta_any@entt@@AEAV23@@Z
 MCAPI entt::meta_any fillOptional(entt::meta_any&);
+
+// symbol: ?getEnumMapping@cereal@@YAPEBVSerializerEnumMapping@1@AEBVmeta_type@entt@@@Z
+MCAPI class cereal::SerializerEnumMapping const* getEnumMapping(entt::meta_type const&);
+
+// symbol: ?getEnumMapping@cereal@@YAPEBVSerializerEnumMapping@1@AEBUReflectionCtx@1@AEBVmeta_type@entt@@I@Z
+MCAPI class cereal::SerializerEnumMapping const*
+getEnumMapping(struct cereal::ReflectionCtx const&, entt::meta_type const&, uint);
+
+// symbol:
+// ?getSchemaDescription@cereal@@YA?AUSchemaDescription@1@AEBUReflectionCtx@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+MCAPI struct cereal::SchemaDescription getSchemaDescription(struct cereal::ReflectionCtx const&, std::string const&);
+
+// symbol:
+// ?getSchemaDescriptions@cereal@@YA?AV?$vector@USchemaDescription@cereal@@V?$allocator@USchemaDescription@cereal@@@std@@@std@@AEBUReflectionCtx@1@@Z
+MCAPI std::vector<struct cereal::SchemaDescription> getSchemaDescriptions(struct cereal::ReflectionCtx const&);
 
 // symbol:
 // ?getSchemaName@cereal@@YAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVmeta_type@entt@@@Z

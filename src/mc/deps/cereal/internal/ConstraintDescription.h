@@ -7,7 +7,6 @@ namespace cereal::internal {
 struct ConstraintDescription {
 public:
     // prevent constructor by default
-    ConstraintDescription& operator=(ConstraintDescription const&);
     ConstraintDescription();
 
 public:
@@ -26,6 +25,10 @@ public:
 
     // symbol: ??4ConstraintDescription@internal@cereal@@QEAAAEAU012@$$QEAU012@@Z
     MCAPI struct cereal::internal::ConstraintDescription& operator=(struct cereal::internal::ConstraintDescription&&);
+
+    // symbol: ??4ConstraintDescription@internal@cereal@@QEAAAEAU012@AEBU012@@Z
+    MCAPI struct cereal::internal::ConstraintDescription&
+    operator=(struct cereal::internal::ConstraintDescription const&);
 
     // symbol: ??1ConstraintDescription@internal@cereal@@QEAA@XZ
     MCAPI ~ConstraintDescription();

@@ -4,9 +4,15 @@
 #include "mc/deps/core/string/HashedString.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 #include "mc/world/level/storage/GameRule.h"
 
-class GameRules {
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
+// clang-format on
+
+class GameRules : public ::Bedrock::EnableNonOwnerReferences {
 public:
     enum class GameRulesIndex : int {
         InvalidGameRule         = -1,
@@ -56,6 +62,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1GameRules@@UEAA@XZ
+    virtual ~GameRules();
+
     // symbol: ??0GameRules@@QEAA@XZ
     MCAPI GameRules();
 
@@ -129,9 +138,6 @@ public:
 
     // symbol: ?setTagData@GameRules@@QEBAXAEAVCompoundTag@@@Z
     MCAPI void setTagData(class CompoundTag& tag) const;
-
-    // symbol: ??1GameRules@@QEAA@XZ
-    MCAPI ~GameRules();
 
     // symbol: ?DEFAULT_PLAYER_SPAWN_RADIUS@GameRules@@2IB
     MCAPI static uint const DEFAULT_PLAYER_SPAWN_RADIUS;

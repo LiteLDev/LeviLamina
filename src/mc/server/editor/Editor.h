@@ -15,9 +15,6 @@ namespace Editor {
 // symbol: ?EDITOR_PACK_CAPABILITY@Editor@@3V?$basic_string_view@DU?$char_traits@D@std@@@std@@B
 MCAPI extern std::string_view const EDITOR_PACK_CAPABILITY;
 
-// symbol: ?getEditorWorldType@Editor@@YA?AW4WorldType@1@V?$optional@_N@std@@0@Z
-MCAPI ::Editor::WorldType getEditorWorldType(std::optional<bool>, std::optional<bool>);
-
 // symbol: ?isEditorTestWorld@Editor@@YA_NW4WorldType@1@@Z
 MCAPI bool isEditorTestWorld(::Editor::WorldType);
 

@@ -51,7 +51,7 @@ public:
     virtual void clearUsedSizeOverride();
 
     // vIndex: 8, symbol: ?notifyChangeInFileSize@FileStorageArea@Core@@UEAAX_J0@Z
-    virtual void notifyChangeInFileSize(int64, int64);
+    virtual void notifyChangeInFileSize(int64 changeInSize, int64 changeInAllocatedSize);
 
     // vIndex: 9, symbol: __unk_vfn_9
     virtual void __unk_vfn_9();
@@ -75,10 +75,10 @@ public:
     virtual class Core::Result getExtendSizeThreshold(uint64&) const;
 
     // vIndex: 16, symbol: ?attemptExtendSize@StorageArea_windows@Core@@UEAAXAEB_JV?$function@$$A6AXXZ@std@@@Z
-    virtual void attemptExtendSize(int64 const&, std::function<void(void)>);
+    virtual void attemptExtendSize(int64 const&, std::function<void()>);
 
     // vIndex: 17, symbol: ?preemptiveExtendSize@StorageArea_windows@Core@@UEAAX_KV?$function@$$A6AXXZ@std@@1@Z
-    virtual void preemptiveExtendSize(uint64, std::function<void(void)>, std::function<void(void)>);
+    virtual void preemptiveExtendSize(uint64, std::function<void()>, std::function<void()>);
 
     // vIndex: 18, symbol: ?getAvailableUserStorageSize@StorageArea_windows@Core@@UEAA_KXZ
     virtual uint64 getAvailableUserStorageSize();

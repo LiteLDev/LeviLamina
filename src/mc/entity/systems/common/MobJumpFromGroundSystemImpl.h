@@ -37,12 +37,12 @@ MCAPI void
 doLavaSlimeJumpFromGround(class StrictEntityContext const&, struct AABBShapeComponent const&, struct SynchedActorDataComponent const&, struct StateVectorComponent&, struct MobEffectsComponent const&, class EntityModifier<struct TriggerJumpRequestComponent>&, class IConstBlockSource const&);
 
 // symbol:
-// ?doLocalPlayerJumpFromGround@MobJumpFromGroundSystemImpl@@YAXAEBVStrictEntityContext@@AEBV?$Optional@$$CBVJumpControlComponent@@@@AEBUAABBShapeComponent@@AEBUSynchedActorDataComponent@@AEBUActorRotationComponent@@AEBUMobEffectsComponent@@AEAUMobJumpComponent@@AEAUStateVectorComponent@@AEAUPlayerActionComponent@@AEAV?$EntityModifier@UTriggerJumpRequestComponent@@@@AEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UCanStandOnSnowFlag@@@@V?$FlagComponent@UHasLightweightFamilyFlag@@@@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UMobFlag@@@@V?$FlagComponent@UParrotFlag@@@@UVehicleComponent@@V?$FlagComponent@UCamelFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@ULocalPlayerJumpRequestFlag@@@@V?$FlagComponent@ULavaSlimeJumpRequestFlag@@@@V?$FlagComponent@USquidJumpRequestFlag@@@@V?$FlagComponent@UOtherJumpRequestFlag@@@@@@U?$Read@UAbilitiesComponent@@UActorTypeComponent@@UFallDistanceComponent@@UActorGameTypeComponent@@UVehicleComponent@@UMobBodyRotationComponent@@UPassengerComponent@@URenderRotationComponent@@UStandAnimationComponent@@UStateVectorComponent@@UOffsetsComponent@@UVanillaOffsetComponent@@UPassengerRenderingRidingOffsetComponent@@UAABBShapeComponent@@UActorRotationComponent@@UMobEffectsComponent@@USynchedActorDataComponent@@VJumpControlComponent@@UDimensionTypeComponent@@@@U?$Write@UMobJumpComponent@@UStateVectorComponent@@UPlayerActionComponent@@@@U?$AddRemove@UTriggerJumpRequestComponent@@@@U?$GlobalRead@UExternalDataComponent@@ULocalConstBlockSourceFactoryComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@AEBVIConstBlockSource@@@Z
+// ?doLocalPlayerJumpFromGround@MobJumpFromGroundSystemImpl@@YAXAEBVStrictEntityContext@@AEBV?$Optional@$$CBVJumpControlComponent@@@@AEBUAABBShapeComponent@@AEBUActorDataFlagComponent@@AEBUActorRotationComponent@@AEBUMobEffectsComponent@@AEAUMobJumpComponent@@AEAUStateVectorComponent@@AEAUPlayerActionComponent@@AEAV?$EntityModifier@UTriggerJumpRequestComponent@@@@AEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UCanStandOnSnowFlag@@@@V?$FlagComponent@UHasLightweightFamilyFlag@@@@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UMobFlag@@@@V?$FlagComponent@UParrotFlag@@@@UVehicleComponent@@V?$FlagComponent@UCamelFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@ULocalPlayerJumpRequestFlag@@@@V?$FlagComponent@ULavaSlimeJumpRequestFlag@@@@V?$FlagComponent@USquidJumpRequestFlag@@@@V?$FlagComponent@UOtherJumpRequestFlag@@@@@@U?$Read@UMovementAbilitiesComponent@@UActorTypeComponent@@UFallDistanceComponent@@UActorGameTypeComponent@@UVehicleComponent@@UMobBodyRotationComponent@@UPassengerComponent@@URenderRotationComponent@@UStandAnimationComponent@@UOffsetsComponent@@UVanillaOffsetComponent@@UPassengerRenderingRidingOffsetComponent@@UAABBShapeComponent@@UActorRotationComponent@@UMobEffectsComponent@@UActorDataFlagComponent@@USynchedActorDataComponent@@VJumpControlComponent@@UDimensionTypeComponent@@@@U?$Write@UMobJumpComponent@@UStateVectorComponent@@UPlayerActionComponent@@@@U?$AddRemove@UTriggerJumpRequestComponent@@@@U?$GlobalRead@UExternalDataComponent@@ULocalConstBlockSourceFactoryComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@AEBVIConstBlockSource@@@Z
 MCAPI void doLocalPlayerJumpFromGround(
     class StrictEntityContext const& entity,
     class Optional<class JumpControlComponent const> const&,
     struct AABBShapeComponent const&,
-    struct SynchedActorDataComponent const&,
+    struct ActorDataFlagComponent const&,
     struct ActorRotationComponent const&,
     struct MobEffectsComponent const&,
     struct MobJumpComponent&,
@@ -64,7 +64,7 @@ MCAPI void doLocalPlayerJumpFromGround(
             class FlagComponent<struct SquidJumpRequestFlag>,
             class FlagComponent<struct OtherJumpRequestFlag>>,
         struct Read<
-            struct AbilitiesComponent,
+            struct MovementAbilitiesComponent,
             struct ActorTypeComponent,
             struct FallDistanceComponent,
             struct ActorGameTypeComponent,
@@ -73,13 +73,13 @@ MCAPI void doLocalPlayerJumpFromGround(
             struct PassengerComponent,
             struct RenderRotationComponent,
             struct StandAnimationComponent,
-            struct StateVectorComponent,
             struct OffsetsComponent,
             struct VanillaOffsetComponent,
             struct PassengerRenderingRidingOffsetComponent,
             struct AABBShapeComponent,
             struct ActorRotationComponent,
             struct MobEffectsComponent,
+            struct ActorDataFlagComponent,
             struct SynchedActorDataComponent,
             class JumpControlComponent,
             struct DimensionTypeComponent>,
@@ -92,12 +92,12 @@ MCAPI void doLocalPlayerJumpFromGround(
 );
 
 // symbol:
-// ?doOtherMobJumpFromGround@MobJumpFromGroundSystemImpl@@YAXAEBVStrictEntityContext@@AEBV?$Optional@$$CBVJumpControlComponent@@@@AEBUAABBShapeComponent@@AEBUSynchedActorDataComponent@@AEBUActorRotationComponent@@AEBUMobEffectsComponent@@AEAUMobJumpComponent@@AEAUStateVectorComponent@@AEAV?$EntityModifier@UTriggerJumpRequestComponent@@@@_NAEBVIConstBlockSource@@@Z
+// ?doOtherMobJumpFromGround@MobJumpFromGroundSystemImpl@@YAXAEBVStrictEntityContext@@AEBV?$Optional@$$CBVJumpControlComponent@@@@AEBUAABBShapeComponent@@AEBUActorDataFlagComponent@@AEBUActorRotationComponent@@AEBUMobEffectsComponent@@AEAUMobJumpComponent@@AEAUStateVectorComponent@@AEAV?$EntityModifier@UTriggerJumpRequestComponent@@@@_NAEBVIConstBlockSource@@@Z
 MCAPI void doOtherMobJumpFromGround(
     class StrictEntityContext const& entity,
     class Optional<class JumpControlComponent const> const&,
     struct AABBShapeComponent const&,
-    struct SynchedActorDataComponent const&,
+    struct ActorDataFlagComponent const&,
     struct ActorRotationComponent const&,
     struct MobEffectsComponent const&,
     struct MobJumpComponent&,
@@ -108,11 +108,11 @@ MCAPI void doOtherMobJumpFromGround(
 );
 
 // symbol:
-// ?mobJumpFromGround@MobJumpFromGroundSystemImpl@@YAXAEBVStrictEntityContext@@AEBUAABBShapeComponent@@AEBUSynchedActorDataComponent@@AEBUActorRotationComponent@@AEBUMobEffectsComponent@@PEBVJumpControlComponent@@AEAUMobJumpComponent@@AEAUStateVectorComponent@@AEAV?$EntityModifier@UTriggerJumpRequestComponent@@@@AEBVIConstBlockSource@@_N@Z
+// ?mobJumpFromGround@MobJumpFromGroundSystemImpl@@YAXAEBVStrictEntityContext@@AEBUAABBShapeComponent@@AEBUActorDataFlagComponent@@AEBUActorRotationComponent@@AEBUMobEffectsComponent@@PEBVJumpControlComponent@@AEAUMobJumpComponent@@AEAUStateVectorComponent@@AEAV?$EntityModifier@UTriggerJumpRequestComponent@@@@AEBVIConstBlockSource@@_N@Z
 MCAPI void mobJumpFromGround(
     class StrictEntityContext const& entity,
     struct AABBShapeComponent const&,
-    struct SynchedActorDataComponent const&,
+    struct ActorDataFlagComponent const&,
     struct ActorRotationComponent const&,
     struct MobEffectsComponent const&,
     class JumpControlComponent const* jumpControlComponent,

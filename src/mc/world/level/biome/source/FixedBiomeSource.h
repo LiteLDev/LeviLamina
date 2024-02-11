@@ -39,10 +39,16 @@ public:
     virtual class Biome const* getBiome(int blockX, int blockY, int blockZ) const;
 
     // vIndex: 6, symbol: ?getBiome@FixedBiomeSource@@UEBAPEBVBiome@@AEBUGetBiomeOptions@@@Z
-    virtual class Biome const* getBiome(struct GetBiomeOptions const& getBiomeOptions) const;
+    virtual class Biome const* getBiome(struct GetBiomeOptions const&) const;
 
-    // vIndex: 7, symbol: ?getBiome@FixedBiomeSource@@UEBAPEBVBiome@@AEBVBlockPos@@@Z
-    virtual class Biome const* getBiome(class BlockPos const& blockPos) const;
+    // vIndex: 7, symbol: ?getBiome@FixedBiomeSource@@UEBAPEBVBiome@@HHH@Z
+    virtual class Biome const* getBiome(int blockX, int, int blockZ) const;
+
+    // vIndex: 8, symbol: ?has@FixedBiomeSource@@UEBA_N_K@Z
+    virtual bool has(uint64) const;
+
+    // vIndex: 9, symbol: ?hasByHashId@FixedBiomeSource@@UEBA_N_K@Z
+    virtual bool hasByHashId(uint64) const;
 
     // symbol: ??0FixedBiomeSource@@QEAA@AEBVBiome@@@Z
     MCAPI explicit FixedBiomeSource(class Biome const& fixedBiome);

@@ -18,7 +18,7 @@ public:
     virtual ~MobEffectChangeDescription();
 
     // vIndex: 2, symbol: ?deserializeData@MobEffectChangeDescription@@UEAAXUDeserializeDataParams@@@Z
-    virtual void deserializeData(struct DeserializeDataParams);
+    virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
     // NOLINTEND
 };

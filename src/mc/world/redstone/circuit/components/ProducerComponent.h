@@ -34,12 +34,6 @@ public:
     // vIndex: 14, symbol: ?evaluate@ProducerComponent@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
     virtual bool evaluate(class CircuitSystem&, class BlockPos const&);
 
-    // vIndex: 17, symbol: __unk_vfn_17
-    virtual void __unk_vfn_17();
-
-    // vIndex: 20, symbol: __unk_vfn_20
-    virtual void __unk_vfn_20();
-
     // vIndex: 23, symbol: ?getCircuitComponentType@ProducerComponent@@UEBA?AW4CircuitComponentType@@XZ
     virtual ::CircuitComponentType getCircuitComponentType() const;
 

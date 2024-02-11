@@ -24,8 +24,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptNavigationHoverComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptNavigationHoverComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptNavigationHoverComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptNavigationHoverComponent() = default;
 
     // symbol:
     // ?bind@ScriptNavigationHoverComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptNavigationHoverComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z

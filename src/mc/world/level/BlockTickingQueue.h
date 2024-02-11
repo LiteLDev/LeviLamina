@@ -100,32 +100,17 @@ public:
     MCAPI std::unordered_multimap<class BlockPos, struct TickDelayBlock>
           getTickDelaysInArea(class BoundingBox const& boundingBox) const;
 
-    // symbol: ?hasTickInCurrentTick@BlockTickingQueue@@QEBA_NAEBVBlockPos@@@Z
-    MCAPI bool hasTickInCurrentTick(class BlockPos const& pos) const;
-
     // symbol: ?hasTickInPendingTicks@BlockTickingQueue@@QEBA_NAEBVBlockPos@@@Z
     MCAPI bool hasTickInPendingTicks(class BlockPos const& pos) const;
 
-    // symbol: ?isBlockInPendingTick@BlockTickingQueue@@QEBA_NAEBVBlockPos@@AEBVBlock@@@Z
-    MCAPI bool isBlockInPendingTick(class BlockPos const& pos, class Block const& block) const;
-
-    // symbol: ?isBlockTypeInPendingTick@BlockTickingQueue@@QEBA_NAEBVBlockPos@@AEBVBlockLegacy@@@Z
-    MCAPI bool isBlockTypeInPendingTick(class BlockPos const& pos, class BlockLegacy const& block) const;
-
     // symbol: ?isEmpty@BlockTickingQueue@@QEBA_NXZ
     MCAPI bool isEmpty() const;
-
-    // symbol: ?isInstaticking@BlockTickingQueue@@QEBA_NXZ
-    MCAPI bool isInstaticking() const;
 
     // symbol: ?load@BlockTickingQueue@@QEAAXAEBVCompoundTag@@AEBVBlockPalette@@@Z
     MCAPI void load(class CompoundTag const& tag, class BlockPalette const& palette);
 
     // symbol: ?remove@BlockTickingQueue@@QEAAXAEBV?$function@$$A6A_NAEBVTickNextTickData@@@Z@std@@@Z
     MCAPI void remove(std::function<bool(class TickNextTickData const&)> const& removeCondition);
-
-    // symbol: ?remove@BlockTickingQueue@@QEAAXAEBVBlockPos@@AEBVBlock@@@Z
-    MCAPI void remove(class BlockPos const& pos, class Block const& block);
 
     // symbol: ?save@BlockTickingQueue@@QEBAXAEAVCompoundTag@@@Z
     MCAPI void save(class CompoundTag& tag) const;
@@ -134,7 +119,7 @@ public:
     MCAPI void setOwningChunk(class LevelChunk* owningChunk);
 
     // symbol: ?tickAllPendingTicks@BlockTickingQueue@@QEAAXAEAVBlockSource@@_K@Z
-    MCAPI void tickAllPendingTicks(class BlockSource&, uint64);
+    MCAPI void tickAllPendingTicks(class BlockSource& region, uint64);
 
     // symbol: ?tickPendingTicks@BlockTickingQueue@@QEAA_NAEAVBlockSource@@AEBUTick@@H_N@Z
     MCAPI bool tickPendingTicks(class BlockSource& region, struct Tick const& until, int max, bool instaTick_);

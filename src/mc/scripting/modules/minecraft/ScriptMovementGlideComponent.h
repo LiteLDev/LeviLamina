@@ -24,8 +24,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptMovementGlideComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptMovementGlideComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptMovementGlideComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptMovementGlideComponent() = default;
 
     // symbol:
     // ?getSpeedWhenTurning@ScriptMovementGlideComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@M$$V@Scripting@@XZ

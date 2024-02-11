@@ -21,9 +21,14 @@ public:
 
     // vIndex: 1, symbol:
     // ?placeRoots@MangroveTreeRoots@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@HAEAVRenderParams@@AEBUTreeParams@TreeHelper@@@Z
-    virtual std::optional<class BlockPos>
-    placeRoots(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random, int trunkHeight, class RenderParams&, struct TreeHelper::TreeParams const&)
-        const;
+    virtual std::optional<class BlockPos> placeRoots(
+        class IBlockWorldGenAPI& target,
+        class BlockPos const&    pos,
+        class Random&            random,
+        int                      trunkHeight,
+        class RenderParams&,
+        struct TreeHelper::TreeParams const& treeParams
+    ) const;
 
     // NOLINTEND
 
@@ -42,9 +47,16 @@ public:
 
     // symbol:
     // ?_simulateRoots@MangroveTreeRoots@@AEBA_NAEAVIBlockWorldGenAPI@@AEAVRandom@@AEBVBlockPos@@2EPEAV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@HAEBUTreeParams@TreeHelper@@@Z
-    MCAPI bool
-    _simulateRoots(class IBlockWorldGenAPI& target, class Random& random, class BlockPos const&, class BlockPos const&, uchar dir, std::vector<class BlockPos>*, int layer, struct TreeHelper::TreeParams const&)
-        const;
+    MCAPI bool _simulateRoots(
+        class IBlockWorldGenAPI& target,
+        class Random&            random,
+        class BlockPos const&,
+        class BlockPos const&,
+        uchar dir,
+        std::vector<class BlockPos>*,
+        int                                  layer,
+        struct TreeHelper::TreeParams const& treeParams
+    ) const;
 
     // NOLINTEND
 

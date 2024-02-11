@@ -24,8 +24,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptNavigationWalkComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptNavigationWalkComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptNavigationWalkComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptNavigationWalkComponent() = default;
 
     // symbol:
     // ?bind@ScriptNavigationWalkComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptNavigationWalkComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z

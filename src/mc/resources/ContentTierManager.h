@@ -21,7 +21,7 @@ public:
     virtual class ContentTierInfo getContentTierInfo() const;
 
     // symbol: ??0ContentTierManager@@QEAA@V?$function@$$A6A_NXZ@std@@@Z
-    MCAPI explicit ContentTierManager(std::function<bool(void)>);
+    MCAPI explicit ContentTierManager(std::function<bool()>);
 
     // NOLINTEND
 };

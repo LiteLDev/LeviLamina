@@ -7,11 +7,17 @@ public:
     // prevent constructor by default
     BoneOrientation& operator=(BoneOrientation const&);
     BoneOrientation(BoneOrientation const&);
+    BoneOrientation();
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0BoneOrientation@@QEAA@XZ
-    MCAPI BoneOrientation();
+    // symbol: ?applyShortestPathBlend@BoneOrientation@@QEAAXAEBV1@0MM@Z
+    MCAPI void applyShortestPathBlend(
+        class BoneOrientation const& blendOut,
+        class BoneOrientation const& blendIn,
+        float                        blendInWeight,
+        float
+    );
 
     // symbol: ?getName@BoneOrientation@@QEBAAEBVHashedString@@XZ
     MCAPI class HashedString const& getName() const;

@@ -26,7 +26,7 @@ public:
     virtual void writeInt(int v);
 
     // vIndex: 8, symbol: ?writeLongLong@BigEndianStringByteOutput@@UEAAX_J@Z
-    virtual void writeLongLong(int64);
+    virtual void writeLongLong(int64 v);
 
     // NOLINTEND
 };

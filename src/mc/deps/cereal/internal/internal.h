@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/cereal/SerializerContext.h"
 #include "mc/deps/cereal/internal/BasicSchema.h"
 #include "mc/deps/cereal/internal/ReflectedType.h"
 
@@ -18,19 +19,18 @@ namespace cereal { struct SchemaWriter; }
 namespace cereal { struct SerializerTraits; }
 namespace cereal::internal { class BasicCompositeSchema; }
 namespace cereal::internal { class BasicSchema; }
+namespace cereal::internal { class SchemaFactory; }
 namespace cereal::internal { class UndefinedSchema; }
 namespace cereal::internal { struct ConstraintDescription; }
 namespace cereal::internal { struct ExtendedSchemaInfo; }
 namespace cereal::internal { struct ReflectionContext; }
-namespace cereal::internal { struct SchemaId; }
+namespace cereal::internal { struct Schema; }
 namespace cereal::internal { struct SchemaInfo; }
+namespace cereal::internal { struct SchemaName; }
 // clang-format on
 
 namespace cereal::internal {
 // NOLINTBEGIN
-// symbol: ?alwaysTrue@internal@cereal@@YA_N_JAEAVmeta_any@entt@@@Z
-MCAPI bool alwaysTrue(int64, entt::meta_any&);
-
 // symbol:
 // ?derefAndLoad@internal@cereal@@YAXAEBVBasicSchema@12@AEAUSchemaReader@2@AEAVmeta_any@entt@@AEBUSerializerTraits@2@AEBV56@AEAVSerializerContext@2@@Z
 MCAPI void
@@ -40,11 +40,6 @@ derefAndLoad(class cereal::internal::BasicSchema const&, struct cereal::SchemaRe
 // ?derefAndSave@internal@cereal@@YAXAEBVBasicSchema@12@AEAUSchemaWriter@2@AEBVmeta_any@entt@@AEBUSerializerTraits@2@AEAVSerializerContext@2@@Z
 MCAPI void
 derefAndSave(class cereal::internal::BasicSchema const&, struct cereal::SchemaWriter&, entt::meta_any const&, struct cereal::SerializerTraits const&, class cereal::SerializerContext&);
-
-// symbol:
-// ?derefAndValidate@internal@cereal@@YAXAEBVBasicSchema@12@AEAUSchemaReader@2@AEAVmeta_any@entt@@AEBUSerializerTraits@2@AEAVSerializerContext@2@@Z
-MCAPI void
-derefAndValidate(class cereal::internal::BasicSchema const&, struct cereal::SchemaReader&, entt::meta_any&, struct cereal::SerializerTraits const&, class cereal::SerializerContext&);
 
 // symbol: ?getMapper@internal@cereal@@YAPEBVSerializerEnumMapping@2@AEBVmeta_type@entt@@PEBV32@@Z
 MCAPI class cereal::SerializerEnumMapping const*
@@ -67,11 +62,6 @@ MCAPI void getMapperAndLoad(
 MCAPI void
 getMapperAndSave(entt::meta_any const&, entt::meta_type const&, class cereal::SerializerEnumMapping const*, struct cereal::SchemaWriter&, struct cereal::SerializerTraits const&, class cereal::SerializerContext&);
 
-// symbol:
-// ?getNameAndVersion@internal@cereal@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@AEBUReflectionCtx@2@AEBUtype_info@entt@@@Z
-MCAPI std::pair<std::string, std::string>
-      getNameAndVersion(struct cereal::ReflectionCtx const&, entt::type_info const&);
-
 // symbol: ?getReflectedSchema@internal@cereal@@YAPEBVBasicSchema@12@AEBUReflectionCtx@2@AEBVmeta_type@entt@@@Z
 MCAPI class cereal::internal::BasicSchema const*
 getReflectedSchema(struct cereal::ReflectionCtx const&, entt::meta_type const&);
@@ -80,28 +70,26 @@ getReflectedSchema(struct cereal::ReflectionCtx const&, entt::meta_type const&);
 MCAPI ::cereal::internal::ReflectedType getReflectedType(entt::meta_type const&);
 
 // symbol:
-// ?iterateAssociativeContainer@internal@cereal@@YAXAEBUReflectionCtx@2@P6AX0AEBVmeta_type@entt@@AEBVBasicSchema@12@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVmeta_any@5@AEAUSchemaReader@2@AEBUSerializerTraits@2@AEBV95@AEAVSerializerContext@2@@Z1112254678@Z
-MCAPI void iterateAssociativeContainer(struct cereal::ReflectionCtx const&, void (*)(struct cereal::ReflectionCtx const&, entt::meta_type const&, class cereal::internal::BasicSchema const&, std::string const&, entt::meta_any&, struct cereal::SchemaReader&, struct cereal::SerializerTraits const&, entt::meta_any const&, class cereal::SerializerContext&), entt::meta_type const&, entt::meta_type const&, entt::meta_type const&, class cereal::internal::BasicSchema const&, class cereal::internal::BasicSchema const&, struct cereal::SchemaReader&, entt::meta_any&, struct cereal::SerializerTraits const&, entt::meta_any const&, class cereal::SerializerContext&);
+// ?getSchemaName@internal@cereal@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUReflectionCtx@2@AEBUtype_info@entt@@@Z
+MCAPI std::string getSchemaName(struct cereal::ReflectionCtx const&, entt::type_info const&);
 
 // symbol:
-// ?iterateSequenceContainer@internal@cereal@@YAXAEBVBasicSchema@12@P6AX0AEAUSchemaReader@2@AEAVmeta_any@entt@@AEBUSerializerTraits@2@AEBV56@AEAVSerializerContext@2@@ZAEBVmeta_type@6@12345@Z
+// ?iterateAssociativeContainer@internal@cereal@@YAXAEBUReflectionCtx@2@AEBVmeta_type@entt@@11AEBVBasicSchema@12@2AEAUSchemaReader@2@AEAVmeta_any@5@AEBUSerializerTraits@2@AEBV85@AEAVSerializerContext@2@@Z
 MCAPI void
-iterateSequenceContainer(class cereal::internal::BasicSchema const&, void (*)(class cereal::internal::BasicSchema const&, struct cereal::SchemaReader&, entt::meta_any&, struct cereal::SerializerTraits const&, entt::meta_any const&, class cereal::SerializerContext&), entt::meta_type const&, struct cereal::SchemaReader&, entt::meta_any&, struct cereal::SerializerTraits const&, entt::meta_any const&, class cereal::SerializerContext&);
+iterateAssociativeContainer(struct cereal::ReflectionCtx const&, entt::meta_type const&, entt::meta_type const&, entt::meta_type const&, class cereal::internal::BasicSchema const&, class cereal::internal::BasicSchema const&, struct cereal::SchemaReader&, entt::meta_any&, struct cereal::SerializerTraits const&, entt::meta_any const&, class cereal::SerializerContext&);
 
 // symbol:
-// ?loadMapElement@internal@cereal@@YAXAEBUReflectionCtx@2@AEBVmeta_type@entt@@AEBVBasicSchema@12@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVmeta_any@5@AEAUSchemaReader@2@AEBUSerializerTraits@2@AEBV95@AEAVSerializerContext@2@@Z
+// ?iterateSequenceContainer@internal@cereal@@YAXAEBVBasicSchema@12@AEBVmeta_type@entt@@AEAUSchemaReader@2@AEAVmeta_any@5@AEBUSerializerTraits@2@AEBV75@AEAVSerializerContext@2@@Z
 MCAPI void
-loadMapElement(struct cereal::ReflectionCtx const&, entt::meta_type const&, class cereal::internal::BasicSchema const&, std::string const&, entt::meta_any&, struct cereal::SchemaReader&, struct cereal::SerializerTraits const&, entt::meta_any const&, class cereal::SerializerContext&);
+iterateSequenceContainer(class cereal::internal::BasicSchema const&, entt::meta_type const&, struct cereal::SchemaReader&, entt::meta_any&, struct cereal::SerializerTraits const&, entt::meta_any const&, class cereal::SerializerContext&);
 
 // symbol:
-// ?loadSequenceElement@internal@cereal@@YAXAEBVBasicSchema@12@AEAUSchemaReader@2@AEAVmeta_any@entt@@AEBUSerializerTraits@2@AEBV56@AEAVSerializerContext@2@@Z
-MCAPI void
-loadSequenceElement(class cereal::internal::BasicSchema const&, struct cereal::SchemaReader&, entt::meta_any&, struct cereal::SerializerTraits const&, entt::meta_any const&, class cereal::SerializerContext&);
-
-// symbol:
-// ?lookup@internal@cereal@@YAPEBVBasicCompositeSchema@12@AEBUReflectionCtx@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
+// ?lookup@internal@cereal@@YAPEBVBasicCompositeSchema@12@AEBUReflectionCtx@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
 MCAPI class cereal::internal::BasicCompositeSchema const*
-lookup(struct cereal::ReflectionCtx const&, std::string const&, std::string const&);
+lookup(struct cereal::ReflectionCtx const&, std::string const&);
+
+// symbol: ??8internal@cereal@@YA_NAEBUSchemaName@01@0@Z
+MCAPI bool operator==(struct cereal::internal::SchemaName const&, struct cereal::internal::SchemaName const&);
 
 // symbol:
 // ?saveAssociativeContainer@internal@cereal@@YAXAEBUReflectionCtx@2@AEBVmeta_type@entt@@AEBVmeta_any@5@AEBVBasicSchema@12@3AEAUSchemaWriter@2@AEBUSerializerTraits@2@AEAVSerializerContext@2@@Z
@@ -113,23 +101,8 @@ saveAssociativeContainer(struct cereal::ReflectionCtx const&, entt::meta_type co
 MCAPI void
 saveSequenceContainer(class cereal::internal::BasicSchema const&, struct cereal::SchemaWriter&, entt::meta_any const&, struct cereal::SerializerTraits const&, class cereal::SerializerContext&);
 
-// symbol: ?shouldHaveNameAndVersion@internal@cereal@@YA_NW4ReflectedType@12@@Z
-MCAPI bool shouldHaveNameAndVersion(::cereal::internal::ReflectedType);
-
-// symbol:
-// ?validateMapElement@internal@cereal@@YAXAEBUReflectionCtx@2@AEBVmeta_type@entt@@AEBVBasicSchema@12@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVmeta_any@5@AEAUSchemaReader@2@AEBUSerializerTraits@2@AEBV95@AEAVSerializerContext@2@@Z
-MCAPI void
-validateMapElement(struct cereal::ReflectionCtx const&, entt::meta_type const&, class cereal::internal::BasicSchema const&, std::string const&, entt::meta_any&, struct cereal::SchemaReader&, struct cereal::SerializerTraits const&, entt::meta_any const&, class cereal::SerializerContext&);
-
-// symbol:
-// ?validateSequenceElement@internal@cereal@@YAXAEBVBasicSchema@12@AEAUSchemaReader@2@AEAVmeta_any@entt@@AEBUSerializerTraits@2@AEBV56@AEAVSerializerContext@2@@Z
-MCAPI void
-validateSequenceElement(class cereal::internal::BasicSchema const&, struct cereal::SchemaReader&, entt::meta_any&, struct cereal::SerializerTraits const&, entt::meta_any const&, class cereal::SerializerContext&);
-
-// symbol:
-// ?validateTagsSequence@internal@cereal@@YAXAEBUReflectionCtx@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1AEBVmeta_type@entt@@AEAUSchemaReader@2@AEBUSerializerTraits@2@AEAVSerializerContext@2@@Z
-MCAPI void
-validateTagsSequence(struct cereal::ReflectionCtx const&, std::string const&, std::string const&, entt::meta_type const&, struct cereal::SchemaReader&, struct cereal::SerializerTraits const&, class cereal::SerializerContext&);
+// symbol: ?shouldHavename@internal@cereal@@YA_NW4ReflectedType@12@@Z
+MCAPI bool shouldHavename(::cereal::internal::ReflectedType);
 // NOLINTEND
 
 }; // namespace cereal::internal

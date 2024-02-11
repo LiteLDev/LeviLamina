@@ -24,7 +24,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ?doValidate@NumericConstraint@cereal@@EEBAXAEBVmeta_any@entt@@AEAVSerializerContext@2@@Z
-    virtual void doValidate(entt::meta_any const&, class cereal::SerializerContext& context) const;
+    virtual void doValidate(entt::meta_any const& any, class cereal::SerializerContext& context) const;
 
     // vIndex: 1, symbol: __gen_??1NumericConstraint@cereal@@UEAA@XZ
     virtual ~NumericConstraint() = default;
@@ -37,6 +37,9 @@ public:
 
     // symbol: ?min@NumericConstraint@cereal@@QEAAAEAV12@N@Z
     MCAPI class cereal::NumericConstraint& min(double min);
+
+    // symbol: ?multipleOf@NumericConstraint@cereal@@QEAAAEAV12@N@Z
+    MCAPI class cereal::NumericConstraint& multipleOf(double);
 
     // symbol: ?range@NumericConstraint@cereal@@QEAAAEAV12@NN_N@Z
     MCAPI class cereal::NumericConstraint& range(double, double, bool);

@@ -68,7 +68,7 @@ public:
 
     // symbol:
     // ?getCurses@EnchantUtils@@SAXAEBVItemStackBase@@AEAV?$vector@VEnchantmentInstance@@V?$allocator@VEnchantmentInstance@@@std@@@std@@@Z
-    MCAPI static void getCurses(class ItemStackBase const& itemStack, std::vector<class EnchantmentInstance>&);
+    MCAPI static void getCurses(class ItemStackBase const& item, std::vector<class EnchantmentInstance>&);
 
     // symbol: ?getDamageReduction@EnchantUtils@@SAMAEBVActorDamageSource@@AEBVMob@@@Z
     MCAPI static float getDamageReduction(class ActorDamageSource const& source, class Mob const& target);

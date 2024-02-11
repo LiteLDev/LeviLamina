@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/PistonState.h"
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/Result.h"
 #include "mc/external/scripting/StrongTypedObjectHandle.h"
@@ -14,6 +15,7 @@ class BlockPos;
 class BlockSource;
 class Vec3;
 namespace ScriptModuleMinecraft { class BaseScriptBlockComponent; }
+namespace ScriptModuleMinecraft { class ScriptBlock; }
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
@@ -29,12 +31,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptBlockPistonComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptBlockPistonComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptBlockPistonComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptBlockPistonComponent() = default;
 
     // symbol:
-    // ?getAttachedBlocks@ScriptBlockPistonComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$vector@VVec3@@V?$allocator@VVec3@@@std@@@std@@$$V@Scripting@@XZ
-    MCAPI class Scripting::Result<std::vector<class Vec3>> getAttachedBlocks();
+    // ?getAttachedBlocks@ScriptBlockPistonComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$vector@V?$StrongTypedObjectHandle@VScriptBlock@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptBlock@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@$$V@Scripting@@XZ
+    MCAPI class Scripting::Result<
+        std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock>>>
+    getAttachedBlocks();
+
+    // symbol:
+    // ?getAttachedBlocksLocations@ScriptBlockPistonComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$vector@VVec3@@V?$allocator@VVec3@@@std@@@std@@$$V@Scripting@@XZ
+    MCAPI class Scripting::Result<std::vector<class Vec3>> getAttachedBlocksLocations();
 
     // symbol:
     // ?getAttachedBlocks_V010@ScriptBlockPistonComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@$$V@Scripting@@XZ
@@ -54,6 +62,9 @@ public:
 
     // symbol: ?isRetracting@ScriptBlockPistonComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@_N$$V@Scripting@@XZ
     MCAPI class Scripting::Result<bool> isRetracting();
+
+    // symbol: ?state@ScriptBlockPistonComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@W4PistonState@@$$V@Scripting@@XZ
+    MCAPI class Scripting::Result<::PistonState> state();
 
     // symbol:
     // ?bind@ScriptBlockPistonComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptBlockPistonComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z

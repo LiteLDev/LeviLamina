@@ -14,20 +14,14 @@ public:
     // vIndex: 0, symbol: ??1LabTableReactionComponent@@UEAA@XZ
     virtual ~LabTableReactionComponent();
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
+    // vIndex: 1, symbol: ?_onStart@LabTableReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z
+    virtual void _onStart(class LabTableReaction& owner, class BlockSource& region);
 
-    // vIndex: 2, symbol: __unk_vfn_2
-    virtual void __unk_vfn_2();
+    // vIndex: 2, symbol: ?_onTick@LabTableReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z
+    virtual void _onTick(class LabTableReaction& owner, class BlockSource& region);
 
     // vIndex: 3, symbol: ?_onEnd@LabTableReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z
     virtual void _onEnd(class LabTableReaction&, class BlockSource&);
-
-    // symbol: ?_onStart@LabTableReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z
-    MCVAPI void _onStart(class LabTableReaction& owner, class BlockSource& region);
-
-    // symbol: ?_onTick@LabTableReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z
-    MCVAPI void _onTick(class LabTableReaction& owner, class BlockSource& region);
 
     // NOLINTEND
 };

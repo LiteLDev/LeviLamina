@@ -98,7 +98,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?write@BinaryStream@@AEAAXPEBX_K@Z
-    MCAPI void write(void const* data, uint64 length);
+    MCAPI void write(void const* origin, uint64 num);
 
     // NOLINTEND
 };

@@ -10,7 +10,8 @@ namespace mce { class UUID; }
 namespace PlayerFetchUtils {
 // NOLINTBEGIN
 // symbol: ?findActivePlayerByActorUniqueID@PlayerFetchUtils@@YAPEAVPlayer@@AEBVGameplayUserManager@@UActorUniqueID@@@Z
-MCAPI class Player* findActivePlayerByActorUniqueID(class GameplayUserManager const&, struct ActorUniqueID);
+MCAPI class Player*
+findActivePlayerByActorUniqueID(class GameplayUserManager const&, struct ActorUniqueID actorUniqueID);
 
 // symbol:
 // ?findPlayer@PlayerFetchUtils@@YAPEAVPlayer@@AEBVGameplayUserManager@@V?$function@$$A6A_NAEBVEntityContext@@@Z@std@@@Z

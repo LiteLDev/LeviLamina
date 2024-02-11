@@ -18,9 +18,6 @@ public:
     // symbol: ??0ScriptSettings@@QEAA@XZ
     MCAPI ScriptSettings();
 
-    // symbol: ??0ScriptSettings@@QEAA@$$QEAU0@@Z
-    MCAPI ScriptSettings(struct ScriptSettings&&);
-
     // symbol: ??0ScriptSettings@@QEAA@AEBU0@@Z
     MCAPI ScriptSettings(struct ScriptSettings const&);
 

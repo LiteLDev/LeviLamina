@@ -57,7 +57,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0Blob@mce@@QEAA@_K@Z
-    MCAPI explicit Blob(uint64);
+    MCAPI explicit Blob(uint64 size);
 
     // symbol: ?cbegin@Blob@mce@@QEBAPEBEXZ
     MCAPI const_iterator cbegin() const;

@@ -26,8 +26,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptRidingComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptRidingComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptRidingComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptRidingComponent() = default;
 
     // symbol:
     // ?getEntityRidingOn@ScriptRidingComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@XZ

@@ -55,11 +55,14 @@ public:
     // symbol: ?getBool@LayeredAbilities@@QEBA_NW4AbilitiesIndex@@@Z
     MCAPI bool getBool(::AbilitiesIndex val) const;
 
+    // symbol: ?getBoolWithLayer@LayeredAbilities@@QEBA?AU?$pair@_NW4AbilitiesLayer@@@std@@W4AbilitiesIndex@@@Z
+    MCAPI std::pair<bool, ::AbilitiesLayer> getBoolWithLayer(::AbilitiesIndex) const;
+
     // symbol: ?getCommandPermissions@LayeredAbilities@@QEBA?AW4CommandPermissionLevel@@XZ
     MCAPI ::CommandPermissionLevel getCommandPermissions() const;
 
-    // symbol: ?getFloat@LayeredAbilities@@QEBAMW4AbilitiesIndex@@@Z
-    MCAPI float getFloat(::AbilitiesIndex val) const;
+    // symbol: ?getFloatWithLayer@LayeredAbilities@@QEBA?AU?$pair@MW4AbilitiesLayer@@@std@@W4AbilitiesIndex@@@Z
+    MCAPI std::pair<float, ::AbilitiesLayer> getFloatWithLayer(::AbilitiesIndex) const;
 
     // symbol: ?getLayer@LayeredAbilities@@QEAAAEAVAbilities@@W4AbilitiesLayer@@@Z
     MCAPI class Abilities& getLayer(::AbilitiesLayer layer);

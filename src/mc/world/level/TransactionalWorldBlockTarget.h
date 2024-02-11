@@ -18,9 +18,6 @@ public:
     // vIndex: 0, symbol: ??1TransactionalWorldBlockTarget@@UEAA@XZ
     virtual ~TransactionalWorldBlockTarget();
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
-
     // vIndex: 2, symbol: ?getChunk@IBlockWorldGenAPI@@UEAAPEAVLevelChunk@@AEBVChunkPos@@@Z
     virtual class LevelChunk* getChunk(class ChunkPos const& pos);
 
@@ -42,7 +39,7 @@ public:
     fetchBlocksInBox(class BoundingBox const& box, std::function<bool(class Block const&)> predicate);
 
     // vIndex: 8, symbol: ?hasBiomeTag@TransactionalWorldBlockTarget@@UEBA_N_KAEBVBlockPos@@@Z
-    virtual bool hasBiomeTag(uint64, class BlockPos const&) const;
+    virtual bool hasBiomeTag(uint64, class BlockPos const& pos) const;
 
     // vIndex: 9, symbol: ?setBlock@TransactionalWorldBlockTarget@@UEAA_NAEBVBlockPos@@AEBVBlock@@H@Z
     virtual bool setBlock(class BlockPos const& pos, class Block const& newBlock, int updateFlags);
@@ -73,9 +70,6 @@ public:
     // vIndex: 17, symbol: ?getMinHeight@TransactionalWorldBlockTarget@@UEBAFXZ
     virtual short getMinHeight() const;
 
-    // vIndex: 18, symbol: __unk_vfn_18
-    virtual void __unk_vfn_18();
-
     // vIndex: 19, symbol: ?getHeightmap@TransactionalWorldBlockTarget@@UEAAFHH@Z
     virtual short getHeightmap(int x, int z);
 
@@ -99,9 +93,6 @@ public:
 
     // vIndex: 26, symbol: ?disableBlockSimple@TransactionalWorldBlockTarget@@UEAAXXZ
     virtual void disableBlockSimple();
-
-    // symbol: ?shimPlaceForOldFeatures@TransactionalWorldBlockTarget@@UEBA_NAEBVFeature@@AEBVBlockPos@@AEAVRandom@@@Z
-    MCVAPI bool shimPlaceForOldFeatures(class Feature const&, class BlockPos const&, class Random&) const;
 
     // symbol: ??0TransactionalWorldBlockTarget@@QEAA@AEAVIBlockWorldGenAPI@@@Z
     MCAPI explicit TransactionalWorldBlockTarget(class IBlockWorldGenAPI& target);

@@ -65,9 +65,9 @@ public:
     struct ChainedSubcommand {
     public:
         // prevent constructor by default
-        ChainedSubcommand& operator=(ChainedSubcommand const&) = delete;
-        ChainedSubcommand(ChainedSubcommand const&)            = delete;
-        ChainedSubcommand()                                    = delete;
+        ChainedSubcommand& operator=(ChainedSubcommand const&);
+        ChainedSubcommand(ChainedSubcommand const&);
+        ChainedSubcommand();
 
     public:
         // NOLINTBEGIN
@@ -512,7 +512,7 @@ public:
         std::string const&       name,
         char const*              description, // will copy to std::string
         ::CommandPermissionLevel requirement,
-        struct CommandFlag,
+        struct CommandFlag f,
         struct CommandFlag = CommandFlagValue::None // useless, idiot
     );
 

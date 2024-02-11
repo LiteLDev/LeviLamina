@@ -14,6 +14,15 @@ public:
     // symbol: ??0SculkChargeCursor@@QEAA@AEBVCompoundTag@@@Z
     MCAPI explicit SculkChargeCursor(class CompoundTag const& tag);
 
+    // symbol: ??0SculkChargeCursor@@QEAA@AEBVBlockPos@@H@Z
+    MCAPI SculkChargeCursor(class BlockPos const& pos, int charge);
+
+    // symbol: ?addFrom@SculkChargeCursor@@QEAAXAEBV1@@Z
+    MCAPI void addFrom(class SculkChargeCursor const&);
+
+    // symbol: ?save@SculkChargeCursor@@QEBAXAEAVCompoundTag@@@Z
+    MCAPI void save(class CompoundTag& tag) const;
+
     // symbol:
     // ?update@SculkChargeCursor@@QEAAXAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@AEAVSculkSpreader@@_N@Z
     MCAPI void update(
@@ -34,15 +43,6 @@ public:
 
     // symbol: ?_getSculkBehavior@SculkChargeCursor@@CAAEBVSculkBehavior@@AEBVBlock@@@Z
     MCAPI static class SculkBehavior const& _getSculkBehavior(class Block const& block);
-
-    // symbol:
-    // ?_getValidMovementPos@SculkChargeCursor@@CA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVSculkSpreader@@AEAVRandom@@@Z
-    MCAPI static std::optional<class BlockPos> _getValidMovementPos(
-        class IBlockWorldGenAPI& target,
-        class BlockPos const&    pos,
-        class SculkSpreader&,
-        class Random& random
-    );
 
     // symbol: ?_isMovementUnobstructed@SculkChargeCursor@@CA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@1@Z
     MCAPI static bool

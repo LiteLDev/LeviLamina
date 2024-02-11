@@ -25,11 +25,5 @@ public:
     // symbol: ?getInt@RandomValueBounds@@QEBAHAEAVRandom@@@Z
     MCAPI int getInt(class Random& random) const;
 
-    // symbol: ?getMax@RandomValueBounds@@QEBAMXZ
-    MCAPI float getMax() const;
-
-    // symbol: ?getMin@RandomValueBounds@@QEBAMXZ
-    MCAPI float getMin() const;
-
     // NOLINTEND
 };

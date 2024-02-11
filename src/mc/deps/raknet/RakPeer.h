@@ -19,6 +19,7 @@ namespace RakNet { class BitStream; }
 namespace RakNet { class PluginInterface2; }
 namespace RakNet { class RakNetSocket2; }
 namespace RakNet { class RakPeerInterface; }
+namespace RakNet { class ShadowBanList; }
 namespace RakNet { struct AddressOrGUID; }
 namespace RakNet { struct NetworkAdapter; }
 namespace RakNet { struct Packet; }
@@ -260,12 +261,12 @@ public:
     // symbol: ?GetSplitMessageProgressInterval@RakPeer@RakNet@@UEBAHXZ
     MCVAPI int GetSplitMessageProgressInterval() const;
 
+    // symbol: ?GetStatistics@RakPeer@RakNet@@UEAA_NIPEAURakNetStatistics@2@@Z
+    MCVAPI bool GetStatistics(uint index, struct RakNet::RakNetStatistics* rns);
+
     // symbol: ?GetStatistics@RakPeer@RakNet@@UEAAPEAURakNetStatistics@2@USystemAddress@2@PEAU32@@Z
     MCVAPI struct RakNet::RakNetStatistics*
     GetStatistics(struct RakNet::SystemAddress systemAddress, struct RakNet::RakNetStatistics* rns);
-
-    // symbol: ?GetStatistics@RakPeer@RakNet@@UEAA_NIPEAURakNetStatistics@2@@Z
-    MCVAPI bool GetStatistics(uint index, struct RakNet::RakNetStatistics* rns);
 
     // symbol:
     // ?GetStatisticsList@RakPeer@RakNet@@UEAAXAEAV?$List@USystemAddress@RakNet@@@DataStructures@@AEAV?$List@URakNetGUID@RakNet@@@4@AEAV?$List@URakNetStatistics@RakNet@@@4@@Z
@@ -293,6 +294,10 @@ public:
 
     // symbol: ?IncrementNextSendReceipt@RakPeer@RakNet@@UEAAIXZ
     MCVAPI uint IncrementNextSendReceipt();
+
+    // symbol:
+    // ?InitializeConfiguration@RakPeer@RakNet@@UEAAXV?$unique_ptr@VShadowBanList@RakNet@@U?$default_delete@VShadowBanList@RakNet@@@std@@@std@@@Z
+    MCVAPI void InitializeConfiguration(std::unique_ptr<class RakNet::ShadowBanList>);
 
     // symbol: ?InitializeSecurity@RakPeer@RakNet@@UEAA_NPEBD0_N@Z
     MCVAPI bool InitializeSecurity(char const* public_key, char const* private_key, bool bRequireClientKey);
@@ -391,6 +396,9 @@ public:
 
     // symbol: ?SendTTL@RakPeer@RakNet@@UEAAXPEBDGHI@Z
     MCVAPI void SendTTL(char const* host, ushort remotePort, int ttl, uint connectionSocketIndex);
+
+    // symbol: ?SetApplicationHandshakeCompleted@RakPeer@RakNet@@UEAA_NUAddressOrGUID@2@@Z
+    MCVAPI bool SetApplicationHandshakeCompleted(struct RakNet::AddressOrGUID);
 
     // symbol: ?SetIncomingDatagramEventHandler@RakPeer@RakNet@@UEAAXP6A_NPEAURNS2RecvStruct@2@@Z@Z
     MCVAPI void SetIncomingDatagramEventHandler(bool (*_incomingDatagramEventHandler)(struct RakNet::RNS2RecvStruct*));

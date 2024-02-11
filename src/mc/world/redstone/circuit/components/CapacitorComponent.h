@@ -15,12 +15,6 @@ public:
     // vIndex: 0, symbol: __gen_??1CapacitorComponent@@UEAA@XZ
     virtual ~CapacitorComponent() = default;
 
-    // vIndex: 17, symbol: __unk_vfn_17
-    virtual void __unk_vfn_17();
-
-    // vIndex: 20, symbol: __unk_vfn_20
-    virtual void __unk_vfn_20();
-
     // vIndex: 23, symbol: ?getCircuitComponentType@CapacitorComponent@@UEBA?AW4CircuitComponentType@@XZ
     virtual ::CircuitComponentType getCircuitComponentType() const;
 

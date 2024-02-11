@@ -12,10 +12,12 @@ public:
     // prevent constructor by default
     ComponentItemData_v1_20_40& operator=(ComponentItemData_v1_20_40 const&);
     ComponentItemData_v1_20_40(ComponentItemData_v1_20_40 const&);
-    ComponentItemData_v1_20_40();
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0ComponentItemData_v1_20_40@@QEAA@XZ
+    MCAPI ComponentItemData_v1_20_40();
+
     // symbol: ??1ComponentItemData_v1_20_40@@QEAA@XZ
     MCAPI ~ComponentItemData_v1_20_40();
 

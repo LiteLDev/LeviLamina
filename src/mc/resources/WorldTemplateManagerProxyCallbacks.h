@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class WorldTemplateManagerProxyCallbacks {
+struct WorldTemplateManagerProxyCallbacks {
 public:
     // prevent constructor by default
     WorldTemplateManagerProxyCallbacks& operator=(WorldTemplateManagerProxyCallbacks const&);

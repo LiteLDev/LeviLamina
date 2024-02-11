@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/cereal/internal/ResultCode.h"
+#include "mc/deps/cereal/ResultCode.h"
 
 namespace cereal {
 
@@ -72,18 +72,15 @@ public:
     // ?getLog@SerializerContext@cereal@@QEBAAEBV?$vector@ULogEntry@SerializerContext@cereal@@V?$allocator@ULogEntry@SerializerContext@cereal@@@std@@@std@@XZ
     MCAPI std::vector<struct cereal::SerializerContext::LogEntry> const& getLog() const;
 
-    // symbol: ?getStatus@SerializerContext@cereal@@QEBA?AW4ResultCode@internal@2@XZ
-    MCAPI ::cereal::internal::ResultCode getStatus() const;
+    // symbol: ?getStatus@SerializerContext@cereal@@QEBA?AW4ResultCode@2@XZ
+    MCAPI ::cereal::ResultCode getStatus() const;
 
     // symbol:
-    // ?log@SerializerContext@cereal@@QEAAXW4ResultCode@internal@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void log(::cereal::internal::ResultCode, std::string);
+    // ?log@SerializerContext@cereal@@QEAAXW4ResultCode@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI void log(::cereal::ResultCode, std::string);
 
     // symbol: ??BSerializerContext@cereal@@QEBA_NXZ
     MCAPI explicit operator bool() const;
-
-    // symbol: ??4SerializerContext@cereal@@QEAAAEAV01@$$QEAV01@@Z
-    MCAPI class cereal::SerializerContext& operator=(class cereal::SerializerContext&&);
 
     // symbol: ?popContext@SerializerContext@cereal@@QEAAXXZ
     MCAPI void popContext();

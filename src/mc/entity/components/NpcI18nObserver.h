@@ -21,11 +21,14 @@ public:
     // ?onLanguageChanged@NpcI18nObserver@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
     virtual void onLanguageChanged(std::string const& code, bool languageSystemInitializing);
 
+    // vIndex: 2, symbol: __unk_vfn_2
+    virtual void __unk_vfn_2();
+
+    // vIndex: 3, symbol: ?onLanguagesLoaded@NpcI18nObserver@@UEAAXXZ
+    virtual void onLanguagesLoaded();
+
     // symbol: ?onLanguageKeywordsLoadedFromPack@NpcI18nObserver@@UEAAXAEBVPackManifest@@@Z
     MCVAPI void onLanguageKeywordsLoadedFromPack(class PackManifest const& manifest);
-
-    // symbol: ?onLanguagesLoaded@NpcI18nObserver@@UEAAXXZ
-    MCVAPI void onLanguagesLoaded();
 
     // NOLINTEND
 

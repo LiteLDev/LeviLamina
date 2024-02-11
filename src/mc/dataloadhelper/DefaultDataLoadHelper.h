@@ -16,47 +16,47 @@ public:
     // vIndex: 0, symbol: __gen_??1DefaultDataLoadHelper@@UEAA@XZ
     virtual ~DefaultDataLoadHelper() = default;
 
-    // vIndex: 1, symbol: ?loadPosition\@DefaultDataLoadHelper\@\@UEAA?AVVec3\@\@AEBV2\@\@Z
-    virtual class Vec3 loadPosition(class Vec3 const&);
+    // vIndex: 1, symbol: __unk_vfn_1
+    virtual void __unk_vfn_1();
 
-    // vIndex: 2, symbol: ?loadBlockPosition\@DefaultDataLoadHelper\@\@UEAA?AVBlockPos\@\@AEBV2\@\@Z
-    virtual class BlockPos loadBlockPosition(class BlockPos const&);
+    // vIndex: 2, symbol: ?loadBlockPosition@DefaultDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z
+    virtual class BlockPos loadBlockPosition(class BlockPos const& blockPos);
 
-    // vIndex: 3, symbol: ?loadBlockPositionOffset\@DefaultDataLoadHelper\@\@UEAA?AVBlockPos\@\@AEBV2\@\@Z
-    virtual class BlockPos loadBlockPositionOffset(class BlockPos const&);
+    // vIndex: 3, symbol: ?loadBlockPositionOffset@DefaultDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z
+    virtual class BlockPos loadBlockPositionOffset(class BlockPos const& blockPosOffset);
 
-    // vIndex: 4, symbol: ?loadRotationDegreesX\@DefaultDataLoadHelper\@\@UEAAMM\@Z
-    virtual float loadRotationDegreesX(float);
+    // vIndex: 4, symbol: ?loadRotationDegreesX@DefaultDataLoadHelper@@UEAAMM@Z
+    virtual float loadRotationDegreesX(float x);
 
-    // vIndex: 5, symbol: ?loadRotationDegreesY\@DefaultDataLoadHelper\@\@UEAAMM\@Z
-    virtual float loadRotationDegreesY(float);
+    // vIndex: 5, symbol: ?loadRotationDegreesY@DefaultDataLoadHelper@@UEAAMM@Z
+    virtual float loadRotationDegreesY(float y);
 
-    // vIndex: 6, symbol: ?loadRotationRadiansX\@DefaultDataLoadHelper\@\@UEAAMM\@Z
-    virtual float loadRotationRadiansX(float);
+    // vIndex: 6, symbol: ?loadRotationRadiansX@DefaultDataLoadHelper@@UEAAMM@Z
+    virtual float loadRotationRadiansX(float x);
 
-    // vIndex: 7, symbol: ?loadRotationRadiansY\@DefaultDataLoadHelper\@\@UEAAMM\@Z
-    virtual float loadRotationRadiansY(float);
+    // vIndex: 7, symbol: ?loadRotationRadiansY@DefaultDataLoadHelper@@UEAAMM@Z
+    virtual float loadRotationRadiansY(float y);
 
-    // vIndex: 8, symbol: ?loadFacingID\@DefaultDataLoadHelper\@\@UEAAEE\@Z
-    virtual uchar loadFacingID(uchar);
+    // vIndex: 8, symbol: ?loadFacingID@DefaultDataLoadHelper@@UEAAEE@Z
+    virtual uchar loadFacingID(uchar facing);
 
-    // vIndex: 9, symbol: ?loadDirection\@DefaultDataLoadHelper\@\@UEAA?AVVec3\@\@AEBV2\@\@Z
-    virtual class Vec3 loadDirection(class Vec3 const&);
+    // vIndex: 9, symbol: ?loadDirection@DefaultDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
+    virtual class Vec3 loadDirection(class Vec3 const& direction);
 
-    // vIndex: 10, symbol: ?loadDirection\@DefaultDataLoadHelper\@\@UEAA?AW4Type\@Direction\@\@W423\@\@Z
-    virtual ::Direction::Type loadDirection(::Direction::Type);
+    // vIndex: 10, symbol: ?loadDirection@DefaultDataLoadHelper@@UEAA?AW4Type@Direction@@W423@@Z
+    virtual ::Direction::Type loadDirection(::Direction::Type direction);
 
-    // vIndex: 11, symbol: ?loadRotation\@DefaultDataLoadHelper\@\@UEAA?AW4Rotation\@\@W42\@\@Z
-    virtual ::Rotation loadRotation(::Rotation);
+    // vIndex: 11, symbol: ?loadRotation@DefaultDataLoadHelper@@UEAA?AW4Rotation@@W42@@Z
+    virtual ::Rotation loadRotation(::Rotation rotation);
 
-    // vIndex: 12, symbol: ?loadMirror\@DefaultDataLoadHelper\@\@UEAA?AW4Mirror\@\@W42\@\@Z
-    virtual ::Mirror loadMirror(::Mirror);
+    // vIndex: 12, symbol: ?loadMirror@DefaultDataLoadHelper@@UEAA?AW4Mirror@@W42@@Z
+    virtual ::Mirror loadMirror(::Mirror mirror);
 
-    // vIndex: 13, symbol: ?loadActorUniqueID\@DefaultDataLoadHelper\@\@UEAA?AUActorUniqueID\@\@U2\@\@Z
-    virtual struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID);
+    // vIndex: 13, symbol: ?loadActorUniqueID@DefaultDataLoadHelper@@UEAA?AUActorUniqueID@@U2@@Z
+    virtual struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID id);
 
-    // vIndex: 14, symbol: ?loadOwnerID\@DefaultDataLoadHelper\@\@UEAA?AUActorUniqueID\@\@U2\@\@Z
-    virtual struct ActorUniqueID loadOwnerID(struct ActorUniqueID);
+    // vIndex: 14, symbol: ?loadOwnerID@DefaultDataLoadHelper@@UEAA?AUActorUniqueID@@U2@@Z
+    virtual struct ActorUniqueID loadOwnerID(struct ActorUniqueID id);
 
     // vIndex: 15, symbol:
     // ?loadActorInternalComponentInfo@DefaultDataLoadHelper@@UEAAPEBUComponentInfo@InternalComponentRegistry@@AEBV?$unordered_map@VHashedString@@UComponentInfo@InternalComponentRegistry@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@5@V?$allocator@U?$pair@$$CBVHashedString@@UComponentInfo@InternalComponentRegistry@@@std@@@5@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@5@@Z
@@ -70,6 +70,7 @@ public:
 
     // vIndex: 17, symbol: ?shouldResetTime@DefaultDataLoadHelper@@UEAA_NXZ
     virtual bool shouldResetTime();
+
     // NOLINTEND
 };
 

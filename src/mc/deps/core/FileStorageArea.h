@@ -54,10 +54,10 @@ public:
     createTransaction(::Core::FileAccessType fileAccessType, ::Core::TransactionFlags);
 
     // vIndex: 2, symbol: __unk_vfn_2
-    virtual void __unk_vfn_2();
+    virtual void __unk_vfn_2() = 0;
 
     // vIndex: 3, symbol: __unk_vfn_3
-    virtual void __unk_vfn_3();
+    virtual void __unk_vfn_3() = 0;
 
     // vIndex: 4, symbol: __unk_vfn_4
     virtual void __unk_vfn_4() = 0;
@@ -65,44 +65,44 @@ public:
     // vIndex: 5, symbol: __unk_vfn_5
     virtual void __unk_vfn_5() = 0;
 
-    // vIndex: 6, symbol: __unk_vfn_6
-    virtual void __unk_vfn_6() = 0;
+    // vIndex: 6, symbol: ?setUsedSizeOverride@FileStorageArea@Core@@UEAAX_K@Z
+    virtual void setUsedSizeOverride(uint64);
 
-    // vIndex: 7, symbol: __unk_vfn_7
-    virtual void __unk_vfn_7() = 0;
+    // vIndex: 7, symbol: ?clearUsedSizeOverride@FileStorageArea@Core@@UEAAXXZ
+    virtual void clearUsedSizeOverride();
 
     // vIndex: 8, symbol: ?notifyChangeInFileSize@FileStorageArea@Core@@UEAAX_J0@Z
-    virtual void notifyChangeInFileSize(int64, int64);
+    virtual void notifyChangeInFileSize(int64 changeInSize, int64 changeInAllocatedSize);
 
-    // vIndex: 9, symbol: __unk_vfn_9
-    virtual void __unk_vfn_9();
+    // vIndex: 9, symbol: ?handlesPendingWrites@FileStorageArea@Core@@UEBA_NXZ
+    virtual bool handlesPendingWrites() const;
 
-    // vIndex: 10, symbol: __unk_vfn_10
-    virtual void __unk_vfn_10();
+    // vIndex: 10, symbol: ?informPendingWriteSize@FileStorageArea@Core@@UEAAX_K_N@Z
+    virtual void informPendingWriteSize(uint64 numBytesWritePending, bool fromResourcePack);
 
-    // vIndex: 11, symbol: __unk_vfn_11
-    virtual void __unk_vfn_11();
+    // vIndex: 11, symbol: ?informStorageAreaCopy@FileStorageArea@Core@@UEAAX_K@Z
+    virtual void informStorageAreaCopy(uint64 storageAreaSize);
 
-    // vIndex: 12, symbol: __unk_vfn_12
-    virtual void __unk_vfn_12();
+    // vIndex: 12, symbol: ?supportsExtendSize@FileStorageArea@Core@@UEBA_NXZ
+    virtual bool supportsExtendSize() const;
 
-    // vIndex: 13, symbol: __unk_vfn_13
-    virtual void __unk_vfn_13();
+    // vIndex: 13, symbol: ?canExtendSize@FileStorageArea@Core@@UEBA_NXZ
+    virtual bool canExtendSize() const;
 
     // vIndex: 14, symbol: ?resetCanAttemptExtendSize@FileStorageArea@Core@@UEAAXXZ
     virtual void resetCanAttemptExtendSize();
 
     // vIndex: 15, symbol: ?getExtendSizeThreshold@FileStorageArea@Core@@UEBA?AVResult@2@AEA_K@Z
-    virtual class Core::Result getExtendSizeThreshold(uint64&) const;
+    virtual class Core::Result getExtendSizeThreshold(uint64& outExtendSizeThreshold) const;
 
     // vIndex: 16, symbol: ?attemptExtendSize@FileStorageArea@Core@@UEAAXAEB_JV?$function@$$A6AXXZ@std@@@Z
-    virtual void attemptExtendSize(int64 const&, std::function<void(void)>);
+    virtual void attemptExtendSize(int64 const& currentFreeSpace, std::function<void()> onCompleteCallback);
 
     // vIndex: 17, symbol: ?preemptiveExtendSize@FileStorageArea@Core@@UEAAX_KV?$function@$$A6AXXZ@std@@1@Z
     virtual void preemptiveExtendSize(
-        uint64                    expectedContentSize,
-        std::function<void(void)> successCallback,
-        std::function<void(void)> failureCallback
+        uint64                expectedContentSize,
+        std::function<void()> successCallback,
+        std::function<void()> failureCallback
     );
 
     // vIndex: 18, symbol: ?getAvailableUserStorageSize@FileStorageArea@Core@@UEAA_KXZ
@@ -111,17 +111,17 @@ public:
     // vIndex: 19, symbol: ?unloadFlatFileManifests@FileStorageArea@Core@@UEAAX_N@Z
     virtual void unloadFlatFileManifests(bool shouldClearManifests);
 
-    // vIndex: 20, symbol: __unk_vfn_20
-    virtual void __unk_vfn_20();
+    // vIndex: 20, symbol: ?tick@FileStorageArea@Core@@UEAAXXZ
+    virtual void tick();
 
-    // vIndex: 21, symbol: __unk_vfn_21
-    virtual void __unk_vfn_21();
+    // vIndex: 21, symbol: ?flushImmediately@FileStorageArea@Core@@UEAAXXZ
+    virtual void flushImmediately();
 
-    // vIndex: 22, symbol: __unk_vfn_22
-    virtual void __unk_vfn_22();
+    // vIndex: 22, symbol: ?enableFlushToDisk@FileStorageArea@Core@@UEAAX_N@Z
+    virtual void enableFlushToDisk(bool);
 
-    // vIndex: 23, symbol: __unk_vfn_23
-    virtual void __unk_vfn_23();
+    // vIndex: 23, symbol: ?checkCorrupt@FileStorageArea@Core@@UEAA_N_N@Z
+    virtual bool checkCorrupt(bool handleCorruption);
 
     // vIndex: 24, symbol: ?getFlushableLevelDbEnvType@FileStorageArea@Core@@UEBA?AW4FlushableLevelDbEnvType@12@XZ
     virtual ::Core::FileStorageArea::FlushableLevelDbEnvType getFlushableLevelDbEnvType() const;
@@ -141,56 +141,20 @@ public:
     // vIndex: 29, symbol: ?trackWriteOperation@FileStorageArea@Core@@UEAAXAEBVPath@2@W4WriteOperation@2@@Z
     virtual void trackWriteOperation(class Core::Path const&, ::Core::WriteOperation);
 
-    // vIndex: 30, symbol: __unk_vfn_30
-    virtual void __unk_vfn_30();
+    // vIndex: 30, symbol: ?setInitialSize@FileStorageArea@Core@@UEAAXAEBVPath@2@_K@Z
+    virtual void setInitialSize(class Core::Path const&, uint64);
 
     // vIndex: 31, symbol: ?getStorageAreaSpaceInfo@FileStorageArea@Core@@UEAA?AUStorageAreaSpaceInfo@12@XZ
     virtual struct Core::FileStorageArea::StorageAreaSpaceInfo getStorageAreaSpaceInfo();
 
-    // symbol: ?_commit@FileStorageArea@Core@@MEAA?AVResult@2@XZ
-    MCVAPI class Core::Result _commit();
+    // vIndex: 32, symbol: ?_commit@FileStorageArea@Core@@MEAA?AVResult@2@XZ
+    virtual class Core::Result _commit();
 
-    // symbol: ?_onTeardown@FileStorageArea@Core@@MEAAXXZ
-    MCVAPI void _onTeardown();
+    // vIndex: 33, symbol: ?_onTransactionsEmpty@FileStorageArea@Core@@MEAA?AVResult@2@_N@Z
+    virtual class Core::Result _onTransactionsEmpty(bool fromChild);
 
-    // symbol: ?_onTransactionsEmpty@FileStorageArea@Core@@MEAA?AVResult@2@_N@Z
-    MCVAPI class Core::Result _onTransactionsEmpty(bool fromChild);
-
-    // symbol: ?canExtendSize@FileStorageArea@Core@@UEBA_NXZ
-    MCVAPI bool canExtendSize() const;
-
-    // symbol: ?checkCorrupt@FileStorageArea@Core@@UEAA_N_N@Z
-    MCVAPI bool checkCorrupt(bool handleCorruption);
-
-    // symbol: ?clearUsedSizeOverride@FileStorageArea@Core@@UEAAXXZ
-    MCVAPI void clearUsedSizeOverride();
-
-    // symbol: ?enableFlushToDisk@FileStorageArea@Core@@UEAAX_N@Z
-    MCVAPI void enableFlushToDisk(bool);
-
-    // symbol: ?flushImmediately@FileStorageArea@Core@@UEAAXXZ
-    MCVAPI void flushImmediately();
-
-    // symbol: ?handlesPendingWrites@FileStorageArea@Core@@UEBA_NXZ
-    MCVAPI bool handlesPendingWrites() const;
-
-    // symbol: ?informPendingWriteSize@FileStorageArea@Core@@UEAAX_K_N@Z
-    MCVAPI void informPendingWriteSize(uint64, bool);
-
-    // symbol: ?informStorageAreaCopy@FileStorageArea@Core@@UEAAX_K@Z
-    MCVAPI void informStorageAreaCopy(uint64);
-
-    // symbol: ?setInitialSize@FileStorageArea@Core@@UEAAXAEBVPath@2@_K@Z
-    MCVAPI void setInitialSize(class Core::Path const&, uint64);
-
-    // symbol: ?setUsedSizeOverride@FileStorageArea@Core@@UEAAX_K@Z
-    MCVAPI void setUsedSizeOverride(uint64);
-
-    // symbol: ?supportsExtendSize@FileStorageArea@Core@@UEBA_NXZ
-    MCVAPI bool supportsExtendSize() const;
-
-    // symbol: ?tick@FileStorageArea@Core@@UEAAXXZ
-    MCVAPI void tick();
+    // vIndex: 34, symbol: ?_onTeardown@FileStorageArea@Core@@MEAAXXZ
+    virtual void _onTeardown();
 
     // symbol: ?checkUserStorage@FileStorageArea@Core@@QEAAXXZ
     MCAPI void checkUserStorage();
@@ -226,16 +190,19 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_addReadOperation@FileStorageArea@Core@@AEAAX_N_K@Z
-    MCAPI void _addReadOperation(bool, uint64);
+    MCAPI void _addReadOperation(bool succeeded, uint64 numBytesRead);
 
     // symbol: ?_addReadWriteOperation@FileStorageArea@Core@@AEAAX_N_K1@Z
-    MCAPI void _addReadWriteOperation(bool, uint64, uint64);
+    MCAPI void _addReadWriteOperation(bool succeeded, uint64 numBytesRead, uint64 numBytesWritten);
 
     // symbol: ?_addWriteOperation@FileStorageArea@Core@@AEAAX_N_K@Z
-    MCAPI void _addWriteOperation(bool, uint64);
+    MCAPI void _addWriteOperation(bool succeeded, uint64 numBytesWritten);
 
     // symbol: ?_beginTransaction@FileStorageArea@Core@@AEAAXPEAVFileSystemImpl@2@_N@Z
     MCAPI void _beginTransaction(class Core::FileSystemImpl* pTransaction, bool fromChild);
+
+    // symbol: ?_calculateAvailableUserStorageSize@FileStorageArea@Core@@AEBA_K_K0@Z
+    MCAPI uint64 _calculateAvailableUserStorageSize(uint64, uint64) const;
 
     // symbol: ?_endTransaction@FileStorageArea@Core@@AEAA?AVResult@2@PEAVFileSystemImpl@2@_N@Z
     MCAPI class Core::Result _endTransaction(class Core::FileSystemImpl* pTransaction, bool fromChild);

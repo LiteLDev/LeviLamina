@@ -26,8 +26,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptAgeableComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptAgeableComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptAgeableComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptAgeableComponent() = default;
 
     // vIndex: 1, symbol:
     // ?_isValid@?$ECSScriptActorComponent@VAgeableComponent@@VAgeableDefinition@@@ScriptModuleMinecraft@@MEBA_NXZ

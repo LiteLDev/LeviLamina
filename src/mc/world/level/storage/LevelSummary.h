@@ -36,33 +36,8 @@ public:
     );
 
     // symbol:
-    // ??0LevelSummary@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_JW4GameType@@W4Difficulty@@VLevelSeed64@@H_K_N6W4GamePublishSetting@Social@@6W4EducationEditionOffer@@AEBVGameVersion@@9W4StorageVersion@@AEBVPath@Core@@AEBVContentIdentity@@0_NAEBUEduSharedUriResource@@AEBVExperiments@@AEBVBaseGameVersion@@W4WorldType@Editor@@@Z
-    MCAPI LevelSummary(
-        std::string const&           id,
-        std::string const&           name,
-        int64                        lastPlayed,
-        ::GameType                   gameType,
-        ::Difficulty                 gameDifficulty,
-        class LevelSeed64            seed,
-        int                          npv,
-        uint64                       sizeOnDisk,
-        bool                         confirmedPlatformLockedContent,
-        bool                         lanBroadcastIntent,
-        ::Social::GamePublishSetting xblBroadcastIntent,
-        bool                         commandsEnabled,
-        ::EducationEditionOffer      eduOffer,
-        class GameVersion const&     lastLoadedWithGameVersion,
-        class GameVersion const&     minCompatibleClientVersion,
-        ::StorageVersion             storageVersion,
-        class Core::Path const&      path,
-        class ContentIdentity const& premiumContentIdentity,
-        std::string const&           educationOid,
-        bool,
-        struct EduSharedUriResource const&,
-        class Experiments const&,
-        class BaseGameVersion const& baseGameVersion,
-        ::Editor::WorldType
-    );
+    // ??0LevelSummary@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_JW4GameType@@W4Difficulty@@VLevelSeed64@@H_K_N6W4GamePublishSetting@Social@@6W4EducationEditionOffer@@AEBVGameVersion@@9W4StorageVersion@@AEBVPath@Core@@AEBVContentIdentity@@0_NAEBUEduSharedUriResource@@AEBVExperiments@@AEBVBaseGameVersion@@W4WorldType@Editor@@V?$optional@VCloudSaveLevelInfo@@@2@@Z
+    MCAPI LevelSummary(std::string const&, std::string const&, int64, ::GameType, ::Difficulty, class LevelSeed64, int, uint64, bool, bool, ::Social::GamePublishSetting, bool, ::EducationEditionOffer, class GameVersion const&, class GameVersion const&, ::StorageVersion, class Core::Path const&, class ContentIdentity const&, std::string const&, bool, struct EduSharedUriResource const&, class Experiments const&, class BaseGameVersion const&, ::Editor::WorldType, std::optional<class CloudSaveLevelInfo>);
 
     // symbol: ??4LevelSummary@@QEAAAEAU0@AEBU0@@Z
     MCAPI struct LevelSummary& operator=(struct LevelSummary const&);

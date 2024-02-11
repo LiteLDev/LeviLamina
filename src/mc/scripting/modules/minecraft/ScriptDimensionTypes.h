@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/scripting/StrongTypedObjectHandle.h"
 #include "mc/world/AutomaticID.h"
 
 // auto generated forward declare list
@@ -25,8 +26,8 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ?get@ScriptDimensionTypes@ScriptModuleMinecraft@@QEAA?AV?$optional@VScriptDimensionType@ScriptModuleMinecraft@@@std@@VWeakLifetimeScope@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z
-    MCAPI std::optional<class ScriptModuleMinecraft::ScriptDimensionType>
+    // ?get@ScriptDimensionTypes@ScriptModuleMinecraft@@QEAA?AV?$optional@V?$StrongTypedObjectHandle@VScriptDimensionType@ScriptModuleMinecraft@@@Scripting@@@std@@VWeakLifetimeScope@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z
+    MCAPI std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptDimensionType>>
           get(class Scripting::WeakLifetimeScope, std::string const&);
 
     // symbol:

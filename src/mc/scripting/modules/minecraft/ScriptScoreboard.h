@@ -43,10 +43,10 @@ public:
     ScriptScoreboard(class Scoreboard& scoreboard, class Level& level, class Scripting::WeakLifetimeScope const& scope);
 
     // symbol:
-    // ?addObjective@ScriptScoreboard@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptScoreboardObjective@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+    // ?addObjective@ScriptScoreboard@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptScoreboardObjective@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@6@@Z
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardObjective>>
-    addObjective(std::string const&, std::string const& displayName);
+    addObjective(std::string const&, std::optional<std::string> const& displayName);
 
     // symbol:
     // ?clearObjectiveAtDisplaySlot@ScriptScoreboard@ScriptModuleMinecraft@@QEAA?AV?$optional@V?$StrongTypedObjectHandle@VScriptScoreboardObjective@ScriptModuleMinecraft@@@Scripting@@@std@@W4ScriptDisplayObjectiveSlotId@2@@Z

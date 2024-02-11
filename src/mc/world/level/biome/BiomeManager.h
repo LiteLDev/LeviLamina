@@ -3,8 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/OwnerPtrT.h"
-#include "mc/common/wrapper/SharePtrRefTraits.h"
+#include "mc/common/wrapper/OwnerPtr.h"
 #include "mc/world/level/biome/registry/BiomeComponentFactory.h"
 
 class BiomeManager {
@@ -17,9 +16,9 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ??0BiomeManager@@QEAA@V?$OwnerPtrT@U?$SharePtrRefTraits@VBiomeRegistry@@@@@@W4FactoryScope@BiomeComponentFactory@@_NV?$unique_ptr@VAutomaticFeatureRules@@U?$default_delete@VAutomaticFeatureRules@@@std@@@std@@@Z
+    // ??0BiomeManager@@QEAA@V?$OwnerPtr@VBiomeRegistry@@@@W4FactoryScope@BiomeComponentFactory@@_NV?$unique_ptr@VAutomaticFeatureRules@@U?$default_delete@VAutomaticFeatureRules@@@std@@@std@@@Z
     MCAPI
-    BiomeManager(class OwnerPtrT<struct SharePtrRefTraits<class BiomeRegistry>>, ::BiomeComponentFactory::FactoryScope, bool, std::unique_ptr<class AutomaticFeatureRules>);
+    BiomeManager(class OwnerPtr<class BiomeRegistry>, ::BiomeComponentFactory::FactoryScope, bool, std::unique_ptr<class AutomaticFeatureRules>);
 
     // symbol: ?getBiomeComponentFactory@BiomeManager@@QEAAAEAVBiomeComponentFactory@@XZ
     MCAPI class BiomeComponentFactory& getBiomeComponentFactory();

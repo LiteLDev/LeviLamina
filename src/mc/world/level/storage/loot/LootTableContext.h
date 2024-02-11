@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorTarget.h"
 #include "mc/world/AutomaticID.h"
 
 class LootTableContext {
@@ -69,36 +68,11 @@ public:
     MCAPI
     LootTableContext(float luck, class ILevel* level, struct ActorUniqueID, class Player* player, class Actor*, class ActorDamageSource const* deathSource, float explosionRadius, DimensionType dimensionId, class ItemStack const*);
 
-    // symbol: ?getDimensionId@LootTableContext@@QEBA?AV?$AutomaticID@VDimension@@H@@XZ
-    MCAPI DimensionType getDimensionId() const;
-
-    // symbol: ?getEntity@LootTableContext@@QEBAPEAVActor@@W4ActorTarget@@@Z
-    MCAPI class Actor* getEntity(::ActorTarget target) const;
-
-    // symbol: ?getKilledEntity@LootTableContext@@QEBAPEAVActor@@XZ
-    MCAPI class Actor* getKilledEntity() const;
-
     // symbol: ?getKillerEntity@LootTableContext@@QEBAPEAVActor@@XZ
     MCAPI class Actor* getKillerEntity() const;
 
-    // symbol: ?getKillerPet@LootTableContext@@QEBAPEAVActor@@XZ
-    MCAPI class Actor* getKillerPet() const;
-
-    // symbol: ?getKillerPlayer@LootTableContext@@QEBAPEAVActor@@XZ
-    MCAPI class Actor* getKillerPlayer() const;
-
     // symbol: ?getLevel@LootTableContext@@QEBAPEAVLevel@@XZ
     MCAPI class Level* getLevel() const;
-
-    // symbol:
-    // ?getOriginalItemName@LootTableContext@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-    MCAPI std::string getOriginalItemName() const;
-
-    // symbol: ?getThisEntity@LootTableContext@@QEBAPEAVActor@@XZ
-    MCAPI class Actor* getThisEntity() const;
-
-    // symbol: ?getTool@LootTableContext@@QEBAPEBVItemStack@@XZ
-    MCAPI class ItemStack const* getTool() const;
 
     // symbol: ?removeVisitedTable@LootTableContext@@QEAAXPEBVLootTable@@@Z
     MCAPI void removeVisitedTable(class LootTable const* table);

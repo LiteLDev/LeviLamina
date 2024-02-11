@@ -26,8 +26,8 @@
 #include "mc/scripting/modules/minecraft/ScriptFacing.h"
 #include "mc/server/ServerPlayer.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
+#include "mc/server/sim/LookDuration.h"
 #include "mc/world/AutomaticID.h"
-#include "mc/world/events/MovementEventType.h"
 #include "mc/world/item/components/ItemUseMethod.h"
 #include "mc/world/level/levelgen/structure/StructureFeatureType.h"
 
@@ -35,7 +35,7 @@
 // clang-format off
 namespace ClientBlobCache::Server { class ActiveTransfersManager; }
 namespace Editor { class IEditorPlayer; }
-namespace ScriptModuleMinecraft { struct ScriptNavigationResult; }
+namespace ScriptModuleGameTest { struct ScriptNavigationResult; }
 namespace gametest { class BaseGameTestHelper; }
 namespace mce { class Color; }
 namespace mce { class UUID; }
@@ -76,106 +76,31 @@ public:
     // vIndex: 10, symbol: __gen_??1SimulatedPlayer@@UEAA@XZ
     virtual ~SimulatedPlayer() = default;
 
-    // vIndex: 23, symbol: __unk_vfn_23
-    virtual void __unk_vfn_23();
-
     // vIndex: 26, symbol: ?teleportTo@SimulatedPlayer@@UEAAXAEBVVec3@@_NHH1@Z
     virtual void teleportTo(class Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool);
 
-    // vIndex: 39, symbol: __unk_vfn_39
-    virtual void __unk_vfn_39();
-
-    // vIndex: 42, symbol: __unk_vfn_42
-    virtual void __unk_vfn_42();
-
-    // vIndex: 47, symbol: __unk_vfn_47
-    virtual void __unk_vfn_47();
-
-    // vIndex: 60, symbol: __unk_vfn_60
-    virtual void __unk_vfn_60();
-
-    // vIndex: 61, symbol: __unk_vfn_61
-    virtual void __unk_vfn_61();
-
-    // vIndex: 62, symbol: __unk_vfn_62
-    virtual void __unk_vfn_62();
-
-    // vIndex: 107, symbol: __unk_vfn_107
-    virtual void __unk_vfn_107();
-
-    // vIndex: 144, symbol: __unk_vfn_144
-    virtual void __unk_vfn_144();
-
-    // vIndex: 162, symbol: __unk_vfn_162
-    virtual void __unk_vfn_162();
-
-    // vIndex: 167, symbol: __unk_vfn_167
-    virtual void __unk_vfn_167();
-
-    // vIndex: 168, symbol: __unk_vfn_168
-    virtual void __unk_vfn_168();
-
-    // vIndex: 177, symbol: ?aiStep@SimulatedPlayer@@UEAAXXZ
+    // vIndex: 171, symbol: ?aiStep@SimulatedPlayer@@UEAAXXZ
     virtual void aiStep();
 
-    // vIndex: 216, symbol: __unk_vfn_216
-    virtual void __unk_vfn_216();
+    // vIndex: 259, symbol: ?isSimulated@SimulatedPlayer@@UEBA_NXZ
+    virtual bool isSimulated() const;
 
-    // vIndex: 222, symbol: __unk_vfn_222
-    virtual void __unk_vfn_222();
-
-    // vIndex: 224, symbol: __unk_vfn_224
-    virtual void __unk_vfn_224();
-
-    // vIndex: 225, symbol: __unk_vfn_225
-    virtual void __unk_vfn_225();
-
-    // vIndex: 226, symbol: __unk_vfn_226
-    virtual void __unk_vfn_226();
-
-    // vIndex: 227, symbol: __unk_vfn_227
-    virtual void __unk_vfn_227();
-
-    // vIndex: 229, symbol: __unk_vfn_229
-    virtual void __unk_vfn_229();
-
-    // vIndex: 232, symbol: __unk_vfn_232
-    virtual void __unk_vfn_232();
-
-    // vIndex: 233, symbol: __unk_vfn_233
-    virtual void __unk_vfn_233();
-
-    // vIndex: 242, symbol: __unk_vfn_242
-    virtual void __unk_vfn_242();
-
-    // vIndex: 243, symbol: ?isHostingPlayer@SimulatedPlayer@@UEBA_NXZ
-    virtual bool isHostingPlayer() const;
-
-    // vIndex: 246, symbol: __unk_vfn_246
-    virtual void __unk_vfn_246();
-
-    // vIndex: 267, symbol: __unk_vfn_267
-    virtual void __unk_vfn_267();
-
-    // vIndex: 268, symbol:
+    // vIndex: 260, symbol:
     // ?getXuid@SimulatedPlayer@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getXuid() const;
 
-    // vIndex: 269, symbol: ?getMovementSettings@SimulatedPlayer@@UEBAAEBUPlayerMovementSettings@@XZ
+    // vIndex: 261, symbol: ?getMovementSettings@SimulatedPlayer@@UEBAAEBUPlayerMovementSettings@@XZ
     virtual struct PlayerMovementSettings const& getMovementSettings() const;
 
-    // vIndex: 272, symbol:
+    // vIndex: 265, symbol:
     // ?_createChunkSource@SimulatedPlayer@@MEAA?AV?$shared_ptr@VChunkViewSource@@@std@@AEAVChunkSource@@@Z
     virtual std::shared_ptr<class ChunkViewSource> _createChunkSource(class ChunkSource& mainChunkSource);
 
-    // vIndex: 276, symbol: ?_getSpawnChunkLimit@SimulatedPlayer@@MEBAHXZ
+    // vIndex: 269, symbol: ?_getSpawnChunkLimit@SimulatedPlayer@@MEBAHXZ
     virtual int _getSpawnChunkLimit() const;
 
-    // vIndex: 277, symbol: ?_updateChunkPublisherView@SimulatedPlayer@@MEAAXAEBVVec3@@M@Z
+    // vIndex: 270, symbol: ?_updateChunkPublisherView@SimulatedPlayer@@MEAAXAEBVVec3@@M@Z
     virtual void _updateChunkPublisherView(class Vec3 const&, float);
-
-    // symbol: ?isSimulated@SimulatedPlayer@@UEBA_NXZ
-    MCVAPI bool isSimulated() const;
 
     // symbol:
     // ??0SimulatedPlayer@@QEAA@AEAVLevel@@AEAVPacketSender@@AEAVServerNetworkSystem@@AEAVActiveTransfersManager@Server@ClientBlobCache@@W4GameType@@AEBVNetworkIdentifier@@W4SubClientId@@V?$function@$$A6AXAEAVServerPlayer@@@Z@std@@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCertificate@@U?$default_delete@VCertificate@@@std@@@std@@H_NAEAVEntityContext@@@Z
@@ -233,7 +158,7 @@ public:
     MCAPI void simulateFly();
 
     // symbol: ?simulateGiveItem@SimulatedPlayer@@QEAA_NAEAVItemStack@@_N@Z
-    MCAPI bool simulateGiveItem(class ItemStack& itemStack, bool);
+    MCAPI bool simulateGiveItem(class ItemStack& item, bool);
 
     // symbol: ?simulateInteract@SimulatedPlayer@@QEAA_NXZ
     MCAPI bool simulateInteract();
@@ -250,26 +175,28 @@ public:
     // symbol: ?simulateLocalMove@SimulatedPlayer@@QEAAXAEBVVec3@@M@Z
     MCAPI void simulateLocalMove(class Vec3 const&, float speed);
 
-    // symbol: ?simulateLookAt@SimulatedPlayer@@QEAAXAEAVActor@@@Z
-    MCAPI void simulateLookAt(class Actor& actor);
-
-    // symbol: ?simulateLookAt@SimulatedPlayer@@QEAAXAEBVBlockPos@@@Z
-    MCAPI void simulateLookAt(class BlockPos const& blockPos);
-
     // symbol: ?simulateLookAt@SimulatedPlayer@@QEAAXAEBVVec3@@@Z
     MCAPI void simulateLookAt(class Vec3 const& pos);
 
-    // symbol: ?simulateMoveToLocation@SimulatedPlayer@@QEAAXAEBVVec3@@M@Z
-    MCAPI void simulateMoveToLocation(class Vec3 const& position, float speed);
+    // symbol: ?simulateLookAt@SimulatedPlayer@@QEAAXAEAVActor@@W4LookDuration@sim@@@Z
+    MCAPI void simulateLookAt(class Actor&, ::sim::LookDuration);
+
+    // symbol: ?simulateLookAt@SimulatedPlayer@@QEAAXAEBVBlockPos@@W4LookDuration@sim@@@Z
+    MCAPI void simulateLookAt(class BlockPos const&, ::sim::LookDuration);
+
+    // symbol: ?simulateLookAt@SimulatedPlayer@@QEAAXAEBVVec3@@W4LookDuration@sim@@@Z
+    MCAPI void simulateLookAt(class Vec3 const&, ::sim::LookDuration);
+
+    // symbol: ?simulateMoveToLocation@SimulatedPlayer@@QEAAXAEBVVec3@@M_N@Z
+    MCAPI void simulateMoveToLocation(class Vec3 const&, float, bool);
 
     // symbol:
-    // ?simulateNavigateToEntity@SimulatedPlayer@@QEAA?AUScriptNavigationResult@ScriptModuleMinecraft@@AEAVActor@@M@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptNavigationResult
-    simulateNavigateToEntity(class Actor& actor, float speed);
+    // ?simulateNavigateToEntity@SimulatedPlayer@@QEAA?AUScriptNavigationResult@ScriptModuleGameTest@@AEAVActor@@M@Z
+    MCAPI struct ScriptModuleGameTest::ScriptNavigationResult simulateNavigateToEntity(class Actor& actor, float speed);
 
     // symbol:
-    // ?simulateNavigateToLocation@SimulatedPlayer@@QEAA?AUScriptNavigationResult@ScriptModuleMinecraft@@AEBVVec3@@M@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptNavigationResult
+    // ?simulateNavigateToLocation@SimulatedPlayer@@QEAA?AUScriptNavigationResult@ScriptModuleGameTest@@AEBVVec3@@M@Z
+    MCAPI struct ScriptModuleGameTest::ScriptNavigationResult
     simulateNavigateToLocation(class Vec3 const& position, float speed);
 
     // symbol:
@@ -283,7 +210,13 @@ public:
     MCAPI void simulateSetBodyRotation(float);
 
     // symbol: ?simulateSetItem@SimulatedPlayer@@QEAA_NAEAVItemStack@@_NH@Z
-    MCAPI bool simulateSetItem(class ItemStack& itemStack, bool, int slot);
+    MCAPI bool simulateSetItem(class ItemStack& item, bool, int slot);
+
+    // symbol: ?simulateStartBuildInSlot@SimulatedPlayer@@QEAAXH@Z
+    MCAPI void simulateStartBuildInSlot(int);
+
+    // symbol: ?simulateStopBuild@SimulatedPlayer@@QEAAXXZ
+    MCAPI void simulateStopBuild();
 
     // symbol: ?simulateStopDestroyingBlock@SimulatedPlayer@@QEAAXXZ
     MCAPI void simulateStopDestroyingBlock();
@@ -301,7 +234,7 @@ public:
     MCAPI void simulateStopUsingItem();
 
     // symbol: ?simulateUseItem@SimulatedPlayer@@QEAA_NAEAVItemStack@@@Z
-    MCAPI bool simulateUseItem(class ItemStack& itemStack);
+    MCAPI bool simulateUseItem(class ItemStack& item);
 
     // symbol: ?simulateUseItemInSlot@SimulatedPlayer@@QEAA_NH@Z
     MCAPI bool simulateUseItemInSlot(int slot);
@@ -314,7 +247,7 @@ public:
     // symbol:
     // ?simulateUseItemOnBlock@SimulatedPlayer@@QEAA_NAEAVItemStack@@AEBVBlockPos@@W4ScriptFacing@ScriptModuleMinecraft@@AEBVVec3@@@Z
     MCAPI bool
-    simulateUseItemOnBlock(class ItemStack& itemStack, class BlockPos const& pos, ::ScriptModuleMinecraft::ScriptFacing face, class Vec3 const&);
+    simulateUseItemOnBlock(class ItemStack& item, class BlockPos const& pos, ::ScriptModuleMinecraft::ScriptFacing face, class Vec3 const&);
 
     // symbol: ?simulateWorldMove@SimulatedPlayer@@QEAAXAEBVVec3@@M@Z
     MCAPI void simulateWorldMove(class Vec3 const&, float speed);
@@ -340,21 +273,15 @@ public:
     MCAPI void _addMoveComponent();
 
     // symbol:
-    // ?_createNavigationResult@SimulatedPlayer@@AEBA?AUScriptNavigationResult@ScriptModuleMinecraft@@PEAVNavigationComponent@@@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptNavigationResult
+    // ?_createNavigationResult@SimulatedPlayer@@AEBA?AUScriptNavigationResult@ScriptModuleGameTest@@PEAVNavigationComponent@@@Z
+    MCAPI struct ScriptModuleGameTest::ScriptNavigationResult
     _createNavigationResult(class NavigationComponent* navigation) const;
-
-    // symbol: ?_getInputSpeed@SimulatedPlayer@@AEAAMXZ
-    MCAPI float _getInputSpeed();
 
     // symbol: ?_startCooldown@SimulatedPlayer@@AEAAXXZ
     MCAPI void _startCooldown();
 
     // symbol: ?_trySwing@SimulatedPlayer@@AEAA_NXZ
     MCAPI bool _trySwing();
-
-    // symbol: ?_updateMovement@SimulatedPlayer@@AEAAXXZ
-    MCAPI void _updateMovement();
 
     // NOLINTEND
 };

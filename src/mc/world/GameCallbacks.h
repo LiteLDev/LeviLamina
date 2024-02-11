@@ -20,7 +20,10 @@ public:
     // vIndex: 2, symbol: __unk_vfn_2
     virtual void __unk_vfn_2() = 0;
 
-    // vIndex: 3, symbol: ?onBeforeSimTick@GameCallbacks@@UEAAXXZ
+    // vIndex: 3, symbol: __unk_vfn_3
+    virtual void __unk_vfn_3() = 0;
+
+    // vIndex: 4, symbol: ?onBeforeSimTick@GameCallbacks@@UEAAXXZ
     virtual void onBeforeSimTick();
 
     // NOLINTEND

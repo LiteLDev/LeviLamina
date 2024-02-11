@@ -17,7 +17,7 @@ public:
     virtual ~NavigationDescription();
 
     // vIndex: 2, symbol: ?deserializeData@NavigationDescription@@UEAAXUDeserializeDataParams@@@Z
-    virtual void deserializeData(struct DeserializeDataParams);
+    virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
     // symbol: ??0NavigationDescription@@QEAA@XZ
     MCAPI NavigationDescription();

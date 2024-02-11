@@ -74,8 +74,7 @@ public:
 
     // vIndex: 10, symbol:
     // ?_enqueue@PriorityDeferredSubscriptionHub@PubSub@Bedrock@@EEAAXV?$function@$$A6AXXZ@std@@W4ConnectPosition@23@V?$optional@H@5@@Z
-    virtual void
-    _enqueue(std::function<void(void)> fn, ::Bedrock::PubSub::ConnectPosition at, std::optional<int> group);
+    virtual void _enqueue(std::function<void()> fn, ::Bedrock::PubSub::ConnectPosition at, std::optional<int> group);
 
     // vIndex: 11, symbol: ?_runOneEvent@PriorityDeferredSubscriptionHub@PubSub@Bedrock@@EEAA_NXZ
     virtual bool _runOneEvent();

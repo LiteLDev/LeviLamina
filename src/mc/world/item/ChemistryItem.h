@@ -29,53 +29,8 @@ public:
     // vIndex: 0, symbol: ??1ChemistryItem@@UEAA@XZ
     virtual ~ChemistryItem();
 
-    // vIndex: 8, symbol: __unk_vfn_8
-    virtual void __unk_vfn_8();
-
-    // vIndex: 11, symbol: __unk_vfn_11
-    virtual void __unk_vfn_11();
-
-    // vIndex: 12, symbol: __unk_vfn_12
-    virtual void __unk_vfn_12();
-
-    // vIndex: 17, symbol: __unk_vfn_17
-    virtual void __unk_vfn_17();
-
-    // vIndex: 37, symbol: __unk_vfn_37
-    virtual void __unk_vfn_37();
-
-    // vIndex: 39, symbol: __unk_vfn_39
-    virtual void __unk_vfn_39();
-
-    // vIndex: 52, symbol: __unk_vfn_52
-    virtual void __unk_vfn_52();
-
-    // vIndex: 56, symbol: __unk_vfn_56
-    virtual void __unk_vfn_56();
-
-    // vIndex: 57, symbol: __unk_vfn_57
-    virtual void __unk_vfn_57();
-
-    // vIndex: 58, symbol: __unk_vfn_58
-    virtual void __unk_vfn_58();
-
-    // vIndex: 61, symbol: __unk_vfn_61
-    virtual void __unk_vfn_61();
-
-    // vIndex: 65, symbol: __unk_vfn_65
-    virtual void __unk_vfn_65();
-
-    // vIndex: 66, symbol: __unk_vfn_66
-    virtual void __unk_vfn_66();
-
-    // vIndex: 90, symbol: ?fixupCommon@ChemistryItem@@UEBAXAEAVItemStackBase@@@Z
+    // vIndex: 91, symbol: ?fixupCommon@ChemistryItem@@UEBAXAEAVItemStackBase@@@Z
     virtual void fixupCommon(class ItemStackBase& stack) const;
-
-    // vIndex: 98, symbol: __unk_vfn_98
-    virtual void __unk_vfn_98();
-
-    // vIndex: 99, symbol: __unk_vfn_99
-    virtual void __unk_vfn_99();
 
     // symbol: ?validate@ChemistryItem@@SAXAEAVItemStackBase@@@Z
     MCAPI static void validate(class ItemStackBase& stack);

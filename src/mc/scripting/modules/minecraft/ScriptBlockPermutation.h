@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockDescriptor;
 namespace ScriptModuleMinecraft { class IScriptBlockProperty; }
 namespace ScriptModuleMinecraft { class ScriptBlockType; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
@@ -74,13 +73,10 @@ public:
     MCAPI bool hasTag(std::string const& tag) const;
 
     // symbol:
-    // ?matches@ScriptBlockPermutation@ScriptModuleMinecraft@@QEBA_NAEBUContextConfig@Scripting@@VWeakLifetimeScope@4@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$optional@V?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$variant@HV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@2@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$variant@HV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@2@@std@@@2@@std@@@7@@Z
-    MCAPI bool matches(
-        struct Scripting::ContextConfig const&,
-        class Scripting::WeakLifetimeScope                                                   scope,
-        std::string                                                                          blockName,
-        std::optional<std::unordered_map<std::string, std::variant<int, std::string, bool>>> properties
-    ) const;
+    // ?matches@ScriptBlockPermutation@ScriptModuleMinecraft@@QEBA_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$optional@V?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$variant@HV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@2@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$variant@HV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@2@@std@@@2@@std@@@4@@Z
+    MCAPI bool
+        matches(std::string, std::optional<std::unordered_map<std::string, std::variant<int, std::string, bool>>>)
+            const;
 
     // symbol: ?setBlock@ScriptBlockPermutation@ScriptModuleMinecraft@@QEAAXAEBVBlock@@@Z
     MCAPI void setBlock(class Block const& block);
@@ -110,15 +106,10 @@ public:
     getOrCreateHandle(class Block const& block, class Scripting::WeakLifetimeScope const& scope);
 
     // symbol:
-    // ?resolve@ScriptBlockPermutation@ScriptModuleMinecraft@@SA?AV?$Result@V?$StrongTypedObjectHandle@VScriptBlockPermutation@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@AEBUContextConfig@4@VWeakLifetimeScope@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$optional@V?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$variant@HV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@2@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$variant@HV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@2@@std@@@2@@std@@@8@@Z
+    // ?resolve@ScriptBlockPermutation@ScriptModuleMinecraft@@SA?AV?$Result@V?$StrongTypedObjectHandle@VScriptBlockPermutation@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@VWeakLifetimeScope@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$optional@V?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$variant@HV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@2@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$variant@HV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@2@@std@@@2@@std@@@7@@Z
     MCAPI static class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>>
-    resolve(
-        struct Scripting::ContextConfig const&,
-        class Scripting::WeakLifetimeScope                                                          scope,
-        std::string const&                                                                          blockName,
-        std::optional<std::unordered_map<std::string, std::variant<int, std::string, bool>>> const& properties
-    );
+    resolve(class Scripting::WeakLifetimeScope, std::string const&, std::optional<std::unordered_map<std::string, std::variant<int, std::string, bool>>> const&);
 
     // NOLINTEND
 
@@ -129,15 +120,6 @@ public:
     MCAPI class Scripting::Result<
         std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::IScriptBlockProperty>>>
     _createPropertyV010(std::string const&);
-
-    // symbol:
-    // ?CreateBlockDescriptior@ScriptBlockPermutation@ScriptModuleMinecraft@@CA?AVBlockDescriptor@@AEBUContextConfig@Scripting@@VWeakLifetimeScope@5@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$optional@V?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$variant@HV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@2@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$variant@HV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@2@@std@@@2@@std@@@8@@Z
-    MCAPI static class BlockDescriptor CreateBlockDescriptior(
-        struct Scripting::ContextConfig const&,
-        class Scripting::WeakLifetimeScope                                                   scope,
-        std::string                                                                          blockName,
-        std::optional<std::unordered_map<std::string, std::variant<int, std::string, bool>>> properties
-    );
 
     // NOLINTEND
 };

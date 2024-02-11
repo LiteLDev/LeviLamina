@@ -12,6 +12,7 @@ class ServerLevel;
 namespace Json { class Value; }
 namespace ScriptModuleMinecraft { class ScriptTickSignal; }
 namespace ScriptModuleMinecraft { struct ScriptEventCommandMessageAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptTickEvent; }
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ModuleDescriptor; }
@@ -40,27 +41,15 @@ public:
         // __gen_??1ScriptSystemAfterEventsDeferredEventListener@ScriptSystemAfterEvents@ScriptModuleMinecraft@@UEAA@XZ
         virtual ~ScriptSystemAfterEventsDeferredEventListener() = default;
 
-        // vIndex: 1, symbol: __unk_vfn_1
-        virtual void __unk_vfn_1();
-
-        // vIndex: 2, symbol: __unk_vfn_2
-        virtual void __unk_vfn_2();
-
-        // vIndex: 3, symbol: __unk_vfn_3
-        virtual void __unk_vfn_3();
-
-        // vIndex: 4, symbol:
+        // vIndex: 5, symbol:
         // ?onFlushSystemAfterEvents@ScriptSystemAfterEventsDeferredEventListener@ScriptSystemAfterEvents@ScriptModuleMinecraft@@UEAA_NXZ
         virtual bool onFlushSystemAfterEvents();
 
-        // vIndex: 5, symbol: __unk_vfn_5
-        virtual void __unk_vfn_5();
-
-        // vIndex: 6, symbol:
+        // vIndex: 7, symbol:
         // ?onPreFlushAfterEvents@?$IScriptScriptDeferredEventListener@VScriptSystemAfterEvents@ScriptModuleMinecraft@@@ScriptModuleMinecraft@@UEAAXXZ
         virtual void onPreFlushAfterEvents();
 
-        // vIndex: 7, symbol:
+        // vIndex: 8, symbol:
         // ?onPostFlushAfterEvents@?$IScriptScriptDeferredEventListener@VScriptSystemAfterEvents@ScriptModuleMinecraft@@@ScriptModuleMinecraft@@UEAAXXZ
         virtual void onPostFlushAfterEvents();
 
@@ -82,6 +71,9 @@ public:
     // ??0ScriptSystemAfterEvents@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@V?$not_null@PEAVServerLevel@@@gsl@@@Z
     MCAPI ScriptSystemAfterEvents(class Scripting::WeakLifetimeScope const&, gsl::not_null<class ServerLevel*>);
 
+    // symbol: ?getLevel@ScriptSystemAfterEvents@ScriptModuleMinecraft@@QEBAAEAVServerLevel@@XZ
+    MCAPI class ServerLevel& getLevel() const;
+
     // symbol: ?getScriptTickSignal@ScriptSystemAfterEvents@ScriptModuleMinecraft@@QEAAAEAVScriptTickSignal@2@XZ
     MCAPI class ScriptModuleMinecraft::ScriptTickSignal& getScriptTickSignal();
 
@@ -98,6 +90,9 @@ public:
     // ?registerListener@ScriptSystemAfterEvents@ScriptModuleMinecraft@@QEAAXU?$TypedObjectHandle@VScriptSystemAfterEvents@ScriptModuleMinecraft@@@Scripting@@@Z
     MCAPI void
         registerListener(struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptSystemAfterEvents>);
+
+    // symbol: ?runSystemTick@ScriptSystemAfterEvents@ScriptModuleMinecraft@@QEAA_NAEAUScriptTickEvent@2@@Z
+    MCAPI bool runSystemTick(struct ScriptModuleMinecraft::ScriptTickEvent&);
 
     // symbol: ??1ScriptSystemAfterEvents@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptSystemAfterEvents();

@@ -21,7 +21,7 @@ public:
     virtual bool test(class Block const& block, class Randomize& randomize) const;
 
     // vIndex: 2, symbol: ?test@StructurePoolBlockPredicateBlockMatchRandom@@UEBA_NAEBVBlockPos@@0AEAVRandomize@@@Z
-    virtual bool test(class BlockPos const&, class BlockPos const&, class Randomize& randomize) const;
+    virtual bool test(class BlockPos const& pos, class BlockPos const& refPos, class Randomize& randomize) const;
 
     // symbol: ??0StructurePoolBlockPredicateBlockMatchRandom@@QEAA@AEBVBlock@@M@Z
     MCAPI StructurePoolBlockPredicateBlockMatchRandom(class Block const& block, float probability);

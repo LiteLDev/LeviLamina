@@ -83,9 +83,9 @@ public:
     // symbol:
     // ??0ResourcePackManager@@QEAA@V?$function@$$A6A?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ@std@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentTierManager@@@Bedrock@@@gsl@@_N@Z
     MCAPI ResourcePackManager(
-        std::function<class Core::PathBuffer<std::string>(void)>,
-        Bedrock::NotNullNonOwnerPtr<class IContentTierManager const> const&,
-        bool
+        std::function<class Core::PathBuffer<std::string>()>                getPath,
+        Bedrock::NotNullNonOwnerPtr<class IContentTierManager const> const& contentTierManager,
+        bool                                                                needsToInitialize
     );
 
     // symbol: ?clearStack@ResourcePackManager@@QEAAXW4ResourcePackStackType@@_N@Z
@@ -128,12 +128,6 @@ public:
 
     // symbol: ?iteratePacks@ResourcePackManager@@QEBAXAEBV?$function@$$A6AXAEBVPackInstance@@@Z@std@@@Z
     MCAPI void iteratePacks(std::function<void(class PackInstance const&)> const& pred) const;
-
-    // symbol: ?loadAllVersionsOf@ResourcePackManager@@QEBA_NAEBVResourceLocation@@AEAVResourcePackMergeStrategy@@@Z
-    MCAPI bool loadAllVersionsOf(
-        class ResourceLocation const&    resourceLocation,
-        class ResourcePackMergeStrategy& mergeStrategy
-    ) const;
 
     // symbol: ?registerResourcePackListener@ResourcePackManager@@QEAAXAEAVResourcePackListener@@@Z
     MCAPI void registerResourcePackListener(class ResourcePackListener& listener);

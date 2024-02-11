@@ -14,6 +14,7 @@
 // clang-format off
 namespace RakNet { class RakPeerInterface; }
 namespace RakNet { struct RakNetStatistics; }
+namespace RakNet { struct RakPeerConfiguration; }
 namespace RakNet { struct SystemAddress; }
 namespace Social { class GameConnectionInfo; }
 // clang-format on
@@ -226,6 +227,9 @@ public:
     // symbol: ?runEvents@RakNetConnector@@UEAAXXZ
     MCVAPI void runEvents();
 
+    // symbol: ?setApplicationHandshakeCompleted@RakNetConnector@@UEAA_NAEBVNetworkIdentifier@@@Z
+    MCVAPI bool setApplicationHandshakeCompleted(class NetworkIdentifier const&);
+
     // symbol: ?setupNatPunch@RakNetConnector@@UEAAX_N@Z
     MCVAPI void setupNatPunch(bool connectToClient);
 
@@ -240,9 +244,9 @@ public:
     MCVAPI ~RakNetConnector();
 
     // symbol:
-    // ??0RakNetConnector@@QEAA@AEAUConnectionCallbacks@0@AEAVIPSupportInterface@RakPeerHelper@@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
+    // ??0RakNetConnector@@QEAA@AEAUConnectionCallbacks@0@AEAVIPSupportInterface@RakPeerHelper@@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@AEBURakPeerConfiguration@RakNet@@@Z
     MCAPI
-    RakNetConnector(struct RakNetConnector::ConnectionCallbacks& callbacks, class RakPeerHelper::IPSupportInterface& ipInterface, class Bedrock::NonOwnerPointer<class AppPlatform> const&);
+    RakNetConnector(struct RakNetConnector::ConnectionCallbacks&, class RakPeerHelper::IPSupportInterface&, class Bedrock::NonOwnerPointer<class AppPlatform> const&, struct RakNet::RakPeerConfiguration const&);
 
     // symbol: ?getStatistics@RakNetConnector@@QEAA_NAEAURakNetStatistics@RakNet@@@Z
     MCAPI bool getStatistics(struct RakNet::RakNetStatistics& rns);

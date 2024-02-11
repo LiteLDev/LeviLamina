@@ -14,6 +14,7 @@ public:
     // clang-format off
     struct BlockComplexAliasBlockState;
     class BlockComplexAliasContent;
+    struct DirectAccessBlocks;
     struct LookupByNameImplReturnType;
     // clang-format on
 
@@ -60,6 +61,14 @@ public:
         // NOLINTEND
     };
 
+    struct DirectAccessBlocks {
+    public:
+        // prevent constructor by default
+        DirectAccessBlocks& operator=(DirectAccessBlocks const&);
+        DirectAccessBlocks(DirectAccessBlocks const&);
+        DirectAccessBlocks();
+    };
+
     struct LookupByNameImplReturnType {
     public:
         // prevent constructor by default
@@ -102,7 +111,7 @@ public:
     MCAPI static void forEachBlock(std::function<bool(class BlockLegacy const&)> callback);
 
     // symbol: ?getBlockNameFromNameHash@BlockTypeRegistry@@SAAEBVHashedString@@_K@Z
-    MCAPI static class HashedString const& getBlockNameFromNameHash(uint64);
+    MCAPI static class HashedString const& getBlockNameFromNameHash(uint64 hash);
 
     // symbol:
     // ?getComplexAliasPostSplitBlockNames@BlockTypeRegistry@@SAAEBV?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@AEBVHashedString@@@Z
@@ -112,17 +121,17 @@ public:
     // symbol: ?getDefaultBlockState@BlockTypeRegistry@@SAAEBVBlock@@AEBVHashedString@@_N@Z
     MCAPI static class Block const& getDefaultBlockState(class HashedString const& name, bool logNotFound = false);
 
+    // symbol: ?getDirectAccessBlocks@BlockTypeRegistry@@SAAEBUDirectAccessBlocks@1@XZ
+    MCAPI static struct BlockTypeRegistry::DirectAccessBlocks const& getDirectAccessBlocks();
+
     // symbol: ?initHardCodedBlockComponents@BlockTypeRegistry@@SAXAEBVExperiments@@@Z
     MCAPI static void initHardCodedBlockComponents(class Experiments const&);
 
+    // symbol: ?initRWLock@BlockTypeRegistry@@SAXXZ
+    MCAPI static void initRWLock();
+
     // symbol: ?isComplexAliasBlock@BlockTypeRegistry@@SA_NAEBVHashedString@@@Z
     MCAPI static bool isComplexAliasBlock(class HashedString const& blockName);
-
-    // symbol: ?lockAgainstRegistryModifications@BlockTypeRegistry@@SA?AVBlockTypeRegistryReadLock@@XZ
-    MCAPI static class BlockTypeRegistryReadLock lockAgainstRegistryModifications();
-
-    // symbol: ?lockForRegistryModifications@BlockTypeRegistry@@SA?AVBlockTypeRegistryModificationsLock@@XZ
-    MCAPI static class BlockTypeRegistryModificationsLock lockForRegistryModifications();
 
     // symbol:
     // ?lookupByName@BlockTypeRegistry@@SAPEBVBlock@@AEBVHashedString@@AEBV?$vector@UBlockComplexAliasBlockState@BlockTypeRegistry@@V?$allocator@UBlockComplexAliasBlockState@BlockTypeRegistry@@@std@@@std@@_N@Z
@@ -150,6 +159,9 @@ public:
     MCAPI static void
     registerComplexAlias(class HashedString const& alias, std::function<class Block const*(int)> callback, std::vector<std::reference_wrapper<class HashedString const>> const&, class BaseGameVersion const&);
 
+    // symbol: ?setupDirectAccessBlocks@BlockTypeRegistry@@SAXXZ
+    MCAPI static void setupDirectAccessBlocks();
+
     // symbol: ?unregisterBlock@BlockTypeRegistry@@SAXAEBVHashedString@@@Z
     MCAPI static void unregisterBlock(class HashedString const& name);
 
@@ -160,6 +172,12 @@ public:
 
     // private:
     // NOLINTBEGIN
+    // symbol: ?_lockAgainstRegistryModifications@BlockTypeRegistry@@CA?AVBlockTypeRegistryReadLock@@XZ
+    MCAPI static class BlockTypeRegistryReadLock _lockAgainstRegistryModifications();
+
+    // symbol: ?_lockForRegistryModifications@BlockTypeRegistry@@CA?AVBlockTypeRegistryModificationsLock@@XZ
+    MCAPI static class BlockTypeRegistryModificationsLock _lockForRegistryModifications();
+
     // symbol:
     // ?_lookupByNameImpl@BlockTypeRegistry@@CA?AULookupByNameImplReturnType@1@AEBVHashedString@@HW4LookupByNameImplResolve@1@_N@Z
     MCAPI static struct ::BlockTypeRegistry::LookupByNameImplReturnType _lookupByNameImpl(
@@ -200,6 +218,10 @@ private:
     MCAPI static entt::dense_map<uint64, class HashedString> mBlockNameHashToStringMap;
 
     // symbol:
+    // ?mDirectAccessBlocks@BlockTypeRegistry@@0V?$unique_ptr@UDirectAccessBlocks@BlockTypeRegistry@@U?$default_delete@UDirectAccessBlocks@BlockTypeRegistry@@@std@@@std@@A
+    MCAPI static std::unique_ptr<struct BlockTypeRegistry::DirectAccessBlocks> mDirectAccessBlocks;
+
+    // symbol:
     // ?mKnownNamespaces@BlockTypeRegistry@@0V?$set@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@A
     MCAPI static std::set<std::string> mKnownNamespaces;
 
@@ -224,6 +246,8 @@ public:
     static auto& $mBlockLookupMap() { return mBlockLookupMap; }
 
     static auto& $mBlockNameHashToStringMap() { return mBlockNameHashToStringMap; }
+
+    static auto& $mDirectAccessBlocks() { return mDirectAccessBlocks; }
 
     static auto& $mKnownNamespaces() { return mKnownNamespaces; }
 

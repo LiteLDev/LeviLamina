@@ -27,7 +27,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol:
-    // ?_tickTryExitVehicle@TryExitVehicleSystem@@CAXAEBVStrictEntityContext@@AEBUPassengerComponent@@V?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@U?$Exclude@V?$FlagComponent@UBoatFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@UMobFlag@@@@@@V?$Optional@$$CBUAttributesComponent@@@@$$CBUVehicleComponent@@$$CBUSynchedActorDataComponent@@@@AEAV?$EntityModifier@V?$FlagComponent@UStopRidingRequestFlag@@@@V?$FlagComponent@UExitFromPassengerFlag@@@@@@@Z
+    // ?_tickTryExitVehicle@TryExitVehicleSystem@@CAXAEBVStrictEntityContext@@AEBUPassengerComponent@@V?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@U?$Exclude@V?$FlagComponent@UBoatFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@UMobFlag@@@@@@$$CBUMovementAttributesComponent@@$$CBUVehicleComponent@@$$CBUActorDataFlagComponent@@$$CBUActorDataControllingSeatIndexComponent@@@@AEAV?$EntityModifier@V?$FlagComponent@UStopRidingRequestFlag@@@@V?$FlagComponent@UExitFromPassengerFlag@@@@@@@Z
     MCAPI static void _tickTryExitVehicle(
         class StrictEntityContext const& entity,
         struct PassengerComponent const&,
@@ -36,9 +36,10 @@ public:
             struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,
             struct Exclude<class FlagComponent<struct BoatFlag>>,
             class Optional<class FlagComponent<struct MobFlag> const>,
-            class Optional<struct AttributesComponent const>,
+            struct MovementAttributesComponent const,
             struct VehicleComponent const,
-            struct SynchedActorDataComponent const>,
+            struct ActorDataFlagComponent const,
+            struct ActorDataControllingSeatIndexComponent const>,
         class EntityModifier<
             class FlagComponent<struct StopRidingRequestFlag>,
             class FlagComponent<struct ExitFromPassengerFlag>>& modifier

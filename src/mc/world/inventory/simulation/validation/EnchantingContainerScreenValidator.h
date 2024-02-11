@@ -11,14 +11,12 @@ public:
     // prevent constructor by default
     EnchantingContainerScreenValidator& operator=(EnchantingContainerScreenValidator const&);
     EnchantingContainerScreenValidator(EnchantingContainerScreenValidator const&);
+    EnchantingContainerScreenValidator();
 
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1EnchantingContainerScreenValidator@@UEAA@XZ
     virtual ~EnchantingContainerScreenValidator() = default;
-
-    // symbol: ??0EnchantingContainerScreenValidator@@QEAA@XZ
-    MCAPI EnchantingContainerScreenValidator();
 
     // NOLINTEND
 };

@@ -34,17 +34,11 @@ public:
     // vIndex: 4, symbol: ?isItemAllowedToAdd@FurnaceFuelContainerValidation@@UEBA_NAEBVItemStack@@@Z
     virtual bool isItemAllowedToAdd(class ItemStack const& item) const;
 
-    // vIndex: 5, symbol: __unk_vfn_5
-    virtual void __unk_vfn_5();
-
     // vIndex: 6, symbol: ?canItemMoveToContainer@ContainerValidationBase@@UEBA_NAEBVItemStackBase@@@Z
     virtual bool canItemMoveToContainer(class ItemStackBase const& item) const;
 
     // vIndex: 7, symbol: ?canDestroy@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@@Z
     virtual bool canDestroy(class ContainerScreenContext const&) const;
-
-    // symbol: ?getContainerOffset@FurnaceFuelContainerValidation@@UEBAHAEBVContainerScreenContext@@@Z
-    MCVAPI int getContainerOffset(class ContainerScreenContext const& screenContext) const;
 
     // NOLINTEND
 };

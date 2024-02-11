@@ -42,7 +42,7 @@ public:
     // symbol:
     // ??0MapDataManager@@QEAA@AEAVDimensionManager@@PEAVLevelStorage@@V?$unique_ptr@VIMapDataManagerOptions@@U?$default_delete@VIMapDataManagerOptions@@@std@@@std@@V?$function@$$A6A?AUActorUniqueID@@XZ@4@@Z
     MCAPI
-    MapDataManager(class DimensionManager&, class LevelStorage*, std::unique_ptr<class IMapDataManagerOptions>, std::function<struct ActorUniqueID(void)>);
+    MapDataManager(class DimensionManager&, class LevelStorage*, std::unique_ptr<class IMapDataManagerOptions>, std::function<struct ActorUniqueID()>);
 
     // symbol: ?copyAndLockMap@MapDataManager@@QEAA_NUActorUniqueID@@0@Z
     MCAPI bool copyAndLockMap(struct ActorUniqueID, struct ActorUniqueID);

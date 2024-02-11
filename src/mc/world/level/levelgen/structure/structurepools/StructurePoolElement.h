@@ -7,6 +7,7 @@
 #include "mc/enums/PostProcessSettings.h"
 #include "mc/enums/Projection.h"
 #include "mc/enums/Rotation.h"
+#include "mc/world/level/levelgen/structure/structurepools/StructurePoolElementType.h"
 
 class StructurePoolElement {
 public:
@@ -88,7 +89,7 @@ public:
         class BoundingBox                                                                    chunkBB,
         class Random&                                                                        random,
         std::unordered_map<class BlockPos, std::optional<struct ActorDefinitionIdentifier>>& entitiesToPlace,
-        class BlockPos
+        class BlockPos                                                                       refPos
     ) const;
 
     // vIndex: 8, symbol: ?placeActors@StructurePoolElement@@UEBAXAEAVBlockSource@@VBlockPos@@W4Rotation@@AEAVRandom@@@Z
@@ -117,6 +118,9 @@ public:
 
     // vIndex: 12, symbol: ??1StructurePoolElement@@UEAA@XZ
     virtual ~StructurePoolElement();
+
+    // vIndex: 13, symbol: ?type@StructurePoolElement@@UEBA?AW4StructurePoolElementType@@XZ
+    virtual ::StructurePoolElementType type() const;
 
     // symbol:
     // ??0StructurePoolElement@@QEAA@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UStructurePoolElementSettings@@@Z
@@ -148,8 +152,10 @@ public:
     );
 
     // symbol:
-    // ?getLocation@StructurePoolElement@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-    MCAPI std::string const& getLocation() const;
+    // ?single@StructurePoolElement@@SA?AV?$function@$$A6AAEBVStructurePoolElement@@UStructureTemplateRegistrationContext@@W4Projection@@@Z@std@@V?$basic_string_view@DU?$char_traits@D@std@@@3@PEBV?$vector@V?$unique_ptr@VStructurePoolBlockRule@@U?$default_delete@VStructurePoolBlockRule@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePoolBlockRule@@U?$default_delete@VStructurePoolBlockRule@@@std@@@std@@@2@@3@@Z
+    MCAPI static std::function<
+        class StructurePoolElement const&(struct StructureTemplateRegistrationContext, ::Projection)>
+    single(std::string_view, std::vector<std::unique_ptr<class StructurePoolBlockRule>> const*);
 
     // NOLINTEND
 

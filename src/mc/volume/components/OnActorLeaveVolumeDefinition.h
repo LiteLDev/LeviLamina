@@ -16,9 +16,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?initialize@OnActorLeaveVolumeDefinition@@QEBAXAEAVEntityContext@@AEAVOnActorLeaveVolumeComponent@@@Z
-    MCAPI void initialize(class EntityContext&, class OnActorLeaveVolumeComponent& component) const;
-
     // symbol: ??1OnActorLeaveVolumeDefinition@@QEAA@XZ
     MCAPI ~OnActorLeaveVolumeDefinition();
 

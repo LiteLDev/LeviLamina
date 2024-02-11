@@ -57,6 +57,12 @@ public:
     // symbol: ?generateAssetSet@ResourcePack@@QEAAXXZ
     MCAPI void generateAssetSet();
 
+    // symbol: ?getFolderName@ResourcePack@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    MCAPI std::string const& getFolderName() const;
+
+    // symbol: ?getLoadTime@ResourcePack@@QEBANXZ
+    MCAPI double getLoadTime() const;
+
     // symbol: ?getManifest@ResourcePack@@QEAAAEAVPackManifest@@XZ
     MCAPI class PackManifest& getManifest();
 
@@ -76,6 +82,16 @@ public:
     // symbol: ?getResourceLocation@ResourcePack@@QEBAAEBVResourceLocation@@XZ
     MCAPI class ResourceLocation const& getResourceLocation() const;
 
+    // symbol: ?getSubpackCount@ResourcePack@@QEBAHXZ
+    MCAPI int getSubpackCount() const;
+
+    // symbol:
+    // ?getSubpackFolderName@ResourcePack@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+    MCAPI std::string const& getSubpackFolderName(int) const;
+
+    // symbol: ?getSubpackIndex@ResourcePack@@QEBAHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI int getSubpackIndex(std::string const& name) const;
+
     // symbol: ?getSubpackInfoStack@ResourcePack@@QEBAAEBVSubpackInfoCollection@@XZ
     MCAPI class SubpackInfoCollection const& getSubpackInfoStack() const;
 
@@ -85,6 +101,15 @@ public:
     // symbol: ?hasResource@ResourcePack@@QEBA_NAEBVPath@Core@@H@Z
     MCAPI bool hasResource(class Core::Path const& resourceName, int subpackIndex) const;
 
+    // symbol: ?isBaseGamePack@ResourcePack@@QEBA_NXZ
+    MCAPI bool isBaseGamePack() const;
+
+    // symbol: ?isSlicePack@ResourcePack@@QEBA_NXZ
+    MCAPI bool isSlicePack() const;
+
+    // symbol: ?isTrusted@ResourcePack@@QEBA_NXZ
+    MCAPI bool isTrusted() const;
+
     // symbol: ?isType@ResourcePack@@QEBA_NW4PackType@@@Z
     MCAPI bool isType(::PackType packType) const;
 
@@ -93,6 +118,12 @@ public:
 
     // symbol: ?setAsSlicePack@ResourcePack@@QEAAXXZ
     MCAPI void setAsSlicePack();
+
+    // symbol: ?setError@ResourcePack@@QEAAXXZ
+    MCAPI void setError();
+
+    // symbol: ?setLoadTime@ResourcePack@@QEAAXN@Z
+    MCAPI void setLoadTime(double loadTime);
 
     // symbol: ?setLocale@ResourcePack@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void setLocale(std::string const& code);

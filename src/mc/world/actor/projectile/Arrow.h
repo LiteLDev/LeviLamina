@@ -42,71 +42,32 @@ public:
     // vIndex: 10, symbol: __gen_??1Arrow@@UEAA@XZ
     virtual ~Arrow() = default;
 
-    // vIndex: 23, symbol: __unk_vfn_23
-    virtual void __unk_vfn_23();
-
     // vIndex: 29, symbol: ?normalTick@Arrow@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 39, symbol: __unk_vfn_39
-    virtual void __unk_vfn_39();
-
-    // vIndex: 42, symbol: __unk_vfn_42
-    virtual void __unk_vfn_42();
-
-    // vIndex: 47, symbol: __unk_vfn_47
-    virtual void __unk_vfn_47();
-
-    // vIndex: 48, symbol: ?playerTouch@Arrow@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 45, symbol: ?playerTouch@Arrow@@UEAAXAEAVPlayer@@@Z
     virtual void playerTouch(class Player& player);
 
-    // vIndex: 60, symbol: __unk_vfn_60
-    virtual void __unk_vfn_60();
-
-    // vIndex: 61, symbol: __unk_vfn_61
-    virtual void __unk_vfn_61();
-
-    // vIndex: 62, symbol: __unk_vfn_62
-    virtual void __unk_vfn_62();
-
-    // vIndex: 107, symbol: __unk_vfn_107
-    virtual void __unk_vfn_107();
-
-    // vIndex: 141, symbol: ?setAuxValue@Arrow@@UEAAXH@Z
+    // vIndex: 138, symbol: ?setAuxValue@Arrow@@UEAAXH@Z
     virtual void setAuxValue(int aux);
 
-    // vIndex: 144, symbol: __unk_vfn_144
-    virtual void __unk_vfn_144();
-
-    // vIndex: 162, symbol: __unk_vfn_162
-    virtual void __unk_vfn_162();
-
-    // vIndex: 164, symbol: ?readAdditionalSaveData@Arrow@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 159, symbol: ?readAdditionalSaveData@Arrow@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 165, symbol: ?addAdditionalSaveData@Arrow@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 160, symbol: ?addAdditionalSaveData@Arrow@@MEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 167, symbol: __unk_vfn_167
-    virtual void __unk_vfn_167();
-
-    // vIndex: 168, symbol: __unk_vfn_168
-    virtual void __unk_vfn_168();
-
-    // vIndex: 169, symbol: ?shoot@Arrow@@UEAAXAEBVVec3@@MM0@Z
+    // vIndex: 163, symbol: ?shoot@Arrow@@UEAAXAEBVVec3@@MM0@Z
     virtual void shoot(class Vec3 const& dir, float pow, float uncertainty, class Vec3 const& baseSpeed);
 
-    // vIndex: 170, symbol: ?_getPickupItem@Arrow@@MEBA?AVItemStack@@XZ
+    // vIndex: 164, symbol: ?_getPickupItem@Arrow@@MEBA?AVItemStack@@XZ
     virtual class ItemStack _getPickupItem() const;
 
-    // vIndex: 171, symbol: ?applyParticleColor@Arrow@@MEAAXPEAVParticle@@@Z
+    // vIndex: 165, symbol: ?applyParticleColor@Arrow@@MEAAXPEAVParticle@@@Z
     virtual void applyParticleColor(class Particle* p);
 
-    // vIndex: 172, symbol: ?getEffectColor@Arrow@@MEAA?AVColor@mce@@XZ
+    // vIndex: 166, symbol: ?getEffectColor@Arrow@@MEAA?AVColor@mce@@XZ
     virtual class mce::Color getEffectColor();
-
-    // symbol: ?canMakeStepSound@Arrow@@MEBA_NXZ
-    MCVAPI bool canMakeStepSound() const;
 
     // symbol: ??0Arrow@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Arrow(

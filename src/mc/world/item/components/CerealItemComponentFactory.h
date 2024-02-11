@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
-namespace cereal { class SchemaFactory; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -54,11 +53,6 @@ public:
     MCAPI static void addAllComponentUpgrades(class CerealDocumentUpgrader&, struct cereal::ReflectionCtx&);
 
     // symbol:
-    // ?bindAllComponentSchemas@CerealItemComponentFactory@@SAXAEAVSchemaFactory@cereal@@AEBVSemVersion@@AEAUReflectionCtx@3@@Z
-    MCAPI static void
-    bindAllComponentSchemas(class cereal::SchemaFactory&, class SemVersion const&, struct cereal::ReflectionCtx&);
-
-    // symbol:
     // ?constructItemComponent@CerealItemComponentFactory@@SA?AV?$shared_ptr@VItemComponent@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEAUReflectionCtx@cereal@@@Z
     MCAPI static std::shared_ptr<class ItemComponent>
     constructItemComponent(std::string const&, struct cereal::ReflectionCtx&);
@@ -81,11 +75,6 @@ public:
     // symbol:
     // ?isRegisteredComponent@CerealItemComponentFactory@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAUReflectionCtx@cereal@@@Z
     MCAPI static bool isRegisteredComponent(std::string const&, struct cereal::ReflectionCtx&);
-
-    // symbol:
-    // ?registerDeprecatedComponent@CerealItemComponentFactory@@SAX$$QEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEAUReflectionCtx@cereal@@@Z
-    MCAPI static void
-    registerDeprecatedComponent(std::string const&&, std::string const&&, struct cereal::ReflectionCtx&);
 
     // NOLINTEND
 

@@ -49,8 +49,10 @@ public:
 
     // symbol:
     // ??0ScriptInventoryComponentContainer@ScriptModuleMinecraft@@QEAA@AEBVWeakEntityRef@@AEBVWeakLifetimeScope@Scripting@@@Z
-    MCAPI
-    ScriptInventoryComponentContainer(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const& scope);
+    MCAPI ScriptInventoryComponentContainer(
+        class WeakEntityRef const&                entityRef,
+        class Scripting::WeakLifetimeScope const& scope
+    );
 
     // symbol: ??4ScriptInventoryComponentContainer@ScriptModuleMinecraft@@QEAAAEAV01@AEBV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptInventoryComponentContainer&

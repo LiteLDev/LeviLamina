@@ -33,9 +33,12 @@ public:
         class ActorInteraction&   interaction
     );
 
-    // symbol: ?_tryEquipitem@InteractComponent@@CAXAEAVActor@@AEAVPlayer@@AEAVItemStack@@AEBV4@HAEA_N4@Z
+    // symbol: ?_tryDropItem@InteractComponent@@CAXAEAVBlockSource@@AEAVActor@@H@Z
+    MCAPI static void _tryDropItem(class BlockSource&, class Actor&, int);
+
+    // symbol: ?_tryEquipItem@InteractComponent@@CAXAEAVActor@@AEAVPlayer@@AEAVItemStack@@AEBV4@HAEA_N4@Z
     MCAPI static void
-    _tryEquipitem(class Actor& owner, class Player& player, class ItemStack&, class ItemStack const&, int slot, bool&, bool&);
+    _tryEquipItem(class Actor&, class Player&, class ItemStack&, class ItemStack const&, int, bool&, bool&);
 
     // NOLINTEND
 };

@@ -81,7 +81,7 @@ public:
     virtual void update();
 
     // vIndex: 5, symbol: ?flush@NetworkPeer@@UEAAX$$QEAV?$function@$$A6AXXZ@std@@@Z
-    virtual void flush(std::function<void(void)>&& callback);
+    virtual void flush(std::function<void()>&& callback);
 
     // vIndex: 6, symbol: ?isLocal@NetworkPeer@@UEBA_NXZ
     virtual bool isLocal() const;

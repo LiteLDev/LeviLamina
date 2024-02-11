@@ -222,7 +222,7 @@ public:
     // vIndex: 42, symbol:
     // ?assertContainerContains@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEBVItemStack@@AEBVBlockPos@@@Z
     virtual std::optional<struct gametest::GameTestError>
-    assertContainerContains(class ItemStack const& itemStack, class BlockPos const& pos);
+    assertContainerContains(class ItemStack const& item, class BlockPos const& pos);
 
     // vIndex: 43, symbol:
     // ?assertEntityHasComponent@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEBUActorDefinitionIdentifier@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBVBlockPos@@_N@Z
@@ -275,11 +275,12 @@ public:
 
     // vIndex: 52, symbol:
     // ?relativePosition@MinecraftGameTestHelper@@UEBA?AV?$variant@UGameTestError@gametest@@VBlockPos@@@std@@AEBVBlockPos@@@Z
-    virtual std::variant<struct gametest::GameTestError, class BlockPos> relativePosition(class BlockPos const&) const;
+    virtual std::variant<struct gametest::GameTestError, class BlockPos> relativePosition(class BlockPos const& pos
+    ) const;
 
     // vIndex: 53, symbol:
     // ?relativePosition@MinecraftGameTestHelper@@UEBA?AV?$variant@UGameTestError@gametest@@VVec3@@@std@@AEBVVec3@@@Z
-    virtual std::variant<struct gametest::GameTestError, class Vec3> relativePosition(class Vec3 const&) const;
+    virtual std::variant<struct gametest::GameTestError, class Vec3> relativePosition(class Vec3 const& pos) const;
 
     // vIndex: 54, symbol:
     // ?setFluidContainer@MinecraftGameTestHelper@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@AEBVBlockPos@@H@Z

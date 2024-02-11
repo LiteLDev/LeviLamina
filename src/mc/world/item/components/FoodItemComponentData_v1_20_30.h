@@ -16,9 +16,6 @@ public:
     // symbol: ??0FoodItemComponentData_v1_20_30@@QEAA@XZ
     MCAPI FoodItemComponentData_v1_20_30();
 
-    // symbol: ??0FoodItemComponentData_v1_20_30@@QEAA@$$QEAU0@@Z
-    MCAPI FoodItemComponentData_v1_20_30(struct FoodItemComponentData_v1_20_30&&);
-
     // symbol: ??0FoodItemComponentData_v1_20_30@@QEAA@AEBU0@@Z
     MCAPI FoodItemComponentData_v1_20_30(struct FoodItemComponentData_v1_20_30 const&);
 
@@ -35,6 +32,9 @@ public:
     // ?bindType@FoodItemComponentData_v1_20_30@@SAXAEAUReflectionCtx@cereal@@AEBV?$vector@W4AllExperiments@@V?$allocator@W4AllExperiments@@@std@@@std@@V?$optional@VSemVersion@@@5@@Z
     MCAPI static void
     bindType(struct cereal::ReflectionCtx&, std::vector<::AllExperiments> const&, std::optional<class SemVersion>);
+
+    // symbol: ?upgrade@FoodItemComponentData_v1_20_30@@SA?AU1@$$QEAUFoodItemComponentLegacyFactoryData@@@Z
+    MCAPI static struct FoodItemComponentData_v1_20_30 upgrade(struct FoodItemComponentLegacyFactoryData&&);
 
     // NOLINTEND
 };

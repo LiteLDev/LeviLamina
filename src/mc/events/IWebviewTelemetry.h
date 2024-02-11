@@ -20,23 +20,8 @@ public:
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
 
-    // vIndex: 2, symbol: __unk_vfn_2
-    virtual void __unk_vfn_2();
-
-    // vIndex: 3, symbol: __unk_vfn_3
-    virtual void __unk_vfn_3();
-
-    // vIndex: 4, symbol: __unk_vfn_4
-    virtual void __unk_vfn_4();
-
-    // vIndex: 5, symbol: __unk_vfn_5
-    virtual void __unk_vfn_5();
-
     // vIndex: 6, symbol: ?onDownloadBegin@IWebviewTelemetry@@UEAAXAEBUWebviewDownloadInfo@@@Z
     virtual void onDownloadBegin(struct WebviewDownloadInfo const& downloadInfo);
-
-    // vIndex: 7, symbol: __unk_vfn_7
-    virtual void __unk_vfn_7();
 
     // vIndex: 8, symbol: ?onDownloadComplete@IWebviewTelemetry@@UEAAXAEBUWebviewDownloadInfo@@@Z
     virtual void onDownloadComplete(struct WebviewDownloadInfo const& downloadInfo);

@@ -51,9 +51,6 @@ public:
     // ?getResultItem@BannerAddPatternRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
     virtual std::vector<class ItemInstance> const& getResultItem() const = 0;
 
-    // vIndex: 5, symbol: __unk_vfn_5
-    virtual void __unk_vfn_5() = 0;
-
     // vIndex: 6, symbol: ?matches@BannerAddPatternRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
     virtual bool matches(class CraftingContainer const& craftSlots, class CraftingContext const&) const = 0;
 
@@ -70,7 +67,7 @@ public:
     virtual bool hasDataDrivenResult() const;
 
     // vIndex: 11, symbol: ?itemValidForRecipe@Recipe@@UEBA_NAEBVItemDescriptor@@AEBVItemStack@@@Z
-    virtual bool itemValidForRecipe(class ItemDescriptor const&, class ItemStack const& itemStack) const;
+    virtual bool itemValidForRecipe(class ItemDescriptor const&, class ItemStack const& item) const;
 
     // vIndex: 12, symbol: ?itemsMatch@Recipe@@UEBA_NAEBVItemDescriptor@@0@Z
     virtual bool itemsMatch(class ItemDescriptor const& lhs, class ItemDescriptor const& rhs) const;

@@ -114,6 +114,9 @@ public:
     // symbol: ?achievementsWillBeDisabledOnLoad@LevelSettings@@QEBA_NXZ
     MCAPI bool achievementsWillBeDisabledOnLoad() const;
 
+    // symbol: ?cloudSaveForWorldIsEnabled@LevelSettings@@QEBA_NXZ
+    MCAPI bool cloudSaveForWorldIsEnabled() const;
+
     // symbol: ?educationFeaturesEnabled@LevelSettings@@QEBA_NXZ
     MCAPI bool educationFeaturesEnabled() const;
 
@@ -136,6 +139,9 @@ public:
     // symbol: ?getChatRestrictionLevel@LevelSettings@@QEBA?AW4ChatRestrictionLevel@@XZ
     MCAPI ::ChatRestrictionLevel getChatRestrictionLevel() const;
 
+    // symbol: ?getCloudSaveInfo@LevelSettings@@QEBAAEBVCloudSaveLevelInfo@@XZ
+    MCAPI class CloudSaveLevelInfo const& getCloudSaveInfo() const;
+
     // symbol: ?getCustomSkinsDisabled@LevelSettings@@QEBA_NXZ
     MCAPI bool getCustomSkinsDisabled() const;
 
@@ -144,6 +150,9 @@ public:
 
     // symbol: ?getDefaultPermissions@LevelSettings@@QEBAAEBVPermissionsHandler@@XZ
     MCAPI class PermissionsHandler const& getDefaultPermissions() const;
+
+    // symbol: ?getDefaultSpawn@LevelSettings@@QEBAAEBVBlockPos@@XZ
+    MCAPI class BlockPos const& getDefaultSpawn() const;
 
     // symbol: ?getDisablePlayerInteractions@LevelSettings@@QEBA_NXZ
     MCAPI bool getDisablePlayerInteractions() const;
@@ -154,11 +163,18 @@ public:
     // symbol: ?getEduSharedUriResource@LevelSettings@@QEBAAEBUEduSharedUriResource@@XZ
     MCAPI struct EduSharedUriResource const& getEduSharedUriResource() const;
 
+    // symbol: ?getEducationEditionOffer@LevelSettings@@QEBA?AW4EducationEditionOffer@@XZ
+    MCAPI ::EducationEditionOffer getEducationEditionOffer() const;
+
     // symbol: ?getEducationLevelSettings@LevelSettings@@QEBAAEBV?$optional@UEducationLevelSettings@@@std@@XZ
     MCAPI std::optional<struct EducationLevelSettings> const& getEducationLevelSettings() const;
 
     // symbol: ?getEmoteChatMuted@LevelSettings@@QEBA_NXZ
     MCAPI bool getEmoteChatMuted() const;
+
+    // symbol:
+    // ?getExcludedScriptModules@LevelSettings@@QEBAAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
+    MCAPI std::vector<std::string> const& getExcludedScriptModules() const;
 
     // symbol: ?getExperiments@LevelSettings@@QEBAAEBVExperiments@@XZ
     MCAPI class Experiments const& getExperiments() const;
@@ -172,11 +188,17 @@ public:
     // symbol: ?getGameType@LevelSettings@@QEBA?AW4GameType@@XZ
     MCAPI ::GameType getGameType() const;
 
+    // symbol: ?getGenerator@LevelSettings@@QEBA?AW4GeneratorType@@XZ
+    MCAPI ::GeneratorType getGenerator() const;
+
     // symbol: ?getImmutableWorld@LevelSettings@@QEBA_NXZ
     MCAPI bool getImmutableWorld() const;
 
     // symbol: ?getLanBroadcastIntent@LevelSettings@@QEBA_NXZ
     MCAPI bool getLanBroadcastIntent() const;
+
+    // symbol: ?getLightningLevel@LevelSettings@@QEBAMXZ
+    MCAPI float getLightningLevel() const;
 
     // symbol: ?getLimitedWorldDepth@LevelSettings@@QEBAHXZ
     MCAPI int getLimitedWorldDepth() const;
@@ -199,6 +221,9 @@ public:
     // symbol: ?getPlatformBroadcastIntent@LevelSettings@@QEBA?AW4GamePublishSetting@Social@@XZ
     MCAPI ::Social::GamePublishSetting getPlatformBroadcastIntent() const;
 
+    // symbol: ?getRainLevel@LevelSettings@@QEBAMXZ
+    MCAPI float getRainLevel() const;
+
     // symbol: ?getSeed@LevelSettings@@QEBA?AVLevelSeed64@@XZ
     MCAPI class LevelSeed64 getSeed() const;
 
@@ -216,6 +241,9 @@ public:
 
     // symbol: ?getXBLBroadcastIntent@LevelSettings@@QEBA?AW4GamePublishSetting@Social@@XZ
     MCAPI ::Social::GamePublishSetting getXBLBroadcastIntent() const;
+
+    // symbol: ?hasAchievementsDisabled@LevelSettings@@QEBA_NXZ
+    MCAPI bool hasAchievementsDisabled() const;
 
     // symbol: ?hasBonusChestEnabled@LevelSettings@@QEBA_NXZ
     MCAPI bool hasBonusChestEnabled() const;
@@ -265,6 +293,9 @@ public:
     // symbol: ??4LevelSettings@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class LevelSettings& operator=(class LevelSettings&&);
 
+    // symbol: ?overrideSavedSettings@LevelSettings@@QEBAXAEAVLevelData@@@Z
+    MCAPI void overrideSavedSettings(class LevelData& data) const;
+
     // symbol: ?setAdventureModeOverridesEnabled@LevelSettings@@QEAAAEAV1@_N@Z
     MCAPI class LevelSettings& setAdventureModeOverridesEnabled(bool);
 
@@ -273,6 +304,9 @@ public:
 
     // symbol: ?setChatRestrictionLevel@LevelSettings@@QEAAAEAV1@W4ChatRestrictionLevel@@@Z
     MCAPI class LevelSettings& setChatRestrictionLevel(::ChatRestrictionLevel);
+
+    // symbol: ?setCloudSaveInfo@LevelSettings@@QEAAAEAV1@V?$optional@VCloudSaveLevelInfo@@@std@@@Z
+    MCAPI class LevelSettings& setCloudSaveInfo(std::optional<class CloudSaveLevelInfo>);
 
     // symbol: ?setCommandsEnabled@LevelSettings@@QEAAAEAV1@_N@Z
     MCAPI class LevelSettings& setCommandsEnabled(bool commandsEnabled);

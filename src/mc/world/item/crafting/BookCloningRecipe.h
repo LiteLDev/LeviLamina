@@ -37,17 +37,11 @@ public:
     // ?getResultItem@BookCloningRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
     virtual std::vector<class ItemInstance> const& getResultItem() const;
 
-    // vIndex: 5, symbol: __unk_vfn_5
-    virtual void __unk_vfn_5();
-
     // vIndex: 6, symbol: ?matches@BookCloningRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
     virtual bool matches(class CraftingContainer const& craftSlots, class CraftingContext const&) const;
 
     // vIndex: 7, symbol: ?size@BookCloningRecipe@@UEBAHXZ
     virtual int size() const;
-
-    // symbol: ??0BookCloningRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI explicit BookCloningRecipe(std::string_view recipeId);
 
     // symbol: ??0BookCloningRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBVUUID@mce@@@Z
     MCAPI BookCloningRecipe(std::string_view recipeId, class mce::UUID const& uuid);

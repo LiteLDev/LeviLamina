@@ -4,8 +4,7 @@
 #include "mc/common/wrapper/OwnerPtrT.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/SharePtrRefTraits.h"
-#include "mc/common/wrapper/WeakRefT.h"
+#include "mc/common/wrapper/WeakRef.h"
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/world/AutomaticID.h"
@@ -48,9 +47,8 @@ public:
     // symbol: ?forEachDimension@DimensionManager@@QEBAXV?$function@$$A6A_NAEBVDimension@@@Z@std@@@Z
     MCAPI void forEachDimension(std::function<bool(class Dimension const&)> callback) const;
 
-    // symbol:
-    // ?getDimension@DimensionManager@@QEBA?AV?$WeakRefT@U?$SharePtrRefTraits@VDimension@@@@@@V?$AutomaticID@VDimension@@H@@@Z
-    MCAPI class WeakRefT<struct SharePtrRefTraits<class Dimension>> getDimension(DimensionType dimensionType) const;
+    // symbol: ?getDimension@DimensionManager@@QEBA?AV?$WeakRef@VDimension@@@@V?$AutomaticID@VDimension@@H@@@Z
+    MCAPI class WeakRef<class Dimension> getDimension(DimensionType dimensionType) const;
 
     // symbol:
     // ?getDimensionDefinition@DimensionManager@@QEBA?AV?$optional@UDimensionDefinition@DimensionDefinitionGroup@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
@@ -60,13 +58,11 @@ public:
     // symbol: ?getDimensionDefinitionGroup@DimensionManager@@QEBAAEBV?$optional@VDimensionDefinitionGroup@@@std@@XZ
     MCAPI std::optional<class DimensionDefinitionGroup> const& getDimensionDefinitionGroup() const;
 
-    // symbol:
-    // ?getOrCreateDimension@DimensionManager@@QEAA?AV?$WeakRefT@U?$SharePtrRefTraits@VDimension@@@@@@V?$AutomaticID@VDimension@@H@@@Z
-    MCAPI class WeakRefT<struct SharePtrRefTraits<class Dimension>> getOrCreateDimension(DimensionType dimensionType);
+    // symbol: ?getOrCreateDimension@DimensionManager@@QEAA?AV?$WeakRef@VDimension@@@@V?$AutomaticID@VDimension@@H@@@Z
+    MCAPI class WeakRef<class Dimension> getOrCreateDimension(DimensionType dimensionType);
 
-    // symbol:
-    // ?getRandomDimension@DimensionManager@@QEAA?AV?$WeakRefT@U?$SharePtrRefTraits@VDimension@@@@@@AEAVRandom@@@Z
-    MCAPI class WeakRefT<struct SharePtrRefTraits<class Dimension>> getRandomDimension(class Random& random);
+    // symbol: ?getRandomDimension@DimensionManager@@QEAA?AV?$WeakRef@VDimension@@@@AEAVRandom@@@Z
+    MCAPI class WeakRef<class Dimension> getRandomDimension(class Random& random);
 
     // symbol: ?hasDimensions@DimensionManager@@QEBA_NXZ
     MCAPI bool hasDimensions() const;

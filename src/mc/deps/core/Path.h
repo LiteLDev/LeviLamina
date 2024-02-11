@@ -20,6 +20,9 @@ public:
     // symbol: ??0Path@Core@@QEAA@XZ
     MCAPI Path();
 
+    // symbol: ??0Path@Core@@QEAA@PEBD@Z
+    MCAPI explicit Path(char const*);
+
     // symbol: ??8Path@Core@@QEBA_NAEBV01@@Z
     MCAPI bool operator==(class Core::Path const&) const;
 

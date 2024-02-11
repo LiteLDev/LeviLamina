@@ -9,6 +9,7 @@
 // clang-format off
 namespace gametest { class BaseGameTestInstance; }
 namespace gametest { class IGameTestListener; }
+namespace gametest { class MultipleTestTracker; }
 // clang-format on
 
 class TestSummaryDisplayer : public ::gametest::IGameTestListener {
@@ -23,11 +24,14 @@ public:
     // vIndex: 0, symbol: __gen_??1TestSummaryDisplayer@@UEAA@XZ
     virtual ~TestSummaryDisplayer() = default;
 
-    // symbol: ?onTestFailed@TestSummaryDisplayer@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
-    MCVAPI void onTestFailed(class gametest::BaseGameTestInstance&);
+    // vIndex: 2, symbol: ?onTestPassed@TestSummaryDisplayer@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
+    virtual void onTestPassed(class gametest::BaseGameTestInstance&);
 
-    // symbol: ?onTestPassed@TestSummaryDisplayer@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
-    MCVAPI void onTestPassed(class gametest::BaseGameTestInstance&);
+    // vIndex: 3, symbol: ?onTestFailed@TestSummaryDisplayer@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
+    virtual void onTestFailed(class gametest::BaseGameTestInstance&);
+
+    // symbol: ??0TestSummaryDisplayer@@QEAA@AEAVLevel@@AEAVMultipleTestTracker@gametest@@@Z
+    MCAPI TestSummaryDisplayer(class Level& level, class gametest::MultipleTestTracker&);
 
     // NOLINTEND
 

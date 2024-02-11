@@ -93,7 +93,8 @@ public:
     MCAPI static class Core::Result getFileSize(class Core::Path const& filePath, uint64* pFileSize);
 
     // symbol: ?getLastModificationTime@FileSystem@Core@@SA?AVResult@2@AEBVPath@2@PEA_J@Z
-    MCAPI static class Core::Result getLastModificationTime(class Core::Path const&, int64*);
+    MCAPI static class Core::Result
+    getLastModificationTime(class Core::Path const& filePath, int64* pLastModificationTime);
 
     // symbol:
     // ?getUniqueFilePathForDirectory@FileSystem@Core@@SA?AV?$PathBuffer@V?$StackString@D$0EAA@@Core@@@2@AEBVPath@2@@Z

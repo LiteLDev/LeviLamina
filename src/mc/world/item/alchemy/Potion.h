@@ -12,13 +12,11 @@ public:
 public:
     // prevent constructor by default
     Potion& operator=(Potion const&);
+    Potion(Potion const&);
     Potion();
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0Potion@@QEAA@AEBV0@@Z
-    MCAPI Potion(class Potion const&);
-
     // symbol:
     // ?appendFormattedPotionText@Potion@@QEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@W4PotionVariant@1@AEBVPlayer@@M@Z
     MCAPI void appendFormattedPotionText(

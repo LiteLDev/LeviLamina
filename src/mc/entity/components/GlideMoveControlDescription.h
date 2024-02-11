@@ -21,7 +21,7 @@ public:
     virtual ~GlideMoveControlDescription();
 
     // vIndex: 2, symbol: ?deserializeData@GlideMoveControlDescription@@UEAAXUDeserializeDataParams@@@Z
-    virtual void deserializeData(struct DeserializeDataParams);
+    virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
     // NOLINTEND
 };

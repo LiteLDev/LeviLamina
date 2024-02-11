@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/ClassBindingBuilder.h"
+#include "mc/external/scripting/ClassBindingBuilderReadOnly.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -20,8 +20,9 @@ public:
     MCAPI ~ScriptActorHitEntityAfterEvent();
 
     // symbol:
-    // ?bind@ScriptActorHitEntityAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptActorHitEntityAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorHitEntityAfterEvent>
+    // ?bind@ScriptActorHitEntityAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilderReadOnly@UScriptActorHitEntityAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
+    MCAPI static class Scripting::ClassBindingBuilderReadOnly<
+        struct ScriptModuleMinecraft::ScriptActorHitEntityAfterEvent>
     bind();
 
     // NOLINTEND

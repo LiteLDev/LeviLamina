@@ -29,17 +29,17 @@ public:
         bool                                        bSet,
         std::weak_ptr<class Core::FileStorageArea>& fileStorageAreaWeakPtr,
         uint64                                      freeSpace,
-        std::function<void(void)>                   onHandledEventCallback
+        std::function<void()>                       onHandledEventCallback
     );
 
-    // symbol: ?onCriticalDiskError@StorageAreaStateListener@Core@@UEAAX_NAEBW4LevelStorageState@2@@Z
-    MCVAPI void onCriticalDiskError(bool bSet, ::Core::LevelStorageState const& errorCode);
+    // vIndex: 2, symbol: ?onLowDiskSpace@StorageAreaStateListener@Core@@UEAAX_N@Z
+    virtual void onLowDiskSpace(bool bSet);
 
-    // symbol: ?onLowDiskSpace@StorageAreaStateListener@Core@@UEAAX_N@Z
-    MCVAPI void onLowDiskSpace(bool bSet);
+    // vIndex: 3, symbol: ?onOutOfDiskSpace@StorageAreaStateListener@Core@@UEAAX_N@Z
+    virtual void onOutOfDiskSpace(bool bSet);
 
-    // symbol: ?onOutOfDiskSpace@StorageAreaStateListener@Core@@UEAAX_N@Z
-    MCVAPI void onOutOfDiskSpace(bool bSet);
+    // vIndex: 4, symbol: ?onCriticalDiskError@StorageAreaStateListener@Core@@UEAAX_NAEBW4LevelStorageState@2@@Z
+    virtual void onCriticalDiskError(bool bSet, ::Core::LevelStorageState const& errorCode);
 
     // symbol: ??0StorageAreaStateListener@Core@@QEAA@XZ
     MCAPI StorageAreaStateListener();

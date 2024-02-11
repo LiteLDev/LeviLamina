@@ -35,10 +35,6 @@ public:
     apply(class ItemInstance& item, class Random& random, struct Trade const& trade, class LootTableContext& context);
 
     // symbol:
-    // ?getConditions@LootItemFunction@@QEBAAEBV?$vector@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@V?$allocator@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@@2@@std@@XZ
-    MCAPI std::vector<std::unique_ptr<class LootItemCondition>> const& getConditions() const;
-
-    // symbol:
     // ?deserialize@LootItemFunction@@SA?AV?$unique_ptr@VLootItemFunction@@U?$default_delete@VLootItemFunction@@@std@@@std@@VValue@Json@@@Z
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value object);
 

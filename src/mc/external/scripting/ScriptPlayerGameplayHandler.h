@@ -29,7 +29,7 @@ public:
 
     // vIndex: 1, symbol:
     // ?handleEvent@?$Impl@U?$type_list@$$CBU?$PlayerGameplayEvent@X@@$$CBU?$PlayerGameplayEvent@W4CoordinatorResult@@@@@entt@@@?$EventHandlerDispatcher@VPlayerGameplayHandler@@@Details@@MEAA?AW4HandlerResult@@AEBU?$PlayerGameplayEvent@X@@@Z
-    virtual ::HandlerResult handleEvent(struct PlayerGameplayEvent<void> const&);
+    virtual ::HandlerResult handleEvent(struct PlayerGameplayEvent<void> const& event);
 
     // vIndex: 2, symbol:
     // ?handleEvent@ScriptPlayerGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEBU?$PlayerGameplayEvent@W4CoordinatorResult@@@@@Z

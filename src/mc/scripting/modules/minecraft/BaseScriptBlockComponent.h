@@ -22,6 +22,7 @@ namespace ScriptModuleMinecraft {
 class BaseScriptBlockComponent : public ::ScriptModuleMinecraft::ScriptComponent {
 public:
     // prevent constructor by default
+    BaseScriptBlockComponent& operator=(BaseScriptBlockComponent const&);
     BaseScriptBlockComponent();
 
 public:
@@ -48,10 +49,6 @@ public:
     // symbol:
     // ?getBlock@BaseScriptBlockComponent@ScriptModuleMinecraft@@QEBA?AV?$StrongTypedObjectHandle@VScriptBlock@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock> getBlock() const;
-
-    // symbol: ??4BaseScriptBlockComponent@ScriptModuleMinecraft@@QEAAAEAV01@AEBV01@@Z
-    MCAPI class ScriptModuleMinecraft::BaseScriptBlockComponent&
-    operator=(class ScriptModuleMinecraft::BaseScriptBlockComponent const&);
 
     // symbol:
     // ?bind@BaseScriptBlockComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VBaseScriptBlockComponent@ScriptModuleMinecraft@@@Scripting@@XZ

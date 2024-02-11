@@ -38,7 +38,7 @@ public:
 
     // symbol:
     // ?queue@EnableQueueForThread@Threading@Bedrock@@IEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@$$QEAV?$function@$$A6AXXZ@5@@Z
-    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queue(std::function<void(void)>&&);
+    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queue(std::function<void()>&&);
 
     // NOLINTEND
 };

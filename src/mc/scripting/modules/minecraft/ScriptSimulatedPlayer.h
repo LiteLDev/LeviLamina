@@ -9,19 +9,23 @@
 #include "mc/external/scripting/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/ScriptFacing.h"
 #include "mc/scripting/modules/minecraft/ScriptPlayer.h"
+#include "mc/server/sim/LookDuration.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class BlockPos;
+class Player;
 class Scoreboard;
 class SimulatedPlayer;
 class Vec2;
 class Vec3;
+namespace ScriptModuleGameTest { struct ScriptMoveToOptions; }
+namespace ScriptModuleGameTest { struct ScriptNavigationResult; }
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
-namespace ScriptModuleMinecraft { struct ScriptNavigationResult; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace gametest { class BaseGameTestHelper; }
 namespace gametest { struct GameTestError; }
 struct ScoreboardId;
@@ -55,6 +59,9 @@ public:
 
     // vIndex: 9, symbol: ?_isValid@ScriptSimulatedPlayer@ScriptModuleGameTest@@EEBA_NXZ
     virtual bool _isValid() const;
+
+    // symbol: ??0ScriptSimulatedPlayer@ScriptModuleGameTest@@QEAA@AEBVPlayer@@AEBVWeakLifetimeScope@Scripting@@@Z
+    MCAPI ScriptSimulatedPlayer(class Player const& player, class Scripting::WeakLifetimeScope const& scope);
 
     // symbol: ?attack@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@_N$$V@Scripting@@XZ
     MCAPI class Scripting::Result<bool> attack() const;
@@ -109,15 +116,18 @@ public:
     // symbol: ?jump@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@_N$$V@Scripting@@XZ
     MCAPI class Scripting::Result<bool> jump() const;
 
-    // symbol: ?lookAtBlock@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@AEBVVec3@@@Z
-    MCAPI class Scripting::Result<void> lookAtBlock(class Vec3 const& blockPos) const;
+    // symbol:
+    // ?lookAtBlock@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@AEBVVec3@@W4LookDuration@sim@@@Z
+    MCAPI class Scripting::Result<void> lookAtBlock(class Vec3 const&, ::sim::LookDuration) const;
 
     // symbol:
-    // ?lookAtEntity@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@AEBVScriptActor@ScriptModuleMinecraft@@@Z
-    MCAPI class Scripting::Result<void> lookAtEntity(class ScriptModuleMinecraft::ScriptActor const&) const;
+    // ?lookAtEntity@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@AEBVScriptActor@ScriptModuleMinecraft@@W4LookDuration@sim@@@Z
+    MCAPI class Scripting::Result<void>
+    lookAtEntity(class ScriptModuleMinecraft::ScriptActor const&, ::sim::LookDuration) const;
 
-    // symbol: ?lookAtLocation@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@AEBVVec3@@@Z
-    MCAPI class Scripting::Result<void> lookAtLocation(class Vec3 const& pos) const;
+    // symbol:
+    // ?lookAtLocation@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@AEBVVec3@@W4LookDuration@sim@@@Z
+    MCAPI class Scripting::Result<void> lookAtLocation(class Vec3 const&, ::sim::LookDuration) const;
 
     // symbol: ?move@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@MMM@Z
     MCAPI class Scripting::Result<void> move(float, float, float speed) const;
@@ -125,25 +135,29 @@ public:
     // symbol: ?moveRelative@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@MMM@Z
     MCAPI class Scripting::Result<void> moveRelative(float, float, float speed) const;
 
-    // symbol: ?moveToBlock@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@AEBVVec3@@M@Z
-    MCAPI class Scripting::Result<void> moveToBlock(class Vec3 const& position, float speed) const;
-
-    // symbol: ?moveToLocation@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@AEBVVec3@@M@Z
-    MCAPI class Scripting::Result<void> moveToLocation(class Vec3 const& position, float speed) const;
+    // symbol:
+    // ?moveToBlock@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@AEBVVec3@@V?$optional@UScriptMoveToOptions@ScriptModuleGameTest@@@std@@@Z
+    MCAPI class Scripting::Result<void>
+    moveToBlock(class Vec3 const&, std::optional<struct ScriptModuleGameTest::ScriptMoveToOptions>) const;
 
     // symbol:
-    // ?navigateToBlock@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@UScriptNavigationResult@ScriptModuleMinecraft@@$$V@Scripting@@AEBVVec3@@M@Z
-    MCAPI class Scripting::Result<struct ScriptModuleMinecraft::ScriptNavigationResult>
+    // ?moveToLocation@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@AEBVVec3@@V?$optional@UScriptMoveToOptions@ScriptModuleGameTest@@@std@@@Z
+    MCAPI class Scripting::Result<void>
+    moveToLocation(class Vec3 const&, std::optional<struct ScriptModuleGameTest::ScriptMoveToOptions>) const;
+
+    // symbol:
+    // ?navigateToBlock@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@UScriptNavigationResult@ScriptModuleGameTest@@$$V@Scripting@@AEBVVec3@@M@Z
+    MCAPI class Scripting::Result<struct ScriptModuleGameTest::ScriptNavigationResult>
     navigateToBlock(class Vec3 const& position, float speed) const;
 
     // symbol:
-    // ?navigateToEntity@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@UScriptNavigationResult@ScriptModuleMinecraft@@$$V@Scripting@@AEBVScriptActor@ScriptModuleMinecraft@@M@Z
-    MCAPI class Scripting::Result<struct ScriptModuleMinecraft::ScriptNavigationResult>
+    // ?navigateToEntity@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@UScriptNavigationResult@ScriptModuleGameTest@@$$V@Scripting@@AEBVScriptActor@ScriptModuleMinecraft@@M@Z
+    MCAPI class Scripting::Result<struct ScriptModuleGameTest::ScriptNavigationResult>
     navigateToEntity(class ScriptModuleMinecraft::ScriptActor const&, float speed) const;
 
     // symbol:
-    // ?navigateToLocation@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@UScriptNavigationResult@ScriptModuleMinecraft@@$$V@Scripting@@AEBVVec3@@M@Z
-    MCAPI class Scripting::Result<struct ScriptModuleMinecraft::ScriptNavigationResult>
+    // ?navigateToLocation@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@UScriptNavigationResult@ScriptModuleGameTest@@$$V@Scripting@@AEBVVec3@@M@Z
+    MCAPI class Scripting::Result<struct ScriptModuleGameTest::ScriptNavigationResult>
     navigateToLocation(class Vec3 const& position, float speed) const;
 
     // symbol:
@@ -171,8 +185,14 @@ public:
     // symbol: ?setSprinting@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@_N@Z
     MCAPI class Scripting::Result<void> setSprinting(bool) const;
 
+    // symbol: ?startBuild@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@H@Z
+    MCAPI class Scripting::Result<void> startBuild(int) const;
+
     // symbol: ?stopBreakingBlock@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@XZ
     MCAPI class Scripting::Result<void> stopBreakingBlock() const;
+
+    // symbol: ?stopBuild@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@XZ
+    MCAPI class Scripting::Result<void> stopBuild() const;
 
     // symbol: ?stopFlying@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@XZ
     MCAPI class Scripting::Result<void> stopFlying() const;
@@ -238,9 +258,9 @@ public:
     _toWorld(class SimulatedPlayer& player, class BlockPos* blockPos, uchar* face, class Vec3* pos);
 
     // symbol:
-    // ?_worldToLocalNavigationResult@ScriptSimulatedPlayer@ScriptModuleGameTest@@CA?AUScriptNavigationResult@ScriptModuleMinecraft@@AEAVSimulatedPlayer@@U34@@Z
-    MCAPI static struct ScriptModuleMinecraft::ScriptNavigationResult
-    _worldToLocalNavigationResult(class SimulatedPlayer& player, struct ScriptModuleMinecraft::ScriptNavigationResult);
+    // ?_worldToLocalNavigationResult@ScriptSimulatedPlayer@ScriptModuleGameTest@@CA?AUScriptNavigationResult@2@AEAVSimulatedPlayer@@U32@@Z
+    MCAPI static struct ScriptModuleGameTest::ScriptNavigationResult
+    _worldToLocalNavigationResult(class SimulatedPlayer& player, struct ScriptModuleGameTest::ScriptNavigationResult);
 
     // NOLINTEND
 };

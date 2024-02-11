@@ -36,7 +36,7 @@ public:
         virtual ~MemoryMappedFileReadAccess();
 
         // vIndex: 1, symbol: ?fread@MemoryMappedFileReadAccess@MemoryMappedFileAccess@@UEBA_KPEAX_K10@Z
-        virtual uint64 fread(void*, uint64, uint64, void*) const;
+        virtual uint64 fread(void* buffer, uint64 size, uint64 count, void* file) const;
 
         // NOLINTEND
     };
@@ -54,7 +54,7 @@ public:
         virtual ~MemoryMappedFileWriteAccess();
 
         // vIndex: 1, symbol: ?fwrite@MemoryMappedFileWriteAccess@MemoryMappedFileAccess@@UEAA_KPEBX_K1PEAX@Z
-        virtual uint64 fwrite(void const*, uint64, uint64, void*);
+        virtual uint64 fwrite(void const* buffer, uint64 size, uint64 count, void* file);
 
         // NOLINTEND
     };
@@ -93,7 +93,7 @@ public:
     virtual int fclose(void* file);
 
     // vIndex: 3, symbol: ?fseek@MemoryMappedFileAccess@@UEAAHPEAX_JH@Z
-    virtual int fseek(void*, int64, int);
+    virtual int fseek(void* file, int64 offset, int origin);
 
     // vIndex: 4, symbol: ?ftell@MemoryMappedFileAccess@@UEAA_JPEAX@Z
     virtual int64 ftell(void* file);

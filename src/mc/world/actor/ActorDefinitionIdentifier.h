@@ -39,6 +39,9 @@ public:
     // symbol: ?_getLegacyActorType@ActorDefinitionIdentifier@@QEBA?AW4ActorType@@XZ
     MCAPI ::ActorType _getLegacyActorType() const;
 
+    // symbol: ?clear@ActorDefinitionIdentifier@@QEAAXXZ
+    MCAPI void clear();
+
     // symbol: ?getCanonicalHash@ActorDefinitionIdentifier@@QEBAAEBVHashedString@@XZ
     MCAPI class HashedString const& getCanonicalHash() const;
 

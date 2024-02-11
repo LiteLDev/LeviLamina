@@ -48,11 +48,11 @@ public:
     // symbol: ?seed64@XoroshiroRandom@@UEBA_JXZ
     MCVAPI int64 seed64() const;
 
-    // symbol: ?setSeed@XoroshiroRandom@@UEAAX_J@Z
-    MCVAPI void setSeed(int64);
-
     // symbol: ?setSeed@XoroshiroRandom@@UEAAXUSeed128Bit@@@Z
     MCVAPI void setSeed(struct Seed128Bit);
+
+    // symbol: ?setSeed@XoroshiroRandom@@UEAAX_J@Z
+    MCVAPI void setSeed(int64);
 
     // symbol: ??1XoroshiroRandom@@UEAA@XZ
     MCVAPI ~XoroshiroRandom();

@@ -21,7 +21,7 @@ public:
     virtual ~ContainerDescription();
 
     // vIndex: 2, symbol: ?deserializeData@ContainerDescription@@UEAAXUDeserializeDataParams@@@Z
-    virtual void deserializeData(struct DeserializeDataParams);
+    virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
     // NOLINTEND
 };

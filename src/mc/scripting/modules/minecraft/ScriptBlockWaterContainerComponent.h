@@ -30,8 +30,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptBlockWaterContainerComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptBlockWaterContainerComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptBlockWaterContainerComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptBlockWaterContainerComponent() = default;
 
     // symbol:
     // ?addDye@ScriptBlockWaterContainerComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBVScriptItemType@2@@Z
@@ -40,10 +40,6 @@ public:
     // symbol:
     // ?getCustomColor@ScriptBlockWaterContainerComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@VScriptRGBA@ScriptModuleMinecraft@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<class ScriptModuleMinecraft::ScriptRGBA> getCustomColor();
-
-    // symbol: ??4ScriptBlockWaterContainerComponent@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
-    MCAPI class ScriptModuleMinecraft::ScriptBlockWaterContainerComponent&
-    operator=(class ScriptModuleMinecraft::ScriptBlockWaterContainerComponent&&);
 
     // symbol:
     // ?setCustomColor@ScriptBlockWaterContainerComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBVScriptRGBA@2@@Z

@@ -33,6 +33,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0ActorHistory@@QEAA@_K@Z
+    MCAPI explicit ActorHistory(uint64);
+
     // symbol: ?addFrame@ActorHistory@@QEAA_NAEAVEntityContext@@_KAEAVEntityRegistry@@@Z
     MCAPI bool addFrame(class EntityContext&, uint64, class EntityRegistry&);
 
@@ -42,11 +45,11 @@ public:
     // symbol: ?addInputToFrontOfFrame@ActorHistory@@QEAAXV?$shared_ptr@UIReplayableActorInput@@@std@@_K@Z
     MCAPI void addInputToFrontOfFrame(std::shared_ptr<struct IReplayableActorInput>, uint64);
 
-    // symbol: ?createSnapshot@ActorHistory@@QEBA?AUSnapshot@1@AEBVEntityContext@@AEAVEntityRegistry@@@Z
-    MCAPI struct ActorHistory::Snapshot createSnapshot(class EntityContext const&, class EntityRegistry&) const;
+    // symbol: ?clearFrames@ActorHistory@@QEAAXXZ
+    MCAPI void clearFrames();
 
     // symbol: ?getFrame@ActorHistory@@QEBAPEBUSnapshot@1@_K@Z
-    MCAPI struct ActorHistory::Snapshot const* getFrame(uint64) const;
+    MCAPI struct ActorHistory::Snapshot const* getFrame(uint64 frame) const;
 
     // symbol: ??1ActorHistory@@QEAA@XZ
     MCAPI ~ActorHistory();

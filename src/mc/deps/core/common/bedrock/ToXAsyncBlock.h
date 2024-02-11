@@ -44,7 +44,8 @@ public:
 
     // vIndex: 6, symbol:
     // ?addOnComplete@?$AsyncResultBase@PEAUXAsyncBlock@@@Threading@Bedrock@@UEAAXV?$function@$$A6AXAEBV?$IAsyncResult@PEAUXAsyncBlock@@@Threading@Bedrock@@@Z@std@@@Z
-    virtual void addOnComplete(std::function<void(class Bedrock::Threading::IAsyncResult<struct XAsyncBlock*> const&)>);
+    virtual void
+    addOnComplete(std::function<void(class Bedrock::Threading::IAsyncResult<struct XAsyncBlock*> const&)> callback);
 
     // symbol:
     // ?create@ToXAsyncBlock@AsyncResult@Threading@Bedrock@@SA?AV?$shared_ptr@VToXAsyncBlock@AsyncResult@Threading@Bedrock@@@std@@PEAUXTaskQueueObject@@@Z

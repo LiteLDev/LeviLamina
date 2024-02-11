@@ -19,7 +19,7 @@ public:
     MCAPI ScoreboardId();
 
     // symbol: ??0ScoreboardId@@QEAA@_J@Z
-    MCAPI explicit ScoreboardId(int64);
+    MCAPI explicit ScoreboardId(int64 bytes);
 
     // symbol: ??0ScoreboardId@@QEAA@AEBU0@@Z
     MCAPI ScoreboardId(struct ScoreboardId const& scoreboardId);

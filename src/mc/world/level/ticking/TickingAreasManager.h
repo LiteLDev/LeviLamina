@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/wrapper/StackRefResult.h"
 #include "mc/enums/AddTickingAreaStatus.h"
 #include "mc/enums/TickingAreaLoadMode.h"
 #include "mc/world/AutomaticID.h"
@@ -16,11 +17,12 @@ public:
     // prevent constructor by default
     TickingAreasManager& operator=(TickingAreasManager const&);
     TickingAreasManager(TickingAreasManager const&);
+    TickingAreasManager();
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0TickingAreasManager@@QEAA@XZ
-    MCAPI TickingAreasManager();
+    // symbol: ??0TickingAreasManager@@QEAA@AEBV?$StackRefResult@VLevelStorage@@@@@Z
+    MCAPI explicit TickingAreasManager(class StackRefResult<class LevelStorage> const&);
 
     // symbol:
     // ?addArea@TickingAreasManager@@QEAA?AW4AddTickingAreaStatus@@V?$AutomaticID@VDimension@@H@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@2W4AreaLimitCheck@1@_NW4TickingAreaLoadMode@@AEAVLevelStorage@@@Z
@@ -31,8 +33,8 @@ public:
         class BlockPos const& max,
         ::TickingAreasManager::AreaLimitCheck,
         bool,
-        ::TickingAreaLoadMode,
-        class LevelStorage& levelStorage
+        ::TickingAreaLoadMode loadMode,
+        class LevelStorage&   levelStorage
     );
 
     // symbol:
@@ -44,8 +46,8 @@ public:
         int                   radius,
         ::TickingAreasManager::AreaLimitCheck,
         bool,
-        ::TickingAreaLoadMode,
-        class LevelStorage& levelStorage
+        ::TickingAreaLoadMode loadMode,
+        class LevelStorage&   levelStorage
     );
 
     // symbol: ?addEntityArea@TickingAreasManager@@QEAAXV?$AutomaticID@VDimension@@H@@AEBVActor@@AEAVLevelStorage@@@Z
@@ -104,6 +106,12 @@ public:
     // ?onTickingEntityAdded@TickingAreasManager@@QEAAXV?$AutomaticID@VDimension@@H@@AEAVActor@@AEAVLevelStorage@@@Z
     MCAPI void onTickingEntityAdded(DimensionType dimensionId, class Actor& actor, class LevelStorage& levelStorage);
 
+    // symbol: ?registerForActorManagerEvents@TickingAreasManager@@QEAAXAEAVActorManager@@@Z
+    MCAPI void registerForActorManagerEvents(class ActorManager&);
+
+    // symbol: ?registerForLevelStorageManagerEvents@TickingAreasManager@@QEAAXAEAVLevelStorageManager@@@Z
+    MCAPI void registerForLevelStorageManagerEvents(class LevelStorageManager&);
+
     // symbol:
     // ?removePendingAreaByName@TickingAreasManager@@QEAA?AV?$vector@UTickingAreaDescription@@V?$allocator@UTickingAreaDescription@@@std@@@std@@V?$AutomaticID@VDimension@@H@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEAVLevelStorage@@@Z
     MCAPI std::vector<struct TickingAreaDescription>
@@ -120,10 +128,10 @@ public:
     // symbol:
     // ?setPendingAreaLoadModeByName@TickingAreasManager@@QEAA?AV?$vector@UTickingAreaDescription@@V?$allocator@UTickingAreaDescription@@@std@@@std@@V?$AutomaticID@VDimension@@H@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4TickingAreaLoadMode@@AEAVLevelStorage@@@Z
     MCAPI std::vector<struct TickingAreaDescription> setPendingAreaLoadModeByName(
-        DimensionType      dimensionId,
-        std::string const& name,
-        ::TickingAreaLoadMode,
-        class LevelStorage& levelStorage
+        DimensionType         dimensionId,
+        std::string const&    name,
+        ::TickingAreaLoadMode loadMode,
+        class LevelStorage&   levelStorage
     );
 
     // symbol:
@@ -131,8 +139,8 @@ public:
     MCAPI std::vector<struct TickingAreaDescription> setPendingAreaLoadModeByPosition(
         DimensionType         dimensionId,
         class BlockPos const& position,
-        ::TickingAreaLoadMode,
-        class LevelStorage& levelStorage
+        ::TickingAreaLoadMode loadMode,
+        class LevelStorage&   levelStorage
     );
 
     // symbol: ?tick@TickingAreasManager@@QEAAXAEBUTick@@@Z
@@ -157,8 +165,8 @@ public:
         bool                 isCircle,
         ::TickingAreasManager::AreaLimitCheck,
         bool,
-        ::TickingAreaLoadMode,
-        class LevelStorage& levelStorage
+        ::TickingAreaLoadMode loadMode,
+        class LevelStorage&   levelStorage
     );
 
     // symbol: ?_deletePendingArea@TickingAreasManager@@AEAAXAEAVLevelStorage@@AEBUPendingArea@@@Z
@@ -178,6 +186,9 @@ public:
     // symbol:
     // ?_hasPendingTickingAreaNamed@TickingAreasManager@@AEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@UPendingArea@@V?$allocator@UPendingArea@@@std@@@3@@Z
     MCAPI bool _hasPendingTickingAreaNamed(std::string const& name, std::vector<struct PendingArea> const&) const;
+
+    // symbol: ?_postReloadActorAdded@TickingAreasManager@@AEAAXAEAVActor@@@Z
+    MCAPI void _postReloadActorAdded(class Actor&);
 
     // symbol: ?_processAdds@TickingAreasManager@@AEAAXAEAVLevel@@@Z
     MCAPI void _processAdds(class Level& level);

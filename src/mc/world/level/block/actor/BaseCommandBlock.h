@@ -22,20 +22,26 @@ public:
     // symbol: ?getName@BaseCommandBlock@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& getName() const;
 
+    // symbol: ?getRawName@BaseCommandBlock@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    MCAPI std::string const& getRawName() const;
+
+    // symbol: ?getSuccessCount@BaseCommandBlock@@QEBAHXZ
+    MCAPI int getSuccessCount() const;
+
     // symbol: ?getTickDelay@BaseCommandBlock@@QEBAHXZ
     MCAPI int getTickDelay() const;
 
     // symbol: ?getTrackOutput@BaseCommandBlock@@QEBA_NXZ
     MCAPI bool getTrackOutput() const;
 
-    // symbol: ?getVersion@BaseCommandBlock@@QEBAHXZ
-    MCAPI int getVersion() const;
-
     // symbol: ?load@BaseCommandBlock@@QEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     MCAPI void load(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // symbol: ?performCommand@BaseCommandBlock@@QEAA_NAEAVBlockSource@@AEBUActorUniqueID@@@Z
     MCAPI bool performCommand(class BlockSource& region, struct ActorUniqueID const& minecartId);
+
+    // symbol: ?performCommand@BaseCommandBlock@@QEAA_NAEAVBlockSource@@AEBVBlockPos@@AEA_N@Z
+    MCAPI bool performCommand(class BlockSource& region, class BlockPos const& pos, bool& markForSaving);
 
     // symbol: ?save@BaseCommandBlock@@QEBA_NAEAVCompoundTag@@@Z
     MCAPI bool save(class CompoundTag& tag) const;
@@ -57,6 +63,9 @@ public:
 
     // symbol: ?setShouldExecuteOnFirstTick@BaseCommandBlock@@QEAAX_N@Z
     MCAPI void setShouldExecuteOnFirstTick(bool shouldExecute);
+
+    // symbol: ?setSuccessCount@BaseCommandBlock@@QEAAXH@Z
+    MCAPI void setSuccessCount(int successCount);
 
     // symbol: ?setTickDelay@BaseCommandBlock@@QEAAXH@Z
     MCAPI void setTickDelay(int tickDelay);

@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/wrapper/CoordinatorResult.h"
 #include "mc/events/LevelGameplayEvent.h"
+#include "mc/events/MutableLevelGameplayEvent.h"
 #include "mc/world/events/EventRef.h"
 
 class LevelEventCoordinator {
@@ -20,9 +22,16 @@ public:
     // symbol: ??0LevelEventCoordinator@@QEAA@XZ
     MCAPI LevelEventCoordinator();
 
+    // symbol: ?getLevelGameplayHandler@LevelEventCoordinator@@QEAAAEAVLevelGameplayHandler@@XZ
+    MCAPI class LevelGameplayHandler& getLevelGameplayHandler();
+
     // symbol:
     // ?registerLevelGameplayHandler@LevelEventCoordinator@@QEAAX$$QEAV?$unique_ptr@VLevelGameplayHandler@@U?$default_delete@VLevelGameplayHandler@@@std@@@std@@@Z
     MCAPI void registerLevelGameplayHandler(std::unique_ptr<class LevelGameplayHandler>&& handler);
+
+    // symbol:
+    // ?sendEvent@LevelEventCoordinator@@QEAA?AW4CoordinatorResult@@V?$EventRef@U?$MutableLevelGameplayEvent@W4CoordinatorResult@@@@@@@Z
+    MCAPI ::CoordinatorResult sendEvent(class EventRef<struct MutableLevelGameplayEvent<::CoordinatorResult>>);
 
     // symbol: ?sendEvent@LevelEventCoordinator@@QEAAXAEBV?$EventRef@U?$LevelGameplayEvent@X@@@@@Z
     MCAPI void sendEvent(class EventRef<struct LevelGameplayEvent<void>> const& event);

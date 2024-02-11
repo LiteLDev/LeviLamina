@@ -20,7 +20,7 @@ public:
     virtual ~AnimationsDescription();
 
     // vIndex: 2, symbol: ?deserializeData@AnimationsDescription@@UEAAXUDeserializeDataParams@@@Z
-    virtual void deserializeData(struct DeserializeDataParams);
+    virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
     // symbol: ??0AnimationsDescription@@QEAA@XZ
     MCAPI AnimationsDescription();

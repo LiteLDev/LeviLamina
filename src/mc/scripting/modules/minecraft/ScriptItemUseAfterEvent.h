@@ -5,12 +5,10 @@
 // auto generated inclusion list
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/StrongTypedObjectHandle.h"
-#include "mc/scripting/modules/minecraft/ScriptItemEvent.h"
 
 // auto generated forward declare list
 // clang-format off
 class Player;
-namespace ScriptModuleMinecraft { class ScriptItemEvent; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace Scripting { class WeakLifetimeScope; }
 struct ItemUseEvent;
@@ -18,7 +16,7 @@ struct ItemUseEvent;
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptItemUseAfterEvent : public ::ScriptModuleMinecraft::ScriptItemEvent {
+struct ScriptItemUseAfterEvent {
 public:
     // prevent constructor by default
     ScriptItemUseAfterEvent(ScriptItemUseAfterEvent const&);
@@ -26,9 +24,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptItemUseAfterEvent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptItemUseAfterEvent();
-
     // symbol:
     // ??0ScriptItemUseAfterEvent@ScriptModuleMinecraft@@QEAA@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@AEBVPlayer@@AEBUItemUseEvent@@AEBVWeakLifetimeScope@3@@Z
     MCAPI

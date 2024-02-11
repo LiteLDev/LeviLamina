@@ -19,9 +19,6 @@ public:
     // vIndex: 0, symbol: ??1ServerCommand@@UEAA@XZ
     virtual ~ServerCommand();
 
-    // symbol: ?setup@ServerCommand@@SAXAEAVMinecraft@@@Z
-    MCAPI static void setup(class Minecraft& game);
-
     // NOLINTEND
 
     // protected:

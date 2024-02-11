@@ -93,7 +93,7 @@ public:
     MCAPI std::unique_ptr<class ListTag> copyList() const;
 
     // symbol: ?erase@ListTag@@QEAAX_K@Z
-    MCAPI void erase(uint64);
+    MCAPI void erase(uint64 index);
 
     // symbol: ?forEachCompoundTag@ListTag@@QEBAXV?$function@$$A6AXAEBVCompoundTag@@@Z@std@@@Z
     MCAPI void forEachCompoundTag(std::function<void(class CompoundTag const&)> func) const;
@@ -102,10 +102,10 @@ public:
     MCAPI class Tag* get(int index) const;
 
     // symbol: ?getCompound@ListTag@@QEAAPEAVCompoundTag@@_K@Z
-    MCAPI class CompoundTag* getCompound(uint64);
+    MCAPI class CompoundTag* getCompound(uint64 index);
 
     // symbol: ?getCompound@ListTag@@QEBAPEBVCompoundTag@@_K@Z
-    MCAPI class CompoundTag const* getCompound(uint64) const;
+    MCAPI class CompoundTag const* getCompound(uint64 index) const;
 
     // symbol: ?getDouble@ListTag@@QEBANH@Z
     MCAPI double getDouble(int index) const;

@@ -41,12 +41,10 @@ public:
     // prevent constructor by default
     BlockDefinitionGroup& operator=(BlockDefinitionGroup const&);
     BlockDefinitionGroup(BlockDefinitionGroup const&);
+    BlockDefinitionGroup();
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0BlockDefinitionGroup@@QEAA@XZ
-    MCAPI BlockDefinitionGroup();
-
     // symbol: ??0BlockDefinitionGroup@@QEAA@AEAUReflectionCtx@cereal@@@Z
     MCAPI explicit BlockDefinitionGroup(struct cereal::ReflectionCtx&);
 
@@ -73,9 +71,15 @@ public:
     MCAPI void initializeBlocks(class Level&);
 
     // symbol:
-    // ?loadResource@BlockDefinitionGroup@@QEAA?AV?$unique_ptr@UBlockDefinition@@U?$default_delete@UBlockDefinition@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBV43@AEBVSemVersion@@AEBVExperiments@@@Z
-    MCAPI std::unique_ptr<struct BlockDefinition>
-    loadResource(std::string, class Core::PathBuffer<std::string> const&, std::string const&, class SemVersion const&, class Experiments const&);
+    // ?loadResource@BlockDefinitionGroup@@QEAA?AV?$unique_ptr@UBlockDefinition@@U?$default_delete@UBlockDefinition@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBV43@AEBVSemVersion@@AEBVExperiments@@_N@Z
+    MCAPI std::unique_ptr<struct BlockDefinition> loadResource(
+        std::string,
+        class Core::PathBuffer<std::string> const&,
+        std::string const&,
+        class SemVersion const&,
+        class Experiments const&,
+        bool
+    );
 
     // symbol:
     // ?loadResources@BlockDefinitionGroup@@QEAAXAEBVResourcePackManager@@AEBVBlockComponentFactory@@AEBVExperiments@@@Z
@@ -123,9 +127,15 @@ public:
     );
 
     // symbol:
-    // ?_loadBlockDescription@BlockDefinitionGroup@@AEAA_NAEBVValue@Json@@AEAUBlockDescription@@AEBVSemVersion@@2AEBVExperiments@@@Z
-    MCAPI bool
-    _loadBlockDescription(class Json::Value const&, struct BlockDescription&, class SemVersion const&, class SemVersion const&, class Experiments const&);
+    // ?_loadBlockDescription@BlockDefinitionGroup@@AEAA_NAEBVValue@Json@@AEAUBlockDescription@@AEBVSemVersion@@2AEBVExperiments@@_N@Z
+    MCAPI bool _loadBlockDescription(
+        class Json::Value const&,
+        struct BlockDescription&,
+        class SemVersion const&,
+        class SemVersion const&,
+        class Experiments const&,
+        bool
+    );
 
     // symbol: ?_loadComponents@BlockDefinitionGroup@@AEAA_NAEBVValue@Json@@AEAUBlockDefinition@@AEBVExperiments@@@Z
     MCAPI bool

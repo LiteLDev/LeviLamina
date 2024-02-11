@@ -29,21 +29,21 @@ public:
     virtual ~ScriptBlockGameplayHandler() = default;
 
     // vIndex: 1, symbol:
+    // ?handleEvent@ScriptBlockGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEBUBlockTryPlaceByPlayerEvent@@@Z
+    virtual struct GameplayHandlerResult<::CoordinatorResult> handleEvent(struct BlockTryPlaceByPlayerEvent const&);
+
+    // vIndex: 2, symbol:
     // ?handleEvent@?$AddHandleEvent@U?$Impl@U?$type_list@U?$MutableBlockGameplayEvent@W4CoordinatorResult@@@@@entt@@@?$EventHandlerDispatcher@VBlockGameplayHandler@@@Details@@U?$GameplayHandlerResult@V?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@@U?$type_list@$$CBUCraftUISetResultNameEvent@@@entt@@@?$EventHandlerDispatcher@VBlockGameplayHandler@@@Details@@UEAA?AU?$GameplayHandlerResult@V?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@@AEBUCraftUISetResultNameEvent@@@Z
     virtual struct GameplayHandlerResult<std::optional<std::string>>
     handleEvent(struct CraftUISetResultNameEvent const&);
 
-    // vIndex: 2, symbol:
+    // vIndex: 3, symbol:
     // ?handleEvent@ScriptBlockGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUExplosionStartedEvent@@@Z
     virtual struct GameplayHandlerResult<::CoordinatorResult> handleEvent(struct ExplosionStartedEvent&);
 
-    // vIndex: 3, symbol:
+    // vIndex: 4, symbol:
     // ?handleEvent@ScriptBlockGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUBlockTryDestroyByPlayerEvent@@@Z
     virtual struct GameplayHandlerResult<::CoordinatorResult> handleEvent(struct BlockTryDestroyByPlayerEvent&);
-
-    // vIndex: 4, symbol:
-    // ?handleEvent@ScriptBlockGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUBlockTryPlaceByPlayerEvent@@@Z
-    virtual struct GameplayHandlerResult<::CoordinatorResult> handleEvent(struct BlockTryPlaceByPlayerEvent&);
 
     // vIndex: 5, symbol:
     // ?handleEvent@?$Impl@U?$type_list@$$CBU?$BlockGameplayEvent@X@@$$CBU?$BlockGameplayEvent@W4CoordinatorResult@@@@$$CBU?$BlockGameplayEvent@V?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@@U?$MutableBlockGameplayEvent@W4CoordinatorResult@@@@@entt@@@?$EventHandlerDispatcher@VBlockGameplayHandler@@@Details@@MEAA?AW4HandlerResult@@AEBU?$BlockGameplayEvent@X@@@Z
@@ -62,29 +62,7 @@ public:
     // vIndex: 8, symbol:
     // ?handleEvent@?$Impl@U?$type_list@U?$MutableBlockGameplayEvent@W4CoordinatorResult@@@@@entt@@@?$EventHandlerDispatcher@VBlockGameplayHandler@@@Details@@MEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAU?$MutableBlockGameplayEvent@W4CoordinatorResult@@@@@Z
     virtual struct GameplayHandlerResult<::CoordinatorResult>
-    handleEvent(struct MutableBlockGameplayEvent<::CoordinatorResult>&);
-
-    // vIndex: 9, symbol: __unk_vfn_9
-    virtual void __unk_vfn_9();
-
-    // vIndex: 10, symbol: __unk_vfn_10
-    virtual void __unk_vfn_10();
-
-    // vIndex: 11, symbol: __unk_vfn_11
-    virtual void __unk_vfn_11();
-
-    // vIndex: 12, symbol: __unk_vfn_12
-    virtual void __unk_vfn_12();
-
-    // vIndex: 13, symbol: __unk_vfn_13
-    virtual void __unk_vfn_13();
-
-    // vIndex: 14, symbol: __unk_vfn_14
-    virtual void __unk_vfn_14();
-
-    // vIndex: 15, symbol:
-    // ?handleEvent@ScriptBlockGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEBUPistonActionEvent@@@Z
-    virtual struct GameplayHandlerResult<::CoordinatorResult> handleEvent(struct PistonActionEvent const&);
+    handleEvent(struct MutableBlockGameplayEvent<::CoordinatorResult>& event);
 
     // NOLINTEND
 
@@ -97,21 +75,15 @@ public:
         const;
 
     // symbol:
-    // ?_handleBlockTryPlaceByPlayerEvent@ScriptBlockGameplayHandler@@AEBA_NAEAUBlockTryPlaceByPlayerEvent@@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VIScriptWorldBeforeEvents@ScriptModuleMinecraft@@@4@@Z
+    // ?_handleBlockTryPlaceByPlayerEvent@ScriptBlockGameplayHandler@@AEBA_NAEBUBlockTryPlaceByPlayerEvent@@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VIScriptWorldBeforeEvents@ScriptModuleMinecraft@@@4@@Z
     MCAPI bool
-    _handleBlockTryPlaceByPlayerEvent(struct BlockTryPlaceByPlayerEvent&, class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>)
+    _handleBlockTryPlaceByPlayerEvent(struct BlockTryPlaceByPlayerEvent const&, class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>)
         const;
 
     // symbol:
     // ?_handleExplosionStartedEvent@ScriptBlockGameplayHandler@@AEBA_NAEAUExplosionStartedEvent@@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VIScriptWorldBeforeEvents@ScriptModuleMinecraft@@@4@@Z
     MCAPI bool
     _handleExplosionStartedEvent(struct ExplosionStartedEvent&, class Scripting::WeakLifetimeScope const& scope, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>)
-        const;
-
-    // symbol:
-    // ?_handlePistonActionEvent@ScriptBlockGameplayHandler@@AEBA_NAEBUPistonActionEvent@@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VIScriptWorldBeforeEvents@ScriptModuleMinecraft@@@4@@Z
-    MCAPI bool
-    _handlePistonActionEvent(struct PistonActionEvent const&, class Scripting::WeakLifetimeScope const& scope, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>)
         const;
 
     // NOLINTEND

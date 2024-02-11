@@ -42,55 +42,19 @@ public:
     // vIndex: 10, symbol: __gen_??1Blaze@@UEAA@XZ
     virtual ~Blaze() = default;
 
-    // vIndex: 23, symbol: __unk_vfn_23
-    virtual void __unk_vfn_23();
-
     // vIndex: 29, symbol: ?normalTick@Blaze@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 39, symbol: __unk_vfn_39
-    virtual void __unk_vfn_39();
-
-    // vIndex: 42, symbol: __unk_vfn_42
-    virtual void __unk_vfn_42();
-
-    // vIndex: 46, symbol: ?getBrightness@Blaze@@UEBAMMAEBVIConstBlockSource@@@Z
+    // vIndex: 44, symbol: ?getBrightness@Blaze@@UEBAMMAEBVIConstBlockSource@@@Z
     virtual float getBrightness(float, class IConstBlockSource const&) const;
 
-    // vIndex: 47, symbol: __unk_vfn_47
-    virtual void __unk_vfn_47();
-
-    // vIndex: 58, symbol: ?isOnFire@Blaze@@UEBA_NXZ
+    // vIndex: 55, symbol: ?isOnFire@Blaze@@UEBA_NXZ
     virtual bool isOnFire() const;
 
-    // vIndex: 60, symbol: __unk_vfn_60
-    virtual void __unk_vfn_60();
-
-    // vIndex: 61, symbol: __unk_vfn_61
-    virtual void __unk_vfn_61();
-
-    // vIndex: 62, symbol: __unk_vfn_62
-    virtual void __unk_vfn_62();
-
-    // vIndex: 107, symbol: __unk_vfn_107
-    virtual void __unk_vfn_107();
-
-    // vIndex: 144, symbol: __unk_vfn_144
-    virtual void __unk_vfn_144();
-
-    // vIndex: 162, symbol: __unk_vfn_162
-    virtual void __unk_vfn_162();
-
-    // vIndex: 167, symbol: __unk_vfn_167
-    virtual void __unk_vfn_167();
-
-    // vIndex: 168, symbol: __unk_vfn_168
-    virtual void __unk_vfn_168();
-
-    // vIndex: 177, symbol: ?aiStep@Blaze@@UEAAXXZ
+    // vIndex: 171, symbol: ?aiStep@Blaze@@UEAAXXZ
     virtual void aiStep();
 
-    // vIndex: 210, symbol: ?isDarkEnoughToSpawn@Blaze@@UEBA_NXZ
+    // vIndex: 204, symbol: ?isDarkEnoughToSpawn@Blaze@@UEBA_NXZ
     virtual bool isDarkEnoughToSpawn() const;
 
     // symbol: ??0Blaze@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

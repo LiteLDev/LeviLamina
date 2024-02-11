@@ -10,6 +10,7 @@ public:
     // prevent constructor by default
     ItemStackRequestActionCraftGrindstone& operator=(ItemStackRequestActionCraftGrindstone const&);
     ItemStackRequestActionCraftGrindstone(ItemStackRequestActionCraftGrindstone const&);
+    ItemStackRequestActionCraftGrindstone();
 
 public:
     // NOLINTBEGIN
@@ -35,9 +36,6 @@ public:
 
     // vIndex: 6, symbol: ?getRecipeNetId@ItemStackRequestActionCraftGrindstone@@UEBAAEBUItemStackNetIdVariant@@XZ
     virtual struct ItemStackNetIdVariant const& getRecipeNetId() const;
-
-    // symbol: ??0ItemStackRequestActionCraftGrindstone@@QEAA@XZ
-    MCAPI ItemStackRequestActionCraftGrindstone();
 
     // NOLINTEND
 };

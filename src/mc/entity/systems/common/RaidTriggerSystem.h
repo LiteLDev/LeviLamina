@@ -16,6 +16,13 @@ public:
     RaidTriggerSystem(RaidTriggerSystem const&);
     RaidTriggerSystem();
 
+public:
+    // NOLINTBEGIN
+    // symbol: ?createSystem@RaidTriggerSystem@@SA?AUTickingSystemWithInfo@@XZ
+    MCAPI static struct TickingSystemWithInfo createSystem();
+
+    // NOLINTEND
+
     // private:
     // NOLINTBEGIN
     // symbol:

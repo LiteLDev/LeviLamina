@@ -82,9 +82,9 @@ public:
     // symbol:
     // ?onWebsocketRequest@NetworkSystem@@EEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0V?$function@$$A6AXXZ@3@@Z
     MCVAPI void onWebsocketRequest(
-        std::string const&        serverAddress,
-        std::string const&        payload,
-        std::function<void(void)> errorCallback
+        std::string const&    serverAddress,
+        std::string const&    payload,
+        std::function<void()> errorCallback
     );
 
     // symbol: ?useIPv4Only@NetworkSystem@@UEBA_NXZ
@@ -101,6 +101,9 @@ public:
 
     // symbol: ?enableAsyncFlush@NetworkSystem@@QEAAXAEBVNetworkIdentifier@@@Z
     MCAPI void enableAsyncFlush(class NetworkIdentifier const& id);
+
+    // symbol: ?flush@NetworkSystem@@QEAAXAEBVNetworkIdentifier@@$$QEAV?$function@$$A6AXXZ@std@@@Z
+    MCAPI void flush(class NetworkIdentifier const& id, std::function<void()>&& callback);
 
     // symbol:
     // ?getCompressedPeerForUser@NetworkSystem@@QEAA?AV?$weak_ptr@VCompressedNetworkPeer@@@std@@AEBVNetworkIdentifier@@@Z
@@ -139,9 +142,6 @@ public:
     // symbol: ?getServerLocator@NetworkSystem@@QEAAAEAVServerLocator@@XZ
     MCAPI class ServerLocator& getServerLocator();
 
-    // symbol: ?isHostingPlayer@NetworkSystem@@QEBA_NAEBVNetworkIdentifier@@AEBW4SubClientId@@@Z
-    MCAPI bool isHostingPlayer(class NetworkIdentifier const& playerId, ::SubClientId const& subid) const;
-
     // symbol: ?isServer@NetworkSystem@@QEBA_NXZ
     MCAPI bool isServer() const;
 
@@ -154,8 +154,9 @@ public:
     // symbol: ?send@NetworkSystem@@QEAAXAEBVNetworkIdentifier@@AEBVPacket@@W4SubClientId@@@Z
     MCAPI void send(class NetworkIdentifier const& id, class Packet const& packet, ::SubClientId senderSubId);
 
-    // symbol: ?setClientUpdateAndRenderThrottle@NetworkSystem@@QEAAX_NHM@Z
-    MCAPI void setClientUpdateAndRenderThrottle(bool enabled, int threshold, float scalar);
+    // symbol:
+    // ?sendToMultiple@NetworkSystem@@QEAAXAEBV?$vector@UNetworkIdentifierWithSubId@@V?$allocator@UNetworkIdentifierWithSubId@@@std@@@std@@AEBVPacket@@@Z
+    MCAPI void sendToMultiple(std::vector<struct NetworkIdentifierWithSubId> const& ids, class Packet const& packet);
 
     // symbol: ?setCloseConnection@NetworkSystem@@QEAAXAEBVNetworkIdentifier@@@Z
     MCAPI void setCloseConnection(class NetworkIdentifier const& id);

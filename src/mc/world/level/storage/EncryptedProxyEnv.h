@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/enums/EncryptedProxyReadMode.h"
-
 class EncryptedProxyEnv {
 public:
     // prevent constructor by default
@@ -36,15 +33,6 @@ public:
     // vIndex: 11, symbol:
     // ?RenameFile@EncryptedProxyEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
     virtual leveldb::Status RenameFile(std::string const& from, std::string const& to);
-
-    // symbol:
-    // ??0EncryptedProxyEnv@@QEAA@PEAVEnv@leveldb@@AEBVContentIdentity@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4EncryptedProxyReadMode@@@Z
-    MCAPI EncryptedProxyEnv(
-        leveldb::Env*                env,
-        class ContentIdentity const& contentIdentity,
-        std::string const&           contentKey,
-        ::EncryptedProxyReadMode     mode
-    );
 
     // NOLINTEND
 };

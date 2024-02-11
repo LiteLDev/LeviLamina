@@ -40,77 +40,38 @@ public:
     // vIndex: 10, symbol: ??1Fireball@@UEAA@XZ
     virtual ~Fireball();
 
-    // vIndex: 23, symbol: __unk_vfn_23
-    virtual void __unk_vfn_23();
-
     // vIndex: 29, symbol: ?normalTick@Fireball@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 39, symbol: __unk_vfn_39
-    virtual void __unk_vfn_39();
-
-    // vIndex: 42, symbol: __unk_vfn_42
-    virtual void __unk_vfn_42();
-
-    // vIndex: 46, symbol: ?getBrightness@Fireball@@UEBAMMAEBVIConstBlockSource@@@Z
+    // vIndex: 44, symbol: ?getBrightness@Fireball@@UEBAMMAEBVIConstBlockSource@@@Z
     virtual float getBrightness(float, class IConstBlockSource const&) const;
 
-    // vIndex: 47, symbol: __unk_vfn_47
-    virtual void __unk_vfn_47();
-
-    // vIndex: 51, symbol: ?isPickable@Fireball@@UEAA_NXZ
+    // vIndex: 48, symbol: ?isPickable@Fireball@@UEAA_NXZ
     virtual bool isPickable();
 
-    // vIndex: 60, symbol: __unk_vfn_60
-    virtual void __unk_vfn_60();
-
-    // vIndex: 61, symbol: __unk_vfn_61
-    virtual void __unk_vfn_61();
-
-    // vIndex: 62, symbol: __unk_vfn_62
-    virtual void __unk_vfn_62();
-
-    // vIndex: 84, symbol: ?getPickRadius@Fireball@@UEAAMXZ
+    // vIndex: 81, symbol: ?getPickRadius@Fireball@@UEAAMXZ
     virtual float getPickRadius();
 
-    // vIndex: 100, symbol: ?getSourceUniqueID@Fireball@@UEBA?AUActorUniqueID@@XZ
+    // vIndex: 97, symbol: ?getSourceUniqueID@Fireball@@UEBA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID getSourceUniqueID() const;
 
-    // vIndex: 106, symbol: ?canChangeDimensionsUsingPortal@Fireball@@UEBA_NXZ
+    // vIndex: 103, symbol: ?canChangeDimensionsUsingPortal@Fireball@@UEBA_NXZ
     virtual bool canChangeDimensionsUsingPortal() const;
 
-    // vIndex: 107, symbol: __unk_vfn_107
-    virtual void __unk_vfn_107();
-
-    // vIndex: 144, symbol: __unk_vfn_144
-    virtual void __unk_vfn_144();
-
-    // vIndex: 162, symbol: __unk_vfn_162
-    virtual void __unk_vfn_162();
-
-    // vIndex: 164, symbol: ?readAdditionalSaveData@Fireball@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 159, symbol: ?readAdditionalSaveData@Fireball@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 165, symbol: ?addAdditionalSaveData@Fireball@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 160, symbol: ?addAdditionalSaveData@Fireball@@MEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 167, symbol: __unk_vfn_167
-    virtual void __unk_vfn_167();
-
-    // vIndex: 168, symbol: __unk_vfn_168
-    virtual void __unk_vfn_168();
-
-    // vIndex: 169, symbol: ?getInertia@Fireball@@MEAAMXZ
+    // vIndex: 163, symbol: ?getInertia@Fireball@@MEAAMXZ
     virtual float getInertia();
 
-    // vIndex: 170, symbol: ?getTrailParticle@Fireball@@MEAA?AW4ParticleType@@XZ
+    // vIndex: 164, symbol: ?getTrailParticle@Fireball@@MEAA?AW4ParticleType@@XZ
     virtual ::ParticleType getTrailParticle();
 
-    // symbol: ?canMakeStepSound@Fireball@@MEBA_NXZ
-    MCVAPI bool canMakeStepSound() const;
-
-    // symbol: ?shouldBurn@Fireball@@MEAA_NXZ
-    MCVAPI bool shouldBurn();
+    // vIndex: 165, symbol: ?shouldBurn@Fireball@@MEAA_NXZ
+    virtual bool shouldBurn();
 
     // symbol: ??0Fireball@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Fireball(

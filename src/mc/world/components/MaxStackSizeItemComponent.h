@@ -25,9 +25,6 @@ public:
     // vIndex: 1, symbol: ?checkComponentDataForContentErrors@ItemComponent@@UEBA_NXZ
     virtual bool checkComponentDataForContentErrors() const;
 
-    // vIndex: 2, symbol: ?writeSettings@ItemComponent@@UEAAXXZ
-    virtual void writeSettings();
-
     // vIndex: 3, symbol: ?isNetworkComponent@InteractButtonItemComponent@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
@@ -50,6 +47,9 @@ public:
 
     // vIndex: 9, symbol: ?_initializeComponent@MaxStackSizeItemComponent@@UEAAXXZ
     virtual void _initializeComponent();
+
+    // symbol: ?getMaxStackSize@MaxStackSizeItemComponent@@QEBAEXZ
+    MCAPI uchar getMaxStackSize() const;
 
     // symbol:
     // ?bindType@MaxStackSizeItemComponent@@SAXAEAUReflectionCtx@cereal@@AEBV?$vector@W4AllExperiments@@V?$allocator@W4AllExperiments@@@std@@@std@@V?$optional@VSemVersion@@@5@@Z

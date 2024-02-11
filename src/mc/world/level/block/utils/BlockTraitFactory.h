@@ -25,6 +25,9 @@ public:
         // symbol: ??0Constructor@BlockTraitFactory@@QEAA@AEBU01@@Z
         MCAPI Constructor(struct BlockTraitFactory::Constructor const&);
 
+        // symbol: ??4Constructor@BlockTraitFactory@@QEAAAEAU01@$$QEAU01@@Z
+        MCAPI struct BlockTraitFactory::Constructor& operator=(struct BlockTraitFactory::Constructor&&);
+
         // symbol: ??4Constructor@BlockTraitFactory@@QEAAAEAU01@AEBU01@@Z
         MCAPI struct BlockTraitFactory::Constructor& operator=(struct BlockTraitFactory::Constructor const&);
 

@@ -34,9 +34,6 @@ public:
     // vIndex: 4, symbol: ?isItemAllowedToAdd@BrewingStandResultContainerValidation@@UEBA_NAEBVItemStack@@@Z
     virtual bool isItemAllowedToAdd(class ItemStack const& item) const;
 
-    // vIndex: 5, symbol: __unk_vfn_5
-    virtual void __unk_vfn_5();
-
     // vIndex: 6, symbol: ?canItemMoveToContainer@ContainerValidationBase@@UEBA_NAEBVItemStackBase@@@Z
     virtual bool canItemMoveToContainer(class ItemStackBase const& item) const;
 

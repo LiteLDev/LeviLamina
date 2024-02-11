@@ -18,7 +18,6 @@ public:
     // JumpToBlockGoal inner types declare
     // clang-format off
     class Definition;
-    struct WeightedJumpToBlockPos;
     // clang-format on
 
     // JumpToBlockGoal inner types define
@@ -49,14 +48,6 @@ public:
         );
 
         // NOLINTEND
-    };
-
-    struct WeightedJumpToBlockPos {
-    public:
-        // prevent constructor by default
-        WeightedJumpToBlockPos& operator=(WeightedJumpToBlockPos const&);
-        WeightedJumpToBlockPos(WeightedJumpToBlockPos const&);
-        WeightedJumpToBlockPos();
     };
 
 public:
@@ -102,10 +93,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_calculateJumpCurve@JumpToBlockGoal@@AEAA_NMAEBVBlockPos@@AEAUWeightedJumpToBlockPos@1@@Z
-    MCAPI bool
-    _calculateJumpCurve(float, class BlockPos const& targetPos, struct JumpToBlockGoal::WeightedJumpToBlockPos&);
-
     // symbol: ?_clearGoalState@JumpToBlockGoal@@AEAAXXZ
     MCAPI void _clearGoalState();
 
@@ -117,9 +104,6 @@ public:
 
     // symbol: ?_findTargetBlock@JumpToBlockGoal@@AEAA_NXZ
     MCAPI bool _findTargetBlock();
-
-    // symbol: ?_validTransition@JumpToBlockGoal@@AEBA_NAEBVVec3@@0@Z
-    MCAPI bool _validTransition(class Vec3 const&, class Vec3 const& newPos) const;
 
     // NOLINTEND
 };

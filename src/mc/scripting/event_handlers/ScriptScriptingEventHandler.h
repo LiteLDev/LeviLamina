@@ -30,12 +30,12 @@ public:
     // vIndex: 1, symbol:
     // ?handleEvent@?$Impl@U?$type_list@U?$MutableScriptingGameplayEvent@W4CoordinatorResult@@@@$$CBU?$ScriptingGameplayEvent@W4CoordinatorResult@@@@@entt@@@?$EventHandlerDispatcher@VScriptingEventHandler@@@Details@@MEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAU?$MutableScriptingGameplayEvent@W4CoordinatorResult@@@@@Z
     virtual struct GameplayHandlerResult<::CoordinatorResult>
-    handleEvent(struct MutableScriptingGameplayEvent<::CoordinatorResult>&);
+    handleEvent(struct MutableScriptingGameplayEvent<::CoordinatorResult>& event);
 
     // vIndex: 2, symbol:
     // ?handleEvent@?$Impl@U?$type_list@$$CBU?$ScriptingGameplayEvent@W4CoordinatorResult@@@@@entt@@@?$EventHandlerDispatcher@VScriptingEventHandler@@@Details@@MEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEBU?$ScriptingGameplayEvent@W4CoordinatorResult@@@@@Z
     virtual struct GameplayHandlerResult<::CoordinatorResult>
-    handleEvent(struct ScriptingGameplayEvent<::CoordinatorResult> const&);
+    handleEvent(struct ScriptingGameplayEvent<::CoordinatorResult> const& event);
 
     // vIndex: 3, symbol: __unk_vfn_3
     virtual void __unk_vfn_3();

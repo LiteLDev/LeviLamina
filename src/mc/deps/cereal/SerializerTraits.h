@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { class SerializerContext; }
-// clang-format on
-
 namespace cereal {
 
 struct SerializerTraits {
@@ -33,23 +28,19 @@ public:
     MCAPI struct cereal::SerializerTraits& name(std::string);
 
     // symbol:
+    // ?namedSchema@SerializerTraits@cereal@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    MCAPI std::string const& namedSchema() const;
+
+    // symbol:
+    // ?namedSchema@SerializerTraits@cereal@@QEAAAEAU12@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI struct cereal::SerializerTraits& namedSchema(std::string);
+
+    // symbol:
     // ?setEnumDocumentation@SerializerTraits@cereal@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void setEnumDocumentation(std::string);
 
-    // symbol:
-    // ?validate@SerializerTraits@cereal@@QEAAAEAU12@V?$function@$$A6A_NAEAVmeta_any@entt@@AEAVSerializerContext@cereal@@@Z@std@@@Z
-    MCAPI struct cereal::SerializerTraits&
-        validate(std::function<bool(entt::meta_any&, class cereal::SerializerContext&)>);
-
     // symbol: ??1SerializerTraits@cereal@@QEAA@XZ
     MCAPI ~SerializerTraits();
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    // symbol: ?performValidation@SerializerTraits@cereal@@AEBA_NVmeta_any@entt@@AEAVSerializerContext@2@@Z
-    MCAPI bool performValidation(entt::meta_any, class cereal::SerializerContext&) const;
 
     // NOLINTEND
 };

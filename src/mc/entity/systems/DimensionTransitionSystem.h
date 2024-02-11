@@ -59,15 +59,9 @@ public:
     removeChangeDimensionRequest(class StrictEntityContext const&, class EntityModifier<struct PlayerChangeDimensionRequestComponent>);
 
     // symbol:
-    // ?requestPlayerChangeDimension@DimensionTransitionSystem@@SAXAEBVStrictEntityContext@@V?$unique_ptr@VChangeDimensionRequest@@U?$default_delete@VChangeDimensionRequest@@@std@@@std@@V?$ViewT@VStrictEntityContext@@U?$Include@UPlayerChangeDimensionRequestComponent@@@@@@V?$ViewT@VStrictEntityContext@@VDimensionStateComponent@@UStateVectorComponent@@@@V?$EntityModifier@UPlayerChangeDimensionRequestComponent@@@@_N@Z
-    MCAPI static void requestPlayerChangeDimension(
-        class StrictEntityContext const&              player,
-        std::unique_ptr<class ChangeDimensionRequest> request,
-        class ViewT<class StrictEntityContext, struct Include<struct PlayerChangeDimensionRequestComponent>>,
-        class ViewT<class StrictEntityContext, class DimensionStateComponent, struct StateVectorComponent>,
-        class EntityModifier<struct PlayerChangeDimensionRequestComponent> modifier,
-        bool                                                               isClientSide
-    );
+    // ?requestPlayerChangeDimension@DimensionTransitionSystem@@SAXAEBVStrictEntityContext@@$$QEAVChangeDimensionRequest@@V?$ViewT@VStrictEntityContext@@VDimensionStateComponent@@UStateVectorComponent@@@@V?$EntityModifier@UPlayerChangeDimensionRequestComponent@@@@@Z
+    MCAPI static void
+    requestPlayerChangeDimension(class StrictEntityContext const&, class ChangeDimensionRequest&&, class ViewT<class StrictEntityContext, class DimensionStateComponent, struct StateVectorComponent>, class EntityModifier<struct PlayerChangeDimensionRequestComponent>);
 
     // symbol:
     // ?shouldLevelWaitForSystem@DimensionTransitionSystem@@SA_NAEBVStrictEntityContext@@V?$ViewT@VStrictEntityContext@@$$CBUPlayerChangeDimensionRequestComponent@@@@@Z

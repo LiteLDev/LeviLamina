@@ -32,9 +32,6 @@ public:
         // vIndex: 0, symbol: __gen_??1GameTestNetworkListener@GameTestNetworkAdapter@@UEAA@XZ
         virtual ~GameTestNetworkListener() = default;
 
-        // vIndex: 1, symbol: __unk_vfn_1
-        virtual void __unk_vfn_1();
-
         // vIndex: 2, symbol:
         // ?onTestPassed@GameTestNetworkListener@GameTestNetworkAdapter@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
         virtual void onTestPassed(class gametest::BaseGameTestInstance&);

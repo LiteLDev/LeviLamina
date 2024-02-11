@@ -21,7 +21,7 @@ public:
     virtual ~OceanMixerOperationNode() = default;
 
     // vIndex: 1, symbol: ?init@OperationNodeBase@OperationNodeDetails@@UEAAX_J@Z
-    virtual void init(int64);
+    virtual void init(int64 seed);
 
     // vIndex: 2, symbol: __unk_vfn_2
     virtual void __unk_vfn_2();

@@ -35,9 +35,9 @@ MCAPI void
 tickApplySlowdownOnMove(struct BlockMovementSlowdownMultiplierComponent&, struct MoveRequestComponent&, struct StateVectorComponent&);
 
 // symbol:
-// ?tickImmunePlayer@BlockMovementSlowdownMultiplierSystem@@YAXAEBVStrictEntityContext@@AEAUBlockMovementSlowdownMultiplierComponent@@AEBUAbilitiesComponent@@V?$EntityModifier@UBlockMovementSlowdownAppliedComponent@@@@@Z
+// ?tickImmunePlayer@BlockMovementSlowdownMultiplierSystem@@YAXAEBVStrictEntityContext@@AEAUBlockMovementSlowdownMultiplierComponent@@AEBUMovementAbilitiesComponent@@V?$EntityModifier@UBlockMovementSlowdownAppliedComponent@@@@@Z
 MCAPI void
-tickImmunePlayer(class StrictEntityContext const&, struct BlockMovementSlowdownMultiplierComponent&, struct AbilitiesComponent const&, class EntityModifier<struct BlockMovementSlowdownAppliedComponent>);
+tickImmunePlayer(class StrictEntityContext const&, struct BlockMovementSlowdownMultiplierComponent&, struct MovementAbilitiesComponent const&, class EntityModifier<struct BlockMovementSlowdownAppliedComponent>);
 
 // symbol:
 // ?tickImmuneSlowdown@BlockMovementSlowdownMultiplierSystem@@YAXAEBVStrictEntityContext@@AEAUBlockMovementSlowdownMultiplierComponent@@V?$EntityModifier@UBlockMovementSlowdownAppliedComponent@@@@@Z

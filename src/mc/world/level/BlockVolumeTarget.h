@@ -19,20 +19,14 @@ public:
     // vIndex: 0, symbol: ??1BlockVolumeTarget@@UEAA@XZ
     virtual ~BlockVolumeTarget();
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
-
-    // vIndex: 2, symbol: __unk_vfn_2
-    virtual void __unk_vfn_2();
-
     // vIndex: 3, symbol: ?tryGetLiquidBlock@BlockVolumeTarget@@UEBAPEBVBlock@@AEBVBlockPos@@@Z
     virtual class Block const* tryGetLiquidBlock(class BlockPos const& pos) const;
 
-    // vIndex: 4, symbol: __unk_vfn_4
-    virtual void __unk_vfn_4();
+    // vIndex: 4, symbol: ?getBlock@BlockVolumeTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z
+    virtual class Block const& getBlock(class BlockPos const& pos) const;
 
-    // vIndex: 5, symbol: __unk_vfn_5
-    virtual void __unk_vfn_5();
+    // vIndex: 5, symbol: ?getBlockNoBoundsCheck@BlockVolumeTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z
+    virtual class Block const& getBlockNoBoundsCheck(class BlockPos const& pos) const;
 
     // vIndex: 6, symbol: ?getExtraBlock@BlockVolumeTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z
     virtual class Block const& getExtraBlock(class BlockPos const&) const;
@@ -43,7 +37,7 @@ public:
     fetchBlocksInBox(class BoundingBox const&, std::function<bool(class Block const&)>);
 
     // vIndex: 8, symbol: ?hasBiomeTag@BlockVolumeTarget@@UEBA_N_KAEBVBlockPos@@@Z
-    virtual bool hasBiomeTag(uint64, class BlockPos const&) const;
+    virtual bool hasBiomeTag(uint64, class BlockPos const& pos) const;
 
     // vIndex: 9, symbol: ?setBlock@BlockVolumeTarget@@UEAA_NAEBVBlockPos@@AEBVBlock@@H@Z
     virtual bool setBlock(class BlockPos const& pos, class Block const& newBlock, int);
@@ -51,29 +45,27 @@ public:
     // vIndex: 10, symbol: ?setBlockSimple@BlockVolumeTarget@@UEAA_NAEBVBlockPos@@AEBVBlock@@@Z
     virtual bool setBlockSimple(class BlockPos const& pos, class Block const& block);
 
-    // vIndex: 11, symbol: __unk_vfn_11
-    virtual void __unk_vfn_11();
+    // vIndex: 12, symbol:
+    // ?placeStructure@BlockVolumeTarget@@UEAA_NAEBVBlockPos@@AEAVStructureTemplate@@AEAVStructureSettings@@@Z
+    virtual bool placeStructure(class BlockPos const&, class StructureTemplate&, class StructureSettings&);
 
-    // vIndex: 12, symbol: __unk_vfn_12
-    virtual void __unk_vfn_12();
+    // vIndex: 13, symbol: ?mayPlace@BlockVolumeTarget@@UEBA_NAEBVBlockPos@@AEBVBlock@@@Z
+    virtual bool mayPlace(class BlockPos const&, class Block const&) const;
 
-    // vIndex: 13, symbol: __unk_vfn_13
-    virtual void __unk_vfn_13();
+    // vIndex: 14, symbol: ?canSurvive@BlockVolumeTarget@@UEBA_NAEBVBlockPos@@AEBVBlock@@@Z
+    virtual bool canSurvive(class BlockPos const&, class Block const&) const;
 
-    // vIndex: 14, symbol: __unk_vfn_14
-    virtual void __unk_vfn_14();
-
-    // vIndex: 15, symbol: __unk_vfn_15
-    virtual void __unk_vfn_15();
+    // vIndex: 15, symbol: ?canBeBuiltOver@BlockVolumeTarget@@UEBA_NAEBVBlockPos@@AEBVBlock@@@Z
+    virtual bool canBeBuiltOver(class BlockPos const&, class Block const&) const;
 
     // vIndex: 16, symbol: ?getMaxHeight@BlockVolumeTarget@@UEBAFXZ
     virtual short getMaxHeight() const;
 
-    // vIndex: 17, symbol: __unk_vfn_17
-    virtual void __unk_vfn_17();
+    // vIndex: 17, symbol: ?getMinHeight@BlockVolumeTarget@@UEBAFXZ
+    virtual short getMinHeight() const;
 
-    // vIndex: 18, symbol: __unk_vfn_18
-    virtual void __unk_vfn_18();
+    // vIndex: 18, symbol: ?shimPlaceForOldFeatures@BlockVolumeTarget@@UEBA_NAEBVFeature@@AEBVBlockPos@@AEAVRandom@@@Z
+    virtual bool shimPlaceForOldFeatures(class Feature const&, class BlockPos const&, class Random&) const;
 
     // vIndex: 19, symbol: ?getHeightmap@BlockVolumeTarget@@UEAAFHH@Z
     virtual short getHeightmap(int x, int z);
@@ -98,33 +90,6 @@ public:
 
     // vIndex: 26, symbol: ?disableBlockSimple@BlockVolumeTarget@@UEAAXXZ
     virtual void disableBlockSimple();
-
-    // symbol: ?apply@BlockVolumeTarget@@UEBA_NXZ
-    MCVAPI bool apply() const;
-
-    // symbol: ?canBeBuiltOver@BlockVolumeTarget@@UEBA_NAEBVBlockPos@@AEBVBlock@@@Z
-    MCVAPI bool canBeBuiltOver(class BlockPos const&, class Block const&) const;
-
-    // symbol: ?canSurvive@BlockVolumeTarget@@UEBA_NAEBVBlockPos@@AEBVBlock@@@Z
-    MCVAPI bool canSurvive(class BlockPos const&, class Block const&) const;
-
-    // symbol: ?getBlock@BlockVolumeTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z
-    MCVAPI class Block const& getBlock(class BlockPos const& pos) const;
-
-    // symbol: ?getBlockNoBoundsCheck@BlockVolumeTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z
-    MCVAPI class Block const& getBlockNoBoundsCheck(class BlockPos const& pos) const;
-
-    // symbol: ?getMinHeight@BlockVolumeTarget@@UEBAFXZ
-    MCVAPI short getMinHeight() const;
-
-    // symbol: ?mayPlace@BlockVolumeTarget@@UEBA_NAEBVBlockPos@@AEBVBlock@@@Z
-    MCVAPI bool mayPlace(class BlockPos const&, class Block const&) const;
-
-    // symbol: ?placeStructure@BlockVolumeTarget@@UEAA_NAEBVBlockPos@@AEAVStructureTemplate@@AEAVStructureSettings@@@Z
-    MCVAPI bool placeStructure(class BlockPos const&, class StructureTemplate&, class StructureSettings&);
-
-    // symbol: ?shimPlaceForOldFeatures@BlockVolumeTarget@@UEBA_NAEBVFeature@@AEBVBlockPos@@AEAVRandom@@@Z
-    MCVAPI bool shimPlaceForOldFeatures(class Feature const&, class BlockPos const&, class Random&) const;
 
     // symbol:
     // ??0BlockVolumeTarget@@QEAA@AEAVBlockVolume@@AEAVLevel@@AEBVBiomeSource@@V?$AutomaticID@VDimension@@H@@AEBUWorldGenContext@@@Z

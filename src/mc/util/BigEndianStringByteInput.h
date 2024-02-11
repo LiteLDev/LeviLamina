@@ -29,10 +29,10 @@ public:
     virtual int64 readLongLong();
 
     // vIndex: 9, symbol: ?readBytes@BigEndianStringByteInput@@UEAA_NPEAX_K@Z
-    virtual bool readBytes(void*, uint64);
+    virtual bool readBytes(void* data, uint64 bytes);
 
     // vIndex: 11, symbol: ?readBigEndianBytes@BigEndianStringByteInput@@UEAA_NPEAX_K@Z
-    virtual bool readBigEndianBytes(void*, uint64);
+    virtual bool readBigEndianBytes(void* data, uint64 bytes);
 
     // NOLINTEND
 };

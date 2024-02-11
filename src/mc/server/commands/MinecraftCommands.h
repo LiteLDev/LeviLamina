@@ -41,8 +41,10 @@ public:
         std::function<void(struct MCRESULT)>  callback
     );
 
-    // symbol: ?enqueueDeferredCommandBlockCommand@MinecraftCommands@@QEAAXVBlockPos@@AEAVBlockSource@@@Z
-    MCAPI void enqueueDeferredCommandBlockCommand(class BlockPos pos, class BlockSource& region);
+    // symbol:
+    // ?enqueueDeferredCompiledCommand@MinecraftCommands@@QEAAXV?$not_null@PEAVCommand@@@gsl@@V?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@@Z
+    MCAPI void
+    enqueueDeferredCompiledCommand(gsl::not_null<class Command*> command, std::unique_ptr<class CommandOrigin> origin);
 
     // symbol:
     // ?enqueueDeferredScriptCommand@MinecraftCommands@@QEAA_NV?$unique_ptr@VDeferredScriptCommand@@U?$default_delete@VDeferredScriptCommand@@@std@@@std@@@Z
@@ -80,20 +82,8 @@ public:
     MCAPI void
     runCommand(class HashedString const& commandStr, class CommandOrigin& origin, ::CurrentCmdVersion commandVersion);
 
-    // symbol: ?runOrDeferCommand@MinecraftCommands@@QEAAXAEBVHashedString@@AEAVCommandOrigin@@W4CurrentCmdVersion@@@Z
-    MCAPI void
-    runOrDeferCommand(class HashedString const& commandStr, class CommandOrigin& origin, ::CurrentCmdVersion version);
-
-    // symbol:
-    // ?runOrDeferCommand@MinecraftCommands@@QEAAXV?$not_null@PEAVCommand@@@gsl@@AEAVCommandOrigin@@W4CurrentCmdVersion@@@Z
-    MCAPI void
-    runOrDeferCommand(gsl::not_null<class Command*> command, class CommandOrigin& origin, ::CurrentCmdVersion version);
-
     // symbol: ?setRegistryNetworkUpdateCallback@MinecraftCommands@@QEBAXV?$function@$$A6AXAEBVPacket@@@Z@std@@@Z
     MCAPI void setRegistryNetworkUpdateCallback(std::function<void(class Packet const&)> callback) const;
-
-    // symbol: ?shouldDeferCommand@MinecraftCommands@@QEBA_NW4CurrentCmdVersion@@@Z
-    MCAPI bool shouldDeferCommand(::CurrentCmdVersion version) const;
 
     // symbol: ?tick@MinecraftCommands@@QEAAXXZ
     MCAPI void tick();
@@ -118,8 +108,8 @@ public:
     // symbol: ?initItemTagEnum@MinecraftCommands@@SAXVItemRegistryRef@@AEAVCommandRegistry@@@Z
     MCAPI static void initItemTagEnum(class ItemRegistryRef, class CommandRegistry& registry);
 
-    // symbol: ?initStructureFeatureEnum@MinecraftCommands@@SAXAEAVCommandRegistry@@@Z
-    MCAPI static void initStructureFeatureEnum(class CommandRegistry& registry);
+    // symbol: ?initStructureFeatureEnum@MinecraftCommands@@SAXAEAVCommandRegistry@@AEBVExperiments@@@Z
+    MCAPI static void initStructureFeatureEnum(class CommandRegistry&, class Experiments const&);
 
     // symbol: ?initUnlockableRecipesEnum@MinecraftCommands@@SAXAEAVCommandRegistry@@AEBVRecipes@@@Z
     MCAPI static void initUnlockableRecipesEnum(class CommandRegistry&, class Recipes const&);

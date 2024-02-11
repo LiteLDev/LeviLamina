@@ -20,6 +20,15 @@ public:
     // symbol: ??0OverworldNoises3d@@QEAA@AEBU0@@Z
     MCAPI OverworldNoises3d(struct OverworldNoises3d const&);
 
+    // symbol: ?computeErosionAndDepth@OverworldNoises3d@@QEBA?AU?$pair@MM@std@@VBlockPos@@@Z
+    MCAPI std::pair<float, float> computeErosionAndDepth(class BlockPos position) const;
+
+    // symbol: ?computeNoiseValues@OverworldNoises3d@@QEBA?AUCacheEntry@ChunkLocalNoiseCache@@AEBV?$DividedPos2d@$03@@@Z
+    MCAPI struct ChunkLocalNoiseCache::CacheEntry computeNoiseValues(class DividedPos2d<4> const&) const;
+
+    // symbol: ?computeOffsetAndFactor@OverworldNoises3d@@QEBA?AUTerrainInfo@@AEBV?$DividedPos2d@$03@@@Z
+    MCAPI struct TerrainInfo computeOffsetAndFactor(class DividedPos2d<4> const&) const;
+
     // symbol: ?sample@OverworldNoises3d@@QEBA?AUTargetPoint@@VBlockPos@@@Z
     MCAPI struct TargetPoint sample(class BlockPos position) const;
 
@@ -28,6 +37,9 @@ public:
 
     // symbol: ??1OverworldNoises3d@@QEAA@XZ
     MCAPI ~OverworldNoises3d();
+
+    // symbol: ?computeInitialDensity@OverworldNoises3d@@SAMHMMM@Z
+    MCAPI static float computeInitialDensity(int, float, float, float);
 
     // symbol: ?make@OverworldNoises3d@@SA?AU1@AEBVXoroshiroPositionalRandomFactory@@@Z
     MCAPI static struct OverworldNoises3d make(class XoroshiroPositionalRandomFactory const&);

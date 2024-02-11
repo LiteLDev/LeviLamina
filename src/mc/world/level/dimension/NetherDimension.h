@@ -8,6 +8,11 @@
 #include "mc/world/AutomaticID.h"
 #include "mc/world/level/dimension/Dimension.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace br::worldgen { class StructureSetRegistry; }
+// clang-format on
+
 class NetherDimension : public ::Dimension {
 public:
     // prevent constructor by default
@@ -17,72 +22,61 @@ public:
 
 public:
     // NOLINTBEGIN
-    virtual ~NetherDimension() = default;
+    // symbol: ?_upgradeOldLimboEntity@NetherDimension@@EEAAXAEAVCompoundTag@@W4LimboEntitiesVersion@@@Z
+    MCVAPI void _upgradeOldLimboEntity(class CompoundTag& tag, ::LimboEntitiesVersion vers);
 
-    // vIndex: 8, symbol:
-    // ?createGenerator@TheEndDimension@@UEAA?AV?$unique_ptr@VWorldGenerator@@U?$default_delete@VWorldGenerator@@@std@@@std@@XZ
-    virtual std::unique_ptr<class WorldGenerator> createGenerator();
+    // symbol:
+    // ?_wrapStorageForVersionCompatibility@NetherDimension@@EEAA?AV?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@V23@W4StorageVersion@@@Z
+    MCVAPI std::unique_ptr<class ChunkSource> _wrapStorageForVersionCompatibility(
+        std::unique_ptr<class ChunkSource> storageSource,
+        ::StorageVersion                   levelVersion
+    );
 
-    // vIndex: 9, symbol: ?upgradeLevelChunk@TheEndDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@1@Z
-    virtual void upgradeLevelChunk(class ChunkSource&, class LevelChunk&, class LevelChunk&);
+    // symbol:
+    // ?createGenerator@NetherDimension@@UEAA?AV?$unique_ptr@VWorldGenerator@@U?$default_delete@VWorldGenerator@@@std@@@std@@AEBVStructureSetRegistry@worldgen@br@@@Z
+    MCVAPI std::unique_ptr<class WorldGenerator> createGenerator(class br::worldgen::StructureSetRegistry const&);
 
-    // vIndex: 10, symbol: ?fixWallChunk@TheEndDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
-    virtual void fixWallChunk(class ChunkSource&, class LevelChunk&);
+    // symbol: ?fixWallChunk@NetherDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
+    MCVAPI void fixWallChunk(class ChunkSource& source, class LevelChunk& lc);
 
-    // vIndex: 11, symbol: ?levelChunkNeedsUpgrade@TheEndDimension@@UEBA_NAEBVLevelChunk@@@Z
-    virtual bool levelChunkNeedsUpgrade(class LevelChunk const&) const;
-
-    // vIndex: 29, symbol:
-    // ?translatePosAcrossDimension@TheEndDimension@@UEBA?AVVec3@@AEBV2@V?$AutomaticID@VDimension@@H@@@Z
-    virtual class Vec3 translatePosAcrossDimension(class Vec3 const&, DimensionType) const;
-
-    // vIndex: 37, symbol: ?_upgradeOldLimboEntity@TheEndDimension@@EEAAXAEAVCompoundTag@@W4LimboEntitiesVersion@@@Z
-    virtual void _upgradeOldLimboEntity(class CompoundTag&, ::LimboEntitiesVersion);
-
-    // vIndex: 38, symbol:
-    // ?_wrapStorageForVersionCompatibility@TheEndDimension@@EEAA?AV?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@V23@W4StorageVersion@@@Z
-    virtual std::unique_ptr<class ChunkSource>
-        _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource>, ::StorageVersion);
-
-    // Reload function
     // symbol: ?forceCheckAllNeighChunkSavedStat@NetherDimension@@UEBA_NXZ
-    virtual bool forceCheckAllNeighChunkSavedStat() const;
+    MCVAPI bool forceCheckAllNeighChunkSavedStat() const;
 
     // symbol: ?getDefaultBiome@NetherDimension@@UEBA?AVHashedString@@XZ
-    virtual class HashedString getDefaultBiome() const;
+    MCVAPI class HashedString getDefaultBiome() const;
 
     // symbol: ?getTimeOfDay@NetherDimension@@UEBAMHM@Z
-    virtual float getTimeOfDay(int time, float a) const;
+    MCVAPI float getTimeOfDay(int time, float a) const;
 
-    // symbol: ?init@NetherDimension@@UEAAXXZ
-    virtual void init();
+    // symbol: ?init@NetherDimension@@UEAAXAEBVStructureSetRegistry@worldgen@br@@@Z
+    MCVAPI void init(class br::worldgen::StructureSetRegistry const&);
 
     // symbol: ?isFoggyAt@NetherDimension@@UEBA_NHH@Z
-    virtual bool isFoggyAt(int x, int z) const;
+    MCVAPI bool isFoggyAt(int x, int z) const;
 
     // symbol: ?isNaturalDimension@NetherDimension@@UEBA_NXZ
-    virtual bool isNaturalDimension() const;
+    MCVAPI bool isNaturalDimension() const;
 
     // symbol: ?isValidSpawn@NetherDimension@@UEBA_NHH@Z
-    virtual bool isValidSpawn(int x, int z) const;
+    MCVAPI bool isValidSpawn(int x, int z) const;
+
+    // symbol: ?levelChunkNeedsUpgrade@NetherDimension@@UEBA_NAEBVLevelChunk@@@Z
+    MCVAPI bool levelChunkNeedsUpgrade(class LevelChunk const& lc) const;
 
     // symbol: ?mayRespawnViaBed@NetherDimension@@UEBA_NXZ
-    virtual bool mayRespawnViaBed() const;
+    MCVAPI bool mayRespawnViaBed() const;
 
     // symbol: ?showSky@NetherDimension@@UEBA_NXZ
-    virtual bool showSky() const;
+    MCVAPI bool showSky() const;
+
+    // symbol: ?translatePosAcrossDimension@NetherDimension@@UEBA?AVVec3@@AEBV2@V?$AutomaticID@VDimension@@H@@@Z
+    MCVAPI class Vec3 translatePosAcrossDimension(class Vec3 const& originalPos, DimensionType fromId) const;
+
+    // symbol: ?upgradeLevelChunk@NetherDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@1@Z
+    MCVAPI void upgradeLevelChunk(class ChunkSource& source, class LevelChunk& lc, class LevelChunk& generatedChunk);
 
     // symbol: ??0NetherDimension@@QEAA@AEAVILevel@@AEAVScheduler@@@Z
     MCAPI NetherDimension(class ILevel& level, class Scheduler& callbackContext);
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    // symbol:
-    // ?makeStructureFeatures@NetherDimension@@CA?AV?$unique_ptr@VStructureFeatureRegistry@@U?$default_delete@VStructureFeatureRegistry@@@std@@@std@@IAEBVBaseGameVersion@@@Z
-    MCAPI static std::unique_ptr<class StructureFeatureRegistry>
-    makeStructureFeatures(uint, class BaseGameVersion const&);
 
     // NOLINTEND
 };

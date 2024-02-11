@@ -14,8 +14,5 @@ public:
     // symbol: ??0NoodleCavifier@@QEAA@AEBVNoodleCavifierNoises@@F@Z
     MCAPI NoodleCavifier(class NoodleCavifierNoises const&, short);
 
-    // symbol: ?getInterpolators@NoodleCavifier@@QEAA?AV?$array@PEAVNoiseCellInterpolator@@$03@std@@HH@Z
-    MCAPI std::array<class NoiseCellInterpolator*, 4> getInterpolators(int, int);
-
     // NOLINTEND
 };

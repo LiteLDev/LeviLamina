@@ -24,9 +24,6 @@ public:
     // symbol: ?getName@DropperBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCVAPI std::string getName() const;
 
-    // symbol: ??0DropperBlockActor@@QEAA@VBlockPos@@@Z
-    MCAPI explicit DropperBlockActor(class BlockPos pos);
-
     // symbol: ?pushOutItems@DropperBlockActor@@QEAA_NAEAVBlockSource@@@Z
     MCAPI bool pushOutItems(class BlockSource& region);
 

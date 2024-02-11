@@ -36,10 +36,6 @@ public:
     // vIndex: 9, symbol: ?_initializeComponent@InteractButtonItemComponent@@UEAAXXZ
     virtual void _initializeComponent();
 
-    // symbol:
-    // ?getInteractText@InteractButtonItemComponent@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-    MCAPI std::string getInteractText() const;
-
     // symbol: ??4InteractButtonItemComponent@@QEAAAEAV0@AEBV0@@Z
     MCAPI class InteractButtonItemComponent& operator=(class InteractButtonItemComponent const&);
 

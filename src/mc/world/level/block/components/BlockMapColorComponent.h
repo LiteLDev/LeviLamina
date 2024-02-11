@@ -17,8 +17,5 @@ public:
     // vIndex: 0, symbol: __gen_??1BlockMapColorComponent@@UEAA@XZ
     virtual ~BlockMapColorComponent() = default;
 
-    // symbol: ?usesNewComponentStorage@BlockMapColorComponent@@SA_NXZ
-    MCAPI static bool usesNewComponentStorage();
-
     // NOLINTEND
 };

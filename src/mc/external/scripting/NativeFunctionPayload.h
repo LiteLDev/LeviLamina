@@ -3,11 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/scripting/IPayload.h"
 #include "mc/external/scripting/Privilege.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { class IDependencyLoader; }
+namespace Scripting { class IPayload; }
 namespace Scripting { class IPrinter; }
 namespace Scripting { class NativeRuntime; }
 namespace Scripting { class ResultAny; }
@@ -19,7 +21,7 @@ namespace Scripting { struct ModuleBindingBundle; }
 
 namespace Scripting {
 
-class NativeFunctionPayload {
+class NativeFunctionPayload : public ::Scripting::IPayload {
 public:
     // prevent constructor by default
     NativeFunctionPayload& operator=(NativeFunctionPayload const&);

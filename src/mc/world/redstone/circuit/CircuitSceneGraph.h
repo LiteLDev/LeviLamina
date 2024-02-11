@@ -75,6 +75,12 @@ public:
     // symbol: ?preSetupPoweredBlocks@CircuitSceneGraph@@QEAAXAEBVChunkPos@@@Z
     MCAPI void preSetupPoweredBlocks(class ChunkPos const& chunkPos);
 
+    // symbol: ?remove@CircuitSceneGraph@@QEAAXAEBVBlockPos@@PEAVBaseCircuitComponent@@@Z
+    MCAPI void remove(class BlockPos const& pos, class BaseCircuitComponent* component);
+
+    // symbol: ?update@CircuitSceneGraph@@QEAAXPEAVBlockSource@@@Z
+    MCAPI void update(class BlockSource* region);
+
     // symbol: ??1CircuitSceneGraph@@QEAA@XZ
     MCAPI ~CircuitSceneGraph();
 

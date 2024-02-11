@@ -6,13 +6,11 @@
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/Result.h"
 #include "mc/external/scripting/StrongTypedObjectHandle.h"
-#include "mc/scripting/modules/minecraft/ScriptItemEvent.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 class Player;
-namespace ScriptModuleMinecraft { class ScriptItemEvent; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace Scripting { class WeakLifetimeScope; }
 struct ItemUseOnEvent;
@@ -20,19 +18,13 @@ struct ItemUseOnEvent;
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptItemUseOnAfterEvent : public ::ScriptModuleMinecraft::ScriptItemEvent {
+struct ScriptItemUseOnAfterEvent {
 public:
     // prevent constructor by default
     ScriptItemUseOnAfterEvent();
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptItemUseOnAfterEvent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptItemUseOnAfterEvent();
-
-    // symbol: ??0ScriptItemUseOnAfterEvent@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
-    MCAPI ScriptItemUseOnAfterEvent(struct ScriptModuleMinecraft::ScriptItemUseOnAfterEvent&&);
-
     // symbol: ??0ScriptItemUseOnAfterEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
     MCAPI ScriptItemUseOnAfterEvent(struct ScriptModuleMinecraft::ScriptItemUseOnAfterEvent const&);
 

@@ -11,14 +11,12 @@ public:
     // prevent constructor by default
     ItemStackRequestActionPlaceInItemContainer& operator=(ItemStackRequestActionPlaceInItemContainer const&);
     ItemStackRequestActionPlaceInItemContainer(ItemStackRequestActionPlaceInItemContainer const&);
+    ItemStackRequestActionPlaceInItemContainer();
 
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1ItemStackRequestActionPlaceInItemContainer@@UEAA@XZ
     virtual ~ItemStackRequestActionPlaceInItemContainer() = default;
-
-    // symbol: ??0ItemStackRequestActionPlaceInItemContainer@@QEAA@XZ
-    MCAPI ItemStackRequestActionPlaceInItemContainer();
 
     // NOLINTEND
 };

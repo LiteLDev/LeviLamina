@@ -34,7 +34,7 @@ public:
 
     // vIndex: 5, symbol:
     // ?_tryBeginClientLegacyTransactionRequest@ItemStackNetManagerBase@@MEAA?AV?$final_action@V?$function@$$A6AXXZ@std@@@gsl@@XZ
-    virtual gsl::final_action<std::function<void(void)>> _tryBeginClientLegacyTransactionRequest();
+    virtual gsl::final_action<std::function<void()>> _tryBeginClientLegacyTransactionRequest();
 
     // vIndex: 6, symbol: ?onContainerScreenOpen@ItemStackNetManagerBase@@UEAAXAEBVContainerScreenContext@@@Z
     virtual void onContainerScreenOpen(class ContainerScreenContext const&);
@@ -69,8 +69,7 @@ public:
 
     // symbol:
     // ?_tryBeginClientLegacyTransactionRequest@ItemStackNetManagerBase@@SA?AV?$final_action@V?$function@$$A6AXXZ@std@@@gsl@@PEAVPlayer@@@Z
-    MCAPI static gsl::final_action<std::function<void(void)>>
-    _tryBeginClientLegacyTransactionRequest(class Player* player);
+    MCAPI static gsl::final_action<std::function<void()>> _tryBeginClientLegacyTransactionRequest(class Player* player);
 
     // symbol:
     // ?setPlayerContainer@ItemStackNetManagerBase@@SA_NAEAVPlayer@@W4ContainerType@@HAEBVItemStack@@AEAV4@AEBV?$function@$$A6AXAEBVItemStack@@@Z@std@@@Z
@@ -88,14 +87,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?_isRequestActionAllowed@ItemStackNetManagerBase@@IEAA_NAEBVItemStackRequestAction@@@Z
-    MCAPI bool _isRequestActionAllowed(class ItemStackRequestAction const&);
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    // symbol: ?_pushScreen@ItemStackNetManagerBase@@AEAAXVContainerScreenContext@@@Z
-    MCAPI void _pushScreen(class ContainerScreenContext);
+    MCAPI bool _isRequestActionAllowed(class ItemStackRequestAction const& requestAction);
 
     // NOLINTEND
 };

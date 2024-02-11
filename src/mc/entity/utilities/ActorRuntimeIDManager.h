@@ -14,7 +14,7 @@ public:
     MCAPI ActorRuntimeIDManager();
 
     // symbol: ?addRuntimeActorEntity@ActorRuntimeIDManager@@QEAAXVActorRuntimeID@@VWeakEntityRef@@@Z
-    MCAPI void addRuntimeActorEntity(class ActorRuntimeID, class WeakEntityRef);
+    MCAPI void addRuntimeActorEntity(class ActorRuntimeID, class WeakEntityRef entityRef);
 
     // symbol: ?getNextRuntimeID@ActorRuntimeIDManager@@QEAA?AVActorRuntimeID@@XZ
     MCAPI class ActorRuntimeID getNextRuntimeID();

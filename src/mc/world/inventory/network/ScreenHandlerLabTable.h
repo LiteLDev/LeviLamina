@@ -21,16 +21,13 @@ public:
 
     // vIndex: 1, symbol:
     // ?handleAction@ScreenHandlerLabTable@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestAction@@@Z
-    virtual ::ItemStackNetResult handleAction(class ItemStackRequestAction const&);
+    virtual ::ItemStackNetResult handleAction(class ItemStackRequestAction const& requestAction);
 
     // vIndex: 2, symbol: ?endRequest@ScreenHandlerLabTable@@MEAA?AW4ItemStackNetResult@@XZ
     virtual ::ItemStackNetResult endRequest();
 
     // vIndex: 4, symbol: ?postRequest@ScreenHandlerLabTable@@MEAAX_N@Z
     virtual void postRequest(bool wasSuccess);
-
-    // symbol: ??0ScreenHandlerLabTable@@QEAA@AEBVContainerScreenContext@@AEAVItemStackRequestActionHandler@@@Z
-    MCAPI ScreenHandlerLabTable(class ContainerScreenContext const&, class ItemStackRequestActionHandler&);
 
     // NOLINTEND
 

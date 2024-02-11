@@ -34,7 +34,7 @@ private:
     // NOLINTBEGIN
     // symbol:
     // ?mPlatformAdapterOverride@SocketLayer@RakNet@@0V?$function@$$A6A?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ@std@@A
-    MCAPI static std::function<std::vector<std::string>(void)> mPlatformAdapterOverride;
+    MCAPI static std::function<std::vector<std::string>()> mPlatformAdapterOverride;
 
     // NOLINTEND
 

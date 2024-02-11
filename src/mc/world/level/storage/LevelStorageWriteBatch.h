@@ -68,7 +68,7 @@ public:
     MCAPI LevelStorageWriteBatch(class LevelStorageWriteBatch&&);
 
     // symbol: ?addFlushCallback@LevelStorageWriteBatch@@QEAAXV?$function@$$A6AXXZ@std@@@Z
-    MCAPI void addFlushCallback(std::function<void(void)> callback);
+    MCAPI void addFlushCallback(std::function<void()> callback);
 
     // symbol: ?clear@LevelStorageWriteBatch@@QEAAXXZ
     MCAPI void clear();

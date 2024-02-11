@@ -25,5 +25,8 @@ public:
     // symbol: ?_finalizeInit@BlockComponentDirectData@@AEAAXAEBVBlock@@@Z
     MCAPI void _finalizeInit(class Block const&);
 
+    // symbol: ?_isOpaqueFullBlock@BlockComponentDirectData@@AEBA_NAEBVBlock@@@Z
+    MCAPI bool _isOpaqueFullBlock(class Block const&) const;
+
     // NOLINTEND
 };

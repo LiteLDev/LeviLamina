@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/Result.h"
 #include "mc/external/scripting/StrongTypedObjectHandle.h"
 
@@ -73,10 +72,6 @@ public:
     MCAPI class Scripting::Result<
         std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>>
     transferItem(int, class ScriptModuleMinecraft::ScriptContainerWrapper&) const;
-
-    // symbol:
-    // ?bind@ScriptContainerWrapper@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptContainerWrapper@ScriptModuleMinecraft@@@Scripting@@XZ
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptContainerWrapper> bind();
 
     // NOLINTEND
 };

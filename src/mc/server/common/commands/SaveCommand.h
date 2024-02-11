@@ -2,12 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/server/commands/ServerCommand.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
-class SaveCommand {
+class SaveCommand : public ::ServerCommand {
 public:
     // SaveCommand inner types define
     enum class State {};
@@ -22,9 +25,6 @@ public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1SaveCommand@@UEAA@XZ
     virtual ~SaveCommand() = default;
-
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
 
     // vIndex: 2, symbol: ?execute@SaveCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput& output) const;

@@ -14,17 +14,21 @@ public:
     // vIndex: 0, symbol: ??1ResourcePackListener@@UEAA@XZ
     virtual ~ResourcePackListener();
 
-    // symbol: ?onBaseGamePackDownloadComplete@ResourcePackListener@@UEAAXXZ
-    MCVAPI void onBaseGamePackDownloadComplete();
+    // vIndex: 1, symbol:
+    // ?onActiveResourcePacksChanged@VanillaWorldChecker@DebugEndPoint@@UEAAXAEAVResourcePackManager@@@Z
+    virtual void onActiveResourcePacksChanged(class ResourcePackManager& mgr) = 0;
 
-    // symbol: ?onFullPackStackInvalid@ResourcePackListener@@UEAAXXZ
-    MCVAPI void onFullPackStackInvalid();
+    // vIndex: 2, symbol: ?onFullPackStackInvalid@ResourcePackListener@@UEAAXXZ
+    virtual void onFullPackStackInvalid();
 
-    // symbol: ?onLanguageSubpacksChanged@ResourcePackListener@@UEAAXXZ
-    MCVAPI void onLanguageSubpacksChanged();
+    // vIndex: 3, symbol: ?onBaseGamePackDownloadComplete@ResourcePackListener@@UEAAXXZ
+    virtual void onBaseGamePackDownloadComplete();
 
-    // symbol: ?onResourceManagerDestroyed@ResourcePackListener@@UEAAXAEAVResourcePackManager@@@Z
-    MCVAPI void onResourceManagerDestroyed(class ResourcePackManager& mgr);
+    // vIndex: 4, symbol: ?onLanguageSubpacksChanged@ResourcePackListener@@UEAAXXZ
+    virtual void onLanguageSubpacksChanged();
+
+    // vIndex: 5, symbol: ?onResourceManagerDestroyed@ResourcePackListener@@UEAAXAEAVResourcePackManager@@@Z
+    virtual void onResourceManagerDestroyed(class ResourcePackManager& mgr);
 
     // NOLINTEND
 };

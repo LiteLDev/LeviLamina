@@ -13,20 +13,16 @@ namespace cereal { struct ReflectionCtx; }
 class DisplayNameItemComponent {
 public:
     // prevent constructor by default
-    DisplayNameItemComponent& operator=(DisplayNameItemComponent const&);
     DisplayNameItemComponent(DisplayNameItemComponent const&);
     DisplayNameItemComponent();
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DisplayNameItemComponent@@UEAA@XZ
-    virtual ~DisplayNameItemComponent() = default;
+    // vIndex: 0, symbol: ??1DisplayNameItemComponent@@UEAA@XZ
+    virtual ~DisplayNameItemComponent();
 
     // vIndex: 1, symbol: ?checkComponentDataForContentErrors@ItemComponent@@UEBA_NXZ
     virtual bool checkComponentDataForContentErrors() const;
-
-    // vIndex: 2, symbol: ?writeSettings@ItemComponent@@UEAAXXZ
-    virtual void writeSettings();
 
     // vIndex: 3, symbol: ?isNetworkComponent@InteractButtonItemComponent@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
@@ -50,6 +46,9 @@ public:
 
     // vIndex: 9, symbol: ?_initializeComponent@ItemComponent@@MEAAXXZ
     virtual void _initializeComponent();
+
+    // symbol: ??4DisplayNameItemComponent@@QEAAAEAV0@AEBV0@@Z
+    MCAPI class DisplayNameItemComponent& operator=(class DisplayNameItemComponent const&);
 
     // symbol:
     // ?setDescriptionId@DisplayNameItemComponent@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

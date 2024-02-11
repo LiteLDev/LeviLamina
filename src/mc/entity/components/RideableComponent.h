@@ -16,6 +16,9 @@ public:
     // symbol: ??0RideableComponent@@QEAA@$$QEAV0@@Z
     MCAPI RideableComponent(class RideableComponent&&);
 
+    // symbol: ?allowInteraction@RideableComponent@@QEBA_NAEAVActor@@AEAVPlayer@@@Z
+    MCAPI bool allowInteraction(class Actor& owner, class Player& player) const;
+
     // symbol: ?areSeatsFull@RideableComponent@@QEBA_NAEBVActor@@@Z
     MCAPI bool areSeatsFull(class Actor const& owner) const;
 

@@ -9,6 +9,10 @@ namespace VanillaBlockTypeGroups {
 MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const CarpetBlockIds;
 
 // symbol:
+// ?ChiseledCopperBlockIds@VanillaBlockTypeGroups@@3V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@B
+MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const ChiseledCopperBlockIds;
+
+// symbol:
 // ?ConcreteBlockIds@VanillaBlockTypeGroups@@3V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@B
 MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const ConcreteBlockIds;
 
@@ -17,8 +21,52 @@ MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const
 MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const ConcretePowderIds;
 
 // symbol:
+// ?CopperBlockIds@VanillaBlockTypeGroups@@3V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@B
+MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const CopperBlockIds;
+
+// symbol:
+// ?CopperBulbBlockIds@VanillaBlockTypeGroups@@3V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@B
+MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const CopperBulbBlockIds;
+
+// symbol:
+// ?CopperDoorBlockIds@VanillaBlockTypeGroups@@3V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@B
+MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const CopperDoorBlockIds;
+
+// symbol:
+// ?CopperGrateBlockIds@VanillaBlockTypeGroups@@3V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@B
+MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const CopperGrateBlockIds;
+
+// symbol:
+// ?CopperTrapdoorBlockIds@VanillaBlockTypeGroups@@3V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@B
+MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const CopperTrapdoorBlockIds;
+
+// symbol:
 // ?CoralIds@VanillaBlockTypeGroups@@3V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@B
 MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const CoralIds;
+
+// symbol:
+// ?CutCopperBlockIds@VanillaBlockTypeGroups@@3V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@B
+MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const CutCopperBlockIds;
+
+// symbol:
+// ?CutCopperSlabBlockIds@VanillaBlockTypeGroups@@3V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@B
+MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const CutCopperSlabBlockIds;
+
+// symbol:
+// ?CutCopperStairsBlockIds@VanillaBlockTypeGroups@@3V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@B
+MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const CutCopperStairsBlockIds;
+
+// symbol:
+// ?DoubleCutCopperSlabBlockIds@VanillaBlockTypeGroups@@3V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@B
+MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const DoubleCutCopperSlabBlockIds;
+
+// symbol:
+// ?HardStainedGlassIds@VanillaBlockTypeGroups@@3V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@B
+MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const HardStainedGlassIds;
+
+// symbol:
+// ?HardStainedGlassPaneIds@VanillaBlockTypeGroups@@3V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@B
+MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const HardStainedGlassPaneIds;
 
 // symbol:
 // ?LogBlockIds@VanillaBlockTypeGroups@@3V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@B
@@ -59,6 +107,10 @@ MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const
 // symbol:
 // ?WoodFenceBlockIds@VanillaBlockTypeGroups@@3V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@B
 MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const WoodFenceBlockIds;
+
+// symbol:
+// ?WoolIds@VanillaBlockTypeGroups@@3V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@B
+MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const WoolIds;
 // NOLINTEND
 
 }; // namespace VanillaBlockTypeGroups

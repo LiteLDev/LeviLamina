@@ -55,10 +55,10 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?rejectGeneric@PromiseAny@Scripting@@IEBA?AVResultAny@2@AEAVmeta_any@entt@@@Z
-    MCAPI class Scripting::ResultAny rejectGeneric(entt::meta_any&) const;
+    MCAPI class Scripting::ResultAny rejectGeneric(entt::meta_any& any) const;
 
     // symbol: ?resolveGeneric@PromiseAny@Scripting@@IEBA?AVResultAny@2@AEAVmeta_any@entt@@@Z
-    MCAPI class Scripting::ResultAny resolveGeneric(entt::meta_any&) const;
+    MCAPI class Scripting::ResultAny resolveGeneric(entt::meta_any& any) const;
 
     // NOLINTEND
 };

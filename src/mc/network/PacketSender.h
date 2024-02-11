@@ -50,7 +50,7 @@ public:
     sendBroadcast(class NetworkIdentifier const& exceptId, ::SubClientId exceptSubid, class Packet const& packet) = 0;
 
     // vIndex: 8, symbol: ?flush@LoopbackPacketSender@@UEAAXAEBVNetworkIdentifier@@$$QEAV?$function@$$A6AXXZ@std@@@Z
-    virtual void flush(class NetworkIdentifier const& id, std::function<void(void)>&& callback) = 0;
+    virtual void flush(class NetworkIdentifier const& id, std::function<void()>&& callback) = 0;
 
     // NOLINTEND
 };

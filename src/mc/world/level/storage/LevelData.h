@@ -52,6 +52,9 @@ public:
     // symbol: ?achievementsWillBeDisabledOnLoad@LevelData@@QEBA_NXZ
     MCAPI bool achievementsWillBeDisabledOnLoad() const;
 
+    // symbol: ?cloudSaveForWorldIsEnabled@LevelData@@QEBA_NXZ
+    MCAPI bool cloudSaveForWorldIsEnabled() const;
+
     // symbol: ?createTag@LevelData@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
     MCAPI std::unique_ptr<class CompoundTag> createTag() const;
 
@@ -81,6 +84,9 @@ public:
 
     // symbol: ?getChatRestrictionLevel@LevelData@@QEBA?AW4ChatRestrictionLevel@@XZ
     MCAPI ::ChatRestrictionLevel getChatRestrictionLevel() const;
+
+    // symbol: ?getCloudSaveInfo@LevelData@@QEBAAEBVCloudSaveLevelInfo@@XZ
+    MCAPI class CloudSaveLevelInfo const& getCloudSaveInfo() const;
 
     // symbol: ?getCurrentTick@LevelData@@QEBAAEBUTick@@XZ
     MCAPI struct Tick const& getCurrentTick() const;
@@ -165,6 +171,9 @@ public:
 
     // symbol: ?getLimitedWorldWidth@LevelData@@QEBAHXZ
     MCAPI int getLimitedWorldWidth() const;
+
+    // symbol: ?getLoadedPlayerTag@LevelData@@QEAAAEAVCompoundTag@@XZ
+    MCAPI class CompoundTag& getLoadedPlayerTag();
 
     // symbol: ?getMultiplayerGameIntent@LevelData@@QEBA_NXZ
     MCAPI bool getMultiplayerGameIntent() const;
@@ -403,9 +412,6 @@ public:
     // symbol: ?setPlatformBroadcastMode@LevelData@@QEAAXW4GamePublishSetting@Social@@@Z
     MCAPI void setPlatformBroadcastMode(::Social::GamePublishSetting broadcastMode);
 
-    // symbol: ?setPremiumTemplateContentIdentity@LevelData@@QEAAXAEBVContentIdentity@@@Z
-    MCAPI void setPremiumTemplateContentIdentity(class ContentIdentity const& templateContentIdentity);
-
     // symbol: ?setRainLevel@LevelData@@QEAAXM@Z
     MCAPI void setRainLevel(float level);
 
@@ -454,9 +460,6 @@ public:
     // symbol: ?touchLastLoadedWithVersion@LevelData@@QEAAXXZ
     MCAPI void touchLastLoadedWithVersion();
 
-    // symbol: ?updateLastTimePlayed@LevelData@@QEBAXXZ
-    MCAPI void updateLastTimePlayed() const;
-
     // symbol: ?v1_read@LevelData@@QEAAXAEAVBitStream@RakNet@@W4StorageVersion@@@Z
     MCAPI void v1_read(class RakNet::BitStream& bitStream, ::StorageVersion storageVersion);
 
@@ -467,9 +470,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_determineMaxBaseGameVersion@LevelData@@AEAAXXZ
-    MCAPI void _determineMaxBaseGameVersion();
-
     // symbol: ?_setValue@LevelData@@AEAAXAEBVHashedString@@$$QEAULevelDataValue@@@Z
     MCAPI void _setValue(class HashedString const& key, struct LevelDataValue&& value);
 

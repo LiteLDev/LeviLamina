@@ -41,7 +41,7 @@ public:
     virtual int64 xsgetn(char*, int64);
 
     // vIndex: 9, symbol: ?xsputn@StringAppendBuffer@Bedrock@@UEAA_JPEBD_J@Z
-    virtual int64 xsputn(char const*, int64);
+    virtual int64 xsputn(char const* s, int64 n);
 
     // vIndex: 10, symbol: ?seekoff@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAA?AV?$fpos@U_Mbstatet@@@2@_JHH@Z
     virtual std::fpos<struct _Mbstatet> seekoff(int64, int, int);

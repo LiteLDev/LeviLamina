@@ -108,8 +108,9 @@ public:
     // symbol: ?getByte@CompoundTag@@QEBAEV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     [[deprecated]] MCAPI uchar getByte(std::string_view name) const;
 
-    // symbol: ?getByteArray@CompoundTag@@QEBAAEBUTagMemoryChunk@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    [[deprecated]] MCAPI struct TagMemoryChunk const& getByteArray(std::string_view name) const;
+    // symbol:
+    // ?getByteArray@CompoundTag@@QEBAAEBV?$vector@EV?$allocator@E@std@@@std@@V?$basic_string_view@DU?$char_traits@D@std@@@3@@Z
+    [[deprecated]] MCAPI std::vector<uchar> const& getByteArray(std::string_view name) const;
 
     // symbol: ?getByteTag@CompoundTag@@QEAAPEAVByteTag@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     [[deprecated]] MCAPI class ByteTag* getByteTag(std::string_view name);
@@ -177,8 +178,8 @@ public:
     [[deprecated]] MCAPI uchar& putByte(std::string name, uchar value);
 
     // symbol:
-    // ?putByteArray@CompoundTag@@QEAAAEAUTagMemoryChunk@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U2@@Z
-    [[deprecated]] MCAPI struct TagMemoryChunk& putByteArray(std::string name, struct TagMemoryChunk mem);
+    // ?putByteArray@CompoundTag@@QEAAAEAV?$vector@EV?$allocator@E@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@V23@@Z
+    [[deprecated]] MCAPI std::vector<uchar>& putByteArray(std::string, std::vector<uchar>);
 
     // symbol: ?putCompound@CompoundTag@@QEAAAEAV1@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V1@@Z
     [[deprecated]] MCAPI class CompoundTag& putCompound(std::string name, class CompoundTag value);

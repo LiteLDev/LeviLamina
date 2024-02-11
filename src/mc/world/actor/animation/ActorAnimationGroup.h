@@ -34,15 +34,9 @@ public:
     MCAPI std::shared_ptr<class ActorAnimationInfo> getActorAnimationInfo(class HashedString const& name);
 
     // symbol:
-    // ?loadActorAnimation@ActorAnimationGroup@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@AEAVPackStats@@AEBVSemVersion@@W4CurrentCmdVersion@@_N@Z
-    MCAPI void loadActorAnimation(
-        std::string const&      fileData,
-        class Core::Path const& filenameWithExtension,
-        class PackStats&        stats,
-        class SemVersion const& engineVersion,
-        ::CurrentCmdVersion     packCommandVersion,
-        bool                    isPersonaPack
-    );
+    // ?loadActorAnimation@ActorAnimationGroup@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@AEAVPackStats@@AEBVSemVersion@@W4CurrentCmdVersion@@_N0@Z
+    MCAPI void
+    loadActorAnimation(std::string const&, class Core::Path const&, class PackStats&, class SemVersion const&, ::CurrentCmdVersion, bool, std::string const&);
 
     // symbol: ?loadActorAnimationsSync@ActorAnimationGroup@@QEAAXAEAVResourcePackManager@@@Z
     MCAPI void loadActorAnimationsSync(class ResourcePackManager& resourcePackManager);

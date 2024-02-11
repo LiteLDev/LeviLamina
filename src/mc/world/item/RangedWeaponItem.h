@@ -29,68 +29,23 @@ public:
     // vIndex: 0, symbol: ??1RangedWeaponItem@@UEAA@XZ
     virtual ~RangedWeaponItem();
 
-    // vIndex: 8, symbol: __unk_vfn_8
-    virtual void __unk_vfn_8();
-
-    // vIndex: 11, symbol: __unk_vfn_11
-    virtual void __unk_vfn_11();
-
-    // vIndex: 12, symbol: __unk_vfn_12
-    virtual void __unk_vfn_12();
-
-    // vIndex: 17, symbol: __unk_vfn_17
-    virtual void __unk_vfn_17();
-
-    // vIndex: 37, symbol: __unk_vfn_37
-    virtual void __unk_vfn_37();
-
-    // vIndex: 39, symbol: __unk_vfn_39
-    virtual void __unk_vfn_39();
-
-    // vIndex: 49, symbol: ?getEnchantValue@RangedWeaponItem@@UEBAHXZ
+    // vIndex: 50, symbol: ?getEnchantValue@RangedWeaponItem@@UEBAHXZ
     virtual int getEnchantValue() const;
 
-    // vIndex: 52, symbol: __unk_vfn_52
-    virtual void __unk_vfn_52();
-
-    // vIndex: 56, symbol: __unk_vfn_56
-    virtual void __unk_vfn_56();
-
-    // vIndex: 57, symbol: __unk_vfn_57
-    virtual void __unk_vfn_57();
-
-    // vIndex: 58, symbol: __unk_vfn_58
-    virtual void __unk_vfn_58();
-
-    // vIndex: 61, symbol: __unk_vfn_61
-    virtual void __unk_vfn_61();
-
-    // vIndex: 65, symbol: __unk_vfn_65
-    virtual void __unk_vfn_65();
-
-    // vIndex: 66, symbol: __unk_vfn_66
-    virtual void __unk_vfn_66();
-
-    // vIndex: 70, symbol: ?use@RangedWeaponItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+    // vIndex: 71, symbol: ?use@RangedWeaponItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
     virtual class ItemStack& use(class ItemStack& instance, class Player& player) const;
 
-    // vIndex: 73, symbol: ?releaseUsing@RangedWeaponItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z
-    virtual void releaseUsing(class ItemStack& itemStack, class Player* player, int durationLeft) const;
+    // vIndex: 74, symbol: ?releaseUsing@RangedWeaponItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z
+    virtual void releaseUsing(class ItemStack& item, class Player* player, int durationLeft) const;
 
-    // vIndex: 75, symbol: ?hurtActor@RangedWeaponItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
+    // vIndex: 76, symbol: ?hurtActor@RangedWeaponItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
     virtual void hurtActor(class ItemStack& itemInstance, class Actor& actor, class Mob& attacker) const;
 
-    // vIndex: 79, symbol: ?mineBlock@RangedWeaponItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
+    // vIndex: 80, symbol: ?mineBlock@RangedWeaponItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
     virtual bool
-    mineBlock(class ItemStack& itemStack, class Block const& block, int x, int y, int z, class Actor* owner) const;
+    mineBlock(class ItemStack& item, class Block const& block, int x, int y, int z, class Actor* owner) const;
 
-    // vIndex: 98, symbol: __unk_vfn_98
-    virtual void __unk_vfn_98();
-
-    // vIndex: 99, symbol: __unk_vfn_99
-    virtual void __unk_vfn_99();
-
-    // vIndex: 105, symbol: ?getAnimationFrameFor@RangedWeaponItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
+    // vIndex: 106, symbol: ?getAnimationFrameFor@RangedWeaponItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
     virtual int
     getAnimationFrameFor(class Mob* holder, bool asItemEntity, class ItemStack const* item, bool shouldAnimate) const;
 

@@ -39,70 +39,34 @@ public:
     // vIndex: 10, symbol: __gen_??1Wolf@@UEAA@XZ
     virtual ~Wolf() = default;
 
-    // vIndex: 23, symbol: __unk_vfn_23
-    virtual void __unk_vfn_23();
-
-    // vIndex: 33, symbol: ?addPassenger@Wolf@@UEAAXAEAVActor@@@Z
-    virtual void addPassenger(class Actor&);
-
-    // vIndex: 39, symbol: __unk_vfn_39
-    virtual void __unk_vfn_39();
-
-    // vIndex: 42, symbol: __unk_vfn_42
-    virtual void __unk_vfn_42();
-
-    // vIndex: 47, symbol: __unk_vfn_47
-    virtual void __unk_vfn_47();
-
-    // vIndex: 60, symbol: __unk_vfn_60
-    virtual void __unk_vfn_60();
-
-    // vIndex: 61, symbol: __unk_vfn_61
-    virtual void __unk_vfn_61();
-
-    // vIndex: 62, symbol: __unk_vfn_62
-    virtual void __unk_vfn_62();
-
-    // vIndex: 69, symbol: ?setSitting@Wolf@@UEAAX_N@Z
+    // vIndex: 66, symbol: ?setSitting@Wolf@@UEAAX_N@Z
     virtual void setSitting(bool value);
 
-    // vIndex: 77, symbol: ?getAmbientSound@Wolf@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 74, symbol: ?getAmbientSound@Wolf@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
     virtual ::Puv::Legacy::LevelSoundEvent getAmbientSound() const;
 
-    // vIndex: 83, symbol: ?handleEntityEvent@Wolf@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 80, symbol: ?handleEntityEvent@Wolf@@UEAAXW4ActorEvent@@H@Z
     virtual void handleEntityEvent(::ActorEvent id, int data);
 
-    // vIndex: 98, symbol: ?load@Wolf@@UEAA_NAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 95, symbol: ?load@Wolf@@UEAA_NAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual bool load(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 107, symbol: __unk_vfn_107
-    virtual void __unk_vfn_107();
-
-    // vIndex: 112, symbol: ?onSynchedDataUpdate@Wolf@@UEAAXH@Z
+    // vIndex: 109, symbol: ?onSynchedDataUpdate@Wolf@@UEAAXH@Z
     virtual void onSynchedDataUpdate(int dataId);
 
-    // vIndex: 144, symbol: __unk_vfn_144
-    virtual void __unk_vfn_144();
-
-    // vIndex: 162, symbol: __unk_vfn_162
-    virtual void __unk_vfn_162();
-
-    // vIndex: 163, symbol: ?_hurt@Wolf@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 158, symbol: ?_hurt@Wolf@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 167, symbol: __unk_vfn_167
-    virtual void __unk_vfn_167();
-
-    // vIndex: 168, symbol: __unk_vfn_168
-    virtual void __unk_vfn_168();
-
-    // vIndex: 185, symbol: ?isAlliedTo@Wolf@@UEAA_NPEAVMob@@@Z
+    // vIndex: 179, symbol: ?isAlliedTo@Wolf@@UEAA_NPEAVMob@@@Z
     virtual bool isAlliedTo(class Mob* other);
 
-    // vIndex: 200, symbol: ?onBorn@Wolf@@UEAAXAEAVActor@@0@Z
+    // vIndex: 181, symbol: ?getArmorValue@Wolf@@UEBAHXZ
+    virtual int getArmorValue() const;
+
+    // vIndex: 194, symbol: ?onBorn@Wolf@@UEAAXAEAVActor@@0@Z
     virtual void onBorn(class Actor& parentLeft, class Actor& parentRight);
 
-    // vIndex: 207, symbol: ?newServerAiStep@Wolf@@UEAAXXZ
+    // vIndex: 201, symbol: ?newServerAiStep@Wolf@@UEAAXXZ
     virtual void newServerAiStep();
 
     // symbol: ??0Wolf@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

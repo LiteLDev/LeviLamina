@@ -20,7 +20,7 @@ public:
     virtual ~TeleportDescription();
 
     // vIndex: 2, symbol: ?deserializeData@TeleportDescription@@UEAAXUDeserializeDataParams@@@Z
-    virtual void deserializeData(struct DeserializeDataParams);
+    virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
     // symbol: ??0TeleportDescription@@QEAA@XZ
     MCAPI TeleportDescription();

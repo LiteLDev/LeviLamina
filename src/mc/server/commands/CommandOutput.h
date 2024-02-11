@@ -55,6 +55,9 @@ public:
     // symbol: ?addToResultList@CommandOutput@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
     MCAPI void addToResultList(std::string const& key, std::string const& element);
 
+    // symbol: ?empty@CommandOutput@@QEBA_NXZ
+    MCAPI bool empty() const;
+
     // symbol:
     // ?error@CommandOutput@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@VCommandOutputParameter@@V?$allocator@VCommandOutputParameter@@@std@@@3@@Z
     MCAPI void error(std::string const& msgId, std::vector<class CommandOutputParameter> const& params = {});

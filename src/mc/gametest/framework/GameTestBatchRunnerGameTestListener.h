@@ -25,17 +25,19 @@ public:
     // vIndex: 0, symbol: __gen_??1GameTestBatchRunnerGameTestListener@gametest@@UEAA@XZ
     virtual ~GameTestBatchRunnerGameTestListener() = default;
 
-    // symbol: ?onTestFailed@GameTestBatchRunnerGameTestListener@gametest@@UEAAXAEAVBaseGameTestInstance@2@@Z
-    MCVAPI void onTestFailed(class gametest::BaseGameTestInstance&);
+    // vIndex: 1, symbol:
+    // ?onTestStructureLoaded@GameTestBatchRunnerGameTestListener@gametest@@UEAAXAEAVBaseGameTestInstance@2@@Z
+    virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance&);
 
-    // symbol: ?onTestPassed@GameTestBatchRunnerGameTestListener@gametest@@UEAAXAEAVBaseGameTestInstance@2@@Z
-    MCVAPI void onTestPassed(class gametest::BaseGameTestInstance&);
+    // vIndex: 2, symbol: ?onTestPassed@GameTestBatchRunnerGameTestListener@gametest@@UEAAXAEAVBaseGameTestInstance@2@@Z
+    virtual void onTestPassed(class gametest::BaseGameTestInstance&);
 
-    // symbol: ?onTestRetryFinished@GameTestBatchRunnerGameTestListener@gametest@@UEAAXAEAVBaseGameTestInstance@2@@Z
-    MCVAPI void onTestRetryFinished(class gametest::BaseGameTestInstance&);
+    // vIndex: 3, symbol: ?onTestFailed@GameTestBatchRunnerGameTestListener@gametest@@UEAAXAEAVBaseGameTestInstance@2@@Z
+    virtual void onTestFailed(class gametest::BaseGameTestInstance&);
 
-    // symbol: ?onTestStructureLoaded@GameTestBatchRunnerGameTestListener@gametest@@UEAAXAEAVBaseGameTestInstance@2@@Z
-    MCVAPI void onTestStructureLoaded(class gametest::BaseGameTestInstance&);
+    // vIndex: 6, symbol:
+    // ?onTestRetryFinished@GameTestBatchRunnerGameTestListener@gametest@@UEAAXAEAVBaseGameTestInstance@2@@Z
+    virtual void onTestRetryFinished(class gametest::BaseGameTestInstance&);
 
     // NOLINTEND
 };

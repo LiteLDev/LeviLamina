@@ -23,26 +23,14 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ??0DBStorageEnvironmentChain@@QEAA@AEBUDBStorageConfig@@AEBVPath@Core@@V?$not_null@V?$NonOwnerPointer@VLevelDbEnv@@@Bedrock@@@gsl@@@Z
-    MCAPI
-    DBStorageEnvironmentChain(struct DBStorageConfig const& config, class Core::Path const& dbPath, Bedrock::NotNullNonOwnerPtr<class LevelDbEnv>);
-
-    // symbol: ?getCompactionListenerEnv@DBStorageEnvironmentChain@@QEBAPEAVCompactionListenerEnv@@XZ
-    MCAPI class CompactionListenerEnv* getCompactionListenerEnv() const;
-
-    // symbol: ?getFlushableEnv@DBStorageEnvironmentChain@@QEBAPEAVFlushableEnv@@XZ
-    MCAPI class FlushableEnv* getFlushableEnv() const;
-
-    // symbol: ?getRootEnv@DBStorageEnvironmentChain@@QEBAPEAVEnv@leveldb@@XZ
-    MCAPI leveldb::Env* getRootEnv() const;
-
-    // symbol: ?getSnapshotEnv@DBStorageEnvironmentChain@@QEBAPEAVSnapshotEnv@@XZ
-    MCAPI class SnapshotEnv* getSnapshotEnv() const;
+    MCAPI DBStorageEnvironmentChain(
+        struct DBStorageConfig const&                 config,
+        class Core::Path const&                       dbPath,
+        Bedrock::NotNullNonOwnerPtr<class LevelDbEnv> levelDbEnv
+    );
 
     // symbol: ?isChainValid@DBStorageEnvironmentChain@@QEBA?AVResult@Core@@_N@Z
     MCAPI class Core::Result isChainValid(bool bRequireFilePresence) const;
-
-    // symbol: ?onFlush@DBStorageEnvironmentChain@@QEAAXXZ
-    MCAPI void onFlush();
 
     // symbol: ??1DBStorageEnvironmentChain@@QEAA@XZ
     MCAPI ~DBStorageEnvironmentChain();

@@ -16,8 +16,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ??0Raid@@QEAA@HHHHW4Difficulty@@E$$QEAV?$function@$$A6A_N_KAEAVVec3@@@Z@std@@$$QEAV?$function@$$A6A_N_KVVec3@@EAEAV?$unordered_set@UActorUniqueID@@U?$hash@UActorUniqueID@@@std@@U?$equal_to@UActorUniqueID@@@3@V?$allocator@UActorUniqueID@@@3@@std@@@Z@3@$$QEAV?$function@$$A6A_NAEBUActorUniqueID@@@Z@3@$$QEAV?$function@$$A6A_NXZ@3@@Z
-    MCAPI
-    Raid(int raidPreparationTime, int groupCompleteDelayInTicks, int locationHelpDelayInTicks, int, ::Difficulty difficulty, uchar allowedSpawnFailures, std::function<bool(uint64, class Vec3&)>&& pickSpawnPointCallback, std::function<bool(uint64, class Vec3, uchar, std::unordered_set<struct ActorUniqueID>&)>&& spawnGroupCallback, std::function<bool(struct ActorUniqueID const&)>&& doesActorExistCallback, std::function<bool(void)>&&);
+    MCAPI Raid(int raidPreparationTime, int groupCompleteDelayInTicks, int locationHelpDelayInTicks, int, ::Difficulty difficulty, uchar allowedSpawnFailures, std::function<bool(uint64, class Vec3&)>&& pickSpawnPointCallback, std::function<bool(uint64, class Vec3, uchar, std::unordered_set<struct ActorUniqueID>&)>&& spawnGroupCallback, std::function<bool(struct ActorUniqueID const&)>&& doesActorExistCallback, std::function<bool()>&&);
 
     // symbol: ?addAdditionalSaveData@Raid@@QEBAXAEAVCompoundTag@@@Z
     MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;

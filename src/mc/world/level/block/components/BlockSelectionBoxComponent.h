@@ -14,8 +14,5 @@ public:
     // vIndex: 0, symbol: __gen_??1BlockSelectionBoxComponent@@UEAA@XZ
     virtual ~BlockSelectionBoxComponent() = default;
 
-    // symbol: ?usesNewComponentStorage@BlockSelectionBoxComponent@@SA_NXZ
-    MCAPI static bool usesNewComponentStorage();
-
     // NOLINTEND
 };

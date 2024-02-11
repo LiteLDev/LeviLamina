@@ -30,7 +30,7 @@ public:
     MCAPI bool itemUseText(class Actor const&, class ItemStack const&, std::string&);
 
     // symbol: ?onItemInteract@BoostableComponent@@QEAA_NAEAVActor@@AEAVItemStack@@AEAVPlayer@@@Z
-    MCAPI bool onItemInteract(class Actor& actor, class ItemStack& itemStack, class Player& player);
+    MCAPI bool onItemInteract(class Actor& actor, class ItemStack& item, class Player& player);
 
     // symbol: ?setBoostTime@BoostableComponent@@QEAAXH@Z
     MCAPI void setBoostTime(int boostTime);

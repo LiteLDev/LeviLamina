@@ -27,9 +27,6 @@ public:
     // symbol: ?initialize@NameableDefinition@@QEBAXAEAVEntityContext@@AEAVNameableComponent@@@Z
     MCAPI void initialize(class EntityContext& entity, class NameableComponent& component) const;
 
-    // symbol: ??1NameableDefinition@@QEAA@XZ
-    MCAPI ~NameableDefinition();
-
     // symbol:
     // ?buildSchema@NameableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VNameableDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void buildSchema(

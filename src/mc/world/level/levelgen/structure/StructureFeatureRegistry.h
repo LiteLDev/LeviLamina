@@ -5,7 +5,13 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/StructureFeatureType.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace br::worldgen { class StructureCache; }
+// clang-format on
+
 class StructureFeature;
+
 class StructureFeatureRegistry {
 public:
     std::vector<std::unique_ptr<StructureFeature>> mStructureFeatures;
@@ -35,11 +41,14 @@ public:
     // symbol: ?findStructureFeatureTypeAt@StructureFeatureRegistry@@QEAA?AW4StructureFeatureType@@AEBVBlockPos@@@Z
     MCAPI ::StructureFeatureType findStructureFeatureTypeAt(class BlockPos const& pos);
 
-    // symbol: ?getStructureFeatureOfType@StructureFeatureRegistry@@QEBAPEAVStructureFeature@@W4StructureFeatureType@@@Z
-    MCAPI class StructureFeature* getStructureFeatureOfType(::StructureFeatureType type) const;
-
     // symbol: ?isStructureFeatureTypeAt@StructureFeatureRegistry@@QEBA_NAEBVBlockPos@@W4StructureFeatureType@@@Z
     MCAPI bool isStructureFeatureTypeAt(class BlockPos const& pos, ::StructureFeatureType type) const;
+
+    // symbol: ?structureCache@StructureFeatureRegistry@@QEAAAEAVStructureCache@worldgen@br@@XZ
+    MCAPI class br::worldgen::StructureCache& structureCache();
+
+    // symbol: ?waitForBlueprints@StructureFeatureRegistry@@QEBAXXZ
+    MCAPI void waitForBlueprints() const;
 
     // symbol: ??1StructureFeatureRegistry@@QEAA@XZ
     MCAPI ~StructureFeatureRegistry();

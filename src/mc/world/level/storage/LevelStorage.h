@@ -9,6 +9,11 @@
 #include "mc/enums/StorageVersion.h"
 #include "mc/enums/d_b_helpers/Category.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Core { struct LevelStorageResult; }
+// clang-format on
+
 class LevelStorage {
 public:
     // prevent constructor by default
@@ -79,9 +84,6 @@ public:
     // vIndex: 13, symbol: ?clonePlayerData@LevelStorage@@UEAA_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@0@Z
     virtual bool clonePlayerData(std::string_view fromKey, std::string_view toKey);
 
-    // vIndex: 14, symbol: __unk_vfn_14
-    virtual void __unk_vfn_14() = 0;
-
     // vIndex: 15, symbol: ?startShutdown@DBStorage@@UEAAXXZ
     virtual void startShutdown() = 0;
 
@@ -94,9 +96,6 @@ public:
     // vIndex: 18, symbol:
     // ?loadData@LevelStorage@@UEBA_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4Category@DBHelpers@@@Z
     virtual bool loadData(std::string_view key, std::string& buffer, ::DBHelpers::Category category) const;
-
-    // vIndex: 19, symbol: __unk_vfn_19
-    virtual void __unk_vfn_19() = 0;
 
     // vIndex: 20, symbol:
     // ?createSnapshot@DBStorage@@UEAA?AV?$vector@USnapshotFilenameAndLength@@V?$allocator@USnapshotFilenameAndLength@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@_N@Z
@@ -127,7 +126,7 @@ public:
     virtual void setCompactionCallback(std::function<void(::CompactionStatus)> callback) = 0;
 
     // vIndex: 29, symbol: ?setCriticalSyncSaveCallback@DBStorage@@UEAAXV?$function@$$A6AXXZ@std@@@Z
-    virtual void setCriticalSyncSaveCallback(std::function<void(void)> callback) = 0;
+    virtual void setCriticalSyncSaveCallback(std::function<void()> callback) = 0;
 
     // vIndex: 30, symbol: ?corruptLevel@LevelStorage@@UEAAXXZ
     virtual void corruptLevel();
@@ -152,8 +151,8 @@ public:
     // ?loadServerPlayerData@LevelStorage@@QEAA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBVPlayer@@_N@Z
     MCAPI std::unique_ptr<class CompoundTag> loadServerPlayerData(class Player const& client, bool isXboxLive);
 
-    // symbol: ?save@LevelStorage@@QEAAXAEAVActor@@@Z
-    MCAPI void save(class Actor& entity);
+    // symbol: ?save@LevelStorage@@QEAAXAEAVPlayer@@@Z
+    MCAPI void save(class Player&);
 
     // symbol:
     // ?saveData@LevelStorage@@QEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBVCompoundTag@@W4Category@DBHelpers@@@Z

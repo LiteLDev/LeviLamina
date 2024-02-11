@@ -20,5 +20,8 @@ public:
     // symbol: ?onLevelTickEnd@ScriptTickListener@@UEAAXXZ
     MCVAPI void onLevelTickEnd();
 
+    // symbol: ?onRunAsyncJobs@ScriptTickListener@@UEAAXXZ
+    MCVAPI void onRunAsyncJobs();
+
     // NOLINTEND
 };

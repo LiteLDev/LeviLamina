@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/OwnerPtrT.h"
-#include "mc/common/wrapper/StackRefResultT.h"
+#include "mc/common/wrapper/OwnerPtr.h"
+#include "mc/common/wrapper/StackRefResult.h"
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 #include "mc/world/AutomaticID.h"
 
@@ -30,8 +30,8 @@ public:
     MCAPI uint64 getVolumeInstanceCount() const;
 
     // symbol:
-    // ?getVolumeInstances@VolumeEntityManager@@QEBAAEBV?$vector@V?$OwnerPtrT@UEntityRefTraits@@@@V?$allocator@V?$OwnerPtrT@UEntityRefTraits@@@@@std@@@std@@V?$AutomaticID@VDimension@@H@@@Z
-    MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> const& getVolumeInstances(DimensionType dimension) const;
+    // ?getVolumeInstances@VolumeEntityManager@@QEBAAEBV?$vector@V?$OwnerPtr@VEntityContext@@@@V?$allocator@V?$OwnerPtr@VEntityContext@@@@@std@@@std@@V?$AutomaticID@VDimension@@H@@@Z
+    MCAPI std::vector<class OwnerPtr<class EntityContext>> const& getVolumeInstances(DimensionType dimension) const;
 
     // symbol:
     // ?registerComponentNetRelevancy@VolumeEntityManager@@SAXAEAVComponentNetRelevancyRegistry@@AEBUReflectionCtx@cereal@@@Z
@@ -45,13 +45,12 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ??0VolumeEntityManager@@IEAA@V?$StackRefResultT@UEntityRegistryRefTraits@@@@AEAUReflectionCtx@cereal@@@Z
-    MCAPI VolumeEntityManager(class StackRefResultT<struct EntityRegistryRefTraits>, struct cereal::ReflectionCtx&);
+    // symbol: ??0VolumeEntityManager@@IEAA@V?$StackRefResult@VEntityRegistry@@@@AEAUReflectionCtx@cereal@@@Z
+    MCAPI VolumeEntityManager(class StackRefResult<class EntityRegistry>, struct cereal::ReflectionCtx&);
 
     // symbol:
-    // ?_createVolumeEntity@VolumeEntityManager@@IEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@AEBVDefinitionInstanceGroup@@@Z
-    MCAPI class OwnerPtrT<struct EntityRefTraits>
-    _createVolumeEntity(class DefinitionInstanceGroup const& definitionGroup);
+    // ?_createVolumeEntity@VolumeEntityManager@@IEAA?AV?$OwnerPtr@VEntityContext@@@@AEBVDefinitionInstanceGroup@@@Z
+    MCAPI class OwnerPtr<class EntityContext> _createVolumeEntity(class DefinitionInstanceGroup const& definitionGroup);
 
     // NOLINTEND
 };

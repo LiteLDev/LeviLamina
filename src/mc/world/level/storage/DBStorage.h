@@ -142,8 +142,8 @@ public:
     // ?getStatistics@DBStorage@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void getStatistics(std::string& stats) const;
 
-    // vIndex: 14, symbol: __unk_vfn_14
-    virtual void __unk_vfn_14();
+    // vIndex: 14, symbol: ?getLevelStorageState@DBStorage@@UEBA?AULevelStorageResult@Core@@XZ
+    virtual struct Core::LevelStorageResult getLevelStorageState() const;
 
     // vIndex: 15, symbol: ?startShutdown@DBStorage@@UEAAXXZ
     virtual void startShutdown();
@@ -158,8 +158,8 @@ public:
     // ?loadData@DBStorage@@UEBA_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4Category@DBHelpers@@@Z
     virtual bool loadData(std::string_view key, std::string& buffer, ::DBHelpers::Category category) const;
 
-    // vIndex: 19, symbol: __unk_vfn_19
-    virtual void __unk_vfn_19();
+    // vIndex: 19, symbol: ?getState@DBStorage@@UEBA?AULevelStorageResult@Core@@XZ
+    virtual struct Core::LevelStorageResult getState() const;
 
     // vIndex: 20, symbol:
     // ?createSnapshot@DBStorage@@UEAA?AV?$vector@USnapshotFilenameAndLength@@V?$allocator@USnapshotFilenameAndLength@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@_N@Z
@@ -190,16 +190,10 @@ public:
     virtual void setCompactionCallback(std::function<void(::CompactionStatus)> callback);
 
     // vIndex: 29, symbol: ?setCriticalSyncSaveCallback@DBStorage@@UEAAXV?$function@$$A6AXXZ@std@@@Z
-    virtual void setCriticalSyncSaveCallback(std::function<void(void)> callback);
-
-    // symbol: ?getLevelStorageState@DBStorage@@UEBA?AULevelStorageResult@Core@@XZ
-    MCVAPI struct Core::LevelStorageResult getLevelStorageState() const;
-
-    // symbol: ?getState@DBStorage@@UEBA?AULevelStorageResult@Core@@XZ
-    MCVAPI struct Core::LevelStorageResult getState() const;
+    virtual void setCriticalSyncSaveCallback(std::function<void()> callback);
 
     // symbol: ??0DBStorage@@QEAA@UDBStorageConfig@@V?$not_null@V?$NonOwnerPointer@VLevelDbEnv@@@Bedrock@@@gsl@@@Z
-    MCAPI DBStorage(struct DBStorageConfig config, Bedrock::NotNullNonOwnerPtr<class LevelDbEnv>);
+    MCAPI DBStorage(struct DBStorageConfig config, Bedrock::NotNullNonOwnerPtr<class LevelDbEnv> levelDbEnv);
 
     // symbol: ?tryRepair@DBStorage@@QEBA_NAEBVPath@Core@@@Z
     MCAPI bool tryRepair(class Core::Path const& path) const;
@@ -264,7 +258,7 @@ public:
 
     // symbol:
     // ?_suspendAndPerformSaveAction@DBStorage@@AEAA_NV?$function@$$A6A?AVTaskResult@@XZ@std@@V?$function@$$A6AXXZ@3@@Z
-    MCAPI bool _suspendAndPerformSaveAction(std::function<class TaskResult(void)>, std::function<void(void)>);
+    MCAPI bool _suspendAndPerformSaveAction(std::function<class TaskResult()> action, std::function<void()> callback);
 
     // NOLINTEND
 };

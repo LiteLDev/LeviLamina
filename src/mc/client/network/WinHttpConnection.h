@@ -48,7 +48,7 @@ public:
     virtual ~WinHttpConnection();
 
     // symbol: ?Close@WinHttpConnection@httpclient@xbox@@QEAAJV?$function@$$A6AXXZ@std@@@Z
-    MCAPI long Close(std::function<void(void)>);
+    MCAPI long Close(std::function<void()>);
 
     // symbol: ?HttpCallPerformAsync@WinHttpConnection@httpclient@xbox@@QEAAJPEAUXAsyncBlock@@@Z
     MCAPI long HttpCallPerformAsync(struct XAsyncBlock*);

@@ -13,7 +13,6 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
-class CauldronBlock;
 class CauldronBlockActor;
 namespace ScriptModuleMinecraft { class BaseScriptBlockComponent; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -24,6 +23,7 @@ namespace ScriptModuleMinecraft {
 class BaseScriptBlockLiquidContainerComponent : public ::ScriptModuleMinecraft::BaseScriptBlockComponent {
 public:
     // prevent constructor by default
+    BaseScriptBlockLiquidContainerComponent& operator=(BaseScriptBlockLiquidContainerComponent const&);
     BaseScriptBlockLiquidContainerComponent(BaseScriptBlockLiquidContainerComponent const&);
     BaseScriptBlockLiquidContainerComponent();
 
@@ -54,14 +54,6 @@ public:
     // ?getFillLevel@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@H$$V@Scripting@@XZ
     MCAPI class Scripting::Result<int> getFillLevel();
 
-    // symbol: ??4BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
-    MCAPI class ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponent&
-    operator=(class ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponent&&);
-
-    // symbol: ??4BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@QEAAAEAV01@AEBV01@@Z
-    MCAPI class ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponent&
-    operator=(class ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponent const&);
-
     // symbol:
     // ?bind@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VBaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<
@@ -74,10 +66,6 @@ public:
     // NOLINTBEGIN
     // symbol: ?_isValidLiquid@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@IEBA_NXZ
     MCAPI bool _isValidLiquid() const;
-
-    // symbol:
-    // ?_tryGetCauldronBlock@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@IEBAPEBVCauldronBlock@@XZ
-    MCAPI class CauldronBlock const* _tryGetCauldronBlock() const;
 
     // symbol:
     // ?_tryGetCauldronBlockActor@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@IEAAPEAVCauldronBlockActor@@XZ

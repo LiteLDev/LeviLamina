@@ -84,11 +84,11 @@ public:
     // ?asString@RapidJSONSchemaReader@cereal@@UEAA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@Verror_code@2@@Bedrock@@AEBUSerializerTraits@2@@Z
     virtual class Bedrock::Result<std::string> asString(struct cereal::SerializerTraits const&);
 
-    // vIndex: 16, symbol: __unk_vfn_16
-    virtual void __unk_vfn_16();
+    // vIndex: 16, symbol: ?members@RapidJSONSchemaReader@cereal@@UEAA_KAEBUSerializerTraits@2@@Z
+    virtual uint64 members(struct cereal::SerializerTraits const&);
 
-    // vIndex: 17, symbol: __unk_vfn_17
-    virtual void __unk_vfn_17();
+    // vIndex: 17, symbol: ?length@RapidJSONSchemaReader@cereal@@UEAA_KAEBUSerializerTraits@2@@Z
+    virtual uint64 length(struct cereal::SerializerTraits const&);
 
     // vIndex: 18, symbol:
     // ?pushMember@RapidJSONSchemaReader@cereal@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUSerializerTraits@2@@Z
@@ -106,12 +106,6 @@ public:
 
     // vIndex: 22, symbol: ?isSequenceReader@SchemaReader@cereal@@UEBA_NXZ
     virtual bool isSequenceReader() const;
-
-    // symbol: ?length@RapidJSONSchemaReader@cereal@@UEAA_KAEBUSerializerTraits@2@@Z
-    MCVAPI uint64 length(struct cereal::SerializerTraits const&);
-
-    // symbol: ?members@RapidJSONSchemaReader@cereal@@UEAA_KAEBUSerializerTraits@2@@Z
-    MCVAPI uint64 members(struct cereal::SerializerTraits const&);
 
     // symbol:
     // ??0RapidJSONSchemaReader@cereal@@QEAA@AEBV?$GenericValue@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@@rapidjson@@@Z

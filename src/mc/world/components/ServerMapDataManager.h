@@ -40,11 +40,6 @@ public:
     // vIndex: 5, symbol: ?_copyAndLockMap@ServerMapDataManager@@EEAAXUActorUniqueID@@0@Z
     virtual void _copyAndLockMap(struct ActorUniqueID, struct ActorUniqueID);
 
-    // symbol:
-    // ??0ServerMapDataManager@@QEAA@AEAVDimensionManager@@PEAVLevelStorage@@V?$unique_ptr@VIMapDataManagerOptions@@U?$default_delete@VIMapDataManagerOptions@@@std@@@std@@V?$function@$$A6A?AUActorUniqueID@@XZ@4@@Z
-    MCAPI
-    ServerMapDataManager(class DimensionManager&, class LevelStorage*, std::unique_ptr<class IMapDataManagerOptions>, std::function<struct ActorUniqueID(void)>);
-
     // NOLINTEND
 
     // private:

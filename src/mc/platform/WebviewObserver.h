@@ -17,23 +17,23 @@ public:
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
 
-    // vIndex: 2, symbol: __unk_vfn_2
-    virtual void __unk_vfn_2();
+    // vIndex: 2, symbol: ?onLoadingBegin@WebviewObserver@@UEAAXXZ
+    virtual void onLoadingBegin();
 
-    // vIndex: 3, symbol: __unk_vfn_3
-    virtual void __unk_vfn_3();
+    // vIndex: 3, symbol: ?onLoadingEnd@WebviewObserver@@UEAAXXZ
+    virtual void onLoadingEnd();
 
-    // vIndex: 4, symbol: __unk_vfn_4
-    virtual void __unk_vfn_4();
+    // vIndex: 4, symbol: ?onError@WebviewObserver@@UEAAXAEBUWebviewError@@@Z
+    virtual void onError(struct WebviewError const&);
 
-    // vIndex: 5, symbol: __unk_vfn_5
-    virtual void __unk_vfn_5();
+    // vIndex: 5, symbol: ?onWebviewChanged@WebviewObserver@@UEAAXXZ
+    virtual void onWebviewChanged();
 
     // vIndex: 6, symbol: ?onDownloadBegin@WebviewObserver@@UEAAXAEBUWebviewDownloadInfo@@@Z
     virtual void onDownloadBegin(struct WebviewDownloadInfo const&);
 
-    // vIndex: 7, symbol: __unk_vfn_7
-    virtual void __unk_vfn_7();
+    // vIndex: 7, symbol: ?onDownloadUpdate@WebviewObserver@@UEAAXAEBUWebviewDownloadInfo@@@Z
+    virtual void onDownloadUpdate(struct WebviewDownloadInfo const&);
 
     // vIndex: 8, symbol: ?onDownloadComplete@WebviewObserver@@UEAAXAEBUWebviewDownloadInfo@@@Z
     virtual void onDownloadComplete(struct WebviewDownloadInfo const&);
@@ -41,24 +41,9 @@ public:
     // vIndex: 9, symbol: ?onDownloadCanceled@WebviewObserver@@UEAAXAEBUWebviewDownloadInfo@@@Z
     virtual void onDownloadCanceled(struct WebviewDownloadInfo const&);
 
-    // symbol: ?onDownloadUpdate@WebviewObserver@@UEAAXAEBUWebviewDownloadInfo@@@Z
-    MCVAPI void onDownloadUpdate(struct WebviewDownloadInfo const&);
-
-    // symbol: ?onError@WebviewObserver@@UEAAXAEBUWebviewError@@@Z
-    MCVAPI void onError(struct WebviewError const&);
-
-    // symbol: ?onLoadingBegin@WebviewObserver@@UEAAXXZ
-    MCVAPI void onLoadingBegin();
-
-    // symbol: ?onLoadingEnd@WebviewObserver@@UEAAXXZ
-    MCVAPI void onLoadingEnd();
-
-    // symbol:
+    // vIndex: 10, symbol:
     // ?onMessageRecieved@WebviewObserver@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI void onMessageRecieved(std::string const&);
-
-    // symbol: ?onWebviewChanged@WebviewObserver@@UEAAXXZ
-    MCVAPI void onWebviewChanged();
+    virtual void onMessageRecieved(std::string const&);
 
     // NOLINTEND
 };

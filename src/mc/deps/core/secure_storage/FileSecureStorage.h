@@ -95,16 +95,21 @@ public:
     virtual bool get(std::string const& key, std::string& outValue);
 
     // symbol:
-    // ??0FileSecureStorage@@QEAA@AEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBV?$PathBuffer@V?$StackString@D$0EAA@@Core@@@2@PEAVISecureStorageKeySystem@@AEBVPath@2@_NPEAVStorageSystem@0@@Z
-    MCAPI
-    FileSecureStorage(class Core::PathBuffer<std::string> const&, class Core::PathBuffer<class Core::StackString<char, 1024>> const&, class ISecureStorageKeySystem*, class Core::Path const&, bool, class FileSecureStorage::StorageSystem*);
+    // ??0FileSecureStorage@@QEAA@AEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBV?$PathBuffer@V?$StackString@D$0EAA@@Core@@@2@PEAVISecureStorageKeySystem@@AEBVPath@2@PEAVStorageSystem@0@@Z
+    MCAPI FileSecureStorage(
+        class Core::PathBuffer<std::string> const&,
+        class Core::PathBuffer<class Core::StackString<char, 1024>> const&,
+        class ISecureStorageKeySystem*,
+        class Core::Path const&,
+        class FileSecureStorage::StorageSystem* storage
+    );
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?_init@FileSecureStorage@@IEAA_NXZ
-    MCAPI bool _init();
+    // symbol: ?_init@FileSecureStorage@@IEAA_N_N@Z
+    MCAPI bool _init(bool);
 
     // NOLINTEND
 

@@ -21,7 +21,7 @@ public:
     virtual ~MoveControlSwayDescription();
 
     // vIndex: 2, symbol: ?deserializeData@MoveControlSwayDescription@@UEAAXUDeserializeDataParams@@@Z
-    virtual void deserializeData(struct DeserializeDataParams);
+    virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
     // NOLINTEND
 };

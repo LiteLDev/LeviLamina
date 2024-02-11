@@ -25,16 +25,12 @@ public:
     virtual bool canRewindToFrame(class EntityContext const&, uint64, uint64);
 
     // vIndex: 3, symbol:
-    // ?shouldCorrectMovement@ClientReplayStatePolicy@@UEAA?AUMovementCorrection@@AEAVEntityContext@@AEBVIConstBlockSource@@AEBVPlayerAuthInputPacket@@_K@Z
-    virtual struct MovementCorrection shouldCorrectMovement(
-        class EntityContext&,
-        class IConstBlockSource const&,
-        class PlayerAuthInputPacket const&,
-        uint64
-    );
+    // ?shouldCorrectMovement@ClientReplayStatePolicy@@UEAA?AUMovementCorrection@@AEAVEntityContext@@AEBVPlayerAuthInputPacket@@_K@Z
+    virtual struct MovementCorrection
+    shouldCorrectMovement(class EntityContext&, class PlayerAuthInputPacket const&, uint64);
 
     // vIndex: 4, symbol: ?flagUnsupportedMovement@ClientReplayStatePolicy@@UEAAX_K@Z
-    virtual void flagUnsupportedMovement(uint64);
+    virtual void flagUnsupportedMovement(uint64 frame);
 
     // vIndex: 5, symbol:
     // ?storeCurrentFrameSupported@ClientReplayStatePolicy@@UEAAX_KAEAVEntityContext@@AEBVIConstBlockSource@@@Z
@@ -42,6 +38,9 @@ public:
 
     // symbol: ?_checkSupportedFrame@ClientReplayStatePolicy@@QEBA_NAEAVEntityContext@@AEBVIConstBlockSource@@@Z
     MCAPI bool _checkSupportedFrame(class EntityContext&, class IConstBlockSource const&) const;
+
+    // symbol: ?_isSupportedMovementMode@ClientReplayStatePolicy@@SA_NAEBVEntityContext@@@Z
+    MCAPI static bool _isSupportedMovementMode(class EntityContext const&);
 
     // NOLINTEND
 };

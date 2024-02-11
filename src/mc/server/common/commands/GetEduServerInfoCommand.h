@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class GetEduServerInfoCommand {
+// auto generated inclusion list
+#include "mc/world/level/Command.h"
+
+class GetEduServerInfoCommand : public ::Command {
 public:
     // prevent constructor by default
     GetEduServerInfoCommand& operator=(GetEduServerInfoCommand const&);
@@ -13,9 +16,6 @@ public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1GetEduServerInfoCommand@@UEAA@XZ
     virtual ~GetEduServerInfoCommand() = default;
-
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
 
     // vIndex: 2, symbol: ?execute@GetEduServerInfoCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput& output) const;

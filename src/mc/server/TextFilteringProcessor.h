@@ -8,11 +8,4 @@ public:
     TextFilteringProcessor& operator=(TextFilteringProcessor const&);
     TextFilteringProcessor(TextFilteringProcessor const&);
     TextFilteringProcessor();
-
-public:
-    // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1TextFilteringProcessor@@UEAA@XZ
-    virtual ~TextFilteringProcessor();
-
-    // NOLINTEND
 };

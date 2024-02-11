@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MoveTowardsRestrictionGoal@@UEAA@XZ
-    virtual ~MoveTowardsRestrictionGoal() = default;
+    // vIndex: 0, symbol: ??1MoveTowardsRestrictionGoal@@UEAA@XZ
+    virtual ~MoveTowardsRestrictionGoal();
 
     // vIndex: 2, symbol: ?canContinueToUse@MoveTowardsRestrictionGoal@@UEAA_NXZ
     virtual bool canContinueToUse();
@@ -24,10 +24,16 @@ public:
     // vIndex: 4, symbol: ?start@MoveTowardsRestrictionGoal@@UEAAXXZ
     virtual void start();
 
+    // symbol: ??0MoveTowardsRestrictionGoal@@QEAA@AEAVMob@@@Z
+    MCAPI explicit MoveTowardsRestrictionGoal(class Mob& mob);
+
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
+    // symbol: ?_getMob@MoveTowardsRestrictionGoal@@IEBAAEBVMob@@XZ
+    MCAPI class Mob const& _getMob() const;
+
     // symbol: ?_randomizeWantedPositionTowardsRestriction@MoveTowardsRestrictionGoal@@IEAA_NAEBVVec3@@@Z
     MCAPI bool _randomizeWantedPositionTowardsRestriction(class Vec3 const&);
 

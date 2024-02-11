@@ -18,6 +18,7 @@
 // clang-format off
 namespace Bedrock { class EnableNonOwnerReferences; }
 namespace ScriptModuleGameTest { class ScriptGameTestConnectivity; }
+namespace gametest { class BaseGameTestBatchRunner; }
 namespace gametest { class BaseGameTestFunction; }
 namespace gametest { class BaseGameTestHelper; }
 namespace gametest { class BaseGameTestInstance; }
@@ -28,6 +29,8 @@ namespace gametest { class IGameTestFunctionContext; }
 namespace gametest { class IGameTestFunctionRunResult; }
 namespace gametest { class IGameTestHelperProvider; }
 namespace gametest { class IGameTestListener; }
+namespace gametest { class IGameTestRuleHelper; }
+namespace gametest { class MultipleTestTracker; }
 namespace gametest { struct GameTestError; }
 namespace gametest { struct GameTestErrorContext; }
 namespace gametest { struct TestParameters; }

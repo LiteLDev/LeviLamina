@@ -32,8 +32,5 @@ public:
     // symbol: ??0ContainerScreenValidatorBase@@QEAA@XZ
     MCAPI ContainerScreenValidatorBase();
 
-    // symbol: ?isValidContainerForScreen@ContainerScreenValidatorBase@@QEBA_NW4ContainerEnumName@@@Z
-    MCAPI bool isValidContainerForScreen(::ContainerEnumName) const;
-
     // NOLINTEND
 };

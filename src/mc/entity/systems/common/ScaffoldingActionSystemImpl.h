@@ -5,9 +5,9 @@
 namespace ScaffoldingActionSystemImpl {
 // NOLINTBEGIN
 // symbol:
-// ?descendThroughBlockAllowed@ScaffoldingActionSystemImpl@@YAXAEAUSynchedActorDataComponent@@AEAUStateVectorComponent@@AEAUFallDistanceComponent@@@Z
+// ?descendThroughBlockAllowed@ScaffoldingActionSystemImpl@@YAXAEAUActorDataFlagComponent@@AEAUActorDataDirtyFlagsComponent@@AEAUStateVectorComponent@@AEAUFallDistanceComponent@@@Z
 MCAPI void
-descendThroughBlockAllowed(struct SynchedActorDataComponent&, struct StateVectorComponent&, struct FallDistanceComponent&);
+descendThroughBlockAllowed(struct ActorDataFlagComponent&, struct ActorDataDirtyFlagsComponent&, struct StateVectorComponent&, struct FallDistanceComponent&);
 // NOLINTEND
 
 }; // namespace ScaffoldingActionSystemImpl

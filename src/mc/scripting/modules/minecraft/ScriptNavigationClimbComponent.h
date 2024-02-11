@@ -24,8 +24,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptNavigationClimbComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptNavigationClimbComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptNavigationClimbComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptNavigationClimbComponent() = default;
 
     // symbol:
     // ?bind@ScriptNavigationClimbComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptNavigationClimbComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z

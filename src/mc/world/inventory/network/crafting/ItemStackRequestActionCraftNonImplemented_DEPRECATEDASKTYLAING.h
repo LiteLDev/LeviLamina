@@ -12,6 +12,7 @@ public:
     ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING&
     operator=(ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING const&);
     ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING(ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING const&);
+    ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING();
 
 public:
     // NOLINTBEGIN
@@ -25,9 +26,6 @@ public:
     // vIndex: 5, symbol:
     // ?_read@ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
-
-    // symbol: ??0ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING@@QEAA@XZ
-    MCAPI ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING();
 
     // NOLINTEND
 };

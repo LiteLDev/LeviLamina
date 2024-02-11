@@ -77,9 +77,10 @@ public:
     // symbol:
     // ?_loadItemData@ItemRegistry@@AEAAXAEAVResourcePackManager@@V?$function@$$A6AXAEAV?$WeakPtr@VItem@@@@AEAVValue@Json@@AEBVSemVersion@@_NAEBVExperiments@@@Z@std@@AEBVExperiments@@W4ItemVersion@@@Z
     MCAPI void _loadItemData(
-        class ResourcePackManager&,
+        class ResourcePackManager& resourcePackManager,
         std::function<
-            void(class WeakPtr<class Item>&, class Json::Value&, class SemVersion const&, bool, class Experiments const&)>,
+            void(class WeakPtr<class Item>&, class Json::Value&, class SemVersion const&, bool, class Experiments const&)>
+            initCallback,
         class Experiments const&,
         ::ItemVersion
     );

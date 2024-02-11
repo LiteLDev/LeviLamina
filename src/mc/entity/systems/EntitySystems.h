@@ -11,11 +11,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/typeid_t.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 class EntitySystems : public IEntitySystems, public ::Bedrock::EnableNonOwnerReferences {
 public:
     std::unique_ptr<PlayerInteractionSystem>         mPlayerInteractionSystem; // this+0x20
@@ -50,8 +45,8 @@ public:
     MCAPI explicit EntitySystems(std::string name);
 
     // symbol:
-    // ??0EntitySystems@@QEAA@AEAUReflectionCtx@cereal@@V?$unique_ptr@UIEntitySystemsCollection@@U?$default_delete@UIEntitySystemsCollection@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z
-    MCAPI EntitySystems(struct cereal::ReflectionCtx&, std::unique_ptr<struct IEntitySystemsCollection>, std::string);
+    // ??0EntitySystems@@QEAA@V?$unique_ptr@UIEntitySystemsCollection@@U?$default_delete@UIEntitySystemsCollection@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@@Z
+    MCAPI EntitySystems(std::unique_ptr<struct IEntitySystemsCollection>, std::string name);
 
     // symbol: ?getPlayerInteractionSystem@EntitySystems@@QEAAAEAVPlayerInteractionSystem@@XZ
     MCAPI class PlayerInteractionSystem& getPlayerInteractionSystem();

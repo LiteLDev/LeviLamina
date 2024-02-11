@@ -48,21 +48,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0RakPeerHelper@@QEAA@AEAVIPSupportInterface@0@@Z
-    MCAPI explicit RakPeerHelper(class RakPeerHelper::IPSupportInterface& ipInterface);
-
-    // symbol: ?getIPv4ConnectionIndex@RakPeerHelper@@QEBAHXZ
-    MCAPI int getIPv4ConnectionIndex() const;
-
-    // symbol: ?getIPv6ConnectionIndex@RakPeerHelper@@QEBAHXZ
-    MCAPI int getIPv6ConnectionIndex() const;
-
-    // symbol: ?isIPv4Supported@RakPeerHelper@@QEBA_NXZ
-    MCAPI bool isIPv4Supported() const;
-
-    // symbol: ?isIPv6Supported@RakPeerHelper@@QEBA_NXZ
-    MCAPI bool isIPv6Supported() const;
-
     // symbol:
     // ?peerStartup@RakPeerHelper@@QEAA?AW4StartupResult@RakNet@@PEAVRakPeerInterface@3@AEBUConnectionDefinition@@W4PeerPurpose@1@@Z
     MCAPI ::RakNet::StartupResult peerStartup(
@@ -70,9 +55,6 @@ public:
         struct ConnectionDefinition const& definition,
         ::RakPeerHelper::PeerPurpose       purpose
     );
-
-    // symbol: ?reset@RakPeerHelper@@QEAAXXZ
-    MCAPI void reset();
 
     // NOLINTEND
 

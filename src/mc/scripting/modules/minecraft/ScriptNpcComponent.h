@@ -26,8 +26,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptNpcComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptNpcComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptNpcComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptNpcComponent() = default;
 
     // symbol:
     // ?getDefaultScene@ScriptNpcComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$V@Scripting@@XZ

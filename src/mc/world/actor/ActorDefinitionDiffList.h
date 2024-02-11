@@ -19,10 +19,10 @@ public:
     MCAPI void addDefinition(std::string const& def);
 
     // symbol: ?addPendingPropertyChange@ActorDefinitionDiffList@@QEAAX_KV?$variant@HM_N_K@std@@@Z
-    MCAPI void addPendingPropertyChange(uint64, std::variant<int, float, bool, uint64>);
+    MCAPI void addPendingPropertyChange(uint64, std::variant<int, float, bool, uint64> value);
 
     // symbol: ?buildAdditiveDescriptionFrom@ActorDefinitionDiffList@@QEBA?AVActorDefinitionDescriptor@@_K0@Z
-    MCAPI class ActorDefinitionDescriptor buildAdditiveDescriptionFrom(uint64, uint64) const;
+    MCAPI class ActorDefinitionDescriptor buildAdditiveDescriptionFrom(uint64 start, uint64 end) const;
 
     // symbol: ?clearChangedDescription@ActorDefinitionDiffList@@QEAAXXZ
     MCAPI void clearChangedDescription();

@@ -17,8 +17,5 @@ public:
     // vIndex: 0, symbol: __gen_??1BlockLightEmissionComponent@@UEAA@XZ
     virtual ~BlockLightEmissionComponent() = default;
 
-    // symbol: ?usesNewComponentStorage@BlockLightEmissionComponent@@SA_NXZ
-    MCAPI static bool usesNewComponentStorage();
-
     // NOLINTEND
 };

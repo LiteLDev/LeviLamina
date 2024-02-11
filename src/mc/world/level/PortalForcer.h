@@ -24,6 +24,9 @@ public:
     // vIndex: 2, symbol: ?serialize@PortalForcer@@UEBAXAEAVCompoundTag@@@Z
     virtual void serialize(class CompoundTag& tag) const;
 
+    // symbol: ??0PortalForcer@@QEAA@AEAVLevel@@@Z
+    MCAPI explicit PortalForcer(class Level& level);
+
     // symbol: ?addPortalRecord@PortalForcer@@QEAAAEBVPortalRecord@@V?$AutomaticID@VDimension@@H@@V2@@Z
     MCAPI class PortalRecord const& addPortalRecord(DimensionType dimensionType, class PortalRecord toAdd);
 

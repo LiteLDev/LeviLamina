@@ -38,7 +38,7 @@ public:
 
     // vIndex: 14, symbol: ?getSupportBlock@VillagePiece@@UEBAPEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@AEBV2@@Z
     virtual class Block const*
-    getSupportBlock(class BlockSource& region, class BlockPos const& pos, class Block const&) const = 0;
+    getSupportBlock(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const = 0;
 
     // vIndex: 15, symbol: ?getBeardStabilizeBlock@AncientCityPiece@@UEBAAEBVBlock@@AEBV2@@Z
     virtual class Block const& getBeardStabilizeBlock(class Block const&) const = 0;
@@ -58,17 +58,8 @@ public:
         int                               genDepth,
         struct JigsawJunction&            junction,
         class BoundingBox const&          box,
-        class BlockPos
+        class BlockPos                    refPos
     );
-
-    // symbol: ?getElement@PoolElementStructurePiece@@QEBAAEBVStructurePoolElement@@XZ
-    MCAPI class StructurePoolElement const& getElement() const;
-
-    // symbol: ?getPosition@PoolElementStructurePiece@@QEBAAEBVBlockPos@@XZ
-    MCAPI class BlockPos const& getPosition() const;
-
-    // symbol: ?setReferencePosition@PoolElementStructurePiece@@QEAAXAEBVBlockPos@@@Z
-    MCAPI void setReferencePosition(class BlockPos const& pos);
 
     // NOLINTEND
 };

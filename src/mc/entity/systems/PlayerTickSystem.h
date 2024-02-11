@@ -11,8 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?create@PlayerTickSystem@@SA?AUTickingSystemWithInfo@@XZ
-    MCAPI static struct TickingSystemWithInfo create();
+    // symbol: ?create@PlayerTickSystem@@SA?AUTickingSystemWithInfo@@_N@Z
+    MCAPI static struct TickingSystemWithInfo create(bool);
 
     // symbol: ?createAddMovementTickNeededForCatchupSystem@PlayerTickSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createAddMovementTickNeededForCatchupSystem();

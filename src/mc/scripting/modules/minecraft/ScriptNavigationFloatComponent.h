@@ -24,8 +24,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptNavigationFloatComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptNavigationFloatComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptNavigationFloatComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptNavigationFloatComponent() = default;
 
     // symbol:
     // ?bind@ScriptNavigationFloatComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptNavigationFloatComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z

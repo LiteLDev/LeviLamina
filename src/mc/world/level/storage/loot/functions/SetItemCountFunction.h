@@ -18,7 +18,7 @@ public:
     virtual ~SetItemCountFunction() = default;
 
     // vIndex: 1, symbol: ?apply@SetItemCountFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
-    virtual void apply(class ItemStack& itemStack, class Random& random, class LootTableContext& context);
+    virtual void apply(class ItemStack& item, class Random& random, class LootTableContext& context);
 
     // vIndex: 3, symbol: ?apply@SetItemCountFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
     virtual void apply(class ItemInstance& itemInstance, class Random& random, class LootTableContext& context);

@@ -25,9 +25,6 @@ public:
     // vIndex: 1, symbol: ?checkComponentDataForContentErrors@ItemComponent@@UEBA_NXZ
     virtual bool checkComponentDataForContentErrors() const;
 
-    // vIndex: 2, symbol: ?writeSettings@ItemComponent@@UEAAXXZ
-    virtual void writeSettings();
-
     // vIndex: 3, symbol: ?isNetworkComponent@InteractButtonItemComponent@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
@@ -53,6 +50,12 @@ public:
 
     // symbol: ??0ThrowableItemComponent@@QEAA@_N@Z
     MCAPI explicit ThrowableItemComponent(bool);
+
+    // symbol: ?releaseUsing@ThrowableItemComponent@@QEBA_NAEAVItemStack@@PEAVPlayer@@H@Z
+    MCAPI bool releaseUsing(class ItemStack& item, class Player* player, int durationLeft) const;
+
+    // symbol: ?use@ThrowableItemComponent@@QEBA_NAEAVItemStack@@AEAVPlayer@@@Z
+    MCAPI bool use(class ItemStack& item, class Player& player) const;
 
     // symbol:
     // ?bindType@ThrowableItemComponent@@SAXAEAUReflectionCtx@cereal@@AEBV?$vector@W4AllExperiments@@V?$allocator@W4AllExperiments@@@std@@@std@@V?$optional@VSemVersion@@@5@@Z

@@ -41,11 +41,11 @@ MCAPI void _calculateBoatControlledByLocalInstanceSystem(
 );
 
 // symbol:
-// ?_calculateHorseControlledByLocalInstanceSystem@ControlledByLocalInstanceSystemImpl@@YAXAEBVStrictEntityContext@@AEBUVehicleComponent@@AEBUSynchedActorDataComponent@@AEBV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UPlayerComponentFlag@@@@@@V?$Optional@V?$FlagComponent@ULocalPlayerComponentFlag@@@@@@@@V?$EntityModifier@V?$FlagComponent@UControlledByLocalInstanceFlag@@@@@@P6AX0AEBV?$optional@VStrictEntityContext@@@std@@3V6@@Z@Z
+// ?_calculateHorseControlledByLocalInstanceSystem@ControlledByLocalInstanceSystemImpl@@YAXAEBVStrictEntityContext@@AEBUVehicleComponent@@AEBUActorDataFlagComponent@@AEBV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UPlayerComponentFlag@@@@@@V?$Optional@V?$FlagComponent@ULocalPlayerComponentFlag@@@@@@@@V?$EntityModifier@V?$FlagComponent@UControlledByLocalInstanceFlag@@@@@@P6AX0AEBV?$optional@VStrictEntityContext@@@std@@3V6@@Z@Z
 MCAPI void _calculateHorseControlledByLocalInstanceSystem(
     class StrictEntityContext const&,
     struct VehicleComponent const&,
-    struct SynchedActorDataComponent const&,
+    struct ActorDataFlagComponent const&,
     class ViewT<
         class StrictEntityContext,
         struct Include<class FlagComponent<struct PlayerComponentFlag>>,

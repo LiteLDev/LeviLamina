@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ClientBlobCache::Server { class ActiveTransfersManager; }
 namespace ClientBlobCache::Server { class TransferBuilder; }
 // clang-format on
 
@@ -40,6 +41,9 @@ public:
     // symbol: ?destroyRegion@NetworkChunkPublisher@@QEAAXXZ
     MCAPI void destroyRegion();
 
+    // symbol: ?getChunksSentSinceStart@NetworkChunkPublisher@@QEBAHXZ
+    MCAPI int getChunksSentSinceStart() const;
+
     // symbol: ?is2DPositionRelevant@NetworkChunkPublisher@@QEBA_NAEBVBlockPos@@@Z
     MCAPI bool is2DPositionRelevant(class BlockPos const& position) const;
 
@@ -55,6 +59,11 @@ public:
 
     // symbol: ?sendQueuedChunks@NetworkChunkPublisher@@QEAAXXZ
     MCAPI void sendQueuedChunks();
+
+    // symbol:
+    // ?setServerSettings@NetworkChunkPublisher@@QEAAXAEAVServerNetworkSystem@@AEAVActiveTransfersManager@Server@ClientBlobCache@@@Z
+    MCAPI void
+    setServerSettings(class ServerNetworkSystem& network, class ClientBlobCache::Server::ActiveTransfersManager&);
 
     // NOLINTEND
 

@@ -2,14 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/common/wrapper/WeakPtr.h"
-
 namespace BedrockBlockTypes {
 // NOLINTBEGIN
-// symbol: ?mAir@BedrockBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-MCAPI extern class WeakPtr<class BlockLegacy> mAir;
-
 // symbol: ?registerBlocks@BedrockBlockTypes@@YAXAEBVBaseGameVersion@@@Z
 MCAPI void registerBlocks(class BaseGameVersion const&);
 

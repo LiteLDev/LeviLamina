@@ -7,15 +7,6 @@ class Actor;
 
 class OwnerStorageEntity {
 public:
-    // OwnerStorageEntity inner types define
-    enum class EmptyInit : int {
-        NoValue = 0x0,
-    };
-
-    enum class VariadicInit : int {
-        NonAmbiguous = 0x0,
-    };
-
     std::optional<EntityContext> mContext;
 
     template <class Entity = Actor, bool IncludeRemoved = false>
@@ -29,29 +20,26 @@ public:
     [[nodiscard]] inline operator bool() const { return _hasValue(); } // NOLINT
 
 public:
-    OwnerStorageEntity& operator=(OwnerStorageEntity const&) = delete;
-    OwnerStorageEntity(OwnerStorageEntity const&)            = delete;
-    OwnerStorageEntity()                                     = delete;
+    // prevent constructor by default
+    OwnerStorageEntity& operator=(OwnerStorageEntity const&);
+    OwnerStorageEntity(OwnerStorageEntity const&);
 
     // protected:
     // NOLINTBEGIN
+    // symbol: ??0OwnerStorageEntity@@IEAA@XZ
+    MCAPI OwnerStorageEntity();
+
+    // symbol: ??0OwnerStorageEntity@@IEAA@AEAVEntityRegistry@@@Z
+    MCAPI explicit OwnerStorageEntity(class EntityRegistry&);
+
     // symbol: ??0OwnerStorageEntity@@IEAA@$$QEAV0@@Z
     MCAPI OwnerStorageEntity(class OwnerStorageEntity&& other);
-
-    // symbol: ??0OwnerStorageEntity@@IEAA@W4EmptyInit@0@@Z
-    MCAPI explicit OwnerStorageEntity(::OwnerStorageEntity::EmptyInit);
-
-    // symbol: ??0OwnerStorageEntity@@IEAA@W4VariadicInit@0@AEAVEntityRegistry@@@Z
-    MCAPI OwnerStorageEntity(::OwnerStorageEntity::VariadicInit, class EntityRegistry& registry);
 
     // symbol: ?_getStackRef@OwnerStorageEntity@@IEBAAEAVEntityContext@@XZ
     MCAPI class EntityContext& _getStackRef() const;
 
     // symbol: ?_hasValue@OwnerStorageEntity@@IEBA_NXZ
     MCAPI bool _hasValue() const;
-
-    // symbol: ?_remake@OwnerStorageEntity@@IEAAXAEAVEntityRegistry@@@Z
-    MCAPI void _remake(class EntityRegistry& registry);
 
     // symbol: ?_reset@OwnerStorageEntity@@IEAAXXZ
     MCAPI void _reset();

@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/cereal/ResultCode.h"
 #include "mc/deps/cereal/SerializerContext.h"
-#include "mc/deps/cereal/internal/ResultCode.h"
 
 namespace Puv {
 
@@ -73,9 +73,9 @@ public:
     MCAPI void log(::Puv::Logger::ValidationResultCode, std::string);
 
     // symbol:
-    // ?log@Logger@Puv@@QEAAXW4ResultCode@internal@cereal@@V?$vector@U?$pair@W4ContextType@SerializerContext@cereal@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@V?$allocator@U?$pair@W4ContextType@SerializerContext@cereal@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@7@@Z
+    // ?log@Logger@Puv@@QEAAXW4ResultCode@cereal@@V?$vector@U?$pair@W4ContextType@SerializerContext@cereal@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@V?$allocator@U?$pair@W4ContextType@SerializerContext@cereal@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@6@@Z
     MCAPI void
-        log(::cereal::internal::ResultCode,
+        log(::cereal::ResultCode,
             std::vector<std::pair<::cereal::SerializerContext::ContextType, std::string>>,
             std::string);
 

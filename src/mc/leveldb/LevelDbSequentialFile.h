@@ -18,7 +18,7 @@ public:
     virtual leveldb::Status Read(uint64 n, leveldb::Slice* result, char* scratch);
 
     // vIndex: 2, symbol: ?Skip@LevelDbSequentialFile@@UEAA?AVStatus@leveldb@@_K@Z
-    virtual leveldb::Status Skip(uint64);
+    virtual leveldb::Status Skip(uint64 n);
 
     // NOLINTEND
 };

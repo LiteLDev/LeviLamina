@@ -32,13 +32,13 @@ public:
     virtual class BlockPos loadBlockPositionOffset(class BlockPos const& blockPosOffset);
 
     // vIndex: 4, symbol: ?loadRotationDegreesX@StructureDataLoadHelper@@UEAAMM@Z
-    virtual float loadRotationDegreesX(float);
+    virtual float loadRotationDegreesX(float x);
 
     // vIndex: 5, symbol: ?loadRotationDegreesY@StructureDataLoadHelper@@UEAAMM@Z
     virtual float loadRotationDegreesY(float y);
 
     // vIndex: 6, symbol: ?loadRotationRadiansX@StructureDataLoadHelper@@UEAAMM@Z
-    virtual float loadRotationRadiansX(float);
+    virtual float loadRotationRadiansX(float x);
 
     // vIndex: 7, symbol: ?loadRotationRadiansY@StructureDataLoadHelper@@UEAAMM@Z
     virtual float loadRotationRadiansY(float y);

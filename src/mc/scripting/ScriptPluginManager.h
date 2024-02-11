@@ -33,8 +33,9 @@ public:
     // symbol: ?releasePlugins@ScriptPluginManager@@QEAAXXZ
     MCAPI void releasePlugins();
 
-    // symbol: ?runAll@ScriptPluginManager@@QEAA?AVScriptPluginManagerResult@@XZ
-    MCAPI class ScriptPluginManagerResult runAll();
+    // symbol:
+    // ?runAll@ScriptPluginManager@@QEAA?AVScriptPluginManagerResult@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
+    MCAPI class ScriptPluginManagerResult runAll(std::vector<std::string>);
 
     // symbol: ?getPackCapability@ScriptPluginManager@@SA?AVPackCapability@@XZ
     MCAPI static class PackCapability getPackCapability();
@@ -52,6 +53,9 @@ public:
     // symbol:
     // ?_reportContextResults@ScriptPluginManager@@AEAAXAEBUScriptContextResult@Scripting@@AEAVScriptPluginResult@@@Z
     MCAPI void _reportContextResults(struct Scripting::ScriptContextResult const&, class ScriptPluginResult&);
+
+    // symbol: ?_runPlugin@ScriptPluginManager@@AEAAXAEAVScriptPlugin@@AEAVScriptPluginResult@@@Z
+    MCAPI void _runPlugin(class ScriptPlugin&, class ScriptPluginResult&);
 
     // symbol: ?_tryAddRuntime@ScriptPluginManager@@AEAAXAEBVScriptPlugin@@AEAVScriptPluginResult@@@Z
     MCAPI void _tryAddRuntime(class ScriptPlugin const& plugin, class ScriptPluginResult&);

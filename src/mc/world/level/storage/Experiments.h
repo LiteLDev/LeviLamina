@@ -13,6 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ?Armadillo@Experiments@@QEBA_NXZ
+    MCAPI bool Armadillo() const;
+
     // symbol: ?Cameras@Experiments@@QEBA_NXZ
     MCAPI bool Cameras() const;
 
@@ -50,9 +53,6 @@ public:
 
     // symbol: ?isExperimentEnabled@Experiments@@QEBA_NW4AllExperiments@@@Z
     MCAPI bool isExperimentEnabled(::AllExperiments) const;
-
-    // symbol: ?setExperimentByToggleIndex@Experiments@@QEAAX_K_N@Z
-    MCAPI void setExperimentByToggleIndex(uint64, bool);
 
     // symbol: ?setExperimentEnabled@Experiments@@QEAAXW4AllExperiments@@_N@Z
     MCAPI void setExperimentEnabled(::AllExperiments, bool value);

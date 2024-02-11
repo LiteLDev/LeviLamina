@@ -20,12 +20,13 @@ namespace ScriptModuleMinecraft {
 class ScriptItemDurabilityComponent : public ::ScriptModuleMinecraft::ScriptItemComponent {
 public:
     // prevent constructor by default
+    ScriptItemDurabilityComponent& operator=(ScriptItemDurabilityComponent const&);
     ScriptItemDurabilityComponent();
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptItemDurabilityComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptItemDurabilityComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptItemDurabilityComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptItemDurabilityComponent() = default;
 
     // symbol: ??0ScriptItemDurabilityComponent@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
     MCAPI ScriptItemDurabilityComponent(class ScriptModuleMinecraft::ScriptItemDurabilityComponent const&);
@@ -37,8 +38,8 @@ public:
     MCAPI class Scripting::Result<int> getDamageChance(int unbreaking);
 
     // symbol:
-    // ?getDamageRange@ScriptItemDurabilityComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@UNumberRange@Scripting@@$$V@Scripting@@XZ
-    MCAPI class Scripting::Result<struct Scripting::NumberRange> getDamageRange();
+    // ?getDamageChanceRange@ScriptItemDurabilityComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@UNumberRange@Scripting@@$$V@Scripting@@XZ
+    MCAPI class Scripting::Result<struct Scripting::NumberRange> getDamageChanceRange();
 
     // symbol:
     // ?getDamageRange_V010@ScriptItemDurabilityComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@UFloatRange@@$$V@Scripting@@XZ
@@ -46,10 +47,6 @@ public:
 
     // symbol: ?getMaxDurability@ScriptItemDurabilityComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@H$$V@Scripting@@XZ
     MCAPI class Scripting::Result<int> getMaxDurability();
-
-    // symbol: ??4ScriptItemDurabilityComponent@ScriptModuleMinecraft@@QEAAAEAV01@AEBV01@@Z
-    MCAPI class ScriptModuleMinecraft::ScriptItemDurabilityComponent&
-    operator=(class ScriptModuleMinecraft::ScriptItemDurabilityComponent const&);
 
     // symbol:
     // ?setCurrentDamage@ScriptItemDurabilityComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@H@Z

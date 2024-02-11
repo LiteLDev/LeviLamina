@@ -17,17 +17,11 @@ public:
     // vIndex: 0, symbol: __gen_??1SleepState@@UEAA@XZ
     virtual ~SleepState() = default;
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
-
-    // vIndex: 2, symbol: __unk_vfn_2
-    virtual void __unk_vfn_2();
+    // vIndex: 1, symbol: ?tick@SleepState@@UEAAXXZ
+    virtual void tick();
 
     // vIndex: 3, symbol: ?stop@SleepState@@UEAAXXZ
     virtual void stop();
-
-    // symbol: ?tick@SleepState@@UEAAXXZ
-    MCVAPI void tick();
 
     // NOLINTEND
 };

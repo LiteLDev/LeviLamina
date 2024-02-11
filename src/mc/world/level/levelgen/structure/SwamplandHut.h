@@ -30,6 +30,9 @@ public:
     // vIndex: 12, symbol: ?addHardcodedSpawnAreas@SwamplandHut@@UEBAXAEAVLevelChunk@@@Z
     virtual void addHardcodedSpawnAreas(class LevelChunk& chunk) const;
 
+    // symbol: ??0SwamplandHut@@QEAA@FHH@Z
+    MCAPI SwamplandHut(short seaLevel, int west, int north);
+
     // NOLINTEND
 
     // protected:

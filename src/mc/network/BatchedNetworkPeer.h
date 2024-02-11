@@ -63,7 +63,7 @@ public:
     virtual void update();
 
     // vIndex: 5, symbol: ?flush@BatchedNetworkPeer@@UEAAX$$QEAV?$function@$$A6AXXZ@std@@@Z
-    virtual void flush(std::function<void(void)>&& callback);
+    virtual void flush(std::function<void()>&& callback);
 
     // symbol: ??0BatchedNetworkPeer@@QEAA@V?$shared_ptr@VNetworkPeer@@@std@@AEAVScheduler@@@Z
     MCAPI BatchedNetworkPeer(std::shared_ptr<class NetworkPeer> peer, class Scheduler& scheduler);

@@ -5,11 +5,7 @@
 // auto generated inclusion list
 #include "mc/enums/AdjustmentEffect.h"
 #include "mc/enums/Rotation.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace PoolAliasBinding { class PoolAliasLookup; }
-// clang-format on
+#include "mc/world/level/levelgen/structure/PoolAliasBinding.h"
 
 class JigsawPlacement {
 public:

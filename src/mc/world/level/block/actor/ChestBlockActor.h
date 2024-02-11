@@ -44,9 +44,6 @@ public:
     // symbol: ?clearInventory@ChestBlockActor@@UEAAHH@Z
     MCVAPI int clearInventory(int resizeTo);
 
-    // symbol: ?eraseLootTable@ChestBlockActor@@UEAAXXZ
-    MCVAPI void eraseLootTable();
-
     // symbol: ?getContainer@ChestBlockActor@@UEAAPEAVContainer@@XZ
     MCVAPI class Container* getContainer();
 
@@ -111,8 +108,8 @@ public:
     // symbol: ?save@ChestBlockActor@@UEBA_NAEAVCompoundTag@@@Z
     MCVAPI bool save(class CompoundTag& tag) const;
 
-    // symbol: ?saveItemInstanceData@ChestBlockActor@@UEAA_NAEAVCompoundTag@@@Z
-    MCVAPI bool saveItemInstanceData(class CompoundTag& base);
+    // symbol: ?saveItemInstanceData@ChestBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+    MCVAPI bool saveItemInstanceData(class CompoundTag& base) const;
 
     // symbol: ?saveItems@ChestBlockActor@@UEBA_NAEAVCompoundTag@@@Z
     MCVAPI bool saveItems(class CompoundTag& base) const;

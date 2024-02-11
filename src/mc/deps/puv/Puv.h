@@ -3,8 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/cereal/ResultCode.h"
 #include "mc/deps/cereal/SerializerContext.h"
-#include "mc/deps/cereal/internal/ResultCode.h"
+#include "mc/deps/puv/BlockCulling.h"
 #include "mc/deps/puv/CerealUpgraderBase.h"
 #include "mc/deps/puv/Logger.h"
 #include "mc/deps/puv/v1_20_50/BlockDescriptor.h"
@@ -35,6 +36,7 @@ namespace Puv::v1_20_50::BlockDescriptorSerializer { struct BlockDescriptorProxy
 namespace cereal { class Constraint; }
 namespace cereal { class NumericConstraint; }
 namespace cereal { class SerializerContext; }
+namespace cereal { class SerializerEnumMapping; }
 namespace cereal { struct ReflectionCtx; }
 namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on

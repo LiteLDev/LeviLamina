@@ -14,19 +14,16 @@
 #include "mc/deps/core/data/Write.h"
 #include "mc/entity/EntityFactoryT.h"
 #include "mc/entity/EntityModifier.h"
+#include "mc/entity/components/ShouldUpdateBoundingBoxRequestComponent.h"
 #include "mc/world/components/FlagComponent.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace UpdateBoundingBox { struct SetSizeArgs; }
 namespace UpdateBoundingBox { struct SystemParams; }
 // clang-format on
 
 namespace UpdateBoundingBox {
 // NOLINTBEGIN
-// symbol: ?baseSetSize@UpdateBoundingBox@@YAXAEBVVec2@@AEAUSetSizeArgs@1@@Z
-MCAPI void baseSetSize(class Vec2 const&, struct UpdateBoundingBox::SetSizeArgs&);
-
 // symbol:
 // ?onAABBRelativeSizeChanged@UpdateBoundingBox@@YAXAEBUAABBRelativeSizeUpdateComponent@@AEBUAABBShapeComponent@@AEAUOffsetsComponent@@@Z
 MCAPI void
@@ -60,19 +57,19 @@ MCAPI void singleTickOnSizeChanged(class StrictEntityContext const&, struct Upda
 MCAPI void tickImpl(struct UpdateBoundingBox::SystemParams&);
 
 // symbol:
-// ?transformPlayerSizeRequest@UpdateBoundingBox@@YAXAEAUShouldUpdateBoundingBoxRequestComponent@@AEBVCollisionBoxComponent@@V?$Optional@$$CBUIsHorizontalPoseFlagComponent@@@@AEBUSynchedActorDataComponent@@M@Z
+// ?transformPlayerSizeRequest@UpdateBoundingBox@@YAXAEAUShouldUpdateBoundingBoxRequestComponent@@AEBVCollisionBoxComponent@@V?$Optional@$$CBUIsHorizontalPoseFlagComponent@@@@AEBUActorDataFlagComponent@@M@Z
 MCAPI void transformPlayerSizeRequest(
     struct ShouldUpdateBoundingBoxRequestComponent&,
     class CollisionBoxComponent const&,
     class Optional<struct IsHorizontalPoseFlagComponent const>,
-    struct SynchedActorDataComponent const&,
+    struct ActorDataFlagComponent const&,
     float
 );
 
 // symbol:
-// ?visitCommonSetSize@UpdateBoundingBox@@YAXAEBVStrictEntityContext@@AEBUShouldUpdateBoundingBoxRequestComponent@@AEBUStateVectorComponent@@AEAUSynchedActorDataComponent@@AEAUAABBShapeComponent@@V?$optional_ref@$$CBVCollisionBoxComponent@@@@V?$EntityModifier@V?$FlagComponent@UWasPenetratingLastFrameFlag@@@@UShouldUpdateBoundingBoxRequestComponent@@@@@Z
+// ?visitCommonSetSize@UpdateBoundingBox@@YAXAEBVStrictEntityContext@@AEBUShouldUpdateBoundingBoxRequestComponent@@AEBUStateVectorComponent@@AEAUSynchedActorDataComponent@@AEAUAABBShapeComponent@@AEAUDepenetrationComponent@@V?$optional_ref@$$CBVCollisionBoxComponent@@@@V?$EntityModifier@UShouldUpdateBoundingBoxRequestComponent@@@@@Z
 MCAPI void
-visitCommonSetSize(class StrictEntityContext const&, struct ShouldUpdateBoundingBoxRequestComponent const&, struct StateVectorComponent const&, struct SynchedActorDataComponent&, struct AABBShapeComponent&, class optional_ref<class CollisionBoxComponent const>, class EntityModifier<class FlagComponent<struct WasPenetratingLastFrameFlag>, struct ShouldUpdateBoundingBoxRequestComponent>);
+visitCommonSetSize(class StrictEntityContext const&, struct ShouldUpdateBoundingBoxRequestComponent const&, struct StateVectorComponent const&, struct SynchedActorDataComponent&, struct AABBShapeComponent&, struct DepenetrationComponent&, class optional_ref<class CollisionBoxComponent const>, class EntityModifier<struct ShouldUpdateBoundingBoxRequestComponent>);
 // NOLINTEND
 
 }; // namespace UpdateBoundingBox

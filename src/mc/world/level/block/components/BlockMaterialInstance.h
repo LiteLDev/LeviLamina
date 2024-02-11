@@ -24,8 +24,9 @@ public:
     MCAPI ~BlockMaterialInstance();
 
     // symbol:
-    // ?blockRenderLayerEnumValues@BlockMaterialInstance@@2V?$initializer_list@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockRenderLayer@@@std@@@std@@B
-    MCAPI static std::initializer_list<std::pair<std::string, ::BlockRenderLayer>> const blockRenderLayerEnumValues;
+    // ?blockRenderLayerEnumValues@BlockMaterialInstance@@2V?$initializer_list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockRenderLayer@@@std@@@std@@B
+    MCAPI static std::initializer_list<std::pair<std::string const, ::BlockRenderLayer>> const
+        blockRenderLayerEnumValues;
 
     // symbol:
     // ?renderLayerNameBiMap@BlockMaterialInstance@@2V?$BidirectionalUnorderedMap@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockRenderLayer@@@@B

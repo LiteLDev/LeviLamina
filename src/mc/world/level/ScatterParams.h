@@ -74,10 +74,12 @@ public:
     // prevent constructor by default
     ScatterParams& operator=(ScatterParams const&);
     ScatterParams(ScatterParams const&);
-    ScatterParams();
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0ScatterParams@@QEAA@XZ
+    MCAPI ScatterParams();
+
     // symbol: ?addAdditionalSaveData@ScatterParams@@QEBAXAEAVCompoundTag@@@Z
     MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
 
@@ -94,9 +96,6 @@ public:
     // symbol: ?initMolangParams@ScatterParams@@SAXAEAVRenderParams@@AEBVBlockPos@@AEAVRandom@@@Z
     MCAPI static void
     initMolangParams(class RenderParams& molangParams, class BlockPos const& pos, class Random& random);
-
-    // symbol: ?initScatterParamIndices@ScatterParams@@SAXXZ
-    MCAPI static void initScatterParamIndices();
 
     // NOLINTEND
 

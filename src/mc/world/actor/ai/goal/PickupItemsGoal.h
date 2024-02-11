@@ -55,7 +55,7 @@ public:
     ) const;
 
     // symbol: ?_getShareableItem@PickupItemsGoal@@AEBAPEBUShareable@@AEBVItemStack@@@Z
-    MCAPI struct Shareable const* _getShareableItem(class ItemStack const& itemStack) const;
+    MCAPI struct Shareable const* _getShareableItem(class ItemStack const& item) const;
 
     // symbol: ?_hasRoomForCarriedItem@PickupItemsGoal@@AEBA_NXZ
     MCAPI bool _hasRoomForCarriedItem() const;

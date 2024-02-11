@@ -102,83 +102,77 @@ public:
     // vIndex: 14, symbol: ?removeAllItemsWithForceBalance@Container@@UEAAXXZ
     virtual void removeAllItemsWithForceBalance();
 
-    // vIndex: 15, symbol: ?dropContents@Container@@UEAAXAEAVBlockSource@@AEBVVec3@@_N@Z
+    // vIndex: 15, symbol: ?dropSlotContent@Container@@UEAAXAEAVBlockSource@@AEBVVec3@@_NH@Z
+    virtual void dropSlotContent(class BlockSource&, class Vec3 const&, bool, int);
+
+    // vIndex: 16, symbol: ?dropContents@Container@@UEAAXAEAVBlockSource@@AEBVVec3@@_N@Z
     virtual void dropContents(class BlockSource& region, class Vec3 const& pos, bool randomizeDrop);
 
-    // vIndex: 16, symbol: ?getContainerSize@CraftingContainer@@UEBAHXZ
+    // vIndex: 17, symbol: ?getContainerSize@CraftingContainer@@UEBAHXZ
     virtual int getContainerSize() const = 0;
 
-    // vIndex: 17, symbol: ?getMaxStackSize@CraftingContainer@@UEBAHXZ
+    // vIndex: 18, symbol: ?getMaxStackSize@CraftingContainer@@UEBAHXZ
     virtual int getMaxStackSize() const = 0;
 
-    // vIndex: 18, symbol: ?startOpen@EnderChestContainer@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 19, symbol: ?startOpen@EnderChestContainer@@UEAAXAEAVPlayer@@@Z
     virtual void startOpen(class Player& player) = 0;
 
-    // vIndex: 19, symbol: ?stopOpen@Container@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 20, symbol: ?stopOpen@Container@@UEAAXAEAVPlayer@@@Z
     virtual void stopOpen(class Player&);
 
-    // vIndex: 20, symbol: ?getSlotCopies@Container@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+    // vIndex: 21, symbol: ?getSlotCopies@Container@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
     virtual std::vector<class ItemStack> getSlotCopies() const;
 
-    // vIndex: 21, symbol:
+    // vIndex: 22, symbol:
     // ?getSlots@Container@@UEBA?BV?$vector@PEBVItemStack@@V?$allocator@PEBVItemStack@@@std@@@std@@XZ
     virtual std::vector<class ItemStack const*> const getSlots() const;
 
-    // vIndex: 22, symbol: ?getEmptySlotsCount@Container@@UEBAHXZ
+    // vIndex: 23, symbol: ?getEmptySlotsCount@Container@@UEBAHXZ
     virtual int getEmptySlotsCount() const;
 
-    // vIndex: 23, symbol: ?getItemCount@Container@@UEBAHAEBVItemStack@@@Z
+    // vIndex: 24, symbol: ?getItemCount@Container@@UEBAHAEBVItemStack@@@Z
     virtual int getItemCount(class ItemStack const& compare) const;
 
-    // vIndex: 24, symbol: ?findFirstSlotForItem@Container@@UEBAHAEBVItemStack@@@Z
+    // vIndex: 25, symbol: ?findFirstSlotForItem@Container@@UEBAHAEBVItemStack@@@Z
     virtual int findFirstSlotForItem(class ItemStack const& item) const;
 
-    // vIndex: 25, symbol: __unk_vfn_25
-    virtual void __unk_vfn_25();
+    // vIndex: 26, symbol: ?canPushInItem@Container@@UEBA_NHHAEBVItemStack@@@Z
+    virtual bool canPushInItem(int, int, class ItemStack const&) const;
 
-    // vIndex: 26, symbol: __unk_vfn_26
-    virtual void __unk_vfn_26();
+    // vIndex: 27, symbol: ?canPullOutItem@Container@@UEBA_NHHAEBVItemStack@@@Z
+    virtual bool canPullOutItem(int, int, class ItemStack const&) const;
 
-    // vIndex: 27, symbol: ?setContainerChanged@Container@@UEAAXH@Z
+    // vIndex: 28, symbol: ?setContainerChanged@Container@@UEAAXH@Z
     virtual void setContainerChanged(int slot);
 
-    // vIndex: 28, symbol: ?setContainerMoved@Container@@UEAAXXZ
+    // vIndex: 29, symbol: ?setContainerMoved@Container@@UEAAXXZ
     virtual void setContainerMoved();
 
-    // vIndex: 29, symbol:
+    // vIndex: 30, symbol:
     // ?setCustomName@Container@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void setCustomName(std::string const& name);
 
-    // vIndex: 30, symbol: ?hasCustomName@Container@@UEBA_NXZ
+    // vIndex: 31, symbol: ?hasCustomName@Container@@UEBA_NXZ
     virtual bool hasCustomName() const;
 
-    // vIndex: 31, symbol: ?readAdditionalSaveData@Container@@UEAAXAEBVCompoundTag@@@Z
+    // vIndex: 32, symbol: ?readAdditionalSaveData@Container@@UEAAXAEBVCompoundTag@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag);
 
-    // vIndex: 32, symbol: ?addAdditionalSaveData@Container@@UEAAXAEAVCompoundTag@@@Z
+    // vIndex: 33, symbol: ?addAdditionalSaveData@Container@@UEAAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag);
 
-    // vIndex: 33, symbol:
+    // vIndex: 34, symbol:
     // ?createTransactionContext@Container@@UEAAXV?$function@$$A6AXAEAVContainer@@HAEBVItemStack@@1@Z@std@@V?$function@$$A6AXXZ@3@@Z
-    virtual void createTransactionContext(TransactionContext callback, std::function<void(void)> execute);
+    virtual void createTransactionContext(TransactionContext callback, std::function<void()> execute);
 
-    // vIndex: 34, symbol: __unk_vfn_34
-    virtual void __unk_vfn_34();
+    // vIndex: 35, symbol: ?initializeContainerContents@Container@@UEAAXAEAVBlockSource@@@Z
+    virtual void initializeContainerContents(class BlockSource& region);
 
-    // vIndex: 35, symbol: ?isEmpty@Container@@UEBA_NXZ
+    // vIndex: 36, symbol: ?isEmpty@Container@@UEBA_NXZ
     virtual bool isEmpty() const;
 
-    // vIndex: 36, symbol: ?isSlotDisabled@Container@@UEBA_NH@Z
+    // vIndex: 37, symbol: ?isSlotDisabled@Container@@UEBA_NH@Z
     virtual bool isSlotDisabled(int) const;
-
-    // symbol: ?canPullOutItem@Container@@UEBA_NHHAEBVItemStack@@@Z
-    MCVAPI bool canPullOutItem(int slot, int face, class ItemStack const& item) const;
-
-    // symbol: ?canPushInItem@Container@@UEBA_NHHAEBVItemStack@@@Z
-    MCVAPI bool canPushInItem(int slot, int face, class ItemStack const& item) const;
-
-    // symbol: ?initializeContainerContents@Container@@UEAAXAEAVBlockSource@@@Z
-    MCVAPI void initializeContainerContents(class BlockSource& region);
 
     // symbol: ??0Container@@QEAA@AEBV0@@Z
     MCAPI Container(class Container const&);
@@ -231,11 +225,11 @@ public:
 
     // protected:
     // NOLINTBEGIN
+    // symbol: ?_dropSlotContent@Container@@IEAAXAEAVBlockSource@@AEAVRandom@@AEBVVec3@@_NH@Z
+    MCAPI void _dropSlotContent(class BlockSource&, class Random&, class Vec3 const&, bool, int);
+
     // symbol: ?_getEmptySlotsCount@Container@@IEBAHHH@Z
     MCAPI int _getEmptySlotsCount(int start, int end) const;
-
-    // symbol: ?_initRuntimeId@Container@@IEAAXAEBV?$TypedRuntimeId@UContainerRuntimeIdTag@@I$0A@@@@Z
-    MCAPI void _initRuntimeId(ContainerRuntimeId const&);
 
     // symbol: ?_serverInitId@Container@@IEAAXHAEAVItemStack@@V?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
     MCAPI void _serverInitId(int slot, class ItemStack& item, std::function<void(int, class ItemStack const&)>);

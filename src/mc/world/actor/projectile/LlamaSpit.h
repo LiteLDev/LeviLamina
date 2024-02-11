@@ -39,50 +39,20 @@ public:
     // vIndex: 10, symbol: __gen_??1LlamaSpit@@UEAA@XZ
     virtual ~LlamaSpit() = default;
 
-    // vIndex: 23, symbol: __unk_vfn_23
-    virtual void __unk_vfn_23();
-
     // vIndex: 29, symbol: ?normalTick@LlamaSpit@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 39, symbol: __unk_vfn_39
-    virtual void __unk_vfn_39();
-
-    // vIndex: 42, symbol: __unk_vfn_42
-    virtual void __unk_vfn_42();
-
-    // vIndex: 46, symbol: ?getBrightness@LlamaSpit@@UEBAMMAEBVIConstBlockSource@@@Z
+    // vIndex: 44, symbol: ?getBrightness@LlamaSpit@@UEBAMMAEBVIConstBlockSource@@@Z
     virtual float getBrightness(float, class IConstBlockSource const&) const;
 
-    // vIndex: 47, symbol: __unk_vfn_47
-    virtual void __unk_vfn_47();
-
-    // vIndex: 51, symbol: ?isPickable@LlamaSpit@@UEAA_NXZ
+    // vIndex: 48, symbol: ?isPickable@LlamaSpit@@UEAA_NXZ
     virtual bool isPickable();
 
-    // vIndex: 60, symbol: __unk_vfn_60
-    virtual void __unk_vfn_60();
-
-    // vIndex: 61, symbol: __unk_vfn_61
-    virtual void __unk_vfn_61();
-
-    // vIndex: 62, symbol: __unk_vfn_62
-    virtual void __unk_vfn_62();
-
-    // vIndex: 84, symbol: ?getPickRadius@LlamaSpit@@UEAAMXZ
+    // vIndex: 81, symbol: ?getPickRadius@LlamaSpit@@UEAAMXZ
     virtual float getPickRadius();
 
-    // vIndex: 100, symbol: ?getSourceUniqueID@LlamaSpit@@UEBA?AUActorUniqueID@@XZ
+    // vIndex: 97, symbol: ?getSourceUniqueID@LlamaSpit@@UEBA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID getSourceUniqueID() const;
-
-    // vIndex: 107, symbol: __unk_vfn_107
-    virtual void __unk_vfn_107();
-
-    // vIndex: 144, symbol: __unk_vfn_144
-    virtual void __unk_vfn_144();
-
-    // vIndex: 162, symbol: __unk_vfn_162
-    virtual void __unk_vfn_162();
 
     // symbol: ??0LlamaSpit@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI LlamaSpit(

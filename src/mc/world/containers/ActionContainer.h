@@ -20,10 +20,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?at@ActionContainer@npc@@QEAAPEAV?$variant@UCommandAction@npc@@UUrlAction@2@@std@@_K@Z
-    MCAPI std::variant<struct npc::CommandAction, struct npc::UrlAction>* at(uint64);
+    MCAPI std::variant<struct npc::CommandAction, struct npc::UrlAction>* at(uint64 i);
 
     // symbol: ?at@ActionContainer@npc@@QEBAPEBV?$variant@UCommandAction@npc@@UUrlAction@2@@std@@_K@Z
-    MCAPI std::variant<struct npc::CommandAction, struct npc::UrlAction> const* at(uint64) const;
+    MCAPI std::variant<struct npc::CommandAction, struct npc::UrlAction> const* at(uint64 i) const;
 
     // symbol: ?countUrl@ActionContainer@npc@@QEBA_KXZ
     MCAPI uint64 countUrl() const;

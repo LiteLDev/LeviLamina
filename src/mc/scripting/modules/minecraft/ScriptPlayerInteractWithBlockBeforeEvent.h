@@ -43,6 +43,10 @@ public:
         class Vec3
     );
 
+    // symbol: ??4ScriptPlayerInteractWithBlockBeforeEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
+    MCAPI struct ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent&
+    operator=(struct ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent&&);
+
     // symbol:
     // ?bind@ScriptPlayerInteractWithBlockBeforeEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptPlayerInteractWithBlockBeforeEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<

@@ -17,8 +17,5 @@ public:
     // vIndex: 0, symbol: __gen_??1BlockDestructibleByMiningComponent@@UEAA@XZ
     virtual ~BlockDestructibleByMiningComponent() = default;
 
-    // symbol: ?usesNewComponentStorage@BlockDestructibleByMiningComponent@@SA_NXZ
-    MCAPI static bool usesNewComponentStorage();
-
     // NOLINTEND
 };

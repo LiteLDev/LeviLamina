@@ -61,9 +61,6 @@ public:
     // symbol: ?tick@CrafterBlockActor@@UEAAXAEAVBlockSource@@@Z
     MCVAPI void tick(class BlockSource&);
 
-    // symbol: ??0CrafterBlockActor@@QEAA@VBlockPos@@@Z
-    MCAPI explicit CrafterBlockActor(class BlockPos);
-
     // symbol: ?getDisabledSlotsCount@CrafterBlockActor@@QEBAHXZ
     MCAPI int getDisabledSlotsCount() const;
 

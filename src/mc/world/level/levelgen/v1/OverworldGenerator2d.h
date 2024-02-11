@@ -6,9 +6,7 @@
 #include "mc/world/level/levelgen/v1/BeardKernel.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/data/OperationNode.h"
 #include "mc/deps/core/utility/MultidimensionalArray.h"
-#include "mc/world/level/levelgen/GeneratorType.h"
 #include "mc/world/level/levelgen/v1/OverworldGenerator.h"
 
 class Biome;
@@ -80,16 +78,8 @@ public:
     // ?getXoroshiroPositionalRandomFactory@OverworldGenerator2d@@EEBA?AV?$optional@VXoroshiroPositionalRandomFactory@@@std@@XZ
     virtual std::optional<class XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory() const;
 
-    // symbol:
-    // ??0OverworldGenerator2d@@QEAA@AEAVDimension@@I_NPEBVBiome@@V?$unique_ptr@VStructureFeatureRegistry@@U?$default_delete@VStructureFeatureRegistry@@@std@@@std@@@Z
-    MCAPI
-    OverworldGenerator2d(
-        class Dimension&                          dimension,
-        uint                                      seed,
-        bool                                      isLegacyWorld,
-        Biome const*                              biomeOverride,
-        std::unique_ptr<StructureFeatureRegistry> structureFeatureRegistry
-    );
+    // symbol: ??0OverworldGenerator2d@@QEAA@AEAVDimension@@I_NPEBVBiome@@@Z
+    MCAPI OverworldGenerator2d(class Dimension&, uint, bool, class Biome const*);
 
     // NOLINTEND
 
@@ -99,15 +89,6 @@ public:
     // ?_generateDensityCellsForChunk@OverworldGenerator2d@@AEBA?AV?$MultidimensionalArray@M$04$04$0CJ@@Util@@AEBVChunkPos@@@Z
     MCAPI class Util::MultidimensionalArray<float, 5, 5, 41>
     _generateDensityCellsForChunk(class ChunkPos const& chunkPos) const;
-
-    // symbol:
-    // ?_makeBiomeSource@OverworldGenerator2d@@CA?AV?$unique_ptr@VBiomeSource@@U?$default_delete@VBiomeSource@@@std@@@std@@IAEBVDimension@@@Z
-    MCAPI static std::unique_ptr<class BiomeSource> _makeBiomeSource(uint seed, class Dimension const& dimension);
-
-    // symbol:
-    // ?_makeCommonNodeGraph@OverworldGenerator2d@@CA?AV?$shared_ptr@V?$OperationNode@PEAVBiome@@VPos2d@@@@@std@@W4GeneratorType@@AEBVBiomeRegistry@@@Z
-    MCAPI static std::shared_ptr<class OperationNode<class Biome*, class Pos2d>>
-    _makeCommonNodeGraph(::GeneratorType generatorType, class BiomeRegistry const& biomeRegistry);
 
     // NOLINTEND
 };

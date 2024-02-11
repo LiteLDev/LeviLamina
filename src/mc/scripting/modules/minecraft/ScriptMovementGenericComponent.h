@@ -24,8 +24,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptMovementGenericComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptMovementGenericComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptMovementGenericComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptMovementGenericComponent() = default;
 
     // symbol:
     // ?bind@ScriptMovementGenericComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptMovementGenericComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z

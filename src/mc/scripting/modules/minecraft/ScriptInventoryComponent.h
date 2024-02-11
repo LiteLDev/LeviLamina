@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptInventoryComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptInventoryComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptInventoryComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptInventoryComponent() = default;
 
     // symbol: ??0ScriptInventoryComponent@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
     MCAPI ScriptInventoryComponent(class ScriptModuleMinecraft::ScriptInventoryComponent const&);
@@ -64,10 +64,6 @@ public:
 
     // symbol: ?getRestrictToOwner@ScriptInventoryComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_N$$V@Scripting@@XZ
     MCAPI class Scripting::Result<bool> getRestrictToOwner() const;
-
-    // symbol: ??4ScriptInventoryComponent@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
-    MCAPI class ScriptModuleMinecraft::ScriptInventoryComponent&
-    operator=(class ScriptModuleMinecraft::ScriptInventoryComponent&&);
 
     // symbol:
     // ?bind@ScriptInventoryComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptInventoryComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z

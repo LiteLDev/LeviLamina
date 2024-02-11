@@ -77,6 +77,9 @@ public:
     // symbol: ?hasTemporalBuffs@AttributeInstance@@QEBA_NXZ
     MCAPI bool hasTemporalBuffs() const;
 
+    // symbol: ?inheritFrom@AttributeInstance@@QEAAXAEBV1@PEAVBaseAttributeMap@@@Z
+    MCAPI void inheritFrom(class AttributeInstance const& other, class BaseAttributeMap* attributeMap);
+
     // symbol: ?isValid@AttributeInstance@@QEBA_NXZ
     MCAPI bool isValid() const;
 
@@ -103,9 +106,6 @@ public:
 
     // symbol: ?removeModifier@AttributeInstance@@QEAAXV?$shared_ptr@VAttributeModifier@@@std@@@Z
     MCAPI void removeModifier(std::shared_ptr<class AttributeModifier> modifier);
-
-    // symbol: ?removeModifiers@AttributeInstance@@QEAAXXZ
-    MCAPI void removeModifiers();
 
     // symbol: ?resetToDefaultValue@AttributeInstance@@QEAAXXZ
     MCAPI void resetToDefaultValue();

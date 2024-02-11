@@ -3,8 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/OwnerPtrT.h"
-#include "mc/common/wrapper/SharePtrRefTraits.h"
+#include "mc/common/wrapper/OwnerPtr.h"
 #include "mc/deps/core/PathBuffer.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/world/level/storage/LevelStorageSource.h"
@@ -49,10 +48,10 @@ public:
     virtual void getLevelList(std::vector<class Core::PathBuffer<std::string>>& paths);
 
     // vIndex: 6, symbol:
-    // ?createLevelStorage@ExternalFileLevelStorageSource@@UEAA?AV?$OwnerPtrT@U?$SharePtrRefTraits@VLevelStorage@@@@@@AEAVScheduler@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVContentIdentity@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@5@V?$not_null@V?$NonOwnerPointer@VLevelDbEnv@@@Bedrock@@@8@V?$unique_ptr@VLevelStorageEventing@@U?$default_delete@VLevelStorageEventing@@@std@@@5@@Z
+    // ?createLevelStorage@ExternalFileLevelStorageSource@@UEAA?AV?$OwnerPtr@VLevelStorage@@@@AEAVScheduler@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVContentIdentity@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@5@V?$not_null@V?$NonOwnerPointer@VLevelDbEnv@@@Bedrock@@@8@V?$unique_ptr@VLevelStorageEventing@@U?$default_delete@VLevelStorageEventing@@@std@@@5@@Z
     virtual class
-        OwnerPtrT<struct SharePtrRefTraits<class LevelStorage>>
-        createLevelStorage(class Scheduler& scheduler, std::string const& levelId, class ContentIdentity const& contentIdentity, Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider, std::chrono::nanoseconds const&, Bedrock::NotNullNonOwnerPtr<class LevelDbEnv>, std::unique_ptr<class LevelStorageEventing>);
+        OwnerPtr<class LevelStorage>
+        createLevelStorage(class Scheduler& scheduler, std::string const& levelId, class ContentIdentity const& contentIdentity, Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider, std::chrono::nanoseconds const&, Bedrock::NotNullNonOwnerPtr<class LevelDbEnv> levelDbEnv, std::unique_ptr<class LevelStorageEventing>);
 
     // vIndex: 7, symbol:
     // ?createLevelLooseStorage@ExternalFileLevelStorageSource@@UEAA?AV?$unique_ptr@VLevelLooseFileStorage@@U?$default_delete@VLevelLooseFileStorage@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBVContentIdentity@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
@@ -84,14 +83,17 @@ public:
     virtual bool
     createBackupCopyOfWorld(std::string const& levelId, std::string const& newLeveId, std::string const& newName);
 
-    // vIndex: 13, symbol: __unk_vfn_13
-    virtual void __unk_vfn_13();
+    // vIndex: 13, symbol:
+    // ?isConvertible@ExternalFileLevelStorageSource@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    virtual bool isConvertible(std::string const& levelId);
 
-    // vIndex: 14, symbol: __unk_vfn_14
-    virtual void __unk_vfn_14();
+    // vIndex: 14, symbol:
+    // ?requiresConversion@ExternalFileLevelStorageSource@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    virtual bool requiresConversion(std::string const& levelId);
 
-    // vIndex: 15, symbol: __unk_vfn_15
-    virtual void __unk_vfn_15();
+    // vIndex: 15, symbol:
+    // ?convertLevel@ExternalFileLevelStorageSource@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAVProgressListener@@@Z
+    virtual bool convertLevel(std::string const& levelId, class ProgressListener* progress);
 
     // vIndex: 16, symbol: ?isLevelMarkedForSync@ExternalFileLevelStorageSource@@UEBA_NAEBVPath@Core@@@Z
     virtual bool isLevelMarkedForSync(class Core::Path const& levelPath) const;
@@ -116,21 +118,9 @@ public:
     virtual class Core::PathBuffer<std::string> const
     getPathToLevelInfo(std::string const& levelId, bool forceInfo) const;
 
-    // symbol:
-    // ?convertLevel@ExternalFileLevelStorageSource@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAVProgressListener@@@Z
-    MCVAPI bool convertLevel(std::string const& levelId, class ProgressListener* progress);
-
-    // symbol:
+    // vIndex: 22, symbol:
     // ?isBetaRetailLevel@ExternalFileLevelStorageSource@@UEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI bool isBetaRetailLevel(std::string const& levelId) const;
-
-    // symbol:
-    // ?isConvertible@ExternalFileLevelStorageSource@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI bool isConvertible(std::string const& levelId);
-
-    // symbol:
-    // ?requiresConversion@ExternalFileLevelStorageSource@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI bool requiresConversion(std::string const& levelId);
+    virtual bool isBetaRetailLevel(std::string const& levelId) const;
 
     // symbol:
     // ??0ExternalFileLevelStorageSource@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@VFilePathManager@Core@@@Bedrock@@@gsl@@AEBV?$not_null@V?$NonOwnerPointer@VSaveTransactionManager@@@Bedrock@@@2@@Z

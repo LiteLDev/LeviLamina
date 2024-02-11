@@ -26,17 +26,12 @@ public:
         // prevent constructor by default
         Definition& operator=(Definition const&);
         Definition(Definition const&);
+        Definition();
 
     public:
         // NOLINTBEGIN
         // vIndex: 0, symbol: ??1Definition@StayNearNoteblockGoal@@UEAA@XZ
         virtual ~Definition();
-
-        // symbol: ??0Definition@StayNearNoteblockGoal@@QEAA@XZ
-        MCAPI Definition();
-
-        // symbol: ?initialize@Definition@StayNearNoteblockGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
-        MCAPI void initialize(class EntityContext& entity, class StayNearNoteblockGoal& goal) const;
 
         // symbol:
         // ?buildSchema@Definition@StayNearNoteblockGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDefinition@StayNearNoteblockGoal@@@JsonUtil@@@4@@Z
@@ -79,9 +74,6 @@ public:
     // vIndex: 7, symbol:
     // ?appendDebugInfo@StayNearNoteblockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string& str) const;
-
-    // symbol: ??0StayNearNoteblockGoal@@QEAA@AEAVMob@@@Z
-    MCAPI explicit StayNearNoteblockGoal(class Mob& mob);
 
     // NOLINTEND
 

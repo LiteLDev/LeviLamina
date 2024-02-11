@@ -33,7 +33,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_applyBase@RandomDyeFunction@@AEBAXAEAVItemStackBase@@AEAVRandom@@@Z
-    MCAPI void _applyBase(class ItemStackBase& itemStack, class Random& random) const;
+    MCAPI void _applyBase(class ItemStackBase& item, class Random& random) const;
 
     // symbol: ?_getRandomArmorColor@RandomDyeFunction@@AEBA?AVColor@mce@@AEAVRandom@@@Z
     MCAPI class mce::Color _getRandomArmorColor(class Random& random) const;

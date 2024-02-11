@@ -9,15 +9,6 @@ class Actor;
 
 class WeakStorageEntity {
 public:
-    // WeakStorageEntity inner types define
-    enum class EmptyInit : int {
-        NoValue = 0,
-    };
-
-    enum class VariadicInit : int {
-        NonAmbiguous = 0,
-    };
-
     WeakRefT<EntityRegistryRefTraits> mRegistry;
     class EntityId                    mEntity;
 
@@ -27,9 +18,9 @@ public:
     }
 
 public:
-    WeakStorageEntity& operator=(WeakStorageEntity const&) = delete;
-    WeakStorageEntity(WeakStorageEntity const&)            = delete;
-    WeakStorageEntity()                                    = delete;
+    // prevent constructor by default
+    WeakStorageEntity& operator=(WeakStorageEntity const&);
+    WeakStorageEntity(WeakStorageEntity const&);
 
 public:
     // NOLINTBEGIN
@@ -40,17 +31,17 @@ public:
 
     // protected:
     // NOLINTBEGIN
+    // symbol: ??0WeakStorageEntity@@IEAA@XZ
+    MCAPI WeakStorageEntity();
+
+    // symbol: ??0WeakStorageEntity@@IEAA@AEBVEntityContext@@@Z
+    MCAPI explicit WeakStorageEntity(class EntityContext const&);
+
     // symbol: ??0WeakStorageEntity@@IEAA@AEBVOwnerStorageEntity@@@Z
     MCAPI explicit WeakStorageEntity(class OwnerStorageEntity const& ownerStorage);
 
     // symbol: ??0WeakStorageEntity@@IEAA@AEBVStackResultStorageEntity@@@Z
     MCAPI explicit WeakStorageEntity(class StackResultStorageEntity const& stackResultStorage);
-
-    // symbol: ??0WeakStorageEntity@@IEAA@W4EmptyInit@0@@Z
-    MCAPI explicit WeakStorageEntity(::WeakStorageEntity::EmptyInit);
-
-    // symbol: ??0WeakStorageEntity@@IEAA@W4VariadicInit@0@AEBVEntityContext@@@Z
-    MCAPI WeakStorageEntity(::WeakStorageEntity::VariadicInit, class EntityContext const& stackRef);
 
     // symbol: ?_isSet@WeakStorageEntity@@IEBA_NXZ
     MCAPI bool _isSet() const;

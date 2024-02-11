@@ -43,56 +43,17 @@ public:
     // vIndex: 10, symbol: __gen_??1EvocationIllager@@UEAA@XZ
     virtual ~EvocationIllager() = default;
 
-    // vIndex: 23, symbol: __unk_vfn_23
-    virtual void __unk_vfn_23();
-
-    // vIndex: 39, symbol: __unk_vfn_39
-    virtual void __unk_vfn_39();
-
-    // vIndex: 42, symbol: __unk_vfn_42
-    virtual void __unk_vfn_42();
-
-    // vIndex: 47, symbol: __unk_vfn_47
-    virtual void __unk_vfn_47();
-
-    // vIndex: 60, symbol: __unk_vfn_60
-    virtual void __unk_vfn_60();
-
-    // vIndex: 61, symbol: __unk_vfn_61
-    virtual void __unk_vfn_61();
-
-    // vIndex: 62, symbol: __unk_vfn_62
-    virtual void __unk_vfn_62();
-
-    // vIndex: 107, symbol: __unk_vfn_107
-    virtual void __unk_vfn_107();
-
-    // vIndex: 144, symbol: __unk_vfn_144
-    virtual void __unk_vfn_144();
-
-    // vIndex: 147, symbol: ?die@EvocationIllager@@UEAAXAEBVActorDamageSource@@@Z
+    // vIndex: 143, symbol: ?die@EvocationIllager@@UEAAXAEBVActorDamageSource@@@Z
     virtual void die(class ActorDamageSource const& source);
 
-    // vIndex: 162, symbol: __unk_vfn_162
-    virtual void __unk_vfn_162();
-
-    // vIndex: 167, symbol: __unk_vfn_167
-    virtual void __unk_vfn_167();
-
-    // vIndex: 168, symbol: __unk_vfn_168
-    virtual void __unk_vfn_168();
-
-    // vIndex: 177, symbol: ?aiStep@EvocationIllager@@UEAAXXZ
+    // vIndex: 171, symbol: ?aiStep@EvocationIllager@@UEAAXXZ
     virtual void aiStep();
 
-    // vIndex: 185, symbol: ?isAlliedTo@EvocationIllager@@UEAA_NPEAVMob@@@Z
+    // vIndex: 179, symbol: ?isAlliedTo@EvocationIllager@@UEAA_NPEAVMob@@@Z
     virtual bool isAlliedTo(class Mob* other);
 
-    // vIndex: 187, symbol: ?getArmorValue@EvocationIllager@@MEBAHXZ
+    // vIndex: 181, symbol: ?getArmorValue@EvocationIllager@@MEBAHXZ
     virtual int getArmorValue() const;
-
-    // symbol: ?canExistInPeaceful@EvocationIllager@@UEBA_NXZ
-    MCVAPI bool canExistInPeaceful() const;
 
     // symbol: ??0EvocationIllager@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI EvocationIllager(

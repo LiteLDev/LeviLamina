@@ -46,7 +46,7 @@ public:
     virtual int64 readLongLong();
 
     // vIndex: 9, symbol: ?readBytes@VarIntDataInput@@UEAA_NPEAX_K@Z
-    virtual bool readBytes(void*, uint64);
+    virtual bool readBytes(void* data, uint64 bytes);
 
     // vIndex: 10, symbol: ?numBytesLeft@VarIntDataInput@@UEBA_KXZ
     virtual uint64 numBytesLeft() const;

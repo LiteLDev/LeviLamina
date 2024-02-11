@@ -82,7 +82,14 @@ public:
     MCAPI static long _createCallHandle(struct HC_CALL**, class Bedrock::Http::Request const& request);
 
     // symbol: ?_requestBodyRead@LibHttpClientImpl@Http@Bedrock@@CAJPEAUHC_CALL@@_K1PEAXPEAEPEA_K@Z
-    MCAPI static long _requestBodyRead(struct HC_CALL*, uint64, uint64, void*, uchar*, uint64*);
+    MCAPI static long _requestBodyRead(
+        struct HC_CALL* call,
+        uint64          offset,
+        uint64,
+        void*   context,
+        uchar*  destination,
+        uint64* bytesWritten
+    );
 
     // symbol: ?_responseBodyWrite@LibHttpClientImpl@Http@Bedrock@@CAJPEAUHC_CALL@@PEBE_KPEAX@Z
     MCAPI static long _responseBodyWrite(struct HC_CALL* call, uchar const* source, uint64, void* context);

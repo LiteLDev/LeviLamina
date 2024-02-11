@@ -55,7 +55,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?AckTimeout@ReliabilityLayer@RakNet@@QEAA_N_K@Z
-    MCAPI bool AckTimeout(uint64);
+    MCAPI bool AckTimeout(uint64 curTime);
 
     // symbol: ?AreAcksWaiting@ReliabilityLayer@RakNet@@QEAA_NXZ
     MCAPI bool AreAcksWaiting();

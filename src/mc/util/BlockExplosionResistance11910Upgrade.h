@@ -3,17 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/util/CerealSchemaUpgrade.h"
+#include "mc/util/BlockCerealSchemaUpgrade.h"
 
 // auto generated forward declare list
 // clang-format off
-class CerealSchemaUpgrade;
-namespace cereal { class SchemaFactory; }
+class BlockCerealSchemaUpgrade;
+class SemVersion;
 // clang-format on
 
 namespace BlockExplosionResistanceVersioning {
 
-class BlockExplosionResistance11910Upgrade : public ::CerealSchemaUpgrade {
+class BlockExplosionResistance11910Upgrade : public ::BlockCerealSchemaUpgrade {
 public:
     // prevent constructor by default
     BlockExplosionResistance11910Upgrade& operator=(BlockExplosionResistance11910Upgrade const&);
@@ -25,15 +25,16 @@ public:
     virtual ~BlockExplosionResistance11910Upgrade() = default;
 
     // vIndex: 1, symbol:
-    // ?previousSchema@BlockExplosionResistance11910Upgrade@BlockExplosionResistanceVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z
-    virtual void previousSchema(class cereal::SchemaFactory&) const;
+    // ?previousSchema@BlockExplosionResistance11910Upgrade@BlockExplosionResistanceVersioning@@UEBA_NAEBV?$GenericValue@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@@rapidjson@@@Z
+    virtual bool previousSchema(rapidjson::GenericValue<
+                                rapidjson::UTF8<char>,
+                                rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>> const&) const;
 
     // vIndex: 2, symbol:
-    // ?upgradeToNext@BlockExplosionResistance11910Upgrade@BlockExplosionResistanceVersioning@@UEBA_NAEAV?$GenericDocument@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@VCrtAllocator@2@@rapidjson@@@Z
-    virtual bool upgradeToNext(rapidjson::GenericDocument<
-                               rapidjson::UTF8<char>,
-                               rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>,
-                               rapidjson::CrtAllocator>& document) const;
+    // ?upgradeToNext@BlockExplosionResistance11910Upgrade@BlockExplosionResistanceVersioning@@UEBAXAEAV?$GenericDocument@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@VCrtAllocator@2@@rapidjson@@AEBVSemVersion@@@Z
+    virtual void
+    upgradeToNext(rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&, class SemVersion const&)
+        const;
 
     // symbol: ??0BlockExplosionResistance11910Upgrade@BlockExplosionResistanceVersioning@@QEAA@XZ
     MCAPI BlockExplosionResistance11910Upgrade();

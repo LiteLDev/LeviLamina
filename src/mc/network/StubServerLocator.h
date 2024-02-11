@@ -33,7 +33,7 @@ public:
     );
 
     // vIndex: 4, symbol: ?stopAnnouncingServer@StubServerLocator@@UEAAXV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
-    virtual void stopAnnouncingServer(class Bedrock::NonOwnerPointer<class AppPlatform>);
+    virtual void stopAnnouncingServer(class Bedrock::NonOwnerPointer<class AppPlatform> appPlatform);
 
     // vIndex: 5, symbol: ?startServerDiscovery@StubServerLocator@@UEAAXUPortPair@@@Z
     virtual void startServerDiscovery(struct PortPair);

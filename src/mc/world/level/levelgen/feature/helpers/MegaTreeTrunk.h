@@ -22,7 +22,7 @@ public:
     // vIndex: 1, symbol:
     // ?placeTrunk@MegaTreeTrunk@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@HAEAVRenderParams@@AEBUTreeParams@TreeHelper@@PEBVITreeCanopy@@@Z
     virtual std::optional<class BlockPos>
-    placeTrunk(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random, int treeHeight, class RenderParams& renderParams, struct TreeHelper::TreeParams const&, class ITreeCanopy const*)
+    placeTrunk(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random, int treeHeight, class RenderParams& renderParams, struct TreeHelper::TreeParams const& treeParams, class ITreeCanopy const*)
         const;
 
     // vIndex: 2, symbol: ?getTreeHeight@MegaTreeTrunk@@UEBAHAEAVRandom@@@Z
@@ -33,9 +33,12 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_prepareSpawn@MegaTreeTrunk@@AEBA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@HAEBUTreeParams@TreeHelper@@@Z
-    MCAPI bool
-    _prepareSpawn(class IBlockWorldGenAPI& target, class BlockPos const& pos, int treeHeight, struct TreeHelper::TreeParams const&)
-        const;
+    MCAPI bool _prepareSpawn(
+        class IBlockWorldGenAPI&             target,
+        class BlockPos const&                pos,
+        int                                  treeHeight,
+        struct TreeHelper::TreeParams const& treeParams
+    ) const;
 
     // NOLINTEND
 };

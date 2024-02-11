@@ -26,8 +26,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptBreathableComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptBreathableComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptBreathableComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptBreathableComponent() = default;
 
     // vIndex: 1, symbol:
     // ?_isValid@?$ECSScriptActorComponent@VBreathableComponent@@VBreathableDefinition@@@ScriptModuleMinecraft@@MEBA_NXZ

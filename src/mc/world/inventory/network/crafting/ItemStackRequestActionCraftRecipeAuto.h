@@ -10,6 +10,7 @@ public:
     // prevent constructor by default
     ItemStackRequestActionCraftRecipeAuto& operator=(ItemStackRequestActionCraftRecipeAuto const&);
     ItemStackRequestActionCraftRecipeAuto(ItemStackRequestActionCraftRecipeAuto const&);
+    ItemStackRequestActionCraftRecipeAuto();
 
 public:
     // NOLINTBEGIN
@@ -35,9 +36,6 @@ public:
 
     // vIndex: 6, symbol: ?getRecipeNetId@ItemStackRequestActionCraftGrindstone@@UEBAAEBUItemStackNetIdVariant@@XZ
     virtual struct ItemStackNetIdVariant const& getRecipeNetId() const;
-
-    // symbol: ??0ItemStackRequestActionCraftRecipeAuto@@QEAA@XZ
-    MCAPI ItemStackRequestActionCraftRecipeAuto();
 
     // NOLINTEND
 };

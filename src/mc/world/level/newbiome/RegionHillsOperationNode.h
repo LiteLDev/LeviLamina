@@ -20,12 +20,12 @@ public:
     virtual ~RegionHillsOperationNode() = default;
 
     // vIndex: 1, symbol: ?init@OperationNodeBase@OperationNodeDetails@@UEAAX_J@Z
-    virtual void init(int64);
+    virtual void init(int64 seed);
 
     // vIndex: 2, symbol:
     // ?_allocateAndFill@?$MixerOperationNode@PEAVBiome@@VPos2d@@PEAV1@$$V@@MEBA?AV?$TransferData@PEAVBiome@@@OperationNodeDetails@@_KAEBVPos2d@@1@Z
     virtual class OperationNodeDetails::TransferData<class Biome*>
-    _allocateAndFill(uint64, class Pos2d const&, class Pos2d const&) const;
+    _allocateAndFill(uint64 requiredBytes, class Pos2d const& origin, class Pos2d const& size) const;
 
     // vIndex: 3, symbol:
     // ?_fillArea@RegionHillsOperationNode@@MEBAXAEAV?$WorkingData@PEAVBiome@@PEAV1@@OperationNodeDetails@@AEBVPos2d@@1H@Z

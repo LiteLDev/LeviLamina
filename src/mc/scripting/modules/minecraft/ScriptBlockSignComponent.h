@@ -32,8 +32,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptBlockSignComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptBlockSignComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptBlockSignComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptBlockSignComponent() = default;
 
     // symbol:
     // ?getRawText@ScriptBlockSignComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@UScriptRawTextInterface@ScriptModuleMinecraft@@@std@@$$V@Scripting@@W4SignTextSide@@@Z
@@ -65,8 +65,8 @@ public:
     // ?setTextDyeColor@ScriptBlockSignComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@V?$optional@W4ItemColor@@@std@@W4SignTextSide@@@Z
     MCAPI class Scripting::Result<void> setTextDyeColor(std::optional<::ItemColor> color, ::SignTextSide side);
 
-    // symbol: ?setWaxed@ScriptBlockSignComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@XZ
-    MCAPI class Scripting::Result<void> setWaxed();
+    // symbol: ?setWaxed@ScriptBlockSignComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@_N@Z
+    MCAPI class Scripting::Result<void> setWaxed(bool);
 
     // symbol:
     // ?bind@ScriptBlockSignComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptBlockSignComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z

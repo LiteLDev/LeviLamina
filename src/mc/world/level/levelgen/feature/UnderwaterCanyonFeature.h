@@ -19,8 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1UnderwaterCanyonFeature@@UEAA@XZ
-    virtual ~UnderwaterCanyonFeature();
+    // vIndex: 0, symbol: __gen_??1UnderwaterCanyonFeature@@UEAA@XZ
+    virtual ~UnderwaterCanyonFeature() = default;
 
     // vIndex: 1, symbol:
     // ?carve@UnderwaterCanyonFeature@@MEBA_NAEAVBlockVolume@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVVec3@@4HHHHHHMMV?$span@$$CBM$0?0@gsl@@AEBUWorldGenContext@@@Z

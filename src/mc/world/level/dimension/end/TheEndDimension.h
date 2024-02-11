@@ -8,6 +8,11 @@
 #include "mc/world/AutomaticID.h"
 #include "mc/world/level/dimension/Dimension.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace br::worldgen { class StructureSetRegistry; }
+// clang-format on
+
 class EndDragonFight;
 
 class TheEndDimension : public ::Dimension {
@@ -22,8 +27,8 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 8, symbol:
-    // ?createGenerator@TheEndDimension@@UEAA?AV?$unique_ptr@VWorldGenerator@@U?$default_delete@VWorldGenerator@@@std@@@std@@XZ
-    virtual std::unique_ptr<class WorldGenerator> createGenerator();
+    // ?createGenerator@TheEndDimension@@UEAA?AV?$unique_ptr@VWorldGenerator@@U?$default_delete@VWorldGenerator@@@std@@@std@@AEBVStructureSetRegistry@worldgen@br@@@Z
+    virtual std::unique_ptr<class WorldGenerator> createGenerator(class br::worldgen::StructureSetRegistry const&);
 
     // vIndex: 9, symbol: ?upgradeLevelChunk@TheEndDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@1@Z
     virtual void upgradeLevelChunk(class ChunkSource&, class LevelChunk&, class LevelChunk&);
@@ -50,8 +55,8 @@ public:
     // symbol: ?isNaturalDimension@TheEndDimension@@UEBA_NXZ
     virtual bool isNaturalDimension() const;
 
-    // symbol: ?init@TheEndDimension@@UEAAXXZ
-    virtual void init();
+    // symbol: ?init@TheEndDimension@@UEAAXAEBVStructureSetRegistry@worldgen@br@@@Z
+    virtual void init(class br::worldgen::StructureSetRegistry const&);
 
     // symbol: ?tick@TheEndDimension@@UEAAXXZ
     virtual void tick();
@@ -101,14 +106,6 @@ public:
 
     // symbol: ?AMBIENT_MULTIPLIER@TheEndDimension@@2MB
     MCAPI static float const AMBIENT_MULTIPLIER;
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    // symbol:
-    // ?makeStructureFeatures@TheEndDimension@@CA?AV?$unique_ptr@VStructureFeatureRegistry@@U?$default_delete@VStructureFeatureRegistry@@@std@@@std@@AEAVDimension@@I@Z
-    MCAPI static std::unique_ptr<class StructureFeatureRegistry> makeStructureFeatures(class Dimension&, uint);
 
     // NOLINTEND
 };

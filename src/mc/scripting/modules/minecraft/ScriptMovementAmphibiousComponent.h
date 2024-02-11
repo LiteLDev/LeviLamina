@@ -24,8 +24,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptMovementAmphibiousComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptMovementAmphibiousComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptMovementAmphibiousComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptMovementAmphibiousComponent() = default;
 
     // symbol:
     // ?bind@ScriptMovementAmphibiousComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptMovementAmphibiousComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z

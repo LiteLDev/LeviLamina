@@ -29,88 +29,43 @@ public:
     // vIndex: 0, symbol: ??1ChemistryStickItem@@UEAA@XZ
     virtual ~ChemistryStickItem();
 
-    // vIndex: 8, symbol: __unk_vfn_8
-    virtual void __unk_vfn_8();
-
-    // vIndex: 11, symbol: __unk_vfn_11
-    virtual void __unk_vfn_11();
-
-    // vIndex: 12, symbol: __unk_vfn_12
-    virtual void __unk_vfn_12();
-
-    // vIndex: 17, symbol: __unk_vfn_17
-    virtual void __unk_vfn_17();
-
-    // vIndex: 23, symbol: ?setMaxDamage@ChemistryStickItem@@UEAAAEAVItem@@H@Z
+    // vIndex: 24, symbol: ?setMaxDamage@ChemistryStickItem@@UEAAAEAVItem@@H@Z
     virtual class Item& setMaxDamage(int maxDamage);
 
-    // vIndex: 37, symbol: __unk_vfn_37
-    virtual void __unk_vfn_37();
+    // vIndex: 40, symbol: ?showsDurabilityInCreative@ChemistryStickItem@@UEBA_NXZ
+    virtual bool showsDurabilityInCreative() const;
 
-    // vIndex: 39, symbol: __unk_vfn_39
-    virtual void __unk_vfn_39();
-
-    // vIndex: 47, symbol: ?isValidRepairItem@ChemistryStickItem@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z
+    // vIndex: 48, symbol: ?isValidRepairItem@ChemistryStickItem@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z
     virtual bool isValidRepairItem(
         class ItemStackBase const&   source,
         class ItemStackBase const&   repairItem,
         class BaseGameVersion const& baseGameVersion
     ) const;
 
-    // vIndex: 52, symbol: __unk_vfn_52
-    virtual void __unk_vfn_52();
+    // vIndex: 57, symbol: ?uniqueAuxValues@ChemistryStickItem@@UEBA_NXZ
+    virtual bool uniqueAuxValues() const;
 
-    // vIndex: 56, symbol: __unk_vfn_56
-    virtual void __unk_vfn_56();
+    // vIndex: 71, symbol: ?use@ChemistryStickItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+    virtual class ItemStack& use(class ItemStack& item, class Player& player) const;
 
-    // vIndex: 57, symbol: __unk_vfn_57
-    virtual void __unk_vfn_57();
-
-    // vIndex: 58, symbol: __unk_vfn_58
-    virtual void __unk_vfn_58();
-
-    // vIndex: 61, symbol: __unk_vfn_61
-    virtual void __unk_vfn_61();
-
-    // vIndex: 65, symbol: __unk_vfn_65
-    virtual void __unk_vfn_65();
-
-    // vIndex: 66, symbol: __unk_vfn_66
-    virtual void __unk_vfn_66();
-
-    // vIndex: 70, symbol: ?use@ChemistryStickItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-    virtual class ItemStack& use(class ItemStack& itemStack, class Player& player) const;
-
-    // vIndex: 72, symbol:
+    // vIndex: 73, symbol:
     // ?useTimeDepleted@ChemistryStickItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
     virtual ::ItemUseMethod
     useTimeDepleted(class ItemStack& inoutInstance, class Level* level, class Player* player) const;
 
-    // vIndex: 75, symbol: ?hurtActor@ChemistryStickItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
+    // vIndex: 76, symbol: ?hurtActor@ChemistryStickItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
     virtual void hurtActor(class ItemStack& instance, class Actor& actor, class Mob& attacker) const;
 
-    // vIndex: 79, symbol: ?mineBlock@ChemistryStickItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
+    // vIndex: 80, symbol: ?mineBlock@ChemistryStickItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
     virtual bool
-    mineBlock(class ItemStack& itemStack, class Block const& block, int x, int y, int z, class Actor* owner) const;
+    mineBlock(class ItemStack& item, class Block const& block, int x, int y, int z, class Actor* owner) const;
 
-    // vIndex: 86, symbol: ?inventoryTick@ChemistryStickItem@@UEBA_NAEAVItemStack@@AEAVLevel@@AEAVActor@@H_N@Z
+    // vIndex: 87, symbol: ?inventoryTick@ChemistryStickItem@@UEBA_NAEAVItemStack@@AEAVLevel@@AEAVActor@@H_N@Z
     virtual bool
-    inventoryTick(class ItemStack& itemStack, class Level& level, class Actor& owner, int slot, bool selected) const;
+    inventoryTick(class ItemStack& item, class Level& level, class Actor& owner, int slot, bool selected) const;
 
-    // vIndex: 90, symbol: ?fixupCommon@ChemistryStickItem@@UEBAXAEAVItemStackBase@@@Z
+    // vIndex: 91, symbol: ?fixupCommon@ChemistryStickItem@@UEBAXAEAVItemStackBase@@@Z
     virtual void fixupCommon(class ItemStackBase& stack) const;
-
-    // vIndex: 98, symbol: __unk_vfn_98
-    virtual void __unk_vfn_98();
-
-    // vIndex: 99, symbol: __unk_vfn_99
-    virtual void __unk_vfn_99();
-
-    // symbol: ?showsDurabilityInCreative@ChemistryStickItem@@UEBA_NXZ
-    MCVAPI bool showsDurabilityInCreative() const;
-
-    // symbol: ?uniqueAuxValues@ChemistryStickItem@@UEBA_NXZ
-    MCVAPI bool uniqueAuxValues() const;
 
     // symbol: ??0ChemistryStickItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI ChemistryStickItem(std::string const& name, int id);
@@ -132,15 +87,12 @@ public:
     // ?_getColorName@ChemistryStickItem@@IEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI std::string _getColorName(int) const;
 
-    // symbol: ?_tick@ChemistryStickItem@@IEBA_NAEAVItemStack@@_K@Z
-    MCAPI bool _tick(class ItemStack&, uint64) const;
-
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_storeActivationTimestamp@ChemistryStickItem@@AEBAXAEAVItemStack@@_KH@Z
-    MCAPI void _storeActivationTimestamp(class ItemStack&, uint64, int) const;
+    MCAPI void _storeActivationTimestamp(class ItemStack& item, uint64 curTime, int desiredPercent) const;
 
     // NOLINTEND
 

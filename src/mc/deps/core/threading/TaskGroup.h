@@ -28,15 +28,15 @@ public:
     // vIndex: 1, symbol:
     // ?queue@TaskGroup@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBU?$TaskStartInfoEx@X@@$$QEAV?$function@$$A6A?AVTaskResult@@XZ@3@$$QEAV?$function@$$A6AXXZ@3@@Z
     virtual std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queue(
-        struct TaskStartInfoEx<void> const&     startInfo,
-        std::function<class TaskResult(void)>&& task,
-        std::function<void(void)>&&             callback
+        struct TaskStartInfoEx<void> const& startInfo,
+        std::function<class TaskResult()>&& task,
+        std::function<void()>&&             callback
     );
 
     // vIndex: 2, symbol:
     // ?queueSync@TaskGroup@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBU?$TaskStartInfoEx@X@@$$QEAV?$function@$$A6A?AVTaskResult@@XZ@3@@Z
     virtual std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
-    queueSync(struct TaskStartInfoEx<void> const& startInfo, std::function<class TaskResult(void)>&& task);
+    queueSync(struct TaskStartInfoEx<void> const& startInfo, std::function<class TaskResult()>&& task);
 
     // vIndex: 3, symbol: ?taskRegister@TaskGroup@@UEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@@Z
     virtual void taskRegister(std::shared_ptr<class BackgroundTaskBase> task);
@@ -61,7 +61,7 @@ public:
     MCAPI void disableOwnerThreadChecks();
 
     // symbol: ?flush@TaskGroup@@QEAAXV?$function@$$A6AXXZ@std@@@Z
-    MCAPI void flush(std::function<void(void)> waitFn);
+    MCAPI void flush(std::function<void()> waitFn);
 
     // symbol: ?getName@TaskGroup@@QEBA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@XZ
     MCAPI std::string_view getName() const;
@@ -78,29 +78,27 @@ public:
     // symbol:
     // ?queue@TaskGroup@@QEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@V?$basic_string_view@DU?$char_traits@D@std@@@3@$$QEAV?$function@$$A6A?AVTaskResult@@XZ@3@$$QEAV?$function@$$A6AXXZ@3@@Z
     MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
-    queue(std::string_view name, std::function<class TaskResult(void)>&& task, std::function<void(void)>&& callback);
+          queue(std::string_view name, std::function<class TaskResult()>&& task, std::function<void()>&& callback);
 
     // symbol:
     // ?queueSync@TaskGroup@@QEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@V?$basic_string_view@DU?$char_traits@D@std@@@3@$$QEAV?$function@$$A6A?AVTaskResult@@XZ@3@@Z
     MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
-          queueSync(std::string_view name, std::function<class TaskResult(void)>&& task);
+          queueSync(std::string_view name, std::function<class TaskResult()>&& task);
 
     // symbol: ?sync_DEPRECATED_ASK_TOMMO@TaskGroup@@QEAAXV?$function@$$A6AXXZ@std@@@Z
-    MCAPI void sync_DEPRECATED_ASK_TOMMO(std::function<void(void)> waitFn);
+    MCAPI void sync_DEPRECATED_ASK_TOMMO(std::function<void()> waitFn);
 
     // symbol:
     // ?queueChildSync_DEPRECATED@TaskGroup@@SA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBU?$TaskStartInfoEx@X@@$$QEAV?$function@$$A6A?AVTaskResult@@XZ@3@@Z
-    MCAPI static std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queueChildSync_DEPRECATED(
-        struct TaskStartInfoEx<void> const&     startInfo,
-        std::function<class TaskResult(void)>&& task
-    );
+    MCAPI static std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
+    queueChildSync_DEPRECATED(struct TaskStartInfoEx<void> const& startInfo, std::function<class TaskResult()>&& task);
 
     // symbol:
     // ?queueChild_DEPRECATED@TaskGroup@@SA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBU?$TaskStartInfoEx@X@@$$QEAV?$function@$$A6A?AVTaskResult@@XZ@3@$$QEAV?$function@$$A6AXXZ@3@@Z
     MCAPI static std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queueChild_DEPRECATED(
-        struct TaskStartInfoEx<void> const&     startInfo,
-        std::function<class TaskResult(void)>&& task,
-        std::function<void(void)>&&             callback
+        struct TaskStartInfoEx<void> const& startInfo,
+        std::function<class TaskResult()>&& task,
+        std::function<void()>&&             callback
     );
 
     // NOLINTEND
