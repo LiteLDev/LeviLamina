@@ -2,6 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/sem_ver/SemVersion.h"
+#include "mc/entity/EntityNetId.h"
 #include "mc/nbt/CompoundTag.h"
 #include "mc/network/NetworkBlockPosition.h"
 #include "mc/world/AutomaticID.h"
@@ -21,6 +22,7 @@ public:
     NetworkBlockPosition mMaxBounds;      // this+0xb4
     DimensionType        mDimensionType;  // this+0xc0
     SemVersion           mEngineVersion;  // this+0xc8
+    EntityNetId          mEntityNetId;    /// this+0x118
 
     // prevent constructor by default
     AddVolumeEntityPacket& operator=(AddVolumeEntityPacket const&);

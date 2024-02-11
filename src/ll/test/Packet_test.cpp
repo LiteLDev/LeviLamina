@@ -1,4 +1,4 @@
-﻿#define GENERATE_PACKET
+﻿// #define GENERATE_PACKET
 
 #ifdef GENERATE_PACKET
 
@@ -17,7 +17,7 @@
 template <>
 struct magic_enum::customize::enum_range<MinecraftPacketIds> {
     static constexpr int min = 0;
-    static constexpr int max = (int)MinecraftPacketIds::EndId;
+    static constexpr int max = 128 + (int)MinecraftPacketIds::EndId;
     // (max - min) must be less than UINT16_MAX.
 };
 
@@ -31,29 +31,37 @@ std::string getVTableName(void* vtable) {
     }
 }
 
-inline void forEachPacket(std::function<void(Packet const& packet, std::string className, size_t size)> const& callback
+inline void forEachPacket(
+    std::function<void(Packet const& packet, std::string className, size_t size)> const& callback,
+    bool                                                                                 output = false
 ) {
-    int packetId = 0;
-    while (packetId < 500) {
+    int packetId = magic_enum::customize::enum_range<MinecraftPacketIds>::min;
+    while (packetId < magic_enum::customize::enum_range<MinecraftPacketIds>::max) {
         auto packet = MinecraftPackets::createPacket((MinecraftPacketIds)packetId);
         if (packet) {
             auto size = ll::memory::getUsableSize(packet);
 
             auto className = getVTableName(packet.get());
+            if (output) {
+                auto enumName = magic_enum::enum_name((MinecraftPacketIds)packetId);
 
-            ll::logger.warn(
-                "Packet: enum: {}, getName: {}, vtable: {}, id: {},size: {}",
-                magic_enum::enum_name((MinecraftPacketIds)packetId),
-                packet->getName(),
-                className,
-                packetId,
-                size
-            );
+                ll::logger.warn(
+                    "Packet: enum: {}, getName: {}, vtable: {}, id: {},size: {}",
+                    enumName,
+                    packet->getName(),
+                    className,
+                    packetId,
+                    size
+                );
 
-            if (packet->getName() != className) {
-                ll::logger.error("intresting, different name, get: {}, typeid: {}", packet->getName(), className);
+                if (packet->getName() != className) {
+                    ll::logger.error("intresting, different name, get: {}, typeid: {}", packet->getName(), className);
+                }
+
+                if (!className.starts_with(enumName)) {
+                    ll::logger.error("intresting, different enum name, get: {}, typeid: {}", enumName, className);
+                }
             }
-
             callback(*packet, className, size);
         }
         packetId++;
@@ -80,9 +88,12 @@ void autoGenerate() {
     // add static assert
     oss << std::endl;
     oss << std::endl;
-    forEachPacket([&](Packet const&, std::string className, size_t size) {
-        oss << fmt::format("PACKET_SIZE_ASSERT({}, 0x{:X});\n", className, size);
-    });
+    forEachPacket(
+        [&](Packet const&, std::string className, size_t size) {
+            oss << fmt::format("PACKET_SIZE_ASSERT({}, 0x{:X});\n", className, size);
+        },
+        true
+    );
     oss << std::endl;
     ll::string_utils::replaceContent(content, "\n#pragma region PacketSizeAssert", "#pragma endregion", oss.str());
 
@@ -118,7 +129,6 @@ LL_AUTO_STATIC_HOOK(GeneratePacketHook, HookPriority::Normal, "main", int, int a
 #include "mc/network/packet/ActorPickRequestPacket.h"
 #include "mc/network/packet/AddActorPacket.h"
 #include "mc/network/packet/AddBehaviorTreePacket.h"
-#include "mc/network/packet/AddEntityPacket.h"
 #include "mc/network/packet/AddItemActorPacket.h"
 #include "mc/network/packet/AddPaintingPacket.h"
 #include "mc/network/packet/AddPlayerPacket.h"
@@ -239,7 +249,6 @@ LL_AUTO_STATIC_HOOK(GeneratePacketHook, HookPriority::Normal, "main", int, int a
 #include "mc/network/packet/PurchaseReceiptPacket.h"
 #include "mc/network/packet/RefreshEntitlementsPacket.h"
 #include "mc/network/packet/RemoveActorPacket.h"
-#include "mc/network/packet/RemoveEntityPacket.h"
 #include "mc/network/packet/RemoveObjectivePacket.h"
 #include "mc/network/packet/RemoveVolumeEntityPacket.h"
 #include "mc/network/packet/RequestAbilityPacket.h"
@@ -266,6 +275,7 @@ LL_AUTO_STATIC_HOOK(GeneratePacketHook, HookPriority::Normal, "main", int, int a
 #include "mc/network/packet/SetDifficultyPacket.h"
 #include "mc/network/packet/SetDisplayObjectivePacket.h"
 #include "mc/network/packet/SetHealthPacket.h"
+#include "mc/network/packet/SetHudPacket.h"
 #include "mc/network/packet/SetLastHurtByPacket.h"
 #include "mc/network/packet/SetLocalPlayerAsInitializedPacket.h"
 #include "mc/network/packet/SetPlayerGameTypePacket.h"
@@ -328,7 +338,7 @@ PACKET_SIZE_ASSERT(ResourcePackStackPacket, 0x128);
 PACKET_SIZE_ASSERT(ResourcePackClientResponsePacket, 0x48);
 PACKET_SIZE_ASSERT(TextPacket, 0xD8);
 PACKET_SIZE_ASSERT(SetTimePacket, 0x38);
-PACKET_SIZE_ASSERT(StartGamePacket, 0x528);
+PACKET_SIZE_ASSERT(StartGamePacket, 0x5C0);
 PACKET_SIZE_ASSERT(AddPlayerPacket, 0x620);
 PACKET_SIZE_ASSERT(AddActorPacket, 0x1B0);
 PACKET_SIZE_ASSERT(RemoveActorPacket, 0x38);
@@ -437,8 +447,6 @@ PACKET_SIZE_ASSERT(BiomeDefinitionListPacket, 0x48);
 PACKET_SIZE_ASSERT(LevelSoundEventPacket, 0x70);
 PACKET_SIZE_ASSERT(LevelEventGenericPacket, 0x40);
 PACKET_SIZE_ASSERT(LecternUpdatePacket, 0x48);
-PACKET_SIZE_ASSERT(AddEntityPacket, 0x38);
-PACKET_SIZE_ASSERT(RemoveEntityPacket, 0x38);
 PACKET_SIZE_ASSERT(ClientCacheStatusPacket, 0x38);
 PACKET_SIZE_ASSERT(OnScreenTextureAnimationPacket, 0x38);
 PACKET_SIZE_ASSERT(MapCreateLockedCopyPacket, 0x40);
@@ -446,14 +454,14 @@ PACKET_SIZE_ASSERT(StructureTemplateDataRequestPacket, 0xD0);
 PACKET_SIZE_ASSERT(StructureTemplateDataResponsePacket, 0x60);
 PACKET_SIZE_ASSERT(ClientCacheBlobStatusPacket, 0x60);
 PACKET_SIZE_ASSERT(ClientCacheMissResponsePacket, 0x88);
-PACKET_SIZE_ASSERT(EducationSettingsPacket, 0x178);
+PACKET_SIZE_ASSERT(EducationSettingsPacket, 0x170);
 PACKET_SIZE_ASSERT(EmotePacket, 0xA0);
 PACKET_SIZE_ASSERT(MultiplayerSettingsPacket, 0x38);
 PACKET_SIZE_ASSERT(SettingsCommandPacket, 0x58);
 PACKET_SIZE_ASSERT(AnvilDamagePacket, 0x40);
 PACKET_SIZE_ASSERT(CompletedUsingItemPacket, 0x38);
-PACKET_SIZE_ASSERT(NetworkSettingsPacket, 0x40);
-PACKET_SIZE_ASSERT(PlayerAuthInputPacket, 0xB8);
+PACKET_SIZE_ASSERT(NetworkSettingsPacket, 0x48);
+PACKET_SIZE_ASSERT(PlayerAuthInputPacket, 0xC0);
 PACKET_SIZE_ASSERT(CreativeContentPacket, 0x50);
 PACKET_SIZE_ASSERT(PlayerEnchantOptionsPacket, 0x48);
 PACKET_SIZE_ASSERT(ItemStackRequestPacket, 0x38);
@@ -476,7 +484,7 @@ PACKET_SIZE_ASSERT(FilterTextPacket, 0x58);
 PACKET_SIZE_ASSERT(ClientboundDebugRendererPacket, 0x88);
 PACKET_SIZE_ASSERT(SyncActorPropertyPacket, 0x48);
 PACKET_SIZE_ASSERT(AddVolumeEntityPacket, 0x120);
-PACKET_SIZE_ASSERT(RemoveVolumeEntityPacket, 0x40);
+PACKET_SIZE_ASSERT(RemoveVolumeEntityPacket, 0x38);
 PACKET_SIZE_ASSERT(SimulationTypePacket, 0x38);
 PACKET_SIZE_ASSERT(NpcDialoguePacket, 0xC0);
 PACKET_SIZE_ASSERT(EduUriResourcePacket, 0x70);
@@ -508,13 +516,14 @@ PACKET_SIZE_ASSERT(UpdateClientInputLocksPacket, 0x40);
 PACKET_SIZE_ASSERT(CameraPresetsPacket, 0x68);
 PACKET_SIZE_ASSERT(UnlockedRecipesPacket, 0x50);
 PACKET_SIZE_ASSERT(CameraInstructionPacket, 0xA0);
-PACKET_SIZE_ASSERT(CompressedBiomeDefinitionListPacket, 0x48);
+PACKET_SIZE_ASSERT(CompressedBiomeDefinitionListPacket, 0x68);
 PACKET_SIZE_ASSERT(TrimDataPacket, 0x60);
 PACKET_SIZE_ASSERT(OpenSignPacket, 0x40);
 PACKET_SIZE_ASSERT(AgentAnimationPacket, 0x40);
 PACKET_SIZE_ASSERT(RefreshEntitlementsPacket, 0x30);
 PACKET_SIZE_ASSERT(PlayerToggleCrafterSlotRequestPacket, 0x48);
 PACKET_SIZE_ASSERT(SetPlayerInventoryOptionsPacket, 0x48);
+PACKET_SIZE_ASSERT(SetHudPacket, 0x50);
 
 #pragma endregion
 

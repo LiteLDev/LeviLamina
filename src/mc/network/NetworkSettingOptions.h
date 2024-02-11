@@ -5,14 +5,5 @@
 
 struct NetworkSettingOptions {
 public:
-    ushort                     mCompressionThreshold;
-    PacketCompressionAlgorithm mCompressionAlgorithm;
-    bool                       mClientThrottleEnabled;
-    schar                      mClientThrottleThreshold;
-    float                      mClientThrottleScalar;
-
-    // prevent constructor by default
-    NetworkSettingOptions& operator=(NetworkSettingOptions const&);
-    NetworkSettingOptions(NetworkSettingOptions const&);
-    NetworkSettingOptions();
+    uchar filler[24];
 };

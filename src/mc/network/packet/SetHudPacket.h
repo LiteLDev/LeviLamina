@@ -9,6 +9,8 @@
 
 class SetHudPacket : public ::Packet {
 public:
+    uchar filler[32];
+
     // prevent constructor by default
     SetHudPacket& operator=(SetHudPacket const&);
     SetHudPacket(SetHudPacket const&);

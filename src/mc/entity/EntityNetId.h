@@ -7,6 +7,8 @@
 
 class EntityNetId {
 public:
+    int netId;
+
     // prevent constructor by default
     EntityNetId& operator=(EntityNetId const&);
     EntityNetId(EntityNetId const&);

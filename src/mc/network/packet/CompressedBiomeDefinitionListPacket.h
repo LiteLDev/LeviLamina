@@ -9,6 +9,8 @@
 
 class CompressedBiomeDefinitionListPacket : public ::BiomeDefinitionListPacket {
 public:
+    uchar filler[32];
+
     // prevent constructor by default
     CompressedBiomeDefinitionListPacket& operator=(CompressedBiomeDefinitionListPacket const&);
     CompressedBiomeDefinitionListPacket(CompressedBiomeDefinitionListPacket const&);
