@@ -26,11 +26,9 @@ public:
 
 public:
     // clang-format off
-    [[nodiscard]] constexpr HashedString const& getHash()     const { return ll::memory::dAccess<HashedString>(this, 0x8); }
+    [[nodiscard]] constexpr HashedString const& getName()     const { return ll::memory::dAccess<HashedString>(this, 0x8); }
     [[nodiscard]] constexpr int   getDebugMapColor()          const { return ll::memory::dAccess<int>(this, 0x38); }
     [[nodiscard]] constexpr int   getDebugMapOddColor()       const { return ll::memory::dAccess<int>(this, 0x3C); }
-    [[nodiscard]] constexpr float getTemperature()            const { return ll::memory::dAccess<float>(this, 0x40); }
-    //[[nodiscard]] constexpr float getDownfall()             const { return ll::memory::dAccess<float>(this, 0x44); }
     [[nodiscard]] constexpr float getRedSporeDensity()        const { return ll::memory::dAccess<float>(this, 0x48); }
     [[nodiscard]] constexpr float getBlueSporeDensity()       const { return ll::memory::dAccess<float>(this, 0x4C); }
     [[nodiscard]] constexpr float getAshDensity()             const { return ll::memory::dAccess<float>(this, 0x50); }
@@ -46,18 +44,6 @@ public:
     [[nodiscard]] constexpr bool  getRain()                   const { return ll::memory::dAccess<bool>(this, 0x84); }
     [[nodiscard]] constexpr int   getId()                     const { return ll::memory::dAccess<int>(this, 0x88); }
     // clang-format on
-
-    // WeakRefT<SharePtrRefTraits<FogDefinition const>> mFogDefinition;   // this+0x90
-    // OceanRuinConfiguration                           mOceanRuinConfig; // this+0xA0
-    // std::vector<MobSpawnerData>                      mMobs; // this+0xB0
-
-    // PerlinSimplexNoise         mTemperatureNoise;       // this+0xC8
-    // PerlinSimplexNoise         mFrozenTemperatureNoise; // this+0xF0
-    // OwnerPtrT<EntityRefTraits> mEntity;                 // this+0x118
-    // PerlinSimplexNoise         mBiomeInfoNoise;         // this+0x130
-    // Biome::CachedClientComponentData mCachedClientComponentData;
-
-    [[nodiscard]] constexpr std::string const& getName() const { return getHash().getString(); }
 
     // prevent constructor by default
     Biome& operator=(Biome const&);
