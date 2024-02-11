@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { class ScriptEngine; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ModuleDescriptor; }
 // clang-format on
 
@@ -25,15 +24,6 @@ public:
     // vIndex: 0, symbol: ??1ServerScriptManager@@UEAA@XZ
     virtual ~ServerScriptManager();
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
-
-    // vIndex: 2, symbol: __unk_vfn_2
-    virtual void __unk_vfn_2();
-
-    // vIndex: 3, symbol: __unk_vfn_3
-    virtual void __unk_vfn_3();
-
     // vIndex: 4, symbol:
     // ?onServerLevelInitialized@ServerScriptManager@@UEAA?AW4EventResult@@AEAVServerInstance@@AEAVLevel@@@Z
     virtual ::EventResult onServerLevelInitialized(class ServerInstance&, class Level&);
@@ -41,31 +31,19 @@ public:
     // vIndex: 5, symbol: ?onServerUpdateStart@ServerScriptManager@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
     virtual ::EventResult onServerUpdateStart(class ServerInstance&);
 
-    // vIndex: 6, symbol: __unk_vfn_6
-    virtual void __unk_vfn_6();
-
-    // vIndex: 7, symbol: __unk_vfn_7
-    virtual void __unk_vfn_7();
-
-    // vIndex: 8, symbol: __unk_vfn_8
-    virtual void __unk_vfn_8();
-
     // vIndex: 9, symbol: ?onServerThreadStarted@ServerScriptManager@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
     virtual ::EventResult onServerThreadStarted(class ServerInstance& instance);
 
     // vIndex: 10, symbol: ?onServerThreadStopped@ServerScriptManager@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
     virtual ::EventResult onServerThreadStopped(class ServerInstance& serverInstance);
 
-    // vIndex: 11, symbol: __unk_vfn_11
-    virtual void __unk_vfn_11();
-
     // vIndex: 12, symbol:
-    // ?onEvent@ServerScriptManager@@UEAA?AW4EventResult@@AEBUServerInstanceRequestResourceReload@@@Z
-    virtual ::EventResult onEvent(struct ServerInstanceRequestResourceReload const&);
-
-    // vIndex: 13, symbol:
     // ?onEvent@?$EventListenerDispatcher@VServerInstanceEventListener@@@@MEAA?AW4EventResult@@AEBUServerInstanceNotificationEvent@@@Z
     virtual ::EventResult onEvent(struct ServerInstanceNotificationEvent const& event);
+
+    // vIndex: 13, symbol:
+    // ?onEvent@ServerScriptManager@@UEAA?AW4EventResult@@AEBUServerInstanceRequestResourceReload@@@Z
+    virtual ::EventResult onEvent(struct ServerInstanceRequestResourceReload const&);
 
     // symbol:
     // ??0ServerScriptManager@@QEAA@UScriptSettings@@V?$NonOwnerPointer@VScheduler@@@Bedrock@@AEAVIMinecraftEventing@@_N@Z
@@ -101,11 +79,11 @@ public:
     // symbol: ?_registerEventHandlers@ServerScriptManager@@AEBAXAEAVLevel@@@Z
     MCAPI void _registerEventHandlers(class Level& level) const;
 
+    // symbol: ?_sendInitializeEvent@ServerScriptManager@@AEBAXAEAVServerLevel@@@Z
+    MCAPI void _sendInitializeEvent(class ServerLevel& level) const;
+
     // symbol: ?_unregisterEventHandlers@ServerScriptManager@@AEBAXAEAVLevel@@@Z
     MCAPI void _unregisterEventHandlers(class Level& level) const;
-
-    // symbol: ?_sendWorldInitializeEvent@ServerScriptManager@@CAXAEAVServerLevel@@VWeakLifetimeScope@Scripting@@@Z
-    MCAPI static void _sendWorldInitializeEvent(class ServerLevel& level, class Scripting::WeakLifetimeScope scope);
 
     // NOLINTEND
 };

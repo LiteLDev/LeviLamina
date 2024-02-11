@@ -8,4 +8,12 @@ public:
     SpawnConditions& operator=(SpawnConditions const&);
     SpawnConditions(SpawnConditions const&);
     SpawnConditions();
+
+public:
+    // NOLINTBEGIN
+    // symbol: ?createSpawnConditionsWithSpawnRules@SpawnConditions@@SA?AV1@AEBV1@AEBVMobSpawnRules@@@Z
+    MCAPI static class SpawnConditions
+    createSpawnConditionsWithSpawnRules(class SpawnConditions const&, class MobSpawnRules const& spawnRules);
+
+    // NOLINTEND
 };

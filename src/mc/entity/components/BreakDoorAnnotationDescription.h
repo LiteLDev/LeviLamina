@@ -21,7 +21,7 @@ public:
     virtual ~BreakDoorAnnotationDescription();
 
     // vIndex: 2, symbol: ?deserializeData@BreakDoorAnnotationDescription@@UEAAXUDeserializeDataParams@@@Z
-    virtual void deserializeData(struct DeserializeDataParams);
+    virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
     // NOLINTEND
 };

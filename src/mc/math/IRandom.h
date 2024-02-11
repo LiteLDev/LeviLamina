@@ -14,11 +14,11 @@ public:
     // vIndex: 0, symbol: ??1IRandom@@UEAA@XZ
     virtual ~IRandom();
 
-    // vIndex: 1, symbol: ?nextInt@Random@Core@@UEAAHXZ
-    virtual int nextInt() = 0;
-
-    // vIndex: 2, symbol: ?nextInt@Random@Core@@UEAAHH@Z
+    // vIndex: 1, symbol: ?nextInt@Random@Core@@UEAAHH@Z
     virtual int nextInt(int n) = 0;
+
+    // vIndex: 2, symbol: ?nextInt@Random@Core@@UEAAHXZ
+    virtual int nextInt() = 0;
 
     // vIndex: 3, symbol: ?nextLong@Random@Core@@UEAA_JXZ
     virtual int64 nextLong() = 0;

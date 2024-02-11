@@ -80,7 +80,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?Allocate@RakString@RakNet@@IEAAX_K@Z
-    MCAPI void Allocate(uint64);
+    MCAPI void Allocate(uint64 len);
 
     // symbol: ?Assign@RakString@RakNet@@IEAAXPEBD@Z
     MCAPI void Assign(char const* str);

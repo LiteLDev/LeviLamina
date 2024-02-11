@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/StrongTypedObjectHandle.h"
-#include "mc/world/item/enchanting/Enchant.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -27,10 +26,10 @@ public:
     MCAPI ScriptItemEnchantmentTypes();
 
     // symbol:
-    // ?getEnchantmentHandle@ScriptItemEnchantmentTypes@ScriptModuleMinecraft@@QEAA?AV?$optional@V?$StrongTypedObjectHandle@UScriptItemEnchantmentType@ScriptModuleMinecraft@@@Scripting@@@std@@AEAVWeakLifetimeScope@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z
+    // ?get@ScriptItemEnchantmentTypes@ScriptModuleMinecraft@@QEAA?AV?$optional@V?$StrongTypedObjectHandle@UScriptItemEnchantmentType@ScriptModuleMinecraft@@@Scripting@@@std@@AEAVWeakLifetimeScope@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z
     MCAPI
     std::optional<class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptItemEnchantmentType>>
-    getEnchantmentHandle(class Scripting::WeakLifetimeScope& scope, std::string const&);
+    get(class Scripting::WeakLifetimeScope&, std::string const&);
 
     // symbol:
     // ?bind@ScriptItemEnchantmentTypes@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptItemEnchantmentTypes@ScriptModuleMinecraft@@@Scripting@@XZ
@@ -41,9 +40,12 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol:
-    // ?add@ScriptItemEnchantmentTypes@ScriptModuleMinecraft@@AEAA?AV?$StrongTypedObjectHandle@UScriptItemEnchantmentType@ScriptModuleMinecraft@@@Scripting@@AEAVWeakLifetimeScope@4@W4Type@Enchant@@@Z
-    MCAPI class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptItemEnchantmentType>
-    add(class Scripting::WeakLifetimeScope& scope, ::Enchant::Type);
+    // ?_generateAllEnchantmentTypeHandles@ScriptItemEnchantmentTypes@ScriptModuleMinecraft@@AEAAXAEAVWeakLifetimeScope@Scripting@@@Z
+    MCAPI void _generateAllEnchantmentTypeHandles(class Scripting::WeakLifetimeScope&);
+
+    // symbol:
+    // ?_generateRemainingEnchantmentTypeHandles@ScriptItemEnchantmentTypes@ScriptModuleMinecraft@@AEAAXAEAVWeakLifetimeScope@Scripting@@@Z
+    MCAPI void _generateRemainingEnchantmentTypeHandles(class Scripting::WeakLifetimeScope&);
 
     // NOLINTEND
 };

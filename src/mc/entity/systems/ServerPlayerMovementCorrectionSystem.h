@@ -2,22 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ServerPlayerMovementCorrectionSystem {
-public:
-    // prevent constructor by default
-    ServerPlayerMovementCorrectionSystem& operator=(ServerPlayerMovementCorrectionSystem const&);
-    ServerPlayerMovementCorrectionSystem(ServerPlayerMovementCorrectionSystem const&);
-    ServerPlayerMovementCorrectionSystem();
+namespace ServerPlayerMovementCorrectionSystem {
+// NOLINTBEGIN
+// symbol:
+// ?_afterMovementSimulation@ServerPlayerMovementCorrectionSystem@@YAXAEBVUserEntityIdentifierComponent@@AEAVActor@@AEBVPlayerAuthInputPacket@@AEBVReplayStateComponent@@AEAUStateVectorComponent@@@Z
+MCAPI void
+_afterMovementSimulation(class UserEntityIdentifierComponent const&, class Actor&, class PlayerAuthInputPacket const&, class ReplayStateComponent const&, struct StateVectorComponent&);
 
-public:
-    // NOLINTBEGIN
-    // symbol:
-    // ?_afterMovementSimulation@ServerPlayerMovementCorrectionSystem@@SAXAEAVPlayer@@AEBVPlayerAuthInputPacket@@AEBVReplayStateComponent@@AEAUStateVectorComponent@@@Z
-    MCAPI static void
-    _afterMovementSimulation(class Player&, class PlayerAuthInputPacket const&, class ReplayStateComponent const&, struct StateVectorComponent&);
+// symbol: ?createSystem@ServerPlayerMovementCorrectionSystem@@YA?AUTickingSystemWithInfo@@XZ
+MCAPI struct TickingSystemWithInfo createSystem();
+// NOLINTEND
 
-    // symbol: ?create@ServerPlayerMovementCorrectionSystem@@SA?AUTickingSystemWithInfo@@XZ
-    MCAPI static struct TickingSystemWithInfo create();
-
-    // NOLINTEND
-};
+}; // namespace ServerPlayerMovementCorrectionSystem

@@ -18,7 +18,7 @@ public:
     virtual ~StringByteInput();
 
     // vIndex: 9, symbol: ?readBytes@StringByteInput@@UEAA_NPEAX_K@Z
-    virtual bool readBytes(void*, uint64);
+    virtual bool readBytes(void* data, uint64 bytes);
 
     // vIndex: 10, symbol: ?numBytesLeft@StringByteInput@@UEBA_KXZ
     virtual uint64 numBytesLeft() const;

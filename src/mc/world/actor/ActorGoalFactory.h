@@ -8,4 +8,11 @@ public:
     ActorGoalFactory& operator=(ActorGoalFactory const&);
     ActorGoalFactory(ActorGoalFactory const&);
     ActorGoalFactory();
+
+public:
+    // NOLINTBEGIN
+    // symbol: ?_initializeBedrock@ActorGoalFactory@@QEAAXXZ
+    MCAPI void _initializeBedrock();
+
+    // NOLINTEND
 };

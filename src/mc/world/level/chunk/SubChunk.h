@@ -39,8 +39,8 @@ public:
     MCAPI void fetchBlocks(
         class BlockPos const& subChunkOrigin,
         class BlockPos const& volumeOrigin,
-        short,
-        class BlockVolume& volume
+        short                 minHeight,
+        class BlockVolume&    volume
     ) const;
 
     // symbol:

@@ -32,6 +32,10 @@ public:
     MCAPI
     ScriptPlayerInteractWithEntityBeforeEvent(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>, std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>);
 
+    // symbol: ??4ScriptPlayerInteractWithEntityBeforeEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
+    MCAPI struct ScriptModuleMinecraft::ScriptPlayerInteractWithEntityBeforeEvent&
+    operator=(struct ScriptModuleMinecraft::ScriptPlayerInteractWithEntityBeforeEvent&&);
+
     // symbol:
     // ?bind@ScriptPlayerInteractWithEntityBeforeEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptPlayerInteractWithEntityBeforeEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<

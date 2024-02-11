@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?onBarterItemPickedUp@BarterComponent@@QEAAXAEBVActor@@UActorUniqueID@@F@Z
-    MCAPI void onBarterItemPickedUp(class Actor const& owner, struct ActorUniqueID, short);
+    MCAPI void onBarterItemPickedUp(class Actor const& owner, struct ActorUniqueID actorUniqueID, short);
 
     // symbol: ?stopBarter@BarterComponent@@QEAAXXZ
     MCAPI void stopBarter();

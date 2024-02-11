@@ -55,8 +55,24 @@ MCAPI class Core::PathBuffer<std::string> getCachedBehaviorPacksPath();
 MCAPI class Core::PathBuffer<std::string> getCachedResourcePacksPath();
 
 // symbol:
+// ?getPremiumBehaviorPackPath@ResourcePackPaths@@YA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+MCAPI class Core::PathBuffer<std::string> getPremiumBehaviorPackPath();
+
+// symbol:
 // ?getPremiumPackPath@ResourcePackPaths@@YA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
 MCAPI class Core::PathBuffer<std::string> getPremiumPackPath();
+
+// symbol:
+// ?getPremiumResourcePackPath@ResourcePackPaths@@YA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+MCAPI class Core::PathBuffer<std::string> getPremiumResourcePackPath();
+
+// symbol:
+// ?getPremiumWorldTemplatePath@ResourcePackPaths@@YA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+MCAPI class Core::PathBuffer<std::string> getPremiumWorldTemplatePath();
+
+// symbol:
+// ?getSystemServicePackPath@ResourcePackPaths@@YA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+MCAPI class Core::PathBuffer<std::string> getSystemServicePackPath();
 
 // symbol:
 // ?getTemporaryPremiumBehaviorPacksPath@ResourcePackPaths@@YA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ

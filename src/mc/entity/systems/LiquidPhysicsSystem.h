@@ -24,9 +24,9 @@ MCAPI void _liquidBlockFetch(
 );
 
 // symbol:
-// ?_markForLiquidFlow@LiquidPhysicsSystem@@YAXAEAUUpdateWaterStateRequestComponent@@AEBV?$Optional@$$CBUAbilitiesComponent@@@@@Z
+// ?_markForLiquidFlow@LiquidPhysicsSystem@@YAXAEAUUpdateWaterStateRequestComponent@@AEBV?$Optional@$$CBUMovementAbilitiesComponent@@@@@Z
 MCAPI void
-_markForLiquidFlow(struct UpdateWaterStateRequestComponent&, class Optional<struct AbilitiesComponent const> const&);
+_markForLiquidFlow(struct UpdateWaterStateRequestComponent&, class Optional<struct MovementAbilitiesComponent const> const&);
 
 // symbol:
 // ?_tickLiquidBlocksFetch@LiquidPhysicsSystem@@YAXV?$ViewT@VStrictEntityContext@@UStateVectorComponent@@UUpdateWaterStateRequestComponent@@$$CBUAABBShapeComponent@@$$CBUSubBBsComponent@@V?$Optional@$$CBV?$FlagComponent@UItemActorFlag@@@@@@@@V?$ViewT@VStrictEntityContext@@$$CBUDimensionTypeComponent@@@@V?$OptionalGlobal@$$CBULocalConstBlockSourceFactoryComponent@@@@@Z

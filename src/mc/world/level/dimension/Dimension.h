@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/OwnerPtrT.h"
-#include "mc/common/wrapper/SharePtrRefTraits.h"
-#include "mc/common/wrapper/WeakRefT.h"
+#include "mc/common/wrapper/OwnerPtr.h"
+#include "mc/common/wrapper/WeakRef.h"
 #include "mc/enums/LimboEntitiesVersion.h"
 #include "mc/world/AutomaticID.h"
 #include "mc/world/level/block/utils/BlockChangedEventTarget.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace br::worldgen { class StructureSetRegistry; }
 namespace mce { class Color; }
 // clang-format on
 
@@ -61,6 +61,12 @@ public:
     // symbol: ?forceCheckAllNeighChunkSavedStat@Dimension@@UEBA_NXZ
     MCVAPI bool forceCheckAllNeighChunkSavedStat() const;
 
+    // symbol: ?getBiomeRegistry@Dimension@@UEAAAEAVBiomeRegistry@@XZ
+    MCVAPI class BiomeRegistry& getBiomeRegistry();
+
+    // symbol: ?getBiomeRegistry@Dimension@@UEBAAEBVBiomeRegistry@@XZ
+    MCVAPI class BiomeRegistry const& getBiomeRegistry() const;
+
     // symbol: ?getBrightnessDependentFogColor@Dimension@@UEBA?AVColor@mce@@AEBV23@M@Z
     MCVAPI class mce::Color getBrightnessDependentFogColor(class mce::Color const& baseColor, float brightness) const;
 
@@ -103,8 +109,8 @@ public:
     // symbol: ?hasPrecipitationFog@Dimension@@UEBA_NXZ
     MCVAPI bool hasPrecipitationFog() const;
 
-    // symbol: ?init@Dimension@@UEAAXXZ
-    MCVAPI void init();
+    // symbol: ?init@Dimension@@UEAAXAEBVStructureSetRegistry@worldgen@br@@@Z
+    MCVAPI void init(class br::worldgen::StructureSetRegistry const&);
 
     // symbol: ?initializeWithLevelStorageManager@Dimension@@UEAAXAEAVLevelStorageManager@@@Z
     MCVAPI void initializeWithLevelStorageManager(class LevelStorageManager&);
@@ -329,8 +335,8 @@ public:
     // ?getVillageManager@Dimension@@QEBAAEBV?$unique_ptr@VVillageManager@@U?$default_delete@VVillageManager@@@std@@@std@@XZ
     MCAPI std::unique_ptr<class VillageManager> const& getVillageManager() const;
 
-    // symbol: ?getWeakRef@Dimension@@QEAA?AV?$WeakRefT@U?$SharePtrRefTraits@VDimension@@@@@@XZ
-    MCAPI class WeakRefT<struct SharePtrRefTraits<class Dimension>> getWeakRef();
+    // symbol: ?getWeakRef@Dimension@@QEAA?AV?$WeakRef@VDimension@@@@XZ
+    MCAPI class WeakRef<class Dimension> getWeakRef();
 
     // symbol: ?getWeather@Dimension@@QEBAAEAVWeather@@XZ
     MCAPI class Weather& getWeather() const;
@@ -375,8 +381,8 @@ public:
     // symbol: ?processPlayerReplication@Dimension@@QEAAXXZ
     MCAPI void processPlayerReplication();
 
-    // symbol: ?registerEntity@Dimension@@QEAAXAEBUActorUniqueID@@V?$WeakRefT@UEntityRefTraits@@@@@Z
-    MCAPI void registerEntity(struct ActorUniqueID const& actorID, class WeakRefT<struct EntityRefTraits>);
+    // symbol: ?registerEntity@Dimension@@QEAAXAEBUActorUniqueID@@V?$WeakRef@VEntityContext@@@@@Z
+    MCAPI void registerEntity(struct ActorUniqueID const& actorID, class WeakRef<class EntityContext> entityRef);
 
     // symbol: ?removeActorByID@Dimension@@QEAAXAEBUActorUniqueID@@@Z
     MCAPI void removeActorByID(struct ActorUniqueID const& id);
@@ -428,8 +434,8 @@ public:
     // symbol: ?tryLoadLimboEntities@Dimension@@QEAAXAEBVChunkPos@@@Z
     MCAPI void tryLoadLimboEntities(class ChunkPos const&);
 
-    // symbol: ?unregisterDisplayEntity@Dimension@@QEAAXV?$WeakRefT@UEntityRefTraits@@@@@Z
-    MCAPI void unregisterDisplayEntity(class WeakRefT<struct EntityRefTraits>);
+    // symbol: ?unregisterDisplayEntity@Dimension@@QEAAXV?$WeakRef@VEntityContext@@@@@Z
+    MCAPI void unregisterDisplayEntity(class WeakRef<class EntityContext>);
 
     // symbol: ?unregisterEntity@Dimension@@QEAAXAEBUActorUniqueID@@@Z
     MCAPI void unregisterEntity(struct ActorUniqueID const& actorID);
@@ -463,8 +469,8 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?_completeEntityTransfer@Dimension@@IEAAXV?$OwnerPtrT@UEntityRefTraits@@@@_N@Z
-    MCAPI void _completeEntityTransfer(class OwnerPtrT<struct EntityRefTraits> entity, bool);
+    // symbol: ?_completeEntityTransfer@Dimension@@IEAAXV?$OwnerPtr@VEntityContext@@@@_N@Z
+    MCAPI void _completeEntityTransfer(class OwnerPtr<class EntityContext>, bool);
 
     // NOLINTEND
 

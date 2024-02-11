@@ -15,9 +15,9 @@ public:
     MCAPI static struct TickingSystemWithInfo createWaterSinkInputSystem();
 
     // symbol:
-    // ?doInWaterSinkInputSystem@WaterSinkInputSystem@@SAXAEBUAbilitiesComponent@@AEBUMoveInputComponent@@AEAUStateVectorComponent@@@Z
+    // ?doInWaterSinkInputSystem@WaterSinkInputSystem@@SAXAEBUMovementAbilitiesComponent@@AEBUMoveInputComponent@@AEAUStateVectorComponent@@@Z
     MCAPI static void
-    doInWaterSinkInputSystem(struct AbilitiesComponent const&, struct MoveInputComponent const&, struct StateVectorComponent&);
+    doInWaterSinkInputSystem(struct MovementAbilitiesComponent const&, struct MoveInputComponent const&, struct StateVectorComponent&);
 
     // NOLINTEND
 };

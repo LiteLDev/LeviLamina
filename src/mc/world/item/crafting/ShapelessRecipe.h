@@ -36,8 +36,8 @@ public:
     // ?getResultItem@ShapelessRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
     virtual std::vector<class ItemInstance> const& getResultItem() const;
 
-    // vIndex: 5, symbol: __unk_vfn_5
-    virtual void __unk_vfn_5();
+    // vIndex: 5, symbol: ?isShapeless@ShapelessRecipe@@UEBA_NXZ
+    virtual bool isShapeless() const;
 
     // vIndex: 6, symbol: ?matches@ShapelessRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
     virtual bool matches(class CraftingContainer const& craftSlots, class CraftingContext const&) const;
@@ -48,13 +48,13 @@ public:
     // vIndex: 15, symbol: ?loadResultList@ShapelessRecipe@@UEBAXAEBVBlockPalette@@@Z
     virtual void loadResultList(class BlockPalette const& blockPalette) const;
 
-    // symbol: ?isShapeless@ShapelessRecipe@@UEBA_NXZ
-    MCVAPI bool isShapeless() const;
-
     // symbol:
     // ??0ShapelessRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashedString@@HPEBVUUID@mce@@V?$optional@VRecipeUnlockingRequirement@@@2@AEBVSemVersion@@@Z
     MCAPI
     ShapelessRecipe(std::string_view, std::vector<class RecipeIngredient> const&, std::vector<class ItemInstance> const&, class HashedString, int, class mce::UUID const*, std::optional<class RecipeUnlockingRequirement>, class SemVersion const&);
+
+    // symbol: ?generateUUID@ShapelessRecipe@@QEAAXXZ
+    MCAPI void generateUUID();
 
     // NOLINTEND
 };

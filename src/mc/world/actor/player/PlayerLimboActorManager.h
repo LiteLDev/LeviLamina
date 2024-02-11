@@ -3,8 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/SharePtrRefTraits.h"
-#include "mc/common/wrapper/StackRefResultT.h"
+#include "mc/common/wrapper/StackRefResult.h"
 
 class PlayerLimboActorManager {
 public:
@@ -15,23 +14,33 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0PlayerLimboActorManager@@QEAA@AEBV?$StackRefResultT@U?$SharePtrRefTraits@VLevelStorage@@@@@@@Z
-    MCAPI explicit PlayerLimboActorManager(class StackRefResultT<struct SharePtrRefTraits<class LevelStorage>> const&);
-
     // symbol:
-    // ?addOwnedLimboActor@PlayerLimboActorManager@@QEAAXUActorUniqueID@@V?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@@Z
-    MCAPI void addOwnedLimboActor(struct ActorUniqueID, std::unique_ptr<class CompoundTag>);
+    // ??0PlayerLimboActorManager@@QEAA@AEBV?$StackRefResult@VLevelStorage@@@@AEBV?$StackRefResult@VActorManager@@@@AEBV?$StackRefResult@VActorFactory@@@@@Z
+    MCAPI
+    PlayerLimboActorManager(class StackRefResult<class LevelStorage> const&, class StackRefResult<class ActorManager> const&, class StackRefResult<class ActorFactory> const&);
 
-    // symbol:
-    // ?getOwnedActorsDimensionTransferLimbo@PlayerLimboActorManager@@QEAAAEAV?$unordered_map@UActorUniqueID@@V?$vector@V?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@V?$allocator@V?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@@2@@std@@U?$hash@UActorUniqueID@@@3@U?$equal_to@UActorUniqueID@@@3@V?$allocator@U?$pair@$$CBUActorUniqueID@@V?$vector@V?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@V?$allocator@V?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@@2@@std@@@std@@@3@@std@@XZ
-    MCAPI std::unordered_map<struct ActorUniqueID, std::vector<std::unique_ptr<class CompoundTag>>>&
-          getOwnedActorsDimensionTransferLimbo();
+    // symbol: ?clearOwnedEntityLimboForPlayer@PlayerLimboActorManager@@QEAAXUActorUniqueID@@@Z
+    MCAPI void clearOwnedEntityLimboForPlayer(struct ActorUniqueID);
 
     // symbol: ?loadAllOwnedLimboActors@PlayerLimboActorManager@@QEAAXXZ
     MCAPI void loadAllOwnedLimboActors();
 
+    // symbol:
+    // ?processOwnedAgentForPlayer@PlayerLimboActorManager@@QEAAPEAVActor@@AEAVCompoundTag@@AEAVIAddActorEntityProxy@@AEBVDimensionHeightRange@@AEBVVec3@@@Z
+    MCAPI class Actor*
+    processOwnedAgentForPlayer(class CompoundTag&, class IAddActorEntityProxy&, class DimensionHeightRange const&, class Vec3 const&);
+
+    // symbol:
+    // ?processOwnedEntityLimboForPlayer@PlayerLimboActorManager@@QEAAXUActorUniqueID@@AEAVIAddActorEntityProxy@@AEBVDimensionHeightRange@@AEBVVec3@@@Z
+    MCAPI void
+    processOwnedEntityLimboForPlayer(struct ActorUniqueID, class IAddActorEntityProxy&, class DimensionHeightRange const&, class Vec3 const&);
+
     // symbol: ?saveOwnedLimboActorsForPlayer@PlayerLimboActorManager@@QEBAXUActorUniqueID@@@Z
     MCAPI void saveOwnedLimboActorsForPlayer(struct ActorUniqueID) const;
+
+    // symbol:
+    // ?transferAgentToOwnedEntityLimbo@PlayerLimboActorManager@@QEAA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEAVActor@@@Z
+    MCAPI std::unique_ptr<class CompoundTag> transferAgentToOwnedEntityLimbo(class Actor&);
 
     // symbol: ??1PlayerLimboActorManager@@QEAA@XZ
     MCAPI ~PlayerLimboActorManager();
@@ -44,9 +53,14 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_getValidLevelStorage@PlayerLimboActorManager@@AEBA?AV?$StackRefResultT@U?$SharePtrRefTraits@VLevelStorage@@@@@@XZ
-    MCAPI class StackRefResultT<struct SharePtrRefTraits<class LevelStorage>> _getValidLevelStorage() const;
+    // symbol: ?_getValidActorFactory@PlayerLimboActorManager@@AEBA?AV?$StackRefResult@VActorFactory@@@@XZ
+    MCAPI class StackRefResult<class ActorFactory> _getValidActorFactory() const;
+
+    // symbol: ?_getValidActorManager@PlayerLimboActorManager@@AEBA?AV?$StackRefResult@VActorManager@@@@XZ
+    MCAPI class StackRefResult<class ActorManager> _getValidActorManager() const;
+
+    // symbol: ?_getValidLevelStorage@PlayerLimboActorManager@@AEBA?AV?$StackRefResult@VLevelStorage@@@@XZ
+    MCAPI class StackRefResult<class LevelStorage> _getValidLevelStorage() const;
 
     // NOLINTEND
 };

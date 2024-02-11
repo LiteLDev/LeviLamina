@@ -105,8 +105,8 @@ public:
     // vIndex: 22, symbol: ?isSequenceReader@SchemaReader@cereal@@UEBA_NXZ
     virtual bool isSequenceReader() const;
 
-    // symbol: ??0NBTSchemaReader@@QEAA@V?$not_null@PEBVCompoundTag@@@gsl@@@Z
-    MCAPI explicit NBTSchemaReader(gsl::not_null<class CompoundTag const*> tag);
+    // symbol: ??0NBTSchemaReader@@QEAA@V?$not_null@PEBVTag@@@gsl@@@Z
+    MCAPI explicit NBTSchemaReader(gsl::not_null<class Tag const*> tag);
 
     // NOLINTEND
 };

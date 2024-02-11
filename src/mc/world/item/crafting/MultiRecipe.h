@@ -22,17 +22,14 @@ public:
     // vIndex: 0, symbol: __gen_??1MultiRecipe@@UEAA@XZ
     virtual ~MultiRecipe() = default;
 
-    // vIndex: 5, symbol: __unk_vfn_5
-    virtual void __unk_vfn_5();
+    // vIndex: 5, symbol: ?isShapeless@MultiRecipe@@EEBA_NXZ
+    virtual bool isShapeless() const;
 
     // vIndex: 9, symbol: ?isMultiRecipe@MultiRecipe@@EEBA_NXZ
     virtual bool isMultiRecipe() const;
 
     // vIndex: 10, symbol: ?hasDataDrivenResult@MultiRecipe@@EEBA_NXZ
     virtual bool hasDataDrivenResult() const;
-
-    // symbol: ?isShapeless@MultiRecipe@@EEBA_NXZ
-    MCVAPI bool isShapeless() const;
 
     // symbol: ??0MultiRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@VHashedString@@@Z
     MCAPI MultiRecipe(std::string_view recipeId, class HashedString tag);

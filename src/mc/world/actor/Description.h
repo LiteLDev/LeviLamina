@@ -21,7 +21,7 @@ public:
     virtual void deserializeData(struct DeserializeDataParams);
 
     // symbol: ?parseDescription@Description@@QEAAPEAU1@UDeserializeDataParams@@@Z
-    MCAPI struct Description* parseDescription(struct DeserializeDataParams);
+    MCAPI struct Description* parseDescription(struct DeserializeDataParams deserializeDataParams);
 
     // NOLINTEND
 };

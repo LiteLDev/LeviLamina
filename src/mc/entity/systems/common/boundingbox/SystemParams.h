@@ -16,13 +16,13 @@
 // auto generated forward declare list
 // clang-format off
 struct AABBShapeComponent;
+struct DepenetrationComponent;
 struct MinecartFlag;
 struct OffsetsComponent;
 struct PlayerComponentFlag;
 struct ShouldUpdateBoundingBoxRequestComponent;
 struct ShulkerFlag;
 struct SynchedActorDataComponent;
-struct WasPenetratingLastFrameFlag;
 // clang-format on
 
 namespace UpdateBoundingBox {
@@ -37,7 +37,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ??0SystemParams@UpdateBoundingBox@@QEAA@AEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@UMinecartFlag@@@@V?$FlagComponent@UShulkerFlag@@@@@@U?$Read@$$V@@U?$Write@UAABBShapeComponent@@UOffsetsComponent@@USynchedActorDataComponent@@@@U?$AddRemove@V?$FlagComponent@UWasPenetratingLastFrameFlag@@@@UShouldUpdateBoundingBoxRequestComponent@@@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@M_N@Z
+    // ??0SystemParams@UpdateBoundingBox@@QEAA@AEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@UMinecartFlag@@@@V?$FlagComponent@UShulkerFlag@@@@@@U?$Read@$$V@@U?$Write@UAABBShapeComponent@@UDepenetrationComponent@@UOffsetsComponent@@USynchedActorDataComponent@@@@U?$AddRemove@UShouldUpdateBoundingBoxRequestComponent@@@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@M_N@Z
     MCAPI SystemParams(
         class StrictExecutionContext<
             struct Filter<
@@ -45,10 +45,12 @@ public:
                 class FlagComponent<struct MinecartFlag>,
                 class FlagComponent<struct ShulkerFlag>>,
             struct Read<>,
-            struct Write<struct AABBShapeComponent, struct OffsetsComponent, struct SynchedActorDataComponent>,
-            struct AddRemove<
-                class FlagComponent<struct WasPenetratingLastFrameFlag>,
-                struct ShouldUpdateBoundingBoxRequestComponent>,
+            struct Write<
+                struct AABBShapeComponent,
+                struct DepenetrationComponent,
+                struct OffsetsComponent,
+                struct SynchedActorDataComponent>,
+            struct AddRemove<struct ShouldUpdateBoundingBoxRequestComponent>,
             struct GlobalRead<>,
             struct GlobalWrite<>,
             struct EntityFactoryT<>>&,

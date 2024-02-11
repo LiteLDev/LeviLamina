@@ -39,20 +39,20 @@ public:
     virtual ~LevelStorageWriteBatch();
 
     // vIndex: 1, symbol:
-    // ?putKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$basic_string_view@DU?$char_traits@D@std@@@3@W4Category@DBHelpers@@@Z
-    virtual void putKey(std::string const& key, std::string_view data, ::DBHelpers::Category category);
+    // ?putKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$shared_ptr@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@3@W4Category@DBHelpers@@@Z
+    virtual void putKey(std::string const& key, std::shared_ptr<std::string> data, ::DBHelpers::Category category);
 
     // vIndex: 2, symbol:
-    // ?putKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4Category@DBHelpers@@@Z
-    virtual void putKey(std::string const& key, std::string const& data, ::DBHelpers::Category category);
-
-    // vIndex: 3, symbol:
     // ?putKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV23@W4Category@DBHelpers@@@Z
     virtual void putKey(std::string const& key, std::string&& data, ::DBHelpers::Category category);
 
+    // vIndex: 3, symbol:
+    // ?putKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4Category@DBHelpers@@@Z
+    virtual void putKey(std::string const& key, std::string const& data, ::DBHelpers::Category category);
+
     // vIndex: 4, symbol:
-    // ?putKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$shared_ptr@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@3@W4Category@DBHelpers@@@Z
-    virtual void putKey(std::string const& key, std::shared_ptr<std::string> data, ::DBHelpers::Category category);
+    // ?putKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$basic_string_view@DU?$char_traits@D@std@@@3@W4Category@DBHelpers@@@Z
+    virtual void putKey(std::string const& key, std::string_view data, ::DBHelpers::Category category);
 
     // vIndex: 5, symbol:
     // ?deleteKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Category@DBHelpers@@@Z
@@ -68,7 +68,7 @@ public:
     MCAPI LevelStorageWriteBatch(class LevelStorageWriteBatch&&);
 
     // symbol: ?addFlushCallback@LevelStorageWriteBatch@@QEAAXV?$function@$$A6AXXZ@std@@@Z
-    MCAPI void addFlushCallback(std::function<void(void)> callback);
+    MCAPI void addFlushCallback(std::function<void()> callback);
 
     // symbol: ?clear@LevelStorageWriteBatch@@QEAAXXZ
     MCAPI void clear();

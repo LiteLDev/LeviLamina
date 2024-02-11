@@ -8,7 +8,6 @@
 class ActorSkeletalAnimationPtr {
 public:
     // prevent constructor by default
-    ActorSkeletalAnimationPtr& operator=(ActorSkeletalAnimationPtr const&);
     ActorSkeletalAnimationPtr(ActorSkeletalAnimationPtr const&);
     ActorSkeletalAnimationPtr();
 
@@ -23,6 +22,9 @@ public:
 
     // symbol: ?isNull@ActorSkeletalAnimationPtr@@QEBA_NXZ
     MCAPI bool isNull() const;
+
+    // symbol: ??4ActorSkeletalAnimationPtr@@QEAAAEAV0@AEBV0@@Z
+    MCAPI class ActorSkeletalAnimationPtr& operator=(class ActorSkeletalAnimationPtr const&);
 
     // symbol: ??1ActorSkeletalAnimationPtr@@QEAA@XZ
     MCAPI ~ActorSkeletalAnimationPtr();

@@ -18,6 +18,9 @@ public:
     // symbol: ?dropContents@RandomizableBlockActorContainer@@UEAAXAEAVBlockSource@@AEBVVec3@@_N@Z
     MCVAPI void dropContents(class BlockSource& region, class Vec3 const& pos, bool randomizeDrop);
 
+    // symbol: ?dropSlotContent@RandomizableBlockActorContainer@@UEAAXAEAVBlockSource@@AEBVVec3@@_NH@Z
+    MCVAPI void dropSlotContent(class BlockSource&, class Vec3 const&, bool, int);
+
     // symbol: ?initializeContainerContents@RandomizableBlockActorContainer@@UEAAXAEAVBlockSource@@@Z
     MCVAPI void initializeContainerContents(class BlockSource& region);
 

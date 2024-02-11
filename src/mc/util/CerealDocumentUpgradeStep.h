@@ -5,6 +5,7 @@
 class CerealDocumentUpgradeStep {
 public:
     // prevent constructor by default
+    CerealDocumentUpgradeStep& operator=(CerealDocumentUpgradeStep const&);
     CerealDocumentUpgradeStep();
 
 public:
@@ -22,9 +23,6 @@ public:
     // ?apply@CerealDocumentUpgradeStep@@QEAA_NAEAV?$GenericDocument@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@VCrtAllocator@2@@rapidjson@@AEBVSemVersion@@@Z
     MCAPI bool
     apply(rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& document, class SemVersion const&);
-
-    // symbol: ??4CerealDocumentUpgradeStep@@QEAAAEAV0@AEBV0@@Z
-    MCAPI class CerealDocumentUpgradeStep& operator=(class CerealDocumentUpgradeStep const&);
 
     // NOLINTEND
 };

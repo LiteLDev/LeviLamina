@@ -160,11 +160,13 @@ private:
     // symbol: ?sDarkSpinLock@SubChunkRelighter@@0VSpinLock@@A
     MCAPI static class SpinLock sDarkSpinLock;
 
-    // symbol: ?sFullyDarkSubChunk@SubChunkRelighter@@0USubChunk@@A
-    MCAPI static struct SubChunk sFullyDarkSubChunk;
+    // symbol:
+    // ?sFullyDarkSubChunk@SubChunkRelighter@@0V?$unique_ptr@USubChunk@@U?$default_delete@USubChunk@@@std@@@std@@A
+    MCAPI static std::unique_ptr<struct SubChunk> sFullyDarkSubChunk;
 
-    // symbol: ?sFullyLitSubChunk@SubChunkRelighter@@0USubChunk@@A
-    MCAPI static struct SubChunk sFullyLitSubChunk;
+    // symbol:
+    // ?sFullyLitSubChunk@SubChunkRelighter@@0V?$unique_ptr@USubChunk@@U?$default_delete@USubChunk@@@std@@@std@@A
+    MCAPI static std::unique_ptr<struct SubChunk> sFullyLitSubChunk;
 
     // symbol: ?sLitSpinLock@SubChunkRelighter@@0VSpinLock@@A
     MCAPI static class SpinLock sLitSpinLock;

@@ -44,14 +44,38 @@ public:
         bool                                              suppressProfiling
     );
 
+    // symbol: ?getApproximateTaskCount@BackgroundWorker@@QEBA_KXZ
+    MCAPI uint64 getApproximateTaskCount() const;
+
+    // symbol: ?getThreadId@BackgroundWorker@@QEBA?AVid@thread@std@@XZ
+    MCAPI std::thread::id getThreadId() const;
+
+    // symbol: ?isIdle@BackgroundWorker@@QEBA_NXZ
+    MCAPI bool isIdle() const;
+
+    // symbol: ?processTaskSync@BackgroundWorker@@QEAA_NXZ
+    MCAPI bool processTaskSync();
+
     // symbol: ?queue@BackgroundWorker@@QEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@@Z
     MCAPI void queue(std::shared_ptr<class BackgroundTaskBase> task);
+
+    // symbol: ?requestStop@BackgroundWorker@@QEAAX_N@Z
+    MCAPI void requestStop(bool wait);
+
+    // symbol: ?resetWorkerThreadID@BackgroundWorker@@QEAAXXZ
+    MCAPI void resetWorkerThreadID();
+
+    // symbol: ?resortPriorityQueue@BackgroundWorker@@QEAAXXZ
+    MCAPI void resortPriorityQueue();
 
     // symbol: ?start@BackgroundWorker@@QEAAXXZ
     MCAPI void start();
 
     // symbol: ?wake@BackgroundWorker@@QEAAXXZ
     MCAPI void wake();
+
+    // symbol: ?getLocal@BackgroundWorker@@SAPEAV1@XZ
+    MCAPI static class BackgroundWorker* getLocal();
 
     // NOLINTEND
 

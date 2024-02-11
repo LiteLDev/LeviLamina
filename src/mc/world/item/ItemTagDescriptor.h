@@ -43,11 +43,11 @@ public:
     // vIndex: 7, symbol: ?save@ItemTagDescriptor@@UEBA?AV?$optional@VCompoundTag@@@std@@XZ
     virtual std::optional<class CompoundTag> save() const;
 
-    // vIndex: 8, symbol: ?serialize@ItemTagDescriptor@@UEBAXAEAVValue@Json@@@Z
-    virtual void serialize(class Json::Value& val) const;
-
-    // vIndex: 9, symbol: ?serialize@ItemTagDescriptor@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 8, symbol: ?serialize@ItemTagDescriptor@@UEBAXAEAVBinaryStream@@@Z
     virtual void serialize(class BinaryStream& stream) const;
+
+    // vIndex: 9, symbol: ?serialize@ItemTagDescriptor@@UEBAXAEAVValue@Json@@@Z
+    virtual void serialize(class Json::Value& val) const;
 
     // vIndex: 10, symbol: ?getType@ItemTagDescriptor@@UEBA?AW4InternalType@ItemDescriptor@@XZ
     virtual ::ItemDescriptor::InternalType getType() const;

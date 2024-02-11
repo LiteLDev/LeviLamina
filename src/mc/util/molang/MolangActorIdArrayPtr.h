@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0MolangActorIdArrayPtr@@QEAA@V?$vector@UActorUniqueID@@V?$allocator@UActorUniqueID@@@std@@@std@@@Z
-    MCAPI explicit MolangActorIdArrayPtr(std::vector<struct ActorUniqueID>);
+    MCAPI explicit MolangActorIdArrayPtr(std::vector<struct ActorUniqueID> actorIds);
 
     // symbol: ??1MolangActorIdArrayPtr@@QEAA@XZ
     MCAPI ~MolangActorIdArrayPtr();

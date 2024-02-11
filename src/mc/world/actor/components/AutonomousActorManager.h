@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/OwnerPtrT.h"
-#include "mc/common/wrapper/WeakRefT.h"
+#include "mc/common/wrapper/OwnerPtr.h"
+#include "mc/common/wrapper/WeakRef.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 
 class AutonomousActorManager {
@@ -16,21 +16,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0AutonomousActorManager@@QEAA@V?$WeakRefT@UEntityRegistryRefTraits@@@@@Z
-    MCAPI explicit AutonomousActorManager(class WeakRefT<struct EntityRegistryRefTraits> entityRegistry);
+    // symbol: ??0AutonomousActorManager@@QEAA@V?$WeakRef@VEntityRegistry@@@@@Z
+    MCAPI explicit AutonomousActorManager(class WeakRef<class EntityRegistry>);
 
     // symbol:
-    // ?addAutonomousActorEntity@AutonomousActorManager@@QEAAPEAVActor@@AEAVDimension@@V?$OwnerPtrT@UEntityRefTraits@@@@@Z
-    MCAPI class Actor*
-    addAutonomousActorEntity(class Dimension& dimension, class OwnerPtrT<struct EntityRefTraits> entity);
+    // ?addAutonomousActorEntity@AutonomousActorManager@@QEAAPEAVActor@@AEAVDimension@@V?$OwnerPtr@VEntityContext@@@@@Z
+    MCAPI class Actor* addAutonomousActorEntity(class Dimension&, class OwnerPtr<class EntityContext>);
 
     // symbol:
-    // ?addAutonomousActorEntity@AutonomousActorManager@@QEAAPEAVActor@@AEAVIAddActorEntityProxy@@V?$OwnerPtrT@UEntityRefTraits@@@@@Z
+    // ?addAutonomousActorEntity@AutonomousActorManager@@QEAAPEAVActor@@AEAVIAddActorEntityProxy@@V?$OwnerPtr@VEntityContext@@@@@Z
     MCAPI class Actor*
-    addAutonomousActorEntity(class IAddActorEntityProxy&, class OwnerPtrT<struct EntityRefTraits> entity);
+    addAutonomousActorEntity(class IAddActorEntityProxy&, class OwnerPtr<class EntityContext> entity);
 
     // symbol: ?hasOwnedInactiveAutonomousActorWithUniqueID@AutonomousActorManager@@QEBA_NUActorUniqueID@@@Z
-    MCAPI bool hasOwnedInactiveAutonomousActorWithUniqueID(struct ActorUniqueID) const;
+    MCAPI bool hasOwnedInactiveAutonomousActorWithUniqueID(struct ActorUniqueID actorUniqueID) const;
 
     // symbol:
     // ?initializeWithActorManager@AutonomousActorManager@@QEAAXV?$not_null@V?$NonOwnerPointer@VActorManager@@@Bedrock@@@gsl@@@Z

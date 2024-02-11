@@ -22,23 +22,14 @@ public:
     virtual bool
     isValidSlotForContainer(class ContainerScreenContext const&, class Container const& container, int slot) const;
 
-    // vIndex: 2, symbol: __unk_vfn_2
-    virtual void __unk_vfn_2();
-
     // vIndex: 3, symbol: ?getAvailableSetCount@ContainerValidationBase@@UEBAHHAEBVItemStackBase@@@Z
     virtual int getAvailableSetCount(int slot, class ItemStackBase const& item) const;
-
-    // vIndex: 4, symbol: __unk_vfn_4
-    virtual void __unk_vfn_4();
-
-    // vIndex: 5, symbol: __unk_vfn_5
-    virtual void __unk_vfn_5();
 
     // vIndex: 6, symbol: ?canItemMoveToContainer@ContainerValidationBase@@UEBA_NAEBVItemStackBase@@@Z
     virtual bool canItemMoveToContainer(class ItemStackBase const& item) const;
 
-    // vIndex: 7, symbol: __unk_vfn_7
-    virtual void __unk_vfn_7();
+    // vIndex: 7, symbol: ?canDestroy@MaterialReducerOutputValidation@@UEBA_NAEBVContainerScreenContext@@@Z
+    virtual bool canDestroy(class ContainerScreenContext const&) const;
 
     // vIndex: 8, symbol: ?getContainerOffset@MaterialReducerOutputValidation@@UEBAHAEBVContainerScreenContext@@@Z
     virtual int getContainerOffset(class ContainerScreenContext const&) const;
@@ -46,9 +37,6 @@ public:
     // vIndex: 9, symbol:
     // ?getContainerSize@MaterialReducerOutputValidation@@UEBAHAEBVContainerScreenContext@@AEBVContainer@@@Z
     virtual int getContainerSize(class ContainerScreenContext const&, class Container const& container) const;
-
-    // symbol: ?canDestroy@MaterialReducerOutputValidation@@UEBA_NAEBVContainerScreenContext@@@Z
-    MCVAPI bool canDestroy(class ContainerScreenContext const& screenContext) const;
 
     // NOLINTEND
 };

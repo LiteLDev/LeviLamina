@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0Timer@@QEAA@MV?$function@$$A6A_JXZ@std@@@Z
-    MCAPI Timer(float ticksPerSecond, std::function<int64(void)> getTimeMSCallback);
+    MCAPI Timer(float ticksPerSecond, std::function<int64()> getTimeMSCallback);
 
     // symbol: ?advanceTime@Timer@@QEAAXM@Z
     MCAPI void advanceTime(float preferredFrameStep);

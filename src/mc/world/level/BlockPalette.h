@@ -46,7 +46,7 @@ public:
     virtual class Block const& getBlock(uint const&) const;
 
     // vIndex: 4, symbol: ?assignBlockNetworkId@BlockPalette@@MEBAXAEBVBlock@@_K@Z
-    virtual void assignBlockNetworkId(class Block const&, uint64) const;
+    virtual void assignBlockNetworkId(class Block const& block, uint64) const;
 
     // symbol: ??0BlockPalette@@QEAA@AEAVLevel@@@Z
     MCAPI explicit BlockPalette(class Level& level);

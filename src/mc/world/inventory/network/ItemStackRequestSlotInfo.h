@@ -11,9 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?matchesContainerAndSlot@ItemStackRequestSlotInfo@@QEBA_NAEBU1@@Z
-    MCAPI bool matchesContainerAndSlot(struct ItemStackRequestSlotInfo const& other) const;
-
     // symbol: ??1ItemStackRequestSlotInfo@@QEAA@XZ
     MCAPI ~ItemStackRequestSlotInfo();
 

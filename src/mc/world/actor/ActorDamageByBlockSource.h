@@ -20,9 +20,6 @@ public:
     // vIndex: 0, symbol: __gen_??1ActorDamageByBlockSource@@UEAA@XZ
     virtual ~ActorDamageByBlockSource() = default;
 
-    // vIndex: 2, symbol: __unk_vfn_2
-    virtual void __unk_vfn_2();
-
     // vIndex: 3, symbol: ?isBlockSource@ActorDamageByBlockSource@@UEBA_NXZ
     virtual bool isBlockSource() const;
 

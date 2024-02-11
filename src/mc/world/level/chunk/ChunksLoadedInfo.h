@@ -27,7 +27,7 @@ public:
         class Dimension const& dimension,
         class ChunkSource&     source,
         struct Bounds const&   bounds,
-        bool,
+        bool                   isCircle,
         struct Tick,
         bool allowNonPlayerTicking
     );
@@ -38,7 +38,7 @@ public:
         class Dimension const& dimension,
         class ChunkSource&     source,
         struct Bounds const&   bounds,
-        bool,
+        bool                   isCircle,
         struct Tick,
         bool allowUnloadedChunks,
         bool allowNonPlayerTicking,

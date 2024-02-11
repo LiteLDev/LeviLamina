@@ -74,6 +74,11 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol:
+    // ?_collectAllInterfaceProperties@ClassRegistry@QuickJS@Scripting@@AEAAXAEAV?$unordered_set@UPropertyBinding@Scripting@@UHashPropertyBinding@2@UEqualPropertyBinding@2@V?$allocator@UPropertyBinding@Scripting@@@std@@@std@@AEBUInterfaceBinding@3@@Z
+    MCAPI void
+    _collectAllInterfaceProperties(std::unordered_set<struct Scripting::PropertyBinding, struct Scripting::HashPropertyBinding, struct Scripting::EqualPropertyBinding, std::allocator<struct Scripting::PropertyBinding>>&, struct Scripting::InterfaceBinding const&);
+
+    // symbol:
     // ?_collectAllProperties@ClassRegistry@QuickJS@Scripting@@AEAAXAEAV?$unordered_set@UPropertyBinding@Scripting@@UHashPropertyBinding@2@UEqualPropertyBinding@2@V?$allocator@UPropertyBinding@Scripting@@@std@@@std@@AEBUClassBinding@3@@Z
     MCAPI void
     _collectAllProperties(std::unordered_set<struct Scripting::PropertyBinding, struct Scripting::HashPropertyBinding, struct Scripting::EqualPropertyBinding, std::allocator<struct Scripting::PropertyBinding>>&, struct Scripting::ClassBinding const&);

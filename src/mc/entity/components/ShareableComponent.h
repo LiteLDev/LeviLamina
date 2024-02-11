@@ -26,7 +26,7 @@ public:
     // symbol: ?hasSurplus@ShareableComponent@@QEBAHAEAVActor@@AEBVItemStack@@AEAV3@_N@Z
     MCAPI int hasSurplus(
         class Actor&           owner,
-        class ItemStack const& itemStack,
+        class ItemStack const& item,
         class ItemStack&       resultStack,
         bool                   includeStackSizeofItem
     ) const;
@@ -38,7 +38,7 @@ public:
     MCAPI int wantsMore(class Actor const& owner, class ItemStack const& item) const;
 
     // symbol: ?willPickup@ShareableComponent@@QEBA_NAEAVActor@@AEBVItemStack@@_N2@Z
-    MCAPI bool willPickup(class Actor& owner, class ItemStack const& itemStack, bool, bool) const;
+    MCAPI bool willPickup(class Actor& owner, class ItemStack const& item, bool, bool) const;
 
     // NOLINTEND
 

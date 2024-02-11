@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptRideableComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptRideableComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptRideableComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptRideableComponent() = default;
 
     // vIndex: 1, symbol:
     // ?_isValid@?$ECSScriptActorComponent@VRideableComponent@@VRideableDefinition@@@ScriptModuleMinecraft@@MEBA_NXZ

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/entity/utilities/ActorPathingData.h"
 #include "mc/enums/CanClimbIntoNode.h"
 #include "mc/enums/CanJumpIntoNode.h"
 #include "mc/enums/NodeType.h"
@@ -145,8 +146,10 @@ public:
     MCAPI std::optional<class BlockPos>
           _getHighestReachablePosByJumping(class BlockPos const&, float, class BlockPos const&) const;
 
-    // symbol: ?_getMinAndMaxHeightAroundBlock@PathFinder@@AEBA?AU?$pair@MM@std@@AEBVBlockPos@@M@Z
-    MCAPI std::pair<float, float> _getMinAndMaxHeightAroundBlock(class BlockPos const& blockPos, float) const;
+    // symbol:
+    // ?_getMinAndMaxHeightAroundBlock@PathFinder@@AEBA?AUMinMaxHeightCacheEntry@ActorPathingData@@AEBU3@AEBVBlockPos@@M@Z
+    MCAPI struct ActorPathingData::MinMaxHeightCacheEntry
+    _getMinAndMaxHeightAroundBlock(struct ActorPathingData const&, class BlockPos const&, float) const;
 
     // symbol: ?_getNeighbors@PathFinder@@AEAAHAEBUActorPathingData@@AEAVPathfinderNode@@AEBV3@2I@Z
     MCAPI int _getNeighbors(
@@ -201,10 +204,6 @@ public:
         class BlockPos const& testPos,
         class BlockPos const& size
     );
-
-    // symbol: ?_isFreeWaterNode@PathFinder@@AEAA?AW4NodeType@@AEBUActorPathingData@@AEBVBlockPos@@1@Z
-    MCAPI ::NodeType
-    _isFreeWaterNode(struct ActorPathingData const& data, class BlockPos const&, class BlockPos const& blockPos);
 
     // symbol:
     // ?_reconstructPath@PathFinder@@AEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@PEAVPathfinderNode@@W4PathCompletionType@@UActorUniqueID@@@Z

@@ -11,6 +11,7 @@ public:
     ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING&
     operator=(ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const&);
     ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING(ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const&);
+    ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING();
 
 public:
     // NOLINTBEGIN
@@ -24,9 +25,6 @@ public:
     // symbol:
     // ?postLoadItems_DEPRECATEDASKTYLAING@ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING@@UEAAXAEAVBlockPalette@@_N@Z
     MCVAPI void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette& blockPalette, bool isClientSide);
-
-    // symbol: ??0ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING@@QEAA@XZ
-    MCAPI ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING();
 
     // NOLINTEND
 };

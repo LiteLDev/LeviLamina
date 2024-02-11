@@ -16,28 +16,14 @@ public:
     // symbol: ??0EntitySensorComponent@@QEAA@$$QEAV0@@Z
     MCAPI EntitySensorComponent(class EntitySensorComponent&&);
 
-    // symbol: ?evaluateActor@EntitySensorComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void evaluateActor(class Actor& actor);
-
     // symbol: ??4EntitySensorComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class EntitySensorComponent& operator=(class EntitySensorComponent&&);
 
+    // symbol: ?tick@EntitySensorComponent@@QEAAXAEAVActorOwnerComponent@@AEBUTick@@@Z
+    MCAPI void tick(class ActorOwnerComponent&, struct Tick const&);
+
     // symbol: ??1EntitySensorComponent@@QEAA@XZ
     MCAPI ~EntitySensorComponent();
-
-    // NOLINTEND
-
-private:
-    // NOLINTBEGIN
-    // symbol: ?NO_MAX_COUNT@EntitySensorComponent@@0HB
-    MCAPI static int const NO_MAX_COUNT;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $NO_MAX_COUNT() { return NO_MAX_COUNT; }
 
     // NOLINTEND
 };

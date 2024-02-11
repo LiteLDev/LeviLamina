@@ -20,10 +20,10 @@ public:
     virtual uint64 Available() const;
 
     // vIndex: 2, symbol: ?Peek@ByteArraySource@snappy@@UEAAPEBDPEA_K@Z
-    virtual char const* Peek(uint64*);
+    virtual char const* Peek(uint64* len);
 
     // vIndex: 3, symbol: ?Skip@ByteArraySource@snappy@@UEAAX_K@Z
-    virtual void Skip(uint64);
+    virtual void Skip(uint64 n);
 
     // NOLINTEND
 };

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/brstd/copyable_function.h"
 #include "mc/deps/core/common/bedrock/LogLevel.h"
 #include "mc/enums/LogAreaID.h"
 
@@ -23,8 +24,8 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol:
-    // ?_hook@ResultLogger@Bedrock@@CAAEAV?$function@$$A6AXW4LogLevel@Bedrock@@W4LogAreaID@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@std@@XZ
-    MCAPI static std::function<void(::Bedrock::LogLevel, ::LogAreaID, std::string const&)>& _hook();
+    // ?_hook@ResultLogger@Bedrock@@CAAEAV?$copyable_function@$$A6AXW4LogLevel@Bedrock@@W4LogAreaID@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@brstd@@XZ
+    MCAPI static class brstd::copyable_function<void(::Bedrock::LogLevel, ::LogAreaID, std::string const&)>& _hook();
 
     // symbol:
     // ?log@ResultLogger@Bedrock@@CAXV?$optional@W4LogLevel@Bedrock@@@std@@V?$optional@W4LogAreaID@@@4@AEBVerror_code@4@AEBUCallStack@2@@Z

@@ -13,9 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?hasErrors@ScriptContextResult@Scripting@@QEBA_NXZ
-    MCAPI bool hasErrors() const;
-
     // symbol: ??1ScriptContextResult@Scripting@@QEAA@XZ
     MCAPI ~ScriptContextResult();
 

@@ -38,12 +38,6 @@ public:
     // symbol: ?normalized@Vec3@@QEBA?AV1@XZ
     MCAPI class Vec3 normalized() const;
 
-    // symbol: ??9Vec3@@QEBA_NAEBV0@@Z
-    MCAPI bool operator!=(class Vec3 const&) const;
-
-    // symbol: ??DVec3@@QEBA?AV0@M@Z
-    MCAPI class Vec3 operator*(float) const;
-
     // symbol: ??XVec3@@QEAAAEAV0@M@Z
     MCAPI class Vec3& operator*=(float);
 
@@ -55,6 +49,9 @@ public:
 
     // symbol: ??GVec3@@QEBA?AV0@XZ
     MCAPI class Vec3 operator-() const;
+
+    // symbol: ??GVec3@@QEBA?AV0@AEBV0@@Z
+    MCAPI class Vec3 operator-(class Vec3 const&) const;
 
     // symbol: ??8Vec3@@QEBA_NAEBV0@@Z
     MCAPI bool operator==(class Vec3 const& rhs) const;

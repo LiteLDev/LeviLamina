@@ -17,8 +17,5 @@ public:
     // vIndex: 0, symbol: __gen_??1BlockDestructibleByExplosionComponent@@UEAA@XZ
     virtual ~BlockDestructibleByExplosionComponent() = default;
 
-    // symbol: ?usesNewComponentStorage@BlockDestructibleByExplosionComponent@@SA_NXZ
-    MCAPI static bool usesNewComponentStorage();
-
     // NOLINTEND
 };

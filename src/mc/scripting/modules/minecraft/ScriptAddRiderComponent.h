@@ -24,8 +24,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptAddRiderComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptAddRiderComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptAddRiderComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptAddRiderComponent() = default;
 
     // vIndex: 1, symbol:
     // ?_isValid@?$ECSScriptActorComponent@VAddRiderComponent@@VAddRiderDefinition@@@ScriptModuleMinecraft@@MEBA_NXZ

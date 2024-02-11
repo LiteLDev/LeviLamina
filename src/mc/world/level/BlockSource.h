@@ -3,8 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/SharePtrRefTraits.h"
-#include "mc/common/wrapper/WeakRefT.h"
+#include "mc/common/wrapper/WeakRef.h"
 #include "mc/common/wrapper/optional_ref.h"
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/MaterialType.h"
@@ -28,14 +27,14 @@ public:
     // vIndex: 0, symbol: ??1BlockSource@@UEAA@XZ
     virtual ~BlockSource();
 
-    // vIndex: 1, symbol: ?getBlock@BlockSource@@UEBAAEBVBlock@@HHH@Z
-    virtual class Block const& getBlock(int x, int y, int z) const;
+    // vIndex: 1, symbol: ?getBlock@BlockSource@@UEBAAEBVBlock@@AEBVBlockPos@@I@Z
+    virtual class Block const& getBlock(class BlockPos const& pos, uint layer) const;
 
     // vIndex: 2, symbol: ?getBlock@BlockSource@@UEBAAEBVBlock@@AEBVBlockPos@@@Z
     virtual class Block const& getBlock(class BlockPos const& pos) const;
 
-    // vIndex: 3, symbol: ?getBlock@BlockSource@@UEBAAEBVBlock@@AEBVBlockPos@@I@Z
-    virtual class Block const& getBlock(class BlockPos const& pos, uint layer) const;
+    // vIndex: 3, symbol: ?getBlock@BlockSource@@UEBAAEBVBlock@@HHH@Z
+    virtual class Block const& getBlock(int x, int y, int z) const;
 
     // vIndex: 4, symbol: ?getBlockEntity@BlockSource@@UEBAPEBVBlockActor@@AEBVBlockPos@@@Z
     virtual class BlockActor const* getBlockEntity(class BlockPos const& pos) const;
@@ -58,20 +57,20 @@ public:
     // vIndex: 10, symbol: ?isUnderWater@BlockSource@@UEBA_NAEBVVec3@@AEBVBlock@@@Z
     virtual bool isUnderWater(class Vec3 const& pos, class Block const& block) const;
 
-    // vIndex: 11, symbol: ?getMaterial@BlockSource@@UEBAAEBVMaterial@@AEBVBlockPos@@@Z
-    virtual class Material const& getMaterial(class BlockPos const& pos) const;
-
-    // vIndex: 12, symbol: ?getMaterial@BlockSource@@UEBAAEBVMaterial@@HHH@Z
+    // vIndex: 11, symbol: ?getMaterial@BlockSource@@UEBAAEBVMaterial@@HHH@Z
     virtual class Material const& getMaterial(int x, int y, int z) const;
 
-    // vIndex: 13, symbol: ?hasChunksAt@BlockSource@@UEBA_NAEBUBounds@@_N@Z
-    virtual bool hasChunksAt(struct Bounds const& bounds, bool) const;
+    // vIndex: 12, symbol: ?getMaterial@BlockSource@@UEBAAEBVMaterial@@AEBVBlockPos@@@Z
+    virtual class Material const& getMaterial(class BlockPos const& pos) const;
+
+    // vIndex: 13, symbol: ?hasChunksAt@BlockSource@@UEBA_NAEBVAABB@@_N@Z
+    virtual bool hasChunksAt(class AABB const& bb, bool) const;
 
     // vIndex: 14, symbol: ?hasChunksAt@BlockSource@@UEBA_NAEBVBlockPos@@H_N@Z
     virtual bool hasChunksAt(class BlockPos const& pos, int r, bool) const;
 
-    // vIndex: 15, symbol: ?hasChunksAt@BlockSource@@UEBA_NAEBVAABB@@_N@Z
-    virtual bool hasChunksAt(class AABB const& bb, bool) const;
+    // vIndex: 15, symbol: ?hasChunksAt@BlockSource@@UEBA_NAEBUBounds@@_N@Z
+    virtual bool hasChunksAt(struct Bounds const& bounds, bool) const;
 
     // vIndex: 16, symbol: ?getDimensionId@BlockSource@@UEBA?AV?$AutomaticID@VDimension@@H@@XZ
     virtual DimensionType getDimensionId() const;
@@ -108,8 +107,8 @@ public:
     virtual std::vector<class AABB>&
     fetchCollisionShapes(class AABB const&, bool, std::optional<class EntityContext const>);
 
-    // vIndex: 23, symbol: ?getWeakRef@BlockSource@@UEAA?AV?$WeakRefT@U?$SharePtrRefTraits@VBlockSource@@@@@@XZ
-    virtual class WeakRefT<struct SharePtrRefTraits<class BlockSource>> getWeakRef();
+    // vIndex: 23, symbol: ?getWeakRef@BlockSource@@UEAA?AV?$WeakRef@VBlockSource@@@@XZ
+    virtual class WeakRef<class BlockSource> getWeakRef();
 
     // vIndex: 24, symbol: ?addListener@BlockSource@@UEAAXAEAVBlockSourceListener@@@Z
     virtual void addListener(class BlockSourceListener& l);
@@ -118,14 +117,14 @@ public:
     virtual void removeListener(class BlockSourceListener& l);
 
     // vIndex: 26, symbol:
-    // ?fetchEntities@BlockSource@@UEAA?AV?$span@V?$not_null@PEAVActor@@@gsl@@$0?0@gsl@@PEBVActor@@AEBVAABB@@_N2@Z
-    virtual gsl::span<gsl::not_null<class Actor*>>
-    fetchEntities(class Actor const* except, class AABB const& bb, bool, bool);
-
-    // vIndex: 27, symbol:
     // ?fetchEntities@BlockSource@@UEAA?AV?$span@V?$not_null@PEAVActor@@@gsl@@$0?0@gsl@@W4ActorType@@AEBVAABB@@PEBVActor@@V?$function@$$A6A_NPEAVActor@@@Z@std@@@Z
     virtual gsl::span<gsl::not_null<class Actor*>>
     fetchEntities(::ActorType, class AABB const&, class Actor const*, std::function<bool(class Actor*)>);
+
+    // vIndex: 27, symbol:
+    // ?fetchEntities@BlockSource@@UEAA?AV?$span@V?$not_null@PEAVActor@@@gsl@@$0?0@gsl@@PEBVActor@@AEBVAABB@@_N2@Z
+    virtual gsl::span<gsl::not_null<class Actor*>>
+    fetchEntities(class Actor const* except, class AABB const& bb, bool, bool);
 
     // vIndex: 28, symbol:
     // ?setBlock@BlockSource@@UEAA_NAEBVBlockPos@@AEBVBlock@@HPEBUActorBlockSyncMessage@@PEAVActor@@@Z
@@ -138,14 +137,14 @@ public:
     // vIndex: 30, symbol: ?getMinHeight@BlockSource@@UEBAFXZ
     virtual short getMinHeight() const;
 
-    // vIndex: 31, symbol: __unk_vfn_31
-    virtual void __unk_vfn_31();
+    // vIndex: 31, symbol: ?getDimension@BlockSource@@UEAAAEAVDimension@@XZ
+    virtual class Dimension& getDimension();
 
-    // vIndex: 32, symbol: __unk_vfn_32
-    virtual void __unk_vfn_32();
+    // vIndex: 32, symbol: ?getDimension@BlockSource@@UEBAAEAVDimension@@XZ
+    virtual class Dimension& getDimension() const;
 
-    // vIndex: 33, symbol: __unk_vfn_33
-    virtual void __unk_vfn_33();
+    // vIndex: 33, symbol: ?getDimensionConst@BlockSource@@UEBAAEBVDimension@@XZ
+    virtual class Dimension const& getDimensionConst() const;
 
     // vIndex: 34, symbol: ?getChunkAt@BlockSource@@UEBAPEAVLevelChunk@@AEBVBlockPos@@@Z
     virtual class LevelChunk* getChunkAt(class BlockPos const& pos) const;
@@ -162,11 +161,11 @@ public:
     // vIndex: 37, symbol: ?getChunkSource@BlockSource@@UEAAAEAVChunkSource@@XZ
     virtual class ChunkSource& getChunkSource();
 
-    // vIndex: 38, symbol: ?isSolidBlockingBlock@BlockSource@@UEBA_NAEBVBlockPos@@@Z
-    virtual bool isSolidBlockingBlock(class BlockPos const& p) const;
-
-    // vIndex: 39, symbol: ?isSolidBlockingBlock@BlockSource@@UEBA_NHHH@Z
+    // vIndex: 38, symbol: ?isSolidBlockingBlock@BlockSource@@UEBA_NHHH@Z
     virtual bool isSolidBlockingBlock(int x, int y, int z) const;
+
+    // vIndex: 39, symbol: ?isSolidBlockingBlock@BlockSource@@UEBA_NAEBVBlockPos@@@Z
+    virtual bool isSolidBlockingBlock(class BlockPos const& p) const;
 
     // vIndex: 40, symbol: ?areChunksFullyLoaded@BlockSource@@UEBA_NAEBVBlockPos@@H@Z
     virtual bool areChunksFullyLoaded(class BlockPos const& pos, int r) const;
@@ -176,15 +175,6 @@ public:
 
     // vIndex: 42, symbol: ?canDoContainedItemDrops@BlockSource@@UEBA_NXZ
     virtual bool canDoContainedItemDrops() const;
-
-    // symbol: ?getDimension@BlockSource@@UEAAAEAVDimension@@XZ
-    MCVAPI class Dimension& getDimension();
-
-    // symbol: ?getDimension@BlockSource@@UEBAAEAVDimension@@XZ
-    MCVAPI class Dimension& getDimension() const;
-
-    // symbol: ?getDimensionConst@BlockSource@@UEBAAEBVDimension@@XZ
-    MCVAPI class Dimension const& getDimensionConst() const;
 
     // symbol: ??0BlockSource@@QEAA@AEAVChunkSource@@_N1@Z
     MCAPI BlockSource(class ChunkSource& source, bool publicSource, bool allowUnpopulatedChunks);
@@ -426,6 +416,9 @@ public:
     // symbol: ?getDefaultBrightness@BlockSource@@QEBA?AUBrightnessPair@@XZ
     MCAPI struct BrightnessPair getDefaultBrightness() const;
 
+    // symbol: ?getEmptyBlock@BlockSource@@QEBAAEBVBlock@@XZ
+    MCAPI class Block const& getEmptyBlock() const;
+
     // symbol: ?getGrassColor@BlockSource@@QEBAHAEBVBlockPos@@@Z
     MCAPI int getGrassColor(class BlockPos const& pos) const;
 
@@ -476,9 +469,6 @@ public:
 
     // symbol: ?hasBorderBlock@BlockSource@@QEBA_NVBlockPos@@@Z
     MCAPI bool hasBorderBlock(class BlockPos pos) const;
-
-    // symbol: ?hasChunksAt@BlockSource@@QEBA_NAEBVBlockPos@@0_N@Z
-    MCAPI bool hasChunksAt(class BlockPos const& min, class BlockPos const& max, bool) const;
 
     // symbol: ?hasSubChunksAt@BlockSource@@QEBA?AU?$pair@_NV?$optional@VSubChunkPos@@@std@@@std@@AEBVBlockPos@@0@Z
     MCAPI std::pair<bool, std::optional<class SubChunkPos>>
@@ -565,11 +555,20 @@ public:
     MCAPI void neighborChanged(class BlockPos const& neighPos, class BlockPos const& myPos);
 
     // symbol: ?postGameEvent@BlockSource@@QEAAXPEAVActor@@AEBVGameEvent@@AEBVBlockPos@@PEBVBlock@@@Z
-    MCAPI void
-    postGameEvent(class Actor* source, class GameEvent const&, class BlockPos const& origin, class Block const*);
+    MCAPI void postGameEvent(
+        class Actor* source,
+        class GameEvent const&,
+        class BlockPos const& origin,
+        class Block const*    affectedBlock
+    );
 
     // symbol: ?postGameEvent@BlockSource@@QEAAXPEAVActor@@AEBVGameEvent@@AEBVVec3@@PEBVBlock@@@Z
-    MCAPI void postGameEvent(class Actor* source, class GameEvent const&, class Vec3 const& origin, class Block const*);
+    MCAPI void postGameEvent(
+        class Actor* source,
+        class GameEvent const&,
+        class Vec3 const&  origin,
+        class Block const* affectedBlock
+    );
 
     // symbol: ?removeBlock@BlockSource@@QEAA_NAEBVBlockPos@@@Z
     MCAPI bool removeBlock(class BlockPos const& pos);
@@ -643,6 +642,10 @@ public:
     MCAPI void
     updateNeighborsAtExceptFromFacing(class BlockPos const& pos, class BlockPos const& neighborPos, int skipFacing);
 
+    // symbol: ?containsMaterial@BlockSource@@SA_NAEBVIConstBlockSource@@AEBVAABB@@W4MaterialType@@@Z
+    MCAPI static bool
+    containsMaterial(class IConstBlockSource const& region, class AABB const& box, ::MaterialType material);
+
     // symbol:
     // ?doesIntersect@BlockSource@@SA_NAEBVIConstBlockSource@@AEBVAABB@@AEBVGetCollisionShapeInterface@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@_N@Z
     MCAPI static bool doesIntersect(
@@ -653,8 +656,8 @@ public:
         bool
     );
 
-    // symbol: ?generateUnloadedChunkAABB@BlockSource@@SA?AVAABB@@AEBVChunkPos@@@Z
-    MCAPI static class AABB generateUnloadedChunkAABB(class ChunkPos const& chunkPos);
+    // symbol: ?isEmptyBlock@BlockSource@@SA_NAEBVBlock@@@Z
+    MCAPI static bool isEmptyBlock(class Block const&);
 
     // NOLINTEND
 
@@ -676,7 +679,7 @@ public:
     // symbol:
     // ?_fetchEntityHelper@BlockSource@@IEAAXVWeakEntityRef@@V?$span@V?$not_null@PEBVActor@@@gsl@@$0?0@gsl@@AEBVAABB@@_N@Z
     MCAPI void _fetchEntityHelper(
-        class WeakEntityRef,
+        class WeakEntityRef                          entityRef,
         gsl::span<gsl::not_null<class Actor const*>> ignoredEntities,
         class AABB const&                            bb,
         bool

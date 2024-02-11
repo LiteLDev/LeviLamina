@@ -3,10 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/PathBuffer.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/resources/PackOrigin.h"
 #include "mc/resources/PackSource.h"
 #include "mc/resources/PackType.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Core { class Path; }
+// clang-format on
 
 class WorldHistoryPackSource : public ::PackSource {
 public:
@@ -38,6 +44,17 @@ public:
         class IPackManifestFactory&                                         manifestFactory,
         Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider
     );
+
+    // symbol: ??0WorldHistoryPackSource@@QEAA@AEBVPath@Core@@W4PackType@@@Z
+    MCAPI WorldHistoryPackSource(class Core::Path const& pathToWorld, ::PackType type);
+
+    // symbol:
+    // ?getPathToWorld@WorldHistoryPackSource@@QEBAAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+    MCAPI class Core::PathBuffer<std::string> const& getPathToWorld() const;
+
+    // symbol:
+    // ?generateHistoryFilePath@WorldHistoryPackSource@@SA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVPath@3@W4PackType@@@Z
+    MCAPI static class Core::PathBuffer<std::string> generateHistoryFilePath(class Core::Path const&, ::PackType);
 
     // NOLINTEND
 

@@ -28,29 +28,14 @@ public:
     isItemAllowedInSlot(class ContainerScreenContext const&, int slot, class ItemStackBase const& item, int amount)
         const;
 
-    // vIndex: 3, symbol: __unk_vfn_3
-    virtual void __unk_vfn_3();
-
     // vIndex: 4, symbol: ?isItemAllowedToAdd@MaterialReducerInputValidation@@UEBA_NAEBVItemStack@@@Z
     virtual bool isItemAllowedToAdd(class ItemStack const& item) const;
-
-    // vIndex: 5, symbol: __unk_vfn_5
-    virtual void __unk_vfn_5();
 
     // vIndex: 6, symbol: ?canItemMoveToContainer@ContainerValidationBase@@UEBA_NAEBVItemStackBase@@@Z
     virtual bool canItemMoveToContainer(class ItemStackBase const& item) const;
 
-    // vIndex: 7, symbol: __unk_vfn_7
-    virtual void __unk_vfn_7();
-
     // vIndex: 8, symbol: ?getContainerOffset@MaterialReducerInputValidation@@UEBAHAEBVContainerScreenContext@@@Z
     virtual int getContainerOffset(class ContainerScreenContext const&) const;
-
-    // symbol: ?canDestroy@MaterialReducerInputValidation@@UEBA_NAEBVContainerScreenContext@@@Z
-    MCVAPI bool canDestroy(class ContainerScreenContext const& screenContext) const;
-
-    // symbol: ?getAvailableSetCount@MaterialReducerInputValidation@@UEBAHHAEBVItemStackBase@@@Z
-    MCVAPI int getAvailableSetCount(int slot, class ItemStackBase const& item) const;
 
     // symbol: ??0MaterialReducerInputValidation@@QEAA@AEBVContainerScreenContext@@@Z
     MCAPI explicit MaterialReducerInputValidation(class ContainerScreenContext const&);

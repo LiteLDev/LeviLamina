@@ -37,7 +37,7 @@ public:
     MCAPI HurtArmorPacket();
 
     // symbol: ??0HurtArmorPacket@@QEAA@W4ActorDamageCause@@HV?$bitset@$03@std@@@Z
-    MCAPI HurtArmorPacket(::ActorDamageCause cause, int dmg, std::bitset<4>);
+    MCAPI HurtArmorPacket(::ActorDamageCause cause, int dmg, std::bitset<4> armorSlots);
 
     // NOLINTEND
 };

@@ -26,8 +26,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptHealableComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptHealableComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptHealableComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptHealableComponent() = default;
 
     // vIndex: 1, symbol:
     // ?_isValid@?$ECSScriptActorComponent@VHealableComponent@@VHealableDefinition@@@ScriptModuleMinecraft@@MEBA_NXZ

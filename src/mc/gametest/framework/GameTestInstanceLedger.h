@@ -27,8 +27,15 @@ public:
     // vIndex: 1, symbol: ?onTestStructureLoaded@GameTestInstanceLedger@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
     virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance&);
 
+    // symbol: ??0GameTestInstanceLedger@@QEAA@AEAVLevelStorage@@@Z
+    MCAPI explicit GameTestInstanceLedger(class LevelStorage& storage);
+
     // symbol: ?clear@GameTestInstanceLedger@@QEAAXV?$AutomaticID@VDimension@@H@@@Z
     MCAPI void clear(DimensionType dimension);
+
+    // symbol:
+    // ?getBoundingBoxes@GameTestInstanceLedger@@QEBA?AV?$vector@VBoundingBox@@V?$allocator@VBoundingBox@@@std@@@std@@V?$AutomaticID@VDimension@@H@@@Z
+    MCAPI std::vector<class BoundingBox> getBoundingBoxes(DimensionType dimension) const;
 
     // NOLINTEND
 

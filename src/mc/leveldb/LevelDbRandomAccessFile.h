@@ -15,7 +15,7 @@ public:
     virtual ~LevelDbRandomAccessFile() = default;
 
     // vIndex: 1, symbol: ?Read@LevelDbRandomAccessFile@@UEBA?AVStatus@leveldb@@_K0PEAVSlice@3@PEAD@Z
-    virtual leveldb::Status Read(uint64, uint64, leveldb::Slice*, char*) const;
+    virtual leveldb::Status Read(uint64 offset, uint64 n, leveldb::Slice* result, char* scratch) const;
 
     // NOLINTEND
 };

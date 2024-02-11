@@ -25,12 +25,12 @@ public:
     virtual ~RakWebSocket();
 
     // vIndex: 1, symbol:
-    // ?connect@RakWebSocket@@UEAA?AW4WSConnectionResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z
-    virtual ::WSConnectionResult connect(std::string const& uri, std::vector<std::string> const&);
-
-    // vIndex: 2, symbol:
     // ?connect@RakWebSocket@@UEAA?AW4WSConnectionResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual ::WSConnectionResult connect(std::string const& uri);
+
+    // vIndex: 2, symbol:
+    // ?connect@RakWebSocket@@UEAA?AW4WSConnectionResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z
+    virtual ::WSConnectionResult connect(std::string const& uri, std::vector<std::string> const&);
 
     // vIndex: 3, symbol: ?isReady@RakWebSocket@@UEBA_NXZ
     virtual bool isReady() const;
@@ -61,9 +61,6 @@ public:
 
     // symbol: ?send@RakWebSocket@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI bool send(std::string const& message);
-
-    // symbol: ?sendBinary@RakWebSocket@@QEAA_NPEBE_K@Z
-    MCAPI bool sendBinary(uchar const* data, uint64 size);
 
     // NOLINTEND
 

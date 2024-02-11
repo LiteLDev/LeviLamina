@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/world/level/storage/FlushableEnv.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Core { class Path; }
+// clang-format on
+
 class InMemoryEnv : public ::FlushableEnv {
 public:
     // prevent constructor by default
@@ -51,6 +56,9 @@ public:
 
     // vIndex: 20, symbol: ?flushToPermanentStorage@InMemoryEnv@@UEAAXXZ
     virtual void flushToPermanentStorage();
+
+    // symbol: ??0InMemoryEnv@@QEAA@PEAVEnv@leveldb@@AEBVPath@Core@@@Z
+    MCAPI InMemoryEnv(leveldb::Env* env, class Core::Path const& rootDbPath);
 
     // NOLINTEND
 

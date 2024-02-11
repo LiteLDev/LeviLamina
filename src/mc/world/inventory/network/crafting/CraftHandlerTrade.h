@@ -28,7 +28,7 @@ public:
 
     // vIndex: 4, symbol:
     // ?_handleCraftAction@CraftHandlerTrade@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z
-    virtual ::ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&);
+    virtual ::ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const& requestAction);
 
     // vIndex: 5, symbol: ?_postCraftRequest@CraftHandlerTrade@@EEAAX_N@Z
     virtual void _postCraftRequest(bool wasSuccess);
@@ -43,7 +43,7 @@ public:
 
     // symbol:
     // ?_handleTrade1@CraftHandlerTrade@@AEAA?AW4ItemStackNetResult@@AEBV?$ItemStackRequestActionCraft@V?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@$0M@@@@Z
-    MCAPI ::ItemStackNetResult _handleTrade1(class ItemStackRequestActionCraft<RecipeNetId, 12> const&);
+    MCAPI ::ItemStackNetResult _handleTrade1(class ItemStackRequestActionCraft<RecipeNetId, 12> const& requestAction);
 
     // symbol:
     // ?_initResultItem@CraftHandlerTrade@@AEAA?AW4ItemStackNetResult@@AEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@@Z

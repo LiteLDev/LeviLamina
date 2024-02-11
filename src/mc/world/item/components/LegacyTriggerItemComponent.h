@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/pubsub/Connector.h"
 #include "mc/world/item/components/ItemComponent.h"
 
 // auto generated forward declare list
@@ -22,12 +21,6 @@ public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1LegacyTriggerItemComponent@@UEAA@XZ
     virtual ~LegacyTriggerItemComponent();
-
-    // symbol:
-    // ?onTrigger@LegacyTriggerItemComponent@@QEAAAEAV?$Connector@$$A6AXAEA_NAEAVItemStackBase@@AEBVDefinitionTrigger@@AEAVRenderParams@@@Z@PubSub@Bedrock@@XZ
-    MCAPI class Bedrock::PubSub::Connector<
-        void(bool&, class ItemStackBase&, class DefinitionTrigger const&, class RenderParams&)>&
-    onTrigger();
 
     // NOLINTEND
 

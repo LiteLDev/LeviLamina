@@ -24,14 +24,9 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol:
-    // ?doPostAiUpdate@PostAIUpdateSystem@@CAXAEAVStrictEntityContext@@AEBUAttributesComponent@@V?$Optional@$$CBV?$FlagComponent@UOnGroundFlag@@@@@@AEAUNoActionTimeComponent@@V?$EntityModifier@V?$FlagComponent@UWasOnGroundFlag@@@@@@@Z
-    MCAPI static void doPostAiUpdate(
-        class StrictEntityContext&                                     entity,
-        struct AttributesComponent const&                              attributes,
-        class Optional<class FlagComponent<struct OnGroundFlag> const> onGround,
-        struct NoActionTimeComponent&,
-        class EntityModifier<class FlagComponent<struct WasOnGroundFlag>> mod
-    );
+    // ?doPostAiUpdate@PostAIUpdateSystem@@CAXAEAVStrictEntityContext@@V?$Optional@$$CBV?$FlagComponent@UOnGroundFlag@@@@@@AEAUNoActionTimeComponent@@V?$EntityModifier@V?$FlagComponent@UWasOnGroundFlag@@@@@@@Z
+    MCAPI static void
+    doPostAiUpdate(class StrictEntityContext&, class Optional<class FlagComponent<struct OnGroundFlag> const>, struct NoActionTimeComponent&, class EntityModifier<class FlagComponent<struct WasOnGroundFlag>>);
 
     // NOLINTEND
 };

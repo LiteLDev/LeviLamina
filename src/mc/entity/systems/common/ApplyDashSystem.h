@@ -18,19 +18,20 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ?_tickApplyDashModifierSystem@ApplyDashSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UDashJump@@@@@@$$CBUTriggerJumpRequestComponent@@$$CBVDashComponent@@$$CBUAttributesComponent@@$$CBUActorRotationComponent@@$$CBUMobEffectsComponent@@UStateVectorComponent@@UJumpPendingScaleComponent@@USynchedActorDataComponent@@@@V?$EntityModifier@UDashCooldownTimerComponent@@@@@Z
+    // ?_tickApplyDashModifierSystem@ApplyDashSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UDashJump@@@@@@$$CBUTriggerJumpRequestComponent@@$$CBVDashComponent@@$$CBUMovementAttributesComponent@@$$CBUActorRotationComponent@@$$CBUMobEffectsComponent@@UStateVectorComponent@@UJumpPendingScaleComponent@@UActorDataFlagComponent@@UActorDataDirtyFlagsComponent@@@@V?$EntityModifier@UDashCooldownTimerComponent@@@@@Z
     MCAPI static void _tickApplyDashModifierSystem(
         class ViewT<
             class StrictEntityContext,
             struct Include<class FlagComponent<struct DashJump>>,
             struct TriggerJumpRequestComponent const,
             class DashComponent const,
-            struct AttributesComponent const,
+            struct MovementAttributesComponent const,
             struct ActorRotationComponent const,
             struct MobEffectsComponent const,
             struct StateVectorComponent,
             struct JumpPendingScaleComponent,
-            struct SynchedActorDataComponent>                   view,
+            struct ActorDataFlagComponent,
+            struct ActorDataDirtyFlagsComponent>                view,
         class EntityModifier<struct DashCooldownTimerComponent> mod
     );
 
@@ -38,36 +39,14 @@ public:
     MCAPI static struct TickingSystemWithInfo create();
 
     // symbol:
-    // ?doDash@ApplyDashSystem@@SAXAEBVStrictEntityContext@@AEBUJumpPreventionResult@@AEBVBaseAttributeMap@@AEBV?$vector@VMobEffectInstance@@V?$allocator@VMobEffectInstance@@@std@@@std@@MMMIAEAVVec3@@AEAMAEAVSynchedActorData@@AEAV?$EntityModifier@UDashCooldownTimerComponent@@@@@Z
-    MCAPI static void doDash(
-        class StrictEntityContext const& context,
-        struct JumpPreventionResult const&,
-        class BaseAttributeMap const&               attributes,
-        std::vector<class MobEffectInstance> const& mobEffects,
-        float,
-        float,
-        float,
-        uint        cooldownTime,
-        class Vec3& posDelta,
-        float&,
-        class SynchedActorData&                                  entityData,
-        class EntityModifier<struct DashCooldownTimerComponent>& mod
-    );
+    // ?doDash@ApplyDashSystem@@SAXAEBVStrictEntityContext@@AEBUJumpPreventionResult@@AEBUMovementAttributesComponent@@AEBV?$vector@VMobEffectInstance@@V?$allocator@VMobEffectInstance@@@std@@@std@@MMMIAEAVVec3@@AEAMAEAUActorDataFlagComponent@@AEAUActorDataDirtyFlagsComponent@@AEAV?$EntityModifier@UDashCooldownTimerComponent@@@@@Z
+    MCAPI static void
+    doDash(class StrictEntityContext const&, struct JumpPreventionResult const&, struct MovementAttributesComponent const&, std::vector<class MobEffectInstance> const&, float, float, float, uint, class Vec3&, float&, struct ActorDataFlagComponent&, struct ActorDataDirtyFlagsComponent&, class EntityModifier<struct DashCooldownTimerComponent>&);
 
     // symbol:
-    // ?tickApplyDashModifierSystem@ApplyDashSystem@@SAXAEBVStrictEntityContext@@AEBUTriggerJumpRequestComponent@@AEBVDashComponent@@AEBUAttributesComponent@@AEBUActorRotationComponent@@AEBUMobEffectsComponent@@AEAUStateVectorComponent@@AEAUJumpPendingScaleComponent@@AEAUSynchedActorDataComponent@@AEAV?$EntityModifier@UDashCooldownTimerComponent@@@@@Z
-    MCAPI static void tickApplyDashModifierSystem(
-        class StrictEntityContext const& context,
-        struct TriggerJumpRequestComponent const&,
-        class DashComponent const&,
-        struct AttributesComponent const&,
-        struct ActorRotationComponent const&,
-        struct MobEffectsComponent const&,
-        struct StateVectorComponent&,
-        struct JumpPendingScaleComponent&,
-        struct SynchedActorDataComponent&,
-        class EntityModifier<struct DashCooldownTimerComponent>& mod
-    );
+    // ?tickApplyDashModifierSystem@ApplyDashSystem@@SAXAEBVStrictEntityContext@@AEBUTriggerJumpRequestComponent@@AEBVDashComponent@@AEBUMovementAttributesComponent@@AEBUActorRotationComponent@@AEBUMobEffectsComponent@@AEAUStateVectorComponent@@AEAUJumpPendingScaleComponent@@AEAUActorDataFlagComponent@@AEAUActorDataDirtyFlagsComponent@@AEAV?$EntityModifier@UDashCooldownTimerComponent@@@@@Z
+    MCAPI static void
+    tickApplyDashModifierSystem(class StrictEntityContext const&, struct TriggerJumpRequestComponent const&, class DashComponent const&, struct MovementAttributesComponent const&, struct ActorRotationComponent const&, struct MobEffectsComponent const&, struct StateVectorComponent&, struct JumpPendingScaleComponent&, struct ActorDataFlagComponent&, struct ActorDataDirtyFlagsComponent&, class EntityModifier<struct DashCooldownTimerComponent>&);
 
     // NOLINTEND
 };

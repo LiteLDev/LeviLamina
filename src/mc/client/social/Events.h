@@ -14,6 +14,7 @@ class ItemDescriptor;
 class Mob;
 class MobEffectInstance;
 class Player;
+class Vec3;
 namespace Core { class Path; }
 namespace Json { class Value; }
 namespace Social::Events { class AggregationEventListener; }

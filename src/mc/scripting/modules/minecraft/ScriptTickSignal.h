@@ -65,14 +65,14 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?scheduleInterval@ScriptTickSignal@ScriptModuleMinecraft@@QEAAI$$QEAV?$Closure@$$A6AXXZ$$V@Scripting@@II@Z
-    MCAPI uint scheduleInterval(class Scripting::Closure<void(void)>&&, uint interval, uint currentTick);
+    MCAPI uint scheduleInterval(class Scripting::Closure<void()>&&, uint interval, uint currentTick);
 
     // symbol: ?scheduleTimeout@ScriptTickSignal@ScriptModuleMinecraft@@QEAAI$$QEAV?$Closure@$$A6AXXZ$$V@Scripting@@II@Z
-    MCAPI uint scheduleTimeout(class Scripting::Closure<void(void)>&&, uint delay, uint currentTick);
+    MCAPI uint scheduleTimeout(class Scripting::Closure<void()>&&, uint delay, uint currentTick);
 
     // symbol:
     // ?scheduleTimeoutSafe@ScriptTickSignal@ScriptModuleMinecraft@@QEAAI$$QEAV?$Closure@$$A6AXXZ$$V@Scripting@@I@Z
-    MCAPI uint scheduleTimeoutSafe(class Scripting::Closure<void(void)>&&, uint currentTick);
+    MCAPI uint scheduleTimeoutSafe(class Scripting::Closure<void()>&&, uint currentTick);
 
     // symbol: ?unschedule@ScriptTickSignal@ScriptModuleMinecraft@@QEAAXI@Z
     MCAPI void unschedule(uint id);

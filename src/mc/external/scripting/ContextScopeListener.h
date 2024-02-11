@@ -75,18 +75,6 @@ public:
     virtual void onPostLifetimeScopeDestroy(class Scripting::LifetimeRegistry&);
 
     // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    // symbol:
-    // ?_maybeReleaseNativeJSValueRef@ContextScopeListener@QuickJS@Scripting@@AEAAXAEAVLifetimeRegistry@3@UObjectHandle@3@AEBVmeta_type@entt@@@Z
-    MCAPI void _maybeReleaseNativeJSValueRef(
-        class Scripting::LifetimeRegistry& registry,
-        struct Scripting::ObjectHandle     handle,
-        entt::meta_type const&             type
-    );
-
-    // NOLINTEND
 };
 
 }; // namespace Scripting::QuickJS

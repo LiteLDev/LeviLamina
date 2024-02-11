@@ -46,9 +46,6 @@ public:
     // symbol: ?_attemptMoveToTargetPosition@MeleeAttackBaseGoal@@IEAAXAEAVActor@@_NM@Z
     MCAPI void _attemptMoveToTargetPosition(class Actor&, bool, float);
 
-    // symbol: ?_getTargetDistanceSqXZ@MeleeAttackBaseGoal@@IEBAMAEBVActor@@@Z
-    MCAPI float _getTargetDistanceSqXZ(class Actor const&) const;
-
     // symbol: ?_inSunlight@MeleeAttackBaseGoal@@IEBA_NAEBVActor@@@Z
     MCAPI bool _inSunlight(class Actor const&) const;
 

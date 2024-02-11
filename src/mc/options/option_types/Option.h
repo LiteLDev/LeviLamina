@@ -46,24 +46,21 @@ public:
     // ?save@BoolOption@@UEAAXAEAV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@@Z
     virtual void save(std::vector<std::pair<std::string, std::string>>& propertyVector) = 0;
 
-    // vIndex: 2, symbol: ?load@BoolOption@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void load(std::string const& valueString) = 0;
+    // vIndex: 2, symbol: ?load@Option@@UEAAXAEBVValue@Json@@@Z
+    virtual void load(class Json::Value const& valueJson);
 
     // vIndex: 3, symbol:
     // ?load@Option@@UEAAXAEAV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@@Z
     virtual void load(std::map<std::string, std::string>& propertyMap);
 
-    // vIndex: 4, symbol: ?load@Option@@UEAAXAEBVValue@Json@@@Z
-    virtual void load(class Json::Value const& valueJson);
+    // vIndex: 4, symbol: ?load@BoolOption@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    virtual void load(std::string const& valueString) = 0;
 
     // symbol: ?canModify@Option@@QEBA_NXZ
     MCAPI bool canModify() const;
 
     // symbol: ?getBool@Option@@QEBA_NXZ
     MCAPI bool getBool() const;
-
-    // symbol: ?hasOverrideSource@Option@@QEBA_NXZ
-    MCAPI bool hasOverrideSource() const;
 
     // symbol: ?notifyOptionValueChanged@Option@@QEAAX_N@Z
     MCAPI void notifyOptionValueChanged(bool saveOptionChange);
@@ -73,9 +70,6 @@ public:
 
     // symbol: ?registerObserver@Option@@QEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXAEBVOption@@@Z@std@@@Z
     MCAPI class Bedrock::PubSub::Subscription registerObserver(std::function<void(class Option const&)>);
-
-    // symbol: ?setRequestSaveCallback@Option@@QEAAXV?$function@$$A6AX_N@Z@std@@@Z
-    MCAPI void setRequestSaveCallback(std::function<void(bool)> callback);
 
     // symbol: ?read@Option@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEA_N@Z
     MCAPI static bool read(std::string const& valueString, bool& output);

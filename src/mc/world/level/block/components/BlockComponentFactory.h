@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cereal { class SchemaFactory; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -57,22 +56,17 @@ public:
     MCAPI static void addAllComponentUpgrades(class CerealDocumentUpgrader&, struct cereal::ReflectionCtx&);
 
     // symbol:
-    // ?bindAllComponentSchemas@BlockComponentFactory@@SAXAEAVSchemaFactory@cereal@@AEBVSemVersion@@AEAUReflectionCtx@3@@Z
-    MCAPI static void
-    bindAllComponentSchemas(class cereal::SchemaFactory&, class SemVersion const&, struct cereal::ReflectionCtx&);
-
-    // symbol:
     // ?getPropRegisteredCerealComponents@BlockComponentFactory@@SAAEAV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UConstructor@BlockComponentFactory@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UConstructor@BlockComponentFactory@@@std@@@2@@std@@AEAUReflectionCtx@cereal@@@Z
     MCAPI static std::unordered_map<std::string, struct BlockComponentFactory::Constructor>&
     getPropRegisteredCerealComponents(struct cereal::ReflectionCtx&);
 
-    // symbol:
-    // ?getPropRegisteredDeprecatedCerealComponents@BlockComponentFactory@@SAAEAV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@AEAUReflectionCtx@cereal@@@Z
-    MCAPI static std::unordered_map<std::string, std::string>&
-    getPropRegisteredDeprecatedCerealComponents(struct cereal::ReflectionCtx&);
-
     // symbol: ?registerAllCerealDescriptions@BlockComponentFactory@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void registerAllCerealDescriptions(struct cereal::ReflectionCtx&);
+
+    // symbol:
+    // ?registerComponentUpgrade@BlockComponentFactory@@SAXAEAVCerealDocumentUpgrader@@V?$shared_ptr@VCerealSchemaUpgrade@@@std@@@Z
+    MCAPI static void
+    registerComponentUpgrade(class CerealDocumentUpgrader&, std::shared_ptr<class CerealSchemaUpgrade>);
 
     // NOLINTEND
 

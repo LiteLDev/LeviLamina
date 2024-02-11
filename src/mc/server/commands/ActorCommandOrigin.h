@@ -75,5 +75,9 @@ public:
     // symbol: ??0ActorCommandOrigin@@QEAA@AEAVActor@@@Z
     MCAPI explicit ActorCommandOrigin(class Actor& origin);
 
+    // symbol:
+    // ?load@ActorCommandOrigin@@SA?AV?$unique_ptr@VActorCommandOrigin@@U?$default_delete@VActorCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVLevel@@@Z
+    MCAPI static std::unique_ptr<class ActorCommandOrigin> load(class CompoundTag const& tag, class Level& level);
+
     // NOLINTEND
 };

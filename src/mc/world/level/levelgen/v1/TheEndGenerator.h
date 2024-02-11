@@ -73,10 +73,8 @@ public:
     // symbol: ?prepareHeights@TheEndGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@_N@Z
     MCVAPI void prepareHeights(class BlockVolume& box, class ChunkPos const& chunkPos, bool factorInBeardsAndShavers);
 
-    // symbol:
-    // ??0TheEndGenerator@@QEAA@AEAVDimension@@IPEBVBiome@@V?$unique_ptr@VStructureFeatureRegistry@@U?$default_delete@VStructureFeatureRegistry@@@std@@@std@@@Z
-    MCAPI
-    TheEndGenerator(class Dimension& dimension, uint seed, class Biome const*, std::unique_ptr<class StructureFeatureRegistry>);
+    // symbol: ??0TheEndGenerator@@QEAA@AEAVDimension@@IPEBVBiome@@@Z
+    MCAPI TheEndGenerator(class Dimension&, uint, class Biome const*);
 
     // symbol: ?buildSurfaces@TheEndGenerator@@QEAAXAEAVBlockVolume@@AEBVChunkPos@@AEAVLevelChunk@@@Z
     MCAPI void buildSurfaces(class BlockVolume& box, class ChunkPos const& chunkPos, class LevelChunk& levelChunk);

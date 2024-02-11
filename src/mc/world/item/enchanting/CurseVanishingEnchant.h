@@ -23,23 +23,20 @@ public:
     // vIndex: 3, symbol: ?getMaxCost@CurseVanishingEnchant@@UEBAHH@Z
     virtual int getMaxCost(int level) const;
 
-    // vIndex: 4, symbol: __unk_vfn_4
-    virtual void __unk_vfn_4();
+    // vIndex: 12, symbol: ?isTreasureOnly@CurseVanishingEnchant@@UEBA_NXZ
+    virtual bool isTreasureOnly() const;
 
-    // vIndex: 10, symbol: __unk_vfn_10
-    virtual void __unk_vfn_10();
-
-    // vIndex: 11, symbol: __unk_vfn_11
-    virtual void __unk_vfn_11();
-
-    // vIndex: 12, symbol: __unk_vfn_12
-    virtual void __unk_vfn_12();
-
-    // vIndex: 13, symbol: __unk_vfn_13
-    virtual void __unk_vfn_13();
-
-    // symbol: ?isTreasureOnly@CurseVanishingEnchant@@UEBA_NXZ
-    MCVAPI bool isTreasureOnly() const;
+    // symbol:
+    // ??0CurseVanishingEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_view@DU?$char_traits@D@std@@@std@@2H_NH@Z
+    MCAPI CurseVanishingEnchant(
+        ::Enchant::Type      type,
+        ::Enchant::Frequency frequency,
+        std::string_view     stringId,
+        std::string_view     description,
+        int                  primarySlots,
+        bool                 isLootable,
+        int                  secondarySlots
+    );
 
     // NOLINTEND
 };

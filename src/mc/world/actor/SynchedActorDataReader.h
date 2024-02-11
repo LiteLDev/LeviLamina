@@ -20,8 +20,5 @@ public:
     // symbol: ?getStatusFlag@SynchedActorDataReader@@QEBA_NW4ActorFlags@@@Z
     MCAPI bool getStatusFlag(::ActorFlags flag) const;
 
-    // symbol: ?getVec3@SynchedActorDataReader@@QEBA?AVVec3@@G@Z
-    MCAPI class Vec3 getVec3(ushort id) const;
-
     // NOLINTEND
 };

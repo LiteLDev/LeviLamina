@@ -3,15 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/debug/log/ContentLogEndPoint.h"
 #include "mc/enums/LogArea.h"
 #include "mc/enums/LogLevel.h"
+#include "mc/resources/ResourcePackListener.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Core { class Path; }
 // clang-format on
 
-class DebugEndPoint {
+class DebugEndPoint : public ::ContentLogEndPoint {
 public:
     // DebugEndPoint inner types declare
     // clang-format off
@@ -19,7 +21,7 @@ public:
     // clang-format on
 
     // DebugEndPoint inner types define
-    class VanillaWorldChecker {
+    class VanillaWorldChecker : public ::ResourcePackListener {
     public:
         // prevent constructor by default
         VanillaWorldChecker& operator=(VanillaWorldChecker const&);
@@ -34,15 +36,6 @@ public:
         // vIndex: 1, symbol:
         // ?onActiveResourcePacksChanged@VanillaWorldChecker@DebugEndPoint@@UEAAXAEAVResourcePackManager@@@Z
         virtual void onActiveResourcePacksChanged(class ResourcePackManager& mgr);
-
-        // vIndex: 2, symbol: __unk_vfn_2
-        virtual void __unk_vfn_2();
-
-        // vIndex: 3, symbol: __unk_vfn_3
-        virtual void __unk_vfn_3();
-
-        // vIndex: 4, symbol: __unk_vfn_4
-        virtual void __unk_vfn_4();
 
         // vIndex: 5, symbol:
         // ?onResourceManagerDestroyed@VanillaWorldChecker@DebugEndPoint@@UEAAXAEAVResourcePackManager@@@Z

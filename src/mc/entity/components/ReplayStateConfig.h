@@ -17,5 +17,11 @@ public:
     // symbol: ??0ReplayStateConfig@@QEAA@W4ReplayStateMode@@@Z
     MCAPI explicit ReplayStateConfig(::ReplayStateMode mode);
 
+    // symbol: ?getSanitizedHistorySize@ReplayStateConfig@@QEBA_KXZ
+    MCAPI uint64 getSanitizedHistorySize() const;
+
+    // symbol: ?setReplayStateConfigThresholds@ReplayStateConfig@@QEAAXM@Z
+    MCAPI void setReplayStateConfigThresholds(float);
+
     // NOLINTEND
 };

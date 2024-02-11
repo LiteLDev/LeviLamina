@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/DependencyResolutionBehavior.h"
 #include "mc/external/scripting/FutureStatus.h"
 #include "mc/external/scripting/LogLevel.h"
 #include "mc/external/scripting/ObjectHandleValue.h"
@@ -19,6 +18,8 @@
 namespace Scripting { class ClosureAny; }
 namespace Scripting { class DependencyLocator; }
 namespace Scripting { class FutureAny; }
+namespace Scripting { class GeneratorAny; }
+namespace Scripting { class GeneratorIteratorAny; }
 namespace Scripting { class GenericModuleBindingFactory; }
 namespace Scripting { class IDebuggerController; }
 namespace Scripting { class IDebuggerTransport; }
@@ -32,6 +33,7 @@ namespace Scripting { class IRuntime; }
 namespace Scripting { class IScriptEngine; }
 namespace Scripting { class IWatchdog; }
 namespace Scripting { class LifetimeRegistry; }
+namespace Scripting { class LifetimeRegistryReference; }
 namespace Scripting { class MajorVersionLimit; }
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { class NativeRuntime; }
@@ -62,10 +64,11 @@ namespace Scripting { struct Error; }
 namespace Scripting { struct ErrorBinding; }
 namespace Scripting { struct FunctionBinding; }
 namespace Scripting { struct FutureType; }
+namespace Scripting { struct GeneratorIteratorType; }
+namespace Scripting { struct GeneratorType; }
 namespace Scripting { struct GlobalBinding; }
 namespace Scripting { struct HashPropertyBinding; }
 namespace Scripting { struct InterfaceBinding; }
-namespace Scripting { struct InvalidArgumentError; }
 namespace Scripting { struct IteratorBinding; }
 namespace Scripting { struct MinorVersionPromotion; }
 namespace Scripting { struct ModuleBinding; }
@@ -76,6 +79,7 @@ namespace Scripting { struct ObjectFactory; }
 namespace Scripting { struct ObjectHandle; }
 namespace Scripting { struct PromiseType; }
 namespace Scripting { struct PropertyBinding; }
+namespace Scripting { struct PropertyOutOfBoundsError; }
 namespace Scripting { struct RuntimeStats; }
 namespace Scripting { struct ScriptContextResult; }
 namespace Scripting { struct SupportedBindingModule; }
@@ -96,6 +100,8 @@ namespace Scripting::QuickJS { class RegisteredClass; }
 namespace Scripting::QuickJS { class RegisteredEnum; }
 namespace Scripting::QuickJS { class RegisteredError; }
 namespace Scripting::QuickJS { class RegisteredInterface; }
+namespace Scripting::QuickJS { class RuntimeUserData; }
+namespace Scripting::QuickJS { class ScriptObjRef; }
 namespace Scripting::QuickJS { struct ArrayProxy; }
 namespace Scripting::QuickJS { struct MallocFunctions; }
 namespace Scripting::QuickJS { struct PropertyGetSet; }

@@ -53,7 +53,7 @@ public:
     MCVAPI uint64 getHighPerformanceThreadsCount() const;
 
     // symbol: ?getMainThreadQueue@AppPlatformWindows@@UEAAAEAV?$MPMCQueue@V?$function@$$A6AXXZ@std@@@@XZ
-    MCVAPI class MPMCQueue<std::function<void(void)>>& getMainThreadQueue();
+    MCVAPI class MPMCQueue<std::function<void()>>& getMainThreadQueue();
 
     // symbol:
     // ?getPackagedShaderCachePath@AppPlatformWindows@@MEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
@@ -73,7 +73,7 @@ public:
     MCVAPI uint64 getTotalHardwareThreadsCount() const;
 
     // symbol: ?queueForMainThread_DEPRECATED@AppPlatformWindows@@UEAAXV?$function@$$A6AXXZ@std@@@Z
-    MCVAPI void queueForMainThread_DEPRECATED(std::function<void(void)>);
+    MCVAPI void queueForMainThread_DEPRECATED(std::function<void()>);
 
     // symbol:
     // ?registerExperimentsActiveCrashDump@AppPlatformWindows@@UEBAXAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z

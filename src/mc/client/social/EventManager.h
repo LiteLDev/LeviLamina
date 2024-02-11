@@ -25,7 +25,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0EventManager@Events@Social@@QEAA@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
-    MCAPI explicit EventManager(class Bedrock::NonOwnerPointer<class AppPlatform> const&);
+    MCAPI explicit EventManager(class Bedrock::NonOwnerPointer<class AppPlatform> const& appPlatform);
 
     // symbol: ?UpdateDnAPlatString@EventManager@Events@Social@@QEAAXXZ
     MCAPI void UpdateDnAPlatString();
@@ -58,6 +58,10 @@ public:
     // symbol:
     // ?getGlobalProperty@EventManager@Events@Social@@QEBA?AVProperty@23@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Social::Events::Property getGlobalProperty(std::string const& name) const;
+
+    // symbol:
+    // ?getPlayerCommonProperty@EventManager@Events@Social@@QEBA?AVProperty@23@IAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI class Social::Events::Property getPlayerCommonProperty(uint userId, std::string const& name) const;
 
     // symbol:
     // ?getPlayerGlobalProperty@EventManager@Events@Social@@QEBA?AVProperty@23@IAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

@@ -26,5 +26,11 @@ public:
     MCAPI static struct EventingRequest
     addPlayerBounced(struct ActorUniqueID const& playerID, class Block const& block, int bounceHeight);
 
+    // symbol: ?addPlayerUnexpectedFallDamage@EventingRequest@@SA?AU1@M_NM@Z
+    MCAPI static struct EventingRequest addPlayerUnexpectedFallDamage(float, bool, float);
+
+    // symbol: ?addVehiclePositionComparisonFailure@EventingRequest@@SA?AU1@AEBVVec3@@0@Z
+    MCAPI static struct EventingRequest addVehiclePositionComparisonFailure(class Vec3 const&, class Vec3 const&);
+
     // NOLINTEND
 };

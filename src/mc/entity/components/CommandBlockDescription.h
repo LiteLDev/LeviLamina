@@ -21,7 +21,7 @@ public:
     virtual ~CommandBlockDescription();
 
     // vIndex: 2, symbol: ?deserializeData@CommandBlockDescription@@UEAAXUDeserializeDataParams@@@Z
-    virtual void deserializeData(struct DeserializeDataParams);
+    virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
     // NOLINTEND
 };

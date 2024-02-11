@@ -22,41 +22,41 @@ public:
     // vIndex: 0, symbol: ??1NewUniqueIdsDataLoadHelper@@UEAA@XZ
     virtual ~NewUniqueIdsDataLoadHelper();
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
+    // vIndex: 1, symbol: ?loadPosition@NewUniqueIdsDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
+    virtual class Vec3 loadPosition(class Vec3 const& position);
 
-    // vIndex: 2, symbol: __unk_vfn_2
-    virtual void __unk_vfn_2();
+    // vIndex: 2, symbol: ?loadBlockPosition@NewUniqueIdsDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z
+    virtual class BlockPos loadBlockPosition(class BlockPos const& blockPos);
 
-    // vIndex: 3, symbol: __unk_vfn_3
-    virtual void __unk_vfn_3();
+    // vIndex: 3, symbol: ?loadBlockPositionOffset@NewUniqueIdsDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z
+    virtual class BlockPos loadBlockPositionOffset(class BlockPos const& blockPosOffset);
 
-    // vIndex: 4, symbol: __unk_vfn_4
-    virtual void __unk_vfn_4();
+    // vIndex: 4, symbol: ?loadRotationDegreesX@NewUniqueIdsDataLoadHelper@@UEAAMM@Z
+    virtual float loadRotationDegreesX(float x);
 
-    // vIndex: 5, symbol: __unk_vfn_5
-    virtual void __unk_vfn_5();
+    // vIndex: 5, symbol: ?loadRotationDegreesY@NewUniqueIdsDataLoadHelper@@UEAAMM@Z
+    virtual float loadRotationDegreesY(float y);
 
-    // vIndex: 6, symbol: __unk_vfn_6
-    virtual void __unk_vfn_6();
+    // vIndex: 6, symbol: ?loadRotationRadiansX@NewUniqueIdsDataLoadHelper@@UEAAMM@Z
+    virtual float loadRotationRadiansX(float x);
 
-    // vIndex: 7, symbol: __unk_vfn_7
-    virtual void __unk_vfn_7();
+    // vIndex: 7, symbol: ?loadRotationRadiansY@NewUniqueIdsDataLoadHelper@@UEAAMM@Z
+    virtual float loadRotationRadiansY(float y);
 
-    // vIndex: 8, symbol: __unk_vfn_8
-    virtual void __unk_vfn_8();
+    // vIndex: 8, symbol: ?loadFacingID@NewUniqueIdsDataLoadHelper@@UEAAEE@Z
+    virtual uchar loadFacingID(uchar facing);
 
-    // vIndex: 9, symbol: __unk_vfn_9
-    virtual void __unk_vfn_9();
+    // vIndex: 9, symbol: ?loadDirection@NewUniqueIdsDataLoadHelper@@UEAA?AW4Type@Direction@@W423@@Z
+    virtual ::Direction::Type loadDirection(::Direction::Type direction);
 
-    // vIndex: 10, symbol: __unk_vfn_10
-    virtual void __unk_vfn_10();
+    // vIndex: 10, symbol: ?loadDirection@NewUniqueIdsDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
+    virtual class Vec3 loadDirection(class Vec3 const& direction);
 
-    // vIndex: 11, symbol: __unk_vfn_11
-    virtual void __unk_vfn_11();
+    // vIndex: 11, symbol: ?loadRotation@NewUniqueIdsDataLoadHelper@@UEAA?AW4Rotation@@W42@@Z
+    virtual ::Rotation loadRotation(::Rotation rotation);
 
-    // vIndex: 12, symbol: __unk_vfn_12
-    virtual void __unk_vfn_12();
+    // vIndex: 12, symbol: ?loadMirror@NewUniqueIdsDataLoadHelper@@UEAA?AW4Mirror@@W42@@Z
+    virtual ::Mirror loadMirror(::Mirror mirror);
 
     // vIndex: 13, symbol: ?loadActorUniqueID@NewUniqueIdsDataLoadHelper@@UEAA?AUActorUniqueID@@U2@@Z
     virtual struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID id);
@@ -76,42 +76,6 @@ public:
 
     // vIndex: 17, symbol: ?shouldResetTime@NewUniqueIdsDataLoadHelper@@UEAA_NXZ
     virtual bool shouldResetTime();
-
-    // symbol: ?loadBlockPosition@NewUniqueIdsDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z
-    MCVAPI class BlockPos loadBlockPosition(class BlockPos const& blockPos);
-
-    // symbol: ?loadBlockPositionOffset@NewUniqueIdsDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z
-    MCVAPI class BlockPos loadBlockPositionOffset(class BlockPos const& blockPosOffset);
-
-    // symbol: ?loadDirection@NewUniqueIdsDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
-    MCVAPI class Vec3 loadDirection(class Vec3 const& direction);
-
-    // symbol: ?loadDirection@NewUniqueIdsDataLoadHelper@@UEAA?AW4Type@Direction@@W423@@Z
-    MCVAPI ::Direction::Type loadDirection(::Direction::Type direction);
-
-    // symbol: ?loadFacingID@NewUniqueIdsDataLoadHelper@@UEAAEE@Z
-    MCVAPI uchar loadFacingID(uchar facing);
-
-    // symbol: ?loadMirror@NewUniqueIdsDataLoadHelper@@UEAA?AW4Mirror@@W42@@Z
-    MCVAPI ::Mirror loadMirror(::Mirror mirror);
-
-    // symbol: ?loadPosition@NewUniqueIdsDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
-    MCVAPI class Vec3 loadPosition(class Vec3 const& position);
-
-    // symbol: ?loadRotation@NewUniqueIdsDataLoadHelper@@UEAA?AW4Rotation@@W42@@Z
-    MCVAPI ::Rotation loadRotation(::Rotation rotation);
-
-    // symbol: ?loadRotationDegreesX@NewUniqueIdsDataLoadHelper@@UEAAMM@Z
-    MCVAPI float loadRotationDegreesX(float x);
-
-    // symbol: ?loadRotationDegreesY@NewUniqueIdsDataLoadHelper@@UEAAMM@Z
-    MCVAPI float loadRotationDegreesY(float y);
-
-    // symbol: ?loadRotationRadiansX@NewUniqueIdsDataLoadHelper@@UEAAMM@Z
-    MCVAPI float loadRotationRadiansX(float x);
-
-    // symbol: ?loadRotationRadiansY@NewUniqueIdsDataLoadHelper@@UEAAMM@Z
-    MCVAPI float loadRotationRadiansY(float y);
 
     // symbol: ??0NewUniqueIdsDataLoadHelper@@QEAA@AEAVILevel@@@Z
     MCAPI explicit NewUniqueIdsDataLoadHelper(class ILevel& level);

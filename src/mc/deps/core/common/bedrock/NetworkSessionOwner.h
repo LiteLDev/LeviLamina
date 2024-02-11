@@ -31,6 +31,9 @@ public:
     // symbol: ?destroyNetworkSession@NetworkSessionOwner@@QEAAXXZ
     MCAPI void destroyNetworkSession();
 
+    // symbol: ?getTransportLayer@NetworkSessionOwner@@QEBA?AW4TransportLayer@@XZ
+    MCAPI ::TransportLayer getTransportLayer() const;
+
     // symbol: ?hasNetworkSession@NetworkSessionOwner@@QEBA_NXZ
     MCAPI bool hasNetworkSession() const;
 

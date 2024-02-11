@@ -20,45 +20,33 @@ public:
     // vIndex: 0, symbol: __gen_??1InternalTaskGroup@@UEAA@XZ
     virtual ~InternalTaskGroup() = default;
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
+    // vIndex: 1, symbol:
+    // ?queue@InternalTaskGroup@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBU?$TaskStartInfoEx@X@@$$QEAV?$function@$$A6A?AVTaskResult@@XZ@3@$$QEAV?$function@$$A6AXXZ@3@@Z
+    virtual std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queue(
+        struct TaskStartInfoEx<void> const& startInfo,
+        std::function<class TaskResult()>&& task,
+        std::function<void()>&&             callback
+    );
 
-    // vIndex: 2, symbol: __unk_vfn_2
-    virtual void __unk_vfn_2();
+    // vIndex: 2, symbol:
+    // ?queueSync@InternalTaskGroup@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBU?$TaskStartInfoEx@X@@$$QEAV?$function@$$A6A?AVTaskResult@@XZ@3@@Z
+    virtual std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
+    queueSync(struct TaskStartInfoEx<void> const& startInfo, std::function<class TaskResult()>&& task);
 
-    // vIndex: 3, symbol: __unk_vfn_3
-    virtual void __unk_vfn_3();
+    // vIndex: 3, symbol: ?taskRegister@InternalTaskGroup@@UEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@@Z
+    virtual void taskRegister(std::shared_ptr<class BackgroundTaskBase>);
 
-    // vIndex: 4, symbol: __unk_vfn_4
-    virtual void __unk_vfn_4();
+    // vIndex: 4, symbol: ?requeueTask@InternalTaskGroup@@UEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@_N@Z
+    virtual void requeueTask(std::shared_ptr<class BackgroundTaskBase>, bool);
 
     // vIndex: 5, symbol: ?getState@InternalTaskGroup@@UEBA?AW4TaskGroupState@@XZ
     virtual ::TaskGroupState getState() const;
 
-    // symbol: ?processCoroutines@InternalTaskGroup@@UEAAXXZ
-    MCVAPI void processCoroutines();
+    // vIndex: 6, symbol: ?processCoroutines@InternalTaskGroup@@UEAAXXZ
+    virtual void processCoroutines();
 
-    // symbol:
-    // ?queue@InternalTaskGroup@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBU?$TaskStartInfoEx@X@@$$QEAV?$function@$$A6A?AVTaskResult@@XZ@3@$$QEAV?$function@$$A6AXXZ@3@@Z
-    MCVAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queue(
-        struct TaskStartInfoEx<void> const&     startInfo,
-        std::function<class TaskResult(void)>&& task,
-        std::function<void(void)>&&             callback
-    );
-
-    // symbol:
-    // ?queueSync@InternalTaskGroup@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBU?$TaskStartInfoEx@X@@$$QEAV?$function@$$A6A?AVTaskResult@@XZ@3@@Z
-    MCVAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
-           queueSync(struct TaskStartInfoEx<void> const& startInfo, std::function<class TaskResult(void)>&& task);
-
-    // symbol: ?requeueTask@InternalTaskGroup@@UEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@_N@Z
-    MCVAPI void requeueTask(std::shared_ptr<class BackgroundTaskBase>, bool);
-
-    // symbol: ?taskComplete@InternalTaskGroup@@UEAAXV?$not_null@PEAVBackgroundTaskBase@@@gsl@@@Z
-    MCVAPI void taskComplete(gsl::not_null<class BackgroundTaskBase*> task);
-
-    // symbol: ?taskRegister@InternalTaskGroup@@UEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@@Z
-    MCVAPI void taskRegister(std::shared_ptr<class BackgroundTaskBase>);
+    // vIndex: 7, symbol: ?taskComplete@InternalTaskGroup@@UEAAXV?$not_null@PEAVBackgroundTaskBase@@@gsl@@@Z
+    virtual void taskComplete(gsl::not_null<class BackgroundTaskBase*> task);
 
     // NOLINTEND
 };

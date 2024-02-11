@@ -20,7 +20,7 @@ public:
     // vIndex: 0, symbol: ??1ItemDescriptorCount@@UEAA@XZ
     virtual ~ItemDescriptorCount();
 
-    // vIndex: 2, symbol: ?serialize@ItemDescriptorCount@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 1, symbol: ?serialize@ItemDescriptorCount@@UEBAXAEAVBinaryStream@@@Z
     virtual void serialize(class BinaryStream& stream) const;
 
     // symbol: ??0ItemDescriptorCount@@QEAA@XZ

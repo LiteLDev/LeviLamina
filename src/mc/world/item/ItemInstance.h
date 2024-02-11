@@ -11,14 +11,14 @@ public:
     // vIndex: 0, symbol: ??1ItemInstance@@UEAA@XZ
     virtual ~ItemInstance();
 
-    // vIndex: 1, symbol: ?reinit@ItemInstance@@UEAAXAEBVItem@@HH@Z
-    virtual void reinit(class Item const& item, int count, int auxValue);
+    // vIndex: 1, symbol: ?reinit@ItemInstance@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@HH@Z
+    virtual void reinit(std::string_view name, int count, int auxValue);
 
     // vIndex: 2, symbol: ?reinit@ItemInstance@@UEAAXAEBVBlockLegacy@@H@Z
     virtual void reinit(class BlockLegacy const& block, int count);
 
-    // vIndex: 3, symbol: ?reinit@ItemInstance@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@HH@Z
-    virtual void reinit(std::string_view name, int count, int auxValue);
+    // vIndex: 3, symbol: ?reinit@ItemInstance@@UEAAXAEBVItem@@HH@Z
+    virtual void reinit(class Item const& item, int count, int auxValue);
 
     // symbol: ??0ItemInstance@@QEAA@XZ
     MCAPI ItemInstance();

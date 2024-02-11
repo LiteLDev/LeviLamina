@@ -85,6 +85,9 @@ public:
     // symbol: ?isWithinRestriction@DwellerComponent@@QEBA_NAEBVActor@@@Z
     MCAPI bool isWithinRestriction(class Actor const& owner) const;
 
+    // symbol: ?needsToFixupJobSite@DwellerComponent@@QEBA_NAEBVActor@@@Z
+    MCAPI bool needsToFixupJobSite(class Actor const&) const;
+
     // symbol: ?needsToFixupProfession@DwellerComponent@@QEBA_NAEBVActor@@@Z
     MCAPI bool needsToFixupProfession(class Actor const& owner) const;
 
@@ -111,7 +114,7 @@ public:
     MCAPI void setDwellingUniqueID(class Actor& owner, class mce::UUID id);
 
     // symbol: ?setDwellingUpdateInterval@DwellerComponent@@QEAAX_K@Z
-    MCAPI void setDwellingUpdateInterval(uint64);
+    MCAPI void setDwellingUpdateInterval(uint64 updateInterval);
 
     // symbol: ?setFixUpRole@DwellerComponent@@QEAAX_N@Z
     MCAPI void setFixUpRole(bool fixUpRole);

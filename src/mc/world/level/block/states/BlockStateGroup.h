@@ -19,7 +19,7 @@ public:
     MCAPI BlockStateGroup();
 
     // symbol: ?getBlockStateFromHash@BlockStateGroup@@QEBAPEBVBlockStateMeta@@AEB_K@Z
-    MCAPI class BlockStateMeta const* getBlockStateFromHash(uint64 const&) const;
+    MCAPI class BlockStateMeta const* getBlockStateFromHash(uint64 const& h) const;
 
     // symbol:
     // ?getBlockStateFromName@BlockStateGroup@@QEBAPEBVBlockStateMeta@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

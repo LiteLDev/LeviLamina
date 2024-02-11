@@ -35,7 +35,7 @@ public:
         virtual ~FileSystemFileReadAccess() = default;
 
         // vIndex: 1, symbol: ?fread@FileSystemFileReadAccess@FileSystemFileAccess@@UEBA_KPEAX_K10@Z
-        virtual uint64 fread(void*, uint64, uint64, void*) const;
+        virtual uint64 fread(void* buffer, uint64 size, uint64 count, void* file) const;
 
         // NOLINTEND
     };
@@ -53,7 +53,7 @@ public:
         virtual ~FileSystemFileWriteAccess() = default;
 
         // vIndex: 1, symbol: ?fwrite@FileSystemFileWriteAccess@FileSystemFileAccess@@UEAA_KPEBX_K1PEAX@Z
-        virtual uint64 fwrite(void const*, uint64, uint64, void*);
+        virtual uint64 fwrite(void const* buffer, uint64 size, uint64 count, void* file);
 
         // NOLINTEND
     };
@@ -77,7 +77,7 @@ public:
     virtual int fclose(void* file);
 
     // vIndex: 3, symbol: ?fseek@FileSystemFileAccess@@UEAAHPEAX_JH@Z
-    virtual int fseek(void*, int64, int);
+    virtual int fseek(void* file, int64 offset, int origin);
 
     // vIndex: 4, symbol: ?ftell@FileSystemFileAccess@@UEAA_JPEAX@Z
     virtual int64 ftell(void* file);

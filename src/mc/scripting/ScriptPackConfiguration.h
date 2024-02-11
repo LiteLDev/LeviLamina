@@ -11,10 +11,12 @@ class ScriptPackConfiguration {
 public:
     // prevent constructor by default
     ScriptPackConfiguration& operator=(ScriptPackConfiguration const&);
-    ScriptPackConfiguration();
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0ScriptPackConfiguration@@QEAA@XZ
+    MCAPI ScriptPackConfiguration();
+
     // symbol: ??0ScriptPackConfiguration@@QEAA@$$QEAV0@@Z
     MCAPI ScriptPackConfiguration(class ScriptPackConfiguration&&);
 

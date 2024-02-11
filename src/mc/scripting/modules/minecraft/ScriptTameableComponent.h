@@ -24,8 +24,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptTameableComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptTameableComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptTameableComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptTameableComponent() = default;
 
     // vIndex: 1, symbol:
     // ?_isValid@?$ECSScriptActorComponent@VTameableComponent@@VTameableDefinition@@@ScriptModuleMinecraft@@MEBA_NXZ

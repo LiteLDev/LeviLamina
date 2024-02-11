@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/IVillageManager.h"
+#include "mc/enums/POIType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -72,6 +73,9 @@ public:
     // symbol: ??0VillageManager@@QEAA@AEAVDimension@@@Z
     MCAPI explicit VillageManager(class Dimension& dimension);
 
+    // symbol: ?applyHeroOfTheVillageEffect@VillageManager@@QEAAXAEAVActor@@@Z
+    MCAPI void applyHeroOfTheVillageEffect(class Actor& actor);
+
     // symbol:
     // ?fetchClosestVillageMostSuitableForDweller@VillageManager@@QEBA?AV?$weak_ptr@VVillage@@@std@@AEBVBlockPos@@HI@Z
     MCAPI std::weak_ptr<class Village>
@@ -86,11 +90,17 @@ public:
     // symbol: ?getPOIInitEventFromName@VillageManager@@QEBA?AVHashedString@@AEBV2@@Z
     MCAPI class HashedString getPOIInitEventFromName(class HashedString const& name) const;
 
+    // symbol: ?hasPOI@VillageManager@@QEBA_NAEBVBlockPos@@W4POIType@@@Z
+    MCAPI bool hasPOI(class BlockPos const& position, ::POIType type) const;
+
     // symbol: ?initializeWithLevelStorageManager@VillageManager@@QEAAXAEAVLevelStorageManager@@@Z
     MCAPI void initializeWithLevelStorageManager(class LevelStorageManager&);
 
     // symbol: ?insertPOI@VillageManager@@QEAAX$$QEAV?$shared_ptr@VPOIInstance@@@std@@@Z
     MCAPI void insertPOI(std::shared_ptr<class POIInstance>&& poi);
+
+    // symbol: ?isRegisteredPOI@VillageManager@@QEBA_NAEBVBlock@@@Z
+    MCAPI bool isRegisteredPOI(class Block const& block) const;
 
     // symbol: ?isValidPOIType@VillageManager@@QEBA_NAEBVBlockPos@@AEBVBlock@@@Z
     MCAPI bool isValidPOIType(class BlockPos const& pos, class Block const& block) const;
@@ -143,9 +153,6 @@ public:
 
     // symbol: ?_loadPOIBlueprints@VillageManager@@AEAAXXZ
     MCAPI void _loadPOIBlueprints();
-
-    // symbol: ?_removeVillage@VillageManager@@AEAAXAEAVVillage@@@Z
-    MCAPI void _removeVillage(class Village& village);
 
     // symbol: ?_saveAllVillages@VillageManager@@AEAAXAEAVLevelStorage@@@Z
     MCAPI void _saveAllVillages(class LevelStorage&);

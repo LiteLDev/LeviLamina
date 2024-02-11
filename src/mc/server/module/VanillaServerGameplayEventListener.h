@@ -40,15 +40,5 @@ public:
     // symbol: ?onEvent@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUPlayerOpenContainerEvent@@@Z
     MCVAPI ::EventResult onEvent(struct PlayerOpenContainerEvent const& playerOpenContainerEvent);
 
-    // symbol:
-    // ?onPlayerMovementAnomaly@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVVec3@@MM@Z
-    MCVAPI ::EventResult
-    onPlayerMovementAnomaly(class Player& player, class Vec3 const& clientPos, float posDelta, float observedScore);
-
-    // symbol:
-    // ?onPlayerMovementCorrected@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVVec3@@MM@Z
-    MCVAPI ::EventResult
-    onPlayerMovementCorrected(class Player& player, class Vec3 const& clientPos, float posDelta, float observedScore);
-
     // NOLINTEND
 };

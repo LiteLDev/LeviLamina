@@ -57,30 +57,18 @@ public:
         // vIndex: 0, symbol: __gen_??1EditorImpl@DataStore@Bedrock@@UEAA@XZ
         virtual ~EditorImpl() = default;
 
-        // vIndex: 1, symbol: __unk_vfn_1
-        virtual void __unk_vfn_1();
-
-        // vIndex: 2, symbol: __unk_vfn_2
-        virtual void __unk_vfn_2();
-
         // vIndex: 3, symbol:
-        // ?getValueForKey@EditorImpl@DataStore@Bedrock@@UEAAPEAVNode@JSONObject@3@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-        virtual class Bedrock::JSONObject::Node* getValueForKey(std::string_view key);
-
-        // vIndex: 4, symbol:
         // ?getValueForKey@EditorImpl@DataStore@Bedrock@@UEBAPEBVNode@JSONObject@3@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
         virtual class Bedrock::JSONObject::Node const* getValueForKey(std::string_view key) const;
+
+        // vIndex: 4, symbol:
+        // ?getValueForKey@EditorImpl@DataStore@Bedrock@@UEAAPEAVNode@JSONObject@3@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+        virtual class Bedrock::JSONObject::Node* getValueForKey(std::string_view key);
 
         // vIndex: 5, symbol:
         // ?setValueForKey@EditorImpl@DataStore@Bedrock@@UEAAPEAVNode@JSONObject@3@V?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBVValueWrapper@53@@Z
         virtual class Bedrock::JSONObject::Node*
         setValueForKey(std::string_view key, class Bedrock::JSONObject::ValueWrapper const& value);
-
-        // symbol: ?getOwningDataStore@EditorImpl@DataStore@Bedrock@@UEAA?AV?$not_null@PEAVDataStore@Bedrock@@@gsl@@XZ
-        MCVAPI gsl::not_null<class Bedrock::DataStore*> getOwningDataStore();
-
-        // symbol: ?getOwningDataStore@EditorImpl@DataStore@Bedrock@@UEBA?AV?$not_null@PEBVDataStore@Bedrock@@@gsl@@XZ
-        MCVAPI gsl::not_null<class Bedrock::DataStore const*> getOwningDataStore() const;
 
         // NOLINTEND
     };
@@ -115,12 +103,6 @@ public:
         // vIndex: 0, symbol: __gen_??1Viewer@DataStore@Bedrock@@UEAA@XZ
         virtual ~Viewer() = default;
 
-        // vIndex: 1, symbol: __unk_vfn_1
-        virtual void __unk_vfn_1() = 0;
-
-        // vIndex: 2, symbol: __unk_vfn_2
-        virtual void __unk_vfn_2() = 0;
-
         // vIndex: 3, symbol:
         // ?getValueForKey@EditorImpl@DataStore@Bedrock@@UEBAPEBVNode@JSONObject@3@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
         virtual class Bedrock::JSONObject::Node const* getValueForKey(std::string_view key) const = 0;
@@ -140,21 +122,17 @@ public:
         // vIndex: 0, symbol: __gen_??1ViewerImpl@DataStore@Bedrock@@UEAA@XZ
         virtual ~ViewerImpl() = default;
 
-        // vIndex: 1, symbol: __unk_vfn_1
-        virtual void __unk_vfn_1();
+        // vIndex: 1, symbol:
+        // ?getOwningDataStore@ViewerImpl@DataStore@Bedrock@@UEAA?AV?$not_null@PEAVDataStore@Bedrock@@@gsl@@XZ
+        virtual gsl::not_null<class Bedrock::DataStore*> getOwningDataStore();
 
-        // vIndex: 2, symbol: __unk_vfn_2
-        virtual void __unk_vfn_2();
+        // vIndex: 2, symbol:
+        // ?getOwningDataStore@ViewerImpl@DataStore@Bedrock@@UEBA?AV?$not_null@PEBVDataStore@Bedrock@@@gsl@@XZ
+        virtual gsl::not_null<class Bedrock::DataStore const*> getOwningDataStore() const;
 
         // vIndex: 3, symbol:
         // ?getValueForKey@ViewerImpl@DataStore@Bedrock@@UEBAPEBVNode@JSONObject@3@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
         virtual class Bedrock::JSONObject::Node const* getValueForKey(std::string_view key) const;
-
-        // symbol: ?getOwningDataStore@ViewerImpl@DataStore@Bedrock@@UEAA?AV?$not_null@PEAVDataStore@Bedrock@@@gsl@@XZ
-        MCVAPI gsl::not_null<class Bedrock::DataStore*> getOwningDataStore();
-
-        // symbol: ?getOwningDataStore@ViewerImpl@DataStore@Bedrock@@UEBA?AV?$not_null@PEBVDataStore@Bedrock@@@gsl@@XZ
-        MCVAPI gsl::not_null<class Bedrock::DataStore const*> getOwningDataStore() const;
 
         // NOLINTEND
     };

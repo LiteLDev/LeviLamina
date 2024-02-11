@@ -52,6 +52,9 @@ public:
     // symbol: ?_computeNewTarget@RandomHoverGoal@@IEAA_NXZ
     MCAPI bool _computeNewTarget();
 
+    // symbol: ?_findNewTarget@RandomHoverGoal@@IEBA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@XZ
+    MCAPI std::unique_ptr<class Path> _findNewTarget() const;
+
     // symbol: ?_moveToTarget@RandomHoverGoal@@IEAAXXZ
     MCAPI void _moveToTarget();
 

@@ -21,17 +21,17 @@ public:
     // symbol:
     // ?thenExecute@GameTestSequence@gametest@@QEAAAEAV12@V?$function@$$A6A?AV?$optional@UGameTestError@gametest@@@std@@XZ@std@@@Z
     MCAPI class gametest::GameTestSequence&
-        thenExecute(std::function<std::optional<struct gametest::GameTestError>(void)>);
+    thenExecute(std::function<std::optional<struct gametest::GameTestError>()> fn);
 
     // symbol:
     // ?thenExecuteAfter@GameTestSequence@gametest@@QEAAAEAV12@HV?$function@$$A6A?AV?$optional@UGameTestError@gametest@@@std@@XZ@std@@@Z
     MCAPI class gametest::GameTestSequence&
-    thenExecuteAfter(int, std::function<std::optional<struct gametest::GameTestError>(void)>);
+    thenExecuteAfter(int tickDelay, std::function<std::optional<struct gametest::GameTestError>()> fn);
 
     // symbol:
     // ?thenExecuteFor@GameTestSequence@gametest@@QEAAAEAV12@HV?$function@$$A6A?AV?$optional@UGameTestError@gametest@@@std@@XZ@std@@@Z
     MCAPI class gametest::GameTestSequence&
-    thenExecuteFor(int, std::function<std::optional<struct gametest::GameTestError>(void)>);
+    thenExecuteFor(int, std::function<std::optional<struct gametest::GameTestError>()> fn);
 
     // symbol: ?thenFail@GameTestSequence@gametest@@QEAAXUGameTestError@2@@Z
     MCAPI void thenFail(struct gametest::GameTestError error);
@@ -44,13 +44,12 @@ public:
 
     // symbol:
     // ?thenWait@GameTestSequence@gametest@@QEAAAEAV12@V?$function@$$A6A?AV?$optional@UGameTestError@gametest@@@std@@XZ@std@@@Z
-    MCAPI class gametest::GameTestSequence&
-        thenWait(std::function<std::optional<struct gametest::GameTestError>(void)>);
+    MCAPI class gametest::GameTestSequence& thenWait(std::function<std::optional<struct gametest::GameTestError>()> fn);
 
     // symbol:
     // ?thenWaitAfter@GameTestSequence@gametest@@QEAAAEAV12@HV?$function@$$A6A?AV?$optional@UGameTestError@gametest@@@std@@XZ@std@@@Z
     MCAPI class gametest::GameTestSequence&
-    thenWaitAfter(int, std::function<std::optional<struct gametest::GameTestError>(void)>);
+    thenWaitAfter(int tickDelay, std::function<std::optional<struct gametest::GameTestError>()> fn);
 
     // NOLINTEND
 

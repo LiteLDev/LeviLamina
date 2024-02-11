@@ -30,6 +30,9 @@ public:
     // ?getCurrentTimestampFileName@DateManager@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI static std::string getCurrentTimestampFileName();
 
+    // symbol: ?getRealDateTime@DateManager@@SA?AUtm@@W4TimeZoneType@1@@Z
+    MCAPI static struct tm getRealDateTime(::DateManager::TimeZoneType returnType);
+
     // symbol: ?getRealTime@DateManager@@SA_JXZ
     MCAPI static int64 getRealTime();
 

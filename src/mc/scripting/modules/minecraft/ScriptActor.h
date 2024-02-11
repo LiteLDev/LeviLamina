@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/StackRefResultT.h"
-#include "mc/common/wrapper/WeakRefT.h"
+#include "mc/common/wrapper/StackRefResult.h"
+#include "mc/common/wrapper/WeakRef.h"
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/Promise.h"
 #include "mc/external/scripting/Result.h"
@@ -15,6 +15,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class EntityContext;
 class MobEffect;
 class Scoreboard;
 class Vec2;
@@ -48,7 +49,6 @@ namespace Scripting { struct EngineError; }
 namespace Scripting { struct Error; }
 namespace Scripting { struct JSON; }
 struct DynamicPropertyDefinition;
-struct EntityRefTraits;
 struct ScoreboardId;
 // clang-format on
 
@@ -108,14 +108,20 @@ public:
     MCAPI ScriptActor(class Actor const& actor, class Scripting::WeakLifetimeScope const& scope);
 
     // symbol:
-    // ?addEffect@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEAVActor@@AEBV?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$StrongTypedObjectHandle@VScriptEffectType@ScriptModuleMinecraft@@@Scripting@@@std@@HAEBV?$optional@UScriptEntityEffectOptions@ScriptModuleMinecraft@@@7@@Z
-    MCAPI class Scripting::Result<void>
+    // ?addEffect@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptMobEffectInstance@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@AEAVActor@@AEBV?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$StrongTypedObjectHandle@VScriptEffectType@ScriptModuleMinecraft@@@Scripting@@@std@@HAEBV?$optional@UScriptEntityEffectOptions@ScriptModuleMinecraft@@@7@@Z
+    MCAPI class Scripting::Result<
+        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptMobEffectInstance>>>
     addEffect(class Actor&, std::variant<std::string, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptEffectType>> const&, int, std::optional<struct ScriptModuleMinecraft::ScriptEntityEffectOptions> const&);
 
     // symbol:
     // ?addEffect_V010@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEAVActor@@AEBVScriptEffectType@2@HH_N@Z
     MCAPI class Scripting::Result<void>
     addEffect_V010(class Actor&, class ScriptModuleMinecraft::ScriptEffectType const&, int, int, bool);
+
+    // symbol:
+    // ?addEffect_V130@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEAVActor@@AEBV?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$StrongTypedObjectHandle@VScriptEffectType@ScriptModuleMinecraft@@@Scripting@@@std@@HAEBV?$optional@UScriptEntityEffectOptions@ScriptModuleMinecraft@@@7@@Z
+    MCAPI class Scripting::Result<void>
+    addEffect_V130(class Actor&, std::variant<std::string, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptEffectType>> const&, int, std::optional<struct ScriptModuleMinecraft::ScriptEntityEffectOptions> const&);
 
     // symbol:
     // ?addTag@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@_N$$V@Scripting@@AEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -142,9 +148,8 @@ public:
     // ?clearDynamicProperties@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEAVActor@@AEBUContextConfig@4@@Z
     MCAPI class Scripting::Result<void> clearDynamicProperties(class Actor&, struct Scripting::ContextConfig const&);
 
-    // symbol:
-    // ?extinguishFire@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@_N$$V@Scripting@@AEAVActor@@V?$optional@_N@std@@@Z
-    MCAPI class Scripting::Result<bool> extinguishFire(class Actor& self, std::optional<bool>);
+    // symbol: ?extinguishFire@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@_N$$V@Scripting@@AEAVActor@@_N@Z
+    MCAPI class Scripting::Result<bool> extinguishFire(class Actor&, bool);
 
     // symbol:
     // ?getBlockFromViewDirection@ScriptActor@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@VScriptBlockRaycastHit@ScriptModuleMinecraft@@@std@@$$V@Scripting@@AEBVActor@@VWeakLifetimeScope@4@AEBV?$optional@UScriptBlockRaycastOptions@ScriptModuleMinecraft@@@std@@@Z
@@ -315,8 +320,8 @@ public:
     MCAPI class Scripting::Result<class ScriptModuleMinecraft::ScriptVector> getViewVector_010(class Actor const& self
     ) const;
 
-    // symbol: ?getWeakEntity@ScriptActor@ScriptModuleMinecraft@@QEBA?AV?$WeakRefT@UEntityRefTraits@@@@XZ
-    MCAPI class WeakRefT<struct EntityRefTraits> getWeakEntity() const;
+    // symbol: ?getWeakEntity@ScriptActor@ScriptModuleMinecraft@@QEBA?AV?$WeakRef@VEntityContext@@@@XZ
+    MCAPI class WeakRef<class EntityContext> getWeakEntity() const;
 
     // symbol:
     // ?hasTag@ScriptActor@ScriptModuleMinecraft@@QEBA?AV?$Result@_N$$V@Scripting@@AEBVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -431,9 +436,8 @@ public:
     // symbol: ?setLoading@ScriptActor@ScriptModuleMinecraft@@QEAAXAEBVActor@@@Z
     MCAPI void setLoading(class Actor const& actor);
 
-    // symbol:
-    // ?setOnFire@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@_N$$V@Scripting@@AEAVActor@@HV?$optional@_N@std@@@Z
-    MCAPI class Scripting::Result<bool> setOnFire(class Actor& self, int seconds, std::optional<bool>);
+    // symbol: ?setOnFire@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@_N$$V@Scripting@@AEAVActor@@H_N@Z
+    MCAPI class Scripting::Result<bool> setOnFire(class Actor&, int, bool);
 
     // symbol:
     // ?setProperty@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$variant@M_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@7@@Z
@@ -516,14 +520,14 @@ public:
     getHandle(class Actor const& actor, class Scripting::WeakLifetimeScope const& scope);
 
     // symbol:
-    // ?getHandle@ScriptActor@ScriptModuleMinecraft@@SA?AV?$optional@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@@std@@V?$StackRefResultT@UEntityRefTraits@@@@AEBVWeakLifetimeScope@Scripting@@@Z
+    // ?getHandle@ScriptActor@ScriptModuleMinecraft@@SA?AV?$optional@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@@std@@V?$StackRefResult@VEntityContext@@@@AEBVWeakLifetimeScope@Scripting@@@Z
     MCAPI static std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>
-    getHandle(class StackRefResultT<struct EntityRefTraits>, class Scripting::WeakLifetimeScope const& scope);
+    getHandle(class StackRefResult<class EntityContext> entityRef, class Scripting::WeakLifetimeScope const& scope);
 
     // symbol:
     // ?getHandle@ScriptActor@ScriptModuleMinecraft@@SA?AV?$optional@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@@std@@VWeakEntityRef@@AEBVWeakLifetimeScope@Scripting@@@Z
     MCAPI static std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>
-    getHandle(class WeakEntityRef, class Scripting::WeakLifetimeScope const& scope);
+    getHandle(class WeakEntityRef entityRef, class Scripting::WeakLifetimeScope const& scope);
 
     // symbol:
     // ?tryGetActor@ScriptActor@ScriptModuleMinecraft@@SAPEAVActor@@AEBU?$TypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@AEBVWeakLifetimeScope@5@@Z

@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1CompressedBiomeDefinitionListPacket@@UEAA@XZ
-    virtual ~CompressedBiomeDefinitionListPacket();
+    // vIndex: 0, symbol: __gen_??1CompressedBiomeDefinitionListPacket@@UEAA@XZ
+    virtual ~CompressedBiomeDefinitionListPacket() = default;
 
     // vIndex: 1, symbol: ?getId@CompressedBiomeDefinitionListPacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;

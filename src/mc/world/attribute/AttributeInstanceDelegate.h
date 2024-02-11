@@ -18,7 +18,7 @@ public:
     virtual void tick();
 
     // vIndex: 2, symbol: ?notify@AttributeInstanceDelegate@@UEAAX_J@Z
-    virtual void notify(int64);
+    virtual void notify(int64 type);
 
     // vIndex: 3, symbol: ?willChange@AttributeInstanceDelegate@@UEAA_NMMAEBVAttributeBuff@@@Z
     virtual bool willChange(float oldValue, float newValue, class AttributeBuff const& buff);

@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/AutomaticID.h"
+
 class StructureAnimationData {
 public:
     // prevent constructor by default
@@ -11,16 +14,28 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0StructureAnimationData@@QEAA@$$QEAV0@@Z
-    MCAPI StructureAnimationData(class StructureAnimationData&&);
-
     // symbol:
     // ??0StructureAnimationData@@QEAA@V?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@AEBVStructureSettings@@EAEBVBlockPos@@@Z
     MCAPI
     StructureAnimationData(std::unique_ptr<class CommandArea>, uint64, std::string const& structureName, class StructureSettings const& structureSettings, uchar, class BlockPos const&);
 
+    // symbol: ?allBlocksPlaced@StructureAnimationData@@QEBA_NXZ
+    MCAPI bool allBlocksPlaced() const;
+
+    // symbol: ?getBlocksExpectedToPlace@StructureAnimationData@@QEBAI_K@Z
+    MCAPI uint getBlocksExpectedToPlace(uint64 currentTick) const;
+
+    // symbol: ?getBlocksPlaced@StructureAnimationData@@QEBAIXZ
+    MCAPI uint getBlocksPlaced() const;
+
+    // symbol: ?getDimensionBlockSource@StructureAnimationData@@QEBAAEAVBlockSource@@XZ
+    MCAPI class BlockSource& getDimensionBlockSource() const;
+
     // symbol: ?getPosition@StructureAnimationData@@QEBAAEBVBlockPos@@XZ
     MCAPI class BlockPos const& getPosition() const;
+
+    // symbol: ?getQueueID@StructureAnimationData@@QEBAIXZ
+    MCAPI uint getQueueID() const;
 
     // symbol:
     // ?getStructureName@StructureAnimationData@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -29,12 +44,30 @@ public:
     // symbol: ?getStructureSettings@StructureAnimationData@@QEBAAEBVStructureSettings@@XZ
     MCAPI class StructureSettings const& getStructureSettings() const;
 
+    // symbol: ?getStructureVersion@StructureAnimationData@@QEBAEXZ
+    MCAPI uchar getStructureVersion() const;
+
+    // symbol: ?getTargetDimension@StructureAnimationData@@QEBAAEBV?$AutomaticID@VDimension@@H@@XZ
+    MCAPI DimensionType const& getTargetDimension() const;
+
+    // symbol: ?getTotalBlocks@StructureAnimationData@@QEBAIXZ
+    MCAPI uint getTotalBlocks() const;
+
     // symbol: ?serialize@StructureAnimationData@@QEAAAEAVCompoundTag@@AEAV2@@Z
     MCAPI class CompoundTag& serialize(class CompoundTag& tag);
+
+    // symbol: ?setBlocksPlaced@StructureAnimationData@@QEAAXI@Z
+    MCAPI void setBlocksPlaced(uint);
 
     // symbol:
     // ?setCmdArea@StructureAnimationData@@QEAAXV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@@Z
     MCAPI void setCmdArea(std::unique_ptr<class CommandArea>);
+
+    // symbol: ?setQueueID@StructureAnimationData@@QEAAXI@Z
+    MCAPI void setQueueID(uint);
+
+    // symbol: ?setTargetDimension@StructureAnimationData@@QEAAXAEBV?$AutomaticID@VDimension@@H@@@Z
+    MCAPI void setTargetDimension(DimensionType const&);
 
     // symbol: ??1StructureAnimationData@@QEAA@XZ
     MCAPI ~StructureAnimationData();

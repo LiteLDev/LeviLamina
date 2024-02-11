@@ -14,7 +14,7 @@ MCAPI bool isUsingItem(class Mob const& mob);
 MCAPI void setUsingItem(class Mob& mob, bool isUsingItem);
 
 // symbol: ?startUsingItem@UseItemGoalUtility@@YA_NAEAVMob@@AEBVItemStack@@AEAUTick@@@Z
-MCAPI bool startUsingItem(class Mob& mob, class ItemStack const& itemStack, struct Tick&);
+MCAPI bool startUsingItem(class Mob& mob, class ItemStack const& item, struct Tick&);
 // NOLINTEND
 
 }; // namespace UseItemGoalUtility

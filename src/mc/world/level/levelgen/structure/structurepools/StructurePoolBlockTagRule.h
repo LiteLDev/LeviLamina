@@ -19,8 +19,5 @@ public:
         std::string                                              resultValue
     );
 
-    // symbol: ?processRule@StructurePoolBlockTagRule@@QEBA_NAEBVBlock@@AEAVCompoundTag@@@Z
-    MCAPI bool processRule(class Block const& sourceBlock, class CompoundTag& sourceTag) const;
-
     // NOLINTEND
 };

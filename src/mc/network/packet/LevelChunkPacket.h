@@ -36,7 +36,7 @@ public:
     MCAPI LevelChunkPacket();
 
     // symbol: ?pushSubChunkMetadata@LevelChunkPacket@@QEAAX_K@Z
-    MCAPI void pushSubChunkMetadata(uint64);
+    MCAPI void pushSubChunkMetadata(uint64 id);
 
     // symbol:
     // ?readCacheMetadata@LevelChunkPacket@@QEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z

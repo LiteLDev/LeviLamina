@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1GenericMoveControl@@UEAA@XZ
-    virtual ~GenericMoveControl() = default;
+    // vIndex: 0, symbol: ??1GenericMoveControl@@UEAA@XZ
+    virtual ~GenericMoveControl();
 
     // vIndex: 1, symbol: ?initializeInternal@GenericMoveControl@@UEAAXAEAVMob@@PEAUMoveControlDescription@@@Z
     virtual void initializeInternal(class Mob& mob, struct MoveControlDescription* description);

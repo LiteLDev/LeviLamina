@@ -14,7 +14,7 @@ namespace Core::Profile { class CounterTokenMarker; }
 namespace Core::Profile {
 // NOLINTBEGIN
 // symbol: ?counterSet@Profile@Core@@YAXVCounterTokenMarker@12@_J@Z
-MCAPI void counterSet(class Core::Profile::CounterTokenMarker, int64);
+MCAPI void counterSet(class Core::Profile::CounterTokenMarker token, int64 amount);
 
 // symbol:
 // ?generateCounterTokenWithConfig@Profile@Core@@YA?AVCounterTokenMarker@12@PEBDW4CounterFormat@12@_JW4CounterFlags@12@@Z

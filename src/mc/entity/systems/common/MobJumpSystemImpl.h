@@ -13,7 +13,7 @@ namespace MobJumpSystemImpl {
 MCAPI void doDecrementNoJumpDelaySystem(struct MobJumpComponent&);
 
 // symbol:
-// ?doMobJumpSystem@MobJumpSystemImpl@@YAXAEBVStrictEntityContext@@V?$Optional@$$CBVJumpControlComponent@@@@V?$Optional@$$CBV?$FlagComponent@UOnGroundFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@UPlayerComponentFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@USquidFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@UWasAutoJumpingFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@UInWaterFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@UCanStandOnSnowFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@UHasLightweightFamilyFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@UImmuneToLavaDragFlag@@@@@@AEBUAABBShapeComponent@@AEBUSwimAmountComponent@@AEBUMobEffectsComponent@@AEBUSubBBsComponent@@AEBUSynchedActorDataComponent@@AEAUMobJumpComponent@@AEAUStateVectorComponent@@V?$EntityModifier@V?$FlagComponent@UJumpFromGroundRequestFlag@@@@@@AEBVIConstBlockSource@@@Z
+// ?doMobJumpSystem@MobJumpSystemImpl@@YAXAEBVStrictEntityContext@@V?$Optional@$$CBVJumpControlComponent@@@@V?$Optional@$$CBV?$FlagComponent@UOnGroundFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@UPlayerComponentFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@USquidFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@UWasAutoJumpingFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@UInWaterFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@UCanStandOnSnowFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@UHasLightweightFamilyFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@UImmuneToLavaDragFlag@@@@@@AEBUAABBShapeComponent@@AEBUSwimAmountComponent@@AEBUMobEffectsComponent@@AEBUSubBBsComponent@@AEBUActorDataFlagComponent@@AEAUMobJumpComponent@@AEAUStateVectorComponent@@V?$EntityModifier@V?$FlagComponent@UJumpFromGroundRequestFlag@@@@@@AEBVIConstBlockSource@@@Z
 MCAPI void doMobJumpSystem(
     class StrictEntityContext const&                 context,
     class Optional<class JumpControlComponent const> jumpControlComponent,
@@ -29,7 +29,7 @@ MCAPI void doMobJumpSystem(
     struct SwimAmountComponent const&,
     struct MobEffectsComponent const&,
     struct SubBBsComponent const&,
-    struct SynchedActorDataComponent const&,
+    struct ActorDataFlagComponent const&,
     struct MobJumpComponent&,
     struct StateVectorComponent&,
     class EntityModifier<class FlagComponent<struct JumpFromGroundRequestFlag>> mod,

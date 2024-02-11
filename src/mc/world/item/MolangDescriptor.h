@@ -42,11 +42,11 @@ public:
     // vIndex: 7, symbol: ?save@MolangDescriptor@@UEBA?AV?$optional@VCompoundTag@@@std@@XZ
     virtual std::optional<class CompoundTag> save() const;
 
-    // vIndex: 8, symbol: ?serialize@MolangDescriptor@@UEBAXAEAVValue@Json@@@Z
-    virtual void serialize(class Json::Value& val) const;
-
-    // vIndex: 9, symbol: ?serialize@MolangDescriptor@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 8, symbol: ?serialize@MolangDescriptor@@UEBAXAEAVBinaryStream@@@Z
     virtual void serialize(class BinaryStream& stream) const;
+
+    // vIndex: 9, symbol: ?serialize@MolangDescriptor@@UEBAXAEAVValue@Json@@@Z
+    virtual void serialize(class Json::Value& val) const;
 
     // vIndex: 10, symbol: ?getType@MolangDescriptor@@UEBA?AW4InternalType@ItemDescriptor@@XZ
     virtual ::ItemDescriptor::InternalType getType() const;
@@ -64,7 +64,8 @@ public:
 
     // symbol:
     // ?fromExpressionTag@MolangDescriptor@@SA?AV?$unique_ptr@UMolangDescriptor@@U?$default_delete@UMolangDescriptor@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4MolangVersion@@@Z
-    MCAPI static std::unique_ptr<struct MolangDescriptor> fromExpressionTag(std::string const&, ::MolangVersion);
+    MCAPI static std::unique_ptr<struct MolangDescriptor>
+    fromExpressionTag(std::string const&, ::MolangVersion molangVersion);
 
     // NOLINTEND
 };

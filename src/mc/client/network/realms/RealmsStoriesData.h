@@ -17,6 +17,9 @@ public:
     // symbol: ??0RealmsStoriesData@@QEAA@AEAVLevelStorage@@@Z
     MCAPI explicit RealmsStoriesData(class LevelStorage&);
 
+    // symbol: ?clearAllRealmEventsInLevelData@RealmsStoriesData@@QEAAXXZ
+    MCAPI void clearAllRealmEventsInLevelData();
+
     // symbol:
     // ?getRealmsEventInternalName@RealmsStoriesData@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4RealmsEventId@@@Z
     MCAPI std::string const& getRealmsEventInternalName(::RealmsEventId) const;
@@ -34,6 +37,9 @@ public:
 
     // symbol: ?wasWorldRealmsEventPublished@RealmsStoriesData@@QEBA_NW4RealmsEventId@@@Z
     MCAPI bool wasWorldRealmsEventPublished(::RealmsEventId) const;
+
+    // symbol: ??1RealmsStoriesData@@QEAA@XZ
+    MCAPI ~RealmsStoriesData();
 
     // symbol:
     // ?REALMS_STORIES_PREFIX@RealmsStoriesData@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B

@@ -20,9 +20,9 @@ public:
     // symbol:
     // ?onWebsocketRequest@ClassroomModeNetworkHandler@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0V?$function@$$A6AXXZ@3@@Z
     MCVAPI void onWebsocketRequest(
-        std::string const&        serverAddress,
-        std::string const&        payload,
-        std::function<void(void)> errorCallback
+        std::string const&    serverAddress,
+        std::string const&    payload,
+        std::function<void()> errorCallback
     );
 
     // symbol: ??0ClassroomModeNetworkHandler@@QEAA@_N@Z

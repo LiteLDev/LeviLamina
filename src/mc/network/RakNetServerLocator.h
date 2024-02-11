@@ -111,7 +111,7 @@ public:
     );
 
     // vIndex: 4, symbol: ?stopAnnouncingServer@RakNetServerLocator@@UEAAXV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
-    virtual void stopAnnouncingServer(class Bedrock::NonOwnerPointer<class AppPlatform>);
+    virtual void stopAnnouncingServer(class Bedrock::NonOwnerPointer<class AppPlatform> appPlatform);
 
     // vIndex: 5, symbol: ?startServerDiscovery@RakNetServerLocator@@UEAAXUPortPair@@@Z
     virtual void startServerDiscovery(struct PortPair);
@@ -119,12 +119,12 @@ public:
     // vIndex: 6, symbol: ?stopServerDiscovery@RakNetServerLocator@@UEAAXXZ
     virtual void stopServerDiscovery();
 
-    // vIndex: 7, symbol: ?addCustomServer@RakNetServerLocator@@UEAAXAEBVAsynchronousIPResolver@@H@Z
-    virtual void addCustomServer(class AsynchronousIPResolver const& futureIP, int port);
-
-    // vIndex: 8, symbol:
+    // vIndex: 7, symbol:
     // ?addCustomServer@RakNetServerLocator@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     virtual void addCustomServer(std::string const& address, int port);
+
+    // vIndex: 8, symbol: ?addCustomServer@RakNetServerLocator@@UEAAXAEBVAsynchronousIPResolver@@H@Z
+    virtual void addCustomServer(class AsynchronousIPResolver const& futureIP, int port);
 
     // vIndex: 9, symbol:
     // ?getServerList@RakNetServerLocator@@UEBA?AV?$vector@UPingedCompatibleServer@@V?$allocator@UPingedCompatibleServer@@@std@@@std@@XZ
@@ -151,7 +151,7 @@ public:
     // symbol:
     // ??0RakNetServerLocator@@QEAA@AEAVRakNetConnector@@AEAVIPSupportInterface@RakPeerHelper@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@_NW4RakNetServerLANVisibility@@W4PermissionLAN@@W4PermissionIPv6@@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@V?$function@$$A6A?AV?$unique_ptr@VRakPeerInterface@RakNet@@P6AXPEAV12@@Z@std@@XZ@5@@Z
     MCAPI
-    RakNetServerLocator(class RakNetConnector&, class RakPeerHelper::IPSupportInterface& ipInterface, std::vector<std::string>, bool isServer, ::RakNetServerLANVisibility, ::PermissionLAN, ::PermissionIPv6, class Bedrock::NonOwnerPointer<class AppPlatform> const&, std::function<std::unique_ptr<class RakNet::RakPeerInterface, void (*)(class RakNet::RakPeerInterface*)>(void)>);
+    RakNetServerLocator(class RakNetConnector&, class RakPeerHelper::IPSupportInterface& ipInterface, std::vector<std::string>, bool isServer, ::RakNetServerLANVisibility, ::PermissionLAN, ::PermissionIPv6, class Bedrock::NonOwnerPointer<class AppPlatform> const& appPlatform, std::function<std::unique_ptr<class RakNet::RakPeerInterface, void (*)(class RakNet::RakPeerInterface*)>()>);
 
     // symbol:
     // ?parseUnconnectedPongPacketData@RakNetServerLocator@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
@@ -211,10 +211,6 @@ public:
     // symbol:
     // ?_pingServerV4@RakNetServerLocator@@AEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI bool _pingServerV4(std::string const& address, int port);
-
-    // symbol:
-    // ?_pingServerV6@RakNetServerLocator@@AEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI bool _pingServerV6(std::string const& address, int port);
 
     // symbol: ?_setPingResponder@RakNetServerLocator@@AEAAXAEBUAnnounceServerData@1@@Z
     MCAPI void _setPingResponder(struct RakNetServerLocator::AnnounceServerData const&);

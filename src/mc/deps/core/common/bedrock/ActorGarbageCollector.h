@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/OwnerPtrT.h"
+#include "mc/common/wrapper/OwnerPtr.h"
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 
 // auto generated forward declare list
@@ -31,11 +31,11 @@ public:
     // symbol: ?clearPendingEntities@ActorGarbageCollector@@QEAAXXZ
     MCAPI void clearPendingEntities();
 
-    // symbol: ?garbageCollectEntity@ActorGarbageCollector@@QEAAXV?$OwnerPtrT@UEntityRefTraits@@@@@Z
-    MCAPI void garbageCollectEntity(class OwnerPtrT<struct EntityRefTraits> entity);
+    // symbol: ?garbageCollectEntity@ActorGarbageCollector@@QEAAXV?$OwnerPtr@VEntityContext@@@@@Z
+    MCAPI void garbageCollectEntity(class OwnerPtr<class EntityContext>);
 
-    // symbol: ?garbageCollectEntityWhenChunkDiscarded@ActorGarbageCollector@@QEAAXV?$OwnerPtrT@UEntityRefTraits@@@@@Z
-    MCAPI void garbageCollectEntityWhenChunkDiscarded(class OwnerPtrT<struct EntityRefTraits> entity);
+    // symbol: ?garbageCollectEntityWhenChunkDiscarded@ActorGarbageCollector@@QEAAXV?$OwnerPtr@VEntityContext@@@@@Z
+    MCAPI void garbageCollectEntityWhenChunkDiscarded(class OwnerPtr<class EntityContext>);
 
     // symbol: ?update@ActorGarbageCollector@@QEAAXXZ
     MCAPI void update();

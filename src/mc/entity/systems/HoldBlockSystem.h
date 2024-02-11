@@ -20,9 +20,6 @@ public:
     // vIndex: 1, symbol: ?registerEvents@HoldBlockSystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
     virtual void registerEvents(entt::dispatcher&);
 
-    // symbol: ?tick@HoldBlockSystem@@UEAAXAEAVEntityRegistry@@@Z
-    MCVAPI void tick(class EntityRegistry&);
-
     // NOLINTEND
 
     // private:

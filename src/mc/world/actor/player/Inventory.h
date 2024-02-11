@@ -26,28 +26,19 @@ public:
     // vIndex: 11, symbol: ?setItemWithForceBalance@Inventory@@UEAAXHAEBVItemStack@@_N@Z
     virtual void setItemWithForceBalance(int slot, class ItemStack const& item, bool);
 
-    // vIndex: 22, symbol: ?getEmptySlotsCount@Inventory@@UEBAHXZ
+    // vIndex: 23, symbol: ?getEmptySlotsCount@Inventory@@UEBAHXZ
     virtual int getEmptySlotsCount() const;
 
-    // vIndex: 25, symbol: __unk_vfn_25
-    virtual void __unk_vfn_25();
-
-    // vIndex: 26, symbol: __unk_vfn_26
-    virtual void __unk_vfn_26();
-
-    // vIndex: 34, symbol: __unk_vfn_34
-    virtual void __unk_vfn_34();
-
-    // vIndex: 37, symbol: ?add@Inventory@@UEAA_NAEAVItemStack@@@Z
+    // vIndex: 38, symbol: ?add@Inventory@@UEAA_NAEAVItemStack@@@Z
     virtual bool add(class ItemStack& item);
 
-    // vIndex: 38, symbol: ?canAdd@Inventory@@UEBA_NAEBVItemStack@@@Z
+    // vIndex: 39, symbol: ?canAdd@Inventory@@UEBA_NAEBVItemStack@@@Z
     virtual bool canAdd(class ItemStack const& item) const;
 
-    // vIndex: 42, symbol: ?getFirstEmptySlot@Inventory@@UEBAHXZ
+    // vIndex: 43, symbol: ?getFirstEmptySlot@Inventory@@UEBAHXZ
     virtual int getFirstEmptySlot() const;
 
-    // vIndex: 43, symbol: ?setContainerSize@Inventory@@UEAAXH@Z
+    // vIndex: 44, symbol: ?setContainerSize@Inventory@@UEAAXH@Z
     virtual void setContainerSize(int size);
 
     // symbol: ??0Inventory@@QEAA@PEAVPlayer@@@Z

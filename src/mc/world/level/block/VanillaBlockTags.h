@@ -82,6 +82,9 @@ MCAPI extern class HashedString const StoneDiggable;
 // symbol: ?TextSign@VanillaBlockTags@@3VHashedString@@B
 MCAPI extern class HashedString const TextSign;
 
+// symbol: ?Trapdoors@VanillaBlockTags@@3VHashedString@@B
+MCAPI extern class HashedString const Trapdoors;
+
 // symbol: ?Water@VanillaBlockTags@@3VHashedString@@B
 MCAPI extern class HashedString const Water;
 

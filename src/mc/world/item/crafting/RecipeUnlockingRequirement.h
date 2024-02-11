@@ -11,10 +11,12 @@ public:
     // prevent constructor by default
     RecipeUnlockingRequirement& operator=(RecipeUnlockingRequirement const&);
     RecipeUnlockingRequirement(RecipeUnlockingRequirement const&);
-    RecipeUnlockingRequirement();
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0RecipeUnlockingRequirement@@QEAA@XZ
+    MCAPI RecipeUnlockingRequirement();
+
     // symbol:
     // ??0RecipeUnlockingRequirement@@QEAA@V?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@std@@@Z
     MCAPI explicit RecipeUnlockingRequirement(std::vector<class RecipeIngredient>);

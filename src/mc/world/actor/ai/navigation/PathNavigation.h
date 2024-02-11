@@ -28,25 +28,25 @@ public:
     virtual class Vec3 getTempMobPos(class Mob const& mob) const;
 
     // vIndex: 4, symbol:
-    // ?createPath@PathNavigation@@MEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVNavigationComponent@@AEAVMob@@AEBVVec3@@@Z
-    virtual std::unique_ptr<class Path>
-    createPath(class NavigationComponent& parent, class Mob& mob, class Vec3 const& pos);
-
-    // vIndex: 5, symbol:
     // ?createPath@PathNavigation@@MEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVNavigationComponent@@AEAVMob@@AEAVActor@@@Z
     virtual std::unique_ptr<class Path>
     createPath(class NavigationComponent& parent, class Mob& mob, class Actor& target);
 
-    // vIndex: 6, symbol: ?moveTo@PathNavigation@@MEAA_NAEAVNavigationComponent@@AEAVMob@@AEBVVec3@@M@Z
-    virtual bool moveTo(class NavigationComponent& parent, class Mob& mob, class Vec3 const& pos, float speed);
+    // vIndex: 5, symbol:
+    // ?createPath@PathNavigation@@MEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVNavigationComponent@@AEAVMob@@AEBVVec3@@@Z
+    virtual std::unique_ptr<class Path>
+    createPath(class NavigationComponent& parent, class Mob& mob, class Vec3 const& pos);
+
+    // vIndex: 6, symbol:
+    // ?moveTo@PathNavigation@@MEAA_NAEAVNavigationComponent@@AEAVMob@@V?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@M@Z
+    virtual bool
+    moveTo(class NavigationComponent& parent, class Mob& mob, std::unique_ptr<class Path> newPath, float speed);
 
     // vIndex: 7, symbol: ?moveTo@PathNavigation@@MEAA_NAEAVNavigationComponent@@AEAVMob@@AEAVActor@@M@Z
     virtual bool moveTo(class NavigationComponent& parent, class Mob& mob, class Actor& target, float speed);
 
-    // vIndex: 8, symbol:
-    // ?moveTo@PathNavigation@@MEAA_NAEAVNavigationComponent@@AEAVMob@@V?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@M@Z
-    virtual bool
-    moveTo(class NavigationComponent& parent, class Mob& mob, std::unique_ptr<class Path> newPath, float speed);
+    // vIndex: 8, symbol: ?moveTo@PathNavigation@@MEAA_NAEAVNavigationComponent@@AEAVMob@@AEBVVec3@@M@Z
+    virtual bool moveTo(class NavigationComponent& parent, class Mob& mob, class Vec3 const& pos, float speed);
 
     // vIndex: 9, symbol: ?stop@PathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
     virtual void stop(class NavigationComponent& parent, class Mob& mob);

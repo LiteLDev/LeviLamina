@@ -33,9 +33,6 @@ public:
     // vIndex: 0, symbol: __gen_??1SystemImpl@ServerStandInCauldronSystem@@UEAA@XZ
     virtual ~SystemImpl() = default;
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
-
     // vIndex: 2, symbol: __unk_vfn_2
     virtual void __unk_vfn_2();
 

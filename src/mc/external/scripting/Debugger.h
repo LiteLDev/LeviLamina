@@ -70,7 +70,7 @@ public:
     MCAPI static uint64 TransportPeek(void*);
 
     // symbol: ?TransportRead@Debugger@QuickJS@Scripting@@CA_KPEAXPEAD_K@Z
-    MCAPI static uint64 TransportRead(void*, char*, uint64);
+    MCAPI static uint64 TransportRead(void*, char* buffer, uint64 length);
 
     // symbol: ?TransportWrite@Debugger@QuickJS@Scripting@@CA_KPEAXPEBD_K@Z
     MCAPI static uint64 TransportWrite(void*, char const* buffer, uint64 length);

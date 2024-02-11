@@ -85,5 +85,10 @@ public:
         DimensionType            dimensionType
     );
 
+    // symbol:
+    // ?load@ServerCommandOrigin@@SA?AV?$unique_ptr@VServerCommandOrigin@@U?$default_delete@VServerCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVServerLevel@@@Z
+    MCAPI static std::unique_ptr<class ServerCommandOrigin>
+    load(class CompoundTag const& tag, class ServerLevel& level);
+
     // NOLINTEND
 };

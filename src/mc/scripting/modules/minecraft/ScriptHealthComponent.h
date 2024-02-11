@@ -24,8 +24,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptHealthComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptHealthComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptHealthComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptHealthComponent() = default;
 
     // vIndex: 3, symbol:
     // ?setCurrent@ScriptHealthComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N$$V@Scripting@@AEBM@Z

@@ -3,25 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/systems/ITickingSystem.h"
+#include "mc/entity/EntityModifier.h"
 
-class BuoyancySystem : public ::ITickingSystem {
-public:
-    // prevent constructor by default
-    BuoyancySystem& operator=(BuoyancySystem const&);
-    BuoyancySystem(BuoyancySystem const&);
-    BuoyancySystem();
+namespace BuoyancySystem {
+// NOLINTBEGIN
+// symbol:
+// ?checkAndAddFloatRequest@BuoyancySystem@@YAXAEBVStrictEntityContext@@AEBUStateVectorComponent@@AEAVBuoyancyComponent@@AEAV?$EntityModifier@UBuoyancyFloatRequestComponent@@@@AEBVIConstBlockSource@@@Z
+MCAPI void
+checkAndAddFloatRequest(class StrictEntityContext const&, struct StateVectorComponent const&, class BuoyancyComponent&, class EntityModifier<struct BuoyancyFloatRequestComponent>&, class IConstBlockSource const&);
 
-public:
-    // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BuoyancySystem@@UEAA@XZ
-    virtual ~BuoyancySystem() = default;
+// symbol: ?registerSystems@BuoyancySystem@@YAXAEAVEntitySystems@@_N@Z
+MCAPI void registerSystems(class EntitySystems&, bool);
+// NOLINTEND
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
-
-    // vIndex: 2, symbol: ?tick@BuoyancySystem@@UEAAXAEAVEntityRegistry@@@Z
-    virtual void tick(class EntityRegistry& registry);
-
-    // NOLINTEND
-};
+}; // namespace BuoyancySystem

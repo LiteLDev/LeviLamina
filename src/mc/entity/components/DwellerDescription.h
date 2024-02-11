@@ -21,7 +21,7 @@ public:
     virtual ~DwellerDescription();
 
     // vIndex: 2, symbol: ?deserializeData@DwellerDescription@@UEAAXUDeserializeDataParams@@@Z
-    virtual void deserializeData(struct DeserializeDataParams);
+    virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
     // NOLINTEND
 };

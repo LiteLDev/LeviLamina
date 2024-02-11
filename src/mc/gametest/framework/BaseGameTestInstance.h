@@ -9,9 +9,11 @@
 // auto generated forward declare list
 // clang-format off
 class AABB;
+class BlockPos;
 class BoundingBox;
 class Dimension;
 class Vec3;
+class WeakEntityRef;
 namespace gametest { class BaseGameTestFunction; }
 namespace gametest { class GameTestSequence; }
 namespace gametest { class IGameTestHelperProvider; }
@@ -82,6 +84,9 @@ public:
     // symbol: ?addListener@BaseGameTestInstance@gametest@@QEAAXV?$shared_ptr@VIGameTestListener@gametest@@@std@@@Z
     MCAPI void addListener(std::shared_ptr<class gametest::IGameTestListener> listener);
 
+    // symbol: ?addSimulatedPlayer@BaseGameTestInstance@gametest@@QEAAXVWeakEntityRef@@@Z
+    MCAPI void addSimulatedPlayer(class WeakEntityRef);
+
     // symbol: ?createSequence@BaseGameTestInstance@gametest@@QEAAAEAVGameTestSequence@2@XZ
     MCAPI class gametest::GameTestSequence& createSequence();
 
@@ -97,15 +102,33 @@ public:
     // symbol: ?getRotation@BaseGameTestInstance@gametest@@QEBA?AW4Rotation@@XZ
     MCAPI ::Rotation getRotation() const;
 
+    // symbol: ?getStructureBlockPos@BaseGameTestInstance@gametest@@QEBA?AVBlockPos@@XZ
+    MCAPI class BlockPos getStructureBlockPos() const;
+
     // symbol:
     // ?getTestName@BaseGameTestInstance@gametest@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& getTestName() const;
+
+    // symbol: ?getTick@BaseGameTestInstance@gametest@@QEBAHXZ
+    MCAPI int getTick() const;
 
     // symbol: ?hasRetryAttempts@BaseGameTestInstance@gametest@@QEBA_NXZ
     MCAPI bool hasRetryAttempts() const;
 
     // symbol: ?removeListener@BaseGameTestInstance@gametest@@QEAAXV?$shared_ptr@VIGameTestListener@gametest@@@std@@@Z
     MCAPI void removeListener(std::shared_ptr<class gametest::IGameTestListener> listener);
+
+    // symbol: ?setMaxRunCount@BaseGameTestInstance@gametest@@QEAAXH@Z
+    MCAPI void setMaxRunCount(int);
+
+    // symbol: ?setRotation@BaseGameTestInstance@gametest@@QEAAXW4Rotation@@@Z
+    MCAPI void setRotation(::Rotation rotation);
+
+    // symbol: ?setStopOnFailure@BaseGameTestInstance@gametest@@QEAAX_N@Z
+    MCAPI void setStopOnFailure(bool);
+
+    // symbol: ?setStructureBlockPos@BaseGameTestInstance@gametest@@QEAAXAEBVBlockPos@@@Z
+    MCAPI void setStructureBlockPos(class BlockPos const&);
 
     // symbol: ?startExecution@BaseGameTestInstance@gametest@@QEAAXXZ
     MCAPI void startExecution();

@@ -20,7 +20,7 @@ public:
     virtual ~TrailDescription();
 
     // vIndex: 2, symbol: ?deserializeData@TrailDescription@@UEAAXUDeserializeDataParams@@@Z
-    virtual void deserializeData(struct DeserializeDataParams);
+    virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
     // symbol: ??0TrailDescription@@QEAA@XZ
     MCAPI TrailDescription();

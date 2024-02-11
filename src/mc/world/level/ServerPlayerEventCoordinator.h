@@ -23,14 +23,6 @@ public:
     // symbol: ?sendPlayerAuthInputReceived@ServerPlayerEventCoordinator@@QEAAXAEAVPlayer@@@Z
     MCAPI void sendPlayerAuthInputReceived(class Player& player);
 
-    // symbol: ?sendPlayerMovementAnomaly@ServerPlayerEventCoordinator@@QEAAXAEAVPlayer@@AEBVVec3@@MM@Z
-    MCAPI void
-    sendPlayerMovementAnomaly(class Player& player, class Vec3 const& clientPos, float posDelta, float observedScore);
-
-    // symbol: ?sendPlayerMovementCorrected@ServerPlayerEventCoordinator@@QEAAXAEAVPlayer@@AEBVVec3@@MM@Z
-    MCAPI void
-    sendPlayerMovementCorrected(class Player& player, class Vec3 const& clientPos, float posDelta, float observedScore);
-
     // symbol: ?sendPlayerOnGround@ServerPlayerEventCoordinator@@QEAAXAEAVPlayer@@@Z
     MCAPI void sendPlayerOnGround(class Player& player);
 

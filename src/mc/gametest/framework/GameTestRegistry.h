@@ -14,10 +14,12 @@ public:
     // prevent constructor by default
     GameTestRegistry& operator=(GameTestRegistry const&);
     GameTestRegistry(GameTestRegistry const&);
-    GameTestRegistry();
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0GameTestRegistry@gametest@@QEAA@XZ
+    MCAPI GameTestRegistry();
+
     // symbol: ?clearAllTestMethods@GameTestRegistry@gametest@@QEAAXXZ
     MCAPI void clearAllTestMethods();
 
@@ -34,7 +36,7 @@ public:
 
     // symbol:
     // ?getBeforeBatchFunction@GameTestRegistry@gametest@@QEAA?AV?$function@$$A6AXXZ@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z
-    MCAPI std::function<void(void)> getBeforeBatchFunction(std::string const&);
+    MCAPI std::function<void()> getBeforeBatchFunction(std::string const&);
 
     // symbol:
     // ?getTestFunction@GameTestRegistry@gametest@@QEAA?AV?$shared_ptr@VBaseGameTestFunction@gametest@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z
@@ -51,7 +53,7 @@ public:
 
     // symbol:
     // ?registerBeforeBatchFunction@GameTestRegistry@gametest@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXXZ@4@@Z
-    MCAPI bool registerBeforeBatchFunction(std::string const&, std::function<void(void)> fn);
+    MCAPI bool registerBeforeBatchFunction(std::string const&, std::function<void()> fn);
 
     // symbol:
     // ?registerTestMethod@GameTestRegistry@gametest@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$shared_ptr@VBaseGameTestFunction@gametest@@@4@@Z

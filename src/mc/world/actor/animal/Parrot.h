@@ -42,68 +42,29 @@ public:
     // vIndex: 10, symbol: __gen_??1Parrot@@UEAA@XZ
     virtual ~Parrot() = default;
 
-    // vIndex: 23, symbol: __unk_vfn_23
-    virtual void __unk_vfn_23();
-
-    // vIndex: 39, symbol: __unk_vfn_39
-    virtual void __unk_vfn_39();
-
-    // vIndex: 42, symbol: __unk_vfn_42
-    virtual void __unk_vfn_42();
-
-    // vIndex: 43, symbol: ?getShadowRadius@Parrot@@UEBAMXZ
+    // vIndex: 41, symbol: ?getShadowRadius@Parrot@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 47, symbol: __unk_vfn_47
-    virtual void __unk_vfn_47();
-
-    // vIndex: 60, symbol: __unk_vfn_60
-    virtual void __unk_vfn_60();
-
-    // vIndex: 61, symbol: __unk_vfn_61
-    virtual void __unk_vfn_61();
-
-    // vIndex: 62, symbol: __unk_vfn_62
-    virtual void __unk_vfn_62();
-
-    // vIndex: 69, symbol: ?setSitting@Parrot@@UEAAX_N@Z
+    // vIndex: 66, symbol: ?setSitting@Parrot@@UEAAX_N@Z
     virtual void setSitting(bool value);
 
-    // vIndex: 76, symbol: ?playAmbientSound@Parrot@@UEAAXXZ
+    // vIndex: 73, symbol: ?playAmbientSound@Parrot@@UEAAXXZ
     virtual void playAmbientSound();
 
-    // vIndex: 77, symbol: ?getAmbientSound@Parrot@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 74, symbol: ?getAmbientSound@Parrot@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
     virtual ::Puv::Legacy::LevelSoundEvent getAmbientSound() const;
 
-    // vIndex: 78, symbol: ?isInvulnerableTo@Parrot@@UEBA_NAEBVActorDamageSource@@@Z
+    // vIndex: 75, symbol: ?isInvulnerableTo@Parrot@@UEBA_NAEBVActorDamageSource@@@Z
     virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
-    // vIndex: 107, symbol: __unk_vfn_107
-    virtual void __unk_vfn_107();
-
-    // vIndex: 115, symbol: ?canBePulledIntoVehicle@Parrot@@UEBA_NXZ
+    // vIndex: 112, symbol: ?canBePulledIntoVehicle@Parrot@@UEBA_NXZ
     virtual bool canBePulledIntoVehicle() const;
 
-    // vIndex: 144, symbol: __unk_vfn_144
-    virtual void __unk_vfn_144();
-
-    // vIndex: 162, symbol: __unk_vfn_162
-    virtual void __unk_vfn_162();
-
-    // vIndex: 166, symbol: ?_playStepSound@Parrot@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 161, symbol: ?_playStepSound@Parrot@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
     virtual void _playStepSound(class BlockPos const& pos, class Block const& onBlock);
 
-    // vIndex: 167, symbol: __unk_vfn_167
-    virtual void __unk_vfn_167();
-
-    // vIndex: 168, symbol: __unk_vfn_168
-    virtual void __unk_vfn_168();
-
-    // vIndex: 204, symbol: ?_getWalkTargetValue@Parrot@@UEAAMAEBVBlockPos@@@Z
+    // vIndex: 198, symbol: ?_getWalkTargetValue@Parrot@@UEAAMAEBVBlockPos@@@Z
     virtual float _getWalkTargetValue(class BlockPos const& pos);
-
-    // symbol: ?_makeFlySound@Parrot@@MEBA_NXZ
-    MCVAPI bool _makeFlySound() const;
 
     // symbol: ??0Parrot@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Parrot(

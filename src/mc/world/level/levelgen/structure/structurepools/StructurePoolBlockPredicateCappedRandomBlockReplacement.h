@@ -19,12 +19,12 @@ public:
     virtual ~StructurePoolBlockPredicateCappedRandomBlockReplacement() = default;
 
     // vIndex: 1, symbol:
-    // ?test@StructurePoolBlockPredicateCappedRandomBlockReplacement@@UEBA_NAEBVBlock@@AEAVRandomize@@@Z
-    virtual bool test(class Block const& block, class Randomize&) const;
+    // ?test@StructurePoolBlockPredicateCappedRandomBlockReplacement@@UEBA_NAEBVBlockPos@@0AEAVRandomize@@@Z
+    virtual bool test(class BlockPos const& pos, class BlockPos const&, class Randomize&) const;
 
     // vIndex: 2, symbol:
-    // ?test@StructurePoolBlockPredicateCappedRandomBlockReplacement@@UEBA_NAEBVBlockPos@@0AEAVRandomize@@@Z
-    virtual bool test(class BlockPos const&, class BlockPos const&, class Randomize&) const;
+    // ?test@StructurePoolBlockPredicateCappedRandomBlockReplacement@@UEBA_NAEBVBlock@@AEAVRandomize@@@Z
+    virtual bool test(class Block const& block, class Randomize&) const;
 
     // vIndex: 3, symbol:
     // ?finalize@StructurePoolBlockPredicateCappedRandomBlockReplacement@@UEAA_NAEAVBlockSource@@AEAVIRandom@@@Z

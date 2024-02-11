@@ -20,5 +20,9 @@ public:
     // vIndex: 1, symbol: ?execute@DeferredCompiledCommand@@UEAAXAEAVMinecraftCommands@@@Z
     virtual void execute(class MinecraftCommands&);
 
+    // symbol:
+    // ??0DeferredCompiledCommand@@QEAA@V?$not_null@PEAVCommand@@@gsl@@V?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@@Z
+    MCAPI DeferredCompiledCommand(gsl::not_null<class Command*>, std::unique_ptr<class CommandOrigin> origin);
+
     // NOLINTEND
 };

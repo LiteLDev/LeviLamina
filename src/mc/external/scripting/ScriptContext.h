@@ -32,12 +32,9 @@ public:
     MCAPI ScriptContext(class Scripting::ScriptContext&& rhs);
 
     // symbol:
-    // ??0ScriptContext@Scripting@@QEAA@PEAVIRuntime@1@UContextId@1@V?$shared_ptr@VLifetimeRegistry@Scripting@@@std@@@Z
-    MCAPI ScriptContext(
-        class Scripting::IRuntime*,
-        struct Scripting::ContextId,
-        std::shared_ptr<class Scripting::LifetimeRegistry> registry
-    );
+    // ??0ScriptContext@Scripting@@QEAA@PEAVIRuntime@1@UContextId@1@V?$unique_ptr@VLifetimeRegistry@Scripting@@U?$default_delete@VLifetimeRegistry@Scripting@@@std@@@std@@@Z
+    MCAPI
+    ScriptContext(class Scripting::IRuntime*, struct Scripting::ContextId, std::unique_ptr<class Scripting::LifetimeRegistry>);
 
     // symbol: ?getContextId@ScriptContext@Scripting@@QEBA?AUContextId@2@XZ
     MCAPI struct Scripting::ContextId getContextId() const;
@@ -57,6 +54,13 @@ public:
 
     // symbol: ??1ScriptContext@Scripting@@QEAA@XZ
     MCAPI ~ScriptContext();
+
+    // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol: ?_destroy@ScriptContext@Scripting@@AEAAXXZ
+    MCAPI void _destroy();
 
     // NOLINTEND
 };

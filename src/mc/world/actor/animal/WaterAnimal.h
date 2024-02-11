@@ -39,49 +39,13 @@ public:
     // vIndex: 10, symbol: ??1WaterAnimal@@UEAA@XZ
     virtual ~WaterAnimal();
 
-    // vIndex: 23, symbol: __unk_vfn_23
-    virtual void __unk_vfn_23();
-
-    // vIndex: 39, symbol: __unk_vfn_39
-    virtual void __unk_vfn_39();
-
-    // vIndex: 42, symbol: __unk_vfn_42
-    virtual void __unk_vfn_42();
-
-    // vIndex: 47, symbol: __unk_vfn_47
-    virtual void __unk_vfn_47();
-
-    // vIndex: 60, symbol: __unk_vfn_60
-    virtual void __unk_vfn_60();
-
-    // vIndex: 61, symbol: __unk_vfn_61
-    virtual void __unk_vfn_61();
-
-    // vIndex: 62, symbol: __unk_vfn_62
-    virtual void __unk_vfn_62();
-
-    // vIndex: 107, symbol: __unk_vfn_107
-    virtual void __unk_vfn_107();
-
-    // vIndex: 144, symbol: __unk_vfn_144
-    virtual void __unk_vfn_144();
-
-    // vIndex: 162, symbol: __unk_vfn_162
-    virtual void __unk_vfn_162();
-
-    // vIndex: 167, symbol: __unk_vfn_167
-    virtual void __unk_vfn_167();
-
-    // vIndex: 168, symbol: __unk_vfn_168
-    virtual void __unk_vfn_168();
-
-    // vIndex: 179, symbol: ?checkSpawnRules@WaterAnimal@@UEAA_N_N@Z
+    // vIndex: 173, symbol: ?checkSpawnRules@WaterAnimal@@UEAA_N_N@Z
     virtual bool checkSpawnRules(bool fromSpawner);
 
-    // vIndex: 210, symbol: ?getFlopVerticalVelocityFactor@WaterAnimal@@UEBAMXZ
+    // vIndex: 204, symbol: ?getFlopVerticalVelocityFactor@WaterAnimal@@UEBAMXZ
     virtual float getFlopVerticalVelocityFactor() const;
 
-    // vIndex: 211, symbol: ?getFlopHorizontalVelocityFactor@WaterAnimal@@UEBAMXZ
+    // vIndex: 205, symbol: ?getFlopHorizontalVelocityFactor@WaterAnimal@@UEBAMXZ
     virtual float getFlopHorizontalVelocityFactor() const;
 
     // symbol: ??0WaterAnimal@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

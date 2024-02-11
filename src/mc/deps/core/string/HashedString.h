@@ -25,7 +25,7 @@ public:
     MCAPI explicit HashedString(std::nullptr_t);
 
     // symbol: ??0HashedString@@QEAA@_KPEBD@Z
-    MCAPI HashedString(uint64, char const*);
+    MCAPI HashedString(uint64 hash, char const* str);
 
     // symbol: ?c_str@HashedString@@QEBAPEBDXZ
     MCAPI char const* c_str() const;

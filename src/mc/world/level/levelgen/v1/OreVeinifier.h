@@ -15,10 +15,7 @@ public:
     MCAPI explicit OreVeinifier(class OreVeinifierNoises const&);
 
     // symbol: ?getVeinBlockOrFallback@OreVeinifier@@QEBAPEBVBlock@@VVec3@@PEBV2@@Z
-    MCAPI class Block const* getVeinBlockOrFallback(class Vec3, class Block const*) const;
-
-    // symbol: ?resetAndGetInterpolators@OreVeinifier@@QEAA?AV?$array@PEAVNoiseCellInterpolator@@$02@std@@XZ
-    MCAPI std::array<class NoiseCellInterpolator*, 3> resetAndGetInterpolators();
+    MCAPI class Block const* getVeinBlockOrFallback(class Vec3 pos, class Block const*) const;
 
     // NOLINTEND
 };

@@ -27,26 +27,17 @@ public:
     // vIndex: 10, symbol: ?setItem@SimpleContainer@@UEAAXHAEBVItemStack@@@Z
     virtual void setItem(int slot, class ItemStack const& item);
 
-    // vIndex: 16, symbol: ?getContainerSize@SimpleContainer@@UEBAHXZ
+    // vIndex: 17, symbol: ?getContainerSize@SimpleContainer@@UEBAHXZ
     virtual int getContainerSize() const;
 
-    // vIndex: 17, symbol: ?getMaxStackSize@SimpleContainer@@UEBAHXZ
+    // vIndex: 18, symbol: ?getMaxStackSize@SimpleContainer@@UEBAHXZ
     virtual int getMaxStackSize() const;
 
-    // vIndex: 18, symbol: ?startOpen@SimpleContainer@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 19, symbol: ?startOpen@SimpleContainer@@UEAAXAEAVPlayer@@@Z
     virtual void startOpen(class Player&);
 
-    // vIndex: 19, symbol: ?stopOpen@SimpleContainer@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 20, symbol: ?stopOpen@SimpleContainer@@UEAAXAEAVPlayer@@@Z
     virtual void stopOpen(class Player&);
-
-    // vIndex: 25, symbol: __unk_vfn_25
-    virtual void __unk_vfn_25();
-
-    // vIndex: 26, symbol: __unk_vfn_26
-    virtual void __unk_vfn_26();
-
-    // vIndex: 34, symbol: __unk_vfn_34
-    virtual void __unk_vfn_34();
 
     // symbol:
     // ??0SimpleContainer@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NHW4ContainerType@@@Z

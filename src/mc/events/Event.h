@@ -40,24 +40,15 @@ public:
         uint                                                              id,
         std::string const&                                                eventName,
         std::unordered_map<std::string, class Social::Events::Property>&& commonProperties,
-        class Bedrock::NonOwnerPointer<class AppPlatform> const&,
-        int eventTags
+        class Bedrock::NonOwnerPointer<class AppPlatform> const&          appPlatform,
+        int                                                               eventTags
     );
 
     // symbol: ?addProperty@Event@Events@Social@@QEAAXAEBVProperty@23@@Z
     MCAPI void addProperty(class Social::Events::Property const& property);
 
-    // symbol: ?hasEventTags@Event@Events@Social@@QEBA_NH@Z
-    MCAPI bool hasEventTags(int tags) const;
-
-    // symbol: ?hasMeasurements@Event@Events@Social@@QEBA_NXZ
-    MCAPI bool hasMeasurements() const;
-
     // symbol: ??8Event@Events@Social@@QEBA_NAEBV012@@Z
     MCAPI bool operator==(class Social::Events::Event const& other) const;
-
-    // symbol: ?passesFilter@Event@Events@Social@@QEBA_NH@Z
-    MCAPI bool passesFilter(int tagsToExclude) const;
 
     // symbol: ?propertiesAsJsonValue@Event@Events@Social@@QEBA?AVValue@Json@@XZ
     MCAPI class Json::Value propertiesAsJsonValue() const;

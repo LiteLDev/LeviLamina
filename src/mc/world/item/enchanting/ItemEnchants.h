@@ -24,8 +24,14 @@ public:
     // symbol: ?addEnchant@ItemEnchants@@QEAA_NVEnchantmentInstance@@_N@Z
     MCAPI bool addEnchant(class EnchantmentInstance enchant, bool allowNonVanilla);
 
+    // symbol: ?addEnchants@ItemEnchants@@QEAAHAEBV1@_N@Z
+    MCAPI int addEnchants(class ItemEnchants const& enchants, bool allowNonVanilla);
+
     // symbol: ?canEnchant@ItemEnchants@@QEAA?AUEnchantResult@@VEnchantmentInstance@@_N@Z
     MCAPI struct EnchantResult canEnchant(class EnchantmentInstance enchant, bool allowNonVanilla);
+
+    // symbol: ?count@ItemEnchants@@QEBAHXZ
+    MCAPI int count() const;
 
     // symbol:
     // ?getAllEnchants@ItemEnchants@@QEBA?AV?$vector@VEnchantmentInstance@@V?$allocator@VEnchantmentInstance@@@std@@@std@@XZ

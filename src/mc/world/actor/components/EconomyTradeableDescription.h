@@ -21,7 +21,7 @@ public:
     virtual ~EconomyTradeableDescription();
 
     // vIndex: 2, symbol: ?deserializeData@EconomyTradeableDescription@@UEAAXUDeserializeDataParams@@@Z
-    virtual void deserializeData(struct DeserializeDataParams);
+    virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
     // NOLINTEND
 };

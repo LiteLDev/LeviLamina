@@ -49,6 +49,14 @@ public:
     MCAPI bool forceGamemode() const;
 
     // symbol:
+    // ?getApplicationId@PropertiesSettings@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    MCAPI std::string const& getApplicationId() const;
+
+    // symbol:
+    // ?getApplicationSecret@PropertiesSettings@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    MCAPI std::string const& getApplicationSecret() const;
+
+    // symbol:
     // ?getChangedValues@PropertiesSettings@@QEBA?AV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@XZ
     MCAPI std::unordered_map<std::string, std::string> getChangedValues() const;
 
@@ -171,6 +179,9 @@ public:
 
     // symbol: ?isPropertiesFileLoaded@PropertiesSettings@@QEBA?B_NXZ
     MCAPI bool const isPropertiesFileLoaded() const;
+
+    // symbol: ?isRakNetJoinFloodProtectionEnabled@PropertiesSettings@@QEBA_NXZ
+    MCAPI bool isRakNetJoinFloodProtectionEnabled() const;
 
     // symbol: ?isRealmsStoriesEnabled@PropertiesSettings@@QEBA_NXZ
     MCAPI bool isRealmsStoriesEnabled() const;

@@ -20,7 +20,7 @@ public:
     virtual ~ProjectileDescription();
 
     // vIndex: 2, symbol: ?deserializeData@ProjectileDescription@@UEAAXUDeserializeDataParams@@@Z
-    virtual void deserializeData(struct DeserializeDataParams);
+    virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
     // symbol: ??0ProjectileDescription@@QEAA@XZ
     MCAPI ProjectileDescription();

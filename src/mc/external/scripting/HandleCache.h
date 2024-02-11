@@ -14,17 +14,12 @@ public:
     // prevent constructor by default
     HandleCache& operator=(HandleCache const&);
     HandleCache(HandleCache const&);
+    HandleCache();
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0HandleCache@Scripting@@QEAA@XZ
-    MCAPI HandleCache();
-
     // symbol: ?remove@HandleCache@Scripting@@QEAAXAEBUObjectHandle@2@@Z
     MCAPI void remove(struct Scripting::ObjectHandle const&);
-
-    // symbol: ??1HandleCache@Scripting@@QEAA@XZ
-    MCAPI ~HandleCache();
 
     // NOLINTEND
 

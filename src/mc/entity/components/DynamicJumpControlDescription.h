@@ -21,7 +21,7 @@ public:
     virtual ~DynamicJumpControlDescription();
 
     // vIndex: 2, symbol: ?deserializeData@DynamicJumpControlDescription@@UEAAXUDeserializeDataParams@@@Z
-    virtual void deserializeData(struct DeserializeDataParams);
+    virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
     // NOLINTEND
 };

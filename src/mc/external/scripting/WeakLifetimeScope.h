@@ -6,6 +6,7 @@
 // clang-format off
 namespace Scripting { class ILifetimeScopeListener; }
 namespace Scripting { class LifetimeRegistry; }
+namespace Scripting { class LifetimeRegistryReference; }
 // clang-format on
 
 namespace Scripting {
@@ -16,14 +17,14 @@ public:
     // symbol: ??0WeakLifetimeScope@Scripting@@QEAA@XZ
     MCAPI WeakLifetimeScope();
 
+    // symbol: ??0WeakLifetimeScope@Scripting@@QEAA@PEAVLifetimeRegistryReference@1@@Z
+    MCAPI explicit WeakLifetimeScope(class Scripting::LifetimeRegistryReference*);
+
     // symbol: ??0WeakLifetimeScope@Scripting@@QEAA@$$QEAV01@@Z
     MCAPI WeakLifetimeScope(class Scripting::WeakLifetimeScope&& rhs);
 
     // symbol: ??0WeakLifetimeScope@Scripting@@QEAA@AEBV01@@Z
     MCAPI WeakLifetimeScope(class Scripting::WeakLifetimeScope const& rhs);
-
-    // symbol: ??0WeakLifetimeScope@Scripting@@QEAA@V?$weak_ptr@VLifetimeRegistry@Scripting@@@std@@@Z
-    MCAPI explicit WeakLifetimeScope(std::weak_ptr<class Scripting::LifetimeRegistry>);
 
     // symbol: ?addListener@WeakLifetimeScope@Scripting@@QEBAXV?$weak_ptr@VILifetimeScopeListener@Scripting@@@std@@@Z
     MCAPI void addListener(std::weak_ptr<class Scripting::ILifetimeScopeListener> listener) const;

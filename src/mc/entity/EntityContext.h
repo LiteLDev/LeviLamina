@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/WeakRefT.h"
+#include "mc/common/wrapper/WeakRef.h"
 
 class EntityContext {
 public:
@@ -42,8 +42,8 @@ public:
     // symbol: ?_registry@EntityContext@@QEBAAEAVEntityRegistry@@XZ
     MCAPI class EntityRegistry& _registry() const;
 
-    // symbol: ?getWeakRef@EntityContext@@QEBA?AV?$WeakRefT@UEntityRefTraits@@@@XZ
-    MCAPI class WeakRefT<struct EntityRefTraits> getWeakRef() const;
+    // symbol: ?getWeakRef@EntityContext@@QEBA?AV?$WeakRef@VEntityContext@@@@XZ
+    MCAPI class WeakRef<class EntityContext> getWeakRef() const;
 
     // symbol: ?isValid@EntityContext@@QEBA_NXZ
     MCAPI bool isValid() const;

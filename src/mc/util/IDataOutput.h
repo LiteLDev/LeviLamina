@@ -36,10 +36,10 @@ public:
     virtual void writeInt(int v) = 0;
 
     // vIndex: 8, symbol: ?writeLongLong@BigEndianStringByteOutput@@UEAAX_J@Z
-    virtual void writeLongLong(int64) = 0;
+    virtual void writeLongLong(int64 v) = 0;
 
     // vIndex: 9, symbol: ?writeBytes@StringByteOutput@@UEAAXPEBX_K@Z
-    virtual void writeBytes(void const*, uint64) = 0;
+    virtual void writeBytes(void const* data, uint64 bytes) = 0;
 
     // NOLINTEND
 };

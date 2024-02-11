@@ -23,20 +23,11 @@ public:
     // symbol: ??0MolangScriptArg@@QEAA@AEBU0@@Z
     MCAPI MolangScriptArg(struct MolangScriptArg const&);
 
-    // symbol: ?clear@MolangScriptArg@@QEAAXXZ
-    MCAPI void clear();
-
-    // symbol: ?getAsNonConstIfMolangMemberArray@MolangScriptArg@@QEAAPEAUMolangMemberArray@@XZ
-    MCAPI struct MolangMemberArray* getAsNonConstIfMolangMemberArray();
-
     // symbol: ?getAsNonConstMolangMemberArray@MolangScriptArg@@QEAAPEAUMolangMemberArray@@XZ
     MCAPI struct MolangMemberArray* getAsNonConstMolangMemberArray();
 
     // symbol: ?getBaseType@MolangScriptArg@@QEBA?AW4MolangScriptArgType@@XZ
     MCAPI ::MolangScriptArgType getBaseType() const;
-
-    // symbol: ?getIfMolangMemberArray@MolangScriptArg@@QEBAPEBUMolangMemberArray@@XZ
-    MCAPI struct MolangMemberArray const* getIfMolangMemberArray() const;
 
     // symbol: ?isEqual@MolangScriptArg@@QEBA_NAEBU1@@Z
     MCAPI bool isEqual(struct MolangScriptArg const&) const;

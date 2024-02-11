@@ -16,12 +16,14 @@ class NetworkItemStackDescriptor : public ::ItemDescriptorCount {
 public:
     // prevent constructor by default
     NetworkItemStackDescriptor& operator=(NetworkItemStackDescriptor const&);
-    NetworkItemStackDescriptor();
 
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1NetworkItemStackDescriptor@@UEAA@XZ
     virtual ~NetworkItemStackDescriptor();
+
+    // symbol: ??0NetworkItemStackDescriptor@@QEAA@XZ
+    MCAPI NetworkItemStackDescriptor();
 
     // symbol: ??0NetworkItemStackDescriptor@@QEAA@AEBVItemStack@@@Z
     MCAPI explicit NetworkItemStackDescriptor(class ItemStack const& item);

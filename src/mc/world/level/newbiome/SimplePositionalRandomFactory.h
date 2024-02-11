@@ -26,7 +26,7 @@ public:
     virtual std::unique_ptr<class IRandom> forString(std::string const& string) const;
 
     // symbol: ??0SimplePositionalRandomFactory@@QEAA@_J@Z
-    MCAPI explicit SimplePositionalRandomFactory(int64);
+    MCAPI explicit SimplePositionalRandomFactory(int64 seed);
 
     // symbol: ?forBlockPosImpl@SimplePositionalRandomFactory@@QEBA?AVSimpleRandom@@AEBVBlockPos@@@Z
     MCAPI class SimpleRandom forBlockPosImpl(class BlockPos const& blockPos) const;

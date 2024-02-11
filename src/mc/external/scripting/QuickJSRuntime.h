@@ -53,9 +53,9 @@ public:
     virtual ~QuickJSRuntime() = default;
 
     // vIndex: 1, symbol:
-    // ?createContext@QuickJSRuntime@QuickJS@Scripting@@UEAA?AV?$optional@VScriptContext@Scripting@@@std@@AEBUModuleBindingBundle@3@PEAVIDependencyLoader@3@PEAVIPrinter@3@AEBUContextConfig@3@@Z
+    // ?createContext@QuickJSRuntime@QuickJS@Scripting@@UEAA?AV?$optional@VScriptContext@Scripting@@@std@@$$QEAUModuleBindingBundle@3@PEAVIDependencyLoader@3@PEAVIPrinter@3@AEBUContextConfig@3@@Z
     virtual std::optional<class Scripting::ScriptContext> createContext(
-        struct Scripting::ModuleBindingBundle const&,
+        struct Scripting::ModuleBindingBundle&&,
         class Scripting::IDependencyLoader* loader,
         class Scripting::IPrinter*,
         struct Scripting::ContextConfig const& config
@@ -103,8 +103,9 @@ public:
         const;
 
     // vIndex: 9, symbol:
-    // ?executeCoroutines@QuickJSRuntime@QuickJS@Scripting@@UEAA?AV?$Result@UCoRoutineResult@Scripting@@$$V@3@V?$duration@_JU?$ratio@$00$0PECEA@@std@@@chrono@std@@@Z
-    virtual class Scripting::Result<struct Scripting::CoRoutineResult> executeCoroutines(std::chrono::microseconds);
+    // ?executeCoroutines@QuickJSRuntime@QuickJS@Scripting@@UEAA?AV?$Result@UCoRoutineResult@Scripting@@$$V@3@V?$optional@V?$duration@_JU?$ratio@$00$0PECEA@@std@@@chrono@std@@@std@@@Z
+    virtual class Scripting::Result<struct Scripting::CoRoutineResult>
+        executeCoroutines(std::optional<std::chrono::microseconds>);
 
     // vIndex: 10, symbol: ?hasPendingJobs@QuickJSRuntime@QuickJS@Scripting@@UEAA_NXZ
     virtual bool hasPendingJobs();

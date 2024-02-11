@@ -40,14 +40,15 @@ public:
     virtual ~FileSystemImpl();
 
     // vIndex: 1, symbol: ?getLastModificationTime@FileSystemImpl@Core@@UEAA?AVResult@2@AEBVPath@2@PEA_J@Z
-    virtual class Core::Result getLastModificationTime(class Core::Path const&, int64*);
+    virtual class Core::Result getLastModificationTime(class Core::Path const& entryPath, int64* lastModificationTime);
 
     // vIndex: 2, symbol: ?copyTimeAndAccessRights@FileSystemImpl@Core@@UEAA?AVResult@2@AEBVPath@2@0@Z
     virtual class Core::Result
     copyTimeAndAccessRights(class Core::Path const& sourceFilePath, class Core::Path const& targetFilePath);
 
-    // vIndex: 3, symbol: __unk_vfn_3
-    virtual void __unk_vfn_3();
+    // vIndex: 3, symbol:
+    // ?requestFlush@FileSystemImpl@Core@@UEAAXAEBV?$vector@UPendingWrite@Core@@V?$allocator@UPendingWrite@Core@@@std@@@std@@@Z
+    virtual void requestFlush(std::vector<struct Core::PendingWrite> const& writeRequests);
 
     // vIndex: 4, symbol: ?shouldCommit@FileSystemImpl@Core@@UEAA_NXZ
     virtual bool shouldCommit();
@@ -81,8 +82,13 @@ public:
     _copyFile(class Core::Path const& sourceFileName, class Core::Path const& targetFileName);
 
     // vIndex: 14, symbol: ?_copyFileWithLimit@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@0_KAEA_K2@Z
-    virtual class Core::Result
-    _copyFileWithLimit(class Core::Path const&, class Core::Path const&, uint64, uint64&, uint64&);
+    virtual class Core::Result _copyFileWithLimit(
+        class Core::Path const& sourceFileName,
+        class Core::Path const& targetFileName,
+        uint64                  startPosition,
+        uint64&                 outBytesWritten,
+        uint64&                 outBytesRemaining
+    );
 
     // vIndex: 15, symbol:
     // ?_readFileData@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@AEAV?$vector@EV?$allocator@E@std@@@std@@@Z
@@ -137,7 +143,11 @@ public:
 
     // vIndex: 29, symbol:
     // ?_getDirectoryFilesAllocatedSizeRecursively@FileSystemImpl@Core@@MEAA?AVResult@2@AEA_K0AEBVPath@2@@Z
-    virtual class Core::Result _getDirectoryFilesAllocatedSizeRecursively(uint64&, uint64&, class Core::Path const&);
+    virtual class Core::Result _getDirectoryFilesAllocatedSizeRecursively(
+        uint64&                 totalSize,
+        uint64&                 totalSizeAllocated,
+        class Core::Path const& directoryPath
+    );
 
     // vIndex: 30, symbol: ?_copyDirectoryAndContentsRecursively@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@0@Z
     virtual class Core::Result _copyDirectoryAndContentsRecursively(
@@ -152,13 +162,13 @@ public:
     virtual class Core::Result _getFileOrDirectorySize(class Core::Path const& entryName, uint64* pFileSizeOut);
 
     // vIndex: 33, symbol: __unk_vfn_33
-    virtual void __unk_vfn_33();
+    virtual void __unk_vfn_33() = 0;
 
-    // vIndex: 34, symbol: __unk_vfn_34
-    virtual void __unk_vfn_34();
+    // vIndex: 34, symbol: ?_addIgnoredThrottlePath@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@@Z
+    virtual class Core::Result _addIgnoredThrottlePath(class Core::Path const&);
 
-    // vIndex: 35, symbol: __unk_vfn_35
-    virtual void __unk_vfn_35() = 0;
+    // vIndex: 35, symbol: ?_removeIgnoredThrottlePath@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@@Z
+    virtual class Core::Result _removeIgnoredThrottlePath(class Core::Path const&);
 
     // vIndex: 36, symbol: ?_createFlatFile@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@0@Z
     virtual class Core::Result
@@ -221,18 +231,8 @@ public:
         uint64                                            numBytesWritten
     );
 
-    // symbol: ?_addIgnoredThrottlePath@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@@Z
-    MCVAPI class Core::Result _addIgnoredThrottlePath(class Core::Path const&);
-
-    // symbol: ?_initializeInternal@FileSystemImpl@Core@@EEAAXXZ
-    MCVAPI void _initializeInternal();
-
-    // symbol: ?_removeIgnoredThrottlePath@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@@Z
-    MCVAPI class Core::Result _removeIgnoredThrottlePath(class Core::Path const&);
-
-    // symbol:
-    // ?requestFlush@FileSystemImpl@Core@@UEAAXAEBV?$vector@UPendingWrite@Core@@V?$allocator@UPendingWrite@Core@@@std@@@std@@@Z
-    MCVAPI void requestFlush(std::vector<struct Core::PendingWrite> const& writeRequests);
+    // vIndex: 48, symbol: ?_initializeInternal@FileSystemImpl@Core@@EEAAXXZ
+    virtual void _initializeInternal();
 
     // symbol:
     // ??0FileSystemImpl@Core@@QEAA@W4FileAccessType@1@V?$shared_ptr@VFileStorageArea@Core@@@std@@W4TransactionFlags@1@V?$shared_ptr@VFlatFileManifestTracker@Core@@@4@@Z
@@ -366,7 +366,7 @@ public:
     MCAPI void _initialize();
 
     // symbol: ?_readOperation@FileSystemImpl@Core@@AEAA?AVResult@2@$$QEAV32@_K@Z
-    MCAPI class Core::Result _readOperation(class Core::Result&&, uint64);
+    MCAPI class Core::Result _readOperation(class Core::Result&& result, uint64 numBytesRead);
 
     // symbol:
     // ?_readWriteOperation@FileSystemImpl@Core@@AEAA?AVResult@2@$$QEAV32@V?$function@$$A6AXPEAVFileStorageArea@Core@@@Z@std@@_K2@Z

@@ -21,7 +21,7 @@ public:
     virtual void toNBT(class CompoundTag& tag, int val) const;
 
     // vIndex: 2, symbol: ?fromNBT@CustomBlockStateVariant@@UEBA_NAEBVCompoundTag@@AEAH@Z
-    virtual bool fromNBT(class CompoundTag const& tag, int&) const;
+    virtual bool fromNBT(class CompoundTag const& tag, int& outValue) const;
 
     // NOLINTEND
 };

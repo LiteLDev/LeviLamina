@@ -122,6 +122,9 @@ public:
     // symbol: ?getTimeOfDay@ScriptWorld@ScriptModuleMinecraft@@QEBAHXZ
     MCAPI int getTimeOfDay() const;
 
+    // symbol: ??4ScriptWorld@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
+    MCAPI class ScriptModuleMinecraft::ScriptWorld& operator=(class ScriptModuleMinecraft::ScriptWorld&&);
+
     // symbol:
     // ?playMusic@ScriptWorld@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$optional@UScriptMusicOptions@ScriptModuleMinecraft@@@6@@Z
     MCAPI class Scripting::Result<void>
@@ -182,9 +185,6 @@ public:
 
     // symbol: ?stopMusic@ScriptWorld@ScriptModuleMinecraft@@QEAAXXZ
     MCAPI void stopMusic();
-
-    // symbol: ??1ScriptWorld@ScriptModuleMinecraft@@QEAA@XZ
-    MCAPI ~ScriptWorld();
 
     // symbol:
     // ?bind@ScriptWorld@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptWorld@ScriptModuleMinecraft@@@Scripting@@XZ

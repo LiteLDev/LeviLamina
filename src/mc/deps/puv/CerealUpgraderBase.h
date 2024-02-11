@@ -9,6 +9,7 @@
 // clang-format off
 namespace Puv { struct Logger; }
 namespace Puv::internal { struct PathElement; }
+namespace cereal { class SerializerEnumMapping; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -22,8 +23,6 @@ public:
     // clang-format on
 
     // CerealUpgraderBase inner types define
-    enum class RefPolicy {};
-
     struct UpgradeState {
     public:
         // prevent constructor by default
@@ -76,13 +75,11 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?copy@CerealUpgraderBase@internal@Puv@@AEBAXAEAVmeta_any@entt@@0AEAUUpgradeState@123@W4RefPolicy@123@@Z
-    MCAPI void copy(
-        entt::meta_any&,
-        entt::meta_any&,
-        struct Puv::internal::CerealUpgraderBase::UpgradeState&,
-        ::Puv::internal::CerealUpgraderBase::RefPolicy
-    ) const;
+    // symbol:
+    // ?copy@CerealUpgraderBase@internal@Puv@@AEBAXAEAVmeta_any@entt@@0AEAUUpgradeState@123@PEBVSerializerEnumMapping@cereal@@2@Z
+    MCAPI void
+    copy(entt::meta_any&, entt::meta_any&, struct Puv::internal::CerealUpgraderBase::UpgradeState&, class cereal::SerializerEnumMapping const*, class cereal::SerializerEnumMapping const*)
+        const;
 
     // symbol:
     // ?copyAssociative@CerealUpgraderBase@internal@Puv@@AEBAXVmeta_associative_container@entt@@AEAVmeta_any@5@AEAUUpgradeState@123@@Z
@@ -90,9 +87,19 @@ public:
     copyAssociative(entt::meta_associative_container, entt::meta_any&, struct Puv::internal::CerealUpgraderBase::UpgradeState&)
         const;
 
-    // symbol: ?copyImpl@CerealUpgraderBase@internal@Puv@@AEBAXAEAVmeta_any@entt@@0AEAUUpgradeState@123@@Z
+    // symbol:
+    // ?copyEnum@CerealUpgraderBase@internal@Puv@@AEBA_NAEAVmeta_any@entt@@0PEBVSerializerEnumMapping@cereal@@1AEAUUpgradeState@123@@Z
+    MCAPI bool
+    copyEnum(entt::meta_any&, entt::meta_any&, class cereal::SerializerEnumMapping const*, class cereal::SerializerEnumMapping const*, struct Puv::internal::CerealUpgraderBase::UpgradeState&)
+        const;
+
+    // symbol: ?copyNotEnum@CerealUpgraderBase@internal@Puv@@AEBAXAEAVmeta_any@entt@@0AEAUUpgradeState@123@@Z
     MCAPI void
-    copyImpl(entt::meta_any&, entt::meta_any&, struct Puv::internal::CerealUpgraderBase::UpgradeState&) const;
+    copyNotEnum(entt::meta_any&, entt::meta_any&, struct Puv::internal::CerealUpgraderBase::UpgradeState&) const;
+
+    // symbol: ?copyNotEnumImpl@CerealUpgraderBase@internal@Puv@@AEBAXAEAVmeta_any@entt@@0AEAUUpgradeState@123@@Z
+    MCAPI void
+    copyNotEnumImpl(entt::meta_any&, entt::meta_any&, struct Puv::internal::CerealUpgraderBase::UpgradeState&) const;
 
     // symbol:
     // ?copySequence@CerealUpgraderBase@internal@Puv@@AEBAXVmeta_sequence_container@entt@@AEAVmeta_any@5@AEAUUpgradeState@123@@Z

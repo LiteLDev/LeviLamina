@@ -27,8 +27,8 @@ public:
     // symbol: ??PVersion@Scripting@@QEBA_NAEBU01@@Z
     MCAPI bool operator>=(struct Scripting::Version const& rhs) const;
 
-    // symbol: ?satisfies@Version@Scripting@@QEBA_NAEBU12@@Z
-    MCAPI bool satisfies(struct Scripting::Version const& other) const;
+    // symbol: ?satisfies@Version@Scripting@@QEBA_NAEBU12@_N@Z
+    MCAPI bool satisfies(struct Scripting::Version const&, bool) const;
 
     // symbol: ?toString@Version@Scripting@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string toString() const;

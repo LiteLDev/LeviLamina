@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Puv::v1_20_50 { struct UseModifiersItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -24,9 +25,6 @@ public:
 
     // vIndex: 1, symbol: ?checkComponentDataForContentErrors@ItemComponent@@UEBA_NXZ
     virtual bool checkComponentDataForContentErrors() const;
-
-    // vIndex: 2, symbol: ?writeSettings@ItemComponent@@UEAAXXZ
-    virtual void writeSettings();
 
     // vIndex: 3, symbol: ?isNetworkComponent@InteractButtonItemComponent@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
@@ -51,11 +49,14 @@ public:
     // vIndex: 9, symbol: ?_initializeComponent@UseModifiersItemComponent@@UEAAXXZ
     virtual void _initializeComponent();
 
-    // symbol: ??0UseModifiersItemComponent@@QEAA@$$QEAUUseModifiersItemComponentData_v1_20_50@@@Z
-    MCAPI explicit UseModifiersItemComponent(struct UseModifiersItemComponentData_v1_20_50&&);
+    // symbol: ??0UseModifiersItemComponent@@QEAA@U0v1_20_50@Puv@@@Z
+    MCAPI explicit UseModifiersItemComponent(struct Puv::v1_20_50::UseModifiersItemComponent);
 
     // symbol: ?getMovementModifier@UseModifiersItemComponent@@QEBAMXZ
     MCAPI float getMovementModifier() const;
+
+    // symbol: ?use@UseModifiersItemComponent@@QEBA_NAEAVItemStack@@AEAVPlayer@@@Z
+    MCAPI bool use(class ItemStack&, class Player&) const;
 
     // symbol:
     // ?bindType@UseModifiersItemComponent@@SAXAEAUReflectionCtx@cereal@@AEBV?$vector@W4AllExperiments@@V?$allocator@W4AllExperiments@@@std@@@std@@V?$optional@VSemVersion@@@5@@Z

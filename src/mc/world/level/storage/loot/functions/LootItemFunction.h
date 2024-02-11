@@ -19,24 +19,20 @@ public:
     // vIndex: 0, symbol: ??1LootItemFunction@@UEAA@XZ
     virtual ~LootItemFunction();
 
-    // vIndex: 1, symbol: ?apply@ExplosionDecayFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
-    virtual void apply(class ItemStack& item, class Random& random, class LootTableContext& context) = 0;
-
-    // vIndex: 2, symbol: ?apply@LootItemFunction@@UEAAHAEAVItemStack@@AEAVRandom@@AEBUTrade@@AEAVLootTableContext@@@Z
-    virtual int
-    apply(class ItemStack& item, class Random& random, struct Trade const& trade, class LootTableContext& context);
-
-    // vIndex: 3, symbol: ?apply@ExplosionDecayFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
-    virtual void apply(class ItemInstance& item, class Random& random, class LootTableContext& context) = 0;
-
-    // vIndex: 4, symbol:
+    // vIndex: 1, symbol:
     // ?apply@LootItemFunction@@UEAAHAEAVItemInstance@@AEAVRandom@@AEBUTrade@@AEAVLootTableContext@@@Z
     virtual int
     apply(class ItemInstance& item, class Random& random, struct Trade const& trade, class LootTableContext& context);
 
-    // symbol:
-    // ?getConditions@LootItemFunction@@QEBAAEBV?$vector@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@V?$allocator@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@@2@@std@@XZ
-    MCAPI std::vector<std::unique_ptr<class LootItemCondition>> const& getConditions() const;
+    // vIndex: 2, symbol: ?apply@ExplosionDecayFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
+    virtual void apply(class ItemInstance& item, class Random& random, class LootTableContext& context) = 0;
+
+    // vIndex: 3, symbol: ?apply@LootItemFunction@@UEAAHAEAVItemStack@@AEAVRandom@@AEBUTrade@@AEAVLootTableContext@@@Z
+    virtual int
+    apply(class ItemStack& item, class Random& random, struct Trade const& trade, class LootTableContext& context);
+
+    // vIndex: 4, symbol: ?apply@ExplosionDecayFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
+    virtual void apply(class ItemStack& item, class Random& random, class LootTableContext& context) = 0;
 
     // symbol:
     // ?deserialize@LootItemFunction@@SA?AV?$unique_ptr@VLootItemFunction@@U?$default_delete@VLootItemFunction@@@std@@@std@@VValue@Json@@@Z

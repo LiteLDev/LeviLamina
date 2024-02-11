@@ -26,17 +26,17 @@ public:
     // vIndex: 3, symbol: ?default_error_condition@HttpErrorCategory@Http@Bedrock@@UEBA?AVerror_condition@std@@H@Z
     virtual std::error_condition default_error_condition(int) const;
 
-    // vIndex: 4, symbol: ?equivalent@error_category@std@@UEBA_NHAEBVerror_condition@2@@Z
-    virtual bool equivalent(int, std::error_condition const&) const;
-
-    // vIndex: 5, symbol: ?equivalent@HttpErrorCategory@Http@Bedrock@@UEBA_NAEBVerror_code@std@@H@Z
+    // vIndex: 4, symbol: ?equivalent@HttpErrorCategory@Http@Bedrock@@UEBA_NAEBVerror_code@std@@H@Z
     virtual bool equivalent(std::error_code const& code, int condition) const;
+
+    // vIndex: 5, symbol: ?equivalent@error_category@std@@UEBA_NHAEBVerror_condition@2@@Z
+    virtual bool equivalent(int, std::error_condition const&) const;
 
     // vIndex: 6, symbol: __unk_vfn_6
     virtual void __unk_vfn_6();
 
     // vIndex: 7, symbol: ?start@BufferedResponseBody@Http@Bedrock@@MEAA?AVerror_code@std@@V?$optional@_K@5@@Z
-    virtual std::error_code start(std::optional<uint64>);
+    virtual std::error_code start(std::optional<uint64> size);
 
     // vIndex: 8, symbol: ?write@BufferedResponseBody@Http@Bedrock@@MEAA?AVerror_code@std@@V?$span@$$CBE$0?0@gsl@@@Z
     virtual std::error_code write(gsl::span<uchar const> source);

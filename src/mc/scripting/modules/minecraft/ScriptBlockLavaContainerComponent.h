@@ -24,12 +24,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptBlockLavaContainerComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptBlockLavaContainerComponent();
-
-    // symbol: ??4ScriptBlockLavaContainerComponent@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
-    MCAPI class ScriptModuleMinecraft::ScriptBlockLavaContainerComponent&
-    operator=(class ScriptModuleMinecraft::ScriptBlockLavaContainerComponent&&);
+    // vIndex: 0, symbol: __gen_??1ScriptBlockLavaContainerComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptBlockLavaContainerComponent() = default;
 
     // symbol:
     // ?bind@ScriptBlockLavaContainerComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptBlockLavaContainerComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z

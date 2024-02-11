@@ -49,6 +49,9 @@ public:
     // symbol: ?clampedLerp@Math@mce@@SAMMMM@Z
     MCAPI static float clampedLerp(float min, float max, float factor);
 
+    // symbol: ?clampedMap@Math@mce@@SANNNNNN@Z
+    MCAPI static double clampedMap(double, double, double, double, double);
+
     // symbol: ?clampedMap@Math@mce@@SAMMMMMM@Z
     MCAPI static float clampedMap(float value, float, float, float, float);
 

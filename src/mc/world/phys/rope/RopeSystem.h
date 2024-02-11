@@ -69,7 +69,7 @@ public:
     MCAPI void _pruneDenyList();
 
     // symbol: ?_pushRange@RopeSystem@@AEAAX_K0@Z
-    MCAPI void _pushRange(uint64, uint64);
+    MCAPI void _pushRange(uint64 begin, uint64 end);
 
     // symbol: ?_resizeRope@RopeSystem@@AEAAXXZ
     MCAPI void _resizeRope();
@@ -92,9 +92,6 @@ public:
 
     // symbol: ?_tickWaves@RopeSystem@@AEAAXXZ
     MCAPI void _tickWaves();
-
-    // symbol: ?_updateRenderPoints@RopeSystem@@AEAAXXZ
-    MCAPI void _updateRenderPoints();
 
     // NOLINTEND
 };

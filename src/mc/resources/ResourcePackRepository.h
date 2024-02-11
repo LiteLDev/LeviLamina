@@ -62,6 +62,10 @@ public:
         // symbol: ?getPack@KnownPackContainer@ResourcePackRepository@@QEAAPEAUKnownPackInfo@2@AEBVResourceLocation@@@Z
         MCAPI struct ResourcePackRepository::KnownPackInfo* getPack(class ResourceLocation const& packLocation);
 
+        // symbol: ?getPack@KnownPackContainer@ResourcePackRepository@@QEBAPEBUKnownPackInfo@2@AEBVResourceLocation@@@Z
+        MCAPI struct ResourcePackRepository::KnownPackInfo const* getPack(class ResourceLocation const& packLocation
+        ) const;
+
         // symbol: ??1KnownPackContainer@ResourcePackRepository@@QEAA@XZ
         MCAPI ~KnownPackContainer();
 
@@ -239,12 +243,12 @@ public:
     virtual void addInvalidPack(class ResourceLocation const& packLocation, ::PackType type);
 
     // vIndex: 44, symbol:
-    // ?getInvalidPacks@ResourcePackRepository@@UEBAAEBV?$vector@VResourceLocation@@V?$allocator@VResourceLocation@@@std@@@std@@W4PackType@@@Z
-    virtual std::vector<class ResourceLocation> const& getInvalidPacks(::PackType type) const;
-
-    // vIndex: 45, symbol:
     // ?getInvalidPacks@ResourcePackRepository@@UEBA?AV?$vector@VResourceLocation@@V?$allocator@VResourceLocation@@@std@@@std@@AEBUInvalidPacksFilterGroup@@@Z
     virtual std::vector<class ResourceLocation> getInvalidPacks(struct InvalidPacksFilterGroup const& packTypes) const;
+
+    // vIndex: 45, symbol:
+    // ?getInvalidPacks@ResourcePackRepository@@UEBAAEBV?$vector@VResourceLocation@@V?$allocator@VResourceLocation@@@std@@@std@@W4PackType@@@Z
+    virtual std::vector<class ResourceLocation> const& getInvalidPacks(::PackType type) const;
 
     // vIndex: 46, symbol: ?deletePack@ResourcePackRepository@@UEAAXAEBVResourceLocation@@@Z
     virtual void deletePack(class ResourceLocation const& packLocation);
@@ -320,9 +324,6 @@ public:
 
     // symbol: ?_packExists@ResourcePackRepository@@AEBA_NAEBVUUID@mce@@AEBVSemVersion@@W4PackOrigin@@@Z
     MCAPI bool _packExists(class mce::UUID const& packId, class SemVersion const& version, ::PackOrigin origin) const;
-
-    // symbol: ?_reloadDynamicPackagePacks@ResourcePackRepository@@AEAAXXZ
-    MCAPI void _reloadDynamicPackagePacks();
 
     // symbol: ?_reloadUserPacks@ResourcePackRepository@@AEAAXXZ
     MCAPI void _reloadUserPacks();

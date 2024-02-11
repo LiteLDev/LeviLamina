@@ -12,11 +12,11 @@ public:
     // vIndex: 0, symbol: __gen_??1BaseBlockLocationIterator@@UEAA@XZ
     virtual ~BaseBlockLocationIterator() = default;
 
-    // vIndex: 1, symbol: ??EBaseBlockLocationIterator@@UEAAAEAV0@XZ
-    virtual class BaseBlockLocationIterator& operator++();
-
-    // vIndex: 2, symbol: ??EBaseBlockLocationIterator@@UEAA?AV0@H@Z
+    // vIndex: 1, symbol: ??EBaseBlockLocationIterator@@UEAA?AV0@H@Z
     virtual class BaseBlockLocationIterator operator++(int);
+
+    // vIndex: 2, symbol: ??EBaseBlockLocationIterator@@UEAAAEAV0@XZ
+    virtual class BaseBlockLocationIterator& operator++();
 
     // vIndex: 3, symbol: ?_begin@BaseBlockLocationIterator@@MEAAXXZ
     virtual void _begin();

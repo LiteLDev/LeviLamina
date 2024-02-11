@@ -28,13 +28,13 @@ public:
     virtual ~ScriptPlayerGameplayHandler() = default;
 
     // vIndex: 1, symbol:
-    // ?handleEvent@?$Impl@U?$type_list@$$CBU?$PlayerGameplayEvent@X@@$$CBU?$PlayerGameplayEvent@W4CoordinatorResult@@@@@entt@@@?$EventHandlerDispatcher@VPlayerGameplayHandler@@@Details@@MEAA?AW4HandlerResult@@AEBU?$PlayerGameplayEvent@X@@@Z
-    virtual ::HandlerResult handleEvent(struct PlayerGameplayEvent<void> const&);
-
-    // vIndex: 2, symbol:
     // ?handleEvent@ScriptPlayerGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEBU?$PlayerGameplayEvent@W4CoordinatorResult@@@@@Z
     virtual struct GameplayHandlerResult<::CoordinatorResult>
     handleEvent(struct PlayerGameplayEvent<::CoordinatorResult> const&);
+
+    // vIndex: 2, symbol:
+    // ?handleEvent@?$Impl@U?$type_list@$$CBU?$PlayerGameplayEvent@X@@$$CBU?$PlayerGameplayEvent@W4CoordinatorResult@@@@@entt@@@?$EventHandlerDispatcher@VPlayerGameplayHandler@@@Details@@MEAA?AW4HandlerResult@@AEBU?$PlayerGameplayEvent@X@@@Z
+    virtual ::HandlerResult handleEvent(struct PlayerGameplayEvent<void> const& event);
 
     // vIndex: 3, symbol: __unk_vfn_3
     virtual void __unk_vfn_3();

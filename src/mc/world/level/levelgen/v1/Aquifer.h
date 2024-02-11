@@ -30,15 +30,15 @@ public:
     MCAPI Aquifer(
         class ChunkPos const& chunkPos,
         class AquiferNoises const&,
-        struct OverworldNoises3d const&,
-        class SurfaceLevelCache const&,
-        int,
-        int,
-        int seaLevel
+        struct OverworldNoises3d const& overworldNoises,
+        class SurfaceLevelCache const&  surfaceLevelCache,
+        int                             minHeight,
+        int                             levelGenHeight,
+        int                             seaLevel
     );
 
     // symbol: ?computeAt@Aquifer@@QEAAXAEBVBlockPos@@@Z
-    MCAPI void computeAt(class BlockPos const&);
+    MCAPI void computeAt(class BlockPos const& pos);
 
     // symbol: ?getLastBarrier@Aquifer@@QEBAMXZ
     MCAPI float getLastBarrier() const;

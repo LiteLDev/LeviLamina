@@ -27,10 +27,7 @@ public:
     virtual std::vector<class ItemInstance> const&
     assemble(class CraftingContainer& craftSlots, class CraftingContext&) const;
 
-    // vIndex: 5, symbol: __unk_vfn_5
-    virtual void __unk_vfn_5();
-
-    // vIndex: 12, symbol: ?itemsMatch@ShulkerBoxRecipe@@UEBA_NAEBVItemDescriptor@@0@Z
+    // vIndex: 13, symbol: ?itemsMatch@ShulkerBoxRecipe@@UEBA_NAEBVItemDescriptor@@0@Z
     virtual bool itemsMatch(class ItemDescriptor const& lhs, class ItemDescriptor const& rhs) const;
 
     // symbol:

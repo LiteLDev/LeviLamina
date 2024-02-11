@@ -20,8 +20,8 @@ public:
     // vIndex: 2, symbol: ?execute@ReloadCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    // symbol: ?setup@ReloadCommand@@SAXAEAVCommandRegistry@@@Z
-    MCAPI static void setup(class CommandRegistry& registry);
+    // symbol: ?setup@ReloadCommand@@SAXAEAVCommandRegistry@@_N1@Z
+    MCAPI static void setup(class CommandRegistry&, bool, bool);
 
     // NOLINTEND
 };

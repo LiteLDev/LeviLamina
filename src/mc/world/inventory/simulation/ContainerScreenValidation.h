@@ -43,10 +43,6 @@ public:
     // symbol: ?isCraftingImplemented@ContainerScreenValidation@@QEAA_NXZ
     MCAPI bool isCraftingImplemented();
 
-    // symbol:
-    // ?logServerAuthUntrustedFail@ContainerScreenValidation@@QEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void logServerAuthUntrustedFail(std::string const& message) const;
-
     // symbol: ?tryCommitActionResults@ContainerScreenValidation@@QEAA_NXZ
     MCAPI bool tryCommitActionResults();
 

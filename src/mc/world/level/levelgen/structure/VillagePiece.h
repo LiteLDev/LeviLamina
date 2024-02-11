@@ -31,7 +31,7 @@ public:
 
     // vIndex: 14, symbol: ?getSupportBlock@VillagePiece@@UEBAPEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@AEBV2@@Z
     virtual class Block const*
-    getSupportBlock(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
+    getSupportBlock(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
 
     // vIndex: 15, symbol: ?getBeardStabilizeBlock@VillagePiece@@UEBAAEBVBlock@@AEBV2@@Z
     virtual class Block const& getBeardStabilizeBlock(class Block const&) const;

@@ -69,9 +69,6 @@ public:
     // symbol: ?_testValuesWithOperator@FilterTest@@IEBA_N_N0@Z
     MCAPI bool _testValuesWithOperator(bool a, bool b) const;
 
-    // symbol: ?_testValuesWithOperator@FilterTest@@IEBA_NAEBVHashedString@@0@Z
-    MCAPI bool _testValuesWithOperator(class HashedString const& a, class HashedString const& b) const;
-
     // symbol: ?_testValuesWithOperator@FilterTest@@IEBA_NMM@Z
     MCAPI bool _testValuesWithOperator(float a, float b) const;
 

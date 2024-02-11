@@ -1105,17 +1105,107 @@ MCAPI extern class HashedString const Grindstone;
 // symbol: ?HangingRoots@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const HangingRoots;
 
+// symbol: ?HardBlackStainedGlass@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HardBlackStainedGlass;
+
+// symbol: ?HardBlackStainedGlassPane@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HardBlackStainedGlassPane;
+
+// symbol: ?HardBlueStainedGlass@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HardBlueStainedGlass;
+
+// symbol: ?HardBlueStainedGlassPane@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HardBlueStainedGlassPane;
+
+// symbol: ?HardBrownStainedGlass@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HardBrownStainedGlass;
+
+// symbol: ?HardBrownStainedGlassPane@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HardBrownStainedGlassPane;
+
+// symbol: ?HardCyanStainedGlass@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HardCyanStainedGlass;
+
+// symbol: ?HardCyanStainedGlassPane@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HardCyanStainedGlassPane;
+
 // symbol: ?HardGlass@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const HardGlass;
 
 // symbol: ?HardGlassPane@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const HardGlassPane;
 
-// symbol: ?HardStainedGlass@VanillaBlockTypeIds@@3VHashedString@@B
-MCAPI extern class HashedString const HardStainedGlass;
+// symbol: ?HardGrayStainedGlass@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HardGrayStainedGlass;
 
-// symbol: ?HardStainedGlassPane@VanillaBlockTypeIds@@3VHashedString@@B
-MCAPI extern class HashedString const HardStainedGlassPane;
+// symbol: ?HardGrayStainedGlassPane@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HardGrayStainedGlassPane;
+
+// symbol: ?HardGreenStainedGlass@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HardGreenStainedGlass;
+
+// symbol: ?HardGreenStainedGlassPane@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HardGreenStainedGlassPane;
+
+// symbol: ?HardLightBlueStainedGlass@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HardLightBlueStainedGlass;
+
+// symbol: ?HardLightBlueStainedGlassPane@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HardLightBlueStainedGlassPane;
+
+// symbol: ?HardLightGrayStainedGlass@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HardLightGrayStainedGlass;
+
+// symbol: ?HardLightGrayStainedGlassPane@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HardLightGrayStainedGlassPane;
+
+// symbol: ?HardLimeStainedGlass@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HardLimeStainedGlass;
+
+// symbol: ?HardLimeStainedGlassPane@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HardLimeStainedGlassPane;
+
+// symbol: ?HardMagentaStainedGlass@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HardMagentaStainedGlass;
+
+// symbol: ?HardMagentaStainedGlassPane@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HardMagentaStainedGlassPane;
+
+// symbol: ?HardOrangeStainedGlass@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HardOrangeStainedGlass;
+
+// symbol: ?HardOrangeStainedGlassPane@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HardOrangeStainedGlassPane;
+
+// symbol: ?HardPinkStainedGlass@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HardPinkStainedGlass;
+
+// symbol: ?HardPinkStainedGlassPane@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HardPinkStainedGlassPane;
+
+// symbol: ?HardPurpleStainedGlass@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HardPurpleStainedGlass;
+
+// symbol: ?HardPurpleStainedGlassPane@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HardPurpleStainedGlassPane;
+
+// symbol: ?HardRedStainedGlass@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HardRedStainedGlass;
+
+// symbol: ?HardRedStainedGlassPane@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HardRedStainedGlassPane;
+
+// symbol: ?HardWhiteStainedGlass@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HardWhiteStainedGlass;
+
+// symbol: ?HardWhiteStainedGlassPane@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HardWhiteStainedGlassPane;
+
+// symbol: ?HardYellowStainedGlass@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HardYellowStainedGlass;
+
+// symbol: ?HardYellowStainedGlassPane@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HardYellowStainedGlassPane;
 
 // symbol: ?HardenedClay@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const HardenedClay;
@@ -2262,6 +2352,9 @@ MCAPI extern class HashedString const Trapdoor;
 
 // symbol: ?TrappedChest@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const TrappedChest;
+
+// symbol: ?TrialSpawner@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const TrialSpawner;
 
 // symbol: ?TripWire@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const TripWire;

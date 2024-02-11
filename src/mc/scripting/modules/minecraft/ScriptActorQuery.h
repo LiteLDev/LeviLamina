@@ -6,14 +6,12 @@
 #include "mc/entity/utilities/ActorSelectorType.h"
 #include "mc/external/scripting/Result.h"
 #include "mc/external/scripting/StrongTypedObjectHandle.h"
-#include "mc/server/commands/CommandSelectorResults.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class Dimension;
 class Level;
-class Player;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptActorIterator; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
@@ -33,23 +31,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?createActorIterator@ScriptActorQuery@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptActorIterator@ScriptModuleMinecraft@@@Scripting@@$$QEAV?$CommandSelectorResults@VActor@@@@AEBVWeakLifetimeScope@4@@Z
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActorIterator>
-    createActorIterator(
-        class CommandSelectorResults<class Actor>&& actors,
-        class Scripting::WeakLifetimeScope const&   scope
-    );
-
-    // symbol:
-    // ?createPlayerIterator@ScriptActorQuery@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptPlayerIterator@ScriptModuleMinecraft@@@Scripting@@$$QEAV?$CommandSelectorResults@VPlayer@@@@AEBVWeakLifetimeScope@4@PEBVDimension@@@Z
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayerIterator>
-    createPlayerIterator(
-        class CommandSelectorResults<class Player>&& actors,
-        class Scripting::WeakLifetimeScope const&    scope,
-        class Dimension const*                       dimension
-    );
-
     // symbol:
     // ?getAllPlayers@ScriptActorQuery@ScriptModuleMinecraft@@SA?AV?$Result@V?$vector@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@$$V@Scripting@@AEBVWeakLifetimeScope@4@AEAVLevel@@@Z
     MCAPI static class Scripting::Result<

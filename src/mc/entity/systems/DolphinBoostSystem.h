@@ -17,18 +17,14 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ?_tickScan@DolphinBoostSystem@@SAXAEBVStrictEntityContext@@AEBUSynchedActorDataComponent@@AEAUScanForDolphinTimerComponent@@V?$EntityModifier@V?$FlagComponent@UScanForDolphin@@@@@@@Z
-    MCAPI static void _tickScan(
-        class StrictEntityContext const& context,
-        struct SynchedActorDataComponent const&,
-        struct ScanForDolphinTimerComponent&,
-        class EntityModifier<class FlagComponent<struct ScanForDolphin>> modifier
-    );
+    // ?_tickScan@DolphinBoostSystem@@SAXAEBVStrictEntityContext@@AEBUActorDataFlagComponent@@AEAUScanForDolphinTimerComponent@@V?$EntityModifier@V?$FlagComponent@UScanForDolphin@@@@@@@Z
+    MCAPI static void
+    _tickScan(class StrictEntityContext const&, struct ActorDataFlagComponent const&, struct ScanForDolphinTimerComponent&, class EntityModifier<class FlagComponent<struct ScanForDolphin>>);
 
     // symbol:
-    // ?_tickSwimSpeedModifier@DolphinBoostSystem@@SAXAEBVStrictEntityContext@@AEBUSynchedActorDataComponent@@AEAUSwimSpeedMultiplierComponent@@V?$Optional@V?$FlagComponent@UScanForDolphin@@@@@@V?$Optional@V?$FlagComponent@UIsNearDolphinsFlag@@@@@@@Z
+    // ?_tickSwimSpeedModifier@DolphinBoostSystem@@SAXAEBVStrictEntityContext@@AEBUActorDataFlagComponent@@AEAUSwimSpeedMultiplierComponent@@V?$Optional@V?$FlagComponent@UScanForDolphin@@@@@@V?$Optional@V?$FlagComponent@UIsNearDolphinsFlag@@@@@@@Z
     MCAPI static void
-    _tickSwimSpeedModifier(class StrictEntityContext const&, struct SynchedActorDataComponent const&, struct SwimSpeedMultiplierComponent&, class Optional<class FlagComponent<struct ScanForDolphin>>, class Optional<class FlagComponent<struct IsNearDolphinsFlag>>);
+    _tickSwimSpeedModifier(class StrictEntityContext const&, struct ActorDataFlagComponent const&, struct SwimSpeedMultiplierComponent&, class Optional<class FlagComponent<struct ScanForDolphin>>, class Optional<class FlagComponent<struct IsNearDolphinsFlag>>);
 
     // symbol: ?createFindDolphinsSystem@DolphinBoostSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createFindDolphinsSystem();

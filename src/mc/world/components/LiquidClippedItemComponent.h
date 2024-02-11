@@ -25,9 +25,6 @@ public:
     // vIndex: 1, symbol: ?checkComponentDataForContentErrors@ItemComponent@@UEBA_NXZ
     virtual bool checkComponentDataForContentErrors() const;
 
-    // vIndex: 2, symbol: ?writeSettings@ItemComponent@@UEAAXXZ
-    virtual void writeSettings();
-
     // vIndex: 3, symbol: ?isNetworkComponent@InteractButtonItemComponent@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
@@ -50,9 +47,6 @@ public:
 
     // vIndex: 9, symbol: ?_initializeComponent@LiquidClippedItemComponent@@UEAAXXZ
     virtual void _initializeComponent();
-
-    // symbol: ?isLiquidClipped@LiquidClippedItemComponent@@QEBA_NXZ
-    MCAPI bool isLiquidClipped() const;
 
     // symbol:
     // ?bindType@LiquidClippedItemComponent@@SAXAEAUReflectionCtx@cereal@@AEBV?$vector@W4AllExperiments@@V?$allocator@W4AllExperiments@@@std@@@std@@V?$optional@VSemVersion@@@5@@Z

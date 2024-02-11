@@ -11,10 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?registerBlockReduction@ExternalRecipeStore@@QEAAXAEBVItemStack@@$$QEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@@Z
-    MCAPI void registerBlockReduction(class ItemStack const& block, std::vector<class ItemStack>&& elements);
-
     // symbol: ?setBlockReducer@ExternalRecipeStore@@QEAAXPEAVBlockReducer@@@Z
     MCAPI void setBlockReducer(class BlockReducer*);
 

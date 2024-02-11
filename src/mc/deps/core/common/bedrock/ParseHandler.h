@@ -28,7 +28,7 @@ public:
     MCAPI bool Int(int i);
 
     // symbol: ?Int64@ParseHandler@JSONObject@Bedrock@@QEAA_N_J@Z
-    MCAPI bool Int64(int64);
+    MCAPI bool Int64(int64 i);
 
     // symbol: ?Key@ParseHandler@JSONObject@Bedrock@@QEAA_NPEBDI_N@Z
     MCAPI bool Key(char const* str, uint length, bool copy);
@@ -49,7 +49,7 @@ public:
     MCAPI bool Uint(uint u);
 
     // symbol: ?Uint64@ParseHandler@JSONObject@Bedrock@@QEAA_N_K@Z
-    MCAPI bool Uint64(uint64);
+    MCAPI bool Uint64(uint64 u);
 
     // NOLINTEND
 

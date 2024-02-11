@@ -6,6 +6,7 @@
 #include "mc/common/wrapper/CoordinatorResult.h"
 #include "mc/events/MinecraftEventing.h"
 #include "mc/events/PlayerGameplayEvent.h"
+#include "mc/world/AutomaticID.h"
 #include "mc/world/events/EventRef.h"
 
 class PlayerEventCoordinator {
@@ -56,6 +57,9 @@ public:
 
     // symbol: ?sendPlayerMove@PlayerEventCoordinator@@QEAAXAEAVPlayer@@@Z
     MCAPI void sendPlayerMove(class Player& player);
+
+    // symbol: ?sendPlayerPortalUsed@PlayerEventCoordinator@@QEAAXAEAVPlayer@@V?$AutomaticID@VDimension@@H@@1@Z
+    MCAPI void sendPlayerPortalUsed(class Player& player, DimensionType fromDimension, DimensionType toDimension);
 
     // symbol: ?sendPlayerSlide@PlayerEventCoordinator@@QEAAXAEAVPlayer@@@Z
     MCAPI void sendPlayerSlide(class Player& player);

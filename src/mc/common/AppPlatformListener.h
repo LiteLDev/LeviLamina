@@ -17,79 +17,64 @@ public:
     // vIndex: 0, symbol: ??1AppPlatformListener@@UEAA@XZ
     virtual ~AppPlatformListener();
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
+    // vIndex: 1, symbol: ?onLowMemory@AppPlatformListener@@UEAAXXZ
+    virtual void onLowMemory();
 
-    // vIndex: 2, symbol: __unk_vfn_2
-    virtual void __unk_vfn_2();
+    // vIndex: 2, symbol: ?onAppPaused@AppPlatformListener@@UEAAXXZ
+    virtual void onAppPaused();
 
-    // vIndex: 3, symbol: __unk_vfn_3
-    virtual void __unk_vfn_3();
+    // vIndex: 3, symbol: ?onAppUnpaused@AppPlatformListener@@UEAAXXZ
+    virtual void onAppUnpaused();
 
-    // vIndex: 4, symbol: __unk_vfn_4
-    virtual void __unk_vfn_4();
+    // vIndex: 4, symbol: ?onAppPreSuspended@AppPlatformListener@@UEAAXXZ
+    virtual void onAppPreSuspended();
 
-    // vIndex: 5, symbol: __unk_vfn_5
-    virtual void __unk_vfn_5();
+    // vIndex: 5, symbol: ?onAppSuspended@AppPlatformListener@@UEAAXXZ
+    virtual void onAppSuspended();
 
     // vIndex: 6, symbol: ?onAppResumed@AppPlatformListener@@UEAAXXZ
     virtual void onAppResumed();
 
-    // symbol: ?onAppFocusGained@AppPlatformListener@@UEAAXXZ
-    MCVAPI void onAppFocusGained();
+    // vIndex: 7, symbol: ?onAppFocusLost@AppPlatformListener@@UEAAXXZ
+    virtual void onAppFocusLost();
 
-    // symbol: ?onAppFocusLost@AppPlatformListener@@UEAAXXZ
-    MCVAPI void onAppFocusLost();
+    // vIndex: 8, symbol: ?onAppFocusGained@AppPlatformListener@@UEAAXXZ
+    virtual void onAppFocusGained();
 
-    // symbol: ?onAppPaused@AppPlatformListener@@UEAAXXZ
-    MCVAPI void onAppPaused();
+    // vIndex: 9, symbol: ?onAppTerminated@AppPlatformListener@@UEAAXXZ
+    virtual void onAppTerminated();
 
-    // symbol: ?onAppPreSuspended@AppPlatformListener@@UEAAXXZ
-    MCVAPI void onAppPreSuspended();
+    // vIndex: 10, symbol: ?onOperationModeChanged@AppPlatformListener@@UEAAXW4OperationMode@@@Z
+    virtual void onOperationModeChanged(::OperationMode operationMode);
 
-    // symbol: ?onAppSurfaceCreated@AppPlatformListener@@UEAAXXZ
-    MCVAPI void onAppSurfaceCreated();
+    // vIndex: 11, symbol: ?onPerformanceModeChanged@AppPlatformListener@@UEAAX_N@Z
+    virtual void onPerformanceModeChanged(bool boost);
 
-    // symbol: ?onAppSurfaceDestroyed@AppPlatformListener@@UEAAXXZ
-    MCVAPI void onAppSurfaceDestroyed();
+    // vIndex: 12, symbol: ?onPushNotificationReceived@AppPlatformListener@@UEAAXAEBVPushNotificationMessage@@@Z
+    virtual void onPushNotificationReceived(class PushNotificationMessage const& msg);
 
-    // symbol: ?onAppSuspended@AppPlatformListener@@UEAAXXZ
-    MCVAPI void onAppSuspended();
+    // vIndex: 13, symbol: ?onResizeBegin@AppPlatformListener@@UEAAXXZ
+    virtual void onResizeBegin();
 
-    // symbol: ?onAppTerminated@AppPlatformListener@@UEAAXXZ
-    MCVAPI void onAppTerminated();
+    // vIndex: 14, symbol: ?onResizeEnd@AppPlatformListener@@UEAAXXZ
+    virtual void onResizeEnd();
 
-    // symbol: ?onAppUnpaused@AppPlatformListener@@UEAAXXZ
-    MCVAPI void onAppUnpaused();
+    // vIndex: 15, symbol: ?onDeviceLost@AppPlatformListener@@UEAAXXZ
+    virtual void onDeviceLost();
 
-    // symbol:
+    // vIndex: 16, symbol: ?onAppSurfaceCreated@AppPlatformListener@@UEAAXXZ
+    virtual void onAppSurfaceCreated();
+
+    // vIndex: 17, symbol: ?onAppSurfaceDestroyed@AppPlatformListener@@UEAAXXZ
+    virtual void onAppSurfaceDestroyed();
+
+    // vIndex: 18, symbol:
     // ?onClipboardCopy@AppPlatformListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI void onClipboardCopy(std::string const&);
+    virtual void onClipboardCopy(std::string const&);
 
-    // symbol:
+    // vIndex: 19, symbol:
     // ?onClipboardPaste@AppPlatformListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI void onClipboardPaste(std::string const&);
-
-    // symbol: ?onDeviceLost@AppPlatformListener@@UEAAXXZ
-    MCVAPI void onDeviceLost();
-
-    // symbol: ?onLowMemory@AppPlatformListener@@UEAAXXZ
-    MCVAPI void onLowMemory();
-
-    // symbol: ?onOperationModeChanged@AppPlatformListener@@UEAAXW4OperationMode@@@Z
-    MCVAPI void onOperationModeChanged(::OperationMode operationMode);
-
-    // symbol: ?onPerformanceModeChanged@AppPlatformListener@@UEAAX_N@Z
-    MCVAPI void onPerformanceModeChanged(bool boost);
-
-    // symbol: ?onPushNotificationReceived@AppPlatformListener@@UEAAXAEBVPushNotificationMessage@@@Z
-    MCVAPI void onPushNotificationReceived(class PushNotificationMessage const& msg);
-
-    // symbol: ?onResizeBegin@AppPlatformListener@@UEAAXXZ
-    MCVAPI void onResizeBegin();
-
-    // symbol: ?onResizeEnd@AppPlatformListener@@UEAAXXZ
-    MCVAPI void onResizeEnd();
+    virtual void onClipboardPaste(std::string const&);
 
     // symbol: ??0AppPlatformListener@@QEAA@_N@Z
     MCAPI explicit AppPlatformListener(bool);

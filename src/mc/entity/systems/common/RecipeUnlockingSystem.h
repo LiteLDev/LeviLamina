@@ -55,14 +55,15 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_handleCriterionUnlocks@RecipeUnlockingSystem@@CAXPEAVServerPlayer@@AEAVUnlockedRecipesServerComponent@@@Z
-    MCAPI static void _handleCriterionUnlocks(class ServerPlayer*, class UnlockedRecipesServerComponent&);
+    MCAPI static void _handleCriterionUnlocks(class ServerPlayer* serverPlayer, class UnlockedRecipesServerComponent&);
 
     // symbol: ?_handleInitialUnlocks@RecipeUnlockingSystem@@CAXPEAVServerPlayer@@AEAVUnlockedRecipesServerComponent@@@Z
-    MCAPI static void _handleInitialUnlocks(class ServerPlayer*, class UnlockedRecipesServerComponent&);
+    MCAPI static void _handleInitialUnlocks(class ServerPlayer* serverPlayer, class UnlockedRecipesServerComponent&);
 
     // symbol:
     // ?_handleInstructionUnlocks@RecipeUnlockingSystem@@CAXPEAVServerPlayer@@AEAVUnlockedRecipesServerComponent@@@Z
-    MCAPI static void _handleInstructionUnlocks(class ServerPlayer*, class UnlockedRecipesServerComponent&);
+    MCAPI static void
+    _handleInstructionUnlocks(class ServerPlayer* serverPlayer, class UnlockedRecipesServerComponent&);
 
     // NOLINTEND
 };

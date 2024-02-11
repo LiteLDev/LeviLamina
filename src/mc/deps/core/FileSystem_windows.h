@@ -36,7 +36,7 @@ public:
     virtual ~FileSystem_windows() = default;
 
     // vIndex: 1, symbol: ?getLastModificationTime@FileSystemImpl@Core@@UEAA?AVResult@2@AEBVPath@2@PEA_J@Z
-    virtual class Core::Result getLastModificationTime(class Core::Path const&, int64*);
+    virtual class Core::Result getLastModificationTime(class Core::Path const& entryPath, int64* lastModificationTime);
 
     // vIndex: 2, symbol: ?copyTimeAndAccessRights@FileSystemImpl@Core@@UEAA?AVResult@2@AEBVPath@2@0@Z
     virtual class Core::Result
@@ -83,8 +83,13 @@ public:
     _copyFile(class Core::Path const& sourceFileName, class Core::Path const& targetFileName);
 
     // vIndex: 14, symbol: ?_copyFileWithLimit@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@0_KAEA_K2@Z
-    virtual class Core::Result
-    _copyFileWithLimit(class Core::Path const&, class Core::Path const&, uint64, uint64&, uint64&);
+    virtual class Core::Result _copyFileWithLimit(
+        class Core::Path const& sourceFileName,
+        class Core::Path const& targetFileName,
+        uint64                  startPosition,
+        uint64&                 outBytesWritten,
+        uint64&                 outBytesRemaining
+    );
 
     // vIndex: 15, symbol:
     // ?_readFileData@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@AEAV?$vector@EV?$allocator@E@std@@@std@@@Z
@@ -141,7 +146,11 @@ public:
 
     // vIndex: 29, symbol:
     // ?_getDirectoryFilesAllocatedSizeRecursively@FileSystemImpl@Core@@MEAA?AVResult@2@AEA_K0AEBVPath@2@@Z
-    virtual class Core::Result _getDirectoryFilesAllocatedSizeRecursively(uint64&, uint64&, class Core::Path const&);
+    virtual class Core::Result _getDirectoryFilesAllocatedSizeRecursively(
+        uint64&                 totalSize,
+        uint64&                 totalSizeAllocated,
+        class Core::Path const& directoryPath
+    );
 
     // vIndex: 30, symbol: ?_copyDirectoryAndContentsRecursively@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@0@Z
     virtual class Core::Result _copyDirectoryAndContentsRecursively(

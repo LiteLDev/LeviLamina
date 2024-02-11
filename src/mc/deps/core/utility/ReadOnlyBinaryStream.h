@@ -18,7 +18,7 @@ public:
     virtual ~ReadOnlyBinaryStream();
 
     // vIndex: 1, symbol: ?read@ReadOnlyBinaryStream@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@PEAX_K@Z
-    virtual class Bedrock::Result<void> read(void*, uint64);
+    virtual class Bedrock::Result<void> read(void* target, uint64 num);
 
     // symbol: ??0ReadOnlyBinaryStream@@QEAA@$$QEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI explicit ReadOnlyBinaryStream(std::string&& buffer);

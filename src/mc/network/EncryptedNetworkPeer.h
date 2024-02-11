@@ -34,9 +34,6 @@ public:
     // vIndex: 7, symbol: ?isEncrypted@EncryptedNetworkPeer@@UEBA_NXZ
     virtual bool isEncrypted() const;
 
-    // symbol: ??0EncryptedNetworkPeer@@QEAA@V?$shared_ptr@VNetworkPeer@@@std@@@Z
-    MCAPI explicit EncryptedNetworkPeer(std::shared_ptr<class NetworkPeer> peer);
-
     // symbol:
     // ?enableEncryption@EncryptedNetworkPeer@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void enableEncryption(std::string const& symmetricKey);

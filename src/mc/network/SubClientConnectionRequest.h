@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/services/persona/PieceType.h"
+#include "mc/enums/BuildPlatform.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -42,12 +43,18 @@ public:
     // symbol: ?getCapeImageWidth@SubClientConnectionRequest@@QEBAGXZ
     MCAPI ushort getCapeImageWidth() const;
 
+    // symbol: ?getCertificate@SubClientConnectionRequest@@QEBAPEBVCertificate@@XZ
+    MCAPI class Certificate const* getCertificate() const;
+
     // symbol: ?getClientRandomId@SubClientConnectionRequest@@QEBA_KXZ
     MCAPI uint64 getClientRandomId() const;
 
     // symbol:
     // ?getDeviceId@SubClientConnectionRequest@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getDeviceId() const;
+
+    // symbol: ?getDeviceOS@SubClientConnectionRequest@@QEBA?AW4BuildPlatform@@XZ
+    MCAPI ::BuildPlatform getDeviceOS() const;
 
     // symbol:
     // ?getPersonaPieces@SubClientConnectionRequest@@QEBA?AV?$vector@VSerializedPersonaPieceHandle@@V?$allocator@VSerializedPersonaPieceHandle@@@std@@@std@@XZ
@@ -115,6 +122,9 @@ public:
     // symbol: ?isCapeOnClassicSkin@SubClientConnectionRequest@@QEBA_NXZ
     MCAPI bool isCapeOnClassicSkin() const;
 
+    // symbol: ?isCompatibleWithClientSideChunkGen@SubClientConnectionRequest@@QEBA_NXZ
+    MCAPI bool isCompatibleWithClientSideChunkGen() const;
+
     // symbol: ?isOverrideSkin@SubClientConnectionRequest@@QEBA_NXZ
     MCAPI bool isOverrideSkin() const;
 
@@ -126,6 +136,9 @@ public:
 
     // symbol: ?isPrimaryUser@SubClientConnectionRequest@@QEBA_NXZ
     MCAPI bool isPrimaryUser() const;
+
+    // symbol: ?isThirdPartyNameOnly@SubClientConnectionRequest@@QEBA_NXZ
+    MCAPI bool isThirdPartyNameOnly() const;
 
     // symbol: ?isTrustedSkin@SubClientConnectionRequest@@QEBA_NXZ
     MCAPI bool isTrustedSkin() const;

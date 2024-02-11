@@ -12,12 +12,10 @@ public:
     // prevent constructor by default
     PackSettings& operator=(PackSettings const&);
     PackSettings(PackSettings const&);
+    PackSettings();
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0PackSettings@@QEAA@XZ
-    MCAPI PackSettings();
-
     // symbol: ?getAllSettings@PackSettings@@QEBAAEBVValue@Json@@XZ
     MCAPI class Json::Value const& getAllSettings() const;
 

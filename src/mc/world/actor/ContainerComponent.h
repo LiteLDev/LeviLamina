@@ -56,6 +56,9 @@ public:
     // symbol: ?dropContents@ContainerComponent@@QEAAXAEAVBlockSource@@AEBVVec3@@_N@Z
     MCAPI void dropContents(class BlockSource& region, class Vec3 const& pos, bool randomizeDrop);
 
+    // symbol: ?dropSlotContent@ContainerComponent@@QEAAXAEAVBlockSource@@AEBVVec3@@_NH@Z
+    MCAPI void dropSlotContent(class BlockSource&, class Vec3 const&, bool, int);
+
     // symbol: ?findFirstSlotForItem@ContainerComponent@@QEBAHAEBVItemStack@@@Z
     MCAPI int findFirstSlotForItem(class ItemStack const& item) const;
 

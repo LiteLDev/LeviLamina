@@ -25,10 +25,6 @@ MCAPI ::
         RocketAttached
         fireworksRocketMoveClientEntity(class StrictEntityContext const&, struct SynchedActorDataComponent const&, struct StateVectorComponent&, struct ActorRotationComponent&, class LocalSpatialEntityFetcher&, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct MobFlag>>, struct StateVectorComponent const> const&, class EntityModifier<struct ActorSetPositionRequestComponent, struct AttachedRocketsComponent>);
 
-// symbol:
-// ?fireworksRocketMoveServerEntity@FireworksMovementSystems@@YAXAEBVStrictEntityContext@@AEBUSynchedActorDataComponent@@AEAUStateVectorComponent@@AEAUActorRotationComponent@@AEAVLocalSpatialEntityFetcher@@AEBV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UMobFlag@@@@@@$$CBUStateVectorComponent@@@@V?$EntityModifier@UActorSetPositionRequestComponent@@UAttachedRocketsComponent@@@@V?$EntityModifier@UMoveRequestComponent@@@@@Z
-MCAPI void fireworksRocketMoveServerEntity(class StrictEntityContext const&, struct SynchedActorDataComponent const&, struct StateVectorComponent&, struct ActorRotationComponent&, class LocalSpatialEntityFetcher&, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct MobFlag>>, struct StateVectorComponent const> const&, class EntityModifier<struct ActorSetPositionRequestComponent, struct AttachedRocketsComponent>, class EntityModifier<struct MoveRequestComponent>);
-
 // symbol: ?registerAttachedRocketSystems@FireworksMovementSystems@@YAXAEAVEntitySystems@@_N@Z
 MCAPI void registerAttachedRocketSystems(class EntitySystems&, bool);
 

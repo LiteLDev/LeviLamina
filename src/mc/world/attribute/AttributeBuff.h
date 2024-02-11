@@ -48,7 +48,7 @@ public:
     MCAPI void setAmplificationAmount(int amplification, float scale);
 
     // symbol: ?setId@AttributeBuff@@QEAAX_K@Z
-    MCAPI void setId(uint64);
+    MCAPI void setId(uint64 val);
 
     // symbol: ?setOperand@AttributeBuff@@QEAAXH@Z
     MCAPI void setOperand(int val);

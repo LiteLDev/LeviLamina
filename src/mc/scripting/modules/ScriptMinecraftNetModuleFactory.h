@@ -4,18 +4,21 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/external/scripting/GenericModuleBindingFactory.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace Scripting { class GenericModuleBindingFactory; }
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct ModuleBinding; }
 namespace Scripting { struct ModuleDescriptor; }
+namespace Scripting { struct UUID; }
 namespace Scripting { struct Version; }
 namespace mce { class UUID; }
 // clang-format on
 
-class ScriptMinecraftNetModuleFactory {
+class ScriptMinecraftNetModuleFactory : public ::Scripting::GenericModuleBindingFactory {
 public:
     // prevent constructor by default
     ScriptMinecraftNetModuleFactory& operator=(ScriptMinecraftNetModuleFactory const&);
@@ -26,31 +29,6 @@ public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1ScriptMinecraftNetModuleFactory@@UEAA@XZ
     virtual ~ScriptMinecraftNetModuleFactory() = default;
-
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
-
-    // vIndex: 2, symbol: __unk_vfn_2
-    virtual void __unk_vfn_2();
-
-    // vIndex: 3, symbol:
-    // ?hasAlias@GenericModuleBindingFactory@Scripting@@UEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual bool hasAlias(std::string const& alias) const;
-
-    // vIndex: 4, symbol:
-    // ?getSupportedVersions@GenericModuleBindingFactory@Scripting@@UEBA?AV?$vector@UVersion@Scripting@@V?$allocator@UVersion@Scripting@@@std@@@std@@XZ
-    virtual std::vector<struct Scripting::Version> getSupportedVersions() const;
-
-    // vIndex: 5, symbol:
-    // ?getDependencies@GenericModuleBindingFactory@Scripting@@UEBA?AV?$vector@UModuleDescriptor@Scripting@@V?$allocator@UModuleDescriptor@Scripting@@@std@@@std@@UVersion@2@@Z
-    virtual std::vector<struct Scripting::ModuleDescriptor> getDependencies(struct Scripting::Version version) const;
-
-    // vIndex: 6, symbol:
-    // ?createModuleBinding@GenericModuleBindingFactory@Scripting@@UEAA?AV?$optional@UModuleBinding@Scripting@@@std@@UVersion@2@AEBV?$optional@UContextConfig@Scripting@@@4@@Z
-    virtual std::optional<struct Scripting::ModuleBinding> createModuleBinding(
-        struct Scripting::Version                             version,
-        std::optional<struct Scripting::ContextConfig> const& config
-    );
 
     // symbol: ??0ScriptMinecraftNetModuleFactory@@QEAA@V?$NonOwnerPointer@VScheduler@@@Bedrock@@@Z
     MCAPI explicit ScriptMinecraftNetModuleFactory(class Bedrock::NonOwnerPointer<class Scheduler>);

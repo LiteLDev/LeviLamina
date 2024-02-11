@@ -15,11 +15,17 @@ public:
     // symbol: ??0PositionTrackingId@@QEAA@AEBV0@@Z
     MCAPI PositionTrackingId(class PositionTrackingId const& id);
 
+    // symbol: ??0PositionTrackingId@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI explicit PositionTrackingId(std::string const&);
+
     // symbol: ?fromTag@PositionTrackingId@@QEAAXPEBVTag@@@Z
     MCAPI void fromTag(class Tag const* tag);
 
     // symbol: ?getTag@PositionTrackingId@@QEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
     MCAPI std::unique_ptr<class Tag> getTag() const;
+
+    // symbol: ?init@PositionTrackingId@@QEAAXXZ
+    MCAPI void init();
 
     // symbol: ??4PositionTrackingId@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class PositionTrackingId& operator=(class PositionTrackingId&& id);

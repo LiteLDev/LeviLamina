@@ -24,6 +24,9 @@ public:
     // symbol: ?beta@TaggedBinding@Scripting@@QEAAAEAU12@XZ
     MCAPI struct Scripting::TaggedBinding& beta();
 
+    // symbol: ?onlyStable@TaggedBinding@Scripting@@QEAAAEAU12@XZ
+    MCAPI struct Scripting::TaggedBinding& onlyStable();
+
     // symbol:
     // ?release@TaggedBinding@Scripting@@QEAAAEAU12@UVersion@2@V?$optional@VMajorVersionLimit@Scripting@@@std@@@Z
     MCAPI struct Scripting::TaggedBinding&

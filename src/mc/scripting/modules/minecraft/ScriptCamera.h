@@ -50,13 +50,6 @@ public:
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptCamera> bind();
 
     // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    // symbol: ?_tryGetPlayer@ScriptCamera@ScriptModuleMinecraft@@AEBAPEAVPlayer@@XZ
-    MCAPI class Player* _tryGetPlayer() const;
-
-    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

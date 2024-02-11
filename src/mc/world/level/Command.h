@@ -25,9 +25,6 @@ public:
     // symbol: ?getCommandName@Command@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getCommandName() const;
 
-    // symbol: ?getVersion@Command@@QEBAHXZ
-    MCAPI int getVersion() const;
-
     // symbol: ?hasFlag@Command@@QEBA_NUCommandFlag@@@Z
     MCAPI bool hasFlag(struct CommandFlag flag) const;
 

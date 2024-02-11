@@ -83,14 +83,18 @@ public:
     // symbol: ??1OverworldGenerator@@UEAA@XZ
     MCVAPI ~OverworldGenerator();
 
-    // symbol:
-    // ??0OverworldGenerator@@QEAA@AEAVDimension@@_NV?$unique_ptr@VStructureFeatureRegistry@@U?$default_delete@VStructureFeatureRegistry@@@std@@@std@@@Z
-    MCAPI OverworldGenerator(class Dimension& dimension, bool, std::unique_ptr<class StructureFeatureRegistry>);
+    // symbol: ??0OverworldGenerator@@QEAA@AEAVDimension@@_N@Z
+    MCAPI OverworldGenerator(class Dimension&, bool);
 
     // symbol:
     // ?buildSurfaces@OverworldGenerator@@QEAAXAEAUThreadData@1@AEAVBlockVolume@@AEAVLevelChunk@@AEBVChunkPos@@AEBVSurfaceLevelCache@@@Z
-    MCAPI void
-    buildSurfaces(struct OverworldGenerator::ThreadData& thread, class BlockVolume& blocks, class LevelChunk& levelChunk, class ChunkPos const& chunkPos, class SurfaceLevelCache const&);
+    MCAPI void buildSurfaces(
+        struct OverworldGenerator::ThreadData& thread,
+        class BlockVolume&                     blocks,
+        class LevelChunk&                      levelChunk,
+        class ChunkPos const&                  chunkPos,
+        class SurfaceLevelCache const&         surfaceLevelCache
+    );
 
     // NOLINTEND
 };

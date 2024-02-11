@@ -17,11 +17,11 @@ public:
     // vIndex: 0, symbol: ??1IFileChunkUploader@@UEAA@XZ
     virtual ~IFileChunkUploader();
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1() = 0;
+    // vIndex: 1, symbol: ?update@IFileChunkUploader@@UEAAXXZ
+    virtual void update();
 
     // vIndex: 2, symbol: __unk_vfn_2
-    virtual void __unk_vfn_2();
+    virtual void __unk_vfn_2() = 0;
 
     // vIndex: 3, symbol:
     // ?getServerMissingChunks@IFileChunkUploader@@UEBAXAEBUFileInfo@@V?$function@$$A6AXV?$vector@UFileChunkInfo@@V?$allocator@UFileChunkInfo@@@std@@@std@@@Z@std@@@Z
@@ -30,8 +30,8 @@ public:
         std::function<void(std::vector<struct FileChunkInfo>)> callback
     ) const;
 
-    // vIndex: 4, symbol: __unk_vfn_4
-    virtual void __unk_vfn_4();
+    // vIndex: 4, symbol: ?confirmChunkReceived@IFileChunkUploader@@UEAAXAEBUFileInfo@@AEBUFileChunkInfo@@@Z
+    virtual void confirmChunkReceived(struct FileInfo const& file, struct FileChunkInfo const& chunk);
 
     // vIndex: 5, symbol:
     // ?uploadChunk@IFileChunkUploader@@UEAAXAEBUFileInfo@@AEBUFileChunkInfo@@AEBV?$vector@EV?$allocator@E@std@@@std@@V?$function@$$A6AX_N@Z@5@@Z
@@ -65,12 +65,6 @@ public:
 
     // vIndex: 11, symbol: ?getChunkInfo@IFileChunkUploader@@UEBA?AUFileChunkInfo@@AEBUFileInfo@@H@Z
     virtual struct FileChunkInfo getChunkInfo(struct FileInfo const& file, int chunkID) const;
-
-    // symbol: ?confirmChunkReceived@IFileChunkUploader@@UEAAXAEBUFileInfo@@AEBUFileChunkInfo@@@Z
-    MCVAPI void confirmChunkReceived(struct FileInfo const& file, struct FileChunkInfo const& chunk);
-
-    // symbol: ?update@IFileChunkUploader@@UEAAXXZ
-    MCVAPI void update();
 
     // symbol: ??0IFileChunkUploader@@QEAA@XZ
     MCAPI IFileChunkUploader();

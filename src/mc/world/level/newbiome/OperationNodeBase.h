@@ -17,7 +17,7 @@ public:
     virtual ~OperationNodeBase() = default;
 
     // vIndex: 1, symbol: ?init@OperationNodeBase@OperationNodeDetails@@UEAAX_J@Z
-    virtual void init(int64);
+    virtual void init(int64 seed);
 
     // NOLINTEND
 };

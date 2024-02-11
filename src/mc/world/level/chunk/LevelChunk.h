@@ -108,7 +108,7 @@ public:
     MCAPI bool actorDataNeedsSaving(int wait, int maxWait) const;
 
     // symbol: ?addEntity@LevelChunk@@QEAAXVWeakEntityRef@@@Z
-    MCAPI void addEntity(class WeakEntityRef);
+    MCAPI void addEntity(class WeakEntityRef entityRef);
 
     // symbol: ?addHardcodedSpawningArea@LevelChunk@@QEAAXAEBVBoundingBox@@W4HardcodedSpawnAreaType@@@Z
     MCAPI void addHardcodedSpawningArea(class BoundingBox const& spawnerAABB, ::HardcodedSpawnAreaType type);
@@ -283,7 +283,7 @@ public:
     MCAPI short getHighestNonAirSubChunkIndex() const;
 
     // symbol: ?getInterpolant@LevelChunk@@QEBAM_K0@Z
-    MCAPI float getInterpolant(uint64, uint64) const;
+    MCAPI float getInterpolant(uint64 x, uint64 y) const;
 
     // symbol: ?getLastTick@LevelChunk@@QEBAAEBUTick@@XZ
     MCAPI struct Tick const& getLastTick() const;
@@ -381,7 +381,7 @@ public:
     MCAPI bool hasEntitiesToSerialize() const;
 
     // symbol: ?hasEntity@LevelChunk@@QEAA_NVWeakEntityRef@@@Z
-    MCAPI bool hasEntity(class WeakEntityRef);
+    MCAPI bool hasEntity(class WeakEntityRef entityRef);
 
     // symbol: ?isAnyBlockEntityDirty@LevelChunk@@QEAA_NXZ
     MCAPI bool isAnyBlockEntityDirty();
@@ -463,10 +463,10 @@ public:
     MCAPI std::shared_ptr<class BlockActor> removeBlockEntity(class BlockPos const& blockPos);
 
     // symbol: ?removeEntityFromChunk@LevelChunk@@QEAA_NVWeakEntityRef@@@Z
-    MCAPI bool removeEntityFromChunk(class WeakEntityRef);
+    MCAPI bool removeEntityFromChunk(class WeakEntityRef entityRef);
 
     // symbol: ?removeEntityFromWorld@LevelChunk@@QEAA_NVWeakEntityRef@@@Z
-    MCAPI bool removeEntityFromWorld(class WeakEntityRef);
+    MCAPI bool removeEntityFromWorld(class WeakEntityRef entityRef);
 
     // symbol: ?removeHardcodedSpawningArea@LevelChunk@@QEAAXW4HardcodedSpawnAreaType@@@Z
     MCAPI void removeHardcodedSpawningArea(::HardcodedSpawnAreaType type);

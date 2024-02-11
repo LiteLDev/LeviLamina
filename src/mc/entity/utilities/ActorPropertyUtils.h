@@ -9,8 +9,13 @@ MCAPI bool _checkAndQueueBoolValue(class PropertyGroup const&, uint64, class Act
 
 // symbol:
 // ?_checkAndQueueEnumIndexValueByHash@ActorPropertyUtils@@YA_NAEBVPropertyGroup@@_K1PEAVActorDefinitionDiffList@@1@Z
-MCAPI bool
-_checkAndQueueEnumIndexValueByHash(class PropertyGroup const&, uint64, uint64, class ActorDefinitionDiffList*, uint64);
+MCAPI bool _checkAndQueueEnumIndexValueByHash(
+    class PropertyGroup const&,
+    uint64,
+    uint64,
+    class ActorDefinitionDiffList*,
+    uint64 value
+);
 
 // symbol: ?_checkAndQueueFloatValue@ActorPropertyUtils@@YA_NAEBVPropertyGroup@@_K1PEAVActorDefinitionDiffList@@M@Z
 MCAPI bool
@@ -34,7 +39,8 @@ MCAPI void addPendingEventResponseChange(
 MCAPI bool tryQueueBoolValue(class PropertyComponent const& props, class Actor& actor, uint64, bool value);
 
 // symbol: ?tryQueueEnumIndexValueByIndex@ActorPropertyUtils@@YA_NAEBVPropertyComponent@@AEAVActor@@_K2@Z
-MCAPI bool tryQueueEnumIndexValueByIndex(class PropertyComponent const&, class Actor&, uint64, uint64);
+MCAPI bool
+tryQueueEnumIndexValueByIndex(class PropertyComponent const& props, class Actor& actor, uint64, uint64 value);
 
 // symbol:
 // ?tryQueueEnumIndexValueByString@ActorPropertyUtils@@YA_NAEBVPropertyComponent@@AEAVActor@@_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

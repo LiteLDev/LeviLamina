@@ -23,21 +23,21 @@ public:
     MCAPI static struct TickingSystemWithInfo create();
 
     // symbol:
-    // ?tick@MobTravelImmobileFilterSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@UMobTravelComponent@@@@@@V?$ViewT@VStrictEntityContext@@$$CBUSynchedActorDataComponent@@V?$Optional@V?$FlagComponent@UActorIsImmobileFlag@@@@@@@@V?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UMobFlag@@@@@@$$CBUAttributesComponent@@V?$Optional@V?$FlagComponent@UActorIsKnockedBackOnDeathFlag@@@@@@@@V?$ViewT@VStrictEntityContext@@$$CBUSynchedActorDataComponent@@U?$Include@V?$FlagComponent@UOnGroundFlag@@@@V?$FlagComponent@UHorseFlag@@@@@@U?$Exclude@V?$FlagComponent@UMobAllowStandSlidingFlag@@@@V?$FlagComponent@UMobIsJumpingFlag@@@@@@@@V?$ViewT@VStrictEntityContext@@V?$FlagComponent@UHorseFlag@@@@@@V?$ViewT@VStrictEntityContext@@$$CBV?$FlagComponent@UPlayerIsSleepingFlag@@@@$$CBV?$FlagComponent@UPlayerComponentFlag@@@@@@V?$EntityModifier@UMobTravelComponent@@@@@Z
+    // ?tick@MobTravelImmobileFilterSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@UMobTravelComponent@@@@@@V?$ViewT@VStrictEntityContext@@$$CBUActorDataFlagComponent@@V?$Optional@$$CBV?$FlagComponent@UActorIsImmobileFlag@@@@@@@@V?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UMobFlag@@@@@@$$CBUMovementAttributesComponent@@V?$Optional@$$CBV?$FlagComponent@UActorIsKnockedBackOnDeathFlag@@@@@@@@V?$ViewT@VStrictEntityContext@@$$CBUActorDataFlagComponent@@U?$Include@V?$FlagComponent@UOnGroundFlag@@@@V?$FlagComponent@UHorseFlag@@@@@@U?$Exclude@V?$FlagComponent@UMobAllowStandSlidingFlag@@@@V?$FlagComponent@UMobIsJumpingFlag@@@@@@@@V?$ViewT@VStrictEntityContext@@V?$FlagComponent@UHorseFlag@@@@@@V?$ViewT@VStrictEntityContext@@$$CBV?$FlagComponent@UPlayerIsSleepingFlag@@@@$$CBV?$FlagComponent@UPlayerComponentFlag@@@@@@V?$EntityModifier@UMobTravelComponent@@@@@Z
     MCAPI static void tick(
         class ViewT<class StrictEntityContext, struct Include<struct MobTravelComponent>>,
         class ViewT<
             class StrictEntityContext,
-            struct SynchedActorDataComponent const,
-            class Optional<class FlagComponent<struct ActorIsImmobileFlag>>>,
+            struct ActorDataFlagComponent const,
+            class Optional<class FlagComponent<struct ActorIsImmobileFlag> const>>,
         class ViewT<
             class StrictEntityContext,
             struct Include<class FlagComponent<struct MobFlag>>,
-            struct AttributesComponent const,
-            class Optional<class FlagComponent<struct ActorIsKnockedBackOnDeathFlag>>>,
+            struct MovementAttributesComponent const,
+            class Optional<class FlagComponent<struct ActorIsKnockedBackOnDeathFlag> const>>,
         class ViewT<
             class StrictEntityContext,
-            struct SynchedActorDataComponent const,
+            struct ActorDataFlagComponent const,
             struct Include<class FlagComponent<struct OnGroundFlag>, class FlagComponent<struct HorseFlag>>,
             struct Exclude<
                 class FlagComponent<struct MobAllowStandSlidingFlag>,

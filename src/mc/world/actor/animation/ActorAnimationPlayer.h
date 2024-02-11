@@ -53,5 +53,8 @@ public:
     // vIndex: 9, symbol: ?getRawName@ActorAnimationControllerPlayer@@UEBAAEBVHashedString@@XZ
     virtual class HashedString const& getRawName() const = 0;
 
+    // symbol: ??0ActorAnimationPlayer@@QEAA@AEBVHashedString@@AEBVExpressionNode@@@Z
+    MCAPI ActorAnimationPlayer(class HashedString const& friendlyName, class ExpressionNode const& blendExpression);
+
     // NOLINTEND
 };

@@ -73,9 +73,6 @@ public:
     // symbol: ?forEachCreativeItemInstance@CreativeItemRegistry@@SAXV?$function@$$A6A_NAEAVItemInstance@@@Z@std@@@Z
     MCAPI static void forEachCreativeItemInstance(std::function<bool(class ItemInstance&)> func);
 
-    // symbol: ?reset@CreativeItemRegistry@@SAXXZ
-    MCAPI static void reset();
-
     // symbol:
     // ?setCurrentRegistry@CreativeItemRegistry@@SAX$$QEAV?$unique_ptr@VCreativeItemRegistry@@U?$default_delete@VCreativeItemRegistry@@@std@@@std@@@Z
     MCAPI static void setCurrentRegistry(std::unique_ptr<class CreativeItemRegistry>&& registry);

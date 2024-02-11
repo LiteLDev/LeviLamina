@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace cereal { class SerializerContext; }
+namespace cereal { class SerializerEnumMapping; }
 namespace cereal { struct SchemaDescription; }
 namespace cereal { struct SchemaReader; }
 namespace cereal { struct SchemaWriter; }
@@ -26,12 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 5, symbol: ??1BasicCompositeSchema@internal@cereal@@UEAA@XZ
+    // vIndex: 4, symbol: ??1BasicCompositeSchema@internal@cereal@@UEAA@XZ
     virtual ~BasicCompositeSchema();
-
-    // symbol:
-    // ?addDeprecatedMember@BasicCompositeSchema@internal@cereal@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-    MCVAPI void addDeprecatedMember(std::string const&, std::string const&);
 
     // symbol:
     // ?addMember@BasicCompositeSchema@internal@cereal@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@USerializerTraits@3@V?$unique_ptr@VBasicSchema@internal@cereal@@U?$default_delete@VBasicSchema@internal@cereal@@@std@@@5@@Z
@@ -48,8 +45,8 @@ public:
     addRequiredMember(std::string const&, struct cereal::SerializerTraits, std::unique_ptr<class cereal::internal::BasicSchema>);
 
     // symbol:
-    // ?addSetter@BasicCompositeSchema@internal@cereal@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0V?$unique_ptr@VBasicSchema@internal@cereal@@U?$default_delete@VBasicSchema@internal@cereal@@@std@@@5@@Z
-    MCVAPI void addSetter(std::string const&, std::string const&, std::unique_ptr<class cereal::internal::BasicSchema>);
+    // ?addSetter@BasicCompositeSchema@internal@cereal@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VBasicSchema@internal@cereal@@U?$default_delete@VBasicSchema@internal@cereal@@@std@@@5@@Z
+    MCVAPI void addSetter(std::string const&, std::unique_ptr<class cereal::internal::BasicSchema>);
 
     // symbol:
     // ?customError@BasicCompositeSchema@internal@cereal@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z

@@ -15,7 +15,7 @@ public:
     MCAPI explicit ActorInteraction(bool noCapture);
 
     // symbol: ?capture@ActorInteraction@@QEAAXV?$function@$$A6AXXZ@std@@@Z
-    MCAPI void capture(std::function<void(void)> interactFunc);
+    MCAPI void capture(std::function<void()> interactFunc);
 
     // symbol:
     // ?getInteractText@ActorInteraction@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ

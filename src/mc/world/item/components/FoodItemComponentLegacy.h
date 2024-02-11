@@ -63,6 +63,9 @@ public:
     // ?useTimeDepleted@FoodItemComponentLegacy@@UEAAPEBVItem@@AEAVItemStack@@AEAVPlayer@@AEAVLevel@@@Z
     virtual class Item const* useTimeDepleted(class ItemStack& instance, class Player& player, class Level& level);
 
+    // symbol: ??0FoodItemComponentLegacy@@QEAA@AEAVItem@@@Z
+    MCAPI explicit FoodItemComponentLegacy(class Item& owner);
+
     // symbol:
     // ?buildNetworkTag@FoodItemComponentLegacy@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
     MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag() const;

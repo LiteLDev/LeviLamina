@@ -37,17 +37,14 @@ public:
     // ?getResultItem@ShieldRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
     virtual std::vector<class ItemInstance> const& getResultItem() const;
 
-    // vIndex: 5, symbol: __unk_vfn_5
-    virtual void __unk_vfn_5();
+    // vIndex: 5, symbol: ?isShapeless@ShieldRecipe@@UEBA_NXZ
+    virtual bool isShapeless() const;
 
     // vIndex: 6, symbol: ?matches@ShieldRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
     virtual bool matches(class CraftingContainer const& craftSlots, class CraftingContext const&) const;
 
     // vIndex: 7, symbol: ?size@ShieldRecipe@@UEBAHXZ
     virtual int size() const;
-
-    // symbol: ?isShapeless@ShieldRecipe@@UEBA_NXZ
-    MCVAPI bool isShapeless() const;
 
     // symbol: ??0ShieldRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@PEBVUUID@mce@@@Z
     MCAPI ShieldRecipe(std::string_view recipeId, class mce::UUID const* uuid);

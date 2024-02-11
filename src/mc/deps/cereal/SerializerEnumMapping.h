@@ -8,13 +8,11 @@ class SerializerEnumMapping {
 public:
     // prevent constructor by default
     SerializerEnumMapping& operator=(SerializerEnumMapping const&);
+    SerializerEnumMapping(SerializerEnumMapping const&);
     SerializerEnumMapping();
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0SerializerEnumMapping@cereal@@QEAA@AEBV01@@Z
-    MCAPI SerializerEnumMapping(class cereal::SerializerEnumMapping const&);
-
     // symbol:
     // ?lookup@SerializerEnumMapping@cereal@@QEBA?AV?$optional@_J@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z
     MCAPI std::optional<int64> lookup(std::string const&) const;

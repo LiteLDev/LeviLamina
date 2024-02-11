@@ -20,7 +20,7 @@ public:
     virtual ~BreakBlocksDescription();
 
     // vIndex: 2, symbol: ?deserializeData@BreakBlocksDescription@@UEAAXUDeserializeDataParams@@@Z
-    virtual void deserializeData(struct DeserializeDataParams);
+    virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
     // symbol: ??0BreakBlocksDescription@@QEAA@XZ
     MCAPI BreakBlocksDescription();

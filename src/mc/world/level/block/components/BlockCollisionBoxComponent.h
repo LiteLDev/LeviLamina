@@ -14,8 +14,5 @@ public:
     // vIndex: 0, symbol: __gen_??1BlockCollisionBoxComponent@@UEAA@XZ
     virtual ~BlockCollisionBoxComponent() = default;
 
-    // symbol: ?usesNewComponentStorage@BlockCollisionBoxComponent@@SA_NXZ
-    MCAPI static bool usesNewComponentStorage();
-
     // NOLINTEND
 };

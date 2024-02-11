@@ -10,7 +10,6 @@ public:
     // prevent constructor by default
     DoubleTag& operator=(DoubleTag const&);
     DoubleTag(DoubleTag const&);
-    DoubleTag();
 
 public:
     // NOLINTBEGIN
@@ -37,6 +36,12 @@ public:
 
     // vIndex: 10, symbol: ?hash@DoubleTag@@UEBA_KXZ
     virtual uint64 hash() const;
+
+    // symbol: ??0DoubleTag@@QEAA@XZ
+    MCAPI DoubleTag();
+
+    // symbol: ??0DoubleTag@@QEAA@N@Z
+    MCAPI explicit DoubleTag(double data);
 
     // NOLINTEND
 };

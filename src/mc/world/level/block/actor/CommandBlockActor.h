@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/server/commands/CommandBlockMode.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
@@ -41,47 +42,17 @@ public:
     // vIndex: 11, symbol: ?onPlace@CommandBlockActor@@UEAAXAEAVBlockSource@@@Z
     virtual void onPlace(class BlockSource& region);
 
-    // vIndex: 12, symbol: __unk_vfn_12
-    virtual void __unk_vfn_12();
-
-    // vIndex: 18, symbol: __unk_vfn_18
-    virtual void __unk_vfn_18();
-
     // vIndex: 24, symbol:
     // ?getCustomName@CommandBlockActor@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string const& getCustomName() const;
 
     // vIndex: 25, symbol:
-    // ?getFilteredCustomName@CommandBlockActor@@UEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVUIProfanityContext@@@Z
-    virtual std::string const& getFilteredCustomName(class UIProfanityContext const&);
+    // ?getFilteredCustomName@CommandBlockActor@@UEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$not_null@V?$NonOwnerPointer@VUIProfanityContext@@@Bedrock@@@gsl@@@Z
+    virtual std::string const& getFilteredCustomName(Bedrock::NotNullNonOwnerPtr<class UIProfanityContext> const&);
 
     // vIndex: 27, symbol:
     // ?setCustomName@CommandBlockActor@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void setCustomName(std::string const& str);
-
-    // vIndex: 30, symbol: __unk_vfn_30
-    virtual void __unk_vfn_30();
-
-    // vIndex: 31, symbol: __unk_vfn_31
-    virtual void __unk_vfn_31();
-
-    // vIndex: 32, symbol: __unk_vfn_32
-    virtual void __unk_vfn_32();
-
-    // vIndex: 33, symbol: __unk_vfn_33
-    virtual void __unk_vfn_33();
-
-    // vIndex: 34, symbol: __unk_vfn_34
-    virtual void __unk_vfn_34();
-
-    // vIndex: 35, symbol: __unk_vfn_35
-    virtual void __unk_vfn_35();
-
-    // vIndex: 36, symbol: __unk_vfn_36
-    virtual void __unk_vfn_36();
-
-    // vIndex: 39, symbol: __unk_vfn_39
-    virtual void __unk_vfn_39();
 
     // vIndex: 40, symbol:
     // ?_getUpdatePacket@CommandBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z

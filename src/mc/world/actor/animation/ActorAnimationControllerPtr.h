@@ -11,14 +11,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ActorAnimationControllerPtr@@QEAA@AEAVActorAnimationControllerGroup@@AEBVHashedString@@@Z
-    MCAPI ActorAnimationControllerPtr(class ActorAnimationControllerGroup& group, class HashedString const& name);
-
     // symbol: ?getName@ActorAnimationControllerPtr@@QEBAAEBVHashedString@@XZ
     MCAPI class HashedString const& getName() const;
 
     // symbol: ?isNull@ActorAnimationControllerPtr@@QEBA_NXZ
     MCAPI bool isNull() const;
+
+    // symbol: ??CActorAnimationControllerPtr@@QEAAPEAVActorAnimationController@@XZ
+    MCAPI class ActorAnimationController* operator->();
+
+    // symbol: ??CActorAnimationControllerPtr@@QEBAPEBVActorAnimationController@@XZ
+    MCAPI class ActorAnimationController const* operator->() const;
 
     // symbol: ??1ActorAnimationControllerPtr@@QEAA@XZ
     MCAPI ~ActorAnimationControllerPtr();

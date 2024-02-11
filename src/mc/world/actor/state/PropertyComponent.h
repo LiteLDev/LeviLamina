@@ -29,22 +29,22 @@ public:
     MCAPI void applyPendingChanges(std::unordered_map<uint64, std::variant<int, float, bool, uint64>> const&);
 
     // symbol: ?getBool@PropertyComponent@@QEBA_N_K@Z
-    MCAPI bool getBool(uint64) const;
+    MCAPI bool getBool(uint64 h) const;
 
     // symbol: ?getFloat@PropertyComponent@@QEBAM_K@Z
-    MCAPI float getFloat(uint64) const;
+    MCAPI float getFloat(uint64 h) const;
 
     // symbol: ?getInt@PropertyComponent@@QEBAH_K@Z
-    MCAPI int getInt(uint64) const;
+    MCAPI int getInt(uint64 h) const;
 
     // symbol: ?getMolangValue@PropertyComponent@@QEBA_N_KAEAUMolangScriptArg@@@Z
     MCAPI bool getMolangValue(uint64, struct MolangScriptArg& out) const;
 
     // symbol: ?getPropertyType@PropertyComponent@@QEBA?AW4ContainedType@PropertyMetadata@@_K@Z
-    MCAPI ::PropertyMetadata::ContainedType getPropertyType(uint64) const;
+    MCAPI ::PropertyMetadata::ContainedType getPropertyType(uint64 h) const;
 
     // symbol: ?getString@PropertyComponent@@QEBAAEBVHashedString@@_K@Z
-    MCAPI class HashedString const& getString(uint64) const;
+    MCAPI class HashedString const& getString(uint64 h) const;
 
     // symbol: ?hasDirtyProperties@PropertyComponent@@QEBA_NXZ
     MCAPI bool hasDirtyProperties() const;
@@ -64,16 +64,16 @@ public:
     setAliasProperties(std::unordered_map<class HashedString, std::shared_ptr<class Tag>> const&, std::string const&, std::string const&);
 
     // symbol: ?tryGetBool@PropertyComponent@@QEBA?AV?$optional@_N@std@@_K@Z
-    MCAPI std::optional<bool> tryGetBool(uint64) const;
+    MCAPI std::optional<bool> tryGetBool(uint64 h) const;
 
     // symbol: ?tryGetFloat@PropertyComponent@@QEBA?AV?$optional@M@std@@_K@Z
-    MCAPI std::optional<float> tryGetFloat(uint64) const;
+    MCAPI std::optional<float> tryGetFloat(uint64 h) const;
 
     // symbol: ?tryGetInt@PropertyComponent@@QEBA?AV?$optional@H@std@@_K@Z
-    MCAPI std::optional<int> tryGetInt(uint64) const;
+    MCAPI std::optional<int> tryGetInt(uint64 h) const;
 
     // symbol: ?tryGetString@PropertyComponent@@QEBAPEBVHashedString@@_K@Z
-    MCAPI class HashedString const* tryGetString(uint64) const;
+    MCAPI class HashedString const* tryGetString(uint64 h) const;
 
     // symbol: ??1PropertyComponent@@QEAA@XZ
     MCAPI ~PropertyComponent();

@@ -30,5 +30,8 @@ public:
     // vIndex: 5, symbol: ?stop@WitherRandomAttackPosGoal@@UEAAXXZ
     virtual void stop();
 
+    // symbol: ??0WitherRandomAttackPosGoal@@QEAA@AEAVMob@@MHH@Z
+    MCAPI WitherRandomAttackPosGoal(class Mob& mob, float speed, int xzDist, int yDist);
+
     // NOLINTEND
 };

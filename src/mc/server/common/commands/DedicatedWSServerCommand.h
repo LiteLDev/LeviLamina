@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class DedicatedWSServerCommand {
+// auto generated inclusion list
+#include "mc/world/level/Command.h"
+
+class DedicatedWSServerCommand : public ::Command {
 public:
     // prevent constructor by default
     DedicatedWSServerCommand& operator=(DedicatedWSServerCommand const&);
@@ -13,9 +16,6 @@ public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1DedicatedWSServerCommand@@UEAA@XZ
     virtual ~DedicatedWSServerCommand() = default;
-
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
 
     // vIndex: 2, symbol: ?execute@DedicatedWSServerCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;

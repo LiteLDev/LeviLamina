@@ -74,11 +74,11 @@ public:
         // vIndex: 7, symbol: ?save@ComplexAliasDescriptor@@UEBA?AV?$optional@VCompoundTag@@@std@@XZ
         virtual std::optional<class CompoundTag> save() const = 0;
 
-        // vIndex: 8, symbol: ?serialize@BaseDescriptor@ItemDescriptor@@UEBAXAEAVValue@Json@@@Z
-        virtual void serialize(class Json::Value& val) const;
-
-        // vIndex: 9, symbol: ?serialize@ComplexAliasDescriptor@@UEBAXAEAVBinaryStream@@@Z
+        // vIndex: 8, symbol: ?serialize@ComplexAliasDescriptor@@UEBAXAEAVBinaryStream@@@Z
         virtual void serialize(class BinaryStream& stream) const = 0;
+
+        // vIndex: 9, symbol: ?serialize@BaseDescriptor@ItemDescriptor@@UEBAXAEAVValue@Json@@@Z
+        virtual void serialize(class Json::Value& val) const;
 
         // vIndex: 10, symbol: ?getType@ComplexAliasDescriptor@@UEBA?AW4InternalType@ItemDescriptor@@XZ
         virtual ::ItemDescriptor::InternalType getType() const = 0;
@@ -107,11 +107,11 @@ public:
     // vIndex: 0, symbol: ??1ItemDescriptor@@UEAA@XZ
     virtual ~ItemDescriptor();
 
-    // vIndex: 1, symbol: ?serialize@ItemDescriptor@@UEBAXAEAVValue@Json@@@Z
-    virtual void serialize(class Json::Value& val) const;
-
-    // vIndex: 2, symbol: ?serialize@ItemDescriptor@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 1, symbol: ?serialize@ItemDescriptor@@UEBAXAEAVBinaryStream@@@Z
     virtual void serialize(class BinaryStream& stream) const;
+
+    // vIndex: 2, symbol: ?serialize@ItemDescriptor@@UEBAXAEAVValue@Json@@@Z
+    virtual void serialize(class Json::Value& val) const;
 
     // symbol: ??0ItemDescriptor@@QEAA@XZ
     MCAPI ItemDescriptor();
@@ -199,7 +199,7 @@ public:
     MCAPI bool sameItem(class ItemDescriptor const&, bool) const;
 
     // symbol: ?sameItem@ItemDescriptor@@QEBA_NAEBVItemStack@@_N@Z
-    MCAPI bool sameItem(class ItemStack const& itemStack, bool) const;
+    MCAPI bool sameItem(class ItemStack const& item, bool) const;
 
     // symbol: ?save@ItemDescriptor@@QEBA?AV?$optional@VCompoundTag@@@std@@XZ
     MCAPI std::optional<class CompoundTag> save() const;

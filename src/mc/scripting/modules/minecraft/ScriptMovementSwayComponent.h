@@ -24,8 +24,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptMovementSwayComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptMovementSwayComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptMovementSwayComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptMovementSwayComponent() = default;
 
     // symbol: ?getSwayAmplitude@ScriptMovementSwayComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@M$$V@Scripting@@XZ
     MCAPI class Scripting::Result<float> getSwayAmplitude() const;

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/WeakRefT.h"
+#include "mc/common/wrapper/WeakRef.h"
 
 struct PlayerDamageEvent {
 public:
@@ -15,8 +15,8 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ??0PlayerDamageEvent@@QEAA@V?$WeakRefT@UEntityRefTraits@@@@V?$unique_ptr@VActorDamageSource@@U?$default_delete@VActorDamageSource@@@std@@@std@@@Z
-    MCAPI PlayerDamageEvent(class WeakRefT<struct EntityRefTraits>, std::unique_ptr<class ActorDamageSource>);
+    // ??0PlayerDamageEvent@@QEAA@V?$WeakRef@VEntityContext@@@@V?$unique_ptr@VActorDamageSource@@U?$default_delete@VActorDamageSource@@@std@@@std@@@Z
+    MCAPI PlayerDamageEvent(class WeakRef<class EntityContext>, std::unique_ptr<class ActorDamageSource>);
 
     // symbol: ??1PlayerDamageEvent@@QEAA@XZ
     MCAPI ~PlayerDamageEvent();

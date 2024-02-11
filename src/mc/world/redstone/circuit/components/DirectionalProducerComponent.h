@@ -22,12 +22,6 @@ public:
     virtual bool
     allowConnection(class CircuitSceneGraph& graph, class CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
-    // vIndex: 17, symbol: __unk_vfn_17
-    virtual void __unk_vfn_17();
-
-    // vIndex: 20, symbol: __unk_vfn_20
-    virtual void __unk_vfn_20();
-
     // symbol: ??0DirectionalProducerComponent@@QEAA@XZ
     MCAPI DirectionalProducerComponent();
 

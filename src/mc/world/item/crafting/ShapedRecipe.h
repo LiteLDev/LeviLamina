@@ -36,8 +36,8 @@ public:
     // ?getResultItem@ShapedRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
     virtual std::vector<class ItemInstance> const& getResultItem() const;
 
-    // vIndex: 5, symbol: __unk_vfn_5
-    virtual void __unk_vfn_5();
+    // vIndex: 5, symbol: ?isShapeless@ShapedRecipe@@UEBA_NXZ
+    virtual bool isShapeless() const;
 
     // vIndex: 6, symbol: ?matches@ShapedRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
     virtual bool matches(class CraftingContainer const& craftSlots, class CraftingContext const&) const;
@@ -47,9 +47,6 @@ public:
 
     // vIndex: 15, symbol: ?loadResultList@ShapedRecipe@@UEBAXAEBVBlockPalette@@@Z
     virtual void loadResultList(class BlockPalette const& blockPalette) const;
-
-    // symbol: ?isShapeless@ShapedRecipe@@UEBA_NXZ
-    MCVAPI bool isShapeless() const;
 
     // symbol:
     // ??0ShapedRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashedString@@HPEBVUUID@mce@@V?$optional@VRecipeUnlockingRequirement@@@2@AEBVSemVersion@@@Z

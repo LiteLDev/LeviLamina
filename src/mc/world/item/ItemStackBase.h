@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
+namespace cereal { struct ReflectionCtx; }
 namespace mce { class Color; }
 // clang-format on
 
@@ -34,14 +35,14 @@ public:
     // vIndex: 0, symbol: ??1ItemStackBase@@UEAA@XZ
     virtual ~ItemStackBase();
 
-    // vIndex: 1, symbol: ?reinit@ItemStackBase@@UEAAXAEBVItem@@HH@Z
-    virtual void reinit(class Item const& item, int count, int auxValue);
+    // vIndex: 1, symbol: ?reinit@ItemStackBase@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@HH@Z
+    virtual void reinit(std::string_view name, int count, int auxValue);
 
     // vIndex: 2, symbol: ?reinit@ItemStackBase@@UEAAXAEBVBlockLegacy@@H@Z
     virtual void reinit(class BlockLegacy const& block, int count);
 
-    // vIndex: 3, symbol: ?reinit@ItemStackBase@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@HH@Z
-    virtual void reinit(std::string_view name, int count, int auxValue);
+    // vIndex: 3, symbol: ?reinit@ItemStackBase@@UEAAXAEBVItem@@HH@Z
+    virtual void reinit(class Item const& item, int count, int auxValue);
 
     // vIndex: 4, symbol:
     // ?setNull@ItemStackBase@@UEAAXV?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@Z
@@ -62,8 +63,8 @@ public:
     // ?addComponents@ItemStackBase@@QEAA_NAEBVValue@Json@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI bool addComponents(class Json::Value const& root, std::string& errorMsg);
 
-    // symbol: ?addCustomUserData@ItemStackBase@@QEAAXAEAVContainerComponent@@@Z
-    MCAPI void addCustomUserData(class ContainerComponent& containerComponent);
+    // symbol: ?addCustomUserData@ItemStackBase@@QEAAXAEBVContainerComponent@@@Z
+    MCAPI void addCustomUserData(class ContainerComponent const& containerComponent);
 
     // symbol: ?addCustomUserData@ItemStackBase@@QEAAXAEAVBlockActor@@AEAVBlockSource@@@Z
     MCAPI void addCustomUserData(class BlockActor& blockEntity, class BlockSource& region);
@@ -80,6 +81,10 @@ public:
     // symbol: ?canPlaceOn@ItemStackBase@@QEBA_NPEBVBlock@@@Z
     MCAPI bool canPlaceOn(class Block const* block) const;
 
+    // symbol:
+    // ?clearAllDynamicProperties@ItemStackBase@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI bool clearAllDynamicProperties(std::string const&);
+
     // symbol: ?clearChargedItem@ItemStackBase@@QEAAXXZ
     MCAPI void clearChargedItem();
 
@@ -91,9 +96,6 @@ public:
 
     // symbol: ?constructItemEnchantsFromUserData@ItemStackBase@@QEBA?AVItemEnchants@@XZ
     MCAPI class ItemEnchants constructItemEnchantsFromUserData() const;
-
-    // symbol: ?deserializeComponents@ItemStackBase@@QEAAXAEAVIDataInput@@@Z
-    MCAPI void deserializeComponents(class IDataInput& input);
 
     // symbol:
     // ?executeEvent@ItemStackBase@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRenderParams@@@Z
@@ -125,9 +127,6 @@ public:
     // ?getCanPlaceOn@ItemStackBase@@QEBAAEBV?$vector@PEBVBlockLegacy@@V?$allocator@PEBVBlockLegacy@@@std@@@std@@XZ
     MCAPI std::vector<class BlockLegacy const*> const& getCanPlaceOn() const;
 
-    // symbol: ?getCategoryName@ItemStackBase@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-    MCAPI std::string getCategoryName() const;
-
     // symbol: ?getChargedItem@ItemStackBase@@QEBAAEBVItemInstance@@XZ
     MCAPI class ItemInstance const& getChargedItem() const;
 
@@ -155,6 +154,15 @@ public:
 
     // symbol: ?getDescriptor@ItemStackBase@@QEBA?AVItemDescriptor@@XZ
     MCAPI class ItemDescriptor getDescriptor() const;
+
+    // symbol:
+    // ?getDynamicProperties@ItemStackBase@@QEBA?AV?$unique_ptr@VDynamicProperties@@U?$default_delete@VDynamicProperties@@@std@@@std@@AEBUReflectionCtx@cereal@@@Z
+    MCAPI std::unique_ptr<class DynamicProperties> getDynamicProperties(struct cereal::ReflectionCtx const&) const;
+
+    // symbol:
+    // ?getDynamicProperty@ItemStackBase@@QEBA?AV?$optional@V?$variant@NM_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VVec3@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@0AEBUReflectionCtx@cereal@@@Z
+    MCAPI std::optional<std::variant<double, float, bool, std::string, class Vec3>>
+          getDynamicProperty(std::string const&, std::string const&, struct cereal::ReflectionCtx const&) const;
 
     // symbol: ?getEffectName@ItemStackBase@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getEffectName() const;
@@ -202,9 +210,6 @@ public:
     // symbol: ?getRawNameId@ItemStackBase@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getRawNameId() const;
 
-    // symbol: ?getRequiredBaseGameVersion@ItemStackBase@@QEBAAEBVBaseGameVersion@@XZ
-    MCAPI class BaseGameVersion const& getRequiredBaseGameVersion() const;
-
     // symbol: ?getUseAnimation@ItemStackBase@@QEBA?AW4UseAnimation@Legacy@Puv@@XZ
     MCAPI ::Puv::Legacy::UseAnimation getUseAnimation() const;
 
@@ -219,6 +224,9 @@ public:
 
     // symbol: ?hasChargedItem@ItemStackBase@@QEBA_NXZ
     MCAPI bool hasChargedItem() const;
+
+    // symbol: ?hasCompoundTextUserData@ItemStackBase@@QEBA_NXZ
+    MCAPI bool hasCompoundTextUserData() const;
 
     // symbol: ?hasContainerData@ItemStackBase@@QEBA_NXZ
     MCAPI bool hasContainerData() const;
@@ -239,7 +247,7 @@ public:
     MCAPI bool hasTag(struct ItemTag const& string) const;
 
     // symbol: ?hasTag@ItemStackBase@@QEBA_NAEB_K@Z
-    MCAPI bool hasTag(uint64 const&) const;
+    MCAPI bool hasTag(uint64 const& hash) const;
 
     // symbol: ?hasUserData@ItemStackBase@@QEBA_NXZ
     MCAPI bool hasUserData() const;
@@ -304,15 +312,17 @@ public:
     // symbol: ?isOffhandItem@ItemStackBase@@QEBA_NXZ
     MCAPI bool isOffhandItem() const;
 
-    // symbol: ?isOneOfBlockInstances@ItemStackBase@@QEBA_NV?$initializer_list@$$CBVHashedString@@@std@@@Z
-    MCAPI bool isOneOfBlockInstances(std::initializer_list<class HashedString const> blocks) const;
+    // symbol:
+    // ?isOneOfBlockInstances@ItemStackBase@@QEBA_NV?$initializer_list@V?$reference_wrapper@$$CBVHashedString@@@std@@@std@@@Z
+    MCAPI bool isOneOfBlockInstances(std::initializer_list<std::reference_wrapper<class HashedString const>>) const;
 
     // symbol:
     // ?isOneOfBlockInstances@ItemStackBase@@QEBA_NAEBV?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@@Z
     MCAPI bool isOneOfBlockInstances(std::vector<std::reference_wrapper<class HashedString const>> const&) const;
 
-    // symbol: ?isOneOfInstances@ItemStackBase@@QEBA_NV?$initializer_list@$$CBVHashedString@@@std@@_N@Z
-    MCAPI bool isOneOfInstances(std::initializer_list<class HashedString const> items, bool) const;
+    // symbol:
+    // ?isOneOfInstances@ItemStackBase@@QEBA_NV?$initializer_list@V?$reference_wrapper@$$CBVHashedString@@@std@@@std@@_N@Z
+    MCAPI bool isOneOfInstances(std::initializer_list<std::reference_wrapper<class HashedString const>>, bool) const;
 
     // symbol: ?isPattern@ItemStackBase@@QEBA_NXZ
     MCAPI bool isPattern() const;
@@ -368,6 +378,10 @@ public:
     // symbol: ?removeDamageValue@ItemStackBase@@QEAAXXZ
     MCAPI void removeDamageValue();
 
+    // symbol:
+    // ?removeDynamicProperty@ItemStackBase@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+    MCAPI bool removeDynamicProperty(std::string const&, std::string const&);
+
     // symbol: ?removeEnchants@ItemStackBase@@QEAAXXZ
     MCAPI void removeEnchants();
 
@@ -393,9 +407,6 @@ public:
     // ?sendEventTriggered@ItemStackBase@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVRenderParams@@@Z
     MCAPI bool sendEventTriggered(std::string const& event, class RenderParams const& params);
 
-    // symbol: ?serializeComponents@ItemStackBase@@QEBAXAEAVIDataOutput@@@Z
-    MCAPI void serializeComponents(class IDataOutput& output) const;
-
     // symbol: ?set@ItemStackBase@@QEAAXH@Z
     MCAPI void set(int inCount);
 
@@ -404,6 +415,9 @@ public:
 
     // symbol: ?setBlock@ItemStackBase@@QEAAXPEBVBlock@@@Z
     MCAPI void setBlock(class Block const* block);
+
+    // symbol: ?setBlockingTick@ItemStackBase@@QEAAXUTick@@@Z
+    MCAPI void setBlockingTick(struct Tick blockingTick);
 
     // symbol:
     // ?setCanDestroy@ItemStackBase@@QEAA_NAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
@@ -426,6 +440,11 @@ public:
     // symbol: ?setDamageValue@ItemStackBase@@QEAAXF@Z
     MCAPI void setDamageValue(short newDamage);
 
+    // symbol:
+    // ?setDynamicProperty@ItemStackBase@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$variant@NM_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VVec3@@@3@0AEBUReflectionCtx@cereal@@@Z
+    MCAPI void
+    setDynamicProperty(std::string const&, std::variant<double, float, bool, std::string, class Vec3> const&, std::string const&, struct cereal::ReflectionCtx const&);
+
     // symbol: ?setJustBrewed@ItemStackBase@@QEAAX_N@Z
     MCAPI void setJustBrewed(bool crafted);
 
@@ -437,9 +456,6 @@ public:
 
     // symbol: ?setShowPickUp@ItemStackBase@@QEAAX_N@Z
     MCAPI void setShowPickUp(bool show);
-
-    // symbol: ?setStackSize@ItemStackBase@@QEAAXE@Z
-    MCAPI void setStackSize(uchar);
 
     // symbol:
     // ?setUserData@ItemStackBase@@QEAAXV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@@Z
@@ -460,6 +476,9 @@ public:
     // symbol:
     // ?updateComponent@ItemStackBase@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVValue@Json@@@Z
     MCAPI bool updateComponent(std::string const& name, class Json::Value const& data);
+
+    // symbol: ?isValidComponent@ItemStackBase@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI static bool isValidComponent(std::string const& name);
 
     // symbol: ?COMPARISONOPTIONS_RELEVANTUSERDATA@ItemStackBase@@2UComparisonOptions@1@B
     MCAPI static struct ItemStackBase::ComparisonOptions const COMPARISONOPTIONS_RELEVANTUSERDATA;

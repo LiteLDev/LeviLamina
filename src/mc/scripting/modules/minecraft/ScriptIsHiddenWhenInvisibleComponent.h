@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptIsHiddenWhenInvisibleComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptIsHiddenWhenInvisibleComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptIsHiddenWhenInvisibleComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptIsHiddenWhenInvisibleComponent() = default;
 
     // vIndex: 1, symbol: ?_isValid@ScriptActorComponent@ScriptModuleMinecraft@@MEBA_NXZ
     virtual bool _isValid() const;

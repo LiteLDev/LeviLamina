@@ -33,7 +33,7 @@ public:
     open(class Core::Path const& fileName, class Core::FileOpenMode openMode, ::Core::FileBufferingMode bufferingMode);
 
     // symbol: ?write@File@Core@@QEAA?AVResult@2@PEBX_K@Z
-    MCAPI class Core::Result write(void const*, uint64);
+    MCAPI class Core::Result write(void const* pBuf, uint64 numBytes);
 
     // symbol: ??1File@Core@@QEAA@XZ
     MCAPI ~File();

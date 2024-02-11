@@ -15,15 +15,15 @@
 
 // auto generated forward declare list
 // clang-format off
-struct AbilitiesComponent;
+struct ActorDataFlagComponent;
 struct ActorRotationComponent;
 struct InWaterFlag;
 struct MobIsJumpingFlag;
 struct MobTravelComponent;
 struct MoveInputComponent;
+struct MovementAbilitiesComponent;
 struct PlayerInputRequestComponent;
 struct StateVectorComponent;
-struct SynchedActorDataComponent;
 // clang-format on
 
 namespace SwimControlSystemImpl {
@@ -53,15 +53,15 @@ public:
     virtual void __unk_vfn_4();
 
     // vIndex: 5, symbol:
-    // ?tick@SwimControlSystemImpl@1@UEAAXAEAV?$StrictExecutionContext@U?$Filter@UMobTravelComponent@@V?$FlagComponent@UInWaterFlag@@@@V?$FlagComponent@UMobIsJumpingFlag@@@@@@U?$Read@USynchedActorDataComponent@@UAbilitiesComponent@@UActorRotationComponent@@UMoveInputComponent@@UPlayerInputRequestComponent@@@@U?$Write@UStateVectorComponent@@@@U?$AddRemove@$$V@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
+    // ?tick@SwimControlSystemImpl@1@UEAAXAEAV?$StrictExecutionContext@U?$Filter@UMobTravelComponent@@V?$FlagComponent@UInWaterFlag@@@@V?$FlagComponent@UMobIsJumpingFlag@@@@@@U?$Read@UActorDataFlagComponent@@UMovementAbilitiesComponent@@UActorRotationComponent@@UMoveInputComponent@@UPlayerInputRequestComponent@@@@U?$Write@UStateVectorComponent@@@@U?$AddRemove@$$V@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
     virtual void tick(class StrictExecutionContext<
                       struct Filter<
                           struct MobTravelComponent,
                           class FlagComponent<struct InWaterFlag>,
                           class FlagComponent<struct MobIsJumpingFlag>>,
                       struct Read<
-                          struct SynchedActorDataComponent,
-                          struct AbilitiesComponent,
+                          struct ActorDataFlagComponent,
+                          struct MovementAbilitiesComponent,
                           struct ActorRotationComponent,
                           struct MoveInputComponent,
                           struct PlayerInputRequestComponent>,

@@ -93,7 +93,7 @@ public:
         // NOLINTBEGIN
         // symbol:
         // ??0Overload@CommandRegistry@@QEAA@VCommandVersion@@P6A?AV?$unique_ptr@VCommand@@U?$default_delete@VCommand@@@std@@@std@@XZ@Z
-        MCAPI Overload(class CommandVersion, std::unique_ptr<class Command> (*)(void));
+        MCAPI Overload(class CommandVersion version_, std::unique_ptr<class Command> (*alloc_)());
 
         // NOLINTEND
     };
@@ -201,7 +201,7 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ??0Symbol@CommandRegistry@@QEAA@_K@Z
-        MCAPI explicit Symbol(uint64);
+        MCAPI explicit Symbol(uint64 value);
 
         // symbol: ?toIndex@Symbol@CommandRegistry@@QEBA_KXZ
         MCAPI uint64 toIndex() const;

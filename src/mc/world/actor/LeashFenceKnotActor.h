@@ -50,70 +50,34 @@ public:
     // vIndex: 13, symbol: ?remove@LeashFenceKnotActor@@UEAAXXZ
     virtual void remove();
 
-    // vIndex: 23, symbol: __unk_vfn_23
-    virtual void __unk_vfn_23();
-
     // vIndex: 26, symbol: ?teleportTo@LeashFenceKnotActor@@UEAAXAEBVVec3@@_NHH1@Z
     virtual void teleportTo(class Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool);
 
-    // vIndex: 39, symbol: __unk_vfn_39
-    virtual void __unk_vfn_39();
-
-    // vIndex: 42, symbol: __unk_vfn_42
-    virtual void __unk_vfn_42();
-
-    // vIndex: 43, symbol: ?getShadowRadius@LeashFenceKnotActor@@UEBAMXZ
+    // vIndex: 41, symbol: ?getShadowRadius@LeashFenceKnotActor@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 47, symbol: __unk_vfn_47
-    virtual void __unk_vfn_47();
-
-    // vIndex: 51, symbol: ?isPickable@LeashFenceKnotActor@@UEAA_NXZ
+    // vIndex: 48, symbol: ?isPickable@LeashFenceKnotActor@@UEAA_NXZ
     virtual bool isPickable();
 
-    // vIndex: 60, symbol: __unk_vfn_60
-    virtual void __unk_vfn_60();
-
-    // vIndex: 61, symbol: __unk_vfn_61
-    virtual void __unk_vfn_61();
-
-    // vIndex: 62, symbol: __unk_vfn_62
-    virtual void __unk_vfn_62();
-
-    // vIndex: 107, symbol: __unk_vfn_107
-    virtual void __unk_vfn_107();
-
-    // vIndex: 139, symbol: ?getInteraction@LeashFenceKnotActor@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z
+    // vIndex: 136, symbol: ?getInteraction@LeashFenceKnotActor@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z
     virtual bool getInteraction(class Player& player, class ActorInteraction& interaction, class Vec3 const& location);
 
-    // vIndex: 144, symbol: __unk_vfn_144
-    virtual void __unk_vfn_144();
-
-    // vIndex: 162, symbol: __unk_vfn_162
-    virtual void __unk_vfn_162();
-
-    // vIndex: 164, symbol: ?readAdditionalSaveData@LeashFenceKnotActor@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 159, symbol: ?readAdditionalSaveData@LeashFenceKnotActor@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 165, symbol: ?addAdditionalSaveData@LeashFenceKnotActor@@UEBAXAEAVCompoundTag@@@Z
+    // vIndex: 160, symbol: ?addAdditionalSaveData@LeashFenceKnotActor@@UEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 167, symbol: __unk_vfn_167
-    virtual void __unk_vfn_167();
-
-    // vIndex: 168, symbol: __unk_vfn_168
-    virtual void __unk_vfn_168();
-
-    // vIndex: 169, symbol: ?getWidth@LeashFenceKnotActor@@UEBAHXZ
+    // vIndex: 163, symbol: ?getWidth@LeashFenceKnotActor@@UEBAHXZ
     virtual int getWidth() const;
 
-    // vIndex: 170, symbol: ?getHeight@LeashFenceKnotActor@@UEBAHXZ
+    // vIndex: 164, symbol: ?getHeight@LeashFenceKnotActor@@UEBAHXZ
     virtual int getHeight() const;
 
-    // vIndex: 171, symbol: ?dropItem@LeashFenceKnotActor@@UEAAXXZ
+    // vIndex: 165, symbol: ?dropItem@LeashFenceKnotActor@@UEAAXXZ
     virtual void dropItem();
 
-    // vIndex: 173, symbol: ?wouldSurvive@LeashFenceKnotActor@@UEAA_NAEAVBlockSource@@@Z
+    // vIndex: 167, symbol: ?wouldSurvive@LeashFenceKnotActor@@UEAA_NAEAVBlockSource@@@Z
     virtual bool wouldSurvive(class BlockSource& region);
 
     // symbol:
@@ -126,6 +90,9 @@ public:
 
     // symbol: ?numberofAnimalsAttached@LeashFenceKnotActor@@QEAAHXZ
     MCAPI int numberofAnimalsAttached();
+
+    // symbol: ?removeAnimals@LeashFenceKnotActor@@QEAAXXZ
+    MCAPI void removeAnimals();
 
     // NOLINTEND
 };

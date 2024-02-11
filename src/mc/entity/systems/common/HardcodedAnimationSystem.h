@@ -23,7 +23,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol:
-    // ?doHardcodedAnimation@HardcodedAnimationSystem@@CAXAEBVStrictEntityContext@@AEAUMobAnimationComponent@@AEBUMobBodyRotationComponent@@AEBUMobHurtTimeComponent@@AEAUActorWalkAnimationComponent@@AEBUStateVectorComponent@@AEBUSynchedActorDataComponent@@V?$Optional@$$CBV?$FlagComponent@UBlazeFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@ULavaSlimeFlag@@@@@@V?$Optional@$$CBUOnFireComponent@@@@V?$Optional@$$CBUPassengerComponent@@@@V?$Optional@$$CBV?$FlagComponent@UMobIsJumpingFlag@@@@@@@Z
+    // ?doHardcodedAnimation@HardcodedAnimationSystem@@CAXAEBVStrictEntityContext@@AEAUMobAnimationComponent@@AEBUMobBodyRotationComponent@@AEBUMobHurtTimeComponent@@AEAUActorWalkAnimationComponent@@AEBUStateVectorComponent@@AEBUActorDataFlagComponent@@V?$Optional@$$CBV?$FlagComponent@UBlazeFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@ULavaSlimeFlag@@@@@@V?$Optional@$$CBUOnFireComponent@@@@V?$Optional@$$CBUPassengerComponent@@@@V?$Optional@$$CBV?$FlagComponent@UMobIsJumpingFlag@@@@@@@Z
     MCAPI static void doHardcodedAnimation(
         class StrictEntityContext const&,
         struct MobAnimationComponent&,
@@ -31,7 +31,7 @@ public:
         struct MobHurtTimeComponent const&,
         struct ActorWalkAnimationComponent&,
         struct StateVectorComponent const&,
-        struct SynchedActorDataComponent const&,
+        struct ActorDataFlagComponent const&,
         class Optional<class FlagComponent<struct BlazeFlag> const>,
         class Optional<class FlagComponent<struct LavaSlimeFlag> const>,
         class Optional<struct OnFireComponent const>,

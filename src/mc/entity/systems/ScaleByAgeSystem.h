@@ -17,9 +17,6 @@ public:
     // vIndex: 0, symbol: __gen_??1ScaleByAgeSystem@@UEAA@XZ
     virtual ~ScaleByAgeSystem() = default;
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
-
     // vIndex: 2, symbol: ?tick@ScaleByAgeSystem@@UEAAXAEAVEntityRegistry@@@Z
     virtual void tick(class EntityRegistry& registry);
 

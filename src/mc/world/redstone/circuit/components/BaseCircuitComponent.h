@@ -73,8 +73,8 @@ public:
     // vIndex: 16, symbol: ?updateDependencies@BaseCircuitComponent@@UEAAXAEAVCircuitSceneGraph@@AEBVBlockPos@@@Z
     virtual void updateDependencies(class CircuitSceneGraph& system, class BlockPos const& pos);
 
-    // vIndex: 17, symbol: __unk_vfn_17
-    virtual void __unk_vfn_17();
+    // vIndex: 17, symbol: ?allowIndirect@BaseCircuitComponent@@UEBA_NXZ
+    virtual bool allowIndirect() const;
 
     // vIndex: 18, symbol: ?isHalfPulse@BaseCircuitComponent@@UEBA_NXZ
     virtual bool isHalfPulse() const;
@@ -82,8 +82,8 @@ public:
     // vIndex: 19, symbol: ?hasSource@BaseCircuitComponent@@UEBA_NAEBV1@@Z
     virtual bool hasSource(class BaseCircuitComponent const& source) const;
 
-    // vIndex: 20, symbol: __unk_vfn_20
-    virtual void __unk_vfn_20();
+    // vIndex: 20, symbol: ?hasChildrenSource@BaseCircuitComponent@@UEBA_NXZ
+    virtual bool hasChildrenSource() const;
 
     // vIndex: 21, symbol: ?isSecondaryPowered@BaseCircuitComponent@@UEBA_NXZ
     virtual bool isSecondaryPowered() const;
@@ -97,20 +97,14 @@ public:
     // vIndex: 24, symbol: ?getCircuitComponentGroupType@BaseCircuitComponent@@UEBA?AW4CircuitComponentType@@XZ
     virtual ::CircuitComponentType getCircuitComponentGroupType() const;
 
-    // symbol: ?allowIndirect@BaseCircuitComponent@@UEBA_NXZ
-    MCVAPI bool allowIndirect() const;
-
-    // symbol: ?hasChildrenSource@BaseCircuitComponent@@UEBA_NXZ
-    MCVAPI bool hasChildrenSource() const;
-
     // symbol: ??0BaseCircuitComponent@@QEAA@XZ
     MCAPI BaseCircuitComponent();
 
     // symbol: ?addSourceItem@BaseCircuitComponent@@QEAAXAEBVItem@CircuitComponentList@@@Z
     MCAPI void addSourceItem(class CircuitComponentList::Item const& item);
 
-    // symbol: ?hasDirectPower@BaseCircuitComponent@@QEAA_NXZ
-    MCAPI bool hasDirectPower();
+    // symbol: ?isRemoved@BaseCircuitComponent@@QEBA_NXZ
+    MCAPI bool isRemoved() const;
 
     // NOLINTEND
 

@@ -15,6 +15,7 @@ public:
     // prevent constructor by default
     ItemStackRequestActionMineBlock& operator=(ItemStackRequestActionMineBlock const&);
     ItemStackRequestActionMineBlock(ItemStackRequestActionMineBlock const&);
+    ItemStackRequestActionMineBlock();
 
 public:
     // NOLINTBEGIN
@@ -27,9 +28,6 @@ public:
     // vIndex: 5, symbol:
     // ?_read@ItemStackRequestActionMineBlock@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
-
-    // symbol: ??0ItemStackRequestActionMineBlock@@QEAA@XZ
-    MCAPI ItemStackRequestActionMineBlock();
 
     // symbol: ?getSrc@ItemStackRequestActionMineBlock@@QEBA?AUItemStackRequestSlotInfo@@XZ
     MCAPI struct ItemStackRequestSlotInfo getSrc() const;

@@ -11,6 +11,7 @@ public:
     // prevent constructor by default
     ItemStackRequestActionDrop& operator=(ItemStackRequestActionDrop const&);
     ItemStackRequestActionDrop(ItemStackRequestActionDrop const&);
+    ItemStackRequestActionDrop();
 
 public:
     // NOLINTBEGIN
@@ -23,12 +24,6 @@ public:
     // vIndex: 5, symbol:
     // ?_read@ItemStackRequestActionDrop@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
-
-    // symbol: ??0ItemStackRequestActionDrop@@QEAA@XZ
-    MCAPI ItemStackRequestActionDrop();
-
-    // symbol: ?getRandomly@ItemStackRequestActionDrop@@QEBA_NXZ
-    MCAPI bool getRandomly() const;
 
     // NOLINTEND
 };

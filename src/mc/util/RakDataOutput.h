@@ -18,7 +18,7 @@ public:
     virtual ~RakDataOutput();
 
     // vIndex: 9, symbol: ?writeBytes@RakDataOutput@@UEAAXPEBX_K@Z
-    virtual void writeBytes(void const*, uint64);
+    virtual void writeBytes(void const* data, uint64 bytes);
 
     // NOLINTEND
 };

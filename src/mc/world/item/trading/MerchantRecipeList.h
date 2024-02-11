@@ -23,15 +23,15 @@ public:
     // vIndex: 2, symbol: ?addIfNewOrBetter@MerchantRecipeList@@UEAAXPEAVMerchantRecipe@@@Z
     virtual void addIfNewOrBetter(class MerchantRecipe* toMatch);
 
-    // vIndex: 3, symbol: ?getMatchingRecipeFor@MerchantRecipeList@@UEAAPEAVMerchantRecipe@@AEBVItemInstance@@00@Z
+    // vIndex: 3, symbol: ?getMatchingRecipeFor@MerchantRecipeList@@UEAAPEAVMerchantRecipe@@AEBV2@@Z
+    virtual class MerchantRecipe* getMatchingRecipeFor(class MerchantRecipe const& recipe);
+
+    // vIndex: 4, symbol: ?getMatchingRecipeFor@MerchantRecipeList@@UEAAPEAVMerchantRecipe@@AEBVItemInstance@@00@Z
     virtual class MerchantRecipe* getMatchingRecipeFor(
         class ItemInstance const& buyA,
         class ItemInstance const& buyB,
         class ItemInstance const& sell
     );
-
-    // vIndex: 4, symbol: ?getMatchingRecipeFor@MerchantRecipeList@@UEAAPEAVMerchantRecipe@@AEBV2@@Z
-    virtual class MerchantRecipe* getMatchingRecipeFor(class MerchantRecipe const& recipe);
 
     // vIndex: 5, symbol: ?load@MerchantRecipeList@@UEAAXAEBVCompoundTag@@@Z
     virtual void load(class CompoundTag const& tag);

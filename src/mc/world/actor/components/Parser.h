@@ -259,6 +259,16 @@ public:
         uint                     defaultValue
     );
 
+    // symbol: ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAUIntRange@@PEBDHH@Z
+    MCAPI static void parse(
+        class Json::Value const& val,
+        class SemVersion const&  engineVersion,
+        struct IntRange&         variable,
+        char const*              jsonName,
+        int                      defaultMin,
+        int                      defaultMax
+    );
+
     // symbol: ?serialize@Parser@@SAXAEBVActorDefinitionTrigger@@AEAVValue@Json@@PEBD@Z
     MCAPI static void
     serialize(class ActorDefinitionTrigger const& trigger, class Json::Value& val, char const* jsonName);

@@ -89,8 +89,15 @@ public:
 
     // symbol:
     // ?addVersionedModuleBinding@GenericModuleBindingFactory@Scripting@@QEAAXUVersion@2@V?$function@$$A6A?AV?$optional@UModuleBinding@Scripting@@@std@@AEAVModuleBindingBuilder@Scripting@@AEBV?$optional@UContextConfig@Scripting@@@2@@Z@std@@0V?$vector@UModuleDescriptor@Scripting@@V?$allocator@UModuleDescriptor@Scripting@@@std@@@5@@Z
-    MCAPI void
-        addVersionedModuleBinding(struct Scripting::Version, std::function<std::optional<struct Scripting::ModuleBinding>(class Scripting::ModuleBindingBuilder&, std::optional<struct Scripting::ContextConfig> const&)>, struct Scripting::Version, std::vector<struct Scripting::ModuleDescriptor>);
+    MCAPI void addVersionedModuleBinding(
+        struct Scripting::Version alias,
+        std::function<std::optional<
+            struct Scripting::
+                ModuleBinding>(class Scripting::ModuleBindingBuilder&, std::optional<struct Scripting::ContextConfig> const&)>
+            version,
+        struct Scripting::Version,
+        std::vector<struct Scripting::ModuleDescriptor> dependencies
+    );
 
     // symbol:
     // ?addVersionedModuleBinding@GenericModuleBindingFactory@Scripting@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UVersion@2@V?$function@$$A6A?AV?$optional@UModuleBinding@Scripting@@@std@@AEAVModuleBindingBuilder@Scripting@@AEBV?$optional@UContextConfig@Scripting@@@2@@Z@4@1V?$vector@UModuleDescriptor@Scripting@@V?$allocator@UModuleDescriptor@Scripting@@@std@@@4@@Z

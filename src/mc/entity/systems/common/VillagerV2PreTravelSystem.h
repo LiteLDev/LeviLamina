@@ -23,12 +23,9 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol:
-    // ?_doVillagerV2PreTravel@VillagerV2PreTravelSystem@@CAXAEBVStrictEntityContext@@AEBUSynchedActorDataComponent@@V?$EntityModifier@V?$FlagComponent@USkipMobTravelFlag@@@@@@@Z
-    MCAPI static void _doVillagerV2PreTravel(
-        class StrictEntityContext const& entity,
-        struct SynchedActorDataComponent const&,
-        class EntityModifier<class FlagComponent<struct SkipMobTravelFlag>> modifier
-    );
+    // ?_doVillagerV2PreTravel@VillagerV2PreTravelSystem@@CAXAEBVStrictEntityContext@@AEBUActorDataFlagComponent@@V?$EntityModifier@V?$FlagComponent@USkipMobTravelFlag@@@@@@@Z
+    MCAPI static void
+    _doVillagerV2PreTravel(class StrictEntityContext const&, struct ActorDataFlagComponent const&, class EntityModifier<class FlagComponent<struct SkipMobTravelFlag>>);
 
     // NOLINTEND
 };

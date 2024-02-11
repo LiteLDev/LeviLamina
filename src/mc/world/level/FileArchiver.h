@@ -24,8 +24,6 @@ public:
     // clang-format on
 
     // FileArchiver inner types define
-    enum class Outcome {};
-
     class IWorldConverter {
     public:
         // prevent constructor by default
@@ -88,8 +86,8 @@ public:
         bool,
         std::unique_ptr<class FileArchiver::IWorldConverter>,
         Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> keyProvider,
-        Bedrock::NotNullNonOwnerPtr<class LevelDbEnv>,
-        std::function<void(std::string const&)> displayMessageFunction
+        Bedrock::NotNullNonOwnerPtr<class LevelDbEnv>                levelDbEnv,
+        std::function<void(std::string const&)>                      displayMessageFunction
     );
 
     // symbol:

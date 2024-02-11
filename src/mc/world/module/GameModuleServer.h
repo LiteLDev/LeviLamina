@@ -34,15 +34,9 @@ public:
         class BaseGameVersion const& baseGameVersion
     ) = 0;
 
-    // vIndex: 4, symbol: __unk_vfn_4
-    virtual void __unk_vfn_4() = 0;
-
     // vIndex: 5, symbol:
     // ?configureDocumentation@VanillaGameModuleServer@@UEAAXAEAVIGameModuleDocumentation@@VItemRegistryRef@@@Z
     virtual void configureDocumentation(class IGameModuleDocumentation& moduleDocumentation, class ItemRegistryRef) = 0;
-
-    // vIndex: 6, symbol: __unk_vfn_6
-    virtual void __unk_vfn_6() = 0;
 
     // vIndex: 7, symbol: ?setupCommands@VanillaGameModuleServer@@UEAAXAEAVCommandRegistry@@@Z
     virtual void setupCommands(class CommandRegistry& commandRegistry) = 0;

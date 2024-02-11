@@ -26,8 +26,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptBlockInventoryComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptBlockInventoryComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptBlockInventoryComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptBlockInventoryComponent() = default;
 
     // symbol: ??0ScriptBlockInventoryComponent@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
     MCAPI ScriptBlockInventoryComponent(class ScriptModuleMinecraft::ScriptBlockInventoryComponent const&);
@@ -43,10 +43,6 @@ public:
     MCAPI class Scripting::Result<std::optional<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockInventoryComponentContainer>>>
     getOrCreateContainerV010();
-
-    // symbol: ??4ScriptBlockInventoryComponent@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
-    MCAPI class ScriptModuleMinecraft::ScriptBlockInventoryComponent&
-    operator=(class ScriptModuleMinecraft::ScriptBlockInventoryComponent&&);
 
     // symbol:
     // ?bind@ScriptBlockInventoryComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptBlockInventoryComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z

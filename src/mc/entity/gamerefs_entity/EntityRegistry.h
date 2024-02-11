@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/WeakRefT.h"
+#include "mc/common/wrapper/WeakRef.h"
 
 class EntityRegistry {
 public:
@@ -19,8 +19,8 @@ public:
     // symbol: ??0EntityRegistry@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI explicit EntityRegistry(std::string identifier);
 
-    // symbol: ?getWeakRef@EntityRegistry@@QEAA?AV?$WeakRefT@UEntityRegistryRefTraits@@@@XZ
-    MCAPI class WeakRefT<struct EntityRegistryRefTraits> getWeakRef();
+    // symbol: ?getWeakRef@EntityRegistry@@QEAA?AV?$WeakRef@VEntityRegistry@@@@XZ
+    MCAPI class WeakRef<class EntityRegistry> getWeakRef();
 
     // symbol: ??1EntityRegistry@@QEAA@XZ
     MCAPI ~EntityRegistry();

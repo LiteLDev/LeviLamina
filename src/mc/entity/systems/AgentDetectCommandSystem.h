@@ -23,9 +23,6 @@ public:
     // vIndex: 0, symbol: __gen_??1AgentDetectCommandSystem@@UEAA@XZ
     virtual ~AgentDetectCommandSystem() = default;
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
-
     // vIndex: 2, symbol: ?tick@AgentDetectCommandSystem@@UEAAXAEAVEntityRegistry@@@Z
     virtual void tick(class EntityRegistry& registry);
 

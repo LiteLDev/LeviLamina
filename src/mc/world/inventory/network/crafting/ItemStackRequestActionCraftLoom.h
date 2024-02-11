@@ -11,6 +11,7 @@ public:
     // prevent constructor by default
     ItemStackRequestActionCraftLoom& operator=(ItemStackRequestActionCraftLoom const&);
     ItemStackRequestActionCraftLoom(ItemStackRequestActionCraftLoom const&);
+    ItemStackRequestActionCraftLoom();
 
 public:
     // NOLINTBEGIN
@@ -23,9 +24,6 @@ public:
     // vIndex: 5, symbol:
     // ?_read@ItemStackRequestActionCraftLoom@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
-
-    // symbol: ??0ItemStackRequestActionCraftLoom@@QEAA@XZ
-    MCAPI ItemStackRequestActionCraftLoom();
 
     // NOLINTEND
 };

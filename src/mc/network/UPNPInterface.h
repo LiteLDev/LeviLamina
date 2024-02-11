@@ -21,7 +21,7 @@ public:
     MCVAPI void _onEnable();
 
     // symbol: ??0UPNPInterface@@QEAA@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
-    MCAPI explicit UPNPInterface(class Bedrock::NonOwnerPointer<class AppPlatform> const&);
+    MCAPI explicit UPNPInterface(class Bedrock::NonOwnerPointer<class AppPlatform> const& appPlatform);
 
     // symbol: ?reset@UPNPInterface@@QEAAXXZ
     MCAPI void reset();

@@ -40,77 +40,11 @@ public:
     virtual class AABB const&
     getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 20, symbol: __unk_vfn_20
-    virtual void __unk_vfn_20();
-
-    // vIndex: 27, symbol: __unk_vfn_27
-    virtual void __unk_vfn_27();
-
-    // vIndex: 28, symbol: __unk_vfn_28
-    virtual void __unk_vfn_28();
-
-    // vIndex: 29, symbol: __unk_vfn_29
-    virtual void __unk_vfn_29();
-
-    // vIndex: 30, symbol: __unk_vfn_30
-    virtual void __unk_vfn_30();
-
-    // vIndex: 31, symbol: __unk_vfn_31
-    virtual void __unk_vfn_31();
-
-    // vIndex: 33, symbol: __unk_vfn_33
-    virtual void __unk_vfn_33();
-
-    // vIndex: 34, symbol: __unk_vfn_34
-    virtual void __unk_vfn_34();
-
-    // vIndex: 35, symbol: __unk_vfn_35
-    virtual void __unk_vfn_35();
-
-    // vIndex: 36, symbol: __unk_vfn_36
-    virtual void __unk_vfn_36();
-
-    // vIndex: 37, symbol: __unk_vfn_37
-    virtual void __unk_vfn_37();
-
-    // vIndex: 38, symbol: __unk_vfn_38
-    virtual void __unk_vfn_38();
-
-    // vIndex: 40, symbol: __unk_vfn_40
-    virtual void __unk_vfn_40();
-
-    // vIndex: 41, symbol: __unk_vfn_41
-    virtual void __unk_vfn_41();
-
-    // vIndex: 42, symbol: __unk_vfn_42
-    virtual void __unk_vfn_42();
-
-    // vIndex: 43, symbol: __unk_vfn_43
-    virtual void __unk_vfn_43();
-
-    // vIndex: 44, symbol: __unk_vfn_44
-    virtual void __unk_vfn_44();
-
-    // vIndex: 45, symbol: __unk_vfn_45
-    virtual void __unk_vfn_45();
-
-    // vIndex: 48, symbol: __unk_vfn_48
-    virtual void __unk_vfn_48();
-
-    // vIndex: 54, symbol: __unk_vfn_54
-    virtual void __unk_vfn_54();
-
-    // vIndex: 55, symbol: __unk_vfn_55
-    virtual void __unk_vfn_55();
+    // vIndex: 55, symbol: ?waterSpreadCausesSpawn@KelpBlock@@UEBA_NXZ
+    virtual bool waterSpreadCausesSpawn() const;
 
     // vIndex: 56, symbol: ?canContainLiquid@KelpBlock@@UEBA_NXZ
     virtual bool canContainLiquid() const;
-
-    // vIndex: 67, symbol: __unk_vfn_67
-    virtual void __unk_vfn_67();
-
-    // vIndex: 74, symbol: __unk_vfn_74
-    virtual void __unk_vfn_74();
 
     // vIndex: 79, symbol: ?onFertilized@KelpBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
     virtual bool
@@ -121,9 +55,10 @@ public:
     virtual bool mayConsumeFertilizer(class BlockSource& region) const;
 
     // vIndex: 81, symbol: ?canBeFertilized@KelpBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual bool canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
+    virtual bool
+    canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
 
-    // vIndex: 85, symbol: ?mayPlace@KelpBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 84, symbol: ?mayPlace@KelpBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 92, symbol: ?neighborChanged@KelpBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
@@ -133,50 +68,20 @@ public:
     // vIndex: 96, symbol: ?asItemInstance@KelpBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 109, symbol: __unk_vfn_109
-    virtual void __unk_vfn_109();
-
-    // vIndex: 110, symbol: __unk_vfn_110
-    virtual void __unk_vfn_110();
-
-    // vIndex: 111, symbol: __unk_vfn_111
-    virtual void __unk_vfn_111();
-
-    // vIndex: 114, symbol: __unk_vfn_114
-    virtual void __unk_vfn_114();
-
-    // vIndex: 117, symbol: __unk_vfn_117
-    virtual void __unk_vfn_117();
-
-    // vIndex: 121, symbol: ?getColor@KelpBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 122, symbol: ?getColor@KelpBlock@@UEBAHAEBVBlock@@@Z
     virtual int getColor(class Block const& block) const;
 
     // vIndex: 126, symbol: ?onGraphicsModeChanged@KelpBlock@@UEAAXAEBUBlockGraphicsModeChangeContext@@@Z
     virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const& context);
 
-    // vIndex: 138, symbol: __unk_vfn_138
-    virtual void __unk_vfn_138();
-
     // vIndex: 147, symbol: ?onPlace@KelpBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 149, symbol: __unk_vfn_149
-    virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@KelpBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 152, symbol: __unk_vfn_152
-    virtual void __unk_vfn_152();
-
-    // vIndex: 155, symbol: __unk_vfn_155
-    virtual void __unk_vfn_155();
-
     // vIndex: 156, symbol: ?canSurvive@KelpBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
-
-    // symbol: ?waterSpreadCausesSpawn@KelpBlock@@UEBA_NXZ
-    MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0KelpBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI KelpBlock(std::string const& nameId, int id);

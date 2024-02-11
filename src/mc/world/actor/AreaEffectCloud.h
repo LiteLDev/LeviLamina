@@ -44,49 +44,19 @@ public:
     // vIndex: 10, symbol: __gen_??1AreaEffectCloud@@UEAA@XZ
     virtual ~AreaEffectCloud() = default;
 
-    // vIndex: 23, symbol: __unk_vfn_23
-    virtual void __unk_vfn_23();
-
     // vIndex: 29, symbol: ?normalTick@AreaEffectCloud@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 39, symbol: __unk_vfn_39
-    virtual void __unk_vfn_39();
-
-    // vIndex: 42, symbol: __unk_vfn_42
-    virtual void __unk_vfn_42();
-
-    // vIndex: 43, symbol: ?getShadowRadius@AreaEffectCloud@@UEBAMXZ
+    // vIndex: 41, symbol: ?getShadowRadius@AreaEffectCloud@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 47, symbol: __unk_vfn_47
-    virtual void __unk_vfn_47();
-
-    // vIndex: 60, symbol: __unk_vfn_60
-    virtual void __unk_vfn_60();
-
-    // vIndex: 61, symbol: __unk_vfn_61
-    virtual void __unk_vfn_61();
-
-    // vIndex: 62, symbol: __unk_vfn_62
-    virtual void __unk_vfn_62();
-
-    // vIndex: 68, symbol: ?setOwner@AreaEffectCloud@@UEAAXUActorUniqueID@@@Z
+    // vIndex: 65, symbol: ?setOwner@AreaEffectCloud@@UEAAXUActorUniqueID@@@Z
     virtual void setOwner(struct ActorUniqueID ownerID);
 
-    // vIndex: 107, symbol: __unk_vfn_107
-    virtual void __unk_vfn_107();
-
-    // vIndex: 144, symbol: __unk_vfn_144
-    virtual void __unk_vfn_144();
-
-    // vIndex: 162, symbol: __unk_vfn_162
-    virtual void __unk_vfn_162();
-
-    // vIndex: 164, symbol: ?readAdditionalSaveData@AreaEffectCloud@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 159, symbol: ?readAdditionalSaveData@AreaEffectCloud@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 165, symbol: ?addAdditionalSaveData@AreaEffectCloud@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 160, symbol: ?addAdditionalSaveData@AreaEffectCloud@@MEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ??0AreaEffectCloud@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
@@ -108,6 +78,9 @@ public:
     // symbol: ?getParticle@AreaEffectCloud@@QEBA?AW4ParticleType@@XZ
     MCAPI ::ParticleType getParticle() const;
 
+    // symbol: ?getPickupCount@AreaEffectCloud@@QEBAHXZ
+    MCAPI int getPickupCount() const;
+
     // symbol: ?notifyPickup@AreaEffectCloud@@QEAAXXZ
     MCAPI void notifyPickup();
 
@@ -125,6 +98,9 @@ public:
 
     // symbol: ?setParticleColor@AreaEffectCloud@@QEAAXAEAVColor@mce@@@Z
     MCAPI void setParticleColor(class mce::Color& c);
+
+    // symbol: ?setPickupCount@AreaEffectCloud@@QEAAXH@Z
+    MCAPI void setPickupCount(int useCount);
 
     // symbol: ?setPotion@AreaEffectCloud@@QEAAXF@Z
     MCAPI void setPotion(short potionAUX);
@@ -145,11 +121,11 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_getTicksAlive@AreaEffectCloud@@AEBA_JXZ
-    MCAPI int64 _getTicksAlive() const;
+    // symbol: ?_getSpawnTick@AreaEffectCloud@@AEBA_KXZ
+    MCAPI uint64 _getSpawnTick() const;
 
     // symbol: ?_setSpawnTick@AreaEffectCloud@@AEAAX_J@Z
-    MCAPI void _setSpawnTick(int64);
+    MCAPI void _setSpawnTick(int64 time);
 
     // symbol: ?_spawnParticles@AreaEffectCloud@@AEAAXAEAVRandom@@IM@Z
     MCAPI void _spawnParticles(class Random& random, uint numParticles, float radius);

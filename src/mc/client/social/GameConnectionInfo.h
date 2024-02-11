@@ -42,9 +42,6 @@ public:
     // symbol: ?getType@GameConnectionInfo@Social@@QEBA?AW4ConnectionType@2@XZ
     MCAPI ::Social::ConnectionType getType() const;
 
-    // symbol: ?getWebRTCNetworkId@GameConnectionInfo@Social@@QEBA_KXZ
-    MCAPI uint64 getWebRTCNetworkId() const;
-
     // symbol: ??4GameConnectionInfo@Social@@QEAAAEAV01@AEBV01@@Z
     MCAPI class Social::GameConnectionInfo& operator=(class Social::GameConnectionInfo const&);
 

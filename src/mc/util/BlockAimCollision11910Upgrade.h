@@ -3,17 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/util/CerealSchemaUpgrade.h"
+#include "mc/util/BlockCerealSchemaUpgrade.h"
 
 // auto generated forward declare list
 // clang-format off
-class CerealSchemaUpgrade;
-namespace cereal { class SchemaFactory; }
+class BlockCerealSchemaUpgrade;
+class SemVersion;
 // clang-format on
 
 namespace BlockSelectionBoxVersioning {
 
-class BlockAimCollision11910Upgrade : public ::CerealSchemaUpgrade {
+class BlockAimCollision11910Upgrade : public ::BlockCerealSchemaUpgrade {
 public:
     // prevent constructor by default
     BlockAimCollision11910Upgrade& operator=(BlockAimCollision11910Upgrade const&);
@@ -25,15 +25,16 @@ public:
     virtual ~BlockAimCollision11910Upgrade() = default;
 
     // vIndex: 1, symbol:
-    // ?previousSchema@BlockAimCollision11910Upgrade@BlockSelectionBoxVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z
-    virtual void previousSchema(class cereal::SchemaFactory&) const;
+    // ?previousSchema@BlockAimCollision11910Upgrade@BlockSelectionBoxVersioning@@UEBA_NAEBV?$GenericValue@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@@rapidjson@@@Z
+    virtual bool previousSchema(rapidjson::GenericValue<
+                                rapidjson::UTF8<char>,
+                                rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>> const&) const;
 
     // vIndex: 2, symbol:
-    // ?upgradeToNext@BlockAimCollision11910Upgrade@BlockSelectionBoxVersioning@@UEBA_NAEAV?$GenericDocument@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@VCrtAllocator@2@@rapidjson@@@Z
-    virtual bool upgradeToNext(rapidjson::GenericDocument<
-                               rapidjson::UTF8<char>,
-                               rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>,
-                               rapidjson::CrtAllocator>& document) const;
+    // ?upgradeToNext@BlockAimCollision11910Upgrade@BlockSelectionBoxVersioning@@UEBAXAEAV?$GenericDocument@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@VCrtAllocator@2@@rapidjson@@AEBVSemVersion@@@Z
+    virtual void
+    upgradeToNext(rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&, class SemVersion const&)
+        const;
 
     // symbol: ??0BlockAimCollision11910Upgrade@BlockSelectionBoxVersioning@@QEAA@XZ
     MCAPI BlockAimCollision11910Upgrade();

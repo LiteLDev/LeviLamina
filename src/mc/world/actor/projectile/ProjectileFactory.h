@@ -20,13 +20,16 @@ public:
     MCAPI explicit ProjectileFactory(class Level& level);
 
     // symbol:
-    // ?shootProjectileFromDefinition@ProjectileFactory@@QEAAPEAVActor@@AEBUActorDefinitionIdentifier@@PEAVMob@@VVec3@@HM@Z
+    // ?shootProjectileFromDefinition@ProjectileFactory@@QEAAPEAVActor@@AEBUActorDefinitionIdentifier@@PEAVMob@@VVec3@@HM_N32@Z
     MCAPI class Actor* shootProjectileFromDefinition(
-        struct ActorDefinitionIdentifier const& identifier,
-        class Mob*                              owner,
-        class Vec3                              targetDir,
-        int                                     auxValue,
-        float
+        struct ActorDefinitionIdentifier const&,
+        class Mob*,
+        class Vec3,
+        int,
+        float,
+        bool,
+        bool,
+        class Vec3
     );
 
     // symbol:
@@ -46,7 +49,7 @@ private:
     // NOLINTBEGIN
     // symbol:
     // ?mSubcomponentMap@ProjectileFactory@@0V?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6A?AV?$unique_ptr@VOnHitSubcomponent@@U?$default_delete@VOnHitSubcomponent@@@std@@@std@@XZ@2@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6A?AV?$unique_ptr@VOnHitSubcomponent@@U?$default_delete@VOnHitSubcomponent@@@std@@@std@@XZ@2@@std@@@2@@std@@A
-    MCAPI static std::unordered_map<std::string, std::function<std::unique_ptr<class OnHitSubcomponent>(void)>>
+    MCAPI static std::unordered_map<std::string, std::function<std::unique_ptr<class OnHitSubcomponent>()>>
         mSubcomponentMap;
 
     // NOLINTEND

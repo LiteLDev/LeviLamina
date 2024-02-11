@@ -24,9 +24,6 @@ public:
     // vIndex: 1, symbol: ?checkComponentDataForContentErrors@ItemComponent@@UEBA_NXZ
     virtual bool checkComponentDataForContentErrors() const;
 
-    // vIndex: 2, symbol: ?writeSettings@ItemComponent@@UEAAXXZ
-    virtual void writeSettings();
-
     // vIndex: 3, symbol: ?isNetworkComponent@InteractButtonItemComponent@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
@@ -49,6 +46,9 @@ public:
 
     // vIndex: 9, symbol: ?_initializeComponent@TagsItemComponent@@UEAAXXZ
     virtual void _initializeComponent();
+
+    // symbol: ??4TagsItemComponent@@QEAAAEAV0@$$QEAV0@@Z
+    MCAPI class TagsItemComponent& operator=(class TagsItemComponent&&);
 
     // symbol: ??4TagsItemComponent@@QEAAAEAV0@AEBV0@@Z
     MCAPI class TagsItemComponent& operator=(class TagsItemComponent const&);

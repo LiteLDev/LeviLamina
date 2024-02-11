@@ -44,12 +44,10 @@ public:
     // prevent constructor by default
     DynamicProperties& operator=(DynamicProperties const&);
     DynamicProperties(DynamicProperties const&);
+    DynamicProperties();
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0DynamicProperties@@QEAA@XZ
-    MCAPI DynamicProperties();
-
     // symbol:
     // ?clearCollection@DynamicProperties@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void clearCollection(std::string const&);
@@ -61,20 +59,20 @@ public:
     MCAPI uint64 getCollectionCount() const;
 
     // symbol:
-    // ?getDynamicProperty@DynamicProperties@@QEAAPEAV?$variant@NM_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VVec3@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@0@Z
-    MCAPI std::variant<double, float, bool, std::string, class Vec3>*
-          getDynamicProperty(std::string const& key, std::string const& collectionName);
+    // ?getDynamicProperty@DynamicProperties@@QEBAPEBV?$variant@NM_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VVec3@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@0@Z
+    MCAPI std::variant<double, float, bool, std::string, class Vec3> const*
+          getDynamicProperty(std::string const& key, std::string const& collectionName) const;
 
     // symbol:
-    // ?getDynamicPropertyIds@DynamicProperties@@QEAA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-    MCAPI std::vector<std::string> getDynamicPropertyIds(std::string const&);
+    // ?getDynamicPropertyIds@DynamicProperties@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+    MCAPI std::vector<std::string> getDynamicPropertyIds(std::string const&) const;
 
     // symbol: ?getTotalByteCount@DynamicProperties@@QEBA_KXZ
     MCAPI uint64 getTotalByteCount() const;
 
     // symbol:
-    // ?getTotalByteCount@DynamicProperties@@QEAA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI uint64 getTotalByteCount(std::string const&);
+    // ?getTotalByteCount@DynamicProperties@@QEBA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI uint64 getTotalByteCount(std::string const&) const;
 
     // symbol:
     // ?removeDynamicProperty@DynamicProperties@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
@@ -119,6 +117,14 @@ public:
 
     // private:
     // NOLINTBEGIN
+    // symbol:
+    // ?_getPropertyCollection@DynamicProperties@@AEAAPEAUPropertyCollection@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI struct DynamicProperties::PropertyCollection* _getPropertyCollection(std::string const&);
+
+    // symbol:
+    // ?_getPropertyCollection@DynamicProperties@@AEBAPEBUPropertyCollection@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI struct DynamicProperties::PropertyCollection const* _getPropertyCollection(std::string const&) const;
+
     // symbol:
     // ?_getPropertyVariant@DynamicProperties@@CA?AVmeta_any@entt@@AEBV?$variant@NM_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VVec3@@@std@@@Z
     MCAPI static entt::meta_any

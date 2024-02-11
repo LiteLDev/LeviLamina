@@ -4,8 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Core { class Path; }
 namespace cereal { struct ReflectionCtx; }
-namespace cereal { struct Schema; }
 // clang-format on
 
 struct BlockDefinition {
@@ -30,13 +30,13 @@ public:
     // symbol: ??1BlockDefinition@@QEAA@XZ
     MCAPI ~BlockDefinition();
 
-    // symbol:
-    // ?createBlockAbstractCerealSchema@BlockDefinition@@SA?AUSchema@cereal@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAUReflectionCtx@3@@Z
-    MCAPI static struct cereal::Schema
-    createBlockAbstractCerealSchema(std::string const&, struct cereal::ReflectionCtx&);
-
     // symbol: ?registerBlockDefinitionTypes@BlockDefinition@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void registerBlockDefinitionTypes(struct cereal::ReflectionCtx&);
+
+    // symbol:
+    // ?upgradeJson@BlockDefinition@@SA?AU?$pair@_NVSemVersion@@@std@@AEAUReflectionCtx@cereal@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBVPath@Core@@V?$optional@VSemVersion@@@3@@Z
+    MCAPI static std::pair<bool, class SemVersion>
+    upgradeJson(struct cereal::ReflectionCtx&, std::string&, class Core::Path const&, std::optional<class SemVersion>);
 
     // NOLINTEND
 

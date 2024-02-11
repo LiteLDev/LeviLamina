@@ -25,57 +25,67 @@ public:
     // vIndex: 0, symbol: __gen_??1ClientInputUpdateSystemInternal@@UEAA@XZ
     virtual ~ClientInputUpdateSystemInternal() = default;
 
-    // symbol:
-    // ?tick@ClientInputUpdateSystemInternal@@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UCanStandOnSnowFlag@@@@V?$FlagComponent@UHasLightweightFamilyFlag@@@@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UMobFlag@@@@V?$FlagComponent@UParrotFlag@@@@UVehicleComponent@@V?$FlagComponent@UCamelFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@ULocalPlayerComponentFlag@@@@UPlayerInputRequestComponent@@@@U?$Read@UActorTypeComponent@@UFallDistanceComponent@@UActorGameTypeComponent@@UVehicleComponent@@UMobBodyRotationComponent@@URenderRotationComponent@@UStandAnimationComponent@@USynchedActorDataComponent@@UOffsetsComponent@@UVanillaOffsetComponent@@UPassengerRenderingRidingOffsetComponent@@UAABBShapeComponent@@UAbilitiesComponent@@UActorRotationComponent@@UAttributesComponent@@V?$FlagComponent@UCanStandOnSnowFlag@@@@UDimensionTypeComponent@@V?$FlagComponent@UHasLightweightFamilyFlag@@@@V?$FlagComponent@UImmuneToLavaDragFlag@@@@UMobEffectsComponent@@UPassengerComponent@@USneakingComponent@@UStateVectorComponent@@USubBBsComponent@@V?$FlagComponent@UInWaterFlag@@@@@@U?$Write@VActorOwnerComponent@@UClientInputLockComponent@@UMoveInputComponent@@URawMoveInputComponent@@USynchedActorDataComponent@@UVanillaClientGameplayComponent@@@@U?$AddRemove@$$V@@U?$GlobalRead@UExternalDataComponent@@ULocalConstBlockSourceFactoryComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
-    MCVAPI void tick(class StrictExecutionContext<
-                     struct Filter<
-                         class FlagComponent<struct CanStandOnSnowFlag>,
-                         class FlagComponent<struct HasLightweightFamilyFlag>,
-                         class FlagComponent<struct HorseFlag>,
-                         class FlagComponent<struct MobFlag>,
-                         class FlagComponent<struct ParrotFlag>,
-                         struct VehicleComponent,
-                         class FlagComponent<struct CamelFlag>,
-                         class FlagComponent<struct PlayerComponentFlag>,
-                         class FlagComponent<struct LocalPlayerComponentFlag>,
-                         struct PlayerInputRequestComponent>,
-                     struct Read<
-                         struct ActorTypeComponent,
-                         struct FallDistanceComponent,
-                         struct ActorGameTypeComponent,
-                         struct VehicleComponent,
-                         struct MobBodyRotationComponent,
-                         struct RenderRotationComponent,
-                         struct StandAnimationComponent,
-                         struct SynchedActorDataComponent,
-                         struct OffsetsComponent,
-                         struct VanillaOffsetComponent,
-                         struct PassengerRenderingRidingOffsetComponent,
-                         struct AABBShapeComponent,
-                         struct AbilitiesComponent,
-                         struct ActorRotationComponent,
-                         struct AttributesComponent,
-                         class FlagComponent<struct CanStandOnSnowFlag>,
-                         struct DimensionTypeComponent,
-                         class FlagComponent<struct HasLightweightFamilyFlag>,
-                         class FlagComponent<struct ImmuneToLavaDragFlag>,
-                         struct MobEffectsComponent,
-                         struct PassengerComponent,
-                         struct SneakingComponent,
-                         struct StateVectorComponent,
-                         struct SubBBsComponent,
-                         class FlagComponent<struct InWaterFlag>>,
-                     struct Write<
-                         class ActorOwnerComponent,
-                         struct ClientInputLockComponent,
-                         struct MoveInputComponent,
-                         struct RawMoveInputComponent,
-                         struct SynchedActorDataComponent,
-                         struct VanillaClientGameplayComponent>,
-                     struct AddRemove<>,
-                     struct GlobalRead<struct ExternalDataComponent, struct LocalConstBlockSourceFactoryComponent>,
-                     struct GlobalWrite<>,
-                     struct EntityFactoryT<>>&);
+    // vIndex: 2, symbol: __unk_vfn_2
+    virtual void __unk_vfn_2();
+
+    // vIndex: 3, symbol: __unk_vfn_3
+    virtual void __unk_vfn_3();
+
+    // vIndex: 4, symbol: __unk_vfn_4
+    virtual void __unk_vfn_4();
+
+    // vIndex: 6, symbol:
+    // ?tick@ClientInputUpdateSystemInternal@@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UCanStandOnSnowFlag@@@@V?$FlagComponent@UHasLightweightFamilyFlag@@@@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UMobFlag@@@@V?$FlagComponent@UParrotFlag@@@@UVehicleComponent@@V?$FlagComponent@UCamelFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@ULocalPlayerComponentFlag@@@@UPlayerInputRequestComponent@@@@U?$Read@UActorTypeComponent@@UFallDistanceComponent@@UActorGameTypeComponent@@UVehicleComponent@@UMobBodyRotationComponent@@URenderRotationComponent@@UStandAnimationComponent@@UActorDataFlagComponent@@UOffsetsComponent@@UVanillaOffsetComponent@@UPassengerRenderingRidingOffsetComponent@@UAABBShapeComponent@@UMovementAbilitiesComponent@@UActorRotationComponent@@UMovementAttributesComponent@@V?$FlagComponent@UCanStandOnSnowFlag@@@@UDimensionTypeComponent@@V?$FlagComponent@UHasLightweightFamilyFlag@@@@V?$FlagComponent@UImmuneToLavaDragFlag@@@@UMobEffectsComponent@@UPassengerComponent@@USneakingComponent@@UStateVectorComponent@@USubBBsComponent@@V?$FlagComponent@UInWaterFlag@@@@@@U?$Write@VActorOwnerComponent@@UClientInputLockComponent@@UMoveInputComponent@@URawMoveInputComponent@@UActorDataFlagComponent@@UActorDataDirtyFlagsComponent@@UVanillaClientGameplayComponent@@@@U?$AddRemove@$$V@@U?$GlobalRead@UExternalDataComponent@@ULocalConstBlockSourceFactoryComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
+    virtual void tick(class StrictExecutionContext<
+                      struct Filter<
+                          class FlagComponent<struct CanStandOnSnowFlag>,
+                          class FlagComponent<struct HasLightweightFamilyFlag>,
+                          class FlagComponent<struct HorseFlag>,
+                          class FlagComponent<struct MobFlag>,
+                          class FlagComponent<struct ParrotFlag>,
+                          struct VehicleComponent,
+                          class FlagComponent<struct CamelFlag>,
+                          class FlagComponent<struct PlayerComponentFlag>,
+                          class FlagComponent<struct LocalPlayerComponentFlag>,
+                          struct PlayerInputRequestComponent>,
+                      struct Read<
+                          struct ActorTypeComponent,
+                          struct FallDistanceComponent,
+                          struct ActorGameTypeComponent,
+                          struct VehicleComponent,
+                          struct MobBodyRotationComponent,
+                          struct RenderRotationComponent,
+                          struct StandAnimationComponent,
+                          struct ActorDataFlagComponent,
+                          struct OffsetsComponent,
+                          struct VanillaOffsetComponent,
+                          struct PassengerRenderingRidingOffsetComponent,
+                          struct AABBShapeComponent,
+                          struct MovementAbilitiesComponent,
+                          struct ActorRotationComponent,
+                          struct MovementAttributesComponent,
+                          class FlagComponent<struct CanStandOnSnowFlag>,
+                          struct DimensionTypeComponent,
+                          class FlagComponent<struct HasLightweightFamilyFlag>,
+                          class FlagComponent<struct ImmuneToLavaDragFlag>,
+                          struct MobEffectsComponent,
+                          struct PassengerComponent,
+                          struct SneakingComponent,
+                          struct StateVectorComponent,
+                          struct SubBBsComponent,
+                          class FlagComponent<struct InWaterFlag>>,
+                      struct Write<
+                          class ActorOwnerComponent,
+                          struct ClientInputLockComponent,
+                          struct MoveInputComponent,
+                          struct RawMoveInputComponent,
+                          struct ActorDataFlagComponent,
+                          struct ActorDataDirtyFlagsComponent,
+                          struct VanillaClientGameplayComponent>,
+                      struct AddRemove<>,
+                      struct GlobalRead<struct ExternalDataComponent, struct LocalConstBlockSourceFactoryComponent>,
+                      struct GlobalWrite<>,
+                      struct EntityFactoryT<>>&);
 
     // NOLINTEND
 };

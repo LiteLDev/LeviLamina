@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/services/persona/ArmSize.h"
+#include "mc/client/services/persona/BodySize.h"
 #include "mc/client/services/persona/PieceType.h"
 
 // auto generated forward declare list

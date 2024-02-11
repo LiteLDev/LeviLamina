@@ -11,12 +11,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_finalizeCollisionBoxComponent@BlockLegacyComponentStorageFinalizer@@AEAAXAEAVBlockLegacy@@@Z
-    MCAPI void _finalizeCollisionBoxComponent(class BlockLegacy&);
-
-    // symbol: ?_finalizeSelectionBoxComponent@BlockLegacyComponentStorageFinalizer@@AEAAXAEAVBlockLegacy@@@Z
-    MCAPI void _finalizeSelectionBoxComponent(class BlockLegacy&);
-
     // symbol: ?addRemainingComponents@BlockLegacyComponentStorageFinalizer@@AEAAXAEAVBlockLegacy@@@Z
     MCAPI void addRemainingComponents(class BlockLegacy&);
 

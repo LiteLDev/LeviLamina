@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/AutomaticID.h"
-
 struct ResourceDropsContext {
 public:
     // prevent constructor by default
@@ -14,19 +11,33 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ResourceDropsContext@@QEAA@MAEBVItemStack@@AEBVBlockSource@@@Z
-    MCAPI ResourceDropsContext(float explosionRadius, class ItemStack const&, class BlockSource const& region);
+    // symbol: ?getBlockActor@ResourceDropsContext@@QEBAPEBVBlockActor@@XZ
+    MCAPI class BlockActor const* getBlockActor() const;
 
-    // symbol: ??0ResourceDropsContext@@QEAA@MAEBVItemStack@@AEAVILevel@@V?$AutomaticID@VDimension@@H@@@Z
-    MCAPI ResourceDropsContext(
-        float explosionRadius,
-        class ItemStack const&,
-        class ILevel& level,
-        DimensionType dimensionType
-    );
+    // symbol: ?getLevel@ResourceDropsContext@@QEBAAEAVILevel@@XZ
+    MCAPI class ILevel& getLevel() const;
+
+    // symbol: ?getMiningLootBonusLevel@ResourceDropsContext@@QEBAHXZ
+    MCAPI int getMiningLootBonusLevel() const;
 
     // symbol: ?getRandom@ResourceDropsContext@@QEBAAEAVRandom@@XZ
     MCAPI class Random& getRandom() const;
+
+    // symbol: ?isUsingSilkTouch@ResourceDropsContext@@QEBA_NXZ
+    MCAPI bool isUsingSilkTouch() const;
+
+    // symbol: ?fromExplosion@ResourceDropsContext@@SA?AU1@AEBVIBlockSource@@MAEBVBlockPos@@@Z
+    MCAPI static struct ResourceDropsContext fromExplosion(class IBlockSource const&, float, class BlockPos const&);
+
+    // symbol: ?fromOtherCause@ResourceDropsContext@@SA?AU1@AEBVIBlockSource@@AEBVBlockPos@@@Z
+    MCAPI static struct ResourceDropsContext fromOtherCause(class IBlockSource const&, class BlockPos const&);
+
+    // symbol: ?fromPlayerMining@ResourceDropsContext@@SA?AU1@AEBVIBlockSource@@AEBVBlockPos@@AEBVItemStack@@@Z
+    MCAPI static struct ResourceDropsContext
+    fromPlayerMining(class IBlockSource const&, class BlockPos const&, class ItemStack const&);
+
+    // symbol: ?fromProjectileHit@ResourceDropsContext@@SA?AU1@AEBVIBlockSource@@AEBVBlockPos@@@Z
+    MCAPI static struct ResourceDropsContext fromProjectileHit(class IBlockSource const&, class BlockPos const&);
 
     // NOLINTEND
 };

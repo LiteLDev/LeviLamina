@@ -51,6 +51,9 @@ public:
     // symbol: ?getPreliminarySurfaceLevel@WorldGenerator@@UEBA?AV?$optional@F@std@@V?$DividedPos2d@$03@@@Z
     MCVAPI std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4> worldPos) const;
 
+    // symbol: ?init@WorldGenerator@@UEAAXXZ
+    MCVAPI void init();
+
     // symbol: ?isStructureFeatureTypeAt@WorldGenerator@@UEBA_NAEBVBlockPos@@W4StructureFeatureType@@@Z
     MCVAPI bool isStructureFeatureTypeAt(class BlockPos const& pos, ::StructureFeatureType type) const;
 
@@ -81,10 +84,19 @@ public:
     // symbol: ?postProcessStructureFeatures@WorldGenerator@@IEAAXAEAVBlockSource@@AEAVRandom@@HH@Z
     MCAPI void postProcessStructureFeatures(class BlockSource& region, class Random& random, int chunkX, int chunkZ);
 
+    // symbol: ?postProcessStructures@WorldGenerator@@IEAAXAEAVBlockSource@@AEAVRandom@@HH@Z
+    MCAPI void postProcessStructures(class BlockSource&, class Random&, int, int);
+
+    // symbol: ?preProcessStructures@WorldGenerator@@IEAAXAEAVDimension@@AEBVChunkPos@@AEBVBiomeSource@@@Z
+    MCAPI void preProcessStructures(class Dimension&, class ChunkPos const&, class BiomeSource const&);
+
     // symbol:
     // ?prepareStructureFeatureBlueprints@WorldGenerator@@IEAAXAEAVDimension@@AEBVChunkPos@@AEBVBiomeSource@@AEBVIPreliminarySurfaceProvider@@@Z
     MCAPI void
     prepareStructureFeatureBlueprints(class Dimension& dimension, class ChunkPos const& cp, class BiomeSource const& biomeSource, class IPreliminarySurfaceProvider const&);
+
+    // symbol: ?waitForStructures@WorldGenerator@@IEAAXXZ
+    MCAPI void waitForStructures();
 
     // NOLINTEND
 

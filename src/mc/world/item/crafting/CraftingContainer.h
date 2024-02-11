@@ -26,29 +26,20 @@ public:
     // vIndex: 10, symbol: ?setItem@CraftingContainer@@UEAAXHAEBVItemStack@@@Z
     virtual void setItem(int slot, class ItemStack const& item);
 
-    // vIndex: 16, symbol: ?getContainerSize@CraftingContainer@@UEBAHXZ
+    // vIndex: 17, symbol: ?getContainerSize@CraftingContainer@@UEBAHXZ
     virtual int getContainerSize() const;
 
-    // vIndex: 17, symbol: ?getMaxStackSize@CraftingContainer@@UEBAHXZ
+    // vIndex: 18, symbol: ?getMaxStackSize@CraftingContainer@@UEBAHXZ
     virtual int getMaxStackSize() const;
 
-    // vIndex: 18, symbol: ?startOpen@CraftingContainer@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 19, symbol: ?startOpen@CraftingContainer@@UEAAXAEAVPlayer@@@Z
     virtual void startOpen(class Player&);
 
-    // vIndex: 19, symbol: ?stopOpen@CraftingContainer@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 20, symbol: ?stopOpen@CraftingContainer@@UEAAXAEAVPlayer@@@Z
     virtual void stopOpen(class Player&);
 
-    // vIndex: 25, symbol: __unk_vfn_25
-    virtual void __unk_vfn_25();
-
-    // vIndex: 26, symbol: __unk_vfn_26
-    virtual void __unk_vfn_26();
-
-    // vIndex: 27, symbol: ?setContainerChanged@CraftingContainer@@UEAAXH@Z
+    // vIndex: 28, symbol: ?setContainerChanged@CraftingContainer@@UEAAXH@Z
     virtual void setContainerChanged(int slot);
-
-    // vIndex: 34, symbol: __unk_vfn_34
-    virtual void __unk_vfn_34();
 
     // symbol: ??0CraftingContainer@@QEAA@HH@Z
     MCAPI CraftingContainer(int w, int h);

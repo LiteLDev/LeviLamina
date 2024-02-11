@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Scripting { class DependencyLocator; }
 namespace Scripting { class IDebuggerController; }
 namespace Scripting { class IDebuggerTransport; }
 namespace Scripting { class IDependencyLoader; }
@@ -63,20 +62,15 @@ public:
     virtual ~ScriptEngine() = default;
 
     // vIndex: 1, symbol:
-    // ?createScriptingContext@ScriptEngine@Scripting@@UEAA?AUScriptContextResult@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUModuleDescriptor@2@AEBV?$vector@UModuleDescriptor@Scripting@@V?$allocator@UModuleDescriptor@Scripting@@@std@@@5@PEAVIDependencyLoader@2@AEBUContextConfig@2@@Z
-    virtual struct Scripting::ScriptContextResult createScriptingContext(
-        std::string const&,
-        struct Scripting::ModuleDescriptor const&,
-        std::vector<struct Scripting::ModuleDescriptor> const& dependencies,
-        class Scripting::IDependencyLoader*                    loader,
-        struct Scripting::ContextConfig const&                 config
-    );
+    // ?createScriptingContext@ScriptEngine@Scripting@@UEAA?AUScriptContextResult@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUModuleDescriptor@2@AEBV?$vector@UModuleDescriptor@Scripting@@V?$allocator@UModuleDescriptor@Scripting@@@std@@@5@PEAVIDependencyLoader@2@PEAVIPrinter@2@AEBUContextConfig@2@@Z
+    virtual struct Scripting::ScriptContextResult
+    createScriptingContext(std::string const&, struct Scripting::ModuleDescriptor const&, std::vector<struct Scripting::ModuleDescriptor> const&, class Scripting::IDependencyLoader*, class Scripting::IPrinter*, struct Scripting::ContextConfig const&);
 
     // vIndex: 2, symbol: ?getRegistryManager@ScriptEngine@Scripting@@UEAAAEAVRegistryManager@2@XZ
     virtual class Scripting::RegistryManager& getRegistryManager();
 
-    // symbol: ??0ScriptEngine@Scripting@@QEAA@PEAVIPrinter@1@PEAVDependencyLocator@1@@Z
-    MCAPI ScriptEngine(class Scripting::IPrinter*, class Scripting::DependencyLocator*);
+    // symbol: ??0ScriptEngine@Scripting@@QEAA@PEAVRegistryManager@1@@Z
+    MCAPI explicit ScriptEngine(class Scripting::RegistryManager*);
 
     // symbol:
     // ?addModuleBindingFactory@ScriptEngine@Scripting@@QEAAXV?$unique_ptr@VIModuleBindingFactory@Scripting@@U?$default_delete@VIModuleBindingFactory@Scripting@@@std@@@std@@@Z
@@ -108,11 +102,9 @@ public:
     MCAPI class Scripting::IWatchdog*
     enableWatchdog(std::string const&, struct Scripting::WatchdogSettings const& settings);
 
-    // symbol: ?executeCoroutines@ScriptEngine@Scripting@@QEAAXV?$duration@_JU?$ratio@$00$0PECEA@@std@@@chrono@std@@@Z
-    MCAPI void executeCoroutines(std::chrono::microseconds);
-
-    // symbol: ?getDependencyLocator@ScriptEngine@Scripting@@QEAAPEAVDependencyLocator@2@XZ
-    MCAPI class Scripting::DependencyLocator* getDependencyLocator();
+    // symbol:
+    // ?executeCoroutines@ScriptEngine@Scripting@@QEAAXV?$optional@V?$duration@_JU?$ratio@$00$0PECEA@@std@@@chrono@std@@@std@@@Z
+    MCAPI void executeCoroutines(std::optional<std::chrono::microseconds>);
 
     // symbol:
     // ?getModuleDescriptorByName@ScriptEngine@Scripting@@QEBA?AV?$optional@UModuleDescriptor@Scripting@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z

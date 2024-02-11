@@ -19,6 +19,9 @@ public:
     // symbol: ?makeErrorFromAny@ResultAny@Scripting@@SA?AV12@$$QEAVmeta_any@entt@@@Z
     MCAPI static class Scripting::ResultAny makeErrorFromAny(entt::meta_any&&);
 
+    // symbol: ?makeResultFromAny@ResultAny@Scripting@@SA?AV12@AEBVmeta_any@entt@@@Z
+    MCAPI static class Scripting::ResultAny makeResultFromAny(entt::meta_any const&);
+
     // NOLINTEND
 };
 

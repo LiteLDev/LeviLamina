@@ -20,7 +20,7 @@ public:
     virtual ~PreferredPathDescription();
 
     // vIndex: 2, symbol: ?deserializeData@PreferredPathDescription@@UEAAXUDeserializeDataParams@@@Z
-    virtual void deserializeData(struct DeserializeDataParams);
+    virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
     // symbol: ??0PreferredPathDescription@@QEAA@XZ
     MCAPI PreferredPathDescription();

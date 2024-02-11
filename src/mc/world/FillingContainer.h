@@ -32,37 +32,28 @@ public:
     // vIndex: 12, symbol: ?removeItem@FillingContainer@@UEAAXHH@Z
     virtual void removeItem(int slot, int count);
 
-    // vIndex: 16, symbol: ?getContainerSize@FillingContainer@@UEBAHXZ
+    // vIndex: 17, symbol: ?getContainerSize@FillingContainer@@UEBAHXZ
     virtual int getContainerSize() const;
 
-    // vIndex: 17, symbol: ?getMaxStackSize@FillingContainer@@UEBAHXZ
+    // vIndex: 18, symbol: ?getMaxStackSize@FillingContainer@@UEBAHXZ
     virtual int getMaxStackSize() const;
 
-    // vIndex: 18, symbol: ?startOpen@FillingContainer@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 19, symbol: ?startOpen@FillingContainer@@UEAAXAEAVPlayer@@@Z
     virtual void startOpen(class Player&);
 
-    // vIndex: 25, symbol: __unk_vfn_25
-    virtual void __unk_vfn_25();
-
-    // vIndex: 26, symbol: __unk_vfn_26
-    virtual void __unk_vfn_26();
-
-    // vIndex: 34, symbol: __unk_vfn_34
-    virtual void __unk_vfn_34();
-
-    // vIndex: 37, symbol: ?add@FillingContainer@@UEAA_NAEAVItemStack@@@Z
+    // vIndex: 38, symbol: ?add@FillingContainer@@UEAA_NAEAVItemStack@@@Z
     virtual bool add(class ItemStack& item);
 
-    // vIndex: 38, symbol: ?canAdd@FillingContainer@@UEBA_NAEBVItemStack@@@Z
+    // vIndex: 39, symbol: ?canAdd@FillingContainer@@UEBA_NAEBVItemStack@@@Z
     virtual bool canAdd(class ItemStack const& item) const;
 
-    // vIndex: 39, symbol: ?clearSlot@FillingContainer@@UEAAXH@Z
+    // vIndex: 40, symbol: ?clearSlot@FillingContainer@@UEAAXH@Z
     virtual void clearSlot(int slot);
 
-    // vIndex: 40, symbol: ?clearInventory@FillingContainer@@UEAAHH@Z
+    // vIndex: 41, symbol: ?clearInventory@FillingContainer@@UEAAHH@Z
     virtual int clearInventory(int resizeTo);
 
-    // vIndex: 41, symbol: ?load@FillingContainer@@UEAAXAEBVListTag@@AEBVSemVersion@@AEAVLevel@@@Z
+    // vIndex: 42, symbol: ?load@FillingContainer@@UEAAXAEBVListTag@@AEBVSemVersion@@AEAVLevel@@@Z
     virtual void load(class ListTag const& inventoryList, class SemVersion const& version, class Level& level);
 
     // symbol: ??0FillingContainer@@QEAA@PEAVPlayer@@HW4ContainerType@@@Z
@@ -97,7 +88,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?_addResource@FillingContainer@@IEAAHAEBVItemStack@@@Z
-    MCAPI int _addResource(class ItemStack const& itemStack);
+    MCAPI int _addResource(class ItemStack const& item);
 
     // symbol: ?_doDrop@FillingContainer@@IEAAXAEAVItemStack@@_N@Z
     MCAPI void _doDrop(class ItemStack& item, bool randomly);

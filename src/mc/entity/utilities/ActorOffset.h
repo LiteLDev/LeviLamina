@@ -16,6 +16,9 @@ MCAPI float getHeightOffset(class EntityContext const& entity);
 // symbol: ?initializeActor@ActorOffset@@YAXAEAVEntityContext@@@Z
 MCAPI void initializeActor(class EntityContext& entity);
 
+// symbol: ?initializePlayer@ActorOffset@@YAXAEAVEntityContext@@@Z
+MCAPI void initializePlayer(class EntityContext&);
+
 // symbol: ?setAABBRelativeScaling@ActorOffset@@YAXAEAVEntityContext@@V?$optional@VVec2@@@std@@111@Z
 MCAPI void
 setAABBRelativeScaling(class EntityContext&, std::optional<class Vec2>, std::optional<class Vec2>, std::optional<class Vec2>, std::optional<class Vec2>);

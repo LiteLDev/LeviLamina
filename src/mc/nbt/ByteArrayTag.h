@@ -10,12 +10,11 @@ public:
     // prevent constructor by default
     ByteArrayTag& operator=(ByteArrayTag const&);
     ByteArrayTag(ByteArrayTag const&);
-    ByteArrayTag();
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ByteArrayTag@@UEAA@XZ
-    virtual ~ByteArrayTag() = default;
+    // vIndex: 0, symbol: ??1ByteArrayTag@@UEAA@XZ
+    virtual ~ByteArrayTag();
 
     // vIndex: 2, symbol: ?write@ByteArrayTag@@UEBAXAEAVIDataOutput@@@Z
     virtual void write(class IDataOutput& dos) const;
@@ -37,6 +36,12 @@ public:
 
     // vIndex: 10, symbol: ?hash@ByteArrayTag@@UEBA_KXZ
     virtual uint64 hash() const;
+
+    // symbol: ??0ByteArrayTag@@QEAA@XZ
+    MCAPI ByteArrayTag();
+
+    // symbol: ??0ByteArrayTag@@QEAA@V?$vector@EV?$allocator@E@std@@@std@@@Z
+    MCAPI explicit ByteArrayTag(std::vector<uchar>);
 
     // NOLINTEND
 };

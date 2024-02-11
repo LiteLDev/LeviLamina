@@ -152,7 +152,7 @@ public:
     MCVAPI bool doesLANRequireMultiplayerRestrictions() const;
 
     // symbol: ?exitVRMode@AppPlatform@@UEAAXV?$function@$$A6AXXZ@std@@@Z
-    MCVAPI void exitVRMode(std::function<void(void)> callback);
+    MCVAPI void exitVRMode(std::function<void()> callback);
 
     // symbol: ?finish@AppPlatform@@UEAAXXZ
     MCVAPI void finish();
@@ -729,19 +729,6 @@ public:
 
     // symbol: ?teardown@AppPlatform@@UEAAXXZ
     MCVAPI void teardown();
-
-    // symbol:
-    // ?trackPurchaseEvent@AppPlatform@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0000000@Z
-    MCVAPI void trackPurchaseEvent(
-        std::string const& contentId,
-        std::string const& contentType,
-        std::string const& revenue,
-        std::string const& clientId,
-        std::string const& userId,
-        std::string const& playerSessionId,
-        std::string const& currencyCode,
-        std::string const& eventName
-    );
 
     // symbol: ?tryEnterVRMode@AppPlatform@@UEAAX_NV?$function@$$A6AX_N@Z@std@@@Z
     MCVAPI void tryEnterVRMode(bool duringStartup, std::function<void(bool)> callback);

@@ -34,10 +34,6 @@ public:
     // symbol: ?build@RequestBuilder@Http@Bedrock@@QEAAAEAVRequest@23@XZ
     MCAPI class Bedrock::Http::Request& build();
 
-    // symbol:
-    // ?contentType@RequestBuilder@Http@Bedrock@@QEAAAEAV123@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class Bedrock::Http::RequestBuilder& contentType(std::string const& contentType);
-
     // symbol: ?timeout@RequestBuilder@Http@Bedrock@@QEAAAEAV123@V?$duration@_JU?$ratio@$00$00@std@@@chrono@std@@@Z
     MCAPI class Bedrock::Http::RequestBuilder& timeout(std::chrono::seconds timeout);
 

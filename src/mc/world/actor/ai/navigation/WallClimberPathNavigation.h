@@ -21,14 +21,14 @@ public:
     virtual void tick(class NavigationComponent& parent, class Mob& mob);
 
     // vIndex: 4, symbol:
-    // ?createPath@WallClimberPathNavigation@@MEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVNavigationComponent@@AEAVMob@@AEBVVec3@@@Z
-    virtual std::unique_ptr<class Path>
-    createPath(class NavigationComponent& parent, class Mob& mob, class Vec3 const& pos);
-
-    // vIndex: 5, symbol:
     // ?createPath@WallClimberPathNavigation@@MEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVNavigationComponent@@AEAVMob@@AEAVActor@@@Z
     virtual std::unique_ptr<class Path>
     createPath(class NavigationComponent& parent, class Mob& mob, class Actor& target);
+
+    // vIndex: 5, symbol:
+    // ?createPath@WallClimberPathNavigation@@MEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVNavigationComponent@@AEAVMob@@AEBVVec3@@@Z
+    virtual std::unique_ptr<class Path>
+    createPath(class NavigationComponent& parent, class Mob& mob, class Vec3 const& pos);
 
     // vIndex: 7, symbol: ?moveTo@WallClimberPathNavigation@@MEAA_NAEAVNavigationComponent@@AEAVMob@@AEAVActor@@M@Z
     virtual bool moveTo(class NavigationComponent& parent, class Mob& mob, class Actor& target, float speed);

@@ -24,7 +24,7 @@ public:
     // ?createTransactionContext@PlayerInventory@@UEAAXV?$function@$$A6AXAEAVContainer@@HAEBVItemStack@@1@Z@std@@V?$function@$$A6AXXZ@3@@Z
     MCVAPI void createTransactionContext(
         std::function<void(class Container&, int, class ItemStack const&, class ItemStack const&)> callback,
-        std::function<void(void)>                                                                  execute
+        std::function<void()>                                                                      execute
     );
 
     // symbol: ??0PlayerInventory@@QEAA@V?$unique_ptr@VInventory@@U?$default_delete@VInventory@@@std@@@std@@@Z
@@ -41,9 +41,6 @@ public:
 
     // symbol: ?canAdd@PlayerInventory@@QEBA_NAEBVItemStack@@@Z
     MCAPI bool canAdd(class ItemStack const& item) const;
-
-    // symbol: ?clearInventory@PlayerInventory@@QEAAHH@Z
-    MCAPI int clearInventory(int resize);
 
     // symbol: ?clearSlot@PlayerInventory@@QEAAXHW4ContainerID@@@Z
     MCAPI void clearSlot(int slot, ::ContainerID containerId);
@@ -112,9 +109,6 @@ public:
 
     // symbol: ?removeResource@PlayerInventory@@QEAA_NH@Z
     MCAPI bool removeResource(int type);
-
-    // symbol: ?removeResource@PlayerInventory@@QEAAHAEBVItemStack@@_N1H@Z
-    MCAPI int removeResource(class ItemStack const& item, bool requireExactAux, bool requireExactData, int maxCount);
 
     // symbol: ?save@PlayerInventory@@QEAA?AV?$unique_ptr@VListTag@@U?$default_delete@VListTag@@@std@@@std@@XZ
     MCAPI std::unique_ptr<class ListTag> save();

@@ -18,12 +18,13 @@ namespace ScriptModuleMinecraft {
 class ScriptFoodComponent : public ::ScriptModuleMinecraft::ScriptItemComponent {
 public:
     // prevent constructor by default
+    ScriptFoodComponent& operator=(ScriptFoodComponent const&);
     ScriptFoodComponent();
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptFoodComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptFoodComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptFoodComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptFoodComponent() = default;
 
     // symbol: ??0ScriptFoodComponent@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
     MCAPI ScriptFoodComponent(class ScriptModuleMinecraft::ScriptFoodComponent const&);
@@ -40,10 +41,6 @@ public:
     // symbol:
     // ?getUsingConvertsToItem@ScriptFoodComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<std::string> getUsingConvertsToItem();
-
-    // symbol: ??4ScriptFoodComponent@ScriptModuleMinecraft@@QEAAAEAV01@AEBV01@@Z
-    MCAPI class ScriptModuleMinecraft::ScriptFoodComponent&
-    operator=(class ScriptModuleMinecraft::ScriptFoodComponent const&);
 
     // symbol:
     // ?bind@ScriptFoodComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptFoodComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z

@@ -17,10 +17,11 @@
 // clang-format off
 class ExhaustionComponent;
 struct AABBShapeComponent;
+struct ActorDataFlagComponent;
 struct ActorGameTypeComponent;
 struct ActorMovementTickNeededFlag;
 struct ActorRotationComponent;
-struct AttributesComponent;
+struct AttributeRequestComponent;
 struct CamelFlag;
 struct DimensionTypeComponent;
 struct ExternalDataComponent;
@@ -39,7 +40,6 @@ struct RenderRotationComponent;
 struct ServerPlayerCurrentMovementComponent;
 struct StandAnimationComponent;
 struct StateVectorComponent;
-struct SynchedActorDataComponent;
 struct VanillaOffsetComponent;
 struct VehicleComponent;
 // clang-format on
@@ -71,7 +71,7 @@ public:
     virtual void __unk_vfn_4();
 
     // vIndex: 5, symbol:
-    // ?tick@FoodExhaustionSystemImpl@1@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UActorMovementTickNeededFlag@@@@UPassengerComponent@@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UMobFlag@@@@V?$FlagComponent@UParrotFlag@@@@UVehicleComponent@@V?$FlagComponent@UCamelFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@@@U?$Read@UDimensionTypeComponent@@VExhaustionComponent@@V?$FlagComponent@UOnGroundFlag@@@@UActorGameTypeComponent@@UServerPlayerCurrentMovementComponent@@V?$FlagComponent@UInWaterFlag@@@@UMobBodyRotationComponent@@UPassengerComponent@@URenderRotationComponent@@UStandAnimationComponent@@UStateVectorComponent@@USynchedActorDataComponent@@UAABBShapeComponent@@UActorRotationComponent@@UOffsetsComponent@@UVanillaOffsetComponent@@UPassengerRenderingRidingOffsetComponent@@@@U?$Write@UAttributesComponent@@@@U?$AddRemove@$$V@@U?$GlobalRead@ULocalConstBlockSourceFactoryComponent@@UExternalDataComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
+    // ?tick@FoodExhaustionSystemImpl@1@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UActorMovementTickNeededFlag@@@@UPassengerComponent@@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UMobFlag@@@@V?$FlagComponent@UParrotFlag@@@@UVehicleComponent@@V?$FlagComponent@UCamelFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@@@U?$Read@UDimensionTypeComponent@@VExhaustionComponent@@V?$FlagComponent@UOnGroundFlag@@@@UActorGameTypeComponent@@UServerPlayerCurrentMovementComponent@@UStateVectorComponent@@V?$FlagComponent@UInWaterFlag@@@@UMobBodyRotationComponent@@UPassengerComponent@@URenderRotationComponent@@UStandAnimationComponent@@UActorDataFlagComponent@@UAABBShapeComponent@@UActorRotationComponent@@UOffsetsComponent@@UVanillaOffsetComponent@@UPassengerRenderingRidingOffsetComponent@@@@U?$Write@$$V@@U?$AddRemove@UAttributeRequestComponent@@@@U?$GlobalRead@ULocalConstBlockSourceFactoryComponent@@UExternalDataComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
     virtual void tick(class StrictExecutionContext<
                       struct Filter<
                           class FlagComponent<struct ActorMovementTickNeededFlag>,
@@ -88,20 +88,20 @@ public:
                           class FlagComponent<struct OnGroundFlag>,
                           struct ActorGameTypeComponent,
                           struct ServerPlayerCurrentMovementComponent,
+                          struct StateVectorComponent,
                           class FlagComponent<struct InWaterFlag>,
                           struct MobBodyRotationComponent,
                           struct PassengerComponent,
                           struct RenderRotationComponent,
                           struct StandAnimationComponent,
-                          struct StateVectorComponent,
-                          struct SynchedActorDataComponent,
+                          struct ActorDataFlagComponent,
                           struct AABBShapeComponent,
                           struct ActorRotationComponent,
                           struct OffsetsComponent,
                           struct VanillaOffsetComponent,
                           struct PassengerRenderingRidingOffsetComponent>,
-                      struct Write<struct AttributesComponent>,
-                      struct AddRemove<>,
+                      struct Write<>,
+                      struct AddRemove<struct AttributeRequestComponent>,
                       struct GlobalRead<struct LocalConstBlockSourceFactoryComponent, struct ExternalDataComponent>,
                       struct GlobalWrite<>,
                       struct EntityFactoryT<>>& context);

@@ -48,10 +48,10 @@ public:
     virtual bool peek() const;
 
     // vIndex: 9, symbol: ?receive@ScriptDebuggerTransport@@UEAA_NPEAD_K@Z
-    virtual bool receive(char*, uint64);
+    virtual bool receive(char* buffer, uint64 length);
 
     // vIndex: 10, symbol: ?send@ScriptDebuggerTransport@@UEAAXPEBD_K@Z
-    virtual void send(char const*, uint64);
+    virtual void send(char const* buffer, uint64 length);
 
     // NOLINTEND
 };

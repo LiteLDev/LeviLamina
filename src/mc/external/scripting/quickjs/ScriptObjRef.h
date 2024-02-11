@@ -13,14 +13,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?freeScriptReference@ScriptObjRef@QuickJS@Scripting@@QEAAXXZ
-    MCAPI void freeScriptReference();
-
-    // symbol: ?holdScriptReference@ScriptObjRef@QuickJS@Scripting@@QEAAXXZ
-    MCAPI void holdScriptReference();
-
     // symbol: ?incRefToReturnToJS@ScriptObjRef@QuickJS@Scripting@@QEAAXXZ
     MCAPI void incRefToReturnToJS();
+
+    // symbol: ??4ScriptObjRef@QuickJS@Scripting@@QEAAAEAV012@$$QEAV012@@Z
+    MCAPI class Scripting::QuickJS::ScriptObjRef& operator=(class Scripting::QuickJS::ScriptObjRef&& other);
+
+    // symbol: ?pin@ScriptObjRef@QuickJS@Scripting@@QEAAXXZ
+    MCAPI void pin();
+
+    // symbol: ?unpin@ScriptObjRef@QuickJS@Scripting@@QEAAXXZ
+    MCAPI void unpin();
 
     // NOLINTEND
 };

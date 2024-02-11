@@ -18,8 +18,8 @@ public:
     // vIndex: 0, symbol: ??1WorldBlockTarget@@UEAA@XZ
     virtual ~WorldBlockTarget();
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
+    // vIndex: 1, symbol: ?canGetChunk@WorldBlockTarget@@UEBA_NXZ
+    virtual bool canGetChunk() const;
 
     // vIndex: 2, symbol: ?getChunk@WorldBlockTarget@@UEAAPEAVLevelChunk@@AEBVChunkPos@@@Z
     virtual class LevelChunk* getChunk(class ChunkPos const& pos);
@@ -42,7 +42,7 @@ public:
     fetchBlocksInBox(class BoundingBox const& box, std::function<bool(class Block const&)> predicate);
 
     // vIndex: 8, symbol: ?hasBiomeTag@WorldBlockTarget@@UEBA_N_KAEBVBlockPos@@@Z
-    virtual bool hasBiomeTag(uint64, class BlockPos const&) const;
+    virtual bool hasBiomeTag(uint64, class BlockPos const& pos) const;
 
     // vIndex: 9, symbol: ?setBlock@WorldBlockTarget@@UEAA_NAEBVBlockPos@@AEBVBlock@@H@Z
     virtual bool setBlock(class BlockPos const& pos, class Block const& newBlock, int updateFlags);
@@ -50,8 +50,8 @@ public:
     // vIndex: 10, symbol: ?setBlockSimple@WorldBlockTarget@@UEAA_NAEBVBlockPos@@AEBVBlock@@@Z
     virtual bool setBlockSimple(class BlockPos const& pos, class Block const& block);
 
-    // vIndex: 11, symbol: __unk_vfn_11
-    virtual void __unk_vfn_11();
+    // vIndex: 11, symbol: ?apply@WorldBlockTarget@@UEBA_NXZ
+    virtual bool apply() const;
 
     // vIndex: 12, symbol:
     // ?placeStructure@WorldBlockTarget@@UEAA_NAEBVBlockPos@@AEAVStructureTemplate@@AEAVStructureSettings@@@Z
@@ -100,12 +100,6 @@ public:
 
     // vIndex: 26, symbol: ?disableBlockSimple@WorldBlockTarget@@UEAAXXZ
     virtual void disableBlockSimple();
-
-    // symbol: ?apply@WorldBlockTarget@@UEBA_NXZ
-    MCVAPI bool apply() const;
-
-    // symbol: ?canGetChunk@WorldBlockTarget@@UEBA_NXZ
-    MCVAPI bool canGetChunk() const;
 
     // symbol: ??0WorldBlockTarget@@QEAA@AEAVBlockSource@@AEBUWorldGenContext@@@Z
     MCAPI WorldBlockTarget(class BlockSource& region, struct WorldGenContext const& context);

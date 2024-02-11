@@ -68,9 +68,6 @@ public:
     // vIndex: 1, symbol: ?checkComponentDataForContentErrors@ShooterItemComponent@@UEBA_NXZ
     virtual bool checkComponentDataForContentErrors() const;
 
-    // vIndex: 2, symbol: ?writeSettings@ItemComponent@@UEAAXXZ
-    virtual void writeSettings();
-
     // vIndex: 3, symbol: ?isNetworkComponent@InteractButtonItemComponent@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
@@ -104,7 +101,13 @@ public:
     MCAPI class ShooterItemComponent& operator=(class ShooterItemComponent const&);
 
     // symbol: ?releaseUsing@ShooterItemComponent@@QEBA_NAEAVItemStack@@PEAVPlayer@@H@Z
-    MCAPI bool releaseUsing(class ItemStack& itemStack, class Player* player, int durationLeft) const;
+    MCAPI bool releaseUsing(class ItemStack& item, class Player* player, int durationLeft) const;
+
+    // symbol: ?use@ShooterItemComponent@@QEBA_NAEAVItemStack@@AEAVPlayer@@@Z
+    MCAPI bool use(class ItemStack& instance, class Player& player) const;
+
+    // symbol: ?useTimeDepleted@ShooterItemComponent@@QEBAXAEAVItemStack@@AEAVPlayer@@@Z
+    MCAPI void useTimeDepleted(class ItemStack&, class Player&) const;
 
     // symbol:
     // ?bindType@ShooterItemComponent@@SAXAEAUReflectionCtx@cereal@@AEBV?$vector@W4AllExperiments@@V?$allocator@W4AllExperiments@@@std@@@std@@V?$optional@VSemVersion@@@5@@Z

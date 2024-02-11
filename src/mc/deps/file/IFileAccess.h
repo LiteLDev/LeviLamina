@@ -30,7 +30,7 @@ public:
     virtual int fclose(void* file) = 0;
 
     // vIndex: 3, symbol: ?fseek@FileSystemFileAccess@@UEAAHPEAX_JH@Z
-    virtual int fseek(void*, int64, int) = 0;
+    virtual int fseek(void* file, int64 offset, int origin) = 0;
 
     // vIndex: 4, symbol: ?ftell@FileSystemFileAccess@@UEAA_JPEAX@Z
     virtual int64 ftell(void* file) = 0;

@@ -10,6 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace br::worldgen { class StructureSetRegistry; }
 namespace mce { class Color; }
 // clang-format on
 
@@ -33,8 +34,8 @@ public:
     );
 
     // symbol:
-    // ?createGenerator@OverworldDimension@@UEAA?AV?$unique_ptr@VWorldGenerator@@U?$default_delete@VWorldGenerator@@@std@@@std@@XZ
-    MCVAPI std::unique_ptr<class WorldGenerator> createGenerator();
+    // ?createGenerator@OverworldDimension@@UEAA?AV?$unique_ptr@VWorldGenerator@@U?$default_delete@VWorldGenerator@@@std@@@std@@AEBVStructureSetRegistry@worldgen@br@@@Z
+    MCVAPI std::unique_ptr<class WorldGenerator> createGenerator(class br::worldgen::StructureSetRegistry const&);
 
     // symbol: ?fixWallChunk@OverworldDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
     MCVAPI void fixWallChunk(class ChunkSource& source, class LevelChunk& lc);
@@ -56,15 +57,6 @@ public:
 
     // symbol: ?upgradeLevelChunk@OverworldDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@1@Z
     MCVAPI void upgradeLevelChunk(class ChunkSource& source, class LevelChunk& lc, class LevelChunk& generatedChunk);
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    // symbol:
-    // ?makeStructureFeatures@OverworldDimension@@CA?AV?$unique_ptr@VStructureFeatureRegistry@@U?$default_delete@VStructureFeatureRegistry@@@std@@@std@@I_NAEBVBaseGameVersion@@AEBVExperiments@@@Z
-    MCAPI static std::unique_ptr<class StructureFeatureRegistry>
-    makeStructureFeatures(uint seed, bool, class BaseGameVersion const& baseGameVersion, class Experiments const&);
 
     // NOLINTEND
 };

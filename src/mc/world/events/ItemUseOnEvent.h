@@ -6,10 +6,12 @@ struct ItemUseOnEvent {
 public:
     // prevent constructor by default
     ItemUseOnEvent& operator=(ItemUseOnEvent const&);
-    ItemUseOnEvent();
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0ItemUseOnEvent@@QEAA@XZ
+    MCAPI ItemUseOnEvent();
+
     // symbol: ??0ItemUseOnEvent@@QEAA@$$QEAU0@@Z
     MCAPI ItemUseOnEvent(struct ItemUseOnEvent&&);
 

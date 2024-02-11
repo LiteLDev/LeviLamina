@@ -24,7 +24,7 @@ public:
     virtual void _onEnable() = 0;
 
     // symbol: ??0NetworkEnableDisableListener@@QEAA@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
-    MCAPI explicit NetworkEnableDisableListener(class Bedrock::NonOwnerPointer<class AppPlatform> const&);
+    MCAPI explicit NetworkEnableDisableListener(class Bedrock::NonOwnerPointer<class AppPlatform> const& appPlatform);
 
     // symbol: ?disable@NetworkEnableDisableListener@@QEAAXXZ
     MCAPI void disable();
@@ -35,8 +35,17 @@ public:
     // symbol: ?isEnabled@NetworkEnableDisableListener@@QEBA_NXZ
     MCAPI bool isEnabled() const;
 
+    // symbol: ?isNetworkAllowed@NetworkEnableDisableListener@@QEBA_NXZ
+    MCAPI bool isNetworkAllowed() const;
+
+    // symbol: ?isUninitialized@NetworkEnableDisableListener@@QEBA_NXZ
+    MCAPI bool isUninitialized() const;
+
     // symbol: ?tryEnable@NetworkEnableDisableListener@@QEAAXXZ
     MCAPI void tryEnable();
+
+    // symbol: ?uninitialize@NetworkEnableDisableListener@@QEAAXXZ
+    MCAPI void uninitialize();
 
     // NOLINTEND
 };

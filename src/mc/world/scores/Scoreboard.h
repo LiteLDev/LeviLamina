@@ -31,15 +31,15 @@ public:
     // ?clearDisplayObjective@Scoreboard@@UEAAPEAVObjective@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual class Objective* clearDisplayObjective(std::string const& displaySlotName);
 
-    // vIndex: 3, symbol: ?createScoreboardId@Scoreboard@@UEAAAEBUScoreboardId@@AEBVPlayer@@@Z
-    virtual struct ScoreboardId const& createScoreboardId(class Player const& player);
+    // vIndex: 3, symbol:
+    // ?createScoreboardId@Scoreboard@@UEAAAEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    virtual struct ScoreboardId const& createScoreboardId(std::string const& fakePlayer);
 
     // vIndex: 4, symbol: ?createScoreboardId@Scoreboard@@UEAAAEBUScoreboardId@@AEBVActor@@@Z
     virtual struct ScoreboardId const& createScoreboardId(class Actor const& entity);
 
-    // vIndex: 5, symbol:
-    // ?createScoreboardId@Scoreboard@@UEAAAEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual struct ScoreboardId const& createScoreboardId(std::string const& fakePlayer);
+    // vIndex: 5, symbol: ?createScoreboardId@Scoreboard@@UEAAAEBUScoreboardId@@AEBVPlayer@@@Z
+    virtual struct ScoreboardId const& createScoreboardId(class Player const& player);
 
     // vIndex: 6, symbol: ?onObjectiveAdded@Scoreboard@@UEAAXAEBVObjective@@@Z
     virtual void onObjectiveAdded(class Objective const& objective);

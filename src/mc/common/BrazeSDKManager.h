@@ -14,20 +14,21 @@ public:
     // vIndex: 0, symbol: __gen_??1BrazeSDKManager@@UEAA@XZ
     virtual ~BrazeSDKManager() = default;
 
-    // symbol: ?_disableBrazeSDK@BrazeSDKManager@@MEAAXXZ
-    MCVAPI void _disableBrazeSDK();
+    // vIndex: 1, symbol: ?enableBrazeSDK@BrazeSDKManager@@UEAAXXZ
+    virtual void enableBrazeSDK();
 
-    // symbol: ?_enableBrazeSDK@BrazeSDKManager@@MEAAXXZ
-    MCVAPI void _enableBrazeSDK();
+    // vIndex: 2, symbol: ?disableBrazeSDK@BrazeSDKManager@@UEAAXXZ
+    virtual void disableBrazeSDK();
 
-    // symbol: ?disableBrazeSDK@BrazeSDKManager@@UEAAXXZ
-    MCVAPI void disableBrazeSDK();
+    // vIndex: 3, symbol:
+    // ?setBrazeId@BrazeSDKManager@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    virtual void setBrazeId(std::string const&);
 
-    // symbol: ?enableBrazeSDK@BrazeSDKManager@@UEAAXXZ
-    MCVAPI void enableBrazeSDK();
+    // vIndex: 4, symbol: ?_enableBrazeSDK@BrazeSDKManager@@MEAAXXZ
+    virtual void _enableBrazeSDK();
 
-    // symbol: ?setBrazeId@BrazeSDKManager@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI void setBrazeId(std::string const&);
+    // vIndex: 5, symbol: ?_disableBrazeSDK@BrazeSDKManager@@MEAAXXZ
+    virtual void _disableBrazeSDK();
 
     // NOLINTEND
 

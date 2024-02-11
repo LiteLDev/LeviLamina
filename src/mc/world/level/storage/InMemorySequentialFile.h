@@ -18,10 +18,7 @@ public:
     virtual leveldb::Status Read(uint64 n, leveldb::Slice* result, char* scratch);
 
     // vIndex: 2, symbol: ?Skip@InMemorySequentialFile@@UEAA?AVStatus@leveldb@@_K@Z
-    virtual leveldb::Status Skip(uint64);
-
-    // symbol: ??0InMemorySequentialFile@@QEAA@V?$shared_ptr@VInMemoryFile@@@std@@@Z
-    MCAPI explicit InMemorySequentialFile(std::shared_ptr<class InMemoryFile> file);
+    virtual leveldb::Status Skip(uint64 n);
 
     // NOLINTEND
 };

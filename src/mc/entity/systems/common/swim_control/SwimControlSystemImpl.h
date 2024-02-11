@@ -16,9 +16,9 @@
 namespace SwimControlSystemImpl {
 // NOLINTBEGIN
 // symbol:
-// ?doSwimControl@SwimControlSystemImpl@@YAXAEBVStrictEntityContext@@AEBUSynchedActorDataComponent@@AEBUAbilitiesComponent@@AEBUActorRotationComponent@@AEBUMoveInputComponent@@AEBUPlayerInputRequestComponent@@AEAUStateVectorComponent@@@Z
+// ?doSwimControl@SwimControlSystemImpl@@YAXAEBVStrictEntityContext@@AEBUActorDataFlagComponent@@AEBUMovementAbilitiesComponent@@AEBUActorRotationComponent@@AEBUMoveInputComponent@@AEBUPlayerInputRequestComponent@@AEAUStateVectorComponent@@@Z
 MCAPI void
-doSwimControl(class StrictEntityContext const&, struct SynchedActorDataComponent const&, struct AbilitiesComponent const&, struct ActorRotationComponent const&, struct MoveInputComponent const&, struct PlayerInputRequestComponent const&, struct StateVectorComponent&);
+doSwimControl(class StrictEntityContext const&, struct ActorDataFlagComponent const&, struct MovementAbilitiesComponent const&, struct ActorRotationComponent const&, struct MoveInputComponent const&, struct PlayerInputRequestComponent const&, struct StateVectorComponent&);
 // NOLINTEND
 
 }; // namespace SwimControlSystemImpl

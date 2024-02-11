@@ -8,14 +8,25 @@ class Actor;
 class Block;
 class CommandOutput;
 class ItemDescriptor;
+class ItemInstance;
 class ItemStack;
 class ItemStackBase;
+class LevelChunk;
 class Player;
 namespace Json { class Value; }
 // clang-format on
 
 namespace Util::CodeBuilder {
 // NOLINTBEGIN
+// symbol: ?createMobObject@CodeBuilder@Util@@YA?AVValue@Json@@H@Z
+MCAPI class Json::Value createMobObject(int mobType);
+
+// symbol: ?createMobObject@CodeBuilder@Util@@YA?AVValue@Json@@HHE@Z
+MCAPI class Json::Value createMobObject(int mobType, int variant, uchar color);
+
+// symbol: ?createMobObjectWithId@CodeBuilder@Util@@YA?AVValue@Json@@HHH@Z
+MCAPI class Json::Value createMobObjectWithId(int id, int mobType, int variant);
+
 // symbol: ?createObject@CodeBuilder@Util@@YA?AVValue@Json@@AEBVActor@@@Z
 MCAPI class Json::Value createObject(class Actor const& actor);
 
@@ -28,11 +39,17 @@ MCAPI class Json::Value createObject(class CommandOutput const& commandOutput);
 // symbol: ?createObject@CodeBuilder@Util@@YA?AVValue@Json@@AEBVItemDescriptor@@@Z
 MCAPI class Json::Value createObject(class ItemDescriptor const& item);
 
+// symbol: ?createObject@CodeBuilder@Util@@YA?AVValue@Json@@AEBVItemInstance@@@Z
+MCAPI class Json::Value createObject(class ItemInstance const& item);
+
 // symbol: ?createObject@CodeBuilder@Util@@YA?AVValue@Json@@AEBVItemStack@@@Z
 MCAPI class Json::Value createObject(class ItemStack const& item);
 
 // symbol: ?createObject@CodeBuilder@Util@@YA?AVValue@Json@@AEBVItemStackBase@@@Z
 MCAPI class Json::Value createObject(class ItemStackBase const& item);
+
+// symbol: ?createObject@CodeBuilder@Util@@YA?AVValue@Json@@AEBVLevelChunk@@@Z
+MCAPI class Json::Value createObject(class LevelChunk const& chunk);
 
 // symbol: ?createObject@CodeBuilder@Util@@YA?AVValue@Json@@AEBVPlayer@@@Z
 MCAPI class Json::Value createObject(class Player const& player);

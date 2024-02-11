@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/entity/systems/common/CommandOriginSystem.h"
+
 class CommandResponseBase {
 public:
     // prevent constructor by default
@@ -11,8 +14,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1CommandResponseBase@@QEAA@XZ
-    MCAPI ~CommandResponseBase();
+    // symbol: ?_getCommandOriginSystem@CommandResponseBase@@MEBA?AW4CommandOriginSystem@@XZ
+    MCVAPI ::CommandOriginSystem _getCommandOriginSystem() const;
+
+    // symbol: ??1CommandResponseBase@@UEAA@XZ
+    MCVAPI ~CommandResponseBase();
 
     // symbol: ?NameID@CommandResponseBase@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const NameID;

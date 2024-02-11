@@ -8,6 +8,11 @@
 #include "mc/world/AutomaticID.h"
 #include "mc/world/level/dimension/Dimension.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace br::worldgen { class StructureSetRegistry; }
+// clang-format on
+
 class TheEndDimension : public ::Dimension {
 public:
     // prevent constructor by default
@@ -28,8 +33,8 @@ public:
     );
 
     // symbol:
-    // ?createGenerator@TheEndDimension@@UEAA?AV?$unique_ptr@VWorldGenerator@@U?$default_delete@VWorldGenerator@@@std@@@std@@XZ
-    MCVAPI std::unique_ptr<class WorldGenerator> createGenerator();
+    // ?createGenerator@TheEndDimension@@UEAA?AV?$unique_ptr@VWorldGenerator@@U?$default_delete@VWorldGenerator@@@std@@@std@@AEBVStructureSetRegistry@worldgen@br@@@Z
+    MCVAPI std::unique_ptr<class WorldGenerator> createGenerator(class br::worldgen::StructureSetRegistry const&);
 
     // symbol: ?deserialize@TheEndDimension@@UEAAXAEBVCompoundTag@@@Z
     MCVAPI void deserialize(class CompoundTag const& tag);
@@ -58,8 +63,8 @@ public:
     // symbol: ?hasGround@TheEndDimension@@UEBA_NXZ
     MCVAPI bool hasGround() const;
 
-    // symbol: ?init@TheEndDimension@@UEAAXXZ
-    MCVAPI void init();
+    // symbol: ?init@TheEndDimension@@UEAAXAEBVStructureSetRegistry@worldgen@br@@@Z
+    MCVAPI void init(class br::worldgen::StructureSetRegistry const&);
 
     // symbol: ?isDay@TheEndDimension@@UEBA_NXZ
     MCVAPI bool isDay() const;
@@ -96,15 +101,6 @@ public:
 
     // symbol: ?AMBIENT_MULTIPLIER@TheEndDimension@@2MB
     MCAPI static float const AMBIENT_MULTIPLIER;
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    // symbol:
-    // ?makeStructureFeatures@TheEndDimension@@CA?AV?$unique_ptr@VStructureFeatureRegistry@@U?$default_delete@VStructureFeatureRegistry@@@std@@@std@@AEAVDimension@@I@Z
-    MCAPI static std::unique_ptr<class StructureFeatureRegistry>
-    makeStructureFeatures(class Dimension& dimension, uint seed);
 
     // NOLINTEND
 };

@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/enums/CircuitComponentType.h"
 #include "mc/world/redstone/circuit/components/CapacitorComponent.h"
-#include "mc/world/redstone/circuit/components/CircuitComponentList.h"
 
 class SidePoweredComponent : public ::CapacitorComponent {
 public:
@@ -32,22 +31,11 @@ public:
     // ?allowConnection@SidePoweredComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
     virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const& info, bool&);
 
-    // vIndex: 17, symbol: __unk_vfn_17
-    virtual void __unk_vfn_17();
-
-    // vIndex: 20, symbol: __unk_vfn_20
-    virtual void __unk_vfn_20();
-
     // vIndex: 22, symbol: ?removeFromAnySourceList@SidePoweredComponent@@MEAAXPEBVBaseCircuitComponent@@@Z
     virtual void removeFromAnySourceList(class BaseCircuitComponent const* component);
 
     // vIndex: 25, symbol: ?getPoweroutDirection@SidePoweredComponent@@UEBAEXZ
     virtual uchar getPoweroutDirection() const;
-
-    // symbol:
-    // ?addToSideComponents@SidePoweredComponent@@QEAAXAEAV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@VItem@CircuitComponentList@@@std@@@std@@@std@@PEAVBaseCircuitComponent@@@Z
-    MCAPI void
-    addToSideComponents(std::_Vector_iterator<std::_Vector_val<std::_Simple_types<class CircuitComponentList::Item>>>&, class BaseCircuitComponent*);
 
     // NOLINTEND
 };

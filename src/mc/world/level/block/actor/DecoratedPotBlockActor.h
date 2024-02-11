@@ -45,9 +45,6 @@ public:
     // symbol: ?tick@DecoratedPotBlockActor@@UEAAXAEAVBlockSource@@@Z
     MCVAPI void tick(class BlockSource&);
 
-    // symbol: ??0DecoratedPotBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI explicit DecoratedPotBlockActor(class BlockPos const& pos);
-
     // symbol:
     // ?getSherdNames@DecoratedPotBlockActor@@QEBAAEBV?$array@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$03@std@@XZ
     MCAPI std::array<std::string, 4> const& getSherdNames() const;

@@ -38,10 +38,6 @@ public:
     public:
         // NOLINTBEGIN
         // symbol:
-        // ??0RequestProcessor@ScriptNetHttpClient@ScriptModuleMinecraftNet@@QEAA@$$QEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$NonOwnerPointer@VScheduler@@@Bedrock@@@Z
-        MCAPI RequestProcessor(std::string&&, class Bedrock::NonOwnerPointer<class Scheduler>);
-
-        // symbol:
         // ?process@RequestProcessor@ScriptNetHttpClient@ScriptModuleMinecraftNet@@QEAA?AV?$Promise@V?$StrongTypedObjectHandle@UScriptNetResponse@ScriptModuleMinecraftNet@@@Scripting@@UError@2@X@Scripting@@AEBVWeakLifetimeScope@5@AEAVScriptObjectFactory@5@AEBV?$StrongTypedObjectHandle@UScriptNetRequest@ScriptModuleMinecraftNet@@@5@@Z
         MCAPI class Scripting::Promise<
             class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraftNet::ScriptNetResponse>,

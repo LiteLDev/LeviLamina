@@ -26,13 +26,21 @@ public:
 
     // symbol:
     // ?addEntryActorEvent@ActorAnimationControllerState@@QEAAAEAVActorAnimationEvent@@MAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CurrentCmdVersion@@W4MolangVersion@@@Z
-    MCAPI class ActorAnimationEvent&
-    addEntryActorEvent(float time, std::string const& event, ::CurrentCmdVersion commandVersion, ::MolangVersion);
+    MCAPI class ActorAnimationEvent& addEntryActorEvent(
+        float               time,
+        std::string const&  event,
+        ::CurrentCmdVersion commandVersion,
+        ::MolangVersion     molangVersion
+    );
 
     // symbol:
     // ?addExitActorEvent@ActorAnimationControllerState@@QEAAAEAVActorAnimationEvent@@MAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CurrentCmdVersion@@W4MolangVersion@@@Z
-    MCAPI class ActorAnimationEvent&
-    addExitActorEvent(float time, std::string const& event, ::CurrentCmdVersion commandVersion, ::MolangVersion);
+    MCAPI class ActorAnimationEvent& addExitActorEvent(
+        float               time,
+        std::string const&  event,
+        ::CurrentCmdVersion commandVersion,
+        ::MolangVersion     molangVersion
+    );
 
     // symbol: ?addParticleEffect@ActorAnimationControllerState@@QEAAAEAVActorParticleEffect@@XZ
     MCAPI class ActorParticleEffect& addParticleEffect();
@@ -45,8 +53,8 @@ public:
     MCAPI void addTransition(
         std::string const& stateName,
         std::string const& expression,
-        ::MolangVersion,
-        bool createEvenIfAlreadyExists
+        ::MolangVersion    molangVersion,
+        bool               createEvenIfAlreadyExists
     );
 
     // symbol:

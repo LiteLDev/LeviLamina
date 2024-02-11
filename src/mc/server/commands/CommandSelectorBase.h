@@ -116,7 +116,7 @@ public:
     MCAPI void setRadiusMin(float rm);
 
     // symbol: ?setResultCount@CommandSelectorBase@@QEAAX_K_N@Z
-    MCAPI void setResultCount(uint64, bool);
+    MCAPI void setResultCount(uint64 count, bool);
 
     // symbol: ?setType@CommandSelectorBase@@QEAAXW4CommandSelectionType@@@Z
     MCAPI void setType(::CommandSelectionType type);

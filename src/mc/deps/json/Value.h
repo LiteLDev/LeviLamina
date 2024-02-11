@@ -75,7 +75,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0Value@Json@@QEAA@_J@Z
-    MCAPI explicit Value(int64);
+    MCAPI explicit Value(int64 value);
 
     // symbol: ??0Value@Json@@QEAA@_N@Z
     MCAPI explicit Value(bool value);
@@ -132,7 +132,7 @@ public:
     MCAPI int asInt(int defaultValue) const;
 
     // symbol: ?asInt64@Value@Json@@QEBA_J_J@Z
-    MCAPI int64 asInt64(int64) const;
+    MCAPI int64 asInt64(int64 defaultValue) const;
 
     // symbol: ?asLargestInt@Value@Json@@QEBA_JXZ
     MCAPI int64 asLargestInt() const;
@@ -147,7 +147,7 @@ public:
     MCAPI uint asUInt(uint defaultValue) const;
 
     // symbol: ?asUInt64@Value@Json@@QEBA_K_K@Z
-    MCAPI uint64 asUInt64(uint64) const;
+    MCAPI uint64 asUInt64(uint64 defaultValue) const;
 
     // symbol: ?begin@Value@Json@@QEBA?AVValueConstIterator@2@XZ
     MCAPI class Json::ValueConstIterator begin() const;

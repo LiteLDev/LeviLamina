@@ -27,7 +27,10 @@ public:
     MCAPI bool isAdmiring() const;
 
     // symbol: ?onAdmireItemPickedUp@AdmireItemComponent@@QEAAXAEBVActor@@AEBVItemStack@@PEAV2@@Z
-    MCAPI void onAdmireItemPickedUp(class Actor const& owner, class ItemStack const& itemStack, class Actor*);
+    MCAPI void onAdmireItemPickedUp(class Actor const& owner, class ItemStack const& item, class Actor*);
+
+    // symbol: ??4AdmireItemComponent@@QEAAAEAV0@$$QEAV0@@Z
+    MCAPI class AdmireItemComponent& operator=(class AdmireItemComponent&&);
 
     // symbol: ?stopAdmiring@AdmireItemComponent@@QEAAXXZ
     MCAPI void stopAdmiring();

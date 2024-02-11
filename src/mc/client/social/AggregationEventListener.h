@@ -30,8 +30,10 @@ public:
 
     // vIndex: 1, symbol:
     // ?recordEvent@AggregationEventListener@Events@Social@@UEAAXAEBVEvent@23@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
-    virtual void
-    recordEvent(class Social::Events::Event const& event, class Bedrock::NonOwnerPointer<class AppPlatform> const&);
+    virtual void recordEvent(
+        class Social::Events::Event const&                       event,
+        class Bedrock::NonOwnerPointer<class AppPlatform> const& appPlatform
+    );
 
     // vIndex: 2, symbol: ?sendEvents@AggregationEventListener@Events@Social@@UEAAX_N@Z
     virtual void sendEvents(bool forceSend);

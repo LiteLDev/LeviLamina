@@ -20,7 +20,7 @@ public:
     virtual ~PushableDescription();
 
     // vIndex: 2, symbol: ?deserializeData@PushableDescription@@UEAAXUDeserializeDataParams@@@Z
-    virtual void deserializeData(struct DeserializeDataParams);
+    virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
     // symbol: ??0PushableDescription@@QEAA@XZ
     MCAPI PushableDescription();

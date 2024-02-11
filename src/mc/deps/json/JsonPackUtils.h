@@ -14,28 +14,6 @@ namespace Json { class Value; }
 namespace JsonPackUtils {
 // NOLINTBEGIN
 // symbol:
-// ?readBoolAndReport@JsonPackUtils@@YA_NAEBVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@5@AEAVPackReport@@_N4@Z
-MCAPI bool readBoolAndReport(
-    class Json::Value const&  parent,
-    std::string const&        element,
-    std::vector<std::string>& errorPath,
-    class PackReport&         report,
-    bool                      optional,
-    bool                      defaultVal
-);
-
-// symbol:
-// ?readIntAndReport@JsonPackUtils@@YAHAEBVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@5@AEAVPackReport@@_NH@Z
-MCAPI int readIntAndReport(
-    class Json::Value const&  parent,
-    std::string const&        element,
-    std::vector<std::string>& errorPath,
-    class PackReport&         report,
-    bool                      optional,
-    int                       defaultVal
-);
-
-// symbol:
 // ?readRequiredValue@JsonPackUtils@@YA?AU?$pair@$$CBVValue@Json@@W4PackParseErrorType@@@std@@AEBVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4ValueType@5@@Z
 MCAPI std::pair<class Json::Value const, ::PackParseErrorType>
       readRequiredValue(class Json::Value const& value, std::string const& propertyName, ::Json::ValueType type);
@@ -59,11 +37,6 @@ MCAPI std::vector<std::string> readStringArrayAndReport(
     class PackReport&         report,
     bool                      optional
 );
-
-// symbol:
-// ?readValue@JsonPackUtils@@YA?AU?$pair@PEBVValue@Json@@W4PackParseErrorType@@@std@@AEBVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-MCAPI std::pair<class Json::Value const*, ::PackParseErrorType>
-      readValue(class Json::Value const& value, std::string const& propertyName);
 
 // symbol:
 // ?readValueAndReportErrors@JsonPackUtils@@YA?AU?$pair@$$CBVValue@Json@@W4PackParseErrorType@@@std@@AEBVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4ValueType@5@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@AEAVPackReport@@_N@Z

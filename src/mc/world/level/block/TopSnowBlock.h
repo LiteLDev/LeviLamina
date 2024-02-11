@@ -45,71 +45,14 @@ public:
     // vIndex: 11, symbol: ?getVisualShape@TopSnowBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
 
-    // vIndex: 20, symbol: __unk_vfn_20
-    virtual void __unk_vfn_20();
-
-    // vIndex: 27, symbol: __unk_vfn_27
-    virtual void __unk_vfn_27();
-
-    // vIndex: 28, symbol: __unk_vfn_28
-    virtual void __unk_vfn_28();
-
-    // vIndex: 29, symbol: __unk_vfn_29
-    virtual void __unk_vfn_29();
-
-    // vIndex: 30, symbol: __unk_vfn_30
-    virtual void __unk_vfn_30();
-
-    // vIndex: 31, symbol: __unk_vfn_31
-    virtual void __unk_vfn_31();
-
     // vIndex: 32, symbol: ?isWaterBlocking@TopSnowBlock@@UEBA_NXZ
     virtual bool isWaterBlocking() const;
 
-    // vIndex: 33, symbol: __unk_vfn_33
-    virtual void __unk_vfn_33();
+    // vIndex: 54, symbol: ?canBeDestroyedByWaterSpread@TopSnowBlock@@UEBA_NXZ
+    virtual bool canBeDestroyedByWaterSpread() const;
 
-    // vIndex: 34, symbol: __unk_vfn_34
-    virtual void __unk_vfn_34();
-
-    // vIndex: 35, symbol: __unk_vfn_35
-    virtual void __unk_vfn_35();
-
-    // vIndex: 36, symbol: __unk_vfn_36
-    virtual void __unk_vfn_36();
-
-    // vIndex: 37, symbol: __unk_vfn_37
-    virtual void __unk_vfn_37();
-
-    // vIndex: 38, symbol: __unk_vfn_38
-    virtual void __unk_vfn_38();
-
-    // vIndex: 40, symbol: __unk_vfn_40
-    virtual void __unk_vfn_40();
-
-    // vIndex: 41, symbol: __unk_vfn_41
-    virtual void __unk_vfn_41();
-
-    // vIndex: 42, symbol: __unk_vfn_42
-    virtual void __unk_vfn_42();
-
-    // vIndex: 43, symbol: __unk_vfn_43
-    virtual void __unk_vfn_43();
-
-    // vIndex: 44, symbol: __unk_vfn_44
-    virtual void __unk_vfn_44();
-
-    // vIndex: 45, symbol: __unk_vfn_45
-    virtual void __unk_vfn_45();
-
-    // vIndex: 48, symbol: __unk_vfn_48
-    virtual void __unk_vfn_48();
-
-    // vIndex: 54, symbol: __unk_vfn_54
-    virtual void __unk_vfn_54();
-
-    // vIndex: 55, symbol: __unk_vfn_55
-    virtual void __unk_vfn_55();
+    // vIndex: 55, symbol: ?waterSpreadCausesSpawn@TopSnowBlock@@UEBA_NXZ
+    virtual bool waterSpreadCausesSpawn() const;
 
     // vIndex: 56, symbol: ?canContainLiquid@TopSnowBlock@@UEBA_NXZ
     virtual bool canContainLiquid() const;
@@ -118,16 +61,10 @@ public:
     virtual bool
     checkIsPathable(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
 
-    // vIndex: 67, symbol: __unk_vfn_67
-    virtual void __unk_vfn_67();
-
-    // vIndex: 74, symbol: __unk_vfn_74
-    virtual void __unk_vfn_74();
-
     // vIndex: 75, symbol: ?isPreservingMediumWhenPlaced@TopSnowBlock@@UEBA_NPEBVBlockLegacy@@@Z
     virtual bool isPreservingMediumWhenPlaced(class BlockLegacy const*) const;
 
-    // vIndex: 85, symbol: ?mayPlace@TopSnowBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 84, symbol: ?mayPlace@TopSnowBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 87, symbol:
@@ -159,33 +96,21 @@ public:
         int                   itemValue
     ) const;
 
-    // vIndex: 103, symbol: ?canBeBuiltOver@TopSnowBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlockItem@@@Z
+    // vIndex: 103, symbol: ?canBeBuiltOver@TopSnowBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    virtual bool canBeBuiltOver(class BlockSource& region, class BlockPos const& pos) const;
+
+    // vIndex: 104, symbol: ?canBeBuiltOver@TopSnowBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlockItem@@@Z
     virtual bool
     canBeBuiltOver(class BlockSource& region, class BlockPos const& pos, class BlockItem const& item) const;
-
-    // vIndex: 104, symbol: ?canBeBuiltOver@TopSnowBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool canBeBuiltOver(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 108, symbol: ?shouldStopFalling@TopSnowBlock@@UEBA_NAEAVActor@@@Z
     virtual bool shouldStopFalling(class Actor& entity) const;
 
-    // vIndex: 109, symbol: __unk_vfn_109
-    virtual void __unk_vfn_109();
+    // vIndex: 110, symbol: ?canHaveExtraData@TopSnowBlock@@UEBA_NXZ
+    virtual bool canHaveExtraData() const;
 
-    // vIndex: 110, symbol: __unk_vfn_110
-    virtual void __unk_vfn_110();
-
-    // vIndex: 111, symbol: __unk_vfn_111
-    virtual void __unk_vfn_111();
-
-    // vIndex: 114, symbol: __unk_vfn_114
-    virtual void __unk_vfn_114();
-
-    // vIndex: 117, symbol: __unk_vfn_117
-    virtual void __unk_vfn_117();
-
-    // vIndex: 138, symbol: __unk_vfn_138
-    virtual void __unk_vfn_138();
+    // vIndex: 138, symbol: ?canBeSilkTouched@TopSnowBlock@@MEBA_NXZ
+    virtual bool canBeSilkTouched() const;
 
     // vIndex: 145, symbol: ?onExploded@TopSnowBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
     virtual void onExploded(class BlockSource& region, class BlockPos const& pos, class Actor* entitySource) const;
@@ -193,25 +118,16 @@ public:
     // vIndex: 147, symbol: ?onPlace@TopSnowBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 149, symbol: __unk_vfn_149
-    virtual void __unk_vfn_149();
-
     // vIndex: 150, symbol: ?tick@TopSnowBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 151, symbol: ?randomTick@TopSnowBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 152, symbol: __unk_vfn_152
-    virtual void __unk_vfn_152();
-
-    // vIndex: 155, symbol: __unk_vfn_155
-    virtual void __unk_vfn_155();
-
-    // vIndex: 164, symbol: ?getResourceItem@TopSnowBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
+    // vIndex: 163, symbol: ?getResourceItem@TopSnowBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
     virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
 
-    // vIndex: 165, symbol: ?getResourceCount@TopSnowBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
+    // vIndex: 164, symbol: ?getResourceCount@TopSnowBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
     virtual int getResourceCount(class Randomize&, class Block const& block, int) const;
 
     // vIndex: 168, symbol: ?getDustColor@TopSnowBlock@@UEBA?AVColor@mce@@AEBVBlock@@@Z
@@ -221,9 +137,6 @@ public:
     // ?getDustParticleName@TopSnowBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
     virtual std::string getDustParticleName(class Block const&) const;
 
-    // vIndex: 170, symbol: __unk_vfn_170
-    virtual void __unk_vfn_170();
-
     // vIndex: 172, symbol: ?isFreeToFall@TopSnowBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool isFreeToFall(class BlockSource& region, class BlockPos const& pos) const;
 
@@ -231,18 +144,6 @@ public:
     virtual void
     startFalling(class BlockSource& region, class BlockPos const& pos, class Block const& oldBlock, bool creative)
         const;
-
-    // symbol: ?canBeDestroyedByWaterSpread@TopSnowBlock@@UEBA_NXZ
-    MCVAPI bool canBeDestroyedByWaterSpread() const;
-
-    // symbol: ?canBeSilkTouched@TopSnowBlock@@MEBA_NXZ
-    MCVAPI bool canBeSilkTouched() const;
-
-    // symbol: ?canHaveExtraData@TopSnowBlock@@UEBA_NXZ
-    MCVAPI bool canHaveExtraData() const;
-
-    // symbol: ?waterSpreadCausesSpawn@TopSnowBlock@@UEBA_NXZ
-    MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0TopSnowBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
     MCAPI TopSnowBlock(std::string const&, int, bool);

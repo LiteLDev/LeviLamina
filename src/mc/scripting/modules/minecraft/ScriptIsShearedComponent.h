@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptIsShearedComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptIsShearedComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptIsShearedComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptIsShearedComponent() = default;
 
     // vIndex: 1, symbol: ?_isValid@ScriptActorComponent@ScriptModuleMinecraft@@MEBA_NXZ
     virtual bool _isValid() const;

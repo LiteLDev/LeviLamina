@@ -21,15 +21,6 @@ public:
     // vIndex: 10, symbol: ?setItem@SimplePlayerContainer@@UEAAXHAEBVItemStack@@@Z
     virtual void setItem(int slot, class ItemStack const& item);
 
-    // vIndex: 25, symbol: __unk_vfn_25
-    virtual void __unk_vfn_25();
-
-    // vIndex: 26, symbol: __unk_vfn_26
-    virtual void __unk_vfn_26();
-
-    // vIndex: 34, symbol: __unk_vfn_34
-    virtual void __unk_vfn_34();
-
     // symbol:
     // ??0SimplePlayerContainer@@QEAA@AEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NHW4ContainerType@@@Z
     MCAPI SimplePlayerContainer(

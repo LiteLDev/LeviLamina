@@ -17,6 +17,12 @@ MCAPI struct TickingSystemWithInfo createCleanupSystem();
 // symbol: ?createSystem@EntityInsideSystem@@YA?AUTickingSystemWithInfo@@_N@Z
 MCAPI struct TickingSystemWithInfo createSystem(bool);
 
+// symbol: ?isAir@EntityInsideSystem@@YA_NAEBVBlock@@@Z
+MCAPI bool isAir(class Block const&);
+
+// symbol: ?isSlidingDown@EntityInsideSystem@@YA_NAEBVBlockPos@@AEBVVec3@@1AEBVVec2@@@Z
+MCAPI bool isSlidingDown(class BlockPos const&, class Vec3 const&, class Vec3 const&, class Vec2 const&);
+
 // symbol: ?onBoatAboveBubbleColumn@EntityInsideSystem@@YAXAEAVActor@@@Z
 MCAPI void onBoatAboveBubbleColumn(class Actor&);
 
@@ -26,9 +32,9 @@ MCAPI void
 tickBoatInsideBubbleColumnBlock(struct InsideBubbleColumnBlockComponent const&, struct FallDistanceComponent&, struct StateVectorComponent&, class ActorOwnerComponent&);
 
 // symbol:
-// ?tickInsideBubbleColumnBlock@EntityInsideSystem@@YAXAEBUInsideBubbleColumnBlockComponent@@AEAUFallDistanceComponent@@AEAUStateVectorComponent@@V?$optional_ref@$$CBUAbilitiesComponent@@@@@Z
+// ?tickInsideBubbleColumnBlock@EntityInsideSystem@@YAXAEBUInsideBubbleColumnBlockComponent@@AEAUFallDistanceComponent@@AEAUStateVectorComponent@@V?$optional_ref@$$CBUMovementAbilitiesComponent@@@@@Z
 MCAPI void
-tickInsideBubbleColumnBlock(struct InsideBubbleColumnBlockComponent const&, struct FallDistanceComponent&, struct StateVectorComponent&, class optional_ref<struct AbilitiesComponent const>);
+tickInsideBubbleColumnBlock(struct InsideBubbleColumnBlockComponent const&, struct FallDistanceComponent&, struct StateVectorComponent&, class optional_ref<struct MovementAbilitiesComponent const>);
 
 // symbol:
 // ?tickInsideCactusBlock@EntityInsideSystem@@YAXAEBU?$InsideBlockWithPosAndBlockComponent@UCactusBlockFlag@@@@AEAUInsideBlockComponent@@@Z

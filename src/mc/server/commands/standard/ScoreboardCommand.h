@@ -119,24 +119,40 @@ public:
 
     // symbol:
     // ?addPlayerScore@ScoreboardCommand@@AEBAXAEAVScoreboard@@W4PlayerScoreSetFunction@@AEBUScoreboardId@@AEAVObjective@@AEBV?$function@$$A6AAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorUniqueID@@@Z@std@@AEAVCommandOutput@@AEAUSetScoreOutput@1@@Z
-    MCAPI void
-    addPlayerScore(class Scoreboard&, ::PlayerScoreSetFunction, struct ScoreboardId const&, class Objective&, std::function<std::string const&(struct ActorUniqueID)> const&, class CommandOutput&, struct ScoreboardCommand::SetScoreOutput&)
-        const;
+    MCAPI void addPlayerScore(
+        class Scoreboard&                                              scoreboard,
+        ::PlayerScoreSetFunction                                       fn,
+        struct ScoreboardId const&                                     targetId,
+        class Objective&                                               objective,
+        std::function<std::string const&(struct ActorUniqueID)> const& playerNameResolver,
+        class CommandOutput&                                           output,
+        struct ScoreboardCommand::SetScoreOutput&                      cumulativeOutput
+    ) const;
 
     // symbol:
     // ?applyPlayerOperation@ScoreboardCommand@@AEBA_NAEAVScoreboard@@AEBV?$function@$$A6AAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorUniqueID@@@Z@std@@AEBUScoreboardId@@AEAVObjective@@3AEBVCommandOrigin@@AEAVCommandOutput@@AEAUSetScoreOutput@1@@Z
-    MCAPI bool
-    applyPlayerOperation(class Scoreboard&, std::function<std::string const&(struct ActorUniqueID)> const&, struct ScoreboardId const&, class Objective&, class Objective&, class CommandOrigin const&, class CommandOutput&, struct ScoreboardCommand::SetScoreOutput&)
-        const;
+    MCAPI bool applyPlayerOperation(
+        class Scoreboard&                                              scoreboard,
+        std::function<std::string const&(struct ActorUniqueID)> const& playerNameResolver,
+        struct ScoreboardId const&                                     targetId,
+        class Objective&                                               targetObjective,
+        class Objective&                                               objective,
+        class CommandOrigin const&                                     origin,
+        class CommandOutput&                                           output,
+        struct ScoreboardCommand::SetScoreOutput&                      cumulativeOutput
+    ) const;
 
     // symbol: ?listObjectives@ScoreboardCommand@@AEBAXAEBVScoreboard@@AEAVCommandOutput@@@Z
     MCAPI void listObjectives(class Scoreboard const& scoreboard, class CommandOutput& output) const;
 
     // symbol:
     // ?listPlayers@ScoreboardCommand@@AEBAXAEAVScoreboard@@AEBUScoreboardId@@AEBV?$function@$$A6AAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorUniqueID@@@Z@std@@AEAVCommandOutput@@@Z
-    MCAPI void
-    listPlayers(class Scoreboard&, struct ScoreboardId const&, std::function<std::string const&(struct ActorUniqueID)> const&, class CommandOutput&)
-        const;
+    MCAPI void listPlayers(
+        class Scoreboard&                                              scoreboard,
+        struct ScoreboardId const&                                     targetId,
+        std::function<std::string const&(struct ActorUniqueID)> const& playerNameResolver,
+        class CommandOutput&                                           output
+    ) const;
 
     // symbol: ?objectives@ScoreboardCommand@@AEBAXAEAVScoreboard@@AEBVCommandOrigin@@AEAVCommandOutput@@@Z
     MCAPI void
@@ -153,9 +169,13 @@ public:
 
     // symbol:
     // ?resetPlayer@ScoreboardCommand@@AEBAXAEAVScoreboard@@AEBUScoreboardId@@PEAVObjective@@AEBV?$function@$$A6AAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorUniqueID@@@Z@std@@AEAVCommandOutput@@@Z
-    MCAPI void
-    resetPlayer(class Scoreboard&, struct ScoreboardId const&, class Objective*, std::function<std::string const&(struct ActorUniqueID)> const&, class CommandOutput&)
-        const;
+    MCAPI void resetPlayer(
+        class Scoreboard&                                              scoreboard,
+        struct ScoreboardId const&                                     targetId,
+        class Objective*                                               objective,
+        std::function<std::string const&(struct ActorUniqueID)> const& playerNameResolver,
+        class CommandOutput&                                           output
+    ) const;
 
     // symbol:
     // ?setDisplayObjective@ScoreboardCommand@@AEBAXAEAVScoreboard@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1W4ObjectiveSortOrder@@AEAVCommandOutput@@@Z
@@ -169,15 +189,23 @@ public:
 
     // symbol:
     // ?setPlayerRandomScore@ScoreboardCommand@@AEBA_NAEAVScoreboard@@AEBUScoreboardId@@AEAVObjective@@AEBV?$function@$$A6AAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorUniqueID@@@Z@std@@AEAVCommandOutput@@AEAUSetScoreOutput@1@@Z
-    MCAPI bool
-    setPlayerRandomScore(class Scoreboard&, struct ScoreboardId const&, class Objective&, std::function<std::string const&(struct ActorUniqueID)> const&, class CommandOutput&, struct ScoreboardCommand::SetScoreOutput&)
-        const;
+    MCAPI bool setPlayerRandomScore(
+        class Scoreboard&                                              scoreboard,
+        struct ScoreboardId const&                                     targetId,
+        class Objective&                                               targetObjective,
+        std::function<std::string const&(struct ActorUniqueID)> const& playerNameResolver,
+        class CommandOutput&                                           output,
+        struct ScoreboardCommand::SetScoreOutput&                      cumulativeOutput
+    ) const;
 
     // symbol:
     // ?testPlayerScore@ScoreboardCommand@@AEBAXAEBUScoreboardId@@AEAVObjective@@AEBV?$function@$$A6AAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorUniqueID@@@Z@std@@AEAVCommandOutput@@@Z
-    MCAPI void
-    testPlayerScore(struct ScoreboardId const&, class Objective&, std::function<std::string const&(struct ActorUniqueID)> const&, class CommandOutput&)
-        const;
+    MCAPI void testPlayerScore(
+        struct ScoreboardId const&                                     targetId,
+        class Objective&                                               objective,
+        std::function<std::string const&(struct ActorUniqueID)> const& playerNameResolver,
+        class CommandOutput&                                           output
+    ) const;
 
     // symbol:
     // ?_getNonSortableDisplaySlots@ScoreboardCommand@@CA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEAVScoreboard@@@Z

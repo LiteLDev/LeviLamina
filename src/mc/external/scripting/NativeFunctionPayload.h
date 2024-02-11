@@ -3,11 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/scripting/IPayload.h"
 #include "mc/external/scripting/Privilege.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { class IDependencyLoader; }
+namespace Scripting { class IPayload; }
 namespace Scripting { class IPrinter; }
 namespace Scripting { class NativeRuntime; }
 namespace Scripting { class ResultAny; }
@@ -19,7 +21,7 @@ namespace Scripting { struct ModuleBindingBundle; }
 
 namespace Scripting {
 
-class NativeFunctionPayload {
+class NativeFunctionPayload : public ::Scripting::IPayload {
 public:
     // prevent constructor by default
     NativeFunctionPayload& operator=(NativeFunctionPayload const&);
@@ -32,14 +34,14 @@ public:
     virtual ~NativeFunctionPayload();
 
     // vIndex: 1, symbol:
-    // ?runOn@NativeFunctionPayload@Scripting@@UEAA?AVResultAny@2@UContextId@2@AEAVNativeRuntime@2@V?$optional@W4Privilege@Scripting@@@std@@@Z
-    virtual class Scripting::ResultAny
-    runOn(struct Scripting::ContextId, class Scripting::NativeRuntime&, std::optional<::Scripting::Privilege>);
-
-    // vIndex: 2, symbol:
     // ?runOn@IPayload@Scripting@@UEAA?AVResultAny@2@UContextId@2@AEAVStringBasedRuntime@2@V?$optional@W4Privilege@Scripting@@@std@@@Z
     virtual class Scripting::ResultAny
     runOn(struct Scripting::ContextId, class Scripting::StringBasedRuntime&, std::optional<::Scripting::Privilege>);
+
+    // vIndex: 2, symbol:
+    // ?runOn@NativeFunctionPayload@Scripting@@UEAA?AVResultAny@2@UContextId@2@AEAVNativeRuntime@2@V?$optional@W4Privilege@Scripting@@@std@@@Z
+    virtual class Scripting::ResultAny
+    runOn(struct Scripting::ContextId, class Scripting::NativeRuntime&, std::optional<::Scripting::Privilege>);
 
     // symbol:
     // ??0NativeFunctionPayload@Scripting@@QEAA@V?$function@$$A6A?AVResultAny@Scripting@@AEAVNativeRuntime@2@UContextId@2@VWeakLifetimeScope@2@AEBUModuleBindingBundle@2@PEAVIDependencyLoader@2@PEAVIPrinter@2@@Z@std@@@Z

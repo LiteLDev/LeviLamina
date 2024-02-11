@@ -21,7 +21,7 @@ public:
     virtual ~JumpControlDescription();
 
     // vIndex: 2, symbol: ?deserializeData@JumpControlDescription@@UEAAXUDeserializeDataParams@@@Z
-    virtual void deserializeData(struct DeserializeDataParams);
+    virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
     // NOLINTEND
 };

@@ -45,53 +45,23 @@ public:
     // vIndex: 13, symbol: ?remove@FishingHook@@UEAAXXZ
     virtual void remove();
 
-    // vIndex: 23, symbol: __unk_vfn_23
-    virtual void __unk_vfn_23();
-
-    // vIndex: 39, symbol: __unk_vfn_39
-    virtual void __unk_vfn_39();
-
-    // vIndex: 42, symbol: __unk_vfn_42
-    virtual void __unk_vfn_42();
-
-    // vIndex: 43, symbol: ?getShadowRadius@FishingHook@@UEBAMXZ
+    // vIndex: 41, symbol: ?getShadowRadius@FishingHook@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 47, symbol: __unk_vfn_47
-    virtual void __unk_vfn_47();
-
-    // vIndex: 60, symbol: __unk_vfn_60
-    virtual void __unk_vfn_60();
-
-    // vIndex: 61, symbol: __unk_vfn_61
-    virtual void __unk_vfn_61();
-
-    // vIndex: 62, symbol: __unk_vfn_62
-    virtual void __unk_vfn_62();
-
-    // vIndex: 83, symbol: ?handleEntityEvent@FishingHook@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 80, symbol: ?handleEntityEvent@FishingHook@@UEAAXW4ActorEvent@@H@Z
     virtual void handleEntityEvent(::ActorEvent eventId, int data);
 
-    // vIndex: 97, symbol: ?save@FishingHook@@UEBA_NAEAVCompoundTag@@@Z
+    // vIndex: 94, symbol: ?save@FishingHook@@UEBA_NAEAVCompoundTag@@@Z
     virtual bool save(class CompoundTag& entityTag) const;
 
-    // vIndex: 100, symbol: ?getSourceUniqueID@FishingHook@@UEBA?AUActorUniqueID@@XZ
+    // vIndex: 97, symbol: ?getSourceUniqueID@FishingHook@@UEBA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID getSourceUniqueID() const;
 
-    // vIndex: 106, symbol: ?canChangeDimensionsUsingPortal@FishingHook@@UEBA_NXZ
+    // vIndex: 103, symbol: ?canChangeDimensionsUsingPortal@FishingHook@@UEBA_NXZ
     virtual bool canChangeDimensionsUsingPortal() const;
 
-    // vIndex: 107, symbol: __unk_vfn_107
-    virtual void __unk_vfn_107();
-
-    // vIndex: 144, symbol: __unk_vfn_144
-    virtual void __unk_vfn_144();
-
-    // vIndex: 148, symbol: ?shouldDropDeathLoot@FishingHook@@UEBA_NXZ
+    // vIndex: 144, symbol: ?shouldDropDeathLoot@FishingHook@@UEBA_NXZ
     virtual bool shouldDropDeathLoot() const;
-
-    // vIndex: 162, symbol: __unk_vfn_162
-    virtual void __unk_vfn_162();
 
     // symbol: ??0FishingHook@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI FishingHook(

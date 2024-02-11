@@ -11,6 +11,7 @@ public:
     // prevent constructor by default
     ItemStackRequestActionCreate& operator=(ItemStackRequestActionCreate const&);
     ItemStackRequestActionCreate(ItemStackRequestActionCreate const&);
+    ItemStackRequestActionCreate();
 
 public:
     // NOLINTBEGIN
@@ -23,9 +24,6 @@ public:
     // vIndex: 5, symbol:
     // ?_read@ItemStackRequestActionCreate@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
-
-    // symbol: ??0ItemStackRequestActionCreate@@QEAA@XZ
-    MCAPI ItemStackRequestActionCreate();
 
     // NOLINTEND
 };

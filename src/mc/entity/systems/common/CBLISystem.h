@@ -16,6 +16,7 @@
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
+struct ActorDataFlagComponent;
 struct ActorMovementTickNeededFlag;
 struct BoatFlag;
 struct ControlledByLocalInstanceFlag;
@@ -23,7 +24,6 @@ struct HorseFlag;
 struct LocalPlayerComponentFlag;
 struct PlayerComponentFlag;
 struct RecalculateControlledByLocalInstanceRequestFlag;
-struct SynchedActorDataComponent;
 struct VehicleComponent;
 // clang-format on
 
@@ -41,9 +41,6 @@ public:
     // vIndex: 0, symbol: __gen_??1CBLISystem@ControlledByLocalInstanceSystemImpl@@UEAA@XZ
     virtual ~CBLISystem() = default;
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
-
     // vIndex: 2, symbol: __unk_vfn_2
     virtual void __unk_vfn_2();
 
@@ -54,7 +51,7 @@ public:
     virtual void __unk_vfn_4();
 
     // vIndex: 5, symbol:
-    // ?tick@CBLISystem@ControlledByLocalInstanceSystemImpl@@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@UBoatFlag@@@@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@URecalculateControlledByLocalInstanceRequestFlag@@@@@@U?$Read@UVehicleComponent@@USynchedActorDataComponent@@V?$FlagComponent@ULocalPlayerComponentFlag@@@@@@U?$Write@$$V@@U?$AddRemove@V?$FlagComponent@UControlledByLocalInstanceFlag@@@@@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
+    // ?tick@CBLISystem@ControlledByLocalInstanceSystemImpl@@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@UBoatFlag@@@@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@URecalculateControlledByLocalInstanceRequestFlag@@@@@@U?$Read@UVehicleComponent@@UActorDataFlagComponent@@V?$FlagComponent@ULocalPlayerComponentFlag@@@@@@U?$Write@$$V@@U?$AddRemove@V?$FlagComponent@UControlledByLocalInstanceFlag@@@@@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
     virtual void tick(class StrictExecutionContext<
                       struct Filter<
                           class FlagComponent<struct ActorMovementTickNeededFlag>,
@@ -64,7 +61,7 @@ public:
                           class FlagComponent<struct RecalculateControlledByLocalInstanceRequestFlag>>,
                       struct Read<
                           struct VehicleComponent,
-                          struct SynchedActorDataComponent,
+                          struct ActorDataFlagComponent,
                           class FlagComponent<struct LocalPlayerComponentFlag>>,
                       struct Write<>,
                       struct AddRemove<class FlagComponent<struct ControlledByLocalInstanceFlag>>,
@@ -73,9 +70,8 @@ public:
                       struct EntityFactoryT<>>&);
 
     // vIndex: 6, symbol:
-    // ?singleTick@CBLISystem@ControlledByLocalInstanceSystemImpl@@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@UBoatFlag@@@@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@URecalculateControlledByLocalInstanceRequestFlag@@@@@@U?$Read@UVehicleComponent@@USynchedActorDataComponent@@V?$FlagComponent@ULocalPlayerComponentFlag@@@@@@U?$Write@$$V@@U?$AddRemove@V?$FlagComponent@UControlledByLocalInstanceFlag@@@@@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@AEAVStrictEntityContext@@@Z
-    virtual void
-    singleTick(class StrictExecutionContext<struct Filter<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct BoatFlag>, class FlagComponent<struct HorseFlag>, class FlagComponent<struct PlayerComponentFlag>, class FlagComponent<struct RecalculateControlledByLocalInstanceRequestFlag>>, struct Read<struct VehicleComponent, struct SynchedActorDataComponent, class FlagComponent<struct LocalPlayerComponentFlag>>, struct Write<>, struct AddRemove<class FlagComponent<struct ControlledByLocalInstanceFlag>>, struct GlobalRead<>, struct GlobalWrite<>, struct EntityFactoryT<>>&, class StrictEntityContext&);
+    // ?singleTick@CBLISystem@ControlledByLocalInstanceSystemImpl@@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@UBoatFlag@@@@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@URecalculateControlledByLocalInstanceRequestFlag@@@@@@U?$Read@UVehicleComponent@@UActorDataFlagComponent@@V?$FlagComponent@ULocalPlayerComponentFlag@@@@@@U?$Write@$$V@@U?$AddRemove@V?$FlagComponent@UControlledByLocalInstanceFlag@@@@@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@AEAVStrictEntityContext@@@Z
+    virtual void singleTick(class StrictExecutionContext<struct Filter<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct BoatFlag>, class FlagComponent<struct HorseFlag>, class FlagComponent<struct PlayerComponentFlag>, class FlagComponent<struct RecalculateControlledByLocalInstanceRequestFlag>>, struct Read<struct VehicleComponent, struct ActorDataFlagComponent, class FlagComponent<struct LocalPlayerComponentFlag>>, struct Write<>, struct AddRemove<class FlagComponent<struct ControlledByLocalInstanceFlag>>, struct GlobalRead<>, struct GlobalWrite<>, struct EntityFactoryT<>>&, class StrictEntityContext&);
 
     // NOLINTEND
 };

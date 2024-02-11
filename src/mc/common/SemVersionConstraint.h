@@ -21,7 +21,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ?doValidate@SemVersionConstraint@@EEBAXAEBVmeta_any@entt@@AEAVSerializerContext@cereal@@@Z
-    virtual void doValidate(entt::meta_any const&, class cereal::SerializerContext& context) const;
+    virtual void doValidate(entt::meta_any const& any, class cereal::SerializerContext& context) const;
 
     // vIndex: 1, symbol: ??1SemVersionConstraint@@UEAA@XZ
     virtual ~SemVersionConstraint();

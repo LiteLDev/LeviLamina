@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0WorldGenCache@@QEAA@VChunkLocalNoiseCache@@VSurfaceLevelCache@@@Z
-    MCAPI WorldGenCache(class ChunkLocalNoiseCache, class SurfaceLevelCache);
+    MCAPI WorldGenCache(class ChunkLocalNoiseCache, class SurfaceLevelCache surfaceLevelCache);
 
     // symbol: ?getChunkLocalNoiseCache@WorldGenCache@@QEBAAEBVChunkLocalNoiseCache@@XZ
     MCAPI class ChunkLocalNoiseCache const& getChunkLocalNoiseCache() const;

@@ -19,9 +19,9 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol:
-    // ?_doCurrentSwimAmountSystem@CurrentSwimAmountSystem@@CAXAEBVStrictEntityContext@@AEAUSwimAmountComponent@@AEBUSynchedActorDataComponent@@@Z
+    // ?_doCurrentSwimAmountSystem@CurrentSwimAmountSystem@@CAXAEBVStrictEntityContext@@AEAUSwimAmountComponent@@AEBUActorDataFlagComponent@@@Z
     MCAPI static void
-    _doCurrentSwimAmountSystem(class StrictEntityContext const&, struct SwimAmountComponent&, struct SynchedActorDataComponent const&);
+    _doCurrentSwimAmountSystem(class StrictEntityContext const&, struct SwimAmountComponent&, struct ActorDataFlagComponent const&);
 
     // NOLINTEND
 };

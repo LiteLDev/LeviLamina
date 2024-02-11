@@ -35,8 +35,8 @@ public:
     // vIndex: 5, symbol: ?getFilteredContainerSize@ContainerModel@@UEBAHXZ
     virtual int getFilteredContainerSize() const;
 
-    // vIndex: 6, symbol: __unk_vfn_6
-    virtual void __unk_vfn_6();
+    // vIndex: 6, symbol: ?tick@ContainerModel@@UEAAXH@Z
+    virtual void tick(int selectedSlot);
 
     // vIndex: 7, symbol: ?getContainerWeakRef@ContainerModel@@UEBA?AVContainerWeakRef@@XZ
     virtual class ContainerWeakRef getContainerWeakRef() const;
@@ -53,8 +53,8 @@ public:
     // vIndex: 11, symbol: ?getItemStackBase@ContainerModel@@UEBAAEBVItemStackBase@@H@Z
     virtual class ItemStackBase const& getItemStackBase(int) const;
 
-    // vIndex: 12, symbol: __unk_vfn_12
-    virtual void __unk_vfn_12();
+    // vIndex: 12, symbol: ?isItemInstanceBased@ContainerModel@@UEBA_NXZ
+    virtual bool isItemInstanceBased() const;
 
     // vIndex: 13, symbol: ?setItem@ContainerModel@@UEAAXHAEBVItemStack@@@Z
     virtual void setItem(int, class ItemStack const& item);
@@ -62,11 +62,11 @@ public:
     // vIndex: 14, symbol: ?isValid@ContainerModel@@UEAA_NXZ
     virtual bool isValid();
 
-    // vIndex: 15, symbol: __unk_vfn_15
-    virtual void __unk_vfn_15();
+    // vIndex: 15, symbol: ?isItemFiltered@ContainerModel@@UEBA_NAEBVItemStackBase@@@Z
+    virtual bool isItemFiltered(class ItemStackBase const& item) const;
 
-    // vIndex: 16, symbol: __unk_vfn_16
-    virtual void __unk_vfn_16();
+    // vIndex: 16, symbol: ?isExpanableItemFiltered@ContainerModel@@UEBA_NH@Z
+    virtual bool isExpanableItemFiltered(int index) const;
 
     // vIndex: 17, symbol: ?getItemExpandStatus@ContainerModel@@UEBA?AW4ContainerExpandStatus@@H@Z
     virtual ::ContainerExpandStatus getItemExpandStatus(int itemId) const;
@@ -75,8 +75,8 @@ public:
     // ?getItemGroupName@ContainerModel@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     virtual std::string const& getItemGroupName(int) const;
 
-    // vIndex: 19, symbol: __unk_vfn_19
-    virtual void __unk_vfn_19();
+    // vIndex: 19, symbol: ?switchItemExpando@ContainerModel@@UEAAXH@Z
+    virtual void switchItemExpando(int itemId);
 
     // vIndex: 20, symbol: ?isSlotDisabled@ContainerModel@@UEBA_NH@Z
     virtual bool isSlotDisabled(int) const;
@@ -92,21 +92,6 @@ public:
 
     // vIndex: 24, symbol: ?_onItemChanged@ContainerModel@@MEAAXHAEBVItemStack@@0@Z
     virtual void _onItemChanged(int, class ItemStack const& oldItem, class ItemStack const& newItem);
-
-    // symbol: ?isExpanableItemFiltered@ContainerModel@@UEBA_NH@Z
-    MCVAPI bool isExpanableItemFiltered(int index) const;
-
-    // symbol: ?isItemFiltered@ContainerModel@@UEBA_NAEBVItemStackBase@@@Z
-    MCVAPI bool isItemFiltered(class ItemStackBase const& item) const;
-
-    // symbol: ?isItemInstanceBased@ContainerModel@@UEBA_NXZ
-    MCVAPI bool isItemInstanceBased() const;
-
-    // symbol: ?switchItemExpando@ContainerModel@@UEAAXH@Z
-    MCVAPI void switchItemExpando(int itemId);
-
-    // symbol: ?tick@ContainerModel@@UEAAXH@Z
-    MCVAPI void tick(int selectedSlot);
 
     // symbol: ??0ContainerModel@@QEAA@W4ContainerEnumName@@HW4ContainerCategory@@_N@Z
     MCAPI ContainerModel(

@@ -8,6 +8,11 @@
 #include "mc/world/AutomaticID.h"
 #include "mc/world/level/dimension/Dimension.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace br::worldgen { class StructureSetRegistry; }
+// clang-format on
+
 class NetherDimension : public ::Dimension {
 public:
     // prevent constructor by default
@@ -28,8 +33,8 @@ public:
     );
 
     // symbol:
-    // ?createGenerator@NetherDimension@@UEAA?AV?$unique_ptr@VWorldGenerator@@U?$default_delete@VWorldGenerator@@@std@@@std@@XZ
-    MCVAPI std::unique_ptr<class WorldGenerator> createGenerator();
+    // ?createGenerator@NetherDimension@@UEAA?AV?$unique_ptr@VWorldGenerator@@U?$default_delete@VWorldGenerator@@@std@@@std@@AEBVStructureSetRegistry@worldgen@br@@@Z
+    MCVAPI std::unique_ptr<class WorldGenerator> createGenerator(class br::worldgen::StructureSetRegistry const&);
 
     // symbol: ?fixWallChunk@NetherDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
     MCVAPI void fixWallChunk(class ChunkSource& source, class LevelChunk& lc);
@@ -43,8 +48,8 @@ public:
     // symbol: ?getTimeOfDay@NetherDimension@@UEBAMHM@Z
     MCVAPI float getTimeOfDay(int time, float a) const;
 
-    // symbol: ?init@NetherDimension@@UEAAXXZ
-    MCVAPI void init();
+    // symbol: ?init@NetherDimension@@UEAAXAEBVStructureSetRegistry@worldgen@br@@@Z
+    MCVAPI void init(class br::worldgen::StructureSetRegistry const&);
 
     // symbol: ?isFoggyAt@NetherDimension@@UEBA_NHH@Z
     MCVAPI bool isFoggyAt(int x, int z) const;
@@ -72,15 +77,6 @@ public:
 
     // symbol: ??0NetherDimension@@QEAA@AEAVILevel@@AEAVScheduler@@@Z
     MCAPI NetherDimension(class ILevel& level, class Scheduler& callbackContext);
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    // symbol:
-    // ?makeStructureFeatures@NetherDimension@@CA?AV?$unique_ptr@VStructureFeatureRegistry@@U?$default_delete@VStructureFeatureRegistry@@@std@@@std@@IAEBVBaseGameVersion@@@Z
-    MCAPI static std::unique_ptr<class StructureFeatureRegistry>
-    makeStructureFeatures(uint seed, class BaseGameVersion const& baseGameVersion);
 
     // NOLINTEND
 };

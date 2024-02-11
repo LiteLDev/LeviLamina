@@ -19,7 +19,7 @@ public:
     MCAPI Blob(class mce::Blob&& rhs);
 
     // symbol: ??0Blob@mce@@QEAA@_K@Z
-    MCAPI explicit Blob(uint64);
+    MCAPI explicit Blob(uint64 size);
 
     // symbol: ?cbegin@Blob@mce@@QEBAPEBEXZ
     MCAPI uchar const* cbegin() const;

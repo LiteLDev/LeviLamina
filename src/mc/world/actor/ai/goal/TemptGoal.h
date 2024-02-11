@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/events/LevelSoundEvent.h"
 #include "mc/world/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
@@ -38,6 +39,20 @@ public:
 
     // symbol: ??0TemptGoal@@QEAA@AEBV0@@Z
     MCAPI TemptGoal(class TemptGoal const&);
+
+    // symbol:
+    // ??0TemptGoal@@QEAA@AEAVMob@@MAEBV?$vector@VItemDescriptor@@V?$allocator@VItemDescriptor@@@std@@@std@@W4LevelSoundEvent@Legacy@Puv@@UFloatRange@@_NM44@Z
+    MCAPI TemptGoal(
+        class Mob&                               mob,
+        float                                    speed,
+        std::vector<class ItemDescriptor> const& itemList,
+        ::Puv::Legacy::LevelSoundEvent           sound,
+        struct FloatRange                        soundIntervalRange,
+        bool                                     canGetScared,
+        float                                    temptDistance,
+        bool                                     canTemptVertically,
+        bool
+    );
 
     // NOLINTEND
 };

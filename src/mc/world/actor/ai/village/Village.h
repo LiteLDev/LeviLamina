@@ -82,8 +82,17 @@ public:
     // symbol: ?addVillager@Village@@QEAAXAEBUActorUniqueID@@@Z
     MCAPI void addVillager(struct ActorUniqueID const&);
 
+    // symbol: ?alwaysTickRaid@Village@@QEBA_NXZ
+    MCAPI bool alwaysTickRaid() const;
+
+    // symbol: ?canRemove@Village@@QEBA_NXZ
+    MCAPI bool canRemove() const;
+
     // symbol: ?checkNeedMoreVillagers@Village@@QEBA_NXZ
     MCAPI bool checkNeedMoreVillagers() const;
+
+    // symbol: ?clearOwnedPOIs@Village@@QEAAXXZ
+    MCAPI void clearOwnedPOIs();
 
     // symbol: ?debugDraw@Village@@QEAAXXZ
     MCAPI void debugDraw();
@@ -127,6 +136,10 @@ public:
     // symbol: ?getStanding@Village@@QEAAHAEBUActorUniqueID@@@Z
     MCAPI int getStanding(struct ActorUniqueID const& playerID);
 
+    // symbol:
+    // ?getUnclaimedPOIs@Village@@QEBAAEBV?$array@V?$vector@V?$weak_ptr@VPOIInstance@@@std@@V?$allocator@V?$weak_ptr@VPOIInstance@@@std@@@2@@std@@$02@std@@XZ
+    MCAPI std::array<std::vector<std::weak_ptr<class POIInstance>>, 3> const& getUnclaimedPOIs() const;
+
     // symbol: ?getUniqueID@Village@@QEBA?AVUUID@mce@@XZ
     MCAPI class mce::UUID getUniqueID() const;
 
@@ -167,6 +180,9 @@ public:
     // symbol: ?rewardAllPlayers@Village@@QEAAXH@Z
     MCAPI void rewardAllPlayers(int deltaAmount);
 
+    // symbol: ?saveEntireVillage@Village@@QEAAXAEAVLevelStorage@@@Z
+    MCAPI void saveEntireVillage(class LevelStorage&);
+
     // symbol: ?setSavedDwellerPosition@Village@@QEAAXW4DwellerRole@@AEBUActorUniqueID@@VBlockPos@@@Z
     MCAPI void setSavedDwellerPosition(::DwellerRole role, struct ActorUniqueID const& id, class BlockPos pos);
 
@@ -190,6 +206,9 @@ public:
 
     // symbol: ?withinVillageBounds@Village@@QEBA_NAEBVVec3@@M@Z
     MCAPI bool withinVillageBounds(class Vec3 const& pos, float tolerance) const;
+
+    // symbol: ??1Village@@QEAA@XZ
+    MCAPI ~Village();
 
     // symbol: ?isValidRegisteredPOI@Village@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static bool isValidRegisteredPOI(class BlockSource& region, class BlockPos const& position);
@@ -236,6 +255,10 @@ public:
 
     // symbol: ?_createRaid@Village@@AEAAXXZ
     MCAPI void _createRaid();
+
+    // symbol:
+    // ?_deleteOldDataIfNeeded@Village@@AEBAXAEAVLevelStorage@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI void _deleteOldDataIfNeeded(class LevelStorage&, std::string const&) const;
 
     // symbol: ?_findAvailablePOI@Village@@AEAA_N_KAEAVLevel@@AEAVRandom@@UActorUniqueID@@@Z
     MCAPI bool _findAvailablePOI(uint64 index, class Level& level, class Random& random, struct ActorUniqueID id);
@@ -295,6 +318,9 @@ public:
     // symbol: ?_saveVillagePOIs@Village@@AEBAXAEAVLevelStorage@@@Z
     MCAPI void _saveVillagePOIs(class LevelStorage&) const;
 
+    // symbol: ?_saveVillagePOIsToTag@Village@@AEBAXAEAVCompoundTag@@@Z
+    MCAPI void _saveVillagePOIsToTag(class CompoundTag&) const;
+
     // symbol: ?_saveVillagePlayerStanding@Village@@AEBAXAEAVLevelStorage@@@Z
     MCAPI void _saveVillagePlayerStanding(class LevelStorage&) const;
 
@@ -314,10 +340,10 @@ public:
     MCAPI void _tryAddPoiToVillage(struct ActorUniqueID const&, std::weak_ptr<class POIInstance>);
 
     // symbol: ?_tryShiftStandingsTowardNeutral@Village@@AEAAXAEAUTick@@_K_N@Z
-    MCAPI void _tryShiftStandingsTowardNeutral(struct Tick&, uint64, bool);
+    MCAPI void _tryShiftStandingsTowardNeutral(struct Tick&, uint64 updateInterval, bool);
 
     // symbol: ?_trySpawnDefenderDwellers@Village@@AEAAXAEAVBlockSource@@_K@Z
-    MCAPI void _trySpawnDefenderDwellers(class BlockSource&, uint64);
+    MCAPI void _trySpawnDefenderDwellers(class BlockSource& region, uint64 bedCount);
 
     // symbol: ?_updateAndRemoveInactiveDwellers@Village@@AEAAX_KM@Z
     MCAPI void _updateAndRemoveInactiveDwellers(uint64, float);

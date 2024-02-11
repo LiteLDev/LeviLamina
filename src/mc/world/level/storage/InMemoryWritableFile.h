@@ -26,8 +26,5 @@ public:
     // vIndex: 4, symbol: ?Sync@InMemoryWritableFile@@UEAA?AVStatus@leveldb@@XZ
     virtual leveldb::Status Sync();
 
-    // symbol: ??0InMemoryWritableFile@@QEAA@V?$shared_ptr@VInMemoryFile@@@std@@@Z
-    MCAPI explicit InMemoryWritableFile(std::shared_ptr<class InMemoryFile> file);
-
     // NOLINTEND
 };

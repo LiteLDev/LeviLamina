@@ -43,40 +43,34 @@ public:
     virtual class Core::Result _close();
 
     // vIndex: 5, symbol: ?_read@FlatFile@Core@@UEAA?AVResult@2@PEAX_KPEA_K@Z
-    virtual class Core::Result _read(void*, uint64, uint64*);
+    virtual class Core::Result _read(void* pBuffer, uint64 numBytes, uint64* pNumBytesRead);
 
     // vIndex: 6, symbol: ?_readExactly@FlatFile@Core@@UEAA?AVResult@2@PEAX_K@Z
-    virtual class Core::Result _readExactly(void*, uint64);
+    virtual class Core::Result _readExactly(void* buf, uint64 numBytes);
 
     // vIndex: 7, symbol: ?_skip@FlatFile@Core@@UEAA?AVResult@2@_K@Z
-    virtual class Core::Result _skip(uint64);
+    virtual class Core::Result _skip(uint64 numBytes);
 
     // vIndex: 8, symbol: ?_readAtPosition@FlatFile@Core@@UEAA?AVResult@2@_KPEAX0PEA_K@Z
-    virtual class Core::Result _readAtPosition(uint64, void*, uint64, uint64*);
+    virtual class Core::Result _readAtPosition(uint64 position, void* pBuf, uint64 numBytes, uint64* pNumBytesRead);
 
     // vIndex: 9, symbol: ?_getPosition@FlatFile@Core@@UEAA?AVResult@2@PEA_K@Z
-    virtual class Core::Result _getPosition(uint64*);
+    virtual class Core::Result _getPosition(uint64* pPosition);
 
     // vIndex: 10, symbol: ?_setPosition@FlatFile@Core@@UEAA?AVResult@2@_K@Z
-    virtual class Core::Result _setPosition(uint64);
+    virtual class Core::Result _setPosition(uint64 position);
 
-    // vIndex: 11, symbol: __unk_vfn_11
-    virtual void __unk_vfn_11();
+    // vIndex: 11, symbol: ?_write@FlatFile@Core@@UEAA?AVResult@2@PEBX_K@Z
+    virtual class Core::Result _write(void const* pBuf, uint64 numBytes);
 
-    // vIndex: 12, symbol: __unk_vfn_12
-    virtual void __unk_vfn_12();
+    // vIndex: 12, symbol: ?_flush@FlatFile@Core@@UEAA?AVResult@2@XZ
+    virtual class Core::Result _flush();
 
     // vIndex: 13, symbol: ?_getSize@FlatFile@Core@@UEAA?AVResult@2@PEA_K@Z
-    virtual class Core::Result _getSize(uint64*);
+    virtual class Core::Result _getSize(uint64* pSize);
 
     // vIndex: 14, symbol: ?_getRemainingSize@FlatFile@Core@@UEAA?AVResult@2@PEA_K@Z
-    virtual class Core::Result _getRemainingSize(uint64*);
-
-    // symbol: ?_flush@FlatFile@Core@@UEAA?AVResult@2@XZ
-    MCVAPI class Core::Result _flush();
-
-    // symbol: ?_write@FlatFile@Core@@UEAA?AVResult@2@PEBX_K@Z
-    MCVAPI class Core::Result _write(void const*, uint64);
+    virtual class Core::Result _getRemainingSize(uint64* pFileSize);
 
     // symbol:
     // ??0FlatFile@Core@@QEAA@PEAVFileSystemImpl@1@VFileOpenMode@1@V?$unique_ptr@VFileImpl@Core@@U?$default_delete@VFileImpl@Core@@@std@@@std@@AEBVPath@1@_K4@Z

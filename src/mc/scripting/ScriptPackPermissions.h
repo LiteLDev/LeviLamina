@@ -6,14 +6,8 @@ class ScriptPackPermissions {
 public:
     // prevent constructor by default
     ScriptPackPermissions& operator=(ScriptPackPermissions const&);
+    ScriptPackPermissions(ScriptPackPermissions const&);
     ScriptPackPermissions();
-
-public:
-    // NOLINTBEGIN
-    // symbol: ??0ScriptPackPermissions@@QEAA@AEBV0@@Z
-    MCAPI ScriptPackPermissions(class ScriptPackPermissions const&);
-
-    // NOLINTEND
 
 private:
     // NOLINTBEGIN

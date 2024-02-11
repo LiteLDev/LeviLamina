@@ -15,8 +15,11 @@ class Player;
 class Scoreboard;
 class Vec3;
 namespace ScriptModuleMinecraft { class ScriptActor; }
+namespace ScriptModuleMinecraft { class ScriptItemStack; }
+namespace ScriptModuleMinecraft { class ScriptMolangVariableMap; }
 namespace ScriptModuleMinecraft { struct ScriptCamera; }
 namespace ScriptModuleMinecraft { struct ScriptDimensionLocation; }
+namespace ScriptModuleMinecraft { struct ScriptLocationInUnloadedChunkError; }
 namespace ScriptModuleMinecraft { struct ScriptLocationOutOfWorldBoundsError; }
 namespace ScriptModuleMinecraft { struct ScriptMusicOptions; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerSoundOptions; }
@@ -78,6 +81,9 @@ public:
 
     // symbol: ?calculateTotalXp@ScriptPlayer@ScriptModuleMinecraft@@QEBA?AV?$Result@I$$V@Scripting@@XZ
     MCAPI class Scripting::Result<uint> calculateTotalXp() const;
+
+    // symbol: ?eatItem@ScriptPlayer@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBVScriptItemStack@2@@Z
+    MCAPI class Scripting::Result<void> eatItem(class ScriptModuleMinecraft::ScriptItemStack const&);
 
     // symbol:
     // ?getCamera@ScriptPlayer@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@UScriptCamera@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@XZ
@@ -181,6 +187,15 @@ public:
     MCAPI class Scripting::
         Result<void, struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError, struct Scripting::Error>
         setSpawnPoint(std::optional<struct ScriptModuleMinecraft::ScriptDimensionLocation> const&) const;
+
+    // symbol:
+    // ?spawnParticle@ScriptPlayer@ScriptModuleMinecraft@@QEAA?AV?$Result@XUError@Scripting@@UScriptLocationInUnloadedChunkError@ScriptModuleMinecraft@@UScriptLocationOutOfWorldBoundsError@4@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@V?$optional@V?$StrongTypedObjectHandle@VScriptMolangVariableMap@ScriptModuleMinecraft@@@Scripting@@@6@@Z
+    MCAPI class Scripting::Result<
+        void,
+        struct Scripting::Error,
+        struct ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
+        struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
+    spawnParticle(std::string const&, class Vec3 const&, std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptMolangVariableMap>>);
 
     // symbol:
     // ?startItemCooldown@ScriptPlayer@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

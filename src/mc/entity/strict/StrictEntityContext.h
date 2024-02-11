@@ -4,6 +4,28 @@
 
 class StrictEntityContext {
 public:
+    // StrictEntityContext inner types declare
+    // clang-format off
+    struct Hash;
+    // clang-format on
+
+    // StrictEntityContext inner types define
+    struct Hash {
+    public:
+        // prevent constructor by default
+        Hash& operator=(Hash const&);
+        Hash(Hash const&);
+        Hash();
+
+    public:
+        // NOLINTBEGIN
+        // symbol: ??RHash@StrictEntityContext@@QEBA_KAEBV1@@Z
+        MCAPI uint64 operator()(class StrictEntityContext const&) const;
+
+        // NOLINTEND
+    };
+
+public:
     // prevent constructor by default
     StrictEntityContext& operator=(StrictEntityContext const&);
     StrictEntityContext(StrictEntityContext const&);

@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0FileChunkInfo@@QEAA@H_K0@Z
-    MCAPI FileChunkInfo(int, uint64, uint64);
+    MCAPI FileChunkInfo(int _chunk, uint64 _startByte, uint64 _endByte);
 
     // NOLINTEND
 };

@@ -2,13 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/gametest/framework/IGameTestListener.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace gametest { class BaseGameTestInstance; }
+namespace gametest { class IGameTestListener; }
 namespace gametest { struct GameTestError; }
 // clang-format on
 
-class DedicatedServerGameTestRunnerListener {
+class DedicatedServerGameTestRunnerListener : public ::gametest::IGameTestListener {
 public:
     // prevent constructor by default
     DedicatedServerGameTestRunnerListener& operator=(DedicatedServerGameTestRunnerListener const&);
@@ -19,9 +23,6 @@ public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1DedicatedServerGameTestRunnerListener@@UEAA@XZ
     virtual ~DedicatedServerGameTestRunnerListener() = default;
-
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
 
     // vIndex: 2, symbol:
     // ?onTestPassed@DedicatedServerGameTestRunnerListener@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z

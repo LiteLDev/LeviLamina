@@ -5,9 +5,9 @@
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/enums/MinecraftPacketIds.h"
-#include "mc/network/packet/RemoveEntityPacket.h"
+#include "mc/network/packet/Packet.h"
 
-class RemoveVolumeEntityPacket : public ::RemoveEntityPacket {
+class RemoveVolumeEntityPacket : public ::Packet {
 public:
     // prevent constructor by default
     RemoveVolumeEntityPacket& operator=(RemoveVolumeEntityPacket const&);

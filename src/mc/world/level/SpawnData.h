@@ -19,6 +19,9 @@ public:
     // symbol: ??0SpawnData@@QEAA@AEBV0@@Z
     MCAPI SpawnData(class SpawnData const& rhs);
 
+    // symbol: ??0SpawnData@@QEAA@HUActorDefinitionIdentifier@@@Z
+    MCAPI SpawnData(int randomWeight, struct ActorDefinitionIdentifier actorId);
+
     // symbol: ?save@SpawnData@@QEAA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
     MCAPI std::unique_ptr<class CompoundTag> save();
 

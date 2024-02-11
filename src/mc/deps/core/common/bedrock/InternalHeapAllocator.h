@@ -25,13 +25,13 @@ public:
     virtual ~InternalHeapAllocator() = default;
 
     // vIndex: 1, symbol: ?allocate@InternalHeapAllocator@Memory@Bedrock@@UEAAPEAX_K@Z
-    virtual void* allocate(uint64);
+    virtual void* allocate(uint64 size);
 
     // vIndex: 2, symbol: ?release@InternalHeapAllocator@Memory@Bedrock@@UEAAXPEAX@Z
     virtual void release(void* ptr);
 
     // vIndex: 3, symbol: ?alignedAllocate@InternalHeapAllocator@Memory@Bedrock@@UEAAPEAX_K0@Z
-    virtual void* alignedAllocate(uint64, uint64);
+    virtual void* alignedAllocate(uint64 size, uint64 alignment);
 
     // vIndex: 4, symbol: ?alignedRelease@InternalHeapAllocator@Memory@Bedrock@@UEAAXPEAX@Z
     virtual void alignedRelease(void* ptr);

@@ -29,12 +29,9 @@ public:
     virtual std::optional<struct Scripting::ScriptData>
     onLoadScript(std::string const& name, std::optional<std::vector<struct Scripting::ModuleBinding>>);
 
-    // symbol: ?hasErrors@ScriptPlugin@@QEBA_NXZ
-    MCAPI bool hasErrors() const;
-
     // symbol:
-    // ?reportErrors@ScriptPlugin@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
-    MCAPI std::vector<std::string> reportErrors() const;
+    // ?getScriptFilePaths@ScriptPlugin@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
+    MCAPI std::vector<std::string> getScriptFilePaths() const;
 
     // NOLINTEND
 

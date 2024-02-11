@@ -20,6 +20,17 @@ public:
     ArmSize(ArmSize const&);
     ArmSize();
 
+public:
+    // NOLINTBEGIN
+    // symbol:
+    // ?getStringFromType@ArmSize@persona@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Type@12@@Z
+    MCAPI static std::string getStringFromType(::persona::ArmSize::Type);
+
+    // symbol: ?getTypeFromString@ArmSize@persona@@SA?AW4Type@12@AEBV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+    MCAPI static ::persona::ArmSize::Type getTypeFromString(std::string_view const&);
+
+    // NOLINTEND
+
     // protected:
     // NOLINTBEGIN
     // symbol:

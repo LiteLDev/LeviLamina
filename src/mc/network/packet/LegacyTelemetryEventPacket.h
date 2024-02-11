@@ -10,7 +10,6 @@
 #include "mc/events/MinecraftEventing.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/world/AutomaticID.h"
-#include "mc/world/events/MovementEventType.h"
 
 class LegacyTelemetryEventPacket : public ::Packet {
 public:
@@ -122,9 +121,6 @@ public:
 
     // symbol: ??0LegacyTelemetryEventPacket@@QEAA@PEBVPlayer@@HHW4ActorDamageCause@@_N@Z
     MCAPI LegacyTelemetryEventPacket(class Player const*, int, int, ::ActorDamageCause, bool);
-
-    // symbol: ??0LegacyTelemetryEventPacket@@QEAA@AEBVPlayer@@W4MovementEventType@@MMMMM@Z
-    MCAPI LegacyTelemetryEventPacket(class Player const&, ::MovementEventType, float, float, float, float, float);
 
     // symbol:
     // ??0LegacyTelemetryEventPacket@@QEAA@PEBVPlayer@@PEBVActor@@V?$not_null@PEBVMob@@@gsl@@W4ActorDamageCause@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ActorType@@@Z

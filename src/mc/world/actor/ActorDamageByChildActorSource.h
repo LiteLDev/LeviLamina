@@ -20,8 +20,8 @@ public:
     // vIndex: 0, symbol: ??1ActorDamageByChildActorSource@@UEAA@XZ
     virtual ~ActorDamageByChildActorSource();
 
-    // vIndex: 2, symbol: __unk_vfn_2
-    virtual void __unk_vfn_2();
+    // vIndex: 2, symbol: ?isChildEntitySource@ActorDamageByChildActorSource@@UEBA_NXZ
+    virtual bool isChildEntitySource() const;
 
     // vIndex: 10, symbol:
     // ?getDeathMessage@ActorDamageByChildActorSource@@UEBA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@PEAVActor@@@Z
@@ -46,9 +46,6 @@ public:
     // vIndex: 21, symbol:
     // ?clone@ActorDamageByChildActorSource@@UEBA?AV?$unique_ptr@VActorDamageSource@@U?$default_delete@VActorDamageSource@@@std@@@std@@XZ
     virtual std::unique_ptr<class ActorDamageSource> clone() const;
-
-    // symbol: ?isChildEntitySource@ActorDamageByChildActorSource@@UEBA_NXZ
-    MCVAPI bool isChildEntitySource() const;
 
     // symbol: ??0ActorDamageByChildActorSource@@QEAA@AEBVActor@@0W4ActorDamageCause@@@Z
     MCAPI

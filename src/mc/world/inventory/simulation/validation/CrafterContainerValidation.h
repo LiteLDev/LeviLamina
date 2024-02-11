@@ -29,20 +29,11 @@ public:
     // vIndex: 3, symbol: ?getAvailableSetCount@ContainerValidationBase@@UEBAHHAEBVItemStackBase@@@Z
     virtual int getAvailableSetCount(int slot, class ItemStackBase const& item) const;
 
-    // vIndex: 4, symbol: __unk_vfn_4
-    virtual void __unk_vfn_4();
-
-    // vIndex: 5, symbol: __unk_vfn_5
-    virtual void __unk_vfn_5();
-
     // vIndex: 6, symbol: ?canItemMoveToContainer@ContainerValidationBase@@UEBA_NAEBVItemStackBase@@@Z
     virtual bool canItemMoveToContainer(class ItemStackBase const& item) const;
 
     // vIndex: 7, symbol: ?canDestroy@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@@Z
     virtual bool canDestroy(class ContainerScreenContext const&) const;
-
-    // vIndex: 8, symbol: __unk_vfn_8
-    virtual void __unk_vfn_8();
 
     // vIndex: 9, symbol:
     // ?getContainerSize@CrafterContainerValidation@@UEBAHAEBVContainerScreenContext@@AEBVContainer@@@Z

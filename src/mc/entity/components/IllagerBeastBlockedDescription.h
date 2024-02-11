@@ -21,7 +21,7 @@ public:
     virtual ~IllagerBeastBlockedDescription();
 
     // vIndex: 2, symbol: ?deserializeData@IllagerBeastBlockedDescription@@UEAAXUDeserializeDataParams@@@Z
-    virtual void deserializeData(struct DeserializeDataParams);
+    virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
     // NOLINTEND
 };

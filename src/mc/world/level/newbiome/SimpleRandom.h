@@ -57,5 +57,8 @@ public:
     // symbol: ??1SimpleRandom@@UEAA@XZ
     MCVAPI ~SimpleRandom();
 
+    // symbol: ??0SimpleRandom@@QEAA@_J@Z
+    MCAPI explicit SimpleRandom(int64 seed);
+
     // NOLINTEND
 };

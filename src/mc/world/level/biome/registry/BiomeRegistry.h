@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/InheritanceTree.h"
 #include "mc/common/TagRegistry.h"
 #include "mc/common/wrapper/IDType.h"
-#include "mc/common/wrapper/StackRefResultT.h"
+#include "mc/common/wrapper/StackRefResult.h"
 #include "mc/entity/gamerefs_entity/IEntityRegistryOwner.h"
+#include "mc/world/AutomaticID.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,21 +18,21 @@ class BiomeRegistry : public ::IEntityRegistryOwner {
 public:
     // BiomeRegistry inner types declare
     // clang-format off
-    struct BiomeParent;
+    struct LoadedBiome;
     // clang-format on
 
     // BiomeRegistry inner types define
-    struct BiomeParent {
+    struct LoadedBiome {
     public:
         // prevent constructor by default
-        BiomeParent& operator=(BiomeParent const&);
-        BiomeParent(BiomeParent const&);
-        BiomeParent();
+        LoadedBiome& operator=(LoadedBiome const&);
+        LoadedBiome(LoadedBiome const&);
+        LoadedBiome();
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1BiomeParent@BiomeRegistry@@QEAA@XZ
-        MCAPI ~BiomeParent();
+        // symbol: ??1LoadedBiome@BiomeRegistry@@QEAA@XZ
+        MCAPI ~LoadedBiome();
 
         // NOLINTEND
     };
@@ -47,17 +47,21 @@ public:
     // vIndex: 0, symbol: ??1BiomeRegistry@@UEAA@XZ
     virtual ~BiomeRegistry();
 
-    // symbol: ?getEntityRegistry@BiomeRegistry@@UEBA?AV?$StackRefResultT@UEntityRegistryConstRefTraits@@@@XZ
-    MCVAPI class StackRefResultT<struct EntityRegistryConstRefTraits> getEntityRegistry() const;
+    // vIndex: 1, symbol: ?getEntityRegistry@BiomeRegistry@@UEAA?AV?$StackRefResult@VEntityRegistry@@@@XZ
+    virtual class StackRefResult<class EntityRegistry> getEntityRegistry();
 
-    // symbol: ?getEntityRegistry@BiomeRegistry@@UEAA?AV?$StackRefResultT@UEntityRegistryRefTraits@@@@XZ
-    MCVAPI class StackRefResultT<struct EntityRegistryRefTraits> getEntityRegistry();
+    // vIndex: 2, symbol: ?getEntityRegistry@BiomeRegistry@@UEBA?AV?$StackRefResult@$$CBVEntityRegistry@@@@XZ
+    virtual class StackRefResult<class EntityRegistry const> getEntityRegistry() const;
 
     // symbol: ??0BiomeRegistry@@QEAA@XZ
     MCAPI BiomeRegistry();
 
     // symbol: ?forEachBiome@BiomeRegistry@@QEBAXV?$function@$$A6AXAEAVBiome@@@Z@std@@@Z
     MCAPI void forEachBiome(std::function<void(class Biome&)> callback) const;
+
+    // symbol:
+    // ?getBiomesInDimension@BiomeRegistry@@QEBA?AV?$vector@PEBVBiome@@V?$allocator@PEBVBiome@@@std@@@std@@V?$AutomaticID@VDimension@@H@@@Z
+    MCAPI std::vector<class Biome const*> getBiomesInDimension(DimensionType) const;
 
     // symbol:
     // ?getTagRegistry@BiomeRegistry@@QEAAAEAV?$TagRegistry@U?$IDType@UBiomeTagIDType@@@@U?$IDType@UBiomeTagSetIDType@@@@@@XZ
@@ -89,46 +93,25 @@ public:
     // ?registerBiome@BiomeRegistry@@QEAAAEAVBiome@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Biome& registerBiome(std::string const& name);
 
+    // symbol:
+    // ?upgradeJsonComponents@BiomeRegistry@@SA?AULoadedBiome@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVValue@Json@@AEBVSemVersion@@@Z
+    MCAPI static struct BiomeRegistry::LoadedBiome
+    upgradeJsonComponents(std::string const&, class Json::Value&, class SemVersion const&);
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_addToInheritanceTree@BiomeRegistry@@AEAA_NAEAV?$InheritanceTree@UBiomeParent@BiomeRegistry@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAVValue@Json@@AEBVSemVersion@@@Z
-    MCAPI bool _addToInheritanceTree(
-        class InheritanceTree<struct BiomeRegistry::BiomeParent>& inheritance,
-        std::string const&                                        expectedBiomeName,
-        class Json::Value&&                                       value,
-        class SemVersion const&                                   engineVersion
-    );
-
-    // symbol:
-    // ?_buildInheritanceTree@BiomeRegistry@@AEAA?AV?$InheritanceTree@UBiomeParent@BiomeRegistry@@@@AEAVResourcePackManager@@@Z
-    MCAPI class InheritanceTree<struct BiomeRegistry::BiomeParent>
-    _buildInheritanceTree(class ResourcePackManager& loader);
-
     // symbol: ?_initTagRegistry@BiomeRegistry@@AEAAXXZ
     MCAPI void _initTagRegistry();
 
-    // symbol:
-    // ?_loadSingleBiome@BiomeRegistry@@AEAA_NAEAVResourcePackManager@@AEAV?$InheritanceTree@UBiomeParent@BiomeRegistry@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI bool _loadSingleBiome(
-        class ResourcePackManager&                                loader,
-        class InheritanceTree<struct BiomeRegistry::BiomeParent>& inheritance,
-        std::string const&                                        biomeName
-    );
-
-    // symbol:
-    // ?_mergeDataInheritance@BiomeRegistry@@AEAAXAEAVValue@Json@@AEAVSemVersion@@AEAV?$InheritanceTree@UBiomeParent@BiomeRegistry@@@@AEBUBiomeParent@1@@Z
-    MCAPI void _mergeDataInheritance(
-        class Json::Value& mergeInto,
-        class SemVersion&,
-        class InheritanceTree<struct BiomeRegistry::BiomeParent>& inheritance,
-        struct BiomeRegistry::BiomeParent const&                  currentNode
-    );
-
     // symbol: ?_save@BiomeRegistry@@AEAAXAEAVLevelStorage@@@Z
     MCAPI void _save(class LevelStorage&);
+
+    // symbol:
+    // ?_loadSingleBiome@BiomeRegistry@@CA?AULoadedBiome@1@AEAVResourcePackManager@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+    MCAPI static struct BiomeRegistry::LoadedBiome
+    _loadSingleBiome(class ResourcePackManager&, std::string const&, bool);
 
     // NOLINTEND
 };

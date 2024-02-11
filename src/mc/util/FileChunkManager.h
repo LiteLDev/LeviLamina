@@ -26,7 +26,7 @@ public:
     MCAPI void reset();
 
     // symbol: ?reset@FileChunkManager@@QEAAX_KI@Z
-    MCAPI void reset(uint64, uint);
+    MCAPI void reset(uint64 totalSize, uint chunkSize);
 
     // symbol: ??1FileChunkManager@@QEAA@XZ
     MCAPI ~FileChunkManager();

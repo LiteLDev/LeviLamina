@@ -23,29 +23,14 @@ public:
     // vIndex: 3, symbol: ?getMaxCost@SwiftSneakEnchant@@UEBAHH@Z
     virtual int getMaxCost(int level) const;
 
-    // vIndex: 4, symbol: __unk_vfn_4
-    virtual void __unk_vfn_4();
-
     // vIndex: 5, symbol: ?getMaxLevel@SwiftSneakEnchant@@UEBAHXZ
     virtual int getMaxLevel() const;
 
-    // vIndex: 10, symbol: __unk_vfn_10
-    virtual void __unk_vfn_10();
+    // vIndex: 12, symbol: ?isTreasureOnly@SwiftSneakEnchant@@UEBA_NXZ
+    virtual bool isTreasureOnly() const;
 
-    // vIndex: 11, symbol: __unk_vfn_11
-    virtual void __unk_vfn_11();
-
-    // vIndex: 12, symbol: __unk_vfn_12
-    virtual void __unk_vfn_12();
-
-    // vIndex: 13, symbol: __unk_vfn_13
-    virtual void __unk_vfn_13();
-
-    // symbol: ?isDiscoverable@SwiftSneakEnchant@@UEBA_NXZ
-    MCVAPI bool isDiscoverable() const;
-
-    // symbol: ?isTreasureOnly@SwiftSneakEnchant@@UEBA_NXZ
-    MCVAPI bool isTreasureOnly() const;
+    // vIndex: 13, symbol: ?isDiscoverable@SwiftSneakEnchant@@UEBA_NXZ
+    virtual bool isDiscoverable() const;
 
     // symbol: ?getExtraSneakingMovementFactor@SwiftSneakEnchant@@SAMAEBVActor@@@Z
     MCAPI static float getExtraSneakingMovementFactor(class Actor const& entity);

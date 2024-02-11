@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?isValidSize@SkinInfoData@@SA_N_K@Z
-    MCAPI static bool isValidSize(uint64);
+    MCAPI static bool isValidSize(uint64 skinSize);
 
     // NOLINTEND
 };

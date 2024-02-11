@@ -34,7 +34,7 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ?onAckReceived@TransferTracker@ActiveTransfersManager@Server@ClientBlobCache@@QEAAX_K@Z
-        MCAPI void onAckReceived(uint64);
+        MCAPI void onAckReceived(uint64 acked);
 
         // symbol: ??1TransferTracker@ActiveTransfersManager@Server@ClientBlobCache@@QEAA@XZ
         MCAPI ~TransferTracker();

@@ -24,8 +24,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptUnderwaterMovementComponent@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptUnderwaterMovementComponent();
+    // vIndex: 0, symbol: __gen_??1ScriptUnderwaterMovementComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptUnderwaterMovementComponent() = default;
 
     // symbol:
     // ?bind@ScriptUnderwaterMovementComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptUnderwaterMovementComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z

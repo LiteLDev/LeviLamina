@@ -34,8 +34,5 @@ public:
     // ?appendDebugInfo@AgentCommandExecutionGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0AgentCommandExecutionGoal@@QEAA@AEAVMob@@@Z
-    MCAPI explicit AgentCommandExecutionGoal(class Mob& mob);
-
     // NOLINTEND
 };

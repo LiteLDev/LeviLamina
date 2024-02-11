@@ -18,7 +18,7 @@ public:
     virtual ~PlayerDeathManagerProxy() = default;
 
     // vIndex: 1, symbol: ?fetchActor@PlayerDeathManagerProxy@@UEBAPEAVActor@@UActorUniqueID@@@Z
-    virtual class Actor* fetchActor(struct ActorUniqueID) const;
+    virtual class Actor* fetchActor(struct ActorUniqueID actorUniqueID) const;
 
     // vIndex: 2, symbol: ?shouldShowDeathMessages@PlayerDeathManagerProxy@@UEBA_NXZ
     virtual bool shouldShowDeathMessages() const;

@@ -22,7 +22,7 @@ public:
     // vIndex: 1, symbol:
     // ?placeTrunk@MangroveTreeTrunk@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@HAEAVRenderParams@@AEBUTreeParams@TreeHelper@@PEBVITreeCanopy@@@Z
     virtual std::optional<class BlockPos>
-    placeTrunk(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random, int treeHeight, class RenderParams& renderParams, struct TreeHelper::TreeParams const&, class ITreeCanopy const*)
+    placeTrunk(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random, int treeHeight, class RenderParams& renderParams, struct TreeHelper::TreeParams const& treeParams, class ITreeCanopy const*)
         const;
 
     // vIndex: 2, symbol: ?getTreeHeight@MangroveTreeTrunk@@UEBAHAEAVRandom@@@Z
@@ -35,7 +35,7 @@ public:
     // symbol:
     // ?_placeBranch@MangroveTreeTrunk@@AEBAXAEAVIBlockWorldGenAPI@@PEAV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@AEAVRandom@@HAEAVRenderParams@@AEBUTreeParams@TreeHelper@@AEAVBlockPos@@HEHHPEBVBlock@@@Z
     MCAPI void
-    _placeBranch(class IBlockWorldGenAPI& target, std::vector<class BlockPos>*, class Random& random, int treeHeight, class RenderParams&, struct TreeHelper::TreeParams const&, class BlockPos&, int, uchar, int, int, class Block const*)
+    _placeBranch(class IBlockWorldGenAPI& target, std::vector<class BlockPos>*, class Random& random, int treeHeight, class RenderParams&, struct TreeHelper::TreeParams const& treeParams, class BlockPos&, int, uchar, int, int, class Block const*)
         const;
 
     // NOLINTEND

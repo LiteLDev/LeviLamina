@@ -50,16 +50,16 @@ public:
     MCAPI bool isFile() const;
 
     // symbol: ?setCreateTime@DirectoryIterationItem@Core@@QEAAX_J@Z
-    MCAPI void setCreateTime(int64);
+    MCAPI void setCreateTime(int64 time);
 
     // symbol: ?setFileSize@DirectoryIterationItem@Core@@QEAAX_K@Z
-    MCAPI void setFileSize(uint64);
+    MCAPI void setFileSize(uint64 size);
 
     // symbol: ?setFullPathName@DirectoryIterationItem@Core@@QEAAXAEBVPath@2@@Z
     MCAPI void setFullPathName(class Core::Path const& fullPathName);
 
     // symbol: ?setModifyTime@DirectoryIterationItem@Core@@QEAAX_J@Z
-    MCAPI void setModifyTime(int64);
+    MCAPI void setModifyTime(int64 modifyTime);
 
     // symbol: ?setName@DirectoryIterationItem@Core@@QEAAXAEBVPathPart@2@@Z
     MCAPI void setName(class Core::PathPart const& name);

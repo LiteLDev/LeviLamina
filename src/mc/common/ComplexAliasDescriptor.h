@@ -47,7 +47,7 @@ public:
     // vIndex: 7, symbol: ?save@ComplexAliasDescriptor@@UEBA?AV?$optional@VCompoundTag@@@std@@XZ
     virtual std::optional<class CompoundTag> save() const;
 
-    // vIndex: 9, symbol: ?serialize@ComplexAliasDescriptor@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 8, symbol: ?serialize@ComplexAliasDescriptor@@UEBAXAEAVBinaryStream@@@Z
     virtual void serialize(class BinaryStream& stream) const;
 
     // vIndex: 10, symbol: ?getType@ComplexAliasDescriptor@@UEBA?AW4InternalType@ItemDescriptor@@XZ

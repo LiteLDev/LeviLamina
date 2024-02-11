@@ -21,6 +21,9 @@ MCAPI void setHasTeleported(class EntityContext& entity, bool newValue);
 
 // symbol: ?setIsImmobile@ActorMovement@@YAXAEAVEntityContext@@_N@Z
 MCAPI void setIsImmobile(class EntityContext& entity, bool newValue);
+
+// symbol: ?setIsJumping@ActorMovement@@YAXAEAVEntityContext@@_N@Z
+MCAPI void setIsJumping(class EntityContext&, bool);
 // NOLINTEND
 
 }; // namespace ActorMovement

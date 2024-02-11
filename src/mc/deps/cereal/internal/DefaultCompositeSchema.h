@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace cereal { class SerializerContext; }
+namespace cereal { class SerializerEnumMapping; }
 namespace cereal { struct ReflectionCtx; }
 namespace cereal { struct SchemaDescription; }
 namespace cereal { struct SchemaReader; }
@@ -30,30 +31,24 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol:
-    // ?doValidate@DefaultCompositeSchema@internal@cereal@@EEBAXAEAUSchemaReader@3@AEAVmeta_any@entt@@AEBUSerializerTraits@3@AEAVSerializerContext@3@@Z
-    virtual void
-    doValidate(struct cereal::SchemaReader&, entt::meta_any&, struct cereal::SerializerTraits const&, class cereal::SerializerContext&)
-        const;
-
-    // vIndex: 1, symbol:
     // ?doLoad@DefaultCompositeSchema@internal@cereal@@EEBAXAEAUSchemaReader@3@AEAVmeta_any@entt@@AEBUSerializerTraits@3@AEBV56@AEAVSerializerContext@3@@Z
     virtual void
     doLoad(struct cereal::SchemaReader&, entt::meta_any&, struct cereal::SerializerTraits const&, entt::meta_any const&, class cereal::SerializerContext&)
         const;
 
-    // vIndex: 2, symbol:
+    // vIndex: 1, symbol:
     // ?doSave@DefaultCompositeSchema@internal@cereal@@EEBAXAEAUSchemaWriter@3@AEBVmeta_any@entt@@AEBUSerializerTraits@3@AEAVSerializerContext@3@@Z
     virtual void
     doSave(struct cereal::SchemaWriter&, entt::meta_any const&, struct cereal::SerializerTraits const&, class cereal::SerializerContext&)
         const;
 
-    // vIndex: 4, symbol: ?makeDescription@DefaultCompositeSchema@internal@cereal@@EEBA?AUSchemaDescription@3@XZ
+    // vIndex: 3, symbol: ?makeDescription@DefaultCompositeSchema@internal@cereal@@EEBA?AUSchemaDescription@3@XZ
     virtual struct cereal::SchemaDescription makeDescription() const;
 
-    // vIndex: 5, symbol: ??1DefaultCompositeSchema@internal@cereal@@UEAA@XZ
+    // vIndex: 4, symbol: ??1DefaultCompositeSchema@internal@cereal@@UEAA@XZ
     virtual ~DefaultCompositeSchema();
 
-    // vIndex: 6, symbol:
+    // vIndex: 5, symbol:
     // ?unpack@DefaultCompositeSchema@internal@cereal@@UEBAXAEAV?$vector@V?$reference_wrapper@$$CBVBasicSchema@internal@cereal@@@std@@V?$allocator@V?$reference_wrapper@$$CBVBasicSchema@internal@cereal@@@std@@@2@@std@@AEAV?$dense_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$reference_wrapper@$$CBUMemberDescriptor@BasicSchema@internal@cereal@@@2@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$reference_wrapper@$$CBUMemberDescriptor@BasicSchema@internal@cereal@@@2@@std@@@2@@entt@@@Z
     virtual void
     unpack(std::vector<std::reference_wrapper<class cereal::internal::BasicSchema const>>&, entt::dense_map<std::string, std::reference_wrapper<struct cereal::internal::BasicSchema::MemberDescriptor const>>&)
@@ -64,9 +59,8 @@ public:
     virtual void addParent(std::unique_ptr<class cereal::internal::BasicSchema>);
 
     // vIndex: 8, symbol:
-    // ?addSetter@DefaultCompositeSchema@internal@cereal@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0V?$unique_ptr@VBasicSchema@internal@cereal@@U?$default_delete@VBasicSchema@internal@cereal@@@std@@@5@@Z
-    virtual void
-    addSetter(std::string const&, std::string const&, std::unique_ptr<class cereal::internal::BasicSchema>);
+    // ?addSetter@DefaultCompositeSchema@internal@cereal@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VBasicSchema@internal@cereal@@U?$default_delete@VBasicSchema@internal@cereal@@@std@@@5@@Z
+    virtual void addSetter(std::string const&, std::unique_ptr<class cereal::internal::BasicSchema>);
 
     // vIndex: 9, symbol:
     // ?addMember@DefaultCompositeSchema@internal@cereal@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@USerializerTraits@3@V?$unique_ptr@VBasicSchema@internal@cereal@@U?$default_delete@VBasicSchema@internal@cereal@@@std@@@5@@Z
@@ -79,15 +73,27 @@ public:
     addRequiredMember(std::string const&, struct cereal::SerializerTraits, std::unique_ptr<class cereal::internal::BasicSchema>);
 
     // vIndex: 11, symbol:
-    // ?addDeprecatedMember@DefaultCompositeSchema@internal@cereal@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-    virtual void addDeprecatedMember(std::string const&, std::string const&);
-
-    // vIndex: 12, symbol:
     // ?customError@DefaultCompositeSchema@internal@cereal@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
     virtual void customError(std::string const&, std::string const&);
 
     // symbol: ??0DefaultCompositeSchema@internal@cereal@@QEAA@AEBUReflectionCtx@2@@Z
     MCAPI explicit DefaultCompositeSchema(struct cereal::ReflectionCtx const&);
+
+    // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol:
+    // ?loadMember@DefaultCompositeSchema@internal@cereal@@AEBAXAEBVBasicSchema@23@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAUSchemaReader@3@AEAVmeta_any@entt@@AEBUSerializerTraits@3@AEBV89@AEAVSerializerContext@3@@Z
+    MCAPI void
+    loadMember(class cereal::internal::BasicSchema const&, std::string const&, struct cereal::SchemaReader&, entt::meta_any&, struct cereal::SerializerTraits const&, entt::meta_any const&, class cereal::SerializerContext&)
+        const;
+
+    // symbol:
+    // ?loadSetter@DefaultCompositeSchema@internal@cereal@@AEBAXAEBVBasicSchema@23@AEAUSchemaReader@3@AEAVmeta_any@entt@@AEBUSerializerTraits@3@AEBV67@AEAVSerializerContext@3@@Z
+    MCAPI void
+    loadSetter(class cereal::internal::BasicSchema const&, struct cereal::SchemaReader&, entt::meta_any&, struct cereal::SerializerTraits const&, entt::meta_any const&, class cereal::SerializerContext&)
+        const;
 
     // NOLINTEND
 };

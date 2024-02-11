@@ -24,7 +24,7 @@ public:
 
     // symbol:
     // ?setPerformanceTelemetryPeriodicCallback@LevelChunkPerformanceTelemetry@@QEAAXV?$function@$$A6AXXZ@std@@@Z
-    MCAPI void setPerformanceTelemetryPeriodicCallback(std::function<void(void)>);
+    MCAPI void setPerformanceTelemetryPeriodicCallback(std::function<void()>);
 
     // symbol: ?tick@LevelChunkPerformanceTelemetry@@QEAAXV?$NonOwnerPointer@UChunkPerformanceData@@@Bedrock@@@Z
     MCAPI void tick(class Bedrock::NonOwnerPointer<struct ChunkPerformanceData>);

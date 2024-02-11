@@ -46,83 +46,44 @@ public:
     // vIndex: 13, symbol: ?remove@EnderDragon@@UEAAXXZ
     virtual void remove();
 
-    // vIndex: 23, symbol: __unk_vfn_23
-    virtual void __unk_vfn_23();
-
-    // vIndex: 39, symbol: __unk_vfn_39
-    virtual void __unk_vfn_39();
-
-    // vIndex: 42, symbol: __unk_vfn_42
-    virtual void __unk_vfn_42();
-
-    // vIndex: 43, symbol: ?getShadowRadius@EnderDragon@@UEBAMXZ
+    // vIndex: 41, symbol: ?getShadowRadius@EnderDragon@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 44, symbol: ?getHeadLookVector@EnderDragon@@UEBA?AVVec3@@M@Z
+    // vIndex: 42, symbol: ?getHeadLookVector@EnderDragon@@UEBA?AVVec3@@M@Z
     virtual class Vec3 getHeadLookVector(float a) const;
 
-    // vIndex: 47, symbol: __unk_vfn_47
-    virtual void __unk_vfn_47();
-
-    // vIndex: 49, symbol: ?isImmobile@EnderDragon@@UEBA_NXZ
+    // vIndex: 46, symbol: ?isImmobile@EnderDragon@@UEBA_NXZ
     virtual bool isImmobile() const;
 
-    // vIndex: 60, symbol: __unk_vfn_60
-    virtual void __unk_vfn_60();
-
-    // vIndex: 61, symbol: __unk_vfn_61
-    virtual void __unk_vfn_61();
-
-    // vIndex: 62, symbol: __unk_vfn_62
-    virtual void __unk_vfn_62();
-
-    // vIndex: 69, symbol: ?setSitting@EnderDragon@@UEAAX_N@Z
+    // vIndex: 66, symbol: ?setSitting@EnderDragon@@UEAAX_N@Z
     virtual void setSitting(bool value);
 
-    // vIndex: 78, symbol: ?isInvulnerableTo@EnderDragon@@UEBA_NAEBVActorDamageSource@@@Z
+    // vIndex: 75, symbol: ?isInvulnerableTo@EnderDragon@@UEBA_NAEBVActorDamageSource@@@Z
     virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
-    // vIndex: 83, symbol: ?handleEntityEvent@EnderDragon@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 80, symbol: ?handleEntityEvent@EnderDragon@@UEAAXW4ActorEvent@@H@Z
     virtual void handleEntityEvent(::ActorEvent id, int data);
 
-    // vIndex: 106, symbol: ?canChangeDimensionsUsingPortal@EnderDragon@@UEBA_NXZ
+    // vIndex: 103, symbol: ?canChangeDimensionsUsingPortal@EnderDragon@@UEBA_NXZ
     virtual bool canChangeDimensionsUsingPortal() const;
 
-    // vIndex: 107, symbol: __unk_vfn_107
-    virtual void __unk_vfn_107();
-
-    // vIndex: 115, symbol: ?canBePulledIntoVehicle@EnderDragon@@UEBA_NXZ
+    // vIndex: 112, symbol: ?canBePulledIntoVehicle@EnderDragon@@UEBA_NXZ
     virtual bool canBePulledIntoVehicle() const;
 
-    // vIndex: 124, symbol: ?canBeAffected@EnderDragon@@UEBA_NI@Z
+    // vIndex: 121, symbol: ?canBeAffected@EnderDragon@@UEBA_NI@Z
     virtual bool canBeAffected(uint) const;
 
-    // vIndex: 144, symbol: __unk_vfn_144
-    virtual void __unk_vfn_144();
-
-    // vIndex: 147, symbol: ?die@EnderDragon@@UEAAXAEBVActorDamageSource@@@Z
+    // vIndex: 143, symbol: ?die@EnderDragon@@UEAAXAEBVActorDamageSource@@@Z
     virtual void die(class ActorDamageSource const& source);
 
-    // vIndex: 160, symbol: ?updateEntitySpecificMolangVariables@EnderDragon@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 156, symbol: ?updateEntitySpecificMolangVariables@EnderDragon@@UEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // vIndex: 162, symbol: __unk_vfn_162
-    virtual void __unk_vfn_162();
-
-    // vIndex: 163, symbol: ?_hurt@EnderDragon@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 158, symbol: ?_hurt@EnderDragon@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 167, symbol: __unk_vfn_167
-    virtual void __unk_vfn_167();
-
-    // vIndex: 168, symbol: __unk_vfn_168
-    virtual void __unk_vfn_168();
-
-    // vIndex: 208, symbol: ?tickDeath@EnderDragon@@MEAAXXZ
+    // vIndex: 202, symbol: ?tickDeath@EnderDragon@@MEAAXXZ
     virtual void tickDeath();
-
-    // symbol: ?canExistInPeaceful@EnderDragon@@UEBA_NXZ
-    MCVAPI bool canExistInPeaceful() const;
 
     // symbol: ??0EnderDragon@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI EnderDragon(

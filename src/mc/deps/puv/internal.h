@@ -14,6 +14,7 @@ namespace Puv { class ParserBase; }
 namespace Puv { class Upgrader; }
 namespace Puv { struct Logger; }
 namespace Puv::internal { struct PathElement; }
+namespace cereal { class SerializerEnumMapping; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 

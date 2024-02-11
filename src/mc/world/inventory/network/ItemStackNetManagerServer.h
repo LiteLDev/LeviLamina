@@ -43,7 +43,7 @@ public:
     virtual void _initScreen(class ItemStackNetManagerScreen&);
 
     // symbol: ??0ItemStackNetManagerServer@@QEAA@AEAVServerPlayer@@_N@Z
-    MCAPI ItemStackNetManagerServer(class ServerPlayer&, bool isEnabled);
+    MCAPI ItemStackNetManagerServer(class ServerPlayer& serverPlayer, bool isEnabled);
 
     // symbol:
     // ?_handleLegacyTransactionRequest@ItemStackNetManagerServer@@QEAAXAEBV?$TypedClientNetId@UItemStackLegacyRequestIdTag@@H$0A@@@AEBV?$vector@U?$pair@W4ContainerEnumName@@V?$vector@EV?$allocator@E@std@@@std@@@std@@V?$allocator@U?$pair@W4ContainerEnumName@@V?$vector@EV?$allocator@E@std@@@std@@@std@@@2@@std@@@Z
@@ -52,7 +52,7 @@ public:
 
     // symbol:
     // ?_retainSetItemStackNetIdVariantScope@ItemStackNetManagerServer@@QEAA?AV?$final_action@V?$function@$$A6AXXZ@std@@@gsl@@XZ
-    MCAPI gsl::final_action<std::function<void(void)>> _retainSetItemStackNetIdVariantScope();
+    MCAPI gsl::final_action<std::function<void()>> _retainSetItemStackNetIdVariantScope();
 
     // symbol:
     // ?handleRequest@ItemStackNetManagerServer@@QEAAXV?$unique_ptr@VItemStackRequestData@@U?$default_delete@VItemStackRequestData@@@std@@@std@@V?$NonOwnerPointer@VTextFilteringProcessor@@@Bedrock@@@Z
@@ -78,7 +78,7 @@ public:
     MCAPI void startCrafting(bool workbench, class BlockPos const& pos);
 
     // symbol: ?tryCloseContainerScreen@ItemStackNetManagerServer@@QEAA?AVCallbackToken@@V?$function@$$A6AXXZ@std@@@Z
-    MCAPI class CallbackToken tryCloseContainerScreen(std::function<void(void)>);
+    MCAPI class CallbackToken tryCloseContainerScreen(std::function<void()>);
 
     // NOLINTEND
 

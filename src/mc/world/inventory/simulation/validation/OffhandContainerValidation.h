@@ -31,24 +31,15 @@ public:
     // vIndex: 3, symbol: ?getAvailableSetCount@ContainerValidationBase@@UEBAHHAEBVItemStackBase@@@Z
     virtual int getAvailableSetCount(int slot, class ItemStackBase const& item) const;
 
-    // vIndex: 4, symbol: __unk_vfn_4
-    virtual void __unk_vfn_4();
-
     // vIndex: 5, symbol:
     // ?isItemAllowedToRemove@OffhandContainerValidation@@UEBA_NAEBVContainerScreenContext@@AEBVItemStackBase@@@Z
     virtual bool isItemAllowedToRemove(class ContainerScreenContext const&, class ItemStackBase const& item) const;
 
-    // vIndex: 6, symbol: __unk_vfn_6
-    virtual void __unk_vfn_6();
+    // vIndex: 6, symbol: ?canItemMoveToContainer@OffhandContainerValidation@@UEBA_NAEBVItemStackBase@@@Z
+    virtual bool canItemMoveToContainer(class ItemStackBase const& item) const;
 
     // vIndex: 7, symbol: ?canDestroy@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@@Z
     virtual bool canDestroy(class ContainerScreenContext const&) const;
-
-    // symbol: ?canItemMoveToContainer@OffhandContainerValidation@@UEBA_NAEBVItemStackBase@@@Z
-    MCVAPI bool canItemMoveToContainer(class ItemStackBase const& item) const;
-
-    // symbol: ?getContainerOffset@OffhandContainerValidation@@UEBAHAEBVContainerScreenContext@@@Z
-    MCVAPI int getContainerOffset(class ContainerScreenContext const& screenContext) const;
 
     // NOLINTEND
 };

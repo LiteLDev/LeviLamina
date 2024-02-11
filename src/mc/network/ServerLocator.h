@@ -41,7 +41,7 @@ public:
 
     // vIndex: 4, symbol:
     // ?stopAnnouncingServer@NetherNetServerLocator@@UEAAXV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
-    virtual void stopAnnouncingServer(class Bedrock::NonOwnerPointer<class AppPlatform>) = 0;
+    virtual void stopAnnouncingServer(class Bedrock::NonOwnerPointer<class AppPlatform> appPlatform) = 0;
 
     // vIndex: 5, symbol: ?startServerDiscovery@NetherNetServerLocator@@UEAAXUPortPair@@@Z
     virtual void startServerDiscovery(struct PortPair) = 0;
@@ -49,12 +49,12 @@ public:
     // vIndex: 6, symbol: ?stopServerDiscovery@NetherNetServerLocator@@UEAAXXZ
     virtual void stopServerDiscovery() = 0;
 
-    // vIndex: 7, symbol: ?addCustomServer@RakNetServerLocator@@UEAAXAEBVAsynchronousIPResolver@@H@Z
-    virtual void addCustomServer(class AsynchronousIPResolver const& futureIP, int port) = 0;
-
-    // vIndex: 8, symbol:
+    // vIndex: 7, symbol:
     // ?addCustomServer@RakNetServerLocator@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     virtual void addCustomServer(std::string const& address, int port) = 0;
+
+    // vIndex: 8, symbol: ?addCustomServer@RakNetServerLocator@@UEAAXAEBVAsynchronousIPResolver@@H@Z
+    virtual void addCustomServer(class AsynchronousIPResolver const& futureIP, int port) = 0;
 
     // vIndex: 9, symbol:
     // ?getServerList@NetherNetServerLocator@@UEBA?AV?$vector@UPingedCompatibleServer@@V?$allocator@UPingedCompatibleServer@@@std@@@std@@XZ

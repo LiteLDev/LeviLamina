@@ -80,10 +80,8 @@ public:
     // symbol: ?prepareHeights@NetherGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@_N@Z
     MCVAPI void prepareHeights(class BlockVolume& box, class ChunkPos const& chunkPos, bool factorInBeardsAndShavers);
 
-    // symbol:
-    // ??0NetherGenerator@@QEAA@AEAVDimension@@IPEBVBiome@@V?$unique_ptr@VStructureFeatureRegistry@@U?$default_delete@VStructureFeatureRegistry@@@std@@@std@@@Z
-    MCAPI
-    NetherGenerator(class Dimension& dimension, uint seed, class Biome const*, std::unique_ptr<class StructureFeatureRegistry>);
+    // symbol: ??0NetherGenerator@@QEAA@AEAVDimension@@IPEBVBiome@@@Z
+    MCAPI NetherGenerator(class Dimension&, uint, class Biome const*);
 
     // symbol: ?buildSurfaces@NetherGenerator@@QEAAXAEAVBlockVolume@@AEAVLevelChunk@@AEBVChunkPos@@@Z
     MCAPI void buildSurfaces(class BlockVolume& blocks, class LevelChunk& levelChunk, class ChunkPos const& chunkPos);
@@ -106,10 +104,6 @@ public:
         std::vector<short>*,
         int
     );
-
-    // symbol:
-    // ?_makeBiomeSource@NetherGenerator@@CA?AV?$unique_ptr@VBiomeSource@@U?$default_delete@VBiomeSource@@@std@@@std@@AEAVDimension@@@Z
-    MCAPI static std::unique_ptr<class BiomeSource> _makeBiomeSource(class Dimension& dimension);
 
     // NOLINTEND
 };

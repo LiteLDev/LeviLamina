@@ -31,14 +31,14 @@ public:
     // vIndex: 3, symbol: ?loadBlockPositionOffset@StructureDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z
     virtual class BlockPos loadBlockPositionOffset(class BlockPos const& blockPosOffset);
 
-    // vIndex: 4, symbol: __unk_vfn_4
-    virtual void __unk_vfn_4();
+    // vIndex: 4, symbol: ?loadRotationDegreesX@StructureDataLoadHelper@@UEAAMM@Z
+    virtual float loadRotationDegreesX(float x);
 
     // vIndex: 5, symbol: ?loadRotationDegreesY@StructureDataLoadHelper@@UEAAMM@Z
     virtual float loadRotationDegreesY(float y);
 
-    // vIndex: 6, symbol: __unk_vfn_6
-    virtual void __unk_vfn_6();
+    // vIndex: 6, symbol: ?loadRotationRadiansX@StructureDataLoadHelper@@UEAAMM@Z
+    virtual float loadRotationRadiansX(float x);
 
     // vIndex: 7, symbol: ?loadRotationRadiansY@StructureDataLoadHelper@@UEAAMM@Z
     virtual float loadRotationRadiansY(float y);
@@ -46,11 +46,11 @@ public:
     // vIndex: 8, symbol: ?loadFacingID@StructureDataLoadHelper@@UEAAEE@Z
     virtual uchar loadFacingID(uchar facing);
 
-    // vIndex: 9, symbol: ?loadDirection@StructureDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
-    virtual class Vec3 loadDirection(class Vec3 const& direction);
-
-    // vIndex: 10, symbol: ?loadDirection@StructureDataLoadHelper@@UEAA?AW4Type@Direction@@W423@@Z
+    // vIndex: 9, symbol: ?loadDirection@StructureDataLoadHelper@@UEAA?AW4Type@Direction@@W423@@Z
     virtual ::Direction::Type loadDirection(::Direction::Type direction);
+
+    // vIndex: 10, symbol: ?loadDirection@StructureDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
+    virtual class Vec3 loadDirection(class Vec3 const& direction);
 
     // vIndex: 11, symbol: ?loadRotation@StructureDataLoadHelper@@UEAA?AW4Rotation@@W42@@Z
     virtual ::Rotation loadRotation(::Rotation rotation);
@@ -79,12 +79,6 @@ public:
 
     // vIndex: 18, symbol: ?_generateNewID@StructureDataLoadHelper@@MEAA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID _generateNewID();
-
-    // symbol: ?loadRotationDegreesX@StructureDataLoadHelper@@UEAAMM@Z
-    MCVAPI float loadRotationDegreesX(float x);
-
-    // symbol: ?loadRotationRadiansX@StructureDataLoadHelper@@UEAAMM@Z
-    MCVAPI float loadRotationRadiansX(float x);
 
     // symbol:
     // ??0StructureDataLoadHelper@@QEAA@AEBVBlockPos@@0AEBVVec3@@UActorUniqueID@@W4Rotation@@W4Mirror@@AEAVLevel@@@Z

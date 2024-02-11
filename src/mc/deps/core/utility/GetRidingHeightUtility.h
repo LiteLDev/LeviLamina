@@ -5,9 +5,9 @@
 namespace GetRidingHeightUtility {
 // NOLINTBEGIN
 // symbol:
-// ?getRidingHeight@GetRidingHeightUtility@@YAMVSynchedActorDataReader@@PEBURidingHeightComponent@@PEBUAdultRidingHeightOffsetComponent@@M@Z
+// ?getRidingHeight@GetRidingHeightUtility@@YAMAEBUActorDataFlagComponent@@PEBURidingHeightComponent@@PEBUAdultRidingHeightOffsetComponent@@M@Z
 MCAPI float getRidingHeight(
-    class SynchedActorDataReader data,
+    struct ActorDataFlagComponent const& data,
     struct RidingHeightComponent const*,
     struct AdultRidingHeightOffsetComponent const*,
     float heightOffset

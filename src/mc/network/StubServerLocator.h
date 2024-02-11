@@ -33,7 +33,7 @@ public:
     );
 
     // vIndex: 4, symbol: ?stopAnnouncingServer@StubServerLocator@@UEAAXV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
-    virtual void stopAnnouncingServer(class Bedrock::NonOwnerPointer<class AppPlatform>);
+    virtual void stopAnnouncingServer(class Bedrock::NonOwnerPointer<class AppPlatform> appPlatform);
 
     // vIndex: 5, symbol: ?startServerDiscovery@StubServerLocator@@UEAAXUPortPair@@@Z
     virtual void startServerDiscovery(struct PortPair);
@@ -41,12 +41,12 @@ public:
     // vIndex: 6, symbol: ?stopServerDiscovery@StubServerLocator@@UEAAXXZ
     virtual void stopServerDiscovery();
 
-    // vIndex: 7, symbol: ?addCustomServer@StubServerLocator@@UEAAXAEBVAsynchronousIPResolver@@H@Z
-    virtual void addCustomServer(class AsynchronousIPResolver const& futureIP, int port);
-
-    // vIndex: 8, symbol:
+    // vIndex: 7, symbol:
     // ?addCustomServer@StubServerLocator@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     virtual void addCustomServer(std::string const& address, int port);
+
+    // vIndex: 8, symbol: ?addCustomServer@StubServerLocator@@UEAAXAEBVAsynchronousIPResolver@@H@Z
+    virtual void addCustomServer(class AsynchronousIPResolver const& futureIP, int port);
 
     // vIndex: 9, symbol:
     // ?getServerList@StubServerLocator@@UEBA?AV?$vector@UPingedCompatibleServer@@V?$allocator@UPingedCompatibleServer@@@std@@@std@@XZ
