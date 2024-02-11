@@ -417,7 +417,7 @@ std::optional<ByteArrayTag> parseByteArray(std::string_view& s) {
         return ByteArrayTag{};
     }
 
-    auto res = std::vector<schar>{};
+    auto res = std::vector<uchar>{};
     res.clear();
 
     while (!s.empty()) {
@@ -434,11 +434,11 @@ std::optional<ByteArrayTag> parseByteArray(std::string_view& s) {
             return std::nullopt;
         }
 
-        if (!value || !(*value).hold<ByteTag>()) {
+        if (!value || !value->hold<ByteTag>()) {
             return std::nullopt;
         }
 
-        res.emplace_back((*value).get<ByteTag>());
+        res.emplace_back(value->get<ByteTag>());
 
         switch (s.front()) {
         case ']':
@@ -480,11 +480,11 @@ std::optional<IntArrayTag> parseIntArray(std::string_view& s) {
             return std::nullopt;
         }
 
-        if (!value || !(*value).hold<IntTag>()) {
+        if (!value || !value->hold<IntTag>()) {
             return std::nullopt;
         }
 
-        res.emplace_back((*value).get<IntTag>());
+        res.emplace_back(value->get<IntTag>());
 
         switch (s.front()) {
         case ']':
@@ -509,7 +509,7 @@ std::optional<ByteArrayTag> parseLongArray(std::string_view& s) {
         return ByteArrayTag{};
     }
 
-    auto res = std::vector<int64>{};
+    auto res = std::vector<uchar>{};
     res.clear();
 
     while (!s.empty()) {
@@ -519,23 +519,27 @@ std::optional<ByteArrayTag> parseLongArray(std::string_view& s) {
         }
         if (s.front() == ']') {
             s.remove_prefix(1);
-            return ByteArrayTag{std::in_place_type<int64>, std::span{res}};
+            return res;
         }
         auto value = parseNumber(s);
         if (!skipWhitespace(s)) {
             return std::nullopt;
         }
 
-        if (!value || !(*value).hold<Int64Tag>()) {
+        if (!value || !value->hold<Int64Tag>()) {
             return std::nullopt;
         }
 
-        res.emplace_back((*value).get<Int64Tag>());
+        int64 val = value->get<Int64Tag>();
+
+        for (int j = 7; j >= 0; j--) {
+            res.emplace_back((uchar)(val >> (uint64)(8 * j)));
+        }
 
         switch (s.front()) {
         case ']':
             s.remove_prefix(1);
-            return ByteArrayTag{std::in_place_type<int64>, std::span{res}};
+            return res;
         case ',':
             s.remove_prefix(1);
         default:
@@ -607,11 +611,11 @@ std::optional<CompoundTagVariant> parseList(std::string_view& s) {
             return res;
         }
         if (!settedType) {
-            res.mType  = (*value).index();
+            res.mType  = value->index();
             settedType = true;
         }
 
-        res.mList.emplace_back((*value).toUnique());
+        res.mList.emplace_back(value->toUnique());
 
 
         switch (s.front()) {

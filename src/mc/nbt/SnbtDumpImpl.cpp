@@ -309,7 +309,7 @@ std::string TypedToSnbt(ByteArrayTag& self, uchar indent, SnbtFormat format) {
 
     res += lbracket;
 
-    size_t      i = self.view().size();
+    size_t      i = self.size();
     std::string indentSpace(indent, ' ');
 
     bool isMinimized = isMinimize(format);
@@ -324,7 +324,7 @@ std::string TypedToSnbt(ByteArrayTag& self, uchar indent, SnbtFormat format) {
         back = " /*b*/";
     }
 
-    for (auto& tag : self.view()) {
+    for (auto& tag : self.data) {
         i--;
         if (isNewLine) {
             res += indentSpace;
@@ -370,7 +370,7 @@ std::string TypedToSnbt(IntArrayTag& self, uchar indent, SnbtFormat format) {
 
     res += lbracket;
 
-    size_t      i = self.view().size();
+    size_t      i = self.size();
     std::string indentSpace(indent, ' ');
 
     bool isMinimized = isMinimize(format);
@@ -380,7 +380,7 @@ std::string TypedToSnbt(IntArrayTag& self, uchar indent, SnbtFormat format) {
         res += '\n';
     }
 
-    for (auto& tag : self.view()) {
+    for (auto& tag : self.data) {
         i--;
         if (isNewLine) {
             res += indentSpace;

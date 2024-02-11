@@ -185,7 +185,7 @@ bool Logger::setFile(std::filesystem::path const& logFile, bool appendMode) {
     std::error_code ec;
     std::filesystem::create_directories(logFile.parent_path(), ec);
     ofs = std::ofstream(logFile, appendMode ? std::ios::app : std::ios::out);
-    return (*ofs).is_open();
+    return ofs->is_open();
 }
 
 bool Logger::setDefaultFile(std::filesystem::path const& logFile, bool appendMode) {
