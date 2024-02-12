@@ -15,9 +15,8 @@ LL_AUTO_TYPE_INSTANCE_HOOK(ACTickHook, HookPriority::Normal, ItemActor, &ItemAct
     origin();
     SetActorDataPacket packet{getRuntimeID(), getEntityData(), nullptr, 0, true};
 
-    packet.mPackedItems.emplace_back(DataItem::create<const std::string&>(ActorDataIDs::Name, item().getTypeName())
-    );
-    packet.mPackedItems.emplace_back(DataItem::create<signed char>(ActorDataIDs::NametagAlwaysShow, true));
+    packet.mPackedItems.emplace_back(DataItem::create(ActorDataIDs::Name, item().getTypeName()));
+    packet.mPackedItems.emplace_back(DataItem::create(ActorDataIDs::NametagAlwaysShow, true));
 
     packet.sendToClients();
 }

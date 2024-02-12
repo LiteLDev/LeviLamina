@@ -32,10 +32,16 @@ public:
     template <typename T>
         requires(DataItem::TypeList::contains<std::remove_cvref_t<T>>)
     [[nodiscard]] constexpr static std::unique_ptr<DataItem> create(ushort key, T&& value);
+    [[nodiscard]] constexpr static std::unique_ptr<DataItem> create(ushort key, bool value) {
+        return create(key, (schar)value);
+    }
     template <typename T>
         requires(DataItem::TypeList::contains<std::remove_cvref_t<T>>)
     [[nodiscard]] constexpr static std::unique_ptr<DataItem> create(::ActorDataIDs key, T&& value) {
         return create(std::to_underlying(key), std::forward<T>(value));
+    }
+    [[nodiscard]] constexpr static std::unique_ptr<DataItem> create(::ActorDataIDs key, bool value) {
+        return create(key, (schar)value);
     }
 
 protected:
