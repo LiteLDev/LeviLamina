@@ -4,8 +4,8 @@
 
 class EducationLocalLevelSettings {
 public:
-    std::optional<std::string> mCodeBuilderOverrideUri;
-    bool                       mHasQuiz;
+    std::string mCodeBuilderOverrideUri;
+    bool        mHasQuiz;
 
     // prevent constructor by default
     EducationLocalLevelSettings& operator=(EducationLocalLevelSettings const&);

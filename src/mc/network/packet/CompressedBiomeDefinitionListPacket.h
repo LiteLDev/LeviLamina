@@ -9,7 +9,7 @@
 
 class CompressedBiomeDefinitionListPacket : public ::BiomeDefinitionListPacket {
 public:
-    uchar filler[32];
+    std::string definitions;
 
     // prevent constructor by default
     CompressedBiomeDefinitionListPacket& operator=(CompressedBiomeDefinitionListPacket const&);

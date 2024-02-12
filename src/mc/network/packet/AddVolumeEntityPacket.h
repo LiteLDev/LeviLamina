@@ -22,7 +22,7 @@ public:
     NetworkBlockPosition mMaxBounds;      // this+0xb4
     DimensionType        mDimensionType;  // this+0xc0
     SemVersion           mEngineVersion;  // this+0xc8
-    EntityNetId          mEntityNetId;    /// this+0x118
+    EntityNetId          mEntityNetId;    // this+0x118
 
     // prevent constructor by default
     AddVolumeEntityPacket& operator=(AddVolumeEntityPacket const&);

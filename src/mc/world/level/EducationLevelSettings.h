@@ -7,7 +7,17 @@
 
 struct EducationLevelSettings {
 public:
-    uchar filler[936 - 616]; // LevelSettings::LevelSettings
+    std::string                           mCodeBuilderDefaultUri;
+    std::string                           mCodeBuilderTitle;
+    bool                                  mCanResizeCodeBuilder;
+    bool                                  mDisableLegacyTitleBar;
+    std::string                           mPostProcessFilter;
+    std::string                           mScreenshotBorderResourcePath;
+    std::unordered_map<std::string, uint> mHiddenCommands;
+    EducationLocalLevelSettings           mLocalSettings;
+    std::optional<AgentCapabilities>      mAgentCapabilities;
+    std::optional<ExternalLinkSettings>   mExternalLinkSettings;
+
 
     // NOLINTBEGIN
     // symbol: ??0EducationLevelSettings@@QEAA@XZ
