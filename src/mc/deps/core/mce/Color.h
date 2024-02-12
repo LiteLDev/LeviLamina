@@ -63,12 +63,12 @@ public:
         return {select(color.gt(0.04045f), pow(color / 1.055f + 0.055f, {2.4f}), color / 12.92f), a};
     }
 
-    [[nodiscard]] constexpr class mce::Color LinearTosRGB() const noexcept {
+    [[nodiscard]] constexpr class mce::Color linearTosRGB() const noexcept {
         auto color{toVec3()};
         return {select(color.gt(0.0031308f), pow(color, {1.0f / 2.4f}) * 1.055f - 0.055f, color * 12.92f), a};
     }
 
-    [[nodiscard]] constexpr class mce::Color LinearToXYZ() const noexcept {
+    [[nodiscard]] constexpr class mce::Color linearToXYZ() const noexcept {
         auto color{toVec3()};
         return {
             color.dot({0.4124f, 0.3576f, 0.1805f}),
@@ -84,6 +84,47 @@ public:
             color.dot({3.2410f, -1.5374f, -0.4986f}),
             color.dot({-0.9692f, 1.8760f, 0.0416f}),
             color.dot({0.0556f, -0.2040f, 1.0570f}),
+            a
+        };
+    }
+
+    [[nodiscard]] constexpr class mce::Color linearToLMS() const noexcept {
+        auto color{toVec3()};
+        return {
+            color.dot({0.4122214708f, 0.5363325363f, 0.0514459929f}),
+            color.dot({0.2119034982f, 0.6806995451f, 0.1073969566f}),
+            color.dot({0.0883024619f, 0.2817188376f, 0.6299787005f}),
+            a
+        };
+    }
+
+    [[nodiscard]] constexpr class mce::Color LMSToLinear() const noexcept {
+        auto color{toVec3()};
+        return {
+            color.dot({+4.0767416621f, -3.3077115913f, +0.2309699292f}),
+            color.dot({-1.2684380046f, +2.6097574011f, -0.3413193965f}),
+            color.dot({-0.0041960863f, -0.7034186147f, +1.7076147010f}),
+            a
+        };
+    }
+
+    [[nodiscard]] constexpr class mce::Color LMSToOklab() const noexcept {
+        auto color{pow(toVec3(), {1.0f / 3.0f})};
+        return {
+            color.dot({0.2104542553f, +0.7936177850f, -0.0040720468f}),
+            color.dot({1.9779984951f, -2.4285922050f, +0.4505937099f}),
+            color.dot({0.0259040371f, +0.7827717662f, -0.8086757660f}),
+            a
+        };
+    }
+
+    [[nodiscard]] constexpr class mce::Color OklabToLMS() const noexcept {
+        auto color{toVec3()};
+        return {
+            pow({color.dot({1.0f, +0.3963377774f, +0.2158037573f}),
+                 color.dot({1.0f, -0.1055613458f, -0.0638541728f}),
+                 color.dot({1.0f, -0.0894841775f, -1.2914855480f})},
+                Vec3{3}),
             a
         };
     }
@@ -114,15 +155,15 @@ public:
     }
 
     [[nodiscard]] constexpr double deltaE76(Color const& dst) const noexcept { // 2.3 for JND
-        return this->sRGBToLinear().LinearToXYZ().XYZToLab().toVec3().distanceTo(
-            dst.sRGBToLinear().LinearToXYZ().XYZToLab().toVec3()
+        return this->sRGBToLinear().linearToXYZ().XYZToLab().toVec3().distanceTo(
+            dst.sRGBToLinear().linearToXYZ().XYZToLab().toVec3()
         );
     }
 
     [[nodiscard]] inline double deltaE94(Color const& dst) const noexcept { // 1.0 for JND
-        auto m1 = this->sRGBToLinear().LinearToXYZ().XYZToLab().toVec3();
+        auto m1 = this->sRGBToLinear().linearToXYZ().XYZToLab().toVec3();
         Vec2 ab1{m1.y, m1.z};
-        auto m2 = dst.sRGBToLinear().LinearToXYZ().XYZToLab().toVec3();
+        auto m2 = dst.sRGBToLinear().linearToXYZ().XYZToLab().toVec3();
         Vec2 ab2{m2.y, m2.z};
         auto C1 = ab1.length();
         auto C2 = ab2.length();
@@ -132,8 +173,8 @@ public:
     }
 
     [[nodiscard]] inline double deltaE00(Color const& dst) const noexcept { // 1.0 for JND
-        auto ma = this->sRGBToLinear().LinearToXYZ().XYZToLab().toVec3();
-        auto mb = dst.sRGBToLinear().LinearToXYZ().XYZToLab().toVec3();
+        auto ma = this->sRGBToLinear().linearToXYZ().XYZToLab().toVec3();
+        auto mb = dst.sRGBToLinear().linearToXYZ().XYZToLab().toVec3();
 
         // https://doi.org/10.1002/col.20070
         // The CIEDE2000 color-difference formula: Implementation notes,
