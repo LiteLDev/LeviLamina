@@ -56,7 +56,7 @@ public:
     };
 
     // vptr 8
-    uchar filler[1216]; // IDA Mob::Mob
+    uchar filler[1232 - 8]; // IDA BDS1.20.61.01 ItemActor::ItemActor line=29
 
 public:
     LLNDAPI class EntityContext&       getEntityContext();
