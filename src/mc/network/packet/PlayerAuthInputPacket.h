@@ -80,7 +80,7 @@ public:
     std::unique_ptr<PackedItemUseLegacyInventoryTransaction> mItemUseTransaction;
     std::unique_ptr<ItemStackRequestData>                    mItemStackRequest;
     PlayerBlockActions                                       mPlayerBlockActions;
-    int64                                                    predictedVehicle;
+    ActorUniqueID                                            mPredictedVehicle;
 
 
     // prevent constructor by default
