@@ -362,18 +362,27 @@ public:
     }
 };
 
-[[nodiscard]] constexpr ListTag::ListTag(std::vector<CompoundTagVariant> const& tags) {
+[[nodiscard]] constexpr ListTag::ListTag(std::vector<CompoundTagVariant> tags) {
     if (tags.empty()) {
         mType = Tag::Type::End;
     } else {
         mType = tags[0].index();
         mList.reserve(tags.size());
         for (auto& tag : tags) {
+            mList.emplace_back(std::move(tag).toUnique());
+        }
+    }
+}
+[[nodiscard]] constexpr ListTag::ListTag(std::initializer_list<CompoundTagVariant> tags) {
+    if (tags.size() == 0) {
+        mType = Tag::Type::End;
+    } else {
+        mType = tags.begin()->index();
+        mList.reserve(tags.size());
+        for (auto& tag : tags) {
             mList.emplace_back(tag.toUnique());
         }
     }
 }
-[[nodiscard]] constexpr ListTag::ListTag(std::initializer_list<CompoundTagVariant> tags)
-: ListTag(std::vector<CompoundTagVariant>{std::move(tags)}) {}
 
 #endif // COMPOUND_TAG_VARIANT_HEADER

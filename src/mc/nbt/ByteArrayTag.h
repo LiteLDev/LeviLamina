@@ -16,6 +16,8 @@ public:
 
     [[nodiscard]] constexpr ByteArrayTag(std::vector<uchar> arr) : data(std::move(arr)) {} // NOLINT
 
+    [[nodiscard]] constexpr ByteArrayTag(std::initializer_list<uchar> val) : data(std::move(val)) {} // NOLINT
+
     [[nodiscard]] constexpr uchar const& operator[](size_t index) const { return data[index]; }
     [[nodiscard]] constexpr uchar&       operator[](size_t index) { return data[index]; }
 

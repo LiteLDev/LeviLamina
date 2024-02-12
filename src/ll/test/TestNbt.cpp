@@ -29,8 +29,8 @@ LL_AUTO_TYPE_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serve
              {"double", 0.3},
              {"sdouble", 1.0},
          }                                                                              },
-        {"bytearray", ByteArrayTag{{1, 2, 3, 4, 5, 62, 63, 66}}                         },
-        {"intarray",  IntArrayTag{{1, 2, 3, 4, 5, -2, -3, -6}}                          },
+        {"bytearray", ByteArrayTag{1, 2, 3, 4, 5, 62, 63, 66}                           },
+        {"intarray",  IntArrayTag{1, 2, 3, 4, 5, -2, -3, -6}                            },
     };
 
     nbt["some"]["new"]["compound"]          = nbt;

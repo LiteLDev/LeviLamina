@@ -16,6 +16,8 @@ public:
 
     [[nodiscard]] constexpr IntArrayTag(std::vector<int> arr) : data(std::move(arr)) {} // NOLINT
 
+    [[nodiscard]] constexpr IntArrayTag(std::initializer_list<int> val) : data(std::move(val)) {} // NOLINT
+
     [[nodiscard]] constexpr int const& operator[](size_t index) const { return data[index]; }
     [[nodiscard]] constexpr int&       operator[](size_t index) { return data[index]; }
 

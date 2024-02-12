@@ -40,7 +40,7 @@ public:
         }
     }
     [[nodiscard]] constexpr ListTag(std::initializer_list<CompoundTagVariant> tags);
-    [[nodiscard]] constexpr ListTag(std::vector<CompoundTagVariant> const& tags);
+    [[nodiscard]] constexpr ListTag(std::vector<CompoundTagVariant> tags);
 
     [[nodiscard]] constexpr std::unique_ptr<Tag>&       operator[](size_t index) { return mList[index]; }
     [[nodiscard]] constexpr std::unique_ptr<Tag> const& operator[](size_t index) const { return mList[index]; }

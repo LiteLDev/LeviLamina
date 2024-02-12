@@ -23,7 +23,7 @@ public:
     template <std::integral T>
     [[nodiscard]] constexpr explicit IntTag(T value = 0) : data((int)value) {}
 
-    [[nodiscard]] IntTag operator-() const { return IntTag{(int)-data}; }
+    [[nodiscard]] IntTag operator-() const { return IntTag{-data}; }
 
 public:
     // NOLINTBEGIN

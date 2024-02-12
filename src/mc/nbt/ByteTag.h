@@ -27,7 +27,7 @@ public:
 
     [[nodiscard]] constexpr explicit ByteTag(std::byte b) : data(std::to_integer<schar>(b)) {}
 
-    [[nodiscard]] ByteTag operator-() const { return ByteTag{(schar)-data}; }
+    [[nodiscard]] ByteTag operator-() const { return ByteTag{-data}; }
 
 public:
     // NOLINTBEGIN
