@@ -202,14 +202,6 @@ namespace i18n {
 extern std::string globalDefaultLocaleName;
 }
 
-void startCrashLogger() {
-#if !LL_BUILTIN_CRASHLOGGER
-    CrashLogger::initCrashLogger();
-#else
-    static CrashLoggerNew crashLogger{};
-#endif
-}
-
 void leviLaminaMain() {
     error_utils::setSehTranslator();
 
@@ -244,7 +236,11 @@ void leviLaminaMain() {
         ll::service::PlayerInfo::getInstance();
     }
     if (globalConfig.modules.crashLogger.enabled) {
-        startCrashLogger();
+        if (globalConfig.modules.crashLogger.builtin) {
+            static CrashLoggerNew crashLogger{};
+        } else {
+            CrashLogger::initCrashLogger();
+        }
     }
 
     // Register Exit Event Handler.
@@ -300,5 +296,3 @@ LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::High, "main", int, int arg
     return res;
 }
 } // namespace ll
-
-[[maybe_unused]] BOOL WINAPI DllMain(HMODULE, DWORD, LPVOID) { return true; }
