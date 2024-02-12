@@ -27,10 +27,27 @@ std::shared_ptr<SetActorDataPacket> buildSetActorDataPacketPacket(ItemActor* iac
     return std::static_pointer_cast<SetActorDataPacket>(packet);
 }
 
-LL_AUTO_TYPE_INSTANCE_HOOK(ACTickHook, HookPriority::Normal, ItemActor, &ItemActor::postNormalTick, void) {
-    origin();
-    ll::service::getLevel()->forEachPlayer([&](Player& player) {
-        player.sendNetworkPacket(*buildSetActorDataPacketPacket(this));
-        return true;
-    });
-}
+// LL_AUTO_TYPE_INSTANCE_HOOK(ACTickHook, HookPriority::Normal, ItemActor, &ItemActor::postNormalTick, void) {
+//     origin();
+//     ll::service::getLevel()->forEachPlayer([&](Player& player) {
+//         player.sendNetworkPacket(*buildSetActorDataPacketPacket(this));
+//         return true;
+//     });
+// }
+
+
+// et buildSetActorDataPacketPacket(ItemActor* iac) {
+
+//     SetActorDataPacket packet{iac->getRuntimeID(), iac->getEntityData(), nullptr, 0, true};
+
+//     packet.mPackedItems.emplace_back(DataItem::create<const std::string&>(ActorDataIDs::Name, iac->item().getTypeName())
+//     );
+//     packet.mPackedItems.emplace_back(DataItem::create<signed char>(ActorDataIDs::NametagAlwaysShow, true));
+
+//     return packet;
+// }
+
+// LL_AUTO_TYPE_INSTANCE_HOOK(ACTickHook, HookPriority::Normal, ItemActor, &ItemActor::postNormalTick, void) {
+//     origin();
+//     buildSetActorDataPacketPacket(this).sendToClients();
+// }

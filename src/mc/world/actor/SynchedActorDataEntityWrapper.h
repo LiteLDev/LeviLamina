@@ -1,13 +1,19 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/entity/gamerefs_entity/EntityRefTraits.h"
 
 struct SynchedActorDataComponent;
+struct ActorDataFlagComponent;
+struct ActorDataDirtyFlagsComponent;
+class EntityContext;
 
 class SynchedActorDataEntityWrapper {
 public:
-    int (**_vptr_SynchedActorDataEntityWrapper)(void);
-    gsl::not_null<SynchedActorDataComponent*> mData;
+    gsl::not_null<SynchedActorDataComponent*>    mSynchedActorData;
+    gsl::not_null<ActorDataFlagComponent*>       mActorDataFlag;
+    gsl::not_null<ActorDataDirtyFlagsComponent*> mActorDataDirtyFlag;
+    WeakRef<EntityContext>                       mWeakEntity;
 
     template <typename T>
     MCAPI void define(ushort, T const&);
