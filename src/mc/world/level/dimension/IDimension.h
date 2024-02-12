@@ -14,20 +14,29 @@ public:
     // vIndex: 0, symbol: ??1IDimension@@UEAA@XZ
     virtual ~IDimension();
 
-    // vIndex: 0, symbol: ?isNaturalDimension@Dimension@@UEBA_NXZ
+    // vIndex: 1
     virtual bool isNaturalDimension() const = 0;
 
-    // vIndex: 1, symbol: ?getDimensionId@Dimension@@UEBA?AV?$AutomaticID@VDimension@@H@@XZ
+    // vIndex: 2
     virtual DimensionType getDimensionId() const = 0;
 
-    // vIndex: 2, symbol: ?sendPacketForPosition@Dimension@@UEAAXAEBVBlockPos@@AEBVPacket@@PEBVPlayer@@@Z
+    // vIndex: 3
     virtual void sendPacketForPosition(class BlockPos const&, class Packet const&, class Player const*) = 0;
 
-    // vIndex: 3, symbol: ?flushLevelChunkGarbageCollector@Dimension@@UEAAXXZ
+    // vIndex: 4
     virtual void flushLevelChunkGarbageCollector() = 0;
 
-    // vIndex: 4, symbol: ?initializeWithLevelStorageManager@Dimension@@UEAAXAEAVLevelStorageManager@@@Z
+    // vIndex: 5
     virtual void initializeWithLevelStorageManager(class LevelStorageManager&) = 0;
+
+    // vIndex: 6
+    virtual class BiomeRegistry& getBiomeRegistry() = 0;
+
+    // vIndex: 7
+    virtual class BiomeRegistry const& getBiomeRegistry() const = 0;
+
+    // vIndex: 8
+    virtual class Vec3 translatePosAcrossDimension(class Vec3 const&, DimensionType) const = 0;
 
     // NOLINTEND
 };

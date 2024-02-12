@@ -47,16 +47,16 @@ public:
         class Random&      random
     ) const;
 
-    // vIndex: 42, symbol: ?findSpawnPosition@VoidGenerator@@UEBA?AVBlockPos@@XZ
+    // vIndex: 43, symbol: ?findSpawnPosition@VoidGenerator@@UEBA?AVBlockPos@@XZ
     virtual class BlockPos findSpawnPosition() const;
 
-    // vIndex: 39, symbol: ?getBiomeArea@VoidGenerator@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z
+    // vIndex: 40, symbol: ?getBiomeArea@VoidGenerator@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z
     virtual class BiomeArea getBiomeArea(class BoundingBox const& area, uint scale) const;
 
-    // vIndex: 40, symbol: ?getBiomeSource@VoidGenerator@@UEBAAEBVBiomeSource@@XZ
+    // vIndex: 41, symbol: ?getBiomeSource@VoidGenerator@@UEBAAEBVBiomeSource@@XZ
     virtual class BiomeSource const& getBiomeSource() const;
 
-    // vIndex: 41, symbol: ?getBlockVolumeDimensions@VoidGenerator@@UEBA?AUBlockVolumeDimensions@WorldGenerator@@XZ
+    // vIndex: 42, symbol: ?getBlockVolumeDimensions@VoidGenerator@@UEBA?AUBlockVolumeDimensions@WorldGenerator@@XZ
     virtual struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const;
 
     // vIndex: 11, symbol: ?loadChunk@VoidGenerator@@UEAAXAEAVLevelChunk@@_N@Z
@@ -65,7 +65,7 @@ public:
     // vIndex: 9, symbol: ?postProcess@VoidGenerator@@UEAA_NAEAVChunkViewSource@@@Z
     virtual bool postProcess(class ChunkViewSource& neighborhood);
 
-    // vIndex: 38, symbol:
+    // vIndex: 39, symbol:
     // ?prepareAndComputeHeights@VoidGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@AEAV?$vector@FV?$allocator@F@std@@@std@@_NH@Z
     virtual void prepareAndComputeHeights(
         class BlockVolume&    box,
@@ -75,7 +75,7 @@ public:
         int                   skipTopN
     );
 
-    // vIndex: 37, symbol: ?prepareHeights@VoidGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@_N@Z
+    // vIndex: 38, symbol: ?prepareHeights@VoidGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@_N@Z
     virtual void prepareHeights(class BlockVolume& box, class ChunkPos const& chunkPos, bool factorInBeardsAndShavers);
 
     // symbol: ??0VoidGenerator@@QEAA@AEAVDimension@@@Z

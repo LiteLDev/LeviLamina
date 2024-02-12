@@ -1,13 +1,22 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/threading/SpinLock.h"
+#include "mc/world/level/chunk/ChunkSource.h"
+#include "mc/world/level/levelgen/v1/IPreliminarySurfaceProvider.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/data/DividedPos2d.h"
 #include "mc/deps/core/utility/buffer_span.h"
 #include "mc/world/level/levelgen/structure/StructureFeatureType.h"
 
-class WorldGenerator {
+class HardcodedSpawnAreaRegistry;
+class StructureFeatureRegistry;
+class AirBlockCache;
+class BiomeArea;
+class HashedString;
+
+class WorldGenerator : public ChunkSource, public IPreliminarySurfaceProvider {
 public:
     // WorldGenerator inner types declare
     // clang-format off
@@ -16,12 +25,19 @@ public:
 
     // WorldGenerator inner types define
     struct BlockVolumeDimensions {
-    public:
-        // prevent constructor by default
-        BlockVolumeDimensions& operator=(BlockVolumeDimensions const&);
-        BlockVolumeDimensions(BlockVolumeDimensions const&);
-        BlockVolumeDimensions();
+        uint mWidth;  // this+0x0
+        uint mDepth;  // this+0x4
+        uint mHeight; // this+0x8
     };
+
+    AirBlockCache*                              airBlockCache;             // this+0x78
+    std::unique_ptr<HardcodedSpawnAreaRegistry> mHardcodedSpawnTypes;      // this+0x80
+    std::unique_ptr<StructureFeatureRegistry>   mStructureFeatureRegistry; // this+0x88
+    uchar                                       unk_144[160];
+
+    // unk_304 is std::unordered_map but unknown key and value
+    uchar    unk_304[64];
+    SpinLock mSpinLock;
 
 public:
     // prevent constructor by default
@@ -31,38 +47,82 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?addHardcodedSpawnAreas@WorldGenerator@@UEAAXAEAVLevelChunk@@@Z
-    MCVAPI void addHardcodedSpawnAreas(class LevelChunk& lc);
+    // symbol: ??1WorldGenerator@@UEAA@XZ
+    virtual ~WorldGenerator();
 
-    // symbol: ?debugRender@WorldGenerator@@UEAAXXZ
-    MCVAPI void debugRender();
+    // symbol: ?init@WorldGenerator@@UEAAXXZ
+    virtual void init();
+
+    // symbol: ?findStructureFeatureTypeAt@WorldGenerator@@UEAA?AW4StructureFeatureType@@AEBVBlockPos@@@Z
+    virtual ::StructureFeatureType findStructureFeatureTypeAt(class BlockPos const& pos);
+
+    // symbol: ?isStructureFeatureTypeAt@WorldGenerator@@UEBA_NAEBVBlockPos@@W4StructureFeatureType@@@Z
+    virtual bool isStructureFeatureTypeAt(class BlockPos const& pos, ::StructureFeatureType type) const;
 
     // symbol:
     // ?findNearestStructureFeature@WorldGenerator@@UEAA_NW4StructureFeatureType@@AEBVBlockPos@@AEAV3@_NV?$optional@VHashedString@@@std@@@Z
-    MCVAPI bool
+    virtual bool
     findNearestStructureFeature(::StructureFeatureType, class BlockPos const&, class BlockPos&, bool, std::optional<class HashedString>);
 
-    // symbol: ?findStructureFeatureTypeAt@WorldGenerator@@UEAA?AW4StructureFeatureType@@AEBVBlockPos@@@Z
-    MCVAPI ::StructureFeatureType findStructureFeatureTypeAt(class BlockPos const& pos);
-
     // symbol: ?garbageCollectBlueprints@WorldGenerator@@UEAAXV?$buffer_span@VChunkPos@@@@@Z
-    MCVAPI void garbageCollectBlueprints(class buffer_span<class ChunkPos> activeChunks);
+    virtual void garbageCollectBlueprints(class buffer_span<class ChunkPos> activeChunks);
 
+    // vIndex: 38
+    virtual void
+    prepareHeights(class BlockVolume& box, class ChunkPos const& chunkPos, bool factorInBeardsAndShavers) = 0;
+
+    // vIndex: 39
+    virtual void prepareAndComputeHeights(
+        class BlockVolume&    box,
+        class ChunkPos const& chunkPos,
+        std::vector<short>&   ZXheights,
+        bool                  factorInBeardsAndShavers,
+        int                   skipTopN
+    ) = 0;
+
+    // vIndex: 40
+    virtual class BiomeArea getBiomeArea(class BoundingBox const& area, uint scale) const = 0;
+
+    // vIndex: 41
+    virtual class BiomeSource const& getBiomeSource() const = 0;
+
+    // vIndex: 42
+    virtual struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const = 0;
+
+    // vIndex: 43
+    virtual class BlockPos findSpawnPosition() const = 0;
+
+    // vIndex: 44, symbol: ?addHardcodedSpawnAreas@WorldGenerator@@UEAAXAEAVLevelChunk@@@Z
+    virtual void addHardcodedSpawnAreas(class LevelChunk& lc);
+
+    // vIndex: 45, symbol: ?debugRender@WorldGenerator@@UEAAXXZ
+    virtual void debugRender();
+
+    // vIndex: 46
+    virtual void decorateWorldGenLoadChunk(
+        class Biome&             biome,
+        class LevelChunk&        lc,
+        class BlockVolumeTarget& target,
+        class Random&            random,
+        class ChunkPos const&    pos
+    ) const = 0;
+
+    // vIndex: 47
+    virtual void decorateWorldGenPostProcess(
+        class Biome&       biome,
+        class LevelChunk&  lc,
+        class BlockSource& source,
+        class Random&      random
+    ) const = 0;
+
+    // IPreliminarySurfaceProvider vtable overloaded functions
     // symbol: ?getPreliminarySurfaceLevel@WorldGenerator@@UEBA?AV?$optional@F@std@@V?$DividedPos2d@$03@@@Z
-    MCVAPI std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4> worldPos) const;
+    virtual std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4> worldPos) const;
 
-    // symbol: ?init@WorldGenerator@@UEAAXXZ
-    MCVAPI void init();
-
-    // symbol: ?isStructureFeatureTypeAt@WorldGenerator@@UEBA_NAEBVBlockPos@@W4StructureFeatureType@@@Z
-    MCVAPI bool isStructureFeatureTypeAt(class BlockPos const& pos, ::StructureFeatureType type) const;
-
+    // ChunkSource vtable overloaded function
     // symbol: ?postProcessMobsAt@WorldGenerator@@UEAAXAEAVBlockSource@@HHAEAVRandom@@@Z
-    MCVAPI void
+    virtual void
     postProcessMobsAt(class BlockSource& blockSource, int chunkWestBlock, int chunkNorthBlock, class Random& random);
-
-    // symbol: ??1WorldGenerator@@UEAA@XZ
-    MCVAPI ~WorldGenerator();
 
     // symbol: ??0WorldGenerator@@QEAA@AEAVDimension@@@Z
     MCAPI explicit WorldGenerator(class Dimension& dimension);

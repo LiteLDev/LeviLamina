@@ -42,20 +42,26 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 9, symbol: ?postProcess@OverworldGenerator@@UEAA_NAEAVChunkViewSource@@@Z
-    virtual bool postProcess(class ChunkViewSource&);
+    virtual bool postProcess(class ChunkViewSource& neighborhood);
 
     // vIndex: 11, symbol: ?loadChunk@OverworldGenerator@@UEAAXAEAVLevelChunk@@_N@Z
-    virtual void loadChunk(class LevelChunk&, bool);
+    virtual void loadChunk(class LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
     // vIndex: 37,  symbol: ?prepareHeights@OverworldGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@_N@Z
-    virtual void prepareHeights(class BlockVolume&, class ChunkPos const&, bool);
+    virtual void prepareHeights(class BlockVolume& box, class ChunkPos const& chunkPos, bool factorInBeardsAndShavers);
 
     // vIndex: 38, symbol:
     // ?prepareAndComputeHeights@OverworldGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@AEAV?$vector@FV?$allocator@F@std@@@std@@_NH@Z
-    virtual void prepareAndComputeHeights(class BlockVolume&, class ChunkPos const&, std::vector<short>&, bool, int);
+    virtual void prepareAndComputeHeights(
+        class BlockVolume&    box,
+        class ChunkPos const& chunkPos,
+        std::vector<short>&   ZXheights,
+        bool                  factorInBeardsAndShavers,
+        int                   skipTopN
+    );
 
     // vIndex: 39, symbol: ?getBiomeArea@OverworldGenerator@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z
-    virtual class BiomeArea getBiomeArea(class BoundingBox const&, uint) const;
+    virtual class BiomeArea getBiomeArea(class BoundingBox const& area, uint scale) const;
 
     // vIndex: 41, symbol: ?getBlockVolumeDimensions@OverworldGenerator@@UEBA?AUBlockVolumeDimensions@WorldGenerator@@XZ
     virtual struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const;
@@ -72,7 +78,7 @@ public:
 
     // vIndex: 47
     virtual class Util::MultidimensionalArray<float, 5, 5, 41>
-    generateDensityCellsForChunk(class ChunkPos const&) const = 0;
+    generateDensityCellsForChunk(class ChunkPos const& chunkPos) const = 0;
 
     // vIndex: 48
     virtual int getLevelGenHeight() const = 0;
@@ -91,7 +97,7 @@ public:
     ) const;
 
     // vIndex: 51, symbol: ?createNoiseCache@OverworldGenerator@@MEBA?AVChunkLocalNoiseCache@@VChunkPos@@@Z
-    virtual class ChunkLocalNoiseCache createNoiseCache(class ChunkPos) const;
+    virtual class ChunkLocalNoiseCache createNoiseCache(class ChunkPos chunkPos) const;
 
     // vIndex: 52, symbol: ?createWorldGenCache@OverworldGenerator@@MEBA?AVWorldGenCache@@VChunkPos@@@Z
     virtual class WorldGenCache createWorldGenCache(class ChunkPos) const;
@@ -104,14 +110,14 @@ public:
 
     // vIndex: 55
     virtual void _prepareHeights(
-        class BlockVolume&,
-        class ChunkPos const&,
-        class WorldGenCache const&,
-        class Aquifer*,
-        std::function<void(class BlockPos const&, class Block const&, int)>&&,
-        bool,
-        std::vector<short>*,
-        int
+        class BlockVolume&                                                    box,
+        class ChunkPos const&                                                 chunkPos,
+        class WorldGenCache const&                                            worldGenCache,
+        class Aquifer*                                                        aquiferPtr,
+        std::function<void(class BlockPos const&, class Block const&, int)>&& tickUpdateFn,
+        bool                                                                  factorInBeardsAndShavers,
+        std::vector<short>*                                                   ZXheights,
+        int                                                                   skipTopN
     ) = 0;
 
     // symbol: ??1OverworldGenerator@@UEAA@XZ
