@@ -10,14 +10,12 @@ nav:
       - install.md
       - Install on Docker: https://github.com/LiteLDev/levilamina-docker-server
 
+  - faq.md
+
   - Tutorials:
       - tutorials/create_your_first_plugin.md
       - tutorials/publish_your_first_plugin.md
       - tutorials/publish_your_first_pack.md
-      - tutorials/fly_in_survival.md
-      - tutorials/customized_terrain_generation.md
-      - tutorials/more_dimensions.md
-      - tutorials/ai_npc_and_assistant.md
 
   - Guides:
       - guides/event_guide.md
@@ -29,16 +27,13 @@ nav:
       - guides/item_guide.md
       - guides/permission_guide.md
 
-  - faq.md
-
   - APIs: https://levilamina.liteldev.com/api
+
+  - Plugins: https://lippkg.com
 
   - discuss.md
 
-  - Engines:
-    - LegacyScriptEngine: engines/legacy_script_engine.md
-
-  - Plugins: https://lippkg.com
+  - links.md
 
 exclude_docs: |
   api/assets/
