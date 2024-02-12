@@ -8,7 +8,7 @@
 #include "nlohmann/json.hpp"
 
 namespace ll::nbt::detail {
-extern bool isTrivialNbtStringChar(char c);
+bool isTrivialNbtStringChar(char c);
 }
 
 namespace {

@@ -201,7 +201,7 @@ std::stacktrace stacktraceFromContext(_CONTEXT const& context, size_t skip, size
         realStacktrace.hash += (ulong)sf.AddrPC.Offset;
         realStacktrace.addresses.push_back(sf.AddrPC.Offset);
     }
-    return *(std::stacktrace*)&realStacktrace;
+    return *reinterpret_cast<std::stacktrace*>(&realStacktrace);
 }
 
 #endif
@@ -243,16 +243,19 @@ std::string makeExceptionString(std::exception_ptr ePtr) noexcept {
                     buffer.resize(size);
                     handleName = string_utils::u8str2str(std::filesystem::path(buffer).stem().u8string());
                 }
-
-                auto expTypeName = exc.getNumCatchableTypes() > 0 ? exc.getTypeInfo(0)->name() : "unknown exception";
-                if (expTypeName == typeid(seh_exception).name()) {
-                    res += fmt::format("Seh Exception, from <{}>:\n", handleName);
+                if (exc.getNumCatchableTypes() > 0) {
+                    auto& type = *exc.getTypeInfo(0);
+                    if (type == typeid(seh_exception)) {
+                        res += fmt::format("Seh Exception, from <{}>:\n", handleName);
+                    } else {
+                        res += fmt::format(
+                            "C++ Exception: {}, from <{}>:\n",
+                            reflection::removeTypePrefix(type.name()),
+                            handleName
+                        );
+                    }
                 } else {
-                    res += fmt::format(
-                        "C++ Exception: {}, from <{}>:\n",
-                        reflection::removeTypePrefix(expTypeName),
-                        handleName
-                    );
+                    res += fmt::format("C++ Exception: unknown type, from <{}>:\n", handleName);
                 }
             } catch (...) {}
         } else {

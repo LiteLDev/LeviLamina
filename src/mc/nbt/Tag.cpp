@@ -2,19 +2,19 @@
 #include "mc/nbt/CompoundTag.h"
 #include "mc/nbt/ListTag.h"
 namespace ll::nbt::detail {
-extern std::string                       TypedToSnbt(ByteTag&, uchar, SnbtFormat);
-extern std::string                       TypedToSnbt(ShortTag&, uchar, SnbtFormat);
-extern std::string                       TypedToSnbt(IntTag&, uchar, SnbtFormat);
-extern std::string                       TypedToSnbt(Int64Tag&, uchar, SnbtFormat);
-extern std::string                       TypedToSnbt(FloatTag&, uchar, SnbtFormat);
-extern std::string                       TypedToSnbt(DoubleTag&, uchar, SnbtFormat);
-extern std::string                       TypedToSnbt(ByteArrayTag&, uchar, SnbtFormat);
-extern std::string                       TypedToSnbt(StringTag&, uchar, SnbtFormat);
-extern std::string                       TypedToSnbt(ListTag&, uchar, SnbtFormat);
-extern std::string                       TypedToSnbt(CompoundTag&, uchar, SnbtFormat);
-extern std::string                       TypedToSnbt(IntArrayTag&, uchar, SnbtFormat);
-extern std::string                       TypedToSnbt(EndTag&, uchar, SnbtFormat);
-extern std::optional<CompoundTagVariant> parseSnbtValue(std::string_view&);
+std::string                       TypedToSnbt(ByteTag&, uchar, SnbtFormat);
+std::string                       TypedToSnbt(ShortTag&, uchar, SnbtFormat);
+std::string                       TypedToSnbt(IntTag&, uchar, SnbtFormat);
+std::string                       TypedToSnbt(Int64Tag&, uchar, SnbtFormat);
+std::string                       TypedToSnbt(FloatTag&, uchar, SnbtFormat);
+std::string                       TypedToSnbt(DoubleTag&, uchar, SnbtFormat);
+std::string                       TypedToSnbt(ByteArrayTag&, uchar, SnbtFormat);
+std::string                       TypedToSnbt(StringTag&, uchar, SnbtFormat);
+std::string                       TypedToSnbt(ListTag&, uchar, SnbtFormat);
+std::string                       TypedToSnbt(CompoundTag&, uchar, SnbtFormat);
+std::string                       TypedToSnbt(IntArrayTag&, uchar, SnbtFormat);
+std::string                       TypedToSnbt(EndTag&, uchar, SnbtFormat);
+std::optional<CompoundTagVariant> parseSnbtValue(std::string_view&);
 } // namespace ll::nbt::detail
 
 std::string Tag::toSnbt(SnbtFormat snbtFormat, uchar indent) const {
