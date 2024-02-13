@@ -4,11 +4,9 @@
 
 class SynchedActorData {
 public:
-    int (**_vptr_SynchedActorData)(void);
+    std::vector<std::unique_ptr<class DataItem>> mItemsArray;
 
-    std::vector<std::unique_ptr<class DataItem>> mItemsArray; // this+0x8
-    ushort                                       minIdxDirty; // this+0x20
-    ushort                                       maxIdxDirty; // this+0x22
+    char filler[0x30];
 
     template <typename T>
     MCAPI void define(ushort, T const&);
