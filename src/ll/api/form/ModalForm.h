@@ -21,13 +21,8 @@ public:
 
     LLNDAPI ModalForm();
 
-    LLNDAPI ModalForm(
-        std::string title,
-        std::string content,
-        std::string upperButton,
-        std::string lowerButton,
-        Callback    callback = Callback()
-    );
+    LLNDAPI ModalForm(std::string title, std::string content, std::string upperButton, std::string lowerButton);
+
     LLAPI ~ModalForm() override;
 
     LLAPI ModalForm& setTitle(std::string const& title);
@@ -38,9 +33,7 @@ public:
 
     LLAPI ModalForm& setLowerButton(std::string const& lowerButton);
 
-    LLAPI ModalForm& setCallback(Callback callback);
-
-    LLAPI bool sendTo(Player& player, Callback callback = Callback());
+    LLAPI bool sendTo(Player& player, Callback callback = {});
 };
 
 } // namespace ll::form

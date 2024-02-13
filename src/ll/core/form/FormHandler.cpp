@@ -12,7 +12,7 @@
 #include "mc/scripting/ServerScriptManager.h"
 #include "mc/server/ServerInstance.h"
 
-#include "ll/core/form/FormIdManager.h"
+#include "ll/api/form/FormIdManager.h"
 #include "mc/deps/json/Value.h"
 #include "mc/deps/json/ValueConstIterator.h"
 #include "nlohmann/json_fwd.hpp"
@@ -79,35 +79,30 @@ void CustomFormHandler::handle(Player& player, std::optional<Json::Value> data) 
         return;
     }
 
-    try {
-        nlohmann::ordered_json dataJson = jsonCppValueToNlohmannOrderedJson(data.value());
+    nlohmann::ordered_json dataJson = jsonCppValueToNlohmannOrderedJson(data.value());
 
-        if (!dataJson.is_array()) {
-            ll::logger.error("Failed to parse CustomForm result: not an array");
-            return;
-        }
-        if (dataJson.size() != mFormElements.size()) {
-            ll::logger.error("Failed to parse CustomForm result: size mismatch");
-            return;
-        }
-
-        CustomFormResult result;
-
-        for (size_t i = 0; i < mFormElements.size(); ++i) {
-            auto& element = mFormElements[i];
-            auto& value   = dataJson[i];
-            if (element->getType() == CustomFormElement::Type::Label) {
-                continue;
-            }
-            result.emplace(element->mName, element->parseResult(value));
-        }
-
-        if (mCallback) {
-            mCallback(player, result);
-        }
-    } catch (std::exception const& e) {
-        ll::logger.error("Failed to parse CustomForm result: {}", e.what());
+    if (!dataJson.is_array()) {
+        ll::logger.error("Failed to parse CustomForm result: not an array");
         return;
+    }
+    if (dataJson.size() != mFormElements.size()) {
+        ll::logger.error("Failed to parse CustomForm result: size mismatch");
+        return;
+    }
+
+    CustomFormResult result;
+
+    for (size_t i = 0; i < mFormElements.size(); ++i) {
+        auto& element = mFormElements[i];
+        auto& value   = dataJson[i];
+        if (element->getType() == CustomFormElement::Type::Label) {
+            continue;
+        }
+        result.emplace(element->mName, element->parseResult(value));
+    }
+
+    if (mCallback) {
+        mCallback(player, result);
     }
 }
 

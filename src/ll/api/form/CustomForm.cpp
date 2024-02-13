@@ -21,15 +21,10 @@ public:
     [[nodiscard]] Type getType() const override { return Type::Label; }
 
     [[nodiscard]] nlohmann::ordered_json serialize() const override {
-        try {
-            return {
-                {"type", "label"},
-                {"text", mText  }
-            };
-        } catch (...) {
-            ll::logger.error("Failed to serialize Label");
-            return {};
-        }
+        return {
+            {"type", "label"},
+            {"text", mText  }
+        };
     }
 
     [[nodiscard]] CustomFormElementResult parseResult(nlohmann::ordered_json const&) const override { return {}; }
@@ -52,22 +47,17 @@ public:
     [[nodiscard]] Type getType() const override { return Type::Input; }
 
     [[nodiscard]] nlohmann::ordered_json serialize() const override {
-        try {
-            nlohmann::ordered_json input = {
-                {"type", "input"},
-                {"text", mText  }
-            };
-            if (!mPlaceholder.empty()) {
-                input["placeholder"] = mPlaceholder;
-            }
-            if (!mDefault.empty()) {
-                input["default"] = mDefault;
-            }
-            return input;
-        } catch (...) {
-            ll::logger.error("Failed to serialize Input");
-            return {};
+        nlohmann::ordered_json input = {
+            {"type", "input"},
+            {"text", mText  }
+        };
+        if (!mPlaceholder.empty()) {
+            input["placeholder"] = mPlaceholder;
         }
+        if (!mDefault.empty()) {
+            input["default"] = mDefault;
+        }
+        return input;
     }
 
     [[nodiscard]] CustomFormElementResult parseResult(nlohmann::ordered_json const& data) const override {
@@ -90,16 +80,11 @@ public:
     [[nodiscard]] Type getType() const override { return Type::Toggle; }
 
     [[nodiscard]] nlohmann::ordered_json serialize() const override {
-        try {
-            return {
-                {"type",    "toggle"},
-                {"text",    mText   },
-                {"default", mDefault}
-            };
-        } catch (...) {
-            ll::logger.error("Failed to serialize Toggle");
-            return {};
-        }
+        return {
+            {"type",    "toggle"},
+            {"text",    mText   },
+            {"default", mDefault}
+        };
     }
 
     [[nodiscard]] CustomFormElementResult parseResult(nlohmann::ordered_json const& data) const override {
@@ -124,17 +109,12 @@ public:
     [[nodiscard]] Type getType() const override { return Type::Dropdown; }
 
     [[nodiscard]] nlohmann::ordered_json serialize() const override {
-        try {
-            return {
-                {"type",    "dropdown"},
-                {"text",    mText     },
-                {"options", mOptions  },
-                {"default", mDefault  }
-            };
-        } catch (...) {
-            ll::logger.error("Failed to serialize Dropdown");
-            return {};
-        }
+        return {
+            {"type",    "dropdown"},
+            {"text",    mText     },
+            {"options", mOptions  },
+            {"default", mDefault  }
+        };
     }
 
     [[nodiscard]] CustomFormElementResult parseResult(nlohmann::ordered_json const& data) const override {
@@ -181,23 +161,18 @@ public:
     [[nodiscard]] Type getType() const override { return Type::Slider; }
 
     [[nodiscard]] nlohmann::ordered_json serialize() const override {
-        try {
-            if (!isValid()) {
-                ll::logger.error("Failed to serialize Slider: invalid data");
-                return {};
-            }
-            return {
-                {"type",    "slider"},
-                {"text",    mText   },
-                {"min",     mMin    },
-                {"max",     mMax    },
-                {"step",    mStep   },
-                {"default", mDefault}
-            };
-        } catch (...) {
-            ll::logger.error("Failed to serialize Slider");
+        if (!isValid()) {
+            ll::logger.error("Failed to serialize Slider: invalid data");
             return {};
         }
+        return {
+            {"type",    "slider"},
+            {"text",    mText   },
+            {"min",     mMin    },
+            {"max",     mMax    },
+            {"step",    mStep   },
+            {"default", mDefault}
+        };
     }
 
     [[nodiscard]] CustomFormElementResult parseResult(nlohmann::ordered_json const& data) const override {
@@ -232,21 +207,16 @@ public:
     [[nodiscard]] Type getType() const override { return Type::StepSlider; }
 
     [[nodiscard]] nlohmann::ordered_json serialize() const override {
-        try {
-            if (!isValid()) {
-                ll::logger.error("Failed to serialize StepSlider: invalid data");
-                return {};
-            }
-            return {
-                {"type",    "step_slider"},
-                {"text",    mText        },
-                {"steps",   mSteps       },
-                {"default", mDefault     }
-            };
-        } catch (...) {
-            ll::logger.error("Failed to serialize StepSlider");
+        if (!isValid()) {
+            ll::logger.error("Failed to serialize StepSlider: invalid data");
             return {};
         }
+        return {
+            {"type",    "step_slider"},
+            {"text",    mText        },
+            {"steps",   mSteps       },
+            {"default", mDefault     }
+        };
     }
 
     [[nodiscard]] CustomFormElementResult parseResult(nlohmann::ordered_json const& data) const override {
@@ -255,13 +225,12 @@ public:
 };
 
 class CustomForm::CustomFormImpl : public FormImpl {
+private:
+    std::string                                     mTitle{};
+    std::vector<std::shared_ptr<CustomFormElement>> mElements{};
 
 public:
     using Callback = CustomForm::Callback;
-
-    std::string                                     mTitle{};
-    std::vector<std::shared_ptr<CustomFormElement>> mElements{};
-    Callback                                        mCallback;
 
     CustomFormImpl() = default;
 
@@ -271,86 +240,28 @@ public:
 
     void append(const std::shared_ptr<CustomFormElement>& element) { mElements.push_back(element); }
 
-    void appendLabel(std::string const& text) { append(std::make_shared<Label>(text)); }
-
-    void appendInput(
-        std::string const& name,
-        std::string const& text,
-        std::string const& placeholder,
-        std::string const& defaultVal
-    ) {
-        append(std::make_shared<Input>(name, text, placeholder, defaultVal));
-    }
-
-    void appendToggle(std::string const& name, std::string const& text, bool defaultVal) {
-        append(std::make_shared<Toggle>(name, text, defaultVal));
-    }
-
-    void appendDropdown(
-        std::string const&              name,
-        std::string const&              text,
-        std::vector<std::string> const& options,
-        size_t                          defaultVal
-    ) {
-        append(std::make_shared<Dropdown>(name, text, options, defaultVal));
-    }
-
-    void appendSlider(
-        std::string const& name,
-        std::string const& text,
-        double             min,
-        double             max,
-        double             step,
-        double             defaultVal
-    ) {
-        append(std::make_shared<Slider>(name, text, min, max, step, defaultVal));
-    }
-
-    void appendStepSlider(
-        std::string const&              name,
-        std::string const&              text,
-        std::vector<std::string> const& steps,
-        size_t                          defaultVal
-    ) {
-        append(std::make_shared<StepSlider>(name, text, steps, defaultVal));
-    }
-
-    bool sendTo(Player& player, Callback callback) {
-        callback = callback ? std::move(callback) : mCallback;
-        if (!callback) {
-            ll::logger.error("CustomForm callback is null");
-            return false;
-        }
+    void sendTo(Player& player, Callback callback) {
         uint id = handler::addFormHandler(std::make_unique<handler::CustomFormHandler>(std::move(callback), mElements));
         auto json = serialize();
-        if (json.is_null()) {
-            return false;
-        }
         ModalFormRequestPacket(id, json.dump()).sendTo(player);
-        return true;
     }
 
 protected:
     [[nodiscard]] FormType getType() const override { return FormType::CustomForm; }
 
     [[nodiscard]] nlohmann::ordered_json serialize() const override {
-        try {
-            nlohmann::ordered_json form = {
-                {"title",   mTitle                         },
-                {"type",    "custom_form"                  },
-                {"content", nlohmann::ordered_json::array()}
-            };
-            for (auto& e : mElements) {
-                nlohmann::ordered_json element = e->serialize();
-                if (!element.empty()) {
-                    form["content"].push_back(element);
-                }
+        nlohmann::ordered_json form = {
+            {"title",   mTitle                         },
+            {"type",    "custom_form"                  },
+            {"content", nlohmann::ordered_json::array()}
+        };
+        for (auto& e : mElements) {
+            nlohmann::ordered_json element = e->serialize();
+            if (!element.empty()) {
+                form["content"].push_back(element);
             }
-            return form;
-        } catch (...) {
-            ll::logger.error("Failed to serialize CustomForm");
-            return {};
         }
+        return form;
     }
 };
 
@@ -366,7 +277,7 @@ CustomForm& CustomForm::setTitle(std::string const& title) {
 }
 
 CustomForm& CustomForm::appendLabel(std::string const& text) {
-    impl->appendLabel(text);
+    impl->append(std::make_shared<Label>(text));
     return *this;
 }
 
@@ -376,12 +287,12 @@ CustomForm& CustomForm::appendInput(
     std::string const& placeholder,
     std::string const& defaultVal
 ) {
-    impl->appendInput(name, text, placeholder, defaultVal);
+    impl->append(std::make_shared<Input>(name, text, placeholder, defaultVal));
     return *this;
 }
 
 CustomForm& CustomForm::appendToggle(std::string const& name, std::string const& text, bool defaultVal) {
-    impl->appendToggle(name, text, defaultVal);
+    impl->append(std::make_shared<Toggle>(name, text, defaultVal));
     return *this;
 }
 
@@ -391,7 +302,7 @@ CustomForm& CustomForm::appendDropdown(
     std::vector<std::string> const& options,
     size_t                          defaultVal
 ) {
-    impl->appendDropdown(name, text, options, defaultVal);
+    impl->append(std::make_shared<Dropdown>(name, text, options, defaultVal));
     return *this;
 }
 
@@ -403,7 +314,7 @@ CustomForm& CustomForm::appendSlider(
     double             step,
     double             defaultVal
 ) {
-    impl->appendSlider(name, text, min, max, step, defaultVal);
+    impl->append(std::make_shared<Slider>(name, text, min, max, step, defaultVal));
     return *this;
 }
 
@@ -413,7 +324,7 @@ CustomForm& CustomForm::appendStepSlider(
     std::vector<std::string> const& steps,
     size_t                          defaultVal
 ) {
-    impl->appendStepSlider(name, text, steps, defaultVal);
+    impl->append(std::make_shared<StepSlider>(name, text, steps, defaultVal));
     return *this;
 }
 

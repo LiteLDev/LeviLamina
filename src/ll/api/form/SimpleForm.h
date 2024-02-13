@@ -18,6 +18,7 @@ public:
     LLNDAPI SimpleForm();
 
     LLNDAPI explicit SimpleForm(std::string const& title, std::string const& content = "");
+
     LLAPI ~SimpleForm() override;
 
     LLAPI SimpleForm& setTitle(std::string const& title);
