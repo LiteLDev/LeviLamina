@@ -44,6 +44,9 @@ public:
     // vIndex: 7, symbol: ?canDestroy@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@@Z
     virtual bool canDestroy(class ContainerScreenContext const&) const;
 
+    // vIndex: 8, symbol: ?getContainerOffset@FurnaceIngredientContainerValidation@@UEBAHAEBVContainerScreenContext@@@Z
+    virtual int getContainerOffset(class ContainerScreenContext const&) const;
+
     // vIndex: 9, symbol: ?getContainerSize@ArmorContainerValidation@@UEBAHAEBVContainerScreenContext@@AEBVContainer@@@Z
     virtual int getContainerSize(class ContainerScreenContext const&, class Container const& container) const;
 

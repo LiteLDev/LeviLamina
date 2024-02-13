@@ -22,6 +22,9 @@ public:
     // vIndex: 2, symbol: ?test@StructurePoolBlockPredicateAlwaysTrue@@UEBA_NAEBVBlockPos@@0AEAVRandomize@@@Z
     virtual bool test(class BlockPos const&, class BlockPos const&, class Randomize&) const;
 
+    // vIndex: 3, symbol: ?finalize@IStructurePoolBlockPredicate@@UEAA_NAEAVBlockSource@@AEAVIRandom@@@Z
+    virtual bool finalize(class BlockSource&, class IRandom&);
+
     // symbol: ??0StructurePoolBlockPredicateAlwaysTrue@@QEAA@XZ
     MCAPI StructurePoolBlockPredicateAlwaysTrue();
 

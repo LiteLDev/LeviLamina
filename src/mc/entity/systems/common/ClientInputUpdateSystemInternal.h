@@ -25,6 +25,9 @@ public:
     // vIndex: 0, symbol: __gen_??1ClientInputUpdateSystemInternal@@UEAA@XZ
     virtual ~ClientInputUpdateSystemInternal() = default;
 
+    // vIndex: 1, symbol: ?registerEvents@ISystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
+    virtual void registerEvents(entt::dispatcher&);
+
     // vIndex: 2, symbol: __unk_vfn_2
     virtual void __unk_vfn_2();
 
@@ -33,6 +36,9 @@ public:
 
     // vIndex: 4, symbol: __unk_vfn_4
     virtual void __unk_vfn_4();
+
+    // vIndex: 5, symbol: ?singleTick@ITickingSystem@@UEAAXAEAVEntityRegistry@@AEAVEntityContext@@@Z
+    virtual void singleTick(class EntityRegistry& registry, class EntityContext& entity);
 
     // vIndex: 6, symbol:
     // ?tick@ClientInputUpdateSystemInternal@@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UCanStandOnSnowFlag@@@@V?$FlagComponent@UHasLightweightFamilyFlag@@@@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UMobFlag@@@@V?$FlagComponent@UParrotFlag@@@@UVehicleComponent@@V?$FlagComponent@UCamelFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@ULocalPlayerComponentFlag@@@@UPlayerInputRequestComponent@@@@U?$Read@UActorTypeComponent@@UFallDistanceComponent@@UActorGameTypeComponent@@UVehicleComponent@@UMobBodyRotationComponent@@URenderRotationComponent@@UStandAnimationComponent@@UActorDataFlagComponent@@UOffsetsComponent@@UVanillaOffsetComponent@@UPassengerRenderingRidingOffsetComponent@@UAABBShapeComponent@@UMovementAbilitiesComponent@@UActorRotationComponent@@UMovementAttributesComponent@@V?$FlagComponent@UCanStandOnSnowFlag@@@@UDimensionTypeComponent@@V?$FlagComponent@UHasLightweightFamilyFlag@@@@V?$FlagComponent@UImmuneToLavaDragFlag@@@@UMobEffectsComponent@@UPassengerComponent@@USneakingComponent@@UStateVectorComponent@@USubBBsComponent@@V?$FlagComponent@UInWaterFlag@@@@@@U?$Write@VActorOwnerComponent@@UClientInputLockComponent@@UMoveInputComponent@@URawMoveInputComponent@@UActorDataFlagComponent@@UActorDataDirtyFlagsComponent@@UVanillaClientGameplayComponent@@@@U?$AddRemove@$$V@@U?$GlobalRead@UExternalDataComponent@@ULocalConstBlockSourceFactoryComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z

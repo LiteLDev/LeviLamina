@@ -20,6 +20,9 @@ public:
     // vIndex: 1, symbol: ?tick@WalkState@@UEAAXXZ
     virtual void tick();
 
+    // vIndex: 2, symbol: ?start@PetSleepWithOwnerState@@UEAAXXZ
+    virtual void start();
+
     // vIndex: 3, symbol: ?stop@PetSleepWithOwnerState@@UEAAXXZ
     virtual void stop();
 

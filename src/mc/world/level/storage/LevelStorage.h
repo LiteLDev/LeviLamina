@@ -84,6 +84,9 @@ public:
     // vIndex: 13, symbol: ?clonePlayerData@LevelStorage@@UEAA_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@0@Z
     virtual bool clonePlayerData(std::string_view fromKey, std::string_view toKey);
 
+    // vIndex: 14, symbol: ?getLevelStorageState@DBStorage@@UEBA?AULevelStorageResult@Core@@XZ
+    virtual struct Core::LevelStorageResult getLevelStorageState() const = 0;
+
     // vIndex: 15, symbol: ?startShutdown@DBStorage@@UEAAXXZ
     virtual void startShutdown() = 0;
 
@@ -96,6 +99,9 @@ public:
     // vIndex: 18, symbol:
     // ?loadData@LevelStorage@@UEBA_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4Category@DBHelpers@@@Z
     virtual bool loadData(std::string_view key, std::string& buffer, ::DBHelpers::Category category) const;
+
+    // vIndex: 19, symbol: ?getState@DBStorage@@UEBA?AULevelStorageResult@Core@@XZ
+    virtual struct Core::LevelStorageResult getState() const = 0;
 
     // vIndex: 20, symbol:
     // ?createSnapshot@DBStorage@@UEAA?AV?$vector@USnapshotFilenameAndLength@@V?$allocator@USnapshotFilenameAndLength@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@_N@Z

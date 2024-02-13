@@ -432,6 +432,9 @@ public:
     // vIndex: 209, symbol: ?tickWorld@Player@@UEAAXAEBUTick@@@Z
     virtual void tickWorld(struct Tick const&);
 
+    // vIndex: 210, symbol: ?frameUpdate@ServerPlayer@@UEAAXAEAVFrameUpdateContextBase@@@Z
+    virtual void frameUpdate(class FrameUpdateContextBase&) = 0;
+
     // vIndex: 211, symbol:
     // ?getTickingOffsets@Player@@UEBAAEBV?$vector@VChunkPos@@V?$allocator@VChunkPos@@@std@@@std@@XZ
     virtual std::vector<class ChunkPos> const& getTickingOffsets() const;

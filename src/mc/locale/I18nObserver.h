@@ -21,5 +21,8 @@ public:
     // vIndex: 2, symbol: __unk_vfn_2
     virtual void __unk_vfn_2() = 0;
 
+    // vIndex: 3, symbol: ?onLanguagesLoaded@NpcI18nObserver@@UEAAXXZ
+    virtual void onLanguagesLoaded() = 0;
+
     // NOLINTEND
 };

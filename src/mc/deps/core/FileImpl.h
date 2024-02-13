@@ -58,6 +58,12 @@ public:
     // vIndex: 10, symbol: ?_setPosition@FlatFile@Core@@UEAA?AVResult@2@_K@Z
     virtual class Core::Result _setPosition(uint64 position) = 0;
 
+    // vIndex: 11, symbol: ?_write@FlatFile@Core@@UEAA?AVResult@2@PEBX_K@Z
+    virtual class Core::Result _write(void const* pBuf, uint64 numBytes) = 0;
+
+    // vIndex: 12, symbol: ?_flush@FlatFile@Core@@UEAA?AVResult@2@XZ
+    virtual class Core::Result _flush() = 0;
+
     // vIndex: 13, symbol: ?_getSize@FlatFile@Core@@UEAA?AVResult@2@PEA_K@Z
     virtual class Core::Result _getSize(uint64* pSize) = 0;
 

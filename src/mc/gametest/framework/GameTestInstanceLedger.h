@@ -27,6 +27,21 @@ public:
     // vIndex: 1, symbol: ?onTestStructureLoaded@GameTestInstanceLedger@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
     virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance&);
 
+    // vIndex: 2, symbol: ?onTestPassed@IGameTestListener@gametest@@UEAAXAEAVBaseGameTestInstance@2@@Z
+    virtual void onTestPassed(class gametest::BaseGameTestInstance&);
+
+    // vIndex: 3, symbol: ?onTestFailed@IGameTestListener@gametest@@UEAAXAEAVBaseGameTestInstance@2@@Z
+    virtual void onTestFailed(class gametest::BaseGameTestInstance&);
+
+    // vIndex: 4, symbol: ?onTestStarted@IGameTestListener@gametest@@UEAAXAEAVBaseGameTestInstance@2@@Z
+    virtual void onTestStarted(class gametest::BaseGameTestInstance&);
+
+    // vIndex: 5, symbol: ?onTestRetryStarted@IGameTestListener@gametest@@UEAAXAEAVBaseGameTestInstance@2@@Z
+    virtual void onTestRetryStarted(class gametest::BaseGameTestInstance&);
+
+    // vIndex: 6, symbol: ?onTestRetryFinished@IGameTestListener@gametest@@UEAAXAEAVBaseGameTestInstance@2@@Z
+    virtual void onTestRetryFinished(class gametest::BaseGameTestInstance&);
+
     // symbol: ??0GameTestInstanceLedger@@QEAA@AEAVLevelStorage@@@Z
     MCAPI explicit GameTestInstanceLedger(class LevelStorage& storage);
 

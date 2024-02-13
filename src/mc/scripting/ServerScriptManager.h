@@ -51,6 +51,21 @@ public:
     // vIndex: 0, symbol: ??1ServerScriptManager@@UEAA@XZ
     virtual ~ServerScriptManager();
 
+    // vIndex: 1, symbol:
+    // ?onServerInitializeStart@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
+    virtual ::EventResult onServerInitializeStart(class ServerInstance& instance);
+
+    // vIndex: 2, symbol:
+    // ?onServerInitializeEnd@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
+    virtual ::EventResult onServerInitializeEnd(class ServerInstance& instance);
+
+    // vIndex: 3, symbol:
+    // ?onServerMinecraftInitialized@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@AEBV?$not_null@V?$NonOwnerPointer@VMinecraft@@@Bedrock@@@gsl@@@Z
+    virtual ::EventResult onServerMinecraftInitialized(
+        class ServerInstance&                               instance,
+        Bedrock::NotNullNonOwnerPtr<class Minecraft> const& minecraft
+    );
+
     // vIndex: 4, symbol:
     // ?onServerLevelInitialized@ServerScriptManager@@UEAA?AW4EventResult@@AEAVServerInstance@@AEAVLevel@@@Z
     virtual ::EventResult onServerLevelInitialized(class ServerInstance&, class Level&);
@@ -58,11 +73,23 @@ public:
     // vIndex: 5, symbol: ?onServerUpdateStart@ServerScriptManager@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
     virtual ::EventResult onServerUpdateStart(class ServerInstance&);
 
+    // vIndex: 6, symbol: ?onServerUpdateEnd@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
+    virtual ::EventResult onServerUpdateEnd(class ServerInstance& instance);
+
+    // vIndex: 7, symbol: ?onServerSuspend@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
+    virtual ::EventResult onServerSuspend(class ServerInstance& instance);
+
+    // vIndex: 8, symbol: ?onServerResume@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
+    virtual ::EventResult onServerResume(class ServerInstance& instance);
+
     // vIndex: 9, symbol: ?onServerThreadStarted@ServerScriptManager@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
     virtual ::EventResult onServerThreadStarted(class ServerInstance& instance);
 
     // vIndex: 10, symbol: ?onServerThreadStopped@ServerScriptManager@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
     virtual ::EventResult onServerThreadStopped(class ServerInstance& serverInstance);
+
+    // vIndex: 11, symbol: ?onStartLeaveGame@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
+    virtual ::EventResult onStartLeaveGame(class ServerInstance& instance);
 
     // vIndex: 12, symbol:
     // ?onEvent@ServerScriptManager@@UEAA?AW4EventResult@@AEBUServerInstanceRequestResourceReload@@@Z

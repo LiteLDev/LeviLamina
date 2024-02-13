@@ -22,8 +22,17 @@ public:
     // vIndex: 0, symbol: __gen_??1AgentCommandSystem@@UEAA@XZ
     virtual ~AgentCommandSystem() = default;
 
+    // vIndex: 1, symbol: ?registerEvents@ISystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
+    virtual void registerEvents(entt::dispatcher&);
+
     // vIndex: 2, symbol: ?tick@AgentCommandSystem@@UEAAXAEAVEntityRegistry@@@Z
     virtual void tick(class EntityRegistry& registry);
+
+    // vIndex: 3, symbol: ?singleTick@ITickingSystem@@UEAAXAEAVEntityRegistry@@AEAVEntityContext@@@Z
+    virtual void singleTick(class EntityRegistry& registry, class EntityContext& entity);
+
+    // vIndex: 4, symbol: ?singleTick@ITickingSystem@@UEAAXAEAVEntityRegistry@@AEAVStrictEntityContext@@@Z
+    virtual void singleTick(class EntityRegistry& registry, class StrictEntityContext& entity);
 
     // symbol: ?cleanUp@AgentCommandSystem@@SAXAEAVEntityContext@@M@Z
     MCAPI static void cleanUp(class EntityContext& agent, float);

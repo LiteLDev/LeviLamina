@@ -32,6 +32,9 @@ public:
     // vIndex: 0, symbol: __gen_??1ScriptLevelEventListener@ScriptModuleMinecraft@@UEAA@XZ
     virtual ~ScriptLevelEventListener() = default;
 
+    // vIndex: 1, symbol: ?onLevelInitialized@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@@Z
+    virtual ::EventResult onLevelInitialized(class Level& level);
+
     // vIndex: 2, symbol:
     // ?onLevelAddedPlayer@ScriptLevelEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEAVLevel@@AEAVPlayer@@@Z
     virtual ::EventResult onLevelAddedPlayer(class Level&, class Player& player);
@@ -47,6 +50,9 @@ public:
     // vIndex: 5, symbol:
     // ?onLevelTick@ScriptLevelEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEAVLevel@@@Z
     virtual ::EventResult onLevelTick(class Level&);
+
+    // vIndex: 6, symbol: ?onLevelTickStart@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@@Z
+    virtual ::EventResult onLevelTickStart(class Level&);
 
     // vIndex: 7, symbol:
     // ?onLevelWeatherChange@ScriptLevelEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N1@Z

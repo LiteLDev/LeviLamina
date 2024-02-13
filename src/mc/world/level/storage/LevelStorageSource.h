@@ -83,6 +83,18 @@ public:
     virtual bool
     createBackupCopyOfWorld(std::string const& levelId, std::string const& newLeveId, std::string const& newName) = 0;
 
+    // vIndex: 13, symbol:
+    // ?isConvertible@ExternalFileLevelStorageSource@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    virtual bool isConvertible(std::string const& levelId) = 0;
+
+    // vIndex: 14, symbol:
+    // ?requiresConversion@ExternalFileLevelStorageSource@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    virtual bool requiresConversion(std::string const& levelId) = 0;
+
+    // vIndex: 15, symbol:
+    // ?convertLevel@ExternalFileLevelStorageSource@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAVProgressListener@@@Z
+    virtual bool convertLevel(std::string const& levelId, class ProgressListener* progress) = 0;
+
     // vIndex: 16, symbol: ?isLevelMarkedForSync@ExternalFileLevelStorageSource@@UEBA_NAEBVPath@Core@@@Z
     virtual bool isLevelMarkedForSync(class Core::Path const& levelPath) const = 0;
 
@@ -105,6 +117,10 @@ public:
     // ?getPathToLevelInfo@ExternalFileLevelStorageSource@@UEBA?BV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
     virtual class Core::PathBuffer<std::string> const
     getPathToLevelInfo(std::string const& levelId, bool forceInfo) const = 0;
+
+    // vIndex: 22, symbol:
+    // ?isBetaRetailLevel@ExternalFileLevelStorageSource@@UEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    virtual bool isBetaRetailLevel(std::string const& levelId) const = 0;
 
     // symbol: ?WORLD_SAVE_FLUSH_INTERVAL@LevelStorageSource@@2V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@B
     MCAPI static std::chrono::nanoseconds const WORLD_SAVE_FLUSH_INTERVAL;
