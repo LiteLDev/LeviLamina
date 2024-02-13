@@ -37,6 +37,9 @@ public:
     // ?getResultItem@BannerAddPatternRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
     virtual std::vector<class ItemInstance> const& getResultItem() const = 0;
 
+    // vIndex: 5, symbol: ?isShapeless@ShapedRecipe@@UEBA_NXZ
+    virtual bool isShapeless() const = 0;
+
     // vIndex: 6, symbol: ?matches@BannerAddPatternRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
     virtual bool matches(class CraftingContainer const& craftSlots, class CraftingContext const&) const = 0;
 

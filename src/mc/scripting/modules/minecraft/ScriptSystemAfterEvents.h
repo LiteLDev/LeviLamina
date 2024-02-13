@@ -41,9 +41,24 @@ public:
         // __gen_??1ScriptSystemAfterEventsDeferredEventListener@ScriptSystemAfterEvents@ScriptModuleMinecraft@@UEAA@XZ
         virtual ~ScriptSystemAfterEventsDeferredEventListener() = default;
 
+        // vIndex: 1, symbol: ?onLevelTickEnd@ScriptDeferredEventListener@@UEAAXXZ
+        virtual void onLevelTickEnd();
+
+        // vIndex: 2, symbol: ?onRunAsyncJobs@ScriptDeferredEventListener@@UEAAXXZ
+        virtual void onRunAsyncJobs();
+
+        // vIndex: 3, symbol: ?onRunSystemTick@ScriptDeferredEventListener@@UEAA_NXZ
+        virtual bool onRunSystemTick();
+
+        // vIndex: 4, symbol: ?onFlushWorldAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
+        virtual bool onFlushWorldAfterEvents();
+
         // vIndex: 5, symbol:
         // ?onFlushSystemAfterEvents@ScriptSystemAfterEventsDeferredEventListener@ScriptSystemAfterEvents@ScriptModuleMinecraft@@UEAA_NXZ
         virtual bool onFlushSystemAfterEvents();
+
+        // vIndex: 6, symbol: ?onFlushEditorExtensionContextAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
+        virtual bool onFlushEditorExtensionContextAfterEvents();
 
         // vIndex: 7, symbol:
         // ?onPreFlushAfterEvents@?$IScriptScriptDeferredEventListener@VScriptSystemAfterEvents@ScriptModuleMinecraft@@@ScriptModuleMinecraft@@UEAAXXZ

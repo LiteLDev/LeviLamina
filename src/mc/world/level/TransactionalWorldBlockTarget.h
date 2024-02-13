@@ -18,6 +18,9 @@ public:
     // vIndex: 0, symbol: ??1TransactionalWorldBlockTarget@@UEAA@XZ
     virtual ~TransactionalWorldBlockTarget();
 
+    // vIndex: 1, symbol: ?canGetChunk@IBlockWorldGenAPI@@UEBA_NXZ
+    virtual bool canGetChunk() const;
+
     // vIndex: 2, symbol: ?getChunk@IBlockWorldGenAPI@@UEAAPEAVLevelChunk@@AEBVChunkPos@@@Z
     virtual class LevelChunk* getChunk(class ChunkPos const& pos);
 
@@ -69,6 +72,9 @@ public:
 
     // vIndex: 17, symbol: ?getMinHeight@TransactionalWorldBlockTarget@@UEBAFXZ
     virtual short getMinHeight() const;
+
+    // vIndex: 18, symbol: ?shimPlaceForOldFeatures@BlockVolumeTarget@@UEBA_NAEBVFeature@@AEBVBlockPos@@AEAVRandom@@@Z
+    virtual bool shimPlaceForOldFeatures(class Feature const&, class BlockPos const&, class Random&) const;
 
     // vIndex: 19, symbol: ?getHeightmap@TransactionalWorldBlockTarget@@UEAAFHH@Z
     virtual short getHeightmap(int x, int z);

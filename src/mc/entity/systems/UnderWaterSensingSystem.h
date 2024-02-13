@@ -27,6 +27,9 @@ public:
     // vIndex: 0, symbol: __gen_??1UnderWaterSensingSystem@@UEAA@XZ
     virtual ~UnderWaterSensingSystem() = default;
 
+    // vIndex: 1, symbol: ?registerEvents@ISystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
+    virtual void registerEvents(entt::dispatcher&);
+
     // vIndex: 2, symbol: __unk_vfn_2
     virtual void __unk_vfn_2();
 

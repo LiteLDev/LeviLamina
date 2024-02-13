@@ -35,6 +35,12 @@ public:
     // vIndex: 4, symbol: ?isEntityOwned@TickingArea@@UEBA_NXZ
     virtual bool isEntityOwned() const = 0;
 
+    // vIndex: 5, symbol: ?getBlockSource@TickingArea@@UEBA?BV?$WeakRef@VBlockSource@@@@XZ
+    virtual class WeakRef<class BlockSource> const getBlockSource() const = 0;
+
+    // vIndex: 6, symbol: ?getBlockSource@TickingArea@@UEAA?AV?$WeakRef@VBlockSource@@@@XZ
+    virtual class WeakRef<class BlockSource> getBlockSource() = 0;
+
     // vIndex: 7, symbol: ?getBounds@TickingArea@@UEBAAEBUBounds@@XZ
     virtual struct Bounds const& getBounds() const = 0;
 
@@ -43,6 +49,12 @@ public:
 
     // vIndex: 9, symbol: ?getMaxDistToPlayers@TickingArea@@UEBAMXZ
     virtual float getMaxDistToPlayers() const = 0;
+
+    // vIndex: 10, symbol: ?getView@TickingArea@@UEBAAEBVITickingAreaView@@XZ
+    virtual class ITickingAreaView const& getView() const = 0;
+
+    // vIndex: 11, symbol: ?getView@TickingArea@@UEAAAEAVITickingAreaView@@XZ
+    virtual class ITickingAreaView& getView() = 0;
 
     // vIndex: 12, symbol: ?getDescription@TickingArea@@UEBA?AUTickingAreaDescription@@XZ
     virtual struct TickingAreaDescription getDescription() const = 0;

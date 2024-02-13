@@ -97,6 +97,9 @@ public:
     // vIndex: 17, symbol: ?close@NBTSchemaWriter@@UEAAXAEBUSerializerTraits@cereal@@@Z
     virtual void close(struct cereal::SerializerTraits const&);
 
+    // vIndex: 18, symbol: ?isSequenceWriter@SchemaWriter@cereal@@UEBA_NXZ
+    virtual bool isSequenceWriter() const;
+
     // symbol: ??0NBTSchemaWriter@@QEAA@XZ
     MCAPI NBTSchemaWriter();
 

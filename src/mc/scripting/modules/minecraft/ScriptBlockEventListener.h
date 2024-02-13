@@ -58,9 +58,25 @@ public:
     virtual ::EventResult
     onBlockDestroyedByPlayer(class Player&, class Block const&, class BlockPos const&, class ItemStackBase const&, class ItemStackBase const&);
 
+    // vIndex: 3, symbol:
+    // ?onBlockInPosWillBeDestroyedByPlayer@BlockEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@@Z
+    virtual ::EventResult onBlockInPosWillBeDestroyedByPlayer(class Player& player, class BlockPos const& pos);
+
+    // vIndex: 4, symbol:
+    // ?onBlockMovedByPiston@BlockEventListener@@UEAA?AW4EventResult@@AEBVBlockPos@@0W4PistonState@@@Z
+    virtual ::EventResult
+    onBlockMovedByPiston(class BlockPos const& pistonPos, class BlockPos const& blockPos, ::PistonState action);
+
+    // vIndex: 5, symbol:
+    // ?onBlockDestructionStopped@BlockEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@H@Z
+    virtual ::EventResult onBlockDestructionStopped(class Player& player, class BlockPos const& blockPos, int progress);
+
     // vIndex: 6, symbol:
     // ?onBlockDestructionStarted@ScriptBlockEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@E@Z
     virtual ::EventResult onBlockDestructionStarted(class Player&, class BlockPos const&, uchar);
+
+    // vIndex: 7, symbol: ?onBlockInteractedWith@BlockEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@@Z
+    virtual ::EventResult onBlockInteractedWith(class Player& player, class BlockPos const& blockPos);
 
     // vIndex: 8, symbol:
     // ?onBlockExploded@ScriptBlockEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEAVDimension@@AEBVBlockPos@@AEBVBlock@@PEAVActor@@@Z
@@ -70,6 +86,14 @@ public:
         class Block const&,
         class Actor* source
     );
+
+    // vIndex: 9, symbol: ?onBlockModified@BlockEventListener@@UEAA?AW4EventResult@@AEBVBlockPos@@AEBVBlock@@1@Z
+    virtual ::EventResult
+    onBlockModified(class BlockPos const& pos, class Block const& oldBlock, class Block const& newBlock);
+
+    // vIndex: 10, symbol:
+    // ?onUnknownBlockReceived@BlockEventListener@@UEAA?AW4EventResult@@AEAVLevel@@AEBUNewBlockID@@G@Z
+    virtual ::EventResult onUnknownBlockReceived(class Level& level, struct NewBlockID const& blockId, ushort data);
 
     // vIndex: 11, symbol:
     // ?onEvent@?$EventListenerDispatcher@VBlockEventListener@@@@MEAA?AW4EventResult@@AEBUBlockNotificationEvent@@@Z

@@ -34,9 +34,15 @@ public:
         class BaseGameVersion const& baseGameVersion
     ) = 0;
 
+    // vIndex: 4, symbol: ?configureNewPlayer@VanillaGameModuleServer@@UEAAXAEAVPlayer@@@Z
+    virtual void configureNewPlayer(class Player& player) = 0;
+
     // vIndex: 5, symbol:
     // ?configureDocumentation@VanillaGameModuleServer@@UEAAXAEAVIGameModuleDocumentation@@VItemRegistryRef@@@Z
     virtual void configureDocumentation(class IGameModuleDocumentation& moduleDocumentation, class ItemRegistryRef) = 0;
+
+    // vIndex: 6, symbol: ?tick@VanillaGameModuleServer@@UEAAXXZ
+    virtual void tick() = 0;
 
     // vIndex: 7, symbol: ?setupCommands@VanillaGameModuleServer@@UEAAXAEAVCommandRegistry@@@Z
     virtual void setupCommands(class CommandRegistry& commandRegistry) = 0;

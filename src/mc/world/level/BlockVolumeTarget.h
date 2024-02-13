@@ -19,6 +19,12 @@ public:
     // vIndex: 0, symbol: ??1BlockVolumeTarget@@UEAA@XZ
     virtual ~BlockVolumeTarget();
 
+    // vIndex: 1, symbol: ?canGetChunk@IBlockWorldGenAPI@@UEBA_NXZ
+    virtual bool canGetChunk() const;
+
+    // vIndex: 2, symbol: ?getChunk@IBlockWorldGenAPI@@UEAAPEAVLevelChunk@@AEBVChunkPos@@@Z
+    virtual class LevelChunk* getChunk(class ChunkPos const& pos);
+
     // vIndex: 3, symbol: ?tryGetLiquidBlock@BlockVolumeTarget@@UEBAPEBVBlock@@AEBVBlockPos@@@Z
     virtual class Block const* tryGetLiquidBlock(class BlockPos const& pos) const;
 
@@ -44,6 +50,9 @@ public:
 
     // vIndex: 10, symbol: ?setBlockSimple@BlockVolumeTarget@@UEAA_NAEBVBlockPos@@AEBVBlock@@@Z
     virtual bool setBlockSimple(class BlockPos const& pos, class Block const& block);
+
+    // vIndex: 11, symbol: ?apply@WorldBlockTarget@@UEBA_NXZ
+    virtual bool apply() const;
 
     // vIndex: 12, symbol:
     // ?placeStructure@BlockVolumeTarget@@UEAA_NAEBVBlockPos@@AEAVStructureTemplate@@AEAVStructureSettings@@@Z

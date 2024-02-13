@@ -24,6 +24,10 @@ public:
     // vIndex: 0, symbol: __gen_??1DedicatedServerGameTestRunnerListener@@UEAA@XZ
     virtual ~DedicatedServerGameTestRunnerListener() = default;
 
+    // vIndex: 1, symbol:
+    // ?onTestStructureLoaded@GameTestBatchRunnerGameTestListener@gametest@@UEAAXAEAVBaseGameTestInstance@2@@Z
+    virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance&);
+
     // vIndex: 2, symbol:
     // ?onTestPassed@DedicatedServerGameTestRunnerListener@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
     virtual void onTestPassed(class gametest::BaseGameTestInstance&);
@@ -35,6 +39,12 @@ public:
     // vIndex: 4, symbol:
     // ?onTestStarted@DedicatedServerGameTestRunnerListener@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
     virtual void onTestStarted(class gametest::BaseGameTestInstance&);
+
+    // vIndex: 5, symbol: ?onTestRetryStarted@IGameTestListener@gametest@@UEAAXAEAVBaseGameTestInstance@2@@Z
+    virtual void onTestRetryStarted(class gametest::BaseGameTestInstance&);
+
+    // vIndex: 6, symbol: ?onTestRetryFinished@IGameTestListener@gametest@@UEAAXAEAVBaseGameTestInstance@2@@Z
+    virtual void onTestRetryFinished(class gametest::BaseGameTestInstance&);
 
     // NOLINTEND
 
