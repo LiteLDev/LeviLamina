@@ -3,7 +3,6 @@
 #include "ll/api/command/CommandHandle.h"
 #include "ll/api/command/CommandRegistrar.h"
 #include "ll/api/i18n/I18n.h"
-#include "ll/api/service/ServerInfo.h"
 
 #include "mc/server/commands/CommandPermissionLevel.h"
 

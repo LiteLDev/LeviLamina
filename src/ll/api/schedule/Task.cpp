@@ -5,6 +5,7 @@
 
 #include "ll/api/Logger.h"
 #include "ll/api/utils/ErrorUtils.h"
+#include "ll/core/LeviLamina.h"
 
 #include "fmt/std.h" // IWYU pragma: keep
 
@@ -39,8 +40,6 @@ std::chrono::system_clock::time_point parseTime(std::string_view expression) {
 } // namespace task
 namespace detail {
 void printScheduleError() noexcept {
-    static Logger logger("Scheduler");
-
     auto lock = ll::Logger::lock();
     try {
         logger.error("Error in schedule thread [{}]:", std::this_thread::get_id());

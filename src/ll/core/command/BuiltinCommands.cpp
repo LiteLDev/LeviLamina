@@ -23,6 +23,9 @@ LL_STATIC_HOOK(
     if (globalConfig.modules.commands.memstatusCommand) {
         registerMemstatusCommand();
     }
+    if (globalConfig.modules.commands.crashCommand) {
+        registerCrashCommand();
+    }
 }
 LL_STATIC_HOOK(
     registerTpdimCommands,

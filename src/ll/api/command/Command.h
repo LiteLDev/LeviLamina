@@ -9,6 +9,10 @@
 
 namespace ll::command {
 
+namespace detail {
+LLAPI void printCommandError(::Command const&) noexcept;
+}
+
 struct EmptyParam {};
 
 template <reflection::Reflectable Params, auto Executor>
@@ -24,12 +28,16 @@ public:
 
     virtual ~Command() = default;
     void execute(class CommandOrigin const& origin, class CommandOutput& output) const override {
-        if constexpr (requires { Executor(origin, output, parameters, *this); }) {
-            Executor(origin, output, parameters, *this);
-        } else if constexpr (requires { Executor(origin, output, parameters); }) {
-            Executor(origin, output, parameters);
-        } else {
-            Executor(origin, output);
+        try {
+            if constexpr (requires { Executor(origin, output, parameters, *this); }) {
+                Executor(origin, output, parameters, *this);
+            } else if constexpr (requires { Executor(origin, output, parameters); }) {
+                Executor(origin, output, parameters);
+            } else {
+                Executor(origin, output);
+            }
+        } catch (...) {
+            ::ll::command::detail::printCommandError(*this);
         }
     }
 };
