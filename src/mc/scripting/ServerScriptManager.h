@@ -25,20 +25,9 @@ namespace Scripting { struct ModuleDescriptor; }
 
 class ServerScriptManager {
 public:
-    Bedrock::NonOwnerPointer<Scheduler>           mServerScheduler;
-    ScriptSettings                                mScriptSettings;
-    std::unique_ptr<ScriptPrintLogger>            mPrintLogger;
-    std::unique_ptr<ScriptFormPromiseTracker>     mFormPromiseTracker;
-    std::unique_ptr<Scripting::DependencyLocator> mDependencyLocator;
-    std::unique_ptr<Scripting::ScriptEngine>      mScriptEngine;
-    std::unique_ptr<ScriptDebuggerWatchdog>       mScriptDebuggerWatchdog;
-    std::unique_ptr<ScriptPluginManager>          mScriptPluginManager;
-    std::unique_ptr<ScriptDebugger>               mScriptDebugger;
-    std::unique_ptr<ScriptTickListener>           mScriptTickListener;
-    std::vector<std::function<
-        bool(const PackManifest&, const Scripting::ModuleDescriptor&, const Scripting::ModuleDescriptor&, ScriptPluginResult&)>>
-         mModuleFilters;
-    bool mInitializeEditorModules;
+    uchar                                     filler[640];
+    std::unique_ptr<ScriptFormPromiseTracker> mFormPromiseTracker;
+    uchar                                     filler1[96];
 
 public:
     // prevent constructor by default
