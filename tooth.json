@@ -17,11 +17,11 @@
     "files": {
         "place": [
             {
-                "src": "bin/LeviLamina.dll",
+                "src": "LeviLamina.dll",
                 "dest": "LeviLamina.dll"
             },
             {
-                "src": "bin/LeviLamina.pdb",
+                "src": "LeviLamina.pdb",
                 "dest": "LeviLamina.pdb"
             }
         ],

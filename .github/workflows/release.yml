@@ -42,7 +42,7 @@ jobs:
         with:
           name: levilamina-${{ matrix.mode }}-windows-x64-${{ github.sha }}
           path: |
-            build/packages/l/levilamina/windows/x64/${{ matrix.mode }}/
+            build/packages/l/levilamina/windows/x64/${{ matrix.mode }}/bin/
 
   update-release-notes:
     permissions:
