@@ -3,7 +3,6 @@
 #include "ll/api/utils/RandomUtils.h"
 
 #include "ll/api/memory/Memory.h"
-#include "mc/world/level/levelgen/feature/gamerefs_feature/FeatureRefTraits.h"
 #include "mc/common/wrapper/WeakRef.h"
 #include "mc/deps/core/debug/log/ContentLog.h"
 #include "mc/deps/core/string/HashedString.h"
@@ -42,6 +41,7 @@
 #include "mc/world/level/levelgen/feature/FlowerFeature.h"
 #include "mc/world/level/levelgen/feature/LakeFeature.h"
 #include "mc/world/level/levelgen/feature/VanillaTreeFeature.h"
+#include "mc/world/level/levelgen/feature/gamerefs_feature/FeatureRefTraits.h"
 #include "mc/world/level/levelgen/feature/helpers/RenderParams.h"
 #include "mc/world/level/levelgen/feature/registry/FeatureRegistry.h"
 #include "mc/world/level/levelgen/flat/FlatWorldGenerator.h"
@@ -157,8 +157,7 @@ public:
 public:
     virtual void prepareHeights(BlockVolume&, const ChunkPos&, bool) {}
 
-    virtual void
-    prepareAndComputeHeights(BlockVolume&, const ChunkPos&, std::vector<short>&, bool, int) {}
+    virtual void prepareAndComputeHeights(BlockVolume&, const ChunkPos&, std::vector<short>&, bool, int) {}
 
     virtual BiomeArea getBiomeArea(const BoundingBox& area, uint scale) const {
         return mBiomeSource->getBiomeArea(area, scale);

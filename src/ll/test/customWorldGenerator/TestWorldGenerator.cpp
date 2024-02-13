@@ -2,7 +2,7 @@
 #include "ll/api/memory/Hook.h"
 #include "ll/api/memory/Memory.h"
 #include "ll/core/LeviLamina.h"
-// #include "ll/test/customWorldGenerator/MyFlatWorldGenerator.hpp"
+#include "ll/test/customWorldGenerator/MyFlatWorldGenerator.hpp"
 #include "mc/world/level/dimension/OverworldDimension.h"
 
 // LL_AUTO_TYPE_INSTANCE_HOOK(OverworldDimensionCreateGeneratorHook, ll::memory::HookPriority::Normal,
