@@ -8,6 +8,7 @@
 #include "mc/enums/NewInteractionModel.h"
 #include "mc/math/Vec2.h"
 #include "mc/math/Vec3.h"
+#include "mc/world/ActorUniqueID.h"
 #include "mc/world/inventory/network/ItemStackRequestAction.h"
 #include "mc/world/inventory/network/ItemStackRequestData.h"
 
@@ -20,48 +21,52 @@ class PlayerAuthInputPacket : public ::Packet {
 public:
     // PlayerAuthInputPacket inner types define
     enum class InputData : int {
-        Ascend                  = 0x0,
-        Descend                 = 0x1,
-        NorthJump               = 0x2,
-        JumpDown                = 0x3,
-        SprintDown              = 0x4,
-        ChangeHeight            = 0x5,
-        Jumping                 = 0x6,
-        AutoJumpingInWater      = 0x7,
-        Sneaking                = 0x8,
-        SneakDown               = 0x9,
-        Up                      = 0xA,
-        Down                    = 0xB,
-        Left                    = 0xC,
-        Right                   = 0xD,
-        UpLeft                  = 0xE,
-        UpRight                 = 0xF,
-        WantUp                  = 0x10,
-        WantDown                = 0x11,
-        WantDownSlow            = 0x12,
-        WantUpSlow              = 0x13,
-        Sprinting               = 0x14,
-        AscendBlock             = 0x15,
-        DescendBlock            = 0x16,
-        SneakToggleDown         = 0x17,
-        PersistSneak            = 0x18,
-        StartSprinting          = 0x19,
-        StopSprinting           = 0x1A,
-        StartSneaking           = 0x1B,
-        StopSneaking            = 0x1C,
-        StartSwimming           = 0x1D,
-        StopSwimming            = 0x1E,
-        StartJumping            = 0x1F,
-        StartGliding            = 0x20,
-        StopGliding             = 0x21,
-        PerformItemInteraction  = 0x22,
-        PerformBlockActions     = 0x23,
-        PerformItemStackRequest = 0x24,
-        HandledTeleport         = 0x25,
-        Emoting                 = 0x26,
-        MissedSwing             = 0x27,
-        StartCrawling           = 0x28,
-        StopCrawling            = 0x29,
+        Ascend                     = 0x0,
+        Descend                    = 0x1,
+        NorthJump                  = 0x2,
+        JumpDown                   = 0x3,
+        SprintDown                 = 0x4,
+        ChangeHeight               = 0x5,
+        Jumping                    = 0x6,
+        AutoJumpingInWater         = 0x7,
+        Sneaking                   = 0x8,
+        SneakDown                  = 0x9,
+        Up                         = 0xA,
+        Down                       = 0xB,
+        Left                       = 0xC,
+        Right                      = 0xD,
+        UpLeft                     = 0xE,
+        UpRight                    = 0xF,
+        WantUp                     = 0x10,
+        WantDown                   = 0x11,
+        WantDownSlow               = 0x12,
+        WantUpSlow                 = 0x13,
+        Sprinting                  = 0x14,
+        AscendBlock                = 0x15,
+        DescendBlock               = 0x16,
+        SneakToggleDown            = 0x17,
+        PersistSneak               = 0x18,
+        StartSprinting             = 0x19,
+        StopSprinting              = 0x1A,
+        StartSneaking              = 0x1B,
+        StopSneaking               = 0x1C,
+        StartSwimming              = 0x1D,
+        StopSwimming               = 0x1E,
+        StartJumping               = 0x1F,
+        StartGliding               = 0x20,
+        StopGliding                = 0x21,
+        PerformItemInteraction     = 0x22,
+        PerformBlockActions        = 0x23,
+        PerformItemStackRequest    = 0x24,
+        HandledTeleport            = 0x25,
+        Emoting                    = 0x26,
+        MissedSwing                = 0x27,
+        StartCrawling              = 0x28,
+        StopCrawling               = 0x29,
+        StartFlying                = 0x2A,
+        StopFlying                 = 0x2B,
+        ReceivedServerData         = 0x2C,
+        InClientPredictedInVehicle = 0x2D,
     };
 
 public:
@@ -80,7 +85,7 @@ public:
     std::unique_ptr<PackedItemUseLegacyInventoryTransaction> mItemUseTransaction;
     std::unique_ptr<ItemStackRequestData>                    mItemStackRequest;
     PlayerBlockActions                                       mPlayerBlockActions;
-    int64                                                    predictedVehicle;
+    ActorUniqueID                                            mPredictedVehicle;
 
 
     // prevent constructor by default
