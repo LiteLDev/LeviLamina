@@ -101,7 +101,6 @@ jobs:
       - uses: softprops/action-gh-release@v1
         with:
           append_body: true
-          body: |
-            | levilamina-${{ matrix.mode }}-windows-x64.zip | ${{ steps.calculate-sha256.outputs.sha256 }} |
+          body: "| levilamina-${{ matrix.mode }}-windows-x64.zip | ${{ steps.calculate-sha256.outputs.sha256 }} |"
           files: |
             levilamina-${{ matrix.mode }}-windows-x64.zip
