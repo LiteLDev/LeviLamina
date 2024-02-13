@@ -3,9 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/world/level/biome/source/FixedBiomeSource.h"
 #include "mc/world/level/block/BlockVolume.h"
-#include "mc/world/level/chunk/LevelChunk.h"
-#include "mc/world/level/levelgen/v1/ChunkLocalNoiseCache.h"
-#include "mc/world/level/levelgen/v1/WorldGenCache.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/buffer_span.h"
@@ -81,22 +78,7 @@ public:
     virtual bool postProcess(class ChunkViewSource&);
 
     // vIndex: 11, symbol: ?loadChunk@FlatWorldGenerator@@UEAAXAEAVLevelChunk@@_N@Z
-    virtual void loadChunk(class LevelChunk& levelChunk, bool unk) {
-        auto chunkPos = levelChunk.getPosition();
-        auto blockPos = BlockPos(chunkPos, 0);
-        DividedPos2d<4> dividedPos2D;
-        dividedPos2D.x = (blockPos.x>>31) - ((blockPos.x>>31) - blockPos.x)/4;
-        dividedPos2D.z = (blockPos.z>>31) - ((blockPos.z>>31) - blockPos.z)/4;
-        SurfaceLevelCache surfaceLevelCache(dividedPos2D, mUnk, 4);
-        WorldGenerator::prepareStructureFeatureBlueprints(*mDimension, chunkPos, getBiomeSource(), surfaceLevelCache);
-        levelChunk.setBlockVolume(mPrototype, 0);
-        levelChunk.recomputeHeightMap(0);
-        mBiomeSource = std::make_unique<FixedBiomeSource>();
-        ChunkLocalNoiseCache chunkLocalNoiseCache;
-        mBiomeSource->fillBiomes(levelChunk, chunkLocalNoiseCache);
-        levelChunk.setSaved();
-        levelChunk.changeState(ChunkState::Generating, ChunkState::Generated);
-    };
+    virtual void loadChunk(class LevelChunk&, bool);
 
     // symbol: ??0FlatWorldGenerator@@QEAA@AEAVDimension@@IAEBVValue@Json@@@Z
     MCAPI FlatWorldGenerator(class Dimension& dimension, uint, class Json::Value const& generationOptionsJSON);
