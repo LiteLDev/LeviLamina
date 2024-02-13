@@ -124,7 +124,7 @@ constexpr void* unwrapFuncPtrJmp(void* ptr) noexcept { // only used for unstripe
     return ptr;
 }
 
-::Bedrock::Memory::IMemoryAllocator& getDefaultAllocator();
+LLNDAPI ::Bedrock::Memory::IMemoryAllocator& getDefaultAllocator();
 
 LLNDAPI size_t getUsableSize(void* ptr);
 
