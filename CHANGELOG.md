@@ -7,6 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.8.0] - 2024-02-13
+
+### Added
+
+- **Adapted to BDS version `1.20.61`**
+- Added a method to allow OPs to use cheat commands when cheats are disabled in the server properties
+- Added built-in command 'memstatus' to query memory status
+- Added new memory allocator
+- Added more color conversion functions
+
+### Changed
+
+- Refactored BuiltinCommands
+- Allow instantiation of FlatWorldGeneratorOptions and BlockVolume without parameters
+- Modify the installation details of Levilamina
+- Complete the pure virtual class IMemoryAllocator
+
+### Fixed
+
+- Fixed bugs in Molang and HashedString
+
 ## [0.7.2] - 2024-02-05
 
 ### Added
@@ -218,7 +239,8 @@ First preview release.
 
 For lip and tooth-hub test only.
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.7.2...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.8.0...HEAD
+[0.8.0]: https://github.com/LiteLDev/LeviLamina/compare/v0.7.2...v0.8.0
 [0.7.2]: https://github.com/LiteLDev/LeviLamina/compare/v0.6.3...v0.7.2
 [0.6.3]: https://github.com/LiteLDev/LeviLamina/compare/v0.6.2...v0.6.3
 [0.6.2]: https://github.com/LiteLDev/LeviLamina/compare/v0.6.1...v0.6.2

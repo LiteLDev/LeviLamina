@@ -1,46 +1,46 @@
 {
-    "format_version": 2,
-    "tooth": "github.com/LiteLDev/LeviLamina",
-    "version": "0.7.2",
-    "info": {
-        "name": "LeviLamina",
-        "description": "A lightweight, modular and versatile plugin loader for Minecraft Bedrock Server BDS, formerly known as LiteLoaderBDS",
-        "author": "LiteLDev",
-        "tags": []
-    },
-    "asset_url": "https://github.com/LiteLDev/LeviLamina/releases/download/v0.7.2/levilamina-release-windows-x64.zip",
-    "dependencies": {
-        "github.com/LiteLDev/bds": "1.20.50 || 1.20.51",
-        "github.com/LiteLDev/PeEditor": "3.5.x",
-        "github.com/LiteLDev/PreLoader": "1.5.x"
-    },
-    "files": {
-        "place": [
-            {
-                "src": "LeviLamina.dll",
-                "dest": "LeviLamina.dll"
-            },
-            {
-                "src": "LeviLamina.pdb",
-                "dest": "LeviLamina.pdb"
-            }
-        ],
-        "remove": [
-            "bedrock_server_mod.exe"
-        ]
-    },
-    "platforms": [
-        {
-            "goos": "windows",
-            "goarch": "amd64",
-            "commands": {
-                "post_install": [
-                    ".\\PeEditor.exe -mb"
-                ],
-                "post_uninstall": [
-                    "move bedrock_server.exe.bak bedrock_server.exe"
-                ]
-            }
-        }
+  "format_version": 2,
+  "tooth": "github.com/LiteLDev/LeviLamina",
+  "version": "0.8.0",
+  "info": {
+    "name": "LeviLamina",
+    "description": "A lightweight, modular and versatile plugin loader for Minecraft Bedrock Server BDS, formerly known as LiteLoaderBDS",
+    "author": "LiteLDev",
+    "tags": []
+  },
+  "asset_url": "https://github.com/LiteLDev/LeviLamina/releases/download/v0.8.0/levilamina-release-windows-x64.zip",
+  "dependencies": {
+    "github.com/LiteLDev/bds": "1.20.61.01",
+    "github.com/LiteLDev/PeEditor": "3.5.x",
+    "github.com/LiteLDev/PreLoader": "1.5.x"
+  },
+  "files": {
+    "place": [
+      {
+        "src": "LeviLamina.dll",
+        "dest": "LeviLamina.dll"
+      },
+      {
+        "src": "LeviLamina.pdb",
+        "dest": "LeviLamina.pdb"
+      }
+    ],
+    "remove": [
+      "bedrock_server_mod.exe"
     ]
+  },
+  "platforms": [
+    {
+      "goos": "windows",
+      "goarch": "amd64",
+      "commands": {
+        "post_install": [
+          ".\\PeEditor.exe -mb"
+        ],
+        "post_uninstall": [
+          "move bedrock_server.exe.bak bedrock_server.exe"
+        ]
+      }
+    }
+  ]
 }
