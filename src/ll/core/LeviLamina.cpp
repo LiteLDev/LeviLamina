@@ -236,7 +236,7 @@ void leviLaminaMain() {
         ll::service::PlayerInfo::getInstance();
     }
     if (globalConfig.modules.crashLogger.enabled) {
-        if (globalConfig.modules.crashLogger.builtin) {
+        if (globalConfig.modules.crashLogger.useBuiltin) {
             static CrashLoggerNew crashLogger{};
         } else {
             CrashLogger::initCrashLogger();
