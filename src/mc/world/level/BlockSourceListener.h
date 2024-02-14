@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/world/level/block/utils/BlockChangedEventTarget.h"
 
+class BlockSource;
+class BlockPos;
+class Actor;
+struct ActorBlockSyncMessage;
+
 class BlockSourceListener {
 public:
     // prevent constructor by default

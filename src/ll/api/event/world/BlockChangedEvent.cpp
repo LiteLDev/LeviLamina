@@ -39,12 +39,12 @@ LL_TYPE_INSTANCE_HOOK(
     return origin(pos, layer, block, previousBlock, updateFlags, syncMsg, blockChangeSource);
 }
 
-static std::unique_ptr<EmitterBase> spawnedEmitterFactory(ListenerBase&);
-class BlockChangedEventEmitter : public Emitter<spawnedEmitterFactory, BlockChangedEvent> {
+static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
+class BlockChangedEventEmitter : public Emitter<emitterFactory, BlockChangedEvent> {
     memory::HookRegistrar<BlockChangedEventHook> hook;
 };
 
-static std::unique_ptr<EmitterBase> spawnedEmitterFactory(ListenerBase&) {
+static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {
     return std::make_unique<BlockChangedEventEmitter>();
 }
 
