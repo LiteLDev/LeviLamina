@@ -4,6 +4,8 @@
 #include "mc/deps/core/common/bedrock/IMemoryAllocator.h"
 #include "mc/deps/core/common/bedrock/Memory.h"
 
+#include "ll/api/utils/WinUtils.h"
+
 #include "mimalloc.h"
 
 #include "heapapi.h"
@@ -100,8 +102,102 @@ public:
     }
 };
 
+#ifdef LL_MEMORY_DEBUG
+struct MemSize {
+    size_t size{0};
+    size_t peak{0};
+
+    void alloc(size_t s) {
+        size += s;
+        peak += s;
+    }
+    void free(size_t s) { size -= s; }
+};
+template <typename T>
+class debugAllocator : public std::allocator<T> {
+public:
+    _CONSTEXPR20 void deallocate(T* const _Ptr, const size_t) { free(_Ptr); }
+
+    _NODISCARD_RAW_PTR_ALLOC _CONSTEXPR20 __declspec(allocator) T* allocate(_CRT_GUARDOVERFLOW const size_t _Count) {
+        return static_cast<T*>(malloc(std::_Get_size_of_n<sizeof(T)>(_Count)));
+    }
+};
+
+static auto& getDebugMap() {
+    static std::unordered_map<
+        void*,
+        MemSize,
+        std::hash<void*>,
+        std::equal_to<void*>,
+        debugAllocator<std::pair<void* const, MemSize>>>
+        map;
+    return map;
+}
+
+template <std::derived_from<::Bedrock::Memory::IMemoryAllocator> T>
+class DebugAllocator : public T {
+
+
+public:
+    virtual void* allocate(uint64 size) {
+        auto res = T::allocate(size);
+        getDebugMap()[_ReturnAddress()].alloc(T::getUsableSize(res));
+        return res;
+    }
+
+    virtual void release(void* ptr) {
+        getDebugMap()[_ReturnAddress()].free(T::getUsableSize(ptr));
+        T::release(ptr);
+    }
+
+    virtual void* alignedAllocate(uint64 size, uint64 alignment) {
+        auto res = T::alignedAllocate(size, alignment);
+        getDebugMap()[_ReturnAddress()].alloc(T::getUsableSize(res));
+        return res;
+    }
+
+    virtual void alignedRelease(void* ptr) {
+        getDebugMap()[_ReturnAddress()].free(T::getUsableSize(ptr));
+        T::alignedRelease(ptr);
+    }
+
+    virtual void logCurrentState() {
+        T::logCurrentState();
+
+        std::unordered_map<std::string, MemSize> res;
+
+        for (auto& [fn, mem] : getDebugMap()) {
+            auto name = win_utils::getModuleFileName(win_utils::getModuleHandle(fn));
+
+            res[name].size += mem.size;
+            res[name].peak += mem.peak;
+        }
+
+        for (auto& [module, mem] : res) {
+            logger.info(
+                " {:<32} used: {:>8.2f} MiB ,  all: {:>8.2f} MiB",
+                module,
+                (double)(mem.size) / (1024 * 1024),
+                (double)(mem.peak) / (1024 * 1024)
+            );
+        }
+    }
+
+    virtual void* _realloc(gsl::not_null<void*> ptr, uint64 newSize) {
+        getDebugMap()[_ReturnAddress()].free(T::getUsableSize(ptr));
+        auto res = T::_realloc(ptr, newSize);
+        getDebugMap()[_ReturnAddress()].alloc(T::getUsableSize(res));
+        return res;
+    }
+};
+#endif
+
 ::Bedrock::Memory::IMemoryAllocator& getDefaultAllocator() {
+#ifdef LL_MEMORY_DEBUG
+    static DebugAllocator<LL_DEFALUT_MEMORY_ALLOCATOR> ins;
+#else
     static LL_DEFALUT_MEMORY_ALLOCATOR ins;
+#endif
     return ins;
 }
 
