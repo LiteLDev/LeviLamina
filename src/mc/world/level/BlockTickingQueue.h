@@ -1,7 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-
+#include "mc/deps/core/container/MovePriorityQueue.h"
+#include "mc/world/level/TickNextTickData.h"
+#include <functional>
 class BlockTickingQueue {
 public:
     // BlockTickingQueue inner types declare
@@ -13,19 +15,14 @@ public:
     // BlockTickingQueue inner types define
     class BlockTick {
     public:
-        // prevent constructor by default
-        BlockTick& operator=(BlockTick const&);
-        BlockTick(BlockTick const&);
-        BlockTick();
+        bool             mIsRemoved{};
+        TickNextTickData mData;
+
+    public:
+        bool operator>(const BlockTick& other) const { return mData > other.mData; }
     };
 
-    class TickDataSet {
-    public:
-        // prevent constructor by default
-        TickDataSet& operator=(TickDataSet const&);
-        TickDataSet(TickDataSet const&);
-        TickDataSet();
-
+    class TickDataSet : public MovePriorityQueue<BlockTick, std::greater<>> {
     public:
         // NOLINTBEGIN
         // symbol: ?_pruneQueueForMemory@TickDataSet@BlockTickingQueue@@QEAAXXZ
