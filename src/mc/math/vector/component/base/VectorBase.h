@@ -1,4 +1,5 @@
 #pragma once
+
 #include <concepts>
 #include <format>
 #include <string>
