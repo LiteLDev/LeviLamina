@@ -1,9 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/container/MovePriorityQueue.h"
+#include "mc/deps/core/data/MovePriorityQueue.h"
 #include "mc/world/level/TickNextTickData.h"
-#include <functional>
+
 class BlockTickingQueue {
 public:
     // BlockTickingQueue inner types declare

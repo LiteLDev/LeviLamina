@@ -56,8 +56,6 @@ class FireSpreadEventEmitter : public Emitter<emitterFactory, FireSpreadEvent> {
     memory::HookRegistrar<FireSpreadEventHook2> hook2;
 };
 
-static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {
-    return std::make_unique<FireSpreadEventEmitter>();
-}
+static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) { return std::make_unique<FireSpreadEventEmitter>(); }
 
 } // namespace ll::event::inline world

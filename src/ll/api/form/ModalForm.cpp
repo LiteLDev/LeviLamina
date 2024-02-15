@@ -23,7 +23,7 @@ public:
       mContent(std::move(content)),
       mUpperButton(std::move(upperButton)),
       mLowerButton(std::move(lowerButton)) {}
-      
+
     ~ModalFormImpl() override = default;
 
     void setTitle(std::string const& title) { mTitle = title; }
