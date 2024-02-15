@@ -5,7 +5,8 @@
 class HeightmapWrapper {
 public:
     std::vector<short> const* mBuffer;
-    short mMinY;
+    short                     mMinY;
+
 public:
     // prevent constructor by default
     HeightmapWrapper& operator=(HeightmapWrapper const&);
