@@ -39,7 +39,7 @@
           ".\\PeEditor.exe -mb"
         ],
         "post_uninstall": [
-          "move bedrock_server.exe.bak bedrock_server.exe"
+          "IF EXIST \"bedrock_server.exe\" (DEL \"bedrock_server.exe.bak\") ELSE (REN \"bedrock_server.exe.bak\" \"bedrock_server.exe\")"
         ]
       }
     }
