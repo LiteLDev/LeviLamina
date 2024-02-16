@@ -149,8 +149,8 @@ void printWelcomeMsg() {
     logger.info(R"(                                                                      )");
 
     logger.info("LeviLamina is a free software licensed under {}"_tr("LGPLv3"));
-    logger.info("Help us translate & improve text -> {}"_tr("https://crowdin.com/project/levilamina"));
-    logger.info("ll.sponsor.thanks"_tr());
+    logger.info("Help us translate & improve text -> {}"_tr("https://translate.liteldev.com/"));
+    logger.info("Thanks to RhyMC(rhymc.com) for the support"_tr());
     logger.info("");
 }
 
