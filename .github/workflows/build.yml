@@ -61,5 +61,5 @@ jobs:
           choco install llvm -y --version=17.0.6
 
       - run: |
-          Get-ChildItem src/ -Filter *.cpp -Recurse | ForEach-Object { clang-format -i -Werror $_.FullName }
-          Get-ChildItem src/ -Filter *.h -Recurse | ForEach-Object { clang-format -i -Werror $_.FullName }
+          Get-ChildItem src/ -Filter *.cpp -Recurse | ForEach-Object { clang-format --dry-run -Werror $_.FullName }
+          Get-ChildItem src/ -Filter *.h -Recurse | ForEach-Object { clang-format --dry-run -Werror $_.FullName }
