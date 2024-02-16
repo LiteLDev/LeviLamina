@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/config/ISharedController.h"
 
 // auto generated inclusion list
 #include "mc/enums/AbilitiesIndex.h"

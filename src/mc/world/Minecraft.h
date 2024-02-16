@@ -76,7 +76,7 @@ public:
     // ?disconnectClient@Minecraft@@QEAAXAEBVNetworkIdentifier@@W4DisconnectFailReason@Connection@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void disconnectClient(class NetworkIdentifier const&, ::Connection::DisconnectFailReason, std::string const&);
 
-    // symbol: ?earlyShutdownMainthread@Minecraft@@QEAAXXZServerNetworkHandler
+    // symbol: ?earlyShutdownMainthread@Minecraft@@QEAAXXZ
     MCAPI void earlyShutdownMainthread();
 
     // symbol: ?getClientNetworkSystem@Minecraft@@QEAAAEAVClientNetworkSystem@@XZ
