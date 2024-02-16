@@ -36,7 +36,7 @@ Replace the value of the `tooth` field with the GitHub repository address, repla
 
 In the `dependencies` section, specify LeviLamina and any other packages to be integrated.
 
-For more information about `tooth.json`, please refer to <https://docs.lippkg.com/tooth_json_file_reference.html>.
+For more information about `tooth.json`, please refer to <https://docs.lippkg.com/reference/tooth_json_file_reference/>.
 
 ### Trying to Pack and Install the Pack
 

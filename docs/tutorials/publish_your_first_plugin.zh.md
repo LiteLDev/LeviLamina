@@ -65,7 +65,7 @@
 !!! note
     `dependencies`在安装插件时，会自动安装依赖的插件，在卸载插件时，会自动卸载依赖的插件。但是`prerequisites`不会自动安装，而是在缺少依赖时报错。一般来说，`prerequisites`中的插件应当是一些基础性的、框架级别的包，例如`github.com/LiteLDev/LeviLamina`，以避免插件的卸载过程中误卸载了这些包。
 
-更多关于`tooth.json`的信息，请参考<https://docs.lippkg.com/tooth_json_file_reference.html>。
+更多关于`tooth.json`的信息，请参考<https://docs.lippkg.com/zh/reference/tooth_json_file_reference/>。
 
 ### 尝试打包和安装插件
 

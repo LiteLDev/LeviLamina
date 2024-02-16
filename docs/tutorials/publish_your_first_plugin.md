@@ -65,7 +65,7 @@ Replace the value of the `tooth` field with the GitHub repository address of you
 !!! note
     The `dependencies` section automatically installs the required plugins when installing the plugin and uninstalls them when uninstalling the plugin. However, the `prerequisites` section does not automatically install the required plugins; instead, it throws an error if the dependencies are missing. Generally, the plugins listed in the `prerequisites` section should be fundamental and framework-level packages, such as `github.com/LiteLDev/LeviLamina`, to avoid accidentally uninstalling them during the plugin uninstallation process.
 
-For more information about `tooth.json`, please refer to <https://docs.lippkg.com/tooth_json_file_reference.html>.
+For more information about `tooth.json`, please refer to <https://docs.lippkg.com/reference/tooth_json_file_reference/>.
 
 ### Try Packing and Installing the Plugin
 

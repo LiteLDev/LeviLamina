@@ -31,7 +31,7 @@
 
 ### 通过 lip 安装
 
-如果你还没有安装 lip，你可以按照[lip 安装指南](https://docs.lippkg.com/installation.html)中的说明进行安装。
+如果你还没有安装 lip，你可以按照[lip 安装指南](https://docs.lippkg.com/zh/install/)中的说明进行安装。
 
 安装 lip 后，你可以通过运行以下命令来安装 LeviLamina：
 

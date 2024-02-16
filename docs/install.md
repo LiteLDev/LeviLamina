@@ -31,7 +31,7 @@ See [LipUI](https://github.com/lippkg/LipUI) for more information.
 
 ### Install via lip
 
-If you have not installed lip, you can install it following the instructions in [lip installation guide](https://docs.lippkg.com/installation.html).
+If you have not installed lip, you can install it following the instructions in [lip installation guide](https://docs.lippkg.com/install/).
 
 After installing lip, you can install LeviLamina by running the following command:
 

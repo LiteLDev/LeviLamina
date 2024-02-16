@@ -35,7 +35,7 @@
 
 在`dependencies`中填写LeviLamina和要整合的一切包。
 
-更多关于`tooth.json`的信息，请参考<https://docs.lippkg.com/tooth_json_file_reference.html>。
+更多关于`tooth.json`的信息，请参考<https://docs.lippkg.com/zh/reference/tooth_json_file_reference/>。
 
 ### 尝试打包和安装整合包
 
