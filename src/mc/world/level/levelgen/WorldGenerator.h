@@ -30,14 +30,14 @@ public:
         uint mHeight; // this+0x8
     };
 
-    AirBlockCache*                              airBlockCache;             // this+0x78
+    AirBlockCache*                              mAirBlockCache;             // this+0x78
     std::unique_ptr<HardcodedSpawnAreaRegistry> mHardcodedSpawnTypes;      // this+0x80
     std::unique_ptr<StructureFeatureRegistry>   mStructureFeatureRegistry; // this+0x88
-    uchar                                       unk_144[160];
+    uchar                                       mUnknown1[160];            // this+0x90
 
-    // unk_304 is std::unordered_map but unknown key and value
-    uchar    unk_304[64];
-    SpinLock mSpinLock;
+    // mUnknown2 is std::unordered_map but unknown key and value
+    uchar    mUnknown2[64]; // this+0x130
+    SpinLock mSpinLock;     // this+0x170
 
 public:
     // prevent constructor by default
