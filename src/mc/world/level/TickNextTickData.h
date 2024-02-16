@@ -7,10 +7,10 @@
 
 class TickNextTickData {
 public:
-    BlockPos     pos;
-    const Block* mBlock;
-    Tick         tick;
-    int          priorityOffset;
+    BlockPos     mPos;            // this+0x0
+    Block const* mBlock;          // this+0x10
+    Tick         mTick;           // this+0x18
+    int          mPriorityOffset; // this+0x20
 
 public:
     // NOLINTBEGIN

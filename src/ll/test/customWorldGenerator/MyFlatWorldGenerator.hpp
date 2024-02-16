@@ -61,12 +61,12 @@
 
 class MyFlatWorldGenerator : public WorldGenerator {
 public:
-    std::vector<Block const*>         mPrototypeBlocks;      // this+0x90
-    BlockVolume                       mPrototype;            // this+0xA8
-    Biome const*                      mBiome;                // this+0xD0
-    std::unique_ptr<FixedBiomeSource> mBiomeSource;          // this+0xD8
-    uint                              mSeed;                 // this+0xE0
-    int                               mPostProcessCallCount; // this+0xE4
+    std::vector<Block const*>         mPrototypeBlocks;      // this+0x190
+    BlockVolume                       mPrototype;            // this+0x1A8
+    Biome const*                      mBiome;                // this+0x1D0
+    std::unique_ptr<FixedBiomeSource> mBiomeSource;          // this+0x1D8
+    uint                              mSeed;                 // this+0x1E0
+    int                               mPostProcessCallCount; // this+0x1E4
 
 public:
     MyFlatWorldGenerator(Dimension& dimension, uint seed, Json::Value value)
@@ -94,63 +94,64 @@ public:
 
 public:
     virtual bool postProcess(ChunkViewSource& chunkViewSource) {
-        // BlockSource blockSource(getLevel(), getDimension(), chunkViewSource, 0, 1, 0);
-        // Random      random;
+        BlockSource blockSource(getLevel(), getDimension(), chunkViewSource, 0, 1, 0);
+        Random      random;
 
-        // if (mPostProcessCallCount < 1) {
-        //     mPostProcessCallCount++;
-        //     MolangVariableMap MolangVariableMap;
-        //     WorldGenContext   worldGenContext;
-        //     RenderParams      renderParams;
+        if (mPostProcessCallCount < 1) {
+            mPostProcessCallCount++;
+            MolangVariableMap MolangVariableMap;
+            WorldGenContext   worldGenContext;
+            RenderParams      renderParams;
 
-        //    // VanillaTreeFeature(IFeature)
-        //    // BDS1.20.51 CherrySaplingBlock::_growTree
-        //    BlockPos cherryTreeGeneratePos{1, 0, 1};
-        //    // /*crash*/ renderParams = FeatureHelper::makeFeatureRenderParams(blockSource, cherryTreeGeneratePos,
-        //    // MolangVariableMap);
-        //    blockSource.setBlockNoUpdate(
-        //        cherryTreeGeneratePos.x,
-        //        cherryTreeGeneratePos.y,
-        //        cherryTreeGeneratePos.z,
-        //        BlockTypeRegistry::getDefaultBlockState(BedrockBlockNames::Air, 1)
-        //    );
-        //    WorldBlockTarget worldBlockTargetForCherryTree(blockSource, worldGenContext);
-        //    auto             cherryTree = this->getLevel()
-        //                          .getFeatureRegistry()
-        //                          .lookupByName("minecraft:cherry_tree_feature")
-        //                          .tryUnwrap<VanillaTreeFeature>();
-        //    if (!cherryTree.has_value()) {
-        //        ll::logger.error("Error! tryUnwrap<VanillaTreeFeature> returned a null value!");
-        //        return true;
-        //    }
-        //    cherryTree->place(worldBlockTargetForCherryTree, cherryTreeGeneratePos, random, renderParams);
+            // VanillaTreeFeature(IFeature)
+            // BDS1.20.51 CherrySaplingBlock::_growTree
+            BlockPos cherryTreeGeneratePos{1, 0, 1};
+            // /*crash*/ renderParams = FeatureHelper::makeFeatureRenderParams(blockSource, cherryTreeGeneratePos,
+            // MolangVariableMap);
+            blockSource.setBlockNoUpdate(
+                cherryTreeGeneratePos.x,
+                cherryTreeGeneratePos.y,
+                cherryTreeGeneratePos.z,
+                BlockTypeRegistry::getDefaultBlockState(BedrockBlockNames::Air, 1)
+            );
+            WorldBlockTarget worldBlockTargetForCherryTree(blockSource, worldGenContext);
+            auto             cherryTree = this->getLevel()
+                                  .getFeatureRegistry()
+                                  .lookupByName("minecraft:cherry_tree_feature")
+                                  .tryUnwrap<VanillaTreeFeature>();
+            if (!cherryTree.has_value()) {
+                ll::logger.error("Error! tryUnwrap<VanillaTreeFeature> returned a null value!");
+                return true;
+            }
+            cherryTree->place(worldBlockTargetForCherryTree, cherryTreeGeneratePos, random, renderParams);
 
-        //    //// BambooFeature(Feature)
-        //    // auto bamboo =
-        //    //
-        //    this->getLevel().getFeatureRegistry().lookupByName("minecraft:bamboo_feature").tryUnwrap<BambooFeature>();
-        //    // if (!bamboo.has_value()) {
-        //    //     ll::logger.error("Error! tryUnwrap<BambooFeature> returned a null value!");
-        //    //     return true;
-        //    // }
+            //// BambooFeature(Feature)
+            // auto bamboo =
 
-        //    // bamboo->place(blockSource, {24, 0, 24}, random);
+            //    this->getLevel()
+            //        .getFeatureRegistry()
+            //        .lookupByName("minecraft:bamboo_feature")
+            //        .tryUnwrap<BambooFeature>();
+            // if (!bamboo.has_value()) {
+            //    ll::logger.error("Error! tryUnwrap<BambooFeature> returned a null value!");
+            //    return true;
+            //}
 
-        //    //// LakeFeature(Feature)
-        //    // LakeFeature wlakeFeature(
-        //    //     BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Water, 1),
-        //    //     XoroshiroPositionalRandomFactory{ll::random_utils::rand<uint64>(),
-        //    ll::random_utils::rand<uint64>()}
-        //    //);
-        //    // wlakeFeature.place(blockSource, {14, 0, 14}, random);
+            // bamboo->place(blockSource, {24, 0, 24}, random);
 
-        //    // LakeFeature llakeFeature(
-        //    //     BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Lava, 1),
-        //    //     XoroshiroPositionalRandomFactory{ll::random_utils::rand<uint64>(),
-        //    ll::random_utils::rand<uint64>()}
-        //    //);
-        //    // llakeFeature.place(blockSource, {-14, 0, -14}, random);
-        //}
+            //// LakeFeature(Feature)
+            // LakeFeature wlakeFeature(
+            //     BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Water, 1),
+            //     XoroshiroPositionalRandomFactory{ll::random_utils::rand<uint64>(), ll::random_utils::rand<uint64>()}
+            //);
+            // wlakeFeature.place(blockSource, {14, 0, 14}, random);
+
+            // LakeFeature llakeFeature(
+            //     BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Lava, 1),
+            //     XoroshiroPositionalRandomFactory{ll::random_utils::rand<uint64>(), ll::random_utils::rand<uint64>()}
+            //);
+            // llakeFeature.place(blockSource, {-14, 0, -14}, random);
+        }
         return true;
     }
 
@@ -180,12 +181,12 @@ public:
         levelchunk.setBlockVolume(mPrototype, 0);
         levelchunk.recomputeHeightMap(0);
 
+        ChunkLocalNoiseCache chunkLocalNoiseCache;
+        mBiomeSource->fillBiomes(levelchunk, chunkLocalNoiseCache);
+
         if (!levelchunk.getGenerator()) {
             levelchunk._setGenerator(this);
         }
-
-        ChunkLocalNoiseCache chunkLocalNoiseCache;
-        mBiomeSource->fillBiomes(levelchunk, chunkLocalNoiseCache);
 
         levelchunk.setSaved();
         levelchunk.changeState(ChunkState::Generating, ChunkState::Generated);
@@ -196,29 +197,30 @@ public:
         /**
          * @note The following code restoration is incorrect and awaits correction by someone with the opportunity.
          */
-        // Block const* defaultBlockState = &BlockTypeRegistry::getDefaultBlockState(BedrockBlockNames::Air, 1);
-        //
-        // int n = 0;
-        //
-        // for (const auto& layer : layersDesc.mBlockLayers) {
-        //     for (int i = 0; i < layer.mNumLayers; ++i) {
-        //         mPrototypeBlocks.push_back(layer.mBlock);
-        //     }
-        //     n += layer.mNumLayers;
-        // }
-        // buffer_span_mut<Block const*> buffer;
-        // buffer.mBegin = &mPrototypeBlocks[0];
-        // buffer.mEnd   = &mPrototypeBlocks.back();
-        // BlockVolume blockVolume(buffer, 16, n, 16, *defaultBlockState, minHeight);
-        // mPrototype = blockVolume;
+        Block const* defaultBlockState = &BlockTypeRegistry::getDefaultBlockState(BedrockBlockNames::Air, 1);
 
-        LL_SYMBOL_CALL(
-            "?_generatePrototypeBlockValues@FlatWorldGenerator@@AEAAXAEBVFlatWorldGeneratorOptions@@F@Z",
-            void,
-            MyFlatWorldGenerator*,
-            FlatWorldGeneratorOptions const&,
-            short
-        )
-        (this, layersDesc, minHeight);
+        int n = 0;
+
+        for (const auto& layer : layersDesc.mBlockLayers) {
+            for (int i = 0; i < layer.mNumLayers; ++i) {
+                mPrototypeBlocks.push_back(layer.mBlock);
+                ll::logger.info("layer.mBlock={}", layer.mBlock->getName().getString());
+            }
+            n += layer.mNumLayers;
+        }
+        buffer_span_mut<Block const*> buffer;
+        buffer.mBegin = &*mPrototypeBlocks.begin();
+        buffer.mEnd   = &*mPrototypeBlocks.end();
+        BlockVolume blockVolume(buffer, 16, n, 16, *defaultBlockState, minHeight);
+        mPrototype = blockVolume;
+
+        // LL_SYMBOL_CALL(
+        //     "?_generatePrototypeBlockValues@FlatWorldGenerator@@AEAAXAEBVFlatWorldGeneratorOptions@@F@Z",
+        //     void,
+        //     MyFlatWorldGenerator*,
+        //     FlatWorldGeneratorOptions const&,
+        //     short
+        //)
+        //(this, layersDesc, minHeight);
     }
 };
