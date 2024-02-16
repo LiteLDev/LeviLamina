@@ -11,6 +11,7 @@
   "asset_url": "https://github.com/LiteLDev/LeviLamina/releases/download/v0.8.1/levilamina-release-windows-x64.zip",
   "dependencies": {
     "github.com/LiteLDev/bds": "1.20.61",
+    "github.com/LiteLDev/CrashLogger": "1.1.x",
     "github.com/LiteLDev/PeEditor": "3.5.x",
     "github.com/LiteLDev/PreLoader": "1.5.x"
   },
