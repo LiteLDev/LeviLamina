@@ -27,7 +27,7 @@ struct LeviConfig {
         struct {
             bool        enabled      = true;
             bool        useBuiltin   = true;
-            std::string externalPath = R"(.\plugins\LeviLamina\data\CrashLogger.exe)";
+            std::string externalPath = R"(.\CrashLogger.exe)";
             std::string logPath      = R"(.\logs\crash)";
             std::string dumpPrefix   = "minidump_";
             std::string logPrefix    = "trace_";
