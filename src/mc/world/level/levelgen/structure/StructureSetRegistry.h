@@ -11,6 +11,8 @@ namespace br::worldgen {
 
 class StructureSetRegistry {
 public:
+    entt::dense_map<std::string, std::shared_ptr<br::worldgen::StructureSet>> structureSetMap;
+
     // prevent constructor by default
     StructureSetRegistry& operator=(StructureSetRegistry const&);
     StructureSetRegistry(StructureSetRegistry const&);

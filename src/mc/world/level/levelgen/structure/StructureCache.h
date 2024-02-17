@@ -22,6 +22,7 @@ public:
     // StructureCache inner types define
     struct StructurePair {
     public:
+        uchar unk[24];
         // prevent constructor by default
         StructurePair& operator=(StructurePair const&);
         StructurePair(StructurePair const&);
@@ -34,6 +35,8 @@ public:
 
         // NOLINTEND
     };
+    std::unordered_map<ChunkPos, std::vector<br::worldgen::StructureCache::StructurePair>> unordered_map;
+    uchar                                                                                  unk_64[8];
 
 public:
     // prevent constructor by default

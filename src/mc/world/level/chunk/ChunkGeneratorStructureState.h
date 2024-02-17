@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/LevelSeed64.h"
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/StructureFeatureType.h"
@@ -18,6 +19,10 @@ namespace br::worldgen {
 
 struct ChunkGeneratorStructureState {
 public:
+    LevelSeed64                                                    seed64;
+    uint64                                                         seed;
+    size_t                                                         structureSetMapSize;
+    std::vector<std::shared_ptr<br::worldgen::StructureSet const>> structureSetMap;
     // prevent constructor by default
     ChunkGeneratorStructureState& operator=(ChunkGeneratorStructureState const&);
     ChunkGeneratorStructureState(ChunkGeneratorStructureState const&);
