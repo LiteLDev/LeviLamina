@@ -15,7 +15,7 @@ namespace ll {
 
 struct LeviConfig {
 
-    int version = 18;
+    int version = 19;
 
     std::string language = "system";
     struct {
@@ -27,7 +27,7 @@ struct LeviConfig {
         struct {
             bool        enabled      = true;
             bool        useBuiltin   = false;
-            std::string externalPath = R"(.\CrashLogger.exe)";
+            std::string externalPath = R"(.\plugins\LeviLamina\CrashLogger.exe)";
             std::string logPath      = R"(.\logs\crash)";
             std::string dumpPrefix   = "minidump_";
             std::string logPrefix    = "trace_";
