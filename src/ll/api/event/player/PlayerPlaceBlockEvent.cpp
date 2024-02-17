@@ -37,7 +37,7 @@ LL_TYPE_INSTANCE_HOOK(
     ItemStackBase const& item,
     bool                 genParticle
 ) {
-    if (actor.hasCategory(ActorCategory::Player)) {
+    if (actor.isPlayer()) {
         auto event = PlayerPlacingBlockEvent{static_cast<Player&>(actor), blockpos, face};
         EventBus::getInstance().publish(event);
         if (event.isCancelled()) {

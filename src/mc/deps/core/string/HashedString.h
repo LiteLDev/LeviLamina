@@ -120,8 +120,6 @@ public:
     }
 
     // Convertors
-    [[nodiscard]] constexpr operator std::string&() { return str; } // NOLINT
-
     [[nodiscard]] constexpr operator std::string const&() const { return str; } // NOLINT
 
     [[nodiscard]] constexpr operator std::string_view() const { return std::string_view(str); } // NOLINT
