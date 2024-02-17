@@ -7,7 +7,8 @@
 
 class EndCityFeature : public ::StructureFeature {
 public:
-    uchar unk[368];
+    uchar filler[368];
+
     // prevent constructor by default
     EndCityFeature& operator=(EndCityFeature const&);
     EndCityFeature(EndCityFeature const&);

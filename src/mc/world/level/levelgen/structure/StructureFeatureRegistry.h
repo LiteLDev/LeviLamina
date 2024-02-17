@@ -16,14 +16,16 @@ class StructureFeature;
 
 class StructureFeatureRegistry {
 public:
-    br::worldgen::ChunkGeneratorStructureState     mChunkGeneratorStructureState;
-    std::vector<std::unique_ptr<StructureFeature>> mStructureFeatures;
-    br::worldgen::StructureCache                   mStructureCache;
+    br::worldgen::ChunkGeneratorStructureState     mChunkGeneratorStructureState; // this+0x0
+    std::vector<std::unique_ptr<StructureFeature>> mStructureFeatures;            // this+0x30
+    br::worldgen::StructureCache                   mStructureCache;               // this+0x48
 
+public:
     // prevent constructor by default
     StructureFeatureRegistry& operator=(StructureFeatureRegistry const&);
     StructureFeatureRegistry(StructureFeatureRegistry const&);
 
+public:
     template <std::derived_from<StructureFeature> T, class... Args>
     T& registerFeature(Args&&... args) {
         auto ptr = std::make_unique<T>(std::forward<Args>(args)...);

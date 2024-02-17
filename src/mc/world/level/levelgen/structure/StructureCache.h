@@ -22,7 +22,8 @@ public:
     // StructureCache inner types define
     struct StructurePair {
     public:
-        uchar unk[24];
+        uchar filler[24];
+
         // prevent constructor by default
         StructurePair& operator=(StructurePair const&);
         StructurePair(StructurePair const&);

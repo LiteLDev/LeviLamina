@@ -177,7 +177,7 @@ public:
     virtual void decorateWorldGenPostProcess(Biome&, LevelChunk&, BlockSource&, Random&) const {}
 
 public:
-    virtual void loadChunk(LevelChunk& levelchunk, bool forceImmediateReplacementDataLoad) {
+    virtual void loadChunk(LevelChunk& levelchunk, bool) {
         levelchunk.setBlockVolume(mPrototype, 0);
         levelchunk.recomputeHeightMap(0);
 

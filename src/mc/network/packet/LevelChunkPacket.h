@@ -15,17 +15,16 @@ public:
     };
 
 public:
-    ChunkPos      mPos;                           // this+0x30
-    DimensionType mDimensionType;                 // this+0x38
-    bool          mCacheEnabled;                  // this+0x3C
-    bool          mIsChunkInTickRange;            // this+0x3D
-    std::string   mSerializedChunk;               // this+0x40
-    uint64        mSubChunksCount;                // this+0x60
-    bool          isClientPacket;                 // this+0x68
-    bool          mClientNeedsToRequestSubchunks; // this+0x69
-    int           mClientRequestSubChunkLimit;    // this+0x6c
-
-    std::vector<SubChunkMetadata> mCacheMetadata; // this+0x70
+    ChunkPos                      mPos;                           // this+0x30
+    DimensionType                 mDimensionType;                 // this+0x38
+    bool                          mCacheEnabled;                  // this+0x3C
+    bool                          mIsChunkInTickRange;            // this+0x3D
+    std::string                   mSerializedChunk;               // this+0x40
+    uint64                        mSubChunksCount;                // this+0x60
+    bool                          mIsClientPacket;                // this+0x68
+    bool                          mClientNeedsToRequestSubchunks; // this+0x69
+    int                           mClientRequestSubChunkLimit;    // this+0x6c
+    std::vector<SubChunkMetadata> mCacheMetadata;                 // this+0x70
 
     // prevent constructor by default
     LevelChunkPacket& operator=(LevelChunkPacket const&);

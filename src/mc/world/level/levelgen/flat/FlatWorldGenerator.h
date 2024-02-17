@@ -75,10 +75,10 @@ public:
 
     // ChunkSource reload function
     // vIndex: 9, symbol: ?postProcess@FlatWorldGenerator@@UEAA_NAEAVChunkViewSource@@@Z
-    virtual bool postProcess(class ChunkViewSource&);
+    virtual bool postProcess(class ChunkViewSource& neighborhood);
 
     // vIndex: 11, symbol: ?loadChunk@FlatWorldGenerator@@UEAAXAEAVLevelChunk@@_N@Z
-    virtual void loadChunk(class LevelChunk&, bool);
+    virtual void loadChunk(class LevelChunk& levelchunk, bool forceImmediateReplacementDataLoad);
 
     // symbol: ??0FlatWorldGenerator@@QEAA@AEAVDimension@@IAEBVValue@Json@@@Z
     MCAPI FlatWorldGenerator(class Dimension& dimension, uint, class Json::Value const& generationOptionsJSON);

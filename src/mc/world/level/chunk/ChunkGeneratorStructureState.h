@@ -18,11 +18,15 @@ namespace br::worldgen { struct StructureSet; }
 namespace br::worldgen {
 
 struct ChunkGeneratorStructureState {
+    using StructureSetMap = std::vector<std::shared_ptr<br::worldgen::StructureSet const>>;
+
 public:
-    LevelSeed64                                                    seed64;
-    uint64                                                         seed;
-    size_t                                                         structureSetMapSize;
-    std::vector<std::shared_ptr<br::worldgen::StructureSet const>> structureSetMap;
+    LevelSeed64     mSeed64;              // this+0x0
+    uint64          mSeed;                // this+0x8
+    size_t          mStructureSetMapSize; // this+0x10
+    StructureSetMap mStructureSetMap;     // this+0x18
+
+public:
     // prevent constructor by default
     ChunkGeneratorStructureState& operator=(ChunkGeneratorStructureState const&);
     ChunkGeneratorStructureState(ChunkGeneratorStructureState const&);
