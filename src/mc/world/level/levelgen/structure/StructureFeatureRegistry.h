@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/chunk/ChunkGeneratorStructureState.h"
+#include "mc/world/level/levelgen/structure/StructureCache.h"
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/StructureFeatureType.h"
@@ -14,7 +16,9 @@ class StructureFeature;
 
 class StructureFeatureRegistry {
 public:
+    br::worldgen::ChunkGeneratorStructureState     mChunkGeneratorStructureState;
     std::vector<std::unique_ptr<StructureFeature>> mStructureFeatures;
+    br::worldgen::StructureCache                   mStructureCache;
 
     // prevent constructor by default
     StructureFeatureRegistry& operator=(StructureFeatureRegistry const&);
