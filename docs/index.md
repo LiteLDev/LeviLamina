@@ -21,6 +21,8 @@ Users should comply with relevant laws and regulations when using this software,
 If you have any questions or comments about this disclaimer, please contact the developer.
 
 ## Install
+!!! Info
+    The following content is just an overview. For a more detailed installation guide, please refer to [Install](https://levilamina.liteldev.com/install/).
 
 This project uses [lip](https://github.com/lippkg/lip). Go check them out if you don't have them locally installed.
 
