@@ -8,14 +8,6 @@ LeviLamina是一个非官方的插件加载器，旨在为Minecraft Bedrock Serv
 
 开发者可以轻松地用C++，JavaScript，Lua，Python，C#等语言编写插件。这种无缝集成赋予了他们轻松扩展和个性化BDS功能的能力，促进了直观的学习体验和无与伦比的灵活性。
 
-## 安全
-
-LeviLamina（以下简称“本软件”）由LiteLDev（以下简称“开发者”）开发和提供。本软件的设计目的是使用户能够通过加载插件来扩展Minecraft Bedrock Server BDS（以下简称“BDS”）的功能。本软件与Mojang Studios（以下简称“Mojang”）或Microsoft Corporation（以下简称“Microsoft”）没有任何关联。开发者对本软件加载的任何插件的内容、质量、功能、安全性或合法性不承担任何责任。用户应自行判断并承担所有相关风险。
-
-开发者不保证本软件的稳定性、可靠性、准确性或完整性。开发者不对本软件中可能存在的任何缺陷、错误、病毒或其他有害组件负责。开发者不对用户使用本软件造成的任何直接或间接损害（包括但不限于数据丢失、设备损坏、利润损失等）负责。
-
-开发者保留随时修改、更新或终止本软件及其相关服务的权利，无需事先通知用户。用户应备份重要数据并定期检查本软件的更新。用户在使用本软件时应遵守相关法律法规，尊重他人的知识产权和隐私权，不得将本软件用于任何非法或侵权活动。如果用户违反上述规定，给任何第三方造成任何损害或被任何第三方索赔，开发者不承担任何责任。如果您对本免责声明有任何疑问或意见，请联系开发者。
-
 ## 安装
 
 !!! Info
@@ -55,6 +47,13 @@ lip install --upgrade github.com/LiteLDev/LeviLamina
 ./bedrock_server_mod.exe
 ```
 
+## 安全
+
+LeviLamina（以下简称“本软件”）由LiteLDev（以下简称“开发者”）开发和提供。本软件的设计目的是使用户能够通过加载插件来扩展Minecraft Bedrock Server BDS（以下简称“BDS”）的功能。本软件与Mojang Studios（以下简称“Mojang”）或Microsoft Corporation（以下简称“Microsoft”）没有任何关联。开发者对本软件加载的任何插件的内容、质量、功能、安全性或合法性不承担任何责任。用户应自行判断并承担所有相关风险。
+
+开发者不保证本软件的稳定性、可靠性、准确性或完整性。开发者不对本软件中可能存在的任何缺陷、错误、病毒或其他有害组件负责。开发者不对用户使用本软件造成的任何直接或间接损害（包括但不限于数据丢失、设备损坏、利润损失等）负责。
+
+开发者保留随时修改、更新或终止本软件及其相关服务的权利，无需事先通知用户。用户应备份重要数据并定期检查本软件的更新。用户在使用本软件时应遵守相关法律法规，尊重他人的知识产权和隐私权，不得将本软件用于任何非法或侵权活动。如果用户违反上述规定，给任何第三方造成任何损害或被任何第三方索赔，开发者不承担任何责任。如果您对本免责声明有任何疑问或意见，请联系开发者。
 
 ## 星标历史
 
@@ -62,7 +61,12 @@ lip install --upgrade github.com/LiteLDev/LeviLamina
 
 ## 感谢
 
-我们衷心感谢[所有捐赠者](https://5g8svn.sharepoint.com/:x:/s/LiteLDev/EXx2ndbuC-9Bj5SR-FlJ-HUBZWy0wODjQCDb8OkzuKTFJg?e=QBF6nQ)！
+我们衷心感谢[所有捐赠者](https://5g8svn.sharepoint.com/:x:/s/LiteLDev/EXx2ndbuC-9Bj5SR-FlJ-HUBZWy0wODjQCDb8OkzuKTFJg?e=QBF6nQ)和所有的开发者！
+
+**感谢 [JetBrains](https://www.jetbrains.com/)
+给开源开发者分配免费的IDE许可证，例如 [CLion](https://www.jetbrains.com/clion/)** 。
+
+[<img src="https://upload.cc/i1/2021/12/29/XNohu5.png" width="200"/>](https://www.jetbrains.com/)
 
 ## 贡献
 
@@ -78,4 +82,6 @@ LeviLamina遵循[Code of Conduct](https://www.contributor-covenant.org/version/2
 
 ## 许可证
 
-LGPL-3.0-only © LiteLDev
+版权所有 © 2023-2024 LiteLDev, 保留所有权利.
+
+本项目采用 LGPL-3.0 许可证发行。

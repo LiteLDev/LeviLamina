@@ -87,6 +87,7 @@ We extend sincere thanks to [all donors](https://5g8svn.sharepoint.com/:x:/s/Lit
 **Thanks to [JetBrains](https://www.jetbrains.com/) for allocating free open-source licences for IDEs such
 as [CLion](https://www.jetbrains.com/clion/)**.  
 [<img src="https://upload.cc/i1/2021/12/29/XNohu5.png" width="200"/>](https://www.jetbrains.com/)
+
 ## Contributing
 
 Feel free to dive in! [Open an issue](https://github.com/LiteLDev/LeviLamina/issues/new/choose) or submit PRs.

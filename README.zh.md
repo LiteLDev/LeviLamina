@@ -72,9 +72,9 @@ LeviLamina（以下简称“本软件”）由LiteLDev（以下简称“开发�
 
 开发者保留随时修改、更新或终止本软件及其相关服务的权利，无需事先通知用户。用户应备份重要数据并定期检查本软件的更新。用户在使用本软件时应遵守相关法律法规，尊重他人的知识产权和隐私权，不得将本软件用于任何非法或侵权活动。如果用户违反上述规定，给任何第三方造成任何损害或被任何第三方索赔，开发者不承担任何责任。如果您对本免责声明有任何疑问或意见，请联系开发者。
 
-## 星星历史
+## 星标历史
 
-![星星历史图](https://api.star-history.com/svg?repos=LiteLDev/LeviLamina&type=Date)
+![星标历史图](https://api.star-history.com/svg?repos=LiteLDev/LeviLamina&type=Date)
 
 ## 感谢
 
