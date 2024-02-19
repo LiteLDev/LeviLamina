@@ -5,26 +5,26 @@ includes("scripts/localbdslibrary.lua")
 add_repositories("liteldev-repo https://github.com/LiteLDev/xmake-repo.git")
 
 -- Dependencies from xmake-repo.
-add_requires("entt 3.12.2")
-add_requires("expected-lite v0.6.3")
-add_requires("fmt 10.1.1")
-add_requires("gsl 4.0.0")
-add_requires("leveldb 1.23")
-add_requires("magic_enum 0.9.0")
-add_requires("nlohmann_json 3.11.2")
-add_requires("rapidjson 1.1.0")
-add_requires("mimalloc 2.1.2")
+add_requires("ctre")
+add_requires("entt")
+add_requires("expected-lite")
+add_requires("fmt")
+add_requires("gsl")
+add_requires("leveldb")
+add_requires("magic_enum")
+add_requires("nlohmann_json")
+add_requires("rapidjson v1.1.0")
+add_requires("mimalloc")
 
 -- Dependencies from liteldev-repo.
-add_requires("ctre 3.8.1")
-add_requires("pcg_cpp 1.0.0")
-add_requires("pfr 2.1.1")
-add_requires("demangler v17.0.7")
-add_requires("preloader 1.5.0")
-add_requires("symbolprovider 1.1.0")
+add_requires("pcg_cpp")
+add_requires("pfr")
+add_requires("demangler")
+add_requires("preloader")
+add_requires("symbolprovider ~1")
 
 if has_config("tests") then
-    add_requires("gtest 1.12.1")
+    add_requires("gtest")
 end
 
 if has_config("localbdslibrary") then
@@ -48,9 +48,7 @@ option("localbdslibrary")
     set_description("Use local bdslibrary")
 
 target("LeviLamina")
-    add_configfiles(
-        "src/(ll/core/Version.h.in)"
-    )
+    add_configfiles("src/(ll/core/Version.h.in)")
     add_cxflags(
         "/utf-8",
         "/permissive-",
@@ -83,11 +81,8 @@ target("LeviLamina")
         "UNICODE",
         "WIN32_LEAN_AND_MEAN",
         "ENTT_PACKED_PAGE=128",
-        { public = true }
-    )
-    add_defines(
         "LL_EXPORT",
-        "_HAS_CXX23=1" -- work around
+        "_HAS_CXX23=1" -- work around to enable c++23
     )
     add_files(
         "src/ll/api/**.cpp",
@@ -95,14 +90,9 @@ target("LeviLamina")
         "src/ll/core/**.rc",
         "src/mc/**.cpp"
     )
-    add_headerfiles(
-        "src/(ll/api/**.h)",
-        "src/(mc/**.h)"
-    )
-    add_includedirs(
-        "src",
-        "$(buildir)/config"
-    )
+    add_headerfiles("src/(ll/api/**.h)", "src/(mc/**.h)")
+    add_includedirs("src", "$(buildir)/config")
+    add_packages("demangler", "mimalloc", "preloader")
     add_packages(
         "entt",
         "expected-lite",
@@ -115,16 +105,10 @@ target("LeviLamina")
         "ctre",
         "pcg_cpp",
         "pfr",
-        "demangler",
-        "preloader",
         "symbolprovider",
-        "mimalloc",
         { public = true }
     )
-    add_shflags(
-        "/DELAYLOAD:bedrock_server.dll",
-        { public = true }
-    )
+    add_shflags("/DELAYLOAD:bedrock_server.dll")
     set_configdir("$(buildir)/config")
     set_configvar("LL_WORKSPACE_FOLDER", "$(projectdir)")
     set_exceptions("none")
@@ -141,7 +125,7 @@ target("LeviLamina")
         before_build(function (target)
             headers = ""
             for _,x in ipairs(os.files("src/**.h")) do
-             headers = headers.."#include \""..path.relative(x, "src/").."\"\n"
+                headers = headers.."#include \""..path.relative(x, "src/").."\"\n"
             end
             file = io.open("src/ll/test/include_all.cpp", "w")
             file:write(headers)
@@ -189,4 +173,3 @@ target("LeviLamina")
         target:set("configvar", "LL_VERSION_MINOR", minor)
         target:set("configvar", "LL_VERSION_PATCH", patch)
     end)
-target_end()

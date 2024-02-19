@@ -1,9 +1,12 @@
 #pragma once
 
-#include <numeric>
+#include <cfloat>
+#include <concepts> // IWYU pragma: keep
+#include <cstdint>
+#include <limits>
 #include <random>
-#include <type_traits>
 
+#include "pcg_cpp/pcg_extras.hpp"
 #include "pcg_cpp/pcg_random.hpp"
 
 #include "ll/api/base/StdInt.h"
@@ -13,13 +16,13 @@ namespace ll::inline utils::random_utils {
 template <std::integral T>
 inline T rand(T upBound = 0) {
     static pcg_extras::seed_seq_from<std::random_device> rd{};
+    static pcg64   random{rd};
 
     constexpr auto digits = std::numeric_limits<T>::digits;
-    static pcg64   random{rd};
     if (upBound != 0) {
         return static_cast<T>(random(upBound));
     } else if constexpr (digits != 64) {
-        static uintmax_t u = (uintmax_t)std::pow<ldouble>(2ull, digits);
+        static auto u = (uintmax_t)std::pow<ldouble>(2ull, digits);
         return static_cast<T>(random(u));
     } else {
         return static_cast<T>(random());
