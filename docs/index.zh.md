@@ -66,7 +66,7 @@ LeviLamina（以下简称“本软件”）由LiteLDev（以下简称“开发�
 **感谢 [JetBrains](https://www.jetbrains.com/)
 给开源开发者分配免费的IDE许可证，例如 [CLion](https://www.jetbrains.com/clion/)** 。
 
-[<img src="https://upload.cc/i1/2021/12/29/XNohu5.png" width="200"/>](https://www.jetbrains.com/)
+[<img src="https://s1.imagehub.cc/images/2024/02/20/cd20ed7a227411430d760ee39df01795.png" alt="cd20ed7a227411430d760ee39df01795.png" width="200"/>](https://www.jetbrains.com/)
 
 ## 贡献
 

@@ -68,7 +68,7 @@ We extend sincere thanks to [all donors](https://5g8svn.sharepoint.com/:x:/s/Lit
 
 **Thanks to [JetBrains](https://www.jetbrains.com/) for allocating free open-source licences for IDEs such
 as [CLion](https://www.jetbrains.com/clion/)**.  
-[<img src="https://upload.cc/i1/2021/12/29/XNohu5.png" width="200"/>](https://www.jetbrains.com/)
+[<img src="https://s1.imagehub.cc/images/2024/02/20/cd20ed7a227411430d760ee39df01795.png" alt="cd20ed7a227411430d760ee39df01795.png" width="200"/>](https://www.jetbrains.com/)
 
 ## Contributing
 
