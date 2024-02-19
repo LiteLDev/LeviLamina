@@ -52,15 +52,15 @@ std::filesystem::path const& Plugin::getConfigDir() const { return mImpl->config
 
 std::filesystem::path const& Plugin::getLangDir() const { return mImpl->langDir; }
 
-bool Plugin::hasOnLoad() { return mImpl->onLoad != nullptr; }
+bool Plugin::hasOnLoad() const noexcept { return mImpl->onLoad != nullptr; }
 
-bool Plugin::hasOnUnload() { return mImpl->onUnload != nullptr; }
+bool Plugin::hasOnUnload() const noexcept { return mImpl->onUnload != nullptr; }
 
-bool Plugin::hasOnEnable() { return mImpl->onEnable != nullptr; }
+bool Plugin::hasOnEnable() const noexcept { return mImpl->onEnable != nullptr; }
 
-bool Plugin::hasOnDisable() { return mImpl->onDisable != nullptr; }
+bool Plugin::hasOnDisable() const noexcept { return mImpl->onDisable != nullptr; }
 
-bool Plugin::onLoad() {
+bool Plugin::onLoad() noexcept {
     try {
         if (!mImpl->onLoad || mImpl->onLoad(*this)) {
             if (getServerStatus() == ServerStatus::Running) {
@@ -80,7 +80,7 @@ bool Plugin::onLoad() {
     return false;
 }
 
-bool Plugin::onUnload() {
+bool Plugin::onUnload() noexcept {
     try {
         return !mImpl->onUnload || mImpl->onUnload(*this);
     } catch (...) {
@@ -89,7 +89,7 @@ bool Plugin::onUnload() {
     return false;
 }
 
-bool Plugin::onEnable() {
+bool Plugin::onEnable() noexcept {
     try {
         if (getState() == State::Enabled) {
             return true;
@@ -104,7 +104,7 @@ bool Plugin::onEnable() {
     return false;
 }
 
-bool Plugin::onDisable() {
+bool Plugin::onDisable() noexcept {
     try {
         if (getState() == State::Disabled) {
             return true;
@@ -120,13 +120,13 @@ bool Plugin::onDisable() {
     return false;
 }
 
-void Plugin::onLoad(CallbackFn func) { mImpl->onLoad = std::move(func); }
+void Plugin::onLoad(CallbackFn func) noexcept { mImpl->onLoad = std::move(func); }
 
-void Plugin::onUnload(CallbackFn func) { mImpl->onUnload = std::move(func); }
+void Plugin::onUnload(CallbackFn func) noexcept { mImpl->onUnload = std::move(func); }
 
-void Plugin::onEnable(CallbackFn func) { mImpl->onEnable = std::move(func); }
+void Plugin::onEnable(CallbackFn func) noexcept { mImpl->onEnable = std::move(func); }
 
-void Plugin::onDisable(CallbackFn func) { mImpl->onDisable = std::move(func); }
+void Plugin::onDisable(CallbackFn func) noexcept { mImpl->onDisable = std::move(func); }
 
 void Plugin::setState(State state) const { mImpl->state = state; }
 

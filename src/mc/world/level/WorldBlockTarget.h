@@ -101,7 +101,7 @@ public:
 
     // vIndex: 24, symbol: ?getLevelData@WorldBlockTarget@@UEBAAEBVLevelData@@XZ
     virtual class LevelData const& getLevelData() const;
-    
+
     // vIndex: 25, symbol: ?getContext@WorldBlockTarget@@UEAAAEBUWorldGenContext@@XZ
     virtual struct WorldGenContext const& getContext();
 

@@ -45,10 +45,10 @@ public:
 protected:
     LLAPI void setState(State state) const;
 
-    LLNDAPI bool hasOnLoad() noexcept;
-    LLNDAPI bool hasOnUnload() noexcept;
-    LLNDAPI bool hasOnEnable() noexcept;
-    LLNDAPI bool hasOnDisable() noexcept;
+    LLNDAPI bool hasOnLoad() const noexcept;
+    LLNDAPI bool hasOnUnload() const noexcept;
+    LLNDAPI bool hasOnEnable() const noexcept;
+    LLNDAPI bool hasOnDisable() const noexcept;
 
     LLAPI bool onLoad() noexcept;
     LLAPI bool onUnload() noexcept;
