@@ -45,20 +45,20 @@ public:
 protected:
     LLAPI void setState(State state) const;
 
-    LLNDAPI bool hasOnLoad();
-    LLNDAPI bool hasOnUnload();
-    LLNDAPI bool hasOnEnable();
-    LLNDAPI bool hasOnDisable();
+    LLNDAPI bool hasOnLoad() noexcept;
+    LLNDAPI bool hasOnUnload() noexcept;
+    LLNDAPI bool hasOnEnable() noexcept;
+    LLNDAPI bool hasOnDisable() noexcept;
 
-    LLAPI bool onLoad();
-    LLAPI bool onUnload();
-    LLAPI bool onEnable();
-    LLAPI bool onDisable();
+    LLAPI bool onLoad() noexcept;
+    LLAPI bool onUnload() noexcept;
+    LLAPI bool onEnable() noexcept;
+    LLAPI bool onDisable() noexcept;
 
-    LLAPI void onLoad(CallbackFn func);
-    LLAPI void onUnload(CallbackFn func);
-    LLAPI void onEnable(CallbackFn func);
-    LLAPI void onDisable(CallbackFn func);
+    LLAPI void onLoad(CallbackFn func) noexcept;
+    LLAPI void onUnload(CallbackFn func) noexcept;
+    LLAPI void onEnable(CallbackFn func) noexcept;
+    LLAPI void onDisable(CallbackFn func) noexcept;
 
 private:
     friend PluginManager;

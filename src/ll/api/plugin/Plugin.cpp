@@ -4,6 +4,7 @@
 #include "ll/api/event/server/ServerStartedEvent.h"
 #include "ll/api/service/Bedrock.h"
 #include "ll/api/service/ServerInfo.h"
+#include "ll/api/utils/ErrorUtils.h"
 
 namespace ll::plugin {
 
@@ -60,42 +61,61 @@ bool Plugin::hasOnEnable() { return mImpl->onEnable != nullptr; }
 bool Plugin::hasOnDisable() { return mImpl->onDisable != nullptr; }
 
 bool Plugin::onLoad() {
-    if (!mImpl->onLoad || mImpl->onLoad(*this)) {
-        if (getServerStatus() == ServerStatus::Running) {
-            onEnable();
-            if (service::getServerInstance()) {
-                event::EventBus::getInstance().publish(
-                    mImpl->manifest.name,
-                    event::ServerStartedEvent{service::getServerInstance()}
-                );
+    try {
+        if (!mImpl->onLoad || mImpl->onLoad(*this)) {
+            if (getServerStatus() == ServerStatus::Running) {
+                onEnable();
+                if (service::getServerInstance()) {
+                    event::EventBus::getInstance().publish(
+                        mImpl->manifest.name,
+                        event::ServerStartedEvent{service::getServerInstance()}
+                    );
+                }
             }
+            return true;
         }
-        return true;
+    } catch (...) {
+        error_utils::printCurrentException(getLogger());
     }
     return false;
 }
 
-bool Plugin::onUnload() { return !mImpl->onUnload || mImpl->onUnload(*this); }
+bool Plugin::onUnload() {
+    try {
+        return !mImpl->onUnload || mImpl->onUnload(*this);
+    } catch (...) {
+        error_utils::printCurrentException(getLogger());
+    }
+    return false;
+}
 
 bool Plugin::onEnable() {
-    if (getState() == State::Enabled) {
-        return true;
-    }
-    if (!mImpl->onEnable || mImpl->onEnable(*this)) {
-        setState(State::Enabled);
-        return true;
+    try {
+        if (getState() == State::Enabled) {
+            return true;
+        }
+        if (!mImpl->onEnable || mImpl->onEnable(*this)) {
+            setState(State::Enabled);
+            return true;
+        }
+    } catch (...) {
+        error_utils::printCurrentException(getLogger());
     }
     return false;
 }
 
 bool Plugin::onDisable() {
-    if (getState() == State::Disabled) {
-        return true;
-    }
-    if (!mImpl->onDisable || mImpl->onDisable(*this)) {
-        setState(State::Disabled);
-        event::EventBus::getInstance().removePluginListeners(mImpl->manifest.name);
-        return true;
+    try {
+        if (getState() == State::Disabled) {
+            return true;
+        }
+        if (!mImpl->onDisable || mImpl->onDisable(*this)) {
+            setState(State::Disabled);
+            event::EventBus::getInstance().removePluginListeners(mImpl->manifest.name);
+            return true;
+        }
+    } catch (...) {
+        error_utils::printCurrentException(getLogger());
     }
     return false;
 }
