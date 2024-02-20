@@ -5,6 +5,7 @@
 struct ResourceDrops {
 public:
     std::vector<ItemStack> mResourceDrops;
+
 public:
     // prevent constructor by default
     ResourceDrops& operator=(ResourceDrops const&);
