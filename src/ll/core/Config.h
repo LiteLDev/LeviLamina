@@ -15,7 +15,7 @@ namespace ll {
 
 struct LeviConfig {
 
-    int version = 19;
+    int version = 20;
 
     std::string language = "system";
     struct {
@@ -54,11 +54,6 @@ struct LeviConfig {
         struct {
             bool alwaysLaunch = false;
         } playerInfo{};
-
-
-        std::unordered_map<std::string, std::string> resourcePackEncryptionMap = {
-            {"<UUID>", "<KEY>"}
-        };
 
     } modules{};
 };

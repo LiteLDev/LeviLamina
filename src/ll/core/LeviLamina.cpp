@@ -150,8 +150,6 @@ void printWelcomeMsg() {
 
     logger.info("LeviLamina is a free software licensed under {}"_tr("LGPLv3"));
     logger.info("Help us translate & improve text -> {}"_tr("https://translate.liteldev.com/"));
-    //logger.info("Thanks to RhyMC(rhymc.com) for the support"_tr());
-    //logger.info("");
 }
 
 void checkProtocolVersion() {
@@ -215,7 +213,7 @@ void leviLaminaMain() {
     std::error_code ec;
     fs::create_directories(plugin::getPluginsRoot(), ec);
 
-    ::ll::i18n::load(u8"plugins/LeviLamina/lang");
+    ::ll::i18n::load(plugin::getPluginsRoot() / u8"LeviLamina" / u8"lang");
 
     loadLeviConfig();
 
@@ -233,7 +231,7 @@ void leviLaminaMain() {
         checkOtherBdsInstance();
     }
     if (globalConfig.modules.playerInfo.alwaysLaunch) {
-        ll::service::PlayerInfo::getInstance();
+        service::PlayerInfo::getInstance();
     }
     if (globalConfig.modules.crashLogger.enabled) {
         if (globalConfig.modules.crashLogger.useBuiltin) {
@@ -265,7 +263,7 @@ void leviLaminaMain() {
 LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::High, "main", int, int argc, char* argv[]) {
 
 #if defined(LL_DEBUG) && _HAS_CXX23
-    static ll::stacktrace_utils::SymbolLoader symbols{};
+    static stacktrace_utils::SymbolLoader symbols{};
 #endif
     setServerStatus(ServerStatus::Default);
     severStartBeginTime = std::chrono::steady_clock::now();
@@ -289,7 +287,7 @@ LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::High, "main", int, int arg
     try {
         leviLaminaMain();
     } catch (...) {
-        ll::error_utils::printCurrentException(logger);
+        error_utils::printCurrentException(logger);
     }
     auto res = origin(argc, argv);
     setServerStatus(ServerStatus::Default);
