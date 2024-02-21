@@ -16,7 +16,7 @@ namespace ll::inline utils::random_utils {
 template <std::integral T>
 inline T rand(T upBound = 0) {
     static pcg_extras::seed_seq_from<std::random_device> rd{};
-    static pcg64   random{rd};
+    static pcg64                                         random{rd};
 
     constexpr auto digits = std::numeric_limits<T>::digits;
     if (upBound != 0) {

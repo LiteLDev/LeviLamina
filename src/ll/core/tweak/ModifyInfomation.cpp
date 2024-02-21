@@ -1,15 +1,14 @@
+#include "ll/api/io/FunctionStream.h"
+#include "ll/api/io/StreamRedirector.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/service/ServerInfo.h"
+#include "ll/core/Config.h"
 #include "ll/core/LeviLamina.h"
 #include "ll/core/Version.h"
 
-#include "mc/deps/core/common/debug/LogDetails.h"
-
-#include "ll/api/io/FunctionStream.h"
-#include "ll/api/io/StreamRedirector.h"
-
-#include "ll/core/Config.h"
 #include "mc/deps/core/common/bedrock/Interface.h"
+#include "mc/deps/core/common/debug/LogDetails.h"
+#include "mc/world/level/storage/DBStorage.h"
 
 MCAPI void BedrockLogOut(uint priority, char const* pszFormat, ...); // NOLINT
 
@@ -32,6 +31,7 @@ LL_STATIC_HOOK(
 ) {
     if (ll::globalConfig.modules.tweak.disableAutoCompactionLog
         && std::string_view{func}.starts_with("DBStorage::_scheduleNextAutoCompaction")) {
+        static_assert(&DBStorage::_scheduleNextAutoCompaction); // make sure function exist
         return;
     }
     origin(category, channelMask, rule, area, priority, func, line, pszFormat, va);
