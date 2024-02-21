@@ -11,7 +11,7 @@ LeviLamina是一个非官方的插件加载器，旨在为Minecraft Bedrock Serv
 
 开发者可以轻松地用C++，JavaScript，Lua，Python，C#等语言编写插件。这种无缝集成赋予了他们轻松扩展和个性化BDS功能的能力，促进了直观的学习体验和无与伦比的灵活性。
 
-有关更多信息，请参阅[文档](https://levilamina.liteldev.com).
+有关更多信息，请参阅[文档](https://levilamina.liteldev.com/zh/).
 
 ## 目录
 
