@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.8.2] - 2024-02-20
+## [0.8.3] - 2024-02-21
 
 ### Added
 
@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `Fixed the errors related to CrashLogger`
 - `Fixed potential update issues caused by the 'post_uninstall' command in tooth.json`
+- `Fixed issue caused by incorrectly formatted dependency versions in tooth.json`
 - Fixed the size of EndCityFeature and StructureCache::StructurePair
 - Corrected offset comments for certain class member variables
 - Corrected symbol comment for Minecraft::earlyShutdownMainThread
@@ -276,8 +277,8 @@ First preview release.
 
 For lip and tooth-hub test only.
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.8.2...HEAD
-[0.8.2]: https://github.com/LiteLDev/LeviLamina/compare/v0.8.1...v0.8.2
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.8.3...HEAD
+[0.8.3]: https://github.com/LiteLDev/LeviLamina/compare/v0.8.1...v0.8.3
 [0.8.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.8.0...v0.8.1
 [0.8.0]: https://github.com/LiteLDev/LeviLamina/compare/v0.7.2...v0.8.0
 [0.7.2]: https://github.com/LiteLDev/LeviLamina/compare/v0.6.3...v0.7.2
