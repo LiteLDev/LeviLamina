@@ -81,13 +81,13 @@ public:
         return false;
     }
     std::unordered_set<T> dependentBy(T const& node) const {
-        if (contains(node)) {
+        if (!contains(node)) {
             return {};
         }
         return data.at(node).dependBy;
     }
     std::unordered_set<T> dependentOn(T const& node) const {
-        if (contains(node)) {
+        if (!contains(node)) {
             return {};
         }
         return data.at(node).dependOn;
