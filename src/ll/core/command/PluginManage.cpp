@@ -1,5 +1,5 @@
-#include "c:/Users/shrbo/CPPProjects/LiteLDev/LeviLamina/src/ll/api/plugin/Manifest.h"
-#include "c:/Users/shrbo/CPPProjects/LiteLDev/LeviLamina/src/ll/api/plugin/PluginManagerRegistry.h"
+#include "ll/api/plugin/Manifest.h"
+#include "ll/api/plugin/PluginManagerRegistry.h"
 #include "ll/core/command/BuiltinCommands.h"
 
 #include "ll/api/command/CommandHandle.h"
@@ -15,7 +15,6 @@
 #include "mc/server/commands/CommandRegistry.h"
 #include <string>
 #include <string_view>
-#include <vector>
 
 
 namespace ll::command {
