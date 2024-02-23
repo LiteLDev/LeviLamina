@@ -42,14 +42,14 @@ void registerPluginManageCommand() {
                  ) {
             switch (param.operation) {
             case LeviCommandOperation::load:
-                if (ll::plugin::PluginManagerRegistry::getInstance().hasPlugin(param.plugin)) {
+                if (!ll::plugin::PluginManagerRegistry::getInstance().hasPlugin(param.plugin)) {
                     if (ll::plugin::PluginRegistrar::getInstance().loadPlugin(param.plugin)) {
                         output.success("Load plugin {0} successfully"_tr(param.plugin));
                     } else {
                         output.error("Failed to load plugin {0}"_tr(param.plugin));
                     }
                 } else {
-                    output.error("Plugin {0} not found"_tr(param.plugin));
+                    output.error("Plugin already {0} loaded"_tr(param.plugin));
                 }
                 break;
             case LeviCommandOperation::unload:
@@ -65,8 +65,8 @@ void registerPluginManageCommand() {
                 break;
             case LeviCommandOperation::reload:
                 if (ll::plugin::PluginManagerRegistry::getInstance().hasPlugin(param.plugin)) {
-                    if (ll::plugin::PluginRegistrar::getInstance().loadPlugin(param.plugin)
-                        && ll::plugin::PluginRegistrar::getInstance().unloadPlugin(param.plugin)) {
+                    if (ll::plugin::PluginRegistrar::getInstance().unloadPlugin(param.plugin)
+                        && ll::plugin::PluginRegistrar::getInstance().loadPlugin(param.plugin)) {
                         output.success("Reload plugin {0} successfully"_tr(param.plugin));
                     } else {
                         output.error("Failed to reload plugin {0}"_tr(param.plugin));
