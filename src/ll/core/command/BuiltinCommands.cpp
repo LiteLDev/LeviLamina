@@ -26,6 +26,9 @@ LL_STATIC_HOOK(
     if (globalConfig.modules.commands.crashCommand) {
         registerCrashCommand();
     }
+    if (globalConfig.modules.commands.pluginManageCommand) {
+        registerPluginManageCommand();
+    }
 }
 LL_STATIC_HOOK(
     registerTpdimCommands,
