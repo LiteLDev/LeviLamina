@@ -58,11 +58,11 @@ public:
     // symbol: ?seed64@WorldGenRandom@worldgen@br@@UEBA_JXZ
     MCVAPI int64 seed64() const;
 
-    // symbol: ?setSeed@WorldGenRandom@worldgen@br@@UEAAXUSeed128Bit@@@Z
-    MCVAPI void setSeed(struct Seed128Bit);
-
     // symbol: ?setSeed@WorldGenRandom@worldgen@br@@UEAAX_J@Z
     MCVAPI void setSeed(int64);
+
+    // symbol: ?setSeed@WorldGenRandom@worldgen@br@@UEAAXUSeed128Bit@@@Z
+    MCVAPI void setSeed(struct Seed128Bit);
 
     // symbol: ??1WorldGenRandom@worldgen@br@@UEAA@XZ
     MCVAPI ~WorldGenRandom();

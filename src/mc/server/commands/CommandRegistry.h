@@ -463,7 +463,7 @@ public:
         std::string const&                                 name,
         std::vector<std::pair<std::string, uint64>> const& strings,
         class Bedrock::typeid_t<class CommandRegistry>     type,
-        bool (CommandRegistry::*
+        bool                                               (CommandRegistry::*
                   parse)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&)
             const
     );
@@ -474,7 +474,7 @@ public:
         std::string const&                             name,
         std::vector<std::pair<uint64, uint64>> const&  values,
         class Bedrock::typeid_t<class CommandRegistry> type,
-        bool (CommandRegistry::*
+        bool                                           (CommandRegistry::*
                   parse)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&)
             const
     );

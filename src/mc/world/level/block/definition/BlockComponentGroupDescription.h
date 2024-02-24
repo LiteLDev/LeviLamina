@@ -4,16 +4,19 @@
 
 struct BlockComponentGroupDescription {
 public:
-    // prevent constructor by default
-    BlockComponentGroupDescription();
-
-public:
     // NOLINTBEGIN
+    // symbol: ??0BlockComponentGroupDescription@@QEAA@XZ
+    MCAPI BlockComponentGroupDescription();
+
     // symbol: ??0BlockComponentGroupDescription@@QEAA@$$QEAU0@@Z
     MCAPI BlockComponentGroupDescription(struct BlockComponentGroupDescription&&);
 
     // symbol: ??0BlockComponentGroupDescription@@QEAA@AEBU0@@Z
     MCAPI BlockComponentGroupDescription(struct BlockComponentGroupDescription const&);
+
+    // symbol:
+    // ?addComponentDescription@BlockComponentGroupDescription@@QEAAXV?$shared_ptr@UBlockComponentDescription@@@std@@@Z
+    MCAPI void addComponentDescription(std::shared_ptr<struct BlockComponentDescription>);
 
     // symbol:
     // ?foreachDescription@BlockComponentGroupDescription@@QEBAXV?$function@$$A6AXAEBUBlockComponentDescription@@@Z@std@@@Z

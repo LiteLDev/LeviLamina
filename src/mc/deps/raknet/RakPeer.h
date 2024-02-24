@@ -432,7 +432,7 @@ public:
 
     // symbol: ?SetUserUpdateThread@RakPeer@RakNet@@UEAAXP6AXPEAVRakPeerInterface@2@PEAX@Z1@Z
     MCVAPI void SetUserUpdateThread(
-        void (*_userUpdateThreadPtr)(class RakNet::RakPeerInterface*, void*),
+        void  (*_userUpdateThreadPtr)(class RakNet::RakPeerInterface*, void*),
         void* _userUpdateThreadData
     );
 
