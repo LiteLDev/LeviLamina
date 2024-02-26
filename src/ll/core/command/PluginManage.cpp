@@ -15,6 +15,7 @@
 #include "mc/server/commands/CommandRegistry.h"
 #include <string>
 #include <string_view>
+#include <vector>
 
 
 namespace ll::command {
@@ -110,13 +111,19 @@ void registerPluginManageCommand() {
             case LeviCommandOperation2::show: {
                 auto plugin = ll::plugin::PluginManagerRegistry::getInstance().getPlugin(param.plugin);
                 if (plugin) {
-                    plugin::Manifest const& man = plugin->getManifest();
+                    plugin::Manifest const&  man = plugin->getManifest();
+                    std::vector<std::string> depenciesList;
+                    if (man.dependencies.has_value()) {
+                        for (auto& dep : man.dependencies.value()) {
+                            depenciesList.emplace_back(dep.name + " " + dep.version.value_or(""));
+                        }
+                    }
                     output.success("Name: {0}\nAuthor: {1}\nDescription: {2}\nType: {3}\nVersion: {4}\nEntry: {5}"_tr(
                         man.name,
-                        man.author,
-                        man.description,
+                        man.author.value_or("none"),
+                        man.description.value_or("none"),
                         man.type,
-                        man.version->to_string(),
+                        man.version.has_value() ? man.version->to_string() : "none",
                         man.entry
                     ));
                 } else {
