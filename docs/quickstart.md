@@ -32,13 +32,7 @@ To start the server, simply run `bedrock_server_mod.exe`:
 
 ## Updating LeviLamina
 
-When it comes to data security, we advise against updating LeviLamina in its current location. Instead, we recommend creating a new directory, installing the new version of LeviLamina there, and subsequently copying the `worlds` directory from the old location to the new one. Next, follow the instructions provided by the plugin developers to migrate the configuration files and data files of the plugins you are using to the new directory.
-
-However, if you insist on updating in the same location, you can utilize the following command to update LeviLamina:
-
-```sh
-lip install --upgrade github.com/LiteLDev/LeviLamina
-```
+Don't update LeviLamina in the same location when it comes to data security. Instead, we recommend creating a new directory, installing the new version of LeviLamina there, and subsequently copying the `worlds` directory from the old location to the new location. Then, follow the instructions provided by the plugin developers to migrate the configuration files and data files of the plugins you are using to the new directory.
 
 ## Finding Plugins
 

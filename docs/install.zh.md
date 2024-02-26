@@ -27,7 +27,7 @@
 
 ### 通过 lipUI 安装
 
-你可以前往[LipUI](https://github.com/lippkg/LipUI)了解更多信息。
+只需要下载并运行[LipUI](https://github.com/lippkg/LipUI)并在包市场中选择LeviLamina安装即可。
 
 ### 通过 lip 安装
 

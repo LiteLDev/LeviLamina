@@ -8,44 +8,6 @@ LeviLamina is an unofficial plugin loader designed to offer indispensable API su
 
 Developers can effortlessly author plugins in languages such as C++, JavaScript, Lua, Python, C#, and others. This seamless integration empowers them to effortlessly expand and personalize BDS functionality, facilitating an intuitive learning experience and unparalleled flexibility.
 
-
-## Install
-!!! Info
-    The following content is just an overview. For a more detailed installation guide, please refer to [Install](https://levilamina.liteldev.com/install/).
-
-This project uses [lip](https://github.com/lippkg/lip). Go check them out if you don't have them locally installed.
-
-First, create a new directory for your Minecraft server and enter it:
-
-```sh
-mkdir myserver
-cd myserver
-```
-
-Then, install LeviLamina bundled with Minecraft Bedrock Server using lip:
-
-```sh
-lip install github.com/LiteLDev/LeviLamina
-```
-
-### Updating
-
-When it comes to data security, we advise against updating LeviLamina in its current location. Instead, we recommend creating a new directory, installing the new version of LeviLamina there, and subsequently copying the `worlds` directory from the old location to the new one. Next, follow the instructions provided by the plugin developers to migrate the configuration files and data files of the plugins you are using to the new directory.
-
-However, if you insist on updating in the same location, you can utilize the following command to update LeviLamina:
-
-```sh
-lip install --upgrade github.com/LiteLDev/LeviLamina
-```
-
-## Usage
-
-To start the server, simply run `bedrock_server_mod.exe`:
-
-```sh
-./bedrock_server_mod.exe
-```
-
 ## Security
 
 LeviLamina (hereinafter referred to as "this software") is developed and provided by LiteLDev (hereinafter referred to as "the developer"). This software is designed to enable users to extend the functionality of Minecraft Bedrock Server BDS (hereinafter referred to as "BDS") by loading plugins. This software is not affiliated with Mojang Studios (hereinafter referred to as "Mojang") or Microsoft Corporation (hereinafter referred to as "Microsoft"). The developer is not responsible for any content, quality, functionality, security or legality of any plugins loaded by this software. Users should use this software at their own discretion and assume all related risks.
