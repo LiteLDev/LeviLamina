@@ -2,6 +2,8 @@
 
 
 #include "ll/api/chrono/GameChrono.h"
+#include "ll/api/event/EventBus.h"
+#include "ll/api/event/server/ServerStartedEvent.h"
 #include "ll/api/i18n/I18n.h"
 #include "ll/api/io/FileUtils.h"
 #include "ll/api/memory/Hook.h"
@@ -14,6 +16,7 @@
 #include "ll/api/utils/StringUtils.h"
 #include "ll/api/utils/WinUtils.h"
 #include "ll/core/LeviLamina.h"
+
 
 #include "mc/deps/core/mce/UUID.h"
 #include "mc/server/common/PropertiesSettings.h"
@@ -40,7 +43,6 @@
 #include <sysinfoapi.h>
 #include <unordered_map>
 #include <variant>
-
 
 namespace ll {
 namespace statitics {
@@ -173,25 +175,18 @@ void initStatitics() {
     ll::logger.info("Statistics has been enabled, you can disasble statistics in configuration file"_tr());
 }
 
-LL_INSTANCE_HOOK(
-    PropertiesSettingsConstructor,
-    HookPriority::High,
-    "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
-    PropertiesSettings*,
-    std::string const& path
-) {
-    PropertiesSettings* settings = origin(path);
-    onlineModeEnabled            = settings->useOnlineAuthentication();
-    return settings;
-}
 } // namespace statitics
 
 void Statitics::call(bool enable) {
     if (enable) {
-        statitics::PropertiesSettingsConstructor::hook();
+        ll::event::EventBus::getInstance().emplaceListener<ll::event::ServerStartedEvent>(
+            [](ll::event::ServerStartedEvent&) {
+                if (ll::service::getPropertiesSettings().has_value()) {
+                    statitics::onlineModeEnabled = ll::service::getPropertiesSettings()->useOnlineAuthentication();
+                }
+            }
+        );
         statitics::initStatitics();
-    } else {
-        statitics::PropertiesSettingsConstructor::unhook();
     }
 };
 
