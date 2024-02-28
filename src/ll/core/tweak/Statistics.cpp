@@ -1,5 +1,6 @@
 #include "ll/core/tweak/Statistics.h"
-#include "httplib.h"
+
+
 #include "ll/api/chrono/GameChrono.h"
 #include "ll/api/i18n/I18n.h"
 #include "ll/api/io/FileUtils.h"
@@ -9,15 +10,21 @@
 #include "ll/api/service/Bedrock.h"
 #include "ll/api/service/ServerInfo.h"
 #include "ll/api/utils/ErrorUtils.h"
+#include "ll/api/utils/RandomUtils.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/api/utils/WinUtils.h"
 #include "ll/core/LeviLamina.h"
-#include "magic_enum.hpp"
+
+#include "mc/deps/core/mce/UUID.h"
 #include "mc/server/common/PropertiesSettings.h"
 #include "mc/world/actor/player/Player.h"
 #include "mc/world/level/Level.h"
+
+#include "httplib.h"
+#include "magic_enum.hpp"
 #include "nlohmann/json.hpp"
 #include "nlohmann/json_fwd.hpp"
+
 #include <chrono>
 #include <condition_variable>
 #include <exception>
@@ -88,46 +95,6 @@ nlohmann::json getCustomCharts() {
     return pluginsJson;
 }
 
-// generate random float between 0.0 and 1.0
-float randomFloat() {
-    std::random_device                    rd;
-    std::mt19937                          gen(rd());
-    std::uniform_real_distribution<float> dis(0.0, 1.0);
-    return dis(gen);
-}
-
-std::string generateUuidV4() {
-    static std::random_device              rd;
-    static std::mt19937                    gen(rd());
-    static std::uniform_int_distribution<> dis(0, 15);
-    static std::uniform_int_distribution<> dis2(8, 11);
-
-    std::stringstream ss;
-    int               i;
-    ss << std::hex;
-    for (i = 0; i < 8; i++) {
-        ss << dis(gen);
-    }
-    ss << "-";
-    for (i = 0; i < 4; i++) {
-        ss << dis(gen);
-    }
-    ss << "-4";
-    for (i = 0; i < 3; i++) {
-        ss << dis(gen);
-    }
-    ss << "-";
-    ss << dis2(gen);
-    for (i = 0; i < 3; i++) {
-        ss << dis(gen);
-    }
-    ss << "-";
-    for (i = 0; i < 12; i++) {
-        ss << dis(gen);
-    }
-    return ss.str();
-}
-
 ll::schedule::ServerTimeAsyncScheduler serverScheduler;
 ll::schedule::GameTickScheduler        gameScheduler;
 std::mutex                             submitMutex;
@@ -174,24 +141,25 @@ void submitData() {
     }
 }
 
-void InitStatitics() {
-    if (!std::filesystem::exists(plugin::getPluginsRoot() / u8"LeviLamina/data")) {
-        std::filesystem::create_directory(plugin::getPluginsRoot() / u8"LeviLamina/data");
+void initStatitics() {
+    namespace fs = std::filesystem;
+    if (!fs::exists(plugin::getPluginsRoot() / u8"LeviLamina/data")) {
+        fs::create_directory(plugin::getPluginsRoot() / u8"LeviLamina/data");
     }
-    if (!std::filesystem::exists(plugin::getPluginsRoot() / u8"LeviLamina/data/statiticsUuid")) {
-        std::string uuid = generateUuidV4();
+    if (!fs::exists(plugin::getPluginsRoot() / u8"LeviLamina/data/statiticsUuid")) {
+        std::string uuid = mce::UUID::random().asString();
         ll::file_utils::writeFile(plugin::getPluginsRoot() / u8"LeviLamina/data/statiticsUuid", uuid);
     } else {
         auto uuidFile = ll::file_utils::readFile(plugin::getPluginsRoot() / u8"LeviLamina/data/statiticsUuid");
         if (uuidFile.has_value()) {
             serverUuid = uuidFile.value();
         } else {
-            std::string uuid = generateUuidV4();
+            std::string uuid = mce::UUID::random().asString();
             ll::file_utils::writeFile(plugin::getPluginsRoot() / u8"LeviLamina/data/statiticsUuid", uuid);
         }
     }
-    auto initialDelay = (unsigned long long)(1000 * 60 * (3 + randomFloat() * 3));
-    auto secondDelay  = (unsigned long long)(1000 * 60 * (randomFloat() * 30));
+    auto initialDelay = (unsigned long long)(1000 * 60 * (3 + ll::random_utils::rand(0.0, 1.0) * 3));
+    auto secondDelay  = (unsigned long long)(1000 * 60 * (ll::random_utils::rand(0.0, 1.0) * 30));
     // ll::logger.debug("initialDelay: {}, secondDelay: {}", initialDelay, secondDelay);
     serverScheduler.add<ll::schedule::DelayTask>(std::chrono::milliseconds(initialDelay), [secondDelay]() {
         statitics::submitData();
@@ -225,7 +193,7 @@ struct Statitics::Impl {
 void Statitics::call(bool enable) {
     if (enable) {
         if (!impl) impl = std::make_unique<Impl>();
-        statitics::InitStatitics();
+        statitics::initStatitics();
 
     } else {
         impl.reset();

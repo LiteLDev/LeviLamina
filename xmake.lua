@@ -16,6 +16,7 @@ add_requires("nlohmann_json")
 add_requires("rapidjson v1.1.0")
 add_requires("mimalloc")
 add_requires("openssl 1.1.1-w")
+add_requires("zlib")
 add_requires("cpp-httplib", {configs={ssl=true, zlib=true}})
 
 -- Dependencies from liteldev-repo.
@@ -95,7 +96,7 @@ target("LeviLamina")
     )
     add_headerfiles("src/(ll/api/**.h)", "src/(mc/**.h)")
     add_includedirs("src", "$(buildir)/config")
-    add_packages("demangler", "mimalloc", "preloader")
+    add_packages("demangler", "mimalloc", "preloader", "cpp-httplib")
     add_packages(
         "entt",
         "expected-lite",
@@ -109,7 +110,6 @@ target("LeviLamina")
         "pcg_cpp",
         "pfr",
         "symbolprovider",
-        "cpp-httplib",
         { public = true }
     )
     add_shflags("/DELAYLOAD:bedrock_server.dll")
