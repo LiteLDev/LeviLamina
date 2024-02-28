@@ -186,17 +186,12 @@ LL_INSTANCE_HOOK(
 }
 } // namespace statitics
 
-struct Statitics::Impl {
-    ll::memory::HookRegistrar<statitics::PropertiesSettingsConstructor> r;
-};
-
 void Statitics::call(bool enable) {
     if (enable) {
-        if (!impl) impl = std::make_unique<Impl>();
+        statitics::PropertiesSettingsConstructor::hook();
         statitics::initStatitics();
-
     } else {
-        impl.reset();
+        statitics::PropertiesSettingsConstructor::unhook();
     }
 };
 
