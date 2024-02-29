@@ -174,7 +174,7 @@ void initStatitics() {
             });
         });
     });
-    ll::logger.info("Statistics has been enabled, you can disasble statistics in configuration file"_tr());
+    ll::logger.info("Statistics has been enabled, you can disable statistics in configuration file"_tr());
 }
 
 } // namespace statitics
