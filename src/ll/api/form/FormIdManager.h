@@ -10,6 +10,6 @@ private:
     static std::mutex mMutex;
 
 public:
-    static uint genFormId();
+    LLNDAPI static uint genFormId();
 };
 } // namespace ll::form
