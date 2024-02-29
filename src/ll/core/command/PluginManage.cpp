@@ -118,18 +118,18 @@ void registerPluginManageCommand() {
                             depenciesList.emplace_back(dep.name + " " + dep.version.value_or(""));
                         }
                     }
-                    output.success("Name: {0}", man.name);
+                    output.success("Name: {0}"_tr(man.name));
                     if (man.author.has_value()) {
-                        output.success("Author: {0}", man.author.value());
+                        output.success("Author: {0}"_tr(man.author.value()));
                     }
                     if (man.description.has_value()) {
-                        output.success("Description: {0}", man.description.value());
+                        output.success("Description: {0}"_tr(man.description.value()));
                     }
-                    output.success("Type: {0}", man.type);
+                    output.success("Type: {0}"_tr(man.type));
                     if (man.version.has_value()) {
-                        output.success("Version: {0}", man.version->to_string());
+                        output.success("Version: {0}"_tr(man.version->to_string()));
                     }
-                    output.success("Entry: {0}", man.entry);
+                    output.success("Entry: {0}"_tr(man.entry));
                 } else {
                     output.error("Plugin {0} not found"_tr(param.plugin));
                 }
