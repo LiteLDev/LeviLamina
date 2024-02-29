@@ -22,7 +22,7 @@ namespace ll::command {
 using namespace ll::i18n_literals;
 
 enum LeviCommandOperation : int { load = 0, unload = 1, reload = 2 };
-enum LeviCommandOperation2 : int { enable = 0, disable = 1, show = 2 };
+enum LeviCommandOperation2 : int { enable = 0, disable = 1, reenable = 2, show = 3 };
 struct LeviCommand {
     LeviCommandOperation operation;
     std::string          plugin;
@@ -131,10 +131,22 @@ void registerPluginManageCommand() {
                 }
                 break;
             }
+            case LeviCommandOperation2::reenable:
+                if (ll::plugin::PluginManagerRegistry::getInstance().hasPlugin(param.plugin)) {
+                    if (ll::plugin::PluginRegistrar::getInstance().disablePlugin(param.plugin)
+                        && ll::plugin::PluginRegistrar::getInstance().enablePlugin(param.plugin)) {
+                        output.success("Reenable plugin {0} successfully"_tr(param.plugin));
+                    } else {
+                        output.error("Failed to reenable plugin {0}"_tr(param.plugin));
+                    }
+                } else {
+                    output.error("Plugin {0} not found"_tr(param.plugin));
+                }
+                break;
+            default:
+                break;
             }
-        }>(
-
-        );
+        }>();
     cmd.overload().text("list").execute<[](CommandOrigin const& origin, CommandOutput& output) {
         unsigned short amount = 0;
         std::string    plugins;
