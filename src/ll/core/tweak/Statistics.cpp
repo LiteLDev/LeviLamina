@@ -125,9 +125,7 @@ void submitData() {
     std::unique_lock<std::mutex> lock(submitMutex);
     gameScheduler.add<ll::schedule::DelayTask>(ll::chrono::ticks(1), [&json]() {
         std::unique_lock<std::mutex> lock(submitMutex);
-        json["onlineMode"]              = ll::service::getPropertiesSettings().has_value()
-                                            ? ll::service::getPropertiesSettings()->useOnlineAuthentication() ? 1 : 0
-                                            : 0;
+        json["onlineMode"]              = onlineModeEnabled;
         json["service"]["customCharts"] = getCustomCharts();
         json["playerAmount"] =
             ll::service::getLevel().has_value() ? ll::service::getLevel()->getActivePlayerCount() : 0;
