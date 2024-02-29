@@ -15,6 +15,9 @@ add_requires("magic_enum")
 add_requires("nlohmann_json")
 add_requires("rapidjson v1.1.0")
 add_requires("mimalloc")
+add_requires("openssl 1.1.1-w")
+add_requires("zlib", {system = false})
+add_requires("cpp-httplib", {configs={ssl=true, zlib=true}})
 
 -- Dependencies from liteldev-repo.
 add_requires("pcg_cpp")
@@ -82,6 +85,7 @@ target("LeviLamina")
         "WIN32_LEAN_AND_MEAN",
         "ENTT_PACKED_PAGE=128",
         "LL_EXPORT",
+        "CPPHTTPLIB_OPENSSL_SUPPORT",
         "_HAS_CXX23=1" -- work around to enable c++23
     )
     add_files(
@@ -92,7 +96,7 @@ target("LeviLamina")
     )
     add_headerfiles("src/(ll/api/**.h)", "src/(mc/**.h)")
     add_includedirs("src", "$(buildir)/config")
-    add_packages("demangler", "mimalloc", "preloader")
+    add_packages("demangler", "mimalloc", "preloader", "cpp-httplib")
     add_packages(
         "entt",
         "expected-lite",

@@ -13,6 +13,7 @@
 #include "mc/server/ServerLevel.h"
 #include "mc/server/commands/CommandRegistry.h"
 #include "mc/server/commands/MinecraftCommands.h"
+#include "mc/server/common/DedicatedServer.h"
 #include "mc/server/common/PropertiesSettings.h"
 #include "mc/server/common/commands/AllowListCommand.h"
 #include "mc/world/Minecraft.h"
@@ -42,18 +43,22 @@ LL_INSTANCE_HOOK(MinecraftDestructor, HookPriority::High, "??1Minecraft@@UEAA@XZ
 // PropertiesSettings
 std::atomic<PropertiesSettings*> propertiesSettings;
 
-LL_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     PropertiesSettingsConstructor,
     HookPriority::High,
-    "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
-    PropertiesSettings*,
-    std::string const& path
+    DedicatedServer,
+    &DedicatedServer::runDedicatedServerLoop,
+    DedicatedServer::StartResult,
+    Core::FilePathManager&                  filePathManager,
+    PropertiesSettings&                     properties,
+    LevelSettings&                          settings,
+    AllowListFile&                          allowListFile,
+    std::unique_ptr<class PermissionsFile>& permissionsFile
 ) {
-    return propertiesSettings = origin(path);
-}
-LL_INSTANCE_HOOK(PropertiesSettingsDestructor, HookPriority::High, "??1PropertiesSettings@@QEAA@XZ", void) {
-    propertiesSettings = nullptr;
-    origin();
+    propertiesSettings               = &properties;
+    DedicatedServer::StartResult res = origin(filePathManager, properties, settings, allowListFile, permissionsFile);
+    propertiesSettings               = nullptr;
+    return res;
 }
 
 // ServerNetworkHandler
@@ -188,7 +193,6 @@ using HookReg = memory::HookRegistrar<
     MinecraftInit,
     MinecraftDestructor,
     PropertiesSettingsConstructor,
-    PropertiesSettingsDestructor,
     ServerNetworkHandlerInit,
     ServerNetworkHandlerDestructor,
     NetworkSystemConstructor,

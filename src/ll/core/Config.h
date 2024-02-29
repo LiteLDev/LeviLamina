@@ -9,13 +9,13 @@
 #include "ll/api/reflection/Dispatcher.h"
 #include "ll/core/tweak/ForceEnableCheatCommands.h"
 #include "ll/core/tweak/SimpleServerLogger.h"
-
+#include "ll/core/tweak/Statistics.h"
 
 namespace ll {
 
 struct LeviConfig {
 
-    int version = 20;
+    int version = 21;
 
     std::string language = "system";
     struct {
@@ -36,6 +36,7 @@ struct LeviConfig {
         struct {
             bool                                                       disableAutoCompactionLog = true;
             ll::reflection::Dispatcher<bool, ForceEnableCheatCommands> forceEnableCheatCommands = true;
+            ll::reflection::Dispatcher<bool, Statitics>                enableStatitics          = true;
         } tweak{};
 
         reflection::Dispatcher<SimpleServerLoggerConfig, SimpleServerLogger> simpleServerLogger{};
