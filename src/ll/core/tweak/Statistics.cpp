@@ -101,25 +101,26 @@ ll::schedule::ServerTimeAsyncScheduler serverScheduler;
 ll::schedule::GameTickScheduler        gameScheduler;
 std::mutex                             submitMutex;
 std::condition_variable                conditionVar;
-bool                                   onlineModeEnabled;
 std::string                            serverUuid;
 using ll::i18n_literals::operator""_tr;
 
 void submitData() {
     nlohmann::json json;
-    json["service"]["id"]  = 21138;
-    json["serverUUID"]     = serverUuid;
-    json["osName"]         = ll::win_utils::isWine() ? "Linux" : "Windows";
-    json["osArch"]         = "amd64";
-    json["coreCount"]      = getCpuCoreCount();
-    json["serverSoftware"] = "LeviLamina";
+    json["service"]["id"]            = 21138;
+    json["service"]["pluginVersion"] = ll::getLoaderVersion().to_string();
+    json["serverUUID"]               = serverUuid;
+    json["osName"]                   = ll::win_utils::isWine() ? "Linux" : "Windows";
+    json["osArch"]                   = "amd64";
+    json["coreCount"]                = getCpuCoreCount();
+    json["serverSoftware"]           = "LeviLamina";
+    json["minecraftVersion"]         = ll::string_utils::splitByPattern(ll::getBdsVersion().to_string(), "-")[0];
     std::unique_lock<std::mutex> lock(submitMutex);
     gameScheduler.add<ll::schedule::DelayTask>(ll::chrono::ticks(1), [&json]() {
         std::unique_lock<std::mutex> lock(submitMutex);
-        json["service"]["pluginVersion"] = ll::getLoaderVersion().to_string();
-        json["minecraftVersion"]         = ll::string_utils::splitByPattern(ll::getBdsVersion().to_string(), "-")[0];
-        json["onlineMode"]               = onlineModeEnabled ? 1 : 0;
-        json["service"]["customCharts"]  = getCustomCharts();
+        json["onlineMode"]              = ll::service::getPropertiesSettings().has_value()
+                                            ? ll::service::getPropertiesSettings()->useOnlineAuthentication() ? 1 : 0
+                                            : 0;
+        json["service"]["customCharts"] = getCustomCharts();
         json["playerAmount"] =
             ll::service::getLevel().has_value() ? ll::service::getLevel()->getActivePlayerCount() : 0;
         lock.unlock();
@@ -179,13 +180,6 @@ void initStatitics() {
 
 void Statitics::call(bool enable) {
     if (enable) {
-        ll::event::EventBus::getInstance().emplaceListener<ll::event::ServerStartedEvent>(
-            [](ll::event::ServerStartedEvent&) {
-                if (ll::service::getPropertiesSettings().has_value()) {
-                    statitics::onlineModeEnabled = ll::service::getPropertiesSettings()->useOnlineAuthentication();
-                }
-            }
-        );
         statitics::initStatitics();
     }
 };
