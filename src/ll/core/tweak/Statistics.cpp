@@ -45,7 +45,7 @@
 #include <variant>
 
 namespace ll {
-namespace statitics {
+namespace statistics {
 DWORD getCpuCoreCount() {
     SYSTEM_INFO systemInfo;
     GetSystemInfo(&systemInfo);
@@ -101,20 +101,27 @@ ll::schedule::ServerTimeAsyncScheduler serverScheduler;
 ll::schedule::GameTickScheduler        gameScheduler;
 std::mutex                             submitMutex;
 std::condition_variable                conditionVar;
-std::string                            serverUuid;
+
+std::string    serverUuid;
+bool           onlineModeEnabled;
+std::string    loaderVersion;
+bool           isWine;
+unsigned short coreCount;
+std::string    minecraftVersion;
+
 using ll::i18n_literals::operator""_tr;
 
 void submitData() {
     nlohmann::json json;
     json["service"]["id"]            = 21138;
-    json["service"]["pluginVersion"] = ll::getLoaderVersion().to_string();
+    json["service"]["pluginVersion"] = loaderVersion;
     json["serverUUID"]               = serverUuid;
-    json["osName"]                   = ll::win_utils::isWine() ? "Linux" : "Windows";
+    json["osName"]                   = isWine ? "Linux" : "Windows";
     json["osArch"]                   = "amd64";
     json["osVersion"]                = "";
-    json["coreCount"]                = getCpuCoreCount();
+    json["coreCount"]                = coreCount;
     json["bukkitName"]               = "LeviLamina";
-    json["bukkitVersion"]            = ll::string_utils::splitByPattern(ll::getBdsVersion().to_string(), "-")[0];
+    json["bukkitVersion"]            = minecraftVersion;
     std::unique_lock<std::mutex> lock(submitMutex);
     gameScheduler.add<ll::schedule::DelayTask>(ll::chrono::ticks(1), [&json]() {
         std::unique_lock<std::mutex> lock(submitMutex);
@@ -145,46 +152,56 @@ void submitData() {
     }
 }
 
-void initStatitics() {
+void initstatistics() {
     namespace fs = std::filesystem;
     if (!fs::exists(plugin::getPluginsRoot() / u8"LeviLamina/data")) {
         fs::create_directory(plugin::getPluginsRoot() / u8"LeviLamina/data");
     }
-    if (!fs::exists(plugin::getPluginsRoot() / u8"LeviLamina/data/statiticsUuid")) {
+    if (!fs::exists(plugin::getPluginsRoot() / u8"LeviLamina/data/statisticsUuid")) {
         std::string uuid = mce::UUID::random().asString();
-        ll::file_utils::writeFile(plugin::getPluginsRoot() / u8"LeviLamina/data/statiticsUuid", uuid);
+        ll::file_utils::writeFile(plugin::getPluginsRoot() / u8"LeviLamina/data/statisticsUuid", uuid);
     } else {
-        auto uuidFile = ll::file_utils::readFile(plugin::getPluginsRoot() / u8"LeviLamina/data/statiticsUuid");
+        auto uuidFile = ll::file_utils::readFile(plugin::getPluginsRoot() / u8"LeviLamina/data/statisticsUuid");
         if (uuidFile.has_value()) {
             serverUuid = uuidFile.value();
         } else {
             std::string uuid = mce::UUID::random().asString();
-            ll::file_utils::writeFile(plugin::getPluginsRoot() / u8"LeviLamina/data/statiticsUuid", uuid);
+            ll::file_utils::writeFile(plugin::getPluginsRoot() / u8"LeviLamina/data/statisticsUuid", uuid);
         }
     }
     auto initialDelay = (unsigned long long)(1000 * 60 * (3 + ll::random_utils::rand(0.0, 1.0) * 3));
     auto secondDelay  = (unsigned long long)(1000 * 60 * (ll::random_utils::rand(0.0, 1.0) * 30));
     // ll::logger.debug("initialDelay: {}, secondDelay: {}", initialDelay, secondDelay);
     serverScheduler.add<ll::schedule::DelayTask>(std::chrono::milliseconds(initialDelay), [secondDelay]() {
-        statitics::submitData();
+        statistics::submitData();
         serverScheduler.add<ll::schedule::DelayTask>(std::chrono::milliseconds(secondDelay), []() {
-            statitics::submitData();
+            statistics::submitData();
             serverScheduler.add<ll::schedule::RepeatTask>(std::chrono::seconds(60 * 30), []() {
-                statitics::submitData();
+                statistics::submitData();
             });
         });
     });
     ll::logger.info("Statistics has been enabled, you can disable statistics in configuration file"_tr());
 }
 
-} // namespace statitics
+} // namespace statistics
 
-void Statitics::call(bool enable) {
+void Statistics::call(bool enable) {
     if (enable) {
-        statitics::initStatitics();
+        ll::event::EventBus::getInstance().emplaceListener<ll::event::ServerStartedEvent>(
+            [](ll::event::ServerStartedEvent&) {
+                statistics::minecraftVersion =
+                    ll::string_utils::splitByPattern(ll::getBdsVersion().to_string(), "-")[0];
+                statistics::onlineModeEnabled = ll::service::getPropertiesSettings()->useOnlineAuthentication();
+            }
+        );
+        statistics::loaderVersion = ll::getLoaderVersion().to_string();
+        statistics::isWine        = ll::win_utils::isWine();
+        statistics::coreCount     = statistics::getCpuCoreCount();
+        statistics::initstatistics();
     }
 };
 
-Statitics::Statitics()  = default;
-Statitics::~Statitics() = default;
+Statistics::Statistics()  = default;
+Statistics::~Statistics() = default;
 } // namespace ll

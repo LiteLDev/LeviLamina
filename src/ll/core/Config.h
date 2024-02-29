@@ -36,7 +36,7 @@ struct LeviConfig {
         struct {
             bool                                                       disableAutoCompactionLog = true;
             ll::reflection::Dispatcher<bool, ForceEnableCheatCommands> forceEnableCheatCommands = true;
-            ll::reflection::Dispatcher<bool, Statitics>                enableStatitics          = true;
+            ll::reflection::Dispatcher<bool, Statistics>               enableStatitics          = true;
         } tweak{};
 
         reflection::Dispatcher<SimpleServerLoggerConfig, SimpleServerLogger> simpleServerLogger{};

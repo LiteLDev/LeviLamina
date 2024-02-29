@@ -4,9 +4,9 @@
 
 namespace ll {
 
-struct Statitics {
+struct Statistics {
     void call(bool);
-    Statitics();
-    ~Statitics();
+    Statistics();
+    ~Statistics();
 };
 } // namespace ll
