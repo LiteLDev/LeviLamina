@@ -111,9 +111,10 @@ void submitData() {
     json["serverUUID"]               = serverUuid;
     json["osName"]                   = ll::win_utils::isWine() ? "Linux" : "Windows";
     json["osArch"]                   = "amd64";
+    json["osVersion"]                = "";
     json["coreCount"]                = getCpuCoreCount();
-    json["serverSoftware"]           = "LeviLamina";
-    json["minecraftVersion"]         = ll::string_utils::splitByPattern(ll::getBdsVersion().to_string(), "-")[0];
+    json["bukkitName"]               = "LeviLamina";
+    json["bukkitVersion"]            = ll::string_utils::splitByPattern(ll::getBdsVersion().to_string(), "-")[0];
     std::unique_lock<std::mutex> lock(submitMutex);
     gameScheduler.add<ll::schedule::DelayTask>(ll::chrono::ticks(1), [&json]() {
         std::unique_lock<std::mutex> lock(submitMutex);
