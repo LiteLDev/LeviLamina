@@ -9,7 +9,7 @@
 namespace ll::command {
 LL_TYPE_INSTANCE_HOOK(
     registerBuiltinCommands,
-    ll::memory::HookPriority::Normal,
+    ll::memory::HookPriority::Highest,
     ServerInstanceEventCoordinator,
     &ServerInstanceEventCoordinator::sendServerThreadStarted,
     void,
