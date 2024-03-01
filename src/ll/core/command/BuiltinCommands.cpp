@@ -28,9 +28,18 @@ LL_TYPE_INSTANCE_HOOK(
     if (globalConfig.modules.commands.pluginManageCommand) {
         registerPluginManageCommand();
     }
+}
+LL_STATIC_HOOK(
+    registerTpdimCommands,
+    ll::memory::HookPriority::Normal,
+    TeleportCommand::setup,
+    void,
+    CommandRegistry& registry
+) {
+    origin(registry);
     if (globalConfig.modules.commands.tpdimCommand) {
         registerTpdimCommand();
     }
 }
-void registerCommands() { static memory::HookRegistrar<registerBuiltinCommands> hooks{}; }
+void registerCommands() { static memory::HookRegistrar<registerBuiltinCommands, registerTpdimCommands> hooks{}; }
 } // namespace ll::command
