@@ -9,6 +9,7 @@
 
 #include "mc/server/commands/CommandBlockName.h"
 #include "mc/world/AutomaticID.h"
+#include "mc/world/events/ServerInstanceEventCoordinator.h"
 
 using namespace ll::command;
 
@@ -29,17 +30,15 @@ struct ParamTest2 {
     std::unique_ptr<::Command> subcmd;
 };
 
-LL_AUTO_STATIC_HOOK(
-    testtttt,
+LL_AUTO_TYPE_INSTANCE_HOOK(
+    registerBuiltinCommands,
     ll::memory::HookPriority::Normal,
-    ServerCommands::setupStandardServer,
+    ServerInstanceEventCoordinator,
+    &ServerInstanceEventCoordinator::sendServerThreadStarted,
     void,
-    Minecraft&         server,
-    std::string const& networkCommands,
-    std::string const& networkTestCommands,
-    PermissionsFile*   permissionsFile
+    ::ServerInstance& ins
 ) {
-    origin(server, networkCommands, networkTestCommands, permissionsFile);
+    origin(ins);
 
     auto&       cmd    = CommandRegistrar::getInstance().getOrCreateCommand("t", "test tttttt");
     static auto lambda = [](CommandOrigin const&, CommandOutput& output, ParamTest const& param) {

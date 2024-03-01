@@ -13,8 +13,9 @@
 #include "mc/server/commands/CommandOrigin.h"
 #include "mc/server/commands/CommandOutput.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/server/commands/ServerCommands.h"
 #include "mc/world/actor/player/Player.h"
+#include "mc/world/events/ServerInstanceEventCoordinator.h"
+
 
 namespace ll::test::formtest {
 struct TestFormParam {
@@ -81,17 +82,15 @@ void registerFormTestCommand() {
         }>();
 }
 
-LL_STATIC_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     registerBuiltinCommands,
     ll::memory::HookPriority::Normal,
-    ServerCommands::setupStandardServer,
+    ServerInstanceEventCoordinator,
+    &ServerInstanceEventCoordinator::sendServerThreadStarted,
     void,
-    Minecraft&         server,
-    std::string const& networkCommands,
-    std::string const& networkTestCommands,
-    PermissionsFile*   permissionsFile
+    ::ServerInstance& ins
 ) {
-    origin(server, networkCommands, networkTestCommands, permissionsFile);
+    origin(ins);
     registerFormTestCommand();
 }
 
