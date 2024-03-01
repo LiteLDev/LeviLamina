@@ -1,9 +1,13 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/util/Random.h"
 
 class Randomize {
 public:
+    Bedrock::NonOwnerPointer<Random> mRandom; // this+0x8
+
     // prevent constructor by default
     Randomize& operator=(Randomize const&);
     Randomize(Randomize const&);
