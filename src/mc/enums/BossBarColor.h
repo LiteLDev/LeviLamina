@@ -9,6 +9,6 @@ enum class BossBarColor : int {
     Green         = 0x3,
     Yellow        = 0x4,
     Purple        = 0x5,
-    RebeccaPurple = 0x5,
-    White         = 0x6,
+    RebeccaPurple = 0x6,
+    White         = 0x7,
 };
