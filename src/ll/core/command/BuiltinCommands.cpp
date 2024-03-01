@@ -4,19 +4,18 @@
 
 #include "mc/server/commands/ServerCommands.h"
 #include "mc/server/commands/standard/TeleportCommand.h"
+#include "mc/world/events/ServerInstanceEventCoordinator.h"
 
 namespace ll::command {
-LL_STATIC_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     registerBuiltinCommands,
     ll::memory::HookPriority::Normal,
-    ServerCommands::setupStandardServer,
+    ServerInstanceEventCoordinator,
+    &ServerInstanceEventCoordinator::sendServerThreadStarted,
     void,
-    Minecraft&         server,
-    std::string const& networkCommands,
-    std::string const& networkTestCommands,
-    PermissionsFile*   permissionsFile
+    ::ServerInstance& ins
 ) {
-    origin(server, networkCommands, networkTestCommands, permissionsFile);
+    origin(ins);
     if (globalConfig.modules.commands.versionCommand) {
         registerVersionCommand();
     }
