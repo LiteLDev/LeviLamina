@@ -39,8 +39,7 @@ void registerPluginManageCommand() {
     cmd.overload<LeviCommand>()
         .required("operation")
         .required("plugin")
-        .execute<[](CommandOrigin const& origin, CommandOutput& output, LeviCommand const& param, ::Command const& cmd
-                 ) {
+        .execute<[](CommandOrigin const&, CommandOutput& output, LeviCommand const& param) {
             switch (param.operation) {
             case LeviCommandOperation::load:
                 if (!ll::plugin::PluginManagerRegistry::getInstance().hasPlugin(param.plugin)) {
@@ -83,8 +82,7 @@ void registerPluginManageCommand() {
     cmd.overload<LeviCommand2>()
         .required("operation")
         .required("plugin")
-        .execute<[](CommandOrigin const& origin, CommandOutput& output, LeviCommand2 const& param, ::Command const& cmd
-                 ) {
+        .execute<[](CommandOrigin const&, CommandOutput& output, LeviCommand2 const& param) {
             switch (param.operation) {
             case LeviCommandOperation2::enable:
                 if (ll::plugin::PluginManagerRegistry::getInstance().hasPlugin(param.plugin)) {
@@ -151,11 +149,11 @@ void registerPluginManageCommand() {
                 break;
             }
         }>();
-    cmd.overload().text("list").execute<[](CommandOrigin const& origin, CommandOutput& output) {
+    cmd.overload().text("list").execute<[](CommandOrigin const&, CommandOutput& output) {
         unsigned short amount = 0;
         std::string    plugins;
         ll::plugin::PluginManagerRegistry::getInstance().forEachPluginWithType(
-            [&amount, &plugins](std::string_view type, std::string_view name, plugin::Plugin&) {
+            [&amount, &plugins](std::string_view, std::string_view name, plugin::Plugin&) {
                 ++amount;
                 plugins = plugins.append(name).append(", ");
                 return true;

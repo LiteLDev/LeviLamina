@@ -18,6 +18,8 @@
 #include "ll/core/LeviLamina.h"
 
 
+#include "mc/common/BuildInfo.h"
+#include "mc/common/Common.h"
 #include "mc/deps/core/mce/UUID.h"
 #include "mc/server/common/PropertiesSettings.h"
 #include "mc/world/actor/player/Player.h"
@@ -45,27 +47,14 @@
 #include <variant>
 
 namespace ll {
-namespace statistics {
-DWORD getCpuCoreCount() {
+
+static DWORD getCpuCoreCount() {
     SYSTEM_INFO systemInfo;
     GetSystemInfo(&systemInfo);
     return systemInfo.dwNumberOfProcessors;
 }
 
-nlohmann::json addSimplePie(const std::string& key, const std::variant<std::string, int>& value) {
-    nlohmann::json json;
-    json["chartId"] = key;
-    nlohmann::json json2;
-    if (std::holds_alternative<std::string>(value)) {
-        json2["value"] = std::get<std::string>(value);
-    } else if (std::holds_alternative<int>(value)) {
-        json2["value"] = std::get<int>(value);
-    }
-    json["data"] = json2;
-    return json;
-}
-
-nlohmann::json addAdvancedPie(const std::string& key, const std::unordered_map<std::string_view, int>& value) {
+static nlohmann::json addAdvancedPie(const std::string& key, const std::unordered_map<std::string_view, int>& value) {
     nlohmann::json json;
     json["chartId"] = key;
     nlohmann::json json2;
@@ -78,7 +67,7 @@ nlohmann::json addAdvancedPie(const std::string& key, const std::unordered_map<s
     return json;
 }
 
-nlohmann::json getCustomCharts() {
+static nlohmann::json getCustomCharts() {
     nlohmann::json                            pluginsJson;
     std::unordered_map<std::string_view, int> platforms;
     if (ll::service::getLevel().has_value()) {
@@ -97,106 +86,91 @@ nlohmann::json getCustomCharts() {
     return pluginsJson;
 }
 
-ll::schedule::ServerTimeAsyncScheduler serverScheduler;
-ll::schedule::GameTickScheduler        gameScheduler;
-std::mutex                             submitMutex;
-std::condition_variable                conditionVar;
+struct Statistics::Impl {
+    ll::schedule::SystemTimeScheduler scheduler;
+    ll::thread::TickSyncTaskPool      pool;
 
-std::string    serverUuid;
-bool           onlineModeEnabled;
-std::string    loaderVersion;
-bool           isWine;
-unsigned short coreCount;
-std::string    minecraftVersion;
+    std::mutex              submitMutex;
+    std::condition_variable conditionVar;
 
-using ll::i18n_literals::operator""_tr;
+    httplib::Client client{"https://bstats.org"};
 
-void submitData() {
     nlohmann::json json;
-    json["service"]["id"]            = 21138;
-    json["service"]["pluginVersion"] = loaderVersion;
-    json["serverUUID"]               = serverUuid;
-    json["osName"]                   = isWine ? "Linux" : "Windows";
-    json["osArch"]                   = "amd64";
-    json["osVersion"]                = "";
-    json["coreCount"]                = coreCount;
-    json["bukkitName"]               = "LeviLamina";
-    json["bukkitVersion"]            = minecraftVersion;
-    json["onlineMode"]               = onlineModeEnabled ? 1 : 0;
-    std::unique_lock<std::mutex> lock(submitMutex);
-    gameScheduler.add<ll::schedule::DelayTask>(ll::chrono::ticks(1), [&json]() {
-        std::unique_lock<std::mutex> lock(submitMutex);
-        json["service"]["customCharts"] = getCustomCharts();
-        json["playerAmount"] =
-            ll::service::getLevel().has_value() ? ll::service::getLevel()->getActivePlayerCount() : 0;
-        lock.unlock();
-        conditionVar.notify_one();
-    });
-    conditionVar.wait(lock);
-    httplib::Headers headers = {
-        {"Accept-Encoding", "gzip"                            },
-        {"Accept",          "application/json"                },
-        {"Connection",      "close"                           },
-        {"Content-Length",  std::to_string(json.dump().size())},
-        {"User-Agent",      "Metrics-Service/1"               }
-    };
-    httplib::Client client("https://bstats.org");
-    // ll::logger.debug("Submit: {}", json.dump());
-    try {
-        auto result = client.Post("/api/v2/data/bukkit", headers, json.dump(), "application/json");
-        // ll::logger.debug("Body: {} Status: {}", result->body, result->status);
-    } catch (const std::exception& e) {
-        // ll::error_utils::printCurrentException(ll::logger);
-    }
-}
 
-void initstatistics() {
-    namespace fs = std::filesystem;
-    if (!fs::exists(plugin::getPluginsRoot() / u8"LeviLamina/data")) {
-        fs::create_directory(plugin::getPluginsRoot() / u8"LeviLamina/data");
+    httplib::Headers header = {
+        {"Accept-Encoding", "gzip"             },
+        {"Accept",          "application/json" },
+        {"Connection",      "close"            },
+        {"Content-Length",  "0"                },
+        {"User-Agent",      "Metrics-Service/1"}
+    };
+
+    void submitData() {
+        std::unique_lock lock(submitMutex);
+
+        pool.addTask([this]() {
+            std::unique_lock<std::mutex> lock(submitMutex);
+            json["onlineMode"] = static_cast<int>(ll::service::getPropertiesSettings()->useOnlineAuthentication());
+            json["service"]["customCharts"] = getCustomCharts();
+            json["playerAmount"] =
+                ll::service::getLevel().has_value() ? ll::service::getLevel()->getActivePlayerCount() : 0;
+            lock.unlock();
+            conditionVar.notify_one();
+        });
+        conditionVar.wait(lock);
+
+        try {
+            auto body                             = json.dump();
+            header.find("Content-Length")->second = std::to_string(body.size());
+            client.Post("/api/v2/data/bukkit", header, body, "application/json");
+        } catch (...) {}
     }
-    if (!fs::exists(plugin::getPluginsRoot() / u8"LeviLamina/data/statisticsUuid")) {
-        std::string uuid = mce::UUID::random().asString();
-        ll::file_utils::writeFile(plugin::getPluginsRoot() / u8"LeviLamina/data/statisticsUuid", uuid);
-    } else {
-        auto uuidFile = ll::file_utils::readFile(plugin::getPluginsRoot() / u8"LeviLamina/data/statisticsUuid");
-        if (uuidFile.has_value()) {
-            serverUuid = uuidFile.value();
-        } else {
+
+    Impl() {
+        using namespace ll::i18n_literals;
+        using namespace ll::chrono_literals;
+        namespace fs = std::filesystem;
+
+        if (!fs::exists(plugin::getPluginsRoot() / u8"LeviLamina/data")) {
+            fs::create_directory(plugin::getPluginsRoot() / u8"LeviLamina/data");
+        }
+        if (!fs::exists(plugin::getPluginsRoot() / u8"LeviLamina/data/statisticsUuid")) {
             std::string uuid = mce::UUID::random().asString();
             ll::file_utils::writeFile(plugin::getPluginsRoot() / u8"LeviLamina/data/statisticsUuid", uuid);
+        } else {
+            auto uuidFile = ll::file_utils::readFile(plugin::getPluginsRoot() / u8"LeviLamina/data/statisticsUuid");
+            if (uuidFile.has_value()) {
+                json["serverUUID"] = uuidFile.value();
+            } else {
+                std::string uuid = mce::UUID::random().asString();
+                ll::file_utils::writeFile(plugin::getPluginsRoot() / u8"LeviLamina/data/statisticsUuid", uuid);
+            }
         }
-    }
-    auto initialDelay = (unsigned long long)(1000 * 60 * (3 + ll::random_utils::rand(0.0, 1.0) * 3));
-    auto secondDelay  = (unsigned long long)(1000 * 60 * (ll::random_utils::rand(0.0, 1.0) * 30));
-    // ll::logger.debug("initialDelay: {}, secondDelay: {}", initialDelay, secondDelay);
-    serverScheduler.add<ll::schedule::DelayTask>(std::chrono::milliseconds(initialDelay), [secondDelay]() {
-        statistics::submitData();
-        serverScheduler.add<ll::schedule::DelayTask>(std::chrono::milliseconds(secondDelay), []() {
-            statistics::submitData();
-            serverScheduler.add<ll::schedule::RepeatTask>(std::chrono::seconds(60 * 30), []() {
-                statistics::submitData();
+        json["service"]["id"]            = 21138;
+        json["service"]["pluginVersion"] = ll::getLoaderVersion().to_string();
+        json["osName"]                   = ll::win_utils::isWine() ? "Linux" : "Windows";
+        json["osArch"]                   = "amd64";
+        json["osVersion"]                = "";
+        json["coreCount"]                = getCpuCoreCount();
+        json["bukkitName"]               = "LeviLamina";
+        json["bukkitVersion"]            = Common::getBuildInfo().mBuildId;
+
+        scheduler.add<ll::schedule::DelayTask>(1.0min * ll::random_utils::rand(3.0, 6.0), [this]() {
+            submitData();
+            scheduler.add<ll::schedule::DelayTask>(1.0min * ll::random_utils::rand(1.0, 30.0), [this]() {
+                submitData();
+                scheduler.add<ll::schedule::RepeatTask>(30min, [this]() { submitData(); });
             });
         });
-    });
-    ll::logger.info("Statistics has been enabled, you can disable statistics in configuration file"_tr());
-}
-
-} // namespace statistics
+        ll::logger.info("Statistics has been enabled, you can disable statistics in configuration file"_tr());
+    }
+};
 
 void Statistics::call(bool enable) {
-    if (enable) {
-        ll::event::EventBus::getInstance().emplaceListener<ll::event::ServerStartedEvent>(
-            [](ll::event::ServerStartedEvent&) {
-                statistics::minecraftVersion =
-                    ll::string_utils::splitByPattern(ll::getBdsVersion().to_string(), "-")[0];
-                statistics::onlineModeEnabled = ll::service::getPropertiesSettings()->useOnlineAuthentication();
-            }
-        );
-        statistics::loaderVersion = ll::getLoaderVersion().to_string();
-        statistics::isWine        = ll::win_utils::isWine();
-        statistics::coreCount     = statistics::getCpuCoreCount();
-        statistics::initstatistics();
+    if (enable && !impl) {
+        impl = std::make_unique<Impl>();
+    } else if (!enable) {
+        impl.reset();
     }
 };
 
