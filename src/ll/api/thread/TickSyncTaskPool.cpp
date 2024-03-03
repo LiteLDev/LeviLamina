@@ -1,5 +1,7 @@
 #include "ll/api/thread/TickSyncTaskPool.h"
 #include "ll/api/memory/Hook.h"
+#include "ll/api/utils/ErrorUtils.h"
+#include "ll/core/LeviLamina.h"
 
 #include "mc/server/ServerLevel.h"
 #include "mc/world/level/Tick.h"
@@ -20,7 +22,12 @@ LL_TYPE_INSTANCE_HOOK(TickSyncTaskPoolWorker, HookPriority::Low, ServerLevel, &S
             std::lock_guard lockp(pool.mutex);
             auto            num = std::min(pool.tasksPerTick, pool.tasks.size());
             for (size_t i = 0; i < num; i++) {
-                pool.tasks.front()();
+                try {
+                    pool.tasks.front()();
+                } catch (...) {
+                    logger.error("Error in TickSyncTaskPool:");
+                    error_utils::printCurrentException(logger);
+                }
                 pool.tasks.pop();
             }
         }
