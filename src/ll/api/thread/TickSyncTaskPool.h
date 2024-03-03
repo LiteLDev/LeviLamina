@@ -13,17 +13,8 @@
 #include "ll/api/base/StdInt.h"
 
 namespace ll::thread {
-class TickSyncTaskPool;
-namespace detail {
-struct TickSyncTaskPoolWorker;
-LLETAPI std::mutex poolListMutex;
-LLETAPI std::atomic_size_t poolListSize;
-LLETAPI std::vector<std::reference_wrapper<TickSyncTaskPool>> poolList;
-LLAPI void                                                    notifyWorker();
-}; // namespace detail
-
 class TickSyncTaskPool {
-    friend detail::TickSyncTaskPoolWorker;
+    struct Worker;
 
 private:
     std::queue<std::function<void()>> tasks;
@@ -32,21 +23,8 @@ private:
     size_t                            id;
 
 public:
-    explicit TickSyncTaskPool(size_t tasksPerTick = ~0ui64) : tasksPerTick(tasksPerTick) {
-        using namespace detail;
-        std::lock_guard lock(poolListMutex);
-        id = poolList.size();
-        poolList.emplace_back(std::ref(*this));
-        ++poolListSize;
-        notifyWorker();
-    }
-    ~TickSyncTaskPool() {
-        using namespace detail;
-        std::lock_guard lock(poolListMutex);
-        std::swap(poolList[id], poolList.back());
-        poolList.pop_back();
-        --poolListSize;
-    }
+    LLAPI TickSyncTaskPool(size_t tasksPerTick = ~0ui64);
+    LLAPI ~TickSyncTaskPool();
 
     template <class F, class... Args>
     decltype(auto) addTask(F&& f, Args&&... args) {

@@ -59,7 +59,7 @@ struct LeviConfig {
     } modules{};
 };
 
-LLETAPI LeviConfig globalConfig;
+extern LeviConfig globalConfig;
 
 bool loadLeviConfig();
 
