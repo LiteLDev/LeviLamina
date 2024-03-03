@@ -90,9 +90,6 @@ struct Statistics::Impl {
     ll::schedule::SystemTimeScheduler scheduler;
     ll::thread::TickSyncTaskPool      pool;
 
-    std::mutex              submitMutex;
-    std::condition_variable conditionVar;
-
     httplib::Client client{"https://bstats.org"};
 
     nlohmann::json json;
@@ -106,19 +103,13 @@ struct Statistics::Impl {
     };
 
     void submitData() {
-        std::unique_lock lock(submitMutex);
-
         pool.addTask([this]() {
-            std::unique_lock<std::mutex> lock(submitMutex);
-            json["onlineMode"] = static_cast<int>(ll::service::getPropertiesSettings()->useOnlineAuthentication());
-            json["service"]["customCharts"] = getCustomCharts();
-            json["playerAmount"] =
-                ll::service::getLevel().has_value() ? ll::service::getLevel()->getActivePlayerCount() : 0;
-            lock.unlock();
-            conditionVar.notify_one();
-        });
-        conditionVar.wait(lock);
-
+                json["onlineMode"] = static_cast<int>(ll::service::getPropertiesSettings()->useOnlineAuthentication());
+                json["service"]["customCharts"] = getCustomCharts();
+                json["playerAmount"] =
+                    ll::service::getLevel().has_value() ? ll::service::getLevel()->getActivePlayerCount() : 0;
+            }
+        ).wait();
         try {
             auto body                             = json.dump();
             header.find("Content-Length")->second = std::to_string(body.size());
