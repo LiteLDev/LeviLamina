@@ -62,7 +62,7 @@
 
 ## 创建插件仓库
 
-访问[levilamina-plugin-template](https://github.com/futrime/levilamina-plugin-template)，点击`Use this template`以使用这个模板初始化你的插件仓库。
+访问[levilamina-plugin-template](https://github.com/LiteLDev/levilamina-plugin-template)，点击`Use this template`以使用这个模板初始化你的插件仓库。
 
 ![Create from template](img/levilamina-plugin-template.png)
 
@@ -80,7 +80,7 @@ target("better-suicide") -- Change this to your plugin name.
 {
     "format_version": 2,
     "tooth": "github.com/futrime/better-suicide",
-    "version": "0.5.0",
+    "version": "0.6.0",
     "info": {
         "name": "better-suicide",
         "description": "Allow players to suicide in Minecraft.",
@@ -90,9 +90,9 @@ target("better-suicide") -- Change this to your plugin name.
             "plugin"
         ]
     },
-    "asset_url": "https://github.com/futrime/better-suicide/releases/download/v0.5.0/better-suicide-windows-x64.zip",
+    "asset_url": "https://github.com/futrime/better-suicide/releases/download/v0.6.0/better-suicide-windows-x64.zip",
     "prerequisites": {
-        "github.com/LiteLDev/LeviLamina": "0.6.x"
+        "github.com/LiteLDev/LeviLamina": "0.9.x"
     },
     "files": {
         "place": [
@@ -103,6 +103,7 @@ target("better-suicide") -- Change this to your plugin name.
         ]
     }
 }
+
 ```
 
 然后，你需要修改`LICENSE`文件中的版权信息。你可以在[这里](https://choosealicense.com/licenses/)选择一个适合你的插件的开源协议。请放心，你的插件不需要开源，因为插件模板使用了CC0协议，你可以随意修改或删除`LICENSE`文件。但是，我们建议你使用一个开源协议，因为这样可以让其他人更容易地使用你的插件和帮助你改进你的插件。
@@ -161,7 +162,9 @@ xmake
 #include <fmt/format.h>
 #include <functional>
 #include <ll/api/Config.h>
-#include <ll/api/command/DynamicCommand.h>
+#include <ll/api/command/Command.h>
+#include <ll/api/command/CommandHandle.h>
+#include <ll/api/command/CommandRegistrar.h>
 #include <ll/api/data/KeyValueDB.h>
 #include <ll/api/event/EventBus.h>
 #include <ll/api/event/ListenerBase.h>
@@ -203,41 +206,20 @@ auto enable(ll::plugin::NativePlugin& /*self*/) -> bool {
         throw std::runtime_error("failed to get command registry");
     }
 
-    auto command =
-        DynamicCommand::createCommand(commandRegistry, "suicide", "Commits suicide.", CommandPermissionLevel::Any);
-    command->addOverload();
-    command->setCallback(
-        [&logger](DynamicCommand const&, CommandOrigin const& origin, CommandOutput& output, std::unordered_map<std::string, DynamicCommand::Result>&) {
-            auto* entity = origin.getEntity();
-            if (entity == nullptr || !entity->isType(ActorType::Player)) {
-                output.error("Only players can commit suicide");
-                return;
-            }
-
-            auto* player = static_cast<Player*>(entity); // NOLINT(cppcoreguidelines-pro-type-static-cast-downcast)
-            player->kill();
-
-            logger.info("{} killed themselves", player->getRealName());
+    auto& command = ll::command::CommandRegistrar::getInstance()
+                        .getOrCreateCommand("suicide", "Commits suicide.", CommandPermissionLevel::Any);
+    command.overload().execute<[](CommandOrigin const& origin, CommandOutput& output) {
+        auto* entity = origin.getEntity();
+        if (entity == nullptr || !entity->isType(ActorType::Player)) {
+            output.error("Only players can commit suicide");
+            return;
         }
-    );
-    DynamicCommand::setup(commandRegistry, std::move(command));
 
-    // ...
+        auto* player = static_cast<Player*>(entity); // NOLINT(cppcoreguidelines-pro-type-static-cast-downcast)
+        player->kill();
 
-    return true;
-}
-
-auto disable(ll::plugin::NativePlugin& /*self*/) -> bool {
-
-    // ...
-
-    // Unregister commands.
-    auto commandRegistry = ll::service::getCommandRegistry();
-    if (!commandRegistry) {
-        throw std::runtime_error("failed to get command registry");
-    }
-
-    commandRegistry->unregisterCommand("suicide");
+        getSelfPluginInstance().getLogger().info("{} killed themselves", player->getRealName());
+    }>();
 
     // ...
 
@@ -254,14 +236,14 @@ if (!commandRegistry) {
 }
 ```
 
-动态指令系统支持使用`DynamicCommand::createCommand()`函数直接注册指令。
+LeviLamina的指令系统支持使用`CommandRegistrar::getOrCreateCommand()`函数直接注册或获取指令。
 
 ```cpp
-auto command =
-    DynamicCommand::createCommand(commandRegistry, "suicide", "Commits suicide.", CommandPermissionLevel::Any);
+auto& command = ll::command::CommandRegistrar::getInstance()
+                        .getOrCreateCommand("suicide", "Commits suicide.", CommandPermissionLevel::Any);
 ```
 
-其中，第二个参数是指令本身，即在控制台或聊天栏内输入的字符。虽然尚未测试各种特殊字符能否生效，但我们仍然建议只包含小写英文字母。第三个参数是指令简介，在聊天栏输入指令的一部分时，会在上方以半透明灰色的形式显示候选指令及其简介。第四个参数是指令的权限等级，其定义如下。其中，如果我们希望生存模式下的普通玩家也能执行，应当选择`Any`。而`GameDirectors`对应至少为创造模式的玩家的权限，`Admin`对应至少为OP的权限，`Host`对应控制台的权限。
+其中，第一个参数是指令本身，即在控制台或聊天栏内输入的字符。虽然尚未测试各种特殊字符能否生效，但我们仍然建议只包含小写英文字母。第二个参数是指令简介，在聊天栏输入指令的一部分时，会在上方以半透明灰色的形式显示候选指令及其简介。第三个参数是指令的权限等级，其定义如下。其中，如果我们希望生存模式下的普通玩家也能执行，应当选择`Any`。而`GameDirectors`对应至少为创造模式的玩家的权限，`Admin`对应至少为OP的权限，`Host`对应控制台的权限。
 
 ```cpp
 enum class CommandPermissionLevel : schar {
@@ -277,32 +259,38 @@ enum class CommandPermissionLevel : schar {
 然后，我们需要为指令增加一个重载并设置对应的回调。
 
 ```cpp
-command->addOverload();
-command->setCallback([&logger](DynamicCommand const&,
-                        CommandOrigin const& origin,
-                        CommandOutput&       output,
-                        std::unordered_map<std::string, DynamicCommand::Result>&) {
+command.overload().execute<[](CommandOrigin const& origin, CommandOutput& output) {
     // ...
-});
+}>();
 ```
 
 !!! note
-    指令的重载意味着指令的一个模式，例如`dyncmd <add|remove> <testString:string>` 是一个重载，而`dyncmd list`是另一个重载。下面是一个例子，来自LeviLamina的测试样例：
+    指令的重载意味着指令的一个模式，例如`ll <load|unload|reload> <plugin:string>` 是一个重载，而`ll list`是另一个重载。下面是一个例子，来自LeviLamina的插件管理指令：
 
-    ```cpp
-    auto command =
-        DynamicCommand::createCommand(registry, "testcmd", "dynamic command", CommandPermissionLevel::GameDirectors);
+```cpp
+enum LeviCommandOperation : int { load = 0, unload = 1, reload = 2 };
 
-    auto& optionsAdd  = command->setEnum("TestOperation1", {"add", "remove"});
-    auto& optionsList = command->setEnum("TestOperation2", {"list"});
+struct LeviCommand {
+    LeviCommandOperation operation;
+    std::string          plugin;
+};
 
-    command->mandatory("testEnum", ParamType::Enum, optionsAdd, CommandParameterOption::EnumAutocompleteExpansion);
-    command->mandatory("testEnum", ParamType::Enum, optionsList, CommandParameterOption::EnumAutocompleteExpansion);
-    command->mandatory("testString", ParamType::String);
-
-    command->addOverload({optionsAdd, "testString"}); // dyncmd <add|remove> <testString:string>
-    command->addOverload({"TestOperation2"});         // dyncmd <list>
-    ```
+void registerPluginManageCommand() {
+    auto& cmd = CommandRegistrar::getInstance()
+                .getOrCreateCommand("levilamina", "LeviLamina's main command"_tr(), CommandPermissionLevel::Host);
+    ll::service::getCommandRegistry()->registerAlias("levilamina", "ll");
+    cmd.overload<LeviCommand>()
+        .required("operation")
+        .required("plugin")
+        .execute<[](CommandOrigin const& origin, CommandOutput& output, LeviCommand const& param, ::Command const& cmd
+                 ) {
+            // ...
+        }>(); // ll <load|unload|reload> <plugin:string>
+    cmd.overload().text("list").execute<[](CommandOrigin const& origin, CommandOutput& output) {
+        // ...
+    }>(); // ll list
+}
+```
 
 在回调函数中，我们首先尝试获取指令的执行来源。在这里，我们需要进行一个判定，因为控制台、命令方块乃至各种实体都能够执行指令，但自杀插件应当只响应玩家的请求。如果错误的执行来源执行了自杀指令，那么应当提示一个错误信息。
 
@@ -320,7 +308,7 @@ if (entity == nullptr || !entity->isType(ActorType::Player)) {
 auto* player = static_cast<Player*>(entity);
 player->kill();
 
-logger.info("{} killed themselves", player->getRealName());
+getSelfPluginInstance().getLogger().info("{} killed themselves", player->getRealName());
 ```
 
 !!! warning
@@ -329,25 +317,9 @@ logger.info("{} killed themselves", player->getRealName());
 !!! tip
     你可能注意到另一个函数`player->getName()`，但我们并没有使用它。这是因为玩家的名字是可以通过插件或其它方式进行修改的，而`player->getRealName()`的结果则是（一般来说较为）固定的。
 
-到这一步，指令对象已经配置完毕，我们调用`DynamicCommand::setup()`，将指令对象加载到游戏中。注意这里需要使用`std::move()`，因为其接收一个右值引用。
-
-```cpp
-DynamicCommand::setup(event.registry(), std::move(command));
-```
+到这一步，指令对象已经配置完毕，当服务器启动后，指令对象将被加载到游戏中。
 
 在`enable()`函数的末尾，返回一个`true`，代表插件启用成功。如果在`enable()`函数中返回了`false`，则LeviLamina会认为插件启用失败，并在控制台上提示错误信息。
-
-在`disable()`函数中，我们需要解注册指令：
-
-```cpp
-// Unregister commands.
-auto commandRegistry = ll::service::getCommandRegistry();
-if (!commandRegistry) {
-    throw std::runtime_error("failed to get command registry");
-}
-
-commandRegistry->unregisterCommand("suicide");
-```
 
 ## 读取配置文件
 
