@@ -1,15 +1,17 @@
-# 快速入门（中国玩家特供版）
+# 快速入门
 
 ## 开始之前
 
-该项目使用 [lip](https://github.com/lippkg/lip)。如果您尚未在本地安装，请前往查看。
+我们强烈推荐你使用 [lip](https://github.com/lippkg/lip) 来进行插件安装。如果您尚未在本地安装，请前往查看。
+
+以下内容针对使用 lip 的情况下进行快速入门。
 
 !!! tip
     不习惯使用命令行工具？你可以使用[LipUI](https://github.com/lippkg/LipUI)。
 
 ## 配置代理或镜像
 
-如果你本地有代理可用，使用以下命令配置代理：
+如果你有代理可用，使用以下命令配置代理（支持socks5，http，https）：
 
 ```sh
 lip config ProxyURL <proxy-url>
@@ -35,7 +37,7 @@ lip config https://goproxy.cn
 lip config https://github.bibk.top
 ```
 
-这两个镜像都是我们在中国大陆测试过的，但是你也可以使用其他镜像。
+这两个镜像我们已在中国大陆测试过可用，当然你仍然可以使用其他镜像。
 
 ## 安装BDS
 

@@ -2,7 +2,9 @@
 
 ## Before You Begin
 
-This project uses [lip](https://github.com/lippkg/lip). Go check them out if you don't have them locally installed.
+We strongly recommend using [lip](https://github.com/lippkg/lip) for plugin installation. If you have not installed it locally yet, please go ahead and check it out.
+
+The following content is for a quick start with using lip.
 
 !!! tip
     Not accustomed to using command-line tools? You can use [LipUI](https://github.com/lippkg/LipUI).
@@ -77,3 +79,26 @@ ERROR: failed to resolve dependencies: installed tooth github.com/tooth-hub/othe
 ```
 
 This means that the version of the plugin you tried to install is incompatible with the installed version of another plugin, LeviLamina or BDS. Try to install another version of the plugin or update the installed plugin.
+
+If your network cannot directly access GitHub or GoProxy, you can set up a proxy or mirror:
+
+### Configuring a Proxy or Mirror
+
+If you have a proxy available , use the following command to configure the proxy (supports socks5, http, https):
+
+```sh
+lip config ProxyURL <proxy-url>
+```
+
+For example, if your proxy address is `http://127.0.0.1:8080`, you can use the following command to configure the proxy:
+
+```sh
+lip config ProxyURL http://127.0.0.1:8080
+```
+
+If you do not have a proxy available locally, you can use the following commands to configure a mirror source:
+
+```sh
+lip config GoModuleProxyURL <go-module-proxy-url>
+lip config GitHubMirrorURL <github-mirror-url>
+```
