@@ -24,7 +24,7 @@ class CommandHandle {
     char const* addText(std::string_view);
 
 public:
-    CommandHandle(CommandRegistrar& registrar, CommandRegistry::Signature* signature, bool owned);
+    CommandHandle(CommandRegistrar& registrar, CommandRegistry::Signature& signature, bool owned);
     ~CommandHandle();
 
     template <reflection::Reflectable Params = EmptyParam>
