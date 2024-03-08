@@ -49,8 +49,7 @@ static bool checkVersion(Manifest const& real, Dependency const& need) {
     if (!real.version || !need.version) {
         return true;
     }
-    // TODO: check version range
-    return true;
+    return real.version->major == need.version->major && (*real.version) >= (*need.version);
 }
 
 enum class DirState {
@@ -96,7 +95,7 @@ void PluginRegistrar::loadAllPlugins() {
 
     std::unordered_map<std::string, Manifest> manifests;
 
-    ll::logger.info("Loading plugins..."_tr());
+    logger.info("Loading plugins..."_tr());
 
     auto& registry = PluginManagerRegistry::getInstance();
 
@@ -135,7 +134,7 @@ void PluginRegistrar::loadAllPlugins() {
                     error = true;
 #if _HAS_CXX23
                     logger.error("Missing dependency {}"_tr(
-                        dependency.version.transform([&](auto& ver) { return dependency.name + " " + ver; }
+                        dependency.version.transform([&](auto& ver) { return dependency.name + " " + ver.to_string(); }
                         ).value_or(dependency.name)
                     ));
 #endif
@@ -170,7 +169,7 @@ void PluginRegistrar::loadAllPlugins() {
 #if _HAS_CXX23
                 logger.error("{} conflicts with {}"_tr(
                     name,
-                    conflict.version.transform([&](auto& ver) { return conflict.name + " " + ver; }
+                    conflict.version.transform([&](auto& ver) { return conflict.name + " " + ver.to_string(); }
                     ).value_or(conflict.name)
                 ));
 #endif
@@ -250,7 +249,7 @@ void PluginRegistrar::loadAllPlugins() {
 
     static ll::memory::HookRegistrar<EnableAllPlugins, DisableAllPlugins> reg;
 
-    ll::logger.info("{} plugin(s) loaded"_tr(loadedCount));
+    logger.info("{} plugin(s) loaded"_tr(loadedCount));
 }
 
 std::vector<std::string> PluginRegistrar::getSortedPluginNames() const {
@@ -286,7 +285,7 @@ LL_TYPE_INSTANCE_HOOK(
             }
         }
         if (count > 0) {
-            ll::logger.info("{} plugin(s) enabled in ({:.1f}s)"_tr(
+            logger.info("{} plugin(s) enabled in ({:.1f}s)"_tr(
                 count,
                 std::chrono::duration_cast<std::chrono::duration<double>>(std::chrono::steady_clock::now() - begin)
                     .count()

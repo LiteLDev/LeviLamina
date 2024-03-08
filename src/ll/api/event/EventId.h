@@ -11,7 +11,7 @@ public:
 
     [[nodiscard]] constexpr explicit EventId(std::string_view name) noexcept
     : name(name),
-      hash(ll::hash_utils::do_hash(name)) {}
+      hash(ll::hash_utils::doHash(name)) {}
 
     [[nodiscard]] constexpr bool operator==(EventId other) const noexcept {
         return hash == other.hash && name == other.name;

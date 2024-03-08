@@ -17,7 +17,9 @@ public:
     [[nodiscard]] constexpr ServiceId(std::string_view name, size_t version) noexcept
     : name(name),
       version(version),
-      hash(ll::hash_utils::hashCombine(ll::hash_utils::do_hash(name), version)) {}
+      hash(ll::hash_utils::doHash(name)) {
+        ll::hash_utils::hashCombine(version, hash);
+    }
 
     template <class T>
     [[nodiscard]] constexpr ServiceId(auto_name_t<T>, size_t version) noexcept

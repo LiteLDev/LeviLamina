@@ -16,6 +16,7 @@
 #include <variant>
 #include <vector>
 
+#include "ll/api/utils/HashUtils.h"
 #include "ll/api/utils/StringUtils.h"
 
 namespace ll::data {
@@ -311,3 +312,21 @@ namespace literals {
 } // namespace literals
 
 } // namespace ll::data
+
+namespace std {
+template <>
+struct hash<ll::data::PreRelease> {
+    size_t operator()(ll::data::PreRelease const& d) const noexcept { return ll::hash_utils::hashType(d.values); }
+};
+template <>
+struct hash<ll::data::Version> {
+    size_t operator()(ll::data::Version const& v) const noexcept {
+        size_t seed{v.major};
+        ll::hash_utils::hashCombine(v.minor, seed);
+        ll::hash_utils::hashCombine(v.patch, seed);
+        ll::hash_utils::hashCombine(std::hash<std::optional<ll::data::PreRelease>>{}(v.preRelease), seed);
+        ll::hash_utils::hashCombine(std::hash<std::optional<std::string>>{}(v.build), seed);
+        return seed;
+    }
+};
+} // namespace std

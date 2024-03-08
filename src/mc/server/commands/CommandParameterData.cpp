@@ -23,6 +23,9 @@ CommandParameterData::CommandParameterData(
 
 bool CommandParameterData::operator==(CommandParameterData const& other) const {
     return mTypeIndex == other.mTypeIndex && mName == other.mName
-        && (strcmp(mEnumNameOrPostfix, other.mEnumNameOrPostfix) == 0) && (strcmp(mUnknown, other.mUnknown) == 0)
+        && ((mEnumNameOrPostfix == other.mEnumNameOrPostfix)
+            || (mEnumNameOrPostfix && other.mEnumNameOrPostfix
+                && strcmp(mEnumNameOrPostfix, other.mEnumNameOrPostfix) == 0))
+        && ((mUnknown == other.mUnknown) || (mUnknown && other.mUnknown && strcmp(mUnknown, other.mUnknown) == 0))
         && mParamType == other.mParamType && mIsOptional == other.mIsOptional && mOptions == other.mOptions;
 }

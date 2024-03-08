@@ -10,8 +10,8 @@
 
 namespace ll::plugin {
 struct Dependency {
-    std::string                name;
-    std::optional<std::string> version; // TODO: add version range
+    std::string                  name;
+    std::optional<data::Version> version;
 
     [[nodiscard]] constexpr bool operator==(Dependency const& other) const {
         return name == other.name && version == other.version;
@@ -23,7 +23,7 @@ template <>
 struct hash<ll::plugin::Dependency> {
     size_t operator()(ll::plugin::Dependency const& d) const noexcept {
         size_t hash = std::hash<std::string>{}(d.name);
-        ll::hash_utils::hashCombine(std::hash<std::optional<std::string>>{}(d.version), hash);
+        ll::hash_utils::hashCombine(std::hash<std::optional<ll::data::Version>>{}(d.version), hash);
         return hash;
     }
 };

@@ -161,7 +161,7 @@ std::optional<CompoundTagVariant> parseNumber(std::string_view& s) {
     default:
         break;
     }
-    if (s.size() >= 6) switch (ll::hash_utils::do_hash(s.substr(0, 6))) {
+    if (s.size() >= 6) switch (ll::hash_utils::doHash(s.substr(0, 6))) {
         case " /*b*/"_h:
         case " /*B*/"_h:
             s.remove_prefix(6);

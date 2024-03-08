@@ -195,11 +195,11 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
         ll::logger.debug("Player {} left click", ev.self().getRealName());
     });
     auto listenersp = Listener<PlayerSprintEvent>::create([](PlayerSprintEvent& ev) {
-        switch (do_hash(typeid(ev).name())) {
-        case do_hash(ll::reflection::type_raw_name_v<PlayerSprintingEvent>): {
+        switch (doHash(typeid(ev).name())) {
+        case doHash(ll::reflection::type_raw_name_v<PlayerSprintingEvent>): {
             ll::logger.debug("Player {} start sprint", ev.self().getRealName());
         } break;
-        case do_hash(ll::reflection::type_raw_name_v<PlayerSprintedEvent>): {
+        case doHash(ll::reflection::type_raw_name_v<PlayerSprintedEvent>): {
             ll::logger.debug("Player {} stop sprint", ev.self().getRealName());
         } break;
         default:

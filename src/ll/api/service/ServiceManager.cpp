@@ -34,10 +34,10 @@ namespace std {
 template <>
 struct hash<ll::service::ServiceInfo> {
     size_t operator()(ll::service::ServiceInfo const& info) const noexcept {
-        return ll::hash_utils::hashCombine(
-            ll::hash_utils::hashCombine(std::hash<std::string_view>{}(info.name), std::hash<size_t>{}(info.version)),
-            std::hash<std::string_view>{}(info.pluginName)
-        );
+        size_t hash = std::hash<std::string_view>{}(info.name);
+        ll::hash_utils::hashCombine(std::hash<size_t>{}(info.version), hash);
+        ll::hash_utils::hashCombine(std::hash<std::string_view>{}(info.pluginName), hash);
+        return hash;
     }
 };
 } // namespace std

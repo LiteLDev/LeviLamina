@@ -2,7 +2,7 @@
 
 #include "ll/api/plugin/PluginManagerRegistry.h"
 
-namespace ll::plugin { // TODO : store graph, add functions...
+namespace ll::plugin {
 
 class PluginRegistrar {
     struct Impl;
