@@ -138,7 +138,7 @@ struct Statistics::Impl {
         try {
             auto body                             = json.dump();
             header.find("Content-Length")->second = std::to_string(body.size());
-            client.Post("/api/v2/data/bukkit", header, body, "application/json");
+            client.Post("/submitData/server-implementation", header, body, "application/json");
         } catch (...) {}
     }
 
