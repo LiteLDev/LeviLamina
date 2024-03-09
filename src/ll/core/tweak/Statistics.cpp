@@ -54,6 +54,19 @@ static DWORD getCpuCoreCount() {
     return systemInfo.dwNumberOfProcessors;
 }
 
+static nlohmann::json addSimplePie(const std::string& key, const std::variant<std::string, int>& value) {
+    nlohmann::json json;
+    json["chartId"] = key;
+    nlohmann::json json2;
+    if (std::holds_alternative<std::string>(value)) {
+        json2["value"] = std::get<std::string>(value);
+    } else if (std::holds_alternative<int>(value)) {
+        json2["value"] = std::get<int>(value);
+    }
+    json["data"] = json2;
+    return json;
+}
+
 static nlohmann::json addAdvancedPie(const std::string& key, const std::unordered_map<std::string_view, int>& value) {
     nlohmann::json json;
     json["chartId"] = key;
@@ -67,8 +80,26 @@ static nlohmann::json addAdvancedPie(const std::string& key, const std::unordere
     return json;
 }
 
+static nlohmann::json addSingleLineChart(std::string const& key, const int value) {
+    nlohmann::json json;
+    json["chartId"] = key;
+    nlohmann::json json2;
+    json2["value"] = value;
+    json["data"]   = json2;
+    return json;
+}
+
 static nlohmann::json getCustomCharts() {
-    nlohmann::json                            pluginsJson;
+    nlohmann::json pluginsJson;
+    pluginsJson.emplace_back(addSimplePie("levilamina_version", ll::getLoaderVersion().to_string()));
+    pluginsJson.emplace_back(addSimplePie("minecraft_version", Common::getBuildInfo().mBuildId));
+    pluginsJson.emplace_back(addSingleLineChart(
+        "players",
+        ll::service::getLevel().has_value() ? ll::service::getLevel()->getActivePlayerCount() : 0
+    ));
+    pluginsJson.emplace_back(
+        addSimplePie("online_mode", ll::service::getPropertiesSettings()->useOnlineAuthentication() ? "true" : "false")
+    );
     std::unordered_map<std::string_view, int> platforms;
     if (ll::service::getLevel().has_value()) {
         ll::service::getLevel()->forEachPlayer([&platforms](Player& player) {
@@ -103,13 +134,7 @@ struct Statistics::Impl {
     };
 
     void submitData() {
-        pool.addTask([this]() {
-                json["onlineMode"] = static_cast<int>(ll::service::getPropertiesSettings()->useOnlineAuthentication());
-                json["service"]["customCharts"] = getCustomCharts();
-                json["playerAmount"] =
-                    ll::service::getLevel().has_value() ? ll::service::getLevel()->getActivePlayerCount() : 0;
-            }
-        ).wait();
+        pool.addTask([this]() { json["service"]["customCharts"] = getCustomCharts(); }).wait();
         try {
             auto body                             = json.dump();
             header.find("Content-Length")->second = std::to_string(body.size());
@@ -137,14 +162,11 @@ struct Statistics::Impl {
                 ll::file_utils::writeFile(plugin::getPluginsRoot() / u8"LeviLamina/data/statisticsUuid", uuid);
             }
         }
-        json["service"]["id"]            = 21138;
-        json["service"]["pluginVersion"] = ll::getLoaderVersion().to_string();
-        json["osName"]                   = ll::win_utils::isWine() ? "Linux" : "Windows";
-        json["osArch"]                   = "amd64";
-        json["osVersion"]                = "";
-        json["coreCount"]                = getCpuCoreCount();
-        json["bukkitName"]               = "LeviLamina";
-        json["bukkitVersion"]            = Common::getBuildInfo().mBuildId;
+        json["service"]["id"] = 21245;
+        json["osName"]        = ll::win_utils::isWine() ? "Linux" : "Windows";
+        json["osArch"]        = "amd64";
+        json["osVersion"]     = "";
+        json["coreCount"]     = getCpuCoreCount();
 
         scheduler.add<ll::schedule::DelayTask>(1.0min * ll::random_utils::rand(3.0, 6.0), [this]() {
             submitData();
