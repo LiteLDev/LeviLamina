@@ -199,21 +199,23 @@ std::string getAnsiCodeFromTextStyle(fmt::text_style style) {
 }
 
 std::wstring str2wstr(std::string_view str, uint codePage) {
-    int len = MultiByteToWideChar(codePage, 0, str.data(), (int)str.size(), nullptr, 0);
+    int          len = MultiByteToWideChar(codePage, 0, str.data(), (int)str.size(), nullptr, 0);
+    std::wstring wstr;
     if (len == 0) {
-        return {};
+        return wstr;
     }
-    std::wstring wstr(len, L'\0');
+    wstr.reserve(len);
     MultiByteToWideChar(codePage, 0, str.data(), (int)str.size(), wstr.data(), len);
     return wstr;
 }
 
 std::string wstr2str(std::wstring_view str, uint codePage) {
-    int len = WideCharToMultiByte(codePage, 0, str.data(), (int)str.size(), nullptr, 0, nullptr, nullptr);
+    int         len = WideCharToMultiByte(codePage, 0, str.data(), (int)str.size(), nullptr, 0, nullptr, nullptr);
+    std::string ret;
     if (len == 0) {
-        return {};
+        return ret;
     }
-    std::string ret(len, '\0');
+    ret.reserve(len);
     WideCharToMultiByte(codePage, 0, str.data(), (int)str.size(), ret.data(), (int)ret.size(), nullptr, nullptr);
     return ret;
 }
@@ -281,10 +283,10 @@ std::string tou8str(std::string_view str) {
     }
 }
 std::string toSnakeCase(std::string_view str) {
-    if (str.empty()) {
-        return {};
-    }
     std::string res;
+    if (str.empty()) {
+        return res;
+    }
     res.reserve(str.length());
     res.push_back((char)tolower(str.front()));
     str.remove_prefix(1);
