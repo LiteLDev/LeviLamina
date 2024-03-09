@@ -34,7 +34,7 @@ public:
      * @return SimpleForm&  *this
      * @note   If the `callback` parameter of sendTo() is set, the callback of the button will be ignored
      */
-    SimpleForm& appendButton(
+    LLAPI SimpleForm& appendButton(
         std::string const& text,
         std::string const& imageData,
         std::string const& imageType,
