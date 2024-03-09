@@ -1,13 +1,16 @@
 #pragma once
 
+#include <cstddef>
 #include <functional>
 #include <memory>
 #include <mutex>
+#include <string>
 #include <string_view>
-#include <vector>
 
-#include "ll/api/base/Containers.h"
+#include "ll/api/base/Macro.h"
+#include "ll/api/plugin/Manifest.h"
 #include "ll/api/plugin/Plugin.h"
+
 
 namespace ll::plugin {
 class PluginManagerRegistry;
