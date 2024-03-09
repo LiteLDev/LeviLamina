@@ -54,25 +54,25 @@ static DWORD getCpuCoreCount() {
     return systemInfo.dwNumberOfProcessors;
 }
 
-static nlohmann::json addSimplePie(const std::string& key, const std::variant<std::string, int>& value) {
+static nlohmann::json addSimplePie(std::string_view key, std::variant<std::string, int> value) {
     nlohmann::json json;
     json["chartId"] = key;
     nlohmann::json json2;
     if (std::holds_alternative<std::string>(value)) {
-        json2["value"] = std::get<std::string>(value);
+        json2["value"] = std::get<std::string>(std::move(value));
     } else if (std::holds_alternative<int>(value)) {
-        json2["value"] = std::get<int>(value);
+        json2["value"] = std::get<int>(std::move(value));
     }
     json["data"] = json2;
     return json;
 }
 
-static nlohmann::json addAdvancedPie(const std::string& key, const std::unordered_map<std::string_view, int>& value) {
+static nlohmann::json addAdvancedPie(std::string_view key, std::unordered_map<std::string_view, int> value) {
     nlohmann::json json;
     json["chartId"] = key;
     nlohmann::json json2;
     nlohmann::json valuesBuilder;
-    for (auto [string, integer] : value) {
+    for (auto [string, integer] : std::move(value)) {
         valuesBuilder[string] = integer;
     }
     json2["values"] = valuesBuilder;
@@ -80,7 +80,7 @@ static nlohmann::json addAdvancedPie(const std::string& key, const std::unordere
     return json;
 }
 
-static nlohmann::json addSingleLineChart(std::string const& key, const int value) {
+static nlohmann::json addSingleLineChart(std::string_view key, const int value) {
     nlohmann::json json;
     json["chartId"] = key;
     nlohmann::json json2;
@@ -112,7 +112,7 @@ static nlohmann::json getCustomCharts() {
             return true;
         });
     }
-    pluginsJson.emplace_back(addAdvancedPie("player_platform", platforms));
+    pluginsJson.emplace_back(addAdvancedPie("player_platform", std::move(platforms)));
 
     return pluginsJson;
 }
