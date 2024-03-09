@@ -23,10 +23,10 @@
 namespace ll::command {
 
 template <reflection::Reflectable Params>
-class Overload : public OverloadData {
+class Overload : private OverloadData {
     friend CommandHandle;
 
-    struct TestOffset : public ::Command {
+    struct TestOffset : private ::Command {
         uint64 placeholder{};
         Params params;
     };

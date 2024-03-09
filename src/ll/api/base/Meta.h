@@ -23,22 +23,54 @@ struct PriorityTag<0> {};
 template <class... Components, class F>
 constexpr void unrollWithArgs(F&& func) {
     size_t i = 0;
-    ((func.template operator()<Components>(i++)), ...);
+    ((std::forward<F>(func).template operator()<Components>(i++)), ...);
 }
 
 template <class... Components, class F>
 constexpr void unrollWithArgsNoIndex(F&& func) {
-    ((func.template operator()<Components>()), ...);
+    ((std::forward<F>(func).template operator()<Components>()), ...);
 }
 
 template <class Fn, size_t... N>
-constexpr void unroll_impl(Fn fn, std::integer_sequence<size_t, N...>) {
-    (void(fn(N)), ...);
+constexpr void unrollImpl(Fn&& fn, std::integer_sequence<size_t, N...>) {
+    (void(std::forward<Fn>(fn)(N)), ...);
 }
 
 template <size_t N, class Fn>
-constexpr void unroll(Fn fn) {
-    unroll_impl(fn, std::make_index_sequence<N>());
+constexpr void unroll(Fn&& fn) {
+    unrollImpl(std::forward<Fn>(fn), std::make_index_sequence<N>());
+}
+
+template <typename T>
+constexpr std::array<std::decay_t<T>, 1> makeVisitorArray(T&& t) {
+    return {{std::forward<T>(t)}};
+}
+
+template <typename T, typename... Ts>
+constexpr std::array<std::decay_t<T>, sizeof...(Ts) + 1> makeVisitorArray(T&& t, Ts&&... ts) {
+    static_assert(
+        std::conjunction_v<std::is_same<std::decay_t<T>, std::decay_t<Ts>>...>,
+        "visitors requires same return type"
+    );
+    return {
+        {std::forward<T>(t), std::forward<Ts>(ts)...}
+    };
+}
+
+template <class Fn, size_t I>
+constexpr decltype(auto) invokeVisitor(Fn&& fn) {
+    return std::forward<Fn>(fn).template operator()<I>();
+}
+
+template <class Fn, size_t... N>
+constexpr decltype(auto) visitIndexImpl(Fn&& fn, size_t index, std::integer_sequence<size_t, N...>) {
+    constexpr auto callers = makeVisitorArray(&invokeVisitor<Fn, N>...);
+    return callers[index](std::forward<Fn>(fn));
+}
+
+template <size_t N, class Fn>
+constexpr decltype(auto) visitIndex(Fn&& fn, size_t index) {
+    return visitIndexImpl(std::forward<Fn>(fn), index, std::make_index_sequence<N>());
 }
 
 template <size_t N, class T, class... Types>

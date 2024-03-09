@@ -23,6 +23,8 @@ GameTickScheduler        s3;
 
 #include "ll/api/data/DependencyGraph.h"
 
+#include "ll/api/base/Meta.h"
+
 #pragma warning(push)
 #pragma warning(disable : 4723)
 
@@ -84,6 +86,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
          //     schedulelogger.info("hello I resumed all threads");
          // });
      */
+    auto l = ll::Logger::lock();
 
     ll::data::DependencyGraph<std::string> dep;
     dep.emplaceDependencies("a", {"b", "c", "e"});
@@ -93,6 +96,17 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     const auto& result = dep.sort();
     schedulelogger.info("sorted: {}", result.sorted);
     schedulelogger.info("unsorted: {}", result.unsorted);
+
+    for (auto k : {1, 4, 6}) {
+        ll::meta::visitIndex<10>(
+            []<size_t N> {
+                static ll::Logger lo;
+                lo.warn("template N = {}", N);
+                return N;
+            },
+            k
+        );
+    }
 
     return origin(ins);
 }
