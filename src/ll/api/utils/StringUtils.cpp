@@ -1,7 +1,19 @@
 #include "ll/api/utils/StringUtils.h"
 
+#include <cctype>
+#include <cfloat>
+#include <cstdint>
+#include <string>
+#include <string_view>
+#include <unordered_map>
+
 #include "ctre/ctre-unicode.hpp"
+#include "fmt/color.h"
+#include "fmt/core.h"
+#include "fmt/format.h"
 #include "magic_enum.hpp"
+
+#include "ll/api/base/StdInt.h"
 
 #include "mc/deps/core/mce/Color.h"
 #include "mc/deps/core/utility/Util.h"
@@ -201,23 +213,19 @@ std::string getAnsiCodeFromTextStyle(fmt::text_style style) {
 std::wstring str2wstr(std::string_view str, uint codePage) {
     int          len = MultiByteToWideChar(codePage, 0, str.data(), (int)str.size(), nullptr, 0);
     std::wstring wstr;
-    if (len == 0) {
-        return wstr;
-    }
-    wstr.reserve(len);
+    if (len == 0) return wstr;
+    wstr.resize(len);
     MultiByteToWideChar(codePage, 0, str.data(), (int)str.size(), wstr.data(), len);
     return wstr;
 }
 
-std::string wstr2str(std::wstring_view str, uint codePage) {
-    int         len = WideCharToMultiByte(codePage, 0, str.data(), (int)str.size(), nullptr, 0, nullptr, nullptr);
-    std::string ret;
-    if (len == 0) {
-        return ret;
-    }
-    ret.reserve(len);
-    WideCharToMultiByte(codePage, 0, str.data(), (int)str.size(), ret.data(), (int)ret.size(), nullptr, nullptr);
-    return ret;
+std::string wstr2str(std::wstring_view wstr, uint codePage) {
+    int         len = WideCharToMultiByte(codePage, 0, wstr.data(), (int)wstr.size(), nullptr, 0, nullptr, nullptr);
+    std::string str;
+    if (len == 0) return str;
+    str.resize(len);
+    WideCharToMultiByte(codePage, 0, wstr.data(), (int)wstr.size(), str.data(), (int)str.size(), nullptr, nullptr);
+    return str;
 }
 
 std::string str2str(std::string_view str, uint fromCodePage, uint toCodePage) {

@@ -1,14 +1,19 @@
 #pragma once
 
+#include <cerrno>
+#include <cstddef>
+#include <cstdlib>
+#include <stdexcept>
 #include <string>
 #include <string_view>
+#include <type_traits>
+#include <utility>
 #include <vector>
 
-#include "ll/api/base/Concepts.h"
+#include "fmt/color.h"
+
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
-
-#include "fmt/color.h"
 
 namespace ll::inline utils::string_utils {
 
@@ -165,7 +170,7 @@ enum : uint {
 
 LLNDAPI std::wstring str2wstr(std::string_view str, uint codePage = CodePage::UTF8);
 
-LLNDAPI std::string wstr2str(std::wstring_view str, uint codePage = CodePage::UTF8);
+LLNDAPI std::string wstr2str(std::wstring_view wstr, uint codePage = CodePage::UTF8);
 
 LLNDAPI std::string
         str2str(std::string_view str, uint fromCodePage = CodePage::DefaultACP, uint toCodePage = CodePage::UTF8);
