@@ -2,6 +2,7 @@
 
 #include <chrono>
 #include <map>
+#include <mutex>
 #include <ranges>
 
 #include "ll/api/chrono/GameChrono.h"
@@ -46,12 +47,12 @@ private:
     using task_ptr   = std::shared_ptr<Task<Clock>>;
     using tasks_type = std::multimap<time_point, task_ptr>;
 
-    std::mutex        mutex;
-    tasks_type        tasks;
-    std::atomic<bool> done;
-    Sleeper           sleeper;
-    Pool              workers;
-    std::thread       manager;
+    std::recursive_mutex mutex;
+    tasks_type           tasks;
+    std::atomic<bool>    done;
+    Sleeper              sleeper;
+    Pool                 workers;
+    std::thread          manager;
 
     task_ptr addTask(task_ptr t) {
         if (t->isCancelled()) {

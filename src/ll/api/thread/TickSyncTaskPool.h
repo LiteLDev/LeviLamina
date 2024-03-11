@@ -18,7 +18,7 @@ class TickSyncTaskPool {
 
 private:
     std::queue<std::function<void()>> tasks;
-    std::mutex                        mutex;
+    std::recursive_mutex              mutex;
     size_t                            tasksPerTick;
     size_t                            id;
 
