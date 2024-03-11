@@ -7,6 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.9.3] - 2024-03-11
+
+### Added
+
+- Add Randomize and VariableMaxAutoStepComponent struct
+- Add mvs
+- Add visitIndex
+- Add plugin register helper
+
+### Changed
+
+- Add catch in TickSyncTaskPool
+- Refactoring TickSyncTaskPool
+- Refactoring CommandHandle
+- Replace mutex with recursive_mutex in ScheduleAPI (#1482)
+
+### Fixed
+
+- Fix missing dllexport in `SimpleForm::appendButton`
+- Fix missing include in file_utils
+- Fix string utils
+
 ## [0.9.2] - 2024-03-01
 
 ### Fixed
@@ -309,7 +331,8 @@ First preview release.
 
 For lip and tooth-hub test only.
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.9.2...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.9.3...HEAD
+[0.9.3]: https://github.com/LiteLDev/LeviLamina/compare/v0.9.2...v0.9.3
 [0.9.2]: https://github.com/LiteLDev/LeviLamina/compare/v0.9.1...v0.9.2
 [0.9.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.9.0...v0.9.1
 [0.9.0]: https://github.com/LiteLDev/LeviLamina/compare/v0.8.4...v0.9.0
