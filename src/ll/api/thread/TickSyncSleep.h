@@ -12,7 +12,7 @@ namespace ll::thread {
 template <class Clock>
 class TickSyncSleep;
 namespace detail {
-LLETAPI std::mutex listMutex;
+LLETAPI std::recursive_mutex listMutex;
 LLETAPI std::atomic_size_t tickListSize;
 LLETAPI                    std::vector<std::variant<
     std::reference_wrapper<TickSyncSleep<chrono::ServerClock>>,

@@ -10,7 +10,7 @@ namespace ll::thread {
 
 std::atomic_bool workerHooked{};
 
-std::mutex                                            poolListMutex;
+std::recursive_mutex                                  poolListMutex;
 std::atomic_size_t                                    poolListSize{};
 std::vector<std::reference_wrapper<TickSyncTaskPool>> poolList;
 

@@ -6,8 +6,8 @@ namespace ll::thread::detail {
 
 std::atomic_bool hooked{};
 
-std::mutex         listMutex;
-std::atomic_size_t tickListSize{};
+std::recursive_mutex listMutex;
+std::atomic_size_t   tickListSize{};
 std::vector<std::variant<
     std::reference_wrapper<TickSyncSleep<chrono::ServerClock>>,
     std::reference_wrapper<TickSyncSleep<chrono::GameTickClock>>>>
