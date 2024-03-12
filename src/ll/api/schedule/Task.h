@@ -1,13 +1,18 @@
 #pragma once
 
+#include <atomic>
 #include <chrono>
+#include <cstddef>
 #include <functional>
+#include <memory>
 #include <optional>
 #include <string_view>
+#include <utility>
 
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
 #include "ll/api/plugin/NativePlugin.h"
+#include "ll/api/plugin/Plugin.h"
 
 namespace ll::schedule {
 inline namespace task {

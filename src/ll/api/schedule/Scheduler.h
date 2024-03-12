@@ -1,10 +1,14 @@
 #pragma once
 
+#include <atomic>
 #include <chrono>
 #include <map>
 #include <mutex>
-#include <ranges>
+#include <memory>
+#include <mutex>
+#include <thread>
 
+#include "ll/api/base/StdInt.h"
 #include "ll/api/chrono/GameChrono.h"
 #include "ll/api/schedule/Task.h"
 #include "ll/api/thread/InterruptableSleep.h"

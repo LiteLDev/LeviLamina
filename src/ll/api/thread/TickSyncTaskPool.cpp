@@ -1,10 +1,18 @@
 #include "ll/api/thread/TickSyncTaskPool.h"
+
+#include <algorithm>
+#include <atomic>
+#include <cstddef>
+#include <functional>
+#include <mutex>
+#include <utility>
+#include <vector>
+
 #include "ll/api/memory/Hook.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/core/LeviLamina.h"
 
 #include "mc/server/ServerLevel.h"
-#include "mc/world/level/Tick.h"
 
 namespace ll::thread {
 

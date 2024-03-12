@@ -1,16 +1,14 @@
 #pragma once
 
+#include <cstddef>
 #include <functional>
 #include <future>
 #include <memory>
 #include <mutex>
 #include <queue>
-#include <stdexcept>
-#include <thread>
-#include <vector>
+#include <type_traits>
 
 #include "ll/api/base/Macro.h"
-#include "ll/api/base/StdInt.h"
 
 namespace ll::thread {
 class TickSyncTaskPool {
@@ -23,7 +21,7 @@ private:
     size_t                            id;
 
 public:
-    LLAPI TickSyncTaskPool(size_t tasksPerTick = ~0ui64);
+    LLAPI explicit TickSyncTaskPool(size_t tasksPerTick = ~0ui64);
     LLAPI ~TickSyncTaskPool();
 
     template <class F, class... Args>
@@ -33,6 +31,7 @@ public:
             std::make_shared<std::packaged_task<std::invoke_result_t<F, Args...>()>>([f = std::forward<F>(f), args...] {
                 return f(args...);
             });
+
         auto res = task->get_future();
         {
             std::lock_guard lock{mutex};

@@ -1,10 +1,15 @@
 #pragma once
 
-#include <chrono>
+#include <atomic>
+#include <condition_variable>
+#include <cstddef>
+#include <functional>
 #include <mutex>
+#include <utility>
 #include <variant>
 #include <vector>
 
+#include "ll/api/base/Macro.h"
 #include "ll/api/chrono/GameChrono.h"
 
 namespace ll::thread {
