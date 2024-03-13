@@ -12,6 +12,8 @@ public:
     // PostprocessingManager inner types define
     struct LockedChunk {
     public:
+        std::shared_ptr<LevelChunk>  mLevelChunk;
+        std::unique_lock<std::mutex> mLevelChunkLock;
         // prevent constructor by default
         LockedChunk& operator=(LockedChunk const&);
         LockedChunk(LockedChunk const&);
