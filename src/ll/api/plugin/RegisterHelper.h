@@ -50,9 +50,6 @@ inline void bindToPlugin(std::unique_ptr<T>& myPlugin, ll::plugin::Plugin& self)
     if constexpr (ll::plugin::Disableable<T>) {
         self.onDisable([&myPlugin](auto&) { return myPlugin->disable(); });
     }
-    if constexpr (ll::plugin::Loadable<T>) {
-        self.onLoad([&myPlugin](auto&) { return myPlugin->load(); });
-    }
     if constexpr (ll::plugin::Unloadable<T>) {
         self.onUnload([&myPlugin](auto& self) {
             bool result = myPlugin->unload();
