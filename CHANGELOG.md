@@ -15,19 +15,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add mvs
 - Add visitIndex
 - Add plugin register helper
+- Add `PostprocessingManager::LockedChunk`,`buffer_span` , `DividedPos2d`add some member (#1484)
+
 
 ### Changed
 
 - Add catch in TickSyncTaskPool
 - Refactoring TickSyncTaskPool
 - Refactoring CommandHandle
-- Replace mutex with recursive_mutex in ScheduleAPI (#1482)
+- Refactoring TickSyncSleep
 
 ### Fixed
 
 - Fix missing dllexport in `SimpleForm::appendButton`
 - Fix missing include in file_utils
 - Fix string utils
+- Fix #1483
 
 ## [0.9.2] - 2024-03-01
 
