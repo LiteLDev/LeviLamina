@@ -1,10 +1,10 @@
 #pragma once
 
-#include "mc/_HeaderOutputPredefine.h"
+#include "mc/_HeaderOutputPredefine.h" // IWYU pragma: keep
 
-#include "ll/api/base/Concepts.h"
-#include "ll/api/base/Containers.h"
-#include "ll/api/base/Macro.h"
-#include "ll/api/base/Meta.h"
-#include "ll/api/base/StdInt.h"
-#include "ll/api/base/ToString.h"
+#include "ll/api/base/Concepts.h"   // IWYU pragma: keep
+#include "ll/api/base/Containers.h" // IWYU pragma: keep
+#include "ll/api/base/Macro.h"      // IWYU pragma: keep
+#include "ll/api/base/Meta.h"       // IWYU pragma: keep
+#include "ll/api/base/StdInt.h"     // IWYU pragma: keep
+#include "ll/api/base/ToString.h"   // IWYU pragma: keep
