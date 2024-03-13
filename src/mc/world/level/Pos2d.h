@@ -11,5 +11,5 @@ public:
     // prevent constructor by default
     Pos2d& operator=(Pos2d const&);
     Pos2d(Pos2d const&);
-    Pos2d();
+    Pos2d() = default;
 };

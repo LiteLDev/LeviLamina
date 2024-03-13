@@ -9,5 +9,5 @@ public:
     // prevent constructor by default
     DividedPos2d& operator=(DividedPos2d const&);
     DividedPos2d(DividedPos2d const&);
-    DividedPos2d();
+    DividedPos2d() = default;
 };
