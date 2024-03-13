@@ -1,7 +1,6 @@
 #pragma once
 
 #include <concepts>
-#include <type_traits>
 
 namespace ll::reflection {
 template <class Storage, std::default_initializable Listener, bool CallInit = false>
@@ -16,8 +15,9 @@ public:
     void call() { listener.call(storage); }
 
     template <class... Args>
-    Dispatcher(Args&&... args) : storage(std::forward<Args>(args)...),
-                                 listener() {
+    Dispatcher(Args&&... args) // NOLINT(google-explicit-constructor)
+    : storage(std::forward<Args>(args)...),
+      listener() {
         if constexpr (CallInit) {
             call();
         }

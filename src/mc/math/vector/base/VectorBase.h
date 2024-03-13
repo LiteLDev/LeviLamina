@@ -1,7 +1,9 @@
 #pragma once
 
 #include <concepts>
+#include <cstddef>
 #include <format>
+#include <functional>
 #include <string>
 #include <string_view>
 #include <type_traits>
@@ -119,7 +121,8 @@ struct LL_EBO VectorBase : concepts::VectorBaseTag {
     }
 
     [[nodiscard]] constexpr class boolN<sizeof...(Components)> eq(T const& b) const noexcept
-        requires(sizeof...(Components) >= 2 && sizeof...(Components) <= 4) {
+        requires(sizeof...(Components) >= 2 && sizeof...(Components) <= 4)
+    {
         boolN<sizeof...(Components)> res = true;
         forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
             res[iter] = (b.template get<axis_type>(iter) == static_cast<T const*>(this)->template get<axis_type>(iter));
@@ -127,8 +130,9 @@ struct LL_EBO VectorBase : concepts::VectorBaseTag {
         return res;
     }
 
-    [[nodiscard]] constexpr class boolN<sizeof...(Components)>
-    ne(T const& b) const noexcept requires(sizeof...(Components) >= 2 && sizeof...(Components) <= 4) {
+    [[nodiscard]] constexpr class boolN<sizeof...(Components)> ne(T const& b) const noexcept
+        requires(sizeof...(Components) >= 2 && sizeof...(Components) <= 4)
+    {
         boolN<sizeof...(Components)> res = true;
         forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
             res[iter] = (b.template get<axis_type>(iter) != static_cast<T const*>(this)->template get<axis_type>(iter));

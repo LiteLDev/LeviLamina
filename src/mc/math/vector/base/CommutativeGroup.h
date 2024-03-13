@@ -1,6 +1,11 @@
 #pragma once
 
-#include "mc/math/vector/component/base/VectorBase.h"
+#include <concepts>
+#include <cstddef>
+
+#include "ll/api/base/Macro.h"
+
+#include "mc/math/vector/base/VectorBase.h"
 
 namespace ll::math {
 struct CommutativeGroupTag {};

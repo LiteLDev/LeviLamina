@@ -1,9 +1,8 @@
 #pragma once
 
 #include <concepts>
-#include <memory>
 
-#include "ll/api/event/EmitterBase.h"
+#include "ll/api/base/Macro.h"
 #include "ll/api/event/EventId.h"
 
 class CompoundTag;

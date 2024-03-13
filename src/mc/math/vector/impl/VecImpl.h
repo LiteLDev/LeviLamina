@@ -1,8 +1,8 @@
 #pragma once
 
-#include <cmath>
+#include <cmath> // IWYU pragma: keep
 
-#include "ll/api/base/Macro.h"
+#include "ll/api/base/Macro.h" // IWYU pragma: keep
 
 #define LL_VEC_X_MEMBER(T)                                                                                             \
     union {                                                                                                            \

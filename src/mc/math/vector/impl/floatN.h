@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/math/vector/component/FloatN.h"
-#include "mc/math/vector/component/base/vecN.h"
+#include "mc/math/vector/impl/VecImpl.h"
 
 namespace ll::math {
 // template <size_t N>

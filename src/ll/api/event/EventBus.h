@@ -1,14 +1,19 @@
 #pragma once
 
 #include <concepts>
+#include <cstddef>
+#include <functional>
 #include <memory>
-#include <unordered_set>
+#include <string_view>
+#include <type_traits>
+#include <utility>
 
 #include "ll/api/base/Concepts.h"
 #include "ll/api/base/Macro.h"
 #include "ll/api/event/Event.h"
 #include "ll/api/event/EventId.h"
 #include "ll/api/event/Listener.h"
+#include "ll/api/event/ListenerBase.h"
 
 namespace ll::event {
 class EmitterBase;

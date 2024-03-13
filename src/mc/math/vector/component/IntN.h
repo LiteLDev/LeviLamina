@@ -1,5 +1,11 @@
 #pragma once
-#include "mc/math/vector/component/base/Field.h"
+
+#include <cstddef>
+
+#include "ll/api/base/Macro.h"
+
+#include "mc/math/vector/base/Field.h"
+#include "mc/math/vector/base/VectorBase.h"
 
 namespace ll::math {
 template <size_t N>
@@ -24,7 +30,7 @@ public:
     }
 };
 
-#define GEN_VEC_BASIC_MATH_FUNC_INT(NAME)                                                                              \
+#define LL_VEC_GEN_BASIC_MATH_FUNC_INT(NAME)                                                                              \
     template <IsIntN T>                                                                                                \
     [[nodiscard]] constexpr doubleN<T::size()> NAME(T const& x) noexcept                                               \
         requires(T::size() >= 2 && T::size() <= 4)                                                                     \
@@ -36,30 +42,30 @@ public:
         return tmp;                                                                                                    \
     }
 
-GEN_VEC_BASIC_MATH_FUNC_INT(acos)
-GEN_VEC_BASIC_MATH_FUNC_INT(asin)
-GEN_VEC_BASIC_MATH_FUNC_INT(atan)
-GEN_VEC_BASIC_MATH_FUNC_INT(acosh)
-GEN_VEC_BASIC_MATH_FUNC_INT(asinh)
-GEN_VEC_BASIC_MATH_FUNC_INT(atanh)
-GEN_VEC_BASIC_MATH_FUNC_INT(ceil)
-GEN_VEC_BASIC_MATH_FUNC_INT(cos)
-GEN_VEC_BASIC_MATH_FUNC_INT(cosh)
-GEN_VEC_BASIC_MATH_FUNC_INT(exp)
-GEN_VEC_BASIC_MATH_FUNC_INT(fabs)
-GEN_VEC_BASIC_MATH_FUNC_INT(floor)
-GEN_VEC_BASIC_MATH_FUNC_INT(log)
-GEN_VEC_BASIC_MATH_FUNC_INT(log2)
-GEN_VEC_BASIC_MATH_FUNC_INT(log10)
-GEN_VEC_BASIC_MATH_FUNC_INT(round)
-GEN_VEC_BASIC_MATH_FUNC_INT(sin)
-GEN_VEC_BASIC_MATH_FUNC_INT(sinh)
-GEN_VEC_BASIC_MATH_FUNC_INT(sqrt)
-GEN_VEC_BASIC_MATH_FUNC_INT(tan)
-GEN_VEC_BASIC_MATH_FUNC_INT(tanh)
+LL_VEC_GEN_BASIC_MATH_FUNC_INT(acos)
+LL_VEC_GEN_BASIC_MATH_FUNC_INT(asin)
+LL_VEC_GEN_BASIC_MATH_FUNC_INT(atan)
+LL_VEC_GEN_BASIC_MATH_FUNC_INT(acosh)
+LL_VEC_GEN_BASIC_MATH_FUNC_INT(asinh)
+LL_VEC_GEN_BASIC_MATH_FUNC_INT(atanh)
+LL_VEC_GEN_BASIC_MATH_FUNC_INT(ceil)
+LL_VEC_GEN_BASIC_MATH_FUNC_INT(cos)
+LL_VEC_GEN_BASIC_MATH_FUNC_INT(cosh)
+LL_VEC_GEN_BASIC_MATH_FUNC_INT(exp)
+LL_VEC_GEN_BASIC_MATH_FUNC_INT(fabs)
+LL_VEC_GEN_BASIC_MATH_FUNC_INT(floor)
+LL_VEC_GEN_BASIC_MATH_FUNC_INT(log)
+LL_VEC_GEN_BASIC_MATH_FUNC_INT(log2)
+LL_VEC_GEN_BASIC_MATH_FUNC_INT(log10)
+LL_VEC_GEN_BASIC_MATH_FUNC_INT(round)
+LL_VEC_GEN_BASIC_MATH_FUNC_INT(sin)
+LL_VEC_GEN_BASIC_MATH_FUNC_INT(sinh)
+LL_VEC_GEN_BASIC_MATH_FUNC_INT(sqrt)
+LL_VEC_GEN_BASIC_MATH_FUNC_INT(tan)
+LL_VEC_GEN_BASIC_MATH_FUNC_INT(tanh)
 
-// GEN_VEC_BASIC_MATH_FUNC_INT(atan2)
-// GEN_VEC_BASIC_MATH_FUNC_INT(modf)
-// GEN_VEC_BASIC_MATH_FUNC_INT(fmod)
-// GEN_VEC_BASIC_MATH_FUNC_INT(pow)
+// LL_VEC_GEN_BASIC_MATH_FUNC_INT(atan2)
+// LL_VEC_GEN_BASIC_MATH_FUNC_INT(modf)
+// LL_VEC_GEN_BASIC_MATH_FUNC_INT(fmod)
+// LL_VEC_GEN_BASIC_MATH_FUNC_INT(pow)
 } // namespace ll::math

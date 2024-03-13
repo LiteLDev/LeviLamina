@@ -1,6 +1,11 @@
 #pragma once
 
-#include "mc/math/vector/component/base/Field.h"
+#include <cstddef>
+
+#include "ll/api/base/Macro.h"
+
+#include "mc/math/vector/base/Field.h"
+#include "mc/math/vector/base/VectorBase.h"
 
 namespace ll::math {
 template <typename T, typename... Components>
@@ -41,32 +46,32 @@ template <IsFloatN T>
     return tmp;
 }
 
-GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, acos)
-GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, asin)
-GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, atan)
-GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, acosh)
-GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, asinh)
-GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, atanh)
-GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, ceil)
-GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, cos)
-GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, cosh)
-GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, exp)
-GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, fabs)
-GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, floor)
-GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, log)
-GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, log2)
-GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, log10)
-GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, round)
-GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, sin)
-GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, sinh)
-GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, sqrt)
-GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, tan)
-GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, tanh)
+LL_VEC_GEN_BASIC_MATH_FUNC_FLOAT(IsFloatN, acos)
+LL_VEC_GEN_BASIC_MATH_FUNC_FLOAT(IsFloatN, asin)
+LL_VEC_GEN_BASIC_MATH_FUNC_FLOAT(IsFloatN, atan)
+LL_VEC_GEN_BASIC_MATH_FUNC_FLOAT(IsFloatN, acosh)
+LL_VEC_GEN_BASIC_MATH_FUNC_FLOAT(IsFloatN, asinh)
+LL_VEC_GEN_BASIC_MATH_FUNC_FLOAT(IsFloatN, atanh)
+LL_VEC_GEN_BASIC_MATH_FUNC_FLOAT(IsFloatN, ceil)
+LL_VEC_GEN_BASIC_MATH_FUNC_FLOAT(IsFloatN, cos)
+LL_VEC_GEN_BASIC_MATH_FUNC_FLOAT(IsFloatN, cosh)
+LL_VEC_GEN_BASIC_MATH_FUNC_FLOAT(IsFloatN, exp)
+LL_VEC_GEN_BASIC_MATH_FUNC_FLOAT(IsFloatN, fabs)
+LL_VEC_GEN_BASIC_MATH_FUNC_FLOAT(IsFloatN, floor)
+LL_VEC_GEN_BASIC_MATH_FUNC_FLOAT(IsFloatN, log)
+LL_VEC_GEN_BASIC_MATH_FUNC_FLOAT(IsFloatN, log2)
+LL_VEC_GEN_BASIC_MATH_FUNC_FLOAT(IsFloatN, log10)
+LL_VEC_GEN_BASIC_MATH_FUNC_FLOAT(IsFloatN, round)
+LL_VEC_GEN_BASIC_MATH_FUNC_FLOAT(IsFloatN, sin)
+LL_VEC_GEN_BASIC_MATH_FUNC_FLOAT(IsFloatN, sinh)
+LL_VEC_GEN_BASIC_MATH_FUNC_FLOAT(IsFloatN, sqrt)
+LL_VEC_GEN_BASIC_MATH_FUNC_FLOAT(IsFloatN, tan)
+LL_VEC_GEN_BASIC_MATH_FUNC_FLOAT(IsFloatN, tanh)
 
-// GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, atan2)
-// GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, fmod)
-// GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, modf)
-// GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, pow)
+// LL_VEC_GEN_BASIC_MATH_FUNC_FLOAT(IsFloatN, atan2)
+// LL_VEC_GEN_BASIC_MATH_FUNC_FLOAT(IsFloatN, fmod)
+// LL_VEC_GEN_BASIC_MATH_FUNC_FLOAT(IsFloatN, modf)
+// LL_VEC_GEN_BASIC_MATH_FUNC_FLOAT(IsFloatN, pow)
 
 
 template <IsFloatN T>

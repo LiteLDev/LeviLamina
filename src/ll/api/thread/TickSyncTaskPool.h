@@ -9,14 +9,9 @@
 
 namespace ll::thread {
 class TickSyncTaskPool {
-    struct Worker;
-    struct Impl;
-    std::unique_ptr<Impl> impl;
-
-    LLAPI void addTaskImpl(std::function<void()> f);
-
 public:
     LLAPI TickSyncTaskPool();
+
     LLAPI ~TickSyncTaskPool();
 
     template <class F, class... Args>
@@ -29,5 +24,13 @@ public:
         addTaskImpl([task] { (*task)(); });
         return res;
     }
+
+private:
+    struct Worker;
+    struct Impl;
+    std::unique_ptr<Impl> impl;
+
+    LLAPI void addTaskImpl(std::function<void()> f);
 };
+
 } // namespace ll::thread

@@ -1,6 +1,13 @@
 #pragma once
 
-#include "mc/math/vector/component/base/Field.h"
+#include <cstddef>
+
+#include "ll/api/base/Concepts.h"
+#include "ll/api/base/Macro.h"
+
+#include "mc/math/vector/base/CommutativeGroup.h"
+#include "mc/math/vector/base/Field.h" // IWYU pragma: keep
+#include "mc/math/vector/base/VectorBase.h"
 
 namespace ll::math {
 template <typename T, typename... Components>

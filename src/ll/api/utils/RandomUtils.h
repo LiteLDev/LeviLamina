@@ -1,7 +1,7 @@
 #pragma once
 
 #include <cfloat>
-#include <concepts> // IWYU pragma: keep
+#include <concepts>
 #include <cstdint>
 #include <limits>
 #include <random>
