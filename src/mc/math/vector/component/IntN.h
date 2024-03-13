@@ -30,7 +30,7 @@ public:
     }
 };
 
-#define LL_VEC_GEN_BASIC_MATH_FUNC_INT(NAME)                                                                              \
+#define LL_VEC_GEN_BASIC_MATH_FUNC_INT(NAME)                                                                           \
     template <IsIntN T>                                                                                                \
     [[nodiscard]] constexpr doubleN<T::size()> NAME(T const& x) noexcept                                               \
         requires(T::size() >= 2 && T::size() <= 4)                                                                     \

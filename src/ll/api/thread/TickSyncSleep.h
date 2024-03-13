@@ -14,7 +14,7 @@
 
 namespace ll::thread {
 
-class TickSyncSleepBase:public std::enable_shared_from_this<TickSyncSleepBase> {
+class TickSyncSleepBase : public std::enable_shared_from_this<TickSyncSleepBase> {
     struct Impl;
     std::unique_ptr<Impl> impl;
 
