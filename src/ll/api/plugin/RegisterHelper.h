@@ -32,6 +32,10 @@ concept Disableable = requires(T t) {
     extern "C" {                                                                                                       \
     _declspec(dllexport) bool ll_plugin_load(ll::plugin::NativePlugin& self) {                                         \
         static_assert(ll::plugin::Loadable<CLAZZ>, #CLAZZ " must be Loadable");                                        \
+        static_assert(                                                                                                 \
+            std::constructible_from<CLAZZ, ll::plugin::NativePlugin&>,                                                 \
+            #CLAZZ " must be constructible from NativePlugin&"                                                         \
+        );                                                                                                             \
         (BINDER) = std::make_unique<CLAZZ>(self);                                                                      \
         ll::plugin::bindToPlugin(myPlugin, self);                                                                      \
         return myPlugin->load();                                                                                       \
@@ -39,7 +43,7 @@ concept Disableable = requires(T t) {
     }
 
 template <ll::plugin::Loadable T>
-void bindToPlugin(std::unique_ptr<T>& myPlugin, ll::plugin::Plugin& self) {
+inline void bindToPlugin(std::unique_ptr<T>& myPlugin, ll::plugin::Plugin& self) {
     if constexpr (ll::plugin::Enableable<T>) {
         self.onEnable([&myPlugin](auto&) { return myPlugin->enable(); });
     }
