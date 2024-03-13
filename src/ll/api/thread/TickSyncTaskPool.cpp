@@ -14,55 +14,33 @@
 
 #include "mc/server/ServerLevel.h"
 
+#include "concurrent_queue.h"
+
 namespace ll::thread {
 
-std::atomic_bool workerHooked{};
+static Concurrency::concurrent_queue<std::function<void()>> works;
 
-std::recursive_mutex                                  poolListMutex;
-std::atomic_size_t                                    poolListSize{};
-std::vector<std::reference_wrapper<TickSyncTaskPool>> poolList;
+struct TickSyncTaskPool::Impl {};
 
-LL_TYPE_INSTANCE_HOOK(TickSyncTaskPool::Worker, HookPriority::Low, ServerLevel, &ServerLevel::_subTick, void) {
-    if (poolListSize > 0) {
-        std::lock_guard lock(poolListMutex);
-        for (auto& e : poolList) {
-            auto&           pool = e.get();
-            std::lock_guard lockp(pool.mutex);
-            auto            num = std::min(pool.tasksPerTick, pool.tasks.size());
-            for (size_t i = 0; i < num; i++) {
-                try {
-                    pool.tasks.front()();
-                } catch (...) {
-                    logger.error("Error in TickSyncTaskPool:");
-                    error_utils::printCurrentException(logger);
-                }
-                pool.tasks.pop();
-            }
+LL_TYPE_INSTANCE_HOOK(TickSyncTaskPool::Worker, HookPriority::High, ServerLevel, &ServerLevel::_subTick, void) {
+    std::function<void()> f;
+    while (works.try_pop(f)) {
+        try {
+            f();
+        } catch (...) {
+            logger.error("Error in TickSyncTaskPool:");
+            error_utils::printCurrentException(logger);
         }
-    } else {
-        unhook();
-        workerHooked = false;
     }
     origin();
 }
 
-TickSyncTaskPool::TickSyncTaskPool(size_t tasksPerTick) : tasksPerTick(tasksPerTick) {
-    using namespace detail;
-    std::lock_guard lock(poolListMutex);
-    id = poolList.size();
-    poolList.emplace_back(std::ref(*this));
-    ++poolListSize;
-    if (!workerHooked) {
-        workerHooked = true;
-        TickSyncTaskPool::Worker::hook();
-    }
-}
-TickSyncTaskPool::~TickSyncTaskPool() {
-    using namespace detail;
-    std::lock_guard lock(poolListMutex);
-    std::swap(poolList[id], poolList.back());
-    poolList.pop_back();
-    --poolListSize;
+TickSyncTaskPool::TickSyncTaskPool() : impl(std::make_unique<Impl>()) {}
+TickSyncTaskPool::~TickSyncTaskPool() {}
+
+void TickSyncTaskPool::addTaskImpl(std::function<void()> f) {
+    static ::ll::memory::HookRegistrar<Worker> reg;
+    works.push(std::move(f));
 }
 
 } // namespace ll::thread
