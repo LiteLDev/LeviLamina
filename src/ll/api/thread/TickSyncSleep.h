@@ -5,8 +5,8 @@
 #include <cstddef>
 #include <functional>
 #include <mutex>
+#include <optional>
 #include <utility>
-#include <variant>
 #include <vector>
 
 #include "ll/api/base/Macro.h"
@@ -14,88 +14,67 @@
 
 namespace ll::thread {
 
-template <class Clock>
-class TickSyncSleep;
-namespace detail {
-LLETAPI std::recursive_mutex listMutex;
-LLETAPI std::atomic_size_t tickListSize;
-LLETAPI                    std::vector<std::variant<
-    std::reference_wrapper<TickSyncSleep<chrono::ServerClock>>,
-    std::reference_wrapper<TickSyncSleep<chrono::GameTickClock>>>>
-                           tickList;
-LLAPI void                 notify();
-}; // namespace detail
+class TickSyncSleepBase:public std::enable_shared_from_this<TickSyncSleepBase> {
+    struct Impl;
+    std::unique_ptr<Impl> impl;
 
-template <class Clock>
-class TickSyncSleep {
-    bool                    interrupted{false};
-    std::mutex              mutex;
-    std::condition_variable cv;
-    size_t                  id;
+protected:
+    LLAPI std::unique_lock<std::mutex> lock();
+
+    LLAPI void sleepImpl(std::unique_lock<std::mutex>&);
+    LLAPI void interruptImpl();
+
+    virtual void check() = 0;
 
 public:
-    TickSyncSleep(TickSyncSleep&&)                 = delete;
-    TickSyncSleep(TickSyncSleep const&)            = delete;
-    TickSyncSleep& operator=(TickSyncSleep&&)      = delete;
-    TickSyncSleep& operator=(TickSyncSleep const&) = delete;
+    TickSyncSleepBase(TickSyncSleepBase&&)                 = delete;
+    TickSyncSleepBase(TickSyncSleepBase const&)            = delete;
+    TickSyncSleepBase& operator=(TickSyncSleepBase&&)      = delete;
+    TickSyncSleepBase& operator=(TickSyncSleepBase const&) = delete;
 
+    LLAPI TickSyncSleepBase();
+    LLAPI virtual ~TickSyncSleepBase();
+};
+
+template <class Clock>
+class TickSyncSleep : public TickSyncSleepBase {
+    void check() override {
+        if (!timepoint) return;
+        if (Clock::now() >= *timepoint || *timepoint >= Clock::time_point::max()) {
+            interrupt();
+        }
+    }
+
+public:
     using clock_type = Clock;
 
-    Clock::time_point timepoint;
+    std::optional<typename Clock::time_point> timepoint;
 
-    enum class State {
-        None,
-        Sleep,
-        SleepFor,
-        SleepUntil,
-    } state{State::None};
-
-    TickSyncSleep() {
-        using namespace detail;
-        std::lock_guard lock(listMutex);
-        id = tickList.size();
-        tickList.emplace_back(std::ref(*this));
-        ++tickListSize;
-        notify();
-    }
-
-    ~TickSyncSleep() {
-        using namespace detail;
-        std::lock_guard lock(listMutex);
-        state = State::None;
-        std::swap(tickList[id], tickList.back());
-        tickList.pop_back();
-        --tickListSize;
-    }
+    TickSyncSleep()          = default;
+    virtual ~TickSyncSleep() = default;
 
     void sleepFor(Clock::duration duration) {
-        std::unique_lock lock{mutex};
-        this->timepoint = Clock::now() + duration;
-        state           = State::SleepFor;
-        cv.wait(lock, [this] { return interrupted; });
-        interrupted = false;
+        std::unique_lock l{lock()};
+        timepoint = Clock::now() + duration;
+        sleepImpl(l);
     }
 
     void sleepUntil(Clock::time_point time) {
-        std::unique_lock lock{mutex};
-        this->timepoint = time;
-        state           = State::SleepUntil;
-        cv.wait(lock, [this] { return interrupted; });
-        interrupted = false;
+        std::unique_lock l{lock()};
+        timepoint = time;
+        sleepImpl(l);
     }
 
     void sleep() {
-        std::unique_lock lock{mutex};
-        state = State::Sleep;
-        cv.wait(lock, [this] { return interrupted; });
-        interrupted = false;
+        std::unique_lock l{lock()};
+        timepoint = std::nullopt;
+        sleepImpl(l);
     }
 
     void interrupt() {
-        std::lock_guard lock(mutex);
-        state       = State::None;
-        interrupted = true;
-        cv.notify_one();
+        std::unique_lock l{lock()};
+        timepoint = std::nullopt;
+        interruptImpl();
     }
 };
 } // namespace ll::thread

@@ -18,7 +18,7 @@ static Concurrency::concurrent_queue<std::function<void()>> works;
 
 struct TickSyncTaskPool::Impl {};
 
-LL_TYPE_INSTANCE_HOOK(TickSyncTaskPool::Worker, HookPriority::High, ServerLevel, &ServerLevel::_subTick, void) {
+LL_TYPE_INSTANCE_HOOK(TickSyncTaskPool::Worker, HookPriority::Low, ServerLevel, &ServerLevel::_subTick, void) {
     std::function<void()> f;
     while (works.try_pop(f)) {
         try {
