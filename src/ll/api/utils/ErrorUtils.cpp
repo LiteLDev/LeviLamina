@@ -21,7 +21,7 @@
 namespace ll::inline utils::error_utils {
 
 UntypedException::UntypedException(const EXCEPTION_RECORD& er)
-: exception_object(reinterpret_cast<void*>(er.ExceptionInformation[1])),
+: exceptionObject(reinterpret_cast<void*>(er.ExceptionInformation[1])),
   exc(&er) {
     if (exc->NumberParameters >= 3) {
         handle    = (exc->NumberParameters >= 4) ? (void*)exc->ExceptionInformation[3] : nullptr;

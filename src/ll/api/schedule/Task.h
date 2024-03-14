@@ -9,6 +9,7 @@
 #include <string_view>
 #include <utility>
 
+#include "ll/api/base/Concepts.h"
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
 #include "ll/api/plugin/NativePlugin.h"
@@ -16,10 +17,15 @@
 
 namespace ll::schedule {
 inline namespace task {
-LLETAPI std::atomic_ullong taskId;
-
-template <class Clock>
-class Task {
+class TaskBase;
+}
+namespace detail {
+LLAPI void   printScheduleError(TaskBase&) noexcept;
+LLAPI uint64 nextTaskId() noexcept;
+LLNDAPI std::chrono::system_clock::time_point parseTime(std::string_view);
+} // namespace detail
+inline namespace task {
+class TaskBase {
     uint64                id;
     std::function<void()> fn;
     bool                  mInterval;
@@ -28,20 +34,17 @@ class Task {
 public:
     std::weak_ptr<plugin::Plugin> pluginPtr;
 
-    using time_point = typename Clock::time_point;
-    using duration   = typename Clock::duration;
-
-    Task(
+    TaskBase(
         std::function<void()>         fn,
         bool                          interval,
         std::weak_ptr<plugin::Plugin> plugin = plugin::NativePlugin::current()
     )
-    : id(taskId++),
+    : id(detail::nextTaskId()),
       fn(std::move(fn)),
       mInterval(interval),
       pluginPtr(std::move(plugin)) {}
 
-    constexpr void call() { fn(); }
+    void call() { fn(); }
 
     [[nodiscard]] constexpr bool interval() { return mInterval; }
 
@@ -52,6 +55,22 @@ public:
     constexpr void cancel() { setCancelled(true); }
 
     [[nodiscard]] constexpr uint64 getId() const { return id; }
+
+    virtual ~TaskBase() = default;
+};
+
+template <concepts::Require<std::chrono::is_clock> Clock>
+class Task : public TaskBase {
+public:
+    using time_point = typename Clock::time_point;
+    using duration   = typename Clock::duration;
+
+    Task(
+        std::function<void()>         fn,
+        bool                          interval,
+        std::weak_ptr<plugin::Plugin> plugin = plugin::NativePlugin::current()
+    )
+    : TaskBase(std::move(fn), interval, std::move(plugin)) {}
 
     virtual std::optional<time_point> getFirstTime() { return getNextTime(); }
 
@@ -138,8 +157,6 @@ public:
     }
 };
 
-LLNDAPI std::chrono::system_clock::time_point parseTime(std::string_view);
-
 template <class Clock>
 class DelayTask : public Task<Clock> {
 private:
@@ -170,14 +187,11 @@ public:
         std::weak_ptr<plugin::Plugin> plugin = plugin::NativePlugin::current()
     )
         requires(std::is_same_v<Clock, std::chrono::system_clock>)
-    : DelayTask<Clock>(parseTime(timestr), std::move(fn), std::move(plugin)) {}
+    : DelayTask<Clock>(detail::parseTime(timestr), std::move(fn), std::move(plugin)) {}
 
     std::optional<time_point> getFirstTime() override { return time; }
 
     std::optional<time_point> getNextTime() override { return std::nullopt; }
 };
 } // namespace task
-namespace detail {
-LLAPI void printScheduleError() noexcept;
-}
 } // namespace ll::schedule

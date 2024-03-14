@@ -15,11 +15,23 @@
 
 #include "fmt/std.h" // IWYU pragma: keep
 
-namespace ll::schedule {
-inline namespace task {
-std::atomic_ullong taskId{0};
-
-std::optional<time_t> tryParseTime(std::string_view expression, std::string_view format) {
+namespace ll::schedule::detail {
+void printScheduleError(TaskBase& task) noexcept {
+    auto lock = ll::Logger::lock();
+    try {
+        logger.error(
+            "Error in schedule task[{}] of {}:",
+            task.getId(),
+            task.pluginPtr.expired() ? "unknown plugin" : task.pluginPtr.lock()->getManifest().name
+        );
+    } catch (...) {}
+    error_utils::printCurrentException(logger);
+}
+uint64 nextTaskId() noexcept {
+    static std::atomic_uint64_t id{0};
+    return id++;
+}
+static std::optional<time_t> tryParseTime(std::string_view expression, std::string_view format) {
     std::tm tm{};
     auto    time_now = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
     localtime_s(&tm, &time_now);
@@ -28,7 +40,6 @@ std::optional<time_t> tryParseTime(std::string_view expression, std::string_view
     }
     return std::nullopt;
 }
-
 std::chrono::system_clock::time_point parseTime(std::string_view expression) {
 
     if (auto res = tryParseTime(expression, "%H:%M:%S"); res) {
@@ -43,15 +54,4 @@ std::chrono::system_clock::time_point parseTime(std::string_view expression) {
             .value_or(tryParseTime(expression, "%Y/%m/%d %H:%M:%S").value_or(0))
     );
 }
-} // namespace task
-namespace detail {
-void printScheduleError() noexcept {
-    auto lock = ll::Logger::lock();
-    try {
-        logger.error("Error in schedule thread [{}]:", std::this_thread::get_id());
-    } catch (...) {}
-    error_utils::printCurrentException(logger);
-}
-} // namespace detail
-
-} // namespace ll::schedule
+} // namespace ll::schedule::detail

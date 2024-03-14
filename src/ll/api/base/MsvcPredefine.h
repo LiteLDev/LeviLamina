@@ -123,7 +123,7 @@ extern "C" void* __cdecl __RTCastToVoid(void*);
 
 // No one guarantees that the compiler's internal definitions are correct
 namespace RealInternal {
-#if defined(_WIN64) && !(defined(__INTELLISENSE__) || defined(__clang__))
+#if defined(_WIN64) && !(defined(__INTELLISENSE__) || defined(__clangd__))
 #pragma pack(push, 4)
 struct CatchableType {
     uint properties;

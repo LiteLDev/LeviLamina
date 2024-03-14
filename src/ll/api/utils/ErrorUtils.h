@@ -38,7 +38,7 @@ struct UntypedException {
     static constexpr uint msc                = 0x6D7363; // 'msc'
     static constexpr uint exceptionCodeOfCpp = (msc | 0xE0000000);
 
-    void*                          exception_object;
+    void*                          exceptionObject;
     _EXCEPTION_RECORD const*       exc;
     void*                          handle    = nullptr;
     RealInternal::ThrowInfo const* throwInfo = nullptr;

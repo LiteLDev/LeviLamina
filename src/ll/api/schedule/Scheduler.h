@@ -32,7 +32,10 @@ struct SleeperType<ll::chrono::GameTickClock> {
     using type = ll::thread::TickSyncSleep<ll::chrono::GameTickClock>;
 };
 
-template <class Clock, class Pool = ll::thread::ThreadPool, class Sleeper = SleeperType<Clock>::type>
+template <
+    concepts::Require<std::chrono::is_clock> Clock,
+    class Pool    = ll::thread::ThreadPool,
+    class Sleeper = SleeperType<Clock>::type>
 class Scheduler;
 
 using ServerTimeAsyncScheduler = Scheduler<ll::chrono::ServerClock>;
@@ -42,7 +45,7 @@ using SystemTimeScheduler      = Scheduler<std::chrono::system_clock>;
 using ServerTimeScheduler = Scheduler<ll::chrono::ServerClock, ll::thread::TickSyncTaskPool>;
 using GameTickScheduler   = Scheduler<ll::chrono::GameTickClock, ll::thread::TickSyncTaskPool>;
 
-template <class Clock, class Pool, class Sleeper>
+template <concepts::Require<std::chrono::is_clock> Clock, class Pool, class Sleeper>
 class Scheduler {
 private:
     using time_point = typename Clock::time_point;
@@ -92,7 +95,7 @@ private:
                     try {
                         task->call();
                     } catch (...) {
-                        detail::printScheduleError();
+                        detail::printScheduleError(*task);
                     }
                     addTask(task);
                 });
@@ -101,7 +104,7 @@ private:
                     try {
                         task->call();
                     } catch (...) {
-                        detail::printScheduleError();
+                        detail::printScheduleError(*task);
                     }
                 });
                 if (task->isCancelled()) {
