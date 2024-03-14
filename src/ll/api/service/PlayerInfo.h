@@ -24,5 +24,6 @@ public:
     LLNDAPI optional_ref<PlayerInfoEntry const> fromUuid(mce::UUID) const;
     LLNDAPI optional_ref<PlayerInfoEntry const> fromXuid(std::string_view) const;
     LLNDAPI optional_ref<PlayerInfoEntry const> fromName(std::string_view) const;
+    LLAPI void                                  forEach(std::function<bool(PlayerInfoEntry const&)> const& fn) const;
 };
 } // namespace ll::service

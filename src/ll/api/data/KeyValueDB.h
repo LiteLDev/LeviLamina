@@ -37,8 +37,6 @@ public:
     LLAPI bool del(std::string_view key);
 
     LLAPI void iter(std::function<bool(std::string_view, std::string_view)> const& fn) const;
-
-    LLNDAPI std::vector<std::string> getAllKeys() const;
 };
 
 } // namespace ll::data

@@ -72,16 +72,6 @@ public:
         }
     }
 
-    [[nodiscard]] std::vector<std::string> getAllKeys() const {
-        std::vector<std::string>           keys;
-        std::unique_ptr<leveldb::Iterator> it(db->NewIterator(readOptions));
-        for (it->SeekToFirst(); it->Valid(); it->Next()) {
-            auto k = it->key();
-            keys.emplace_back(k.data(), k.size());
-        }
-        return keys;
-    }
-
 private:
     KeyValueDBImpl() = default;
 };
@@ -107,5 +97,3 @@ bool KeyValueDB::set(std::string_view key, std::string_view val) { return impl->
 bool KeyValueDB::del(std::string_view key) { return impl->del(key); }
 
 void KeyValueDB::iter(std::function<bool(std::string_view, std::string_view)> const& fn) const { impl->iter(fn); }
-
-std::vector<std::string> KeyValueDB::getAllKeys() const { return impl->getAllKeys(); }

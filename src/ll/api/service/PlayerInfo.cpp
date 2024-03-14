@@ -11,7 +11,7 @@
 namespace ll::service {
 class PlayerInfo::Impl {
 public:
-    std::mutex                                                             mutex;
+    std::recursive_mutex                                                   mutex;
     std::unordered_map<mce::UUID, std::shared_ptr<PlayerInfoEntry>>        uuids;
     std::unordered_map<std::string_view, std::shared_ptr<PlayerInfoEntry>> xuids;
     std::unordered_map<std::string_view, std::shared_ptr<PlayerInfoEntry>> names;
@@ -93,5 +93,13 @@ optional_ref<PlayerInfo::PlayerInfoEntry const> PlayerInfo::fromName(std::string
         return i->second.get();
     }
     return nullptr;
+}
+void PlayerInfo::forEach(std::function<bool(PlayerInfoEntry const&)> const& fn) const {
+    std::lock_guard lock(impl->mutex);
+    for (auto& [id, ptr] : impl->uuids) {
+        if (!fn(*ptr)) {
+            return;
+        }
+    }
 }
 } // namespace ll::service
