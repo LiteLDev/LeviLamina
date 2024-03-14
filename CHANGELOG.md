@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.9.4] - 2024-03-14
+
+### Fixed
+
+- Fix logic error in TickSyncSleep
+- Fix Actor::traceRay [#1481]
+
 ## [0.9.3] - 2024-03-11
 
 ### Added
@@ -16,7 +23,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add visitIndex
 - Add plugin register helper
 - Add `PostprocessingManager::LockedChunk`,`buffer_span` , `DividedPos2d`add some member (#1484)
-
 
 ### Changed
 
@@ -30,7 +36,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fix missing dllexport in `SimpleForm::appendButton`
 - Fix missing include in file_utils
 - Fix string utils
-- Fix #1483
+- Fix [#1483]
 
 ## [0.9.2] - 2024-03-01
 
@@ -334,7 +340,11 @@ First preview release.
 
 For lip and tooth-hub test only.
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.9.3...HEAD
+[#1481]: https://github.com/LiteLDev/LeviLamina/issues/1481
+[#1483]: https://github.com/LiteLDev/LeviLamina/issues/1483
+
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.9.4...HEAD
+[0.9.4]: https://github.com/LiteLDev/LeviLamina/compare/v0.9.3...v0.9.4
 [0.9.3]: https://github.com/LiteLDev/LeviLamina/compare/v0.9.2...v0.9.3
 [0.9.2]: https://github.com/LiteLDev/LeviLamina/compare/v0.9.1...v0.9.2
 [0.9.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.9.0...v0.9.1
