@@ -36,56 +36,6 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     void,
     ::ServerInstance& ins
 ) {
-
-    // ll::Logger::setDefaultPlayerOutputFunc([](std::string_view sv) {
-    // TextPacket::createRawMessage(sv).sendToClients(); }
-    // );
-    /*
-         s.add<RepeatTask>(100_tick, [&] {
-             schedulelogger.info(
-                 "hi, 100_tick life {} ramdom {}",
-                 ll::chrono::GameTickClock::now().time_since_epoch(),
-                 ll::random_utils::rand<uint>()
-             );
-         });
-
-         s2.add<DelayTask>(1_tick, [&] {
-             schedulelogger.info("try GameTime {}", ll::chrono::GameTickClock::now().time_since_epoch());
-             s3.add<RepeatTask>(5s, [&] {
-                 schedulelogger.warn(
-                     "hi, 5s       gt   {} ramdom {}",
-                     ll::chrono::GameTickClock::now().time_since_epoch(),
-                     ll::random_utils::rand<double>()
-                 );
-             });
-         });
-
-         s2.add<RepeatTask>(0.1min, [&] {
-             auto lock = ll::Logger::lock();
-             schedulelogger.info(
-                 "hi, 0.1min   game {} random {}",
-                 ll::chrono::GameTickClock::now().time_since_epoch(),
-                 ll::random_utils::rand<int64>()
-             );
-             auto random  = ll::random_utils::rand<int64>();
-             random      /= 0;
-             schedulelogger.info("{}", random);
-             throw std::system_error(std::error_code(0, ll::error_utils::hresult_category()));
-         });
-
-         // s2.add<RepeatTask>(0.3min, [&] {
-         //     auto            pause = ll::thread::GlobalThreadPauser{};
-
-         //     schedulelogger.info("hello I paused all threads 1s");
-
-         //     std::this_thread::sleep_for(1s);
-         //     schedulelogger.info("hello I paused all threads 2s");
-
-         //     std::this_thread::sleep_for(1s);
-
-         //     schedulelogger.info("hello I resumed all threads");
-         // });
-     */
     auto l = ll::Logger::lock();
 
     ll::data::DependencyGraph<std::string> dep;

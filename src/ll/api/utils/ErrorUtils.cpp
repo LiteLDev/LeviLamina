@@ -14,10 +14,6 @@
 #pragma comment(lib, "DbgHelp.lib")
 #endif
 
-#pragma warning(push, 3)
-#include "comdef.h"
-#pragma warning(pop)
-
 #ifdef LL_DEBUG
 #include "ll/api/utils/StacktraceUtils.h"
 #endif
@@ -54,32 +50,6 @@ struct u8system_category : public std::_System_error_category {
 
 std::error_category const& u8system_category() noexcept {
     static constexpr struct u8system_category category;
-    return category;
-}
-
-struct hresult_category : public std::_System_error_category {
-    constexpr hresult_category() noexcept : _System_error_category() {}
-    [[nodiscard]] std::string message(int errCode) const override {
-        try {
-            std::wstring msg(_com_error((HRESULT)errCode).ErrorMessage());
-            if (!msg.empty()) {
-                std::string res{string_utils::wstr2str(msg)};
-                if (res.ends_with('\n')) {
-                    res.pop_back();
-                    if (res.ends_with('\r')) {
-                        res.pop_back();
-                    }
-                }
-                return string_utils::replaceAll(res, "\r\n", ", ");
-            }
-        } catch (...) {}
-        return "unknown error";
-    }
-    [[nodiscard]] char const* name() const noexcept override { return "hresult"; }
-};
-
-std::error_category const& hresult_category() noexcept {
-    static constexpr struct hresult_category category;
     return category;
 }
 
