@@ -136,6 +136,16 @@ struct Statistics::Impl {
 
     void submitData() {
         pool.addTask([this]() { json["service"]["customCharts"] = getCustomCharts(); }).wait();
+        ll::plugin::PluginManagerRegistry::getInstance().forEachPluginWithType(
+            [&](std::string_view type, std::string_view name, ll::plugin::Plugin& plugin) {
+                nlohmann::json pluginInfo;
+                pluginInfo["pluginName"]    = name;
+                pluginInfo["pluginType"]    = type;
+                pluginInfo["pluginVersion"] = plugin.getManifest().version->to_string();
+                json["plugins"].emplace_back(pluginInfo);
+                return true;
+            }
+        );
         try {
             auto body                             = json.dump();
             header.find("Content-Length")->second = std::to_string(body.size());
@@ -168,16 +178,6 @@ struct Statistics::Impl {
         json["osArch"]        = "amd64";
         json["osVersion"]     = "";
         json["coreCount"]     = getCpuCoreCount();
-        scheduler.add<ll::schedule::DelayTask>(1s, [&]() { // Add plugins list after server started
-            ll::plugin::PluginManagerRegistry::getInstance().forEachPluginWithType(
-                [&](std::string_view, std::string_view name, ll::plugin::Plugin&) {
-                    nlohmann::json pluginInfo;
-                    pluginInfo["pluginName"] = name;
-                    json["plugins"].emplace_back(pluginInfo);
-                    return true;
-                }
-            );
-        });
 
         scheduler.add<ll::schedule::DelayTask>(1.0min * ll::random_utils::rand(3.0, 6.0), [this]() {
             submitData();
