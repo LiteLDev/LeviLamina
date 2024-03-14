@@ -85,7 +85,7 @@ class HitResult Actor::traceRay(
         }
     }
     if (includeActor) {
-        float  resDistance = -1.0f;
+        float  resDistance = 0.0f;
         Actor* resActor    = nullptr;
         Vec3   resPos{};
 
