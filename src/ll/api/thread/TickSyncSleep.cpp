@@ -48,7 +48,7 @@ TickSyncSleepBase::~TickSyncSleepBase() {
     list.back()->impl->id = impl->id;
     std::swap(list[impl->id], list.back());
     list.pop_back();
-    hasSleeper = list.empty();
+    hasSleeper = !list.empty();
 }
 
 } // namespace ll::thread
