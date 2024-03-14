@@ -135,17 +135,13 @@ struct Statistics::Impl {
     };
 
     void submitData() {
-        pool.addTask([this]() { json["service"]["customCharts"] = getCustomCharts(); }).wait();
-        ll::plugin::PluginManagerRegistry::getInstance().forEachPluginWithType(
-            [&](std::string_view type, std::string_view name, ll::plugin::Plugin& plugin) {
+        pool.addTask([this]() {
                 nlohmann::json pluginInfo;
-                pluginInfo["pluginName"]    = name;
-                pluginInfo["pluginType"]    = type;
-                pluginInfo["pluginVersion"] = plugin.getManifest().version->to_string();
+                pluginInfo["pluginName"]   = "LeviLamina";
+                pluginInfo["customCharts"] = getCustomCharts();
                 json["plugins"].emplace_back(pluginInfo);
-                return true;
             }
-        );
+        ).wait();
         try {
             auto body                             = json.dump();
             header.find("Content-Length")->second = std::to_string(body.size());
@@ -162,7 +158,8 @@ struct Statistics::Impl {
             fs::create_directory(plugin::getPluginsRoot() / u8"LeviLamina/data");
         }
         if (!fs::exists(plugin::getPluginsRoot() / u8"LeviLamina/data/statisticsUuid")) {
-            std::string uuid = mce::UUID::random().asString();
+            std::string uuid   = mce::UUID::random().asString();
+            json["serverUUID"] = uuid;
             ll::file_utils::writeFile(plugin::getPluginsRoot() / u8"LeviLamina/data/statisticsUuid", uuid);
         } else {
             auto uuidFile = ll::file_utils::readFile(plugin::getPluginsRoot() / u8"LeviLamina/data/statisticsUuid");
@@ -173,11 +170,10 @@ struct Statistics::Impl {
                 ll::file_utils::writeFile(plugin::getPluginsRoot() / u8"LeviLamina/data/statisticsUuid", uuid);
             }
         }
-        json["service"]["id"] = 21245;
-        json["osName"]        = ll::win_utils::isWine() ? "Linux" : "Windows";
-        json["osArch"]        = "amd64";
-        json["osVersion"]     = "";
-        json["coreCount"]     = getCpuCoreCount();
+        json["osName"]    = ll::win_utils::isWine() ? "Linux" : "Windows";
+        json["osArch"]    = "amd64";
+        json["osVersion"] = "";
+        json["coreCount"] = getCpuCoreCount();
 
         scheduler.add<ll::schedule::DelayTask>(1.0min * ll::random_utils::rand(3.0, 6.0), [this]() {
             submitData();
