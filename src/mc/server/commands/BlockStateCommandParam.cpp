@@ -19,7 +19,7 @@ Block::BlockStatesType BlockStateCommandParam::toStateMap(std::vector<BlockState
     Block::BlockStatesType res;
     for (auto& p : vec) {
         if (auto val = p.toStateValue(); val) {
-            res.emplace(p.mBlockState, *std::move(val));
+            res.emplace_back(p.mBlockState, *std::move(val));
         }
     }
     return res;
