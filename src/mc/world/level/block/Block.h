@@ -22,7 +22,7 @@ class CompoundTag;
 class Block {
 public:
     using BlockStateValueType = std::variant<int, float, bool, std::string>;
-    using BlockStatesType     = std::unordered_map<std::string, BlockStateValueType>;
+    using BlockStatesType     = std::vector<std::pair<std::string, BlockStateValueType>>;
 
     LLNDAPI static optional_ref<Block const> tryGetFromRegistry(uint runtimeID);
     LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string_view name);
