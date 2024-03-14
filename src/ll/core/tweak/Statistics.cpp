@@ -7,6 +7,7 @@
 #include "ll/api/i18n/I18n.h"
 #include "ll/api/io/FileUtils.h"
 #include "ll/api/memory/Hook.h"
+#include "ll/api/plugin/PluginManagerRegistry.h"
 #include "ll/api/schedule/Scheduler.h"
 #include "ll/api/schedule/Task.h"
 #include "ll/api/service/Bedrock.h"
@@ -167,6 +168,16 @@ struct Statistics::Impl {
         json["osArch"]        = "amd64";
         json["osVersion"]     = "";
         json["coreCount"]     = getCpuCoreCount();
+        scheduler.add<ll::schedule::DelayTask>(1s, [&]() { // Add plugins list after server started
+            ll::plugin::PluginManagerRegistry::getInstance().forEachPluginWithType(
+                [&](std::string_view, std::string_view name, ll::plugin::Plugin&) {
+                    nlohmann::json pluginInfo;
+                    pluginInfo["pluginName"] = name;
+                    json["plugins"].emplace_back(pluginInfo);
+                    return true;
+                }
+            );
+        });
 
         scheduler.add<ll::schedule::DelayTask>(1.0min * ll::random_utils::rand(3.0, 6.0), [this]() {
             submitData();
