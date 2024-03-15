@@ -78,15 +78,31 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 
     CommandRegistrar::getInstance().tryRegisterSoftEnum("hello", {"SoftEnum1", "af1451"});
 
+    CommandRegistrar::getInstance().tryRegisterEnum(
+        "testenum",
+        {
+            {"testenumhhhh", 124144},
+            {"hrshh54w4t4",  67584 }
+    },
+         Bedrock::type_id<CommandRegistry, std::pair<
+    std::string,
+    uint64>>(),
+        &CommandRegistry::parse<std::pair<
+    std::string,
+    uint64>>
+    );
+
     cmd.runtimeOverload()
         .required("runtime", runtime::ParamKind::Int)
         .required("range", runtime::ParamKind::IntegerRange)
         .required("se", runtime::ParamKind::SoftEnum, "hello")
+        .required("enummmmm", runtime::ParamKind::Enum, "testenum")
         .execute([](CommandOrigin const& orgin, CommandOutput& output, runtime::Command const& self) {
             output.success("{}", orgin.getName());
             output.success("runtime : {}", self["runtime"].get<runtime::ParamKind::Int>());
             auto range = self["range"].get<runtime::ParamKind::IntegerRange>();
             output.success("range : {} {}", range.mMinValue, range.mMaxValue);
             output.success("SoftEnum : {}", self["se"].get<runtime::ParamKind::SoftEnum>());
+            output.success("Enum : {}", self["enummmmm"].get<runtime::ParamKind::Enum>());
         });
 }

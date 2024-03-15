@@ -995,3 +995,12 @@ MCTAPI bool CommandRegistry::parse<std::unique_ptr<
 MCTAPI bool CommandRegistry::parse<std::vector<
     BlockStateCommandParam>>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
     const;
+
+template <>
+inline bool CommandRegistry::parse<std::pair<
+    std::string,
+    uint64>>(void* target, CommandRegistry::ParseToken const& token, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
+    const {
+    *(std::pair<std::string, uint64>*)target = {token.toString(), getEnumData(token)};
+    return true;
+}
