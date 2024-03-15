@@ -5,8 +5,6 @@
 #include <utility>
 #include <vector>
 
-#include "gsl/pointers"
-
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
 
@@ -27,10 +25,12 @@ class OverloadData {
     struct Impl;
     std::unique_ptr<Impl> impl;
 
-    CommandRegistry::FactoryFn        getFactory();
-    std::vector<CommandParameterData> moveParams();
-
 protected:
+    CommandRegistry::FactoryFn            getFactory();
+    std::vector<CommandParameterData>&    getParams();
+    CommandHandle&                        getHandle();
+    std::lock_guard<std::recursive_mutex> lock();
+
     LLAPI explicit OverloadData(CommandHandle& handle);
 
     LLAPI CommandParameterData& back();
@@ -48,9 +48,12 @@ protected:
 
     LLAPI CommandParameterData& addTextImpl(std::string_view text, int offset);
 
+    LLAPI char const* addPostfix(std::string_view);
+
     LLAPI void setFactory(CommandRegistry::FactoryFn fn);
 
 public:
     LLAPI ~OverloadData();
+    LLAPI OverloadData(OverloadData&&);
 };
 } // namespace ll::command

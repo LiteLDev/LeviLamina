@@ -1,5 +1,6 @@
 #include "ll/core/plugin/NativePluginManager.h"
 #include "ll/api/utils/ErrorUtils.h"
+#include "ll/api/utils/WinUtils.h"
 #include "ll/core/LeviLamina.h"
 
 #include <demangler/Demangle.h>
@@ -9,7 +10,12 @@
 
 namespace ll::plugin {
 
-NativePluginManager::NativePluginManager() : PluginManager(NativePluginManagerName) {}
+NativePluginManager::NativePluginManager() : PluginManager(NativePluginManagerName) {
+    handleMap[win_utils::getCurrentModuleHandle()] = std::make_shared<NativePlugin>(
+        Manifest{"./../../LeviLamina.dll", "LeviLamina", getType()},
+        win_utils::getCurrentModuleHandle()
+    );
+}
 NativePluginManager::~NativePluginManager() = default;
 
 static void printDependencyError(

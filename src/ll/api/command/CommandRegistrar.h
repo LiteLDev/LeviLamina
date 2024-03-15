@@ -33,6 +33,8 @@ class CommandRegistrar {
 
     char const* addText(CommandHandle&, std::string_view);
 
+    char const* addPostfix(CommandHandle&, std::string_view);
+
     [[nodiscard]] CommandRegistry& getRegistry() const;
 
 public:

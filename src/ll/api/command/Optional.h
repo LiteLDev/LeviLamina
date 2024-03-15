@@ -8,19 +8,22 @@
 
 namespace ll::command {
 
-template <std::default_initializable T>
+template <class T>
 struct OptionalOffsetGetter;
 
-template <std::default_initializable T>
+template <class T>
 class Optional {
+protected:
     friend OptionalOffsetGetter<T>;
-    T    mValue{};
-    bool hasValue{};
+    T    mValue;
+    bool hasValue;
 
 public:
     using value_type = T;
 
-    [[nodiscard]] constexpr Optional() noexcept(std::is_nothrow_default_constructible_v<T>) = default;
+    template <class... Args>
+    [[nodiscard]] constexpr Optional(Args&&... args) : mValue(std::forward<Args>(args)...),
+                                                       hasValue{false} {}
 
     // NOLINTNEXTLINE(performance-noexcept-move-constructor)
     Optional& operator=(Optional&&) noexcept(std::is_nothrow_move_assignable_v<T>) = default;
@@ -131,7 +134,7 @@ template <class T>
 using remove_optional_t = remove_optional<T>::type;
 
 
-template <std::default_initializable T>
+template <class T>
 struct OptionalOffsetGetter {
     static constexpr auto value = offsetof(Optional<T>, hasValue);
 };

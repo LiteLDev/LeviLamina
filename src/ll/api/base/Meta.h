@@ -111,6 +111,14 @@ public:
     template <class T>
     static constexpr bool contains = (std::is_same_v<T, TL> || ...);
 
+    template <template <class> class T>
+    static constexpr bool all = (T<TL>::value && ...);
+
+    template <template <class> class T>
+    static constexpr bool any = (T<TL>::value || ...);
+
+    static constexpr size_t size = sizeof...(TL);
+
     template <template <class> class W>
     using wrap = TypeList<W<TL>...>;
 

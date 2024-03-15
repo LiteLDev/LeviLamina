@@ -11,6 +11,8 @@
 #include "mc/world/AutomaticID.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 
+#include "ll/api/command/runtime/Overload.h"
+
 using namespace ll::command;
 
 struct ParamTest {
@@ -73,4 +75,18 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
                 param.subcmd->run(ori, output);
             }
         }>();
+
+    CommandRegistrar::getInstance().tryRegisterSoftEnum("hello", {"SoftEnum1", "af1451"});
+
+    cmd.runtimeOverload()
+        .required("runtime", runtime::ParamKind::Int)
+        .required("range", runtime::ParamKind::IntegerRange)
+        .required("se", runtime::ParamKind::SoftEnum, "hello")
+        .execute([](CommandOrigin const& orgin, CommandOutput& output, runtime::Command const& self) {
+            output.success("{}", orgin.getName());
+            output.success("runtime : {}", self["runtime"].get<runtime::ParamKind::Int>());
+            auto range = self["range"].get<runtime::ParamKind::IntegerRange>();
+            output.success("range : {} {}", range.mMinValue, range.mMaxValue);
+            output.success("SoftEnum : {}", self["se"].get<runtime::ParamKind::SoftEnum>());
+        });
 }

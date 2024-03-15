@@ -68,7 +68,7 @@ class Overload : private OverloadData {
             addParamImpl(
                 Bedrock::type_id<CommandRegistry, ParamType>(),
                 &CommandRegistry::parse<ParamType>,
-                std::string{name},
+                name,
                 paramType,
                 enum_name_v<RemoveOptionalType>,
                 offset,
@@ -77,7 +77,7 @@ class Overload : private OverloadData {
             );
         });
         if (!hasName) {
-            throw std::runtime_error("miss param " + std::string(name));
+            throw std::invalid_argument("invalid param " + std::string(name));
         }
         return *this;
     }
@@ -85,30 +85,29 @@ class Overload : private OverloadData {
     explicit Overload(CommandHandle& handle) : OverloadData(handle) {}
 
 public:
-    constexpr Overload& optional(std::string_view name) {
+    [[nodiscard]] constexpr Overload& optional(std::string_view name) {
         addParam(name).back().mIsOptional = true;
         return *this;
     }
-    constexpr Overload& required(std::string_view name) {
+    [[nodiscard]] constexpr Overload& required(std::string_view name) {
         addParam(name).back().mIsOptional = false;
         return *this;
     }
-    constexpr Overload& text(std::string_view text) {
+    [[nodiscard]] constexpr Overload& text(std::string_view text) {
         addTextImpl(text, (int)PlaceholderOffset);
         return *this;
     }
 
-    constexpr Overload& postfix(std::string_view postfix) {
-        auto& last              = back();
-        last.mEnumNameOrPostfix = postfix.data();
-        last.mParamType         = CommandParameterDataType::Postfix;
+    [[nodiscard]] constexpr Overload& postfix(std::string_view postfix) {
+        back().mEnumNameOrPostfix = addPostfix(postfix);
+        back().mParamType         = CommandParameterDataType::Postfix;
         return *this;
     }
-    constexpr Overload& option(CommandParameterOption option) {
+    [[nodiscard]] constexpr Overload& option(CommandParameterOption option) {
         back().addOptions(option);
         return *this;
     }
-    constexpr Overload& deoption(CommandParameterOption option) {
+    [[nodiscard]] constexpr Overload& deoption(CommandParameterOption option) {
         back().mOptions = (CommandParameterOption)((uchar)(back().mOptions) & (!(uchar)option));
         return *this;
     }

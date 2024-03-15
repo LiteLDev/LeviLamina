@@ -4,9 +4,7 @@
 
 class CommandFilePath {
 public:
-    // prevent constructor by default
-    CommandFilePath& operator=(CommandFilePath const&);
-    CommandFilePath(CommandFilePath const&);
+    std::string mText; // this+0x0
 
 public:
     // NOLINTBEGIN

@@ -7,6 +7,7 @@
 #include <utility>
 #include <vector>
 
+#include "ll/api/base/Containers.h"
 #include "ll/api/base/StdInt.h"
 #include "ll/api/command/CommandHandle.h"
 #include "ll/api/command/OverloadData.h"
@@ -19,9 +20,10 @@
 
 namespace ll::command {
 struct CommandRegistrar::Impl {
-    std::unordered_map<std::string, CommandHandle> commands;
-    std::unordered_map<std::string, uint64>        textWithRef;
-    std::recursive_mutex                           mutex;
+    UnorderedStringMap<CommandHandle> commands;
+    UnorderedStringMap<uint64>        textWithRef;
+    UnorderedStringMap<uint64>        postfixWithRef;
+    std::recursive_mutex              mutex;
 };
 
 CommandRegistrar::CommandRegistrar() : impl(std::make_unique<Impl>()) {}
@@ -143,5 +145,15 @@ char const* CommandRegistrar::addText(CommandHandle& /*handle*/, std::string_vie
         );
     }
     return impl->textWithRef.find(storedName)->first.c_str();
+}
+
+char const* CommandRegistrar::addPostfix(CommandHandle& /*handle*/, std::string_view postfix) {
+    std::lock_guard lock{impl->mutex};
+    if (impl->postfixWithRef.contains(postfix)) {
+        impl->postfixWithRef.find(postfix)->second++;
+    } else {
+        impl->postfixWithRef.try_emplace(std::string{postfix}, 1);
+    }
+    return impl->postfixWithRef.find(postfix)->first.c_str();
 }
 } // namespace ll::command
