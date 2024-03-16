@@ -1,5 +1,10 @@
 #pragma once
 
+#include <memory>
+#include <string>
+#include <string_view>
+#include <vector>
+
 #include "ll/api/plugin/PluginManagerRegistry.h"
 
 namespace ll::plugin {

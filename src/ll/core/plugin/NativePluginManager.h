@@ -1,5 +1,10 @@
 #pragma once
 
+#include <memory>
+#include <string_view>
+#include <unordered_map>
+
+#include "ll/api/plugin/Manifest.h"
 #include "ll/api/plugin/NativePlugin.h"
 #include "ll/api/plugin/PluginManager.h"
 

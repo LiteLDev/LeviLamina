@@ -1,28 +1,35 @@
 #include "mc/world/actor/Actor.h"
+
+#include <functional>
+#include <optional>
+#include <string>
+
 #include "ll/api/memory/Memory.h"
+
+#include "mc/_HeaderOutputPredefine.h"
 #include "mc/common/HitDetection.h"
+#include "mc/common/wrapper/optional_ref.h"
 #include "mc/entity/EntityContext.h"
 #include "mc/entity/flags/SimulatedPlayerFlag.h"
 #include "mc/entity/systems/OnFireSystem.h"
-#include "mc/entity/utilities/ActorCategory.h"
 #include "mc/entity/utilities/ActorCollision.h"
+#include "mc/entity/utilities/ActorDamageCause.h"
 #include "mc/entity/utilities/ActorLocation.h"
-#include "mc/entity/utilities/ActorType.h"
+#include "mc/enums/ShapeType.h"
 #include "mc/math/Vec2.h"
 #include "mc/math/Vec3.h"
-#include "mc/nbt/CompoundTag.h"
-#include "mc/server/SimulatedPlayer.h"
 #include "mc/server/commands/CommandUtils.h"
 #include "mc/server/commands/RotationData.h"
 #include "mc/server/commands/standard/TeleportCommand.h"
-#include "mc/server/commands/standard/TeleportTarget.h"
+#include "mc/server/commands/standard/TeleportTarget.h" // IWYU pragma: keep for TeleportCommand::computeTarget
 #include "mc/util/ExpressionNode.h"
-#include "mc/world/actor/ActorClassTree.h"
 #include "mc/world/actor/ActorDamageByActorSource.h"
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
+#include "mc/world/actor/common/ClipDefaults.h"
 #include "mc/world/components/FlagComponent.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/BlockSource.h"
+#include "mc/world/phys/HitResult.h"
 
 class EntityContext&       Actor::getEntityContext() { return ll::memory::dAccess<EntityContext>(this, 8); }
 class EntityContext const& Actor::getEntityContext() const { return ll::memory::dAccess<EntityContext>(this, 8); }
@@ -41,11 +48,11 @@ bool Actor::isSimulatedPlayer() const { return getEntityContext().hasComponent<F
 
 bool Actor::isOnGround() const { return ActorCollision::isOnGround(getEntityContext()); }
 
-void Actor::setOnFire(int num, bool isEffect) {
+void Actor::setOnFire(int time, bool isEffect) {
     if (isEffect) {
-        OnFireSystem::setOnFire(*this, num);
+        OnFireSystem::setOnFire(*this, time);
     } else {
-        OnFireSystem::setOnFireNoEffects(*this, num);
+        OnFireSystem::setOnFireNoEffects(*this, time);
     }
 }
 void Actor::stopFire() { OnFireSystem::stopFire(*this); }

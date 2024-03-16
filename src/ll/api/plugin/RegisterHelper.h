@@ -37,8 +37,8 @@ concept Disableable = requires(T t) {
             #CLAZZ " must be constructible from NativePlugin&"                                                         \
         );                                                                                                             \
         (BINDER) = std::make_unique<CLAZZ>(self);                                                                      \
-        ll::plugin::bindToPlugin(myPlugin, self);                                                                      \
-        return myPlugin->load();                                                                                       \
+        ll::plugin::bindToPlugin((BINDER), self);                                                                      \
+        return (BINDER)->load();                                                                                       \
     }                                                                                                                  \
     }
 

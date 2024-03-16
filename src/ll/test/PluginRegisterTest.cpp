@@ -24,8 +24,8 @@ public:
     void doSomething();
 };
 
-std::unique_ptr<class MyPlugin> myPlugin;
+std::unique_ptr<class MyPlugin> myPlugin114;
 
-LL_REGISTER_PLUGIN(MyPlugin, myPlugin);
+LL_REGISTER_PLUGIN(MyPlugin, myPlugin114);
 
 } // namespace test

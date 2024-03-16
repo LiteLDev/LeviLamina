@@ -1,12 +1,30 @@
 #include "ll/core/plugin/NativePluginManager.h"
+
+#include <cstddef>
+#include <filesystem>
+#include <memory>
+#include <ostream>
+#include <sstream>
+#include <string>
+#include <string_view>
+#include <utility>
+
+#include "demangler/Demangle.h"
+#include "fmt/core.h"
+#include "pl/dependency/DependencyWalker.h"
+
+#include "ll/api/plugin/Manifest.h"
+#include "ll/api/plugin/NativePlugin.h"
+#include "ll/api/plugin/Plugin.h"
+#include "ll/api/plugin/PluginManager.h"
 #include "ll/api/utils/ErrorUtils.h"
+#include "ll/api/utils/StringUtils.h"
 #include "ll/api/utils/WinUtils.h"
 #include "ll/core/LeviLamina.h"
 
-#include <demangler/Demangle.h>
-#include <pl/dependency/DependencyWalker.h>
-
-#include "windows.h"
+#include <libloaderapi.h>
+#include <minwindef.h>
+#include <processenv.h>
 
 namespace ll::plugin {
 
@@ -16,6 +34,7 @@ NativePluginManager::NativePluginManager() : PluginManager(NativePluginManagerNa
         win_utils::getCurrentModuleHandle()
     );
 }
+
 NativePluginManager::~NativePluginManager() = default;
 
 static void printDependencyError(
@@ -122,4 +141,5 @@ bool NativePluginManager::unload(std::string_view name) {
     handleMap.erase(ptr->getHandle());
     return true;
 }
+
 } // namespace ll::plugin

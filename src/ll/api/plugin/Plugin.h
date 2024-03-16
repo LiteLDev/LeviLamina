@@ -41,6 +41,10 @@ public:
 
     LLNDAPI Logger& getLogger() const;
 
+    [[nodiscard]] bool isEnabled() const { return getState() == State::Enabled; }
+
+    [[nodiscard]] bool isDisabled() const { return getState() == State::Disabled; }
+
     // set on load callback and etc...
     LLAPI void onLoad(CallbackFn func) noexcept;
 

@@ -1,5 +1,6 @@
 #include "ll/core/plugin/PluginRegistrar.h"
 
+#include <chrono>
 #include <cstddef>
 #include <expected>
 #include <filesystem>
@@ -16,13 +17,14 @@
 #include "nlohmann/json.hpp"
 #include "nlohmann/json_fwd.hpp"
 
-#include "ll/api/base/Concepts.h" // IWYU pragma: keep
 #include "ll/api/data/DependencyGraph.h"
+#include "ll/api/data/Version.h"
 #include "ll/api/i18n/I18n.h"
 #include "ll/api/io/FileUtils.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/plugin/Manifest.h"
 #include "ll/api/plugin/Plugin.h"
+#include "ll/api/plugin/PluginManager.h"
 #include "ll/api/plugin/PluginManagerRegistry.h"
 #include "ll/api/reflection/Deserialization.h"
 #include "ll/api/utils/ErrorUtils.h"
@@ -234,6 +236,7 @@ void PluginRegistrar::loadAllPlugins() {
                 continue;
             }
         }
+        logger.info("Loading {0} v{1}"_tr(name, manifest.version.value_or(data::Version{0, 0, 0})));
         if (registry.loadPlugin(std::move(manifest))) {
             logger.info("{} loaded"_tr(name));
         } else {
@@ -266,33 +269,30 @@ LL_TYPE_INSTANCE_HOOK(
     ::ServerInstance& ins
 ) {
     origin(ins);
-    try {
-        auto   begin     = std::chrono::steady_clock::now();
-        auto&  registrar = PluginRegistrar::getInstance();
-        size_t count{};
-        for (auto& name : registrar.getSortedPluginNames()) {
-            bool enabled{};
-            try {
-                enabled = registrar.enablePlugin(name);
-            } catch (...) {
-                enabled = false;
-                error_utils::printCurrentException(logger);
-            }
-            if (enabled) {
-                count++;
-            } else {
-                logger.error("Failed to enable {}"_tr(name));
-            }
+    logger.info("Enabling plugins..."_tr());
+    auto   begin     = std::chrono::steady_clock::now();
+    auto&  registrar = PluginRegistrar::getInstance();
+    size_t count{};
+    for (auto& name : registrar.getSortedPluginNames()) {
+        auto plugin = PluginManagerRegistry::getInstance().getPlugin(name);
+        if (!plugin) continue;
+        if (plugin->isEnabled()) continue;
+        logger.info("Enabling {0} v{1}"_tr(name, plugin->getManifest().version.value_or(data::Version{0, 0, 0})));
+        bool enabled{};
+        try {
+            enabled = registrar.enablePlugin(name);
+        } catch (...) {
+            enabled = false;
+            error_utils::printCurrentException(logger);
         }
-        if (count > 0) {
-            logger.info("{} plugin(s) enabled in ({:.1f}s)"_tr(
-                count,
-                std::chrono::duration_cast<std::chrono::duration<double>>(std::chrono::steady_clock::now() - begin)
-                    .count()
-            ));
-        }
-    } catch (...) {
-        error_utils::printCurrentException(logger);
+        if (enabled) count++;
+        else logger.error("Failed to enable {}"_tr(name));
+    }
+    if (count > 0) {
+        logger.info("{} plugin(s) enabled in ({:.1f}s)"_tr(
+            count,
+            std::chrono::duration_cast<std::chrono::duration<double>>(std::chrono::steady_clock::now() - begin).count()
+        ));
     }
 }
 LL_TYPE_INSTANCE_HOOK(
@@ -302,17 +302,18 @@ LL_TYPE_INSTANCE_HOOK(
     &ServerInstance::leaveGameSync,
     void
 ) {
-    try {
-        auto& registrar = PluginRegistrar::getInstance();
-        for (auto& name : std::ranges::reverse_view(registrar.getSortedPluginNames())) {
-            try {
-                registrar.disablePlugin(name);
-            } catch (...) {
-                error_utils::printCurrentException(logger);
-            }
+    logger.info("Disabling plugins..."_tr());
+    auto& registrar = PluginRegistrar::getInstance();
+    for (auto& name : std::ranges::reverse_view(registrar.getSortedPluginNames())) {
+        auto plugin = PluginManagerRegistry::getInstance().getPlugin(name);
+        if (!plugin) continue;
+        if (!PluginManagerRegistry::getInstance().getPlugin(name)->isDisabled()) continue;
+        logger.info("Disabling {0} v{1}"_tr(name, plugin->getManifest().version.value_or(data::Version{0, 0, 0})));
+        try {
+            registrar.disablePlugin(name);
+        } catch (...) {
+            error_utils::printCurrentException(logger);
         }
-    } catch (...) {
-        error_utils::printCurrentException(logger);
     }
     origin();
 }
