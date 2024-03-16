@@ -5,6 +5,10 @@
 #include "ll/api/memory/Closure.h"
 
 namespace ll::command::runtime {
+
+static_assert(ParamKindList::size == ParamKind::Count);
+static_assert(ParamKindList::all<std::is_default_constructible>);
+
 struct Overload::Impl {
     std::optional<memory::FunctionalClosure<std::unique_ptr<::Command>>>                    factoryClosure{};
     std::vector<std::pair<std::string, ParamKindType>>                                      params;
@@ -36,7 +40,7 @@ void Overload::addParam(std::string_view name, ParamKindType kind, CommandParame
                 type,
                 nullptr,
                 offset,
-                offset + OptionalOffsetGetter<ParamKindList::to<std::variant>>::value,
+                offset + OptionalOffsetGetter<ParamStorageType::value_type>::value,
                 true
             );
         },

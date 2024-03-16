@@ -84,9 +84,6 @@ using ParamKindList = meta::TypeList<
     CommandWildcardInt,
     WildcardCommandSelector<Actor>>;
 
-static_assert(ParamKindList::size == ParamKind::Count);
-static_assert(ParamKindList::all<std::is_default_constructible>);
-
 class ParamStorageType : public Optional<ParamKindList::to<std::variant>> {
 public:
     using Optional<ParamKindList::to<std::variant>>::Optional;
