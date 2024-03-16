@@ -9,12 +9,10 @@
 
 namespace ll::command {
 class CommandRegistrar;
-namespace runtime {
-class Overload;
-}
+class RuntimeOverload;
 class CommandHandle {
     friend OverloadData;
-    friend runtime::Overload;
+    friend RuntimeOverload;
 
     struct Impl;
     std::unique_ptr<Impl> impl;
@@ -23,7 +21,7 @@ class CommandHandle {
 
     void registerOverload(OverloadData&);
 
-    void registerRuntimeOverload(runtime::Overload&);
+    void registerRuntimeOverload(RuntimeOverload&);
 
     char const* addText(std::string_view);
 
@@ -38,7 +36,7 @@ public:
         return Overload<Params>{*this};
     }
 
-    LLNDAPI runtime::Overload runtimeOverload();
+    LLNDAPI RuntimeOverload runtimeOverload();
 
     LLAPI void alias(std::string_view alias);
 

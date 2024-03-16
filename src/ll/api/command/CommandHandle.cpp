@@ -6,7 +6,7 @@
 #include "ll/api/command/CommandRegistrar.h"
 #include "ll/api/command/OverloadData.h"
 
-#include "ll/api/command/runtime/Overload.h"
+#include "ll/api/command/runtime/RuntimeOverload.h"
 
 #include "mc/server/commands/CommandVersion.h"
 
@@ -18,7 +18,7 @@ struct CommandHandle::Impl {
     CommandRegistry::Signature& signature;
     std::recursive_mutex        mutex;
 
-    std::vector<runtime::Overload> runtimeOverloads;
+    std::vector<RuntimeOverload> runtimeOverloads;
 };
 
 CommandHandle::CommandHandle(CommandRegistrar& registrar, CommandRegistry::Signature& signature, bool owned)
@@ -45,11 +45,11 @@ void CommandHandle::registerOverload(OverloadData& data) {
 char const* CommandHandle::addText(std::string_view text) { return impl->registrar.addText(*this, text); }
 char const* CommandHandle::addPostfix(std::string_view postfix) { return impl->registrar.addPostfix(*this, postfix); }
 
-void CommandHandle::registerRuntimeOverload(runtime::Overload& rt) {
+void CommandHandle::registerRuntimeOverload(RuntimeOverload& rt) {
     std::lock_guard lock{impl->mutex};
     impl->runtimeOverloads.emplace_back(std::move(rt));
 }
-runtime::Overload CommandHandle::runtimeOverload() { return runtime::Overload{*this}; }
+RuntimeOverload CommandHandle::runtimeOverload() { return RuntimeOverload{*this}; }
 
 void CommandHandle::alias(std::string_view alias) {
     std::lock_guard lock{impl->mutex};

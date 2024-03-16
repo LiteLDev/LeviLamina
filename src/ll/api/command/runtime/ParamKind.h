@@ -21,7 +21,7 @@
 #include "mc/world/effect/MobEffect.h"
 #include "mc/world/level/Command.h"
 
-namespace ll::command::runtime {
+namespace ll::command {
 
 using ParamKindType = size_t;
 
@@ -96,4 +96,4 @@ public:
     }
 };
 
-} // namespace ll::command::runtime
+} // namespace ll::command

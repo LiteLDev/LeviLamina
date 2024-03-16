@@ -11,7 +11,7 @@
 #include "mc/world/AutomaticID.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 
-#include "ll/api/command/runtime/Overload.h"
+#include "ll/api/command/runtime/RuntimeOverload.h"
 
 using namespace ll::command;
 
@@ -93,16 +93,16 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     );
 
     cmd.runtimeOverload()
-        .required("runtime", runtime::ParamKind::Int)
-        .required("range", runtime::ParamKind::IntegerRange)
-        .required("se", runtime::ParamKind::SoftEnum, "hello")
-        .required("enummmmm", runtime::ParamKind::Enum, "testenum")
-        .execute([](CommandOrigin const& orgin, CommandOutput& output, runtime::Command const& self) {
+        .required("runtime", ParamKind::Int)
+        .required("range", ParamKind::IntegerRange)
+        .required("se", ParamKind::SoftEnum, "hello")
+        .required("enummmmm", ParamKind::Enum, "testenum")
+        .execute([](CommandOrigin const& orgin, CommandOutput& output, RuntimeCommand const& self) {
             output.success("{}", orgin.getName());
-            output.success("runtime : {}", self["runtime"].get<runtime::ParamKind::Int>());
-            auto range = self["range"].get<runtime::ParamKind::IntegerRange>();
+            output.success("runtime : {}", self["runtime"].get<ParamKind::Int>());
+            auto range = self["range"].get<ParamKind::IntegerRange>();
             output.success("range : {} {}", range.mMinValue, range.mMaxValue);
-            output.success("SoftEnum : {}", self["se"].get<runtime::ParamKind::SoftEnum>());
-            output.success("Enum : {}", self["enummmmm"].get<runtime::ParamKind::Enum>());
+            output.success("SoftEnum : {}", self["se"].get<ParamKind::SoftEnum>());
+            output.success("Enum : {}", self["enummmmm"].get<ParamKind::Enum>());
         });
 }
