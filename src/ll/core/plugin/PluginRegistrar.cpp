@@ -361,11 +361,7 @@ bool PluginRegistrar::enablePlugin(std::string_view name) {
             }
         }
     }
-    if (registry.enablePlugin(name)) {
-        impl->deps.erase(std::string{name});
-        return true;
-    }
-    return false;
+    return registry.enablePlugin(name);
 }
 bool PluginRegistrar::disablePlugin(std::string_view name) {
     std::lock_guard lock(impl->mutex);
@@ -382,10 +378,6 @@ bool PluginRegistrar::disablePlugin(std::string_view name) {
             }
         }
     }
-    if (registry.disablePlugin(name)) {
-        impl->deps.erase(std::string{name});
-        return true;
-    }
-    return false;
+    return registry.disablePlugin(name);
 }
 } // namespace ll::plugin
