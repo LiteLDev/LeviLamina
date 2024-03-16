@@ -39,5 +39,9 @@ public:
     }
 
     LLNDAPI runtime::Overload runtimeOverload();
+
+    LLAPI void alias(std::string_view alias);
+
+    LLNDAPI std::vector<std::string> alias() const;
 };
 } // namespace ll::command

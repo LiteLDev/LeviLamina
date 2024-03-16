@@ -46,8 +46,7 @@ struct LeviCommand3 {
 void registerPluginManageCommand() {
     auto& cmd = CommandRegistrar::getInstance()
                     .getOrCreateCommand("levilamina", "LeviLamina's main command"_tr(), CommandPermissionLevel::Host);
-    ll::service::getCommandRegistry()->registerAlias("levilamina", "ll");
-
+    cmd.alias("ll");
     cmd.overload<LeviCommand3>()
         .text("load")
         .required("plugin")

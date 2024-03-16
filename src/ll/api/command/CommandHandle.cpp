@@ -50,4 +50,18 @@ void CommandHandle::registerRuntimeOverload(runtime::Overload& rt) {
     impl->runtimeOverloads.emplace_back(std::move(rt));
 }
 runtime::Overload CommandHandle::runtimeOverload() { return runtime::Overload{*this}; }
+
+void CommandHandle::alias(std::string_view alias) {
+    std::lock_guard lock{impl->mutex};
+    std::string     str{alias};
+    if (impl->registrar.getRegistry().findCommand(str)) {
+        return;
+    }
+    impl->registrar.getRegistry().registerAlias(impl->signature.name, std::move(str));
+}
+std::vector<std::string> CommandHandle::alias() const {
+    std::lock_guard lock{impl->mutex};
+    return impl->registrar.getRegistry().getAliases(impl->signature.name);
+}
+
 } // namespace ll::command
