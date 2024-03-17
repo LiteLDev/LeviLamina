@@ -307,7 +307,7 @@ LL_TYPE_INSTANCE_HOOK(
     for (auto& name : std::ranges::reverse_view(registrar.getSortedPluginNames())) {
         auto plugin = PluginManagerRegistry::getInstance().getPlugin(name);
         if (!plugin) continue;
-        if (!PluginManagerRegistry::getInstance().getPlugin(name)->isDisabled()) continue;
+        if (plugin->isDisabled()) continue;
         logger.info("Disabling {0} v{1}"_tr(name, plugin->getManifest().version.value_or(data::Version{0, 0, 0})));
         try {
             registrar.disablePlugin(name);
@@ -353,7 +353,7 @@ bool PluginRegistrar::enablePlugin(std::string_view name) {
     if (!dependents.empty()) {
         for (auto& depName : dependents) {
             if (auto ptr = registry.getPlugin(depName)) {
-                if (ptr->getState() == Plugin::State::Enabled) {
+                if (ptr->isEnabled()) {
                     continue;
                 }
                 logger.error("Dependency {} of {} is not enabled"_tr(depName, name));
@@ -370,7 +370,7 @@ bool PluginRegistrar::disablePlugin(std::string_view name) {
     if (!dependents.empty()) {
         for (auto& depName : dependents) {
             if (auto ptr = registry.getPlugin(depName)) {
-                if (ptr->getState() == Plugin::State::Disabled) {
+                if (ptr->isDisabled()) {
                     continue;
                 }
                 logger.error("{} is still dependent on {}"_tr(name, depName));
