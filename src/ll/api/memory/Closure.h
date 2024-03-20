@@ -72,14 +72,14 @@ public:
         origin_fn* func;
         uintptr_t  data;
     } stored;
-    ulong                    oldProtectFlags{};
-    std::unique_ptr<uchar[]> closure;
+
+    void* closure;
 
     NativeClosure(origin_fn* func, uintptr_t data) : stored({func, data}) {
         detail::initNativeClosure(this, closureImpl, implOffset, closureSize);
     }
 
-    closure_fn* get() const { return (closure_fn*)closure.get(); }
+    closure_fn* get() const { return (closure_fn*)closure; }
 
     ~NativeClosure() { detail::releaseNativeClosure(this, closureSize); }
 

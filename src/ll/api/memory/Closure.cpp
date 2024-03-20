@@ -26,7 +26,12 @@ using T = NativeClosure<void*>;
 void initNativeClosure(void* t, void* impl, size_t offset, size_t size) {
     impl                       = unwrapFuncPtrJmp(impl);
     auto                  self = (T*)t;
-    NativeClosurePrologue asmc = {
+
+    self->closure = VirtualAlloc(nullptr, size, MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);
+
+    memcpy(self->closure, impl, offset);
+
+    new ((char*)(self->closure) + offset) NativeClosurePrologue{
         .data     = (uintptr_t)&self->stored,
         .push_rax = 0x50,
         .mov_rax  = {0x48, 0xB8},
@@ -34,16 +39,14 @@ void initNativeClosure(void* t, void* impl, size_t offset, size_t size) {
         .jmp_rax  = {0xFF, 0xE0}
     };
 
-    self->closure = std::make_unique_for_overwrite<uchar[]>(size);
-
-    VirtualProtect(self->closure.get(), size, PAGE_EXECUTE_READWRITE, &self->oldProtectFlags);
-
-    memcpy(self->closure.get(), impl, offset);
-    memcpy(self->closure.get() + offset, &asmc, sizeof(asmc));
+    ulong _;
+    VirtualProtect(self->closure, size, PAGE_EXECUTE_READ, &_);
 }
 void releaseNativeClosure(void* t, size_t size) {
-    auto  self = (T*)t;
-    ulong _;
-    VirtualProtect(self->closure.get(), size, self->oldProtectFlags, &_);
+    auto self = (T*)t;
+    if (self->closure != nullptr) {
+        VirtualFree(self->closure, 0, MEM_RELEASE);
+        self->closure = nullptr;
+    }
 }
 } // namespace ll::memory::detail
