@@ -151,15 +151,6 @@ public:
     MCAPI struct ActorPathingData::MinMaxHeightCacheEntry
     _getMinAndMaxHeightAroundBlock(struct ActorPathingData const&, class BlockPos const&, float) const;
 
-    // symbol: ?_getNeighbors@PathFinder@@AEAAHAEBUActorPathingData@@AEAVPathfinderNode@@AEBV3@2I@Z
-    MCAPI int _getNeighbors(
-        struct ActorPathingData const& data,
-        class PathfinderNode&          pos,
-        class PathfinderNode const&    size,
-        class PathfinderNode const&    target,
-        uint                           maxDistSqr
-    );
-
     // symbol: ?_getNode@PathFinder@@AEAAPEAVPathfinderNode@@AEBVBlockPos@@W4NodeType@@@Z
     MCAPI class PathfinderNode* _getNode(class BlockPos const& pos, ::NodeType nodeType);
 
@@ -204,6 +195,10 @@ public:
         class BlockPos const& testPos,
         class BlockPos const& size
     );
+
+    // symbol: ?_isNeighborPotentiallyValid@PathFinder@@AEAA_NAEBVPathfinderNode@@0AEBVBlockPos@@I@Z
+    MCAPI bool
+    _isNeighborPotentiallyValid(class PathfinderNode const&, class PathfinderNode const&, class BlockPos const&, uint);
 
     // symbol:
     // ?_reconstructPath@PathFinder@@AEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@PEAVPathfinderNode@@W4PathCompletionType@@UActorUniqueID@@@Z

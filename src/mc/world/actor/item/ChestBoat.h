@@ -39,14 +39,14 @@ public:
     // vIndex: 10, symbol: __gen_??1ChestBoat@@UEAA@XZ
     virtual ~ChestBoat() = default;
 
-    // vIndex: 35, symbol:
+    // vIndex: 34, symbol:
     // ?getEntityLocNameString@ChestBoat@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getEntityLocNameString() const;
 
-    // vIndex: 142, symbol: ?kill@ChestBoat@@UEAAXXZ
+    // vIndex: 136, symbol: ?kill@ChestBoat@@UEAAXXZ
     virtual void kill();
 
-    // vIndex: 163, symbol: ?destroy@ChestBoat@@UEAAXPEAVActor@@@Z
+    // vIndex: 157, symbol: ?destroy@ChestBoat@@UEAAXPEAVActor@@@Z
     virtual void destroy(class Actor* sourceActor);
 
     // symbol: ??0ChestBoat@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

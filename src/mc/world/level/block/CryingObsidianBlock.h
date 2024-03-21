@@ -30,7 +30,7 @@ public:
     // vIndex: 0, symbol: __gen_??1CryingObsidianBlock@@UEAA@XZ
     virtual ~CryingObsidianBlock() = default;
 
-    // vIndex: 134, symbol:
+    // vIndex: 133, symbol:
     // ?animateTickBedrockLegacy@CryingObsidianBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 

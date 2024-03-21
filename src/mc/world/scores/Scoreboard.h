@@ -221,6 +221,9 @@ public:
     // symbol: ?resetPlayerScore@Scoreboard@@QEAAXAEBUScoreboardId@@@Z
     MCAPI void resetPlayerScore(struct ScoreboardId const& id);
 
+    // symbol: ?tryGetIdScore@Scoreboard@@QEBA?AV?$optional@UScoreInfo@@@std@@AEBUScoreboardId@@AEB_K@Z
+    MCAPI std::optional<struct ScoreInfo> tryGetIdScore(struct ScoreboardId const&, uint64 const&) const;
+
     // symbol: ?shouldClearScoresOnDeath@Scoreboard@@SA_NAEBVActor@@@Z
     MCAPI static bool shouldClearScoresOnDeath(class Actor const& actor);
 

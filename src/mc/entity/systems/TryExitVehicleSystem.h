@@ -27,6 +27,30 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol:
+    // ?_tick@TryExitVehicleSystem@@CAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@ULocalPlayerComponentFlag@@@@V?$FlagComponent@UMobIsJumpingFlag@@@@@@$$CBUPassengerComponent@@@@V?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@U?$Exclude@V?$FlagComponent@UBoatFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@UMobFlag@@@@@@$$CBUMovementAttributesComponent@@$$CBUVehicleComponent@@$$CBUActorDataFlagComponent@@$$CBUActorDataControllingSeatIndexComponent@@@@V?$EntityModifier@V?$FlagComponent@UStopRidingRequestFlag@@@@V?$FlagComponent@UExitFromPassengerFlag@@@@@@@Z
+    MCAPI static void _tick(
+        class ViewT<
+            class StrictEntityContext,
+            struct Include<
+                class FlagComponent<struct ActorMovementTickNeededFlag>,
+                class FlagComponent<struct LocalPlayerComponentFlag>,
+                class FlagComponent<struct MobIsJumpingFlag>>,
+            struct PassengerComponent const> view,
+        class ViewT<
+            class StrictEntityContext,
+            struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,
+            struct Exclude<class FlagComponent<struct BoatFlag>>,
+            class Optional<class FlagComponent<struct MobFlag> const>,
+            struct MovementAttributesComponent const,
+            struct VehicleComponent const,
+            struct ActorDataFlagComponent const,
+            struct ActorDataControllingSeatIndexComponent const>,
+        class EntityModifier<
+            class FlagComponent<struct StopRidingRequestFlag>,
+            class FlagComponent<struct ExitFromPassengerFlag>> modifier
+    );
+
+    // symbol:
     // ?_tickTryExitVehicle@TryExitVehicleSystem@@CAXAEBVStrictEntityContext@@AEBUPassengerComponent@@V?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@U?$Exclude@V?$FlagComponent@UBoatFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@UMobFlag@@@@@@$$CBUMovementAttributesComponent@@$$CBUVehicleComponent@@$$CBUActorDataFlagComponent@@$$CBUActorDataControllingSeatIndexComponent@@@@AEAV?$EntityModifier@V?$FlagComponent@UStopRidingRequestFlag@@@@V?$FlagComponent@UExitFromPassengerFlag@@@@@@@Z
     MCAPI static void _tickTryExitVehicle(
         class StrictEntityContext const& entity,

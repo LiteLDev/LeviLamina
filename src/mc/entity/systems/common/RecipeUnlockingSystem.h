@@ -3,6 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/wrapper/Include.h"
+#include "mc/common/wrapper/ViewT.h"
+#include "mc/world/components/FlagComponent.h"
 #include "mc/world/item/crafting/RecipeUnlockingRequirement.h"
 
 class RecipeUnlockingSystem {
@@ -64,6 +67,14 @@ public:
     // ?_handleInstructionUnlocks@RecipeUnlockingSystem@@CAXPEAVServerPlayer@@AEAVUnlockedRecipesServerComponent@@@Z
     MCAPI static void
     _handleInstructionUnlocks(class ServerPlayer* serverPlayer, class UnlockedRecipesServerComponent&);
+
+    // symbol:
+    // ?_tick@RecipeUnlockingSystem@@CAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UServerPlayerComponentFlag@@@@@@VUnlockedRecipesServerComponent@@VActorOwnerComponent@@@@@Z
+    MCAPI static void _tick(class ViewT<
+                            class StrictEntityContext,
+                            struct Include<class FlagComponent<struct ServerPlayerComponentFlag>>,
+                            class UnlockedRecipesServerComponent,
+                            class ActorOwnerComponent> view);
 
     // NOLINTEND
 };

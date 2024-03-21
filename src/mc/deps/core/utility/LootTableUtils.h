@@ -35,6 +35,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
+    // ?convertFromJavaLootTableName@LootTableUtils@Util@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV34@@Z
+    MCAPI static std::string convertFromJavaLootTableName(std::string const&);
+
+    // symbol:
     // ?dropItems@LootTableUtils@Util@@SAHAEAVBlockSource@@AEAVSpawner@@PEAVActor@@AEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBVBlockPos@@@Z
     MCAPI static int dropItems(
         class BlockSource&                  region,

@@ -64,6 +64,12 @@ public:
     // symbol: ?setAllowNonTickingPlayerAndTickingAreaChunks@StructureSettings@@QEAAX_N@Z
     MCAPI void setAllowNonTickingPlayerAndTickingAreaChunks(bool allowNonPlayerTicking);
 
+    // symbol: ?setAnimationMode@StructureSettings@@QEAAXW4AnimationMode@@@Z
+    MCAPI void setAnimationMode(::AnimationMode);
+
+    // symbol: ?setAnimationSeconds@StructureSettings@@QEAAXM@Z
+    MCAPI void setAnimationSeconds(float seconds);
+
     // symbol: ?setIgnoreBlocks@StructureSettings@@QEAAX_N@Z
     MCAPI void setIgnoreBlocks(bool ignoreBlocks);
 
@@ -75,6 +81,15 @@ public:
 
     // symbol: ?setIntegritySeed@StructureSettings@@QEAAXI@Z
     MCAPI void setIntegritySeed(uint integritySeed);
+
+    // symbol: ?setIntegrityValue@StructureSettings@@QEAAXM@Z
+    MCAPI void setIntegrityValue(float integrityValue);
+
+    // symbol: ?setIsWaterLogged@StructureSettings@@QEAAX_N@Z
+    MCAPI void setIsWaterLogged(bool);
+
+    // symbol: ?setMirror@StructureSettings@@QEAAXW4Mirror@@@Z
+    MCAPI void setMirror(::Mirror mirror);
 
     // symbol: ?setPivot@StructureSettings@@QEAAXAEBVVec3@@@Z
     MCAPI void setPivot(class Vec3 const& pivot);

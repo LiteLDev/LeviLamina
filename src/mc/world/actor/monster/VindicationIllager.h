@@ -39,7 +39,7 @@ public:
     // vIndex: 10, symbol: __gen_??1VindicationIllager@@UEAA@XZ
     virtual ~VindicationIllager() = default;
 
-    // vIndex: 198, symbol: ?_getWalkTargetValue@VindicationIllager@@UEAAMAEBVBlockPos@@@Z
+    // vIndex: 191, symbol: ?_getWalkTargetValue@VindicationIllager@@UEAAMAEBVBlockPos@@@Z
     virtual float _getWalkTargetValue(class BlockPos const& pos);
 
     // symbol:

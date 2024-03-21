@@ -15,10 +15,6 @@ namespace FireworksMovementSystems {
 MCAPI void applyBoost(class Vec3&, class Vec3 const&, uint64);
 
 // symbol:
-// ?attachedRocketBoostRequestSystem@FireworksMovementSystems@@YAXU?$type_list@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@@entt@@AEBVStrictEntityContext@@AEBUActorUniqueIDComponent@@AEAUAttachedRocketsComponent@@AEBV?$ViewT@VStrictEntityContext@@$$CBUSynchedActorDataComponent@@@@V?$EntityModifier@UAttachedRocketsComponent@@UAttachedRocketsBoostRequestComponent@@@@@Z
-MCAPI void attachedRocketBoostRequestSystem(entt::type_list<struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>>, class StrictEntityContext const&, struct ActorUniqueIDComponent const&, struct AttachedRocketsComponent&, class ViewT<class StrictEntityContext, struct SynchedActorDataComponent const> const&, class EntityModifier<struct AttachedRocketsComponent, struct AttachedRocketsBoostRequestComponent>);
-
-// symbol:
 // ?fireworksRocketMoveClientEntity@FireworksMovementSystems@@YA?AW4RocketAttached@1@AEBVStrictEntityContext@@AEBUSynchedActorDataComponent@@AEAUStateVectorComponent@@AEAUActorRotationComponent@@AEAVLocalSpatialEntityFetcher@@AEBV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UMobFlag@@@@@@$$CBUStateVectorComponent@@@@V?$EntityModifier@UActorSetPositionRequestComponent@@UAttachedRocketsComponent@@@@@Z
 MCAPI ::
     FireworksMovementSystems::
@@ -30,6 +26,11 @@ MCAPI void registerAttachedRocketSystems(class EntitySystems&, bool);
 
 // symbol: ?registerRocketMovementSystems@FireworksMovementSystems@@YAXAEAVEntitySystems@@_N@Z
 MCAPI void registerRocketMovementSystems(class EntitySystems&, bool);
+
+// symbol:
+// ?removeRocketsNotAttachedToThis@FireworksMovementSystems@@YAXAEBUActorUniqueID@@AEBV?$ViewT@VStrictEntityContext@@$$CBUSynchedActorDataComponent@@@@AEAV?$vector@VStrictEntityContext@@V?$allocator@VStrictEntityContext@@@std@@@std@@@Z
+MCAPI void
+removeRocketsNotAttachedToThis(struct ActorUniqueID const&, class ViewT<class StrictEntityContext, struct SynchedActorDataComponent const> const&, std::vector<class StrictEntityContext>&);
 
 // symbol:
 // ?simulateAttachedRocket@FireworksMovementSystems@@YAXAEBVStrictEntityContext@@AEBUActorUniqueID@@AEAUStateVectorComponent@@AEAVLocalSpatialEntityFetcher@@AEBV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UMobFlag@@@@@@$$CBUStateVectorComponent@@@@V?$EntityModifier@UActorSetPositionRequestComponent@@UAttachedRocketsComponent@@@@@Z

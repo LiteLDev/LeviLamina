@@ -49,6 +49,9 @@ public:
     // vIndex: 6, symbol: ?pausePerformanceWatchdog@Watchdog@QuickJS@Scripting@@UEAAX_N@Z
     virtual void pausePerformanceWatchdog(bool pause);
 
+    // vIndex: 7, symbol: ?resetWatchdogTimes@Watchdog@QuickJS@Scripting@@UEAAXXZ
+    virtual void resetWatchdogTimes();
+
     // symbol: ??0Watchdog@QuickJS@Scripting@@QEAA@PEAUJSRuntime@@UWatchdogSettings@2@@Z
     MCAPI Watchdog(struct JSRuntime*, struct Scripting::WatchdogSettings settings);
 

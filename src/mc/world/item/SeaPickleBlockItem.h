@@ -32,7 +32,7 @@ public:
     // vIndex: 32, symbol: ?getLevelDataForAuxValue@SeaPickleBlockItem@@UEBAHH@Z
     virtual int getLevelDataForAuxValue(int auxValue) const;
 
-    // vIndex: 118, symbol:
+    // vIndex: 117, symbol:
     // ?_useOn@SeaPickleBlockItem@@UEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const&) const;

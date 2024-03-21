@@ -33,10 +33,10 @@ public:
     // vIndex: 31, symbol: ?isCraftingBlock@CraftingTableBlock@@UEBA_NXZ
     virtual bool isCraftingBlock() const;
 
-    // vIndex: 143, symbol: ?_addHardCodedBlockComponents@CraftingTableBlock@@UEAAXAEBVExperiments@@@Z
+    // vIndex: 141, symbol: ?_addHardCodedBlockComponents@CraftingTableBlock@@UEAAXAEBVExperiments@@@Z
     virtual void _addHardCodedBlockComponents(class Experiments const&);
 
-    // vIndex: 154, symbol: ?use@CraftingTableBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 151, symbol: ?use@CraftingTableBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // symbol: ??0CraftingTableBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

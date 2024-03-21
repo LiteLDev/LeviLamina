@@ -37,7 +37,7 @@ MCAPI void
 doLavaSlimeJumpFromGround(class StrictEntityContext const&, struct AABBShapeComponent const&, struct SynchedActorDataComponent const&, struct StateVectorComponent&, struct MobEffectsComponent const&, class EntityModifier<struct TriggerJumpRequestComponent>&, class IConstBlockSource const&);
 
 // symbol:
-// ?doLocalPlayerJumpFromGround@MobJumpFromGroundSystemImpl@@YAXAEBVStrictEntityContext@@AEBV?$Optional@$$CBVJumpControlComponent@@@@AEBUAABBShapeComponent@@AEBUActorDataFlagComponent@@AEBUActorRotationComponent@@AEBUMobEffectsComponent@@AEAUMobJumpComponent@@AEAUStateVectorComponent@@AEAUPlayerActionComponent@@AEAV?$EntityModifier@UTriggerJumpRequestComponent@@@@AEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UCanStandOnSnowFlag@@@@V?$FlagComponent@UHasLightweightFamilyFlag@@@@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UMobFlag@@@@V?$FlagComponent@UParrotFlag@@@@UVehicleComponent@@V?$FlagComponent@UCamelFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@ULocalPlayerJumpRequestFlag@@@@V?$FlagComponent@ULavaSlimeJumpRequestFlag@@@@V?$FlagComponent@USquidJumpRequestFlag@@@@V?$FlagComponent@UOtherJumpRequestFlag@@@@@@U?$Read@UMovementAbilitiesComponent@@UActorTypeComponent@@UFallDistanceComponent@@UActorGameTypeComponent@@UVehicleComponent@@UMobBodyRotationComponent@@UPassengerComponent@@URenderRotationComponent@@UStandAnimationComponent@@UOffsetsComponent@@UVanillaOffsetComponent@@UPassengerRenderingRidingOffsetComponent@@UAABBShapeComponent@@UActorRotationComponent@@UMobEffectsComponent@@UActorDataFlagComponent@@USynchedActorDataComponent@@VJumpControlComponent@@UDimensionTypeComponent@@@@U?$Write@UMobJumpComponent@@UStateVectorComponent@@UPlayerActionComponent@@@@U?$AddRemove@UTriggerJumpRequestComponent@@@@U?$GlobalRead@UExternalDataComponent@@ULocalConstBlockSourceFactoryComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@AEBVIConstBlockSource@@@Z
+// ?doLocalPlayerJumpFromGround@MobJumpFromGroundSystemImpl@@YAXAEBVStrictEntityContext@@AEBV?$Optional@$$CBVJumpControlComponent@@@@AEBUAABBShapeComponent@@AEBUActorDataFlagComponent@@AEBUActorRotationComponent@@AEBUMobEffectsComponent@@AEAUMobJumpComponent@@AEAUStateVectorComponent@@AEAUPlayerActionComponent@@AEAV?$EntityModifier@UTriggerJumpRequestComponent@@@@AEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UCanStandOnSnowFlag@@@@V?$FlagComponent@UHasLightweightFamilyFlag@@@@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UMobFlag@@@@V?$FlagComponent@UParrotFlag@@@@UVehicleComponent@@V?$FlagComponent@UCamelFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@ULocalPlayerJumpRequestFlag@@@@V?$FlagComponent@ULavaSlimeJumpRequestFlag@@@@V?$FlagComponent@USquidJumpRequestFlag@@@@V?$FlagComponent@UOtherJumpRequestFlag@@@@@@U?$Read@UAABBShapeComponent@@UMovementAbilitiesComponent@@UActorTypeComponent@@UFallDistanceComponent@@UPassengerComponent@@UActorGameTypeComponent@@UActorDataFlagComponent@@UVehicleComponent@@UActorRotationComponent@@UMobBodyRotationComponent@@URenderRotationComponent@@UStandAnimationComponent@@UOffsetsComponent@@UVanillaOffsetComponent@@UPassengerRenderingRidingOffsetComponent@@UMobEffectsComponent@@USynchedActorDataComponent@@VJumpControlComponent@@UDimensionTypeComponent@@@@U?$Write@UMobJumpComponent@@UStateVectorComponent@@UPlayerActionComponent@@@@U?$AddRemove@UTriggerJumpRequestComponent@@@@U?$GlobalRead@UExternalDataComponent@@ULocalConstBlockSourceFactoryComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@AEBVIConstBlockSource@@@Z
 MCAPI void doLocalPlayerJumpFromGround(
     class StrictEntityContext const& entity,
     class Optional<class JumpControlComponent const> const&,
@@ -64,22 +64,22 @@ MCAPI void doLocalPlayerJumpFromGround(
             class FlagComponent<struct SquidJumpRequestFlag>,
             class FlagComponent<struct OtherJumpRequestFlag>>,
         struct Read<
+            struct AABBShapeComponent,
             struct MovementAbilitiesComponent,
             struct ActorTypeComponent,
             struct FallDistanceComponent,
-            struct ActorGameTypeComponent,
-            struct VehicleComponent,
-            struct MobBodyRotationComponent,
             struct PassengerComponent,
+            struct ActorGameTypeComponent,
+            struct ActorDataFlagComponent,
+            struct VehicleComponent,
+            struct ActorRotationComponent,
+            struct MobBodyRotationComponent,
             struct RenderRotationComponent,
             struct StandAnimationComponent,
             struct OffsetsComponent,
             struct VanillaOffsetComponent,
             struct PassengerRenderingRidingOffsetComponent,
-            struct AABBShapeComponent,
-            struct ActorRotationComponent,
             struct MobEffectsComponent,
-            struct ActorDataFlagComponent,
             struct SynchedActorDataComponent,
             class JumpControlComponent,
             struct DimensionTypeComponent>,

@@ -38,11 +38,11 @@ public:
     // vIndex: 54, symbol: ?isValidAuxValue@BoneMealItem@@UEBA_NH@Z
     virtual bool isValidAuxValue(int) const;
 
-    // vIndex: 82, symbol:
+    // vIndex: 81, symbol:
     // ?buildDescriptionId@BoneMealItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 103, symbol:
+    // vIndex: 102, symbol:
     // ?setIconInfo@BoneMealItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     virtual class Item& setIconInfo(std::string const&, int);
 

@@ -11,12 +11,22 @@ namespace ScriptModuleMinecraft {
 struct ScriptBlockRaycastOptions {
 public:
     // prevent constructor by default
-    ScriptBlockRaycastOptions& operator=(ScriptBlockRaycastOptions const&);
     ScriptBlockRaycastOptions(ScriptBlockRaycastOptions const&);
     ScriptBlockRaycastOptions();
 
 public:
     // NOLINTBEGIN
+    // symbol: ??4ScriptBlockRaycastOptions@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
+    MCAPI struct ScriptModuleMinecraft::ScriptBlockRaycastOptions&
+    operator=(struct ScriptModuleMinecraft::ScriptBlockRaycastOptions&&);
+
+    // symbol: ??4ScriptBlockRaycastOptions@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
+    MCAPI struct ScriptModuleMinecraft::ScriptBlockRaycastOptions&
+    operator=(struct ScriptModuleMinecraft::ScriptBlockRaycastOptions const&);
+
+    // symbol: ??1ScriptBlockRaycastOptions@ScriptModuleMinecraft@@QEAA@XZ
+    MCAPI ~ScriptBlockRaycastOptions();
+
     // symbol:
     // ?bind@ScriptBlockRaycastOptions@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@UScriptBlockRaycastOptions@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptBlockRaycastOptions>

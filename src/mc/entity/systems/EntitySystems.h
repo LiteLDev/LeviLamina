@@ -48,6 +48,9 @@ public:
     // symbol: ?registerEvents@EntitySystems@@QEAAXAEAVEntityRegistry@@@Z
     MCAPI void registerEvents(class EntityRegistry& registry);
 
+    // symbol: ?registerGameOnlyMovementTickingSystem@EntitySystems@@QEAAX$$QEAUTickingSystemWithInfo@@@Z
+    MCAPI void registerGameOnlyMovementTickingSystem(struct TickingSystemWithInfo&& system);
+
     // symbol: ?registerGameOnlyTickingSystem@EntitySystems@@QEAAX$$QEAUTickingSystemWithInfo@@@Z
     MCAPI void registerGameOnlyTickingSystem(struct TickingSystemWithInfo&& system);
 

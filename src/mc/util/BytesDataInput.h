@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/util/IDataInput.h"
 
 class BytesDataInput : public ::IDataInput {
@@ -18,15 +19,15 @@ public:
     virtual ~BytesDataInput() = default;
 
     // vIndex: 1, symbol:
-    // ?readString@BytesDataInput@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-    virtual std::string readString();
+    // ?readStringResult@BytesDataInput@@UEAA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@Verror_code@2@@Bedrock@@XZ
+    virtual class Bedrock::Result<std::string> readStringResult();
 
     // vIndex: 2, symbol:
-    // ?readLongString@BytesDataInput@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-    virtual std::string readLongString();
+    // ?readLongStringResult@BytesDataInput@@UEAA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@Verror_code@2@@Bedrock@@XZ
+    virtual class Bedrock::Result<std::string> readLongStringResult();
 
-    // vIndex: 5, symbol: ?readByte@BytesDataInput@@UEAADXZ
-    virtual char readByte();
+    // vIndex: 5, symbol: ?readByteResult@BytesDataInput@@UEAA?AV?$Result@EVerror_code@std@@@Bedrock@@XZ
+    virtual class Bedrock::Result<uchar> readByteResult();
 
     // NOLINTEND
 };

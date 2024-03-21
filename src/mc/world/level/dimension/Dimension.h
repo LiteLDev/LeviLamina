@@ -58,14 +58,17 @@ public:
     // symbol: ?flushLevelChunkGarbageCollector@Dimension@@UEAAXXZ
     MCVAPI void flushLevelChunkGarbageCollector();
 
+    // symbol: ?forEachPlayer@Dimension@@UEBAXV?$function@$$A6A_NAEAVPlayer@@@Z@std@@@Z
+    MCVAPI void forEachPlayer(std::function<bool(class Player&)> callback) const;
+
     // symbol: ?forceCheckAllNeighChunkSavedStat@Dimension@@UEBA_NXZ
     MCVAPI bool forceCheckAllNeighChunkSavedStat() const;
 
-    // symbol: ?getBiomeRegistry@Dimension@@UEAAAEAVBiomeRegistry@@XZ
-    MCVAPI class BiomeRegistry& getBiomeRegistry();
-
     // symbol: ?getBiomeRegistry@Dimension@@UEBAAEBVBiomeRegistry@@XZ
     MCVAPI class BiomeRegistry const& getBiomeRegistry() const;
+
+    // symbol: ?getBiomeRegistry@Dimension@@UEAAAEAVBiomeRegistry@@XZ
+    MCVAPI class BiomeRegistry& getBiomeRegistry();
 
     // symbol: ?getBrightnessDependentFogColor@Dimension@@UEBA?AVColor@mce@@AEBV23@M@Z
     MCVAPI class mce::Color getBrightnessDependentFogColor(class mce::Color const& baseColor, float brightness) const;
@@ -247,9 +250,6 @@ public:
 
     // symbol: ?flushRunTimeLighting@Dimension@@QEAAXXZ
     MCAPI void flushRunTimeLighting();
-
-    // symbol: ?forEachPlayer@Dimension@@QEBAXV?$function@$$A6A_NAEAVPlayer@@@Z@std@@@Z
-    MCAPI void forEachPlayer(std::function<bool(class Player&)> callback) const;
 
     // symbol: ?getBlockEventDispatcher@Dimension@@QEAAAEAVBlockEventDispatcher@@XZ
     MCAPI class BlockEventDispatcher& getBlockEventDispatcher();

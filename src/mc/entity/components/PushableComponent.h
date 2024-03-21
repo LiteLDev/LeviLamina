@@ -31,6 +31,12 @@ public:
     // symbol: ?push@PushableComponent@@QEAAXAEAVActor@@0_N@Z
     MCAPI void push(class Actor& owner, class Actor& other, bool pushSelfOnly);
 
+    // symbol: ?pullToRide@PushableComponent@@SAXAEAVActor@@0@Z
+    MCAPI static void pullToRide(class Actor&, class Actor&);
+
+    // symbol: ?skipPush@PushableComponent@@SA_NAEAVActor@@0@Z
+    MCAPI static bool skipPush(class Actor&, class Actor&);
+
     // NOLINTEND
 
     // private:

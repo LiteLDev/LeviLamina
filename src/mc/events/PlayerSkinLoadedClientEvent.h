@@ -8,11 +8,4 @@ public:
     PlayerSkinLoadedClientEvent& operator=(PlayerSkinLoadedClientEvent const&);
     PlayerSkinLoadedClientEvent(PlayerSkinLoadedClientEvent const&);
     PlayerSkinLoadedClientEvent();
-
-public:
-    // NOLINTBEGIN
-    // symbol: ??1PlayerSkinLoadedClientEvent@@QEAA@XZ
-    MCAPI ~PlayerSkinLoadedClientEvent();
-
-    // NOLINTEND
 };

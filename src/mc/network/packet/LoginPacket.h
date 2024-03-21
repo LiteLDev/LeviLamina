@@ -24,13 +24,13 @@ public:
     // vIndex: 2, symbol: ?getName@LoginPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getName() const;
 
-    // vIndex: 3, symbol: ?write@LoginPacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4, symbol: ?write@LoginPacket@@UEBAXAEAVBinaryStream@@@Z
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 5, symbol: ?disallowBatching@LoginPacket@@UEBA_NXZ
+    // vIndex: 6, symbol: ?disallowBatching@LoginPacket@@UEBA_NXZ
     virtual bool disallowBatching() const;
 
-    // vIndex: 7, symbol: ?_read@LoginPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8, symbol: ?_read@LoginPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0LoginPacket@@QEAA@XZ

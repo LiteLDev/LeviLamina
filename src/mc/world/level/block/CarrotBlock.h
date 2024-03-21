@@ -35,18 +35,18 @@ public:
     virtual class AABB const&
     getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 129, symbol: ?getVariant@CarrotBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 128, symbol: ?getVariant@CarrotBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 157, symbol: ?getRenderLayer@CarrotBlock@@UEBA?AW4BlockRenderLayer@@XZ
+    // vIndex: 154, symbol: ?getRenderLayer@CarrotBlock@@UEBA?AW4BlockRenderLayer@@XZ
     virtual ::BlockRenderLayer getRenderLayer() const;
 
-    // vIndex: 158, symbol:
+    // vIndex: 155, symbol:
     // ?getRenderLayer@CarrotBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
     virtual ::BlockRenderLayer
     getRenderLayer(class Block const& block, class BlockSource&, class BlockPos const& pos) const;
 
-    // vIndex: 170, symbol: ?getBaseSeed@CarrotBlock@@UEBA?BVItemInstance@@XZ
+    // vIndex: 165, symbol: ?getBaseSeed@CarrotBlock@@UEBA?BVItemInstance@@XZ
     virtual class ItemInstance const getBaseSeed() const;
 
     // symbol: ??0CarrotBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

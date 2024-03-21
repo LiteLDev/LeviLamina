@@ -124,9 +124,8 @@ public:
     // symbol: ?getNameById@MobEffect@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@Z
     MCAPI static std::string getNameById(uint);
 
-    // symbol: ?initEffects@MobEffect@@SAXPEAVResourcePackManager@@AEBVBaseGameVersion@@AEBVExperiments@@@Z
-    MCAPI static void
-    initEffects(class ResourcePackManager*, class BaseGameVersion const& baseGameVersion, class Experiments const&);
+    // symbol: ?initEffects@MobEffect@@SAXAEBVBaseGameVersion@@@Z
+    MCAPI static void initEffects(class BaseGameVersion const&);
 
     // symbol: ?shutdownEffects@MobEffect@@SAXXZ
     MCAPI static void shutdownEffects();

@@ -119,6 +119,9 @@ public:
     // symbol: ??8BlockDescriptor@@QEBA_NAEBV0@@Z
     MCAPI bool operator==(class BlockDescriptor const& rhs) const;
 
+    // symbol: ?setContentLogOnError@BlockDescriptor@@QEBAX_N@Z
+    MCAPI void setContentLogOnError(bool) const;
+
     // symbol:
     // ?toCompoundTag@BlockDescriptor@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
     MCAPI std::unique_ptr<class CompoundTag> toCompoundTag() const;

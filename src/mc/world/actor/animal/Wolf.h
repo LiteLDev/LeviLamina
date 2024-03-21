@@ -39,34 +39,34 @@ public:
     // vIndex: 10, symbol: __gen_??1Wolf@@UEAA@XZ
     virtual ~Wolf() = default;
 
-    // vIndex: 66, symbol: ?setSitting@Wolf@@UEAAX_N@Z
+    // vIndex: 65, symbol: ?setSitting@Wolf@@UEAAX_N@Z
     virtual void setSitting(bool value);
 
-    // vIndex: 74, symbol: ?getAmbientSound@Wolf@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 73, symbol: ?getAmbientSound@Wolf@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
     virtual ::Puv::Legacy::LevelSoundEvent getAmbientSound() const;
 
-    // vIndex: 80, symbol: ?handleEntityEvent@Wolf@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 79, symbol: ?handleEntityEvent@Wolf@@UEAAXW4ActorEvent@@H@Z
     virtual void handleEntityEvent(::ActorEvent id, int data);
 
-    // vIndex: 95, symbol: ?load@Wolf@@UEAA_NAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 94, symbol: ?load@Wolf@@UEAA_NAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual bool load(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 109, symbol: ?onSynchedDataUpdate@Wolf@@UEAAXH@Z
+    // vIndex: 105, symbol: ?onSynchedDataUpdate@Wolf@@UEAAXH@Z
     virtual void onSynchedDataUpdate(int dataId);
 
-    // vIndex: 158, symbol: ?_hurt@Wolf@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 152, symbol: ?_hurt@Wolf@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 179, symbol: ?isAlliedTo@Wolf@@UEAA_NPEAVMob@@@Z
+    // vIndex: 173, symbol: ?isAlliedTo@Wolf@@UEAA_NPEAVMob@@@Z
     virtual bool isAlliedTo(class Mob* other);
 
-    // vIndex: 181, symbol: ?getArmorValue@Wolf@@UEBAHXZ
+    // vIndex: 175, symbol: ?getArmorValue@Wolf@@UEBAHXZ
     virtual int getArmorValue() const;
 
-    // vIndex: 194, symbol: ?onBorn@Wolf@@UEAAXAEAVActor@@0@Z
+    // vIndex: 188, symbol: ?onBorn@Wolf@@UEAAXAEAVActor@@0@Z
     virtual void onBorn(class Actor& parentLeft, class Actor& parentRight);
 
-    // vIndex: 201, symbol: ?newServerAiStep@Wolf@@UEAAXXZ
+    // vIndex: 194, symbol: ?newServerAiStep@Wolf@@UEAAXXZ
     virtual void newServerAiStep();
 
     // symbol: ??0Wolf@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

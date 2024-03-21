@@ -30,11 +30,8 @@ public:
     // vIndex: 0, symbol: __gen_??1ColoredTerracottaBlock@@UEAA@XZ
     virtual ~ColoredTerracottaBlock() = default;
 
-    // vIndex: 96, symbol: ?asItemInstance@ColoredTerracottaBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 95, symbol: ?asItemInstance@ColoredTerracottaBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
-
-    // vIndex: 163, symbol: ?getResourceItem@ColoredTerracottaBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const& block, int) const;
 
     // symbol:
     // ??0ColoredTerracottaBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z

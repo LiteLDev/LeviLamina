@@ -8,4 +8,11 @@ public:
     ScriptWatchdogTelemetry& operator=(ScriptWatchdogTelemetry const&);
     ScriptWatchdogTelemetry(ScriptWatchdogTelemetry const&);
     ScriptWatchdogTelemetry();
+
+public:
+    // NOLINTBEGIN
+    // symbol: ??1ScriptWatchdogTelemetry@@QEAA@XZ
+    MCAPI ~ScriptWatchdogTelemetry();
+
+    // NOLINTEND
 };

@@ -56,6 +56,9 @@ public:
     // symbol: ??8Vec3@@QEBA_NAEBV0@@Z
     MCAPI bool operator==(class Vec3 const& rhs) const;
 
+    // symbol: ?toJsonString@Vec3@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    MCAPI std::string toJsonString() const;
+
     // symbol: ?toString@Vec3@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string toString() const;
 

@@ -13,6 +13,7 @@ class Level;
 class Player;
 namespace ScriptModuleMinecraft { class IScriptWorldAfterEvents; }
 namespace Scripting { class WeakLifetimeScope; }
+struct LevelGameRuleChangeEvent;
 struct LevelNotificationEvent;
 struct LevelStartLeaveGameEvent;
 struct ScriptingInitializeEvent;
@@ -55,8 +56,8 @@ public:
     virtual ::EventResult onLevelTickStart(class Level&);
 
     // vIndex: 7, symbol:
-    // ?onLevelWeatherChange@ScriptLevelEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N1@Z
-    virtual ::EventResult onLevelWeatherChange(std::string const& dimension, bool raining, bool lightning);
+    // ?onLevelWeatherChange@ScriptLevelEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N111@Z
+    virtual ::EventResult onLevelWeatherChange(std::string const&, bool, bool, bool, bool);
 
     // vIndex: 8, symbol:
     // ?onEvent@?$EventListenerDispatcher@VLevelEventListener@@@@MEAA?AW4EventResult@@AEBULevelNotificationEvent@@@Z
@@ -70,6 +71,10 @@ public:
     virtual ::EventResult onEvent(struct LevelStartLeaveGameEvent const&);
 
     // vIndex: 11, symbol:
+    // ?onEvent@ScriptLevelEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBULevelGameRuleChangeEvent@@@Z
+    virtual ::EventResult onEvent(struct LevelGameRuleChangeEvent const&);
+
+    // vIndex: 12, symbol:
     // ?onEvent@ScriptLevelEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUScriptingInitializeEvent@@@Z
     virtual ::EventResult onEvent(struct ScriptingInitializeEvent const&);
 

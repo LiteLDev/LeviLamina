@@ -46,25 +46,25 @@ public:
     // vIndex: 10, symbol: __gen_??1Guardian@@UEAA@XZ
     virtual ~Guardian() = default;
 
-    // vIndex: 61, symbol: ?setTarget@Guardian@@UEAAXPEAVActor@@@Z
+    // vIndex: 60, symbol: ?setTarget@Guardian@@UEAAXPEAVActor@@@Z
     virtual void setTarget(class Actor* target);
 
-    // vIndex: 158, symbol: ?_hurt@Guardian@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 152, symbol: ?_hurt@Guardian@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 159, symbol: ?readAdditionalSaveData@Guardian@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 153, symbol: ?readAdditionalSaveData@Guardian@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 160, symbol: ?addAdditionalSaveData@Guardian@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 154, symbol: ?addAdditionalSaveData@Guardian@@MEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 173, symbol: ?checkSpawnRules@Guardian@@UEAA_N_N@Z
+    // vIndex: 167, symbol: ?checkSpawnRules@Guardian@@UEAA_N_N@Z
     virtual bool checkSpawnRules(bool fromSpawner);
 
-    // vIndex: 178, symbol: ?getMaxHeadXRot@Guardian@@UEAAMXZ
+    // vIndex: 172, symbol: ?getMaxHeadXRot@Guardian@@UEAAMXZ
     virtual float getMaxHeadXRot();
 
-    // vIndex: 204, symbol: ?isDarkEnoughToSpawn@Guardian@@MEBA_NXZ
+    // vIndex: 197, symbol: ?isDarkEnoughToSpawn@Guardian@@MEBA_NXZ
     virtual bool isDarkEnoughToSpawn() const;
 
     // symbol: ??0Guardian@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

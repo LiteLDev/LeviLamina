@@ -33,13 +33,13 @@ public:
     // vIndex: 56, symbol: ?canContainLiquid@TrialSpawnerBlock@@UEBA_NXZ
     virtual bool canContainLiquid() const;
 
-    // vIndex: 129, symbol: ?getVariant@TrialSpawnerBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 128, symbol: ?getVariant@TrialSpawnerBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const&) const;
 
-    // vIndex: 137, symbol: ?getLightEmission@TrialSpawnerBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
+    // vIndex: 136, symbol: ?getLightEmission@TrialSpawnerBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
     virtual struct Brightness getLightEmission(class Block const&) const;
 
-    // vIndex: 152, symbol: ?isInteractiveBlock@TrialSpawnerBlock@@UEBA_NXZ
+    // vIndex: 149, symbol: ?isInteractiveBlock@TrialSpawnerBlock@@UEBA_NXZ
     virtual bool isInteractiveBlock() const;
 
     // symbol: ??0TrialSpawnerBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

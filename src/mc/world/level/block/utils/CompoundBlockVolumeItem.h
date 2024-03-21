@@ -19,6 +19,9 @@ public:
     // symbol: ??8CompoundBlockVolumeItem@@QEBA_NAEBV0@@Z
     MCAPI bool operator==(class CompoundBlockVolumeItem const& other) const;
 
+    // symbol: ??1CompoundBlockVolumeItem@@QEAA@XZ
+    MCAPI ~CompoundBlockVolumeItem();
+
     // symbol: ?bindType@CompoundBlockVolumeItem@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 

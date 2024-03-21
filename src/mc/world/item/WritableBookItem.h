@@ -35,7 +35,7 @@ public:
     // vIndex: 71, symbol: ?use@WritableBookItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
     virtual class ItemStack& use(class ItemStack& instance, class Player& player) const;
 
-    // vIndex: 105, symbol:
+    // vIndex: 104, symbol:
     // ?getInteractText@WritableBookItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPlayer@@@Z
     virtual std::string getInteractText(class Player const&) const;
 

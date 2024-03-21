@@ -51,7 +51,7 @@ public:
     // vIndex: 60, symbol: ?getColor@FireworkChargeItem@@UEBA?AVColor@mce@@PEBVCompoundTag@@AEBVItemDescriptor@@@Z
     virtual class mce::Color getColor(class CompoundTag const* userData, class ItemDescriptor const& instance) const;
 
-    // vIndex: 101, symbol: ?hasSameRelevantUserData@FireworkChargeItem@@UEBA_NAEBVItemStackBase@@0@Z
+    // vIndex: 100, symbol: ?hasSameRelevantUserData@FireworkChargeItem@@UEBA_NAEBVItemStackBase@@0@Z
     virtual bool hasSameRelevantUserData(class ItemStackBase const& stack, class ItemStackBase const& other) const;
 
     // symbol: ??0FireworkChargeItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

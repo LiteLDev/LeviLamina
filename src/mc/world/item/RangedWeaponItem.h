@@ -41,11 +41,11 @@ public:
     // vIndex: 76, symbol: ?hurtActor@RangedWeaponItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
     virtual void hurtActor(class ItemStack& itemInstance, class Actor& actor, class Mob& attacker) const;
 
-    // vIndex: 80, symbol: ?mineBlock@RangedWeaponItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
+    // vIndex: 79, symbol: ?mineBlock@RangedWeaponItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
     virtual bool
     mineBlock(class ItemStack& item, class Block const& block, int x, int y, int z, class Actor* owner) const;
 
-    // vIndex: 106, symbol: ?getAnimationFrameFor@RangedWeaponItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
+    // vIndex: 105, symbol: ?getAnimationFrameFor@RangedWeaponItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
     virtual int
     getAnimationFrameFor(class Mob* holder, bool asItemEntity, class ItemStack const* item, bool shouldAnimate) const;
 

@@ -47,6 +47,9 @@ public:
     // symbol: ?allowUseInCommand@GameRule@@QEBA_NXZ
     MCAPI bool allowUseInCommand() const;
 
+    // symbol: ?allowUseInScripting@GameRule@@QEBA_NXZ
+    MCAPI bool allowUseInScripting() const;
+
     // symbol: ?canBeModifiedByPlayer@GameRule@@QEBA_NXZ
     MCAPI bool canBeModifiedByPlayer() const;
 
@@ -58,6 +61,9 @@ public:
 
     // symbol: ?getInt@GameRule@@QEBAHXZ
     MCAPI int getInt() const;
+
+    // symbol: ?getLowercaseName@GameRule@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    MCAPI std::string getLowercaseName() const;
 
     // symbol: ?getName@GameRule@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& getName() const;

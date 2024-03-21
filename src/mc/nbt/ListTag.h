@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/nbt/Tag.h"
 
 class ListTag : public ::Tag {
@@ -22,8 +23,8 @@ public:
     // vIndex: 2, symbol: ?write@ListTag@@UEBAXAEAVIDataOutput@@@Z
     virtual void write(class IDataOutput& dos) const;
 
-    // vIndex: 3, symbol: ?load@ListTag@@UEAAXAEAVIDataInput@@@Z
-    virtual void load(class IDataInput& dis);
+    // vIndex: 3, symbol: ?load@ListTag@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVIDataInput@@@Z
+    virtual class Bedrock::Result<void> load(class IDataInput& dis);
 
     // vIndex: 4, symbol: ?toString@ListTag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string toString() const;
@@ -76,6 +77,9 @@ public:
 
     // symbol: ?getInt@ListTag@@QEBAHH@Z
     MCAPI int getInt(int index) const;
+
+    // symbol: ?getInt64@ListTag@@QEBA_JH@Z
+    MCAPI int64 getInt64(int index) const;
 
     // symbol: ?getString@ListTag@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI std::string const& getString(int) const;

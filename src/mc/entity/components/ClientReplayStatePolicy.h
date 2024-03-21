@@ -32,12 +32,11 @@ public:
     // vIndex: 4, symbol: ?flagUnsupportedMovement@ClientReplayStatePolicy@@UEAAX_K@Z
     virtual void flagUnsupportedMovement(uint64 frame);
 
-    // vIndex: 5, symbol:
-    // ?storeCurrentFrameSupported@ClientReplayStatePolicy@@UEAAX_KAEAVEntityContext@@AEBVIConstBlockSource@@@Z
-    virtual void storeCurrentFrameSupported(uint64, class EntityContext&, class IConstBlockSource const&);
+    // vIndex: 5, symbol: ?storeCurrentFrameSupported@ClientReplayStatePolicy@@UEAAX_KAEAVEntityContext@@@Z
+    virtual void storeCurrentFrameSupported(uint64, class EntityContext&);
 
-    // symbol: ?_checkSupportedFrame@ClientReplayStatePolicy@@QEBA_NAEAVEntityContext@@AEBVIConstBlockSource@@@Z
-    MCAPI bool _checkSupportedFrame(class EntityContext&, class IConstBlockSource const&) const;
+    // symbol: ?_checkSupportedFrame@ClientReplayStatePolicy@@QEBA_NAEAVEntityContext@@@Z
+    MCAPI bool _checkSupportedFrame(class EntityContext&) const;
 
     // symbol: ?_isSupportedMovementMode@ClientReplayStatePolicy@@SA_NAEBVEntityContext@@@Z
     MCAPI static bool _isSupportedMovementMode(class EntityContext const&);

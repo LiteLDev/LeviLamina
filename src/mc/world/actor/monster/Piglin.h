@@ -39,13 +39,13 @@ public:
     // vIndex: 10, symbol: __gen_??1Piglin@@UEAA@XZ
     virtual ~Piglin() = default;
 
-    // vIndex: 136, symbol: ?getInteraction@Piglin@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z
+    // vIndex: 130, symbol: ?getInteraction@Piglin@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z
     virtual bool getInteraction(class Player& player, class ActorInteraction& interaction, class Vec3 const& location);
 
-    // vIndex: 156, symbol: ?updateEntitySpecificMolangVariables@Piglin@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 150, symbol: ?updateEntitySpecificMolangVariables@Piglin@@UEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // vIndex: 204, symbol: ?isDarkEnoughToSpawn@Piglin@@UEBA_NXZ
+    // vIndex: 197, symbol: ?isDarkEnoughToSpawn@Piglin@@UEBA_NXZ
     virtual bool isDarkEnoughToSpawn() const;
 
     // symbol: ??0Piglin@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

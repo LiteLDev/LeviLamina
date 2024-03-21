@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/BaseGameTestHelper.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/enums/ArmorSlot.h"
 #include "mc/enums/GameType.h"
 #include "mc/scripting/modules/minecraft/ScriptFacing.h"
@@ -353,10 +352,6 @@ public:
 
     // symbol: ?_getItemEntityCount@MinecraftGameTestHelper@@AEAAHAEBVItem@@AEBVAABB@@@Z
     MCAPI int _getItemEntityCount(class Item const& item, class AABB const&);
-
-    // symbol:
-    // ?_getServerNetworkHandler@MinecraftGameTestHelper@@AEBA?AV?$not_null@V?$NonOwnerPointer@VServerNetworkHandler@@@Bedrock@@@gsl@@XZ
-    MCAPI Bedrock::NotNullNonOwnerPtr<class ServerNetworkHandler> _getServerNetworkHandler() const;
 
     // symbol:
     // ?_getStructureBlockMissingError@MinecraftGameTestHelper@@AEBA?AV?$optional@UGameTestError@gametest@@@std@@XZ

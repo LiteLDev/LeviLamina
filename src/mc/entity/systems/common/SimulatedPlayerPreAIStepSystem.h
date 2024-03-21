@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/common/wrapper/Include.h"
+#include "mc/common/wrapper/ViewT.h"
+#include "mc/world/components/FlagComponent.h"
+
 class SimulatedPlayerPreAIStepSystem {
 public:
     // prevent constructor by default
@@ -21,6 +26,15 @@ public:
     // symbol:
     // ?_doSimulatedPlayerPreAIStepSystem@SimulatedPlayerPreAIStepSystem@@CAXAEBVStrictEntityContext@@AEAVActorOwnerComponent@@@Z
     MCAPI static void _doSimulatedPlayerPreAIStepSystem(class StrictEntityContext const&, class ActorOwnerComponent&);
+
+    // symbol:
+    // ?_tickSimulatedPlayerPreAIStepSystem@SimulatedPlayerPreAIStepSystem@@CAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@USimulatedPlayerFlag@@@@@@VActorOwnerComponent@@@@@Z
+    MCAPI static void _tickSimulatedPlayerPreAIStepSystem(class ViewT<
+                                                          class StrictEntityContext,
+                                                          struct Include<
+                                                              class FlagComponent<struct ActorMovementTickNeededFlag>,
+                                                              class FlagComponent<struct SimulatedPlayerFlag>>,
+                                                          class ActorOwnerComponent> view);
 
     // NOLINTEND
 };

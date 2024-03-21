@@ -71,17 +71,17 @@ public:
     virtual void __unk_vfn_4();
 
     // vIndex: 5, symbol:
-    // ?tick@FoodExhaustionSystemImpl@1@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UActorMovementTickNeededFlag@@@@UPassengerComponent@@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UMobFlag@@@@V?$FlagComponent@UParrotFlag@@@@UVehicleComponent@@V?$FlagComponent@UCamelFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@@@U?$Read@UDimensionTypeComponent@@VExhaustionComponent@@V?$FlagComponent@UOnGroundFlag@@@@UActorGameTypeComponent@@UServerPlayerCurrentMovementComponent@@UStateVectorComponent@@V?$FlagComponent@UInWaterFlag@@@@UMobBodyRotationComponent@@UPassengerComponent@@URenderRotationComponent@@UStandAnimationComponent@@UActorDataFlagComponent@@UAABBShapeComponent@@UActorRotationComponent@@UOffsetsComponent@@UVanillaOffsetComponent@@UPassengerRenderingRidingOffsetComponent@@@@U?$Write@$$V@@U?$AddRemove@UAttributeRequestComponent@@@@U?$GlobalRead@ULocalConstBlockSourceFactoryComponent@@UExternalDataComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
+    // ?tick@FoodExhaustionSystemImpl@1@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UActorMovementTickNeededFlag@@@@UPassengerComponent@@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UMobFlag@@@@V?$FlagComponent@UParrotFlag@@@@UVehicleComponent@@V?$FlagComponent@UCamelFlag@@@@@@U?$Read@UDimensionTypeComponent@@VExhaustionComponent@@V?$FlagComponent@UOnGroundFlag@@@@UActorGameTypeComponent@@UServerPlayerCurrentMovementComponent@@UStateVectorComponent@@UActorDataFlagComponent@@V?$FlagComponent@UInWaterFlag@@@@UActorRotationComponent@@UMobBodyRotationComponent@@UPassengerComponent@@URenderRotationComponent@@UStandAnimationComponent@@UAABBShapeComponent@@UOffsetsComponent@@UVanillaOffsetComponent@@UPassengerRenderingRidingOffsetComponent@@@@U?$Write@$$V@@U?$AddRemove@UAttributeRequestComponent@@@@U?$GlobalRead@ULocalConstBlockSourceFactoryComponent@@UExternalDataComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
     virtual void tick(class StrictExecutionContext<
                       struct Filter<
                           class FlagComponent<struct ActorMovementTickNeededFlag>,
                           struct PassengerComponent,
+                          class FlagComponent<struct PlayerComponentFlag>,
                           class FlagComponent<struct HorseFlag>,
                           class FlagComponent<struct MobFlag>,
                           class FlagComponent<struct ParrotFlag>,
                           struct VehicleComponent,
-                          class FlagComponent<struct CamelFlag>,
-                          class FlagComponent<struct PlayerComponentFlag>>,
+                          class FlagComponent<struct CamelFlag>>,
                       struct Read<
                           struct DimensionTypeComponent,
                           class ExhaustionComponent,
@@ -89,14 +89,14 @@ public:
                           struct ActorGameTypeComponent,
                           struct ServerPlayerCurrentMovementComponent,
                           struct StateVectorComponent,
+                          struct ActorDataFlagComponent,
                           class FlagComponent<struct InWaterFlag>,
+                          struct ActorRotationComponent,
                           struct MobBodyRotationComponent,
                           struct PassengerComponent,
                           struct RenderRotationComponent,
                           struct StandAnimationComponent,
-                          struct ActorDataFlagComponent,
                           struct AABBShapeComponent,
-                          struct ActorRotationComponent,
                           struct OffsetsComponent,
                           struct VanillaOffsetComponent,
                           struct PassengerRenderingRidingOffsetComponent>,
@@ -104,7 +104,7 @@ public:
                       struct AddRemove<struct AttributeRequestComponent>,
                       struct GlobalRead<struct LocalConstBlockSourceFactoryComponent, struct ExternalDataComponent>,
                       struct GlobalWrite<>,
-                      struct EntityFactoryT<>>& context);
+                      struct EntityFactoryT<>>&);
 
     // NOLINTEND
 };

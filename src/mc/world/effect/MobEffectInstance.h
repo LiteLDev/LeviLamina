@@ -113,8 +113,8 @@ public:
     // symbol: ?setDuration@MobEffectInstance@@QEAAXH@Z
     MCAPI void setDuration(int dur);
 
-    // symbol: ?tick@MobEffectInstance@@QEAA_NPEAVActor@@@Z
-    MCAPI bool tick(class Actor* target);
+    // symbol: ?tick@MobEffectInstance@@QEAA_NXZ
+    MCAPI bool tick();
 
     // symbol: ?tryInitializeMobEffectData@MobEffectInstance@@QEAAXXZ
     MCAPI void tryInitializeMobEffectData();

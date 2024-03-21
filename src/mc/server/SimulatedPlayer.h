@@ -55,30 +55,30 @@ public:
     // vIndex: 10, symbol: __gen_??1SimulatedPlayer@@UEAA@XZ
     virtual ~SimulatedPlayer() = default;
 
-    // vIndex: 26, symbol: ?teleportTo@SimulatedPlayer@@UEAAXAEBVVec3@@_NHH1@Z
+    // vIndex: 25, symbol: ?teleportTo@SimulatedPlayer@@UEAAXAEBVVec3@@_NHH1@Z
     virtual void teleportTo(class Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool);
 
-    // vIndex: 171, symbol: ?aiStep@SimulatedPlayer@@UEAAXXZ
+    // vIndex: 165, symbol: ?aiStep@SimulatedPlayer@@UEAAXXZ
     virtual void aiStep();
 
-    // vIndex: 259, symbol: ?isSimulated@SimulatedPlayer@@UEBA_NXZ
+    // vIndex: 252, symbol: ?isSimulated@SimulatedPlayer@@UEBA_NXZ
     virtual bool isSimulated() const;
 
-    // vIndex: 260, symbol:
+    // vIndex: 253, symbol:
     // ?getXuid@SimulatedPlayer@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getXuid() const;
 
-    // vIndex: 261, symbol: ?getMovementSettings@SimulatedPlayer@@UEBAAEBUPlayerMovementSettings@@XZ
+    // vIndex: 254, symbol: ?getMovementSettings@SimulatedPlayer@@UEBAAEBUPlayerMovementSettings@@XZ
     virtual struct PlayerMovementSettings const& getMovementSettings() const;
 
-    // vIndex: 265, symbol:
+    // vIndex: 258, symbol:
     // ?_createChunkSource@SimulatedPlayer@@MEAA?AV?$shared_ptr@VChunkViewSource@@@std@@AEAVChunkSource@@@Z
     virtual std::shared_ptr<class ChunkViewSource> _createChunkSource(class ChunkSource& mainChunkSource);
 
-    // vIndex: 269, symbol: ?_getSpawnChunkLimit@SimulatedPlayer@@MEBAHXZ
+    // vIndex: 262, symbol: ?_getSpawnChunkLimit@SimulatedPlayer@@MEBAHXZ
     virtual int _getSpawnChunkLimit() const;
 
-    // vIndex: 270, symbol: ?_updateChunkPublisherView@SimulatedPlayer@@MEAAXAEBVVec3@@M@Z
+    // vIndex: 263, symbol: ?_updateChunkPublisherView@SimulatedPlayer@@MEAAXAEBVVec3@@M@Z
     virtual void _updateChunkPublisherView(class Vec3 const&, float);
 
     // symbol:

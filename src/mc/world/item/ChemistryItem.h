@@ -29,7 +29,7 @@ public:
     // vIndex: 0, symbol: ??1ChemistryItem@@UEAA@XZ
     virtual ~ChemistryItem();
 
-    // vIndex: 91, symbol: ?fixupCommon@ChemistryItem@@UEBAXAEAVItemStackBase@@@Z
+    // vIndex: 90, symbol: ?fixupCommon@ChemistryItem@@UEBAXAEAVItemStackBase@@@Z
     virtual void fixupCommon(class ItemStackBase& stack) const;
 
     // symbol: ?validate@ChemistryItem@@SAXAEAVItemStackBase@@@Z

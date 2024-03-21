@@ -11,7 +11,6 @@ class BaseGameVersion;
 class Experiments;
 class ItemRegistryRef;
 class Level;
-class ResourcePackManager;
 // clang-format on
 
 namespace VanillaWorldSystems {
@@ -26,12 +25,11 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ??0Impl@VanillaWorldSystems@@QEAA@AEBV?$NonOwnerPointer@VLevel@@@Bedrock@@AEBVExperiments@@AEBVBaseGameVersion@@PEAVResourcePackManager@@VItemRegistryRef@@@Z
+    // ??0Impl@VanillaWorldSystems@@QEAA@AEBV?$NonOwnerPointer@VLevel@@@Bedrock@@AEBVExperiments@@AEBVBaseGameVersion@@VItemRegistryRef@@@Z
     MCAPI Impl(
-        class Bedrock::NonOwnerPointer<class Level> const& level,
+        class Bedrock::NonOwnerPointer<class Level> const&,
         class Experiments const&,
-        class BaseGameVersion const& baseGameVersion,
-        class ResourcePackManager*   rpm,
+        class BaseGameVersion const&,
         class ItemRegistryRef
     );
 

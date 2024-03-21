@@ -43,34 +43,34 @@ public:
     // vIndex: 10, symbol: __gen_??1FallingBlockActor@@UEAA@XZ
     virtual ~FallingBlockActor() = default;
 
-    // vIndex: 26, symbol: ?teleportTo@FallingBlockActor@@UEAAXAEBVVec3@@_NHH1@Z
+    // vIndex: 25, symbol: ?teleportTo@FallingBlockActor@@UEAAXAEBVVec3@@_NHH1@Z
     virtual void teleportTo(class Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool);
 
-    // vIndex: 29, symbol: ?normalTick@FallingBlockActor@@UEAAXXZ
+    // vIndex: 28, symbol: ?normalTick@FallingBlockActor@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 41, symbol: ?getShadowRadius@FallingBlockActor@@UEBAMXZ
+    // vIndex: 40, symbol: ?getShadowRadius@FallingBlockActor@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 48, symbol: ?isPickable@FallingBlockActor@@UEAA_NXZ
+    // vIndex: 47, symbol: ?isPickable@FallingBlockActor@@UEAA_NXZ
     virtual bool isPickable();
 
-    // vIndex: 103, symbol: ?canChangeDimensionsUsingPortal@FallingBlockActor@@UEBA_NXZ
+    // vIndex: 100, symbol: ?canChangeDimensionsUsingPortal@FallingBlockActor@@UEBA_NXZ
     virtual bool canChangeDimensionsUsingPortal() const;
 
-    // vIndex: 108, symbol: ?causeFallDamageToActor@FallingBlockActor@@UEAAMMMVActorDamageSource@@@Z
+    // vIndex: 104, symbol: ?causeFallDamageToActor@FallingBlockActor@@UEAAMMMVActorDamageSource@@@Z
     virtual float causeFallDamageToActor(float, float, class ActorDamageSource);
 
-    // vIndex: 109, symbol: ?onSynchedDataUpdate@FallingBlockActor@@UEAAXH@Z
+    // vIndex: 105, symbol: ?onSynchedDataUpdate@FallingBlockActor@@UEAAXH@Z
     virtual void onSynchedDataUpdate(int dataId);
 
-    // vIndex: 158, symbol: ?_hurt@FallingBlockActor@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 152, symbol: ?_hurt@FallingBlockActor@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const&, float, bool, bool);
 
-    // vIndex: 159, symbol: ?readAdditionalSaveData@FallingBlockActor@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 153, symbol: ?readAdditionalSaveData@FallingBlockActor@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 160, symbol: ?addAdditionalSaveData@FallingBlockActor@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 154, symbol: ?addAdditionalSaveData@FallingBlockActor@@MEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ??0FallingBlockActor@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

@@ -112,431 +112,413 @@ public:
     // vIndex: 22, symbol: ?isFireImmune@Actor@@UEBA_NXZ
     virtual bool isFireImmune() const;
 
-    // vIndex: 23, symbol: ?breaksFallingBlocks@Actor@@UEBA_NXZ
-    virtual bool breaksFallingBlocks() const;
-
-    // vIndex: 24, symbol: ?blockedByShield@Actor@@UEAAXAEBVActorDamageSource@@AEAV1@@Z
+    // vIndex: 23, symbol: ?blockedByShield@Actor@@UEAAXAEBVActorDamageSource@@AEAV1@@Z
     virtual void blockedByShield(class ActorDamageSource const& source, class Actor& blocker);
 
-    // vIndex: 25, symbol: ?canDisableShield@Actor@@UEAA_NXZ
+    // vIndex: 24, symbol: ?canDisableShield@Actor@@UEAA_NXZ
     virtual bool canDisableShield();
 
-    // vIndex: 26, symbol: ?teleportTo@Actor@@UEAAXAEBVVec3@@_NHH1@Z
+    // vIndex: 25, symbol: ?teleportTo@Actor@@UEAAXAEBVVec3@@_NHH1@Z
     virtual void teleportTo(class Vec3 const& pos, bool shouldStopRiding, int cause, int entityType, bool);
 
-    // vIndex: 27, symbol: ?lerpMotion@Actor@@UEAAXAEBVVec3@@@Z
+    // vIndex: 26, symbol: ?lerpMotion@Actor@@UEAAXAEBVVec3@@@Z
     virtual void lerpMotion(class Vec3 const& delta);
 
-    // vIndex: 28, symbol:
+    // vIndex: 27, symbol:
     // ?tryCreateAddActorPacket@Actor@@UEAA?AV?$unique_ptr@VAddActorBasePacket@@U?$default_delete@VAddActorBasePacket@@@std@@@std@@XZ
     virtual std::unique_ptr<class AddActorBasePacket> tryCreateAddActorPacket();
 
-    // vIndex: 29, symbol: ?normalTick@Actor@@UEAAXXZ
+    // vIndex: 28, symbol: ?normalTick@Actor@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 30, symbol: ?baseTick@Actor@@UEAAXXZ
+    // vIndex: 29, symbol: ?baseTick@Actor@@UEAAXXZ
     virtual void baseTick();
 
-    // vIndex: 31, symbol: ?passengerTick@Actor@@UEAAXXZ
+    // vIndex: 30, symbol: ?passengerTick@Actor@@UEAAXXZ
     virtual void passengerTick();
 
-    // vIndex: 32, symbol: ?startRiding@Actor@@UEAA_NAEAV1@@Z
+    // vIndex: 31, symbol: ?startRiding@Actor@@UEAA_NAEAV1@@Z
     virtual bool startRiding(class Actor&);
 
-    // vIndex: 33, symbol: ?addPassenger@Actor@@UEAAXAEAV1@@Z
+    // vIndex: 32, symbol: ?addPassenger@Actor@@UEAAXAEAV1@@Z
     virtual void addPassenger(class Actor&);
 
-    // vIndex: 34, symbol:
+    // vIndex: 33, symbol:
     // ?getExitTip@Actor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@W4InputMode@@W4NewInteractionModel@@@Z
     virtual std::string getExitTip(std::string const& kind, ::InputMode mode, ::NewInteractionModel) const;
 
-    // vIndex: 35, symbol:
+    // vIndex: 34, symbol:
     // ?getEntityLocNameString@Actor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getEntityLocNameString() const;
 
-    // vIndex: 36, symbol: ?isInWall@Actor@@UEBA_NXZ
+    // vIndex: 35, symbol: ?isInWall@Actor@@UEBA_NXZ
     virtual bool isInWall() const;
 
-    // vIndex: 37, symbol: ?isInvisible@Actor@@UEBA_NXZ
+    // vIndex: 36, symbol: ?isInvisible@Actor@@UEBA_NXZ
     virtual bool isInvisible() const;
 
-    // vIndex: 38, symbol: ?canShowNameTag@Actor@@UEBA_NXZ
+    // vIndex: 37, symbol: ?canShowNameTag@Actor@@UEBA_NXZ
     virtual bool canShowNameTag() const;
 
-    // vIndex: 39, symbol:
+    // vIndex: 38, symbol:
     // ?getFormattedNameTag@Actor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getFormattedNameTag() const;
 
-    // vIndex: 40, symbol: ?getNameTagTextColor@Actor@@UEBA?AVColor@mce@@XZ
+    // vIndex: 39, symbol: ?getNameTagTextColor@Actor@@UEBA?AVColor@mce@@XZ
     virtual class mce::Color getNameTagTextColor() const;
 
-    // vIndex: 41, symbol: ?getShadowRadius@Actor@@UEBAMXZ
+    // vIndex: 40, symbol: ?getShadowRadius@Actor@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 42, symbol: ?getHeadLookVector@Actor@@UEBA?AVVec3@@M@Z
+    // vIndex: 41, symbol: ?getHeadLookVector@Actor@@UEBA?AVVec3@@M@Z
     virtual class Vec3 getHeadLookVector(float a) const;
 
-    // vIndex: 43, symbol: ?canInteractWithOtherEntitiesInGame@Actor@@UEBA_NXZ
+    // vIndex: 42, symbol: ?canInteractWithOtherEntitiesInGame@Actor@@UEBA_NXZ
     virtual bool canInteractWithOtherEntitiesInGame() const;
 
-    // vIndex: 44, symbol: ?getBrightness@Actor@@UEBAMMAEBVIConstBlockSource@@@Z
+    // vIndex: 43, symbol: ?getBrightness@Actor@@UEBAMMAEBVIConstBlockSource@@@Z
     virtual float getBrightness(float a, class IConstBlockSource const& region) const;
 
-    // vIndex: 45, symbol: ?playerTouch@Actor@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 44, symbol: ?playerTouch@Actor@@UEAAXAEAVPlayer@@@Z
     virtual void playerTouch(class Player& player);
 
-    // vIndex: 46, symbol: ?isImmobile@Actor@@UEBA_NXZ
+    // vIndex: 45, symbol: ?isImmobile@Actor@@UEBA_NXZ
     virtual bool isImmobile() const;
 
-    // vIndex: 47, symbol: ?isSilentObserver@Actor@@UEBA_NXZ
+    // vIndex: 46, symbol: ?isSilentObserver@Actor@@UEBA_NXZ
     virtual bool isSilentObserver() const;
 
-    // vIndex: 48, symbol: ?isPickable@Actor@@UEAA_NXZ
+    // vIndex: 47, symbol: ?isPickable@Actor@@UEAA_NXZ
     virtual bool isPickable();
 
-    // vIndex: 49, symbol: ?isSleeping@Actor@@UEBA_NXZ
+    // vIndex: 48, symbol: ?isSleeping@Actor@@UEBA_NXZ
     virtual bool isSleeping() const;
 
-    // vIndex: 50, symbol: ?setSleeping@Actor@@UEAAX_N@Z
+    // vIndex: 49, symbol: ?setSleeping@Actor@@UEAAX_N@Z
     virtual void setSleeping(bool val);
 
-    // vIndex: 51, symbol: ?setSneaking@Actor@@UEAAX_N@Z
+    // vIndex: 50, symbol: ?setSneaking@Actor@@UEAAX_N@Z
     virtual void setSneaking(bool value);
 
-    // vIndex: 52, symbol: ?isBlocking@Actor@@UEBA_NXZ
+    // vIndex: 51, symbol: ?isBlocking@Actor@@UEBA_NXZ
     virtual bool isBlocking() const;
 
-    // vIndex: 53, symbol: ?isDamageBlocked@Actor@@UEBA_NAEBVActorDamageSource@@@Z
+    // vIndex: 52, symbol: ?isDamageBlocked@Actor@@UEBA_NAEBVActorDamageSource@@@Z
     virtual bool isDamageBlocked(class ActorDamageSource const& source) const;
 
-    // vIndex: 54, symbol: ?isAlive@Actor@@UEBA_NXZ
+    // vIndex: 53, symbol: ?isAlive@Actor@@UEBA_NXZ
     virtual bool isAlive() const;
 
-    // vIndex: 55, symbol: ?isOnFire@Actor@@UEBA_NXZ
+    // vIndex: 54, symbol: ?isOnFire@Actor@@UEBA_NXZ
     virtual bool isOnFire() const;
 
-    // vIndex: 56, symbol: ?isSurfaceMob@Actor@@UEBA_NXZ
+    // vIndex: 55, symbol: ?isSurfaceMob@Actor@@UEBA_NXZ
     virtual bool isSurfaceMob() const;
 
-    // vIndex: 57, symbol: ?isTargetable@Actor@@UEBA_NXZ
+    // vIndex: 56, symbol: ?isTargetable@Actor@@UEBA_NXZ
     virtual bool isTargetable() const;
 
-    // vIndex: 58, symbol: ?isLocalPlayer@Actor@@UEBA_NXZ
+    // vIndex: 57, symbol: ?isLocalPlayer@Actor@@UEBA_NXZ
     virtual bool isLocalPlayer() const;
 
-    // vIndex: 59, symbol: ?isPlayer@Actor@@UEBA_NXZ
+    // vIndex: 58, symbol: ?isPlayer@Actor@@UEBA_NXZ
     virtual bool isPlayer() const;
 
-    // vIndex: 60, symbol: ?canAttack@Actor@@UEBA_NPEAV1@_N@Z
+    // vIndex: 59, symbol: ?canAttack@Actor@@UEBA_NPEAV1@_N@Z
     virtual bool canAttack(class Actor* entity, bool allowInvulnerable) const;
 
-    // vIndex: 61, symbol: ?setTarget@Actor@@UEAAXPEAV1@@Z
+    // vIndex: 60, symbol: ?setTarget@Actor@@UEAAXPEAV1@@Z
     virtual void setTarget(class Actor* entity);
 
-    // vIndex: 62, symbol: ?isValidTarget@Actor@@UEBA_NPEAV1@@Z
+    // vIndex: 61, symbol: ?isValidTarget@Actor@@UEBA_NPEAV1@@Z
     virtual bool isValidTarget(class Actor* attacker) const;
 
-    // vIndex: 63, symbol: ?attack@Actor@@UEAA_NAEAV1@AEBW4ActorDamageCause@@@Z
+    // vIndex: 62, symbol: ?attack@Actor@@UEAA_NAEAV1@AEBW4ActorDamageCause@@@Z
     virtual bool attack(class Actor& target, ::ActorDamageCause const& cause);
 
-    // vIndex: 64, symbol: ?performRangedAttack@Actor@@UEAAXAEAV1@M@Z
+    // vIndex: 63, symbol: ?performRangedAttack@Actor@@UEAAXAEAV1@M@Z
     virtual void performRangedAttack(class Actor& target, float power);
 
-    // vIndex: 65, symbol: ?setOwner@Actor@@UEAAXUActorUniqueID@@@Z
+    // vIndex: 64, symbol: ?setOwner@Actor@@UEAAXUActorUniqueID@@@Z
     virtual void setOwner(struct ActorUniqueID ownerId);
 
-    // vIndex: 66, symbol: ?setSitting@Actor@@UEAAX_N@Z
+    // vIndex: 65, symbol: ?setSitting@Actor@@UEAAX_N@Z
     virtual void setSitting(bool value);
 
-    // vIndex: 67, symbol: ?onTame@Actor@@UEAAXXZ
+    // vIndex: 66, symbol: ?onTame@Actor@@UEAAXXZ
     virtual void onTame();
 
-    // vIndex: 68, symbol: ?onFailedTame@Actor@@UEAAXXZ
+    // vIndex: 67, symbol: ?onFailedTame@Actor@@UEAAXXZ
     virtual void onFailedTame();
 
-    // vIndex: 69, symbol: ?setStanding@Actor@@UEAAX_N@Z
+    // vIndex: 68, symbol: ?setStanding@Actor@@UEAAX_N@Z
     virtual void setStanding(bool value);
 
-    // vIndex: 70, symbol: ?canPowerJump@Actor@@UEBA_NXZ
+    // vIndex: 69, symbol: ?canPowerJump@Actor@@UEBA_NXZ
     virtual bool canPowerJump() const;
 
-    // vIndex: 71, symbol: ?isEnchanted@Actor@@UEBA_NXZ
+    // vIndex: 70, symbol: ?isEnchanted@Actor@@UEBA_NXZ
     virtual bool isEnchanted() const;
 
-    // vIndex: 72, symbol: ?shouldRender@Actor@@UEBA_NXZ
+    // vIndex: 71, symbol: ?shouldRender@Actor@@UEBA_NXZ
     virtual bool shouldRender() const;
 
-    // vIndex: 73, symbol: ?playAmbientSound@Actor@@UEAAXXZ
+    // vIndex: 72, symbol: ?playAmbientSound@Actor@@UEAAXXZ
     virtual void playAmbientSound();
 
-    // vIndex: 74, symbol: ?getAmbientSound@Actor@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 73, symbol: ?getAmbientSound@Actor@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
     virtual ::Puv::Legacy::LevelSoundEvent getAmbientSound() const;
 
-    // vIndex: 75, symbol: ?isInvulnerableTo@Actor@@UEBA_NAEBVActorDamageSource@@@Z
+    // vIndex: 74, symbol: ?isInvulnerableTo@Actor@@UEBA_NAEBVActorDamageSource@@@Z
     virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
-    // vIndex: 76, symbol: ?getBlockDamageCause@Actor@@UEBA?AW4ActorDamageCause@@AEBVBlock@@@Z
+    // vIndex: 75, symbol: ?getBlockDamageCause@Actor@@UEBA?AW4ActorDamageCause@@AEBVBlock@@@Z
     virtual ::ActorDamageCause getBlockDamageCause(class Block const& block) const;
 
-    // vIndex: 77, symbol: ?doFireHurt@Actor@@UEAA_NH@Z
+    // vIndex: 76, symbol: ?doFireHurt@Actor@@UEAA_NH@Z
     virtual bool doFireHurt(int amount);
 
-    // vIndex: 78, symbol: ?onLightningHit@Actor@@UEAAXXZ
+    // vIndex: 77, symbol: ?onLightningHit@Actor@@UEAAXXZ
     virtual void onLightningHit();
 
-    // vIndex: 79, symbol: ?feed@Actor@@UEAAXH@Z
+    // vIndex: 78, symbol: ?feed@Actor@@UEAAXH@Z
     virtual void feed(int itemId);
 
-    // vIndex: 80, symbol: ?handleEntityEvent@Actor@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 79, symbol: ?handleEntityEvent@Actor@@UEAAXW4ActorEvent@@H@Z
     virtual void handleEntityEvent(::ActorEvent eventId, int data);
 
-    // vIndex: 81, symbol: ?getPickRadius@Actor@@UEAAMXZ
+    // vIndex: 80, symbol: ?getPickRadius@Actor@@UEAAMXZ
     virtual float getPickRadius();
 
-    // vIndex: 82, symbol: ?getActorRendererId@Actor@@UEBAAEBVHashedString@@XZ
+    // vIndex: 81, symbol: ?getActorRendererId@Actor@@UEBAAEBVHashedString@@XZ
     virtual class HashedString const& getActorRendererId() const;
 
-    // vIndex: 83, symbol: ?despawn@Actor@@UEAAXXZ
+    // vIndex: 82, symbol: ?despawn@Actor@@UEAAXXZ
     virtual void despawn();
 
-    // vIndex: 84, symbol: ?setArmor@Actor@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z
+    // vIndex: 83, symbol: ?setArmor@Actor@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z
     virtual void setArmor(::ArmorSlot slot, class ItemStack const& item);
 
-    // vIndex: 85, symbol: ?getArmorMaterialTypeInSlot@Actor@@UEBA?AW4ArmorMaterialType@@W4ArmorSlot@@@Z
+    // vIndex: 84, symbol: ?getArmorMaterialTypeInSlot@Actor@@UEBA?AW4ArmorMaterialType@@W4ArmorSlot@@@Z
     virtual ::ArmorMaterialType getArmorMaterialTypeInSlot(::ArmorSlot) const;
 
-    // vIndex: 86, symbol: ?getArmorMaterialTextureTypeInSlot@Actor@@UEBA?AW4ArmorTextureType@@W4ArmorSlot@@@Z
+    // vIndex: 85, symbol: ?getArmorMaterialTextureTypeInSlot@Actor@@UEBA?AW4ArmorTextureType@@W4ArmorSlot@@@Z
     virtual ::ArmorTextureType getArmorMaterialTextureTypeInSlot(::ArmorSlot) const;
 
-    // vIndex: 87, symbol: ?getArmorColorInSlot@Actor@@UEBAMW4ArmorSlot@@H@Z
+    // vIndex: 86, symbol: ?getArmorColorInSlot@Actor@@UEBAMW4ArmorSlot@@H@Z
     virtual float getArmorColorInSlot(::ArmorSlot, int) const;
 
-    // vIndex: 88, symbol: ?setEquippedSlot@Actor@@UEAAXW4EquipmentSlot@Legacy@Puv@@AEBVItemStack@@@Z
+    // vIndex: 87, symbol: ?setEquippedSlot@Actor@@UEAAXW4EquipmentSlot@Legacy@Puv@@AEBVItemStack@@@Z
     virtual void setEquippedSlot(::Puv::Legacy::EquipmentSlot, class ItemStack const&);
 
-    // vIndex: 89, symbol: ?setCarriedItem@Actor@@UEAAXAEBVItemStack@@@Z
+    // vIndex: 88, symbol: ?setCarriedItem@Actor@@UEAAXAEBVItemStack@@@Z
     virtual void setCarriedItem(class ItemStack const& item);
 
-    // vIndex: 90, symbol: ?getCarriedItem@Actor@@UEBAAEBVItemStack@@XZ
+    // vIndex: 89, symbol: ?getCarriedItem@Actor@@UEBAAEBVItemStack@@XZ
     virtual class ItemStack const& getCarriedItem() const;
 
-    // vIndex: 91, symbol: ?setOffhandSlot@Actor@@UEAAXAEBVItemStack@@@Z
+    // vIndex: 90, symbol: ?setOffhandSlot@Actor@@UEAAXAEBVItemStack@@@Z
     virtual void setOffhandSlot(class ItemStack const& item);
 
-    // vIndex: 92, symbol: ?getEquippedTotem@Actor@@UEBAAEBVItemStack@@XZ
+    // vIndex: 91, symbol: ?getEquippedTotem@Actor@@UEBAAEBVItemStack@@XZ
     virtual class ItemStack const& getEquippedTotem() const;
 
-    // vIndex: 93, symbol: ?consumeTotem@Actor@@UEAA_NXZ
+    // vIndex: 92, symbol: ?consumeTotem@Actor@@UEAA_NXZ
     virtual bool consumeTotem();
 
-    // vIndex: 94, symbol: ?save@Actor@@UEBA_NAEAVCompoundTag@@@Z
+    // vIndex: 93, symbol: ?save@Actor@@UEBA_NAEAVCompoundTag@@@Z
     virtual bool save(class CompoundTag& entityTag) const;
 
-    // vIndex: 95, symbol: ?load@Actor@@UEAA_NAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 94, symbol: ?load@Actor@@UEAA_NAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual bool load(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 96, symbol: ?queryEntityRenderer@Actor@@UEBAAEBVHashedString@@XZ
+    // vIndex: 95, symbol: ?queryEntityRenderer@Actor@@UEBAAEBVHashedString@@XZ
     virtual class HashedString const& queryEntityRenderer() const;
 
-    // vIndex: 97, symbol: ?getSourceUniqueID@Actor@@UEBA?AUActorUniqueID@@XZ
+    // vIndex: 96, symbol: ?getSourceUniqueID@Actor@@UEBA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID getSourceUniqueID() const;
 
-    // vIndex: 98, symbol: ?canFreeze@Actor@@UEBA_NXZ
+    // vIndex: 97, symbol: ?canFreeze@Actor@@UEBA_NXZ
     virtual bool canFreeze() const;
 
-    // vIndex: 99, symbol: ?getLiquidAABB@Actor@@UEBA?AVAABB@@W4MaterialType@@@Z
+    // vIndex: 98, symbol: ?getLiquidAABB@Actor@@UEBA?AVAABB@@W4MaterialType@@@Z
     virtual class AABB getLiquidAABB(::MaterialType liquidType) const;
 
-    // vIndex: 100, symbol: ?handleInsidePortal@Actor@@UEAAXAEBVBlockPos@@@Z
+    // vIndex: 99, symbol: ?handleInsidePortal@Actor@@UEAAXAEBVBlockPos@@@Z
     virtual void handleInsidePortal(class BlockPos const& portalPos);
 
-    // vIndex: 101, symbol: ?getPortalCooldown@Actor@@UEBAHXZ
-    virtual int getPortalCooldown() const;
-
-    // vIndex: 102, symbol: ?getPortalWaitTime@Actor@@UEBAHXZ
-    virtual int getPortalWaitTime() const;
-
-    // vIndex: 103, symbol: ?canChangeDimensionsUsingPortal@Actor@@UEBA_NXZ
+    // vIndex: 100, symbol: ?canChangeDimensionsUsingPortal@Actor@@UEBA_NXZ
     virtual bool canChangeDimensionsUsingPortal() const;
 
-    // vIndex: 104, symbol: ?changeDimension@Actor@@UEAAXV?$AutomaticID@VDimension@@H@@@Z
+    // vIndex: 101, symbol: ?changeDimension@Actor@@UEAAXV?$AutomaticID@VDimension@@H@@@Z
     virtual void changeDimension(DimensionType toId);
 
-    // vIndex: 105, symbol: ?changeDimension@Actor@@UEAAXAEBVChangeDimensionPacket@@@Z
+    // vIndex: 102, symbol: ?changeDimension@Actor@@UEAAXAEBVChangeDimensionPacket@@@Z
     virtual void changeDimension(class ChangeDimensionPacket const& packet);
 
-    // vIndex: 106, symbol: ?getControllingPlayer@Actor@@UEBA?AUActorUniqueID@@XZ
+    // vIndex: 103, symbol: ?getControllingPlayer@Actor@@UEBA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID getControllingPlayer() const;
 
-    // vIndex: 107, symbol: ?checkFallDamage@Actor@@UEAAXM_N0@Z
-    virtual void checkFallDamage(float, bool, bool);
-
-    // vIndex: 108, symbol: ?causeFallDamageToActor@Actor@@UEAAMMMVActorDamageSource@@@Z
+    // vIndex: 104, symbol: ?causeFallDamageToActor@Actor@@UEAAMMMVActorDamageSource@@@Z
     virtual float causeFallDamageToActor(float, float, class ActorDamageSource);
 
-    // vIndex: 109, symbol: ?onSynchedDataUpdate@Actor@@UEAAXH@Z
+    // vIndex: 105, symbol: ?onSynchedDataUpdate@Actor@@UEAAXH@Z
     virtual void onSynchedDataUpdate(int dataId);
 
-    // vIndex: 110, symbol: ?canAddPassenger@Actor@@UEBA_NAEAV1@@Z
+    // vIndex: 106, symbol: ?canAddPassenger@Actor@@UEBA_NAEAV1@@Z
     virtual bool canAddPassenger(class Actor&) const;
 
-    // vIndex: 111, symbol: ?canPickupItem@Actor@@UEBA_NAEBVItemStack@@@Z
+    // vIndex: 107, symbol: ?canPickupItem@Actor@@UEBA_NAEBVItemStack@@@Z
     virtual bool canPickupItem(class ItemStack const& item) const;
 
-    // vIndex: 112, symbol: ?canBePulledIntoVehicle@Actor@@UEBA_NXZ
+    // vIndex: 108, symbol: ?canBePulledIntoVehicle@Actor@@UEBA_NXZ
     virtual bool canBePulledIntoVehicle() const;
 
-    // vIndex: 113, symbol: ?inCaravan@Actor@@UEBA_NXZ
+    // vIndex: 109, symbol: ?inCaravan@Actor@@UEBA_NXZ
     virtual bool inCaravan() const;
 
-    // vIndex: 114, symbol: ?sendMotionPacketIfNeeded@Actor@@UEAAXAEBUPlayerMovementSettings@@@Z
+    // vIndex: 110, symbol: ?sendMotionPacketIfNeeded@Actor@@UEAAXAEBUPlayerMovementSettings@@@Z
     virtual void sendMotionPacketIfNeeded(struct PlayerMovementSettings const&);
 
-    // vIndex: 115, symbol: ?canSynchronizeNewEntity@Actor@@UEBA_NXZ
+    // vIndex: 111, symbol: ?canSynchronizeNewEntity@Actor@@UEBA_NXZ
     virtual bool canSynchronizeNewEntity() const;
 
-    // vIndex: 116, symbol: ?startSwimming@Actor@@UEAAXXZ
+    // vIndex: 112, symbol: ?startSwimming@Actor@@UEAAXXZ
     virtual void startSwimming();
 
-    // vIndex: 117, symbol: ?stopSwimming@Actor@@UEAAXXZ
+    // vIndex: 113, symbol: ?stopSwimming@Actor@@UEAAXXZ
     virtual void stopSwimming();
 
-    // vIndex: 118, symbol:
+    // vIndex: 114, symbol:
     // ?buildDebugInfo@Actor@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void buildDebugInfo(std::string& out) const;
 
-    // vIndex: 119, symbol: ?getCommandPermissionLevel@Actor@@UEBA?AW4CommandPermissionLevel@@XZ
+    // vIndex: 115, symbol: ?getCommandPermissionLevel@Actor@@UEBA?AW4CommandPermissionLevel@@XZ
     virtual ::CommandPermissionLevel getCommandPermissionLevel() const;
 
-    // vIndex: 120, symbol: ?getDeathTime@Actor@@UEBAHXZ
+    // vIndex: 116, symbol: ?getDeathTime@Actor@@UEBAHXZ
     virtual int getDeathTime() const;
 
-    // vIndex: 121, symbol: ?canBeAffected@Actor@@UEBA_NI@Z
+    // vIndex: 117, symbol: ?canBeAffected@Actor@@UEBA_NI@Z
     virtual bool canBeAffected(uint id) const;
 
-    // vIndex: 122, symbol: ?canBeAffectedByArrow@Actor@@UEBA_NAEBVMobEffectInstance@@@Z
+    // vIndex: 118, symbol: ?canBeAffectedByArrow@Actor@@UEBA_NAEBVMobEffectInstance@@@Z
     virtual bool canBeAffectedByArrow(class MobEffectInstance const& effect) const;
 
-    // vIndex: 123, symbol: ?onEffectAdded@Actor@@UEAAXAEAVMobEffectInstance@@@Z
-    virtual void onEffectAdded(class MobEffectInstance& effect);
-
-    // vIndex: 124, symbol: ?onEffectUpdated@Actor@@UEAAXAEAVMobEffectInstance@@@Z
-    virtual void onEffectUpdated(class MobEffectInstance& effect);
-
-    // vIndex: 125, symbol: ?onEffectRemoved@Actor@@UEAAXAEAVMobEffectInstance@@@Z
+    // vIndex: 119, symbol: ?onEffectRemoved@Actor@@UEAAXAEAVMobEffectInstance@@@Z
     virtual void onEffectRemoved(class MobEffectInstance& effect);
 
-    // vIndex: 126, symbol: ?canObstructSpawningAndBlockPlacement@Actor@@UEBA_NXZ
+    // vIndex: 120, symbol: ?canObstructSpawningAndBlockPlacement@Actor@@UEBA_NXZ
     virtual bool canObstructSpawningAndBlockPlacement() const;
 
-    // vIndex: 127, symbol: ?getAnimationComponent@Actor@@UEAAAEAVAnimationComponent@@XZ
+    // vIndex: 121, symbol: ?getAnimationComponent@Actor@@UEAAAEAVAnimationComponent@@XZ
     virtual class AnimationComponent& getAnimationComponent();
 
-    // vIndex: 128, symbol: ?openContainerComponent@Actor@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 122, symbol: ?openContainerComponent@Actor@@UEAAXAEAVPlayer@@@Z
     virtual void openContainerComponent(class Player& player);
 
-    // vIndex: 129, symbol: ?swing@Actor@@UEAAXXZ
+    // vIndex: 123, symbol: ?swing@Actor@@UEAAXXZ
     virtual void swing();
 
-    // vIndex: 130, symbol: ?useItem@Actor@@UEAAXAEAVItemStackBase@@W4ItemUseMethod@@_N@Z
+    // vIndex: 124, symbol: ?useItem@Actor@@UEAAXAEAVItemStackBase@@W4ItemUseMethod@@_N@Z
     virtual void useItem(class ItemStackBase& item, ::ItemUseMethod itemUseMethod, bool consumeItem);
 
-    // vIndex: 131, symbol:
+    // vIndex: 125, symbol:
     // ?getDebugText@Actor@@UEAAXAEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
     virtual void getDebugText(std::vector<std::string>& outputInfo);
 
-    // vIndex: 132, symbol: ?getMapDecorationRotation@Actor@@UEBAMXZ
+    // vIndex: 126, symbol: ?getMapDecorationRotation@Actor@@UEBAMXZ
     virtual float getMapDecorationRotation() const;
 
-    // vIndex: 133, symbol: ?getPassengerYRotation@Actor@@UEBAMAEBV1@@Z
+    // vIndex: 127, symbol: ?getPassengerYRotation@Actor@@UEBAMAEBV1@@Z
     virtual float getPassengerYRotation(class Actor const&) const;
 
-    // vIndex: 134, symbol: ?add@Actor@@UEAA_NAEAVItemStack@@@Z
+    // vIndex: 128, symbol: ?add@Actor@@UEAA_NAEAVItemStack@@@Z
     virtual bool add(class ItemStack& item);
 
-    // vIndex: 135, symbol: ?drop@Actor@@UEAA_NAEBVItemStack@@_N@Z
+    // vIndex: 129, symbol: ?drop@Actor@@UEAA_NAEBVItemStack@@_N@Z
     virtual bool drop(class ItemStack const& item, bool randomly);
 
-    // vIndex: 136, symbol: ?getInteraction@Actor@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z
+    // vIndex: 130, symbol: ?getInteraction@Actor@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z
     virtual bool getInteraction(class Player& player, class ActorInteraction& interaction, class Vec3 const& location);
 
-    // vIndex: 137, symbol: ?canDestroyBlock@Actor@@UEBA_NAEBVBlock@@@Z
+    // vIndex: 131, symbol: ?canDestroyBlock@Actor@@UEBA_NAEBVBlock@@@Z
     virtual bool canDestroyBlock(class Block const& block) const;
 
-    // vIndex: 138, symbol: ?setAuxValue@Actor@@UEAAXH@Z
+    // vIndex: 132, symbol: ?setAuxValue@Actor@@UEAAXH@Z
     virtual void setAuxValue(int val);
 
-    // vIndex: 139, symbol: ?startSpinAttack@Actor@@UEAAXXZ
+    // vIndex: 133, symbol: ?startSpinAttack@Actor@@UEAAXXZ
     virtual void startSpinAttack();
 
-    // vIndex: 140, symbol: ?stopSpinAttack@Actor@@UEAAXXZ
+    // vIndex: 134, symbol: ?stopSpinAttack@Actor@@UEAAXXZ
     virtual void stopSpinAttack();
 
-    // vIndex: 141, symbol: ?renderDebugServerState@Actor@@UEAAXAEBVOptions@@@Z
+    // vIndex: 135, symbol: ?renderDebugServerState@Actor@@UEAAXAEBVOptions@@@Z
     virtual void renderDebugServerState(class Options const& options);
 
-    // vIndex: 142, symbol: ?kill@Actor@@UEAAXXZ
+    // vIndex: 136, symbol: ?kill@Actor@@UEAAXXZ
     virtual void kill();
 
-    // vIndex: 143, symbol: ?die@Actor@@UEAAXAEBVActorDamageSource@@@Z
+    // vIndex: 137, symbol: ?die@Actor@@UEAAXAEBVActorDamageSource@@@Z
     virtual void die(class ActorDamageSource const& source);
 
-    // vIndex: 144, symbol: ?shouldDropDeathLoot@Actor@@UEBA_NXZ
+    // vIndex: 138, symbol: ?shouldDropDeathLoot@Actor@@UEBA_NXZ
     virtual bool shouldDropDeathLoot() const;
 
-    // vIndex: 145, symbol: ?applySnapshot@Actor@@UEAAXAEBVEntityContext@@0@Z
+    // vIndex: 139, symbol: ?applySnapshot@Actor@@UEAAXAEBVEntityContext@@0@Z
     virtual void
     applySnapshot(class EntityContext const& snapshotEntity, class EntityContext const& originalSnapshotEntity);
 
-    // vIndex: 146, symbol: ?getNextStep@Actor@@UEAAMM@Z
+    // vIndex: 140, symbol: ?getNextStep@Actor@@UEAAMM@Z
     virtual float getNextStep(float);
 
-    // vIndex: 147, symbol: ?onPush@Actor@@UEAAXAEAV1@@Z
+    // vIndex: 141, symbol: ?onPush@Actor@@UEAAXAEAV1@@Z
     virtual void onPush(class Actor&);
 
-    // vIndex: 148, symbol: ?getLastDeathPos@Actor@@UEBA?AV?$optional@VBlockPos@@@std@@XZ
+    // vIndex: 142, symbol: ?getLastDeathPos@Actor@@UEBA?AV?$optional@VBlockPos@@@std@@XZ
     virtual std::optional<class BlockPos> getLastDeathPos() const;
 
-    // vIndex: 149, symbol: ?getLastDeathDimension@Actor@@UEBA?AV?$optional@V?$AutomaticID@VDimension@@H@@@std@@XZ
+    // vIndex: 143, symbol: ?getLastDeathDimension@Actor@@UEBA?AV?$optional@V?$AutomaticID@VDimension@@H@@@std@@XZ
     virtual std::optional<DimensionType> getLastDeathDimension() const;
 
-    // vIndex: 150, symbol: ?hasDiedBefore@Actor@@UEBA_NXZ
+    // vIndex: 144, symbol: ?hasDiedBefore@Actor@@UEBA_NXZ
     virtual bool hasDiedBefore() const;
 
-    // vIndex: 151, symbol: ?doEnterWaterSplashEffect@Actor@@UEAAXXZ
+    // vIndex: 145, symbol: ?doEnterWaterSplashEffect@Actor@@UEAAXXZ
     virtual void doEnterWaterSplashEffect();
 
-    // vIndex: 152, symbol: ?doExitWaterSplashEffect@Actor@@UEAAXXZ
+    // vIndex: 146, symbol: ?doExitWaterSplashEffect@Actor@@UEAAXXZ
     virtual void doExitWaterSplashEffect();
 
-    // vIndex: 153, symbol: ?doWaterSplashEffect@Actor@@UEAAXXZ
+    // vIndex: 147, symbol: ?doWaterSplashEffect@Actor@@UEAAXXZ
     virtual void doWaterSplashEffect();
 
-    // vIndex: 154, symbol: ?_shouldProvideFeedbackOnHandContainerItemSet@Actor@@MEBA_NW4HandSlot@@AEBVItemStack@@@Z
+    // vIndex: 148, symbol: ?_shouldProvideFeedbackOnHandContainerItemSet@Actor@@MEBA_NW4HandSlot@@AEBVItemStack@@@Z
     virtual bool _shouldProvideFeedbackOnHandContainerItemSet(::HandSlot handSlot, class ItemStack const& item) const;
 
-    // vIndex: 155, symbol: ?_shouldProvideFeedbackOnArmorSet@Actor@@MEBA_NW4ArmorSlot@@AEBVItemStack@@@Z
+    // vIndex: 149, symbol: ?_shouldProvideFeedbackOnArmorSet@Actor@@MEBA_NW4ArmorSlot@@AEBVItemStack@@@Z
     virtual bool _shouldProvideFeedbackOnArmorSet(::ArmorSlot slot, class ItemStack const& item) const;
 
-    // vIndex: 156, symbol: ?updateEntitySpecificMolangVariables@Actor@@MEAAXAEAVRenderParams@@@Z
+    // vIndex: 150, symbol: ?updateEntitySpecificMolangVariables@Actor@@MEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams&);
 
-    // vIndex: 157, symbol: ?shouldTryMakeStepSound@Actor@@MEAA_NXZ
+    // vIndex: 151, symbol: ?shouldTryMakeStepSound@Actor@@MEAA_NXZ
     virtual bool shouldTryMakeStepSound();
 
-    // vIndex: 158, symbol: ?_hurt@Actor@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 152, symbol: ?_hurt@Actor@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 159, symbol: ?readAdditionalSaveData@Actor@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 153, symbol: ?readAdditionalSaveData@Actor@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 160, symbol: ?addAdditionalSaveData@Actor@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 154, symbol: ?addAdditionalSaveData@Actor@@MEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 161, symbol: ?_playStepSound@Actor@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 155, symbol: ?_playStepSound@Actor@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
     virtual void _playStepSound(class BlockPos const& pos, class Block const& onBlock);
 
-    // vIndex: 162, symbol: ?_doAutoAttackOnTouch@Actor@@EEAAXAEAV1@@Z
+    // vIndex: 156, symbol: ?_doAutoAttackOnTouch@Actor@@EEAAXAEAV1@@Z
     virtual void _doAutoAttackOnTouch(class Actor& entity);
 
     // symbol: ??0Actor@@QEAA@AEAVILevel@@AEAVEntityContext@@@Z
@@ -615,6 +597,9 @@ public:
     // symbol: ?celebrateHunt@Actor@@QEAAXH_N@Z
     MCAPI void celebrateHunt(int duration, bool);
 
+    // symbol: ?checkFallDamage@Actor@@QEAAXM_N0@Z
+    MCAPI void checkFallDamage(float, bool, bool);
+
     // symbol: ?chorusFruitTeleport@Actor@@QEAAXAEBVVec3@@@Z
     MCAPI void chorusFruitTeleport(class Vec3 const& range);
 
@@ -635,9 +620,6 @@ public:
 
     // symbol: ?createUpdateTradePacket@Actor@@QEAA?AVUpdateTradePacket@@H@Z
     MCAPI class UpdateTradePacket createUpdateTradePacket(int containerID);
-
-    // symbol: ?damageSensorComponentHurt@Actor@@QEAA_NAEAMAEBVActorDamageSource@@_N@Z
-    MCAPI bool damageSensorComponentHurt(float& damage, class ActorDamageSource const& source, bool isFatal);
 
     // symbol: ?deregisterTagsFromLevelCache@Actor@@QEAAXXZ
     MCAPI void deregisterTagsFromLevelCache();
@@ -869,6 +851,9 @@ public:
     // symbol: ?getLastHurtByMob@Actor@@QEAAPEAVMob@@XZ
     MCAPI class Mob* getLastHurtByMob();
 
+    // symbol: ?getLastHurtByMobID@Actor@@QEBA?AUActorUniqueID@@XZ
+    MCAPI struct ActorUniqueID getLastHurtByMobID() const;
+
     // symbol: ?getLastHurtByMobTime@Actor@@QEAAHXZ
     MCAPI int getLastHurtByMobTime();
 
@@ -877,6 +862,9 @@ public:
 
     // symbol: ?getLastHurtByPlayer@Actor@@QEAAPEAVPlayer@@XZ
     MCAPI class Player* getLastHurtByPlayer();
+
+    // symbol: ?getLastHurtByPlayerID@Actor@@QEBA?AUActorUniqueID@@XZ
+    MCAPI struct ActorUniqueID getLastHurtByPlayerID() const;
 
     // symbol: ?getLastHurtCause@Actor@@QEBA?AW4ActorDamageCause@@XZ
     MCAPI ::ActorDamageCause getLastHurtCause() const;
@@ -1007,9 +995,6 @@ public:
 
     // symbol: ?getSkinID@Actor@@QEBAHXZ
     MCAPI int getSkinID() const;
-
-    // symbol: ?getSlideOffset@Actor@@QEBA?AVVec2@@XZ
-    MCAPI class Vec2 getSlideOffset() const;
 
     // symbol: ?getSpatialNetworkData@Actor@@QEAAAEAVSpatialActorNetworkData@@XZ
     MCAPI class SpatialActorNetworkData& getSpatialNetworkData();
@@ -1532,9 +1517,6 @@ public:
 
     // symbol: ?removeTag@Actor@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI bool removeTag(std::string const& tag);
-
-    // symbol: ?resetSlideYOffset@Actor@@QEAAXXZ
-    MCAPI void resetSlideYOffset();
 
     // symbol: ?saveEntityFlags@Actor@@QEBAXAEAVCompoundTag@@@Z
     MCAPI void saveEntityFlags(class CompoundTag& entityTag) const;

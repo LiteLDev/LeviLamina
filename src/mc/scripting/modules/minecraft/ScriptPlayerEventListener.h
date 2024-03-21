@@ -11,9 +11,10 @@
 namespace ScriptModuleMinecraft { class IScriptWorldAfterEvents; }
 namespace Scripting { class WeakLifetimeScope; }
 struct PlayerDimensionChangeAfterEvent;
+struct PlayerGameModeChangeEvent;
 struct PlayerInitialSpawnEvent;
-struct PlayerInteractWithBlockEvent;
-struct PlayerInteractWithEntityEvent;
+struct PlayerInteractWithBlockAfterEvent;
+struct PlayerInteractWithEntityAfterEvent;
 struct PlayerNotificationEvent;
 struct PlayerRespawnEvent;
 // clang-format on
@@ -153,16 +154,15 @@ public:
     virtual void __unk_vfn_40();
 
     // vIndex: 41, symbol:
-    // ?onEvent@ScriptPlayerEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUPlayerInteractWithEntityEvent@@@Z
-    virtual ::EventResult onEvent(struct PlayerInteractWithEntityEvent const&);
+    // ?onEvent@ScriptPlayerEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUPlayerGameModeChangeEvent@@@Z
+    virtual ::EventResult onEvent(struct PlayerGameModeChangeEvent const&);
 
     // vIndex: 42, symbol:
-    // ?onEvent@ScriptPlayerEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUPlayerInteractWithBlockEvent@@@Z
-    virtual ::EventResult onEvent(struct PlayerInteractWithBlockEvent const&);
-
-    // vIndex: 43, symbol:
     // ?onEvent@?$EventListenerDispatcher@VPlayerEventListener@@@@MEAA?AW4EventResult@@AEBUPlayerNotificationEvent@@@Z
     virtual ::EventResult onEvent(struct PlayerNotificationEvent const& event);
+
+    // vIndex: 43, symbol: __unk_vfn_43
+    virtual void __unk_vfn_43();
 
     // vIndex: 44, symbol: __unk_vfn_44
     virtual void __unk_vfn_44();
@@ -173,25 +173,26 @@ public:
     // vIndex: 46, symbol: __unk_vfn_46
     virtual void __unk_vfn_46();
 
-    // vIndex: 47, symbol:
+    // vIndex: 47, symbol: __unk_vfn_47
+    virtual void __unk_vfn_47();
+
+    // vIndex: 48, symbol:
     // ?onEvent@ScriptPlayerEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUPlayerDimensionChangeAfterEvent@@@Z
     virtual ::EventResult onEvent(struct PlayerDimensionChangeAfterEvent const&);
 
-    // vIndex: 48, symbol: __unk_vfn_48
-    virtual void __unk_vfn_48();
+    // vIndex: 49, symbol:
+    // ?onEvent@ScriptPlayerEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUPlayerInteractWithEntityAfterEvent@@@Z
+    virtual ::EventResult onEvent(struct PlayerInteractWithEntityAfterEvent const&);
 
-    // vIndex: 49, symbol: __unk_vfn_49
-    virtual void __unk_vfn_49();
-
-    // vIndex: 50, symbol: __unk_vfn_50
-    virtual void __unk_vfn_50();
+    // vIndex: 50, symbol:
+    // ?onEvent@ScriptPlayerEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUPlayerInteractWithBlockAfterEvent@@@Z
+    virtual ::EventResult onEvent(struct PlayerInteractWithBlockAfterEvent const&);
 
     // vIndex: 51, symbol: __unk_vfn_51
     virtual void __unk_vfn_51();
 
-    // vIndex: 52, symbol:
-    // ?onEvent@ScriptPlayerEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUPlayerRespawnEvent@@@Z
-    virtual ::EventResult onEvent(struct PlayerRespawnEvent const&);
+    // vIndex: 52, symbol: __unk_vfn_52
+    virtual void __unk_vfn_52();
 
     // vIndex: 53, symbol: __unk_vfn_53
     virtual void __unk_vfn_53();
@@ -200,6 +201,16 @@ public:
     virtual void __unk_vfn_54();
 
     // vIndex: 55, symbol:
+    // ?onEvent@ScriptPlayerEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUPlayerRespawnEvent@@@Z
+    virtual ::EventResult onEvent(struct PlayerRespawnEvent const&);
+
+    // vIndex: 56, symbol: __unk_vfn_56
+    virtual void __unk_vfn_56();
+
+    // vIndex: 57, symbol: __unk_vfn_57
+    virtual void __unk_vfn_57();
+
+    // vIndex: 58, symbol:
     // ?onEvent@ScriptPlayerEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUPlayerInitialSpawnEvent@@@Z
     virtual ::EventResult onEvent(struct PlayerInitialSpawnEvent const&);
 

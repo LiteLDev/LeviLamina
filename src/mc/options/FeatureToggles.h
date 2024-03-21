@@ -75,9 +75,6 @@ public:
     MCAPI std::function<void(class Option&)>
         _getDisabledIfOptionExpectationsNotMetSetupCallback(std::vector<::FeatureOptionID>, std::vector<::FeatureOptionID>);
 
-    // symbol: ?_getForceEnableCallback@FeatureToggles@@AEAA?AV?$function@$$A6AXAEAVOption@@@Z@std@@XZ
-    MCAPI std::function<void(class Option&)> _getForceEnableCallback();
-
     // symbol:
     // ?_getLockIfInGameOrOptionExpectationsNotMetLockCallback@FeatureToggles@@AEAA?AV?$function@$$A6AXAEA_N@Z@std@@V?$vector@W4FeatureOptionID@@V?$allocator@W4FeatureOptionID@@@std@@@3@0@Z
     MCAPI std::function<void(bool&)>

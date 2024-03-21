@@ -30,6 +30,10 @@ public:
         entt::internal::dense_map_node<std::string, std::shared_ptr<struct br::worldgen::StructureSet>>>>>>
           end() const;
 
+    // symbol:
+    // ?record@StructureSetRegistry@worldgen@br@@QEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@$$QEAV?$shared_ptr@UStructureSet@worldgen@br@@@5@@Z
+    MCAPI void record(std::string_view, std::shared_ptr<struct br::worldgen::StructureSet>&&);
+
     // symbol: ?size@StructureSetRegistry@worldgen@br@@QEBA_KXZ
     MCAPI uint64 size() const;
 

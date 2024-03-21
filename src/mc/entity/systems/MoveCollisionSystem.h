@@ -16,6 +16,11 @@
 #include "mc/entity/EntityFactoryT.h"
 #include "mc/world/components/FlagComponent.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace BlockSourceVisitor { struct CollisionShape; }
+// clang-format on
+
 namespace MoveCollisionSystem {
 // NOLINTBEGIN
 // symbol: ?createCollisionShapesCopySystem@MoveCollisionSystem@@YA?AUTickingSystemWithInfo@@XZ
@@ -25,9 +30,9 @@ MCAPI struct TickingSystemWithInfo createCollisionShapesCopySystem();
 MCAPI struct TickingSystemWithInfo createSystem();
 
 // symbol:
-// ?fetchCollisionShapes@MoveCollisionSystem@@YAXAEBVStrictEntityContext@@AEBUAABBShapeComponent@@AEBUMaxAutoStepComponent@@AEBUActorDataFlagComponent@@V?$Optional@$$CBV?$FlagComponent@UCollidableMobNearFlag@@@@@@AEAUMoveRequestComponent@@AEBV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UCollidableMobFlag@@@@@@$$CBUAABBShapeComponent@@@@AEBV?$ViewT@VStrictEntityContext@@$$CBUAABBShapeComponent@@$$CBUActorDataFlagComponent@@@@AEBV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UFallingBlockFlag@@@@@@@@AEBVIConstBlockSource@@AEAVLocalSpatialEntityFetcher@@AEBVGetCollisionShapeInterface@@@Z
+// ?fetchCollisionShapes@MoveCollisionSystem@@YAXAEBVStrictEntityContext@@AEBUAABBShapeComponent@@AEBUMaxAutoStepComponent@@AEBUActorDataFlagComponent@@V?$Optional@$$CBV?$FlagComponent@UCollidableMobNearFlag@@@@@@AEAUMoveRequestComponent@@AEBV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UCollidableMobFlag@@@@@@$$CBUAABBShapeComponent@@@@AEBV?$ViewT@VStrictEntityContext@@$$CBUAABBShapeComponent@@$$CBUActorDataFlagComponent@@@@AEBV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UFallingBlockFlag@@@@@@@@AEBVIConstBlockSource@@AEAVLocalSpatialEntityFetcher@@AEBVGetCollisionShapeInterface@@AEAV?$vector@UCollisionShape@BlockSourceVisitor@@V?$allocator@UCollisionShape@BlockSourceVisitor@@@std@@@std@@@Z
 MCAPI void
-fetchCollisionShapes(class StrictEntityContext const&, struct AABBShapeComponent const&, struct MaxAutoStepComponent const&, struct ActorDataFlagComponent const&, class Optional<class FlagComponent<struct CollidableMobNearFlag> const>, struct MoveRequestComponent&, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct CollidableMobFlag>>, struct AABBShapeComponent const> const&, class ViewT<class StrictEntityContext, struct AABBShapeComponent const, struct ActorDataFlagComponent const> const&, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct FallingBlockFlag>>> const&, class IConstBlockSource const&, class LocalSpatialEntityFetcher&, class GetCollisionShapeInterface const&);
+fetchCollisionShapes(class StrictEntityContext const&, struct AABBShapeComponent const&, struct MaxAutoStepComponent const&, struct ActorDataFlagComponent const&, class Optional<class FlagComponent<struct CollidableMobNearFlag> const>, struct MoveRequestComponent&, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct CollidableMobFlag>>, struct AABBShapeComponent const> const&, class ViewT<class StrictEntityContext, struct AABBShapeComponent const, struct ActorDataFlagComponent const> const&, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct FallingBlockFlag>>> const&, class IConstBlockSource const&, class LocalSpatialEntityFetcher&, class GetCollisionShapeInterface const&, std::vector<struct BlockSourceVisitor::CollisionShape>&);
 // NOLINTEND
 
 }; // namespace MoveCollisionSystem

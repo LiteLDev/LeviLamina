@@ -39,7 +39,7 @@ public:
     // vIndex: 55, symbol: ?waterSpreadCausesSpawn@WebBlock@@UEBA_NXZ
     virtual bool waterSpreadCausesSpawn() const;
 
-    // vIndex: 143, symbol: ?_addHardCodedBlockComponents@WebBlock@@UEAAXAEBVExperiments@@@Z
+    // vIndex: 141, symbol: ?_addHardCodedBlockComponents@WebBlock@@UEAAXAEBVExperiments@@@Z
     virtual void _addHardCodedBlockComponents(class Experiments const&);
 
     // symbol: ??0WebBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

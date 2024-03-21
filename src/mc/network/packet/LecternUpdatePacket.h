@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1LecternUpdatePacket@@UEAA@XZ
-    virtual ~LecternUpdatePacket();
+    // vIndex: 0, symbol: __gen_??1LecternUpdatePacket@@UEAA@XZ
+    virtual ~LecternUpdatePacket() = default;
 
     // vIndex: 1, symbol: ?getId@LecternUpdatePacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;
@@ -25,10 +25,10 @@ public:
     // ?getName@LecternUpdatePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getName() const;
 
-    // vIndex: 3, symbol: ?write@LecternUpdatePacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4, symbol: ?write@LecternUpdatePacket@@UEBAXAEAVBinaryStream@@@Z
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 7, symbol:
+    // vIndex: 8, symbol:
     // ?_read@LecternUpdatePacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 

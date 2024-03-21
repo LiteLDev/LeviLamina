@@ -41,6 +41,7 @@ namespace ScriptModuleMinecraft { struct ScriptEntityRaycastOptions; }
 namespace ScriptModuleMinecraft { struct ScriptExplosionOptions; }
 namespace ScriptModuleMinecraft { struct ScriptLocationInUnloadedChunkError; }
 namespace ScriptModuleMinecraft { struct ScriptLocationOutOfWorldBoundsError; }
+namespace ScriptModuleMinecraft { struct ScriptWorldSoundOptions; }
 namespace Scripting { class DependencyLocator; }
 namespace Scripting { class ScriptObjectFactory; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -107,8 +108,8 @@ public:
     getBlock(class Scripting::WeakLifetimeScope scope, class Vec3 const& position) const;
 
     // symbol:
-    // ?getBlockFromRay@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$optional@VScriptBlockRaycastHit@ScriptModuleMinecraft@@@std@@VWeakLifetimeScope@Scripting@@AEBVVec3@@1AEBV?$optional@UScriptBlockRaycastOptions@ScriptModuleMinecraft@@@4@@Z
-    MCAPI std::optional<class ScriptModuleMinecraft::ScriptBlockRaycastHit> getBlockFromRay(
+    // ?getBlockFromRay@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@VScriptBlockRaycastHit@ScriptModuleMinecraft@@@std@@$$V@Scripting@@VWeakLifetimeScope@4@AEBVVec3@@1AEBV?$optional@UScriptBlockRaycastOptions@ScriptModuleMinecraft@@@std@@@Z
+    MCAPI class Scripting::Result<std::optional<class ScriptModuleMinecraft::ScriptBlockRaycastHit>> getBlockFromRay(
         class Scripting::WeakLifetimeScope                                            scope,
         class Vec3 const&                                                             pos,
         class Vec3 const&                                                             vector,
@@ -201,6 +202,11 @@ public:
 
     // symbol: ??4ScriptDimension@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptDimension& operator=(class ScriptModuleMinecraft::ScriptDimension&& rhs);
+
+    // symbol:
+    // ?playSound@ScriptDimension@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@V?$optional@UScriptWorldSoundOptions@ScriptModuleMinecraft@@@6@@Z
+    MCAPI class Scripting::Result<void>
+    playSound(std::string const&, class Vec3 const&, std::optional<struct ScriptModuleMinecraft::ScriptWorldSoundOptions>);
 
     // symbol:
     // ?runCommand@ScriptDimension@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@UScriptCommandResult@ScriptModuleMinecraft@@@Scripting@@UScriptCommandError@ScriptModuleMinecraft@@@Scripting@@AEAVDependencyLocator@4@AEBUContextConfig@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

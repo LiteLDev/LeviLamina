@@ -40,11 +40,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?onEvent@ScriptFormPromiseTracker@@UEAA?AW4EventResult@@AEBUPlayerFormCloseEvent@@@Z
-    MCVAPI ::EventResult onEvent(struct PlayerFormCloseEvent const& formCloseEvent);
-
     // symbol: ?onEvent@ScriptFormPromiseTracker@@UEAA?AW4EventResult@@AEBUPlayerFormResponseEvent@@@Z
     MCVAPI ::EventResult onEvent(struct PlayerFormResponseEvent const& formResponseEvent);
+
+    // symbol: ?onEvent@ScriptFormPromiseTracker@@UEAA?AW4EventResult@@AEBUPlayerFormCloseEvent@@@Z
+    MCVAPI ::EventResult onEvent(struct PlayerFormCloseEvent const& formCloseEvent);
 
     // symbol: ??0ScriptFormPromiseTracker@@QEAA@XZ
     MCAPI ScriptFormPromiseTracker();

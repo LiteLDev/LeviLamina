@@ -6,19 +6,10 @@ class BlockTickingQueue {
 public:
     // BlockTickingQueue inner types declare
     // clang-format off
-    class BlockTick;
     class TickDataSet;
     // clang-format on
 
     // BlockTickingQueue inner types define
-    class BlockTick {
-    public:
-        // prevent constructor by default
-        BlockTick& operator=(BlockTick const&);
-        BlockTick(BlockTick const&);
-        BlockTick();
-    };
-
     class TickDataSet {
     public:
         // prevent constructor by default

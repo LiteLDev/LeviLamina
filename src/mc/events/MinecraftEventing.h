@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/network/realms/RealmsPurchaseFailureReason.h"
 #include "mc/client/network/realms/RealmsPurchaseIntent.h"
+#include "mc/client/social/IdentitySignInTrigger.h"
 #include "mc/client/social/MultiplayerServiceIdentifier.h"
 #include "mc/client/social/SignInResult.h"
 #include "mc/deps/core/LevelStorageState.h"
@@ -122,8 +123,9 @@ public:
     fileEventCloudWorldPullFailed(std::string const& reason, std::string const& worldID, bool localLevelDatUsed);
 
     // symbol:
-    // ?fireBannedSkinVerificationEvent@MinecraftEventing@@UEAAXAEBIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1_N2@Z
-    MCVAPI void fireBannedSkinVerificationEvent(uint const&, std::string const&, std::string const&, bool, bool);
+    // ?fireBannedSkinVerificationEvent@MinecraftEventing@@UEAAXAEBIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1_NH1@Z
+    MCVAPI void
+    fireBannedSkinVerificationEvent(uint const&, std::string const&, std::string const&, bool, int, std::string const&);
 
     // symbol:
     // ?fireCDNDownloadEvent@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00AEBW4CDNDownloadResult@IMinecraftEventing@@AEBW4CDNDownloadEventOrigin@5@AEBM@Z
@@ -506,12 +508,12 @@ public:
     MCVAPI void fireEventFeedbackSubmitted(std::string const& productId, bool safetyCheckSuccessful, bool isValidText);
 
     // symbol:
-    // ?fireEventGameRulesUpdated@MinecraftEventing@@UEAAX_N0AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI void fireEventGameRulesUpdated(bool oldValue, bool newValue, std::string const& gameRuleName);
-
-    // symbol:
     // ?fireEventGameRulesUpdated@MinecraftEventing@@UEAAXMMAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI void fireEventGameRulesUpdated(float oldValue, float newValue, std::string const& gameRuleName);
+
+    // symbol:
+    // ?fireEventGameRulesUpdated@MinecraftEventing@@UEAAX_N0AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCVAPI void fireEventGameRulesUpdated(bool oldValue, bool newValue, std::string const& gameRuleName);
 
     // symbol:
     // ?fireEventGameRulesUpdated@MinecraftEventing@@UEAAXHHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -622,12 +624,13 @@ public:
     MCVAPI void fireEventLockedItemGiven();
 
     // symbol:
-    // ?fireEventMessageServiceImpression@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000@Z
+    // ?fireEventMessageServiceImpression@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000_N@Z
     MCVAPI void fireEventMessageServiceImpression(
-        std::string const& messageId,
-        std::string const& messageSessionId,
-        std::string const& Surface,
-        std::string const& Template
+        std::string const&,
+        std::string const&,
+        std::string const&,
+        std::string const&,
+        bool
     );
 
     // symbol:
@@ -667,9 +670,9 @@ public:
     MCVAPI void fireEventOnDeviceLost(std::vector<struct SerialWorkListLogEntry> const&);
 
     // symbol:
-    // ?fireEventOnServerDisconnect@MinecraftEventing@@UEAAXW4DisconnectFailReason@Connection@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4SubClientId@@11@Z
+    // ?fireEventOnServerDisconnect@MinecraftEventing@@UEAAXW4DisconnectFailReason@Connection@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4SubClientId@@1_K1@Z
     MCVAPI void
-    fireEventOnServerDisconnect(::Connection::DisconnectFailReason, std::string const&, ::SubClientId, std::string const&, std::string const&);
+    fireEventOnServerDisconnect(::Connection::DisconnectFailReason, std::string const&, ::SubClientId, std::string const&, uint64, std::string const&);
 
     // symbol: ?fireEventOnSuccessfulClientLogin@MinecraftEventing@@UEAAXPEBVMultiPlayerLevel@@@Z
     MCVAPI void fireEventOnSuccessfulClientLogin(class MultiPlayerLevel const*);
@@ -1040,6 +1043,10 @@ public:
     MCVAPI void fireEventRespondedToAcceptContent(struct PacksInfoData const& data, bool accepted);
 
     // symbol:
+    // ?fireEventSafetyHTTPRequest@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0H@Z
+    MCVAPI void fireEventSafetyHTTPRequest(std::string const&, std::string const&, int);
+
+    // symbol:
     // ?fireEventScreenChanged@MinecraftEventing@@UEAAXAEBIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@3@@Z
     MCVAPI void fireEventScreenChanged(
         uint const&                                         userId,
@@ -1170,17 +1177,9 @@ public:
     );
 
     // symbol:
-    // ?fireEventSignInToIdentity@MinecraftEventing@@UEAAXW4SignInAccountType@IMinecraftEventing@@W4SignInTrigger@3@_NW4SignInStage@3@W4SignInResult@Social@@HUPlayerIDs@7@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI void fireEventSignInToIdentity(
-        ::IMinecraftEventing::SignInAccountType accountType,
-        ::IMinecraftEventing::SignInTrigger     trigger,
-        bool                                    signInUIShown,
-        ::IMinecraftEventing::SignInStage       stage,
-        ::Social::SignInResult                  result,
-        int                                     retryCount,
-        struct Social::PlayerIDs                ids,
-        std::string const&                      errorCode
-    );
+    // ?fireEventSignInToIdentity@MinecraftEventing@@UEAAXW4SignInAccountType@IMinecraftEventing@@W4IdentitySignInTrigger@Social@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NW4SignInStage@3@W4SignInResult@5@HUPlayerIDs@5@2@Z
+    MCVAPI void
+    fireEventSignInToIdentity(::IMinecraftEventing::SignInAccountType, ::Social::IdentitySignInTrigger, std::string const&, bool, ::IMinecraftEventing::SignInStage, ::Social::SignInResult, int, struct Social::PlayerIDs, std::string const&);
 
     // symbol:
     // ?fireEventSignOutEdu@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Role@edu@@000@Z
@@ -1188,10 +1187,10 @@ public:
     fireEventSignOutEdu(std::string const&, ::edu::Role, std::string const&, std::string const&, std::string const&);
 
     // symbol:
-    // ?fireEventSignOutOfIdentity@MinecraftEventing@@UEAAXW4SignInAccountType@IMinecraftEventing@@W4SignInTrigger@3@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@2@Z
+    // ?fireEventSignOutOfIdentity@MinecraftEventing@@UEAAXW4SignInAccountType@IMinecraftEventing@@W4IdentitySignInTrigger@Social@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@2@Z
     MCVAPI void fireEventSignOutOfIdentity(
         ::IMinecraftEventing::SignInAccountType accountType,
-        ::IMinecraftEventing::SignInTrigger     trigger,
+        ::Social::IdentitySignInTrigger         trigger,
         std::string const&                      accountId,
         std::string const&                      errorCode
     );
@@ -1533,6 +1532,10 @@ public:
     MCVAPI void firePackSettingsEvent(class PackSettings const& packSettings, class PackManifest const& manifest);
 
     // symbol:
+    // ?firePassthroughTextProcessEvent@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4TextProcessingEventOrigin@@0@Z
+    MCVAPI void firePassthroughTextProcessEvent(std::string const&, ::TextProcessingEventOrigin, std::string const&);
+
+    // symbol:
     // ?firePerfTestEvent@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00II0AEBV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@std@@@2@@3@@Z
     MCVAPI void firePerfTestEvent(
         std::string const&                                testArtifact,
@@ -1585,9 +1588,9 @@ public:
     MCVAPI void fireRealmConnectionEventStart(::IMinecraftEventing::RealmConnectionFlow realmConnectionFlow);
 
     // symbol:
-    // ?fireSafetyServiceTextProcessEvent@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4TextProcessingEventOrigin@@G0_NNDDAEBVValue@Json@@@Z
+    // ?fireSafetyServiceTextProcessEvent@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4TextProcessingEventOrigin@@G0_NNDDAEBVValue@Json@@0@Z
     MCVAPI void
-    fireSafetyServiceTextProcessEvent(std::string const&, ::TextProcessingEventOrigin, ushort, std::string const&, bool, double, char, char, class Json::Value const&);
+    fireSafetyServiceTextProcessEvent(std::string const&, ::TextProcessingEventOrigin, ushort, std::string const&, bool, double, char, char, class Json::Value const&, std::string const&);
 
     // symbol:
     // ?fireScreenLoadTimeUpdateEvent@MinecraftEventing@@UEAAXAEBIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@3@1@Z
@@ -1862,12 +1865,18 @@ public:
     MCAPI static void
     fireEventJukeboxUsed(class Player* player, class ItemDescriptor const& disc, std::string const& biome);
 
+    // symbol: ?fireEventMobDied@MinecraftEventing@@SAXAEAVMob@@H@Z
+    MCAPI static void fireEventMobDied(class Mob&, int);
+
     // symbol: ?fireEventMobEffectChanged@MinecraftEventing@@SAXAEAVMob@@AEBVMobEffectInstance@@W4ChangeType@1@@Z
     MCAPI static void fireEventMobEffectChanged(
         class Mob&                      mob,
         class MobEffectInstance const&  effectInstance,
         ::MinecraftEventing::ChangeType change
     );
+
+    // symbol: ?fireEventMobTeleportedToOwner@MinecraftEventing@@SAXAEAVMob@@@Z
+    MCAPI static void fireEventMobTeleportedToOwner(class Mob&);
 
     // symbol: ?fireEventPlayerTeleported@MinecraftEventing@@SAXPEAVPlayer@@MW4TeleportationCause@1@H@Z
     MCAPI static void fireEventPlayerTeleported(

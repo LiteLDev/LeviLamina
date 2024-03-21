@@ -14,9 +14,11 @@ class ServerLevel;
 class Vec3;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptDimension; }
+namespace ScriptModuleMinecraft { class ScriptGameRules; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace ScriptModuleMinecraft { class ScriptPlayerIterator; }
 namespace ScriptModuleMinecraft { class ScriptScoreboard; }
+namespace ScriptModuleMinecraft { class ScriptStructureManager; }
 namespace ScriptModuleMinecraft { class ScriptWorldAfterEvents; }
 namespace ScriptModuleMinecraft { class ScriptWorldBeforeEvents; }
 namespace ScriptModuleMinecraft { struct ScriptActorQueryOptions; }
@@ -41,6 +43,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0ScriptWorld@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
+    MCAPI ScriptWorld(class ScriptModuleMinecraft::ScriptWorld&&);
+
     // symbol:
     // ??0ScriptWorld@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@V?$not_null@PEAVServerLevel@@@gsl@@@Z
     MCAPI ScriptWorld(class Scripting::WeakLifetimeScope const& scope, gsl::not_null<class ServerLevel*> level);
@@ -104,6 +109,10 @@ public:
     getEntity(std::string const& id) const;
 
     // symbol:
+    // ?getGameRules@ScriptWorld@ScriptModuleMinecraft@@QEAA?AV?$StrongTypedObjectHandle@VScriptGameRules@ScriptModuleMinecraft@@@Scripting@@XZ
+    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptGameRules> getGameRules();
+
+    // symbol:
     // ?getPlayers@ScriptWorld@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$vector@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@$$V@Scripting@@V?$optional@UScriptActorQueryOptions@ScriptModuleMinecraft@@@std@@@Z
     MCAPI class Scripting::Result<
         std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>>>
@@ -118,6 +127,11 @@ public:
     // symbol:
     // ?getScoreboard@ScriptWorld@ScriptModuleMinecraft@@QEAA?AV?$StrongTypedObjectHandle@VScriptScoreboard@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboard> getScoreboard();
+
+    // symbol:
+    // ?getStructureManager@ScriptWorld@ScriptModuleMinecraft@@QEBA?AV?$StrongTypedObjectHandle@VScriptStructureManager@ScriptModuleMinecraft@@@Scripting@@XZ
+    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptStructureManager>
+    getStructureManager() const;
 
     // symbol: ?getTimeOfDay@ScriptWorld@ScriptModuleMinecraft@@QEBAHXZ
     MCAPI int getTimeOfDay() const;

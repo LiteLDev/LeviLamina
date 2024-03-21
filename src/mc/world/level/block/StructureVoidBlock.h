@@ -58,9 +58,6 @@ public:
     // vIndex: 77, symbol: ?canRenderSelectionOverlay@StructureVoidBlock@@UEBA_NW4BlockRenderLayer@@@Z
     virtual bool canRenderSelectionOverlay(::BlockRenderLayer) const;
 
-    // vIndex: 138, symbol: ?canBeSilkTouched@StructureVoidBlock@@MEBA_NXZ
-    virtual bool canBeSilkTouched() const;
-
     // symbol: ??0StructureVoidBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI StructureVoidBlock(std::string const& nameId, int id);
 

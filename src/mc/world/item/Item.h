@@ -358,57 +358,53 @@ public:
     hitBlock(class ItemStack& instance, class Block const& block, class BlockPos const& blockPos, class Mob& attacker)
         const;
 
-    // vIndex: 79, symbol: ?mineBlock@Item@@UEBA_NAEAVItemInstance@@AEBVBlock@@HHHPEAVActor@@@Z
-    virtual bool
-    mineBlock(class ItemInstance& instance, class Block const& block, int x, int y, int z, class Actor* owner) const;
-
-    // vIndex: 80, symbol: ?mineBlock@Item@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
+    // vIndex: 79, symbol: ?mineBlock@Item@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
     virtual bool
     mineBlock(class ItemStack& instance, class Block const& block, int x, int y, int z, class Actor* owner) const;
 
-    // vIndex: 81, symbol:
+    // vIndex: 80, symbol:
     // ?buildDescriptionName@Item@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemStackBase@@@Z
     virtual std::string buildDescriptionName(class ItemStackBase const&) const;
 
-    // vIndex: 82, symbol:
+    // vIndex: 81, symbol:
     // ?buildDescriptionId@Item@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 83, symbol:
+    // vIndex: 82, symbol:
     // ?buildEffectDescriptionName@Item@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemStackBase@@@Z
     virtual std::string buildEffectDescriptionName(class ItemStackBase const&) const;
 
-    // vIndex: 84, symbol: ?readUserData@Item@@UEBAXAEAVItemStackBase@@AEAVIDataInput@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 83, symbol: ?readUserData@Item@@UEBAXAEAVItemStackBase@@AEAVIDataInput@@AEAVReadOnlyBinaryStream@@@Z
     virtual void
     readUserData(class ItemStackBase& stack, class IDataInput& input, class ReadOnlyBinaryStream& underlyingStream)
         const;
 
-    // vIndex: 85, symbol: ?writeUserData@Item@@UEBAXAEBVItemStackBase@@AEAVIDataOutput@@@Z
+    // vIndex: 84, symbol: ?writeUserData@Item@@UEBAXAEBVItemStackBase@@AEAVIDataOutput@@@Z
     virtual void writeUserData(class ItemStackBase const& stack, class IDataOutput& output) const;
 
-    // vIndex: 86, symbol: ?getMaxStackSize@Item@@UEBAEAEBVItemDescriptor@@@Z
+    // vIndex: 85, symbol: ?getMaxStackSize@Item@@UEBAEAEBVItemDescriptor@@@Z
     virtual uchar getMaxStackSize(class ItemDescriptor const& item) const;
 
-    // vIndex: 87, symbol: ?inventoryTick@Item@@UEBA_NAEAVItemStack@@AEAVLevel@@AEAVActor@@H_N@Z
+    // vIndex: 86, symbol: ?inventoryTick@Item@@UEBA_NAEAVItemStack@@AEAVLevel@@AEAVActor@@H_N@Z
     virtual bool
     inventoryTick(class ItemStack& item, class Level& level, class Actor& owner, int slot, bool selected) const;
 
-    // vIndex: 88, symbol: ?refreshedInContainer@Item@@UEBAXAEBVItemStackBase@@AEAVLevel@@@Z
+    // vIndex: 87, symbol: ?refreshedInContainer@Item@@UEBAXAEBVItemStackBase@@AEAVLevel@@@Z
     virtual void refreshedInContainer(class ItemStackBase const& stack, class Level& level) const;
 
-    // vIndex: 89, symbol: ?getCooldownType@Item@@UEBAAEBVHashedString@@XZ
+    // vIndex: 88, symbol: ?getCooldownType@Item@@UEBAAEBVHashedString@@XZ
     virtual class HashedString const& getCooldownType() const;
 
-    // vIndex: 90, symbol: ?getCooldownTime@Item@@UEBAHXZ
+    // vIndex: 89, symbol: ?getCooldownTime@Item@@UEBAHXZ
     virtual int getCooldownTime() const;
 
-    // vIndex: 91, symbol: ?fixupCommon@Item@@UEBAXAEAVItemStackBase@@@Z
+    // vIndex: 90, symbol: ?fixupCommon@Item@@UEBAXAEAVItemStackBase@@@Z
     virtual void fixupCommon(class ItemStackBase& stack) const;
 
-    // vIndex: 92, symbol: ?fixupCommon@Item@@UEBAXAEAVItemStackBase@@AEAVLevel@@@Z
+    // vIndex: 91, symbol: ?fixupCommon@Item@@UEBAXAEAVItemStackBase@@AEAVLevel@@@Z
     virtual void fixupCommon(class ItemStackBase& stack, class Level& level) const;
 
-    // vIndex: 93, symbol: ?getInHandUpdateType@Item@@UEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemInstance@@1_N2@Z
+    // vIndex: 92, symbol: ?getInHandUpdateType@Item@@UEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemInstance@@1_N2@Z
     virtual ::InHandUpdateType getInHandUpdateType(
         class Player const&,
         class ItemInstance const& oldItem,
@@ -417,7 +413,7 @@ public:
         bool slotChanged
     ) const;
 
-    // vIndex: 94, symbol: ?getInHandUpdateType@Item@@UEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemStack@@1_N2@Z
+    // vIndex: 93, symbol: ?getInHandUpdateType@Item@@UEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemStack@@1_N2@Z
     virtual ::InHandUpdateType getInHandUpdateType(
         class Player const&,
         class ItemStack const& oldItem,
@@ -426,84 +422,84 @@ public:
         bool slotChanged
     ) const;
 
-    // vIndex: 95, symbol: ?validFishInteraction@Item@@UEBA_NH@Z
+    // vIndex: 94, symbol: ?validFishInteraction@Item@@UEBA_NH@Z
     virtual bool validFishInteraction(int auxValue) const;
 
-    // vIndex: 96, symbol: ?enchantProjectile@Item@@UEBAXAEBVItemStackBase@@AEAVActor@@@Z
+    // vIndex: 95, symbol: ?enchantProjectile@Item@@UEBAXAEBVItemStackBase@@AEAVActor@@@Z
     virtual void enchantProjectile(class ItemStackBase const&, class Actor& projectile) const;
 
-    // vIndex: 97, symbol: ?getEquipLocation@Item@@UEBA?AW4ActorLocation@@XZ
+    // vIndex: 96, symbol: ?getEquipLocation@Item@@UEBA?AW4ActorLocation@@XZ
     virtual ::ActorLocation getEquipLocation() const;
 
-    // vIndex: 98, symbol: ?getEquipSound@Item@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 97, symbol: ?getEquipSound@Item@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
     virtual ::Puv::Legacy::LevelSoundEvent getEquipSound() const;
 
-    // vIndex: 99, symbol: ?shouldSendInteractionGameEvents@Item@@UEBA_NXZ
+    // vIndex: 98, symbol: ?shouldSendInteractionGameEvents@Item@@UEBA_NXZ
     virtual bool shouldSendInteractionGameEvents() const;
 
-    // vIndex: 100, symbol: ?useInterruptedByAttacking@Item@@UEBA_NXZ
+    // vIndex: 99, symbol: ?useInterruptedByAttacking@Item@@UEBA_NXZ
     virtual bool useInterruptedByAttacking() const;
 
-    // vIndex: 101, symbol: ?hasSameRelevantUserData@Item@@UEBA_NAEBVItemStackBase@@0@Z
+    // vIndex: 100, symbol: ?hasSameRelevantUserData@Item@@UEBA_NAEBVItemStackBase@@0@Z
     virtual bool hasSameRelevantUserData(class ItemStackBase const&, class ItemStackBase const&) const;
 
-    // vIndex: 102, symbol: ?initClient@Item@@UEAAXAEAVValue@Json@@AEBVSemVersion@@_NAEBVExperiments@@@Z
+    // vIndex: 101, symbol: ?initClient@Item@@UEAAXAEAVValue@Json@@AEBVSemVersion@@_NAEBVExperiments@@@Z
     virtual void initClient(class Json::Value&, class SemVersion const&, bool, class Experiments const&);
 
-    // vIndex: 103, symbol:
+    // vIndex: 102, symbol:
     // ?setIconInfo@Item@@UEAAAEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     virtual class Item& setIconInfo(std::string const& name, int index);
 
-    // vIndex: 104, symbol: ?getIconInfo@Item@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
+    // vIndex: 103, symbol: ?getIconInfo@Item@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
 
-    // vIndex: 105, symbol:
+    // vIndex: 104, symbol:
     // ?getInteractText@Item@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPlayer@@@Z
     virtual std::string getInteractText(class Player const&) const;
 
-    // vIndex: 106, symbol: ?getAnimationFrameFor@Item@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
+    // vIndex: 105, symbol: ?getAnimationFrameFor@Item@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
     virtual int
     getAnimationFrameFor(class Mob* holder, bool asItemEntity, class ItemStack const* item, bool shouldAnimate) const;
 
-    // vIndex: 107, symbol: ?isEmissive@Item@@UEBA_NH@Z
+    // vIndex: 106, symbol: ?isEmissive@Item@@UEBA_NH@Z
     virtual bool isEmissive(int auxValue) const;
 
-    // vIndex: 108, symbol: ?getLightEmission@Item@@UEBA?AUBrightness@@H@Z
+    // vIndex: 107, symbol: ?getLightEmission@Item@@UEBA?AUBrightness@@H@Z
     virtual struct Brightness getLightEmission(int auxValue) const;
 
-    // vIndex: 109, symbol: ?getIconYOffset@Item@@UEBAHXZ
+    // vIndex: 108, symbol: ?getIconYOffset@Item@@UEBAHXZ
     virtual int getIconYOffset() const;
 
-    // vIndex: 110, symbol: ?canBeCharged@Item@@UEBA_NXZ
+    // vIndex: 109, symbol: ?canBeCharged@Item@@UEBA_NXZ
     virtual bool canBeCharged() const;
 
-    // vIndex: 111, symbol: ?playSoundIncrementally@Item@@UEBAXAEBVItemStack@@AEAVMob@@@Z
+    // vIndex: 110, symbol: ?playSoundIncrementally@Item@@UEBAXAEBVItemStack@@AEAVMob@@@Z
     virtual void playSoundIncrementally(class ItemStack const& item, class Mob& mob) const;
 
-    // vIndex: 112, symbol: ?getFurnaceXPmultiplier@Item@@UEBAMAEBVItemStackBase@@@Z
+    // vIndex: 111, symbol: ?getFurnaceXPmultiplier@Item@@UEBAMAEBVItemStackBase@@@Z
     virtual float getFurnaceXPmultiplier(class ItemStackBase const& instance) const;
 
-    // vIndex: 113, symbol:
+    // vIndex: 112, symbol:
     // ?getAuxValuesDescription@Item@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getAuxValuesDescription() const;
 
-    // vIndex: 114, symbol: ?calculatePlacePos@Item@@UEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
+    // vIndex: 113, symbol: ?calculatePlacePos@Item@@UEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
     virtual bool
     calculatePlacePos(class ItemStackBase& instance, class Actor& entity, uchar& face, class BlockPos& pos) const;
 
-    // vIndex: 115, symbol: ?_checkUseOnPermissions@Item@@EEBA_NAEAVActor@@AEAVItemStackBase@@AEBEAEBVBlockPos@@@Z
+    // vIndex: 114, symbol: ?_checkUseOnPermissions@Item@@EEBA_NAEAVActor@@AEAVItemStackBase@@AEBEAEBVBlockPos@@@Z
     virtual bool
     _checkUseOnPermissions(class Actor& entity, class ItemStackBase& item, uchar const& face, class BlockPos const& pos)
         const;
 
-    // vIndex: 116, symbol: ?_calculatePlacePos@Item@@EEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
+    // vIndex: 115, symbol: ?_calculatePlacePos@Item@@EEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
     virtual bool
     _calculatePlacePos(class ItemStackBase& instance, class Actor& entity, uchar& face, class BlockPos& pos) const;
 
-    // vIndex: 117, symbol: ?_shouldAutoCalculatePlacePos@Item@@EEBA_NXZ
+    // vIndex: 116, symbol: ?_shouldAutoCalculatePlacePos@Item@@EEBA_NXZ
     virtual bool _shouldAutoCalculatePlacePos() const;
 
-    // vIndex: 118, symbol: ?_useOn@Item@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+    // vIndex: 117, symbol: ?_useOn@Item@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
         const;

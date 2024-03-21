@@ -23,14 +23,12 @@ public:
     // prevent constructor by default
     CommonModuleFactory& operator=(CommonModuleFactory const&);
     CommonModuleFactory(CommonModuleFactory const&);
+    CommonModuleFactory();
 
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1CommonModuleFactory@Scripting@@UEAA@XZ
     virtual ~CommonModuleFactory() = default;
-
-    // symbol: ??0CommonModuleFactory@Scripting@@QEAA@XZ
-    MCAPI CommonModuleFactory();
 
     // symbol: ?ModuleName@CommonModuleFactory@Scripting@@2PEBDEB
     MCAPI static char const* ModuleName;
@@ -42,6 +40,9 @@ public:
 
     // private:
     // NOLINTBEGIN
+    // symbol: ?_addVersions@CommonModuleFactory@Scripting@@AEAAXXZ
+    MCAPI void _addVersions();
+
     // symbol:
     // ?_generateBindings@CommonModuleFactory@Scripting@@AEAA?AUModuleBinding@2@AEAVModuleBindingBuilder@2@_NAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
     MCAPI struct Scripting::ModuleBinding

@@ -36,8 +36,8 @@ public:
     MCVAPI ::EventResult onLevelTickStart(class Level&);
 
     // symbol:
-    // ?onLevelWeatherChange@LevelEventListener@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N1@Z
-    MCVAPI ::EventResult onLevelWeatherChange(std::string const& dimension, bool raining, bool lightning);
+    // ?onLevelWeatherChange@LevelEventListener@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N111@Z
+    MCVAPI ::EventResult onLevelWeatherChange(std::string const&, bool, bool, bool, bool);
 
     // NOLINTEND
 };

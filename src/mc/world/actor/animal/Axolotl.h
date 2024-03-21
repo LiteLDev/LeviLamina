@@ -42,10 +42,10 @@ public:
     // vIndex: 10, symbol: __gen_??1Axolotl@@UEAA@XZ
     virtual ~Axolotl() = default;
 
-    // vIndex: 198, symbol: ?_getWalkTargetValue@Axolotl@@UEAAMAEBVBlockPos@@@Z
+    // vIndex: 191, symbol: ?_getWalkTargetValue@Axolotl@@UEAAMAEBVBlockPos@@@Z
     virtual float _getWalkTargetValue(class BlockPos const& pos);
 
-    // vIndex: 203, symbol: ?_getAdjustedAABBForSpawnCheck@Axolotl@@UEBA?AVAABB@@AEBV2@AEBVVec3@@@Z
+    // vIndex: 196, symbol: ?_getAdjustedAABBForSpawnCheck@Axolotl@@UEBA?AVAABB@@AEBV2@AEBVVec3@@@Z
     virtual class AABB _getAdjustedAABBForSpawnCheck(class AABB const& aabb, class Vec3 const& mobPos) const;
 
     // symbol: ??0Axolotl@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

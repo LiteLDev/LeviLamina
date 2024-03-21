@@ -38,8 +38,8 @@ MCAPI float getJumpEffectAmplifierValue(struct MobEffectsComponent const&);
 // symbol: ?getJumpPower@ActorMobilityUtils@@YAMPEBVJumpControlComponent@@_N@Z
 MCAPI float getJumpPower(class JumpControlComponent const* jumpControlComponent, bool);
 
-// symbol: ?getPosFromAABB@ActorMobilityUtils@@YA?AVVec3@@AEBVAABB@@MAEBVVec2@@@Z
-MCAPI class Vec3 getPosFromAABB(class AABB const& aabb, float heightOffset, class Vec2 const&);
+// symbol: ?getPosFromAABB@ActorMobilityUtils@@YA?AVVec3@@AEBVAABB@@M@Z
+MCAPI class Vec3 getPosFromAABB(class AABB const&, float);
 
 // symbol:
 // ?getSpeed@ActorMobilityUtils@@YAMAEBVStrictEntityContext@@AEBV?$ViewT@VStrictEntityContext@@$$CBUMovementAttributesComponent@@$$CBUMovementSpeedComponent@@@@AEBV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UPlayerComponentFlag@@@@@@@@@Z

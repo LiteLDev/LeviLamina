@@ -8,12 +8,15 @@
 namespace ServerPlayerInputSystem {
 // NOLINTBEGIN
 // symbol:
-// ?_tickPlayerMovement@ServerPlayerInputSystem@@YAXAEAVStrictEntityContext@@AEBUPlayerCurrentTickComponent@@AEAUServerPlayerMovementComponent@@V?$EntityModifier@UServerPlayerCurrentMovementComponent@@UServerPlayerMoveAbsoluteComponent@@UServerPlayerInventoryTransactionComponent@@@@@Z
+// ?_tickPlayerMovement@ServerPlayerInputSystem@@YAXAEAVStrictEntityContext@@AEBUPlayerCurrentTickComponent@@AEAUServerPlayerMovementComponent@@V?$EntityModifier@UServerPlayerCurrentMovementComponent@@UServerPlayerMoveAbsoluteComponent@@UServerPlayerInventoryTransactionComponent@@UServerPlayerInteractComponent@@@@@Z
 MCAPI void
-_tickPlayerMovement(class StrictEntityContext&, struct PlayerCurrentTickComponent const&, struct ServerPlayerMovementComponent&, class EntityModifier<struct ServerPlayerCurrentMovementComponent, struct ServerPlayerMoveAbsoluteComponent, struct ServerPlayerInventoryTransactionComponent>);
+_tickPlayerMovement(class StrictEntityContext&, struct PlayerCurrentTickComponent const&, struct ServerPlayerMovementComponent&, class EntityModifier<struct ServerPlayerCurrentMovementComponent, struct ServerPlayerMoveAbsoluteComponent, struct ServerPlayerInventoryTransactionComponent, struct ServerPlayerInteractComponent>);
 
 // symbol: ?create@ServerPlayerInputSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo create();
+
+// symbol: ?onInteractPacket@ServerPlayerInputSystem@@YA_NAEAUServerPlayerMovementComponent@@AEBVInteractPacket@@@Z
+MCAPI bool onInteractPacket(struct ServerPlayerMovementComponent&, class InteractPacket const&);
 
 // symbol:
 // ?onInventoryTransactionPacket@ServerPlayerInputSystem@@YA_NAEAUServerPlayerMovementComponent@@V?$shared_ptr@VInventoryTransactionPacket@@@std@@@Z

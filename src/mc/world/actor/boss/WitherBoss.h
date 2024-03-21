@@ -58,49 +58,49 @@ public:
     // vIndex: 15, symbol: ?getFiringPos@WitherBoss@@UEBA?AVVec3@@XZ
     virtual class Vec3 getFiringPos() const;
 
-    // vIndex: 32, symbol: ?startRiding@WitherBoss@@UEAA_NAEAVActor@@@Z
+    // vIndex: 31, symbol: ?startRiding@WitherBoss@@UEAA_NAEAVActor@@@Z
     virtual bool startRiding(class Actor&);
 
-    // vIndex: 75, symbol: ?isInvulnerableTo@WitherBoss@@UEBA_NAEBVActorDamageSource@@@Z
+    // vIndex: 74, symbol: ?isInvulnerableTo@WitherBoss@@UEBA_NAEBVActorDamageSource@@@Z
     virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
-    // vIndex: 80, symbol: ?handleEntityEvent@WitherBoss@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 79, symbol: ?handleEntityEvent@WitherBoss@@UEAAXW4ActorEvent@@H@Z
     virtual void handleEntityEvent(::ActorEvent id, int data);
 
-    // vIndex: 98, symbol: ?canFreeze@WitherBoss@@UEBA_NXZ
+    // vIndex: 97, symbol: ?canFreeze@WitherBoss@@UEBA_NXZ
     virtual bool canFreeze() const;
 
-    // vIndex: 108, symbol: ?causeFallDamageToActor@WitherBoss@@UEAAMMMVActorDamageSource@@@Z
+    // vIndex: 104, symbol: ?causeFallDamageToActor@WitherBoss@@UEAAMMMVActorDamageSource@@@Z
     virtual float causeFallDamageToActor(float, float, class ActorDamageSource);
 
-    // vIndex: 121, symbol: ?canBeAffected@WitherBoss@@UEBA_NI@Z
+    // vIndex: 117, symbol: ?canBeAffected@WitherBoss@@UEBA_NI@Z
     virtual bool canBeAffected(uint effectId) const;
 
-    // vIndex: 122, symbol: ?canBeAffectedByArrow@WitherBoss@@UEBA_NAEBVMobEffectInstance@@@Z
+    // vIndex: 118, symbol: ?canBeAffectedByArrow@WitherBoss@@UEBA_NAEBVMobEffectInstance@@@Z
     virtual bool canBeAffectedByArrow(class MobEffectInstance const& effect) const;
 
-    // vIndex: 143, symbol: ?die@WitherBoss@@UEAAXAEBVActorDamageSource@@@Z
+    // vIndex: 137, symbol: ?die@WitherBoss@@UEAAXAEBVActorDamageSource@@@Z
     virtual void die(class ActorDamageSource const& source);
 
-    // vIndex: 158, symbol: ?_hurt@WitherBoss@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 152, symbol: ?_hurt@WitherBoss@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 159, symbol: ?readAdditionalSaveData@WitherBoss@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 153, symbol: ?readAdditionalSaveData@WitherBoss@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 160, symbol: ?addAdditionalSaveData@WitherBoss@@UEBAXAEAVCompoundTag@@@Z
+    // vIndex: 154, symbol: ?addAdditionalSaveData@WitherBoss@@UEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 170, symbol: ?hurtEffects@WitherBoss@@UEAAXAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 164, symbol: ?hurtEffects@WitherBoss@@UEAAXAEBVActorDamageSource@@M_N1@Z
     virtual void hurtEffects(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 171, symbol: ?aiStep@WitherBoss@@UEAAXXZ
+    // vIndex: 165, symbol: ?aiStep@WitherBoss@@UEAAXXZ
     virtual void aiStep();
 
-    // vIndex: 181, symbol: ?getArmorValue@WitherBoss@@UEBAHXZ
+    // vIndex: 175, symbol: ?getArmorValue@WitherBoss@@UEBAHXZ
     virtual int getArmorValue() const;
 
-    // vIndex: 201, symbol: ?newServerAiStep@WitherBoss@@UEAAXXZ
+    // vIndex: 194, symbol: ?newServerAiStep@WitherBoss@@UEAAXXZ
     virtual void newServerAiStep();
 
     // symbol: ??0WitherBoss@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
@@ -116,8 +116,8 @@ public:
     // symbol: ?getHeadPos@WitherBoss@@QEBA?AVVec3@@H@Z
     MCAPI class Vec3 getHeadPos(int headID) const;
 
-    // symbol: ?getHeadRot@WitherBoss@@QEAA?AVVec2@@H@Z
-    MCAPI class Vec2 getHeadRot(int headID);
+    // symbol: ?getHeadRot@WitherBoss@@QEBA?AVVec2@@H@Z
+    MCAPI class Vec2 getHeadRot(int headID) const;
 
     // symbol: ?getInvulnerableTicks@WitherBoss@@QEBAHXZ
     MCAPI int getInvulnerableTicks() const;

@@ -8,4 +8,11 @@ public:
     AABBRelativeSizeUpdateComponent& operator=(AABBRelativeSizeUpdateComponent const&);
     AABBRelativeSizeUpdateComponent(AABBRelativeSizeUpdateComponent const&);
     AABBRelativeSizeUpdateComponent();
+
+public:
+    // NOLINTBEGIN
+    // symbol: ??4AABBRelativeSizeUpdateComponent@@QEAAAEAU0@$$QEAU0@@Z
+    MCAPI struct AABBRelativeSizeUpdateComponent& operator=(struct AABBRelativeSizeUpdateComponent&&);
+
+    // NOLINTEND
 };

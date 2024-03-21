@@ -92,19 +92,9 @@ public:
     // vIndex: 89, symbol: ?breaksFallingBlocks@ThinFenceBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
     virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
 
-    // vIndex: 164, symbol: ?getResourceCount@ThinFenceBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
-
     // symbol:
-    // ??0ThinFenceBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@_N22@Z
-    MCAPI ThinFenceBlock(
-        std::string const&    nameId,
-        int                   id,
-        class Material const& material,
-        bool                  dropsResources,
-        bool                  singleSide,
-        bool                  useableInCommands
-    );
+    // ??0ThinFenceBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@_N2@Z
+    MCAPI ThinFenceBlock(std::string const&, int, class Material const&, bool, bool);
 
     // NOLINTEND
 

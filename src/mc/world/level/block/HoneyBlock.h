@@ -15,6 +15,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace BlockEvents { struct BlockFallOnEvent; }
 namespace mce { class Color; }
 // clang-format on
 
@@ -39,18 +40,20 @@ public:
     // vIndex: 11, symbol: ?getVisualShape@HoneyBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
 
-    // vIndex: 146, symbol: ?onStandOn@HoneyBlock@@UEBAXAEAVEntityContext@@AEBVBlockPos@@@Z
+    // vIndex: 141, symbol: ?_addHardCodedBlockComponents@HoneyBlock@@MEAAXAEBVExperiments@@@Z
+    virtual void _addHardCodedBlockComponents(class Experiments const&);
+
+    // vIndex: 144, symbol: ?onStandOn@HoneyBlock@@UEBAXAEAVEntityContext@@AEBVBlockPos@@@Z
     virtual void onStandOn(class EntityContext& entity, class BlockPos const& pos) const;
 
-    // vIndex: 148, symbol: ?onFallOn@HoneyBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@M@Z
-    virtual void
-    onFallOn(class BlockSource& region, class BlockPos const& pos, class Actor& entity, float fallDistance) const;
-
-    // vIndex: 159, symbol: ?getExtraRenderLayers@HoneyBlock@@UEBAHXZ
+    // vIndex: 156, symbol: ?getExtraRenderLayers@HoneyBlock@@UEBAHXZ
     virtual int getExtraRenderLayers() const;
 
     // symbol: ??0HoneyBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI HoneyBlock(std::string const& nameId, int id, class Material const& material);
+
+    // symbol: ?onFallOn@HoneyBlock@@QEBAXAEAUBlockFallOnEvent@BlockEvents@@@Z
+    MCAPI void onFallOn(struct BlockEvents::BlockFallOnEvent&) const;
 
     // symbol: ?triggerSlidingDownEffects@HoneyBlock@@SAXAEAVActor@@AEBVBlockPos@@AEBVBlock@@@Z
     MCAPI static void triggerSlidingDownEffects(class Actor& entity, class BlockPos const& pos, class Block const&);

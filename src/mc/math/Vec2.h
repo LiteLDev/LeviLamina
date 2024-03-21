@@ -14,6 +14,9 @@ public:
     // symbol: ?normalized@Vec2@@QEBA?AV1@XZ
     MCAPI class Vec2 normalized() const;
 
+    // symbol: ?toJsonString@Vec2@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    MCAPI std::string toJsonString() const;
+
     // symbol: ?toString@Vec2@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string toString() const;
 

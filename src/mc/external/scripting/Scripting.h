@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/scripting/EnumBinding.h"
 #include "mc/external/scripting/FutureStatus.h"
 #include "mc/external/scripting/LogLevel.h"
 #include "mc/external/scripting/ObjectHandleValue.h"

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/PathBuffer.h"
+#include "mc/deps/core/common/bedrock/UniqueLock.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -132,6 +133,9 @@ public:
 
     // private:
     // NOLINTBEGIN
+    // symbol: ?_lockIfWriteBuffered@FileImpl@Core@@AEAA?AV?$UniqueLock@Vrecursive_mutex@std@@@Threading@Bedrock@@_N@Z
+    MCAPI class Bedrock::Threading::UniqueLock<std::recursive_mutex> _lockIfWriteBuffered(bool);
+
     // symbol: ?_writeOperation@FileImpl@Core@@AEAA?AVResult@2@$$QEAV32@_K@Z
     MCAPI class Core::Result _writeOperation(class Core::Result&& result, uint64 numBytesWritten);
 

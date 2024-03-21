@@ -4,14 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/ClassBindingBuilder.h"
-#include "mc/external/scripting/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 class Dimension;
 class ItemStackBase;
-namespace ScriptModuleMinecraft { class ScriptPlayer; }
+class Player;
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
@@ -32,9 +31,9 @@ public:
     MCAPI ScriptPlayerBreakBlockBeforeEvent(struct ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent const&);
 
     // symbol:
-    // ??0ScriptPlayerBreakBlockBeforeEvent@ScriptModuleMinecraft@@QEAA@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@AEAVDimension@@AEBVBlockPos@@AEBVItemStackBase@@AEBVWeakLifetimeScope@3@@Z
+    // ??0ScriptPlayerBreakBlockBeforeEvent@ScriptModuleMinecraft@@QEAA@AEBVPlayer@@AEAVDimension@@AEBVBlockPos@@AEBVItemStackBase@@AEBVWeakLifetimeScope@Scripting@@@Z
     MCAPI
-    ScriptPlayerBreakBlockBeforeEvent(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>, class Dimension&, class BlockPos const&, class ItemStackBase const&, class Scripting::WeakLifetimeScope const&);
+    ScriptPlayerBreakBlockBeforeEvent(class Player const&, class Dimension&, class BlockPos const&, class ItemStackBase const&, class Scripting::WeakLifetimeScope const&);
 
     // symbol: ??4ScriptPlayerBreakBlockBeforeEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent&

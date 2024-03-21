@@ -96,6 +96,9 @@ public:
     // ?getShallowLevelSummary@LevelListCache@@UEAAPEAULevelSummary@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI struct LevelSummary* getShallowLevelSummary(std::string const& levelId);
 
+    // symbol: ?hasCachedLevels@LevelListCache@@UEBA_N_N@Z
+    MCVAPI bool hasCachedLevels(bool) const;
+
     // symbol: ?hasLevelWithId@LevelListCache@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI bool hasLevelWithId(std::string const& levelId);
 

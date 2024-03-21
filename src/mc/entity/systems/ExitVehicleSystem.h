@@ -11,8 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@ExitVehicleSystem@@SA?AUTickingSystemWithInfo@@AEBVBaseGameVersion@@@Z
-    MCAPI static struct TickingSystemWithInfo createSystem(class BaseGameVersion const& version);
+    // symbol: ?createSystem@ExitVehicleSystem@@SA?AUTickingSystemWithInfo@@AEBVBaseGameVersion@@_N@Z
+    MCAPI static struct TickingSystemWithInfo createSystem(class BaseGameVersion const&, bool);
 
     // NOLINTEND
 };

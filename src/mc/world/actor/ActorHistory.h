@@ -19,6 +19,9 @@ public:
 
     public:
         // NOLINTBEGIN
+        // symbol: ??0Snapshot@ActorHistory@@QEAA@$$QEAU01@@Z
+        MCAPI Snapshot(struct ActorHistory::Snapshot&&);
+
         // symbol: ??1Snapshot@ActorHistory@@QEAA@XZ
         MCAPI ~Snapshot();
 
@@ -36,11 +39,11 @@ public:
     // symbol: ??0ActorHistory@@QEAA@_K@Z
     MCAPI explicit ActorHistory(uint64);
 
+    // symbol: ?addCorrectionToFrame@ActorHistory@@QEAAXV?$shared_ptr@UIMovementCorrection@@@std@@_K@Z
+    MCAPI void addCorrectionToFrame(std::shared_ptr<struct IMovementCorrection>, uint64);
+
     // symbol: ?addFrame@ActorHistory@@QEAA_NAEAVEntityContext@@_KAEAVEntityRegistry@@@Z
     MCAPI bool addFrame(class EntityContext&, uint64, class EntityRegistry&);
-
-    // symbol: ?addInputToFrame@ActorHistory@@QEAAXV?$shared_ptr@UIReplayableActorInput@@@std@@_K@Z
-    MCAPI void addInputToFrame(std::shared_ptr<struct IReplayableActorInput> input, uint64 frame);
 
     // symbol: ?addInputToFrontOfFrame@ActorHistory@@QEAAXV?$shared_ptr@UIReplayableActorInput@@@std@@_K@Z
     MCAPI void addInputToFrontOfFrame(std::shared_ptr<struct IReplayableActorInput>, uint64);
@@ -50,6 +53,15 @@ public:
 
     // symbol: ?getFrame@ActorHistory@@QEBAPEBUSnapshot@1@_K@Z
     MCAPI struct ActorHistory::Snapshot const* getFrame(uint64 frame) const;
+
+    // symbol: ?getOldestFrame@ActorHistory@@QEBA_KXZ
+    MCAPI uint64 getOldestFrame() const;
+
+    // symbol: ?queueCorrection@ActorHistory@@QEAAXV?$shared_ptr@UIMovementCorrection@@@std@@@Z
+    MCAPI void queueCorrection(std::shared_ptr<struct IMovementCorrection>);
+
+    // symbol: ?setSnapshotAsCorrection@ActorHistory@@QEAAX_K@Z
+    MCAPI void setSnapshotAsCorrection(uint64);
 
     // symbol: ??1ActorHistory@@QEAA@XZ
     MCAPI ~ActorHistory();

@@ -39,13 +39,13 @@ public:
     // vIndex: 10, symbol: __gen_??1Panda@@UEAA@XZ
     virtual ~Panda() = default;
 
-    // vIndex: 74, symbol: ?getAmbientSound@Panda@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 73, symbol: ?getAmbientSound@Panda@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
     virtual ::Puv::Legacy::LevelSoundEvent getAmbientSound() const;
 
-    // vIndex: 159, symbol: ?readAdditionalSaveData@Panda@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 153, symbol: ?readAdditionalSaveData@Panda@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 196, symbol: ?setTransitioningSitting@Panda@@UEAAX_N@Z
+    // vIndex: 190, symbol: ?setTransitioningSitting@Panda@@UEAAX_N@Z
     virtual void setTransitioningSitting(bool value);
 
     // symbol: ??0Panda@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

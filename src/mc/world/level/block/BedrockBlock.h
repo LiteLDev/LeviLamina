@@ -33,11 +33,8 @@ public:
     // vIndex: 47, symbol: ?canBeOriginalSurface@BedrockBlock@@UEBA_NXZ
     virtual bool canBeOriginalSurface() const;
 
-    // vIndex: 143, symbol: ?_addHardCodedBlockComponents@BedrockBlock@@UEAAXAEBVExperiments@@@Z
+    // vIndex: 141, symbol: ?_addHardCodedBlockComponents@BedrockBlock@@UEAAXAEBVExperiments@@@Z
     virtual void _addHardCodedBlockComponents(class Experiments const&);
-
-    // vIndex: 165, symbol: ?getSilkTouchItemInstance@BedrockBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-    virtual class ItemInstance getSilkTouchItemInstance(class Block const&) const;
 
     // symbol: ??0BedrockBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI BedrockBlock(std::string const& nameId, int id);

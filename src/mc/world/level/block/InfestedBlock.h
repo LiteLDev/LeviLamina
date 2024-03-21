@@ -30,27 +30,27 @@ public:
     // vIndex: 0, symbol: __gen_??1InfestedBlock@@UEAA@XZ
     virtual ~InfestedBlock() = default;
 
-    // vIndex: 95, symbol:
-    // ?spawnResources@InfestedBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z
-    virtual void
-    spawnResources(class BlockSource& region, class BlockPos const& pos, class Block const&, class Randomize&, struct ResourceDropsContext const&)
-        const;
-
-    // vIndex: 96, symbol: ?asItemInstance@InfestedBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 95, symbol: ?asItemInstance@InfestedBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
-    // vIndex: 119, symbol:
+    // vIndex: 118, symbol:
     // ?buildDescriptionId@InfestedBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
     virtual std::string buildDescriptionId(class Block const&) const;
 
-    // vIndex: 120, symbol: ?isAuxValueRelevantForPicking@InfestedBlock@@UEBA_NXZ
+    // vIndex: 119, symbol: ?isAuxValueRelevantForPicking@InfestedBlock@@UEBA_NXZ
     virtual bool isAuxValueRelevantForPicking() const;
 
-    // vIndex: 129, symbol: ?getVariant@InfestedBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 128, symbol: ?getVariant@InfestedBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 142, symbol: ?tryGetUninfested@InfestedBlock@@UEBAPEBVBlock@@AEBV2@@Z
+    // vIndex: 140, symbol: ?tryGetUninfested@InfestedBlock@@UEBAPEBVBlock@@AEBV2@@Z
     virtual class Block const* tryGetUninfested(class Block const& block) const;
+
+    // vIndex: 161, symbol:
+    // ?_spawnAfterBreak@InfestedBlock@@EEBAXAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@AEBUResourceDropsContext@@@Z
+    virtual void
+    _spawnAfterBreak(class BlockSource&, class Block const&, class BlockPos const&, struct ResourceDropsContext const&)
+        const;
 
     // symbol: ??0InfestedBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI InfestedBlock(std::string const& nameId, int id);

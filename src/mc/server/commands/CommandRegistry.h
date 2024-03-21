@@ -433,6 +433,9 @@ public:
     // symbol: ?HASPERMISSIONSTATE_ENUM_ENABLED@CommandRegistry@@2PEBDEB
     MCAPI static char const* HASPERMISSIONSTATE_ENUM_ENABLED;
 
+    // symbol: ?HASPROPERTY_PARAM_PROPERTY_NAME@CommandRegistry@@2PEBDEB
+    MCAPI static char const* HASPROPERTY_PARAM_PROPERTY_NAME;
+
     // symbol: ?TAG_VALUES_SOFTENUM_NAME@CommandRegistry@@2PEBDEB
     MCAPI static char const* TAG_VALUES_SOFTENUM_NAME;
 
@@ -463,7 +466,7 @@ public:
         std::string const&                                 name,
         std::vector<std::pair<std::string, uint64>> const& strings,
         class Bedrock::typeid_t<class CommandRegistry>     type,
-        bool                                               (CommandRegistry::*
+        bool (CommandRegistry::*
                   parse)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&)
             const
     );
@@ -474,7 +477,7 @@ public:
         std::string const&                             name,
         std::vector<std::pair<uint64, uint64>> const&  values,
         class Bedrock::typeid_t<class CommandRegistry> type,
-        bool                                           (CommandRegistry::*
+        bool (CommandRegistry::*
                   parse)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&)
             const
     );
@@ -760,6 +763,11 @@ public:
         std::string&                              error,
         std::vector<std::string>&                 errorParams
     );
+
+    // symbol:
+    // ?readString@CommandRegistry@@CA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUParseToken@1@0AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
+    MCAPI static bool
+    readString(std::string&, struct CommandRegistry::ParseToken const&, std::string&, std::vector<std::string>&);
 
     // NOLINTEND
 

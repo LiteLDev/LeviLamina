@@ -2,14 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct SurfaceMaterialAttributes {
+// auto generated inclusion list
+#include "mc/world/level/biome/BiomeComponentBase.h"
+
+struct SurfaceMaterialAttributes : public ::BiomeComponentBase {
 public:
     // prevent constructor by default
     SurfaceMaterialAttributes& operator=(SurfaceMaterialAttributes const&);
-    SurfaceMaterialAttributes();
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1SurfaceMaterialAttributes@@UEAA@XZ
+    virtual ~SurfaceMaterialAttributes();
+
+    // symbol: ??0SurfaceMaterialAttributes@@QEAA@XZ
+    MCAPI SurfaceMaterialAttributes();
+
     // symbol: ??0SurfaceMaterialAttributes@@QEAA@$$QEAU0@@Z
     MCAPI SurfaceMaterialAttributes(struct SurfaceMaterialAttributes&&);
 
@@ -18,9 +26,6 @@ public:
 
     // symbol: ??4SurfaceMaterialAttributes@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct SurfaceMaterialAttributes& operator=(struct SurfaceMaterialAttributes&&);
-
-    // symbol: ??1SurfaceMaterialAttributes@@QEAA@XZ
-    MCAPI ~SurfaceMaterialAttributes();
 
     // NOLINTEND
 };

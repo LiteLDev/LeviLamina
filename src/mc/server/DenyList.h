@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace mce { class UUID; }
+// clang-format on
+
 class DenyList {
 public:
     // DenyList inner types declare
@@ -16,11 +21,17 @@ public:
     public:
         // prevent constructor by default
         Entry& operator=(Entry const&);
-        Entry(Entry const&);
         Entry();
 
     public:
         // NOLINTBEGIN
+        // symbol: ??0Entry@DenyList@@QEAA@AEBU01@@Z
+        MCAPI Entry(struct DenyList::Entry const&);
+
+        // symbol:
+        // ??0Entry@DenyList@@QEAA@AEBVUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+        MCAPI Entry(class mce::UUID const& uuid, std::string const& xuid);
+
         // symbol: ??1Entry@DenyList@@QEAA@XZ
         MCAPI ~Entry();
 
@@ -52,6 +63,16 @@ public:
 
     // symbol: ??1DenyList@@QEAA@XZ
     MCAPI ~DenyList();
+
+    // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol:
+    // ?isBlocked@DenyList@@AEBA_NAEBUEntry@1@AEAV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@UEntry@DenyList@@@std@@@std@@@std@@@Z
+    MCAPI bool
+    isBlocked(struct DenyList::Entry const&, std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<struct DenyList::Entry>>>&)
+        const;
 
     // NOLINTEND
 };

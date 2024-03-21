@@ -87,9 +87,9 @@ public:
     virtual void setPacketSender(class PacketSender&);
 
     // symbol:
-    // ??0PlayerDimensionTransferer@@QEAA@V?$unique_ptr@VIPlayerDimensionTransferProxy@@U?$default_delete@VIPlayerDimensionTransferProxy@@@std@@@std@@_NAEBV?$StackRefResult@VPortalForcer@@@@V?$unique_ptr@VISharedSpawnGetter@@U?$default_delete@VISharedSpawnGetter@@@std@@@2@AEBV?$StackRefResult@VLevelStorage@@@@@Z
+    // ??0PlayerDimensionTransferer@@QEAA@V?$unique_ptr@VIPlayerDimensionTransferProxy@@U?$default_delete@VIPlayerDimensionTransferProxy@@@std@@@std@@_NAEBV?$not_null@V?$StackRefResult@VPortalForcer@@@@@gsl@@V?$unique_ptr@VISharedSpawnGetter@@U?$default_delete@VISharedSpawnGetter@@@std@@@2@AEBV?$StackRefResult@VLevelStorage@@@@@Z
     MCAPI
-    PlayerDimensionTransferer(std::unique_ptr<class IPlayerDimensionTransferProxy>, bool, class StackRefResult<class PortalForcer> const&, std::unique_ptr<class ISharedSpawnGetter>, class StackRefResult<class LevelStorage> const&);
+    PlayerDimensionTransferer(std::unique_ptr<class IPlayerDimensionTransferProxy>, bool, gsl::not_null<class StackRefResult<class PortalForcer>> const&, std::unique_ptr<class ISharedSpawnGetter>, class StackRefResult<class LevelStorage> const&);
 
     // NOLINTEND
 

@@ -15,7 +15,6 @@ class Player;
 namespace ScriptModuleMinecraft { class IScriptWorldAfterEvents; }
 namespace Scripting { class WeakLifetimeScope; }
 struct ItemCompleteUseEvent;
-struct ItemDefinitionEventTriggeredEvent;
 struct ItemNotificationEvent;
 struct ItemReleaseUseEvent;
 struct ItemStartUseEvent;
@@ -129,13 +128,6 @@ public:
     // vIndex: 24, symbol:
     // ?onEvent@?$EventListenerDispatcher@VItemEventListener@@@@MEAA?AW4EventResult@@AEBUItemNotificationEvent@@@Z
     virtual ::EventResult onEvent(struct ItemNotificationEvent const& event);
-
-    // vIndex: 25, symbol: __unk_vfn_25
-    virtual void __unk_vfn_25();
-
-    // vIndex: 26, symbol:
-    // ?onEvent@ScriptItemEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUItemDefinitionEventTriggeredEvent@@@Z
-    virtual ::EventResult onEvent(struct ItemDefinitionEventTriggeredEvent const&);
 
     // symbol:
     // ??0ScriptItemEventListener@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VIScriptWorldAfterEvents@ScriptModuleMinecraft@@@3@@Z

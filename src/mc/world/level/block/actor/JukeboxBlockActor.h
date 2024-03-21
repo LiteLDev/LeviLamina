@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/events/LevelSoundEvent.h"
 #include "mc/world/level/block/actor/RandomizableBlockActorContainer.h"
 
 class JukeboxBlockActor : public ::RandomizableBlockActorContainer {
@@ -89,6 +90,9 @@ public:
 
     // private:
     // NOLINTBEGIN
+    // symbol: ?_onChanged@JukeboxBlockActor@@AEAAXAEAVBlockSource@@W4LevelSoundEvent@Legacy@Puv@@@Z
+    MCAPI void _onChanged(class BlockSource&, ::Puv::Legacy::LevelSoundEvent);
+
     // symbol: ?_spawnMusicParticles@JukeboxBlockActor@@AEAAXAEAVLevel@@M@Z
     MCAPI void _spawnMusicParticles(class Level& level, float);
 

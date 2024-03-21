@@ -46,12 +46,8 @@ public:
     // symbol: ??0CommandMessage@@QEAA@XZ
     MCAPI CommandMessage();
 
-    // symbol:
-    // ?getMessage@CommandMessage@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCommandOrigin@@@Z
-    MCAPI std::string getMessage(class CommandOrigin const&) const;
-
-    // symbol: ?getMessageForChat@CommandMessage@@QEBA?AUGetMessageResult@@AEBVCommandOrigin@@H@Z
-    MCAPI struct GetMessageResult getMessageForChat(class CommandOrigin const&, int) const;
+    // symbol: ?generateMessage@CommandMessage@@QEBA?AUGenerateMessageResult@@AEBVCommandOrigin@@H@Z
+    MCAPI struct GenerateMessageResult generateMessage(class CommandOrigin const&, int) const;
 
     // symbol: ??1CommandMessage@@QEAA@XZ
     MCAPI ~CommandMessage();

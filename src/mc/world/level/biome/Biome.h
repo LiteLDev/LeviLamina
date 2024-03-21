@@ -28,6 +28,9 @@ public:
     // vIndex: 0, symbol: __gen_??1Biome@@UEAA@XZ
     virtual ~Biome() = default;
 
+    // symbol: ??0Biome@@QEAA@H@Z
+    MCAPI explicit Biome(int id);
+
     // symbol: ?cacheClientComponentData@Biome@@QEAAXXZ
     MCAPI void cacheClientComponentData();
 

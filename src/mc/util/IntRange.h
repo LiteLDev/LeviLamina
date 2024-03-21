@@ -25,11 +25,11 @@ public:
     // symbol: ?getValue@IntRange@@QEBAHAEAVRandom@@@Z
     MCAPI int getValue(class Random& random) const;
 
-    // symbol: ?getValue@IntRange@@QEBAHAEAVRandomize@@@Z
-    MCAPI int getValue(class Randomize&) const;
-
     // symbol: ?getValueInclusive@IntRange@@QEBAHAEAVRandom@@@Z
     MCAPI int getValueInclusive(class Random& random) const;
+
+    // symbol: ?getValueInclusive@IntRange@@QEBAHAEAVRandomize@@@Z
+    MCAPI int getValueInclusive(class Randomize&) const;
 
     // symbol: ?isInRangeInclusive@IntRange@@QEBA_NH@Z
     MCAPI bool isInRangeInclusive(int value) const;

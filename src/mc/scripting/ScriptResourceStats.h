@@ -17,8 +17,8 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ?serialize@ScriptResourceStats@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAUReflectionCtx@cereal@@@Z
-    MCAPI std::string serialize(struct cereal::ReflectionCtx&) const;
+    // ?serialize@ScriptResourceStats@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUReflectionCtx@cereal@@@Z
+    MCAPI std::string serialize(struct cereal::ReflectionCtx const&) const;
 
     // symbol: ??1ScriptResourceStats@@QEAA@XZ
     MCAPI ~ScriptResourceStats();

@@ -14,7 +14,7 @@ namespace cereal::internal { struct ConstraintDescription; }
 
 namespace BlockGeometryConstraint {
 
-struct Identifier : public ::cereal::Constraint {
+class Identifier : public ::cereal::Constraint {
 public:
     // prevent constructor by default
     Identifier& operator=(Identifier const&);

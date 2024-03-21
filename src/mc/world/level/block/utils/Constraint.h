@@ -14,7 +14,7 @@ namespace cereal::internal { struct ConstraintDescription; }
 
 namespace BlockGeometrySerializer {
 
-struct Constraint : public ::cereal::Constraint {
+class Constraint : public ::cereal::Constraint {
 public:
     // prevent constructor by default
     Constraint& operator=(Constraint const&);

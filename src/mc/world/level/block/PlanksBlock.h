@@ -31,18 +31,15 @@ public:
     // vIndex: 0, symbol: __gen_??1PlanksBlock@@UEAA@XZ
     virtual ~PlanksBlock() = default;
 
-    // vIndex: 119, symbol:
+    // vIndex: 118, symbol:
     // ?buildDescriptionId@PlanksBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
     virtual std::string buildDescriptionId(class Block const&) const;
 
-    // vIndex: 143, symbol: ?_addHardCodedBlockComponents@PlanksBlock@@UEAAXAEBVExperiments@@@Z
+    // vIndex: 141, symbol: ?_addHardCodedBlockComponents@PlanksBlock@@UEAAXAEBVExperiments@@@Z
     virtual void _addHardCodedBlockComponents(class Experiments const&);
 
     // symbol: ??0PlanksBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4WoodType@@@Z
     MCAPI PlanksBlock(std::string const&, int, ::WoodType);
-
-    // symbol: ?isValidWoodMaterial@PlanksBlock@@SA_NH@Z
-    MCAPI static bool isValidWoodMaterial(int woodType);
 
     // symbol:
     // ?WOOD_NAMES@PlanksBlock@@2V?$array@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$08@std@@B

@@ -7,8 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace cereal { class PropertyReader; }
 namespace cereal { struct SchemaWriter; }
-namespace cereal { struct SerializerTraits; }
 // clang-format on
 
 class NBTSchemaWriter : public ::cereal::SchemaWriter {
@@ -44,58 +44,58 @@ public:
     // vIndex: 0, symbol: ??1NBTSchemaWriter@@UEAA@XZ
     virtual ~NBTSchemaWriter();
 
-    // vIndex: 1, symbol: ?write@NBTSchemaWriter@@UEAA_N_NAEBUSerializerTraits@cereal@@@Z
-    virtual bool write(bool, struct cereal::SerializerTraits const&);
+    // vIndex: 1, symbol: ?write@NBTSchemaWriter@@UEAA_N_NAEBVPropertyReader@cereal@@@Z
+    virtual bool write(bool, class cereal::PropertyReader const&);
 
-    // vIndex: 2, symbol: ?write@NBTSchemaWriter@@UEAA_NCAEBUSerializerTraits@cereal@@@Z
-    virtual bool write(schar, struct cereal::SerializerTraits const&);
+    // vIndex: 2, symbol: ?write@NBTSchemaWriter@@UEAA_NCAEBVPropertyReader@cereal@@@Z
+    virtual bool write(schar, class cereal::PropertyReader const&);
 
-    // vIndex: 3, symbol: ?write@NBTSchemaWriter@@UEAA_NEAEBUSerializerTraits@cereal@@@Z
-    virtual bool write(uchar, struct cereal::SerializerTraits const&);
+    // vIndex: 3, symbol: ?write@NBTSchemaWriter@@UEAA_NEAEBVPropertyReader@cereal@@@Z
+    virtual bool write(uchar, class cereal::PropertyReader const&);
 
-    // vIndex: 4, symbol: ?write@NBTSchemaWriter@@UEAA_NFAEBUSerializerTraits@cereal@@@Z
-    virtual bool write(short, struct cereal::SerializerTraits const&);
+    // vIndex: 4, symbol: ?write@NBTSchemaWriter@@UEAA_NFAEBVPropertyReader@cereal@@@Z
+    virtual bool write(short, class cereal::PropertyReader const&);
 
-    // vIndex: 5, symbol: ?write@NBTSchemaWriter@@UEAA_NGAEBUSerializerTraits@cereal@@@Z
-    virtual bool write(ushort, struct cereal::SerializerTraits const&);
+    // vIndex: 5, symbol: ?write@NBTSchemaWriter@@UEAA_NGAEBVPropertyReader@cereal@@@Z
+    virtual bool write(ushort, class cereal::PropertyReader const&);
 
-    // vIndex: 6, symbol: ?write@NBTSchemaWriter@@UEAA_NHAEBUSerializerTraits@cereal@@@Z
-    virtual bool write(int, struct cereal::SerializerTraits const&);
+    // vIndex: 6, symbol: ?write@NBTSchemaWriter@@UEAA_NHAEBVPropertyReader@cereal@@@Z
+    virtual bool write(int, class cereal::PropertyReader const&);
 
-    // vIndex: 7, symbol: ?write@NBTSchemaWriter@@UEAA_NIAEBUSerializerTraits@cereal@@@Z
-    virtual bool write(uint, struct cereal::SerializerTraits const&);
+    // vIndex: 7, symbol: ?write@NBTSchemaWriter@@UEAA_NIAEBVPropertyReader@cereal@@@Z
+    virtual bool write(uint, class cereal::PropertyReader const&);
 
-    // vIndex: 8, symbol: ?write@NBTSchemaWriter@@UEAA_N_JAEBUSerializerTraits@cereal@@@Z
-    virtual bool write(int64, struct cereal::SerializerTraits const&);
+    // vIndex: 8, symbol: ?write@NBTSchemaWriter@@UEAA_N_JAEBVPropertyReader@cereal@@@Z
+    virtual bool write(int64, class cereal::PropertyReader const&);
 
-    // vIndex: 9, symbol: ?write@NBTSchemaWriter@@UEAA_N_KAEBUSerializerTraits@cereal@@@Z
-    virtual bool write(uint64, struct cereal::SerializerTraits const&);
+    // vIndex: 9, symbol: ?write@NBTSchemaWriter@@UEAA_N_KAEBVPropertyReader@cereal@@@Z
+    virtual bool write(uint64, class cereal::PropertyReader const&);
 
-    // vIndex: 10, symbol: ?write@NBTSchemaWriter@@UEAA_NMAEBUSerializerTraits@cereal@@@Z
-    virtual bool write(float, struct cereal::SerializerTraits const&);
+    // vIndex: 10, symbol: ?write@NBTSchemaWriter@@UEAA_NMAEBVPropertyReader@cereal@@@Z
+    virtual bool write(float, class cereal::PropertyReader const&);
 
-    // vIndex: 11, symbol: ?write@NBTSchemaWriter@@UEAA_NNAEBUSerializerTraits@cereal@@@Z
-    virtual bool write(double, struct cereal::SerializerTraits const&);
+    // vIndex: 11, symbol: ?write@NBTSchemaWriter@@UEAA_NNAEBVPropertyReader@cereal@@@Z
+    virtual bool write(double, class cereal::PropertyReader const&);
 
     // vIndex: 12, symbol:
-    // ?write@NBTSchemaWriter@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUSerializerTraits@cereal@@@Z
-    virtual bool write(std::string const&, struct cereal::SerializerTraits const&);
+    // ?write@NBTSchemaWriter@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPropertyReader@cereal@@@Z
+    virtual bool write(std::string const&, class cereal::PropertyReader const&);
 
     // vIndex: 13, symbol:
-    // ?pushMember@NBTSchemaWriter@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUSerializerTraits@cereal@@@Z
-    virtual bool pushMember(std::string const&, struct cereal::SerializerTraits const&);
+    // ?pushMember@NBTSchemaWriter@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPropertyReader@cereal@@@Z
+    virtual bool pushMember(std::string const&, class cereal::PropertyReader const&);
 
     // vIndex: 14, symbol: ?popMember@NBTSchemaWriter@@UEAAXXZ
     virtual void popMember();
 
-    // vIndex: 15, symbol: ?openObject@NBTSchemaWriter@@UEAA_NAEBUSerializerTraits@cereal@@@Z
-    virtual bool openObject(struct cereal::SerializerTraits const&);
+    // vIndex: 15, symbol: ?openObject@NBTSchemaWriter@@UEAA_NAEBVPropertyReader@cereal@@@Z
+    virtual bool openObject(class cereal::PropertyReader const&);
 
-    // vIndex: 16, symbol: ?openArray@NBTSchemaWriter@@UEAA_N_KAEBUSerializerTraits@cereal@@@Z
-    virtual bool openArray(uint64, struct cereal::SerializerTraits const&);
+    // vIndex: 16, symbol: ?openArray@NBTSchemaWriter@@UEAA_N_KAEBVPropertyReader@cereal@@@Z
+    virtual bool openArray(uint64, class cereal::PropertyReader const&);
 
-    // vIndex: 17, symbol: ?close@NBTSchemaWriter@@UEAAXAEBUSerializerTraits@cereal@@@Z
-    virtual void close(struct cereal::SerializerTraits const&);
+    // vIndex: 17, symbol: ?close@NBTSchemaWriter@@UEAAXXZ
+    virtual void close();
 
     // vIndex: 18, symbol: ?isSequenceWriter@SchemaWriter@cereal@@UEBA_NXZ
     virtual bool isSequenceWriter() const;

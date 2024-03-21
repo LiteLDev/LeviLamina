@@ -24,5 +24,8 @@ public:
         class EntityModifier<class FlagComponent<struct PrevPosRotSetThisTickFlag>> modifier
     );
 
+    // symbol: ?_setPreviousPosRotSystem@SetPreviousPosRotSystem@@SAXAEBVEntityContext@@@Z
+    MCAPI static void _setPreviousPosRotSystem(class EntityContext const&);
+
     // NOLINTEND
 };

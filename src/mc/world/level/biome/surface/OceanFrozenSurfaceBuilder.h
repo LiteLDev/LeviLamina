@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
+class Biome;
 class ISurfaceBuilder;
 // clang-format on
 
@@ -25,8 +25,8 @@ public:
     // vIndex: 0, symbol: __gen_??1OceanFrozenSurfaceBuilder@VanillaSurfaceBuilders@@UEAA@XZ
     virtual ~OceanFrozenSurfaceBuilder() = default;
 
-    // vIndex: 1, symbol: ?init@OceanFrozenSurfaceBuilder@VanillaSurfaceBuilders@@UEAAXAEAVEntityContext@@I@Z
-    virtual void init(class EntityContext& entity, uint levelSeed);
+    // vIndex: 1, symbol: ?init@OceanFrozenSurfaceBuilder@VanillaSurfaceBuilders@@UEAAXAEAVBiome@@I@Z
+    virtual void init(class Biome&, uint);
 
     // vIndex: 2, symbol:
     // ?buildSurfaceAt@OceanFrozenSurfaceBuilder@VanillaSurfaceBuilders@@UEBAXAEBUBuildParameters@ISurfaceBuilder@@@Z

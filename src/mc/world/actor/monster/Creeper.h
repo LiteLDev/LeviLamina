@@ -39,10 +39,10 @@ public:
     // vIndex: 10, symbol: __gen_??1Creeper@@UEAA@XZ
     virtual ~Creeper() = default;
 
-    // vIndex: 29, symbol: ?normalTick@Creeper@@UEAAXXZ
+    // vIndex: 28, symbol: ?normalTick@Creeper@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 143, symbol: ?die@Creeper@@UEAAXAEBVActorDamageSource@@@Z
+    // vIndex: 137, symbol: ?die@Creeper@@UEAAXAEBVActorDamageSource@@@Z
     virtual void die(class ActorDamageSource const& source);
 
     // symbol: ??0Creeper@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

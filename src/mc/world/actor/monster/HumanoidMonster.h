@@ -39,19 +39,19 @@ public:
     // vIndex: 10, symbol: ??1HumanoidMonster@@UEAA@XZ
     virtual ~HumanoidMonster();
 
-    // vIndex: 29, symbol: ?normalTick@HumanoidMonster@@UEAAXXZ
+    // vIndex: 28, symbol: ?normalTick@HumanoidMonster@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 159, symbol: ?readAdditionalSaveData@HumanoidMonster@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 153, symbol: ?readAdditionalSaveData@HumanoidMonster@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 160, symbol: ?addAdditionalSaveData@HumanoidMonster@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 154, symbol: ?addAdditionalSaveData@HumanoidMonster@@MEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 175, symbol: ?getItemUseDuration@HumanoidMonster@@UEBAHXZ
+    // vIndex: 169, symbol: ?getItemUseDuration@HumanoidMonster@@UEBAHXZ
     virtual int getItemUseDuration() const;
 
-    // vIndex: 180, symbol: ?doHurtTarget@HumanoidMonster@@UEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
+    // vIndex: 174, symbol: ?doHurtTarget@HumanoidMonster@@UEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
     virtual bool doHurtTarget(class Actor* target, ::ActorDamageCause const& cause);
 
     // symbol: ??0HumanoidMonster@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

@@ -40,7 +40,7 @@ public:
     // vIndex: 49, symbol: ?getEnchantSlot@ShovelItem@@UEBAHXZ
     virtual int getEnchantSlot() const;
 
-    // vIndex: 118, symbol:
+    // vIndex: 117, symbol:
     // ?_useOn@ShovelItem@@MEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)

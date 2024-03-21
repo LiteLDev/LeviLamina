@@ -42,7 +42,7 @@ public:
     // vIndex: 50, symbol: ?getEnchantValue@WarpedFungusOnAStickItem@@UEBAHXZ
     virtual int getEnchantValue() const;
 
-    // vIndex: 80, symbol: ?mineBlock@WarpedFungusOnAStickItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
+    // vIndex: 79, symbol: ?mineBlock@WarpedFungusOnAStickItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
     virtual bool
     mineBlock(class ItemStack& item, class Block const& block, int x, int y, int z, class Actor* owner) const;
 

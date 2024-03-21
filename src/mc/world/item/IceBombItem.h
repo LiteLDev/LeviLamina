@@ -39,10 +39,10 @@ public:
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
-    // vIndex: 89, symbol: ?getCooldownType@IceBombItem@@UEBAAEBVHashedString@@XZ
+    // vIndex: 88, symbol: ?getCooldownType@IceBombItem@@UEBAAEBVHashedString@@XZ
     virtual class HashedString const& getCooldownType() const;
 
-    // vIndex: 90, symbol: ?getCooldownTime@IceBombItem@@UEBAHXZ
+    // vIndex: 89, symbol: ?getCooldownTime@IceBombItem@@UEBAHXZ
     virtual int getCooldownTime() const;
 
     // symbol: ??0IceBombItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

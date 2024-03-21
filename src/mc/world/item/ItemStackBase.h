@@ -97,10 +97,6 @@ public:
     // symbol: ?constructItemEnchantsFromUserData@ItemStackBase@@QEBA?AVItemEnchants@@XZ
     MCAPI class ItemEnchants constructItemEnchantsFromUserData() const;
 
-    // symbol:
-    // ?executeEvent@ItemStackBase@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRenderParams@@@Z
-    MCAPI void executeEvent(std::string const& event, class RenderParams& params);
-
     // symbol: ?getArmorSlot@ItemStackBase@@QEBA?AW4ArmorSlot@@XZ
     MCAPI ::ArmorSlot getArmorSlot() const;
 
@@ -266,6 +262,9 @@ public:
 
     // symbol: ?isBlockInstance@ItemStackBase@@QEBA_NAEBVHashedString@@@Z
     MCAPI bool isBlockInstance(class HashedString const& blockName) const;
+
+    // symbol: ?isCoolableItem@ItemStackBase@@QEBA_NXZ
+    MCAPI bool isCoolableItem() const;
 
     // symbol: ?isDamageableItem@ItemStackBase@@QEBA_NXZ
     MCAPI bool isDamageableItem() const;

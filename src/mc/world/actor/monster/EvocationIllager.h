@@ -43,16 +43,16 @@ public:
     // vIndex: 10, symbol: __gen_??1EvocationIllager@@UEAA@XZ
     virtual ~EvocationIllager() = default;
 
-    // vIndex: 143, symbol: ?die@EvocationIllager@@UEAAXAEBVActorDamageSource@@@Z
+    // vIndex: 137, symbol: ?die@EvocationIllager@@UEAAXAEBVActorDamageSource@@@Z
     virtual void die(class ActorDamageSource const& source);
 
-    // vIndex: 171, symbol: ?aiStep@EvocationIllager@@UEAAXXZ
+    // vIndex: 165, symbol: ?aiStep@EvocationIllager@@UEAAXXZ
     virtual void aiStep();
 
-    // vIndex: 179, symbol: ?isAlliedTo@EvocationIllager@@UEAA_NPEAVMob@@@Z
+    // vIndex: 173, symbol: ?isAlliedTo@EvocationIllager@@UEAA_NPEAVMob@@@Z
     virtual bool isAlliedTo(class Mob* other);
 
-    // vIndex: 181, symbol: ?getArmorValue@EvocationIllager@@MEBAHXZ
+    // vIndex: 175, symbol: ?getArmorValue@EvocationIllager@@MEBAHXZ
     virtual int getArmorValue() const;
 
     // symbol: ??0EvocationIllager@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

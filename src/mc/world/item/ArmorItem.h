@@ -110,19 +110,19 @@ public:
     // vIndex: 76, symbol: ?hurtActor@ArmorItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
     virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
 
-    // vIndex: 80, symbol: ?mineBlock@ArmorItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
+    // vIndex: 79, symbol: ?mineBlock@ArmorItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
     virtual bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*) const;
 
-    // vIndex: 97, symbol: ?getEquipLocation@ArmorItem@@UEBA?AW4ActorLocation@@XZ
+    // vIndex: 96, symbol: ?getEquipLocation@ArmorItem@@UEBA?AW4ActorLocation@@XZ
     virtual ::ActorLocation getEquipLocation() const;
 
-    // vIndex: 98, symbol: ?getEquipSound@ArmorItem@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 97, symbol: ?getEquipSound@ArmorItem@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
     virtual ::Puv::Legacy::LevelSoundEvent getEquipSound() const;
 
-    // vIndex: 104, symbol: ?getIconInfo@ArmorItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
+    // vIndex: 103, symbol: ?getIconInfo@ArmorItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const& item, int, bool inInventoryPane) const;
 
-    // vIndex: 119, symbol: ?getArmorKnockbackResistance@ArmorItem@@UEBAMXZ
+    // vIndex: 118, symbol: ?getArmorKnockbackResistance@ArmorItem@@UEBAMXZ
     virtual float getArmorKnockbackResistance() const;
 
     // symbol:

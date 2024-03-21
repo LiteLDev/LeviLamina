@@ -4,15 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/common/wrapper/OwnerPtr.h"
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock { class EnableNonOwnerReferences; }
 namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
-class GameplayUserManager : public ::Bedrock::EnableNonOwnerReferences {
+class GameplayUserManager {
 public:
     // prevent constructor by default
     GameplayUserManager& operator=(GameplayUserManager const&);
@@ -20,9 +18,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1GameplayUserManager@@UEAA@XZ
-    virtual ~GameplayUserManager();
-
     // symbol: ??0GameplayUserManager@@QEAA@XZ
     MCAPI GameplayUserManager();
 
@@ -115,6 +110,9 @@ public:
 
     // symbol: ?tickSuspensions@GameplayUserManager@@QEAAXXZ
     MCAPI void tickSuspensions();
+
+    // symbol: ??1GameplayUserManager@@QEAA@XZ
+    MCAPI ~GameplayUserManager();
 
     // NOLINTEND
 

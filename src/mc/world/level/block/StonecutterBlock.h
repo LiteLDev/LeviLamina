@@ -39,13 +39,13 @@ public:
     // vIndex: 56, symbol: ?canContainLiquid@StonecutterBlock@@UEBA_NXZ
     virtual bool canContainLiquid() const;
 
-    // vIndex: 136, symbol: ?init@StonecutterBlock@@UEAAAEAVBlockLegacy@@XZ
+    // vIndex: 135, symbol: ?init@StonecutterBlock@@UEAAAEAVBlockLegacy@@XZ
     virtual class BlockLegacy& init();
 
-    // vIndex: 152, symbol: ?isInteractiveBlock@StonecutterBlock@@UEBA_NXZ
+    // vIndex: 149, symbol: ?isInteractiveBlock@StonecutterBlock@@UEBA_NXZ
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 154, symbol: ?use@StonecutterBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 151, symbol: ?use@StonecutterBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // symbol: ??0StonecutterBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

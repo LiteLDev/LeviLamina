@@ -17,13 +17,14 @@
 // clang-format off
 class StrictEntityContext;
 struct AABBShapeComponent;
+struct ActorDataBoundingBoxComponent;
+struct ActorDataDirtyFlagsComponent;
 struct DepenetrationComponent;
 struct MinecartFlag;
 struct OffsetsComponent;
 struct PlayerComponentFlag;
 struct ShouldUpdateBoundingBoxRequestComponent;
 struct ShulkerFlag;
-struct SynchedActorDataComponent;
 // clang-format on
 
 namespace UpdateBoundingBox {
@@ -53,7 +54,7 @@ public:
     virtual void __unk_vfn_4();
 
     // vIndex: 5, symbol:
-    // ?tick@SystemImpl@UpdateBoundingBox@@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@UMinecartFlag@@@@V?$FlagComponent@UShulkerFlag@@@@@@U?$Read@$$V@@U?$Write@UAABBShapeComponent@@UDepenetrationComponent@@UOffsetsComponent@@USynchedActorDataComponent@@@@U?$AddRemove@UShouldUpdateBoundingBoxRequestComponent@@@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
+    // ?tick@SystemImpl@UpdateBoundingBox@@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@UMinecartFlag@@@@V?$FlagComponent@UShulkerFlag@@@@@@U?$Read@$$V@@U?$Write@UAABBShapeComponent@@UActorDataBoundingBoxComponent@@UActorDataDirtyFlagsComponent@@UDepenetrationComponent@@UOffsetsComponent@@@@U?$AddRemove@UShouldUpdateBoundingBoxRequestComponent@@@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
     virtual void tick(class StrictExecutionContext<
                       struct Filter<
                           class FlagComponent<struct PlayerComponentFlag>,
@@ -62,18 +63,19 @@ public:
                       struct Read<>,
                       struct Write<
                           struct AABBShapeComponent,
+                          struct ActorDataBoundingBoxComponent,
+                          struct ActorDataDirtyFlagsComponent,
                           struct DepenetrationComponent,
-                          struct OffsetsComponent,
-                          struct SynchedActorDataComponent>,
+                          struct OffsetsComponent>,
                       struct AddRemove<struct ShouldUpdateBoundingBoxRequestComponent>,
                       struct GlobalRead<>,
                       struct GlobalWrite<>,
                       struct EntityFactoryT<>>&);
 
     // vIndex: 6, symbol:
-    // ?singleTick@SystemImpl@UpdateBoundingBox@@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@UMinecartFlag@@@@V?$FlagComponent@UShulkerFlag@@@@@@U?$Read@$$V@@U?$Write@UAABBShapeComponent@@UDepenetrationComponent@@UOffsetsComponent@@USynchedActorDataComponent@@@@U?$AddRemove@UShouldUpdateBoundingBoxRequestComponent@@@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@AEAVStrictEntityContext@@@Z
+    // ?singleTick@SystemImpl@UpdateBoundingBox@@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@UMinecartFlag@@@@V?$FlagComponent@UShulkerFlag@@@@@@U?$Read@$$V@@U?$Write@UAABBShapeComponent@@UActorDataBoundingBoxComponent@@UActorDataDirtyFlagsComponent@@UDepenetrationComponent@@UOffsetsComponent@@@@U?$AddRemove@UShouldUpdateBoundingBoxRequestComponent@@@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@AEAVStrictEntityContext@@@Z
     virtual void
-    singleTick(class StrictExecutionContext<struct Filter<class FlagComponent<struct PlayerComponentFlag>, class FlagComponent<struct MinecartFlag>, class FlagComponent<struct ShulkerFlag>>, struct Read<>, struct Write<struct AABBShapeComponent, struct DepenetrationComponent, struct OffsetsComponent, struct SynchedActorDataComponent>, struct AddRemove<struct ShouldUpdateBoundingBoxRequestComponent>, struct GlobalRead<>, struct GlobalWrite<>, struct EntityFactoryT<>>&, class StrictEntityContext&);
+    singleTick(class StrictExecutionContext<struct Filter<class FlagComponent<struct PlayerComponentFlag>, class FlagComponent<struct MinecartFlag>, class FlagComponent<struct ShulkerFlag>>, struct Read<>, struct Write<struct AABBShapeComponent, struct ActorDataBoundingBoxComponent, struct ActorDataDirtyFlagsComponent, struct DepenetrationComponent, struct OffsetsComponent>, struct AddRemove<struct ShouldUpdateBoundingBoxRequestComponent>, struct GlobalRead<>, struct GlobalWrite<>, struct EntityFactoryT<>>&, class StrictEntityContext&);
 
     // NOLINTEND
 };

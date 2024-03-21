@@ -10,9 +10,9 @@
 namespace ActorSetPosSystemImpl {
 // NOLINTBEGIN
 // symbol:
-// ?_tickActorUpdatePositionAndAABBSystem2@ActorSetPosSystemImpl@@YAXAEBUActorSetPositionRequestComponent@@AEBUOffsetsComponent@@V?$Optional@$$CBUSlideOffsetComponent@@@@AEAUAABBShapeComponent@@AEAUStateVectorComponent@@V?$Optional@V?$FlagComponent@UPaintingFlag@@@@@@@Z
+// ?_tickActorUpdatePositionAndAABBSystem2@ActorSetPosSystemImpl@@YAXAEBUActorSetPositionRequestComponent@@AEBUOffsetsComponent@@AEAUAABBShapeComponent@@AEAUStateVectorComponent@@V?$Optional@V?$FlagComponent@UPaintingFlag@@@@@@@Z
 MCAPI void
-_tickActorUpdatePositionAndAABBSystem2(struct ActorSetPositionRequestComponent const&, struct OffsetsComponent const&, class Optional<struct SlideOffsetComponent const>, struct AABBShapeComponent&, struct StateVectorComponent&, class Optional<class FlagComponent<struct PaintingFlag>>);
+_tickActorUpdatePositionAndAABBSystem2(struct ActorSetPositionRequestComponent const&, struct OffsetsComponent const&, struct AABBShapeComponent&, struct StateVectorComponent&, class Optional<class FlagComponent<struct PaintingFlag>>);
 
 // symbol:
 // ?_tickAddLocalPlayerEntityMovedSystemAsynchronous1@ActorSetPosSystemImpl@@YAXAEAVStrictEntityContext@@V?$EntityModifier@V?$FlagComponent@UActorChunkMoveFlag@@@@V?$FlagComponent@UActorLocalPlayerEntityMovedFlag@@@@UActorSetPositionRequestComponent@@@@@Z

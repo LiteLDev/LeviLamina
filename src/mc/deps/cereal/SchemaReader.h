@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct SerializerTraits; }
-// clang-format on
-
 namespace cereal {
 
 struct SchemaReader {
@@ -43,8 +38,8 @@ public:
     // symbol: ?isSequenceReader@SchemaReader@cereal@@UEBA_NXZ
     MCVAPI bool isSequenceReader() const;
 
-    // symbol: ?scopedPop@SchemaReader@cereal@@QEAA?AUScopedPop@12@AEBUSerializerTraits@2@@Z
-    MCAPI struct cereal::SchemaReader::ScopedPop scopedPop(struct cereal::SerializerTraits const&);
+    // symbol: ?scopedPop@SchemaReader@cereal@@QEAA?AUScopedPop@12@XZ
+    MCAPI struct cereal::SchemaReader::ScopedPop scopedPop();
 
     // NOLINTEND
 };

@@ -11,7 +11,6 @@
 // clang-format off
 class ItemInstance;
 class ItemStackBase;
-class Level;
 class Vec3;
 namespace ScriptModuleMinecraft { class ScriptItemComponent; }
 namespace ScriptModuleMinecraft { class ScriptItemType; }
@@ -121,6 +120,12 @@ public:
     // symbol: ?isStackableWith@ScriptItemStack@ScriptModuleMinecraft@@QEBA_NAEBV12@@Z
     MCAPI bool isStackableWith(class ScriptModuleMinecraft::ScriptItemStack const& other) const;
 
+    // symbol:
+    // ?matches@ScriptItemStack@ScriptModuleMinecraft@@QEBA_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$optional@V?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$variant@HV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@2@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$variant@HV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@2@@std@@@2@@std@@@4@@Z
+    MCAPI bool
+        matches(std::string, std::optional<std::unordered_map<std::string, std::variant<int, std::string, bool>>>)
+            const;
+
     // symbol: ??4ScriptItemStack@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptItemStack& operator=(class ScriptModuleMinecraft::ScriptItemStack&&);
 
@@ -163,9 +168,9 @@ public:
     MCAPI ~ScriptItemStack();
 
     // symbol:
-    // ?bind@ScriptItemStack@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@PEAVLevel@@AEBUVersion@4@@Z
+    // ?bind@ScriptItemStack@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@AEBUVersion@4@@Z
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemStack>
-    bind(class Level*, struct Scripting::Version const&);
+    bind(struct Scripting::Version const&);
 
     // symbol:
     // ?createHandle@ScriptItemStack@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@VWeakLifetimeScope@4@AEBVItemStackBase@@@Z

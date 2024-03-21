@@ -92,9 +92,6 @@ public:
     // symbol: ?loadFunctionManager@ServerLevel@@UEAAXXZ
     MCVAPI void loadFunctionManager();
 
-    // symbol: ?onChunkLoaded@ServerLevel@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
-    MCVAPI void onChunkLoaded(class ChunkSource& source, class LevelChunk& lc);
-
     // symbol: ?registerEventCoordinators@ServerLevel@@UEAAXXZ
     MCVAPI void registerEventCoordinators();
 

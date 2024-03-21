@@ -30,7 +30,7 @@ public:
     // vIndex: 0, symbol: ??1FaceDirectionalActorBlock@@UEAA@XZ
     virtual ~FaceDirectionalActorBlock();
 
-    // vIndex: 98, symbol:
+    // vIndex: 97, symbol:
     // ?getPlacementBlock@FaceDirectionalActorBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
     virtual class Block const& getPlacementBlock(
         class Actor const&    by,
@@ -40,13 +40,13 @@ public:
         int                   itemValue
     ) const;
 
-    // vIndex: 131, symbol: ?getRenderBlock@FaceDirectionalActorBlock@@UEBAAEBVBlock@@XZ
+    // vIndex: 130, symbol: ?getRenderBlock@FaceDirectionalActorBlock@@UEBAAEBVBlock@@XZ
     virtual class Block const& getRenderBlock() const;
 
-    // vIndex: 132, symbol: ?getMappedFace@FaceDirectionalActorBlock@@UEBAEEAEBVBlock@@@Z
+    // vIndex: 131, symbol: ?getMappedFace@FaceDirectionalActorBlock@@UEBAEEAEBVBlock@@@Z
     virtual uchar getMappedFace(uchar face, class Block const& block) const;
 
-    // vIndex: 133, symbol: ?getFaceFlip@FaceDirectionalActorBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
+    // vIndex: 132, symbol: ?getFaceFlip@FaceDirectionalActorBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
     virtual ::Flip getFaceFlip(uchar face, class Block const& block) const;
 
     // symbol:

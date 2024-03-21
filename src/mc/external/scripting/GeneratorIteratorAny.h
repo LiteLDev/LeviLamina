@@ -36,9 +36,6 @@ public:
     MCAPI
     GeneratorIteratorAny(class Scripting::IRuntime*, struct Scripting::ContextId, class Scripting::WeakLifetimeScope, class Scripting::StrongTypedObjectHandle<struct Scripting::GeneratorIteratorType> const&, class Scripting::IObjectInspector*);
 
-    // symbol: ?isDone@GeneratorIteratorAny@Scripting@@QEBA_NXZ
-    MCAPI bool isDone() const;
-
     // symbol: ??4GeneratorIteratorAny@Scripting@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class Scripting::GeneratorIteratorAny& operator=(class Scripting::GeneratorIteratorAny&&);
 

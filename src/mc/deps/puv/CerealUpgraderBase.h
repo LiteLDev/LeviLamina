@@ -76,10 +76,16 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol:
-    // ?copy@CerealUpgraderBase@internal@Puv@@AEBAXAEAVmeta_any@entt@@0AEAUUpgradeState@123@PEBVSerializerEnumMapping@cereal@@2@Z
-    MCAPI void
-    copy(entt::meta_any&, entt::meta_any&, struct Puv::internal::CerealUpgraderBase::UpgradeState&, class cereal::SerializerEnumMapping const*, class cereal::SerializerEnumMapping const*)
-        const;
+    // ?copy@CerealUpgraderBase@internal@Puv@@AEBAXAEAVmeta_any@entt@@0AEAUUpgradeState@123@AEBVmeta_type@5@I2I@Z
+    MCAPI void copy(
+        entt::meta_any&,
+        entt::meta_any&,
+        struct Puv::internal::CerealUpgraderBase::UpgradeState&,
+        entt::meta_type const&,
+        uint,
+        entt::meta_type const&,
+        uint
+    ) const;
 
     // symbol:
     // ?copyAssociative@CerealUpgraderBase@internal@Puv@@AEBAXVmeta_associative_container@entt@@AEAVmeta_any@5@AEAUUpgradeState@123@@Z
@@ -121,18 +127,14 @@ public:
     unwrapOrCopy(entt::meta_any&, entt::meta_any&, struct Puv::internal::CerealUpgraderBase::UpgradeState&) const;
 
     // symbol:
-    // ?buildPath@CerealUpgraderBase@internal@Puv@@CA?AV?$vector@U?$pair@W4ContextType@SerializerContext@cereal@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@V?$allocator@U?$pair@W4ContextType@SerializerContext@cereal@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@std@@AEBV?$vector@UPathElement@internal@Puv@@V?$allocator@UPathElement@internal@Puv@@@std@@@5@@Z
+    // ?buildPath@CerealUpgraderBase@internal@Puv@@CA?AV?$vector@U?$pair@W4ContextType@SerializerContext@cereal@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@V?$allocator@U?$pair@W4ContextType@SerializerContext@cereal@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@std@@AEBV?$vector@UPathElement@internal@Puv@@V?$allocator@UPathElement@internal@Puv@@@std@@@5@AEBUReflectionCtx@cereal@@@Z
     MCAPI static std::vector<std::pair<::cereal::SerializerContext::ContextType, std::string>>
-    buildPath(std::vector<struct Puv::internal::PathElement> const&);
+    buildPath(std::vector<struct Puv::internal::PathElement> const&, struct cereal::ReflectionCtx const&);
 
     // symbol:
-    // ?constructOrLog@CerealUpgraderBase@internal@Puv@@CA?AVmeta_any@entt@@AEBVmeta_type@5@AEAUUpgradeState@123@@Z
+    // ?constructOrLog@CerealUpgraderBase@internal@Puv@@CA?AVmeta_any@entt@@AEBUReflectionCtx@cereal@@AEBVmeta_type@5@AEAUUpgradeState@123@@Z
     MCAPI static entt::meta_any
-    constructOrLog(entt::meta_type const&, struct Puv::internal::CerealUpgraderBase::UpgradeState&);
-
-    // symbol:
-    // ?hash@CerealUpgraderBase@internal@Puv@@CA?AV?$vector@UPathElement@internal@Puv@@V?$allocator@UPathElement@internal@Puv@@@std@@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@5@@Z
-    MCAPI static std::vector<struct Puv::internal::PathElement> hash(std::vector<std::string>);
+    constructOrLog(struct cereal::ReflectionCtx const&, entt::meta_type const&, struct Puv::internal::CerealUpgraderBase::UpgradeState&);
 
     // NOLINTEND
 };

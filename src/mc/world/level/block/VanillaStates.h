@@ -43,6 +43,7 @@
 #include "mc/enums/WallConnectionType.h"
 #include "mc/enums/WoodType.h"
 #include "mc/world/level/block/states/BlockStateVariant.h"
+#include "mc/world/level/block/states/VaultBlockState.h"
 #include "mc/world/level/block/utils/BlockColor.h"
 #include "mc/world/level/block/utils/PrismarineBlockType.h"
 #include "mc/world/level/block/utils/WallBlockType.h"
@@ -416,6 +417,9 @@ MCAPI extern class BlockStateVariant<bool> const UpperBlockBit;
 
 // symbol: ?UpsideDownBit@VanillaStates@@3V?$BlockStateVariant@_N@@B
 MCAPI extern class BlockStateVariant<bool> const UpsideDownBit;
+
+// symbol: ?VaultState@VanillaStates@@3V?$BlockStateVariant@W4VaultBlockState@@@@B
+MCAPI extern class BlockStateVariant<::VaultBlockState> const VaultState;
 
 // symbol: ?VineDirectionBits@VanillaStates@@3V?$BlockStateVariant@H@@B
 MCAPI extern class BlockStateVariant<int> const VineDirectionBits;

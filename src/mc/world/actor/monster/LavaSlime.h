@@ -43,28 +43,28 @@ public:
     // vIndex: 10, symbol: __gen_??1LavaSlime@@UEAA@XZ
     virtual ~LavaSlime() = default;
 
-    // vIndex: 44, symbol: ?getBrightness@LavaSlime@@UEBAMMAEBVIConstBlockSource@@@Z
+    // vIndex: 43, symbol: ?getBrightness@LavaSlime@@UEBAMMAEBVIConstBlockSource@@@Z
     virtual float getBrightness(float, class IConstBlockSource const&) const;
 
-    // vIndex: 55, symbol: ?isOnFire@LavaSlime@@MEBA_NXZ
+    // vIndex: 54, symbol: ?isOnFire@LavaSlime@@MEBA_NXZ
     virtual bool isOnFire() const;
 
-    // vIndex: 173, symbol: ?checkSpawnRules@LavaSlime@@UEAA_N_N@Z
+    // vIndex: 167, symbol: ?checkSpawnRules@LavaSlime@@UEAA_N_N@Z
     virtual bool checkSpawnRules(bool fromSpawner);
 
-    // vIndex: 181, symbol: ?getArmorValue@LavaSlime@@UEBAHXZ
+    // vIndex: 175, symbol: ?getArmorValue@LavaSlime@@UEBAHXZ
     virtual int getArmorValue() const;
 
-    // vIndex: 204, symbol: ?isDarkEnoughToSpawn@LavaSlime@@UEBA_NXZ
+    // vIndex: 197, symbol: ?isDarkEnoughToSpawn@LavaSlime@@UEBA_NXZ
     virtual bool isDarkEnoughToSpawn() const;
 
-    // vIndex: 205, symbol: ?doPlayLandSound@LavaSlime@@MEAA_NXZ
+    // vIndex: 198, symbol: ?doPlayLandSound@LavaSlime@@MEAA_NXZ
     virtual bool doPlayLandSound();
 
-    // vIndex: 207, symbol: ?decreaseSquish@LavaSlime@@MEAAXXZ
+    // vIndex: 200, symbol: ?decreaseSquish@LavaSlime@@MEAAXXZ
     virtual void decreaseSquish();
 
-    // vIndex: 208, symbol: ?createChild@LavaSlime@@MEAA?AV?$OwnerPtr@VEntityContext@@@@H@Z
+    // vIndex: 201, symbol: ?createChild@LavaSlime@@MEAA?AV?$OwnerPtr@VEntityContext@@@@H@Z
     virtual class OwnerPtr<class EntityContext> createChild(int i);
 
     // symbol: ??0LavaSlime@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

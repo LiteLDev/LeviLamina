@@ -48,13 +48,13 @@ public:
     // vIndex: 84, symbol: ?mayPlace@HangingSignBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar face) const;
 
-    // vIndex: 156, symbol: ?canSurvive@HangingSignBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 153, symbol: ?canSurvive@HangingSignBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 168, symbol: ?getYRotationInDegrees@HangingSignBlock@@UEBAMAEBVBlock@@@Z
+    // vIndex: 163, symbol: ?getYRotationInDegrees@HangingSignBlock@@UEBAMAEBVBlock@@@Z
     virtual float getYRotationInDegrees(class Block const& block) const;
 
-    // vIndex: 170, symbol: ?_getItemInstance@HangingSignBlock@@MEBA?AVItemInstance@@XZ
+    // vIndex: 165, symbol: ?_getItemInstance@HangingSignBlock@@MEBA?AVItemInstance@@XZ
     virtual class ItemInstance _getItemInstance() const;
 
     // symbol:

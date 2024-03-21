@@ -30,17 +30,17 @@ public:
     // vIndex: 0, symbol: __gen_??1StoneBricksBlock@@UEAA@XZ
     virtual ~StoneBricksBlock() = default;
 
-    // vIndex: 96, symbol: ?asItemInstance@StoneBricksBlock@@MEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 95, symbol: ?asItemInstance@StoneBricksBlock@@MEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
-    // vIndex: 119, symbol:
+    // vIndex: 118, symbol:
     // ?buildDescriptionId@StoneBricksBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
     virtual std::string buildDescriptionId(class Block const&) const;
 
-    // vIndex: 120, symbol: ?isAuxValueRelevantForPicking@StoneBricksBlock@@UEBA_NXZ
+    // vIndex: 119, symbol: ?isAuxValueRelevantForPicking@StoneBricksBlock@@UEBA_NXZ
     virtual bool isAuxValueRelevantForPicking() const;
 
-    // vIndex: 141, symbol: ?tryGetInfested@StoneBricksBlock@@UEBAPEBVBlock@@AEBV2@@Z
+    // vIndex: 139, symbol: ?tryGetInfested@StoneBricksBlock@@UEBAPEBVBlock@@AEBV2@@Z
     virtual class Block const* tryGetInfested(class Block const& block) const;
 
     // symbol:

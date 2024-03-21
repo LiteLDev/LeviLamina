@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/level/block/utils/BlockComponentBase.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 class BlockTransformationComponent : public ::BlockComponentBase {
 public:
     // BlockTransformationComponent inner types declare
@@ -29,9 +24,6 @@ public:
         // NOLINTBEGIN
         // symbol: ?rotationTypeFromVec3@RotationType@BlockTransformationComponent@@QEAAXAEBVVec3@@@Z
         MCAPI void rotationTypeFromVec3(class Vec3 const& arr);
-
-        // symbol: ?bindType@RotationType@BlockTransformationComponent@@SAXAEAUReflectionCtx@cereal@@@Z
-        MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
         // NOLINTEND
     };

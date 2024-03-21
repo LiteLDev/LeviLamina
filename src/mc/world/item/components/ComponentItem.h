@@ -202,111 +202,99 @@ public:
     hitBlock(class ItemStack& item, class Block const& block, class BlockPos const& blockPos, class Mob& attacker)
         const;
 
-    // vIndex: 79, symbol: ?mineBlock@ComponentItem@@UEBA_NAEAVItemInstance@@AEBVBlock@@HHHPEAVActor@@@Z
-    virtual bool
-    mineBlock(class ItemInstance& instance, class Block const& block, int x, int y, int z, class Actor* owner) const;
-
-    // vIndex: 80, symbol: ?mineBlock@ComponentItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
+    // vIndex: 79, symbol: ?mineBlock@ComponentItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
     virtual bool
     mineBlock(class ItemStack& instance, class Block const& block, int x, int y, int z, class Actor* owner) const;
 
-    // vIndex: 81, symbol:
+    // vIndex: 80, symbol:
     // ?buildDescriptionName@ComponentItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemStackBase@@@Z
     virtual std::string buildDescriptionName(class ItemStackBase const&) const;
 
-    // vIndex: 82, symbol:
+    // vIndex: 81, symbol:
     // ?buildDescriptionId@ComponentItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 83, symbol:
+    // vIndex: 82, symbol:
     // ?buildEffectDescriptionName@ComponentItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemStackBase@@@Z
     virtual std::string buildEffectDescriptionName(class ItemStackBase const&) const;
 
-    // vIndex: 86, symbol: ?getMaxStackSize@ComponentItem@@UEBAEAEBVItemDescriptor@@@Z
+    // vIndex: 85, symbol: ?getMaxStackSize@ComponentItem@@UEBAEAEBVItemDescriptor@@@Z
     virtual uchar getMaxStackSize(class ItemDescriptor const&) const;
 
-    // vIndex: 89, symbol: ?getCooldownType@ComponentItem@@UEBAAEBVHashedString@@XZ
+    // vIndex: 88, symbol: ?getCooldownType@ComponentItem@@UEBAAEBVHashedString@@XZ
     virtual class HashedString const& getCooldownType() const;
 
-    // vIndex: 90, symbol: ?getCooldownTime@ComponentItem@@UEBAHXZ
+    // vIndex: 89, symbol: ?getCooldownTime@ComponentItem@@UEBAHXZ
     virtual int getCooldownTime() const;
 
-    // vIndex: 97, symbol: ?getEquipLocation@ComponentItem@@UEBA?AW4ActorLocation@@XZ
+    // vIndex: 96, symbol: ?getEquipLocation@ComponentItem@@UEBA?AW4ActorLocation@@XZ
     virtual ::ActorLocation getEquipLocation() const;
 
-    // vIndex: 98, symbol: ?getEquipSound@ComponentItem@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 97, symbol: ?getEquipSound@ComponentItem@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
     virtual ::Puv::Legacy::LevelSoundEvent getEquipSound() const;
 
-    // vIndex: 102, symbol: ?initClient@ComponentItem@@UEAAXAEAVValue@Json@@AEBVSemVersion@@_NAEBVExperiments@@@Z
+    // vIndex: 101, symbol: ?initClient@ComponentItem@@UEAAXAEAVValue@Json@@AEBVSemVersion@@_NAEBVExperiments@@@Z
     virtual void initClient(class Json::Value&, class SemVersion const&, bool, class Experiments const&);
 
-    // vIndex: 103, symbol:
+    // vIndex: 102, symbol:
     // ?setIconInfo@ComponentItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     virtual class Item& setIconInfo(std::string const& name, int frame);
 
-    // vIndex: 104, symbol: ?getIconInfo@ComponentItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
+    // vIndex: 103, symbol: ?getIconInfo@ComponentItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const& item, int, bool inInventoryPane) const;
 
-    // vIndex: 105, symbol:
+    // vIndex: 104, symbol:
     // ?getInteractText@ComponentItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPlayer@@@Z
     virtual std::string getInteractText(class Player const&) const;
 
-    // vIndex: 106, symbol: ?getAnimationFrameFor@ComponentItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
+    // vIndex: 105, symbol: ?getAnimationFrameFor@ComponentItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
     virtual int getAnimationFrameFor(class Mob*, bool, class ItemStack const*, bool) const;
 
-    // vIndex: 107, symbol: ?isEmissive@ComponentItem@@UEBA_NH@Z
+    // vIndex: 106, symbol: ?isEmissive@ComponentItem@@UEBA_NH@Z
     virtual bool isEmissive(int) const;
 
-    // vIndex: 110, symbol: ?canBeCharged@ComponentItem@@UEBA_NXZ
+    // vIndex: 109, symbol: ?canBeCharged@ComponentItem@@UEBA_NXZ
     virtual bool canBeCharged() const;
 
-    // vIndex: 113, symbol:
+    // vIndex: 112, symbol:
     // ?getAuxValuesDescription@ComponentItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getAuxValuesDescription() const;
 
-    // vIndex: 115, symbol:
+    // vIndex: 114, symbol:
     // ?_checkUseOnPermissions@ComponentItem@@EEBA_NAEAVActor@@AEAVItemStackBase@@AEBEAEBVBlockPos@@@Z
     virtual bool
     _checkUseOnPermissions(class Actor& entity, class ItemStackBase& item, uchar const& face, class BlockPos const& pos)
         const;
 
-    // vIndex: 116, symbol: ?_calculatePlacePos@ComponentItem@@EEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
+    // vIndex: 115, symbol: ?_calculatePlacePos@ComponentItem@@EEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
     virtual bool
     _calculatePlacePos(class ItemStackBase& instance, class Actor& entity, uchar& face, class BlockPos& pos) const;
 
-    // vIndex: 117, symbol: ?_shouldAutoCalculatePlacePos@ComponentItem@@EEBA_NXZ
+    // vIndex: 116, symbol: ?_shouldAutoCalculatePlacePos@ComponentItem@@EEBA_NXZ
     virtual bool _shouldAutoCalculatePlacePos() const;
 
-    // vIndex: 118, symbol:
+    // vIndex: 117, symbol:
     // ?_useOn@ComponentItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
         const;
 
-    // vIndex: 119, symbol: ?useVariant@ComponentItem@@UEBA_NHH_N@Z
+    // vIndex: 118, symbol: ?useVariant@ComponentItem@@UEBA_NHH_N@Z
     virtual bool useVariant(int, int, bool) const;
 
-    // vIndex: 120, symbol: ?getVariant@ComponentItem@@UEBAHHH_N@Z
+    // vIndex: 119, symbol: ?getVariant@ComponentItem@@UEBAHHH_N@Z
     virtual int getVariant(int, int, bool) const;
 
-    // vIndex: 121, symbol: ?shouldUseJsonForRenderMatrix@ComponentItem@@UEBA_NXZ
+    // vIndex: 120, symbol: ?shouldUseJsonForRenderMatrix@ComponentItem@@UEBA_NXZ
     virtual bool shouldUseJsonForRenderMatrix() const;
 
     // symbol:
-    // ??0ComponentItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@FAEAUReflectionCtx@cereal@@@Z
-    MCAPI ComponentItem(std::string const&, short, struct cereal::ReflectionCtx&);
-
-    // symbol: ?_addCerealItemsToMap@ComponentItem@@QEAAXXZ
-    MCAPI void _addCerealItemsToMap();
+    // ??0ComponentItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@FAEBUReflectionCtx@cereal@@@Z
+    MCAPI ComponentItem(std::string const&, short, struct cereal::ReflectionCtx const&);
 
     // symbol:
-    // ?_validateSchemaAndInitItem@ComponentItem@@QEAA_NAEAVValue@Json@@AEBVSemVersion@@_N2AEBVExperiments@@AEAUReflectionCtx@cereal@@@Z
-    MCAPI bool
-    _validateSchemaAndInitItem(class Json::Value&, class SemVersion const&, bool, bool, class Experiments const&, struct cereal::ReflectionCtx&);
-
-    // symbol:
-    // ?buildNetworkTag@ComponentItem@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEAUReflectionCtx@cereal@@@Z
-    MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx&) const;
+    // ?buildNetworkTag@ComponentItem@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBUReflectionCtx@cereal@@@Z
+    MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const&) const;
 
     // symbol: ?checkComponentDataForContentErrors@ComponentItem@@QEBA_NXZ
     MCAPI bool checkComponentDataForContentErrors() const;
@@ -348,16 +336,16 @@ public:
     // symbol: ?setCanDestroyInCreative@ComponentItem@@QEAAX_N@Z
     MCAPI void setCanDestroyInCreative(bool);
 
-    // symbol: ?initializeJsonUpgrades@ComponentItem@@SAXAEAUReflectionCtx@cereal@@@Z
-    MCAPI static void initializeJsonUpgrades(struct cereal::ReflectionCtx&);
+    // symbol: ?initializeJsonUpgrades@ComponentItem@@SAXAEBUReflectionCtx@cereal@@@Z
+    MCAPI static void initializeJsonUpgrades(struct cereal::ReflectionCtx const&);
 
     // symbol: ?registerItemComponentTypes@ComponentItem@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void registerItemComponentTypes(struct cereal::ReflectionCtx&);
 
     // symbol:
-    // ?upgradeJson@ComponentItem@@SA?AU?$pair@_NVSemVersion@@@std@@AEAUReflectionCtx@cereal@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBVPath@Core@@V?$optional@VSemVersion@@@3@@Z
+    // ?upgradeJson@ComponentItem@@SA?AU?$pair@_NVSemVersion@@@std@@AEBUReflectionCtx@cereal@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBVPath@Core@@V?$optional@VSemVersion@@@3@@Z
     MCAPI static std::pair<bool, class SemVersion>
-    upgradeJson(struct cereal::ReflectionCtx&, std::string&, class Core::Path const&, std::optional<class SemVersion>);
+    upgradeJson(struct cereal::ReflectionCtx const&, std::string&, class Core::Path const&, std::optional<class SemVersion>);
 
     // NOLINTEND
 
@@ -370,29 +358,37 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_buildItemPropertiesNetworkTag@ComponentItem@@AEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEAUReflectionCtx@cereal@@@Z
-    MCAPI std::unique_ptr<class CompoundTag> _buildItemPropertiesNetworkTag(struct cereal::ReflectionCtx&) const;
+    // symbol: ?_addCerealItemsToMap@ComponentItem@@AEAAXXZ
+    MCAPI void _addCerealItemsToMap();
 
     // symbol:
-    // ?_loadComponentsFromNetworkTag@ComponentItem@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCompoundTag@@AEAUReflectionCtx@cereal@@@Z
+    // ?_buildItemPropertiesNetworkTag@ComponentItem@@AEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBUReflectionCtx@cereal@@@Z
+    MCAPI std::unique_ptr<class CompoundTag> _buildItemPropertiesNetworkTag(struct cereal::ReflectionCtx const&) const;
+
+    // symbol:
+    // ?_loadComponentsFromNetworkTag@ComponentItem@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCompoundTag@@AEBUReflectionCtx@cereal@@@Z
     MCAPI void
-    _loadComponentsFromNetworkTag(std::string const&, class CompoundTag const&, struct cereal::ReflectionCtx&);
+    _loadComponentsFromNetworkTag(std::string const&, class CompoundTag const&, struct cereal::ReflectionCtx const&);
 
-    // symbol: ?_loadItemPropertiesNetworkTag@ComponentItem@@AEAAXAEBVCompoundTag@@AEAUReflectionCtx@cereal@@@Z
-    MCAPI void _loadItemPropertiesNetworkTag(class CompoundTag const&, struct cereal::ReflectionCtx&);
+    // symbol: ?_loadItemPropertiesNetworkTag@ComponentItem@@AEAAXAEBVCompoundTag@@AEBUReflectionCtx@cereal@@@Z
+    MCAPI void _loadItemPropertiesNetworkTag(class CompoundTag const&, struct cereal::ReflectionCtx const&);
 
     // symbol: ?_loadItemTagsNetworkTag@ComponentItem@@AEAAXAEBVListTag@@@Z
     MCAPI void _loadItemTagsNetworkTag(class ListTag const& listTag);
 
+    // symbol:
+    // ?_validateSchemaAndInitItem@ComponentItem@@AEAA_NAEAVValue@Json@@AEBVSemVersion@@_N2AEBVExperiments@@AEBUReflectionCtx@cereal@@@Z
+    MCAPI bool
+    _validateSchemaAndInitItem(class Json::Value&, class SemVersion const&, bool, bool, class Experiments const&, struct cereal::ReflectionCtx const&);
+
     // symbol: ?_moveDataToComponentItem@ComponentItem@@CAXAEAV1@AEAUComponentItemData_Legacy@@@Z
     MCAPI static void _moveDataToComponentItem(class ComponentItem&, struct ComponentItemData_Legacy&);
 
-    // symbol: ?getEnTTMetaType@ComponentItem@@CA?AVmeta_type@entt@@AEAUReflectionCtx@cereal@@@Z
-    MCAPI static entt::meta_type getEnTTMetaType(struct cereal::ReflectionCtx&);
+    // symbol: ?getPropCerealDocumentUpgrader@ComponentItem@@CAAEAVCerealDocumentUpgrader@@AEBUReflectionCtx@cereal@@@Z
+    MCAPI static class CerealDocumentUpgrader& getPropCerealDocumentUpgrader(struct cereal::ReflectionCtx const&);
 
-    // symbol: ?getPropCerealDocumentUpgrader@ComponentItem@@CAAEAVCerealDocumentUpgrader@@AEAUReflectionCtx@cereal@@@Z
-    MCAPI static class CerealDocumentUpgrader& getPropCerealDocumentUpgrader(struct cereal::ReflectionCtx&);
+    // symbol: ?initEnTTMetaType@ComponentItem@@CAXAEAUReflectionCtx@cereal@@@Z
+    MCAPI static void initEnTTMetaType(struct cereal::ReflectionCtx&);
 
     // NOLINTEND
 };

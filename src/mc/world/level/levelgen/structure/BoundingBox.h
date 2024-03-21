@@ -20,9 +20,6 @@ public:
     // symbol: ?isValid@BoundingBox@@QEBA_NXZ
     MCAPI bool isValid() const;
 
-    // symbol: ??8BoundingBox@@QEBA_NAEBV0@@Z
-    MCAPI bool operator==(class BoundingBox const&) const;
-
     // symbol: ?orientBox@BoundingBox@@SA?AV1@HHHHHHHHHH@Z
     MCAPI static class BoundingBox orientBox(int, int, int, int, int, int, int, int, int, int);
 

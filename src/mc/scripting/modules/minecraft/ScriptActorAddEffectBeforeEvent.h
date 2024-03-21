@@ -31,10 +31,6 @@ public:
     // symbol: ?copyTo@ScriptActorAddEffectBeforeEvent@ScriptModuleMinecraft@@QEAAXAEAUActorAddEffectEvent@@@Z
     MCAPI void copyTo(struct ActorAddEffectEvent&);
 
-    // symbol: ??4ScriptActorAddEffectBeforeEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent&&);
-
     // symbol: ??1ScriptActorAddEffectBeforeEvent@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptActorAddEffectBeforeEvent();
 

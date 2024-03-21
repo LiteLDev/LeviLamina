@@ -54,11 +54,11 @@ public:
     MCAPI void handleOutput(class CommandOrigin const& origin, class CommandOutput const& output) const;
 
     // symbol:
-    // ?initCoreEnums@MinecraftCommands@@QEAAXVItemRegistryRef@@AEBVIWorldRegistriesProvider@@AEBVActorFactory@@AEBVExperiments@@AEBVBaseGameVersion@@@Z
+    // ?initCoreEnums@MinecraftCommands@@QEAAXVItemRegistryRef@@AEBVLevel@@AEBVActorFactory@@AEBVExperiments@@AEBVBaseGameVersion@@@Z
     MCAPI void initCoreEnums(
         class ItemRegistryRef,
-        class IWorldRegistriesProvider const& registries,
-        class ActorFactory const&             actorFactory,
+        class Level const&        registries,
+        class ActorFactory const& actorFactory,
         class Experiments const&,
         class BaseGameVersion const& worldBaseGameVersion
     );
@@ -91,6 +91,9 @@ public:
     // symbol: ?initEntityEnum@MinecraftCommands@@SAXAEAVCommandRegistry@@AEBVActorFactory@@AEBVExperiments@@@Z
     MCAPI static void
     initEntityEnum(class CommandRegistry& registry, class ActorFactory const& actorFactory, class Experiments const&);
+
+    // symbol: ?initEntityPropertyEnum@MinecraftCommands@@SAXAEAVCommandRegistry@@AEBVLevel@@@Z
+    MCAPI static void initEntityPropertyEnum(class CommandRegistry&, class Level const&);
 
     // symbol: ?initItemEnum@MinecraftCommands@@SAXVItemRegistryRef@@AEAVCommandRegistry@@AEBVBaseGameVersion@@@Z
     MCAPI static void initItemEnum(

@@ -6,6 +6,7 @@
 // clang-format off
 class IRandom;
 namespace br::worldgen { class ConstantHeight; }
+namespace br::worldgen { class UniformHeight; }
 namespace br::worldgen { class WorldGenContext; }
 // clang-format on
 
@@ -28,6 +29,9 @@ public:
 
     // symbol: ??0StructureHeightProvider@worldgen@br@@QEAA@VConstantHeight@12@@Z
     MCAPI explicit StructureHeightProvider(class br::worldgen::ConstantHeight);
+
+    // symbol: ??0StructureHeightProvider@worldgen@br@@QEAA@VUniformHeight@12@@Z
+    MCAPI explicit StructureHeightProvider(class br::worldgen::UniformHeight);
 
     // NOLINTEND
 };

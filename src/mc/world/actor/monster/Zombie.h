@@ -47,13 +47,13 @@ public:
     // vIndex: 10, symbol: ??1Zombie@@UEAA@XZ
     virtual ~Zombie();
 
-    // vIndex: 111, symbol: ?canPickupItem@Zombie@@UEBA_NAEBVItemStack@@@Z
+    // vIndex: 107, symbol: ?canPickupItem@Zombie@@UEBA_NAEBVItemStack@@@Z
     virtual bool canPickupItem(class ItemStack const& item) const;
 
-    // vIndex: 173, symbol: ?checkSpawnRules@Zombie@@UEAA_N_N@Z
+    // vIndex: 167, symbol: ?checkSpawnRules@Zombie@@UEAA_N_N@Z
     virtual bool checkSpawnRules(bool fromSpawner);
 
-    // vIndex: 181, symbol: ?getArmorValue@Zombie@@MEBAHXZ
+    // vIndex: 175, symbol: ?getArmorValue@Zombie@@MEBAHXZ
     virtual int getArmorValue() const;
 
     // symbol: ??0Zombie@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

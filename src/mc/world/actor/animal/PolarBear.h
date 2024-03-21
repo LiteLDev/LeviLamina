@@ -39,10 +39,10 @@ public:
     // vIndex: 10, symbol: __gen_??1PolarBear@@UEAA@XZ
     virtual ~PolarBear() = default;
 
-    // vIndex: 29, symbol: ?normalTick@PolarBear@@UEAAXXZ
+    // vIndex: 28, symbol: ?normalTick@PolarBear@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 98, symbol: ?canFreeze@PolarBear@@UEBA_NXZ
+    // vIndex: 97, symbol: ?canFreeze@PolarBear@@UEBA_NXZ
     virtual bool canFreeze() const;
 
     // symbol: ??0PolarBear@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

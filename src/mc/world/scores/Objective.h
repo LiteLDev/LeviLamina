@@ -2,7 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class Objective {
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
+// clang-format on
+
+class Objective : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
     Objective& operator=(Objective const&);
@@ -11,6 +19,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: __gen_??1Objective@@UEAA@XZ
+    virtual ~Objective() = default;
+
     // symbol:
     // ??0Objective@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVObjectiveCriteria@@@Z
     MCAPI Objective(std::string const& name, class ObjectiveCriteria const& criteria);

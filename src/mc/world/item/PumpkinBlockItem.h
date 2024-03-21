@@ -32,10 +32,10 @@ public:
     // vIndex: 49, symbol: ?getEnchantSlot@PumpkinBlockItem@@UEBAHXZ
     virtual int getEnchantSlot() const;
 
-    // vIndex: 97, symbol: ?getEquipLocation@PumpkinBlockItem@@UEBA?AW4ActorLocation@@XZ
+    // vIndex: 96, symbol: ?getEquipLocation@PumpkinBlockItem@@UEBA?AW4ActorLocation@@XZ
     virtual ::ActorLocation getEquipLocation() const;
 
-    // vIndex: 98, symbol: ?getEquipSound@PumpkinBlockItem@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 97, symbol: ?getEquipSound@PumpkinBlockItem@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
     virtual ::Puv::Legacy::LevelSoundEvent getEquipSound() const;
 
     // symbol: ??0PumpkinBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

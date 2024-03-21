@@ -15,8 +15,8 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ??0PlayerDimensionTransferManager@@QEAA@V?$unique_ptr@VPlayerLimboActorManager@@U?$default_delete@VPlayerLimboActorManager@@@std@@@std@@V?$unique_ptr@VIPlayerDimensionTransferer@@U?$default_delete@VIPlayerDimensionTransferer@@@std@@@2@AEBV?$StackRefResult@VDimensionManager@@@@AEBV?$StackRefResult@VGameplayUserManager@@@@AEBV?$StackRefResult@VEntityRegistry@@@@V?$unique_ptr@VILevelCrashDumpManager@@U?$default_delete@VILevelCrashDumpManager@@@std@@@2@@Z
-    MCAPI PlayerDimensionTransferManager(std::unique_ptr<class PlayerLimboActorManager>, std::unique_ptr<class IPlayerDimensionTransferer>, class StackRefResult<class DimensionManager> const&, class StackRefResult<class GameplayUserManager> const&, class StackRefResult<class EntityRegistry> const&, std::unique_ptr<class ILevelCrashDumpManager>);
+    // ??0PlayerDimensionTransferManager@@QEAA@V?$unique_ptr@VPlayerLimboActorManager@@U?$default_delete@VPlayerLimboActorManager@@@std@@@std@@V?$unique_ptr@VIPlayerDimensionTransferer@@U?$default_delete@VIPlayerDimensionTransferer@@@std@@@2@AEBV?$not_null@V?$StackRefResult@VDimensionManager@@@@@gsl@@AEBV?$not_null@V?$StackRefResult@VGameplayUserManager@@@@@5@AEBV?$not_null@V?$StackRefResult@VEntityRegistry@@@@@5@V?$unique_ptr@VILevelCrashDumpManager@@U?$default_delete@VILevelCrashDumpManager@@@std@@@2@@Z
+    MCAPI PlayerDimensionTransferManager(std::unique_ptr<class PlayerLimboActorManager>, std::unique_ptr<class IPlayerDimensionTransferer>, gsl::not_null<class StackRefResult<class DimensionManager>> const&, gsl::not_null<class StackRefResult<class GameplayUserManager>> const&, gsl::not_null<class StackRefResult<class EntityRegistry>> const&, std::unique_ptr<class ILevelCrashDumpManager>);
 
     // symbol:
     // ?getPlayerDimensionTransferConnector@PlayerDimensionTransferManager@@QEAAAEAVIPlayerDimensionTransferConnector@@XZ

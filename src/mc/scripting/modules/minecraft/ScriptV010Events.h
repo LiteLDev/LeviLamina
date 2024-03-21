@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class Level;
+class Player;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { struct ScriptActorCreateEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorHitBlockAfterEvent; }
@@ -31,6 +32,9 @@ namespace ScriptModuleMinecraft { struct ScriptWeatherChangedAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptWorldInitializeAfterEvent; }
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { class WeakLifetimeScope; }
+struct ChatEvent;
+struct ItemUseEvent;
+struct ItemUseOnEvent;
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -69,22 +73,22 @@ public:
     onActorRemoved(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor> const&, class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptActorRemoveAfterEvent>&);
 
     // symbol:
-    // ?onBeforeChat@ScriptV010Events@ScriptModuleMinecraft@@UEAAXV?$StrongTypedObjectHandle@UScriptChatSendBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@Z
-    MCVAPI void
-    onBeforeChat(class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptChatSendBeforeEvent>
-                     beforeChatEvent);
+    // ?onBeforeChat@ScriptV010Events@ScriptModuleMinecraft@@UEAA?AV?$optional@V?$StrongTypedObjectHandle@UScriptChatSendBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@std@@AEBUChatEvent@@AEBVPlayer@@@Z
+    MCVAPI
+    std::optional<class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptChatSendBeforeEvent>>
+    onBeforeChat(struct ChatEvent const&, class Player const&);
 
     // symbol:
-    // ?onBeforeItemUse@ScriptV010Events@ScriptModuleMinecraft@@UEAAXV?$StrongTypedObjectHandle@UScriptItemUseBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@Z
-    MCVAPI void onBeforeItemUse(
-        class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptItemUseBeforeEvent> itemEvent
-    );
+    // ?onBeforeItemUse@ScriptV010Events@ScriptModuleMinecraft@@UEAA?AV?$optional@V?$StrongTypedObjectHandle@UScriptItemUseBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@std@@AEBVPlayer@@AEBUItemUseEvent@@@Z
+    MCVAPI
+    std::optional<class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptItemUseBeforeEvent>>
+    onBeforeItemUse(class Player const&, struct ItemUseEvent const&);
 
     // symbol:
-    // ?onBeforeItemUseOn@ScriptV010Events@ScriptModuleMinecraft@@UEAAXV?$StrongTypedObjectHandle@UScriptItemUseOnBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@Z
-    MCVAPI void onBeforeItemUseOn(
-        class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent> itemEvent
-    );
+    // ?onBeforeItemUseOn@ScriptV010Events@ScriptModuleMinecraft@@UEAA?AV?$optional@V?$StrongTypedObjectHandle@UScriptItemUseOnBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@std@@AEBVPlayer@@AEBUItemUseOnEvent@@@Z
+    MCVAPI std::optional<
+        class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent>>
+    onBeforeItemUseOn(class Player const&, struct ItemUseOnEvent const&);
 
     // symbol:
     // ?onDataDrivenActorEventSend@ScriptV010Events@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptDataDrivenActorTriggerAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z

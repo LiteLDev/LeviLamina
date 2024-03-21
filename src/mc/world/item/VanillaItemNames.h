@@ -145,6 +145,9 @@ MCAPI extern class HashedString const BlueDye;
 // symbol: ?BoatLegacy@VanillaItemNames@@3VHashedString@@B
 MCAPI extern class HashedString const BoatLegacy;
 
+// symbol: ?BoggedSpawnEgg@VanillaItemNames@@3VHashedString@@B
+MCAPI extern class HashedString const BoggedSpawnEgg;
+
 // symbol: ?Bone@VanillaItemNames@@3VHashedString@@B
 MCAPI extern class HashedString const Bone;
 
@@ -1404,6 +1407,9 @@ MCAPI extern class HashedString const WhiteDye;
 
 // symbol: ?WildArmorTrimSmithingTemplate@VanillaItemNames@@3VHashedString@@B
 MCAPI extern class HashedString const WildArmorTrimSmithingTemplate;
+
+// symbol: ?WindCharge@VanillaItemNames@@3VHashedString@@B
+MCAPI extern class HashedString const WindCharge;
 
 // symbol: ?WitchSpawnEgg@VanillaItemNames@@3VHashedString@@B
 MCAPI extern class HashedString const WitchSpawnEgg;

@@ -10,11 +10,17 @@
 #include "mc/entity/utilities/ActorDamageCause.h"
 #include "mc/entity/utilities/ActorInitializationMethod.h"
 #include "mc/entity/utilities/ActorSelectorType.h"
+#include "mc/enums/AnimationMode.h"
 #include "mc/enums/CauldronLiquidType.h"
 #include "mc/enums/CurrentCmdVersion.h"
 #include "mc/enums/DynamicPropertyDefinePropertyError.h"
 #include "mc/enums/EasingType.h"
+#include "mc/enums/GameType.h"
+#include "mc/enums/HudElement.h"
+#include "mc/enums/HudVisibility.h"
+#include "mc/enums/Mirror.h"
 #include "mc/enums/PistonState.h"
+#include "mc/enums/Rotation.h"
 #include "mc/enums/SignTextSide.h"
 #include "mc/enums/WatchdogTerminateReason.h"
 #include "mc/external/scripting/ClassBindingBuilder.h"
@@ -51,6 +57,7 @@
 #include "mc/world/level/block/utils/CompoundBlockVolumeAction.h"
 #include "mc/world/level/block/utils/CompoundBlockVolumePositionRelativity.h"
 #include "mc/world/level/block/utils/SimpleBlockVolume.h"
+#include "mc/world/level/levelgen/structure/StructureRedstoneSaveMode.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -75,6 +82,7 @@ namespace ScriptModuleMinecraft { class ScriptBiomeType; }
 namespace ScriptModuleMinecraft { class ScriptBiomeTypes; }
 namespace ScriptModuleMinecraft { class ScriptBlock; }
 namespace ScriptModuleMinecraft { class ScriptBlockAreaSize; }
+namespace ScriptModuleMinecraft { class ScriptBlockFilter; }
 namespace ScriptModuleMinecraft { class ScriptBlockInventoryComponent; }
 namespace ScriptModuleMinecraft { class ScriptBlockInventoryComponentContainer; }
 namespace ScriptModuleMinecraft { class ScriptBlockLavaContainerComponent; }
@@ -91,6 +99,7 @@ namespace ScriptModuleMinecraft { class ScriptBlockStateType; }
 namespace ScriptModuleMinecraft { class ScriptBlockStates; }
 namespace ScriptModuleMinecraft { class ScriptBlockType; }
 namespace ScriptModuleMinecraft { class ScriptBlockTypes; }
+namespace ScriptModuleMinecraft { class ScriptBlockVolumeBase; }
 namespace ScriptModuleMinecraft { class ScriptBlockWaterContainerComponent; }
 namespace ScriptModuleMinecraft { class ScriptBoolBlockProperty; }
 namespace ScriptModuleMinecraft { class ScriptBoundingBoxUtils; }
@@ -110,6 +119,7 @@ namespace ScriptModuleMinecraft { class ScriptEffectType; }
 namespace ScriptModuleMinecraft { class ScriptEntityRaycastHit; }
 namespace ScriptModuleMinecraft { class ScriptEquippableComponent; }
 namespace ScriptModuleMinecraft { class ScriptFoodComponent; }
+namespace ScriptModuleMinecraft { class ScriptGameRules; }
 namespace ScriptModuleMinecraft { class ScriptHealableComponent; }
 namespace ScriptModuleMinecraft { class ScriptHealthComponent; }
 namespace ScriptModuleMinecraft { class ScriptIntBlockProperty; }
@@ -125,7 +135,6 @@ namespace ScriptModuleMinecraft { class ScriptItemType; }
 namespace ScriptModuleMinecraft { class ScriptLavaMovementComponent; }
 namespace ScriptModuleMinecraft { class ScriptLeashableComponent; }
 namespace ScriptModuleMinecraft { class ScriptLiquidContainer; }
-namespace ScriptModuleMinecraft { class ScriptMinecraftBlockProperties; }
 namespace ScriptModuleMinecraft { class ScriptMobEffectInstance; }
 namespace ScriptModuleMinecraft { class ScriptMolangVariableMap; }
 namespace ScriptModuleMinecraft { class ScriptMountTamingComponent; }
@@ -161,14 +170,17 @@ namespace ScriptModuleMinecraft { class ScriptScoreboardIdentity; }
 namespace ScriptModuleMinecraft { class ScriptScoreboardObjective; }
 namespace ScriptModuleMinecraft { class ScriptScoreboardObjectiveDisplayOptions; }
 namespace ScriptModuleMinecraft { class ScriptScoreboardScoreInfo; }
-namespace ScriptModuleMinecraft { class ScriptSimpleBlockVolumeUtils; }
+namespace ScriptModuleMinecraft { class ScriptSimpleBlockVolume; }
 namespace ScriptModuleMinecraft { class ScriptStrengthComponent; }
 namespace ScriptModuleMinecraft { class ScriptStringBlockProperty; }
+namespace ScriptModuleMinecraft { class ScriptStructureManager; }
+namespace ScriptModuleMinecraft { class ScriptStructureTemplate; }
 namespace ScriptModuleMinecraft { class ScriptSystem; }
 namespace ScriptModuleMinecraft { class ScriptSystemAfterEvents; }
 namespace ScriptModuleMinecraft { class ScriptSystemBeforeEvents; }
 namespace ScriptModuleMinecraft { class ScriptTameableComponent; }
 namespace ScriptModuleMinecraft { class ScriptTickSignal; }
+namespace ScriptModuleMinecraft { class ScriptTypeFamilyComponent; }
 namespace ScriptModuleMinecraft { class ScriptUnderwaterMovementComponent; }
 namespace ScriptModuleMinecraft { class ScriptV010Events; }
 namespace ScriptModuleMinecraft { class ScriptVector; }
@@ -226,10 +238,10 @@ namespace ScriptModuleMinecraft { struct ScriptEventMessageFilterOptions; }
 namespace ScriptModuleMinecraft { struct ScriptExplosionOptions; }
 namespace ScriptModuleMinecraft { struct ScriptExplosionStartedAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptExplosionStartedBeforeEvent; }
+namespace ScriptModuleMinecraft { struct ScriptGameRuleChangeAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidContainerSlotError; }
+namespace ScriptModuleMinecraft { struct ScriptInvalidStructureError; }
 namespace ScriptModuleMinecraft { struct ScriptItemCompleteUseAfterEvent; }
-namespace ScriptModuleMinecraft { struct ScriptItemDefinitionAfterEvent; }
-namespace ScriptModuleMinecraft { struct ScriptItemDefinitionBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptItemEnchantmentInstance; }
 namespace ScriptModuleMinecraft { struct ScriptItemEnchantmentLevelOutOfBoundsError; }
 namespace ScriptModuleMinecraft { struct ScriptItemEnchantmentType; }
@@ -254,6 +266,8 @@ namespace ScriptModuleMinecraft { struct ScriptPlayAnimationOptions; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerBreakBlockAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerBreakBlockBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerDimensionChangeAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerGameModeChangeAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerGameModeChangeBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerInteractEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerInteractWithBlockAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerInteractWithBlockBeforeEvent; }
@@ -279,6 +293,9 @@ namespace ScriptModuleMinecraft { struct ScriptScoreTargetSelectorOption; }
 namespace ScriptModuleMinecraft { struct ScriptScreenDisplay; }
 namespace ScriptModuleMinecraft { struct ScriptServerMessageAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptSoundOptions; }
+namespace ScriptModuleMinecraft { struct ScriptStructureCreateOptions; }
+namespace ScriptModuleMinecraft { struct ScriptStructurePlaceOptions; }
+namespace ScriptModuleMinecraft { struct ScriptStructureReadOptions; }
 namespace ScriptModuleMinecraft { struct ScriptTargetBlockHitAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptTeleportOptions; }
 namespace ScriptModuleMinecraft { struct ScriptTickEvent; }
@@ -334,6 +351,12 @@ bindFacingEnumV010();
 // ?bindFacingEnumV1@ScriptModuleMinecraft@@YA?AV?$EnumBindingBuilder@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ScriptFacing@ScriptModuleMinecraft@@@Scripting@@XZ
 MCAPI class Scripting::EnumBindingBuilder<std::string, ::ScriptModuleMinecraft::ScriptFacing> bindFacingEnumV1();
 
+// symbol: ?bindHudElements@ScriptModuleMinecraft@@YAXAEAVModuleBindingBuilder@Scripting@@@Z
+MCAPI void bindHudElements(class Scripting::ModuleBindingBuilder&);
+
+// symbol: ?bindHudVisibility@ScriptModuleMinecraft@@YAXAEAVModuleBindingBuilder@Scripting@@@Z
+MCAPI void bindHudVisibility(class Scripting::ModuleBindingBuilder&);
+
 // symbol:
 // ?bindItemLockMode@ScriptModuleMinecraft@@YA?AV?$EnumBindingBuilder@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ItemLockMode@@@Scripting@@XZ
 MCAPI class Scripting::EnumBindingBuilder<std::string, ::ItemLockMode> bindItemLockMode();
@@ -361,10 +384,10 @@ MCAPI class Scripting::
 // ?getScriptScoreboardParticipantName@ScriptModuleMinecraft@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$variant@V?$StrongTypedObjectHandle@VScriptScoreboardIdentity@ScriptModuleMinecraft@@@Scripting@@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@3@@Z
 MCAPI std::string
       getScriptScoreboardParticipantName(std::variant<
-                                   class Scripting::StrongTypedObjectHandle<
-                                       class ScriptModuleMinecraft::ScriptScoreboardIdentity>,
-                                   class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>,
-                                   std::string> const&);
+                                         class Scripting::StrongTypedObjectHandle<
+                                             class ScriptModuleMinecraft::ScriptScoreboardIdentity>,
+                                         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>,
+                                         std::string> const&);
 // NOLINTEND
 
 }; // namespace ScriptModuleMinecraft

@@ -43,16 +43,16 @@ public:
     // vIndex: 10, symbol: __gen_??1ThrownPotion@@UEAA@XZ
     virtual ~ThrownPotion() = default;
 
-    // vIndex: 96, symbol: ?queryEntityRenderer@ThrownPotion@@UEBAAEBVHashedString@@XZ
+    // vIndex: 95, symbol: ?queryEntityRenderer@ThrownPotion@@UEBAAEBVHashedString@@XZ
     virtual class HashedString const& queryEntityRenderer() const;
 
-    // vIndex: 138, symbol: ?setAuxValue@ThrownPotion@@UEAAXH@Z
+    // vIndex: 132, symbol: ?setAuxValue@ThrownPotion@@UEAAXH@Z
     virtual void setAuxValue(int aux);
 
-    // vIndex: 159, symbol: ?readAdditionalSaveData@ThrownPotion@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 153, symbol: ?readAdditionalSaveData@ThrownPotion@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 160, symbol: ?addAdditionalSaveData@ThrownPotion@@UEBAXAEAVCompoundTag@@@Z
+    // vIndex: 154, symbol: ?addAdditionalSaveData@ThrownPotion@@UEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ??0ThrownPotion@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

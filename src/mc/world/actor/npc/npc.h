@@ -45,41 +45,38 @@ public:
     // vIndex: 10, symbol: __gen_??1Npc@@UEAA@XZ
     virtual ~Npc() = default;
 
-    // vIndex: 23, symbol: ?breaksFallingBlocks@Npc@@UEBA_NXZ
-    virtual bool breaksFallingBlocks() const;
-
-    // vIndex: 38, symbol: ?canShowNameTag@Npc@@UEBA_NXZ
+    // vIndex: 37, symbol: ?canShowNameTag@Npc@@UEBA_NXZ
     virtual bool canShowNameTag() const;
 
-    // vIndex: 40, symbol: ?getNameTagTextColor@Npc@@UEBA?AVColor@mce@@XZ
+    // vIndex: 39, symbol: ?getNameTagTextColor@Npc@@UEBA?AVColor@mce@@XZ
     virtual class mce::Color getNameTagTextColor() const;
 
-    // vIndex: 57, symbol: ?isTargetable@Npc@@UEBA_NXZ
+    // vIndex: 56, symbol: ?isTargetable@Npc@@UEBA_NXZ
     virtual bool isTargetable() const;
 
-    // vIndex: 112, symbol: ?canBePulledIntoVehicle@Npc@@UEBA_NXZ
+    // vIndex: 108, symbol: ?canBePulledIntoVehicle@Npc@@UEBA_NXZ
     virtual bool canBePulledIntoVehicle() const;
 
-    // vIndex: 118, symbol:
+    // vIndex: 114, symbol:
     // ?buildDebugInfo@Npc@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void buildDebugInfo(std::string& out) const;
 
-    // vIndex: 121, symbol: ?canBeAffected@Npc@@UEBA_NI@Z
+    // vIndex: 117, symbol: ?canBeAffected@Npc@@UEBA_NI@Z
     virtual bool canBeAffected(uint) const;
 
-    // vIndex: 143, symbol: ?die@Npc@@UEAAXAEBVActorDamageSource@@@Z
+    // vIndex: 137, symbol: ?die@Npc@@UEAAXAEBVActorDamageSource@@@Z
     virtual void die(class ActorDamageSource const&);
 
-    // vIndex: 158, symbol: ?_hurt@Npc@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 152, symbol: ?_hurt@Npc@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float, bool, bool);
 
-    // vIndex: 163, symbol: ?knockback@Npc@@UEAAXPEAVActor@@HMMMMM@Z
+    // vIndex: 157, symbol: ?knockback@Npc@@UEAAXPEAVActor@@HMMMMM@Z
     virtual void knockback(class Actor*, int, float, float, float, float, float);
 
-    // vIndex: 199, symbol: ?canExistWhenDisallowMob@Npc@@UEBA_NXZ
+    // vIndex: 192, symbol: ?canExistWhenDisallowMob@Npc@@UEBA_NXZ
     virtual bool canExistWhenDisallowMob() const;
 
-    // vIndex: 201, symbol: ?newServerAiStep@Npc@@UEAAXXZ
+    // vIndex: 194, symbol: ?newServerAiStep@Npc@@UEAAXXZ
     virtual void newServerAiStep();
 
     // symbol: ??0Npc@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

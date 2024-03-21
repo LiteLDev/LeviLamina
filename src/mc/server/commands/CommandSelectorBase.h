@@ -42,6 +42,11 @@ public:
     // ?addHasPermissionFilters@CommandSelectorBase@@QEAAXAEBV?$vector@UHasPermissionFilter@@V?$allocator@UHasPermissionFilter@@@std@@@std@@@Z
     MCAPI void addHasPermissionFilters(std::vector<struct HasPermissionFilter> const& filters);
 
+    // symbol:
+    // ?addHasPropertyFilter@CommandSelectorBase@@QEAAXAEBVHashedString@@_NAEBV?$optional@V?$variant@VCommandRationalRange@@_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@std@@@Z
+    MCAPI void
+    addHasPropertyFilter(class HashedString const&, bool, std::optional<std::variant<class CommandRationalRange, bool, std::string>> const&);
+
     // symbol: ?addLevelFilter@CommandSelectorBase@@QEAAXAEBU?$pair@HH@std@@@Z
     MCAPI void addLevelFilter(std::pair<int, int> const& level);
 
@@ -99,6 +104,9 @@ public:
     // symbol:
     // ?setExplicitIdSelector@CommandSelectorBase@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void setExplicitIdSelector(std::string const& playerName);
+
+    // symbol: ?setForceDimensionFiltering@CommandSelectorBase@@QEAAX_N@Z
+    MCAPI void setForceDimensionFiltering(bool);
 
     // symbol: ?setIncludeDeadPlayers@CommandSelectorBase@@QEAAX_N@Z
     MCAPI void setIncludeDeadPlayers(bool includeDead);

@@ -33,10 +33,10 @@ public:
     // vIndex: 31, symbol: ?isCraftingBlock@SmithingTableBlock@@UEBA_NXZ
     virtual bool isCraftingBlock() const;
 
-    // vIndex: 152, symbol: ?isInteractiveBlock@SmithingTableBlock@@UEBA_NXZ
+    // vIndex: 149, symbol: ?isInteractiveBlock@SmithingTableBlock@@UEBA_NXZ
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 154, symbol: ?use@SmithingTableBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 151, symbol: ?use@SmithingTableBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // symbol:

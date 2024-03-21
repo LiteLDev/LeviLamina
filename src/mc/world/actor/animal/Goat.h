@@ -42,25 +42,25 @@ public:
     // vIndex: 10, symbol: __gen_??1Goat@@UEAA@XZ
     virtual ~Goat() = default;
 
-    // vIndex: 74, symbol: ?getAmbientSound@Goat@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 73, symbol: ?getAmbientSound@Goat@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
     virtual ::Puv::Legacy::LevelSoundEvent getAmbientSound() const;
 
-    // vIndex: 80, symbol: ?handleEntityEvent@Goat@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 79, symbol: ?handleEntityEvent@Goat@@UEAAXW4ActorEvent@@H@Z
     virtual void handleEntityEvent(::ActorEvent id, int data);
 
-    // vIndex: 156, symbol: ?updateEntitySpecificMolangVariables@Goat@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 150, symbol: ?updateEntitySpecificMolangVariables@Goat@@UEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // vIndex: 159, symbol: ?readAdditionalSaveData@Goat@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 153, symbol: ?readAdditionalSaveData@Goat@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 160, symbol: ?addAdditionalSaveData@Goat@@UEBAXAEAVCompoundTag@@@Z
+    // vIndex: 154, symbol: ?addAdditionalSaveData@Goat@@UEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 166, symbol: ?getHurtSound@Goat@@UEAA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 160, symbol: ?getHurtSound@Goat@@UEAA?AW4LevelSoundEvent@Legacy@Puv@@XZ
     virtual ::Puv::Legacy::LevelSoundEvent getHurtSound();
 
-    // vIndex: 167, symbol: ?getDeathSound@Goat@@UEAA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 161, symbol: ?getDeathSound@Goat@@UEAA?AW4LevelSoundEvent@Legacy@Puv@@XZ
     virtual ::Puv::Legacy::LevelSoundEvent getDeathSound();
 
     // symbol: ??0Goat@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

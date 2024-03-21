@@ -9,35 +9,6 @@
 
 class UpdateAttributesPacket : public ::Packet {
 public:
-    // UpdateAttributesPacket inner types declare
-    // clang-format off
-    struct AttributeData;
-    // clang-format on
-
-    // UpdateAttributesPacket inner types define
-    struct AttributeData {
-    public:
-        // prevent constructor by default
-        AttributeData& operator=(AttributeData const&);
-        AttributeData(AttributeData const&);
-        AttributeData();
-
-    public:
-        // NOLINTBEGIN
-        // symbol: ??0AttributeData@UpdateAttributesPacket@@QEAA@$$QEAU01@@Z
-        MCAPI AttributeData(struct UpdateAttributesPacket::AttributeData&&);
-
-        // symbol:
-        // ?read@AttributeData@UpdateAttributesPacket@@QEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-        MCAPI class Bedrock::Result<void> read(class ReadOnlyBinaryStream& stream);
-
-        // symbol: ??1AttributeData@UpdateAttributesPacket@@QEAA@XZ
-        MCAPI ~AttributeData();
-
-        // NOLINTEND
-    };
-
-public:
     // prevent constructor by default
     UpdateAttributesPacket& operator=(UpdateAttributesPacket const&);
     UpdateAttributesPacket(UpdateAttributesPacket const&);
@@ -54,10 +25,10 @@ public:
     // ?getName@UpdateAttributesPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getName() const;
 
-    // vIndex: 3, symbol: ?write@UpdateAttributesPacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4, symbol: ?write@UpdateAttributesPacket@@UEBAXAEAVBinaryStream@@@Z
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 7, symbol:
+    // vIndex: 8, symbol:
     // ?_read@UpdateAttributesPacket@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 

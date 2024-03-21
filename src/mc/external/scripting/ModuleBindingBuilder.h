@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/external/scripting/EnumBinding.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { class Release; }
@@ -85,9 +88,9 @@ public:
     _filterEnumBindings(std::vector<struct Scripting::EnumBinding> const&, bool, std::vector<std::string> const&) const;
 
     // symbol:
-    // ?_filterEnumValueMap@ModuleBindingBuilder@Scripting@@AEBA?AV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@Vmeta_any@entt@@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@Vmeta_any@entt@@@std@@@2@@std@@AEBV?$vector@UConstantFactory@Scripting@@V?$allocator@UConstantFactory@Scripting@@@std@@@4@AEBV34@@Z
-    MCAPI std::vector<std::pair<std::string, entt::meta_any>>
-    _filterEnumValueMap(std::vector<struct Scripting::ConstantFactory> const&, std::vector<std::pair<std::string, entt::meta_any>> const&)
+    // ?_filterEnumValueMap@ModuleBindingBuilder@Scripting@@AEBA?AV?$vector@UEnumValue@EnumBinding@Scripting@@V?$allocator@UEnumValue@EnumBinding@Scripting@@@std@@@std@@AEBV?$vector@UConstantFactory@Scripting@@V?$allocator@UConstantFactory@Scripting@@@std@@@4@AEBV34@@Z
+    MCAPI std::vector<struct Scripting::EnumBinding::EnumValue>
+    _filterEnumValueMap(std::vector<struct Scripting::ConstantFactory> const&, std::vector<struct Scripting::EnumBinding::EnumValue> const&)
         const;
 
     // symbol:

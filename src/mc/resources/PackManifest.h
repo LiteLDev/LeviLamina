@@ -122,6 +122,9 @@ public:
     // symbol: ?hasPlugins@PackManifest@@QEBA_NXZ
     MCAPI bool hasPlugins() const;
 
+    // symbol: ?isAddon@PackManifest@@QEBA_NXZ
+    MCAPI bool isAddon() const;
+
     // symbol: ?isPlatformLocked@PackManifest@@QEBA_NXZ
     MCAPI bool isPlatformLocked() const;
 

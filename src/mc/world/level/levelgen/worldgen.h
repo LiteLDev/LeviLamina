@@ -11,6 +11,7 @@
 #include "mc/world/level/levelgen/RandomSpreadPlacement.h"
 #include "mc/world/level/levelgen/Type.h"
 #include "mc/world/level/levelgen/adjustment/Type.h"
+#include "mc/world/level/levelgen/structure/PoolAliasBinding.h"
 #include "mc/world/level/levelgen/structure/StructureFeatureType.h"
 
 // auto generated forward declare list
@@ -28,6 +29,7 @@ class IPositionalRandomFactory;
 class IRandom;
 class JigsawBlockInfo;
 class JigsawStructureRegistry;
+class PoolAliasBinding;
 class Random;
 class SimpleRandom;
 class StructureManager;
@@ -44,6 +46,7 @@ namespace br::worldgen { class StructureHeightProvider; }
 namespace br::worldgen { class StructureInstance; }
 namespace br::worldgen { class StructureRegistry; }
 namespace br::worldgen { class StructureSetRegistry; }
+namespace br::worldgen { class UniformHeight; }
 namespace br::worldgen { class VerticalAnchor; }
 namespace br::worldgen { class WorldGenContext; }
 namespace br::worldgen { struct ChunkGeneratorStructureState; }

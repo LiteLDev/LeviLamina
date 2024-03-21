@@ -30,10 +30,10 @@ public:
     // vIndex: 0, symbol: __gen_??1RotatedPillarInfestedBlock@@UEAA@XZ
     virtual ~RotatedPillarInfestedBlock() = default;
 
-    // vIndex: 95, symbol:
-    // ?spawnResources@RotatedPillarInfestedBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z
+    // vIndex: 161, symbol:
+    // ?_spawnAfterBreak@RotatedPillarInfestedBlock@@EEBAXAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@AEBUResourceDropsContext@@@Z
     virtual void
-    spawnResources(class BlockSource& region, class BlockPos const& pos, class Block const&, class Randomize&, struct ResourceDropsContext const&)
+    _spawnAfterBreak(class BlockSource&, class Block const&, class BlockPos const&, struct ResourceDropsContext const&)
         const;
 
     // symbol:

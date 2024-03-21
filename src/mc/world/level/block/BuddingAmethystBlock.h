@@ -33,13 +33,10 @@ public:
     // vIndex: 48, symbol: ?isSilentWhenJumpingOff@BuddingAmethystBlock@@UEBA_NXZ
     virtual bool isSilentWhenJumpingOff() const;
 
-    // vIndex: 96, symbol: ?asItemInstance@BuddingAmethystBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 95, symbol: ?asItemInstance@BuddingAmethystBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 138, symbol: ?canBeSilkTouched@BuddingAmethystBlock@@UEBA_NXZ
-    virtual bool canBeSilkTouched() const;
-
-    // vIndex: 151, symbol: ?randomTick@BuddingAmethystBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148, symbol: ?randomTick@BuddingAmethystBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // symbol:

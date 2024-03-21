@@ -7,12 +7,12 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace cereal { class Constraint; }
 namespace cereal { class SerializerContext; }
 namespace cereal { class SerializerEnumMapping; }
 namespace cereal { struct SchemaDescription; }
 namespace cereal { struct SchemaReader; }
 namespace cereal { struct SchemaWriter; }
-namespace cereal { struct SerializerTraits; }
 namespace cereal::internal { class BasicSchema; }
 // clang-format on
 
@@ -28,9 +28,9 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol:
-    // ?doLoad@UndefinedSchema@internal@cereal@@EEBAXAEAUSchemaReader@3@AEAVmeta_any@entt@@AEBUSerializerTraits@3@AEBV56@AEAVSerializerContext@3@@Z
+    // ?doLoad@UndefinedSchema@internal@cereal@@EEBAXAEAUSchemaReader@3@AEAVmeta_any@entt@@AEBV56@AEAVSerializerContext@3@@Z
     virtual void
-    doLoad(struct cereal::SchemaReader&, entt::meta_any&, struct cereal::SerializerTraits const&, entt::meta_any const&, class cereal::SerializerContext&)
+    doLoad(struct cereal::SchemaReader&, entt::meta_any&, entt::meta_any const&, class cereal::SerializerContext&)
         const;
 
     // vIndex: 3, symbol: ?makeDescription@UndefinedSchema@internal@cereal@@EEBA?AUSchemaDescription@3@XZ

@@ -33,14 +33,8 @@ public:
     // vIndex: 47, symbol: ?canBeOriginalSurface@DeepslateBlock@@UEBA_NXZ
     virtual bool canBeOriginalSurface() const;
 
-    // vIndex: 141, symbol: ?tryGetInfested@DeepslateBlock@@UEBAPEBVBlock@@AEBV2@@Z
+    // vIndex: 139, symbol: ?tryGetInfested@DeepslateBlock@@UEBAPEBVBlock@@AEBV2@@Z
     virtual class Block const* tryGetInfested(class Block const& block) const;
-
-    // vIndex: 163, symbol: ?getResourceItem@DeepslateBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
-
-    // vIndex: 165, symbol: ?getSilkTouchItemInstance@DeepslateBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-    virtual class ItemInstance getSilkTouchItemInstance(class Block const&) const;
 
     // symbol: ??0DeepslateBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI DeepslateBlock(std::string const& nameId, int id);

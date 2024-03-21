@@ -20,11 +20,6 @@ MCAPI struct TickingSystemWithInfo createStoreNearbyMobsOnMoveRequestSystem();
 MCAPI void flagNearbyMobsForServerMovementCatchup(class StrictEntityContext const&, struct StateVectorComponent const&, struct ServerCatchupMovementTrackerComponent const&, class ViewT<class StrictEntityContext, struct DimensionTypeComponent const, struct AABBShapeComponent const> const&, class ViewT<class StrictEntityContext, struct IsSolidMobComponent const, struct AABBShapeComponent const> const&, class EntityModifier<struct IsSolidMobNearbyComponent>, struct LocalSpatialEntityFetcherFactoryComponent const&, class LocalSpatialEntityFetcher&, std::vector<class StrictEntityContext>&);
 
 // symbol:
-// ?flagNearbyMobsForServerMovementCatchupSystem@SolidMobSystem@@YAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@$$CBUStateVectorComponent@@$$CBUServerCatchupMovementTrackerComponent@@@@AEBV?$ViewT@VStrictEntityContext@@$$CBUDimensionTypeComponent@@$$CBUAABBShapeComponent@@@@AEBV?$ViewT@VStrictEntityContext@@$$CBUIsSolidMobComponent@@$$CBUAABBShapeComponent@@@@V?$OptionalGlobal@$$CBULocalSpatialEntityFetcherFactoryComponent@@@@V?$EntityModifier@UIsSolidMobNearbyComponent@@@@@Z
-MCAPI void
-flagNearbyMobsForServerMovementCatchupSystem(class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>, struct StateVectorComponent const, struct ServerCatchupMovementTrackerComponent const>, class ViewT<class StrictEntityContext, struct DimensionTypeComponent const, struct AABBShapeComponent const> const&, class ViewT<class StrictEntityContext, struct IsSolidMobComponent const, struct AABBShapeComponent const> const&, class OptionalGlobal<struct LocalSpatialEntityFetcherFactoryComponent const>, class EntityModifier<struct IsSolidMobNearbyComponent>);
-
-// symbol:
 // ?flagNearbyMobsFromSolidSystem@SolidMobSystem@@YAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@$$CBUDimensionTypeComponent@@$$CBUIsSolidMobComponent@@$$CBUAABBShapeComponent@@@@AEBV?$ViewT@VStrictEntityContext@@U?$Include@VActorOwnerComponent@@@@U?$Exclude@V?$FlagComponent@UActorFirstTick@@@@@@$$CBUAABBShapeComponent@@@@V?$OptionalGlobal@$$CBULocalSpatialEntityFetcherFactoryComponent@@@@V?$EntityModifier@UIsSolidMobNearbyComponent@@@@@Z
 MCAPI void flagNearbyMobsFromSolidSystem(class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>, struct DimensionTypeComponent const, struct IsSolidMobComponent const, struct AABBShapeComponent const>, class ViewT<class StrictEntityContext, struct Include<class ActorOwnerComponent>, struct Exclude<class FlagComponent<struct ActorFirstTick>>, struct AABBShapeComponent const> const&, class OptionalGlobal<struct LocalSpatialEntityFetcherFactoryComponent const>, class EntityModifier<struct IsSolidMobNearbyComponent>);
 
@@ -34,11 +29,6 @@ MCAPI void flagSolidMobsFromNearbyEntity(class StrictEntityContext const&, struc
 
 // symbol: ?registerSystems@SolidMobSystem@@YAXAEAVEntitySystems@@_N1@Z
 MCAPI void registerSystems(class EntitySystems&, bool, bool);
-
-// symbol:
-// ?storeNearbyMobsOnMoveRequest@SolidMobSystem@@YAXAEBUIsSolidMobNearbyComponent@@AEAUDepenetrationComponent@@AEAUMoveRequestComponent@@@Z
-MCAPI void
-storeNearbyMobsOnMoveRequest(struct IsSolidMobNearbyComponent const&, struct DepenetrationComponent&, struct MoveRequestComponent&);
 // NOLINTEND
 
 }; // namespace SolidMobSystem

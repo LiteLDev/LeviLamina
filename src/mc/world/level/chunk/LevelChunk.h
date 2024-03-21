@@ -145,9 +145,6 @@ public:
     // symbol: ?deserializeFinalization@LevelChunk@@QEAAXAEAVIDataInput@@@Z
     MCAPI void deserializeFinalization(class IDataInput& stream);
 
-    // symbol: ?deserializeHardcodedSpawners@LevelChunk@@QEAAXAEAVIDataInput@@@Z
-    MCAPI void deserializeHardcodedSpawners(class IDataInput& stream);
-
     // symbol: ?deserializeKey@LevelChunk@@QEAA_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@0@Z
     MCAPI bool deserializeKey(std::string_view key, std::string_view value);
 
@@ -353,6 +350,9 @@ public:
     // symbol: ?getSubChunk@LevelChunk@@QEBAPEBUSubChunk@@F@Z
     MCAPI struct SubChunk const* getSubChunk(short) const;
 
+    // symbol: ?getSubChunkAbsoluteIndexFromSubChunkIndex@LevelChunk@@QEBAF_K@Z
+    MCAPI short getSubChunkAbsoluteIndexFromSubChunkIndex(uint64) const;
+
     // symbol: ?getSurfaceBiome@LevelChunk@@QEBAAEBVBiome@@VChunkBlockPos@@@Z
     MCAPI class Biome const& getSurfaceBiome(class ChunkBlockPos pos) const;
 
@@ -470,15 +470,6 @@ public:
 
     // symbol: ?removeHardcodedSpawningArea@LevelChunk@@QEAAXW4HardcodedSpawnAreaType@@@Z
     MCAPI void removeHardcodedSpawningArea(::HardcodedSpawnAreaType type);
-
-    // symbol:
-    // ?runtimeRelightSubchunk@LevelChunk@@QEAAXAEAVBlockSource@@_KAEBV?$vector@USubChunkLightUpdate@@V?$allocator@USubChunkLightUpdate@@@std@@@std@@AEAV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@4@@Z
-    MCAPI void runtimeRelightSubchunk(
-        class BlockSource&                             region,
-        uint64                                         subChunkIdx,
-        std::vector<struct SubChunkLightUpdate> const& alteredBlockList,
-        std::vector<class BlockPos>&                   brightnessChangedList
-    );
 
     // symbol: ?serialize2DMaps@LevelChunk@@QEBAXAEAVIDataOutput@@@Z
     MCAPI void serialize2DMaps(class IDataOutput& stream) const;

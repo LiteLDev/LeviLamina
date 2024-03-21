@@ -16,9 +16,9 @@ MCAPI struct TickingSystemWithInfo createPassengerSystem();
 MCAPI struct TickingSystemWithInfo createVehicleSystem();
 
 // symbol:
-// ?doPassengerTick@BoatPaddleInputSystem@@YAXU?$type_list@U?$Include@UPlayerInputRequestComponent@@@@@entt@@AEBVStrictEntityContext@@AEBUMoveInputComponent@@AEBUPlayerInputModeComponent@@AEBUPassengerComponent@@AEBUPlayerPaddleComponent@@AEBV?$Optional@$$CBUPlayerInteractionModelComponent@@@@AEBV?$ViewT@VStrictEntityContext@@$$CBUActorRotationComponent@@$$CBUBoatPaddleComponent@@UVehicleInputIntentComponent@@@@@Z
+// ?doPassengerTick@BoatPaddleInputSystem@@YAXU?$type_list@U?$Include@UPlayerInputRequestComponent@@@@@entt@@AEBVStrictEntityContext@@AEBUMoveInputComponent@@AEBUPlayerInputModeComponent@@AEBUPassengerComponent@@AEBV?$Optional@$$CBUPlayerInteractionModelComponent@@@@AEBV?$ViewT@VStrictEntityContext@@$$CBUActorRotationComponent@@$$CBUBoatPaddleComponent@@UVehicleInputIntentComponent@@@@@Z
 MCAPI void
-doPassengerTick(entt::type_list<struct Include<struct PlayerInputRequestComponent>>, class StrictEntityContext const&, struct MoveInputComponent const&, struct PlayerInputModeComponent const&, struct PassengerComponent const&, struct PlayerPaddleComponent const&, class Optional<struct PlayerInteractionModelComponent const> const&, class ViewT<class StrictEntityContext, struct ActorRotationComponent const, struct BoatPaddleComponent const, struct VehicleInputIntentComponent> const&);
+doPassengerTick(entt::type_list<struct Include<struct PlayerInputRequestComponent>>, class StrictEntityContext const&, struct MoveInputComponent const&, struct PlayerInputModeComponent const&, struct PassengerComponent const&, class Optional<struct PlayerInteractionModelComponent const> const&, class ViewT<class StrictEntityContext, struct ActorRotationComponent const, struct BoatPaddleComponent const, struct VehicleInputIntentComponent> const&);
 // NOLINTEND
 
 }; // namespace BoatPaddleInputSystem

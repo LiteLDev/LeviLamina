@@ -8,9 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class Biome;
 class BlockPos;
 class BlockVolume;
-class EntityContext;
 class ISurfaceBuilder;
 class Random;
 struct MesaSurfaceBlocks;
@@ -31,8 +31,8 @@ public:
     // vIndex: 0, symbol: __gen_??1MesaSurfaceBuilder@VanillaSurfaceBuilders@@UEAA@XZ
     virtual ~MesaSurfaceBuilder() = default;
 
-    // vIndex: 1, symbol: ?init@MesaSurfaceBuilder@VanillaSurfaceBuilders@@UEAAXAEAVEntityContext@@I@Z
-    virtual void init(class EntityContext& entity, uint levelSeed);
+    // vIndex: 1, symbol: ?init@MesaSurfaceBuilder@VanillaSurfaceBuilders@@UEAAXAEAVBiome@@I@Z
+    virtual void init(class Biome&, uint);
 
     // vIndex: 2, symbol:
     // ?buildSurfaceAt@MesaSurfaceBuilder@VanillaSurfaceBuilders@@UEBAXAEBUBuildParameters@ISurfaceBuilder@@@Z

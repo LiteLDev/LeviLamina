@@ -109,9 +109,8 @@ public:
     // symbol: ?_updateStateMachine@TrialSpawner@@AEAAXAEAVBlockSource@@@Z
     MCAPI void _updateStateMachine(class BlockSource&);
 
-    // symbol:
-    // ?_ejectResultItems@TrialSpawner@@CAXAEAVBlockSource@@VBlockPos@@AEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@H@Z
-    MCAPI static void _ejectResultItems(class BlockSource&, class BlockPos, std::vector<class ItemStack> const&, int);
+    // symbol: ?_ejectItem@TrialSpawner@@CAXAEAVBlockSource@@AEBVVec3@@AEBVItemStack@@@Z
+    MCAPI static void _ejectItem(class BlockSource&, class Vec3 const&, class ItemStack const&);
 
     // symbol:
     // ?_getRandomLootTableItems@TrialSpawner@@CA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEAVLevel@@V?$AutomaticID@VDimension@@H@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z

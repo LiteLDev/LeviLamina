@@ -7,7 +7,6 @@
 class BlockPos;
 class IPositionalRandomFactory;
 class IRandom;
-class SimpleRandom;
 struct Seed128Bit;
 // clang-format on
 
@@ -69,9 +68,6 @@ public:
 
     // symbol: ??0WorldGenRandom@worldgen@br@@QEAA@XZ
     MCAPI WorldGenRandom();
-
-    // symbol: ??0WorldGenRandom@worldgen@br@@QEAA@VSimpleRandom@@@Z
-    MCAPI explicit WorldGenRandom(class SimpleRandom);
 
     // symbol: ??0WorldGenRandom@worldgen@br@@QEAA@AEBU012@@Z
     MCAPI WorldGenRandom(struct br::worldgen::WorldGenRandom const&);

@@ -17,7 +17,6 @@ public:
     // prevent constructor by default
     BlockRandomTickingDescription& operator=(BlockRandomTickingDescription const&);
     BlockRandomTickingDescription(BlockRandomTickingDescription const&);
-    BlockRandomTickingDescription();
 
 public:
     // NOLINTBEGIN
@@ -30,6 +29,9 @@ public:
 
     // vIndex: 3, symbol: ?initializeComponent@BlockRandomTickingDescription@@UEBAXAEAVBlockComponentStorage@@@Z
     virtual void initializeComponent(class BlockComponentStorage&) const;
+
+    // symbol: ??0BlockRandomTickingDescription@@QEAA@XZ
+    MCAPI BlockRandomTickingDescription();
 
     // symbol: ?bindType@BlockRandomTickingDescription@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);

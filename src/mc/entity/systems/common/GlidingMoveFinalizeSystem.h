@@ -3,7 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/wrapper/Include.h"
+#include "mc/common/wrapper/ViewT.h"
 #include "mc/entity/EntityModifier.h"
+#include "mc/world/components/FlagComponent.h"
 
 class GlidingMoveFinalizeSystem {
 public:
@@ -34,6 +37,17 @@ public:
 
     // symbol: ?createCollisionDamageHurtSystem@GlidingMoveFinalizeSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createCollisionDamageHurtSystem();
+
+    // symbol:
+    // ?tickCollisionDamageHurt@GlidingMoveFinalizeSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UMobFlag@@@@@@VActorOwnerComponent@@$$CBUGlidingCollisionDamageComponent@@@@V?$EntityModifier@UGlidingCollisionDamageComponent@@@@@Z
+    MCAPI static void tickCollisionDamageHurt(
+        class ViewT<
+            class StrictEntityContext,
+            struct Include<class FlagComponent<struct MobFlag>>,
+            class ActorOwnerComponent,
+            struct GlidingCollisionDamageComponent const>            view,
+        class EntityModifier<struct GlidingCollisionDamageComponent> modifier
+    );
 
     // NOLINTEND
 };

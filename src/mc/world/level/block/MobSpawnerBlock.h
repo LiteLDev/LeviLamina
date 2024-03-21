@@ -44,7 +44,7 @@ public:
     // vIndex: 56, symbol: ?canContainLiquid@MobSpawnerBlock@@UEBA_NXZ
     virtual bool canContainLiquid() const;
 
-    // vIndex: 152, symbol: ?isInteractiveBlock@MobSpawnerBlock@@UEBA_NXZ
+    // vIndex: 149, symbol: ?isInteractiveBlock@MobSpawnerBlock@@UEBA_NXZ
     virtual bool isInteractiveBlock() const;
 
     // symbol: ??0MobSpawnerBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

@@ -30,7 +30,7 @@ public:
     // vIndex: 0, symbol: __gen_??1CobblestoneBlock@@UEAA@XZ
     virtual ~CobblestoneBlock() = default;
 
-    // vIndex: 141, symbol: ?tryGetInfested@CobblestoneBlock@@UEBAPEBVBlock@@AEBV2@@Z
+    // vIndex: 139, symbol: ?tryGetInfested@CobblestoneBlock@@UEBAPEBVBlock@@AEBV2@@Z
     virtual class Block const* tryGetInfested(class Block const& block) const;
 
     // symbol:

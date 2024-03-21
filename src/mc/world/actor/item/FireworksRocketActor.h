@@ -39,22 +39,22 @@ public:
     // vIndex: 10, symbol: __gen_??1FireworksRocketActor@@UEAA@XZ
     virtual ~FireworksRocketActor() = default;
 
-    // vIndex: 27, symbol: ?lerpMotion@FireworksRocketActor@@UEAAXAEBVVec3@@@Z
+    // vIndex: 26, symbol: ?lerpMotion@FireworksRocketActor@@UEAAXAEBVVec3@@@Z
     virtual void lerpMotion(class Vec3 const& delta);
 
-    // vIndex: 41, symbol: ?getShadowRadius@FireworksRocketActor@@UEBAMXZ
+    // vIndex: 40, symbol: ?getShadowRadius@FireworksRocketActor@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 80, symbol: ?handleEntityEvent@FireworksRocketActor@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 79, symbol: ?handleEntityEvent@FireworksRocketActor@@UEAAXW4ActorEvent@@H@Z
     virtual void handleEntityEvent(::ActorEvent eventId, int data);
 
-    // vIndex: 109, symbol: ?onSynchedDataUpdate@FireworksRocketActor@@UEAAXH@Z
+    // vIndex: 105, symbol: ?onSynchedDataUpdate@FireworksRocketActor@@UEAAXH@Z
     virtual void onSynchedDataUpdate(int dataId);
 
-    // vIndex: 159, symbol: ?readAdditionalSaveData@FireworksRocketActor@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 153, symbol: ?readAdditionalSaveData@FireworksRocketActor@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 160, symbol: ?addAdditionalSaveData@FireworksRocketActor@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 154, symbol: ?addAdditionalSaveData@FireworksRocketActor@@MEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol:

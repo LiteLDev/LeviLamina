@@ -15,6 +15,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace BlockEvents { struct BlockFallOnEvent; }
 namespace mce { class Color; }
 // clang-format on
 
@@ -38,18 +39,20 @@ public:
     // vIndex: 74, symbol: ?isBounceBlock@SlimeBlock@@UEBA_NXZ
     virtual bool isBounceBlock() const;
 
-    // vIndex: 146, symbol: ?onStandOn@SlimeBlock@@UEBAXAEAVEntityContext@@AEBVBlockPos@@@Z
+    // vIndex: 141, symbol: ?_addHardCodedBlockComponents@SlimeBlock@@MEAAXAEBVExperiments@@@Z
+    virtual void _addHardCodedBlockComponents(class Experiments const&);
+
+    // vIndex: 144, symbol: ?onStandOn@SlimeBlock@@UEBAXAEAVEntityContext@@AEBVBlockPos@@@Z
     virtual void onStandOn(class EntityContext& entity, class BlockPos const& pos) const;
 
-    // vIndex: 148, symbol: ?onFallOn@SlimeBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@M@Z
-    virtual void
-    onFallOn(class BlockSource& region, class BlockPos const& pos, class Actor& entity, float fallDistance) const;
-
-    // vIndex: 159, symbol: ?getExtraRenderLayers@SlimeBlock@@UEBAHXZ
+    // vIndex: 156, symbol: ?getExtraRenderLayers@SlimeBlock@@UEBAHXZ
     virtual int getExtraRenderLayers() const;
 
     // symbol: ??0SlimeBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI SlimeBlock(std::string const& nameId, int id, class Material const& material);
+
+    // symbol: ?onFallOn@SlimeBlock@@QEBAXAEAUBlockFallOnEvent@BlockEvents@@@Z
+    MCAPI void onFallOn(struct BlockEvents::BlockFallOnEvent&) const;
 
     // NOLINTEND
 };

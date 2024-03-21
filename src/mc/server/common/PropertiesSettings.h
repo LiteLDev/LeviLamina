@@ -149,6 +149,9 @@ public:
     // symbol: ?getServerPortv6@PropertiesSettings@@QEBAGXZ
     MCAPI ushort getServerPortv6() const;
 
+    // symbol: ?getServerTextSettings@PropertiesSettings@@QEBAAEBV?$bitset@$02@std@@XZ
+    MCAPI std::bitset<3> const& getServerTextSettings() const;
+
     // symbol: ?getServerTickRange@PropertiesSettings@@QEBAHXZ
     MCAPI int getServerTickRange() const;
 

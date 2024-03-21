@@ -11,28 +11,30 @@ class BlockComponentFactory {
 public:
     // BlockComponentFactory inner types declare
     // clang-format off
-    struct Constructor;
+    struct ComponentMetadata;
     // clang-format on
 
     // BlockComponentFactory inner types define
-    struct Constructor {
+    struct ComponentMetadata {
     public:
         // prevent constructor by default
-        Constructor();
+        ComponentMetadata();
 
     public:
         // NOLINTBEGIN
-        // symbol: ??0Constructor@BlockComponentFactory@@QEAA@AEBU01@@Z
-        MCAPI Constructor(struct BlockComponentFactory::Constructor const&);
+        // symbol: ??0ComponentMetadata@BlockComponentFactory@@QEAA@AEBU01@@Z
+        MCAPI ComponentMetadata(struct BlockComponentFactory::ComponentMetadata const&);
 
-        // symbol: ??4Constructor@BlockComponentFactory@@QEAAAEAU01@$$QEAU01@@Z
-        MCAPI struct BlockComponentFactory::Constructor& operator=(struct BlockComponentFactory::Constructor&&);
+        // symbol: ??4ComponentMetadata@BlockComponentFactory@@QEAAAEAU01@$$QEAU01@@Z
+        MCAPI struct BlockComponentFactory::ComponentMetadata&
+        operator=(struct BlockComponentFactory::ComponentMetadata&&);
 
-        // symbol: ??4Constructor@BlockComponentFactory@@QEAAAEAU01@AEBU01@@Z
-        MCAPI struct BlockComponentFactory::Constructor& operator=(struct BlockComponentFactory::Constructor const&);
+        // symbol: ??4ComponentMetadata@BlockComponentFactory@@QEAAAEAU01@AEBU01@@Z
+        MCAPI struct BlockComponentFactory::ComponentMetadata&
+        operator=(struct BlockComponentFactory::ComponentMetadata const&);
 
-        // symbol: ??1Constructor@BlockComponentFactory@@QEAA@XZ
-        MCAPI ~Constructor();
+        // symbol: ??1ComponentMetadata@BlockComponentFactory@@QEAA@XZ
+        MCAPI ~ComponentMetadata();
 
         // NOLINTEND
     };
@@ -52,13 +54,13 @@ public:
     MCAPI void initializeFactory(class Experiments const&);
 
     // symbol:
-    // ?addAllComponentUpgrades@BlockComponentFactory@@SAXAEAVCerealDocumentUpgrader@@AEAUReflectionCtx@cereal@@@Z
-    MCAPI static void addAllComponentUpgrades(class CerealDocumentUpgrader&, struct cereal::ReflectionCtx&);
+    // ?addAllComponentUpgrades@BlockComponentFactory@@SAXAEAVCerealDocumentUpgrader@@AEBUReflectionCtx@cereal@@@Z
+    MCAPI static void addAllComponentUpgrades(class CerealDocumentUpgrader&, struct cereal::ReflectionCtx const&);
 
     // symbol:
-    // ?getPropRegisteredCerealComponents@BlockComponentFactory@@SAAEAV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UConstructor@BlockComponentFactory@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UConstructor@BlockComponentFactory@@@std@@@2@@std@@AEAUReflectionCtx@cereal@@@Z
-    MCAPI static std::unordered_map<std::string, struct BlockComponentFactory::Constructor>&
-    getPropRegisteredCerealComponents(struct cereal::ReflectionCtx&);
+    // ?getPropRegisteredCerealComponents@BlockComponentFactory@@SAAEAV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UComponentMetadata@BlockComponentFactory@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UComponentMetadata@BlockComponentFactory@@@std@@@2@@std@@AEBUReflectionCtx@cereal@@@Z
+    MCAPI static std::unordered_map<std::string, struct BlockComponentFactory::ComponentMetadata>&
+    getPropRegisteredCerealComponents(struct cereal::ReflectionCtx const&);
 
     // symbol: ?registerAllCerealDescriptions@BlockComponentFactory@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void registerAllCerealDescriptions(struct cereal::ReflectionCtx&);
@@ -72,8 +74,8 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?getEnTTMetaType@BlockComponentFactory@@CA?AVmeta_type@entt@@AEAUReflectionCtx@cereal@@@Z
-    MCAPI static entt::meta_type getEnTTMetaType(struct cereal::ReflectionCtx&);
+    // symbol: ?initEnTTMetaType@BlockComponentFactory@@CA?AVmeta_type@entt@@AEAUReflectionCtx@cereal@@@Z
+    MCAPI static entt::meta_type initEnTTMetaType(struct cereal::ReflectionCtx&);
 
     // NOLINTEND
 };

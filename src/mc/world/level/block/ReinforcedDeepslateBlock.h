@@ -33,9 +33,6 @@ public:
     // vIndex: 47, symbol: ?canBeOriginalSurface@ReinforcedDeepslateBlock@@UEBA_NXZ
     virtual bool canBeOriginalSurface() const;
 
-    // vIndex: 138, symbol: ?canBeSilkTouched@ReinforcedDeepslateBlock@@UEBA_NXZ
-    virtual bool canBeSilkTouched() const;
-
     // symbol: ??0ReinforcedDeepslateBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI ReinforcedDeepslateBlock(std::string const& nameId, int id);
 
