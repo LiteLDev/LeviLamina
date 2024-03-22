@@ -42,13 +42,13 @@ public:
     // vIndex: 20, symbol: ?getInterpolatedRidingOffset@Camel@@UEBA?AVVec3@@MH@Z
     virtual class Vec3 getInterpolatedRidingOffset(float, int) const;
 
-    // vIndex: 29, symbol: ?normalTick@Camel@@UEAAXXZ
+    // vIndex: 28, symbol: ?normalTick@Camel@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 161, symbol: ?_playStepSound@Camel@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 155, symbol: ?_playStepSound@Camel@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
     virtual void _playStepSound(class BlockPos const&, class Block const& onBlock);
 
-    // vIndex: 171, symbol: ?aiStep@Camel@@UEAAXXZ
+    // vIndex: 165, symbol: ?aiStep@Camel@@UEAAXXZ
     virtual void aiStep();
 
     // symbol: ??0Camel@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

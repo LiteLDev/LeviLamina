@@ -30,20 +30,20 @@ public:
     // vIndex: 0, symbol: __gen_??1WeightedPressurePlateBlock@@UEAA@XZ
     virtual ~WeightedPressurePlateBlock() = default;
 
-    // vIndex: 96, symbol:
+    // vIndex: 95, symbol:
     // ?asItemInstance@WeightedPressurePlateBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 168, symbol: ?getTickDelay@WeightedPressurePlateBlock@@UEBAHXZ
+    // vIndex: 163, symbol: ?getTickDelay@WeightedPressurePlateBlock@@UEBAHXZ
     virtual int getTickDelay() const;
 
-    // vIndex: 169, symbol: ?getSignalStrength@WeightedPressurePlateBlock@@MEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 164, symbol: ?getSignalStrength@WeightedPressurePlateBlock@@MEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual int getSignalStrength(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 170, symbol: ?getSignalForData@WeightedPressurePlateBlock@@MEBAHH@Z
+    // vIndex: 165, symbol: ?getSignalForData@WeightedPressurePlateBlock@@MEBAHH@Z
     virtual int getSignalForData(int data) const;
 
-    // vIndex: 171, symbol: ?getRedstoneSignal@WeightedPressurePlateBlock@@MEBAHH@Z
+    // vIndex: 166, symbol: ?getRedstoneSignal@WeightedPressurePlateBlock@@MEBAHH@Z
     virtual int getRedstoneSignal(int signal) const;
 
     // symbol:

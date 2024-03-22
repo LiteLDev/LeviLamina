@@ -41,21 +41,21 @@ public:
     // vIndex: 86, symbol: ?mayPlaceOn@WitherRoseBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlaceOn(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 119, symbol:
+    // vIndex: 118, symbol:
     // ?buildDescriptionId@WitherRoseBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
     virtual std::string buildDescriptionId(class Block const&) const;
 
-    // vIndex: 120, symbol: ?isAuxValueRelevantForPicking@WitherRoseBlock@@UEBA_NXZ
+    // vIndex: 119, symbol: ?isAuxValueRelevantForPicking@WitherRoseBlock@@UEBA_NXZ
     virtual bool isAuxValueRelevantForPicking() const;
 
-    // vIndex: 130, symbol: ?canSpawnOn@WitherRoseBlock@@UEBA_NPEAVActor@@@Z
+    // vIndex: 129, symbol: ?canSpawnOn@WitherRoseBlock@@UEBA_NPEAVActor@@@Z
     virtual bool canSpawnOn(class Actor* actor) const;
 
-    // vIndex: 134, symbol:
+    // vIndex: 133, symbol:
     // ?animateTickBedrockLegacy@WitherRoseBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // vIndex: 167, symbol: ?entityInside@WitherRoseBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
+    // vIndex: 162, symbol: ?entityInside@WitherRoseBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
     virtual void entityInside(class BlockSource& region, class BlockPos const&, class Actor& entity) const;
 
     // symbol: ??0WitherRoseBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

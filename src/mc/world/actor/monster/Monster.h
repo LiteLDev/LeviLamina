@@ -39,25 +39,25 @@ public:
     // vIndex: 10, symbol: ??1Monster@@UEAA@XZ
     virtual ~Monster();
 
-    // vIndex: 29, symbol: ?normalTick@Monster@@UEAAXXZ
+    // vIndex: 28, symbol: ?normalTick@Monster@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 158, symbol: ?_hurt@Monster@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 152, symbol: ?_hurt@Monster@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 159, symbol: ?readAdditionalSaveData@Monster@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 153, symbol: ?readAdditionalSaveData@Monster@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 160, symbol: ?addAdditionalSaveData@Monster@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 154, symbol: ?addAdditionalSaveData@Monster@@MEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 173, symbol: ?checkSpawnRules@Monster@@UEAA_N_N@Z
+    // vIndex: 167, symbol: ?checkSpawnRules@Monster@@UEAA_N_N@Z
     virtual bool checkSpawnRules(bool fromSpawner);
 
-    // vIndex: 198, symbol: ?_getWalkTargetValue@Monster@@UEAAMAEBVBlockPos@@@Z
+    // vIndex: 191, symbol: ?_getWalkTargetValue@Monster@@UEAAMAEBVBlockPos@@@Z
     virtual float _getWalkTargetValue(class BlockPos const& pos);
 
-    // vIndex: 204, symbol: ?isDarkEnoughToSpawn@Monster@@UEBA_NXZ
+    // vIndex: 197, symbol: ?isDarkEnoughToSpawn@Monster@@UEBA_NXZ
     virtual bool isDarkEnoughToSpawn() const;
 
     // symbol: ??0Monster@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

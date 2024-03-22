@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
+class Biome;
 class ISurfaceBuilder;
 class PerlinSimplexNoise;
 class Random;
@@ -28,8 +28,8 @@ public:
     // vIndex: 0, symbol: __gen_??1LegacyMesaSurfaceBuilder@VanillaSurfaceBuilders@@UEAA@XZ
     virtual ~LegacyMesaSurfaceBuilder() = default;
 
-    // vIndex: 1, symbol: ?init@LegacyMesaSurfaceBuilder@VanillaSurfaceBuilders@@UEAAXAEAVEntityContext@@I@Z
-    virtual void init(class EntityContext& entity, uint levelSeed);
+    // vIndex: 1, symbol: ?init@LegacyMesaSurfaceBuilder@VanillaSurfaceBuilders@@UEAAXAEAVBiome@@I@Z
+    virtual void init(class Biome&, uint);
 
     // vIndex: 2, symbol:
     // ?buildSurfaceAt@LegacyMesaSurfaceBuilder@VanillaSurfaceBuilders@@UEBAXAEBUBuildParameters@ISurfaceBuilder@@@Z

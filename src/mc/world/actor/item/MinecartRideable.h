@@ -40,7 +40,7 @@ public:
     // vIndex: 10, symbol: __gen_??1MinecartRideable@@UEAA@XZ
     virtual ~MinecartRideable() = default;
 
-    // vIndex: 164, symbol: ?getType@MinecartRideable@@UEAA?AW4MinecartType@@XZ
+    // vIndex: 158, symbol: ?getType@MinecartRideable@@UEAA?AW4MinecartType@@XZ
     virtual ::MinecartType getType();
 
     // symbol: ??0MinecartRideable@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

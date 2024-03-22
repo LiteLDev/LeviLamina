@@ -50,13 +50,13 @@ public:
     // vIndex: 86, symbol: ?mayPlaceOn@WaterlilyBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlaceOn(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 121, symbol: ?getColor@WaterlilyBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 120, symbol: ?getColor@WaterlilyBlock@@UEBAHAEBVBlock@@@Z
     virtual int getColor(class Block const& block) const;
 
-    // vIndex: 123, symbol: ?getColorAtPos@WaterlilyBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 122, symbol: ?getColorAtPos@WaterlilyBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual int getColorAtPos(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 156, symbol: ?canSurvive@WaterlilyBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 153, symbol: ?canSurvive@WaterlilyBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ??0WaterlilyBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

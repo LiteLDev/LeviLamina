@@ -32,19 +32,19 @@ public:
     // vIndex: 54, symbol: ?isValidAuxValue@BedItem@@UEBA_NH@Z
     virtual bool isValidAuxValue(int value) const;
 
-    // vIndex: 82, symbol:
+    // vIndex: 81, symbol:
     // ?buildDescriptionId@BedItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 104, symbol: ?getIconInfo@BedItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
+    // vIndex: 103, symbol: ?getIconInfo@BedItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const& item, int, bool) const;
 
-    // vIndex: 115, symbol: ?_checkUseOnPermissions@BedItem@@EEBA_NAEAVActor@@AEAVItemStackBase@@AEBEAEBVBlockPos@@@Z
+    // vIndex: 114, symbol: ?_checkUseOnPermissions@BedItem@@EEBA_NAEAVActor@@AEAVItemStackBase@@AEBEAEBVBlockPos@@@Z
     virtual bool
     _checkUseOnPermissions(class Actor& entity, class ItemStackBase& item, uchar const& face, class BlockPos const& pos)
         const;
 
-    // vIndex: 118, symbol:
+    // vIndex: 117, symbol:
     // ?_useOn@BedItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)

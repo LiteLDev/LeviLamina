@@ -32,7 +32,7 @@ public:
     // vIndex: 32, symbol: ?getLevelDataForAuxValue@AuxDataBlockItem@@UEBAHH@Z
     virtual int getLevelDataForAuxValue(int auxValue) const;
 
-    // vIndex: 82, symbol:
+    // vIndex: 81, symbol:
     // ?buildDescriptionId@AuxDataBlockItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 

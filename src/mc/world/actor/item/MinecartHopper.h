@@ -40,19 +40,19 @@ public:
     // vIndex: 10, symbol: __gen_??1MinecartHopper@@UEAA@XZ
     virtual ~MinecartHopper() = default;
 
-    // vIndex: 163, symbol: ?destroy@MinecartHopper@@UEAAXAEBVActorDamageSource@@_N@Z
+    // vIndex: 157, symbol: ?destroy@MinecartHopper@@UEAAXAEBVActorDamageSource@@_N@Z
     virtual void destroy(class ActorDamageSource const& source, bool dropMinecartComponents);
 
-    // vIndex: 164, symbol: ?getType@MinecartHopper@@UEAA?AW4MinecartType@@XZ
+    // vIndex: 158, symbol: ?getType@MinecartHopper@@UEAA?AW4MinecartType@@XZ
     virtual ::MinecartType getType();
 
-    // vIndex: 165, symbol: ?getDefaultDisplayBlock@MinecartHopper@@UEBAPEBVBlock@@XZ
+    // vIndex: 159, symbol: ?getDefaultDisplayBlock@MinecartHopper@@UEBAPEBVBlock@@XZ
     virtual class Block const* getDefaultDisplayBlock() const;
 
-    // vIndex: 166, symbol: ?getDefaultDisplayOffset@MinecartHopper@@UEBAHXZ
+    // vIndex: 160, symbol: ?getDefaultDisplayOffset@MinecartHopper@@UEBAHXZ
     virtual int getDefaultDisplayOffset() const;
 
-    // vIndex: 167, symbol: ?applyNaturalSlowdown@MinecartHopper@@UEAAXAEAVBlockSource@@@Z
+    // vIndex: 161, symbol: ?applyNaturalSlowdown@MinecartHopper@@UEAAXAEAVBlockSource@@@Z
     virtual void applyNaturalSlowdown(class BlockSource& region);
 
     // symbol: ??0MinecartHopper@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

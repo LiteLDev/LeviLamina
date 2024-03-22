@@ -103,5 +103,10 @@ public:
         int                                                 zOff
     );
 
+    // symbol:
+    // ?forceAddPortalRoom@StrongholdPiece@@SAXAEAVStructurePiece@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@@Z
+    MCAPI static void
+    forceAddPortalRoom(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
+
     // NOLINTEND
 };

@@ -46,19 +46,19 @@ public:
     // vIndex: 10, symbol: __gen_??1LightningBolt@@UEAA@XZ
     virtual ~LightningBolt() = default;
 
-    // vIndex: 29, symbol: ?normalTick@LightningBolt@@UEAAXXZ
+    // vIndex: 28, symbol: ?normalTick@LightningBolt@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 41, symbol: ?getShadowRadius@LightningBolt@@UEBAMXZ
+    // vIndex: 40, symbol: ?getShadowRadius@LightningBolt@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 159, symbol: ?readAdditionalSaveData@LightningBolt@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 153, symbol: ?readAdditionalSaveData@LightningBolt@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 160, symbol: ?addAdditionalSaveData@LightningBolt@@UEBAXAEAVCompoundTag@@@Z
+    // vIndex: 154, symbol: ?addAdditionalSaveData@LightningBolt@@UEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 163, symbol: ?shouldAlwaysRender@LightningBolt@@UEAA_NXZ
+    // vIndex: 157, symbol: ?shouldAlwaysRender@LightningBolt@@UEAA_NXZ
     virtual bool shouldAlwaysRender();
 
     // symbol: ??0LightningBolt@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

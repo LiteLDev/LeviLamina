@@ -63,28 +63,28 @@ public:
     // vIndex: 92, symbol: ?neighborChanged@SugarCaneBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
     virtual void neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@SugarCaneBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 95, symbol: ?asItemInstance@SugarCaneBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 121, symbol: ?getColor@SugarCaneBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 120, symbol: ?getColor@SugarCaneBlock@@UEBAHAEBVBlock@@@Z
     virtual int getColor(class Block const& block) const;
 
-    // vIndex: 122, symbol: ?getColor@SugarCaneBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 121, symbol: ?getColor@SugarCaneBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual int getColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
-    // vIndex: 123, symbol: ?getColorAtPos@SugarCaneBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 122, symbol: ?getColorAtPos@SugarCaneBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual int getColorAtPos(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 126, symbol: ?onGraphicsModeChanged@SugarCaneBlock@@UEAAXAEBUBlockGraphicsModeChangeContext@@@Z
+    // vIndex: 125, symbol: ?onGraphicsModeChanged@SugarCaneBlock@@UEAAXAEBUBlockGraphicsModeChangeContext@@@Z
     virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const& context);
 
-    // vIndex: 150, symbol: ?tick@SugarCaneBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 147, symbol: ?tick@SugarCaneBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 151, symbol: ?randomTick@SugarCaneBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148, symbol: ?randomTick@SugarCaneBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
-    // vIndex: 156, symbol: ?canSurvive@SugarCaneBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 153, symbol: ?canSurvive@SugarCaneBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ??0SugarCaneBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

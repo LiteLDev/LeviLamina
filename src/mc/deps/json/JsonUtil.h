@@ -69,6 +69,9 @@ MCAPI bool parseItemColor(::ItemColor&, class Json::Value const& root);
 // symbol: ?parseRange@JsonUtil@@YA_NAEBVValue@Json@@AEAH1@Z
 MCAPI bool parseRange(class Json::Value const& root, int& outMin, int& outMax);
 
+// symbol: ?parseVec2@JsonUtil@@YA_NAEAVVec2@@AEBVValue@Json@@@Z
+MCAPI bool parseVec2(class Vec2&, class Json::Value const&);
+
 // symbol: ?parseVec3@JsonUtil@@YA_NAEAVVec3@@AEBVValue@Json@@@Z
 MCAPI bool parseVec3(class Vec3& outVec, class Json::Value const& root);
 

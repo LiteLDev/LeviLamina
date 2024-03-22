@@ -68,27 +68,27 @@ public:
         struct ActorBlockSyncMessage const* syncMsg
     ) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@LightBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 95, symbol: ?asItemInstance@LightBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
-    // vIndex: 98, symbol: ?getPlacementBlock@LightBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+    // vIndex: 97, symbol: ?getPlacementBlock@LightBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
     virtual class Block const&
     getPlacementBlock(class Actor const&, class BlockPos const&, uchar, class Vec3 const&, int itemValue) const;
 
-    // vIndex: 103, symbol: ?canBeBuiltOver@LightBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlockItem@@@Z
+    // vIndex: 102, symbol: ?canBeBuiltOver@LightBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlockItem@@@Z
     virtual bool
     canBeBuiltOver(class BlockSource& region, class BlockPos const& pos, class BlockItem const& item) const;
 
-    // vIndex: 120, symbol: ?isAuxValueRelevantForPicking@LightBlock@@UEBA_NXZ
+    // vIndex: 119, symbol: ?isAuxValueRelevantForPicking@LightBlock@@UEBA_NXZ
     virtual bool isAuxValueRelevantForPicking() const;
 
-    // vIndex: 136, symbol: ?init@LightBlock@@UEAAAEAVBlockLegacy@@XZ
+    // vIndex: 135, symbol: ?init@LightBlock@@UEAAAEAVBlockLegacy@@XZ
     virtual class BlockLegacy& init();
 
-    // vIndex: 137, symbol: ?getLightEmission@LightBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
+    // vIndex: 136, symbol: ?getLightEmission@LightBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
     virtual struct Brightness getLightEmission(class Block const& block) const;
 
-    // vIndex: 154, symbol: ?use@LightBlock@@MEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 151, symbol: ?use@LightBlock@@MEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
     virtual bool use(class Player& player, class BlockPos const& pos, uchar) const;
 
     // symbol: ??0LightBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z

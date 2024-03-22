@@ -15,9 +15,8 @@ public:
     MCAPI static struct TickingSystemWithInfo accumulateHistoryChangesSystem();
 
     // symbol:
-    // ?applyHistoryChangesToLiveEntity@ClientPlayerRewindSystem@@SAXAEBUReplayStateTrackerComponent@@AEAUActorDataFlagComponent@@AEAUActorDataDirtyFlagsComponent@@PEAUActorDataHorseFlagComponent@@PEAUActorDataJumpDurationComponent@@@Z
-    MCAPI static void
-    applyHistoryChangesToLiveEntity(struct ReplayStateTrackerComponent const&, struct ActorDataFlagComponent&, struct ActorDataDirtyFlagsComponent&, struct ActorDataHorseFlagComponent*, struct ActorDataJumpDurationComponent*);
+    // ?applyHistoryChangesToLiveEntity@ClientPlayerRewindSystem@@SAXAEBUReplayStateTrackerComponent@@AEAVEntityContext@@@Z
+    MCAPI static void applyHistoryChangesToLiveEntity(struct ReplayStateTrackerComponent const&, class EntityContext&);
 
     // symbol: ?discardHistoryChangesSystem@ClientPlayerRewindSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo discardHistoryChangesSystem();

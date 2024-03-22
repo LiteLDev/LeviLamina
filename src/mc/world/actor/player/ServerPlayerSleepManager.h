@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/common/wrapper/StackRefResult.h"
 #include "mc/world/actor/player/PlayerSleepManager.h"
 
 class ServerPlayerSleepManager : public ::PlayerSleepManager {
@@ -22,9 +22,9 @@ public:
     virtual void updateSleepingPlayerList();
 
     // symbol:
-    // ??0ServerPlayerSleepManager@@QEAA@V?$not_null@V?$NonOwnerPointer@VGameplayUserManager@@@Bedrock@@@gsl@@V?$unique_ptr@VIPlayerSleepPercentageGetter@@U?$default_delete@VIPlayerSleepPercentageGetter@@@std@@@std@@@Z
+    // ??0ServerPlayerSleepManager@@QEAA@AEBV?$not_null@V?$StackRefResult@VGameplayUserManager@@@@@gsl@@V?$unique_ptr@VIPlayerSleepPercentageGetter@@U?$default_delete@VIPlayerSleepPercentageGetter@@@std@@@std@@@Z
     MCAPI
-    ServerPlayerSleepManager(Bedrock::NotNullNonOwnerPtr<class GameplayUserManager>, std::unique_ptr<class IPlayerSleepPercentageGetter>);
+    ServerPlayerSleepManager(gsl::not_null<class StackRefResult<class GameplayUserManager>> const&, std::unique_ptr<class IPlayerSleepPercentageGetter>);
 
     // symbol: ?enoughPlayersDeepSleeping@ServerPlayerSleepManager@@QEBA_NXZ
     MCAPI bool enoughPlayersDeepSleeping() const;

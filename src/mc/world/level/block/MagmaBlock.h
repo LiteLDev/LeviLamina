@@ -34,22 +34,22 @@ public:
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 129, symbol: ?getVariant@MagmaBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 128, symbol: ?getVariant@MagmaBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 134, symbol: ?animateTickBedrockLegacy@MagmaBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 133, symbol: ?animateTickBedrockLegacy@MagmaBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // vIndex: 149, symbol: ?shouldTickOnSetBlock@MagmaBlock@@UEBA_NXZ
+    // vIndex: 146, symbol: ?shouldTickOnSetBlock@MagmaBlock@@UEBA_NXZ
     virtual bool shouldTickOnSetBlock() const;
 
-    // vIndex: 150, symbol: ?tick@MagmaBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 147, symbol: ?tick@MagmaBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 151, symbol: ?randomTick@MagmaBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148, symbol: ?randomTick@MagmaBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 161, symbol: ?getEmissiveBrightness@MagmaBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
+    // vIndex: 158, symbol: ?getEmissiveBrightness@MagmaBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
     virtual struct Brightness getEmissiveBrightness(class Block const&) const;
 
     // symbol: ??0MagmaBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

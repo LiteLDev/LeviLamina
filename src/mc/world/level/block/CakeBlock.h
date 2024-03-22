@@ -44,30 +44,27 @@ public:
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@CakeBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 95, symbol: ?asItemInstance@CakeBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 111, symbol: ?hasComparatorSignal@CakeBlock@@UEBA_NXZ
+    // vIndex: 110, symbol: ?hasComparatorSignal@CakeBlock@@UEBA_NXZ
     virtual bool hasComparatorSignal() const;
 
-    // vIndex: 112, symbol: ?getComparatorSignal@CakeBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
+    // vIndex: 111, symbol: ?getComparatorSignal@CakeBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
     virtual int
     getComparatorSignal(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
         const;
 
-    // vIndex: 129, symbol: ?getVariant@CakeBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 128, symbol: ?getVariant@CakeBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 138, symbol: ?canBeSilkTouched@CakeBlock@@EEBA_NXZ
-    virtual bool canBeSilkTouched() const;
-
-    // vIndex: 150, symbol: ?tick@CakeBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 147, symbol: ?tick@CakeBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
-    // vIndex: 154, symbol: ?use@CakeBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 151, symbol: ?use@CakeBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
     virtual bool use(class Player& player, class BlockPos const& pos, uchar) const;
 
-    // vIndex: 156, symbol: ?canSurvive@CakeBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 153, symbol: ?canSurvive@CakeBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ??0CakeBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

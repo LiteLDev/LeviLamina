@@ -39,7 +39,7 @@ public:
     // vIndex: 10, symbol: __gen_??1Breeze@@UEAA@XZ
     virtual ~Breeze() = default;
 
-    // vIndex: 108, symbol: ?causeFallDamageToActor@Breeze@@UEAAMMMVActorDamageSource@@@Z
+    // vIndex: 104, symbol: ?causeFallDamageToActor@Breeze@@UEAAMMMVActorDamageSource@@@Z
     virtual float causeFallDamageToActor(float, float, class ActorDamageSource);
 
     // symbol: ??0Breeze@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

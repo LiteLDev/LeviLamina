@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/events/RealmsEventId.h"
+#include "mc/world/events/RealmEventId.h"
 
 class RealmsStoriesData {
 public:
@@ -21,25 +21,25 @@ public:
     MCAPI void clearAllRealmEventsInLevelData();
 
     // symbol:
-    // ?getRealmsEventInternalName@RealmsStoriesData@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4RealmsEventId@@@Z
-    MCAPI std::string const& getRealmsEventInternalName(::RealmsEventId) const;
+    // ?setPlayerRealmEventPublished@RealmsStoriesData@@QEAAXW4RealmEventId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI void setPlayerRealmEventPublished(::RealmEventId, std::string const&);
+
+    // symbol: ?setWorldRealmEventPublished@RealmsStoriesData@@QEAAXW4RealmEventId@@@Z
+    MCAPI void setWorldRealmEventPublished(::RealmEventId);
 
     // symbol:
-    // ?setPlayerRealmsEventPublished@RealmsStoriesData@@QEAAXW4RealmsEventId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void setPlayerRealmsEventPublished(::RealmsEventId, std::string const&);
+    // ?wasPlayerRealmEventPublished@RealmsStoriesData@@QEBA_NW4RealmEventId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI bool wasPlayerRealmEventPublished(::RealmEventId, std::string const&) const;
 
-    // symbol: ?setWorldRealmsEventPublished@RealmsStoriesData@@QEAAXW4RealmsEventId@@@Z
-    MCAPI void setWorldRealmsEventPublished(::RealmsEventId);
-
-    // symbol:
-    // ?wasPlayerRealmsEventPublished@RealmsStoriesData@@QEBA_NW4RealmsEventId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI bool wasPlayerRealmsEventPublished(::RealmsEventId, std::string const&) const;
-
-    // symbol: ?wasWorldRealmsEventPublished@RealmsStoriesData@@QEBA_NW4RealmsEventId@@@Z
-    MCAPI bool wasWorldRealmsEventPublished(::RealmsEventId) const;
+    // symbol: ?wasWorldRealmEventPublished@RealmsStoriesData@@QEBA_NW4RealmEventId@@@Z
+    MCAPI bool wasWorldRealmEventPublished(::RealmEventId) const;
 
     // symbol: ??1RealmsStoriesData@@QEAA@XZ
     MCAPI ~RealmsStoriesData();
+
+    // symbol:
+    // ?getRealmEventInternalName@RealmsStoriesData@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4RealmEventId@@@Z
+    MCAPI static std::string const& getRealmEventInternalName(::RealmEventId);
 
     // symbol:
     // ?REALMS_STORIES_PREFIX@RealmsStoriesData@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
@@ -50,15 +50,15 @@ public:
 private:
     // NOLINTBEGIN
     // symbol:
-    // ?mRealmsEventInternalNames@RealmsStoriesData@@0V?$map@W4RealmsEventId@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@W4RealmsEventId@@@3@V?$allocator@U?$pair@$$CBW4RealmsEventId@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@3@@std@@B
-    MCAPI static std::map<::RealmsEventId, std::string> const mRealmsEventInternalNames;
+    // ?mRealmEventInternalNames@RealmsStoriesData@@0V?$map@W4RealmEventId@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@W4RealmEventId@@@3@V?$allocator@U?$pair@$$CBW4RealmEventId@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@3@@std@@B
+    MCAPI static std::map<::RealmEventId, std::string> const mRealmEventInternalNames;
 
     // NOLINTEND
 
     // member accessor
 public:
     // NOLINTBEGIN
-    static auto& $mRealmsEventInternalNames() { return mRealmsEventInternalNames; }
+    static auto& $mRealmEventInternalNames() { return mRealmEventInternalNames; }
 
     // NOLINTEND
 };

@@ -39,7 +39,7 @@ public:
     // vIndex: 10, symbol: __gen_??1Ocelot@@UEAA@XZ
     virtual ~Ocelot() = default;
 
-    // vIndex: 156, symbol: ?updateEntitySpecificMolangVariables@Ocelot@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 150, symbol: ?updateEntitySpecificMolangVariables@Ocelot@@UEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams&);
 
     // symbol: ??0Ocelot@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

@@ -276,7 +276,58 @@ public:
 
     // vIndex: 39, symbol:
     // ?_createChunkBuildOrderPolicy@Dimension@@EEAA?AV?$unique_ptr@VChunkBuildOrderPolicyBase@@U?$default_delete@VChunkBuildOrderPolicyBase@@@std@@@std@@XZ
-    virtual std::unique_ptr<class ChunkBuildOrderPolicyBase> _createChunkBuildOrderPolicy();
+    MCVAPI std::unique_ptr<class ChunkBuildOrderPolicyBase> _createChunkBuildOrderPolicy();
+
+    // symbol: ?deserialize@Dimension@@UEAAXAEBVCompoundTag@@@Z
+    MCVAPI void deserialize(class CompoundTag const& tag);
+
+    // symbol: ?flushLevelChunkGarbageCollector@Dimension@@UEAAXXZ
+    MCVAPI void flushLevelChunkGarbageCollector();
+
+    // symbol: ?forEachPlayer@Dimension@@UEBAXV?$function@$$A6A_NAEAVPlayer@@@Z@std@@@Z
+    MCVAPI void forEachPlayer(std::function<bool(class Player&)> callback) const;
+
+    // symbol: ?forceCheckAllNeighChunkSavedStat@Dimension@@UEBA_NXZ
+    MCVAPI bool forceCheckAllNeighChunkSavedStat() const;
+
+    // symbol: ?getBiomeRegistry@Dimension@@UEBAAEBVBiomeRegistry@@XZ
+    MCVAPI class BiomeRegistry const& getBiomeRegistry() const;
+
+    // symbol: ?getBiomeRegistry@Dimension@@UEAAAEAVBiomeRegistry@@XZ
+    MCVAPI class BiomeRegistry& getBiomeRegistry();
+
+    // symbol: ?getBrightnessDependentFogColor@Dimension@@UEBA?AVColor@mce@@AEBV23@M@Z
+    MCVAPI class mce::Color getBrightnessDependentFogColor(class mce::Color const& baseColor, float brightness) const;
+
+    // symbol: ?getBrightnessRamp@Dimension@@UEBAAEBVDimensionBrightnessRamp@@XZ
+    MCVAPI class DimensionBrightnessRamp const& getBrightnessRamp() const;
+
+    // symbol: ?getClearColorScale@Dimension@@UEAAMXZ
+    MCVAPI float getClearColorScale();
+
+    // symbol: ?getCloudHeight@Dimension@@UEBAFXZ
+    MCVAPI short getCloudHeight() const;
+
+    // symbol: ?getDefaultBiome@Dimension@@UEBA?AVHashedString@@XZ
+    MCVAPI class HashedString getDefaultBiome() const;
+
+    // symbol: ?getDimensionId@Dimension@@UEBA?AV?$AutomaticID@VDimension@@H@@XZ
+    MCVAPI DimensionType getDimensionId() const;
+
+    // symbol: ?getLightTextureImageBuilder@Dimension@@UEBAPEAVBaseLightTextureImageBuilder@@XZ
+    MCVAPI class BaseLightTextureImageBuilder* getLightTextureImageBuilder() const;
+
+    // symbol: ?getSpawnPos@Dimension@@UEBA?AVBlockPos@@XZ
+    MCVAPI class BlockPos getSpawnPos() const;
+
+    // symbol: ?getSpawnYPosition@Dimension@@UEBAHXZ
+    MCVAPI int getSpawnYPosition() const;
+
+    // symbol: ?getSunIntensity@Dimension@@UEBAMMAEBVVec3@@M@Z
+    MCVAPI float getSunIntensity(float a, class Vec3 const& viewVector, float minInfluenceAngle) const;
+
+    // symbol: ?getTimeOfDay@Dimension@@MEBAMHM@Z
+    MCVAPI float getTimeOfDay(int time, float a) const;
 
     // vIndex: 40
     virtual void _upgradeOldLimboEntity(class CompoundTag& tag, ::LimboEntitiesVersion vers) = 0;
@@ -384,9 +435,6 @@ public:
 
     // symbol: ?flushRunTimeLighting@Dimension@@QEAAXXZ
     MCAPI void flushRunTimeLighting();
-
-    // symbol: ?forEachPlayer@Dimension@@QEBAXV?$function@$$A6A_NAEAVPlayer@@@Z@std@@@Z
-    MCAPI void forEachPlayer(std::function<bool(class Player&)> callback) const;
 
     // symbol: ?getBlockEventDispatcher@Dimension@@QEAAAEAVBlockEventDispatcher@@XZ
     MCAPI class BlockEventDispatcher& getBlockEventDispatcher();

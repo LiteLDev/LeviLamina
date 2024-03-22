@@ -35,7 +35,7 @@ public:
     // vIndex: 43, symbol: ?isDestructive@EndCrystalItem@@UEBA_NH@Z
     virtual bool isDestructive(int auxValue) const;
 
-    // vIndex: 118, symbol:
+    // vIndex: 117, symbol:
     // ?_useOn@EndCrystalItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor&, class BlockPos pos, uchar face, class Vec3 const& clickPos) const;

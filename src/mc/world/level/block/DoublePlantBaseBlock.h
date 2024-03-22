@@ -78,22 +78,19 @@ public:
     virtual class Block const*
     playerWillDestroy(class Player& player, class BlockPos const& pos, class Block const& block) const;
 
-    // vIndex: 138, symbol: ?canBeSilkTouched@DoublePlantBaseBlock@@MEBA_NXZ
-    virtual bool canBeSilkTouched() const;
-
-    // vIndex: 147, symbol: ?onPlace@DoublePlantBaseBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 145, symbol: ?onPlace@DoublePlantBaseBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 150, symbol: ?tick@DoublePlantBaseBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 147, symbol: ?tick@DoublePlantBaseBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
-    // vIndex: 156, symbol: ?canSurvive@DoublePlantBaseBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 153, symbol: ?canSurvive@DoublePlantBaseBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 168, symbol: ?checkAlive@DoublePlantBaseBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 163, symbol: ?checkAlive@DoublePlantBaseBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void checkAlive(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 170, symbol: ?_keepRelevantStateForDropping@DoublePlantBaseBlock@@MEBAAEBVBlock@@AEBV2@@Z
+    // vIndex: 165, symbol: ?_keepRelevantStateForDropping@DoublePlantBaseBlock@@MEBAAEBVBlock@@AEBV2@@Z
     virtual class Block const& _keepRelevantStateForDropping(class Block const& block) const;
 
     // symbol: ??0DoublePlantBaseBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

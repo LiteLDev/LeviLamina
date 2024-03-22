@@ -30,10 +30,10 @@ public:
     // vIndex: 0, symbol: __gen_??1QuartzBlock@@UEAA@XZ
     virtual ~QuartzBlock() = default;
 
-    // vIndex: 96, symbol: ?asItemInstance@QuartzBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 95, symbol: ?asItemInstance@QuartzBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
-    // vIndex: 98, symbol: ?getPlacementBlock@QuartzBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+    // vIndex: 97, symbol: ?getPlacementBlock@QuartzBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
     virtual class Block const& getPlacementBlock(
         class Actor const&    by,
         class BlockPos const& pos,
@@ -42,17 +42,17 @@ public:
         int                   itemValue
     ) const;
 
-    // vIndex: 119, symbol:
+    // vIndex: 118, symbol:
     // ?buildDescriptionId@QuartzBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
     virtual std::string buildDescriptionId(class Block const&) const;
 
-    // vIndex: 120, symbol: ?isAuxValueRelevantForPicking@QuartzBlock@@UEBA_NXZ
+    // vIndex: 119, symbol: ?isAuxValueRelevantForPicking@QuartzBlock@@UEBA_NXZ
     virtual bool isAuxValueRelevantForPicking() const;
 
-    // vIndex: 129, symbol: ?getVariant@QuartzBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 128, symbol: ?getVariant@QuartzBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 132, symbol: ?getMappedFace@QuartzBlock@@UEBAEEAEBVBlock@@@Z
+    // vIndex: 131, symbol: ?getMappedFace@QuartzBlock@@UEBAEEAEBVBlock@@@Z
     virtual uchar getMappedFace(uchar face, class Block const& block) const;
 
     // symbol: ??0QuartzBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

@@ -32,10 +32,6 @@ MCAPI std::string const& getName(::BlockColor);
 // ?getNameMixedCase@BlockColorUtil@@YAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockColor@@@Z
 MCAPI std::string const& getNameMixedCase(::BlockColor);
 
-// symbol:
-// ?getNameSnakeCase@BlockColorUtil@@YAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockColor@@@Z
-MCAPI std::string const& getNameSnakeCase(::BlockColor);
-
 // symbol: ?getRGBColor@BlockColorUtil@@YAHW4BlockColor@@@Z
 MCAPI int getRGBColor(::BlockColor color);
 // NOLINTEND

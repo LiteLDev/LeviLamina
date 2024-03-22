@@ -8,6 +8,7 @@
 #include "mc/enums/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/utils/BlockActorType.h"
+#include "mc/world/level/block/utils/BlockClientPredictionOverrides.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
 #include "mc/world/level/block/utils/BlockSupportType.h"
@@ -221,6 +222,9 @@ public:
 
     // symbol: ?getBurnOdds@Block@@QEBAHXZ
     MCAPI int getBurnOdds() const;
+
+    // symbol: ?getClientPredictionOverride@Block@@QEBA_NW4BlockClientPredictionOverrides@@@Z
+    MCAPI bool getClientPredictionOverride(::BlockClientPredictionOverrides) const;
 
     // symbol:
     // ?getCollisionShape@Block@@QEBA_NAEAVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
@@ -507,8 +511,8 @@ public:
     onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, ::FertilizerType fType)
         const;
 
-    // symbol: ?onHitByActivatingAttack@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI void onHitByActivatingAttack(class BlockSource&, class BlockPos const&) const;
+    // symbol: ?onHitByActivatingAttack@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
+    MCAPI void onHitByActivatingAttack(class BlockSource&, class BlockPos const&, class Actor*) const;
 
     // symbol: ?onLightningHit@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void onLightningHit(class BlockSource& region, class BlockPos const& pos) const;
@@ -516,8 +520,8 @@ public:
     // symbol: ?onPlace@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEBV1@@Z
     MCAPI void onPlace(class BlockSource& region, class BlockPos const& pos, class Block const& previousBlock) const;
 
-    // symbol: ?onPlayerPlacing@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@E@Z
-    MCAPI void
+    // symbol: ?onPlayerPlacing@Block@@QEBAPEBV1@AEAVBlockSource@@AEBVBlockPos@@AEAVActor@@E@Z
+    MCAPI class Block const*
     onPlayerPlacing(class BlockSource& region, class BlockPos const& pos, class Actor& actor, uchar face) const;
 
     // symbol: ?onProjectileHit@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVActor@@@Z

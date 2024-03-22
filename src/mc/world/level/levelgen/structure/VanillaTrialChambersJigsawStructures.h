@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-
 class VanillaTrialChambersJigsawStructures {
 public:
     // prevent constructor by default
@@ -15,8 +12,8 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ?initialize@VanillaTrialChambersJigsawStructures@@SAXV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEAVJigsawStructureRegistry@@@Z
-    MCAPI static void initialize(Bedrock::NotNullNonOwnerPtr<class StructureManager>, class JigsawStructureRegistry&);
+    // ?initialize@VanillaTrialChambersJigsawStructures@@SAXAEAUStructureTemplateRegistrationContext@@AEAVJigsawStructureRegistry@@@Z
+    MCAPI static void initialize(struct StructureTemplateRegistrationContext&, class JigsawStructureRegistry&);
 
     // NOLINTEND
 };

@@ -48,6 +48,12 @@ public:
     // symbol: ?setFire@Explosion@@QEAAX_N@Z
     MCAPI void setFire(bool val);
 
+    // symbol: ?setIgnoreBlockResistance@Explosion@@QEAAX_N@Z
+    MCAPI void setIgnoreBlockResistance(bool);
+
+    // symbol: ?setKnockbackScaling@Explosion@@QEAAXM@Z
+    MCAPI void setKnockbackScaling(float);
+
     // symbol: ?setMaxResistance@Explosion@@QEAAXM@Z
     MCAPI void setMaxResistance(float resistance);
 

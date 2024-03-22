@@ -10,10 +10,12 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock { class EnableNonOwnerReferences; }
+namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
 class GameRules : public ::Bedrock::EnableNonOwnerReferences {
 public:
+    // GameRules inner types define
     enum class GameRulesIndex : int {
         InvalidGameRule         = -1,
         CommandBlockOutput      = 0x0,
@@ -81,6 +83,9 @@ public:
     // symbol: ?getBool@GameRules@@QEBA_NUGameRuleId@@_N@Z
     MCAPI bool getBool(struct GameRuleId ruleType, bool defaultValue) const;
 
+    // symbol: ?getFloat@GameRules@@QEBAMUGameRuleId@@@Z
+    MCAPI float getFloat(struct GameRuleId ruleType) const;
+
     // symbol: ?getInt@GameRules@@QEBAHUGameRuleId@@@Z
     MCAPI int getInt(struct GameRuleId ruleType) const;
 
@@ -99,6 +104,14 @@ public:
     // symbol:
     // ?nameToGameRuleIndex@GameRules@@QEBA?AUGameRuleId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI struct GameRuleId nameToGameRuleIndex(std::string const& name) const;
+
+    // symbol: ??4GameRules@@QEAAAEAV0@AEBV0@@Z
+    MCAPI class GameRules& operator=(class GameRules const&);
+
+    // symbol:
+    // ?registerOnGameRuleChangeCallback@GameRules@@QEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXAEBVGameRules@@W4GameRulesIndex@1@@Z@std@@@Z
+    MCAPI class Bedrock::PubSub::Subscription
+        registerOnGameRuleChangeCallback(std::function<void(class GameRules const&, ::GameRules::GameRulesIndex)>);
 
     // symbol: ?setMarketplaceOverrides@GameRules@@QEAAXXZ
     MCAPI void setMarketplaceOverrides();

@@ -30,7 +30,7 @@ public:
     // vIndex: 0, symbol: __gen_??1GlowItemFrameBlock@@UEAA@XZ
     virtual ~GlowItemFrameBlock() = default;
 
-    // vIndex: 168, symbol: ?getSpawnedItemName@GlowItemFrameBlock@@UEBA?AVHashedString@@XZ
+    // vIndex: 163, symbol: ?getSpawnedItemName@GlowItemFrameBlock@@UEBA?AVHashedString@@XZ
     virtual class HashedString getSpawnedItemName() const;
 
     // symbol: ??0GlowItemFrameBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

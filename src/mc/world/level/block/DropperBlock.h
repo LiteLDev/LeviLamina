@@ -30,7 +30,7 @@ public:
     // vIndex: 0, symbol: __gen_??1DropperBlock@@UEAA@XZ
     virtual ~DropperBlock() = default;
 
-    // vIndex: 169, symbol: ?dispenseFrom@DropperBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 164, symbol: ?dispenseFrom@DropperBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void dispenseFrom(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ??0DropperBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

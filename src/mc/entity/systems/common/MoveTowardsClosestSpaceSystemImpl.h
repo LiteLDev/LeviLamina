@@ -38,7 +38,7 @@ public:
     virtual void __unk_vfn_4();
 
     // vIndex: 5, symbol:
-    // ?tick@MoveTowardsClosestSpaceSystemImpl@@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UCanStandOnSnowFlag@@@@V?$FlagComponent@UHasLightweightFamilyFlag@@@@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UMobFlag@@@@V?$FlagComponent@UParrotFlag@@@@UVehicleComponent@@V?$FlagComponent@UCamelFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@UActorMovementTickNeededFlag@@@@UPassengerComponent@@@@U?$Read@UMovementAbilitiesComponent@@UActorTypeComponent@@UFallDistanceComponent@@UActorGameTypeComponent@@UVehicleComponent@@UMobBodyRotationComponent@@UPassengerComponent@@URenderRotationComponent@@UStandAnimationComponent@@UActorRotationComponent@@UOffsetsComponent@@UVanillaOffsetComponent@@UPassengerRenderingRidingOffsetComponent@@UActorDataFlagComponent@@UAABBShapeComponent@@UDepenetrationComponent@@UDimensionTypeComponent@@@@U?$Write@UStateVectorComponent@@@@U?$AddRemove@V?$FlagComponent@UMoveTowardsClosestSpaceFlag@@@@@@U?$GlobalRead@UExternalDataComponent@@ULocalConstBlockSourceFactoryComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
+    // ?tick@MoveTowardsClosestSpaceSystemImpl@@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UCanStandOnSnowFlag@@@@V?$FlagComponent@UHasLightweightFamilyFlag@@@@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UMobFlag@@@@V?$FlagComponent@UParrotFlag@@@@UVehicleComponent@@V?$FlagComponent@UCamelFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@UActorMovementTickNeededFlag@@@@UPassengerComponent@@@@U?$Read@UAABBShapeComponent@@UMovementAbilitiesComponent@@UActorTypeComponent@@UFallDistanceComponent@@UPassengerComponent@@UActorGameTypeComponent@@UActorDataFlagComponent@@UVehicleComponent@@UActorRotationComponent@@UMobBodyRotationComponent@@URenderRotationComponent@@UStandAnimationComponent@@UOffsetsComponent@@UVanillaOffsetComponent@@UPassengerRenderingRidingOffsetComponent@@UDepenetrationComponent@@UDimensionTypeComponent@@@@U?$Write@UStateVectorComponent@@@@U?$AddRemove@V?$FlagComponent@UMoveTowardsClosestSpaceFlag@@@@@@U?$GlobalRead@UExternalDataComponent@@ULocalConstBlockSourceFactoryComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
     virtual void tick(class StrictExecutionContext<
                       struct Filter<
                           class FlagComponent<struct CanStandOnSnowFlag>,
@@ -52,21 +52,21 @@ public:
                           class FlagComponent<struct ActorMovementTickNeededFlag>,
                           struct PassengerComponent>,
                       struct Read<
+                          struct AABBShapeComponent,
                           struct MovementAbilitiesComponent,
                           struct ActorTypeComponent,
                           struct FallDistanceComponent,
-                          struct ActorGameTypeComponent,
-                          struct VehicleComponent,
-                          struct MobBodyRotationComponent,
                           struct PassengerComponent,
+                          struct ActorGameTypeComponent,
+                          struct ActorDataFlagComponent,
+                          struct VehicleComponent,
+                          struct ActorRotationComponent,
+                          struct MobBodyRotationComponent,
                           struct RenderRotationComponent,
                           struct StandAnimationComponent,
-                          struct ActorRotationComponent,
                           struct OffsetsComponent,
                           struct VanillaOffsetComponent,
                           struct PassengerRenderingRidingOffsetComponent,
-                          struct ActorDataFlagComponent,
-                          struct AABBShapeComponent,
                           struct DepenetrationComponent,
                           struct DimensionTypeComponent>,
                       struct Write<struct StateVectorComponent>,
@@ -76,9 +76,9 @@ public:
                       struct EntityFactoryT<>>&);
 
     // symbol:
-    // ?doTick@MoveTowardsClosestSpaceSystemImpl@@SAXAEBVStrictEntityContext@@AEBUActorDataFlagComponent@@AEBUAABBShapeComponent@@AEBUDepenetrationComponent@@AEAUStateVectorComponent@@AEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UCanStandOnSnowFlag@@@@V?$FlagComponent@UHasLightweightFamilyFlag@@@@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UMobFlag@@@@V?$FlagComponent@UParrotFlag@@@@UVehicleComponent@@V?$FlagComponent@UCamelFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@UActorMovementTickNeededFlag@@@@UPassengerComponent@@@@U?$Read@UMovementAbilitiesComponent@@UActorTypeComponent@@UFallDistanceComponent@@UActorGameTypeComponent@@UVehicleComponent@@UMobBodyRotationComponent@@UPassengerComponent@@URenderRotationComponent@@UStandAnimationComponent@@UActorRotationComponent@@UOffsetsComponent@@UVanillaOffsetComponent@@UPassengerRenderingRidingOffsetComponent@@UActorDataFlagComponent@@UAABBShapeComponent@@UDepenetrationComponent@@UDimensionTypeComponent@@@@U?$Write@UStateVectorComponent@@@@U?$AddRemove@V?$FlagComponent@UMoveTowardsClosestSpaceFlag@@@@@@U?$GlobalRead@UExternalDataComponent@@ULocalConstBlockSourceFactoryComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@AEBVIConstBlockSource@@@Z
+    // ?doTick@MoveTowardsClosestSpaceSystemImpl@@SAXAEBVStrictEntityContext@@AEBUActorDataFlagComponent@@AEBUAABBShapeComponent@@AEBUDepenetrationComponent@@AEAUStateVectorComponent@@AEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UCanStandOnSnowFlag@@@@V?$FlagComponent@UHasLightweightFamilyFlag@@@@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UMobFlag@@@@V?$FlagComponent@UParrotFlag@@@@UVehicleComponent@@V?$FlagComponent@UCamelFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@UActorMovementTickNeededFlag@@@@UPassengerComponent@@@@U?$Read@UAABBShapeComponent@@UMovementAbilitiesComponent@@UActorTypeComponent@@UFallDistanceComponent@@UPassengerComponent@@UActorGameTypeComponent@@UActorDataFlagComponent@@UVehicleComponent@@UActorRotationComponent@@UMobBodyRotationComponent@@URenderRotationComponent@@UStandAnimationComponent@@UOffsetsComponent@@UVanillaOffsetComponent@@UPassengerRenderingRidingOffsetComponent@@UDepenetrationComponent@@UDimensionTypeComponent@@@@U?$Write@UStateVectorComponent@@@@U?$AddRemove@V?$FlagComponent@UMoveTowardsClosestSpaceFlag@@@@@@U?$GlobalRead@UExternalDataComponent@@ULocalConstBlockSourceFactoryComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@AEBVIConstBlockSource@@@Z
     MCAPI static void
-    doTick(class StrictEntityContext const&, struct ActorDataFlagComponent const&, struct AABBShapeComponent const&, struct DepenetrationComponent const&, struct StateVectorComponent&, class StrictExecutionContext<struct Filter<class FlagComponent<struct CanStandOnSnowFlag>, class FlagComponent<struct HasLightweightFamilyFlag>, class FlagComponent<struct HorseFlag>, class FlagComponent<struct MobFlag>, class FlagComponent<struct ParrotFlag>, struct VehicleComponent, class FlagComponent<struct CamelFlag>, class FlagComponent<struct PlayerComponentFlag>, class FlagComponent<struct ActorMovementTickNeededFlag>, struct PassengerComponent>, struct Read<struct MovementAbilitiesComponent, struct ActorTypeComponent, struct FallDistanceComponent, struct ActorGameTypeComponent, struct VehicleComponent, struct MobBodyRotationComponent, struct PassengerComponent, struct RenderRotationComponent, struct StandAnimationComponent, struct ActorRotationComponent, struct OffsetsComponent, struct VanillaOffsetComponent, struct PassengerRenderingRidingOffsetComponent, struct ActorDataFlagComponent, struct AABBShapeComponent, struct DepenetrationComponent, struct DimensionTypeComponent>, struct Write<struct StateVectorComponent>, struct AddRemove<class FlagComponent<struct MoveTowardsClosestSpaceFlag>>, struct GlobalRead<struct ExternalDataComponent, struct LocalConstBlockSourceFactoryComponent>, struct GlobalWrite<>, struct EntityFactoryT<>>&, class IConstBlockSource const&);
+    doTick(class StrictEntityContext const&, struct ActorDataFlagComponent const&, struct AABBShapeComponent const&, struct DepenetrationComponent const&, struct StateVectorComponent&, class StrictExecutionContext<struct Filter<class FlagComponent<struct CanStandOnSnowFlag>, class FlagComponent<struct HasLightweightFamilyFlag>, class FlagComponent<struct HorseFlag>, class FlagComponent<struct MobFlag>, class FlagComponent<struct ParrotFlag>, struct VehicleComponent, class FlagComponent<struct CamelFlag>, class FlagComponent<struct PlayerComponentFlag>, class FlagComponent<struct ActorMovementTickNeededFlag>, struct PassengerComponent>, struct Read<struct AABBShapeComponent, struct MovementAbilitiesComponent, struct ActorTypeComponent, struct FallDistanceComponent, struct PassengerComponent, struct ActorGameTypeComponent, struct ActorDataFlagComponent, struct VehicleComponent, struct ActorRotationComponent, struct MobBodyRotationComponent, struct RenderRotationComponent, struct StandAnimationComponent, struct OffsetsComponent, struct VanillaOffsetComponent, struct PassengerRenderingRidingOffsetComponent, struct DepenetrationComponent, struct DimensionTypeComponent>, struct Write<struct StateVectorComponent>, struct AddRemove<class FlagComponent<struct MoveTowardsClosestSpaceFlag>>, struct GlobalRead<struct ExternalDataComponent, struct LocalConstBlockSourceFactoryComponent>, struct GlobalWrite<>, struct EntityFactoryT<>>&, class IConstBlockSource const&);
 
     // NOLINTEND
 };

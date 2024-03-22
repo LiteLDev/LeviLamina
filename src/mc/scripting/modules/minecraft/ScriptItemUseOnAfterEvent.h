@@ -29,9 +29,9 @@ public:
     MCAPI ScriptItemUseOnAfterEvent(struct ScriptModuleMinecraft::ScriptItemUseOnAfterEvent const&);
 
     // symbol:
-    // ??0ScriptItemUseOnAfterEvent@ScriptModuleMinecraft@@QEAA@AEBUItemUseOnEvent@@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@PEAVPlayer@@AEBVWeakLifetimeScope@4@@Z
+    // ??0ScriptItemUseOnAfterEvent@ScriptModuleMinecraft@@QEAA@AEBUItemUseOnEvent@@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@AEBVPlayer@@AEBVWeakLifetimeScope@4@@Z
     MCAPI
-    ScriptItemUseOnAfterEvent(struct ItemUseOnEvent const&, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>, class Player*, class Scripting::WeakLifetimeScope const&);
+    ScriptItemUseOnAfterEvent(struct ItemUseOnEvent const&, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>, class Player const&, class Scripting::WeakLifetimeScope const&);
 
     // symbol:
     // ?getBlockLocation_V010@ScriptItemUseOnAfterEvent@ScriptModuleMinecraft@@QEBA?AV?$Result@VBlockPos@@$$V@Scripting@@XZ

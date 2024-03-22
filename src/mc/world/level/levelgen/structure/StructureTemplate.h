@@ -66,6 +66,9 @@ public:
     // ??0StructureTemplate@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@V?$NonOwnerPointer@VIUnknownBlockTypeRegistry@@@Bedrock@@@Z
     MCAPI StructureTemplate(std::string_view name, class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry>);
 
+    // symbol: ?fillEmpty@StructureTemplate@@QEAAXAEBVBlockPos@@@Z
+    MCAPI void fillEmpty(class BlockPos const&);
+
     // symbol: ?fillFromWorld@StructureTemplate@@QEAAXAEAVBlockSource@@AEBVBlockPos@@AEBVStructureSettings@@@Z
     MCAPI void fillFromWorld(
         class BlockSource&             region,
@@ -82,6 +85,9 @@ public:
 
     // symbol: ?getName@StructureTemplate@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& getName() const;
+
+    // symbol: ?getRemovable@StructureTemplate@@QEBA_NXZ
+    MCAPI bool getRemovable() const;
 
     // symbol: ?getSize@StructureTemplate@@QEBAAEBVBlockPos@@XZ
     MCAPI class BlockPos const& getSize() const;
@@ -167,6 +173,20 @@ public:
         bool updateItemData,
         bool ignoreJigsawBlocks
     ) const;
+
+    // NOLINTEND
+
+private:
+    // NOLINTBEGIN
+    // symbol: ?NO_BLOCK_INDEX_VALUE@StructureTemplate@@0HB
+    MCAPI static int const NO_BLOCK_INDEX_VALUE;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    static auto& $NO_BLOCK_INDEX_VALUE() { return NO_BLOCK_INDEX_VALUE; }
 
     // NOLINTEND
 };

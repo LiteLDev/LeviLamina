@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/GameType.h"
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/Result.h"
 #include "mc/external/scripting/StrongTypedObjectHandle.h"
@@ -90,6 +91,9 @@ public:
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptCamera>>
     getCamera();
 
+    // symbol: ?getGameMode@ScriptPlayer@ScriptModuleMinecraft@@QEBA?AV?$Result@W4GameType@@$$V@Scripting@@XZ
+    MCAPI class Scripting::Result<::GameType> getGameMode() const;
+
     // symbol:
     // ?getItemCooldownLeft@ScriptPlayer@ScriptModuleMinecraft@@QEBA?AV?$Result@H$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Scripting::Result<int> getItemCooldownLeft(std::string const& type) const;
@@ -175,6 +179,10 @@ public:
             struct ScriptModuleMinecraft::ScriptRawMessageInterface,
             std::vector<std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>>> const& var
     ) const;
+
+    // symbol:
+    // ?setGameMode@ScriptPlayer@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@V?$optional@W4GameType@@@std@@@Z
+    MCAPI class Scripting::Result<void> setGameMode(std::optional<::GameType>);
 
     // symbol: ?setOp@ScriptPlayer@ScriptModuleMinecraft@@QEBA?AV?$Result@X$$V@Scripting@@_N@Z
     MCAPI class Scripting::Result<void> setOp(bool) const;

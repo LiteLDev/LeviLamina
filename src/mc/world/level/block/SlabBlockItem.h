@@ -29,11 +29,11 @@ public:
     // vIndex: 0, symbol: __gen_??1SlabBlockItem@@UEAA@XZ
     virtual ~SlabBlockItem() = default;
 
-    // vIndex: 116, symbol: ?_calculatePlacePos@SlabBlockItem@@UEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
+    // vIndex: 115, symbol: ?_calculatePlacePos@SlabBlockItem@@UEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
     virtual bool
     _calculatePlacePos(class ItemStackBase& instance, class Actor& actor, uchar& face, class BlockPos& pos) const;
 
-    // vIndex: 118, symbol:
+    // vIndex: 117, symbol:
     // ?_useOn@SlabBlockItem@@UEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const& clickPos)

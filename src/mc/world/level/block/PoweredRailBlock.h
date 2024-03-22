@@ -34,7 +34,7 @@ public:
     virtual void
     onRedstoneUpdate(class BlockSource& region, class BlockPos const& pos, int strength, bool isFirstTime) const;
 
-    // vIndex: 129, symbol: ?getVariant@PoweredRailBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 128, symbol: ?getVariant@PoweredRailBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const& block) const;
 
     // symbol: ??0PoweredRailBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

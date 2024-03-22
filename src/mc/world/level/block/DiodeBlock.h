@@ -43,55 +43,55 @@ public:
     // vIndex: 85, symbol: ?mayPlace@DiodeBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 129, symbol: ?getVariant@DiodeBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 128, symbol: ?getVariant@DiodeBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 130, symbol: ?canSpawnOn@DiodeBlock@@UEBA_NPEAVActor@@@Z
+    // vIndex: 129, symbol: ?canSpawnOn@DiodeBlock@@UEBA_NPEAVActor@@@Z
     virtual bool canSpawnOn(class Actor*) const;
 
-    // vIndex: 156, symbol: ?canSurvive@DiodeBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 153, symbol: ?canSurvive@DiodeBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 168, symbol: ?getSignal@DiodeBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@H@Z
+    // vIndex: 163, symbol: ?getSignal@DiodeBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@H@Z
     virtual int getSignal(class BlockSource& region, class BlockPos const& pos, int dir) const;
 
-    // vIndex: 169, symbol: ?isLocked@DiodeBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 164, symbol: ?isLocked@DiodeBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool isLocked(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 170, symbol: ?isSameDiode@DiodeBlock@@UEBA_NAEBVBlock@@@Z
+    // vIndex: 165, symbol: ?isSameDiode@DiodeBlock@@UEBA_NAEBVBlock@@@Z
     virtual bool isSameDiode(class Block const& block) const;
 
-    // vIndex: 171, symbol: ?shouldPrioritize@DiodeBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 166, symbol: ?shouldPrioritize@DiodeBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool shouldPrioritize(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 172, symbol: ?isOn@DiodeBlock@@MEBA_NXZ
+    // vIndex: 167, symbol: ?isOn@DiodeBlock@@MEBA_NXZ
     virtual bool isOn() const;
 
-    // vIndex: 173, symbol: ?shouldTurnOn@DiodeBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 168, symbol: ?shouldTurnOn@DiodeBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool shouldTurnOn(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 174, symbol: ?getInputSignal@DiodeBlock@@MEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 169, symbol: ?getInputSignal@DiodeBlock@@MEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual int getInputSignal(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 175, symbol: ?isAlternateInput@DiodeBlock@@MEBA_NAEBVBlock@@@Z
+    // vIndex: 170, symbol: ?isAlternateInput@DiodeBlock@@MEBA_NAEBVBlock@@@Z
     virtual bool isAlternateInput(class Block const& block) const;
 
-    // vIndex: 176, symbol: ?getAlternateSignal@DiodeBlock@@MEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 171, symbol: ?getAlternateSignal@DiodeBlock@@MEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual int getAlternateSignal(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 177, symbol: ?getOutputSignal@DiodeBlock@@MEBAHAEBVBlock@@@Z
+    // vIndex: 172, symbol: ?getOutputSignal@DiodeBlock@@MEBAHAEBVBlock@@@Z
     virtual int getOutputSignal(class Block const& block) const;
 
-    // vIndex: 178, symbol: ?getTurnOffDelay@DiodeBlock@@MEBAHAEBVBlock@@@Z
+    // vIndex: 173, symbol: ?getTurnOffDelay@DiodeBlock@@MEBAHAEBVBlock@@@Z
     virtual int getTurnOffDelay(class Block const& block) const;
 
-    // vIndex: 179, symbol: ?getTurnOnDelay@RepeaterBlock@@MEBAHAEBVBlock@@@Z
+    // vIndex: 174, symbol: ?getTurnOnDelay@RepeaterBlock@@MEBAHAEBVBlock@@@Z
     virtual int getTurnOnDelay(class Block const& block) const = 0;
 
-    // vIndex: 180, symbol: ?getOnBlock@RepeaterBlock@@MEBAPEBVBlock@@PEBV2@@Z
+    // vIndex: 175, symbol: ?getOnBlock@RepeaterBlock@@MEBAPEBVBlock@@PEBV2@@Z
     virtual class Block const* getOnBlock(class Block const* block) const = 0;
 
-    // vIndex: 181, symbol: ?getOffBlock@RepeaterBlock@@MEBAPEBVBlock@@PEBV2@@Z
+    // vIndex: 176, symbol: ?getOffBlock@RepeaterBlock@@MEBAPEBVBlock@@PEBV2@@Z
     virtual class Block const* getOffBlock(class Block const* block) const = 0;
 
     // symbol: ??0DiodeBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z

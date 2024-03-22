@@ -62,21 +62,12 @@ public:
     // vIndex: 89, symbol: ?breaksFallingBlocks@SlabBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
     virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@SlabBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 95, symbol: ?asItemInstance@SlabBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 107, symbol: ?getMobToSpawn@SlabBlock@@UEBAPEBVMobSpawnerData@@AEBVSpawnConditions@@AEAVBlockSource@@@Z
+    // vIndex: 106, symbol: ?getMobToSpawn@SlabBlock@@UEBAPEBVMobSpawnerData@@AEBVSpawnConditions@@AEAVBlockSource@@@Z
     virtual class MobSpawnerData const*
     getMobToSpawn(class SpawnConditions const& conditions, class BlockSource& region) const;
-
-    // vIndex: 138, symbol: ?canBeSilkTouched@SlabBlock@@MEBA_NXZ
-    virtual bool canBeSilkTouched() const;
-
-    // vIndex: 163, symbol: ?getResourceItem@SlabBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
-
-    // vIndex: 164, symbol: ?getResourceCount@SlabBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
 
     // symbol:
     // ??0SlabBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NAEBVMaterial@@V?$WeakPtr@VBlockLegacy@@@@@Z
@@ -87,13 +78,6 @@ public:
         class Material const&            mat,
         class WeakPtr<class BlockLegacy> baseSlab
     );
-
-    // NOLINTEND
-
-    // protected:
-    // NOLINTBEGIN
-    // symbol: ?getBaseSlab@SlabBlock@@IEBAAEBVBlock@@XZ
-    MCAPI class Block const& getBaseSlab() const;
 
     // NOLINTEND
 

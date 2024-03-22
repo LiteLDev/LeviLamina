@@ -33,6 +33,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: __gen_??1RuntimeLightingManager@@UEAA@XZ
+    virtual ~RuntimeLightingManager() = default;
+
     // symbol: ??0RuntimeLightingManager@@QEAA@AEAVDimension@@@Z
     MCAPI explicit RuntimeLightingManager(class Dimension& dimension);
 
@@ -48,9 +51,6 @@ public:
         struct Brightness     newAbsorption,
         bool                  isSkyLight
     );
-
-    // symbol: ??1RuntimeLightingManager@@QEAA@XZ
-    MCAPI ~RuntimeLightingManager();
 
     // NOLINTEND
 

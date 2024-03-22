@@ -14,6 +14,9 @@ public:
     // symbol: ?addAdditionalSaveData@DimensionTransitionComponent@@QEBAXAEAVCompoundTag@@@Z
     MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
 
+    // symbol: ??4DimensionTransitionComponent@@QEAAAEAU0@$$QEAU0@@Z
+    MCAPI struct DimensionTransitionComponent& operator=(struct DimensionTransitionComponent&&);
+
     // symbol:
     // ?readAdditionalSaveData@DimensionTransitionComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     MCAPI void

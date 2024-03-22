@@ -6,6 +6,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/enums/HudElement.h"
+#include "mc/enums/HudVisibility.h"
 #include "mc/enums/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 
@@ -29,14 +31,17 @@ public:
     // vIndex: 2, symbol: ?getName@SetHudPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getName() const;
 
-    // vIndex: 3, symbol: ?write@SetHudPacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4, symbol: ?write@SetHudPacket@@UEBAXAEAVBinaryStream@@@Z
     virtual void write(class BinaryStream&) const;
 
-    // vIndex: 7, symbol: ?_read@SetHudPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8, symbol: ?_read@SetHudPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
 
     // symbol: ??0SetHudPacket@@QEAA@XZ
     MCAPI SetHudPacket();
+
+    // symbol: ??0SetHudPacket@@QEAA@V?$vector@W4HudElement@@V?$allocator@W4HudElement@@@std@@@std@@W4HudVisibility@@@Z
+    MCAPI SetHudPacket(std::vector<::HudElement>, ::HudVisibility);
 
     // NOLINTEND
 };

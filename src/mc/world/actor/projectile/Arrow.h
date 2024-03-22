@@ -42,31 +42,31 @@ public:
     // vIndex: 10, symbol: __gen_??1Arrow@@UEAA@XZ
     virtual ~Arrow() = default;
 
-    // vIndex: 29, symbol: ?normalTick@Arrow@@UEAAXXZ
+    // vIndex: 28, symbol: ?normalTick@Arrow@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 45, symbol: ?playerTouch@Arrow@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 44, symbol: ?playerTouch@Arrow@@UEAAXAEAVPlayer@@@Z
     virtual void playerTouch(class Player& player);
 
-    // vIndex: 138, symbol: ?setAuxValue@Arrow@@UEAAXH@Z
+    // vIndex: 132, symbol: ?setAuxValue@Arrow@@UEAAXH@Z
     virtual void setAuxValue(int aux);
 
-    // vIndex: 159, symbol: ?readAdditionalSaveData@Arrow@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 153, symbol: ?readAdditionalSaveData@Arrow@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 160, symbol: ?addAdditionalSaveData@Arrow@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 154, symbol: ?addAdditionalSaveData@Arrow@@MEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 163, symbol: ?shoot@Arrow@@UEAAXAEBVVec3@@MM0@Z
+    // vIndex: 157, symbol: ?shoot@Arrow@@UEAAXAEBVVec3@@MM0@Z
     virtual void shoot(class Vec3 const& dir, float pow, float uncertainty, class Vec3 const& baseSpeed);
 
-    // vIndex: 164, symbol: ?_getPickupItem@Arrow@@MEBA?AVItemStack@@XZ
+    // vIndex: 158, symbol: ?_getPickupItem@Arrow@@MEBA?AVItemStack@@XZ
     virtual class ItemStack _getPickupItem() const;
 
-    // vIndex: 165, symbol: ?applyParticleColor@Arrow@@MEAAXPEAVParticle@@@Z
+    // vIndex: 159, symbol: ?applyParticleColor@Arrow@@MEAAXPEAVParticle@@@Z
     virtual void applyParticleColor(class Particle* p);
 
-    // vIndex: 166, symbol: ?getEffectColor@Arrow@@MEAA?AVColor@mce@@XZ
+    // vIndex: 160, symbol: ?getEffectColor@Arrow@@MEAA?AVColor@mce@@XZ
     virtual class mce::Color getEffectColor();
 
     // symbol: ??0Arrow@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

@@ -23,8 +23,5 @@ public:
     // symbol: ?sendPlayerAuthInputReceived@ServerPlayerEventCoordinator@@QEAAXAEAVPlayer@@@Z
     MCAPI void sendPlayerAuthInputReceived(class Player& player);
 
-    // symbol: ?sendPlayerOnGround@ServerPlayerEventCoordinator@@QEAAXAEAVPlayer@@@Z
-    MCAPI void sendPlayerOnGround(class Player& player);
-
     // NOLINTEND
 };

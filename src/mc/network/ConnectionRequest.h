@@ -28,6 +28,9 @@ public:
     // symbol: ??0ConnectionRequest@@QEAA@AEBV0@@Z
     MCAPI ConnectionRequest(class ConnectionRequest const& other);
 
+    // symbol: ?containsValidContents@ConnectionRequest@@QEBA_NXZ
+    MCAPI bool containsValidContents() const;
+
     // symbol:
     // ?getAnimatedImageData@ConnectionRequest@@QEBA?AV?$vector@VAnimatedImageData@@V?$allocator@VAnimatedImageData@@@std@@@std@@XZ
     MCAPI std::vector<class AnimatedImageData> getAnimatedImageData() const;

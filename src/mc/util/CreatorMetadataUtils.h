@@ -41,6 +41,9 @@ MCAPI class Json::Value _generateBlocksMetadataJson();
 // symbol: ?_generateCameraMetadataJson@CreatorMetadataUtils@@YA?AVValue@Json@@AEBVCameraPresets@@@Z
 MCAPI class Json::Value _generateCameraMetadataJson(class CameraPresets const&);
 
+// symbol: ?_generateCooldownCategoriesMetadataJson@CreatorMetadataUtils@@YA?AVValue@Json@@VItemRegistryRef@@@Z
+MCAPI class Json::Value _generateCooldownCategoriesMetadataJson(class ItemRegistryRef);
+
 // symbol: ?_generateDimensionsMetadataJson@CreatorMetadataUtils@@YA?AVValue@Json@@XZ
 MCAPI class Json::Value _generateDimensionsMetadataJson();
 
@@ -82,6 +85,9 @@ MCAPI void generateCameraPresetDocumentation(class Core::Path const&, class Came
 
 // symbol: ?generateCommandsDocumentation@CreatorMetadataUtils@@YAXAEAVCommandRegistry@@AEBVPath@Core@@@Z
 MCAPI void generateCommandsDocumentation(class CommandRegistry& commandRegistry, class Core::Path const&);
+
+// symbol: ?generateCooldownCategoriesDocumentation@CreatorMetadataUtils@@YAXAEBVPath@Core@@VItemRegistryRef@@@Z
+MCAPI void generateCooldownCategoriesDocumentation(class Core::Path const&, class ItemRegistryRef);
 
 // symbol:
 // ?generateCreatorScriptingMetadata@CreatorMetadataUtils@@YAXAEAVScriptEngine@Scripting@@AEBVPath@Core@@11VItemRegistryRef@@AEBV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VActorDefinition@@U?$default_delete@VActorDefinition@@@std@@@2@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VActorDefinition@@U?$default_delete@VActorDefinition@@@std@@@2@@std@@@2@@std@@AEBVCameraPresets@@AEBVBiomeRegistry@@@Z

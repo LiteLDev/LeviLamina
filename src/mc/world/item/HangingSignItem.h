@@ -30,11 +30,11 @@ public:
     // vIndex: 0, symbol: __gen_??1HangingSignItem@@UEAA@XZ
     virtual ~HangingSignItem() = default;
 
-    // vIndex: 116, symbol:
+    // vIndex: 115, symbol:
     // ?_calculatePlacePos@HangingSignItem@@EEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
     virtual bool _calculatePlacePos(class ItemStackBase&, class Actor& entity, uchar& face, class BlockPos& pos) const;
 
-    // vIndex: 119, symbol: ?getBlockToPlace@HangingSignItem@@MEBAPEBVBlock@@EAEBVActor@@VBlockPos@@@Z
+    // vIndex: 118, symbol: ?getBlockToPlace@HangingSignItem@@MEBAPEBVBlock@@EAEBVActor@@VBlockPos@@@Z
     virtual class Block const* getBlockToPlace(uchar face, class Actor const& entity, class BlockPos pos) const;
 
     // symbol:

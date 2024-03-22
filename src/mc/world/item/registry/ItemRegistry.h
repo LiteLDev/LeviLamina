@@ -125,9 +125,10 @@ public:
     // symbol: ?getRef@ItemRegistry@@AEAA?AVItemRegistryRef@@XZ
     MCAPI class ItemRegistryRef getRef();
 
-    // symbol: ?init@ItemRegistry@@AEAAXAEBVExperiments@@AEBVBaseGameVersion@@PEAVResourcePackManager@@@Z
+    // symbol:
+    // ?init@ItemRegistry@@AEAAXAEAUReflectionCtx@cereal@@AEBVExperiments@@AEBVBaseGameVersion@@PEAVResourcePackManager@@@Z
     MCAPI void
-    init(class Experiments const&, class BaseGameVersion const& baseGameVersion, class ResourcePackManager* rpm);
+    init(struct cereal::ReflectionCtx&, class Experiments const&, class BaseGameVersion const&, class ResourcePackManager*);
 
     // symbol:
     // ?initCreativeItemsServer@ItemRegistry@@AEAAXPEAVActorInfoRegistry@@PEAVBlockDefinitionGroup@@_NAEBVExperiments@@V?$function@$$A6AXVItemRegistryRef@@PEAVActorInfoRegistry@@PEAVBlockDefinitionGroup@@PEAVCreativeItemRegistry@@_NAEBVBaseGameVersion@@AEBVExperiments@@@Z@std@@@Z

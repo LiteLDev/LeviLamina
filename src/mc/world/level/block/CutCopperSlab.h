@@ -37,10 +37,10 @@ public:
     // vIndex: 26, symbol: ?tryGetCopperBehavior@CutCopperSlab@@UEBAPEBVCopperBehavior@@XZ
     virtual class CopperBehavior const* tryGetCopperBehavior() const;
 
-    // vIndex: 151, symbol: ?randomTick@CutCopperSlab@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148, symbol: ?randomTick@CutCopperSlab@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 154, symbol: ?use@CutCopperSlab@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 151, symbol: ?use@CutCopperSlab@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // symbol:

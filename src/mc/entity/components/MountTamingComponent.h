@@ -51,5 +51,9 @@ public:
     // symbol: ?_autoReject@MountTamingComponent@@CA_NAEBVItemStack@@PEBVMountTameableDefinition@@@Z
     MCAPI static bool _autoReject(class ItemStack const& item, class MountTameableDefinition const*);
 
+    // symbol: ?_canTame@MountTamingComponent@@CA_NAEAVActor@@AEAVPlayer@@AEBVItemStack@@PEBVMountTameableDefinition@@@Z
+    MCAPI static bool
+    _canTame(class Actor& owner, class Player&, class ItemStack const& item, class MountTameableDefinition const*);
+
     // NOLINTEND
 };

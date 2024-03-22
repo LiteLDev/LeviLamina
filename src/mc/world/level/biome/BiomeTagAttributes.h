@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BiomeTagAttributes {
+// auto generated inclusion list
+#include "mc/world/level/biome/BiomeComponentBase.h"
+
+struct BiomeTagAttributes : public ::BiomeComponentBase {
 public:
     // prevent constructor by default
     BiomeTagAttributes& operator=(BiomeTagAttributes const&);
@@ -11,6 +14,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: __gen_??1BiomeTagAttributes@@UEAA@XZ
+    virtual ~BiomeTagAttributes() = default;
+
     // symbol: ??4BiomeTagAttributes@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct BiomeTagAttributes& operator=(struct BiomeTagAttributes&&);
 

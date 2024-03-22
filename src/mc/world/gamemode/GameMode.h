@@ -251,6 +251,14 @@ public:
     // symbol: ?_enableBlockBreakDelay@GameMode@@AEBA_NXZ
     MCAPI bool _enableBlockBreakDelay() const;
 
+    // symbol: ?_sendPlayerInteractWithBlockAfterEvent@GameMode@@AEAAXAEAVPlayer@@AEBVBlockPos@@EAEBVVec3@@@Z
+    MCAPI void _sendPlayerInteractWithBlockAfterEvent(class Player&, class BlockPos const&, uchar, class Vec3 const&);
+
+    // symbol:
+    // ?_sendTryDestroyBlockEvent@GameMode@@AEBA?AV?$optional@VItemStack@@@std@@AEBVBlock@@AEBVBlockPos@@VItemStack@@@Z
+    MCAPI std::optional<class ItemStack>
+          _sendTryDestroyBlockEvent(class Block const&, class BlockPos const&, class ItemStack) const;
+
     // symbol: ?_sendUseItemOnEvents@GameMode@@AEBA?AVInteractionResult@@AEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@@Z
     MCAPI class InteractionResult
     _sendUseItemOnEvents(class ItemStack&, class BlockPos const&, uchar, class Vec3 const&) const;

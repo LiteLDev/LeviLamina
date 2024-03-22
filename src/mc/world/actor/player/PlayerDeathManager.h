@@ -35,11 +35,4 @@ public:
     MCAPI ~PlayerDeathManager();
 
     // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    // symbol: ?_getPlayerDeathManagerProxy@PlayerDeathManager@@AEBAAEAVIPlayerDeathManagerProxy@@XZ
-    MCAPI class IPlayerDeathManagerProxy& _getPlayerDeathManagerProxy() const;
-
-    // NOLINTEND
 };

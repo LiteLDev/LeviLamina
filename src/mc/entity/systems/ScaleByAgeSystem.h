@@ -3,31 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/systems/ITickingSystem.h"
+#include "mc/common/wrapper/Include.h"
+#include "mc/entity/EntityModifier.h"
+#include "mc/world/components/FlagComponent.h"
 
-class ScaleByAgeSystem : public ::ITickingSystem {
-public:
-    // prevent constructor by default
-    ScaleByAgeSystem& operator=(ScaleByAgeSystem const&);
-    ScaleByAgeSystem(ScaleByAgeSystem const&);
-    ScaleByAgeSystem();
+namespace ScaleByAgeSystem {
+// NOLINTBEGIN
+// symbol:
+// ?_tick@ScaleByAgeSystem@@YAXU?$type_list@U?$Include@V?$FlagComponent@UActorTickedFlag@@@@@@@entt@@AEBVStrictEntityContext@@AEBVAgeableComponent@@AEAUActorDataBoundingBoxComponent@@AEAUActorDataDirtyFlagsComponent@@AEAVActorOwnerComponent@@AEAVScaleByAgeComponent@@V?$EntityModifier@UShouldUpdateBoundingBoxRequestComponent@@@@@Z
+MCAPI void
+_tick(entt::type_list<struct Include<class FlagComponent<struct ActorTickedFlag>>>, class StrictEntityContext const&, class AgeableComponent const&, struct ActorDataBoundingBoxComponent&, struct ActorDataDirtyFlagsComponent&, class ActorOwnerComponent&, class ScaleByAgeComponent&, class EntityModifier<struct ShouldUpdateBoundingBoxRequestComponent>);
 
-public:
-    // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScaleByAgeSystem@@UEAA@XZ
-    virtual ~ScaleByAgeSystem() = default;
+// symbol: ?registerSystems@ScaleByAgeSystem@@YAXAEAVEntitySystems@@AEBVBaseGameVersion@@@Z
+MCAPI void registerSystems(class EntitySystems&, class BaseGameVersion const&);
+// NOLINTEND
 
-    // vIndex: 1, symbol: ?registerEvents@ISystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
-    virtual void registerEvents(entt::dispatcher&);
-
-    // vIndex: 2, symbol: ?tick@ScaleByAgeSystem@@UEAAXAEAVEntityRegistry@@@Z
-    virtual void tick(class EntityRegistry& registry);
-
-    // vIndex: 3, symbol: ?singleTick@ITickingSystem@@UEAAXAEAVEntityRegistry@@AEAVEntityContext@@@Z
-    virtual void singleTick(class EntityRegistry& registry, class EntityContext& entity);
-
-    // vIndex: 4, symbol: ?singleTick@ITickingSystem@@UEAAXAEAVEntityRegistry@@AEAVStrictEntityContext@@@Z
-    virtual void singleTick(class EntityRegistry& registry, class StrictEntityContext& entity);
-
-    // NOLINTEND
-};
+}; // namespace ScaleByAgeSystem

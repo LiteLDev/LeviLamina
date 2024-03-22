@@ -11,6 +11,9 @@ public:
 
     // private:
     // NOLINTBEGIN
+    // symbol: ?_finalizeBlockEventComponents@BlockComponentStorageFinalizer@@AEAAXAEAVBlock@@@Z
+    MCAPI void _finalizeBlockEventComponents(class Block&);
+
     // symbol: ?addRemainingComponents@BlockComponentStorageFinalizer@@AEAAXAEAVBlock@@@Z
     MCAPI void addRemainingComponents(class Block&);
 

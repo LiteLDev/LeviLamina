@@ -42,16 +42,16 @@ public:
     // vIndex: 15, symbol: ?getFiringPos@Witch@@UEBA?AVVec3@@XZ
     virtual class Vec3 getFiringPos() const;
 
-    // vIndex: 60, symbol: ?canAttack@Witch@@UEBA_NPEAVActor@@_N@Z
+    // vIndex: 59, symbol: ?canAttack@Witch@@UEBA_NPEAVActor@@_N@Z
     virtual bool canAttack(class Actor* actor, bool allowInvulnerable) const;
 
-    // vIndex: 80, symbol: ?handleEntityEvent@Witch@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 79, symbol: ?handleEntityEvent@Witch@@UEAAXW4ActorEvent@@H@Z
     virtual void handleEntityEvent(::ActorEvent id, int data);
 
-    // vIndex: 156, symbol: ?updateEntitySpecificMolangVariables@Witch@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 150, symbol: ?updateEntitySpecificMolangVariables@Witch@@UEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // vIndex: 192, symbol: ?getDamageAfterEnchantReduction@Witch@@MEBAMAEBVActorDamageSource@@M@Z
+    // vIndex: 186, symbol: ?getDamageAfterEnchantReduction@Witch@@MEBAMAEBVActorDamageSource@@M@Z
     virtual float getDamageAfterEnchantReduction(class ActorDamageSource const& source, float damage) const;
 
     // symbol: ??0Witch@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

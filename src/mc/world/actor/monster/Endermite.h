@@ -39,19 +39,19 @@ public:
     // vIndex: 10, symbol: __gen_??1Endermite@@UEAA@XZ
     virtual ~Endermite() = default;
 
-    // vIndex: 29, symbol: ?normalTick@Endermite@@UEAAXXZ
+    // vIndex: 28, symbol: ?normalTick@Endermite@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 159, symbol: ?readAdditionalSaveData@Endermite@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 153, symbol: ?readAdditionalSaveData@Endermite@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 160, symbol: ?addAdditionalSaveData@Endermite@@UEBAXAEAVCompoundTag@@@Z
+    // vIndex: 154, symbol: ?addAdditionalSaveData@Endermite@@UEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 171, symbol: ?aiStep@Endermite@@UEAAXXZ
+    // vIndex: 165, symbol: ?aiStep@Endermite@@UEAAXXZ
     virtual void aiStep();
 
-    // vIndex: 173, symbol: ?checkSpawnRules@Endermite@@UEAA_N_N@Z
+    // vIndex: 167, symbol: ?checkSpawnRules@Endermite@@UEAA_N_N@Z
     virtual bool checkSpawnRules(bool fromSpawner);
 
     // symbol: ??0Endermite@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

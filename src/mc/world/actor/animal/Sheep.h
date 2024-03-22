@@ -39,7 +39,7 @@ public:
     // vIndex: 10, symbol: __gen_??1Sheep@@UEAA@XZ
     virtual ~Sheep() = default;
 
-    // vIndex: 80, symbol: ?handleEntityEvent@Sheep@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 79, symbol: ?handleEntityEvent@Sheep@@UEAAXW4ActorEvent@@H@Z
     virtual void handleEntityEvent(::ActorEvent id, int data);
 
     // symbol: ??0Sheep@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

@@ -10,6 +10,9 @@ class Experiments;
 
 namespace VanillaGameVersions::Summer24Update {
 // NOLINTBEGIN
+// symbol: ?enabled@Summer24Update@VanillaGameVersions@@YA_NAEBVExperiments@@@Z
+MCAPI bool enabled(class Experiments const&);
+
 // symbol: ?enabled@Summer24Update@VanillaGameVersions@@YA_NAEBVBaseGameVersion@@AEBVExperiments@@@Z
 MCAPI bool enabled(class BaseGameVersion const&, class Experiments const&);
 

@@ -39,13 +39,13 @@ public:
     // vIndex: 10, symbol: __gen_??1Turtle@@UEAA@XZ
     virtual ~Turtle() = default;
 
-    // vIndex: 41, symbol: ?getShadowRadius@Turtle@@UEBAMXZ
+    // vIndex: 40, symbol: ?getShadowRadius@Turtle@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 143, symbol: ?die@Turtle@@UEAAXAEBVActorDamageSource@@@Z
+    // vIndex: 137, symbol: ?die@Turtle@@UEAAXAEBVActorDamageSource@@@Z
     virtual void die(class ActorDamageSource const& source);
 
-    // vIndex: 198, symbol: ?_getWalkTargetValue@Turtle@@UEAAMAEBVBlockPos@@@Z
+    // vIndex: 191, symbol: ?_getWalkTargetValue@Turtle@@UEAAMAEBVBlockPos@@@Z
     virtual float _getWalkTargetValue(class BlockPos const& pos);
 
     // symbol: ??0Turtle@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

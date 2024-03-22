@@ -79,36 +79,39 @@ public:
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 111, symbol: ?hasComparatorSignal@CauldronBlock@@UEBA_NXZ
+    // vIndex: 95, symbol: ?asItemInstance@CauldronBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+
+    // vIndex: 110, symbol: ?hasComparatorSignal@CauldronBlock@@UEBA_NXZ
     virtual bool hasComparatorSignal() const;
 
-    // vIndex: 112, symbol: ?getComparatorSignal@CauldronBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
+    // vIndex: 111, symbol: ?getComparatorSignal@CauldronBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
     virtual int
     getComparatorSignal(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
         const;
 
-    // vIndex: 134, symbol: ?animateTickBedrockLegacy@CauldronBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 133, symbol: ?animateTickBedrockLegacy@CauldronBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // vIndex: 137, symbol: ?getLightEmission@CauldronBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
+    // vIndex: 136, symbol: ?getLightEmission@CauldronBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
     virtual struct Brightness getLightEmission(class Block const& block) const;
 
-    // vIndex: 147, symbol: ?onPlace@CauldronBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 145, symbol: ?onPlace@CauldronBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 150, symbol: ?tick@CauldronBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 147, symbol: ?tick@CauldronBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
-    // vIndex: 152, symbol: ?isInteractiveBlock@CauldronBlock@@UEBA_NXZ
+    // vIndex: 149, symbol: ?isInteractiveBlock@CauldronBlock@@UEBA_NXZ
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 154, symbol: ?use@CauldronBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 151, symbol: ?use@CauldronBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    // vIndex: 159, symbol: ?getExtraRenderLayers@CauldronBlock@@UEBAHXZ
+    // vIndex: 156, symbol: ?getExtraRenderLayers@CauldronBlock@@UEBAHXZ
     virtual int getExtraRenderLayers() const;
 
-    // vIndex: 160, symbol: ?getLight@CauldronBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
+    // vIndex: 157, symbol: ?getLight@CauldronBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
     virtual struct Brightness getLight(class Block const& block) const;
 
     // symbol: ??0CauldronBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

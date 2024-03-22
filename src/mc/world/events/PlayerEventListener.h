@@ -123,9 +123,6 @@ public:
     // symbol: ?onPlayerNamedItem@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemDescriptor@@@Z
     MCVAPI ::EventResult onPlayerNamedItem(class Player& player, class ItemDescriptor const& item);
 
-    // symbol: ?onPlayerOnGround@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
-    MCVAPI ::EventResult onPlayerOnGround(class Player& player);
-
     // symbol:
     // ?onPlayerPiglinBarter@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
     MCVAPI ::EventResult
@@ -139,6 +136,9 @@ public:
     // ?onPlayerPortalUsed@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@V?$AutomaticID@VDimension@@H@@1@Z
     MCVAPI ::EventResult
     onPlayerPortalUsed(class Player& player, DimensionType fromDimension, DimensionType toDimension);
+
+    // symbol: ?onPlayerPoweredBeacon@PlayerEventListener@@UEAA?AW4EventResult@@AEBVPlayer@@H@Z
+    MCVAPI ::EventResult onPlayerPoweredBeacon(class Player const&, int);
 
     // symbol: ?onPlayerSaved@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
     MCVAPI ::EventResult onPlayerSaved(class Player& player);

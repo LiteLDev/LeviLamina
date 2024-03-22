@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/common/wrapper/Include.h"
+#include "mc/common/wrapper/ViewT.h"
+#include "mc/world/components/FlagComponent.h"
+
 class ResetJumpRidingScaleSystem {
 public:
     // prevent constructor by default
@@ -13,6 +18,15 @@ public:
     // NOLINTBEGIN
     // symbol: ?createSystem@ResetJumpRidingScaleSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
+
+    // symbol:
+    // ?tick@ResetJumpRidingScaleSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@UPlayerInputRequestComponent@@@@UJumpRidingScaleComponent@@UVanillaClientGameplayComponent@@@@@Z
+    MCAPI static void
+    tick(class ViewT<
+         class StrictEntityContext,
+         struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, struct PlayerInputRequestComponent>,
+         struct JumpRidingScaleComponent,
+         struct VanillaClientGameplayComponent> view);
 
     // NOLINTEND
 

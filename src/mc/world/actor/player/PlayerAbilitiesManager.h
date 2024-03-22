@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0PlayerAbilitiesManager@@QEAA@AEBV?$StackRefResult@VGameplayUserManager@@@@@Z
-    MCAPI explicit PlayerAbilitiesManager(class StackRefResult<class GameplayUserManager> const&);
+    // symbol: ??0PlayerAbilitiesManager@@QEAA@AEBV?$not_null@V?$StackRefResult@VGameplayUserManager@@@@@gsl@@@Z
+    MCAPI explicit PlayerAbilitiesManager(gsl::not_null<class StackRefResult<class GameplayUserManager>> const&);
 
     // symbol: ?getPlayerAbilities@PlayerAbilitiesManager@@QEAAPEAVLayeredAbilities@@AEBUActorUniqueID@@@Z
     MCAPI class LayeredAbilities* getPlayerAbilities(struct ActorUniqueID const&);

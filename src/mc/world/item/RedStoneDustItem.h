@@ -29,12 +29,12 @@ public:
     // vIndex: 0, symbol: __gen_??1RedStoneDustItem@@UEAA@XZ
     virtual ~RedStoneDustItem() = default;
 
-    // vIndex: 116, symbol:
+    // vIndex: 115, symbol:
     // ?_calculatePlacePos@RedStoneDustItem@@EEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
     virtual bool
     _calculatePlacePos(class ItemStackBase& instance, class Actor& entity, uchar& face, class BlockPos& pos) const;
 
-    // vIndex: 118, symbol:
+    // vIndex: 117, symbol:
     // ?_useOn@RedStoneDustItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const& clickPos)

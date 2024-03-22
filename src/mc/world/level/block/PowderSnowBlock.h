@@ -15,6 +15,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace BlockEvents { struct BlockFallOnEvent; }
 namespace mce { class Color; }
 // clang-format on
 
@@ -54,22 +55,21 @@ public:
     // vIndex: 89, symbol: ?breaksFallingBlocks@PowderSnowBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
     virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@PowderSnowBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 95, symbol: ?asItemInstance@PowderSnowBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 117, symbol: ?causesFreezeEffect@PowderSnowBlock@@UEBA_NXZ
+    // vIndex: 116, symbol: ?causesFreezeEffect@PowderSnowBlock@@UEBA_NXZ
     virtual bool causesFreezeEffect() const;
 
-    // vIndex: 138, symbol: ?canBeSilkTouched@PowderSnowBlock@@UEBA_NXZ
-    virtual bool canBeSilkTouched() const;
-
-    // vIndex: 148, symbol: ?onFallOn@PowderSnowBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@M@Z
-    virtual void
-    onFallOn(class BlockSource& region, class BlockPos const& pos, class Actor& entity, float fallDistance) const;
+    // vIndex: 141, symbol: ?_addHardCodedBlockComponents@PowderSnowBlock@@MEAAXAEBVExperiments@@@Z
+    virtual void _addHardCodedBlockComponents(class Experiments const&);
 
     // symbol:
     // ??0PowderSnowBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI PowderSnowBlock(std::string const& nameId, int id, class Material const& material);
+
+    // symbol: ?onFallOn@PowderSnowBlock@@QEBAXAEAUBlockFallOnEvent@BlockEvents@@@Z
+    MCAPI void onFallOn(struct BlockEvents::BlockFallOnEvent&) const;
 
     // symbol: ?canWalkOnTop@PowderSnowBlock@@SA_NAEBVGetCollisionShapeInterface@@@Z
     MCAPI static bool canWalkOnTop(class GetCollisionShapeInterface const& actor);

@@ -34,13 +34,13 @@ public:
     // vIndex: 0, symbol: __gen_??1PressurePlateBlock@@UEAA@XZ
     virtual ~PressurePlateBlock() = default;
 
-    // vIndex: 169, symbol: ?getSignalStrength@PressurePlateBlock@@MEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 164, symbol: ?getSignalStrength@PressurePlateBlock@@MEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual int getSignalStrength(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 170, symbol: ?getSignalForData@PressurePlateBlock@@MEBAHH@Z
+    // vIndex: 165, symbol: ?getSignalForData@PressurePlateBlock@@MEBAHH@Z
     virtual int getSignalForData(int data) const;
 
-    // vIndex: 171, symbol: ?getRedstoneSignal@PressurePlateBlock@@MEBAHH@Z
+    // vIndex: 166, symbol: ?getRedstoneSignal@PressurePlateBlock@@MEBAHH@Z
     virtual int getRedstoneSignal(int signal) const;
 
     // symbol:

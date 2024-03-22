@@ -38,15 +38,15 @@ public:
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
-    // vIndex: 82, symbol:
+    // vIndex: 81, symbol:
     // ?buildDescriptionId@SnowballItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 103, symbol:
+    // vIndex: 102, symbol:
     // ?setIconInfo@SnowballItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     virtual class Item& setIconInfo(std::string const&, int);
 
-    // vIndex: 104, symbol: ?getIconInfo@SnowballItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
+    // vIndex: 103, symbol: ?getIconInfo@SnowballItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
 
     // symbol:

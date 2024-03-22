@@ -59,6 +59,9 @@ public:
     // symbol: ??0AABB@@QEAA@MMMMMM@Z
     MCAPI AABB(float minX, float minY, float minZ, float maxX, float maxY, float maxZ);
 
+    // symbol: ?addAABB@AABB@@QEAAAEAV1@AEBV1@@Z
+    MCAPI class AABB& addAABB(class AABB const&);
+
     // symbol: ?axisInside@AABB@@QEBA?AVVec3@@AEBV1@V2@@Z
     MCAPI class Vec3 axisInside(class AABB const& other, class Vec3 axis) const;
 

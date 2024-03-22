@@ -32,9 +32,8 @@ public:
     // vIndex: 4, symbol: ?flagUnsupportedMovement@ServerCorrectionPolicy@@UEAAX_K@Z
     virtual void flagUnsupportedMovement(uint64);
 
-    // vIndex: 5, symbol:
-    // ?storeCurrentFrameSupported@ServerCorrectionPolicy@@UEAAX_KAEAVEntityContext@@AEBVIConstBlockSource@@@Z
-    virtual void storeCurrentFrameSupported(uint64, class EntityContext&, class IConstBlockSource const&);
+    // vIndex: 5, symbol: ?storeCurrentFrameSupported@ServerCorrectionPolicy@@UEAAX_KAEAVEntityContext@@@Z
+    virtual void storeCurrentFrameSupported(uint64, class EntityContext&);
 
     // NOLINTEND
 };

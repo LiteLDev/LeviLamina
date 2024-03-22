@@ -30,12 +30,9 @@ public:
     // vIndex: 0, symbol: __gen_??1EnderChestBlock@@UEAA@XZ
     virtual ~EnderChestBlock() = default;
 
-    // vIndex: 134, symbol:
+    // vIndex: 133, symbol:
     // ?animateTickBedrockLegacy@EnderChestBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
-
-    // vIndex: 138, symbol: ?canBeSilkTouched@EnderChestBlock@@MEBA_NXZ
-    virtual bool canBeSilkTouched() const;
 
     // symbol: ??0EnderChestBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI EnderChestBlock(std::string const& nameId, int id);

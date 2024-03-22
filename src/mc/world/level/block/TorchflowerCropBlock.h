@@ -39,10 +39,10 @@ public:
     // ?onFertilized@TorchflowerCropBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
     virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, ::FertilizerType) const;
 
-    // vIndex: 129, symbol: ?getVariant@TorchflowerCropBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 128, symbol: ?getVariant@TorchflowerCropBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 169, symbol: ?setGrowth@TorchflowerCropBlock@@UEBAAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@AEBV2@GH@Z
+    // vIndex: 164, symbol: ?setGrowth@TorchflowerCropBlock@@UEBAAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@AEBV2@GH@Z
     virtual class Block const& setGrowth(
         class BlockSource&    region,
         class BlockPos const& pos,
@@ -51,7 +51,7 @@ public:
         int updateFlags
     ) const;
 
-    // vIndex: 170, symbol: ?getBaseSeed@TorchflowerCropBlock@@UEBA?BVItemInstance@@XZ
+    // vIndex: 165, symbol: ?getBaseSeed@TorchflowerCropBlock@@UEBA?BVItemInstance@@XZ
     virtual class ItemInstance const getBaseSeed() const;
 
     // symbol: ??0TorchflowerCropBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

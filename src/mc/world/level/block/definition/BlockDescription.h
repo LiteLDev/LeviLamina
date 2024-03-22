@@ -4,6 +4,32 @@
 
 struct BlockDescription {
 public:
+    // BlockDescription inner types declare
+    // clang-format off
+    struct BlockTraits;
+    // clang-format on
+
+    // BlockDescription inner types define
+    struct BlockTraits {
+    public:
+        // prevent constructor by default
+        BlockTraits();
+
+    public:
+        // NOLINTBEGIN
+        // symbol: ??0BlockTraits@BlockDescription@@QEAA@AEBU01@@Z
+        MCAPI BlockTraits(struct BlockDescription::BlockTraits const&);
+
+        // symbol: ??4BlockTraits@BlockDescription@@QEAAAEAU01@$$QEAU01@@Z
+        MCAPI struct BlockDescription::BlockTraits& operator=(struct BlockDescription::BlockTraits&&);
+
+        // symbol: ??4BlockTraits@BlockDescription@@QEAAAEAU01@AEBU01@@Z
+        MCAPI struct BlockDescription::BlockTraits& operator=(struct BlockDescription::BlockTraits const&);
+
+        // NOLINTEND
+    };
+
+public:
     // NOLINTBEGIN
     // symbol: ??0BlockDescription@@QEAA@XZ
     MCAPI BlockDescription();

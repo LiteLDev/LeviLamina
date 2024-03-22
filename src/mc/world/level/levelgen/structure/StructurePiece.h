@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/Direction.h"
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
 
 class StructurePiece {
@@ -146,6 +147,9 @@ public:
 
     // symbol: ?getBlock@StructurePiece@@QEAAAEBVBlock@@AEAVBlockSource@@HHHAEBVBoundingBox@@@Z
     MCAPI class Block const& getBlock(class BlockSource& region, int x, int y, int z, class BoundingBox const& chunkBB);
+
+    // symbol: ?getOrientation@StructurePiece@@QEBA?AW4Type@Direction@@XZ
+    MCAPI ::Direction::Type getOrientation() const;
 
     // symbol: ?getOrientationData@StructurePiece@@QEAAGPEBVBlock@@G@Z
     MCAPI ushort getOrientationData(class Block const* block, ushort data);

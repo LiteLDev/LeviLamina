@@ -39,16 +39,16 @@ public:
     // vIndex: 10, symbol: __gen_??1Pufferfish@@UEAA@XZ
     virtual ~Pufferfish() = default;
 
-    // vIndex: 29, symbol: ?normalTick@Pufferfish@@UEAAXXZ
+    // vIndex: 28, symbol: ?normalTick@Pufferfish@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 32, symbol: ?startRiding@Pufferfish@@UEAA_NAEAVActor@@@Z
+    // vIndex: 31, symbol: ?startRiding@Pufferfish@@UEAA_NAEAVActor@@@Z
     virtual bool startRiding(class Actor&);
 
-    // vIndex: 156, symbol: ?updateEntitySpecificMolangVariables@Pufferfish@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 150, symbol: ?updateEntitySpecificMolangVariables@Pufferfish@@UEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // vIndex: 158, symbol: ?_hurt@Pufferfish@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 152, symbol: ?_hurt@Pufferfish@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     // symbol: ??0Pufferfish@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class PoolAliasBinding;
 namespace br::worldgen { class StructureHeightProvider; }
 namespace br::worldgen { struct JigsawStructure; }
 // clang-format on
@@ -31,6 +32,14 @@ public:
 
     // symbol: ?maxDepth@JigsawStructureBuilder@worldgen@br@@QEAAAEAV123@C@Z
     MCAPI class br::worldgen::JigsawStructureBuilder& maxDepth(schar);
+
+    // symbol: ?maxDistanceFromCenter@JigsawStructureBuilder@worldgen@br@@QEAAAEAV123@H@Z
+    MCAPI class br::worldgen::JigsawStructureBuilder& maxDistanceFromCenter(int);
+
+    // symbol:
+    // ?poolAliases@JigsawStructureBuilder@worldgen@br@@QEAAAEAV123@$$QEAV?$vector@V?$shared_ptr@VPoolAliasBinding@@@std@@V?$allocator@V?$shared_ptr@VPoolAliasBinding@@@std@@@2@@std@@@Z
+    MCAPI class br::worldgen::JigsawStructureBuilder&
+    poolAliases(std::vector<std::shared_ptr<class PoolAliasBinding>>&&);
 
     // symbol: ?projectStartToHeightmap@JigsawStructureBuilder@worldgen@br@@QEAAAEAV123@W4Type@HeightmapProjection@23@@Z
     MCAPI class br::worldgen::JigsawStructureBuilder& projectStartToHeightmap(::br::worldgen::HeightmapProjection::Type

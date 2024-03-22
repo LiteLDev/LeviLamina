@@ -32,7 +32,7 @@ public:
     // vIndex: 53, symbol: ?isComplex@ComplexItem@@UEBA_NXZ
     virtual bool isComplex() const;
 
-    // vIndex: 119, symbol:
+    // vIndex: 118, symbol:
     // ?getUpdatePacket@ComplexItem@@UEBA?AV?$unique_ptr@VPacket@@U?$default_delete@VPacket@@@std@@@std@@AEBVItemStack@@AEAVLevel@@AEAVActor@@@Z
     virtual std::unique_ptr<class Packet>
     getUpdatePacket(class ItemStack const& item, class Level& level, class Actor& player) const;

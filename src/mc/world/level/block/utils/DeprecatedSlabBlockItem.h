@@ -26,19 +26,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1DeprecatedSlabBlockItem@@UEAA@XZ
-    virtual ~DeprecatedSlabBlockItem();
-
-    // vIndex: 116, symbol:
-    // ?_calculatePlacePos@DeprecatedSlabBlockItem@@UEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
-    virtual bool
-    _calculatePlacePos(class ItemStackBase& instance, class Actor& entity, uchar& face, class BlockPos& pos) const;
-
-    // vIndex: 118, symbol:
-    // ?_useOn@DeprecatedSlabBlockItem@@UEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-    virtual class InteractionResult
-    _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
-        const;
+    // vIndex: 0, symbol: __gen_??1DeprecatedSlabBlockItem@@UEAA@XZ
+    virtual ~DeprecatedSlabBlockItem() = default;
 
     // NOLINTEND
 

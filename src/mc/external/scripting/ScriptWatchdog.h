@@ -22,6 +22,9 @@ public:
     MCAPI
     ScriptWatchdog(class Scripting::IWatchdog&, class ServerLevel&, class ScriptPluginManager*, class Scripting::WeakLifetimeScope, class ServerInstance*);
 
+    // symbol: ?disableWatchdog@ScriptWatchdog@@QEAAX_N@Z
+    MCAPI void disableWatchdog(bool);
+
     // symbol: ?sendTelemetry@ScriptWatchdog@@QEAAXXZ
     MCAPI void sendTelemetry();
 

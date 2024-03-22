@@ -58,12 +58,12 @@ public:
     MCAPI int getPopulationCap(class SpawnConditions const& conditions) const;
 
     // symbol:
-    // ?getSpawnAboveBlockList@MobSpawnRules@@QEBAAEBV?$unordered_set@PEBVBlockLegacy@@U?$hash@PEBVBlockLegacy@@@std@@U?$equal_to@PEBVBlockLegacy@@@3@V?$allocator@PEBVBlockLegacy@@@3@@std@@XZ
-    MCAPI std::unordered_set<class BlockLegacy const*> const& getSpawnAboveBlockList() const;
+    // ?getSpawnAboveBlockList@MobSpawnRules@@QEBAAEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@XZ
+    MCAPI std::vector<class BlockDescriptor> const& getSpawnAboveBlockList() const;
 
     // symbol:
-    // ?getSpawnAboveBlockListMutable@MobSpawnRules@@QEAAAEAV?$unordered_set@PEBVBlockLegacy@@U?$hash@PEBVBlockLegacy@@@std@@U?$equal_to@PEBVBlockLegacy@@@3@V?$allocator@PEBVBlockLegacy@@@3@@std@@XZ
-    MCAPI std::unordered_set<class BlockLegacy const*>& getSpawnAboveBlockListMutable();
+    // ?getSpawnAboveBlockListMutable@MobSpawnRules@@QEAAAEAV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@XZ
+    MCAPI std::vector<class BlockDescriptor>& getSpawnAboveBlockListMutable();
 
     // symbol:
     // ?getSpawnCount@MobSpawnRules@@QEBAHAEBVSpawnConditions@@AEAVBlockSource@@AEAVRandom@@AEBUMobSpawnHerdInfo@@@Z
@@ -75,20 +75,20 @@ public:
     ) const;
 
     // symbol:
-    // ?getSpawnOnBlockList@MobSpawnRules@@QEBAAEBV?$unordered_set@PEBVBlockLegacy@@U?$hash@PEBVBlockLegacy@@@std@@U?$equal_to@PEBVBlockLegacy@@@3@V?$allocator@PEBVBlockLegacy@@@3@@std@@XZ
-    MCAPI std::unordered_set<class BlockLegacy const*> const& getSpawnOnBlockList() const;
+    // ?getSpawnOnBlockList@MobSpawnRules@@QEBAAEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@XZ
+    MCAPI std::vector<class BlockDescriptor> const& getSpawnOnBlockList() const;
 
     // symbol:
-    // ?getSpawnOnBlockListMutable@MobSpawnRules@@QEAAAEAV?$unordered_set@PEBVBlockLegacy@@U?$hash@PEBVBlockLegacy@@@std@@U?$equal_to@PEBVBlockLegacy@@@3@V?$allocator@PEBVBlockLegacy@@@3@@std@@XZ
-    MCAPI std::unordered_set<class BlockLegacy const*>& getSpawnOnBlockListMutable();
+    // ?getSpawnOnBlockListMutable@MobSpawnRules@@QEAAAEAV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@XZ
+    MCAPI std::vector<class BlockDescriptor>& getSpawnOnBlockListMutable();
 
     // symbol:
-    // ?getSpawnOnBlockPreventedList@MobSpawnRules@@QEBAAEBV?$unordered_set@PEBVBlockLegacy@@U?$hash@PEBVBlockLegacy@@@std@@U?$equal_to@PEBVBlockLegacy@@@3@V?$allocator@PEBVBlockLegacy@@@3@@std@@XZ
-    MCAPI std::unordered_set<class BlockLegacy const*> const& getSpawnOnBlockPreventedList() const;
+    // ?getSpawnOnBlockPreventedList@MobSpawnRules@@QEBAAEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@XZ
+    MCAPI std::vector<class BlockDescriptor> const& getSpawnOnBlockPreventedList() const;
 
     // symbol:
-    // ?getSpawnOnBlockPreventedListMutable@MobSpawnRules@@QEAAAEAV?$unordered_set@PEBVBlockLegacy@@U?$hash@PEBVBlockLegacy@@@std@@U?$equal_to@PEBVBlockLegacy@@@3@V?$allocator@PEBVBlockLegacy@@@3@@std@@XZ
-    MCAPI std::unordered_set<class BlockLegacy const*>& getSpawnOnBlockPreventedListMutable();
+    // ?getSpawnOnBlockPreventedListMutable@MobSpawnRules@@QEAAAEAV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@XZ
+    MCAPI std::vector<class BlockDescriptor>& getSpawnOnBlockPreventedListMutable();
 
     // symbol: ?isLavaSpawner@MobSpawnRules@@QEBA_NXZ
     MCAPI bool isLavaSpawner() const;

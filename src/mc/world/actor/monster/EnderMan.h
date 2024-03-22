@@ -40,31 +40,31 @@ public:
     // vIndex: 10, symbol: __gen_??1EnderMan@@UEAA@XZ
     virtual ~EnderMan() = default;
 
-    // vIndex: 29, symbol: ?normalTick@EnderMan@@UEAAXXZ
+    // vIndex: 28, symbol: ?normalTick@EnderMan@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 72, symbol: ?shouldRender@EnderMan@@UEBA_NXZ
+    // vIndex: 71, symbol: ?shouldRender@EnderMan@@UEBA_NXZ
     virtual bool shouldRender() const;
 
-    // vIndex: 74, symbol: ?getAmbientSound@EnderMan@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 73, symbol: ?getAmbientSound@EnderMan@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
     virtual ::Puv::Legacy::LevelSoundEvent getAmbientSound() const;
 
-    // vIndex: 122, symbol: ?canBeAffectedByArrow@EnderMan@@UEBA_NAEBVMobEffectInstance@@@Z
+    // vIndex: 118, symbol: ?canBeAffectedByArrow@EnderMan@@UEBA_NAEBVMobEffectInstance@@@Z
     virtual bool canBeAffectedByArrow(class MobEffectInstance const& effect) const;
 
-    // vIndex: 158, symbol: ?_hurt@EnderMan@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 152, symbol: ?_hurt@EnderMan@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 159, symbol: ?readAdditionalSaveData@EnderMan@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 153, symbol: ?readAdditionalSaveData@EnderMan@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 160, symbol: ?addAdditionalSaveData@EnderMan@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 154, symbol: ?addAdditionalSaveData@EnderMan@@MEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 170, symbol: ?hurtEffects@EnderMan@@UEAAXAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 164, symbol: ?hurtEffects@EnderMan@@UEAAXAEBVActorDamageSource@@M_N1@Z
     virtual void hurtEffects(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 201, symbol: ?newServerAiStep@EnderMan@@UEAAXXZ
+    // vIndex: 194, symbol: ?newServerAiStep@EnderMan@@UEAAXXZ
     virtual void newServerAiStep();
 
     // symbol: ??0EnderMan@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

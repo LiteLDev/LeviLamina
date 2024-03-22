@@ -40,25 +40,25 @@ public:
     // vIndex: 10, symbol: __gen_??1MinecartTNT@@UEAA@XZ
     virtual ~MinecartTNT() = default;
 
-    // vIndex: 29, symbol: ?normalTick@MinecartTNT@@UEAAXXZ
+    // vIndex: 28, symbol: ?normalTick@MinecartTNT@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 80, symbol: ?handleEntityEvent@MinecartTNT@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 79, symbol: ?handleEntityEvent@MinecartTNT@@UEAAXW4ActorEvent@@H@Z
     virtual void handleEntityEvent(::ActorEvent eventId, int data);
 
-    // vIndex: 108, symbol: ?causeFallDamageToActor@MinecartTNT@@MEAAMMMVActorDamageSource@@@Z
+    // vIndex: 104, symbol: ?causeFallDamageToActor@MinecartTNT@@MEAAMMMVActorDamageSource@@@Z
     virtual float causeFallDamageToActor(float, float, class ActorDamageSource);
 
-    // vIndex: 158, symbol: ?_hurt@MinecartTNT@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 152, symbol: ?_hurt@MinecartTNT@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 163, symbol: ?destroy@MinecartTNT@@UEAAXAEBVActorDamageSource@@_N@Z
+    // vIndex: 157, symbol: ?destroy@MinecartTNT@@UEAAXAEBVActorDamageSource@@_N@Z
     virtual void destroy(class ActorDamageSource const& source, bool dropMinecartComponents);
 
-    // vIndex: 164, symbol: ?getType@MinecartTNT@@UEAA?AW4MinecartType@@XZ
+    // vIndex: 158, symbol: ?getType@MinecartTNT@@UEAA?AW4MinecartType@@XZ
     virtual ::MinecartType getType();
 
-    // vIndex: 165, symbol: ?getDefaultDisplayBlock@MinecartTNT@@UEBAPEBVBlock@@XZ
+    // vIndex: 159, symbol: ?getDefaultDisplayBlock@MinecartTNT@@UEBAPEBVBlock@@XZ
     virtual class Block const* getDefaultDisplayBlock() const;
 
     // symbol: ??0MinecartTNT@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

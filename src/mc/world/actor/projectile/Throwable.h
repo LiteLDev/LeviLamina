@@ -43,25 +43,25 @@ public:
     // vIndex: 10, symbol: ??1Throwable@@UEAA@XZ
     virtual ~Throwable();
 
-    // vIndex: 27, symbol: ?lerpMotion@Throwable@@UEAAXAEBVVec3@@@Z
+    // vIndex: 26, symbol: ?lerpMotion@Throwable@@UEAAXAEBVVec3@@@Z
     virtual void lerpMotion(class Vec3 const& delta);
 
-    // vIndex: 97, symbol: ?getSourceUniqueID@Throwable@@UEBA?AUActorUniqueID@@XZ
+    // vIndex: 96, symbol: ?getSourceUniqueID@Throwable@@UEBA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID getSourceUniqueID() const;
 
-    // vIndex: 159, symbol: ?readAdditionalSaveData@Throwable@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 153, symbol: ?readAdditionalSaveData@Throwable@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 160, symbol: ?addAdditionalSaveData@Throwable@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 154, symbol: ?addAdditionalSaveData@Throwable@@MEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 163, symbol: ?getThrowPower@Throwable@@UEAAMXZ
+    // vIndex: 157, symbol: ?getThrowPower@Throwable@@UEAAMXZ
     virtual float getThrowPower();
 
-    // vIndex: 164, symbol: ?getThrowUpAngleOffset@Throwable@@MEAAMXZ
+    // vIndex: 158, symbol: ?getThrowUpAngleOffset@Throwable@@MEAAMXZ
     virtual float getThrowUpAngleOffset();
 
-    // vIndex: 165, symbol: ?getGravity@Throwable@@MEAAMXZ
+    // vIndex: 159, symbol: ?getGravity@Throwable@@MEAAMXZ
     virtual float getGravity();
 
     // symbol: ??0Throwable@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

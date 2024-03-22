@@ -15,12 +15,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?consolidateLevelChunkMetaData@LevelChunkMetaDataManager@@QEAAXAEAVLevelChunk@@@Z
-    MCAPI void consolidateLevelChunkMetaData(class LevelChunk&);
-
     // symbol:
     // ?getLevelChunkMetaDataDictionary@LevelChunkMetaDataManager@@QEBA?AV?$shared_ptr@VLevelChunkMetaDataDictionary@@@std@@XZ
     MCAPI std::shared_ptr<class LevelChunkMetaDataDictionary> getLevelChunkMetaDataDictionary() const;
+
+    // symbol: ?registerForLevelChunkEvents@LevelChunkMetaDataManager@@QEAAXAEAVILevelChunkEventManagerConnector@@@Z
+    MCAPI void registerForLevelChunkEvents(class ILevelChunkEventManagerConnector&);
 
     // symbol: ?registerOnNewDimensionCreated@LevelChunkMetaDataManager@@QEAAXAEAVDimensionManager@@@Z
     MCAPI void registerOnNewDimensionCreated(class DimensionManager&);
@@ -54,6 +54,9 @@ public:
 
     // private:
     // NOLINTBEGIN
+    // symbol: ?_consolidateLevelChunkMetaData@LevelChunkMetaDataManager@@AEAAXAEAVLevelChunk@@@Z
+    MCAPI void _consolidateLevelChunkMetaData(class LevelChunk&);
+
     // symbol: ?_onNewDimensionCreated@LevelChunkMetaDataManager@@AEAAXAEAVDimension@@@Z
     MCAPI void _onNewDimensionCreated(class Dimension&);
 

@@ -33,13 +33,13 @@ public:
     // vIndex: 60, symbol: ?canBeUsedInCommands@ChemicalHeatBlock@@UEBA_NAEBVBaseGameVersion@@@Z
     virtual bool canBeUsedInCommands(class BaseGameVersion const& requiredBaseGameVersion) const;
 
-    // vIndex: 147, symbol: ?onPlace@ChemicalHeatBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 145, symbol: ?onPlace@ChemicalHeatBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 150, symbol: ?tick@ChemicalHeatBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 147, symbol: ?tick@ChemicalHeatBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 159, symbol: ?getExtraRenderLayers@ChemicalHeatBlock@@UEBAHXZ
+    // vIndex: 156, symbol: ?getExtraRenderLayers@ChemicalHeatBlock@@UEBAHXZ
     virtual int getExtraRenderLayers() const;
 
     // symbol: ??0ChemicalHeatBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

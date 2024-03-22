@@ -29,7 +29,6 @@ public:
             // Components inner types declare
             // clang-format off
             struct Bounds;
-            struct Generation;
             // clang-format on
 
             // Components inner types define
@@ -43,21 +42,6 @@ public:
             public:
                 // NOLINTBEGIN
                 // symbol: ?bindType@Bounds@Components@Dimension@DimensionDocument@@SAXAEAUReflectionCtx@cereal@@@Z
-                MCAPI static void bindType(struct cereal::ReflectionCtx&);
-
-                // NOLINTEND
-            };
-
-            struct Generation {
-            public:
-                // prevent constructor by default
-                Generation& operator=(Generation const&);
-                Generation(Generation const&);
-                Generation();
-
-            public:
-                // NOLINTBEGIN
-                // symbol: ?bindType@Generation@Components@Dimension@DimensionDocument@@SAXAEAUReflectionCtx@cereal@@@Z
                 MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
                 // NOLINTEND
@@ -95,9 +79,6 @@ public:
             // symbol: ??1Description@Dimension@DimensionDocument@@QEAA@XZ
             MCAPI ~Description();
 
-            // symbol: ?bindType@Description@Dimension@DimensionDocument@@SAXAEAUReflectionCtx@cereal@@@Z
-            MCAPI static void bindType(struct cereal::ReflectionCtx&);
-
             // NOLINTEND
         };
 
@@ -131,6 +112,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0DimensionDocument@@QEAA@AEAUReflectionCtx@cereal@@@Z
+    MCAPI explicit DimensionDocument(struct cereal::ReflectionCtx&);
+
     // symbol: ??1DimensionDocument@@QEAA@XZ
     MCAPI ~DimensionDocument();
 

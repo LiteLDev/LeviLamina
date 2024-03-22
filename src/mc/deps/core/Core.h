@@ -22,6 +22,7 @@
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/deps/core/common/bedrock/ThreadLocalObject.h"
+#include "mc/deps/core/common/bedrock/UniqueLock.h"
 
 // auto generated forward declare list
 // clang-format off

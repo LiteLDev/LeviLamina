@@ -40,26 +40,26 @@ public:
     // vIndex: 10, symbol: __gen_??1Skeleton@@UEAA@XZ
     virtual ~Skeleton() = default;
 
-    // vIndex: 29, symbol: ?normalTick@Skeleton@@UEAAXXZ
+    // vIndex: 28, symbol: ?normalTick@Skeleton@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 61, symbol: ?setTarget@Skeleton@@UEAAXPEAVActor@@@Z
+    // vIndex: 60, symbol: ?setTarget@Skeleton@@UEAAXPEAVActor@@@Z
     virtual void setTarget(class Actor* target);
 
-    // vIndex: 98, symbol: ?canFreeze@Skeleton@@UEBA_NXZ
+    // vIndex: 97, symbol: ?canFreeze@Skeleton@@UEBA_NXZ
     virtual bool canFreeze() const;
 
-    // vIndex: 121, symbol: ?canBeAffected@Skeleton@@UEBA_NI@Z
+    // vIndex: 117, symbol: ?canBeAffected@Skeleton@@UEBA_NI@Z
     virtual bool canBeAffected(uint effectId) const;
 
-    // vIndex: 131, symbol:
+    // vIndex: 125, symbol:
     // ?getDebugText@Skeleton@@EEAAXAEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
     virtual void getDebugText(std::vector<std::string>& outputInfo);
 
-    // vIndex: 143, symbol: ?die@Skeleton@@UEAAXAEBVActorDamageSource@@@Z
+    // vIndex: 137, symbol: ?die@Skeleton@@UEAAXAEBVActorDamageSource@@@Z
     virtual void die(class ActorDamageSource const& source);
 
-    // vIndex: 180, symbol: ?doHurtTarget@Skeleton@@UEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
+    // vIndex: 174, symbol: ?doHurtTarget@Skeleton@@UEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
     virtual bool doHurtTarget(class Actor* target, ::ActorDamageCause const& cause);
 
     // symbol: ??0Skeleton@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

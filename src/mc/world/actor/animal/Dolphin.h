@@ -42,16 +42,16 @@ public:
     // vIndex: 10, symbol: __gen_??1Dolphin@@UEAA@XZ
     virtual ~Dolphin() = default;
 
-    // vIndex: 112, symbol: ?canBePulledIntoVehicle@Dolphin@@UEBA_NXZ
+    // vIndex: 108, symbol: ?canBePulledIntoVehicle@Dolphin@@UEBA_NXZ
     virtual bool canBePulledIntoVehicle() const;
 
-    // vIndex: 171, symbol: ?aiStep@Dolphin@@UEAAXXZ
+    // vIndex: 165, symbol: ?aiStep@Dolphin@@UEAAXXZ
     virtual void aiStep();
 
-    // vIndex: 193, symbol: ?createAIGoals@Dolphin@@UEAA_NXZ
+    // vIndex: 187, symbol: ?createAIGoals@Dolphin@@UEAA_NXZ
     virtual bool createAIGoals();
 
-    // vIndex: 198, symbol: ?_getWalkTargetValue@Dolphin@@UEAAMAEBVBlockPos@@@Z
+    // vIndex: 191, symbol: ?_getWalkTargetValue@Dolphin@@UEAAMAEBVBlockPos@@@Z
     virtual float _getWalkTargetValue(class BlockPos const& pos);
 
     // symbol: ??0Dolphin@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

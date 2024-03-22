@@ -63,28 +63,28 @@ public:
     // vIndex: 74, symbol: ?releaseUsing@BucketItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z
     virtual void releaseUsing(class ItemStack& inoutInstance, class Player* player, int durationLeft) const;
 
-    // vIndex: 82, symbol:
+    // vIndex: 81, symbol:
     // ?buildDescriptionId@BucketItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 86, symbol: ?getMaxStackSize@BucketItem@@UEBAEAEBVItemDescriptor@@@Z
+    // vIndex: 85, symbol: ?getMaxStackSize@BucketItem@@UEBAEAEBVItemDescriptor@@@Z
     virtual uchar getMaxStackSize(class ItemDescriptor const&) const;
 
-    // vIndex: 95, symbol: ?validFishInteraction@BucketItem@@UEBA_NH@Z
+    // vIndex: 94, symbol: ?validFishInteraction@BucketItem@@UEBA_NH@Z
     virtual bool validFishInteraction(int auxValue) const;
 
-    // vIndex: 103, symbol:
+    // vIndex: 102, symbol:
     // ?setIconInfo@BucketItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     virtual class Item& setIconInfo(std::string const& name, int id);
 
-    // vIndex: 108, symbol: ?getLightEmission@BucketItem@@UEBA?AUBrightness@@H@Z
+    // vIndex: 107, symbol: ?getLightEmission@BucketItem@@UEBA?AUBrightness@@H@Z
     virtual struct Brightness getLightEmission(int auxValue) const;
 
-    // vIndex: 113, symbol:
+    // vIndex: 112, symbol:
     // ?getAuxValuesDescription@BucketItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getAuxValuesDescription() const;
 
-    // vIndex: 118, symbol:
+    // vIndex: 117, symbol:
     // ?_useOn@BucketItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)

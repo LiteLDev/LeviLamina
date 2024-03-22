@@ -16,9 +16,12 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0PathElement@internal@Puv@@QEAA@$$QEAU012@@Z
+    MCAPI PathElement(struct Puv::internal::PathElement&&);
+
     // symbol:
-    // ??0PathElement@internal@Puv@@QEAA@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ContextType@SerializerContext@cereal@@@Z
-    MCAPI PathElement(uint, std::string, ::cereal::SerializerContext::ContextType);
+    // ??0PathElement@internal@Puv@@QEAA@Vmeta_type@entt@@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ContextType@SerializerContext@cereal@@@Z
+    MCAPI PathElement(entt::meta_type, uint, std::string, ::cereal::SerializerContext::ContextType);
 
     // symbol: ??1PathElement@internal@Puv@@QEAA@XZ
     MCAPI ~PathElement();

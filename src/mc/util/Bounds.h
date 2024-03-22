@@ -26,8 +26,5 @@ public:
     MCAPI
     Bounds(class BlockPos const& minBlock, class BlockPos const& maxBlock, int side, ::Bounds::Option buildOption);
 
-    // symbol: ??0Bounds@@QEAA@AEBVBlockPos@@HHFF@Z
-    MCAPI Bounds(class BlockPos const&, int, int, short, short);
-
     // NOLINTEND
 };

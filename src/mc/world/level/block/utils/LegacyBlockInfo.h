@@ -5,10 +5,10 @@
 // auto generated forward declare list
 // clang-format off
 class HashedString;
-namespace SplitBlockUtils { struct BlockNameRefAuxVariant; }
+namespace FlatteningUtils { struct BlockNameRefAuxVariant; }
 // clang-format on
 
-namespace SplitBlockUtils {
+namespace FlatteningUtils {
 
 struct LegacyBlockInfo {
 public:
@@ -20,14 +20,14 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ??0LegacyBlockInfo@SplitBlockUtils@@QEAA@HVHashedString@@0V?$vector@UBlockNameRefAuxVariant@SplitBlockUtils@@V?$allocator@UBlockNameRefAuxVariant@SplitBlockUtils@@@std@@@std@@@Z
+    // ??0LegacyBlockInfo@FlatteningUtils@@QEAA@HVHashedString@@0EV?$vector@UBlockNameRefAuxVariant@FlatteningUtils@@V?$allocator@UBlockNameRefAuxVariant@FlatteningUtils@@@std@@@std@@@Z
     MCAPI
-    LegacyBlockInfo(int, class HashedString, class HashedString, std::vector<struct SplitBlockUtils::BlockNameRefAuxVariant>);
+    LegacyBlockInfo(int, class HashedString, class HashedString, uchar, std::vector<struct FlatteningUtils::BlockNameRefAuxVariant>);
 
-    // symbol: ??1LegacyBlockInfo@SplitBlockUtils@@QEAA@XZ
+    // symbol: ??1LegacyBlockInfo@FlatteningUtils@@QEAA@XZ
     MCAPI ~LegacyBlockInfo();
 
     // NOLINTEND
 };
 
-}; // namespace SplitBlockUtils
+}; // namespace FlatteningUtils

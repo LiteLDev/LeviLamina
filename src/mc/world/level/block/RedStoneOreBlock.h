@@ -33,35 +33,26 @@ public:
     // vIndex: 47, symbol: ?canBeOriginalSurface@RedStoneOreBlock@@UEBA_NXZ
     virtual bool canBeOriginalSurface() const;
 
-    // vIndex: 96, symbol: ?asItemInstance@RedStoneOreBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 95, symbol: ?asItemInstance@RedStoneOreBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 101, symbol: ?attack@RedStoneOreBlock@@UEBA_NPEAVPlayer@@AEBVBlockPos@@@Z
+    // vIndex: 100, symbol: ?attack@RedStoneOreBlock@@UEBA_NPEAVPlayer@@AEBVBlockPos@@@Z
     virtual bool attack(class Player* player, class BlockPos const& pos) const;
 
-    // vIndex: 134, symbol:
+    // vIndex: 133, symbol:
     // ?animateTickBedrockLegacy@RedStoneOreBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // vIndex: 146, symbol: ?onStandOn@RedStoneOreBlock@@UEBAXAEAVEntityContext@@AEBVBlockPos@@@Z
+    // vIndex: 144, symbol: ?onStandOn@RedStoneOreBlock@@UEBAXAEAVEntityContext@@AEBVBlockPos@@@Z
     virtual void onStandOn(class EntityContext& entity, class BlockPos const& pos) const;
 
-    // vIndex: 151, symbol: ?randomTick@RedStoneOreBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148, symbol: ?randomTick@RedStoneOreBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 154, symbol: ?use@RedStoneOreBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 151, symbol: ?use@RedStoneOreBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    // vIndex: 163, symbol: ?getResourceItem@RedStoneOreBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
-
-    // vIndex: 164, symbol: ?getResourceCount@RedStoneOreBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize& randomize, class Block const&, int bonusLootLevel) const;
-
-    // vIndex: 165, symbol: ?getSilkTouchItemInstance@RedStoneOreBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-    virtual class ItemInstance getSilkTouchItemInstance(class Block const&) const;
-
-    // vIndex: 168, symbol: ?_lightUpBlock@RedStoneOreBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 163, symbol: ?_lightUpBlock@RedStoneOreBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void _lightUpBlock(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ??0RedStoneOreBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z

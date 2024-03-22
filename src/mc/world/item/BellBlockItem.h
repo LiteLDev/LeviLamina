@@ -29,7 +29,7 @@ public:
     // vIndex: 0, symbol: __gen_??1BellBlockItem@@UEAA@XZ
     virtual ~BellBlockItem() = default;
 
-    // vIndex: 118, symbol:
+    // vIndex: 117, symbol:
     // ?_useOn@BellBlockItem@@UEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)

@@ -80,7 +80,7 @@ public:
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 98, symbol: ?getPlacementBlock@ButtonBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+    // vIndex: 97, symbol: ?getPlacementBlock@ButtonBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
     virtual class Block const& getPlacementBlock(
         class Actor const&    by,
         class BlockPos const& pos,
@@ -89,35 +89,35 @@ public:
         int                   itemValue
     ) const;
 
-    // vIndex: 100, symbol: ?isAttachedTo@ButtonBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAV3@@Z
+    // vIndex: 99, symbol: ?isAttachedTo@ButtonBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAV3@@Z
     virtual bool
     isAttachedTo(class BlockSource& region, class BlockPos const& pos, class BlockPos& outAttachedTo) const;
 
-    // vIndex: 129, symbol: ?getVariant@ButtonBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 128, symbol: ?getVariant@ButtonBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 130, symbol: ?canSpawnOn@ButtonBlock@@UEBA_NPEAVActor@@@Z
+    // vIndex: 129, symbol: ?canSpawnOn@ButtonBlock@@UEBA_NPEAVActor@@@Z
     virtual bool canSpawnOn(class Actor*) const;
 
-    // vIndex: 147, symbol: ?onPlace@ButtonBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 145, symbol: ?onPlace@ButtonBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 150, symbol: ?tick@ButtonBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 147, symbol: ?tick@ButtonBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
-    // vIndex: 152, symbol: ?isInteractiveBlock@ButtonBlock@@UEBA_NXZ
+    // vIndex: 149, symbol: ?isInteractiveBlock@ButtonBlock@@UEBA_NXZ
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 154, symbol: ?use@ButtonBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 151, symbol: ?use@ButtonBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    // vIndex: 156, symbol: ?canSurvive@ButtonBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 153, symbol: ?canSurvive@ButtonBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 166, symbol: ?_onHitByActivatingAttack@ButtonBlock@@EEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void _onHitByActivatingAttack(class BlockSource&, class BlockPos const&) const;
+    // vIndex: 160, symbol: ?_onHitByActivatingAttack@ButtonBlock@@EEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
+    virtual void _onHitByActivatingAttack(class BlockSource&, class BlockPos const&, class Actor*) const;
 
-    // vIndex: 167, symbol: ?entityInside@ButtonBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
+    // vIndex: 162, symbol: ?entityInside@ButtonBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
     virtual void entityInside(class BlockSource& region, class BlockPos const& pos, class Actor&) const;
 
     // symbol: ?buttonPressed@ButtonBlock@@QEBAXAEAVBlockSource@@AEBVBlock@@AEBVVec3@@PEAVActor@@@Z

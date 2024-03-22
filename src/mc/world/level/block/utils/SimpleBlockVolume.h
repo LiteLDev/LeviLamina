@@ -4,13 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/external/glm/vec.h"
+#include "mc/world/level/block/utils/BlockVolumeBase.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class SimpleBlockVolume {
+class SimpleBlockVolume : public ::BlockVolumeBase {
 public:
     // SimpleBlockVolume inner types define
     enum class IntersectionResult {};
@@ -21,11 +22,38 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1SimpleBlockVolume@@UEAA@XZ
+    virtual ~SimpleBlockVolume();
+
+    // vIndex: 1, symbol: ?getBoundingBox@SimpleBlockVolume@@UEBA?AVBoundingBox@@XZ
+    virtual class BoundingBox getBoundingBox() const;
+
+    // vIndex: 2, symbol: ?getMin@SimpleBlockVolume@@UEBA?AVBlockPos@@XZ
+    virtual class BlockPos getMin() const;
+
+    // vIndex: 3, symbol: ?getMax@SimpleBlockVolume@@UEBA?AVBlockPos@@XZ
+    virtual class BlockPos getMax() const;
+
+    // vIndex: 4, symbol: ?getSpan@SimpleBlockVolume@@UEBA?AU?$vec@$02H$0A@@glm@@XZ
+    virtual struct glm::vec<3, int, 0> getSpan() const;
+
+    // vIndex: 5, symbol: ?getCapacity@SimpleBlockVolume@@UEBAHXZ
+    virtual int getCapacity() const;
+
+    // vIndex: 6, symbol: ?isInside@SimpleBlockVolume@@UEBA_NAEBVBlockPos@@@Z
+    virtual bool isInside(class BlockPos const&) const;
+
+    // vIndex: 7, symbol: ?translate@SimpleBlockVolume@@UEAAXAEBVBlockPos@@@Z
+    virtual void translate(class BlockPos const&);
+
     // symbol: ??0SimpleBlockVolume@@QEAA@$$QEAV0@@Z
     MCAPI SimpleBlockVolume(class SimpleBlockVolume&& volume);
 
     // symbol: ??0SimpleBlockVolume@@QEAA@AEBV0@@Z
     MCAPI SimpleBlockVolume(class SimpleBlockVolume const& volume);
+
+    // symbol: ??0SimpleBlockVolume@@QEAA@$$QEAVBlockPos@@0@Z
+    MCAPI SimpleBlockVolume(class BlockPos&& from, class BlockPos&& to);
 
     // symbol: ?begin@SimpleBlockVolume@@QEBA?AVSimpleBlockVolumeIterator@@XZ
     MCAPI class SimpleBlockVolumeIterator begin() const;
@@ -39,23 +67,8 @@ public:
     // symbol: ?doesBlockTouchFaces@SimpleBlockVolume@@QEBA_NAEBVBlockPos@@@Z
     MCAPI bool doesBlockTouchFaces(class BlockPos const& blockPos) const;
 
-    // symbol: ?getBoundingBox@SimpleBlockVolume@@QEBA?AVBoundingBox@@XZ
-    MCAPI class BoundingBox getBoundingBox() const;
-
-    // symbol: ?getCapacity@SimpleBlockVolume@@QEBAHXZ
-    MCAPI int getCapacity() const;
-
     // symbol: ?getFrom@SimpleBlockVolume@@QEBA?AVBlockPos@@XZ
     MCAPI class BlockPos getFrom() const;
-
-    // symbol: ?getMax@SimpleBlockVolume@@QEBA?AVBlockPos@@XZ
-    MCAPI class BlockPos getMax() const;
-
-    // symbol: ?getMin@SimpleBlockVolume@@QEBA?AVBlockPos@@XZ
-    MCAPI class BlockPos getMin() const;
-
-    // symbol: ?getSpan@SimpleBlockVolume@@QEBA?AU?$vec@$02H$0A@@glm@@XZ
-    MCAPI struct glm::vec<3, int, 0> getSpan() const;
 
     // symbol: ?getTo@SimpleBlockVolume@@QEBA?AVBlockPos@@XZ
     MCAPI class BlockPos getTo() const;
@@ -75,24 +88,11 @@ public:
     // symbol: ??8SimpleBlockVolume@@QEBA_NAEBV0@@Z
     MCAPI bool operator==(class SimpleBlockVolume const& other) const;
 
-    // symbol: ?translate@SimpleBlockVolume@@QEAAAEAV1@AEBVBlockPos@@@Z
-    MCAPI class SimpleBlockVolume& translate(class BlockPos const&);
-
     // symbol: ?translated@SimpleBlockVolume@@QEBA?AV1@AEBU?$vec@$02H$0A@@glm@@@Z
     MCAPI class SimpleBlockVolume translated(struct glm::vec<3, int, 0> const&) const;
 
     // symbol: ?cerealBindTypes@SimpleBlockVolume@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void cerealBindTypes(struct cereal::ReflectionCtx&);
-
-    // NOLINTEND
-
-    // protected:
-    // NOLINTBEGIN
-    // symbol: ?_setFrom@SimpleBlockVolume@@IEAAXAEBVVec3@@@Z
-    MCAPI void _setFrom(class Vec3 const& from);
-
-    // symbol: ?_setTo@SimpleBlockVolume@@IEAAXAEBVVec3@@@Z
-    MCAPI void _setTo(class Vec3 const& to);
 
     // NOLINTEND
 };

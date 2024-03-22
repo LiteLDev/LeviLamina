@@ -42,10 +42,10 @@ public:
     // vIndex: 10, symbol: ??1Animal@@UEAA@XZ
     virtual ~Animal();
 
-    // vIndex: 75, symbol: ?isInvulnerableTo@Animal@@UEBA_NAEBVActorDamageSource@@@Z
+    // vIndex: 74, symbol: ?isInvulnerableTo@Animal@@UEBA_NAEBVActorDamageSource@@@Z
     virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
-    // vIndex: 198, symbol: ?_getWalkTargetValue@Animal@@MEAAMAEBVBlockPos@@@Z
+    // vIndex: 191, symbol: ?_getWalkTargetValue@Animal@@MEAAMAEBVBlockPos@@@Z
     virtual float _getWalkTargetValue(class BlockPos const& pos);
 
     // symbol: ??0Animal@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

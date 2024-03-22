@@ -61,6 +61,9 @@ MCAPI extern class BaseGameVersion const TrailsAndTalesVersion_U5;
 // symbol: ?TrailsAndTalesVersion_U6@VanillaGameVersions@@3VBaseGameVersion@@B
 MCAPI extern class BaseGameVersion const TrailsAndTalesVersion_U6;
 
+// symbol: ?TrailsAndTalesVersion_U7@VanillaGameVersions@@3VBaseGameVersion@@B
+MCAPI extern class BaseGameVersion const TrailsAndTalesVersion_U7;
+
 // symbol: ?WildUpdateVersion@VanillaGameVersions@@3VBaseGameVersion@@B
 MCAPI extern class BaseGameVersion const WildUpdateVersion;
 

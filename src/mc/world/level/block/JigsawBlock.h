@@ -33,7 +33,7 @@ public:
     // vIndex: 60, symbol: ?canBeUsedInCommands@JigsawBlock@@UEBA_NAEBVBaseGameVersion@@@Z
     virtual bool canBeUsedInCommands(class BaseGameVersion const& requiredBaseGameVersion) const;
 
-    // vIndex: 98, symbol: ?getPlacementBlock@JigsawBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+    // vIndex: 97, symbol: ?getPlacementBlock@JigsawBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
     virtual class Block const& getPlacementBlock(
         class Actor const&    by,
         class BlockPos const& pos,
@@ -42,19 +42,19 @@ public:
         int                   itemValue
     ) const;
 
-    // vIndex: 131, symbol: ?getRenderBlock@JigsawBlock@@UEBAAEBVBlock@@XZ
+    // vIndex: 130, symbol: ?getRenderBlock@JigsawBlock@@UEBAAEBVBlock@@XZ
     virtual class Block const& getRenderBlock() const;
 
-    // vIndex: 132, symbol: ?getMappedFace@JigsawBlock@@UEBAEEAEBVBlock@@@Z
+    // vIndex: 131, symbol: ?getMappedFace@JigsawBlock@@UEBAEEAEBVBlock@@@Z
     virtual uchar getMappedFace(uchar face, class Block const& block) const;
 
-    // vIndex: 133, symbol: ?getFaceFlip@JigsawBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
+    // vIndex: 132, symbol: ?getFaceFlip@JigsawBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
     virtual ::Flip getFaceFlip(uchar face, class Block const& block) const;
 
-    // vIndex: 152, symbol: ?isInteractiveBlock@JigsawBlock@@UEBA_NXZ
+    // vIndex: 149, symbol: ?isInteractiveBlock@JigsawBlock@@UEBA_NXZ
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 154, symbol: ?use@JigsawBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 151, symbol: ?use@JigsawBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // symbol: ??0JigsawBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

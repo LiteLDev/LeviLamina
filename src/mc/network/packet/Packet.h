@@ -90,19 +90,22 @@ public:
     // ?getName@ActorEventPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getName() const = 0;
 
-    // vIndex: 3, symbol: ?write@ActorEventPacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 3, symbol: ?checkSize@Packet@@UEBA?AV?$Result@XVerror_code@std@@@Bedrock@@_K_N@Z
+    virtual class Bedrock::Result<void> checkSize(uint64, bool) const;
+
+    // vIndex: 4, symbol: ?write@ActorEventPacket@@UEBAXAEAVBinaryStream@@@Z
     virtual void write(class BinaryStream& stream) const = 0;
 
-    // vIndex: 4, symbol: ?read@Packet@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 5, symbol: ?read@Packet@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> read(class ReadOnlyBinaryStream& bitStream);
 
-    // vIndex: 5, symbol: ?disallowBatching@Packet@@UEBA_NXZ
+    // vIndex: 6, symbol: ?disallowBatching@Packet@@UEBA_NXZ
     virtual bool disallowBatching() const;
 
-    // vIndex: 6, symbol: ?isValid@Packet@@UEBA_NXZ
+    // vIndex: 7, symbol: ?isValid@Packet@@UEBA_NXZ
     virtual bool isValid() const;
 
-    // vIndex: 7, symbol:
+    // vIndex: 8, symbol:
     // ?_read@ActorEventPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream) = 0;
 

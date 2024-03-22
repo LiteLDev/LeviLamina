@@ -7,9 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class Biome;
 class Block;
 class BlockVolume;
-class EntityContext;
 class ISurfaceBuilder;
 class Pos;
 // clang-format on
@@ -61,8 +61,8 @@ public:
     // vIndex: 0, symbol: __gen_??1CappedSurfaceBuilder@VanillaSurfaceBuilders@@UEAA@XZ
     virtual ~CappedSurfaceBuilder() = default;
 
-    // vIndex: 1, symbol: ?init@CappedSurfaceBuilder@VanillaSurfaceBuilders@@UEAAXAEAVEntityContext@@I@Z
-    virtual void init(class EntityContext& entity, uint levelSeed);
+    // vIndex: 1, symbol: ?init@CappedSurfaceBuilder@VanillaSurfaceBuilders@@UEAAXAEAVBiome@@I@Z
+    virtual void init(class Biome&, uint);
 
     // vIndex: 2, symbol:
     // ?buildSurfaceAt@CappedSurfaceBuilder@VanillaSurfaceBuilders@@UEBAXAEBUBuildParameters@ISurfaceBuilder@@@Z

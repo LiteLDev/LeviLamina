@@ -20,6 +20,9 @@ public:
     // symbol: ?getStatusFlag@ActorDataFlagComponent@@QEBA_NW4ActorFlags@@@Z
     MCAPI bool getStatusFlag(::ActorFlags) const;
 
+    // symbol: ?getFlags@ActorDataFlagComponent@@SA_KAEBV?$bitset@$0HG@@std@@H@Z
+    MCAPI static uint64 getFlags(std::bitset<118> const&, int);
+
     // symbol: ?ALL_HIGHER_ONES@ActorDataFlagComponent@@2V?$bitset@$0HG@@std@@B
     MCAPI static std::bitset<118> const ALL_HIGHER_ONES;
 
@@ -35,6 +38,9 @@ public:
 
     // symbol: ?setStatusFlag@ActorDataFlagComponent@@IEAAXW4ActorFlags@@_N@Z
     MCAPI void setStatusFlag(::ActorFlags, bool);
+
+    // symbol: ?setFlags@ActorDataFlagComponent@@KA?AV?$optional@V?$bitset@$0HG@@std@@@std@@AEAV?$bitset@$0HG@@3@_KH@Z
+    MCAPI static std::optional<std::bitset<118>> setFlags(std::bitset<118>&, uint64, int);
 
     // NOLINTEND
 };

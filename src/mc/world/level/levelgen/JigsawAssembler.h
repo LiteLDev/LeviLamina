@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/JigsawExpansion.h"
 #include "mc/world/level/levelgen/Type.h"
+#include "mc/world/level/levelgen/structure/PoolAliasBinding.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -25,7 +26,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ?construct@JigsawAssembler@worldgen@br@@SA?AV?$optional@VGenerationStub@worldgen@br@@@std@@AEAUGenerationContext@23@V?$basic_string_view@DU?$char_traits@D@std@@@5@1HVBlockPos@@W4Type@HeightmapProjection@23@HW4JigsawExpansion@23@@Z
+    // ?construct@JigsawAssembler@worldgen@br@@SA?AV?$optional@VGenerationStub@worldgen@br@@@std@@AEAUGenerationContext@23@V?$basic_string_view@DU?$char_traits@D@std@@@5@1HVBlockPos@@W4Type@HeightmapProjection@23@H$$QEAVPoolAliasLookup@PoolAliasBinding@@W4JigsawExpansion@23@@Z
     MCAPI static std::optional<class br::worldgen::GenerationStub> construct(
         struct br::worldgen::GenerationContext&,
         std::string_view,
@@ -34,6 +35,7 @@ public:
         class BlockPos,
         ::br::worldgen::HeightmapProjection::Type,
         int,
+        class PoolAliasBinding::PoolAliasLookup&&,
         ::br::worldgen::JigsawExpansion
     );
 

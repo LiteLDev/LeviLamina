@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/GameType.h"
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/Result.h"
 #include "mc/external/scripting/StrongTypedObjectHandle.h"
@@ -173,9 +172,6 @@ public:
 
     // symbol: ?setBodyRotation@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@M@Z
     MCAPI class Scripting::Result<void> setBodyRotation(float) const;
-
-    // symbol: ?setGameMode@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEAA?AV?$Result@X$$V@Scripting@@W4GameType@@@Z
-    MCAPI class Scripting::Result<void> setGameMode(::GameType gameType);
 
     // symbol:
     // ?setItem@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@_N$$V@Scripting@@AEBVScriptItemStack@ScriptModuleMinecraft@@H_N@Z

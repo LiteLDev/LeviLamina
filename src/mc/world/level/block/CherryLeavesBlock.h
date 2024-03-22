@@ -30,27 +30,27 @@ public:
     // vIndex: 0, symbol: __gen_??1CherryLeavesBlock@@UEAA@XZ
     virtual ~CherryLeavesBlock() = default;
 
-    // vIndex: 122, symbol: ?getColor@CherryLeavesBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 121, symbol: ?getColor@CherryLeavesBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual int getColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
-    // vIndex: 125, symbol: ?isSeasonTinted@CherryLeavesBlock@@UEBA_NAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 124, symbol: ?isSeasonTinted@CherryLeavesBlock@@UEBA_NAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool isSeasonTinted(class Block const&, class BlockSource&, class BlockPos const&) const;
 
-    // vIndex: 126, symbol: ?onGraphicsModeChanged@CherryLeavesBlock@@UEAAXAEBUBlockGraphicsModeChangeContext@@@Z
+    // vIndex: 125, symbol: ?onGraphicsModeChanged@CherryLeavesBlock@@UEAAXAEBUBlockGraphicsModeChangeContext@@@Z
     virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const& context);
 
-    // vIndex: 129, symbol: ?getVariant@CherryLeavesBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 128, symbol: ?getVariant@CherryLeavesBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const&) const;
 
-    // vIndex: 135, symbol: ?animateTick@CherryLeavesBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 134, symbol: ?animateTick@CherryLeavesBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void animateTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 158, symbol:
+    // vIndex: 155, symbol:
     // ?getRenderLayer@CherryLeavesBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
     virtual ::BlockRenderLayer
     getRenderLayer(class Block const&, class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 162, symbol:
+    // vIndex: 159, symbol:
     // ?getMapColor@CherryLeavesBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual class mce::Color
     getMapColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;

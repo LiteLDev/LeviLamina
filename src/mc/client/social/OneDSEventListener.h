@@ -58,8 +58,8 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol:
-    // ?AddPartA@OneDSEventListener@Events@Social@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVValue@Json@@_N@Z
-    MCAPI void AddPartA(std::string const& eventName, class Json::Value&, bool);
+    // ?AddPartA@OneDSEventListener@Events@Social@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVValue@Json@@_J_N@Z
+    MCAPI void AddPartA(std::string const&, class Json::Value&, int64, bool);
 
     // symbol: ?AddPartC@OneDSEventListener@Events@Social@@AEAAXAEBVEvent@23@AEAVValue@Json@@@Z
     MCAPI void AddPartC(class Social::Events::Event const& event, class Json::Value&);

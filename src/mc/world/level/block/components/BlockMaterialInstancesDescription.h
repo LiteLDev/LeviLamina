@@ -48,6 +48,9 @@ public:
     // symbol: ??0BlockMaterialInstancesDescription@@QEAA@XZ
     MCAPI BlockMaterialInstancesDescription();
 
+    // symbol: ??0BlockMaterialInstancesDescription@@QEAA@$$QEAU0@@Z
+    MCAPI BlockMaterialInstancesDescription(struct BlockMaterialInstancesDescription&&);
+
     // symbol: ??0BlockMaterialInstancesDescription@@QEAA@AEBU0@@Z
     MCAPI BlockMaterialInstancesDescription(struct BlockMaterialInstancesDescription const&);
 

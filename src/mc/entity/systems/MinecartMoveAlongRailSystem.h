@@ -65,5 +65,22 @@ public:
     MCAPI static void
     _preRailMovementCalculateMinecartPositionSystem(class StrictEntityContext const& context, struct OffsetsComponent const&, struct StateVectorComponent const&, struct FallDistanceComponent&, struct SnapOnRailComponent&, class EntityModifier<struct ActorSetPositionRequestComponent> mod, class IConstBlockSource const&);
 
+    // symbol:
+    // ?_tickCalculateRailMovementSystem@MinecartMoveAlongRailSystem@@CAXV?$ViewT@VStrictEntityContext@@$$CBVRailMovementComponent@@USnapOnRailComponent@@UStateVectorComponent@@V?$Optional@$$CBUVehicleComponent@@@@@@V?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UPlayerComponentFlag@@@@@@$$CBUActorRotationComponent@@$$CBULocalMoveVelocityComponent@@@@V?$EntityModifier@UMoveRequestComponent@@@@@Z
+    MCAPI static void _tickCalculateRailMovementSystem(
+        class ViewT<
+            class StrictEntityContext,
+            class RailMovementComponent const,
+            struct SnapOnRailComponent,
+            struct StateVectorComponent,
+            class Optional<struct VehicleComponent const>> view,
+        class ViewT<
+            class StrictEntityContext,
+            struct Include<class FlagComponent<struct PlayerComponentFlag>>,
+            struct ActorRotationComponent const,
+            struct LocalMoveVelocityComponent const>,
+        class EntityModifier<struct MoveRequestComponent> mod
+    );
+
     // NOLINTEND
 };

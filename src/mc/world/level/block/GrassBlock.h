@@ -50,28 +50,25 @@ public:
     virtual bool
     tryToTill(class BlockSource& region, class BlockPos const& pos, class Actor& entity, class ItemStack& item) const;
 
-    // vIndex: 99, symbol: ?calcVariant@GrassBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVColor@mce@@@Z
+    // vIndex: 98, symbol: ?calcVariant@GrassBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVColor@mce@@@Z
     virtual int
     calcVariant(class BlockSource& region, class BlockPos const& pos, class mce::Color const& baseColor) const;
 
-    // vIndex: 121, symbol: ?getColor@GrassBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 120, symbol: ?getColor@GrassBlock@@UEBAHAEBVBlock@@@Z
     virtual int getColor(class Block const& block) const;
 
-    // vIndex: 122, symbol: ?getColor@GrassBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 121, symbol: ?getColor@GrassBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual int getColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
-    // vIndex: 151, symbol: ?randomTick@GrassBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148, symbol: ?randomTick@GrassBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 154, symbol: ?use@GrassBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 151, symbol: ?use@GrassBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    // vIndex: 162, symbol: ?getMapColor@GrassBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 159, symbol: ?getMapColor@GrassBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual class mce::Color
     getMapColor(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
-
-    // vIndex: 163, symbol: ?getResourceItem@GrassBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
 
     // symbol: ??0GrassBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI GrassBlock(std::string const& nameId, int id);
@@ -88,6 +85,9 @@ public:
     // NOLINTBEGIN
     // symbol: ?_canBeGrass@GrassBlock@@AEBA_NAEBVBlockSource@@AEBVBlockPos@@@Z
     MCAPI bool _canBeGrass(class BlockSource const& region, class BlockPos const& pos) const;
+
+    // symbol: ?_plantGrass@GrassBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandomize@@@Z
+    MCAPI bool _plantGrass(class BlockSource& region, class BlockPos const&, class Randomize& randomize) const;
 
     // NOLINTEND
 };

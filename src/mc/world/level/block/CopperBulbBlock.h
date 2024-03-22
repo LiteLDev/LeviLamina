@@ -47,25 +47,25 @@ public:
     // vIndex: 71, symbol: ?setupRedstoneComponent@CopperBulbBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void setupRedstoneComponent(class BlockSource&, class BlockPos const&) const;
 
-    // vIndex: 111, symbol: ?hasComparatorSignal@CopperBulbBlock@@UEBA_NXZ
+    // vIndex: 110, symbol: ?hasComparatorSignal@CopperBulbBlock@@UEBA_NXZ
     virtual bool hasComparatorSignal() const;
 
-    // vIndex: 112, symbol: ?getComparatorSignal@CopperBulbBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
+    // vIndex: 111, symbol: ?getComparatorSignal@CopperBulbBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
     virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, uchar) const;
 
-    // vIndex: 137, symbol: ?getLightEmission@CopperBulbBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
+    // vIndex: 136, symbol: ?getLightEmission@CopperBulbBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
     virtual struct Brightness getLightEmission(class Block const&) const;
 
-    // vIndex: 147, symbol: ?onPlace@CopperBulbBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 145, symbol: ?onPlace@CopperBulbBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void onPlace(class BlockSource&, class BlockPos const&) const;
 
-    // vIndex: 150, symbol: ?tick@CopperBulbBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 147, symbol: ?tick@CopperBulbBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // vIndex: 151, symbol: ?randomTick@CopperBulbBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148, symbol: ?randomTick@CopperBulbBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void randomTick(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // vIndex: 154, symbol: ?use@CopperBulbBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 151, symbol: ?use@CopperBulbBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
     virtual bool use(class Player&, class BlockPos const&, uchar) const;
 
     // symbol:

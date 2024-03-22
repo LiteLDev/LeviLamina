@@ -53,30 +53,30 @@ public:
     virtual class Block const*
     playerWillDestroy(class Player& player, class BlockPos const& pos, class Block const& block) const;
 
-    // vIndex: 98, symbol: ?getPlacementBlock@LecternBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+    // vIndex: 97, symbol: ?getPlacementBlock@LecternBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
     virtual class Block const&
     getPlacementBlock(class Actor const& by, class BlockPos const& pos, uchar, class Vec3 const&, int) const;
 
-    // vIndex: 101, symbol: ?attack@LecternBlock@@UEBA_NPEAVPlayer@@AEBVBlockPos@@@Z
+    // vIndex: 100, symbol: ?attack@LecternBlock@@UEBA_NPEAVPlayer@@AEBVBlockPos@@@Z
     virtual bool attack(class Player* player, class BlockPos const& pos) const;
 
-    // vIndex: 111, symbol: ?hasComparatorSignal@LecternBlock@@UEBA_NXZ
+    // vIndex: 110, symbol: ?hasComparatorSignal@LecternBlock@@UEBA_NXZ
     virtual bool hasComparatorSignal() const;
 
-    // vIndex: 112, symbol: ?getComparatorSignal@LecternBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
+    // vIndex: 111, symbol: ?getComparatorSignal@LecternBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
     virtual int
     getComparatorSignal(class BlockSource& region, class BlockPos const& pos, class Block const&, uchar) const;
 
-    // vIndex: 147, symbol: ?onPlace@LecternBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 145, symbol: ?onPlace@LecternBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 150, symbol: ?tick@LecternBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 147, symbol: ?tick@LecternBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
-    // vIndex: 152, symbol: ?isInteractiveBlock@LecternBlock@@UEBA_NXZ
+    // vIndex: 149, symbol: ?isInteractiveBlock@LecternBlock@@UEBA_NXZ
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 154, symbol: ?use@LecternBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 151, symbol: ?use@LecternBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // symbol: ??0LecternBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

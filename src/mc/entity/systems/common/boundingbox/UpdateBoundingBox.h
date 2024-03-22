@@ -67,9 +67,8 @@ MCAPI void transformPlayerSizeRequest(
 );
 
 // symbol:
-// ?visitCommonSetSize@UpdateBoundingBox@@YAXAEBVStrictEntityContext@@AEBUShouldUpdateBoundingBoxRequestComponent@@AEBUStateVectorComponent@@AEAUSynchedActorDataComponent@@AEAUAABBShapeComponent@@AEAUDepenetrationComponent@@V?$optional_ref@$$CBVCollisionBoxComponent@@@@V?$EntityModifier@UShouldUpdateBoundingBoxRequestComponent@@@@@Z
-MCAPI void
-visitCommonSetSize(class StrictEntityContext const&, struct ShouldUpdateBoundingBoxRequestComponent const&, struct StateVectorComponent const&, struct SynchedActorDataComponent&, struct AABBShapeComponent&, struct DepenetrationComponent&, class optional_ref<class CollisionBoxComponent const>, class EntityModifier<struct ShouldUpdateBoundingBoxRequestComponent>);
+// ?visitCommonSetSize@UpdateBoundingBox@@YAXAEBVStrictEntityContext@@AEBUShouldUpdateBoundingBoxRequestComponent@@AEBUStateVectorComponent@@AEAUActorDataDirtyFlagsComponent@@AEAUActorDataBoundingBoxComponent@@AEAUAABBShapeComponent@@AEAUDepenetrationComponent@@V?$optional_ref@$$CBVCollisionBoxComponent@@@@V?$EntityModifier@UShouldUpdateBoundingBoxRequestComponent@@@@@Z
+MCAPI void visitCommonSetSize(class StrictEntityContext const&, struct ShouldUpdateBoundingBoxRequestComponent const&, struct StateVectorComponent const&, struct ActorDataDirtyFlagsComponent&, struct ActorDataBoundingBoxComponent&, struct AABBShapeComponent&, struct DepenetrationComponent&, class optional_ref<class CollisionBoxComponent const>, class EntityModifier<struct ShouldUpdateBoundingBoxRequestComponent>);
 // NOLINTEND
 
 }; // namespace UpdateBoundingBox

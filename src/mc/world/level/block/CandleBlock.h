@@ -39,25 +39,19 @@ public:
     // vIndex: 55, symbol: ?waterSpreadCausesSpawn@CandleBlock@@UEBA_NXZ
     virtual bool waterSpreadCausesSpawn() const;
 
-    // vIndex: 96, symbol: ?asItemInstance@CandleBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 95, symbol: ?asItemInstance@CandleBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
-    // vIndex: 152, symbol: ?isInteractiveBlock@CandleBlock@@UEBA_NXZ
+    // vIndex: 149, symbol: ?isInteractiveBlock@CandleBlock@@UEBA_NXZ
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 154, symbol: ?use@CandleBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 151, symbol: ?use@CandleBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
     virtual bool use(class Player& player, class BlockPos const& pos, uchar) const;
 
-    // vIndex: 163, symbol: ?getResourceItem@CandleBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const& block, int) const;
-
-    // vIndex: 164, symbol: ?getResourceCount@CandleBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize&, class Block const& block, int) const;
-
-    // vIndex: 168, symbol: ?_getNumCandles@CandleBlock@@MEBAHAEBVBlock@@@Z
+    // vIndex: 163, symbol: ?_getNumCandles@CandleBlock@@MEBAHAEBVBlock@@@Z
     virtual int _getNumCandles(class Block const& block) const;
 
-    // vIndex: 169, symbol:
+    // vIndex: 164, symbol:
     // ?_iterateCandles@CandleBlock@@MEBAXAEBVBlock@@AEBVBlockPos@@V?$function@$$A6AXAEBVVec3@@H@Z@std@@@Z
     virtual void _iterateCandles(
         class Block const&                          block,
@@ -65,7 +59,7 @@ public:
         std::function<void(class Vec3 const&, int)> callback
     ) const;
 
-    // vIndex: 170, symbol: ?_tryLightOnFire@CandleBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
+    // vIndex: 165, symbol: ?_tryLightOnFire@CandleBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
     virtual void _tryLightOnFire(class BlockSource& region, class BlockPos const& pos, class Actor* sourceActor) const;
 
     // symbol: ??0CandleBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

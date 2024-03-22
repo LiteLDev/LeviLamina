@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::Threading { class Mutex; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class ItemRegistryRef {
@@ -97,9 +98,11 @@ public:
     // symbol: ?getWorldBaseGameVersion@ItemRegistryRef@@QEBA?AVBaseGameVersion@@XZ
     MCAPI class BaseGameVersion getWorldBaseGameVersion() const;
 
-    // symbol: ?init@ItemRegistryRef@@QEBAXAEBVExperiments@@AEBVBaseGameVersion@@PEAVResourcePackManager@@@Z
+    // symbol:
+    // ?init@ItemRegistryRef@@QEBAXAEAUReflectionCtx@cereal@@AEBVExperiments@@AEBVBaseGameVersion@@PEAVResourcePackManager@@@Z
     MCAPI void
-    init(class Experiments const&, class BaseGameVersion const& baseGameVersion, class ResourcePackManager* rpm) const;
+    init(struct cereal::ReflectionCtx&, class Experiments const&, class BaseGameVersion const&, class ResourcePackManager*)
+        const;
 
     // symbol:
     // ?initCreativeItemsServer@ItemRegistryRef@@QEBAXPEAVActorInfoRegistry@@PEAVBlockDefinitionGroup@@_NAEBVExperiments@@V?$function@$$A6AXVItemRegistryRef@@PEAVActorInfoRegistry@@PEAVBlockDefinitionGroup@@PEAVCreativeItemRegistry@@_NAEBVBaseGameVersion@@AEBVExperiments@@@Z@std@@@Z
@@ -185,9 +188,6 @@ public:
     // symbol: ?setCheckForItemWorldCompatibility@ItemRegistryRef@@QEBAX_N@Z
     MCAPI void setCheckForItemWorldCompatibility(bool value) const;
 
-    // symbol: ?setOwningThreadId@ItemRegistryRef@@QEBAXVid@thread@std@@@Z
-    MCAPI void setOwningThreadId(std::thread::id threadId) const;
-
     // symbol: ?setServerInitializingCreativeItems@ItemRegistryRef@@QEBAX_N@Z
     MCAPI void setServerInitializingCreativeItems(bool value) const;
 
@@ -208,32 +208,12 @@ public:
     // symbol: ??1ItemRegistryRef@@QEAA@XZ
     MCAPI ~ItemRegistryRef();
 
-    // symbol: ?isUsingCombinedItemRegistry@ItemRegistryRef@@SA_NXZ
-    MCAPI static bool isUsingCombinedItemRegistry();
-
-    // symbol: ?setUseCombinedItemRegistryToggle@ItemRegistryRef@@SAX_N@Z
-    MCAPI static void setUseCombinedItemRegistryToggle(bool);
-
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_lockRegistry@ItemRegistryRef@@AEBA?AV?$shared_ptr@VItemRegistry@@@std@@XZ
     MCAPI std::shared_ptr<class ItemRegistry> _lockRegistry() const;
-
-    // NOLINTEND
-
-private:
-    // NOLINTBEGIN
-    // symbol: ?mCombinedItemRegistryInstance@ItemRegistryRef@@0V?$shared_ptr@VItemRegistry@@@std@@A
-    MCAPI static std::shared_ptr<class ItemRegistry> mCombinedItemRegistryInstance;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mCombinedItemRegistryInstance() { return mCombinedItemRegistryInstance; }
 
     // NOLINTEND
 };

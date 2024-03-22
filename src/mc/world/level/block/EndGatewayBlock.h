@@ -57,10 +57,10 @@ public:
     // vIndex: 77, symbol: ?canRenderSelectionOverlay@EndGatewayBlock@@UEBA_NW4BlockRenderLayer@@@Z
     virtual bool canRenderSelectionOverlay(::BlockRenderLayer) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@EndGatewayBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 95, symbol: ?asItemInstance@EndGatewayBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 134, symbol:
+    // vIndex: 133, symbol:
     // ?animateTickBedrockLegacy@EndGatewayBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 

@@ -102,8 +102,16 @@ public:
         generateDamageCauseCommandEnum(std::optional<struct Scripting::Version>);
 
     // symbol:
+    // ?generateNewDamageCauseCommandEnum@ActorDamageSource@@SA?AV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorDamageCause@@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorDamageCause@@@std@@@2@@std@@V?$optional@UVersion@Scripting@@@3@@Z
+    MCAPI static std::vector<std::pair<std::string, ::ActorDamageCause>>
+        generateNewDamageCauseCommandEnum(std::optional<struct Scripting::Version>);
+
+    // symbol:
     // ?generateVersionedDamageCauseCommandEnum@ActorDamageSource@@SA?AV?$vector@VVersionedActorDamageCause@@V?$allocator@VVersionedActorDamageCause@@@std@@@std@@XZ
     MCAPI static std::vector<class VersionedActorDamageCause> generateVersionedDamageCauseCommandEnum();
+
+    // symbol: ?getCauseMapVersionCutoffInclusive@ActorDamageSource@@SA?AW4ActorDamageCause@@UVersion@Scripting@@@Z
+    MCAPI static ::ActorDamageCause getCauseMapVersionCutoffInclusive(struct Scripting::Version);
 
     // symbol: ?isDamageCausedByMob@ActorDamageSource@@SA_NW4ActorDamageCause@@@Z
     MCAPI static bool isDamageCausedByMob(::ActorDamageCause cause);

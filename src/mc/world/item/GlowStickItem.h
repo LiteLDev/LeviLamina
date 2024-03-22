@@ -32,11 +32,11 @@ public:
     // vIndex: 54, symbol: ?isValidAuxValue@GlowStickItem@@UEBA_NH@Z
     virtual bool isValidAuxValue(int auxValue) const;
 
-    // vIndex: 82, symbol:
+    // vIndex: 81, symbol:
     // ?buildDescriptionId@GlowStickItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 108, symbol: ?getLightEmission@GlowStickItem@@UEBA?AUBrightness@@H@Z
+    // vIndex: 107, symbol: ?getLightEmission@GlowStickItem@@UEBA?AUBrightness@@H@Z
     virtual struct Brightness getLightEmission(int auxValue) const;
 
     // symbol: ??0GlowStickItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

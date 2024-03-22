@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/common/wrapper/OwnerPtr.h"
+#include "mc/common/wrapper/StackRefResult.h"
 #include "mc/common/wrapper/WeakRef.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 
 class AutonomousActorManager {
 public:
@@ -32,17 +32,17 @@ public:
     MCAPI bool hasOwnedInactiveAutonomousActorWithUniqueID(struct ActorUniqueID actorUniqueID) const;
 
     // symbol:
-    // ?initializeWithActorManager@AutonomousActorManager@@QEAAXV?$not_null@V?$NonOwnerPointer@VActorManager@@@Bedrock@@@gsl@@@Z
-    MCAPI void initializeWithActorManager(Bedrock::NotNullNonOwnerPtr<class ActorManager>);
+    // ?initializeWithActorManager@AutonomousActorManager@@QEAAXAEBV?$not_null@V?$StackRefResult@VActorManager@@@@@gsl@@@Z
+    MCAPI void initializeWithActorManager(gsl::not_null<class StackRefResult<class ActorManager>> const&);
 
     // symbol: ?loadAutonomousActorsFromDisk@AutonomousActorManager@@QEAAXAEAVLevelStorage@@AEAVActorFactory@@@Z
     MCAPI void loadAutonomousActorsFromDisk(class LevelStorage&, class ActorFactory&);
 
-    // symbol: ?onChunkDiscarded@AutonomousActorManager@@QEAAXAEAVLevelChunk@@@Z
-    MCAPI void onChunkDiscarded(class LevelChunk& levelChunk);
+    // symbol: ?onLevelTearingDown@AutonomousActorManager@@QEAAXXZ
+    MCAPI void onLevelTearingDown();
 
-    // symbol: ?onChunkLoaded@AutonomousActorManager@@QEAAXAEAVLevelChunk@@@Z
-    MCAPI void onChunkLoaded(class LevelChunk& levelChunk);
+    // symbol: ?registerForLevelChunkEvents@AutonomousActorManager@@QEAAXAEAVILevelChunkEventManagerConnector@@@Z
+    MCAPI void registerForLevelChunkEvents(class ILevelChunkEventManagerConnector&);
 
     // symbol: ?registerLevelStorageManagerListener@AutonomousActorManager@@QEAAXAEAVLevelStorageManager@@@Z
     MCAPI void registerLevelStorageManagerListener(class LevelStorageManager&);
@@ -62,6 +62,9 @@ public:
     // NOLINTBEGIN
     // symbol: ?_moveActiveAutonomousActorEntityToInactive@AutonomousActorManager@@AEAAXAEAVActor@@AEAVLevelChunk@@@Z
     MCAPI void _moveActiveAutonomousActorEntityToInactive(class Actor& actor, class LevelChunk& levelChunk);
+
+    // symbol: ?_onChunkDiscarded@AutonomousActorManager@@AEAAXAEAVLevelChunk@@@Z
+    MCAPI void _onChunkDiscarded(class LevelChunk&);
 
     // symbol: ?_onRemoveActorEntityReferences@AutonomousActorManager@@AEAAXAEAVActor@@@Z
     MCAPI void _onRemoveActorEntityReferences(class Actor& actor);

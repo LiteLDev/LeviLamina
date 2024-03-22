@@ -34,9 +34,9 @@ public:
     readResourceFiles(class ResourcePackManager&, class MobSpawnRules const&, std::unordered_map<std::string, struct ActorSpawnRuleData>&) = 0;
 
     // symbol:
-    // ?loadSpawnCondition@ActorSpawnRuleBase@@SA?AUActorSpawnConditionData@@AEBVValue@Json@@AEBVMobSpawnRules@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // ?loadSpawnCondition@ActorSpawnRuleBase@@SA?AUActorSpawnConditionData@@AEBVSemVersion@@AEBVValue@Json@@AEBVMobSpawnRules@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI static struct ActorSpawnConditionData
-    loadSpawnCondition(class Json::Value const&, class MobSpawnRules const&, std::string const&);
+    loadSpawnCondition(class SemVersion const&, class Json::Value const&, class MobSpawnRules const&, std::string const&);
 
     // NOLINTEND
 

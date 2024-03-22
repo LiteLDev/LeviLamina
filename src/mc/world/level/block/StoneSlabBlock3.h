@@ -34,27 +34,21 @@ public:
     // vIndex: 49, symbol: ?isValidAuxValue@StoneSlabBlock3@@UEBA_NH@Z
     virtual bool isValidAuxValue(int auxValue) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@StoneSlabBlock3@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 95, symbol: ?asItemInstance@StoneSlabBlock3@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
-    // vIndex: 119, symbol:
+    // vIndex: 118, symbol:
     // ?buildDescriptionId@StoneSlabBlock3@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
     virtual std::string buildDescriptionId(class Block const&) const;
 
-    // vIndex: 120, symbol: ?isAuxValueRelevantForPicking@StoneSlabBlock3@@UEBA_NXZ
+    // vIndex: 119, symbol: ?isAuxValueRelevantForPicking@StoneSlabBlock3@@UEBA_NXZ
     virtual bool isAuxValueRelevantForPicking() const;
 
-    // vIndex: 129, symbol: ?getVariant@StoneSlabBlock3@@UEBAHAEBVBlock@@@Z
+    // vIndex: 128, symbol: ?getVariant@StoneSlabBlock3@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 162, symbol: ?getMapColor@StoneSlabBlock3@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 159, symbol: ?getMapColor@StoneSlabBlock3@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const& block) const;
-
-    // vIndex: 163, symbol: ?getResourceItem@StoneSlabBlock3@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const& block, int) const;
-
-    // vIndex: 165, symbol: ?getSilkTouchItemInstance@StoneSlabBlock3@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-    virtual class ItemInstance getSilkTouchItemInstance(class Block const& block) const;
 
     // symbol:
     // ??0StoneSlabBlock3@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NV?$WeakPtr@VBlockLegacy@@@@@Z

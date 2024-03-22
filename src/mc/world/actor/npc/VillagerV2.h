@@ -48,20 +48,20 @@ public:
     // vIndex: 14, symbol: ?isRuntimePredictedMovementEnabled@VillagerV2@@UEBA_NXZ
     virtual bool isRuntimePredictedMovementEnabled() const;
 
-    // vIndex: 118, symbol:
+    // vIndex: 114, symbol:
     // ?buildDebugInfo@VillagerV2@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void buildDebugInfo(std::string& out) const;
 
-    // vIndex: 136, symbol: ?getInteraction@VillagerV2@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z
+    // vIndex: 130, symbol: ?getInteraction@VillagerV2@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z
     virtual bool getInteraction(class Player& player, class ActorInteraction& interaction, class Vec3 const& location);
 
-    // vIndex: 143, symbol: ?die@VillagerV2@@UEAAXAEBVActorDamageSource@@@Z
+    // vIndex: 137, symbol: ?die@VillagerV2@@UEAAXAEBVActorDamageSource@@@Z
     virtual void die(class ActorDamageSource const& source);
 
-    // vIndex: 156, symbol: ?updateEntitySpecificMolangVariables@VillagerV2@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 150, symbol: ?updateEntitySpecificMolangVariables@VillagerV2@@UEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // vIndex: 201, symbol: ?newServerAiStep@VillagerV2@@UEAAXXZ
+    // vIndex: 194, symbol: ?newServerAiStep@VillagerV2@@UEAAXXZ
     virtual void newServerAiStep();
 
     // symbol: ??0VillagerV2@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

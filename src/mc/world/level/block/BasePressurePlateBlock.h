@@ -60,49 +60,46 @@ public:
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 100, symbol: ?isAttachedTo@BasePressurePlateBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAV3@@Z
+    // vIndex: 99, symbol: ?isAttachedTo@BasePressurePlateBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAV3@@Z
     virtual bool
     isAttachedTo(class BlockSource& region, class BlockPos const& pos, class BlockPos& outAttachedTo) const;
 
-    // vIndex: 102, symbol:
+    // vIndex: 101, symbol:
     // ?shouldTriggerEntityInside@BasePressurePlateBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
     virtual bool
     shouldTriggerEntityInside(class BlockSource& region, class BlockPos const& pos, class Actor& entity) const;
 
-    // vIndex: 129, symbol: ?getVariant@BasePressurePlateBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 128, symbol: ?getVariant@BasePressurePlateBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 130, symbol: ?canSpawnOn@BasePressurePlateBlock@@UEBA_NPEAVActor@@@Z
+    // vIndex: 129, symbol: ?canSpawnOn@BasePressurePlateBlock@@UEBA_NPEAVActor@@@Z
     virtual bool canSpawnOn(class Actor*) const;
 
-    // vIndex: 147, symbol: ?onPlace@BasePressurePlateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 145, symbol: ?onPlace@BasePressurePlateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 150, symbol: ?tick@BasePressurePlateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 147, symbol: ?tick@BasePressurePlateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
-    // vIndex: 156, symbol: ?canSurvive@BasePressurePlateBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 153, symbol: ?canSurvive@BasePressurePlateBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 165, symbol: ?getSilkTouchItemInstance@BasePressurePlateBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-    virtual class ItemInstance getSilkTouchItemInstance(class Block const&) const;
-
-    // vIndex: 167, symbol: ?entityInside@BasePressurePlateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
+    // vIndex: 162, symbol: ?entityInside@BasePressurePlateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
     virtual void entityInside(class BlockSource& region, class BlockPos const& pos, class Actor& entity) const;
 
-    // vIndex: 168, symbol: ?getTickDelay@BasePressurePlateBlock@@UEBAHXZ
+    // vIndex: 163, symbol: ?getTickDelay@BasePressurePlateBlock@@UEBAHXZ
     virtual int getTickDelay() const;
 
-    // vIndex: 169, symbol: ?getSignalStrength@PressurePlateBlock@@MEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 164, symbol: ?getSignalStrength@PressurePlateBlock@@MEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual int getSignalStrength(class BlockSource& region, class BlockPos const& pos) const = 0;
 
-    // vIndex: 170, symbol: ?getSignalForData@PressurePlateBlock@@MEBAHH@Z
+    // vIndex: 165, symbol: ?getSignalForData@PressurePlateBlock@@MEBAHH@Z
     virtual int getSignalForData(int data) const = 0;
 
-    // vIndex: 171, symbol: ?getRedstoneSignal@PressurePlateBlock@@MEBAHH@Z
+    // vIndex: 166, symbol: ?getRedstoneSignal@PressurePlateBlock@@MEBAHH@Z
     virtual int getRedstoneSignal(int signal) const = 0;
 
-    // vIndex: 172, symbol: ?getSensitiveAABB@BasePressurePlateBlock@@MEBA?BVAABB@@AEBVBlockPos@@@Z
+    // vIndex: 167, symbol: ?getSensitiveAABB@BasePressurePlateBlock@@MEBA?BVAABB@@AEBVBlockPos@@@Z
     virtual class AABB const getSensitiveAABB(class BlockPos const& pos) const;
 
     // NOLINTEND

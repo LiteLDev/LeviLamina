@@ -4,8 +4,8 @@
 
 namespace EntitySensorUtils {
 // NOLINTBEGIN
-// symbol: ?getSensorBox@EntitySensorUtils@@YA?AVAABB@@AEBVActor@@_NM@Z
-MCAPI class AABB getSensorBox(class Actor const&, bool, float);
+// symbol: ?getSensorBox@EntitySensorUtils@@YA?AVAABB@@AEBVActor@@_NAEBVVec3@@@Z
+MCAPI class AABB getSensorBox(class Actor const&, bool, class Vec3 const&);
 // NOLINTEND
 
 }; // namespace EntitySensorUtils

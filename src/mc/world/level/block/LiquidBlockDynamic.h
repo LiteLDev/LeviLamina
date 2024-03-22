@@ -30,13 +30,13 @@ public:
     // vIndex: 0, symbol: __gen_??1LiquidBlockDynamic@@UEAA@XZ
     virtual ~LiquidBlockDynamic() = default;
 
-    // vIndex: 147, symbol: ?onPlace@LiquidBlockDynamic@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 145, symbol: ?onPlace@LiquidBlockDynamic@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 150, symbol: ?tick@LiquidBlockDynamic@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 147, symbol: ?tick@LiquidBlockDynamic@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 167, symbol: ?entityInside@LiquidBlockDynamic@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
+    // vIndex: 162, symbol: ?entityInside@LiquidBlockDynamic@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
     virtual void entityInside(class BlockSource&, class BlockPos const&, class Actor& entity) const;
 
     // symbol:

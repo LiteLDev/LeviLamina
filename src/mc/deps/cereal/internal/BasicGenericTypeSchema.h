@@ -10,11 +10,9 @@
 namespace cereal { class Constraint; }
 namespace cereal { class SerializerContext; }
 namespace cereal { class SerializerEnumMapping; }
-namespace cereal { struct ReflectionCtx; }
 namespace cereal { struct SchemaDescription; }
 namespace cereal { struct SchemaReader; }
 namespace cereal { struct SchemaWriter; }
-namespace cereal { struct SerializerTraits; }
 namespace cereal::internal { class BasicSchema; }
 // clang-format on
 
@@ -32,35 +30,26 @@ public:
     // vIndex: 4, symbol: __gen_??1BasicGenericTypeSchema@internal@cereal@@UEAA@XZ
     virtual ~BasicGenericTypeSchema() = default;
 
-    // symbol:
-    // ??0BasicGenericTypeSchema@internal@cereal@@QEAA@AEBUReflectionCtx@2@V?$unique_ptr@VConstraint@cereal@@U?$default_delete@VConstraint@cereal@@@std@@@std@@@Z
-    MCAPI BasicGenericTypeSchema(struct cereal::ReflectionCtx const&, std::unique_ptr<class cereal::Constraint>);
-
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
     // symbol:
-    // ?doLoadWithSchema@BasicGenericTypeSchema@internal@cereal@@IEBAXAEBVmeta_type@entt@@AEAUSchemaReader@3@AEAVmeta_any@5@AEBUSerializerTraits@3@AEBV75@AEAVSerializerContext@3@AEBUtype_info@5@@Z
+    // ?doLoadWithSchema@BasicGenericTypeSchema@internal@cereal@@IEBAXAEBVmeta_type@entt@@AEAUSchemaReader@3@AEAVmeta_any@5@AEBV75@AEAVSerializerContext@3@AEBUtype_info@5@@Z
     MCAPI void
-    doLoadWithSchema(entt::meta_type const&, struct cereal::SchemaReader&, entt::meta_any&, struct cereal::SerializerTraits const&, entt::meta_any const&, class cereal::SerializerContext&, entt::type_info const&)
+    doLoadWithSchema(entt::meta_type const&, struct cereal::SchemaReader&, entt::meta_any&, entt::meta_any const&, class cereal::SerializerContext&, entt::type_info const&)
         const;
 
     // symbol:
-    // ?doSaveWithSchema@BasicGenericTypeSchema@internal@cereal@@IEBAXAEAUSchemaWriter@3@AEBVmeta_any@entt@@AEBUSerializerTraits@3@AEAVSerializerContext@3@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // ?doSaveWithSchema@BasicGenericTypeSchema@internal@cereal@@IEBAXAEAUSchemaWriter@3@AEBVmeta_any@entt@@AEAVSerializerContext@3@AEBUtype_info@6@@Z
     MCAPI void
-    doSaveWithSchema(struct cereal::SchemaWriter&, entt::meta_any const&, struct cereal::SerializerTraits const&, class cereal::SerializerContext&, std::string const&)
+    doSaveWithSchema(struct cereal::SchemaWriter&, entt::meta_any const&, class cereal::SerializerContext&, entt::type_info const&)
         const;
 
     // symbol:
-    // ?lookupSchema@BasicGenericTypeSchema@internal@cereal@@IEBAPEBVBasicSchema@23@AEAVSerializerContext@3@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class cereal::internal::BasicSchema const*
-    lookupSchema(class cereal::SerializerContext&, std::string const&) const;
-
-    // symbol:
-    // ?unpackWithInfo@BasicGenericTypeSchema@internal@cereal@@IEBAXAEBUtype_info@entt@@AEAV?$vector@V?$reference_wrapper@$$CBVBasicSchema@internal@cereal@@@std@@V?$allocator@V?$reference_wrapper@$$CBVBasicSchema@internal@cereal@@@std@@@2@@std@@AEAV?$dense_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$reference_wrapper@$$CBUMemberDescriptor@BasicSchema@internal@cereal@@@2@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$reference_wrapper@$$CBUMemberDescriptor@BasicSchema@internal@cereal@@@2@@std@@@2@@5@@Z
+    // ?unpackWithInfo@BasicGenericTypeSchema@internal@cereal@@IEBAXAEBUtype_info@entt@@AEAV?$vector@V?$reference_wrapper@$$CBUSetterDescriptor@BasicSchema@internal@cereal@@@std@@V?$allocator@V?$reference_wrapper@$$CBUSetterDescriptor@BasicSchema@internal@cereal@@@std@@@2@@std@@AEAV?$dense_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$reference_wrapper@$$CBUMemberDescriptor@BasicSchema@internal@cereal@@@2@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$reference_wrapper@$$CBUMemberDescriptor@BasicSchema@internal@cereal@@@2@@std@@@2@@5@@Z
     MCAPI void
-    unpackWithInfo(entt::type_info const&, std::vector<std::reference_wrapper<class cereal::internal::BasicSchema const>>&, entt::dense_map<std::string, std::reference_wrapper<struct cereal::internal::BasicSchema::MemberDescriptor const>>&)
+    unpackWithInfo(entt::type_info const&, std::vector<std::reference_wrapper<struct cereal::internal::BasicSchema::SetterDescriptor const>>&, entt::dense_map<std::string, std::reference_wrapper<struct cereal::internal::BasicSchema::MemberDescriptor const>>&)
         const;
 
     // NOLINTEND

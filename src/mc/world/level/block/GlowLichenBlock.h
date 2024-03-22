@@ -40,16 +40,13 @@ public:
     virtual bool
     canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
 
-    // vIndex: 136, symbol: ?init@GlowLichenBlock@@UEAAAEAVBlockLegacy@@XZ
+    // vIndex: 135, symbol: ?init@GlowLichenBlock@@UEAAAEAVBlockLegacy@@XZ
     virtual class BlockLegacy& init();
 
-    // vIndex: 138, symbol: ?canBeSilkTouched@GlowLichenBlock@@UEBA_NXZ
-    virtual bool canBeSilkTouched() const;
-
-    // vIndex: 168, symbol: ?getMultifaceBlock@GlowLichenBlock@@UEBAAEBVBlock@@XZ
+    // vIndex: 163, symbol: ?getMultifaceBlock@GlowLichenBlock@@UEBAAEBVBlock@@XZ
     virtual class Block const& getMultifaceBlock() const;
 
-    // vIndex: 169, symbol: ?getMultifaceSpreader@GlowLichenBlock@@UEBAAEBVMultifaceSpreader@@XZ
+    // vIndex: 164, symbol: ?getMultifaceSpreader@GlowLichenBlock@@UEBAAEBVMultifaceSpreader@@XZ
     virtual class MultifaceSpreader const& getMultifaceSpreader() const;
 
     // symbol:

@@ -29,7 +29,7 @@ public:
     // vIndex: 0, symbol: __gen_??1ArmorStandItem@@UEAA@XZ
     virtual ~ArmorStandItem() = default;
 
-    // vIndex: 118, symbol:
+    // vIndex: 117, symbol:
     // ?_useOn@ArmorStandItem@@UEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor&, class BlockPos pos, uchar face, class Vec3 const& clickPos) const;

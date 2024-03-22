@@ -60,8 +60,6 @@ public:
 
     enum class SignInStage {};
 
-    enum class SignInTrigger {};
-
     enum class StoreType {};
 
     enum class StructureBlockActionType {};

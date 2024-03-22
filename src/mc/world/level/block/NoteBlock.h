@@ -37,19 +37,19 @@ public:
     // vIndex: 71, symbol: ?setupRedstoneComponent@NoteBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 101, symbol: ?attack@NoteBlock@@UEBA_NPEAVPlayer@@AEBVBlockPos@@@Z
+    // vIndex: 100, symbol: ?attack@NoteBlock@@UEBA_NPEAVPlayer@@AEBVBlockPos@@@Z
     virtual bool attack(class Player* player, class BlockPos const& pos) const;
 
-    // vIndex: 105, symbol: ?triggerEvent@NoteBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@HH@Z
+    // vIndex: 104, symbol: ?triggerEvent@NoteBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@HH@Z
     virtual void triggerEvent(class BlockSource& region, class BlockPos const& pos, int instrument, int note) const;
 
-    // vIndex: 147, symbol: ?onPlace@NoteBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 145, symbol: ?onPlace@NoteBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 152, symbol: ?isInteractiveBlock@NoteBlock@@UEBA_NXZ
+    // vIndex: 149, symbol: ?isInteractiveBlock@NoteBlock@@UEBA_NXZ
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 154, symbol: ?use@NoteBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 151, symbol: ?use@NoteBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // symbol: ??0NoteBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

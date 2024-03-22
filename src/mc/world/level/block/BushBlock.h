@@ -46,16 +46,16 @@ public:
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 150, symbol: ?tick@BushBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 147, symbol: ?tick@BushBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 156, symbol: ?canSurvive@BushBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 153, symbol: ?canSurvive@BushBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 168, symbol: ?checkAlive@BushBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 163, symbol: ?checkAlive@BushBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void checkAlive(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 169, symbol: ?setGrowth@BushBlock@@MEBAAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@AEBV2@GH@Z
+    // vIndex: 164, symbol: ?setGrowth@BushBlock@@MEBAAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@AEBV2@GH@Z
     virtual class Block const& setGrowth(
         class BlockSource&    region,
         class BlockPos const& pos,

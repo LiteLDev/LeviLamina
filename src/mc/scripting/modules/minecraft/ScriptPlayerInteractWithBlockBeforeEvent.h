@@ -4,15 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/ClassBindingBuilder.h"
-#include "mc/external/scripting/StrongTypedObjectHandle.h"
-#include "mc/scripting/modules/minecraft/ScriptFacing.h"
 
 // auto generated forward declare list
 // clang-format off
-class Vec3;
-namespace ScriptModuleMinecraft { class ScriptBlock; }
-namespace ScriptModuleMinecraft { class ScriptItemStack; }
-namespace ScriptModuleMinecraft { class ScriptPlayer; }
+class Player;
+namespace Scripting { class WeakLifetimeScope; }
+struct PlayerInteractWithBlockBeforeEvent;
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -21,6 +18,7 @@ struct ScriptPlayerInteractWithBlockBeforeEvent {
 public:
     // prevent constructor by default
     ScriptPlayerInteractWithBlockBeforeEvent& operator=(ScriptPlayerInteractWithBlockBeforeEvent const&);
+    ScriptPlayerInteractWithBlockBeforeEvent(ScriptPlayerInteractWithBlockBeforeEvent const&);
     ScriptPlayerInteractWithBlockBeforeEvent();
 
 public:
@@ -29,23 +27,10 @@ public:
     MCAPI
     ScriptPlayerInteractWithBlockBeforeEvent(struct ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent&&);
 
-    // symbol: ??0ScriptPlayerInteractWithBlockBeforeEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
-    MCAPI ScriptPlayerInteractWithBlockBeforeEvent(struct ScriptModuleMinecraft::
-                                                       ScriptPlayerInteractWithBlockBeforeEvent const&);
-
     // symbol:
-    // ??0ScriptPlayerInteractWithBlockBeforeEvent@ScriptModuleMinecraft@@QEAA@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@V?$optional@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@@std@@V?$StrongTypedObjectHandle@VScriptBlock@ScriptModuleMinecraft@@@3@W4ScriptFacing@1@VVec3@@@Z
-    MCAPI ScriptPlayerInteractWithBlockBeforeEvent(
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>,
-        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>,
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock>,
-        ::ScriptModuleMinecraft::ScriptFacing,
-        class Vec3
-    );
-
-    // symbol: ??4ScriptPlayerInteractWithBlockBeforeEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent&&);
+    // ??0ScriptPlayerInteractWithBlockBeforeEvent@ScriptModuleMinecraft@@QEAA@AEAVPlayer@@AEBUPlayerInteractWithBlockBeforeEvent@@AEAVWeakLifetimeScope@Scripting@@@Z
+    MCAPI
+    ScriptPlayerInteractWithBlockBeforeEvent(class Player&, struct PlayerInteractWithBlockBeforeEvent const&, class Scripting::WeakLifetimeScope&);
 
     // symbol:
     // ?bind@ScriptPlayerInteractWithBlockBeforeEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptPlayerInteractWithBlockBeforeEvent@ScriptModuleMinecraft@@@Scripting@@XZ

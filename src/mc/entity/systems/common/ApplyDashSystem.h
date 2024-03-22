@@ -3,10 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/Include.h"
-#include "mc/common/wrapper/ViewT.h"
 #include "mc/entity/EntityModifier.h"
-#include "mc/world/components/FlagComponent.h"
 
 class ApplyDashSystem {
 public:
@@ -17,24 +14,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?_tickApplyDashModifierSystem@ApplyDashSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UDashJump@@@@@@$$CBUTriggerJumpRequestComponent@@$$CBVDashComponent@@$$CBUMovementAttributesComponent@@$$CBUActorRotationComponent@@$$CBUMobEffectsComponent@@UStateVectorComponent@@UJumpPendingScaleComponent@@UActorDataFlagComponent@@UActorDataDirtyFlagsComponent@@@@V?$EntityModifier@UDashCooldownTimerComponent@@@@@Z
-    MCAPI static void _tickApplyDashModifierSystem(
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<class FlagComponent<struct DashJump>>,
-            struct TriggerJumpRequestComponent const,
-            class DashComponent const,
-            struct MovementAttributesComponent const,
-            struct ActorRotationComponent const,
-            struct MobEffectsComponent const,
-            struct StateVectorComponent,
-            struct JumpPendingScaleComponent,
-            struct ActorDataFlagComponent,
-            struct ActorDataDirtyFlagsComponent>                view,
-        class EntityModifier<struct DashCooldownTimerComponent> mod
-    );
-
     // symbol: ?create@ApplyDashSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo create();
 

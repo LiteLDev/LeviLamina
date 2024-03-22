@@ -28,6 +28,10 @@ public:
     // symbol: ?setAssertMessage@CrashDumpLog@@SAXPEBDH00@Z
     MCAPI static void setAssertMessage(char const*, int, char const*, char const*);
 
+    // symbol:
+    // ?setBehaviorPackIds@CrashDumpLog@@SAXAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
+    MCAPI static void setBehaviorPackIds(std::vector<std::string> const&);
+
     // symbol: ?setDeviceSessionID@CrashDumpLog@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI static bool setDeviceSessionID(std::string const&);
 

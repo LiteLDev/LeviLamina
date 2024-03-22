@@ -54,40 +54,40 @@ public:
     // vIndex: 10, symbol: __gen_??1ArmorStand@@UEAA@XZ
     virtual ~ArmorStand() = default;
 
-    // vIndex: 29, symbol: ?normalTick@ArmorStand@@UEAAXXZ
+    // vIndex: 28, symbol: ?normalTick@ArmorStand@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 41, symbol: ?getShadowRadius@ArmorStand@@UEBAMXZ
+    // vIndex: 40, symbol: ?getShadowRadius@ArmorStand@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 48, symbol: ?isPickable@ArmorStand@@UEAA_NXZ
+    // vIndex: 47, symbol: ?isPickable@ArmorStand@@UEAA_NXZ
     virtual bool isPickable();
 
-    // vIndex: 75, symbol: ?isInvulnerableTo@ArmorStand@@UEBA_NAEBVActorDamageSource@@@Z
+    // vIndex: 74, symbol: ?isInvulnerableTo@ArmorStand@@UEBA_NAEBVActorDamageSource@@@Z
     virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
-    // vIndex: 136, symbol: ?getInteraction@ArmorStand@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z
+    // vIndex: 130, symbol: ?getInteraction@ArmorStand@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z
     virtual bool getInteraction(class Player& player, class ActorInteraction& interaction, class Vec3 const& location);
 
-    // vIndex: 142, symbol: ?kill@ArmorStand@@UEAAXXZ
+    // vIndex: 136, symbol: ?kill@ArmorStand@@UEAAXXZ
     virtual void kill();
 
-    // vIndex: 143, symbol: ?die@ArmorStand@@UEAAXAEBVActorDamageSource@@@Z
+    // vIndex: 137, symbol: ?die@ArmorStand@@UEAAXAEBVActorDamageSource@@@Z
     virtual void die(class ActorDamageSource const& source);
 
-    // vIndex: 156, symbol: ?updateEntitySpecificMolangVariables@ArmorStand@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 150, symbol: ?updateEntitySpecificMolangVariables@ArmorStand@@UEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams&);
 
-    // vIndex: 158, symbol: ?_hurt@ArmorStand@@UEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 152, symbol: ?_hurt@ArmorStand@@UEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float, bool, bool);
 
-    // vIndex: 159, symbol: ?readAdditionalSaveData@ArmorStand@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 153, symbol: ?readAdditionalSaveData@ArmorStand@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 160, symbol: ?addAdditionalSaveData@ArmorStand@@UEBAXAEAVCompoundTag@@@Z
+    // vIndex: 154, symbol: ?addAdditionalSaveData@ArmorStand@@UEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 172, symbol: ?pushActors@ArmorStand@@UEAAXXZ
+    // vIndex: 166, symbol: ?pushActors@ArmorStand@@UEAAXXZ
     virtual void pushActors();
 
     // symbol: ??0ArmorStand@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

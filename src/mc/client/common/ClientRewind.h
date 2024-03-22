@@ -3,26 +3,37 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/Include.h"
-#include "mc/common/wrapper/optional_ref.h"
+#include "mc/common/GlobalRead.h"
+#include "mc/common/GlobalWrite.h"
+#include "mc/common/StrictExecutionContext.h"
+#include "mc/common/wrapper/AddRemove.h"
+#include "mc/common/wrapper/Optional.h"
+#include "mc/common/wrapper/ViewT.h"
+#include "mc/deps/core/data/Filter.h"
+#include "mc/deps/core/data/Read.h"
+#include "mc/deps/core/data/Write.h"
+#include "mc/entity/EntityFactoryT.h"
 #include "mc/world/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace ClientRewind { struct ApplyReplayStateTrackerRequestComponent; }
+// clang-format on
 
 namespace ClientRewind {
 // NOLINTBEGIN
 // symbol:
-// ?applyData@ClientRewind@@YAXAEBUReplayStateTrackerDiff@@AEAUActorDataFlagComponent@@AEAUActorDataDirtyFlagsComponent@@V?$optional_ref@UActorDataHorseFlagComponent@@@@V?$optional_ref@UActorDataJumpDurationComponent@@@@@Z
-MCAPI void
-applyData(struct ReplayStateTrackerDiff const&, struct ActorDataFlagComponent&, struct ActorDataDirtyFlagsComponent&, class optional_ref<struct ActorDataHorseFlagComponent>, class optional_ref<struct ActorDataJumpDurationComponent>);
+// ?extractSnapshot@ClientRewind@@YA?AUReplayStateTrackerDiff@@AEBV?$tuple@AEBUActorDataFlagComponent@@V?$Optional@$$CBUActorDataHorseFlagComponent@@@@V?$Optional@$$CBUActorDataJumpDurationComponent@@@@V?$Optional@$$CBUActorDataBoundingBoxComponent@@@@V?$Optional@$$CBUActorDataSeatOffsetComponent@@@@@std@@@Z
+MCAPI struct ReplayStateTrackerDiff extractSnapshot(std::tuple<
+                                                    struct ActorDataFlagComponent const&,
+                                                    class Optional<struct ActorDataHorseFlagComponent const>,
+                                                    class Optional<struct ActorDataJumpDurationComponent const>,
+                                                    class Optional<struct ActorDataBoundingBoxComponent const>,
+                                                    class Optional<struct ActorDataSeatOffsetComponent const>> const&);
 
 // symbol:
-// ?extractSnapshot@ClientRewind@@YA?AUReplayStateTrackerDiff@@AEBUActorDataFlagComponent@@V?$optional_ref@$$CBUActorDataHorseFlagComponent@@@@V?$optional_ref@$$CBUActorDataJumpDurationComponent@@@@@Z
-MCAPI struct ReplayStateTrackerDiff
-extractSnapshot(struct ActorDataFlagComponent const&, class optional_ref<struct ActorDataHorseFlagComponent const>, class optional_ref<struct ActorDataJumpDurationComponent const>);
-
-// symbol:
-// ?tickAccumulate@ClientRewind@@YAXU?$type_list@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@@entt@@AEAUReplayStateTrackerComponent@@AEBUActorDataFlagComponent@@V?$optional_ref@$$CBUActorDataHorseFlagComponent@@@@V?$optional_ref@$$CBUActorDataJumpDurationComponent@@@@@Z
-MCAPI void
-tickAccumulate(entt::type_list<struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>>, struct ReplayStateTrackerComponent&, struct ActorDataFlagComponent const&, class optional_ref<struct ActorDataHorseFlagComponent const>, class optional_ref<struct ActorDataJumpDurationComponent const>);
+// ?tickAccumulate@ClientRewind@@YAXAEAUReplayStateTrackerComponent@@AEBV?$tuple@AEBUActorDataFlagComponent@@V?$Optional@$$CBUActorDataHorseFlagComponent@@@@V?$Optional@$$CBUActorDataJumpDurationComponent@@@@V?$Optional@$$CBUActorDataBoundingBoxComponent@@@@V?$Optional@$$CBUActorDataSeatOffsetComponent@@@@@std@@@Z
+MCAPI void tickAccumulate(struct ReplayStateTrackerComponent&, std::tuple<struct ActorDataFlagComponent const&, class Optional<struct ActorDataHorseFlagComponent const>, class Optional<struct ActorDataJumpDurationComponent const>, class Optional<struct ActorDataBoundingBoxComponent const>, class Optional<struct ActorDataSeatOffsetComponent const>> const&);
 // NOLINTEND
 
 }; // namespace ClientRewind

@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/common/wrapper/CoordinatorResult.h"
 #include "mc/events/MinecraftEventing.h"
+#include "mc/events/MutablePlayerGameplayEvent.h"
 #include "mc/events/PlayerGameplayEvent.h"
 #include "mc/world/AutomaticID.h"
 #include "mc/world/events/EventRef.h"
@@ -27,6 +28,10 @@ public:
     // symbol:
     // ?registerPlayerGameplayHandler@PlayerEventCoordinator@@QEAAX$$QEAV?$unique_ptr@VPlayerGameplayHandler@@U?$default_delete@VPlayerGameplayHandler@@@std@@@std@@@Z
     MCAPI void registerPlayerGameplayHandler(std::unique_ptr<class PlayerGameplayHandler>&& handler);
+
+    // symbol:
+    // ?sendEvent@PlayerEventCoordinator@@QEAA?AW4CoordinatorResult@@V?$EventRef@U?$MutablePlayerGameplayEvent@W4CoordinatorResult@@@@@@@Z
+    MCAPI ::CoordinatorResult sendEvent(class EventRef<struct MutablePlayerGameplayEvent<::CoordinatorResult>> event);
 
     // symbol:
     // ?sendEvent@PlayerEventCoordinator@@QEAA?AW4CoordinatorResult@@AEBV?$EventRef@U?$PlayerGameplayEvent@W4CoordinatorResult@@@@@@@Z
@@ -58,8 +63,14 @@ public:
     // symbol: ?sendPlayerMove@PlayerEventCoordinator@@QEAAXAEAVPlayer@@@Z
     MCAPI void sendPlayerMove(class Player& player);
 
+    // symbol: ?sendPlayerPortalBuilt@PlayerEventCoordinator@@QEAAXAEAVPlayer@@V?$AutomaticID@VDimension@@H@@@Z
+    MCAPI void sendPlayerPortalBuilt(class Player& player, DimensionType dimensionBuiltIn);
+
     // symbol: ?sendPlayerPortalUsed@PlayerEventCoordinator@@QEAAXAEAVPlayer@@V?$AutomaticID@VDimension@@H@@1@Z
     MCAPI void sendPlayerPortalUsed(class Player& player, DimensionType fromDimension, DimensionType toDimension);
+
+    // symbol: ?sendPlayerPoweredBeacon@PlayerEventCoordinator@@QEAAXAEBVPlayer@@H@Z
+    MCAPI void sendPlayerPoweredBeacon(class Player const&, int);
 
     // symbol: ?sendPlayerSlide@PlayerEventCoordinator@@QEAAXAEAVPlayer@@@Z
     MCAPI void sendPlayerSlide(class Player& player);

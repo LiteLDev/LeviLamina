@@ -36,5 +36,8 @@ public:
     MCAPI
     HorseContainerManagerModel(::ContainerID containerId, class Player& player, struct ActorUniqueID const& uniqueId);
 
+    // symbol: ?getEntity@HorseContainerManagerModel@@QEBAPEAVActor@@XZ
+    MCAPI class Actor* getEntity() const;
+
     // NOLINTEND
 };

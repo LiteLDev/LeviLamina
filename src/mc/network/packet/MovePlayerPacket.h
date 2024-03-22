@@ -44,13 +44,13 @@ public:
     // ?getName@MovePlayerPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getName() const;
 
-    // vIndex: 3, symbol: ?write@MovePlayerPacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4, symbol: ?write@MovePlayerPacket@@UEBAXAEAVBinaryStream@@@Z
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 6, symbol: ?isValid@MovePlayerPacket@@UEBA_NXZ
+    // vIndex: 7, symbol: ?isValid@MovePlayerPacket@@UEBA_NXZ
     virtual bool isValid() const;
 
-    // vIndex: 7, symbol:
+    // vIndex: 8, symbol:
     // ?_read@MovePlayerPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 

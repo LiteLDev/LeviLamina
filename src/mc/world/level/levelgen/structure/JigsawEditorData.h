@@ -9,7 +9,6 @@ class JigsawEditorData {
 public:
     // prevent constructor by default
     JigsawEditorData& operator=(JigsawEditorData const&);
-    JigsawEditorData(JigsawEditorData const&);
 
 public:
     // NOLINTBEGIN
@@ -19,14 +18,19 @@ public:
     // symbol: ??0JigsawEditorData@@QEAA@$$QEAV0@@Z
     MCAPI JigsawEditorData(class JigsawEditorData&&);
 
+    // symbol: ??0JigsawEditorData@@QEAA@AEBV0@@Z
+    MCAPI JigsawEditorData(class JigsawEditorData const&);
+
     // symbol:
-    // ??0JigsawEditorData@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000W4JigsawJointType@@@Z
+    // ??0JigsawEditorData@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000W4JigsawJointType@@HH@Z
     MCAPI JigsawEditorData(
-        std::string const& name,
-        std::string const& target,
-        std::string const& targetPool,
         std::string const&,
-        ::JigsawJointType
+        std::string const&,
+        std::string const&,
+        std::string const&,
+        ::JigsawJointType,
+        int,
+        int
     );
 
     // symbol: ?getFinalBlock@JigsawEditorData@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -37,6 +41,12 @@ public:
 
     // symbol: ?getName@JigsawEditorData@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& getName() const;
+
+    // symbol: ?getPlacementPriority@JigsawEditorData@@QEBAHXZ
+    MCAPI int getPlacementPriority() const;
+
+    // symbol: ?getSelectionPriority@JigsawEditorData@@QEBAHXZ
+    MCAPI int getSelectionPriority() const;
 
     // symbol: ?getTarget@JigsawEditorData@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& getTarget() const;

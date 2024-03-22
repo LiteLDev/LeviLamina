@@ -45,9 +45,6 @@ public:
     // vIndex: 89, symbol: ?breaksFallingBlocks@GlassBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
     virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
 
-    // vIndex: 164, symbol: ?getResourceCount@GlassBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize& randomize, class Block const& block, int bonusLootLevel) const;
-
     // symbol:
     // ??0GlassBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@_N22@Z
     MCAPI GlassBlock(std::string const&, int, class Material const&, bool, bool, bool);
