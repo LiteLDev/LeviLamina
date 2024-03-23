@@ -20,23 +20,23 @@ public:
     // ?readLongStringResult@BytesDataInput@@UEAA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@Verror_code@2@@Bedrock@@XZ
     virtual class Bedrock::Result<std::string> readLongStringResult();
 
-    // vIndex: 3, symbol: ?readFloat@BytesDataInput@@UEAAMXZ
-    virtual float readFloat();
+    // vIndex: 3, symbol: ?readFloatResult@BytesDataInput@@UEAA?AV?$Result@MVerror_code@std@@@Bedrock@@XZ
+    virtual class Bedrock::Result<float> readFloatResult();
 
-    // vIndex: 4, symbol: ?readDouble@BytesDataInput@@UEAANXZ
-    virtual double readDouble();
+    // vIndex: 4, symbol: ?readDoubleResult@BytesDataInput@@UEAA?AV?$Result@NVerror_code@std@@@Bedrock@@XZ
+    virtual class Bedrock::Result<double> readDoubleResult();
 
     // vIndex: 5, symbol: ?readByteResult@BytesDataInput@@UEAA?AV?$Result@EVerror_code@std@@@Bedrock@@XZ
     virtual class Bedrock::Result<uchar> readByteResult();
 
-    // vIndex: 6, symbol: ?readShort@BytesDataInput@@UEAAFXZ
-    virtual short readShort();
+    // vIndex: 6, symbol: ?readShortResult@BytesDataInput@@UEAA?AV?$Result@FVerror_code@std@@@Bedrock@@XZ
+    virtual class Bedrock::Result<short> readShortResult();
 
-    // vIndex: 7, symbol: ?readInt@BytesDataInput@@UEAAHXZ
-    virtual int readInt();
+    // vIndex: 7, symbol: ?readIntResult@BytesDataInput@@UEAA?AV?$Result@HVerror_code@std@@@Bedrock@@XZ
+    virtual class Bedrock::Result<int> readIntResult();
 
-    // vIndex: 8, symbol: ?readLongLong@BytesDataInput@@UEAA_JXZ
-    virtual int64 readLongLong();
+    // vIndex: 8, symbol: ?readLongLongResult@BytesDataInput@@UEAA?AV?$Result@_JVerror_code@std@@@Bedrock@@XZ
+    virtual class Bedrock::Result<int64> readLongLongResult();
 
     // NOLINTEND
 };

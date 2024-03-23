@@ -26,10 +26,10 @@ std::string CompoundTag::toBinaryNbt(bool isLittleEndian) const {
 std::unique_ptr<CompoundTag> CompoundTag::fromBinaryNbt(std::string_view dataView, bool isLittleEndian) {
     if (isLittleEndian) {
         auto io = StringByteInput{dataView};
-        return NbtIo::read(io);
+        return NbtIo::read(io).value_or(nullptr);
     } else {
         auto io = BigEndianStringByteInput{dataView};
-        return NbtIo::read(io);
+        return NbtIo::read(io).value_or(nullptr);
     }
 }
 std::string CompoundTag::toNetworkNbt() const {
