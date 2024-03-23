@@ -203,6 +203,8 @@ extern std::string globalDefaultLocaleName;
 void leviLaminaMain() {
     error_utils::setSehTranslator();
 
+    _setmode(_fileno(stdin), _O_U8TEXT);
+
     // Prohibit pop-up windows to facilitate automatic restart
     SetErrorMode(SEM_FAILCRITICALERRORS | SEM_NOGPFAULTERRORBOX | SEM_NOALIGNMENTFAULTEXCEPT);
 
