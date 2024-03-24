@@ -9,6 +9,152 @@
 #include "ll/api/base/StdInt.h"
 
 namespace ll::meta {
+namespace detail {
+template <class Fn, size_t... N>
+constexpr void unrollImpl(Fn&& fn, std::integer_sequence<size_t, N...>) {
+    (void(std::forward<Fn>(fn)(N)), ...);
+}
+
+template <size_t N, int Strategy>
+struct VisitStrategy;
+
+template <size_t N>
+struct VisitStrategy<N, -1> {
+    // Fallback strategy for visitations with too many total states for the following "switch" strategies.
+    template <typename T, typename... Ts>
+    static constexpr std::array<std::decay_t<T>, sizeof...(Ts) + 1> makeVisitorArray(T&& t, Ts&&... ts) {
+        return {
+            {std::forward<T>(t), std::forward<Ts>(ts)...}
+        };
+    }
+    template <class Fn, size_t I>
+    static constexpr decltype(auto) invokeVisitor(Fn&& fn) {
+        return std::forward<Fn>(fn).template operator()<I>();
+    }
+
+    template <class Fn, size_t... Ns>
+    static constexpr decltype(auto) makeCallers(std::integer_sequence<size_t, Ns...>) {
+        return makeVisitorArray(&invokeVisitor<Fn, Ns>...);
+    }
+
+    template <class Fn>
+    static constexpr auto callers = makeCallers<Fn>(std::make_index_sequence<N>());
+
+    template <class Fn>
+    static constexpr decltype(auto) impl(size_t idx, Fn&& fn) { // dispatch a visitation with many potential states
+        static_assert(N > 256);
+        return callers<Fn>[idx](std::forward<Fn>(fn));
+    }
+};
+
+template <size_t N>
+struct VisitStrategy<N, 0> {
+    template <class Fn>
+    static constexpr decltype(auto) impl(size_t, Fn&& fn) { // dispatch a visitation with 4^0 potential states
+        return std::forward<Fn>(fn).template operator()<0>();
+    }
+};
+
+#define LL_VISIT_CASE(n)                                                                                               \
+    case (n):                                                                                                          \
+        if constexpr ((n) < N) {                                                                                       \
+            return std::forward<Fn>(fn).template operator()<(n)>();                                                    \
+        }                                                                                                              \
+        _STL_UNREACHABLE;                                                                                              \
+        [[fallthrough]]
+
+#define LL_VISIT_STAMP(stamper, n)                                                                                     \
+    static_assert(N > (n) / 4 && N <= (n));                                                                            \
+    switch (idx) {                                                                                                     \
+        stamper(0, LL_VISIT_CASE);                                                                                     \
+    default:                                                                                                           \
+        _STL_UNREACHABLE;                                                                                              \
+    }
+
+#define LL_STAMP4(n, x)                                                                                                \
+    x(n);                                                                                                              \
+    x(n + 1);                                                                                                          \
+    x(n + 2);                                                                                                          \
+    x(n + 3)
+#define LL_STAMP16(n, x)                                                                                               \
+    LL_STAMP4(n, x);                                                                                                   \
+    LL_STAMP4(n + 4, x);                                                                                               \
+    LL_STAMP4(n + 8, x);                                                                                               \
+    LL_STAMP4(n + 12, x)
+#define LL_STAMP64(n, x)                                                                                               \
+    LL_STAMP16(n, x);                                                                                                  \
+    LL_STAMP16(n + 16, x);                                                                                             \
+    LL_STAMP16(n + 32, x);                                                                                             \
+    LL_STAMP16(n + 48, x)
+#define LL_STAMP256(n, x)                                                                                              \
+    LL_STAMP64(n, x);                                                                                                  \
+    LL_STAMP64(n + 64, x);                                                                                             \
+    LL_STAMP64(n + 128, x);                                                                                            \
+    LL_STAMP64(n + 192, x)
+
+#define LL_STAMP(n, x) x(LL_STAMP##n, n)
+
+template <size_t N>
+struct VisitStrategy<N, 1> {
+    template <class Fn>
+    static constexpr decltype(auto) impl(size_t idx, Fn&& fn) {
+        // dispatch a visitation with 4^1 potential states
+        LL_STAMP(4, LL_VISIT_STAMP);
+    }
+};
+
+template <size_t N>
+struct VisitStrategy<N, 2> {
+    template <class Fn>
+    static constexpr decltype(auto) impl(size_t idx, Fn&& fn) {
+        // dispatch a visitation with 4^2 potential states
+        LL_STAMP(16, LL_VISIT_STAMP);
+    }
+};
+
+template <size_t N>
+struct VisitStrategy<N, 3> {
+    template <class Fn>
+    static constexpr decltype(auto) impl(size_t idx, Fn&& fn) {
+        // dispatch a visitation with 4^3 potential states
+        LL_STAMP(64, LL_VISIT_STAMP);
+    }
+};
+
+template <size_t N>
+struct VisitStrategy<N, 4> {
+    template <class Fn>
+    static constexpr decltype(auto) impl(size_t idx, Fn&& fn) {
+        // dispatch a visitation with 4^4 potential states
+        LL_STAMP(256, LL_VISIT_STAMP);
+    }
+};
+
+#undef LL_VISIT_CASE
+#undef LL_VISIT_STAMP
+#undef LL_STAMP
+#undef LL_STAMP256
+#undef LL_STAMP64
+#undef LL_STAMP16
+#undef LL_STAMP4
+
+template <class Group, auto Id>
+struct TypeCounter {
+    using tag = TypeCounter;
+
+    struct GenerateTag {
+        friend consteval auto isDefined(tag) { return true; }
+    };
+    friend consteval auto isDefined(tag);
+
+    template <class Tag = tag, auto = isDefined(Tag{})>
+    static consteval auto exists(auto) {
+        return true;
+    }
+
+    static consteval auto exists(...) { return GenerateTag(), false; }
+};
+} // namespace detail
 
 template <class... Ts>
 struct Overloaded : Ts... {
@@ -31,46 +177,15 @@ constexpr void unrollWithArgsNoIndex(F&& func) {
     ((std::forward<F>(func).template operator()<Components>()), ...);
 }
 
-template <class Fn, size_t... N>
-constexpr void unrollImpl(Fn&& fn, std::integer_sequence<size_t, N...>) {
-    (void(std::forward<Fn>(fn)(N)), ...);
-}
-
 template <size_t N, class Fn>
 constexpr void unroll(Fn&& fn) {
-    unrollImpl(std::forward<Fn>(fn), std::make_index_sequence<N>());
-}
-
-template <typename T>
-constexpr std::array<std::decay_t<T>, 1> makeVisitorArray(T&& t) {
-    return {{std::forward<T>(t)}};
-}
-
-template <typename T, typename... Ts>
-constexpr std::array<std::decay_t<T>, sizeof...(Ts) + 1> makeVisitorArray(T&& t, Ts&&... ts) {
-    static_assert(
-        std::conjunction_v<std::is_same<std::decay_t<T>, std::decay_t<Ts>>...>,
-        "visitors requires same return type"
-    );
-    return {
-        {std::forward<T>(t), std::forward<Ts>(ts)...}
-    };
-}
-
-template <class Fn, size_t I>
-constexpr decltype(auto) invokeVisitor(Fn&& fn) {
-    return std::forward<Fn>(fn).template operator()<I>();
-}
-
-template <class Fn, size_t... N>
-constexpr decltype(auto) visitIndexImpl(Fn&& fn, size_t index, std::integer_sequence<size_t, N...>) {
-    constexpr auto callers = makeVisitorArray(&invokeVisitor<Fn, N>...);
-    return callers[index](std::forward<Fn>(fn));
+    detail::unrollImpl(std::forward<Fn>(fn), std::make_index_sequence<N>());
 }
 
 template <size_t N, class Fn>
 constexpr decltype(auto) visitIndex(Fn&& fn, size_t index) {
-    return visitIndexImpl(std::forward<Fn>(fn), index, std::make_index_sequence<N>());
+    constexpr int strategy = N == 1 ? 0 : N <= 4 ? 1 : N <= 16 ? 2 : N <= 64 ? 3 : N <= 256 ? 4 : -1;
+    return detail::VisitStrategy<N, strategy>::impl(index, std::forward<Fn>(fn));
 }
 
 template <size_t N, class T, class... Types>
@@ -151,26 +266,9 @@ public:
     static constexpr size_t index = index_of<T, TL...>::value;
 };
 
-template <class Group, auto Id>
-struct TypeCounter {
-    using tag = TypeCounter;
-
-    struct GenerateTag {
-        friend consteval auto isDefined(tag) { return true; }
-    };
-    friend consteval auto isDefined(tag);
-
-    template <class Tag = tag, auto = isDefined(Tag{})>
-    static consteval auto exists(auto) {
-        return true;
-    }
-
-    static consteval auto exists(...) { return GenerateTag(), false; }
-};
-
 template <class Group, class T, auto Id = int64{}>
 [[maybe_unused]] consteval auto uniqueId() {
-    if constexpr (TypeCounter<Group, Id>::exists(Id)) {
+    if constexpr (detail::TypeCounter<Group, Id>::exists(Id)) {
         return uniqueId<Group, T, Id + 1>();
     } else {
         return Id;

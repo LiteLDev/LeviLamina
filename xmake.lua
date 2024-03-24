@@ -1,7 +1,5 @@
 add_rules("mode.debug", "mode.release")
 
-includes("scripts/localbdslibrary.lua")
-
 add_repositories("liteldev-repo https://github.com/LiteLDev/xmake-repo.git")
 
 -- Dependencies from xmake-repo.
@@ -25,15 +23,10 @@ add_requires("pfr")
 add_requires("demangler")
 add_requires("preloader")
 add_requires("symbolprovider ~1")
+add_requires("bdslibrary 1.20.72.01")
 
 if has_config("tests") then
     add_requires("gtest")
-end
-
-if has_config("localbdslibrary") then
-    add_requires("localbdslibrary")
-else
-    add_requires("bdslibrary 1.20.72.01")
 end
 
 if not has_config("vs_runtime") then
@@ -44,11 +37,6 @@ option("tests")
     set_default(false)
     set_showmenu(true)
     set_description("Enable tests")
-
-option("localbdslibrary")
-    set_default(false)
-    set_showmenu(true)
-    set_description("Use local bdslibrary")
 
 target("LeviLamina")
     add_configfiles("src/(ll/core/Version.h.in)")
@@ -110,6 +98,7 @@ target("LeviLamina")
         "pcg_cpp",
         "pfr",
         "symbolprovider",
+        "bdslibrary",
         { public = true }
     )
     add_shflags("/DELAYLOAD:bedrock_server.dll")
@@ -142,12 +131,6 @@ target("LeviLamina")
 
     if is_mode("debug") then
         add_defines("LL_DEBUG")
-    end
-
-    if has_config("localbdslibrary") then
-        add_packages("localbdslibrary")
-    else
-        add_packages("bdslibrary")
     end
 
     on_config(function (target)

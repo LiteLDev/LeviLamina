@@ -42,7 +42,7 @@ void initNativeClosure(void* t, void* impl, size_t offset, size_t size) {
     ulong _;
     VirtualProtect(self->closure, size, PAGE_EXECUTE_READ, &_);
 }
-void releaseNativeClosure(void* t, size_t size) {
+void releaseNativeClosure(void* t, size_t) {
     auto self = (T*)t;
     if (self->closure != nullptr) {
         VirtualFree(self->closure, 0, MEM_RELEASE);
