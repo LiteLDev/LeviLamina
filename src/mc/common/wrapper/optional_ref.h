@@ -98,9 +98,8 @@ public:
     }
 
     template <class... Types>
-    constexpr auto operator()(Types&&... args) const
-        noexcept(noexcept(std::invoke(*mPtr, static_cast<Types&&>(args)...)))
-            -> decltype(std::invoke(*mPtr, static_cast<Types&&>(args)...)) {
+    constexpr auto operator()(Types&&... args) const noexcept(noexcept(std::invoke(*mPtr, static_cast<Types&&>(args)...)
+    )) -> decltype(std::invoke(*mPtr, static_cast<Types&&>(args)...)) {
         return std::invoke(*mPtr, static_cast<Types&&>(args)...);
     }
     template <class Arg>

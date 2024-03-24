@@ -160,7 +160,7 @@ public:
             struct {
                 int score;
             } CodeBuilderScoreboard;
-        };                                     // this+0x8
+        }; // this+0x8
         std::string mEntityName;               // this+0x28
         std::string mCommandName;              // this+0x48
         std::string mResultKey;                // this+0x68

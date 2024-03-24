@@ -24,8 +24,8 @@ size_t getVolatileOffset(void* impl) {
 };
 using T = NativeClosure<void*>;
 void initNativeClosure(void* t, void* impl, size_t offset, size_t size) {
-    impl                       = unwrapFuncPtrJmp(impl);
-    auto                  self = (T*)t;
+    impl      = unwrapFuncPtrJmp(impl);
+    auto self = (T*)t;
 
     self->closure = VirtualAlloc(nullptr, size, MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);
 

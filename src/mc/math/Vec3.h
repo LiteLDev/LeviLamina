@@ -25,28 +25,28 @@ public:
     MCAPI class Vec3 normalized() const;
 
     //// symbol: ??XVec3@@QEAAAEAV0@M@Z
-    //MCAPI class Vec3& operator*=(float);
+    // MCAPI class Vec3& operator*=(float);
 
     //// symbol: ??HVec3@@QEBA?AV0@AEBV0@@Z
-    //MCAPI class Vec3 operator+(class Vec3 const&) const;
+    // MCAPI class Vec3 operator+(class Vec3 const&) const;
 
     //// symbol: ??YVec3@@QEAAAEAV0@AEBV0@@Z
-    //MCAPI class Vec3& operator+=(class Vec3 const&);
+    // MCAPI class Vec3& operator+=(class Vec3 const&);
 
     //// symbol: ??GVec3@@QEBA?AV0@XZ
-    //MCAPI class Vec3 operator-() const;
+    // MCAPI class Vec3 operator-() const;
 
     //// symbol: ??GVec3@@QEBA?AV0@AEBV0@@Z
-    //MCAPI class Vec3 operator-(class Vec3 const&) const;
+    // MCAPI class Vec3 operator-(class Vec3 const&) const;
 
     //// symbol: ??8Vec3@@QEBA_NAEBV0@@Z
-    //MCAPI bool operator==(class Vec3 const& rhs) const;
+    // MCAPI bool operator==(class Vec3 const& rhs) const;
 
     //// symbol: ?toJsonString@Vec3@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-    //MCAPI std::string toJsonString() const;
+    // MCAPI std::string toJsonString() const;
 
     //// symbol: ?toString@Vec3@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-    //MCAPI std::string toString() const;
+    // MCAPI std::string toString() const;
 
     // symbol: ?xz@Vec3@@QEBA?AV1@XZ
     MCAPI class Vec3 xz() const;
