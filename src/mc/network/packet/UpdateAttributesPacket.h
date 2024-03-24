@@ -4,6 +4,7 @@
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/world/ActorRuntimeID.h"
 #include "mc/world/actor/monster/AttributeModifier.h"
+#include <mc/world/attribute/AttributeData.h>
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"

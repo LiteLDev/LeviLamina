@@ -38,12 +38,11 @@ public:
     // vIndex: 5, symbol: ?getBiome@FixedBiomeSource@@UEBAPEBVBiome@@AEBUGetBiomeOptions@@@Z
     virtual class Biome const* getBiome(struct GetBiomeOptions const&) const;
 
-    // vIndex: 6, symbol: ?getBiome@FixedBiomeSource@@UEBAPEBVBiome@@AEBVBlockPos@@@Z
-    virtual class Biome const* getBiome(class BlockPos const& blockPos) const;
+    // vIndex: 6, symbol: ?getBiome@FixedBiomeSource@@UEBAPEBVBiome@@HHH@Z
+    virtual class Biome const* getBiome(int blockX, int, int blockZ) const;
 
     // vIndex: 7, symbol: ?getBiome@FixedBiomeSource@@UEBAPEBVBiome@@AEBVBlockPos@@@Z
     virtual class Biome const* getBiome(class BlockPos const& blockPos) const;
-
     // vIndex: 8, symbol: ?has@FixedBiomeSource@@UEBA_N_K@Z
     virtual bool has(uint64) const;
 

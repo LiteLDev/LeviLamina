@@ -124,9 +124,9 @@ public:
     fetchAABBs(std::vector<class AABB>&, class AABB const& intersectTestBox, bool withUnloadedChunks) const;
 
     // vIndex: 20, symbol:
-    // ?fetchCollisionShapes@BlockSource@@UEBAXAEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@AEBVAABB@@_NV?$optional_ref@$$CBVGetCollisionShapeInterface@@@@PEAV23@@Z
+    // ?fetchCollisionShapes@BlockSource@@UEBAXAEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@AEBVAABB@@_NV?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
     virtual void
-    fetchCollisionShapes(std::vector<class AABB>&, class AABB const&, bool, class optional_ref<class GetCollisionShapeInterface const>, std::vector<class AABB>*)
+    fetchCollisionShapes(std::vector<class AABB>&, class AABB const&, bool, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
     // vIndex: 21, symbol:

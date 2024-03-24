@@ -195,7 +195,6 @@ LL_AUTO_STATIC_HOOK(GeneratePacketHook, HookPriority::Normal, "main", int, int a
 #include "mc/network/packet/InventorySlotPacket.h"
 #include "mc/network/packet/InventoryTransactionPacket.h"
 #include "mc/network/packet/ItemComponentPacket.h"
-#include "mc/network/packet/ItemFrameDropItemPacket.h"
 #include "mc/network/packet/ItemStackRequestPacket.h"
 #include "mc/network/packet/ItemStackResponsePacket.h"
 #include "mc/network/packet/LabTablePacket.h"
@@ -394,7 +393,6 @@ PACKET_SIZE_ASSERT(ClientboundMapItemDataPacket, 0xC8);
 PACKET_SIZE_ASSERT(MapInfoRequestPacket, 0x50);
 PACKET_SIZE_ASSERT(RequestChunkRadiusPacket, 0x38);
 PACKET_SIZE_ASSERT(ChunkRadiusUpdatedPacket, 0x38);
-PACKET_SIZE_ASSERT(ItemFrameDropItemPacket, 0x40);
 PACKET_SIZE_ASSERT(GameRulesChangedPacket, 0x48);
 PACKET_SIZE_ASSERT(CameraPacket, 0x40);
 PACKET_SIZE_ASSERT(BossEventPacket, 0x80);
