@@ -295,10 +295,26 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
     std::exit((int)e->ExceptionRecord->ExceptionCode);
 }
 
+static LONG uncatchableExceptionHandler(_In_ struct _EXCEPTION_POINTERS* e) {
+    static std::atomic_bool onceFlag{false};
+    auto const&             code = e->ExceptionRecord->ExceptionCode;
+    if (code == STATUS_HEAP_CORRUPTION || code == STATUS_STACK_BUFFER_OVERRUN
+        // need to add all can't catch status code
+    ) {
+        if (!onceFlag) {
+            onceFlag = true;
+            unhandledExceptionFilter(e);
+        }
+    }
+    return EXCEPTION_CONTINUE_SEARCH;
+}
+
 CrashLoggerNew::CrashLoggerNew() {
     if (IsDebuggerPresent()) {
         crashLogger.warn("Debugger detected, CrashLogger will not be enabled"_tr());
     } else {
+        AddVectoredExceptionHandler(0, uncatchableExceptionHandler);
+
         previous = SetUnhandledExceptionFilter(unhandledExceptionFilter);
         crashLogger.info("CrashLogger enabled successfully"_tr());
     }
