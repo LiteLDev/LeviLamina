@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/biome/surface/PerlinNoise.h"
+#include "mc/world/level/biome/surface/PerlinSimplexNoise.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/data/DividedPos2d.h"
@@ -9,14 +11,14 @@
 
 class TheEndGenerator : public ::WorldGenerator {
 public:
-    std::unique_ptr<PerlinNoise>        mLPerlinNoise1;    // this+0x68
-    std::unique_ptr<PerlinNoise>        mLPerlinNoise2;    // this+0x70
-    std::unique_ptr<PerlinNoise>        mPerlinNoise1;     // this+0x78
-    std::unique_ptr<SimplexNoise>       mIslandNoise;      // this+0x80
-    std::unique_ptr<PerlinSimplexNoise> mMaterialAdjNoise; // this+0x88
+    std::unique_ptr<PerlinNoise>        mLPerlinNoise1; // this+0x188
+    std::unique_ptr<PerlinNoise>        mLPerlinNoise2;
+    std::unique_ptr<PerlinNoise>        mPerlinNoise1;
+    std::unique_ptr<SimplexNoise>       mIslandNoise;
+    std::unique_ptr<PerlinSimplexNoise> mMaterialAdjNoise;
     // Bedrock::Threading::InstancedThreadLocal<TheEndGenerator::ThreadData>
-    char                              generatorHelpersPool[168]; // this+0x90
-    std::unique_ptr<FixedBiomeSource> mBiomeSource;              // this+0x138
+    char                              generatorHelpersPool[168];
+    std::unique_ptr<FixedBiomeSource> mBiomeSource; // this+0x258
 
     // prevent constructor by default
     TheEndGenerator& operator=(TheEndGenerator const&);

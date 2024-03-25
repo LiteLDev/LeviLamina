@@ -9,12 +9,12 @@
 
 class VoidGenerator : public ::WorldGenerator {
 public:
-    const Biome*                      mBiome;           // this+136
-    std::unique_ptr<FixedBiomeSource> mBiomeSource;     // this+144
-    void*                             unk_152;          // this+152
-    std::vector<Block const*>         mPrototypeBlocks; // this+160
-    BlockVolume                       mPrototype;       // this+184
-    bool                              unk_224;          // this+224
+    const Biome*                      mBiome; // this+188
+    std::unique_ptr<FixedBiomeSource> mBiomeSource;
+    void*                             unk_408;
+    std::vector<Block const*>         mPrototypeBlocks;
+    BlockVolume                       mPrototype;
+    bool                              unk_480;
     // prevent constructor by default
     VoidGenerator& operator=(VoidGenerator const&);
     VoidGenerator(VoidGenerator const&);

@@ -19,10 +19,10 @@ public:
     virtual void fillBiomes(class LevelChunk&, class ChunkLocalNoiseCache const&) const = 0;
 
     // vIndex: 2
-    virtual class BiomeArea getBiomeArea(class BoundingBox const&, uint) const = 0;
-
-    // vIndex: 3,
     virtual class BiomeArea getBiomeArea(class BoundingBox const&, uint, struct GetBiomeOptions const&) const = 0;
+
+    // vIndex: 3
+    virtual class BiomeArea getBiomeArea(class BoundingBox const&, uint) const = 0;
 
     // vIndex: 4
     virtual bool containsOnly(int, int, int, int, gsl::span<uint64 const>) const = 0;

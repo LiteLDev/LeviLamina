@@ -16,10 +16,10 @@ namespace Json { class Value; }
 
 class FlatWorldGenerator : public ::WorldGenerator {
 public:
-    std::vector<Block const*>         mPrototypeBlocks; // this+0x190
-    BlockVolume                       mPrototype;       // this+0x1A8
-    Biome const*                      mBiome;           // this+0x1D0
-    std::unique_ptr<FixedBiomeSource> mBiomeSource;     // this+0x1D8
+    std::vector<Block const*>         mPrototypeBlocks; // this+0x188
+    BlockVolume                       mPrototype;       // this+0x1A0
+    Biome const*                      mBiome;           // this+0x1C8
+    std::unique_ptr<FixedBiomeSource> mBiomeSource;     // this+0x1D0
 
     // prevent constructor by default
     FlatWorldGenerator& operator=(FlatWorldGenerator const&);

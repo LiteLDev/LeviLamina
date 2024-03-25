@@ -24,17 +24,17 @@ public:
         ThreadData();
     };
 
-    std::unique_ptr<PerlinNoise>        lperlinNoise1;     // this+0x68
-    std::unique_ptr<PerlinNoise>        lperlinNoise2;     // this+0x70
-    std::unique_ptr<PerlinNoise>        perlinNoise1;      // this+0x78
-    std::unique_ptr<PerlinNoise>        perlinNoise2;      // this+0x80
-    std::unique_ptr<PerlinNoise>        scaleNoise;        // this+0x88
-    std::unique_ptr<PerlinNoise>        depthNoise;        // this+0x90
-    std::unique_ptr<PerlinSimplexNoise> surfaceNoise;      // this+0x98
-    std::unique_ptr<PerlinSimplexNoise> mMaterialAdjNoise; // this+0xA0
+    std::unique_ptr<PerlinNoise>        lperlinNoise1; // this+0x188
+    std::unique_ptr<PerlinNoise>        lperlinNoise2;
+    std::unique_ptr<PerlinNoise>        perlinNoise1;
+    std::unique_ptr<PerlinNoise>        perlinNoise2;
+    std::unique_ptr<PerlinNoise>        scaleNoise;
+    std::unique_ptr<PerlinNoise>        depthNoise;
+    std::unique_ptr<PerlinSimplexNoise> surfaceNoise;
+    std::unique_ptr<PerlinSimplexNoise> mMaterialAdjNoise;
     // Bedrock::Threading::InstancedThreadLocal<NetherGenerator::ThreadData>
-    char                         generatorHelpersPool[168]; // this+0xA8
-    std::unique_ptr<BiomeSource> mBiomeSource;              // this+0x150
+    char                         generatorHelpersPool[168];
+    std::unique_ptr<BiomeSource> mBiomeSource; // this+0x270
 
 public:
     // prevent constructor by default

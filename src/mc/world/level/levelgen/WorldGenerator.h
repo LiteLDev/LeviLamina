@@ -12,7 +12,6 @@
 
 class HardcodedSpawnAreaRegistry;
 class StructureFeatureRegistry;
-class AirBlockCache;
 class BiomeArea;
 class HashedString;
 
@@ -30,14 +29,13 @@ public:
         uint mHeight; // this+0x8
     };
 
-    AirBlockCache*                              mAirBlockCache;            // this+0x78
-    std::unique_ptr<HardcodedSpawnAreaRegistry> mHardcodedSpawnTypes;      // this+0x80
-    std::unique_ptr<StructureFeatureRegistry>   mStructureFeatureRegistry; // this+0x88
-    uchar                                       mUnknown1[160];            // this+0x90
+    std::unique_ptr<HardcodedSpawnAreaRegistry> mHardcodedSpawnTypes;      // this+0x78
+    std::unique_ptr<StructureFeatureRegistry>   mStructureFeatureRegistry; // this+0x80
+    uchar                                       mUnknown1[160];            // this+0x88
 
     // mUnknown2 is std::unordered_map but unknown key and value
-    uchar    mUnknown2[64]; // this+0x130
-    SpinLock mSpinLock;     // this+0x170
+    uchar    mUnknown2[64]; // this+0x128
+    SpinLock mSpinLock;     // this+0x168
 
 public:
     // prevent constructor by default
@@ -50,21 +48,21 @@ public:
     // symbol: ??1WorldGenerator@@UEAA@XZ
     virtual ~WorldGenerator();
 
-    // symbol: ?init@WorldGenerator@@UEAAXXZ
+    // vIndex: 33, symbol: ?init@WorldGenerator@@UEAAXXZ
     virtual void init();
 
-    // symbol: ?findStructureFeatureTypeAt@WorldGenerator@@UEAA?AW4StructureFeatureType@@AEBVBlockPos@@@Z
+    // vIndex: 34, symbol: ?findStructureFeatureTypeAt@WorldGenerator@@UEAA?AW4StructureFeatureType@@AEBVBlockPos@@@Z
     virtual ::StructureFeatureType findStructureFeatureTypeAt(class BlockPos const& pos);
 
-    // symbol: ?isStructureFeatureTypeAt@WorldGenerator@@UEBA_NAEBVBlockPos@@W4StructureFeatureType@@@Z
+    // vIndex: 35, symbol: ?isStructureFeatureTypeAt@WorldGenerator@@UEBA_NAEBVBlockPos@@W4StructureFeatureType@@@Z
     virtual bool isStructureFeatureTypeAt(class BlockPos const& pos, ::StructureFeatureType type) const;
 
-    // symbol:
+    // vIndex: 36, symbol:
     // ?findNearestStructureFeature@WorldGenerator@@UEAA_NW4StructureFeatureType@@AEBVBlockPos@@AEAV3@_NV?$optional@VHashedString@@@std@@@Z
     virtual bool
     findNearestStructureFeature(::StructureFeatureType, class BlockPos const&, class BlockPos&, bool, std::optional<class HashedString>);
 
-    // symbol: ?garbageCollectBlueprints@WorldGenerator@@UEAAXV?$buffer_span@VChunkPos@@@@@Z
+    // vIndex: 37, symbol: ?garbageCollectBlueprints@WorldGenerator@@UEAAXV?$buffer_span@VChunkPos@@@@@Z
     virtual void garbageCollectBlueprints(class buffer_span<class ChunkPos> activeChunks);
 
     // vIndex: 38
