@@ -31,7 +31,7 @@ struct PackInstanceId;
 
 class LevelSettings {
 public:
-    uchar filler[0x440]; // serialize<LevelSettings>::read
+    uchar filler[0x4C0]; // serialize<LevelSettings>::read line=1282
 
     // prevent constructor by default
     LevelSettings& operator=(LevelSettings const&);

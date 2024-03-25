@@ -86,7 +86,7 @@ public:
     std::unique_ptr<ItemStackRequestData>                    mItemStackRequest;
     PlayerBlockActions                                       mPlayerBlockActions;
     ActorUniqueID                                            mPredictedVehicle;
-
+    Vec2                                                     mVehicleRotation;
 
     // prevent constructor by default
     PlayerAuthInputPacket& operator=(PlayerAuthInputPacket const&);
