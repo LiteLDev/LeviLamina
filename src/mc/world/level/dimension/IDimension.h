@@ -38,5 +38,8 @@ public:
     // vIndex: 8
     virtual class Vec3 translatePosAcrossDimension(class Vec3 const&, DimensionType) const = 0;
 
+    // vIndex: 9
+    virtual void forEachPlayer(std::function<bool(class Player&)> callback) const = 0;
+
     // NOLINTEND
 };
