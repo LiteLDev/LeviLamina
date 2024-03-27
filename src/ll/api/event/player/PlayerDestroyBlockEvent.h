@@ -8,7 +8,7 @@
 
 namespace ll::event::inline player {
 
-class PlayerDestroyBlockEvent : public Cancellable<PlayerLeftClickEvent> {
+class PlayerDestroyBlockEvent final : public Cancellable<PlayerLeftClickEvent> {
     BlockPos const& mPos;
 
 public:

@@ -5,7 +5,7 @@
 
 namespace ll::event::inline player {
 
-class PlayerJoinEvent : public Cancellable<PlayerEvent> {
+class PlayerJoinEvent final : public Cancellable<PlayerEvent> {
 public:
     constexpr explicit PlayerJoinEvent(Player& player) : Cancellable(player) {}
 };

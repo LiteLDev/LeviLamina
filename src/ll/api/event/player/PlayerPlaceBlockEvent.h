@@ -23,7 +23,7 @@ public:
     LLNDAPI BlockPos const& pos() const;
 };
 
-class PlayerPlacingBlockEvent : public Cancellable<PlayerPlaceBlockEvent> {
+class PlayerPlacingBlockEvent final : public Cancellable<PlayerPlaceBlockEvent> {
     uchar const& mFace;
 
 public:
@@ -36,7 +36,7 @@ public:
     LLNDAPI uchar const& face() const;
 };
 
-class PlayerPlacedBlockEvent : public PlayerPlaceBlockEvent {
+class PlayerPlacedBlockEvent final : public PlayerPlaceBlockEvent {
     Block const& mPlacedBlock;
 
 public:

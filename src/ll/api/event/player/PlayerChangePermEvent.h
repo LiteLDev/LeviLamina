@@ -5,7 +5,7 @@
 
 namespace ll::event::inline player {
 
-class PlayerChangePermEvent : public Cancellable<PlayerEvent> {
+class PlayerChangePermEvent final : public Cancellable<PlayerEvent> {
     CommandPermissionLevel& mMewPerm;
 
 public:

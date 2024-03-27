@@ -107,11 +107,11 @@ public:
     // ?tryGetScoreboardParticipantScoreboardId@ScriptScoreboard@ScriptModuleMinecraft@@QEBA?AV?$optional@UScoreboardId@@@std@@AEBV?$variant@V?$StrongTypedObjectHandle@VScriptScoreboardIdentity@ScriptModuleMinecraft@@@Scripting@@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@4@@Z
     MCAPI std::optional<struct ScoreboardId>
           tryGetScoreboardParticipantScoreboardId(std::variant<
-                                                  class Scripting::StrongTypedObjectHandle<
-                                                      class ScriptModuleMinecraft::ScriptScoreboardIdentity>,
-                                                  class Scripting::StrongTypedObjectHandle<
-                                                      class ScriptModuleMinecraft::ScriptActor>,
-                                                  std::string> const&) const;
+                                            class Scripting::StrongTypedObjectHandle<
+                                                class ScriptModuleMinecraft::ScriptScoreboardIdentity>,
+                                            class Scripting::StrongTypedObjectHandle<
+                                                class ScriptModuleMinecraft::ScriptActor>,
+                                            std::string> const&) const;
 
     // symbol:
     // ?bind@ScriptScoreboard@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptScoreboard@ScriptModuleMinecraft@@@Scripting@@XZ

@@ -6,7 +6,7 @@
 
 namespace ll::event::inline entity {
 
-class MobDieEvent : public MobEvent {
+class MobDieEvent final : public MobEvent {
     ActorDamageSource const& mSource;
 
 public:

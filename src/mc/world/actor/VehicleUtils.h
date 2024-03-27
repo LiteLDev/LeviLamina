@@ -36,17 +36,15 @@ public:
 
     // symbol:
     // ?getActivatorRailExitPatternStrategy@VehicleUtils@@SAP6A?AV?$optional@VVec3@@@std@@AEBUVehicleDirections@1@V?$function@$$A6A_NAEBVVec3@@0@Z@3@@ZAEBVBaseGameVersion@@@Z
-    MCAPI static auto getActivatorRailExitPatternStrategy(class BaseGameVersion const& version)
-        -> std::optional<
-            class
-            Vec3> (*)(struct VehicleUtils::VehicleDirections const&, std::function<bool(class Vec3 const&, class Vec3 const&)>);
+    MCAPI static auto getActivatorRailExitPatternStrategy(class BaseGameVersion const& version) -> std::optional<
+        class
+        Vec3> (*)(struct VehicleUtils::VehicleDirections const&, std::function<bool(class Vec3 const&, class Vec3 const&)>);
 
     // symbol:
     // ?getActorExitPatternStrategy@VehicleUtils@@SAP6A?AV?$optional@VVec3@@@std@@AEBUVehicleDirections@1@V?$function@$$A6A_NAEBVVec3@@0@Z@3@@ZAEBVBaseGameVersion@@@Z
-    MCAPI static auto getActorExitPatternStrategy(class BaseGameVersion const& version)
-        -> std::optional<
-            class
-            Vec3> (*)(struct VehicleUtils::VehicleDirections const&, std::function<bool(class Vec3 const&, class Vec3 const&)>);
+    MCAPI static auto getActorExitPatternStrategy(class BaseGameVersion const& version) -> std::optional<
+        class
+        Vec3> (*)(struct VehicleUtils::VehicleDirections const&, std::function<bool(class Vec3 const&, class Vec3 const&)>);
 
     // symbol: ?ignoredExitCollisionBlock@VehicleUtils@@SA_NAEBVBlock@@@Z
     MCAPI static bool ignoredExitCollisionBlock(class Block const& block);

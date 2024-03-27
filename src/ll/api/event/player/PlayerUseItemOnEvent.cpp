@@ -10,7 +10,8 @@
 namespace ll::event::inline player {
 
 void PlayerUseItemOnEvent::serialize(CompoundTag& nbt) const {
-    PlayerUseItemEvent::serialize(nbt);
+    Cancellable::serialize(nbt);
+    nbt["item"]     = (uintptr_t)&item();
     nbt["blockPos"] = ListTag{blockPos().x, blockPos().y, blockPos().z};
     nbt["face"]     = face();
     nbt["clickPos"] = ListTag{clickPos().x, clickPos().y, clickPos().z};
@@ -18,7 +19,7 @@ void PlayerUseItemOnEvent::serialize(CompoundTag& nbt) const {
         nbt["block"] = (uintptr_t)(block().as_ptr());
     }
 }
-
+ItemStack&                PlayerUseItemOnEvent::item() const { return mItem; }
 BlockPos const&           PlayerUseItemOnEvent::blockPos() const { return mBlockPos; }
 uchar const&              PlayerUseItemOnEvent::face() const { return mFace; }
 Vec3 const&               PlayerUseItemOnEvent::clickPos() const { return mClickPos; }

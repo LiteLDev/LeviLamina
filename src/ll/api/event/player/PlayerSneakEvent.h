@@ -10,12 +10,12 @@ protected:
     constexpr explicit PlayerSneakEvent(Player& player) : Cancellable(player) {}
 };
 
-class PlayerSneakingEvent : public PlayerSneakEvent {
+class PlayerSneakingEvent final : public PlayerSneakEvent {
 public:
     constexpr explicit PlayerSneakingEvent(Player& player) : PlayerSneakEvent(player) {}
 };
 
-class PlayerSneakedEvent : public PlayerSneakEvent {
+class PlayerSneakedEvent final : public PlayerSneakEvent {
 public:
     constexpr explicit PlayerSneakedEvent(Player& player) : PlayerSneakEvent(player) {}
 };

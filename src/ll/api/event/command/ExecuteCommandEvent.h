@@ -33,7 +33,7 @@ public:
     LLNDAPI CommandContext const& commandContext() const;
     LLNDAPI bool const&           suppressOutput() const;
 };
-class ExecutingCommandEvent : public Cancellable<ExecuteCommandEvent> {
+class ExecutingCommandEvent final : public Cancellable<ExecuteCommandEvent> {
 public:
     constexpr explicit ExecutingCommandEvent(
         MinecraftCommands& minecraftCommands,
@@ -47,7 +47,7 @@ public:
     LLNDAPI CommandContext& commandContext() const;
     LLNDAPI bool&           suppressOutput() const;
 };
-class ExecutedCommandEvent : public ExecuteCommandEvent {
+class ExecutedCommandEvent final : public ExecuteCommandEvent {
     MCRESULT& mResult;
 
 public:

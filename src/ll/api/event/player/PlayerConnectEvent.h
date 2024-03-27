@@ -8,7 +8,7 @@
 
 namespace ll::event::inline player {
 
-class PlayerConnectEvent : public Cancellable<PlayerEvent> {
+class PlayerConnectEvent final : public Cancellable<PlayerEvent> {
     NetworkIdentifier const& mNetworkIdentifier;
     ConnectionRequest const& mConnectionRequest;
 

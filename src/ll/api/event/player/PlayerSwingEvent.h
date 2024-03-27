@@ -5,7 +5,7 @@
 
 namespace ll::event::inline player {
 
-class PlayerSwingEvent : public PlayerLeftClickEvent {
+class PlayerSwingEvent final : public PlayerLeftClickEvent {
 public:
     constexpr explicit PlayerSwingEvent(Player& player) : PlayerLeftClickEvent(player) {}
 };

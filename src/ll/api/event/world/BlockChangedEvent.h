@@ -7,7 +7,7 @@
 
 namespace ll::event::inline world {
 
-class BlockChangedEvent : public WorldEvent {
+class BlockChangedEvent final : public WorldEvent {
     uint const&     mLayer;
     Block const&    mPreviousBlock;
     Block const&    mNewBlock;

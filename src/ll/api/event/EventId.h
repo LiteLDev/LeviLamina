@@ -33,6 +33,7 @@ constexpr EventId getEventId = []() -> EventId {
     if constexpr (self::CustomEventId != EmptyEventId) {
         return self::CustomEventId;
     } else {
+        static_assert(std::is_final_v<self>, "Only final classes can use getEventId");
         return EventId{ll::reflection::type_raw_name_v<self>};
     }
 }();

@@ -6,7 +6,7 @@
 
 namespace ll::event::inline player {
 
-class PlayerDieEvent : public PlayerEvent {
+class PlayerDieEvent final : public PlayerEvent {
     ActorDamageSource const& mSource;
 
 public:

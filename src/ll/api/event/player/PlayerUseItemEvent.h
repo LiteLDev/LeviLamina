@@ -7,7 +7,7 @@
 
 namespace ll::event::inline player {
 
-class PlayerUseItemEvent : public Cancellable<PlayerRightClickEvent> {
+class PlayerUseItemEvent final : public Cancellable<PlayerRightClickEvent> {
     ItemStack& mItem;
 
 public:
