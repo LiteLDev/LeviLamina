@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.10.1] - 2024-03-26
+
+### Added
+
+- Add member to GenerateMessageResult
+
+### Fixed
+
+- Fix vec3 bugs
+
 ## [0.10.0] - 2024-03-26
 
 ### Added
@@ -20,7 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fixed #1492 @OEOTYAN
+- Fixed [#1492] @OEOTYAN
 
 ## [0.9.5] - 2024-03-18
 
@@ -367,8 +377,10 @@ For lip and tooth-hub test only.
 
 [#1481]: https://github.com/LiteLDev/LeviLamina/issues/1481
 [#1483]: https://github.com/LiteLDev/LeviLamina/issues/1483
+[#1492]: https://github.com/LiteLDev/LeviLamina/issues/1492
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.0...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.1...HEAD
+[0.10.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.0...v0.10.1
 [0.10.0]: https://github.com/LiteLDev/LeviLamina/compare/v0.9.5...v0.10.0
 [0.9.5]: https://github.com/LiteLDev/LeviLamina/compare/v0.9.4...v0.9.5
 [0.9.4]: https://github.com/LiteLDev/LeviLamina/compare/v0.9.3...v0.9.4
