@@ -61,35 +61,41 @@ public:
     // vIndex: 12, symbol: ?getMaterial@BlockSource@@UEBAAEBVMaterial@@HHH@Z
     virtual class Material const& getMaterial(int, int, int) const = 0;
 
-    // vIndex: 13, symbol: ?hasChunksAt@BlockSource@@UEBA_NAEBUBounds@@_N@Z
+    // vIndex: 13, symbol: ?hasBorderBlock@BlockSource@@UEBA_NVBlockPos@@@Z
+    virtual bool hasBorderBlock(class BlockPos pos) const;
+
+    // vIndex: 14, symbol: ?getChunkAt@BlockSource@@UEBAPEAVLevelChunk@@AEBVBlockPos@@@Z
+    virtual class LevelChunk* getChunkAt(class BlockPos const& pos) const;
+
+    // vIndex: 15, symbol: ?hasChunksAt@BlockSource@@UEBA_NAEBUBounds@@_N@Z
     virtual bool hasChunksAt(struct Bounds const&, bool) const = 0;
 
-    // vIndex: 14, symbol: ?hasChunksAt@BlockSource@@UEBA_NAEBVBlockPos@@H_N@Z
+    // vIndex: 16, symbol: ?hasChunksAt@BlockSource@@UEBA_NAEBVBlockPos@@H_N@Z
     virtual bool hasChunksAt(class BlockPos const&, int, bool) const = 0;
 
-    // vIndex: 15, symbol: ?hasChunksAt@BlockSource@@UEBA_NAEBVAABB@@_N@Z
+    // vIndex: 17, symbol: ?hasChunksAt@BlockSource@@UEBA_NAEBVAABB@@_N@Z
     virtual bool hasChunksAt(class AABB const&, bool) const = 0;
 
-    // vIndex: 16, symbol: ?getDimensionId@BlockSource@@UEBA?AV?$AutomaticID@VDimension@@H@@XZ
+    // vIndex: 18, symbol: ?getDimensionId@BlockSource@@UEBA?AV?$AutomaticID@VDimension@@H@@XZ
     virtual DimensionType getDimensionId() const = 0;
 
-    // vIndex: 17, symbol:
+    // vIndex: 19, symbol:
     // ?fetchAABBs@BlockSource@@UEBAXAEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@AEBVAABB@@_N@Z
     virtual void fetchAABBs(std::vector<class AABB>&, class AABB const&, bool) const = 0;
 
-    // vIndex: 18, symbol:
+    // vIndex: 20, symbol:
     // ?fetchCollisionShapes@BlockSource@@UEBAXAEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@AEBVAABB@@_NV?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
     virtual void
     fetchCollisionShapes(std::vector<class AABB>&, class AABB const&, bool, class optional_ref<class GetCollisionShapeInterface const>)
         const = 0;
 
-    // vIndex: 19, symbol:
+    // vIndex: 21, symbol:
     // ?getTallestCollisionShape@BlockSource@@UEBA?AVAABB@@AEBV2@PEAM_NV?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
     virtual class AABB
     getTallestCollisionShape(class AABB const&, float*, bool, class optional_ref<class GetCollisionShapeInterface const>)
         const = 0;
 
-    // vIndex: 20, symbol: ?getBrightness@BlockSource@@UEBAMAEBVBlockPos@@@Z
+    // vIndex: 22, symbol: ?getBrightness@BlockSource@@UEBAMAEBVBlockPos@@@Z
     virtual float getBrightness(class BlockPos const&) const = 0;
 
     // symbol: ?checkMaterial@IConstBlockSource@@QEBA_NAEBVAABB@@W4MaterialType@@@Z

@@ -27,12 +27,15 @@
 #include "ll/api/event/player/PlayerSwingEvent.h"
 #include "ll/api/event/player/PlayerUseItemEvent.h"
 #include "ll/api/event/player/PlayerUseItemOnEvent.h"
+#include "ll/api/event/world/BlockChangedEvent.h"
 #include "ll/api/event/world/SpawnMobEvent.h"
 #include "ll/api/io/FileUtils.h"
 #include "mc/codebuilder/MCRESULT.h"
 #include "mc/nbt/CompoundTag.h"
 #include "mc/world/actor/ActorDamageSource.h"
 #include "mc/world/item/registry/ItemStack.h"
+#include "mc/world/level/dimension/Dimension.h"
+
 
 #include "ll/api/base/FixedString.h"
 
@@ -229,4 +232,9 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     bus.addListener(dl, getEventId<PlayerDestroyBlockEvent>);
     bus.addListener(dl, getEventId<PlayerPlacingBlockEvent>);
     // bus.addListener(dl, getEventId<SpawnedMobEvent>);
+
+    bus.emplaceListener<BlockChangedEvent>([](BlockChangedEvent& ev) {
+        ll::logger
+            .debug("Block Changed Pos: {} Dimension: {}", ev.pos().toString(), ev.blockSource().getDimensionId().id);
+    });
 }
