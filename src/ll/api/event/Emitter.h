@@ -6,7 +6,7 @@
 namespace ll::event {
 template <auto F, std::derived_from<Event>... Ts>
 class Emitter : public EmitterBase {
-    static_assert((std::is_final_v<Ts> && ...));
+    static_assert((std::is_final_v<Ts> && ...), "Only final classes can be emitted");
 
     static inline bool reg = [] {
         (EventBus::getInstance().setEventEmitter<Ts>(F), ...);
