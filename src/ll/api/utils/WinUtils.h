@@ -18,6 +18,8 @@ extern "C" struct _IMAGE_DOS_HEADER __ImageBase; // NOLINT(bugprone-reserved-ide
 
 LLNDAPI std::string getSystemLocaleName();
 
+LLNDAPI std::string const& getSystemName();
+
 LLNDAPI bool isWine();
 
 LLNDAPI std::span<uchar> getImageRange(std::string_view name = "");

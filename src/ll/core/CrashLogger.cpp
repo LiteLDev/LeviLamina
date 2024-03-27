@@ -76,7 +76,7 @@ static struct CrashInfo {
 
 static void dumpSystemInfo() {
     crashInfo.logger.info("System Info:");
-    crashInfo.logger.info("  |OS Version: {}", []() -> std::string {
+    crashInfo.logger.info("  |OS Version: {} {}", win_utils::getSystemName(), []() -> std::string {
         RTL_OSVERSIONINFOW osVersionInfoW = [] {
             RTL_OSVERSIONINFOW osVersionInfoW{};
             typedef uint(WINAPI * RtlGetVersionPtr)(PRTL_OSVERSIONINFOW);

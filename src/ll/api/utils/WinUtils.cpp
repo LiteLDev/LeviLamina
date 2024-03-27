@@ -23,6 +23,25 @@ std::string getSystemLocaleName() {
     std::replace(str.begin(), str.end(), '-', '_');
     return str;
 }
+std::string const& getSystemName() {
+    static std::string result = []() {
+        std::string name{"Unknown"};
+        HMODULE     hMod = LoadLibraryEx(L"winbrand.dll", NULL, LOAD_LIBRARY_SEARCH_SYSTEM32);
+        if (hMod) {
+            PWSTR(WINAPI * pfnBrandingFormatString)(PCWSTR pstrFormat);
+            (FARPROC&)pfnBrandingFormatString = GetProcAddress(hMod, "BrandingFormatString");
+            if (pfnBrandingFormatString) {
+                PWSTR pstrOSName = pfnBrandingFormatString(L"%WINDOWS_LONG%");
+                name             = wstr2str(pstrOSName);
+                // Remember to free the memory!
+                GlobalFree((HGLOBAL)pstrOSName);
+            }
+            FreeLibrary(hMod);
+        }
+        return name;
+    }();
+    return result;
+}
 
 bool isWine() {
     static bool result = []() {
