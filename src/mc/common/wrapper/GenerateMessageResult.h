@@ -5,8 +5,8 @@
 
 struct GenerateMessageResult {
 public:
-    std::string                                   string;
-    std::unique_ptr<CommandSelector<class Actor>> selection;
+    std::string string;
+    bool        unk;
 
     // prevent constructor by default
     GenerateMessageResult& operator=(GenerateMessageResult const&);
