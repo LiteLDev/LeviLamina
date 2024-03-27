@@ -54,20 +54,20 @@ public:
     ~TestEventB() override = default;
 };
 
-class TestEvent1 : public TestEventB {
+class TestEvent1 final : public TestEventB {
 public:
     static constexpr ll::event::EventId CustomEventId{"My custom Id"};
 
     TestEvent1() { some = "TestEvent1 haha"; }
 };
 
-class TestEvent2 : public ll::event::Cancellable<TestEventB> {
+class TestEvent2 final : public ll::event::Cancellable<TestEventB> {
 public:
     TestEvent2() { some = "TestEvent2 haha"; }
     explicit TestEvent2(std::string_view v) { some.assign(v); }
 };
 
-class TestEvent3 : public ll::event::Event {
+class TestEvent3 final : public ll::event::Event {
 public:
 };
 
