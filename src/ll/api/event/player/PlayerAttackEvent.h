@@ -5,7 +5,7 @@
 
 namespace ll::event::inline player {
 
-class PlayerAttackEvent : public Cancellable<PlayerLeftClickEvent> {
+class PlayerAttackEvent final : public Cancellable<PlayerLeftClickEvent> {
     Actor&                  mTarget;
     ActorDamageCause const& mCause;
 

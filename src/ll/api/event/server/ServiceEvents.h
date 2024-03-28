@@ -16,12 +16,12 @@ protected:
     std::shared_ptr<service::Service> mService;
 };
 
-class ServiceRegisterEvent : public ServiceEvent {
+class ServiceRegisterEvent final : public ServiceEvent {
 public:
     explicit ServiceRegisterEvent(std::shared_ptr<service::Service> service);
 };
 
-class ServiceUnregisterEvent : public ServiceEvent {
+class ServiceUnregisterEvent final : public ServiceEvent {
 public:
     explicit ServiceUnregisterEvent(std::shared_ptr<service::Service> service);
 };

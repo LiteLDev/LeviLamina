@@ -5,7 +5,7 @@
 
 namespace ll::event::inline player {
 
-class PlayerAddExperienceEvent : public Cancellable<PlayerEvent> {
+class PlayerAddExperienceEvent final : public Cancellable<PlayerEvent> {
     int& mExperience;
 
 public:

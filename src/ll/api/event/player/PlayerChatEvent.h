@@ -5,7 +5,7 @@
 
 namespace ll::event::inline player {
 
-class PlayerChatEvent : public Cancellable<PlayerEvent> {
+class PlayerChatEvent final : public Cancellable<PlayerEvent> {
     std::string& mMessage;
 
 public:

@@ -5,7 +5,7 @@
 
 namespace ll::event::inline player {
 
-class PlayerRespawnEvent : public PlayerEvent {
+class PlayerRespawnEvent final : public PlayerEvent {
 public:
     constexpr explicit PlayerRespawnEvent(Player& player) : PlayerEvent(player) {}
 };

@@ -384,10 +384,10 @@ MCAPI class Scripting::
 // ?getScriptScoreboardParticipantName@ScriptModuleMinecraft@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$variant@V?$StrongTypedObjectHandle@VScriptScoreboardIdentity@ScriptModuleMinecraft@@@Scripting@@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@3@@Z
 MCAPI std::string
       getScriptScoreboardParticipantName(std::variant<
-                                         class Scripting::StrongTypedObjectHandle<
-                                             class ScriptModuleMinecraft::ScriptScoreboardIdentity>,
-                                         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>,
-                                         std::string> const&);
+                                   class Scripting::StrongTypedObjectHandle<
+                                       class ScriptModuleMinecraft::ScriptScoreboardIdentity>,
+                                   class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>,
+                                   std::string> const&);
 // NOLINTEND
 
 }; // namespace ScriptModuleMinecraft

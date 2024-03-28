@@ -7,7 +7,7 @@
 
 namespace ll::event::inline player {
 
-class PlayerPickUpItemEvent : public Cancellable<PlayerEvent> {
+class PlayerPickUpItemEvent final : public Cancellable<PlayerEvent> {
     ItemActor& mItemActor;
     int&       mOrgCount;
     int&       mFavoredSlot;

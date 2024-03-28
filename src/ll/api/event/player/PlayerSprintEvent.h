@@ -10,12 +10,12 @@ protected:
     constexpr explicit PlayerSprintEvent(Player& player) : PlayerEvent(player) {}
 };
 
-class PlayerSprintingEvent : public PlayerSprintEvent {
+class PlayerSprintingEvent final : public PlayerSprintEvent {
 public:
     constexpr explicit PlayerSprintingEvent(Player& player) : PlayerSprintEvent(player) {}
 };
 
-class PlayerSprintedEvent : public PlayerSprintEvent {
+class PlayerSprintedEvent final : public PlayerSprintEvent {
 public:
     constexpr explicit PlayerSprintedEvent(Player& player) : PlayerSprintEvent(player) {}
 };

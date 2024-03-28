@@ -5,7 +5,7 @@
 
 namespace ll::event::inline player {
 
-class PlayerLeaveEvent : public PlayerEvent {
+class PlayerLeaveEvent final : public PlayerEvent {
 public:
     constexpr explicit PlayerLeaveEvent(Player& player) : PlayerEvent(player) {}
 };

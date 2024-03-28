@@ -8,7 +8,7 @@
 
 namespace ll::event::inline world {
 
-class FireSpreadEvent : public Cancellable<WorldEvent> {
+class FireSpreadEvent final : public Cancellable<WorldEvent> {
     BlockPos const& mPos;
 
 public:

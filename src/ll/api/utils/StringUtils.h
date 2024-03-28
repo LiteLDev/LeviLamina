@@ -19,8 +19,8 @@ namespace ll::inline utils::string_utils {
 
 // "2021-03-24"  ->  ["2021", "03", "24"]  (use '-' as split pattern)
 template <class T>
-[[nodiscard]] constexpr auto splitByPattern(T&& str, std::string_view pattern, bool keepEmpty = false) -> decltype(auto
-                                                                                                       ) {
+[[nodiscard]] constexpr auto splitByPattern(T&& str, std::string_view pattern, bool keepEmpty = false)
+    -> decltype(auto) {
     using ReturnTypeElement = std::conditional_t<std::is_same_v<T&&, std::string&&>, std::string, std::string_view>;
     using ReturnType        = std::vector<ReturnTypeElement>;
     std::string_view s{str};

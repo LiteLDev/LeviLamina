@@ -46,7 +46,7 @@ public:
     LLNDAPI bool const&         surface() const;
     LLNDAPI bool const&         fromSpawner() const;
 };
-class SpawningMobEvent : public Cancellable<SpawnMobEvent> {
+class SpawningMobEvent final : public Cancellable<SpawnMobEvent> {
 public:
     constexpr explicit SpawningMobEvent(
         BlockSource&                     blockSource,
@@ -66,7 +66,7 @@ public:
     LLNDAPI bool& surface() const;
     LLNDAPI bool& fromSpawner() const;
 };
-class SpawnedMobEvent : public SpawnMobEvent {
+class SpawnedMobEvent final : public SpawnMobEvent {
     optional_ref<Mob> mMob;
 
 public:

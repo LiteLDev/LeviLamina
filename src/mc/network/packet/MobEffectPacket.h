@@ -2,6 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/world/ActorRuntimeID.h"
+#include "mc/world/level/Tick.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -25,6 +26,7 @@ public:
     int              mEffectId;            // this+0x40
     int              mEffectAmplifier;     // this+0x44
     bool             mShowParticles;       // this+0x48
+    Tick             mTick;                // this+0x50
 
     // prevent constructor by default
     MobEffectPacket& operator=(MobEffectPacket const&);

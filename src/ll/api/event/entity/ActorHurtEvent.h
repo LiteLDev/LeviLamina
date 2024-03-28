@@ -7,7 +7,7 @@
 
 namespace ll::event::inline entity {
 
-class ActorHurtEvent : public Cancellable<ActorEvent> {
+class ActorHurtEvent final : public Cancellable<ActorEvent> {
     ActorDamageSource const& mSource;
     float&                   mDamage;
     bool&                    mKnock;

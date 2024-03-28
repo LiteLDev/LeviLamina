@@ -41,12 +41,14 @@ public:
     template <class T>
         requires(std::derived_from<std::remove_cvref_t<T>, Event>)
     void publish(T&& event) {
+        static_assert(std::is_final_v<std::remove_cvref_t<T>>, "Only final classes can publish");
         publish(event, getEventId<T>);
     }
 
     template <class T>
         requires(std::derived_from<std::remove_cvref_t<T>, Event>)
     void publish(std::string_view pluginName, T&& event) {
+        static_assert(std::is_final_v<std::remove_cvref_t<T>>, "Only final classes can publish");
         publish(pluginName, event, getEventId<T>);
     }
 
@@ -54,6 +56,7 @@ public:
 
     template <std::derived_from<Event> T>
     [[nodiscard]] size_t getListenerCount() {
+        static_assert(std::is_final_v<std::remove_cvref_t<T>>, "Only final classes can be listen");
         return getListenerCount(getEventId<T>);
     }
 
@@ -62,13 +65,8 @@ public:
     template <class T, template <class...> class L, class... LT>
         requires((std::derived_from<T, LT> || ...) && std::derived_from<L<LT...>, ListenerBase>)
     bool addListener(std::shared_ptr<L<LT...>> const& listener) {
-        if constexpr (requires(L<LT...> a) {
-                          { a.getEventId() } -> std::same_as<EventId>;
-                      } && concepts::is_all_same_v<T, LT...>) {
-            return addListener(listener, listener->getEventId());
-        } else {
-            return addListener(listener, getEventId<T>);
-        }
+        static_assert(std::is_final_v<std::remove_cvref_t<T>>, "Only final classes can be listen");
+        return addListener(listener, getEventId<T>);
     }
     template <class T = void, template <class...> class L, class... LT>
         requires(std::same_as<T, void> && std::derived_from<L<LT...>, ListenerBase>)
@@ -89,6 +87,7 @@ public:
     bool removeListener(ListenerPtr const& listener) { return removeListener(listener, EmptyEventId); }
     template <std::derived_from<Event> T>
     bool removeListener(ListenerPtr const& listener) {
+        static_assert(std::is_final_v<std::remove_cvref_t<T>>, "Only final classes can be listen");
         return removeListener(listener, getEventId<T>);
     }
 
@@ -110,6 +109,7 @@ public:
     }
     template <std::derived_from<Event> T>
     bool removeListener(ListenerId id) {
+        static_assert(std::is_final_v<std::remove_cvref_t<T>>, "Only final classes can be listen");
         if (auto listener = getListener(id); listener) {
             return removeListener(listener, getEventId<T>);
         }
