@@ -100,38 +100,38 @@ public:
     std::unique_ptr<BaseLightTextureImageBuilder>    mLightTextureImageBuilder;   // this+0x120
     std::unique_ptr<DimensionBrightnessRamp>         mDimensionBrightnessRamp;    // this+0x128
     std::shared_ptr<LevelChunkMetaData>              mTargetMetaData;             // this+0x130
-    std::string                                      mName;                       // this+0x140
-    DimensionType                                    mId;                         // this+0x160
-    bool                                             mUltraWarm;                  // this+0x164
-    bool                                             mHasCeiling;                 // this+0x165
-    bool                                             mHasWeather;                 // this+0x166
-    bool                                             mHasSkylight;                // this+0x167
-    Brightness                                       mSkyDarken;                  // this+0x168
-    std::unique_ptr<BlockEventDispatcher>            mDispatcher;                 // this+0x170
-    std::unique_ptr<TaskGroup>                       mTaskGroup;                  // this+0x178
-    std::unique_ptr<TaskGroup>                       mChunkGenTaskGroup;          // this+0x180
-    std::unique_ptr<PostprocessingManager>           mPostProcessingManager;      // this+0x188
-    std::unique_ptr<SubChunkInterlocker>             mSubChunkInterlocker;        // this+0x190
-    std::unique_ptr<ChunkSource>                     mChunkSource;                // this+0x198
-    WorldGenerator*                                  mWorldGenerator;             // this+0x1A0
-    std::unique_ptr<Weather>                         mWeather;                    // this+0x1A8
-    std::unique_ptr<Seasons>                         mSeasons;                    // this+0x1B0
-    std::unique_ptr<GameEventDispatcher>             mGameEventDispatcher;        // this+0x1B8
-    std::unique_ptr<CircuitSystem>                   mCircuitSystem;              // this+0x1C0
-    int                                              CIRCUIT_TICK_RATE;           // this+0x1C8
-    int                                              mCircuitSystemTickRate;      // this+0x1CC
-    std::unordered_map<ActorUniqueID, WeakEntityRef> mActorIDEntityIDMap;         // this+0x1D0
-    std::vector<WeakEntityRef>                       mDisplayEntities;            // this+0x210
-    std::shared_ptr<WireframeQueue>                  mWireframeQueue;             // this+0x228
-    FeatureTerrainAdjustments                        mFeatureTerrainAdjustments;  // this+0x238
+    std::unique_ptr<RuntimeLightingManager>          mRuntimeLightingManager;     // this+0x140
+    std::string                                      mName;                       // this+0x148
+    DimensionType                                    mId;                         // this+0x168
+    bool                                             mUltraWarm;                  // this+0x16C
+    bool                                             mHasCeiling;                 // this+0x16D
+    bool                                             mHasWeather;                 // this+0x16E
+    bool                                             mHasSkylight;                // this+0x16F
+    Brightness                                       mSkyDarken;                  // this+0x170
+    std::unique_ptr<BlockEventDispatcher>            mDispatcher;                 // this+0x178
+    std::unique_ptr<TaskGroup>                       mTaskGroup;                  // this+0x180
+    std::unique_ptr<TaskGroup>                       mChunkGenTaskGroup;          // this+0x188
+    std::unique_ptr<PostprocessingManager>           mPostProcessingManager;      // this+0x190
+    std::unique_ptr<SubChunkInterlocker>             mSubChunkInterlocker;        // this+0x198
+    std::unique_ptr<ChunkSource>                     mChunkSource;                // this+0x1A0
+    WorldGenerator*                                  mWorldGenerator;             // this+0x1A8
+    std::unique_ptr<Weather>                         mWeather;                    // this+0x1B0
+    std::unique_ptr<Seasons>                         mSeasons;                    // this+0x1B8
+    std::unique_ptr<GameEventDispatcher>             mGameEventDispatcher;        // this+0x1C0
+    std::unique_ptr<CircuitSystem>                   mCircuitSystem;              // this+0x1C8
+    int                                              CIRCUIT_TICK_RATE;           // this+0x1D0
+    int                                              mCircuitSystemTickRate;      // this+0x1D4
+    std::unordered_map<ActorUniqueID, WeakEntityRef> mActorIDEntityIDMap;         // this+0x1D8
+    std::vector<WeakEntityRef>                       mDisplayEntities;            // this+0x218
+    std::shared_ptr<WireframeQueue>                  mWireframeQueue;             // this+0x230
+    FeatureTerrainAdjustments                        mFeatureTerrainAdjustments;  // this+0x240
 
-    std::unordered_map<ChunkPos, std::vector<std::unique_ptr<CompoundTag>>> mLimboEntities; // this+0x280
+    std::unordered_map<ChunkPos, std::vector<std::unique_ptr<CompoundTag>>> mLimboEntities; // this+0x288
 
-    std::set<ActorUniqueID>                    mEntitiesToMoveChunks;       // this+0x2C0
-    std::shared_ptr<TickingAreaList>           mTickingAreaList;            // this+0x2D0
-    LevelChunkGarbageCollector                 mLevelChunkGarbageCollector; // this+0x2E0
-    std::set<ActorUniqueID>                    mWitherIDs;                  // this+0x558
-    std::unique_ptr<RuntimeLightingManager>    mRuntimeLightingManager;     // this+0x568
+    std::set<ActorUniqueID>                    mEntitiesToMoveChunks;       // this+0x2C8
+    std::shared_ptr<TickingAreaList>           mTickingAreaList;            // this+0x2D8
+    LevelChunkGarbageCollector                 mLevelChunkGarbageCollector; // this+0x2E8
+    std::set<ActorUniqueID>                    mWitherIDs;                  // this+0x560
     std::unique_ptr<LevelChunkBuilderData>     mLevelChunkBuilderData;      // this+0x570
     std::chrono::steady_clock::time_point      mLastPruneTime;              // this+0x578
     std::unique_ptr<ChunkBuildOrderPolicyBase> mChunkBuildOrderPolicy;      // this+0x580
