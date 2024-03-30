@@ -50,6 +50,9 @@ public:
     void publish(std::string_view pluginName, Event& event) {
         std::shared_lock lock(mutex);
         for (auto& l : listeners) {
+            if (l->pluginPtr.expired()) {
+                continue;
+            }
             auto ptr = l->pluginPtr.lock();
             if (!ptr || ptr->getManifest().name != pluginName) {
                 continue;
@@ -227,6 +230,9 @@ size_t EventBus::removePluginListeners(std::string_view pluginName) {
     std::lock_guard lock(impl->mutex);
     size_t          count{};
     for (auto& [id, listener] : impl->listeners) {
+        if (listener.plugin.expired()) {
+            continue;
+        }
         if (auto plugin = listener.plugin.lock()) {
             if (plugin->getManifest().name != pluginName) {
                 continue;
