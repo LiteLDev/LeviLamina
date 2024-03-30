@@ -44,7 +44,7 @@ LL_INSTANCE_HOOK(MinecraftDestructor, HookPriority::High, "??1Minecraft@@UEAA@XZ
 std::atomic<PropertiesSettings*> propertiesSettings;
 
 LL_TYPE_INSTANCE_HOOK(
-    PropertiesSettingsConstructor,
+    PropertiesSettingsInit,
     HookPriority::High,
     DedicatedServer,
     &DedicatedServer::runDedicatedServerLoop,
@@ -192,7 +192,7 @@ optional_ref<ServerInstance> getServerInstance() { return serverInstance.load();
 using HookReg = memory::HookRegistrar<
     MinecraftInit,
     MinecraftDestructor,
-    PropertiesSettingsConstructor,
+    PropertiesSettingsInit,
     ServerNetworkHandlerInit,
     ServerNetworkHandlerDestructor,
     NetworkSystemConstructor,

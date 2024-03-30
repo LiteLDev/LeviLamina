@@ -77,9 +77,11 @@ public:
     inline bool tryRegisterEnum() {
         static std::vector<std::pair<std::string, uint64>> values{[] {
             std::vector<std::pair<std::string, uint64>> vals;
-            magic_enum::enum_for_each<T>([&](T enumVal) {
-                vals.emplace_back(magic_enum::enum_name(enumVal), (uint64)enumVal);
-            });
+            if constexpr (magic_enum::enum_count<T>() > 0) {
+                magic_enum::enum_for_each<T>([&](T enumVal) {
+                    vals.emplace_back(magic_enum::enum_name(enumVal), (uint64)enumVal);
+                });
+            }
             return vals;
         }()};
         return tryRegisterEnum(::ll::command::enum_name_v<T>, values, Bedrock::type_id<CommandRegistry, T>(), &CommandRegistry::parse<T>);
@@ -89,9 +91,11 @@ public:
     inline bool tryRegisterSoftEnum() {
         static std::vector<std::string> values{[] {
             std::vector<std::string> vals;
-            magic_enum::enum_for_each<remove_soft_enum_t<T>>([&](remove_soft_enum_t<T> enumVal) {
-                vals.emplace_back(magic_enum::enum_name(enumVal));
-            });
+            if constexpr (magic_enum::enum_count<T>() > 0) {
+                magic_enum::enum_for_each<remove_soft_enum_t<T>>([&](remove_soft_enum_t<T> enumVal) {
+                    vals.emplace_back(magic_enum::enum_name(enumVal));
+                });
+            }
             return vals;
         }()};
         return tryRegisterSoftEnum(::ll::command::enum_name_v<T>, values);
