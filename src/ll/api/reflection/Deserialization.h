@@ -135,22 +135,20 @@ inline void deserialize(T& arr, J const& j)
     if constexpr (requires(T a) { a.clear(); }) {
         arr.clear();
     }
-
     if constexpr (requires(T a, value_type v) { a.push_back(v); }) {
 
-        arr.resize(j.size());
         for (size_t i = 0; i < j.size(); i++) {
-            deserialize<J>(arr[i], j[i]);
+            value_type tmp{};
+            deserialize<J>(tmp, j[i]);
+            arr.push_back(tmp);
         }
-
-    } else if constexpr (requires(T a, value_type v) { a.insert(value_type{}); }) {
+    } else if constexpr (requires(T a, value_type v) { a.insert(v); }) {
 
         for (size_t i = 0; i < j.size(); i++) {
             value_type tmp{};
             deserialize<J>(tmp, j[i]);
             arr.insert(tmp);
         }
-
     } else if constexpr (requires(T a, size_t v) { a.at(v); }) {
         for (size_t i = 0; i < arr.size(); i++) {
             deserialize<J>(arr.at(i), j[i]);

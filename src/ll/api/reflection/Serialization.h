@@ -9,13 +9,8 @@ template <class J, Reflectable T>
 inline J serialize(T const&)
     requires(!std::convertible_to<T, J>);
 
-template <class J, class T>
-inline J serialize(T const&)
-    requires(std::is_enum_v<T>);
-
-template <class J, std::convertible_to<J> T>
-inline J serialize(T const&)
-    requires(!std::is_enum_v<T>);
+template <class J, concepts::Require<std::is_enum> T>
+inline J serialize(T const&);
 
 template <class J, concepts::Associative T>
 inline J serialize(T const&)
@@ -38,6 +33,10 @@ inline J serialize(T const&);
 
 template <class J, concepts::IsVectorBase T>
 inline J serialize(T const&);
+
+template <class J, std::convertible_to<J> T>
+inline J serialize(T const&)
+    requires(!std::is_enum_v<T>);
 
 
 template <class J, Reflectable T>
@@ -68,18 +67,9 @@ inline J serialize(T const& obj)
     return res;
 }
 
-template <class J, class T>
-inline J serialize(T const& e)
-    requires(std::is_enum_v<T>)
-{
+template <class J, concepts::Require<std::is_enum> T>
+inline J serialize(T const& e) {
     return magic_enum::enum_name(e);
-}
-
-template <class J, std::convertible_to<J> T>
-inline J serialize(T const& obj)
-    requires(!std::is_enum_v<T>)
-{
-    return obj;
 }
 
 template <class J, concepts::Associative T>
@@ -102,10 +92,7 @@ inline J serialize(T const& tuple)
     requires(!std::convertible_to<T, J>)
 {
     J res;
-    std::apply(
-        [&](auto&&... args) { ((res.push_back(serialize<J>(std::forward<decltype(args)>(args)))), ...); },
-        tuple
-    );
+    std::apply([&](auto&&... args) { ((res.push_back(serialize<J>(args))), ...); }, tuple);
     return res;
 }
 
@@ -140,6 +127,13 @@ inline J serialize(T const& vec) {
         res.push_back(serialize<J>(vec.template get<axis_type>(iter)));
     });
     return res;
+}
+
+template <class J, std::convertible_to<J> T>
+inline J serialize(T const& obj)
+    requires(!std::is_enum_v<T>)
+{
+    return obj;
 }
 
 } // namespace ll::reflection

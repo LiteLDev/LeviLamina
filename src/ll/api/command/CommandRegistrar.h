@@ -91,8 +91,9 @@ public:
     inline bool tryRegisterSoftEnum() {
         static std::vector<std::string> values{[] {
             std::vector<std::string> vals;
-            if constexpr (magic_enum::enum_count<T>() > 0) {
-                magic_enum::enum_for_each<remove_soft_enum_t<T>>([&](remove_soft_enum_t<T> enumVal) {
+            using enum_type = remove_soft_enum_t<T>;
+            if constexpr (magic_enum::enum_count<enum_type>() > 0) {
+                magic_enum::enum_for_each<enum_type>([&](enum_type enumVal) {
                     vals.emplace_back(magic_enum::enum_name(enumVal));
                 });
             }
