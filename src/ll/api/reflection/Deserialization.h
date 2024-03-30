@@ -14,11 +14,15 @@ inline void deserialize(T&, J const&)
 
 template <class J, class T>
 inline void deserialize(T&, J const&)
-    requires(!std::is_enum_v<T> && (concepts::IsString<T> || std::is_floating_point_v<T> || std::is_integral_v<T>));
+    requires(
+        !std::is_enum_v<T>
+        && (std::is_same_v<std::remove_cvref_t<T>, std::remove_cvref_t<J>> || concepts::IsString<T>
+            || std::is_floating_point_v<T> || std::is_integral_v<T>)
+    );
 
 template <class J, concepts::Associative T>
 inline void deserialize(T&, J const&)
-    requires(concepts::IsString<typename T::key_type>);
+    requires(concepts::IsString<typename T::key_type> || std::is_enum_v<typename T::key_type>);
 
 template <class J, concepts::TupleLike T>
 inline void deserialize(T&, J const&);
@@ -82,24 +86,34 @@ inline void deserialize(T& e, J const& j)
 
 template <class J, class T>
 inline void deserialize(T& obj, J const& j)
-    requires(!std::is_enum_v<T> && (concepts::IsString<T> || std::is_floating_point_v<T> || std::is_integral_v<T>))
+    requires(
+        !std::is_enum_v<T>
+        && (std::is_same_v<std::remove_cvref_t<T>, std::remove_cvref_t<J>> || concepts::IsString<T>
+            || std::is_floating_point_v<T> || std::is_integral_v<T>)
+    )
 {
-    if constexpr (concepts::IsString<T>) {
-        if (!j.is_string()) throw std::runtime_error("field must be a string");
-    } else {
-        if (!j.is_number() && !j.is_boolean()) throw std::runtime_error("field must be a number");
+    if constexpr (!std::is_same_v<std::remove_cvref_t<T>, std::remove_cvref_t<J>>) {
+        if constexpr (concepts::IsString<T>) {
+            if (!j.is_string()) throw std::runtime_error("field must be a string");
+        } else {
+            if (!j.is_number() && !j.is_boolean()) throw std::runtime_error("field must be a number");
+        }
     }
     obj = j;
 }
 
 template <class J, concepts::Associative T>
 inline void deserialize(T& map, J const& j)
-    requires(concepts::IsString<typename T::key_type>)
+    requires(concepts::IsString<typename T::key_type> || std::is_enum_v<typename T::key_type>)
 {
     if (!j.is_object()) throw std::runtime_error("field must be an object");
     map.clear();
     for (auto& [k, v] : j.items()) {
-        deserialize<J>(map[k], v);
+        if constexpr (std::is_enum_v<typename T::key_type>) {
+            deserialize<J>(map[magic_enum::enum_cast<typename T::key_type>(k).value_or(typename T::key_type{})], v);
+        } else {
+            deserialize<J>(map[k], v);
+        }
     }
 }
 

@@ -19,8 +19,8 @@ inline J serialize(T const&)
 
 template <class J, concepts::Associative T>
 inline J serialize(T const&)
-    requires(concepts::IsString<typename T::key_type> && !std::convertible_to<T, J>);
-
+    requires((concepts::IsString<typename T::key_type> || std::is_enum_v<typename T::key_type>) && !std::convertible_to<T, J>)
+;
 
 template <class J, concepts::TupleLike T>
 inline J serialize(T const&)
@@ -84,11 +84,15 @@ inline J serialize(T const& obj)
 
 template <class J, concepts::Associative T>
 inline J serialize(T const& map)
-    requires(concepts::IsString<typename T::key_type> && !std::convertible_to<T, J>)
+    requires((concepts::IsString<typename T::key_type> || std::is_enum_v<typename T::key_type>) && !std::convertible_to<T, J>)
 {
     J res;
     for (auto& [k, v] : map) {
-        res[std::string{k}] = serialize<J>(v);
+        if constexpr (std::is_enum_v<typename T::key_type>) {
+            res[magic_enum::enum_name(k)] = serialize<J>(v);
+        } else {
+            res[std::string{k}] = serialize<J>(v);
+        }
     }
     return res;
 }
@@ -98,7 +102,10 @@ inline J serialize(T const& tuple)
     requires(!std::convertible_to<T, J>)
 {
     J res;
-    std::apply([&](auto&&... args) { ((res.push_back(serialize<J>(args))), ...); }, tuple);
+    std::apply(
+        [&](auto&&... args) { ((res.push_back(serialize<J>(std::forward<decltype(args)>(args)))), ...); },
+        tuple
+    );
     return res;
 }
 

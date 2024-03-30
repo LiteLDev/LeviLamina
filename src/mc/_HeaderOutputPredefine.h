@@ -27,6 +27,7 @@
 #include <cwctype>       // Wide character classification
 #include <deque>         // STL double ended queue container
 #include <exception>     // Exception handling classes
+#include <filesystem>    // STL file system
 #include <forward_list>  // STL forward list container
 #include <fstream>       // File stream classes
 #include <functional>    // STL Function objects

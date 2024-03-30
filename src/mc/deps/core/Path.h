@@ -13,7 +13,9 @@ namespace Core {
 class Path {
 public:
     class PathPart mPath;
-    explicit Path(std::string const& a1) { mPath.mUtf8StdString = a1; }
+    explicit Path(std::filesystem::path const& path) : Path(path.u8string()) {}
+    explicit Path(std::u8string const& path) { mPath.mUtf8StdString = *reinterpret_cast<std::string const*>(&path); }
+    explicit Path(std::string const& path) { mPath.mUtf8StdString = path; }
 
 public:
     // NOLINTBEGIN
