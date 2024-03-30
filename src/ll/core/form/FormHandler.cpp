@@ -59,7 +59,11 @@ nlohmann::ordered_json jsonCppValueToNlohmannOrderedJson(const Json::Value& valu
     return nullptr;
 }
 
-void SimpleFormHandler::handle(Player& player, std::optional<Json::Value> data) const {
+void SimpleFormHandler::handle(
+    Player&                              player,
+    std::optional<Json::Value>           data,
+    std::optional<ModalFormCancelReason> cancelReason
+) const {
     int selected = data.has_value() ? data.value().asInt(0) : -1;
     if (selected >= 0 && selected < (int)mButtonCallbacks.size()) {
         if (mButtonCallbacks[selected]) {
@@ -67,14 +71,18 @@ void SimpleFormHandler::handle(Player& player, std::optional<Json::Value> data) 
         }
     }
     if (mCallback) {
-        mCallback(player, selected);
+        mCallback(player, selected, cancelReason);
     }
 }
 
-void CustomFormHandler::handle(Player& player, std::optional<Json::Value> data) const {
+void CustomFormHandler::handle(
+    Player&                              player,
+    std::optional<Json::Value>           data,
+    std::optional<ModalFormCancelReason> cancelReason
+) const {
     if (!data.has_value()) {
         if (mCallback) {
-            mCallback(player, {});
+            mCallback(player, {}, cancelReason);
         }
         return;
     }
@@ -98,29 +106,44 @@ void CustomFormHandler::handle(Player& player, std::optional<Json::Value> data) 
         if (element->getType() == CustomFormElement::Type::Label) {
             continue;
         }
-        result.emplace(element->mName, element->parseResult(value));
+        result->emplace(element->mName, element->parseResult(value));
     }
 
     if (mCallback) {
-        mCallback(player, result);
+        mCallback(player, result, cancelReason);
     }
 }
 
-void ModalFormHandler::handle(Player& player, std::optional<Json::Value> data) const {
+void ModalFormHandler::handle(
+    Player&                              player,
+    std::optional<Json::Value>           data,
+    std::optional<ModalFormCancelReason> cancelReason
+) const {
+    if (!data.has_value()) {
+        if (mCallback) {
+            mCallback(player, {}, cancelReason);
+        }
+        return;
+    }
     bool selected = data == true;
     if (mCallback) {
-        mCallback(player, (ll::form::ModalForm::SelectedButton)selected);
+        mCallback(player, (ll::form::ModalForm::SelectedButton)selected, cancelReason);
     }
 }
 
 std::unordered_map<uint, std::unique_ptr<FormHandler>> formHandlers = {};
 
-bool handleFormPacket(Player& player, uint formId, std::optional<Json::Value> data) {
+bool handleFormPacket(
+    Player&                              player,
+    uint                                 formId,
+    std::optional<Json::Value>           data,
+    std::optional<ModalFormCancelReason> cancelReason
+) {
     auto it = formHandlers.find(formId);
     if (it == formHandlers.end()) {
         return false;
     }
-    it->second->handle(player, std::move(data));
+    it->second->handle(player, std::move(data), cancelReason);
     formHandlers.erase(it);
     return true;
 }
@@ -138,7 +161,12 @@ LL_TYPE_INSTANCE_HOOK(
     if (auto player = ((ServerNetworkHandler&)callback).getServerPlayer(source, SubClientId::PrimaryClient); player) {
         auto& modalPacket = (ModalFormResponsePacket&)*packet;
 
-        if (ll::form::handler::handleFormPacket(player, modalPacket.mFormId, modalPacket.mJSONResponse)) {
+        if (ll::form::handler::handleFormPacket(
+                player,
+                modalPacket.mFormId,
+                modalPacket.mJSONResponse,
+                modalPacket.mFormCancelReason
+            )) {
             return;
         }
     }

@@ -12,7 +12,7 @@ class SimpleForm : public Form {
     std::unique_ptr<SimpleFormImpl> impl;
 
 public:
-    using Callback       = std::function<void(Player&, int)>;
+    using Callback       = std::function<void(Player&, int, std::optional<ModalFormCancelReason>)>;
     using ButtonCallback = std::function<void(Player&)>;
 
     LLNDAPI SimpleForm();

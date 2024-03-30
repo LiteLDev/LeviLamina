@@ -40,20 +40,27 @@ void registerFormTestCommand() {
                     .appendSlider("slider", "slider", 0, 100, 1)
                     .appendStepSlider("stepSlider", "stepSlider", {"a", "b", "c"})
                     .appendDropdown("dropdown", "dropdown", {"a", "b", "c"})
-                    .sendTo(*(Player*)ori.getEntity(), [](Player&, ll::form::CustomFormResult const& data) {
-                        for (auto [name, result] : data) {
-                            static auto logDebugResult = [&](const ll::form::CustomFormElementResult& var) {
-                                if (std::holds_alternative<uint64_t>(var)) {
-                                    logger.info("CustomForm callback {} = {}", name, std::get<uint64_t>(var));
-                                } else if (std::holds_alternative<double>(var)) {
-                                    logger.info("CustomForm callback {} = {}", name, std::get<double>(var));
-                                } else if (std::holds_alternative<std::string>(var)) {
-                                    logger.info("CustomForm callback {} = {}", name, std::get<std::string>(var));
-                                }
-                            };
-                            logDebugResult(result);
+                    .sendTo(
+                        *(Player*)ori.getEntity(),
+                        [](Player&, ll::form::CustomFormResult const& data, std::optional<ModalFormCancelReason>) {
+                            if (!data) {
+                                logger.info("CustomForm callback canceled");
+                                return;
+                            }
+                            for (auto [name, result] : *data) {
+                                static auto logDebugResult = [&](const ll::form::CustomFormElementResult& var) {
+                                    if (std::holds_alternative<uint64_t>(var)) {
+                                        logger.info("CustomForm callback {} = {}", name, std::get<uint64_t>(var));
+                                    } else if (std::holds_alternative<double>(var)) {
+                                        logger.info("CustomForm callback {} = {}", name, std::get<double>(var));
+                                    } else if (std::holds_alternative<std::string>(var)) {
+                                        logger.info("CustomForm callback {} = {}", name, std::get<std::string>(var));
+                                    }
+                                };
+                                logDebugResult(result);
+                            }
                         }
-                    });
+                    );
                 break;
             }
 
@@ -62,9 +69,18 @@ void registerFormTestCommand() {
                 form.setTitle("ModalForm")
                     .setUpperButton("Upper")
                     .setLowerButton("Lower")
-                    .sendTo(*(Player*)ori.getEntity(), [](Player&, ll::form::ModalForm::SelectedButton selected) {
-                        logger.info("ModalForm callback {}", (bool)selected);
-                    });
+                    .sendTo(
+                        *(Player*)ori.getEntity(),
+                        [](Player&,
+                           std::optional<ll::form::ModalForm::SelectedButton> selected,
+                           std::optional<ModalFormCancelReason>) {
+                            if (!selected) {
+                                logger.info("ModalForm callback canceled");
+                                return;
+                            }
+                            logger.info("ModalForm callback {}", (bool)selected);
+                        }
+                    );
                 break;
             }
             case TestFormParam::FormType::simple: {
@@ -73,7 +89,11 @@ void registerFormTestCommand() {
                     .setContent("Content")
                     .appendButton("Button1")
                     .appendButton("Button2", "textures/ui/absorption_effect", "path")
-                    .sendTo(*(Player*)ori.getEntity(), [](Player&, int selected) {
+                    .sendTo(*(Player*)ori.getEntity(), [](Player&, int selected, std::optional<ModalFormCancelReason>) {
+                        if (selected == -1) {
+                            logger.info("SimpleForm callback canceled");
+                            return;
+                        }
                         logger.info("SimpleForm callback {}", selected);
                     });
                 break;

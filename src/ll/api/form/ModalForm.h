@@ -17,7 +17,7 @@ public:
         Lower = false,
     };
 
-    using Callback = std::function<void(Player&, SelectedButton)>;
+    using Callback = std::function<void(Player&, std::optional<SelectedButton>, std::optional<ModalFormCancelReason>)>;
 
     LLNDAPI ModalForm();
 
