@@ -37,23 +37,20 @@ NativePluginManager::NativePluginManager() : PluginManager(NativePluginManagerNa
 
 NativePluginManager::~NativePluginManager() = default;
 
-static void printDependencyError(
-    std::unique_ptr<pl::dependency_walker::DependencyIssueItem> const& item,
-    std::ostream&                                                      stream,
-    size_t                                                             depth = 0
-) {
+static void
+printDependencyError(pl::dependency_walker::DependencyIssueItem const& item, std::ostream& stream, size_t depth = 0) {
     std::string indent(depth * 3 + 3, ' ');
-    if (item->mContainsError) {
-        stream << indent << fmt::format("module: {}", string_utils::u8str2str(item->mPath.u8string())) << std::endl;
-        if (!item->mMissingModule.empty()) {
+    if (item.mContainsError) {
+        stream << indent << fmt::format("module: {}", string_utils::u8str2str(item.mPath.u8string())) << std::endl;
+        if (!item.mMissingModule.empty()) {
             stream << indent << "missing module:" << std::endl;
-            for (const auto& missingModule : item->mMissingModule) {
+            for (const auto& missingModule : item.mMissingModule) {
                 stream << indent << "|- " << missingModule << std::endl;
             }
         }
-        if (!item->mMissingProcedure.empty()) {
+        if (!item.mMissingProcedure.empty()) {
             stream << indent << "missing procedure:" << std::endl;
-            for (const auto& [module, missingProcedure] : item->mMissingProcedure) {
+            for (const auto& [module, missingProcedure] : item.mMissingProcedure) {
                 stream << indent << "|- " << module << std::endl;
                 for (const auto& procedure : missingProcedure) {
                     stream << indent << "|---- " << procedure << std::endl;
@@ -63,9 +60,9 @@ static void printDependencyError(
                 }
             }
         }
-        if (!item->mDependencies.empty()) {
-            for (auto const& [module, subItem] : item->mDependencies) {
-                printDependencyError(subItem, stream, depth + 1);
+        if (!item.mDependencies.empty()) {
+            for (auto const& [module, subItem] : item.mDependencies) {
+                printDependencyError(*subItem, stream, depth + 1);
             }
         }
     }
@@ -74,7 +71,7 @@ static void printDependencyError(
 static std::string diagnosticDependency(std::filesystem::path const& path) {
     auto              result = pl::dependency_walker::pl_diagnostic_dependency(path);
     std::stringstream stream;
-    printDependencyError(result, stream);
+    printDependencyError(*result, stream);
     return stream.str();
 }
 
