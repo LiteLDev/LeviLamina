@@ -12,6 +12,7 @@
 __declspec(noreturn) void __CRTDECL __scrt_throw_std_bad_alloc();
 __declspec(noreturn) void __CRTDECL __scrt_throw_std_bad_array_new_length();
 
+extern "C" _declspec(dllexport) int const ll_memory_operator_overrided{};
 
 void __CRTDECL operator delete(void* p) noexcept { ::ll::memory::getDefaultAllocator().release(p); }
 

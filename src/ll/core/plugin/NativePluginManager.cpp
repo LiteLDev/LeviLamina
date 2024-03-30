@@ -105,6 +105,10 @@ bool NativePluginManager::load(Manifest manifest) {
         }
         return false;
     }
+    if (!GetProcAddress(lib, "ll_memory_operator_overrided")) {
+        logger.error("The plugin is not using the unified memory allocation operator, will not be loaded.");
+        return false;
+    }
     auto plugin = std::make_shared<NativePlugin>(std::move(manifest), lib);
     plugin->onLoad(reinterpret_cast<Plugin::callback_t*>(GetProcAddress(lib, "ll_plugin_load")));
     plugin->onUnload(reinterpret_cast<Plugin::callback_t*>(GetProcAddress(lib, "ll_plugin_unload")));

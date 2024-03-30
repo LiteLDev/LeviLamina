@@ -67,7 +67,6 @@ target("LeviLamina")
     add_defines(
         "_AMD64_",
         "_CRT_SECURE_NO_WARNINGS",
-        "_ENABLE_CONSTEXPR_MUTEX_CONSTRUCTOR",
         "NOMINMAX",
         "UNICODE",
         "WIN32_LEAN_AND_MEAN",
