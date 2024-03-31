@@ -411,8 +411,8 @@ For lip and tooth-hub test only.
 [#1492]: https://github.com/LiteLDev/LeviLamina/issues/1492
 [#1499]: https://github.com/LiteLDev/LeviLamina/issues/1499
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.3...HEAD
-[0.10.3]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.2...v0.10.3
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.4...HEAD
+[0.10.4]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.2...v0.10.4
 [0.10.2]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.1...v0.10.2
 [0.10.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.0...v0.10.1
 [0.10.0]: https://github.com/LiteLDev/LeviLamina/compare/v0.9.5...v0.10.0
