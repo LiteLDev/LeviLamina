@@ -14,7 +14,9 @@ void Packet::sendTo(BlockPos const& pos, DimensionType type, optional_ref<Player
     if (!ll::service::getLevel()) {
         return;
     }
-    ll::service::getLevel()->getDimension(type)->sendPacketForPosition(pos, *this, except.as_ptr());
+    if (auto ptr = ll::service::getLevel()->getDimension(type); ptr) {
+        ptr->sendPacketForPosition(pos, *this, except.as_ptr());
+    }
 }
 
 void Packet::sendTo(Actor const& actor, optional_ref<Player const> except) const {
