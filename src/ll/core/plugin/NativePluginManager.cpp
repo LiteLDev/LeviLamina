@@ -69,7 +69,7 @@ printDependencyError(pl::dependency_walker::DependencyIssueItem const& item, std
 }
 
 static std::string diagnosticDependency(std::filesystem::path const& path) {
-    auto              result = pl::dependency_walker::pl_diagnostic_dependency(path);
+    auto              result = pl::dependency_walker::pl_diagnostic_dependency_new(path);
     std::stringstream stream;
     printDependencyError(*result, stream);
     return stream.str();
@@ -103,8 +103,9 @@ bool NativePluginManager::load(Manifest manifest) {
         return false;
     }
     if (!GetProcAddress(lib, "ll_memory_operator_overrided")) {
-        logger.error("The plugin is not using the unified memory allocation operator, will not be loaded.");
-        return false;
+        // TODO: change to error
+        logger.debug("The plugin is not using the unified memory allocation operator, will not be loaded.");
+        // return false;
     }
     auto plugin = std::make_shared<NativePlugin>(std::move(manifest), lib);
     plugin->onLoad(reinterpret_cast<Plugin::callback_t*>(GetProcAddress(lib, "ll_plugin_load")));
