@@ -7,8 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.10.4] - 2024-03-31
+
 ### Added
 
+- Complete `DividedPos2d`
 - Add memory operator detect
 - Add optional to form result and add cancel result
 
@@ -18,20 +21,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Fix Dimension, BiomeSource, Generator vtable
 - Fix uname enum bugs
 - Fix allocator bugs
 - Fix plugin ptr bugs
 - Fix soft enum register
-
-## [0.10.3] - 2024-03-31
-
-### Added
-
-- Complete `DividedPos2d`
-
-### Fixed
-
-- Fix Dimension, BiomeSource, Generator vtable
+- Fix send packet
 
 ## [0.10.2] - 2024-03-28
 
