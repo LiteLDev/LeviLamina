@@ -14,7 +14,7 @@ class CustomForm : public Form {
     std::unique_ptr<CustomFormImpl> impl;
 
 public:
-    using Callback = std::function<void(Player&, CustomFormResult const&, std::optional<ModalFormCancelReason>)>;
+    using Callback = std::function<void(Player&, CustomFormResult const&, FormCancelReason)>;
 
     LLNDAPI CustomForm();
 

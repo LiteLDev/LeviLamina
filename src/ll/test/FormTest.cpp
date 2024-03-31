@@ -42,7 +42,7 @@ void registerFormTestCommand() {
                     .appendDropdown("dropdown", "dropdown", {"a", "b", "c"})
                     .sendTo(
                         *(Player*)ori.getEntity(),
-                        [](Player&, ll::form::CustomFormResult const& data, std::optional<ModalFormCancelReason>) {
+                        [](Player&, ll::form::CustomFormResult const& data, ll::form::FormCancelReason) {
                             if (!data) {
                                 logger.info("CustomForm callback canceled");
                                 return;
@@ -71,11 +71,12 @@ void registerFormTestCommand() {
                     .setLowerButton("Lower")
                     .sendTo(
                         *(Player*)ori.getEntity(),
-                        [](Player&,
-                           std::optional<ll::form::ModalForm::SelectedButton> selected,
-                           std::optional<ModalFormCancelReason>) {
+                        [](Player&, ll::form::ModalFormResult selected, ll::form::FormCancelReason cancelReason) {
                             if (!selected) {
                                 logger.info("ModalForm callback canceled");
+                                if (cancelReason) {
+                                    logger.info("ModalForm callback cancelReason {}", (int)*cancelReason);
+                                }
                                 return;
                             }
                             logger.info("ModalForm callback {}", (bool)selected);
@@ -89,7 +90,7 @@ void registerFormTestCommand() {
                     .setContent("Content")
                     .appendButton("Button1")
                     .appendButton("Button2", "textures/ui/absorption_effect", "path")
-                    .sendTo(*(Player*)ori.getEntity(), [](Player&, int selected, std::optional<ModalFormCancelReason>) {
+                    .sendTo(*(Player*)ori.getEntity(), [](Player&, int selected, ll::form::FormCancelReason) {
                         if (selected == -1) {
                             logger.info("SimpleForm callback canceled");
                             return;

@@ -6,18 +6,20 @@
 
 namespace ll::form {
 
+enum class ModalFormSelectedButton : bool {
+    Upper = true,
+    Lower = false,
+};
+
+using ModalFormResult = std::optional<ModalFormSelectedButton>;
+
 class ModalForm : public Form {
 
     class ModalFormImpl;
     std::unique_ptr<ModalFormImpl> impl;
 
 public:
-    enum class SelectedButton : bool {
-        Upper = true,
-        Lower = false,
-    };
-
-    using Callback = std::function<void(Player&, std::optional<SelectedButton>, std::optional<ModalFormCancelReason>)>;
+    using Callback = std::function<void(Player&, ModalFormResult, FormCancelReason)>;
 
     LLNDAPI ModalForm();
 
