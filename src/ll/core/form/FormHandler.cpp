@@ -127,7 +127,7 @@ void ModalFormHandler::handle(
     }
     bool selected = data == true;
     if (mCallback) {
-        mCallback(player, (ll::form::ModalForm::SelectedButton)selected, cancelReason);
+        mCallback(player, (ll::form::ModalFormSelectedButton)selected, cancelReason);
     }
 }
 
