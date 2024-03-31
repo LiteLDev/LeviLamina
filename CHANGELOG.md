@@ -7,11 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.10.3] - 2024-03-31
-
 ### Added
 
-- Complete `DividedPos2d`
 - Add memory operator detect
 - Add optional to form result and add cancel result
 
@@ -21,11 +18,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fix Dimension, BiomeSource, Generator vtable
 - Fix uname enum bugs
 - Fix allocator bugs
 - Fix plugin ptr bugs
 - Fix soft enum register
+
+## [0.10.3] - 2024-03-31
+
+### Added
+
+- Complete `DividedPos2d`
+
+### Fixed
+
+- Fix Dimension, BiomeSource, Generator vtable
 
 ## [0.10.2] - 2024-03-28
 
@@ -410,7 +416,8 @@ For lip and tooth-hub test only.
 [#1492]: https://github.com/LiteLDev/LeviLamina/issues/1492
 [#1499]: https://github.com/LiteLDev/LeviLamina/issues/1499
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.2...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.3...HEAD
+[0.10.3]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.2...v0.10.3
 [0.10.2]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.1...v0.10.2
 [0.10.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.0...v0.10.1
 [0.10.0]: https://github.com/LiteLDev/LeviLamina/compare/v0.9.5...v0.10.0
