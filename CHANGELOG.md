@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.10.5] - 2024-04-01
+
+### Fixed
+
+- Fix CustomFormHandler [#1502]
+
 ## [0.10.4] - 2024-03-31
 
 ### Added
@@ -410,8 +416,10 @@ For lip and tooth-hub test only.
 [#1483]: https://github.com/LiteLDev/LeviLamina/issues/1483
 [#1492]: https://github.com/LiteLDev/LeviLamina/issues/1492
 [#1499]: https://github.com/LiteLDev/LeviLamina/issues/1499
+[#1502]: https://github.com/LiteLDev/LeviLamina/issues/1502
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.4...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.5...HEAD
+[0.10.5]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.4...v0.10.5
 [0.10.4]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.2...v0.10.4
 [0.10.2]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.1...v0.10.2
 [0.10.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.0...v0.10.1
