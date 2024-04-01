@@ -98,7 +98,7 @@ void CustomFormHandler::handle(
         return;
     }
 
-    CustomFormResult result;
+    CustomFormResult result{std::unordered_map<std::string, CustomFormElementResult>{}};
 
     for (size_t i = 0; i < mFormElements.size(); ++i) {
         auto& element = mFormElements[i];
