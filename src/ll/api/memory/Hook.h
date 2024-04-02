@@ -1,7 +1,5 @@
 #pragma once
 
-// #define LL_HOOK_DEBUG
-
 #include <atomic>
 #include <cstdint>
 #include <memory>
@@ -157,8 +155,6 @@ struct __declspec(empty_bases) Hook {};
         inline static _OriginFuncType _OriginalFunc{};                                                                 \
                                                                                                                        \
         inline static std::atomic_uint _AutoHookCount{};                                                               \
-                                                                                                                       \
-        LL_HOOK_DEBUG_OUTPUT(IDENTIFIER);                                                                              \
                                                                                                                        \
         template <class T>                                                                                             \
         static consteval void detector() {                                                                             \
