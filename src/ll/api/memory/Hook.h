@@ -16,37 +16,6 @@
 #include "ll/api/reflection/TypeName.h"
 #include "ll/api/thread/GlobalThreadPauser.h"
 
-#ifdef LL_HOOK_DEBUG
-#include "ll/api/Logger.h"
-#define LL_HOOK_DEBUG_OUTPUT(IDENTIFIER)                                                                               \
-    static inline int debugger() {                                                                                     \
-        try {                                                                                                          \
-            static FuncPtr t = ll::memory::resolveIdentifier<_OriginFuncType>(IDENTIFIER);                             \
-            if (t == nullptr) {                                                                                        \
-                fmt::print("\x1b[91mCan't resolve: [" #IDENTIFIER "]\x1b[0m\n");                                       \
-            } else {                                                                                                   \
-                auto symbols = ll::memory::lookupSymbol(t);                                                            \
-                if (symbols.size() > 1) {                                                                              \
-                    fmt::print(                                                                                        \
-                        "\x1b[93m[" #IDENTIFIER "] has {} matches, probability cause bugs.\x1b[0m\n",                  \
-                        symbols.size()                                                                                 \
-                    );                                                                                                 \
-                }                                                                                                      \
-                fmt::print("\x1b[96m v resolve [" #IDENTIFIER "] to:\x1b[0m\n");                                       \
-                for (auto& str : symbols) {                                                                            \
-                    fmt::print(" {} {}\n", (&str == &symbols.back()) ? '-' : '|', str);                                \
-                }                                                                                                      \
-            }                                                                                                          \
-        } catch (...) {                                                                                                \
-            fmt::print("\x1b[91m!!! Exception in resolve: [" #IDENTIFIER "]\x1b[0m\n");                                \
-        }                                                                                                              \
-        return 0;                                                                                                      \
-    };                                                                                                                 \
-    static inline int debugging = debugger()
-#else
-#define LL_HOOK_DEBUG_OUTPUT(...)
-#endif
-
 namespace ll::memory {
 
 template <class T>
@@ -132,35 +101,23 @@ consteval bool virtualDetector() noexcept {
 template <class... Ts>
 class HookRegistrar {
 public:
-    static inline std::atomic_uint count{};
-
     static void hook() {
         thread::GlobalThreadPauser pauser;
-        (Ts::hook(false), ...);
+        (((++Ts::_AutoHookCount == 1) ? Ts::hook(false) : 0), ...);
     }
     static void unhook() {
         thread::GlobalThreadPauser pauser;
-        (Ts::unhook(false), ...);
+        (((--Ts::_AutoHookCount == 0) ? Ts::unhook(false) : 0), ...);
     }
-
-    HookRegistrar() noexcept {
-        if (++count == 1) {
-            hook();
-        }
-    }
-    ~HookRegistrar() {
-        if (--count == 0) {
-            unhook();
-        }
-    }
-    HookRegistrar(HookRegistrar const&) noexcept { ++count; }
+    HookRegistrar() noexcept { hook(); }
+    ~HookRegistrar() noexcept { unhook(); }
+    HookRegistrar(HookRegistrar const&) noexcept { ((++Ts::_AutoHookCount), ...); }
     HookRegistrar& operator=(HookRegistrar const& other) noexcept {
         if (this != std::addressof(other)) {
-            ++count;
+            ((++Ts::_AutoHookCount), ...);
         }
         return *this;
     }
-
     HookRegistrar(HookRegistrar&&) noexcept            = default;
     HookRegistrar& operator=(HookRegistrar&&) noexcept = default;
 };
@@ -198,6 +155,8 @@ struct __declspec(empty_bases) Hook {};
                                                                                                                        \
         inline static _FuncPtr        _HookTarget{};                                                                   \
         inline static _OriginFuncType _OriginalFunc{};                                                                 \
+                                                                                                                       \
+        inline static std::atomic_uint _AutoHookCount{};                                                               \
                                                                                                                        \
         LL_HOOK_DEBUG_OUTPUT(IDENTIFIER);                                                                              \
                                                                                                                        \
