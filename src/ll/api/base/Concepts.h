@@ -11,6 +11,18 @@
 
 namespace ll::concepts {
 
+template <class T, class U>
+struct is_in_types;
+
+template <class T, template <class...> class U, class... Ts>
+struct is_in_types<T, U<Ts...>> : std::bool_constant<(std::is_same_v<T, Ts> || ...)> {};
+
+template <class T, class U>
+static constexpr bool is_in_types_v = is_in_types<T, U>::value;
+
+template <class T, class U>
+concept IsInTypes = is_in_types_v<T, U>;
+
 template <class T, class... Ts>
 static constexpr bool is_one_of_v = (std::is_same_v<T, Ts> || ...);
 

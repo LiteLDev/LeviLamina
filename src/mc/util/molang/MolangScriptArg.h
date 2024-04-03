@@ -1,5 +1,7 @@
 #pragma once
 
+#include "ll/api/base/Concepts.h"
+
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/minecraft_renderer/renderer/MaterialVariants.h"
 #include "mc/util/molang/MolangActorArrayPtr.h"
@@ -45,13 +47,23 @@ struct MolangScriptArg {
     MolangScriptArgPOD  mPOD;
     MolangScriptArgData mData;
 
-    template <class T>
-    MolangScriptArg(T const&) = delete;
+    MolangScriptArg(MolangLoopBreak loopBreak) : mType(MolangScriptArgType::MolangLoopBreak), mPOD(loopBreak) {}
+    MolangScriptArg(MolangLoopContinue loopContinue)
+    : mType(MolangScriptArgType::MolangLoopContinue),
+      mPOD(loopContinue) {}
+    MolangScriptArg(Actor const& actor) : mType(MolangScriptArgType::MolangActorPtr), mPOD(std::addressof(actor)) {}
+    MolangScriptArg(ActorUniqueID actorId) : mType(MolangScriptArgType::MolangActorIdPtr), mPOD(actorId) {}
+    MolangScriptArg(ItemStackBase const& item)
+    : mType(MolangScriptArgType::MolangItemStackBasePtr),
+      mPOD(std::addressof(item)) {}
+
+    template <ll::concepts::IsInTypes<MolangScriptArgData> T>
+    MolangScriptArg(T const& val) : mType(MolangScriptArgType::Variant),
+                                    mData(val) {}
 
     MCTAPI MolangScriptArg(MolangMemberArray const&);
-
-    template <>
-    MolangScriptArg(bool const& value) : MolangScriptArg(static_cast<int>(value)) {}
+    MCTAPI MolangScriptArg(MolangActorIdArrayPtr const&);
+    MCTAPI MolangScriptArg(MolangMatrix const&);
 
 public:
     // NOLINTBEGIN
