@@ -28,10 +28,10 @@ public:
     float mBiomeBlendKernel[9]; // this+0x188
     bool  mIsLegacyWorld;
     // Bedrock::Threading::InstancedThreadLocal<ThreadData> generatorHelpersPool;
-    char                    generatorHelpersPool[168];
-    MonsterRoomFeature      monsterRoomFeature;
-    CanyonFeature           canyonFeature;
-    UnderwaterCanyonFeature underwaterCanyonFeature; // this+0x288
+    char                    mGeneratorHelpersPool[168];
+    MonsterRoomFeature      mMonsterRoomFeature;
+    CanyonFeature           mCanyonFeature;
+    UnderwaterCanyonFeature mUnderwaterCanyonFeature; // this+0x288
 
 public:
     // prevent constructor by default

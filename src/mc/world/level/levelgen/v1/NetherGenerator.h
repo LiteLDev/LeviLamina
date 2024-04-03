@@ -24,16 +24,16 @@ public:
         ThreadData();
     };
 
-    std::unique_ptr<PerlinNoise>        lperlinNoise1; // this+0x188
-    std::unique_ptr<PerlinNoise>        lperlinNoise2;
-    std::unique_ptr<PerlinNoise>        perlinNoise1;
-    std::unique_ptr<PerlinNoise>        perlinNoise2;
-    std::unique_ptr<PerlinNoise>        scaleNoise;
-    std::unique_ptr<PerlinNoise>        depthNoise;
-    std::unique_ptr<PerlinSimplexNoise> surfaceNoise;
+    std::unique_ptr<PerlinNoise>        mLperlinNoise1; // this+0x188
+    std::unique_ptr<PerlinNoise>        mLperlinNoise2;
+    std::unique_ptr<PerlinNoise>        mPerlinNoise1;
+    std::unique_ptr<PerlinNoise>        mPerlinNoise2;
+    std::unique_ptr<PerlinNoise>        mScaleNoise;
+    std::unique_ptr<PerlinNoise>        mDepthNoise;
+    std::unique_ptr<PerlinSimplexNoise> mSurfaceNoise;
     std::unique_ptr<PerlinSimplexNoise> mMaterialAdjNoise;
     // Bedrock::Threading::InstancedThreadLocal<NetherGenerator::ThreadData>
-    char                         generatorHelpersPool[168];
+    char                         mGeneratorHelpersPool[168];
     std::unique_ptr<BiomeSource> mBiomeSource; // this+0x270
 
 public:

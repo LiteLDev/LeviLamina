@@ -41,7 +41,7 @@ public:
 
         // NOLINTEND
     };
-    char unk[2800];
+    char mUnknow[2800];
 
 public:
     // prevent constructor by default

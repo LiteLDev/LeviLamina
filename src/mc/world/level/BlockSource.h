@@ -52,8 +52,9 @@ public:
         optional_ref<Mob>       toolOwner = std::nullopt
     );
 
-    char unk[248];
+    char filler[248];
 
+public:
     // prevent constructor by default
     BlockSource& operator=(BlockSource const&);
     BlockSource(BlockSource const&);
