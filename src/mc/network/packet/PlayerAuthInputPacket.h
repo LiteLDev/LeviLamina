@@ -67,6 +67,8 @@ public:
         StopFlying                 = 0x2B,
         ReceivedServerData         = 0x2C,
         InClientPredictedInVehicle = 0x2D,
+        PaddlingLeft               = 0x2E,
+        PaddlingRight              = 0x2F,
     };
 
 public:
@@ -75,6 +77,7 @@ public:
     float                                                    mYHeadRot;
     Vec3                                                     mPosDelta;
     Vec2                                                     mAnalogMoveVector;
+    Vec2                                                     mVehicleRotation;
     Vec2                                                     mMove;
     Vec3                                                     mGazeDir;
     std::bitset<39>                                          mInputData;
@@ -86,7 +89,6 @@ public:
     std::unique_ptr<ItemStackRequestData>                    mItemStackRequest;
     PlayerBlockActions                                       mPlayerBlockActions;
     ActorUniqueID                                            mPredictedVehicle;
-    Vec2                                                     mVehicleRotation;
 
     // prevent constructor by default
     PlayerAuthInputPacket& operator=(PlayerAuthInputPacket const&);
