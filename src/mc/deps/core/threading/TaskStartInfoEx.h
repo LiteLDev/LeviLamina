@@ -1,12 +1,11 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/common/bedrock/IAsyncResult.h"
+#include "mc/deps/core/threading/TaskStartInfoBase.h"
 
 template <typename T0>
-struct TaskStartInfoEx {
+struct TaskStartInfoEx : public TaskStartInfoBase {
 public:
-    // prevent constructor by default
-    TaskStartInfoEx& operator=(TaskStartInfoEx const&);
-    TaskStartInfoEx(TaskStartInfoEx const&);
-    TaskStartInfoEx();
+    std::shared_ptr<IAsyncResult<T0>> predecessor;
 };

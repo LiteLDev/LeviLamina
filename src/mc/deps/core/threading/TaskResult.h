@@ -1,12 +1,18 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/common/bedrock/IAsyncResult.h"
 
 class TaskResult {
 public:
     // prevent constructor by default
     TaskResult& operator=(TaskResult const&);
     TaskResult(TaskResult const&);
+
+    bool                                                    mIsDone;            // this+0x0
+    std::chrono::steady_clock::time_point                   mRunAtTime;         // this+0x8
+    std::shared_ptr<Bedrock::Threading::IAsyncResult<void>> mWaitOperation;     // this+0x10
+    bool                                                    mLinkWaitOperation; // this+0x20
 
 public:
     // NOLINTBEGIN
