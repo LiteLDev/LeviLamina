@@ -7,5 +7,5 @@
 template <typename T0>
 struct TaskStartInfoEx : public TaskStartInfoBase {
 public:
-    std::shared_ptr<IAsyncResult<T0>> predecessor;
+    std::shared_ptr<Bedrock::Threading::IAsyncResult<T0>> predecessor;
 };
