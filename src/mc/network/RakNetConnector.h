@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/NetworkIdentifier.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
