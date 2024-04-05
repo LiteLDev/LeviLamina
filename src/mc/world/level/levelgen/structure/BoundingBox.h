@@ -24,33 +24,13 @@ public:
 
     template <class F>
     constexpr void forEachPos(F&& todo) const {
-        if constexpr (std::is_invocable_v<F, BlockPos, size_t>) {
-            size_t i = 0;
-            for (int dy = min.y; dy <= max.y; ++dy)
-                for (int dx = min.x; dx <= max.x; ++dx)
-                    for (int dz = min.z; dz <= max.z; ++dz) {
-                        if constexpr (std::is_invocable_r_v<bool, F, BlockPos, size_t>) {
-                            if (!std::forward<F>(todo)(BlockPos{dx, dy, dz}, i)) {
-                                return;
-                            }
-                        } else {
-                            std::forward<F>(todo)(BlockPos{dx, dy, dz}, i);
-                        }
-                        i++;
+        for (int dy = min.y; dy <= max.y; ++dy)
+            for (int dx = min.x; dx <= max.x; ++dx)
+                for (int dz = min.z; dz <= max.z; ++dz) {
+                    if (!std::forward<F>(todo)(BlockPos{dx, dy, dz})) {
+                        return;
                     }
-        } else {
-            for (int dy = min.y; dy <= max.y; ++dy)
-                for (int dx = min.x; dx <= max.x; ++dx)
-                    for (int dz = min.z; dz <= max.z; ++dz) {
-                        if constexpr (std::is_invocable_r_v<bool, F, BlockPos, >) {
-                            if (!std::forward<F>(todo)(BlockPos{dx, dy, dz})) {
-                                return;
-                            }
-                        } else {
-                            std::forward<F>(todo)(BlockPos{dx, dy, dz});
-                        }
-                    }
-        }
+                }
     }
 
     constexpr BoundingBox& merge(BoundingBox const& a) noexcept {
