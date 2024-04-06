@@ -19,7 +19,7 @@ add_requires("cpp-httplib", {configs={ssl=true}})
 add_requires("pcg_cpp")
 add_requires("pfr")
 add_requires("demangler")
-add_requires("preloader")
+add_requires("preloader ~1.6.2")
 add_requires("symbolprovider ~1")
 add_requires("bdslibrary 1.20.72.01")
 
