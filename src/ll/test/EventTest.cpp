@@ -61,6 +61,8 @@ class TestEvent1 final : public TestEventB {
 public:
     static constexpr ll::event::EventId CustomEventId{"My custom Id"};
 
+    ll::event::EventId getId() const override { return CustomEventId; }
+
     TestEvent1() { some = "TestEvent1 haha"; }
 };
 
@@ -94,14 +96,14 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     static std::atomic_uint times{};
 
     auto listener = ll::event::Listener<TestEventB>::create([](TestEventB& ev) {
-        ll::logger.debug("I'm 1, receive: {}, str: {}, {}", typeid(ev).name(), ev.some, times++);
+        ll::logger.debug("I'm 1, receive: {}, str: {}, {}", ev.getId().name, ev.some, times++);
     });
     bus.addListener<TestEvent1>(listener);
     bus.addListener<TestEvent2>(listener);
 
     auto listener2 = ll::event::Listener<TestEvent2>::create(
         [](TestEvent2& ev) {
-            ll::logger.debug("I'm 2, receive: {}, str: {}, {}", typeid(ev).name(), ev.some, times++);
+            ll::logger.debug("I'm 2, receive: {}, str: {}, {}", ev.getId().name, ev.some, times++);
 
             ll::logger.debug("I'm 2, this can cancel, now isCancelled: {}", ev.isCancelled());
             ll::logger.debug("try cancel");
@@ -198,11 +200,11 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
         ll::logger.debug("Player {} left click", ev.self().getRealName());
     });
     auto listenersp = Listener<PlayerSprintEvent>::create([](PlayerSprintEvent& ev) {
-        switch (doHash(typeid(ev).name())) {
-        case doHash(ll::reflection::type_raw_name_v<PlayerSprintingEvent>): {
+        switch (ev.getId().hash) {
+        case ll::event::getEventId<PlayerSprintingEvent>.hash: {
             ll::logger.debug("Player {} start sprint", ev.self().getRealName());
         } break;
-        case doHash(ll::reflection::type_raw_name_v<PlayerSprintedEvent>): {
+        case ll::event::getEventId<PlayerSprintedEvent>.hash: {
             ll::logger.debug("Player {} stop sprint", ev.self().getRealName());
         } break;
         default:
@@ -231,7 +233,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     bus.addListener(dl, getEventId<ActorHurtEvent>);
     bus.addListener(dl, getEventId<PlayerDestroyBlockEvent>);
     bus.addListener(dl, getEventId<PlayerPlacingBlockEvent>);
-    // bus.addListener(dl, getEventId<SpawnedMobEvent>);
+    bus.addListener(dl, getEventId<SpawnedMobEvent>);
 
     bus.emplaceListener<BlockChangedEvent>([](BlockChangedEvent& ev) {
         ll::logger

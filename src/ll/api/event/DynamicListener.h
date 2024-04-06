@@ -23,7 +23,7 @@ public:
     void call(Event& event) override {
         CompoundTag data{};
         event.serialize(data);
-        data["eventId"] = reflection::getDynamicRawName(event);
+        data["eventId"] = event.getId().name;
         callback(data);
         event.deserialize(data);
     }
