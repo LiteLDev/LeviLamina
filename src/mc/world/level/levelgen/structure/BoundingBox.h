@@ -23,14 +23,15 @@ public:
     [[nodiscard]] constexpr BoundingBox(BlockPos const& min, BlockPos const& max) noexcept : min(min), max(max){};
 
     template <class F>
-    constexpr void forEachPos(F&& todo) const {
+    constexpr bool forEachPos(F&& todo) const {
         for (int dy = min.y; dy <= max.y; ++dy)
             for (int dx = min.x; dx <= max.x; ++dx)
                 for (int dz = min.z; dz <= max.z; ++dz) {
                     if (!std::forward<F>(todo)(BlockPos{dx, dy, dz})) {
-                        return;
+                        return false;
                     }
                 }
+        return true;
     }
 
     constexpr BoundingBox& merge(BoundingBox const& a) noexcept {
