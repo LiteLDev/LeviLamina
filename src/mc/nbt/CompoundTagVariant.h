@@ -230,6 +230,11 @@ public:
         return std::visit([](auto& val) -> Tag const& { return (Tag const&)val; }, mTagStorage);
     }
 
+    template <std::derived_from<Tag> T>
+    [[nodiscard]] T& emplace() {
+        return mTagStorage.emplace<T>();
+    }
+
     [[nodiscard]] std::unique_ptr<Tag>& operator[](size_t index) {
         if (hold<ListTag>()) {
             return get<ListTag>()[index];
