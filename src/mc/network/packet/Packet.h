@@ -45,7 +45,7 @@ public:
      *
      * @param player The server player to send the packet to.
      */
-    LLAPI void sendTo(Player const& player);
+    LLAPI void sendTo(Player const& player) const;
 
     /**
      * Send the packet to all relevant players in a 2D plane at a position in a given dimension.
@@ -76,7 +76,7 @@ public:
     /**
      * Send the packet to all clients connected to the server.
      */
-    LLAPI void sendToClients();
+    LLAPI void sendToClients() const;
 
 public:
     // NOLINTBEGIN
