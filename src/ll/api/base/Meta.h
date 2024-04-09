@@ -183,7 +183,7 @@ constexpr void unroll(Fn&& fn) {
 }
 
 template <size_t N, class Fn>
-constexpr decltype(auto) visitIndex(Fn&& fn, size_t index) {
+constexpr decltype(auto) visitIndex(size_t index, Fn&& fn) {
     constexpr int strategy = N == 1 ? 0 : N <= 4 ? 1 : N <= 16 ? 2 : N <= 64 ? 3 : N <= 256 ? 4 : -1;
     return detail::VisitStrategy<N, strategy>::impl(index, std::forward<Fn>(fn));
 }

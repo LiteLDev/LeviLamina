@@ -71,10 +71,6 @@ struct UntypedException {
 // only set for the current thread
 LLAPI void setSehTranslator();
 
-LLNDAPI std::error_category const& u8system_category() noexcept;
-
-LLNDAPI std::error_category const& ntstatus_category() noexcept;
-
 LLNDAPI std::system_error getWinLastError() noexcept;
 
 LLNDAPI _EXCEPTION_RECORD& current_exception() noexcept;

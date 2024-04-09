@@ -76,9 +76,6 @@ class Overload : private OverloadData {
                 true
             );
         });
-        if (!hasName) {
-            throw std::invalid_argument("invalid param " + std::string(name));
-        }
         return *this;
     }
 

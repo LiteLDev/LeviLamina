@@ -35,13 +35,15 @@ public:
     [[nodiscard]] CompoundTagVariant const& at(std::string const& index) const { return mTags.at(index); }
 
 
-    LLNDAPI static std::unique_ptr<CompoundTag> fromSnbt(std::string_view snbt);
+    LLNDAPI static nonstd::expected<CompoundTag, std::error_code>
+    fromSnbt(std::string_view snbt, optional_ref<size_t> parsedLength = std::nullopt);
 
-    LLNDAPI std::string                         toBinaryNbt(bool isLittleEndian = true) const;
-    LLNDAPI static std::unique_ptr<CompoundTag> fromBinaryNbt(std::string_view dataView, bool isLittleEndian = true);
+    LLNDAPI std::string toBinaryNbt(bool isLittleEndian = true) const;
+    LLNDAPI static nonstd::expected<CompoundTag, std::error_code>
+    fromBinaryNbt(std::string_view dataView, bool isLittleEndian = true);
 
-    LLNDAPI std::string                         toNetworkNbt() const;
-    LLNDAPI static std::unique_ptr<CompoundTag> fromNetworkNbt(std::string const& data);
+    LLNDAPI std::string                                           toNetworkNbt() const;
+    LLNDAPI static nonstd::expected<CompoundTag, std::error_code> fromNetworkNbt(std::string const& data);
 
 public:
     // NOLINTBEGIN

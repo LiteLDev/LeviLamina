@@ -13,7 +13,7 @@ void PlayerUseItemOnEvent::serialize(CompoundTag& nbt) const {
     Cancellable::serialize(nbt);
     nbt["item"]     = (uintptr_t)&item();
     nbt["blockPos"] = ListTag{blockPos().x, blockPos().y, blockPos().z};
-    nbt["face"]     = face();
+    nbt["face"]     = magic_enum::enum_name(face());
     nbt["clickPos"] = ListTag{clickPos().x, clickPos().y, clickPos().z};
     if (block()) {
         nbt["block"] = (uintptr_t)(block().as_ptr());
@@ -21,7 +21,7 @@ void PlayerUseItemOnEvent::serialize(CompoundTag& nbt) const {
 }
 ItemStack&                PlayerUseItemOnEvent::item() const { return mItem; }
 BlockPos const&           PlayerUseItemOnEvent::blockPos() const { return mBlockPos; }
-uchar const&              PlayerUseItemOnEvent::face() const { return mFace; }
+FacingID const&           PlayerUseItemOnEvent::face() const { return mFace; }
 Vec3 const&               PlayerUseItemOnEvent::clickPos() const { return mClickPos; }
 optional_ref<Block const> PlayerUseItemOnEvent::block() const { return mBlock; }
 
@@ -37,7 +37,8 @@ LL_TYPE_INSTANCE_HOOK(
     Vec3 const&     clickPos,
     Block const*    block
 ) {
-    auto ev = PlayerUseItemOnEvent(this->getPlayer(), item, blockPos, face, clickPos, block);
+    auto ev =
+        PlayerUseItemOnEvent(this->getPlayer(), item, blockPos, *reinterpret_cast<FacingID*>(&face), clickPos, block);
     EventBus::getInstance().publish(ev);
     if (ev.isCancelled()) {
         return {InteractionResult::Result::Fail};

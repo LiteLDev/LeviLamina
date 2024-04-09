@@ -43,10 +43,9 @@ public:
         requires(std::is_convertible_v<U*, T*>)
     [[nodiscard]] constexpr optional_ref(const std::optional<U>& o) : mPtr(o ? &*o : nullptr) {}
 
-    template <typename U = T>
-    [[nodiscard]] constexpr optional_ref(optional_ref<std::remove_const_t<U>> rhs)
-        requires(std::is_const_v<U>)
-    : mPtr(rhs.as_ptr()) {}
+    template <typename U>
+        requires(std::is_convertible_v<U*, T*>)
+    [[nodiscard]] constexpr optional_ref(optional_ref<U> rhs) : mPtr(rhs.as_ptr()) {}
 
     [[nodiscard]] constexpr optional_ref(optional_ref&&) noexcept = default;
 

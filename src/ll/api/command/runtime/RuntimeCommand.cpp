@@ -14,13 +14,10 @@ RuntimeCommand::RuntimeCommand(
   paramIndexMap(map) {
     size_t idx{0};
     for (auto&& [name, kind] : params) {
-        meta::visitIndex<ParamKind::Count>(
-            [&]<size_t K> {
-                std::
-                    construct_at(reinterpret_cast<ParamStorageType*>(reinterpret_cast<uintptr_t>(this) + sizeof(RuntimeCommand)) + idx, std::in_place_index<K>);
-            },
-            kind
-        );
+        meta::visitIndex<ParamKind::Count>(kind, [&]<size_t K> {
+            std::
+                construct_at(reinterpret_cast<ParamStorageType*>(reinterpret_cast<uintptr_t>(this) + sizeof(RuntimeCommand)) + idx, std::in_place_index<K>);
+        });
         idx++;
     }
 }
