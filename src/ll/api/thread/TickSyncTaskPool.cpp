@@ -16,8 +16,6 @@ namespace ll::thread {
 
 static Concurrency::concurrent_queue<std::function<void()>> works;
 
-struct TickSyncTaskPool::Impl {};
-
 LL_TYPE_INSTANCE_HOOK(TickSyncTaskPool::Worker, HookPriority::Low, ServerLevel, &ServerLevel::_subTick, void) {
     std::function<void()> f;
     while (works.try_pop(f)) {
@@ -31,11 +29,14 @@ LL_TYPE_INSTANCE_HOOK(TickSyncTaskPool::Worker, HookPriority::Low, ServerLevel, 
     origin();
 }
 
+struct TickSyncTaskPool::Impl {
+    ::ll::memory::HookRegistrar<Worker> reg;
+};
+
 TickSyncTaskPool::TickSyncTaskPool() : impl(std::make_unique<Impl>()) {}
 TickSyncTaskPool::~TickSyncTaskPool() {}
 
 void TickSyncTaskPool::addTaskImpl(std::function<void()> f) {
-    static ::ll::memory::HookRegistrar<Worker> reg;
     works.push(std::move(f));
 }
 
