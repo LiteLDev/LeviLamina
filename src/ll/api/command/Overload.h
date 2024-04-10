@@ -77,7 +77,7 @@ class Overload : private OverloadData {
             );
         });
         if (!hasName) {
-            std::terminate();
+            throw std::invalid_argument("invalid param " + std::string(name));
         }
         return *this;
     }
@@ -109,6 +109,11 @@ public:
     }
     [[nodiscard]] constexpr Overload& deoption(CommandParameterOption option) {
         back().mOptions = (CommandParameterOption)((uchar)(back().mOptions) & (!(uchar)option));
+        return *this;
+    }
+    template <class Fn>
+    [[nodiscard]] constexpr Overload& modify(Fn&& fn) {
+        std::forward<Fn>(fn)(back());
         return *this;
     }
 
