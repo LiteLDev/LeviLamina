@@ -76,6 +76,9 @@ class Overload : private OverloadData {
                 true
             );
         });
+        if (!hasName) {
+            std::terminate();
+        }
         return *this;
     }
 

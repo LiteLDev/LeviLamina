@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/external/expected_lite/expected.h"
 #include "mc/world/level/block/Block.h"
 
 class BlockStateCommandParam {
@@ -18,9 +19,10 @@ public:
     std::string mValue;      // this+0x20
     Type        mType;       // this+0x40
 
-    LLNDAPI std::optional<Block::BlockStateValueType> toStateValue() const;
+    LLNDAPI nonstd::expected<Block::BlockStateValueType, std::error_code> toStateValue() const;
 
-    LLNDAPI static Block::BlockStatesType toStateMap(std::vector<BlockStateCommandParam> const&);
+    LLNDAPI static nonstd::expected<Block::BlockStatesType, std::error_code>
+    toStateMap(std::vector<BlockStateCommandParam> const&);
 
 public:
     // NOLINTBEGIN

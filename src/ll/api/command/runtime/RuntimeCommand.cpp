@@ -43,7 +43,7 @@ void RuntimeCommand::execute(class CommandOrigin const& origin, class CommandOut
 ParamStorageType const& RuntimeCommand::operator[](std::string_view name) const {
     auto iter = paramIndexMap.find(name);
     if (iter == paramIndexMap.end()) {
-        throw std::invalid_argument("invalid param " + std::string(name));
+        std::_Xout_of_range("invalid unordered_map<K, T> key");
     }
     return reinterpret_cast<ParamStorageType*>(
         reinterpret_cast<uintptr_t>(this) + sizeof(RuntimeCommand)
@@ -51,7 +51,7 @@ ParamStorageType const& RuntimeCommand::operator[](std::string_view name) const 
 }
 ParamStorageType const& RuntimeCommand::operator[](size_t idx) const {
     if (idx >= paramCount) {
-        throw std::out_of_range{"idx out of range"};
+        std::_Xout_of_range("invalid index");
     }
     return reinterpret_cast<ParamStorageType*>(reinterpret_cast<uintptr_t>(this) + sizeof(RuntimeCommand))[idx];
 }

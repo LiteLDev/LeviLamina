@@ -12,6 +12,7 @@ class PlayerInfo {
     std::unique_ptr<Impl> impl;
 
     PlayerInfo();
+
 public:
     struct PlayerInfoEntry {
         mce::UUID   uuid;

@@ -36,8 +36,6 @@ struct TickSyncTaskPool::Impl {
 TickSyncTaskPool::TickSyncTaskPool() : impl(std::make_unique<Impl>()) {}
 TickSyncTaskPool::~TickSyncTaskPool() {}
 
-void TickSyncTaskPool::addTaskImpl(std::function<void()> f) {
-    works.push(std::move(f));
-}
+void TickSyncTaskPool::addTaskImpl(std::function<void()> f) { works.push(std::move(f)); }
 
 } // namespace ll::thread
