@@ -41,22 +41,22 @@ static void
 printDependencyError(pl::dependency_walker::DependencyIssueItem const& item, std::ostream& stream, size_t depth = 0) {
     std::string indent(depth * 3 + 3, ' ');
     if (item.mContainsError) {
-        stream << indent << fmt::format("module: {}", string_utils::u8str2str(item.mPath.u8string())) << std::endl;
+        stream << indent << "module: " << string_utils::u8str2str(item.mPath.u8string()) << '\n';
         if (!item.mMissingModule.empty()) {
-            stream << indent << "missing module:" << std::endl;
+            stream << indent << "missing module:" << '\n';
             for (const auto& missingModule : item.mMissingModule) {
-                stream << indent << "|- " << missingModule << std::endl;
+                stream << indent << "|- " << missingModule << '\n';
             }
         }
         if (!item.mMissingProcedure.empty()) {
-            stream << indent << "missing procedure:" << std::endl;
+            stream << indent << "missing procedure:" << '\n';
             for (const auto& [module, missingProcedure] : item.mMissingProcedure) {
-                stream << indent << "|- " << module << std::endl;
+                stream << indent << "|- " << module << '\n';
                 for (const auto& procedure : missingProcedure) {
-                    stream << indent << "|---- " << procedure << std::endl;
+                    stream << indent << "|---- " << procedure << '\n';
 
                     auto de = demangler::demangle(procedure);
-                    if (de != procedure) stream << indent << "|     " << de << std::endl;
+                    if (de != procedure) stream << indent << "|     " << de << '\n';
                 }
             }
         }
