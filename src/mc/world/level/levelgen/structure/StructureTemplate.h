@@ -17,10 +17,11 @@ class BlockPos;
 
 class StructureTemplate {
 public:
-    std::string                                         mName;                  // this+0x0
-    StructureTemplateData                               mStructureTemplateData; // this+0x20
-    uchar                                               mStructureVersion;      // this+0xD0
-    Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry> mUnknownBlockRegistry;
+    std::string                                         mName;                  // this+0x8
+    StructureTemplateData                               mStructureTemplateData; // this+0x28
+    uchar                                               mStructureVersion;      // this+0xD8
+    Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry> mUnknownBlockRegistry;  // this+0xE0
+    uchar                                               mUnknown;
 
     inline bool load(class CompoundTag const& nbt) { return mStructureTemplateData.load(nbt); }
 
