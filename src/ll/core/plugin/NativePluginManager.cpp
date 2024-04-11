@@ -13,6 +13,7 @@
 #include "fmt/core.h"
 #include "pl/dependency/DependencyWalker.h"
 
+#include "ll/api/i18n/I18n.h"
 #include "ll/api/plugin/Manifest.h"
 #include "ll/api/plugin/NativePlugin.h"
 #include "ll/api/plugin/Plugin.h"
@@ -103,8 +104,10 @@ bool NativePluginManager::load(Manifest manifest) {
         return false;
     }
     if (!GetProcAddress(lib, "ll_memory_operator_overrided")) {
-        // TODO: change to error
-        logger.debug("The plugin is not using the unified memory allocation operator, will not be loaded.");
+        // TODO: change to error before release
+        logger.warn(
+            "The plugin is not using the unified memory allocation operator, will not be loaded in next version."_tr()
+        );
         // return false;
     }
     auto plugin = std::make_shared<NativePlugin>(std::move(manifest), lib);
