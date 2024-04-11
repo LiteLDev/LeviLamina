@@ -43,9 +43,8 @@ std::unique_ptr<StructureTemplate> StructureTemplate::create(
     bool               ignoreBlocks,
     bool               ignoreEntities
 ) {
-    auto& unknownBlockRegistry = blockSource.getLevel().getStructureManager()->mUnknownBlockRegistry;
-    auto  res                  = std::make_unique<StructureTemplate>(name, unknownBlockRegistry);
-    auto  setting              = StructureSettings(boundingBox.getSideLength(), ignoreBlocks, ignoreEntities);
+    auto res     = std::make_unique<StructureTemplate>(name, blockSource.getLevel().getUnknownBlockTypeRegistry());
+    auto setting = StructureSettings(boundingBox.getSideLength(), ignoreBlocks, ignoreEntities);
     res->fillFromWorld(blockSource, boundingBox.min, setting);
     return res;
 }
