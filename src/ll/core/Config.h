@@ -46,7 +46,7 @@ struct LeviConfig {
             bool crashCommand        = false;
             bool tpdimCommand        = true;
             bool versionCommand      = true;
-            bool memstatsCommand    = true;
+            bool memstatsCommand     = true;
             bool pluginManageCommand = true;
         } commands{};
 
