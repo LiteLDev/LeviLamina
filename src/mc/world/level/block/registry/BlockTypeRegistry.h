@@ -136,9 +136,9 @@ public:
     // symbol:
     // ?lookupByName@BlockTypeRegistry@@SAPEBVBlock@@AEBVHashedString@@AEBV?$vector@UBlockComplexAliasBlockState@BlockTypeRegistry@@V?$allocator@UBlockComplexAliasBlockState@BlockTypeRegistry@@@std@@@std@@_N@Z
     MCAPI static class Block const* lookupByName(
-        class HashedString const& name,
+        class HashedString const&                                                 name,
         std::vector<struct BlockTypeRegistry::BlockComplexAliasBlockState> const& states,
-        bool logNotFound = false
+        bool                                                                      logNotFound = false
     );
 
     // symbol: ?lookupByName@BlockTypeRegistry@@SAPEBVBlock@@AEBVHashedString@@H_N@Z

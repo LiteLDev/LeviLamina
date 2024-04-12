@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/entity/gamerefs_entity/EntityRefTraits.h"
-#include "mc/entity/systems/common/ClientOrServerNetworkSystemRef.h"
+#include "mc/network/ClientOrServerNetworkSystemRef.h"
 
 // auto generated inclusion list
 #include "mc/common/wrapper/OwnerPtr.h"

@@ -142,10 +142,10 @@ public:
     // symbol:
     // ?registerEntityMapping@ActorFactory@@SAXAEBW4ActorType@@_NAEBQ6A?AV?$unique_ptr@VActor@@U?$default_delete@VActor@@@std@@@std@@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@ZV?$optional@H@4@@Z
     MCAPI static void registerEntityMapping(
-        ::ActorType const& actorType,
-        bool               allowSummon,
+        ::ActorType const&           actorType,
+        bool                         allowSummon,
         EntityMappingFactory* const& factory,
-        std::optional<int> experimentIndex
+        std::optional<int>           experimentIndex
     );
 
     // NOLINTEND

@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/entity/systems/common/ClientNetworkSystem.h"
-#include "mc/entity/systems/common/ServerNetworkSystem.h"
+#include "mc/network/ClientNetworkSystem.h"
+#include "mc/network/ServerNetworkSystem.h"
 
 class ClientOrServerNetworkSystemRef {
 public:

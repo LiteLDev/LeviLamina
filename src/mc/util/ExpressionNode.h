@@ -172,9 +172,9 @@ public:
 
     // symbol:
     // ?registerQueryFunction@ExpressionNode@@SAAEAUMolangQueryFunction@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AAEBUMolangScriptArg@@AEAVRenderParams@@AEBV?$vector@VExpressionNode@@V?$allocator@VExpressionNode@@@std@@@std@@@Z@4@0W4MolangQueryFunctionReturnType@@VHashedString@@_K4AEBV?$initializer_list@H@4@@Z
-    MCAPI static struct MolangQueryFunction&
-    registerQueryFunction(std::string const& queryFunctionName, AccessorFn
-                                          accessor,
+    MCAPI static struct MolangQueryFunction& registerQueryFunction(
+        std::string const&                queryFunctionName,
+        AccessorFn                        accessor,
         std::string const&                documentation,
         ::MolangQueryFunctionReturnType   returnType,
         class HashedString                querySetIdentifier,
