@@ -124,6 +124,9 @@ target("LeviLamina")
             io.writefile("src/ll/test/include_all.cpp", "// auto gen when build test\n")
         end)
     end
+    if has_config("use_mimalloc") then
+        add_defines("LL_USE_MIMALLOC")
+    end
 
     if is_mode("debug") then
         add_defines("LL_DEBUG")

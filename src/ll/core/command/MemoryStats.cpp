@@ -12,10 +12,10 @@ namespace ll::command {
 
 using namespace ll::i18n_literals;
 
-void registerMemstatusCommand() {
+void registerMemstatsCommand() {
     auto& cmd = CommandRegistrar::getInstance().getOrCreateCommand(
-        "memstatus",
-        "Query memory status"_tr(),
+        "memstats",
+        "Query memory stats"_tr(),
         CommandPermissionLevel::Host,
         CommandFlagValue::None
     );
