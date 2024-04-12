@@ -31,7 +31,11 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ??0ItemStackRequestActionTransferBase@@IEAA@W4ItemStackRequestActionType@@_N1@Z
-    MCAPI ItemStackRequestActionTransferBase(::ItemStackRequestActionType, bool, bool);
+    MCAPI ItemStackRequestActionTransferBase(
+        ::ItemStackRequestActionType actionType,
+        bool                         isDstSerialized,
+        bool                         isAmountSerialized
+    );
 
     // NOLINTEND
 };

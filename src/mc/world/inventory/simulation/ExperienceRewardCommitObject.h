@@ -24,7 +24,7 @@ public:
     virtual bool canCommit(class ContainerScreenContext const&) const;
 
     // vIndex: 3, symbol: ?commit@ExperienceRewardCommitObject@@UEAAXAEBVContainerScreenContext@@@Z
-    virtual void commit(class ContainerScreenContext const&);
+    virtual void commit(class ContainerScreenContext const& screenContext);
 
     // symbol: ??0ExperienceRewardCommitObject@@QEAA@H@Z
     MCAPI explicit ExperienceRewardCommitObject(int);

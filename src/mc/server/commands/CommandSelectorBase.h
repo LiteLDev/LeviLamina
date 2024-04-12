@@ -60,7 +60,7 @@ public:
         std::string const&               itemName,
         std::optional<int>               auxValue,
         class CommandIntegerRange const& quantity,
-        ::Puv::Legacy::EquipmentSlot,
+        ::Puv::Legacy::EquipmentSlot     equipmentSlot,
         class CommandIntegerRange const& slot
     );
 

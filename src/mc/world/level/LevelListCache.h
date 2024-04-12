@@ -133,7 +133,7 @@ public:
     MCVAPI void updateLevelCache(std::string const& levelId);
 
     // symbol: ??0LevelListCache@@QEAA@AEAVLevelStorageSource@@$$QEAV?$function@$$A6A_NXZ@std@@@Z
-    MCAPI LevelListCache(class LevelStorageSource&, std::function<bool()>&&);
+    MCAPI LevelListCache(class LevelStorageSource& levelStorageSource, std::function<bool()>&& checkIsSafeToFlushCache);
 
     // NOLINTEND
 
@@ -147,7 +147,7 @@ public:
 
     // symbol:
     // ?_addToCache@LevelListCache@@AEAAPEAVLevelCache@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV2@@Z
-    MCAPI class LevelCache* _addToCache(std::string const& levelId, class LevelCache&&);
+    MCAPI class LevelCache* _addToCache(std::string const& levelId, class LevelCache&& levelCache);
 
     // symbol:
     // ?_createAndAddToCache@LevelListCache@@AEAAPEAVLevelCache@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@@Z

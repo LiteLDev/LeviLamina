@@ -238,7 +238,7 @@ public:
         struct ActorDefinitionIdentifier const& actorIdentifier,
         ::ArmorSlot                             armorSlot,
         std::string const&,
-        int,
+        int                   dataValue,
         class BlockPos const& pos,
         bool
     );

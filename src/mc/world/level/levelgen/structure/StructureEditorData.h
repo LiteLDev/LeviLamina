@@ -104,7 +104,7 @@ public:
     MCAPI void setAnimationSeconds(float);
 
     // symbol: ?setAnimationTicks@StructureEditorData@@QEAAXI@Z
-    MCAPI void setAnimationTicks(uint);
+    MCAPI void setAnimationTicks(uint animationTicks);
 
     // symbol: ?setIgnoreBlocks@StructureEditorData@@QEAAX_N@Z
     MCAPI void setIgnoreBlocks(bool ignoreBlocks);

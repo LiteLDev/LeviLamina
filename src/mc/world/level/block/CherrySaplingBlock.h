@@ -71,7 +71,8 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_growTree@CherrySaplingBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@_N@Z
-    MCAPI bool _growTree(class BlockSource& region, class BlockPos const& pos, class Random& random, bool) const;
+    MCAPI bool
+    _growTree(class BlockSource& region, class BlockPos const& pos, class Random& random, bool useRandom) const;
 
     // NOLINTEND
 };

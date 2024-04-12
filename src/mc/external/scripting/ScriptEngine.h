@@ -78,7 +78,7 @@ public:
 
     // symbol:
     // ?addRuntime@ScriptEngine@Scripting@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VIRuntime@Scripting@@U?$default_delete@VIRuntime@Scripting@@@std@@@4@@Z
-    MCAPI void addRuntime(std::string name, std::unique_ptr<class Scripting::IRuntime>);
+    MCAPI void addRuntime(std::string name, std::unique_ptr<class Scripting::IRuntime> runtime);
 
     // symbol:
     // ?computeRuntimeStats@ScriptEngine@Scripting@@QEBA?AURuntimeStats@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

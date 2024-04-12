@@ -23,11 +23,11 @@ public:
 
     // symbol:
     // ?popFogSetting@FogCommandComponent@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI bool popFogSetting(std::string const&);
+    MCAPI bool popFogSetting(std::string const& userProvidedId);
 
     // symbol:
     // ?pushFogSetting@FogCommandComponent@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-    MCAPI bool pushFogSetting(std::string const&, std::string const&);
+    MCAPI bool pushFogSetting(std::string const& fogId, std::string const& userProvidedId);
 
     // symbol: ?readAdditionalSaveData@FogCommandComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     MCAPI void
@@ -35,7 +35,7 @@ public:
 
     // symbol:
     // ?removeFogSettings@FogCommandComponent@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI bool removeFogSettings(std::string const&);
+    MCAPI bool removeFogSettings(std::string const& userProvidedId);
 
     // NOLINTEND
 };

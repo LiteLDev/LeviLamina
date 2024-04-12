@@ -68,7 +68,7 @@ public:
 
     // symbol:
     // ?serverCombine@ChemistryTableBlockActor@@QEAAXAEAVBlockSource@@AEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@@Z
-    MCAPI void serverCombine(class BlockSource& region, std::vector<class ItemStack> const&);
+    MCAPI void serverCombine(class BlockSource& region, std::vector<class ItemStack> const& consumedInput);
 
     // symbol: ?serverLabTablePacket_DEPRECATED@ChemistryTableBlockActor@@QEAAXAEBVLabTablePacket@@AEAVBlockSource@@@Z
     MCAPI void serverLabTablePacket_DEPRECATED(class LabTablePacket const& packet, class BlockSource& region);
@@ -80,7 +80,7 @@ public:
     // symbol:
     // ?_createReaction@ChemistryTableBlockActor@@AEAA?AV?$unique_ptr@VLabTableReaction@@U?$default_delete@VLabTableReaction@@@std@@@std@@AEAVRandom@@AEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@3@@Z
     MCAPI std::unique_ptr<class LabTableReaction>
-          _createReaction(class Random& random, std::vector<class ItemStack> const&);
+          _createReaction(class Random& random, std::vector<class ItemStack> const& consumedInput);
 
     // symbol: ?_popPendingReactionOutput@ChemistryTableBlockActor@@AEAAXAEAVBlockSource@@@Z
     MCAPI void _popPendingReactionOutput(class BlockSource& region);

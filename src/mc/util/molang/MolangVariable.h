@@ -32,10 +32,10 @@ public:
     MCAPI static ::MolangVariableIndex getVariableIndex(class HashedString const& name);
 
     // symbol: ?getVariableIndex@MolangVariable@@SA?AW4MolangVariableIndex@@_K@Z
-    MCAPI static ::MolangVariableIndex getVariableIndex(uint64);
+    MCAPI static ::MolangVariableIndex getVariableIndex(uint64 nameHash);
 
     // symbol: ?getVariableIndex@MolangVariable@@SA?AW4MolangVariableIndex@@_KPEBD_N@Z
-    MCAPI static ::MolangVariableIndex getVariableIndex(uint64, char const* name, bool);
+    MCAPI static ::MolangVariableIndex getVariableIndex(uint64 nameHash, char const* name, bool allowSpecialCharacters);
 
     // symbol: ?getVariableName@MolangVariable@@SAAEBVHashedString@@W4MolangVariableIndex@@@Z
     MCAPI static class HashedString const& getVariableName(::MolangVariableIndex index);

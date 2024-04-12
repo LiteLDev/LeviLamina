@@ -185,7 +185,8 @@ public:
 
     // symbol:
     // ?_hasPendingTickingAreaNamed@TickingAreasManager@@AEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@UPendingArea@@V?$allocator@UPendingArea@@@std@@@3@@Z
-    MCAPI bool _hasPendingTickingAreaNamed(std::string const& name, std::vector<struct PendingArea> const&) const;
+    MCAPI bool
+    _hasPendingTickingAreaNamed(std::string const& name, std::vector<struct PendingArea> const& dimensionAreas) const;
 
     // symbol: ?_postReloadActorAdded@TickingAreasManager@@AEAAXAEAVActor@@@Z
     MCAPI void _postReloadActorAdded(class Actor&);

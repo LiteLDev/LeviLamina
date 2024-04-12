@@ -129,7 +129,7 @@ MCAPI std::initializer_list<::AllExperiments> getRequiredExperimentsForMetadata(
 MCAPI std::string scriptingVersionToString(struct Scripting::Version const&);
 
 // symbol: ?writeJsonMetadataToFile@CreatorMetadataUtils@@YA_NAEBVValue@Json@@AEBVPath@Core@@@Z
-MCAPI bool writeJsonMetadataToFile(class Json::Value const& json, class Core::Path const&);
+MCAPI bool writeJsonMetadataToFile(class Json::Value const& json, class Core::Path const& filepath);
 // NOLINTEND
 
 }; // namespace CreatorMetadataUtils

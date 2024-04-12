@@ -29,9 +29,11 @@ public:
 
     // vIndex: 2, symbol:
     // ?load@ResourcePackManager@@UEBA_NAEBVResourceLocation@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z
-    virtual bool
-    load(class ResourceLocation const& resourceLocation, std::string& resourceStream, std::vector<std::string> const&)
-        const = 0;
+    virtual bool load(
+        class ResourceLocation const&   resourceLocation,
+        std::string&                    resourceStream,
+        std::vector<std::string> const& extensionList
+    ) const = 0;
 
     // vIndex: 3, symbol:
     // ?load@ResourceLoader@@UEBA_NAEBVResourceLocationPair@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z

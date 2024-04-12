@@ -53,8 +53,10 @@ public:
 
     // symbol:
     // ?generateBlockDefinition@BlockDefinitionGroup@@QEAA?AV?$unique_ptr@UBlockDefinition@@U?$default_delete@UBlockDefinition@@@std@@@std@@AEBUBlockResource@1@AEBVExperiments@@@Z
-    MCAPI std::unique_ptr<struct BlockDefinition>
-          generateBlockDefinition(struct BlockDefinitionGroup::BlockResource const& resource, class Experiments const&);
+    MCAPI std::unique_ptr<struct BlockDefinition> generateBlockDefinition(
+        struct BlockDefinitionGroup::BlockResource const& resource,
+        class Experiments const&                          experiments
+    );
 
     // symbol:
     // ?generateServerBlockProperties@BlockDefinitionGroup@@QEBA?AV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTag@@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTag@@@std@@@2@@std@@XZ
@@ -83,15 +85,18 @@ public:
 
     // symbol:
     // ?loadResources@BlockDefinitionGroup@@QEAAXAEBVResourcePackManager@@AEBVBlockComponentFactory@@AEBVExperiments@@@Z
-    MCAPI void
-    loadResources(class ResourcePackManager const& resourcePackManager, class BlockComponentFactory const& factory, class Experiments const&);
+    MCAPI void loadResources(
+        class ResourcePackManager const&   resourcePackManager,
+        class BlockComponentFactory const& factory,
+        class Experiments const&           experiments
+    );
 
     // symbol:
     // ?registerBlockDefinition@BlockDefinitionGroup@@QEAAXV?$unique_ptr@UBlockDefinition@@U?$default_delete@UBlockDefinition@@@std@@@std@@@Z
-    MCAPI void registerBlockDefinition(std::unique_ptr<struct BlockDefinition>);
+    MCAPI void registerBlockDefinition(std::unique_ptr<struct BlockDefinition> blockDef);
 
     // symbol: ?registerBlockFromDefinition@BlockDefinitionGroup@@QEAAXAEBUBlockDefinition@@_N@Z
-    MCAPI void registerBlockFromDefinition(struct BlockDefinition const& definition, bool);
+    MCAPI void registerBlockFromDefinition(struct BlockDefinition const& definition, bool assertIfAlreadyExists);
 
     // symbol: ?registerBlocks@BlockDefinitionGroup@@QEAAXXZ
     MCAPI void registerBlocks();
@@ -138,16 +143,25 @@ public:
     );
 
     // symbol: ?_loadComponents@BlockDefinitionGroup@@AEAA_NAEBVValue@Json@@AEAUBlockDefinition@@AEBVExperiments@@@Z
-    MCAPI bool
-    _loadComponents(class Json::Value const& root, struct BlockDefinition& definition, class Experiments const&);
+    MCAPI bool _loadComponents(
+        class Json::Value const& root,
+        struct BlockDefinition&  definition,
+        class Experiments const& experiments
+    );
 
     // symbol: ?_loadEvents@BlockDefinitionGroup@@AEAA_NAEBVValue@Json@@AEAUBlockDefinition@@@Z
     MCAPI bool _loadEvents(class Json::Value const& root, struct BlockDefinition& definition);
 
     // symbol:
     // ?_parseComponents@BlockDefinitionGroup@@AEAA_NAEBVValue@Json@@AEAUBlockComponentGroupDescription@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSemVersion@@3AEBVExperiments@@@Z
-    MCAPI bool
-    _parseComponents(class Json::Value const&, struct BlockComponentGroupDescription&, std::string const& blockIdentifier, class SemVersion const& engineVersion, class SemVersion const&, class Experiments const&);
+    MCAPI bool _parseComponents(
+        class Json::Value const&,
+        struct BlockComponentGroupDescription&,
+        std::string const&      blockIdentifier,
+        class SemVersion const& engineVersion,
+        class SemVersion const&,
+        class Experiments const& experiments
+    );
 
     // symbol:
     // ?_stringToCreativeItemCategory@BlockDefinitionGroup@@AEAA?AW4CreativeItemCategory@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

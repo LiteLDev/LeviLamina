@@ -32,7 +32,7 @@ public:
         class LevelData const&  levelData,
         class Core::Path const& levelDirectory,
         class Core::Path const& levelInfoDirectory,
-        bool
+        bool                    isBetaRetailLevel
     );
 
     // symbol:

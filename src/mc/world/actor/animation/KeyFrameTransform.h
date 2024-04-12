@@ -18,7 +18,7 @@ public:
     MCAPI class KeyFrameTransform& operator=(class KeyFrameTransform&&);
 
     // symbol: ?optimizeAndGetDataValues@KeyFrameTransform@@QEAA_NAEAVVec3@@0@Z
-    MCAPI bool optimizeAndGetDataValues(class Vec3&, class Vec3& maxValue);
+    MCAPI bool optimizeAndGetDataValues(class Vec3& minValue, class Vec3& maxValue);
 
     // symbol: ?set@KeyFrameTransform@@QEAAXAEBVExpressionNode@@@Z
     MCAPI void set(class ExpressionNode const& expression);

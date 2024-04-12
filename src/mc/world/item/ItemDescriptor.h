@@ -205,7 +205,7 @@ public:
     MCAPI bool operator==(class ItemDescriptor const& rhs) const;
 
     // symbol: ?sameItem@ItemDescriptor@@QEBA_NAEBV1@_N@Z
-    MCAPI bool sameItem(class ItemDescriptor const&, bool) const;
+    MCAPI bool sameItem(class ItemDescriptor const& otherItemDescriptor, bool) const;
 
     // symbol: ?sameItem@ItemDescriptor@@QEBA_NAEBVItemStack@@_N@Z
     MCAPI bool sameItem(class ItemStack const& item, bool) const;

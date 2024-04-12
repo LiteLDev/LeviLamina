@@ -44,7 +44,7 @@ public:
 
         // symbol:
         // ?setTargetSelectionMethod@Definition@AvoidBlockGoal@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-        MCAPI void setTargetSelectionMethod(std::string const&);
+        MCAPI void setTargetSelectionMethod(std::string const& methodCased);
 
         // symbol:
         // ?buildSchema@Definition@AvoidBlockGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDefinition@AvoidBlockGoal@@@JsonUtil@@@4@@Z

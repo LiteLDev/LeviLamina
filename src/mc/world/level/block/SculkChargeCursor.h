@@ -45,8 +45,11 @@ public:
     MCAPI static class SculkBehavior const& _getSculkBehavior(class Block const& block);
 
     // symbol: ?_isMovementUnobstructed@SculkChargeCursor@@CA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@1@Z
-    MCAPI static bool
-    _isMovementUnobstructed(class IBlockWorldGenAPI& target, class BlockPos const& fromPos, class BlockPos const&);
+    MCAPI static bool _isMovementUnobstructed(
+        class IBlockWorldGenAPI& target,
+        class BlockPos const&    fromPos,
+        class BlockPos const&    toPos
+    );
 
     // NOLINTEND
 

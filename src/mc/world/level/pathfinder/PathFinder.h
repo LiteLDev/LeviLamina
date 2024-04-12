@@ -137,7 +137,7 @@ public:
     // symbol:
     // ?_findPath@PathFinder@@AEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEBUActorPathingData@@MMMM@Z
     MCAPI std::unique_ptr<class Path>
-          _findPath(struct ActorPathingData const&, float xt, float yt, float zt, float maxDist);
+          _findPath(struct ActorPathingData const& actorData, float xt, float yt, float zt, float maxDist);
 
     // symbol: ?_getAABBForPathfinding@PathFinder@@AEBA?AVAABB@@AEBVBlockPos@@AEBVBlock@@@Z
     MCAPI class AABB _getAABBForPathfinding(class BlockPos const&, class Block const&) const;

@@ -29,12 +29,12 @@ public:
     // ?addPieces@LegacyJigsawPlacement@@QEAAXAEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEBVStructurePoolElement@@AEAVRandom@@AEBVBlockPos@@AEBW4Rotation@@AEBVJigsawStructureRegistry@@AEAVDimension@@@Z
     MCAPI void addPieces(
         std::vector<std::unique_ptr<class StructurePiece>>& pieces,
-        class StructurePoolElement const&,
-        class Random&                        random,
-        class BlockPos const&                position,
-        ::Rotation const&                    rotation,
-        class JigsawStructureRegistry const& pools,
-        class Dimension&                     dimension
+        class StructurePoolElement const&                   initialElement,
+        class Random&                                       random,
+        class BlockPos const&                               position,
+        ::Rotation const&                                   rotation,
+        class JigsawStructureRegistry const&                pools,
+        class Dimension&                                    dimension
     );
 
     // symbol: ??1LegacyJigsawPlacement@@QEAA@XZ
@@ -48,31 +48,31 @@ public:
     // ?_addPiece@LegacyJigsawPlacement@@AEAAXAEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEBVPoolElementStructurePiece@@AEAVRandom@@AEBVBlockPos@@AEBW4Rotation@@AEBVJigsawStructureRegistry@@AEAVDimension@@AEAVBlockVolume@@3@Z
     MCAPI void _addPiece(
         std::vector<std::unique_ptr<class StructurePiece>>& pieces,
-        class PoolElementStructurePiece const&,
-        class Random&                        random,
-        class BlockPos const&                position,
-        ::Rotation const&                    rotation,
-        class JigsawStructureRegistry const& pools,
-        class Dimension&                     dimension,
-        class BlockVolume&                   box,
-        class BlockPos const&                refPos
+        class PoolElementStructurePiece const&              sourcePiece,
+        class Random&                                       random,
+        class BlockPos const&                               position,
+        ::Rotation const&                                   rotation,
+        class JigsawStructureRegistry const&                pools,
+        class Dimension&                                    dimension,
+        class BlockVolume&                                  box,
+        class BlockPos const&                               refPos
     );
 
     // symbol:
     // ?_tryPlacingPiece@LegacyJigsawPlacement@@AEAA_NAEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEBVPoolElementStructurePiece@@AEAVRandom@@AEBVJigsawBlockInfo@@AEBVBoundingBox@@AEAV?$vector@VBoundingBox@@V?$allocator@VBoundingBox@@@std@@@3@AEBVBlockPos@@PEBVStructureTemplatePool@@AEBVJigsawStructureRegistry@@AEAVDimension@@AEAVBlockVolume@@6@Z
     MCAPI bool _tryPlacingPiece(
         std::vector<std::unique_ptr<class StructurePiece>>& pieces,
-        class PoolElementStructurePiece const&,
-        class Random&                        random,
-        class JigsawBlockInfo const&         sourceJigsaw,
-        class BoundingBox const&             sourceBB,
-        std::vector<class BoundingBox>&      sourceInternalBBs,
-        class BlockPos const&                attachPos,
-        class StructureTemplatePool const*   targetPool,
-        class JigsawStructureRegistry const& pools,
-        class Dimension&                     dimension,
-        class BlockVolume&                   box,
-        class BlockPos const&                refPos
+        class PoolElementStructurePiece const&              sourcePiece,
+        class Random&                                       random,
+        class JigsawBlockInfo const&                        sourceJigsaw,
+        class BoundingBox const&                            sourceBB,
+        std::vector<class BoundingBox>&                     sourceInternalBBs,
+        class BlockPos const&                               attachPos,
+        class StructureTemplatePool const*                  targetPool,
+        class JigsawStructureRegistry const&                pools,
+        class Dimension&                                    dimension,
+        class BlockVolume&                                  box,
+        class BlockPos const&                               refPos
     );
 
     // symbol:

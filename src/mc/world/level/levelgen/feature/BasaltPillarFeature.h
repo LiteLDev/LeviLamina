@@ -26,7 +26,7 @@ public:
     // NOLINTBEGIN
     // symbol: ?_growColumn@BasaltPillarFeature@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@MAEBVBlock@@@Z
     MCAPI bool
-    _growColumn(class BlockSource& region, class BlockPos const& pos, class Random& random, float, class Block const&)
+    _growColumn(class BlockSource& region, class BlockPos const& pos, class Random& random, float placeChance, class Block const&)
         const;
 
     // NOLINTEND

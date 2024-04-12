@@ -95,7 +95,7 @@ public:
 
     // symbol: ?getTransformedBounds@StructureTemplate@@QEBA?AVBoundingBox@@VBlockPos@@AEBVStructureSettings@@@Z
     MCAPI class BoundingBox
-    getTransformedBounds(class BlockPos, class StructureSettings const& structureSettings) const;
+    getTransformedBounds(class BlockPos loadPosition, class StructureSettings const& structureSettings) const;
 
     // symbol: ?isLoaded@StructureTemplate@@QEBA_NXZ
     MCAPI bool isLoaded() const;
@@ -112,8 +112,10 @@ public:
     ) const;
 
     // symbol: ?placeNextSegmentInWorld@StructureTemplate@@QEBAXAEAVStructureAnimationData@@AEBVBlockPalette@@@Z
-    MCAPI void
-    placeNextSegmentInWorld(class StructureAnimationData&, class BlockPalette const& globalBlockPalette) const;
+    MCAPI void placeNextSegmentInWorld(
+        class StructureAnimationData& structureAnimationData,
+        class BlockPalette const&     globalBlockPalette
+    ) const;
 
     // symbol: ?save@StructureTemplate@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
     MCAPI std::unique_ptr<class CompoundTag> save() const;

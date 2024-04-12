@@ -21,7 +21,11 @@ public:
     virtual ~CraftingContainer();
 
     // vIndex: 2, symbol: ?serverInitItemStackIds@CraftingContainer@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-    virtual void serverInitItemStackIds(int, int count, std::function<void(int, class ItemStack const&)>);
+    virtual void serverInitItemStackIds(
+        int                                              containerSlot,
+        int                                              count,
+        std::function<void(int, class ItemStack const&)> onNetIdChanged
+    );
 
     // vIndex: 5, symbol: ?getItem@CraftingContainer@@UEBAAEBVItemStack@@H@Z
     virtual class ItemStack const& getItem(int slot) const;

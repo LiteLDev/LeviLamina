@@ -35,7 +35,8 @@ public:
 
     // symbol: ?_isValidSize@StructureCommand@@AEBA_NAEBVBlockPos@@AEBVDimensionHeightRange@@AEAVCommandOutput@@@Z
     MCAPI bool
-    _isValidSize(class BlockPos const& size, class DimensionHeightRange const&, class CommandOutput& output) const;
+    _isValidSize(class BlockPos const& size, class DimensionHeightRange const& heightRange, class CommandOutput& output)
+        const;
 
     // symbol: ?_load@StructureCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     MCAPI void _load(class CommandOrigin const& origin, class CommandOutput& output) const;

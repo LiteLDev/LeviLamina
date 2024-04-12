@@ -761,7 +761,7 @@ public:
     MCVAPI ~AppPlatform();
 
     // symbol: ??0AppPlatform@@QEAA@_N@Z
-    MCAPI explicit AppPlatform(bool);
+    MCAPI explicit AppPlatform(bool registerService);
 
     // symbol: ?_fireAppTerminated@AppPlatform@@QEAAXXZ
     MCAPI void _fireAppTerminated();

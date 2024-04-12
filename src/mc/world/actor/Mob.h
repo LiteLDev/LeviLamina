@@ -394,7 +394,7 @@ public:
     MCAPI int getEatCounter() const;
 
     // symbol: ?getExpectedFallDamage@Mob@@QEBAMMM@Z
-    MCAPI float getExpectedFallDamage(float distance, float) const;
+    MCAPI float getExpectedFallDamage(float distance, float multiplier) const;
 
     // symbol: ?getFirstCaravanHead@Mob@@QEAAPEAV1@XZ
     MCAPI class Mob* getFirstCaravanHead();

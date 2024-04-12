@@ -13,8 +13,11 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ??0ContainerValidationSlotInfo@@QEAA@AEBUContainerValidationSlotData@@V?$shared_ptr@VSimpleSparseContainer@@@std@@V?$shared_ptr@$$CBVContainerValidationBase@@@3@@Z
-    MCAPI
-    ContainerValidationSlotInfo(struct ContainerValidationSlotData const&, std::shared_ptr<class SimpleSparseContainer> container, std::shared_ptr<class ContainerValidationBase const>);
+    MCAPI ContainerValidationSlotInfo(
+        struct ContainerValidationSlotData const&,
+        std::shared_ptr<class SimpleSparseContainer>         container,
+        std::shared_ptr<class ContainerValidationBase const> validator
+    );
 
     // symbol: ?getItem@ContainerValidationSlotInfo@@QEBAAEBVItemStack@@XZ
     MCAPI class ItemStack const& getItem() const;

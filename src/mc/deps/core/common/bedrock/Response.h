@@ -48,7 +48,7 @@ public:
     MCAPI void setBody(gsl::not_null<std::shared_ptr<class Bedrock::Http::Internal::IResponseBody>> body);
 
     // symbol: ?setHeaders@Response@Http@Bedrock@@QEAAXAEBVHeaderCollection@23@@Z
-    MCAPI void setHeaders(class Bedrock::Http::HeaderCollection const&);
+    MCAPI void setHeaders(class Bedrock::Http::HeaderCollection const& headers);
 
     // symbol: ?setStatus@Response@Http@Bedrock@@QEAAXVStatus@23@@Z
     MCAPI void setStatus(class Bedrock::Http::Status status);

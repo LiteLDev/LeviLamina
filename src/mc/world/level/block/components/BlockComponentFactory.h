@@ -48,10 +48,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0BlockComponentFactory@@QEAA@AEBVExperiments@@@Z
-    MCAPI explicit BlockComponentFactory(class Experiments const&);
+    MCAPI explicit BlockComponentFactory(class Experiments const& experiments);
 
     // symbol: ?initializeFactory@BlockComponentFactory@@QEAAXAEBVExperiments@@@Z
-    MCAPI void initializeFactory(class Experiments const&);
+    MCAPI void initializeFactory(class Experiments const& experiments);
 
     // symbol:
     // ?addAllComponentUpgrades@BlockComponentFactory@@SAXAEAVCerealDocumentUpgrader@@AEBUReflectionCtx@cereal@@@Z

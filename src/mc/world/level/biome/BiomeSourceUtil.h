@@ -13,7 +13,7 @@ MCAPI std::optional<class BlockPos> locateBiome(
     std::function<bool(class Biome const&)> const& predicate,
     class BiomeSource const&                       biomeSource,
     class BoundingBox const&                       bounds,
-    uint
+    uint                                           resolution
 );
 
 // symbol:
@@ -23,7 +23,7 @@ MCAPI std::optional<class BlockPos> locateBiome(
     class BiomeSource const&                       biomeSource,
     class BlockPos const&                          center,
     class BlockPos const&,
-    uint
+    uint resolution
 );
 
 // symbol:
@@ -33,7 +33,7 @@ MCAPI std::optional<class BlockPos> locateBiome(
     class BiomeSource const&                       biomeSource,
     class BlockPos const&                          center,
     class BoundingBox,
-    uint
+    uint resolution
 );
 // NOLINTEND
 

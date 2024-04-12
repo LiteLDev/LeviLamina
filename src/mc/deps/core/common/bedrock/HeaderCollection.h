@@ -56,7 +56,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_addHeader@HeaderCollection@Http@Bedrock@@IEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_N@Z
-    MCAPI void _addHeader(std::string const&, std::string const&, bool);
+    MCAPI void _addHeader(std::string const&, std::string const&, bool setValue);
 
     // NOLINTEND
 

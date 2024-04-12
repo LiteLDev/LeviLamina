@@ -21,10 +21,10 @@ public:
     virtual bool append(class ContainerValidationCommitObject* other);
 
     // vIndex: 2, symbol: ?canCommit@ExperienceCostCommitObject@@UEBA_NAEBVContainerScreenContext@@@Z
-    virtual bool canCommit(class ContainerScreenContext const&) const;
+    virtual bool canCommit(class ContainerScreenContext const& screenContext) const;
 
     // vIndex: 3, symbol: ?commit@ExperienceCostCommitObject@@UEAAXAEBVContainerScreenContext@@@Z
-    virtual void commit(class ContainerScreenContext const&);
+    virtual void commit(class ContainerScreenContext const& screenContext);
 
     // symbol: ??0ExperienceCostCommitObject@@QEAA@H@Z
     MCAPI explicit ExperienceCostCommitObject(int);

@@ -28,8 +28,8 @@ public:
         class ChunkSource&     source,
         struct Bounds const&   bounds,
         bool                   isCircle,
-        struct Tick,
-        bool allowNonPlayerTicking
+        struct Tick            currentLevelTick,
+        bool                   allowNonPlayerTicking
     );
 
     // symbol:
@@ -39,9 +39,9 @@ public:
         class ChunkSource&     source,
         struct Bounds const&   bounds,
         bool                   isCircle,
-        struct Tick,
-        bool allowUnloadedChunks,
-        bool allowNonPlayerTicking,
+        struct Tick            currentLevelTick,
+        bool                   allowUnloadedChunks,
+        bool                   allowNonPlayerTicking,
         bool
     );
 

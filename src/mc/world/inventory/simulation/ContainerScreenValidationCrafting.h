@@ -31,7 +31,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_appendCraftResult@ContainerScreenValidationCrafting@@AEAAXAEAUContainerValidationCraftResult@@@Z
-    MCAPI void _appendCraftResult(struct ContainerValidationCraftResult&);
+    MCAPI void _appendCraftResult(struct ContainerValidationCraftResult& craftResult);
 
     // NOLINTEND
 };

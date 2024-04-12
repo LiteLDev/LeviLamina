@@ -69,8 +69,10 @@ public:
 
     // symbol:
     // ?_recordAggregatedEvent@AggregationEventListener@Events@Social@@AEAAXAEBVEvent@23@AEAV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$deque@VEvent@Events@Social@@V?$allocator@VEvent@Events@Social@@@std@@@2@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$deque@VEvent@Events@Social@@V?$allocator@VEvent@Events@Social@@@std@@@2@@std@@@2@@std@@@Z
-    MCAPI void
-    _recordAggregatedEvent(class Social::Events::Event const& event, std::unordered_map<std::string, std::deque<class Social::Events::Event>>&);
+    MCAPI void _recordAggregatedEvent(
+        class Social::Events::Event const&                                        event,
+        std::unordered_map<std::string, std::deque<class Social::Events::Event>>& eventQueue
+    );
 
     // symbol: ?_sendCustomAggregatedEvents@AggregationEventListener@Events@Social@@AEAAX_N@Z
     MCAPI void _sendCustomAggregatedEvents(bool forceSend);

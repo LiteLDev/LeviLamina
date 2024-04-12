@@ -37,7 +37,7 @@ public:
     virtual gsl::final_action<std::function<void()>> _tryBeginClientLegacyTransactionRequest();
 
     // vIndex: 6, symbol: ?onContainerScreenOpen@ItemStackNetManagerBase@@UEAAXAEBVContainerScreenContext@@@Z
-    virtual void onContainerScreenOpen(class ContainerScreenContext const&);
+    virtual void onContainerScreenOpen(class ContainerScreenContext const& screenContext);
 
     // vIndex: 7, symbol: ?onContainerScreenClose@ItemStackNetManagerBase@@UEAAXXZ
     virtual void onContainerScreenClose();

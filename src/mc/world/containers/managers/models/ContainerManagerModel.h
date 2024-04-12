@@ -79,7 +79,7 @@ public:
     MCAPI class ContainerScreenContext _containerScreenContext(struct ActorUniqueID actorId);
 
     // symbol: ?_getContainer@ContainerManagerModel@@IEBA?AV?$shared_ptr@VContainerModel@@@std@@W4ContainerEnumName@@@Z
-    MCAPI std::shared_ptr<class ContainerModel> _getContainer(::ContainerEnumName) const;
+    MCAPI std::shared_ptr<class ContainerModel> _getContainer(::ContainerEnumName collectionEnumName) const;
 
     // symbol: ?_isPlayerInRangeOfPosition@ContainerManagerModel@@IEBA_NAEBVBlockPos@@M@Z
     MCAPI bool _isPlayerInRangeOfPosition(class BlockPos const& blockPos, float pickRange) const;

@@ -43,7 +43,7 @@ public:
     virtual void clear() = 0;
 
     // vIndex: 5, symbol: ?erase@DeferredSubscriptionHubBase@PubSub@Bedrock@@UEAA_KAEAVRawSubscription@23@@Z
-    virtual uint64 erase(class Bedrock::PubSub::RawSubscription&) = 0;
+    virtual uint64 erase(class Bedrock::PubSub::RawSubscription& subscription) = 0;
 
     // vIndex: 6, symbol: ?size@DeferredSubscriptionHubBase@PubSub@Bedrock@@UEBA_KXZ
     virtual uint64 size() const = 0;
@@ -56,7 +56,7 @@ public:
     virtual ::Bedrock::PubSub::DeferredSubscriptionHub::HubType getHubType() const = 0;
 
     // vIndex: 9, symbol: ?_join@DeferredSubscriptionHubBase@PubSub@Bedrock@@EEAAX$$QEAVDeferredSubscription@23@@Z
-    virtual void _join(class Bedrock::PubSub::DeferredSubscription&&) = 0;
+    virtual void _join(class Bedrock::PubSub::DeferredSubscription&& subscription) = 0;
 
     // vIndex: 10, symbol:
     // ?_enqueue@PriorityDeferredSubscriptionHub@PubSub@Bedrock@@EEAAXV?$function@$$A6AXXZ@std@@W4ConnectPosition@23@V?$optional@H@5@@Z

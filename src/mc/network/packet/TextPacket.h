@@ -99,9 +99,9 @@ public:
     // symbol:
     // ?createTextObjectWhisperMessage@TextPacket@@SA?AV1@AEBVResolvedTextObject@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
     MCAPI static class TextPacket createTextObjectWhisperMessage(
-        class ResolvedTextObject const&,
-        std::string const& xuid,
-        std::string const& platformId
+        class ResolvedTextObject const& resolvedTextObject,
+        std::string const&              xuid,
+        std::string const&              platformId
     );
 
     // symbol:

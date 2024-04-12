@@ -18,7 +18,7 @@ public:
     virtual ~BlockEventResponseFactory();
 
     // vIndex: 1, symbol: ?initializeFactory@BlockEventResponseFactory@@UEAAXAEBVExperiments@@@Z
-    virtual void initializeFactory(class Experiments const&);
+    virtual void initializeFactory(class Experiments const& experiments);
 
     // vIndex: 2, symbol: ?initSchema@BlockEventResponseFactory@@UEAAXXZ
     virtual void initSchema();

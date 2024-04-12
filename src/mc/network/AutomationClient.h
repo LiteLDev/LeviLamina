@@ -88,7 +88,7 @@ public:
     MCAPI void _forEachSession(std::function<bool(class Automation::AutomationSession&)> const& callback);
 
     // symbol: ?_removeSession@AutomationClient@Automation@@AEAAXAEBVAutomationSession@2@@Z
-    MCAPI void _removeSession(class Automation::AutomationSession const&);
+    MCAPI void _removeSession(class Automation::AutomationSession const& session);
 
     // symbol: ?_tryAddCommand@AutomationClient@Automation@@AEAA_N$$QEAUCommandRequest@CodeBuilder@@@Z
     MCAPI bool _tryAddCommand(struct CodeBuilder::CommandRequest&&);

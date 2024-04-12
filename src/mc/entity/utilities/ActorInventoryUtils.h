@@ -22,8 +22,8 @@ MCAPI void forEachItemOnActor(class Actor const& actor, std::function<void(class
 // symbol:
 // ?forEachItemOnActor@ActorInventoryUtils@@YAXAEBVActor@@W4EquipmentSlot@Legacy@Puv@@AEBVCommandIntegerRange@@V?$function@$$A6AXAEBVItemStack@@@Z@std@@@Z
 MCAPI void forEachItemOnActor(
-    class Actor const& actor,
-    ::Puv::Legacy::EquipmentSlot,
+    class Actor const&                          actor,
+    ::Puv::Legacy::EquipmentSlot                equipmentSlot,
     class CommandIntegerRange const&            slot,
     std::function<void(class ItemStack const&)> callback
 );
@@ -50,9 +50,9 @@ MCAPI class ItemStack const* getItem(class Actor const&, ::Puv::Legacy::Equipmen
 // symbol:
 // ?queryActorEquipmentSlotForItem@ActorInventoryUtils@@YA_NAEBVActor@@AEBVItemInstance@@W4EquipmentSlot@Legacy@Puv@@AEBVCommandIntegerRange@@3AEBUComparisonOptions@ItemStackBase@@@Z
 MCAPI bool queryActorEquipmentSlotForItem(
-    class Actor const&        actor,
-    class ItemInstance const& item,
-    ::Puv::Legacy::EquipmentSlot,
+    class Actor const&                             actor,
+    class ItemInstance const&                      item,
+    ::Puv::Legacy::EquipmentSlot                   equipmentSlot,
     class CommandIntegerRange const&               slot,
     class CommandIntegerRange const&               quantity,
     struct ItemStackBase::ComparisonOptions const& options

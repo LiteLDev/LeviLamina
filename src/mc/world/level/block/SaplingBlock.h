@@ -104,7 +104,7 @@ public:
         class BlockPos const&        pos,
         class BlockSource&           region,
         class Random&                random,
-        bool
+        bool                         useRandom
     ) const;
 
     // symbol:
@@ -130,7 +130,8 @@ public:
     ) const;
 
     // symbol: ?_growTree@SaplingBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@_N@Z
-    MCAPI bool _growTree(class BlockSource& region, class BlockPos const& pos, class Random& random, bool) const;
+    MCAPI bool
+    _growTree(class BlockSource& region, class BlockPos const& pos, class Random& random, bool useRandom) const;
 
     // NOLINTEND
 };

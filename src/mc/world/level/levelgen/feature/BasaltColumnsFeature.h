@@ -25,10 +25,11 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_findSurface@BasaltColumnsFeature@@AEBA?AV?$optional@VBlockPos@@@std@@AEAVBlockSource@@VBlockPos@@HH@Z
-    MCAPI std::optional<class BlockPos> _findSurface(class BlockSource& region, class BlockPos, int limit, int) const;
+    MCAPI std::optional<class BlockPos>
+          _findSurface(class BlockSource& region, class BlockPos cursor, int limit, int yDirection) const;
 
     // symbol: ?_placeColumnCluster@BasaltColumnsFeature@@AEBAXAEAVBlockSource@@VBlockPos@@HH@Z
-    MCAPI void _placeColumnCluster(class BlockSource& region, class BlockPos origin, int, int) const;
+    MCAPI void _placeColumnCluster(class BlockSource& region, class BlockPos origin, int columnHeight, int reach) const;
 
     // NOLINTEND
 };

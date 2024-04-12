@@ -27,8 +27,12 @@ public:
 
     // symbol:
     // ?initBiomes@VanillaBiomes@@SAXAEAVBiomeRegistry@@AEBUSpawnSettings@@AEBVBaseGameVersion@@AEBVExperiments@@@Z
-    MCAPI static void
-    initBiomes(class BiomeRegistry& registry, struct SpawnSettings const&, class BaseGameVersion const& baseGameVersion, class Experiments const&);
+    MCAPI static void initBiomes(
+        class BiomeRegistry&         registry,
+        struct SpawnSettings const&  spawnSettings,
+        class BaseGameVersion const& baseGameVersion,
+        class Experiments const&     experiments
+    );
 
     // symbol: ?initClientOnlyComponents@VanillaBiomes@@SAXAEAVBiomeRegistry@@@Z
     MCAPI static void initClientOnlyComponents(class BiomeRegistry& registry);

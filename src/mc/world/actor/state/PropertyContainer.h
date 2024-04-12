@@ -29,8 +29,11 @@ public:
 
     // symbol:
     // ?setAliasProperties@PropertyContainer@@QEAAXAEBV?$unordered_map@VHashedString@@V?$shared_ptr@VTag@@@std@@U?$hash@VHashedString@@@3@U?$equal_to@VHashedString@@@3@V?$allocator@U?$pair@$$CBVHashedString@@V?$shared_ptr@VTag@@@std@@@std@@@3@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@1@Z
-    MCAPI void
-    setAliasProperties(std::unordered_map<class HashedString, std::shared_ptr<class Tag>> const&, std::string const&, std::string const&);
+    MCAPI void setAliasProperties(
+        std::unordered_map<class HashedString, std::shared_ptr<class Tag>> const&,
+        std::string const&,
+        std::string const& canonicalName
+    );
 
     // symbol: ?setFloatValue@PropertyContainer@@QEAAX_KM@Z
     MCAPI void setFloatValue(uint64, float value);

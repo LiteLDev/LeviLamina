@@ -82,7 +82,7 @@ public:
     MCAPI void setDirty();
 
     // symbol: ?setLastReloadInitTimeStampClient@AnimationComponent@@QEAAX_K@Z
-    MCAPI void setLastReloadInitTimeStampClient(uint64);
+    MCAPI void setLastReloadInitTimeStampClient(uint64 lastReloadInitTimeStamp);
 
     // symbol: ?setupDeltaTimeAndLifeTimeParams@AnimationComponent@@QEAAX_N@Z
     MCAPI void setupDeltaTimeAndLifeTimeParams(bool incrementLifetime);

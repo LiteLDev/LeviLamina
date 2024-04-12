@@ -83,7 +83,7 @@ public:
     MCAPI void resupplyTrades();
 
     // symbol: ?setNearbyCuredDiscount@EconomyTradeableComponent@@QEAAXH@Z
-    MCAPI void setNearbyCuredDiscount(int);
+    MCAPI void setNearbyCuredDiscount(int discount);
 
     // symbol: ?setOffers@EconomyTradeableComponent@@QEAAXAEAVMerchantRecipeList@@@Z
     MCAPI void setOffers(class MerchantRecipeList& offers);

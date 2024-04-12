@@ -27,8 +27,11 @@ public:
     MCAPI ScriptValue(class Scripting::ScriptValue const& rhs);
 
     // symbol: ??0ScriptValue@Scripting@@QEAA@PEAVIRuntime@1@UContextId@1@VWeakLifetimeScope@1@@Z
-    MCAPI
-    ScriptValue(class Scripting::IRuntime*, struct Scripting::ContextId, class Scripting::WeakLifetimeScope scope);
+    MCAPI ScriptValue(
+        class Scripting::IRuntime* runtime,
+        struct Scripting::ContextId,
+        class Scripting::WeakLifetimeScope scope
+    );
 
     // symbol: ?getContextId@ScriptValue@Scripting@@QEBA?AUContextId@2@XZ
     MCAPI struct Scripting::ContextId getContextId() const;

@@ -218,7 +218,7 @@ public:
     MCAPI void _handleErrorStatus(leveldb::Status const& status);
 
     // symbol: ?_mergeIntoWriteCache@DBStorage@@IEAAXAEBVLevelStorageWriteBatch@@@Z
-    MCAPI void _mergeIntoWriteCache(class LevelStorageWriteBatch const&);
+    MCAPI void _mergeIntoWriteCache(class LevelStorageWriteBatch const& batchToMerge);
 
     // symbol: ?_queueSaveCallback@DBStorage@@IEAAX_N@Z
     MCAPI void _queueSaveCallback(bool invokeImmediately);

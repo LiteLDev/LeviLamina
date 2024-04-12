@@ -63,9 +63,9 @@ public:
     // ?initCoreEnums@MinecraftCommands@@QEAAXVItemRegistryRef@@AEBVLevel@@AEBVActorFactory@@AEBVExperiments@@AEBVBaseGameVersion@@@Z
     MCAPI void initCoreEnums(
         class ItemRegistryRef,
-        class Level const&        registries,
-        class ActorFactory const& actorFactory,
-        class Experiments const&,
+        class Level const&           registries,
+        class ActorFactory const&    actorFactory,
+        class Experiments const&     experiments,
         class BaseGameVersion const& worldBaseGameVersion
     );
 
@@ -95,8 +95,11 @@ public:
     MCAPI static void initBlockEnum(class CommandRegistry& registry, class BaseGameVersion const& worldBaseGameVersion);
 
     // symbol: ?initEntityEnum@MinecraftCommands@@SAXAEAVCommandRegistry@@AEBVActorFactory@@AEBVExperiments@@@Z
-    MCAPI static void
-    initEntityEnum(class CommandRegistry& registry, class ActorFactory const& actorFactory, class Experiments const&);
+    MCAPI static void initEntityEnum(
+        class CommandRegistry&    registry,
+        class ActorFactory const& actorFactory,
+        class Experiments const&  experiments
+    );
 
     // symbol: ?initEntityPropertyEnum@MinecraftCommands@@SAXAEAVCommandRegistry@@AEBVLevel@@@Z
     MCAPI static void initEntityPropertyEnum(class CommandRegistry&, class Level const&);

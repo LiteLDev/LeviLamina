@@ -87,13 +87,17 @@ public:
 
     // symbol:
     // ??0DBChunkStorage@@QEAA@V?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@AEAVDBStorage@@AEAVScheduler@@AEBVExperiments@@@Z
-    MCAPI
-    DBChunkStorage(std::unique_ptr<class ChunkSource> parent, class DBStorage& storage, class Scheduler& scheduler, class Experiments const&);
+    MCAPI DBChunkStorage(
+        std::unique_ptr<class ChunkSource> parent,
+        class DBStorage&                   storage,
+        class Scheduler&                   scheduler,
+        class Experiments const&           experiments
+    );
 
     // symbol:
     // ?_getBlenderMode@DBChunkStorage@@SA?AW4BlenderMode@ConsoleChunkBlender@@AEBVLevelChunk@@AEBVExperiments@@@Z
     MCAPI static ::ConsoleChunkBlender::BlenderMode
-    _getBlenderMode(class LevelChunk const& lc, class Experiments const&);
+    _getBlenderMode(class LevelChunk const& lc, class Experiments const& experiments);
 
     // symbol:
     // ?deserializeActorStorageToString@DBChunkStorage@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NAEBV23@V?$function@$$A6A_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@@Z@3@@Z

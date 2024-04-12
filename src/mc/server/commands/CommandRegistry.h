@@ -283,7 +283,7 @@ public:
         // symbol:
         // ?createSelector@Parser@CommandRegistry@@QEAA?AV?$unique_ptr@V?$CommandSelector@VActor@@@@U?$default_delete@V?$CommandSelector@VActor@@@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@AEBVCommandOrigin@@@Z
         MCAPI std::unique_ptr<class CommandSelector<class Actor>>
-              createSelector(std::string const&, class CommandOrigin const& origin);
+              createSelector(std::string const& selectorString, class CommandOrigin const& origin);
 
         // symbol:
         // ?getErrorMessage@Parser@CommandRegistry@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ

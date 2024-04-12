@@ -111,10 +111,10 @@ public:
 
     // symbol: ?getBlockForPlacement@MultifaceBlock@@SAAEBVBlock@@AEBV2@0AEAVBlockSource@@AEBVBlockPos@@E@Z
     MCAPI static class Block const& getBlockForPlacement(
-        class Block const& oldBlock,
-        class Block const& placementBlock,
-        class BlockSource& region,
-        class BlockPos const&,
+        class Block const&    oldBlock,
+        class Block const&    placementBlock,
+        class BlockSource&    region,
+        class BlockPos const& placementPos,
         uchar
     );
 
@@ -124,7 +124,7 @@ public:
         class Block const&       oldBlock,
         class Block const&       placementBlock,
         class IBlockWorldGenAPI& region,
-        class BlockPos const&,
+        class BlockPos const&    placementPos,
         uchar
     );
 

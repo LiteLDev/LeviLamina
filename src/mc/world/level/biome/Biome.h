@@ -126,7 +126,7 @@ public:
     // symbol:
     // ?hasTag@Biome@@QEBA_N_KAEBV?$TagRegistry@U?$IDType@UBiomeTagIDType@@@@U?$IDType@UBiomeTagSetIDType@@@@@@@Z
     MCAPI bool hasTag(
-        uint64,
+        uint64 tagHash,
         class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> const&
             tagRegistry
     ) const;

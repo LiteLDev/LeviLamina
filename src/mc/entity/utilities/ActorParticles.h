@@ -15,15 +15,20 @@ MCAPI uint calculateDustParticleNumberFromFall(float fallDistance);
 MCAPI class Vec3 getDustParticlePosition(class Vec3 const& position, class AABB const& aabb);
 
 // symbol: ?spawnBalloonPopParticles@ActorParticles@@YAXIVAABB@@W4PaletteColor@@AEAVILevel@@AEAVRandom@@@Z
-MCAPI void
-spawnBalloonPopParticles(uint, class AABB aabb, ::PaletteColor color, class ILevel& level, class Random& random);
+MCAPI void spawnBalloonPopParticles(
+    uint           particleCount,
+    class AABB     aabb,
+    ::PaletteColor color,
+    class ILevel&  level,
+    class Random&  random
+);
 
 // symbol: ?spawnDeathParticles@ActorParticles@@YAXVVec3@@VVec2@@MAEAVILevel@@@Z
 MCAPI void spawnDeathParticles(class Vec3 position, class Vec2 aabbDim, float heightOffset, class ILevel& level);
 
 // symbol: ?spawnDustParticlesFromFalling@ActorParticles@@YAXIVVec3@@AEAVILevel@@AEBVBlock@@VBlockPos@@@Z
 MCAPI void spawnDustParticlesFromFalling(
-    uint,
+    uint               particleCount,
     class Vec3         position,
     class ILevel&      level,
     class Block const& block,
@@ -32,8 +37,8 @@ MCAPI void spawnDustParticlesFromFalling(
 
 // symbol: ?spawnParticlesInArea@ActorParticles@@YAXAEAVILevel@@IW4ParticleType@@AEBVVec3@@AEBVVec2@@AEAVRandom@@@Z
 MCAPI void spawnParticlesInArea(
-    class ILevel& level,
-    uint,
+    class ILevel&     level,
+    uint              particleCount,
     ::ParticleType    type,
     class Vec3 const& position,
     class Vec2 const& aabbDim,
@@ -45,7 +50,7 @@ MCAPI void spawnPukeParticles(uint, uint, class Vec3 position, class Vec3, class
 
 // symbol: ?spawnTreasureHuntingParticles@ActorParticles@@YAXIVVec3@@0VVec2@@AEAVILevel@@AEAVRandom@@@Z
 MCAPI void spawnTreasureHuntingParticles(
-    uint,
+    uint          particleCount,
     class Vec3    position,
     class Vec3    direction,
     class Vec2    aabbDim,

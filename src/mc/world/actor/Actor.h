@@ -211,7 +211,7 @@ public:
 
     // vIndex: 33, symbol:
     // ?getExitTip@Actor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@W4InputMode@@W4NewInteractionModel@@@Z
-    virtual std::string getExitTip(std::string const& kind, ::InputMode mode, ::NewInteractionModel) const;
+    virtual std::string getExitTip(std::string const& kind, ::InputMode mode, ::NewInteractionModel scheme) const;
 
     // vIndex: 34, symbol:
     // ?getEntityLocNameString@Actor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -661,7 +661,7 @@ public:
     MCAPI bool canSeeDaylight() const;
 
     // symbol: ?celebrateHunt@Actor@@QEAAXH_N@Z
-    MCAPI void celebrateHunt(int duration, bool);
+    MCAPI void celebrateHunt(int duration, bool special);
 
     // symbol: ?checkFallDamage@Actor@@QEAAXM_N0@Z
     MCAPI void checkFallDamage(float, bool, bool);
@@ -2112,7 +2112,7 @@ public:
     MCAPI void _tryPlantWitherRose();
 
     // symbol: ?_updateComposition@Actor@@AEAAX_N@Z
-    MCAPI void _updateComposition(bool);
+    MCAPI void _updateComposition(bool reload);
 
     // NOLINTEND
 

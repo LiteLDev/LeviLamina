@@ -168,9 +168,9 @@ public:
         class CauldronBlockActor& blockEntity,
         class BlockSource&        region,
         int                       fillLevel,
-        bool,
-        bool isWater,
-        bool
+        bool                      isEmpty,
+        bool                      isWater,
+        bool                      isCleanWater
     ) const;
 
     // symbol: ?_useInventory@CauldronBlock@@AEBAXAEAVPlayer@@AEAVItemStack@@1H@Z

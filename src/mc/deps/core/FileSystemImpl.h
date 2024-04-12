@@ -237,9 +237,9 @@ public:
     // symbol:
     // ??0FileSystemImpl@Core@@QEAA@W4FileAccessType@1@V?$shared_ptr@VFileStorageArea@Core@@@std@@W4TransactionFlags@1@V?$shared_ptr@VFlatFileManifestTracker@Core@@@4@@Z
     MCAPI FileSystemImpl(
-        ::Core::FileAccessType                       accessType,
-        std::shared_ptr<class Core::FileStorageArea> storageArea,
-        ::Core::TransactionFlags,
+        ::Core::FileAccessType                               accessType,
+        std::shared_ptr<class Core::FileStorageArea>         storageArea,
+        ::Core::TransactionFlags                             transactionFlags,
         std::shared_ptr<class Core::FlatFileManifestTracker> manifestTracker
     );
 

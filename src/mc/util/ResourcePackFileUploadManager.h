@@ -29,8 +29,8 @@ public:
     virtual void uploadFileToRealmStorage(
         std::string const&      uploadId,
         class Core::Path const& path,
-        int,
-        std::string const& realmsGuid
+        int                     slotIndex,
+        std::string const&      realmsGuid
     );
 
     // symbol:
@@ -50,7 +50,7 @@ public:
     // symbol:
     // ?_uploadPackToRealmStorage@ResourcePackFileUploadManager@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@H0@Z
     MCAPI void
-    _uploadPackToRealmStorage(std::string const& uploadId, class Core::Path const& path, int, std::string const&);
+    _uploadPackToRealmStorage(std::string const& uploadId, class Core::Path const& path, int slotIndex, std::string const&);
 
     // symbol:
     // ?_uploadResourcePackFolder@ResourcePackFileUploadManager@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVResourceLocation@@AEBVPath@Core@@AEBVValue@Json@@@Z

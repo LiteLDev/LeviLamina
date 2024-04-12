@@ -41,7 +41,7 @@ public:
 
     // symbol:
     // ?_resolveNetIdAndValidate@CraftHandlerGrindstone@@AEAA_NW4ContainerEnumName@@EAEBUItemStackNetIdVariant@@@Z
-    MCAPI bool _resolveNetIdAndValidate(::ContainerEnumName, uchar slot, struct ItemStackNetIdVariant const&);
+    MCAPI bool _resolveNetIdAndValidate(::ContainerEnumName, uchar slot, struct ItemStackNetIdVariant const& netId);
 
     // symbol:
     // ?_getResultItemWithNoEnchants@CraftHandlerGrindstone@@CA?AVItemStack@@AEAV2@AEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEA_N@Z

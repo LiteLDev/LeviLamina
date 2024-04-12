@@ -94,7 +94,7 @@ public:
     MCAPI void _onChanged(class BlockSource&, ::Puv::Legacy::LevelSoundEvent);
 
     // symbol: ?_spawnMusicParticles@JukeboxBlockActor@@AEAAXAEAVLevel@@M@Z
-    MCAPI void _spawnMusicParticles(class Level& level, float);
+    MCAPI void _spawnMusicParticles(class Level& level, float recordDuration);
 
     // NOLINTEND
 };

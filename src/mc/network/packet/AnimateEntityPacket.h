@@ -48,8 +48,15 @@ public:
 
     // symbol:
     // ??0AnimateEntityPacket@@QEAA@AEBV?$vector@VActorRuntimeID@@V?$allocator@VActorRuntimeID@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@1M1W4MolangVersion@@1@Z
-    MCAPI
-    AnimateEntityPacket(std::vector<class ActorRuntimeID> const&, std::string const& animation, std::string const&, float blendOutTime, std::string const& stopExpression, ::MolangVersion, std::string const&);
+    MCAPI AnimateEntityPacket(
+        std::vector<class ActorRuntimeID> const&,
+        std::string const& animation,
+        std::string const&,
+        float              blendOutTime,
+        std::string const& stopExpression,
+        ::MolangVersion,
+        std::string const& controller
+    );
 
     // NOLINTEND
 };

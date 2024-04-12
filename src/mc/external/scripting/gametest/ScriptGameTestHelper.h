@@ -87,7 +87,7 @@ public:
         std::string const& actorIdentifier,
         int                armorSlot,
         std::string const&,
-        int,
+        int               dataValue,
         class Vec3 const& position,
         bool
     );

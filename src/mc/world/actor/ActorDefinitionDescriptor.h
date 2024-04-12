@@ -75,10 +75,10 @@ public:
     // symbol:
     // ?forceExecuteTriggerChain@ActorDefinitionDescriptor@@SAXAEAVActor@@AEBVActorDefinitionTrigger@@AEAV?$vector@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV12@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV12@@std@@@2@@std@@AEBVVariantParameterList@@@Z
     MCAPI static void forceExecuteTriggerChain(
-        class Actor&                        entity,
-        class ActorDefinitionTrigger const& trigger,
-        std::vector<std::pair<std::string const, std::string const>>&,
-        class VariantParameterList const& list
+        class Actor&                                                  entity,
+        class ActorDefinitionTrigger const&                           trigger,
+        std::vector<std::pair<std::string const, std::string const>>& eventStack,
+        class VariantParameterList const&                             list
     );
 
     // symbol:
@@ -92,19 +92,19 @@ public:
     // symbol:
     // ?_executeEvent@ActorDefinitionDescriptor@@CA_NAEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV12@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV12@@std@@@2@@4@AEBVVariantParameterList@@@Z
     MCAPI static bool _executeEvent(
-        class Actor&       entity,
-        std::string const& name,
-        std::vector<std::pair<std::string const, std::string const>>&,
-        class VariantParameterList const& list
+        class Actor&                                                  entity,
+        std::string const&                                            name,
+        std::vector<std::pair<std::string const, std::string const>>& eventStack,
+        class VariantParameterList const&                             list
     );
 
     // symbol:
     // ?_forceExecuteTrigger@ActorDefinitionDescriptor@@CAXAEAVActor@@AEBVActorDefinitionTrigger@@AEAV?$vector@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV12@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV12@@std@@@2@@std@@AEBVVariantParameterList@@@Z
     MCAPI static void _forceExecuteTrigger(
-        class Actor&                        entity,
-        class ActorDefinitionTrigger const& trigger,
-        std::vector<std::pair<std::string const, std::string const>>&,
-        class VariantParameterList const& list
+        class Actor&                                                  entity,
+        class ActorDefinitionTrigger const&                           trigger,
+        std::vector<std::pair<std::string const, std::string const>>& eventStack,
+        class VariantParameterList const&                             list
     );
 
     // NOLINTEND

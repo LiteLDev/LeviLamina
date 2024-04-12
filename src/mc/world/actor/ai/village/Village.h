@@ -340,13 +340,13 @@ public:
     MCAPI void _tryAddPoiToVillage(struct ActorUniqueID const&, std::weak_ptr<class POIInstance>);
 
     // symbol: ?_tryShiftStandingsTowardNeutral@Village@@AEAAXAEAUTick@@_K_N@Z
-    MCAPI void _tryShiftStandingsTowardNeutral(struct Tick&, uint64 updateInterval, bool);
+    MCAPI void _tryShiftStandingsTowardNeutral(struct Tick& updateTick, uint64 updateInterval, bool positiveShift);
 
     // symbol: ?_trySpawnDefenderDwellers@Village@@AEAAXAEAVBlockSource@@_K@Z
     MCAPI void _trySpawnDefenderDwellers(class BlockSource& region, uint64 bedCount);
 
     // symbol: ?_updateAndRemoveInactiveDwellers@Village@@AEAAX_KM@Z
-    MCAPI void _updateAndRemoveInactiveDwellers(uint64, float);
+    MCAPI void _updateAndRemoveInactiveDwellers(uint64 villagerPurgeTime, float villageBorderTolerance);
 
     // symbol: ?_updateClaimedPOIs@Village@@AEAAXAEAVBlockSource@@@Z
     MCAPI void _updateClaimedPOIs(class BlockSource& region);

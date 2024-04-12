@@ -64,7 +64,11 @@ public:
     virtual void init();
 
     // vIndex: 2, symbol: ?serverInitItemStackIds@CraftingContainer@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-    virtual void serverInitItemStackIds(int, int count, std::function<void(int, class ItemStack const&)>) = 0;
+    virtual void serverInitItemStackIds(
+        int                                              containerSlot,
+        int                                              count,
+        std::function<void(int, class ItemStack const&)> onNetIdChanged
+    ) = 0;
 
     // vIndex: 3, symbol: ?addContentChangeListener@Container@@UEAAXPEAVContainerContentChangeListener@@@Z
     virtual void addContentChangeListener(class ContainerContentChangeListener* listener);
@@ -91,7 +95,7 @@ public:
     virtual void setItem(int slot, class ItemStack const& item) = 0;
 
     // vIndex: 11, symbol: ?setItemWithForceBalance@Container@@UEAAXHAEBVItemStack@@_N@Z
-    virtual void setItemWithForceBalance(int slot, class ItemStack const& item, bool);
+    virtual void setItemWithForceBalance(int slot, class ItemStack const& item, bool forceBalanced);
 
     // vIndex: 12, symbol: ?removeItem@Container@@UEAAXHH@Z
     virtual void removeItem(int slot, int count);
@@ -205,7 +209,7 @@ public:
     MCAPI void removeCloseListener(class ContainerCloseListener*);
 
     // symbol: ?serverInitItemStackIdsAll@Container@@QEAAXV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-    MCAPI void serverInitItemStackIdsAll(std::function<void(int, class ItemStack const&)>);
+    MCAPI void serverInitItemStackIdsAll(std::function<void(int, class ItemStack const&)> onNetIdChanged);
 
     // symbol: ?setGameplayContainerType@Container@@QEAAXW4ContainerType@@@Z
     MCAPI void setGameplayContainerType(::ContainerType type);
@@ -232,7 +236,8 @@ public:
     MCAPI int _getEmptySlotsCount(int start, int end) const;
 
     // symbol: ?_serverInitId@Container@@IEAAXHAEAVItemStack@@V?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-    MCAPI void _serverInitId(int slot, class ItemStack& item, std::function<void(int, class ItemStack const&)>);
+    MCAPI void
+    _serverInitId(int slot, class ItemStack& item, std::function<void(int, class ItemStack const&)> onNetIdChanged);
 
     // NOLINTEND
 

@@ -55,7 +55,8 @@ public:
 
     // symbol:
     // ?_kickPlayer@KickCommand@@CAXPEAVMinecraft@@AEBVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static void _kickPlayer(class Minecraft* game, class Player const&, std::string const& message);
+    MCAPI static void
+    _kickPlayer(class Minecraft* game, class Player const& matchingPlayer, std::string const& message);
 
     // NOLINTEND
 };
