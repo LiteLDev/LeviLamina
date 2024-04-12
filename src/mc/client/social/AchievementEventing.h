@@ -32,8 +32,13 @@ public:
     MCAPI void AwardAchievement(class Player&, ::MinecraftEventing::AchievementIds);
 
     // symbol: ?BlockBroken@AchievementEventing@Events@Social@@QEAAXAEBVPlayer@@AEBVBlock@@HHG@Z
-    MCAPI void
-    BlockBroken(class Player const& player, class Block const& destroyedBlock, int method, int variantData, ushort);
+    MCAPI void BlockBroken(
+        class Player const& player,
+        class Block const&  destroyedBlock,
+        int                 method,
+        int                 variantData,
+        ushort              auxType
+    );
 
     // symbol: ?CaravanChanged@AchievementEventing@Events@Social@@QEAAXAEAVMob@@H@Z
     MCAPI void CaravanChanged(class Mob& mob, int caravanSize);
@@ -48,13 +53,18 @@ public:
     MCAPI void MobEffectChanged(class Player const& player, class MobEffectInstance const& effectInstance, int change);
 
     // symbol: ?PlayerBounced@AchievementEventing@Events@Social@@QEAAXAEBVPlayer@@AEBVBlock@@HH@Z
-    MCAPI void PlayerBounced(class Player const& player, class Block const& block, int bounceHeight, int);
+    MCAPI void PlayerBounced(class Player const& player, class Block const& block, int bounceHeight, int auxType);
 
     // symbol: ?PlayerTeleported@AchievementEventing@Events@Social@@QEAAXAEAVPlayer@@MHH@Z
     MCAPI void PlayerTeleported(class Player& player, float metersTravelled, int cause, int sourceType);
 
     // symbol: ?PlayerTravelled@AchievementEventing@Events@Social@@QEAAXAEBVPlayer@@MHH@Z
-    MCAPI void PlayerTravelled(class Player const& player, float metersTravelledSinceLastEvent, int, int newBiome);
+    MCAPI void PlayerTravelled(
+        class Player const& player,
+        float               metersTravelledSinceLastEvent,
+        int                 travelMethodType,
+        int                 newBiome
+    );
 
     // symbol: ??1AchievementEventing@Events@Social@@QEAA@XZ
     MCAPI ~AchievementEventing();

@@ -37,8 +37,13 @@ public:
 
     // symbol:
     // ??0ResourcePackStackPacket@@QEAA@V?$vector@UPackInstanceId@@V?$allocator@UPackInstanceId@@@std@@@std@@0AEBVBaseGameVersion@@_NAEBVExperiments@@@Z
-    MCAPI
-    ResourcePackStackPacket(std::vector<struct PackInstanceId> addOnIdsAndVersions, std::vector<struct PackInstanceId> texturePackIdsAndVersions, class BaseGameVersion const& baseGameVersion, bool texturePackRequired, class Experiments const&);
+    MCAPI ResourcePackStackPacket(
+        std::vector<struct PackInstanceId> addOnIdsAndVersions,
+        std::vector<struct PackInstanceId> texturePackIdsAndVersions,
+        class BaseGameVersion const&       baseGameVersion,
+        bool                               texturePackRequired,
+        class Experiments const&           experiments
+    );
 
     // NOLINTEND
 };

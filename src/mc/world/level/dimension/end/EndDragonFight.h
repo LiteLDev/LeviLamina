@@ -76,7 +76,7 @@ public:
     MCAPI struct BuildMatch _findExitPortal();
 
     // symbol: ?_initializeDragon@EndDragonFight@@AEAAXAEAVEnderDragon@@@Z
-    MCAPI void _initializeDragon(class EnderDragon&);
+    MCAPI void _initializeDragon(class EnderDragon& enderDragon);
 
     // symbol: ?_makeEndIslandFeature@EndDragonFight@@AEAAXAEAVBlockSource@@VBlockPos@@@Z
     MCAPI void _makeEndIslandFeature(class BlockSource& region, class BlockPos position);
@@ -114,7 +114,7 @@ public:
 
     // symbol:
     // ?_tickRespawnAnimation@EndDragonFight@@AEAAXAEBV?$vector@UActorUniqueID@@V?$allocator@UActorUniqueID@@@std@@@std@@H@Z
-    MCAPI void _tickRespawnAnimation(std::vector<struct ActorUniqueID> const&, int time);
+    MCAPI void _tickRespawnAnimation(std::vector<struct ActorUniqueID> const& crystalIDs, int time);
 
     // symbol: ?_updateCrystalCount@EndDragonFight@@AEAAXXZ
     MCAPI void _updateCrystalCount();

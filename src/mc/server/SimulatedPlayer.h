@@ -96,8 +96,8 @@ public:
         std::string const&                 deviceId,
         std::unique_ptr<class Certificate> certificate,
         int                                maxChunkRadius,
-        bool,
-        class EntityContext& entityContext
+        bool                               enableItemStackNetManager,
+        class EntityContext&               entityContext
     );
 
     // symbol: ?getGameTestHelper@SimulatedPlayer@@QEBA?AV?$NonOwnerPointer@VBaseGameTestHelper@gametest@@@Bedrock@@XZ

@@ -42,8 +42,10 @@ public:
         // NOLINTBEGIN
         // symbol:
         // ?fromStringVector@EnabledStates@PlacementDirection@BlockTrait@@SAXAEAU123@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-        MCAPI static void
-        fromStringVector(struct BlockTrait::PlacementDirection::EnabledStates& instance, std::vector<std::string> const&);
+        MCAPI static void fromStringVector(
+            struct BlockTrait::PlacementDirection::EnabledStates& instance,
+            std::vector<std::string> const&                       states
+        );
 
         // NOLINTEND
     };

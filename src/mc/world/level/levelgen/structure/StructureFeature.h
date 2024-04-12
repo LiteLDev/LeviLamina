@@ -122,7 +122,7 @@ public:
         class ChunkPos const& cp,
         class Random&         random,
         uint                  levelSeed,
-        int,
+        int                   spacing,
         int,
         int  salt,
         bool tiltedSpacing

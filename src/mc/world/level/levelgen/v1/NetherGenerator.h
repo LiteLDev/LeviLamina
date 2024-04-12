@@ -101,8 +101,8 @@ public:
         class BlockVolume&    box,
         class ChunkPos const& chunkPos,
         bool                  factorInBeardsAndShavers,
-        std::vector<short>*,
-        int
+        std::vector<short>*   ZXheights,
+        int                   skipTopN
     );
 
     // NOLINTEND

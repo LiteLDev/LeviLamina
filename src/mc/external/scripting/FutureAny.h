@@ -34,7 +34,7 @@ public:
     // symbol:
     // ??0FutureAny@Scripting@@QEAA@PEAVIRuntime@1@UContextId@1@VWeakLifetimeScope@1@V?$StrongTypedObjectHandle@UFutureType@Scripting@@@1@PEAVIObjectInspector@1@@Z
     MCAPI
-    FutureAny(class Scripting::IRuntime*, struct Scripting::ContextId, class Scripting::WeakLifetimeScope scope, class Scripting::StrongTypedObjectHandle<struct Scripting::FutureType>, class Scripting::IObjectInspector*);
+    FutureAny(class Scripting::IRuntime* runtime, struct Scripting::ContextId, class Scripting::WeakLifetimeScope scope, class Scripting::StrongTypedObjectHandle<struct Scripting::FutureType>, class Scripting::IObjectInspector*);
 
     // symbol: ?getResult@FutureAny@Scripting@@QEBA?AVResultAny@2@XZ
     MCAPI class Scripting::ResultAny getResult() const;

@@ -44,7 +44,7 @@ public:
         MCAPI CoordinateRange(struct ScatterParams::CoordinateRange const&);
 
         // symbol: ?_eval@CoordinateRange@ScatterParams@@QEBAHHHAEAIAEAVRandom@@@Z
-        MCAPI int _eval(int, int, uint& stepIndex, class Random& random) const;
+        MCAPI int _eval(int evaluatedMin, int evaluatedMax, uint& stepIndex, class Random& random) const;
 
         // symbol: ??1CoordinateRange@ScatterParams@@QEAA@XZ
         MCAPI ~CoordinateRange();

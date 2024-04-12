@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0ChunkBlockPos@@QEAA@AEBVBlockPos@@F@Z
-    MCAPI ChunkBlockPos(class BlockPos const& pos, short);
+    MCAPI ChunkBlockPos(class BlockPos const& pos, short minDimensionHeight);
 
     // symbol: ??0ChunkBlockPos@@QEAA@EVChunkLocalHeight@@E@Z
     MCAPI ChunkBlockPos(uchar _x, class ChunkLocalHeight _y, uchar _z);

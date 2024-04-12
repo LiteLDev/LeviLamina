@@ -35,23 +35,23 @@ public:
     // symbol:
     // ?_placeLeaningBranches@AcaciaTreeTrunk@@AEBAXAEAVIBlockWorldGenAPI@@AEBVBlockPos@@1AEAVRandom@@AEAVRenderParams@@HHHAEBUTreeParams@TreeHelper@@@Z
     MCAPI void _placeLeaningBranches(
-        class IBlockWorldGenAPI& target,
-        class BlockPos const&    pos,
-        class BlockPos const&,
-        class Random&       random,
-        class RenderParams& renderParams,
-        int                 treeHeight,
-        int,
-        int,
+        class IBlockWorldGenAPI&             target,
+        class BlockPos const&                pos,
+        class BlockPos const&                branchPos,
+        class Random&                        random,
+        class RenderParams&                  renderParams,
+        int                                  treeHeight,
+        int                                  leanDirection,
+        int                                  leanHeight,
         struct TreeHelper::TreeParams const& treeParams
     ) const;
 
     // symbol:
     // ?_placeVerticalBranches@AcaciaTreeTrunk@@AEBAXAEAVIBlockWorldGenAPI@@AEBVBlockPos@@1AEAVRandom@@AEAVRenderParams@@AEBUTreeParams@TreeHelper@@@Z
     MCAPI void _placeVerticalBranches(
-        class IBlockWorldGenAPI& target,
-        class BlockPos const&    pos,
-        class BlockPos const&,
+        class IBlockWorldGenAPI&             target,
+        class BlockPos const&                pos,
+        class BlockPos const&                branchPos,
         class Random&                        random,
         class RenderParams&                  renderParams,
         struct TreeHelper::TreeParams const& treeParams

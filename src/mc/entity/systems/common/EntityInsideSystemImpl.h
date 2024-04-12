@@ -13,8 +13,8 @@
 #include "mc/entity/EntityFactoryT.h"
 #include "mc/entity/EntityModifier.h"
 #include "mc/world/components/FlagComponent.h"
-#include "mc/world/components/InsideBlockWithPosAndBlockComponent.h"
-#include "mc/world/components/InsideBlockWithPosComponent.h"
+#include "mc/world/level/block/components/InsideBlockWithPosAndBlockComponent.h"
+#include "mc/world/level/block/components/InsideBlockWithPosComponent.h"
 
 namespace EntityInsideSystemImpl {
 // NOLINTBEGIN

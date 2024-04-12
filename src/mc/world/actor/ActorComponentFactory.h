@@ -22,7 +22,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_initialize@ActorComponentFactory@@AEAAXAEBVExperiments@@@Z
-    MCAPI void _initialize(class Experiments const&);
+    MCAPI void _initialize(class Experiments const& experiments);
 
     // NOLINTEND
 };

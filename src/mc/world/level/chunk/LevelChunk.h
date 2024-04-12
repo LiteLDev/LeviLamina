@@ -244,7 +244,7 @@ public:
         gsl::span<gsl::not_null<class Actor const*>> ignoredEntities,
         class AABB const&                            bb,
         std::vector<class Actor*>&                   entities,
-        bool
+        bool                                         useHitbox
     ) const;
 
     // symbol:
@@ -683,7 +683,7 @@ public:
     // symbol:
     // ?_fixupCorruptedBlockActors@LevelChunk@@IEAAXAEAV?$unordered_map@VChunkBlockPos@@V?$shared_ptr@VBlockActor@@@std@@U?$hash@VChunkBlockPos@@@3@U?$equal_to@VChunkBlockPos@@@3@V?$allocator@U?$pair@$$CBVChunkBlockPos@@V?$shared_ptr@VBlockActor@@@std@@@std@@@3@@std@@V?$buffer_span_mut@USubChunk@@@@@Z
     MCAPI void
-    _fixupCorruptedBlockActors(std::unordered_map<class ChunkBlockPos, std::shared_ptr<class BlockActor>>&, class buffer_span_mut<struct SubChunk>);
+    _fixupCorruptedBlockActors(std::unordered_map<class ChunkBlockPos, std::shared_ptr<class BlockActor>>& deserialized, class buffer_span_mut<struct SubChunk>);
 
     // symbol: ?_generateOriginalLighting@LevelChunk@@IEAAXAEAVChunkViewSource@@_N@Z
     MCAPI void _generateOriginalLighting(class ChunkViewSource& neighborhood, bool enforceBorderCheck);

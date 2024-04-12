@@ -60,7 +60,7 @@ public:
 
     // symbol: ?getTransformedBounds@StructureTemplate@@QEBA?AVBoundingBox@@VBlockPos@@AEBVStructureSettings@@@Z
     MCAPI class BoundingBox
-    getTransformedBounds(class BlockPos, class StructureSettings const& structureSettings) const;
+    getTransformedBounds(class BlockPos loadPosition, class StructureSettings const& structureSettings) const;
 
     // symbol: ?isLoaded@StructureTemplate@@QEBA_NXZ
     MCAPI bool isLoaded() const;
@@ -73,12 +73,14 @@ public:
         class BlockPos const&               position,
         class StructureSettings const&      structureSettings,
         class StructureTelemetryServerData* telemetryServerData,
-        bool
+        bool                                updateItemData
     ) const;
 
     // symbol: ?placeNextSegmentInWorld@StructureTemplate@@QEBAXAEAVStructureAnimationData@@AEBVBlockPalette@@@Z
-    MCAPI void
-    placeNextSegmentInWorld(class StructureAnimationData&, class BlockPalette const& globalBlockPalette) const;
+    MCAPI void placeNextSegmentInWorld(
+        class StructureAnimationData& structureAnimationData,
+        class BlockPalette const&     globalBlockPalette
+    ) const;
 
     // symbol: ?save@StructureTemplate@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
     MCAPI std::unique_ptr<class CompoundTag> save() const;
@@ -112,14 +114,18 @@ public:
     _fillEntityList(class BlockSource& region, class BlockPos const& minCorner, class BlockPos const& maxCorner);
 
     // symbol: ?_placeEntitiesInWorld@StructureTemplate@@AEBAXAEAVBlockSource@@AEAVDataLoadHelper@@_N@Z
-    MCAPI void _placeEntitiesInWorld(class BlockSource& region, class DataLoadHelper& dataLoadHelper, bool) const;
+    MCAPI void _placeEntitiesInWorld(
+        class BlockSource&    region,
+        class DataLoadHelper& dataLoadHelper,
+        bool                  shouldReloadActorEquipment
+    ) const;
 
     // symbol:
     // ?_placeNextBlockSegmentInWorld@StructureTemplate@@AEBAXAEAVBlockSource@@_K1AEBVStructureSettings@@AEAVDataLoadHelper@@AEBVStructureBlockPalette@@AEBVBlockPalette@@VBlockPos@@AEBV7@AEBVVec3@@W4Rotation@@W4Mirror@@MIPEAVStructureTelemetryServerData@@_N_N@Z
     MCAPI void _placeNextBlockSegmentInWorld(
-        class BlockSource& region,
-        uint64,
-        uint64,
+        class BlockSource&                 region,
+        uint64                             startPlacement,
+        uint64                             endPlacement,
         class StructureSettings const&     structureSettings,
         class DataLoadHelper&              dataLoadHelper,
         class StructureBlockPalette const& structureBlockPalette,
@@ -132,8 +138,8 @@ public:
         float                              integrityValue,
         uint                               integritySeed,
         class StructureTelemetryServerData*,
-        bool,
-        bool
+        bool updateItemData,
+        bool ignoreJigsawBlocks
     ) const;
 
     // NOLINTEND

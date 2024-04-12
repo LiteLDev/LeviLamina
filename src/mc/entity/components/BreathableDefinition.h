@@ -22,10 +22,10 @@ public:
     MCAPI BreathableDefinition();
 
     // symbol: ?addBreathableBlockDescriptor@BreathableDefinition@@QEAAXAEBVBlockDescriptor@@@Z
-    MCAPI void addBreathableBlockDescriptor(class BlockDescriptor const&);
+    MCAPI void addBreathableBlockDescriptor(class BlockDescriptor const& blockDescriptor);
 
     // symbol: ?addNonBreathableBlockDescriptor@BreathableDefinition@@QEAAXAEBVBlockDescriptor@@@Z
-    MCAPI void addNonBreathableBlockDescriptor(class BlockDescriptor const&);
+    MCAPI void addNonBreathableBlockDescriptor(class BlockDescriptor const& blockDescriptor);
 
     // symbol: ?initialize@BreathableDefinition@@QEBAXAEAVEntityContext@@AEAVBreathableComponent@@@Z
     MCAPI void initialize(class EntityContext& entity, class BreathableComponent& component) const;

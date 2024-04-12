@@ -50,7 +50,7 @@ public:
 
     // vIndex: 33, symbol:
     // ?getExitTip@Boat@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@W4InputMode@@W4NewInteractionModel@@@Z
-    virtual std::string getExitTip(std::string const& kind, ::InputMode mode, ::NewInteractionModel) const;
+    virtual std::string getExitTip(std::string const& kind, ::InputMode mode, ::NewInteractionModel scheme) const;
 
     // vIndex: 40, symbol: ?getShadowRadius@Boat@@UEBAMXZ
     virtual float getShadowRadius() const;

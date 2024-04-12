@@ -136,7 +136,7 @@ public:
     // vIndex: 29, symbol:
     // ?fetchEntities@BlockSource@@UEAA?AV?$span@V?$not_null@PEAVActor@@@gsl@@$0?0@gsl@@PEBVActor@@AEBVAABB@@_N2@Z
     virtual gsl::span<gsl::not_null<class Actor*>>
-    fetchEntities(class Actor const* except, class AABB const& bb, bool, bool);
+    fetchEntities(class Actor const* except, class AABB const& bb, bool useHitbox, bool);
 
     // vIndex: 30, symbol:
     // ?fetchEntities@BlockSource@@UEAA?AV?$span@V?$not_null@PEAVActor@@@gsl@@$0?0@gsl@@W4ActorType@@AEBVAABB@@PEBVActor@@V?$function@$$A6A_NPEAVActor@@@Z@std@@@Z
@@ -296,10 +296,10 @@ public:
 
     // symbol: ?countBlocksOfType@BlockSource@@QEBA_KAEBVBlockDescriptor@@AEBVBlockPos@@1_K@Z
     MCAPI uint64 countBlocksOfType(
-        class BlockDescriptor const&,
-        class BlockPos const& min,
-        class BlockPos const& max,
-        uint64                maxCount
+        class BlockDescriptor const& blockDescriptor,
+        class BlockPos const&        min,
+        class BlockPos const&        max,
+        uint64                       maxCount
     ) const;
 
     // symbol:
@@ -352,8 +352,12 @@ public:
 
     // symbol:
     // ?fetchEntities@BlockSource@@QEAA?AV?$span@V?$not_null@PEAVActor@@@gsl@@$0?0@gsl@@V?$span@V?$not_null@PEBVActor@@@gsl@@$0?0@3@AEBVAABB@@_N2@Z
-    MCAPI gsl::span<gsl::not_null<class Actor*>>
-          fetchEntities(gsl::span<gsl::not_null<class Actor const*>> ignoredEntities, class AABB const& bb, bool, bool);
+    MCAPI gsl::span<gsl::not_null<class Actor*>> fetchEntities(
+        gsl::span<gsl::not_null<class Actor const*>> ignoredEntities,
+        class AABB const&                            bb,
+        bool                                         useHitbox,
+        bool
+    );
 
     // symbol:
     // ?fetchEntities2@BlockSource@@QEAAAEBV?$vector@PEAVActor@@V?$allocator@PEAVActor@@@std@@@std@@W4ActorType@@AEBVAABB@@_N@Z
@@ -691,7 +695,7 @@ public:
         class WeakEntityRef                          entityRef,
         gsl::span<gsl::not_null<class Actor const*>> ignoredEntities,
         class AABB const&                            bb,
-        bool
+        bool                                         useHitbox
     );
 
     // symbol: ?_hasChunksAt@BlockSource@@IEBA_NAEBUBounds@@_N@Z
@@ -731,7 +735,8 @@ public:
 
     // symbol: ?_getRawBrightness@BlockSource@@AEBA?AUBrightness@@AEBVBlockPos@@U2@_N2@Z
     MCAPI struct Brightness
-    _getRawBrightness(class BlockPos const& pos, struct Brightness, bool propagate, bool accountForNight) const;
+    _getRawBrightness(class BlockPos const& pos, struct Brightness skyDarken, bool propagate, bool accountForNight)
+        const;
 
     // symbol: ?_removeFromTickingQueue@BlockSource@@AEAAXAEBVBlockPos@@AEBVBlock@@W4TickingQueueType@@@Z
     MCAPI void

@@ -144,7 +144,7 @@ public:
     MCAPI uint getNumberOfUnlockableRecipes() const;
 
     // symbol: ?getRecipeByNetId@Recipes@@QEBAPEBVRecipe@@AEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@@Z
-    MCAPI class Recipe const* getRecipeByNetId(RecipeNetId const&) const;
+    MCAPI class Recipe const* getRecipeByNetId(RecipeNetId const& netId) const;
 
     // symbol: ?getRecipeFor@Recipes@@QEBAPEAVRecipe@@AEBVItemInstance@@AEBVHashedString@@@Z
     MCAPI class Recipe* getRecipeFor(class ItemInstance const& result, class HashedString const& tag) const;
@@ -156,8 +156,12 @@ public:
 
     // symbol:
     // ?init@Recipes@@QEAAXAEAVResourcePackManager@@AEAVExternalRecipeStore@@AEBVBaseGameVersion@@AEBVExperiments@@@Z
-    MCAPI void
-    init(class ResourcePackManager& resourcePackManager, class ExternalRecipeStore&, class BaseGameVersion const& baseGameVersion, class Experiments const&);
+    MCAPI void init(
+        class ResourcePackManager& resourcePackManager,
+        class ExternalRecipeStore&,
+        class BaseGameVersion const& baseGameVersion,
+        class Experiments const&     experiments
+    );
 
     // symbol:
     // ?loadRecipe@Recipes@@QEAA_NAEBU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VValue@Json@@@std@@AEBVSemVersion@@1_N@Z
@@ -182,7 +186,7 @@ public:
 
     // symbol:
     // ?_loadDataDrivenRecipes@Recipes@@IEAAXAEBV?$vector@VPackInstance@@V?$allocator@VPackInstance@@@std@@@std@@@Z
-    MCAPI void _loadDataDrivenRecipes(std::vector<class PackInstance> const&);
+    MCAPI void _loadDataDrivenRecipes(std::vector<class PackInstance> const& resourcePacksNewestToOldest);
 
     // symbol: ?_loadIngredientFromJson@Recipes@@IEBA?BVRecipeIngredient@@AEBVValue@Json@@AEBVSemVersion@@_N2@Z
     MCAPI class RecipeIngredient const
@@ -218,7 +222,7 @@ public:
     MCAPI bool _isRecipeValidToAdd(class Recipe const& recipe);
 
     // symbol: ?_loadBrewingMix@Recipes@@AEAA_NAEBVValue@Json@@AEBVSemVersion@@@Z
-    MCAPI bool _loadBrewingMix(class Json::Value const&, class SemVersion const& engineVersion);
+    MCAPI bool _loadBrewingMix(class Json::Value const& objData, class SemVersion const& engineVersion);
 
     // symbol: ?_loadHardcodedRecipes@Recipes@@AEAAXAEBVBaseGameVersion@@AEBVExperiments@@@Z
     MCAPI void _loadHardcodedRecipes(class BaseGameVersion const& baseGameVersion, class Experiments const&);
@@ -230,7 +234,7 @@ public:
     // symbol:
     // ?_loadSmithingTransform@Recipes@@AEAA_NAEBVValue@Json@@AEBVSemVersion@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@6@@Z
     MCAPI bool _loadSmithingTransform(
-        class Json::Value const&,
+        class Json::Value const&               objData,
         class SemVersion const&                engineVersion,
         std::string const&                     recipeId,
         std::vector<class HashedString> const& tags
@@ -239,7 +243,7 @@ public:
     // symbol:
     // ?_loadSmithingTrim@Recipes@@AEAA_NAEBVValue@Json@@AEBVSemVersion@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@6@@Z
     MCAPI bool _loadSmithingTrim(
-        class Json::Value const&,
+        class Json::Value const&               objData,
         class SemVersion const&                engineVersion,
         std::string const&                     recipeId,
         std::vector<class HashedString> const& tags

@@ -404,9 +404,9 @@ public:
     // vIndex: 222, symbol:
     // ?displayTextObjectWhisperMessage@Player@@UEAAXAEBVResolvedTextObject@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
     virtual void displayTextObjectWhisperMessage(
-        class ResolvedTextObject const&,
-        std::string const& xuid,
-        std::string const& platformId
+        class ResolvedTextObject const& resolvedTextObject,
+        std::string const&              xuid,
+        std::string const&              platformId
     );
 
     // vIndex: 223, symbol:
@@ -553,7 +553,7 @@ public:
     MCAPI void _fireWillChangeDimension();
 
     // symbol: ?broadcastPlayerSpawnedMobEvent@Player@@QEAAXW4ActorType@@W4MobSpawnMethod@@@Z
-    MCAPI void broadcastPlayerSpawnedMobEvent(::ActorType, ::MobSpawnMethod spawnMethod);
+    MCAPI void broadcastPlayerSpawnedMobEvent(::ActorType spawnedType, ::MobSpawnMethod spawnMethod);
 
     // symbol: ?canBeSeenOnMap@Player@@QEBA_NXZ
     MCAPI bool canBeSeenOnMap() const;
@@ -824,7 +824,7 @@ public:
         int                    slot,
         class ItemStack const& oldItem,
         class ItemStack const& newItem,
-        bool
+        bool                   forceBalanced
     );
 
     // symbol: ?is2DPositionRelevant@Player@@QEAA_NV?$AutomaticID@VDimension@@H@@AEBVBlockPos@@@Z
@@ -1008,7 +1008,7 @@ public:
     MCAPI class ItemStack const& setSelectedSlot(int slot);
 
     // symbol: ?setSpawnBlockRespawnPosition@Player@@QEAAXAEBVBlockPos@@V?$AutomaticID@VDimension@@H@@@Z
-    MCAPI void setSpawnBlockRespawnPosition(class BlockPos const&, DimensionType dimension);
+    MCAPI void setSpawnBlockRespawnPosition(class BlockPos const& spawnBlockPosition, DimensionType dimension);
 
     // symbol: ?setUsedPotion@Player@@QEAAX_N@Z
     MCAPI void setUsedPotion(bool used);

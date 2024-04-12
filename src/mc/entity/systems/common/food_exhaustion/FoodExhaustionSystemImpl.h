@@ -29,7 +29,7 @@ MCAPI void doFoodExhaustion(
     struct ServerPlayerCurrentMovementComponent const& playerGameType,
     struct StateVectorComponent const&,
     struct ActorDataFlagComponent const& state,
-    struct GetAttachPositionViews const&,
+    struct GetAttachPositionViews const& actorData,
     class EntityModifier<struct AttributeRequestComponent>,
     ::GameType,
     class IConstBlockSource const& region

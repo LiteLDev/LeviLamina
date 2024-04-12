@@ -38,7 +38,7 @@ public:
 
     // vIndex: 6, symbol:
     // ?createTag@MerchantRecipeList@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@_N@Z
-    virtual std::unique_ptr<class CompoundTag> createTag(bool) const;
+    virtual std::unique_ptr<class CompoundTag> createTag(bool includeNetInfo) const;
 
     // symbol: ??0MerchantRecipeList@@QEAA@XZ
     MCAPI MerchantRecipeList();
@@ -48,11 +48,11 @@ public:
 
     // symbol:
     // ?getRecipeByNetId@MerchantRecipeList@@QEBAPEBVMerchantRecipe@@AEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@@Z
-    MCAPI class MerchantRecipe const* getRecipeByNetId(RecipeNetId const&) const;
+    MCAPI class MerchantRecipe const* getRecipeByNetId(RecipeNetId const& netId) const;
 
     // symbol:
     // ?getRecipeIndexByNetId@MerchantRecipeList@@QEBA?AV?$optional@_K@std@@AEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@@Z
-    MCAPI std::optional<uint64> getRecipeIndexByNetId(RecipeNetId const&) const;
+    MCAPI std::optional<uint64> getRecipeIndexByNetId(RecipeNetId const& netId) const;
 
     // symbol: ?isRequiredItem@MerchantRecipeList@@QEAA_NAEBVItemInstance@@0@Z
     MCAPI bool isRequiredItem(class ItemInstance const& offer, class ItemInstance const& requiredItem);

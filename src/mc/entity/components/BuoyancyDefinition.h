@@ -40,7 +40,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_addLiquidBlockDescriptor@BuoyancyDefinition@@AEAAXAEBVBlockDescriptor@@@Z
-    MCAPI void _addLiquidBlockDescriptor(class BlockDescriptor const&);
+    MCAPI void _addLiquidBlockDescriptor(class BlockDescriptor const& liquidBlockDescriptor);
 
     // symbol: ?_serialize@BuoyancyDefinition@@AEBA?AVValue@Json@@XZ
     MCAPI class Json::Value _serialize() const;

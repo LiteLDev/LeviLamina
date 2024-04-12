@@ -18,8 +18,12 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?loadEvent@ActorDefinitionEventLoader@@SA?AVActorDefinitionEvent@@VValue@Json@@AEBVSemVersion@@1PEBVActorEventResponseFactory@@@Z
-    MCAPI static class ActorDefinitionEvent
-    loadEvent(class Json::Value root, class SemVersion const& engineVersion, class SemVersion const& formatVersion, class ActorEventResponseFactory const*);
+    MCAPI static class ActorDefinitionEvent loadEvent(
+        class Json::Value                      root,
+        class SemVersion const&                engineVersion,
+        class SemVersion const&                formatVersion,
+        class ActorEventResponseFactory const* responseFactory
+    );
 
     // NOLINTEND
 
@@ -27,13 +31,20 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_loadCollection@ActorDefinitionEventLoader@@CAXAEAVActorDefinitionEvent@@AEBVValue@Json@@AEBVSemVersion@@PEBVActorEventResponseFactory@@@Z
-    MCAPI static void
-    _loadCollection(class ActorDefinitionEvent&, class Json::Value const& collection, class SemVersion const& engineVersion, class ActorEventResponseFactory const*);
+    MCAPI static void _loadCollection(
+        class ActorDefinitionEvent&            defEvent,
+        class Json::Value const&               collection,
+        class SemVersion const&                engineVersion,
+        class ActorEventResponseFactory const* responseFactory
+    );
 
     // symbol:
     // ?_loadEvent@ActorDefinitionEventLoader@@CA?AVActorDefinitionEvent@@AEAVValue@Json@@AEBVSemVersion@@PEBVActorEventResponseFactory@@@Z
-    MCAPI static class ActorDefinitionEvent
-    _loadEvent(class Json::Value& root, class SemVersion const& engineVersion, class ActorEventResponseFactory const*);
+    MCAPI static class ActorDefinitionEvent _loadEvent(
+        class Json::Value&                     root,
+        class SemVersion const&                engineVersion,
+        class ActorEventResponseFactory const* responseFactory
+    );
 
     // NOLINTEND
 };

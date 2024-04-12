@@ -77,7 +77,7 @@ public:
     MCAPI void setIgnoreEntities(bool ignoreEntities);
 
     // symbol: ?setIgnoreJigsawBlocks@StructureSettings@@QEAAX_N@Z
-    MCAPI void setIgnoreJigsawBlocks(bool);
+    MCAPI void setIgnoreJigsawBlocks(bool ignoreJigsawBlocks);
 
     // symbol: ?setIntegritySeed@StructureSettings@@QEAAXI@Z
     MCAPI void setIntegritySeed(uint integritySeed);

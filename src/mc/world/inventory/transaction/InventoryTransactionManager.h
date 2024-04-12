@@ -21,7 +21,7 @@ public:
     MCAPI void _logExpectedActions() const;
 
     // symbol: ?addAction@InventoryTransactionManager@@QEAAXAEBVInventoryAction@@_N@Z
-    MCAPI void addAction(class InventoryAction const& action, bool);
+    MCAPI void addAction(class InventoryAction const& action, bool forceBalanced);
 
     // symbol: ?addExpectedAction@InventoryTransactionManager@@QEAAXAEBVInventoryAction@@@Z
     MCAPI void addExpectedAction(class InventoryAction const& action);

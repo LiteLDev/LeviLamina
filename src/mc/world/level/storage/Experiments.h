@@ -52,10 +52,10 @@ public:
     MCAPI void getTagData(class CompoundTag const& tag);
 
     // symbol: ?isExperimentEnabled@Experiments@@QEBA_NW4AllExperiments@@@Z
-    MCAPI bool isExperimentEnabled(::AllExperiments) const;
+    MCAPI bool isExperimentEnabled(::AllExperiments experiment) const;
 
     // symbol: ?setExperimentEnabled@Experiments@@QEAAXW4AllExperiments@@_N@Z
-    MCAPI void setExperimentEnabled(::AllExperiments, bool value);
+    MCAPI void setExperimentEnabled(::AllExperiments experiment, bool value);
 
     // symbol: ?setTagData@Experiments@@QEBAXAEAVCompoundTag@@@Z
     MCAPI void setTagData(class CompoundTag& tag) const;

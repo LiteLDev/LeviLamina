@@ -17,7 +17,7 @@ public:
     MCAPI ContainerValidationSlotData();
 
     // symbol: ??0ContainerValidationSlotData@@QEAA@W4ContainerEnumName@@H@Z
-    MCAPI ContainerValidationSlotData(::ContainerEnumName, int);
+    MCAPI ContainerValidationSlotData(::ContainerEnumName containerEnumName, int slotIndex);
 
     // symbol: ?matches@ContainerValidationSlotData@@QEBA_NAEBU1@@Z
     MCAPI bool matches(struct ContainerValidationSlotData const& other) const;

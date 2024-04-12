@@ -89,7 +89,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_fetchNearbySniffableActors@SniffGoal@@AEBA?AV?$vector@UDistanceSortedActor@@V?$allocator@UDistanceSortedActor@@@std@@@std@@W4ActorType@@@Z
-    MCAPI std::vector<struct DistanceSortedActor> _fetchNearbySniffableActors(::ActorType) const;
+    MCAPI std::vector<struct DistanceSortedActor> _fetchNearbySniffableActors(::ActorType actorType) const;
 
     // symbol: ?_fetchNearestSniffableActor@SniffGoal@@AEBA?AV?$optional@UDistanceSortedActor@@@std@@XZ
     MCAPI std::optional<struct DistanceSortedActor> _fetchNearestSniffableActor() const;

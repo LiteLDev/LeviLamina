@@ -114,8 +114,11 @@ public:
 
     // symbol:
     // ??0GameMode@@QEAA@AEAVPlayer@@V?$unique_ptr@UIGameModeTimer@@U?$default_delete@UIGameModeTimer@@@std@@@std@@V?$unique_ptr@UIGameModeMessenger@@U?$default_delete@UIGameModeMessenger@@@std@@@3@@Z
-    MCAPI
-    GameMode(class Player& player, std::unique_ptr<struct IGameModeTimer> timer, std::unique_ptr<struct IGameModeMessenger>);
+    MCAPI GameMode(
+        class Player&                              player,
+        std::unique_ptr<struct IGameModeTimer>     timer,
+        std::unique_ptr<struct IGameModeMessenger> messenger
+    );
 
     // symbol: ?_startDestroyBlock@GameMode@@QEAA_NAEBVBlockPos@@AEBVVec3@@EAEA_N@Z
     MCAPI bool _startDestroyBlock(class BlockPos const& hitPos, class Vec3 const&, uchar, bool& hasDestroyedBlock);

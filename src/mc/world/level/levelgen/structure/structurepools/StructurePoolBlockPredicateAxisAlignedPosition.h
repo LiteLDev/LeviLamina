@@ -27,7 +27,7 @@ public:
     virtual bool finalize(class BlockSource&, class IRandom&);
 
     // symbol: ??0StructurePoolBlockPredicateAxisAlignedPosition@@QEAA@MMHHE@Z
-    MCAPI StructurePoolBlockPredicateAxisAlignedPosition(float, float, int, int, uchar axis);
+    MCAPI StructurePoolBlockPredicateAxisAlignedPosition(float minChance, float maxChance, int, int, uchar axis);
 
     // NOLINTEND
 };

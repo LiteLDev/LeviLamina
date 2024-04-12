@@ -6,8 +6,8 @@
 #include "mc/common/wrapper/optional_ref.h"
 #include "mc/entity/EntityModifier.h"
 #include "mc/world/components/FlagComponent.h"
-#include "mc/world/components/InsideBlockWithPosAndBlockComponent.h"
-#include "mc/world/components/InsideBlockWithPosComponent.h"
+#include "mc/world/level/block/components/InsideBlockWithPosAndBlockComponent.h"
+#include "mc/world/level/block/components/InsideBlockWithPosComponent.h"
 
 namespace EntityInsideSystem {
 // NOLINTBEGIN

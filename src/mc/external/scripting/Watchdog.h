@@ -53,7 +53,7 @@ public:
     virtual void resetWatchdogTimes();
 
     // symbol: ??0Watchdog@QuickJS@Scripting@@QEAA@PEAUJSRuntime@@UWatchdogSettings@2@@Z
-    MCAPI Watchdog(struct JSRuntime*, struct Scripting::WatchdogSettings settings);
+    MCAPI Watchdog(struct JSRuntime* rt, struct Scripting::WatchdogSettings settings);
 
     // NOLINTEND
 

@@ -58,8 +58,13 @@ public:
 
     // symbol:
     // ??0EncryptedFileAccessStrategy@@QEAA@AEBVResourceLocation@@AEBVContentIdentity@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@_NV?$optional@V?$unordered_map@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@4@U?$equal_to@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@4@V?$allocator@U?$pair@$$CBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@4@@std@@@std@@@Z
-    MCAPI
-    EncryptedFileAccessStrategy(class ResourceLocation const& resourceLocation, class ContentIdentity const& contentIdentity, Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider, bool canRecurse, std::optional<std::unordered_map<class Core::PathBuffer<std::string>, std::string>>);
+    MCAPI EncryptedFileAccessStrategy(
+        class ResourceLocation const&                                                       resourceLocation,
+        class ContentIdentity const&                                                        contentIdentity,
+        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const&                 keyProvider,
+        bool                                                                                canRecurse,
+        std::optional<std::unordered_map<class Core::PathBuffer<std::string>, std::string>> assetSet
+    );
 
     // symbol: ?isValidEncryptedPack@EncryptedFileAccessStrategy@@SA_NAEBVPath@Core@@AEAVContentIdentity@@@Z
     MCAPI static bool isValidEncryptedPack(class Core::Path const& pathToPack, class ContentIdentity& contentIdentity);

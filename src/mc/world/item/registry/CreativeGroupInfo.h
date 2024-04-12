@@ -25,7 +25,7 @@ public:
     MCAPI CreativeGroupInfo(class CreativeGroupInfo const&);
 
     // symbol: ?addCreativeItem@CreativeGroupInfo@@QEAAXPEAVCreativeItemEntry@@@Z
-    MCAPI void addCreativeItem(class CreativeItemEntry*);
+    MCAPI void addCreativeItem(class CreativeItemEntry* itemEntry);
 
     // NOLINTEND
 };

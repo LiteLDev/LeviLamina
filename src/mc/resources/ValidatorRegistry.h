@@ -56,12 +56,20 @@ public:
 
     // symbol:
     // ?findValidators@ValidatorRegistry@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVValidatorRegistryValidators@1@@Z
-    MCAPI static bool findValidators(std::string const&, class ValidatorRegistry::ValidatorRegistryValidators&);
+    MCAPI static bool findValidators(
+        std::string const&                                    validatorName,
+        class ValidatorRegistry::ValidatorRegistryValidators& validatorPair
+    );
 
     // symbol:
     // ?registerValidators@ValidatorRegistry@@SAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@V?$function@$$A6A?AVContentTierIncompatibleReason@@AEBVPackInstance@@AEBVContentTierInfo@@@Z@3@V?$function@$$A6A?AVContentTierIncompatibleReason@@AEBUSubpackInfo@@AEBVContentTierInfo@@@Z@3@@Z
-    MCAPI static void
-        registerValidators(std::string_view, std::function<class ContentTierIncompatibleReason(class PackInstance const&, class ContentTierInfo const&)>, std::function<class ContentTierIncompatibleReason(struct SubpackInfo const&, class ContentTierInfo const&)>);
+    MCAPI static void registerValidators(
+        std::string_view validatorName,
+        std::function<class ContentTierIncompatibleReason(class PackInstance const&, class ContentTierInfo const&)>
+            packValidator,
+        std::function<class ContentTierIncompatibleReason(struct SubpackInfo const&, class ContentTierInfo const&)>
+            subpackValidator
+    );
 
     // NOLINTEND
 

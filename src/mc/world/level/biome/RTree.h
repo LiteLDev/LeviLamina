@@ -50,7 +50,7 @@ public:
         MCAPI static std::optional<class RTree::Node> branch(std::vector<class RTree::Node>&& children);
 
         // symbol: ?bucketize@Node@RTree@@SA?AV?$vector@VNode@RTree@@V?$allocator@VNode@RTree@@@std@@@std@@$$QEAV34@@Z
-        MCAPI static std::vector<class RTree::Node> bucketize(std::vector<class RTree::Node>&&);
+        MCAPI static std::vector<class RTree::Node> bucketize(std::vector<class RTree::Node>&& nodes);
 
         // symbol: ?sort@Node@RTree@@SAXAEAV?$vector@VNode@RTree@@V?$allocator@VNode@RTree@@@std@@@std@@H_N@Z
         MCAPI static void sort(std::vector<class RTree::Node>& children, int dimension, bool);

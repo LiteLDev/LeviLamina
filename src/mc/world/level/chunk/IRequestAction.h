@@ -28,7 +28,7 @@ public:
     virtual bool operator==(class IRequestAction const& action) const;
 
     // symbol: ??0IRequestAction@@QEAA@AEBW4RequestActionType@0@@Z
-    MCAPI explicit IRequestAction(::IRequestAction::RequestActionType const&);
+    MCAPI explicit IRequestAction(::IRequestAction::RequestActionType const& actionType);
 
     // symbol: ?isValidTag@IRequestAction@@SA_NAEBVCompoundTag@@@Z
     MCAPI static bool isValidTag(class CompoundTag const& tag);

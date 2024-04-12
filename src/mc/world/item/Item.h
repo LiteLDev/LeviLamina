@@ -42,7 +42,7 @@ public:
         // NOLINTBEGIN
         // symbol:
         // ??0ScopedCreativeGroup@Item@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@@Z
-        MCAPI ScopedCreativeGroup(std::string const& groupName, class ItemInstance const&);
+        MCAPI ScopedCreativeGroup(std::string const& groupName, class ItemInstance const& iconInstance);
 
         // symbol:
         // ??0ScopedCreativeGroup@Item@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBVBlock@@PEBVCompoundTag@@@Z
@@ -620,10 +620,10 @@ public:
     MCAPI class Item& setFireResistant(bool);
 
     // symbol: ?setFurnaceBurnIntervalMultiplier@Item@@QEAAAEAV1@M@Z
-    MCAPI class Item& setFurnaceBurnIntervalMultiplier(float);
+    MCAPI class Item& setFurnaceBurnIntervalMultiplier(float multiplier);
 
     // symbol: ?setFurnaceXPmultiplier@Item@@QEAAAEAV1@M@Z
-    MCAPI class Item& setFurnaceXPmultiplier(float);
+    MCAPI class Item& setFurnaceXPmultiplier(float multiplier);
 
     // symbol: ?setHandEquipped@Item@@QEAAAEAV1@XZ
     MCAPI class Item& setHandEquipped();
@@ -678,7 +678,8 @@ public:
     MCAPI static void addCreativeItem(class ItemRegistryRef, class ItemStack const& itemInstance);
 
     // symbol: ?addLooseCreativeItems@Item@@SAX_NAEBVBaseGameVersion@@VItemRegistryRef@@@Z
-    MCAPI static void addLooseCreativeItems(bool isClient, class BaseGameVersion const&, class ItemRegistryRef);
+    MCAPI static void
+    addLooseCreativeItems(bool isClient, class BaseGameVersion const& worldVersion, class ItemRegistryRef);
 
     // symbol: ?endCreativeItemDefinitions@Item@@SAX_N@Z
     MCAPI static void endCreativeItemDefinitions(bool isClient);
@@ -696,7 +697,7 @@ public:
     MCAPI static bool isSameTypeAndItem(class ItemStackBase const&, class ItemStackBase const&);
 
     // symbol: ?startCreativeItemDefinitions@Item@@SAX_NPEAVCreativeItemRegistry@@@Z
-    MCAPI static void startCreativeItemDefinitions(bool isClient, class CreativeItemRegistry*);
+    MCAPI static void startCreativeItemDefinitions(bool isClient, class CreativeItemRegistry* creativeItemRegistry);
 
     // symbol: ?toBlockId@Item@@SA?AUNewBlockID@@F@Z
     MCAPI static struct NewBlockID toBlockId(short itemId);

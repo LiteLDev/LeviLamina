@@ -87,7 +87,7 @@ public:
     MCAPI bool _canBeGrass(class BlockSource const& region, class BlockPos const& pos) const;
 
     // symbol: ?_plantGrass@GrassBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandomize@@@Z
-    MCAPI bool _plantGrass(class BlockSource& region, class BlockPos const&, class Randomize& randomize) const;
+    MCAPI bool _plantGrass(class BlockSource& region, class BlockPos const& abovePos, class Randomize& randomize) const;
 
     // NOLINTEND
 };

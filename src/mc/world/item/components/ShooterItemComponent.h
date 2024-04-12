@@ -125,16 +125,22 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_consumeAmmunition@ShooterItemComponent@@AEBAXPEAVPlayer@@AEBVItemStack@@H_N2@Z
-    MCAPI void _consumeAmmunition(class Player* player, class ItemStack const&, int, bool, bool) const;
+    MCAPI void _consumeAmmunition(
+        class Player*          player,
+        class ItemStack const& ammunition,
+        int                    slotIndex,
+        bool                   infiniteAmmo,
+        bool                   fromOffhand
+    ) const;
 
     // symbol: ?_getAmmunition@ShooterItemComponent@@AEBAHPEBVPlayer@@_NAEAVItemStack@@AEA_N@Z
-    MCAPI int _getAmmunition(class Player const* player, bool, class ItemStack&, bool&) const;
+    MCAPI int _getAmmunition(class Player const* player, bool, class ItemStack& ammo, bool& fromOffhand) const;
 
     // symbol: ?_getMaxUseDuration@ShooterItemComponent@@AEBAHAEBVItemStack@@@Z
     MCAPI int _getMaxUseDuration(class ItemStack const&) const;
 
     // symbol: ?_shootProjectiles@ShooterItemComponent@@AEBAXAEAVItemStack@@PEAVPlayer@@H@Z
-    MCAPI void _shootProjectiles(class ItemStack&, class Player* player, int durationLeft) const;
+    MCAPI void _shootProjectiles(class ItemStack& shooterStack, class Player* player, int durationLeft) const;
 
     // NOLINTEND
 };

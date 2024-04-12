@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?getEasingFunc@Easing@@SA?AV?$function@$$A6AMMMM@Z@std@@W4EasingType@@@Z
-    MCAPI static std::function<float(float, float, float)> getEasingFunc(::EasingType);
+    MCAPI static std::function<float(float, float, float)> getEasingFunc(::EasingType easingType);
 
     // symbol:
     // ?getStringFromEasingType@Easing@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4EasingType@@@Z

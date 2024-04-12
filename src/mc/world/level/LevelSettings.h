@@ -264,7 +264,7 @@ public:
     MCAPI class LevelSettings& setEmoteChatMuted(bool val);
 
     // symbol: ?setExperiments@LevelSettings@@QEAAAEAV1@AEBVExperimentStorage@@@Z
-    MCAPI class LevelSettings& setExperiments(class ExperimentStorage const&);
+    MCAPI class LevelSettings& setExperiments(class ExperimentStorage const& experiments);
 
     // symbol: ?setForceGameType@LevelSettings@@QEAAAEAV1@_N@Z
     MCAPI class LevelSettings& setForceGameType(bool value);
@@ -294,7 +294,7 @@ public:
     MCAPI class LevelSettings& setServerChunkTickRange(uint serverChunkTickRange);
 
     // symbol: ?setSpawnSettings@LevelSettings@@QEAAAEAV1@USpawnSettings@@@Z
-    MCAPI class LevelSettings& setSpawnSettings(struct SpawnSettings);
+    MCAPI class LevelSettings& setSpawnSettings(struct SpawnSettings spawnSettings);
 
     // symbol: ?setTexturePackRequired@LevelSettings@@QEAAAEAV1@_N@Z
     MCAPI class LevelSettings& setTexturePackRequired(bool texturePackRequired);

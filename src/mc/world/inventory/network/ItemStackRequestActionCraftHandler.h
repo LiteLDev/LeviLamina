@@ -19,7 +19,7 @@ public:
 
     // symbol:
     // ?_initCraftResults@ItemStackRequestActionCraftHandler@@QEAA?AW4ItemStackNetResult@@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@E@Z
-    MCAPI ::ItemStackNetResult _initCraftResults(std::vector<class ItemInstance> const& results, uchar);
+    MCAPI ::ItemStackNetResult _initCraftResults(std::vector<class ItemInstance> const& results, uchar numCrafts);
 
     // symbol: ?_initSingleCraftResult@ItemStackRequestActionCraftHandler@@QEAAPEAVItemInstance@@AEBV2@@Z
     MCAPI class ItemInstance* _initSingleCraftResult(class ItemInstance const& itemInstance);
@@ -44,7 +44,7 @@ public:
     MCAPI bool isCraftRequest() const;
 
     // symbol: ?onContainerScreenOpen@ItemStackRequestActionCraftHandler@@QEAAXAEBVContainerScreenContext@@@Z
-    MCAPI void onContainerScreenOpen(class ContainerScreenContext const&);
+    MCAPI void onContainerScreenOpen(class ContainerScreenContext const& screenContext);
 
     // NOLINTEND
 
@@ -56,7 +56,7 @@ public:
           _createCraftInputs(class ItemStackRequestActionCraftBase const& requestAction);
 
     // symbol: ?_setCreatedItemOutputSlot@ItemStackRequestActionCraftHandler@@AEAA?AW4ItemStackNetResult@@E@Z
-    MCAPI ::ItemStackNetResult _setCreatedItemOutputSlot(uchar);
+    MCAPI ::ItemStackNetResult _setCreatedItemOutputSlot(uchar resultsIndex);
 
     // NOLINTEND
 };

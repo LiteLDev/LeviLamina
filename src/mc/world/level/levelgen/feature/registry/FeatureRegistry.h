@@ -129,7 +129,7 @@ public:
 
     // symbol:
     // ?_registerFeature@FeatureRegistry@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VIFeature@@U?$default_delete@VIFeature@@@std@@@3@@Z
-    MCAPI void _registerFeature(std::string const& name, std::unique_ptr<class IFeature>);
+    MCAPI void _registerFeature(std::string const& name, std::unique_ptr<class IFeature> featurePtr);
 
     // symbol:
     // ?_setupFeature@FeatureRegistry@@AEAA_NAEAVIWorldRegistriesProvider@@_NAEBVResourcePackManager@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@3AEBVSemVersion@@1@Z

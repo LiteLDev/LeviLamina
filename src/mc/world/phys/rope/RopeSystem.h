@@ -75,7 +75,7 @@ public:
     MCAPI void _resizeRope();
 
     // symbol: ?_solveCollisions@RopeSystem@@AEAAM_N@Z
-    MCAPI float _solveCollisions(bool);
+    MCAPI float _solveCollisions(bool checkDenyList);
 
     // symbol: ?_solveDistanceConstraint@RopeSystem@@AEAAMAEAVVec3@@0M@Z
     MCAPI float _solveDistanceConstraint(class Vec3& a, class Vec3& b, float targetDist);

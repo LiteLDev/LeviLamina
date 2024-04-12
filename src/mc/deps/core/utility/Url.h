@@ -19,7 +19,7 @@ MCAPI extern struct Util::Url::Components const EMPTY_URL;
 
 // symbol:
 // ?addUrlSchemeIfNotPresent@Url@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV34@0@Z
-MCAPI std::string addUrlSchemeIfNotPresent(std::string const& url, std::string const&);
+MCAPI std::string addUrlSchemeIfNotPresent(std::string const& url, std::string const& scheme);
 
 // symbol: ?anonymizeIPAddress@Url@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV34@@Z
 MCAPI std::string anonymizeIPAddress(std::string const& ipAddress);

@@ -34,7 +34,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_tickComponent@GroupSizeSystem@@CAXAEAVActorOwnerComponent@@AEAVGroupSizeComponent@@@Z
-    MCAPI static void _tickComponent(class ActorOwnerComponent&, class GroupSizeComponent&);
+    MCAPI static void _tickComponent(class ActorOwnerComponent&, class GroupSizeComponent& groupSizeComponent);
 
     // NOLINTEND
 };

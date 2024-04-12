@@ -119,7 +119,11 @@ public:
     MCAPI void removeItemsOfType(class ItemStack const& item, int count);
 
     // symbol: ?serverInitItemStackIds@ContainerComponent@@QEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-    MCAPI void serverInitItemStackIds(int, int count, std::function<void(int, class ItemStack const&)>);
+    MCAPI void serverInitItemStackIds(
+        int                                              containerSlot,
+        int                                              count,
+        std::function<void(int, class ItemStack const&)> onNetIdChanged
+    );
 
     // symbol:
     // ?setCustomName@ContainerComponent@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

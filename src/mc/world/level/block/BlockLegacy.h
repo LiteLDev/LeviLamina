@@ -1112,17 +1112,17 @@ public:
     // symbol:
     // ?_executeEvent@BlockLegacy@@AEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV12@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV12@@std@@@2@@3@AEAVRenderParams@@@Z
     MCAPI void _executeEvent(
-        std::string const& name,
-        std::vector<std::pair<std::string const, std::string const>>&,
-        class RenderParams& params
+        std::string const&                                            name,
+        std::vector<std::pair<std::string const, std::string const>>& eventStack,
+        class RenderParams&                                           params
     ) const;
 
     // symbol:
     // ?_forceExecuteTrigger@BlockLegacy@@AEBAXAEBVDefinitionTrigger@@AEAV?$vector@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV12@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV12@@std@@@2@@std@@AEAVRenderParams@@@Z
     MCAPI void _forceExecuteTrigger(
-        class DefinitionTrigger const& trigger,
-        std::vector<std::pair<std::string const, std::string const>>&,
-        class RenderParams& params
+        class DefinitionTrigger const&                                trigger,
+        std::vector<std::pair<std::string const, std::string const>>& eventStack,
+        class RenderParams&                                           params
     ) const;
 
     // symbol: ?_tryLookupAlteredStateCollection@BlockLegacy@@AEBA?AV?$optional@H@std@@_KG@Z

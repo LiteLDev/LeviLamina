@@ -24,7 +24,8 @@ public:
     MCAPI struct MolangScriptArg const& getMolangVariable(uint64 variableNameHash, char const*) const;
 
     // symbol: ?getMolangVariable@MolangVariableMap@@QEBAAEBUMolangScriptArg@@AEB_KAEA_N@Z
-    MCAPI struct MolangScriptArg const& getMolangVariable(uint64 const& variableNameHash, bool&) const;
+    MCAPI struct MolangScriptArg const&
+    getMolangVariable(uint64 const& variableNameHash, bool& doesVariableExist) const;
 
     // symbol: ??4MolangVariableMap@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class MolangVariableMap& operator=(class MolangVariableMap&& rhs);
@@ -63,7 +64,8 @@ public:
     MCAPI class MolangVariable* _getOrAddMolangVariable(::MolangVariableIndex molangVariableIndex);
 
     // symbol: ?_getOrAddMolangVariable@MolangVariableMap@@AEAAPEAVMolangVariable@@AEB_KPEBD_N@Z
-    MCAPI class MolangVariable* _getOrAddMolangVariable(uint64 const& variableNameHash, char const* variableName, bool);
+    MCAPI class MolangVariable*
+    _getOrAddMolangVariable(uint64 const& variableNameHash, char const* variableName, bool allowSpecialCharacters);
 
     // NOLINTEND
 };

@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0BeardingDescriptionCache@@QEAA@AEBVBoundingBox@@H@Z
-    MCAPI BeardingDescriptionCache(class BoundingBox const& bb, int);
+    MCAPI BeardingDescriptionCache(class BoundingBox const& bb, int deltaY);
 
     // NOLINTEND
 };

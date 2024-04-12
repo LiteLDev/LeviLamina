@@ -89,7 +89,7 @@ public:
     MCAPI class ActorGoalFactory& getGoalFactory();
 
     // symbol: ?init@ActorFactory@@QEAAXAEBVExperiments@@@Z
-    MCAPI void init(class Experiments const&);
+    MCAPI void init(class Experiments const& experiments);
 
     // symbol: ?loadActor@ActorFactory@@QEAA?AV?$OwnerPtr@VEntityContext@@@@PEAVCompoundTag@@AEAVDataLoadHelper@@@Z
     MCAPI class OwnerPtr<class EntityContext> loadActor(class CompoundTag*, class DataLoadHelper&);
@@ -102,10 +102,10 @@ public:
     // symbol:
     // ?loadActor@ActorFactory@@QEAA?AV?$OwnerPtr@VEntityContext@@@@PEAVCompoundTag@@AEAVDataLoadHelper@@AEBVDimensionHeightRange@@PEBVLevelChunk@@@Z
     MCAPI class OwnerPtr<class EntityContext> loadActor(
-        class CompoundTag*    tag,
-        class DataLoadHelper& dataLoadHelper,
-        class DimensionHeightRange const&,
-        class LevelChunk const* levelChunk
+        class CompoundTag*                tag,
+        class DataLoadHelper&             dataLoadHelper,
+        class DimensionHeightRange const& heightRange,
+        class LevelChunk const*           levelChunk
     );
 
     // symbol: ?lookupEntityType@ActorFactory@@QEBA?AW4ActorType@@AEBUActorDefinitionIdentifier@@@Z
@@ -124,7 +124,7 @@ public:
     // ?fillFactoryData@ActorFactory@@SAXAEBUActorDefinitionIdentifier@@0AEBV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorFactoryData@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorFactoryData@@@std@@@2@@std@@AEAUActorFactoryData@@@Z
     MCAPI static void fillFactoryData(
         struct ActorDefinitionIdentifier const& identifier,
-        struct ActorDefinitionIdentifier const&,
+        struct ActorDefinitionIdentifier const& baseIdentifier,
         std::unordered_map<std::string, struct ActorFactoryData> const&,
         struct ActorFactoryData& data
     );
@@ -134,8 +134,15 @@ public:
 
     // symbol:
     // ?registerEntityMapping@ActorFactory@@SAXAEBW4ActorType@@_NAEBQ6A?AV?$unique_ptr@VActor@@U?$default_delete@VActor@@@std@@@std@@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@ZV?$optional@H@4@@Z
-    MCAPI static void
-    registerEntityMapping(::ActorType const&, bool allowSummon, std::unique_ptr<class Actor> (*const& factory)(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&), std::optional<int>);
+    MCAPI static void registerEntityMapping(
+        ::ActorType const& actorType,
+        bool               allowSummon,
+        std::unique_ptr<
+            class
+            Actor> (*const&
+                        factory)(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&),
+        std::optional<int> experimentIndex
+    );
 
     // NOLINTEND
 
@@ -144,7 +151,7 @@ public:
     // symbol:
     // ?_buildSummonableActorList@ActorFactory@@AEBAXAEBVExperiments@@V?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUActorFactoryData@@@Z@std@@@Z
     MCAPI void _buildSummonableActorList(
-        class Experiments const&,
+        class Experiments const&                                                experiments,
         std::function<void(std::string const&, struct ActorFactoryData const&)> callback
     ) const;
 

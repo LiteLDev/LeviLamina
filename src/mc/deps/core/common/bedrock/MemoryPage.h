@@ -34,8 +34,8 @@ public:
     // NOLINTBEGIN
     // symbol: ?_allocate@MemoryPage@JSONObject@Bedrock@@AEAAPEAXP8123@EAA_K_K0@ZP8123@EAAPEAX00@Z00@Z
     MCAPI void* _allocate(
-        uint64 (Bedrock::JSONObject::MemoryPage::*)(uint64, uint64),
-        void* (Bedrock::JSONObject::MemoryPage::*)(uint64, uint64),
+        uint64 (Bedrock::JSONObject::MemoryPage::*allocateFn)(uint64, uint64),
+        void* (Bedrock::JSONObject::MemoryPage::*forwardFn)(uint64, uint64),
         uint64 bytes,
         uint64 align
     );

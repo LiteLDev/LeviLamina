@@ -47,7 +47,7 @@ public:
     // symbol:
     // ?peerStartup@RakPeerHelper@@QEAA?AW4StartupResult@RakNet@@PEAVRakPeerInterface@3@AEBUConnectionDefinition@@W4PeerPurpose@1@@Z
     MCAPI ::RakNet::StartupResult peerStartup(
-        class RakNet::RakPeerInterface*,
+        class RakNet::RakPeerInterface*    peerIn,
         struct ConnectionDefinition const& definition,
         ::RakPeerHelper::PeerPurpose       purpose
     );

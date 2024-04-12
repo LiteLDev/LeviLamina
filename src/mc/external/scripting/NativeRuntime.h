@@ -51,7 +51,7 @@ public:
     // vIndex: 1, symbol:
     // ?createContext@NativeRuntime@Scripting@@UEAA?AV?$optional@VScriptContext@Scripting@@@std@@$$QEAUModuleBindingBundle@2@PEAVIDependencyLoader@2@PEAVIPrinter@2@AEBUContextConfig@2@@Z
     virtual std::optional<class Scripting::ScriptContext>
-    createContext(struct Scripting::ModuleBindingBundle&&, class Scripting::IDependencyLoader* loader, class Scripting::IPrinter*, struct Scripting::ContextConfig const&);
+    createContext(struct Scripting::ModuleBindingBundle&& bindings, class Scripting::IDependencyLoader* loader, class Scripting::IPrinter*, struct Scripting::ContextConfig const&);
 
     // vIndex: 2, symbol: ?destroyContext@NativeRuntime@Scripting@@UEAAXUContextId@2@@Z
     virtual void destroyContext(struct Scripting::ContextId);

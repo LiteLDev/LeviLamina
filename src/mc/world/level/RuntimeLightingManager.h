@@ -58,13 +58,13 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_checkForRelightingTask@RuntimeLightingManager@@AEAAXV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@@Z
-    MCAPI void _checkForRelightingTask(std::chrono::nanoseconds);
+    MCAPI void _checkForRelightingTask(std::chrono::nanoseconds timeLimit);
 
     // symbol: ?_getListOfChunksWithPlayerDistance@RuntimeLightingManager@@AEAAXXZ
     MCAPI void _getListOfChunksWithPlayerDistance();
 
     // symbol: ?_relightChunks@RuntimeLightingManager@@AEAAXV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@@Z
-    MCAPI void _relightChunks(std::chrono::nanoseconds);
+    MCAPI void _relightChunks(std::chrono::nanoseconds timeLimit);
 
     // symbol: ?_removeProcessedSubchunks@RuntimeLightingManager@@AEAAXXZ
     MCAPI void _removeProcessedSubchunks();

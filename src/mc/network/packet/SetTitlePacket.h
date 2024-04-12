@@ -45,7 +45,7 @@ public:
     MCAPI explicit SetTitlePacket(::SetTitlePacket::TitleType type);
 
     // symbol: ??0SetTitlePacket@@QEAA@W4TitleType@0@AEBVResolvedTextObject@@@Z
-    MCAPI SetTitlePacket(::SetTitlePacket::TitleType type, class ResolvedTextObject const&);
+    MCAPI SetTitlePacket(::SetTitlePacket::TitleType type, class ResolvedTextObject const& resolvedTextObject);
 
     // symbol: ??0SetTitlePacket@@QEAA@W4TitleType@0@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI SetTitlePacket(::SetTitlePacket::TitleType type, std::string const& titleText);

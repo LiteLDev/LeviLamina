@@ -30,7 +30,7 @@ public:
     MCAPI BlockPos(class ChunkPos const& cp, int y);
 
     // symbol: ??0BlockPos@@QEAA@AEBVChunkPos@@AEBVChunkBlockPos@@F@Z
-    MCAPI BlockPos(class ChunkPos const& cp, class ChunkBlockPos const& offset, short);
+    MCAPI BlockPos(class ChunkPos const& cp, class ChunkBlockPos const& offset, short minDimensionHeight);
 
     // symbol: ??0BlockPos@@QEAA@MMM@Z
     MCAPI BlockPos(float x, float y, float z);

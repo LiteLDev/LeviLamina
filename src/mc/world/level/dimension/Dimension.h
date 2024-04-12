@@ -190,11 +190,11 @@ public:
     // symbol:
     // ??0Dimension@@QEAA@AEAVILevel@@V?$AutomaticID@VDimension@@H@@VDimensionHeightRange@@AEAVScheduler@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI Dimension(
-        class ILevel& level,
-        DimensionType dimId,
-        class DimensionHeightRange,
-        class Scheduler& callbackContext,
-        std::string      name
+        class ILevel&              level,
+        DimensionType              dimId,
+        class DimensionHeightRange heightRange,
+        class Scheduler&           callbackContext,
+        std::string                name
     );
 
     // symbol:
@@ -373,7 +373,7 @@ public:
 
     // symbol:
     // ?onStaticTickingAreaAdded@Dimension@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void onStaticTickingAreaAdded(std::string const&);
+    MCAPI void onStaticTickingAreaAdded(std::string const& tickingAreaName);
 
     // symbol: ?pauseAndFlushTaskGroups@Dimension@@QEAAXXZ
     MCAPI void pauseAndFlushTaskGroups();
@@ -432,7 +432,7 @@ public:
     MCAPI void tryGarbageCollectStructures();
 
     // symbol: ?tryLoadLimboEntities@Dimension@@QEAAXAEBVChunkPos@@@Z
-    MCAPI void tryLoadLimboEntities(class ChunkPos const&);
+    MCAPI void tryLoadLimboEntities(class ChunkPos const& loadPos);
 
     // symbol: ?unregisterDisplayEntity@Dimension@@QEAAXV?$WeakRef@VEntityContext@@@@@Z
     MCAPI void unregisterDisplayEntity(class WeakRef<class EntityContext>);

@@ -320,7 +320,12 @@ MCAPI std::string vFormat(char const*, char*);
 
 // symbol:
 // ?validateIdentifier@Util@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4LogArea@@_NPEAU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@3@@Z
-MCAPI bool validateIdentifier(std::string const& id, ::LogArea logArea, bool, std::pair<std::string, std::string>*);
+MCAPI bool validateIdentifier(
+    std::string const&                   id,
+    ::LogArea                            logArea,
+    bool                                 allowMinecraftNamespace,
+    std::pair<std::string, std::string>* idNameOut
+);
 
 // symbol:
 // ?validateIdentifierChunk@Util@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4LogArea@@@Z

@@ -54,7 +54,7 @@ public:
     ShapedRecipe(std::string_view, int, int, std::vector<class RecipeIngredient> const&, std::vector<class ItemInstance> const&, class HashedString, int, class mce::UUID const*, std::optional<class RecipeUnlockingRequirement>, class SemVersion const&);
 
     // symbol: ?getIngredientsHashOffset@ShapedRecipe@@QEBA_KHHHH@Z
-    MCAPI uint64 getIngredientsHashOffset(int, int, int offsetX, int) const;
+    MCAPI uint64 getIngredientsHashOffset(int, int, int offsetX, int offsetY) const;
 
     // NOLINTEND
 

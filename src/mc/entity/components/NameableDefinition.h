@@ -22,7 +22,7 @@ public:
     MCAPI NameableDefinition();
 
     // symbol: ?addNameAction@NameableDefinition@@QEAAXAEBUNameAction@@@Z
-    MCAPI void addNameAction(struct NameAction const&);
+    MCAPI void addNameAction(struct NameAction const& nameAction);
 
     // symbol: ?initialize@NameableDefinition@@QEBAXAEAVEntityContext@@AEAVNameableComponent@@@Z
     MCAPI void initialize(class EntityContext& entity, class NameableComponent& component) const;

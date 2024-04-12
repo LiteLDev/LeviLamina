@@ -24,9 +24,9 @@ public:
     // symbol: ??0AnimatedImageData@@QEAA@W4AnimatedTextureType@persona@@W4AnimationExpression@2@AEBUImage@mce@@M@Z
     MCAPI AnimatedImageData(
         ::persona::AnimatedTextureType type,
-        ::persona::AnimationExpression,
-        struct mce::Image const& animatedImage,
-        float                    frames
+        ::persona::AnimationExpression animationExpression,
+        struct mce::Image const&       animatedImage,
+        float                          frames
     );
 
     // symbol: ??4AnimatedImageData@@QEAAAEAV0@AEBV0@@Z

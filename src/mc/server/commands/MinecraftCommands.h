@@ -23,8 +23,12 @@ public:
 
     // symbol:
     // ?compileCommand@MinecraftCommands@@QEAAPEAVCommand@@AEBVHashedString@@AEAVCommandOrigin@@W4CurrentCmdVersion@@V?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@std@@@Z
-    MCAPI class Command*
-    compileCommand(class HashedString const& commandStr, class CommandOrigin& origin, ::CurrentCmdVersion commandVersion, std::function<void(std::string const&)>);
+    MCAPI class Command* compileCommand(
+        class HashedString const&               commandStr,
+        class CommandOrigin&                    origin,
+        ::CurrentCmdVersion                     commandVersion,
+        std::function<void(std::string const&)> onParserError
+    );
 
     // symbol:
     // ?enqueueDeferredCommand@MinecraftCommands@@QEAAXV?$unique_ptr@VCommandContext@@U?$default_delete@VCommandContext@@@std@@@std@@_N1V?$function@$$A6AXUMCRESULT@@@Z@3@@Z
@@ -57,9 +61,9 @@ public:
     // ?initCoreEnums@MinecraftCommands@@QEAAXVItemRegistryRef@@AEBVLevel@@AEBVActorFactory@@AEBVExperiments@@AEBVBaseGameVersion@@@Z
     MCAPI void initCoreEnums(
         class ItemRegistryRef,
-        class Level const&        registries,
-        class ActorFactory const& actorFactory,
-        class Experiments const&,
+        class Level const&           registries,
+        class ActorFactory const&    actorFactory,
+        class Experiments const&     experiments,
         class BaseGameVersion const& worldBaseGameVersion
     );
 
@@ -89,8 +93,11 @@ public:
     MCAPI static void initBlockEnum(class CommandRegistry& registry, class BaseGameVersion const& worldBaseGameVersion);
 
     // symbol: ?initEntityEnum@MinecraftCommands@@SAXAEAVCommandRegistry@@AEBVActorFactory@@AEBVExperiments@@@Z
-    MCAPI static void
-    initEntityEnum(class CommandRegistry& registry, class ActorFactory const& actorFactory, class Experiments const&);
+    MCAPI static void initEntityEnum(
+        class CommandRegistry&    registry,
+        class ActorFactory const& actorFactory,
+        class Experiments const&  experiments
+    );
 
     // symbol: ?initEntityPropertyEnum@MinecraftCommands@@SAXAEAVCommandRegistry@@AEBVLevel@@@Z
     MCAPI static void initEntityPropertyEnum(class CommandRegistry&, class Level const&);

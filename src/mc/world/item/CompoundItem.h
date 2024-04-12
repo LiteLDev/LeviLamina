@@ -46,7 +46,7 @@ public:
 
     // symbol:
     // ??0CompoundItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVExperiments@@@Z
-    MCAPI CompoundItem(std::string const& name, int id, class Experiments const&);
+    MCAPI CompoundItem(std::string const& name, int id, class Experiments const& experiments);
 
     // symbol: ?getCompoundType@CompoundItem@@SA?AW4CompoundType@@AEBVItemDescriptor@@@Z
     MCAPI static ::CompoundType getCompoundType(class ItemDescriptor const& itemDescriptor);

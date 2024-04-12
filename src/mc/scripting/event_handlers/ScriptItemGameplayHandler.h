@@ -6,9 +6,9 @@
 #include "mc/common/wrapper/CoordinatorResult.h"
 #include "mc/common/wrapper/GameplayHandlerResult.h"
 #include "mc/common/wrapper/HandlerResult.h"
-#include "mc/events/ItemGameplayEvent.h"
 #include "mc/events/MutableItemGameplayEvent.h"
 #include "mc/external/scripting/TypedObjectHandle.h"
+#include "mc/world/item/components/ItemGameplayEvent.h"
 
 // auto generated forward declare list
 // clang-format off

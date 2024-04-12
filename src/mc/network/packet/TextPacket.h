@@ -70,7 +70,7 @@ public:
 
     // symbol:
     // ?createRawJsonObjectMessage@TextPacket@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static class TextPacket createRawJsonObjectMessage(std::string const&);
+    MCAPI static class TextPacket createRawJsonObjectMessage(std::string const& rawJson);
 
     // symbol:
     // ?createSystemMessage@TextPacket@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -78,14 +78,15 @@ public:
 
     // symbol:
     // ?createTextObjectMessage@TextPacket@@SA?AV1@AEBVResolvedTextObject@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
-    MCAPI static class TextPacket createTextObjectMessage(class ResolvedTextObject const&, std::string, std::string);
+    MCAPI static class TextPacket
+    createTextObjectMessage(class ResolvedTextObject const& resolvedTextObject, std::string, std::string);
 
     // symbol:
     // ?createTextObjectWhisperMessage@TextPacket@@SA?AV1@AEBVResolvedTextObject@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
     MCAPI static class TextPacket createTextObjectWhisperMessage(
-        class ResolvedTextObject const&,
-        std::string const& xuid,
-        std::string const& platformId
+        class ResolvedTextObject const& resolvedTextObject,
+        std::string const&              xuid,
+        std::string const&              platformId
     );
 
     // symbol:

@@ -63,9 +63,13 @@ public:
     MCAPI class Vec3 getShootDir(class Player const& player, float angleOffset) const;
 
     // symbol: ?shootProjectile@ProjectileItemComponent@@QEBAPEAVActor@@AEAVBlockSource@@AEBVVec3@@1MPEAVPlayer@@@Z
-    MCAPI class Actor*
-    shootProjectile(class BlockSource& region, class Vec3 const&, class Vec3 const&, float power, class Player* player)
-        const;
+    MCAPI class Actor* shootProjectile(
+        class BlockSource& region,
+        class Vec3 const&  aimPos,
+        class Vec3 const&  aimDir,
+        float              power,
+        class Player*      player
+    ) const;
 
     // symbol:
     // ?bindType@ProjectileItemComponent@@SAXAEAUReflectionCtx@cereal@@AEBV?$vector@W4AllExperiments@@V?$allocator@W4AllExperiments@@@std@@@std@@V?$optional@VSemVersion@@@5@@Z

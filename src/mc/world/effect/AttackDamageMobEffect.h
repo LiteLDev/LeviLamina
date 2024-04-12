@@ -31,10 +31,10 @@ public:
     );
 
     // symbol: ?getDamageAfterDamageBoost@AttackDamageMobEffect@@SAMMH@Z
-    MCAPI static float getDamageAfterDamageBoost(float, int count);
+    MCAPI static float getDamageAfterDamageBoost(float initialDamage, int count);
 
     // symbol: ?getDamageAfterWeakness@AttackDamageMobEffect@@SAMMH@Z
-    MCAPI static float getDamageAfterWeakness(float, int count);
+    MCAPI static float getDamageAfterWeakness(float initialDamage, int count);
 
     // NOLINTEND
 };

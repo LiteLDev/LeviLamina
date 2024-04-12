@@ -52,21 +52,21 @@ MCAPI void fillNegativeSubChunksWithGenerationOrAir(
 // symbol:
 // ?fixBlockStatesOnChunkBorderAxis@VanillaLevelChunkUpgrade@@YAXAEAVBlockSource@@AEBVLevelChunk@@EVBlockPos@@W4Axis@1@@Z
 MCAPI void fixBlockStatesOnChunkBorderAxis(
-    class BlockSource&      region,
-    class LevelChunk const& levelChunk,
-    uchar,
-    class BlockPos pos,
-    ::VanillaLevelChunkUpgrade::Axis
+    class BlockSource&               region,
+    class LevelChunk const&          levelChunk,
+    uchar                            chunkAxisPos,
+    class BlockPos                   pos,
+    ::VanillaLevelChunkUpgrade::Axis fixAxis
 );
 
 // symbol: ?fixStemBlockStates@VanillaLevelChunkUpgrade@@YAXAEAVBlockSource@@VBlockPos@@AEBVBlock@@@Z
-MCAPI void fixStemBlockStates(class BlockSource& region, class BlockPos, class Block const& block);
+MCAPI void fixStemBlockStates(class BlockSource& region, class BlockPos updatePos, class Block const& block);
 
 // symbol: ?fixUselessDynamicWater@VanillaLevelChunkUpgrade@@YAXAEAVLevelChunk@@AEAVBlockSource@@@Z
 MCAPI void fixUselessDynamicWater(class LevelChunk& lc, class BlockSource& region);
 
 // symbol: ?fixWallBlockStates@VanillaLevelChunkUpgrade@@YAXAEAVBlockSource@@VBlockPos@@@Z
-MCAPI void fixWallBlockStates(class BlockSource& region, class BlockPos);
+MCAPI void fixWallBlockStates(class BlockSource& region, class BlockPos updatePos);
 
 // symbol: ?fixWallChunk@VanillaLevelChunkUpgrade@@YAXAEAVLevelChunk@@AEAVBlockSource@@@Z
 MCAPI void fixWallChunk(class LevelChunk& lc, class BlockSource& region);

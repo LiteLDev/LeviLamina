@@ -37,7 +37,7 @@ public:
     MCAPI void sendActorCreationAttemptFailed(class Actor& actor, std::string_view reason);
 
     // symbol: ?sendActorPredictedMove@ActorEventCoordinator@@QEAAXAEAVActor@@W4MovePredictionType@@AEBVVec3@@@Z
-    MCAPI void sendActorPredictedMove(class Actor& actor, ::MovePredictionType, class Vec3 const& pos);
+    MCAPI void sendActorPredictedMove(class Actor& actor, ::MovePredictionType predictionType, class Vec3 const& pos);
 
     // symbol: ?sendActorSneakChanged@ActorEventCoordinator@@QEAAXAEAVActor@@_N@Z
     MCAPI void sendActorSneakChanged(class Actor& actor, bool isSneaking);

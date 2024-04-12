@@ -271,7 +271,7 @@ public:
     MCAPI void disconnect();
 
     // symbol: ?doDeleteContainerManager@ServerPlayer@@QEAAX_N@Z
-    MCAPI void doDeleteContainerManager(bool);
+    MCAPI void doDeleteContainerManager(bool forceDisconnect);
 
     // symbol: ?doInitialSpawn@ServerPlayer@@QEAAXXZ
     MCAPI void doInitialSpawn();
@@ -280,7 +280,7 @@ public:
     MCAPI class ItemStackNetManagerServer& getItemStackNetManagerServer();
 
     // symbol: ?handleActorPickRequestOnServer@ServerPlayer@@QEAAXAEAVActor@@_N1@Z
-    MCAPI void handleActorPickRequestOnServer(class Actor& target, bool withData, bool);
+    MCAPI void handleActorPickRequestOnServer(class Actor& target, bool withData, bool isActorAgentAndEduMode);
 
     // symbol: ?handleBlockPickRequestOnServer@ServerPlayer@@QEAAXAEBVBlockPos@@_N@Z
     MCAPI void handleBlockPickRequestOnServer(class BlockPos const& position, bool withData);

@@ -189,7 +189,10 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?_checkAndDispatchTaskForLevelChunk@ChunkSource@@IEAA_NAEBU?$pair@VChunkPos@@W4ChunkState@@@std@@_N@Z
-    MCAPI bool _checkAndDispatchTaskForLevelChunk(std::pair<class ChunkPos, ::ChunkState> const&, bool areInTask);
+    MCAPI bool _checkAndDispatchTaskForLevelChunk(
+        std::pair<class ChunkPos, ::ChunkState> const& chunkPosAndExpectedState,
+        bool                                           areInTask
+    );
 
     // symbol: ?_checkForReplacementDataTask@ChunkSource@@IEAAXAEAVLevelChunk@@AEAVChunkViewSource@@@Z
     MCAPI void _checkForReplacementDataTask(class LevelChunk& lc, class ChunkViewSource& chunks);

@@ -110,7 +110,7 @@ public:
     getComplexAliasPostSplitBlockNames(class HashedString const&);
 
     // symbol: ?getDefaultBlockState@BlockTypeRegistry@@SAAEBVBlock@@AEBVHashedString@@_N@Z
-    MCAPI static class Block const& getDefaultBlockState(class HashedString const& name, bool);
+    MCAPI static class Block const& getDefaultBlockState(class HashedString const& name, bool logNotFound);
 
     // symbol: ?getDirectAccessBlocks@BlockTypeRegistry@@SAAEBUDirectAccessBlocks@1@XZ
     MCAPI static struct BlockTypeRegistry::DirectAccessBlocks const& getDirectAccessBlocks();
@@ -127,16 +127,16 @@ public:
     // symbol:
     // ?lookupByName@BlockTypeRegistry@@SAPEBVBlock@@AEBVHashedString@@AEBV?$vector@UBlockComplexAliasBlockState@BlockTypeRegistry@@V?$allocator@UBlockComplexAliasBlockState@BlockTypeRegistry@@@std@@@std@@_N@Z
     MCAPI static class Block const* lookupByName(
-        class HashedString const& name,
-        std::vector<struct BlockTypeRegistry::BlockComplexAliasBlockState> const&,
-        bool
+        class HashedString const&                                                 name,
+        std::vector<struct BlockTypeRegistry::BlockComplexAliasBlockState> const& states,
+        bool                                                                      logNotFound
     );
 
     // symbol: ?lookupByName@BlockTypeRegistry@@SAPEBVBlock@@AEBVHashedString@@H_N@Z
-    MCAPI static class Block const* lookupByName(class HashedString const& name, int data, bool);
+    MCAPI static class Block const* lookupByName(class HashedString const& name, int data, bool logNotFound);
 
     // symbol: ?lookupByName@BlockTypeRegistry@@SA?AV?$WeakPtr@VBlockLegacy@@@@AEBVHashedString@@_N@Z
-    MCAPI static class WeakPtr<class BlockLegacy> lookupByName(class HashedString const& name, bool);
+    MCAPI static class WeakPtr<class BlockLegacy> lookupByName(class HashedString const& name, bool logNotFound);
 
     // symbol: ?prepareBlocks@BlockTypeRegistry@@SAXI@Z
     MCAPI static void prepareBlocks(uint latestUpdaterVersion);
@@ -170,8 +170,12 @@ public:
 
     // symbol:
     // ?_lookupByNameImpl@BlockTypeRegistry@@CA?AULookupByNameImplReturnType@1@AEBVHashedString@@HW4LookupByNameImplResolve@1@_N@Z
-    MCAPI static struct BlockTypeRegistry::LookupByNameImplReturnType
-    _lookupByNameImpl(class HashedString const& name, int data, ::BlockTypeRegistry::LookupByNameImplResolve, bool);
+    MCAPI static struct BlockTypeRegistry::LookupByNameImplReturnType _lookupByNameImpl(
+        class HashedString const& name,
+        int                       data,
+        ::BlockTypeRegistry::LookupByNameImplResolve,
+        bool logNotFound
+    );
 
     // NOLINTEND
 

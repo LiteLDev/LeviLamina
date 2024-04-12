@@ -17,7 +17,7 @@ namespace ActorMobilityUtils {
 // symbol:
 // ?canJump@ActorMobilityUtils@@YA_NAEBUActorDataFlagComponent@@AEBVIConstBlockSource@@AEBUStateVectorComponent@@AEBUAABBShapeComponent@@AEBVGetCollisionShapeInterface@@@Z
 MCAPI bool
-canJump(struct ActorDataFlagComponent const&, class IConstBlockSource const& region, struct StateVectorComponent const&, struct AABBShapeComponent const&, class GetCollisionShapeInterface const&);
+canJump(struct ActorDataFlagComponent const& actorData, class IConstBlockSource const& region, struct StateVectorComponent const&, struct AABBShapeComponent const&, class GetCollisionShapeInterface const&);
 
 // symbol:
 // ?endJump@ActorMobilityUtils@@YAXAEBVStrictEntityContext@@AEBUStateVectorComponent@@AEAUActorDataJumpDurationComponent@@AEAUActorDataDirtyFlagsComponent@@AEAUMobJumpComponent@@PEBUVehicleComponent@@V?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UParrotFlag@@@@@@$$CBUPassengerComponent@@@@AEAV?$EntityModifier@V?$FlagComponent@UExitFromPassengerFlag@@@@V?$FlagComponent@UStopRidingRequestFlag@@@@V?$FlagComponent@UMobIsJumpingFlag@@@@@@@Z

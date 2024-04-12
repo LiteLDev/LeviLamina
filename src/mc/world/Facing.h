@@ -69,7 +69,7 @@ public:
     MCAPI static uchar getClockWise(uchar face);
 
     // symbol: ?getClosestRotation@Facing@@SA?AW4Rotation@1@M@Z
-    MCAPI static ::Facing::Rotation getClosestRotation(float);
+    MCAPI static ::Facing::Rotation getClosestRotation(float degree);
 
     // symbol: ?getCounterClockWise@Facing@@SAEE@Z
     MCAPI static uchar getCounterClockWise(uchar face);
@@ -123,7 +123,8 @@ public:
     MCAPI static uchar rotateFace(uchar face, ::Facing::Rotation rot);
 
     // symbol: ?rotateFaceAroundGivenFace@Facing@@SAEEEW4Rotation@1@@Z
-    MCAPI static uchar rotateFaceAroundGivenFace(uchar, uchar, ::Facing::Rotation rotation);
+    MCAPI static uchar
+    rotateFaceAroundGivenFace(uchar faceToRotate, uchar faceToRotateAround, ::Facing::Rotation rotation);
 
     // symbol: ?toString@Facing@@SA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@E@Z
     MCAPI static std::string_view toString(uchar face);

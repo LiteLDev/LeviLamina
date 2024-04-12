@@ -6,11 +6,9 @@ if not has_config("vs_runtime") then
     set_runtimes("MD")
 end
 
-add_requires("asio 1.28.0")
-add_requires("entt v3.12.2")
-add_requires("gsl v4.0.0")
-add_requires("leveldb 1.23")
-add_requires("openssl 1.1.1-t")
+add_requires("entt")
+add_requires("gsl")
+add_requires("leveldb")
 add_requires("rapidjson v1.1.0")
 
 target("bdsheader")
@@ -25,4 +23,4 @@ target("bdsheader")
     add_defines("UNICODE", "WIN32_LEAN_AND_MEAN", "_AMD64_", "NOMINMAX", "_CRT_SECURE_NO_WARNINGS")
     add_shflags("/DELAYLOAD:bedrock_server.dll")
     add_files("test/**.cpp")
-    add_packages("gsl", "entt", "leveldb", "asio", "rapidjson", "openssl")
+    add_packages("gsl", "entt", "leveldb", "rapidjson")

@@ -68,7 +68,7 @@ public:
     MCAPI void rotateFramedItem(class BlockSource&, class Actor&);
 
     // symbol: ?setIgnoreLighting@ItemFrameBlockActor@@QEAAX_N@Z
-    MCAPI void setIgnoreLighting(bool);
+    MCAPI void setIgnoreLighting(bool ignoreLighting);
 
     // symbol: ?setItem@ItemFrameBlockActor@@QEAAXAEAVBlockSource@@AEBVItemInstance@@PEAVActor@@@Z
     MCAPI void setItem(class BlockSource&, class ItemInstance const&, class Actor*);

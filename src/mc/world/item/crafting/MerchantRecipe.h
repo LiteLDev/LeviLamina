@@ -27,7 +27,7 @@ public:
 
     // symbol:
     // ?createTag@MerchantRecipe@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@_N@Z
-    MCAPI std::unique_ptr<class CompoundTag> createTag(bool) const;
+    MCAPI std::unique_ptr<class CompoundTag> createTag(bool includeNetInfo) const;
 
     // symbol: ?getBaseCountA@MerchantRecipe@@QEBAHXZ
     MCAPI int getBaseCountA() const;
@@ -78,7 +78,7 @@ public:
     MCAPI bool isSame(class MerchantRecipe const& lhs) const;
 
     // symbol: ?legacyCalculateDemandPrices@MerchantRecipe@@QEAAXHH@Z
-    MCAPI void legacyCalculateDemandPrices(int, int);
+    MCAPI void legacyCalculateDemandPrices(int lowTierDiscount, int highTierDiscount);
 
     // symbol: ?load@MerchantRecipe@@QEAAXPEBVCompoundTag@@@Z
     MCAPI void load(class CompoundTag const* tag);

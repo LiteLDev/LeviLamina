@@ -94,7 +94,7 @@ public:
 
     // symbol:
     // ?connect@AutomationSession@Automation@@QEAA?AW4WSConnectionResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@5@@Z
-    MCAPI ::WSConnectionResult connect(std::string const& serverUri, std::vector<std::string> const&);
+    MCAPI ::WSConnectionResult connect(std::string const& serverUri, std::vector<std::string> const& subProtocols);
 
     // symbol:
     // ?dhKeyExchange@AutomationSession@Automation@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00W4EncryptionCipherMode@CodeBuilder@@AEAV34@@Z
@@ -138,7 +138,7 @@ public:
 
     // symbol:
     // ?_handleOnConnected@AutomationSession@Automation@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void _handleOnConnected(std::string const&);
+    MCAPI void _handleOnConnected(std::string const& activeSubProtocol);
 
     // symbol:
     // ?_send@AutomationSession@Automation@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

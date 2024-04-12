@@ -38,7 +38,7 @@ public:
     MCAPI SetSpawnPositionPacket();
 
     // symbol: ??0SetSpawnPositionPacket@@QEAA@V?$AutomaticID@VDimension@@H@@AEBVBlockPos@@1@Z
-    MCAPI SetSpawnPositionPacket(DimensionType dimension, class BlockPos const&, class BlockPos const&);
+    MCAPI SetSpawnPositionPacket(DimensionType dimension, class BlockPos const& playerPosition, class BlockPos const&);
 
     // symbol: ??0SetSpawnPositionPacket@@QEAA@W4SpawnPositionType@@V?$AutomaticID@VDimension@@H@@AEBVBlockPos@@@Z
     MCAPI SetSpawnPositionPacket(::SpawnPositionType spawnPosType, DimensionType dimension, class BlockPos const& pos);

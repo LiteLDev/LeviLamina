@@ -20,7 +20,7 @@ public:
     MCAPI void initSchema();
 
     // symbol: ?initializeFactory@ActorEventResponseFactory@@QEAAXAEBVExperiments@@@Z
-    MCAPI void initializeFactory(class Experiments const&);
+    MCAPI void initializeFactory(class Experiments const& experiments);
 
     // NOLINTEND
 };

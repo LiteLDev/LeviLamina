@@ -13,7 +13,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?createSaveID@DimensionDataSerializer@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@0@Z
-    MCAPI std::string createSaveID(std::string const&, std::string const&);
+    MCAPI std::string createSaveID(std::string const&, std::string const& dimensionPrefix);
 
     // symbol:
     // ?deleteDataWithID@DimensionDataSerializer@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVLevelStorage@@@Z
@@ -23,7 +23,7 @@ public:
     // ?forEachKeyWithDimensionPrefix@DimensionDataSerializer@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEAVLevelStorage@@AEBV?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCompoundTag@@@Z@3@@Z
     MCAPI void forEachKeyWithDimensionPrefix(
         std::string const&,
-        std::string const&,
+        std::string const&                                                       dimensionPrefix,
         class LevelStorage&                                                      levelStorage,
         std::function<void(std::string const&, class CompoundTag const&)> const& callback
     );
@@ -38,7 +38,8 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_createLevelStorageID@DimensionDataSerializer@@IEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@00@Z
-    MCAPI std::string _createLevelStorageID(std::string const&, std::string const&, std::string const&);
+    MCAPI std::string
+          _createLevelStorageID(std::string const&, std::string const& dimensionPrefix, std::string const& saveId);
 
     // NOLINTEND
 };

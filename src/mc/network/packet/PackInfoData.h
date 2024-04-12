@@ -26,7 +26,7 @@ public:
         std::string const&           subpackName,
         class ContentIdentity const& contentIdentity,
         bool                         hasScripts,
-        bool
+        bool                         isRayTracingCapable
     );
 
     // symbol: ??1PackInfoData@@QEAA@XZ

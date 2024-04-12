@@ -54,7 +54,7 @@ public:
     MCAPI void removeStorageArea(class Core::FileStorageArea& storageArea);
 
     // symbol: ?teardown@StorageAreasTree@Core@@QEAAX$$QEAV?$function@$$A6AXAEAVFileStorageArea@Core@@@Z@std@@@Z
-    MCAPI void teardown(std::function<void(class Core::FileStorageArea&)>&&);
+    MCAPI void teardown(std::function<void(class Core::FileStorageArea&)>&& teardownCallback);
 
     // NOLINTEND
 };
