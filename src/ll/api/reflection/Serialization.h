@@ -14,8 +14,7 @@ inline J serialize(T const&);
 
 template <class J, concepts::Associative T>
 inline J serialize(T const&)
-    requires((concepts::IsString<typename T::key_type> || std::is_enum_v<typename T::key_type>) && !std::convertible_to<T, J>)
-;
+    requires(!std::convertible_to<T, J>);
 
 template <class J, concepts::TupleLike T>
 inline J serialize(T const&)
@@ -74,8 +73,12 @@ inline J serialize(T const& e) {
 
 template <class J, concepts::Associative T>
 inline J serialize(T const& map)
-    requires((concepts::IsString<typename T::key_type> || std::is_enum_v<typename T::key_type>) && !std::convertible_to<T, J>)
+    requires(!std::convertible_to<T, J>)
 {
+    static_assert(
+        (concepts::IsString<typename T::key_type> || std::is_enum_v<typename T::key_type>),
+        "the key type of the associative container must be convertible to a string"
+    );
     J res;
     for (auto& [k, v] : map) {
         if constexpr (std::is_enum_v<typename T::key_type>) {
