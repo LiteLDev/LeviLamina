@@ -124,10 +124,10 @@ bool Player::addAndRefresh(class ItemStack& item) {
 
 
 optional_ref<EnderChestContainer> Player::getEnderChestContainer() {
-    return ll::memory::dAccess<EnderChestContainer*>(this, 3304);
+    return ll::memory::dAccess<EnderChestContainer*>(this, 3248);
     // ida: Player::Player : EnderChestContainer::EnderChestContainer
 }
 
 optional_ref<EnderChestContainer const> Player::getEnderChestContainer() const {
-    return ll::memory::dAccess<EnderChestContainer*>(this, 3304);
+    return ll::memory::dAccess<EnderChestContainer*>(this, 3248);
 }
