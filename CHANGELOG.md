@@ -7,6 +7,45 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.11.0] - 2024-04-13
+
+### Added
+
+- Add ll::concepts::is_in_types
+- Add ItemLockMode struct
+- Add peers structure
+- Add event::getId
+- Add CompoundTagVariant::emplace
+- Rewrite snbt to add error message
+- Add param names from 1.16.201
+
+### Changed
+
+- Refactoring HookRegistrar
+- A more standard way of naming member variables has been adopted
+- Refactoring forEachPos
+- Update enum ContainerEnumName (#1503)
+- Update enum ContainerType (#1504)
+- Refactoring multilistener
+- Refactoring TickSyncTaskPool
+- Update ActorDataIDs
+- Refactoring printDependencyError
+- Refactoring bedrock service
+- Add static_assert message in serialize associative container
+- Refactoring MemoryAllocator
+- Remove to_underlying in DataItem
+
+### Fixed
+
+- Fix LoopbackPacketSender member
+- Fix the member order of PlayerAuthInputPacket
+- Fix RakNetNetworkPeer
+- Fix Bedrock::Threading namespace
+- Fix PlayerActionType enum
+- Fix wrong packet send logic
+- Move PlayerInfoEntry to public
+- Fix StructureTemplate::create
+
 ## [0.10.5] - 2024-04-01
 
 ### Fixed
@@ -418,7 +457,8 @@ For lip and tooth-hub test only.
 [#1499]: https://github.com/LiteLDev/LeviLamina/issues/1499
 [#1502]: https://github.com/LiteLDev/LeviLamina/issues/1502
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.5...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.11.0...HEAD
+[0.11.0]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.5...v0.11.0
 [0.10.5]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.4...v0.10.5
 [0.10.4]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.2...v0.10.4
 [0.10.2]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.1...v0.10.2
