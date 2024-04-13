@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.11.1] - 2024-04-13
+
+### Fixed
+
+- Fix getEnderChestContainer
+- Add missing export for ServiceManager::getInstance (#1506)
+
 ## [0.11.0] - 2024-04-13
 
 ### Added
@@ -457,7 +464,8 @@ For lip and tooth-hub test only.
 [#1499]: https://github.com/LiteLDev/LeviLamina/issues/1499
 [#1502]: https://github.com/LiteLDev/LeviLamina/issues/1502
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.11.0...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.11.1...HEAD
+[0.11.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.11.0...v0.11.1
 [0.11.0]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.5...v0.11.0
 [0.10.5]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.4...v0.10.5
 [0.10.4]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.2...v0.10.4
