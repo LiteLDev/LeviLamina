@@ -53,9 +53,9 @@ bool Player::isOperator() const { return getPlayerPermissionLevel() == PlayerPer
 
 std::string Player::getLocaleName() const {
     if (auto request = getConnectionRequest()) {
-        return request->mRawToken->mDataInfo["LanguageCode"].asString("");
+        return request->mRawToken->mDataInfo["LanguageCode"].asString({});
     }
-    return "";
+    return {};
 }
 
 std::optional<NetworkPeer::NetworkStatus> Player::getNetworkStatus() const {
@@ -124,10 +124,10 @@ bool Player::addAndRefresh(class ItemStack& item) {
 
 
 optional_ref<EnderChestContainer> Player::getEnderChestContainer() {
-    return ll::memory::dAccess<EnderChestContainer*>(this, 3248);
+    return ll::memory::dAccess<EnderChestContainer*>(this, sizeof(Actor) + 2072);
     // ida: Player::Player : EnderChestContainer::EnderChestContainer
 }
 
 optional_ref<EnderChestContainer const> Player::getEnderChestContainer() const {
-    return ll::memory::dAccess<EnderChestContainer*>(this, 3248);
+    return const_cast<Player*>(this)->getEnderChestContainer();
 }

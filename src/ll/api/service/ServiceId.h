@@ -40,7 +40,7 @@ public:
     }
 };
 
-constexpr ServiceId EmptyServiceId{"", 0};
+constexpr ServiceId EmptyServiceId{{}, 0};
 
 template <class T>
 constexpr ServiceId getServiceId = []() -> ServiceId {

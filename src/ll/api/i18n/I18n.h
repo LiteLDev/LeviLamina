@@ -45,11 +45,11 @@ public:
      * @brief Get the translation of the specified key.
      *
      * @param  key          The language key
-     * @param  localeName   The language code like en_US,zh_CN("" => this->mDefaultLocaleName)
+     * @param  localeName   The language code like en_US,zh_CN({} => this->mDefaultLocaleName)
      * @return std::string  The translation
      * @see    I18N::mDefaultLocaleName
      */
-    LLNDAPI std::string_view get(std::string_view key, std::string_view localeName = "");
+    LLNDAPI std::string_view get(std::string_view key, std::string_view localeName = {});
 
     /**
      * @brief Get the type of the i18n object.
@@ -77,7 +77,7 @@ public:
      */
     explicit SingleFileI18N(
         std::filesystem::path const& filePath,
-        std::string                  defaultLocaleName = "",
+        std::string                  defaultLocaleName = {},
         LangData                     defaultLangData   = {}
     ) {
         this->mDefaultLangData   = std::move(defaultLangData);
@@ -109,7 +109,7 @@ public:
      */
     explicit MultiFileI18N(
         std::filesystem::path const& dirPath,
-        std::string                  defaultLocaleName = "",
+        std::string                  defaultLocaleName = {},
         LangData                     defaultLangData   = {}
     ) {
         this->mDefaultLangData   = std::move(defaultLangData);

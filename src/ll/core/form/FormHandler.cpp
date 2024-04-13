@@ -39,7 +39,7 @@ nlohmann::ordered_json jsonCppValueToNlohmannOrderedJson(const Json::Value& valu
         }
         return result;
     } else if (value.isString()) {
-        return value.asString("");
+        return value.asString({});
     } else if (value.isBool()) {
         return value.asBool(false);
     } else if (value.isIntegral()) {
@@ -90,11 +90,11 @@ void CustomFormHandler::handle(
     nlohmann::ordered_json dataJson = jsonCppValueToNlohmannOrderedJson(data.value());
 
     if (!dataJson.is_array()) {
-        ll::logger.error("Failed to parse CustomForm result: not an array");
+        logger.error("Failed to parse CustomForm result: not an array");
         return;
     }
     if (dataJson.size() != mFormElements.size()) {
-        ll::logger.error("Failed to parse CustomForm result: size mismatch");
+        logger.error("Failed to parse CustomForm result: size mismatch");
         return;
     }
 

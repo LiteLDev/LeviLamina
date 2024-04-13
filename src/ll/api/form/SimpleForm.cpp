@@ -65,7 +65,7 @@ public:
 
     SimpleFormImpl() = default;
 
-    explicit SimpleFormImpl(std::string title, std::string content = "")
+    explicit SimpleFormImpl(std::string title, std::string content = {})
     : mTitle(std::move(title)),
       mContent(std::move(content)) {}
 
