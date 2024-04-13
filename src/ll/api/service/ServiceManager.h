@@ -37,7 +37,7 @@ struct QueryServiceResult {
 
 class ServiceManager {
 public:
-    static ServiceManager& getInstance();
+    LLNDAPI static ServiceManager& getInstance();
 
     template <IsService T>
     event::ListenerPtr subscribeService(std::function<void(std::shared_ptr<T> const&)> const& fn) {
