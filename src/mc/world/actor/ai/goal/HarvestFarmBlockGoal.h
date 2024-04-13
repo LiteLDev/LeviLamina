@@ -48,7 +48,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?trySowCrop@HarvestFarmBlockGoal@@IEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI bool trySowCrop(class BlockSource& region, class BlockPos const&);
+    MCAPI bool trySowCrop(class BlockSource& region, class BlockPos const& farmlandPos);
 
     // NOLINTEND
 };

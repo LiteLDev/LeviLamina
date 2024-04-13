@@ -17,7 +17,7 @@ MCAPI std::set<std::string> _pruneDictionary(std::map<std::string, uint64>&);
 
 // symbol:
 // ?_tryCompressToken@DictionaryCompressionUtil@@YAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$set@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@VBinaryStream@@@Z
-MCAPI void _tryCompressToken(std::string const& token, std::set<std::string>&, class BinaryStream stream);
+MCAPI void _tryCompressToken(std::string const& token, std::set<std::string>& dictionary, class BinaryStream stream);
 
 // symbol:
 // ?dictionaryCompressString@DictionaryCompressionUtil@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z

@@ -88,7 +88,7 @@ public:
     MCAPI static void applyEffect(class ThrownPotion* potion, class ItemStack const& slotItem);
 
     // symbol: ?isDestructivePotion@PotionItem@@SA_NW4PotionVariant@Potion@@@Z
-    MCAPI static bool isDestructivePotion(::Potion::PotionVariant);
+    MCAPI static bool isDestructivePotion(::Potion::PotionVariant potionVariant);
 
     // NOLINTEND
 

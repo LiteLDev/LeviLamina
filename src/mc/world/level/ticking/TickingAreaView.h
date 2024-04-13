@@ -40,7 +40,7 @@ public:
     virtual bool isDoneLoading() const;
 
     // vIndex: 8, symbol: ?checkInitialLoadDone@TickingAreaView@@UEAA_NUTick@@@Z
-    virtual bool checkInitialLoadDone(struct Tick);
+    virtual bool checkInitialLoadDone(struct Tick currentLevelTick);
 
     // vIndex: 9, symbol: ?checkLoadedChunkNeighborsDone@TickingAreaView@@UEBA_NAEBVBlockSource@@_N@Z
     virtual bool checkLoadedChunkNeighborsDone(class BlockSource const& region, bool) const;

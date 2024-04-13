@@ -15,7 +15,7 @@ MCAPI void searchActors(
     float       tMax,
     Vec3 const& origin,
     AABB const& srcAabb,
-    Actor*      cameraActor,
+    Actor*      cameraEntity,
     Player*     player,
     float&      resultDist,
     Actor*&     resultActor,

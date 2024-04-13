@@ -116,18 +116,27 @@ public:
 
     // symbol:
     // ?_assertClassMemberSymbolDoesntExist@ModuleBindingBuilder@Scripting@@CA_NAEBUClassBinding@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUTaggedBinding@2@@Z
-    MCAPI static bool
-    _assertClassMemberSymbolDoesntExist(struct Scripting::ClassBinding const&, std::string const& name, struct Scripting::TaggedBinding const&);
+    MCAPI static bool _assertClassMemberSymbolDoesntExist(
+        struct Scripting::ClassBinding const&,
+        std::string const&                     name,
+        struct Scripting::TaggedBinding const& binding
+    );
 
     // symbol:
     // ?_assertEnumMemberSymbolDoesntExist@ModuleBindingBuilder@Scripting@@CA_NAEBUEnumBinding@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUTaggedBinding@2@@Z
-    MCAPI static bool
-    _assertEnumMemberSymbolDoesntExist(struct Scripting::EnumBinding const&, std::string const& name, struct Scripting::TaggedBinding const&);
+    MCAPI static bool _assertEnumMemberSymbolDoesntExist(
+        struct Scripting::EnumBinding const&,
+        std::string const&                     name,
+        struct Scripting::TaggedBinding const& binding
+    );
 
     // symbol:
     // ?_assertModuleMemberSymbolDoesntExist@ModuleBindingBuilder@Scripting@@CA_NAEBUModuleBinding@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUTaggedBinding@2@@Z
-    MCAPI static bool
-    _assertModuleMemberSymbolDoesntExist(struct Scripting::ModuleBinding const&, std::string const& name, struct Scripting::TaggedBinding const&);
+    MCAPI static bool _assertModuleMemberSymbolDoesntExist(
+        struct Scripting::ModuleBinding const&,
+        std::string const&                     name,
+        struct Scripting::TaggedBinding const& binding
+    );
 
     // symbol: ?_validateClassConstructors@ModuleBindingBuilder@Scripting@@CAXAEBUModuleBinding@2@@Z
     MCAPI static void _validateClassConstructors(struct Scripting::ModuleBinding const&);

@@ -115,7 +115,7 @@ public:
     virtual bool isSaveToCloudOn() const;
 
     // vIndex: 30, symbol: ?setCanAccessWorldCallback@AppConfigs@@UEAAXAEAVIMinecraftGame@@@Z
-    virtual void setCanAccessWorldCallback(class IMinecraftGame&);
+    virtual void setCanAccessWorldCallback(class IMinecraftGame& minecraftGame);
 
     // vIndex: 31, symbol:
     // ?getAdditionalClientPacks@AppConfigs@@UEBA?AV?$vector@UPackIdVersion@@V?$allocator@UPackIdVersion@@@std@@@std@@_N@Z

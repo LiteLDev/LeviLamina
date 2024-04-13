@@ -55,8 +55,8 @@ public:
     // symbol:
     // ?tryPlaySound@SoundEventRequest@@SA?AV?$optional@USoundEventRequest@@@std@@V?$AutomaticID@VDimension@@H@@AEBUActorDataFlagComponent@@AEBUActorDefinitionIdentifier@@W4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@H@Z
     MCAPI static std::optional<struct SoundEventRequest> tryPlaySound(
-        DimensionType dimension,
-        struct ActorDataFlagComponent const&,
+        DimensionType                           dimension,
+        struct ActorDataFlagComponent const&    actorData,
         struct ActorDefinitionIdentifier const& id,
         ::Puv::Legacy::LevelSoundEvent          type,
         class Vec3 const&                       pos,

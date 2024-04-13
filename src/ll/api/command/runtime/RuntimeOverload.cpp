@@ -10,8 +10,8 @@ static_assert(ParamKindList::size == ParamKind::Count);
 static_assert(ParamKindList::all<std::is_default_constructible>);
 
 struct RuntimeOverload::Impl {
-    std::optional<memory::FunctionalClosure<std::unique_ptr<::Command>>>                    factoryClosure{};
-    std::vector<std::pair<std::string, ParamKindType>>                                      params;
+    std::optional<memory::FunctionalClosure<std::unique_ptr<::Command>>> factoryClosure{}; // for delay emplace
+    std::vector<std::pair<std::string, ParamKindType>>                   params;
     std::unordered_set<std::string, ::ll::detail::transparent_string_hash, std::equal_to<>> storedStr;
 };
 
@@ -22,30 +22,28 @@ RuntimeOverload::~RuntimeOverload()                 = default;
 
 char const* RuntimeOverload::storeStr(std::string_view str) {
     std::lock_guard l{lock()};
-    if (!impl->storedStr.contains(str)) {
-        impl->storedStr.emplace(str);
+    if (auto iter = impl->storedStr.find(str); iter != impl->storedStr.end()) {
+        return iter->c_str();
+    } else {
+        return impl->storedStr.emplace(str).first->c_str();
     }
-    return impl->storedStr.find(str)->c_str();
 }
 
 void RuntimeOverload::addParam(std::string_view name, ParamKindType kind, CommandParameterDataType type) {
     int offset = (int)(sizeof(RuntimeCommand) + impl->params.size() * sizeof(ParamStorageType));
-    meta::visitIndex<ParamKind::Count>(
-        [&]<size_t N> {
-            using ParamType = ParamKindList::get<N>;
-            addParamImpl(
-                Bedrock::type_id<CommandRegistry, ParamType>(),
-                &CommandRegistry::parse<ParamType>,
-                name,
-                type,
-                nullptr,
-                offset,
-                offset + OptionalOffsetGetter<ParamStorageType::value_type>::value,
-                true
-            );
-        },
-        kind
-    );
+    meta::visitIndex<ParamKind::Count>(kind, [&]<size_t N> {
+        using ParamType = ParamKindList::get<N>;
+        addParamImpl(
+            Bedrock::type_id<CommandRegistry, ParamType>(),
+            &CommandRegistry::parse<ParamType>,
+            name,
+            type,
+            nullptr,
+            offset,
+            offset + OptionalOffsetGetter<ParamStorageType::value_type>::value,
+            true
+        );
+    });
     impl->params.emplace_back(name, kind);
 }
 RuntimeOverload& RuntimeOverload::optional(std::string_view name, ParamKindType kind) {

@@ -56,13 +56,22 @@ MCAPI void applyLambdaToDescriptionObject(
 
 // symbol:
 // ?legacyFindIfMissingFieldAndRemoveComponent@Block@RapidJsonDataFixers@@YAXV?$GenericMemberIterator@$0A@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@@rapidjson@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
-MCAPI void
-legacyFindIfMissingFieldAndRemoveComponent(rapidjson::GenericMemberIterator<0, rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>>, std::string const& componentName, std::string const&);
+MCAPI void legacyFindIfMissingFieldAndRemoveComponent(
+    rapidjson::GenericMemberIterator<0, rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>>,
+    std::string const& componentName,
+    std::string const& fieldName
+);
 
 // symbol:
 // ?legacyRemoveComponentIfMissingField@Block@RapidJsonDataFixers@@YAXAEAV?$GenericDocument@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@VCrtAllocator@2@@rapidjson@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
-MCAPI void
-legacyRemoveComponentIfMissingField(rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& document, std::string const& componentName, std::string const&);
+MCAPI void legacyRemoveComponentIfMissingField(
+    rapidjson::GenericDocument<
+        rapidjson::UTF8<char>,
+        rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>,
+        rapidjson::CrtAllocator>& document,
+    std::string const&            componentName,
+    std::string const&            fieldName
+);
 
 // symbol:
 // ?removeComponent@Block@RapidJsonDataFixers@@YAXAEAV?$GenericDocument@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@VCrtAllocator@2@@rapidjson@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N1@Z
@@ -78,8 +87,14 @@ MCAPI void removeComponent(
 
 // symbol:
 // ?removeComponentField@Block@RapidJsonDataFixers@@YAXAEAV?$GenericDocument@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@VCrtAllocator@2@@rapidjson@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
-MCAPI void
-removeComponentField(rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& document, std::string const& componentName, std::string const&);
+MCAPI void removeComponentField(
+    rapidjson::GenericDocument<
+        rapidjson::UTF8<char>,
+        rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>,
+        rapidjson::CrtAllocator>& document,
+    std::string const&            componentName,
+    std::string const&            fieldName
+);
 
 // symbol:
 // ?removeDuplicateComponents@Block@RapidJsonDataFixers@@YAXAEAV?$GenericDocument@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@VCrtAllocator@2@@rapidjson@@@Z
@@ -107,8 +122,14 @@ renameComponentField(rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson
 
 // symbol:
 // ?replaceComponentObjectWithFieldValue@Block@RapidJsonDataFixers@@YAXAEAV?$GenericDocument@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@VCrtAllocator@2@@rapidjson@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
-MCAPI void
-replaceComponentObjectWithFieldValue(rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>& document, std::string const& componentName, std::string const&);
+MCAPI void replaceComponentObjectWithFieldValue(
+    rapidjson::GenericDocument<
+        rapidjson::UTF8<char>,
+        rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>,
+        rapidjson::CrtAllocator>& document,
+    std::string const&            componentName,
+    std::string const&            fieldName
+);
 // NOLINTEND
 
 }; // namespace RapidJsonDataFixers::Block

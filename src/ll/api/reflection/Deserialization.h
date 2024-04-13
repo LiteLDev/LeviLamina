@@ -21,8 +21,7 @@ inline void deserialize(T&, J const&)
     );
 
 template <class J, concepts::Associative T>
-inline void deserialize(T&, J const&)
-    requires(concepts::IsString<typename T::key_type> || std::is_enum_v<typename T::key_type>);
+inline void deserialize(T&, J const&);
 
 template <class J, concepts::TupleLike T>
 inline void deserialize(T&, J const&);
@@ -103,9 +102,11 @@ inline void deserialize(T& obj, J const& j)
 }
 
 template <class J, concepts::Associative T>
-inline void deserialize(T& map, J const& j)
-    requires(concepts::IsString<typename T::key_type> || std::is_enum_v<typename T::key_type>)
-{
+inline void deserialize(T& map, J const& j) {
+    static_assert(
+        (concepts::IsString<typename T::key_type> || std::is_enum_v<typename T::key_type>),
+        "the key type of the associative container must be convertible to a string"
+    );
     if (!j.is_object()) throw std::runtime_error("field must be an object");
     map.clear();
     for (auto& [k, v] : j.items()) {

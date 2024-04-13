@@ -48,7 +48,7 @@ public:
     // symbol:
     // ?setHeaders@ScriptNetRequest@ScriptModuleMinecraftNet@@QEAA?AV?$StrongTypedObjectHandle@UScriptNetRequest@ScriptModuleMinecraftNet@@@Scripting@@AEBV?$vector@UScriptNetHeader@ScriptModuleMinecraftNet@@V?$allocator@UScriptNetHeader@ScriptModuleMinecraftNet@@@std@@@std@@@Z
     MCAPI class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraftNet::ScriptNetRequest>
-    setHeaders(std::vector<struct ScriptModuleMinecraftNet::ScriptNetHeader> const&);
+    setHeaders(std::vector<struct ScriptModuleMinecraftNet::ScriptNetHeader> const& headers);
 
     // symbol:
     // ?setMethod@ScriptNetRequest@ScriptModuleMinecraftNet@@QEAA?AV?$StrongTypedObjectHandle@UScriptNetRequest@ScriptModuleMinecraftNet@@@Scripting@@VMethod@Http@Bedrock@@@Z

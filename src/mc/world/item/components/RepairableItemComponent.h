@@ -51,7 +51,7 @@ public:
     virtual void _initializeComponent();
 
     // symbol: ?handleItemRepair@RepairableItemComponent@@QEBA?AURepairItemResult@@AEAVItemStack@@0_N@Z
-    MCAPI struct RepairItemResult handleItemRepair(class ItemStack&, class ItemStack&, bool) const;
+    MCAPI struct RepairItemResult handleItemRepair(class ItemStack&, class ItemStack& materialItem, bool) const;
 
     // symbol: ?isValidRepairItem@RepairableItemComponent@@QEBA_NAEBVItemStackBase@@@Z
     MCAPI bool isValidRepairItem(class ItemStackBase const& repairItem) const;
@@ -81,7 +81,11 @@ public:
     MCAPI struct RepairItemEntry const* _getRepairItemEntry(class ItemStackBase const& item) const;
 
     // symbol: ?_repairItem@RepairableItemComponent@@AEBAHAEAVItemStackBase@@0VExpressionNode@@@Z
-    MCAPI int _repairItem(class ItemStackBase&, class ItemStackBase& resultItem, class ExpressionNode) const;
+    MCAPI int _repairItem(
+        class ItemStackBase& materialItem,
+        class ItemStackBase& resultItem,
+        class ExpressionNode repairAmountExpression
+    ) const;
 
     // NOLINTEND
 };

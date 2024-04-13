@@ -20,7 +20,10 @@ public:
 
     // symbol:
     // ??0ReplayStateComponent@@QEAA@V?$unique_ptr@VActorHistory@@U?$default_delete@VActorHistory@@@std@@@std@@V?$unique_ptr@UIReplayStatePolicy@@U?$default_delete@UIReplayStatePolicy@@@std@@@2@@Z
-    MCAPI ReplayStateComponent(std::unique_ptr<class ActorHistory>, std::unique_ptr<struct IReplayStatePolicy> policy);
+    MCAPI ReplayStateComponent(
+        std::unique_ptr<class ActorHistory>        history,
+        std::unique_ptr<struct IReplayStatePolicy> policy
+    );
 
     // symbol: ?addInputToFrontOfCurrentFrame@ReplayStateComponent@@QEBAXV?$shared_ptr@UIReplayableActorInput@@@std@@@Z
     MCAPI void addInputToFrontOfCurrentFrame(std::shared_ptr<struct IReplayableActorInput>) const;

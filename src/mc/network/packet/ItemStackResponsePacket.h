@@ -40,7 +40,7 @@ public:
 
     // symbol:
     // ??0ItemStackResponsePacket@@QEAA@$$QEAV?$vector@UItemStackResponseInfo@@V?$allocator@UItemStackResponseInfo@@@std@@@std@@@Z
-    MCAPI explicit ItemStackResponsePacket(std::vector<struct ItemStackResponseInfo>&&);
+    MCAPI explicit ItemStackResponsePacket(std::vector<struct ItemStackResponseInfo>&& responses);
 
     // symbol:
     // ?getResponses@ItemStackResponsePacket@@QEBAAEBV?$vector@UItemStackResponseInfo@@V?$allocator@UItemStackResponseInfo@@@std@@@std@@XZ

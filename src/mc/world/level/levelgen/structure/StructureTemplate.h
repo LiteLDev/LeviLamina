@@ -17,10 +17,11 @@ class BlockPos;
 
 class StructureTemplate {
 public:
-    std::string                                         mName;                  // this+0x0
-    StructureTemplateData                               mStructureTemplateData; // this+0x20
-    uchar                                               mStructureVersion;      // this+0xD0
-    Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry> mUnknownBlockRegistry;
+    std::string                                         mName;                  // this+0x8
+    StructureTemplateData                               mStructureTemplateData; // this+0x28
+    uchar                                               mStructureVersion;      // this+0xD8
+    Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry> mUnknownBlockRegistry;  // this+0xE0
+    uchar                                               mUnknown;
 
     inline bool load(class CompoundTag const& nbt) { return mStructureTemplateData.load(nbt); }
 
@@ -94,7 +95,7 @@ public:
 
     // symbol: ?getTransformedBounds@StructureTemplate@@QEBA?AVBoundingBox@@VBlockPos@@AEBVStructureSettings@@@Z
     MCAPI class BoundingBox
-    getTransformedBounds(class BlockPos, class StructureSettings const& structureSettings) const;
+    getTransformedBounds(class BlockPos loadPosition, class StructureSettings const& structureSettings) const;
 
     // symbol: ?isLoaded@StructureTemplate@@QEBA_NXZ
     MCAPI bool isLoaded() const;
@@ -111,8 +112,10 @@ public:
     ) const;
 
     // symbol: ?placeNextSegmentInWorld@StructureTemplate@@QEBAXAEAVStructureAnimationData@@AEBVBlockPalette@@@Z
-    MCAPI void
-    placeNextSegmentInWorld(class StructureAnimationData&, class BlockPalette const& globalBlockPalette) const;
+    MCAPI void placeNextSegmentInWorld(
+        class StructureAnimationData& structureAnimationData,
+        class BlockPalette const&     globalBlockPalette
+    ) const;
 
     // symbol: ?save@StructureTemplate@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
     MCAPI std::unique_ptr<class CompoundTag> save() const;

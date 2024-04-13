@@ -45,14 +45,7 @@ CommandHandle& OverloadData::getHandle() {
 
 std::lock_guard<std::recursive_mutex> OverloadData::lock() { return std::lock_guard{impl->mutex}; }
 
-CommandParameterData& OverloadData::back() {
-    std::lock_guard lock{impl->mutex};
-    if (!impl->params.empty()) {
-        return impl->params.back();
-    } else {
-        throw std::runtime_error("empty overload");
-    }
-}
+CommandParameterData& OverloadData::back() { return impl->params.back(); }
 
 CommandParameterData& OverloadData::addParamImpl(
     Bedrock::typeid_t<CommandRegistry> id,

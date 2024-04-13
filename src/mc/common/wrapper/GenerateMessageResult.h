@@ -5,8 +5,8 @@
 
 struct GenerateMessageResult {
 public:
-    std::string string;
-    bool        unk;
+    std::string mString; // this+0x0
+    bool        mUnknow; // this+0x20
 
     // prevent constructor by default
     GenerateMessageResult& operator=(GenerateMessageResult const&);

@@ -82,7 +82,7 @@ public:
 
     // symbol:
     // ??0BlockDescriptor@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV?$vector@UState@BlockDescriptor@@V?$allocator@UState@BlockDescriptor@@@std@@@2@@Z
-    MCAPI BlockDescriptor(std::string const& name, std::vector<struct BlockDescriptor::State>&&);
+    MCAPI BlockDescriptor(std::string const& name, std::vector<struct BlockDescriptor::State>&& states);
 
     // symbol: ?getBlockOrUnknownBlock@BlockDescriptor@@QEBAAEBVBlock@@XZ
     MCAPI class Block const& getBlockOrUnknownBlock() const;
@@ -137,11 +137,14 @@ public:
 
     // symbol:
     // ?anyMatch@BlockDescriptor@@SA_NAEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@AEBVBlock@@@Z
-    MCAPI static bool anyMatch(std::vector<class BlockDescriptor> const&, class Block const& block);
+    MCAPI static bool anyMatch(std::vector<class BlockDescriptor> const& blockDescriptors, class Block const& block);
 
     // symbol:
     // ?anyMatch@BlockDescriptor@@SA_NAEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@AEBV1@@Z
-    MCAPI static bool anyMatch(std::vector<class BlockDescriptor> const&, class BlockDescriptor const&);
+    MCAPI static bool anyMatch(
+        std::vector<class BlockDescriptor> const& blockDescriptors,
+        class BlockDescriptor const&              otherBlockDescriptor
+    );
 
     // symbol: ?bindType@BlockDescriptor@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
@@ -151,7 +154,8 @@ public:
 
     // symbol:
     // ?fromTagExpression@BlockDescriptor@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4MolangVersion@@@Z
-    MCAPI static class BlockDescriptor fromTagExpression(std::string const&, ::MolangVersion molangVersion);
+    MCAPI static class BlockDescriptor
+    fromTagExpression(std::string const& tagExpression, ::MolangVersion molangVersion);
 
     // symbol: ?JSON_NAME_FIELD@BlockDescriptor@@2QBDB
     MCAPI static char const JSON_NAME_FIELD[];

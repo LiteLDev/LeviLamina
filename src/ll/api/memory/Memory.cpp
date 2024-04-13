@@ -56,7 +56,7 @@ FuncPtr resolveSignature(std::string_view signature) {
         } else if (c == '?') {
             pattern.emplace_back(std::nullopt);
         } else if (isxdigit(c) && (++i < signature.size() && isxdigit(signature[i]))) {
-            pattern.emplace_back(string_utils::svtouc(signature.substr(i - 1, 2), nullptr, 16));
+            pattern.emplace_back(string_utils::svtouc(signature.substr(i - 1, 2), nullptr, 16).value());
         } else {
             return nullptr;
         }

@@ -20,8 +20,14 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?writeFrameToStream@RakWebSocketDataFrame@@SAXAEAVBitStream@RakNet@@PEBEIW4OpCode@@_NI@Z
-    MCAPI static void
-    writeFrameToStream(class RakNet::BitStream& stream, uchar const* payload, uint size, ::OpCode opCode, bool, uint);
+    MCAPI static void writeFrameToStream(
+        class RakNet::BitStream& stream,
+        uchar const*             payload,
+        uint                     size,
+        ::OpCode                 opCode,
+        bool                     isFin,
+        uint                     maskKey
+    );
 
     // NOLINTEND
 };

@@ -8,7 +8,9 @@
 #include "mc/world/Minecraft.h"
 #include "mc/world/level/dimension/Dimension.h"
 
-void Packet::sendTo(Player const& player) { player.sendNetworkPacket(*this); }
+void Packet::sendTo(Player const& player) const {
+    sendToClient(player.getNetworkIdentifier(), player.getClientSubId());
+}
 
 void Packet::sendTo(BlockPos const& pos, DimensionType type, optional_ref<Player const> except) const {
     if (!ll::service::getLevel()) {
@@ -34,12 +36,9 @@ void Packet::sendToClient(NetworkIdentifierWithSubId const& identifierWithSubId)
     sendToClient(identifierWithSubId.mIdentifier, identifierWithSubId.mSubClientId);
 }
 
-void Packet::sendToClients() {
+void Packet::sendToClients() const {
     if (!ll::service::getLevel()) {
         return;
     }
-    ll::service::getLevel()->forEachPlayer([this](Player const& player) -> bool {
-        player.sendNetworkPacket(*this);
-        return true;
-    });
+    ll::service::getLevel()->getPacketSender()->sendBroadcast(*this);
 }

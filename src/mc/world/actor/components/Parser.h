@@ -49,7 +49,7 @@ public:
         class Json::Value const&      val,
         class SemVersion const&       engineVersion,
         class ActorDefinitionTrigger& definitionTrigger,
-        bool
+        bool                          acceptString
     );
 
     // symbol: ?parse@Parser@@SA_NAEBVValue@Json@@AEBVSemVersion@@AEAVActorDefinitionTrigger@@PEBD@Z
@@ -65,7 +65,7 @@ public:
         class Json::Value const& val,
         class SemVersion const&  engineVersion,
         class DefinitionTrigger& definitionTrigger,
-        bool
+        bool                     acceptString
     );
 
     // symbol: ?parse@Parser@@SA_NAEBVValue@Json@@AEBVSemVersion@@AEAW4FilterSubject@Legacy@Puv@@PEBD3@Z
@@ -79,12 +79,15 @@ public:
 
     // symbol: ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAVBlockDescriptor@@@Z
     MCAPI static void
-    parse(class Json::Value const& val, class SemVersion const& engineVersion, class BlockDescriptor&);
+    parse(class Json::Value const& val, class SemVersion const& engineVersion, class BlockDescriptor& blockDescriptor);
 
     // symbol:
     // ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@@Z
-    MCAPI static void
-    parse(class Json::Value const& val, class SemVersion const& engineVersion, std::vector<class BlockDescriptor>&);
+    MCAPI static void parse(
+        class Json::Value const&            val,
+        class SemVersion const&             engineVersion,
+        std::vector<class BlockDescriptor>& blockDescriptors
+    );
 
     // symbol: ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAV23@PEBD@Z
     MCAPI static void parse(

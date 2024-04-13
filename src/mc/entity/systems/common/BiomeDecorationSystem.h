@@ -15,7 +15,7 @@ decorate(class LevelChunk& lc, class BlockSource& source, class Random& random, 
 // symbol:
 // ?decorateBiome@BiomeDecorationSystem@@YA_NAEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@V?$span@$$CBUBiomeDecorationFeature@@$0?0@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBVBiome@@AEBVIPreliminarySurfaceProvider@@@Z
 MCAPI bool
-decorateBiome(class LevelChunk& lc, class BlockSource& source, class Random& random, gsl::span<struct BiomeDecorationFeature const>, std::string const& pass, class Biome const* biome, class IPreliminarySurfaceProvider const&);
+decorateBiome(class LevelChunk& lc, class BlockSource& source, class Random& random, gsl::span<struct BiomeDecorationFeature const> featureList, std::string const& pass, class Biome const* biome, class IPreliminarySurfaceProvider const&);
 
 // symbol:
 // ?decorateLargeFeature@BiomeDecorationSystem@@YA_NW4GeneratorType@@AEBIAEAVBlockVolumeTarget@@AEAVRandom@@V?$span@$$CBUBiomeDecorationFeature@@$0?0@gsl@@AEBVChunkPos@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

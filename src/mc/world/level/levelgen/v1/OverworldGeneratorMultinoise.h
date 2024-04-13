@@ -41,7 +41,7 @@ public:
 
         // NOLINTEND
     };
-    char unk[2800];
+    char mUnknow[2800];
 
 public:
     // prevent constructor by default
@@ -122,7 +122,7 @@ public:
     MCAPI OverworldGeneratorMultinoise(class Dimension&, class LevelSeed64, class Biome const*);
 
     // symbol: ?_applySlides@OverworldGeneratorMultinoise@@SAMAEBVDimensionHeightRange@@ME@Z
-    MCAPI static float _applySlides(class DimensionHeightRange const&, float, uchar);
+    MCAPI static float _applySlides(class DimensionHeightRange const& heightRange, float, uchar);
 
     // NOLINTEND
 

@@ -39,4 +39,6 @@ enum class ContainerType : schar {
     JigsawEditor       = 0x20,
     SmithingTable      = 0x21,
     ChestBoat          = 0x22,
+    DecoratedPot       = 0x23,
+    Crafter            = 0x24,
 };

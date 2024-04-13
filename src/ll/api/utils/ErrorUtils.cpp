@@ -48,9 +48,8 @@ struct u8system_category : public std::_System_error_category {
     }
 };
 
-std::error_category const& u8system_category() noexcept {
-    static constexpr struct u8system_category category;
-    return category;
+inline std::error_category const& u8system_category() noexcept {
+    return std::_Immortalize_memcpy_image<struct u8system_category>();
 }
 
 struct ntstatus_category : public std::error_category {
@@ -97,9 +96,8 @@ struct ntstatus_category : public std::error_category {
     [[nodiscard]] char const* name() const noexcept override { return "ntstatus"; }
 };
 
-std::error_category const& ntstatus_category() noexcept {
-    static constexpr struct ntstatus_category category;
-    return category;
+inline std::error_category const& ntstatus_category() noexcept {
+    return std::_Immortalize_memcpy_image<struct ntstatus_category>();
 }
 
 seh_exception::seh_exception(uint ntStatus, _EXCEPTION_POINTERS* expPtr)

@@ -31,7 +31,7 @@ public:
     // symbol:
     // ??0ScriptNetResponse@ScriptModuleMinecraftNet@@QEAA@AEBV?$vector@UScriptNetHeader@ScriptModuleMinecraftNet@@V?$allocator@UScriptNetHeader@ScriptModuleMinecraftNet@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@IAEBV?$StrongTypedObjectHandle@UScriptNetRequest@ScriptModuleMinecraftNet@@@Scripting@@@Z
     MCAPI
-    ScriptNetResponse(std::vector<struct ScriptModuleMinecraftNet::ScriptNetHeader> const&, std::string const& body, uint status, class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraftNet::ScriptNetRequest> const&);
+    ScriptNetResponse(std::vector<struct ScriptModuleMinecraftNet::ScriptNetHeader> const& headers, std::string const& body, uint status, class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraftNet::ScriptNetRequest> const&);
 
     // symbol: ??4ScriptNetResponse@ScriptModuleMinecraftNet@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraftNet::ScriptNetResponse&

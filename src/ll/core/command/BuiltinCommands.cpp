@@ -19,8 +19,8 @@ LL_TYPE_INSTANCE_HOOK(
     if (globalConfig.modules.commands.versionCommand) {
         registerVersionCommand();
     }
-    if (globalConfig.modules.commands.memstatusCommand) {
-        registerMemstatusCommand();
+    if (globalConfig.modules.commands.memstatsCommand) {
+        registerMemstatsCommand();
     }
     if (globalConfig.modules.commands.crashCommand) {
         registerCrashCommand();

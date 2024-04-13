@@ -23,8 +23,8 @@ public:
         class RenderParams&                      molangParams,
         gsl::not_null<class PerlinSimplexNoise*> noise,
         class BlockPos const&                    pos,
-        int,
-        int
+        int                                      heightMin,
+        int                                      heightMax
     ) const;
 
     // symbol: ??4SurfaceMaterialAdjustmentAttributes@@QEAAAEAU0@$$QEAU0@@Z

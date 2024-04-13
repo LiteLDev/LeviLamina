@@ -40,7 +40,7 @@ public:
 
     // vIndex: 1, symbol:
     // ?onEvent@ScriptActorEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUActorRemoveEffectEvent@@@Z
-    virtual ::EventResult onEvent(struct ActorRemoveEffectEvent const&);
+    virtual ::EventResult onEvent(struct ActorRemoveEffectEvent const& actorRemoveEffectEvent);
 
     // vIndex: 2, symbol:
     // ?onEvent@?$EventListenerDispatcher@VActorEventListener@@@@MEAA?AW4EventResult@@AEBUActorNotificationEvent@@@Z
@@ -82,7 +82,7 @@ public:
 
     // vIndex: 14, symbol:
     // ?onEvent@ScriptActorEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUActorAddEffectEvent@@@Z
-    virtual ::EventResult onEvent(struct ActorAddEffectEvent const&);
+    virtual ::EventResult onEvent(struct ActorAddEffectEvent const& actorAddEffectEvent);
 
     // vIndex: 15, symbol: __unk_vfn_15
     virtual void __unk_vfn_15();
@@ -95,7 +95,7 @@ public:
 
     // vIndex: 18, symbol:
     // ?onEvent@ScriptActorEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUProjectileHitEvent@@@Z
-    virtual ::EventResult onEvent(struct ProjectileHitEvent const&);
+    virtual ::EventResult onEvent(struct ProjectileHitEvent const& projectileHitEvent);
 
     // vIndex: 19, symbol: __unk_vfn_19
     virtual void __unk_vfn_19();
@@ -124,7 +124,7 @@ public:
 
     // vIndex: 27, symbol:
     // ?onEvent@ScriptActorEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUActorHurtEvent@@@Z
-    virtual ::EventResult onEvent(struct ActorHurtEvent const&);
+    virtual ::EventResult onEvent(struct ActorHurtEvent const& actorHurtEvent);
 
     // vIndex: 28, symbol:
     // ?onEvent@ScriptActorEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUActorHealthChangedEvent@@@Z

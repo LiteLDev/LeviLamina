@@ -29,7 +29,7 @@ public:
     MCAPI class Vec3 const& getWantedPosition() const;
 
     // symbol: ?initMultiTypeMovementComponent@MoveControlComponent@@QEAAXAEAVMob@@AEAVActorDefinitionDescriptor@@@Z
-    MCAPI void initMultiTypeMovementComponent(class Mob& entity, class ActorDefinitionDescriptor&);
+    MCAPI void initMultiTypeMovementComponent(class Mob& entity, class ActorDefinitionDescriptor& initDescription);
 
     // symbol: ?initializeFromDefinition@MoveControlComponent@@QEAAXAEAVMob@@PEAUMoveControlDescription@@@Z
     MCAPI void initializeFromDefinition(class Mob& owner, struct MoveControlDescription* description);

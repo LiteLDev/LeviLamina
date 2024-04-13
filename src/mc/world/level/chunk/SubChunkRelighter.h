@@ -63,8 +63,8 @@ public:
         struct Brightness         newBrightness,
         struct Brightness         oldAbsorption,
         struct Brightness         newAbsorption,
-        uint,
-        uint subChunkIndex
+        uint                      lightType,
+        uint                      subChunkIndex
     );
 
     // symbol: ?_setPropagatedBlockLightValue@SubChunkRelighter@@QEAAXUSubChunkLightIndex@@E@Z

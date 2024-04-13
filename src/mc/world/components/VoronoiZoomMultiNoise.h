@@ -9,7 +9,7 @@ MCAPI class Vec3 getGridOffset(class SimplePositionalRandomFactory const&, class
 
 // symbol:
 // ?getZoomedVoronoiCellIndex@VoronoiZoomMultiNoise@@YAIVBlockPos@@AEBV?$vector@VVec3@@V?$allocator@VVec3@@@std@@@std@@III@Z
-MCAPI uint getZoomedVoronoiCellIndex(class BlockPos, std::vector<class Vec3> const&, uint, uint, uint);
+MCAPI uint getZoomedVoronoiCellIndex(class BlockPos inPos, std::vector<class Vec3> const&, uint, uint, uint);
 // NOLINTEND
 
 }; // namespace VoronoiZoomMultiNoise

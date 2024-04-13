@@ -33,7 +33,7 @@ public:
     MCAPI bool getSwimming() const;
 
     // symbol: ?initMultiTypeJumpComponent@JumpControlComponent@@QEAAXAEAVMob@@AEAVActorDefinitionDescriptor@@@Z
-    MCAPI void initMultiTypeJumpComponent(class Mob& entity, class ActorDefinitionDescriptor&);
+    MCAPI void initMultiTypeJumpComponent(class Mob& entity, class ActorDefinitionDescriptor& initDescription);
 
     // symbol: ?initializeFromDefinition@JumpControlComponent@@QEAAXAEAVMob@@PEAUJumpControlDescription@@@Z
     MCAPI void initializeFromDefinition(class Mob& owner, struct JumpControlDescription* description);

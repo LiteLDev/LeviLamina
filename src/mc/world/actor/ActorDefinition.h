@@ -40,8 +40,12 @@ public:
     MCAPI void parseEntityDescription(struct DeserializeDataParams deserializeDataParams);
 
     // symbol: ?parseEvents@ActorDefinition@@QEAAXAEBVValue@Json@@AEBVSemVersion@@1PEAVActorEventResponseFactory@@@Z
-    MCAPI void
-    parseEvents(class Json::Value const& root, class SemVersion const& engineVersion, class SemVersion const& formatVersion, class ActorEventResponseFactory*);
+    MCAPI void parseEvents(
+        class Json::Value const&         root,
+        class SemVersion const&          engineVersion,
+        class SemVersion const&          formatVersion,
+        class ActorEventResponseFactory* responseFactory
+    );
 
     // symbol: ?parsePermutations@ActorDefinition@@QEAAXAEAVValue@Json@@AEBVSemVersion@@1AEAVActorFactory@@@Z
     MCAPI void parsePermutations(

@@ -111,6 +111,11 @@ public:
         back().mOptions = (CommandParameterOption)((uchar)(back().mOptions) & (!(uchar)option));
         return *this;
     }
+    template <class Fn>
+    [[nodiscard]] constexpr Overload& modify(Fn&& fn) {
+        std::forward<Fn>(fn)(back());
+        return *this;
+    }
 
     template <auto Executor>
     void constexpr execute() {

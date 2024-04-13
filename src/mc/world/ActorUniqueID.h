@@ -9,14 +9,7 @@ namespace mce { class UUID; }
 
 struct ActorUniqueID {
 public:
-    int64 id;
-    ActorUniqueID() : id(INVALID_ID) {}
-
-    explicit ActorUniqueID(int64 id) : id(id) {}
-
-    [[nodiscard]] constexpr int64 get() const { return id; }
-
-    [[nodiscard]] constexpr operator int64() const { return id; } // NOLINT
+    int64 id{};
 
 public:
     // NOLINTBEGIN
@@ -36,6 +29,6 @@ namespace std {
 template <>
 class hash<ActorUniqueID> {
 public:
-    size_t operator()(ActorUniqueID const& id) const { return std::hash<int64>()(id.id); }
+    size_t operator()(ActorUniqueID const& id) const { return id.getHash(); }
 };
 } // namespace std

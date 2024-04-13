@@ -65,4 +65,5 @@ enum class ContainerEnumName : schar {
     CursorContainer                     = 0x3B,
     CreatedOutputContainer              = 0x3C,
     SmithingTableTemplateContainer      = 0x3D,
+    CrafterLevelEntityContainer         = 0x3E,
 };

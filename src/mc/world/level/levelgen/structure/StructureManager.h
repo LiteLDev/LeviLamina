@@ -100,7 +100,7 @@ public:
 
     // symbol:
     // ?queueLoad@StructureManager@@QEAAXV?$unique_ptr@VStructureAnimationData@@U?$default_delete@VStructureAnimationData@@@std@@@std@@@Z
-    MCAPI void queueLoad(std::unique_ptr<class StructureAnimationData>);
+    MCAPI void queueLoad(std::unique_ptr<class StructureAnimationData> structureAnimationData);
 
     // symbol: ?readStructure@StructureManager@@QEAA_NAEAVStructureTemplate@@@Z
     MCAPI bool readStructure(class StructureTemplate& structureTemplate);
@@ -120,8 +120,16 @@ public:
 
     // symbol:
     // ?tryPlaceStructureInWorld@StructureManager@@QEAA?AW4QueueRequestResult@@V?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEAVServerLevel@@AEAVDimension@@AEBVBoundingBox@@AEBVBlockPos@@AEBVStructureSettings@@AEBVStructureTemplate@@V?$unique_ptr@VStructureAnimationData@@U?$default_delete@VStructureAnimationData@@@std@@@4@@Z
-    MCAPI ::QueueRequestResult
-    tryPlaceStructureInWorld(std::unique_ptr<class CommandArea>, class ServerLevel& level, class Dimension& dimension, class BoundingBox const& bounds, class BlockPos const&, class StructureSettings const& settings, class StructureTemplate const& structureTemplate, std::unique_ptr<class StructureAnimationData>);
+    MCAPI ::QueueRequestResult tryPlaceStructureInWorld(
+        std::unique_ptr<class CommandArea>            cmdArea,
+        class ServerLevel&                            level,
+        class Dimension&                              dimension,
+        class BoundingBox const&                      bounds,
+        class BlockPos const&                         loadPosition,
+        class StructureSettings const&                settings,
+        class StructureTemplate const&                structureTemplate,
+        std::unique_ptr<class StructureAnimationData> structureAnimationData
+    );
 
     // symbol:
     // ?getStructurePath@StructureManager@@SA?AV?$PathBuffer@V?$StackString@D$0EAA@@Core@@@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -138,7 +146,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_createLevelStorageId@StructureManager@@AEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@0@Z
-    MCAPI std::string _createLevelStorageId(std::string const&, std::string const&);
+    MCAPI std::string _createLevelStorageId(std::string const& dimensionPrefix, std::string const& saveId);
 
     // symbol:
     // ?_findResource@StructureManager@@AEAA_NAEBV?$PathBuffer@V?$StackString@D$0EAA@@Core@@@Core@@AEBVPackInstance@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -159,12 +167,12 @@ public:
     );
 
     // symbol: ?_placeSegment@StructureManager@@AEAA_NAEAVStructureAnimationData@@@Z
-    MCAPI bool _placeSegment(class StructureAnimationData&);
+    MCAPI bool _placeSegment(class StructureAnimationData& structureAnimationData);
 
     // symbol:
     // ?_placeSegment@StructureManager@@AEAA_NAEAVDimension@@AEAVStructureAnimationData@@AEAVChunkLoadActionList@@AEBVBoundingBox@@AEBV?$function@$$A6A?AW4ChunksLoadedStatus@@UTick@@@Z@std@@@Z
     MCAPI bool
-    _placeSegment(class Dimension& dimension, class StructureAnimationData&, class ChunkLoadActionList&, class BoundingBox const& boundingBox, std::function<::ChunksLoadedStatus(struct Tick)> const&);
+    _placeSegment(class Dimension& dimension, class StructureAnimationData& structureAnimationData, class ChunkLoadActionList&, class BoundingBox const& boundingBox, std::function<::ChunksLoadedStatus(struct Tick)> const&);
 
     // symbol:
     // ?_readLegacyStructure@StructureManager@@AEAAPEAVLegacyStructureTemplate@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -172,11 +180,13 @@ public:
 
     // symbol:
     // ?_removePlacementQueueItem@StructureManager@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVStructureAnimationData@@@Z
-    MCAPI void _removePlacementQueueItem(std::string const&, class StructureAnimationData&);
+    MCAPI void
+    _removePlacementQueueItem(std::string const& dimensionPrefix, class StructureAnimationData& structureAnimationData);
 
     // symbol:
     // ?_savePlacementQueueItem@StructureManager@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVStructureAnimationData@@@Z
-    MCAPI void _savePlacementQueueItem(std::string const&, class StructureAnimationData&);
+    MCAPI void
+    _savePlacementQueueItem(std::string const& dimensionPrefix, class StructureAnimationData& structureAnimationData);
 
     // NOLINTEND
 

@@ -154,7 +154,7 @@ struct formatter<T, CharT> : public std::formatter<string_view, CharT> {
 
 template <ll::concepts::IsVectorBase T>
 struct hash<T> {
-    size_t operator()(T const& vec) const noexcept { return vec.hash(); }
+    constexpr size_t operator()(T const& vec) const noexcept { return vec.hash(); }
 };
 
 } // namespace std

@@ -283,7 +283,7 @@ public:
         // symbol:
         // ?createSelector@Parser@CommandRegistry@@QEAA?AV?$unique_ptr@V?$CommandSelector@VActor@@@@U?$default_delete@V?$CommandSelector@VActor@@@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@AEBVCommandOrigin@@@Z
         MCAPI std::unique_ptr<class CommandSelector<class Actor>>
-              createSelector(std::string const&, class CommandOrigin const& origin);
+              createSelector(std::string const& selectorString, class CommandOrigin const& origin);
 
         // symbol:
         // ?getErrorMessage@Parser@CommandRegistry@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -415,11 +415,16 @@ public:
     std::function<void(CommandFlag&, std::string const&)>       mCommandOverrideFunctor;       // this+0x348
 
     template <typename T>
-    bool
-    parse(void* target, CommandRegistry::ParseToken const& token, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-        const {
+    bool parse(
+        void*                              storage,
+        CommandRegistry::ParseToken const& token,
+        CommandOrigin const& /*origin*/,
+        int /*version*/,
+        std::string& /*error*/,
+        std::vector<std::string>& /*errorParams*/
+    ) const {
         if constexpr (std::is_enum_v<T>) {
-            *(T*)target = (T)getEnumData(token);
+            *(T*)storage = (T)getEnumData(token);
             return true;
         } else {
             return false;

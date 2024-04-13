@@ -48,14 +48,11 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     schedulelogger.info("unsorted: {}", result.unsorted);
 
     for (auto k : {1, 4, 6}) {
-        ll::meta::visitIndex<10>(
-            []<size_t N> {
-                static ll::Logger lo;
-                lo.warn("template N = {}", N);
-                return N;
-            },
-            k
-        );
+        ll::meta::visitIndex<10>(k, []<size_t N> {
+            static ll::Logger lo;
+            lo.warn("template N = {}", N);
+            return N;
+        });
     }
 
     return origin(ins);

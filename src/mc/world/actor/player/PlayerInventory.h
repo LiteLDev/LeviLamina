@@ -117,13 +117,17 @@ public:
     MCAPI bool selectSlot(int slot, ::ContainerID containerId);
 
     // symbol: ?serverInitItemStackIds@PlayerInventory@@QEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-    MCAPI void serverInitItemStackIds(int, int count, std::function<void(int, class ItemStack const&)>);
+    MCAPI void serverInitItemStackIds(
+        int                                              containerSlot,
+        int                                              count,
+        std::function<void(int, class ItemStack const&)> onNetIdChanged
+    );
 
     // symbol: ?setContainerChanged@PlayerInventory@@QEAAXH@Z
     MCAPI void setContainerChanged(int slot);
 
     // symbol: ?setItem@PlayerInventory@@QEAAXHAEBVItemStack@@W4ContainerID@@_N@Z
-    MCAPI void setItem(int slot, class ItemStack const& item, ::ContainerID containerId, bool);
+    MCAPI void setItem(int slot, class ItemStack const& item, ::ContainerID containerId, bool forceBalanced);
 
     // symbol: ?setSelectedItem@PlayerInventory@@QEAAXAEBVItemStack@@@Z
     MCAPI void setSelectedItem(class ItemStack const& item);

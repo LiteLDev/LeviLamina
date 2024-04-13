@@ -34,7 +34,8 @@ public:
 
     // vIndex: 3, symbol:
     // ?onActorPredictedMove@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@W4MovePredictionType@@AEBVVec3@@@Z
-    virtual ::EventResult onActorPredictedMove(class Actor& actor, ::MovePredictionType, class Vec3 const& pos);
+    virtual ::EventResult
+    onActorPredictedMove(class Actor& actor, ::MovePredictionType predictionType, class Vec3 const& pos);
 
     // vIndex: 4, symbol: ?onActorTick@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@@Z
     virtual ::EventResult onActorTick(class Actor& actor);

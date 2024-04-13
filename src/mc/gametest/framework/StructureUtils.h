@@ -63,10 +63,10 @@ MCAPI std::vector<class BlockPos>
 MCAPI ::Rotation GetRotationForRotationSteps(int);
 
 // symbol: ?GetStructureBoundingBox@StructureUtils@gametest@@YA?AVBoundingBox@@AEBVStructureBlockActor@@@Z
-MCAPI class BoundingBox GetStructureBoundingBox(class StructureBlockActor const&);
+MCAPI class BoundingBox GetStructureBoundingBox(class StructureBlockActor const& structureBlockActor);
 
 // symbol: ?GetStructureBounds@StructureUtils@gametest@@YA?AVAABB@@AEBVStructureBlockActor@@@Z
-MCAPI class AABB GetStructureBounds(class StructureBlockActor const&);
+MCAPI class AABB GetStructureBounds(class StructureBlockActor const& structureBlockActor);
 
 // symbol:
 // ?GetStructureEditorData@StructureUtils@gametest@@YA?AVStructureEditorData@@AEBVStructureTemplate@@AEBW4Rotation@@@Z
@@ -74,7 +74,8 @@ MCAPI class StructureEditorData
 GetStructureEditorData(class StructureTemplate const& structure, ::Rotation const& rotation);
 
 // symbol: ?GetStructureRelativePos@StructureUtils@gametest@@YA?AVBlockPos@@AEBVStructureBlockActor@@AEBV3@@Z
-MCAPI class BlockPos GetStructureRelativePos(class StructureBlockActor const&, class BlockPos const& pos);
+MCAPI class BlockPos
+GetStructureRelativePos(class StructureBlockActor const& structureBlockActor, class BlockPos const& pos);
 
 // symbol:
 // ?GetStructureTemplate@StructureUtils@gametest@@YAPEAVStructureTemplate@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVLevel@@@Z

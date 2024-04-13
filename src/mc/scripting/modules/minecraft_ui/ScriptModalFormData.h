@@ -69,16 +69,16 @@ public:
     // ?slider@ScriptModalFormData@ScriptModuleMinecraftServerUI@@QEAA?AV?$StrongTypedObjectHandle@VScriptModalFormData@ScriptModuleMinecraftServerUI@@@Scripting@@V?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UScriptRawMessageInterface@ScriptModuleMinecraft@@@std@@MMMV?$optional@M@6@@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptModalFormData> slider(
         std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface> label,
-        float,
-        float                maxValue,
-        float                step,
-        std::optional<float> defaultValue
+        float                                                                              minValue,
+        float                                                                              maxValue,
+        float                                                                              step,
+        std::optional<float>                                                               defaultValue
     );
 
     // symbol:
     // ?sliderV010@ScriptModalFormData@ScriptModuleMinecraftServerUI@@QEAA?AV?$StrongTypedObjectHandle@VScriptModalFormData@ScriptModuleMinecraftServerUI@@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MMMV?$optional@M@6@@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptModalFormData>
-    sliderV010(std::string const& label, float, float maxValue, float step, std::optional<float> defaultValue);
+    sliderV010(std::string const& label, float minValue, float maxValue, float step, std::optional<float> defaultValue);
 
     // symbol:
     // ?textField@ScriptModalFormData@ScriptModuleMinecraftServerUI@@QEAA?AV?$StrongTypedObjectHandle@VScriptModalFormData@ScriptModuleMinecraftServerUI@@@Scripting@@V?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UScriptRawMessageInterface@ScriptModuleMinecraft@@@std@@0V?$optional@V?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UScriptRawMessageInterface@ScriptModuleMinecraft@@@std@@@6@@Z

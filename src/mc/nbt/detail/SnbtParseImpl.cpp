@@ -1,17 +1,22 @@
 #include "ll/api/utils/Base64Utils.h"
 #include "ll/api/utils/HashUtils.h"
 #include "mc/nbt/CompoundTag.h"
+#include "mc/nbt/detail/SnbtErrorCode.h"
 
 namespace ll::nbt::detail {
-std::optional<CompoundTagVariant> parseSnbtValue(std::string_view& s);
+nonstd::expected<CompoundTagVariant, std::error_code> parseSnbtValue(std::string_view& s);
+nonstd::expected<CompoundTagVariant, std::error_code> parseSnbtValueNonSkip(std::string_view& s);
+
+std::error_code makeSnbtError(SnbtErrorCode);
 
 bool isTrivialNbtStringChar(char c) { return isalnum(c) || c == '-' || c == '+' || c == '_' || c == '.'; }
 } // namespace ll::nbt::detail
 namespace ll {
 
 using namespace ll::hash_literals;
+using namespace ll::nbt::detail;
 
-bool scanComment(std::string_view& s) noexcept {
+nonstd::expected<void, std::error_code> scanComment(std::string_view& s) noexcept {
     size_t i = 0;
     switch (s[i++]) {
     // multi-line comments skip input until */ is read
@@ -19,14 +24,13 @@ bool scanComment(std::string_view& s) noexcept {
         while (i < s.size()) {
             switch (s[i++]) {
             case std::char_traits<char>::eof():
-            case '\0': {
-                return false;
-            }
+            case '\0':
+                return nonstd::make_unexpected(makeSnbtError(SnbtErrorCode::UnexpectedEofEncountered));
             case '*': {
                 switch (s[i]) {
                 case '/':
                     s.remove_prefix(std::min(i + 1, s.size()));
-                    return true;
+                    return {};
 
                 default:
                     continue;
@@ -54,7 +58,7 @@ bool scanComment(std::string_view& s) noexcept {
                 case std::char_traits<char>::eof():
                 case '\0':
                     s.remove_prefix(std::min(i, s.size()));
-                    return true;
+                    return {};
 
                 default:
                     break;
@@ -63,26 +67,25 @@ bool scanComment(std::string_view& s) noexcept {
             break;
         }
     }
-    return false;
+    return nonstd::make_unexpected(makeSnbtError(SnbtErrorCode::UnterminatedComment));
 }
 
-bool scanSpaces(std::string_view& s) noexcept {
+void scanSpaces(std::string_view& s) noexcept {
     size_t i = 0;
     while (i <= s.size() && std::isspace(s[i++])) {}
     s.remove_prefix(std::min(i - 1, s.size()));
-    return true;
 }
 
-bool skipWhitespace(std::string_view& s) {
+nonstd::expected<void, std::error_code> skipWhitespace(std::string_view& s) {
     scanSpaces(s);
     while (s.front() == '/' || s.front() == '#' || s.front() == ';') {
         s.remove_prefix(1);
-        if (!scanComment(s)) {
-            return false;
+        if (auto res = scanComment(s); !res) {
+            return res;
         }
         scanSpaces(s);
     }
-    return true;
+    return {};
 }
 
 char get(std::string_view& s) {
@@ -92,7 +95,7 @@ char get(std::string_view& s) {
     return c;
 }
 
-std::optional<ldouble> stold(std::string_view const& s, size_t& n) {
+nonstd::expected<ldouble, std::error_code> stold(std::string_view const& s, size_t& n) {
     int&        errnoRef = errno; // Nonzero cost, pay it once
     char const* ptr      = s.data();
     char*       eptr;
@@ -100,11 +103,11 @@ std::optional<ldouble> stold(std::string_view const& s, size_t& n) {
     const ldouble res = strtold(ptr, &eptr);
 
     if (ptr == eptr) {
-        return std::nullopt;
+        return nonstd::make_unexpected(makeSnbtError(SnbtErrorCode::NotANumber));
     }
 
     if (errnoRef == ERANGE) {
-        return std::nullopt;
+        return nonstd::make_unexpected(makeSnbtError(SnbtErrorCode::NumberOutOfRange));
     }
 
     n = static_cast<size_t>(eptr - ptr);
@@ -112,7 +115,7 @@ std::optional<ldouble> stold(std::string_view const& s, size_t& n) {
     return res;
 }
 
-std::optional<CompoundTagVariant> parseNumber(std::string_view& s) {
+nonstd::expected<CompoundTagVariant, std::error_code> parseNumber(std::string_view& s) {
 
     size_t n = 0;
 
@@ -121,7 +124,7 @@ std::optional<CompoundTagVariant> parseNumber(std::string_view& s) {
     if (auto tmp = stold(s, n); tmp) {
         res = *tmp;
     } else {
-        return std::nullopt;
+        return nonstd::make_unexpected(tmp.error());
     }
     bool isInt = true;
 
@@ -200,7 +203,7 @@ std::optional<CompoundTagVariant> parseNumber(std::string_view& s) {
     }
 }
 
-int get_codepoint(std::string_view& s) {
+nonstd::expected<int, std::error_code> get_codepoint(std::string_view& s) {
     int codepoint = 0;
 
     for (const auto factor : {12u, 8u, 4u, 0u}) {
@@ -213,21 +216,20 @@ int get_codepoint(std::string_view& s) {
         } else if (current >= 'a' && current <= 'f') {
             codepoint += static_cast<int>((static_cast<uint>(current) - 0x57u) << factor);
         } else {
-            return -1;
+            return nonstd::make_unexpected(makeSnbtError(SnbtErrorCode::NotAUnicodeEncodedHex));
         }
     }
 
     return codepoint;
 }
 
-std::optional<std::string> parseString(std::string_view& s) {
+nonstd::expected<std::string, std::error_code> parseString(std::string_view& s) {
 
     char starts = s.front();
 
-    if (starts != '\"' && starts != '\'' && !ll::nbt::detail::isTrivialNbtStringChar(starts)) {
-        return std::nullopt;
+    if (starts != '\"' && starts != '\'' && !isTrivialNbtStringChar(starts)) {
+        return nonstd::make_unexpected(makeSnbtError(SnbtErrorCode::IllegalOmittedQuotesString));
     }
-
     std::string res;
 
     if (starts == '\"' || starts == '\'') {
@@ -235,7 +237,7 @@ std::optional<std::string> parseString(std::string_view& s) {
     } else {
         while (!s.empty()) {
             auto fc = s.front();
-            if (ll::nbt::detail::isTrivialNbtStringChar(fc)) {
+            if (isTrivialNbtStringChar(fc)) {
                 s.remove_prefix(1);
                 res.push_back(fc);
             } else {
@@ -274,8 +276,8 @@ std::optional<std::string> parseString(std::string_view& s) {
             // multiline string
             case '\n':
             case '\r':
-                if (!skipWhitespace(s)) {
-                    return std::nullopt;
+                if (auto skipped = skipWhitespace(s); !skipped) {
+                    return nonstd::make_unexpected(skipped.error());
                 }
                 break;
 
@@ -284,14 +286,14 @@ std::optional<std::string> parseString(std::string_view& s) {
                 if (starts == '\"') {
                     res.push_back('\"');
                 } else {
-                    return std::nullopt;
+                    return nonstd::make_unexpected(makeSnbtError(SnbtErrorCode::QuoteEscapeNotMatch));
                 }
             } break;
             case '\'': {
                 if (starts == '\'') {
                     res.push_back('\'');
                 } else {
-                    return std::nullopt;
+                    return nonstd::make_unexpected(makeSnbtError(SnbtErrorCode::QuoteEscapeNotMatch));
                 }
             } break;
             // reverse solidus
@@ -329,24 +331,24 @@ std::optional<std::string> parseString(std::string_view& s) {
 
             // unicode escapes
             case 'u': {
-
-                const int codepoint1 = get_codepoint(s);
-                int       codepoint  = codepoint1; // start with codepoint1
-
-                if (codepoint1 == -1) {
-                    return std::nullopt;
+                int codepoint1;
+                if (auto getted = get_codepoint(s); getted) {
+                    codepoint1 = *getted;
+                } else {
+                    return nonstd::make_unexpected(getted.error());
                 }
+                int codepoint = codepoint1; // start with codepoint1
 
                 // check if code point is a high surrogate
                 if (0xD800 <= codepoint1 && codepoint1 <= 0xDBFF) {
                     // expect next \uxxxx entry
                     if (get(s) == '\\' && get(s) == 'u') {
-                        const int codepoint2 = get_codepoint(s);
-
-                        if (codepoint2 == -1) {
-                            return std::nullopt;
+                        int codepoint2;
+                        if (auto getted = get_codepoint(s); getted) {
+                            codepoint2 = *getted;
+                        } else {
+                            return nonstd::make_unexpected(getted.error());
                         }
-
                         // check if codepoint2 is a low surrogate
                         if ((0xDC00 <= codepoint2 && codepoint2 <= 0xDFFF)) {
                             // overwrite codepoint
@@ -361,14 +363,14 @@ std::optional<std::string> parseString(std::string_view& s) {
                                 - 0x35FDC00u
                             );
                         } else {
-                            return std::nullopt;
+                            return nonstd::make_unexpected(makeSnbtError(SnbtErrorCode::Utf8Codepoint2NotInRange));
                         }
                     } else {
-                        return std::nullopt;
+                        return nonstd::make_unexpected(makeSnbtError(SnbtErrorCode::Utf8Codepoint2Missing));
                     }
                 } else {
                     if (0xDC00 <= codepoint1 && codepoint1 <= 0xDFFF) {
-                        return std::nullopt;
+                        return nonstd::make_unexpected(makeSnbtError(SnbtErrorCode::Utf8Codepoint1Missing));
                     }
                 }
 
@@ -396,7 +398,7 @@ std::optional<std::string> parseString(std::string_view& s) {
 
             // other characters after escape
             default:
-                return std::nullopt;
+                return nonstd::make_unexpected(makeSnbtError(SnbtErrorCode::IllegalEscape));
             }
         } break;
         default:
@@ -404,42 +406,37 @@ std::optional<std::string> parseString(std::string_view& s) {
             break;
         }
     }
-    return std::nullopt;
+    return nonstd::make_unexpected(makeSnbtError(SnbtErrorCode::IllegalUtf8Character));
 }
-
-
-std::optional<ByteArrayTag> parseByteArray(std::string_view& s) {
-    if (!skipWhitespace(s)) {
-        return std::nullopt;
+template <class R, class T, class H, class F>
+nonstd::expected<R, std::error_code> parseNumArray(std::string_view& s, F&& f) {
+    if (auto skipped = skipWhitespace(s); !skipped) {
+        return nonstd::make_unexpected(skipped.error());
     }
-
     if (s.front() == ']') {
-        return ByteArrayTag{};
+        return R{};
     }
-
-    auto res = std::vector<uchar>{};
-    res.clear();
-
+    T res;
     while (!s.empty()) {
-
-        if (!skipWhitespace(s)) {
-            return std::nullopt;
+        if (auto skipped = skipWhitespace(s); !skipped) {
+            return nonstd::make_unexpected(skipped.error());
         }
         if (s.front() == ']') {
             s.remove_prefix(1);
             return res;
         }
-        auto value = parseNumber(s);
-        if (!skipWhitespace(s)) {
-            return std::nullopt;
+        if (auto value = parseNumber(s); value) {
+            if (!value->hold<H>()) {
+                return nonstd::make_unexpected(makeSnbtError(SnbtErrorCode::NotTheExpectedType));
+            } else {
+                std::forward<F>(f)(res, value->get<H>());
+            }
+        } else {
+            return nonstd::make_unexpected(value.error());
         }
-
-        if (!value || !value->hold<ByteTag>()) {
-            return std::nullopt;
+        if (auto skipped = skipWhitespace(s); !skipped) {
+            return nonstd::make_unexpected(skipped.error());
         }
-
-        res.emplace_back(value->get<ByteTag>());
-
         switch (s.front()) {
         case ']':
             s.remove_prefix(1);
@@ -450,228 +447,146 @@ std::optional<ByteArrayTag> parseByteArray(std::string_view& s) {
             break;
         }
     }
-
-    return std::nullopt;
+    return nonstd::make_unexpected(makeSnbtError(SnbtErrorCode::UnclosedBracket));
 }
 
-std::optional<IntArrayTag> parseIntArray(std::string_view& s) {
-    if (!skipWhitespace(s)) {
-        return std::nullopt;
-    }
-
-    if (s.front() == ']') {
-        return IntArrayTag{};
-    }
-
-    auto res = std::vector<int>{};
-    res.clear();
-
-    while (!s.empty()) {
-
-        if (!skipWhitespace(s)) {
-            return std::nullopt;
-        }
-        if (s.front() == ']') {
-            s.remove_prefix(1);
-            return res;
-        }
-        auto value = parseNumber(s);
-        if (!skipWhitespace(s)) {
-            return std::nullopt;
-        }
-
-        if (!value || !value->hold<IntTag>()) {
-            return std::nullopt;
-        }
-
-        res.emplace_back(value->get<IntTag>());
-
-        switch (s.front()) {
-        case ']':
-            s.remove_prefix(1);
-            return res;
-        case ',':
-            s.remove_prefix(1);
-        default:
-            break;
-        }
-    }
-
-    return std::nullopt;
+nonstd::expected<ByteArrayTag, std::error_code> parseByteArray(std::string_view& s) {
+    return parseNumArray<ByteArrayTag, std::vector<uchar>, ByteTag>(s, [](auto&& vec, auto&& num) {
+        vec.emplace_back(num);
+    });
 }
 
-std::optional<ByteArrayTag> parseLongArray(std::string_view& s) {
-    if (!skipWhitespace(s)) {
-        return std::nullopt;
-    }
+nonstd::expected<IntArrayTag, std::error_code> parseIntArray(std::string_view& s) {
+    return parseNumArray<IntArrayTag, std::vector<int>, IntTag>(s, [](auto&& vec, auto&& num) {
+        vec.emplace_back(num);
+    });
+}
 
-    if (s.front() == ']') {
-        return ByteArrayTag{};
-    }
-
-    auto res = std::vector<uchar>{};
-    res.clear();
-
-    while (!s.empty()) {
-
-        if (!skipWhitespace(s)) {
-            return std::nullopt;
-        }
-        if (s.front() == ']') {
-            s.remove_prefix(1);
-            return res;
-        }
-        auto value = parseNumber(s);
-        if (!skipWhitespace(s)) {
-            return std::nullopt;
-        }
-
-        if (!value || !value->hold<Int64Tag>()) {
-            return std::nullopt;
-        }
-
-        int64 val = value->get<Int64Tag>();
-
+nonstd::expected<ByteArrayTag, std::error_code> parseLongArray(std::string_view& s) {
+    return parseNumArray<ByteArrayTag, std::vector<uchar>, Int64Tag>(s, [](auto&& vec, auto&& num) {
+        int64 val = num;
         for (int j = 7; j >= 0; j--) {
-            res.emplace_back((uchar)(val >> (uint64)(8 * j)));
+            vec.emplace_back((uchar)(val >> (uint64)(8 * j)));
         }
-
-        switch (s.front()) {
-        case ']':
-            s.remove_prefix(1);
-            return res;
-        case ',':
-            s.remove_prefix(1);
-        default:
-            break;
-        }
-    }
-
-    return std::nullopt;
+    });
 }
 
-std::optional<CompoundTagVariant> parseList(std::string_view& s) {
-    if (s.starts_with("[B;")) {
-        s.remove_prefix(3);
+nonstd::expected<CompoundTagVariant, std::error_code> parseList(std::string_view& s) {
+    if (s.starts_with("[ /*") && (s.size() > 7 && s[6] == '*' && s[7] == '/')) {
+        s.remove_prefix(4);
+    } else {
+        s.remove_prefix(1);
+    }
+    if (s.starts_with("B;")) {
+        s.remove_prefix(2);
+        if (s.starts_with("*/")) {
+            s.remove_prefix(2);
+        }
         if (auto array = parseByteArray(s); array) {
             return *array;
+        } else {
+            return nonstd::make_unexpected(array.error());
         }
-        return std::nullopt;
-    } else if (s.starts_with("[I;")) {
-        s.remove_prefix(3);
+    } else if (s.starts_with("I;")) {
+        s.remove_prefix(2);
+        if (s.starts_with("*/")) {
+            s.remove_prefix(2);
+        }
         if (auto array = parseIntArray(s); array) {
             return *array;
+        } else {
+            return nonstd::make_unexpected(array.error());
         }
-        return std::nullopt;
-    } else if (s.starts_with("[L;")) {
-        s.remove_prefix(3);
+    } else if (s.starts_with("L;")) {
+        s.remove_prefix(2);
+        if (s.starts_with("*/")) {
+            s.remove_prefix(2);
+        }
         if (auto array = parseLongArray(s); array) {
             return *array;
+        } else {
+            return nonstd::make_unexpected(array.error());
         }
-        return std::nullopt;
-    } else if (s.starts_with("[ /*B;*/")) {
-        s.remove_prefix(8);
-        if (auto array = parseByteArray(s); array) {
-            return *array;
-        }
-        return std::nullopt;
-    } else if (s.starts_with("[ /*I;*/")) {
-        s.remove_prefix(8);
-        if (auto array = parseIntArray(s); array) {
-            return *array;
-        }
-        return std::nullopt;
-    } else if (s.starts_with("[ /*L;*/")) {
-        s.remove_prefix(8);
-        if (auto array = parseLongArray(s); array) {
-            return *array;
-        }
-        return std::nullopt;
     }
-    get(s);
-    if (!skipWhitespace(s)) {
-        return std::nullopt;
+    if (auto skipped = skipWhitespace(s); !skipped) {
+        return nonstd::make_unexpected(skipped.error());
     }
-
     if (s.front() == ']') {
         s.remove_prefix(1);
         return ListTag{};
     }
-
     auto res = ListTag{};
-    res.mList.clear();
 
     bool settedType = false;
 
     while (!s.empty()) {
-
-        auto value = ll::nbt::detail::parseSnbtValue(s);
-
-        if (!value) {
+        if (auto skipped = skipWhitespace(s); !skipped) {
+            return nonstd::make_unexpected(skipped.error());
+        }
+        if (s.front() == ']') {
+            s.remove_prefix(1);
             return res;
+        }
+        auto value = parseSnbtValueNonSkip(s);
+        if (!value) {
+            return nonstd::make_unexpected(value.error());
         }
         if (!settedType) {
             res.mType  = value->index();
             settedType = true;
         }
-
         res.mList.emplace_back(value->toUnique());
 
-
+        if (auto skipped = skipWhitespace(s); !skipped) {
+            return nonstd::make_unexpected(skipped.error());
+        }
         switch (s.front()) {
         case ']':
             s.remove_prefix(1);
             return res;
-        case ',':
+        case ',': {
             s.remove_prefix(1);
+        }
         default:
             break;
         }
     }
-
-    return std::nullopt;
+    return nonstd::make_unexpected(makeSnbtError(SnbtErrorCode::UnclosedBracket));
 }
 
-std::optional<CompoundTag> parseCompound(std::string_view& s) {
+nonstd::expected<CompoundTagVariant, std::error_code> parseCompound(std::string_view& s) {
     get(s);
-    if (!skipWhitespace(s)) {
-        return std::nullopt;
+    if (auto skipped = skipWhitespace(s); !skipped) {
+        return nonstd::make_unexpected(skipped.error());
     }
-
     if (s.front() == '}') {
         s.remove_prefix(1);
         return CompoundTag{};
     }
-    auto res = CompoundTag{};
+    CompoundTag res;
     while (!s.empty()) {
-        if (!skipWhitespace(s)) {
-            return std::nullopt;
+        if (auto skipped = skipWhitespace(s); !skipped) {
+            return nonstd::make_unexpected(skipped.error());
         }
         if (s.front() == '}') {
             s.remove_prefix(1);
             return res;
         }
         auto key = parseString(s);
-
         if (!key) {
-            return std::nullopt;
+            return nonstd::make_unexpected(key.error());
         }
-
-        if (!skipWhitespace(s)) {
-            return std::nullopt;
+        if (auto skipped = skipWhitespace(s); !skipped) {
+            return nonstd::make_unexpected(skipped.error());
         }
-
         auto p = get(s);
         if (p != ':' && p != '=') {
-            return std::nullopt;
+            return nonstd::make_unexpected(makeSnbtError(SnbtErrorCode::IllegalKeyValueSeparator));
         }
-
-        auto value = ll::nbt::detail::parseSnbtValue(s);
-
+        auto value = parseSnbtValue(s);
         if (!value) {
-            return res;
+            return nonstd::make_unexpected(value.error());
         }
-
         res[*key] = *value;
 
         switch (s.front()) {
@@ -684,24 +599,40 @@ std::optional<CompoundTag> parseCompound(std::string_view& s) {
             break;
         }
     }
-
-    return std::nullopt;
+    return nonstd::make_unexpected(makeSnbtError(SnbtErrorCode::UnclosedBracket));
 }
 } // namespace ll
 namespace ll::nbt::detail {
-std::optional<CompoundTagVariant> parseSnbtValue(std::string_view& s) {
-    if (!skipWhitespace(s) || s.empty()) {
-        return std::nullopt;
+nonstd::expected<CompoundTagVariant, std::error_code> parseSnbtValueNonSkip(std::string_view& s) {
+    if (s.empty()) {
+        return nonstd::make_unexpected(makeSnbtError(SnbtErrorCode::EmptyString));
     }
-    std::optional<CompoundTagVariant> res = std::nullopt;
-
     switch (s.front()) {
+    case 't':
+        if (s.starts_with("true")) {
+            s.remove_prefix(4);
+            return ByteTag{true};
+        }
+        break;
+    case 'f':
+        if (s.starts_with("false")) {
+            s.remove_prefix(5);
+            return ByteTag{false};
+        }
+        break;
+    case 'n':
+        if (s.starts_with("null")) {
+            s.remove_prefix(4);
+            return EndTag{};
+        }
+        break;
     case ']':
     case '}':
         s.remove_prefix(1);
+        return nonstd::make_unexpected(makeSnbtError(SnbtErrorCode::UnclosedBracket));
+    case std::char_traits<char>::eof():
     case '\0':
-        return std::nullopt;
-
+        return nonstd::make_unexpected(makeSnbtError(SnbtErrorCode::UnexpectedEofEncountered));
     case '-':
     case '0':
     case '1':
@@ -713,45 +644,27 @@ std::optional<CompoundTagVariant> parseSnbtValue(std::string_view& s) {
     case '7':
     case '8':
     case '9':
-        res = parseNumber(s);
-        break;
+        return parseNumber(s);
     case '[':
-        if (auto list = parseList(s); list) {
-            res = *list;
-            break;
-        } else {
-            return std::nullopt;
-        }
+        return parseList(s);
     case '{':
-        if (auto compound = parseCompound(s); compound) {
-            res = *compound;
-            break;
-        } else {
-            return std::nullopt;
-        }
+        return parseCompound(s);
     default:
         break;
     }
-
+    return parseString(s);
+}
+nonstd::expected<CompoundTagVariant, std::error_code> parseSnbtValue(std::string_view& s) {
+    if (auto skipped = skipWhitespace(s); !skipped) {
+        return nonstd::make_unexpected(skipped.error());
+    }
+    auto res = parseSnbtValueNonSkip(s);
     if (!res) {
-        if (s.starts_with("true")) {
-            s.remove_prefix(4);
-            res = ByteTag{true};
-        } else if (s.starts_with("false")) {
-            s.remove_prefix(5);
-            res = ByteTag{false};
-        } else if (s.starts_with("null")) {
-            s.remove_prefix(4);
-            res = EndTag{};
-        } else if (auto str = parseString(s); str) {
-            res = StringTag{*str};
-        }
+        return res;
     }
-
-    if (!skipWhitespace(s)) {
-        return std::nullopt;
+    if (auto skipped = skipWhitespace(s); !skipped) {
+        return nonstd::make_unexpected(skipped.error());
     }
-
     return res;
 }
 } // namespace ll::nbt::detail

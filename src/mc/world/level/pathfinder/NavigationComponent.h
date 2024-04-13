@@ -110,7 +110,7 @@ public:
     MCAPI void incrementTick();
 
     // symbol: ?initMultiTypeNavigationComponent@NavigationComponent@@QEAAXAEAVMob@@AEAVActorDefinitionDescriptor@@@Z
-    MCAPI void initMultiTypeNavigationComponent(class Mob& entity, class ActorDefinitionDescriptor&);
+    MCAPI void initMultiTypeNavigationComponent(class Mob& entity, class ActorDefinitionDescriptor& initDescription);
 
     // symbol: ?initializeFromDefinition@NavigationComponent@@QEAAXAEAVMob@@PEAUNavigationDescription@@@Z
     MCAPI void initializeFromDefinition(class Mob& owner, struct NavigationDescription* description);

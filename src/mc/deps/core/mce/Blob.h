@@ -21,6 +21,8 @@ public:
 
         [[nodiscard]] constexpr Deleter() : mFn(Blob::defaultDeleter) {}
 
+        [[nodiscard]] constexpr Deleter(delete_function fn) : mFn(fn) {}
+
         void operator()(pointer x) const { mFn(x); }
     };
 

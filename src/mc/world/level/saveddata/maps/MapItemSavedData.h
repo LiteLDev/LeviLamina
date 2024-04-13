@@ -128,7 +128,7 @@ public:
     MCAPI void serialize(class CompoundTag& tag) const;
 
     // symbol: ?setClientPixelsDirty@MapItemSavedData@@QEAAX_N@Z
-    MCAPI void setClientPixelsDirty(bool);
+    MCAPI void setClientPixelsDirty(bool isDirty);
 
     // symbol: ?setDirtyForSaveAndPixelData@MapItemSavedData@@QEAAXXZ
     MCAPI void setDirtyForSaveAndPixelData();

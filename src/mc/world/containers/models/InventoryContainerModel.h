@@ -41,7 +41,7 @@ public:
     virtual int _getContainerOffset() const;
 
     // vIndex: 24, symbol: ?_onItemChanged@InventoryContainerModel@@EEAAXHAEBVItemStack@@0@Z
-    virtual void _onItemChanged(int, class ItemStack const& oldItem, class ItemStack const& newItem);
+    virtual void _onItemChanged(int modelSlot, class ItemStack const& oldItem, class ItemStack const& newItem);
 
     // symbol: ??0InventoryContainerModel@@QEAA@W4ContainerEnumName@@HAEAVPlayer@@@Z
     MCAPI InventoryContainerModel(::ContainerEnumName containerName, int size, class Player& player);
@@ -51,7 +51,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_refreshSlot@InventoryContainerModel@@AEAAXH@Z
-    MCAPI void _refreshSlot(int);
+    MCAPI void _refreshSlot(int modelSlot);
 
     // NOLINTEND
 };

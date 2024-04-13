@@ -26,7 +26,7 @@ public:
     MCAPI explicit HugeMushroomFeature(int forcedType);
 
     // symbol: ?placeFixed@HugeMushroomFeature@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@HH@Z
-    MCAPI bool placeFixed(class BlockSource& region, class BlockPos const& pos, int, int height) const;
+    MCAPI bool placeFixed(class BlockSource& region, class BlockPos const& pos, int mushroomType, int height) const;
 
     // NOLINTEND
 

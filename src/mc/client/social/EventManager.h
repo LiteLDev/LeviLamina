@@ -37,13 +37,15 @@ public:
     // symbol:
     // ?buildCommonProperties@EventManager@Events@Social@@QEBA?AV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VProperty@Events@Social@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VProperty@Events@Social@@@std@@@2@@std@@IAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@5@@Z
     MCAPI std::unordered_map<std::string, class Social::Events::Property>
-          buildCommonProperties(uint userId, std::vector<std::string> const&) const;
+          buildCommonProperties(uint userId, std::vector<std::string> const& exclude) const;
 
     // symbol:
     // ?buildCommonProperties@EventManager@Events@Social@@QEBAXAEAV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VProperty@Events@Social@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VProperty@Events@Social@@@std@@@2@@std@@IAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@5@@Z
-    MCAPI void
-    buildCommonProperties(std::unordered_map<std::string, class Social::Events::Property>& props, uint userId, std::vector<std::string> const&)
-        const;
+    MCAPI void buildCommonProperties(
+        std::unordered_map<std::string, class Social::Events::Property>& props,
+        uint                                                             userId,
+        std::vector<std::string> const&                                  exclude
+    ) const;
 
     // symbol: ?disableEventRecording@EventManager@Events@Social@@QEAAXXZ
     MCAPI void disableEventRecording();

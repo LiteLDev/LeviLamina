@@ -77,8 +77,14 @@ public:
     MCAPI WeepingVinesBlock(std::string const& nameId, int id);
 
     // symbol: ?placeVineString@WeepingVinesBlock@@SAXAEAVBlockSource@@AEAVRandom@@AEBVBlockPos@@HHH@Z
-    MCAPI static void
-    placeVineString(class BlockSource& region, class Random& random, class BlockPos const& vinePos, int, int, int);
+    MCAPI static void placeVineString(
+        class BlockSource&    region,
+        class Random&         random,
+        class BlockPos const& vinePos,
+        int                   vineHeight,
+        int                   minAge,
+        int                   maxAge
+    );
 
     // NOLINTEND
 

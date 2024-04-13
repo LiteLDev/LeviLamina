@@ -103,7 +103,7 @@ public:
     MCAPI void _calculateActorPositionFromPlacementPosition(class BlockPos const& blockPos);
 
     // symbol: ?_wouldSurvive@HangingActor@@IEAA_NAEAVBlockSource@@AEBVBlockPos@@_N@Z
-    MCAPI bool _wouldSurvive(class BlockSource& region, class BlockPos const& blockPos, bool);
+    MCAPI bool _wouldSurvive(class BlockSource& region, class BlockPos const& blockPos, bool beingPlaced);
 
     // NOLINTEND
 
@@ -116,7 +116,8 @@ public:
     MCAPI bool _blockIsObstruction(class BlockSource const& region, class BlockPos const& blockPos) const;
 
     // symbol: ?_canSurviveOnBlock@HangingActor@@AEBA_NAEBVBlockSource@@AEBVBlockPos@@_N@Z
-    MCAPI bool _canSurviveOnBlock(class BlockSource const& region, class BlockPos const& blockPos, bool) const;
+    MCAPI bool
+    _canSurviveOnBlock(class BlockSource const& region, class BlockPos const& blockPos, bool beingPlaced) const;
 
     // NOLINTEND
 

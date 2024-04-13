@@ -48,7 +48,7 @@ CommandHandle& CommandRegistrar::getOrCreateCommand(
         registry.registerCommand(name, description.c_str(), requirement, flag);
         signature = registry.findCommand(name);
         if (!signature) {
-            throw std::runtime_error{"failed to register command " + name};
+            std::terminate();
         }
         return impl->commands.try_emplace(signature->name, *this, *signature, true).first->second;
     } else if (impl->commands.contains(signature->name)) {

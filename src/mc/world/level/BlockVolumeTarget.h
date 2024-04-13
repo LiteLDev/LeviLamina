@@ -103,7 +103,7 @@ public:
     // symbol:
     // ??0BlockVolumeTarget@@QEAA@AEAVBlockVolume@@AEAVLevel@@AEBVBiomeSource@@V?$AutomaticID@VDimension@@H@@AEBUWorldGenContext@@@Z
     MCAPI BlockVolumeTarget(
-        class BlockVolume&,
+        class BlockVolume&            blockVolume,
         class Level&                  level,
         class BiomeSource const&      biomeSource,
         DimensionType                 dimensionType,

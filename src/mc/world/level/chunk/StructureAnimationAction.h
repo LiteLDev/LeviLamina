@@ -30,20 +30,24 @@ public:
     // symbol:
     // ??0StructureAnimationAction@@QEAA@V?$unique_ptr@VStructureAnimationData@@U?$default_delete@VStructureAnimationData@@@std@@@std@@V?$AutomaticID@VDimension@@H@@@Z
     MCAPI
-    StructureAnimationAction(std::unique_ptr<class StructureAnimationData>, DimensionType dimensionType);
+    StructureAnimationAction(
+        std::unique_ptr<class StructureAnimationData> structureAnimationData,
+        DimensionType                                 dimensionType
+    );
 
     // symbol:
     // ??0StructureAnimationAction@@QEAA@AEBVStructureSettings@@V?$AutomaticID@VDimension@@H@@AEBVBlockPos@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI StructureAnimationAction(
         class StructureSettings const& structureSettings,
         DimensionType                  dimensionType,
-        class BlockPos const&,
-        std::string const& fullName
+        class BlockPos const&          loadPosition,
+        std::string const&             fullName
     );
 
     // symbol:
     // ?load@StructureAnimationAction@@SA?AV?$unique_ptr@VStructureAnimationAction@@U?$default_delete@VStructureAnimationAction@@@std@@@std@@AEBVCompoundTag@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-    MCAPI static std::unique_ptr<class StructureAnimationAction> load(class CompoundTag const& tag, std::string const&);
+    MCAPI static std::unique_ptr<class StructureAnimationAction>
+    load(class CompoundTag const& tag, std::string const& dimensionPrefix);
 
     // NOLINTEND
 };

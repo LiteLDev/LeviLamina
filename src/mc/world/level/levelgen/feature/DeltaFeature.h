@@ -25,7 +25,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_isValidPlacement@DeltaFeature@@AEBA_NAEAVBlockSource@@VBlockPos@@@Z
-    MCAPI bool _isValidPlacement(class BlockSource& region, class BlockPos) const;
+    MCAPI bool _isValidPlacement(class BlockSource& region, class BlockPos cursor) const;
 
     // NOLINTEND
 };

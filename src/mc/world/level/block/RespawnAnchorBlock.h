@@ -61,7 +61,7 @@ public:
     virtual bool isInteractiveBlock() const;
 
     // vIndex: 151, symbol: ?use@RespawnAnchorBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player& player, class BlockPos const&, uchar face) const;
+    virtual bool use(class Player& player, class BlockPos const& anchorBlockPos, uchar face) const;
 
     // symbol: ??0RespawnAnchorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI RespawnAnchorBlock(std::string const& nameId, int id);

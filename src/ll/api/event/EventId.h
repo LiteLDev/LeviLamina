@@ -25,7 +25,7 @@ public:
     }
 };
 
-static constexpr EventId EmptyEventId{""};
+static inline constexpr EventId EmptyEventId{""};
 
 template <class T>
 constexpr EventId getEventId = []() -> EventId {
@@ -34,7 +34,7 @@ constexpr EventId getEventId = []() -> EventId {
         return self::CustomEventId;
     } else {
         static_assert(std::is_final_v<self>, "Only final classes can use getEventId");
-        return EventId{ll::reflection::type_raw_name_v<self>};
+        return EventId{ll::reflection::type_unprefix_name_v<self>};
     }
 }();
 } // namespace ll::event

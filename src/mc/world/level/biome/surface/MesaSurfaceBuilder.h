@@ -48,7 +48,7 @@ public:
         class BlockPos const& pos,
         float                 depthValue,
         class Random&         random,
-        class BlockVolume&,
+        class BlockVolume&    blockVolume,
         int,
         short seaLevel,
         struct MesaSurfaceBlocks const&,

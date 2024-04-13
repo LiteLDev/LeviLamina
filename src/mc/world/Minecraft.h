@@ -50,9 +50,9 @@ public:
     // symbol:
     // ??0Minecraft@@QEAA@AEAVIMinecraftApp@@AEAVGameCallbacks@@AEAVAllowList@@PEAVPermissionsFile@@AEBV?$not_null@V?$NonOwnerPointer@VFilePathManager@Core@@@Bedrock@@@gsl@@V?$duration@_JU?$ratio@$00$00@std@@@chrono@std@@AEAVIMinecraftEventing@@VClientOrServerNetworkSystemRef@@AEAVPacketSender@@W4SubClientId@@AEAVTimer@@AEAVTimer@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentTierManager@@@Bedrock@@@6@PEAVServerMetrics@@@Z
     MCAPI Minecraft(
-        class IMinecraftApp& app,
-        class GameCallbacks& gameCallbacks,
-        class AllowList&,
+        class IMinecraftApp&                                                app,
+        class GameCallbacks&                                                gameCallbacks,
+        class AllowList&                                                    allowList,
         class PermissionsFile*                                              permissionsFile,
         Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const&     filePathManager,
         std::chrono::seconds                                                maxPlayerIdleTime,
@@ -70,7 +70,7 @@ public:
     MCAPI void activateAllowList();
 
     // symbol: ?configureGameTest@Minecraft@@QEAAXAEAVLevel@@AEBVExperiments@@@Z
-    MCAPI void configureGameTest(class Level& level, class Experiments const&);
+    MCAPI void configureGameTest(class Level& level, class Experiments const& experiments);
 
     // symbol:
     // ?disconnectClient@Minecraft@@QEAAXAEBVNetworkIdentifier@@W4DisconnectFailReason@Connection@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

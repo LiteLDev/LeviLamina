@@ -38,7 +38,7 @@ public:
     // symbol:
     // ??0PromiseAny@Scripting@@QEAA@PEAVIRuntime@1@UContextId@1@VWeakLifetimeScope@1@AEBV?$StrongTypedObjectHandle@UPromiseType@Scripting@@@1@@Z
     MCAPI
-    PromiseAny(class Scripting::IRuntime*, struct Scripting::ContextId, class Scripting::WeakLifetimeScope scope, class Scripting::StrongTypedObjectHandle<struct Scripting::PromiseType> const&);
+    PromiseAny(class Scripting::IRuntime* runtime, struct Scripting::ContextId, class Scripting::WeakLifetimeScope scope, class Scripting::StrongTypedObjectHandle<struct Scripting::PromiseType> const&);
 
     // symbol:
     // ?getPromiseHandle@PromiseAny@Scripting@@QEBA?AV?$optional@U?$TypedObjectHandle@UPromiseType@Scripting@@@Scripting@@@std@@XZ

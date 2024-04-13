@@ -37,8 +37,8 @@ public:
                 auto llock = ll::Logger::lock();
                 try {
                     logger.error(
-                        "Error in [{}:{}] of <{}>:",
-                        ll::reflection::removeTypePrefix(ll::reflection::getDynamicRawName(*l)),
+                        "Error in Listener<{}>[{}] of {}:",
+                        event.getId().name,
                         l->getId(),
                         l->pluginPtr.expired() ? "unknown plugin" : l->pluginPtr.lock()->getManifest().name
                     );
@@ -62,12 +62,7 @@ public:
             } catch (...) {
                 auto llock = ll::Logger::lock();
                 try {
-                    logger.error(
-                        "Error in [{}:{}] of <{}>:",
-                        ll::reflection::removeTypePrefix(ll::reflection::getDynamicRawName(*l)),
-                        l->getId(),
-                        pluginName
-                    );
+                    logger.error("Error in Listener<{}>[{}] of {}:", event.getId().name, l->getId(), pluginName);
                 } catch (...) {}
                 error_utils::printCurrentException(logger);
             }

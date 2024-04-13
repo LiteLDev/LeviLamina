@@ -32,7 +32,11 @@ bool defaultConfigUpdater(T& config, J& data) {
 template <IsConfig T, class J = nlohmann::ordered_json, class F = bool(T&, J&)>
 inline bool loadConfig(T& config, std::filesystem::path const& path, F&& updater = defaultConfigUpdater<T, J>) {
     bool noNeedRewrite = true;
-    auto content       = file_utils::readFile(path);
+    namespace fs       = std::filesystem;
+    if (!fs::exists(path)) {
+        saveConfig<T, J>(config, path);
+    }
+    auto content = file_utils::readFile(path);
     if (content && !content->empty()) {
         auto data{J::parse(*content, nullptr, true, true)};
         if (!data.contains("version")) {

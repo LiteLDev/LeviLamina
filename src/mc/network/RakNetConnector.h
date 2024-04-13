@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/NetworkIdentifier.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
@@ -108,6 +109,14 @@ public:
         RakNetNetworkPeer& operator=(RakNetNetworkPeer const&);
         RakNetNetworkPeer(RakNetNetworkPeer const&);
         RakNetNetworkPeer();
+
+        RakNet::RakPeerInterface&   mRakPeer;           // this+0x18
+        NetworkIdentifier           mId;                // this+0x20
+        std::string                 mSendBuffer;        // this+0xC0
+        std::vector<ReadBufferData> mReadBufferDatas;   // this+0xE0
+        int                         mApproximateMaxBps; // this+0xF8
+        int                         mLastPing;          // this+0xFC
+        int                         mAveragePing;       // this+0x100
 
     public:
         // NOLINTBEGIN

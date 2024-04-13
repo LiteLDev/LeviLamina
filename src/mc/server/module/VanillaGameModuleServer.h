@@ -35,9 +35,9 @@ public:
     // ?configureLevel@VanillaGameModuleServer@@UEAAXAEBV?$not_null@V?$NonOwnerPointer@VLevel@@@Bedrock@@@gsl@@AEBVExperiments@@AEAVResourcePackManager@@AEBVBaseGameVersion@@@Z
     virtual void configureLevel(
         Bedrock::NotNullNonOwnerPtr<class Level> const& level,
-        class Experiments const&,
-        class ResourcePackManager&   resourcePackManager,
-        class BaseGameVersion const& baseGameVersion
+        class Experiments const&                        experiments,
+        class ResourcePackManager&                      resourcePackManager,
+        class BaseGameVersion const&                    baseGameVersion
     );
 
     // vIndex: 4, symbol: ?configureNewPlayer@VanillaGameModuleServer@@UEAAXAEAVPlayer@@@Z
@@ -76,10 +76,10 @@ public:
     // ?_configureWorldGen@VanillaGameModuleServer@@AEAAXAEAVIWorldRegistriesProvider@@AEBUSpawnSettings@@AEBVExperiments@@AEAVResourcePackManager@@AEBVBaseGameVersion@@@Z
     MCAPI void _configureWorldGen(
         class IWorldRegistriesProvider& worldRegistries,
-        struct SpawnSettings const&,
-        class Experiments const&,
-        class ResourcePackManager&   resourcePackManager,
-        class BaseGameVersion const& baseGameVersion
+        struct SpawnSettings const&     spawnSettings,
+        class Experiments const&        experiments,
+        class ResourcePackManager&      resourcePackManager,
+        class BaseGameVersion const&    baseGameVersion
     );
 
     // symbol:

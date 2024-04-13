@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?getDataValues@ChannelTransform@@QEBA_NAEAVVec3@@0@Z
-    MCAPI bool getDataValues(class Vec3&, class Vec3& maxValue) const;
+    MCAPI bool getDataValues(class Vec3& minValue, class Vec3& maxValue) const;
 
     // NOLINTEND
 };

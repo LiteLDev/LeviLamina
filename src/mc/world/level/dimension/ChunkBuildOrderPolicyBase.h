@@ -24,7 +24,7 @@ public:
     virtual void unregisterForUpdates(uint handle) = 0;
 
     // vIndex: 4, symbol: ?setPlayerInfluence@ChunkBuildOrderPolicy@@UEAAXIAEBVChunkPos@@AEBVVec3@@@Z
-    virtual void setPlayerInfluence(uint handle, class ChunkPos const&, class Vec3 const&) = 0;
+    virtual void setPlayerInfluence(uint handle, class ChunkPos const& playerPosition, class Vec3 const&) = 0;
 
     // vIndex: 5, symbol: ?setTickingAreaInfluence@ChunkBuildOrderPolicy@@UEAAXIAEBVChunkPos@@HH_N1@Z
     virtual void

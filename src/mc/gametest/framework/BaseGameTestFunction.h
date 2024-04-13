@@ -42,7 +42,7 @@ public:
         int,
         int,
         int,
-        bool,
+        bool rotate,
         bool required,
         int,
         int,

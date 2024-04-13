@@ -165,7 +165,7 @@ public:
     MCAPI void _setHorseFlag(::HorseFlags flag, bool value);
 
     // symbol: ?_setHorseType@Horse@@AEAA_NAEAW4ActorType@@@Z
-    MCAPI bool _setHorseType(::ActorType&);
+    MCAPI bool _setHorseType(::ActorType& actorType);
 
     // NOLINTEND
 };

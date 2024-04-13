@@ -67,7 +67,7 @@ public:
     MCAPI void _assignNetIdVariant(class ItemStack const& fromItem) const;
 
     // symbol: ?clientInitLegacyRequestId@ItemStack@@QEAAXAEBV?$TypedClientNetId@UItemStackLegacyRequestIdTag@@H$0A@@@@Z
-    MCAPI void clientInitLegacyRequestId(ItemStackLegacyRequestId const&);
+    MCAPI void clientInitLegacyRequestId(ItemStackLegacyRequestId const& legacyClientRequestId);
 
     // symbol: ?clone@ItemStack@@QEBA?AV1@XZ
     MCAPI class ItemStack clone() const;

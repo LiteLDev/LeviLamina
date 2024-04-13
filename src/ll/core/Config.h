@@ -15,7 +15,7 @@ namespace ll {
 
 struct LeviConfig {
 
-    int version = 21;
+    int version = 22;
 
     std::string language = "system";
     struct {
@@ -46,7 +46,7 @@ struct LeviConfig {
             bool crashCommand        = false;
             bool tpdimCommand        = true;
             bool versionCommand      = true;
-            bool memstatusCommand    = true;
+            bool memstatsCommand     = true;
             bool pluginManageCommand = true;
         } commands{};
 

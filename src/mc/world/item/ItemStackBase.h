@@ -315,7 +315,7 @@ public:
     MCAPI bool isHorseArmorItem() const;
 
     // symbol: ?isInstance@ItemStackBase@@QEBA_NAEBVHashedString@@_N@Z
-    MCAPI bool isInstance(class HashedString const& itemName, bool) const;
+    MCAPI bool isInstance(class HashedString const& itemName, bool useItemLookup) const;
 
     // symbol: ?isItem@ItemStackBase@@QEBA_NXZ
     MCAPI bool isItem() const;
@@ -559,10 +559,10 @@ public:
     MCAPI void init(class BlockLegacy const& block, int count);
 
     // symbol: ?init@ItemStackBase@@IEAAXHHH_N@Z
-    MCAPI void init(int id, int count_, int aux_, bool);
+    MCAPI void init(int id, int count_, int aux_, bool doRemap);
 
     // symbol: ?init@ItemStackBase@@IEAAXAEBVItem@@HHPEBVCompoundTag@@_N@Z
-    MCAPI void init(class Item const& item, int count, int auxValue, class CompoundTag const* userData, bool);
+    MCAPI void init(class Item const& item, int count, int auxValue, class CompoundTag const* userData, bool doRemap);
 
     // symbol: ??4ItemStackBase@@IEAAAEAV0@AEBV0@@Z
     MCAPI class ItemStackBase& operator=(class ItemStackBase const& rhs);
@@ -592,7 +592,7 @@ public:
     MCAPI void _setChargedItem(class ItemInstance const& item);
 
     // symbol: ?_setItem@ItemStackBase@@AEAA_NH_N@Z
-    MCAPI bool _setItem(int id, bool);
+    MCAPI bool _setItem(int id, bool doRemap);
 
     // symbol: ?_updateCompareHashes@ItemStackBase@@AEAAXXZ
     MCAPI void _updateCompareHashes();

@@ -42,7 +42,7 @@ public:
     virtual int _getContainerOffset() const;
 
     // vIndex: 24, symbol: ?_onItemChanged@PlayerUIContainerModelBase@@MEAAXHAEBVItemStack@@0@Z
-    virtual void _onItemChanged(int, class ItemStack const& oldItem, class ItemStack const& newItem);
+    virtual void _onItemChanged(int modelSlot, class ItemStack const& oldItem, class ItemStack const& newItem);
 
     // symbol: ??0PlayerUIContainerModelBase@@QEAA@W4ContainerEnumName@@AEAVPlayer@@HW4ContainerCategory@@@Z
     MCAPI PlayerUIContainerModelBase(

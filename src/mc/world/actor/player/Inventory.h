@@ -24,7 +24,7 @@ public:
     virtual void setItem(int slot, class ItemStack const& item);
 
     // vIndex: 11, symbol: ?setItemWithForceBalance@Inventory@@UEAAXHAEBVItemStack@@_N@Z
-    virtual void setItemWithForceBalance(int slot, class ItemStack const& item, bool);
+    virtual void setItemWithForceBalance(int slot, class ItemStack const& item, bool forceBalanced);
 
     // vIndex: 23, symbol: ?getEmptySlotsCount@Inventory@@UEBAHXZ
     virtual int getEmptySlotsCount() const;

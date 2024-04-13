@@ -1,4 +1,6 @@
-add_rules("mode.debug", "mode.release")
+add_rules("mode.release", "mode.debug")
+set_allowedarchs("windows|x64")
+set_defaultarchs("windows|x64")
 
 add_repositories("liteldev-repo https://github.com/LiteLDev/xmake-repo.git")
 
@@ -13,15 +15,13 @@ add_requires("magic_enum")
 add_requires("nlohmann_json")
 add_requires("rapidjson v1.1.0")
 add_requires("mimalloc")
-add_requires("openssl 1.1.1-w")
-add_requires("zlib", {system = false})
-add_requires("cpp-httplib", {configs={ssl=true, zlib=true}})
+add_requires("cpp-httplib 0.14.0", {configs={ssl=true}})
 
 -- Dependencies from liteldev-repo.
 add_requires("pcg_cpp")
 add_requires("pfr")
 add_requires("demangler")
-add_requires("preloader")
+add_requires("preloader ~1.6.2")
 add_requires("symbolprovider ~1")
 add_requires("bdslibrary 1.20.72.01")
 
@@ -66,13 +66,11 @@ target("LeviLamina")
     )
     add_defines(
         "_AMD64_",
-        "_CRT_SECURE_NO_WARNINGS",
         "NOMINMAX",
         "UNICODE",
         "WIN32_LEAN_AND_MEAN",
         "ENTT_PACKED_PAGE=128",
         "LL_EXPORT",
-        "CPPHTTPLIB_OPENSSL_SUPPORT",
         "_HAS_CXX23=1" -- work around to enable c++23
     )
     add_files(
@@ -126,6 +124,9 @@ target("LeviLamina")
         after_build(function (target)
             io.writefile("src/ll/test/include_all.cpp", "// auto gen when build test\n")
         end)
+    end
+    if has_config("use_mimalloc") then
+        add_defines("LL_USE_MIMALLOC")
     end
 
     if is_mode("debug") then

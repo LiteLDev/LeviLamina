@@ -49,7 +49,7 @@ public:
 
     // symbol: ?_slotBoundsValid@ItemReplacementCommandUtil@Util@@CA_NAEAUReplacementResults@2@HHV?$optional@H@std@@1@Z
     MCAPI static bool
-    _slotBoundsValid(struct Util::ReplacementResults&, int, int, std::optional<int>, std::optional<int>);
+    _slotBoundsValid(struct Util::ReplacementResults&, int slotId, int, std::optional<int>, std::optional<int>);
 
     // NOLINTEND
 };

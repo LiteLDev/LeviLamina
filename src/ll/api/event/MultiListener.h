@@ -22,13 +22,13 @@ public:
     )
     : ListenerBase(priority, std::move(plugin)) {
         event_list::forEach([fn = std::forward<Callable>(fn), this]<class E>() {
-            callback.emplace(typeid(E), [fn](Event& ev) { static_cast<void>(fn(static_cast<E&>(ev))); });
+            callback.emplace(getEventId<E>, [fn](Event& ev) { static_cast<void>(fn(static_cast<E&>(ev))); });
         });
     }
 
     ~MultiListener() override = default;
 
-    void call(Event& event) override { callback.at(typeid(event))(event); }
+    void call(Event& event) override { callback.at(event.getId())(event); }
 
     template <class Callable>
     static std::shared_ptr<MultiListener> create(
@@ -40,6 +40,6 @@ public:
     }
 
 private:
-    std::unordered_map<std::type_index, callback_fn> callback;
+    std::unordered_map<EventId, callback_fn> callback;
 };
 } // namespace ll::event

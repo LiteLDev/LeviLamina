@@ -21,11 +21,11 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?addConditionalBandwidthOptimization@ConditionalBandwidthOptimizationDefinition@@QEAAXAEBUConditionalBandwidthOptimization@@@Z
-    MCAPI void addConditionalBandwidthOptimization(struct ConditionalBandwidthOptimization const&);
+    MCAPI void addConditionalBandwidthOptimization(struct ConditionalBandwidthOptimization const& optimization);
 
     // symbol:
     // ?addDefaultBandwidthOptimization@ConditionalBandwidthOptimizationDefinition@@QEAAXAEBUConditionalBandwidthOptimization@@@Z
-    MCAPI void addDefaultBandwidthOptimization(struct ConditionalBandwidthOptimization const&);
+    MCAPI void addDefaultBandwidthOptimization(struct ConditionalBandwidthOptimization const& optimization);
 
     // symbol:
     // ?initialize@ConditionalBandwidthOptimizationDefinition@@QEBAXAEAVEntityContext@@AEAVConditionalBandwidthOptimizationComponent@@@Z

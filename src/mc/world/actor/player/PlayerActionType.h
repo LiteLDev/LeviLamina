@@ -35,5 +35,11 @@ enum class PlayerActionType : int {
     StartItemUseOn                   = 0x1C,
     StopItemUseOn                    = 0x1D,
     HandledTeleport                  = 0x1E,
-    Count                            = 0x1F,
+    MissedSwing                      = 0x1F,
+    StartCrawling                    = 0x20,
+    StopCrawling                     = 0x21,
+    StartFlying                      = 0x22,
+    StopFlying                       = 0x23,
+    ClientAckServerData              = 0x24,
+    Count                            = 0x25
 };

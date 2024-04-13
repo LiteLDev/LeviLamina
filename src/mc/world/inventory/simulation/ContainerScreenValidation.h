@@ -34,11 +34,12 @@ public:
     // symbol:
     // ??0ContainerScreenValidation@@QEAA@AEBVContainerScreenContext@@W4ContainerValidationCaller@@V?$unordered_map@W4ContainerEnumName@@V?$shared_ptr@VContainer@@@std@@U?$hash@W4ContainerEnumName@@@3@U?$equal_to@W4ContainerEnumName@@@3@V?$allocator@U?$pair@$$CBW4ContainerEnumName@@V?$shared_ptr@VContainer@@@std@@@std@@@3@@std@@@Z
     MCAPI
-    ContainerScreenValidation(class ContainerScreenContext const&, ::ContainerValidationCaller, std::unordered_map<::ContainerEnumName, std::shared_ptr<class Container>>);
+    ContainerScreenValidation(class ContainerScreenContext const& screenContext, ::ContainerValidationCaller, std::unordered_map<::ContainerEnumName, std::shared_ptr<class Container>>);
 
     // symbol:
     // ?getOrCreateSparseContainer@ContainerScreenValidation@@QEAA?AV?$shared_ptr@VSimpleSparseContainer@@@std@@W4ContainerEnumName@@@Z
-    MCAPI std::shared_ptr<class SimpleSparseContainer> getOrCreateSparseContainer(::ContainerEnumName);
+    MCAPI std::shared_ptr<class SimpleSparseContainer> getOrCreateSparseContainer(::ContainerEnumName containerEnumName
+    );
 
     // symbol: ?isCraftingImplemented@ContainerScreenValidation@@QEAA_NXZ
     MCAPI bool isCraftingImplemented();
@@ -80,27 +81,27 @@ public:
     // symbol:
     // ?makeContainerScreenValidation@ContainerScreenValidation@@SA?AV?$unique_ptr@VContainerScreenValidation@@U?$default_delete@VContainerScreenValidation@@@std@@@std@@AEBVContainerScreenContext@@W4ContainerValidationCaller@@V?$unordered_map@W4ContainerEnumName@@V?$shared_ptr@VContainer@@@std@@U?$hash@W4ContainerEnumName@@@3@U?$equal_to@W4ContainerEnumName@@@3@V?$allocator@U?$pair@$$CBW4ContainerEnumName@@V?$shared_ptr@VContainer@@@std@@@std@@@3@@3@@Z
     MCAPI static std::unique_ptr<class ContainerScreenValidation>
-    makeContainerScreenValidation(class ContainerScreenContext const&, ::ContainerValidationCaller, std::unordered_map<::ContainerEnumName, std::shared_ptr<class Container>>);
+    makeContainerScreenValidation(class ContainerScreenContext const& screenContext, ::ContainerValidationCaller, std::unordered_map<::ContainerEnumName, std::shared_ptr<class Container>>);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
     // symbol: ?_tryAddItem@ContainerScreenValidation@@IEAAHAEAUContainerValidationSlotInfo@@H_N@Z
-    MCAPI int _tryAddItem(struct ContainerValidationSlotInfo&, int addCount, bool);
+    MCAPI int _tryAddItem(struct ContainerValidationSlotInfo& slotInfo, int addCount, bool);
 
     // symbol: ?_tryRemoveItem@ContainerScreenValidation@@IEAA?AVItemStack@@AEAUContainerValidationSlotInfo@@H@Z
-    MCAPI class ItemStack _tryRemoveItem(struct ContainerValidationSlotInfo&, int amount);
+    MCAPI class ItemStack _tryRemoveItem(struct ContainerValidationSlotInfo& slotInfo, int amount);
 
     // symbol: ?_trySetItem@ContainerScreenValidation@@IEAAHAEAUContainerValidationSlotInfo@@AEBVItemStack@@_N2@Z
-    MCAPI int _trySetItem(struct ContainerValidationSlotInfo&, class ItemStack const& stack, bool, bool);
+    MCAPI int _trySetItem(struct ContainerValidationSlotInfo& slotInfo, class ItemStack const& stack, bool, bool);
 
     // symbol:
     // ?_tryTransferSpecial@ContainerScreenValidation@@IEAA?AUContainerValidationResult@@AEBUContainerValidationSlotData@@HW4ContainerScreenRequestActionType@@@Z
     MCAPI struct ContainerValidationResult _tryTransferSpecial(
         struct ContainerValidationSlotData const&,
-        int transferAmount,
-        ::ContainerScreenRequestActionType
+        int                                transferAmount,
+        ::ContainerScreenRequestActionType actionType
     );
 
     // NOLINTEND
@@ -120,7 +121,8 @@ public:
 
     // symbol:
     // ?_getOrCreateContainerValidator@ContainerScreenValidation@@AEAA?AV?$shared_ptr@$$CBVContainerValidationBase@@@std@@W4ContainerEnumName@@@Z
-    MCAPI std::shared_ptr<class ContainerValidationBase const> _getOrCreateContainerValidator(::ContainerEnumName);
+    MCAPI std::shared_ptr<class ContainerValidationBase const>
+          _getOrCreateContainerValidator(::ContainerEnumName containerEnumName);
 
     // symbol: ?_propagateContainers@ContainerScreenValidation@@AEAA_NXZ
     MCAPI bool _propagateContainers();

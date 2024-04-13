@@ -35,7 +35,7 @@ public:
     // symbol:
     // ?_placeBranch@MangroveTreeTrunk@@AEBAXAEAVIBlockWorldGenAPI@@PEAV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@AEAVRandom@@HAEAVRenderParams@@AEBUTreeParams@TreeHelper@@AEAVBlockPos@@HEHHPEBVBlock@@@Z
     MCAPI void
-    _placeBranch(class IBlockWorldGenAPI& target, std::vector<class BlockPos>*, class Random& random, int treeHeight, class RenderParams&, struct TreeHelper::TreeParams const& treeParams, class BlockPos&, int, uchar, int, int, class Block const*)
+    _placeBranch(class IBlockWorldGenAPI& target, std::vector<class BlockPos>*, class Random& random, int treeHeight, class RenderParams&, struct TreeHelper::TreeParams const& treeParams, class BlockPos&, int, uchar, int branchPos, int, class Block const*)
         const;
 
     // NOLINTEND

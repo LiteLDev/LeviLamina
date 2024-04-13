@@ -110,7 +110,7 @@ public:
         class ActorInfoRegistry*    actorInfoRegistry,
         class BlockDefinitionGroup* blockDefinitionGroup,
         bool                        isClient,
-        class Experiments const&,
+        class Experiments const&    experiment,
         std::function<
             void(class ItemRegistryRef, class ActorInfoRegistry*, class BlockDefinitionGroup*, class CreativeItemRegistry*, bool, class BaseGameVersion const&, class Experiments const&)>
             registerCallback
@@ -150,7 +150,7 @@ public:
     MCAPI class WeakPtr<class Item> lookupByNameNoAlias(std::string_view inString) const;
 
     // symbol: ?lookupByNameNoParsing@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEAHAEBVHashedString@@@Z
-    MCAPI class WeakPtr<class Item> lookupByNameNoParsing(int&, class HashedString const& fullName) const;
+    MCAPI class WeakPtr<class Item> lookupByNameNoParsing(int& inOutItemAux, class HashedString const& fullName) const;
 
     // symbol:
     // ?lookupByTag@ItemRegistryRef@@QEBA?AV?$unordered_set@PEBVItem@@U?$hash@PEBVItem@@@std@@U?$equal_to@PEBVItem@@@3@V?$allocator@PEBVItem@@@3@@std@@AEBUItemTag@@@Z
@@ -160,8 +160,11 @@ public:
     MCAPI class WeakPtr<class Item> lookupByVanillaName(class HashedString const& inString) const;
 
     // symbol: ?registerAlias@ItemRegistryRef@@QEBAXAEBVHashedString@@0AEBVBaseGameVersion@@@Z
-    MCAPI void
-    registerAlias(class HashedString const& alias, class HashedString const& name, class BaseGameVersion const&) const;
+    MCAPI void registerAlias(
+        class HashedString const&    alias,
+        class HashedString const&    name,
+        class BaseGameVersion const& fromVersion
+    ) const;
 
     // symbol:
     // ?registerComplexAlias@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@AEBUItemRegistryComplexAlias@@@Z
@@ -175,15 +178,17 @@ public:
     MCAPI void registerLegacyID(class HashedString const& name, short id) const;
 
     // symbol: ?registerLegacyMapping@ItemRegistryRef@@QEBAXAEBVHashedString@@0AEBVBaseGameVersion@@@Z
-    MCAPI void
-    registerLegacyMapping(class HashedString const& alias, class HashedString const& name, class BaseGameVersion const&)
-        const;
+    MCAPI void registerLegacyMapping(
+        class HashedString const&    alias,
+        class HashedString const&    name,
+        class BaseGameVersion const& fromVersion
+    ) const;
 
     // symbol: ?remapToFullLegacyNameByHash@ItemRegistryRef@@QEBA_K_K@Z
-    MCAPI uint64 remapToFullLegacyNameByHash(uint64) const;
+    MCAPI uint64 remapToFullLegacyNameByHash(uint64 newHash) const;
 
     // symbol: ?remapToLegacyNameByHash@ItemRegistryRef@@QEBA_K_K@Z
-    MCAPI uint64 remapToLegacyNameByHash(uint64) const;
+    MCAPI uint64 remapToLegacyNameByHash(uint64 newHash) const;
 
     // symbol: ?setCheckForItemWorldCompatibility@ItemRegistryRef@@QEBAX_N@Z
     MCAPI void setCheckForItemWorldCompatibility(bool value) const;

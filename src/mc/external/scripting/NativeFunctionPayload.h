@@ -36,7 +36,7 @@ public:
     // vIndex: 1, symbol:
     // ?runOn@NativeFunctionPayload@Scripting@@UEAA?AVResultAny@2@UContextId@2@AEAVNativeRuntime@2@V?$optional@W4Privilege@Scripting@@@std@@@Z
     virtual class Scripting::ResultAny
-    runOn(struct Scripting::ContextId, class Scripting::NativeRuntime&, std::optional<::Scripting::Privilege>);
+    runOn(struct Scripting::ContextId, class Scripting::NativeRuntime& runtime, std::optional<::Scripting::Privilege>);
 
     // vIndex: 2, symbol:
     // ?runOn@IPayload@Scripting@@UEAA?AVResultAny@2@UContextId@2@AEAVStringBasedRuntime@2@V?$optional@W4Privilege@Scripting@@@std@@@Z

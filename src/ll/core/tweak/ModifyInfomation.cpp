@@ -89,7 +89,7 @@ LL_STATIC_HOOK(
     }
     if (success && bufferCount > 0) {
         buffer = std::string(bufferCount, '\0');
-        vsprintf(buffer.data(), pszFormat, va);
+        vsprintf_s(buffer.data(), buffer.size() + 1, pszFormat, va);
     }
     va_end(va);
 
