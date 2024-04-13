@@ -2,7 +2,6 @@
 
 #include <chrono>
 #include <cstddef>
-#include <expected>
 #include <filesystem>
 #include <memory>
 #include <mutex>
@@ -33,6 +32,7 @@
 #include "ll/core/plugin/NativePluginManager.h"
 
 
+#include "mc/external/expected_lite/expected.h"
 #include "mc/server/ServerInstance.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 
@@ -60,14 +60,14 @@ enum class DirState {
     Success,
 };
 
-static std::expected<Manifest, DirState> loadManifest(std::filesystem::path const& dir) {
+static nonstd::expected<Manifest, DirState> loadManifest(std::filesystem::path const& dir) {
     auto content = file_utils::readFile(dir / u8"manifest.json");
     if (!content || content->empty()) {
-        return std::unexpected{DirState::Empty};
+        return nonstd::make_unexpected(DirState::Empty);
     }
     auto json = nlohmann::json::parse(*content, nullptr, false, true);
     if (json.is_discarded()) {
-        return std::unexpected{DirState::Error};
+        return nonstd::make_unexpected(DirState::Error);
     }
     std::string dirName = string_utils::u8str2str(dir.filename().u8string());
     Manifest    manifest;
@@ -75,14 +75,14 @@ static std::expected<Manifest, DirState> loadManifest(std::filesystem::path cons
         reflection::deserialize<nlohmann::json, Manifest>(manifest, json);
     } catch (...) {
         error_utils::printCurrentException(logger);
-        return std::unexpected{DirState::Error};
+        return nonstd::make_unexpected(DirState::Error);
     }
     if (manifest.type == "preload-native" /*NativePluginTypeName*/) {
-        return std::unexpected{DirState::Empty}; // bypass preloader plugin
+        return nonstd::make_unexpected(DirState::Empty); // bypass preloader plugin
     }
     if (manifest.name != dirName) {
         logger.error("Plugin name {} do not match folder {}"_tr(manifest.name, dirName));
-        return std::unexpected{DirState::Error};
+        return nonstd::make_unexpected(DirState::Error);
     }
     return manifest;
 }
@@ -112,7 +112,7 @@ void PluginRegistrar::loadAllPlugins() {
         }
         auto res = loadManifest(file.path())
                        .transform([&](auto&& manifest) {
-                           manifests.emplace(std::string{manifest.name}, std::forward<decltype(manifest)>(manifest));
+                           manifests.try_emplace(manifest.name, std::forward<decltype(manifest)>(manifest));
                        })
                        .error_or(DirState::Success);
         if (res != DirState::Success) {
@@ -136,8 +136,11 @@ void PluginRegistrar::loadAllPlugins() {
                     error = true;
 #if _HAS_CXX23
                     logger.error("Missing dependency {}"_tr(
-                        dependency.version.transform([&](auto& ver) { return dependency.name + " " + ver.to_string(); }
-                        ).value_or(dependency.name)
+                        dependency.version
+                            .transform([&](auto& ver) {
+                                return fmt::format("{} v{}", dependency.name, ver.to_string());
+                            })
+                            .value_or(dependency.name)
                     ));
 #endif
                 }
@@ -171,8 +174,9 @@ void PluginRegistrar::loadAllPlugins() {
 #if _HAS_CXX23
                 logger.error("{} conflicts with {}"_tr(
                     name,
-                    conflict.version.transform([&](auto& ver) { return conflict.name + " " + ver.to_string(); }
-                    ).value_or(conflict.name)
+                    conflict.version
+                        .transform([&](auto& ver) { return fmt::format("{} v{}", conflict.name, ver.to_string()); })
+                        .value_or(conflict.name)
                 ));
 #endif
             }

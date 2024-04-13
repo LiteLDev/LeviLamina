@@ -237,7 +237,9 @@ void leviLaminaMain() {
     }
     if (globalConfig.modules.crashLogger.enabled) {
         if (globalConfig.modules.crashLogger.useBuiltin) {
+#if _HAS_CXX23
             static CrashLoggerNew crashLogger{};
+#endif
         } else {
             CrashLogger::initCrashLogger();
         }

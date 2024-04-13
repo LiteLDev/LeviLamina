@@ -38,7 +38,7 @@ public:
     template <typename T>
         requires(DataItem::TypeList::contains<std::remove_cvref_t<T>>)
     [[nodiscard]] constexpr static std::unique_ptr<DataItem> create(::ActorDataIDs key, T&& value) {
-        return create(std::to_underlying(key), std::forward<T>(value));
+        return create(static_cast<std::underlying_type_t<::ActorDataIDs>>(key), std::forward<T>(value));
     }
     [[nodiscard]] constexpr static std::unique_ptr<DataItem> create(::ActorDataIDs key, bool value) {
         return create(key, (schar)value);

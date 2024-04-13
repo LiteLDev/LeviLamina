@@ -94,7 +94,7 @@ void registerPluginManageCommand() {
                 }
                 break;
             default:
-                std::unreachable();
+                _STL_UNREACHABLE;
             }
         }>();
     cmd.overload<LeviCommand2>()
@@ -142,7 +142,7 @@ void registerPluginManageCommand() {
                 break;
             }
             default:
-                std::unreachable();
+                _STL_UNREACHABLE;
             }
         }>();
     cmd.overload().text("list").execute<[](CommandOrigin const&, CommandOutput& output) {

@@ -1,4 +1,6 @@
-add_rules("mode.debug", "mode.release")
+add_rules("mode.release", "mode.debug")
+set_allowedarchs("windows|x64")
+set_defaultarchs("windows|x64")
 
 add_repositories("liteldev-repo https://github.com/LiteLDev/xmake-repo.git")
 
@@ -64,7 +66,6 @@ target("LeviLamina")
     )
     add_defines(
         "_AMD64_",
-        "_CRT_SECURE_NO_WARNINGS",
         "NOMINMAX",
         "UNICODE",
         "WIN32_LEAN_AND_MEAN",

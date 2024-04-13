@@ -52,6 +52,6 @@ inline std::error_category const& snbt_category() noexcept {
     return std::_Immortalize_memcpy_image<struct snbt_category>();
 }
 
-std::error_code makeSnbtError(SnbtErrorCode code) { return std::error_code{std::to_underlying(code), snbt_category()}; }
+std::error_code makeSnbtError(SnbtErrorCode code) { return std::error_code{fmt::underlying(code), snbt_category()}; }
 
 } // namespace ll::nbt::detail
