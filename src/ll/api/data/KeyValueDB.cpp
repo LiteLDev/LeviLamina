@@ -59,6 +59,7 @@ KeyValueDB::KeyValueDB(std::filesystem::path const& path, bool createIfMiss, boo
         bloomFilterBit
     );
 }
+KeyValueDB::KeyValueDB(std::filesystem::path const& path) : KeyValueDB(path, true, true, 0) {}
 
 KeyValueDB::KeyValueDB(KeyValueDB&&) noexcept = default;
 

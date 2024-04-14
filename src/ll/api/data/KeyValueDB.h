@@ -18,11 +18,13 @@ private:
     std::unique_ptr<KeyValueDBImpl> impl;
 
 public:
+    LLNDAPI explicit KeyValueDB(std::filesystem::path const& path);
+
     LLNDAPI explicit KeyValueDB(
         std::filesystem::path const& path,
-        bool                         createIfMiss   = true,
-        bool                         fixIfError     = true,
-        int                          bloomFilterBit = 0
+        bool                         createIfMiss,
+        bool                         fixIfError,
+        int                          bloomFilterBit
     );
 
     KeyValueDB(KeyValueDB const&) noexcept = delete;
