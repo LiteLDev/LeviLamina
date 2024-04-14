@@ -146,7 +146,7 @@ public:
         requires(sizeof...(Components) >= 2 && sizeof...(Components) <= 4) {
         boolN<sizeof...(Components)> res = true;
         Field::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            res[iter] = (b.template get<axis_type>(iter) < static_cast<T const*>(this)->template get<axis_type>(iter));
+            res[iter] = (static_cast<T const*>(this)->template get<axis_type>(iter) < b.template get<axis_type>(iter));
         });
         return res;
     }
@@ -155,7 +155,7 @@ public:
     le(T const& b) const noexcept requires(sizeof...(Components) >= 2 && sizeof...(Components) <= 4) {
         boolN<sizeof...(Components)> res = true;
         Field::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            res[iter] = (b.template get<axis_type>(iter) <= static_cast<T const*>(this)->template get<axis_type>(iter));
+            res[iter] = (static_cast<T const*>(this)->template get<axis_type>(iter) <= b.template get<axis_type>(iter));
         });
         return res;
     }
@@ -164,7 +164,7 @@ public:
     gt(T const& b) const noexcept requires(sizeof...(Components) >= 2 && sizeof...(Components) <= 4) {
         boolN<sizeof...(Components)> res = true;
         Field::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            res[iter] = (b.template get<axis_type>(iter) > static_cast<T const*>(this)->template get<axis_type>(iter));
+            res[iter] = (static_cast<T const*>(this)->template get<axis_type>(iter) > b.template get<axis_type>(iter));
         });
         return res;
     }
@@ -173,7 +173,7 @@ public:
     ge(T const& b) const noexcept requires(sizeof...(Components) >= 2 && sizeof...(Components) <= 4) {
         boolN<sizeof...(Components)> res = true;
         Field::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            res[iter] = (b.template get<axis_type>(iter) >= static_cast<T const*>(this)->template get<axis_type>(iter));
+            res[iter] = (static_cast<T const*>(this)->template get<axis_type>(iter) >= b.template get<axis_type>(iter));
         });
         return res;
     }
