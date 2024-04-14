@@ -23,6 +23,7 @@
 #include "mc/server/commands/standard/TeleportCommand.h"
 #include "mc/server/commands/standard/TeleportTarget.h" // IWYU pragma: keep for TeleportCommand::computeTarget
 #include "mc/util/ExpressionNode.h"
+#include "mc/world//actor/player/Player.h"
 #include "mc/world/actor/ActorDamageByActorSource.h"
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
 #include "mc/world/actor/common/ClipDefaults.h"
@@ -44,7 +45,10 @@ class Vec3 Actor::getHeadPos() const { return getAttachPos(ActorLocation::Head);
 
 class BlockPos Actor::getFeetBlockPos() const { return {CommandUtils::getFeetPos(this)}; }
 
-bool Actor::isSimulatedPlayer() const { return getEntityContext().hasComponent<FlagComponent<SimulatedPlayerFlag>>(); }
+bool Actor::isSimulatedPlayer() const {
+    return isPlayer() && static_cast<Player const*>(this)->isSimulated();
+    //  return getEntityContext().hasComponent<FlagComponent<SimulatedPlayerFlag>>();
+}
 
 bool Actor::isOnGround() const { return ActorCollision::isOnGround(getEntityContext()); }
 
