@@ -4,7 +4,6 @@
 #define COMPOUND_TAG_VARIANT_HEADER
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/nbt/ByteArrayTag.h"
 #include "mc/nbt/ByteTag.h"
 #include "mc/nbt/CompoundTag.h"
@@ -18,6 +17,7 @@
 #include "mc/nbt/ShortTag.h"
 #include "mc/nbt/StringTag.h"
 
+#include "ll/api/Expected.h"
 #include "ll/api/base/Concepts.h"
 #include "ll/api/base/Meta.h"
 
@@ -43,7 +43,7 @@ public:
 
     Variant mTagStorage;
 
-    LLNDAPI static nonstd::expected<CompoundTagVariant, std::error_code>
+    LLNDAPI static ll::Expected<CompoundTagVariant>
     parse(std::string_view snbt, optional_ref<size_t> parsedLength = std::nullopt);
 
     [[nodiscard]] constexpr CompoundTagVariant() = default;

@@ -20,7 +20,27 @@
 #define LL_DEFALUT_MEMORY_ALLOCATOR StdMemoryAllocator
 #endif
 
+// #define LL_MEMORY_DEBUG
+
 namespace ll::memory {
+
+static std::string memStr(size_t mem) {
+    double r  = (double)mem;
+    r        /= 1024;
+    if (r < 1024) {
+        return ::fmt::format("{:>8.1f} KiB", r);
+    }
+    r /= 1024;
+    if (r < 1024) {
+        return ::fmt::format("{:>8.1f} MiB", r);
+    }
+    r /= 1024;
+    if (r < 1024) {
+        return ::fmt::format("{:>8.1f} GiB", r);
+    }
+    r /= 1024;
+    return ::fmt::format("{:>8.1f} TiB", r);
+}
 class MimallocMemoryAllocator : public ::Bedrock::Memory::IMemoryAllocator {
 public:
     virtual void* allocate(uint64 size) { return mi_malloc(size != 0 ? size : 1); }
@@ -64,24 +84,6 @@ public:
     virtual void alignedRelease(void* ptr) { _aligned_free(ptr); }
 
     virtual uint64 getUsableSize(void* ptr) { return ptr ? _msize(ptr) : 0ui64; }
-
-    static std::string memStr(size_t mem) {
-        double r  = (double)mem;
-        r        /= 1024;
-        if (r < 1024) {
-            return ::fmt::format("{:>8.1f} KiB", r);
-        }
-        r /= 1024;
-        if (r < 1024) {
-            return ::fmt::format("{:>8.1f} MiB", r);
-        }
-        r /= 1024;
-        if (r < 1024) {
-            return ::fmt::format("{:>8.1f} GiB", r);
-        }
-        r /= 1024;
-        return ::fmt::format("{:>8.1f} TiB", r);
-    }
 
     virtual void logCurrentState() {
         HEAP_SUMMARY summary{.cb = sizeof(HEAP_SUMMARY)};
@@ -136,14 +138,11 @@ public:
 
 #ifdef LL_MEMORY_DEBUG
 struct MemSize {
-    size_t size{0};
-    size_t peak{0};
+    size_t a{0};
+    size_t f{0};
 
-    void alloc(size_t s) {
-        size += s;
-        peak += s;
-    }
-    void free(size_t s) { size -= s; }
+    void alloc(size_t s) { a += s; }
+    void free(size_t s) { f += s; }
 };
 template <typename T>
 class debugAllocator : public std::allocator<T> {
@@ -201,16 +200,17 @@ public:
         for (auto& [fn, mem] : getDebugMap()) {
             auto name = win_utils::getModuleFileName(win_utils::getModuleHandle(fn));
 
-            res[name].size += mem.size;
-            res[name].peak += mem.peak;
+            res[name].a += mem.a;
+            res[name].f += mem.f;
         }
 
         for (auto& [module, mem] : res) {
             logger.info(
-                " {:<32} used: {:>8.2f} MiB ,  all: {:>8.2f} MiB",
+                " {:<32} alloc: {:>12}, free: {:>12}, curr: {:>12}",
                 module,
-                (double)(mem.size) / (1024 * 1024),
-                (double)(mem.peak) / (1024 * 1024)
+                memStr(mem.a),
+                memStr(mem.f),
+                memStr(abs((int64)mem.f - (int64)mem.a))
             );
         }
     }

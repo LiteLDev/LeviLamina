@@ -9,6 +9,8 @@
 #include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/nbt/Tag.h"
 
+#include "ll/api/Expected.h"
+
 class CompoundTagVariant;
 
 class CompoundTag : public ::Tag {
@@ -35,15 +37,14 @@ public:
     [[nodiscard]] CompoundTagVariant const& at(std::string const& index) const { return mTags.at(index); }
 
 
-    LLNDAPI static nonstd::expected<CompoundTag, std::error_code>
+    LLNDAPI static ll::Expected<CompoundTag>
     fromSnbt(std::string_view snbt, optional_ref<size_t> parsedLength = std::nullopt);
 
-    LLNDAPI std::string toBinaryNbt(bool isLittleEndian = true) const;
-    LLNDAPI static nonstd::expected<CompoundTag, std::error_code>
-    fromBinaryNbt(std::string_view dataView, bool isLittleEndian = true);
+    LLNDAPI std::string                      toBinaryNbt(bool isLittleEndian = true) const;
+    LLNDAPI static ll::Expected<CompoundTag> fromBinaryNbt(std::string_view dataView, bool isLittleEndian = true);
 
-    LLNDAPI std::string                                           toNetworkNbt() const;
-    LLNDAPI static nonstd::expected<CompoundTag, std::error_code> fromNetworkNbt(std::string const& data);
+    LLNDAPI std::string                      toNetworkNbt() const;
+    LLNDAPI static ll::Expected<CompoundTag> fromNetworkNbt(std::string const& data);
 
 public:
     // NOLINTBEGIN

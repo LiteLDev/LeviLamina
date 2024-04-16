@@ -9,11 +9,11 @@
 #include "ll/api/service/Service.h"
 #include "ll/api/service/ServiceId.h"
 
-#include "mc/external/expected_lite/expected.h"
+#include "ll/api/Expected.h"
 
 namespace ll::service {
 
-struct GetServiceError {
+struct GetServiceError : ErrorInfoBase {
     enum class ErrorType : char {
         NotExist        = 0,
         VersionMismatch = 1,
@@ -23,9 +23,9 @@ struct GetServiceError {
     ErrorType code;
     size_t    version;
 
-    constexpr GetServiceError(ErrorType code, size_t version = 0) // NOLINT(google-explicit-constructor)
-    : code(code),
-      version(version) {}
+    GetServiceError(ErrorType code, size_t version = 0) : code(code), version(version) {}
+
+    LLAPI std::string message() const override;
 };
 
 struct QueryServiceResult {
@@ -63,15 +63,15 @@ public:
     }
 
     template <IsService T>
-    nonstd::expected<std::shared_ptr<T>, GetServiceError> getService() {
+    Expected<std::shared_ptr<T>> getService() {
         auto res = getService(getServiceId<T>);
         if (!res) {
-            return nonstd::make_unexpected(res.error());
+            return forwardError(res.error());
         }
         return std::static_pointer_cast<T>(*res);
     }
 
-    LLNDAPI nonstd::expected<std::shared_ptr<Service>, GetServiceError> getService(ServiceId const& id);
+    LLNDAPI Expected<std::shared_ptr<Service>> getService(ServiceId const& id);
 
     LLNDAPI std::optional<QueryServiceResult> queryService(std::string_view name);
 

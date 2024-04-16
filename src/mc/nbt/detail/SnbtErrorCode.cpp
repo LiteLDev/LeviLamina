@@ -2,6 +2,8 @@
 
 #include <system_error>
 
+#include "ll/api/Expected.h"
+
 namespace ll::nbt::detail {
 struct snbt_category : public std::error_category {
     constexpr snbt_category() noexcept : error_category() {}
@@ -52,6 +54,7 @@ inline std::error_category const& snbt_category() noexcept {
     return std::_Immortalize_memcpy_image<struct snbt_category>();
 }
 
-std::error_code makeSnbtError(SnbtErrorCode code) { return std::error_code{fmt::underlying(code), snbt_category()}; }
-
+ll::Unexpected makeSnbtError(SnbtErrorCode code) {
+    return makeEcError(std::error_code{fmt::underlying(code), snbt_category()});
+}
 } // namespace ll::nbt::detail

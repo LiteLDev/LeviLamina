@@ -19,8 +19,6 @@
 #include "ll/api/utils/HashUtils.h"
 #include "ll/api/utils/StringUtils.h"
 
-#include "mc/external/expected_lite/expected.h"
-
 namespace ll::data {
 
 namespace detail {

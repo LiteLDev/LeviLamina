@@ -38,6 +38,11 @@ option("tests")
     set_showmenu(true)
     set_description("Enable tests")
 
+option("use_mimalloc")
+    set_default(false)
+    set_showmenu(true)
+    set_description("Enable mimalloc")
+
 target("LeviLamina")
     add_configfiles("src/(ll/core/Version.h.in)")
     add_cxflags(

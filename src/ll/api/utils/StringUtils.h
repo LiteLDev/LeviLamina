@@ -15,7 +15,7 @@
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
 
-#include "mc/external/expected_lite/expected.h"
+#include "ll/api/Expected.h"
 
 namespace ll::inline utils::string_utils {
 
@@ -203,17 +203,17 @@ LLNDAPI std::string
     return {reinterpret_cast<const char8_t*>(str.data()), str.size()};
 }
 template <class T, auto f, class... Args>
-[[nodiscard]] inline nonstd::expected<T, std::error_code> svtonum(std::string_view str, size_t* idx, Args&&... args) {
+[[nodiscard]] inline Expected<T> svtonum(std::string_view str, size_t* idx, Args&&... args) {
     int&        errnoRef = errno;
     char const* ptr      = str.data();
     char*       eptr{};
     errnoRef       = 0;
     const auto ans = f(ptr, &eptr, std::forward<Args>(args)...);
     if (ptr == eptr) {
-        return nonstd::make_unexpected(std::make_error_code(std::errc::invalid_argument));
+        return makeEcError(std::errc::invalid_argument);
     }
     if (errnoRef == ERANGE) {
-        return nonstd::make_unexpected(std::make_error_code(std::errc::result_out_of_range));
+        return makeEcError(std::errc::result_out_of_range);
     }
     if (idx) {
         *idx = static_cast<size_t>(eptr - ptr);
@@ -259,6 +259,6 @@ template <class T, auto f, class... Args>
 [[nodiscard]] inline decltype(auto) svtold(std::string_view str, size_t* idx = nullptr) {
     return svtonum<ldouble, strtof>(str, idx);
 }
-LLNDAPI nonstd::expected<bool, std::error_code> strtobool(std::string const&);
+LLNDAPI Expected<bool> strtobool(std::string const&);
 
 } // namespace ll::inline utils::string_utils

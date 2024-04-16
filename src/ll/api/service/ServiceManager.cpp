@@ -6,6 +6,17 @@
 #include "ll/api/event/server/ServiceEvents.h"
 
 namespace ll::service {
+std::string GetServiceError::message() const {
+    switch (code) {
+    case NotExist:
+        return "service not exist";
+    case VersionMismatch:
+        return fmt::format("service version mismatch [{}]", version);
+    default:
+        _STL_UNREACHABLE;
+    }
+}
+
 // to avoid a lifetime dependency on external Plugin
 struct ServiceInfo {
     std::string              name;
@@ -100,14 +111,14 @@ public:
     }
 };
 
-auto ServiceManager::getService(ServiceId const& id) -> nonstd::expected<std::shared_ptr<Service>, GetServiceError> {
+Expected<std::shared_ptr<Service>> ServiceManager::getService(ServiceId const& id) {
     std::lock_guard lock(impl->mutex);
     if (!impl->services.contains(id.name)) {
-        return nonstd::make_unexpected(GetServiceError::NotExist);
+        return makeError<GetServiceError>(GetServiceError::NotExist);
     }
     auto& info = impl->services[id.name];
     if (info->version != id.version) {
-        return nonstd::make_unexpected(GetServiceError{GetServiceError::VersionMismatch, info->version});
+        return makeError<GetServiceError>(GetServiceError::VersionMismatch, info->version);
     }
     return info->service;
 }
