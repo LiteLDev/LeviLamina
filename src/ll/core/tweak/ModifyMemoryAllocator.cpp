@@ -86,7 +86,7 @@ public:
     virtual void logCurrentState() {
         HEAP_SUMMARY summary{.cb = sizeof(HEAP_SUMMARY)};
         HeapSummary(GetProcessHeap(), 0, &summary);
-        PROCESS_MEMORY_COUNTERS_EX2 info{.cb = sizeof(PROCESS_MEMORY_COUNTERS_EX2)};
+        PROCESS_MEMORY_COUNTERS_EX info{.cb = sizeof(PROCESS_MEMORY_COUNTERS_EX)};
         GetProcessMemoryInfo(GetCurrentProcess(), (PPROCESS_MEMORY_COUNTERS)&info, info.cb);
         // clang-format off
         logger.info("heap stats: {:>12} {:>12}", "peak", "current");
@@ -99,8 +99,6 @@ public:
         logger.info("  nonpaged: {:>12} {:>12}", memStr(info.QuotaPeakNonPagedPoolUsage), memStr(info.QuotaNonPagedPoolUsage));
         logger.info("  pagefile: {:>12} {:>12}", memStr(info.PeakPagefileUsage), memStr(info.PagefileUsage));
         logger.info("   private: {:>12} {:>12}", "", memStr(info.PrivateUsage));
-        logger.info("privateset: {:>12} {:>12}", "", memStr(info.PrivateWorkingSetSize));
-        logger.info("    shared: {:>12} {:>12}", "", memStr(info.SharedCommitUsage));
         // clang-format on
     }
 
