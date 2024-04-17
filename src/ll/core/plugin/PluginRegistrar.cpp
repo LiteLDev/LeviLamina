@@ -36,8 +36,9 @@
 #include "mc/server/ServerInstance.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 
+using namespace ::ll::i18n_literals;
+
 namespace ll::plugin {
-using namespace i18n_literals;
 
 struct PluginRegistrar::Impl {
     std::recursive_mutex               mutex;
@@ -53,36 +54,27 @@ static bool checkVersion(Manifest const& real, Dependency const& need) {
     }
     return real.version->major == need.version->major && (*real.version) >= (*need.version);
 }
-
-enum class DirState {
-    Empty,
-    Error,
-    Success,
-};
-
-static nonstd::expected<Manifest, DirState> loadManifest(std::filesystem::path const& dir) {
+static Expected<Manifest> loadManifest(std::filesystem::path const& dir) {
     auto content = file_utils::readFile(dir / u8"manifest.json");
     if (!content || content->empty()) {
-        return nonstd::make_unexpected(DirState::Empty);
+        return makeSuccessError();
     }
     auto json = nlohmann::json::parse(*content, nullptr, false, true);
     if (json.is_discarded()) {
-        return nonstd::make_unexpected(DirState::Error);
+        return makeStringError("Manifest is not a valid JSON text"_tr());
     }
     std::string dirName = string_utils::u8str2str(dir.filename().u8string());
     Manifest    manifest;
     try {
         reflection::deserialize<nlohmann::json, Manifest>(manifest, json);
     } catch (...) {
-        error_utils::printCurrentException(logger);
-        return nonstd::make_unexpected(DirState::Error);
+        return makeExceptionError();
     }
     if (manifest.type == "preload-native" /*NativePluginTypeName*/) {
-        return nonstd::make_unexpected(DirState::Empty); // bypass preloader plugin
+        return makeSuccessError(); // bypass preloader plugin
     }
     if (manifest.name != dirName) {
-        logger.error("Plugin name {} do not match folder {}"_tr(manifest.name, dirName));
-        return nonstd::make_unexpected(DirState::Error);
+        return makeStringError("Plugin name {} do not match folder {}"_tr(manifest.name, dirName));
     }
     return manifest;
 }
@@ -110,15 +102,14 @@ void PluginRegistrar::loadAllPlugins() {
         if (!file.is_directory()) {
             continue;
         }
-        auto res = loadManifest(file.path())
-                       .transform([&](auto&& manifest) {
-                           manifests.try_emplace(manifest.name, std::forward<decltype(manifest)>(manifest));
-                       })
-                       .error_or(DirState::Success);
-        if (res != DirState::Success) {
-            if (res == DirState::Error) {
+        if (auto res = loadManifest(file.path()).transform([&](auto&& manifest) {
+                manifests.try_emplace(manifest.name, std::forward<decltype(manifest)>(manifest));
+            });
+            !res) {
+            if (res.error()) {
                 logger.error("Failed to load manifest for {}"_tr(string_utils::u8str2str(file.path().stem().u8string()))
                 );
+                res.error().log(logger.error);
             }
             continue;
         }
@@ -241,11 +232,12 @@ void PluginRegistrar::loadAllPlugins() {
             }
         }
         logger.info("Loading {0} v{1}"_tr(name, manifest.version.value_or(data::Version{0, 0, 0})));
-        if (registry.loadPlugin(std::move(manifest))) {
+        if (auto res = registry.loadPlugin(std::move(manifest)); res) {
             logger.info("{} loaded"_tr(name));
         } else {
             loadErrored.emplace(name);
             logger.error("Failed to load {}"_tr(name));
+            res.error().log(logger.error);
         }
     }
     size_t loadedCount = sort.sorted.size() - loadErrored.size();
@@ -282,15 +274,12 @@ LL_TYPE_INSTANCE_HOOK(
         if (!plugin) continue;
         if (plugin->isEnabled()) continue;
         logger.info("Enabling {0} v{1}"_tr(name, plugin->getManifest().version.value_or(data::Version{0, 0, 0})));
-        bool enabled{};
-        try {
-            enabled = registrar.enablePlugin(name);
-        } catch (...) {
-            enabled = false;
-            error_utils::printCurrentException(logger);
+        if (auto res = registrar.enablePlugin(name); res) {
+            count++;
+        } else {
+            logger.error("Failed to enable {}"_tr(name));
+            res.error().log(logger.error);
         }
-        if (enabled) count++;
-        else logger.error("Failed to enable {}"_tr(name));
     }
     if (count > 0) {
         logger.info("{} plugin(s) enabled in ({:.1f}s)"_tr(
@@ -313,44 +302,38 @@ LL_TYPE_INSTANCE_HOOK(
         if (!plugin) continue;
         if (plugin->isDisabled()) continue;
         logger.info("Disabling {0} v{1}"_tr(name, plugin->getManifest().version.value_or(data::Version{0, 0, 0})));
-        try {
-            registrar.disablePlugin(name);
-        } catch (...) {
-            error_utils::printCurrentException(logger);
-        }
+        registrar.disablePlugin(name);
     }
     origin();
 }
 
-bool PluginRegistrar::loadPlugin(std::string_view name) {
+Expected<> PluginRegistrar::loadPlugin(std::string_view name) noexcept {
     std::lock_guard lock(impl->mutex);
     auto            res = loadManifest(getPluginsRoot() / string_utils::sv2u8sv(name));
-    if (!res.has_value()) {
-        logger.error("Failed to load manifest {}"_tr(name));
-        return false;
+    if (!res) {
+        if (res.error()) {
+            return forwardError(makeStringError("Failed to load manifest for {}"_tr(name)).value().join(res.error()));
+        } else {
+            return makeStringError("Plugin does not exist, or the manifest is empty"_tr());
+        }
     }
     auto& manifest = *res;
     // TODO: check deps,...,......
-    if (PluginManagerRegistry::getInstance().loadPlugin(std::move(manifest))) {
+    return PluginManagerRegistry::getInstance().loadPlugin(std::move(manifest)).transform([&, this]() {
         impl->deps.emplace(std::string{name});
-        return true;
-    }
-    return false;
+    });
 }
-bool PluginRegistrar::unloadPlugin(std::string_view name) {
+Expected<> PluginRegistrar::unloadPlugin(std::string_view name) noexcept {
     std::lock_guard lock(impl->mutex);
     auto            dependents = impl->deps.dependentBy(std::string{name});
     if (!dependents.empty()) {
-        logger.error("{} is still dependent on {}"_tr(name, dependents));
-        return false;
+        return makeStringError("{} is still dependent on {}"_tr(name, dependents));
     }
-    if (PluginManagerRegistry::getInstance().unloadPlugin(name)) {
+    return PluginManagerRegistry::getInstance().unloadPlugin(name).transform([&, this]() {
         impl->deps.erase(std::string{name});
-        return true;
-    }
-    return false;
+    });
 }
-bool PluginRegistrar::enablePlugin(std::string_view name) {
+Expected<> PluginRegistrar::enablePlugin(std::string_view name) noexcept {
     std::lock_guard lock(impl->mutex);
     auto&           registry   = PluginManagerRegistry::getInstance();
     auto            dependents = impl->deps.dependentOn(std::string{name});
@@ -360,14 +343,13 @@ bool PluginRegistrar::enablePlugin(std::string_view name) {
                 if (ptr->isEnabled()) {
                     continue;
                 }
-                logger.error("Dependency {} of {} is not enabled"_tr(depName, name));
-                return false;
+                return makeStringError("Dependency {} of {} is not enabled"_tr(depName, name));
             }
         }
     }
     return registry.enablePlugin(name);
 }
-bool PluginRegistrar::disablePlugin(std::string_view name) {
+Expected<> PluginRegistrar::disablePlugin(std::string_view name) noexcept {
     std::lock_guard lock(impl->mutex);
     auto&           registry   = PluginManagerRegistry::getInstance();
     auto            dependents = impl->deps.dependentBy(std::string{name});
@@ -377,8 +359,7 @@ bool PluginRegistrar::disablePlugin(std::string_view name) {
                 if (ptr->isDisabled()) {
                     continue;
                 }
-                logger.error("{} is still dependent on {}"_tr(name, depName));
-                return false;
+                return makeStringError("{} is still dependent on {}"_tr(name, depName));
             }
         }
     }

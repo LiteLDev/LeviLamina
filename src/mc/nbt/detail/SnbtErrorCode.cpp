@@ -55,6 +55,6 @@ inline std::error_category const& snbt_category() noexcept {
 }
 
 ll::Unexpected makeSnbtError(SnbtErrorCode code) {
-    return makeEcError(std::error_code{fmt::underlying(code), snbt_category()});
+    return makeErrorCodeError(std::error_code{fmt::underlying(code), snbt_category()});
 }
 } // namespace ll::nbt::detail

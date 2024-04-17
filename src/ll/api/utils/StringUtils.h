@@ -210,10 +210,10 @@ template <class T, auto f, class... Args>
     errnoRef       = 0;
     const auto ans = f(ptr, &eptr, std::forward<Args>(args)...);
     if (ptr == eptr) {
-        return makeEcError(std::errc::invalid_argument);
+        return makeErrorCodeError(std::errc::invalid_argument);
     }
     if (errnoRef == ERANGE) {
-        return makeEcError(std::errc::result_out_of_range);
+        return makeErrorCodeError(std::errc::result_out_of_range);
     }
     if (idx) {
         *idx = static_cast<size_t>(eptr - ptr);

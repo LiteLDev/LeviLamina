@@ -1,8 +1,10 @@
 #include "ll/api/plugin/PluginManagerRegistry.h"
+#include "ll/api/i18n/I18n.h"
 
 #include "ll/core/LeviLamina.h"
 
 namespace ll::plugin {
+using namespace i18n_literals;
 
 struct PluginManagerRegistry::Impl {
     std::recursive_mutex                               mutex;
@@ -19,46 +21,59 @@ PluginManagerRegistry& PluginManagerRegistry::getInstance() {
     return instance;
 }
 
-bool PluginManagerRegistry::loadPlugin(Manifest manifest) {
-    std::lock_guard lock(impl->mutex);
-    if (hasManager(manifest.type)) {
-        std::string name = manifest.name;
-        std::string type = manifest.type;
-        if (getManager(type)->load(std::move(manifest))) {
-            impl->loadedPlugins.insert_or_assign(std::move(name), std::move(type));
-            return true;
+Expected<> PluginManagerRegistry::loadPlugin(Manifest manifest) noexcept {
+    try {
+        std::lock_guard lock(impl->mutex);
+        if (hasManager(manifest.type)) {
+            std::string name = manifest.name;
+            std::string type = manifest.type;
+            return getManager(type)->load(std::move(manifest)).transform([&, this] {
+                impl->loadedPlugins.insert_or_assign(std::move(name), std::move(type));
+            });
+        } else {
+            return makeStringError("Unrecognized plugin type: {}"_tr(manifest.type));
         }
+    } catch (...) {
+        return makeExceptionError();
     }
-    return false;
 }
 
-bool PluginManagerRegistry::unloadPlugin(std::string_view name) {
-    std::lock_guard lock(impl->mutex);
-    if (!hasPlugin(name)) {
-        return false;
+Expected<> PluginManagerRegistry::unloadPlugin(std::string_view name) noexcept {
+    try {
+        std::lock_guard lock(impl->mutex);
+        if (!hasPlugin(name)) {
+            return makeStringError("Plugin not found"_tr());
+        }
+        return getManagerForPlugin(name)->unload(name).transform([&, this] {
+            impl->loadedPlugins.erase(std::string{name});
+        });
+    } catch (...) {
+        return makeExceptionError();
     }
-    if (getManagerForPlugin(name)->unload(name)) {
-        impl->loadedPlugins.erase(std::string{name});
-        return true;
-    }
-
-    return false;
 }
 
-bool PluginManagerRegistry::enablePlugin(std::string_view name) const {
-    std::lock_guard lock(impl->mutex);
-    if (!hasPlugin(name)) {
-        return false;
+Expected<> PluginManagerRegistry::enablePlugin(std::string_view name) const noexcept {
+    try {
+        std::lock_guard lock(impl->mutex);
+        if (!hasPlugin(name)) {
+            return makeStringError("Plugin not found"_tr());
+        }
+        return getManagerForPlugin(name)->enable(name);
+    } catch (...) {
+        return makeExceptionError();
     }
-    return getManagerForPlugin(name)->enable(name);
 }
 
-bool PluginManagerRegistry::disablePlugin(std::string_view name) const {
-    std::lock_guard lock(impl->mutex);
-    if (!hasPlugin(name)) {
-        return false;
+Expected<> PluginManagerRegistry::disablePlugin(std::string_view name) const noexcept {
+    try {
+        std::lock_guard lock(impl->mutex);
+        if (!hasPlugin(name)) {
+            return makeStringError("Plugin not found"_tr());
+        }
+        return getManagerForPlugin(name)->disable(name);
+    } catch (...) {
+        return makeExceptionError();
     }
-    return getManagerForPlugin(name)->disable(name);
 }
 
 bool PluginManagerRegistry::addManager(std::shared_ptr<PluginManager> const& manager) {

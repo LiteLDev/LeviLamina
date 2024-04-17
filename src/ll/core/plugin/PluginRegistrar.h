@@ -6,6 +6,7 @@
 #include <vector>
 
 #include "ll/api/plugin/PluginManagerRegistry.h"
+#include "ll/api/Expected.h"
 
 namespace ll::plugin {
 
@@ -26,13 +27,13 @@ public:
 
     void loadAllPlugins();
 
-    bool loadPlugin(std::string_view name);
+    Expected<> loadPlugin(std::string_view name) noexcept;
 
-    bool unloadPlugin(std::string_view name);
+    Expected<> unloadPlugin(std::string_view name) noexcept;
 
-    bool enablePlugin(std::string_view name);
+    Expected<> enablePlugin(std::string_view name) noexcept;
 
-    bool disablePlugin(std::string_view name);
+    Expected<> disablePlugin(std::string_view name) noexcept;
 };
 
 } // namespace ll::plugin

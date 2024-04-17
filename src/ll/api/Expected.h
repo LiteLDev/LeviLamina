@@ -9,9 +9,10 @@
 #include <memory>
 #include <string_view>
 
-#include "gsl/gsl"
-
 #include "ll/api/Logger.h"
+#include "ll/api/utils/ErrorUtils.h"
+
+class CommandOutput;
 
 namespace ll {
 
@@ -49,6 +50,8 @@ public:
     LLAPI Error& join(Error);
 
     LLAPI Error& log(::ll::Logger::OutputStream&);
+
+    LLAPI Error& log(CommandOutput&);
 };
 
 template <class T = void>
@@ -71,7 +74,14 @@ struct ErrorCodeError : ErrorInfoBase {
     ErrorCodeError(std::error_code ec) : ec(ec) {}
     std::string message() const override { return ec.message(); }
 };
+struct ExceptionError : ErrorInfoBase {
+    std::exception_ptr exc;
+    ExceptionError(std::exception_ptr const& exc) : exc(exc) {}
+    std::string message() const override { return ::ll::error_utils::makeExceptionString(exc); }
+};
 inline Unexpected forwardError(::ll::Error& err) { return ::nonstd::make_unexpected(std::move(err)); }
+
+inline Unexpected makeSuccessError() { return ::nonstd::make_unexpected(Error{}); }
 
 template <std::derived_from<::ll::ErrorInfoBase> T, class... Args>
 inline Unexpected makeError(Args&&... args) {
@@ -79,11 +89,15 @@ inline Unexpected makeError(Args&&... args) {
 }
 inline Unexpected makeStringError(std::string str) { return makeError<StringError>(std::move(str)); }
 
-inline Unexpected makeCStringError(char const* cstr) { return makeError<CStringError>(cstr); }
+inline Unexpected makeStringError(char const* cstr) { return makeError<CStringError>(cstr); }
 
-inline Unexpected makeEcError(std::error_code ec) { return makeError<ErrorCodeError>(ec); }
+inline Unexpected makeErrorCodeError(std::error_code ec) { return makeError<ErrorCodeError>(ec); }
 
-inline Unexpected makeEcError(std::errc ec) { return makeError<ErrorCodeError>(make_error_code(ec)); }
+inline Unexpected makeErrorCodeError(std::errc ec) { return makeError<ErrorCodeError>(make_error_code(ec)); }
+
+inline Unexpected makeExceptionError(std::exception_ptr const& exc = std::current_exception()) {
+    return makeError<ExceptionError>(exc);
+}
 
 } // namespace ll
 

@@ -313,7 +313,7 @@ Expected<bool> strtobool(std::string const& str) {
     if (Util::toBool(str, res)) {
         return res;
     } else {
-        return makeEcError(std::errc::invalid_argument);
+        return makeErrorCodeError(std::errc::invalid_argument);
     }
 }
 } // namespace ll::inline utils::string_utils

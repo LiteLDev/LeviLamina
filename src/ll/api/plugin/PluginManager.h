@@ -7,6 +7,7 @@
 #include <string>
 #include <string_view>
 
+#include "ll/api/Expected.h"
 #include "ll/api/base/Macro.h"
 #include "ll/api/plugin/Manifest.h"
 #include "ll/api/plugin/Plugin.h"
@@ -36,18 +37,18 @@ protected:
 
     LLNDAPI explicit PluginManager(std::string_view type);
 
-    LLAPI bool addPlugin(std::string_view name, std::shared_ptr<Plugin> const& plugin);
-
-    LLAPI bool erasePlugin(std::string_view name);
-
     LLAPI virtual ~PluginManager();
 
-    virtual bool load(Manifest manifest) = 0;
+    LLAPI void addPlugin(std::string_view name, std::shared_ptr<Plugin> const& plugin);
 
-    virtual bool unload(std::string_view name) = 0;
+    LLAPI void erasePlugin(std::string_view name);
 
-    LLAPI virtual bool enable(std::string_view name);
+    virtual Expected<> load(Manifest manifest) = 0;
 
-    LLAPI virtual bool disable(std::string_view name);
+    virtual Expected<> unload(std::string_view name) = 0;
+
+    LLAPI virtual Expected<> enable(std::string_view name);
+
+    LLAPI virtual Expected<> disable(std::string_view name);
 };
 } // namespace ll::plugin

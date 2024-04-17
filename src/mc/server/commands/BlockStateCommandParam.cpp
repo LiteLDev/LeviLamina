@@ -12,7 +12,7 @@ ll::Expected<Block::BlockStateValueType> BlockStateCommandParam::toStateValue() 
     case Type::String:
         return mValue;
     default:
-        return ll::makeEcError(std::errc::invalid_argument);
+        return ll::makeErrorCodeError(std::errc::invalid_argument);
     }
 }
 ll::Expected<Block::BlockStatesType> BlockStateCommandParam::toStateMap(std::vector<BlockStateCommandParam> const& vec

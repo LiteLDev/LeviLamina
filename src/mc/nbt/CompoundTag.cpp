@@ -42,11 +42,11 @@ std::string CompoundTag::toBinaryNbt(bool isLittleEndian) const {
 ll::Expected<CompoundTag> CompoundTag::fromBinaryNbt(std::string_view dataView, bool isLittleEndian) {
     if (isLittleEndian) {
         auto io = StringByteInput{dataView};
-        return NbtIo::read(io).transform_error([](auto&& err) { return ll::makeEcError(err.code()).value(); }
+        return NbtIo::read(io).transform_error([](auto&& err) { return ll::makeErrorCodeError(err.code()).value(); }
         ).transform([](auto&& val) { return std::move(*val); });
     } else {
         auto io = BigEndianStringByteInput{dataView};
-        return NbtIo::read(io).transform_error([](auto&& err) { return ll::makeEcError(err.code()).value(); }
+        return NbtIo::read(io).transform_error([](auto&& err) { return ll::makeErrorCodeError(err.code()).value(); }
         ).transform([](auto&& val) { return std::move(*val); });
     }
 }
@@ -59,7 +59,7 @@ ll::Expected<CompoundTag> CompoundTag::fromNetworkNbt(std::string const& data) {
     auto                      stream = ReadOnlyBinaryStream{data, false};
     ll::Expected<CompoundTag> result;
     if (auto r = stream.readType(*result); !r) {
-        result = ll::makeEcError(r.error().code());
+        result = ll::makeErrorCodeError(r.error().code());
     }
     return result;
 }

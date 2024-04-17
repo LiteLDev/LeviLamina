@@ -1,6 +1,8 @@
 #include "ll/api/Expected.h"
 #include "ll/api/utils/StringUtils.h"
 
+#include "mc/server/commands/CommandOutput.h"
+
 namespace ll {
 struct ErrorList : ErrorInfoBase {
     std::vector<std::shared_ptr<ErrorInfoBase>> errors;
@@ -51,7 +53,26 @@ Error& Error::join(Error err) {
 LLAPI Error& Error::log(::ll::Logger::OutputStream& stream) {
     auto msg = message();
     for (auto& sv : string_utils::splitByPattern(msg, "\n")) {
+        if (sv.ends_with('\r')) {
+            sv.remove_suffix(1);
+        }
+        if (sv.starts_with('\r')) {
+            sv.remove_prefix(1);
+        }
         stream(sv);
+    }
+    return *this;
+}
+LLAPI Error& Error::log(CommandOutput& stream) {
+    auto msg = message();
+    for (auto& sv : string_utils::splitByPattern(msg, "\n")) {
+        if (sv.ends_with('\r')) {
+            sv.remove_suffix(1);
+        }
+        if (sv.starts_with('\r')) {
+            sv.remove_prefix(1);
+        }
+        stream.error(sv);
     }
     return *this;
 }
