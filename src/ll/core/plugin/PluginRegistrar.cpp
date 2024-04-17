@@ -302,7 +302,9 @@ LL_TYPE_INSTANCE_HOOK(
         if (!plugin) continue;
         if (plugin->isDisabled()) continue;
         logger.info("Disabling {0} v{1}"_tr(name, plugin->getManifest().version.value_or(data::Version{0, 0, 0})));
-        registrar.disablePlugin(name);
+        if (auto res = registrar.disablePlugin(name); !res) {
+            res.error().log(logger.warn);
+        }
     }
     origin();
 }

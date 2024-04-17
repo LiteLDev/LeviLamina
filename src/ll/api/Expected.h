@@ -52,6 +52,10 @@ public:
     LLAPI Error& log(::ll::Logger::OutputStream&);
 
     LLAPI Error& log(CommandOutput&);
+
+    Error const& log(::ll::Logger::OutputStream& s) const { return const_cast<Error*>(this)->log(s); }
+
+    Error const& log(CommandOutput& s) const { return const_cast<Error*>(this)->log(s); }
 };
 
 template <class T = void>
