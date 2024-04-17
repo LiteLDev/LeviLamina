@@ -13,6 +13,7 @@
 #include "ll/api/base/StdInt.h"
 #include "ll/api/command/EnumName.h"
 #include "ll/api/command/SoftEnum.h"
+#include "ll/api/plugin/NativePlugin.h"
 
 #include "mc/deps/core/common/bedrock/typeid_t.h"
 #include "mc/server/commands/CommandFlag.h"
@@ -45,10 +46,11 @@ public:
     LLNDAPI static CommandRegistrar& getInstance();
 
     LLNDAPI CommandHandle& getOrCreateCommand(
-        std::string const&     name,
-        std::string const&     description = {},
-        CommandPermissionLevel requirement = CommandPermissionLevel::Any,
-        CommandFlag            flag        = CommandFlagValue::NotCheat
+        std::string const&            name,
+        std::string const&            description = {},
+        CommandPermissionLevel        requirement = CommandPermissionLevel::Any,
+        CommandFlag                   flag        = CommandFlagValue::NotCheat,
+        std::weak_ptr<plugin::Plugin> plugin      = plugin::NativePlugin::current()
     );
 
     LLAPI bool hasEnum(std::string const& name);

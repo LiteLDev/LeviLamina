@@ -37,7 +37,8 @@ CommandHandle& CommandRegistrar::getOrCreateCommand(
     std::string const&     name,
     std::string const&     description,
     CommandPermissionLevel requirement,
-    CommandFlag            flag
+    CommandFlag            flag,
+    std::weak_ptr<plugin::Plugin> /*plugin*/
 ) {
     std::lock_guard lock{impl->mutex};
     auto&           registry  = getRegistry();
