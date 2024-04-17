@@ -21,6 +21,14 @@ void NativePlugin::setHandle(Handle handle) { mImpl->handle = handle; }
 NativePlugin::Handle NativePlugin::getHandle() const { return mImpl->handle; }
 
 std::shared_ptr<NativePlugin> NativePlugin::getByHandle(Handle handle) {
+
+    if (handle == win_utils::getCurrentModuleHandle()) {
+        static auto llSelf = std::make_shared<NativePlugin>(
+            Manifest{"./../../LeviLamina.dll", "LeviLamina", std::string{NativePluginManagerName}},
+            win_utils::getCurrentModuleHandle()
+        );
+        return llSelf;
+    }
     auto manger = std::static_pointer_cast<NativePluginManager>(
         PluginManagerRegistry::getInstance().getManager(NativePluginManagerName)
     );

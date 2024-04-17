@@ -83,7 +83,12 @@ public:
 
 class EventBus::EventBusImpl {
 public:
-    std::unordered_map<EventId, std::function<std::unique_ptr<EmitterBase>(ListenerBase&)>> emitterFactory;
+    struct Factory {
+        std::function<std::unique_ptr<EmitterBase>(ListenerBase&)> func;
+        std::weak_ptr<ll::plugin::Plugin>                          plugin;
+    };
+
+    std::unordered_map<EventId, Factory> emitterFactory;
 
     std::unordered_map<EventId, CallbackStream> streams;
 
@@ -103,7 +108,7 @@ public:
         } else {
             if (streams[eventId].addListener(listener)) {
                 if (auto fac = emitterFactory.find(eventId); fac != emitterFactory.end()) {
-                    streams[eventId].emitter = fac->second(*listener);
+                    streams[eventId].emitter = fac->second.func(*listener);
                     return true;
                 }
             }
@@ -131,9 +136,14 @@ EventBus& EventBus::getInstance() {
     static EventBus instance;
     return instance;
 }
-void EventBus::setEventEmitter(std::function<std::unique_ptr<EmitterBase>(ListenerBase&)> fn, EventId eventId) {
+void EventBus::setEventEmitter(
+    std::function<std::unique_ptr<EmitterBase>(ListenerBase&)> fn,
+    EventId                                                    eventId,
+    std::weak_ptr<plugin::Plugin>                              plugin
+) {
     std::lock_guard lock(impl->mutex);
-    impl->emitterFactory[eventId] = std::move(fn);
+
+    impl->emitterFactory.try_emplace(eventId, std::move(fn), std::move(plugin));
 }
 void EventBus::publish(Event& event, EventId eventId) {
     optional_ref<CallbackStream> callback = nullptr;
@@ -226,6 +236,7 @@ size_t EventBus::removePluginListeners(std::string_view pluginName) {
     size_t          count{};
     for (auto& [id, listener] : impl->listeners) {
         if (listener.plugin.expired()) {
+            count += removeListener(id);
             continue;
         }
         if (auto plugin = listener.plugin.lock()) {
@@ -234,6 +245,22 @@ size_t EventBus::removePluginListeners(std::string_view pluginName) {
             }
         }
         count += removeListener(id);
+    }
+    return count;
+}
+size_t EventBus::removePluginEventEmitters(std::string_view pluginName) {
+    std::lock_guard lock(impl->mutex);
+    size_t          count{};
+    for (auto& [id, factory] : impl->emitterFactory) {
+        if (factory.plugin.expired()) {
+            count += impl->emitterFactory.erase(id);
+        }
+        if (auto plugin = factory.plugin.lock()) {
+            if (plugin->getManifest().name != pluginName) {
+                continue;
+            }
+        }
+        count += impl->emitterFactory.erase(id);
     }
     return count;
 }

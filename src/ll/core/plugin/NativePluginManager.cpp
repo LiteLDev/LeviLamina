@@ -30,13 +30,23 @@
 namespace ll::plugin {
 
 NativePluginManager::NativePluginManager() : PluginManager(NativePluginManagerName) {
-    handleMap[win_utils::getCurrentModuleHandle()] = std::make_shared<NativePlugin>(
-        Manifest{"./../../LeviLamina.dll", "LeviLamina", getType()},
-        win_utils::getCurrentModuleHandle()
-    );
+    handleMap[win_utils::getCurrentModuleHandle()] = NativePlugin::current();
 }
 
 NativePluginManager::~NativePluginManager() = default;
+
+static std::shared_ptr<NativePlugin> currentLoadingPlugin;
+
+std::shared_ptr<NativePlugin> NativePluginManager::getPluginByHandle(Handle handle) {
+    auto l(lock());
+    if (currentLoadingPlugin) { // for getCurrent before main
+        return currentLoadingPlugin;
+    }
+    if (handleMap.contains(handle)) {
+        return handleMap.at(handle);
+    }
+    return {};
+}
 
 static void
 printDependencyError(pl::dependency_walker::DependencyIssueItem const& item, std::ostream& stream, size_t depth = 0) {
@@ -81,7 +91,12 @@ bool NativePluginManager::load(Manifest manifest) {
     if (hasPlugin(manifest.name)) {
         return false;
     }
-    auto pluginDir = std::filesystem::canonical(getPluginsRoot() / manifest.name);
+    currentLoadingPlugin = std::make_shared<NativePlugin>(std::move(manifest));
+    struct Remover {
+        ~Remover() { currentLoadingPlugin = nullptr; };
+    } r;
+
+    auto pluginDir = std::filesystem::canonical(getPluginsRoot() / currentLoadingPlugin->getManifest().name);
 
     std::wstring buffer(32767, '\0');
 
@@ -93,7 +108,7 @@ bool NativePluginManager::load(Manifest manifest) {
         buffer += pluginDir.wstring();
         SetEnvironmentVariable(L"PATH", buffer.c_str());
     }
-    auto entry = pluginDir / manifest.entry;
+    auto entry = pluginDir / currentLoadingPlugin->getManifest().entry;
     auto lib   = LoadLibrary(entry.c_str());
     if (!lib) {
         auto e = error_utils::getWinLastError();
@@ -111,18 +126,18 @@ bool NativePluginManager::load(Manifest manifest) {
         );
         // return false;
     }
-    auto plugin = std::make_shared<NativePlugin>(std::move(manifest), lib);
-    plugin->onLoad(reinterpret_cast<Plugin::callback_t*>(GetProcAddress(lib, "ll_plugin_load")));
-    plugin->onUnload(reinterpret_cast<Plugin::callback_t*>(GetProcAddress(lib, "ll_plugin_unload")));
-    plugin->onEnable(reinterpret_cast<Plugin::callback_t*>(GetProcAddress(lib, "ll_plugin_enable")));
-    plugin->onDisable(reinterpret_cast<Plugin::callback_t*>(GetProcAddress(lib, "ll_plugin_disable")));
-    if (!plugin->onLoad()) {
+    currentLoadingPlugin->setHandle(lib);
+    currentLoadingPlugin->onLoad(reinterpret_cast<Plugin::callback_t*>(GetProcAddress(lib, "ll_plugin_load")));
+    currentLoadingPlugin->onUnload(reinterpret_cast<Plugin::callback_t*>(GetProcAddress(lib, "ll_plugin_unload")));
+    currentLoadingPlugin->onEnable(reinterpret_cast<Plugin::callback_t*>(GetProcAddress(lib, "ll_plugin_enable")));
+    currentLoadingPlugin->onDisable(reinterpret_cast<Plugin::callback_t*>(GetProcAddress(lib, "ll_plugin_disable")));
+    if (!currentLoadingPlugin->onLoad()) {
         return false;
     }
-    if (!addPlugin(plugin->getManifest().name, plugin)) {
+    if (!addPlugin(currentLoadingPlugin->getManifest().name, currentLoadingPlugin)) {
         return false;
     }
-    handleMap[lib] = plugin;
+    handleMap[lib] = currentLoadingPlugin;
     return true;
 }
 

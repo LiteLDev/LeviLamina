@@ -20,11 +20,11 @@ void registerVersionCommand() {
         CommandPermissionLevel::GameDirectors,
         CommandFlagValue::None
     );
-    cmd.overload().execute<[&](CommandOrigin const&, CommandOutput& output) {
+    cmd.overload().execute([&](CommandOrigin const&, CommandOutput& output) {
         output.success("This server is running Bedrock Dedicated Server version {0} with §bLeviLamina-{1}§r."_tr(
             ll::getBdsVersion(),
             ll::getLoaderVersion()
         ));
-    }>();
+    });
 }
 } // namespace ll::command

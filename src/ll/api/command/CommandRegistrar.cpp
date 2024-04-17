@@ -22,7 +22,6 @@ namespace ll::command {
 struct CommandRegistrar::Impl {
     UnorderedStringMap<CommandHandle> commands;
     UnorderedStringMap<uint64>        textWithRef;
-    UnorderedStringMap<uint64>        postfixWithRef;
     std::recursive_mutex              mutex;
 };
 
@@ -38,8 +37,7 @@ CommandHandle& CommandRegistrar::getOrCreateCommand(
     std::string const&     name,
     std::string const&     description,
     CommandPermissionLevel requirement,
-    CommandFlag            flag,
-    std::weak_ptr<plugin::Plugin> /*plugin*/
+    CommandFlag            flag
 ) {
     std::lock_guard lock{impl->mutex};
     auto&           registry  = getRegistry();
@@ -52,9 +50,17 @@ CommandHandle& CommandRegistrar::getOrCreateCommand(
         }
         return impl->commands.try_emplace(signature->name, *this, *signature, true).first->second;
     } else if (impl->commands.contains(signature->name)) {
+        signature->flag.remove(CommandFlagValue::Removed);
         return impl->commands.at(signature->name);
     } else {
         return impl->commands.try_emplace(signature->name, *this, *signature, false).first->second;
+    }
+}
+
+void CommandRegistrar::disablePluginCommands(std::string_view pluginName) {
+    std::lock_guard lock{impl->mutex};
+    for (auto& [name, handle] : impl->commands) {
+        handle.disablePluginOverloads(pluginName);
     }
 }
 
@@ -151,15 +157,5 @@ char const* CommandRegistrar::addText(CommandHandle& /*handle*/, std::string_vie
         );
     }
     return impl->textWithRef.find(storedName)->first.c_str();
-}
-
-char const* CommandRegistrar::addPostfix(CommandHandle& /*handle*/, std::string_view postfix) {
-    std::lock_guard lock{impl->mutex};
-    if (impl->postfixWithRef.contains(postfix)) {
-        impl->postfixWithRef.find(postfix)->second++;
-    } else {
-        impl->postfixWithRef.try_emplace(std::string{postfix}, 1);
-    }
-    return impl->postfixWithRef.find(postfix)->first.c_str();
 }
 } // namespace ll::command

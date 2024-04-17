@@ -42,7 +42,7 @@ void registerTimingCommand() {
     auto&                   cmd =
         ll::command::CommandRegistrar::getInstance()
             .getOrCreateCommand("timing", "timing", CommandPermissionLevel::GameDirectors, CommandFlagValue::None);
-    cmd.overload().execute<[](CommandOrigin const&, CommandOutput&) {
+    cmd.overload().execute([](CommandOrigin const&, CommandOutput&) {
         auto thread = std::thread([] {
             auto& system = ll::service::getLevel()->getEntitySystems();
 
@@ -108,7 +108,7 @@ void registerTimingCommand() {
             }
         });
         thread.detach();
-    }>();
+    });
 }
 
 LL_TYPE_INSTANCE_HOOK(

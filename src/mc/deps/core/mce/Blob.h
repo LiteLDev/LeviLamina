@@ -44,8 +44,8 @@ public:
 
     [[nodiscard]] constexpr std::span<uchar> view() const { return {data(), size()}; }
 
-    LL_CLANG_CEXPR Blob& operator=(Blob&&) noexcept = default;
-    [[nodiscard]] _CONSTEXPR23 Blob(Blob&&) noexcept   = default;
+    LL_CLANG_CEXPR Blob&       operator=(Blob&&) noexcept = default;
+    [[nodiscard]] _CONSTEXPR23 Blob(Blob&&) noexcept      = default;
 
     [[nodiscard]] _CONSTEXPR23 Blob(Blob const& other) : Blob(other.view(), other.mBlob.get_deleter()) {}
 

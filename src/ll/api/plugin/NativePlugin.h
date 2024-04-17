@@ -25,7 +25,7 @@ protected:
     void setHandle(Handle handle);
 
 public:
-    NativePlugin(Manifest manifest, Handle handle);
+    NativePlugin(Manifest manifest, Handle handle = nullptr);
     ~NativePlugin();
 
     LLNDAPI Handle getHandle() const;

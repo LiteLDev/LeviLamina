@@ -10,36 +10,41 @@
 namespace ll::command {
 
 namespace detail {
-LLAPI void printCommandError(::Command const&) noexcept;
+LLAPI void printCommandError(::Command const&, ::CommandOutput&) noexcept;
 }
 
 struct EmptyParam {};
 
-template <reflection::Reflectable Params, auto Executor>
-    requires(std::default_initializable<Params>)
+template <reflection::Reflectable P, class E>
+    requires(std::default_initializable<P>)
 class Command : public ::Command {
-    uint64 placeholder{};
-    Params parameters;
+    uint64   placeholder{};
+    P        parameters;
+    E const& executor;
 
     Command() = default;
 
 public:
-    static std::unique_ptr<::Command> make() { return std::unique_ptr<Command>(new Command{}); }
+    Command(E const& executor) : executor(executor) {}
 
     virtual ~Command() = default;
+
     void execute(class CommandOrigin const& origin, class CommandOutput& output) const override {
         try {
-            if constexpr (requires { Executor(origin, output, parameters, *this); }) {
-                Executor(origin, output, parameters, *this);
-            } else if constexpr (requires { Executor(origin, output, parameters); }) {
-                Executor(origin, output, parameters);
+            if constexpr (std::is_invocable_v<E, CommandOrigin const&, CommandOutput&, P const&, ::Command const&>) {
+                executor(origin, output, parameters, *this);
+            } else if constexpr (std::is_invocable_v<E, CommandOrigin const&, CommandOutput&, P const&>) {
+                executor(origin, output, parameters);
+            } else if constexpr (std::is_invocable_v<E, CommandOrigin const&, CommandOutput&, Command const&>) {
+                executor(origin, output, *this);
+            } else if constexpr (std::is_invocable_v<E, CommandOrigin const&, CommandOutput&>) {
+                executor(origin, output);
             } else {
-                Executor(origin, output);
+                executor();
             }
         } catch (...) {
-            ::ll::command::detail::printCommandError(*this);
+            ::ll::command::detail::printCommandError(*this, output);
         }
     }
 };
-
 } // namespace ll::command

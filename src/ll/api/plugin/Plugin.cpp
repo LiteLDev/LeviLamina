@@ -1,5 +1,6 @@
 #include "ll/api/plugin/Plugin.h"
 
+#include "ll/api/command/CommandRegistrar.h"
 #include "ll/api/event/EventBus.h"
 #include "ll/api/event/server/ServerStartedEvent.h"
 #include "ll/api/service/Bedrock.h"
@@ -82,7 +83,10 @@ bool Plugin::onLoad() noexcept {
 
 bool Plugin::onUnload() noexcept {
     try {
-        return !mImpl->onUnload || mImpl->onUnload(*this);
+        if (!mImpl->onUnload || mImpl->onUnload(*this)) {
+            event::EventBus::getInstance().removePluginEventEmitters(mImpl->manifest.name);
+            return true;
+        }
     } catch (...) {
         error_utils::printCurrentException(getLogger());
     }
@@ -112,6 +116,7 @@ bool Plugin::onDisable() noexcept {
         if (!mImpl->onDisable || mImpl->onDisable(*this)) {
             setState(State::Disabled);
             event::EventBus::getInstance().removePluginListeners(mImpl->manifest.name);
+            command::CommandRegistrar::getInstance().disablePluginCommands(mImpl->manifest.name);
             return true;
         }
     } catch (...) {

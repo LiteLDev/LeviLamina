@@ -13,27 +13,31 @@
 #include "ll/api/base/StdInt.h"
 #include "ll/api/command/EnumName.h"
 #include "ll/api/command/SoftEnum.h"
-#include "ll/api/plugin/NativePlugin.h"
 
 #include "mc/deps/core/common/bedrock/typeid_t.h"
 #include "mc/server/commands/CommandFlag.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/server/commands/CommandRegistry.h"
 
+namespace ll::plugin {
+class Plugin;
+}
+
 namespace ll::command {
 
 class CommandHandle;
 
 class CommandRegistrar {
+    friend plugin::Plugin;
     friend CommandHandle;
     struct Impl;
     std::unique_ptr<Impl> impl;
 
     CommandRegistrar();
 
-    char const* addText(CommandHandle&, std::string_view);
+    void disablePluginCommands(std::string_view pluginName);
 
-    char const* addPostfix(CommandHandle&, std::string_view);
+    char const* addText(CommandHandle&, std::string_view);
 
     [[nodiscard]] CommandRegistry& getRegistry() const;
 
@@ -41,11 +45,10 @@ public:
     LLNDAPI static CommandRegistrar& getInstance();
 
     LLNDAPI CommandHandle& getOrCreateCommand(
-        std::string const&            name,
-        std::string const&            description = {},
-        CommandPermissionLevel        requirement = CommandPermissionLevel::Any,
-        CommandFlag                   flag        = CommandFlagValue::NotCheat,
-        std::weak_ptr<plugin::Plugin> plugin      = plugin::NativePlugin::current()
+        std::string const&     name,
+        std::string const&     description = {},
+        CommandPermissionLevel requirement = CommandPermissionLevel::Any,
+        CommandFlag            flag        = CommandFlagValue::NotCheat
     );
 
     LLAPI bool hasEnum(std::string const& name);
@@ -57,10 +60,7 @@ public:
         CommandRegistry::ParseFn                    parser
     );
 
-    LLAPI bool tryRegisterRuntimeEnum(
-        std::string const&                          name,
-        std::vector<std::pair<std::string, uint64>> values
-    );
+    LLAPI bool tryRegisterRuntimeEnum(std::string const& name, std::vector<std::pair<std::string, uint64>> values);
 
     LLAPI bool addEnumValues(
         std::string const&                          name,

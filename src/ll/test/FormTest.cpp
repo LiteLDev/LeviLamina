@@ -27,9 +27,8 @@ void registerFormTestCommand() {
     auto&             cmd =
         ll::command::CommandRegistrar::getInstance()
             .getOrCreateCommand("formtest", "formtest", CommandPermissionLevel::GameDirectors, CommandFlagValue::None);
-    cmd.overload<TestFormParam>()
-        .required("type")
-        .execute<[](CommandOrigin const& ori, CommandOutput&, TestFormParam const& param) {
+    cmd.overload<TestFormParam>().required("type").execute(
+        [](CommandOrigin const& ori, CommandOutput&, TestFormParam const& param) {
             switch (param.type) {
             case TestFormParam::FormType::custom: {
                 ll::form::CustomForm form;
@@ -100,7 +99,8 @@ void registerFormTestCommand() {
                 break;
             }
             }
-        }>();
+        }
+    );
 }
 
 LL_TYPE_INSTANCE_HOOK(

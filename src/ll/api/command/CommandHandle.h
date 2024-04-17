@@ -12,7 +12,7 @@ class CommandRegistrar;
 class RuntimeOverload;
 class CommandHandle {
     friend OverloadData;
-    friend RuntimeOverload;
+    friend CommandRegistrar;
 
     struct Impl;
     std::unique_ptr<Impl> impl;
@@ -21,22 +21,23 @@ class CommandHandle {
 
     void registerOverload(OverloadData&);
 
-    void registerRuntimeOverload(RuntimeOverload&);
-
     char const* addText(std::string_view);
 
-    char const* addPostfix(std::string_view);
+    char const* storeStr(std::string_view);
+
+    void disablePluginOverloads(std::string_view pluginName);
 
 public:
     CommandHandle(CommandRegistrar& registrar, CommandRegistry::Signature& signature, bool owned);
     ~CommandHandle();
 
     template <reflection::Reflectable Params = EmptyParam>
-    [[nodiscard]] constexpr auto overload() -> Overload<Params> {
-        return Overload<Params>{*this};
+    [[nodiscard]] constexpr auto overload(std::weak_ptr<plugin::Plugin> plugin = plugin::NativePlugin::current())
+        -> Overload<Params> {
+        return Overload<Params>{*this, std::move(plugin)};
     }
 
-    LLNDAPI RuntimeOverload runtimeOverload();
+    LLNDAPI RuntimeOverload runtimeOverload(std::weak_ptr<plugin::Plugin> plugin = plugin::NativePlugin::current());
 
     LLAPI void alias(std::string_view alias);
 

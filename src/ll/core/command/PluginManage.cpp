@@ -47,10 +47,8 @@ void registerPluginManageCommand() {
     auto& cmd = CommandRegistrar::getInstance()
                     .getOrCreateCommand("levilamina", "LeviLamina's main command"_tr(), CommandPermissionLevel::Host);
     cmd.alias("ll");
-    cmd.overload<LeviCommand3>()
-        .text("load")
-        .required("plugin")
-        .execute<[](CommandOrigin const&, CommandOutput& output, LeviCommand3 const& param) {
+    cmd.overload<LeviCommand3>().text("load").required("plugin").execute(
+        [](CommandOrigin const&, CommandOutput& output, LeviCommand3 const& param) {
             if (ll::plugin::PluginManagerRegistry::getInstance().hasPlugin(param.plugin)) {
                 output.error("Plugin already {0} loaded"_tr(param.plugin));
                 return;
@@ -60,11 +58,12 @@ void registerPluginManageCommand() {
             } else {
                 output.error("Failed to load plugin {0}"_tr(param.plugin));
             }
-        }>();
+        }
+    );
     cmd.overload<LeviCommand>()
         .required("operation")
         .required("plugin")
-        .execute<[](CommandOrigin const&, CommandOutput& output, LeviCommand const& param) {
+        .execute([](CommandOrigin const&, CommandOutput& output, LeviCommand const& param) {
             if (!ll::plugin::PluginManagerRegistry::getInstance().hasPlugin(param.plugin)) {
                 output.error("Plugin {0} not found"_tr(param.plugin));
                 return;
@@ -96,11 +95,11 @@ void registerPluginManageCommand() {
             default:
                 _STL_UNREACHABLE;
             }
-        }>();
+        });
     cmd.overload<LeviCommand2>()
         .required("operation")
         .required("plugin")
-        .execute<[](CommandOrigin const&, CommandOutput& output, LeviCommand2 const& param) {
+        .execute([](CommandOrigin const&, CommandOutput& output, LeviCommand2 const& param) {
             if (!ll::plugin::PluginManagerRegistry::getInstance().hasPlugin(param.plugin)) {
                 output.error("Plugin {0} not found"_tr(param.plugin));
                 return;
@@ -144,8 +143,8 @@ void registerPluginManageCommand() {
             default:
                 _STL_UNREACHABLE;
             }
-        }>();
-    cmd.overload().text("list").execute<[](CommandOrigin const&, CommandOutput& output) {
+        });
+    cmd.overload().text("list").execute([](CommandOrigin const&, CommandOutput& output) {
         size_t      amount = 0;
         std::string plugins;
         ll::plugin::PluginManagerRegistry::getInstance().forEachPluginWithType(
@@ -159,6 +158,6 @@ void registerPluginManageCommand() {
             plugins.resize(plugins.size() - 2);
         }
         output.success("There are {0} plugins: {1}"_tr(amount, plugins));
-    }>();
+    });
 }
 } // namespace ll::command

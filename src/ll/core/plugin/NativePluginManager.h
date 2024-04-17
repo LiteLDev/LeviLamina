@@ -16,12 +16,7 @@ public:
     NativePluginManager();
     ~NativePluginManager() override;
 
-    std::shared_ptr<NativePlugin> getPluginByHandle(Handle handle) {
-        if (handleMap.contains(handle)) {
-            return handleMap.at(handle);
-        }
-        return {};
-    }
+    std::shared_ptr<NativePlugin> getPluginByHandle(Handle handle);
 
 protected:
     bool load(Manifest manifest) override;

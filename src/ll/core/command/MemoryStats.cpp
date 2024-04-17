@@ -19,7 +19,8 @@ void registerMemstatsCommand() {
         CommandPermissionLevel::Host,
         CommandFlagValue::None
     );
-    cmd.overload()
-        .execute<[&](CommandOrigin const&, CommandOutput&) { ll::memory::getDefaultAllocator().logCurrentState(); }>();
+    cmd.overload().execute([&](CommandOrigin const&, CommandOutput&) {
+        ll::memory::getDefaultAllocator().logCurrentState();
+    });
 }
 } // namespace ll::command

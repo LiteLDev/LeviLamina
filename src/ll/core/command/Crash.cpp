@@ -25,8 +25,8 @@ void registerCrashCommand() {
     );
     cmd.overload<Code>()
         .optional("exceptionCode")
-        .execute<[&](CommandOrigin const&, CommandOutput&, Code const& params) {
+        .execute([&](CommandOrigin const&, CommandOutput&, Code const& params) {
             std::thread([&] { RaiseException(params.exceptionCode, 0, 0, nullptr); }).detach();
-        }>();
+        });
 }
 } // namespace ll::command
