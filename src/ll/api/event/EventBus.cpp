@@ -7,13 +7,10 @@
 
 #include "ll/api/Logger.h"
 #include "ll/api/event/EmitterBase.h"
-#include "ll/api/thread/SharedRecursiveMutex.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/core/LeviLamina.h"
 
 namespace ll::event {
-
-std::atomic_ullong ListenerBase::listenerId{0};
 
 class CallbackStream {
     struct ListenerComparator {
@@ -21,7 +18,7 @@ class CallbackStream {
     };
 
     std::set<ListenerPtr, ListenerComparator> listeners;
-    ll::thread::SharedRecursiveMutex          mutex;
+    std::recursive_mutex                      mutex;
 
 public:
     std::unique_ptr<EmitterBase> emitter;
@@ -29,7 +26,7 @@ public:
     [[nodiscard]] size_t count() const { return listeners.size(); }
 
     void publish(Event& event) {
-        std::shared_lock lock(mutex);
+        std::lock_guard lock(mutex);
         for (auto& l : listeners) {
             try {
                 l->call(event);
@@ -48,7 +45,7 @@ public:
         }
     }
     void publish(std::string_view pluginName, Event& event) {
-        std::shared_lock lock(mutex);
+        std::lock_guard lock(mutex);
         for (auto& l : listeners) {
             if (l->pluginPtr.expired()) {
                 continue;
@@ -69,10 +66,9 @@ public:
         }
     }
     bool addListener(ListenerPtr const& listener) {
-        std::shared_lock lock(mutex);
+        std::lock_guard lock(mutex);
         return listeners.insert(listener).second;
     }
-
     bool removeListener(ListenerPtr const& listener) {
         std::lock_guard lock(mutex);
         return listeners.erase(listener);

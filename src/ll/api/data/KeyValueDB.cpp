@@ -37,6 +37,9 @@ public:
         auto status = leveldb::DB::Open(options, path, std::out_ptr(db));
         if (fixIfError && !status.ok()) {
             status = leveldb::RepairDB(path, options);
+            if (status.ok()) {
+                status = leveldb::DB::Open(options, path, std::out_ptr(db));
+            }
         }
         if (!status.ok()) {
             throw std::runtime_error(status.ToString());

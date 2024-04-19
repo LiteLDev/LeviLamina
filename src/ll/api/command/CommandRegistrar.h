@@ -61,14 +61,14 @@ public:
         Bedrock::typeid_t<CommandRegistry>          type,
         CommandRegistry::ParseFn                    parser
     );
-
-    LLAPI bool tryRegisterRuntimeEnum(std::string const& name, std::vector<std::pair<std::string, uint64>> values);
-
     LLAPI bool addEnumValues(
         std::string const&                          name,
         std::vector<std::pair<std::string, uint64>> values,
         Bedrock::typeid_t<CommandRegistry>          type
     );
+
+    LLAPI bool tryRegisterRuntimeEnum(std::string const& name, std::vector<std::pair<std::string, uint64>> values);
+    LLAPI bool addRuntimeEnumValues(std::string const& name, std::vector<std::pair<std::string, uint64>> values);
 
     LLAPI bool hasSoftEnum(std::string const& name);
 

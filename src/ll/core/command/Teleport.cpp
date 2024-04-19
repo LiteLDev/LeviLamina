@@ -24,11 +24,13 @@ using namespace ll::i18n_literals;
 struct TpSelf {
     DimensionType        dimension;
     CommandPositionFloat destination;
+    bool                 convert{true};
 };
 struct TpTarget {
     DimensionType          dimension;
     CommandPositionFloat   destination;
     CommandSelector<Actor> victim;
+    bool                   convert{true};
 };
 
 void registerTpdimCommand() {
@@ -37,6 +39,7 @@ void registerTpdimCommand() {
     cmd.overload<TpSelf>()
         .required("destination")
         .required("dimension")
+        .optional("convert")
         .execute([&](CommandOrigin const& origin, CommandOutput& output, TpSelf const& param, ::Command const& cmd) {
             auto self = origin.getEntity();
             if (!self) {
@@ -44,13 +47,15 @@ void registerTpdimCommand() {
                 return;
             }
             Vec3 pos;
-            if (!VanillaDimensions::convertPointBetweenDimensions(
-                    origin.getExecutePosition(cmd.mVersion, param.destination),
-                    pos,
-                    origin.getDimension()->getDimensionId(),
-                    param.dimension,
-                    origin.getLevel()->getDimensionConversionData()
-                )) {
+            if (!param.convert) {
+                pos = origin.getExecutePosition(cmd.mVersion, param.destination);
+            } else if (!VanillaDimensions::convertPointBetweenDimensions(
+                           origin.getExecutePosition(cmd.mVersion, param.destination),
+                           pos,
+                           origin.getDimension()->getDimensionId(),
+                           param.dimension,
+                           origin.getLevel()->getDimensionConversionData()
+                       )) {
                 output.error("fail to convert position between dimensions"_tr());
                 return;
             }
@@ -65,6 +70,7 @@ void registerTpdimCommand() {
         .required("victim")
         .required("destination")
         .required("dimension")
+        .optional("convert")
         .execute([&](CommandOrigin const& origin, CommandOutput& output, TpTarget const& param, ::Command const& cmd) {
             auto victim = param.victim.results(origin);
             if (victim.empty()) {
@@ -72,13 +78,15 @@ void registerTpdimCommand() {
                 return;
             }
             Vec3 pos;
-            if (!VanillaDimensions::convertPointBetweenDimensions(
-                    origin.getExecutePosition(cmd.mVersion, param.destination),
-                    pos,
-                    origin.getDimension()->getDimensionId(),
-                    param.dimension,
-                    origin.getLevel()->getDimensionConversionData()
-                )) {
+            if (!param.convert) {
+                pos = origin.getExecutePosition(cmd.mVersion, param.destination);
+            } else if (!VanillaDimensions::convertPointBetweenDimensions(
+                           origin.getExecutePosition(cmd.mVersion, param.destination),
+                           pos,
+                           origin.getDimension()->getDimensionId(),
+                           param.dimension,
+                           origin.getLevel()->getDimensionConversionData()
+                       )) {
                 output.error("fail to convert position between dimensions"_tr());
                 return;
             }

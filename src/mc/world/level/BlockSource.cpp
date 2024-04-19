@@ -45,7 +45,7 @@ optional_ref<Container> BlockSource::tryGetContainer(class BlockPos const& pos) 
     return DropperBlockActor::getContainerAt(*this, pos.center());
 }
 
-optional_ref<Actor> BlockSource::spawnActor(CompoundTag& nbt) {
+optional_ref<Actor> BlockSource::spawnActor(CompoundTag const& nbt) {
     auto&                      level = getLevel();
     NewUniqueIdsDataLoadHelper dataLoadHelper{level};
     auto actorOwnerPtr = level.getActorFactory().loadActor(const_cast<CompoundTag*>(&nbt), dataLoadHelper);

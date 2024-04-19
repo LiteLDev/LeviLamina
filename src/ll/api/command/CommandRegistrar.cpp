@@ -87,12 +87,6 @@ bool CommandRegistrar::tryRegisterEnum(
     registry._addEnumValuesInternal(name, toLower(values), type, parser);
     return true;
 }
-bool CommandRegistrar::tryRegisterRuntimeEnum(
-    std::string const&                          name,
-    std::vector<std::pair<std::string, uint64>> values
-) {
-    return tryRegisterEnum(name, std::move(values), Bedrock::type_id<CommandRegistry, std::pair<std::string, uint64>>(), &CommandRegistry::parse<std::pair<std::string, uint64>>);
-}
 bool CommandRegistrar::addEnumValues(
     std::string const&                          name,
     std::vector<std::pair<std::string, uint64>> values,
@@ -104,6 +98,18 @@ bool CommandRegistrar::addEnumValues(
     }
     registry._addEnumValuesInternal(name, toLower(values), type, nullptr);
     return true;
+}
+bool CommandRegistrar::tryRegisterRuntimeEnum(
+    std::string const&                          name,
+    std::vector<std::pair<std::string, uint64>> values
+) {
+    return tryRegisterEnum(name, std::move(values), Bedrock::type_id<CommandRegistry, std::pair<std::string, uint64>>(), &CommandRegistry::parse<std::pair<std::string, uint64>>);
+}
+bool CommandRegistrar::addRuntimeEnumValues(
+    std::string const&                          name,
+    std::vector<std::pair<std::string, uint64>> values
+) {
+    return addEnumValues(name, std::move(values), Bedrock::type_id<CommandRegistry, std::pair<std::string, uint64>>());
 }
 bool CommandRegistrar::hasSoftEnum(std::string const& name) { return getRegistry().mSoftEnumLookup.contains(name); }
 

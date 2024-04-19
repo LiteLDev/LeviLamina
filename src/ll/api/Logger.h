@@ -93,52 +93,12 @@ public:
     OutputStream error;
     OutputStream fatal;
 
-    Logger(Logger&& other)
-    : title(std::move(other.title)),
-      ofs(std::move(other.ofs)),
-      consoleLevel(other.consoleLevel),
-      fileLevel(other.fileLevel),
-      playerLevel(other.playerLevel),
-      ignoreConfig(other.ignoreConfig),
-      debug(std::move(other.debug)),
-      info(std::move(other.info)),
-      warn(std::move(other.warn)),
-      error(std::move(other.error)),
-      fatal(std::move(other.fatal)) {
-        debug.logger = this;
-        info.logger  = this;
-        warn.logger  = this;
-        error.logger = this;
-        fatal.logger = this;
-    }
-    Logger& operator=(Logger&& other) {
-        title        = std::move(other.title);
-        ofs          = std::move(other.ofs);
-        consoleLevel = other.consoleLevel;
-        fileLevel    = other.fileLevel;
-        playerLevel  = other.playerLevel;
-        ignoreConfig = other.ignoreConfig;
-        debug        = std::move(other.debug);
-        info         = std::move(other.info);
-        warn         = std::move(other.warn);
-        error        = std::move(other.error);
-        fatal        = std::move(other.fatal);
-        debug.logger = this;
-        info.logger  = this;
-        warn.logger  = this;
-        error.logger = this;
-        fatal.logger = this;
-        return *this;
-    }
-
     LLNDAPI explicit Logger(std::string_view title = __builtin_FUNCTION(), bool ignoreConfig = false);
 
     ~Logger() { resetFile(); }
 
     LLAPI void resetFile();
     LLAPI bool setFile(std::filesystem::path const& logFile, bool appendMode = true);
-
-    LLAPI static bool setDefaultFile(std::filesystem::path const& logFile, bool appendMode);
 
     void setPlayerOutputFunc(player_output_fn const& func) {
         debug.setPlayerOutputFunc(func);
@@ -148,19 +108,12 @@ public:
         fatal.setPlayerOutputFunc(func);
     }
 
-    LLAPI static void setDefaultPlayerOutputFunc(player_output_fn const& func) { defaultPlayerOutputCallback = func; }
+    LLAPI static bool setDefaultFile(std::filesystem::path const& logFile, bool appendMode);
 
-    std::ofstream& getFile() {
-        if (ofs) {
-            return ofs.value();
-        }
-        return defaultFile;
-    }
+    LLAPI static void setDefaultPlayerOutputFunc(player_output_fn const& func);
+
+    LLAPI std::ofstream& getFile();
 
     LLAPI static std::lock_guard<std::recursive_mutex> lock();
-
-private:
-    LLAPI static std::ofstream    defaultFile;
-    LLAPI static player_output_fn defaultPlayerOutputCallback;
 };
 } // namespace ll

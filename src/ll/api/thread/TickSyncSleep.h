@@ -40,7 +40,7 @@ template <class Clock>
 class TickSyncSleep : public TickSyncSleepBase {
     void check() override {
         if (!timepoint) return;
-        if (Clock::now() >= *timepoint || *timepoint >= Clock::time_point::max()) {
+        if (Clock::now() >= *timepoint) {
             interrupt();
         }
     }

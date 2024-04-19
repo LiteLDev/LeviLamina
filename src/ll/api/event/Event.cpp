@@ -5,7 +5,7 @@
 
 namespace ll::event {
 
-void Event::serialize(CompoundTag&) const {}
+void Event::serialize(CompoundTag& nbt) const { nbt["eventId"] = getId().name; }
 
 void Event::serializeWithCancel(CompoundTag& nbt) const { nbt["cancelled"] = mCancelled; }
 

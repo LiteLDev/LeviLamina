@@ -68,7 +68,7 @@ RuntimeOverload& RuntimeOverload::required(std::string_view name, ParamKindType 
 }
 RuntimeOverload& RuntimeOverload::text(std::string_view text) {
     std::lock_guard l{lock()};
-    addTextImpl(text, offsetof(RuntimeCommand, placeholder));
+    addTextImpl(text, (int)offsetof(RuntimeCommand, placeholder));
     return *this;
 }
 RuntimeOverload& RuntimeOverload::postfix(std::string_view postfix) {
