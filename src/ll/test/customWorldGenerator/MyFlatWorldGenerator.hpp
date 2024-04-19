@@ -4,6 +4,7 @@
 
 #include "ll/api/memory/Memory.h"
 #include "mc/common/wrapper/WeakRef.h"
+#include "mc/deps/core/data/DividedPos2d.h"
 #include "mc/deps/core/debug/log/ContentLog.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/buffer_span.h"
@@ -17,24 +18,32 @@
 #include "mc/world/level/BlockVolumeTarget.h"
 #include "mc/world/level/ChunkBlockPos.h"
 #include "mc/world/level/ChunkPos.h"
+#include "mc/world/level/DimensionConversionData.h"
 #include "mc/world/level/Level.h"
 #include "mc/world/level/MolangVariableMap.h"
 #include "mc/world/level/WorldBlockTarget.h"
 #include "mc/world/level/WorldGenContext.h"
 #include "mc/world/level/biome/Biome.h"
+#include "mc/world/level/biome/VanillaBiomeNames.h"
 #include "mc/world/level/biome/registry/BiomeRegistry.h"
 #include "mc/world/level/biome/source/BiomeArea.h"
 #include "mc/world/level/biome/source/FixedBiomeSource.h"
 #include "mc/world/level/biome/surface/PerlinNoise.h"
+#include "mc/world/level/biome/surface/PerlinSimplexNoise.h"
 #include "mc/world/level/block/Block.h"
 #include "mc/world/level/block/BlockVolume.h"
 #include "mc/world/level/block/registry/BlockTypeRegistry.h"
 #include "mc/world/level/block/utils/BedrockBlockNames.h"
 #include "mc/world/level/block/utils/VanillaBlockTypeIds.h"
+#include "mc/world/level/chunk/ChunkGeneratorStructureState.h"
 #include "mc/world/level/chunk/ChunkViewSource.h"
 #include "mc/world/level/chunk/LevelChunk.h"
+#include "mc/world/level/chunk/PostprocessingManager.h"
+#include "mc/world/level/chunk/VanillaLevelChunkUpgrade.h"
 #include "mc/world/level/dimension/Dimension.h"
+#include "mc/world/level/dimension/DimensionBrightnessRamp.h"
 #include "mc/world/level/dimension/OverworldBrightnessRamp.h"
+#include "mc/world/level/dimension/VanillaDimensions.h"
 #include "mc/world/level/levelgen/WorldGenerator.h"
 #include "mc/world/level/levelgen/feature/BambooFeature.h"
 #include "mc/world/level/levelgen/feature/DesertWellFeature.h"
@@ -57,170 +66,103 @@
 #include "mc/world/level/storage/LevelData.h"
 
 #include "mc/world/components/FeatureHelper.h"
+#include <numeric>
 
-
-class MyFlatWorldGenerator : public WorldGenerator {
+class MyFlatWorldGenerator : public FlatWorldGenerator {
 public:
-    std::vector<Block const*>         mPrototypeBlocks;      // this+0x190
-    BlockVolume                       mPrototype;            // this+0x1A8
-    Biome const*                      mBiome;                // this+0x1D0
-    std::unique_ptr<FixedBiomeSource> mBiomeSource;          // this+0x1D8
-    uint                              mSeed;                 // this+0x1E0
-    int                               mPostProcessCallCount; // this+0x1E4
+    Random random;
 
-public:
-    MyFlatWorldGenerator(Dimension& dimension, uint seed, Json::Value value)
-    : WorldGenerator(dimension),
-      mSeed(seed),
-      mPostProcessCallCount(0) {
-        LevelData&                levelData = dimension.getLevel().getLevelData();
-        FlatWorldGeneratorOptions generationOptions;
+    MyFlatWorldGenerator(Dimension& dimension, uint seed, Json::Value const& generationOptionsJSON)
+    : FlatWorldGenerator(dimension, seed, generationOptionsJSON) {
+        random.mRandom.mObject._setSeed(seed);
 
-        if (!generationOptions._load(value, levelData)) {
-            generationOptions._load(FlatWorldGeneratorOptions::getLayers(levelData), levelData);
-        }
-
-        Biome* biome = this->mLevel->getBiomeRegistry().lookupById(generationOptions.mBiomeId);
-        if (!biome) {
-            biome = this->mLevel->getBiomeRegistry().lookupById(1);
-        }
-
-        this->mBiomeSource = std::make_unique<FixedBiomeSource>(*biome);
-        this->_generatePrototypeBlockValues(generationOptions, dimension.getMinHeight());
-        this->mBiome = biome;
+        mBiome       = getLevel().getBiomeRegistry().lookupByHash(VanillaBiomeNames::Plains);
+        mBiomeSource = std::make_unique<FixedBiomeSource>(*mBiome);
     }
 
-    virtual ~MyFlatWorldGenerator() {}
+    bool postProcess(ChunkViewSource& neighborhood) {
+        ChunkPos chunkPos;
+        chunkPos.x      = neighborhood.getArea().mBounds.min.x;
+        chunkPos.z      = neighborhood.getArea().mBounds.min.z;
+        auto levelChunk = neighborhood.getExistingChunk(chunkPos);
+        auto seed       = getLevel().getSeed();
 
-public:
-    virtual bool postProcess(ChunkViewSource& chunkViewSource) {
-        BlockSource blockSource(getLevel(), getDimension(), chunkViewSource, 0, 1, 0);
-        Random      random;
+        auto lockChunk =
+            levelChunk->getDimension().mPostProcessingManager->tryLock(levelChunk->getPosition(), neighborhood);
 
-        if (mPostProcessCallCount < 1) {
-            mPostProcessCallCount++;
-            MolangVariableMap MolangVariableMap;
-            WorldGenContext   worldGenContext;
-            RenderParams      renderParams;
-
-            // VanillaTreeFeature(IFeature)
-            // BDS1.20.51 CherrySaplingBlock::_growTree
-            BlockPos cherryTreeGeneratePos{1, 0, 1};
-            // /*crash*/ renderParams = FeatureHelper::makeFeatureRenderParams(blockSource, cherryTreeGeneratePos,
-            // MolangVariableMap);
-            blockSource.setBlockNoUpdate(
-                cherryTreeGeneratePos.x,
-                cherryTreeGeneratePos.y,
-                cherryTreeGeneratePos.z,
-                BlockTypeRegistry::getDefaultBlockState(BedrockBlockNames::Air, 1)
-            );
-            WorldBlockTarget worldBlockTargetForCherryTree(blockSource, worldGenContext);
-            auto             cherryTree = this->getLevel()
-                                  .getFeatureRegistry()
-                                  .lookupByName("minecraft:cherry_tree_feature")
-                                  .tryUnwrap<VanillaTreeFeature>();
-            if (!cherryTree.has_value()) {
-                ll::logger.error("Error! tryUnwrap<VanillaTreeFeature> returned a null value!");
-                return true;
-            }
-            cherryTree->place(worldBlockTargetForCherryTree, cherryTreeGeneratePos, random, renderParams);
-
-            //// BambooFeature(Feature)
-            // auto bamboo =
-
-            //    this->getLevel()
-            //        .getFeatureRegistry()
-            //        .lookupByName("minecraft:bamboo_feature")
-            //        .tryUnwrap<BambooFeature>();
-            // if (!bamboo.has_value()) {
-            //    ll::logger.error("Error! tryUnwrap<BambooFeature> returned a null value!");
-            //    return true;
-            //}
-
-            // bamboo->place(blockSource, {24, 0, 24}, random);
-
-            //// LakeFeature(Feature)
-            // LakeFeature wlakeFeature(
-            //     BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Water, 1),
-            //     XoroshiroPositionalRandomFactory{ll::random_utils::rand<uint64>(), ll::random_utils::rand<uint64>()}
-            //);
-            // wlakeFeature.place(blockSource, {14, 0, 14}, random);
-
-            // LakeFeature llakeFeature(
-            //     BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Lava, 1),
-            //     XoroshiroPositionalRandomFactory{ll::random_utils::rand<uint64>(), ll::random_utils::rand<uint64>()}
-            //);
-            // llakeFeature.place(blockSource, {-14, 0, -14}, random);
+        if (!lockChunk) {
+            return false;
         }
+        BlockSource blockSource(getLevel(), neighborhood.getDimension(), neighborhood, false, true, true);
+        auto        chunkPosL = levelChunk->getPosition();
+        random.mRandom.mObject._setSeed(seed);
+        auto one = 2 * (random.nextInt() / 2) + 1;
+        auto two = 2 * (random.nextInt() / 2) + 1;
+        random.mRandom.mObject._setSeed(seed ^ (chunkPosL.x * one + chunkPosL.z * two));
+
+        WorldGenerator::postProcessStructureFeatures(blockSource, random, chunkPosL.x, chunkPosL.z);
+        WorldGenerator::postProcessStructures(blockSource, random, chunkPosL.x, chunkPosL.z);
         return true;
     }
 
-public:
-    virtual void prepareHeights(BlockVolume&, const ChunkPos&, bool) {}
+    void loadChunk(LevelChunk& levelchunk, bool forceImmediateReplacementDataLoad) {
+        auto chunkPos = levelchunk.getPosition();
 
-    virtual void prepareAndComputeHeights(BlockVolume&, const ChunkPos&, std::vector<short>&, bool, int) {}
+        auto            blockPos = BlockPos(chunkPos, 0);
+        DividedPos2d<4> dividedPos2D;
+        dividedPos2D.x = (blockPos.x >> 31) - ((blockPos.x >> 31) - blockPos.x) / 4;
+        dividedPos2D.z = (blockPos.z >> 31) - ((blockPos.z >> 31) - blockPos.z) / 4;
 
-    virtual BiomeArea getBiomeArea(const BoundingBox& area, uint scale) const {
-        return mBiomeSource->getBiomeArea(area, scale);
-    }
+        WorldGenerator::preProcessStructures(getDimension(), chunkPos, getBiomeSource());
+        WorldGenerator::prepareStructureFeatureBlueprints(getDimension(), chunkPos, getBiomeSource(), *this);
 
-    virtual const BiomeSource& getBiomeSource() const { return *mBiomeSource; }
-
-    virtual WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const {
-        return {mPrototype.mWidth, mPrototype.mDepth, mPrototype.mHeight};
-    }
-
-    virtual BlockPos findSpawnPosition() const { return {0, 0x7FFF}; }
-
-    virtual void decorateWorldGenLoadChunk(Biome&, LevelChunk&, BlockVolumeTarget&, Random&, const ChunkPos&) const {}
-
-    virtual void decorateWorldGenPostProcess(Biome&, LevelChunk&, BlockSource&, Random&) const {}
-
-public:
-    virtual void loadChunk(LevelChunk& levelchunk, bool) {
         levelchunk.setBlockVolume(mPrototype, 0);
+
         levelchunk.recomputeHeightMap(0);
-
-        ChunkLocalNoiseCache chunkLocalNoiseCache;
+        ChunkLocalNoiseCache chunkLocalNoiseCache(dividedPos2D, 8);
         mBiomeSource->fillBiomes(levelchunk, chunkLocalNoiseCache);
-
-        if (!levelchunk.getGenerator()) {
-            levelchunk._setGenerator(this);
-        }
-
         levelchunk.setSaved();
         levelchunk.changeState(ChunkState::Generating, ChunkState::Generated);
     }
 
-public:
-    void _generatePrototypeBlockValues(FlatWorldGeneratorOptions const& layersDesc, short minHeight) {
-        /**
-         * @note The following code restoration is incorrect and awaits correction by someone with the opportunity.
-         */
-        Block const* defaultBlockState = &BlockTypeRegistry::getDefaultBlockState(BedrockBlockNames::Air, 1);
+    std::optional<short> getPreliminarySurfaceLevel(DividedPos2d<4> worldPos) const { return -61; }
 
-        int n = 0;
-
-        for (const auto& layer : layersDesc.mBlockLayers) {
-            for (int i = 0; i < layer.mNumLayers; ++i) {
-                mPrototypeBlocks.push_back(layer.mBlock);
-                ll::logger.info("layer.mBlock={}", layer.mBlock->getName().getString());
-            }
-            n += layer.mNumLayers;
-        }
-        buffer_span_mut<Block const*> buffer;
-        buffer.mBegin = &*mPrototypeBlocks.begin();
-        buffer.mEnd   = &*mPrototypeBlocks.end();
-        BlockVolume blockVolume(buffer, 16, n, 16, *defaultBlockState, minHeight);
-        mPrototype = blockVolume;
-
-        // LL_SYMBOL_CALL(
-        //     "?_generatePrototypeBlockValues@FlatWorldGenerator@@AEAAXAEBVFlatWorldGeneratorOptions@@F@Z",
-        //     void,
-        //     MyFlatWorldGenerator*,
-        //     FlatWorldGeneratorOptions const&,
-        //     short
-        //)
-        //(this, layersDesc, minHeight);
+    void prepareAndComputeHeights(
+        BlockVolume&        box,
+        ChunkPos const&     chunkPos,
+        std::vector<short>& ZXheights,
+        bool                factorInBeardsAndShavers,
+        int                 skipTopN
+    ) {
+        auto heightMap = mPrototype.computeHeightMap();
+        ZXheights.assign(heightMap->begin(), heightMap->end());
     }
+
+    void prepareHeights(BlockVolume& box, ChunkPos const& chunkPos, bool factorInBeardsAndShavers) {
+        box = mPrototype;
+    };
+
+    StructureFeatureType findStructureFeatureTypeAt(BlockPos const& blockPos) {
+        return WorldGenerator::findStructureFeatureTypeAt(blockPos);
+    };
+
+    bool isStructureFeatureTypeAt(const BlockPos& blockPos, ::StructureFeatureType type) const {
+        return WorldGenerator::isStructureFeatureTypeAt(blockPos, type);
+    }
+
+    bool findNearestStructureFeature(
+        ::StructureFeatureType      type,
+        BlockPos const&             blockPos,
+        BlockPos&                   blockPos1,
+        bool                        mustBeInNewChunks,
+        std::optional<HashedString> hash
+    ) {
+        return WorldGenerator::findNearestStructureFeature(type, blockPos, blockPos1, mustBeInNewChunks, hash);
+    };
+
+    void garbageCollectBlueprints(buffer_span<ChunkPos> activeChunks) {
+        return WorldGenerator::garbageCollectBlueprints(activeChunks);
+    };
+
+    BlockPos findSpawnPosition() const { return {0, 16, 0}; };
 };
