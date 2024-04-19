@@ -25,7 +25,7 @@ public:
     leveldb::WriteOptions        writeOptions;
     leveldb::Options             options;
 
-    KeyValueDBImpl(std::string const& path, bool createIfMiss, bool fixIfError, bool bloomFilterBit) {
+    KeyValueDBImpl(std::string const& path, bool createIfMiss, bool fixIfError, int bloomFilterBit) {
         readOptions               = leveldb::ReadOptions();
         writeOptions              = leveldb::WriteOptions();
         options                   = leveldb::Options();
