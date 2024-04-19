@@ -110,7 +110,7 @@ target("better-suicide") -- Change this to your plugin name.
 
 接下来，你需要修改`README.md`文件中的内容。这个文件将会在你的插件仓库主页显示，你可以在这里介绍你的插件的功能、使用方法、配置文件、指令等等。
 
-最后，你需要修改目录名和命名空间名。将`rename_this`目录改成你喜欢的名字，并将`Entry.cpp`和`Entry.h`中命名空间`rename_this`改成相同的名字。按照C++常见惯例，目录名和命名空间名应当使用小写字母和下划线，且应当保持一致。这里，我们统一改成`better_suicide`。
+最后，你需要修改命名空间名。将`MyPlugin.cpp`和`MyPlugin.h`中命名空间`my_plugin`改成你想要的名字。按照C++常见惯例，命名空间名应当使用小写字母和下划线，且应当保持一致。这里，我们统一改成`better_suicide`。同样，你可以将`MyPlugin.cpp`和`MyPlugin.h`改为你想要的名字，但同时要记得把源文件中的`#include MyPlugin.h`改为新的头文件名。
 
 ## 构建你的插件
 
@@ -152,10 +152,10 @@ xmake
 
 ## 补充`#include`
 
-在`Entry.cpp`中补充`#include`，最终效果看起来是这样的：
+在`MyPlugin.cpp`中补充`#include`，最终效果看起来是这样的：
 
 ```cpp
-#include "Entry.h"
+#include "MyPlugin.h"
 
 #include "Config.h"
 
@@ -218,7 +218,7 @@ auto enable(ll::plugin::NativePlugin& /*self*/) -> bool {
         auto* player = static_cast<Player*>(entity); // NOLINT(cppcoreguidelines-pro-type-static-cast-downcast)
         player->kill();
 
-        getSelfPluginInstance().getLogger().info("{} killed themselves", player->getRealName());
+        getInstance().getLogger().info("{} killed themselves", player->getRealName());
     }>();
 
     // ...
@@ -308,7 +308,7 @@ if (entity == nullptr || !entity->isType(ActorType::Player)) {
 auto* player = static_cast<Player*>(entity);
 player->kill();
 
-getSelfPluginInstance().getLogger().info("{} killed themselves", player->getRealName());
+getInstance().getLogger().info("{} killed themselves", player->getRealName());
 ```
 
 !!! warning
