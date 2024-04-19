@@ -159,23 +159,23 @@ public:
 
     [[nodiscard]] size_t size() const noexcept {
         switch (index()) {
-        case Tag::Type::Byte:
-        case Tag::Type::Short:
-        case Tag::Type::Int:
-        case Tag::Type::Int64:
-        case Tag::Type::Float:
-        case Tag::Type::Double:
-        case Tag::Type::String:
+        case Tag::Byte:
+        case Tag::Short:
+        case Tag::Int:
+        case Tag::Int64:
+        case Tag::Float:
+        case Tag::Double:
+        case Tag::String:
             return 1;
-        case Tag::Type::List:
+        case Tag::List:
             return get<ListTag>().size();
-        case Tag::Type::Compound:
+        case Tag::Compound:
             return get<CompoundTag>().size();
-        case Tag::Type::IntArray:
+        case Tag::IntArray:
             return get<IntArrayTag>().size();
-        case Tag::Type::ByteArray:
+        case Tag::ByteArray:
             return get<ByteArrayTag>().size();
-        case Tag::Type::End:
+        case Tag::End:
             return 0;
         default:
             _STL_UNREACHABLE;
@@ -335,7 +335,7 @@ public:
 
 [[nodiscard]] constexpr ListTag::ListTag(std::vector<CompoundTagVariant> tags) {
     if (tags.empty()) {
-        mType = Tag::Type::End;
+        mType = Tag::End;
     } else {
         mType = tags[0].index();
         mList.reserve(tags.size());
@@ -346,7 +346,7 @@ public:
 }
 [[nodiscard]] constexpr ListTag::ListTag(std::initializer_list<CompoundTagVariant> tags) {
     if (tags.size() == 0) {
-        mType = Tag::Type::End;
+        mType = Tag::End;
     } else {
         mType = tags.begin()->index();
         mList.reserve(tags.size());

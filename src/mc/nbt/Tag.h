@@ -56,6 +56,7 @@ public:
         Compound  = 0xA,
         IntArray  = 0xB,
     };
+    using enum Type;
 
     template <std::derived_from<Tag> T>
     T const* as_ptr() const {

@@ -12,10 +12,14 @@
 
 class StructureDataLoadHelper : public ::DataLoadHelper {
 public:
-    // prevent constructor by default
-    StructureDataLoadHelper& operator=(StructureDataLoadHelper const&);
-    StructureDataLoadHelper(StructureDataLoadHelper const&);
-    StructureDataLoadHelper();
+    BlockPos                                         mStructurePlacementLocation;
+    BlockPos                                         mStructureWorldOrigin;
+    Vec3                                             mPivot;
+    ActorUniqueID                                    mOwner;
+    Rotation                                         mRotation;
+    Mirror                                           mMirror;
+    Level*                                           mLevel;
+    std::unordered_map<ActorUniqueID, ActorUniqueID> mOldIDToNewID;
 
 public:
     // NOLINTBEGIN
