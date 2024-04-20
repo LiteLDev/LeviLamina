@@ -25,7 +25,7 @@ class CommandHandle {
 
     char const* storeStr(std::string_view);
 
-    void disablePluginOverloads(std::string_view pluginName);
+    size_t disablePluginOverloads(std::string_view pluginName);
 
 public:
     CommandHandle(CommandRegistrar& registrar, CommandRegistry::Signature& signature, bool owned);

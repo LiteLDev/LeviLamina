@@ -56,6 +56,7 @@ protected:
 
 public:
     LLAPI ~OverloadData();
-    LLNDAPI OverloadData(OverloadData&&);
+    LLAPI OverloadData& operator=(OverloadData&&);
+    LLNDAPI             OverloadData(OverloadData&&);
 };
 } // namespace ll::command

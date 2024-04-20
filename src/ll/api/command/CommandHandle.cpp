@@ -30,31 +30,18 @@ CommandHandle::~CommandHandle() = default;
 
 CommandRegistrar& CommandHandle::getRegistrar() { return impl->registrar; }
 
-void CommandHandle::disablePluginOverloads(std::string_view pluginName) {
+size_t CommandHandle::disablePluginOverloads(std::string_view pluginName) {
     std::lock_guard lock{impl->mutex};
     if (pluginName.empty()) {
-        return;
+        return 0;
     }
-    if (impl->owned && std::ranges::all_of(impl->overloads, [&](OverloadData& ov) {
-            return ov.getPlugin().expired() || (ov.getPlugin().lock()->getManifest().name == pluginName);
-        })) {
-        impl->signature.flag |= CommandFlagValue::Removed;
-
-        impl->overloads.clear();
-    }
-    // TODO: implement this
-    // for (auto& overload : impl->overloads) {
-    //     if (overload.getPlugin().owner_before(plugin) || plugin.owner_before(overload.getPlugin())) {
-    //         continue;
-    //     }
-    //     for (auto& o : impl->signature.overloads) {
-    //         if (o.params == overload.getParams()) {
-    //             o.alloc = data.getFactory();
-    //             return;
-    //         }
-    //     }
-    // }
-    return;
+    return std::erase_if(impl->overloads, [&](auto& overload) -> bool {
+        if (!overload.getPlugin().expired() && (overload.getPlugin().lock()->getManifest().name != pluginName)) {
+            return false;
+        }
+        std::erase_if(impl->signature.overloads, [&](auto& o) { return o.params == overload.getParams(); });
+        return true;
+    });
 }
 void CommandHandle::registerOverload(OverloadData& d) {
     std::lock_guard lock{impl->mutex};

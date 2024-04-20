@@ -30,6 +30,7 @@ struct OverloadData::Impl {
 OverloadData::OverloadData(CommandHandle& handle, std::weak_ptr<plugin::Plugin> plugin)
 : impl(std::make_unique<Impl>(handle, std::move(plugin))) {}
 
+OverloadData& OverloadData::operator=(OverloadData&&) = default;
 OverloadData::OverloadData(OverloadData&&) = default;
 OverloadData::~OverloadData()              = default;
 

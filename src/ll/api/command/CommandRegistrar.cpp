@@ -51,7 +51,6 @@ CommandHandle& CommandRegistrar::getOrCreateCommand(
         }
         return impl->commands.try_emplace(signature->name, *this, *signature, true).first->second;
     } else if (impl->commands.contains(signature->name)) {
-        signature->flag.remove(CommandFlagValue::Removed);
         return impl->commands.at(signature->name);
     } else {
         return impl->commands.try_emplace(signature->name, *this, *signature, false).first->second;
