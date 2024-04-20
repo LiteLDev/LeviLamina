@@ -30,15 +30,13 @@ Error& Error::join(Error err) {
     }
     if (isA<ErrorList>()) {
         if (err.isA<ErrorList>()) {
-            std::static_pointer_cast<ErrorList>(mInfo)->errors.append_range(
-                std::move(std::static_pointer_cast<ErrorList>(err.mInfo)->errors)
-            );
+            as<ErrorList>()->errors.append_range(std::move(err.as<ErrorList>()->errors));
         } else {
-            std::static_pointer_cast<ErrorList>(mInfo)->errors.emplace_back(std::move(err.mInfo));
+            as<ErrorList>()->errors.emplace_back(std::move(err.mInfo));
         }
     } else {
         if (err.isA<ErrorList>()) {
-            auto ptr = std::static_pointer_cast<ErrorList>(err.mInfo);
+            auto ptr = err.as<ErrorList>();
             ptr->errors.insert(ptr->errors.begin(), std::move(mInfo));
             mInfo = std::move(err.mInfo);
         } else {

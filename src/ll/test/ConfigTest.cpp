@@ -121,18 +121,17 @@ LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &Se
 
     auto list = ll::string_utils::splitByPattern("structure.trs", ".");
 
-    // ll::reflection::visit(std::span{list}, helloReflection, [](auto&& a) {
-    //     if constexpr (std::floating_point<std::remove_cvref_t<decltype(a)>>) {
-    //         ll::logger.debug("ll::reflection::visit {} {}", typeid(decltype(a)).name(), a);
-    //     }
-    // });
-
     ll::logger.debug(
         "reflection NBT: {}",
         ll::reflection::serialize<CompoundTagVariant>(helloReflection).toSnbt(SnbtFormat::PrettyConsolePrint)
     );
 
-    ll::reflection::deserialize(helloReflection, ll::reflection::serialize<CompoundTagVariant>(helloReflection));
+    ll::logger.debug(
+        "reflection json: {}",
+        ll::reflection::serialize<nlohmann::ordered_json>(helloReflection).dump(4)
+    );
+
+    // ll::reflection::deserialize(helloReflection, ll::reflection::serialize<CompoundTagVariant>(helloReflection));
 
     ll::logger.debug("0x{:X}", (uintptr_t)ll::memory::resolveIdentifier(&FillCommand::execute));
     ll::logger.debug("0x{:X}", (uintptr_t)ll::win_utils::getImageRange().data());
@@ -148,14 +147,14 @@ LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &Se
     ll::logger.debug("{}", ll::reflection::getRawName<&ServerLevel::_subTick>());
     ll::logger.debug("{}", ll::reflection::getRawName<&ServerLevel::_checkBlockPermutationCap>());
 
-    try {
-        ll::reflection::deserialize(
-            helloReflection,
-            nlohmann::ordered_json::parse(R"({"structure":{"hello":""}})", nullptr, false, true)
-        );
-    } catch (...) {
-        ll::error_utils::printCurrentException(ll::logger);
-    }
+    // try {
+    //     ll::reflection::deserialize(
+    //         helloReflection,
+    //         nlohmann::ordered_json::parse(R"({"structure":{"hello":""}})", nullptr, false, true)
+    //     );
+    // } catch (...) {
+    //     ll::error_utils::printCurrentException(ll::logger);
+    // }
 
     ll::logger.debug("789\xDB\xFE");
     ll::logger.debug("789\xDB\xFE");

@@ -46,7 +46,10 @@ public:
     bool isA() {
         return mInfo ? typeid(T) == typeid(*mInfo) : false;
     }
-
+    template <class T>
+    auto as() {
+        return std::static_pointer_cast<T>(mInfo);
+    }
     LLAPI Error& join(Error);
 
     LLAPI Error& log(::ll::Logger::OutputStream&);

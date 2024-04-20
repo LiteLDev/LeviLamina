@@ -3,44 +3,36 @@
 #include "ll/api/reflection/Reflection.h"
 #include "ll/api/reflection/SerializationError.h"
 
+// Priority:
+// 0. convertible
+// 1. Reflectable enum
+// 2. Associative TupleLike ArrayLike
+// 3. string
+// 4. IsOptional IsDispatcher IsVectorBase
+
 namespace ll::reflection {
 
-template <class J, Reflectable T>
+template <class J, class T>
 inline void deserialize(T&, J const&);
+
 
 template <class J, class T>
-inline void deserialize(T&, J const&)
-    requires(std::is_enum_v<T>);
-
-template <class J, class T>
-inline void deserialize(T&, J const&)
-    requires(
-        !std::is_enum_v<T>
-        && (std::is_same_v<std::remove_cvref_t<T>, std::remove_cvref_t<J>> || concepts::IsString<T>
-            || std::is_floating_point_v<T> || std::is_integral_v<T>)
-    );
-
-template <class J, concepts::Associative T>
-inline void deserialize(T&, J const&);
-
-template <class J, concepts::TupleLike T>
-inline void deserialize(T&, J const&);
-
-template <class J, concepts::ArrayLike T>
-inline void deserialize(T&, J const&)
-    requires(!concepts::IsString<T>);
-
-template <class J, concepts::IsOptional T>
-inline void deserialize(T&, J const&);
-
-template <class J, concepts::IsDispatcher T>
-inline void deserialize(T&, J const&);
-
-template <class J, concepts::IsVectorBase T>
-inline void deserialize(T&, J const&);
-
+inline void deserialize_impl(T& obj, J const& j, meta::PriorityTag<0>)
+    requires(std::convertible_to<J, T>)
+{
+    obj = j;
+}
+template <class J, concepts::Require<std::is_enum> T>
+inline void deserialize_impl(T& e, J const& j, meta::PriorityTag<1>) {
+    using enum_type = std::remove_cvref_t<T>;
+    if (j.is_string()) {
+        e = magic_enum::enum_cast<enum_type>((std::string)j).value();
+    } else {
+        e = magic_enum::enum_cast<enum_type>((std::underlying_type_t<enum_type>)j).value();
+    }
+}
 template <class J, Reflectable T>
-inline void deserialize(T& obj, J const& j) {
+inline void deserialize_impl(T& obj, J const& j, meta::PriorityTag<1>) {
     forEachMember(obj, [&](std::string_view name, auto& member) {
         if (name.starts_with('$')) {
             return;
@@ -71,38 +63,8 @@ inline void deserialize(T& obj, J const& j) {
     });
 }
 
-template <class J, class T>
-inline void deserialize(T& e, J const& j)
-    requires(std::is_enum_v<T>)
-{
-    using enum_type = std::remove_cvref_t<T>;
-    if (j.is_string()) {
-        e = magic_enum::enum_cast<enum_type>((std::string)j).value_or(enum_type{});
-    } else {
-        e = magic_enum::enum_cast<enum_type>((std::underlying_type_t<enum_type>)j).value_or(enum_type{});
-    }
-}
-
-template <class J, class T>
-inline void deserialize(T& obj, J const& j)
-    requires(
-        !std::is_enum_v<T>
-        && (std::is_same_v<std::remove_cvref_t<T>, std::remove_cvref_t<J>> || concepts::IsString<T>
-            || std::is_floating_point_v<T> || std::is_integral_v<T>)
-    )
-{
-    if constexpr (!std::is_same_v<std::remove_cvref_t<T>, std::remove_cvref_t<J>>) {
-        if constexpr (concepts::IsString<T>) {
-            if (!j.is_string()) throw std::runtime_error("field must be a string");
-        } else {
-            if (!j.is_number() && !j.is_boolean()) throw std::runtime_error("field must be a number");
-        }
-    }
-    obj = j;
-}
-
 template <class J, concepts::Associative T>
-inline void deserialize(T& map, J const& j) {
+inline void deserialize_impl(T& map, J const& j, meta::PriorityTag<2>) {
     static_assert(
         (concepts::IsString<typename T::key_type> || std::is_enum_v<typename T::key_type>),
         "the key type of the associative container must be convertible to a string"
@@ -117,18 +79,14 @@ inline void deserialize(T& map, J const& j) {
         }
     }
 }
-
 template <class J, concepts::TupleLike T>
-inline void deserialize(T& tuple, J const& j) {
+inline void deserialize_impl(T& tuple, J const& j, meta::PriorityTag<2>) {
     if (!j.is_array()) throw std::runtime_error("field must be an array");
     size_t i = 0;
     std::apply([&](auto&... args) { (((i < j.size()) ? deserialize<J>(args, j[i++]) : void()), ...); }, tuple);
 }
-
 template <class J, concepts::ArrayLike T>
-inline void deserialize(T& arr, J const& j)
-    requires(!concepts::IsString<T>)
-{
+inline void deserialize_impl(T& arr, J const& j, meta::PriorityTag<2>) {
     if (!j.is_array()) throw std::runtime_error("field must be an array");
 
     using value_type = typename T::value_type;
@@ -156,9 +114,13 @@ inline void deserialize(T& arr, J const& j)
         }
     }
 }
-
+template <class J, concepts::IsString T>
+inline void deserialize_impl(T& str, J const& j, meta::PriorityTag<3>) {
+    if (!j.is_string()) throw std::runtime_error("field must be a string");
+    str = (std::string)j;
+}
 template <class J, concepts::IsOptional T>
-inline void deserialize(T& opt, J const& j) {
+inline void deserialize_impl(T& opt, J const& j, meta::PriorityTag<4>) {
     if (j.is_null()) {
         opt = std::nullopt;
     } else {
@@ -168,18 +130,19 @@ inline void deserialize(T& opt, J const& j) {
         deserialize<J>(*opt, j);
     }
 }
-
 template <class J, concepts::IsDispatcher T>
-inline void deserialize(T& d, J const& j) {
+inline void deserialize_impl(T& d, J const& j, meta::PriorityTag<4>) {
     deserialize<J>(d.storage, j);
     d.call();
 }
-
 template <class J, concepts::IsVectorBase T>
-inline void deserialize(T& vec, J const& j) {
+inline void deserialize_impl(T& vec, J const& j, meta::PriorityTag<4>) {
     T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
         deserialize<J>(vec.template get<axis_type>(iter), j[iter]);
     });
 }
-
+template <class J, class T>
+inline void deserialize(T& t, J const& j) {
+    deserialize_impl<J>(t, j, meta::PriorityTag<4>{});
+}
 } // namespace ll::reflection
