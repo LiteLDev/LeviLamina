@@ -283,7 +283,7 @@ std::string makeExceptionString(std::exception_ptr ePtr) noexcept {
     return "unknown error when make exception string";
 }
 
-void printCurrentException(ll::Logger::OutputStream& stream, std::exception_ptr const& e) noexcept {
+void printCurrentException(ll::OutputStream& stream, std::exception_ptr const& e) noexcept {
     try {
 #if defined(LL_DEBUG) && _HAS_CXX23
         std::string res;

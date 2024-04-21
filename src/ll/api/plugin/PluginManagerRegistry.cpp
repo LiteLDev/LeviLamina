@@ -31,7 +31,7 @@ Expected<> PluginManagerRegistry::loadPlugin(Manifest manifest) noexcept {
                 impl->loadedPlugins.insert_or_assign(std::move(name), std::move(type));
             });
         } else {
-            return makeStringError("Unrecognized plugin type: {}"_tr(manifest.type));
+            return makeStringError("Unrecognized plugin type: {0}"_tr(manifest.type));
         }
     } catch (...) {
         return makeExceptionError();

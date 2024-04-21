@@ -35,7 +35,7 @@ static bool checkLogLevel(int level, int outLevel) {
     return false;
 }
 
-void Logger::OutputStream::print(std::string_view s) const noexcept {
+void OutputStream::print(std::string_view s) const noexcept {
     try {
         auto lock = Logger::lock();
 
@@ -92,7 +92,7 @@ void Logger::OutputStream::print(std::string_view s) const noexcept {
         }
     }
 }
-Logger::OutputStream::OutputStream(
+OutputStream::OutputStream(
     Logger&                               logger,
     std::string                           levelPrefix,
     int                                   level,

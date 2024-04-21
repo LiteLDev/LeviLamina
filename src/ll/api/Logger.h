@@ -36,48 +36,52 @@
 #include "ll/api/base/Macro.h"
 
 namespace ll {
+class Logger;
+class OutputStream {
+    friend class Logger;
+
+private:
+    LLAPI void print(std::string_view) const noexcept;
+
+public:
+    using player_output_fn = std::function<void(std::string_view)>;
+
+    Logger*                        logger;
+    std::string                    levelPrefix;
+    int                            level;
+    std::array<fmt::text_style, 4> style;
+    std::array<std::string, 5>     consoleFormat;
+    std::array<std::string, 5>     fileFormat;
+    std::array<std::string, 5>     playerFormat;
+    player_output_fn               playerOutputCallback;
+
+    LLAPI explicit OutputStream(
+        Logger&                               logger,
+        std::string                           levelPrefix,
+        int                                   level,
+        std::array<fmt::text_style, 4> const& style         = {{}},
+        std::array<std::string, 5> const&     playerFormat  = {"<{2}|{1}> [{0}] {3}", "{:%T}", "{}", "{}", "{}"},
+        std::array<std::string, 5> const&     consoleFormat = {"{0} {1} {2} {3}", "{:%T}.{:0>3}", "{}", "[{}]", "{}"},
+        std::array<std::string, 5> const&     fileFormat = {"[{0} {1}][{2}] {3}", "{:%F %T}.{:0>3}", "{}", "{}", "{}"}
+    );
+
+    template <typename... Args>
+    void operator()(fmt::format_string<Args...> fmt, Args&&... args) const {
+        print(fmt::vformat(fmt.get(), fmt::make_format_args(args...)));
+    }
+
+    template <ll::concepts::IsString S>
+    void operator()(S const& msg) const {
+        print(msg);
+    }
+
+    void setPlayerOutputFunc(player_output_fn const& func) { playerOutputCallback = func; }
+};
+
 class Logger {
 public:
     using player_output_fn = std::function<void(std::string_view)>;
 
-    class OutputStream {
-        friend class Logger;
-
-    private:
-        LLAPI void print(std::string_view) const noexcept;
-
-    public:
-        Logger*                        logger;
-        std::string                    levelPrefix;
-        int                            level;
-        std::array<fmt::text_style, 4> style;
-        std::array<std::string, 5>     consoleFormat;
-        std::array<std::string, 5>     fileFormat;
-        std::array<std::string, 5>     playerFormat;
-        player_output_fn               playerOutputCallback;
-
-        LLAPI explicit OutputStream(
-            Logger&                               logger,
-            std::string                           levelPrefix,
-            int                                   level,
-            std::array<fmt::text_style, 4> const& style        = {{}},
-            std::array<std::string, 5> const&     playerFormat = {"<{2}|{1}> [{0}] {3}", "{:%T}", "{}", "{}", "{}"},
-            std::array<std::string, 5> const& consoleFormat = {"{0} {1} {2} {3}", "{:%T}.{:0>3}", "{}", "[{}]", "{}"},
-            std::array<std::string, 5> const& fileFormat = {"[{0} {1}][{2}] {3}", "{:%F %T}.{:0>3}", "{}", "{}", "{}"}
-        );
-
-        template <typename... Args>
-        void operator()(fmt::format_string<Args...> fmt, Args&&... args) const {
-            print(fmt::vformat(fmt.get(), fmt::make_format_args(args...)));
-        }
-
-        template <ll::concepts::IsString S>
-        void operator()(S const& msg) const {
-            print(msg);
-        }
-
-        void setPlayerOutputFunc(player_output_fn const& func) { playerOutputCallback = func; }
-    };
 
 public:
     std::string                  title;

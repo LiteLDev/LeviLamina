@@ -14,11 +14,14 @@
 
 #include "ll/api/base/MsvcPredefine.h"
 
-#include "ll/api/Logger.h"
-
 struct _EXCEPTION_RECORD;   // NOLINT(bugprone-reserved-identifier)
 struct _CONTEXT;            // NOLINT(bugprone-reserved-identifier)
 struct _EXCEPTION_POINTERS; // NOLINT(bugprone-reserved-identifier)
+
+namespace ll {
+class Logger;
+class OutputStream;
+}
 
 namespace ll::inline utils::error_utils {
 
@@ -89,12 +92,12 @@ LLNDAPI std::string makeExceptionString(std::exception_ptr ePtr) noexcept;
 LLAPI void printCurrentException(ll::Logger& l, std::exception_ptr const& = std::current_exception()) noexcept;
 
 LLAPI void
-printCurrentException(ll::Logger::OutputStream& stream, std::exception_ptr const& = std::current_exception()) noexcept;
+printCurrentException(ll::OutputStream& stream, std::exception_ptr const& = std::current_exception()) noexcept;
 
 inline void printException(ll::Logger& l, ::_EXCEPTION_RECORD const& e) noexcept {
     printCurrentException(l, createExceptionPtr(e));
 }
-inline void printException(ll::Logger::OutputStream& stream, ::_EXCEPTION_RECORD const& e) noexcept {
+inline void printException(ll::OutputStream& stream, ::_EXCEPTION_RECORD const& e) noexcept {
     printCurrentException(stream, createExceptionPtr(e));
 }
 
@@ -105,7 +108,7 @@ inline void printException(ll::Logger& l, T const& e) noexcept {
 }
 template <class T>
     requires(!std::is_same_v<T, std::exception_ptr>)
-inline void printException(ll::Logger::OutputStream& stream, T const& e) noexcept {
+inline void printException(ll::OutputStream& stream, T const& e) noexcept {
     printCurrentException(stream, std::make_exception_ptr(e));
 }
 } // namespace ll::inline utils::error_utils

@@ -1,5 +1,7 @@
 #include "ll/api/Expected.h"
 #include "ll/api/utils/StringUtils.h"
+#include "ll/api/Logger.h"
+#include "ll/api/utils/ErrorUtils.h"
 
 #include "mc/server/commands/CommandOutput.h"
 
@@ -18,17 +20,39 @@ std::string Error::message() const {
         return "success";
     }
     auto res  = mInfo->message();
-    res      += "expected stacktrace:\n";
+    res      += "\nexpected stacktrace:\n";
     res      += stacktrace_utils::toString(mInfo->impl->stacktrace);
     return res;
 }
+
+struct ExceptionError : ErrorInfoBase {
+    std::exception_ptr exc;
+    std::stacktrace    stacktrace;
+    ExceptionError(std::exception_ptr const& exc) : exc(exc), stacktrace(error_utils::stacktraceFromCurrExc()) {}
+    std::string message() const override {
+        auto res = error_utils::makeExceptionString(exc);
+        if (!stacktrace.empty()) {
+            res += "\nexception stacktrace:\n";
+            res += stacktrace_utils::toString(stacktrace);
+        }
+        return res;
+    }
+};
 #else
 struct ErrorInfoBase::Impl {};
 ErrorInfoBase::ErrorInfoBase() {}
 std::string Error::message() const { return mInfo ? mInfo->message() : "success"; }
+
+struct ExceptionError : ErrorInfoBase {
+    std::exception_ptr exc;
+    ExceptionError(std::exception_ptr const& exc) : exc(exc) {}
+    std::string message() const override { return error_utils::makeExceptionString(exc); }
+};
 #endif
 
 ErrorInfoBase::~ErrorInfoBase() = default;
+
+Unexpected makeExceptionError(std::exception_ptr const& exc) { return makeError<ExceptionError>(exc); }
 
 struct ErrorList : ErrorInfoBase {
     std::vector<std::shared_ptr<ErrorInfoBase>> errors;
@@ -74,7 +98,7 @@ Error& Error::join(Error err) {
     }
     return *this;
 }
-LLAPI Error& Error::log(::ll::Logger::OutputStream& stream) {
+LLAPI Error& Error::log(::ll::OutputStream& stream) {
     auto msg = message();
     for (auto& sv : string_utils::splitByPattern(msg, "\n")) {
         if (sv.ends_with('\r')) {

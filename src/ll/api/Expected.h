@@ -9,12 +9,10 @@
 #include <memory>
 #include <string_view>
 
-#include "ll/api/Logger.h"
-#include "ll/api/utils/ErrorUtils.h"
-
 class CommandOutput;
 
 namespace ll {
+class OutputStream;
 class Error;
 class ErrorInfoBase {
     friend Error;
@@ -57,11 +55,11 @@ public:
     }
     LLAPI Error& join(Error);
 
-    LLAPI Error& log(::ll::Logger::OutputStream&);
+    LLAPI Error& log(::ll::OutputStream&);
 
     LLAPI Error& log(CommandOutput&);
 
-    Error const& log(::ll::Logger::OutputStream& s) const { return const_cast<Error*>(this)->log(s); }
+    Error const& log(::ll::OutputStream& s) const { return const_cast<Error*>(this)->log(s); }
 
     Error const& log(CommandOutput& s) const { return const_cast<Error*>(this)->log(s); }
 };
@@ -86,11 +84,6 @@ struct ErrorCodeError : ErrorInfoBase {
     ErrorCodeError(std::error_code ec) : ec(ec) {}
     std::string message() const override { return ec.message(); }
 };
-struct ExceptionError : ErrorInfoBase {
-    std::exception_ptr exc;
-    ExceptionError(std::exception_ptr const& exc) : exc(exc) {}
-    std::string message() const override { return ::ll::error_utils::makeExceptionString(exc); }
-};
 inline Unexpected forwardError(::ll::Error& err) { return ::nonstd::make_unexpected(std::move(err)); }
 
 inline Unexpected makeSuccessError() { return ::nonstd::make_unexpected(Error{}); }
@@ -107,9 +100,7 @@ inline Unexpected makeErrorCodeError(std::error_code ec) { return makeError<Erro
 
 inline Unexpected makeErrorCodeError(std::errc ec) { return makeError<ErrorCodeError>(make_error_code(ec)); }
 
-inline Unexpected makeExceptionError(std::exception_ptr const& exc = std::current_exception()) {
-    return makeError<ExceptionError>(exc);
-}
+LLNDAPI Unexpected makeExceptionError(std::exception_ptr const& exc = std::current_exception());
 
 } // namespace ll
 

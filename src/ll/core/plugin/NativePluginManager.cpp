@@ -153,8 +153,8 @@ Expected<> NativePluginManager::unload(std::string_view name) {
     if (!FreeLibrary((HMODULE)ptr->getHandle())) {
         return makeExceptionError(std::make_exception_ptr(error_utils::getWinLastError()));
     }
-    erasePlugin(name);
     handleMap.erase(ptr->getHandle());
+    erasePlugin(name);
     return {};
 }
 } // namespace ll::plugin

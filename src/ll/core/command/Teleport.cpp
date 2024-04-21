@@ -65,7 +65,7 @@ void registerTpdimCommand() {
                 return;
             }
             self->teleport(pos, param.dimension);
-            output.success("Teleported {} to {} {}"_tr(
+            output.success("Teleported {0} to {1} {2}"_tr(
                 origin.getName(),
                 VanillaDimensions::toString(param.dimension),
                 pos.toString()
@@ -98,7 +98,7 @@ void registerTpdimCommand() {
             for (auto actor : victim) {
                 actor->teleport(pos, param.dimension);
             }
-            output.success("Teleported {} to {} {}"_tr(
+            output.success("Teleported {0} to {1} {2}"_tr(
                 CommandOutputParameter{victim}.str,
                 VanillaDimensions::toString(param.dimension),
                 pos.toString()
