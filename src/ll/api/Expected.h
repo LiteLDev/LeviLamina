@@ -15,10 +15,15 @@
 class CommandOutput;
 
 namespace ll {
-
+class Error;
 class ErrorInfoBase {
+    friend Error;
+    struct Impl;
+    std::unique_ptr<Impl> impl;
+
 public:
-    virtual ~ErrorInfoBase() = default;
+    LLAPI ErrorInfoBase();
+    LLAPI virtual ~ErrorInfoBase();
 
     virtual std::string message() const = 0;
 };
@@ -40,7 +45,7 @@ public:
 
     operator bool() const { return mInfo != nullptr; }
 
-    std::string message() const { return mInfo ? mInfo->message() : "success"; }
+    LLNDAPI std::string message() const;
 
     template <class T>
     bool isA() {

@@ -3,7 +3,33 @@
 
 #include "mc/server/commands/CommandOutput.h"
 
+#ifdef LL_DEBUG
+#include "ll/api/utils/StacktraceUtils.h"
+#endif
+
 namespace ll {
+#if defined(LL_DEBUG) && _HAS_CXX23
+struct ErrorInfoBase::Impl {
+    std::stacktrace stacktrace = std::stacktrace::current(1);
+};
+ErrorInfoBase::ErrorInfoBase() : impl(std::make_unique<Impl>()) {}
+std::string Error::message() const {
+    if (!mInfo) {
+        return "success";
+    }
+    auto res  = mInfo->message();
+    res      += "expected stacktrace:\n";
+    res      += stacktrace_utils::toString(mInfo->impl->stacktrace);
+    return res;
+}
+#else
+struct ErrorInfoBase::Impl {};
+ErrorInfoBase::ErrorInfoBase() {}
+std::string Error::message() const { return mInfo ? mInfo->message() : "success"; }
+#endif
+
+ErrorInfoBase::~ErrorInfoBase() = default;
+
 struct ErrorList : ErrorInfoBase {
     std::vector<std::shared_ptr<ErrorInfoBase>> errors;
     ErrorList() {}
