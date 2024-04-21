@@ -6,6 +6,7 @@
 #include "ll/api/command/CommandRegistrar.h"
 #include "ll/api/i18n/I18n.h"
 #include "ll/api/service/ServerInfo.h"
+#include "ll/core/Config.h"
 
 #include "mc/server/commands/CommandOrigin.h"
 #include "mc/server/commands/CommandOutput.h"
@@ -34,6 +35,10 @@ struct TpTarget {
 };
 
 void registerTpdimCommand() {
+    auto config = ll::globalConfig.modules.command.tpdimOverload;
+    if (!config.enabled) {
+        return;
+    }
     auto& cmd = CommandRegistrar::getInstance().getOrCreateCommand("tp");
 
     cmd.overload<TpSelf>()

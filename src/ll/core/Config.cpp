@@ -14,20 +14,25 @@ struct LeviConfig globalConfig;
 
 bool loadLeviConfig() {
     try {
-        if (!ll::config::loadConfig(globalConfig, leviConfigPath)) {
-            if (ll::config::saveConfig(globalConfig, leviConfigPath)) {
-                logger.warn("LeviConfig rewrite successfully"_tr());
-            } else {
-                logger.error("LeviConfig rewrite failed"_tr());
-                return false;
-            }
+        if (ll::config::loadConfig(globalConfig, leviConfigPath)) {
+            return true;
         }
-        return true;
     } catch (...) {
         logger.error("LeviConfig load failed"_tr());
         ll::error_utils::printCurrentException(logger);
-        return false;
     }
+    try {
+        if (ll::config::saveConfig(globalConfig, leviConfigPath)) {
+            logger.warn("LeviConfig rewrite successfully"_tr());
+        } else {
+            logger.error("LeviConfig rewrite failed"_tr());
+            return false;
+        }
+    } catch (...) {
+        logger.error("LeviConfig rewrite failed"_tr());
+        ll::error_utils::printCurrentException(logger);
+    }
+    return false;
 }
 
 bool saveLeviConfig() {

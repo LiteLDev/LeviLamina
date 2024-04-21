@@ -256,9 +256,7 @@ void leviLaminaMain() {
     logger.warn("LeviLamina is running in DEBUG mode!"_tr());
 #endif
 
-    if (globalConfig.modules.commands.enabled) {
-        command::registerCommands();
-    }
+    command::registerCommands();
 
     plugin::PluginRegistrar::getInstance().loadAllPlugins();
 }

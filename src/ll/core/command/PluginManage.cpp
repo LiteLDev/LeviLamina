@@ -5,6 +5,7 @@
 #include "ll/api/command/CommandHandle.h"
 #include "ll/api/command/CommandRegistrar.h"
 #include "ll/api/i18n/I18n.h"
+#include "ll/core/Config.h"
 
 #include "ll/api/plugin/Plugin.h"
 #include "ll/api/service/Bedrock.h"
@@ -44,8 +45,12 @@ struct LeviCommand3 {
 };
 
 void registerPluginManageCommand() {
+    auto config = ll::globalConfig.modules.command.pluginManageCommand;
+    if (!config.enabled) {
+        return;
+    }
     auto& cmd = CommandRegistrar::getInstance()
-                    .getOrCreateCommand("levilamina", "LeviLamina's main command"_tr(), CommandPermissionLevel::Admin);
+                    .getOrCreateCommand("levilamina", "LeviLamina's main command"_tr(), config.permission);
     cmd.alias("ll");
     cmd.overload<LeviCommand3>().text("load").required("plugin").execute(
         [](CommandOrigin const&, CommandOutput& output, LeviCommand3 const& param) {

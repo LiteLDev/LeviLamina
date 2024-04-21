@@ -11,11 +11,13 @@
 #include "ll/core/tweak/SimpleServerLogger.h"
 #include "ll/core/tweak/Statistics.h"
 
+#include "mc/server/commands/CommandPermissionLevel.h"
+
 namespace ll {
 
 struct LeviConfig {
 
-    int version = 22;
+    int version = 23;
 
     std::string language = "system";
     struct {
@@ -41,14 +43,19 @@ struct LeviConfig {
 
         reflection::Dispatcher<SimpleServerLoggerConfig, SimpleServerLogger> simpleServerLogger{};
 
+        struct CmdSetting {
+            bool                   enabled    = true;
+            CommandPermissionLevel permission = CommandPermissionLevel::GameDirectors;
+        };
         struct {
-            bool enabled             = true;
-            bool crashCommand        = false;
-            bool tpdimCommand        = true;
-            bool versionCommand      = true;
-            bool memstatsCommand     = true;
-            bool pluginManageCommand = true;
-        } commands{};
+            struct {
+                bool enabled = true;
+            } tpdimOverload{};
+            CmdSetting crashCommand{false};
+            CmdSetting versionCommand{};
+            CmdSetting memstatsCommand{true, CommandPermissionLevel::Host};
+            CmdSetting pluginManageCommand{true, CommandPermissionLevel::Admin};
+        } command{};
 
         bool checkRunningBDS = true;
 

@@ -1,6 +1,5 @@
 #include "ll/core/command/BuiltinCommands.h"
 #include "ll/api/memory/Hook.h"
-#include "ll/core/Config.h"
 
 #include "mc/server/commands/ServerCommands.h"
 #include "mc/server/commands/standard/TeleportCommand.h"
@@ -16,18 +15,10 @@ LL_TYPE_INSTANCE_HOOK(
     ::ServerInstance& ins
 ) {
     origin(ins);
-    if (globalConfig.modules.commands.versionCommand) {
-        registerVersionCommand();
-    }
-    if (globalConfig.modules.commands.memstatsCommand) {
-        registerMemstatsCommand();
-    }
-    if (globalConfig.modules.commands.crashCommand) {
-        registerCrashCommand();
-    }
-    if (globalConfig.modules.commands.pluginManageCommand) {
-        registerPluginManageCommand();
-    }
+    registerVersionCommand();
+    registerMemstatsCommand();
+    registerCrashCommand();
+    registerPluginManageCommand();
 }
 LL_STATIC_HOOK(
     registerTpdimCommands,
@@ -37,9 +28,7 @@ LL_STATIC_HOOK(
     CommandRegistry& registry
 ) {
     origin(registry);
-    if (globalConfig.modules.commands.tpdimCommand) {
-        registerTpdimCommand();
-    }
+    registerTpdimCommand();
 }
 void registerCommands() { static memory::HookRegistrar<registerBuiltinCommands, registerTpdimCommands> hooks{}; }
 } // namespace ll::command
