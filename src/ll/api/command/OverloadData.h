@@ -27,7 +27,7 @@ class OverloadData {
     std::unique_ptr<Impl> impl;
 
 protected:
-    LLNDAPI CommandRegistry::FactoryFn getFactory();
+    LLNDAPI CommandRegistry::FactoryFn* getFactory();
     LLNDAPI std::vector<CommandParameterData>& getParams();
     LLNDAPI CommandHandle&                     getHandle();
     LLNDAPI std::weak_ptr<plugin::Plugin>& getPlugin();

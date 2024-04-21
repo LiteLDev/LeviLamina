@@ -35,8 +35,6 @@ public:
                 executor(origin, output, parameters, *this);
             } else if constexpr (std::is_invocable_v<E, CommandOrigin const&, CommandOutput&, P const&>) {
                 executor(origin, output, parameters);
-            } else if constexpr (std::is_invocable_v<E, CommandOrigin const&, CommandOutput&, Command const&>) {
-                executor(origin, output, *this);
             } else if constexpr (std::is_invocable_v<E, CommandOrigin const&, CommandOutput&>) {
                 executor(origin, output);
             } else {

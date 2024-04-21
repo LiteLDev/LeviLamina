@@ -22,7 +22,7 @@ namespace ll::command {
 struct OverloadData::Impl {
     CommandHandle&                                                       handle;
     std::weak_ptr<plugin::Plugin>                                        plugin;
-    std::optional<memory::FunctionalClosure<std::unique_ptr<::Command>>> factoryClosure{}; // for delay emplace
+    std::optional<memory::FunctionalClosure<CommandRegistry::FactoryFn>> factoryClosure{}; // for delay emplace
     std::vector<CommandParameterData>                                    params;
     std::recursive_mutex                                                 mutex;
 };
@@ -31,10 +31,10 @@ OverloadData::OverloadData(CommandHandle& handle, std::weak_ptr<plugin::Plugin> 
 : impl(std::make_unique<Impl>(handle, std::move(plugin))) {}
 
 OverloadData& OverloadData::operator=(OverloadData&&) = default;
-OverloadData::OverloadData(OverloadData&&) = default;
-OverloadData::~OverloadData()              = default;
+OverloadData::OverloadData(OverloadData&&)            = default;
+OverloadData::~OverloadData()                         = default;
 
-CommandRegistry::FactoryFn         OverloadData::getFactory() { return impl->factoryClosure.value().get(); }
+CommandRegistry::FactoryFn*        OverloadData::getFactory() { return impl->factoryClosure.value().get(); }
 std::vector<CommandParameterData>& OverloadData::getParams() { return impl->params; }
 CommandHandle&                     OverloadData::getHandle() { return impl->handle; }
 std::weak_ptr<plugin::Plugin>&     OverloadData::getPlugin() { return impl->plugin; }

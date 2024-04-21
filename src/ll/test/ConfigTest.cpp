@@ -126,10 +126,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &Se
         ll::reflection::serialize<CompoundTagVariant>(helloReflection).toSnbt(SnbtFormat::PrettyConsolePrint)
     );
 
-    ll::logger.debug(
-        "reflection json: {}",
-        ll::reflection::serialize<nlohmann::ordered_json>(helloReflection).dump(4)
-    );
+    ll::logger.debug("reflection json: {}", ll::reflection::serialize<nlohmann::ordered_json>(helloReflection).dump(4));
 
     // ll::reflection::deserialize(helloReflection, ll::reflection::serialize<CompoundTagVariant>(helloReflection));
 
