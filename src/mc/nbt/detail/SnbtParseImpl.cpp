@@ -114,6 +114,18 @@ Expected<ldouble> stold(std::string_view const& s, size_t& n) {
 
     return res;
 }
+template <class R, class T>
+Expected<CompoundTagVariant> checkRange(ldouble& num) {
+    if (std::numeric_limits<T>::min() <= num && num <= std::numeric_limits<T>::max()) {
+        return R{(T)num};
+    } else if constexpr (!std::is_floating_point_v<T>) {
+        using unsigned_t = std::make_unsigned_t<T>;
+        if (std::numeric_limits<unsigned_t>::min() <= num && num <= std::numeric_limits<unsigned_t>::max()) {
+            return R{(unsigned_t)num};
+        }
+    }
+    return makeSnbtError(SnbtErrorCode::NumberOutOfRange);
+}
 
 Expected<CompoundTagVariant> parseNumber(std::string_view& s) {
 
@@ -140,27 +152,27 @@ Expected<CompoundTagVariant> parseNumber(std::string_view& s) {
     case 'b':
     case 'B':
         s.remove_prefix(1);
-        return ByteTag{(schar)res};
+        return checkRange<ByteTag, schar>(res);
     case 's':
     case 'S':
         s.remove_prefix(1);
-        return ShortTag{(short)res};
-    case 'l':
-    case 'L':
-        s.remove_prefix(1);
-        return Int64Tag{(int64)res};
-    case 'f':
-    case 'F':
-        s.remove_prefix(1);
-        return FloatTag{(float)res};
-    case 'd':
-    case 'D':
-        s.remove_prefix(1);
-        return DoubleTag{(double)res};
+        return checkRange<ShortTag, short>(res);
     case 'i':
     case 'I':
         s.remove_prefix(1);
-        return IntTag{(int)res};
+        return checkRange<IntTag, int>(res);
+    case 'l':
+    case 'L':
+        s.remove_prefix(1);
+        return checkRange<Int64Tag, int64>(res);
+    case 'f':
+    case 'F':
+        s.remove_prefix(1);
+        return checkRange<FloatTag, float>(res);
+    case 'd':
+    case 'D':
+        s.remove_prefix(1);
+        return checkRange<DoubleTag, double>(res);
     default:
         break;
     }
@@ -168,36 +180,36 @@ Expected<CompoundTagVariant> parseNumber(std::string_view& s) {
         case " /*b*/"_h:
         case " /*B*/"_h:
             s.remove_prefix(6);
-            return ByteTag{(schar)res};
+            return checkRange<ByteTag, schar>(res);
         case " /*s*/"_h:
         case " /*S*/"_h:
             s.remove_prefix(6);
-            return ShortTag{(short)res};
-        case " /*l*/"_h:
-        case " /*L*/"_h:
-            s.remove_prefix(6);
-            return Int64Tag{(int64)res};
-        case " /*f*/"_h:
-        case " /*F*/"_h:
-            s.remove_prefix(6);
-            return FloatTag{(float)res};
-        case " /*d*/"_h:
-        case " /*D*/"_h:
-            s.remove_prefix(6);
-            return DoubleTag{(double)res};
+            return checkRange<ShortTag, short>(res);
         case " /*i*/"_h:
         case " /*I*/"_h:
             s.remove_prefix(6);
-            return IntTag{(int)res};
+            return checkRange<IntTag, int>(res);
+        case " /*l*/"_h:
+        case " /*L*/"_h:
+            s.remove_prefix(6);
+            return checkRange<Int64Tag, int64>(res);
+        case " /*f*/"_h:
+        case " /*F*/"_h:
+            s.remove_prefix(6);
+            return checkRange<FloatTag, float>(res);
+        case " /*d*/"_h:
+        case " /*D*/"_h:
+            s.remove_prefix(6);
+            return checkRange<DoubleTag, double>(res);
         default:
             break;
         }
     if (isInt) {
-        if (abs(res) <= INT32_MAX) {
+        if (std::numeric_limits<int>::min() <= res && res <= std::numeric_limits<int>::max()) {
             return IntTag{(int)res};
         } else {
-            return Int64Tag{(int64)res};
         }
+        return checkRange<IntTag, int>(res).or_else([&](Error&&) { return checkRange<Int64Tag, int64>(res); });
     } else {
         return DoubleTag{(double)res};
     }

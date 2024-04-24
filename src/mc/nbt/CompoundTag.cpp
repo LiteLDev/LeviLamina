@@ -11,10 +11,10 @@ ll::Unexpected                   makeSnbtError(SnbtErrorCode);
 } // namespace ll::nbt::detail
 
 ll::Expected<CompoundTagVariant> CompoundTagVariant::parse(std::string_view snbt, optional_ref<size_t> parsedLength) {
-    char const* begin{snbt.data()};
-    auto        result = ll::nbt::detail::parseSnbtValue(snbt);
+    auto begin{snbt.begin()};
+    auto result = ll::nbt::detail::parseSnbtValue(snbt);
     if (parsedLength) {
-        *parsedLength = snbt.data() - begin;
+        *parsedLength = snbt.begin() - begin;
     }
     return result;
 }
