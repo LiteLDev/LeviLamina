@@ -22,11 +22,7 @@ struct DumpType<T> {
 
 template <IsConfig T, class J = nlohmann::ordered_json>
 inline bool saveConfig(T const& config, std::filesystem::path const& path) {
-    namespace fs = std::filesystem;
-    std::error_code ec;
-    fs::create_directories(path.parent_path(), ec);
-    std::ofstream{path} << DumpType<J>{}(ll::reflection::serialize<J, T>(config));
-    return true;
+    return file_utils::writeFile(path, DumpType<J>{}(ll::reflection::serialize<J, T>(config)));
 }
 
 template <class T>
