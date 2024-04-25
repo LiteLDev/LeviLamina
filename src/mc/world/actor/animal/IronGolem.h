@@ -39,28 +39,28 @@ public:
     // vIndex: 10, symbol: __gen_??1IronGolem@@UEAA@XZ
     virtual ~IronGolem() = default;
 
-    // vIndex: 40, symbol: ?getShadowRadius@IronGolem@@UEBAMXZ
+    // vIndex: 38, symbol: ?getShadowRadius@IronGolem@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 79, symbol: ?handleEntityEvent@IronGolem@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 75, symbol: ?handleEntityEvent@IronGolem@@UEAAXW4ActorEvent@@H@Z
     virtual void handleEntityEvent(::ActorEvent id, int data);
 
-    // vIndex: 137, symbol: ?die@IronGolem@@UEAAXAEBVActorDamageSource@@@Z
+    // vIndex: 133, symbol: ?die@IronGolem@@UEAAXAEBVActorDamageSource@@@Z
     virtual void die(class ActorDamageSource const& source);
 
-    // vIndex: 150, symbol: ?updateEntitySpecificMolangVariables@IronGolem@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 146, symbol: ?updateEntitySpecificMolangVariables@IronGolem@@UEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // vIndex: 155, symbol: ?_playStepSound@IronGolem@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 151, symbol: ?_playStepSound@IronGolem@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
     virtual void _playStepSound(class BlockPos const& pos, class Block const& onBlock);
 
-    // vIndex: 164, symbol: ?hurtEffects@IronGolem@@UEAAXAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 159, symbol: ?hurtEffects@IronGolem@@UEAAXAEBVActorDamageSource@@M_N1@Z
     virtual void hurtEffects(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 165, symbol: ?aiStep@IronGolem@@UEAAXXZ
+    // vIndex: 160, symbol: ?aiStep@IronGolem@@UEAAXXZ
     virtual void aiStep();
 
-    // vIndex: 174, symbol: ?doHurtTarget@IronGolem@@UEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
+    // vIndex: 169, symbol: ?doHurtTarget@IronGolem@@UEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
     virtual bool doHurtTarget(class Actor* target, ::ActorDamageCause const& cause);
 
     // symbol: ??0IronGolem@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

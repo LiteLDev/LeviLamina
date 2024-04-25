@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock::PubSub { class Subscription; }
 namespace Core { class FilePathManager; }
 namespace mce { class UUID; }
 // clang-format on
@@ -29,6 +30,14 @@ public:
     // ?findInstalledWorldTemplateByUUID@WorldTemplateManager@@UEBAPEBUWorldTemplateInfo@@AEBV?$vector@VUUID@mce@@V?$allocator@VUUID@mce@@@std@@@std@@@Z
     virtual struct WorldTemplateInfo const*
     findInstalledWorldTemplateByUUID(std::vector<class mce::UUID> const& packUUIDs) const;
+
+    // vIndex: 2, symbol:
+    // ?registerModifiedCallback@WorldTemplateManager@@UEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXXZ@std@@@Z
+    virtual class Bedrock::PubSub::Subscription registerModifiedCallback(std::function<void()>);
+
+    // vIndex: 3, symbol:
+    // ?getLocalTemplates@WorldTemplateManager@@UEBAAEBV?$vector@V?$unique_ptr@UWorldTemplateInfo@@U?$default_delete@UWorldTemplateInfo@@@std@@@std@@V?$allocator@V?$unique_ptr@UWorldTemplateInfo@@U?$default_delete@UWorldTemplateInfo@@@std@@@std@@@2@@std@@XZ
+    virtual std::vector<std::unique_ptr<struct WorldTemplateInfo>> const& getLocalTemplates() const;
 
     // symbol:
     // ??0WorldTemplateManager@@QEAA@AEAVPackManifestFactory@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@AEAVPackSourceFactory@@AEBV?$not_null@V?$NonOwnerPointer@VFilePathManager@Core@@@Bedrock@@@3@_N@Z

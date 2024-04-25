@@ -40,10 +40,10 @@ public:
     // vIndex: 10, symbol: __gen_??1SmallFireball@@UEAA@XZ
     virtual ~SmallFireball() = default;
 
-    // vIndex: 47, symbol: ?isPickable@SmallFireball@@UEAA_NXZ
+    // vIndex: 45, symbol: ?isPickable@SmallFireball@@UEAA_NXZ
     virtual bool isPickable();
 
-    // vIndex: 152, symbol: ?_hurt@SmallFireball@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 148, symbol: ?_hurt@SmallFireball@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     // symbol: ??0SmallFireball@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

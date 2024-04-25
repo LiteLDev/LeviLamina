@@ -9,7 +9,7 @@ public:
     LevelAnimateTickHelper(LevelAnimateTickHelper const&);
     LevelAnimateTickHelper();
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?MIN_TIME_LIMITED_JAVA_PARITY_VERSION@LevelAnimateTickHelper@@0VBaseGameVersion@@B
     MCAPI static class BaseGameVersion const MIN_TIME_LIMITED_JAVA_PARITY_VERSION;

@@ -6,6 +6,11 @@
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/InterfaceBindingBuilder.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace ScriptModuleMinecraft { class ScriptBlockAreaSize; }
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 struct ScriptActorQueryOptions {
@@ -28,6 +33,10 @@ public:
     // symbol: ??4ScriptActorQueryOptions@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptActorQueryOptions&
     operator=(struct ScriptModuleMinecraft::ScriptActorQueryOptions const&);
+
+    // symbol:
+    // ?setVolumeV010@ScriptActorQueryOptions@ScriptModuleMinecraft@@QEAAXAEBV?$optional@VScriptBlockAreaSize@ScriptModuleMinecraft@@@std@@@Z
+    MCAPI void setVolumeV010(std::optional<class ScriptModuleMinecraft::ScriptBlockAreaSize> const&);
 
     // symbol: ??1ScriptActorQueryOptions@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptActorQueryOptions();

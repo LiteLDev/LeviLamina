@@ -70,10 +70,13 @@ public:
     MCVAPI class ChunkLocalNoiseCache createNoiseCache(class ChunkPos chunkPos) const;
 
     // symbol:
-    // ?decorateWorldGenPostProcess@OverworldGeneratorMultinoise@@EEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@@Z
-    MCVAPI void
-    decorateWorldGenPostProcess(class Biome&, class LevelChunk& lc, class BlockSource& source, class Random& random)
-        const;
+    // ?decorateWorldGenPostProcess@OverworldGeneratorMultinoise@@EEBAXAEBVBiome@@AEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@@Z
+    MCVAPI void decorateWorldGenPostProcess(
+        class Biome const&,
+        class LevelChunk&  lc,
+        class BlockSource& source,
+        class Random&      random
+    ) const;
 
     // symbol: ?findSpawnPosition@OverworldGeneratorMultinoise@@UEBA?AVBlockPos@@XZ
     MCVAPI class BlockPos findSpawnPosition() const;

@@ -39,19 +39,19 @@ public:
     // vIndex: 10, symbol: __gen_??1Bat@@UEAA@XZ
     virtual ~Bat() = default;
 
-    // vIndex: 152, symbol: ?_hurt@Bat@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 148, symbol: ?_hurt@Bat@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 153, symbol: ?readAdditionalSaveData@Bat@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 149, symbol: ?readAdditionalSaveData@Bat@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 154, symbol: ?addAdditionalSaveData@Bat@@UEBAXAEAVCompoundTag@@@Z
+    // vIndex: 150, symbol: ?addAdditionalSaveData@Bat@@UEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& entityTag) const;
 
-    // vIndex: 166, symbol: ?pushActors@Bat@@UEAAXXZ
+    // vIndex: 161, symbol: ?pushActors@Bat@@UEAAXXZ
     virtual void pushActors();
 
-    // vIndex: 194, symbol: ?newServerAiStep@Bat@@MEAAXXZ
+    // vIndex: 189, symbol: ?newServerAiStep@Bat@@MEAAXXZ
     virtual void newServerAiStep();
 
     // symbol: ??0Bat@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

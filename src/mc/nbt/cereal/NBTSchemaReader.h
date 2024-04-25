@@ -89,12 +89,12 @@ public:
     virtual uint64 length();
 
     // vIndex: 18, symbol:
-    // ?pushMember@NBTSchemaReader@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPropertyReader@cereal@@@Z
-    virtual bool pushMember(std::string const&, class cereal::PropertyReader const&);
+    // ?pushMember@NBTSchemaReader@@UEAA_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBVPropertyReader@cereal@@@Z
+    virtual bool pushMember(std::string_view, class cereal::PropertyReader const&);
 
     // vIndex: 19, symbol:
-    // ?pushNextMember@NBTSchemaReader@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPropertyReader@cereal@@@Z
-    virtual std::string pushNextMember(class cereal::PropertyReader const&);
+    // ?pushNextMember@NBTSchemaReader@@UEAA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBVPropertyReader@cereal@@@Z
+    virtual std::string_view pushNextMember(class cereal::PropertyReader const&);
 
     // vIndex: 20, symbol: ?pushElement@NBTSchemaReader@@UEAAX_KAEBVPropertyReader@cereal@@@Z
     virtual void pushElement(uint64, class cereal::PropertyReader const&);

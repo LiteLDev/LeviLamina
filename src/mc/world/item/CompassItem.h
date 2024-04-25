@@ -29,7 +29,7 @@ public:
     // vIndex: 0, symbol: __gen_??1CompassItem@@UEAA@XZ
     virtual ~CompassItem() = default;
 
-    // vIndex: 117, symbol:
+    // vIndex: 118, symbol:
     // ?_useOn@CompassItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
     _useOn(class ItemStack& item, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const& clickPos) const;

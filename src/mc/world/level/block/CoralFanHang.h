@@ -58,6 +58,9 @@ public:
     // ?buildDescriptionId@CoralFanHang@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
     virtual std::string buildDescriptionId(class Block const&) const;
 
+    // vIndex: 119, symbol: ?isAuxValueRelevantForPicking@CoralFanHang@@UEBA_NXZ
+    virtual bool isAuxValueRelevantForPicking() const;
+
     // vIndex: 128, symbol: ?getVariant@CoralFanHang@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const& block) const;
 
@@ -66,6 +69,9 @@ public:
 
     // vIndex: 153, symbol: ?canSurvive@CoralFanHang@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
+
+    // vIndex: 159, symbol: ?getMapColor@CoralFanHang@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const&) const;
 
     // vIndex: 163, symbol: ?checkAlive@CoralFanHang@@EEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void checkAlive(class BlockSource& region, class BlockPos const& pos) const;

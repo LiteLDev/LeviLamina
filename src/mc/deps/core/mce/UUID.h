@@ -19,6 +19,9 @@ public:
     // symbol: ?isEmpty@UUID@mce@@QEBA_NXZ
     MCAPI bool isEmpty() const;
 
+    // symbol: ??MUUID@mce@@QEBA_NAEBV01@@Z
+    MCAPI bool operator<(class mce::UUID const&) const;
+
     // symbol: ?canParse@UUID@mce@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI static bool canParse(std::string const& in);
 

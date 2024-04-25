@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/ErrorInfo.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class OSError; }
+// clang-format on
+
 namespace Core {
 
 class Result {
@@ -13,11 +21,17 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0Result@Core@@QEAA@_N@Z
+    MCAPI explicit Result(bool);
+
     // symbol: ??0Result@Core@@QEAA@$$QEAV01@@Z
     MCAPI Result(class Core::Result&& rhs);
 
-    // symbol: ??0Result@Core@@QEAA@_NV?$function@$$A6AXPEAVResult@Core@@@Z@std@@@Z
-    MCAPI Result(bool success, std::function<void(class Core::Result*)> messageResolver);
+    // symbol: ??0Result@Core@@QEAA@$$QEAU?$ErrorInfo@VOSError@Bedrock@@@Bedrock@@@Z
+    MCAPI explicit Result(struct Bedrock::ErrorInfo<class Bedrock::OSError>&&);
+
+    // symbol: ??0Result@Core@@QEAA@$$QEAU?$ErrorInfo@Verror_code@std@@@Bedrock@@@Z
+    MCAPI explicit Result(struct Bedrock::ErrorInfo<std::error_code>&&);
 
     // symbol: ?architecturalProblem@Result@Core@@QEBAXXZ
     MCAPI void architecturalProblem() const;
@@ -28,14 +42,8 @@ public:
     // symbol: ?failed@Result@Core@@QEBA_NXZ
     MCAPI bool failed() const;
 
-    // symbol: ?format@Result@Core@@QEAAXPEBDZZ
-    MCAPI void format(char const*, ...);
-
-    // symbol: ?ignoreError@Result@Core@@QEBAXXZ
-    MCAPI void ignoreError() const;
-
-    // symbol: ?message@Result@Core@@QEBAPEBDXZ
-    MCAPI char const* message() const;
+    // symbol: ?message@Result@Core@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    MCAPI std::string message() const;
 
     // symbol: ??BResult@Core@@QEBA_NXZ
     MCAPI explicit operator bool() const;
@@ -64,11 +72,12 @@ public:
     // symbol: ?makeFailure@Result@Core@@SA?AV12@XZ
     MCAPI static class Core::Result makeFailure();
 
-    // symbol: ?makeFailure@Result@Core@@SA?AV12@$$QEAV?$function@$$A6AXPEAVResult@Core@@@Z@std@@@Z
-    MCAPI static class Core::Result makeFailure(std::function<void(class Core::Result*)>&& resolver);
-
     // symbol: ?makeFailureNotImplemented@Result@Core@@SA?AV12@XZ
     MCAPI static class Core::Result makeFailureNotImplemented();
+
+    // symbol:
+    // ?makeFailureWithString@Result@Core@@SA?AV12@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI static class Core::Result makeFailureWithString(std::string);
 
     // symbol: ?makeFailureWithStringLiteral@Result@Core@@SA?AV12@PEBD@Z
     MCAPI static class Core::Result makeFailureWithStringLiteral(char const* message);
@@ -78,6 +87,13 @@ public:
 
     // symbol: ?merge@Result@Core@@SA?AV12@$$QEAV12@0@Z
     MCAPI static class Core::Result merge(class Core::Result&& r1, class Core::Result&& r2);
+
+    // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol: ?format@Result@Core@@CA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDZZ
+    MCAPI static std::string format(char const*, ...);
 
     // NOLINTEND
 };

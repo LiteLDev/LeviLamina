@@ -49,7 +49,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?min3DAttackVersion@MeleeAttackGoal@@0VBaseGameVersion@@B
     MCAPI static class BaseGameVersion const min3DAttackVersion;

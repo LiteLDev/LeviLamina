@@ -31,7 +31,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?VALID_ENCHANTMENTS@BowEnchant@@0V?$vector@W4Type@Enchant@@V?$allocator@W4Type@Enchant@@@std@@@std@@B
     MCAPI static std::vector<::Enchant::Type> const VALID_ENCHANTMENTS;

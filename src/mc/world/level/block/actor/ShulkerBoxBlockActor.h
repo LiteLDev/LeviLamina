@@ -95,7 +95,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?ITEMS_SIZE@ShulkerBoxBlockActor@@0HB
     MCAPI static int const ITEMS_SIZE;

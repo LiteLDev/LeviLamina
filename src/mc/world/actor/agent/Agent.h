@@ -45,61 +45,61 @@ public:
     // vIndex: 10, symbol: __gen_??1Agent@@UEAA@XZ
     virtual ~Agent() = default;
 
-    // vIndex: 25, symbol: ?teleportTo@Agent@@UEAAXAEBVVec3@@_NHH1@Z
+    // vIndex: 23, symbol: ?teleportTo@Agent@@UEAAXAEBVVec3@@_NHH1@Z
     virtual void teleportTo(class Vec3 const& pos, bool shouldStopRiding, int cause, int entityType, bool);
 
-    // vIndex: 28, symbol: ?normalTick@Agent@@UEAAXXZ
+    // vIndex: 26, symbol: ?normalTick@Agent@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 36, symbol: ?isInvisible@Agent@@UEBA_NXZ
+    // vIndex: 34, symbol: ?isInvisible@Agent@@UEBA_NXZ
     virtual bool isInvisible() const;
 
-    // vIndex: 37, symbol: ?canShowNameTag@Agent@@UEBA_NXZ
+    // vIndex: 35, symbol: ?canShowNameTag@Agent@@UEBA_NXZ
     virtual bool canShowNameTag() const;
 
-    // vIndex: 39, symbol: ?getNameTagTextColor@Agent@@UEBA?AVColor@mce@@XZ
+    // vIndex: 37, symbol: ?getNameTagTextColor@Agent@@UEBA?AVColor@mce@@XZ
     virtual class mce::Color getNameTagTextColor() const;
 
-    // vIndex: 47, symbol: ?isPickable@Agent@@UEAA_NXZ
+    // vIndex: 45, symbol: ?isPickable@Agent@@UEAA_NXZ
     virtual bool isPickable();
 
-    // vIndex: 56, symbol: ?isTargetable@Agent@@UEBA_NXZ
+    // vIndex: 54, symbol: ?isTargetable@Agent@@UEBA_NXZ
     virtual bool isTargetable() const;
 
-    // vIndex: 64, symbol: ?setOwner@Agent@@UEAAXUActorUniqueID@@@Z
+    // vIndex: 60, symbol: ?setOwner@Agent@@UEAAXUActorUniqueID@@@Z
     virtual void setOwner(struct ActorUniqueID id);
 
-    // vIndex: 79, symbol: ?handleEntityEvent@Agent@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 75, symbol: ?handleEntityEvent@Agent@@UEAAXW4ActorEvent@@H@Z
     virtual void handleEntityEvent(::ActorEvent id, int data);
 
-    // vIndex: 88, symbol: ?setCarriedItem@Agent@@UEAAXAEBVItemStack@@@Z
+    // vIndex: 84, symbol: ?setCarriedItem@Agent@@UEAAXAEBVItemStack@@@Z
     virtual void setCarriedItem(class ItemStack const& item);
 
-    // vIndex: 108, symbol: ?canBePulledIntoVehicle@Agent@@UEBA_NXZ
+    // vIndex: 104, symbol: ?canBePulledIntoVehicle@Agent@@UEBA_NXZ
     virtual bool canBePulledIntoVehicle() const;
 
-    // vIndex: 117, symbol: ?canBeAffected@Agent@@UEBA_NI@Z
+    // vIndex: 113, symbol: ?canBeAffected@Agent@@UEBA_NI@Z
     virtual bool canBeAffected(uint) const;
 
-    // vIndex: 136, symbol: ?kill@Agent@@UEAAXXZ
+    // vIndex: 132, symbol: ?kill@Agent@@UEAAXXZ
     virtual void kill();
 
-    // vIndex: 150, symbol: ?updateEntitySpecificMolangVariables@Agent@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 146, symbol: ?updateEntitySpecificMolangVariables@Agent@@UEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // vIndex: 152, symbol: ?_hurt@Agent@@EEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 148, symbol: ?_hurt@Agent@@EEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 157, symbol: ?knockback@Agent@@UEAAXPEAVActor@@HMMMMM@Z
+    // vIndex: 153, symbol: ?knockback@Agent@@UEAAXPEAVActor@@HMMMMM@Z
     virtual void knockback(class Actor*, int, float, float, float, float, float);
 
-    // vIndex: 187, symbol: ?createAIGoals@Agent@@UEAA_NXZ
+    // vIndex: 182, symbol: ?createAIGoals@Agent@@UEAA_NXZ
     virtual bool createAIGoals();
 
-    // vIndex: 192, symbol: ?canExistWhenDisallowMob@Agent@@UEBA_NXZ
+    // vIndex: 187, symbol: ?canExistWhenDisallowMob@Agent@@UEBA_NXZ
     virtual bool canExistWhenDisallowMob() const;
 
-    // vIndex: 193, symbol:
+    // vIndex: 188, symbol:
     // ?initBodyControl@Agent@@EEAA?AV?$unique_ptr@VBodyControl@@U?$default_delete@VBodyControl@@@std@@@std@@XZ
     virtual std::unique_ptr<class BodyControl> initBodyControl();
 

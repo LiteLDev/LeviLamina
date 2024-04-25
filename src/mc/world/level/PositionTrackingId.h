@@ -41,7 +41,7 @@ public:
 
     // NOLINTEND
 
-protected:
+    // protected:
     // NOLINTBEGIN
     // symbol: ?sNextId@PositionTrackingId@@1IA
     MCAPI static uint sNextId;

@@ -14,15 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0FullPlayerInventoryWrapper@@QEAA@AEAVPlayerInventory@@AEAVSimpleContainer@@1PEAVInventoryTransactionManager@@PEAVPlayer@@@Z
-    MCAPI FullPlayerInventoryWrapper(
-        class PlayerInventory&             playerInventory,
-        class SimpleContainer&             armorInventory,
-        class SimpleContainer&             handInventory,
-        class InventoryTransactionManager* playerTransationManager,
-        class Player*                      player
-    );
+    // symbol: ??0FullPlayerInventoryWrapper@@QEAA@AEAVPlayer@@@Z
+    MCAPI explicit FullPlayerInventoryWrapper(class Player&);
 
     // symbol: ?clearAllItems@FullPlayerInventoryWrapper@@QEAAHXZ
     MCAPI int clearAllItems();

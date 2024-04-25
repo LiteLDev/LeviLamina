@@ -23,9 +23,6 @@ public:
     // ?addEntityData@StructureTemplateData@@QEAAXV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@@Z
     MCAPI void addEntityData(std::unique_ptr<class CompoundTag> entityData);
 
-    // symbol: ?clear@StructureTemplateData@@QEAAXXZ
-    MCAPI void clear();
-
     // symbol:
     // ?getPalette@StructureTemplateData@@QEBAPEBVStructureBlockPalette@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class StructureBlockPalette const* getPalette(std::string const& name) const;

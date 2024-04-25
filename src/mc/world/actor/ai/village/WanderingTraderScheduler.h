@@ -69,7 +69,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?CHANCE_TO_SPAWN_IN_WILDERNESS@WanderingTraderScheduler@@0MB
     MCAPI static float const CHANCE_TO_SPAWN_IN_WILDERNESS;

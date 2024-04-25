@@ -53,7 +53,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?sDefaultSculkBehavior@SculkChargeCursor@@0VDefaultSculkBehavior@@B
     MCAPI static class DefaultSculkBehavior const sDefaultSculkBehavior;

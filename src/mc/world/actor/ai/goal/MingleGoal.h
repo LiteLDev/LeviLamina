@@ -66,7 +66,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?FIND_PARTNER_INTERVAL_TICKS@MingleGoal@@0HB
     MCAPI static int const FIND_PARTNER_INTERVAL_TICKS;

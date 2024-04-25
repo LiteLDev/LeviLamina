@@ -74,7 +74,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mFixed@Random@Core@@0U?$atomic@I@std@@A
     MCAPI static std::atomic<uint> mFixed;

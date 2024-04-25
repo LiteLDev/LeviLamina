@@ -263,7 +263,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mInsertSettings@EndCityPieces@@0VLegacyStructureSettings@@A
     MCAPI static class LegacyStructureSettings mInsertSettings;

@@ -39,7 +39,7 @@ public:
     // vIndex: 10, symbol: __gen_??1Sheep@@UEAA@XZ
     virtual ~Sheep() = default;
 
-    // vIndex: 79, symbol: ?handleEntityEvent@Sheep@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 75, symbol: ?handleEntityEvent@Sheep@@UEAAXW4ActorEvent@@H@Z
     virtual void handleEntityEvent(::ActorEvent id, int data);
 
     // symbol: ??0Sheep@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
@@ -57,7 +57,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?EAT_ANIMATION_TICKS@Sheep@@0HB
     MCAPI static int const EAT_ANIMATION_TICKS;

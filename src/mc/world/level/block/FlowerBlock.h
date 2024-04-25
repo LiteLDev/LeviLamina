@@ -70,13 +70,6 @@ public:
     // vIndex: 95, symbol: ?asItemInstance@FlowerBlock@@MEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
-    // vIndex: 118, symbol:
-    // ?buildDescriptionId@FlowerBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-    virtual std::string buildDescriptionId(class Block const&) const;
-
-    // vIndex: 119, symbol: ?isAuxValueRelevantForPicking@FlowerBlock@@UEBA_NXZ
-    virtual bool isAuxValueRelevantForPicking() const;
-
     // vIndex: 141, symbol: ?_addHardCodedBlockComponents@FlowerBlock@@UEAAXAEBVExperiments@@@Z
     virtual void _addHardCodedBlockComponents(class Experiments const&);
 

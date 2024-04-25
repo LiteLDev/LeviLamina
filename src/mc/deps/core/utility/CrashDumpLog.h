@@ -59,14 +59,14 @@ public:
 
     // NOLINTEND
 
-protected:
+    // protected:
     // NOLINTBEGIN
     // symbol: ?mAllData@CrashDumpLog@@1PEAUCrashDump_AllData@@EA
     MCAPI static struct CrashDump_AllData* mAllData;
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mAssertDataMutex@CrashDumpLog@@0VMutex@Threading@Bedrock@@A
     MCAPI static class Bedrock::Threading::Mutex mAssertDataMutex;

@@ -19,6 +19,7 @@ namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace ScriptModuleMinecraft { class ScriptPlayerIterator; }
 namespace ScriptModuleMinecraft { class ScriptScoreboard; }
 namespace ScriptModuleMinecraft { class ScriptStructureManager; }
+namespace ScriptModuleMinecraft { class ScriptV010Events; }
 namespace ScriptModuleMinecraft { class ScriptWorldAfterEvents; }
 namespace ScriptModuleMinecraft { class ScriptWorldBeforeEvents; }
 namespace ScriptModuleMinecraft { struct ScriptActorQueryOptions; }
@@ -135,6 +136,10 @@ public:
 
     // symbol: ?getTimeOfDay@ScriptWorld@ScriptModuleMinecraft@@QEBAHXZ
     MCAPI int getTimeOfDay() const;
+
+    // symbol:
+    // ?getWorldV010Events@ScriptWorld@ScriptModuleMinecraft@@QEAA?AV?$StrongTypedObjectHandle@VScriptV010Events@ScriptModuleMinecraft@@@Scripting@@XZ
+    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptV010Events> getWorldV010Events();
 
     // symbol: ??4ScriptWorld@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptWorld& operator=(class ScriptModuleMinecraft::ScriptWorld&&);

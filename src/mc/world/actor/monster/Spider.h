@@ -39,19 +39,19 @@ public:
     // vIndex: 10, symbol: __gen_??1Spider@@UEAA@XZ
     virtual ~Spider() = default;
 
-    // vIndex: 40, symbol: ?getShadowRadius@Spider@@UEBAMXZ
+    // vIndex: 38, symbol: ?getShadowRadius@Spider@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 71, symbol: ?shouldRender@Spider@@UEBA_NXZ
+    // vIndex: 67, symbol: ?shouldRender@Spider@@UEBA_NXZ
     virtual bool shouldRender() const;
 
-    // vIndex: 117, symbol: ?canBeAffected@Spider@@UEBA_NI@Z
+    // vIndex: 113, symbol: ?canBeAffected@Spider@@UEBA_NI@Z
     virtual bool canBeAffected(uint effectId) const;
 
-    // vIndex: 155, symbol: ?_playStepSound@Spider@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 151, symbol: ?_playStepSound@Spider@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
     virtual void _playStepSound(class BlockPos const& pos, class Block const& onBlock);
 
-    // vIndex: 198, symbol: ?getModelScale@Spider@@UEBAMXZ
+    // vIndex: 193, symbol: ?getModelScale@Spider@@UEBAMXZ
     virtual float getModelScale() const;
 
     // symbol: ??0Spider@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

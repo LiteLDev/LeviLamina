@@ -13,8 +13,8 @@ public:
     // symbol: ??0CommandIntegerRange@@QEAA@XZ
     MCAPI CommandIntegerRange();
 
-    // symbol: ??0CommandIntegerRange@@QEAA@HH_N@Z
-    MCAPI CommandIntegerRange(int minVal, int maxVal, bool invert);
+    // symbol: ??0CommandIntegerRange@@QEAA@HH_N0@Z
+    MCAPI CommandIntegerRange(int, int, bool, bool);
 
     // symbol: ?isWithinRange@CommandIntegerRange@@QEBA_NH@Z
     MCAPI bool isWithinRange(int value) const;

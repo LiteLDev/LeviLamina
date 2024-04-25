@@ -45,10 +45,10 @@ public:
     // vIndex: 13, symbol: ?remove@Balloon@@UEAAXXZ
     virtual void remove();
 
-    // vIndex: 47, symbol: ?isPickable@Balloon@@UEAA_NXZ
+    // vIndex: 45, symbol: ?isPickable@Balloon@@UEAA_NXZ
     virtual bool isPickable();
 
-    // vIndex: 152, symbol: ?_hurt@Balloon@@UEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 148, symbol: ?_hurt@Balloon@@UEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     // symbol: ??0Balloon@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

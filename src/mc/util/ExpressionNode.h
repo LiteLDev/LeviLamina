@@ -115,6 +115,9 @@ public:
     // symbol: ?moveConstantChildToValueIfFloatOrHashType@ExpressionNode@@QEAAXH@Z
     MCAPI void moveConstantChildToValueIfFloatOrHashType(int firstConstChildIndex);
 
+    // symbol: ??4ExpressionNode@@QEAAAEAV0@$$QEAV0@@Z
+    MCAPI class ExpressionNode& operator=(class ExpressionNode&&);
+
     // symbol: ??4ExpressionNode@@QEAAAEAV0@AEBV0@@Z
     MCAPI class ExpressionNode& operator=(class ExpressionNode const& rhs);
 
@@ -337,7 +340,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?_defaultUnknownQueryFunction@ExpressionNode@@0V?$function@$$A6AAEBUMolangScriptArg@@AEAVRenderParams@@AEBV?$vector@VExpressionNode@@V?$allocator@VExpressionNode@@@std@@@std@@@Z@std@@A

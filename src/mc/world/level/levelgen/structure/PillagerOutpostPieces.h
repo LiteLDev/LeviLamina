@@ -111,7 +111,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?MSC_FEATURES@PillagerOutpostPieces@@0V?$array@V?$basic_string_view@DU?$char_traits@D@std@@@std@@$06@std@@A

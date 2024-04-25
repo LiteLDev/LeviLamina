@@ -20,7 +20,7 @@ public:
     BodySize(BodySize const&);
     BodySize();
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?mInfoList@BodySize@persona@@0V?$unordered_map@W4Type@BodySize@persona@@USizeInfo@3@U?$hash@W4Type@BodySize@persona@@@std@@U?$equal_to@W4Type@BodySize@persona@@@6@V?$allocator@U?$pair@$$CBW4Type@BodySize@persona@@USizeInfo@3@@std@@@6@@std@@B

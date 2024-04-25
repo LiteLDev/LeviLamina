@@ -39,22 +39,22 @@ public:
     // vIndex: 10, symbol: __gen_??1Silverfish@@UEAA@XZ
     virtual ~Silverfish() = default;
 
-    // vIndex: 79, symbol: ?handleEntityEvent@Silverfish@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 75, symbol: ?handleEntityEvent@Silverfish@@UEAAXW4ActorEvent@@H@Z
     virtual void handleEntityEvent(::ActorEvent id, int data);
 
-    // vIndex: 155, symbol: ?_playStepSound@Silverfish@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 151, symbol: ?_playStepSound@Silverfish@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
     virtual void _playStepSound(class BlockPos const& pos, class Block const& onBlock);
 
-    // vIndex: 158, symbol: ?spawnAnim@Silverfish@@UEAAXXZ
+    // vIndex: 154, symbol: ?spawnAnim@Silverfish@@UEAAXXZ
     virtual void spawnAnim();
 
-    // vIndex: 167, symbol: ?checkSpawnRules@Silverfish@@UEAA_N_N@Z
+    // vIndex: 162, symbol: ?checkSpawnRules@Silverfish@@UEAA_N_N@Z
     virtual bool checkSpawnRules(bool fromSpawner);
 
-    // vIndex: 191, symbol: ?_getWalkTargetValue@Silverfish@@UEAAMAEBVBlockPos@@@Z
+    // vIndex: 186, symbol: ?_getWalkTargetValue@Silverfish@@UEAAMAEBVBlockPos@@@Z
     virtual float _getWalkTargetValue(class BlockPos const& pos);
 
-    // vIndex: 197, symbol: ?isDarkEnoughToSpawn@Silverfish@@UEBA_NXZ
+    // vIndex: 192, symbol: ?isDarkEnoughToSpawn@Silverfish@@UEBA_NXZ
     virtual bool isDarkEnoughToSpawn() const;
 
     // symbol: ??0Silverfish@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

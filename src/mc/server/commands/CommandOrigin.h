@@ -159,7 +159,7 @@ public:
 
     // NOLINTEND
 
-protected:
+    // protected:
     // NOLINTBEGIN
     // symbol: ?sUnknownSource@CommandOrigin@@1VNetworkIdentifier@@A
     MCAPI static class NetworkIdentifier sUnknownSource;

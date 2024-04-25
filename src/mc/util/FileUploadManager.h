@@ -102,14 +102,14 @@ public:
 
     // NOLINTEND
 
-protected:
+    // protected:
     // NOLINTBEGIN
     // symbol: ?CHUNK_UPLOAD_SIZE@FileUploadManager@@1HB
     MCAPI static int const CHUNK_UPLOAD_SIZE;
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?BOUNDARY@FileUploadManager@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const BOUNDARY;

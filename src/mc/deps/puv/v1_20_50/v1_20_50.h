@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class SemVersion;
 namespace Puv::v1_20_50 { struct BlockDescriptor; }
 namespace Puv::v1_20_50 { struct ComponentItemComponentData; }
 namespace Puv::v1_20_50 { struct CooldownItemComponent; }
@@ -16,6 +17,7 @@ namespace Puv::v1_20_50 { struct DiggerItemComponent; }
 namespace Puv::v1_20_50 { struct EnchantableItemComponent; }
 namespace Puv::v1_20_50 { struct EntityPlacerItemComponent; }
 namespace Puv::v1_20_50 { struct FoodItemComponent; }
+namespace Puv::v1_20_50 { struct IconItemComponent; }
 namespace Puv::v1_20_50 { struct InteractButtonItemComponent; }
 namespace Puv::v1_20_50 { struct PlanterItemComponent; }
 namespace Puv::v1_20_50 { struct ProjectileItemComponent; }

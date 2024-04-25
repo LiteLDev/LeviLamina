@@ -42,13 +42,13 @@ public:
     // vIndex: 10, symbol: ??1Fish@@UEAA@XZ
     virtual ~Fish();
 
-    // vIndex: 31, symbol: ?startRiding@Fish@@UEAA_NAEAVActor@@@Z
+    // vIndex: 29, symbol: ?startRiding@Fish@@UEAA_NAEAVActor@@@Z
     virtual bool startRiding(class Actor&);
 
-    // vIndex: 150, symbol: ?updateEntitySpecificMolangVariables@Fish@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 146, symbol: ?updateEntitySpecificMolangVariables@Fish@@UEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // vIndex: 187, symbol: ?createAIGoals@Fish@@UEAA_NXZ
+    // vIndex: 182, symbol: ?createAIGoals@Fish@@UEAA_NXZ
     virtual bool createAIGoals();
 
     // symbol: ??0Fish@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
@@ -57,9 +57,6 @@ public:
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
-
-    // symbol: ?postNormalTick@Fish@@QEAAXXZ
-    MCAPI void postNormalTick();
 
     // NOLINTEND
 };

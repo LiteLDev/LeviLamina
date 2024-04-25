@@ -100,7 +100,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?ARM_DIRECTION_OFFSETS@PistonBlock@@0QBVBlockPos@@B
     MCAPI static class BlockPos const ARM_DIRECTION_OFFSETS[];

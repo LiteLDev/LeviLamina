@@ -51,7 +51,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?ModuleName@ScriptGameTestModuleFactory@@0PEBDEB
     MCAPI static char const* ModuleName;

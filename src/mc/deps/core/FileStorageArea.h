@@ -141,19 +141,16 @@ public:
     // vIndex: 29, symbol: ?trackWriteOperation@FileStorageArea@Core@@UEAAXAEBVPath@2@W4WriteOperation@2@@Z
     virtual void trackWriteOperation(class Core::Path const&, ::Core::WriteOperation);
 
-    // vIndex: 30, symbol: ?setInitialSize@FileStorageArea@Core@@UEAAXAEBVPath@2@_K@Z
-    virtual void setInitialSize(class Core::Path const&, uint64);
-
-    // vIndex: 31, symbol: ?getStorageAreaSpaceInfo@FileStorageArea@Core@@UEAA?AUStorageAreaSpaceInfo@12@XZ
+    // vIndex: 30, symbol: ?getStorageAreaSpaceInfo@FileStorageArea@Core@@UEAA?AUStorageAreaSpaceInfo@12@XZ
     virtual struct Core::FileStorageArea::StorageAreaSpaceInfo getStorageAreaSpaceInfo();
 
-    // vIndex: 32, symbol: ?_commit@FileStorageArea@Core@@MEAA?AVResult@2@XZ
+    // vIndex: 31, symbol: ?_commit@FileStorageArea@Core@@MEAA?AVResult@2@XZ
     virtual class Core::Result _commit();
 
-    // vIndex: 33, symbol: ?_onTransactionsEmpty@FileStorageArea@Core@@MEAA?AVResult@2@_N@Z
+    // vIndex: 32, symbol: ?_onTransactionsEmpty@FileStorageArea@Core@@MEAA?AVResult@2@_N@Z
     virtual class Core::Result _onTransactionsEmpty(bool fromChild);
 
-    // vIndex: 34, symbol: ?_onTeardown@FileStorageArea@Core@@MEAAXXZ
+    // vIndex: 33, symbol: ?_onTeardown@FileStorageArea@Core@@MEAAXXZ
     virtual void _onTeardown();
 
     // symbol: ?checkUserStorage@FileStorageArea@Core@@QEAAXXZ
@@ -222,7 +219,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?sStorageAreaFileStats@FileStorageArea@Core@@0V?$vector@PEAVFileStats@Core@@V?$allocator@PEAVFileStats@Core@@@std@@@std@@A

@@ -123,7 +123,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mCBModeMap@CommandBlock@@0PAHA
     MCAPI static int mCBModeMap[];

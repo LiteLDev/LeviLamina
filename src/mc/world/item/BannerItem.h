@@ -29,10 +29,10 @@ public:
     // vIndex: 0, symbol: __gen_??1BannerItem@@UEAA@XZ
     virtual ~BannerItem() = default;
 
-    // vIndex: 41, symbol: ?isWearableThroughLootTable@BannerItem@@UEBA_NPEBVCompoundTag@@@Z
+    // vIndex: 42, symbol: ?isWearableThroughLootTable@BannerItem@@UEBA_NPEBVCompoundTag@@@Z
     virtual bool isWearableThroughLootTable(class CompoundTag const* userData) const;
 
-    // vIndex: 47, symbol:
+    // vIndex: 48, symbol:
     // ?appendFormattedHovertext@BannerItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
     virtual void appendFormattedHovertext(
         class ItemStackBase const& stack,
@@ -41,17 +41,17 @@ public:
         bool                       showCategory
     ) const;
 
-    // vIndex: 54, symbol: ?isValidAuxValue@BannerItem@@UEBA_NH@Z
+    // vIndex: 56, symbol: ?isValidAuxValue@BannerItem@@UEBA_NH@Z
     virtual bool isValidAuxValue(int auxValue) const;
 
-    // vIndex: 81, symbol:
+    // vIndex: 82, symbol:
     // ?buildDescriptionId@BannerItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 90, symbol: ?fixupCommon@BannerItem@@UEBAXAEAVItemStackBase@@@Z
+    // vIndex: 91, symbol: ?fixupCommon@BannerItem@@UEBAXAEAVItemStackBase@@@Z
     virtual void fixupCommon(class ItemStackBase&) const;
 
-    // vIndex: 117, symbol:
+    // vIndex: 118, symbol:
     // ?_useOn@BannerItem@@UEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const& clickPos)

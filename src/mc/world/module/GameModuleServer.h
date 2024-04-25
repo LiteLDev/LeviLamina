@@ -21,18 +21,19 @@ public:
     virtual void init(class ServerInstance& server, Bedrock::NotNullNonOwnerPtr<class Level> const& level) = 0;
 
     // vIndex: 2, symbol:
-    // ?initializeBehaviorStack@VanillaGameModuleServer@@UEAAXAEBVExperiments@@AEBV?$not_null@V?$NonOwnerPointer@VIResourcePackRepository@@@Bedrock@@@gsl@@AEAVResourcePackStack@@AEBVBaseGameVersion@@@Z
-    virtual void
-    initializeBehaviorStack(class Experiments const&, Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository> const&, class ResourcePackStack&, class BaseGameVersion const&) = 0;
+    // ?initializeBehaviorStack@VanillaGameModuleServer@@UEAAXAEBVExperiments@@AEBV?$not_null@V?$NonOwnerPointer@VIResourcePackRepository@@@Bedrock@@@gsl@@AEAVResourcePackStack@@AEBVBaseGameVersion@@_N@Z
+    virtual void initializeBehaviorStack(
+        class Experiments const&,
+        Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository> const&,
+        class ResourcePackStack&,
+        class BaseGameVersion const&,
+        bool
+    ) = 0;
 
     // vIndex: 3, symbol:
-    // ?configureLevel@VanillaGameModuleServer@@UEAAXAEBV?$not_null@V?$NonOwnerPointer@VLevel@@@Bedrock@@@gsl@@AEBVExperiments@@AEAVResourcePackManager@@AEBVBaseGameVersion@@@Z
-    virtual void configureLevel(
-        Bedrock::NotNullNonOwnerPtr<class Level> const& level,
-        class Experiments const&                        experiments,
-        class ResourcePackManager&                      resourcePackManager,
-        class BaseGameVersion const&                    baseGameVersion
-    ) = 0;
+    // ?configureLevel@VanillaGameModuleServer@@UEAAXAEBV?$not_null@V?$NonOwnerPointer@VLevel@@@Bedrock@@@gsl@@AEBVExperiments@@AEAVResourcePackManager@@AEBVBaseGameVersion@@V?$optional@V?$not_null@PEBVServerScriptManager@@@gsl@@@std@@@Z
+    virtual void
+    configureLevel(Bedrock::NotNullNonOwnerPtr<class Level> const&, class Experiments const&, class ResourcePackManager&, class BaseGameVersion const&, std::optional<gsl::not_null<class ServerScriptManager const*>>) = 0;
 
     // vIndex: 4, symbol: ?configureNewPlayer@VanillaGameModuleServer@@UEAAXAEAVPlayer@@@Z
     virtual void configureNewPlayer(class Player& player) = 0;

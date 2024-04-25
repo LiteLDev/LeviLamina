@@ -71,9 +71,6 @@ public:
     // vIndex: 14, symbol: ?_getRemainingSize@FlatFile@Core@@UEAA?AVResult@2@PEA_K@Z
     virtual class Core::Result _getRemainingSize(uint64* pFileSize) = 0;
 
-    // vIndex: 15, symbol: ?_setInitialFileSize@FileImpl@Core@@MEAA?AVResult@2@_K@Z
-    virtual class Core::Result _setInitialFileSize(uint64 size);
-
     // symbol: ??0FileImpl@Core@@QEAA@PEAVFileSystemImpl@1@VFileOpenMode@1@@Z
     MCAPI FileImpl(class Core::FileSystemImpl* pTransaction, class Core::FileOpenMode openMode);
 
@@ -141,7 +138,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?sAllFiles@FileImpl@Core@@0V?$vector@PEAVFileImpl@Core@@V?$allocator@PEAVFileImpl@Core@@@std@@@std@@A
     MCAPI static std::vector<class Core::FileImpl*> sAllFiles;

@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Puv::v1_20_50 { struct ShooterItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -71,7 +72,7 @@ public:
     // vIndex: 2, symbol: ?writeSettings@ItemComponent@@UEAAXXZ
     virtual void writeSettings();
 
-    // vIndex: 3, symbol: ?isNetworkComponent@InteractButtonItemComponent@@UEBA_NXZ
+    // vIndex: 3, symbol: ?isNetworkComponent@ItemComponent@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
     // vIndex: 4, symbol:
@@ -96,6 +97,9 @@ public:
 
     // symbol: ??0ShooterItemComponent@@QEAA@AEBV0@@Z
     MCAPI ShooterItemComponent(class ShooterItemComponent const&);
+
+    // symbol: ??0ShooterItemComponent@@QEAA@AEBU0v1_20_50@Puv@@@Z
+    MCAPI explicit ShooterItemComponent(struct Puv::v1_20_50::ShooterItemComponent const&);
 
     // symbol: ??4ShooterItemComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class ShooterItemComponent& operator=(class ShooterItemComponent&&);

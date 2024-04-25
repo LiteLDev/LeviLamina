@@ -356,7 +356,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?ACHIEVEMENT_SOUND_THE_ALARM_TOLERANCE@Village@@0MB
     MCAPI static float const ACHIEVEMENT_SOUND_THE_ALARM_TOLERANCE;

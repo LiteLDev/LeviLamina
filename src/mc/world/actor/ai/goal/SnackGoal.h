@@ -64,7 +64,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?CHEW_CHANCE@SnackGoal@@0HB
     MCAPI static int const CHEW_CHANCE;

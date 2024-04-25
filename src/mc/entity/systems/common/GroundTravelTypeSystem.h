@@ -27,7 +27,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?FRICTION_FIX_VERSION@GroundTravelTypeSystem@@0VBaseGameVersion@@B
     MCAPI static class BaseGameVersion const FRICTION_FIX_VERSION;

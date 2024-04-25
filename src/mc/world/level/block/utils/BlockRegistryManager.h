@@ -13,7 +13,7 @@ public:
     BlockRegistryManager(BlockRegistryManager const&);
     BlockRegistryManager();
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?mClientIdRegistryMap@BlockRegistryManager@@0V?$unordered_map@W4SubClientId@@V?$weak_ptr@VBlockTypeRegistry@@@std@@U?$hash@W4SubClientId@@@3@U?$equal_to@W4SubClientId@@@3@V?$allocator@U?$pair@$$CBW4SubClientId@@V?$weak_ptr@VBlockTypeRegistry@@@std@@@std@@@3@@std@@A

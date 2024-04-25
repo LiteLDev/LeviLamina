@@ -79,7 +79,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mInvalidInstance@BaseAttributeMap@@0VAttributeInstance@@A
     MCAPI static class AttributeInstance mInvalidInstance;

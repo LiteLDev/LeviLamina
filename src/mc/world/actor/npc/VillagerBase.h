@@ -40,16 +40,16 @@ public:
     // vIndex: 10, symbol: ??1VillagerBase@@UEAA@XZ
     virtual ~VillagerBase();
 
-    // vIndex: 77, symbol: ?onLightningHit@VillagerBase@@UEAAXXZ
+    // vIndex: 73, symbol: ?onLightningHit@VillagerBase@@UEAAXXZ
     virtual void onLightningHit();
 
-    // vIndex: 79, symbol: ?handleEntityEvent@VillagerBase@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 75, symbol: ?handleEntityEvent@VillagerBase@@UEAAXW4ActorEvent@@H@Z
     virtual void handleEntityEvent(::ActorEvent event, int data);
 
-    // vIndex: 153, symbol: ?readAdditionalSaveData@VillagerBase@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 149, symbol: ?readAdditionalSaveData@VillagerBase@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 154, symbol: ?addAdditionalSaveData@VillagerBase@@UEBAXAEAVCompoundTag@@@Z
+    // vIndex: 150, symbol: ?addAdditionalSaveData@VillagerBase@@UEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ??0VillagerBase@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

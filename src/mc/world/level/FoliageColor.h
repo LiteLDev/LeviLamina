@@ -52,7 +52,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?FOLIAGE_BOTTOM_LEFT@FoliageColor@@0VColor@mce@@B
     MCAPI static class mce::Color const FOLIAGE_BOTTOM_LEFT;

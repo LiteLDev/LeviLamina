@@ -41,8 +41,8 @@ public:
     canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
 
     // symbol:
-    // ??0MangroveLeavesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@VBlockLegacy@@@@@Z
-    MCAPI MangroveLeavesBlock(std::string const& nameId, int id, class WeakPtr<class BlockLegacy> sapling);
+    // ??0MangroveLeavesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@$$CBVBlockLegacy@@@@@Z
+    MCAPI MangroveLeavesBlock(std::string const& nameId, int id, class WeakPtr<class BlockLegacy const> sapling);
 
     // NOLINTEND
 };

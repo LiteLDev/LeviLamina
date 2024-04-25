@@ -69,7 +69,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?NUM_GROUPS_ON_EASY@Raid@@0EB
     MCAPI static uchar const NUM_GROUPS_ON_EASY;

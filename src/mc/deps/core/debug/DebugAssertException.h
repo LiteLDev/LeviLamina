@@ -24,7 +24,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?WHAT@DebugAssertException@@0QEBDEB
     MCAPI static char const* const WHAT;

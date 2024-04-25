@@ -40,25 +40,25 @@ public:
     // vIndex: 10, symbol: __gen_??1MinecartTNT@@UEAA@XZ
     virtual ~MinecartTNT() = default;
 
-    // vIndex: 28, symbol: ?normalTick@MinecartTNT@@UEAAXXZ
+    // vIndex: 26, symbol: ?normalTick@MinecartTNT@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 79, symbol: ?handleEntityEvent@MinecartTNT@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 75, symbol: ?handleEntityEvent@MinecartTNT@@UEAAXW4ActorEvent@@H@Z
     virtual void handleEntityEvent(::ActorEvent eventId, int data);
 
-    // vIndex: 104, symbol: ?causeFallDamageToActor@MinecartTNT@@MEAAMMMVActorDamageSource@@@Z
+    // vIndex: 100, symbol: ?causeFallDamageToActor@MinecartTNT@@MEAAMMMVActorDamageSource@@@Z
     virtual float causeFallDamageToActor(float, float, class ActorDamageSource);
 
-    // vIndex: 152, symbol: ?_hurt@MinecartTNT@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 148, symbol: ?_hurt@MinecartTNT@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 157, symbol: ?destroy@MinecartTNT@@UEAAXAEBVActorDamageSource@@_N@Z
+    // vIndex: 153, symbol: ?destroy@MinecartTNT@@UEAAXAEBVActorDamageSource@@_N@Z
     virtual void destroy(class ActorDamageSource const& source, bool dropMinecartComponents);
 
-    // vIndex: 158, symbol: ?getType@MinecartTNT@@UEAA?AW4MinecartType@@XZ
+    // vIndex: 154, symbol: ?getType@MinecartTNT@@UEAA?AW4MinecartType@@XZ
     virtual ::MinecartType getType();
 
-    // vIndex: 159, symbol: ?getDefaultDisplayBlock@MinecartTNT@@UEBAPEBVBlock@@XZ
+    // vIndex: 155, symbol: ?getDefaultDisplayBlock@MinecartTNT@@UEBAPEBVBlock@@XZ
     virtual class Block const* getDefaultDisplayBlock() const;
 
     // symbol: ??0MinecartTNT@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
@@ -73,7 +73,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?DEFAULT_FUSE_LENGTH@MinecartTNT@@0HB
     MCAPI static int const DEFAULT_FUSE_LENGTH;

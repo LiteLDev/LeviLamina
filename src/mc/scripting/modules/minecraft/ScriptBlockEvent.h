@@ -5,6 +5,13 @@
 // auto generated inclusion list
 #include "mc/external/scripting/ClassBindingBuilder.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class Dimension;
+namespace Scripting { class WeakLifetimeScope; }
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 struct ScriptBlockEvent {
@@ -15,6 +22,14 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol:
+    // ??0ScriptBlockEvent@ScriptModuleMinecraft@@QEAA@AEAVDimension@@AEBVBlockPos@@AEBVWeakLifetimeScope@Scripting@@@Z
+    MCAPI ScriptBlockEvent(
+        class Dimension&                          dimension,
+        class BlockPos const&                     location,
+        class Scripting::WeakLifetimeScope const& scope
+    );
+
     // symbol: ??4ScriptBlockEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptBlockEvent& operator=(struct ScriptModuleMinecraft::ScriptBlockEvent&&);
 

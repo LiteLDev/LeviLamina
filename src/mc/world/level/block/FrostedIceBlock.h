@@ -55,7 +55,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?MAX_AGE@FrostedIceBlock@@0HB
     MCAPI static int const MAX_AGE;

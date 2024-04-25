@@ -51,7 +51,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mRotatedX@RotatedPillarBlock@@0QBHB
     MCAPI static int const mRotatedX[];

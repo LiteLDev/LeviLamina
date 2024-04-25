@@ -9,7 +9,7 @@ public:
     EasingInverse(EasingInverse const&);
     EasingInverse();
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?mEasingFuncs@EasingInverse@@0V?$vector@V?$function@$$A6AMMMM@Z@std@@V?$allocator@V?$function@$$A6AMMMM@Z@std@@@2@@std@@A

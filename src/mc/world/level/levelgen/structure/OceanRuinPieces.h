@@ -114,7 +114,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?BIG_RUIN_LOOT@OceanRuinPieces@@0V?$basic_string_view@DU?$char_traits@D@std@@@std@@A
     MCAPI static std::string_view BIG_RUIN_LOOT;

@@ -25,7 +25,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mApp@EnableEncryptionCommand@@0PEAVIMinecraftApp@@EA
     MCAPI static class IMinecraftApp* mApp;

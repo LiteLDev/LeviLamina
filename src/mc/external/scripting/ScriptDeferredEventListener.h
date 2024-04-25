@@ -11,8 +11,17 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ?onFlushBlockCustomComponentAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
+    MCVAPI bool onFlushBlockCustomComponentAfterEvents();
+
+    // symbol: ?onFlushEditorDataStoreAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
+    MCVAPI bool onFlushEditorDataStoreAfterEvents();
+
     // symbol: ?onFlushEditorExtensionContextAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
     MCVAPI bool onFlushEditorExtensionContextAfterEvents();
+
+    // symbol: ?onFlushItemCustomComponentAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
+    MCVAPI bool onFlushItemCustomComponentAfterEvents();
 
     // symbol: ?onFlushSystemAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
     MCVAPI bool onFlushSystemAfterEvents();

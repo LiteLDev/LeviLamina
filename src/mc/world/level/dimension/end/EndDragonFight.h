@@ -128,7 +128,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?ARENA_SIZE_CHUNKS@EndDragonFight@@0HB
     MCAPI static int const ARENA_SIZE_CHUNKS;

@@ -2,10 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/biome/BiomeComponentBase.h"
-
-class OverworldHeightAttributes : public ::BiomeComponentBase {
+class OverworldHeightAttributes {
 public:
     // prevent constructor by default
     OverworldHeightAttributes& operator=(OverworldHeightAttributes const&);

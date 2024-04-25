@@ -47,13 +47,13 @@ public:
     // vIndex: 10, symbol: ??1Zombie@@UEAA@XZ
     virtual ~Zombie();
 
-    // vIndex: 107, symbol: ?canPickupItem@Zombie@@UEBA_NAEBVItemStack@@@Z
+    // vIndex: 103, symbol: ?canPickupItem@Zombie@@UEBA_NAEBVItemStack@@@Z
     virtual bool canPickupItem(class ItemStack const& item) const;
 
-    // vIndex: 167, symbol: ?checkSpawnRules@Zombie@@UEAA_N_N@Z
+    // vIndex: 162, symbol: ?checkSpawnRules@Zombie@@UEAA_N_N@Z
     virtual bool checkSpawnRules(bool fromSpawner);
 
-    // vIndex: 175, symbol: ?getArmorValue@Zombie@@MEBAHXZ
+    // vIndex: 170, symbol: ?getArmorValue@Zombie@@MEBAHXZ
     virtual int getArmorValue() const;
 
     // symbol: ??0Zombie@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
@@ -68,7 +68,7 @@ public:
 
     // NOLINTEND
 
-protected:
+    // protected:
     // NOLINTBEGIN
     // symbol: ?SPAWN_BONUS_UUID@Zombie@@1VUUID@mce@@B
     MCAPI static class mce::UUID const SPAWN_BONUS_UUID;

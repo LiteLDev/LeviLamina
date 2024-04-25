@@ -25,7 +25,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mServer@ClearRealmEventsCommand@@0PEAVDedicatedServer@@EA
     MCAPI static class DedicatedServer* mServer;

@@ -8,15 +8,13 @@ struct ModuleDescriptor {
 public:
     // prevent constructor by default
     ModuleDescriptor& operator=(ModuleDescriptor const&);
+    ModuleDescriptor(ModuleDescriptor const&);
     ModuleDescriptor();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0ModuleDescriptor@Scripting@@QEAA@$$QEAU01@@Z
     MCAPI ModuleDescriptor(struct Scripting::ModuleDescriptor&&);
-
-    // symbol: ??0ModuleDescriptor@Scripting@@QEAA@AEBU01@@Z
-    MCAPI ModuleDescriptor(struct Scripting::ModuleDescriptor const&);
 
     // symbol: ??8ModuleDescriptor@Scripting@@QEBA_NAEBU01@@Z
     MCAPI bool operator==(struct Scripting::ModuleDescriptor const&) const;

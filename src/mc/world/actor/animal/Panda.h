@@ -39,13 +39,13 @@ public:
     // vIndex: 10, symbol: __gen_??1Panda@@UEAA@XZ
     virtual ~Panda() = default;
 
-    // vIndex: 73, symbol: ?getAmbientSound@Panda@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 69, symbol: ?getAmbientSound@Panda@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
     virtual ::Puv::Legacy::LevelSoundEvent getAmbientSound() const;
 
-    // vIndex: 153, symbol: ?readAdditionalSaveData@Panda@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 149, symbol: ?readAdditionalSaveData@Panda@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 190, symbol: ?setTransitioningSitting@Panda@@UEAAX_N@Z
+    // vIndex: 185, symbol: ?setTransitioningSitting@Panda@@UEAAX_N@Z
     virtual void setTransitioningSitting(bool value);
 
     // symbol: ??0Panda@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
@@ -61,17 +61,14 @@ public:
     // symbol: ?getSitAmount@Panda@@QEBAMM@Z
     MCAPI float getSitAmount(float a) const;
 
-    // symbol: ?getSneezeCounter@Panda@@QEBAHXZ
-    MCAPI int getSneezeCounter() const;
-
-    // symbol: ?getUnhappyCounter@Panda@@QEBAHXZ
-    MCAPI int getUnhappyCounter() const;
-
     // symbol: ?postNormalTick@Panda@@QEAAXXZ
     MCAPI void postNormalTick();
 
     // symbol: ?updateLaying@Panda@@QEAAXXZ
     MCAPI void updateLaying();
+
+    // symbol: ?updateRollAmount@Panda@@QEAAXXZ
+    MCAPI void updateRollAmount();
 
     // symbol: ?updateSitting@Panda@@QEAAXXZ
     MCAPI void updateSitting();

@@ -163,7 +163,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?DEFAULT_STRUCTURE_TYPE@StructureEditorData@@0W4StructureBlockType@@B
     MCAPI static ::StructureBlockType const DEFAULT_STRUCTURE_TYPE;

@@ -10,6 +10,7 @@ public:
     // prevent constructor by default
     MeadowFlowerFeature& operator=(MeadowFlowerFeature const&);
     MeadowFlowerFeature(MeadowFlowerFeature const&);
+    MeadowFlowerFeature();
 
 public:
     // NOLINTBEGIN
@@ -18,9 +19,6 @@ public:
 
     // vIndex: 3, symbol: ?place@MeadowFlowerFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    // symbol: ??0MeadowFlowerFeature@@QEAA@XZ
-    MCAPI MeadowFlowerFeature();
 
     // NOLINTEND
 

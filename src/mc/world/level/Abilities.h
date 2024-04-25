@@ -91,7 +91,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?ABILITY_NAMES@Abilities@@0V?$array@PEBD$0BD@@std@@A
     MCAPI static std::array<char const*, 19> ABILITY_NAMES;

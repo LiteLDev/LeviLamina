@@ -66,7 +66,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?SOUL_SAND_BREAKS_FALLING_BLOCK_VERSION@SoulSandBlock@@0VBaseGameVersion@@B
     MCAPI static class BaseGameVersion const SOUL_SAND_BREAKS_FALLING_BLOCK_VERSION;

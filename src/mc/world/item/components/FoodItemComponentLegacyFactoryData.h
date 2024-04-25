@@ -4,14 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/enums/AllExperiments.h"
-#include "mc/world/item/components/IItemComponentLegacyFactoryData.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-struct FoodItemComponentLegacyFactoryData : public ::IItemComponentLegacyFactoryData {
+struct FoodItemComponentLegacyFactoryData {
 public:
     // prevent constructor by default
     FoodItemComponentLegacyFactoryData& operator=(FoodItemComponentLegacyFactoryData const&);

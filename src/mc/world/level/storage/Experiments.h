@@ -13,9 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?Armadillo@Experiments@@QEBA_NXZ
-    MCAPI bool Armadillo() const;
-
     // symbol: ?Cameras@Experiments@@QEBA_NXZ
     MCAPI bool Cameras() const;
 

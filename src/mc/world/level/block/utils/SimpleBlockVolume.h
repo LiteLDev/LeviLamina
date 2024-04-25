@@ -46,6 +46,13 @@ public:
     // vIndex: 7, symbol: ?translate@SimpleBlockVolume@@UEAAXAEBVBlockPos@@@Z
     virtual void translate(class BlockPos const&);
 
+    // vIndex: 8, symbol: ?forEach@SimpleBlockVolume@@UEBAXV?$function@$$A6A_NAEBVBlockPos@@@Z@std@@@Z
+    virtual void forEach(std::function<bool(class BlockPos const&)>) const;
+
+    // vIndex: 9, symbol:
+    // ?getChunks@SimpleBlockVolume@@UEBA?AV?$set@VChunkPos@@U?$less@VChunkPos@@@std@@V?$allocator@VChunkPos@@@3@@std@@XZ
+    virtual std::set<class ChunkPos> getChunks() const;
+
     // symbol: ??0SimpleBlockVolume@@QEAA@$$QEAV0@@Z
     MCAPI SimpleBlockVolume(class SimpleBlockVolume&& volume);
 

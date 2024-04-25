@@ -2,10 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/biome/BiomeComponentBase.h"
-
-struct CustomGrassColorAttributes : public ::BiomeComponentBase {
+struct CustomGrassColorAttributes {
 public:
     // prevent constructor by default
     CustomGrassColorAttributes& operator=(CustomGrassColorAttributes const&);

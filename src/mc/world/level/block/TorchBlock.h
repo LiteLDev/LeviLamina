@@ -101,7 +101,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?DATA_FROM_FACING@TorchBlock@@0QBW4TorchFacing@@B
     MCAPI static ::TorchFacing const DATA_FROM_FACING[];

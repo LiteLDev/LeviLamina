@@ -26,8 +26,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1WeaponItem@@UEAA@XZ
-    virtual ~WeaponItem() = default;
+    // vIndex: 0, symbol: ??1WeaponItem@@UEAA@XZ
+    virtual ~WeaponItem();
 
     // vIndex: 31, symbol: ?canDestroySpecial@WeaponItem@@UEBA_NAEBVBlock@@@Z
     virtual bool canDestroySpecial(class Block const& block) const;
@@ -35,13 +35,13 @@ public:
     // vIndex: 35, symbol: ?getAttackDamage@WeaponItem@@UEBAHXZ
     virtual int getAttackDamage() const;
 
-    // vIndex: 36, symbol: ?isHandEquipped@WeaponItem@@UEBA_NXZ
+    // vIndex: 37, symbol: ?isHandEquipped@WeaponItem@@UEBA_NXZ
     virtual bool isHandEquipped() const;
 
-    // vIndex: 42, symbol: ?canDestroyInCreative@WeaponItem@@UEBA_NXZ
+    // vIndex: 43, symbol: ?canDestroyInCreative@WeaponItem@@UEBA_NXZ
     virtual bool canDestroyInCreative() const;
 
-    // vIndex: 47, symbol:
+    // vIndex: 48, symbol:
     // ?appendFormattedHovertext@WeaponItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
     virtual void appendFormattedHovertext(
         class ItemStackBase const& stack,
@@ -50,26 +50,26 @@ public:
         bool                       showCategory
     ) const;
 
-    // vIndex: 48, symbol: ?isValidRepairItem@WeaponItem@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z
+    // vIndex: 49, symbol: ?isValidRepairItem@WeaponItem@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z
     virtual bool isValidRepairItem(
         class ItemStackBase const&,
         class ItemStackBase const&   repairItem,
         class BaseGameVersion const& baseGameVersion
     ) const;
 
-    // vIndex: 49, symbol: ?getEnchantSlot@WeaponItem@@UEBAHXZ
+    // vIndex: 50, symbol: ?getEnchantSlot@WeaponItem@@UEBAHXZ
     virtual int getEnchantSlot() const;
 
-    // vIndex: 50, symbol: ?getEnchantValue@WeaponItem@@UEBAHXZ
+    // vIndex: 51, symbol: ?getEnchantValue@WeaponItem@@UEBAHXZ
     virtual int getEnchantValue() const;
 
-    // vIndex: 71, symbol: ?use@WeaponItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+    // vIndex: 72, symbol: ?use@WeaponItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
     virtual class ItemStack& use(class ItemStack& instance, class Player& player) const;
 
-    // vIndex: 75, symbol: ?getDestroySpeed@WeaponItem@@UEBAMAEBVItemStackBase@@AEBVBlock@@@Z
+    // vIndex: 76, symbol: ?getDestroySpeed@WeaponItem@@UEBAMAEBVItemStackBase@@AEBVBlock@@@Z
     virtual float getDestroySpeed(class ItemStackBase const& item, class Block const& block) const;
 
-    // vIndex: 76, symbol: ?hurtActor@WeaponItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
+    // vIndex: 77, symbol: ?hurtActor@WeaponItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
     virtual void hurtActor(class ItemStack& item, class Actor& actor, class Mob& attacker) const;
 
     // symbol: ??0WeaponItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVTier@Item@@@Z

@@ -64,9 +64,9 @@ public:
     MCAPI class GameRules& operator=(class GameRules const&);
 
     // symbol:
-    // ?registerOnGameRuleChangeCallback@GameRules@@QEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXAEBVGameRules@@W4GameRulesIndex@1@@Z@std@@@Z
+    // ?registerOnGameRuleChangeCallback@GameRules@@QEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXAEBVGameRules@@AEBUGameRuleId@@@Z@std@@@Z
     MCAPI class Bedrock::PubSub::Subscription
-        registerOnGameRuleChangeCallback(std::function<void(class GameRules const&, ::GameRules::GameRulesIndex)>);
+        registerOnGameRuleChangeCallback(std::function<void(class GameRules const&, struct GameRuleId const&)>);
 
     // symbol: ?setMarketplaceOverrides@GameRules@@QEAAXXZ
     MCAPI void setMarketplaceOverrides();

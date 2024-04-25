@@ -35,8 +35,8 @@ public:
     virtual int getVariant(class Block const&) const;
 
     // symbol:
-    // ??0DarkOakLeavesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@VBlockLegacy@@@@@Z
-    MCAPI DarkOakLeavesBlock(std::string const&, int, class WeakPtr<class BlockLegacy>);
+    // ??0DarkOakLeavesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@$$CBVBlockLegacy@@@@@Z
+    MCAPI DarkOakLeavesBlock(std::string const&, int, class WeakPtr<class BlockLegacy const>);
 
     // NOLINTEND
 };

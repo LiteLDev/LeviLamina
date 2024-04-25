@@ -42,11 +42,11 @@ public:
     getMapColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
     // symbol:
-    // ??0LogBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@VBlockLegacy@@@@V?$optional@ULogBlockMapColors@@@2@@Z
+    // ??0LogBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@$$CBVBlockLegacy@@@@V?$optional@ULogBlockMapColors@@@2@@Z
     MCAPI LogBlock(
         std::string const& nameId,
         int                id,
-        class WeakPtr<class BlockLegacy>,
+        class WeakPtr<class BlockLegacy const>,
         std::optional<struct LogBlockMapColors> mapColors
     );
 

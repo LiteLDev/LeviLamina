@@ -29,10 +29,10 @@ public:
     // vIndex: 0, symbol: __gen_??1ShieldItem@@UEAA@XZ
     virtual ~ShieldItem() = default;
 
-    // vIndex: 36, symbol: ?isHandEquipped@ShieldItem@@UEBA_NXZ
+    // vIndex: 37, symbol: ?isHandEquipped@ShieldItem@@UEBA_NXZ
     virtual bool isHandEquipped() const;
 
-    // vIndex: 47, symbol:
+    // vIndex: 48, symbol:
     // ?appendFormattedHovertext@ShieldItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
     virtual void appendFormattedHovertext(
         class ItemStackBase const& stack,
@@ -41,50 +41,50 @@ public:
         bool                       showCategory
     ) const;
 
-    // vIndex: 48, symbol: ?isValidRepairItem@ShieldItem@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z
+    // vIndex: 49, symbol: ?isValidRepairItem@ShieldItem@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z
     virtual bool isValidRepairItem(
         class ItemStackBase const&   source,
         class ItemStackBase const&   repairItem,
         class BaseGameVersion const& baseGameVersion
     ) const;
 
-    // vIndex: 49, symbol: ?getEnchantSlot@ShieldItem@@UEBAHXZ
+    // vIndex: 50, symbol: ?getEnchantSlot@ShieldItem@@UEBAHXZ
     virtual int getEnchantSlot() const;
 
-    // vIndex: 71, symbol: ?use@ShieldItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+    // vIndex: 72, symbol: ?use@ShieldItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
     virtual class ItemStack& use(class ItemStack& item, class Player&) const;
 
-    // vIndex: 72, symbol: ?dispense@ShieldItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 73, symbol: ?dispense@ShieldItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
-    // vIndex: 76, symbol: ?hurtActor@ShieldItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
+    // vIndex: 77, symbol: ?hurtActor@ShieldItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
     virtual void hurtActor(class ItemStack& item, class Actor& actor, class Mob& attacker) const;
 
-    // vIndex: 81, symbol:
+    // vIndex: 82, symbol:
     // ?buildDescriptionId@ShieldItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 83, symbol:
+    // vIndex: 84, symbol:
     // ?readUserData@ShieldItem@@UEBAXAEAVItemStackBase@@AEAVIDataInput@@AEAVReadOnlyBinaryStream@@@Z
     virtual void
     readUserData(class ItemStackBase& stack, class IDataInput& input, class ReadOnlyBinaryStream& underlyingStream)
         const;
 
-    // vIndex: 84, symbol: ?writeUserData@ShieldItem@@UEBAXAEBVItemStackBase@@AEAVIDataOutput@@@Z
+    // vIndex: 85, symbol: ?writeUserData@ShieldItem@@UEBAXAEBVItemStackBase@@AEAVIDataOutput@@@Z
     virtual void writeUserData(class ItemStackBase const& stack, class IDataOutput& output) const;
 
-    // vIndex: 86, symbol: ?inventoryTick@ShieldItem@@UEBA_NAEAVItemStack@@AEAVLevel@@AEAVActor@@H_N@Z
+    // vIndex: 87, symbol: ?inventoryTick@ShieldItem@@UEBA_NAEAVItemStack@@AEAVLevel@@AEAVActor@@H_N@Z
     virtual bool
     inventoryTick(class ItemStack& item, class Level& level, class Actor& owner, int slot, bool selected) const;
 
-    // vIndex: 88, symbol: ?getCooldownType@ShieldItem@@UEBAAEBVHashedString@@XZ
+    // vIndex: 89, symbol: ?getCooldownType@ShieldItem@@UEBAAEBVHashedString@@XZ
     virtual class HashedString const& getCooldownType() const;
 
-    // vIndex: 89, symbol: ?getCooldownTime@ShieldItem@@UEBAHXZ
+    // vIndex: 90, symbol: ?getCooldownTime@ShieldItem@@UEBAHXZ
     virtual int getCooldownTime() const;
 
-    // vIndex: 92, symbol:
+    // vIndex: 93, symbol:
     // ?getInHandUpdateType@ShieldItem@@UEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemInstance@@1_N2@Z
     virtual ::InHandUpdateType getInHandUpdateType(
         class Player const&       player,
@@ -94,7 +94,7 @@ public:
         bool                      slotChanged
     ) const;
 
-    // vIndex: 93, symbol: ?getInHandUpdateType@ShieldItem@@UEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemStack@@1_N2@Z
+    // vIndex: 94, symbol: ?getInHandUpdateType@ShieldItem@@UEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemStack@@1_N2@Z
     virtual ::InHandUpdateType getInHandUpdateType(
         class Player const&    player,
         class ItemStack const& oldItem,
@@ -103,7 +103,7 @@ public:
         bool                   slotChanged
     ) const;
 
-    // vIndex: 97, symbol: ?getEquipSound@ShieldItem@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 98, symbol: ?getEquipSound@ShieldItem@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
     virtual ::Puv::Legacy::LevelSoundEvent getEquipSound() const;
 
     // symbol: ??0ShieldItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

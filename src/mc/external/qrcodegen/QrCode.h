@@ -11,7 +11,7 @@ public:
     QrCode(QrCode const&);
     QrCode();
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?PENALTY_N1@QrCode@qrcodegen@@0HB
     MCAPI static int const PENALTY_N1;

@@ -45,38 +45,38 @@ public:
     // vIndex: 10, symbol: __gen_??1Npc@@UEAA@XZ
     virtual ~Npc() = default;
 
-    // vIndex: 37, symbol: ?canShowNameTag@Npc@@UEBA_NXZ
+    // vIndex: 35, symbol: ?canShowNameTag@Npc@@UEBA_NXZ
     virtual bool canShowNameTag() const;
 
-    // vIndex: 39, symbol: ?getNameTagTextColor@Npc@@UEBA?AVColor@mce@@XZ
+    // vIndex: 37, symbol: ?getNameTagTextColor@Npc@@UEBA?AVColor@mce@@XZ
     virtual class mce::Color getNameTagTextColor() const;
 
-    // vIndex: 56, symbol: ?isTargetable@Npc@@UEBA_NXZ
+    // vIndex: 54, symbol: ?isTargetable@Npc@@UEBA_NXZ
     virtual bool isTargetable() const;
 
-    // vIndex: 108, symbol: ?canBePulledIntoVehicle@Npc@@UEBA_NXZ
+    // vIndex: 104, symbol: ?canBePulledIntoVehicle@Npc@@UEBA_NXZ
     virtual bool canBePulledIntoVehicle() const;
 
-    // vIndex: 114, symbol:
+    // vIndex: 110, symbol:
     // ?buildDebugInfo@Npc@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void buildDebugInfo(std::string& out) const;
 
-    // vIndex: 117, symbol: ?canBeAffected@Npc@@UEBA_NI@Z
+    // vIndex: 113, symbol: ?canBeAffected@Npc@@UEBA_NI@Z
     virtual bool canBeAffected(uint) const;
 
-    // vIndex: 137, symbol: ?die@Npc@@UEAAXAEBVActorDamageSource@@@Z
+    // vIndex: 133, symbol: ?die@Npc@@UEAAXAEBVActorDamageSource@@@Z
     virtual void die(class ActorDamageSource const&);
 
-    // vIndex: 152, symbol: ?_hurt@Npc@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 148, symbol: ?_hurt@Npc@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float, bool, bool);
 
-    // vIndex: 157, symbol: ?knockback@Npc@@UEAAXPEAVActor@@HMMMMM@Z
+    // vIndex: 153, symbol: ?knockback@Npc@@UEAAXPEAVActor@@HMMMMM@Z
     virtual void knockback(class Actor*, int, float, float, float, float, float);
 
-    // vIndex: 192, symbol: ?canExistWhenDisallowMob@Npc@@UEBA_NXZ
+    // vIndex: 187, symbol: ?canExistWhenDisallowMob@Npc@@UEBA_NXZ
     virtual bool canExistWhenDisallowMob() const;
 
-    // vIndex: 194, symbol: ?newServerAiStep@Npc@@UEAAXXZ
+    // vIndex: 189, symbol: ?newServerAiStep@Npc@@UEAAXXZ
     virtual void newServerAiStep();
 
     // symbol: ??0Npc@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

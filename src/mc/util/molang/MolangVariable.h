@@ -44,7 +44,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mHasSetWatermark@MolangVariable@@0_NA
     MCAPI static bool mHasSetWatermark;

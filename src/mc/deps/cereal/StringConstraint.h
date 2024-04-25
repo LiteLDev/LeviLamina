@@ -18,6 +18,7 @@ class StringConstraint : public ::cereal::Constraint {
 public:
     // prevent constructor by default
     StringConstraint& operator=(StringConstraint const&);
+    StringConstraint();
 
 public:
     // NOLINTBEGIN
@@ -29,9 +30,6 @@ public:
 
     // vIndex: 2, symbol: ?description@StringConstraint@cereal@@UEBA?AUConstraintDescription@internal@2@XZ
     virtual struct cereal::internal::ConstraintDescription description() const;
-
-    // symbol: ??0StringConstraint@cereal@@QEAA@XZ
-    MCAPI StringConstraint();
 
     // symbol: ??0StringConstraint@cereal@@QEAA@$$QEAV01@@Z
     MCAPI StringConstraint(class cereal::StringConstraint&&);

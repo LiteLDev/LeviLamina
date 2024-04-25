@@ -379,7 +379,7 @@ public:
 
     // NOLINTEND
 
-protected:
+    // protected:
     // NOLINTBEGIN
     // symbol: ?sStats@FileSystemImpl@Core@@1VFileStats@2@A
     MCAPI static class Core::FileStats sStats;

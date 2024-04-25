@@ -47,7 +47,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?DEFAULT_OPTION@EducationOptions@@0V1@A
     MCAPI static class EducationOptions DEFAULT_OPTION;

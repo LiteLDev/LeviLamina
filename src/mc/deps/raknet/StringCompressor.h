@@ -21,7 +21,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?instance@StringCompressor@RakNet@@0PEAV12@EA
     MCAPI static class RakNet::StringCompressor* instance;

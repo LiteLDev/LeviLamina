@@ -51,9 +51,6 @@ public:
     // symbol: ?getLevelChunkMetaDataManager@ServerLevel@@UEAAPEAVLevelChunkMetaDataManager@@XZ
     MCVAPI class LevelChunkMetaDataManager* getLevelChunkMetaDataManager();
 
-    // symbol: ?getLevelEventCoordinator@ServerLevel@@UEAAAEAVLevelEventCoordinator@@XZ
-    MCVAPI class LevelEventCoordinator& getLevelEventCoordinator();
-
     // symbol: ?getPlayerSleepManager@ServerLevel@@UEAAAEAVPlayerSleepManager@@XZ
     MCVAPI class PlayerSleepManager& getPlayerSleepManager();
 
@@ -91,9 +88,6 @@ public:
 
     // symbol: ?loadFunctionManager@ServerLevel@@UEAAXXZ
     MCVAPI void loadFunctionManager();
-
-    // symbol: ?registerEventCoordinators@ServerLevel@@UEAAXXZ
-    MCVAPI void registerEventCoordinators();
 
     // symbol: ?runCommand@ServerLevel@@UEAAXAEAVCommand@@AEAVCommandOrigin@@W4CommandOriginSystem@@@Z
     MCVAPI void runCommand(class Command& command, class CommandOrigin& origin, ::CommandOriginSystem originSystem);
@@ -157,9 +151,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_checkBlockPermutationCap@ServerLevel@@AEAAXXZ
-    MCAPI void _checkBlockPermutationCap();
-
     // symbol: ?_initializeActorManager@ServerLevel@@AEAAXXZ
     MCAPI void _initializeActorManager();
 

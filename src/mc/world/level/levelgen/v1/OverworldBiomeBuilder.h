@@ -104,7 +104,7 @@ public:
     // symbol:
     // ?_pickBadlandsBiome@OverworldBiomeBuilder@@AEBAPEAVBiome@@HAEBUParameter@ClimateUtils@@AEBVBiomeRegistry@@@Z
     MCAPI class Biome* _pickBadlandsBiome(
-        int                                   humidityIdx,
+        int                                   humidityIndex,
         struct ClimateUtils::Parameter const& weirdness,
         class BiomeRegistry const&            biomeRegistry
     ) const;
@@ -112,8 +112,8 @@ public:
     // symbol:
     // ?_pickShatteredCoastBiome@OverworldBiomeBuilder@@AEBAPEAVBiome@@HHAEBUParameter@ClimateUtils@@AEBVBiomeRegistry@@@Z
     MCAPI class Biome* _pickShatteredCoastBiome(
-        int                                   temperatureIdx,
-        int                                   humidityIdx,
+        int                                   temperatureIndex,
+        int                                   humidityIndex,
         struct ClimateUtils::Parameter const& weirdness,
         class BiomeRegistry const&            biomeRegistry
     ) const;
@@ -123,7 +123,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?EROSIONS@OverworldBiomeBuilder@@0QBUParameter@ClimateUtils@@B
     MCAPI static struct ClimateUtils::Parameter const EROSIONS[];

@@ -42,10 +42,10 @@ public:
     // vIndex: 10, symbol: __gen_??1Tadpole@@UEAA@XZ
     virtual ~Tadpole() = default;
 
-    // vIndex: 197, symbol: ?getFlopVerticalVelocityFactor@Tadpole@@UEBAMXZ
+    // vIndex: 192, symbol: ?getFlopVerticalVelocityFactor@Tadpole@@UEBAMXZ
     virtual float getFlopVerticalVelocityFactor() const;
 
-    // vIndex: 198, symbol: ?getFlopHorizontalVelocityFactor@Tadpole@@UEBAMXZ
+    // vIndex: 193, symbol: ?getFlopHorizontalVelocityFactor@Tadpole@@UEBAMXZ
     virtual float getFlopHorizontalVelocityFactor() const;
 
     // symbol: ??0Tadpole@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

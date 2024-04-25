@@ -31,7 +31,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?sMutex@LibHttpClientInstance@Http@Bedrock@@0VMutex@Threading@3@A
     MCAPI static class Bedrock::Threading::Mutex sMutex;

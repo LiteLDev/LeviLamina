@@ -25,7 +25,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mApp@CloseWebSocketCommand@@0PEAVIMinecraftApp@@EA
     MCAPI static class IMinecraftApp* mApp;

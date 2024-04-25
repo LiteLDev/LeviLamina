@@ -97,7 +97,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?DELAYS@RepeaterBlock@@0QBHB
     MCAPI static int const DELAYS[];

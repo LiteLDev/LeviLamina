@@ -13,8 +13,8 @@ public:
     // SubChunkPacket inner types declare
     // clang-format off
     class HeightmapData;
-    struct SubChunkPosOffset;
     struct SubChunkPacketData;
+    struct SubChunkPosOffset;
     // clang-format on
 
     // SubChunkPacket inner types define
@@ -40,14 +40,6 @@ public:
         // NOLINTEND
     };
 
-    struct SubChunkPosOffset {
-    public:
-        // prevent constructor by default
-        SubChunkPosOffset& operator=(SubChunkPosOffset const&);
-        SubChunkPosOffset(SubChunkPosOffset const&);
-        SubChunkPosOffset();
-    };
-
     struct SubChunkPacketData {
     public:
         // prevent constructor by default
@@ -60,14 +52,18 @@ public:
         // symbol: ??0SubChunkPacketData@SubChunkPacket@@QEAA@$$QEAU01@@Z
         MCAPI SubChunkPacketData(struct SubChunkPacket::SubChunkPacketData&&);
 
-        // symbol: ??0SubChunkPacketData@SubChunkPacket@@QEAA@AEBUSubChunkPosOffset@1@W4SubChunkRequestResult@1@@Z
-        MCAPI
-        SubChunkPacketData(struct SubChunkPacket::SubChunkPosOffset const&, ::SubChunkPacket::SubChunkRequestResult);
-
         // symbol: ??1SubChunkPacketData@SubChunkPacket@@QEAA@XZ
         MCAPI ~SubChunkPacketData();
 
         // NOLINTEND
+    };
+
+    struct SubChunkPosOffset {
+    public:
+        // prevent constructor by default
+        SubChunkPosOffset& operator=(SubChunkPosOffset const&);
+        SubChunkPosOffset(SubChunkPosOffset const&);
+        SubChunkPosOffset();
     };
 
 public:

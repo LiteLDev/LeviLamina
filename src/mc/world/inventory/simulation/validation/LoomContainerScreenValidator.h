@@ -11,14 +11,12 @@ public:
     // prevent constructor by default
     LoomContainerScreenValidator& operator=(LoomContainerScreenValidator const&);
     LoomContainerScreenValidator(LoomContainerScreenValidator const&);
+    LoomContainerScreenValidator();
 
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1LoomContainerScreenValidator@@UEAA@XZ
     virtual ~LoomContainerScreenValidator() = default;
-
-    // symbol: ??0LoomContainerScreenValidator@@QEAA@XZ
-    MCAPI LoomContainerScreenValidator();
 
     // NOLINTEND
 };

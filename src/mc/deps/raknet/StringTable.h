@@ -21,7 +21,7 @@ public:
 
     // NOLINTEND
 
-protected:
+    // protected:
     // NOLINTBEGIN
     // symbol: ?instance@StringTable@RakNet@@1PEAV12@EA
     MCAPI static class RakNet::StringTable* instance;

@@ -9,7 +9,7 @@ public:
     ListenerInfo(ListenerInfo const&);
     ListenerInfo();
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?SQRT_FLT_MAX@ListenerInfo@@0MB
     MCAPI static float const SQRT_FLT_MAX;

@@ -30,7 +30,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?sForcedPort@ServerScriptDebugCommand@@0V?$optional@G@std@@A
     MCAPI static std::optional<ushort> sForcedPort;

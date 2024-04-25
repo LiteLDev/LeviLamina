@@ -82,7 +82,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mBeardKernel@FeatureTerrainAdjustments@@0UBeardKernel@@A
     MCAPI static struct BeardKernel mBeardKernel;

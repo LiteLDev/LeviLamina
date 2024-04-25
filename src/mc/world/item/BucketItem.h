@@ -34,57 +34,57 @@ public:
     // vIndex: 11, symbol: ?isBucket@BucketItem@@UEBA_NXZ
     virtual bool isBucket() const;
 
-    // vIndex: 43, symbol: ?isDestructive@BucketItem@@UEBA_NH@Z
+    // vIndex: 44, symbol: ?isDestructive@BucketItem@@UEBA_NH@Z
     virtual bool isDestructive(int auxValue) const;
 
-    // vIndex: 44, symbol: ?isLiquidClipItem@BucketItem@@UEBA_NXZ
+    // vIndex: 45, symbol: ?isLiquidClipItem@BucketItem@@UEBA_NXZ
     virtual bool isLiquidClipItem() const;
 
-    // vIndex: 54, symbol: ?isValidAuxValue@BucketItem@@UEBA_NH@Z
+    // vIndex: 56, symbol: ?isValidAuxValue@BucketItem@@UEBA_NH@Z
     virtual bool isValidAuxValue(int auxValue) const;
 
-    // vIndex: 57, symbol: ?uniqueAuxValues@BucketItem@@UEBA_NXZ
+    // vIndex: 59, symbol: ?uniqueAuxValues@BucketItem@@UEBA_NXZ
     virtual bool uniqueAuxValues() const;
 
-    // vIndex: 70, symbol: ?canUseOnSimTick@BucketItem@@UEBA_NXZ
+    // vIndex: 71, symbol: ?canUseOnSimTick@BucketItem@@UEBA_NXZ
     virtual bool canUseOnSimTick() const;
 
-    // vIndex: 71, symbol: ?use@BucketItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+    // vIndex: 72, symbol: ?use@BucketItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
     virtual class ItemStack& use(class ItemStack& item, class Player& player) const;
 
-    // vIndex: 72, symbol: ?dispense@BucketItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 73, symbol: ?dispense@BucketItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
-    // vIndex: 73, symbol: ?useTimeDepleted@BucketItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
+    // vIndex: 74, symbol: ?useTimeDepleted@BucketItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
     virtual ::ItemUseMethod
     useTimeDepleted(class ItemStack& inoutInstance, class Level* level, class Player* player) const;
 
-    // vIndex: 74, symbol: ?releaseUsing@BucketItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z
+    // vIndex: 75, symbol: ?releaseUsing@BucketItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z
     virtual void releaseUsing(class ItemStack& inoutInstance, class Player* player, int durationLeft) const;
 
-    // vIndex: 81, symbol:
+    // vIndex: 82, symbol:
     // ?buildDescriptionId@BucketItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 85, symbol: ?getMaxStackSize@BucketItem@@UEBAEAEBVItemDescriptor@@@Z
+    // vIndex: 86, symbol: ?getMaxStackSize@BucketItem@@UEBAEAEBVItemDescriptor@@@Z
     virtual uchar getMaxStackSize(class ItemDescriptor const&) const;
 
-    // vIndex: 94, symbol: ?validFishInteraction@BucketItem@@UEBA_NH@Z
+    // vIndex: 95, symbol: ?validFishInteraction@BucketItem@@UEBA_NH@Z
     virtual bool validFishInteraction(int auxValue) const;
 
-    // vIndex: 102, symbol:
+    // vIndex: 103, symbol:
     // ?setIconInfo@BucketItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     virtual class Item& setIconInfo(std::string const& name, int id);
 
-    // vIndex: 107, symbol: ?getLightEmission@BucketItem@@UEBA?AUBrightness@@H@Z
+    // vIndex: 108, symbol: ?getLightEmission@BucketItem@@UEBA?AUBrightness@@H@Z
     virtual struct Brightness getLightEmission(int auxValue) const;
 
-    // vIndex: 112, symbol:
+    // vIndex: 113, symbol:
     // ?getAuxValuesDescription@BucketItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getAuxValuesDescription() const;
 
-    // vIndex: 117, symbol:
+    // vIndex: 118, symbol:
     // ?_useOn@BucketItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
@@ -144,7 +144,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?mFillTypeToEntityType@BucketItem@@0V?$vector@U?$pair@W4BucketFillType@@W4ActorType@@@std@@V?$allocator@U?$pair@W4BucketFillType@@W4ActorType@@@std@@@2@@std@@B

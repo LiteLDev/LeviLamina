@@ -55,6 +55,9 @@ public:
     // symbol: ?deserialize@Dimension@@UEAAXAEBVCompoundTag@@@Z
     MCVAPI void deserialize(class CompoundTag const& tag);
 
+    // symbol: ?fetchEntity@Dimension@@UEBAPEAVActor@@UActorUniqueID@@_N@Z
+    MCVAPI class Actor* fetchEntity(struct ActorUniqueID actorID, bool getRemoved) const;
+
     // symbol: ?flushLevelChunkGarbageCollector@Dimension@@UEAAXXZ
     MCVAPI void flushLevelChunkGarbageCollector();
 
@@ -221,9 +224,6 @@ public:
 
     // symbol: ?fetchAnyInteractablePlayer@Dimension@@QEBAPEAVPlayer@@AEBVVec3@@M@Z
     MCAPI class Player* fetchAnyInteractablePlayer(class Vec3 const&, float maxDist) const;
-
-    // symbol: ?fetchEntity@Dimension@@QEBAPEAVActor@@UActorUniqueID@@_N@Z
-    MCAPI class Actor* fetchEntity(struct ActorUniqueID actorID, bool getRemoved) const;
 
     // symbol: ?fetchNearestAttackablePlayer@Dimension@@QEBAPEAVPlayer@@AEAVActor@@M@Z
     MCAPI class Player* fetchNearestAttackablePlayer(class Actor& source, float maxDist) const;

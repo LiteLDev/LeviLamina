@@ -40,19 +40,19 @@ public:
     // vIndex: 10, symbol: __gen_??1PigZombie@@UEAA@XZ
     virtual ~PigZombie() = default;
 
-    // vIndex: 28, symbol: ?normalTick@PigZombie@@UEAAXXZ
+    // vIndex: 26, symbol: ?normalTick@PigZombie@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 152, symbol: ?_hurt@PigZombie@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 148, symbol: ?_hurt@PigZombie@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 153, symbol: ?readAdditionalSaveData@PigZombie@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 149, symbol: ?readAdditionalSaveData@PigZombie@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 154, symbol: ?addAdditionalSaveData@PigZombie@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 150, symbol: ?addAdditionalSaveData@PigZombie@@MEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& entityTag) const;
 
-    // vIndex: 167, symbol: ?checkSpawnRules@PigZombie@@UEAA_N_N@Z
+    // vIndex: 162, symbol: ?checkSpawnRules@PigZombie@@UEAA_N_N@Z
     virtual bool checkSpawnRules(bool fromSpawner);
 
     // symbol: ??0PigZombie@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
@@ -64,7 +64,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?SPEED_MODIFIER_ATTACK_UUID@PigZombie@@0VUUID@mce@@B
     MCAPI static class mce::UUID const SPEED_MODIFIER_ATTACK_UUID;

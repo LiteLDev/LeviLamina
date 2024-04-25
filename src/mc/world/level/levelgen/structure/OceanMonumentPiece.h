@@ -64,7 +64,7 @@ public:
 
     // NOLINTEND
 
-protected:
+    // protected:
     // NOLINTBEGIN
     // symbol: ?mGridroomLeftWingConnectIndex@OceanMonumentPiece@@1HA
     MCAPI static int mGridroomLeftWingConnectIndex;

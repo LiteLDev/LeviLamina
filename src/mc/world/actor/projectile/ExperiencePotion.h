@@ -39,13 +39,13 @@ public:
     // vIndex: 10, symbol: __gen_??1ExperiencePotion@@UEAA@XZ
     virtual ~ExperiencePotion() = default;
 
-    // vIndex: 157, symbol: ?getThrowPower@ExperiencePotion@@MEAAMXZ
+    // vIndex: 153, symbol: ?getThrowPower@ExperiencePotion@@MEAAMXZ
     virtual float getThrowPower();
 
-    // vIndex: 158, symbol: ?getThrowUpAngleOffset@ExperiencePotion@@MEAAMXZ
+    // vIndex: 154, symbol: ?getThrowUpAngleOffset@ExperiencePotion@@MEAAMXZ
     virtual float getThrowUpAngleOffset();
 
-    // vIndex: 159, symbol: ?getGravity@ExperiencePotion@@MEAAMXZ
+    // vIndex: 155, symbol: ?getGravity@ExperiencePotion@@MEAAMXZ
     virtual float getGravity();
 
     // symbol: ??0ExperiencePotion@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

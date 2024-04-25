@@ -23,7 +23,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?mExposedGameEvents@GameEventMapping@@0V?$set@VHashedString@@U?$less@VHashedString@@@std@@V?$allocator@VHashedString@@@3@@std@@B

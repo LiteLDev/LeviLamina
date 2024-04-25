@@ -4,22 +4,20 @@
 
 // auto generated inclusion list
 #include "mc/enums/AllExperiments.h"
-#include "mc/world/item/components/IItemComponentLegacyFactoryData.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-struct ChargeableItemComponentLegacyFactoryData : public ::IItemComponentLegacyFactoryData {
-public:
-    // prevent constructor by default
-    ChargeableItemComponentLegacyFactoryData();
-
+struct ChargeableItemComponentLegacyFactoryData {
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1ChargeableItemComponentLegacyFactoryData@@UEAA@XZ
     virtual ~ChargeableItemComponentLegacyFactoryData();
+
+    // symbol: ??0ChargeableItemComponentLegacyFactoryData@@QEAA@XZ
+    MCAPI ChargeableItemComponentLegacyFactoryData();
 
     // symbol: ??0ChargeableItemComponentLegacyFactoryData@@QEAA@AEBU0@@Z
     MCAPI ChargeableItemComponentLegacyFactoryData(struct ChargeableItemComponentLegacyFactoryData const&);

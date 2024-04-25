@@ -56,7 +56,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?mThreadLocalRegistry@ItemRegistryManager@@0V?$ThreadLocalObject@V?$weak_ptr@VItemRegistry@@@std@@V?$allocator@V?$weak_ptr@VItemRegistry@@@std@@@2@@Threading@Bedrock@@A

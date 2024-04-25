@@ -52,7 +52,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?SPEED_MODIFIER_DRINKING_UUID@DrinkPotionGoal@@0VUUID@mce@@B
     MCAPI static class mce::UUID const SPEED_MODIFIER_DRINKING_UUID;

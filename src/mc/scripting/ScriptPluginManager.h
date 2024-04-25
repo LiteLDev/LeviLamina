@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Scripting { class DependencyLocator; }
 namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting { struct ScriptContextResult; }
 // clang-format on
@@ -21,10 +22,9 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ?discoverPlugins@ScriptPluginManager@@QEAA?AVScriptPluginManagerResult@@W4ResourceType@ResourceInformation@@AEBVIScriptPluginSourceEnumerator@@AEBVScriptPackConfigurationManager@@AEBV?$vector@V?$function@$$A6A_NAEBVPackManifest@@AEBUModuleDescriptor@Scripting@@1AEAVScriptPluginResult@@@Z@std@@V?$allocator@V?$function@$$A6A_NAEBVPackManifest@@AEBUModuleDescriptor@Scripting@@1AEAVScriptPluginResult@@@Z@std@@@2@@std@@@Z
-    MCAPI class
-        ScriptPluginManagerResult
-        discoverPlugins(::ResourceInformation::ResourceType, class IScriptPluginSourceEnumerator const&, class ScriptPackConfigurationManager const&, std::vector<std::function<bool(class PackManifest const&, struct Scripting::ModuleDescriptor const&, struct Scripting::ModuleDescriptor const&, class ScriptPluginResult&)>> const&);
+    // ?discoverPlugins@ScriptPluginManager@@QEAA?AVScriptPluginManagerResult@@W4ResourceType@ResourceInformation@@AEAVIScriptPluginSourceEnumerator@@AEBVScriptPackConfigurationManager@@PEAVDependencyLocator@Scripting@@AEBV?$vector@V?$function@$$A6A_NAEBVPackManifest@@AEBUModuleDescriptor@Scripting@@1AEAVScriptPluginResult@@@Z@std@@V?$allocator@V?$function@$$A6A_NAEBVPackManifest@@AEBUModuleDescriptor@Scripting@@1AEAVScriptPluginResult@@@Z@std@@@2@@std@@@Z
+    MCAPI class ScriptPluginManagerResult
+    discoverPlugins(::ResourceInformation::ResourceType, class IScriptPluginSourceEnumerator&, class ScriptPackConfigurationManager const&, class Scripting::DependencyLocator*, std::vector<std::function<bool(class PackManifest const&, struct Scripting::ModuleDescriptor const&, struct Scripting::ModuleDescriptor const&, class ScriptPluginResult&)>> const&);
 
     // symbol:
     // ?getPluginStats@ScriptPluginManager@@QEBA?AV?$vector@UScriptPluginStats@@V?$allocator@UScriptPluginStats@@@std@@@std@@XZ
@@ -57,8 +57,10 @@ public:
     // symbol: ?_runPlugin@ScriptPluginManager@@AEAAXAEAVScriptPlugin@@AEAVScriptPluginResult@@@Z
     MCAPI void _runPlugin(class ScriptPlugin&, class ScriptPluginResult&);
 
-    // symbol: ?_tryAddRuntime@ScriptPluginManager@@AEAAXAEBVScriptPlugin@@AEAVScriptPluginResult@@@Z
-    MCAPI void _tryAddRuntime(class ScriptPlugin const& plugin, class ScriptPluginResult&);
+    // symbol:
+    // ?_tryAddRuntime@ScriptPluginManager@@AEAAXAEBVScriptPlugin@@AEAVScriptPluginResult@@PEAVDependencyLocator@Scripting@@@Z
+    MCAPI void
+    _tryAddRuntime(class ScriptPlugin const&, class ScriptPluginResult&, class Scripting::DependencyLocator*);
 
     // NOLINTEND
 };

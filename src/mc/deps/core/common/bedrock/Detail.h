@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock { struct CallStack; }
 namespace Core { class Path; }
 // clang-format on
 
@@ -32,6 +33,11 @@ MCAPI std::optional<std::string> defaultDataStoreLoad(class Core::Path const&);
 
 // symbol: ?defaultDataStoreSave@Detail@Bedrock@@YAXAEBVPath@Core@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
 MCAPI void defaultDataStoreSave(class Core::Path const& path, std::string_view data);
+
+// symbol:
+// ?formatCallStackContexts@Detail@Bedrock@@YA?AV?$back_insert_iterator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@V34@AEBUCallStack@2@@Z
+MCAPI std::back_insert_iterator<std::string>
+      formatCallStackContexts(std::back_insert_iterator<std::string>, struct Bedrock::CallStack const&);
 // NOLINTEND
 
 }; // namespace Bedrock::Detail

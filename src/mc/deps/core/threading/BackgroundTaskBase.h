@@ -131,7 +131,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?gCurrentTask@BackgroundTaskBase@@0PEAV1@EA
     MCAPI static class BackgroundTaskBase* gCurrentTask;

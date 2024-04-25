@@ -29,17 +29,17 @@ public:
     // vIndex: 0, symbol: __gen_??1SpyglassItem@@UEAA@XZ
     virtual ~SpyglassItem() = default;
 
-    // vIndex: 56, symbol: ?getViewDamping@SpyglassItem@@UEBAMXZ
+    // vIndex: 58, symbol: ?getViewDamping@SpyglassItem@@UEBAMXZ
     virtual float getViewDamping() const;
 
-    // vIndex: 71, symbol: ?use@SpyglassItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+    // vIndex: 72, symbol: ?use@SpyglassItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
     virtual class ItemStack& use(class ItemStack& instance, class Player& player) const;
 
-    // vIndex: 73, symbol:
+    // vIndex: 74, symbol:
     // ?useTimeDepleted@SpyglassItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
     virtual ::ItemUseMethod useTimeDepleted(class ItemStack& inoutInstance, class Level*, class Player* player) const;
 
-    // vIndex: 74, symbol: ?releaseUsing@SpyglassItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z
+    // vIndex: 75, symbol: ?releaseUsing@SpyglassItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z
     virtual void releaseUsing(class ItemStack& inoutInstance, class Player* player, int) const;
 
     // symbol: ??0SpyglassItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z

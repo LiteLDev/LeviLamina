@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Puv::v1_20_50 { struct CanDestroyInCreativeItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -28,7 +29,7 @@ public:
     // vIndex: 2, symbol: ?writeSettings@ItemComponent@@UEAAXXZ
     virtual void writeSettings();
 
-    // vIndex: 3, symbol: ?isNetworkComponent@InteractButtonItemComponent@@UEBA_NXZ
+    // vIndex: 3, symbol: ?isNetworkComponent@ItemComponent@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
     // vIndex: 4, symbol:
@@ -50,6 +51,9 @@ public:
 
     // vIndex: 9, symbol: ?_initializeComponent@CanDestroyInCreativeItemComponent@@UEAAXXZ
     virtual void _initializeComponent();
+
+    // symbol: ??0CanDestroyInCreativeItemComponent@@QEAA@U0v1_20_50@Puv@@@Z
+    MCAPI explicit CanDestroyInCreativeItemComponent(struct Puv::v1_20_50::CanDestroyInCreativeItemComponent);
 
     // symbol:
     // ?bindType@CanDestroyInCreativeItemComponent@@SAXAEAUReflectionCtx@cereal@@AEBV?$vector@W4AllExperiments@@V?$allocator@W4AllExperiments@@@std@@@std@@V?$optional@VSemVersion@@@5@@Z

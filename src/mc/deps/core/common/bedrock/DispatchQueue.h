@@ -45,23 +45,19 @@ public:
         virtual std::error_code getError() const;
 
         // vIndex: 3, symbol:
-        // ?getException@?$AsyncResultBase@VResponse@Http@Bedrock@@@Threading@Bedrock@@UEBA?AVexception_ptr@std@@XZ
-        virtual std::exception_ptr getException() const;
-
-        // vIndex: 4, symbol:
         // ?getResult@?$AsyncResultBase@VResponse@Http@Bedrock@@@Threading@Bedrock@@UEBA?AVResponse@Http@3@XZ
         virtual class Bedrock::Http::Response getResult() const;
 
-        // vIndex: 5, symbol: ?cancel@?$AsyncResultBase@VResponse@Http@Bedrock@@@Threading@Bedrock@@UEAAXXZ
+        // vIndex: 4, symbol: ?cancel@?$AsyncResultBase@VResponse@Http@Bedrock@@@Threading@Bedrock@@UEAAXXZ
         virtual void cancel();
 
-        // vIndex: 6, symbol:
+        // vIndex: 5, symbol:
         // ?addOnComplete@?$AsyncResultBase@VResponse@Http@Bedrock@@@Threading@Bedrock@@UEAAXV?$function@$$A6AXAEBV?$IAsyncResult@VResponse@Http@Bedrock@@@Threading@Bedrock@@@Z@std@@@Z
         virtual void addOnComplete(
             std::function<void(class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response> const&)> callback
         );
 
-        // vIndex: 7, symbol: ?_cancel@AsyncQueueResult@DispatchQueue@Http@Bedrock@@UEAAXXZ
+        // vIndex: 6, symbol: ?_cancel@AsyncQueueResult@DispatchQueue@Http@Bedrock@@UEAAXXZ
         virtual void _cancel();
 
         // NOLINTEND

@@ -76,7 +76,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mTrialHasEnded@SurvivalMode@@0_NA
     MCAPI static bool mTrialHasEnded;

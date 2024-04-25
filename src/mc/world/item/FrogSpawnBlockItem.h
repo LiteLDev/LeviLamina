@@ -29,15 +29,15 @@ public:
     // vIndex: 0, symbol: __gen_??1FrogSpawnBlockItem@@UEAA@XZ
     virtual ~FrogSpawnBlockItem() = default;
 
-    // vIndex: 44, symbol: ?isLiquidClipItem@FrogSpawnBlockItem@@UEBA_NXZ
+    // vIndex: 45, symbol: ?isLiquidClipItem@FrogSpawnBlockItem@@UEBA_NXZ
     virtual bool isLiquidClipItem() const;
 
-    // vIndex: 115, symbol:
+    // vIndex: 116, symbol:
     // ?_calculatePlacePos@FrogSpawnBlockItem@@UEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
     virtual bool
     _calculatePlacePos(class ItemStackBase& instance, class Actor& actor, uchar& face, class BlockPos& pos) const;
 
-    // vIndex: 117, symbol:
+    // vIndex: 118, symbol:
     // ?_useOn@FrogSpawnBlockItem@@UEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const&) const;

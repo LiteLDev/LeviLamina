@@ -39,10 +39,10 @@ public:
     // vIndex: 10, symbol: __gen_??1Pig@@UEAA@XZ
     virtual ~Pig() = default;
 
-    // vIndex: 152, symbol: ?_hurt@Pig@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 148, symbol: ?_hurt@Pig@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float dmg, bool knock, bool ignite);
 
-    // vIndex: 155, symbol: ?_playStepSound@Pig@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 151, symbol: ?_playStepSound@Pig@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
     virtual void _playStepSound(class BlockPos const& pos, class Block const& onBlock);
 
     // symbol: ??0Pig@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

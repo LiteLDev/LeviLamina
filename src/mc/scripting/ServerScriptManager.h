@@ -73,12 +73,12 @@ public:
     virtual ::EventResult onEvent(struct ServerInstanceNotificationEvent const& event);
 
     // symbol:
-    // ??0ServerScriptManager@@QEAA@UScriptSettings@@V?$NonOwnerPointer@VScheduler@@@Bedrock@@AEAVIMinecraftEventing@@_N@Z
+    // ??0ServerScriptManager@@QEAA@UScriptSettings@@V?$NonOwnerPointer@VScheduler@@@Bedrock@@AEAVIMinecraftEventing@@VItemRegistryRef@@@Z
     MCAPI ServerScriptManager(
         struct ScriptSettings,
         class Bedrock::NonOwnerPointer<class Scheduler>,
         class IMinecraftEventing&,
-        bool
+        class ItemRegistryRef
     );
 
     // symbol:
@@ -86,6 +86,9 @@ public:
     MCAPI void
     addModuleFilter(std::function<
                     bool(class PackManifest const&, struct Scripting::ModuleDescriptor const&, struct Scripting::ModuleDescriptor const&, class ScriptPluginResult&)> const&);
+
+    // symbol: ?getBlockCustomComponentRegistry@ServerScriptManager@@QEBAAEAVScriptBlockCustomComponentsRegistry@@XZ
+    MCAPI class ScriptBlockCustomComponentsRegistry& getBlockCustomComponentRegistry() const;
 
     // symbol: ?getScriptEngine@ServerScriptManager@@QEAAAEAVScriptEngine@Scripting@@XZ
     MCAPI class Scripting::ScriptEngine& getScriptEngine();
@@ -95,6 +98,9 @@ public:
 
     // symbol: ?onMainThreadStartLeaveGame@ServerScriptManager@@QEAAXXZ
     MCAPI void onMainThreadStartLeaveGame();
+
+    // symbol: ?shouldInitializeEditorModules@ServerScriptManager@@QEAAX_N@Z
+    MCAPI void shouldInitializeEditorModules(bool);
 
     // NOLINTEND
 

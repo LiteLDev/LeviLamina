@@ -104,7 +104,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mClientFrameIndex@AnimationComponent@@0U?$atomic@_J@std@@A
     MCAPI static std::atomic<int64> mClientFrameIndex;

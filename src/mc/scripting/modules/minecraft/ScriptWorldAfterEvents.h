@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/ClassBindingBuilderReadOnly.h"
 #include "mc/external/scripting/StrongTypedObjectHandle.h"
+#include "mc/scripting/modules/minecraft/ScriptAsyncEventMetadata.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -66,7 +66,6 @@ public:
     // ScriptWorldAfterEvents inner types declare
     // clang-format off
     class ScriptWorldAfterEventsDeferredEventListener;
-    struct SignalHandle;
     // clang-format on
 
     // ScriptWorldAfterEvents inner types define
@@ -102,28 +101,22 @@ public:
         // vIndex: 6, symbol: ?onFlushEditorExtensionContextAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
         virtual bool onFlushEditorExtensionContextAfterEvents();
 
-        // vIndex: 7, symbol:
+        // vIndex: 7, symbol: ?onFlushBlockCustomComponentAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
+        virtual bool onFlushBlockCustomComponentAfterEvents();
+
+        // vIndex: 8, symbol: ?onFlushEditorDataStoreAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
+        virtual bool onFlushEditorDataStoreAfterEvents();
+
+        // vIndex: 9, symbol: ?onFlushItemCustomComponentAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
+        virtual bool onFlushItemCustomComponentAfterEvents();
+
+        // vIndex: 10, symbol:
         // ?onPreFlushAfterEvents@?$IScriptScriptDeferredEventListener@VScriptWorldAfterEvents@ScriptModuleMinecraft@@@ScriptModuleMinecraft@@UEAAXXZ
         virtual void onPreFlushAfterEvents();
 
-        // vIndex: 8, symbol:
+        // vIndex: 11, symbol:
         // ?onPostFlushAfterEvents@?$IScriptScriptDeferredEventListener@VScriptWorldAfterEvents@ScriptModuleMinecraft@@@ScriptModuleMinecraft@@UEAAXXZ
         virtual void onPostFlushAfterEvents();
-
-        // NOLINTEND
-    };
-
-    struct SignalHandle {
-    public:
-        // prevent constructor by default
-        SignalHandle& operator=(SignalHandle const&);
-        SignalHandle(SignalHandle const&);
-        SignalHandle();
-
-    public:
-        // NOLINTBEGIN
-        // symbol: ??1SignalHandle@ScriptWorldAfterEvents@ScriptModuleMinecraft@@QEAA@XZ
-        MCAPI ~SignalHandle();
 
         // NOLINTEND
     };
@@ -357,16 +350,9 @@ public:
     virtual void onProjectileHitBlock(class Scripting::StrongTypedObjectHandle<
                                       struct ScriptModuleMinecraft::ScriptProjectileHitBlockAfterEvent>&);
 
-    // symbol: ??0ScriptWorldAfterEvents@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
-    MCAPI ScriptWorldAfterEvents(class ScriptModuleMinecraft::ScriptWorldAfterEvents&&);
-
     // symbol:
     // ??0ScriptWorldAfterEvents@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@V?$not_null@PEAVLevel@@@gsl@@@Z
     MCAPI ScriptWorldAfterEvents(class Scripting::WeakLifetimeScope const&, gsl::not_null<class Level*>);
-
-    // symbol: ??4ScriptWorldAfterEvents@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
-    MCAPI class ScriptModuleMinecraft::ScriptWorldAfterEvents&
-    operator=(class ScriptModuleMinecraft::ScriptWorldAfterEvents&&);
 
     // symbol: ?registerListeners@ScriptWorldAfterEvents@ScriptModuleMinecraft@@QEAAX_N@Z
     MCAPI void registerListeners(bool);
@@ -387,13 +373,16 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol:
-    // ?_bindSignals@ScriptWorldAfterEvents@ScriptModuleMinecraft@@CAXAEAV?$ClassBindingBuilderReadOnly@VScriptWorldAfterEvents@ScriptModuleMinecraft@@@Scripting@@@Z
-    MCAPI static void
-    _bindSignals(class Scripting::ClassBindingBuilderReadOnly<class ScriptModuleMinecraft::ScriptWorldAfterEvents>&);
+    // ?mMetadata@ScriptWorldAfterEvents@ScriptModuleMinecraft@@0U?$ScriptAsyncEventMetadata@VScriptWorldAfterEvents@ScriptModuleMinecraft@@@2@B
+    MCAPI static struct ScriptModuleMinecraft::ScriptAsyncEventMetadata<
+        class ScriptModuleMinecraft::ScriptWorldAfterEvents> const mMetadata;
 
-    // symbol:
-    // ?_createSignals@ScriptWorldAfterEvents@ScriptModuleMinecraft@@CA?AV?$vector@USignalHandle@ScriptWorldAfterEvents@ScriptModuleMinecraft@@V?$allocator@USignalHandle@ScriptWorldAfterEvents@ScriptModuleMinecraft@@@std@@@std@@XZ
-    MCAPI static std::vector<struct ScriptModuleMinecraft::ScriptWorldAfterEvents::SignalHandle> _createSignals();
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    static auto& $mMetadata() { return mMetadata; }
 
     // NOLINTEND
 };

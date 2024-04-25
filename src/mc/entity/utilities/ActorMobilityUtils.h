@@ -109,6 +109,11 @@ MCAPI void setStanding(
 
 // symbol: ?shouldApplyLava@ActorMobilityUtils@@YA_NAEBVIConstBlockSource@@AEBVEntityContext@@@Z
 MCAPI bool shouldApplyLava(class IConstBlockSource const& region, class EntityContext const& entity);
+
+// symbol:
+// ?shouldApplyLava@ActorMobilityUtils@@YA_NAEBVIConstBlockSource@@AEBUAABBShapeComponent@@AEBUSubBBsComponent@@_N@Z
+MCAPI bool
+shouldApplyLava(class IConstBlockSource const&, struct AABBShapeComponent const&, struct SubBBsComponent const&, bool);
 // NOLINTEND
 
 }; // namespace ActorMobilityUtils

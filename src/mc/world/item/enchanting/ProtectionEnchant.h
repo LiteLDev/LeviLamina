@@ -40,7 +40,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?THORNS_CHANCE_PER_LEVEL@ProtectionEnchant@@0MB
     MCAPI static float const THORNS_CHANCE_PER_LEVEL;

@@ -40,16 +40,16 @@ public:
     // vIndex: 10, symbol: __gen_??1MinecartChest@@UEAA@XZ
     virtual ~MinecartChest() = default;
 
-    // vIndex: 157, symbol: ?destroy@MinecartChest@@UEAAXAEBVActorDamageSource@@_N@Z
+    // vIndex: 153, symbol: ?destroy@MinecartChest@@UEAAXAEBVActorDamageSource@@_N@Z
     virtual void destroy(class ActorDamageSource const& source, bool dropMinecartComponents);
 
-    // vIndex: 158, symbol: ?getType@MinecartChest@@UEAA?AW4MinecartType@@XZ
+    // vIndex: 154, symbol: ?getType@MinecartChest@@UEAA?AW4MinecartType@@XZ
     virtual ::MinecartType getType();
 
-    // vIndex: 159, symbol: ?getDefaultDisplayBlock@MinecartChest@@UEBAPEBVBlock@@XZ
+    // vIndex: 155, symbol: ?getDefaultDisplayBlock@MinecartChest@@UEBAPEBVBlock@@XZ
     virtual class Block const* getDefaultDisplayBlock() const;
 
-    // vIndex: 161, symbol: ?applyNaturalSlowdown@MinecartChest@@UEAAXAEAVBlockSource@@@Z
+    // vIndex: 157, symbol: ?applyNaturalSlowdown@MinecartChest@@UEAAXAEAVBlockSource@@@Z
     virtual void applyNaturalSlowdown(class BlockSource& region);
 
     // symbol: ??0MinecartChest@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
@@ -61,7 +61,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?ITEMS_SIZE@MinecartChest@@0HB
     MCAPI static int const ITEMS_SIZE;

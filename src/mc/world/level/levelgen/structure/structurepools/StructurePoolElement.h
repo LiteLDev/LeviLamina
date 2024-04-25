@@ -152,6 +152,12 @@ public:
     );
 
     // symbol:
+    // ?empty@StructurePoolElement@@SA?AV?$function@$$A6AAEBVStructurePoolElement@@UStructureTemplateRegistrationContext@@W4Projection@@@Z@std@@XZ
+    MCAPI static std::function<
+        class StructurePoolElement const&(struct StructureTemplateRegistrationContext, ::Projection)>
+    empty();
+
+    // symbol:
     // ?single@StructurePoolElement@@SA?AV?$function@$$A6AAEBVStructurePoolElement@@UStructureTemplateRegistrationContext@@W4Projection@@@Z@std@@V?$basic_string_view@DU?$char_traits@D@std@@@3@@Z
     MCAPI static std::function<
         class StructurePoolElement const&(struct StructureTemplateRegistrationContext, ::Projection)>

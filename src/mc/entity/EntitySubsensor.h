@@ -24,7 +24,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?NO_MAX_COUNT@EntitySubsensor@@0HB
     MCAPI static int const NO_MAX_COUNT;

@@ -34,7 +34,7 @@ public:
     // ?executeEvent@HoeItem@@UEBAXAEAVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRenderParams@@@Z
     virtual void executeEvent(class ItemStackBase& item, std::string const& name, class RenderParams& params) const;
 
-    // vIndex: 49, symbol: ?getEnchantSlot@HoeItem@@UEBAHXZ
+    // vIndex: 50, symbol: ?getEnchantSlot@HoeItem@@UEBAHXZ
     virtual int getEnchantSlot() const;
 
     // symbol:

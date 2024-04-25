@@ -20,8 +20,8 @@ public:
     // vIndex: 1, symbol: ??ECompoundBlockVolumeIterator@@UEAAAEAVBaseBlockLocationIterator@@XZ
     virtual class BaseBlockLocationIterator& operator++();
 
-    // vIndex: 2, symbol: ??ECompoundBlockVolumeIterator@@UEAA?AVBaseBlockLocationIterator@@H@Z
-    virtual class BaseBlockLocationIterator operator++(int);
+    // vIndex: 2, symbol: ?isValid@CompoundBlockVolumeIterator@@UEBA_NXZ
+    virtual bool isValid() const;
 
     // vIndex: 3, symbol: ?_begin@CompoundBlockVolumeIterator@@MEAAXXZ
     virtual void _begin();

@@ -2,15 +2,28 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class BlockEventDispatcher {
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
+// clang-format on
+
+class BlockEventDispatcher : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
     BlockEventDispatcher& operator=(BlockEventDispatcher const&);
     BlockEventDispatcher(BlockEventDispatcher const&);
-    BlockEventDispatcher();
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: __gen_??1BlockEventDispatcher@@UEAA@XZ
+    virtual ~BlockEventDispatcher() = default;
+
+    // symbol: ??0BlockEventDispatcher@@QEAA@XZ
+    MCAPI BlockEventDispatcher();
+
     // symbol: ?dispatchEvent@BlockEventDispatcher@@QEAAXAEBVBlockPos@@IAEBVBlock@@1PEAVActor@@@Z
     MCAPI void dispatchEvent(
         class BlockPos const& pos,

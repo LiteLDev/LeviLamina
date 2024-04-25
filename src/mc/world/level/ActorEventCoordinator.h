@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/common/wrapper/CoordinatorResult.h"
 #include "mc/entity/utilities/ActorInitializationMethod.h"
-#include "mc/enums/MovePredictionType.h"
 #include "mc/events/ActorGameplayEvent.h"
 #include "mc/events/MutableActorGameplayEvent.h"
 #include "mc/world/events/EventRef.h"
@@ -36,9 +35,6 @@ public:
     // ?sendActorCreationAttemptFailed@ActorEventCoordinator@@QEAAXAEAVActor@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     MCAPI void sendActorCreationAttemptFailed(class Actor& actor, std::string_view reason);
 
-    // symbol: ?sendActorPredictedMove@ActorEventCoordinator@@QEAAXAEAVActor@@W4MovePredictionType@@AEBVVec3@@@Z
-    MCAPI void sendActorPredictedMove(class Actor& actor, ::MovePredictionType predictionType, class Vec3 const& pos);
-
     // symbol: ?sendActorSneakChanged@ActorEventCoordinator@@QEAAXAEAVActor@@_N@Z
     MCAPI void sendActorSneakChanged(class Actor& actor, bool isSneaking);
 
@@ -67,6 +63,12 @@ public:
 
     // symbol: ?sendEvent@ActorEventCoordinator@@QEAAXAEBV?$EventRef@U?$ActorGameplayEvent@X@@@@@Z
     MCAPI void sendEvent(class EventRef<struct ActorGameplayEvent<void>> const& event);
+
+    // symbol: ?sendServerPlayerAuthInputApplied@ActorEventCoordinator@@QEAAXAEAVPlayer@@@Z
+    MCAPI void sendServerPlayerAuthInputApplied(class Player&);
+
+    // symbol: ?sendServerPlayerAuthInputReceived@ActorEventCoordinator@@QEAAXAEAVPlayer@@@Z
+    MCAPI void sendServerPlayerAuthInputReceived(class Player&);
 
     // NOLINTEND
 };

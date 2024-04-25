@@ -39,16 +39,16 @@ public:
     // vIndex: 10, symbol: __gen_??1Cat@@UEAA@XZ
     virtual ~Cat() = default;
 
-    // vIndex: 66, symbol: ?onTame@Cat@@UEAAXXZ
+    // vIndex: 62, symbol: ?onTame@Cat@@UEAAXXZ
     virtual void onTame();
 
-    // vIndex: 73, symbol: ?getAmbientSound@Cat@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 69, symbol: ?getAmbientSound@Cat@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
     virtual ::Puv::Legacy::LevelSoundEvent getAmbientSound() const;
 
-    // vIndex: 150, symbol: ?updateEntitySpecificMolangVariables@Cat@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 146, symbol: ?updateEntitySpecificMolangVariables@Cat@@UEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // vIndex: 165, symbol: ?aiStep@Cat@@UEAAXXZ
+    // vIndex: 160, symbol: ?aiStep@Cat@@UEAAXXZ
     virtual void aiStep();
 
     // symbol: ??0Cat@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

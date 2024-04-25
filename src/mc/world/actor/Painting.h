@@ -42,32 +42,32 @@ public:
     // vIndex: 13, symbol: ?remove@Painting@@UEAAXXZ
     virtual void remove();
 
-    // vIndex: 27, symbol:
+    // vIndex: 25, symbol:
     // ?tryCreateAddActorPacket@Painting@@UEAA?AV?$unique_ptr@VAddActorBasePacket@@U?$default_delete@VAddActorBasePacket@@@std@@@std@@XZ
     virtual std::unique_ptr<class AddActorBasePacket> tryCreateAddActorPacket();
 
-    // vIndex: 40, symbol: ?getShadowRadius@Painting@@UEBAMXZ
+    // vIndex: 38, symbol: ?getShadowRadius@Painting@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 47, symbol: ?isPickable@Painting@@UEAA_NXZ
+    // vIndex: 45, symbol: ?isPickable@Painting@@UEAA_NXZ
     virtual bool isPickable();
 
-    // vIndex: 153, symbol: ?readAdditionalSaveData@Painting@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 149, symbol: ?readAdditionalSaveData@Painting@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 154, symbol: ?addAdditionalSaveData@Painting@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 150, symbol: ?addAdditionalSaveData@Painting@@MEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 157, symbol: ?getWidth@Painting@@UEBAHXZ
+    // vIndex: 153, symbol: ?getWidth@Painting@@UEBAHXZ
     virtual int getWidth() const;
 
-    // vIndex: 158, symbol: ?getHeight@Painting@@UEBAHXZ
+    // vIndex: 154, symbol: ?getHeight@Painting@@UEBAHXZ
     virtual int getHeight() const;
 
-    // vIndex: 159, symbol: ?dropItem@Painting@@UEAAXXZ
+    // vIndex: 155, symbol: ?dropItem@Painting@@UEAAXXZ
     virtual void dropItem();
 
-    // vIndex: 160, symbol: ?placeHangingEntity@Painting@@UEAA_NAEAVBlockSource@@H@Z
+    // vIndex: 156, symbol: ?placeHangingEntity@Painting@@UEAA_NAEAVBlockSource@@H@Z
     virtual bool placeHangingEntity(class BlockSource& region, int direction);
 
     // symbol: ??0Painting@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

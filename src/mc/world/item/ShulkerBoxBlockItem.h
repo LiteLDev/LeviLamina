@@ -32,7 +32,7 @@ public:
     // vIndex: 32, symbol: ?getLevelDataForAuxValue@ShulkerBoxBlockItem@@UEBAHH@Z
     virtual int getLevelDataForAuxValue(int auxValue) const;
 
-    // vIndex: 47, symbol:
+    // vIndex: 48, symbol:
     // ?appendFormattedHovertext@ShulkerBoxBlockItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
     virtual void appendFormattedHovertext(
         class ItemStackBase const& stack,
@@ -41,7 +41,7 @@ public:
         bool                       showCategory
     ) const;
 
-    // vIndex: 82, symbol:
+    // vIndex: 83, symbol:
     // ?buildEffectDescriptionName@ShulkerBoxBlockItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemStackBase@@@Z
     virtual std::string buildEffectDescriptionName(class ItemStackBase const&) const;
 

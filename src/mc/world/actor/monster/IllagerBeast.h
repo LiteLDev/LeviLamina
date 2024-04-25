@@ -39,7 +39,7 @@ public:
     // vIndex: 10, symbol: __gen_??1IllagerBeast@@UEAA@XZ
     virtual ~IllagerBeast() = default;
 
-    // vIndex: 23, symbol: ?blockedByShield@IllagerBeast@@UEAAXAEBVActorDamageSource@@AEAVActor@@@Z
+    // vIndex: 21, symbol: ?blockedByShield@IllagerBeast@@UEAAXAEBVActorDamageSource@@AEAVActor@@@Z
     virtual void blockedByShield(class ActorDamageSource const& source, class Actor& blocker);
 
     // symbol: ??0IllagerBeast@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

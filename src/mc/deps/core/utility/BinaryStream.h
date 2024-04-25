@@ -84,6 +84,18 @@ public:
 
     // private:
     // NOLINTBEGIN
+    // symbol: ?_writeInteger@BinaryStream@@AEAAXHPEBD0@Z
+    MCAPI void _writeInteger(int, char const*, char const*);
+
+    // symbol: ?_writeInteger@BinaryStream@@AEAAXFPEBD0@Z
+    MCAPI void _writeInteger(short, char const*, char const*);
+
+    // symbol: ?_writeInteger@BinaryStream@@AEAAXEPEBD0@Z
+    MCAPI void _writeInteger(uchar, char const*, char const*);
+
+    // symbol: ?_writeInteger@BinaryStream@@AEAAXGPEBD0@Z
+    MCAPI void _writeInteger(ushort, char const*, char const*);
+
     // symbol: ?write@BinaryStream@@AEAAXPEBX_K@Z
     MCAPI void write(void const* origin, uint64 num);
 

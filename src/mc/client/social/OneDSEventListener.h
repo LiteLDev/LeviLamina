@@ -73,7 +73,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?ENDPOINT_IDENTIFIER@OneDSEventListener@Events@Social@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B

@@ -100,7 +100,7 @@ public:
 
     // NOLINTEND
 
-protected:
+    // protected:
     // NOLINTBEGIN
     // symbol: ?TICKING_QUEUE_PASS_LIMIT@WorldGenerator@@1_KB
     MCAPI static uint64 const TICKING_QUEUE_PASS_LIMIT;

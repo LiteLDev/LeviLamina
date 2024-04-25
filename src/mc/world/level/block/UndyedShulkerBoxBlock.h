@@ -84,7 +84,7 @@ public:
 
     // NOLINTEND
 
-protected:
+    // protected:
     // NOLINTBEGIN
     // symbol: ?SHULKER_BOX_DOESNT_BREAK_FALLING_BLOCK_VERSION@UndyedShulkerBoxBlock@@1VBaseGameVersion@@B
     MCAPI static class BaseGameVersion const SHULKER_BOX_DOESNT_BREAK_FALLING_BLOCK_VERSION;

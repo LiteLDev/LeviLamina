@@ -9,7 +9,7 @@ public:
     LowMemoryWatcher(LowMemoryWatcher const&);
     LowMemoryWatcher();
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mPlatformToldUsLowMemory@LowMemoryWatcher@@0_NA
     MCAPI static bool mPlatformToldUsLowMemory;

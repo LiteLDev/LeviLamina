@@ -8,8 +8,11 @@
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { class IDependencyLoader; }
+namespace Scripting { struct Capabilities; }
 namespace Scripting { struct ModuleBinding; }
+namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting { struct ScriptData; }
+namespace mce { class UUID; }
 // clang-format on
 
 class ScriptPlugin : public ::Scripting::IDependencyLoader {
@@ -29,9 +32,13 @@ public:
     virtual std::optional<struct Scripting::ScriptData>
     onLoadScript(std::string const& name, std::optional<std::vector<struct Scripting::ModuleBinding>>);
 
+    // symbol: ??0ScriptPlugin@@QEAA@$$QEAV0@@Z
+    MCAPI ScriptPlugin(class ScriptPlugin&& rhs);
+
     // symbol:
-    // ?getScriptFilePaths@ScriptPlugin@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
-    MCAPI std::vector<std::string> getScriptFilePaths() const;
+    // ??0ScriptPlugin@@QEAA@V?$shared_ptr@VIScriptPluginSource@@@std@@$$QEAUModuleDescriptor@Scripting@@$$QEAV?$vector@UModuleDescriptor@Scripting@@V?$allocator@UModuleDescriptor@Scripting@@@std@@@2@$$QEAUCapabilities@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@AEBVUUID@mce@@44@Z
+    MCAPI
+    ScriptPlugin(std::shared_ptr<class IScriptPluginSource>, struct Scripting::ModuleDescriptor&&, std::vector<struct Scripting::ModuleDescriptor>&&, struct Scripting::Capabilities&&, std::string const&, class mce::UUID const&, std::string const&, std::string const&);
 
     // NOLINTEND
 

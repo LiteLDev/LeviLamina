@@ -2,10 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/biome/BiomeComponentBase.h"
-
-class ClimateAttributes : public ::BiomeComponentBase {
+class ClimateAttributes {
 public:
     // prevent constructor by default
     ClimateAttributes& operator=(ClimateAttributes const&);

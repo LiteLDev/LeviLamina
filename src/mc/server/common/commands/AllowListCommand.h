@@ -25,7 +25,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mAllowListFile@AllowListCommand@@0PEAVAllowListFile@@EA
     MCAPI static class AllowListFile* mAllowListFile;

@@ -42,7 +42,7 @@ public:
     // vIndex: 10, symbol: ??1Bee@@UEAA@XZ
     virtual ~Bee();
 
-    // vIndex: 105, symbol: ?onSynchedDataUpdate@Bee@@UEAAXH@Z
+    // vIndex: 101, symbol: ?onSynchedDataUpdate@Bee@@UEAAXH@Z
     virtual void onSynchedDataUpdate(int dataId);
 
     // symbol: ??0Bee@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

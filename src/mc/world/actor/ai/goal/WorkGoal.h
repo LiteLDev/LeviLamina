@@ -56,7 +56,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?RAIN_CHECK_MAX_COOLDOWN@WorkGoal@@0HB
     MCAPI static int const RAIN_CHECK_MAX_COOLDOWN;

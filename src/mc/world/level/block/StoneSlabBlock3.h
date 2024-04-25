@@ -51,8 +51,9 @@ public:
     virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const& block) const;
 
     // symbol:
-    // ??0StoneSlabBlock3@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NV?$WeakPtr@VBlockLegacy@@@@@Z
-    MCAPI StoneSlabBlock3(std::string const& nameId, int id, bool fullSize, class WeakPtr<class BlockLegacy> baseSlab);
+    // ??0StoneSlabBlock3@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NV?$WeakPtr@$$CBVBlockLegacy@@@@@Z
+    MCAPI
+    StoneSlabBlock3(std::string const& nameId, int id, bool fullSize, class WeakPtr<class BlockLegacy const> baseSlab);
 
     // symbol:
     // ?SLAB_NAMES@StoneSlabBlock3@@2V?$array@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$07@std@@B

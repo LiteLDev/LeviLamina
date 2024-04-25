@@ -28,6 +28,10 @@ public:
     // vIndex: 3, symbol: ?_allowReadActor@StructureTemplate@@MEBA_NAEBVActor@@@Z
     virtual bool _allowReadActor(class Actor const& actor) const;
 
+    // symbol: ??0StructureTemplate@@QEAA@AEBV0@V?$NonOwnerPointer@VIUnknownBlockTypeRegistry@@@Bedrock@@@Z
+    MCAPI
+    StructureTemplate(class StructureTemplate const& temp, class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry>);
+
     // symbol:
     // ??0StructureTemplate@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@V?$NonOwnerPointer@VIUnknownBlockTypeRegistry@@@Bedrock@@@Z
     MCAPI StructureTemplate(std::string_view name, class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry>);
@@ -41,9 +45,6 @@ public:
         class BlockPos const&          capturePosition,
         class StructureSettings const& structureSettings
     );
-
-    // symbol: ?getBlockAtPos@StructureTemplate@@QEBAAEBVBlock@@AEBVBlockPos@@@Z
-    MCAPI class Block const& getBlockAtPos(class BlockPos const& pos) const;
 
     // symbol:
     // ?getJigsawMarkers@StructureTemplate@@QEBA?AV?$vector@VJigsawStructureBlockInfo@@V?$allocator@VJigsawStructureBlockInfo@@@std@@@std@@XZ
@@ -65,6 +66,13 @@ public:
     // symbol: ?isLoaded@StructureTemplate@@QEBA_NXZ
     MCAPI bool isLoaded() const;
 
+    // symbol: ?isWaterlogged@StructureTemplate@@QEBA?B_NAEBVBlockPos@@@Z
+    MCAPI bool const isWaterlogged(class BlockPos const&) const;
+
+    // symbol:
+    // ?optimizePalette@StructureTemplate@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI void optimizePalette(std::string const&);
+
     // symbol:
     // ?placeInWorld@StructureTemplate@@QEBAXAEAVBlockSource@@AEBVBlockPalette@@AEBVBlockPos@@AEBVStructureSettings@@PEAVStructureTelemetryServerData@@_N@Z
     MCAPI void placeInWorld(
@@ -85,6 +93,9 @@ public:
     // symbol: ?save@StructureTemplate@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
     MCAPI std::unique_ptr<class CompoundTag> save() const;
 
+    // symbol: ?setBlock@StructureTemplate@@QEAA_NAEBVBlockPos@@PEBVBlock@@_N@Z
+    MCAPI bool setBlock(class BlockPos const&, class Block const*, bool);
+
     // symbol: ?setStructureTemplateData@StructureTemplate@@QEAAXAEBVStructureTemplateData@@@Z
     MCAPI void setStructureTemplateData(class StructureTemplateData const& data);
 
@@ -94,6 +105,9 @@ public:
     structureTemplateDataIsValid(class BlockSource const&, std::string const&, class BlockPos const&, class StructureSettings const&)
         const;
 
+    // symbol: ?tryGetBlockAtPos@StructureTemplate@@QEBAPEBVBlock@@AEBVBlockPos@@@Z
+    MCAPI class Block const* tryGetBlockAtPos(class BlockPos const&) const;
+
     // symbol: ?INVALID_POSITION@StructureTemplate@@2VBlockPos@@B
     MCAPI static class BlockPos const INVALID_POSITION;
 
@@ -101,6 +115,9 @@ public:
 
     // private:
     // NOLINTBEGIN
+    // symbol: ?_clearStructureData@StructureTemplate@@AEAAXXZ
+    MCAPI void _clearStructureData();
+
     // symbol: ?_fillBlockInfo@StructureTemplate@@AEAAXAEAVBlockSource@@AEBVBlockPos@@11@Z
     MCAPI void _fillBlockInfo(
         class BlockSource&    region,
@@ -112,6 +129,10 @@ public:
     // symbol: ?_fillEntityList@StructureTemplate@@AEAAXAEAVBlockSource@@AEBVBlockPos@@1@Z
     MCAPI void
     _fillEntityList(class BlockSource& region, class BlockPos const& minCorner, class BlockPos const& maxCorner);
+
+    // symbol:
+    // ?_getOrCreateIndex@StructureTemplate@@AEAAHAEBVBlock@@AEAV?$map@PEBVBlock@@HU?$less@PEBVBlock@@@std@@V?$allocator@U?$pair@QEBVBlock@@H@std@@@3@@std@@AEAVStructureBlockPalette@@@Z
+    MCAPI int _getOrCreateIndex(class Block const&, std::map<class Block const*, int>&, class StructureBlockPalette&);
 
     // symbol: ?_placeEntitiesInWorld@StructureTemplate@@AEBAXAEAVBlockSource@@AEAVDataLoadHelper@@_N@Z
     MCAPI void _placeEntitiesInWorld(
@@ -144,7 +165,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?NO_BLOCK_INDEX_VALUE@StructureTemplate@@0HB
     MCAPI static int const NO_BLOCK_INDEX_VALUE;

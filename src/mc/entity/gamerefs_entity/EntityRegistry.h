@@ -37,7 +37,7 @@ public:
 
     // NOLINTEND
 
-protected:
+    // protected:
     // NOLINTBEGIN
     // symbol: ?mRegistryCount@EntityRegistry@@1U?$atomic@I@std@@A
     MCAPI static std::atomic<uint> mRegistryCount;

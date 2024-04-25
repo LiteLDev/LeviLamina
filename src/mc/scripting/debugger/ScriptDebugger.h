@@ -5,6 +5,8 @@
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { class IDebuggerController; }
+namespace Scripting { class ScriptEngine; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class ScriptDebugger {
@@ -40,6 +42,11 @@ public:
     // symbol: ?stopProfiler@ScriptDebugger@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI void stopProfiler(std::string const& savePath);
 
+    // symbol:
+    // ??0ScriptDebugger@@QEAA@UScriptDebuggerSettings@@AEAUReflectionCtx@cereal@@AEAVScriptEngine@Scripting@@AEAVScriptPluginManager@@AEAVIScriptDebuggerWatchdog@@V?$unique_ptr@VIScriptTelemetryLogger@@U?$default_delete@VIScriptTelemetryLogger@@@std@@@std@@@Z
+    MCAPI
+    ScriptDebugger(struct ScriptDebuggerSettings, struct cereal::ReflectionCtx&, class Scripting::ScriptEngine&, class ScriptPluginManager&, class IScriptDebuggerWatchdog&, std::unique_ptr<class IScriptTelemetryLogger>);
+
     // symbol: ?checkConnections@ScriptDebugger@@QEAA_NXZ
     MCAPI bool checkConnections();
 
@@ -58,6 +65,13 @@ public:
 
     // symbol: ?_releaseController@ScriptDebugger@@AEAAXXZ
     MCAPI void _releaseController();
+
+    // symbol:
+    // ?_sanitizeHostName@ScriptDebugger@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
+    MCAPI std::string _sanitizeHostName(std::string const&) const;
+
+    // symbol: ?_sanitizePort@ScriptDebugger@@AEBAGI@Z
+    MCAPI ushort _sanitizePort(uint) const;
 
     // NOLINTEND
 };

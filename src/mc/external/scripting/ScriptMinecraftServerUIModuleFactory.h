@@ -49,7 +49,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?LegacyModuleName@ScriptMinecraftServerUIModuleFactory@@0PEBDEB
     MCAPI static char const* LegacyModuleName;

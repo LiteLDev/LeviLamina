@@ -38,7 +38,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mPermissionsFile@PermissionCommand@@0PEAVPermissionsFile@@EA
     MCAPI static class PermissionsFile* mPermissionsFile;

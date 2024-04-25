@@ -12,7 +12,7 @@ public:
     LoadingProgressTickingSystem(LoadingProgressTickingSystem const&);
     LoadingProgressTickingSystem();
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?mChunksNeededForLoadOffsets@LoadingProgressTickingSystem@@0V?$vector@VChunkPos@@V?$allocator@VChunkPos@@@std@@@std@@B

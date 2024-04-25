@@ -46,40 +46,40 @@ public:
     // vIndex: 10, symbol: ??1HangingActor@@UEAA@XZ
     virtual ~HangingActor();
 
-    // vIndex: 28, symbol: ?normalTick@HangingActor@@UEAAXXZ
+    // vIndex: 26, symbol: ?normalTick@HangingActor@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 43, symbol: ?getBrightness@HangingActor@@UEBAMMAEBVIConstBlockSource@@@Z
+    // vIndex: 41, symbol: ?getBrightness@HangingActor@@UEBAMMAEBVIConstBlockSource@@@Z
     virtual float getBrightness(float, class IConstBlockSource const& region) const;
 
-    // vIndex: 47, symbol: ?isPickable@HangingActor@@UEAA_NXZ
+    // vIndex: 45, symbol: ?isPickable@HangingActor@@UEAA_NXZ
     virtual bool isPickable();
 
-    // vIndex: 74, symbol: ?isInvulnerableTo@HangingActor@@UEBA_NAEBVActorDamageSource@@@Z
+    // vIndex: 70, symbol: ?isInvulnerableTo@HangingActor@@UEBA_NAEBVActorDamageSource@@@Z
     virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
-    // vIndex: 152, symbol: ?_hurt@HangingActor@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 148, symbol: ?_hurt@HangingActor@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 153, symbol: ?readAdditionalSaveData@HangingActor@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 149, symbol: ?readAdditionalSaveData@HangingActor@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 154, symbol: ?addAdditionalSaveData@HangingActor@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 150, symbol: ?addAdditionalSaveData@HangingActor@@MEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 157, symbol: ?getWidth@Painting@@UEBAHXZ
+    // vIndex: 153, symbol: ?getWidth@Painting@@UEBAHXZ
     virtual int getWidth() const = 0;
 
-    // vIndex: 158, symbol: ?getHeight@Painting@@UEBAHXZ
+    // vIndex: 154, symbol: ?getHeight@Painting@@UEBAHXZ
     virtual int getHeight() const = 0;
 
-    // vIndex: 159, symbol: ?dropItem@Painting@@UEAAXXZ
+    // vIndex: 155, symbol: ?dropItem@Painting@@UEAAXXZ
     virtual void dropItem() = 0;
 
-    // vIndex: 160, symbol: ?placeHangingEntity@HangingActor@@UEAA_NAEAVBlockSource@@H@Z
+    // vIndex: 156, symbol: ?placeHangingEntity@HangingActor@@UEAA_NAEAVBlockSource@@H@Z
     virtual bool placeHangingEntity(class BlockSource& region, int direction);
 
-    // vIndex: 161, symbol: ?wouldSurvive@HangingActor@@UEAA_NAEAVBlockSource@@@Z
+    // vIndex: 157, symbol: ?wouldSurvive@HangingActor@@UEAA_NAEAVBlockSource@@@Z
     virtual bool wouldSurvive(class BlockSource& region);
 
     // symbol: ??0HangingActor@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
@@ -121,7 +121,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?HANGING_OFFSET@HangingActor@@0MB
     MCAPI static float const HANGING_OFFSET;

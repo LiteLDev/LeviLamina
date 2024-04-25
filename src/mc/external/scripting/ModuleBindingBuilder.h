@@ -146,7 +146,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mEmptyConstantFactory@ModuleBindingBuilder@Scripting@@0UConstantFactory@2@A
     MCAPI static struct Scripting::ConstantFactory mEmptyConstantFactory;

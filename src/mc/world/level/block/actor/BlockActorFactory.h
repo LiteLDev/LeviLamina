@@ -24,7 +24,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?mCustomBlockEntityCreation@BlockActorFactory@@0V?$vector@U?$pair@W4BlockActorType@@V?$function@$$A6A?AV?$shared_ptr@VBlockActor@@@std@@AEBVBlockPos@@@Z@std@@@std@@V?$allocator@U?$pair@W4BlockActorType@@V?$function@$$A6A?AV?$shared_ptr@VBlockActor@@@std@@AEBVBlockPos@@@Z@std@@@std@@@2@@std@@A

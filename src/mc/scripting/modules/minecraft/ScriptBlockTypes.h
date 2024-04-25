@@ -19,12 +19,10 @@ public:
     // prevent constructor by default
     ScriptBlockTypes& operator=(ScriptBlockTypes const&);
     ScriptBlockTypes(ScriptBlockTypes const&);
+    ScriptBlockTypes();
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptBlockTypes@ScriptModuleMinecraft@@QEAA@XZ
-    MCAPI ScriptBlockTypes();
-
     // symbol:
     // ?get@ScriptBlockTypes@ScriptModuleMinecraft@@QEAA?AV?$optional@V?$StrongTypedObjectHandle@VScriptBlockType@ScriptModuleMinecraft@@@Scripting@@@std@@AEAVWeakLifetimeScope@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z
     MCAPI std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockType>>
@@ -47,6 +45,19 @@ public:
     // symbol:
     // ?bind_V010@ScriptBlockTypes@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptBlockTypes@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockTypes> bind_V010();
+
+    // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol:
+    // ?_generateAllBlockHandles@ScriptBlockTypes@ScriptModuleMinecraft@@AEAAXAEAVWeakLifetimeScope@Scripting@@@Z
+    MCAPI void _generateAllBlockHandles(class Scripting::WeakLifetimeScope& scope);
+
+    // symbol:
+    // ?_registerBlockTypeAlias@ScriptBlockTypes@ScriptModuleMinecraft@@AEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$StrongTypedObjectHandle@VScriptBlockType@ScriptModuleMinecraft@@@Scripting@@@Z
+    MCAPI void
+        _registerBlockTypeAlias(std::string, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockType>);
 
     // NOLINTEND
 };

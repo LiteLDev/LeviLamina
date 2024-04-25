@@ -17,11 +17,5 @@ public:
     // vIndex: 0, symbol: __gen_??1ServerPlayerEventCoordinator@@UEAA@XZ
     virtual ~ServerPlayerEventCoordinator() = default;
 
-    // symbol: ?sendPlayerAuthInputApplied@ServerPlayerEventCoordinator@@QEAAXAEAVPlayer@@@Z
-    MCAPI void sendPlayerAuthInputApplied(class Player& player);
-
-    // symbol: ?sendPlayerAuthInputReceived@ServerPlayerEventCoordinator@@QEAAXAEAVPlayer@@@Z
-    MCAPI void sendPlayerAuthInputReceived(class Player& player);
-
     // NOLINTEND
 };

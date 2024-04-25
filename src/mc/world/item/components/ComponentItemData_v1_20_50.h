@@ -9,21 +9,14 @@ namespace cereal { struct ReflectionCtx; }
 
 struct ComponentItemData_v1_20_50 {
 public:
+    // prevent constructor by default
+    ComponentItemData_v1_20_50& operator=(ComponentItemData_v1_20_50 const&);
+    ComponentItemData_v1_20_50(ComponentItemData_v1_20_50 const&);
+
+public:
     // NOLINTBEGIN
     // symbol: ??0ComponentItemData_v1_20_50@@QEAA@XZ
     MCAPI ComponentItemData_v1_20_50();
-
-    // symbol: ??0ComponentItemData_v1_20_50@@QEAA@$$QEAU0@@Z
-    MCAPI ComponentItemData_v1_20_50(struct ComponentItemData_v1_20_50&&);
-
-    // symbol: ??0ComponentItemData_v1_20_50@@QEAA@AEBU0@@Z
-    MCAPI ComponentItemData_v1_20_50(struct ComponentItemData_v1_20_50 const&);
-
-    // symbol: ??4ComponentItemData_v1_20_50@@QEAAAEAU0@$$QEAU0@@Z
-    MCAPI struct ComponentItemData_v1_20_50& operator=(struct ComponentItemData_v1_20_50&&);
-
-    // symbol: ??4ComponentItemData_v1_20_50@@QEAAAEAU0@AEBU0@@Z
-    MCAPI struct ComponentItemData_v1_20_50& operator=(struct ComponentItemData_v1_20_50 const&);
 
     // symbol: ??1ComponentItemData_v1_20_50@@QEAA@XZ
     MCAPI ~ComponentItemData_v1_20_50();

@@ -60,7 +60,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?RANDOM_SKEW_CHANCE@MangroveTreeRoots@@0MB
     MCAPI static float const RANDOM_SKEW_CHANCE;

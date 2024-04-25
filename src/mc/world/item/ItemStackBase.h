@@ -184,8 +184,8 @@ public:
     // symbol: ?getItem@ItemStackBase@@QEBAPEBVItem@@XZ
     MCAPI class Item const* getItem() const;
 
-    // symbol: ?getLegacyBlock@ItemStackBase@@QEBAAEBV?$WeakPtr@VBlockLegacy@@@@XZ
-    MCAPI class WeakPtr<class BlockLegacy> const& getLegacyBlock() const;
+    // symbol: ?getLegacyBlock@ItemStackBase@@QEBAAEBV?$WeakPtr@$$CBVBlockLegacy@@@@XZ
+    MCAPI class WeakPtr<class BlockLegacy const> const& getLegacyBlock() const;
 
     // symbol: ?getMaxDamage@ItemStackBase@@QEBAFXZ
     MCAPI short getMaxDamage() const;
@@ -581,7 +581,7 @@ public:
 
     // NOLINTEND
 
-protected:
+    // protected:
     // NOLINTBEGIN
     // symbol: ?TAG_CHARGED_ITEM@ItemStackBase@@1V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const TAG_CHARGED_ITEM;
@@ -594,7 +594,7 @@ protected:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?MAX_STACK_SIZE@ItemStackBase@@0HB
     MCAPI static int const MAX_STACK_SIZE;

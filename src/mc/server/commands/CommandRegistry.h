@@ -30,9 +30,10 @@ public:
     struct ParseTable;
     struct ParseToken;
     struct Signature;
-    struct SoftEnum;
     class Symbol;
     class Parser;
+    struct RegistryState;
+    struct SoftEnum;
     struct SymbolHasher;
     // clang-format on
 
@@ -175,22 +176,6 @@ public:
         // NOLINTEND
     };
 
-    struct SoftEnum {
-    public:
-        // prevent constructor by default
-        SoftEnum& operator=(SoftEnum const&);
-        SoftEnum(SoftEnum const&);
-        SoftEnum();
-
-    public:
-        // NOLINTBEGIN
-        // symbol:
-        // ??0SoftEnum@CommandRegistry@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
-        MCAPI SoftEnum(std::string const& name, std::vector<std::string> values);
-
-        // NOLINTEND
-    };
-
     class Symbol {
     public:
         // prevent constructor by default
@@ -269,6 +254,37 @@ public:
         // symbol:
         // ?_parse@Parser@CommandRegistry@@AEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
         MCAPI bool _parse(std::string const& in);
+
+        // NOLINTEND
+    };
+
+    struct RegistryState {
+    public:
+        // prevent constructor by default
+        RegistryState& operator=(RegistryState const&);
+        RegistryState(RegistryState const&);
+        RegistryState();
+
+    public:
+        // NOLINTBEGIN
+        // symbol: ??1RegistryState@CommandRegistry@@QEAA@XZ
+        MCAPI ~RegistryState();
+
+        // NOLINTEND
+    };
+
+    struct SoftEnum {
+    public:
+        // prevent constructor by default
+        SoftEnum& operator=(SoftEnum const&);
+        SoftEnum(SoftEnum const&);
+        SoftEnum();
+
+    public:
+        // NOLINTBEGIN
+        // symbol:
+        // ??0SoftEnum@CommandRegistry@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
+        MCAPI SoftEnum(std::string const& name, std::vector<std::string> values);
 
         // NOLINTEND
     };
@@ -771,7 +787,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?ParseRuleSymbols@CommandRegistry@@0QBU?$pair@P8CommandRegistry@@EBA_NPEAXAEBUParseToken@1@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@5@@ZVSymbol@1@@std@@B

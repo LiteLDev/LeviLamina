@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/enums/Compressibility.h"
+#include "mc/enums/TransportLayer.h"
 #include "mc/network/Connector.h"
 #include "mc/network/NetworkPeer.h"
 #include "mc/network/RakPeerHelper.h"
@@ -192,6 +193,9 @@ public:
 
     // symbol: ?getNetworkIdentifier@RakNetConnector@@UEBA?AVNetworkIdentifier@@XZ
     MCVAPI class NetworkIdentifier getNetworkIdentifier() const;
+
+    // symbol: ?getNetworkType@RakNetConnector@@UEBA?AW4TransportLayer@@XZ
+    MCVAPI ::TransportLayer getNetworkType() const;
 
     // symbol: ?getPeer@RakNetConnector@@UEAAPEAVRakPeerInterface@RakNet@@XZ
     MCVAPI class RakNet::RakPeerInterface* getPeer();

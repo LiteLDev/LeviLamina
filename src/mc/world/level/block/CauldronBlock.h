@@ -179,7 +179,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?BASE_WATER_PIXEL@CauldronBlock@@0HB
     MCAPI static int const BASE_WATER_PIXEL;

@@ -22,8 +22,8 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol:
-    // ?getProperty@MetaTypePropertyReader@cereal@@UEBA?AUmeta_prop@entt@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual entt::meta_prop getProperty(std::string const&) const;
+    // ?getProperty@MetaTypePropertyReader@cereal@@UEBA?AUmeta_prop@entt@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+    virtual entt::meta_prop getProperty(std::string_view) const;
 
     // vIndex: 1, symbol: ??1MetaTypePropertyReader@cereal@@UEAA@XZ
     virtual ~MetaTypePropertyReader();

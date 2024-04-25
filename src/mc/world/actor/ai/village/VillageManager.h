@@ -167,7 +167,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?MAX_POI_QUERIES@VillageManager@@0_KB
     MCAPI static uint64 const MAX_POI_QUERIES;

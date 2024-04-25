@@ -45,35 +45,35 @@ public:
     // vIndex: 10, symbol: __gen_??1Boat@@UEAA@XZ
     virtual ~Boat() = default;
 
-    // vIndex: 28, symbol: ?normalTick@Boat@@UEAAXXZ
+    // vIndex: 26, symbol: ?normalTick@Boat@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 33, symbol:
+    // vIndex: 31, symbol:
     // ?getExitTip@Boat@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@W4InputMode@@W4NewInteractionModel@@@Z
     virtual std::string getExitTip(std::string const& kind, ::InputMode mode, ::NewInteractionModel scheme) const;
 
-    // vIndex: 40, symbol: ?getShadowRadius@Boat@@UEBAMXZ
+    // vIndex: 38, symbol: ?getShadowRadius@Boat@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 47, symbol: ?isPickable@Boat@@UEAA_NXZ
+    // vIndex: 45, symbol: ?isPickable@Boat@@UEAA_NXZ
     virtual bool isPickable();
 
-    // vIndex: 74, symbol: ?isInvulnerableTo@Boat@@UEBA_NAEBVActorDamageSource@@@Z
+    // vIndex: 70, symbol: ?isInvulnerableTo@Boat@@UEBA_NAEBVActorDamageSource@@@Z
     virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
-    // vIndex: 103, symbol: ?getControllingPlayer@Boat@@UEBA?AUActorUniqueID@@XZ
+    // vIndex: 99, symbol: ?getControllingPlayer@Boat@@UEBA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID getControllingPlayer() const;
 
-    // vIndex: 106, symbol: ?canAddPassenger@Boat@@UEBA_NAEAVActor@@@Z
+    // vIndex: 102, symbol: ?canAddPassenger@Boat@@UEBA_NAEAVActor@@@Z
     virtual bool canAddPassenger(class Actor&) const;
 
-    // vIndex: 127, symbol: ?getPassengerYRotation@Boat@@UEBAMAEBVActor@@@Z
+    // vIndex: 123, symbol: ?getPassengerYRotation@Boat@@UEBAMAEBVActor@@@Z
     virtual float getPassengerYRotation(class Actor const&) const;
 
-    // vIndex: 152, symbol: ?_hurt@Boat@@EEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 148, symbol: ?_hurt@Boat@@EEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 157, symbol: ?destroy@Boat@@UEAAXPEAVActor@@@Z
+    // vIndex: 153, symbol: ?destroy@Boat@@UEAAXPEAVActor@@@Z
     virtual void destroy(class Actor* source);
 
     // symbol: ??0Boat@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

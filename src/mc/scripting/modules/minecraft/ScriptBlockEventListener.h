@@ -72,8 +72,8 @@ public:
     virtual ::EventResult onBlockDestructionStopped(class Player& player, class BlockPos const& blockPos, int progress);
 
     // vIndex: 6, symbol:
-    // ?onBlockDestructionStarted@ScriptBlockEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual ::EventResult onBlockDestructionStarted(class Player&, class BlockPos const&, uchar);
+    // ?onBlockDestructionStarted@ScriptBlockEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@AEBVBlock@@E@Z
+    virtual ::EventResult onBlockDestructionStarted(class Player&, class BlockPos const&, class Block const&, uchar);
 
     // vIndex: 7, symbol: ?onBlockInteractedWith@BlockEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@@Z
     virtual ::EventResult onBlockInteractedWith(class Player& player, class BlockPos const& blockPos);

@@ -39,7 +39,7 @@ public:
     // vIndex: 10, symbol: __gen_??1Sniffer@@UEAA@XZ
     virtual ~Sniffer() = default;
 
-    // vIndex: 73, symbol: ?getAmbientSound@Sniffer@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 69, symbol: ?getAmbientSound@Sniffer@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
     virtual ::Puv::Legacy::LevelSoundEvent getAmbientSound() const;
 
     // symbol: ??0Sniffer@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

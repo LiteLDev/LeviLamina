@@ -32,7 +32,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mInitialized@BrazeSDKManager@@0_NA
     MCAPI static bool mInitialized;

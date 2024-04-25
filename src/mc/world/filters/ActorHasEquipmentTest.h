@@ -37,5 +37,9 @@ public:
     // vIndex: 6, symbol: ?_serializeValue@ActorHasEquipmentTest@@MEBA?AVValue@Json@@XZ
     virtual class Json::Value _serializeValue() const;
 
+    // vIndex: 7, symbol:
+    // ?_isExpectedItem@ActorHasEquipmentTest@@MEBA_NAEBV?$vector@PEBVItemStack@@V?$allocator@PEBVItemStack@@@std@@@std@@@Z
+    virtual bool _isExpectedItem(std::vector<class ItemStack const*> const&) const;
+
     // NOLINTEND
 };

@@ -256,7 +256,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mLastId@Potion@@0HA
     MCAPI static int mLastId;

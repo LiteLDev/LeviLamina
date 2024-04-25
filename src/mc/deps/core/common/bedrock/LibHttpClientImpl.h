@@ -96,7 +96,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?sWeakThis@LibHttpClientImpl@Http@Bedrock@@0V?$weak_ptr@VLibHttpClientImpl@Http@Bedrock@@@std@@A
     MCAPI static std::weak_ptr<class Bedrock::Http::LibHttpClientImpl> sWeakThis;

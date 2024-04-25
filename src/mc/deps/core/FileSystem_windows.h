@@ -248,6 +248,9 @@ public:
     MCAPI class Core::Result
     _iterateOverDirectoryWide(std::wstring const&, ::Core::DirectoryIterationFlags, std::function<class Core::Result(struct Core::DirectoryIterationItem const&)>);
 
+    // symbol: ?_makeFailureFromFileSystemResult@FileSystem_windows@Core@@AEAA?AVResult@2@AEBVerror_code@std@@PEBD1@Z
+    MCAPI class Core::Result _makeFailureFromFileSystemResult(std::error_code const&, char const*, char const*);
+
     // NOLINTEND
 };
 

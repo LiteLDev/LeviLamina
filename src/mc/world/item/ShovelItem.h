@@ -37,10 +37,10 @@ public:
     // vIndex: 31, symbol: ?canDestroySpecial@ShovelItem@@UEBA_NAEBVBlock@@@Z
     virtual bool canDestroySpecial(class Block const& block) const;
 
-    // vIndex: 49, symbol: ?getEnchantSlot@ShovelItem@@UEBAHXZ
+    // vIndex: 50, symbol: ?getEnchantSlot@ShovelItem@@UEBAHXZ
     virtual int getEnchantSlot() const;
 
-    // vIndex: 117, symbol:
+    // vIndex: 118, symbol:
     // ?_useOn@ShovelItem@@MEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)

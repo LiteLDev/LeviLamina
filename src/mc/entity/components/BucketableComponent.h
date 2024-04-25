@@ -24,7 +24,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?WATER_BUCKET_USEABLE_VERSION@BucketableComponent@@0VBaseGameVersion@@B
     MCAPI static class BaseGameVersion const WATER_BUCKET_USEABLE_VERSION;

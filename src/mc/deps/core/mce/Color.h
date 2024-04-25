@@ -28,9 +28,6 @@ public:
     // symbol: ?toHexString@Color@mce@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string toHexString() const;
 
-    // symbol: ?fromARGB@Color@mce@@SA?AV12@H@Z
-    MCAPI static class mce::Color fromARGB(int);
-
     // symbol: ?fromHexString@Color@mce@@SA?AV12@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI static class mce::Color fromHexString(std::string const&);
 

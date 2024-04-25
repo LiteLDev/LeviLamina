@@ -12,6 +12,7 @@
 // clang-format off
 namespace Core { class File; }
 namespace Core { class FileOpenMode; }
+namespace Core { class FileSizePresetToken; }
 namespace Core { class Path; }
 namespace Core { class Result; }
 namespace Core { struct DirectoryIterationItem; }
@@ -116,6 +117,11 @@ public:
         class Core::FileOpenMode  openMode,
         ::Core::FileBufferingMode bufferingMode
     );
+
+    // symbol:
+    // ?presetFileInitialSize@FileSystem@Core@@SA?AV?$unique_ptr@VFileSizePresetToken@Core@@U?$default_delete@VFileSizePresetToken@Core@@@std@@@std@@AEBVPath@2@_K@Z
+    MCAPI static std::unique_ptr<class Core::FileSizePresetToken>
+    presetFileInitialSize(class Core::Path const&, uint64);
 
     // symbol: ?readFileData@FileSystem@Core@@SA?AVResult@2@AEBVPath@2@AEAV?$vector@EV?$allocator@E@std@@@std@@@Z
     MCAPI static class Core::Result readFileData(class Core::Path const& filePath, std::vector<uchar>& data);

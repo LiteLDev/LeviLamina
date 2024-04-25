@@ -136,7 +136,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?ARM_ANIMATION_SPEED@PistonBlockActor@@0MB
     MCAPI static float const ARM_ANIMATION_SPEED;

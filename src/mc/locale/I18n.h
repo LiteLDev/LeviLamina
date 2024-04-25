@@ -4,13 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/wrapper/optional_ref.h"
-#include "mc/deps/core/Subject.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock::Threading { class Mutex; }
-namespace Json { class Value; }
-// clang-format on
+#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 
 class I18n {
 public:
@@ -21,195 +15,130 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?addI18nObserver@I18n@@SAXAEAVI18nObserver@@@Z
-    MCAPI static void addI18nObserver(class I18nObserver& observer);
+    // vIndex: 0, symbol: ??1I18n@@UEAA@XZ
+    virtual ~I18n();
 
-    // symbol:
-    // ?appendLanguageStringsFromPack@I18n@@SAXAEBVPackManifest@@AEBV?$multimap@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@2@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@2@@std@@@2@@std@@@Z
-    MCAPI static void appendLanguageStringsFromPack(
-        class PackManifest const&                                              manifest,
-        std::multimap<std::string, std::pair<std::string, std::string>> const& localizationMapping
-    );
+    // vIndex: 1, symbol: ?clearLanguages@I18nImpl@@UEAAXXZ
+    virtual void clearLanguages() = 0;
 
-    // symbol: ?chooseLanguage@I18n@@SAXAEBVLocalization@@@Z
-    MCAPI static void chooseLanguage(class Localization const& chosen);
+    // vIndex: 2, symbol:
+    // ?findAvailableLanguages@I18nImpl@@UEAA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEAVResourcePackManager@@@Z
+    virtual std::vector<std::string> findAvailableLanguages(class ResourcePackManager&) = 0;
 
-    // symbol: ?chooseLanguage@I18n@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static void chooseLanguage(std::string const& code);
+    // vIndex: 3, symbol:
+    // ?findAvailableLanguageNames@I18nImpl@@UEAA?AV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@AEAVResourcePackManager@@@Z
+    virtual std::unordered_map<std::string, std::string> findAvailableLanguageNames(class ResourcePackManager&) = 0;
 
-    // symbol:
-    // ?findAvailableLanguageNames@I18n@@SA?AV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@AEAVResourcePackManager@@@Z
-    MCAPI static std::unordered_map<std::string, std::string> findAvailableLanguageNames(class ResourcePackManager&);
+    // vIndex: 4, symbol:
+    // ?loadLanguages@I18nImpl@@UEAAXAEAVResourcePackManager@@V?$not_null@V?$NonOwnerPointer@VResourceLoadManager@@@Bedrock@@@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    virtual void
+    loadLanguages(class ResourcePackManager&, Bedrock::NotNullNonOwnerPtr<class ResourceLoadManager>, std::string const&) = 0;
 
-    // symbol:
-    // ?findAvailableLanguages@I18n@@SA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEAVResourcePackManager@@@Z
-    MCAPI static std::vector<std::string> findAvailableLanguages(class ResourcePackManager&);
+    // vIndex: 5, symbol: ?loadAllLanguages@I18nImpl@@UEAAXAEAVResourcePackManager@@@Z
+    virtual void loadAllLanguages(class ResourcePackManager&) = 0;
 
-    // symbol: ?get@I18n@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@PEBVLocalization@@@Z
-    MCAPI static std::string get(std::string const& langString, class Localization const* locale);
+    // vIndex: 6, symbol:
+    // ?getLanguageCodesFromPack@I18nImpl@@UEAA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBVPackAccessStrategy@@@Z
+    virtual std::vector<std::string> getLanguageCodesFromPack(class PackAccessStrategy const&) = 0;
 
-    // symbol:
-    // ?get@I18n@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@PEBVLocalization@@@Z
-    MCAPI static std::string
-    get(std::string const& id, std::vector<std::string> const& params, class Localization const* locale);
+    // vIndex: 7, symbol: ?loadLanguageKeywordsFromPack@I18nImpl@@UEAAXAEBVPackManifest@@AEBVPackAccessStrategy@@@Z
+    virtual void loadLanguageKeywordsFromPack(class PackManifest const&, class PackAccessStrategy const&) = 0;
 
-    // symbol: ?getCurrentLanguage@I18n@@SA?AV?$optional_ref@$$CBVLocalization@@@@XZ
-    MCAPI static class optional_ref<class Localization const> getCurrentLanguage();
+    // vIndex: 8, symbol:
+    // ?loadLanguageKeywordsFromPack@I18nImpl@@UEAAXAEBVPackManifest@@AEBVPackAccessStrategy@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
+    virtual void
+    loadLanguageKeywordsFromPack(class PackManifest const&, class PackAccessStrategy const&, std::vector<std::string> const&) = 0;
 
-    // symbol:
-    // ?getLanguageCodesFromPack@I18n@@SA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBVPackAccessStrategy@@@Z
-    MCAPI static std::vector<std::string> getLanguageCodesFromPack(class PackAccessStrategy const&);
+    // vIndex: 9, symbol:
+    // ?appendLanguageStringsFromPack@I18nImpl@@UEAAXAEBVPackManifest@@AEBV?$multimap@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@2@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@2@@std@@@2@@std@@@Z
+    virtual void
+    appendLanguageStringsFromPack(class PackManifest const&, std::multimap<std::string, std::pair<std::string, std::string>> const&) = 0;
 
-    // symbol: ?getLocaleCodeFor@I18n@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
-    MCAPI static std::string const& getLocaleCodeFor(std::string const& code);
+    // vIndex: 10, symbol:
+    // ?getLanguageKeywordsFromPack@I18nImpl@@UEAA?AV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@AEBVPackManifest@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+    virtual std::unordered_map<std::string, std::string>
+    getLanguageKeywordsFromPack(class PackManifest const&, std::string const&) = 0;
 
-    // symbol:
-    // ?getLocaleFor@I18n@@SAAEBVLocalization@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static class Localization const& getLocaleFor(std::string const& code);
+    // vIndex: 11, symbol:
+    // ?loadLangaugesByLocale@I18nImpl@@UEAAXAEBV?$unordered_multimap@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@2@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@2@@std@@@2@@std@@@Z
+    virtual void
+    loadLangaugesByLocale(std::unordered_multimap<std::string, std::pair<std::string, std::string>> const&) = 0;
 
-    // symbol:
-    // ?getPackKeywordValue@I18n@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPackManifest@@AEBV23@@Z
-    MCAPI static std::string getPackKeywordValue(class PackManifest const& manifest, std::string const& key);
+    // vIndex: 12, symbol:
+    // ?appendAdditionalTranslations@I18nImpl@@UEAAXAEBV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+    virtual void
+    appendAdditionalTranslations(std::unordered_map<std::string, std::string> const&, std::string const&) = 0;
 
-    // symbol:
-    // ?getPackKeywordValueForTelemetry@I18n@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPackManifest@@AEBV23@@Z
-    MCAPI static std::string
-    getPackKeywordValueForTelemetry(class PackManifest const& manifest, std::string const& key);
+    // vIndex: 13, symbol: ?appendLanguageStrings@I18nImpl@@UEAAXPEAVPackAccessStrategy@@@Z
+    virtual void appendLanguageStrings(class PackAccessStrategy*) = 0;
 
-    // symbol: ?isPackKeyword@I18n@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static bool isPackKeyword(std::string const& key);
+    // vIndex: 14, symbol:
+    // ?appendTranslations@I18nImpl@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@3@@Z
+    virtual void appendTranslations(std::string const&, std::unordered_map<std::string, std::string> const&) = 0;
 
-    // symbol: ?loadAllLanguages@I18n@@SAXAEAVResourcePackManager@@@Z
-    MCAPI static void loadAllLanguages(class ResourcePackManager& resourcePackManager);
+    // vIndex: 15, symbol: ?addI18nObserver@I18nImpl@@UEAAXAEAVI18nObserver@@@Z
+    virtual void addI18nObserver(class I18nObserver&) = 0;
 
-    // symbol:
-    // ?loadLanguageKeywordsFromPack@I18n@@SAXAEBVPackManifest@@AEBVPackAccessStrategy@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-    MCAPI static void loadLanguageKeywordsFromPack(
-        class PackManifest const&       manifest,
-        class PackAccessStrategy const& accessStrategy,
-        std::vector<std::string> const& languageCodes
-    );
+    // vIndex: 16, symbol:
+    // ?chooseLanguage@I18nImpl@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    virtual void chooseLanguage(std::string const&) = 0;
+
+    // vIndex: 17, symbol: ?chooseLanguage@I18nImpl@@UEAAXAEBVLocalization@@@Z
+    virtual void chooseLanguage(class Localization const&) = 0;
+
+    // vIndex: 18, symbol:
+    // ?get@I18nImpl@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@V?$shared_ptr@VLocalization@@@3@@Z
+    virtual std::string
+    get(std::string const&, std::vector<std::string> const&, std::shared_ptr<class Localization>) = 0;
+
+    // vIndex: 19, symbol:
+    // ?get@I18nImpl@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@V?$shared_ptr@VLocalization@@@3@@Z
+    virtual std::string get(std::string const&, std::shared_ptr<class Localization>) = 0;
+
+    // vIndex: 20, symbol:
+    // ?getPackKeywordValue@I18nImpl@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPackManifest@@AEBV23@@Z
+    virtual std::string getPackKeywordValue(class PackManifest const&, std::string const&) = 0;
+
+    // vIndex: 21, symbol:
+    // ?getPackKeywordValueForTelemetry@I18nImpl@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPackManifest@@AEBV23@@Z
+    virtual std::string getPackKeywordValueForTelemetry(class PackManifest const&, std::string const&) = 0;
+
+    // vIndex: 22, symbol:
+    // ?hasPackKeyEntry@I18nImpl@@UEAA_NAEBVPackManifest@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    virtual bool hasPackKeyEntry(class PackManifest const&, std::string const&) = 0;
+
+    // vIndex: 23, symbol:
+    // ?getSupportedLanguageCodes@I18nImpl@@UEAAAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
+    virtual std::vector<std::string> const& getSupportedLanguageCodes() = 0;
+
+    // vIndex: 24, symbol:
+    // ?getLanguageName@I18nImpl@@UEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
+    virtual std::string const& getLanguageName(std::string const&) = 0;
+
+    // vIndex: 25, symbol:
+    // ?getLocaleFor@I18nImpl@@UEAA?BV?$shared_ptr@VLocalization@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+    virtual std::shared_ptr<class Localization> const getLocaleFor(std::string const&) = 0;
+
+    // vIndex: 26, symbol:
+    // ?getLocaleCodeFor@I18nImpl@@UEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
+    virtual std::string const& getLocaleCodeFor(std::string const&) = 0;
+
+    // vIndex: 27, symbol: ?getCurrentLanguage@I18nImpl@@UEAA?AV?$optional_ref@$$CBVLocalization@@@@XZ
+    virtual class optional_ref<class Localization const> getCurrentLanguage() = 0;
+
+    // vIndex: 28, symbol: ?languageSupportsHypenSplitting@I18nImpl@@UEAA_NXZ
+    virtual bool languageSupportsHypenSplitting() = 0;
+
+    // vIndex: 29, symbol:
+    // ?getLocalizedAssetFileWithFallback@I18nImpl@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@0@Z
+    virtual std::string getLocalizedAssetFileWithFallback(std::string const&, std::string const&) = 0;
+
+    // vIndex: 30, symbol:
+    // ?isPackKeyword@I18nImpl@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    virtual bool isPackKeyword(std::string const&) = 0;
 
     // symbol: ?NeutralLangCode@I18n@@2QBDB
     MCAPI static char const NeutralLangCode[];
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    // symbol:
-    // ?_findAvailableLanguageNames@I18n@@CAXAEBVValue@Json@@AEAV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@@Z
-    MCAPI static void _findAvailableLanguageNames(
-        class Json::Value const&                      root,
-        std::unordered_map<std::string, std::string>& destination
-    );
-
-    // symbol:
-    // ?_findAvailableLanguages@I18n@@CAXAEBVValue@Json@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-    MCAPI static void _findAvailableLanguages(class Json::Value const& root, std::vector<std::string>& destination);
-
-    // symbol:
-    // ?_findLocaleFor@I18n@@CAPEAVLocalization@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static class Localization* _findLocaleFor(std::string const& code);
-
-    // symbol:
-    // ?_generatePackKeyPrefix@I18n@@CA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPackManifest@@@Z
-    MCAPI static std::string _generatePackKeyPrefix(class PackManifest const&);
-
-    // symbol:
-    // ?_getAdditionalTranslationsBackupLocale@I18n@@CAPEAVLocalization@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    MCAPI static class Localization*
-    _getAdditionalTranslationsBackupLocale(std::string const& langCode, bool createIfDoesNotExist);
-
-    // symbol:
-    // ?_getPackKeywordLocale@I18n@@CAAEAVLocalization@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static class Localization& _getPackKeywordLocale(std::string const& langCode);
-
-    // NOLINTEND
-
-private:
-    // NOLINTBEGIN
-    // symbol:
-    // ?mAdditionalTranslationsBackup@I18n@@0V?$vector@V?$unique_ptr@VLocalization@@U?$default_delete@VLocalization@@@std@@@std@@V?$allocator@V?$unique_ptr@VLocalization@@U?$default_delete@VLocalization@@@std@@@std@@@2@@std@@A
-    MCAPI static std::vector<std::unique_ptr<class Localization>> mAdditionalTranslationsBackup;
-
-    // symbol: ?mAdditionalTranslationsBackupMutex@I18n@@0VMutex@Threading@Bedrock@@A
-    MCAPI static class Bedrock::Threading::Mutex mAdditionalTranslationsBackupMutex;
-
-    // symbol: ?mCurrentLanguage@I18n@@0PEBVLocalization@@EB
-    MCAPI static class Localization const* mCurrentLanguage;
-
-    // symbol: ?mCurrentPackMetaLanguage@I18n@@0PEBVLocalization@@EB
-    MCAPI static class Localization const* mCurrentPackMetaLanguage;
-
-    // symbol: ?mEmptyLanguage@I18n@@0VLocalization@@B
-    MCAPI static class Localization const mEmptyLanguage;
-
-    // symbol:
-    // ?mFormatDictionary@I18n@@0V?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@@std@@@2@@std@@A
-    MCAPI static std::unordered_map<std::string, std::vector<std::string>> mFormatDictionary;
-
-    // symbol:
-    // ?mLanguageCodes@I18n@@0V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@A
-    MCAPI static std::vector<std::string> mLanguageCodes;
-
-    // symbol:
-    // ?mLanguageNames@I18n@@0V?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@A
-    MCAPI static std::unordered_map<std::string, std::string> mLanguageNames;
-
-    // symbol: ?mLanguageSupportsHypenSplitting@I18n@@0_NA
-    MCAPI static bool mLanguageSupportsHypenSplitting;
-
-    // symbol:
-    // ?mLanguages@I18n@@0V?$vector@V?$unique_ptr@VLocalization@@U?$default_delete@VLocalization@@@std@@@std@@V?$allocator@V?$unique_ptr@VLocalization@@U?$default_delete@VLocalization@@@std@@@std@@@2@@std@@A
-    MCAPI static std::vector<std::unique_ptr<class Localization>> mLanguages;
-
-    // symbol:
-    // ?mPackKeywordLanguages@I18n@@0V?$vector@V?$unique_ptr@VLocalization@@U?$default_delete@VLocalization@@@std@@@std@@V?$allocator@V?$unique_ptr@VLocalization@@U?$default_delete@VLocalization@@@std@@@std@@@2@@std@@A
-    MCAPI static std::vector<std::unique_ptr<class Localization>> mPackKeywordLanguages;
-
-    // symbol:
-    // ?mPackReservedKeys@I18n@@0V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@B
-    MCAPI static std::vector<std::string> const mPackReservedKeys;
-
-    // symbol: ?mResourcePackManager@I18n@@0PEAVResourcePackManager@@EA
-    MCAPI static class ResourcePackManager* mResourcePackManager;
-
-    // symbol: ?mSubject@I18n@@0V?$Subject@VI18nObserver@@VMutex@Threading@Bedrock@@@Core@@A
-    MCAPI static class Core::Subject<class I18nObserver, class Bedrock::Threading::Mutex> mSubject;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mAdditionalTranslationsBackup() { return mAdditionalTranslationsBackup; }
-
-    static auto& $mAdditionalTranslationsBackupMutex() { return mAdditionalTranslationsBackupMutex; }
-
-    static auto& $mCurrentLanguage() { return mCurrentLanguage; }
-
-    static auto& $mCurrentPackMetaLanguage() { return mCurrentPackMetaLanguage; }
-
-    static auto& $mEmptyLanguage() { return mEmptyLanguage; }
-
-    static auto& $mFormatDictionary() { return mFormatDictionary; }
-
-    static auto& $mLanguageCodes() { return mLanguageCodes; }
-
-    static auto& $mLanguageNames() { return mLanguageNames; }
-
-    static auto& $mLanguageSupportsHypenSplitting() { return mLanguageSupportsHypenSplitting; }
-
-    static auto& $mLanguages() { return mLanguages; }
-
-    static auto& $mPackKeywordLanguages() { return mPackKeywordLanguages; }
-
-    static auto& $mPackReservedKeys() { return mPackReservedKeys; }
-
-    static auto& $mResourcePackManager() { return mResourcePackManager; }
-
-    static auto& $mSubject() { return mSubject; }
 
     // NOLINTEND
 };

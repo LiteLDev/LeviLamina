@@ -42,7 +42,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?SITTING_ATTACK_VIEW_RANGE@DragonScanningGoal@@0MA
     MCAPI static float SITTING_ATTACK_VIEW_RANGE;

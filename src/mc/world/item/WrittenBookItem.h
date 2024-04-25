@@ -29,13 +29,13 @@ public:
     // vIndex: 0, symbol: __gen_??1WrittenBookItem@@UEAA@XZ
     virtual ~WrittenBookItem() = default;
 
-    // vIndex: 37, symbol: ?isGlint@WrittenBookItem@@MEBA_NAEBVItemStackBase@@@Z
+    // vIndex: 38, symbol: ?isGlint@WrittenBookItem@@MEBA_NAEBVItemStackBase@@@Z
     virtual bool isGlint(class ItemStackBase const& stack) const;
 
-    // vIndex: 46, symbol: ?requiresInteract@WrittenBookItem@@UEBA_NXZ
+    // vIndex: 47, symbol: ?requiresInteract@WrittenBookItem@@UEBA_NXZ
     virtual bool requiresInteract() const;
 
-    // vIndex: 47, symbol:
+    // vIndex: 48, symbol:
     // ?appendFormattedHovertext@WrittenBookItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
     virtual void appendFormattedHovertext(
         class ItemStackBase const& stack,
@@ -44,14 +44,14 @@ public:
         bool                       showCategory
     ) const;
 
-    // vIndex: 71, symbol: ?use@WrittenBookItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+    // vIndex: 72, symbol: ?use@WrittenBookItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
     virtual class ItemStack& use(class ItemStack& instance, class Player& player) const;
 
-    // vIndex: 81, symbol:
+    // vIndex: 82, symbol:
     // ?buildDescriptionId@WrittenBookItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 104, symbol:
+    // vIndex: 105, symbol:
     // ?getInteractText@WrittenBookItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPlayer@@@Z
     virtual std::string getInteractText(class Player const&) const;
 

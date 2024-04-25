@@ -95,9 +95,6 @@ public:
     // symbol: ?isSlicePack@ResourcePack@@QEBA_NXZ
     MCAPI bool isSlicePack() const;
 
-    // symbol: ?isTrusted@ResourcePack@@QEBA_NXZ
-    MCAPI bool isTrusted() const;
-
     // symbol: ?isType@ResourcePack@@QEBA_NW4PackType@@@Z
     MCAPI bool isType(::PackType packType) const;
 

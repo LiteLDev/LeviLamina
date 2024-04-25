@@ -46,37 +46,37 @@ public:
     // vIndex: 13, symbol: ?remove@Slime@@UEAAXXZ
     virtual void remove();
 
-    // vIndex: 40, symbol: ?getShadowRadius@Slime@@UEBAMXZ
+    // vIndex: 38, symbol: ?getShadowRadius@Slime@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 105, symbol: ?onSynchedDataUpdate@Slime@@UEAAXH@Z
+    // vIndex: 101, symbol: ?onSynchedDataUpdate@Slime@@UEAAXH@Z
     virtual void onSynchedDataUpdate(int dataId);
 
-    // vIndex: 153, symbol: ?readAdditionalSaveData@Slime@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 149, symbol: ?readAdditionalSaveData@Slime@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 154, symbol: ?addAdditionalSaveData@Slime@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 150, symbol: ?addAdditionalSaveData@Slime@@MEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 165, symbol: ?aiStep@Slime@@UEAAXXZ
+    // vIndex: 160, symbol: ?aiStep@Slime@@UEAAXXZ
     virtual void aiStep();
 
-    // vIndex: 167, symbol: ?checkSpawnRules@Slime@@UEAA_N_N@Z
+    // vIndex: 162, symbol: ?checkSpawnRules@Slime@@UEAA_N_N@Z
     virtual bool checkSpawnRules(bool fromSpawner);
 
-    // vIndex: 191, symbol: ?_getWalkTargetValue@Slime@@MEAAMAEBVBlockPos@@@Z
+    // vIndex: 186, symbol: ?_getWalkTargetValue@Slime@@MEAAMAEBVBlockPos@@@Z
     virtual float _getWalkTargetValue(class BlockPos const& pos);
 
-    // vIndex: 198, symbol: ?doPlayLandSound@Slime@@MEAA_NXZ
+    // vIndex: 193, symbol: ?doPlayLandSound@Slime@@MEAA_NXZ
     virtual bool doPlayLandSound();
 
-    // vIndex: 199, symbol: ?playJumpSound@Slime@@MEAAXXZ
+    // vIndex: 194, symbol: ?playJumpSound@Slime@@MEAAXXZ
     virtual void playJumpSound();
 
-    // vIndex: 200, symbol: ?decreaseSquish@Slime@@MEAAXXZ
+    // vIndex: 195, symbol: ?decreaseSquish@Slime@@MEAAXXZ
     virtual void decreaseSquish();
 
-    // vIndex: 201, symbol: ?createChild@Slime@@MEAA?AV?$OwnerPtr@VEntityContext@@@@H@Z
+    // vIndex: 196, symbol: ?createChild@Slime@@MEAA?AV?$OwnerPtr@VEntityContext@@@@H@Z
     virtual class OwnerPtr<class EntityContext> createChild(int i);
 
     // symbol: ??0Slime@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
