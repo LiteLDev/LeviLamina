@@ -26,6 +26,7 @@
 #include "ll/api/plugin/PluginManager.h"
 #include "ll/api/plugin/PluginManagerRegistry.h"
 #include "ll/api/reflection/Deserialization.h"
+#include "ll/api/service/ServerInfo.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/core/LeviLamina.h"
@@ -264,6 +265,7 @@ LL_TYPE_INSTANCE_HOOK(
     void,
     ::ServerInstance& ins
 ) {
+    setServerStatus(ServerStatus::Running);
     origin(ins);
     auto& registrar = PluginRegistrar::getInstance();
     auto  names     = registrar.getSortedPluginNames();
@@ -299,6 +301,7 @@ LL_TYPE_INSTANCE_HOOK(
     &ServerInstance::leaveGameSync,
     void
 ) {
+    setServerStatus(ServerStatus::Stopping);
     auto& registrar = PluginRegistrar::getInstance();
     auto  names     = registrar.getSortedPluginNames();
     if (!names.empty()) {
