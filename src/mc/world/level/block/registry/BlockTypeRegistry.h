@@ -225,29 +225,4 @@ public:
     MCAPI static std::shared_ptr<class BlockTypeRegistryRWLock> mRWLock;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mBlockAliasLookupMap() { return mBlockAliasLookupMap; }
-
-    static auto& $mBlockComplexAliasLookupMap() { return mBlockComplexAliasLookupMap; }
-
-    static auto& $mBlockComplexAliasPostSplitBlockNamesList() { return mBlockComplexAliasPostSplitBlockNamesList; }
-
-    static auto& $mBlockComplexAliasPostSplitBlockNamesLookupMap() {
-        return mBlockComplexAliasPostSplitBlockNamesLookupMap;
-    }
-
-    static auto& $mBlockLookupMap() { return mBlockLookupMap; }
-
-    static auto& $mBlockNameHashToStringMap() { return mBlockNameHashToStringMap; }
-
-    static auto& $mDirectAccessBlocks() { return mDirectAccessBlocks; }
-
-    static auto& $mKnownNamespaces() { return mKnownNamespaces; }
-
-    static auto& $mRWLock() { return mRWLock; }
-
-    // NOLINTEND
 };

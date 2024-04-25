@@ -60,11 +60,4 @@ public:
     MCAPI static class ProfilerLite gProfilerLiteInstance;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $gProfilerLiteInstance() { return gProfilerLiteInstance; }
-
-    // NOLINTEND
 };

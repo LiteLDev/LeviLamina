@@ -31,11 +31,4 @@ public:
     MCAPI static struct ScriptSettings* sScriptSettings;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $sScriptSettings() { return sScriptSettings; }
-
-    // NOLINTEND
 };

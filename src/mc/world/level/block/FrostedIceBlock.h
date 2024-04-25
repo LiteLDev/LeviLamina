@@ -64,13 +64,4 @@ public:
     MCAPI static int const MIN_NEIGHBORS;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $MAX_AGE() { return MAX_AGE; }
-
-    static auto& $MIN_NEIGHBORS() { return MIN_NEIGHBORS; }
-
-    // NOLINTEND
 };

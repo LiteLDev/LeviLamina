@@ -63,11 +63,4 @@ public:
     MCAPI static class Bedrock::Threading::ThreadLocalObject<std::weak_ptr<class ItemRegistry>> mThreadLocalRegistry;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mThreadLocalRegistry() { return mThreadLocalRegistry; }
-
-    // NOLINTEND
 };

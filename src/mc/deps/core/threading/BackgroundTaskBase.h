@@ -137,11 +137,4 @@ public:
     MCAPI static class BackgroundTaskBase* gCurrentTask;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $gCurrentTask() { return gCurrentTask; }
-
-    // NOLINTEND
 };

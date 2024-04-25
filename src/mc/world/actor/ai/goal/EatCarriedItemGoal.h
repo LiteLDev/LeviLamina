@@ -51,13 +51,4 @@ public:
     MCAPI static int const EATING_TIME;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $CHEW_CHANCE() { return CHEW_CHANCE; }
-
-    static auto& $EATING_TIME() { return EATING_TIME; }
-
-    // NOLINTEND
 };

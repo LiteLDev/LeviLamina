@@ -92,11 +92,4 @@ public:
     MCAPI static std::map<class Core::PathBuffer<std::string>, class Core::PathBuffer<std::string>> mUpgradePathMap;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mUpgradePathMap() { return mUpgradePathMap; }
-
-    // NOLINTEND
 };

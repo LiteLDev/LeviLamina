@@ -95,11 +95,4 @@ public:
     MCAPI static class BackgroundWorker* gLocalWorkerMappingSingleton;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $gLocalWorkerMappingSingleton() { return gLocalWorkerMappingSingleton; }
-
-    // NOLINTEND
 };

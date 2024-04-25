@@ -226,13 +226,4 @@ public:
     MCAPI static std::map<std::string, ::BlockActorType> const mIdClassMap;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mClassIdMap() { return mClassIdMap; }
-
-    static auto& $mIdClassMap() { return mIdClassMap; }
-
-    // NOLINTEND
 };

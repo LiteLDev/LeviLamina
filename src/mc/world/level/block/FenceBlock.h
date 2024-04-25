@@ -116,11 +116,4 @@ public:
     MCAPI static class BaseGameVersion const FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION() { return FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION; }
-
-    // NOLINTEND
 };

@@ -52,11 +52,4 @@ public:
     MCAPI static std::string const sDefaultConfigurationName;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $sDefaultConfigurationName() { return sDefaultConfigurationName; }
-
-    // NOLINTEND
 };

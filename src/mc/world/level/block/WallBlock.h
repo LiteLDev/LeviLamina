@@ -162,11 +162,4 @@ public:
     MCAPI static class BaseGameVersion const WALL_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $WALL_DOESNT_BREAK_FALLING_BLOCK_VERSION() { return WALL_DOESNT_BREAK_FALLING_BLOCK_VERSION; }
-
-    // NOLINTEND
 };

@@ -39,13 +39,4 @@ public:
     MCAPI static class IScriptDebugger* sServerScriptDebugger;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $sForcedPort() { return sForcedPort; }
-
-    static auto& $sServerScriptDebugger() { return sServerScriptDebugger; }
-
-    // NOLINTEND
 };

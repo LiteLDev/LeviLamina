@@ -128,17 +128,4 @@ public:
     MCAPI static std::unordered_map<class HashedString, struct ResolvedItemIconInfo> mEggTextureInfoMap;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $EGG_MASK_ID() { return EGG_MASK_ID; }
-
-    static auto& $NUM_SPAWN_EGG_TEXTURES() { return NUM_SPAWN_EGG_TEXTURES; }
-
-    static auto& $mCustomSpawnEggs() { return mCustomSpawnEggs; }
-
-    static auto& $mEggTextureInfoMap() { return mEggTextureInfoMap; }
-
-    // NOLINTEND
 };

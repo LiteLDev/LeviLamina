@@ -110,13 +110,4 @@ public:
     MCAPI static ushort const FACING_FROM_DATA[];
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $DATA_FROM_FACING() { return DATA_FROM_FACING; }
-
-    static auto& $FACING_FROM_DATA() { return FACING_FROM_DATA; }
-
-    // NOLINTEND
 };

@@ -209,11 +209,4 @@ public:
     MCAPI static class BidirectionalUnorderedMap<::ContainerType, std::string> const containerTypeMap;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $containerTypeMap() { return containerTypeMap; }
-
-    // NOLINTEND
 };

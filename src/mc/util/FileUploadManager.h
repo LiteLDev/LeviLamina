@@ -115,13 +115,4 @@ public:
     MCAPI static std::string const BOUNDARY;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $BOUNDARY() { return BOUNDARY; }
-
-    static auto& $CHUNK_UPLOAD_SIZE() { return CHUNK_UPLOAD_SIZE; }
-
-    // NOLINTEND
 };

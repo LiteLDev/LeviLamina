@@ -128,17 +128,4 @@ public:
     MCAPI static std::string_view STRUCTURE_WATCHTOWER_OVERGROWN;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $MSC_FEATURES() { return MSC_FEATURES; }
-
-    static auto& $PILLAGER_LOOT() { return PILLAGER_LOOT; }
-
-    static auto& $STRUCTURE_WATCHTOWER() { return STRUCTURE_WATCHTOWER; }
-
-    static auto& $STRUCTURE_WATCHTOWER_OVERGROWN() { return STRUCTURE_WATCHTOWER_OVERGROWN; }
-
-    // NOLINTEND
 };

@@ -44,11 +44,4 @@ public:
     MCAPI static class Bedrock::Threading::ThreadLocalObject<class Crypto::Hash::md5> mThreadLocalDigest;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mThreadLocalDigest() { return mThreadLocalDigest; }
-
-    // NOLINTEND
 };

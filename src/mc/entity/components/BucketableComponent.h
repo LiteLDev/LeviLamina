@@ -30,11 +30,4 @@ public:
     MCAPI static class BaseGameVersion const WATER_BUCKET_USEABLE_VERSION;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $WATER_BUCKET_USEABLE_VERSION() { return WATER_BUCKET_USEABLE_VERSION; }
-
-    // NOLINTEND
 };

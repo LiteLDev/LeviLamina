@@ -30,11 +30,4 @@ public:
     MCAPI static char const* const WHAT;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $WHAT() { return WHAT; }
-
-    // NOLINTEND
 };

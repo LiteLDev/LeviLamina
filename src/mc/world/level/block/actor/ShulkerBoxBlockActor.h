@@ -101,11 +101,4 @@ public:
     MCAPI static int const ITEMS_SIZE;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $ITEMS_SIZE() { return ITEMS_SIZE; }
-
-    // NOLINTEND
 };

@@ -43,11 +43,4 @@ public:
     MCAPI static std::atomic<uint> mRegistryCount;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mRegistryCount() { return mRegistryCount; }
-
-    // NOLINTEND
 };

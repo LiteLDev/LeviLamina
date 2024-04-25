@@ -82,11 +82,4 @@ public:
     MCAPI static bool mTrialHasEnded;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mTrialHasEnded() { return mTrialHasEnded; }
-
-    // NOLINTEND
 };

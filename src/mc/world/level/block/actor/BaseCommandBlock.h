@@ -102,11 +102,4 @@ public:
     MCAPI static std::string const DefaultCommandBlockName;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $DefaultCommandBlockName() { return DefaultCommandBlockName; }
-
-    // NOLINTEND
 };

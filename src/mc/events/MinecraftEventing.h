@@ -2006,29 +2006,4 @@ public:
     MCAPI static class Bedrock::Threading::Mutex sPlayerTelemetryMutex;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mAchievementEventing() { return mAchievementEventing; }
-
-    static auto& $mAcquisitionMethodMap() { return mAcquisitionMethodMap; }
-
-    static auto& $mCachedUUIDs() { return mCachedUUIDs; }
-
-    static auto& $mPlayerTelemetry() { return mPlayerTelemetry; }
-
-    static auto& $mRealtimeRoute() { return mRealtimeRoute; }
-
-    static auto& $mScreenFlow() { return mScreenFlow; }
-
-    static auto& $mUseMethodMap() { return mUseMethodMap; }
-
-    static auto& $sHeartbeatMutex() { return sHeartbeatMutex; }
-
-    static auto& $sMutex() { return sMutex; }
-
-    static auto& $sPlayerTelemetryMutex() { return sPlayerTelemetryMutex; }
-
-    // NOLINTEND
 };

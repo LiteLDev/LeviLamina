@@ -58,13 +58,4 @@ public:
     MCAPI static class BaseGameVersion const minHitThroughWallFixVersion;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $min3DAttackVersion() { return min3DAttackVersion; }
-
-    static auto& $minHitThroughWallFixVersion() { return minHitThroughWallFixVersion; }
-
-    // NOLINTEND
 };

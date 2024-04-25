@@ -168,37 +168,4 @@ public:
     MCAPI static struct ClimateUtils::Parameter const oceanContinentalness;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $EROSIONS() { return EROSIONS; }
-
-    static auto& $FULL_RANGE() { return FULL_RANGE; }
-
-    static auto& $HUMIDITIES() { return HUMIDITIES; }
-
-    static auto& $TEMPERATURES() { return TEMPERATURES; }
-
-    static auto& $coastContinentalness() { return coastContinentalness; }
-
-    static auto& $deepOceanContinentalness() { return deepOceanContinentalness; }
-
-    static auto& $dripstoneCavesContinentalness() { return dripstoneCavesContinentalness; }
-
-    static auto& $farInlandContinentalness() { return farInlandContinentalness; }
-
-    static auto& $inlandContinentalness() { return inlandContinentalness; }
-
-    static auto& $lushCavesHumidity() { return lushCavesHumidity; }
-
-    static auto& $midInlandContinentalness() { return midInlandContinentalness; }
-
-    static auto& $mushroomFieldsContinentalness() { return mushroomFieldsContinentalness; }
-
-    static auto& $nearInlandContinentalness() { return nearInlandContinentalness; }
-
-    static auto& $oceanContinentalness() { return oceanContinentalness; }
-
-    // NOLINTEND
 };

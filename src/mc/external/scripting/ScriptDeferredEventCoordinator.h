@@ -76,11 +76,4 @@ public:
         sEventExecutionOrder;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $sEventExecutionOrder() { return sEventExecutionOrder; }
-
-    // NOLINTEND
 };

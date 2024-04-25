@@ -157,13 +157,4 @@ public:
     MCAPI static std::unordered_map<std::string, ::DwellerComponent::DwellingType> const DWELLING_TYPES;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $DWELLING_ROLES() { return DWELLING_ROLES; }
-
-    static auto& $DWELLING_TYPES() { return DWELLING_TYPES; }
-
-    // NOLINTEND
 };

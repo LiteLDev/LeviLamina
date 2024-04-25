@@ -80,15 +80,4 @@ public:
     MCAPI static std::string const MAIN_ALLELE;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $GENE_ARRAY() { return GENE_ARRAY; }
-
-    static auto& $HIDDEN_ALLELE() { return HIDDEN_ALLELE; }
-
-    static auto& $MAIN_ALLELE() { return MAIN_ALLELE; }
-
-    // NOLINTEND
 };

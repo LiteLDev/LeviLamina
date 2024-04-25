@@ -269,15 +269,4 @@ public:
     MCAPI static std::unordered_map<std::string, int> mPotionsByName;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mLastId() { return mLastId; }
-
-    static auto& $mPotionsById() { return mPotionsById; }
-
-    static auto& $mPotionsByName() { return mPotionsByName; }
-
-    // NOLINTEND
 };

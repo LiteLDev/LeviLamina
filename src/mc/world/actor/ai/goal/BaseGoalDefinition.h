@@ -32,11 +32,4 @@ public:
     MCAPI static std::unordered_map<std::string, int> mControlFlagMap;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mControlFlagMap() { return mControlFlagMap; }
-
-    // NOLINTEND
 };

@@ -57,11 +57,4 @@ public:
     MCAPI static std::string const sTagName_Handle;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $sTagName_Handle() { return sTagName_Handle; }
-
-    // NOLINTEND
 };

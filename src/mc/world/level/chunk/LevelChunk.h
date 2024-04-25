@@ -778,11 +778,4 @@ public:
     MCAPI static int const UPDATE_MAP_BIT_SHIFT;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $UPDATE_MAP_BIT_SHIFT() { return UPDATE_MAP_BIT_SHIFT; }
-
-    // NOLINTEND
 };

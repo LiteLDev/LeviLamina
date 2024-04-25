@@ -85,11 +85,4 @@ public:
     MCAPI static class AttributeInstance mInvalidInstance;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mInvalidInstance() { return mInvalidInstance; }
-
-    // NOLINTEND
 };

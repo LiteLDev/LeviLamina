@@ -73,13 +73,4 @@ public:
     MCAPI static class Bedrock::Threading::Mutex sAllPoolsMutex;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $sAllPools() { return sAllPools; }
-
-    static auto& $sAllPoolsMutex() { return sAllPoolsMutex; }
-
-    // NOLINTEND
 };

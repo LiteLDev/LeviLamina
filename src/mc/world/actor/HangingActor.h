@@ -127,11 +127,4 @@ public:
     MCAPI static float const HANGING_OFFSET;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $HANGING_OFFSET() { return HANGING_OFFSET; }
-
-    // NOLINTEND
 };

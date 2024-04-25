@@ -20,11 +20,4 @@ public:
     MCAPI static class BidirectionalUnorderedMap<::ItemAcquisitionMethod, std::string> const mMap;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mMap() { return mMap; }
-
-    // NOLINTEND
 };

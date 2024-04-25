@@ -44,11 +44,4 @@ public:
     MCAPI static class PermissionsFile* mPermissionsFile;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mPermissionsFile() { return mPermissionsFile; }
-
-    // NOLINTEND
 };

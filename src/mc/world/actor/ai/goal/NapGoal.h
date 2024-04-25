@@ -66,11 +66,4 @@ public:
     MCAPI static float const MOB_DETECT_TIME;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $MOB_DETECT_TIME() { return MOB_DETECT_TIME; }
-
-    // NOLINTEND
 };

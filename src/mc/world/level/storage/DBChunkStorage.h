@@ -203,13 +203,4 @@ public:
     MCAPI static class Bedrock::Threading::ThreadLocalObject<std::string> threadBuffer;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $threadBatch() { return threadBatch; }
-
-    static auto& $threadBuffer() { return threadBuffer; }
-
-    // NOLINTEND
 };

@@ -61,11 +61,4 @@ public:
     MCAPI static class BaseGameVersion const mMinLineOfSightFixVersion;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mMinLineOfSightFixVersion() { return mMinLineOfSightFixVersion; }
-
-    // NOLINTEND
 };

@@ -32,11 +32,4 @@ public:
     MCAPI static ::MolangVersion const mStopExpressionVersion;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mStopExpressionVersion() { return mStopExpressionVersion; }
-
-    // NOLINTEND
 };

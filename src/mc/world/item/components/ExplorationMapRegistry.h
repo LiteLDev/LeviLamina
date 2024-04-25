@@ -32,11 +32,4 @@ public:
     MCAPI static std::array<struct ExplorationMapData, 11> const mRegistry;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mRegistry() { return mRegistry; }
-
-    // NOLINTEND
 };

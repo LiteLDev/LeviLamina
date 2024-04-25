@@ -141,15 +141,6 @@ public:
     MCAPI static float mSin[];
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mSinScale() { return mSinScale; }
-
-    static auto& $mSin() { return mSin; }
-
-    // NOLINTEND
 };
 
 }; // namespace mce

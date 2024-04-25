@@ -673,11 +673,4 @@ public:
     MCAPI static int const MAX_INACTIVITY_TIMER;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $MAX_INACTIVITY_TIMER() { return MAX_INACTIVITY_TIMER; }
-
-    // NOLINTEND
 };

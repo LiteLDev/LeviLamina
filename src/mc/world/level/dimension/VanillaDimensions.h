@@ -68,11 +68,4 @@ public:
     MCAPI static class BidirectionalUnorderedMap<std::string, DimensionType> const DimensionMap;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $DimensionMap() { return DimensionMap; }
-
-    // NOLINTEND
 };

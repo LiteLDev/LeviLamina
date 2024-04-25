@@ -69,11 +69,4 @@ public:
     MCAPI static std::array<struct RailMovementUtility::RailExits, 10> const RAIL_EXITS;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $RAIL_EXITS() { return RAIL_EXITS; }
-
-    // NOLINTEND
 };

@@ -78,15 +78,4 @@ public:
     MCAPI static int const SPEAK_INTERVAL_TICKS_MIN;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $FIND_PARTNER_INTERVAL_TICKS() { return FIND_PARTNER_INTERVAL_TICKS; }
-
-    static auto& $SPEAK_INTERVAL_TICKS_MAX() { return SPEAK_INTERVAL_TICKS_MAX; }
-
-    static auto& $SPEAK_INTERVAL_TICKS_MIN() { return SPEAK_INTERVAL_TICKS_MIN; }
-
-    // NOLINTEND
 };

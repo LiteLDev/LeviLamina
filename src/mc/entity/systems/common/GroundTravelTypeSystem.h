@@ -33,11 +33,4 @@ public:
     MCAPI static class BaseGameVersion const FRICTION_FIX_VERSION;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $FRICTION_FIX_VERSION() { return FRICTION_FIX_VERSION; }
-
-    // NOLINTEND
 };

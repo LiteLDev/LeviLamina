@@ -77,13 +77,4 @@ public:
     MCAPI static class Attribute const SPAWN_REINFORCEMENTS_CHANCE;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $SPAWN_BONUS_UUID() { return SPAWN_BONUS_UUID; }
-
-    static auto& $SPAWN_REINFORCEMENTS_CHANCE() { return SPAWN_REINFORCEMENTS_CHANCE; }
-
-    // NOLINTEND
 };

@@ -185,11 +185,4 @@ public:
     MCAPI static std::unordered_set<class ChunkPos> const SPAWN_RING_OFFSETS;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $SPAWN_RING_OFFSETS() { return SPAWN_RING_OFFSETS; }
-
-    // NOLINTEND
 };

@@ -25,11 +25,4 @@ public:
     MCAPI static int const MAX_CHUNK_ATTEMPTS;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $MAX_CHUNK_ATTEMPTS() { return MAX_CHUNK_ATTEMPTS; }
-
-    // NOLINTEND
 };

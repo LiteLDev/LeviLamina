@@ -30,11 +30,4 @@ public:
     MCAPI static std::vector<std::function<float(float, float, float)>> mEasingFuncs;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mEasingFuncs() { return mEasingFuncs; }
-
-    // NOLINTEND
 };

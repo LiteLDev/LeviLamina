@@ -15,11 +15,4 @@ public:
     MCAPI static class BaseGameVersion const MIN_TIME_LIMITED_JAVA_PARITY_VERSION;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $MIN_TIME_LIMITED_JAVA_PARITY_VERSION() { return MIN_TIME_LIMITED_JAVA_PARITY_VERSION; }
-
-    // NOLINTEND
 };

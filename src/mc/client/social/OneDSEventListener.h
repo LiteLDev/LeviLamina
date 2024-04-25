@@ -96,21 +96,6 @@ public:
     MCAPI static std::string const SAFETY_PARTA_IDENTIFIER;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $ENDPOINT_IDENTIFIER() { return ENDPOINT_IDENTIFIER; }
-
-    static auto& $ONEDS_URL() { return ONEDS_URL; }
-
-    static auto& $PARTA_IDENTIFIER() { return PARTA_IDENTIFIER; }
-
-    static auto& $SAFETY_ENDPOINT_IDENTIFIER() { return SAFETY_ENDPOINT_IDENTIFIER; }
-
-    static auto& $SAFETY_PARTA_IDENTIFIER() { return SAFETY_PARTA_IDENTIFIER; }
-
-    // NOLINTEND
 };
 
 }; // namespace Social::Events

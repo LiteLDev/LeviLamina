@@ -363,19 +363,4 @@ public:
     MCAPI static std::unordered_map<class HashedString, std::unordered_set<class HashedString>> mQuerySets;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $_defaultUnknownQueryFunction() { return _defaultUnknownQueryFunction; }
-
-    static auto& $mExperiments() { return mExperiments; }
-
-    static auto& $mMolangInitialized() { return mMolangInitialized; }
-
-    static auto& $mQueryFunctionAccessors() { return mQueryFunctionAccessors; }
-
-    static auto& $mQuerySets() { return mQuerySets; }
-
-    // NOLINTEND
 };

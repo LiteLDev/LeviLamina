@@ -200,11 +200,4 @@ public:
     MCAPI static std::unordered_map<std::string, ::PackScope> const STRING_TO_PACK_SCOPE;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $STRING_TO_PACK_SCOPE() { return STRING_TO_PACK_SCOPE; }
-
-    // NOLINTEND
 };

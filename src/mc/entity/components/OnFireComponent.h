@@ -34,13 +34,4 @@ public:
     MCAPI static std::string const ON_FIRE_TAG;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $LEGACY_FIRE_TAG() { return LEGACY_FIRE_TAG; }
-
-    static auto& $ON_FIRE_TAG() { return ON_FIRE_TAG; }
-
-    // NOLINTEND
 };

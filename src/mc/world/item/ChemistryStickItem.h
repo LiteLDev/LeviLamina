@@ -121,23 +121,4 @@ public:
     MCAPI static int const DAMAGE_START_BIT;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $ACTIVATION_TIMESTAMP_TAG() { return ACTIVATION_TIMESTAMP_TAG; }
-
-    static auto& $ACTIVE_BIT() { return ACTIVE_BIT; }
-
-    static auto& $COLOR_BITS() { return COLOR_BITS; }
-
-    static auto& $COLOR_MASK() { return COLOR_MASK; }
-
-    static auto& $DAMAGE_BITS() { return DAMAGE_BITS; }
-
-    static auto& $DAMAGE_MASK() { return DAMAGE_MASK; }
-
-    static auto& $DAMAGE_START_BIT() { return DAMAGE_START_BIT; }
-
-    // NOLINTEND
 };

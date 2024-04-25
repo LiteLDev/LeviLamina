@@ -15,11 +15,4 @@ public:
     MCAPI static class BackwardsCompatTextureInfo const invalidInfo;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $invalidInfo() { return invalidInfo; }
-
-    // NOLINTEND
 };

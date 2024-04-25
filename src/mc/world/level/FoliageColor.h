@@ -87,29 +87,4 @@ public:
     MCAPI static std::array<std::unique_ptr<std::array<int, 65536>>, 5> mGrassPalettes;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $FOLIAGE_BOTTOM_LEFT() { return FOLIAGE_BOTTOM_LEFT; }
-
-    static auto& $FOLIAGE_BOTTOM_RIGHT() { return FOLIAGE_BOTTOM_RIGHT; }
-
-    static auto& $FOLIAGE_TOP_LEFT() { return FOLIAGE_TOP_LEFT; }
-
-    static auto& $FOLIAGE_TOP_RIGHT() { return FOLIAGE_TOP_RIGHT; }
-
-    static auto& $GRASS_BOTTOM_LEFT() { return GRASS_BOTTOM_LEFT; }
-
-    static auto& $GRASS_BOTTOM_RIGHT() { return GRASS_BOTTOM_RIGHT; }
-
-    static auto& $GRASS_TOP_LEFT() { return GRASS_TOP_LEFT; }
-
-    static auto& $GRASS_TOP_RIGHT() { return GRASS_TOP_RIGHT; }
-
-    static auto& $mFoliagePalettes() { return mFoliagePalettes; }
-
-    static auto& $mGrassPalettes() { return mGrassPalettes; }
-
-    // NOLINTEND
 };

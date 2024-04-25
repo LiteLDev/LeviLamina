@@ -54,11 +54,4 @@ public:
     MCAPI static std::map<::RealmEventId, std::string> const mRealmEventInternalNames;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mRealmEventInternalNames() { return mRealmEventInternalNames; }
-
-    // NOLINTEND
 };

@@ -129,11 +129,4 @@ public:
     MCAPI static int mCBModeMap[];
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mCBModeMap() { return mCBModeMap; }
-
-    // NOLINTEND
 };

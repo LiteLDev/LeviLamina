@@ -95,11 +95,4 @@ public:
     MCAPI static int const DEFAULT_USE_DURATION;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $DEFAULT_USE_DURATION() { return DEFAULT_USE_DURATION; }
-
-    // NOLINTEND
 };

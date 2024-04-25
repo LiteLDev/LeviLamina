@@ -105,15 +105,6 @@ public:
     MCAPI static class Bedrock::Threading::Mutex sWeakThisMutex;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $sWeakThis() { return sWeakThis; }
-
-    static auto& $sWeakThisMutex() { return sWeakThisMutex; }
-
-    // NOLINTEND
 };
 
 }; // namespace Bedrock::Http

@@ -830,13 +830,4 @@ public:
     MCAPI static bool mIsInitialized;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mIsInitialized() { return mIsInitialized; }
-
-    static auto& $SHADERCACHE_PATH() { return SHADERCACHE_PATH; }
-
-    // NOLINTEND
 };

@@ -53,11 +53,4 @@ public:
         mSubcomponentMap;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mSubcomponentMap() { return mSubcomponentMap; }
-
-    // NOLINTEND
 };

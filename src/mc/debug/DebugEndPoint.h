@@ -88,11 +88,4 @@ public:
     MCAPI static std::unordered_map<::LogArea, bool> const mAssertAreas;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mAssertAreas() { return mAssertAreas; }
-
-    // NOLINTEND
 };

@@ -48,13 +48,6 @@ public:
     MCAPI static std::unordered_map<::persona::ArmSize::Type, struct persona::SizeInfo> const mInfoList;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mInfoList() { return mInfoList; }
-
-    // NOLINTEND
 };
 
 }; // namespace persona

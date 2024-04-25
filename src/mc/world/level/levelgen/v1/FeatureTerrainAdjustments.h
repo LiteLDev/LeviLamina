@@ -88,11 +88,4 @@ public:
     MCAPI static struct BeardKernel mBeardKernel;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mBeardKernel() { return mBeardKernel; }
-
-    // NOLINTEND
 };

@@ -232,17 +232,6 @@ public:
     MCAPI static class Core::StorageAreasTree sStorageAreas;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $sStorageAreaFileStats() { return sStorageAreaFileStats; }
-
-    static auto& $sStorageAreaLock() { return sStorageAreaLock; }
-
-    static auto& $sStorageAreas() { return sStorageAreas; }
-
-    // NOLINTEND
 };
 
 }; // namespace Core

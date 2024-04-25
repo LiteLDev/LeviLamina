@@ -47,11 +47,4 @@ public:
     MCAPI static uint sNextId;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $sNextId() { return sNextId; }
-
-    // NOLINTEND
 };

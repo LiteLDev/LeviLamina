@@ -15,11 +15,4 @@ public:
     MCAPI static class ExpiringTick const EXPIRED_TICK;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $EXPIRED_TICK() { return EXPIRED_TICK; }
-
-    // NOLINTEND
 };

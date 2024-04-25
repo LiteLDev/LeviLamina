@@ -134,23 +134,4 @@ public:
     MCAPI static std::unordered_set<class PotionBrewing::Ingredient> mValidRecipeInputs;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mChemistryMixes() { return mChemistryMixes; }
-
-    static auto& $mContainerMixes() { return mContainerMixes; }
-
-    static auto& $mIsInitialized() { return mIsInitialized; }
-
-    static auto& $mPotionMixes() { return mPotionMixes; }
-
-    static auto& $mValidContainers() { return mValidContainers; }
-
-    static auto& $mValidIngredients() { return mValidIngredients; }
-
-    static auto& $mValidRecipeInputs() { return mValidRecipeInputs; }
-
-    // NOLINTEND
 };

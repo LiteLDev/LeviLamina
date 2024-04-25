@@ -106,11 +106,4 @@ public:
     MCAPI static uint64 const TICKING_QUEUE_PASS_LIMIT;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $TICKING_QUEUE_PASS_LIMIT() { return TICKING_QUEUE_PASS_LIMIT; }
-
-    // NOLINTEND
 };

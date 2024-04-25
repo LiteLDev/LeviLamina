@@ -762,11 +762,4 @@ public:
     MCAPI static std::unique_ptr<std::set<short>> mServerItemsUsedInCreativeItems;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mServerItemsUsedInCreativeItems() { return mServerItemsUsedInCreativeItems; }
-
-    // NOLINTEND
 };

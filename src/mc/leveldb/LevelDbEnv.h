@@ -97,11 +97,4 @@ public:
     MCAPI static class LevelDbEnv* sSingleton;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $sSingleton() { return sSingleton; }
-
-    // NOLINTEND
 };

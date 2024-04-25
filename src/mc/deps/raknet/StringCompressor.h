@@ -30,15 +30,6 @@ public:
     MCAPI static int referenceCount;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $instance() { return instance; }
-
-    static auto& $referenceCount() { return referenceCount; }
-
-    // NOLINTEND
 };
 
 }; // namespace RakNet

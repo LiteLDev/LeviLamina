@@ -31,17 +31,4 @@ public:
         mThreadLocalRegistry;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mClientIdRegistryMap() { return mClientIdRegistryMap; }
-
-    static auto& $mClientRegistry() { return mClientRegistry; }
-
-    static auto& $mServerRegistry() { return mServerRegistry; }
-
-    static auto& $mThreadLocalRegistry() { return mThreadLocalRegistry; }
-
-    // NOLINTEND
 };

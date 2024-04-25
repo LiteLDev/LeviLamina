@@ -30,11 +30,4 @@ public:
     MCAPI static class BidirectionalUnorderedMap<::ParticleType, class HashedString> const map;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $map() { return map; }
-
-    // NOLINTEND
 };

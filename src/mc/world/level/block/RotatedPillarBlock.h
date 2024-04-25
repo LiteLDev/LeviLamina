@@ -60,13 +60,4 @@ public:
     MCAPI static int const mRotatedZ[];
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mRotatedX() { return mRotatedX; }
-
-    static auto& $mRotatedZ() { return mRotatedZ; }
-
-    // NOLINTEND
 };

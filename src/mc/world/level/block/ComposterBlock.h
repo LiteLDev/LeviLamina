@@ -167,15 +167,4 @@ public:
     MCAPI static class Vec3 const PARTICLE_OFFSET;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION() {
-        return COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION;
-    }
-
-    static auto& $PARTICLE_OFFSET() { return PARTICLE_OFFSET; }
-
-    // NOLINTEND
 };

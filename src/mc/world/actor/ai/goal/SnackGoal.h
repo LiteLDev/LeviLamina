@@ -88,23 +88,4 @@ public:
     MCAPI static float const STOP_DIST_SQRD;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $CHEW_CHANCE() { return CHEW_CHANCE; }
-
-    static auto& $EATING_TIME() { return EATING_TIME; }
-
-    static auto& $PATH_RANGE() { return PATH_RANGE; }
-
-    static auto& $RANDOM_EATING_END() { return RANDOM_EATING_END; }
-
-    static auto& $RANDOM_EATING_START() { return RANDOM_EATING_START; }
-
-    static auto& $SEARCH_SIZE() { return SEARCH_SIZE; }
-
-    static auto& $STOP_DIST_SQRD() { return STOP_DIST_SQRD; }
-
-    // NOLINTEND
 };

@@ -49,11 +49,4 @@ public:
     MCAPI static std::array<::SerializedAbilitiesData::SerializedAbilitiesLayer, 5> const ABILITIES_LAYER_MAP;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $ABILITIES_LAYER_MAP() { return ABILITIES_LAYER_MAP; }
-
-    // NOLINTEND
 };

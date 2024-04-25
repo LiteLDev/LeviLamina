@@ -31,11 +31,4 @@ public:
     MCAPI static class AllowListFile* mAllowListFile;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mAllowListFile() { return mAllowListFile; }
-
-    // NOLINTEND
 };

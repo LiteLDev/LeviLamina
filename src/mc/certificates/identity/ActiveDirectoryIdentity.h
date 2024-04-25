@@ -44,11 +44,4 @@ public:
     MCAPI static std::string mCachedServiceEndpoint;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mCachedServiceEndpoint() { return mCachedServiceEndpoint; }
-
-    // NOLINTEND
 };

@@ -116,15 +116,4 @@ public:
     MCAPI static std::atomic<int64> mServerFrameIndex;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mClientFrameIndex() { return mClientFrameIndex; }
-
-    static auto& $mReloadTimeStampClient() { return mReloadTimeStampClient; }
-
-    static auto& $mServerFrameIndex() { return mServerFrameIndex; }
-
-    // NOLINTEND
 };

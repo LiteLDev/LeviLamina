@@ -97,11 +97,4 @@ public:
     MCAPI static std::unique_ptr<class CompoundTagUpdaterContext> mContext;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mContext() { return mContext; }
-
-    // NOLINTEND
 };

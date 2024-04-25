@@ -25,11 +25,4 @@ public:
     MCAPI static int refCount;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $refCount() { return refCount; }
-
-    // NOLINTEND
 };

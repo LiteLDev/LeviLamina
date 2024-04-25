@@ -116,11 +116,4 @@ public:
     MCAPI static int const LIFETIME;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $LIFETIME() { return LIFETIME; }
-
-    // NOLINTEND
 };

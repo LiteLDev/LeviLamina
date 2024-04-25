@@ -50,13 +50,4 @@ public:
     MCAPI static std::vector<::Enchant::Type> const VALID_ENCHANTMENTS;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $THORNS_CHANCE_PER_LEVEL() { return THORNS_CHANCE_PER_LEVEL; }
-
-    static auto& $VALID_ENCHANTMENTS() { return VALID_ENCHANTMENTS; }
-
-    // NOLINTEND
 };

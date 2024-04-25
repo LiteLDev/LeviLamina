@@ -158,17 +158,6 @@ public:
     MCAPI static struct Scripting::ObjectFactory mEmptyObjectFactory;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mEmptyConstantFactory() { return mEmptyConstantFactory; }
-
-    static auto& $mEmptyFunctionBinding() { return mEmptyFunctionBinding; }
-
-    static auto& $mEmptyObjectFactory() { return mEmptyObjectFactory; }
-
-    // NOLINTEND
 };
 
 }; // namespace Scripting

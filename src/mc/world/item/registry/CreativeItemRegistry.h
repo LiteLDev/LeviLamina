@@ -96,11 +96,4 @@ public:
     MCAPI static std::unique_ptr<class CreativeItemRegistry> mCurrentRegistry;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mCurrentRegistry() { return mCurrentRegistry; }
-
-    // NOLINTEND
 };

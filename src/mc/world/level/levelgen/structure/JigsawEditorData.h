@@ -87,11 +87,4 @@ public:
     MCAPI static std::unordered_map<int, std::string> const JOINT_TYPE_TO_NAME;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $JOINT_TYPE_TO_NAME() { return JOINT_TYPE_TO_NAME; }
-
-    // NOLINTEND
 };

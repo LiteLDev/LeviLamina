@@ -210,13 +210,4 @@ public:
     MCAPI static char const* LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $BEHAVIOR_PACK_STRUCTURES_FOLDER() { return BEHAVIOR_PACK_STRUCTURES_FOLDER; }
-
-    static auto& $LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX() { return LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX; }
-
-    // NOLINTEND
 };

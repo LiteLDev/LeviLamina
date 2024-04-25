@@ -61,13 +61,6 @@ public:
     MCAPI static std::string const sMinecraftNamespace;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $sMinecraftNamespace() { return sMinecraftNamespace; }
-
-    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

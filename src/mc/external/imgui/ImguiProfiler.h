@@ -193,15 +193,4 @@ public:
     MCAPI static class Bedrock::Threading::Mutex sRecordMutex;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $sPendingRecords() { return sPendingRecords; }
-
-    static auto& $sProduceRecords() { return sProduceRecords; }
-
-    static auto& $sRecordMutex() { return sRecordMutex; }
-
-    // NOLINTEND
 };

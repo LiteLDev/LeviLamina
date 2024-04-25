@@ -165,11 +165,4 @@ public:
     MCAPI static class NetworkIdentifier sUnknownSource;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $sUnknownSource() { return sUnknownSource; }
-
-    // NOLINTEND
 };

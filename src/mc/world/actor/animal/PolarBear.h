@@ -63,11 +63,4 @@ public:
     MCAPI static float const STAND_ANIMATION_TICKS;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $STAND_ANIMATION_TICKS() { return STAND_ANIMATION_TICKS; }
-
-    // NOLINTEND
 };

@@ -15,11 +15,4 @@ public:
     MCAPI static float const SQRT_FLT_MAX;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $SQRT_FLT_MAX() { return SQRT_FLT_MAX; }
-
-    // NOLINTEND
 };

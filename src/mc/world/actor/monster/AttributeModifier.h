@@ -80,11 +80,4 @@ public:
     MCAPI static class mce::UUID const mInvalidUUID;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mInvalidUUID() { return mInvalidUUID; }
-
-    // NOLINTEND
 };

@@ -385,13 +385,6 @@ public:
     MCAPI static class Core::FileStats sStats;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $sStats() { return sStats; }
-
-    // NOLINTEND
 };
 
 }; // namespace Core

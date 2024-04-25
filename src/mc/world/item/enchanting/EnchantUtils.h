@@ -159,11 +159,4 @@ public:
     MCAPI static std::vector<std::string> mEnchantmentNames;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mEnchantmentNames() { return mEnchantmentNames; }
-
-    // NOLINTEND
 };

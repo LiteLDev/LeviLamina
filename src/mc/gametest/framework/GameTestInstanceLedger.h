@@ -61,11 +61,4 @@ public:
     MCAPI static std::string const GAME_TEST_INSTANCE_PREFIX;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $GAME_TEST_INSTANCE_PREFIX() { return GAME_TEST_INSTANCE_PREFIX; }
-
-    // NOLINTEND
 };

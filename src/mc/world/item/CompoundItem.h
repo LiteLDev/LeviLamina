@@ -87,13 +87,4 @@ public:
     MCAPI static std::unordered_map<int, class ItemInstance> mTypeToSpecialCompound;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mIdToSpecialCompound() { return mIdToSpecialCompound; }
-
-    static auto& $mTypeToSpecialCompound() { return mTypeToSpecialCompound; }
-
-    // NOLINTEND
 };

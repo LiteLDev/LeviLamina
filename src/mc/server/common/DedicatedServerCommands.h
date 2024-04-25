@@ -28,11 +28,4 @@ public:
     MCAPI static std::vector<std::string> mSaveAllFileList;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mSaveAllFileList() { return mSaveAllFileList; }
-
-    // NOLINTEND
 };

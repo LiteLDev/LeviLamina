@@ -81,13 +81,4 @@ public:
     MCAPI static std::vector<std::unique_ptr<class Material>> mMaterials;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mInitialized() { return mInitialized; }
-
-    static auto& $mMaterials() { return mMaterials; }
-
-    // NOLINTEND
 };

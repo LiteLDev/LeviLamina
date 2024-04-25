@@ -32,11 +32,4 @@ public:
         pushSlotPredictionResultMap;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $pushSlotPredictionResultMap() { return pushSlotPredictionResultMap; }
-
-    // NOLINTEND
 };

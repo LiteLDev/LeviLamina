@@ -169,11 +169,4 @@ public:
     MCAPI static ::StructureBlockType const DEFAULT_STRUCTURE_TYPE;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $DEFAULT_STRUCTURE_TYPE() { return DEFAULT_STRUCTURE_TYPE; }
-
-    // NOLINTEND
 };

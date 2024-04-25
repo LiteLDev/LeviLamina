@@ -30,11 +30,4 @@ public:
     MCAPI static std::unordered_map<::ActorType, ::Puv::Legacy::LevelSoundEvent> const imitateMobMap;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $imitateMobMap() { return imitateMobMap; }
-
-    // NOLINTEND
 };

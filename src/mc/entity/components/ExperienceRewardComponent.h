@@ -42,11 +42,4 @@ public:
     MCAPI static std::string const mIsExperienceDropEnabledTag;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mIsExperienceDropEnabledTag() { return mIsExperienceDropEnabledTag; }
-
-    // NOLINTEND
 };

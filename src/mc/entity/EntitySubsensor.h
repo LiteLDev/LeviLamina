@@ -30,11 +30,4 @@ public:
     MCAPI static int const NO_MAX_COUNT;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $NO_MAX_COUNT() { return NO_MAX_COUNT; }
-
-    // NOLINTEND
 };

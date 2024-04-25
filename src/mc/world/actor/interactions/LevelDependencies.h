@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/ILevelDependencies.h"
+#include "mc/world/actor/interactions/ILevelDependencies.h"
 
 // auto generated forward declare list
 // clang-format off

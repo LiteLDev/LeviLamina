@@ -67,11 +67,4 @@ public:
         actionTypeMap;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $actionTypeMap() { return actionTypeMap; }
-
-    // NOLINTEND
 };

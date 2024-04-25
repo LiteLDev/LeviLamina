@@ -16,11 +16,4 @@ public:
     MCAPI static std::string const sWildCardModuleName;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $sWildCardModuleName() { return sWildCardModuleName; }
-
-    // NOLINTEND
 };

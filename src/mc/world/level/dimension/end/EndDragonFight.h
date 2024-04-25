@@ -158,27 +158,4 @@ public:
     MCAPI static int const TIME_BETWEEN_PORTAL_SCANS;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $ARENA_SIZE_CHUNKS() { return ARENA_SIZE_CHUNKS; }
-
-    static auto& $DEFAULT_PORTAL_LOCATION() { return DEFAULT_PORTAL_LOCATION; }
-
-    static auto& $GATEWAY_CHUNK_RADIUS() { return GATEWAY_CHUNK_RADIUS; }
-
-    static auto& $GATEWAY_COUNT() { return GATEWAY_COUNT; }
-
-    static auto& $GATEWAY_DISTANCE() { return GATEWAY_DISTANCE; }
-
-    static auto& $GATEWAY_HEIGHT() { return GATEWAY_HEIGHT; }
-
-    static auto& $TIME_BETWEEN_CRYSTAL_SCANS() { return TIME_BETWEEN_CRYSTAL_SCANS; }
-
-    static auto& $TIME_BETWEEN_PLAYER_SCANS() { return TIME_BETWEEN_PLAYER_SCANS; }
-
-    static auto& $TIME_BETWEEN_PORTAL_SCANS() { return TIME_BETWEEN_PORTAL_SCANS; }
-
-    // NOLINTEND
 };

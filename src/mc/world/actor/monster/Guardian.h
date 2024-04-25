@@ -116,13 +116,4 @@ public:
     MCAPI static int const FIRST_DAMAGE_TIME;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $ATTACK_TIME() { return ATTACK_TIME; }
-
-    static auto& $FIRST_DAMAGE_TIME() { return FIRST_DAMAGE_TIME; }
-
-    // NOLINTEND
 };

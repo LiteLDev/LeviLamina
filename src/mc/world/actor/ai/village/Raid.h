@@ -81,15 +81,4 @@ public:
     MCAPI static uchar const NUM_GROUPS_ON_NORMAL;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $NUM_GROUPS_ON_EASY() { return NUM_GROUPS_ON_EASY; }
-
-    static auto& $NUM_GROUPS_ON_HARD() { return NUM_GROUPS_ON_HARD; }
-
-    static auto& $NUM_GROUPS_ON_NORMAL() { return NUM_GROUPS_ON_NORMAL; }
-
-    // NOLINTEND
 };

@@ -48,11 +48,4 @@ public:
     MCAPI static class Minecraft* mGame;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mGame() { return mGame; }
-
-    // NOLINTEND
 };

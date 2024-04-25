@@ -100,11 +100,4 @@ public:
     MCAPI static bool mMayTakeIsSetup;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mMayTakeIsSetup() { return mMayTakeIsSetup; }
-
-    // NOLINTEND
 };

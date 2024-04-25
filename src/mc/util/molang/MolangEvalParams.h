@@ -79,11 +79,4 @@ public:
     MCAPI static class Bedrock::Threading::ThreadLocalObject<struct MolangEvalParams> mThreadLocalMolangEvalParams;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mThreadLocalMolangEvalParams() { return mThreadLocalMolangEvalParams; }
-
-    // NOLINTEND
 };

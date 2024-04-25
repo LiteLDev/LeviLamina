@@ -118,13 +118,4 @@ public:
     MCAPI static struct RenderOffsetsItemComponent::ItemTransforms Off_Hand_Defaults;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $Main_Hand_Defaults() { return Main_Hand_Defaults; }
-
-    static auto& $Off_Hand_Defaults() { return Off_Hand_Defaults; }
-
-    // NOLINTEND
 };

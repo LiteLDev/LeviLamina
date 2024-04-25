@@ -32,11 +32,4 @@ public:
     MCAPI static class BidirectionalUnorderedMap<std::string, ::Puv::Legacy::LevelSoundEvent> const map;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $map() { return map; }
-
-    // NOLINTEND
 };

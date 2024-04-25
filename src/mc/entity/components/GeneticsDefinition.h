@@ -42,11 +42,4 @@ public:
     MCAPI static float const DEFAULT_MUTATION_RATE;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $DEFAULT_MUTATION_RATE() { return DEFAULT_MUTATION_RATE; }
-
-    // NOLINTEND
 };

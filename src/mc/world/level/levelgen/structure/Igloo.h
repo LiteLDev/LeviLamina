@@ -49,17 +49,4 @@ public:
     MCAPI static std::string const STRUCTURE_LOCATION_LADDER;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR() { return STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR; }
-
-    static auto& $STRUCTURE_LOCATION_IGLOO_TRAPDOOR() { return STRUCTURE_LOCATION_IGLOO_TRAPDOOR; }
-
-    static auto& $STRUCTURE_LOCATION_LABORATORY() { return STRUCTURE_LOCATION_LABORATORY; }
-
-    static auto& $STRUCTURE_LOCATION_LADDER() { return STRUCTURE_LOCATION_LADDER; }
-
-    // NOLINTEND
 };

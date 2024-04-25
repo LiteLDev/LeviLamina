@@ -23,15 +23,4 @@ public:
     MCAPI static std::chrono::steady_clock::time_point mTimeToResetWarning;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mPlatformToldUsLowMemory() { return mPlatformToldUsLowMemory; }
-
-    static auto& $mPleaseLeakMemory() { return mPleaseLeakMemory; }
-
-    static auto& $mTimeToResetWarning() { return mTimeToResetWarning; }
-
-    // NOLINTEND
 };

@@ -147,15 +147,6 @@ public:
     MCAPI static class Bedrock::Threading::Mutex sAllFilesLock;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $sAllFiles() { return sAllFiles; }
-
-    static auto& $sAllFilesLock() { return sAllFilesLock; }
-
-    // NOLINTEND
 };
 
 }; // namespace Core

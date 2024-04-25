@@ -87,11 +87,4 @@ public:
     MCAPI static class BaseGameVersion const TOP_SLAB_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $TOP_SLAB_DOESNT_BREAK_FALLING_BLOCK_VERSION() { return TOP_SLAB_DOESNT_BREAK_FALLING_BLOCK_VERSION; }
-
-    // NOLINTEND
 };

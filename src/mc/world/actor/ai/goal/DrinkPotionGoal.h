@@ -61,13 +61,4 @@ public:
     MCAPI static int const THROTTLE_COOLDOWN;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $SPEED_MODIFIER_DRINKING_UUID() { return SPEED_MODIFIER_DRINKING_UUID; }
-
-    static auto& $THROTTLE_COOLDOWN() { return THROTTLE_COOLDOWN; }
-
-    // NOLINTEND
 };

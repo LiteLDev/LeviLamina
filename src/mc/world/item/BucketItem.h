@@ -151,11 +151,4 @@ public:
     MCAPI static std::vector<std::pair<::BucketFillType, ::ActorType>> const mFillTypeToEntityType;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mFillTypeToEntityType() { return mFillTypeToEntityType; }
-
-    // NOLINTEND
 };

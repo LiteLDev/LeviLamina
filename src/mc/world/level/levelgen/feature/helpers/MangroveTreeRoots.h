@@ -66,11 +66,4 @@ public:
     MCAPI static float const RANDOM_SKEW_CHANCE;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $RANDOM_SKEW_CHANCE() { return RANDOM_SKEW_CHANCE; }
-
-    // NOLINTEND
 };

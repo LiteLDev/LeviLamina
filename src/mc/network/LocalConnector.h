@@ -93,11 +93,4 @@ public:
     MCAPI static class LocalConnectivitySystem sLocalConnectivitySystem;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $sLocalConnectivitySystem() { return sLocalConnectivitySystem; }
-
-    // NOLINTEND
 };

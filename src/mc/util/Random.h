@@ -76,11 +76,4 @@ public:
     MCAPI static class Bedrock::Threading::ThreadLocalObject<class Random> mThreadLocalRandom;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mThreadLocalRandom() { return mThreadLocalRandom; }
-
-    // NOLINTEND
 };

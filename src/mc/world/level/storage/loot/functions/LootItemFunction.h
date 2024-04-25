@@ -51,11 +51,4 @@ public:
         mLootingFunctions;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mLootingFunctions() { return mLootingFunctions; }
-
-    // NOLINTEND
 };

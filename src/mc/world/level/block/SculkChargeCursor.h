@@ -65,15 +65,4 @@ public:
     MCAPI static class SculkVeinBlockBehavior const sSculkVeinBlockBehavior;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $sDefaultSculkBehavior() { return sDefaultSculkBehavior; }
-
-    static auto& $sSculkBlockBehavior() { return sSculkBlockBehavior; }
-
-    static auto& $sSculkVeinBlockBehavior() { return sSculkVeinBlockBehavior; }
-
-    // NOLINTEND
 };

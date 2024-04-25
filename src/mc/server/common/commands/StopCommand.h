@@ -31,11 +31,4 @@ public:
     MCAPI static class DedicatedServer* mServer;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mServer() { return mServer; }
-
-    // NOLINTEND
 };

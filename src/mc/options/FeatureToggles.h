@@ -106,11 +106,4 @@ public:
     MCAPI static std::unique_ptr<class FeatureToggles> mFeatureToggles;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mFeatureToggles() { return mFeatureToggles; }
-
-    // NOLINTEND
 };

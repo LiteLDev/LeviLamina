@@ -90,13 +90,4 @@ public:
     MCAPI static class BaseGameVersion const SHULKER_BOX_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $SHULKER_BOX_DOESNT_BREAK_FALLING_BLOCK_VERSION() {
-        return SHULKER_BOX_DOESNT_BREAK_FALLING_BLOCK_VERSION;
-    }
-
-    // NOLINTEND
 };

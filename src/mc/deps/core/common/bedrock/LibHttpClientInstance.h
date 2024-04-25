@@ -41,15 +41,6 @@ public:
     MCAPI static std::weak_ptr<class Bedrock::Http::LibHttpClientInstance> sWeakInstance;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $sMutex() { return sMutex; }
-
-    static auto& $sWeakInstance() { return sWeakInstance; }
-
-    // NOLINTEND
 };
 
 }; // namespace Bedrock::Http

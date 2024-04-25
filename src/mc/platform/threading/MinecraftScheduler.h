@@ -25,11 +25,4 @@ public:
     MCAPI static std::unique_ptr<class Scheduler> mInstance;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mInstance() { return mInstance; }
-
-    // NOLINTEND
 };

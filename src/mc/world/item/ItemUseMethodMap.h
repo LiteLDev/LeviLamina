@@ -28,11 +28,4 @@ public:
     MCAPI static class BidirectionalUnorderedMap<::ItemUseMethod, std::string> const mMap;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mMap() { return mMap; }
-
-    // NOLINTEND
 };

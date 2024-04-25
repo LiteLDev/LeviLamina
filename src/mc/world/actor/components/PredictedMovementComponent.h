@@ -102,13 +102,6 @@ public:
         MCAPI static uint mSequenceIdGenerator;
 
         // NOLINTEND
-
-        // member accessor
-    public:
-        // NOLINTBEGIN
-        static auto& $mSequenceIdGenerator() { return mSequenceIdGenerator; }
-
-        // NOLINTEND
     };
 
     struct MoveHistoryItem : public ::PredictedMovementComponent::HistoryItem {
@@ -185,13 +178,6 @@ public:
             // NOLINTBEGIN
             // symbol: ?mMaxTicks@LerpedInterval@RuntimePredictionData@PredictedMovementComponent@@0IB
             MCAPI static uint const mMaxTicks;
-
-            // NOLINTEND
-
-            // member accessor
-        public:
-            // NOLINTBEGIN
-            static auto& $mMaxTicks() { return mMaxTicks; }
 
             // NOLINTEND
         };

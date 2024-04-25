@@ -30,11 +30,4 @@ public:
     MCAPI static float const MAX_CLAMP_ANGLE;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $MAX_CLAMP_ANGLE() { return MAX_CLAMP_ANGLE; }
-
-    // NOLINTEND
 };

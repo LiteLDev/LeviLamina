@@ -378,13 +378,6 @@ public:
         class ScriptModuleMinecraft::ScriptWorldAfterEvents> const mMetadata;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mMetadata() { return mMetadata; }
-
-    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

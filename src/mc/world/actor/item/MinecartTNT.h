@@ -79,11 +79,4 @@ public:
     MCAPI static int const DEFAULT_FUSE_LENGTH;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $DEFAULT_FUSE_LENGTH() { return DEFAULT_FUSE_LENGTH; }
-
-    // NOLINTEND
 };

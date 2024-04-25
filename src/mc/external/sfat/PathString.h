@@ -17,13 +17,6 @@ public:
     MCAPI static char mPreferedSeparator;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mPreferedSeparator() { return mPreferedSeparator; }
-
-    // NOLINTEND
 };
 
 }; // namespace SFAT

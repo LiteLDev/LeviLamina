@@ -97,11 +97,4 @@ public:
     MCAPI static std::array<char const*, 19> ABILITY_NAMES;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $ABILITY_NAMES() { return ABILITY_NAMES; }
-
-    // NOLINTEND
 };

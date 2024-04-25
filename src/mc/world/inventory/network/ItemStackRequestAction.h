@@ -56,11 +56,4 @@ public:
     MCAPI static class BidirectionalUnorderedMap<::ItemStackRequestActionType, std::string> const actionTypeMap;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $actionTypeMap() { return actionTypeMap; }
-
-    // NOLINTEND
 };

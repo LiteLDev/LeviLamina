@@ -797,11 +797,4 @@ public:
         class CommandRegistry::Symbol> const ParseRuleSymbols[];
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $ParseRuleSymbols() { return ParseRuleSymbols; }
-
-    // NOLINTEND
 };

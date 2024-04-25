@@ -60,15 +60,4 @@ public:
     MCAPI static ::SaveCommand::State mState;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mSaveAllFileList() { return mSaveAllFileList; }
-
-    static auto& $mSaveAllMutex() { return mSaveAllMutex; }
-
-    static auto& $mState() { return mState; }
-
-    // NOLINTEND
 };

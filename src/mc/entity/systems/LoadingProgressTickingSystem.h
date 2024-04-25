@@ -19,11 +19,4 @@ public:
     MCAPI static std::vector<class ChunkPos> const mChunksNeededForLoadOffsets;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mChunksNeededForLoadOffsets() { return mChunksNeededForLoadOffsets; }
-
-    // NOLINTEND
 };

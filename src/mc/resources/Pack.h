@@ -92,11 +92,4 @@ public:
     MCAPI static class Core::PathBuffer<std::string> const EDUCATION_METADATA_FILE;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $EDUCATION_METADATA_FILE() { return EDUCATION_METADATA_FILE; }
-
-    // NOLINTEND
 };

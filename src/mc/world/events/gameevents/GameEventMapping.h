@@ -33,13 +33,4 @@ public:
     MCAPI static std::vector<struct GameEventPair> const mGameEventPairs;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mExposedGameEvents() { return mExposedGameEvents; }
-
-    static auto& $mGameEventPairs() { return mGameEventPairs; }
-
-    // NOLINTEND
 };

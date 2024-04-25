@@ -46,11 +46,4 @@ public:
     MCAPI static std::string const STRUCTURE_SHIPWRECK_TYPES[];
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $STRUCTURE_SHIPWRECK_TYPES() { return STRUCTURE_SHIPWRECK_TYPES; }
-
-    // NOLINTEND
 };

@@ -106,11 +106,4 @@ public:
     MCAPI static class BlockPos const ARM_DIRECTION_OFFSETS[];
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $ARM_DIRECTION_OFFSETS() { return ARM_DIRECTION_OFFSETS; }
-
-    // NOLINTEND
 };

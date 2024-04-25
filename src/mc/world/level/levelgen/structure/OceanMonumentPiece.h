@@ -88,23 +88,4 @@ public:
     MCAPI static int const mRightWingIndex;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mGridroomLeftWingConnectIndex() { return mGridroomLeftWingConnectIndex; }
-
-    static auto& $mGridroomRightWingConnectIndex() { return mGridroomRightWingConnectIndex; }
-
-    static auto& $mGridroomSourceIndex() { return mGridroomSourceIndex; }
-
-    static auto& $mGridroomTopConnectIndex() { return mGridroomTopConnectIndex; }
-
-    static auto& $mLeftWingIndex() { return mLeftWingIndex; }
-
-    static auto& $mPenthouseIndex() { return mPenthouseIndex; }
-
-    static auto& $mRightWingIndex() { return mRightWingIndex; }
-
-    // NOLINTEND
 };

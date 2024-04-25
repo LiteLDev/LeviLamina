@@ -37,13 +37,6 @@ public:
     MCAPI static std::function<std::vector<std::string>()> mPlatformAdapterOverride;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mPlatformAdapterOverride() { return mPlatformAdapterOverride; }
-
-    // NOLINTEND
 };
 
 }; // namespace RakNet

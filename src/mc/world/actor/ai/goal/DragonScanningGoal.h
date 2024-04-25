@@ -54,15 +54,4 @@ public:
     MCAPI static int SITTING_SCANNING_IDLE_TICKS;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $SITTING_ATTACK_VIEW_RANGE() { return SITTING_ATTACK_VIEW_RANGE; }
-
-    static auto& $SITTING_CHARGE_VIEW_RANGE() { return SITTING_CHARGE_VIEW_RANGE; }
-
-    static auto& $SITTING_SCANNING_IDLE_TICKS() { return SITTING_SCANNING_IDLE_TICKS; }
-
-    // NOLINTEND
 };

@@ -29,11 +29,4 @@ public:
     MCAPI static std::string const STRUCTURE_LOCATION_FOSSIL[];
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $STRUCTURE_LOCATION_FOSSIL() { return STRUCTURE_LOCATION_FOSSIL; }
-
-    // NOLINTEND
 };

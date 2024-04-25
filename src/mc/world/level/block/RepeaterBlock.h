@@ -103,11 +103,4 @@ public:
     MCAPI static int const DELAYS[];
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $DELAYS() { return DELAYS; }
-
-    // NOLINTEND
 };

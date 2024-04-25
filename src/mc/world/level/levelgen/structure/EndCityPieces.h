@@ -272,13 +272,4 @@ public:
     MCAPI static class LegacyStructureSettings mOverwriteSettings;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mInsertSettings() { return mInsertSettings; }
-
-    static auto& $mOverwriteSettings() { return mOverwriteSettings; }
-
-    // NOLINTEND
 };

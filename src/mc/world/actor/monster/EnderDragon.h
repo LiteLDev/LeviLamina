@@ -199,17 +199,4 @@ public:
     MCAPI static float SITTING_ALLOWED_DAMAGE_PERCENTAGE;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $GROWL_INTERVAL_MAX() { return GROWL_INTERVAL_MAX; }
-
-    static auto& $GROWL_INTERVAL_MIN() { return GROWL_INTERVAL_MIN; }
-
-    static auto& $MAX_PATH_RADIUS() { return MAX_PATH_RADIUS; }
-
-    static auto& $SITTING_ALLOWED_DAMAGE_PERCENTAGE() { return SITTING_ALLOWED_DAMAGE_PERCENTAGE; }
-
-    // NOLINTEND
 };

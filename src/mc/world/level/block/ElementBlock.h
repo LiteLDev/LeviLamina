@@ -76,11 +76,4 @@ public:
     MCAPI static std::vector<class BlockLegacy const*> mElements;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mElements() { return mElements; }
-
-    // NOLINTEND
 };

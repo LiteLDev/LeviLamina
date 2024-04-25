@@ -44,15 +44,4 @@ public:
     MCAPI static bool mIsReady;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mInitialized() { return mInitialized; }
-
-    static auto& $mInstance() { return mInstance; }
-
-    static auto& $mIsReady() { return mIsReady; }
-
-    // NOLINTEND
 };

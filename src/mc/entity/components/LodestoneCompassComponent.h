@@ -65,11 +65,4 @@ public:
     MCAPI static class CompassSpriteCalculator mSpinningLodestone;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mSpinningLodestone() { return mSpinningLodestone; }
-
-    // NOLINTEND
 };

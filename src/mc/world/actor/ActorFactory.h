@@ -185,11 +185,4 @@ public:
     MCAPI static std::vector<struct VanillaActorData> builtinEntityMappings;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $builtinEntityMappings() { return builtinEntityMappings; }
-
-    // NOLINTEND
 };

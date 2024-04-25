@@ -63,11 +63,4 @@ public:
     MCAPI static int const EAT_ANIMATION_TICKS;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $EAT_ANIMATION_TICKS() { return EAT_ANIMATION_TICKS; }
-
-    // NOLINTEND
 };

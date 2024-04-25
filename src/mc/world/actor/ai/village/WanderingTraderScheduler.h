@@ -90,21 +90,4 @@ public:
     MCAPI static int const LENGTH_OF_DAY_IN_TICKS;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $CHANCE_TO_SPAWN_IN_WILDERNESS() { return CHANCE_TO_SPAWN_IN_WILDERNESS; }
-
-    static auto& $CHANCE_TO_SPAWN_PER_DAY() { return CHANCE_TO_SPAWN_PER_DAY; }
-
-    static auto& $DISTANCE_IN_BLOCKS_FROM_MEETING_AREA() { return DISTANCE_IN_BLOCKS_FROM_MEETING_AREA; }
-
-    static auto& $DISTANCE_IN_BLOCKS_FROM_PLAYER() { return DISTANCE_IN_BLOCKS_FROM_PLAYER; }
-
-    static auto& $DISTANCE_IN_BLOCKS_FROM_PLAYER_SQUARE() { return DISTANCE_IN_BLOCKS_FROM_PLAYER_SQUARE; }
-
-    static auto& $LENGTH_OF_DAY_IN_TICKS() { return LENGTH_OF_DAY_IN_TICKS; }
-
-    // NOLINTEND
 };

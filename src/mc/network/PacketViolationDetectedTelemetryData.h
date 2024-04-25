@@ -40,11 +40,4 @@ public:
     MCAPI static std::string const mEventName;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mEventName() { return mEventName; }
-
-    // NOLINTEND
 };

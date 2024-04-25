@@ -90,13 +90,4 @@ public:
     MCAPI static int SCREAMING_GOAT_VARIANT;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $DEFAULT_HORN_COUNT() { return DEFAULT_HORN_COUNT; }
-
-    static auto& $SCREAMING_GOAT_VARIANT() { return SCREAMING_GOAT_VARIANT; }
-
-    // NOLINTEND
 };

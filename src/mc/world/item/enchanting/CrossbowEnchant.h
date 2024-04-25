@@ -41,11 +41,4 @@ public:
     MCAPI static std::vector<::Enchant::Type> const VALID_ENCHANTMENTS;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $VALID_ENCHANTMENTS() { return VALID_ENCHANTMENTS; }
-
-    // NOLINTEND
 };

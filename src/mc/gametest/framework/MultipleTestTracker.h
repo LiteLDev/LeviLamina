@@ -57,21 +57,6 @@ public:
     MCAPI static std::string const sSuccessfulTest;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $sFailedOptionalTest() { return sFailedOptionalTest; }
-
-    static auto& $sFailedRequiredTest() { return sFailedRequiredTest; }
-
-    static auto& $sNotStartedTest() { return sNotStartedTest; }
-
-    static auto& $sOnGoingTest() { return sOnGoingTest; }
-
-    static auto& $sSuccessfulTest() { return sSuccessfulTest; }
-
-    // NOLINTEND
 };
 
 }; // namespace gametest

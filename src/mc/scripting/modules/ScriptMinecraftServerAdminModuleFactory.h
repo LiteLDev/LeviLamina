@@ -59,13 +59,4 @@ public:
     MCAPI static class mce::UUID const ModuleUUID;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $ModuleName() { return ModuleName; }
-
-    static auto& $ModuleUUID() { return ModuleUUID; }
-
-    // NOLINTEND
 };

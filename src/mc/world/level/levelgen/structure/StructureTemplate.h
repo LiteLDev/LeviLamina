@@ -171,11 +171,4 @@ public:
     MCAPI static int const NO_BLOCK_INDEX_VALUE;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $NO_BLOCK_INDEX_VALUE() { return NO_BLOCK_INDEX_VALUE; }
-
-    // NOLINTEND
 };

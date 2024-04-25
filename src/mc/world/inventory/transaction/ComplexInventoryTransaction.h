@@ -73,11 +73,4 @@ public:
         transactionTypeMap;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $transactionTypeMap() { return transactionTypeMap; }
-
-    // NOLINTEND
 };

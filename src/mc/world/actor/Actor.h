@@ -2031,15 +2031,4 @@ public:
     MCAPI static uint64 const DEFAULT_MAX_TICK_DELAY_OPTIMIZATION;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $DAMAGE_NEARBY_MOBS_DURATION() { return DAMAGE_NEARBY_MOBS_DURATION; }
-
-    static auto& $DEFAULT_MAX_DISTANCE_OPTIMIZATION() { return DEFAULT_MAX_DISTANCE_OPTIMIZATION; }
-
-    static auto& $DEFAULT_MAX_TICK_DELAY_OPTIMIZATION() { return DEFAULT_MAX_TICK_DELAY_OPTIMIZATION; }
-
-    // NOLINTEND
 };

@@ -33,13 +33,4 @@ public:
     MCAPI static std::recursive_mutex mMutex;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mInstance() { return mInstance; }
-
-    static auto& $mMutex() { return mMutex; }
-
-    // NOLINTEND
 };

@@ -135,11 +135,4 @@ public:
     MCAPI static class BaseGameVersion const HOPPER_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $HOPPER_DOESNT_BREAK_FALLING_BLOCK_VERSION() { return HOPPER_DOESNT_BREAK_FALLING_BLOCK_VERSION; }
-
-    // NOLINTEND
 };

@@ -15,11 +15,4 @@ public:
     MCAPI static float COOLDOWN_TIME_SECONDS;
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $COOLDOWN_TIME_SECONDS() { return COOLDOWN_TIME_SECONDS; }
-
-    // NOLINTEND
 };

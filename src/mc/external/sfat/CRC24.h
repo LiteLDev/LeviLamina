@@ -17,13 +17,6 @@ public:
     MCAPI static uint const table[];
 
     // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $table() { return table; }
-
-    // NOLINTEND
 };
 
 }; // namespace SFAT
