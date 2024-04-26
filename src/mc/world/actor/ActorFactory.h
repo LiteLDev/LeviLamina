@@ -182,18 +182,11 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?builtinEntityMappings@ActorFactory@@0V?$vector@UVanillaActorData@@V?$allocator@UVanillaActorData@@@std@@@std@@A
     MCAPI static std::vector<struct VanillaActorData> builtinEntityMappings;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $builtinEntityMappings() { return builtinEntityMappings; }
 
     // NOLINTEND
 };

@@ -30,6 +30,9 @@ public:
     // vIndex: 0, symbol: __gen_??1ScriptInventoryComponent@ScriptModuleMinecraft@@UEAA@XZ
     virtual ~ScriptInventoryComponent() = default;
 
+    // vIndex: 1, symbol: ?_isValid@ScriptInventoryComponent@ScriptModuleMinecraft@@MEBA_NXZ
+    virtual bool _isValid() const;
+
     // symbol: ??0ScriptInventoryComponent@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
     MCAPI ScriptInventoryComponent(class ScriptModuleMinecraft::ScriptInventoryComponent const&);
 

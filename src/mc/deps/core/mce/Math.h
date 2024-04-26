@@ -94,6 +94,9 @@ public:
     // symbol: ?isNan@Math@mce@@SA_NM@Z
     MCAPI static bool isNan(float f);
 
+    // symbol: ?isWrappedRotationEpsilonEqual@Math@mce@@SA_NMMM@Z
+    MCAPI static bool isWrappedRotationEpsilonEqual(float, float, float epsilon);
+
     // symbol: ?lerpRotate@Math@mce@@SAMMMM@Z
     MCAPI static float lerpRotate(float from, float to, float a);
 
@@ -129,22 +132,13 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mSinScale@Math@mce@@0MB
     MCAPI static float const mSinScale;
 
     // symbol: ?mSin@Math@mce@@0PAMA
     MCAPI static float mSin[];
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mSinScale() { return mSinScale; }
-
-    static auto& $mSin() { return mSin; }
 
     // NOLINTEND
 };

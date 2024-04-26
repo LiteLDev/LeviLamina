@@ -102,9 +102,6 @@ public:
     // symbol: ?isBaseGamePack@PackInstance@@QEBA_NXZ
     MCAPI bool isBaseGamePack() const;
 
-    // symbol: ?isTrusted@PackInstance@@QEBA_NXZ
-    MCAPI bool isTrusted() const;
-
     // symbol: ?isZipped@PackInstance@@QEBA_NXZ
     MCAPI bool isZipped() const;
 

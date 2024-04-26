@@ -39,16 +39,16 @@ public:
     // vIndex: 10, symbol: __gen_??1Camel@@UEAA@XZ
     virtual ~Camel() = default;
 
-    // vIndex: 20, symbol: ?getInterpolatedRidingOffset@Camel@@UEBA?AVVec3@@MH@Z
+    // vIndex: 19, symbol: ?getInterpolatedRidingOffset@Camel@@UEBA?AVVec3@@MH@Z
     virtual class Vec3 getInterpolatedRidingOffset(float, int) const;
 
-    // vIndex: 28, symbol: ?normalTick@Camel@@UEAAXXZ
+    // vIndex: 26, symbol: ?normalTick@Camel@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 155, symbol: ?_playStepSound@Camel@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 151, symbol: ?_playStepSound@Camel@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
     virtual void _playStepSound(class BlockPos const&, class Block const& onBlock);
 
-    // vIndex: 165, symbol: ?aiStep@Camel@@UEAAXXZ
+    // vIndex: 160, symbol: ?aiStep@Camel@@UEAAXXZ
     virtual void aiStep();
 
     // symbol: ??0Camel@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

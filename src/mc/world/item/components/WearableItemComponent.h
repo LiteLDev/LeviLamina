@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Puv::v1_20_50 { struct WearableItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -30,7 +31,7 @@ public:
     // vIndex: 2, symbol: ?writeSettings@ItemComponent@@UEAAXXZ
     virtual void writeSettings();
 
-    // vIndex: 3, symbol: ?isNetworkComponent@InteractButtonItemComponent@@UEBA_NXZ
+    // vIndex: 3, symbol: ?isNetworkComponent@ItemComponent@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
     // vIndex: 4, symbol:
@@ -52,6 +53,9 @@ public:
 
     // vIndex: 9, symbol: ?_initializeComponent@WearableItemComponent@@UEAAXXZ
     virtual void _initializeComponent();
+
+    // symbol: ??0WearableItemComponent@@QEAA@U0v1_20_50@Puv@@@Z
+    MCAPI explicit WearableItemComponent(struct Puv::v1_20_50::WearableItemComponent);
 
     // symbol: ??0WearableItemComponent@@QEAA@W4EquipmentSlot@Legacy@Puv@@H@Z
     MCAPI WearableItemComponent(::Puv::Legacy::EquipmentSlot, int);

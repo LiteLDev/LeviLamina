@@ -25,17 +25,10 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mAllowListFile@AllowListCommand@@0PEAVAllowListFile@@EA
     MCAPI static class AllowListFile* mAllowListFile;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mAllowListFile() { return mAllowListFile; }
 
     // NOLINTEND
 };

@@ -35,18 +35,18 @@ public:
     // vIndex: 16, symbol: ?getItemColor@CocoaBeanItem@@UEBA?AW4ItemColor@@XZ
     virtual ::ItemColor getItemColor() const;
 
-    // vIndex: 54, symbol: ?isValidAuxValue@CocoaBeanItem@@UEBA_NH@Z
+    // vIndex: 56, symbol: ?isValidAuxValue@CocoaBeanItem@@UEBA_NH@Z
     virtual bool isValidAuxValue(int) const;
 
-    // vIndex: 81, symbol:
+    // vIndex: 82, symbol:
     // ?buildDescriptionId@CocoaBeanItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 102, symbol:
+    // vIndex: 103, symbol:
     // ?setIconInfo@CocoaBeanItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     virtual class Item& setIconInfo(std::string const&, int);
 
-    // vIndex: 117, symbol:
+    // vIndex: 118, symbol:
     // ?_useOn@CocoaBeanItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
     _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;

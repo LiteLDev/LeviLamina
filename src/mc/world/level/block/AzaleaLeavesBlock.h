@@ -51,8 +51,8 @@ public:
     getMapColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
     // symbol:
-    // ??0AzaleaLeavesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@VBlockLegacy@@@@@Z
-    MCAPI AzaleaLeavesBlock(std::string const& nameId, int id, class WeakPtr<class BlockLegacy> sapling);
+    // ??0AzaleaLeavesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@$$CBVBlockLegacy@@@@@Z
+    MCAPI AzaleaLeavesBlock(std::string const& nameId, int id, class WeakPtr<class BlockLegacy const> sapling);
 
     // NOLINTEND
 };

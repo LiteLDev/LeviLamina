@@ -57,6 +57,10 @@ public:
     MCAPI class Scripting::Result<class ActorDefinitionTrigger> getGrowUp() const;
 
     // symbol:
+    // ?getTransformToItem@ScriptAgeableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$V@Scripting@@XZ
+    MCAPI class Scripting::Result<std::string> getTransformToItem() const;
+
+    // symbol:
     // ?bind@ScriptAgeableComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptAgeableComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptAgeableComponent>
     bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&);

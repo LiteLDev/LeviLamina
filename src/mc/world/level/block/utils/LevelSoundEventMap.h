@@ -25,18 +25,11 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?map@LevelSoundEventMap@@0V?$BidirectionalUnorderedMap@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4LevelSoundEvent@Legacy@Puv@@@@B
     MCAPI static class BidirectionalUnorderedMap<std::string, ::Puv::Legacy::LevelSoundEvent> const map;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $map() { return map; }
 
     // NOLINTEND
 };

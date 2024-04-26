@@ -23,12 +23,12 @@ public:
     public:
         // NOLINTBEGIN
         // symbol:
-        // ?insert@PoolAliasLookup@PoolAliasBinding@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-        MCAPI void insert(std::string const&, std::string const&);
+        // ?getOrDefault@PoolAliasLookup@PoolAliasBinding@@QEBA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@V34@0@Z
+        MCAPI std::string_view getOrDefault(std::string_view, std::string_view) const;
 
         // symbol:
-        // ?lookup@PoolAliasLookup@PoolAliasBinding@@QEBAPEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV34@@Z
-        MCAPI std::string const* lookup(std::string const&) const;
+        // ?insert@PoolAliasLookup@PoolAliasBinding@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+        MCAPI void insert(std::string const&, std::string const&);
 
         // symbol: ??1PoolAliasLookup@PoolAliasBinding@@QEAA@XZ
         MCAPI ~PoolAliasLookup();

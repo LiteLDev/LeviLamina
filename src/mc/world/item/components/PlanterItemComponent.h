@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Puv::v1_20_50 { struct PlanterItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -27,7 +28,7 @@ public:
     // vIndex: 2, symbol: ?writeSettings@ItemComponent@@UEAAXXZ
     virtual void writeSettings();
 
-    // vIndex: 3, symbol: ?isNetworkComponent@InteractButtonItemComponent@@UEBA_NXZ
+    // vIndex: 3, symbol: ?isNetworkComponent@ItemComponent@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
     // vIndex: 4, symbol:
@@ -59,6 +60,9 @@ public:
 
     // symbol: ??0PlanterItemComponent@@QEAA@AEBVBlock@@@Z
     MCAPI explicit PlanterItemComponent(class Block const&);
+
+    // symbol: ??0PlanterItemComponent@@QEAA@U0v1_20_50@Puv@@@Z
+    MCAPI explicit PlanterItemComponent(struct Puv::v1_20_50::PlanterItemComponent);
 
     // symbol: ?calculatePlacePos@PlanterItemComponent@@QEBA_NAEBVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
     MCAPI bool

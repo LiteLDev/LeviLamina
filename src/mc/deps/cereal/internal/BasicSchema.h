@@ -82,9 +82,9 @@ public:
     virtual ~BasicSchema();
 
     // vIndex: 5, symbol:
-    // ?unpack@BasicSchema@internal@cereal@@UEBAXAEAV?$vector@V?$reference_wrapper@$$CBUSetterDescriptor@BasicSchema@internal@cereal@@@std@@V?$allocator@V?$reference_wrapper@$$CBUSetterDescriptor@BasicSchema@internal@cereal@@@std@@@2@@std@@AEAV?$dense_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$reference_wrapper@$$CBUMemberDescriptor@BasicSchema@internal@cereal@@@2@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$reference_wrapper@$$CBUMemberDescriptor@BasicSchema@internal@cereal@@@2@@std@@@2@@entt@@@Z
+    // ?unpack@BasicSchema@internal@cereal@@UEBAXAEAV?$vector@V?$reference_wrapper@$$CBUSetterDescriptor@BasicSchema@internal@cereal@@@std@@V?$allocator@V?$reference_wrapper@$$CBUSetterDescriptor@BasicSchema@internal@cereal@@@std@@@2@@std@@AEAV?$dense_map@V?$basic_string_view@DU?$char_traits@D@std@@@std@@V?$reference_wrapper@$$CBUMemberDescriptor@BasicSchema@internal@cereal@@@2@U?$hash@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@2@U?$equal_to@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string_view@DU?$char_traits@D@std@@@std@@V?$reference_wrapper@$$CBUMemberDescriptor@BasicSchema@internal@cereal@@@2@@std@@@2@@entt@@@Z
     virtual void
-    unpack(std::vector<std::reference_wrapper<struct cereal::internal::BasicSchema::SetterDescriptor const>>&, entt::dense_map<std::string, std::reference_wrapper<struct cereal::internal::BasicSchema::MemberDescriptor const>>&)
+    unpack(std::vector<std::reference_wrapper<struct cereal::internal::BasicSchema::SetterDescriptor const>>&, entt::dense_map<std::string_view, std::reference_wrapper<struct cereal::internal::BasicSchema::MemberDescriptor const>>&)
         const;
 
     // vIndex: 6, symbol: ?enumMapping@BasicSchema@internal@cereal@@UEAAXVSerializerEnumMapping@3@@Z
@@ -98,16 +98,17 @@ public:
     virtual void addParent(std::unique_ptr<class cereal::internal::BasicSchema>);
 
     // vIndex: 9, symbol:
-    // ?addSetter@BasicSchema@internal@cereal@@UEAAXV?$unique_ptr@VBasicSchema@internal@cereal@@U?$default_delete@VBasicSchema@internal@cereal@@@std@@@std@@AEBUtype_info@entt@@@Z
-    virtual void addSetter(std::unique_ptr<class cereal::internal::BasicSchema>, entt::type_info const&);
+    // ?addSetter@BasicSchema@internal@cereal@@UEAAXV?$unique_ptr@VBasicSchema@internal@cereal@@U?$default_delete@VBasicSchema@internal@cereal@@@std@@@std@@P6A?AVmeta_type@entt@@AEBVmeta_ctx@7@@Z@Z
+    virtual void
+        addSetter(std::unique_ptr<class cereal::internal::BasicSchema>, entt::meta_type (*)(entt::meta_ctx const&));
 
     // vIndex: 10, symbol:
-    // ?addMember@BasicSchema@internal@cereal@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VBasicSchema@internal@cereal@@U?$default_delete@VBasicSchema@internal@cereal@@@std@@@5@_N@Z
-    virtual void addMember(std::string const&, std::unique_ptr<class cereal::internal::BasicSchema>, bool);
+    // ?addMember@BasicSchema@internal@cereal@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@V?$unique_ptr@VBasicSchema@internal@cereal@@U?$default_delete@VBasicSchema@internal@cereal@@@std@@@5@_N@Z
+    virtual void addMember(std::string_view, std::unique_ptr<class cereal::internal::BasicSchema>, bool);
 
     // vIndex: 11, symbol:
-    // ?customError@BasicSchema@internal@cereal@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-    virtual void customError(std::string const&, std::string const&);
+    // ?customError@BasicSchema@internal@cereal@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V45@@Z
+    virtual void customError(std::string const&, std::string);
 
     // vIndex: 12, symbol:
     // ?constraint@BasicSchema@internal@cereal@@UEAAXV?$unique_ptr@VConstraint@cereal@@U?$default_delete@VConstraint@cereal@@@std@@@std@@@Z
@@ -123,8 +124,8 @@ public:
     MCAPI struct cereal::ReflectionCtx const& ctx() const;
 
     // symbol:
-    // ?customError@BasicSchema@internal@cereal@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void customError(std::string const&);
+    // ?customError@BasicSchema@internal@cereal@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI void customError(std::string);
 
     // symbol: ?description@BasicSchema@internal@cereal@@QEBA?AUSchemaDescription@3@XZ
     MCAPI struct cereal::SchemaDescription description() const;

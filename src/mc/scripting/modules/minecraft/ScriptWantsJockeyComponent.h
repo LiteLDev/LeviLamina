@@ -16,7 +16,7 @@ public:
     // vIndex: 0, symbol: __gen_??1ScriptWantsJockeyComponent@ScriptModuleMinecraft@@UEAA@XZ
     virtual ~ScriptWantsJockeyComponent() = default;
 
-    // vIndex: 1, symbol: ?_isValid@ScriptActorComponent@ScriptModuleMinecraft@@MEBA_NXZ
+    // vIndex: 1, symbol: ?_isValid@AttributeScriptActorComponent@ScriptModuleMinecraft@@MEBA_NXZ
     virtual bool _isValid() const;
 
     // symbol:

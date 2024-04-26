@@ -29,13 +29,13 @@ public:
     // vIndex: 0, symbol: __gen_??1EnchantedBookItem@@UEAA@XZ
     virtual ~EnchantedBookItem() = default;
 
-    // vIndex: 37, symbol: ?isGlint@EnchantedBookItem@@UEBA_NAEBVItemStackBase@@@Z
+    // vIndex: 38, symbol: ?isGlint@EnchantedBookItem@@UEBA_NAEBVItemStackBase@@@Z
     virtual bool isGlint(class ItemStackBase const& stack) const;
 
-    // vIndex: 49, symbol: ?getEnchantSlot@EnchantedBookItem@@UEBAHXZ
+    // vIndex: 50, symbol: ?getEnchantSlot@EnchantedBookItem@@UEBAHXZ
     virtual int getEnchantSlot() const;
 
-    // vIndex: 50, symbol: ?getEnchantValue@EnchantedBookItem@@UEBAHXZ
+    // vIndex: 51, symbol: ?getEnchantValue@EnchantedBookItem@@UEBAHXZ
     virtual int getEnchantValue() const;
 
     // symbol: ??0EnchantedBookItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z

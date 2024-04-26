@@ -49,22 +49,13 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?min3DAttackVersion@MeleeAttackGoal@@0VBaseGameVersion@@B
     MCAPI static class BaseGameVersion const min3DAttackVersion;
 
     // symbol: ?minHitThroughWallFixVersion@MeleeAttackGoal@@0VBaseGameVersion@@B
     MCAPI static class BaseGameVersion const minHitThroughWallFixVersion;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $min3DAttackVersion() { return min3DAttackVersion; }
-
-    static auto& $minHitThroughWallFixVersion() { return minHitThroughWallFixVersion; }
 
     // NOLINTEND
 };

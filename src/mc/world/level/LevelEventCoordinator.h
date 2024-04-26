@@ -25,6 +25,9 @@ public:
     // symbol: ?getLevelGameplayHandler@LevelEventCoordinator@@QEAAAEAVLevelGameplayHandler@@XZ
     MCAPI class LevelGameplayHandler& getLevelGameplayHandler();
 
+    // symbol: ?registerGameRules@LevelEventCoordinator@@QEAAXAEAVGameRules@@@Z
+    MCAPI void registerGameRules(class GameRules&);
+
     // symbol:
     // ?registerLevelGameplayHandler@LevelEventCoordinator@@QEAAX$$QEAV?$unique_ptr@VLevelGameplayHandler@@U?$default_delete@VLevelGameplayHandler@@@std@@@std@@@Z
     MCAPI void registerLevelGameplayHandler(std::unique_ptr<class LevelGameplayHandler>&& handler);
@@ -51,6 +54,13 @@ public:
     // symbol:
     // ?sendLevelWeatherChanged@LevelEventCoordinator@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N111@Z
     MCAPI void sendLevelWeatherChanged(std::string const&, bool, bool, bool, bool);
+
+    // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol: ?_onGameRuleChange@LevelEventCoordinator@@AEAAXAEBVGameRules@@AEBUGameRuleId@@@Z
+    MCAPI void _onGameRuleChange(class GameRules const&, struct GameRuleId const&);
 
     // NOLINTEND
 };

@@ -29,7 +29,7 @@ public:
     // vIndex: 0, symbol: __gen_??1ElementBlockItem@@UEAA@XZ
     virtual ~ElementBlockItem() = default;
 
-    // vIndex: 90, symbol: ?fixupCommon@ElementBlockItem@@EEBAXAEAVItemStackBase@@@Z
+    // vIndex: 91, symbol: ?fixupCommon@ElementBlockItem@@EEBAXAEAVItemStackBase@@@Z
     virtual void fixupCommon(class ItemStackBase& stack) const;
 
     // NOLINTEND

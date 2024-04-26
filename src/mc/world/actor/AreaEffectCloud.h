@@ -44,19 +44,19 @@ public:
     // vIndex: 10, symbol: __gen_??1AreaEffectCloud@@UEAA@XZ
     virtual ~AreaEffectCloud() = default;
 
-    // vIndex: 28, symbol: ?normalTick@AreaEffectCloud@@UEAAXXZ
+    // vIndex: 26, symbol: ?normalTick@AreaEffectCloud@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 40, symbol: ?getShadowRadius@AreaEffectCloud@@UEBAMXZ
+    // vIndex: 38, symbol: ?getShadowRadius@AreaEffectCloud@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 64, symbol: ?setOwner@AreaEffectCloud@@UEAAXUActorUniqueID@@@Z
+    // vIndex: 60, symbol: ?setOwner@AreaEffectCloud@@UEAAXUActorUniqueID@@@Z
     virtual void setOwner(struct ActorUniqueID ownerID);
 
-    // vIndex: 153, symbol: ?readAdditionalSaveData@AreaEffectCloud@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 149, symbol: ?readAdditionalSaveData@AreaEffectCloud@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 154, symbol: ?addAdditionalSaveData@AreaEffectCloud@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 150, symbol: ?addAdditionalSaveData@AreaEffectCloud@@MEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ??0AreaEffectCloud@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

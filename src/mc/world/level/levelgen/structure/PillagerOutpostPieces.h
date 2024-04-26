@@ -111,7 +111,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?MSC_FEATURES@PillagerOutpostPieces@@0V?$array@V?$basic_string_view@DU?$char_traits@D@std@@@std@@$06@std@@A
@@ -126,19 +126,6 @@ private:
     // symbol:
     // ?STRUCTURE_WATCHTOWER_OVERGROWN@PillagerOutpostPieces@@0V?$basic_string_view@DU?$char_traits@D@std@@@std@@A
     MCAPI static std::string_view STRUCTURE_WATCHTOWER_OVERGROWN;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $MSC_FEATURES() { return MSC_FEATURES; }
-
-    static auto& $PILLAGER_LOOT() { return PILLAGER_LOOT; }
-
-    static auto& $STRUCTURE_WATCHTOWER() { return STRUCTURE_WATCHTOWER; }
-
-    static auto& $STRUCTURE_WATCHTOWER_OVERGROWN() { return STRUCTURE_WATCHTOWER_OVERGROWN; }
 
     // NOLINTEND
 };

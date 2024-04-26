@@ -80,8 +80,8 @@ public:
     // symbol: ?getSelectedContainerId@PlayerInventory@@QEAA?AW4ContainerID@@XZ
     MCAPI ::ContainerID getSelectedContainerId();
 
-    // symbol: ?getSelectedItem@PlayerInventory@@QEAAAEBVItemStack@@XZ
-    MCAPI class ItemStack const& getSelectedItem();
+    // symbol: ?getSelectedItem@PlayerInventory@@QEBAAEBVItemStack@@XZ
+    MCAPI class ItemStack const& getSelectedItem() const;
 
     // symbol: ?getSelectedSlot@PlayerInventory@@QEBA?AUPlayerInventorySlotData@@XZ
     MCAPI struct PlayerInventorySlotData getSelectedSlot() const;

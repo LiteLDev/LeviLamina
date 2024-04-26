@@ -71,10 +71,13 @@ public:
     virtual class ChunkLocalNoiseCache createNoiseCache(class ChunkPos chunkPos) const;
 
     // symbol:
-    // ?decorateWorldGenPostProcess@OverworldGeneratorMultinoise@@EEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@@Z
-    virtual void
-    decorateWorldGenPostProcess(class Biome&, class LevelChunk& lc, class BlockSource& source, class Random& random)
-        const;
+    // ?decorateWorldGenPostProcess@OverworldGeneratorMultinoise@@EEBAXAEBVBiome@@AEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@@Z
+    virtual void decorateWorldGenPostProcess(
+        class Biome const&,
+        class LevelChunk&  lc,
+        class BlockSource& source,
+        class Random&      random
+    ) const;
 
     // symbol: ?findSpawnPosition@OverworldGeneratorMultinoise@@UEBA?AVBlockPos@@XZ
     virtual class BlockPos findSpawnPosition() const;

@@ -4,11 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/ClassBindingBuilder.h"
+#include "mc/external/scripting/Result.h"
 #include "mc/external/scripting/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
 class BlockVolumeBase;
+class BoundingBox;
+class ChunkPos;
 class Vec3;
 namespace ScriptModuleMinecraft { class ScriptBlockLocationIterator; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -29,7 +33,7 @@ public:
     virtual ~ScriptBlockVolumeBase();
 
     // vIndex: 1, symbol:
-    // ?getBlockLocationIterator@ScriptSimpleBlockVolume@ScriptModuleMinecraft@@UEAA?AV?$StrongTypedObjectHandle@VScriptBlockLocationIterator@ScriptModuleMinecraft@@@Scripting@@VWeakLifetimeScope@4@@Z
+    // ?getBlockLocationIterator@ScriptListBlockVolume@ScriptModuleMinecraft@@UEAA?AV?$StrongTypedObjectHandle@VScriptBlockLocationIterator@ScriptModuleMinecraft@@@Scripting@@VWeakLifetimeScope@4@@Z
     virtual class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockLocationIterator>
         getBlockLocationIterator(class Scripting::WeakLifetimeScope) = 0;
 
@@ -37,11 +41,22 @@ public:
     // ??0ScriptBlockVolumeBase@ScriptModuleMinecraft@@QEAA@V?$unique_ptr@VBlockVolumeBase@@U?$default_delete@VBlockVolumeBase@@@std@@@std@@@Z
     MCAPI explicit ScriptBlockVolumeBase(std::unique_ptr<class BlockVolumeBase>);
 
-    // symbol: ?getMax@ScriptBlockVolumeBase@ScriptModuleMinecraft@@QEBA?AVVec3@@XZ
-    MCAPI class Vec3 getMax() const;
+    // symbol: ?forEach@ScriptBlockVolumeBase@ScriptModuleMinecraft@@QEBAXV?$function@$$A6A_NAEBVBlockPos@@@Z@std@@@Z
+    MCAPI void forEach(std::function<bool(class BlockPos const&)>) const;
 
-    // symbol: ?getMin@ScriptBlockVolumeBase@ScriptModuleMinecraft@@QEBA?AVVec3@@XZ
-    MCAPI class Vec3 getMin() const;
+    // symbol:
+    // ?getBoundingBox@ScriptBlockVolumeBase@ScriptModuleMinecraft@@QEBA?AV?$Result@VBoundingBox@@$$V@Scripting@@XZ
+    MCAPI class Scripting::Result<class BoundingBox> getBoundingBox() const;
+
+    // symbol:
+    // ?getChunks@ScriptBlockVolumeBase@ScriptModuleMinecraft@@QEBA?AV?$set@VChunkPos@@U?$less@VChunkPos@@@std@@V?$allocator@VChunkPos@@@3@@std@@XZ
+    MCAPI std::set<class ChunkPos> getChunks() const;
+
+    // symbol: ?getMax@ScriptBlockVolumeBase@ScriptModuleMinecraft@@QEBA?AV?$Result@VVec3@@$$V@Scripting@@XZ
+    MCAPI class Scripting::Result<class Vec3> getMax() const;
+
+    // symbol: ?getMin@ScriptBlockVolumeBase@ScriptModuleMinecraft@@QEBA?AV?$Result@VVec3@@$$V@Scripting@@XZ
+    MCAPI class Scripting::Result<class Vec3> getMin() const;
 
     // symbol: ?getSpan@ScriptBlockVolumeBase@ScriptModuleMinecraft@@QEBA?AVVec3@@XZ
     MCAPI class Vec3 getSpan() const;

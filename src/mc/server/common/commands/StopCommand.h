@@ -25,17 +25,10 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mServer@StopCommand@@0PEAVDedicatedServer@@EA
     MCAPI static class DedicatedServer* mServer;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mServer() { return mServer; }
 
     // NOLINTEND
 };

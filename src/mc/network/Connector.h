@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/TransportLayer.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace RakNet { struct SystemAddress; }
@@ -97,6 +100,9 @@ public:
 
     // vIndex: 14, symbol: ?getIPv6Port@Connector@@UEBAGXZ
     virtual ushort getIPv6Port() const;
+
+    // vIndex: 15, symbol: ?getNetworkType@Connector@@UEBA?AW4TransportLayer@@XZ
+    virtual ::TransportLayer getNetworkType() const;
 
     // symbol: ??0Connector@@QEAA@AEAUConnectionCallbacks@0@@Z
     MCAPI explicit Connector(struct Connector::ConnectionCallbacks& callbacks);

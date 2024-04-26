@@ -279,7 +279,40 @@ public:
 
     // vIndex: 40, symbol:
     // ?_createChunkBuildOrderPolicy@Dimension@@EEAA?AV?$unique_ptr@VChunkBuildOrderPolicyBase@@U?$default_delete@VChunkBuildOrderPolicyBase@@@std@@@std@@XZ
-    virtual std::unique_ptr<class ChunkBuildOrderPolicyBase> _createChunkBuildOrderPolicy();
+    MCVAPI std::unique_ptr<class ChunkBuildOrderPolicyBase> _createChunkBuildOrderPolicy();
+
+    // symbol: ?deserialize@Dimension@@UEAAXAEBVCompoundTag@@@Z
+    MCVAPI void deserialize(class CompoundTag const& tag);
+
+    // symbol: ?fetchEntity@Dimension@@UEBAPEAVActor@@UActorUniqueID@@_N@Z
+    MCVAPI class Actor* fetchEntity(struct ActorUniqueID actorID, bool getRemoved) const;
+
+    // symbol: ?flushLevelChunkGarbageCollector@Dimension@@UEAAXXZ
+    MCVAPI void flushLevelChunkGarbageCollector();
+
+    // symbol: ?forEachPlayer@Dimension@@UEBAXV?$function@$$A6A_NAEAVPlayer@@@Z@std@@@Z
+    MCVAPI void forEachPlayer(std::function<bool(class Player&)> callback) const;
+
+    // symbol: ?forceCheckAllNeighChunkSavedStat@Dimension@@UEBA_NXZ
+    MCVAPI bool forceCheckAllNeighChunkSavedStat() const;
+
+    // symbol: ?getBiomeRegistry@Dimension@@UEBAAEBVBiomeRegistry@@XZ
+    MCVAPI class BiomeRegistry const& getBiomeRegistry() const;
+
+    // symbol: ?getBiomeRegistry@Dimension@@UEAAAEAVBiomeRegistry@@XZ
+    MCVAPI class BiomeRegistry& getBiomeRegistry();
+
+    // symbol: ?getBrightnessDependentFogColor@Dimension@@UEBA?AVColor@mce@@AEBV23@M@Z
+    MCVAPI class mce::Color getBrightnessDependentFogColor(class mce::Color const& baseColor, float brightness) const;
+
+    // symbol: ?getBrightnessRamp@Dimension@@UEBAAEBVDimensionBrightnessRamp@@XZ
+    MCVAPI class DimensionBrightnessRamp const& getBrightnessRamp() const;
+
+    // symbol: ?getClearColorScale@Dimension@@UEAAMXZ
+    MCVAPI float getClearColorScale();
+
+    // symbol: ?getCloudHeight@Dimension@@UEBAFXZ
+    MCVAPI short getCloudHeight() const;
 
     // vIndex: 41
     virtual void _upgradeOldLimboEntity(class CompoundTag& tag, ::LimboEntitiesVersion vers) = 0;
@@ -358,9 +391,6 @@ public:
 
     // symbol: ?fetchAnyInteractablePlayer@Dimension@@QEBAPEAVPlayer@@AEBVVec3@@M@Z
     MCAPI class Player* fetchAnyInteractablePlayer(class Vec3 const&, float maxDist) const;
-
-    // symbol: ?fetchEntity@Dimension@@QEBAPEAVActor@@UActorUniqueID@@_N@Z
-    MCAPI class Actor* fetchEntity(struct ActorUniqueID actorID, bool getRemoved) const;
 
     // symbol: ?fetchNearestAttackablePlayer@Dimension@@QEBAPEAVPlayer@@AEAVActor@@M@Z
     MCAPI class Player* fetchNearestAttackablePlayer(class Actor& source, float maxDist) const;

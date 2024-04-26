@@ -39,16 +39,16 @@ public:
     // vIndex: 10, symbol: __gen_??1EvocationFang@@UEAA@XZ
     virtual ~EvocationFang() = default;
 
-    // vIndex: 28, symbol: ?normalTick@EvocationFang@@UEAAXXZ
+    // vIndex: 26, symbol: ?normalTick@EvocationFang@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 40, symbol: ?getShadowRadius@EvocationFang@@UEBAMXZ
+    // vIndex: 38, symbol: ?getShadowRadius@EvocationFang@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 79, symbol: ?handleEntityEvent@EvocationFang@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 75, symbol: ?handleEntityEvent@EvocationFang@@UEAAXW4ActorEvent@@H@Z
     virtual void handleEntityEvent(::ActorEvent id, int data);
 
-    // vIndex: 96, symbol: ?getSourceUniqueID@EvocationFang@@UEBA?AUActorUniqueID@@XZ
+    // vIndex: 92, symbol: ?getSourceUniqueID@EvocationFang@@UEBA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID getSourceUniqueID() const;
 
     // symbol: ??0EvocationFang@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

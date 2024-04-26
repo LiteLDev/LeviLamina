@@ -20,6 +20,7 @@ namespace Puv { class LoadResultAny; }
 namespace Puv { class ParserBase; }
 namespace Puv { class Upgrader; }
 namespace Puv { struct Logger; }
+namespace Puv::Legacy { struct ItemDescriptor; }
 namespace Puv::internal { struct PathElement; }
 namespace Puv::v1_20_50 { struct BlockDescriptor; }
 namespace Puv::v1_20_50 { struct ComponentItemComponentData; }
@@ -28,11 +29,13 @@ namespace Puv::v1_20_50 { struct DiggerItemComponent; }
 namespace Puv::v1_20_50 { struct EnchantableItemComponent; }
 namespace Puv::v1_20_50 { struct EntityPlacerItemComponent; }
 namespace Puv::v1_20_50 { struct FoodItemComponent; }
+namespace Puv::v1_20_50 { struct IconItemComponent; }
 namespace Puv::v1_20_50 { struct InteractButtonItemComponent; }
 namespace Puv::v1_20_50 { struct PlanterItemComponent; }
 namespace Puv::v1_20_50 { struct ProjectileItemComponent; }
 namespace Puv::v1_20_50 { struct ShooterItemComponent; }
 namespace Puv::v1_20_50::BlockDescriptorSerializer { struct BlockDescriptorProxy; }
+namespace Puv::v1_20_80 { struct ComponentItemComponentData; }
 namespace cereal { class Constraint; }
 namespace cereal { class NumericConstraint; }
 namespace cereal { class SerializerContext; }

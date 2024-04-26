@@ -59,17 +59,10 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mSpinningLodestone@LodestoneCompassComponent@@0VCompassSpriteCalculator@@A
     MCAPI static class CompassSpriteCalculator mSpinningLodestone;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mSpinningLodestone() { return mSpinningLodestone; }
 
     // NOLINTEND
 };

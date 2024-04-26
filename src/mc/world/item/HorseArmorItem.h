@@ -36,7 +36,7 @@ public:
     // vIndex: 14, symbol: ?isDyeable@HorseArmorItem@@UEBA_NXZ
     virtual bool isDyeable() const;
 
-    // vIndex: 47, symbol:
+    // vIndex: 48, symbol:
     // ?appendFormattedHovertext@HorseArmorItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
     virtual void appendFormattedHovertext(
         class ItemStackBase const& stack,
@@ -45,22 +45,22 @@ public:
         bool                       showCategory
     ) const;
 
-    // vIndex: 51, symbol: ?getArmorValue@HorseArmorItem@@UEBAHXZ
+    // vIndex: 52, symbol: ?getArmorValue@HorseArmorItem@@UEBAHXZ
     virtual int getArmorValue() const;
 
-    // vIndex: 60, symbol: ?getColor@HorseArmorItem@@UEBA?AVColor@mce@@PEBVCompoundTag@@AEBVItemDescriptor@@@Z
+    // vIndex: 62, symbol: ?getColor@HorseArmorItem@@UEBA?AVColor@mce@@PEBVCompoundTag@@AEBVItemDescriptor@@@Z
     virtual class mce::Color getColor(class CompoundTag const* userData, class ItemDescriptor const&) const;
 
-    // vIndex: 62, symbol: ?hasCustomColor@HorseArmorItem@@UEBA_NPEBVCompoundTag@@@Z
+    // vIndex: 64, symbol: ?hasCustomColor@HorseArmorItem@@UEBA_NPEBVCompoundTag@@@Z
     virtual bool hasCustomColor(class CompoundTag const* userData) const;
 
-    // vIndex: 64, symbol: ?clearColor@HorseArmorItem@@UEBAXPEAVCompoundTag@@@Z
-    virtual void clearColor(class CompoundTag* userData) const;
+    // vIndex: 65, symbol: ?clearColor@HorseArmorItem@@UEBAXAEAVItemStackBase@@@Z
+    virtual void clearColor(class ItemStackBase&) const;
 
-    // vIndex: 65, symbol: ?setColor@HorseArmorItem@@UEBAXAEAVItemStackBase@@AEBVColor@mce@@@Z
+    // vIndex: 66, symbol: ?setColor@HorseArmorItem@@UEBAXAEAVItemStackBase@@AEBVColor@mce@@@Z
     virtual void setColor(class ItemStackBase& item, class mce::Color const& color) const;
 
-    // vIndex: 72, symbol: ?dispense@HorseArmorItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 73, symbol: ?dispense@HorseArmorItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar) const;
 

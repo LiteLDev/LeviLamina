@@ -2,10 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/biome/BiomeComponentBase.h"
-
-struct CappedSurfaceAttributes : public ::BiomeComponentBase {
+struct CappedSurfaceAttributes {
 public:
     // prevent constructor by default
     CappedSurfaceAttributes& operator=(CappedSurfaceAttributes const&);
@@ -19,9 +16,6 @@ public:
 
     // symbol: ?initializeNoise@CappedSurfaceAttributes@@QEAAXI@Z
     MCAPI void initializeNoise(uint levelSeed);
-
-    // symbol: ??4CappedSurfaceAttributes@@QEAAAEAU0@$$QEAU0@@Z
-    MCAPI struct CappedSurfaceAttributes& operator=(struct CappedSurfaceAttributes&&);
 
     // NOLINTEND
 };

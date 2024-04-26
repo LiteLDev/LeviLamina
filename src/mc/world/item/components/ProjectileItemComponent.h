@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Puv::v1_20_50 { struct ProjectileItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -29,7 +30,7 @@ public:
     // vIndex: 2, symbol: ?writeSettings@ItemComponent@@UEAAXXZ
     virtual void writeSettings();
 
-    // vIndex: 3, symbol: ?isNetworkComponent@InteractButtonItemComponent@@UEBA_NXZ
+    // vIndex: 3, symbol: ?isNetworkComponent@ItemComponent@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
     // vIndex: 4, symbol:
@@ -51,6 +52,9 @@ public:
 
     // vIndex: 9, symbol: ?_initializeComponent@ItemComponent@@MEAAXXZ
     virtual void _initializeComponent();
+
+    // symbol: ??0ProjectileItemComponent@@QEAA@U0v1_20_50@Puv@@@Z
+    MCAPI explicit ProjectileItemComponent(struct Puv::v1_20_50::ProjectileItemComponent);
 
     // symbol: ??0ProjectileItemComponent@@QEAA@W4ActorType@@M@Z
     MCAPI ProjectileItemComponent(::ActorType, float);

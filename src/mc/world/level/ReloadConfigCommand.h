@@ -25,17 +25,10 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?sScriptSettings@ReloadConfigCommand@@0PEAUScriptSettings@@EA
     MCAPI static struct ScriptSettings* sScriptSettings;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $sScriptSettings() { return sScriptSettings; }
 
     // NOLINTEND
 };

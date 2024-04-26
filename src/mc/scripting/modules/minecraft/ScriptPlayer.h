@@ -15,6 +15,7 @@ class Actor;
 class Player;
 class Scoreboard;
 class Vec3;
+class WeakEntityRef;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptMolangVariableMap; }
@@ -223,6 +224,11 @@ public:
     // ?getHandle@ScriptPlayer@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@AEBVPlayer@@AEBVWeakLifetimeScope@4@@Z
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>
     getHandle(class Player const& player, class Scripting::WeakLifetimeScope const& scope);
+
+    // symbol:
+    // ?getHandle@ScriptPlayer@ScriptModuleMinecraft@@SA?AV?$optional@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@@std@@VWeakEntityRef@@AEBVWeakLifetimeScope@Scripting@@@Z
+    MCAPI static std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>>
+    getHandle(class WeakEntityRef, class Scripting::WeakLifetimeScope const&);
 
     // NOLINTEND
 

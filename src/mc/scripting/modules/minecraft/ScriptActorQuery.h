@@ -18,6 +18,7 @@ namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace ScriptModuleMinecraft { class ScriptPlayerIterator; }
 namespace ScriptModuleMinecraft { struct ScriptActorQueryOptions; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct Error; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -87,6 +88,14 @@ public:
         class Dimension*                                                            dimension,
         class Level&                                                                level
     );
+
+    // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol:
+    // ?_incompatableWorldQueryOptionError@ScriptActorQuery@ScriptModuleMinecraft@@CA?AUError@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI static struct Scripting::Error _incompatableWorldQueryOptionError(std::string const& propertyName);
 
     // NOLINTEND
 };

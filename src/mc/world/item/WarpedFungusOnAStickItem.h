@@ -30,19 +30,19 @@ public:
     // vIndex: 0, symbol: __gen_??1WarpedFungusOnAStickItem@@UEAA@XZ
     virtual ~WarpedFungusOnAStickItem() = default;
 
-    // vIndex: 36, symbol: ?isHandEquipped@WarpedFungusOnAStickItem@@UEBA_NXZ
+    // vIndex: 37, symbol: ?isHandEquipped@WarpedFungusOnAStickItem@@UEBA_NXZ
     virtual bool isHandEquipped() const;
 
-    // vIndex: 46, symbol: ?requiresInteract@WarpedFungusOnAStickItem@@UEBA_NXZ
+    // vIndex: 47, symbol: ?requiresInteract@WarpedFungusOnAStickItem@@UEBA_NXZ
     virtual bool requiresInteract() const;
 
-    // vIndex: 49, symbol: ?getEnchantSlot@WarpedFungusOnAStickItem@@UEBAHXZ
+    // vIndex: 50, symbol: ?getEnchantSlot@WarpedFungusOnAStickItem@@UEBAHXZ
     virtual int getEnchantSlot() const;
 
-    // vIndex: 50, symbol: ?getEnchantValue@WarpedFungusOnAStickItem@@UEBAHXZ
+    // vIndex: 51, symbol: ?getEnchantValue@WarpedFungusOnAStickItem@@UEBAHXZ
     virtual int getEnchantValue() const;
 
-    // vIndex: 79, symbol: ?mineBlock@WarpedFungusOnAStickItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
+    // vIndex: 80, symbol: ?mineBlock@WarpedFungusOnAStickItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
     virtual bool
     mineBlock(class ItemStack& item, class Block const& block, int x, int y, int z, class Actor* owner) const;
 

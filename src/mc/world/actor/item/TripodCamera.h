@@ -45,22 +45,22 @@ public:
     // vIndex: 13, symbol: ?remove@TripodCamera@@UEAAXXZ
     virtual void remove();
 
-    // vIndex: 40, symbol: ?getShadowRadius@TripodCamera@@UEBAMXZ
+    // vIndex: 38, symbol: ?getShadowRadius@TripodCamera@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 47, symbol: ?isPickable@TripodCamera@@UEAA_NXZ
+    // vIndex: 45, symbol: ?isPickable@TripodCamera@@UEAA_NXZ
     virtual bool isPickable();
 
-    // vIndex: 56, symbol: ?isTargetable@TripodCamera@@UEBA_NXZ
+    // vIndex: 54, symbol: ?isTargetable@TripodCamera@@UEBA_NXZ
     virtual bool isTargetable() const;
 
-    // vIndex: 150, symbol: ?updateEntitySpecificMolangVariables@TripodCamera@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 146, symbol: ?updateEntitySpecificMolangVariables@TripodCamera@@UEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // vIndex: 152, symbol: ?_hurt@TripodCamera@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 148, symbol: ?_hurt@TripodCamera@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 192, symbol: ?canExistWhenDisallowMob@TripodCamera@@UEBA_NXZ
+    // vIndex: 187, symbol: ?canExistWhenDisallowMob@TripodCamera@@UEBA_NXZ
     virtual bool canExistWhenDisallowMob() const;
 
     // symbol: ??0TripodCamera@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

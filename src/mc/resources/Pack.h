@@ -85,18 +85,18 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
+    // NOLINTBEGIN
+    // symbol: ?_loadLocalizationFiles@Pack@@AEAAXXZ
+    MCAPI void _loadLocalizationFiles();
+
+    // NOLINTEND
+
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?EDUCATION_METADATA_FILE@Pack@@0V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@B
     MCAPI static class Core::PathBuffer<std::string> const EDUCATION_METADATA_FILE;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $EDUCATION_METADATA_FILE() { return EDUCATION_METADATA_FILE; }
 
     // NOLINTEND
 };

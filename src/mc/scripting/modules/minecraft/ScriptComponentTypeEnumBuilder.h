@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct ConstantFactory; }
+namespace Scripting { struct Version; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -26,8 +27,8 @@ public:
     MCAPI explicit ScriptComponentTypeEnumBuilder(::ScriptModuleMinecraft::ScriptComponentType);
 
     // symbol:
-    // ?bind@ScriptComponentTypeEnumBuilder@ScriptModuleMinecraft@@QEAA?AV?$EnumBindingBuilder@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@Scripting@@XZ
-    MCAPI class Scripting::EnumBindingBuilder<std::string, std::string> bind();
+    // ?bind@ScriptComponentTypeEnumBuilder@ScriptModuleMinecraft@@QEAA?AV?$EnumBindingBuilder@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@Scripting@@V?$optional@UVersion@Scripting@@@std@@@Z
+    MCAPI class Scripting::EnumBindingBuilder<std::string, std::string> bind(std::optional<struct Scripting::Version>);
 
     // symbol:
     // ?bindComponentId@ScriptComponentTypeEnumBuilder@ScriptModuleMinecraft@@QEAAAEAUConstantFactory@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z

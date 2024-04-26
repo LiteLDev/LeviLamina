@@ -29,14 +29,14 @@ public:
     MCAPI bool checkChatPermissions(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // symbol:
-    // ?checkMutedAndSendToastIfMuted@MessagingCommand@@KAXAEBVPlayer@@AEBV?$vector@W4TextFilteringEvent@Safety@@V?$allocator@W4TextFilteringEvent@Safety@@@std@@@std@@@Z
+    // ?checkAndHandleTextProcessorEvents@MessagingCommand@@KAXAEBVPlayer@@AEBV?$vector@W4TextFilteringEvent@Safety@@V?$allocator@W4TextFilteringEvent@Safety@@@std@@@std@@@Z
     MCAPI static void
-    checkMutedAndSendToastIfMuted(class Player const& player, std::vector<::Safety::TextFilteringEvent> const&);
+    checkAndHandleTextProcessorEvents(class Player const&, std::vector<::Safety::TextFilteringEvent> const&);
 
     // symbol:
-    // ?checkMutedAndSendToastIfMuted@MessagingCommand@@KAXAEBUCommandOriginIdentity@@AEBVLevel@@AEBV?$vector@W4TextFilteringEvent@Safety@@V?$allocator@W4TextFilteringEvent@Safety@@@std@@@std@@@Z
+    // ?checkAndHandleTextProcessorEvents@MessagingCommand@@KAXAEBUCommandOriginIdentity@@AEBVLevel@@AEBV?$vector@W4TextFilteringEvent@Safety@@V?$allocator@W4TextFilteringEvent@Safety@@@std@@@std@@@Z
     MCAPI static void
-    checkMutedAndSendToastIfMuted(struct CommandOriginIdentity const& identity, class Level const& level, std::vector<::Safety::TextFilteringEvent> const&);
+    checkAndHandleTextProcessorEvents(struct CommandOriginIdentity const&, class Level const&, std::vector<::Safety::TextFilteringEvent> const&);
 
     // NOLINTEND
 };

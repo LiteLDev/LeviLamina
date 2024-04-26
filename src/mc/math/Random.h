@@ -80,7 +80,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mFixed@Random@Core@@0U?$atomic@I@std@@A
     MCAPI static std::atomic<uint> mFixed;
@@ -100,23 +100,6 @@ private:
 
     // symbol: ?mUnfixed@Random@Core@@0U?$atomic@I@std@@A
     MCAPI static std::atomic<uint> mUnfixed;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mFixed() { return mFixed; }
-
-    static auto& $mFixedGaussian() { return mFixedGaussian; }
-
-    static auto& $mFixedUInt32() { return mFixedUInt32; }
-
-    static auto& $mRandomDevice() { return mRandomDevice; }
-
-    static auto& $mThreadLocalRandom() { return mThreadLocalRandom; }
-
-    static auto& $mUnfixed() { return mUnfixed; }
 
     // NOLINTEND
 };

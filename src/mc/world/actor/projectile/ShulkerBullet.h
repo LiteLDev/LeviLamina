@@ -42,22 +42,22 @@ public:
     // vIndex: 10, symbol: __gen_??1ShulkerBullet@@UEAA@XZ
     virtual ~ShulkerBullet() = default;
 
-    // vIndex: 28, symbol: ?normalTick@ShulkerBullet@@UEAAXXZ
+    // vIndex: 26, symbol: ?normalTick@ShulkerBullet@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 47, symbol: ?isPickable@ShulkerBullet@@UEAA_NXZ
+    // vIndex: 45, symbol: ?isPickable@ShulkerBullet@@UEAA_NXZ
     virtual bool isPickable();
 
-    // vIndex: 54, symbol: ?isOnFire@ShulkerBullet@@UEBA_NXZ
+    // vIndex: 52, symbol: ?isOnFire@ShulkerBullet@@UEBA_NXZ
     virtual bool isOnFire() const;
 
-    // vIndex: 96, symbol: ?getSourceUniqueID@ShulkerBullet@@UEBA?AUActorUniqueID@@XZ
+    // vIndex: 92, symbol: ?getSourceUniqueID@ShulkerBullet@@UEBA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID getSourceUniqueID() const;
 
-    // vIndex: 153, symbol: ?readAdditionalSaveData@ShulkerBullet@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 149, symbol: ?readAdditionalSaveData@ShulkerBullet@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 154, symbol: ?addAdditionalSaveData@ShulkerBullet@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 150, symbol: ?addAdditionalSaveData@ShulkerBullet@@MEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ??0ShulkerBullet@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

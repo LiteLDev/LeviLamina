@@ -102,7 +102,19 @@ public:
     // vIndex: 28, symbol: __unk_vfn_28
     virtual void __unk_vfn_28();
 
-    // vIndex: 29, symbol: ?onEvent@KnockbackArmorUpdater@@UEAA?AW4EventResult@@AEBUActorEquippedArmorEvent@@@Z
+    // vIndex: 29, symbol: __unk_vfn_29
+    virtual void __unk_vfn_29();
+
+    // vIndex: 30, symbol: __unk_vfn_30
+    virtual void __unk_vfn_30();
+
+    // vIndex: 31, symbol: __unk_vfn_31
+    virtual void __unk_vfn_31();
+
+    // vIndex: 32, symbol: __unk_vfn_32
+    virtual void __unk_vfn_32();
+
+    // vIndex: 33, symbol: ?onEvent@KnockbackArmorUpdater@@UEAA?AW4EventResult@@AEBUActorEquippedArmorEvent@@@Z
     virtual ::EventResult onEvent(struct ActorEquippedArmorEvent const&);
 
     // NOLINTEND

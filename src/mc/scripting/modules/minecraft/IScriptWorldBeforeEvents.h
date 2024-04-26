@@ -11,9 +11,10 @@
 // clang-format off
 class Actor;
 class Player;
+namespace ScriptModuleMinecraft { class ScriptBlockComponentRegistry; }
+namespace ScriptModuleMinecraft { class ScriptItemComponentRegistry; }
 namespace ScriptModuleMinecraft { struct ScriptActorAddEffectBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptChatSendBeforeEvent; }
-namespace ScriptModuleMinecraft { struct ScriptDataDrivenActorTriggerBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptExplosionStartedBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptItemUseBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptItemUseOnBeforeEvent; }
@@ -24,7 +25,6 @@ namespace ScriptModuleMinecraft { struct ScriptPlayerInteractWithEntityBeforeEve
 namespace ScriptModuleMinecraft { struct ScriptPlayerPlaceBlockBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptWeatherChangedBeforeEvent; }
 struct ActorAddEffectEvent;
-struct ActorDefinitionModifier;
 struct BlockTryDestroyByPlayerEvent;
 struct BlockTryPlaceByPlayerEvent;
 struct ChatEvent;
@@ -56,10 +56,9 @@ public:
     onBeforeChat(struct ChatEvent const&, class Player const&);
 
     // vIndex: 2, symbol:
-    // ?onBeforeDataDrivenActorEventSend@IScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAA?AV?$optional@V?$StrongTypedObjectHandle@UScriptDataDrivenActorTriggerBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@std@@AEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@AEAV?$vector@UActorDefinitionModifier@@V?$allocator@UActorDefinitionModifier@@@std@@@4@@Z
-    virtual std::optional<
-        class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptDataDrivenActorTriggerBeforeEvent>>
-    onBeforeDataDrivenActorEventSend(class Actor&, std::string const&, std::vector<struct ActorDefinitionModifier>&);
+    // ?onBeforeWorldInitialize@IScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAAXAEBV?$StrongTypedObjectHandle@VScriptBlockComponentRegistry@ScriptModuleMinecraft@@@Scripting@@AEBV?$StrongTypedObjectHandle@VScriptItemComponentRegistry@ScriptModuleMinecraft@@@4@@Z
+    virtual void
+    onBeforeWorldInitialize(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockComponentRegistry> const&, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemComponentRegistry> const&);
 
     // vIndex: 3, symbol:
     // ?onBeforeWeatherChangedEvent@IScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAA?AV?$optional@V?$StrongTypedObjectHandle@UScriptWeatherChangedBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@std@@W4ScriptWeatherType@2@0H@Z

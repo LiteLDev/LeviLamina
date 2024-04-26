@@ -116,6 +116,10 @@ public:
     // symbol: ?CHUNK_SIZE@LegacyStructureTemplate@@2HB
     MCAPI static int const CHUNK_SIZE;
 
+    // symbol:
+    // ?DATA_VERSION_TAG@LegacyStructureTemplate@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+    MCAPI static std::string const DATA_VERSION_TAG;
+
     // symbol: ?ENTITIES_TAG@LegacyStructureTemplate@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const ENTITIES_TAG;
 
@@ -152,6 +156,9 @@ public:
 
     // private:
     // NOLINTBEGIN
+    // symbol: ?_fixItemStack@LegacyStructureTemplate@@CAXAEAVCompoundTag@@H@Z
+    MCAPI static void _fixItemStack(class CompoundTag&, int);
+
     // symbol: ?_mapPropertiesToTags@LegacyStructureTemplate@@CAXAEAVCompoundTag@@AEBV2@@Z
     MCAPI static void _mapPropertiesToTags(class CompoundTag& originalTag, class CompoundTag const&);
 
@@ -164,9 +171,9 @@ public:
     );
 
     // symbol:
-    // ?_mapTag@LegacyStructureTemplate@@CA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@V23@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+    // ?_mapTag@LegacyStructureTemplate@@CA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@V23@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@H@Z
     MCAPI static std::unique_ptr<class CompoundTag>
-    _mapTag(std::unique_ptr<class CompoundTag> originalTag, std::string const& javaBlockName);
+    _mapTag(std::unique_ptr<class CompoundTag>, std::string const&, int);
 
     // NOLINTEND
 };

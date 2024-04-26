@@ -32,13 +32,13 @@ public:
     // vIndex: 19, symbol: ?isThrowable@EnderpearlItem@@UEBA_NXZ
     virtual bool isThrowable() const;
 
-    // vIndex: 71, symbol: ?use@EnderpearlItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+    // vIndex: 72, symbol: ?use@EnderpearlItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
     virtual class ItemStack& use(class ItemStack& item, class Player& player) const;
 
-    // vIndex: 88, symbol: ?getCooldownType@EnderpearlItem@@UEBAAEBVHashedString@@XZ
+    // vIndex: 89, symbol: ?getCooldownType@EnderpearlItem@@UEBAAEBVHashedString@@XZ
     virtual class HashedString const& getCooldownType() const;
 
-    // vIndex: 89, symbol: ?getCooldownTime@EnderpearlItem@@UEBAHXZ
+    // vIndex: 90, symbol: ?getCooldownTime@EnderpearlItem@@UEBAHXZ
     virtual int getCooldownTime() const;
 
     // symbol: ??0EnderpearlItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

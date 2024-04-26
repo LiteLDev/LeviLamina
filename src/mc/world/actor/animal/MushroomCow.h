@@ -39,7 +39,7 @@ public:
     // vIndex: 10, symbol: __gen_??1MushroomCow@@UEAA@XZ
     virtual ~MushroomCow() = default;
 
-    // vIndex: 167, symbol: ?checkSpawnRules@MushroomCow@@UEAA_N_N@Z
+    // vIndex: 162, symbol: ?checkSpawnRules@MushroomCow@@UEAA_N_N@Z
     virtual bool checkSpawnRules(bool fromSpawner);
 
     // symbol: ??0MushroomCow@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

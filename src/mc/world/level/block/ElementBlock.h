@@ -70,17 +70,10 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mElements@ElementBlock@@0V?$vector@PEBVBlockLegacy@@V?$allocator@PEBVBlockLegacy@@@std@@@std@@A
     MCAPI static std::vector<class BlockLegacy const*> mElements;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mElements() { return mElements; }
 
     // NOLINTEND
 };

@@ -86,17 +86,10 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mBeardKernel@FeatureTerrainAdjustments@@0UBeardKernel@@A
     MCAPI static struct BeardKernel mBeardKernel;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mBeardKernel() { return mBeardKernel; }
 
     // NOLINTEND
 };

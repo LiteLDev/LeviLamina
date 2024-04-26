@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Puv::v1_20_50 { struct StorageItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -21,6 +22,9 @@ public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1StorageItemComponent@@UEAA@XZ
     virtual ~StorageItemComponent() = default;
+
+    // symbol: ??0StorageItemComponent@@QEAA@U0v1_20_50@Puv@@@Z
+    MCAPI explicit StorageItemComponent(struct Puv::v1_20_50::StorageItemComponent);
 
     // symbol: ?calculateAddableCount@StorageItemComponent@@QEBAIAEBVItemStack@@AEBVItemStackBase@@@Z
     MCAPI uint calculateAddableCount(class ItemStack const& item, class ItemStackBase const&) const;

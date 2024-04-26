@@ -4,6 +4,9 @@
 
 namespace LevelProvider {
 // NOLINTBEGIN
+// symbol: ?addLevelComponents@LevelProvider@@YAXAEAVEntityContext@@AEAVIRandom@@_N@Z
+MCAPI void addLevelComponents(class EntityContext&, class IRandom&, bool);
+
 // symbol: ?initializeGlobalComponents@LevelProvider@@YAXAEAVEntityRegistry@@@Z
 MCAPI void initializeGlobalComponents(class EntityRegistry& registry);
 

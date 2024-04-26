@@ -50,34 +50,34 @@ public:
     // vIndex: 13, symbol: ?remove@LeashFenceKnotActor@@UEAAXXZ
     virtual void remove();
 
-    // vIndex: 25, symbol: ?teleportTo@LeashFenceKnotActor@@UEAAXAEBVVec3@@_NHH1@Z
+    // vIndex: 23, symbol: ?teleportTo@LeashFenceKnotActor@@UEAAXAEBVVec3@@_NHH1@Z
     virtual void teleportTo(class Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool);
 
-    // vIndex: 40, symbol: ?getShadowRadius@LeashFenceKnotActor@@UEBAMXZ
+    // vIndex: 38, symbol: ?getShadowRadius@LeashFenceKnotActor@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 47, symbol: ?isPickable@LeashFenceKnotActor@@UEAA_NXZ
+    // vIndex: 45, symbol: ?isPickable@LeashFenceKnotActor@@UEAA_NXZ
     virtual bool isPickable();
 
-    // vIndex: 130, symbol: ?getInteraction@LeashFenceKnotActor@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z
+    // vIndex: 126, symbol: ?getInteraction@LeashFenceKnotActor@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z
     virtual bool getInteraction(class Player& player, class ActorInteraction& interaction, class Vec3 const& location);
 
-    // vIndex: 153, symbol: ?readAdditionalSaveData@LeashFenceKnotActor@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 149, symbol: ?readAdditionalSaveData@LeashFenceKnotActor@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 154, symbol: ?addAdditionalSaveData@LeashFenceKnotActor@@UEBAXAEAVCompoundTag@@@Z
+    // vIndex: 150, symbol: ?addAdditionalSaveData@LeashFenceKnotActor@@UEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 157, symbol: ?getWidth@LeashFenceKnotActor@@UEBAHXZ
+    // vIndex: 153, symbol: ?getWidth@LeashFenceKnotActor@@UEBAHXZ
     virtual int getWidth() const;
 
-    // vIndex: 158, symbol: ?getHeight@LeashFenceKnotActor@@UEBAHXZ
+    // vIndex: 154, symbol: ?getHeight@LeashFenceKnotActor@@UEBAHXZ
     virtual int getHeight() const;
 
-    // vIndex: 159, symbol: ?dropItem@LeashFenceKnotActor@@UEAAXXZ
+    // vIndex: 155, symbol: ?dropItem@LeashFenceKnotActor@@UEAAXXZ
     virtual void dropItem();
 
-    // vIndex: 161, symbol: ?wouldSurvive@LeashFenceKnotActor@@UEAA_NAEAVBlockSource@@@Z
+    // vIndex: 157, symbol: ?wouldSurvive@LeashFenceKnotActor@@UEAA_NAEAVBlockSource@@@Z
     virtual bool wouldSurvive(class BlockSource& region);
 
     // symbol:

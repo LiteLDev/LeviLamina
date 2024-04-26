@@ -33,8 +33,10 @@ public:
     MCAPI static void
     bindType(struct cereal::ReflectionCtx&, std::vector<::AllExperiments> const&, std::optional<class SemVersion>);
 
-    // symbol: ?upgrade@FoodItemComponentData_v1_20_30@@SA?AU1@$$QEAUFoodItemComponentLegacyFactoryData@@@Z
-    MCAPI static struct FoodItemComponentData_v1_20_30 upgrade(struct FoodItemComponentLegacyFactoryData&&);
+    // symbol:
+    // ?upgrade@FoodItemComponentData_v1_20_30@@SA?AV?$optional@UFoodItemComponentData_v1_20_30@@@std@@PEBUFoodItemComponentLegacyFactoryData@@@Z
+    MCAPI static std::optional<struct FoodItemComponentData_v1_20_30>
+    upgrade(struct FoodItemComponentLegacyFactoryData const*);
 
     // NOLINTEND
 };

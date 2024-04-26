@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/wrapper/StackRefResult.h"
 #include "mc/deps/core/common/bedrock/pubsub/Connector.h"
 #include "mc/events/LevelEvent.h"
 
@@ -32,8 +33,8 @@ public:
     virtual class Bedrock::PubSub::Connector<void(::LevelEvent, class CompoundTag const&)>&
     getLevelEventCompoundTagConnector();
 
-    // symbol: ??0LevelEventManager@@QEAA@_NV?$shared_ptr@VLevelEventCoordinator@@@std@@@Z
-    MCAPI LevelEventManager(bool, std::shared_ptr<class LevelEventCoordinator>);
+    // symbol: ??0LevelEventManager@@QEAA@_NAEBV?$not_null@V?$StackRefResult@VLevelEventCoordinator@@@@@gsl@@@Z
+    MCAPI LevelEventManager(bool, gsl::not_null<class StackRefResult<class LevelEventCoordinator>> const&);
 
     // symbol:
     // ?broadcastLevelEvent@LevelEventManager@@QEAAXW4LevelEvent@@AEBVCompoundTag@@PEBVUserEntityIdentifierComponent@@@Z

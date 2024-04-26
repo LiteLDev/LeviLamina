@@ -85,20 +85,16 @@ public:
     // symbol: ?addUpdaters_1_20_70@VanillaBlockUpdater@@CAXAEAVCompoundTagUpdaterContext@@@Z
     MCAPI static void addUpdaters_1_20_70(class CompoundTagUpdaterContext&);
 
+    // symbol: ?addUpdaters_1_20_80@VanillaBlockUpdater@@CAXAEAVCompoundTagUpdaterContext@@@Z
+    MCAPI static void addUpdaters_1_20_80(class CompoundTagUpdaterContext&);
+
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?mContext@VanillaBlockUpdater@@0V?$unique_ptr@VCompoundTagUpdaterContext@@U?$default_delete@VCompoundTagUpdaterContext@@@std@@@std@@A
     MCAPI static std::unique_ptr<class CompoundTagUpdaterContext> mContext;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mContext() { return mContext; }
 
     // NOLINTEND
 };

@@ -39,19 +39,19 @@ public:
     // vIndex: 10, symbol: __gen_??1Llama@@UEAA@XZ
     virtual ~Llama() = default;
 
-    // vIndex: 67, symbol: ?onFailedTame@Llama@@UEAAXXZ
+    // vIndex: 63, symbol: ?onFailedTame@Llama@@UEAAXXZ
     virtual void onFailedTame();
 
-    // vIndex: 104, symbol: ?causeFallDamageToActor@Llama@@MEAAMMMVActorDamageSource@@@Z
+    // vIndex: 100, symbol: ?causeFallDamageToActor@Llama@@MEAAMMMVActorDamageSource@@@Z
     virtual float causeFallDamageToActor(float, float, class ActorDamageSource);
 
-    // vIndex: 150, symbol: ?updateEntitySpecificMolangVariables@Llama@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 146, symbol: ?updateEntitySpecificMolangVariables@Llama@@UEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // vIndex: 155, symbol: ?_playStepSound@Llama@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 151, symbol: ?_playStepSound@Llama@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
     virtual void _playStepSound(class BlockPos const& pos, class Block const& onBlock);
 
-    // vIndex: 175, symbol: ?getArmorValue@Llama@@UEBAHXZ
+    // vIndex: 170, symbol: ?getArmorValue@Llama@@UEBAHXZ
     virtual int getArmorValue() const;
 
     // symbol: ??0Llama@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

@@ -82,17 +82,10 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mInvalidUUID@AttributeModifier@@0VUUID@mce@@B
     MCAPI static class mce::UUID const mInvalidUUID;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mInvalidUUID() { return mInvalidUUID; }
 
     // NOLINTEND
 };

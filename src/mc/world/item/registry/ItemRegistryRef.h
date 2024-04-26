@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/wrapper/WeakPtr.h"
+#include "mc/deps/core/common/bedrock/pubsub/Connector.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -158,6 +159,9 @@ public:
 
     // symbol: ?lookupByVanillaName@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@@Z
     MCAPI class WeakPtr<class Item> lookupByVanillaName(class HashedString const& inString) const;
+
+    // symbol: ?onFinishedInit@ItemRegistryRef@@QEBAPEAV?$Connector@$$A6AXXZ@PubSub@Bedrock@@XZ
+    MCAPI class Bedrock::PubSub::Connector<void()>* onFinishedInit() const;
 
     // symbol: ?registerAlias@ItemRegistryRef@@QEBAXAEBVHashedString@@0AEBVBaseGameVersion@@@Z
     MCAPI void registerAlias(

@@ -32,7 +32,7 @@ public:
     // vIndex: 19, symbol: ?isThrowable@EnderEyeItem@@UEBA_NXZ
     virtual bool isThrowable() const;
 
-    // vIndex: 71, symbol: ?use@EnderEyeItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+    // vIndex: 72, symbol: ?use@EnderEyeItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
     virtual class ItemStack& use(class ItemStack& item, class Player& player) const;
 
     // symbol: ??0EnderEyeItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

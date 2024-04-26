@@ -118,8 +118,5 @@ public:
     // symbol: ??1DimensionDocument@@QEAA@XZ
     MCAPI ~DimensionDocument();
 
-    // symbol: ?bindType@DimensionDocument@@SAXAEAUReflectionCtx@cereal@@@Z
-    MCAPI static void bindType(struct cereal::ReflectionCtx&);
-
     // NOLINTEND
 };

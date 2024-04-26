@@ -19,8 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0AddMushroomIsland@OperationNodeFilters@@QEAA@AEAVBiome@@AEBVBiomeRegistry@@@Z
-    MCAPI AddMushroomIsland(class Biome& mushroomBiome, class BiomeRegistry const& biomeRegistry);
+    // symbol: ??0AddMushroomIsland@OperationNodeFilters@@QEAA@AEBVBiome@@AEBVBiomeRegistry@@@Z
+    MCAPI AddMushroomIsland(class Biome const& mushroomBiome, class BiomeRegistry const& biomeRegistry);
 
     // NOLINTEND
 };

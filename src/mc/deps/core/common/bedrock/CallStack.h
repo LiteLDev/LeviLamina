@@ -66,6 +66,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0CallStack@Bedrock@@QEAA@AEBU01@@Z
+    MCAPI CallStack(struct Bedrock::CallStack const&);
+
     // symbol: ??0CallStack@Bedrock@@QEAA@$$QEAUFrameWithContext@01@@Z
     MCAPI explicit CallStack(struct Bedrock::CallStack::FrameWithContext&& frame);
 

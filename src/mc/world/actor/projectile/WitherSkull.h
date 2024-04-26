@@ -44,22 +44,22 @@ public:
     // vIndex: 10, symbol: __gen_??1WitherSkull@@UEAA@XZ
     virtual ~WitherSkull() = default;
 
-    // vIndex: 47, symbol: ?isPickable@WitherSkull@@UEAA_NXZ
+    // vIndex: 45, symbol: ?isPickable@WitherSkull@@UEAA_NXZ
     virtual bool isPickable();
 
-    // vIndex: 54, symbol: ?isOnFire@WitherSkull@@UEBA_NXZ
+    // vIndex: 52, symbol: ?isOnFire@WitherSkull@@UEBA_NXZ
     virtual bool isOnFire() const;
 
-    // vIndex: 131, symbol: ?canDestroyBlock@WitherSkull@@UEBA_NAEBVBlock@@@Z
+    // vIndex: 127, symbol: ?canDestroyBlock@WitherSkull@@UEBA_NAEBVBlock@@@Z
     virtual bool canDestroyBlock(class Block const& block) const;
 
-    // vIndex: 152, symbol: ?_hurt@WitherSkull@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 148, symbol: ?_hurt@WitherSkull@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 157, symbol: ?getInertia@WitherSkull@@MEAAMXZ
+    // vIndex: 153, symbol: ?getInertia@WitherSkull@@MEAAMXZ
     virtual float getInertia();
 
-    // vIndex: 159, symbol: ?shouldBurn@WitherSkull@@UEAA_NXZ
+    // vIndex: 155, symbol: ?shouldBurn@WitherSkull@@UEAA_NXZ
     virtual bool shouldBurn();
 
     // symbol: ??0WitherSkull@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

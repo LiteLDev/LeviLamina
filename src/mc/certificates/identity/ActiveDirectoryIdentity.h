@@ -37,18 +37,11 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?mCachedServiceEndpoint@ActiveDirectoryIdentity@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A
     MCAPI static std::string mCachedServiceEndpoint;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mCachedServiceEndpoint() { return mCachedServiceEndpoint; }
 
     // NOLINTEND
 };

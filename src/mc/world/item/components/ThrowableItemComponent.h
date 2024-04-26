@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Puv::v1_20_50 { struct ThrowableItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -28,7 +29,7 @@ public:
     // vIndex: 2, symbol: ?writeSettings@ItemComponent@@UEAAXXZ
     virtual void writeSettings();
 
-    // vIndex: 3, symbol: ?isNetworkComponent@InteractButtonItemComponent@@UEBA_NXZ
+    // vIndex: 3, symbol: ?isNetworkComponent@ItemComponent@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
     // vIndex: 4, symbol:
@@ -54,6 +55,9 @@ public:
     // symbol: ??0ThrowableItemComponent@@QEAA@_N@Z
     MCAPI explicit ThrowableItemComponent(bool);
 
+    // symbol: ??0ThrowableItemComponent@@QEAA@U0v1_20_50@Puv@@@Z
+    MCAPI explicit ThrowableItemComponent(struct Puv::v1_20_50::ThrowableItemComponent);
+
     // symbol: ?releaseUsing@ThrowableItemComponent@@QEBA_NAEAVItemStack@@PEAVPlayer@@H@Z
     MCAPI bool releaseUsing(class ItemStack& item, class Player* player, int durationLeft) const;
 
@@ -77,6 +81,9 @@ public:
 
     // symbol: ?_getLaunchPower@ThrowableItemComponent@@AEBAMHHH@Z
     MCAPI float _getLaunchPower(int durationLeft, int maxDrawDuration, int maxUseDuration) const;
+
+    // symbol: ?getAimPos@ThrowableItemComponent@@AEBA?AVVec3@@AEAVPlayer@@V2@@Z
+    MCAPI class Vec3 getAimPos(class Player&, class Vec3) const;
 
     // NOLINTEND
 };

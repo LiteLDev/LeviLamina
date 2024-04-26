@@ -21,13 +21,18 @@ class ScriptNpcComponent : public ::ScriptModuleMinecraft::ScriptActorComponent 
 public:
     // prevent constructor by default
     ScriptNpcComponent& operator=(ScriptNpcComponent const&);
-    ScriptNpcComponent(ScriptNpcComponent const&);
     ScriptNpcComponent();
 
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1ScriptNpcComponent@ScriptModuleMinecraft@@UEAA@XZ
     virtual ~ScriptNpcComponent() = default;
+
+    // vIndex: 1, symbol: ?_isValid@ScriptNpcComponent@ScriptModuleMinecraft@@MEBA_NXZ
+    virtual bool _isValid() const;
+
+    // symbol: ??0ScriptNpcComponent@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
+    MCAPI ScriptNpcComponent(class ScriptModuleMinecraft::ScriptNpcComponent const&);
 
     // symbol:
     // ?getDefaultScene@ScriptNpcComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$V@Scripting@@XZ

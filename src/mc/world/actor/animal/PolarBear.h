@@ -39,10 +39,10 @@ public:
     // vIndex: 10, symbol: __gen_??1PolarBear@@UEAA@XZ
     virtual ~PolarBear() = default;
 
-    // vIndex: 28, symbol: ?normalTick@PolarBear@@UEAAXXZ
+    // vIndex: 26, symbol: ?normalTick@PolarBear@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 97, symbol: ?canFreeze@PolarBear@@UEBA_NXZ
+    // vIndex: 93, symbol: ?canFreeze@PolarBear@@UEBA_NXZ
     virtual bool canFreeze() const;
 
     // symbol: ??0PolarBear@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
@@ -57,17 +57,10 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?STAND_ANIMATION_TICKS@PolarBear@@0MB
     MCAPI static float const STAND_ANIMATION_TICKS;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $STAND_ANIMATION_TICKS() { return STAND_ANIMATION_TICKS; }
 
     // NOLINTEND
 };

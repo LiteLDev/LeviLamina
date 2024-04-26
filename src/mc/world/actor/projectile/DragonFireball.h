@@ -40,16 +40,16 @@ public:
     // vIndex: 10, symbol: __gen_??1DragonFireball@@UEAA@XZ
     virtual ~DragonFireball() = default;
 
-    // vIndex: 47, symbol: ?isPickable@DragonFireball@@UEAA_NXZ
+    // vIndex: 45, symbol: ?isPickable@DragonFireball@@UEAA_NXZ
     virtual bool isPickable();
 
-    // vIndex: 152, symbol: ?_hurt@DragonFireball@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 148, symbol: ?_hurt@DragonFireball@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 158, symbol: ?getTrailParticle@DragonFireball@@MEAA?AW4ParticleType@@XZ
+    // vIndex: 154, symbol: ?getTrailParticle@DragonFireball@@MEAA?AW4ParticleType@@XZ
     virtual ::ParticleType getTrailParticle();
 
-    // vIndex: 159, symbol: ?shouldBurn@DragonFireball@@MEAA_NXZ
+    // vIndex: 155, symbol: ?shouldBurn@DragonFireball@@MEAA_NXZ
     virtual bool shouldBurn();
 
     // symbol: ??0DragonFireball@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

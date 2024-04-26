@@ -29,12 +29,12 @@ public:
     // vIndex: 0, symbol: __gen_??1SaplingBlockItem@@UEAA@XZ
     virtual ~SaplingBlockItem() = default;
 
-    // vIndex: 32, symbol: ?getLevelDataForAuxValue@SaplingBlockItem@@UEBAHH@Z
-    virtual int getLevelDataForAuxValue(int auxValue) const;
-
-    // vIndex: 81, symbol:
+    // vIndex: 82, symbol:
     // ?buildDescriptionId@SaplingBlockItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
+
+    // symbol: ??0SaplingBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+    MCAPI SaplingBlockItem(std::string const&, int);
 
     // NOLINTEND
 };

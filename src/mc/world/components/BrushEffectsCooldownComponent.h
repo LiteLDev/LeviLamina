@@ -9,17 +9,10 @@ public:
     BrushEffectsCooldownComponent(BrushEffectsCooldownComponent const&);
     BrushEffectsCooldownComponent();
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?EXPIRED_TICK@BrushEffectsCooldownComponent@@0VExpiringTick@@B
     MCAPI static class ExpiringTick const EXPIRED_TICK;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $EXPIRED_TICK() { return EXPIRED_TICK; }
 
     // NOLINTEND
 };

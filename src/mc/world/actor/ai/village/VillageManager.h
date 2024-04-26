@@ -167,7 +167,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?MAX_POI_QUERIES@VillageManager@@0_KB
     MCAPI static uint64 const MAX_POI_QUERIES;
@@ -177,17 +177,6 @@ private:
 
     // symbol: ?VILLAGE_HERO_EFFECT_DURATION@VillageManager@@0HB
     MCAPI static int const VILLAGE_HERO_EFFECT_DURATION;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $MAX_POI_QUERIES() { return MAX_POI_QUERIES; }
-
-    static auto& $MAX_QUERY_SCAN_ITERATIONS() { return MAX_QUERY_SCAN_ITERATIONS; }
-
-    static auto& $VILLAGE_HERO_EFFECT_DURATION() { return VILLAGE_HERO_EFFECT_DURATION; }
 
     // NOLINTEND
 };

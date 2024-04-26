@@ -55,17 +55,10 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mMinLineOfSightFixVersion@DelayedAttackGoal@@0VBaseGameVersion@@B
     MCAPI static class BaseGameVersion const mMinLineOfSightFixVersion;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mMinLineOfSightFixVersion() { return mMinLineOfSightFixVersion; }
 
     // NOLINTEND
 };

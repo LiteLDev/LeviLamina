@@ -11,14 +11,12 @@ public:
     // prevent constructor by default
     MaterialReducerContainerScreenValidator& operator=(MaterialReducerContainerScreenValidator const&);
     MaterialReducerContainerScreenValidator(MaterialReducerContainerScreenValidator const&);
+    MaterialReducerContainerScreenValidator();
 
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1MaterialReducerContainerScreenValidator@@UEAA@XZ
     virtual ~MaterialReducerContainerScreenValidator() = default;
-
-    // symbol: ??0MaterialReducerContainerScreenValidator@@QEAA@XZ
-    MCAPI MaterialReducerContainerScreenValidator();
 
     // NOLINTEND
 };

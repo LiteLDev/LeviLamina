@@ -47,49 +47,49 @@ public:
     // vIndex: 10, symbol: ??1Minecart@@UEAA@XZ
     virtual ~Minecart();
 
-    // vIndex: 18, symbol: ?getInterpolatedBodyYaw@Minecart@@UEBAMM@Z
+    // vIndex: 17, symbol: ?getInterpolatedBodyYaw@Minecart@@UEBAMM@Z
     virtual float getInterpolatedBodyYaw(float a) const;
 
-    // vIndex: 40, symbol: ?getShadowRadius@Minecart@@UEBAMXZ
+    // vIndex: 38, symbol: ?getShadowRadius@Minecart@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 47, symbol: ?isPickable@Minecart@@UEAA_NXZ
+    // vIndex: 45, symbol: ?isPickable@Minecart@@UEAA_NXZ
     virtual bool isPickable();
 
-    // vIndex: 74, symbol: ?isInvulnerableTo@Minecart@@UEBA_NAEBVActorDamageSource@@@Z
+    // vIndex: 70, symbol: ?isInvulnerableTo@Minecart@@UEBA_NAEBVActorDamageSource@@@Z
     virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
-    // vIndex: 103, symbol: ?getControllingPlayer@Minecart@@UEBA?AUActorUniqueID@@XZ
+    // vIndex: 99, symbol: ?getControllingPlayer@Minecart@@UEBA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID getControllingPlayer() const;
 
-    // vIndex: 136, symbol: ?kill@Minecart@@MEAAXXZ
+    // vIndex: 132, symbol: ?kill@Minecart@@MEAAXXZ
     virtual void kill();
 
-    // vIndex: 152, symbol: ?_hurt@Minecart@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 148, symbol: ?_hurt@Minecart@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 153, symbol: ?readAdditionalSaveData@Minecart@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 149, symbol: ?readAdditionalSaveData@Minecart@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 154, symbol: ?addAdditionalSaveData@Minecart@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 150, symbol: ?addAdditionalSaveData@Minecart@@MEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 157, symbol: ?destroy@Minecart@@UEAAXAEBVActorDamageSource@@_N@Z
+    // vIndex: 153, symbol: ?destroy@Minecart@@UEAAXAEBVActorDamageSource@@_N@Z
     virtual void destroy(class ActorDamageSource const& source, bool dropMinecartComponents);
 
-    // vIndex: 158, symbol: ?getType@MinecartChest@@UEAA?AW4MinecartType@@XZ
+    // vIndex: 154, symbol: ?getType@MinecartChest@@UEAA?AW4MinecartType@@XZ
     virtual ::MinecartType getType() = 0;
 
-    // vIndex: 159, symbol: ?getDefaultDisplayBlock@Minecart@@UEBAPEBVBlock@@XZ
+    // vIndex: 155, symbol: ?getDefaultDisplayBlock@Minecart@@UEBAPEBVBlock@@XZ
     virtual class Block const* getDefaultDisplayBlock() const;
 
-    // vIndex: 160, symbol: ?getDefaultDisplayOffset@Minecart@@UEBAHXZ
+    // vIndex: 156, symbol: ?getDefaultDisplayOffset@Minecart@@UEBAHXZ
     virtual int getDefaultDisplayOffset() const;
 
-    // vIndex: 161, symbol: ?applyNaturalSlowdown@Minecart@@MEAAXAEAVBlockSource@@@Z
+    // vIndex: 157, symbol: ?applyNaturalSlowdown@Minecart@@MEAAXAEAVBlockSource@@@Z
     virtual void applyNaturalSlowdown(class BlockSource& region);
 
-    // vIndex: 162, symbol: ?_lazyInitDisplayBlock@Minecart@@EEAAXXZ
+    // vIndex: 158, symbol: ?_lazyInitDisplayBlock@Minecart@@EEAAXXZ
     virtual void _lazyInitDisplayBlock();
 
     // symbol: ??0Minecart@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

@@ -50,17 +50,10 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?SPEED_MODIFIER_BOOSTING_UUID@BoostableComponent@@0VUUID@mce@@B
     MCAPI static class mce::UUID const SPEED_MODIFIER_BOOSTING_UUID;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $SPEED_MODIFIER_BOOSTING_UUID() { return SPEED_MODIFIER_BOOSTING_UUID; }
 
     // NOLINTEND
 };

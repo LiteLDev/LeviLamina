@@ -2,10 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/entity/factory/EntityComponentFactoryCereal.h"
-
-class VolumeComponentFactory : public ::EntityComponentFactoryCereal {
+class VolumeComponentFactory {
 public:
     // prevent constructor by default
     VolumeComponentFactory& operator=(VolumeComponentFactory const&);

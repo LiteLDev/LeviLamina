@@ -21,12 +21,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0PromoteCenter@OperationNodeFilters@@QEAA@AEAVBiome@@0@Z
-    MCAPI PromoteCenter(class Biome& from, class Biome& to);
+    // symbol: ??0PromoteCenter@OperationNodeFilters@@QEAA@AEBVBiome@@0@Z
+    MCAPI PromoteCenter(class Biome const&, class Biome const&);
 
     // symbol:
-    // ??RPromoteCenter@OperationNodeFilters@@QEBAPEAVBiome@@AEAU?$NeighborhoodReader@PEAVBiome@@$00$00@OperationNodeDetails@@@Z
-    MCAPI class Biome* operator()(struct OperationNodeDetails::NeighborhoodReader<class Biome*, 1, 1>& reader) const;
+    // ??RPromoteCenter@OperationNodeFilters@@QEBAPEBVBiome@@AEAU?$NeighborhoodReader@PEBVBiome@@$00$00@OperationNodeDetails@@@Z
+    MCAPI class Biome const*
+    operator()(struct OperationNodeDetails::NeighborhoodReader<class Biome const*, 1, 1>& reader) const;
 
     // NOLINTEND
 };

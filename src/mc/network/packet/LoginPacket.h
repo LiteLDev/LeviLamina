@@ -34,6 +34,9 @@ public:
     // vIndex: 6, symbol: ?disallowBatching@LoginPacket@@UEBA_NXZ
     virtual bool disallowBatching() const;
 
+    // vIndex: 7, symbol: ?isValid@LoginPacket@@UEBA_NXZ
+    virtual bool isValid() const;
+
     // vIndex: 8, symbol: ?_read@LoginPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 

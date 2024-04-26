@@ -34,6 +34,9 @@ MCAPI extern class HashedString const AcaciaPlanks;
 // symbol: ?AcaciaPressurePlate@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const AcaciaPressurePlate;
 
+// symbol: ?AcaciaSapling@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const AcaciaSapling;
+
 // symbol: ?AcaciaSlab@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const AcaciaSlab;
 
@@ -54,6 +57,9 @@ MCAPI extern class HashedString const AcaciaWood;
 
 // symbol: ?ActivatorRail@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const ActivatorRail;
+
+// symbol: ?Allium@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const Allium;
 
 // symbol: ?Allow@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const Allow;
@@ -84,6 +90,9 @@ MCAPI extern class HashedString const AzaleaLeaves;
 
 // symbol: ?AzaleaLeavesFlowered@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const AzaleaLeavesFlowered;
+
+// symbol: ?AzureBluet@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const AzureBluet;
 
 // symbol: ?Bamboo@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const Bamboo;
@@ -208,6 +217,9 @@ MCAPI extern class HashedString const BirchPlanks;
 // symbol: ?BirchPressurePlate@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const BirchPressurePlate;
 
+// symbol: ?BirchSapling@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const BirchSapling;
+
 // symbol: ?BirchSlab@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const BirchSlab;
 
@@ -298,6 +310,9 @@ MCAPI extern class HashedString const BlueGlazedTerracotta;
 // symbol: ?BlueIce@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const BlueIce;
 
+// symbol: ?BlueOrchid@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const BlueOrchid;
+
 // symbol: ?BlueShulkerBox@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const BlueShulkerBox;
 
@@ -324,6 +339,9 @@ MCAPI extern class HashedString const BorderBlock;
 
 // symbol: ?BrainCoral@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const BrainCoral;
+
+// symbol: ?BrainCoralFan@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const BrainCoralFan;
 
 // symbol: ?BrewingStand@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const BrewingStand;
@@ -378,6 +396,9 @@ MCAPI extern class HashedString const BubbleColumn;
 
 // symbol: ?BubbleCoral@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const BubbleCoral;
+
+// symbol: ?BubbleCoralFan@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const BubbleCoralFan;
 
 // symbol: ?BuddingAmethyst@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const BuddingAmethyst;
@@ -595,12 +616,6 @@ MCAPI extern class HashedString const CopperTrapdoor;
 // symbol: ?CoralBlock@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const CoralBlock;
 
-// symbol: ?CoralFan@VanillaBlockTypeIds@@3VHashedString@@B
-MCAPI extern class HashedString const CoralFan;
-
-// symbol: ?CoralFanDead@VanillaBlockTypeIds@@3VHashedString@@B
-MCAPI extern class HashedString const CoralFanDead;
-
 // symbol: ?CoralFanHang@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const CoralFanHang;
 
@@ -609,6 +624,9 @@ MCAPI extern class HashedString const CoralFanHang2;
 
 // symbol: ?CoralFanHang3@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const CoralFanHang3;
+
+// symbol: ?Cornflower@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const Cornflower;
 
 // symbol: ?CrackedDeepslateBricks@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const CrackedDeepslateBricks;
@@ -754,6 +772,9 @@ MCAPI extern class HashedString const DarkOakPlanks;
 // symbol: ?DarkOakPressurePlate@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const DarkOakPressurePlate;
 
+// symbol: ?DarkOakSapling@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const DarkOakSapling;
+
 // symbol: ?DarkOakSlab@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const DarkOakSlab;
 
@@ -787,17 +808,32 @@ MCAPI extern class HashedString const DaylightDetectorInverted;
 // symbol: ?DeadBrainCoral@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const DeadBrainCoral;
 
+// symbol: ?DeadBrainCoralFan@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const DeadBrainCoralFan;
+
 // symbol: ?DeadBubbleCoral@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const DeadBubbleCoral;
+
+// symbol: ?DeadBubbleCoralFan@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const DeadBubbleCoralFan;
 
 // symbol: ?DeadFireCoral@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const DeadFireCoral;
 
+// symbol: ?DeadFireCoralFan@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const DeadFireCoralFan;
+
 // symbol: ?DeadHornCoral@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const DeadHornCoral;
 
+// symbol: ?DeadHornCoralFan@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const DeadHornCoralFan;
+
 // symbol: ?DeadTubeCoral@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const DeadTubeCoral;
+
+// symbol: ?DeadTubeCoralFan@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const DeadTubeCoralFan;
 
 // symbol: ?Deadbush@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const Deadbush;
@@ -996,6 +1032,9 @@ MCAPI extern class HashedString const Fire;
 
 // symbol: ?FireCoral@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const FireCoral;
+
+// symbol: ?FireCoralFan@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const FireCoralFan;
 
 // symbol: ?FletchingTable@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const FletchingTable;
@@ -1246,6 +1285,9 @@ MCAPI extern class HashedString const HardenedClay;
 // symbol: ?HayBlock@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const HayBlock;
 
+// symbol: ?HeavyCore@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HeavyCore;
+
 // symbol: ?HeavyWeightedPressurePlate@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const HeavyWeightedPressurePlate;
 
@@ -1260,6 +1302,9 @@ MCAPI extern class HashedString const Hopper;
 
 // symbol: ?HornCoral@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const HornCoral;
+
+// symbol: ?HornCoralFan@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const HornCoralFan;
 
 // symbol: ?Ice@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const Ice;
@@ -1329,6 +1374,9 @@ MCAPI extern class HashedString const JunglePlanks;
 
 // symbol: ?JunglePressurePlate@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const JunglePressurePlate;
+
+// symbol: ?JungleSapling@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const JungleSapling;
 
 // symbol: ?JungleSlab@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const JungleSlab;
@@ -1446,6 +1494,9 @@ MCAPI extern class HashedString const LightWeightedPressurePlate;
 
 // symbol: ?LightningRod@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const LightningRod;
+
+// symbol: ?LilyOfTheValley@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const LilyOfTheValley;
 
 // symbol: ?LimeCandle@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const LimeCandle;
@@ -1714,6 +1765,9 @@ MCAPI extern class HashedString const OakLog;
 // symbol: ?OakPlanks@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const OakPlanks;
 
+// symbol: ?OakSapling@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const OakSapling;
+
 // symbol: ?OakSlab@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const OakSlab;
 
@@ -1762,8 +1816,14 @@ MCAPI extern class HashedString const OrangeStainedGlassPane;
 // symbol: ?OrangeTerracotta@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const OrangeTerracotta;
 
+// symbol: ?OrangeTulip@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const OrangeTulip;
+
 // symbol: ?OrangeWool@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const OrangeWool;
+
+// symbol: ?OxeyeDaisy@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const OxeyeDaisy;
 
 // symbol: ?OxidizedChiseledCopper@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const OxidizedChiseledCopper;
@@ -1836,6 +1896,9 @@ MCAPI extern class HashedString const PinkStainedGlassPane;
 
 // symbol: ?PinkTerracotta@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const PinkTerracotta;
+
+// symbol: ?PinkTulip@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const PinkTulip;
 
 // symbol: ?PinkWool@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const PinkWool;
@@ -1945,6 +2008,9 @@ MCAPI extern class HashedString const PolishedTuffStairs;
 // symbol: ?PolishedTuffWall@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const PolishedTuffWall;
 
+// symbol: ?Poppy@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const Poppy;
+
 // symbol: ?Portal@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const Portal;
 
@@ -2053,9 +2119,6 @@ MCAPI extern class HashedString const RedConcrete;
 // symbol: ?RedConcretePowder@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const RedConcretePowder;
 
-// symbol: ?RedFlower@VanillaBlockTypeIds@@3VHashedString@@B
-MCAPI extern class HashedString const RedFlower;
-
 // symbol: ?RedGlazedTerracotta@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const RedGlazedTerracotta;
 
@@ -2088,6 +2151,9 @@ MCAPI extern class HashedString const RedStainedGlassPane;
 
 // symbol: ?RedTerracotta@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const RedTerracotta;
+
+// symbol: ?RedTulip@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const RedTulip;
 
 // symbol: ?RedWool@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const RedWool;
@@ -2130,9 +2196,6 @@ MCAPI extern class HashedString const Sandstone;
 
 // symbol: ?SandstoneStairs@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const SandstoneStairs;
-
-// symbol: ?Sapling@VanillaBlockTypeIds@@3VHashedString@@B
-MCAPI extern class HashedString const Sapling;
 
 // symbol: ?Scaffolding@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const Scaffolding;
@@ -2262,6 +2325,9 @@ MCAPI extern class HashedString const SprucePlanks;
 
 // symbol: ?SprucePressurePlate@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const SprucePressurePlate;
+
+// symbol: ?SpruceSapling@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const SpruceSapling;
 
 // symbol: ?SpruceSlab@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const SpruceSlab;
@@ -2445,6 +2511,9 @@ MCAPI extern class HashedString const TripWireHook;
 
 // symbol: ?TubeCoral@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const TubeCoral;
+
+// symbol: ?TubeCoralFan@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const TubeCoralFan;
 
 // symbol: ?Tuff@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const Tuff;
@@ -2763,6 +2832,9 @@ MCAPI extern class HashedString const WhiteStainedGlassPane;
 
 // symbol: ?WhiteTerracotta@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const WhiteTerracotta;
+
+// symbol: ?WhiteTulip@VanillaBlockTypeIds@@3VHashedString@@B
+MCAPI extern class HashedString const WhiteTulip;
 
 // symbol: ?WhiteWool@VanillaBlockTypeIds@@3VHashedString@@B
 MCAPI extern class HashedString const WhiteWool;

@@ -42,7 +42,7 @@ public:
     // vIndex: 10, symbol: __gen_??1Villager@@UEAA@XZ
     virtual ~Villager() = default;
 
-    // vIndex: 114, symbol:
+    // vIndex: 110, symbol:
     // ?buildDebugInfo@Villager@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void buildDebugInfo(std::string& out) const;
 

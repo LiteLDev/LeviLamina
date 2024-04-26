@@ -69,7 +69,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?NUM_GROUPS_ON_EASY@Raid@@0EB
     MCAPI static uchar const NUM_GROUPS_ON_EASY;
@@ -79,17 +79,6 @@ private:
 
     // symbol: ?NUM_GROUPS_ON_NORMAL@Raid@@0EB
     MCAPI static uchar const NUM_GROUPS_ON_NORMAL;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $NUM_GROUPS_ON_EASY() { return NUM_GROUPS_ON_EASY; }
-
-    static auto& $NUM_GROUPS_ON_HARD() { return NUM_GROUPS_ON_HARD; }
-
-    static auto& $NUM_GROUPS_ON_NORMAL() { return NUM_GROUPS_ON_NORMAL; }
 
     // NOLINTEND
 };

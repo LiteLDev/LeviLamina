@@ -36,6 +36,10 @@ public:
     // symbol: ?clearHistory@ReplayStateComponent@@QEAAXXZ
     MCAPI void clearHistory();
 
+    // symbol:
+    // ?enqueueInputSimulation@ReplayStateComponent@@QEAAXV?$unique_ptr@UIReplayableActorInput@@U?$default_delete@UIReplayableActorInput@@@std@@@std@@@Z
+    MCAPI void enqueueInputSimulation(std::unique_ptr<struct IReplayableActorInput>);
+
     // symbol: ?getCurrentTick@ReplayStateComponent@@QEBA_KXZ
     MCAPI uint64 getCurrentTick() const;
 

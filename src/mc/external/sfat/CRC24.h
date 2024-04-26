@@ -11,17 +11,10 @@ public:
     CRC24(CRC24 const&);
     CRC24();
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?table@CRC24@SFAT@@0QBIB
     MCAPI static uint const table[];
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $table() { return table; }
 
     // NOLINTEND
 };

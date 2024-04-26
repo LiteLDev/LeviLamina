@@ -25,13 +25,18 @@ class ScriptProjectileComponent : public ::ScriptModuleMinecraft::ScriptActorCom
 public:
     // prevent constructor by default
     ScriptProjectileComponent& operator=(ScriptProjectileComponent const&);
-    ScriptProjectileComponent(ScriptProjectileComponent const&);
     ScriptProjectileComponent();
 
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1ScriptProjectileComponent@ScriptModuleMinecraft@@UEAA@XZ
     virtual ~ScriptProjectileComponent() = default;
+
+    // vIndex: 1, symbol: ?_isValid@ScriptProjectileComponent@ScriptModuleMinecraft@@MEBA_NXZ
+    virtual bool _isValid() const;
+
+    // symbol: ??0ScriptProjectileComponent@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
+    MCAPI ScriptProjectileComponent(class ScriptModuleMinecraft::ScriptProjectileComponent const&);
 
     // symbol: ?getAirInertia@ScriptProjectileComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@M$$V@Scripting@@XZ
     MCAPI class Scripting::Result<float> getAirInertia() const;

@@ -29,11 +29,11 @@ public:
     // vIndex: 0, symbol: __gen_??1DecoratedPotBlockItem@@UEAA@XZ
     virtual ~DecoratedPotBlockItem() = default;
 
-    // vIndex: 47, symbol:
+    // vIndex: 48, symbol:
     // ?appendFormattedHovertext@DecoratedPotBlockItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
     virtual void appendFormattedHovertext(class ItemStackBase const&, class Level&, std::string&, bool) const;
 
-    // vIndex: 90, symbol: ?fixupCommon@DecoratedPotBlockItem@@UEBAXAEAVItemStackBase@@@Z
+    // vIndex: 91, symbol: ?fixupCommon@DecoratedPotBlockItem@@UEBAXAEAVItemStackBase@@@Z
     virtual void fixupCommon(class ItemStackBase&) const;
 
     // symbol: ??0DecoratedPotBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

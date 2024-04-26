@@ -79,15 +79,9 @@ struct JSValue;
 namespace Scripting::QuickJS {
 // NOLINTBEGIN
 // symbol:
-// ?ConvertJSValueArgsToNativeAnys@QuickJS@Scripting@@YA?AUJSValue@@PEAUJSContext@@PEAVIFunction@Reflection@2@IPEAU3@AEAV?$array@Vmeta_any@entt@@$0BA@@std@@I@Z
-MCAPI struct JSValue ConvertJSValueArgsToNativeAnys(
-    struct JSContext* ctx,
-    class Scripting::Reflection::IFunction*,
-    uint,
-    struct JSValue*,
-    std::array<entt::meta_any, 16>&,
-    uint
-);
+// ?ConvertJSValueArgsToNativeAnys@QuickJS@Scripting@@YA?AUJSValue@@PEAUJSContext@@PEAVIFunction@Reflection@2@IPEAU3@AEAV?$array@Vmeta_any@entt@@$0BA@@std@@@Z
+MCAPI struct JSValue
+ConvertJSValueArgsToNativeAnys(struct JSContext*, class Scripting::Reflection::IFunction*, uint, struct JSValue*, std::array<entt::meta_any, 16>&);
 
 // symbol:
 // ?CopyJSValueArrayToNativeSequenceContainer@QuickJS@Scripting@@YA?AUJSValue@@PEAUJSContext@@U3@AEAVmeta_sequence_container@entt@@AEBVmeta_type@6@@Z

@@ -53,7 +53,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?LegacyModuleName@ScriptMinecraftModuleFactory@@0PEBDEB
     MCAPI static char const* LegacyModuleName;
@@ -63,17 +63,6 @@ private:
 
     // symbol: ?ModuleUUID@ScriptMinecraftModuleFactory@@0VUUID@mce@@B
     MCAPI static class mce::UUID const ModuleUUID;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $LegacyModuleName() { return LegacyModuleName; }
-
-    static auto& $ModuleName() { return ModuleName; }
-
-    static auto& $ModuleUUID() { return ModuleUUID; }
 
     // NOLINTEND
 };

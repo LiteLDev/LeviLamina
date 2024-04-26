@@ -11,6 +11,7 @@ class BaseGameVersion;
 class Experiments;
 class ItemRegistryRef;
 class Level;
+class ServerScriptManager;
 // clang-format on
 
 namespace VanillaWorldSystems {
@@ -25,13 +26,9 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ??0Impl@VanillaWorldSystems@@QEAA@AEBV?$NonOwnerPointer@VLevel@@@Bedrock@@AEBVExperiments@@AEBVBaseGameVersion@@VItemRegistryRef@@@Z
-    MCAPI Impl(
-        class Bedrock::NonOwnerPointer<class Level> const&,
-        class Experiments const&,
-        class BaseGameVersion const&,
-        class ItemRegistryRef
-    );
+    // ??0Impl@VanillaWorldSystems@@QEAA@AEBV?$NonOwnerPointer@VLevel@@@Bedrock@@AEBVExperiments@@AEBVBaseGameVersion@@VItemRegistryRef@@V?$optional@V?$not_null@PEBVServerScriptManager@@@gsl@@@std@@@Z
+    MCAPI
+    Impl(class Bedrock::NonOwnerPointer<class Level> const&, class Experiments const&, class BaseGameVersion const&, class ItemRegistryRef, std::optional<gsl::not_null<class ServerScriptManager const*>>);
 
     // symbol: ?mInstance@Impl@VanillaWorldSystems@@2V?$weak_ptr@VImpl@VanillaWorldSystems@@@std@@A
     MCAPI static std::weak_ptr<class VanillaWorldSystems::Impl> mInstance;

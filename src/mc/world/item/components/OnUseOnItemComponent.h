@@ -12,10 +12,6 @@ namespace cereal { struct ReflectionCtx; }
 
 class OnUseOnItemComponent {
 public:
-    // prevent constructor by default
-    OnUseOnItemComponent();
-
-public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1OnUseOnItemComponent@@UEAA@XZ
     virtual ~OnUseOnItemComponent();
@@ -26,7 +22,7 @@ public:
     // vIndex: 2, symbol: ?writeSettings@ItemComponent@@UEAAXXZ
     virtual void writeSettings();
 
-    // vIndex: 3, symbol: ?isNetworkComponent@InteractButtonItemComponent@@UEBA_NXZ
+    // vIndex: 3, symbol: ?isNetworkComponent@ItemComponent@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
     // vIndex: 4, symbol:
@@ -54,6 +50,9 @@ public:
 
     // vIndex: 9, symbol: ?_initializeComponent@ItemComponent@@MEAAXXZ
     virtual void _initializeComponent();
+
+    // symbol: ??0OnUseOnItemComponent@@QEAA@XZ
+    MCAPI OnUseOnItemComponent();
 
     // symbol: ??0OnUseOnItemComponent@@QEAA@AEBV0@@Z
     MCAPI OnUseOnItemComponent(class OnUseOnItemComponent const&);

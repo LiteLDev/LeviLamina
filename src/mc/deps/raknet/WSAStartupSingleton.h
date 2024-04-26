@@ -19,17 +19,10 @@ public:
 
     // NOLINTEND
 
-protected:
+    // protected:
     // NOLINTBEGIN
     // symbol: ?refCount@WSAStartupSingleton@@1HA
     MCAPI static int refCount;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $refCount() { return refCount; }
 
     // NOLINTEND
 };

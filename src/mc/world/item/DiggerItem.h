@@ -32,10 +32,10 @@ public:
     // vIndex: 35, symbol: ?getAttackDamage@DiggerItem@@UEBAHXZ
     virtual int getAttackDamage() const;
 
-    // vIndex: 36, symbol: ?isHandEquipped@DiggerItem@@UEBA_NXZ
+    // vIndex: 37, symbol: ?isHandEquipped@DiggerItem@@UEBA_NXZ
     virtual bool isHandEquipped() const;
 
-    // vIndex: 47, symbol:
+    // vIndex: 48, symbol:
     // ?appendFormattedHovertext@DiggerItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
     virtual void appendFormattedHovertext(
         class ItemStackBase const& stack,
@@ -44,20 +44,20 @@ public:
         bool                       showCategory
     ) const;
 
-    // vIndex: 48, symbol: ?isValidRepairItem@DiggerItem@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z
+    // vIndex: 49, symbol: ?isValidRepairItem@DiggerItem@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z
     virtual bool isValidRepairItem(
         class ItemStackBase const&,
         class ItemStackBase const&   repairItem,
         class BaseGameVersion const& baseGameVersion
     ) const;
 
-    // vIndex: 50, symbol: ?getEnchantValue@DiggerItem@@UEBAHXZ
+    // vIndex: 51, symbol: ?getEnchantValue@DiggerItem@@UEBAHXZ
     virtual int getEnchantValue() const;
 
-    // vIndex: 75, symbol: ?getDestroySpeed@DiggerItem@@UEBAMAEBVItemStackBase@@AEBVBlock@@@Z
+    // vIndex: 76, symbol: ?getDestroySpeed@DiggerItem@@UEBAMAEBVItemStackBase@@AEBVBlock@@@Z
     virtual float getDestroySpeed(class ItemStackBase const& item, class Block const& block) const;
 
-    // vIndex: 79, symbol: ?mineBlock@DiggerItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
+    // vIndex: 80, symbol: ?mineBlock@DiggerItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
     virtual bool
     mineBlock(class ItemStack& itemInstance, class Block const& block, int x, int y, int z, class Actor* owner) const;
 

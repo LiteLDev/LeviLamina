@@ -41,8 +41,8 @@ public:
     // symbol: ??0UpdatePlayerGameTypePacket@@QEAA@XZ
     MCAPI UpdatePlayerGameTypePacket();
 
-    // symbol: ??0UpdatePlayerGameTypePacket@@QEAA@W4GameType@@AEBUActorUniqueID@@@Z
-    MCAPI UpdatePlayerGameTypePacket(::GameType playerGameType, struct ActorUniqueID const&);
+    // symbol: ??0UpdatePlayerGameTypePacket@@QEAA@W4GameType@@AEBUActorUniqueID@@_K@Z
+    MCAPI UpdatePlayerGameTypePacket(::GameType, struct ActorUniqueID const&, uint64);
 
     // NOLINTEND
 };

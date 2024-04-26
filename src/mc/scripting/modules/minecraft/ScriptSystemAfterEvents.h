@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/external/scripting/StrongTypedObjectHandle.h"
 #include "mc/external/scripting/TypedObjectHandle.h"
+#include "mc/scripting/modules/minecraft/ScriptAsyncEventMetadata.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -60,11 +61,20 @@ public:
         // vIndex: 6, symbol: ?onFlushEditorExtensionContextAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
         virtual bool onFlushEditorExtensionContextAfterEvents();
 
-        // vIndex: 7, symbol:
+        // vIndex: 7, symbol: ?onFlushBlockCustomComponentAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
+        virtual bool onFlushBlockCustomComponentAfterEvents();
+
+        // vIndex: 8, symbol: ?onFlushEditorDataStoreAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
+        virtual bool onFlushEditorDataStoreAfterEvents();
+
+        // vIndex: 9, symbol: ?onFlushItemCustomComponentAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
+        virtual bool onFlushItemCustomComponentAfterEvents();
+
+        // vIndex: 10, symbol:
         // ?onPreFlushAfterEvents@?$IScriptScriptDeferredEventListener@VScriptSystemAfterEvents@ScriptModuleMinecraft@@@ScriptModuleMinecraft@@UEAAXXZ
         virtual void onPreFlushAfterEvents();
 
-        // vIndex: 8, symbol:
+        // vIndex: 11, symbol:
         // ?onPostFlushAfterEvents@?$IScriptScriptDeferredEventListener@VScriptSystemAfterEvents@ScriptModuleMinecraft@@@ScriptModuleMinecraft@@UEAAXXZ
         virtual void onPostFlushAfterEvents();
 
@@ -119,6 +129,15 @@ public:
     // ?generateOrderDocumentationForVersion@ScriptSystemAfterEvents@ScriptModuleMinecraft@@SAXAEBUModuleDescriptor@Scripting@@AEAVValue@Json@@@Z
     MCAPI static void
     generateOrderDocumentationForVersion(struct Scripting::ModuleDescriptor const&, class Json::Value&);
+
+    // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol:
+    // ?mMetadata@ScriptSystemAfterEvents@ScriptModuleMinecraft@@0U?$ScriptAsyncEventMetadata@VScriptSystemAfterEvents@ScriptModuleMinecraft@@@2@B
+    MCAPI static struct ScriptModuleMinecraft::ScriptAsyncEventMetadata<
+        class ScriptModuleMinecraft::ScriptSystemAfterEvents> const mMetadata;
 
     // NOLINTEND
 };

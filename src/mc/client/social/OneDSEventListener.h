@@ -73,7 +73,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?ENDPOINT_IDENTIFIER@OneDSEventListener@Events@Social@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
@@ -94,21 +94,6 @@ private:
     // symbol:
     // ?SAFETY_PARTA_IDENTIFIER@OneDSEventListener@Events@Social@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const SAFETY_PARTA_IDENTIFIER;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $ENDPOINT_IDENTIFIER() { return ENDPOINT_IDENTIFIER; }
-
-    static auto& $ONEDS_URL() { return ONEDS_URL; }
-
-    static auto& $PARTA_IDENTIFIER() { return PARTA_IDENTIFIER; }
-
-    static auto& $SAFETY_ENDPOINT_IDENTIFIER() { return SAFETY_ENDPOINT_IDENTIFIER; }
-
-    static auto& $SAFETY_PARTA_IDENTIFIER() { return SAFETY_PARTA_IDENTIFIER; }
 
     // NOLINTEND
 };

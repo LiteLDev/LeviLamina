@@ -13,7 +13,7 @@ public:
     BlockRegistryManager(BlockRegistryManager const&);
     BlockRegistryManager();
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?mClientIdRegistryMap@BlockRegistryManager@@0V?$unordered_map@W4SubClientId@@V?$weak_ptr@VBlockTypeRegistry@@@std@@U?$hash@W4SubClientId@@@3@U?$equal_to@W4SubClientId@@@3@V?$allocator@U?$pair@$$CBW4SubClientId@@V?$weak_ptr@VBlockTypeRegistry@@@std@@@std@@@3@@std@@A
@@ -29,19 +29,6 @@ private:
     // ?mThreadLocalRegistry@BlockRegistryManager@@0V?$ThreadLocalObject@V?$weak_ptr@VBlockTypeRegistry@@@std@@V?$allocator@V?$weak_ptr@VBlockTypeRegistry@@@std@@@2@@Threading@Bedrock@@A
     MCAPI static class Bedrock::Threading::ThreadLocalObject<std::weak_ptr<class BlockTypeRegistry>>
         mThreadLocalRegistry;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mClientIdRegistryMap() { return mClientIdRegistryMap; }
-
-    static auto& $mClientRegistry() { return mClientRegistry; }
-
-    static auto& $mServerRegistry() { return mServerRegistry; }
-
-    static auto& $mThreadLocalRegistry() { return mThreadLocalRegistry; }
 
     // NOLINTEND
 };

@@ -116,10 +116,7 @@ public:
     // vIndex: 29, symbol: ?trackWriteOperation@FileStorageArea@Core@@UEAAXAEBVPath@2@W4WriteOperation@2@@Z
     virtual void trackWriteOperation(class Core::Path const&, ::Core::WriteOperation);
 
-    // vIndex: 30, symbol: __unk_vfn_30
-    virtual void __unk_vfn_30();
-
-    // vIndex: 31, symbol:
+    // vIndex: 30, symbol:
     // ?getStorageAreaSpaceInfo@StorageArea_windows@Core@@UEAA?AUStorageAreaSpaceInfo@FileStorageArea@2@XZ
     virtual struct Core::FileStorageArea::StorageAreaSpaceInfo getStorageAreaSpaceInfo();
 

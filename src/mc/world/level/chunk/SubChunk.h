@@ -12,6 +12,8 @@
 struct SubChunk {
 public:
     // SubChunk inner types define
+    enum class BlockLayer {};
+
     enum class SubChunkState : int {
         Invalid                    = -1,
         Normal                     = 0,
@@ -79,6 +81,15 @@ public:
         std::vector<class BlockDataFetchResult<class Block>>& output
     ) const;
 
+    // symbol: ?getAbsoluteIndex@SubChunk@@QEBACXZ
+    MCAPI schar getAbsoluteIndex() const;
+
+    // symbol: ?getBlock@SubChunk@@QEBAAEBVBlock@@G@Z
+    MCAPI class Block const& getBlock(ushort index) const;
+
+    // symbol: ?getExtraBlock@SubChunk@@QEBAAEBVBlock@@G@Z
+    MCAPI class Block const& getExtraBlock(ushort index) const;
+
     // symbol: ?getLight@SubChunk@@QEBA?AULightPair@SubChunkBrightnessStorage@@G@Z
     MCAPI struct SubChunkBrightnessStorage::LightPair getLight(ushort idx) const;
 
@@ -89,8 +100,23 @@ public:
     MCAPI void
     initialize(class Block const* initBlock, bool maxSkyLight, bool fullyLit, class SpinLock& spinLock, schar);
 
+    // symbol: ?isEmpty@SubChunk@@QEBA_NXZ
+    MCAPI bool isEmpty() const;
+
+    // symbol: ?isEmpty@SubChunk@@QEBA_NW4BlockLayer@1@@Z
+    MCAPI bool isEmpty(::SubChunk::BlockLayer) const;
+
     // symbol: ?isPaletteUniform@SubChunk@@QEBA_NAEBVBlock@@@Z
     MCAPI bool isPaletteUniform(class Block const& block) const;
+
+    // symbol: ?isPlaceHolderSubChunk@SubChunk@@QEBA_NXZ
+    MCAPI bool isPlaceHolderSubChunk() const;
+
+    // symbol: ?isReadPtrEmpty@SubChunk@@QEBA_NW4BlockLayer@1@@Z
+    MCAPI bool isReadPtrEmpty(::SubChunk::BlockLayer) const;
+
+    // symbol: ?isReplacementSubChunk@SubChunk@@QEBA_NXZ
+    MCAPI bool isReplacementSubChunk() const;
 
     // symbol: ?isUniform@SubChunk@@QEBA_NAEBVBlock@@@Z
     MCAPI bool isUniform(class Block const& block) const;
@@ -123,17 +149,29 @@ public:
     // symbol: ?serialize@SubChunk@@QEBAXAEAVIDataOutput@@_N@Z
     MCAPI void serialize(class IDataOutput& stream, bool network) const;
 
+    // symbol: ?setAbsoluteIndex@SubChunk@@QEAAXC@Z
+    MCAPI void setAbsoluteIndex(schar);
+
     // symbol: ?setAllIsMaxSkyLight@SubChunk@@QEAAXXZ
     MCAPI void setAllIsMaxSkyLight();
 
     // symbol: ?setAllIsNoSkyLight@SubChunk@@QEAAXXZ
     MCAPI void setAllIsNoSkyLight();
 
+    // symbol: ?setBlock@SubChunk@@QEAAXGAEBVBlock@@@Z
+    MCAPI void setBlock(ushort, class Block const&);
+
     // symbol: ?setBlockLight@SubChunk@@QEAAXGE@Z
     MCAPI void setBlockLight(ushort index, uchar lightValue);
 
+    // symbol: ?setExtraBlock@SubChunk@@QEAAXGAEBVBlock@@@Z
+    MCAPI void setExtraBlock(ushort, class Block const&);
+
     // symbol: ?setFromBlockVolume@SubChunk@@QEAAXAEBVBlockVolume@@F@Z
     MCAPI void setFromBlockVolume(class BlockVolume const& box, short height);
+
+    // symbol: ?setLight@SubChunk@@QEAAXGULightPair@SubChunkBrightnessStorage@@@Z
+    MCAPI void setLight(ushort idx, struct SubChunkBrightnessStorage::LightPair pair);
 
     // symbol: ?setNeedsClientLighting@SubChunk@@QEAAX_N@Z
     MCAPI void setNeedsClientLighting(bool state);

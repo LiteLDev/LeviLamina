@@ -23,18 +23,11 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?imitateMobMap@ImitateMobSoundsComponent@@0V?$unordered_map@W4ActorType@@W4LevelSoundEvent@Legacy@Puv@@U?$hash@W4ActorType@@@std@@U?$equal_to@W4ActorType@@@6@V?$allocator@U?$pair@$$CBW4ActorType@@W4LevelSoundEvent@Legacy@Puv@@@std@@@6@@std@@B
     MCAPI static std::unordered_map<::ActorType, ::Puv::Legacy::LevelSoundEvent> const imitateMobMap;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $imitateMobMap() { return imitateMobMap; }
 
     // NOLINTEND
 };

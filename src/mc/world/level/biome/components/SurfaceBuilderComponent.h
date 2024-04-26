@@ -2,10 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/biome/BiomeComponentBase.h"
-
-struct SurfaceBuilderComponent : public ::BiomeComponentBase {
+struct SurfaceBuilderComponent {
 public:
     // prevent constructor by default
     SurfaceBuilderComponent& operator=(SurfaceBuilderComponent const&);

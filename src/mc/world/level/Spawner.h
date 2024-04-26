@@ -178,18 +178,11 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?SPAWN_RING_OFFSETS@Spawner@@0V?$unordered_set@VChunkPos@@U?$hash@VChunkPos@@@std@@U?$equal_to@VChunkPos@@@3@V?$allocator@VChunkPos@@@3@@std@@B
     MCAPI static std::unordered_set<class ChunkPos> const SPAWN_RING_OFFSETS;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $SPAWN_RING_OFFSETS() { return SPAWN_RING_OFFSETS; }
 
     // NOLINTEND
 };

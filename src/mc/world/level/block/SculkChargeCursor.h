@@ -53,7 +53,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?sDefaultSculkBehavior@SculkChargeCursor@@0VDefaultSculkBehavior@@B
     MCAPI static class DefaultSculkBehavior const sDefaultSculkBehavior;
@@ -63,17 +63,6 @@ private:
 
     // symbol: ?sSculkVeinBlockBehavior@SculkChargeCursor@@0VSculkVeinBlockBehavior@@B
     MCAPI static class SculkVeinBlockBehavior const sSculkVeinBlockBehavior;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $sDefaultSculkBehavior() { return sDefaultSculkBehavior; }
-
-    static auto& $sSculkBlockBehavior() { return sSculkBlockBehavior; }
-
-    static auto& $sSculkVeinBlockBehavior() { return sSculkVeinBlockBehavior; }
 
     // NOLINTEND
 };

@@ -64,22 +64,13 @@ public:
 
     // NOLINTEND
 
-protected:
+    // protected:
     // NOLINTBEGIN
     // symbol: ?sAllPools@WorkerPool@@1V?$SmallSet@PEAVWorkerPool@@@@A
     MCAPI static class SmallSet<class WorkerPool*> sAllPools;
 
     // symbol: ?sAllPoolsMutex@WorkerPool@@1VMutex@Threading@Bedrock@@A
     MCAPI static class Bedrock::Threading::Mutex sAllPoolsMutex;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $sAllPools() { return sAllPools; }
-
-    static auto& $sAllPoolsMutex() { return sAllPoolsMutex; }
 
     // NOLINTEND
 };

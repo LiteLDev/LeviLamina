@@ -26,17 +26,10 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
-    // symbol: ?mRegistry@ExplorationMapRegistry@@0V?$array@UExplorationMapData@@$09@std@@B
-    MCAPI static std::array<struct ExplorationMapData, 10> const mRegistry;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mRegistry() { return mRegistry; }
+    // symbol: ?mRegistry@ExplorationMapRegistry@@0V?$array@UExplorationMapData@@$0L@@std@@B
+    MCAPI static std::array<struct ExplorationMapData, 11> const mRegistry;
 
     // NOLINTEND
 };

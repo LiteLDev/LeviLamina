@@ -100,19 +100,10 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?TRAP_DOOR_DOESNT_BREAK_FALLING_BLOCK_VERSION@TrapDoorBlock@@0VBaseGameVersion@@B
     MCAPI static class BaseGameVersion const TRAP_DOOR_DOESNT_BREAK_FALLING_BLOCK_VERSION;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $TRAP_DOOR_DOESNT_BREAK_FALLING_BLOCK_VERSION() {
-        return TRAP_DOOR_DOESNT_BREAK_FALLING_BLOCK_VERSION;
-    }
 
     // NOLINTEND
 };

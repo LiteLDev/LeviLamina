@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/events/TextFilteringEvent.h"
 #include "mc/world/events/TextProcessingEventOrigin.h"
 #include "mc/world/level/Command.h"
@@ -24,8 +25,8 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol:
-    // ?tryToSIFTText@ServerCommand@@IEBA_NAEBVCommandOrigin@@AEAVCommandOutput@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBW4TextProcessingEventOrigin@@V?$function@$$A6AXAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBV?$vector@W4TextFilteringEvent@Safety@@V?$allocator@W4TextFilteringEvent@Safety@@@std@@@2@@Z@5@_N@Z
-    MCAPI bool tryToSIFTText(
+    // ?tryToFilterTextWithRemoteFilter@ServerCommand@@IEBA_NAEBVCommandOrigin@@AEAVCommandOutput@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBW4TextProcessingEventOrigin@@V?$function@$$A6AXAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBV?$vector@W4TextFilteringEvent@Safety@@V?$allocator@W4TextFilteringEvent@Safety@@@std@@@2@@Z@5@_N@Z
+    MCAPI bool tryToFilterTextWithRemoteFilter(
         class CommandOrigin const&,
         class CommandOutput&,
         std::vector<std::string> const&,
@@ -34,19 +35,17 @@ public:
         bool
     ) const;
 
+    // symbol:
+    // ?kickPlayerDueToFlooding@ServerCommand@@KAXV?$NonOwnerPointer@VServerNetworkHandler@@@Bedrock@@PEAVPlayer@@AEAVIMinecraftEventing@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI static void
+    kickPlayerDueToFlooding(class Bedrock::NonOwnerPointer<class ServerNetworkHandler>, class Player*, class IMinecraftEventing&, std::string const&);
+
     // NOLINTEND
 
-protected:
+    // protected:
     // NOLINTBEGIN
     // symbol: ?mGame@ServerCommand@@1PEAVMinecraft@@EA
     MCAPI static class Minecraft* mGame;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mGame() { return mGame; }
 
     // NOLINTEND
 };

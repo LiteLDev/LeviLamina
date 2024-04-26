@@ -71,7 +71,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mInitialized@Material@@0_NA
     MCAPI static bool mInitialized;
@@ -79,15 +79,6 @@ private:
     // symbol:
     // ?mMaterials@Material@@0V?$vector@V?$unique_ptr@VMaterial@@U?$default_delete@VMaterial@@@std@@@std@@V?$allocator@V?$unique_ptr@VMaterial@@U?$default_delete@VMaterial@@@std@@@std@@@2@@std@@A
     MCAPI static std::vector<std::unique_ptr<class Material>> mMaterials;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mInitialized() { return mInitialized; }
-
-    static auto& $mMaterials() { return mMaterials; }
 
     // NOLINTEND
 };
