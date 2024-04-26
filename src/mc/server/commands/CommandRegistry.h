@@ -361,37 +361,6 @@ public:
         // NOLINTEND
     };
 
-    struct RegistryState {
-    public:
-        // prevent constructor by default
-        RegistryState& operator=(RegistryState const&);
-        RegistryState(RegistryState const&);
-        RegistryState();
-
-    public:
-        // NOLINTBEGIN
-        // symbol: ??1RegistryState@CommandRegistry@@QEAA@XZ
-        MCAPI ~RegistryState();
-
-        // NOLINTEND
-    };
-
-    struct SoftEnum {
-    public:
-        // prevent constructor by default
-        SoftEnum& operator=(SoftEnum const&);
-        SoftEnum(SoftEnum const&);
-        SoftEnum();
-
-    public:
-        // NOLINTBEGIN
-        // symbol:
-        // ??0SoftEnum@CommandRegistry@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
-        MCAPI SoftEnum(std::string const& name, std::vector<std::string> values);
-
-        // NOLINTEND
-    };
-
     struct SymbolHasher {
     public:
         // prevent constructor by default

@@ -170,8 +170,8 @@ BOOL WINAPI ConsoleExitHandler(DWORD CEvent) {
     case CTRL_C_EVENT:
     case CTRL_CLOSE_EVENT:
     case CTRL_SHUTDOWN_EVENT: {
-        if (StopCommand::$mServer()) {
-            StopCommand::$mServer()->requestServerShutdown("");
+        if (StopCommand::mServer) {
+            StopCommand::mServer->requestServerShutdown("");
         } else {
             std::terminate();
         }
@@ -187,7 +187,7 @@ void unixSignalHandler(int signum) {
     switch (signum) {
     case SIGINT:
     case SIGTERM: {
-        if (StopCommand::$mServer()) StopCommand::$mServer()->requestServerShutdown("");
+        if (StopCommand::mServer) StopCommand::mServer->requestServerShutdown("");
         else std::terminate();
         break;
     }

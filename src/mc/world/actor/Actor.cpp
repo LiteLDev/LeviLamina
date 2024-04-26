@@ -10,7 +10,6 @@
 #include "mc/common/HitDetection.h"
 #include "mc/common/wrapper/optional_ref.h"
 #include "mc/entity/EntityContext.h"
-#include "mc/entity/flags/SimulatedPlayerFlag.h"
 #include "mc/entity/systems/OnFireSystem.h"
 #include "mc/entity/utilities/ActorCollision.h"
 #include "mc/entity/utilities/ActorDamageCause.h"

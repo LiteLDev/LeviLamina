@@ -92,14 +92,6 @@ public:
         // NOLINTEND
     };
 
-    struct SubChunkPosOffset {
-    public:
-        // prevent constructor by default
-        SubChunkPosOffset& operator=(SubChunkPosOffset const&);
-        SubChunkPosOffset(SubChunkPosOffset const&);
-        SubChunkPosOffset();
-    };
-
 public:
     bool                            mCacheEnabled;  // this+0x30
     DimensionType                   mDimensionType; // this+0x34
