@@ -35,6 +35,8 @@ inline J serialize_impl(T const& obj, meta::PriorityTag<1>) {
             try {
                 auto j = serialize<J>(member);
                 if (!j.is_null()) res[std::string{name}] = j;
+                else if (concepts::ArrayLike<member_type> || concepts::TupleLike<member_type> || concepts::IsVectorBase<member_type>)
+                    res[std::string{name}] = J::array();
             } catch (SerializationError const& e) {
                 throw SerializationError{name, e};
             } catch (std::exception const& e) {
