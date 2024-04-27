@@ -21,7 +21,7 @@ struct _EXCEPTION_POINTERS; // NOLINT(bugprone-reserved-identifier)
 namespace ll {
 class Logger;
 class OutputStream;
-}
+} // namespace ll
 
 namespace ll::inline utils::error_utils {
 

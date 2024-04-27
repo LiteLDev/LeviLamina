@@ -32,8 +32,8 @@ public:
     ~CommandHandle();
 
     template <reflection::Reflectable Params = EmptyParam>
-    [[nodiscard]] constexpr auto overload(std::weak_ptr<plugin::Plugin> plugin = plugin::NativePlugin::current())
-        -> Overload<Params> {
+    [[nodiscard]] constexpr auto
+    overload(std::weak_ptr<plugin::Plugin> plugin = plugin::NativePlugin::current()) -> Overload<Params> {
         return Overload<Params>{*this, std::move(plugin)};
     }
 

@@ -88,7 +88,8 @@ public:
         MCAPI LookupByNameImplReturnType(class WeakPtr<class BlockLegacy const> blockLegacy, class Block const* block);
 
         // symbol: ??0LookupByNameImplReturnType@BlockTypeRegistry@@QEAA@V?$WeakPtr@$$CBVBlockLegacy@@@@H_N@Z
-        MCAPI LookupByNameImplReturnType(class WeakPtr<class BlockLegacy const> blockLegacy, int data, bool resolveBlock);
+        MCAPI
+        LookupByNameImplReturnType(class WeakPtr<class BlockLegacy const> blockLegacy, int data, bool resolveBlock);
 
         // NOLINTEND
     };

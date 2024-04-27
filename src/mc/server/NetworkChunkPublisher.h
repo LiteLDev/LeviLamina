@@ -22,8 +22,7 @@ public:
     }
 
     // prevent constructor by default
-    NetworkChunkPublisher&
-    operator=(NetworkChunkPublisher const&);
+    NetworkChunkPublisher& operator=(NetworkChunkPublisher const&);
     NetworkChunkPublisher(NetworkChunkPublisher const&);
     NetworkChunkPublisher();
 
