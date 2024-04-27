@@ -94,15 +94,6 @@ public:
         Benum,
     } hi;
 };
-// LL_AUTO_TYPE_INSTANCE_HOOK(Virtual, HookPriority::Normal, FillCommand, &FillCommand::execute, void, CommandOrigin
-// const&, CommandOutput&) {
-// }
-#if !(defined(__INTELLISENSE__) || defined(__clangd__) || defined(__clang__))
-struct myTypeList1 : ll::meta::DynamicTypeList<myTypeList1> {};
-struct myTypeList2 : ll::meta::DynamicTypeList<myTypeList2> {};
-struct myTypeList3 : ll::meta::TypeList<bool, int> {};
-struct myTypeList4 : ll::meta::TypeList<> {};
-#endif
 
 LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &ServerInstance::startServerThread, void) {
     origin();
@@ -157,41 +148,4 @@ LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &Se
 
     ll::logger.debug("789\xDB\xFE");
     ll::logger.debug("789\xDB\xFE");
-
-    // ll::logger.debug("{}", ll::reflection::offset_array_v<TestClass<int>>);
-
-#if !(defined(__INTELLISENSE__) || defined(__clangd__) || defined(__clang__))
-    myTypeList1::push_back<int>();
-    myTypeList1::push_back<float>();
-    ll::logger.debug("{}", ll::reflection::type_raw_name_v<decltype(myTypeList1::value())>);
-
-    myTypeList2::push_back<bool>();
-    myTypeList2::push_back<long>();
-    ll::logger.debug("{}", ll::reflection::type_raw_name_v<decltype(myTypeList2::value())>);
-
-    ll::logger.debug("{}", ll::reflection::type_raw_name_v<decltype(myTypeList2::value())>);
-    ll::logger.debug("{}", ll::reflection::type_raw_name_v<decltype(myTypeList1::value())>);
-
-    myTypeList1::assign<ll::meta::TypeList<int, bool, long, myTypeList2>>();
-    ll::logger.debug("{}", ll::reflection::type_raw_name_v<decltype(myTypeList1::value())>);
-
-    myTypeList1::wrap<std::optional>();
-    ll::logger.debug("{}", ll::reflection::type_raw_name_v<decltype(myTypeList1::value())>);
-
-    myTypeList1::assign<ll::meta::TypeList<int, bool, long>>();
-    myTypeList1::wrap<std::add_const_t>();
-    ll::logger.debug("{}", ll::reflection::type_raw_name_v<decltype(myTypeList1::value())>);
-    myTypeList1::map<std::add_lvalue_reference>();
-    ll::logger.debug("{}", ll::reflection::type_raw_name_v<decltype(myTypeList1::value())>);
-
-    ll::logger.debug("myTypeList3::index {} {}", myTypeList3::index<bool>, myTypeList3::index<int>);
-
-    myTypeList3::forEach([]<typename T>() { ll::logger.debug(typeid(T).name()); });
-
-    myTypeList3::forEachIndexed([]<typename T>(size_t index) { ll::logger.debug("{} : {}", typeid(T).name(), index); });
-
-    myTypeList4::forEach([]<typename T>() { ll::logger.debug(typeid(T).name()); });
-
-    myTypeList4::forEachIndexed([]<typename T>(size_t index) { ll::logger.debug("{} : {}", typeid(T).name(), index); });
-#endif
 }
