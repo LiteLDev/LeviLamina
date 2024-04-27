@@ -17,6 +17,7 @@ public:
     BaseGameVersion             mBaseGameVersion;
     bool                        mTexturePackRequired;
     ExperimentStorage           mExperiments;
+    bool                        mHasEditorPacks; // Added in version 1.20.80, the order is not fully confirmed yet.
 
     // prevent constructor by default
     ResourcePackStackPacket& operator=(ResourcePackStackPacket const&);

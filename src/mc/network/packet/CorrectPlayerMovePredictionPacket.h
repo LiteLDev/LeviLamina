@@ -10,10 +10,11 @@
 
 class CorrectPlayerMovePredictionPacket : public ::Packet {
 public:
-    Vec3   mPos;      // this+0x30
-    Vec3   mPosDelta; // this+0x3C
-    uint64 mTick;     // this+0x48
-    bool   mOnGround; // this+0x50
+    Vec3   mPos;             // this+0x30
+    Vec3   mPosDelta;        // this+0x3C
+    Vec2   mVehicleRotation;
+    uint64 mTick;            
+    bool   mOnGround;        
 
     // prevent constructor by default
     CorrectPlayerMovePredictionPacket& operator=(CorrectPlayerMovePredictionPacket const&);
