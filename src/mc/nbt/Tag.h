@@ -79,7 +79,7 @@ public:
 
     [[nodiscard]] operator std::unique_ptr<Tag>() const { return copy(); } // NOLINT
 
-    LLNDAPI std::string toSnbt(SnbtFormat snbtFormat = SnbtFormat::PrettyFilePrint, uchar indent = 4) const;
+    LLNDAPI std::string toSnbt(SnbtFormat snbtFormat = SnbtFormat::PrettyFilePrint, uchar indent = 4) const noexcept;
 
 public:
     // NOLINTBEGIN

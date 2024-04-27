@@ -4,36 +4,105 @@
 #include "ll/api/reflection/SerializationError.h"
 
 // Priority:
-// 0. convertible
-// 1. Reflectable enum
-// 2. Associative TupleLike ArrayLike
+// 4. IsVectorBase IsDispatcher IsOptional
 // 3. string
-// 4. IsOptional IsDispatcher IsVectorBase
+// 2. ArrayLike TupleLike Associative
+// 1. Reflectable enum
+// 0. convertible
 
 namespace ll::reflection {
 
 template <class J, class T>
-inline J serialize(T const&);
+inline J serialize(T&& t)
+    requires(requires(T&& t) { serialize_impl<J>(std::forward<T>(t), meta::PriorityTag<4>{}); })
+{
+    return serialize_impl<J>(std::forward<T>(t), meta::PriorityTag<4>{});
+}
 
-template <class J, std::convertible_to<J> T>
-inline J serialize_impl(T const& obj, meta::PriorityTag<0>) {
-    return obj;
+template <class J, class T>
+inline J serialize_impl(T&& vec, meta::PriorityTag<4>)
+    requires(concepts::IsVectorBase<std::remove_cvref_t<T>>)
+{
+    auto res{J::array()};
+    std::remove_cvref_t<T>::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
+        res.push_back(serialize<J>(std::forward<T>(vec).template get<axis_type>(iter)));
+    });
+    return res;
 }
-template <class J, concepts::Require<std::is_enum> T>
-inline J serialize_impl(T const& e, meta::PriorityTag<1>) {
-    return magic_enum::enum_name(e);
+template <class J, class T>
+inline J serialize_impl(T&& d, meta::PriorityTag<4>)
+    requires(concepts::IsDispatcher<std::remove_cvref_t<T>>)
+{
+    return serialize<J>(std::forward<T>(d).storage);
 }
-template <class J, Reflectable T>
-inline J serialize_impl(T const& obj, meta::PriorityTag<1>) {
-    J res;
-    forEachMember(obj, [&](std::string_view name, auto& member) {
+template <class J, class T>
+inline J serialize_impl(T&& opt, meta::PriorityTag<4>)
+    requires(concepts::IsOptional<std::remove_cvref_t<T>>)
+{
+    if (!opt) {
+        return nullptr;
+    }
+    return serialize<J>(*std::forward<T>(opt));
+}
+template <class J, class T>
+inline J serialize_impl(T&& str, meta::PriorityTag<3>)
+    requires(concepts::IsString<std::remove_cvref_t<T>>)
+{
+    return std::string{std::forward<T>(str)};
+}
+template <class J, class T>
+inline J serialize_impl(T&& arr, meta::PriorityTag<2>)
+    requires(concepts::ArrayLike<std::remove_cvref_t<T>>)
+{
+    auto res{J::array()};
+    for (auto&& val : arr) {
+        res.push_back(serialize<J>(std::forward<decltype(val)>(val)));
+    }
+    return res;
+}
+template <class J, class T>
+inline J serialize_impl(T&& tuple, meta::PriorityTag<2>)
+    requires(concepts::TupleLike<std::remove_cvref_t<T>>)
+{
+    auto res{J::array()};
+    std::apply(
+        [&](auto&&... args) { ((res.push_back(serialize<J>(std::forward<decltype(args)>(args)))), ...); },
+        tuple
+    );
+    return res;
+}
+template <class J, class T>
+inline J serialize_impl(T&& map, meta::PriorityTag<2>)
+    requires(concepts::Associative<std::remove_cvref_t<T>>)
+{
+    using RT = std::remove_cvref_t<T>;
+    static_assert(
+        (concepts::IsString<typename RT::key_type> || std::is_enum_v<typename RT::key_type>),
+        "the key type of the associative container must be convertible to a string"
+    );
+    auto res{J::object()};
+    for (auto&& [k, v] : map) {
+        if constexpr (std::is_enum_v<typename RT::key_type>) {
+            res[magic_enum::enum_name(k)] = serialize<J>(std::forward<decltype(v)>(v));
+        } else {
+            res[std::string{k}] = serialize<J>(std::forward<decltype(v)>(v));
+        }
+    }
+    return res;
+}
+template <class J, class T>
+inline J serialize_impl(T&& obj, meta::PriorityTag<1>)
+    requires(Reflectable<std::remove_cvref_t<T>>)
+{
+    auto res{J::object()};
+    forEachMember(obj, [&](std::string_view name, auto&& member) {
         if (name.starts_with('$')) {
             return;
         }
-        using member_type = std::remove_cvref_t<decltype(member)>;
-        if constexpr (requires(member_type& m) { serialize<J>(m); }) {
+        using member_type = decltype(member);
+        if constexpr (requires(member_type m) { serialize<J>(m); }) {
             try {
-                auto j = serialize<J>(member);
+                auto j = serialize<J>(std::forward<member_type>(member));
                 if (!j.is_null()) res[std::string{name}] = j;
             } catch (SerializationError const& e) {
                 throw SerializationError{name, e};
@@ -48,62 +117,17 @@ inline J serialize_impl(T const& obj, meta::PriorityTag<1>) {
     });
     return res;
 }
-template <class J, concepts::Associative T>
-inline J serialize_impl(T const& map, meta::PriorityTag<2>) {
-    static_assert(
-        (concepts::IsString<typename T::key_type> || std::is_enum_v<typename T::key_type>),
-        "the key type of the associative container must be convertible to a string"
-    );
-    J res;
-    for (auto& [k, v] : map) {
-        auto sv = serialize<J>(v);
-        if constexpr (std::is_enum_v<typename T::key_type>) {
-            res[magic_enum::enum_name(k)] = sv;
-        } else {
-            res[std::string{k}] = sv;
-        }
-    }
-    return res;
-}
-template <class J, concepts::TupleLike T>
-inline J serialize_impl(T const& tuple, meta::PriorityTag<2>) {
-    J res;
-    std::apply([&](auto&&... args) { ((res.push_back(serialize<J>(args))), ...); }, tuple);
-    return res;
-}
-template <class J, concepts::ArrayLike T>
-inline J serialize_impl(T const& arr, meta::PriorityTag<2>) {
-    J res;
-    for (auto& val : arr) {
-        res.push_back(serialize<J>(val));
-    }
-    return res;
-}
-template <class J, concepts::IsString T>
-inline J serialize_impl(T const& str, meta::PriorityTag<3>) {
-    return std::string{str};
-}
-template <class J, concepts::IsOptional T>
-inline J serialize_impl(T const& opt, meta::PriorityTag<4>) {
-    if (!opt) {
-        return nullptr;
-    }
-    return serialize<J>(*opt);
-}
-template <class J, concepts::IsDispatcher T>
-inline J serialize_impl(T const& d, meta::PriorityTag<4>) {
-    return serialize<J>(d.storage);
-}
-template <class J, concepts::IsVectorBase T>
-inline J serialize_impl(T const& vec, meta::PriorityTag<4>) {
-    J res;
-    T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-        res.push_back(serialize<J>(vec.template get<axis_type>(iter)));
-    });
-    return res;
+template <class J, class T>
+inline J serialize_impl(T&& e, meta::PriorityTag<1>)
+    requires(concepts::Require<std::remove_cvref_t<T>, std::is_enum>)
+{
+    return magic_enum::enum_name(std::forward<T>(e));
 }
 template <class J, class T>
-inline J serialize(T const& t) {
-    return serialize_impl<J>(t, meta::PriorityTag<4>{});
+inline J serialize_impl(T&& obj, meta::PriorityTag<0>)
+    requires(std::convertible_to<std::remove_cvref_t<T>, J>)
+{
+    return std::forward<T>(obj);
 }
+
 } // namespace ll::reflection

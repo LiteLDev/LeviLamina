@@ -280,7 +280,6 @@ LL_AUTO_STATIC_HOOK(GeneratePacketHook, HookPriority::Normal, "main", int, int a
 #include "mc/network/packet/PlayerFogPacket.h"
 #include "mc/network/packet/CorrectPlayerMovePredictionPacket.h"
 #include "mc/network/packet/ItemComponentPacket.h"
-#include "mc/network/packet/FilterTextPacket.h"
 #include "mc/network/packet/ClientboundDebugRendererPacket.h"
 #include "mc/network/packet/SyncActorPropertyPacket.h"
 #include "mc/network/packet/AddVolumeEntityPacket.h"
@@ -482,7 +481,6 @@ PACKET_SIZE_ASSERT(CameraShakePacket, 0x40);
 PACKET_SIZE_ASSERT(PlayerFogPacket, 0x48);
 PACKET_SIZE_ASSERT(CorrectPlayerMovePredictionPacket, 0x58);
 PACKET_SIZE_ASSERT(ItemComponentPacket, 0x48);
-PACKET_SIZE_ASSERT(FilterTextPacket, 0x58);
 PACKET_SIZE_ASSERT(ClientboundDebugRendererPacket, 0x88);
 PACKET_SIZE_ASSERT(SyncActorPropertyPacket, 0x48);
 PACKET_SIZE_ASSERT(AddVolumeEntityPacket, 0x120);

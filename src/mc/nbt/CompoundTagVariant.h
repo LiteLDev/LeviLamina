@@ -44,7 +44,7 @@ public:
     Variant mTagStorage;
 
     LLNDAPI static ll::Expected<CompoundTagVariant>
-    parse(std::string_view snbt, optional_ref<size_t> parsedLength = std::nullopt);
+    parse(std::string_view snbt, optional_ref<size_t> parsedLength = std::nullopt) noexcept;
 
     [[nodiscard]] constexpr CompoundTagVariant() = default;
 
@@ -268,10 +268,9 @@ public:
         );
     }
 
-    std::string toSnbt(SnbtFormat snbtFormat = SnbtFormat::PrettyFilePrint, uchar indent = 4) const {
-        return get().toSnbt(snbtFormat, indent);
-    }
-    std::string dump(uchar indent = 4, SnbtFormat snbtFormat = SnbtFormat::PrettyFilePrint) const {
+    LLNDAPI std::string toSnbt(SnbtFormat snbtFormat = SnbtFormat::PrettyFilePrint, uchar indent = 4) const noexcept;
+
+    std::string dump(uchar indent = 4, SnbtFormat snbtFormat = SnbtFormat::PrettyFilePrint) const noexcept {
         return toSnbt(snbtFormat, indent);
     }
 
@@ -331,6 +330,10 @@ public:
     [[nodiscard]] constexpr operator std::string_view() const { // NOLINT
         return get<StringTag>();
     }
+    static CompoundTagVariant object(std::initializer_list<CompoundTag::TagMap::value_type> init = {}) {
+        return CompoundTag{init};
+    }
+    static CompoundTagVariant array(std::initializer_list<CompoundTagVariant> init = {}) { return ListTag{init}; }
 };
 
 [[nodiscard]] constexpr ListTag::ListTag(std::vector<CompoundTagVariant> tags) {

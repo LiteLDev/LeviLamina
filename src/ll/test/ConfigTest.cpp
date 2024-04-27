@@ -1,7 +1,9 @@
 #include "nlohmann/json.hpp"
 
-#include "ll/api/Config.h"
 #include "ll/api/data/Version.h"
+
+#include "ll/api/Config.h"
+
 #include "ll/api/memory/Hook.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/core/LeviLamina.h"
@@ -77,9 +79,13 @@ public:
     BlockPos    pos{};
     BoundingBox box{};
 
-    std::tuple<int, bool, float>                       tuple;
-    std::pair<std::string_view, MyPair>                pair;
-    std::array<int, 5>                                 array{};
+    std::tuple<int, bool, float>        tuple;
+    std::pair<std::string_view, MyPair> pair;
+    std::array<int, 5>                  array{};
+    std::vector<short>                  emptyVec{};
+    struct Empty {
+    } emptyObj;
+    std::map<std::string, int>                         emptyObj2;
     std::optional<std::vector<float>>                  vector     = std::vector<float>{{}, {}, {}};
     std::optional<std::vector<float>>                  nullvector = std::nullopt;
     std::multiset<std::pair<std::string_view, double>> mulset     = {{}, {}};
@@ -123,10 +129,11 @@ LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &Se
 
     ll::logger.debug(
         "reflection NBT: {}",
-        ll::reflection::serialize<CompoundTagVariant>(helloReflection).toSnbt(SnbtFormat::PrettyConsolePrint)
+        ll::reflection::serialize<CompoundTagVariant>(helloReflection)
+            .toSnbt(SnbtFormat::PrettyConsolePrint | SnbtFormat::ArrayLineFeed)
     );
 
-    ll::logger.debug("reflection json: {}", ll::reflection::serialize<nlohmann::ordered_json>(helloReflection).dump(4));
+    ll::logger.debug("reflection json: {}", ll::reflection::serialize<nlohmann::json>(helloReflection).dump(4));
 
     // ll::reflection::deserialize(helloReflection, ll::reflection::serialize<CompoundTagVariant>(helloReflection));
 
@@ -142,7 +149,6 @@ LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &Se
 
     ll::logger.debug("{}", ll::reflection::getRawName<&FillCommand::execute>());
     ll::logger.debug("{}", ll::reflection::getRawName<&ServerLevel::_subTick>());
-    ll::logger.debug("{}", ll::reflection::getRawName<&ServerLevel::_checkBlockPermutationCap>());
 
     // try {
     //     ll::reflection::deserialize(

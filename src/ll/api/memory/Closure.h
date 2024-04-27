@@ -92,6 +92,9 @@ public:
     NativeClosure& operator=(NativeClosure&&)      = delete;
     NativeClosure& operator=(NativeClosure const&) = delete;
 };
+template <class Ret, class... Args>
+NativeClosure(Ret (*)(uintptr_t, Args...), uintptr_t) -> NativeClosure<Ret(Args...)>;
+
 template <class... Args>
 class FunctionalClosure {
     static_assert(sizeof...(Args) < 0, "FunctionalClosure only accepts function types as template arguments.");
@@ -110,4 +113,8 @@ public:
     : NativeClosure<Ret(Args...)>(closureImpl, (uintptr_t)this),
       func(func) {}
 };
+template <class Ret, class... Args>
+FunctionalClosure(Ret (*)(Args...)) -> FunctionalClosure<Ret(Args...)>;
+template <class T>
+FunctionalClosure(std::function<T> const&) -> FunctionalClosure<T>;
 } // namespace ll::memory

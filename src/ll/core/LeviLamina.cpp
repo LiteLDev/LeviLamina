@@ -155,7 +155,7 @@ void printWelcomeMsg() {
 void checkProtocolVersion() {
     auto currentProtocol = getServerProtocolVersion();
     if (TARGET_BDS_PROTOCOL_VERSION != currentProtocol) {
-        logger.warn("Protocol version not match, target version: {0}, current version: {0}"_tr(
+        logger.warn("Protocol version not match, target version: {0}, current version: {1}"_tr(
             TARGET_BDS_PROTOCOL_VERSION,
             currentProtocol
         ));

@@ -23,7 +23,7 @@ public:
 
     CompoundTag(TagMap tags) : mTags(std::move(tags)) {} // NOLINT
 
-    CompoundTag(std::initializer_list<TagMap::value_type> tags) : mTags(std::move(tags)) {} // NOLINT
+    CompoundTag(std::initializer_list<TagMap::value_type> tags) : mTags(tags) {} // NOLINT
 
     CompoundTag(CompoundTag const&)            = default;
     CompoundTag& operator=(CompoundTag const&) = default;
@@ -36,15 +36,15 @@ public:
     [[nodiscard]] CompoundTagVariant&       at(std::string const& index) { return mTags[index]; }
     [[nodiscard]] CompoundTagVariant const& at(std::string const& index) const { return mTags.at(index); }
 
-
     LLNDAPI static ll::Expected<CompoundTag>
-    fromSnbt(std::string_view snbt, optional_ref<size_t> parsedLength = std::nullopt);
+    fromSnbt(std::string_view snbt, optional_ref<size_t> parsedLength = std::nullopt) noexcept;
 
-    LLNDAPI std::string                      toBinaryNbt(bool isLittleEndian = true) const;
-    LLNDAPI static ll::Expected<CompoundTag> fromBinaryNbt(std::string_view dataView, bool isLittleEndian = true);
+    LLNDAPI std::string toBinaryNbt(bool isLittleEndian = true) const;
+    LLNDAPI static ll::Expected<CompoundTag>
+    fromBinaryNbt(std::string_view dataView, bool isLittleEndian = true) noexcept;
 
     LLNDAPI std::string                      toNetworkNbt() const;
-    LLNDAPI static ll::Expected<CompoundTag> fromNetworkNbt(std::string const& data);
+    LLNDAPI static ll::Expected<CompoundTag> fromNetworkNbt(std::string const& data) noexcept;
 
 public:
     // NOLINTBEGIN

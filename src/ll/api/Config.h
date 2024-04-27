@@ -22,7 +22,7 @@ struct DumpType<T> {
 
 template <IsConfig T, class J = nlohmann::ordered_json>
 inline bool saveConfig(T const& config, std::filesystem::path const& path) {
-    return file_utils::writeFile(path, DumpType<J>{}(ll::reflection::serialize<J, T>(config)));
+    return file_utils::writeFile(path, DumpType<J>{}(ll::reflection::serialize<J>(config)));
 }
 
 template <class T>
@@ -36,7 +36,7 @@ struct ParseType<T> {
 template <class T, class J>
 bool defaultConfigUpdater(T& config, J& data) {
     data.erase("version");
-    auto patch = ll::reflection::serialize<J, T>(config);
+    auto patch = ll::reflection::serialize<J>(config);
     patch.merge_patch(data);
     data = patch;
     return true;
@@ -57,7 +57,7 @@ inline bool loadConfig(T& config, std::filesystem::path const& path, F&& updater
             noNeedRewrite = false;
         }
         if (noNeedRewrite || std::forward<F>(updater)(config, data)) {
-            ll::reflection::deserialize<J, T>(config, data);
+            ll::reflection::deserialize<J>(config, data);
         }
     } else {
         noNeedRewrite = false;

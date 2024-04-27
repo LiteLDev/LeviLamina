@@ -113,7 +113,7 @@ std::string toDumpNumber(std::string str, SnbtFormat format) {
 } // namespace
 
 namespace ll::nbt::detail {
-std::string TypedToSnbt(EndTag&, uchar, SnbtFormat format) {
+std::string TypedToSnbt(EndTag const&, uchar, SnbtFormat format) {
     std::string res = "null";
 
     if ((int)format & (int)SnbtFormat::Colored) {
@@ -125,40 +125,42 @@ std::string TypedToSnbt(EndTag&, uchar, SnbtFormat format) {
     }
     return res;
 }
-std::string TypedToSnbt(ByteTag& self, uchar, SnbtFormat format) {
+std::string TypedToSnbt(ByteTag const& self, uchar, SnbtFormat format) {
     return toDumpNumber(
         getString(self.data) + (static_cast<bool>(format & SnbtFormat::CommentMarks) ? " /*b*/" : "b"),
         format
     );
 }
-std::string TypedToSnbt(ShortTag& self, uchar, SnbtFormat format) {
+std::string TypedToSnbt(ShortTag const& self, uchar, SnbtFormat format) {
     return toDumpNumber(
         getString(self.data) + (static_cast<bool>(format & SnbtFormat::CommentMarks) ? " /*s*/" : "s"),
         format
     );
 }
-std::string TypedToSnbt(IntTag& self, uchar, SnbtFormat format) { return toDumpNumber(getString(self.data), format); }
+std::string TypedToSnbt(IntTag const& self, uchar, SnbtFormat format) {
+    return toDumpNumber(getString(self.data), format);
+}
 
-std::string TypedToSnbt(Int64Tag& self, uchar, SnbtFormat format) {
+std::string TypedToSnbt(Int64Tag const& self, uchar, SnbtFormat format) {
     return toDumpNumber(
         getString(self.data) + (static_cast<bool>(format & SnbtFormat::CommentMarks) ? " /*l*/" : "l"),
         format
     );
 }
-std::string TypedToSnbt(FloatTag& self, uchar, SnbtFormat format) {
+std::string TypedToSnbt(FloatTag const& self, uchar, SnbtFormat format) {
     return toDumpNumber(
         getString(self.data) + (static_cast<bool>(format & SnbtFormat::CommentMarks) ? " /*f*/" : "f"),
         format
     );
 }
-std::string TypedToSnbt(DoubleTag& self, uchar, SnbtFormat format) {
+std::string TypedToSnbt(DoubleTag const& self, uchar, SnbtFormat format) {
     return toDumpNumber(getString(self.data), format);
 }
-std::string TypedToSnbt(StringTag& self, uchar, SnbtFormat format) {
+std::string TypedToSnbt(StringTag const& self, uchar, SnbtFormat format) {
     std::string res = toDumpString(self.data, fmt::color::sandy_brown, cf::GOLD, format);
     return res;
 }
-std::string TypedToSnbt(ListTag& self, uchar indent, SnbtFormat format) {
+std::string TypedToSnbt(ListTag const& self, uchar indent, SnbtFormat format) {
 
     auto bracketColor = fmt::fg(fmt::color::deep_sky_blue);
 
@@ -185,7 +187,7 @@ std::string TypedToSnbt(ListTag& self, uchar indent, SnbtFormat format) {
     bool isMinimized = isMinimize(format);
     bool isNewLine   = (int)format & (int)SnbtFormat::ArrayLineFeed;
 
-    if (isNewLine) {
+    if (isNewLine && self.size() > 0) {
         res += '\n';
     }
 
@@ -218,7 +220,7 @@ std::string TypedToSnbt(ListTag& self, uchar indent, SnbtFormat format) {
 
     return res;
 }
-std::string TypedToSnbt(CompoundTag& self, uchar indent, SnbtFormat format) {
+std::string TypedToSnbt(CompoundTag const& self, uchar indent, SnbtFormat format) {
     auto bracketColor = fmt::fg(fmt::color::orchid);
 
     std::string res;
@@ -244,7 +246,7 @@ std::string TypedToSnbt(CompoundTag& self, uchar indent, SnbtFormat format) {
     bool isMinimized = isMinimize(format);
     bool isNewLine   = (int)format & (int)SnbtFormat::CompoundLineFeed;
 
-    if (isNewLine) {
+    if (isNewLine && self.size() > 0) {
         res += '\n';
     }
 
@@ -286,7 +288,7 @@ std::string TypedToSnbt(CompoundTag& self, uchar indent, SnbtFormat format) {
 
     return res;
 }
-std::string TypedToSnbt(ByteArrayTag& self, uchar indent, SnbtFormat format) {
+std::string TypedToSnbt(ByteArrayTag const& self, uchar indent, SnbtFormat format) {
 
     auto bracketColor = fmt::fg(fmt::color::yellow);
 
@@ -315,7 +317,7 @@ std::string TypedToSnbt(ByteArrayTag& self, uchar indent, SnbtFormat format) {
     bool isMinimized = isMinimize(format);
     bool isNewLine   = (int)format & (int)SnbtFormat::ArrayLineFeed;
 
-    if (isNewLine) {
+    if (isNewLine && self.size() > 0) {
         res += '\n';
     }
 
@@ -347,7 +349,7 @@ std::string TypedToSnbt(ByteArrayTag& self, uchar indent, SnbtFormat format) {
 
     return res;
 }
-std::string TypedToSnbt(IntArrayTag& self, uchar indent, SnbtFormat format) {
+std::string TypedToSnbt(IntArrayTag const& self, uchar indent, SnbtFormat format) {
 
     auto bracketColor = fmt::fg(fmt::color::yellow);
 
@@ -376,7 +378,7 @@ std::string TypedToSnbt(IntArrayTag& self, uchar indent, SnbtFormat format) {
     bool isMinimized = isMinimize(format);
     bool isNewLine   = (int)format & (int)SnbtFormat::ArrayLineFeed;
 
-    if (isNewLine) {
+    if (isNewLine && self.size() > 0) {
         res += '\n';
     }
 

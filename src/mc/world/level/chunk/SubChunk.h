@@ -12,7 +12,11 @@
 struct SubChunk {
 public:
     // SubChunk inner types define
-    enum class BlockLayer {};
+    enum class BlockLayer : schar {
+        Standard = 0,
+        Extra    = 1,
+        Count    = 2,
+    };
 
     enum class SubChunkState : int {
         Invalid                    = -1,
@@ -24,12 +28,6 @@ public:
         WaitingForCacheResponse    = 5,
         ProcessedSubChunk          = 6,
         RequestFinished            = 7,
-    };
-
-    enum class BlockLayer : schar {
-        Standard = 0,
-        Extra    = 1,
-        Count    = 2,
     };
 
 public:

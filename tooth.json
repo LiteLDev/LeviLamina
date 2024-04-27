@@ -13,7 +13,7 @@
     "github.com/LiteLDev/bds": ">=1.20.80 <1.20.90",
     "github.com/LiteLDev/CrashLogger": "1.1.x",
     "github.com/LiteLDev/levilamina-loc": "1.0.x",
-    "github.com/LiteLDev/PeEditor": "3.5.x",
+    "github.com/LiteLDev/PeEditor": "3.7.x",
     "github.com/LiteLDev/PreLoader": "1.6.x"
   },
   "files": {

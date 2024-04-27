@@ -81,10 +81,7 @@ bool BlockSource::destroyBlock(BlockPos const& pos, optional_ref<ItemStack> tool
         return res;
     }
     if (res && tool->mItem) {
-        // Befor 1.20.73
-        // tool->mineBlock(block, pos.x, pos.y, pos.z, toolOwner.as_ptr());
-       tool->mItem->mineBlock(tool, block, pos.x, pos.y, pos.z, toolOwner.as_ptr());
-        
+        tool->mItem->mineBlock(tool, block, pos.x, pos.y, pos.z, toolOwner.as_ptr());
     }
     return res;
 }
