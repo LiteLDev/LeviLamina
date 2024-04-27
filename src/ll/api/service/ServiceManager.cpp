@@ -6,7 +6,7 @@
 #include "ll/api/event/server/ServiceEvents.h"
 
 namespace ll::service {
-std::string GetServiceError::message() const {
+std::string GetServiceError::message() const noexcept {
     switch (code) {
     case NotExist:
         return "service not exist";

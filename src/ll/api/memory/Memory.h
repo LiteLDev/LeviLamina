@@ -91,7 +91,10 @@ inline void modify(T& ref, std::function<void(std::remove_cvref_t<T>&)> const& f
 
 template <class RTN = void, class... Args>
 constexpr auto virtualCall(void const* self, ptrdiff_t vIndex, auto&&... args) -> RTN {
-    return (*(RTN(**)(void const*, Args...))(*(uintptr_t**)self + vIndex))(self, std::forward<decltype(args)>(args)...);
+    return (*(RTN(**)(void const*, Args...))(*(uintptr_t**)self + vIndex))(
+        self,
+        std::forward<decltype((args))>(args)...
+    );
 }
 
 template <class T>

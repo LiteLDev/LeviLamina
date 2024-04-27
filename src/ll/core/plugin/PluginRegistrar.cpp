@@ -37,9 +37,8 @@
 #include "mc/server/ServerInstance.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 
-using namespace ::ll::i18n_literals;
-
 namespace ll::plugin {
+using namespace ::ll::i18n_literals;
 
 struct PluginRegistrar::Impl {
     std::recursive_mutex               mutex;
@@ -64,20 +63,15 @@ static Expected<Manifest> loadManifest(std::filesystem::path const& dir) {
     if (json.is_discarded()) {
         return makeStringError("Manifest is not a valid JSON text"_tr());
     }
-    std::string dirName = string_utils::u8str2str(dir.filename().u8string());
-    Manifest    manifest;
-    try {
-        reflection::deserialize<nlohmann::json, Manifest>(manifest, json);
-    } catch (...) {
-        return makeExceptionError();
-    }
-    if (manifest.type == "preload-native" /*NativePluginTypeName*/) {
-        return makeSuccessError(); // bypass preloader plugin
-    }
-    if (manifest.name != dirName) {
-        return makeStringError("Plugin name {0} do not match folder {1}"_tr(manifest.name, dirName));
-    }
-    return manifest;
+    return ::ll::reflection::deserialize_to<Manifest>(json).and_then([&](auto&& manifest) -> Expected<Manifest> {
+        if (manifest.type == "preload-native" /*NativePluginTypeName*/) {
+            return makeSuccessError(); // bypass preloader plugin
+        }
+        if (std::string dirName = string_utils::u8str2str(dir.filename().u8string()); manifest.name != dirName) {
+            return makeStringError("Plugin name {0} do not match folder {1}"_tr(manifest.name, dirName));
+        }
+        return manifest;
+    });
 }
 
 PluginRegistrar& PluginRegistrar::getInstance() {
@@ -104,7 +98,7 @@ void PluginRegistrar::loadAllPlugins() {
             continue;
         }
         if (auto res = loadManifest(file.path()).transform([&](auto&& manifest) {
-                manifests.try_emplace(manifest.name, std::forward<decltype(manifest)>(manifest));
+                manifests.try_emplace(manifest.name, std::forward<decltype((manifest))>(manifest));
             });
             !res) {
             if (res.error()) {

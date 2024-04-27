@@ -25,7 +25,7 @@ public:
 template <class T>
 concept IsService = std::is_base_of_v<Service, T> && requires {
     T::ServiceId;
-    requires std::same_as<std::remove_cvref_t<decltype(T::ServiceId)>, ServiceId>;
+    requires std::same_as<std::remove_cvref_t<decltype((T::ServiceId))>, ServiceId>;
 };
 
 template <class T, size_t version>

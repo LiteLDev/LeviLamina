@@ -20,10 +20,10 @@ class ErrorInfoBase {
     std::unique_ptr<Impl> impl;
 
 public:
-    LLAPI ErrorInfoBase();
+    LLAPI ErrorInfoBase() noexcept;
     LLAPI virtual ~ErrorInfoBase();
 
-    virtual std::string message() const = 0;
+    virtual std::string message() const noexcept = 0;
 };
 class Error {
     std::shared_ptr<ErrorInfoBase> mInfo;
@@ -34,34 +34,34 @@ public:
     [[nodiscard]] Error(Error&&) noexcept      = default;
     [[nodiscard]] Error(Error const&) noexcept = default;
 
-    Error() noexcept = default;
-    ~Error()         = default;
+    Error() noexcept  = default;
+    ~Error() noexcept = default;
 
-    Error(std::shared_ptr<ErrorInfoBase> i) : mInfo(std::move(i)) {}
+    Error(std::shared_ptr<ErrorInfoBase> i) noexcept : mInfo(std::move(i)) {}
 
-    Error(::nonstd::unexpected_type<::ll::Error> i) : Error(std::move(i.value())) {}
+    Error(::nonstd::unexpected_type<::ll::Error> i) noexcept : Error(std::move(i.value())) {}
 
-    operator bool() const { return mInfo != nullptr; }
+    operator bool() const noexcept { return mInfo != nullptr; }
 
-    LLNDAPI std::string message() const;
+    LLNDAPI std::string message() const noexcept;
 
     template <class T>
-    bool isA() {
+    bool isA() noexcept {
         return mInfo ? typeid(T) == typeid(*mInfo) : false;
     }
     template <class T>
-    auto as() {
+    auto as() noexcept {
         return std::static_pointer_cast<T>(mInfo);
     }
-    LLAPI Error& join(Error);
+    LLAPI Error& join(Error) noexcept;
 
-    LLAPI Error& log(::ll::OutputStream&);
+    LLAPI Error& log(::ll::OutputStream&) noexcept;
 
-    LLAPI Error& log(CommandOutput&);
+    LLAPI Error& log(CommandOutput&) noexcept;
 
-    Error const& log(::ll::OutputStream& s) const { return const_cast<Error*>(this)->log(s); }
+    Error const& log(::ll::OutputStream& s) const noexcept { return const_cast<Error*>(this)->log(s); }
 
-    Error const& log(CommandOutput& s) const { return const_cast<Error*>(this)->log(s); }
+    Error const& log(CommandOutput& s) const noexcept { return const_cast<Error*>(this)->log(s); }
 };
 
 template <class T = void>
@@ -72,35 +72,35 @@ using Unexpected = ::nonstd::unexpected_type<::ll::Error>;
 struct StringError : ErrorInfoBase {
     std::string str;
     StringError(std::string str) : str(std::move(str)) {}
-    std::string message() const override { return str; }
+    std::string message() const noexcept override { return str; }
 };
 struct CStringError : ErrorInfoBase {
     char const* cstr;
     CStringError(char const* cstr) : cstr(cstr) {}
-    std::string message() const override { return cstr; }
+    std::string message() const noexcept override { return cstr; }
 };
 struct ErrorCodeError : ErrorInfoBase {
     std::error_code ec;
     ErrorCodeError(std::error_code ec) : ec(ec) {}
-    std::string message() const override { return ec.message(); }
+    std::string message() const noexcept override { return ec.message(); }
 };
-inline Unexpected forwardError(::ll::Error& err) { return ::nonstd::make_unexpected(std::move(err)); }
+inline Unexpected forwardError(::ll::Error& err) noexcept { return ::nonstd::make_unexpected(std::move(err)); }
 
-inline Unexpected makeSuccessError() { return ::nonstd::make_unexpected(Error{}); }
+inline Unexpected makeSuccessError() noexcept { return ::nonstd::make_unexpected(Error{}); }
 
 template <std::derived_from<::ll::ErrorInfoBase> T, class... Args>
-inline Unexpected makeError(Args&&... args) {
+inline Unexpected makeError(Args&&... args) noexcept {
     return ::nonstd::make_unexpected(::ll::Error{std::make_shared<T>(std::forward<Args>(args)...)});
 }
-inline Unexpected makeStringError(std::string str) { return makeError<StringError>(std::move(str)); }
+inline Unexpected makeStringError(std::string str) noexcept { return makeError<StringError>(std::move(str)); }
 
-inline Unexpected makeStringError(char const* cstr) { return makeError<CStringError>(cstr); }
+inline Unexpected makeStringError(char const* cstr) noexcept { return makeError<CStringError>(cstr); }
 
-inline Unexpected makeErrorCodeError(std::error_code ec) { return makeError<ErrorCodeError>(ec); }
+inline Unexpected makeErrorCodeError(std::error_code ec) noexcept { return makeError<ErrorCodeError>(ec); }
 
-inline Unexpected makeErrorCodeError(std::errc ec) { return makeError<ErrorCodeError>(make_error_code(ec)); }
+inline Unexpected makeErrorCodeError(std::errc ec) noexcept { return makeError<ErrorCodeError>(make_error_code(ec)); }
 
-LLNDAPI Unexpected makeExceptionError(std::exception_ptr const& exc = std::current_exception());
+LLNDAPI Unexpected makeExceptionError(std::exception_ptr const& exc = std::current_exception()) noexcept;
 
 } // namespace ll
 
@@ -108,6 +108,6 @@ namespace nonstd::expected_lite {
 template <>
 class bad_expected_access<::ll::Error> : public std::exception {
 public:
-    explicit bad_expected_access(::ll::Error const& e) : std::exception(e.message().c_str()) {}
+    explicit bad_expected_access(::ll::Error const& e) noexcept : std::exception(e.message().c_str()) {}
 };
 } // namespace nonstd::expected_lite

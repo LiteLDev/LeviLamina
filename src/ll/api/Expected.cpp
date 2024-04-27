@@ -14,8 +14,8 @@ namespace ll {
 struct ErrorInfoBase::Impl {
     std::stacktrace stacktrace = std::stacktrace::current(1);
 };
-ErrorInfoBase::ErrorInfoBase() : impl(std::make_unique<Impl>()) {}
-std::string Error::message() const {
+ErrorInfoBase::ErrorInfoBase() noexcept : impl(std::make_unique<Impl>()) {}
+std::string Error::message() const noexcept {
     if (!mInfo) {
         return "success";
     }
@@ -28,8 +28,10 @@ std::string Error::message() const {
 struct ExceptionError : ErrorInfoBase {
     std::exception_ptr exc;
     std::stacktrace    stacktrace;
-    ExceptionError(std::exception_ptr const& exc) : exc(exc), stacktrace(error_utils::stacktraceFromCurrExc()) {}
-    std::string message() const override {
+    ExceptionError(std::exception_ptr const& exc) noexcept
+    : exc(exc),
+      stacktrace(error_utils::stacktraceFromCurrExc()) {}
+    std::string message() const noexcept override {
         auto res = error_utils::makeExceptionString(exc);
         if (!stacktrace.empty()) {
             res += "\nexception stacktrace:\n";
@@ -40,24 +42,24 @@ struct ExceptionError : ErrorInfoBase {
 };
 #else
 struct ErrorInfoBase::Impl {};
-ErrorInfoBase::ErrorInfoBase() {}
-std::string Error::message() const { return mInfo ? mInfo->message() : "success"; }
+ErrorInfoBase::ErrorInfoBase() noexcept {}
+std::string Error::message() const noexcept { return mInfo ? mInfo->message() : "success"; }
 
 struct ExceptionError : ErrorInfoBase {
     std::exception_ptr exc;
-    ExceptionError(std::exception_ptr const& exc) : exc(exc) {}
-    std::string message() const override { return error_utils::makeExceptionString(exc); }
+    ExceptionError(std::exception_ptr const& exc) noexcept : exc(exc) {}
+    std::string message() const noexcept override { return error_utils::makeExceptionString(exc); }
 };
 #endif
 
 ErrorInfoBase::~ErrorInfoBase() = default;
 
-Unexpected makeExceptionError(std::exception_ptr const& exc) { return makeError<ExceptionError>(exc); }
+Unexpected makeExceptionError(std::exception_ptr const& exc) noexcept { return makeError<ExceptionError>(exc); }
 
 struct ErrorList : ErrorInfoBase {
     std::vector<std::shared_ptr<ErrorInfoBase>> errors;
-    ErrorList() {}
-    std::string message() const override {
+    ErrorList() noexcept {}
+    std::string message() const noexcept override {
         std::string result;
 
         for (size_t i = 0; i < errors.size(); i++) {
@@ -70,7 +72,7 @@ struct ErrorList : ErrorInfoBase {
     }
 };
 
-Error& Error::join(Error err) {
+Error& Error::join(Error err) noexcept {
     if (!*this) {
         mInfo = std::move(err.mInfo);
         return *this;
@@ -98,7 +100,7 @@ Error& Error::join(Error err) {
     }
     return *this;
 }
-LLAPI Error& Error::log(::ll::OutputStream& stream) {
+LLAPI Error& Error::log(::ll::OutputStream& stream) noexcept {
     auto msg = message();
     for (auto& sv : string_utils::splitByPattern(msg, "\n")) {
         if (sv.ends_with('\r')) {
@@ -111,7 +113,7 @@ LLAPI Error& Error::log(::ll::OutputStream& stream) {
     }
     return *this;
 }
-LLAPI Error& Error::log(CommandOutput& stream) {
+LLAPI Error& Error::log(CommandOutput& stream) noexcept {
     auto msg = message();
     for (auto& sv : string_utils::splitByPattern(msg, "\n")) {
         if (sv.ends_with('\r')) {

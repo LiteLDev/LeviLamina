@@ -10,7 +10,7 @@ namespace ll::config {
 
 template <class T>
 concept IsConfig =
-    ll::reflection::Reflectable<T> && std::integral<std::remove_cvref_t<decltype(std::declval<T>().version)>>;
+    ll::reflection::Reflectable<T> && std::integral<std::remove_cvref_t<decltype((std::declval<T>().version))>>;
 
 template <class T>
 struct DumpType;
@@ -22,7 +22,7 @@ struct DumpType<T> {
 
 template <IsConfig T, class J = nlohmann::ordered_json>
 inline bool saveConfig(T const& config, std::filesystem::path const& path) {
-    return file_utils::writeFile(path, DumpType<J>{}(ll::reflection::serialize<J>(config)));
+    return file_utils::writeFile(path, DumpType<J>{}(ll::reflection::serialize<J>(config).value()));
 }
 
 template <class T>
@@ -37,8 +37,8 @@ template <class T, class J>
 bool defaultConfigUpdater(T& config, J& data) {
     data.erase("version");
     auto patch = ll::reflection::serialize<J>(config);
-    patch.merge_patch(data);
-    data = patch;
+    patch.value().merge_patch(data);
+    data = *std::move(patch);
     return true;
 }
 template <IsConfig T, class J = nlohmann::ordered_json, class F = bool(T&, J&)>
@@ -57,7 +57,7 @@ inline bool loadConfig(T& config, std::filesystem::path const& path, F&& updater
             noNeedRewrite = false;
         }
         if (noNeedRewrite || std::forward<F>(updater)(config, data)) {
-            ll::reflection::deserialize<J>(config, data);
+            ll::reflection::deserialize(config, data).value();
         }
     } else {
         noNeedRewrite = false;

@@ -303,28 +303,28 @@ struct DynamicTypeList {
     }
     template <class T, class UniqueTag = LL_UNIQUE_TYPE>
     [[maybe_unused]] static consteval void push_back() {
-        using now         = decltype(value<0, UniqueTag>());
+        using now         = decltype((value<0, UniqueTag>()));
         constexpr auto id = uniqueId<Group, UniqueTag>();
         using next        = typename now::template push_back<T>;
         Setter<id, next> setter{};
     }
     template <class T, class UniqueTag = LL_UNIQUE_TYPE>
     [[maybe_unused]] static consteval void push_front() {
-        using now         = decltype(value<0, UniqueTag>());
+        using now         = decltype((value<0, UniqueTag>()));
         constexpr auto id = uniqueId<Group, UniqueTag>();
         using next        = typename now::template push_front<T>;
         Setter<id, next> setter{};
     }
     template <template <class> class W, class UniqueTag = LL_UNIQUE_TYPE>
     [[maybe_unused]] static consteval void wrap() {
-        using now         = decltype(value<0, UniqueTag>());
+        using now         = decltype((value<0, UniqueTag>()));
         constexpr auto id = uniqueId<Group, UniqueTag>();
         using next        = typename now::template wrap<W>;
         Setter<id, next> setter{};
     }
     template <template <class> class M, class UniqueTag = LL_UNIQUE_TYPE>
     [[maybe_unused]] static consteval void map() {
-        using now         = decltype(value<0, UniqueTag>());
+        using now         = decltype((value<0, UniqueTag>()));
         constexpr auto id = uniqueId<Group, UniqueTag>();
         using next        = typename now::template map<M>;
         Setter<id, next> setter{};

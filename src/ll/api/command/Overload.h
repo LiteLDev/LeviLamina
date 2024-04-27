@@ -41,7 +41,7 @@ class Overload : private OverloadData {
             }
             hasName = true;
 
-            using OriginalType = std::remove_cvref_t<decltype(val)>;
+            using OriginalType = std::remove_cvref_t<decltype((val))>;
 
             using RemoveOptionalType = remove_optional_t<OriginalType>;
 
@@ -122,7 +122,7 @@ public:
 
     template <auto Executor>
     [[deprecated("deprecated: please put the function as a parameter in the bracket")]] void constexpr execute() {
-        using E = std::remove_cvref_t<decltype(Executor)>;
+        using E = std::remove_cvref_t<decltype((Executor))>;
         setFactory([&]() -> std::unique_ptr<::Command> {
             return std::unique_ptr<Command<Params, E>>(new Command<Params, E>{Executor});
         });

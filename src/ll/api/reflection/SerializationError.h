@@ -3,41 +3,39 @@
 #include <stdexcept>
 
 #include "fmt/format.h"
+#include "ll/api/Expected.h"
 
 namespace ll::reflection {
-
-class SerializationError : public std::exception {
-    std::string           mField;
-    std::string           mMsg;
-    std::exception const* mErr{};
+class SerializationError : public ErrorInfoBase {
+    std::string mField;
+    std::string mMsg;
 
 public:
-    SerializationError(std::string_view field, std::exception const& err) : mField(field), mErr(&err) {
-        mMsg = fmt::format("Reflection error in field '{}': {}", field, err.what());
+    SerializationError(std::string field, Error&& err) noexcept {
+        if (err.isA<SerializationError>()) {
+            auto ptr  = err.as<SerializationError>();
+            mField    = std::move(field);
+            mField   += std::move(ptr->mField);
+            mMsg      = std::move(ptr->mMsg);
+        } else {
+            if (field.ends_with('.')) {
+                field.pop_back();
+            }
+            mField = std::move(field);
+            mMsg   = err.message();
+        }
     }
-
-    SerializationError(std::string_view field, SerializationError const& other) {
-        mField = fmt::format("{}.{}", field, other.mField);
-        mErr   = other.mErr;
-        mMsg   = fmt::format(
-            "Reflection error in field '{}': {}",
-            mField,
-            other.mErr ? other.mErr->what() : "Unknown error"
-        );
+    std::string message() const noexcept override {
+        return fmt::format("Reflection error in field '{}':\n{}", mField, mMsg);
     }
-
-    SerializationError(std::string_view field, std::string_view msg)
-    : SerializationError(field, std::runtime_error{msg.data()}) {}
-
-    explicit SerializationError(std::string_view field) : mField(field) {
-        mMsg = fmt::format("Reflection error in field '{}'", field);
-    }
-
-    [[nodiscard]] char const* what() const noexcept override { return mMsg.c_str(); }
-
-    [[nodiscard]] std::string_view field() const noexcept { return mField; };
-
-    [[nodiscard]] std::exception const* error() const noexcept { return mErr; };
 };
-
+inline Unexpected makeSerMemberError(std::string_view name, Error& err) noexcept {
+    return makeError<SerializationError>(fmt::format("{}.", name), std::move(err));
+}
+inline Unexpected makeSerIndexError(std::size_t idx, Error& err) noexcept {
+    return makeError<SerializationError>(fmt::format("[{}]", idx), std::move(err));
+}
+inline Unexpected makeSerKeyError(std::string_view key, Error& err) noexcept {
+    return makeError<SerializationError>(fmt::format("[\"{}\"]", key), std::move(err));
+}
 } // namespace ll::reflection

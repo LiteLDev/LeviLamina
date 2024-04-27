@@ -253,7 +253,7 @@ public:
 
     [[nodiscard]] std::unique_ptr<Tag> toUnique() const& {
         return std::visit(
-            [](auto& val) -> std::unique_ptr<Tag> { return std::make_unique<std::remove_cvref_t<decltype(val)>>(val); },
+            [](auto& val) -> std::unique_ptr<Tag> { return std::make_unique<std::decay_t<decltype(val)>>(val); },
             mTagStorage
         );
     }
@@ -262,7 +262,7 @@ public:
     [[nodiscard]] std::unique_ptr<Tag> toUnique() && {
         return std::visit(
             [](auto&& val) -> std::unique_ptr<Tag> {
-                return std::make_unique<std::remove_cvref_t<decltype(val)>>(std::move(val));
+                return std::make_unique<std::decay_t<decltype(val)>>(std::move(val));
             },
             mTagStorage
         );

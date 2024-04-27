@@ -130,10 +130,11 @@ LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &Se
     ll::logger.debug(
         "reflection NBT: {}",
         ll::reflection::serialize<CompoundTagVariant>(helloReflection)
+            .value()
             .toSnbt(SnbtFormat::PrettyConsolePrint | SnbtFormat::ArrayLineFeed)
     );
 
-    ll::logger.debug("reflection json: {}", ll::reflection::serialize<nlohmann::json>(helloReflection).dump(4));
+    ll::logger.debug("reflection json: {}", ll::reflection::serialize<nlohmann::json>(helloReflection).value().dump(4));
 
     // ll::reflection::deserialize(helloReflection, ll::reflection::serialize<CompoundTagVariant>(helloReflection));
 
@@ -150,14 +151,9 @@ LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &Se
     ll::logger.debug("{}", ll::reflection::getRawName<&FillCommand::execute>());
     ll::logger.debug("{}", ll::reflection::getRawName<&ServerLevel::_subTick>());
 
-    // try {
-    //     ll::reflection::deserialize(
-    //         helloReflection,
-    //         nlohmann::ordered_json::parse(R"({"structure":{"hello":""}})", nullptr, false, true)
-    //     );
-    // } catch (...) {
-    //     ll::error_utils::printCurrentException(ll::logger);
-    // }
+    ll::reflection::deserialize(helloReflection, CompoundTagVariant::parse(R"({"structure":{"hello":""}})").value())
+        .error()
+        .log(ll::logger.error);
 
     ll::logger.debug("789\xDB\xFE");
     ll::logger.debug("789\xDB\xFE");

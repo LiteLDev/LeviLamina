@@ -25,7 +25,7 @@ struct GetServiceError : ErrorInfoBase {
 
     GetServiceError(ErrorType code, size_t version = 0) : code(code), version(version) {}
 
-    LLAPI std::string message() const override;
+    LLAPI std::string message() const noexcept override;
 };
 
 struct QueryServiceResult {
@@ -49,7 +49,7 @@ public:
                 [fn](auto&& event) {
                     if (event.service()->getServiceId() == T::ServiceId) {
                         if constexpr (std::is_same_v<
-                                          std::remove_cvref_t<decltype(event)>,
+                                          std::remove_cvref_t<decltype((event))>,
                                           event::server::ServiceUnregisterEvent>) {
                             fn(nullptr);
                         } else {
