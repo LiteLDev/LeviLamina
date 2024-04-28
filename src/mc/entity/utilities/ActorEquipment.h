@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+class ItemStack;
+class SimpleContainer;
+class EntityContext;
+class Player;
+
 namespace ActorEquipment {
 // NOLINTBEGIN
 // symbol:
