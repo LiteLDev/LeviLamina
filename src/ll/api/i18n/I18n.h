@@ -149,7 +149,7 @@ namespace detail {
 template <FixedString str>
 struct TrString {
     static inline int output = [] {
-        fmt::print("\"{}\",\n", (std::string_view)str);
+        fmt::print("\"{0}\": \"{0}\",\n", (std::string_view)str);
         return 0;
     }();
 };

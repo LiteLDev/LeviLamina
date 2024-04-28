@@ -89,7 +89,7 @@ static std::string diagnosticDependency(std::filesystem::path const& path) {
 Expected<> NativePluginManager::load(Manifest manifest) {
     auto l(lock());
     if (hasPlugin(manifest.name)) {
-        return makeStringError("Plugin already exists"_tr());
+        return makeStringError("Plugin {0} already exists"_tr(manifest.name));
     }
     currentLoadingPlugin = std::make_shared<NativePlugin>(std::move(manifest));
     struct Remover {
