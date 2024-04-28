@@ -143,37 +143,41 @@ public:
     [[nodiscard]] constexpr bool operator>=(T const& b) const noexcept { return lengthSqr() >= b.lengthSqr(); }
 
     [[nodiscard]] constexpr class boolN<sizeof...(Components)> lt(T const& b) const noexcept
-        requires(sizeof...(Components) >= 2 && sizeof...(Components) <= 4) {
+        requires(sizeof...(Components) >= 2 && sizeof...(Components) <= 4)
+    {
         boolN<sizeof...(Components)> res = true;
         Field::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            res[iter] = (b.template get<axis_type>(iter) < static_cast<T const*>(this)->template get<axis_type>(iter));
+            res[iter] = (static_cast<T const*>(this)->template get<axis_type>(iter) < b.template get<axis_type>(iter));
         });
         return res;
     }
 
-    [[nodiscard]] constexpr class boolN<sizeof...(Components)>
-    le(T const& b) const noexcept requires(sizeof...(Components) >= 2 && sizeof...(Components) <= 4) {
+    [[nodiscard]] constexpr class boolN<sizeof...(Components)> le(T const& b) const noexcept
+        requires(sizeof...(Components) >= 2 && sizeof...(Components) <= 4)
+    {
         boolN<sizeof...(Components)> res = true;
         Field::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            res[iter] = (b.template get<axis_type>(iter) <= static_cast<T const*>(this)->template get<axis_type>(iter));
+            res[iter] = (static_cast<T const*>(this)->template get<axis_type>(iter) <= b.template get<axis_type>(iter));
         });
         return res;
     }
 
-    [[nodiscard]] constexpr class boolN<sizeof...(Components)>
-    gt(T const& b) const noexcept requires(sizeof...(Components) >= 2 && sizeof...(Components) <= 4) {
+    [[nodiscard]] constexpr class boolN<sizeof...(Components)> gt(T const& b) const noexcept
+        requires(sizeof...(Components) >= 2 && sizeof...(Components) <= 4)
+    {
         boolN<sizeof...(Components)> res = true;
         Field::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            res[iter] = (b.template get<axis_type>(iter) > static_cast<T const*>(this)->template get<axis_type>(iter));
+            res[iter] = (static_cast<T const*>(this)->template get<axis_type>(iter) > b.template get<axis_type>(iter));
         });
         return res;
     }
 
-    [[nodiscard]] constexpr class boolN<sizeof...(Components)>
-    ge(T const& b) const noexcept requires(sizeof...(Components) >= 2 && sizeof...(Components) <= 4) {
+    [[nodiscard]] constexpr class boolN<sizeof...(Components)> ge(T const& b) const noexcept
+        requires(sizeof...(Components) >= 2 && sizeof...(Components) <= 4)
+    {
         boolN<sizeof...(Components)> res = true;
         Field::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            res[iter] = (b.template get<axis_type>(iter) >= static_cast<T const*>(this)->template get<axis_type>(iter));
+            res[iter] = (static_cast<T const*>(this)->template get<axis_type>(iter) >= b.template get<axis_type>(iter));
         });
         return res;
     }

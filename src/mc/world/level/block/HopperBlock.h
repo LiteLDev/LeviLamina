@@ -129,17 +129,10 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?HOPPER_DOESNT_BREAK_FALLING_BLOCK_VERSION@HopperBlock@@0VBaseGameVersion@@B
     MCAPI static class BaseGameVersion const HOPPER_DOESNT_BREAK_FALLING_BLOCK_VERSION;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $HOPPER_DOESNT_BREAK_FALLING_BLOCK_VERSION() { return HOPPER_DOESNT_BREAK_FALLING_BLOCK_VERSION; }
 
     // NOLINTEND
 };

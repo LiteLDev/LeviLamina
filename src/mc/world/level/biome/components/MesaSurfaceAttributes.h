@@ -2,10 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/biome/BiomeComponentBase.h"
-
-struct MesaSurfaceAttributes : public ::BiomeComponentBase {
+struct MesaSurfaceAttributes {
 public:
     // prevent constructor by default
     MesaSurfaceAttributes& operator=(MesaSurfaceAttributes const&);
@@ -14,11 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1MesaSurfaceAttributes@@UEAA@XZ
-    virtual ~MesaSurfaceAttributes();
-
-    // symbol: ??0MesaSurfaceAttributes@@QEAA@$$QEAU0@@Z
-    MCAPI MesaSurfaceAttributes(struct MesaSurfaceAttributes&&);
+    // vIndex: 0, symbol: __gen_??1MesaSurfaceAttributes@@UEAA@XZ
+    virtual ~MesaSurfaceAttributes() = default;
 
     // NOLINTEND
 };

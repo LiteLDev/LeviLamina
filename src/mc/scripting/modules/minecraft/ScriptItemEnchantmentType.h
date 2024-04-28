@@ -16,15 +16,14 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptItemEnchantmentType {
 public:
+    // prevent constructor by default
+    ScriptItemEnchantmentType& operator=(ScriptItemEnchantmentType const&);
+    ScriptItemEnchantmentType(ScriptItemEnchantmentType const&);
+
+public:
     // NOLINTBEGIN
     // symbol: ??0ScriptItemEnchantmentType@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ScriptItemEnchantmentType();
-
-    // symbol: ??0ScriptItemEnchantmentType@ScriptModuleMinecraft@@QEAA@AEBW4Type@Enchant@@@Z
-    MCAPI explicit ScriptItemEnchantmentType(::Enchant::Type const& type);
-
-    // symbol: ??0ScriptItemEnchantmentType@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
-    MCAPI ScriptItemEnchantmentType(struct ScriptModuleMinecraft::ScriptItemEnchantmentType const&);
 
     // symbol:
     // ?getName@ScriptItemEnchantmentType@ScriptModuleMinecraft@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -33,9 +32,9 @@ public:
     // symbol: ?getType@ScriptItemEnchantmentType@ScriptModuleMinecraft@@QEBA?AW4Type@Enchant@@XZ
     MCAPI ::Enchant::Type getType() const;
 
-    // symbol: ??4ScriptItemEnchantmentType@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
+    // symbol: ??4ScriptItemEnchantmentType@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptItemEnchantmentType&
-    operator=(struct ScriptModuleMinecraft::ScriptItemEnchantmentType const&);
+    operator=(struct ScriptModuleMinecraft::ScriptItemEnchantmentType&&);
 
     // symbol: ??8ScriptItemEnchantmentType@ScriptModuleMinecraft@@QEBA_NAEBU01@@Z
     MCAPI bool operator==(struct ScriptModuleMinecraft::ScriptItemEnchantmentType const& other) const;

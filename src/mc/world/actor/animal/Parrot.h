@@ -42,28 +42,28 @@ public:
     // vIndex: 10, symbol: __gen_??1Parrot@@UEAA@XZ
     virtual ~Parrot() = default;
 
-    // vIndex: 40, symbol: ?getShadowRadius@Parrot@@UEBAMXZ
+    // vIndex: 38, symbol: ?getShadowRadius@Parrot@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 65, symbol: ?setSitting@Parrot@@UEAAX_N@Z
+    // vIndex: 61, symbol: ?setSitting@Parrot@@UEAAX_N@Z
     virtual void setSitting(bool value);
 
-    // vIndex: 72, symbol: ?playAmbientSound@Parrot@@UEAAXXZ
+    // vIndex: 68, symbol: ?playAmbientSound@Parrot@@UEAAXXZ
     virtual void playAmbientSound();
 
-    // vIndex: 73, symbol: ?getAmbientSound@Parrot@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 69, symbol: ?getAmbientSound@Parrot@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
     virtual ::Puv::Legacy::LevelSoundEvent getAmbientSound() const;
 
-    // vIndex: 74, symbol: ?isInvulnerableTo@Parrot@@UEBA_NAEBVActorDamageSource@@@Z
+    // vIndex: 70, symbol: ?isInvulnerableTo@Parrot@@UEBA_NAEBVActorDamageSource@@@Z
     virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
-    // vIndex: 108, symbol: ?canBePulledIntoVehicle@Parrot@@UEBA_NXZ
+    // vIndex: 104, symbol: ?canBePulledIntoVehicle@Parrot@@UEBA_NXZ
     virtual bool canBePulledIntoVehicle() const;
 
-    // vIndex: 155, symbol: ?_playStepSound@Parrot@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 151, symbol: ?_playStepSound@Parrot@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
     virtual void _playStepSound(class BlockPos const& pos, class Block const& onBlock);
 
-    // vIndex: 191, symbol: ?_getWalkTargetValue@Parrot@@UEAAMAEBVBlockPos@@@Z
+    // vIndex: 186, symbol: ?_getWalkTargetValue@Parrot@@UEAAMAEBVBlockPos@@@Z
     virtual float _getWalkTargetValue(class BlockPos const& pos);
 
     // symbol: ??0Parrot@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

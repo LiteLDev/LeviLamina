@@ -27,6 +27,9 @@ public:
     // vIndex: 0, symbol: __gen_??1ScriptNavigationClimbComponent@ScriptModuleMinecraft@@UEAA@XZ
     virtual ~ScriptNavigationClimbComponent() = default;
 
+    // vIndex: 1, symbol: ?_isValid@ScriptNavigationClimbComponent@ScriptModuleMinecraft@@MEBA_NXZ
+    virtual bool _isValid() const;
+
     // symbol:
     // ?bind@ScriptNavigationClimbComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptNavigationClimbComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptNavigationClimbComponent>

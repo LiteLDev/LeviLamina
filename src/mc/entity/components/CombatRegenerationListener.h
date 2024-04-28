@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/wrapper/ReplayCorrectionResult.h"
 #include "mc/entity/utilities/ActorInitializationMethod.h"
 #include "mc/entity/utilities/ActorType.h"
-#include "mc/enums/MovePredictionType.h"
 #include "mc/events/MinecraftEventing.h"
 #include "mc/world/events/ActorEventListener.h"
 #include "mc/world/events/EventResult.h"

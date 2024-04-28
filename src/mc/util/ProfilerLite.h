@@ -54,17 +54,10 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?gProfilerLiteInstance@ProfilerLite@@0V1@A
     MCAPI static class ProfilerLite gProfilerLiteInstance;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $gProfilerLiteInstance() { return gProfilerLiteInstance; }
 
     // NOLINTEND
 };

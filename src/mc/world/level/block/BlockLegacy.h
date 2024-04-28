@@ -162,8 +162,8 @@ public:
 public:
     LLNDAPI std::string const& getTypeName() const;
 
-    LLNDAPI static optional_ref<BlockLegacy> tryGetFromRegistry(std::string_view name);
-    LLNDAPI static optional_ref<BlockLegacy> tryGetFromRegistry(uint legacyBlockID);
+    LLNDAPI static optional_ref<BlockLegacy>       tryGetFromRegistry(std::string_view name);
+    LLNDAPI static optional_ref<BlockLegacy const> tryGetFromRegistry(uint legacyBlockID);
 
     // prevent constructor by default
     BlockLegacy& operator=(BlockLegacy const&);
@@ -816,6 +816,9 @@ public:
     // symbol: ?finalizeBlockComponentStorage@BlockLegacy@@QEAAXXZ
     MCAPI void finalizeBlockComponentStorage();
 
+    // symbol: ?finalizeBlockCustomComponentEvents@BlockLegacy@@QEAAXAEAVScriptBlockCustomComponentsFinalizer@@@Z
+    MCAPI void finalizeBlockCustomComponentEvents(class ScriptBlockCustomComponentsFinalizer&);
+
     // symbol: ?forEachAlteredBlockState@BlockLegacy@@QEBAXV?$function@$$A6A_NAEBVBlockState@@@Z@std@@@Z
     MCAPI void forEachAlteredBlockState(std::function<bool(class BlockState const&)>) const;
 
@@ -1091,6 +1094,9 @@ public:
     // NOLINTBEGIN
     // symbol: ?_getBlockShape@BlockLegacy@@IEBA?AW4BlockShape@@XZ
     MCAPI ::BlockShape _getBlockShape() const;
+
+    // symbol: ?forEachBlockPermutationMutable@BlockLegacy@@IEAA_NV?$function@$$A6A_NAEAVBlock@@@Z@std@@@Z
+    MCAPI bool forEachBlockPermutationMutable(std::function<bool(class Block&)> callback);
 
     // symbol: ?getBurnOdds@BlockLegacy@@IEBAHXZ
     MCAPI int getBurnOdds() const;

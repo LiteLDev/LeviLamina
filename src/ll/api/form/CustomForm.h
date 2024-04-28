@@ -29,8 +29,8 @@ public:
     LLAPI CustomForm& appendInput(
         std::string const& name,
         std::string const& text,
-        std::string const& placeholder = "",
-        std::string const& defaultVal  = ""
+        std::string const& placeholder = {},
+        std::string const& defaultVal  = {}
     );
 
     LLAPI CustomForm& appendToggle(std::string const& name, std::string const& text, bool defaultVal = false);

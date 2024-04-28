@@ -17,6 +17,7 @@ public:
     BaseGameVersion             mBaseGameVersion;
     bool                        mTexturePackRequired;
     ExperimentStorage           mExperiments;
+    bool                        mHasEditorPacks; // Added in version 1.20.80, the order is not fully confirmed yet.
 
     // prevent constructor by default
     ResourcePackStackPacket& operator=(ResourcePackStackPacket const&);
@@ -45,13 +46,14 @@ public:
     MCAPI ResourcePackStackPacket();
 
     // symbol:
-    // ??0ResourcePackStackPacket@@QEAA@V?$vector@UPackInstanceId@@V?$allocator@UPackInstanceId@@@std@@@std@@0AEBVBaseGameVersion@@_NAEBVExperiments@@@Z
+    // ??0ResourcePackStackPacket@@QEAA@V?$vector@UPackInstanceId@@V?$allocator@UPackInstanceId@@@std@@@std@@0AEBVBaseGameVersion@@_NAEBVExperiments@@2@Z
     MCAPI ResourcePackStackPacket(
-        std::vector<struct PackInstanceId> addOnIdsAndVersions,
-        std::vector<struct PackInstanceId> texturePackIdsAndVersions,
-        class BaseGameVersion const&       baseGameVersion,
-        bool                               texturePackRequired,
-        class Experiments const&           experiments
+        std::vector<struct PackInstanceId>,
+        std::vector<struct PackInstanceId>,
+        class BaseGameVersion const&,
+        bool,
+        class Experiments const&,
+        bool
     );
 
     // NOLINTEND

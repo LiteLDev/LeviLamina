@@ -46,7 +46,8 @@ std::shared_ptr<BlockActor> BlockActor::create(class CompoundTag const& nbt) {
     if (!ll::service::getLevel()) {
         return nullptr;
     }
-    return loadStatic(ll::service::getLevel(), nbt, ::ll::defaultDataLoadHelper);
+    DefaultDataLoadHelper dataLoadHelper{};
+    return loadStatic(ll::service::getLevel(), nbt, dataLoadHelper);
 }
 
 std::shared_ptr<BlockActor> BlockActor::create(class CompoundTag const& nbt, class BlockPos const& pos) {

@@ -26,8 +26,8 @@ public:
     // vIndex: 0, symbol: __gen_??1ScriptOnFireComponent@ScriptModuleMinecraft@@UEAA@XZ
     virtual ~ScriptOnFireComponent() = default;
 
-    // symbol: ?getOnFireTicksRemaining@ScriptOnFireComponent@ScriptModuleMinecraft@@QEBAHXZ
-    MCAPI int getOnFireTicksRemaining() const;
+    // vIndex: 1, symbol: ?_isValid@ScriptOnFireComponent@ScriptModuleMinecraft@@MEBA_NXZ
+    virtual bool _isValid() const;
 
     // symbol:
     // ?bind@ScriptOnFireComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptOnFireComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z

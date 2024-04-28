@@ -14,10 +14,12 @@ struct TaggedBinding {
 public:
     // prevent constructor by default
     TaggedBinding& operator=(TaggedBinding const&);
-    TaggedBinding();
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0TaggedBinding@Scripting@@QEAA@XZ
+    MCAPI TaggedBinding();
+
     // symbol: ??0TaggedBinding@Scripting@@QEAA@AEBU01@@Z
     MCAPI TaggedBinding(struct Scripting::TaggedBinding const&);
 

@@ -3,9 +3,9 @@
 #include <string_view>
 #include <utility>
 
+#include "ll/api/base/Containers.h"
 #include "ll/api/command/CommandRegistrar.h"
 #include "ll/api/command/OverloadData.h"
-
 #include "ll/api/command/runtime/RuntimeOverload.h"
 
 #include "mc/server/commands/CommandVersion.h"
@@ -18,38 +18,59 @@ struct CommandHandle::Impl {
     CommandRegistry::Signature& signature;
     std::recursive_mutex        mutex;
 
-    std::vector<RuntimeOverload> runtimeOverloads;
-};
+    std::unordered_set<std::string, ::ll::detail::transparent_string_hash, std::equal_to<>>
+        storedStr; // uset keep pointer stable
 
+    std::vector<OverloadData> overloads;
+};
 CommandHandle::CommandHandle(CommandRegistrar& registrar, CommandRegistry::Signature& signature, bool owned)
 : impl(std::make_unique<Impl>(owned, registrar, signature)) {}
 
 CommandHandle::~CommandHandle() = default;
 
-
 CommandRegistrar& CommandHandle::getRegistrar() { return impl->registrar; }
 
-void CommandHandle::registerOverload(OverloadData& data) {
+size_t CommandHandle::disablePluginOverloads(std::string_view pluginName) {
     std::lock_guard lock{impl->mutex};
-    auto            params = std::move(data.getParams());
+    if (pluginName.empty()) {
+        return 0;
+    }
+    return std::erase_if(impl->overloads, [&](auto& overload) -> bool {
+        if (!overload.getPlugin().expired() && (overload.getPlugin().lock()->getManifest().name != pluginName)) {
+            return false;
+        }
+        std::erase_if(impl->signature.overloads, [&](auto& o) { return o.params == overload.getParams(); });
+        return true;
+    });
+}
+void CommandHandle::registerOverload(OverloadData& d) {
+    std::lock_guard lock{impl->mutex};
+    auto&           data = impl->overloads.emplace_back(std::move(d));
+
     for (auto& o : impl->signature.overloads) {
-        if (o.params == params) {
+        if (o.params == data.getParams()) {
             o.alloc = data.getFactory();
             return;
         }
     }
     auto& overload  = impl->signature.overloads.emplace_back(CommandVersion{}, data.getFactory());
-    overload.params = std::move(params);
+    overload.params = data.getParams();
     impl->registrar.getRegistry().registerOverloadInternal(impl->signature, overload);
 }
 char const* CommandHandle::addText(std::string_view text) { return impl->registrar.addText(*this, text); }
-char const* CommandHandle::addPostfix(std::string_view postfix) { return impl->registrar.addPostfix(*this, postfix); }
 
-void CommandHandle::registerRuntimeOverload(RuntimeOverload& rt) {
+char const* CommandHandle::storeStr(std::string_view str) {
     std::lock_guard lock{impl->mutex};
-    impl->runtimeOverloads.emplace_back(std::move(rt));
+    if (auto iter = impl->storedStr.find(str); iter != impl->storedStr.end()) {
+        return iter->c_str();
+    } else {
+        return impl->storedStr.emplace(str).first->c_str();
+    }
 }
-RuntimeOverload CommandHandle::runtimeOverload() { return RuntimeOverload{*this}; }
+
+RuntimeOverload CommandHandle::runtimeOverload(std::weak_ptr<plugin::Plugin> plugin) {
+    return RuntimeOverload{*this, std::move(plugin)};
+}
 
 void CommandHandle::alias(std::string_view alias) {
     std::lock_guard lock{impl->mutex};
@@ -63,5 +84,4 @@ std::vector<std::string> CommandHandle::alias() const {
     std::lock_guard lock{impl->mutex};
     return impl->registrar.getRegistry().getAliases(impl->signature.name);
 }
-
 } // namespace ll::command

@@ -27,6 +27,9 @@ public:
     // vIndex: 0, symbol: __gen_??1ScriptNavigationFlyComponent@ScriptModuleMinecraft@@UEAA@XZ
     virtual ~ScriptNavigationFlyComponent() = default;
 
+    // vIndex: 1, symbol: ?_isValid@ScriptNavigationFlyComponent@ScriptModuleMinecraft@@EEBA_NXZ
+    virtual bool _isValid() const;
+
     // symbol:
     // ?bind@ScriptNavigationFlyComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptNavigationFlyComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptNavigationFlyComponent>

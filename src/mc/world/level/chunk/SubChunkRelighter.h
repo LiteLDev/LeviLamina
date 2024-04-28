@@ -157,7 +157,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits@SubChunkRelighter@@0V?$bitset@$0DAAAA@@std@@A
     MCAPI static std::bitset<196608> mAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits;
@@ -178,25 +178,6 @@ private:
 
     // symbol: ?sLitSpinLock@SubChunkRelighter@@0VSpinLock@@A
     MCAPI static class SpinLock sLitSpinLock;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits() {
-        return mAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits;
-    }
-
-    static auto& $mOuterEdgeOfComputationBits() { return mOuterEdgeOfComputationBits; }
-
-    static auto& $sDarkSpinLock() { return sDarkSpinLock; }
-
-    static auto& $sFullyDarkSubChunk() { return sFullyDarkSubChunk; }
-
-    static auto& $sFullyLitSubChunk() { return sFullyLitSubChunk; }
-
-    static auto& $sLitSpinLock() { return sLitSpinLock; }
 
     // NOLINTEND
 };

@@ -20,13 +20,14 @@ public:
     uint                  mBlockRuntimeId{}; // this+0x38
     std::string           mUserDataBuffer{}; // this+0x40
 
+    // prevent constructor by default
+    NetworkItemStackDescriptor& operator=(NetworkItemStackDescriptor const&);
+    NetworkItemStackDescriptor();
+
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1NetworkItemStackDescriptor@@UEAA@XZ
     virtual ~NetworkItemStackDescriptor();
-
-    // symbol: ??0NetworkItemStackDescriptor@@QEAA@XZ
-    MCAPI NetworkItemStackDescriptor();
 
     // symbol: ??0NetworkItemStackDescriptor@@QEAA@AEBVItemStack@@@Z
     MCAPI explicit NetworkItemStackDescriptor(class ItemStack const& item);

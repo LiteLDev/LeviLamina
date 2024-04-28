@@ -40,37 +40,37 @@ public:
     // vIndex: 10, symbol: ??1Fireball@@UEAA@XZ
     virtual ~Fireball();
 
-    // vIndex: 28, symbol: ?normalTick@Fireball@@UEAAXXZ
+    // vIndex: 26, symbol: ?normalTick@Fireball@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 43, symbol: ?getBrightness@Fireball@@UEBAMMAEBVIConstBlockSource@@@Z
+    // vIndex: 41, symbol: ?getBrightness@Fireball@@UEBAMMAEBVIConstBlockSource@@@Z
     virtual float getBrightness(float, class IConstBlockSource const&) const;
 
-    // vIndex: 47, symbol: ?isPickable@Fireball@@UEAA_NXZ
+    // vIndex: 45, symbol: ?isPickable@Fireball@@UEAA_NXZ
     virtual bool isPickable();
 
-    // vIndex: 80, symbol: ?getPickRadius@Fireball@@UEAAMXZ
+    // vIndex: 76, symbol: ?getPickRadius@Fireball@@UEAAMXZ
     virtual float getPickRadius();
 
-    // vIndex: 96, symbol: ?getSourceUniqueID@Fireball@@UEBA?AUActorUniqueID@@XZ
+    // vIndex: 92, symbol: ?getSourceUniqueID@Fireball@@UEBA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID getSourceUniqueID() const;
 
-    // vIndex: 100, symbol: ?canChangeDimensionsUsingPortal@Fireball@@UEBA_NXZ
+    // vIndex: 96, symbol: ?canChangeDimensionsUsingPortal@Fireball@@UEBA_NXZ
     virtual bool canChangeDimensionsUsingPortal() const;
 
-    // vIndex: 153, symbol: ?readAdditionalSaveData@Fireball@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 149, symbol: ?readAdditionalSaveData@Fireball@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 154, symbol: ?addAdditionalSaveData@Fireball@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 150, symbol: ?addAdditionalSaveData@Fireball@@MEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 157, symbol: ?getInertia@Fireball@@MEAAMXZ
+    // vIndex: 153, symbol: ?getInertia@Fireball@@MEAAMXZ
     virtual float getInertia();
 
-    // vIndex: 158, symbol: ?getTrailParticle@Fireball@@MEAA?AW4ParticleType@@XZ
+    // vIndex: 154, symbol: ?getTrailParticle@Fireball@@MEAA?AW4ParticleType@@XZ
     virtual ::ParticleType getTrailParticle();
 
-    // vIndex: 159, symbol: ?shouldBurn@Fireball@@MEAA_NXZ
+    // vIndex: 155, symbol: ?shouldBurn@Fireball@@MEAA_NXZ
     virtual bool shouldBurn();
 
     // symbol: ??0Fireball@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

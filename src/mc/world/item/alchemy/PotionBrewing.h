@@ -104,7 +104,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?mChemistryMixes@PotionBrewing@@0V?$vector@V?$Mix@VItemInstance@@@PotionBrewing@@V?$allocator@V?$Mix@VItemInstance@@@PotionBrewing@@@std@@@std@@A
@@ -132,25 +132,6 @@ private:
     // symbol:
     // ?mValidRecipeInputs@PotionBrewing@@0V?$unordered_set@VIngredient@PotionBrewing@@U?$hash@VIngredient@PotionBrewing@@@std@@U?$equal_to@VIngredient@PotionBrewing@@@4@V?$allocator@VIngredient@PotionBrewing@@@4@@std@@A
     MCAPI static std::unordered_set<class PotionBrewing::Ingredient> mValidRecipeInputs;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mChemistryMixes() { return mChemistryMixes; }
-
-    static auto& $mContainerMixes() { return mContainerMixes; }
-
-    static auto& $mIsInitialized() { return mIsInitialized; }
-
-    static auto& $mPotionMixes() { return mPotionMixes; }
-
-    static auto& $mValidContainers() { return mValidContainers; }
-
-    static auto& $mValidIngredients() { return mValidIngredients; }
-
-    static auto& $mValidRecipeInputs() { return mValidRecipeInputs; }
 
     // NOLINTEND
 };

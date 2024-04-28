@@ -39,7 +39,7 @@ LL_STATIC_HOOK(
 
 ll::Logger serverLogger("Server");
 
-static std::unordered_map<uint, decltype(serverLogger.debug)&> loggerMap = {
+static std::unordered_map<uint, decltype((serverLogger.debug))&> loggerMap = {
     {1u, serverLogger.debug},
     {2u, serverLogger.info },
     {4u, serverLogger.warn },

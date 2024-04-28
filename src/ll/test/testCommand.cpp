@@ -60,13 +60,10 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
         .postfix("st")
         .optional("p3")
         .optional("p2")
-        .execute<lambda>();
-    cmd.overload<ParamTest>().required("p1").text("gr").required("p5").optional("p2").optional("p3").execute<lambda>();
-    cmd.overload<ParamTest2>()
-        .required("block")
-        .required("dim")
-        .optional("subcmd")
-        .execute<[](CommandOrigin const& ori, CommandOutput& output, ParamTest2 const& param, ::Command const&) {
+        .execute(lambda);
+    cmd.overload<ParamTest>().required("p1").text("gr").required("p5").optional("p2").optional("p3").execute(lambda);
+    cmd.overload<ParamTest2>().required("block").required("dim").optional("subcmd").execute(
+        [](CommandOrigin const& ori, CommandOutput& output, ParamTest2 const& param, ::Command const&) {
             output.success("block: {}", param.block.getDescriptionId());
             output.success("dim: {}", param.dim.id);
 
@@ -74,7 +71,9 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
                 output.success("subcmd: {}", param.subcmd->getCommandName());
                 param.subcmd->run(ori, output);
             }
-        }>();
+        }
+    );
+    cmd.overload().text("throw").execute([](CommandOrigin const&, CommandOutput&) { throw std::runtime_error{"hi"}; });
 
     CommandRegistrar::getInstance().tryRegisterSoftEnum("hello", {"SoftEnum1", "af1451"});
 

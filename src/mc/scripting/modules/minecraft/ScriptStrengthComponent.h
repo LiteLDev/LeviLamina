@@ -27,6 +27,9 @@ public:
     // vIndex: 0, symbol: __gen_??1ScriptStrengthComponent@ScriptModuleMinecraft@@UEAA@XZ
     virtual ~ScriptStrengthComponent() = default;
 
+    // vIndex: 1, symbol: ?_isValid@ScriptStrengthComponent@ScriptModuleMinecraft@@MEBA_NXZ
+    virtual bool _isValid() const;
+
     // symbol: ?getMax@ScriptStrengthComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@H$$V@Scripting@@XZ
     MCAPI class Scripting::Result<int> getMax() const;
 

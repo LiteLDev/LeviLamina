@@ -45,8 +45,8 @@ MCAPI void setActorFlag(class EntityContext&, ::ActorFlags, bool);
 MCAPI void setActorFlag(struct ActorDataFlagComponent&, struct ActorDataDirtyFlagsComponent&, ::ActorFlags, bool);
 
 // symbol:
-// ?setActorFlags@SynchedActorDataAccess@@YAXAEAUActorDataFlagComponent@@AEAUActorDataDirtyFlagsComponent@@AEBV?$bitset@$0HG@@std@@@Z
-MCAPI void setActorFlags(struct ActorDataFlagComponent&, struct ActorDataDirtyFlagsComponent&, std::bitset<118> const&);
+// ?setActorFlags@SynchedActorDataAccess@@YAXAEAUActorDataFlagComponent@@AEAUActorDataDirtyFlagsComponent@@AEBV?$bitset@$0HH@@std@@@Z
+MCAPI void setActorFlags(struct ActorDataFlagComponent&, struct ActorDataDirtyFlagsComponent&, std::bitset<119> const&);
 
 // symbol: ?setBoundingBoxScale@SynchedActorDataAccess@@YAXAEAVEntityContext@@M@Z
 MCAPI void setBoundingBoxScale(class EntityContext&, float);

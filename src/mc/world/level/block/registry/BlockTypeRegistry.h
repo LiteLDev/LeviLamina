@@ -84,11 +84,12 @@ public:
         // symbol: ??0LookupByNameImplReturnType@BlockTypeRegistry@@QEAA@PEBVBlock@@_N@Z
         MCAPI LookupByNameImplReturnType(class Block const* block, bool);
 
-        // symbol: ??0LookupByNameImplReturnType@BlockTypeRegistry@@QEAA@V?$WeakPtr@VBlockLegacy@@@@PEBVBlock@@@Z
-        MCAPI LookupByNameImplReturnType(class WeakPtr<class BlockLegacy> blockLegacy, class Block const* block);
+        // symbol: ??0LookupByNameImplReturnType@BlockTypeRegistry@@QEAA@V?$WeakPtr@$$CBVBlockLegacy@@@@PEBVBlock@@@Z
+        MCAPI LookupByNameImplReturnType(class WeakPtr<class BlockLegacy const> blockLegacy, class Block const* block);
 
-        // symbol: ??0LookupByNameImplReturnType@BlockTypeRegistry@@QEAA@V?$WeakPtr@VBlockLegacy@@@@H_N@Z
-        MCAPI LookupByNameImplReturnType(class WeakPtr<class BlockLegacy> blockLegacy, int data, bool resolveBlock);
+        // symbol: ??0LookupByNameImplReturnType@BlockTypeRegistry@@QEAA@V?$WeakPtr@$$CBVBlockLegacy@@@@H_N@Z
+        MCAPI
+        LookupByNameImplReturnType(class WeakPtr<class BlockLegacy const> blockLegacy, int data, bool resolveBlock);
 
         // NOLINTEND
     };
@@ -101,11 +102,17 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ?checkBlockPermutationCap@BlockTypeRegistry@@SAXXZ
+    MCAPI static void checkBlockPermutationCap();
+
     // symbol: ?computeBlockTypeRegistryChecksum@BlockTypeRegistry@@SA_KAEBVBaseGameVersion@@@Z
     MCAPI static uint64 computeBlockTypeRegistryChecksum(class BaseGameVersion const& worldBaseGameVersion);
 
     // symbol: ?finalizeBlockComponentStorage@BlockTypeRegistry@@SAXXZ
     MCAPI static void finalizeBlockComponentStorage();
+
+    // symbol: ?finalizeBlockCustomComponentEvents@BlockTypeRegistry@@SAXAEBVServerScriptManager@@@Z
+    MCAPI static void finalizeBlockCustomComponentEvents(class ServerScriptManager const&);
 
     // symbol: ?forEachBlock@BlockTypeRegistry@@SAXV?$function@$$A6A_NAEBVBlockLegacy@@@Z@std@@@Z
     MCAPI static void forEachBlock(std::function<bool(class BlockLegacy const&)> callback);
@@ -189,7 +196,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?mBlockAliasLookupMap@BlockTypeRegistry@@0V?$unordered_map@VHashedString@@V1@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@3@V?$allocator@U?$pair@$$CBVHashedString@@V1@@std@@@3@@std@@A
@@ -227,31 +234,6 @@ private:
 
     // symbol: ?mRWLock@BlockTypeRegistry@@0V?$shared_ptr@VBlockTypeRegistryRWLock@@@std@@A
     MCAPI static std::shared_ptr<class BlockTypeRegistryRWLock> mRWLock;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mBlockAliasLookupMap() { return mBlockAliasLookupMap; }
-
-    static auto& $mBlockComplexAliasLookupMap() { return mBlockComplexAliasLookupMap; }
-
-    static auto& $mBlockComplexAliasPostSplitBlockNamesList() { return mBlockComplexAliasPostSplitBlockNamesList; }
-
-    static auto& $mBlockComplexAliasPostSplitBlockNamesLookupMap() {
-        return mBlockComplexAliasPostSplitBlockNamesLookupMap;
-    }
-
-    static auto& $mBlockLookupMap() { return mBlockLookupMap; }
-
-    static auto& $mBlockNameHashToStringMap() { return mBlockNameHashToStringMap; }
-
-    static auto& $mDirectAccessBlocks() { return mDirectAccessBlocks; }
-
-    static auto& $mKnownNamespaces() { return mKnownNamespaces; }
-
-    static auto& $mRWLock() { return mRWLock; }
 
     // NOLINTEND
 };

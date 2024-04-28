@@ -23,7 +23,7 @@ def format_file(file):
 
 
 def format_all():
-    print("formatting")
+    subprocess.run(["clang-format", "--version"])
     pool = multiprocessing.Pool(
         processes=max(multiprocessing.cpu_count()-2, 1))
     for root, dirs, files in os.walk("./src"):

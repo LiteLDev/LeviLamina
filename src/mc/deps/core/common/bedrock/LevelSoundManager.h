@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/wrapper/StackRefResult.h"
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/events/LevelSoundEvent.h"
@@ -103,8 +104,9 @@ public:
                                           bool
                                       )> callback);
 
-    // symbol: ?setLevelEventCoordinator@LevelSoundManager@@QEAAXV?$shared_ptr@VLevelEventCoordinator@@@std@@@Z
-    MCAPI void setLevelEventCoordinator(std::shared_ptr<class LevelEventCoordinator>);
+    // symbol:
+    // ?setLevelEventCoordinator@LevelSoundManager@@QEAAXAEBV?$not_null@V?$StackRefResult@VLevelEventCoordinator@@@@@gsl@@@Z
+    MCAPI void setLevelEventCoordinator(gsl::not_null<class StackRefResult<class LevelEventCoordinator>> const&);
 
     // symbol: ?setPacketSender@LevelSoundManager@@QEAAXAEAVPacketSender@@@Z
     MCAPI void setPacketSender(class PacketSender& packetSender);

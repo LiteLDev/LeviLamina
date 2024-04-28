@@ -54,13 +54,11 @@ public:
 public:
     // prevent constructor by default
     Logger& operator=(Logger const&);
+    Logger(Logger const&);
     Logger();
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0Logger@Puv@@QEAA@AEBU01@@Z
-    MCAPI Logger(struct Puv::Logger const&);
-
     // symbol:
     // ?getErrors@Logger@Puv@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
     MCAPI std::vector<std::string> getErrors() const;

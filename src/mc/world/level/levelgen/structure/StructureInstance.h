@@ -9,6 +9,7 @@
 // clang-format off
 class BlockSource;
 class BoundingBox;
+class ChunkPos;
 class Random;
 namespace br::worldgen { struct Structure; }
 // clang-format on
@@ -24,6 +25,12 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ?intersects@StructureInstance@worldgen@br@@QEBA_NVBoundingBox@@@Z
+    MCAPI bool intersects(class BoundingBox) const;
+
+    // symbol: ?isReference@StructureInstance@worldgen@br@@QEBA_NVChunkPos@@@Z
+    MCAPI bool isReference(class ChunkPos) const;
+
     // symbol: ?isValid@StructureInstance@worldgen@br@@QEBA_NXZ
     MCAPI bool isValid() const;
 

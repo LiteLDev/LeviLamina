@@ -60,6 +60,10 @@ public:
     // symbol: ?queueCorrection@ActorHistory@@QEAAXV?$shared_ptr@UIMovementCorrection@@@std@@@Z
     MCAPI void queueCorrection(std::shared_ptr<struct IMovementCorrection>);
 
+    // symbol:
+    // ?queueInputSimulation@ActorHistory@@QEAAXV?$unique_ptr@UIReplayableActorInput@@U?$default_delete@UIReplayableActorInput@@@std@@@std@@@Z
+    MCAPI void queueInputSimulation(std::unique_ptr<struct IReplayableActorInput>);
+
     // symbol: ?setSnapshotAsCorrection@ActorHistory@@QEAAX_K@Z
     MCAPI void setSnapshotAsCorrection(uint64);
 

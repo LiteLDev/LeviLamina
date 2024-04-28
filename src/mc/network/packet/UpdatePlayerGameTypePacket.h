@@ -14,6 +14,7 @@ class UpdatePlayerGameTypePacket : public ::Packet {
 public:
     GameType      mPlayerGameType; // this+0x30
     ActorUniqueID mTargetPlayer;   // this+0x38
+    int           mTick;           // Added in version 1.20.80, the order is not fully confirmed yet.
 
     // prevent constructor by default
     UpdatePlayerGameTypePacket& operator=(UpdatePlayerGameTypePacket const&);
@@ -41,8 +42,8 @@ public:
     // symbol: ??0UpdatePlayerGameTypePacket@@QEAA@XZ
     MCAPI UpdatePlayerGameTypePacket();
 
-    // symbol: ??0UpdatePlayerGameTypePacket@@QEAA@W4GameType@@AEBUActorUniqueID@@@Z
-    MCAPI UpdatePlayerGameTypePacket(::GameType playerGameType, struct ActorUniqueID const&);
+    // symbol: ??0UpdatePlayerGameTypePacket@@QEAA@W4GameType@@AEBUActorUniqueID@@_K@Z
+    MCAPI UpdatePlayerGameTypePacket(::GameType, struct ActorUniqueID const&, uint64);
 
     // NOLINTEND
 };

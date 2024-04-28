@@ -14,7 +14,6 @@ class EnchantableItemComponent {
 public:
     // prevent constructor by default
     EnchantableItemComponent(EnchantableItemComponent const&);
-    EnchantableItemComponent();
 
 public:
     // NOLINTBEGIN
@@ -27,7 +26,7 @@ public:
     // vIndex: 2, symbol: ?writeSettings@ItemComponent@@UEAAXXZ
     virtual void writeSettings();
 
-    // vIndex: 3, symbol: ?isNetworkComponent@InteractButtonItemComponent@@UEBA_NXZ
+    // vIndex: 3, symbol: ?isNetworkComponent@ItemComponent@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
     // vIndex: 4, symbol:
@@ -49,6 +48,9 @@ public:
 
     // vIndex: 9, symbol: ?_initializeComponent@EnchantableItemComponent@@UEAAXXZ
     virtual void _initializeComponent();
+
+    // symbol: ??0EnchantableItemComponent@@QEAA@XZ
+    MCAPI EnchantableItemComponent();
 
     // symbol: ??4EnchantableItemComponent@@QEAAAEAV0@AEBV0@@Z
     MCAPI class EnchantableItemComponent& operator=(class EnchantableItemComponent const&);

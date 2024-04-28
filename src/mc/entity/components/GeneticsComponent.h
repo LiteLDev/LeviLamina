@@ -68,7 +68,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?GENE_ARRAY@GeneticsComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const GENE_ARRAY;
@@ -78,17 +78,6 @@ private:
 
     // symbol: ?MAIN_ALLELE@GeneticsComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const MAIN_ALLELE;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $GENE_ARRAY() { return GENE_ARRAY; }
-
-    static auto& $HIDDEN_ALLELE() { return HIDDEN_ALLELE; }
-
-    static auto& $MAIN_ALLELE() { return MAIN_ALLELE; }
 
     // NOLINTEND
 };

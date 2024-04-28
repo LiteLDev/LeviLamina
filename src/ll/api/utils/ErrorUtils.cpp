@@ -283,7 +283,7 @@ std::string makeExceptionString(std::exception_ptr ePtr) noexcept {
     return "unknown error when make exception string";
 }
 
-void printCurrentException(ll::Logger& logger, std::exception_ptr const& e) noexcept {
+void printCurrentException(ll::OutputStream& stream, std::exception_ptr const& e) noexcept {
     try {
 #if defined(LL_DEBUG) && _HAS_CXX23
         std::string res;
@@ -301,10 +301,14 @@ void printCurrentException(ll::Logger& logger, std::exception_ptr const& e) noex
         auto res = makeExceptionString(e);
 #endif
         for (auto& sv : string_utils::splitByPattern(res, "\n")) {
-            logger.error(sv);
+            stream(sv);
         }
         return;
     } catch (...) {}
-    logger.error("unknown error");
+    stream("unknown error");
 }
+void printCurrentException(ll::Logger& l, std::exception_ptr const& ptr) noexcept {
+    printCurrentException(l.error, ptr);
+}
+
 } // namespace ll::inline utils::error_utils

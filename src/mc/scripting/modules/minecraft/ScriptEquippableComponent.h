@@ -31,6 +31,9 @@ public:
     // vIndex: 0, symbol: __gen_??1ScriptEquippableComponent@ScriptModuleMinecraft@@UEAA@XZ
     virtual ~ScriptEquippableComponent() = default;
 
+    // vIndex: 1, symbol: ?_isValid@ScriptEquippableComponent@ScriptModuleMinecraft@@MEBA_NXZ
+    virtual bool _isValid() const;
+
     // symbol:
     // ?getEquipment@ScriptEquippableComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@W4EquipmentSlot@Legacy@Puv@@@Z
     MCAPI class Scripting::Result<

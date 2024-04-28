@@ -89,18 +89,11 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?mCurrentRegistry@CreativeItemRegistry@@0V?$unique_ptr@VCreativeItemRegistry@@U?$default_delete@VCreativeItemRegistry@@@std@@@std@@A
     MCAPI static std::unique_ptr<class CreativeItemRegistry> mCurrentRegistry;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mCurrentRegistry() { return mCurrentRegistry; }
 
     // NOLINTEND
 };

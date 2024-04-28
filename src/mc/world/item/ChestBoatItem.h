@@ -30,11 +30,11 @@ public:
     // vIndex: 0, symbol: __gen_??1ChestBoatItem@@UEAA@XZ
     virtual ~ChestBoatItem() = default;
 
-    // vIndex: 81, symbol:
+    // vIndex: 82, symbol:
     // ?buildDescriptionId@ChestBoatItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 118, symbol: ?_getActorType@ChestBoatItem@@EEBA?AW4ActorType@@XZ
+    // vIndex: 119, symbol: ?_getActorType@ChestBoatItem@@EEBA?AW4ActorType@@XZ
     virtual ::ActorType _getActorType() const;
 
     // symbol: ??0ChestBoatItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH@Z

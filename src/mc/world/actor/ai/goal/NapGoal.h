@@ -60,17 +60,10 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?MOB_DETECT_TIME@NapGoal@@0MB
     MCAPI static float const MOB_DETECT_TIME;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $MOB_DETECT_TIME() { return MOB_DETECT_TIME; }
 
     // NOLINTEND
 };

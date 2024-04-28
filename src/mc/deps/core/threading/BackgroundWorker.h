@@ -89,17 +89,10 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?gLocalWorkerMappingSingleton@BackgroundWorker@@0PEAV1@EA
     MCAPI static class BackgroundWorker* gLocalWorkerMappingSingleton;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $gLocalWorkerMappingSingleton() { return gLocalWorkerMappingSingleton; }
 
     // NOLINTEND
 };

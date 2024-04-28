@@ -29,26 +29,25 @@ public:
     virtual ~ScriptActorGameplayHandler() = default;
 
     // vIndex: 1, symbol:
-    // ?handleEvent@ScriptActorGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUActorDefinitionStartedEvent@@@Z
-    virtual struct GameplayHandlerResult<::CoordinatorResult> handleEvent(struct ActorDefinitionStartedEvent&);
-
-    // vIndex: 2, symbol:
     // ?handleEvent@ScriptActorGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUActorAddEffectEvent@@@Z
     virtual struct GameplayHandlerResult<::CoordinatorResult> handleEvent(struct ActorAddEffectEvent&);
 
-    // vIndex: 3, symbol:
+    // vIndex: 2, symbol:
     // ?handleEvent@?$Impl@U?$type_list@$$CBU?$ActorGameplayEvent@X@@$$CBU?$ActorGameplayEvent@W4CoordinatorResult@@@@U?$MutableActorGameplayEvent@W4CoordinatorResult@@@@@entt@@@?$EventHandlerDispatcher@VActorGameplayHandler@@@Details@@MEAA?AW4HandlerResult@@AEBU?$ActorGameplayEvent@X@@@Z
     virtual ::HandlerResult handleEvent(struct ActorGameplayEvent<void> const& event);
 
-    // vIndex: 4, symbol:
+    // vIndex: 3, symbol:
     // ?handleEvent@?$Impl@U?$type_list@$$CBU?$ActorGameplayEvent@W4CoordinatorResult@@@@U?$MutableActorGameplayEvent@W4CoordinatorResult@@@@@entt@@@?$EventHandlerDispatcher@VActorGameplayHandler@@@Details@@MEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEBU?$ActorGameplayEvent@W4CoordinatorResult@@@@@Z
     virtual struct GameplayHandlerResult<::CoordinatorResult>
     handleEvent(struct ActorGameplayEvent<::CoordinatorResult> const& event);
 
-    // vIndex: 5, symbol:
+    // vIndex: 4, symbol:
     // ?handleEvent@?$Impl@U?$type_list@U?$MutableActorGameplayEvent@W4CoordinatorResult@@@@@entt@@@?$EventHandlerDispatcher@VActorGameplayHandler@@@Details@@MEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAU?$MutableActorGameplayEvent@W4CoordinatorResult@@@@@Z
     virtual struct GameplayHandlerResult<::CoordinatorResult>
     handleEvent(struct MutableActorGameplayEvent<::CoordinatorResult>& event);
+
+    // vIndex: 5, symbol: __unk_vfn_5
+    virtual void __unk_vfn_5();
 
     // vIndex: 6, symbol: __unk_vfn_6
     virtual void __unk_vfn_6();
@@ -81,12 +80,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_handleActorDefinitionStartedEvent@ScriptActorGameplayHandler@@AEBA_NAEAUActorDefinitionStartedEvent@@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VIScriptWorldBeforeEvents@ScriptModuleMinecraft@@@4@@Z
-    MCAPI bool
-    _handleActorDefinitionStartedEvent(struct ActorDefinitionStartedEvent&, class Scripting::WeakLifetimeScope const& scope, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>)
-        const;
-
     // symbol:
     // ?_handleActorEffectAddedEvent@ScriptActorGameplayHandler@@AEBA_NAEAUActorAddEffectEvent@@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VIScriptWorldBeforeEvents@ScriptModuleMinecraft@@@4@@Z
     MCAPI bool

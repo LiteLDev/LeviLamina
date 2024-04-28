@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Puv::Legacy { struct DefinitionTrigger; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -18,6 +19,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0DefinitionTrigger@@QEAA@U0Legacy@Puv@@@Z
+    MCAPI explicit DefinitionTrigger(struct Puv::Legacy::DefinitionTrigger);
+
     // symbol:
     // ??0DefinitionTrigger@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4FilterSubject@Legacy@Puv@@VExpressionNode@@@Z
     MCAPI DefinitionTrigger(std::string, ::Puv::Legacy::FilterSubject, class ExpressionNode);

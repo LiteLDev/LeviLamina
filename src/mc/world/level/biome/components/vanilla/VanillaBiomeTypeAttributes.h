@@ -2,10 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/biome/BiomeComponentBase.h"
-
-struct VanillaBiomeTypeAttributes : public ::BiomeComponentBase {
+struct VanillaBiomeTypeAttributes {
 public:
     // prevent constructor by default
     VanillaBiomeTypeAttributes& operator=(VanillaBiomeTypeAttributes const&);

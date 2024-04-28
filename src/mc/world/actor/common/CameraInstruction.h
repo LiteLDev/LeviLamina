@@ -41,9 +41,6 @@ public:
 
         public:
             // NOLINTBEGIN
-            // symbol: ?bindType@ColorOption@FadeInstruction@CameraInstruction@@SAXAEAUReflectionCtx@cereal@@@Z
-            MCAPI static void bindType(struct cereal::ReflectionCtx&);
-
             // symbol:
             // ?read@ColorOption@FadeInstruction@CameraInstruction@@SA?AV?$Result@UColorOption@FadeInstruction@CameraInstruction@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
             MCAPI static class Bedrock::Result<struct CameraInstruction::FadeInstruction::ColorOption>
@@ -65,9 +62,6 @@ public:
 
         public:
             // NOLINTBEGIN
-            // symbol: ?bindType@TimeOption@FadeInstruction@CameraInstruction@@SAXAEAUReflectionCtx@cereal@@@Z
-            MCAPI static void bindType(struct cereal::ReflectionCtx&);
-
             // symbol:
             // ?read@TimeOption@FadeInstruction@CameraInstruction@@SA?AV?$Result@UTimeOption@FadeInstruction@CameraInstruction@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
             MCAPI static class Bedrock::Result<struct CameraInstruction::FadeInstruction::TimeOption>
@@ -123,9 +117,6 @@ public:
 
         public:
             // NOLINTBEGIN
-            // symbol: ?bindType@EaseOption@SetInstruction@CameraInstruction@@SAXAEAUReflectionCtx@cereal@@@Z
-            MCAPI static void bindType(struct cereal::ReflectionCtx&);
-
             // symbol:
             // ?read@EaseOption@SetInstruction@CameraInstruction@@SA?AV?$Result@UEaseOption@SetInstruction@CameraInstruction@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
             MCAPI static class Bedrock::Result<struct CameraInstruction::SetInstruction::EaseOption>
@@ -183,9 +174,6 @@ public:
 
         public:
             // NOLINTBEGIN
-            // symbol: ?bindType@RotOption@SetInstruction@CameraInstruction@@SAXAEAUReflectionCtx@cereal@@@Z
-            MCAPI static void bindType(struct cereal::ReflectionCtx&);
-
             // symbol:
             // ?read@RotOption@SetInstruction@CameraInstruction@@SA?AV?$Result@URotOption@SetInstruction@CameraInstruction@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
             MCAPI static class Bedrock::Result<struct CameraInstruction::SetInstruction::RotOption>

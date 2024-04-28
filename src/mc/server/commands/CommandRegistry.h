@@ -48,9 +48,10 @@ public:
     struct ParseTable;
     struct ParseToken;
     struct Signature;
-    struct SoftEnum;
     class Symbol;
     class Parser;
+    struct RegistryState;
+    struct SoftEnum;
     struct SymbolHasher;
     // clang-format on
 
@@ -59,7 +60,7 @@ public:
     using ParseFn =
         bool (CommandRegistry::*)(void*, ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
             const;
-    using FactoryFn       = std::unique_ptr<class Command> (*)();
+    using FactoryFn       = std::unique_ptr<class Command>();
     using ProcessFunction = std::function<ParseToken*(ParseToken&, Symbol)>;
 
     struct ChainedSubcommand {
@@ -94,7 +95,7 @@ public:
 
     struct Overload {
         CommandVersion                    version;       // this+0x0
-        FactoryFn                         alloc;         // this+0x8
+        FactoryFn*                        alloc;         // this+0x8
         std::vector<CommandParameterData> params;        // this+0x10
         int                               versionOffset; // this+0x28
         std::vector<Symbol>               paramsSymbol;  // this+0x30
@@ -913,18 +914,11 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?ParseRuleSymbols@CommandRegistry@@0QBU?$pair@P8CommandRegistry@@EBA_NPEAXAEBUParseToken@1@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@5@@ZVSymbol@1@@std@@B
     MCAPI static std::pair<ParseFn, class CommandRegistry::Symbol> const ParseRuleSymbols[];
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $ParseRuleSymbols() { return ParseRuleSymbols; }
 
     // NOLINTEND
 };

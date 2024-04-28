@@ -42,16 +42,16 @@ public:
     // vIndex: 10, symbol: __gen_??1Ghast@@UEAA@XZ
     virtual ~Ghast() = default;
 
-    // vIndex: 150, symbol: ?updateEntitySpecificMolangVariables@Ghast@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 146, symbol: ?updateEntitySpecificMolangVariables@Ghast@@UEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // vIndex: 152, symbol: ?_hurt@Ghast@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 148, symbol: ?_hurt@Ghast@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 191, symbol: ?_getWalkTargetValue@Ghast@@UEAAMAEBVBlockPos@@@Z
+    // vIndex: 186, symbol: ?_getWalkTargetValue@Ghast@@UEAAMAEBVBlockPos@@@Z
     virtual float _getWalkTargetValue(class BlockPos const& pos);
 
-    // vIndex: 197, symbol: ?isDarkEnoughToSpawn@Ghast@@UEBA_NXZ
+    // vIndex: 192, symbol: ?isDarkEnoughToSpawn@Ghast@@UEBA_NXZ
     virtual bool isDarkEnoughToSpawn() const;
 
     // symbol: ??0Ghast@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

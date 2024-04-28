@@ -177,6 +177,9 @@ public:
     // symbol: ?isEmoteChatMuted@PropertiesSettings@@QEBA_NXZ
     MCAPI bool isEmoteChatMuted() const;
 
+    // symbol: ?isEncryptionDisabled@PropertiesSettings@@QEBA_NXZ
+    MCAPI bool isEncryptionDisabled() const;
+
     // symbol: ?isItemTransactionManagerLoggingEnabled@PropertiesSettings@@QEBA_NXZ
     MCAPI bool isItemTransactionManagerLoggingEnabled() const;
 

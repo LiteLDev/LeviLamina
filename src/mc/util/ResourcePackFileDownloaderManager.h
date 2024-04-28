@@ -19,17 +19,10 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?MAX_CHUNK_ATTEMPTS@ResourcePackFileDownloaderManager@@0HB
     MCAPI static int const MAX_CHUNK_ATTEMPTS;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $MAX_CHUNK_ATTEMPTS() { return MAX_CHUNK_ATTEMPTS; }
 
     // NOLINTEND
 };

@@ -110,7 +110,7 @@ Then, you need to modify the copyright information in the `LICENSE` file. You ca
 
 Next, you need to modify the contents of the `README.md` file. This file will be displayed on the main page of your plugin repository, where you can introduce the features, usage, configuration files, commands, etc. of your plugin.
 
-Finally, you need to modify the directory name and namespace name. Change the `rename_this` directory to a name you like, and change the namespace `rename_this` in `Entry.cpp` and `Entry.h` to the same name. According to the common convention of C++, the directory name and namespace name should use lowercase letters and underscores, and should be consistent. Here, we uniformly change to `better_suicide`.
+Finally, you need to change the namespace name. Change the namespace `my_plugin` in `MyPlugin.cpp` and `MyPlugin.h` to the name you want. Following common C++ conventions, namespace names should use lowercase letters and underscores, and should be consistent. Here, we uniformly change it to `better_suicide`. Similarly, you can change `MyPlugin.cpp` and `MyPlugin.h` to the names you want, but at the same time remember to change `#include MyPlugin.h` in the source file to the new header file name.
 
 ## Build your plugin
 
@@ -152,10 +152,10 @@ xmake
 
 ## Add `#include`
 
-Add `#include` in `Entry.cpp`, the final effect looks like this:
+Add `#include` in `MyPlugin.cpp`, the final effect looks like this:
 
 ```cpp
-#include "Entry.h"
+#include "MyPlugin.h"
 
 #include "Config.h"
 

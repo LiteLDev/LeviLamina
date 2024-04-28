@@ -73,7 +73,3 @@ public:
 
     // NOLINTEND
 };
-
-namespace ll {
-static inline ::DefaultDataLoadHelper defaultDataLoadHelper;
-}

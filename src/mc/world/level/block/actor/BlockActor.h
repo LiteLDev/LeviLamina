@@ -30,7 +30,7 @@ public:
     virtual ~BlockActor();
 
     // vIndex: 1, symbol: ?load@BlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void load(class Level&, class CompoundTag const& tag, class DataLoadHelper& = ::ll::defaultDataLoadHelper);
+    virtual void load(class Level&, class CompoundTag const& tag, class DataLoadHelper&);
 
     // vIndex: 2, symbol: ?save@BlockActor@@UEBA_NAEAVCompoundTag@@@Z
     virtual bool save(class CompoundTag& tag) const;
@@ -42,8 +42,7 @@ public:
     virtual void saveBlockData(class CompoundTag&, class BlockSource&) const;
 
     // vIndex: 5, symbol: ?loadBlockData@BlockActor@@UEAAXAEBVCompoundTag@@AEAVBlockSource@@AEAVDataLoadHelper@@@Z
-    virtual void
-    loadBlockData(class CompoundTag const&, class BlockSource&, class DataLoadHelper& = ::ll::defaultDataLoadHelper);
+    virtual void loadBlockData(class CompoundTag const&, class BlockSource&, class DataLoadHelper&);
 
     // vIndex: 6, symbol: ?onCustomTagLoadDone@BlockActor@@UEAAXAEAVBlockSource@@@Z
     virtual void onCustomTagLoadDone(class BlockSource&);
@@ -207,11 +206,8 @@ public:
 
     // symbol:
     // ?loadStatic@BlockActor@@SA?AV?$shared_ptr@VBlockActor@@@std@@AEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCAPI static std::shared_ptr<class BlockActor> loadStatic(
-        class Level&             level,
-        class CompoundTag const& tag,
-        class DataLoadHelper&    dataLoadHelper = ::ll::defaultDataLoadHelper
-    );
+    MCAPI static std::shared_ptr<class BlockActor>
+    loadStatic(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // NOLINTEND
 
@@ -230,7 +226,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?mClassIdMap@BlockActor@@0V?$map@W4BlockActorType@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@W4BlockActorType@@@3@V?$allocator@U?$pair@$$CBW4BlockActorType@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@3@@std@@B
@@ -239,15 +235,6 @@ private:
     // symbol:
     // ?mIdClassMap@BlockActor@@0V?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockActorType@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockActorType@@@std@@@2@@std@@B
     MCAPI static std::map<std::string, ::BlockActorType> const mIdClassMap;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mClassIdMap() { return mClassIdMap; }
-
-    static auto& $mIdClassMap() { return mIdClassMap; }
 
     // NOLINTEND
 };

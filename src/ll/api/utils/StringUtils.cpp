@@ -308,12 +308,12 @@ std::string toSnakeCase(std::string_view str) {
     }
     return res;
 }
-nonstd::expected<bool, std::error_code> strtobool(std::string const& str) {
+Expected<bool> strtobool(std::string const& str) {
     bool res = false;
     if (Util::toBool(str, res)) {
         return res;
     } else {
-        return nonstd::make_unexpected(std::make_error_code(std::errc::invalid_argument));
+        return makeErrorCodeError(std::errc::invalid_argument);
     }
 }
 } // namespace ll::inline utils::string_utils

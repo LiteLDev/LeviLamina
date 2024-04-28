@@ -31,7 +31,7 @@ struct PackInstanceId;
 
 class LevelSettings {
 public:
-    uchar filler[0x4C0]; // serialize<LevelSettings>::read line=1282
+    uchar filler[0x4E0]; // serialize<LevelSettings>::read line=1256
 
     // prevent constructor by default
     LevelSettings& operator=(LevelSettings const&);
@@ -220,6 +220,9 @@ public:
     // symbol: ?isFromWorldTemplate@LevelSettings@@QEBA_NXZ
     MCAPI bool isFromWorldTemplate() const;
 
+    // symbol: ?isHardcore@LevelSettings@@QEBA_NXZ
+    MCAPI bool isHardcore() const;
+
     // symbol: ?isRandomSeedAllowed@LevelSettings@@QEBA_NXZ
     MCAPI bool isRandomSeedAllowed() const;
 
@@ -243,9 +246,6 @@ public:
 
     // symbol: ?setChatRestrictionLevel@LevelSettings@@QEAAAEAV1@W4ChatRestrictionLevel@@@Z
     MCAPI class LevelSettings& setChatRestrictionLevel(::ChatRestrictionLevel);
-
-    // symbol: ?setCloudSaveInfo@LevelSettings@@QEAAAEAV1@V?$optional@VCloudSaveLevelInfo@@@std@@@Z
-    MCAPI class LevelSettings& setCloudSaveInfo(std::optional<class CloudSaveLevelInfo>);
 
     // symbol: ?setCommandsEnabled@LevelSettings@@QEAAAEAV1@_N@Z
     MCAPI class LevelSettings& setCommandsEnabled(bool commandsEnabled);

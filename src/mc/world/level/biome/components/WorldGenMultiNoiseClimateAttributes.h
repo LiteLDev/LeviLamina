@@ -2,10 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/biome/BiomeComponentBase.h"
-
-class WorldGenMultiNoiseClimateAttributes : public ::BiomeComponentBase {
+class WorldGenMultiNoiseClimateAttributes {
 public:
     // prevent constructor by default
     WorldGenMultiNoiseClimateAttributes& operator=(WorldGenMultiNoiseClimateAttributes const&);

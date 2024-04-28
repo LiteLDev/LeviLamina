@@ -42,13 +42,13 @@ public:
     // vIndex: 10, symbol: __gen_??1EyeOfEnder@@UEAA@XZ
     virtual ~EyeOfEnder() = default;
 
-    // vIndex: 26, symbol: ?lerpMotion@EyeOfEnder@@UEAAXAEBVVec3@@@Z
+    // vIndex: 24, symbol: ?lerpMotion@EyeOfEnder@@UEAAXAEBVVec3@@@Z
     virtual void lerpMotion(class Vec3 const& delta);
 
-    // vIndex: 28, symbol: ?normalTick@EyeOfEnder@@UEAAXXZ
+    // vIndex: 26, symbol: ?normalTick@EyeOfEnder@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 40, symbol: ?getShadowRadius@EyeOfEnder@@UEBAMXZ
+    // vIndex: 38, symbol: ?getShadowRadius@EyeOfEnder@@UEBAMXZ
     virtual float getShadowRadius() const;
 
     // symbol: ??0EyeOfEnder@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

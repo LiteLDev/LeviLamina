@@ -9,17 +9,10 @@ public:
     BackwardsCompatTextureGroup(BackwardsCompatTextureGroup const&);
     BackwardsCompatTextureGroup();
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?invalidInfo@BackwardsCompatTextureGroup@@0VBackwardsCompatTextureInfo@@B
     MCAPI static class BackwardsCompatTextureInfo const invalidInfo;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $invalidInfo() { return invalidInfo; }
 
     // NOLINTEND
 };

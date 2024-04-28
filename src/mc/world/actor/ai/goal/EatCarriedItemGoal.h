@@ -42,22 +42,13 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?CHEW_CHANCE@EatCarriedItemGoal@@0HB
     MCAPI static int const CHEW_CHANCE;
 
     // symbol: ?EATING_TIME@EatCarriedItemGoal@@0HB
     MCAPI static int const EATING_TIME;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $CHEW_CHANCE() { return CHEW_CHANCE; }
-
-    static auto& $EATING_TIME() { return EATING_TIME; }
 
     // NOLINTEND
 };

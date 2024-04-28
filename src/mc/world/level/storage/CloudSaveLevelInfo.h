@@ -6,11 +6,13 @@ class CloudSaveLevelInfo {
 public:
     // prevent constructor by default
     CloudSaveLevelInfo& operator=(CloudSaveLevelInfo const&);
-    CloudSaveLevelInfo(CloudSaveLevelInfo const&);
     CloudSaveLevelInfo();
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0CloudSaveLevelInfo@@QEAA@AEBV0@@Z
+    MCAPI CloudSaveLevelInfo(class CloudSaveLevelInfo const&);
+
     // symbol: ??0CloudSaveLevelInfo@@QEAA@AEBVCompoundTag@@@Z
     MCAPI explicit CloudSaveLevelInfo(class CompoundTag const&);
 

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/ILevel.h"
 
 // auto generated inclusion list
 #include "mc/dataloadhelper/DataLoadHelper.h"
@@ -12,10 +13,8 @@
 
 class NewUniqueIdsDataLoadHelper : public ::DataLoadHelper {
 public:
-    // prevent constructor by default
-    NewUniqueIdsDataLoadHelper& operator=(NewUniqueIdsDataLoadHelper const&);
-    NewUniqueIdsDataLoadHelper(NewUniqueIdsDataLoadHelper const&);
-    NewUniqueIdsDataLoadHelper();
+    ILevel*                                          mLevel;
+    std::unordered_map<ActorUniqueID, ActorUniqueID> mOldIDToNewID;
 
 public:
     // NOLINTBEGIN

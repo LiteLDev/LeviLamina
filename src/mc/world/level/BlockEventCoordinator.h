@@ -33,8 +33,8 @@ public:
     MCAPI void
     sendBlockDestroyedByPlayer(class Player&, class Block const&, class BlockPos const&, class ItemStackBase const&, class ItemStackBase const&);
 
-    // symbol: ?sendBlockDestructionStarted@BlockEventCoordinator@@QEAAXAEAVPlayer@@AEBVBlockPos@@E@Z
-    MCAPI void sendBlockDestructionStarted(class Player&, class BlockPos const&, uchar);
+    // symbol: ?sendBlockDestructionStarted@BlockEventCoordinator@@QEAAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@E@Z
+    MCAPI void sendBlockDestructionStarted(class Player&, class BlockPos const&, class Block const&, uchar);
 
     // symbol: ?sendBlockDestructionStopped@BlockEventCoordinator@@QEAAXAEAVPlayer@@AEBVBlockPos@@H@Z
     MCAPI void sendBlockDestructionStopped(class Player& player, class BlockPos const& blockPos, int progress);

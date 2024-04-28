@@ -39,19 +39,19 @@ public:
     // vIndex: 10, symbol: __gen_??1Witch@@UEAA@XZ
     virtual ~Witch() = default;
 
-    // vIndex: 15, symbol: ?getFiringPos@Witch@@UEBA?AVVec3@@XZ
+    // vIndex: 14, symbol: ?getFiringPos@Witch@@UEBA?AVVec3@@XZ
     virtual class Vec3 getFiringPos() const;
 
-    // vIndex: 59, symbol: ?canAttack@Witch@@UEBA_NPEAVActor@@_N@Z
+    // vIndex: 55, symbol: ?canAttack@Witch@@UEBA_NPEAVActor@@_N@Z
     virtual bool canAttack(class Actor* actor, bool allowInvulnerable) const;
 
-    // vIndex: 79, symbol: ?handleEntityEvent@Witch@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 75, symbol: ?handleEntityEvent@Witch@@UEAAXW4ActorEvent@@H@Z
     virtual void handleEntityEvent(::ActorEvent id, int data);
 
-    // vIndex: 150, symbol: ?updateEntitySpecificMolangVariables@Witch@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 146, symbol: ?updateEntitySpecificMolangVariables@Witch@@UEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // vIndex: 186, symbol: ?getDamageAfterEnchantReduction@Witch@@MEBAMAEBVActorDamageSource@@M@Z
+    // vIndex: 181, symbol: ?getDamageAfterEnchantReduction@Witch@@MEBAMAEBVActorDamageSource@@M@Z
     virtual float getDamageAfterEnchantReduction(class ActorDamageSource const& source, float damage) const;
 
     // symbol: ??0Witch@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

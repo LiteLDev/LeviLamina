@@ -16,17 +16,10 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?MAX_INT_REPRESENTABLE_AS_FLOAT@LevelSoundEventUtils@@0HB
     MCAPI static int const MAX_INT_REPRESENTABLE_AS_FLOAT;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $MAX_INT_REPRESENTABLE_AS_FLOAT() { return MAX_INT_REPRESENTABLE_AS_FLOAT; }
 
     // NOLINTEND
 };

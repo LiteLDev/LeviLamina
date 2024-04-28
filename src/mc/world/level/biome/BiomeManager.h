@@ -54,17 +54,4 @@ public:
     MCAPI static bool use3DBiomeMaps(class BaseGameVersion const&);
 
     // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    // symbol:
-    // ?_initializeServerBiomeRegistry@BiomeManager@@AEAAXAEBVExperiments@@AEAVIWorldRegistriesProvider@@AEAVResourcePackManager@@VLevelSeed64@@@Z
-    MCAPI void _initializeServerBiomeRegistry(
-        class Experiments const&,
-        class IWorldRegistriesProvider&,
-        class ResourcePackManager&,
-        class LevelSeed64
-    );
-
-    // NOLINTEND
 };

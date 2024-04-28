@@ -104,7 +104,7 @@ public:
     // symbol:
     // ?_pickBadlandsBiome@OverworldBiomeBuilder@@AEBAPEAVBiome@@HAEBUParameter@ClimateUtils@@AEBVBiomeRegistry@@@Z
     MCAPI class Biome* _pickBadlandsBiome(
-        int                                   humidityIdx,
+        int                                   humidityIndex,
         struct ClimateUtils::Parameter const& weirdness,
         class BiomeRegistry const&            biomeRegistry
     ) const;
@@ -112,8 +112,8 @@ public:
     // symbol:
     // ?_pickShatteredCoastBiome@OverworldBiomeBuilder@@AEBAPEAVBiome@@HHAEBUParameter@ClimateUtils@@AEBVBiomeRegistry@@@Z
     MCAPI class Biome* _pickShatteredCoastBiome(
-        int                                   temperatureIdx,
-        int                                   humidityIdx,
+        int                                   temperatureIndex,
+        int                                   humidityIndex,
         struct ClimateUtils::Parameter const& weirdness,
         class BiomeRegistry const&            biomeRegistry
     ) const;
@@ -123,7 +123,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?EROSIONS@OverworldBiomeBuilder@@0QBUParameter@ClimateUtils@@B
     MCAPI static struct ClimateUtils::Parameter const EROSIONS[];
@@ -166,39 +166,6 @@ private:
 
     // symbol: ?oceanContinentalness@OverworldBiomeBuilder@@0UParameter@ClimateUtils@@B
     MCAPI static struct ClimateUtils::Parameter const oceanContinentalness;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $EROSIONS() { return EROSIONS; }
-
-    static auto& $FULL_RANGE() { return FULL_RANGE; }
-
-    static auto& $HUMIDITIES() { return HUMIDITIES; }
-
-    static auto& $TEMPERATURES() { return TEMPERATURES; }
-
-    static auto& $coastContinentalness() { return coastContinentalness; }
-
-    static auto& $deepOceanContinentalness() { return deepOceanContinentalness; }
-
-    static auto& $dripstoneCavesContinentalness() { return dripstoneCavesContinentalness; }
-
-    static auto& $farInlandContinentalness() { return farInlandContinentalness; }
-
-    static auto& $inlandContinentalness() { return inlandContinentalness; }
-
-    static auto& $lushCavesHumidity() { return lushCavesHumidity; }
-
-    static auto& $midInlandContinentalness() { return midInlandContinentalness; }
-
-    static auto& $mushroomFieldsContinentalness() { return mushroomFieldsContinentalness; }
-
-    static auto& $nearInlandContinentalness() { return nearInlandContinentalness; }
-
-    static auto& $oceanContinentalness() { return oceanContinentalness; }
 
     // NOLINTEND
 };

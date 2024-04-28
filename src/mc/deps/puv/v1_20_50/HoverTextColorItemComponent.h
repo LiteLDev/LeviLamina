@@ -18,6 +18,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??1HoverTextColorItemComponent@v1_20_50@Puv@@QEAA@XZ
+    MCAPI ~HoverTextColorItemComponent();
+
     // symbol: ?bindType@HoverTextColorItemComponent@v1_20_50@Puv@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 

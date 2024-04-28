@@ -1,7 +1,6 @@
 #include "ll/api/event/server/ServerStoppingEvent.h"
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
-#include "ll/api/service/ServerInfo.h"
 
 #include "mc/nbt/CompoundTag.h"
 
@@ -21,7 +20,6 @@ LL_TYPE_INSTANCE_HOOK(
     &ServerInstance::leaveGameSync,
     void
 ) {
-    setServerStatus(ServerStatus::Stopping);
     EventBus::getInstance().publish(ServerStoppingEvent(*this));
     origin();
 }

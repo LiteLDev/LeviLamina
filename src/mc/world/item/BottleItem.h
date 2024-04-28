@@ -29,14 +29,14 @@ public:
     // vIndex: 0, symbol: __gen_??1BottleItem@@UEAA@XZ
     virtual ~BottleItem() = default;
 
-    // vIndex: 44, symbol: ?isLiquidClipItem@BottleItem@@UEBA_NXZ
+    // vIndex: 45, symbol: ?isLiquidClipItem@BottleItem@@UEBA_NXZ
     virtual bool isLiquidClipItem() const;
 
-    // vIndex: 72, symbol: ?dispense@BottleItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 73, symbol: ?dispense@BottleItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
-    // vIndex: 117, symbol:
+    // vIndex: 118, symbol:
     // ?_useOn@BottleItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)

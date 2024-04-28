@@ -29,6 +29,9 @@ public:
     // symbol: ?addActorEntity@ActorManager@@QEAAPEAVActor@@AEAVIAddActorEntityProxy@@V?$OwnerPtr@VEntityContext@@@@@Z
     MCAPI class Actor* addActorEntity(class IAddActorEntityProxy&, class OwnerPtr<class EntityContext> entity);
 
+    // symbol: ?addGlobalActorEntity@ActorManager@@QEAAPEAVActor@@AEAVDimension@@V?$OwnerPtr@VEntityContext@@@@@Z
+    MCAPI class Actor* addGlobalActorEntity(class Dimension&, class OwnerPtr<class EntityContext>);
+
     // symbol: ?cleanupActorEntityReferencesGarbageCollect@ActorManager@@QEAAXV?$OwnerPtr@VEntityContext@@@@@Z
     MCAPI void cleanupActorEntityReferencesGarbageCollect(class OwnerPtr<class EntityContext>);
 

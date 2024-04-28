@@ -2,17 +2,15 @@
 #include "mc/world/item/Item.h"
 
 std::string ItemStackBase::getTypeName() const {
-    auto* item = getItem();
-    if (item) {
+    if (auto item = getItem(); item) {
         return item->getSerializedName();
     }
-    return "";
+    return {};
 }
 
 std::string ItemStackBase::getDescriptionName() const {
-    auto* item = getItem();
-    if (item) {
+    if (auto item = getItem(); item) {
         return item->buildDescriptionName(*this);
     }
-    return "";
+    return {};
 }

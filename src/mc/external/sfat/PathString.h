@@ -11,17 +11,10 @@ public:
     PathString(PathString const&);
     PathString();
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mPreferedSeparator@PathString@SFAT@@0DA
     MCAPI static char mPreferedSeparator;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mPreferedSeparator() { return mPreferedSeparator; }
 
     // NOLINTEND
 };

@@ -63,17 +63,10 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?RAIL_EXITS@RailMovementUtility@@0V?$array@URailExits@RailMovementUtility@@$09@std@@B
     MCAPI static std::array<struct RailMovementUtility::RailExits, 10> const RAIL_EXITS;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $RAIL_EXITS() { return RAIL_EXITS; }
 
     // NOLINTEND
 };

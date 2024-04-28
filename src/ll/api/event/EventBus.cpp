@@ -7,13 +7,10 @@
 
 #include "ll/api/Logger.h"
 #include "ll/api/event/EmitterBase.h"
-#include "ll/api/thread/SharedRecursiveMutex.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/core/LeviLamina.h"
 
 namespace ll::event {
-
-std::atomic_ullong ListenerBase::listenerId{0};
 
 class CallbackStream {
     struct ListenerComparator {
@@ -21,7 +18,7 @@ class CallbackStream {
     };
 
     std::set<ListenerPtr, ListenerComparator> listeners;
-    ll::thread::SharedRecursiveMutex          mutex;
+    std::recursive_mutex                      mutex;
 
 public:
     std::unique_ptr<EmitterBase> emitter;
@@ -29,7 +26,7 @@ public:
     [[nodiscard]] size_t count() const { return listeners.size(); }
 
     void publish(Event& event) {
-        std::shared_lock lock(mutex);
+        std::lock_guard lock(mutex);
         for (auto& l : listeners) {
             try {
                 l->call(event);
@@ -48,7 +45,7 @@ public:
         }
     }
     void publish(std::string_view pluginName, Event& event) {
-        std::shared_lock lock(mutex);
+        std::lock_guard lock(mutex);
         for (auto& l : listeners) {
             if (l->pluginPtr.expired()) {
                 continue;
@@ -69,10 +66,9 @@ public:
         }
     }
     bool addListener(ListenerPtr const& listener) {
-        std::shared_lock lock(mutex);
+        std::lock_guard lock(mutex);
         return listeners.insert(listener).second;
     }
-
     bool removeListener(ListenerPtr const& listener) {
         std::lock_guard lock(mutex);
         return listeners.erase(listener);
@@ -83,7 +79,12 @@ public:
 
 class EventBus::EventBusImpl {
 public:
-    std::unordered_map<EventId, std::function<std::unique_ptr<EmitterBase>(ListenerBase&)>> emitterFactory;
+    struct Factory {
+        std::function<std::unique_ptr<EmitterBase>(ListenerBase&)> func;
+        std::weak_ptr<ll::plugin::Plugin>                          plugin;
+    };
+
+    std::unordered_map<EventId, Factory> emitterFactory;
 
     std::unordered_map<EventId, CallbackStream> streams;
 
@@ -103,7 +104,7 @@ public:
         } else {
             if (streams[eventId].addListener(listener)) {
                 if (auto fac = emitterFactory.find(eventId); fac != emitterFactory.end()) {
-                    streams[eventId].emitter = fac->second(*listener);
+                    streams[eventId].emitter = fac->second.func(*listener);
                     return true;
                 }
             }
@@ -131,9 +132,14 @@ EventBus& EventBus::getInstance() {
     static EventBus instance;
     return instance;
 }
-void EventBus::setEventEmitter(std::function<std::unique_ptr<EmitterBase>(ListenerBase&)> fn, EventId eventId) {
+void EventBus::setEventEmitter(
+    std::function<std::unique_ptr<EmitterBase>(ListenerBase&)> fn,
+    EventId                                                    eventId,
+    std::weak_ptr<plugin::Plugin>                              plugin
+) {
     std::lock_guard lock(impl->mutex);
-    impl->emitterFactory[eventId] = std::move(fn);
+
+    impl->emitterFactory.try_emplace(eventId, std::move(fn), std::move(plugin));
 }
 void EventBus::publish(Event& event, EventId eventId) {
     optional_ref<CallbackStream> callback = nullptr;
@@ -226,6 +232,7 @@ size_t EventBus::removePluginListeners(std::string_view pluginName) {
     size_t          count{};
     for (auto& [id, listener] : impl->listeners) {
         if (listener.plugin.expired()) {
+            count += removeListener(id);
             continue;
         }
         if (auto plugin = listener.plugin.lock()) {
@@ -234,6 +241,22 @@ size_t EventBus::removePluginListeners(std::string_view pluginName) {
             }
         }
         count += removeListener(id);
+    }
+    return count;
+}
+size_t EventBus::removePluginEventEmitters(std::string_view pluginName) {
+    std::lock_guard lock(impl->mutex);
+    size_t          count{};
+    for (auto& [id, factory] : impl->emitterFactory) {
+        if (factory.plugin.expired()) {
+            count += impl->emitterFactory.erase(id);
+        }
+        if (auto plugin = factory.plugin.lock()) {
+            if (plugin->getManifest().name != pluginName) {
+                continue;
+            }
+        }
+        count += impl->emitterFactory.erase(id);
     }
     return count;
 }

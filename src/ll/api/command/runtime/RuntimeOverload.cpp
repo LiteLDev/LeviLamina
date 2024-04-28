@@ -1,8 +1,6 @@
 #include "ll/api/command/runtime/RuntimeOverload.h"
-#include "ll/api/base/Containers.h"
 #include "ll/api/command/CommandHandle.h"
 #include "ll/api/command/runtime/ParamKind.h"
-#include "ll/api/memory/Closure.h"
 
 namespace ll::command {
 
@@ -10,24 +8,15 @@ static_assert(ParamKindList::size == ParamKind::Count);
 static_assert(ParamKindList::all<std::is_default_constructible>);
 
 struct RuntimeOverload::Impl {
-    std::optional<memory::FunctionalClosure<std::unique_ptr<::Command>>> factoryClosure{}; // for delay emplace
-    std::vector<std::pair<std::string, ParamKindType>>                   params;
-    std::unordered_set<std::string, ::ll::detail::transparent_string_hash, std::equal_to<>> storedStr;
+    std::vector<std::pair<std::string, ParamKindType>> params;
 };
 
-RuntimeOverload::RuntimeOverload(CommandHandle& handle) : OverloadData(handle), impl(std::make_unique<Impl>()) {}
+RuntimeOverload::RuntimeOverload(CommandHandle& handle, std::weak_ptr<plugin::Plugin> plugin)
+: OverloadData(handle, std::move(plugin)),
+  impl(std::make_unique<Impl>()) {}
 
 RuntimeOverload::RuntimeOverload(RuntimeOverload&&) = default;
 RuntimeOverload::~RuntimeOverload()                 = default;
-
-char const* RuntimeOverload::storeStr(std::string_view str) {
-    std::lock_guard l{lock()};
-    if (auto iter = impl->storedStr.find(str); iter != impl->storedStr.end()) {
-        return iter->c_str();
-    } else {
-        return impl->storedStr.emplace(str).first->c_str();
-    }
-}
 
 void RuntimeOverload::addParam(std::string_view name, ParamKindType kind, CommandParameterDataType type) {
     int offset = (int)(sizeof(RuntimeCommand) + impl->params.size() * sizeof(ParamStorageType));
@@ -79,12 +68,12 @@ RuntimeOverload& RuntimeOverload::required(std::string_view name, ParamKindType 
 }
 RuntimeOverload& RuntimeOverload::text(std::string_view text) {
     std::lock_guard l{lock()};
-    addTextImpl(text, offsetof(RuntimeCommand, placeholder));
+    addTextImpl(text, (int)offsetof(RuntimeCommand, placeholder));
     return *this;
 }
 RuntimeOverload& RuntimeOverload::postfix(std::string_view postfix) {
     std::lock_guard l{lock()};
-    back().mEnumNameOrPostfix = addPostfix(postfix);
+    back().mEnumNameOrPostfix = storeStr(postfix);
     back().mParamType         = CommandParameterDataType::Postfix;
     return *this;
 }
@@ -98,7 +87,7 @@ RuntimeOverload& RuntimeOverload::deoption(CommandParameterOption option) {
     back().mOptions = (CommandParameterOption)((uchar)(back().mOptions) & (!(uchar)option));
     return *this;
 }
-void RuntimeOverload::execute(RuntimeCommand::Executor executor) {
+void RuntimeOverload::execute(RuntimeCommand::Executor fn) {
     std::lock_guard l{lock()};
 
     UnorderedStringMap<uint64> map;
@@ -107,13 +96,11 @@ void RuntimeOverload::execute(RuntimeCommand::Executor executor) {
     for (auto& [name, k] : impl->params) {
         map.try_emplace(name, idx++);
     }
-    impl->factoryClosure.emplace(
-        [executor = std::move(executor), params = std::move(impl->params), map = std::move(map)](
+    setFactory(
+        [executor = std::move(fn), params = std::move(impl->params), map = std::move(map)](
         ) -> std::unique_ptr<::Command> {
             return std::unique_ptr<RuntimeCommand>(new ((uint)params.size()) RuntimeCommand{map, params, executor});
         }
     );
-    setFactory(impl->factoryClosure->get());
-    getHandle().registerRuntimeOverload(*this);
 }
 } // namespace ll::command

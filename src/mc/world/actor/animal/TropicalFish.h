@@ -43,16 +43,16 @@ public:
     // vIndex: 10, symbol: __gen_??1TropicalFish@@UEAA@XZ
     virtual ~TropicalFish() = default;
 
-    // vIndex: 31, symbol: ?startRiding@TropicalFish@@UEAA_NAEAVActor@@@Z
+    // vIndex: 29, symbol: ?startRiding@TropicalFish@@UEAA_NAEAVActor@@@Z
     virtual bool startRiding(class Actor&);
 
-    // vIndex: 105, symbol: ?onSynchedDataUpdate@TropicalFish@@UEAAXH@Z
+    // vIndex: 101, symbol: ?onSynchedDataUpdate@TropicalFish@@UEAAXH@Z
     virtual void onSynchedDataUpdate(int dataId);
 
-    // vIndex: 150, symbol: ?updateEntitySpecificMolangVariables@TropicalFish@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 146, symbol: ?updateEntitySpecificMolangVariables@TropicalFish@@UEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // vIndex: 187, symbol: ?createAIGoals@TropicalFish@@UEAA_NXZ
+    // vIndex: 182, symbol: ?createAIGoals@TropicalFish@@UEAA_NXZ
     virtual bool createAIGoals();
 
     // symbol: ??0TropicalFish@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
@@ -61,9 +61,6 @@ public:
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
-
-    // symbol: ?postNormalTick@TropicalFish@@QEAAXXZ
-    MCAPI void postNormalTick();
 
     // NOLINTEND
 };

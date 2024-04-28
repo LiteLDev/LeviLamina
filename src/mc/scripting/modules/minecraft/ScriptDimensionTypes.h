@@ -54,18 +54,11 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?sMinecraftNamespace@ScriptDimensionTypes@ScriptModuleMinecraft@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const sMinecraftNamespace;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $sMinecraftNamespace() { return sMinecraftNamespace; }
 
     // NOLINTEND
 };

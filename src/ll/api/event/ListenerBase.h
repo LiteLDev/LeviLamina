@@ -22,21 +22,16 @@ enum class EventPriority {
 using ListenerId = uint64;
 
 class ListenerBase {
-    LLAPI static std::atomic_ullong listenerId;
-
     friend CallbackStream;
     friend EventBus;
     ListenerId    id;
     EventPriority priority;
 
 protected:
-    explicit ListenerBase(
+    LLAPI explicit ListenerBase(
         EventPriority                 priority,
         std::weak_ptr<plugin::Plugin> plugin = plugin::NativePlugin::current()
-    )
-    : id(listenerId++),
-      priority(priority),
-      pluginPtr(std::move(plugin)) {}
+    );
 
 public:
     std::weak_ptr<plugin::Plugin> pluginPtr;

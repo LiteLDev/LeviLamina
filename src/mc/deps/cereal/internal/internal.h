@@ -24,7 +24,6 @@ namespace cereal::internal { struct ExtendedSchemaInfo; }
 namespace cereal::internal { struct ReflectionContext; }
 namespace cereal::internal { struct Schema; }
 namespace cereal::internal { struct SchemaInfo; }
-namespace cereal::internal { struct SchemaName; }
 // clang-format on
 
 namespace cereal::internal {
@@ -64,12 +63,13 @@ getMapperAndSave(struct cereal::ReflectionCtx const&, entt::meta_any const&, ent
 MCAPI ::cereal::internal::ReflectedType getReflectedType(entt::meta_type const&);
 
 // symbol:
-// ?getSchemaName@internal@cereal@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUReflectionCtx@2@AEBUtype_info@entt@@@Z
-MCAPI std::string getSchemaName(struct cereal::ReflectionCtx const&, entt::type_info const&);
+// ?getSchemaName@internal@cereal@@YA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBUReflectionCtx@2@AEBUtype_info@entt@@@Z
+MCAPI std::string_view getSchemaName(struct cereal::ReflectionCtx const&, entt::type_info const&);
 
 // symbol:
-// ?iterateAssociativeContainer@internal@cereal@@YAXAEBUReflectionCtx@2@AEBVmeta_type@entt@@11AEBVBasicSchema@12@2AEAUSchemaReader@2@AEAVmeta_any@5@AEBV85@AEAVSerializerContext@2@@Z
-MCAPI void iterateAssociativeContainer(struct cereal::ReflectionCtx const&, entt::meta_type const&, entt::meta_type const&, entt::meta_type const&, class cereal::internal::BasicSchema const&, class cereal::internal::BasicSchema const&, struct cereal::SchemaReader&, entt::meta_any&, entt::meta_any const&, class cereal::SerializerContext&);
+// ?iterateAssociativeContainer@internal@cereal@@YAXAEBUReflectionCtx@2@AEBVmeta_type@entt@@1AEBVBasicSchema@12@2AEAUSchemaReader@2@AEAVmeta_any@5@AEBV85@AEAVSerializerContext@2@@Z
+MCAPI void
+iterateAssociativeContainer(struct cereal::ReflectionCtx const&, entt::meta_type const&, entt::meta_type const&, class cereal::internal::BasicSchema const&, class cereal::internal::BasicSchema const&, struct cereal::SchemaReader&, entt::meta_any&, entt::meta_any const&, class cereal::SerializerContext&);
 
 // symbol:
 // ?iterateSequenceContainer@internal@cereal@@YAXAEBVBasicSchema@12@AEBVmeta_type@entt@@AEAUSchemaReader@2@AEAVmeta_any@5@AEBV75@AEAVSerializerContext@2@@Z
@@ -79,13 +79,10 @@ iterateSequenceContainer(class cereal::internal::BasicSchema const&, entt::meta_
 // symbol: ?lookup@internal@cereal@@YAPEBVBasicSchema@12@AEBUReflectionCtx@2@I@Z
 MCAPI class cereal::internal::BasicSchema const* lookup(struct cereal::ReflectionCtx const&, uint);
 
-// symbol: ??8internal@cereal@@YA_NAEBUSchemaName@01@0@Z
-MCAPI bool operator==(struct cereal::internal::SchemaName const&, struct cereal::internal::SchemaName const&);
-
 // symbol:
-// ?saveAssociativeContainer@internal@cereal@@YAXAEBUReflectionCtx@2@AEBVmeta_type@entt@@AEBVmeta_any@5@AEBVBasicSchema@12@3AEAUSchemaWriter@2@AEAVSerializerContext@2@@Z
+// ?saveAssociativeContainer@internal@cereal@@YAXAEBUReflectionCtx@2@AEBVmeta_any@entt@@AEBVBasicSchema@12@2AEAUSchemaWriter@2@AEAVSerializerContext@2@@Z
 MCAPI void
-saveAssociativeContainer(struct cereal::ReflectionCtx const&, entt::meta_type const&, entt::meta_any const&, class cereal::internal::BasicSchema const&, class cereal::internal::BasicSchema const&, struct cereal::SchemaWriter&, class cereal::SerializerContext&);
+saveAssociativeContainer(struct cereal::ReflectionCtx const&, entt::meta_any const&, class cereal::internal::BasicSchema const&, class cereal::internal::BasicSchema const&, struct cereal::SchemaWriter&, class cereal::SerializerContext&);
 
 // symbol:
 // ?saveSequenceContainer@internal@cereal@@YAXAEBVBasicSchema@12@AEAUSchemaWriter@2@AEBVmeta_any@entt@@AEAVSerializerContext@2@@Z

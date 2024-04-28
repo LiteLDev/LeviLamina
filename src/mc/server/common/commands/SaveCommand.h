@@ -47,7 +47,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?mSaveAllFileList@SaveCommand@@0V?$vector@USnapshotFilenameAndLength@@V?$allocator@USnapshotFilenameAndLength@@@std@@@std@@A
@@ -58,17 +58,6 @@ private:
 
     // symbol: ?mState@SaveCommand@@0W4State@1@A
     MCAPI static ::SaveCommand::State mState;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mSaveAllFileList() { return mSaveAllFileList; }
-
-    static auto& $mSaveAllMutex() { return mSaveAllMutex; }
-
-    static auto& $mState() { return mState; }
 
     // NOLINTEND
 };

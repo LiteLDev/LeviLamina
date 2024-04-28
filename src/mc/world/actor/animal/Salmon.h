@@ -39,7 +39,7 @@ public:
     // vIndex: 10, symbol: __gen_??1Salmon@@UEAA@XZ
     virtual ~Salmon() = default;
 
-    // vIndex: 187, symbol: ?createAIGoals@Salmon@@UEAA_NXZ
+    // vIndex: 182, symbol: ?createAIGoals@Salmon@@UEAA_NXZ
     virtual bool createAIGoals();
 
     // symbol: ??0Salmon@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

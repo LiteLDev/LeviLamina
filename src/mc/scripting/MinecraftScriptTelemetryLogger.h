@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class MinecraftScriptTelemetryLogger {
+// auto generated inclusion list
+#include "mc/scripting/IScriptTelemetryLogger.h"
+
+class MinecraftScriptTelemetryLogger : public ::IScriptTelemetryLogger {
 public:
     // prevent constructor by default
     MinecraftScriptTelemetryLogger& operator=(MinecraftScriptTelemetryLogger const&);

@@ -52,22 +52,13 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?SPEED_MODIFIER_DRINKING_UUID@DrinkPotionGoal@@0VUUID@mce@@B
     MCAPI static class mce::UUID const SPEED_MODIFIER_DRINKING_UUID;
 
     // symbol: ?THROTTLE_COOLDOWN@DrinkPotionGoal@@0HB
     MCAPI static int const THROTTLE_COOLDOWN;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $SPEED_MODIFIER_DRINKING_UUID() { return SPEED_MODIFIER_DRINKING_UUID; }
-
-    static auto& $THROTTLE_COOLDOWN() { return THROTTLE_COOLDOWN; }
 
     // NOLINTEND
 };

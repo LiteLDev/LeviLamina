@@ -39,19 +39,19 @@ public:
     // vIndex: 10, symbol: __gen_??1LlamaSpit@@UEAA@XZ
     virtual ~LlamaSpit() = default;
 
-    // vIndex: 28, symbol: ?normalTick@LlamaSpit@@UEAAXXZ
+    // vIndex: 26, symbol: ?normalTick@LlamaSpit@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 43, symbol: ?getBrightness@LlamaSpit@@UEBAMMAEBVIConstBlockSource@@@Z
+    // vIndex: 41, symbol: ?getBrightness@LlamaSpit@@UEBAMMAEBVIConstBlockSource@@@Z
     virtual float getBrightness(float, class IConstBlockSource const&) const;
 
-    // vIndex: 47, symbol: ?isPickable@LlamaSpit@@UEAA_NXZ
+    // vIndex: 45, symbol: ?isPickable@LlamaSpit@@UEAA_NXZ
     virtual bool isPickable();
 
-    // vIndex: 80, symbol: ?getPickRadius@LlamaSpit@@UEAAMXZ
+    // vIndex: 76, symbol: ?getPickRadius@LlamaSpit@@UEAAMXZ
     virtual float getPickRadius();
 
-    // vIndex: 96, symbol: ?getSourceUniqueID@LlamaSpit@@UEBA?AUActorUniqueID@@XZ
+    // vIndex: 92, symbol: ?getSourceUniqueID@LlamaSpit@@UEBA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID getSourceUniqueID() const;
 
     // symbol: ??0LlamaSpit@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

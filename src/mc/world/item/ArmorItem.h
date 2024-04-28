@@ -54,7 +54,7 @@ public:
     // vIndex: 21, symbol: ?isTrimAllowed@ArmorItem@@UEBA_NXZ
     virtual bool isTrimAllowed() const;
 
-    // vIndex: 47, symbol:
+    // vIndex: 48, symbol:
     // ?appendFormattedHovertext@ArmorItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
     virtual void appendFormattedHovertext(
         class ItemStackBase const& stack,
@@ -63,66 +63,66 @@ public:
         bool                       showCategory
     ) const;
 
-    // vIndex: 48, symbol: ?isValidRepairItem@ArmorItem@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z
+    // vIndex: 49, symbol: ?isValidRepairItem@ArmorItem@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z
     virtual bool isValidRepairItem(
         class ItemStackBase const&   source,
         class ItemStackBase const&   repairItem,
         class BaseGameVersion const& baseGameVersion
     ) const;
 
-    // vIndex: 49, symbol: ?getEnchantSlot@ArmorItem@@UEBAHXZ
+    // vIndex: 50, symbol: ?getEnchantSlot@ArmorItem@@UEBAHXZ
     virtual int getEnchantSlot() const;
 
-    // vIndex: 50, symbol: ?getEnchantValue@ArmorItem@@UEBAHXZ
+    // vIndex: 51, symbol: ?getEnchantValue@ArmorItem@@UEBAHXZ
     virtual int getEnchantValue() const;
 
-    // vIndex: 51, symbol: ?getArmorValue@ArmorItem@@UEBAHXZ
+    // vIndex: 52, symbol: ?getArmorValue@ArmorItem@@UEBAHXZ
     virtual int getArmorValue() const;
 
-    // vIndex: 52, symbol: ?getToughnessValue@ArmorItem@@UEBAHXZ
+    // vIndex: 53, symbol: ?getToughnessValue@ArmorItem@@UEBAHXZ
     virtual int getToughnessValue() const;
 
-    // vIndex: 55, symbol: ?getDamageChance@ArmorItem@@UEBAHH@Z
+    // vIndex: 57, symbol: ?getDamageChance@ArmorItem@@UEBAHH@Z
     virtual int getDamageChance(int unbreaking) const;
 
-    // vIndex: 60, symbol: ?getColor@ArmorItem@@UEBA?AVColor@mce@@PEBVCompoundTag@@AEBVItemDescriptor@@@Z
+    // vIndex: 62, symbol: ?getColor@ArmorItem@@UEBA?AVColor@mce@@PEBVCompoundTag@@AEBVItemDescriptor@@@Z
     virtual class mce::Color getColor(class CompoundTag const* userData, class ItemDescriptor const&) const;
 
-    // vIndex: 62, symbol: ?hasCustomColor@ArmorItem@@UEBA_NPEBVCompoundTag@@@Z
+    // vIndex: 64, symbol: ?hasCustomColor@ArmorItem@@UEBA_NPEBVCompoundTag@@@Z
     virtual bool hasCustomColor(class CompoundTag const* userData) const;
 
-    // vIndex: 63, symbol: ?clearColor@ArmorItem@@UEBAXAEAVItemStackBase@@@Z
+    // vIndex: 65, symbol: ?clearColor@ArmorItem@@UEBAXAEAVItemStackBase@@@Z
     virtual void clearColor(class ItemStackBase& instance) const;
 
-    // vIndex: 65, symbol: ?setColor@ArmorItem@@UEBAXAEAVItemStackBase@@AEBVColor@mce@@@Z
+    // vIndex: 66, symbol: ?setColor@ArmorItem@@UEBAXAEAVItemStackBase@@AEBVColor@mce@@@Z
     virtual void setColor(class ItemStackBase& item, class mce::Color const& color) const;
 
-    // vIndex: 69, symbol: ?buildIdAux@ArmorItem@@UEBAHFPEBVCompoundTag@@@Z
+    // vIndex: 70, symbol: ?buildIdAux@ArmorItem@@UEBAHFPEBVCompoundTag@@@Z
     virtual int buildIdAux(short auxValue, class CompoundTag const* userData) const;
 
-    // vIndex: 71, symbol: ?use@ArmorItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+    // vIndex: 72, symbol: ?use@ArmorItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
     virtual class ItemStack& use(class ItemStack& item, class Player& player) const;
 
-    // vIndex: 72, symbol: ?dispense@ArmorItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 73, symbol: ?dispense@ArmorItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
-    // vIndex: 76, symbol: ?hurtActor@ArmorItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
+    // vIndex: 77, symbol: ?hurtActor@ArmorItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
     virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
 
-    // vIndex: 79, symbol: ?mineBlock@ArmorItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
+    // vIndex: 80, symbol: ?mineBlock@ArmorItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
     virtual bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*) const;
 
-    // vIndex: 96, symbol: ?getEquipLocation@ArmorItem@@UEBA?AW4ActorLocation@@XZ
+    // vIndex: 97, symbol: ?getEquipLocation@ArmorItem@@UEBA?AW4ActorLocation@@XZ
     virtual ::ActorLocation getEquipLocation() const;
 
-    // vIndex: 97, symbol: ?getEquipSound@ArmorItem@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 98, symbol: ?getEquipSound@ArmorItem@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
     virtual ::Puv::Legacy::LevelSoundEvent getEquipSound() const;
 
-    // vIndex: 103, symbol: ?getIconInfo@ArmorItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
+    // vIndex: 104, symbol: ?getIconInfo@ArmorItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const& item, int, bool inInventoryPane) const;
 
-    // vIndex: 118, symbol: ?getArmorKnockbackResistance@ArmorItem@@UEBAMXZ
+    // vIndex: 119, symbol: ?getArmorKnockbackResistance@ArmorItem@@UEBAMXZ
     virtual float getArmorKnockbackResistance() const;
 
     // symbol:

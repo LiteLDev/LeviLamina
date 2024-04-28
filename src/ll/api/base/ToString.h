@@ -18,7 +18,7 @@ std::string to_string(T const& t) {
     } else if constexpr (requires { t.to_string(); }) {
         return t.to_string();
     } else {
-        static_assert(ll::concepts::IsString<T>, "T must be a stringable type");
+        static_assert(ll::concepts::always_false<T>, "T must be a stringable type");
     }
 }
 

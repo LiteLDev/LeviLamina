@@ -1,7 +1,7 @@
 #include "mc/server/commands/BlockStateCommandParam.h"
 #include "ll/api/utils/StringUtils.h"
 
-nonstd::expected<Block::BlockStateValueType, std::error_code> BlockStateCommandParam::toStateValue() const {
+ll::Expected<Block::BlockStateValueType> BlockStateCommandParam::toStateValue() const {
     switch (mType) {
     case Type::Integer:
         return ll::string_utils::svtoi(mValue);
@@ -12,18 +12,18 @@ nonstd::expected<Block::BlockStateValueType, std::error_code> BlockStateCommandP
     case Type::String:
         return mValue;
     default:
-        return nonstd::make_unexpected(std::make_error_code(std::errc::invalid_argument));
+        return ll::makeErrorCodeError(std::errc::invalid_argument);
     }
 }
-nonstd::expected<Block::BlockStatesType, std::error_code>
-BlockStateCommandParam::toStateMap(std::vector<BlockStateCommandParam> const& vec) {
+ll::Expected<Block::BlockStatesType> BlockStateCommandParam::toStateMap(std::vector<BlockStateCommandParam> const& vec
+) {
     Block::BlockStatesType res;
     res.reserve(vec.size());
     for (auto& p : vec) {
         if (auto val = p.toStateValue(); val) {
             res.emplace_back(p.mBlockState, *std::move(val));
         } else {
-            return nonstd::make_unexpected(val.error());
+            return ll::forwardError(val.error());
         }
     }
     return res;

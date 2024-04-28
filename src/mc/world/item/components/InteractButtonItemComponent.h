@@ -15,7 +15,6 @@ class InteractButtonItemComponent : public ::ItemComponent {
 public:
     // prevent constructor by default
     InteractButtonItemComponent(InteractButtonItemComponent const&);
-    InteractButtonItemComponent();
 
 public:
     // NOLINTBEGIN
@@ -35,6 +34,9 @@ public:
 
     // vIndex: 9, symbol: ?_initializeComponent@InteractButtonItemComponent@@UEAAXXZ
     virtual void _initializeComponent();
+
+    // symbol: ??0InteractButtonItemComponent@@QEAA@XZ
+    MCAPI InteractButtonItemComponent();
 
     // symbol: ??4InteractButtonItemComponent@@QEAAAEAV0@AEBV0@@Z
     MCAPI class InteractButtonItemComponent& operator=(class InteractButtonItemComponent const&);

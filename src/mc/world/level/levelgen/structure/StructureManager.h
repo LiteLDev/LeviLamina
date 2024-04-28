@@ -46,6 +46,10 @@ public:
     MCAPI void clearAndShutdownStructurePlacement();
 
     // symbol:
+    // ?cloneStructure@StructureManager@@QEAAAEAVStructureTemplate@@AEBV2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI class StructureTemplate& cloneStructure(class StructureTemplate const&, std::string const&);
+
+    // symbol:
     // ?createStructureDataExportPacket@StructureManager@@QEAA?AVStructureTemplateDataResponsePacket@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBVResourcePackManager@@PEAVLevelStorage@@W4StructureTemplateResponseType@@@Z
     MCAPI class StructureTemplateDataResponsePacket createStructureDataExportPacket(
         std::string const&               structureName,
@@ -72,8 +76,17 @@ public:
     MCAPI class LegacyStructureTemplate& getOrCreateLegacy(std::string const& structureName);
 
     // symbol:
+    // ?getOrLoadStructure@StructureManager@@QEAAPEAVStructureTemplate@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBVResourcePackManager@@PEAVLevelStorage@@@Z
+    MCAPI class StructureTemplate*
+    getOrLoadStructure(std::string const&, class ResourcePackManager const*, class LevelStorage*);
+
+    // symbol:
     // ?getStructure@StructureManager@@QEBAPEAVStructureTemplate@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class StructureTemplate* getStructure(std::string const& structureName) const;
+
+    // symbol:
+    // ?getStructureNames@StructureManager@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEAVLevelStorage@@_N@Z
+    MCAPI std::vector<std::string> getStructureNames(class LevelStorage&, bool) const;
 
     // symbol:
     // ?importStructureFromTemplate@StructureManager@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVStructureTemplate@@@Z
@@ -145,6 +158,14 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol:
+    // ?_createAndLoadStructure@StructureManager@@AEAAPEAVStructureTemplate@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBVResourcePackManager@@PEAVLevelStorage@@@Z
+    MCAPI class StructureTemplate* _createAndLoadStructure(
+        std::string const&               structureName,
+        class ResourcePackManager const* packManager,
+        class LevelStorage*              levelStorage
+    );
+
+    // symbol:
     // ?_createLevelStorageId@StructureManager@@AEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@0@Z
     MCAPI std::string _createLevelStorageId(std::string const& dimensionPrefix, std::string const& saveId);
 
@@ -190,22 +211,13 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?BEHAVIOR_PACK_STRUCTURES_FOLDER@StructureManager@@0PEBDEB
     MCAPI static char const* BEHAVIOR_PACK_STRUCTURES_FOLDER;
 
     // symbol: ?LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX@StructureManager@@0PEBDEB
     MCAPI static char const* LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $BEHAVIOR_PACK_STRUCTURES_FOLDER() { return BEHAVIOR_PACK_STRUCTURES_FOLDER; }
-
-    static auto& $LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX() { return LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX; }
 
     // NOLINTEND
 };

@@ -15,7 +15,6 @@ public:
     // prevent constructor by default
     ArmorItemComponent& operator=(ArmorItemComponent const&);
     ArmorItemComponent(ArmorItemComponent const&);
-    ArmorItemComponent();
 
 public:
     // NOLINTBEGIN
@@ -28,7 +27,7 @@ public:
     // vIndex: 2, symbol: ?writeSettings@ItemComponent@@UEAAXXZ
     virtual void writeSettings();
 
-    // vIndex: 3, symbol: ?isNetworkComponent@InteractButtonItemComponent@@UEBA_NXZ
+    // vIndex: 3, symbol: ?isNetworkComponent@ItemComponent@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
     // vIndex: 4, symbol:
@@ -50,6 +49,9 @@ public:
 
     // vIndex: 9, symbol: ?_initializeComponent@ItemComponent@@MEAAXXZ
     virtual void _initializeComponent();
+
+    // symbol: ??0ArmorItemComponent@@QEAA@XZ
+    MCAPI ArmorItemComponent();
 
     // symbol:
     // ?bindType@ArmorItemComponent@@SAXAEAUReflectionCtx@cereal@@AEBV?$vector@W4AllExperiments@@V?$allocator@W4AllExperiments@@@std@@@std@@V?$optional@VSemVersion@@@5@@Z

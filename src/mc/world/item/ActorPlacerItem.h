@@ -32,42 +32,42 @@ public:
     // vIndex: 2, symbol: ?tearDown@ActorPlacerItem@@UEAAXXZ
     virtual void tearDown();
 
-    // vIndex: 44, symbol: ?isLiquidClipItem@ActorPlacerItem@@UEBA_NXZ
+    // vIndex: 45, symbol: ?isLiquidClipItem@ActorPlacerItem@@UEBA_NXZ
     virtual bool isLiquidClipItem() const;
 
-    // vIndex: 45, symbol: ?shouldInteractionWithBlockBypassLiquid@ActorPlacerItem@@UEBA_NAEBVBlock@@@Z
+    // vIndex: 46, symbol: ?shouldInteractionWithBlockBypassLiquid@ActorPlacerItem@@UEBA_NAEBVBlock@@@Z
     virtual bool shouldInteractionWithBlockBypassLiquid(class Block const& block) const;
 
-    // vIndex: 54, symbol: ?isValidAuxValue@ActorPlacerItem@@UEBA_NH@Z
+    // vIndex: 56, symbol: ?isValidAuxValue@ActorPlacerItem@@UEBA_NH@Z
     virtual bool isValidAuxValue(int auxValue) const;
 
-    // vIndex: 58, symbol: ?isActorPlacerItem@ActorPlacerItem@@UEBA_NXZ
+    // vIndex: 60, symbol: ?isActorPlacerItem@ActorPlacerItem@@UEBA_NXZ
     virtual bool isActorPlacerItem() const;
 
-    // vIndex: 59, symbol: ?isMultiColorTinted@ActorPlacerItem@@UEBA_NAEBVItemStack@@@Z
+    // vIndex: 61, symbol: ?isMultiColorTinted@ActorPlacerItem@@UEBA_NAEBVItemStack@@@Z
     virtual bool isMultiColorTinted(class ItemStack const&) const;
 
-    // vIndex: 66, symbol: ?getBaseColor@ActorPlacerItem@@UEBA?AVColor@mce@@AEBVItemStack@@@Z
+    // vIndex: 67, symbol: ?getBaseColor@ActorPlacerItem@@UEBA?AVColor@mce@@AEBVItemStack@@@Z
     virtual class mce::Color getBaseColor(class ItemStack const&) const;
 
-    // vIndex: 67, symbol: ?getSecondaryColor@ActorPlacerItem@@UEBA?AVColor@mce@@AEBVItemStack@@@Z
+    // vIndex: 68, symbol: ?getSecondaryColor@ActorPlacerItem@@UEBA?AVColor@mce@@AEBVItemStack@@@Z
     virtual class mce::Color getSecondaryColor(class ItemStack const&) const;
 
-    // vIndex: 68, symbol: ?getActorIdentifier@ActorPlacerItem@@UEBA?AUActorDefinitionIdentifier@@AEBVItemStack@@@Z
+    // vIndex: 69, symbol: ?getActorIdentifier@ActorPlacerItem@@UEBA?AUActorDefinitionIdentifier@@AEBVItemStack@@@Z
     virtual struct ActorDefinitionIdentifier getActorIdentifier(class ItemStack const&) const;
 
-    // vIndex: 72, symbol: ?dispense@ActorPlacerItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 73, symbol: ?dispense@ActorPlacerItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
-    // vIndex: 81, symbol:
+    // vIndex: 82, symbol:
     // ?buildDescriptionId@ActorPlacerItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 103, symbol: ?getIconInfo@ActorPlacerItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
+    // vIndex: 104, symbol: ?getIconInfo@ActorPlacerItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
 
-    // vIndex: 117, symbol:
+    // vIndex: 118, symbol:
     // ?_useOn@ActorPlacerItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
@@ -111,7 +111,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?EGG_MASK_ID@ActorPlacerItem@@0HB
     MCAPI static int const EGG_MASK_ID;
@@ -126,19 +126,6 @@ private:
     // symbol:
     // ?mEggTextureInfoMap@ActorPlacerItem@@0V?$unordered_map@VHashedString@@UResolvedItemIconInfo@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@4@V?$allocator@U?$pair@$$CBVHashedString@@UResolvedItemIconInfo@@@std@@@4@@std@@A
     MCAPI static std::unordered_map<class HashedString, struct ResolvedItemIconInfo> mEggTextureInfoMap;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $EGG_MASK_ID() { return EGG_MASK_ID; }
-
-    static auto& $NUM_SPAWN_EGG_TEXTURES() { return NUM_SPAWN_EGG_TEXTURES; }
-
-    static auto& $mCustomSpawnEggs() { return mCustomSpawnEggs; }
-
-    static auto& $mEggTextureInfoMap() { return mEggTextureInfoMap; }
 
     // NOLINTEND
 };

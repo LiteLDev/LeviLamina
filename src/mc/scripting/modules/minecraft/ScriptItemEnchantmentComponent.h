@@ -5,7 +5,9 @@
 // auto generated inclusion list
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/Result.h"
+#include "mc/external/scripting/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/ScriptItemComponent.h"
+#include "mc/world/item/enchanting/Enchant.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,6 +18,7 @@ namespace ScriptModuleMinecraft { struct ScriptItemEnchantmentLevelOutOfBoundsEr
 namespace ScriptModuleMinecraft { struct ScriptItemEnchantmentType; }
 namespace ScriptModuleMinecraft { struct ScriptItemEnchantmentTypeNotCompatibleError; }
 namespace ScriptModuleMinecraft { struct ScriptItemEnchantmentUnknownIdError; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct Error; }
 // clang-format on
 
@@ -64,31 +67,41 @@ public:
     canAddEnchantment(struct ScriptModuleMinecraft::ScriptItemEnchantmentInstance const&);
 
     // symbol:
-    // ?getEnchantment@ScriptItemEnchantmentComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$optional@UScriptItemEnchantmentInstance@ScriptModuleMinecraft@@@std@@UScriptItemEnchantmentUnknownIdError@ScriptModuleMinecraft@@@Scripting@@V?$variant@UScriptItemEnchantmentType@ScriptModuleMinecraft@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@Z
+    // ?getEnchantment@ScriptItemEnchantmentComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$optional@UScriptItemEnchantmentInstance@ScriptModuleMinecraft@@@std@@UScriptItemEnchantmentUnknownIdError@ScriptModuleMinecraft@@@Scripting@@AEAVWeakLifetimeScope@4@V?$variant@V?$StrongTypedObjectHandle@UScriptItemEnchantmentType@ScriptModuleMinecraft@@@Scripting@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@Z
     MCAPI class Scripting::Result<
         std::optional<struct ScriptModuleMinecraft::ScriptItemEnchantmentInstance>,
         struct ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError>
-        getEnchantment(std::variant<struct ScriptModuleMinecraft::ScriptItemEnchantmentType, std::string>);
+    getEnchantment(class Scripting::WeakLifetimeScope&, std::variant<class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptItemEnchantmentType>, std::string>);
 
     // symbol:
-    // ?getEnchantments@ScriptItemEnchantmentComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$vector@UScriptItemEnchantmentInstance@ScriptModuleMinecraft@@V?$allocator@UScriptItemEnchantmentInstance@ScriptModuleMinecraft@@@std@@@std@@$$V@Scripting@@XZ
+    // ?getEnchantments@ScriptItemEnchantmentComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$vector@UScriptItemEnchantmentInstance@ScriptModuleMinecraft@@V?$allocator@UScriptItemEnchantmentInstance@ScriptModuleMinecraft@@@std@@@std@@$$V@Scripting@@AEAVWeakLifetimeScope@4@@Z
     MCAPI class Scripting::Result<std::vector<struct ScriptModuleMinecraft::ScriptItemEnchantmentInstance>>
-    getEnchantments() const;
+    getEnchantments(class Scripting::WeakLifetimeScope&) const;
 
     // symbol:
-    // ?hasEnchantment@ScriptItemEnchantmentComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_NUScriptItemEnchantmentUnknownIdError@ScriptModuleMinecraft@@@Scripting@@V?$variant@UScriptItemEnchantmentType@ScriptModuleMinecraft@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@Z
+    // ?getSlots@ScriptItemEnchantmentComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$vector@W4Slot@Enchant@@V?$allocator@W4Slot@Enchant@@@std@@@std@@$$V@Scripting@@XZ
+    MCAPI class Scripting::Result<std::vector<::Enchant::Slot>> getSlots() const;
+
+    // symbol:
+    // ?hasEnchantment@ScriptItemEnchantmentComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_NUScriptItemEnchantmentUnknownIdError@ScriptModuleMinecraft@@@Scripting@@V?$variant@V?$StrongTypedObjectHandle@UScriptItemEnchantmentType@ScriptModuleMinecraft@@@Scripting@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@Z
     MCAPI class Scripting::Result<bool, struct ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError>
-        hasEnchantment(std::variant<struct ScriptModuleMinecraft::ScriptItemEnchantmentType, std::string>) const;
+        hasEnchantment(std::variant<
+                       class Scripting::StrongTypedObjectHandle<
+                           struct ScriptModuleMinecraft::ScriptItemEnchantmentType>,
+                       std::string>) const;
 
     // symbol:
     // ?removeAllEnchantments@ScriptItemEnchantmentComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@XZ
     MCAPI class Scripting::Result<void> removeAllEnchantments();
 
     // symbol:
-    // ?removeEnchantment@ScriptItemEnchantmentComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@XUScriptItemEnchantmentUnknownIdError@ScriptModuleMinecraft@@UError@Scripting@@@Scripting@@V?$variant@UScriptItemEnchantmentType@ScriptModuleMinecraft@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@Z
+    // ?removeEnchantment@ScriptItemEnchantmentComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@XUScriptItemEnchantmentUnknownIdError@ScriptModuleMinecraft@@UError@Scripting@@@Scripting@@V?$variant@V?$StrongTypedObjectHandle@UScriptItemEnchantmentType@ScriptModuleMinecraft@@@Scripting@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@Z
     MCAPI class Scripting::
         Result<void, struct ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError, struct Scripting::Error>
-            removeEnchantment(std::variant<struct ScriptModuleMinecraft::ScriptItemEnchantmentType, std::string>);
+            removeEnchantment(std::variant<
+                              class Scripting::StrongTypedObjectHandle<
+                                  struct ScriptModuleMinecraft::ScriptItemEnchantmentType>,
+                              std::string>);
 
     // symbol:
     // ?bind@ScriptItemEnchantmentComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptItemEnchantmentComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z

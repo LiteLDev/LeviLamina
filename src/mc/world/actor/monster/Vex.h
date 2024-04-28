@@ -45,13 +45,13 @@ public:
     // vIndex: 10, symbol: __gen_??1Vex@@UEAA@XZ
     virtual ~Vex() = default;
 
-    // vIndex: 35, symbol: ?isInWall@Vex@@UEBA_NXZ
+    // vIndex: 33, symbol: ?isInWall@Vex@@UEBA_NXZ
     virtual bool isInWall() const;
 
-    // vIndex: 153, symbol: ?readAdditionalSaveData@Vex@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 149, symbol: ?readAdditionalSaveData@Vex@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 154, symbol: ?addAdditionalSaveData@Vex@@UEBAXAEAVCompoundTag@@@Z
+    // vIndex: 150, symbol: ?addAdditionalSaveData@Vex@@UEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ??0Vex@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

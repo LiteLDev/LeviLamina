@@ -39,7 +39,7 @@ public:
     // vIndex: 10, symbol: __gen_??1WanderingTrader@@UEAA@XZ
     virtual ~WanderingTrader() = default;
 
-    // vIndex: 150, symbol: ?updateEntitySpecificMolangVariables@WanderingTrader@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 146, symbol: ?updateEntitySpecificMolangVariables@WanderingTrader@@UEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
     // symbol: ??0WanderingTrader@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

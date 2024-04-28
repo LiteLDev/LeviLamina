@@ -113,7 +113,7 @@ void checkOtherBdsInstance() {
                 logger.error("Detected the existence of another BDS process with the same path!"_tr());
                 logger.error("This may cause the network port and the level to be occupied"_tr());
                 while (true) {
-                    logger.error("Do you want to terminate the process with PID {}?  (y=Yes, n=No, e=Exit)"_tr(pid));
+                    logger.error("Do you want to terminate the process with PID {0}?  (y=Yes, n=No, e=Exit)"_tr(pid));
                     char input;
                     rewind(stdin);
                     input = static_cast<char>(getchar());
@@ -148,14 +148,14 @@ void printWelcomeMsg() {
     logger.info(R"(                                                                      )");
     logger.info(R"(                                                                      )");
 
-    logger.info("LeviLamina is a free software licensed under {}"_tr("LGPLv3"));
-    logger.info("Help us translate & improve text -> {}"_tr("https://translate.liteldev.com/"));
+    logger.info("LeviLamina is a free software licensed under {0}"_tr("LGPLv3"));
+    logger.info("Help us translate & improve text -> {0}"_tr("https://translate.liteldev.com/"));
 }
 
 void checkProtocolVersion() {
     auto currentProtocol = getServerProtocolVersion();
     if (TARGET_BDS_PROTOCOL_VERSION != currentProtocol) {
-        logger.warn("Protocol version not match, target version: {}, current version: {}"_tr(
+        logger.warn("Protocol version not match, target version: {0}, current version: {1}"_tr(
             TARGET_BDS_PROTOCOL_VERSION,
             currentProtocol
         ));
@@ -170,8 +170,8 @@ BOOL WINAPI ConsoleExitHandler(DWORD CEvent) {
     case CTRL_C_EVENT:
     case CTRL_CLOSE_EVENT:
     case CTRL_SHUTDOWN_EVENT: {
-        if (StopCommand::$mServer()) {
-            StopCommand::$mServer()->requestServerShutdown("");
+        if (StopCommand::mServer) {
+            StopCommand::mServer->requestServerShutdown("");
         } else {
             std::terminate();
         }
@@ -187,7 +187,7 @@ void unixSignalHandler(int signum) {
     switch (signum) {
     case SIGINT:
     case SIGTERM: {
-        if (StopCommand::$mServer()) StopCommand::$mServer()->requestServerShutdown("");
+        if (StopCommand::mServer) StopCommand::mServer->requestServerShutdown("");
         else std::terminate();
         break;
     }
@@ -256,9 +256,7 @@ void leviLaminaMain() {
     logger.warn("LeviLamina is running in DEBUG mode!"_tr());
 #endif
 
-    if (globalConfig.modules.commands.enabled) {
-        command::registerCommands();
-    }
+    command::registerCommands();
 
     plugin::PluginRegistrar::getInstance().loadAllPlugins();
 }

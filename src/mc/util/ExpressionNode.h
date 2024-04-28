@@ -126,6 +126,9 @@ public:
     // symbol: ?moveConstantChildToValueIfFloatOrHashType@ExpressionNode@@QEAAXH@Z
     MCAPI void moveConstantChildToValueIfFloatOrHashType(int firstConstChildIndex);
 
+    // symbol: ??4ExpressionNode@@QEAAAEAV0@$$QEAV0@@Z
+    MCAPI class ExpressionNode& operator=(class ExpressionNode&&);
+
     // symbol: ??4ExpressionNode@@QEAAAEAV0@AEBV0@@Z
     MCAPI class ExpressionNode& operator=(class ExpressionNode const& rhs);
 
@@ -341,7 +344,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?_defaultUnknownQueryFunction@ExpressionNode@@0V?$function@$$A6AAEBUMolangScriptArg@@AEAVRenderParams@@AEBV?$vector@VExpressionNode@@V?$allocator@VExpressionNode@@@std@@@std@@@Z@std@@A
@@ -360,21 +363,6 @@ private:
     // symbol:
     // ?mQuerySets@ExpressionNode@@0V?$unordered_map@VHashedString@@V?$unordered_set@VHashedString@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@3@V?$allocator@VHashedString@@@3@@std@@U?$hash@VHashedString@@@3@U?$equal_to@VHashedString@@@3@V?$allocator@U?$pair@$$CBVHashedString@@V?$unordered_set@VHashedString@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@3@V?$allocator@VHashedString@@@3@@std@@@std@@@3@@std@@A
     MCAPI static std::unordered_map<class HashedString, std::unordered_set<class HashedString>> mQuerySets;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $_defaultUnknownQueryFunction() { return _defaultUnknownQueryFunction; }
-
-    static auto& $mExperiments() { return mExperiments; }
-
-    static auto& $mMolangInitialized() { return mMolangInitialized; }
-
-    static auto& $mQueryFunctionAccessors() { return mQueryFunctionAccessors; }
-
-    static auto& $mQuerySets() { return mQuerySets; }
 
     // NOLINTEND
 };

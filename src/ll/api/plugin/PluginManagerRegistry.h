@@ -1,5 +1,6 @@
 #pragma once
 
+#include "ll/api/Expected.h"
 #include "ll/api/base/Macro.h"
 #include "ll/api/data/DependencyGraph.h"
 #include "ll/api/plugin/PluginManager.h"
@@ -14,13 +15,13 @@ class PluginManagerRegistry {
     PluginManagerRegistry();
     ~PluginManagerRegistry();
 
-    bool loadPlugin(Manifest manifest);
+    Expected<> loadPlugin(Manifest manifest) noexcept;
 
-    bool unloadPlugin(std::string_view name);
+    Expected<> unloadPlugin(std::string_view name) noexcept;
 
-    bool enablePlugin(std::string_view name) const;
+    Expected<> enablePlugin(std::string_view name) const noexcept;
 
-    bool disablePlugin(std::string_view name) const;
+    Expected<> disablePlugin(std::string_view name) const noexcept;
 
 public:
     LLNDAPI static PluginManagerRegistry& getInstance();

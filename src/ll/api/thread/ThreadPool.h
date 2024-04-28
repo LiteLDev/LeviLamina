@@ -14,6 +14,9 @@ public:
     LLAPI explicit ThreadPool(size_t nThreads = 1);
     LLAPI ~ThreadPool();
 
+    LLAPI void resize(size_t nThreads = 1);
+    LLAPI void destroy();
+
     template <class F, class... Args>
     decltype(auto) addTask(F&& f, Args&&... args) {
         auto task =

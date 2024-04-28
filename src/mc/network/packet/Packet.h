@@ -78,6 +78,8 @@ public:
      */
     LLAPI void sendToClients() const;
 
+    LLAPI void sendToClients(NetworkIdentifier const& exceptId, ::SubClientId exceptSubid) const;
+
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1Packet@@UEAA@XZ

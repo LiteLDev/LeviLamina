@@ -1,5 +1,5 @@
 #include "mc/world/level/BlockSource.h"
-#include "mc/dataloadhelper/DefaultDataLoadHelper.h"
+#include "mc/dataloadhelper/NewUniqueIdsDataLoadHelper.h"
 #include "mc/entity/systems/UpdateBoundingBoxSystem.h"
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/nbt/CompoundTag.h"
@@ -45,9 +45,10 @@ optional_ref<Container> BlockSource::tryGetContainer(class BlockPos const& pos) 
     return DropperBlockActor::getContainerAt(*this, pos.center());
 }
 
-optional_ref<Actor> BlockSource::spawnActor(CompoundTag& nbt) {
-    auto& level        = getLevel();
-    auto actorOwnerPtr = level.getActorFactory().loadActor(const_cast<CompoundTag*>(&nbt), ::ll::defaultDataLoadHelper);
+optional_ref<Actor> BlockSource::spawnActor(CompoundTag const& nbt) {
+    auto&                      level = getLevel();
+    NewUniqueIdsDataLoadHelper dataLoadHelper{level};
+    auto actorOwnerPtr = level.getActorFactory().loadActor(const_cast<CompoundTag*>(&nbt), dataLoadHelper);
     if (!actorOwnerPtr) {
         return nullptr;
     }
@@ -60,26 +61,6 @@ optional_ref<Actor> BlockSource::spawnActor(CompoundTag& nbt) {
     level.addEntity(*this, std::move(actorOwnerPtr));
     actor->refresh();
     return actor;
-}
-
-optional_ref<Actor> BlockSource::cloneActor(Actor const& origin, Vec3 const& pos, std::optional<DimensionType> dimId) {
-    CompoundTag nbt;
-    if (!origin.save(nbt) || !nbt.contains("Pos")) {
-        return nullptr;
-    }
-    if (auto& nbtPos = nbt.at("Pos"); nbtPos.hold<ListTag>()) {
-        nbtPos = ListTag{pos.x, pos.y, pos.z};
-    }
-    Dimension* dim{};
-    if (dimId) {
-        dim = getLevel().getDimension(*dimId).get();
-    } else {
-        dim = &getDimension();
-    }
-    if (!dim) {
-        return nullptr;
-    }
-    return dim->getBlockSourceFromMainChunkSource().spawnActor(nbt);
 }
 
 bool BlockSource::destroyBlock(BlockPos const& pos, optional_ref<ItemStack> tool, optional_ref<Mob> toolOwner) {
@@ -99,8 +80,8 @@ bool BlockSource::destroyBlock(BlockPos const& pos, optional_ref<ItemStack> tool
     if (!tool) {
         return res;
     }
-    if (res) {
-        tool->mineBlock(block, pos.x, pos.y, pos.z, toolOwner.as_ptr());
+    if (res && tool->mItem) {
+        tool->mItem->mineBlock(tool, block, pos.x, pos.y, pos.z, toolOwner.as_ptr());
     }
     return res;
 }

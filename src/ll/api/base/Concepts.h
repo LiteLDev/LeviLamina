@@ -126,7 +126,7 @@ template <class T, template <class...> class Z>
 concept Specializes = is_specialization_of_v<T, Z>;
 
 template <template <class...> class T, class... Ts>
-void DerivedFromSpecializationImpl(const T<Ts...>&);
+void DerivedFromSpecializationImpl(T<Ts...> const&);
 
 template <class T, template <class...> class Z>
 concept DerivedFromSpecializes = requires(T const& t) { DerivedFromSpecializationImpl<Z>(t); };

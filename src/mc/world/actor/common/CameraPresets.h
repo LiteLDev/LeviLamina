@@ -81,9 +81,6 @@ public:
     // symbol: ??1CameraPresets@@QEAA@XZ
     MCAPI ~CameraPresets();
 
-    // symbol: ?bindType@CameraPresets@@SAXAEAUReflectionCtx@cereal@@@Z
-    MCAPI static void bindType(struct cereal::ReflectionCtx&);
-
     // symbol:
     // ?isAllowedEaseTarget@CameraPresets@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI static bool isAllowedEaseTarget(std::string const&);

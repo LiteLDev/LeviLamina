@@ -19,8 +19,6 @@
 #include "ll/api/utils/HashUtils.h"
 #include "ll/api/utils/StringUtils.h"
 
-#include "mc/external/expected_lite/expected.h"
-
 namespace ll::data {
 
 namespace detail {
@@ -115,12 +113,12 @@ struct PreRelease {
         return {first};
     }
 
-    [[nodiscard]] constexpr bool from_string_noexcept(std::string_view str) noexcept {
+    [[nodiscard]] constexpr detail::from_chars_result from_string_noexcept(std::string_view str) noexcept {
         return from_chars(str.data(), str.data() + str.length());
     }
 
     constexpr PreRelease& from_string(std::string_view str) noexcept {
-        from_chars(str.data(), str.data() + str.length()).value();
+        from_string_noexcept(str).value();
         return *this;
     }
 
@@ -241,12 +239,12 @@ struct Version {
         return {first, std::errc::invalid_argument};
     }
 
-    [[nodiscard]] constexpr bool from_string_noexcept(std::string_view str) noexcept {
+    [[nodiscard]] constexpr detail::from_chars_result from_string_noexcept(std::string_view str) noexcept {
         return from_chars(str.data(), str.data() + str.length());
     }
 
     constexpr Version& from_string(std::string_view str) {
-        from_chars(str.data(), str.data() + str.length()).value();
+        from_string_noexcept(str).value();
         return *this;
     }
 
@@ -294,14 +292,26 @@ struct Version {
     }
 };
 
-template <class J>
-inline J serialize(Version const& ver) {
+template <class J, class T>
+[[nodiscard]] inline Expected<J> serialize(T&& ver) noexcept
+    requires(std::same_as<std::remove_cvref_t<T>, Version>)
+try {
     return ver.to_string();
+} catch (...) {
+    return makeExceptionError();
 }
-template <class J>
-inline void deserialize(Version& ver, J const& j) {
+template <class T, class J>
+[[nodiscard]] inline Expected<> deserialize(T& ver, J const& j) noexcept
+    requires(std::same_as<T, Version>)
+{
     if (j.is_string()) {
-        ver.from_string(j);
+        if (auto res = ver.from_string_noexcept(j); res) {
+            return {};
+        } else {
+            return makeErrorCodeError(res.ec);
+        }
+    } else {
+        return makeStringError("field must be a string");
     }
 }
 

@@ -30,7 +30,7 @@ public:
     // vIndex: 0, symbol: __gen_??1HangingActorItem@@UEAA@XZ
     virtual ~HangingActorItem() = default;
 
-    // vIndex: 117, symbol:
+    // vIndex: 118, symbol:
     // ?_useOn@HangingActorItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor&, class BlockPos pos, uchar face, class Vec3 const& clickPos) const;

@@ -15,7 +15,7 @@ class Label : public CustomFormElement {
 public:
     std::string mText{};
 
-    explicit Label(std::string text) : CustomFormElement(""), mText(std::move(text)) {}
+    explicit Label(std::string text) : CustomFormElement({}), mText(std::move(text)) {}
     ~Label() override = default;
 
     [[nodiscard]] Type getType() const override { return Type::Label; }
@@ -37,7 +37,7 @@ public:
     std::string mPlaceholder{};
     std::string mDefault{};
 
-    Input(std::string name, std::string text, std::string placeholder = "", std::string defaultVal = "")
+    Input(std::string name, std::string text, std::string placeholder = {}, std::string defaultVal = {})
     : CustomFormElement(std::move(name)),
       mText(std::move(text)),
       mPlaceholder(std::move(placeholder)),

@@ -57,6 +57,8 @@ public:
             StringStorage storage_;
         };
 
+        CZString(ArrayIndex index) : index_(index) {}
+
         CZString(char const* str, uint length, DuplicationPolicy allocate) : cstr_(str) {
             storage_.policy_ = allocate;
             storage_.length_ = length & 0x3FFFFFFF;

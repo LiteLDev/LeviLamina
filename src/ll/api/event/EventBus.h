@@ -15,14 +15,21 @@
 #include "ll/api/event/Listener.h"
 #include "ll/api/event/ListenerBase.h"
 
+namespace ll::plugin {
+class Plugin;
+}
 namespace ll::event {
 class EmitterBase;
 
 class EventBus {
-private:
+    friend plugin::Plugin;
     class EventBusImpl;
     std::unique_ptr<EventBusImpl> impl;
     EventBus();
+
+    size_t removePluginListeners(std::string_view pluginName);
+
+    size_t removePluginEventEmitters(std::string_view pluginName);
 
 public:
     LLNDAPI static EventBus& getInstance();
@@ -31,11 +38,18 @@ public:
 
     LLAPI void publish(std::string_view pluginName, Event&, EventId);
 
-    LLAPI void setEventEmitter(std::function<std::unique_ptr<EmitterBase>(ListenerBase&)> fn, EventId eventId);
+    LLAPI void setEventEmitter(
+        std::function<std::unique_ptr<EmitterBase>(ListenerBase&)> fn,
+        EventId                                                    eventId,
+        std::weak_ptr<plugin::Plugin>                              plugin = plugin::NativePlugin::current()
+    );
 
     template <std::derived_from<Event> T>
-    void setEventEmitter(std::function<std::unique_ptr<EmitterBase>(ListenerBase&)> fn) {
-        setEventEmitter(std::move(fn), getEventId<T>);
+    void setEventEmitter(
+        std::function<std::unique_ptr<EmitterBase>(ListenerBase&)> fn,
+        std::weak_ptr<plugin::Plugin>                              plugin = plugin::NativePlugin::current()
+    ) {
+        setEventEmitter(std::move(fn), getEventId<T>, plugin);
     }
 
     template <class T>
@@ -124,8 +138,6 @@ public:
     [[nodiscard]] bool hasListener(ListenerId id) const {
         return hasListener(id, getEventId<T>);
     }
-
-    LLAPI size_t removePluginListeners(std::string_view pluginName);
 };
 
 } // namespace ll::event

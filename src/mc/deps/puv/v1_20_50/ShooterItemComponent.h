@@ -21,10 +21,12 @@ public:
     public:
         // prevent constructor by default
         Ammunition(Ammunition const&);
-        Ammunition();
 
     public:
         // NOLINTBEGIN
+        // symbol: ??0Ammunition@ShooterItemComponent@v1_20_50@Puv@@QEAA@XZ
+        MCAPI Ammunition();
+
         // symbol: ??4Ammunition@ShooterItemComponent@v1_20_50@Puv@@QEAAAEAU0123@$$QEAU0123@@Z
         MCAPI struct Puv::v1_20_50::ShooterItemComponent::Ammunition&
         operator=(struct Puv::v1_20_50::ShooterItemComponent::Ammunition&&);
@@ -38,11 +40,13 @@ public:
 
 public:
     // prevent constructor by default
-    ShooterItemComponent(ShooterItemComponent const&);
     ShooterItemComponent();
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0ShooterItemComponent@v1_20_50@Puv@@QEAA@AEBU012@@Z
+    MCAPI ShooterItemComponent(struct Puv::v1_20_50::ShooterItemComponent const&);
+
     // symbol: ??4ShooterItemComponent@v1_20_50@Puv@@QEAAAEAU012@$$QEAU012@@Z
     MCAPI struct Puv::v1_20_50::ShooterItemComponent& operator=(struct Puv::v1_20_50::ShooterItemComponent&&);
 

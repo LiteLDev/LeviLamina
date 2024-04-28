@@ -54,6 +54,12 @@ public:
 
     // private:
     // NOLINTBEGIN
+    // symbol: ?_sendFlushBlockCustomComponentAfterEvents@ScriptDeferredEventCoordinator@@AEAA_NXZ
+    MCAPI bool _sendFlushBlockCustomComponentAfterEvents();
+
+    // symbol: ?_sendFlushItemCustomComponentAfterEvents@ScriptDeferredEventCoordinator@@AEAA_NXZ
+    MCAPI bool _sendFlushItemCustomComponentAfterEvents();
+
     // symbol: ?_sendFlushSystemAfterEvents@ScriptDeferredEventCoordinator@@AEAA_NXZ
     MCAPI bool _sendFlushSystemAfterEvents();
 
@@ -62,19 +68,12 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?sEventExecutionOrder@ScriptDeferredEventCoordinator@@0V?$vector@UDocumentableEventExecution@ScriptDeferredEventCoordinator@@V?$allocator@UDocumentableEventExecution@ScriptDeferredEventCoordinator@@@std@@@std@@B
     MCAPI static std::vector<struct ScriptDeferredEventCoordinator::DocumentableEventExecution> const
         sEventExecutionOrder;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $sEventExecutionOrder() { return sEventExecutionOrder; }
 
     // NOLINTEND
 };

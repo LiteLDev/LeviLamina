@@ -60,17 +60,10 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?RANDOM_SKEW_CHANCE@MangroveTreeRoots@@0MB
     MCAPI static float const RANDOM_SKEW_CHANCE;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $RANDOM_SKEW_CHANCE() { return RANDOM_SKEW_CHANCE; }
 
     // NOLINTEND
 };

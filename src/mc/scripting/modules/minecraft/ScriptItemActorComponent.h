@@ -29,6 +29,9 @@ public:
     // vIndex: 0, symbol: __gen_??1ScriptItemActorComponent@ScriptModuleMinecraft@@UEAA@XZ
     virtual ~ScriptItemActorComponent() = default;
 
+    // vIndex: 1, symbol: ?_isValid@ScriptItemActorComponent@ScriptModuleMinecraft@@MEBA_NXZ
+    virtual bool _isValid() const;
+
     // symbol:
     // ?getItemStack@ScriptItemActorComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<

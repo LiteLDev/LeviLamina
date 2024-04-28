@@ -49,6 +49,9 @@ public:
     // symbol: ??0CerealUpgraderBase@internal@Puv@@QEAA@AEBUReflectionCtx@cereal@@@Z
     MCAPI explicit CerealUpgraderBase(struct cereal::ReflectionCtx const&);
 
+    // symbol: ?after@CerealUpgraderBase@internal@Puv@@QEAAXV?$function@$$A6AXAEAVmeta_any@entt@@0@Z@std@@@Z
+    MCAPI void after(std::function<void(entt::meta_any&, entt::meta_any&)>);
+
     // symbol:
     // ?callback@CerealUpgraderBase@internal@Puv@@QEAAXV?$function@$$A6AXAEAVmeta_any@entt@@0@Z@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@5@1@Z
     MCAPI void

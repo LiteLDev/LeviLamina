@@ -29,13 +29,13 @@ public:
     // vIndex: 0, symbol: __gen_??1AbstractCompassItem@@UEAA@XZ
     virtual ~AbstractCompassItem() = default;
 
-    // vIndex: 49, symbol: ?getEnchantSlot@AbstractCompassItem@@UEBAHXZ
+    // vIndex: 50, symbol: ?getEnchantSlot@AbstractCompassItem@@UEBAHXZ
     virtual int getEnchantSlot() const;
 
-    // vIndex: 103, symbol: ?getIconInfo@AbstractCompassItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
+    // vIndex: 104, symbol: ?getIconInfo@AbstractCompassItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const& item, int, bool inInventoryPane) const;
 
-    // vIndex: 105, symbol: ?getAnimationFrameFor@AbstractCompassItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
+    // vIndex: 106, symbol: ?getAnimationFrameFor@AbstractCompassItem@@UEBAHPEAVMob@@_NPEBVItemStack@@1@Z
     virtual int
     getAnimationFrameFor(class Mob* holder, bool asItemEntity, class ItemStack const* item, bool shouldAnimate) const;
 

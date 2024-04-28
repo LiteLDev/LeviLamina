@@ -58,8 +58,5 @@ public:
     virtual int
     getContainerSize(class ContainerScreenContext const& screenContext, class Container const& container) const;
 
-    // symbol: ??0MaterialReducerInputValidation@@QEAA@AEBVContainerScreenContext@@@Z
-    MCAPI explicit MaterialReducerInputValidation(class ContainerScreenContext const& screenContext);
-
     // NOLINTEND
 };

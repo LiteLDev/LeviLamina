@@ -15,14 +15,14 @@
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
 
-#include "mc/external/expected_lite/expected.h"
+#include "ll/api/Expected.h"
 
 namespace ll::inline utils::string_utils {
 
 // "2021-03-24"  ->  ["2021", "03", "24"]  (use '-' as split pattern)
 template <class T>
-[[nodiscard]] constexpr auto splitByPattern(T&& str, std::string_view pattern, bool keepEmpty = false)
-    -> decltype(auto) {
+[[nodiscard]] constexpr auto splitByPattern(T&& str, std::string_view pattern, bool keepEmpty = false) -> decltype(auto
+                                                                                                       ) {
     using ReturnTypeElement = std::conditional_t<std::is_same_v<T&&, std::string&&>, std::string, std::string_view>;
     using ReturnType        = std::vector<ReturnTypeElement>;
     std::string_view s{str};
@@ -203,17 +203,17 @@ LLNDAPI std::string
     return {reinterpret_cast<const char8_t*>(str.data()), str.size()};
 }
 template <class T, auto f, class... Args>
-[[nodiscard]] inline nonstd::expected<T, std::error_code> svtonum(std::string_view str, size_t* idx, Args&&... args) {
+[[nodiscard]] inline Expected<T> svtonum(std::string_view str, size_t* idx, Args&&... args) {
     int&        errnoRef = errno;
     char const* ptr      = str.data();
     char*       eptr{};
     errnoRef       = 0;
     const auto ans = f(ptr, &eptr, std::forward<Args>(args)...);
     if (ptr == eptr) {
-        return nonstd::make_unexpected(std::make_error_code(std::errc::invalid_argument));
+        return makeErrorCodeError(std::errc::invalid_argument);
     }
     if (errnoRef == ERANGE) {
-        return nonstd::make_unexpected(std::make_error_code(std::errc::result_out_of_range));
+        return makeErrorCodeError(std::errc::result_out_of_range);
     }
     if (idx) {
         *idx = static_cast<size_t>(eptr - ptr);
@@ -259,6 +259,6 @@ template <class T, auto f, class... Args>
 [[nodiscard]] inline decltype(auto) svtold(std::string_view str, size_t* idx = nullptr) {
     return svtonum<ldouble, strtof>(str, idx);
 }
-LLNDAPI nonstd::expected<bool, std::error_code> strtobool(std::string const&);
+LLNDAPI Expected<bool> strtobool(std::string const&);
 
 } // namespace ll::inline utils::string_utils

@@ -17,11 +17,11 @@ public:
     template <std::integral T0, std::integral T1, std::integral T2, std::integral T3 = uint>
     [[nodiscard]] constexpr Color(T0 const& ir, T1 const& ig, T2 const& ib, T3 const& ia = 255) noexcept
     : floatN4(
-        static_cast<float>(ir) / 255.0f,
-        static_cast<float>(ig) / 255.0f,
-        static_cast<float>(ib) / 255.0f,
-        static_cast<float>(ia) / 255.0f
-    ) {}
+          static_cast<float>(ir) / 255.0f,
+          static_cast<float>(ig) / 255.0f,
+          static_cast<float>(ib) / 255.0f,
+          static_cast<float>(ia) / 255.0f
+      ) {}
     template <std::floating_point T0, std::floating_point T1, std::floating_point T2, std::floating_point T3 = double>
     [[nodiscard]] constexpr Color(T0 const& r, T1 const& g, T2 const& b, T3 const& a = 1) noexcept
     : floatN4(r, g, b, a) {}
@@ -280,9 +280,6 @@ public:
 
     // symbol: ?toHexString@Color@mce@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string toHexString() const;
-
-    // symbol: ?fromARGB@Color@mce@@SA?AV12@H@Z
-    MCAPI static class mce::Color fromARGB(int);
 
     // symbol: ?fromHexString@Color@mce@@SA?AV12@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI static class mce::Color fromHexString(std::string const&);

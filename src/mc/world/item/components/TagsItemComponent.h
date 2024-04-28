@@ -7,12 +7,14 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Puv::v1_20_50 { struct TagsItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class TagsItemComponent {
 public:
     // prevent constructor by default
+    TagsItemComponent& operator=(TagsItemComponent const&);
     TagsItemComponent(TagsItemComponent const&);
     TagsItemComponent();
 
@@ -27,7 +29,7 @@ public:
     // vIndex: 2, symbol: ?writeSettings@ItemComponent@@UEAAXXZ
     virtual void writeSettings();
 
-    // vIndex: 3, symbol: ?isNetworkComponent@InteractButtonItemComponent@@UEBA_NXZ
+    // vIndex: 3, symbol: ?isNetworkComponent@ItemComponent@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
     // vIndex: 4, symbol:
@@ -50,11 +52,8 @@ public:
     // vIndex: 9, symbol: ?_initializeComponent@TagsItemComponent@@UEAAXXZ
     virtual void _initializeComponent();
 
-    // symbol: ??4TagsItemComponent@@QEAAAEAV0@$$QEAV0@@Z
-    MCAPI class TagsItemComponent& operator=(class TagsItemComponent&&);
-
-    // symbol: ??4TagsItemComponent@@QEAAAEAV0@AEBV0@@Z
-    MCAPI class TagsItemComponent& operator=(class TagsItemComponent const&);
+    // symbol: ??0TagsItemComponent@@QEAA@U0v1_20_50@Puv@@@Z
+    MCAPI explicit TagsItemComponent(struct Puv::v1_20_50::TagsItemComponent);
 
     // symbol:
     // ?bindType@TagsItemComponent@@SAXAEAUReflectionCtx@cereal@@AEBV?$vector@W4AllExperiments@@V?$allocator@W4AllExperiments@@@std@@@std@@V?$optional@VSemVersion@@@5@@Z

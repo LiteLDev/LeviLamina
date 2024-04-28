@@ -15,9 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?getParticleName@ParticleTypeMap@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ParticleType@@@Z
-    MCAPI static std::string const& getParticleName(::ParticleType);
+    // symbol: ?getParticleName@ParticleTypeMap@@SAAEBVHashedString@@W4ParticleType@@@Z
+    MCAPI static class HashedString const& getParticleName(::ParticleType);
 
     // symbol:
     // ?getParticleTypeId@ParticleTypeMap@@SA?AW4ParticleType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -25,18 +24,10 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?map@ParticleTypeMap@@0V?$BidirectionalUnorderedMap@W4ParticleType@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@B
-    MCAPI static class BidirectionalUnorderedMap<::ParticleType, std::string> const map;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $map() { return map; }
+    // symbol: ?map@ParticleTypeMap@@0V?$BidirectionalUnorderedMap@W4ParticleType@@VHashedString@@@@B
+    MCAPI static class BidirectionalUnorderedMap<::ParticleType, class HashedString> const map;
 
     // NOLINTEND
 };

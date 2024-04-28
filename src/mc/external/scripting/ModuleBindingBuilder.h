@@ -146,7 +146,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mEmptyConstantFactory@ModuleBindingBuilder@Scripting@@0UConstantFactory@2@A
     MCAPI static struct Scripting::ConstantFactory mEmptyConstantFactory;
@@ -156,17 +156,6 @@ private:
 
     // symbol: ?mEmptyObjectFactory@ModuleBindingBuilder@Scripting@@0UObjectFactory@2@A
     MCAPI static struct Scripting::ObjectFactory mEmptyObjectFactory;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mEmptyConstantFactory() { return mEmptyConstantFactory; }
-
-    static auto& $mEmptyFunctionBinding() { return mEmptyFunctionBinding; }
-
-    static auto& $mEmptyObjectFactory() { return mEmptyObjectFactory; }
 
     // NOLINTEND
 };

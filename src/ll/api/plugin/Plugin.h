@@ -4,6 +4,7 @@
 #include <functional>
 #include <memory>
 
+#include "ll/api/Expected.h"
 #include "ll/api/Logger.h"
 #include "ll/api/base/Macro.h"
 #include "ll/api/plugin/Manifest.h"
@@ -67,13 +68,13 @@ protected:
     LLNDAPI bool hasOnDisable() const noexcept;
 
     // call on load callback and etc...
-    LLAPI bool onLoad() noexcept;
+    LLAPI Expected<> onLoad() noexcept;
 
-    LLAPI bool onUnload() noexcept;
+    LLAPI Expected<> onUnload() noexcept;
 
-    LLAPI bool onEnable() noexcept;
+    LLAPI Expected<> onEnable() noexcept;
 
-    LLAPI bool onDisable() noexcept;
+    LLAPI Expected<> onDisable() noexcept;
 
 private:
     friend PluginManager;

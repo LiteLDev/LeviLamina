@@ -18,6 +18,9 @@ public:
     // symbol: ?isPreRelease@Version@Scripting@@QEBA_NXZ
     MCAPI bool isPreRelease() const;
 
+    // symbol: ??9Version@Scripting@@QEBA_NAEBU01@@Z
+    MCAPI bool operator!=(struct Scripting::Version const& rhs) const;
+
     // symbol: ??MVersion@Scripting@@QEBA_NAEBU01@@Z
     MCAPI bool operator<(struct Scripting::Version const& rhs) const;
 

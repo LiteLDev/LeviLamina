@@ -134,11 +134,6 @@ public:
     std::vector<ConstrainedValueData>  mConstraints;      // 48+24*7=216
 
 public:
-    LLNDAPI std::vector<std::string> getEnumNames() const;
-    LLNDAPI std::vector<std::string> getSoftEnumNames() const;
-    LLNDAPI std::vector<std::string> getEnumValues(std::string const& name) const;
-    LLNDAPI std::vector<std::string> getSoftEnumValues(std::string const& name) const;
-
     // prevent constructor by default
     AvailableCommandsPacket& operator=(AvailableCommandsPacket const&);
     AvailableCommandsPacket(AvailableCommandsPacket const&);

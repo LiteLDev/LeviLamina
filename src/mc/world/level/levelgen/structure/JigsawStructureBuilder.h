@@ -30,6 +30,9 @@ public:
     // symbol: ?build@JigsawStructureBuilder@worldgen@br@@QEAA?AUJigsawStructure@23@XZ
     MCAPI struct br::worldgen::JigsawStructure build();
 
+    // symbol: ?dimensionPadding@JigsawStructureBuilder@worldgen@br@@QEAAAEAV123@H@Z
+    MCAPI class br::worldgen::JigsawStructureBuilder& dimensionPadding(int);
+
     // symbol: ?maxDepth@JigsawStructureBuilder@worldgen@br@@QEAAAEAV123@C@Z
     MCAPI class br::worldgen::JigsawStructureBuilder& maxDepth(schar);
 

@@ -2,10 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/biome/BiomeComponentBase.h"
-
-struct MountainAttributes : public ::BiomeComponentBase {
+struct MountainAttributes {
 public:
     // MountainAttributes inner types declare
     // clang-format off
@@ -29,14 +26,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1MountainAttributes@@UEAA@XZ
-    virtual ~MountainAttributes();
-
-    // symbol: ??0MountainAttributes@@QEAA@$$QEAU0@@Z
-    MCAPI MountainAttributes(struct MountainAttributes&&);
-
-    // symbol: ??4MountainAttributes@@QEAAAEAU0@$$QEAU0@@Z
-    MCAPI struct MountainAttributes& operator=(struct MountainAttributes&&);
+    // vIndex: 0, symbol: __gen_??1MountainAttributes@@UEAA@XZ
+    virtual ~MountainAttributes() = default;
 
     // NOLINTEND
 };

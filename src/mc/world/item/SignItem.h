@@ -30,15 +30,15 @@ public:
     // vIndex: 0, symbol: ??1SignItem@@UEAA@XZ
     virtual ~SignItem();
 
-    // vIndex: 115, symbol: ?_calculatePlacePos@SignItem@@EEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
+    // vIndex: 116, symbol: ?_calculatePlacePos@SignItem@@EEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
     virtual bool _calculatePlacePos(class ItemStackBase&, class Actor& entity, uchar& face, class BlockPos& pos) const;
 
-    // vIndex: 117, symbol:
+    // vIndex: 118, symbol:
     // ?_useOn@SignItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const&) const;
 
-    // vIndex: 118, symbol: ?getBlockToPlace@SignItem@@UEBAPEBVBlock@@EAEBVActor@@VBlockPos@@@Z
+    // vIndex: 119, symbol: ?getBlockToPlace@SignItem@@UEBAPEBVBlock@@EAEBVActor@@VBlockPos@@@Z
     virtual class Block const* getBlockToPlace(uchar face, class Actor const& entity, class BlockPos pos) const;
 
     // symbol:

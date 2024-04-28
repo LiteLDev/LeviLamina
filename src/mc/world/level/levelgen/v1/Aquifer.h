@@ -82,17 +82,10 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?chunkOffset@Aquifer@@0V?$array@U?$pair@HH@std@@$0N@@std@@B
     MCAPI static std::array<std::pair<int, int>, 13> const chunkOffset;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $chunkOffset() { return chunkOffset; }
 
     // NOLINTEND
 };

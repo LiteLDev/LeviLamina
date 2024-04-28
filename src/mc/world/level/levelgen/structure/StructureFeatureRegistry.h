@@ -53,6 +53,9 @@ public:
     // symbol: ?structureCache@StructureFeatureRegistry@@QEAAAEAVStructureCache@worldgen@br@@XZ
     MCAPI class br::worldgen::StructureCache& structureCache();
 
+    // symbol: ?tick@StructureFeatureRegistry@@QEAAXXZ
+    MCAPI void tick();
+
     // symbol: ?waitForBlueprints@StructureFeatureRegistry@@QEBAXXZ
     MCAPI void waitForBlueprints() const;
 

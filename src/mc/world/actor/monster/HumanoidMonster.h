@@ -39,19 +39,19 @@ public:
     // vIndex: 10, symbol: ??1HumanoidMonster@@UEAA@XZ
     virtual ~HumanoidMonster();
 
-    // vIndex: 28, symbol: ?normalTick@HumanoidMonster@@UEAAXXZ
+    // vIndex: 26, symbol: ?normalTick@HumanoidMonster@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 153, symbol: ?readAdditionalSaveData@HumanoidMonster@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 149, symbol: ?readAdditionalSaveData@HumanoidMonster@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 154, symbol: ?addAdditionalSaveData@HumanoidMonster@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 150, symbol: ?addAdditionalSaveData@HumanoidMonster@@MEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 169, symbol: ?getItemUseDuration@HumanoidMonster@@UEBAHXZ
+    // vIndex: 164, symbol: ?getItemUseDuration@HumanoidMonster@@UEBAHXZ
     virtual int getItemUseDuration() const;
 
-    // vIndex: 174, symbol: ?doHurtTarget@HumanoidMonster@@UEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
+    // vIndex: 169, symbol: ?doHurtTarget@HumanoidMonster@@UEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
     virtual bool doHurtTarget(class Actor* target, ::ActorDamageCause const& cause);
 
     // symbol: ??0HumanoidMonster@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
@@ -63,7 +63,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?MAX_ENCHANTED_ARMOR_CHANCE@HumanoidMonster@@0MB
     MCAPI static float const MAX_ENCHANTED_ARMOR_CHANCE;
@@ -76,19 +76,6 @@ private:
 
     // symbol: ?MAX_WEARING_ARMOR_CHANCE@HumanoidMonster@@0MB
     MCAPI static float const MAX_WEARING_ARMOR_CHANCE;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $MAX_ENCHANTED_ARMOR_CHANCE() { return MAX_ENCHANTED_ARMOR_CHANCE; }
-
-    static auto& $MAX_ENCHANTED_WEAPON_CHANCE() { return MAX_ENCHANTED_WEAPON_CHANCE; }
-
-    static auto& $MAX_PICKUP_LOOT_CHANCE() { return MAX_PICKUP_LOOT_CHANCE; }
-
-    static auto& $MAX_WEARING_ARMOR_CHANCE() { return MAX_WEARING_ARMOR_CHANCE; }
 
     // NOLINTEND
 };

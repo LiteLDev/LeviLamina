@@ -1,6 +1,8 @@
 #include "ll/api/plugin/PluginManager.h"
+#include "ll/api/i18n/I18n.h"
 
 namespace ll::plugin {
+using namespace i18n_literals;
 
 struct PluginManager::Impl {
     std::string                                 type;
@@ -15,34 +17,29 @@ PluginManager::~PluginManager() = default;
 
 std::lock_guard<std::recursive_mutex> PluginManager::lock() { return std::lock_guard(impl->mutex); }
 
-bool PluginManager::addPlugin(std::string_view name, std::shared_ptr<Plugin> const& plugin) {
+void PluginManager::addPlugin(std::string_view name, std::shared_ptr<Plugin> const& plugin) {
     auto l(lock());
-    if (!plugin) {
-        return false;
-    }
-    return impl->plugins.emplace(std::string{name}, plugin).second;
+    impl->plugins.try_emplace(std::string{name}, plugin).second;
 }
 
-bool PluginManager::erasePlugin(std::string_view name) {
+void PluginManager::erasePlugin(std::string_view name) {
     auto l(lock());
     if (auto i = impl->plugins.find(name); i != impl->plugins.end()) {
         impl->plugins.erase(i);
-        return true;
     }
-    return false;
 }
 
-bool PluginManager::enable(std::string_view name) {
+Expected<> PluginManager::enable(std::string_view name) {
     auto l(lock());
     auto plugin = getPlugin(name);
-    if (!plugin) return false;
+    if (!plugin) return makeStringError("Plugin not found"_tr());
     return plugin->onEnable();
 }
 
-bool PluginManager::disable(std::string_view name) {
+Expected<> PluginManager::disable(std::string_view name) {
     auto l(lock());
     auto plugin = getPlugin(name);
-    if (!plugin) return false;
+    if (!plugin) return makeStringError("Plugin not found"_tr());
     return plugin->onDisable();
 }
 

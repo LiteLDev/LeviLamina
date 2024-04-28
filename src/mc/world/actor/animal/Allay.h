@@ -42,13 +42,13 @@ public:
     // vIndex: 10, symbol: __gen_??1Allay@@UEAA@XZ
     virtual ~Allay() = default;
 
-    // vIndex: 153, symbol: ?readAdditionalSaveData@Allay@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 149, symbol: ?readAdditionalSaveData@Allay@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 154, symbol: ?addAdditionalSaveData@Allay@@UEBAXAEAVCompoundTag@@@Z
+    // vIndex: 150, symbol: ?addAdditionalSaveData@Allay@@UEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 165, symbol: ?aiStep@Allay@@UEAAXXZ
+    // vIndex: 160, symbol: ?aiStep@Allay@@UEAAXXZ
     virtual void aiStep();
 
     // symbol: ??0Allay@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

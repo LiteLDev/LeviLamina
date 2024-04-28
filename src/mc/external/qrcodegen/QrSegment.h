@@ -45,17 +45,10 @@ public:
     QrSegment(QrSegment const&);
     QrSegment();
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?ALPHANUMERIC_CHARSET@QrSegment@qrcodegen@@0PEBDEB
     MCAPI static char const* ALPHANUMERIC_CHARSET;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $ALPHANUMERIC_CHARSET() { return ALPHANUMERIC_CHARSET; }
 
     // NOLINTEND
 };

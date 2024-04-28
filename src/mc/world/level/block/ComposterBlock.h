@@ -158,24 +158,13 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION@ComposterBlock@@0VBaseGameVersion@@B
     MCAPI static class BaseGameVersion const COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
     // symbol: ?PARTICLE_OFFSET@ComposterBlock@@0VVec3@@B
     MCAPI static class Vec3 const PARTICLE_OFFSET;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION() {
-        return COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION;
-    }
-
-    static auto& $PARTICLE_OFFSET() { return PARTICLE_OFFSET; }
 
     // NOLINTEND
 };

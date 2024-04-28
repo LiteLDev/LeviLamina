@@ -22,7 +22,6 @@ namespace ll::command {
 struct CommandRegistrar::Impl {
     UnorderedStringMap<CommandHandle> commands;
     UnorderedStringMap<uint64>        textWithRef;
-    UnorderedStringMap<uint64>        postfixWithRef;
     std::recursive_mutex              mutex;
 };
 
@@ -55,6 +54,13 @@ CommandHandle& CommandRegistrar::getOrCreateCommand(
         return impl->commands.at(signature->name);
     } else {
         return impl->commands.try_emplace(signature->name, *this, *signature, false).first->second;
+    }
+}
+
+void CommandRegistrar::disablePluginCommands(std::string_view pluginName) {
+    std::lock_guard lock{impl->mutex};
+    for (auto& [name, handle] : impl->commands) {
+        handle.disablePluginOverloads(pluginName);
     }
 }
 
@@ -91,6 +97,18 @@ bool CommandRegistrar::addEnumValues(
     }
     registry._addEnumValuesInternal(name, toLower(values), type, nullptr);
     return true;
+}
+bool CommandRegistrar::tryRegisterRuntimeEnum(
+    std::string const&                          name,
+    std::vector<std::pair<std::string, uint64>> values
+) {
+    return tryRegisterEnum(name, std::move(values), Bedrock::type_id<CommandRegistry, std::pair<std::string, uint64>>(), &CommandRegistry::parse<std::pair<std::string, uint64>>);
+}
+bool CommandRegistrar::addRuntimeEnumValues(
+    std::string const&                          name,
+    std::vector<std::pair<std::string, uint64>> values
+) {
+    return addEnumValues(name, std::move(values), Bedrock::type_id<CommandRegistry, std::pair<std::string, uint64>>());
 }
 bool CommandRegistrar::hasSoftEnum(std::string const& name) { return getRegistry().mSoftEnumLookup.contains(name); }
 
@@ -145,15 +163,5 @@ char const* CommandRegistrar::addText(CommandHandle& /*handle*/, std::string_vie
         );
     }
     return impl->textWithRef.find(storedName)->first.c_str();
-}
-
-char const* CommandRegistrar::addPostfix(CommandHandle& /*handle*/, std::string_view postfix) {
-    std::lock_guard lock{impl->mutex};
-    if (impl->postfixWithRef.contains(postfix)) {
-        impl->postfixWithRef.find(postfix)->second++;
-    } else {
-        impl->postfixWithRef.try_emplace(std::string{postfix}, 1);
-    }
-    return impl->postfixWithRef.find(postfix)->first.c_str();
 }
 } // namespace ll::command

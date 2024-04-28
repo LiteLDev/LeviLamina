@@ -27,6 +27,9 @@ public:
     // vIndex: 0, symbol: __gen_??1ScriptMovementSwayComponent@ScriptModuleMinecraft@@UEAA@XZ
     virtual ~ScriptMovementSwayComponent() = default;
 
+    // vIndex: 1, symbol: ?_isValid@ScriptMovementSwayComponent@ScriptModuleMinecraft@@MEBA_NXZ
+    virtual bool _isValid() const;
+
     // symbol: ?getSwayAmplitude@ScriptMovementSwayComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@M$$V@Scripting@@XZ
     MCAPI class Scripting::Result<float> getSwayAmplitude() const;
 

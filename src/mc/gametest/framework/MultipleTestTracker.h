@@ -34,7 +34,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?sFailedOptionalTest@MultipleTestTracker@gametest@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
@@ -55,21 +55,6 @@ private:
     // symbol:
     // ?sSuccessfulTest@MultipleTestTracker@gametest@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const sSuccessfulTest;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $sFailedOptionalTest() { return sFailedOptionalTest; }
-
-    static auto& $sFailedRequiredTest() { return sFailedRequiredTest; }
-
-    static auto& $sNotStartedTest() { return sNotStartedTest; }
-
-    static auto& $sOnGoingTest() { return sOnGoingTest; }
-
-    static auto& $sSuccessfulTest() { return sSuccessfulTest; }
 
     // NOLINTEND
 };

@@ -17,6 +17,9 @@ public:
     // vIndex: 0, symbol: __gen_??1SimpleBlockVolumeIterator@@UEAA@XZ
     virtual ~SimpleBlockVolumeIterator() = default;
 
+    // vIndex: 2, symbol: ?isValid@SimpleBlockVolumeIterator@@UEBA_NXZ
+    virtual bool isValid() const;
+
     // symbol: ??0SimpleBlockVolumeIterator@@QEAA@AEBVSimpleBlockVolume@@_N@Z
     MCAPI SimpleBlockVolumeIterator(class SimpleBlockVolume const&, bool begin);
 

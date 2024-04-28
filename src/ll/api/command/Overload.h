@@ -41,7 +41,7 @@ class Overload : private OverloadData {
             }
             hasName = true;
 
-            using OriginalType = std::remove_cvref_t<decltype(val)>;
+            using OriginalType = std::remove_cvref_t<decltype((val))>;
 
             using RemoveOptionalType = remove_optional_t<OriginalType>;
 
@@ -82,7 +82,8 @@ class Overload : private OverloadData {
         return *this;
     }
 
-    explicit Overload(CommandHandle& handle) : OverloadData(handle) {}
+    explicit Overload(CommandHandle& handle, std::weak_ptr<plugin::Plugin> plugin)
+    : OverloadData(handle, std::move(plugin)) {}
 
 public:
     [[nodiscard]] constexpr Overload& optional(std::string_view name) {
@@ -97,29 +98,42 @@ public:
         addTextImpl(text, (int)PlaceholderOffset);
         return *this;
     }
-
-    [[nodiscard]] constexpr Overload& postfix(std::string_view postfix) {
-        back().mEnumNameOrPostfix = addPostfix(postfix);
-        back().mParamType         = CommandParameterDataType::Postfix;
-        return *this;
-    }
-    [[nodiscard]] constexpr Overload& option(CommandParameterOption option) {
-        back().addOptions(option);
-        return *this;
-    }
-    [[nodiscard]] constexpr Overload& deoption(CommandParameterOption option) {
-        back().mOptions = (CommandParameterOption)((uchar)(back().mOptions) & (!(uchar)option));
-        return *this;
-    }
     template <class Fn>
     [[nodiscard]] constexpr Overload& modify(Fn&& fn) {
         std::forward<Fn>(fn)(back());
         return *this;
     }
 
+    [[nodiscard]] constexpr Overload& postfix(std::string_view postfix) {
+        return modify([&](auto&& val) {
+            val.mEnumNameOrPostfix = storeStr(postfix);
+            val.mParamType         = CommandParameterDataType::Postfix;
+        });
+    }
+    [[nodiscard]] constexpr Overload& option(CommandParameterOption option) {
+        return modify([&](auto&& val) { val.addOptions(option); });
+    }
+    [[nodiscard]] constexpr Overload& deoption(CommandParameterOption option) {
+        return modify([&](auto&& val) {
+            val.mOptions = (CommandParameterOption)((uchar)(val.mOptions) & (!(uchar)option));
+        });
+        return *this;
+    }
+
     template <auto Executor>
-    void constexpr execute() {
-        setFactory(&Command<Params, Executor>::make);
+    [[deprecated("deprecated: please put the function as a parameter in the bracket")]] void constexpr execute() {
+        using E = std::remove_cvref_t<decltype((Executor))>;
+        setFactory([&]() -> std::unique_ptr<::Command> {
+            return std::unique_ptr<Command<Params, E>>(new Command<Params, E>{Executor});
+        });
+    }
+
+    template <class Fn>
+    void constexpr execute(Fn&& fn) {
+        using E = std::remove_cvref_t<Fn>;
+        setFactory([fn = std::forward<Fn>(fn)]() -> std::unique_ptr<::Command> {
+            return std::unique_ptr<Command<Params, E>>(new Command<Params, E>{fn});
+        });
     }
 };
 } // namespace ll::command

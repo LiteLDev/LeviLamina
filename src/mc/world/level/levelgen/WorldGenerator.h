@@ -158,17 +158,10 @@ public:
 
     // NOLINTEND
 
-protected:
+    // protected:
     // NOLINTBEGIN
     // symbol: ?TICKING_QUEUE_PASS_LIMIT@WorldGenerator@@1_KB
     MCAPI static uint64 const TICKING_QUEUE_PASS_LIMIT;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $TICKING_QUEUE_PASS_LIMIT() { return TICKING_QUEUE_PASS_LIMIT; }
 
     // NOLINTEND
 };

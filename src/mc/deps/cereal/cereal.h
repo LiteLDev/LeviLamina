@@ -38,7 +38,6 @@ namespace cereal::internal { struct ExtendedSchemaInfo; }
 namespace cereal::internal { struct ReflectionContext; }
 namespace cereal::internal { struct Schema; }
 namespace cereal::internal { struct SchemaInfo; }
-namespace cereal::internal { struct SchemaName; }
 // clang-format on
 
 namespace cereal {
@@ -51,8 +50,8 @@ MCAPI std::string const* documentation(entt::meta_type const&);
 // ?documentation@cereal@@YAPEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVmeta_type@entt@@I@Z
 MCAPI std::string const* documentation(entt::meta_type const&, uint);
 
-// symbol: ?enttHash@cereal@@YAIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-MCAPI uint enttHash(std::string const&);
+// symbol: ?enttHash@cereal@@YAIV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+MCAPI uint enttHash(std::string_view);
 
 // symbol: ?fillOptional@cereal@@YA?AVmeta_any@entt@@AEAV23@@Z
 MCAPI entt::meta_any fillOptional(entt::meta_any&);
@@ -66,20 +65,19 @@ MCAPI class cereal::SerializerEnumMapping const*
 getEnumMapping(struct cereal::ReflectionCtx const&, entt::meta_type const&, uint);
 
 // symbol:
-// ?getName@cereal@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUReflectionCtx@1@AEBVmeta_type@entt@@I@Z
-MCAPI std::string getName(struct cereal::ReflectionCtx const&, entt::meta_type const&, uint);
+// ?getName@cereal@@YA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBUReflectionCtx@1@AEBVmeta_type@entt@@I@Z
+MCAPI std::string_view getName(struct cereal::ReflectionCtx const&, entt::meta_type const&, uint);
 
-// symbol:
-// ?getSchemaDescription@cereal@@YA?AUSchemaDescription@1@AEBUReflectionCtx@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-MCAPI struct cereal::SchemaDescription getSchemaDescription(struct cereal::ReflectionCtx const&, std::string const&);
+// symbol: ?getSchemaDescription@cereal@@YA?AUSchemaDescription@1@AEBUReflectionCtx@1@I@Z
+MCAPI struct cereal::SchemaDescription getSchemaDescription(struct cereal::ReflectionCtx const&, uint);
 
 // symbol:
 // ?getSchemaDescriptions@cereal@@YA?AV?$vector@USchemaDescription@cereal@@V?$allocator@USchemaDescription@cereal@@@std@@@std@@AEBUReflectionCtx@1@@Z
 MCAPI std::vector<struct cereal::SchemaDescription> getSchemaDescriptions(struct cereal::ReflectionCtx const&);
 
 // symbol:
-// ?getSchemaName@cereal@@YAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUReflectionCtx@1@AEBVmeta_type@entt@@@Z
-MCAPI std::string const& getSchemaName(struct cereal::ReflectionCtx const&, entt::meta_type const&);
+// ?getSchemaName@cereal@@YA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBUReflectionCtx@1@AEBVmeta_type@entt@@@Z
+MCAPI std::string_view getSchemaName(struct cereal::ReflectionCtx const&, entt::meta_type const&);
 
 // symbol: ?isOptional@cereal@@YA_NAEBVmeta_type@entt@@@Z
 MCAPI bool isOptional(entt::meta_type const&);

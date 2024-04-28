@@ -42,9 +42,9 @@ enum class CommandFlagValue : ushort {
 
 struct CommandFlag {
 public:
-    enum class CommandFlagValue value;
+    CommandFlagValue value;
 
-    CommandFlag(CommandFlagValue const& value) : value(value) {} // NOLINT
+    CommandFlag(CommandFlagValue value) : value(value) {} // NOLINT
 
     [[nodiscard]] constexpr bool operator==(CommandFlag const& rhs) const noexcept { return value == rhs.value; }
     [[nodiscard]] constexpr bool operator!=(CommandFlag const& rhs) const noexcept { return value != rhs.value; }
@@ -52,8 +52,13 @@ public:
         value = rhs.value | value;
         return *this;
     }
-    CommandFlag& operator|=(CommandFlagValue const& rhs) {
+    CommandFlag& operator|=(CommandFlagValue rhs) {
         value = rhs | value;
+        return *this;
+    }
+
+    CommandFlag& remove(CommandFlagValue rhs) {
+        value = (CommandFlagValue)((ushort)value & !(ushort)rhs);
         return *this;
     }
 };

@@ -114,7 +114,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?BIG_RUIN_LOOT@OceanRuinPieces@@0V?$basic_string_view@DU?$char_traits@D@std@@@std@@A
     MCAPI static std::string_view BIG_RUIN_LOOT;
@@ -160,41 +160,6 @@ private:
 
     // symbol: ?warmRuins@OceanRuinPieces@@0PAV?$basic_string_view@DU?$char_traits@D@std@@@std@@A
     MCAPI static std::string_view warmRuins[];
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $BIG_RUIN_LOOT() { return BIG_RUIN_LOOT; }
-
-    static auto& $RUIN_LOOT() { return RUIN_LOOT; }
-
-    static auto& $STRUCTURE_BIG_RUIN1_BRICK() { return STRUCTURE_BIG_RUIN1_BRICK; }
-
-    static auto& $STRUCTURE_BIG_RUIN8_BRICK() { return STRUCTURE_BIG_RUIN8_BRICK; }
-
-    static auto& $STRUCTURE_RUIN_2_BRICK() { return STRUCTURE_RUIN_2_BRICK; }
-
-    static auto& $STRUCTURE_RUIN_3_BRICK() { return STRUCTURE_RUIN_3_BRICK; }
-
-    static auto& $bigRuinsBrick() { return bigRuinsBrick; }
-
-    static auto& $bigRuinsCracked() { return bigRuinsCracked; }
-
-    static auto& $bigRuinsMossy() { return bigRuinsMossy; }
-
-    static auto& $bigWarmRuins() { return bigWarmRuins; }
-
-    static auto& $mSettings() { return mSettings; }
-
-    static auto& $ruinsBrick() { return ruinsBrick; }
-
-    static auto& $ruinsCracked() { return ruinsCracked; }
-
-    static auto& $ruinsMossy() { return ruinsMossy; }
-
-    static auto& $warmRuins() { return warmRuins; }
 
     // NOLINTEND
 };

@@ -72,6 +72,9 @@ public:
     // ?getPassengerCanInteract@ScriptRideableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_N$$V@Scripting@@XZ
     MCAPI class Scripting::Result<bool> getPassengerCanInteract() const;
 
+    // symbol: ?getPassengerMaxWidth@ScriptRideableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@M$$V@Scripting@@XZ
+    MCAPI class Scripting::Result<float> getPassengerMaxWidth() const;
+
     // symbol: ?getPullInEntities@ScriptRideableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_N$$V@Scripting@@XZ
     MCAPI class Scripting::Result<bool> getPullInEntities() const;
 

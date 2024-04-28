@@ -4,8 +4,8 @@
 
 namespace ActorData {
 // NOLINTBEGIN
-// symbol: ?getMovementActorFlagsMask@ActorData@@YAAEBV?$bitset@$0HG@@std@@XZ
-MCAPI std::bitset<118> const& getMovementActorFlagsMask();
+// symbol: ?getMovementActorFlagsMask@ActorData@@YAAEBV?$bitset@$0HH@@std@@XZ
+MCAPI std::bitset<119> const& getMovementActorFlagsMask();
 // NOLINTEND
 
 }; // namespace ActorData

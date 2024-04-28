@@ -47,18 +47,11 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?mRealmEventInternalNames@RealmsStoriesData@@0V?$map@W4RealmEventId@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@W4RealmEventId@@@3@V?$allocator@U?$pair@$$CBW4RealmEventId@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@3@@std@@B
     MCAPI static std::map<::RealmEventId, std::string> const mRealmEventInternalNames;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mRealmEventInternalNames() { return mRealmEventInternalNames; }
 
     // NOLINTEND
 };
