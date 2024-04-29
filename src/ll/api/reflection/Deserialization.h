@@ -14,7 +14,9 @@ namespace ll::reflection {
 
 template <class T, class J>
 [[nodiscard]] inline Expected<> deserialize(T& t, J&& j) noexcept
+#if !defined(__INTELLISENSE__)
     requires(requires(T& t, J&& j) { deserialize_impl<T>(t, std::forward<J>(j), meta::PriorityTag<4>{}); })
+#endif
 try {
     return deserialize_impl<T>(t, std::forward<J>(j), meta::PriorityTag<4>{});
 } catch (...) {

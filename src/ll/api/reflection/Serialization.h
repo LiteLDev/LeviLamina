@@ -14,7 +14,9 @@ namespace ll::reflection {
 
 template <class J, class T>
 [[nodiscard]] inline Expected<J> serialize(T&& t) noexcept
+#if !defined(__INTELLISENSE__)
     requires(requires(T&& t) { serialize_impl<J>(std::forward<T>(t), meta::PriorityTag<4>{}); })
+#endif
 try {
     return serialize_impl<J>(std::forward<T>(t), meta::PriorityTag<4>{});
 } catch (...) {
