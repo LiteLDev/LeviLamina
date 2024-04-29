@@ -28,6 +28,7 @@ template <class J, class T>
     } else {
         return forwardError(res.error());
     }
+    return {};
 }
 
 template <class J, class T>

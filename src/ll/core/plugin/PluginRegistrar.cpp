@@ -343,13 +343,12 @@ Expected<> PluginRegistrar::enablePlugin(std::string_view name) noexcept {
     std::lock_guard lock(impl->mutex);
     auto&           registry   = PluginManagerRegistry::getInstance();
     auto            dependents = impl->deps.dependentOn(std::string{name});
-    for (auto iter = dependents.begin(); iter != dependents.end(); ++iter) {
-        if (auto ptr = registry.getPlugin(*iter)) {
-            if (ptr->isEnabled()) {
-                iter = dependents.erase(iter);
-            }
+    std::erase_if(dependents, [&](auto& name) {
+        if (auto ptr = registry.getPlugin(name); ptr) {
+            return ptr->isEnabled();
         }
-    }
+        return false;
+    });
     if (!dependents.empty()) {
         return makeStringError("Dependency {0} of {1} is not enabled"_tr(dependents, name));
     }
@@ -359,14 +358,12 @@ Expected<> PluginRegistrar::disablePlugin(std::string_view name) noexcept {
     std::lock_guard lock(impl->mutex);
     auto&           registry   = PluginManagerRegistry::getInstance();
     auto            dependents = impl->deps.dependentBy(std::string{name});
-
-    for (auto iter = dependents.begin(); iter != dependents.end(); ++iter) {
-        if (auto ptr = registry.getPlugin(*iter)) {
-            if (ptr->isDisabled()) {
-                iter = dependents.erase(iter);
-            }
+    std::erase_if(dependents, [&](auto& name) {
+        if (auto ptr = registry.getPlugin(name); ptr) {
+            return ptr->isDisabled();
         }
-    }
+        return true;
+    });
     if (!dependents.empty()) {
         return makeStringError("{0} still depends on {1}"_tr(dependents, name));
     }

@@ -142,3 +142,6 @@ public:
 
     // NOLINTEND
 };
+
+// symbol: ?getI18n@@YAAEAVI18n@@XZ
+MCAPI I18n& getI18n();

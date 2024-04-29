@@ -7,7 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.12.0] - 2024-04-13
+## [0.12.1] - 2024-04-29
+
+### Added
+
+- Add i18n getter
+
+### Changed
+
+- Refactoring resolveSymbol
+
+### Fixed
+
+- Fix serialize_to return value
+- Remove constexpr to fix clang-tidy
+- Fix plugin dependency
+
+## [0.12.0] - 2024-04-28
+
+### Added
+
+- Adapted to BDS version 1.20.8x @Lovelylavender4
 
 ### Changed
 
@@ -475,7 +495,8 @@ For lip and tooth-hub test only.
 [#1499]: https://github.com/LiteLDev/LeviLamina/issues/1499
 [#1502]: https://github.com/LiteLDev/LeviLamina/issues/1502
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.12.0...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.12.1...HEAD
+[0.12.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.12.0...v0.12.1
 [0.12.0]: https://github.com/LiteLDev/LeviLamina/compare/v0.11.1...v0.12.0
 [0.11.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.11.0...v0.11.1
 [0.11.0]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.5...v0.11.0
