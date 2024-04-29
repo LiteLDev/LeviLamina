@@ -29,14 +29,20 @@ public:
         Mansion          = 0xE,
         Monument         = 0xF,
         NoDraw           = 0x10,
-        Count            = 0x11,
-
-        Player          = 0x0,
-        PlayerOffMap    = 0x6,
-        PlayerOffLimits = 0xD,
-        PlayerHidden    = 0x10,
-
-        ItemFrame = 0x1,
+        VillageDesert    = 0x11,
+        VillagePlains    = 0x12,
+        VillageSavanna   = 0x13,
+        VillageSnowy     = 0x14,
+        VillageTaiga     = 0x15,
+        JungleTemple     = 0x16,
+        WitchHut         = 0x17,
+        TrialChambers    = 0x18,
+        Count            = 0x19,
+        Player           = MarkerWhite,
+        PlayerOffMap     = SquareWhite,
+        PlayerOffLimits  = SmallSquareWhite,
+        PlayerHidden     = NoDraw,
+        ItemFrame        = MarkerGreen,
     };
 
 public:
