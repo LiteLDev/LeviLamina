@@ -35,7 +35,7 @@ public:
     _EXCEPTION_POINTERS* getExceptionPointer() const noexcept { return expPtr; }
 };
 
-struct UntypedException {
+struct UntypedExceptionRef {
     static constexpr uint msc                = 0x6D7363; // 'msc'
     static constexpr uint exceptionCodeOfCpp = (msc | 0xE0000000);
 
@@ -45,7 +45,9 @@ struct UntypedException {
     RealInternal::ThrowInfo const* throwInfo = nullptr;
     _CatchableTypeArray const*     cArray    = nullptr;
 
-    LLNDAPI explicit UntypedException(::_EXCEPTION_RECORD const& er);
+    LLNDAPI explicit UntypedExceptionRef(std::exception_ptr const& ptr);
+
+    LLNDAPI explicit UntypedExceptionRef(::_EXCEPTION_RECORD const& er);
 
     [[nodiscard]] uint getNumCatchableTypes() const { return cArray ? cArray->nCatchableTypes : 0u; }
 
@@ -62,6 +64,15 @@ struct UntypedException {
     template <class T>
     [[nodiscard]] T rva2va(auto addr) const {
         return reinterpret_cast<T>((uintptr_t)handle + (uintptr_t)(addr));
+    }
+    template <class T>
+    [[nodiscard]] optional_ref<T> tryGet() const {
+        for (uint i = 0, e = getNumCatchableTypes(); i < e; i++) {
+            if ((*getTypeInfo(i)) == typeid(T)) {
+                return reinterpret_cast<T*>(reinterpret_cast<char*>(exceptionObject) + getThisDisplacement(i));
+            }
+        }
+        return nullptr;
     }
 };
 
