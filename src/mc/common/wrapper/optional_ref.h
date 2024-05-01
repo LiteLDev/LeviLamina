@@ -97,26 +97,79 @@ public:
     }
 
     template <class... Types>
-    constexpr auto operator()(Types&&... args) const noexcept(noexcept(std::invoke(*mPtr, static_cast<Types&&>(args)...)
-    )) -> decltype(std::invoke(*mPtr, static_cast<Types&&>(args)...)) {
-        return std::invoke(*mPtr, static_cast<Types&&>(args)...);
+    constexpr decltype(auto) operator()(Types&&... args) const
+        noexcept(noexcept(std::invoke(get(), static_cast<Types&&>(args)...))) {
+        return (std::invoke(get(), static_cast<Types&&>(args)...));
     }
     template <class Arg>
     [[nodiscard]] constexpr decltype(auto) operator[](Arg&& index) const {
-        return get()[std::forward<Arg>(index)];
+        return (get()[std::forward<Arg>(index)]);
     }
-    [[nodiscard]] constexpr decltype(auto) end() { return get().end(); }
-    [[nodiscard]] constexpr decltype(auto) begin() { return get().begin(); }
-    [[nodiscard]] constexpr decltype(auto) end() const { return get().end(); }
-    [[nodiscard]] constexpr decltype(auto) begin() const { return get().begin(); }
-    [[nodiscard]] constexpr decltype(auto) cend() const { return get().cend(); }
-    [[nodiscard]] constexpr decltype(auto) cbegin() const { return get().cbegin(); }
-    [[nodiscard]] constexpr decltype(auto) rend() { return get().rend(); }
-    [[nodiscard]] constexpr decltype(auto) rbegin() { return get().rbegin(); }
-    [[nodiscard]] constexpr decltype(auto) rend() const { return get().rend(); }
-    [[nodiscard]] constexpr decltype(auto) rbegin() const { return get().rbegin(); }
-    [[nodiscard]] constexpr decltype(auto) crend() const { return get().crend(); }
-    [[nodiscard]] constexpr decltype(auto) crbegin() const { return get().crbegin(); }
+    [[nodiscard]] constexpr decltype(auto) end() { return (get().end()); }
+    [[nodiscard]] constexpr decltype(auto) begin() { return (get().begin()); }
+    [[nodiscard]] constexpr decltype(auto) end() const { return (get().end()); }
+    [[nodiscard]] constexpr decltype(auto) begin() const { return (get().begin()); }
+    [[nodiscard]] constexpr decltype(auto) cend() const { return (get().cend()); }
+    [[nodiscard]] constexpr decltype(auto) cbegin() const { return (get().cbegin()); }
+    [[nodiscard]] constexpr decltype(auto) rend() { return (get().rend()); }
+    [[nodiscard]] constexpr decltype(auto) rbegin() { return (get().rbegin()); }
+    [[nodiscard]] constexpr decltype(auto) rend() const { return (get().rend()); }
+    [[nodiscard]] constexpr decltype(auto) rbegin() const { return (get().rbegin()); }
+    [[nodiscard]] constexpr decltype(auto) crend() const { return (get().crend()); }
+    [[nodiscard]] constexpr decltype(auto) crbegin() const { return (get().crbegin()); }
+
+    template <class Fn>
+    constexpr auto and_then(Fn&& fn) & {
+        using Ret = std::invoke_result_t<Fn, T&>;
+        if (has_value()) {
+            return std::invoke(std::forward<Fn>(fn), static_cast<T&>(*mPtr));
+        } else {
+            return std::remove_cvref_t<Ret>{};
+        }
+    }
+    template <class Fn>
+    constexpr auto and_then(Fn&& fn) const& {
+        using Ret = std::invoke_result_t<Fn, T const&>;
+        if (has_value()) {
+            return std::invoke(std::forward<Fn>(fn), static_cast<T const&>(*mPtr));
+        } else {
+            return std::remove_cvref_t<Ret>{};
+        }
+    }
+    template <class Fn>
+    constexpr auto and_then(Fn&& fn) && {
+        using Ret = std::invoke_result_t<Fn, T>;
+        if (has_value()) {
+            return std::invoke(std::forward<Fn>(fn), static_cast<T&&>(*mPtr));
+        } else {
+            return std::remove_cvref_t<Ret>{};
+        }
+    }
+    template <class Fn>
+    constexpr auto and_then(Fn&& fn) const&& {
+        using Ret = std::invoke_result_t<Fn, T const>;
+        if (has_value()) {
+            return std::invoke(std::forward<Fn>(fn), static_cast<T const&&>(*mPtr));
+        } else {
+            return std::remove_cvref_t<Ret>{};
+        }
+    }
+    template <std::invocable<> Fn>
+    constexpr auto or_else(Fn&& fn) const& -> std::invoke_result_t<Fn> {
+        if (has_value()) {
+            return *this;
+        } else {
+            return std::forward<Fn>(fn)();
+        }
+    }
+    template <std::invocable<> Fn>
+    constexpr auto or_else(Fn&& fn) && -> std::invoke_result_t<Fn> {
+        if (has_value()) {
+            return std::move(*this);
+        } else {
+            return std::forward<Fn>(fn)();
+        }
+    }
 };
 // NOLINTEND
 template <typename T>
