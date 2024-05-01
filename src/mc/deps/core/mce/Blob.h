@@ -31,7 +31,7 @@ public:
     pointer_type mBlob{}; // this+0x0
     size_type    mSize{}; // this+0x10
 
-    [[nodiscard]] _ Blob() = default;
+    [[nodiscard]] _CONSTEXPR23 Blob() = default;
 
     [[nodiscard]] _CONSTEXPR23 Blob(std::span<uchar> s, Deleter deleter = {}) : mSize(s.size()) { // NOLINT
         mBlob = pointer_type(new value_type[mSize], deleter);
