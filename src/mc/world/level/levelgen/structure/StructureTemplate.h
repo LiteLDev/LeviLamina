@@ -21,7 +21,9 @@ public:
     StructureTemplateData                               mStructureTemplateData; // this+0x28
     uchar                                               mStructureVersion;      // this+0xD8
     Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry> mUnknownBlockRegistry;  // this+0xE0
-    uchar                                               mUnknown;
+    uchar                                               mUnknown0;
+    uchar                                               mUnknown1;
+    uchar                                               mUnknown2;
 
     inline bool load(class CompoundTag const& nbt) { return mStructureTemplateData.load(nbt); }
 
