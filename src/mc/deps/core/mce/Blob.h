@@ -31,14 +31,14 @@ public:
     pointer_type mBlob{}; // this+0x0
     size_type    mSize{}; // this+0x10
 
-    [[nodiscard]] _CONSTEXPR23 Blob() = default;
+    [[nodiscard]] _ Blob() = default;
 
     [[nodiscard]] _CONSTEXPR23 Blob(std::span<uchar> s, Deleter deleter = {}) : mSize(s.size()) { // NOLINT
         mBlob = pointer_type(new value_type[mSize], deleter);
         std::copy(s.begin(), s.end(), mBlob.get());
     }
 
-    [[nodiscard]] constexpr pointer data() const { return mBlob.get(); }
+    [[nodiscard]] _CONSTEXPR23 pointer data() const { return mBlob.get(); }
 
     [[nodiscard]] constexpr size_type size() const { return mSize; }
 
