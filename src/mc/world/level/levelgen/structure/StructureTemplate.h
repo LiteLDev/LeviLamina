@@ -14,6 +14,7 @@
 
 class BlockSource;
 class BlockPos;
+class Block;
 
 class StructureTemplate {
 public:
@@ -21,9 +22,9 @@ public:
     StructureTemplateData                               mStructureTemplateData; // this+0x28
     uchar                                               mStructureVersion;      // this+0xD8
     Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry> mUnknownBlockRegistry;  // this+0xE0
-    uchar                                               mUnknown0;
-    uchar                                               mUnknown1;
-    uchar                                               mUnknown2;
+    uchar                                               mRemovable;             // this+0xF0
+    std::map<Block const*, int>                         mUnknown0;              // this+0xF8
+    uchar                                               mUnoptimized;           // this+0x108
 
     inline bool load(class CompoundTag const& nbt) { return mStructureTemplateData.load(nbt); }
 
