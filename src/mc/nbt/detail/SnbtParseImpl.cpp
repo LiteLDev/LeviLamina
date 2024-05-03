@@ -4,7 +4,7 @@
 #include "mc/nbt/detail/SnbtErrorCode.h"
 
 namespace ll::nbt::detail {
-Expected<CompoundTagVariant> parseSnbtValue(std::string_view& s);
+Expected<CompoundTagVariant> parseSnbtValue(std::string_view& s) noexcept;
 Expected<CompoundTagVariant> parseSnbtValueNonSkip(std::string_view& s);
 
 Unexpected makeSnbtError(SnbtErrorCode);
@@ -666,7 +666,7 @@ Expected<CompoundTagVariant> parseSnbtValueNonSkip(std::string_view& s) {
     }
     return parseString(s);
 }
-Expected<CompoundTagVariant> parseSnbtValue(std::string_view& s) {
+Expected<CompoundTagVariant> parseSnbtValue(std::string_view& s) noexcept try {
     if (auto skipped = skipWhitespace(s); !skipped) {
         return forwardError(skipped.error());
     }
@@ -678,5 +678,7 @@ Expected<CompoundTagVariant> parseSnbtValue(std::string_view& s) {
         return forwardError(skipped.error());
     }
     return res;
+} catch (...) {
+    return ll::makeExceptionError();
 }
 } // namespace ll::nbt::detail

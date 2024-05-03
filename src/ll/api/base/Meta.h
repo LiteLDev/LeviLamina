@@ -27,38 +27,37 @@ struct VisitStrategy<N, -1> {
             {std::forward<T>(t), std::forward<Ts>(ts)...}
         };
     }
-    template <class Fn, size_t I>
-    static constexpr decltype(auto) invokeVisitor(Fn&& fn) {
-        return std::forward<Fn>(fn).template operator()<I>();
+    template <class Ret, class Fn, size_t I, class... Args>
+    static constexpr Ret invokeVisitor(Fn&& fn, Args&&... args) {
+        return std::forward<Fn>(fn).template operator()<I>(std::forward<Args>(args)...);
     }
 
-    template <class Fn, size_t... Ns>
+    template <class Ret, class Fn, class... Args, size_t... Ns>
     static constexpr decltype(auto) makeCallers(std::integer_sequence<size_t, Ns...>) {
-        return makeVisitorArray(&invokeVisitor<Fn, Ns>...);
+        return makeVisitorArray(&invokeVisitor<Ret, Fn, Ns, Args...>...);
     }
+    template <class Ret, class Fn, class... Args>
+    static constexpr decltype(auto) callers = makeCallers<Ret, Fn, Args...>(std::make_index_sequence<N>());
 
-    template <class Fn>
-    static constexpr auto callers = makeCallers<Fn>(std::make_index_sequence<N>());
-
-    template <class Fn>
-    static constexpr decltype(auto) impl(size_t idx, Fn&& fn) { // dispatch a visitation with many potential states
+    template <class Ret, class Fn, class... Args>
+    static constexpr Ret impl(size_t idx, Fn&& fn, Args&&... args) { // dispatch a visitation with many potential states
         static_assert(N > 256);
-        return callers<Fn>[idx](std::forward<Fn>(fn));
+        return callers<Ret, Fn, Args...>[idx](std::forward<Fn>(fn), std::forward<Args>(args)...);
     }
 };
 
 template <size_t N>
 struct VisitStrategy<N, 0> {
-    template <class Fn>
-    static constexpr decltype(auto) impl(size_t, Fn&& fn) { // dispatch a visitation with 4^0 potential states
-        return std::forward<Fn>(fn).template operator()<0>();
+    template <class Ret, class Fn, class... Args>
+    static constexpr Ret impl(size_t idx, Fn&& fn, Args&&... args) { // dispatch a visitation with 4^0 potential states
+        return std::forward<Fn>(fn).template operator()<0>(std::forward<Args>(args)...);
     }
 };
 
 #define LL_VISIT_CASE(n)                                                                                               \
     case (n):                                                                                                          \
         if constexpr ((n) < N) {                                                                                       \
-            return std::forward<Fn>(fn).template operator()<(n)>();                                                    \
+            return std::forward<Fn>(fn).template operator()<(n)>(std::forward<Args>(args)...);                         \
         }                                                                                                              \
         _STL_UNREACHABLE;                                                                                              \
         [[fallthrough]]
@@ -96,8 +95,8 @@ struct VisitStrategy<N, 0> {
 
 template <size_t N>
 struct VisitStrategy<N, 1> {
-    template <class Fn>
-    static constexpr decltype(auto) impl(size_t idx, Fn&& fn) {
+    template <class Ret, class Fn, class... Args>
+    static constexpr Ret impl(size_t idx, Fn&& fn, Args&&... args) {
         // dispatch a visitation with 4^1 potential states
         LL_STAMP(4, LL_VISIT_STAMP);
     }
@@ -105,8 +104,8 @@ struct VisitStrategy<N, 1> {
 
 template <size_t N>
 struct VisitStrategy<N, 2> {
-    template <class Fn>
-    static constexpr decltype(auto) impl(size_t idx, Fn&& fn) {
+    template <class Ret, class Fn, class... Args>
+    static constexpr Ret impl(size_t idx, Fn&& fn, Args&&... args) {
         // dispatch a visitation with 4^2 potential states
         LL_STAMP(16, LL_VISIT_STAMP);
     }
@@ -114,8 +113,8 @@ struct VisitStrategy<N, 2> {
 
 template <size_t N>
 struct VisitStrategy<N, 3> {
-    template <class Fn>
-    static constexpr decltype(auto) impl(size_t idx, Fn&& fn) {
+    template <class Ret, class Fn, class... Args>
+    static constexpr Ret impl(size_t idx, Fn&& fn, Args&&... args) {
         // dispatch a visitation with 4^3 potential states
         LL_STAMP(64, LL_VISIT_STAMP);
     }
@@ -123,8 +122,8 @@ struct VisitStrategy<N, 3> {
 
 template <size_t N>
 struct VisitStrategy<N, 4> {
-    template <class Fn>
-    static constexpr decltype(auto) impl(size_t idx, Fn&& fn) {
+    template <class Ret, class Fn, class... Args>
+    static constexpr Ret impl(size_t idx, Fn&& fn, Args&&... args) {
         // dispatch a visitation with 4^4 potential states
         LL_STAMP(256, LL_VISIT_STAMP);
     }
@@ -137,6 +136,9 @@ struct VisitStrategy<N, 4> {
 #undef LL_STAMP64
 #undef LL_STAMP16
 #undef LL_STAMP4
+
+template <class Fn, class... Args>
+using VisitIndexResultT = decltype((std::declval<Fn>().template operator()<0>(std::declval<Args>()...)));
 
 template <class Group, auto Id>
 struct TypeCounter {
@@ -182,10 +184,22 @@ constexpr void unroll(Fn&& fn) {
     detail::unrollImpl(std::forward<Fn>(fn), std::make_index_sequence<N>());
 }
 
-template <size_t N, class Fn>
-constexpr decltype(auto) visitIndex(size_t index, Fn&& fn) {
+template <size_t N, class Fn, class... Args>
+constexpr decltype(auto) visitIndex(size_t index, Fn&& fn, Args&&... args) {
     constexpr int strategy = N == 1 ? 0 : N <= 4 ? 1 : N <= 16 ? 2 : N <= 64 ? 3 : N <= 256 ? 4 : -1;
-    return detail::VisitStrategy<N, strategy>::impl(index, std::forward<Fn>(fn));
+    using Strategy         = typename detail::VisitStrategy<N, strategy>;
+    return Strategy::template impl<detail::VisitIndexResultT<Fn, Args...>>(
+        index,
+        std::forward<Fn>(fn),
+        std::forward<Args>(args)...
+    );
+}
+
+template <class Ret, size_t N, class Fn, class... Args>
+constexpr Ret visitIndex(size_t index, Fn&& fn, Args&&... args) {
+    constexpr int strategy = N == 1 ? 0 : N <= 4 ? 1 : N <= 16 ? 2 : N <= 64 ? 3 : N <= 256 ? 4 : -1;
+    using Strategy         = typename detail::VisitStrategy<N, strategy>;
+    return Strategy::template impl<Ret>(index, std::forward<Fn>(fn), std::forward<Args>(args)...);
 }
 
 template <size_t N, class T, class... Types>

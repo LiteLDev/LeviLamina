@@ -2,7 +2,6 @@
 
 namespace ll::nbt::detail {
 enum class SnbtErrorCode : int {
-    NoError,
     NotTheExpectedType,
     UnexpectedEofEncountered,
     UnterminatedComment,

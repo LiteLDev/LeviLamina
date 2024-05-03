@@ -12,8 +12,6 @@ struct snbt_category : public std::error_category {
     [[nodiscard]] std::string message(int errCode) const override {
         using enum SnbtErrorCode;
         switch ((SnbtErrorCode)errCode) {
-        case NoError:
-            return "success"_tr();
         case NotTheExpectedType:
             return "Not the expected type"_tr();
         case UnexpectedEofEncountered:
@@ -55,7 +53,6 @@ struct snbt_category : public std::error_category {
 inline std::error_category const& snbt_category() noexcept {
     return std::_Immortalize_memcpy_image<struct snbt_category>();
 }
-
 ll::Unexpected makeSnbtError(SnbtErrorCode code) {
     return makeErrorCodeError(std::error_code{fmt::underlying(code), snbt_category()});
 }
