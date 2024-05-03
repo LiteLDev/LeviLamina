@@ -4,9 +4,10 @@
 #include "ll/api/reflection/SerializationError.h"
 
 // Priority:
-// 4. IsVectorBase IsDispatcher IsOptional
-// 3. string
-// 2. ArrayLike TupleLike Associative
+// 5. IsVectorBase IsDispatcher IsOptional
+// 4. string
+// 3. TupleLike
+// 2. ArrayLike Associative
 // 1. Reflectable enum
 // 0. convertible
 
@@ -15,10 +16,10 @@ namespace ll::reflection {
 template <class T, class J>
 [[nodiscard]] inline Expected<> deserialize(T& t, J&& j) noexcept
 #if !defined(__INTELLISENSE__)
-    requires(requires(T& t, J&& j) { deserialize_impl<T>(t, std::forward<J>(j), meta::PriorityTag<4>{}); })
+    requires(requires(T& t, J&& j) { deserialize_impl<T>(t, std::forward<J>(j), meta::PriorityTag<5>{}); })
 #endif
 try {
-    return deserialize_impl<T>(t, std::forward<J>(j), meta::PriorityTag<4>{});
+    return deserialize_impl<T>(t, std::forward<J>(j), meta::PriorityTag<5>{});
 } catch (...) {
     return makeExceptionError();
 }
@@ -33,7 +34,7 @@ template <class T, class J>
 }
 
 template <concepts::IsVectorBase T, class J>
-inline Expected<> deserialize_impl(T& vec, J&& j, meta::PriorityTag<4>) {
+inline Expected<> deserialize_impl(T& vec, J&& j, meta::PriorityTag<5>) {
     Expected<> res{};
     T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
         if (res) {
@@ -44,13 +45,13 @@ inline Expected<> deserialize_impl(T& vec, J&& j, meta::PriorityTag<4>) {
     return res;
 }
 template <concepts::IsDispatcher T, class J>
-inline Expected<> deserialize_impl(T& d, J&& j, meta::PriorityTag<4>) {
+inline Expected<> deserialize_impl(T& d, J&& j, meta::PriorityTag<5>) {
     auto res{deserialize<typename T::storage_type>(d.storage, std::forward<J>(j))};
     if (res) d.call();
     return res;
 }
 template <concepts::IsOptional T, class J>
-inline Expected<> deserialize_impl(T& opt, J&& j, meta::PriorityTag<4>) {
+inline Expected<> deserialize_impl(T& opt, J&& j, meta::PriorityTag<5>) {
     Expected<> res;
     if (j.is_null()) {
         opt = std::nullopt;
@@ -61,10 +62,32 @@ inline Expected<> deserialize_impl(T& opt, J&& j, meta::PriorityTag<4>) {
     return res;
 }
 template <concepts::IsString T, class J>
-inline Expected<> deserialize_impl(T& str, J&& j, meta::PriorityTag<3>) {
+inline Expected<> deserialize_impl(T& str, J&& j, meta::PriorityTag<4>) {
     if (!j.is_string()) return makeStringError("field must be a string");
     str = std::string{std::forward<J>(j)};
     return {};
+}
+template <concepts::TupleLike T, class J>
+inline Expected<> deserialize_impl(T& tuple, J&& j, meta::PriorityTag<3>) {
+    if (!j.is_array()) return makeStringError("field must be an array");
+    if (j.size() != std::tuple_size_v<T>)
+        return makeStringError(fmt::format("array size must be {}", std::tuple_size_v<T>));
+    Expected<> res{};
+    std::apply(
+        [&](auto&... args) {
+            size_t iter{0};
+            (([&](auto& arg) {
+                 if (res) {
+                     res = deserialize<std::remove_cvref_t<decltype(arg)>>(arg, static_cast<J&&>(j[iter]));
+                     if (!res) res = makeSerIndexError(iter, res.error());
+                     iter++;
+                 }
+             }(args)),
+             ...);
+        },
+        tuple
+    );
+    return res;
 }
 template <concepts::ArrayLike T, class J>
 inline Expected<> deserialize_impl(T& arr, J&& j, meta::PriorityTag<2>) {
@@ -89,38 +112,8 @@ inline Expected<> deserialize_impl(T& arr, J&& j, meta::PriorityTag<2>) {
             }
             arr.insert(std::move(tmp));
         }
-    } else if constexpr (requires(T a, size_t v) { a.at(v); }) {
-        if (j.size() != arr.size()) return makeStringError(fmt::format("array size must be {}", arr.size()));
-        for (size_t i = 0; i < arr.size(); i++) {
-            if (auto res = deserialize<value_type>(arr.at(i), static_cast<J&&>(j[i])); !res) {
-                res = makeSerIndexError(i, res.error());
-                return res;
-            }
-        }
     }
     return {};
-}
-template <concepts::TupleLike T, class J>
-inline Expected<> deserialize_impl(T& tuple, J&& j, meta::PriorityTag<2>) {
-    if (!j.is_array()) return makeStringError("field must be an array");
-    if (j.size() != std::tuple_size_v<T>)
-        return makeStringError(fmt::format("array size must be {}", std::tuple_size_v<T>));
-    Expected<> res{};
-    std::apply(
-        [&](auto&... args) {
-            size_t iter{0};
-            (([&](auto& arg) {
-                 if (res) {
-                     res = deserialize<std::remove_cvref_t<decltype(arg)>>(arg, static_cast<J&&>(j[iter]));
-                     if (!res) res = makeSerIndexError(iter, res.error());
-                     iter++;
-                 }
-             }(args)),
-             ...);
-        },
-        tuple
-    );
-    return res;
 }
 template <concepts::Associative T, class J>
 inline Expected<> deserialize_impl(T& map, J const& j, meta::PriorityTag<2>) {

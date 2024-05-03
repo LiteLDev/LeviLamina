@@ -188,11 +188,11 @@ template <size_t N, class Fn, class... Args>
 constexpr decltype(auto) visitIndex(size_t index, Fn&& fn, Args&&... args) {
     constexpr int strategy = N == 1 ? 0 : N <= 4 ? 1 : N <= 16 ? 2 : N <= 64 ? 3 : N <= 256 ? 4 : -1;
     using Strategy         = typename detail::VisitStrategy<N, strategy>;
-    return Strategy::template impl<detail::VisitIndexResultT<Fn, Args...>>(
+    return (Strategy::template impl<detail::VisitIndexResultT<Fn, Args...>>(
         index,
         std::forward<Fn>(fn),
         std::forward<Args>(args)...
-    );
+    ));
 }
 
 template <class Ret, size_t N, class Fn, class... Args>

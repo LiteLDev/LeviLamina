@@ -105,10 +105,10 @@ template <typename T>
 concept IsVectorBase = std::is_base_of_v<VectorBaseTag, T>;
 
 template <class T>
-concept TupleLike = !Rangeable<T> && requires(T t) {
-    std::tuple_size<std::remove_cvref_t<T>>::value;
-    std::get<0>(t);
-};
+concept TupleLike = std::_Tuple_like<T> || (!Rangeable<T> && requires(T t) {
+                        std::tuple_size<std::remove_cvref_t<T>>::value;
+                        std::get<0>(t);
+                    });
 
 template <class T>
 concept ArrayLike = Rangeable<T> && !requires { typename std::remove_cvref_t<T>::mapped_type; };
