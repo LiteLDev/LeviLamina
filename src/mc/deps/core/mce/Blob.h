@@ -38,11 +38,11 @@ public:
         std::copy(s.begin(), s.end(), mBlob.get());
     }
 
-    [[nodiscard]] constexpr pointer data() const { return mBlob.get(); }
+    [[nodiscard]] _CONSTEXPR23 pointer data() const { return mBlob.get(); }
 
-    [[nodiscard]] constexpr size_type size() const { return mSize; }
+    [[nodiscard]] _CONSTEXPR23 size_type size() const { return mSize; }
 
-    [[nodiscard]] constexpr std::span<uchar> view() const { return {data(), size()}; }
+    [[nodiscard]] _CONSTEXPR23 std::span<uchar> view() const { return {data(), size()}; }
 
     LL_CLANG_CEXPR Blob&       operator=(Blob&&) noexcept = default;
     [[nodiscard]] _CONSTEXPR23 Blob(Blob&&) noexcept      = default;

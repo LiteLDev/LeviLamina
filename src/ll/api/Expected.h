@@ -106,8 +106,21 @@ LLNDAPI Unexpected makeExceptionError(std::exception_ptr const& exc = std::curre
 
 namespace nonstd::expected_lite {
 template <>
-class bad_expected_access<::ll::Error> : public std::exception {
+class bad_expected_access<::ll::Error> : public bad_expected_access<void> {
+    ::ll::Error mError;
+    std::string mMessage;
+
 public:
-    explicit bad_expected_access(::ll::Error const& e) noexcept : std::exception(e.message().c_str()) {}
+    explicit bad_expected_access(::ll::Error const& e) noexcept : mError(e), mMessage(mError.message()) {}
+
+    char const* what() const noexcept override { return mMessage.c_str(); }
+
+    constexpr ::ll::Error& error() & { return mError; }
+
+    constexpr ::ll::Error const& error() const& { return mError; }
+
+    constexpr ::ll::Error&& error() && { return ::std::move(mError); }
+
+    constexpr ::ll::Error const&& error() const&& { return ::std::move(mError); }
 };
 } // namespace nonstd::expected_lite

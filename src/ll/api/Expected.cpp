@@ -54,7 +54,13 @@ struct ExceptionError : ErrorInfoBase {
 
 ErrorInfoBase::~ErrorInfoBase() = default;
 
-Unexpected makeExceptionError(std::exception_ptr const& exc) noexcept { return makeError<ExceptionError>(exc); }
+Unexpected makeExceptionError(std::exception_ptr const& exc) noexcept {
+    auto err = error_utils::UntypedExceptionRef(exc).tryGet<nonstd::bad_expected_access<Error>>();
+    if (err) {
+        return forwardError(err->error());
+    }
+    return makeError<ExceptionError>(exc);
+}
 
 struct ErrorList : ErrorInfoBase {
     std::vector<std::shared_ptr<ErrorInfoBase>> errors;

@@ -105,7 +105,7 @@ public:
         return true;
     }
 
-    void loadChunk(LevelChunk& levelchunk, bool forceImmediateReplacementDataLoad) {
+    void loadChunk(LevelChunk& levelchunk, bool /*forceImmediateReplacementDataLoad*/) {
         auto chunkPos = levelchunk.getPosition();
 
         auto            blockPos = BlockPos(chunkPos, 0);
@@ -125,20 +125,20 @@ public:
         levelchunk.changeState(ChunkState::Generating, ChunkState::Generated);
     }
 
-    std::optional<short> getPreliminarySurfaceLevel(DividedPos2d<4> worldPos) const { return -61; }
+    std::optional<short> getPreliminarySurfaceLevel(DividedPos2d<4> /*worldPos*/) const { return -61; }
 
     void prepareAndComputeHeights(
-        BlockVolume&        box,
-        ChunkPos const&     chunkPos,
+        BlockVolume& /*box*/,
+        ChunkPos const& /*chunkPos*/,
         std::vector<short>& ZXheights,
-        bool                factorInBeardsAndShavers,
-        int                 skipTopN
+        bool /*factorInBeardsAndShavers*/,
+        int /*skipTopN*/
     ) {
         auto heightMap = mPrototype.computeHeightMap();
         ZXheights.assign(heightMap->begin(), heightMap->end());
     }
 
-    void prepareHeights(BlockVolume& box, ChunkPos const& chunkPos, bool factorInBeardsAndShavers) {
+    void prepareHeights(BlockVolume& box, ChunkPos const& /*chunkPos*/, bool /*factorInBeardsAndShavers*/) {
         box = mPrototype;
     };
 

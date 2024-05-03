@@ -7,6 +7,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.12.3] - 2024-05-03
+
+### Added
+
+- Add helper function for optional_ref
+- Add convertion in Pos2d
+- Update header to 1.20.81.
+
+### Changed
+
+- Forward bad_expected_access
+
+### Fixed
+
+- Fix number range of CompoundTag::fromSnbt
+
+## [0.12.2] - 2024-05-01
+
+### Changed
+
+- Remove biome accessor
+
+### Fixed
+
+- Fix fake Intellisense error
+- Fix [#1520]
+- Fix StructureTemplate
+
 ## [0.12.1] - 2024-04-29
 
 ### Added
@@ -494,8 +522,11 @@ For lip and tooth-hub test only.
 [#1492]: https://github.com/LiteLDev/LeviLamina/issues/1492
 [#1499]: https://github.com/LiteLDev/LeviLamina/issues/1499
 [#1502]: https://github.com/LiteLDev/LeviLamina/issues/1502
+[#1520]: https://github.com/LiteLDev/LeviLamina/issues/1520
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.12.1...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.12.3...HEAD
+[0.12.3]: https://github.com/LiteLDev/LeviLamina/compare/v0.12.2...v0.12.3
+[0.12.2]: https://github.com/LiteLDev/LeviLamina/compare/v0.12.1...v0.12.2
 [0.12.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.12.0...v0.12.1
 [0.12.0]: https://github.com/LiteLDev/LeviLamina/compare/v0.11.1...v0.12.0
 [0.11.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.11.0...v0.11.1

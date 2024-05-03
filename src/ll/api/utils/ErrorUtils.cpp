@@ -20,7 +20,10 @@
 
 namespace ll::inline utils::error_utils {
 
-UntypedException::UntypedException(const EXCEPTION_RECORD& er)
+UntypedExceptionRef::UntypedExceptionRef(std::exception_ptr const& ptr)
+: UntypedExceptionRef(*(((std::shared_ptr<EXCEPTION_RECORD const>*)(&ptr))->get())) {}
+
+UntypedExceptionRef::UntypedExceptionRef(EXCEPTION_RECORD const& er)
 : exceptionObject(reinterpret_cast<void*>(er.ExceptionInformation[1])),
   exc(&er) {
     if (exc->NumberParameters >= 3) {
@@ -198,12 +201,12 @@ std::string makeExceptionString(std::exception_ptr ePtr) noexcept {
 
     nextNest:
 
-        auto& rt = *(std::shared_ptr<const EXCEPTION_RECORD>*)(&ePtr);
+        auto& rt = *(std::shared_ptr<EXCEPTION_RECORD const>*)(&ePtr);
 
-        if (rt->ExceptionCode == UntypedException::exceptionCodeOfCpp) {
+        if (rt->ExceptionCode == UntypedExceptionRef::exceptionCodeOfCpp) {
             try {
-                UntypedException exc{*rt};
-                std::string      handleName("unknown module");
+                UntypedExceptionRef exc{*rt};
+                std::string         handleName("unknown module");
 
                 std::wstring buffer(32767, '\0');
                 auto         size = GetModuleFileNameW((HMODULE)exc.handle, buffer.data(), 32767);
