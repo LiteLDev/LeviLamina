@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.12.3] - 2024-05-03
+
+### Added
+
+- Add helper function for optional_ref
+- Add convertion in Pos2d
+- Update header to 1.20.81.
+
+### Changed
+
+- Forward bad_expected_access
+
+### Fixed
+
+- Fix number range of CompoundTag::fromSnbt
+
 ## [0.12.2] - 2024-05-01
 
 ### Changed
