@@ -116,11 +116,11 @@ Expected<ldouble> stold(std::string_view const& s, size_t& n) {
 }
 template <class R, class T>
 Expected<CompoundTagVariant> checkRange(ldouble& num) {
-    if (std::numeric_limits<T>::min() <= num && num <= std::numeric_limits<T>::max()) {
+    if (std::numeric_limits<T>::lowest() <= num && num <= std::numeric_limits<T>::max()) {
         return R{(T)num};
     } else if constexpr (!std::is_floating_point_v<T>) {
         using unsigned_t = std::make_unsigned_t<T>;
-        if (std::numeric_limits<unsigned_t>::min() <= num && num <= std::numeric_limits<unsigned_t>::max()) {
+        if (std::numeric_limits<unsigned_t>::lowest() <= num && num <= std::numeric_limits<unsigned_t>::max()) {
             return R{(unsigned_t)num};
         }
     }
@@ -205,7 +205,7 @@ Expected<CompoundTagVariant> parseNumber(std::string_view& s) {
             break;
         }
     if (isInt) {
-        if (std::numeric_limits<int>::min() <= res && res <= std::numeric_limits<int>::max()) {
+        if (std::numeric_limits<int>::lowest() <= res && res <= std::numeric_limits<int>::max()) {
             return IntTag{(int)res};
         } else {
         }
