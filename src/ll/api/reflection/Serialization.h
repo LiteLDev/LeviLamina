@@ -76,14 +76,13 @@ inline Expected<J> serialize_impl(T&& arr, meta::PriorityTag<2>)
 {
     Expected<J> res{J::array()};
     size_t      iter{0};
-    for (auto&& val : arr) {
-        if (res) {
-            if (auto v = serialize<J>(std::forward<decltype((val))>(val)); v) {
-                res->push_back(*std::move(v));
-                iter++;
-            } else {
-                res = makeSerIndexError(iter, v.error());
-            }
+    for (auto&& val : std::forward<T>(arr)) {
+        if (auto v = serialize<J>(std::forward<decltype((val))>(val)); v) {
+            res->push_back(*std::move(v));
+            iter++;
+        } else {
+            res = makeSerIndexError(iter, v.error());
+            break;
         }
     }
     return res;
@@ -123,18 +122,17 @@ inline Expected<J> serialize_impl(T&& map, meta::PriorityTag<2>)
     );
     Expected<J> res{J::object()};
     for (auto&& [k, v] : map) {
-        if (res) {
-            std::string key;
-            if constexpr (std::is_enum_v<typename RT::key_type>) {
-                key = magic_enum::enum_name(std::forward<decltype((k))>(k));
-            } else {
-                key = std::string{std::forward<decltype((k))>(k)};
-            }
-            if (auto sv = serialize<J>(std::forward<decltype((v))>(v)); sv) {
-                (*res)[key] = *std::move(sv);
-            } else {
-                res = makeSerKeyError(key, sv.error());
-            }
+        std::string key;
+        if constexpr (std::is_enum_v<typename RT::key_type>) {
+            key = magic_enum::enum_name(std::forward<decltype((k))>(k));
+        } else {
+            key = std::string{std::forward<decltype((k))>(k)};
+        }
+        if (auto sv = serialize<J>(std::forward<decltype((v))>(v)); sv) {
+            (*res)[key] = *std::move(sv);
+        } else {
+            res = makeSerKeyError(key, sv.error());
+            break;
         }
     }
     return res;

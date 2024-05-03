@@ -81,8 +81,8 @@ concept IsOptional = !IsExpected<T> && requires(T o) {
 
 template <class T>
 concept Rangeable = requires(T t) {
-    { t.begin() } -> std::same_as<typename std::remove_cvref_t<T>::iterator>;
-    { t.end() } -> std::same_as<typename std::remove_cvref_t<T>::iterator>;
+    t.begin();
+    t.end();
 };
 
 template <class T>
