@@ -18,6 +18,9 @@ jobs:
         mode:
           - debug
           - release
+        use_mimalloc:
+          - true
+          - false
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
@@ -38,7 +41,7 @@ jobs:
           xmake repo -u
 
       - run: |
-          xmake f -a x64 -m ${{ matrix.mode }} -p windows -v -y
+          xmake f -a x64 -m ${{ matrix.mode }} -p windows -v -y --use_mimalloc=${{ matrix.use_mimalloc }}
 
       - run: |
           xmake -v -w -y
@@ -48,7 +51,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: levilamina-${{ matrix.mode }}-windows-x64-${{ github.sha }}
+          name: levilamina-${{ matrix.mode }}${{ matrix.use_mimalloc == 'true' && '-mimalloc' || '' }}-windows-x64-${{ github.sha }}
           path: |
             build/packages/l/levilamina/windows/x64/${{ matrix.mode }}/bin/
 
