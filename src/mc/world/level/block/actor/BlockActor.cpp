@@ -1,10 +1,11 @@
 #include "mc/world/level/block/actor/BlockActor.h"
 
-#include "mc/dataloadhelper/DefaultDataLoadHelper.h"
+#include "mc/dataloadhelper/NewUniqueIdsDataLoadHelper.h"
 #include "mc/nbt/CompoundTag.h"
 #include "mc/network/packet/BlockActorDataPacket.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/BlockSource.h"
+#include "mc/world/level/Level.h"
 #include "mc/world/level/block/actor/ChestBlockActor.h"
 #include "mc/world/level/dimension/Dimension.h"
 
@@ -43,11 +44,12 @@ void BlockActor::refresh(optional_ref<class BlockSource> blockSource) {
 }
 
 std::shared_ptr<BlockActor> BlockActor::create(class CompoundTag const& nbt) {
-    if (!ll::service::getLevel()) {
-        return nullptr;
-    }
-    DefaultDataLoadHelper dataLoadHelper{};
-    return loadStatic(ll::service::getLevel(), nbt, dataLoadHelper);
+    return ll::service::getLevel()
+        .transform([&](auto& level) {
+            NewUniqueIdsDataLoadHelper dataLoadHelper{level};
+            return loadStatic(level, nbt, dataLoadHelper);
+        })
+        .value_or(nullptr);
 }
 
 std::shared_ptr<BlockActor> BlockActor::create(class CompoundTag const& nbt, class BlockPos const& pos) {

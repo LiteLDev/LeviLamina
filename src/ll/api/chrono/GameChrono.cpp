@@ -21,10 +21,9 @@ LL_AUTO_TYPE_INSTANCE_HOOK(ServerClockTickHook, HookPriority::High, ServerLevel,
 }
 
 GameTickClock::time_point GameTickClock::now() noexcept {
-    if (!ll::service::getLevel()) {
-        return time_point::min();
-    }
-    return time_point(duration((int64)(ll::service::getLevel()->getCurrentTick().t)));
+    return ll::service::getLevel()
+        .transform([](auto& level) -> time_point { return time_point(duration((int64)(level.getCurrentTick().t))); })
+        .value_or(time_point::min());
 }
 
 } // namespace ll::chrono

@@ -114,7 +114,7 @@ public:
     [[nodiscard]] constexpr decltype(auto) crend() const { return (get().crend()); }
     [[nodiscard]] constexpr decltype(auto) crbegin() const { return (get().crbegin()); }
     template <class Fn>
-    constexpr auto and_then(Fn&& fn) const& {
+    constexpr auto and_then(Fn&& fn) const {
         using Ret = std::invoke_result_t<Fn, T&>;
         if (has_value()) {
             return std::invoke(std::forward<Fn>(fn), static_cast<T&>(*mPtr));
@@ -123,26 +123,32 @@ public:
         }
     }
     template <class Fn>
-    constexpr auto and_then(Fn&& fn) const&& {
-        using Ret = std::invoke_result_t<Fn, T>;
-        if (has_value()) {
-            return std::invoke(std::forward<Fn>(fn), static_cast<T&&>(*mPtr));
+    constexpr auto transform(Fn&& fn) const {
+        using Ret = std::invoke_result_t<Fn, T&>;
+        if constexpr (std::is_lvalue_reference_v<Ret> || std::is_pointer_v<Ret>) {
+            using UnwrapT = std::remove_pointer_t<std::remove_reference_t<Ret>>;
+            if (has_value()) {
+                return optional_ref<UnwrapT>{std::invoke(std::forward<Fn>(fn), static_cast<T&>(*mPtr))};
+            } else {
+                return optional_ref<UnwrapT>{};
+            }
         } else {
-            return std::remove_cvref_t<Ret>{};
+            using UnwrapT = std::remove_cv_t<Ret>;
+            if (has_value()) {
+                return std::optional<UnwrapT>{
+                    std::_Construct_from_invoke_result_tag{},
+                    std::forward<Fn>(fn),
+                    static_cast<T&>(*mPtr)
+                };
+            } else {
+                return std::optional<UnwrapT>{};
+            }
         }
     }
     template <std::invocable<> Fn>
-    constexpr auto or_else(Fn&& fn) const& -> std::invoke_result_t<Fn> {
+    constexpr auto or_else(Fn&& fn) const -> std::invoke_result_t<Fn> {
         if (has_value()) {
             return *this;
-        } else {
-            return std::forward<Fn>(fn)();
-        }
-    }
-    template <std::invocable<> Fn>
-    constexpr auto or_else(Fn&& fn) const&& -> std::invoke_result_t<Fn> {
-        if (has_value()) {
-            return std::move(*this);
         } else {
             return std::forward<Fn>(fn)();
         }
