@@ -10,6 +10,9 @@ jobs:
         mode:
           - debug
           - release
+        use_mimalloc:
+          - true
+          - false
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
@@ -30,7 +33,7 @@ jobs:
           xmake repo -u
 
       - run: |
-          xmake f -a x64 -m ${{ matrix.mode }} -p windows -v -y
+          xmake f -a x64 -m ${{ matrix.mode }} -p windows -v -y --use_mimalloc=${{ matrix.use_mimalloc }}
 
       - run: |
           xmake -v -w -y
@@ -40,7 +43,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: levilamina-${{ matrix.mode }}-windows-x64-${{ github.sha }}
+          name: levilamina-${{ matrix.mode }}${{ matrix.use_mimalloc == 'true' && '-mimalloc' || '' }}-windows-x64-${{ github.sha }}
           path: |
             build/packages/l/levilamina/windows/x64/${{ matrix.mode }}/bin/
 
@@ -79,29 +82,32 @@ jobs:
         mode:
           - debug
           - release
+        use_mimalloc:
+          - true
+          - false
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/download-artifact@v4
         with:
-          name: levilamina-${{ matrix.mode }}-windows-x64-${{ github.sha }}
+          name: levilamina-${{ matrix.mode }}${{ matrix.use_mimalloc == 'true' && '-mimalloc' || '' }}-windows-x64-${{ github.sha }}
           path: artifact
 
       - run: |
           cp CHANGELOG.md COPYING COPYING.LESSER README.md artifact/
 
       - run: |
-          zip -r ../levilamina-${{ matrix.mode }}-windows-x64.zip *
+          zip -r ../levilamina-${{ matrix.mode }}${{ matrix.use_mimalloc == 'true' && '-mimalloc' || '' }}-windows-x64.zip *
         working-directory: artifact
 
       - id: calculate-sha256
         run: |
-          echo sha256=$(sha256sum levilamina-${{ matrix.mode }}-windows-x64.zip | awk '{print $1}') >> $GITHUB_OUTPUT
+          echo sha256=$(sha256sum levilamina-${{ matrix.mode }}${{ matrix.use_mimalloc == 'true' && '-mimalloc' || '' }}-windows-x64.zip | awk '{print $1}') >> $GITHUB_OUTPUT
 
       - uses: softprops/action-gh-release@v1
         with:
           append_body: true
           body: |-
-            | levilamina-${{ matrix.mode }}-windows-x64.zip | ${{ steps.calculate-sha256.outputs.sha256 }} |
+            | levilamina-${{ matrix.mode }}${{ matrix.use_mimalloc == 'true' && '-mimalloc' || '' }}-windows-x64.zip | ${{ steps.calculate-sha256.outputs.sha256 }} |
           files: |
-            levilamina-${{ matrix.mode }}-windows-x64.zip
+            levilamina-${{ matrix.mode }}${{ matrix.use_mimalloc == 'true' && '-mimalloc' || '' }}-windows-x64.zip
