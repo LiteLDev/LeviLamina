@@ -18,10 +18,6 @@ public:
     std::string                      mEffectName;         // this+0x50
     std::optional<MolangVariableMap> mMolangVariables;    // this+0x70
 
-    // prevent constructor by default
-    SpawnParticleEffectPacket& operator=(SpawnParticleEffectPacket const&);
-    SpawnParticleEffectPacket(SpawnParticleEffectPacket const&);
-
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1SpawnParticleEffectPacket@@UEAA@XZ
