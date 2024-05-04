@@ -164,7 +164,7 @@ inline Expected<> deserialize_impl(T& obj, J const& j, meta::PriorityTag<1>) {
             }
         } else {
             if constexpr (!concepts::IsOptional<member_type>) {
-                res = makeStringError("missing required field when deserializing");
+                res = makeStringError(fmt::format("missing required field \"{}\" when deserializing", sname));
             } else {
                 member = std::nullopt;
             }
