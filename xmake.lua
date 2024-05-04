@@ -15,7 +15,8 @@ add_requires("magic_enum")
 add_requires("nlohmann_json")
 add_requires("rapidjson v1.1.0")
 add_requires("mimalloc")
-add_requires("cpp-httplib 0.14.0", {configs={ssl=true}})
+add_requires("openssl3 3.0.7")
+add_requires("cpp-httplib 0.15.3", {configs={ssl=true}})
 
 -- Dependencies from liteldev-repo.
 add_requires("pcg_cpp")
