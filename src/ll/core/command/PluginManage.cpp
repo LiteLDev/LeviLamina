@@ -22,6 +22,8 @@
 namespace ll::command {
 using namespace ll::i18n_literals;
 
+enum class PluginNames;
+
 enum LeviCommandOperation : int {
     unload,
     reload,
@@ -33,15 +35,15 @@ enum LeviCommandOperation2 : int {
     show,
 };
 struct LeviCommand {
-    LeviCommandOperation operation;
-    std::string          plugin;
+    LeviCommandOperation  operation;
+    SoftEnum<PluginNames> plugin;
 };
 struct LeviCommand2 {
     LeviCommandOperation2 operation;
-    std::string           plugin;
+    SoftEnum<PluginNames> plugin;
 };
 struct LeviCommand3 {
-    std::string plugin;
+    SoftEnum<PluginNames> plugin;
 };
 
 void registerPluginManageCommand() {

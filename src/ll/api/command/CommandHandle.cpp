@@ -22,6 +22,8 @@ struct CommandHandle::Impl {
         storedStr; // uset keep pointer stable
 
     std::vector<OverloadData> overloads;
+
+    std::vector<CommandRegistry::Overload> disabledOverloads;
 };
 CommandHandle::CommandHandle(CommandRegistrar& registrar, CommandRegistry::Signature& signature, bool owned)
 : impl(std::make_unique<Impl>(owned, registrar, signature)) {}
@@ -39,14 +41,28 @@ size_t CommandHandle::disablePluginOverloads(std::string_view pluginName) {
         if (!overload.getPlugin().expired() && (overload.getPlugin().lock()->getManifest().name != pluginName)) {
             return false;
         }
-        std::erase_if(impl->signature.overloads, [&](auto& o) { return o.params == overload.getParams(); });
+        std::erase_if(impl->signature.overloads, [&](auto& o) {
+            if (o.params == overload.getParams()) {
+                impl->disabledOverloads.emplace_back(std::move(o));
+                return true;
+            }
+            return false;
+        });
         return true;
     });
 }
 void CommandHandle::registerOverload(OverloadData& d) {
     std::lock_guard lock{impl->mutex};
     auto&           data = impl->overloads.emplace_back(std::move(d));
-
+    if (std::erase_if(impl->disabledOverloads, [&](auto& o) {
+            if (o.params == data.getParams()) {
+                impl->signature.overloads.emplace_back(std::move(o)).alloc = data.getFactory();
+                return true;
+            }
+            return false;
+        })) {
+        return;
+    }
     for (auto& o : impl->signature.overloads) {
         if (o.params == data.getParams()) {
             o.alloc = data.getFactory();
