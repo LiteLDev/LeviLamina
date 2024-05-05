@@ -32,10 +32,15 @@
 #include "ll/core/LeviLamina.h"
 #include "ll/core/plugin/NativePluginManager.h"
 
+#include "ll/api/command/CommandRegistrar.h"
 
 #include "mc/external/expected_lite/expected.h"
 #include "mc/server/ServerInstance.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
+
+namespace ll::command {
+enum class PluginNames {};
+}
 
 namespace ll::plugin {
 using namespace ::ll::i18n_literals;
@@ -259,10 +264,13 @@ LL_TYPE_INSTANCE_HOOK(
     void,
     ::ServerInstance& ins
 ) {
-    setServerStatus(ServerStatus::Running);
     origin(ins);
     auto& registrar = PluginRegistrar::getInstance();
     auto  names     = registrar.getSortedPluginNames();
+    {
+        using namespace ll::command;
+        CommandRegistrar::getInstance().tryRegisterSoftEnum(enum_name_v<PluginNames>, names);
+    }
     if (!names.empty()) {
         logger.info("Enabling plugins..."_tr());
         auto   begin = std::chrono::steady_clock::now();
@@ -287,6 +295,7 @@ LL_TYPE_INSTANCE_HOOK(
             ));
         }
     }
+    setServerStatus(ServerStatus::Running);
 }
 LL_TYPE_INSTANCE_HOOK(
     PluginRegistrar::DisableAllPlugins,
@@ -327,6 +336,10 @@ Expected<> PluginRegistrar::loadPlugin(std::string_view name) noexcept {
     // TODO: check deps,...,......
     return PluginManagerRegistry::getInstance().loadPlugin(std::move(manifest)).transform([&, this]() {
         impl->deps.emplace(std::string{name});
+        {
+            using namespace ll::command;
+            CommandRegistrar::getInstance().addSoftEnumValues(enum_name_v<PluginNames>, {std::string{name}});
+        }
     });
 }
 Expected<> PluginRegistrar::unloadPlugin(std::string_view name) noexcept {
