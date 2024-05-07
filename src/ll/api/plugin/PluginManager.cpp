@@ -19,7 +19,7 @@ std::lock_guard<std::recursive_mutex> PluginManager::lock() { return std::lock_g
 
 void PluginManager::addPlugin(std::string_view name, std::shared_ptr<Plugin> const& plugin) {
     auto l(lock());
-    impl->plugins.try_emplace(std::string{name}, plugin).second;
+    impl->plugins.try_emplace(std::string{name}, plugin);
 }
 
 void PluginManager::erasePlugin(std::string_view name) {

@@ -53,7 +53,7 @@ constexpr from_chars_result from_chars(char const* first, char const* last, std:
         }
         if (t <= (std::numeric_limits<std::uint16_t>::max)()) {
             d = static_cast<std::uint16_t>(t);
-            return {first};
+            return {first, std::errc{}};
         } else {
             return {first, std::errc::result_out_of_range};
         }
@@ -110,7 +110,7 @@ struct PreRelease {
                 values.emplace_back(std::string{token});
             }
         }
-        return {first};
+        return {first, std::errc{}};
     }
 
     [[nodiscard]] constexpr detail::from_chars_result from_string_noexcept(std::string_view str) noexcept {

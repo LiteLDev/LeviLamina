@@ -12,6 +12,27 @@
 // 0. convertible
 
 namespace ll::reflection {
+template <concepts::IsVectorBase T, class J>
+inline Expected<> deserialize_impl(T& vec, J&& j, meta::PriorityTag<5>);
+template <concepts::IsDispatcher T, class J>
+inline Expected<> deserialize_impl(T& d, J&& j, meta::PriorityTag<5>);
+template <concepts::IsOptional T, class J>
+inline Expected<> deserialize_impl(T& opt, J&& j, meta::PriorityTag<5>);
+template <concepts::IsString T, class J>
+inline Expected<> deserialize_impl(T& str, J&& j, meta::PriorityTag<4>);
+template <concepts::TupleLike T, class J>
+inline Expected<> deserialize_impl(T& tuple, J&& j, meta::PriorityTag<3>);
+template <concepts::ArrayLike T, class J>
+inline Expected<> deserialize_impl(T& arr, J&& j, meta::PriorityTag<2>);
+template <concepts::Associative T, class J>
+inline Expected<> deserialize_impl(T& map, J const& j, meta::PriorityTag<2>);
+template <Reflectable T, class J>
+inline Expected<> deserialize_impl(T& obj, J const& j, meta::PriorityTag<1>);
+template <concepts::Require<std::is_enum> T, class J>
+inline Expected<> deserialize_impl(T& e, J const& j, meta::PriorityTag<1>);
+template <class T, class J>
+inline Expected<> deserialize_impl(T& obj, J const& j, meta::PriorityTag<0>)
+    requires(std::convertible_to<J, T>);
 
 template <class T, class J>
 [[nodiscard]] inline Expected<> deserialize(T& t, J&& j) noexcept

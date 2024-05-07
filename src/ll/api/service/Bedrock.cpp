@@ -29,7 +29,7 @@ namespace ll::service::inline bedrock {
 using namespace ll::memory;
 
 // Minecraft
-static alignas(std::hardware_destructive_interference_size) std::atomic<Minecraft*> minecraft;
+static std::atomic<Minecraft*> minecraft;
 
 LL_TYPE_INSTANCE_HOOK(MinecraftInit, HookPriority::High, Minecraft, &Minecraft::initAsDedicatedServer, void) {
     minecraft = this;
@@ -41,7 +41,7 @@ LL_INSTANCE_HOOK(MinecraftDestructor, HookPriority::High, "??1Minecraft@@UEAA@XZ
 }
 
 // PropertiesSettings
-static alignas(std::hardware_destructive_interference_size) std::atomic<PropertiesSettings*> propertiesSettings;
+static std::atomic<PropertiesSettings*> propertiesSettings;
 
 LL_TYPE_INSTANCE_HOOK(
     PropertiesSettingsInit,
@@ -62,7 +62,7 @@ LL_TYPE_INSTANCE_HOOK(
 }
 
 // ServerNetworkHandler
-static alignas(std::hardware_destructive_interference_size) std::atomic<ServerNetworkHandler*> serverNetworkHandler;
+static std::atomic<ServerNetworkHandler*> serverNetworkHandler;
 
 LL_TYPE_INSTANCE_HOOK(
     ServerNetworkHandlerInit,
@@ -83,7 +83,7 @@ LL_INSTANCE_HOOK(ServerNetworkHandlerDestructor, HookPriority::High, "??1ServerN
 }
 
 // NetworkSystem
-static alignas(std::hardware_destructive_interference_size) std::atomic<NetworkSystem*> networkSystem;
+static std::atomic<NetworkSystem*> networkSystem;
 
 LL_INSTANCE_HOOK(
     NetworkSystemConstructor,
@@ -100,7 +100,7 @@ LL_INSTANCE_HOOK(NetworkSystemDestructor, HookPriority::High, "??1NetworkSystem@
 }
 
 // Level
-static alignas(std::hardware_destructive_interference_size) std::atomic<Level*> level;
+static std::atomic<Level*> level;
 
 LL_TYPE_INSTANCE_HOOK(
     ServerLevelInit,
@@ -119,7 +119,7 @@ LL_INSTANCE_HOOK(LevelDestructor, HookPriority::High, "??1Level@@UEAA@XZ", void)
 }
 
 // RakNet::RakPeer
-static alignas(std::hardware_destructive_interference_size) std::atomic<RakNet::RakPeer*> rakPeer;
+static std::atomic<RakNet::RakPeer*> rakPeer;
 
 LL_INSTANCE_HOOK(RakNetRakPeerConstructor, HookPriority::High, "??0RakPeer@RakNet@@QEAA@XZ", RakNet::RakPeer*) {
     unhook();
@@ -132,7 +132,7 @@ LL_INSTANCE_HOOK(RakNetRakPeerDestructor, HookPriority::High, "??1RakPeer@RakNet
 }
 
 // ResourcePackRepository
-static alignas(std::hardware_destructive_interference_size) std::atomic<ResourcePackRepository*> resourcePackRepository;
+static std::atomic<ResourcePackRepository*> resourcePackRepository;
 
 LL_TYPE_INSTANCE_HOOK(
     ResourcePackRepositoryInit,
@@ -150,7 +150,7 @@ LL_INSTANCE_HOOK(ResourcePackRepositoryDestructor, HookPriority::High, "??1Resou
 }
 
 // CommandRegistry
-static alignas(std::hardware_destructive_interference_size) std::atomic<CommandRegistry*> commandRegistry;
+static std::atomic<CommandRegistry*> commandRegistry;
 
 LL_TYPE_INSTANCE_HOOK(CommandRegistryConstructor, HookPriority::High, CommandRegistry, "??0CommandRegistry@@QEAA@XZ", CommandRegistry*) {
     return commandRegistry = origin();
@@ -161,7 +161,7 @@ LL_INSTANCE_HOOK(CommandRegistryDestructor, HookPriority::High, "??1CommandRegis
 }
 
 // ServerInstance
-static alignas(std::hardware_destructive_interference_size) std::atomic<ServerInstance*> serverInstance;
+static std::atomic<ServerInstance*> serverInstance;
 
 LL_TYPE_INSTANCE_HOOK(ServerInstanceConstructor, HookPriority::High, ServerInstance, "??0ServerInstance@@QEAA@AEAVIMinecraftApp@@AEBV?$not_null@V?$NonOwnerPointer@VServerInstanceEventCoordinator@@@Bedrock@@@gsl@@@Z", ServerInstance*) {
     return serverInstance = origin();

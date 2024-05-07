@@ -1,5 +1,3 @@
-#pragma once
-
 #include "ll/core/command/BuiltinCommands.h"
 
 #include "ll/api/command/CommandHandle.h"

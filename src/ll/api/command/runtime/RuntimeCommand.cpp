@@ -9,9 +9,9 @@ RuntimeCommand::RuntimeCommand(
     std::vector<std::pair<std::string, ParamKindType>> const& params,
     Executor const&                                           executor
 )
-: paramCount(params.size()),
-  executor(executor),
-  paramIndexMap(map) {
+: executor(executor),
+  paramIndexMap(map),
+  paramCount(params.size()) {
     size_t idx{0};
     for (auto&& [name, kind] : params) {
         meta::visitIndex<ParamKind::Count>(kind, [&]<size_t K> {

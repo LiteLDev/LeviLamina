@@ -65,6 +65,7 @@ target("LeviLamina")
         "-Wno-microsoft-include",
         "-Wno-overloaded-virtual",
         "-Wno-ignored-qualifiers",
+        "-Wno-missing-field-initializers",
         "-Wno-potentially-evaluated-expression",
         "-Wno-pragma-system-header-outside-header",
         {tools = {"clang_cl"}}

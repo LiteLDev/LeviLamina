@@ -66,7 +66,7 @@ void CommandRegistrar::disablePluginCommands(std::string_view pluginName) {
 
 bool CommandRegistrar::hasEnum(std::string const& name) { return getRegistry().mEnumLookup.contains(name); }
 
-static auto toLower(std::vector<std::pair<std::string, uint64>>& vec) {
+static auto& toLower(std::vector<std::pair<std::string, uint64>>& vec) {
     for (auto& [k, v] : vec) {
         k = string_utils::toSnakeCase(k);
     }
