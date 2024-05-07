@@ -55,6 +55,7 @@ enum class MaterialType : uint {
     ClientRequestPlaceholder = 0x31,
     StructureVoid            = 0x32,
     Root                     = 0x33,
-    SurfaceTypeTotal         = 0x34,
-    Any                      = 0x35,
+    Shulker                  = 0x34
+    SurfaceTypeTotal         = 0x35,
+    Any                      = 0x36,
 };
