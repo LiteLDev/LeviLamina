@@ -150,7 +150,7 @@ public:
         if (has_value()) {
             return *this;
         } else {
-            return std::forward<Fn>(fn)();
+            return std::invoke(std::forward<Fn>(fn));
         }
     }
 };

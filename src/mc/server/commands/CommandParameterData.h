@@ -17,11 +17,11 @@ public:
     std::string                        mName;                    // this+0x10
     char const*                        mEnumNameOrPostfix;       // this+0x30
     int                                mEnumOrPostfixSymbol{-1}; // this+0x38
-    char const*                        mUnknown;                 // this+0x40
-    int                                mUnknownSymbol{-1};       // this+0x48
+    char const*                        mSubChain;                // this+0x40
+    int                                mSubChainSymbol{-1};      // this+0x48
     CommandParameterDataType           mParamType;               // this+0x4c
     int                                mOffset;                  // this+0x50
-    int                                mSetOffset;               // this+0x54
+    int                                mSettedOffset;            // this+0x54
     bool                               mIsOptional;              // this+0x58
     CommandParameterOption             mOptions;                 // this+0x59
 
@@ -53,7 +53,7 @@ public:
         char const*                                    name,
         ::CommandParameterDataType                     paramType,
         char const*                                    enumNameOrPostfix,
-        char const*                                    unknown,
+        char const*                                    subchain,
         int                                            offset,
         bool                                           optional,
         int                                            flagOffset

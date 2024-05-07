@@ -27,7 +27,7 @@ public:
         for (int dy = min.y; dy <= max.y; ++dy)
             for (int dx = min.x; dx <= max.x; ++dx)
                 for (int dz = min.z; dz <= max.z; ++dz) {
-                    if (!std::forward<F>(todo)(BlockPos{dx, dy, dz})) {
+                    if (!std::invoke(std::forward<F>(todo), BlockPos{dx, dy, dz})) {
                         return false;
                     }
                 }

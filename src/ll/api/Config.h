@@ -56,7 +56,7 @@ inline bool loadConfig(T& config, std::filesystem::path const& path, F&& updater
         } else if ((int64)(data["version"]) != config.version) {
             noNeedRewrite = false;
         }
-        if (noNeedRewrite || std::forward<F>(updater)(config, data)) {
+        if (noNeedRewrite || std::invoke(std::forward<F>(updater), config, data)) {
             ll::reflection::deserialize(config, data).value();
         }
     } else {

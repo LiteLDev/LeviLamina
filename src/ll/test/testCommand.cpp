@@ -13,7 +13,33 @@
 
 #include "ll/api/command/runtime/RuntimeOverload.h"
 
+#include "mc/nbt/CompoundTag.h"
+
+
 using namespace ll::command;
+
+template <>
+bool CommandRegistry::parse<CompoundTag>(
+    void*                              storage,
+    CommandRegistry::ParseToken const& token,
+    CommandOrigin const& /*origin*/,
+    int /*version*/,
+    std::string& error,
+    std::vector<std::string>& /*errorParams*/
+) const {
+    size_t      parsedLength{};
+    std::string str = token.toString();
+    auto        res = CompoundTag::fromSnbt(str, parsedLength);
+    std::cout << str << std::endl;
+    if (res) {
+        (*(CompoundTag*)storage) = std::move(*res);
+        return true;
+    } else {
+        // parsedLength
+        error = res.error().message();
+        return false;
+    }
+}
 
 struct ParamTest {
     int             p1;
@@ -30,6 +56,10 @@ struct ParamTest2 {
     CommandBlockName           block;
     DimensionType              dim;
     std::unique_ptr<::Command> subcmd;
+};
+
+struct ParamTest3 {
+    CompoundTag snbt;
 };
 
 LL_AUTO_TYPE_INSTANCE_HOOK(
@@ -103,5 +133,13 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
             output.success("range : {} {}", range.mMinValue, range.mMaxValue);
             output.success("SoftEnum : {}", self["se"].get<ParamKind::SoftEnum>());
             output.success("Enum : {}", self["enummmmm"].get<ParamKind::Enum>());
+        });
+
+    cmd.overload<ParamTest3>()
+        .text("nbt")
+        .required("snbt")
+        // .modify([](CommandParameterData& data) { data.mUnknown = "snbt"; })
+        .execute([](CommandOrigin const&, CommandOutput& output, ParamTest3 const& param) {
+            output.success("snbt: {}", param.snbt.toSnbt(SnbtFormat::PrettyChatPrint));
         });
 }

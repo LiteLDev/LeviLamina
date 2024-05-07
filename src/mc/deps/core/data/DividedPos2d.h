@@ -12,14 +12,13 @@ public:
     [[nodiscard]] constexpr DividedPos2d(DividedPos2d const&) noexcept   = default;
     LL_CLANG_CEXPR DividedPos2d& operator=(DividedPos2d const&) noexcept = default;
 
-    [[nodiscard]] constexpr DividedPos2d(int x, int z) noexcept : x(x), z(z) {}
+    [[nodiscard]] constexpr DividedPos2d(int x, int z) noexcept : Pos2d(x, z) {}
 
     template <class T>
     [[nodiscard]] constexpr DividedPos2d(T const& vec) noexcept
         requires(requires(T const& t) {
-                    { t.x } -> std::same_as<int>;
-                    { t.z } -> std::same_as<int>;
-                })
-    : x((vec.x >> 31) - ((vec.x >> 31) - vec.x) / T0),
-      z((vec.x >> 31) - ((vec.x >> 31) - vec.x) / T0) {}
+            { t.x } -> std::same_as<int>;
+            { t.z } -> std::same_as<int>;
+        })
+    : Pos2d((vec.x >> 31) - ((vec.x >> 31) - vec.x) / T0, (vec.x >> 31) - ((vec.x >> 31) - vec.x) / T0) {}
 };

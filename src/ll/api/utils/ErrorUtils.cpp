@@ -114,8 +114,8 @@ std::system_error getWinLastError() noexcept { return std::error_code{(int)GetLa
 extern "C" PEXCEPTION_RECORD* __current_exception();         // NOLINT
 extern "C" PCONTEXT*          __current_exception_context(); // NOLINT
 
-_EXCEPTION_RECORD& current_exception() noexcept { return **__current_exception(); }
-_CONTEXT&          current_exception_context() noexcept { return **__current_exception_context(); }
+optional_ref<::_EXCEPTION_RECORD> current_exception_record() noexcept { return **__current_exception(); }
+optional_ref<_CONTEXT>            current_exception_context() noexcept { return **__current_exception_context(); }
 
 std::exception_ptr createExceptionPtr(_EXCEPTION_RECORD const& rec) noexcept {
     auto               realType = std::make_shared<_EXCEPTION_RECORD>(rec);
@@ -126,14 +126,14 @@ std::exception_ptr createExceptionPtr(_EXCEPTION_RECORD const& rec) noexcept {
 
 #if _HAS_CXX23
 
-std::stacktrace stacktraceFromContext(_CONTEXT const& context, size_t skip, size_t maxDepth) {
-    if (std::addressof(context) == nullptr) {
+std::stacktrace stacktraceFromContext(optional_ref<_CONTEXT const> context, size_t skip, size_t maxDepth) {
+    if (!context) {
         return {};
     }
     STACKFRAME64 sf{};
-    sf.AddrPC.Offset    = context.Rip;
-    sf.AddrStack.Offset = context.Rsp;
-    sf.AddrFrame.Offset = context.Rbp;
+    sf.AddrPC.Offset    = context->Rip;
+    sf.AddrStack.Offset = context->Rsp;
+    sf.AddrFrame.Offset = context->Rbp;
     sf.AddrPC.Mode      = AddrModeFlat;
     sf.AddrStack.Mode   = AddrModeFlat;
     sf.AddrFrame.Mode   = AddrModeFlat;
@@ -150,7 +150,7 @@ std::stacktrace stacktraceFromContext(_CONTEXT const& context, size_t skip, size
 
     constexpr auto machine = IMAGE_FILE_MACHINE_AMD64;
 
-    auto tmpCtx = context;
+    auto tmpCtx = *context;
 
     for (size_t i = 0; i < maxDepth; ++i) {
         SetLastError(0);
@@ -264,7 +264,7 @@ std::string makeExceptionString(std::exception_ptr ePtr) noexcept {
         } catch (char const* e) {
             res += string_utils::tou8str(e);
         } catch (...) {
-            auto& unkExc  = current_exception();
+            auto& unkExc  = *current_exception_record();
             res          += fmt::format(
                 "[0x{:0>8X}:{}] {}",
                 (uint)unkExc.ExceptionCode,

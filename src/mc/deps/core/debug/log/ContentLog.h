@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 
 // auto generated inclusion list
 #include "mc/enums/LogArea.h"
@@ -12,7 +13,7 @@
 namespace Bedrock { class StaticOptimizedString; }
 // clang-format on
 
-class ContentLog {
+class ContentLog : Bedrock::EnableNonOwnerReferences {
 public:
     // ContentLog inner types declare
     // clang-format off
@@ -67,6 +68,10 @@ public:
     // prevent constructor by default
     ContentLog& operator=(ContentLog const&);
     ContentLog(ContentLog const&);
+
+    bool mEnabled; // this+0x18
+
+    // map this+0x90
 
 public:
     // NOLINTBEGIN

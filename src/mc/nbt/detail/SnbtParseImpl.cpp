@@ -441,7 +441,7 @@ Expected<R> parseNumArray(std::string_view& s, F&& f) {
             if (!value->hold<H>()) {
                 return makeSnbtError(SnbtErrorCode::NotTheExpectedType);
             } else {
-                std::forward<F>(f)(res, value->get<H>());
+                std::invoke(std::forward<F>(f), res, value->get<H>());
             }
         } else {
             return forwardError(value.error());

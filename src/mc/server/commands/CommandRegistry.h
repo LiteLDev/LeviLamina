@@ -199,9 +199,9 @@ public:
     };
 
     struct ParseTable {
-        std::map<Symbol, std::vector<Symbol>>    first;   // this+0x0
-        std::map<Symbol, std::vector<Symbol>>    follow;  // this+0x10
-        std::map<std::pair<Symbol, Symbol>, int> predict; // this+0x20
+        std::map<Symbol, std::vector<Symbol>>           first;   // this+0x0
+        std::map<Symbol, std::vector<Symbol>>           follow;  // this+0x10
+        entt::dense_map<std::pair<Symbol, Symbol>, int> predict; // this+0x20
 
     public:
         // NOLINTBEGIN

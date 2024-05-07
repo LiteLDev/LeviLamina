@@ -210,7 +210,7 @@ public:
         if (has_value()) {
             return *this;
         } else {
-            return std::forward<Fn>(fn)();
+            return std::invoke(std::forward<Fn>(fn));
         }
     }
 
@@ -220,7 +220,7 @@ public:
         if (has_value()) {
             return std::move(*this);
         } else {
-            return std::forward<Fn>(fn)();
+            return std::invoke(std::forward<Fn>(fn));
         }
     }
 

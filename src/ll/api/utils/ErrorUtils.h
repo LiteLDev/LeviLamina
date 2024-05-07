@@ -85,13 +85,14 @@ LLAPI void setSehTranslator();
 
 LLNDAPI std::system_error getWinLastError() noexcept;
 
-LLNDAPI ::_EXCEPTION_RECORD& current_exception() noexcept;
-LLNDAPI _CONTEXT&            current_exception_context() noexcept;
+LLNDAPI optional_ref<::_EXCEPTION_RECORD> current_exception_record() noexcept;
+LLNDAPI optional_ref<_CONTEXT> current_exception_context() noexcept;
 
 LLNDAPI std::exception_ptr createExceptionPtr(::_EXCEPTION_RECORD const&) noexcept;
 
 #if _HAS_CXX23
-LLNDAPI std::stacktrace stacktraceFromContext(_CONTEXT const& context, size_t skip = 0, size_t maxDepth = ~0ui64);
+LLNDAPI std::stacktrace
+        stacktraceFromContext(optional_ref<_CONTEXT const> context, size_t skip = 0, size_t maxDepth = ~0ui64);
 
 inline std::stacktrace stacktraceFromCurrExc(size_t skip = 0, size_t maxDepth = ~0ui64) {
     return stacktraceFromContext(current_exception_context(), skip, maxDepth);

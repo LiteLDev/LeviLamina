@@ -100,7 +100,7 @@ public:
     }
     template <class Fn>
     [[nodiscard]] constexpr Overload& modify(Fn&& fn) {
-        std::forward<Fn>(fn)(back());
+        std::invoke(std::forward<Fn>(fn), back());
         return *this;
     }
 
