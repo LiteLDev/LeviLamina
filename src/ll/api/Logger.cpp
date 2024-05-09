@@ -17,7 +17,6 @@
 #include "fmt/color.h"
 #include "fmt/core.h"
 
-#include "ll/api/base/ToString.h" // IWYU pragma: keep
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/api/utils/WinUtils.h"

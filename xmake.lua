@@ -115,7 +115,6 @@ target("LeviLamina")
 
     if has_config("tests") then
         add_packages("gtest")
-        add_defines("LL_DEBUG")
         add_files("src/ll/test/**.cpp")
 
         before_build(function (target)

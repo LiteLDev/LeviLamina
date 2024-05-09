@@ -33,7 +33,7 @@ std::ostream& operator<<(std::ostream& os, T const& t) {
 template <ll::concepts::Stringable T>
 struct fmt::formatter<T> : fmt::formatter<std::string> {
     template <class FormatContext>
-    auto format(T const& t, FormatContext& ctx) {
+    auto format(T const& t, FormatContext& ctx) const {
         return formatter<std::string>::format(nonstd::to_string(t), ctx);
     }
 };
@@ -42,7 +42,7 @@ struct fmt::formatter<T> : fmt::formatter<std::string> {
 template <ll::concepts::Stringable T>
 struct std::formatter<T> : std::formatter<std::string> { // NOLINT
     template <class FormatContext>
-    auto format(T const& t, FormatContext& ctx) {
+    auto format(T const& t, FormatContext& ctx) const {
         return std::formatter<std::string>::format(nonstd::to_string(t), ctx);
     }
 };
