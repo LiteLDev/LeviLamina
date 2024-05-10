@@ -31,16 +31,12 @@ void PluginManager::erasePlugin(std::string_view name) {
 
 Expected<> PluginManager::enable(std::string_view name) {
     auto l(lock());
-    auto plugin = getPlugin(name);
-    if (!plugin) return makeStringError("Plugin not found"_tr());
-    return plugin->onEnable();
+    return getPlugin(name)->onEnable();
 }
 
 Expected<> PluginManager::disable(std::string_view name) {
     auto l(lock());
-    auto plugin = getPlugin(name);
-    if (!plugin) return makeStringError("Plugin not found"_tr());
-    return plugin->onDisable();
+    return getPlugin(name)->onDisable();
 }
 
 [[nodiscard]] std::string const& PluginManager::getType() const { return impl->type; }

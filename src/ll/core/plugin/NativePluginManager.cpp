@@ -88,9 +88,6 @@ static std::string diagnosticDependency(std::filesystem::path const& path) {
 
 Expected<> NativePluginManager::load(Manifest manifest) {
     auto l(lock());
-    if (hasPlugin(manifest.name)) {
-        return makeStringError("Plugin {0} already exists"_tr(manifest.name));
-    }
     currentLoadingPlugin = std::make_shared<NativePlugin>(std::move(manifest));
     struct Remover {
         ~Remover() { currentLoadingPlugin = nullptr; };
@@ -140,9 +137,6 @@ Expected<> NativePluginManager::load(Manifest manifest) {
 
 Expected<> NativePluginManager::unload(std::string_view name) {
     auto l(lock());
-    if (!hasPlugin(name)) {
-        return makeStringError("Plugin not found"_tr());
-    }
     auto ptr = std::static_pointer_cast<NativePlugin>(getPlugin(name));
     if (!ptr->hasOnUnload()) {
         return makeStringError("The plugin does not register an unload function"_tr());
