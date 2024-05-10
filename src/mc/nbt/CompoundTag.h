@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef COMPOUND_TAG_HEADER
-#define COMPOUND_TAG_HEADER
-
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
@@ -227,5 +224,3 @@ public:
 };
 
 #include "mc/nbt/CompoundTagVariant.h"
-
-#endif // COMPOUND_TAG_HEADER

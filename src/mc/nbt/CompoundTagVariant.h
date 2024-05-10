@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef COMPOUND_TAG_VARIANT_HEADER
-#define COMPOUND_TAG_VARIANT_HEADER
-
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/nbt/ByteArrayTag.h"
 #include "mc/nbt/ByteTag.h"
@@ -358,5 +355,3 @@ public:
         }
     }
 }
-
-#endif // COMPOUND_TAG_VARIANT_HEADER

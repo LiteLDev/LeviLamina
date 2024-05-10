@@ -12,7 +12,7 @@ class CommandParameterData {
 public:
     using ParseFn = typename CommandRegistry::ParseFn;
 
-    Bedrock::typeid_t<CommandRegistry> mTypeIndex;           // this+0x0
+    Bedrock::typeid_t<CommandRegistry> mTypeIndex;             // this+0x0
     ParseFn                            mParse;                 // this+0x8
     std::string                        mName;                  // this+0x10
     char const*                        mEnumNameOrPostfix;     // this+0x30

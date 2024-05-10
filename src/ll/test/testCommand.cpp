@@ -73,7 +73,7 @@ struct ParamTest2 {
 
 struct ParamTest3 {
     CompoundTagVariant snbt;
-    Json::Value json;
+    Json::Value        json;
 };
 
 LL_AUTO_TYPE_INSTANCE_HOOK(
