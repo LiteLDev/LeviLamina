@@ -25,6 +25,9 @@ Expected<> PluginManagerRegistry::loadPlugin(Manifest manifest) noexcept {
     try {
         std::lock_guard lock(impl->mutex);
         if (hasManager(manifest.type)) {
+            if (hasPlugin(manifest.name)) {
+                return makeStringError("Plugin {0} already loaded"_tr(manifest.name));
+            }
             std::string name = manifest.name;
             std::string type = manifest.type;
             return getManager(type)->load(std::move(manifest)).transform([&, this] {
