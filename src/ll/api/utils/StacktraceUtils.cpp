@@ -2,11 +2,12 @@
 #if _HAS_CXX23
 #include <mutex>
 
-#include "fmt/format.h"
 #include "ll/api/io/FileUtils.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/StringUtils.h"
+#include "ll/api/utils/WinUtils.h"
 
+#include "fmt/format.h"
 #include "windows.h"
 
 #include "DbgHelp.h"
@@ -77,7 +78,8 @@ public:
                 // COM initialization may have undesired interference with user's code.
                 if (debug_create != nullptr
                     && SUCCEEDED(debug_create(IID_IDebugClient, reinterpret_cast<void**>(&debugClient)))
-                    && SUCCEEDED(debugClient->QueryInterface(IID_IDebugSymbols, reinterpret_cast<void**>(&debugSymbols))
+                    && SUCCEEDED(
+                        debugClient->QueryInterface(IID_IDebugSymbols3, reinterpret_cast<void**>(&debugSymbols))
                     )
                     && SUCCEEDED(debugClient->QueryInterface(IID_IDebugControl, reinterpret_cast<void**>(&debugControl))
                     )) {
@@ -89,11 +91,9 @@ public:
                     if (attached) {
                         (void)debugControl->WaitForEvent(0, INFINITE);
                     }
-                    std::string path(32767, '\0');
-                    GetModuleFileNameA(nullptr, path.data(), (DWORD)path.size());
-                    path = path.substr(0, path.find_last_of('\\'));
-                    (void)debugSymbols->AppendSymbolPath(path.c_str());
-
+                    (void
+                    )debugSymbols->AppendSymbolPathWide(win_utils::getModulePath(nullptr).value().parent_path().c_str()
+                    );
                     (void)debugSymbols->RemoveSymbolOptions(
                         SYMOPT_NO_CPP | SYMOPT_LOAD_ANYTHING | SYMOPT_NO_UNQUALIFIED_LOADS | SYMOPT_IGNORE_NT_SYMPATH
                         | SYMOPT_PUBLICS_ONLY | SYMOPT_NO_PUBLICS | SYMOPT_NO_IMAGE_SEARCH
@@ -106,7 +106,6 @@ public:
                 }
             }
         }
-
         return attached;
     }
 
@@ -146,13 +145,13 @@ public:
     }
     // NOLINTEND(readability-convert-member-functions-to-static)
 private:
-    inline static SRWLOCK        srw                 = SRWLOCK_INIT;
-    inline static IDebugClient*  debugClient         = nullptr;
-    inline static IDebugSymbols* debugSymbols        = nullptr;
-    inline static IDebugControl* debugControl        = nullptr;
-    inline static bool           attached            = false;
-    inline static bool           initializeAttempted = false;
-    inline static HMODULE        dbgEng              = nullptr;
+    inline static SRWLOCK         srw                 = SRWLOCK_INIT;
+    inline static IDebugClient*   debugClient         = nullptr;
+    inline static IDebugSymbols3* debugSymbols        = nullptr;
+    inline static IDebugControl*  debugControl        = nullptr;
+    inline static bool            attached            = false;
+    inline static bool            initializeAttempted = false;
+    inline static HMODULE         dbgEng              = nullptr;
 };
 
 void lockRelease() noexcept {

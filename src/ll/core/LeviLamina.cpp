@@ -21,6 +21,7 @@
 #include "ll/api/service/ServerInfo.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/HashUtils.h"
+#include "ll/api/utils/WinUtils.h"
 
 #include "mc/server/common/DedicatedServer.h"
 #include "mc/server/common/commands/StopCommand.h"
@@ -61,53 +62,36 @@ Logger                                logger("LeviLamina");
 std::chrono::steady_clock::time_point severStartBeginTime;
 std::chrono::steady_clock::time_point severStartEndTime;
 
-void fixCurrentDirectory() {
-    std::wstring path(32767, '\0');
-    GetModuleFileName(nullptr, path.data(), 32767);
-    SetCurrentDirectory(path.substr(0, path.find_last_of(L'\\')).c_str());
-}
+void fixCurrentDirectory() { SetCurrentDirectoryW(win_utils::getModulePath(nullptr).value().parent_path().c_str()); }
 
 void checkOtherBdsInstance() {
-    // get all processes id with name "bedrock_server.exe" or "bedrock_server_mod.exe"
+    auto currentPath = win_utils::getModulePath(nullptr).value();
     // and pid is not current process
     std::vector<DWORD> pids;
-    PROCESSENTRY32     pe32;
-    pe32.dwSize         = sizeof(PROCESSENTRY32);
+    ::PROCESSENTRY32W  pe32;
+    pe32.dwSize         = sizeof(PROCESSENTRY32W);
     HANDLE hProcessSnap = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
     if (hProcessSnap == INVALID_HANDLE_VALUE) {
         return;
     }
-    if (Process32First(hProcessSnap, &pe32)) {
+    if (::Process32FirstW(hProcessSnap, &pe32)) {
+        std::wstring currentExe = currentPath.filename().wstring();
         do {
             if (pe32.th32ProcessID != GetCurrentProcessId()
                 && (wcscmp(pe32.szExeFile, L"bedrock_server.exe") == 0
-                    || wcscmp(pe32.szExeFile, L"bedrock_server_mod.exe") == 0)) {
+                    || wcscmp(pe32.szExeFile, L"bedrock_server_mod.exe") == 0 || pe32.szExeFile == currentExe)) {
                 pids.push_back(pe32.th32ProcessID);
             }
-        } while (Process32Next(hProcessSnap, &pe32));
+        } while (::Process32NextW(hProcessSnap, &pe32));
     }
     CloseHandle(hProcessSnap);
-
-    // Get current process path
-    std::wstring currentPath(32767, '\0');
-    if (auto res = GetModuleFileName(nullptr, currentPath.data(), 32767); res != 0 && res != 32767) {
-        currentPath.resize(res);
-    } else {
-        return;
-    }
-
     // Get the BDS process paths
     for (auto& pid : pids) {
         // Open process handle
         auto handle = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ | PROCESS_TERMINATE, false, pid);
         if (handle) {
             // Get the full path of the process
-            std::wstring path(32767, '\0');
-            if (auto res = GetModuleFileNameEx(handle, nullptr, path.data(), 32767); res != 0 && res != 32767) {
-                path.resize(res);
-            } else {
-                continue;
-            }
+            auto path = win_utils::getModulePath(nullptr, handle).value();
             // Compare the path
             if (path == currentPath) {
                 logger.error("Detected the existence of another BDS process with the same path!"_tr());
@@ -203,8 +187,6 @@ extern std::string globalDefaultLocaleName;
 void leviLaminaMain() {
     error_utils::setSehTranslator();
 
-    _setmode(_fileno(stdin), _O_U8TEXT);
-
     // Prohibit pop-up windows to facilitate automatic restart
     SetErrorMode(SEM_FAILCRITICALERRORS | SEM_NOGPFAULTERRORBOX | SEM_NOOPENFILEERRORBOX | SEM_NOALIGNMENTFAULTEXCEPT);
 
@@ -215,7 +197,7 @@ void leviLaminaMain() {
     std::error_code ec;
     fs::create_directories(plugin::getPluginsRoot(), ec);
 
-    ::ll::i18n::load(plugin::getPluginsRoot() / u8"LeviLamina" / u8"lang");
+    ::ll::i18n::load(plugin::getPluginsRoot() / u8"LeviLamina/lang");
 
     loadLeviConfig();
 

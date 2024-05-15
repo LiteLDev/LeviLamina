@@ -39,7 +39,8 @@ bool isMinimize(SnbtFormat format) {
 
 std::string WrapColorCode(std::string const& str, std::string const& code) { return code + str + cf::RESET; }
 
-std::string toDumpString(std::string const& str, fmt::color defaultc, std::string const& defaultmc, SnbtFormat format) {
+std::string
+toDumpString(std::string const& str, fmt::color defaultc, std::string const& defaultmc, SnbtFormat format, bool key) {
 
     std::string res;
 
@@ -49,7 +50,7 @@ std::string toDumpString(std::string const& str, fmt::color defaultc, std::strin
     } else {
         bool isTrivial = true;
         if (!static_cast<bool>(format & SnbtFormat::ForceQuote)) {
-            if (str[0] == '-' || isdigit(str[0])) {
+            if (!key && (str[0] == '-' || isdigit(str[0]))) {
                 isTrivial = false;
             } else {
                 for (auto c : str) {
@@ -157,7 +158,7 @@ std::string TypedToSnbt(DoubleTag const& self, uchar, SnbtFormat format) {
     return toDumpNumber(getString(self.data), format);
 }
 std::string TypedToSnbt(StringTag const& self, uchar, SnbtFormat format) {
-    std::string res = toDumpString(self.data, fmt::color::sandy_brown, cf::GOLD, format);
+    std::string res = toDumpString(self.data, fmt::color::sandy_brown, cf::GOLD, format, false);
     return res;
 }
 std::string TypedToSnbt(ListTag const& self, uchar indent, SnbtFormat format) {
@@ -256,7 +257,7 @@ std::string TypedToSnbt(CompoundTag const& self, uchar indent, SnbtFormat format
             res += indentSpace;
         }
 
-        auto keyStr = toDumpString(k, fmt::color::sky_blue, cf::AQUA, format);
+        auto keyStr = toDumpString(k, fmt::color::sky_blue, cf::AQUA, format, true);
 
         res += keyStr;
 

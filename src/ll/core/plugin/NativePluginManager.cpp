@@ -23,9 +23,11 @@
 #include "ll/api/utils/WinUtils.h"
 #include "ll/core/LeviLamina.h"
 
-#include <libloaderapi.h>
-#include <minwindef.h>
-#include <processenv.h>
+#include "errhandlingapi.h"
+#include "libloaderapi.h"
+#include "minwindef.h"
+#include "processenv.h"
+#include "winerror.h"
 
 namespace ll::plugin {
 using namespace i18n_literals;
@@ -93,19 +95,30 @@ Expected<> NativePluginManager::load(Manifest manifest) {
         ~Remover() { currentLoadingPlugin = nullptr; };
     } r;
 
-    auto pluginDir = std::filesystem::canonical(getPluginsRoot() / currentLoadingPlugin->getManifest().name);
+    auto pluginDir =
+        std::filesystem::canonical(getPluginsRoot() / string_utils::sv2u8sv(currentLoadingPlugin->getManifest().name));
 
-    std::wstring buffer(32767, '\0');
-
-    if (auto res = GetEnvironmentVariable(L"PATH", buffer.data(), 32767); res != 0 && res != 32767) {
-        buffer.resize(res);
-        if (!buffer.empty()) {
-            buffer += L";";
+    if (auto res = win_utils::adaptFixedSizeToAllocatedResult(
+            [](wchar_t* value, size_t valueLength, size_t* valueLengthNeededWithNul) -> bool {
+                ::SetLastError(ERROR_SUCCESS);
+                *valueLengthNeededWithNul = ::GetEnvironmentVariableW(L"PATH", value, static_cast<DWORD>(valueLength));
+                if ((*valueLengthNeededWithNul == 0) && (::GetLastError() != ERROR_SUCCESS)) {
+                    return false;
+                }
+                if (*valueLengthNeededWithNul < valueLength) {
+                    (*valueLengthNeededWithNul)++; // It fit, account for the null.
+                }
+                return true;
+            }
+        );
+        res) {
+        if (!res->empty()) {
+            *res += L";";
         }
-        buffer += pluginDir.wstring();
-        SetEnvironmentVariable(L"PATH", buffer.c_str());
+        *res += pluginDir.wstring();
+        SetEnvironmentVariableW(L"PATH", res->c_str());
     }
-    auto entry = pluginDir / currentLoadingPlugin->getManifest().entry;
+    auto entry = pluginDir / string_utils::sv2u8sv(currentLoadingPlugin->getManifest().entry);
     auto lib   = LoadLibrary(entry.c_str());
     if (!lib) {
         auto       e = error_utils::getWinLastError();

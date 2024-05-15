@@ -6,6 +6,7 @@
 #include "ll/api/memory/Memory.h"
 #include "ll/api/reflection/Reflection.h"
 #include "ll/api/utils/StringUtils.h"
+#include "ll/api/utils/WinUtils.h"
 
 #include "windows.h"
 
@@ -206,14 +207,10 @@ std::string makeExceptionString(std::exception_ptr ePtr) noexcept {
         if (rt->ExceptionCode == UntypedExceptionRef::exceptionCodeOfCpp) {
             try {
                 UntypedExceptionRef exc{*rt};
-                std::string         handleName("unknown module");
-
-                std::wstring buffer(32767, '\0');
-                auto         size = GetModuleFileNameW((HMODULE)exc.handle, buffer.data(), 32767);
-                if (size) {
-                    buffer.resize(size);
-                    handleName = string_utils::u8str2str(std::filesystem::path(buffer).stem().u8string());
-                }
+                std::string         handleName =
+                    win_utils::getModulePath(exc.handle)
+                        .transform([](auto&& path) { return string_utils::u8str2str(path.stem().u8string()); })
+                        .value_or("unknown module");
                 if (exc.getNumCatchableTypes() > 0) {
                     auto& type = *exc.getTypeInfo(0);
                     if (type == typeid(seh_exception)) {
