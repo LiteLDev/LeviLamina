@@ -18,7 +18,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serve
     auto nbt = CompoundTag{
         {"anull",     nullptr                                                           },
         {"string?",   R"(streee _ _o-ix 我超, utf8 "\asfa%"*)##q)$\\"\Q34\\""'':)"_tag},
-        {"num",       1                                                                 },
+        {"1num",       1                                                                 },
         {"nums",      3i16                                                              },
         {"byte",      127i8                                                             },
         {"list",      ListTag{5_b, ByteTag{true}, ByteTag{false}, -2_b}                 },
@@ -67,7 +67,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serve
     },
     intarray = [I;1, 2, 3, 4, 5, -2, -3, -6],
     list = [5b, 1b, 0b, -2b],
-    num = 1,
+    1num = 1,
     nums = 3s,                # teabawwb 4atg @zg5y 
     some = {
         new = {              ; hi
@@ -88,8 +88,8 @@ LL_AUTO_TYPE_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serve
                     0 /*b*/,
                     -2 /*b*/,
                 ]
-                "num": 1
-                "nums": 3s
+                "1num": 1
+                'nums': 3s
                 "string?": "streee _ _o-ix 我超, utf8 \"\\asfa%\"*)##q)$\\\\\"\\Q34\\\\\"\"'':",
             }
         }

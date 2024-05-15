@@ -37,7 +37,7 @@ Plugin::Plugin(Manifest manifest) : mImpl(std::make_unique<Impl>()) {
     mImpl->manifest     = std::move(manifest);
     mImpl->state        = State::Disabled;
     mImpl->logger.title = mImpl->manifest.name;
-    mImpl->pluginDir    = getPluginsRoot() / mImpl->manifest.name;
+    mImpl->pluginDir    = getPluginsRoot() / string_utils::sv2u8sv(mImpl->manifest.name);
     mImpl->dataDir      = mImpl->pluginDir / u8"data";
     mImpl->configDir    = mImpl->pluginDir / u8"config";
     mImpl->langDir      = mImpl->pluginDir / u8"lang";
