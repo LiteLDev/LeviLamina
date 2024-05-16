@@ -99,14 +99,14 @@ Expected<> NativePluginManager::load(Manifest manifest) {
         std::filesystem::canonical(getPluginsRoot() / string_utils::sv2u8sv(currentLoadingPlugin->getManifest().name));
 
     if (auto res = win_utils::adaptFixedSizeToAllocatedResult(
-            [](wchar_t* value, size_t valueLength, size_t* valueLengthNeededWithNul) -> bool {
+            [](wchar_t* value, size_t valueLength, size_t& valueLengthNeededWithNul) -> bool {
                 ::SetLastError(ERROR_SUCCESS);
-                *valueLengthNeededWithNul = ::GetEnvironmentVariableW(L"PATH", value, static_cast<DWORD>(valueLength));
-                if ((*valueLengthNeededWithNul == 0) && (::GetLastError() != ERROR_SUCCESS)) {
+                valueLengthNeededWithNul = ::GetEnvironmentVariableW(L"PATH", value, static_cast<DWORD>(valueLength));
+                if (valueLengthNeededWithNul == 0 && ::GetLastError() != ERROR_SUCCESS) {
                     return false;
                 }
-                if (*valueLengthNeededWithNul < valueLength) {
-                    (*valueLengthNeededWithNul)++; // It fit, account for the null.
+                if (valueLengthNeededWithNul < valueLength) {
+                    valueLengthNeededWithNul++; // It fit, account for the null.
                 }
                 return true;
             }
@@ -119,7 +119,7 @@ Expected<> NativePluginManager::load(Manifest manifest) {
         SetEnvironmentVariableW(L"PATH", res->c_str());
     }
     auto entry = pluginDir / string_utils::sv2u8sv(currentLoadingPlugin->getManifest().entry);
-    auto lib   = LoadLibrary(entry.c_str());
+    auto lib   = LoadLibraryW(entry.c_str());
     if (!lib) {
         auto       e = error_utils::getWinLastError();
         Expected<> error{makeExceptionError(std::make_exception_ptr(e))};
