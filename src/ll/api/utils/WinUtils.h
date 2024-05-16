@@ -37,22 +37,27 @@ LLNDAPI std::pair<std::tm, int> getLocalTime(); // tm & ms
     return getModuleFileName(getModuleHandle(addr));
 }
 
-template <std::invocable<wchar_t*, size_t, size_t*> Fn>
+template <std::invocable<wchar_t*, size_t, size_t&> Fn>
 [[nodiscard]] inline std::optional<std::wstring> adaptFixedSizeToAllocatedResult(Fn&& callback) noexcept {
     constexpr size_t arraySize = 256;
-    wchar_t          value[arraySize]{};
-    size_t           valueLengthNeededWithNull{};
-    if (!std::invoke(std::forward<Fn>(callback), value, arraySize, &valueLengthNeededWithNull)) {
-        return {};
+
+    wchar_t value[arraySize]{};
+    size_t  valueLengthNeededWithNull{};
+
+    std::optional<std::wstring> result{std::in_place};
+
+    if (!std::invoke(std::forward<Fn>(callback), value, arraySize, valueLengthNeededWithNull)) {
+        result.reset();
+        return result;
     }
     if (valueLengthNeededWithNull <= arraySize) {
         return std::optional<std::wstring>{std::in_place, value, valueLengthNeededWithNull - 1};
     }
-    std::optional<std::wstring> result{std::in_place};
     do {
         result->resize(valueLengthNeededWithNull - 1);
-        if (!std::invoke(std::forward<Fn>(callback), result->data(), result->size() + 1, &valueLengthNeededWithNull)) {
-            return {};
+        if (!std::invoke(std::forward<Fn>(callback), result->data(), result->size() + 1, valueLengthNeededWithNull)) {
+            result.reset();
+            return result;
         }
     } while (valueLengthNeededWithNull > result->size() + 1);
     if (valueLengthNeededWithNull <= result->size()) {

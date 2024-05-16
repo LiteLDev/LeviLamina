@@ -85,7 +85,7 @@ std::optional<std::filesystem::path> getModulePath(void* handle, void* process) 
 #if _HAS_CXX23
     return adaptFixedSizeToAllocatedResult(
                [module = (HMODULE)handle,
-                process](wchar_t* value, size_t valueLength, size_t* valueLengthNeededWithNul) -> bool {
+                process](wchar_t* value, size_t valueLength, size_t& valueLengthNeededWithNul) -> bool {
                    DWORD  copiedCount{};
                    size_t valueUsedWithNul{};
                    bool   copyFailed{};
@@ -111,7 +111,7 @@ std::optional<std::filesystem::path> getModulePath(void* handle, void* process) 
                        return false;
                    }
                    // When the copy truncated, request another try with more space.
-                   *valueLengthNeededWithNul = copySucceededWithNoTruncation ? valueUsedWithNul : (valueLength * 2);
+                   valueLengthNeededWithNul = copySucceededWithNoTruncation ? valueUsedWithNul : (valueLength * 2);
                    return true;
                }
     ).transform([](auto&& path) { return std::filesystem::path(path); });

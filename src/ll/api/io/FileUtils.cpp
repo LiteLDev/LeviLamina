@@ -103,7 +103,7 @@ data::Version getVersion(std::filesystem::path const& filePath) {
 // modified from Thomas Monkman's
 class FileWatcher::Impl {
 private:
-    std::function<void(std::filesystem::path const& file, FileActionType eventType)> mCallback;
+    std::function<void(std::filesystem::path const&, FileActionType)> mCallback;
 
     std::wstring mFilename; // not empty for single file
 
