@@ -26,11 +26,6 @@ public:
         uchar                 mUpdateFlags; // this+0x10
         ActorBlockSyncMessage mSyncMessage; // this+0x18
 
-        // prevent constructor by default
-        NetworkBlockInfo& operator=(NetworkBlockInfo const&) = delete;
-        NetworkBlockInfo(NetworkBlockInfo const&)            = delete;
-        NetworkBlockInfo()                                   = delete;
-
     public:
         // NOLINTBEGIN
         // symbol: ??1NetworkBlockInfo@UpdateSubChunkBlocksPacket@@QEAA@XZ
@@ -42,10 +37,6 @@ public:
     public:
         std::vector<NetworkBlockInfo> mStandards; // this+0x0
         std::vector<NetworkBlockInfo> mExtras;    // this+0x18
-
-        // prevent constructor by default
-        BlocksChangedInfo& operator=(BlocksChangedInfo const&);
-        BlocksChangedInfo(BlocksChangedInfo const&);
 
     public:
         // NOLINTBEGIN
@@ -70,10 +61,6 @@ public:
 public:
     BlocksChangedInfo    mBlocksChanged;         // this+0x30
     NetworkBlockPosition mSubChunkBlockPosition; // this+0x60
-
-    // prevent constructor by default
-    UpdateSubChunkBlocksPacket& operator=(UpdateSubChunkBlocksPacket const&);
-    UpdateSubChunkBlocksPacket(UpdateSubChunkBlocksPacket const&);
 
 public:
     // NOLINTBEGIN
