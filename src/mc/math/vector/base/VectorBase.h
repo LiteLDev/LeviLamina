@@ -62,7 +62,7 @@ struct LL_EBO VectorBase : concepts::VectorBaseTag {
     [[nodiscard]] constexpr std::string toString() const noexcept {
         std::string res("(");
         forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            res  = std::move(std::format("{}{}", res, static_cast<T const*>(this)->template get<axis_type>(iter)));
+            res  = std::format("{}{}", res, static_cast<T const*>(this)->template get<axis_type>(iter));
             res += ((iter < size() - 1) ? ", " : ")");
         });
         return res;
