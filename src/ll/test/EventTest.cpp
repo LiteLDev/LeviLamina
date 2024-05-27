@@ -16,6 +16,7 @@
 #include "ll/api/event/player/PlayerConnectEvent.h"
 #include "ll/api/event/player/PlayerDestroyBlockEvent.h"
 #include "ll/api/event/player/PlayerDieEvent.h"
+#include "ll/api/event/player/PlayerInteractBlockEvent.h"
 #include "ll/api/event/player/PlayerJoinEvent.h"
 #include "ll/api/event/player/PlayerJumpEvent.h"
 #include "ll/api/event/player/PlayerLeaveEvent.h"
@@ -26,7 +27,6 @@
 #include "ll/api/event/player/PlayerSprintEvent.h"
 #include "ll/api/event/player/PlayerSwingEvent.h"
 #include "ll/api/event/player/PlayerUseItemEvent.h"
-#include "ll/api/event/player/PlayerUseItemOnEvent.h"
 #include "ll/api/event/world/BlockChangedEvent.h"
 #include "ll/api/event/world/SpawnMobEvent.h"
 #include "ll/api/io/FileUtils.h"
@@ -222,7 +222,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 
 
     bus.addListener(dl, getEventId<PlayerUseItemEvent>);
-    bus.addListener(dl, getEventId<PlayerUseItemOnEvent>);
+    bus.addListener(dl, getEventId<PlayerInteractBlockEvent>);
     bus.addListener(dl, getEventId<ActorHurtEvent>);
     bus.addListener(dl, getEventId<PlayerDestroyBlockEvent>);
     bus.addListener(dl, getEventId<PlayerPlacingBlockEvent>);
