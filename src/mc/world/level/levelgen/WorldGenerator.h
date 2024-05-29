@@ -98,7 +98,7 @@ public:
 
     // vIndex: 46
     virtual void decorateWorldGenLoadChunk(
-        class Biome&             biome,
+        class Biome const&       biome,
         class LevelChunk&        lc,
         class BlockVolumeTarget& target,
         class Random&            random,
@@ -107,7 +107,7 @@ public:
 
     // vIndex: 47
     virtual void decorateWorldGenPostProcess(
-        class Biome&       biome,
+        class Biome const& biome,
         class LevelChunk&  lc,
         class BlockSource& source,
         class Random&      random
