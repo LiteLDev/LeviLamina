@@ -79,15 +79,9 @@ struct JSValue;
 namespace Scripting::QuickJS {
 // NOLINTBEGIN
 // symbol:
-// ?ConvertJSValueArgsToNativeAnys@QuickJS@Scripting@@YA?AUJSValue@@PEAUJSContext@@PEAVIFunction@Reflection@2@IPEAU3@AEAV?$array@Vmeta_any@entt@@$0BA@@std@@I@Z
-MCAPI struct JSValue ConvertJSValueArgsToNativeAnys(
-    struct JSContext* ctx,
-    class Scripting::Reflection::IFunction*,
-    uint,
-    struct JSValue*,
-    std::array<entt::meta_any, 16>&,
-    uint
-);
+// ?ConvertJSValueArgsToNativeAnys@QuickJS@Scripting@@YA?AUJSValue@@PEAUJSContext@@PEAVIFunction@Reflection@2@IPEAU3@AEAV?$array@Vmeta_any@entt@@$0BA@@std@@@Z
+MCAPI struct JSValue
+ConvertJSValueArgsToNativeAnys(struct JSContext*, class Scripting::Reflection::IFunction*, uint, struct JSValue*, std::array<entt::meta_any, 16>&);
 
 // symbol:
 // ?CopyJSValueArrayToNativeSequenceContainer@QuickJS@Scripting@@YA?AUJSValue@@PEAUJSContext@@U3@AEAVmeta_sequence_container@entt@@AEBVmeta_type@6@@Z
@@ -115,22 +109,23 @@ MCAPI entt::meta_any ExceptionWriter(struct JSContext* ctx);
 
 // symbol: ?GenericFreeFunctionCaller@QuickJS@Scripting@@YA?AUJSValue@@PEAUJSContext@@U3@HPEAU3@H2@Z
 MCAPI struct JSValue
-GenericFreeFunctionCaller(struct JSContext* ctx, struct JSValue, int, struct JSValue*, int, struct JSValue*);
+GenericFreeFunctionCaller(struct JSContext* ctx, struct JSValue, int argc, struct JSValue* argv, int, struct JSValue*);
 
 // symbol: ?GenericObjectFunctionCaller@QuickJS@Scripting@@YA?AUJSValue@@PEAUJSContext@@U3@HPEAU3@H2@Z
 MCAPI struct JSValue
-GenericObjectFunctionCaller(struct JSContext* ctx, struct JSValue, int, struct JSValue*, int, struct JSValue*);
+GenericObjectFunctionCaller(struct JSContext* ctx, struct JSValue, int argc, struct JSValue* argv, int, struct JSValue*);
 
 // symbol: ?GenericReflectionCtorCaller@QuickJS@Scripting@@YA?AUJSValue@@PEAUJSContext@@U3@HPEAU3@H@Z
-MCAPI struct JSValue GenericReflectionCtorCaller(struct JSContext* ctx, struct JSValue, int, struct JSValue*, int);
+MCAPI struct JSValue
+GenericReflectionCtorCaller(struct JSContext* ctx, struct JSValue, int argc, struct JSValue* argv, int);
 
 // symbol: ?GenericReflectionPropertyGetter@QuickJS@Scripting@@YA?AUJSValue@@PEAUJSContext@@U3@HPEAU3@H2@Z
 MCAPI struct JSValue
-GenericReflectionPropertyGetter(struct JSContext* ctx, struct JSValue, int, struct JSValue*, int, struct JSValue*);
+GenericReflectionPropertyGetter(struct JSContext* ctx, struct JSValue, int argc, struct JSValue* argv, int, struct JSValue*);
 
 // symbol: ?GenericReflectionPropertySetter@QuickJS@Scripting@@YA?AUJSValue@@PEAUJSContext@@U3@HPEAU3@H2@Z
 MCAPI struct JSValue
-GenericReflectionPropertySetter(struct JSContext* ctx, struct JSValue, int, struct JSValue*, int, struct JSValue*);
+GenericReflectionPropertySetter(struct JSContext* ctx, struct JSValue, int argc, struct JSValue* argv, int, struct JSValue*);
 
 // symbol:
 // ?GetClassNameFromJSValue@QuickJS@Scripting@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAUJSContext@@UJSValue@@@Z
@@ -240,13 +235,13 @@ MCAPI struct JSValue
 NativeRegisteredEnumToJSValue(struct JSContext* ctx, entt::meta_any& any, class Scripting::QuickJS::RegisteredEnum const&);
 
 // symbol: ?PrintError@QuickJS@Scripting@@YA?AUJSValue@@PEAUJSContext@@U3@HPEAU3@@Z
-MCAPI struct JSValue PrintError(struct JSContext* ctx, struct JSValue, int, struct JSValue*);
+MCAPI struct JSValue PrintError(struct JSContext* ctx, struct JSValue, int argc, struct JSValue* argv);
 
 // symbol: ?PrintInfo@QuickJS@Scripting@@YA?AUJSValue@@PEAUJSContext@@U3@HPEAU3@@Z
-MCAPI struct JSValue PrintInfo(struct JSContext* ctx, struct JSValue, int, struct JSValue*);
+MCAPI struct JSValue PrintInfo(struct JSContext* ctx, struct JSValue, int argc, struct JSValue* argv);
 
 // symbol: ?PrintWarn@QuickJS@Scripting@@YA?AUJSValue@@PEAUJSContext@@U3@HPEAU3@@Z
-MCAPI struct JSValue PrintWarn(struct JSContext* ctx, struct JSValue, int, struct JSValue*);
+MCAPI struct JSValue PrintWarn(struct JSContext* ctx, struct JSValue, int argc, struct JSValue* argv);
 
 // symbol: ?WriteError@QuickJS@Scripting@@YA?AVmeta_any@entt@@PEAUJSContext@@UJSValue@@@Z
 MCAPI entt::meta_any WriteError(struct JSContext* ctx, struct JSValue);

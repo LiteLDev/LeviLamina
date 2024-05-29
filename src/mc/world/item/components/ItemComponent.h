@@ -2,24 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/item/components/IItemComponentLegacyFactoryData.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class ItemComponent : public ::IItemComponentLegacyFactoryData {
+class ItemComponent {
 public:
     // prevent constructor by default
     ItemComponent& operator=(ItemComponent const&);
     ItemComponent(ItemComponent const&);
+    ItemComponent();
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ItemComponent@@UEAA@XZ
-    virtual ~ItemComponent();
+    // vIndex: 0, symbol: __gen_??1ItemComponent@@UEAA@XZ
+    virtual ~ItemComponent() = default;
 
     // vIndex: 1, symbol: ?checkComponentDataForContentErrors@ItemComponent@@UEBA_NXZ
     virtual bool checkComponentDataForContentErrors() const;
@@ -48,9 +46,6 @@ public:
 
     // vIndex: 9, symbol: ?_initializeComponent@ItemComponent@@MEAAXXZ
     virtual void _initializeComponent();
-
-    // symbol: ??0ItemComponent@@QEAA@XZ
-    MCAPI ItemComponent();
 
     // NOLINTEND
 };

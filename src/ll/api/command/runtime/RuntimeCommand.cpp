@@ -9,18 +9,15 @@ RuntimeCommand::RuntimeCommand(
     std::vector<std::pair<std::string, ParamKindType>> const& params,
     Executor const&                                           executor
 )
-: paramCount(params.size()),
-  executor(executor),
-  paramIndexMap(map) {
+: executor(executor),
+  paramIndexMap(map),
+  paramCount(params.size()) {
     size_t idx{0};
     for (auto&& [name, kind] : params) {
-        meta::visitIndex<ParamKind::Count>(
-            [&]<size_t K> {
-                std::
-                    construct_at(reinterpret_cast<ParamStorageType*>(reinterpret_cast<uintptr_t>(this) + sizeof(RuntimeCommand)) + idx, std::in_place_index<K>);
-            },
-            kind
-        );
+        meta::visitIndex<ParamKind::Count>(kind, [&]<size_t K> {
+            std::
+                construct_at(reinterpret_cast<ParamStorageType*>(reinterpret_cast<uintptr_t>(this) + sizeof(RuntimeCommand)) + idx, std::in_place_index<K>);
+        });
         idx++;
     }
 }
@@ -40,13 +37,13 @@ void RuntimeCommand::execute(class CommandOrigin const& origin, class CommandOut
     try {
         executor(origin, output, *this);
     } catch (...) {
-        ::ll::command::detail::printCommandError(*this);
+        ::ll::command::detail::printCommandError(*this, output);
     }
 }
 ParamStorageType const& RuntimeCommand::operator[](std::string_view name) const {
     auto iter = paramIndexMap.find(name);
     if (iter == paramIndexMap.end()) {
-        throw std::invalid_argument("invalid param " + std::string(name));
+        std::_Xout_of_range("invalid runtime_command param key");
     }
     return reinterpret_cast<ParamStorageType*>(
         reinterpret_cast<uintptr_t>(this) + sizeof(RuntimeCommand)
@@ -54,7 +51,7 @@ ParamStorageType const& RuntimeCommand::operator[](std::string_view name) const 
 }
 ParamStorageType const& RuntimeCommand::operator[](size_t idx) const {
     if (idx >= paramCount) {
-        throw std::out_of_range{"idx out of range"};
+        std::_Xout_of_range("invalid runtime_command index");
     }
     return reinterpret_cast<ParamStorageType*>(reinterpret_cast<uintptr_t>(this) + sizeof(RuntimeCommand))[idx];
 }

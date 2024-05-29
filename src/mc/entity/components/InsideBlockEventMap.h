@@ -13,8 +13,14 @@ public:
     MCAPI InsideBlockEventMap(class InsideBlockEventMap const&);
 
     // symbol: ??0InsideBlockEventMap@@QEAA@AEBVBlock@@_N11AEBVActorDefinitionTrigger@@2@Z
-    MCAPI
-    InsideBlockEventMap(class Block const& block, bool, bool, bool, class ActorDefinitionTrigger const&, class ActorDefinitionTrigger const&);
+    MCAPI InsideBlockEventMap(
+        class Block const&                  block,
+        bool                                watchEnter,
+        bool                                watchExit,
+        bool                                ignoreStates,
+        class ActorDefinitionTrigger const& enteredEvent,
+        class ActorDefinitionTrigger const& exitedEvent
+    );
 
     // symbol: ?getBlock@InsideBlockEventMap@@QEBA?AV?$not_null@PEBVBlock@@@gsl@@XZ
     MCAPI gsl::not_null<class Block const*> getBlock() const;

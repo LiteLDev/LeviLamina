@@ -16,10 +16,10 @@ public:
 
     // symbol: ??0JigsawBlockInfo@@QEAA@AEBVBlockPos@@PEBVBlock@@1VJigsawEditorData@@@Z
     MCAPI JigsawBlockInfo(
-        class BlockPos const& pos,
-        class Block const*    block,
-        class Block const*    finalBlock,
-        class JigsawEditorData
+        class BlockPos const&  pos,
+        class Block const*     block,
+        class Block const*     finalBlock,
+        class JigsawEditorData editorData
     );
 
     // symbol: ?getFrontFacing@JigsawBlockInfo@@QEBAEXZ

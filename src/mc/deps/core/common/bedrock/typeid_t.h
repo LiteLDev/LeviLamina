@@ -21,7 +21,12 @@ public:
     constexpr static ushort count = 0;
 
     ushort value{};
-    [[nodiscard]] constexpr typeid_t(typeid_t const& id) : value(id.value) {}
+    [[nodiscard]] constexpr typeid_t(typeid_t const& other) : value(other.value) {}
+    constexpr typeid_t& operator=(typeid_t const& other) {
+        value = other.value;
+        return *this;
+    }
+
     [[nodiscard]] constexpr typeid_t(ushort value) : value(value) {}
     [[nodiscard]] constexpr typeid_t() = default;
 

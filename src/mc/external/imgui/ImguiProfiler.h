@@ -180,7 +180,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?sPendingRecords@ImguiProfiler@@0V?$vector@URecord@ImguiProfiler@@V?$allocator@URecord@ImguiProfiler@@@std@@@std@@A
@@ -191,17 +191,6 @@ private:
 
     // symbol: ?sRecordMutex@ImguiProfiler@@0VMutex@Threading@Bedrock@@A
     MCAPI static class Bedrock::Threading::Mutex sRecordMutex;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $sPendingRecords() { return sPendingRecords; }
-
-    static auto& $sProduceRecords() { return sProduceRecords; }
-
-    static auto& $sRecordMutex() { return sRecordMutex; }
 
     // NOLINTEND
 };

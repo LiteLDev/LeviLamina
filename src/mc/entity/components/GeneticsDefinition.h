@@ -36,17 +36,10 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?DEFAULT_MUTATION_RATE@GeneticsDefinition@@0MB
     MCAPI static float const DEFAULT_MUTATION_RATE;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $DEFAULT_MUTATION_RATE() { return DEFAULT_MUTATION_RATE; }
 
     // NOLINTEND
 };

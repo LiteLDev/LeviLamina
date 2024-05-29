@@ -31,7 +31,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?sMutex@LibHttpClientInstance@Http@Bedrock@@0VMutex@Threading@3@A
     MCAPI static class Bedrock::Threading::Mutex sMutex;
@@ -39,15 +39,6 @@ private:
     // symbol:
     // ?sWeakInstance@LibHttpClientInstance@Http@Bedrock@@0V?$weak_ptr@VLibHttpClientInstance@Http@Bedrock@@@std@@A
     MCAPI static std::weak_ptr<class Bedrock::Http::LibHttpClientInstance> sWeakInstance;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $sMutex() { return sMutex; }
-
-    static auto& $sWeakInstance() { return sWeakInstance; }
 
     // NOLINTEND
 };

@@ -65,7 +65,7 @@ public:
     // vIndex: 2, symbol: ?writeSettings@ItemComponent@@UEAAXXZ
     virtual void writeSettings();
 
-    // vIndex: 3, symbol: ?isNetworkComponent@InteractButtonItemComponent@@UEBA_NXZ
+    // vIndex: 3, symbol: ?isNetworkComponent@ItemComponent@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
     // vIndex: 4, symbol:
@@ -109,22 +109,13 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?Main_Hand_Defaults@RenderOffsetsItemComponent@@0UItemTransforms@1@A
     MCAPI static struct RenderOffsetsItemComponent::ItemTransforms Main_Hand_Defaults;
 
     // symbol: ?Off_Hand_Defaults@RenderOffsetsItemComponent@@0UItemTransforms@1@A
     MCAPI static struct RenderOffsetsItemComponent::ItemTransforms Off_Hand_Defaults;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $Main_Hand_Defaults() { return Main_Hand_Defaults; }
-
-    static auto& $Off_Hand_Defaults() { return Off_Hand_Defaults; }
 
     // NOLINTEND
 };

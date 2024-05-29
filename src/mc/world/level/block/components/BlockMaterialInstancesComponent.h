@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/utils/BlockComponentBase.h"
+#include "mc/world/level/block/components/BlockComponentBase.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
 
 struct BlockMaterialInstancesComponent : public ::BlockComponentBase {

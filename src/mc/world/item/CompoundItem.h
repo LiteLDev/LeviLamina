@@ -30,23 +30,23 @@ public:
     // vIndex: 0, symbol: __gen_??1CompoundItem@@UEAA@XZ
     virtual ~CompoundItem() = default;
 
-    // vIndex: 54, symbol: ?isValidAuxValue@CompoundItem@@UEBA_NH@Z
+    // vIndex: 56, symbol: ?isValidAuxValue@CompoundItem@@UEBA_NH@Z
     virtual bool isValidAuxValue(int auxValue) const;
 
-    // vIndex: 81, symbol:
+    // vIndex: 82, symbol:
     // ?buildDescriptionId@CompoundItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 102, symbol:
+    // vIndex: 103, symbol:
     // ?setIconInfo@CompoundItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     virtual class Item& setIconInfo(std::string const& name, int id);
 
-    // vIndex: 103, symbol: ?getIconInfo@CompoundItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
+    // vIndex: 104, symbol: ?getIconInfo@CompoundItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const& item, int, bool inInventoryPane) const;
 
     // symbol:
     // ??0CompoundItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVExperiments@@@Z
-    MCAPI CompoundItem(std::string const& name, int id, class Experiments const&);
+    MCAPI CompoundItem(std::string const& name, int id, class Experiments const& experiments);
 
     // symbol: ?getCompoundType@CompoundItem@@SA?AW4CompoundType@@AEBVItemDescriptor@@@Z
     MCAPI static ::CompoundType getCompoundType(class ItemDescriptor const& itemDescriptor);
@@ -76,7 +76,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?mIdToSpecialCompound@CompoundItem@@0V?$unordered_map@HHU?$hash@H@std@@U?$equal_to@H@2@V?$allocator@U?$pair@$$CBHH@std@@@2@@std@@A
@@ -85,15 +85,6 @@ private:
     // symbol:
     // ?mTypeToSpecialCompound@CompoundItem@@0V?$unordered_map@HVItemInstance@@U?$hash@H@std@@U?$equal_to@H@3@V?$allocator@U?$pair@$$CBHVItemInstance@@@std@@@3@@std@@A
     MCAPI static std::unordered_map<int, class ItemInstance> mTypeToSpecialCompound;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mIdToSpecialCompound() { return mIdToSpecialCompound; }
-
-    static auto& $mTypeToSpecialCompound() { return mTypeToSpecialCompound; }
 
     // NOLINTEND
 };

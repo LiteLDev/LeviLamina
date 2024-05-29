@@ -29,10 +29,10 @@ public:
     // vIndex: 0, symbol: __gen_??1FireworksItem@@UEAA@XZ
     virtual ~FireworksItem() = default;
 
-    // vIndex: 43, symbol: ?isDestructive@FireworksItem@@UEBA_NH@Z
+    // vIndex: 44, symbol: ?isDestructive@FireworksItem@@UEBA_NH@Z
     virtual bool isDestructive(int auxValue) const;
 
-    // vIndex: 47, symbol:
+    // vIndex: 48, symbol:
     // ?appendFormattedHovertext@FireworksItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
     virtual void appendFormattedHovertext(
         class ItemStackBase const& stack,
@@ -41,14 +41,14 @@ public:
         bool                       advancedToolTips
     ) const;
 
-    // vIndex: 71, symbol: ?use@FireworksItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+    // vIndex: 72, symbol: ?use@FireworksItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
     virtual class ItemStack& use(class ItemStack& item, class Player& player) const;
 
-    // vIndex: 72, symbol: ?dispense@FireworksItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 73, symbol: ?dispense@FireworksItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
-    // vIndex: 117, symbol:
+    // vIndex: 118, symbol:
     // ?_useOn@FireworksItem@@UEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor&, class BlockPos pos, uchar face, class Vec3 const& clickPos) const;

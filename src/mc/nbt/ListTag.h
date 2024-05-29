@@ -34,7 +34,7 @@ public:
 
     [[nodiscard]] constexpr ListTag(List tags) {
         if (tags.empty()) {
-            mType = Tag::Type::End;
+            mType = Tag::End;
         } else {
             mType = tags[0]->getId();
             mList = std::move(tags);

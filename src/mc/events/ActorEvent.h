@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class ActorEvent {
+enum class ActorEvent : uchar {
     None                     = 0x0,
     Jump                     = 0x1,
     Hurt                     = 0x2,

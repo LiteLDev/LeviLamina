@@ -11,6 +11,7 @@
 // clang-format off
 class BlockPos;
 namespace br::worldgen { class GenerationStub; }
+namespace br::worldgen { class WorldGenContext; }
 namespace br::worldgen { struct GenerationContext; }
 // clang-format on
 
@@ -26,14 +27,16 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ?construct@JigsawAssembler@worldgen@br@@SA?AV?$optional@VGenerationStub@worldgen@br@@@std@@AEAUGenerationContext@23@V?$basic_string_view@DU?$char_traits@D@std@@@5@1HVBlockPos@@W4Type@HeightmapProjection@23@H$$QEAVPoolAliasLookup@PoolAliasBinding@@W4JigsawExpansion@23@@Z
+    // ?construct@JigsawAssembler@worldgen@br@@SA?AV?$optional@VGenerationStub@worldgen@br@@@std@@AEAUGenerationContext@23@AEBVWorldGenContext@23@V?$basic_string_view@DU?$char_traits@D@std@@@5@2HVBlockPos@@W4Type@HeightmapProjection@23@HH$$QEAVPoolAliasLookup@PoolAliasBinding@@W4JigsawExpansion@23@@Z
     MCAPI static std::optional<class br::worldgen::GenerationStub> construct(
         struct br::worldgen::GenerationContext&,
+        class br::worldgen::WorldGenContext const&,
         std::string_view,
         std::string_view,
         int,
         class BlockPos,
         ::br::worldgen::HeightmapProjection::Type,
+        int,
         int,
         class PoolAliasBinding::PoolAliasLookup&&,
         ::br::worldgen::JigsawExpansion

@@ -39,19 +39,19 @@ public:
     // vIndex: 10, symbol: __gen_??1GlowSquid@@UEAA@XZ
     virtual ~GlowSquid() = default;
 
-    // vIndex: 28, symbol: ?normalTick@GlowSquid@@UEAAXXZ
+    // vIndex: 26, symbol: ?normalTick@GlowSquid@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 79, symbol: ?handleEntityEvent@GlowSquid@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 75, symbol: ?handleEntityEvent@GlowSquid@@UEAAXW4ActorEvent@@H@Z
     virtual void handleEntityEvent(::ActorEvent id, int data);
 
-    // vIndex: 152, symbol: ?_hurt@GlowSquid@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 148, symbol: ?_hurt@GlowSquid@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 191, symbol: ?_getWalkTargetValue@GlowSquid@@UEAAMAEBVBlockPos@@@Z
+    // vIndex: 186, symbol: ?_getWalkTargetValue@GlowSquid@@UEAAMAEBVBlockPos@@@Z
     virtual float _getWalkTargetValue(class BlockPos const& pos);
 
-    // vIndex: 197, symbol: ?_getInkSquirtSoundEvent@GlowSquid@@MEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 192, symbol: ?_getInkSquirtSoundEvent@GlowSquid@@MEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
     virtual ::Puv::Legacy::LevelSoundEvent _getInkSquirtSoundEvent() const;
 
     // symbol: ??0GlowSquid@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/biome/source/FixedBiomeSource.h"
 #include "mc/world/level/biome/surface/PerlinNoise.h"
 #include "mc/world/level/biome/surface/PerlinSimplexNoise.h"
 
@@ -17,7 +18,7 @@ public:
     std::unique_ptr<SimplexNoise>       mIslandNoise;
     std::unique_ptr<PerlinSimplexNoise> mMaterialAdjNoise;
     // Bedrock::Threading::InstancedThreadLocal<TheEndGenerator::ThreadData>
-    char                              generatorHelpersPool[168];
+    char                              mGeneratorHelpersPool[168];
     std::unique_ptr<FixedBiomeSource> mBiomeSource; // this+0x258
 
     // prevent constructor by default
@@ -28,9 +29,9 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 45, symbol:
-    // ?decorateWorldGenLoadChunk@TheEndGenerator@@MEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockVolumeTarget@@AEAVRandom@@AEBVChunkPos@@@Z
+    // ?decorateWorldGenLoadChunk@TheEndGenerator@@MEBAXAEBVBiome@@AEAVLevelChunk@@AEAVBlockVolumeTarget@@AEAVRandom@@AEBVChunkPos@@@Z
     virtual void decorateWorldGenLoadChunk(
-        class Biome&             biome,
+        class Biome const&       biome,
         class LevelChunk&        lc,
         class BlockVolumeTarget& target,
         class Random&            random,
@@ -38,9 +39,9 @@ public:
     ) const;
 
     // vIndex: 46, symbol:
-    // ?decorateWorldGenPostProcess@TheEndGenerator@@MEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@@Z
+    // ?decorateWorldGenPostProcess@TheEndGenerator@@MEBAXAEBVBiome@@AEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@@Z
     virtual void decorateWorldGenPostProcess(
-        class Biome&       biome,
+        class Biome const& biome,
         class LevelChunk&  lc,
         class BlockSource& source,
         class Random&      random
@@ -108,8 +109,8 @@ public:
         class BlockVolume&    box,
         class ChunkPos const& chunkPos,
         bool                  factorInBeardsAndShavers,
-        std::vector<short>*,
-        int
+        std::vector<short>*   ZXheights,
+        int                   skipTopN
     );
 
     // symbol: ?getIslandHeightValue@TheEndGenerator@@AEBAMHHHH@Z

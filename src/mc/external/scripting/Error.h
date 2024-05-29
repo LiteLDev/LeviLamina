@@ -15,6 +15,9 @@ public:
     // symbol: ??0Error@Scripting@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI explicit Error(std::string const&);
 
+    // symbol: ??0Error@Scripting@@QEAA@$$QEAU01@@Z
+    MCAPI Error(struct Scripting::Error&&);
+
     // symbol: ??0Error@Scripting@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
     MCAPI Error(std::string const& name_, std::string const&);
 

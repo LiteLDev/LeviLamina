@@ -59,6 +59,10 @@ public:
     // symbol: ?getIdentity@PackManifest@@QEBAAEBUPackIdVersion@@XZ
     MCAPI struct PackIdVersion const& getIdentity() const;
 
+    // symbol:
+    // ?getLanguageCodesForPackKeywords@PackManifest@@QEBAAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
+    MCAPI std::vector<std::string> const& getLanguageCodesForPackKeywords() const;
+
     // symbol: ?getLocation@PackManifest@@QEBAAEBVResourceLocation@@XZ
     MCAPI class ResourceLocation const& getLocation() const;
 
@@ -189,18 +193,11 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?STRING_TO_PACK_SCOPE@PackManifest@@0V?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PackScope@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PackScope@@@std@@@2@@std@@B
     MCAPI static std::unordered_map<std::string, ::PackScope> const STRING_TO_PACK_SCOPE;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $STRING_TO_PACK_SCOPE() { return STRING_TO_PACK_SCOPE; }
 
     // NOLINTEND
 };

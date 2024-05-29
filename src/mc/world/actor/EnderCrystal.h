@@ -39,25 +39,25 @@ public:
     // vIndex: 10, symbol: __gen_??1EnderCrystal@@UEAA@XZ
     virtual ~EnderCrystal() = default;
 
-    // vIndex: 28, symbol: ?normalTick@EnderCrystal@@UEAAXXZ
+    // vIndex: 26, symbol: ?normalTick@EnderCrystal@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 40, symbol: ?getShadowRadius@EnderCrystal@@UEBAMXZ
+    // vIndex: 38, symbol: ?getShadowRadius@EnderCrystal@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 47, symbol: ?isPickable@EnderCrystal@@UEAA_NXZ
+    // vIndex: 45, symbol: ?isPickable@EnderCrystal@@UEAA_NXZ
     virtual bool isPickable();
 
-    // vIndex: 74, symbol: ?isInvulnerableTo@EnderCrystal@@UEBA_NAEBVActorDamageSource@@@Z
+    // vIndex: 70, symbol: ?isInvulnerableTo@EnderCrystal@@UEBA_NAEBVActorDamageSource@@@Z
     virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
-    // vIndex: 152, symbol: ?_hurt@EnderCrystal@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 148, symbol: ?_hurt@EnderCrystal@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 153, symbol: ?readAdditionalSaveData@EnderCrystal@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 149, symbol: ?readAdditionalSaveData@EnderCrystal@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 154, symbol: ?addAdditionalSaveData@EnderCrystal@@UEBAXAEAVCompoundTag@@@Z
+    // vIndex: 150, symbol: ?addAdditionalSaveData@EnderCrystal@@UEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ??0EnderCrystal@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

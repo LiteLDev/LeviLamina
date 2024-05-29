@@ -5,6 +5,7 @@
 #include "ll/api/command/CommandHandle.h"
 #include "ll/api/command/CommandRegistrar.h"
 #include "ll/api/i18n/I18n.h"
+#include "ll/core/Config.h"
 
 #include "ll/api/plugin/Plugin.h"
 #include "ll/api/service/Bedrock.h"
@@ -21,6 +22,8 @@
 namespace ll::command {
 using namespace ll::i18n_literals;
 
+enum class PluginNames;
+
 enum LeviCommandOperation : int {
     unload,
     reload,
@@ -32,92 +35,103 @@ enum LeviCommandOperation2 : int {
     show,
 };
 struct LeviCommand {
-    LeviCommandOperation operation;
-    std::string          plugin;
+    LeviCommandOperation  operation;
+    SoftEnum<PluginNames> plugin;
 };
 struct LeviCommand2 {
     LeviCommandOperation2 operation;
-    std::string           plugin;
+    SoftEnum<PluginNames> plugin;
 };
 struct LeviCommand3 {
-    std::string plugin;
+    SoftEnum<PluginNames> plugin;
 };
 
 void registerPluginManageCommand() {
+    auto config = ll::globalConfig.modules.command.pluginManageCommand;
+    if (!config.enabled) {
+        return;
+    }
     auto& cmd = CommandRegistrar::getInstance()
-                    .getOrCreateCommand("levilamina", "LeviLamina's main command"_tr(), CommandPermissionLevel::Host);
+                    .getOrCreateCommand("levilamina", "LeviLamina's main command"_tr(), config.permission);
     cmd.alias("ll");
-    cmd.overload<LeviCommand3>()
-        .text("load")
-        .required("plugin")
-        .execute<[](CommandOrigin const&, CommandOutput& output, LeviCommand3 const& param) {
+    cmd.overload<LeviCommand3>().text("load").required("plugin").execute(
+        [](CommandOrigin const&, CommandOutput& output, LeviCommand3 const& param) {
             if (ll::plugin::PluginManagerRegistry::getInstance().hasPlugin(param.plugin)) {
                 output.error("Plugin already {0} loaded"_tr(param.plugin));
                 return;
             }
-            if (ll::plugin::PluginRegistrar::getInstance().loadPlugin(param.plugin)) {
+            if (auto res = ll::plugin::PluginRegistrar::getInstance().loadPlugin(param.plugin); res) {
                 output.success("Load plugin {0} successfully"_tr(param.plugin));
             } else {
                 output.error("Failed to load plugin {0}"_tr(param.plugin));
+                res.error().log(output);
             }
-        }>();
+        }
+    );
     cmd.overload<LeviCommand>()
         .required("operation")
         .required("plugin")
-        .execute<[](CommandOrigin const&, CommandOutput& output, LeviCommand const& param) {
+        .execute([](CommandOrigin const&, CommandOutput& output, LeviCommand const& param) {
             if (!ll::plugin::PluginManagerRegistry::getInstance().hasPlugin(param.plugin)) {
                 output.error("Plugin {0} not found"_tr(param.plugin));
                 return;
             }
+            auto& reg = ll::plugin::PluginRegistrar::getInstance();
             switch (param.operation) {
             case LeviCommandOperation::unload:
-                if (ll::plugin::PluginRegistrar::getInstance().unloadPlugin(param.plugin)) {
+                if (auto res = reg.unloadPlugin(param.plugin); res) {
                     output.success("Unload plugin {0} successfully"_tr(param.plugin));
                 } else {
                     output.error("Failed to unload plugin {0}"_tr(param.plugin));
+                    res.error().log(output);
                 }
                 break;
             case LeviCommandOperation::reload:
-                if (ll::plugin::PluginRegistrar::getInstance().unloadPlugin(param.plugin)
-                    && ll::plugin::PluginRegistrar::getInstance().loadPlugin(param.plugin)) {
+                if (auto res = reg.unloadPlugin(param.plugin).and_then([&] { return reg.loadPlugin(param.plugin); });
+                    res) {
                     output.success("Reload plugin {0} successfully"_tr(param.plugin));
                 } else {
                     output.error("Failed to reload plugin {0}"_tr(param.plugin));
+                    res.error().log(output);
                 }
                 break;
             case LeviCommandOperation::reactivate:
-                if (ll::plugin::PluginRegistrar::getInstance().disablePlugin(param.plugin)
-                    && ll::plugin::PluginRegistrar::getInstance().enablePlugin(param.plugin)) {
+                if (auto res = reg.disablePlugin(param.plugin).and_then([&] { return reg.enablePlugin(param.plugin); });
+                    res) {
                     output.success("Reactivate plugin {0} successfully"_tr(param.plugin));
                 } else {
                     output.error("Failed to reactivate plugin {0}"_tr(param.plugin));
+                    res.error().log(output);
                 }
                 break;
             default:
-                std::unreachable();
+                _STL_UNREACHABLE;
             }
-        }>();
+        });
     cmd.overload<LeviCommand2>()
         .required("operation")
         .required("plugin")
-        .execute<[](CommandOrigin const&, CommandOutput& output, LeviCommand2 const& param) {
+        .execute([](CommandOrigin const&, CommandOutput& output, LeviCommand2 const& param) {
             if (!ll::plugin::PluginManagerRegistry::getInstance().hasPlugin(param.plugin)) {
                 output.error("Plugin {0} not found"_tr(param.plugin));
                 return;
             }
+            auto& reg = ll::plugin::PluginRegistrar::getInstance();
             switch (param.operation) {
             case LeviCommandOperation2::enable:
-                if (ll::plugin::PluginRegistrar::getInstance().enablePlugin(param.plugin)) {
+                if (auto res = reg.enablePlugin(param.plugin); res) {
                     output.success("Enable plugin {0} successfully"_tr(param.plugin));
                 } else {
                     output.error("Failed to enable plugin {0}"_tr(param.plugin));
+                    res.error().log(output);
                 }
                 break;
             case LeviCommandOperation2::disable:
-                if (ll::plugin::PluginRegistrar::getInstance().disablePlugin(param.plugin)) {
+                if (auto res = reg.disablePlugin(param.plugin); res) {
                     output.success("Disable plugin {0} successfully"_tr(param.plugin));
                 } else {
                     output.error("Failed to disable plugin {0}"_tr(param.plugin));
+                    res.error().log(output);
                 }
                 break;
             case LeviCommandOperation2::show: {
@@ -142,10 +156,10 @@ void registerPluginManageCommand() {
                 break;
             }
             default:
-                std::unreachable();
+                _STL_UNREACHABLE;
             }
-        }>();
-    cmd.overload().text("list").execute<[](CommandOrigin const&, CommandOutput& output) {
+        });
+    cmd.overload().text("list").execute([](CommandOrigin const&, CommandOutput& output) {
         size_t      amount = 0;
         std::string plugins;
         ll::plugin::PluginManagerRegistry::getInstance().forEachPluginWithType(
@@ -159,6 +173,6 @@ void registerPluginManageCommand() {
             plugins.resize(plugins.size() - 2);
         }
         output.success("There are {0} plugins: {1}"_tr(amount, plugins));
-    }>();
+    });
 }
 } // namespace ll::command

@@ -16,8 +16,8 @@ public:
     MCAPI SerializerEnumMapping(class cereal::SerializerEnumMapping const&);
 
     // symbol:
-    // ?lookup@SerializerEnumMapping@cereal@@QEBA?AV?$optional@_J@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z
-    MCAPI std::optional<int64> lookup(std::string const&) const;
+    // ?lookup@SerializerEnumMapping@cereal@@QEBA?AV?$optional@_J@std@@V?$basic_string_view@DU?$char_traits@D@std@@@4@@Z
+    MCAPI std::optional<int64> lookup(std::string_view) const;
 
     // symbol:
     // ?lookup@SerializerEnumMapping@cereal@@QEBA?AV?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@_J@Z

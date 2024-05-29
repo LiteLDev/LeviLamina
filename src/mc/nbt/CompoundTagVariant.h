@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef COMPOUND_TAG_VARIANT_HEADER
-#define COMPOUND_TAG_VARIANT_HEADER
-
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/nbt/ByteArrayTag.h"
 #include "mc/nbt/ByteTag.h"
@@ -17,13 +14,15 @@
 #include "mc/nbt/ShortTag.h"
 #include "mc/nbt/StringTag.h"
 
+#include "ll/api/Expected.h"
 #include "ll/api/base/Concepts.h"
+#include "ll/api/base/Meta.h"
 
 class CompoundTag;
 
 class CompoundTagVariant {
 public:
-    using Variant = std::variant<
+    using Types = ::ll::meta::TypeList<
         EndTag,
         ByteTag,
         ShortTag,
@@ -37,7 +36,12 @@ public:
         CompoundTag,
         IntArrayTag>;
 
+    using Variant = Types::to<std::variant>;
+
     Variant mTagStorage;
+
+    LLNDAPI static ll::Expected<CompoundTagVariant>
+    parse(std::string_view snbt, optional_ref<size_t> parsedLength = std::nullopt) noexcept;
 
     [[nodiscard]] constexpr CompoundTagVariant() = default;
 
@@ -68,46 +72,9 @@ public:
         if (!tag) {
             return;
         }
-        switch (tag->getId()) {
-        case Tag::Type::Byte:
-            mTagStorage = std::move((ByteTag&)*tag);
-            break;
-        case Tag::Type::Short:
-            mTagStorage = std::move((ShortTag&)*tag);
-            break;
-        case Tag::Type::Int:
-            mTagStorage = std::move((IntTag&)*tag);
-            break;
-        case Tag::Type::Int64:
-            mTagStorage = std::move((Int64Tag&)*tag);
-            break;
-        case Tag::Type::Float:
-            mTagStorage = std::move((FloatTag&)*tag);
-            break;
-        case Tag::Type::Double:
-            mTagStorage = std::move((DoubleTag&)*tag);
-            break;
-        case Tag::Type::ByteArray:
-            mTagStorage = std::move((ByteArrayTag&)*tag);
-            break;
-        case Tag::Type::String:
-            mTagStorage = std::move((StringTag&)*tag);
-            break;
-        case Tag::Type::List:
-            mTagStorage = std::move((ListTag&)*tag);
-            break;
-        case Tag::Type::Compound:
-            mTagStorage = std::move((CompoundTag&)*tag);
-            break;
-        case Tag::Type::IntArray:
-            mTagStorage = std::move((IntArrayTag&)*tag);
-            break;
-        case Tag::Type::End:
-            mTagStorage = std::move((EndTag&)*tag);
-            break;
-        default:
-            _STL_UNREACHABLE;
-        }
+        ::ll::meta::visitIndex<Types::size>(static_cast<size_t>(tag->getId()), [&]<size_t I> {
+            mTagStorage = std::move((Types::get<I>&)*tag);
+        });
     }
     [[nodiscard]] CompoundTagVariant(std::unique_ptr<Tag> const& tag)
     : CompoundTagVariant(tag ? tag->copy() : std::unique_ptr<Tag>{}) {}
@@ -189,23 +156,23 @@ public:
 
     [[nodiscard]] size_t size() const noexcept {
         switch (index()) {
-        case Tag::Type::Byte:
-        case Tag::Type::Short:
-        case Tag::Type::Int:
-        case Tag::Type::Int64:
-        case Tag::Type::Float:
-        case Tag::Type::Double:
-        case Tag::Type::String:
+        case Tag::Byte:
+        case Tag::Short:
+        case Tag::Int:
+        case Tag::Int64:
+        case Tag::Float:
+        case Tag::Double:
+        case Tag::String:
             return 1;
-        case Tag::Type::List:
+        case Tag::List:
             return get<ListTag>().size();
-        case Tag::Type::Compound:
+        case Tag::Compound:
             return get<CompoundTag>().size();
-        case Tag::Type::IntArray:
+        case Tag::IntArray:
             return get<IntArrayTag>().size();
-        case Tag::Type::ByteArray:
+        case Tag::ByteArray:
             return get<ByteArrayTag>().size();
-        case Tag::Type::End:
+        case Tag::End:
             return 0;
         default:
             _STL_UNREACHABLE;
@@ -222,12 +189,13 @@ public:
         return std::get<T>(mTagStorage);
     }
 
-    [[nodiscard]] Tag& get() {
-        return std::visit([](auto& val) -> Tag& { return (Tag&)val; }, mTagStorage);
-    }
+    [[nodiscard]] Tag& get() { return reinterpret_cast<Tag&>(mTagStorage); }
 
-    [[nodiscard]] Tag const& get() const {
-        return std::visit([](auto& val) -> Tag const& { return (Tag const&)val; }, mTagStorage);
+    [[nodiscard]] Tag const& get() const { return reinterpret_cast<Tag const&>(mTagStorage); }
+
+    template <std::derived_from<Tag> T>
+    [[nodiscard]] T& emplace() {
+        return mTagStorage.emplace<T>();
     }
 
     [[nodiscard]] std::unique_ptr<Tag>& operator[](size_t index) {
@@ -282,7 +250,7 @@ public:
 
     [[nodiscard]] std::unique_ptr<Tag> toUnique() const& {
         return std::visit(
-            [](auto& val) -> std::unique_ptr<Tag> { return std::make_unique<std::remove_cvref_t<decltype(val)>>(val); },
+            [](auto& val) -> std::unique_ptr<Tag> { return std::make_unique<std::decay_t<decltype(val)>>(val); },
             mTagStorage
         );
     }
@@ -291,16 +259,15 @@ public:
     [[nodiscard]] std::unique_ptr<Tag> toUnique() && {
         return std::visit(
             [](auto&& val) -> std::unique_ptr<Tag> {
-                return std::make_unique<std::remove_cvref_t<decltype(val)>>(std::move(val));
+                return std::make_unique<std::decay_t<decltype(val)>>(std::move(val));
             },
             mTagStorage
         );
     }
 
-    std::string toSnbt(SnbtFormat snbtFormat = SnbtFormat::PrettyFilePrint, uchar indent = 4) const {
-        return get().toSnbt(snbtFormat, indent);
-    }
-    std::string dump(uchar indent = 4, SnbtFormat snbtFormat = SnbtFormat::PrettyFilePrint) const {
+    LLNDAPI std::string toSnbt(SnbtFormat snbtFormat = SnbtFormat::PrettyFilePrint, uchar indent = 4) const noexcept;
+
+    std::string dump(uchar indent = 4, SnbtFormat snbtFormat = SnbtFormat::PrettyFilePrint) const noexcept {
         return toSnbt(snbtFormat, indent);
     }
 
@@ -360,11 +327,15 @@ public:
     [[nodiscard]] constexpr operator std::string_view() const { // NOLINT
         return get<StringTag>();
     }
+    static CompoundTagVariant object(std::initializer_list<CompoundTag::TagMap::value_type> init = {}) {
+        return CompoundTag{init};
+    }
+    static CompoundTagVariant array(std::initializer_list<CompoundTagVariant> init = {}) { return ListTag{init}; }
 };
 
 [[nodiscard]] constexpr ListTag::ListTag(std::vector<CompoundTagVariant> tags) {
     if (tags.empty()) {
-        mType = Tag::Type::End;
+        mType = Tag::End;
     } else {
         mType = tags[0].index();
         mList.reserve(tags.size());
@@ -375,7 +346,7 @@ public:
 }
 [[nodiscard]] constexpr ListTag::ListTag(std::initializer_list<CompoundTagVariant> tags) {
     if (tags.size() == 0) {
-        mType = Tag::Type::End;
+        mType = Tag::End;
     } else {
         mType = tags.begin()->index();
         mList.reserve(tags.size());
@@ -384,5 +355,3 @@ public:
         }
     }
 }
-
-#endif // COMPOUND_TAG_VARIANT_HEADER

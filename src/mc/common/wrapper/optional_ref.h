@@ -43,10 +43,9 @@ public:
         requires(std::is_convertible_v<U*, T*>)
     [[nodiscard]] constexpr optional_ref(const std::optional<U>& o) : mPtr(o ? &*o : nullptr) {}
 
-    template <typename U = T>
-    [[nodiscard]] constexpr optional_ref(optional_ref<std::remove_const_t<U>> rhs)
-        requires(std::is_const_v<U>)
-    : mPtr(rhs.as_ptr()) {}
+    template <typename U>
+        requires(std::is_convertible_v<U*, T*>)
+    [[nodiscard]] constexpr optional_ref(optional_ref<U> rhs) : mPtr(rhs.as_ptr()) {}
 
     [[nodiscard]] constexpr optional_ref(optional_ref&&) noexcept = default;
 
@@ -84,7 +83,7 @@ public:
     }
 
     template <class U>
-    [[nodiscard]] constexpr T value_or(U&& right) const {
+    [[nodiscard]] constexpr T value_or(U&& right) const&& {
         if (has_value()) {
             return *mPtr;
         }
@@ -98,27 +97,62 @@ public:
     }
 
     template <class... Types>
-    constexpr auto operator()(Types&&... args) const
-        noexcept(noexcept(std::invoke(*mPtr, static_cast<Types&&>(args)...)))
-            -> decltype(std::invoke(*mPtr, static_cast<Types&&>(args)...)) {
-        return std::invoke(*mPtr, static_cast<Types&&>(args)...);
+    constexpr decltype(auto) operator()(Types&&... args) const
+        noexcept(noexcept(std::invoke(get(), static_cast<Types&&>(args)...))) {
+        return (std::invoke(get(), static_cast<Types&&>(args)...));
     }
     template <class Arg>
     [[nodiscard]] constexpr decltype(auto) operator[](Arg&& index) const {
-        return get()[std::forward<Arg>(index)];
+        return (get()[std::forward<Arg>(index)]);
     }
-    [[nodiscard]] constexpr decltype(auto) end() { return get().end(); }
-    [[nodiscard]] constexpr decltype(auto) begin() { return get().begin(); }
-    [[nodiscard]] constexpr decltype(auto) end() const { return get().end(); }
-    [[nodiscard]] constexpr decltype(auto) begin() const { return get().begin(); }
-    [[nodiscard]] constexpr decltype(auto) cend() const { return get().cend(); }
-    [[nodiscard]] constexpr decltype(auto) cbegin() const { return get().cbegin(); }
-    [[nodiscard]] constexpr decltype(auto) rend() { return get().rend(); }
-    [[nodiscard]] constexpr decltype(auto) rbegin() { return get().rbegin(); }
-    [[nodiscard]] constexpr decltype(auto) rend() const { return get().rend(); }
-    [[nodiscard]] constexpr decltype(auto) rbegin() const { return get().rbegin(); }
-    [[nodiscard]] constexpr decltype(auto) crend() const { return get().crend(); }
-    [[nodiscard]] constexpr decltype(auto) crbegin() const { return get().crbegin(); }
+    [[nodiscard]] constexpr decltype(auto) end() const { return (get().end()); }
+    [[nodiscard]] constexpr decltype(auto) begin() const { return (get().begin()); }
+    [[nodiscard]] constexpr decltype(auto) cend() const { return (get().cend()); }
+    [[nodiscard]] constexpr decltype(auto) cbegin() const { return (get().cbegin()); }
+    [[nodiscard]] constexpr decltype(auto) rend() const { return (get().rend()); }
+    [[nodiscard]] constexpr decltype(auto) rbegin() const { return (get().rbegin()); }
+    [[nodiscard]] constexpr decltype(auto) crend() const { return (get().crend()); }
+    [[nodiscard]] constexpr decltype(auto) crbegin() const { return (get().crbegin()); }
+    template <class Fn>
+    constexpr auto and_then(Fn&& fn) const {
+        using Ret = std::invoke_result_t<Fn, T&>;
+        if (has_value()) {
+            return std::invoke(std::forward<Fn>(fn), static_cast<T&>(*mPtr));
+        } else {
+            return std::remove_cvref_t<Ret>{};
+        }
+    }
+    template <class Fn>
+    constexpr auto transform(Fn&& fn) const {
+        using Ret = std::invoke_result_t<Fn, T&>;
+        if constexpr (std::is_lvalue_reference_v<Ret> || std::is_pointer_v<Ret>) {
+            using UnwrapT = std::remove_pointer_t<std::remove_reference_t<Ret>>;
+            if (has_value()) {
+                return optional_ref<UnwrapT>{std::invoke(std::forward<Fn>(fn), static_cast<T&>(*mPtr))};
+            } else {
+                return optional_ref<UnwrapT>{};
+            }
+        } else {
+            using UnwrapT = std::remove_cv_t<Ret>;
+            if (has_value()) {
+                return std::optional<UnwrapT>{
+                    std::_Construct_from_invoke_result_tag{},
+                    std::forward<Fn>(fn),
+                    static_cast<T&>(*mPtr)
+                };
+            } else {
+                return std::optional<UnwrapT>{};
+            }
+        }
+    }
+    template <std::invocable<> Fn>
+    constexpr auto or_else(Fn&& fn) const -> std::invoke_result_t<Fn> {
+        if (has_value()) {
+            return *this;
+        } else {
+            return std::invoke(std::forward<Fn>(fn));
+        }
+    }
 };
 // NOLINTEND
 template <typename T>

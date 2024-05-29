@@ -45,10 +45,19 @@ public:
     // vIndex: 6, symbol: ?onFlushEditorExtensionContextAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
     virtual bool onFlushEditorExtensionContextAfterEvents();
 
-    // vIndex: 7, symbol: ?onPreFlushAfterEvents@ScriptDeferredEventListener@@UEAAXXZ
+    // vIndex: 7, symbol: ?onFlushBlockCustomComponentAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
+    virtual bool onFlushBlockCustomComponentAfterEvents();
+
+    // vIndex: 8, symbol: ?onFlushEditorDataStoreAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
+    virtual bool onFlushEditorDataStoreAfterEvents();
+
+    // vIndex: 9, symbol: ?onFlushItemCustomComponentAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
+    virtual bool onFlushItemCustomComponentAfterEvents();
+
+    // vIndex: 10, symbol: ?onPreFlushAfterEvents@ScriptDeferredEventListener@@UEAAXXZ
     virtual void onPreFlushAfterEvents();
 
-    // vIndex: 8, symbol: ?onPostFlushAfterEvents@ScriptDeferredEventListener@@UEAAXXZ
+    // vIndex: 11, symbol: ?onPostFlushAfterEvents@ScriptDeferredEventListener@@UEAAXXZ
     virtual void onPostFlushAfterEvents();
 
     // symbol:

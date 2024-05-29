@@ -76,7 +76,7 @@ public:
     MCAPI struct BuildMatch _findExitPortal();
 
     // symbol: ?_initializeDragon@EndDragonFight@@AEAAXAEAVEnderDragon@@@Z
-    MCAPI void _initializeDragon(class EnderDragon&);
+    MCAPI void _initializeDragon(class EnderDragon& enderDragon);
 
     // symbol: ?_makeEndIslandFeature@EndDragonFight@@AEAAXAEAVBlockSource@@VBlockPos@@@Z
     MCAPI void _makeEndIslandFeature(class BlockSource& region, class BlockPos position);
@@ -114,7 +114,7 @@ public:
 
     // symbol:
     // ?_tickRespawnAnimation@EndDragonFight@@AEAAXAEBV?$vector@UActorUniqueID@@V?$allocator@UActorUniqueID@@@std@@@std@@H@Z
-    MCAPI void _tickRespawnAnimation(std::vector<struct ActorUniqueID> const&, int time);
+    MCAPI void _tickRespawnAnimation(std::vector<struct ActorUniqueID> const& crystalIDs, int time);
 
     // symbol: ?_updateCrystalCount@EndDragonFight@@AEAAXXZ
     MCAPI void _updateCrystalCount();
@@ -128,7 +128,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?ARENA_SIZE_CHUNKS@EndDragonFight@@0HB
     MCAPI static int const ARENA_SIZE_CHUNKS;
@@ -156,29 +156,6 @@ private:
 
     // symbol: ?TIME_BETWEEN_PORTAL_SCANS@EndDragonFight@@0HB
     MCAPI static int const TIME_BETWEEN_PORTAL_SCANS;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $ARENA_SIZE_CHUNKS() { return ARENA_SIZE_CHUNKS; }
-
-    static auto& $DEFAULT_PORTAL_LOCATION() { return DEFAULT_PORTAL_LOCATION; }
-
-    static auto& $GATEWAY_CHUNK_RADIUS() { return GATEWAY_CHUNK_RADIUS; }
-
-    static auto& $GATEWAY_COUNT() { return GATEWAY_COUNT; }
-
-    static auto& $GATEWAY_DISTANCE() { return GATEWAY_DISTANCE; }
-
-    static auto& $GATEWAY_HEIGHT() { return GATEWAY_HEIGHT; }
-
-    static auto& $TIME_BETWEEN_CRYSTAL_SCANS() { return TIME_BETWEEN_CRYSTAL_SCANS; }
-
-    static auto& $TIME_BETWEEN_PLAYER_SCANS() { return TIME_BETWEEN_PLAYER_SCANS; }
-
-    static auto& $TIME_BETWEEN_PORTAL_SCANS() { return TIME_BETWEEN_PORTAL_SCANS; }
 
     // NOLINTEND
 };

@@ -60,7 +60,7 @@ public:
     MCAPI MolangMemberArray(::MolangStruct_PoseIndexAndHurtTime, int poseIndex, int hurtTime);
 
     // symbol: ??0MolangMemberArray@@QEAA@W4MolangStruct_RotYAndPosY@@MM@Z
-    MCAPI MolangMemberArray(::MolangStruct_RotYAndPosY, float rotY, float);
+    MCAPI MolangMemberArray(::MolangStruct_RotYAndPosY, float rotY, float posY);
 
     // symbol: ??0MolangMemberArray@@QEAA@W4MolangStruct_SpeedAndDirection@@MAEBVVec3@@@Z
     MCAPI MolangMemberArray(::MolangStruct_SpeedAndDirection, float speed, class Vec3 const& direction);
@@ -74,7 +74,7 @@ public:
     // symbol: ??0MolangMemberArray@@QEAA@W4MolangStruct_TRS@@$$QEAU0@11@Z
     MCAPI MolangMemberArray(
         ::MolangStruct_TRS,
-        struct MolangMemberArray&&,
+        struct MolangMemberArray&& translation,
         struct MolangMemberArray&& rotation,
         struct MolangMemberArray&& scale
     );

@@ -20,11 +20,11 @@ public:
     // symbol:
     // ?appendFormattedPotionText@Potion@@QEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@W4PotionVariant@1@AEBVPlayer@@M@Z
     MCAPI void appendFormattedPotionText(
-        std::string&         hovertext,
-        ::Potion::PotionType potionType,
-        ::Potion::PotionVariant,
-        class Player const& player,
-        float               timeMod
+        std::string&            hovertext,
+        ::Potion::PotionType    potionType,
+        ::Potion::PotionVariant potionVariant,
+        class Player const&     player,
+        float                   timeMod
     ) const;
 
     // symbol:
@@ -256,7 +256,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mLastId@Potion@@0HA
     MCAPI static int mLastId;
@@ -267,17 +267,6 @@ private:
     // symbol:
     // ?mPotionsByName@Potion@@0V?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HU?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@std@@@2@@std@@A
     MCAPI static std::unordered_map<std::string, int> mPotionsByName;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mLastId() { return mLastId; }
-
-    static auto& $mPotionsById() { return mPotionsById; }
-
-    static auto& $mPotionsByName() { return mPotionsByName; }
 
     // NOLINTEND
 };

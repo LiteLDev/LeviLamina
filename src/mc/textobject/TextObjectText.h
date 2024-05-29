@@ -37,7 +37,7 @@ public:
 
     // symbol:
     // ?asJsonValue@TextObjectText@@SA?AVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static class Json::Value asJsonValue(std::string const&);
+    MCAPI static class Json::Value asJsonValue(std::string const& textField);
 
     // NOLINTEND
 };

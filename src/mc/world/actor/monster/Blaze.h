@@ -42,19 +42,19 @@ public:
     // vIndex: 10, symbol: __gen_??1Blaze@@UEAA@XZ
     virtual ~Blaze() = default;
 
-    // vIndex: 28, symbol: ?normalTick@Blaze@@UEAAXXZ
+    // vIndex: 26, symbol: ?normalTick@Blaze@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 43, symbol: ?getBrightness@Blaze@@UEBAMMAEBVIConstBlockSource@@@Z
+    // vIndex: 41, symbol: ?getBrightness@Blaze@@UEBAMMAEBVIConstBlockSource@@@Z
     virtual float getBrightness(float, class IConstBlockSource const&) const;
 
-    // vIndex: 54, symbol: ?isOnFire@Blaze@@UEBA_NXZ
+    // vIndex: 52, symbol: ?isOnFire@Blaze@@UEBA_NXZ
     virtual bool isOnFire() const;
 
-    // vIndex: 165, symbol: ?aiStep@Blaze@@UEAAXXZ
+    // vIndex: 160, symbol: ?aiStep@Blaze@@UEAAXXZ
     virtual void aiStep();
 
-    // vIndex: 197, symbol: ?isDarkEnoughToSpawn@Blaze@@UEBA_NXZ
+    // vIndex: 192, symbol: ?isDarkEnoughToSpawn@Blaze@@UEBA_NXZ
     virtual bool isDarkEnoughToSpawn() const;
 
     // symbol: ??0Blaze@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

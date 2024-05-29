@@ -29,7 +29,7 @@ public:
     // vIndex: 0, symbol: __gen_??1SaddleItem@@UEAA@XZ
     virtual ~SaddleItem() = default;
 
-    // vIndex: 72, symbol: ?dispense@SaddleItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 73, symbol: ?dispense@SaddleItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar) const;
 

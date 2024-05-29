@@ -27,9 +27,8 @@ std::unique_ptr<StructureTemplate> StructureTemplate::create(const std::string& 
     if (!ll::service::getLevel()) {
         return nullptr;
     }
-    auto& unknownBlockRegistry = ll::service::getLevel()->getStructureManager()->mUnknownBlockRegistry;
-    auto  res                  = std::make_unique<StructureTemplate>(name, unknownBlockRegistry);
-    bool  success{res->load(tag)};
+    auto res = std::make_unique<StructureTemplate>(name, ll::service::getLevel()->getUnknownBlockTypeRegistry());
+    bool success{res->load(tag)};
     if (!success) {
         return nullptr;
     }
@@ -43,9 +42,8 @@ std::unique_ptr<StructureTemplate> StructureTemplate::create(
     bool               ignoreBlocks,
     bool               ignoreEntities
 ) {
-    auto& unknownBlockRegistry = blockSource.getLevel().getStructureManager()->mUnknownBlockRegistry;
-    auto  res                  = std::make_unique<StructureTemplate>(name, unknownBlockRegistry);
-    auto  setting              = StructureSettings(boundingBox.getSideLength(), ignoreBlocks, ignoreEntities);
+    auto res     = std::make_unique<StructureTemplate>(name, blockSource.getLevel().getUnknownBlockTypeRegistry());
+    auto setting = StructureSettings(boundingBox.getSideLength(), ignoreBlocks, ignoreEntities);
     res->fillFromWorld(blockSource, boundingBox.min, setting);
     return res;
 }

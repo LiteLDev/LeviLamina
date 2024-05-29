@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Puv::v1_20_50 { struct RepairableItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -27,7 +28,7 @@ public:
     // vIndex: 2, symbol: ?writeSettings@ItemComponent@@UEAAXXZ
     virtual void writeSettings();
 
-    // vIndex: 3, symbol: ?isNetworkComponent@InteractButtonItemComponent@@UEBA_NXZ
+    // vIndex: 3, symbol: ?isNetworkComponent@ItemComponent@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
     // vIndex: 4, symbol:
@@ -50,8 +51,11 @@ public:
     // vIndex: 9, symbol: ?_initializeComponent@ItemComponent@@MEAAXXZ
     virtual void _initializeComponent();
 
+    // symbol: ??0RepairableItemComponent@@QEAA@U0v1_20_50@Puv@@@Z
+    MCAPI explicit RepairableItemComponent(struct Puv::v1_20_50::RepairableItemComponent);
+
     // symbol: ?handleItemRepair@RepairableItemComponent@@QEBA?AURepairItemResult@@AEAVItemStack@@0_N@Z
-    MCAPI struct RepairItemResult handleItemRepair(class ItemStack&, class ItemStack&, bool) const;
+    MCAPI struct RepairItemResult handleItemRepair(class ItemStack&, class ItemStack& materialItem, bool) const;
 
     // symbol: ?isValidRepairItem@RepairableItemComponent@@QEBA_NAEBVItemStackBase@@@Z
     MCAPI bool isValidRepairItem(class ItemStackBase const& repairItem) const;
@@ -81,7 +85,11 @@ public:
     MCAPI struct RepairItemEntry const* _getRepairItemEntry(class ItemStackBase const& item) const;
 
     // symbol: ?_repairItem@RepairableItemComponent@@AEBAHAEAVItemStackBase@@0VExpressionNode@@@Z
-    MCAPI int _repairItem(class ItemStackBase&, class ItemStackBase& resultItem, class ExpressionNode) const;
+    MCAPI int _repairItem(
+        class ItemStackBase& materialItem,
+        class ItemStackBase& resultItem,
+        class ExpressionNode repairAmountExpression
+    ) const;
 
     // NOLINTEND
 };

@@ -38,14 +38,14 @@ public:
     // symbol: ?playerListChanged@AutomationClient@Automation@@UEAAXXZ
     MCVAPI void playerListChanged();
 
+    // symbol: ?send@AutomationClient@Automation@@UEAAXAEBUErrorMessage@CodeBuilder@@@Z
+    MCVAPI void send(struct CodeBuilder::ErrorMessage const& message);
+
     // symbol: ?send@AutomationClient@Automation@@UEAAXAEBUEventMessage@CodeBuilder@@@Z
     MCVAPI void send(struct CodeBuilder::EventMessage const& message);
 
     // symbol: ?send@AutomationClient@Automation@@UEAAXAEBUCommandMessage@CodeBuilder@@@Z
     MCVAPI void send(struct CodeBuilder::CommandMessage const& message);
-
-    // symbol: ?send@AutomationClient@Automation@@UEAAXAEBUErrorMessage@CodeBuilder@@@Z
-    MCVAPI void send(struct CodeBuilder::ErrorMessage const& message);
 
     // symbol: ?send@AutomationClient@Automation@@UEAAXAEBUChatMessage@CodeBuilder@@@Z
     MCVAPI void send(struct CodeBuilder::ChatMessage const& message);
@@ -88,7 +88,7 @@ public:
     MCAPI void _forEachSession(std::function<bool(class Automation::AutomationSession&)> const& callback);
 
     // symbol: ?_removeSession@AutomationClient@Automation@@AEAAXAEBVAutomationSession@2@@Z
-    MCAPI void _removeSession(class Automation::AutomationSession const&);
+    MCAPI void _removeSession(class Automation::AutomationSession const& session);
 
     // symbol: ?_tryAddCommand@AutomationClient@Automation@@AEAA_N$$QEAUCommandRequest@CodeBuilder@@@Z
     MCAPI bool _tryAddCommand(struct CodeBuilder::CommandRequest&&);

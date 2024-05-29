@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0ItemContext@@QEAA@AEBVWeakEntityRef@@W4EquipmentSlot@Legacy@Puv@@@Z
-    MCAPI ItemContext(class WeakEntityRef const& entityRef, ::Puv::Legacy::EquipmentSlot);
+    MCAPI ItemContext(class WeakEntityRef const& entityRef, ::Puv::Legacy::EquipmentSlot equipmentSlot);
 
     // symbol: ??0ItemContext@@QEAA@AEBVWeakEntityRef@@H@Z
     MCAPI ItemContext(class WeakEntityRef const& entityRef, int slot);
@@ -131,7 +131,8 @@ public:
     MCAPI ~ItemContext();
 
     // symbol: ?setEquipment@ItemContext@@SA_NAEBVItemStack@@W4EquipmentSlot@Legacy@Puv@@AEAVMob@@@Z
-    MCAPI static bool setEquipment(class ItemStack const& item, ::Puv::Legacy::EquipmentSlot, class Mob& mob);
+    MCAPI static bool
+    setEquipment(class ItemStack const& item, ::Puv::Legacy::EquipmentSlot equipmentSlot, class Mob& mob);
 
     // NOLINTEND
 

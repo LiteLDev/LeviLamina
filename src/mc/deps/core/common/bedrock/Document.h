@@ -52,9 +52,9 @@ public:
         class Bedrock::Intrusive::list<
             class Bedrock::JSONObject::NodeBase,
             class Bedrock::JSONObject::NodeBase,
-            class Bedrock::JSONObject::NodeBase>&,
-        uint64 size,
-        uint64 alignment
+            class Bedrock::JSONObject::NodeBase>& freeList,
+        uint64                                    size,
+        uint64                                    alignment
     );
 
     // symbol: ?_createNode@Document@JSONObject@Bedrock@@AEAAPEAVNodeBase@23@AEBVValueWrapper@23@@Z

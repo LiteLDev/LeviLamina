@@ -144,7 +144,8 @@ public:
     _calculateDistanceFromPositionToEdgeOfVillage(class BlockPos const& position, class Village const& village) const;
 
     // symbol: ?_createOrGetVillage@VillageManager@@AEAA?AV?$shared_ptr@VVillage@@@std@@AEBVUUID@mce@@AEBVBlockPos@@@Z
-    MCAPI std::shared_ptr<class Village> _createOrGetVillage(class mce::UUID const& id, class BlockPos const&);
+    MCAPI std::shared_ptr<class Village>
+          _createOrGetVillage(class mce::UUID const& id, class BlockPos const& newVillagePos);
 
     // symbol:
     // ?_getVillageWithBedsAvailableMap@VillageManager@@AEBA?AV?$unordered_map@PEBVVillage@@W4BedAvailabilityState@VillageManager@@U?$hash@PEBVVillage@@@std@@U?$equal_to@PEBVVillage@@@5@V?$allocator@U?$pair@QEBVVillage@@W4BedAvailabilityState@VillageManager@@@std@@@5@@std@@XZ
@@ -166,7 +167,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?MAX_POI_QUERIES@VillageManager@@0_KB
     MCAPI static uint64 const MAX_POI_QUERIES;
@@ -176,17 +177,6 @@ private:
 
     // symbol: ?VILLAGE_HERO_EFFECT_DURATION@VillageManager@@0HB
     MCAPI static int const VILLAGE_HERO_EFFECT_DURATION;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $MAX_POI_QUERIES() { return MAX_POI_QUERIES; }
-
-    static auto& $MAX_QUERY_SCAN_ITERATIONS() { return MAX_QUERY_SCAN_ITERATIONS; }
-
-    static auto& $VILLAGE_HERO_EFFECT_DURATION() { return VILLAGE_HERO_EFFECT_DURATION; }
 
     // NOLINTEND
 };

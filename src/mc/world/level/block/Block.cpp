@@ -12,35 +12,24 @@
 #include "ll/api/service/Bedrock.h"
 
 optional_ref<Block const> Block::tryGetFromRegistry(uint runtimeID) {
-    if (!ll::service::getLevel()) {
-        return nullptr;
-    }
-    auto& res = ll::service::getLevel()->getBlockPalette().getBlock(runtimeID);
-    if (res.getRuntimeId() != runtimeID) {
-        return nullptr;
-    }
-    return res;
+    return ll::service::getLevel().transform([&](auto& level) -> decltype(auto) {
+        return level.getBlockPalette().getBlock(runtimeID);
+    });
 }
 optional_ref<Block const> Block::tryGetFromRegistry(std::string_view name) {
-    auto blockLegacyPtr = BlockLegacy::tryGetFromRegistry(name);
-    if (!blockLegacyPtr) {
-        return nullptr;
-    }
-    return blockLegacyPtr->getDefaultState();
+    return BlockLegacy::tryGetFromRegistry(name).transform([&](auto& block) -> decltype(auto) {
+        return block.getDefaultState();
+    });
 }
 optional_ref<Block const> Block::tryGetFromRegistry(std::string_view name, ushort legacyData) {
-    auto blockLegacyPtr = BlockLegacy::tryGetFromRegistry(name);
-    if (!blockLegacyPtr) {
-        return nullptr;
-    }
-    return blockLegacyPtr->tryGetStateFromLegacyData(legacyData);
+    return BlockLegacy::tryGetFromRegistry(name).transform([&](auto& block) -> decltype(auto) {
+        return block.tryGetStateFromLegacyData(legacyData);
+    });
 }
 optional_ref<Block const> Block::tryGetFromRegistry(uint legacyBlockID, ushort legacyData) {
-    auto blockLegacyPtr = BlockLegacy::tryGetFromRegistry(legacyBlockID);
-    if (!blockLegacyPtr) {
-        return nullptr;
-    }
-    return blockLegacyPtr->tryGetStateFromLegacyData(legacyData);
+    return BlockLegacy::tryGetFromRegistry(legacyBlockID).transform([&](auto& block) -> decltype(auto) {
+        return block.tryGetStateFromLegacyData(legacyData);
+    });
 }
 optional_ref<Block const> Block::tryGetFromRegistry(std::string_view name, Block::BlockStatesType const& states) {
     auto blockLegacyPtr = BlockLegacy::tryGetFromRegistry(name);

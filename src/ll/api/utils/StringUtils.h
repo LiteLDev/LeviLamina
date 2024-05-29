@@ -15,12 +15,14 @@
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
 
+#include "ll/api/Expected.h"
+
 namespace ll::inline utils::string_utils {
 
 // "2021-03-24"  ->  ["2021", "03", "24"]  (use '-' as split pattern)
 template <class T>
-[[nodiscard]] constexpr auto splitByPattern(T&& str, std::string_view pattern, bool keepEmpty = false)
-    -> decltype(auto) {
+[[nodiscard]] constexpr auto splitByPattern(T&& str, std::string_view pattern, bool keepEmpty = false) -> decltype(auto
+                                                                                                       ) {
     using ReturnTypeElement = std::conditional_t<std::is_same_v<T&&, std::string&&>, std::string, std::string_view>;
     using ReturnType        = std::vector<ReturnTypeElement>;
     std::string_view s{str};
@@ -200,82 +202,63 @@ LLNDAPI std::string
 [[nodiscard]] inline std::u8string_view sv2u8sv(std::string_view str) {
     return {reinterpret_cast<const char8_t*>(str.data()), str.size()};
 }
-template <class T, auto f>
-[[nodiscard]] inline T svtonum(std::string_view str, size_t* idx, int base) {
+template <class T, auto f, class... Args>
+[[nodiscard]] inline Expected<T> svtonum(std::string_view str, size_t* idx, Args&&... args) {
     int&        errnoRef = errno;
     char const* ptr      = str.data();
     char*       eptr{};
     errnoRef       = 0;
-    const auto ans = f(ptr, &eptr, base);
+    const auto ans = f(ptr, &eptr, std::forward<Args>(args)...);
     if (ptr == eptr) {
-        throw std::invalid_argument("invalid svtonum argument");
+        return makeErrorCodeError(std::errc::invalid_argument);
     }
     if (errnoRef == ERANGE) {
-        throw std::out_of_range("svtonum argument out of range");
+        return makeErrorCodeError(std::errc::result_out_of_range);
     }
     if (idx) {
         *idx = static_cast<size_t>(eptr - ptr);
     }
     return static_cast<T>(ans);
 }
-template <class T, auto f>
-[[nodiscard]] inline T svtonum(std::string_view str, size_t* idx) {
-    int&        errnoRef = errno;
-    char const* ptr      = str.data();
-    char*       eptr{};
-    errnoRef       = 0;
-    const auto ans = f(ptr, &eptr);
-    if (ptr == eptr) {
-        throw std::invalid_argument("invalid svtonum argument");
-    }
-    if (errnoRef == ERANGE) {
-        throw std::out_of_range("svtonum argument out of range");
-    }
-    if (idx) {
-        *idx = static_cast<size_t>(eptr - ptr);
-    }
-    return static_cast<T>(ans);
-}
-
-[[nodiscard]] inline schar svtoc(std::string_view str, size_t* idx = nullptr, int base = 10) {
+[[nodiscard]] inline decltype(auto) svtoc(std::string_view str, size_t* idx = nullptr, int base = 10) {
     return svtonum<schar, strtol>(str, idx, base);
 }
-[[nodiscard]] inline uchar svtouc(std::string_view str, size_t* idx = nullptr, int base = 10) {
+[[nodiscard]] inline decltype(auto) svtouc(std::string_view str, size_t* idx = nullptr, int base = 10) {
     return svtonum<uchar, strtoul>(str, idx, base);
 }
-[[nodiscard]] inline short svtos(std::string_view str, size_t* idx = nullptr, int base = 10) {
+[[nodiscard]] inline decltype(auto) svtos(std::string_view str, size_t* idx = nullptr, int base = 10) {
     return svtonum<short, strtol>(str, idx, base);
 }
-[[nodiscard]] inline ushort svtous(std::string_view str, size_t* idx = nullptr, int base = 10) {
+[[nodiscard]] inline decltype(auto) svtous(std::string_view str, size_t* idx = nullptr, int base = 10) {
     return svtonum<ushort, strtoul>(str, idx, base);
 }
-[[nodiscard]] inline int svtoi(std::string_view str, size_t* idx = nullptr, int base = 10) {
+[[nodiscard]] inline decltype(auto) svtoi(std::string_view str, size_t* idx = nullptr, int base = 10) {
     return svtonum<int, strtol>(str, idx, base);
 }
-[[nodiscard]] inline uint svtoui(std::string_view str, size_t* idx = nullptr, int base = 10) {
+[[nodiscard]] inline decltype(auto) svtoui(std::string_view str, size_t* idx = nullptr, int base = 10) {
     return svtonum<uint, strtoul>(str, idx, base);
 }
-[[nodiscard]] inline long svtol(std::string_view str, size_t* idx = nullptr, int base = 10) {
+[[nodiscard]] inline decltype(auto) svtol(std::string_view str, size_t* idx = nullptr, int base = 10) {
     return svtonum<long, strtol>(str, idx, base);
 }
-[[nodiscard]] inline ulong svtoul(std::string_view str, size_t* idx = nullptr, int base = 10) {
+[[nodiscard]] inline decltype(auto) svtoul(std::string_view str, size_t* idx = nullptr, int base = 10) {
     return svtonum<ulong, strtoul>(str, idx, base);
 }
-[[nodiscard]] inline int64 svtoll(std::string_view str, size_t* idx = nullptr, int base = 10) {
+[[nodiscard]] inline decltype(auto) svtoll(std::string_view str, size_t* idx = nullptr, int base = 10) {
     return svtonum<int64, strtoll>(str, idx, base);
 }
-[[nodiscard]] inline uint64 svtoull(std::string_view str, size_t* idx = nullptr, int base = 10) {
+[[nodiscard]] inline decltype(auto) svtoull(std::string_view str, size_t* idx = nullptr, int base = 10) {
     return svtonum<uint64, strtoull>(str, idx, base);
 }
-[[nodiscard]] inline float svtof(std::string_view str, size_t* idx = nullptr) {
+[[nodiscard]] inline decltype(auto) svtof(std::string_view str, size_t* idx = nullptr) {
     return svtonum<float, strtof>(str, idx);
 }
-[[nodiscard]] inline double svtod(std::string_view str, size_t* idx = nullptr) {
+[[nodiscard]] inline decltype(auto) svtod(std::string_view str, size_t* idx = nullptr) {
     return svtonum<double, strtof>(str, idx);
 }
-[[nodiscard]] inline ldouble svtold(std::string_view str, size_t* idx = nullptr) {
+[[nodiscard]] inline decltype(auto) svtold(std::string_view str, size_t* idx = nullptr) {
     return svtonum<ldouble, strtof>(str, idx);
 }
-LLNDAPI bool strtobool(std::string const&);
+LLNDAPI Expected<bool> strtobool(std::string const&);
 
 } // namespace ll::inline utils::string_utils

@@ -11,14 +11,15 @@ class PlayerInfo {
     class Impl;
     std::unique_ptr<Impl> impl;
 
+    PlayerInfo();
+
+public:
     struct PlayerInfoEntry {
         mce::UUID   uuid;
         std::string xuid;
         std::string name;
     };
-    PlayerInfo();
 
-public:
     LLAPI static PlayerInfo& getInstance();
 
     LLNDAPI optional_ref<PlayerInfoEntry const> fromUuid(mce::UUID) const;

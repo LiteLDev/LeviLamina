@@ -4,6 +4,7 @@
 #include <type_traits>
 #include <vector>
 
+#include "ll/api/base/Meta.h"
 #include "ll/api/base/StdInt.h"
 
 namespace ll::inline utils::hash_utils {
@@ -26,7 +27,7 @@ constexpr void hashCombine(T const& v, size_t& seed) {
     uint64           hash  = 0xcbf29ce484222325;
     constexpr uint64 prime = 0x100000001b3;
     for (char c : x) {
-        hash  = hash ^ c;
+        hash ^= c;
         hash *= prime;
     }
     return hash;
@@ -43,7 +44,13 @@ constexpr void hashCombine(T const& v, size_t& seed) {
 template <class T>
     requires(std::is_trivially_destructible_v<T>)
 [[nodiscard]] constexpr uint64 rawHashType(T const& v) {
-    return doHash2({reinterpret_cast<char const*>(std::addressof(v)), sizeof(T)});
+    uint64           hash  = 0xcbf29ce484222325;
+    constexpr uint64 prime = 0x100000001b3;
+    meta::unroll<sizeof(T)>([&](size_t i) {
+        hash ^= reinterpret_cast<char const*>(std::addressof(v))[i];
+        hash *= prime;
+    });
+    return hash;
 }
 
 template <class T>

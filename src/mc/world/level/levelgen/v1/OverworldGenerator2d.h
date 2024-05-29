@@ -13,16 +13,16 @@ class Biome;
 
 class OverworldGenerator2d : public ::OverworldGenerator {
 public:
-    std::unique_ptr<PerlinNoise>        minLimitPerlinNoise; // this+0x170
-    std::unique_ptr<PerlinNoise>        maxLimitPerlinNoise; // this+0x178
-    std::unique_ptr<PerlinNoise>        mainPerlinNoise;     // this+0x180
-    std::unique_ptr<PerlinSimplexNoise> surfaceNoise;        // this+0x188
-    std::unique_ptr<PerlinNoise>        scaleNoise;          // this+0x190
-    std::unique_ptr<PerlinNoise>        depthNoise;          // this+0x198
-    std::unique_ptr<PerlinNoise>        forestNoise;         // this+0x1A0
-    std::unique_ptr<PerlinSimplexNoise> mMaterialAdjNoise;   // this+0x1A8
-    BeardKernel*                        mBeardKernel;        // this+0x1B0
-    std::unique_ptr<BiomeSource>        mBiomeSource;        // this+0xD9B0
+    std::unique_ptr<PerlinNoise>        mMinLimitPerlinNoise; // this+0x170
+    std::unique_ptr<PerlinNoise>        mMaxLimitPerlinNoise; // this+0x178
+    std::unique_ptr<PerlinNoise>        mMainPerlinNoise;     // this+0x180
+    std::unique_ptr<PerlinSimplexNoise> mSurfaceNoise;        // this+0x188
+    std::unique_ptr<PerlinNoise>        mScaleNoise;          // this+0x190
+    std::unique_ptr<PerlinNoise>        mDepthNoise;          // this+0x198
+    std::unique_ptr<PerlinNoise>        mForestNoise;         // this+0x1A0
+    std::unique_ptr<PerlinSimplexNoise> mMaterialAdjNoise;    // this+0x1A8
+    BeardKernel*                        mBeardKernel;         // this+0x1B0
+    std::unique_ptr<BiomeSource>        mBiomeSource;         // this+0xD9B0
 
     // prevent constructor by default
     OverworldGenerator2d& operator=(OverworldGenerator2d const&);
@@ -45,9 +45,9 @@ public:
     );
 
     // vIndex: 46, symbol:
-    // ?decorateWorldGenPostProcess@OverworldGenerator2d@@EEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@@Z
+    // ?decorateWorldGenPostProcess@OverworldGenerator2d@@EEBAXAEBVBiome@@AEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@@Z
     virtual void decorateWorldGenPostProcess(
-        class Biome&       biome,
+        class Biome const& biome,
         class LevelChunk&  lc,
         class BlockSource& source,
         class Random&      random

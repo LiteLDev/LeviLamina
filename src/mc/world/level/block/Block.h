@@ -663,6 +663,13 @@ public:
 
     // private:
     // NOLINTBEGIN
+    // symbol: ?_queueForTickBasedOnComponentConfiguration@Block@@AEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@_N@Z
+    MCAPI void
+    _queueForTickBasedOnComponentConfiguration(class BlockSource&, class BlockPos const&, class Random&, bool) const;
+
+    // symbol: ?_removeFromTickingQueues@Block@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    MCAPI void _removeFromTickingQueues(class BlockSource&, class BlockPos const&) const;
+
     // symbol: ?entityInside@Block@@AEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
     MCAPI void entityInside(class BlockSource& region, class BlockPos const& pos, class Actor& entity) const;
 

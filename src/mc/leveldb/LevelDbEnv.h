@@ -91,17 +91,10 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?sSingleton@LevelDbEnv@@0PEAV1@EA
     MCAPI static class LevelDbEnv* sSingleton;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $sSingleton() { return sSingleton; }
 
     // NOLINTEND
 };

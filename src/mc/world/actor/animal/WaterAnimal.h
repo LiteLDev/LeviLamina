@@ -39,13 +39,13 @@ public:
     // vIndex: 10, symbol: ??1WaterAnimal@@UEAA@XZ
     virtual ~WaterAnimal();
 
-    // vIndex: 167, symbol: ?checkSpawnRules@WaterAnimal@@UEAA_N_N@Z
+    // vIndex: 162, symbol: ?checkSpawnRules@WaterAnimal@@UEAA_N_N@Z
     virtual bool checkSpawnRules(bool fromSpawner);
 
-    // vIndex: 197, symbol: ?getFlopVerticalVelocityFactor@WaterAnimal@@UEBAMXZ
+    // vIndex: 192, symbol: ?getFlopVerticalVelocityFactor@WaterAnimal@@UEBAMXZ
     virtual float getFlopVerticalVelocityFactor() const;
 
-    // vIndex: 198, symbol: ?getFlopHorizontalVelocityFactor@WaterAnimal@@UEBAMXZ
+    // vIndex: 193, symbol: ?getFlopHorizontalVelocityFactor@WaterAnimal@@UEBAMXZ
     virtual float getFlopHorizontalVelocityFactor() const;
 
     // symbol: ??0WaterAnimal@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

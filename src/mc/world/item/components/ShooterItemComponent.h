@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Puv::v1_20_50 { struct ShooterItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -71,7 +72,7 @@ public:
     // vIndex: 2, symbol: ?writeSettings@ItemComponent@@UEAAXXZ
     virtual void writeSettings();
 
-    // vIndex: 3, symbol: ?isNetworkComponent@InteractButtonItemComponent@@UEBA_NXZ
+    // vIndex: 3, symbol: ?isNetworkComponent@ItemComponent@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
     // vIndex: 4, symbol:
@@ -96,6 +97,9 @@ public:
 
     // symbol: ??0ShooterItemComponent@@QEAA@AEBV0@@Z
     MCAPI ShooterItemComponent(class ShooterItemComponent const&);
+
+    // symbol: ??0ShooterItemComponent@@QEAA@AEBU0v1_20_50@Puv@@@Z
+    MCAPI explicit ShooterItemComponent(struct Puv::v1_20_50::ShooterItemComponent const&);
 
     // symbol: ??4ShooterItemComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class ShooterItemComponent& operator=(class ShooterItemComponent&&);
@@ -125,16 +129,22 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_consumeAmmunition@ShooterItemComponent@@AEBAXPEAVPlayer@@AEBVItemStack@@H_N2@Z
-    MCAPI void _consumeAmmunition(class Player* player, class ItemStack const&, int, bool, bool) const;
+    MCAPI void _consumeAmmunition(
+        class Player*          player,
+        class ItemStack const& ammunition,
+        int                    slotIndex,
+        bool                   infiniteAmmo,
+        bool                   fromOffhand
+    ) const;
 
     // symbol: ?_getAmmunition@ShooterItemComponent@@AEBAHPEBVPlayer@@_NAEAVItemStack@@AEA_N@Z
-    MCAPI int _getAmmunition(class Player const* player, bool, class ItemStack&, bool&) const;
+    MCAPI int _getAmmunition(class Player const* player, bool, class ItemStack& ammo, bool& fromOffhand) const;
 
     // symbol: ?_getMaxUseDuration@ShooterItemComponent@@AEBAHAEBVItemStack@@@Z
     MCAPI int _getMaxUseDuration(class ItemStack const&) const;
 
     // symbol: ?_shootProjectiles@ShooterItemComponent@@AEBAXAEAVItemStack@@PEAVPlayer@@H@Z
-    MCAPI void _shootProjectiles(class ItemStack&, class Player* player, int durationLeft) const;
+    MCAPI void _shootProjectiles(class ItemStack& shooterStack, class Player* player, int durationLeft) const;
 
     // NOLINTEND
 };

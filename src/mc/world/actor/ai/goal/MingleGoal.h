@@ -66,7 +66,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?FIND_PARTNER_INTERVAL_TICKS@MingleGoal@@0HB
     MCAPI static int const FIND_PARTNER_INTERVAL_TICKS;
@@ -76,17 +76,6 @@ private:
 
     // symbol: ?SPEAK_INTERVAL_TICKS_MIN@MingleGoal@@0HB
     MCAPI static int const SPEAK_INTERVAL_TICKS_MIN;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $FIND_PARTNER_INTERVAL_TICKS() { return FIND_PARTNER_INTERVAL_TICKS; }
-
-    static auto& $SPEAK_INTERVAL_TICKS_MAX() { return SPEAK_INTERVAL_TICKS_MAX; }
-
-    static auto& $SPEAK_INTERVAL_TICKS_MIN() { return SPEAK_INTERVAL_TICKS_MIN; }
 
     // NOLINTEND
 };

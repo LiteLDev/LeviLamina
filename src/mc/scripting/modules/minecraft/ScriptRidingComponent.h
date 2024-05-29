@@ -29,6 +29,9 @@ public:
     // vIndex: 0, symbol: __gen_??1ScriptRidingComponent@ScriptModuleMinecraft@@UEAA@XZ
     virtual ~ScriptRidingComponent() = default;
 
+    // vIndex: 1, symbol: ?_isValid@ScriptRidingComponent@ScriptModuleMinecraft@@MEBA_NXZ
+    virtual bool _isValid() const;
+
     // symbol:
     // ?getEntityRidingOn@ScriptRidingComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>

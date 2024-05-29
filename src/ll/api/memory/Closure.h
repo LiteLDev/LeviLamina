@@ -54,8 +54,12 @@ LLAPI void   releaseNativeClosure(void* self, size_t size);
 //      |    ...   ...    |            >jmp  rax         <
 //      |.... orifunc ....|       addr |    ...   ...    |
 //--------------------------------------------------------------
-template <class Ret, class... Args>
+template <class... Args>
 class NativeClosure {
+    static_assert(sizeof...(Args) < 0, "NativeClosure only accepts function types as template arguments.");
+};
+template <class Ret, class... Args>
+class NativeClosure<Ret(Args...)> {
     static inline Ret closureImpl(Args... args) {
         volatile uintptr_t data   = detail::closureMagicNumber;
         auto               stored = (PackedData*)data;
@@ -89,7 +93,14 @@ public:
     NativeClosure& operator=(NativeClosure const&) = delete;
 };
 template <class Ret, class... Args>
-class FunctionalClosure : public NativeClosure<Ret, Args...> {
+NativeClosure(Ret (*)(uintptr_t, Args...), uintptr_t) -> NativeClosure<Ret(Args...)>;
+
+template <class... Args>
+class FunctionalClosure {
+    static_assert(sizeof...(Args) < 0, "FunctionalClosure only accepts function types as template arguments.");
+};
+template <class Ret, class... Args>
+class FunctionalClosure<Ret(Args...)> : public NativeClosure<Ret(Args...)> {
     static inline Ret closureImpl(uintptr_t data, Args... args) {
         return ((FunctionalClosure*)data)->func(std::forward<Args>(args)...);
     }
@@ -99,7 +110,11 @@ public:
     std::function<closure> func;
 
     FunctionalClosure(std::function<closure> const& func)
-    : NativeClosure<Ret, Args...>(closureImpl, (uintptr_t)this),
+    : NativeClosure<Ret(Args...)>(closureImpl, (uintptr_t)this),
       func(func) {}
 };
+template <class Ret, class... Args>
+FunctionalClosure(Ret (*)(Args...)) -> FunctionalClosure<Ret(Args...)>;
+template <class T>
+FunctionalClosure(std::function<T> const&) -> FunctionalClosure<T>;
 } // namespace ll::memory

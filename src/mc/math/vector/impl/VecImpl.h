@@ -57,17 +57,11 @@
         }                                                                                                              \
         template <typename T>                                                                                          \
         [[nodiscard]] constexpr T& get(size_t index) noexcept {                                                        \
-            if (index == 1) {                                                                                          \
-                return (T&)z;                                                                                          \
-            }                                                                                                          \
-            return (T&)x;                                                                                              \
+            return (T&)((&x)[index]);                                                                                  \
         }                                                                                                              \
         template <typename T>                                                                                          \
         [[nodiscard]] constexpr T get(size_t index) const noexcept {                                                   \
-            if (index == 1) {                                                                                          \
-                return (T)z;                                                                                           \
-            }                                                                                                          \
-            return (T)x;                                                                                               \
+            return (T&)((&x)[index]);                                                                                  \
         }                                                                                                              \
     }
 
@@ -105,25 +99,11 @@
         }                                                                                                              \
         template <typename T>                                                                                          \
         [[nodiscard]] constexpr T& get(size_t index) noexcept {                                                        \
-            switch (index) {                                                                                           \
-            case 1:                                                                                                    \
-                return (T&)y;                                                                                          \
-            case 2:                                                                                                    \
-                return (T&)z;                                                                                          \
-            default:                                                                                                   \
-                return (T&)x;                                                                                          \
-            }                                                                                                          \
+            return (T&)((&x)[index]);                                                                                  \
         }                                                                                                              \
         template <typename T>                                                                                          \
         [[nodiscard]] constexpr T get(size_t index) const noexcept {                                                   \
-            switch (index) {                                                                                           \
-            case 1:                                                                                                    \
-                return (T)y;                                                                                           \
-            case 2:                                                                                                    \
-                return (T)z;                                                                                           \
-            default:                                                                                                   \
-                return (T)x;                                                                                           \
-            }                                                                                                          \
+            return (T&)((&x)[index]);                                                                                  \
         }                                                                                                              \
     }
 
@@ -167,29 +147,11 @@
         }                                                                                                              \
         template <typename T>                                                                                          \
         [[nodiscard]] constexpr T& get(size_t index) noexcept {                                                        \
-            switch (index) {                                                                                           \
-            case 1:                                                                                                    \
-                return (T&)y;                                                                                          \
-            case 2:                                                                                                    \
-                return (T&)z;                                                                                          \
-            case 3:                                                                                                    \
-                return (T&)w;                                                                                          \
-            default:                                                                                                   \
-                return (T&)x;                                                                                          \
-            }                                                                                                          \
+            return (T&)((&x)[index]);                                                                                  \
         }                                                                                                              \
         template <typename T>                                                                                          \
         [[nodiscard]] constexpr T get(size_t index) const noexcept {                                                   \
-            switch (index) {                                                                                           \
-            case 1:                                                                                                    \
-                return (T)y;                                                                                           \
-            case 2:                                                                                                    \
-                return (T)z;                                                                                           \
-            case 3:                                                                                                    \
-                return (T)w;                                                                                           \
-            default:                                                                                                   \
-                return (T)x;                                                                                           \
-            }                                                                                                          \
+            return (T&)((&x)[index]);                                                                                  \
         }                                                                                                              \
     }
 

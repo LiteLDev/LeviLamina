@@ -30,14 +30,14 @@ public:
     // vIndex: 0, symbol: __gen_??1MinecartItem@@UEAA@XZ
     virtual ~MinecartItem() = default;
 
-    // vIndex: 43, symbol: ?isDestructive@MinecartItem@@UEBA_NH@Z
+    // vIndex: 44, symbol: ?isDestructive@MinecartItem@@UEBA_NH@Z
     virtual bool isDestructive(int) const;
 
-    // vIndex: 72, symbol: ?dispense@MinecartItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 73, symbol: ?dispense@MinecartItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
-    // vIndex: 117, symbol:
+    // vIndex: 118, symbol:
     // ?_useOn@MinecartItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
     _useOn(class ItemStack& item, class Actor& entity, class BlockPos pos, uchar, class Vec3 const&) const;

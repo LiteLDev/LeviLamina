@@ -25,9 +25,16 @@ public:
 
     public:
         // NOLINTBEGIN
+        // symbol: ??4RepairItemEntry@RepairableItemComponent@v1_20_50@Puv@@QEAAAEAU0123@$$QEAU0123@@Z
+        MCAPI struct Puv::v1_20_50::RepairableItemComponent::RepairItemEntry&
+        operator=(struct Puv::v1_20_50::RepairableItemComponent::RepairItemEntry&&);
+
         // symbol: ??4RepairItemEntry@RepairableItemComponent@v1_20_50@Puv@@QEAAAEAU0123@AEBU0123@@Z
         MCAPI struct Puv::v1_20_50::RepairableItemComponent::RepairItemEntry&
         operator=(struct Puv::v1_20_50::RepairableItemComponent::RepairItemEntry const&);
+
+        // symbol: ??1RepairItemEntry@RepairableItemComponent@v1_20_50@Puv@@QEAA@XZ
+        MCAPI ~RepairItemEntry();
 
         // NOLINTEND
     };
@@ -40,6 +47,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??1RepairableItemComponent@v1_20_50@Puv@@QEAA@XZ
+    MCAPI ~RepairableItemComponent();
+
     // symbol: ?bindType@RepairableItemComponent@v1_20_50@Puv@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 

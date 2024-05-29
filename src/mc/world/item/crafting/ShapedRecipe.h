@@ -49,12 +49,15 @@ public:
     virtual void loadResultList(class BlockPalette const& blockPalette) const;
 
     // symbol:
-    // ??0ShapedRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashedString@@HPEBVUUID@mce@@V?$optional@VRecipeUnlockingRequirement@@@2@AEBVSemVersion@@@Z
+    // ??0ShapedRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashedString@@_NHPEBVUUID@mce@@V?$optional@VRecipeUnlockingRequirement@@@2@AEBVSemVersion@@@Z
     MCAPI
-    ShapedRecipe(std::string_view, int, int, std::vector<class RecipeIngredient> const&, std::vector<class ItemInstance> const&, class HashedString, int, class mce::UUID const*, std::optional<class RecipeUnlockingRequirement>, class SemVersion const&);
+    ShapedRecipe(std::string_view, int, int, std::vector<class RecipeIngredient> const&, std::vector<class ItemInstance> const&, class HashedString, bool, int, class mce::UUID const*, std::optional<class RecipeUnlockingRequirement>, class SemVersion const&);
+
+    // symbol: ?assumeSymmetry@ShapedRecipe@@QEBA_NXZ
+    MCAPI bool assumeSymmetry() const;
 
     // symbol: ?getIngredientsHashOffset@ShapedRecipe@@QEBA_KHHHH@Z
-    MCAPI uint64 getIngredientsHashOffset(int, int, int offsetX, int) const;
+    MCAPI uint64 getIngredientsHashOffset(int, int, int offsetX, int offsetY) const;
 
     // NOLINTEND
 

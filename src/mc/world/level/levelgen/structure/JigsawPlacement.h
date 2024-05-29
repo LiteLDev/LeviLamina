@@ -19,9 +19,9 @@ public:
     // symbol:
     // ??0JigsawPlacement@@QEAA@_K0AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@V?$function@$$A6A?AV?$unique_ptr@VPoolElementStructurePiece@@U?$default_delete@VPoolElementStructurePiece@@@std@@@std@@AEBVStructurePoolElement@@AEBVBlockPos@@AEBW4Rotation@@HAEAUJigsawJunction@@AEBVBoundingBox@@1@Z@2@AEAVRandom@@AEBVJigsawStructureRegistry@@AEAVDimension@@@Z
     MCAPI JigsawPlacement(
-        uint64 maxDepth,
-        uint64,
-        std::vector<std::unique_ptr<class StructurePiece>>&,
+        uint64                                              maxDepth,
+        uint64                                              globalContextSize,
+        std::vector<std::unique_ptr<class StructurePiece>>& pieceList,
         std::function<std::unique_ptr<
             class
             PoolElementStructurePiece>(class StructurePoolElement const&, class BlockPos const&, ::Rotation const&, int, struct JigsawJunction&, class BoundingBox const&, class BlockPos const&)>
@@ -51,7 +51,7 @@ public:
     // symbol:
     // ?_findLocalAnchorOffset@JigsawPlacement@@AEBA?AVBlockPos@@AEBVStructurePoolElement@@AEBV2@AEBW4Rotation@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     MCAPI class BlockPos _findLocalAnchorOffset(
-        class StructurePoolElement const&,
+        class StructurePoolElement const& initialElement,
         class BlockPos const&,
         ::Rotation const& rotation,
         std::string_view

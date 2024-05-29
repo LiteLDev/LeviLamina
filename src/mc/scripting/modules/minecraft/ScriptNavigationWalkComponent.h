@@ -27,6 +27,9 @@ public:
     // vIndex: 0, symbol: __gen_??1ScriptNavigationWalkComponent@ScriptModuleMinecraft@@UEAA@XZ
     virtual ~ScriptNavigationWalkComponent() = default;
 
+    // vIndex: 1, symbol: ?_isValid@ScriptNavigationWalkComponent@ScriptModuleMinecraft@@EEBA_NXZ
+    virtual bool _isValid() const;
+
     // symbol:
     // ?bind@ScriptNavigationWalkComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptNavigationWalkComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptNavigationWalkComponent>

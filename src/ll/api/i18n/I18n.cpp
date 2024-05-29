@@ -132,7 +132,7 @@ I18N::Type SingleFileI18N::getType() const { return Type::SingleFile; }
 
 #pragma region MultiFileI18N
 
-I18N::SubLangData parseNestedData(nlohmann::json const& j, std::string const& prefix = "") {
+I18N::SubLangData parseNestedData(nlohmann::json const& j, std::string const& prefix = {}) {
     I18N::SubLangData data;
     if (!j.is_object()) {
         return data; // Empty

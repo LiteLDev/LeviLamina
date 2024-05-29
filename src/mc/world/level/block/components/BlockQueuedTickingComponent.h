@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/utils/BlockComponentBase.h"
+#include "mc/world/level/block/components/BlockComponentBase.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -26,6 +26,9 @@ public:
     // symbol:
     // ?finalize@BlockQueuedTickingComponent@@QEAAXV?$not_null@PEAVBlockQueuedTickEventComponent@BlockEvents@@@gsl@@@Z
     MCAPI void finalize(gsl::not_null<class BlockEvents::BlockQueuedTickEventComponent*>);
+
+    // symbol: ?getRandomTickDelay@BlockQueuedTickingComponent@@QEBAHAEAVRandom@@@Z
+    MCAPI int getRandomTickDelay(class Random&) const;
 
     // symbol: ?onTick@BlockQueuedTickingComponent@@QEBAXAEBUBlockQueuedTickEvent@BlockEvents@@@Z
     MCAPI void onTick(struct BlockEvents::BlockQueuedTickEvent const&) const;

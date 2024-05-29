@@ -78,12 +78,12 @@ public:
     virtual bool write(double, class cereal::PropertyReader const&);
 
     // vIndex: 12, symbol:
-    // ?write@NBTSchemaWriter@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPropertyReader@cereal@@@Z
-    virtual bool write(std::string const&, class cereal::PropertyReader const&);
+    // ?write@NBTSchemaWriter@@UEAA_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBVPropertyReader@cereal@@@Z
+    virtual bool write(std::string_view, class cereal::PropertyReader const&);
 
     // vIndex: 13, symbol:
-    // ?pushMember@NBTSchemaWriter@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPropertyReader@cereal@@@Z
-    virtual bool pushMember(std::string const&, class cereal::PropertyReader const&);
+    // ?pushMember@NBTSchemaWriter@@UEAA_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBVPropertyReader@cereal@@@Z
+    virtual bool pushMember(std::string_view, class cereal::PropertyReader const&);
 
     // vIndex: 14, symbol: ?popMember@NBTSchemaWriter@@UEAAXXZ
     virtual void popMember();

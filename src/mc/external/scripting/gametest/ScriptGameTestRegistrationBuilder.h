@@ -53,7 +53,7 @@ public:
     // symbol:
     // ?rotate@ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAA?AV?$StrongTypedObjectHandle@VScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@@Scripting@@_N@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-    rotate(bool);
+    rotate(bool rotate);
 
     // symbol:
     // ?setupTicks@ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAA?AV?$StrongTypedObjectHandle@VScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@@Scripting@@H@Z

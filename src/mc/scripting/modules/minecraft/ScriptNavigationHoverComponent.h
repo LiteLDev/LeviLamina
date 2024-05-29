@@ -27,6 +27,9 @@ public:
     // vIndex: 0, symbol: __gen_??1ScriptNavigationHoverComponent@ScriptModuleMinecraft@@UEAA@XZ
     virtual ~ScriptNavigationHoverComponent() = default;
 
+    // vIndex: 1, symbol: ?_isValid@ScriptNavigationHoverComponent@ScriptModuleMinecraft@@EEBA_NXZ
+    virtual bool _isValid() const;
+
     // symbol:
     // ?bind@ScriptNavigationHoverComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptNavigationHoverComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptNavigationHoverComponent>

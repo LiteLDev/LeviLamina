@@ -280,6 +280,9 @@ public:
     // symbol: ?incrementTick@LevelData@@QEAAXXZ
     MCAPI void incrementTick();
 
+    // symbol: ?isAlwaysDay@LevelData@@QEBA_NXZ
+    MCAPI bool isAlwaysDay() const;
+
     // symbol: ?isCreatedInEditor@LevelData@@QEBA_NXZ
     MCAPI bool isCreatedInEditor() const;
 
@@ -297,6 +300,9 @@ public:
 
     // symbol: ?isFromWorldTemplate@LevelData@@QEBA_NXZ
     MCAPI bool isFromWorldTemplate() const;
+
+    // symbol: ?isHardcore@LevelData@@QEBA_NXZ
+    MCAPI bool isHardcore() const;
 
     // symbol: ?isLegacyLevel@LevelData@@QEBA_NXZ
     MCAPI bool isLegacyLevel() const;

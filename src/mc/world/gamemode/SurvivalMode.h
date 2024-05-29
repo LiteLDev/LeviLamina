@@ -76,17 +76,10 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mTrialHasEnded@SurvivalMode@@0_NA
     MCAPI static bool mTrialHasEnded;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mTrialHasEnded() { return mTrialHasEnded; }
 
     // NOLINTEND
 };

@@ -11,6 +11,18 @@
 
 namespace ll::concepts {
 
+template <class T, class U>
+struct is_in_types;
+
+template <class T, template <class...> class U, class... Ts>
+struct is_in_types<T, U<Ts...>> : std::bool_constant<(std::is_same_v<T, Ts> || ...)> {};
+
+template <class T, class U>
+static constexpr bool is_in_types_v = is_in_types<T, U>::value;
+
+template <class T, class U>
+concept IsInTypes = is_in_types_v<T, U>;
+
 template <class T, class... Ts>
 static constexpr bool is_one_of_v = (std::is_same_v<T, Ts> || ...);
 
@@ -69,8 +81,8 @@ concept IsOptional = !IsExpected<T> && requires(T o) {
 
 template <class T>
 concept Rangeable = requires(T t) {
-    { t.begin() } -> std::same_as<typename std::remove_cvref_t<T>::iterator>;
-    { t.end() } -> std::same_as<typename std::remove_cvref_t<T>::iterator>;
+    t.begin();
+    t.end();
 };
 
 template <class T>
@@ -93,10 +105,10 @@ template <typename T>
 concept IsVectorBase = std::is_base_of_v<VectorBaseTag, T>;
 
 template <class T>
-concept TupleLike = !Rangeable<T> && requires(T t) {
-    std::tuple_size<std::remove_cvref_t<T>>::value;
-    std::get<0>(t);
-};
+concept TupleLike = std::_Tuple_like<T> || (!Rangeable<T> && requires(T t) {
+                        std::tuple_size<std::remove_cvref_t<T>>::value;
+                        std::get<0>(t);
+                    });
 
 template <class T>
 concept ArrayLike = Rangeable<T> && !requires { typename std::remove_cvref_t<T>::mapped_type; };
@@ -114,7 +126,7 @@ template <class T, template <class...> class Z>
 concept Specializes = is_specialization_of_v<T, Z>;
 
 template <template <class...> class T, class... Ts>
-void DerivedFromSpecializationImpl(const T<Ts...>&);
+void DerivedFromSpecializationImpl(T<Ts...> const&);
 
 template <class T, template <class...> class Z>
 concept DerivedFromSpecializes = requires(T const& t) { DerivedFromSpecializationImpl<Z>(t); };

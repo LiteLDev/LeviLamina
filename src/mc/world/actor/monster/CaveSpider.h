@@ -39,11 +39,11 @@ public:
     // vIndex: 10, symbol: __gen_??1CaveSpider@@UEAA@XZ
     virtual ~CaveSpider() = default;
 
-    // vIndex: 125, symbol:
+    // vIndex: 121, symbol:
     // ?getDebugText@CaveSpider@@EEAAXAEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
     virtual void getDebugText(std::vector<std::string>& outputInfo);
 
-    // vIndex: 198, symbol: ?getModelScale@CaveSpider@@UEBAMXZ
+    // vIndex: 193, symbol: ?getModelScale@CaveSpider@@UEBAMXZ
     virtual float getModelScale() const;
 
     // symbol: ??0CaveSpider@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

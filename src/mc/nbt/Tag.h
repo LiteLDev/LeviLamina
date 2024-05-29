@@ -56,6 +56,7 @@ public:
         Compound  = 0xA,
         IntArray  = 0xB,
     };
+    using enum Type;
 
     template <std::derived_from<Tag> T>
     T const* as_ptr() const {
@@ -78,9 +79,7 @@ public:
 
     [[nodiscard]] operator std::unique_ptr<Tag>() const { return copy(); } // NOLINT
 
-    LLNDAPI std::string toSnbt(SnbtFormat snbtFormat = SnbtFormat::PrettyFilePrint, uchar indent = 4) const;
-
-    LLNDAPI static std::unique_ptr<Tag> parseSnbt(std::string_view str);
+    LLNDAPI std::string toSnbt(SnbtFormat snbtFormat = SnbtFormat::PrettyFilePrint, uchar indent = 4) const noexcept;
 
 public:
     // NOLINTBEGIN

@@ -6,10 +6,12 @@ namespace Bedrock::Threading {
 
 class PrioritizeSharedOwnership {
 public:
-    // prevent constructor by default
-    PrioritizeSharedOwnership& operator=(PrioritizeSharedOwnership const&);
-    PrioritizeSharedOwnership(PrioritizeSharedOwnership const&);
-    PrioritizeSharedOwnership();
+    static const uint64_t mWaitForZeroBit = 0x8000000000000000; // constant
+
+    std::shared_mutex           mMutex;              // this+0x0
+    std::condition_variable_any mZeroReaders;        // this+0x8
+    std::atomic_uint64_t        mReaderCount;        // this+0x60
+    uint64_t                    mWaitingWriterCount; // this+0x68
 
 public:
     // NOLINTBEGIN

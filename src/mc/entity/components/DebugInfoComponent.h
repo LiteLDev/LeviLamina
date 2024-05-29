@@ -136,8 +136,20 @@ public:
     // vIndex: 32, symbol: __unk_vfn_32
     virtual void __unk_vfn_32();
 
-    // vIndex: 33, symbol: ?onEvent@DebugInfoComponent@@UEAA?AW4EventResult@@AEBUActorDefinitionTriggeredEvent@@@Z
-    virtual ::EventResult onEvent(struct ActorDefinitionTriggeredEvent const&);
+    // vIndex: 33, symbol: __unk_vfn_33
+    virtual void __unk_vfn_33();
+
+    // vIndex: 34, symbol: __unk_vfn_34
+    virtual void __unk_vfn_34();
+
+    // vIndex: 35, symbol: __unk_vfn_35
+    virtual void __unk_vfn_35();
+
+    // vIndex: 36, symbol: __unk_vfn_36
+    virtual void __unk_vfn_36();
+
+    // vIndex: 37, symbol: ?onEvent@DebugInfoComponent@@UEAA?AW4EventResult@@AEBUActorDefinitionTriggeredEvent@@@Z
+    virtual ::EventResult onEvent(struct ActorDefinitionTriggeredEvent const& actorDefinitionEvent);
 
     // symbol: ??0DebugInfoComponent@@QEAA@$$QEAV0@@Z
     MCAPI DebugInfoComponent(class DebugInfoComponent&&);

@@ -77,9 +77,6 @@ public:
     // symbol: ?unschedule@ScriptTickSignal@ScriptModuleMinecraft@@QEAAXI@Z
     MCAPI void unschedule(uint id);
 
-    // symbol: ??1ScriptTickSignal@ScriptModuleMinecraft@@QEAA@XZ
-    MCAPI ~ScriptTickSignal();
-
     // NOLINTEND
 
     // private:

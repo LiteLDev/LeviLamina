@@ -358,6 +358,10 @@ public:
     // symbol: ?getRenderSurfaceParameters@AppPlatform@@UEBA?AV?$variant@PEAUHWND__@@Umonostate@std@@@std@@XZ
     MCVAPI std::variant<struct HWND__*, std::monostate> getRenderSurfaceParameters() const;
 
+    // symbol:
+    // ?getScratchPath@AppPlatform@@UEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+    MCVAPI class Core::PathBuffer<std::string> getScratchPath();
+
     // symbol: ?getScreenHeight@AppPlatform@@UEBAHXZ
     MCVAPI int getScreenHeight() const;
 
@@ -571,6 +575,9 @@ public:
     // symbol: ?notifyNetworkConfigurationChanged@AppPlatform@@UEAAXXZ
     MCVAPI void notifyNetworkConfigurationChanged();
 
+    // symbol: ?onFullGameUnlock@AppPlatform@@UEAAXXZ
+    MCVAPI void onFullGameUnlock();
+
     // symbol: ?onMinecraftGameInitComplete@AppPlatform@@UEAAXXZ
     MCVAPI void onMinecraftGameInitComplete();
 
@@ -761,7 +768,7 @@ public:
     MCVAPI ~AppPlatform();
 
     // symbol: ??0AppPlatform@@QEAA@_N@Z
-    MCAPI explicit AppPlatform(bool);
+    MCAPI explicit AppPlatform(bool registerService);
 
     // symbol: ?_fireAppTerminated@AppPlatform@@QEAAXXZ
     MCAPI void _fireAppTerminated();
@@ -781,10 +788,6 @@ public:
     // symbol:
     // ?getPlatformRuntimeInformation@AppPlatform@@QEBAAEBV?$unique_ptr@UPlatformRuntimeInfo@Bedrock@@U?$default_delete@UPlatformRuntimeInfo@Bedrock@@@std@@@std@@XZ
     MCAPI std::unique_ptr<struct Bedrock::PlatformRuntimeInfo> const& getPlatformRuntimeInformation() const;
-
-    // symbol:
-    // ?getScratchPath@AppPlatform@@QEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
-    MCAPI class Core::PathBuffer<std::string> getScratchPath();
 
     // symbol:
     // ?getUserdataPath@AppPlatform@@QEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
@@ -814,26 +817,17 @@ public:
 
     // NOLINTEND
 
-protected:
+    // protected:
     // NOLINTBEGIN
     // symbol: ?SHADERCACHE_PATH@AppPlatform@@1V?$PathBuffer@V?$StackString@D$0EAA@@Core@@@Core@@B
     MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const SHADERCACHE_PATH;
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mIsInitialized@AppPlatform@@0_NA
     MCAPI static bool mIsInitialized;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mIsInitialized() { return mIsInitialized; }
-
-    static auto& $SHADERCACHE_PATH() { return SHADERCACHE_PATH; }
 
     // NOLINTEND
 };

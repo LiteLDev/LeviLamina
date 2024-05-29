@@ -22,7 +22,7 @@ public:
     virtual ~EventResponseFactory();
 
     // vIndex: 1, symbol: ?initializeFactory@BlockEventResponseFactory@@UEAAXAEBVExperiments@@@Z
-    virtual void initializeFactory(class Experiments const&) = 0;
+    virtual void initializeFactory(class Experiments const& experiments) = 0;
 
     // vIndex: 2, symbol: ?initSchema@BlockEventResponseFactory@@UEAAXXZ
     virtual void initSchema() = 0;
@@ -38,7 +38,7 @@ public:
 
     // symbol:
     // ?initSchema@EventResponseFactory@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSemVersion@@@Z
-    MCAPI void initSchema(std::string const&, class SemVersion const& version);
+    MCAPI void initSchema(std::string const& schemaName, class SemVersion const& version);
 
     // NOLINTEND
 };

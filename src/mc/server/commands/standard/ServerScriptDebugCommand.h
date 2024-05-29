@@ -30,22 +30,13 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?sForcedPort@ServerScriptDebugCommand@@0V?$optional@G@std@@A
     MCAPI static std::optional<ushort> sForcedPort;
 
     // symbol: ?sServerScriptDebugger@ServerScriptDebugCommand@@0PEAVIScriptDebugger@@EA
     MCAPI static class IScriptDebugger* sServerScriptDebugger;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $sForcedPort() { return sForcedPort; }
-
-    static auto& $sServerScriptDebugger() { return sServerScriptDebugger; }
 
     // NOLINTEND
 };

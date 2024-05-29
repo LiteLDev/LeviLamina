@@ -16,7 +16,6 @@ namespace AgentComponents { struct BlockQueryResult; }
 namespace Json { class Value; }
 namespace Util { struct ActorReplacementParams; }
 namespace Util { struct ContainerReplacementParams; }
-namespace Util { struct FormattedString; }
 namespace Util { struct ReplacementResults; }
 namespace Util::Agent { struct SimulatedMoveResult; }
 namespace Util::ResourceUri { struct ValidationResult; }
@@ -63,9 +62,6 @@ MCAPI void _recordProfanityLocationInWord(
     std::unordered_map<std::string, int> const& exactMap,
     std::unordered_set<std::string> const&      containsSet
 );
-
-// symbol: ?allocateVFormat@Util@@YA?AUFormattedString@1@PEBDPEAD@Z
-MCAPI struct Util::FormattedString allocateVFormat(char const*, char*);
 
 // symbol: ?base64_decode@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
 MCAPI std::string base64_decode(std::string const& encoded_string);
@@ -200,6 +196,9 @@ MCAPI bool isWhiteSpace(char c);
 // symbol: ?loadGameVersion@Util@@YAXAEAVSemVersion@@AEBVValue@Json@@@Z
 MCAPI void loadGameVersion(class SemVersion& version, class Json::Value const& versionNode);
 
+// symbol: ?normalizeLineEndings@Util@@YAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+MCAPI void normalizeLineEndings(std::string& str);
+
 // symbol: ?removeChars@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V23@AEBV23@@Z
 MCAPI std::string removeChars(std::string str, std::string const& characters);
 
@@ -320,7 +319,12 @@ MCAPI std::string vFormat(char const*, char*);
 
 // symbol:
 // ?validateIdentifier@Util@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4LogArea@@_NPEAU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@3@@Z
-MCAPI bool validateIdentifier(std::string const& id, ::LogArea logArea, bool, std::pair<std::string, std::string>*);
+MCAPI bool validateIdentifier(
+    std::string const&                   id,
+    ::LogArea                            logArea,
+    bool                                 allowMinecraftNamespace,
+    std::pair<std::string, std::string>* idNameOut
+);
 
 // symbol:
 // ?validateIdentifierChunk@Util@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4LogArea@@@Z

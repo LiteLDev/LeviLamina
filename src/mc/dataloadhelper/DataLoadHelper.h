@@ -1,16 +1,15 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/enums/DataLoadHelperType.h"
 #include "mc/enums/Mirror.h"
 #include "mc/enums/Rotation.h"
+#include "mc/math/Vec3.h"
+#include "mc/world/ActorUniqueID.h"
 #include "mc/world/Direction.h"
 #include "mc/world/actor/InternalComponentRegistry.h"
-
-class Vec3;
-class BlockPos;
-struct ActorUniqueID;
-class HashedString;
+#include "mc/world/level/BlockPos.h"
 
 class DataLoadHelper {
 public:

@@ -21,30 +21,30 @@
 
 class StartGamePacket : public ::Packet {
 public:
-    LevelSettings                                    mSettings;
-    ActorUniqueID                                    mEntityId;
-    ActorRuntimeID                                   mRuntimeId;
-    GameType                                         mEntityGameType;
-    Vec3                                             mPos;
-    Vec2                                             mRot;
-    std::string                                      mLevelId;
-    std::string                                      mLevelName;
-    ContentIdentity                                  mTemplateContentIdentity;
-    mce::UUID                                        mWorldTemplateId;
-    bool                                             mIsTrial;
-    SyncedPlayerMovementSettings                     mMovementSettings;
-    uint64                                           mLevelCurrentTime;
-    int                                              mEnchantmentSeed;
-    std::string                                      mMultiplayerCorrelationId;
-    std::vector<ItemData>                            mItemData;
-    bool                                             mEnableItemStackNetManager;
-    std::string                                      mServerVersion;
-    CompoundTag                                      mPlayerPropertyData;
-    uint64                                           mServerBlockTypeRegistryChecksum;
-    bool                                             mServerEnabledClientSideGeneration;
-    bool                                             mBlockNetworkIdsAreHashes;
+    LevelSettings                mSettings;
+    ActorUniqueID                mEntityId;
+    ActorRuntimeID               mRuntimeId;
+    GameType                     mEntityGameType;
+    Vec3                         mPos;
+    Vec2                         mRot;
+    std::string                  mLevelId;
+    std::string                  mLevelName;
+    ContentIdentity              mTemplateContentIdentity;
+    mce::UUID                    mWorldTemplateId;
+    bool                         mIsTrial;
+    SyncedPlayerMovementSettings mMovementSettings;
+    uint64                       mLevelCurrentTime;
+    int                          mEnchantmentSeed;
+    std::string                  mMultiplayerCorrelationId;
+    std::vector<ItemData>        mItemData;
+    bool                         mEnableItemStackNetManager;
+    std::string                  mServerVersion;
+    CompoundTag                  mPlayerPropertyData;
+    uint64                       mServerBlockTypeRegistryChecksum;
+    bool                         mServerEnabledClientSideGeneration;
+    bool                         mBlockNetworkIdsAreHashes;
+    bool                         mHardcore; // Added at 1.20.80, order not entirely certain at this time
     std::vector<std::pair<std::string, CompoundTag>> mBlockProperties;
-
 
     // prevent constructor by default
     StartGamePacket& operator=(StartGamePacket const&);
@@ -76,11 +76,11 @@ public:
     // ??0StartGamePacket@@QEAA@VItemRegistryRef@@AEBVLevelSettings@@UActorUniqueID@@VActorRuntimeID@@W4GameType@@_NAEBVVec3@@AEBVVec2@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@8AEBVContentIdentity@@8AEBVBlockDefinitionGroup@@5VCompoundTag@@AEBUPlayerMovementSettings@@8AEBVUUID@mce@@_KH_K@Z
     MCAPI StartGamePacket(
         class ItemRegistryRef,
-        class LevelSettings const& settings,
-        struct ActorUniqueID       entityId,
-        class ActorRuntimeID       runtimeId,
-        ::GameType                 entityGameType,
-        bool,
+        class LevelSettings const&        settings,
+        struct ActorUniqueID              entityId,
+        class ActorRuntimeID              runtimeId,
+        ::GameType                        entityGameType,
+        bool                              enableItemStackNetManager,
         class Vec3 const&                 pos,
         class Vec2 const&                 rot,
         std::string const&                levelId,
@@ -90,7 +90,7 @@ public:
         class BlockDefinitionGroup const& blockDefinitionGroup,
         bool                              isTrial,
         class CompoundTag,
-        struct PlayerMovementSettings const&,
+        struct PlayerMovementSettings const& movementSettings,
         std::string const&,
         class mce::UUID const& worldTemplateId,
         uint64                 levelCurrentTime,

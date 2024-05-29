@@ -45,7 +45,7 @@ public:
      *
      * @param player The server player to send the packet to.
      */
-    LLAPI void sendTo(Player const& player);
+    LLAPI void sendTo(Player const& player) const;
 
     /**
      * Send the packet to all relevant players in a 2D plane at a position in a given dimension.
@@ -53,7 +53,7 @@ public:
      * @param dimId The type of dimension to send the packet in.
      * @param except exclude this player.
      */
-    LLAPI void sendTo(BlockPos const& pos, DimensionType dimId, optional_ref<Player const> except) const;
+    LLAPI void sendTo(BlockPos const& pos, DimensionType dimId, optional_ref<Player const> except = std::nullopt) const;
 
     /**
      * Send the packet to all relevant players within a specific actor.
@@ -61,7 +61,7 @@ public:
      * @param actor The actor to send the packet to.
      * @param except exclude this player.
      */
-    LLAPI void sendTo(Actor const& actor, optional_ref<Player const> except) const;
+    LLAPI void sendTo(Actor const& actor, optional_ref<Player const> except = std::nullopt) const;
 
     /**
      * Send the packet to a specific client identified by network identifier and sub-client ID.
@@ -76,7 +76,9 @@ public:
     /**
      * Send the packet to all clients connected to the server.
      */
-    LLAPI void sendToClients();
+    LLAPI void sendToClients() const;
+
+    LLAPI void sendToClients(NetworkIdentifier const& exceptId, ::SubClientId exceptSubid) const;
 
 public:
     // NOLINTBEGIN

@@ -29,9 +29,9 @@ public:
     virtual class WorldGenCache createWorldGenCache(class ChunkPos chunkPos) const;
 
     // vIndex: 45, symbol:
-    // ?decorateWorldGenLoadChunk@VoidGenerator@@MEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockVolumeTarget@@AEAVRandom@@AEBVChunkPos@@@Z
+    // ?decorateWorldGenLoadChunk@VoidGenerator@@MEBAXAEBVBiome@@AEAVLevelChunk@@AEAVBlockVolumeTarget@@AEAVRandom@@AEBVChunkPos@@@Z
     virtual void decorateWorldGenLoadChunk(
-        class Biome&             biome,
+        class Biome const&       biome,
         class LevelChunk&        lc,
         class BlockVolumeTarget& target,
         class Random&            random,
@@ -39,9 +39,9 @@ public:
     ) const;
 
     // vIndex: 46, symbol:
-    // ?decorateWorldGenPostProcess@VoidGenerator@@MEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@@Z
+    // ?decorateWorldGenPostProcess@VoidGenerator@@MEBAXAEBVBiome@@AEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@@Z
     virtual void decorateWorldGenPostProcess(
-        class Biome&       biome,
+        class Biome const& biome,
         class LevelChunk&  lc,
         class BlockSource& source,
         class Random&      random

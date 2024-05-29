@@ -44,15 +44,16 @@ public:
     };
 
 public:
+    // prevent constructor by default
+    StructureSettings(StructureSettings const&);
+
+public:
     // NOLINTBEGIN
     // symbol: ??0StructureSettings@@QEAA@XZ
     MCAPI StructureSettings();
 
     // symbol: ??0StructureSettings@@QEAA@$$QEAV0@@Z
     MCAPI StructureSettings(class StructureSettings&&);
-
-    // symbol: ??0StructureSettings@@QEAA@AEBV0@@Z
-    MCAPI StructureSettings(class StructureSettings const&);
 
     // symbol: ?getAnimationMode@StructureSettings@@QEBA?AW4AnimationMode@@XZ
     MCAPI ::AnimationMode getAnimationMode() const;
@@ -112,7 +113,7 @@ public:
     MCAPI void setIgnoreEntities(bool ignoreEntities);
 
     // symbol: ?setIgnoreJigsawBlocks@StructureSettings@@QEAAX_N@Z
-    MCAPI void setIgnoreJigsawBlocks(bool);
+    MCAPI void setIgnoreJigsawBlocks(bool ignoreJigsawBlocks);
 
     // symbol: ?setIntegritySeed@StructureSettings@@QEAAXI@Z
     MCAPI void setIntegritySeed(uint integritySeed);
@@ -126,8 +127,8 @@ public:
     // symbol: ?setMirror@StructureSettings@@QEAAXW4Mirror@@@Z
     MCAPI void setMirror(::Mirror mirror);
 
-    // symbol: ?setPivot@StructureSettings@@QEAAXAEBVVec3@@@Z
-    MCAPI void setPivot(class Vec3 const& pivot);
+    // symbol: ?setPivotFromStructureSize@StructureSettings@@QEAAXXZ
+    MCAPI void setPivotFromStructureSize();
 
     // symbol: ?setReloadActorEquipment@StructureSettings@@QEAAX_N@Z
     MCAPI void setReloadActorEquipment(bool);

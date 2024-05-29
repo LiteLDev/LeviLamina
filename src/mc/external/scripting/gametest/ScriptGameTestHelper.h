@@ -87,7 +87,7 @@ public:
         std::string const& actorIdentifier,
         int                armorSlot,
         std::string const&,
-        int,
+        int               dataValue,
         class Vec3 const& position,
         bool
     );
@@ -413,8 +413,8 @@ public:
     // ?_getBlockFromVariant@ScriptGameTestHelper@ScriptModuleGameTest@@AEAA?AV?$optional@PEBVBlockLegacy@@@std@@AEBV?$variant@V?$StrongTypedObjectHandle@VScriptBlockType@ScriptModuleMinecraft@@@Scripting@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@4@@Z
     MCAPI std::optional<class BlockLegacy const*>
           _getBlockFromVariant(std::variant<
-                         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockType>,
-                         std::string> const&);
+                               class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockType>,
+                               std::string> const&);
 
     // symbol:
     // ?_callClosure@ScriptGameTestHelper@ScriptModuleGameTest@@CA?AV?$optional@UGameTestError@gametest@@@std@@AEBV?$Closure@$$A6AXXZ$$V@Scripting@@@Z

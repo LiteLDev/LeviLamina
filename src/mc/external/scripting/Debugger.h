@@ -64,7 +64,7 @@ public:
     MCAPI static char const* ToTypeName(struct JSContext* ctx, struct JSValue val);
 
     // symbol: ?TransportClose@Debugger@QuickJS@Scripting@@CAXPEAUJSRuntime@@PEAX@Z
-    MCAPI static void TransportClose(struct JSRuntime*, void*);
+    MCAPI static void TransportClose(struct JSRuntime* rt, void*);
 
     // symbol: ?TransportPeek@Debugger@QuickJS@Scripting@@CA_KPEAX@Z
     MCAPI static uint64 TransportPeek(void*);

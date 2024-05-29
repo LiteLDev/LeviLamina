@@ -76,30 +76,30 @@ public:
     // vIndex: 10, symbol: __gen_??1SimulatedPlayer@@UEAA@XZ
     virtual ~SimulatedPlayer() = default;
 
-    // vIndex: 25, symbol: ?teleportTo@SimulatedPlayer@@UEAAXAEBVVec3@@_NHH1@Z
+    // vIndex: 23, symbol: ?teleportTo@SimulatedPlayer@@UEAAXAEBVVec3@@_NHH1@Z
     virtual void teleportTo(class Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool);
 
-    // vIndex: 165, symbol: ?aiStep@SimulatedPlayer@@UEAAXXZ
+    // vIndex: 160, symbol: ?aiStep@SimulatedPlayer@@UEAAXXZ
     virtual void aiStep();
 
-    // vIndex: 252, symbol: ?isSimulated@SimulatedPlayer@@UEBA_NXZ
+    // vIndex: 247, symbol: ?isSimulated@SimulatedPlayer@@UEBA_NXZ
     virtual bool isSimulated() const;
 
-    // vIndex: 253, symbol:
+    // vIndex: 248, symbol:
     // ?getXuid@SimulatedPlayer@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getXuid() const;
 
-    // vIndex: 254, symbol: ?getMovementSettings@SimulatedPlayer@@UEBAAEBUPlayerMovementSettings@@XZ
+    // vIndex: 249, symbol: ?getMovementSettings@SimulatedPlayer@@UEBAAEBUPlayerMovementSettings@@XZ
     virtual struct PlayerMovementSettings const& getMovementSettings() const;
 
-    // vIndex: 258, symbol:
+    // vIndex: 253, symbol:
     // ?_createChunkSource@SimulatedPlayer@@MEAA?AV?$shared_ptr@VChunkViewSource@@@std@@AEAVChunkSource@@@Z
     virtual std::shared_ptr<class ChunkViewSource> _createChunkSource(class ChunkSource& mainChunkSource);
 
-    // vIndex: 262, symbol: ?_getSpawnChunkLimit@SimulatedPlayer@@MEBAHXZ
+    // vIndex: 257, symbol: ?_getSpawnChunkLimit@SimulatedPlayer@@MEBAHXZ
     virtual int _getSpawnChunkLimit() const;
 
-    // vIndex: 263, symbol: ?_updateChunkPublisherView@SimulatedPlayer@@MEAAXAEBVVec3@@M@Z
+    // vIndex: 258, symbol: ?_updateChunkPublisherView@SimulatedPlayer@@MEAAXAEBVVec3@@M@Z
     virtual void _updateChunkPublisherView(class Vec3 const&, float);
 
     // symbol:
@@ -117,8 +117,8 @@ public:
         std::string const&                 deviceId,
         std::unique_ptr<class Certificate> certificate,
         int                                maxChunkRadius,
-        bool,
-        class EntityContext& entityContext
+        bool                               enableItemStackNetManager,
+        class EntityContext&               entityContext
     );
 
     // symbol: ?getGameTestHelper@SimulatedPlayer@@QEBA?AV?$NonOwnerPointer@VBaseGameTestHelper@gametest@@@Bedrock@@XZ

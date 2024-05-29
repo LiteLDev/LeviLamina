@@ -51,7 +51,7 @@ public:
     // vIndex: 2, symbol: ?writeSettings@ItemComponent@@UEAAXXZ
     virtual void writeSettings();
 
-    // vIndex: 3, symbol: ?isNetworkComponent@InteractButtonItemComponent@@UEBA_NXZ
+    // vIndex: 3, symbol: ?isNetworkComponent@ItemComponent@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
     // vIndex: 4, symbol:

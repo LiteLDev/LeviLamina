@@ -54,10 +54,10 @@ public:
     // symbol:
     // ?handleResponse@ScriptNetPromiseTracker@ScriptModuleMinecraftNet@@QEAAXIAEBV?$vector@UScriptNetHeader@ScriptModuleMinecraftNet@@V?$allocator@UScriptNetHeader@ScriptModuleMinecraftNet@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@I@Z
     MCAPI void handleResponse(
-        uint requestId,
-        std::vector<struct ScriptModuleMinecraftNet::ScriptNetHeader> const&,
-        std::string const& body,
-        uint               status
+        uint                                                                 requestId,
+        std::vector<struct ScriptModuleMinecraftNet::ScriptNetHeader> const& headers,
+        std::string const&                                                   body,
+        uint                                                                 status
     );
 
     // symbol:

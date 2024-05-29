@@ -31,6 +31,8 @@ public:
     LLAPI virtual void serialize(CompoundTag&) const;
     LLAPI virtual void deserialize(CompoundTag const&);
 
-    static constexpr ll::event::EventId CustomEventId{EmptyEventId};
+    LLAPI virtual EventId getId() const;
+
+    static constexpr EventId CustomEventId{EmptyEventId};
 };
 } // namespace ll::event

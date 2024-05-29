@@ -23,7 +23,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?mExposedGameEvents@GameEventMapping@@0V?$set@VHashedString@@U?$less@VHashedString@@@std@@V?$allocator@VHashedString@@@3@@std@@B
@@ -31,15 +31,6 @@ private:
 
     // symbol: ?mGameEventPairs@GameEventMapping@@0V?$vector@UGameEventPair@@V?$allocator@UGameEventPair@@@std@@@std@@B
     MCAPI static std::vector<struct GameEventPair> const mGameEventPairs;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mExposedGameEvents() { return mExposedGameEvents; }
-
-    static auto& $mGameEventPairs() { return mGameEventPairs; }
 
     // NOLINTEND
 };

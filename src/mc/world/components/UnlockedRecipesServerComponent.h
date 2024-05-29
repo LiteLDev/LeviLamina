@@ -54,7 +54,7 @@ public:
     MCAPI void addUnlockedRecipe(std::string const& recipeId);
 
     // symbol: ?addUnlockingInstruction@UnlockedRecipesServerComponent@@QEAAXUUnlockingInstruction@1@@Z
-    MCAPI void addUnlockingInstruction(struct UnlockedRecipesServerComponent::UnlockingInstruction);
+    MCAPI void addUnlockingInstruction(struct UnlockedRecipesServerComponent::UnlockingInstruction instruction);
 
     // symbol: ?clearChangedInventorySlots@UnlockedRecipesServerComponent@@QEAAXXZ
     MCAPI void clearChangedInventorySlots();

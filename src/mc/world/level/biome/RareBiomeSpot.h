@@ -18,8 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0RareBiomeSpot@OperationNodeFilters@@QEAA@IAEAVBiome@@0@Z
-    MCAPI RareBiomeSpot(uint oneInXChance, class Biome& fromBiome, class Biome& toBiome);
+    // symbol: ??0RareBiomeSpot@OperationNodeFilters@@QEAA@IAEBVBiome@@0@Z
+    MCAPI RareBiomeSpot(uint oneInXChance, class Biome const& fromBiome, class Biome const& toBiome);
 
     // NOLINTEND
 };

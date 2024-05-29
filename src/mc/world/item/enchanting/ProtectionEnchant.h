@@ -40,7 +40,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?THORNS_CHANCE_PER_LEVEL@ProtectionEnchant@@0MB
     MCAPI static float const THORNS_CHANCE_PER_LEVEL;
@@ -48,15 +48,6 @@ private:
     // symbol:
     // ?VALID_ENCHANTMENTS@ProtectionEnchant@@0V?$vector@W4Type@Enchant@@V?$allocator@W4Type@Enchant@@@std@@@std@@B
     MCAPI static std::vector<::Enchant::Type> const VALID_ENCHANTMENTS;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $THORNS_CHANCE_PER_LEVEL() { return THORNS_CHANCE_PER_LEVEL; }
-
-    static auto& $VALID_ENCHANTMENTS() { return VALID_ENCHANTMENTS; }
 
     // NOLINTEND
 };

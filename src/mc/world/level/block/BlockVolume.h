@@ -54,10 +54,6 @@ public:
     Block const*& block(BlockPos const& pos) { return mBlocks[index(pos)]; };
 
 public:
-    // prevent constructor by default
-    BlockVolume(BlockVolume const&);
-
-public:
     // NOLINTBEGIN
     // symbol: ??0BlockVolume@@QEAA@V?$buffer_span_mut@PEBVBlock@@@@HHHAEBVBlock@@H@Z
     MCAPI BlockVolume(

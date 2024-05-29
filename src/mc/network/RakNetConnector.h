@@ -1,10 +1,12 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/NetworkIdentifier.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/enums/Compressibility.h"
+#include "mc/enums/TransportLayer.h"
 #include "mc/network/Connector.h"
 #include "mc/network/NetworkPeer.h"
 #include "mc/network/RakPeerHelper.h"
@@ -109,6 +111,14 @@ public:
         RakNetNetworkPeer(RakNetNetworkPeer const&);
         RakNetNetworkPeer();
 
+        RakNet::RakPeerInterface&   mRakPeer;           // this+0x18
+        NetworkIdentifier           mId;                // this+0x20
+        std::string                 mSendBuffer;        // this+0xC0
+        std::vector<ReadBufferData> mReadBufferDatas;   // this+0xE0
+        int                         mApproximateMaxBps; // this+0xF8
+        int                         mLastPing;          // this+0xFC
+        int                         mAveragePing;       // this+0x100
+
     public:
         // NOLINTBEGIN
         // vIndex: 0, symbol: __gen_??1RakNetNetworkPeer@RakNetConnector@@UEAA@XZ
@@ -192,6 +202,9 @@ public:
 
     // symbol: ?getNetworkIdentifier@RakNetConnector@@UEBA?AVNetworkIdentifier@@XZ
     MCVAPI class NetworkIdentifier getNetworkIdentifier() const;
+
+    // symbol: ?getNetworkType@RakNetConnector@@UEBA?AW4TransportLayer@@XZ
+    MCVAPI ::TransportLayer getNetworkType() const;
 
     // symbol: ?getPeer@RakNetConnector@@UEAAPEAVRakPeerInterface@RakNet@@XZ
     MCVAPI class RakNet::RakPeerInterface* getPeer();

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/components/InsideBlockWithPosAndBlockComponent.h"
+#include "mc/world/level/block/components/InsideBlockWithPosAndBlockComponent.h"
 
 namespace InsideEndPortalBlockSystemImpl {
 // NOLINTBEGIN

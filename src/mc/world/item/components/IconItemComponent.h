@@ -12,6 +12,10 @@ namespace cereal { struct ReflectionCtx; }
 
 class IconItemComponent {
 public:
+    // prevent constructor by default
+    IconItemComponent(IconItemComponent const&);
+
+public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1IconItemComponent@@UEAA@XZ
     virtual ~IconItemComponent();
@@ -22,7 +26,7 @@ public:
     // vIndex: 2, symbol: ?writeSettings@ItemComponent@@UEAAXXZ
     virtual void writeSettings();
 
-    // vIndex: 3, symbol: ?isNetworkComponent@InteractButtonItemComponent@@UEBA_NXZ
+    // vIndex: 3, symbol: ?isNetworkComponent@ItemComponent@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
     // vIndex: 4, symbol:
@@ -48,15 +52,9 @@ public:
     // symbol: ??0IconItemComponent@@QEAA@XZ
     MCAPI IconItemComponent();
 
-    // symbol: ??0IconItemComponent@@QEAA@AEBV0@@Z
-    MCAPI IconItemComponent(class IconItemComponent const&);
-
     // symbol:
     // ?getDefaultTexture@IconItemComponent@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& getDefaultTexture() const;
-
-    // symbol: ??4IconItemComponent@@QEAAAEAV0@$$QEAV0@@Z
-    MCAPI class IconItemComponent& operator=(class IconItemComponent&&);
 
     // symbol: ??4IconItemComponent@@QEAAAEAV0@AEBV0@@Z
     MCAPI class IconItemComponent& operator=(class IconItemComponent const&);

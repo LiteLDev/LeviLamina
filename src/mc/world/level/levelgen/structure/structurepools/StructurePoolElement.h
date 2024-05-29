@@ -41,7 +41,7 @@ public:
         // symbol:
         // ?_findJigsawBlocks@LazyTemplate@StructurePoolElement@@KA?AV?$vector@VJigsawBlockInfo@@V?$allocator@VJigsawBlockInfo@@@std@@@std@@AEAV?$vector@VJigsawStructureBlockInfo@@V?$allocator@VJigsawStructureBlockInfo@@@std@@@4@PEBV?$vector@V?$unique_ptr@VStructurePoolBlockTagRule@@U?$default_delete@VStructurePoolBlockTagRule@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePoolBlockTagRule@@U?$default_delete@VStructurePoolBlockTagRule@@@std@@@std@@@2@@4@@Z
         MCAPI static std::vector<class JigsawBlockInfo> _findJigsawBlocks(
-            std::vector<class JigsawStructureBlockInfo>&,
+            std::vector<class JigsawStructureBlockInfo>&                         jigsawMarkers,
             std::vector<std::unique_ptr<class StructurePoolBlockTagRule>> const* blockTagRules
         );
 
@@ -136,7 +136,7 @@ public:
         Bedrock::NotNullNonOwnerPtr<class StructureManager> manager,
         std::string const&                                  location,
         ::Projection                                        projection,
-        ::PostProcessSettings
+        ::PostProcessSettings                               postProcessSettings
     );
 
     // symbol:
@@ -148,8 +148,14 @@ public:
         std::vector<std::unique_ptr<class StructurePoolBlockTagRule>> const* blockTagRules,
         std::vector<std::unique_ptr<class StructurePoolActorRule>> const*    actorRules,
         ::Projection                                                         projection,
-        ::PostProcessSettings
+        ::PostProcessSettings                                                postProcessSettings
     );
+
+    // symbol:
+    // ?empty@StructurePoolElement@@SA?AV?$function@$$A6AAEBVStructurePoolElement@@UStructureTemplateRegistrationContext@@W4Projection@@@Z@std@@XZ
+    MCAPI static std::function<
+        class StructurePoolElement const&(struct StructureTemplateRegistrationContext, ::Projection)>
+    empty();
 
     // symbol:
     // ?single@StructurePoolElement@@SA?AV?$function@$$A6AAEBVStructurePoolElement@@UStructureTemplateRegistrationContext@@W4Projection@@@Z@std@@V?$basic_string_view@DU?$char_traits@D@std@@@3@@Z

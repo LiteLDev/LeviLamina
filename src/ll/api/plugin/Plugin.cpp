@@ -1,12 +1,14 @@
 #include "ll/api/plugin/Plugin.h"
 
+#include "ll/api/command/CommandRegistrar.h"
 #include "ll/api/event/EventBus.h"
 #include "ll/api/event/server/ServerStartedEvent.h"
+#include "ll/api/i18n/I18n.h"
 #include "ll/api/service/Bedrock.h"
 #include "ll/api/service/ServerInfo.h"
-#include "ll/api/utils/ErrorUtils.h"
 
 namespace ll::plugin {
+using namespace i18n_literals;
 
 std::filesystem::path const& getPluginsRoot() {
     static std::filesystem::path path = u8"plugins/";
@@ -35,7 +37,7 @@ Plugin::Plugin(Manifest manifest) : mImpl(std::make_unique<Impl>()) {
     mImpl->manifest     = std::move(manifest);
     mImpl->state        = State::Disabled;
     mImpl->logger.title = mImpl->manifest.name;
-    mImpl->pluginDir    = getPluginsRoot() / mImpl->manifest.name;
+    mImpl->pluginDir    = getPluginsRoot() / string_utils::sv2u8sv(mImpl->manifest.name);
     mImpl->dataDir      = mImpl->pluginDir / u8"data";
     mImpl->configDir    = mImpl->pluginDir / u8"config";
     mImpl->langDir      = mImpl->pluginDir / u8"lang";
@@ -60,64 +62,73 @@ bool Plugin::hasOnEnable() const noexcept { return mImpl->onEnable != nullptr; }
 
 bool Plugin::hasOnDisable() const noexcept { return mImpl->onDisable != nullptr; }
 
-bool Plugin::onLoad() noexcept {
+Expected<> Plugin::onLoad() noexcept {
     try {
         if (!mImpl->onLoad || mImpl->onLoad(*this)) {
             if (getServerStatus() == ServerStatus::Running) {
-                onEnable();
-                if (service::getServerInstance()) {
-                    event::EventBus::getInstance().publish(
-                        mImpl->manifest.name,
-                        event::ServerStartedEvent{service::getServerInstance()}
-                    );
-                }
+                return onEnable().transform([this] {
+                    if (service::getServerInstance()) {
+                        event::EventBus::getInstance().publish(
+                            mImpl->manifest.name,
+                            event::ServerStartedEvent{service::getServerInstance()}
+                        );
+                    }
+                });
             }
-            return true;
+            return {};
+        } else {
+            return makeStringError("The plugin cannot be loaded"_tr());
         }
     } catch (...) {
-        error_utils::printCurrentException(getLogger());
+        return makeExceptionError();
     }
-    return false;
 }
 
-bool Plugin::onUnload() noexcept {
+Expected<> Plugin::onUnload() noexcept {
     try {
-        return !mImpl->onUnload || mImpl->onUnload(*this);
+        if (!mImpl->onUnload || mImpl->onUnload(*this)) {
+            event::EventBus::getInstance().removePluginEventEmitters(mImpl->manifest.name);
+            return {};
+        } else {
+            return makeStringError("The plugin cannot be unloaded"_tr());
+        }
     } catch (...) {
-        error_utils::printCurrentException(getLogger());
+        return makeExceptionError();
     }
-    return false;
 }
 
-bool Plugin::onEnable() noexcept {
+Expected<> Plugin::onEnable() noexcept {
     try {
         if (getState() == State::Enabled) {
-            return true;
+            return {};
         }
         if (!mImpl->onEnable || mImpl->onEnable(*this)) {
             setState(State::Enabled);
-            return true;
+            return {};
+        } else {
+            return makeStringError("The plugin cannot be enabled"_tr());
         }
     } catch (...) {
-        error_utils::printCurrentException(getLogger());
+        return makeExceptionError();
     }
-    return false;
 }
 
-bool Plugin::onDisable() noexcept {
+Expected<> Plugin::onDisable() noexcept {
     try {
         if (getState() == State::Disabled) {
-            return true;
+            return {};
         }
         if (!mImpl->onDisable || mImpl->onDisable(*this)) {
             setState(State::Disabled);
             event::EventBus::getInstance().removePluginListeners(mImpl->manifest.name);
-            return true;
+            command::CommandRegistrar::getInstance().disablePluginCommands(mImpl->manifest.name);
+            return {};
+        } else {
+            return makeStringError("The plugin cannot be disabled"_tr());
         }
     } catch (...) {
-        error_utils::printCurrentException(getLogger());
+        return makeExceptionError();
     }
-    return false;
 }
 
 void Plugin::onLoad(CallbackFn func) noexcept { mImpl->onLoad = std::move(func); }

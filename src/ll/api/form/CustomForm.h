@@ -6,7 +6,7 @@
 namespace ll::form {
 
 using CustomFormElementResult = std::variant<std::monostate, uint64, double, std::string>;
-using CustomFormResult        = std::unordered_map<std::string, CustomFormElementResult>;
+using CustomFormResult        = std::optional<std::unordered_map<std::string, CustomFormElementResult>>;
 
 class CustomForm : public Form {
 
@@ -14,7 +14,7 @@ class CustomForm : public Form {
     std::unique_ptr<CustomFormImpl> impl;
 
 public:
-    using Callback = std::function<void(Player&, CustomFormResult const&)>;
+    using Callback = std::function<void(Player&, CustomFormResult const&, FormCancelReason)>;
 
     LLNDAPI CustomForm();
 
@@ -29,8 +29,8 @@ public:
     LLAPI CustomForm& appendInput(
         std::string const& name,
         std::string const& text,
-        std::string const& placeholder = "",
-        std::string const& defaultVal  = ""
+        std::string const& placeholder = {},
+        std::string const& defaultVal  = {}
     );
 
     LLAPI CustomForm& appendToggle(std::string const& name, std::string const& text, bool defaultVal = false);

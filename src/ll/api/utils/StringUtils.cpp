@@ -86,14 +86,15 @@ fmt::text_style getTextStyleFromCode(std::string_view code) {
             if (svec.size() != 3) {
                 return {};
             }
-            auto colorFromCode = fmt::rgb(svtouc(svec[0]), svtouc(svec[1]), svtouc(svec[2]));
+            auto colorFromCode =
+                fmt::rgb(svtouc(svec[0]).value_or(0), svtouc(svec[1]).value_or(0), svtouc(svec[2]).value_or(0));
             if (background) {
                 return fmt::bg(colorFromCode);
             } else {
                 return fmt::fg(colorFromCode);
             }
         } else {
-            int num = svtoi(code);
+            int num = svtoi(code).value_or(0);
             if (magic_enum::enum_contains<fmt::terminal_color>((uchar)num)) {
                 return fmt::fg((fmt::terminal_color)num);
             } else if (magic_enum::enum_contains<fmt::terminal_color>((uchar)(num - 10))) {
@@ -115,7 +116,6 @@ fmt::text_style getTextStyleFromCode(std::string_view code) {
             }
         }
     }
-
     return {};
 }
 
@@ -308,10 +308,12 @@ std::string toSnakeCase(std::string_view str) {
     }
     return res;
 }
-bool strtobool(std::string const& str) {
+Expected<bool> strtobool(std::string const& str) {
     bool res = false;
-    Util::toBool(str, res);
-    return res;
+    if (Util::toBool(str, res)) {
+        return res;
+    } else {
+        return makeErrorCodeError(std::errc::invalid_argument);
+    }
 }
-
 } // namespace ll::inline utils::string_utils

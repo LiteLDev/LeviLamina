@@ -20,7 +20,7 @@ public:
     // symbol:
     // ?getAnimationFrame@LodestoneCompassComponent@@QEAAHAEBV?$variant@UActorUniqueID@@U?$pair@VBlockPos@@V?$AutomaticID@VDimension@@H@@@std@@@std@@AEBVBlockPos@@AEBV?$AutomaticID@VDimension@@H@@@Z
     MCAPI int
-    getAnimationFrame(std::variant<struct ActorUniqueID, std::pair<class BlockPos, DimensionType>> const&, class BlockPos const&, DimensionType const&);
+    getAnimationFrame(std::variant<struct ActorUniqueID, std::pair<class BlockPos, DimensionType>> const& compassId, class BlockPos const&, DimensionType const&);
 
     // symbol: ?initialize@LodestoneCompassComponent@@QEAAXAEBVPositionTrackingId@@@Z
     MCAPI void initialize(class PositionTrackingId const&);
@@ -31,7 +31,7 @@ public:
     // symbol:
     // ?setTrackOnlyInSameDimension@LodestoneCompassComponent@@QEAAXAEBV?$variant@UActorUniqueID@@U?$pair@VBlockPos@@V?$AutomaticID@VDimension@@H@@@std@@@std@@_N@Z
     MCAPI void setTrackOnlyInSameDimension(
-        std::variant<struct ActorUniqueID, std::pair<class BlockPos, DimensionType>> const&,
+        std::variant<struct ActorUniqueID, std::pair<class BlockPos, DimensionType>> const& compassId,
         bool
     );
 
@@ -52,22 +52,17 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_findCalculator@LodestoneCompassComponent@@AEAAPEAVLodestoneCompassComponentCalculator@@AEBV?$variant@UActorUniqueID@@U?$pair@VBlockPos@@V?$AutomaticID@VDimension@@H@@@std@@@std@@_N@Z
-    MCAPI class LodestoneCompassComponentCalculator*
-    _findCalculator(std::variant<struct ActorUniqueID, std::pair<class BlockPos, DimensionType>> const&, bool);
+    MCAPI class LodestoneCompassComponentCalculator* _findCalculator(
+        std::variant<struct ActorUniqueID, std::pair<class BlockPos, DimensionType>> const& compassId,
+        bool                                                                                createIfNotFound
+    );
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mSpinningLodestone@LodestoneCompassComponent@@0VCompassSpriteCalculator@@A
     MCAPI static class CompassSpriteCalculator mSpinningLodestone;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mSpinningLodestone() { return mSpinningLodestone; }
 
     // NOLINTEND
 };

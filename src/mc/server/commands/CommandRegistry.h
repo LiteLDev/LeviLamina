@@ -48,9 +48,10 @@ public:
     struct ParseTable;
     struct ParseToken;
     struct Signature;
-    struct SoftEnum;
     class Symbol;
     class Parser;
+    struct RegistryState;
+    struct SoftEnum;
     struct SymbolHasher;
     // clang-format on
 
@@ -59,8 +60,100 @@ public:
     using ParseFn =
         bool (CommandRegistry::*)(void*, ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
             const;
-    using FactoryFn       = std::unique_ptr<class Command> (*)();
+    using FactoryFn       = std::unique_ptr<class Command>();
     using ProcessFunction = std::function<ParseToken*(ParseToken&, Symbol)>;
+
+    enum class HardNonTerminal : int {
+        Epsilon                   = 0x100000,
+        Int                       = 0x100001,
+        Float                     = 0x100002,
+        Val                       = 0x100003,
+        RVal                      = 0x100004,
+        WildcardInt               = 0x100005,
+        Operator                  = 0x100006,
+        CompareOperator           = 0x100007,
+        Selection                 = 0x100008,
+        StandaloneSelection       = 0x100009,
+        WildcardSelection         = 0x10000a,
+        NonIdSelector             = 0x10000b,
+        ScoresArg                 = 0x10000c,
+        ScoresArgs                = 0x10000d,
+        ScoreSelectParam          = 0x10000e,
+        ScoreSelector             = 0x10000f,
+        TagSelector               = 0x100010,
+        FilePath                  = 0x100011,
+        FilePathVal               = 0x100012,
+        FilePathCont              = 0x100013,
+        IntegerRangeVal           = 0x100014,
+        IntegerRangePostVal       = 0x100015,
+        IntegerRange              = 0x100016,
+        FullIntegerRange          = 0x100017,
+        RationalRangeVal          = 0x100018,
+        RationalRangePostVal      = 0x100019,
+        RationalRange             = 0x10001a,
+        FullRationalRange         = 0x10001b,
+        SelArgs                   = 0x10001c,
+        Args                      = 0x10001d,
+        Arg                       = 0x10001e,
+        MArg                      = 0x10001f,
+        MValue                    = 0x100020,
+        NameArg                   = 0x100021,
+        TypeArg                   = 0x100022,
+        FamilyArg                 = 0x100023,
+        HasPermissionArg          = 0x100024,
+        HasPermissionArgs         = 0x100025,
+        HasPermissionSelector     = 0x100026,
+        HasPermissionElement      = 0x100027,
+        HasPermissionElements     = 0x100028,
+        TagArg                    = 0x100029,
+        HasItemElement            = 0x10002a,
+        HasItemElements           = 0x10002b,
+        HasItemArg                = 0x10002c,
+        HasItemArgs               = 0x10002d,
+        HasItemSelector           = 0x10002e,
+        EquipmentSlotEnum         = 0x10002f,
+        PropertyValue             = 0x100030,
+        HasPropertyParamValue     = 0x100031,
+        HasPropertyParamEnumValue = 0x100032,
+        HasPropertyArg            = 0x100033,
+        HasPropertyArgs           = 0x100034,
+        HasPropertyElement        = 0x100035,
+        HasPropertyElements       = 0x100036,
+        HasPropertySelector       = 0x100037,
+        Id                        = 0x100038,
+        IdCont                    = 0x100039,
+        CoordXInt                 = 0x10003a,
+        CoordYInt                 = 0x10003b,
+        CoordZInt                 = 0x10003c,
+        CoordXFloat               = 0x10003d,
+        CoordYFloat               = 0x10003e,
+        CoordZFloat               = 0x10003f,
+        Position                  = 0x100040,
+        PositionFloat             = 0x100041,
+        MessageExp                = 0x100042,
+        Message                   = 0x100043,
+        MessageRoot               = 0x100044,
+        PostSelector              = 0x100045,
+        RawText                   = 0x100046,
+        RawTextCont               = 0x100047,
+        JsonValue                 = 0x100048,
+        JsonField                 = 0x100049,
+        JsonObject                = 0x10004a,
+        JsonObjectFields          = 0x10004b,
+        JsonObjectCont            = 0x10004c,
+        JsonArray                 = 0x10004d,
+        JsonArrayValues           = 0x10004e,
+        JsonArrayCont             = 0x10004f,
+        BlockState                = 0x100050,
+        BlockStateKey             = 0x100051,
+        BlockStateValue           = 0x100052,
+        BlockStateValues          = 0x100053,
+        BlockStateArray           = 0x100054,
+        BlockStateArrayCont       = 0x100055,
+        Command                   = 0x100056,
+        SlashCommand              = 0x100057,
+        Count,
+    };
 
     struct ChainedSubcommand {
     public:
@@ -94,7 +187,7 @@ public:
 
     struct Overload {
         CommandVersion                    version;       // this+0x0
-        FactoryFn                         alloc;         // this+0x8
+        FactoryFn*                        alloc;         // this+0x8
         std::vector<CommandParameterData> params;        // this+0x10
         int                               versionOffset; // this+0x28
         std::vector<Symbol>               paramsSymbol;  // this+0x30
@@ -110,11 +203,29 @@ public:
 
     class Symbol {
     public:
-        int mValue; // this+0x0
+        int mValue{-1}; // this+0x0
+
+        static int const NonTerminalBit   = 0x100000;
+        static int const EnumBit          = 0x200000;
+        static int const OptionalBit      = 0x400000;
+        static int const FactorizationBit = 0x800000;
+        static int const PostfixBit       = 0x1000000;
+        static int const EnumValueBit     = 0x2000000;
+        static int const SoftEnumBit      = 0x4000000;
 
         Symbol() = default;
 
-        Symbol(Symbol const& other) { mValue = other.mValue; }
+        Symbol(Symbol const& other) : mValue(other.mValue) {}
+
+        Symbol(HardNonTerminal data) : mValue(static_cast<int>(data)) {}
+
+        Symbol(CommandLexer::TokenType data) : mValue(static_cast<int>(data)) {}
+
+        Symbol& operator=(Symbol const& other) {
+            mValue = other.mValue;
+            return *this;
+        }
+
 
         [[nodiscard]] inline bool operator==(Symbol const& other) const { return mValue == other.mValue; }
 
@@ -172,8 +283,8 @@ public:
         Symbol family;        // this+0x48
         Symbol score;         // this+0x4C
         Symbol tag;           // this+0x50
-        Symbol hasitem;       // this+0x54
-        Symbol haspermission; // this+0x58
+        Symbol haspermission; // this+0x54
+        Symbol has_property;  // this+0x58
 
     public:
         // NOLINTBEGIN
@@ -198,9 +309,10 @@ public:
     };
 
     struct ParseTable {
-        std::map<Symbol, std::vector<Symbol>>    first;   // this+0x0
-        std::map<Symbol, std::vector<Symbol>>    follow;  // this+0x10
-        std::map<std::pair<Symbol, Symbol>, int> predict; // this+0x20
+        std::map<Symbol, std::vector<Symbol>>           first;   // this+0x0
+        std::map<Symbol, std::vector<Symbol>>           follow;  // this+0x10
+        entt::dense_map<std::pair<Symbol, Symbol>, int> predict; // this+0x20
+        std::chrono::system_clock::duration             buildDuration;
 
     public:
         // NOLINTBEGIN
@@ -283,7 +395,7 @@ public:
         // symbol:
         // ?createSelector@Parser@CommandRegistry@@QEAA?AV?$unique_ptr@V?$CommandSelector@VActor@@@@U?$default_delete@V?$CommandSelector@VActor@@@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@AEBVCommandOrigin@@@Z
         MCAPI std::unique_ptr<class CommandSelector<class Actor>>
-              createSelector(std::string const&, class CommandOrigin const& origin);
+              createSelector(std::string const& selectorString, class CommandOrigin const& origin);
 
         // symbol:
         // ?getErrorMessage@Parser@CommandRegistry@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -415,11 +527,16 @@ public:
     std::function<void(CommandFlag&, std::string const&)>       mCommandOverrideFunctor;       // this+0x348
 
     template <typename T>
-    bool
-    parse(void* target, CommandRegistry::ParseToken const& token, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-        const {
+    bool parse(
+        void*                              storage,
+        CommandRegistry::ParseToken const& token,
+        CommandOrigin const& /*origin*/,
+        int /*version*/,
+        std::string& /*error*/,
+        std::vector<std::string>& /*errorParams*/
+    ) const {
         if constexpr (std::is_enum_v<T>) {
-            *(T*)target = (T)getEnumData(token);
+            *(T*)storage = (T)getEnumData(token);
             return true;
         } else {
             return false;
@@ -652,14 +769,8 @@ public:
 
     // symbol:
     // ?addRule@CommandRegistry@@AEAAXVSymbol@1@V?$vector@VSymbol@CommandRegistry@@V?$allocator@VSymbol@CommandRegistry@@@std@@@std@@V?$function@$$A6APEAUParseToken@CommandRegistry@@AEAU12@VSymbol@2@@Z@4@VCommandVersion@@@Z
-    MCAPI void addRule(
-        class CommandRegistry::Symbol              symbol,
-        std::vector<class CommandRegistry::Symbol> derivation,
-        std::function<
-            struct CommandRegistry::ParseToken*(struct CommandRegistry::ParseToken&, class CommandRegistry::Symbol)>
-                             process,
-        class CommandVersion versions
-    );
+    MCAPI void
+    addRule(Symbol symbol, std::vector<Symbol> derivation, ProcessFunction process, class CommandVersion versions = {});
 
     // symbol: ?addSemanticConstraint@CommandRegistry@@AEAAXW4SemanticConstraint@@@Z
     MCAPI void addSemanticConstraint(::SemanticConstraint constraintType);
@@ -908,18 +1019,11 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?ParseRuleSymbols@CommandRegistry@@0QBU?$pair@P8CommandRegistry@@EBA_NPEAXAEBUParseToken@1@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@5@@ZVSymbol@1@@std@@B
     MCAPI static std::pair<ParseFn, class CommandRegistry::Symbol> const ParseRuleSymbols[];
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $ParseRuleSymbols() { return ParseRuleSymbols; }
 
     // NOLINTEND
 };

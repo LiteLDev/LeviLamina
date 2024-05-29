@@ -19,7 +19,8 @@ public:
     MCAPI class Actor* getActorFromArg(struct MolangScriptArg const& arg) const;
 
     // symbol: ?getActorPtrFromPushedArray@MolangEvalParams@@QEBAPEAVActor@@_K0AEA_N@Z
-    MCAPI class Actor* getActorPtrFromPushedArray(uint64, uint64, bool&) const;
+    MCAPI class Actor*
+    getActorPtrFromPushedArray(uint64 arrayStackOffset, uint64 arrayElementOffset, bool& outOfElements) const;
 
     // symbol: ?popActor@MolangEvalParams@@QEAAPEAVActor@@XZ
     MCAPI class Actor* popActor();
@@ -34,7 +35,7 @@ public:
     MCAPI uint64 popMissingVariableOrActorAddress(class HashedString const& variableName);
 
     // symbol: ?popMissingVariableOrActorAddress@MolangEvalParams@@QEAA_KW4MolangVariableIndex@@@Z
-    MCAPI uint64 popMissingVariableOrActorAddress(::MolangVariableIndex);
+    MCAPI uint64 popMissingVariableOrActorAddress(::MolangVariableIndex variableIndex);
 
     // symbol: ?popPublicAccessMode@MolangEvalParams@@QEAA_NXZ
     MCAPI bool popPublicAccessMode();
@@ -43,7 +44,7 @@ public:
     MCAPI void popRenderParamsCopyAndPtr();
 
     // symbol: ?pushLoopScope@MolangEvalParams@@QEAAX_K0@Z
-    MCAPI void pushLoopScope(uint64, uint64);
+    MCAPI void pushLoopScope(uint64 loopRepeatLogicInstructionIndex, uint64 loopCleanupStatementInstructionIndex);
 
     // symbol: ?pushRenderParams@MolangEvalParams@@QEAAXAEBVRenderParams@@@Z
     MCAPI void pushRenderParams(class RenderParams const& rhs);
@@ -71,18 +72,11 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?mThreadLocalMolangEvalParams@MolangEvalParams@@0V?$ThreadLocalObject@UMolangEvalParams@@V?$allocator@UMolangEvalParams@@@std@@@Threading@Bedrock@@A
     MCAPI static class Bedrock::Threading::ThreadLocalObject<struct MolangEvalParams> mThreadLocalMolangEvalParams;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mThreadLocalMolangEvalParams() { return mThreadLocalMolangEvalParams; }
 
     // NOLINTEND
 };

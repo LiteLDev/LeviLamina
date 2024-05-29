@@ -15,6 +15,7 @@ struct Structure {
 public:
     // prevent constructor by default
     Structure& operator=(Structure const&);
+    Structure(Structure const&);
     Structure();
 
 public:
@@ -26,9 +27,6 @@ public:
     // ?findValidGenerationPoint@JigsawStructure@worldgen@br@@UEBA?AV?$optional@VGenerationStub@worldgen@br@@@std@@AEAUGenerationContext@23@@Z
     virtual std::optional<class br::worldgen::GenerationStub>
     findValidGenerationPoint(struct br::worldgen::GenerationContext&) const = 0;
-
-    // symbol: ??0Structure@worldgen@br@@QEAA@AEBU012@@Z
-    MCAPI Structure(struct br::worldgen::Structure const&);
 
     // symbol:
     // ?generate@Structure@worldgen@br@@QEBA?AV?$shared_ptr@VStructureInstance@worldgen@br@@@std@@AEAUGenerationContext@23@@Z

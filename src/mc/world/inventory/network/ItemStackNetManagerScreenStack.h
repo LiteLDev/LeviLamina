@@ -24,7 +24,7 @@ public:
 
     // symbol:
     // ?push@ItemStackNetManagerScreenStack@@QEAAPEAVItemStackNetManagerScreen@@V?$unique_ptr@VItemStackNetManagerScreen@@U?$default_delete@VItemStackNetManagerScreen@@@std@@@std@@@Z
-    MCAPI class ItemStackNetManagerScreen* push(std::unique_ptr<class ItemStackNetManagerScreen>);
+    MCAPI class ItemStackNetManagerScreen* push(std::unique_ptr<class ItemStackNetManagerScreen> screen);
 
     // symbol: ?size@ItemStackNetManagerScreenStack@@QEBA_KXZ
     MCAPI uint64 size() const;

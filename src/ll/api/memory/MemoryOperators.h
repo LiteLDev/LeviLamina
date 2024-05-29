@@ -12,6 +12,7 @@
 __declspec(noreturn) void __CRTDECL __scrt_throw_std_bad_alloc();
 __declspec(noreturn) void __CRTDECL __scrt_throw_std_bad_array_new_length();
 
+extern "C" _declspec(dllexport) int const ll_memory_operator_overrided{};
 
 void __CRTDECL operator delete(void* p) noexcept { ::ll::memory::getDefaultAllocator().release(p); }
 
@@ -60,16 +61,16 @@ _VCRT_ALLOCATOR void* __CRTDECL operator new(std::size_t size) {
     }
 }
 
-_NODISCARD _Ret_notnull_ _Success_(return != NULL) _Post_writable_byte_size_(size) _VCRT_ALLOCATOR void* __CRTDECL
-operator new(std::size_t size, std::nothrow_t const&) noexcept {
+_NODISCARD _Ret_notnull_ _Success_(return != NULL) _Post_writable_byte_size_(size) _VCRT_ALLOCATOR
+    void* __CRTDECL operator new(std::size_t size, std::nothrow_t const&) noexcept {
     return ::ll::memory::getDefaultAllocator().allocate(size);
 }
 
 _NODISCARD _Ret_notnull_        _Post_writable_byte_size_(size)
 _VCRT_ALLOCATOR void* __CRTDECL operator new[](std::size_t size) { return operator new(size); }
 
-_NODISCARD _Ret_notnull_ _Success_(return != NULL) _Post_writable_byte_size_(size) _VCRT_ALLOCATOR void* __CRTDECL
-operator new[](std::size_t size, std::nothrow_t const& tag) noexcept {
+_NODISCARD _Ret_notnull_ _Success_(return != NULL) _Post_writable_byte_size_(size) _VCRT_ALLOCATOR
+    void* __CRTDECL operator new[](std::size_t size, std::nothrow_t const& tag) noexcept {
     return operator new(size, tag);
 }
 
@@ -86,8 +87,8 @@ _VCRT_ALLOCATOR void* __CRTDECL operator new(std::size_t size, std::align_val_t 
     }
 }
 
-_NODISCARD _Ret_notnull_ _Success_(return != NULL) _Post_writable_byte_size_(size) _VCRT_ALLOCATOR void* __CRTDECL
-operator new(std::size_t size, std::align_val_t alignment, std::nothrow_t const&) noexcept {
+_NODISCARD _Ret_notnull_ _Success_(return != NULL) _Post_writable_byte_size_(size) _VCRT_ALLOCATOR
+    void* __CRTDECL operator new(std::size_t size, std::align_val_t alignment, std::nothrow_t const&) noexcept {
     return ::ll::memory::getDefaultAllocator().alignedAllocate(size, static_cast<size_t>(alignment));
 }
 
@@ -96,8 +97,8 @@ _VCRT_ALLOCATOR void* __CRTDECL operator new[](std::size_t size, std::align_val_
     return operator new(size, alignment);
 }
 
-_NODISCARD _Ret_notnull_ _Success_(return != NULL) _Post_writable_byte_size_(size) _VCRT_ALLOCATOR void* __CRTDECL
-operator new[](std::size_t size, std::align_val_t alignment, std::nothrow_t const& tag) noexcept {
+_NODISCARD _Ret_notnull_ _Success_(return != NULL) _Post_writable_byte_size_(size) _VCRT_ALLOCATOR
+    void* __CRTDECL operator new[](std::size_t size, std::align_val_t alignment, std::nothrow_t const& tag) noexcept {
     return operator new(size, alignment, tag);
 }
 #endif

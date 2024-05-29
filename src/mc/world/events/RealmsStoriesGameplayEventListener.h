@@ -16,11 +16,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?onEvent@RealmsStoriesGameplayEventListener@@UEAA?AW4EventResult@@AEBUActorKilledEvent@@@Z
-    MCVAPI ::EventResult onEvent(struct ActorKilledEvent const&);
-
     // symbol: ?onEvent@RealmsStoriesGameplayEventListener@@UEAA?AW4EventResult@@AEBUActorAcquiredItemEvent@@@Z
     MCVAPI ::EventResult onEvent(struct ActorAcquiredItemEvent const&);
+
+    // symbol: ?onEvent@RealmsStoriesGameplayEventListener@@UEAA?AW4EventResult@@AEBUActorKilledEvent@@@Z
+    MCVAPI ::EventResult onEvent(struct ActorKilledEvent const&);
 
     // symbol: ?onPlayerMove@RealmsStoriesGameplayEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
     MCVAPI ::EventResult onPlayerMove(class Player&);
@@ -53,6 +53,10 @@ public:
     // symbol:
     // ?_publishLocationWorldEventIfFirstTime@RealmsStoriesGameplayEventListener@@AEAAXW4RealmEventId@@AEBVPlayer@@@Z
     MCAPI void _publishLocationWorldEventIfFirstTime(::RealmEventId, class Player const&);
+
+    // symbol:
+    // ?_publishWorldEventFirstOrOtherTime@RealmsStoriesGameplayEventListener@@AEAAXW4RealmEventId@@0AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI void _publishWorldEventFirstOrOtherTime(::RealmEventId, ::RealmEventId, std::string const&);
 
     // symbol:
     // ?_getXuidsInKillProximity@RealmsStoriesGameplayEventListener@@CA?AV?$set@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBVActor@@MM@Z

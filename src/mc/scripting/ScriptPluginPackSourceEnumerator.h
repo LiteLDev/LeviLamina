@@ -18,8 +18,12 @@ public:
     virtual ~ScriptPluginPackSourceEnumerator();
 
     // vIndex: 1, symbol:
-    // ?getPluginSources@ScriptPluginPackSourceEnumerator@@UEBAAEBV?$vector@V?$unique_ptr@VIScriptPluginSource@@U?$default_delete@VIScriptPluginSource@@@std@@@std@@V?$allocator@V?$unique_ptr@VIScriptPluginSource@@U?$default_delete@VIScriptPluginSource@@@std@@@std@@@2@@std@@XZ
-    virtual std::vector<std::unique_ptr<class IScriptPluginSource>> const& getPluginSources() const;
+    // ?getPluginSources@ScriptPluginPackSourceEnumerator@@UEBAAEBV?$vector@V?$shared_ptr@VIScriptPluginSource@@@std@@V?$allocator@V?$shared_ptr@VIScriptPluginSource@@@std@@@2@@std@@XZ
+    virtual std::vector<std::shared_ptr<class IScriptPluginSource>> const& getPluginSources() const;
+
+    // symbol:
+    // ??0ScriptPluginPackSourceEnumerator@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@VPackInstance@@V?$allocator@VPackInstance@@@std@@@2@@Z
+    MCAPI ScriptPluginPackSourceEnumerator(std::string const&, std::vector<class PackInstance> const& packStack);
 
     // NOLINTEND
 };

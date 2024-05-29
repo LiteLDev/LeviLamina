@@ -23,6 +23,17 @@ namespace ll::data {
 
 namespace detail {
 
+struct from_chars_result : std::from_chars_result {
+    [[nodiscard]] constexpr operator bool() const noexcept { // NOLINT(google-explicit-constructor)
+        return ec == std::errc{};
+    }
+    constexpr void value() const {
+        if (ec != std::errc{}) {
+            throw std::system_error{std::make_error_code(ec)};
+        }
+    }
+};
+
 // Min version string length = 1(<major>) + 1(.) + 1(<minor>) + 1(.) + 1(<patch>) = 5.
 inline constexpr auto min_version_string_length = 5;
 
@@ -34,7 +45,7 @@ constexpr bool is_letter(char c) noexcept { return (c >= 'A' && c <= 'Z') || (c 
 
 constexpr std::uint16_t to_digit(char c) noexcept { return static_cast<std::uint16_t>(c - '0'); }
 
-constexpr char const* from_chars(char const* first, char const* last, std::uint16_t& d) noexcept {
+constexpr from_chars_result from_chars(char const* first, char const* last, std::uint16_t& d) noexcept {
     if (first != last && is_digit(*first)) {
         std::int32_t t = 0;
         for (; first != last && is_digit(*first); ++first) {
@@ -42,48 +53,24 @@ constexpr char const* from_chars(char const* first, char const* last, std::uint1
         }
         if (t <= (std::numeric_limits<std::uint16_t>::max)()) {
             d = static_cast<std::uint16_t>(t);
-            return first;
+            return {first, std::errc{}};
+        } else {
+            return {first, std::errc::result_out_of_range};
         }
     }
-    return nullptr;
+    return {first, std::errc::invalid_argument};
 }
-
-constexpr char const* from_chars(char const* first, char const* last, std::optional<std::uint16_t>& d) noexcept {
-    if (first != last && is_digit(*first)) {
-        std::int32_t t = 0;
-        for (; first != last && is_digit(*first); ++first) {
-            t = t * 10 + to_digit(*first);
-        }
-        if (t <= (std::numeric_limits<std::uint16_t>::max)()) {
-            d = static_cast<std::uint16_t>(t);
-            return first;
-        }
-    }
-    return nullptr;
-}
-
 constexpr bool check_delimiter(char const* first, char const* last, char d) noexcept {
     return first != last && first != nullptr && *first == d;
 }
-
-struct from_chars_result : std::from_chars_result {
-    [[nodiscard]] constexpr operator bool() const noexcept { // NOLINT(google-explicit-constructor)
-        return ec == std::errc{};
-    }
-};
-
 } // namespace detail
-
-struct VersionParseError : std::runtime_error {
-    explicit VersionParseError(const std::string& what_arg) : std::runtime_error(what_arg) {}
-};
 
 struct PreRelease {
     std::vector<std::variant<std::string, uint16_t>> values;
 
-    constexpr PreRelease()  = default;
-    constexpr ~PreRelease() = default;
-    constexpr explicit PreRelease(std::string_view s) { from_string(s); }
+    constexpr PreRelease() noexcept = default;
+    constexpr ~PreRelease()         = default;
+    constexpr explicit PreRelease(std::string_view s) noexcept { from_string(s); }
 
     constexpr std::strong_ordering operator<=>(PreRelease const& other) const noexcept {
         for (std::size_t i = 0; i < std::min(values.size(), other.values.size()); ++i) {
@@ -116,9 +103,9 @@ struct PreRelease {
         std::string s{begin, first};
         auto        tokens = ll::string_utils::splitByPattern(s, ".");
         for (auto const& token : tokens) {
-            std::optional<std::uint16_t> value;
+            std::uint16_t value;
             if (detail::from_chars(token.data(), token.data() + token.length(), value); value) {
-                values.emplace_back(*value);
+                values.emplace_back(value);
             } else {
                 values.emplace_back(std::string{token});
             }
@@ -126,14 +113,12 @@ struct PreRelease {
         return {first, std::errc{}};
     }
 
-    [[nodiscard]] constexpr bool from_string_noexcept(std::string_view str) noexcept {
+    [[nodiscard]] constexpr detail::from_chars_result from_string_noexcept(std::string_view str) noexcept {
         return from_chars(str.data(), str.data() + str.length());
     }
 
-    constexpr PreRelease& from_string(std::string_view str) {
-        if (!from_string_noexcept(str)) {
-            throw VersionParseError("Invalid version string.");
-        }
+    constexpr PreRelease& from_string(std::string_view str) noexcept {
+        from_string_noexcept(str).value();
         return *this;
     }
 
@@ -198,53 +183,68 @@ struct Version {
             return {first, std::errc::invalid_argument};
         }
         auto next = first;
-        if (next = detail::from_chars(next, last, major); detail::check_delimiter(next, last, '.')) {
-            if (next = detail::from_chars(++next, last, minor); detail::check_delimiter(next, last, '.')) {
-                if (next = detail::from_chars(++next, last, patch); next == last) {
-                    return {next, std::errc{}};
-                }
-                if (!next) {
-                    return {nullptr, std::errc::invalid_argument};
-                }
-                if (detail::check_delimiter(next, last, '-')) {
-                    PreRelease pre;
-                    auto       result = pre.from_chars(++next, last);
-                    if (!result) return result;
-                    if (pre.values.empty()) return {next, std::errc::invalid_argument};
-                    preRelease = pre;
-                    next       = result.ptr;
-                    if (result && next == last) {
-                        return {next, std::errc{}};
-                    }
-                }
-                if (detail::check_delimiter(next, last, '+')) {
-                    build = {++next, static_cast<size_t>(last - next)};
-                    if (build->empty()) {
-                        return {nullptr, std::errc::invalid_argument};
-                    }
-                    next = last;
-                    if (std::any_of(build->begin(), build->end(), [](char c) {
-                            return !detail::is_digit(c) && !detail::is_letter(c);
-                        })) {
-                        return {nullptr, std::errc::invalid_argument};
-                    }
-                }
-                if (next == last) {
-                    return {next, std::errc{}};
-                }
+        if (auto result = detail::from_chars(next, last, major); result) {
+            next = result.ptr;
+            if (!detail::check_delimiter(next, last, '.')) {
+                return {next, std::errc::invalid_argument};
+            }
+            ++next;
+        } else {
+            return result;
+        }
+        if (auto result = detail::from_chars(next, last, minor); result) {
+            next = result.ptr;
+            if (!detail::check_delimiter(next, last, '.')) {
+                return {next, std::errc::invalid_argument};
+            }
+            ++next;
+        } else {
+            return result;
+        }
+        if (auto result = detail::from_chars(next, last, patch); result) {
+            next = result.ptr;
+        } else {
+            return result;
+        }
+        if (next == last) {
+            return {next, std::errc{}};
+        }
+        if (detail::check_delimiter(next, last, '-')) {
+            PreRelease pre;
+            auto       result = pre.from_chars(++next, last);
+            if (!result) return result;
+            if (pre.values.empty()) return {next, std::errc::invalid_argument};
+            preRelease = pre;
+            next       = result.ptr;
+            if (result && next == last) {
+                return {next, std::errc{}};
             }
         }
+        if (detail::check_delimiter(next, last, '+')) {
+            build = {++next, static_cast<size_t>(last - next)};
+            if (build->empty()) {
+                return {nullptr, std::errc::invalid_argument};
+            }
+            next = last;
+            if (std::any_of(build->begin(), build->end(), [](char c) {
+                    return !detail::is_digit(c) && !detail::is_letter(c);
+                })) {
+                return {nullptr, std::errc::invalid_argument};
+            }
+        }
+        if (next == last) {
+            return {next, std::errc{}};
+        }
+
         return {first, std::errc::invalid_argument};
     }
 
-    [[nodiscard]] constexpr bool from_string_noexcept(std::string_view str) noexcept {
+    [[nodiscard]] constexpr detail::from_chars_result from_string_noexcept(std::string_view str) noexcept {
         return from_chars(str.data(), str.data() + str.length());
     }
 
     constexpr Version& from_string(std::string_view str) {
-        if (!from_string_noexcept(str)) {
-            throw VersionParseError("Invalid version string.");
-        }
+        from_string_noexcept(str).value();
         return *this;
     }
 
@@ -292,14 +292,26 @@ struct Version {
     }
 };
 
-template <class J>
-inline J serialize(Version const& ver) {
+template <class J, class T>
+[[nodiscard]] inline Expected<J> serialize(T&& ver) noexcept
+    requires(std::same_as<std::remove_cvref_t<T>, Version>)
+try {
     return ver.to_string();
+} catch (...) {
+    return makeExceptionError();
 }
-template <class J>
-inline void deserialize(Version& ver, J const& j) {
+template <class T, class J>
+[[nodiscard]] inline Expected<> deserialize(T& ver, J const& j) noexcept
+    requires(std::same_as<T, Version>)
+{
     if (j.is_string()) {
-        ver.from_string(j);
+        if (auto res = ver.from_string_noexcept(j); res) {
+            return {};
+        } else {
+            return makeErrorCodeError(res.ec);
+        }
+    } else {
+        return makeStringError("field must be a string");
     }
 }
 

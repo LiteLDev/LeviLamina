@@ -15,7 +15,12 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0ExpectedSlotConsume@@QEAA@W4ContainerEnumName@@EAEBVItemStack@@E@Z
-    MCAPI ExpectedSlotConsume(::ContainerEnumName, uchar slot, class ItemStack const& item, uchar);
+    MCAPI ExpectedSlotConsume(
+        ::ContainerEnumName    openContainerNetId,
+        uchar                  slot,
+        class ItemStack const& item,
+        uchar                  amountOverride
+    );
 
     // NOLINTEND
 };

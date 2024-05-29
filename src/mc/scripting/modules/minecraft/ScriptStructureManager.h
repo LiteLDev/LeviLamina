@@ -69,6 +69,10 @@ public:
                         class ScriptModuleMinecraft::ScriptStructureTemplate>> const&);
 
     // symbol:
+    // ?getIds@ScriptStructureManager@ScriptModuleMinecraft@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
+    MCAPI std::vector<std::string> getIds() const;
+
+    // symbol:
     // ?getOrCreateScriptStructure@ScriptStructureManager@ScriptModuleMinecraft@@QEAA?AV?$StrongTypedObjectHandle@VScriptStructureTemplate@ScriptModuleMinecraft@@@Scripting@@AEAVStructureTemplate@@@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptStructureTemplate>
     getOrCreateScriptStructure(class StructureTemplate&);
@@ -93,6 +97,10 @@ public:
         placeStructure(std::variant<std::string, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptStructureTemplate>>&, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptDimension> const&, class Vec3 const&, std::optional<struct ScriptModuleMinecraft::ScriptStructurePlaceOptions> const&);
 
     // symbol:
+    // ?validateIdentifier@ScriptStructureManager@ScriptModuleMinecraft@@QEBA?AV?$optional@UInvalidArgumentError@Scripting@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z
+    MCAPI std::optional<struct Scripting::InvalidArgumentError> validateIdentifier(std::string const&) const;
+
+    // symbol:
     // ?bind@ScriptStructureManager@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptStructureManager@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptStructureManager> bind();
 
@@ -100,9 +108,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_ensureStructureLoaded@ScriptStructureManager@ScriptModuleMinecraft@@AEBA_NAEAVStructureTemplate@@@Z
-    MCAPI bool _ensureStructureLoaded(class StructureTemplate&) const;
-
     // symbol:
     // ?_getStructure@ScriptStructureManager@ScriptModuleMinecraft@@AEBAPEBVStructureTemplate@@AEBV?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$StrongTypedObjectHandle@VScriptStructureTemplate@ScriptModuleMinecraft@@@Scripting@@@std@@@Z
     MCAPI class StructureTemplate const*
@@ -110,10 +115,6 @@ public:
                   std::string,
                   class Scripting::StrongTypedObjectHandle<
                       class ScriptModuleMinecraft::ScriptStructureTemplate>> const&) const;
-
-    // symbol:
-    // ?_validateIdentifier@ScriptStructureManager@ScriptModuleMinecraft@@AEBA?AV?$optional@UInvalidArgumentError@Scripting@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z
-    MCAPI std::optional<struct Scripting::InvalidArgumentError> _validateIdentifier(std::string const&) const;
 
     // NOLINTEND
 };

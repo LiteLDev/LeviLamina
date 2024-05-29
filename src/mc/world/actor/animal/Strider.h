@@ -61,19 +61,19 @@ public:
     // vIndex: 10, symbol: __gen_??1Strider@@UEAA@XZ
     virtual ~Strider() = default;
 
-    // vIndex: 28, symbol: ?normalTick@Strider@@MEAAXXZ
+    // vIndex: 26, symbol: ?normalTick@Strider@@MEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 140, symbol: ?getNextStep@Strider@@MEAAMM@Z
+    // vIndex: 136, symbol: ?getNextStep@Strider@@MEAAMM@Z
     virtual float getNextStep(float);
 
-    // vIndex: 151, symbol: ?shouldTryMakeStepSound@Strider@@MEAA_NXZ
+    // vIndex: 147, symbol: ?shouldTryMakeStepSound@Strider@@MEAA_NXZ
     virtual bool shouldTryMakeStepSound();
 
-    // vIndex: 155, symbol: ?_playStepSound@Strider@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 151, symbol: ?_playStepSound@Strider@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
     virtual void _playStepSound(class BlockPos const&, class Block const& onBlock);
 
-    // vIndex: 191, symbol: ?_getWalkTargetValue@Strider@@UEAAMAEBVBlockPos@@@Z
+    // vIndex: 186, symbol: ?_getWalkTargetValue@Strider@@UEAAMAEBVBlockPos@@@Z
     virtual float _getWalkTargetValue(class BlockPos const& pos);
 
     // symbol: ??0Strider@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

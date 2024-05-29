@@ -29,7 +29,7 @@ public:
     // vIndex: 0, symbol: __gen_??1GoatHornItem@@UEAA@XZ
     virtual ~GoatHornItem() = default;
 
-    // vIndex: 47, symbol:
+    // vIndex: 48, symbol:
     // ?appendFormattedHovertext@GoatHornItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
     virtual void appendFormattedHovertext(
         class ItemStackBase const& instance,
@@ -38,16 +38,16 @@ public:
         bool                       showCategory
     ) const;
 
-    // vIndex: 71, symbol: ?use@GoatHornItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+    // vIndex: 72, symbol: ?use@GoatHornItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
     virtual class ItemStack& use(class ItemStack& item, class Player& player) const;
 
-    // vIndex: 88, symbol: ?getCooldownType@GoatHornItem@@UEBAAEBVHashedString@@XZ
+    // vIndex: 89, symbol: ?getCooldownType@GoatHornItem@@UEBAAEBVHashedString@@XZ
     virtual class HashedString const& getCooldownType() const;
 
-    // vIndex: 89, symbol: ?getCooldownTime@GoatHornItem@@UEBAHXZ
+    // vIndex: 90, symbol: ?getCooldownTime@GoatHornItem@@UEBAHXZ
     virtual int getCooldownTime() const;
 
-    // vIndex: 109, symbol: ?canBeCharged@GoatHornItem@@UEBA_NXZ
+    // vIndex: 110, symbol: ?canBeCharged@GoatHornItem@@UEBA_NXZ
     virtual bool canBeCharged() const;
 
     // symbol: ??0GoatHornItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

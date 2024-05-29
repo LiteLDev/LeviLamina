@@ -19,6 +19,15 @@ public:
     // symbol: ??0CommandRationalRange@@QEAA@XZ
     MCAPI CommandRationalRange();
 
+    // symbol: ??0CommandRationalRange@@QEAA@MM_N0@Z
+    MCAPI CommandRationalRange(float, float, bool, bool);
+
+    // symbol: ??0CommandRationalRange@@QEAA@HH_N0@Z
+    MCAPI CommandRationalRange(int, int, bool, bool);
+
+    // symbol: ?changeToValueType@CommandRationalRange@@QEAA?AV1@AEBW4ValueType@1@@Z
+    MCAPI class CommandRationalRange changeToValueType(::CommandRationalRange::ValueType const&);
+
     // symbol: ?getMaxValue@CommandRationalRange@@QEBA?AV?$variant@HM@std@@XZ
     MCAPI std::variant<int, float> getMaxValue() const;
 

@@ -29,10 +29,10 @@ public:
     // vIndex: 0, symbol: __gen_??1SuspiciousStewItem@@UEAA@XZ
     virtual ~SuspiciousStewItem() = default;
 
-    // vIndex: 57, symbol: ?uniqueAuxValues@SuspiciousStewItem@@UEBA_NXZ
+    // vIndex: 59, symbol: ?uniqueAuxValues@SuspiciousStewItem@@UEBA_NXZ
     virtual bool uniqueAuxValues() const;
 
-    // vIndex: 73, symbol:
+    // vIndex: 74, symbol:
     // ?useTimeDepleted@SuspiciousStewItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
     virtual ::ItemUseMethod
     useTimeDepleted(class ItemStack& inoutInstance, class Level* level, class Player* player) const;

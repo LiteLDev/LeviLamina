@@ -7,7 +7,7 @@
 
 class CommandVersion {
 public:
-    int mFrom = 1, mTo = 0x7FFFFFFF;
+    int mFrom = 0, mTo = 0x7FFFFFFF;
 
     CommandVersion() = default;
 

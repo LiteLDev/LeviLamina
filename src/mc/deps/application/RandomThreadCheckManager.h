@@ -23,7 +23,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?mInstance@RandomThreadCheckManager@@0V?$unique_ptr@VRandomThreadCheckManager@@U?$default_delete@VRandomThreadCheckManager@@@std@@@std@@A
@@ -31,15 +31,6 @@ private:
 
     // symbol: ?mMutex@RandomThreadCheckManager@@0Vrecursive_mutex@std@@A
     MCAPI static std::recursive_mutex mMutex;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mInstance() { return mInstance; }
-
-    static auto& $mMutex() { return mMutex; }
 
     // NOLINTEND
 };

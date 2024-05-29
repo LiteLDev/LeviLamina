@@ -27,7 +27,7 @@ public:
         std::_Tree_iterator<std::_Tree_val<
             std::_Tree_simple_types<std::pair<std::string_view const, class Bedrock::JSONObject::Node*>>>>,
         bool>
-    insert(std::string_view key, class Bedrock::JSONObject::ValueWrapper const& value, bool);
+    insert(std::string_view key, class Bedrock::JSONObject::ValueWrapper const& value, bool copyKey);
 
     // NOLINTEND
 };

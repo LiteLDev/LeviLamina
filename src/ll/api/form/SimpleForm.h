@@ -12,12 +12,12 @@ class SimpleForm : public Form {
     std::unique_ptr<SimpleFormImpl> impl;
 
 public:
-    using Callback       = std::function<void(Player&, int)>;
+    using Callback       = std::function<void(Player&, int, FormCancelReason)>;
     using ButtonCallback = std::function<void(Player&)>;
 
     LLNDAPI SimpleForm();
 
-    LLNDAPI explicit SimpleForm(std::string const& title, std::string const& content = "");
+    LLNDAPI explicit SimpleForm(std::string const& title, std::string const& content = {});
 
     LLAPI ~SimpleForm() override;
 

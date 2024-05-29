@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/PathBuffer.h"
-#include "mc/deps/puv/LoadResult.h"
 
 class BlockDefinitionLoader {
 public:
@@ -25,10 +24,6 @@ public:
         class Experiments const*,
         bool
     );
-
-    // symbol:
-    // ?load@BlockDefinitionLoader@@QEBA?AV?$LoadResult@UBlockDefinition@@@Puv@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class Puv::LoadResult<struct BlockDefinition> load(std::string const&) const;
 
     // symbol: ??1BlockDefinitionLoader@@QEAA@XZ
     MCAPI ~BlockDefinitionLoader();

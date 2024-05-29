@@ -27,9 +27,8 @@ void registerFormTestCommand() {
     auto&             cmd =
         ll::command::CommandRegistrar::getInstance()
             .getOrCreateCommand("formtest", "formtest", CommandPermissionLevel::GameDirectors, CommandFlagValue::None);
-    cmd.overload<TestFormParam>()
-        .required("type")
-        .execute<[](CommandOrigin const& ori, CommandOutput&, TestFormParam const& param) {
+    cmd.overload<TestFormParam>().required("type").execute(
+        [](CommandOrigin const& ori, CommandOutput&, TestFormParam const& param) {
             switch (param.type) {
             case TestFormParam::FormType::custom: {
                 ll::form::CustomForm form;
@@ -40,20 +39,27 @@ void registerFormTestCommand() {
                     .appendSlider("slider", "slider", 0, 100, 1)
                     .appendStepSlider("stepSlider", "stepSlider", {"a", "b", "c"})
                     .appendDropdown("dropdown", "dropdown", {"a", "b", "c"})
-                    .sendTo(*(Player*)ori.getEntity(), [](Player&, ll::form::CustomFormResult const& data) {
-                        for (auto [name, result] : data) {
-                            static auto logDebugResult = [&](const ll::form::CustomFormElementResult& var) {
-                                if (std::holds_alternative<uint64_t>(var)) {
-                                    logger.info("CustomForm callback {} = {}", name, std::get<uint64_t>(var));
-                                } else if (std::holds_alternative<double>(var)) {
-                                    logger.info("CustomForm callback {} = {}", name, std::get<double>(var));
-                                } else if (std::holds_alternative<std::string>(var)) {
-                                    logger.info("CustomForm callback {} = {}", name, std::get<std::string>(var));
-                                }
-                            };
-                            logDebugResult(result);
+                    .sendTo(
+                        *(Player*)ori.getEntity(),
+                        [](Player&, ll::form::CustomFormResult const& data, ll::form::FormCancelReason) {
+                            if (!data) {
+                                logger.info("CustomForm callback canceled");
+                                return;
+                            }
+                            for (auto [name, result] : *data) {
+                                static auto logDebugResult = [&](const ll::form::CustomFormElementResult& var) {
+                                    if (std::holds_alternative<uint64_t>(var)) {
+                                        logger.info("CustomForm callback {} = {}", name, std::get<uint64_t>(var));
+                                    } else if (std::holds_alternative<double>(var)) {
+                                        logger.info("CustomForm callback {} = {}", name, std::get<double>(var));
+                                    } else if (std::holds_alternative<std::string>(var)) {
+                                        logger.info("CustomForm callback {} = {}", name, std::get<std::string>(var));
+                                    }
+                                };
+                                logDebugResult(result);
+                            }
                         }
-                    });
+                    );
                 break;
             }
 
@@ -62,9 +68,19 @@ void registerFormTestCommand() {
                 form.setTitle("ModalForm")
                     .setUpperButton("Upper")
                     .setLowerButton("Lower")
-                    .sendTo(*(Player*)ori.getEntity(), [](Player&, ll::form::ModalForm::SelectedButton selected) {
-                        logger.info("ModalForm callback {}", (bool)selected);
-                    });
+                    .sendTo(
+                        *(Player*)ori.getEntity(),
+                        [](Player&, ll::form::ModalFormResult selected, ll::form::FormCancelReason cancelReason) {
+                            if (!selected) {
+                                logger.info("ModalForm callback canceled");
+                                if (cancelReason) {
+                                    logger.info("ModalForm callback cancelReason {}", (int)*cancelReason);
+                                }
+                                return;
+                            }
+                            logger.info("ModalForm callback {}", (bool)selected);
+                        }
+                    );
                 break;
             }
             case TestFormParam::FormType::simple: {
@@ -73,13 +89,18 @@ void registerFormTestCommand() {
                     .setContent("Content")
                     .appendButton("Button1")
                     .appendButton("Button2", "textures/ui/absorption_effect", "path")
-                    .sendTo(*(Player*)ori.getEntity(), [](Player&, int selected) {
+                    .sendTo(*(Player*)ori.getEntity(), [](Player&, int selected, ll::form::FormCancelReason) {
+                        if (selected == -1) {
+                            logger.info("SimpleForm callback canceled");
+                            return;
+                        }
                         logger.info("SimpleForm callback {}", selected);
                     });
                 break;
             }
             }
-        }>();
+        }
+    );
 }
 
 LL_TYPE_INSTANCE_HOOK(

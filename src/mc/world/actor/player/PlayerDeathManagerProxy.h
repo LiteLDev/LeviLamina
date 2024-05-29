@@ -24,7 +24,7 @@ public:
     virtual bool shouldShowDeathMessages() const;
 
     // symbol: ??0PlayerDeathManagerProxy@@QEAA@AEAVServerLevel@@@Z
-    MCAPI explicit PlayerDeathManagerProxy(class ServerLevel&);
+    MCAPI explicit PlayerDeathManagerProxy(class ServerLevel& serverLevel);
 
     // NOLINTEND
 };

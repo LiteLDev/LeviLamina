@@ -55,52 +55,52 @@ public:
     // vIndex: 13, symbol: ?remove@WitherBoss@@UEAAXXZ
     virtual void remove();
 
-    // vIndex: 15, symbol: ?getFiringPos@WitherBoss@@UEBA?AVVec3@@XZ
+    // vIndex: 14, symbol: ?getFiringPos@WitherBoss@@UEBA?AVVec3@@XZ
     virtual class Vec3 getFiringPos() const;
 
-    // vIndex: 31, symbol: ?startRiding@WitherBoss@@UEAA_NAEAVActor@@@Z
+    // vIndex: 29, symbol: ?startRiding@WitherBoss@@UEAA_NAEAVActor@@@Z
     virtual bool startRiding(class Actor&);
 
-    // vIndex: 74, symbol: ?isInvulnerableTo@WitherBoss@@UEBA_NAEBVActorDamageSource@@@Z
+    // vIndex: 70, symbol: ?isInvulnerableTo@WitherBoss@@UEBA_NAEBVActorDamageSource@@@Z
     virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
-    // vIndex: 79, symbol: ?handleEntityEvent@WitherBoss@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 75, symbol: ?handleEntityEvent@WitherBoss@@UEAAXW4ActorEvent@@H@Z
     virtual void handleEntityEvent(::ActorEvent id, int data);
 
-    // vIndex: 97, symbol: ?canFreeze@WitherBoss@@UEBA_NXZ
+    // vIndex: 93, symbol: ?canFreeze@WitherBoss@@UEBA_NXZ
     virtual bool canFreeze() const;
 
-    // vIndex: 104, symbol: ?causeFallDamageToActor@WitherBoss@@UEAAMMMVActorDamageSource@@@Z
+    // vIndex: 100, symbol: ?causeFallDamageToActor@WitherBoss@@UEAAMMMVActorDamageSource@@@Z
     virtual float causeFallDamageToActor(float, float, class ActorDamageSource);
 
-    // vIndex: 117, symbol: ?canBeAffected@WitherBoss@@UEBA_NI@Z
+    // vIndex: 113, symbol: ?canBeAffected@WitherBoss@@UEBA_NI@Z
     virtual bool canBeAffected(uint effectId) const;
 
-    // vIndex: 118, symbol: ?canBeAffectedByArrow@WitherBoss@@UEBA_NAEBVMobEffectInstance@@@Z
+    // vIndex: 114, symbol: ?canBeAffectedByArrow@WitherBoss@@UEBA_NAEBVMobEffectInstance@@@Z
     virtual bool canBeAffectedByArrow(class MobEffectInstance const& effect) const;
 
-    // vIndex: 137, symbol: ?die@WitherBoss@@UEAAXAEBVActorDamageSource@@@Z
+    // vIndex: 133, symbol: ?die@WitherBoss@@UEAAXAEBVActorDamageSource@@@Z
     virtual void die(class ActorDamageSource const& source);
 
-    // vIndex: 152, symbol: ?_hurt@WitherBoss@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 148, symbol: ?_hurt@WitherBoss@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 153, symbol: ?readAdditionalSaveData@WitherBoss@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 149, symbol: ?readAdditionalSaveData@WitherBoss@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 154, symbol: ?addAdditionalSaveData@WitherBoss@@UEBAXAEAVCompoundTag@@@Z
+    // vIndex: 150, symbol: ?addAdditionalSaveData@WitherBoss@@UEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 164, symbol: ?hurtEffects@WitherBoss@@UEAAXAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 159, symbol: ?hurtEffects@WitherBoss@@UEAAXAEBVActorDamageSource@@M_N1@Z
     virtual void hurtEffects(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 165, symbol: ?aiStep@WitherBoss@@UEAAXXZ
+    // vIndex: 160, symbol: ?aiStep@WitherBoss@@UEAAXXZ
     virtual void aiStep();
 
-    // vIndex: 175, symbol: ?getArmorValue@WitherBoss@@UEBAHXZ
+    // vIndex: 170, symbol: ?getArmorValue@WitherBoss@@UEBAHXZ
     virtual int getArmorValue() const;
 
-    // vIndex: 194, symbol: ?newServerAiStep@WitherBoss@@UEAAXXZ
+    // vIndex: 189, symbol: ?newServerAiStep@WitherBoss@@UEAAXXZ
     virtual void newServerAiStep();
 
     // symbol: ??0WitherBoss@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
@@ -191,17 +191,10 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?TIME_BEFORE_MOVING@WitherBoss@@0HB
     MCAPI static int const TIME_BEFORE_MOVING;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $TIME_BEFORE_MOVING() { return TIME_BEFORE_MOVING; }
 
     // NOLINTEND
 };

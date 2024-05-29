@@ -65,7 +65,7 @@ public:
     // symbol:
     // ?fromExpressionTag@MolangDescriptor@@SA?AV?$unique_ptr@UMolangDescriptor@@U?$default_delete@UMolangDescriptor@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4MolangVersion@@@Z
     MCAPI static std::unique_ptr<struct MolangDescriptor>
-    fromExpressionTag(std::string const&, ::MolangVersion molangVersion);
+    fromExpressionTag(std::string const& tagExpression, ::MolangVersion molangVersion);
 
     // NOLINTEND
 };

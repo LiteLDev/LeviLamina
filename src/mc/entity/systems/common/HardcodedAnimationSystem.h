@@ -27,7 +27,7 @@ public:
     MCAPI static void doHardcodedAnimation(
         class StrictEntityContext const&,
         struct MobAnimationComponent&,
-        struct MobBodyRotationComponent const&,
+        struct MobBodyRotationComponent const& bodyRot,
         struct MobHurtTimeComponent const&,
         struct ActorWalkAnimationComponent&,
         struct StateVectorComponent const&,

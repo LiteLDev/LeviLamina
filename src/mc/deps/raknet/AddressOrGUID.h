@@ -23,10 +23,10 @@ public:
     MCAPI AddressOrGUID(struct RakNet::AddressOrGUID const&);
 
     // symbol: ??0AddressOrGUID@RakNet@@QEAA@AEBURakNetGUID@1@@Z
-    MCAPI explicit AddressOrGUID(struct RakNet::RakNetGUID const&);
+    MCAPI AddressOrGUID(struct RakNet::RakNetGUID const&);
 
     // symbol: ??0AddressOrGUID@RakNet@@QEAA@AEBUSystemAddress@1@@Z
-    MCAPI explicit AddressOrGUID(struct RakNet::SystemAddress const&);
+    MCAPI AddressOrGUID(struct RakNet::SystemAddress const&);
 
     // symbol: ?IsUndefined@AddressOrGUID@RakNet@@QEBA_NXZ
     MCAPI bool IsUndefined() const;

@@ -25,22 +25,13 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?LEGACY_FIRE_TAG@OnFireComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const LEGACY_FIRE_TAG;
 
     // symbol: ?ON_FIRE_TAG@OnFireComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const ON_FIRE_TAG;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $LEGACY_FIRE_TAG() { return LEGACY_FIRE_TAG; }
-
-    static auto& $ON_FIRE_TAG() { return ON_FIRE_TAG; }
 
     // NOLINTEND
 };

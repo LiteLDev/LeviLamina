@@ -29,13 +29,13 @@ public:
     // vIndex: 0, symbol: __gen_??1WritableBookItem@@UEAA@XZ
     virtual ~WritableBookItem() = default;
 
-    // vIndex: 46, symbol: ?requiresInteract@WritableBookItem@@UEBA_NXZ
+    // vIndex: 47, symbol: ?requiresInteract@WritableBookItem@@UEBA_NXZ
     virtual bool requiresInteract() const;
 
-    // vIndex: 71, symbol: ?use@WritableBookItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+    // vIndex: 72, symbol: ?use@WritableBookItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
     virtual class ItemStack& use(class ItemStack& instance, class Player& player) const;
 
-    // vIndex: 104, symbol:
+    // vIndex: 105, symbol:
     // ?getInteractText@WritableBookItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPlayer@@@Z
     virtual std::string getInteractText(class Player const&) const;
 

@@ -162,8 +162,8 @@ public:
 public:
     LLNDAPI std::string const& getTypeName() const;
 
-    LLNDAPI static optional_ref<BlockLegacy> tryGetFromRegistry(std::string_view name);
-    LLNDAPI static optional_ref<BlockLegacy> tryGetFromRegistry(uint legacyBlockID);
+    LLNDAPI static optional_ref<BlockLegacy>       tryGetFromRegistry(std::string_view name);
+    LLNDAPI static optional_ref<BlockLegacy const> tryGetFromRegistry(uint legacyBlockID);
 
     // prevent constructor by default
     BlockLegacy& operator=(BlockLegacy const&);
@@ -816,6 +816,9 @@ public:
     // symbol: ?finalizeBlockComponentStorage@BlockLegacy@@QEAAXXZ
     MCAPI void finalizeBlockComponentStorage();
 
+    // symbol: ?finalizeBlockCustomComponentEvents@BlockLegacy@@QEAAXAEAVScriptBlockCustomComponentsFinalizer@@@Z
+    MCAPI void finalizeBlockCustomComponentEvents(class ScriptBlockCustomComponentsFinalizer&);
+
     // symbol: ?forEachAlteredBlockState@BlockLegacy@@QEBAXV?$function@$$A6A_NAEBVBlockState@@@Z@std@@@Z
     MCAPI void forEachAlteredBlockState(std::function<bool(class BlockState const&)>) const;
 
@@ -1092,6 +1095,9 @@ public:
     // symbol: ?_getBlockShape@BlockLegacy@@IEBA?AW4BlockShape@@XZ
     MCAPI ::BlockShape _getBlockShape() const;
 
+    // symbol: ?forEachBlockPermutationMutable@BlockLegacy@@IEAA_NV?$function@$$A6A_NAEAVBlock@@@Z@std@@@Z
+    MCAPI bool forEachBlockPermutationMutable(std::function<bool(class Block&)> callback);
+
     // symbol: ?getBurnOdds@BlockLegacy@@IEBAHXZ
     MCAPI int getBurnOdds() const;
 
@@ -1117,17 +1123,17 @@ public:
     // symbol:
     // ?_executeEvent@BlockLegacy@@AEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV12@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV12@@std@@@2@@3@AEAVRenderParams@@@Z
     MCAPI void _executeEvent(
-        std::string const& name,
-        std::vector<std::pair<std::string const, std::string const>>&,
-        class RenderParams& params
+        std::string const&                                            name,
+        std::vector<std::pair<std::string const, std::string const>>& eventStack,
+        class RenderParams&                                           params
     ) const;
 
     // symbol:
     // ?_forceExecuteTrigger@BlockLegacy@@AEBAXAEBVDefinitionTrigger@@AEAV?$vector@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV12@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV12@@std@@@2@@std@@AEAVRenderParams@@@Z
     MCAPI void _forceExecuteTrigger(
-        class DefinitionTrigger const& trigger,
-        std::vector<std::pair<std::string const, std::string const>>&,
-        class RenderParams& params
+        class DefinitionTrigger const&                                trigger,
+        std::vector<std::pair<std::string const, std::string const>>& eventStack,
+        class RenderParams&                                           params
     ) const;
 
     // symbol: ?_tryLookupAlteredStateCollection@BlockLegacy@@AEBA?AV?$optional@H@std@@_KG@Z

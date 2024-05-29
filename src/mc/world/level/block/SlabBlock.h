@@ -70,28 +70,21 @@ public:
     getMobToSpawn(class SpawnConditions const& conditions, class BlockSource& region) const;
 
     // symbol:
-    // ??0SlabBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NAEBVMaterial@@V?$WeakPtr@VBlockLegacy@@@@@Z
+    // ??0SlabBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NAEBVMaterial@@V?$WeakPtr@$$CBVBlockLegacy@@@@@Z
     MCAPI SlabBlock(
-        std::string const&               nameId,
-        int                              id,
-        bool                             _fullsize,
-        class Material const&            mat,
-        class WeakPtr<class BlockLegacy> baseSlab
+        std::string const&                     nameId,
+        int                                    id,
+        bool                                   _fullsize,
+        class Material const&                  mat,
+        class WeakPtr<class BlockLegacy const> baseSlab
     );
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?TOP_SLAB_DOESNT_BREAK_FALLING_BLOCK_VERSION@SlabBlock@@0VBaseGameVersion@@B
     MCAPI static class BaseGameVersion const TOP_SLAB_DOESNT_BREAK_FALLING_BLOCK_VERSION;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $TOP_SLAB_DOESNT_BREAK_FALLING_BLOCK_VERSION() { return TOP_SLAB_DOESNT_BREAK_FALLING_BLOCK_VERSION; }
 
     // NOLINTEND
 };

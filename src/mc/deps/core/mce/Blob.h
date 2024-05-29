@@ -19,7 +19,9 @@ public:
     public:
         delete_function mFn;
 
-        [[nodiscard]] constexpr Deleter() : mFn(Blob::defaultDeleter) {}
+        [[nodiscard]] _CONSTEXPR23 Deleter() : mFn(Blob::defaultDeleter) {}
+
+        [[nodiscard]] _CONSTEXPR23 Deleter(delete_function fn) : mFn(fn) {}
 
         void operator()(pointer x) const { mFn(x); }
     };
@@ -29,25 +31,25 @@ public:
     pointer_type mBlob{}; // this+0x0
     size_type    mSize{}; // this+0x10
 
-    [[nodiscard]] constexpr Blob() = default;
+    [[nodiscard]] _CONSTEXPR23 Blob() = default;
 
-    [[nodiscard]] constexpr Blob(std::span<uchar> s, Deleter deleter = {}) : mSize(s.size()) { // NOLINT
+    [[nodiscard]] _CONSTEXPR23 Blob(std::span<uchar> s, Deleter deleter = {}) : mSize(s.size()) { // NOLINT
         mBlob = pointer_type(new value_type[mSize], deleter);
         std::copy(s.begin(), s.end(), mBlob.get());
     }
 
-    [[nodiscard]] constexpr pointer data() const { return mBlob.get(); }
+    [[nodiscard]] _CONSTEXPR23 pointer data() const { return mBlob.get(); }
 
-    [[nodiscard]] constexpr size_type size() const { return mSize; }
+    [[nodiscard]] _CONSTEXPR23 size_type size() const { return mSize; }
 
-    [[nodiscard]] constexpr std::span<uchar> view() const { return {data(), size()}; }
+    [[nodiscard]] _CONSTEXPR23 std::span<uchar> view() const { return {data(), size()}; }
 
-    LL_CLANG_CEXPR Blob& operator=(Blob&&) noexcept = default;
-    [[nodiscard]] constexpr Blob(Blob&&) noexcept   = default;
+    LL_CLANG_CEXPR Blob&       operator=(Blob&&) noexcept = default;
+    [[nodiscard]] _CONSTEXPR23 Blob(Blob&&) noexcept      = default;
 
-    [[nodiscard]] constexpr Blob(Blob const& other) : Blob(other.view(), other.mBlob.get_deleter()) {}
+    [[nodiscard]] _CONSTEXPR23 Blob(Blob const& other) : Blob(other.view(), other.mBlob.get_deleter()) {}
 
-    constexpr Blob& operator=(Blob const& other) {
+    _CONSTEXPR23 Blob& operator=(Blob const& other) {
         if (this != &other) {
             *this = Blob{other};
         }

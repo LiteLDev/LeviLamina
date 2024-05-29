@@ -27,6 +27,9 @@ public:
     // vIndex: 0, symbol: __gen_??1ScriptMovementBasicComponent@ScriptModuleMinecraft@@UEAA@XZ
     virtual ~ScriptMovementBasicComponent() = default;
 
+    // vIndex: 1, symbol: ?_isValid@ScriptMovementBasicComponent@ScriptModuleMinecraft@@MEBA_NXZ
+    virtual bool _isValid() const;
+
     // symbol:
     // ?bind@ScriptMovementBasicComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptMovementBasicComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMovementBasicComponent>

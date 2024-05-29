@@ -32,7 +32,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?getOrCreateChunkBlender@ChunkBlenderFactory@@QEAA?AV?$shared_ptr@VChunkBlender@@@std@@AEBVChunkPos@@@Z
-    MCAPI std::shared_ptr<class ChunkBlender> getOrCreateChunkBlender(class ChunkPos const&);
+    MCAPI std::shared_ptr<class ChunkBlender> getOrCreateChunkBlender(class ChunkPos const& lcPosition);
 
     // symbol: ?isClientSide@ChunkBlenderFactory@@QEBA?B_NXZ
     MCAPI bool const isClientSide() const;
@@ -43,13 +43,13 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_createChunkBlendingAttenuator@ChunkBlenderFactory@@AEBA?AV?$shared_ptr@VChunkBlender@@@std@@AEBVChunkPos@@@Z
-    MCAPI std::shared_ptr<class ChunkBlender> _createChunkBlendingAttenuator(class ChunkPos const&) const;
+    MCAPI std::shared_ptr<class ChunkBlender> _createChunkBlendingAttenuator(class ChunkPos const& lcPosition) const;
 
     // symbol:
     // ?_finalizeChunkAttenuationData@ChunkBlenderFactory@@AEBA?AV?$vector@V?$array@UAttenuationData@ChunkBlenderUtil@@$03@std@@V?$allocator@V?$array@UAttenuationData@ChunkBlenderUtil@@$03@std@@@2@@std@@AEBV?$vector@V?$array@UIntermediateAttenuationData@ChunkBlenderFactory@@$03@std@@V?$allocator@V?$array@UIntermediateAttenuationData@ChunkBlenderFactory@@$03@std@@@2@@3@@Z
     MCAPI std::vector<std::array<struct ChunkBlenderUtil::AttenuationData, 4>>
           _finalizeChunkAttenuationData(std::vector<
-                                  std::array<struct ChunkBlenderFactory::IntermediateAttenuationData, 4>> const&) const;
+                                        std::array<struct ChunkBlenderFactory::IntermediateAttenuationData, 4>> const&) const;
 
     // symbol:
     // ?_processDensityColumn@ChunkBlenderFactory@@AEBAXAEAV?$vector@V?$array@UIntermediateAttenuationData@ChunkBlenderFactory@@$03@std@@V?$allocator@V?$array@UIntermediateAttenuationData@ChunkBlenderFactory@@$03@std@@@2@@std@@AEBVBlendingData@@MU?$pair@HH@3@2_N@Z

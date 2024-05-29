@@ -39,12 +39,12 @@ public:
     // symbol:
     // ??0ClosureAny@Scripting@@QEAA@PEAVIRuntime@1@UContextId@1@VWeakLifetimeScope@1@V?$StrongTypedObjectHandle@UClosureType@Scripting@@@1@PEAVIObjectInspector@1@@Z
     MCAPI
-    ClosureAny(class Scripting::IRuntime*, struct Scripting::ContextId, class Scripting::WeakLifetimeScope scope, class Scripting::StrongTypedObjectHandle<struct Scripting::ClosureType> handle, class Scripting::IObjectInspector*);
+    ClosureAny(class Scripting::IRuntime* runtime, struct Scripting::ContextId, class Scripting::WeakLifetimeScope scope, class Scripting::StrongTypedObjectHandle<struct Scripting::ClosureType> handle, class Scripting::IObjectInspector*);
 
     // symbol:
     // ?callGeneric@ClosureAny@Scripting@@QEBA?AVResultAny@2@PEAVmeta_any@entt@@IVmeta_type@5@V?$optional@W4Privilege@Scripting@@@std@@@Z
     MCAPI class Scripting::ResultAny
-    callGeneric(entt::meta_any* args, uint, entt::meta_type, std::optional<::Scripting::Privilege>) const;
+    callGeneric(entt::meta_any* args, uint argc, entt::meta_type, std::optional<::Scripting::Privilege>) const;
 
     // symbol: ?compareTo@ClosureAny@Scripting@@QEBA_NAEBV12@@Z
     MCAPI bool compareTo(class Scripting::ClosureAny const& rhs) const;

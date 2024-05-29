@@ -32,7 +32,7 @@ public:
 
     // symbol:
     // ?findCreativeItemEntry@CreativeItemRegistry@@QEAAPEAVCreativeItemEntry@@AEBV?$TypedServerNetId@UCreativeItemNetIdTag@@I$0A@@@@Z
-    MCAPI class CreativeItemEntry* findCreativeItemEntry(CreativeItemNetId const&);
+    MCAPI class CreativeItemEntry* findCreativeItemEntry(CreativeItemNetId const& netId);
 
     // symbol: ?getCreativeCategory@CreativeItemRegistry@@QEAAPEAVCreativeItemGroupCategory@@W4CreativeItemCategory@@@Z
     MCAPI class CreativeItemGroupCategory* getCreativeCategory(::CreativeItemCategory category);
@@ -56,7 +56,7 @@ public:
 
     // symbol:
     // ?newItemEntry@CreativeItemRegistry@@QEAAPEAVCreativeItemEntry@@AEBV?$TypedServerNetId@UCreativeItemNetIdTag@@I$0A@@@AEBVItemInstance@@@Z
-    MCAPI class CreativeItemEntry* newItemEntry(CreativeItemNetId const&, class ItemInstance const& item);
+    MCAPI class CreativeItemEntry* newItemEntry(CreativeItemNetId const& creativeNetId, class ItemInstance const& item);
 
     // symbol: ?resetGroups@CreativeItemRegistry@@QEAAXXZ
     MCAPI void resetGroups();
@@ -89,18 +89,11 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?mCurrentRegistry@CreativeItemRegistry@@0V?$unique_ptr@VCreativeItemRegistry@@U?$default_delete@VCreativeItemRegistry@@@std@@@std@@A
     MCAPI static std::unique_ptr<class CreativeItemRegistry> mCurrentRegistry;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mCurrentRegistry() { return mCurrentRegistry; }
 
     // NOLINTEND
 };

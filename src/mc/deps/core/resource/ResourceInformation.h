@@ -29,8 +29,8 @@ public:
         class SemVersion const& version,
         class mce::UUID const&  uuid,
         std::string const&      type,
-        std::string const&,
-        std::string const& entry
+        std::string const&      language,
+        std::string const&      entry
     );
 
     // symbol:
@@ -40,8 +40,8 @@ public:
         class SemVersion const&             version,
         class mce::UUID const&              uuid,
         ::ResourceInformation::ResourceType type,
-        std::string const&,
-        std::string const& entry
+        std::string const&                  language,
+        std::string const&                  entry
     );
 
     // symbol: ?satisfies@ResourceInformation@@QEBA_NAEBUPackIdVersion@@@Z

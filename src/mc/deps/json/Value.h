@@ -57,6 +57,8 @@ public:
             StringStorage storage_;
         };
 
+        CZString(ArrayIndex index) : index_(index) {}
+
         CZString(char const* str, uint length, DuplicationPolicy allocate) : cstr_(str) {
             storage_.policy_ = allocate;
             storage_.length_ = length & 0x3FFFFFFF;
@@ -144,10 +146,6 @@ public:
     } bits_;
 
 public:
-    // prevent constructor by default
-    Value() = default;
-
-public:
     // NOLINTBEGIN
     // symbol: ??0Value@Json@@QEAA@_J@Z
     MCAPI Value(int64 value);
@@ -174,7 +172,7 @@ public:
     MCAPI Value(double value);
 
     // symbol: ??0Value@Json@@QEAA@W4ValueType@1@@Z
-    MCAPI Value(::Json::ValueType type);
+    MCAPI Value(::Json::ValueType type = ::Json::ValueType::Null);
 
     // symbol: ??0Value@Json@@QEAA@H@Z
     MCAPI Value(int value);

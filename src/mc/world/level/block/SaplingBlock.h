@@ -7,6 +7,7 @@
 #include "mc/common/wrapper/optional_ref.h"
 #include "mc/enums/FertilizerType.h"
 #include "mc/enums/Flip.h"
+#include "mc/enums/SaplingType.h"
 #include "mc/enums/ShapeType.h"
 #include "mc/world/Direction.h"
 #include "mc/world/level/block/BushBlock.h"
@@ -47,19 +48,6 @@ public:
     // vIndex: 85, symbol: ?mayPlace@SaplingBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 95, symbol: ?asItemInstance@SaplingBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
-
-    // vIndex: 118, symbol:
-    // ?buildDescriptionId@SaplingBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-    virtual std::string buildDescriptionId(class Block const&) const;
-
-    // vIndex: 119, symbol: ?isAuxValueRelevantForPicking@SaplingBlock@@UEBA_NXZ
-    virtual bool isAuxValueRelevantForPicking() const;
-
-    // vIndex: 128, symbol: ?getVariant@SaplingBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const& block) const;
-
     // vIndex: 148, symbol: ?randomTick@SaplingBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
@@ -73,6 +61,9 @@ public:
 
     // symbol: ??0SaplingBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI SaplingBlock(std::string const& nameId, int id);
+
+    // symbol: ?setSaplingType@SaplingBlock@@QEAAAEAV1@W4SaplingType@@@Z
+    MCAPI class SaplingBlock& setSaplingType(::SaplingType);
 
     // NOLINTEND
 
@@ -104,7 +95,7 @@ public:
         class BlockPos const&        pos,
         class BlockSource&           region,
         class Random&                random,
-        bool
+        bool                         useRandom
     ) const;
 
     // symbol:
@@ -130,7 +121,8 @@ public:
     ) const;
 
     // symbol: ?_growTree@SaplingBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@_N@Z
-    MCAPI bool _growTree(class BlockSource& region, class BlockPos const& pos, class Random& random, bool) const;
+    MCAPI bool
+    _growTree(class BlockSource& region, class BlockPos const& pos, class Random& random, bool useRandom) const;
 
     // NOLINTEND
 };

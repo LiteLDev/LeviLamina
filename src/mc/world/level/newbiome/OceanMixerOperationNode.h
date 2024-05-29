@@ -27,9 +27,9 @@ public:
     virtual void __unk_vfn_2();
 
     // vIndex: 3, symbol:
-    // ?_fillArea@OceanMixerOperationNode@@MEBAXAEAV?$WorkingData@PEAVBiome@@PEAV1@@OperationNodeDetails@@AEBVPos2d@@1HV?$OperationGraphResult@W4BiomeTemperatureCategory@@@@@Z
+    // ?_fillArea@OceanMixerOperationNode@@MEBAXAEAV?$WorkingData@PEBVBiome@@PEBV1@@OperationNodeDetails@@AEBVPos2d@@1HV?$OperationGraphResult@W4BiomeTemperatureCategory@@@@@Z
     virtual void _fillArea(
-        class OperationNodeDetails::WorkingData<class Biome*, class Biome*>&,
+        class OperationNodeDetails::WorkingData<class Biome const*, class Biome const*>&,
         class Pos2d const&                                     origin,
         class Pos2d const&                                     size,
         int                                                    pw,
@@ -40,14 +40,14 @@ public:
     virtual std::tuple<class Pos2d, class Pos2d> _getAreaRead(class Pos2d const& origin, class Pos2d const& size) const;
 
     // symbol:
-    // ??0OceanMixerOperationNode@@QEAA@IAEAV?$shared_ptr@V?$OperationNode@PEAVBiome@@VPos2d@@@@@std@@AEAV?$shared_ptr@V?$OperationNode@W4BiomeTemperatureCategory@@VPos2d@@@@@2@AEBVBiomeRegistry@@AEAVBiome@@3@Z
+    // ??0OceanMixerOperationNode@@QEAA@IAEAV?$shared_ptr@V?$OperationNode@PEBVBiome@@VPos2d@@@@@std@@AEAV?$shared_ptr@V?$OperationNode@W4BiomeTemperatureCategory@@VPos2d@@@@@2@AEBVBiomeRegistry@@AEBVBiome@@3@Z
     MCAPI OceanMixerOperationNode(
         uint                                                                           seedMixup,
-        std::shared_ptr<class OperationNode<class Biome*, class Pos2d>>&               biomeLayer,
+        std::shared_ptr<class OperationNode<class Biome const*, class Pos2d>>&         biomeLayer,
         std::shared_ptr<class OperationNode<::BiomeTemperatureCategory, class Pos2d>>& oceanLayer,
         class BiomeRegistry const&                                                     registry,
-        class Biome&                                                                   genericShallowOcean,
-        class Biome&                                                                   genericDeepOcean
+        class Biome const&                                                             genericShallowOcean,
+        class Biome const&                                                             genericDeepOcean
     );
 
     // NOLINTEND

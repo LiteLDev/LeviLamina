@@ -45,12 +45,15 @@ public:
     MCAPI static class SculkBehavior const& _getSculkBehavior(class Block const& block);
 
     // symbol: ?_isMovementUnobstructed@SculkChargeCursor@@CA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@1@Z
-    MCAPI static bool
-    _isMovementUnobstructed(class IBlockWorldGenAPI& target, class BlockPos const& fromPos, class BlockPos const&);
+    MCAPI static bool _isMovementUnobstructed(
+        class IBlockWorldGenAPI& target,
+        class BlockPos const&    fromPos,
+        class BlockPos const&    toPos
+    );
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?sDefaultSculkBehavior@SculkChargeCursor@@0VDefaultSculkBehavior@@B
     MCAPI static class DefaultSculkBehavior const sDefaultSculkBehavior;
@@ -60,17 +63,6 @@ private:
 
     // symbol: ?sSculkVeinBlockBehavior@SculkChargeCursor@@0VSculkVeinBlockBehavior@@B
     MCAPI static class SculkVeinBlockBehavior const sSculkVeinBlockBehavior;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $sDefaultSculkBehavior() { return sDefaultSculkBehavior; }
-
-    static auto& $sSculkBlockBehavior() { return sSculkBlockBehavior; }
-
-    static auto& $sSculkVeinBlockBehavior() { return sSculkVeinBlockBehavior; }
 
     // NOLINTEND
 };

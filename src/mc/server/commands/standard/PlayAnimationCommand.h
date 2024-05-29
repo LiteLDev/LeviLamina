@@ -26,17 +26,10 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mStopExpressionVersion@PlayAnimationCommand@@0W4MolangVersion@@B
     MCAPI static ::MolangVersion const mStopExpressionVersion;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mStopExpressionVersion() { return mStopExpressionVersion; }
 
     // NOLINTEND
 };

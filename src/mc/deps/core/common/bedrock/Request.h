@@ -65,7 +65,7 @@ public:
     MCAPI void setBody(gsl::not_null<std::shared_ptr<class Bedrock::Http::Internal::IRequestBody>> body);
 
     // symbol: ?setHeaders@Request@Http@Bedrock@@QEAAXAEBVHeaderCollection@23@@Z
-    MCAPI void setHeaders(class Bedrock::Http::HeaderCollection const&);
+    MCAPI void setHeaders(class Bedrock::Http::HeaderCollection const& headers);
 
     // symbol: ?setMethod@Request@Http@Bedrock@@QEAAXVMethod@23@@Z
     MCAPI void setMethod(class Bedrock::Http::Method method);

@@ -41,7 +41,12 @@ public:
     MCAPI explicit RangedAttackGoal(class Mob& mob);
 
     // symbol: ?handleAttackBehavior@RangedAttackGoal@@QEAAXPEAVActor@@AEBVVec3@@M_N@Z
-    MCAPI void handleAttackBehavior(class Actor* lockedTarget, class Vec3 const& lockedTargetPos, float, bool canSee);
+    MCAPI void handleAttackBehavior(
+        class Actor*      lockedTarget,
+        class Vec3 const& lockedTargetPos,
+        float             targetDistanceSq,
+        bool              canSee
+    );
 
     // NOLINTEND
 };

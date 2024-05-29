@@ -8,11 +8,39 @@
 
 #include "mimalloc.h"
 
+#include "windows.h"
+
+#include "Psapi.h"
+
 #include "heapapi.h"
 
+#ifdef LL_USE_MIMALLOC
+#define LL_DEFALUT_MEMORY_ALLOCATOR MimallocMemoryAllocator
+#else
 #define LL_DEFALUT_MEMORY_ALLOCATOR StdMemoryAllocator
+#endif
+
+// #define LL_MEMORY_DEBUG
 
 namespace ll::memory {
+
+static std::string memStr(size_t mem) {
+    double r  = (double)mem;
+    r        /= 1024;
+    if (r < 1024) {
+        return ::fmt::format("{:>8.1f} KiB", r);
+    }
+    r /= 1024;
+    if (r < 1024) {
+        return ::fmt::format("{:>8.1f} MiB", r);
+    }
+    r /= 1024;
+    if (r < 1024) {
+        return ::fmt::format("{:>8.1f} GiB", r);
+    }
+    r /= 1024;
+    return ::fmt::format("{:>8.1f} TiB", r);
+}
 class MimallocMemoryAllocator : public ::Bedrock::Memory::IMemoryAllocator {
 public:
     virtual void* allocate(uint64 size) { return mi_malloc(size != 0 ? size : 1); }
@@ -59,15 +87,21 @@ public:
 
     virtual void logCurrentState() {
         HEAP_SUMMARY summary{.cb = sizeof(HEAP_SUMMARY)};
-        if (HeapSummary(GetProcessHeap(), 0, &summary)) {
-            logger.info(" heap summary:");
-            logger.info("  max reserve:{:>8.1f} MiB", (double)(summary.cbMaxReserve) / (1024 * 1024));
-            logger.info("     reserved:{:>8.1f} MiB", (double)(summary.cbReserved) / (1024 * 1024));
-            logger.info("    committed:{:>8.1f} MiB", (double)(summary.cbCommitted) / (1024 * 1024));
-            logger.info("    allocated:{:>8.1f} MiB", (double)(summary.cbAllocated) / (1024 * 1024));
-        } else {
-            logger.error("fail to get heap summary");
-        }
+        HeapSummary(GetProcessHeap(), 0, &summary);
+        PROCESS_MEMORY_COUNTERS_EX info{.cb = sizeof(PROCESS_MEMORY_COUNTERS_EX)};
+        GetProcessMemoryInfo(GetCurrentProcess(), (PPROCESS_MEMORY_COUNTERS)&info, info.cb);
+        // clang-format off
+        logger.info("heap stats: {:>12} {:>12}", "peak", "current");
+        logger.info("  reserved: {:>12} {:>12}", memStr(summary.cbMaxReserve), memStr(summary.cbReserved));
+        logger.info(" committed: {:>12} {:>12}", "", memStr(summary.cbCommitted));
+        logger.info(" allocated: {:>12} {:>12}", "", memStr(summary.cbAllocated));
+        logger.info(" pagefault: {:>12} {:>8}", "", info.PageFaultCount);
+        logger.info("workingset: {:>12} {:>12}", memStr(info.PeakWorkingSetSize), memStr(info.WorkingSetSize));
+        logger.info(" pagedpool: {:>12} {:>12}", memStr(info.QuotaPeakPagedPoolUsage), memStr(info.QuotaPagedPoolUsage));
+        logger.info("  nonpaged: {:>12} {:>12}", memStr(info.QuotaPeakNonPagedPoolUsage), memStr(info.QuotaNonPagedPoolUsage));
+        logger.info("  pagefile: {:>12} {:>12}", memStr(info.PeakPagefileUsage), memStr(info.PagefileUsage));
+        logger.info("   private: {:>12} {:>12}", "", memStr(info.PrivateUsage));
+        // clang-format on
     }
 
     virtual void* _realloc(gsl::not_null<void*> ptr, uint64 newSize) { return realloc(ptr, newSize); }
@@ -104,14 +138,11 @@ public:
 
 #ifdef LL_MEMORY_DEBUG
 struct MemSize {
-    size_t size{0};
-    size_t peak{0};
+    size_t a{0};
+    size_t f{0};
 
-    void alloc(size_t s) {
-        size += s;
-        peak += s;
-    }
-    void free(size_t s) { size -= s; }
+    void alloc(size_t s) { a += s; }
+    void free(size_t s) { f += s; }
 };
 template <typename T>
 class debugAllocator : public std::allocator<T> {
@@ -169,16 +200,17 @@ public:
         for (auto& [fn, mem] : getDebugMap()) {
             auto name = win_utils::getModuleFileName(win_utils::getModuleHandle(fn));
 
-            res[name].size += mem.size;
-            res[name].peak += mem.peak;
+            res[name].a += mem.a;
+            res[name].f += mem.f;
         }
 
         for (auto& [module, mem] : res) {
             logger.info(
-                " {:<32} used: {:>8.2f} MiB ,  all: {:>8.2f} MiB",
+                " {:<32} alloc: {:>12}, free: {:>12}, curr: {:>12}",
                 module,
-                (double)(mem.size) / (1024 * 1024),
-                (double)(mem.peak) / (1024 * 1024)
+                memStr(mem.a),
+                memStr(mem.f),
+                memStr(abs((int64)mem.f - (int64)mem.a))
             );
         }
     }

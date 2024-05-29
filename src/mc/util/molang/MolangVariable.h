@@ -32,10 +32,10 @@ public:
     MCAPI static ::MolangVariableIndex getVariableIndex(class HashedString const& name);
 
     // symbol: ?getVariableIndex@MolangVariable@@SA?AW4MolangVariableIndex@@_K@Z
-    MCAPI static ::MolangVariableIndex getVariableIndex(uint64);
+    MCAPI static ::MolangVariableIndex getVariableIndex(uint64 nameHash);
 
     // symbol: ?getVariableIndex@MolangVariable@@SA?AW4MolangVariableIndex@@_KPEBD_N@Z
-    MCAPI static ::MolangVariableIndex getVariableIndex(uint64, char const* name, bool);
+    MCAPI static ::MolangVariableIndex getVariableIndex(uint64 nameHash, char const* name, bool allowSpecialCharacters);
 
     // symbol: ?getVariableName@MolangVariable@@SAAEBVHashedString@@W4MolangVariableIndex@@@Z
     MCAPI static class HashedString const& getVariableName(::MolangVariableIndex index);
@@ -52,7 +52,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mHasSetWatermark@MolangVariable@@0_NA
     MCAPI static bool mHasSetWatermark;
@@ -72,21 +72,6 @@ private:
     // symbol:
     // ?mVariableNameToIndexMap_LowWaterMark@MolangVariable@@0V?$unordered_map@_KW4MolangVariableIndex@@U?$hash@_K@std@@U?$equal_to@_K@3@V?$allocator@U?$pair@$$CB_KW4MolangVariableIndex@@@std@@@3@@std@@A
     MCAPI static std::unordered_map<uint64, ::MolangVariableIndex> mVariableNameToIndexMap_LowWaterMark;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mHasSetWatermark() { return mHasSetWatermark; }
-
-    static auto& $mIndexToVariableNameMap() { return mIndexToVariableNameMap; }
-
-    static auto& $mIndexToVariableNameMap_LowWaterMark() { return mIndexToVariableNameMap_LowWaterMark; }
-
-    static auto& $mVariableNameToIndexMap() { return mVariableNameToIndexMap; }
-
-    static auto& $mVariableNameToIndexMap_LowWaterMark() { return mVariableNameToIndexMap_LowWaterMark; }
 
     // NOLINTEND
 };

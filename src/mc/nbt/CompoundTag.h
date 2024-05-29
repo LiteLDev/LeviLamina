@@ -1,13 +1,12 @@
 #pragma once
 
-#ifndef COMPOUND_TAG_HEADER
-#define COMPOUND_TAG_HEADER
-
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/nbt/Tag.h"
+
+#include "ll/api/Expected.h"
 
 class CompoundTagVariant;
 
@@ -21,7 +20,7 @@ public:
 
     CompoundTag(TagMap tags) : mTags(std::move(tags)) {} // NOLINT
 
-    CompoundTag(std::initializer_list<TagMap::value_type> tags) : mTags(std::move(tags)) {} // NOLINT
+    CompoundTag(std::initializer_list<TagMap::value_type> tags) : mTags(tags) {} // NOLINT
 
     CompoundTag(CompoundTag const&)            = default;
     CompoundTag& operator=(CompoundTag const&) = default;
@@ -34,14 +33,15 @@ public:
     [[nodiscard]] CompoundTagVariant&       at(std::string const& index) { return mTags[index]; }
     [[nodiscard]] CompoundTagVariant const& at(std::string const& index) const { return mTags.at(index); }
 
+    LLNDAPI static ll::Expected<CompoundTag>
+    fromSnbt(std::string_view snbt, optional_ref<size_t> parsedLength = std::nullopt) noexcept;
 
-    LLNDAPI static std::unique_ptr<CompoundTag> fromSnbt(std::string_view snbt);
+    LLNDAPI std::string toBinaryNbt(bool isLittleEndian = true) const;
+    LLNDAPI static ll::Expected<CompoundTag>
+    fromBinaryNbt(std::string_view dataView, bool isLittleEndian = true) noexcept;
 
-    LLNDAPI std::string                         toBinaryNbt(bool isLittleEndian = true) const;
-    LLNDAPI static std::unique_ptr<CompoundTag> fromBinaryNbt(std::string_view dataView, bool isLittleEndian = true);
-
-    LLNDAPI std::string                         toNetworkNbt() const;
-    LLNDAPI static std::unique_ptr<CompoundTag> fromNetworkNbt(std::string const& data);
+    LLNDAPI std::string                      toNetworkNbt() const;
+    LLNDAPI static ll::Expected<CompoundTag> fromNetworkNbt(std::string const& data) noexcept;
 
 public:
     // NOLINTBEGIN
@@ -224,5 +224,3 @@ public:
 };
 
 #include "mc/nbt/CompoundTagVariant.h"
-
-#endif // COMPOUND_TAG_HEADER

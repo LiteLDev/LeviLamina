@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
+namespace Puv::Legacy { struct ItemDescriptor; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -143,6 +144,9 @@ public:
     // symbol: ??0ItemDescriptor@@QEAA@AEBUItemTag@@@Z
     MCAPI explicit ItemDescriptor(struct ItemTag const&);
 
+    // symbol: ??0ItemDescriptor@@QEAA@AEBU0Legacy@Puv@@@Z
+    MCAPI explicit ItemDescriptor(struct Puv::Legacy::ItemDescriptor const&);
+
     // symbol: ??0ItemDescriptor@@QEAA@AEBVItem@@H@Z
     MCAPI ItemDescriptor(class Item const& item, int auxValue);
 
@@ -176,8 +180,8 @@ public:
     // symbol: ?getItem@ItemDescriptor@@QEBAPEBVItem@@XZ
     MCAPI class Item const* getItem() const;
 
-    // symbol: ?getLegacyBlock@ItemDescriptor@@QEBAAEBV?$WeakPtr@VBlockLegacy@@@@XZ
-    MCAPI class WeakPtr<class BlockLegacy> const& getLegacyBlock() const;
+    // symbol: ?getLegacyBlock@ItemDescriptor@@QEBAAEBV?$WeakPtr@$$CBVBlockLegacy@@@@XZ
+    MCAPI class WeakPtr<class BlockLegacy const> const& getLegacyBlock() const;
 
     // symbol: ?getRawNameId@ItemDescriptor@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getRawNameId() const;
@@ -205,7 +209,7 @@ public:
     MCAPI bool operator==(class ItemDescriptor const& rhs) const;
 
     // symbol: ?sameItem@ItemDescriptor@@QEBA_NAEBV1@_N@Z
-    MCAPI bool sameItem(class ItemDescriptor const&, bool) const;
+    MCAPI bool sameItem(class ItemDescriptor const& otherItemDescriptor, bool) const;
 
     // symbol: ?sameItem@ItemDescriptor@@QEBA_NAEBVItemStack@@_N@Z
     MCAPI bool sameItem(class ItemStack const& item, bool) const;
@@ -223,17 +227,8 @@ public:
     // symbol: ?_resolve@ItemDescriptor@@AEBAXXZ
     MCAPI void _resolve() const;
 
-    // symbol:
-    // ?fromMap@ItemDescriptor@@CAXAEAV1@AEBV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@AEBVBedrockLoadContext@@@Z
-    MCAPI static void fromMap(
-        class ItemDescriptor&                     instance,
-        std::map<std::string, std::string> const& map,
-        class BedrockLoadContext const&           context
-    );
-
-    // symbol:
-    // ?toMap@ItemDescriptor@@CA?AV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@AEBV1@@Z
-    MCAPI static std::map<std::string, std::string> toMap(class ItemDescriptor const&);
+    // symbol: ?toPuv@ItemDescriptor@@CA?AU1Legacy@Puv@@AEBV1@@Z
+    MCAPI static struct Puv::Legacy::ItemDescriptor toPuv(class ItemDescriptor const&);
 
     // NOLINTEND
 };

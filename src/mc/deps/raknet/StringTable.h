@@ -21,22 +21,13 @@ public:
 
     // NOLINTEND
 
-protected:
+    // protected:
     // NOLINTBEGIN
     // symbol: ?instance@StringTable@RakNet@@1PEAV12@EA
     MCAPI static class RakNet::StringTable* instance;
 
     // symbol: ?referenceCount@StringTable@RakNet@@1HA
     MCAPI static int referenceCount;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $instance() { return instance; }
-
-    static auto& $referenceCount() { return referenceCount; }
 
     // NOLINTEND
 };

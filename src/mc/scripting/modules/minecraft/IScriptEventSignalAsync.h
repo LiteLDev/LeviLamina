@@ -18,11 +18,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?enqueueClosureRemovalForActor@IScriptEventSignalAsync@ScriptModuleMinecraft@@UEAAXUActorUniqueID@@@Z
-    MCVAPI void enqueueClosureRemovalForActor(struct ActorUniqueID);
+    // symbol: ?enqueueClosureRemovalForActor@IScriptEventSignalAsync@ScriptModuleMinecraft@@UEAAXAEBUActorUniqueID@@@Z
+    MCVAPI void enqueueClosureRemovalForActor(struct ActorUniqueID const&);
 
-    // symbol: ?isActorSignal@IScriptEventSignalAsync@ScriptModuleMinecraft@@UEAA_NXZ
-    MCVAPI bool isActorSignal();
+    // symbol: ?isActorSignal@IScriptEventSignalAsync@ScriptModuleMinecraft@@UEBA_NXZ
+    MCVAPI bool isActorSignal() const;
 
     // NOLINTEND
 };

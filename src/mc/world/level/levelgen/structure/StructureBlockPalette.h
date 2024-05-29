@@ -69,11 +69,18 @@ public:
         const;
 
     // symbol: ?getBlockPositionData@StructureBlockPalette@@QEBAPEBUBlockPositionData@1@_K@Z
-    MCAPI struct StructureBlockPalette::BlockPositionData const* getBlockPositionData(uint64) const;
+    MCAPI struct StructureBlockPalette::BlockPositionData const* getBlockPositionData(uint64 blockIndex) const;
+
+    // symbol: ?removeBlockPositionData@StructureBlockPalette@@QEAAX_K@Z
+    MCAPI void removeBlockPositionData(uint64);
 
     // symbol:
     // ?save@StructureBlockPalette@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
     MCAPI std::unique_ptr<class CompoundTag> save() const;
+
+    // symbol:
+    // ?tryGetBlock@StructureBlockPalette@@QEBAPEBVBlock@@_KV?$NonOwnerPointer@VIUnknownBlockTypeRegistry@@@Bedrock@@@Z
+    MCAPI class Block const* tryGetBlock(uint64, class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry>) const;
 
     // symbol: ??1StructureBlockPalette@@QEAA@XZ
     MCAPI ~StructureBlockPalette();

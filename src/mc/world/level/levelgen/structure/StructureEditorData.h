@@ -104,7 +104,7 @@ public:
     MCAPI void setAnimationSeconds(float);
 
     // symbol: ?setAnimationTicks@StructureEditorData@@QEAAXI@Z
-    MCAPI void setAnimationTicks(uint);
+    MCAPI void setAnimationTicks(uint animationTicks);
 
     // symbol: ?setIgnoreBlocks@StructureEditorData@@QEAAX_N@Z
     MCAPI void setIgnoreBlocks(bool ignoreBlocks);
@@ -173,17 +173,10 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?DEFAULT_STRUCTURE_TYPE@StructureEditorData@@0W4StructureBlockType@@B
     MCAPI static ::StructureBlockType const DEFAULT_STRUCTURE_TYPE;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $DEFAULT_STRUCTURE_TYPE() { return DEFAULT_STRUCTURE_TYPE; }
 
     // NOLINTEND
 };

@@ -95,18 +95,11 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?DefaultCommandBlockName@BaseCommandBlock@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const DefaultCommandBlockName;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $DefaultCommandBlockName() { return DefaultCommandBlockName; }
 
     // NOLINTEND
 };

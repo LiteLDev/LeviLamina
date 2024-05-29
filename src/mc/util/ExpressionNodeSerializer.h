@@ -4,25 +4,16 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace ExpressionNodeSerializer { struct ExpressionNodeProxy; }
-namespace cereal { struct ReflectionCtx; }
+namespace Puv::Legacy { struct ExpressionNode; }
 // clang-format on
 
 namespace ExpressionNodeSerializer {
 // NOLINTBEGIN
-// symbol: ?fromFloat@ExpressionNodeSerializer@@YAXAEAVExpressionNode@@M@Z
-MCAPI void fromFloat(class ExpressionNode& node, float value);
+// symbol: ?fromPuv@ExpressionNodeSerializer@@YAXAEAVExpressionNode@@AEBU2Legacy@Puv@@@Z
+MCAPI void fromPuv(class ExpressionNode&, struct Puv::Legacy::ExpressionNode const&);
 
-// symbol: ?fromProxy@ExpressionNodeSerializer@@YAXAEAVExpressionNode@@UExpressionNodeProxy@1@@Z
-MCAPI void fromProxy(class ExpressionNode& node, struct ExpressionNodeSerializer::ExpressionNodeProxy proxy);
-
-// symbol:
-// ?fromString@ExpressionNodeSerializer@@YAXAEAVExpressionNode@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBedrockLoadContext@@@Z
-MCAPI void
-fromString(class ExpressionNode& node, std::string const& expression, class BedrockLoadContext const& context);
-
-// symbol: ?toProxy@ExpressionNodeSerializer@@YA?AUExpressionNodeProxy@1@AEBVExpressionNode@@@Z
-MCAPI struct ExpressionNodeSerializer::ExpressionNodeProxy toProxy(class ExpressionNode const& node);
+// symbol: ?toPuv@ExpressionNodeSerializer@@YA?AUExpressionNode@Legacy@Puv@@AEBV2@@Z
+MCAPI struct Puv::Legacy::ExpressionNode toPuv(class ExpressionNode const&);
 // NOLINTEND
 
 }; // namespace ExpressionNodeSerializer

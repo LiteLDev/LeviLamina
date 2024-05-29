@@ -30,6 +30,9 @@ public:
     // symbol: ??0StructureHeightProvider@worldgen@br@@QEAA@VConstantHeight@12@@Z
     MCAPI explicit StructureHeightProvider(class br::worldgen::ConstantHeight);
 
+    // symbol: ??0StructureHeightProvider@worldgen@br@@QEAA@$$QEAV012@@Z
+    MCAPI StructureHeightProvider(class br::worldgen::StructureHeightProvider&&);
+
     // symbol: ??0StructureHeightProvider@worldgen@br@@QEAA@VUniformHeight@12@@Z
     MCAPI explicit StructureHeightProvider(class br::worldgen::UniformHeight);
 

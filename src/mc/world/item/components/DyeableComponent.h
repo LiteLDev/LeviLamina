@@ -54,7 +54,8 @@ public:
 
     // symbol:
     // ?appendFormattedHovertext@DyeableComponent@@QEBAXAEBVItemStackBase@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    MCAPI void appendFormattedHovertext(class ItemStackBase const& item, std::string& hovertext, bool) const;
+    MCAPI void
+    appendFormattedHovertext(class ItemStackBase const& item, std::string& hovertext, bool advancedToolTops) const;
 
     // symbol: ?clearColor@DyeableComponent@@QEBAXAEAVItemStackBase@@@Z
     MCAPI void clearColor(class ItemStackBase& instance) const;

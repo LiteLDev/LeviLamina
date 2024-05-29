@@ -32,17 +32,13 @@ public:
     // vIndex: 2, symbol: ?getError@?$AsyncResultBase@PEAUXAsyncBlock@@@Threading@Bedrock@@UEBA?AVerror_code@std@@XZ
     virtual std::error_code getError() const;
 
-    // vIndex: 3, symbol:
-    // ?getException@?$AsyncResultBase@PEAUXAsyncBlock@@@Threading@Bedrock@@UEBA?AVexception_ptr@std@@XZ
-    virtual std::exception_ptr getException() const;
-
-    // vIndex: 4, symbol: ?getResult@?$AsyncResultBase@PEAUXAsyncBlock@@@Threading@Bedrock@@UEBAPEAUXAsyncBlock@@XZ
+    // vIndex: 3, symbol: ?getResult@?$AsyncResultBase@PEAUXAsyncBlock@@@Threading@Bedrock@@UEBAPEAUXAsyncBlock@@XZ
     virtual struct XAsyncBlock* getResult() const;
 
-    // vIndex: 5, symbol: ?cancel@?$AsyncResultBase@PEAUXAsyncBlock@@@Threading@Bedrock@@UEAAXXZ
+    // vIndex: 4, symbol: ?cancel@?$AsyncResultBase@PEAUXAsyncBlock@@@Threading@Bedrock@@UEAAXXZ
     virtual void cancel();
 
-    // vIndex: 6, symbol:
+    // vIndex: 5, symbol:
     // ?addOnComplete@?$AsyncResultBase@PEAUXAsyncBlock@@@Threading@Bedrock@@UEAAXV?$function@$$A6AXAEBV?$IAsyncResult@PEAUXAsyncBlock@@@Threading@Bedrock@@@Z@std@@@Z
     virtual void
     addOnComplete(std::function<void(class Bedrock::Threading::IAsyncResult<struct XAsyncBlock*> const&)> callback);

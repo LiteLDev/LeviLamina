@@ -96,14 +96,15 @@ static nlohmann::json getCustomCharts() {
     pluginsJson.emplace_back(addSimplePie("minecraft_version", Common::getBuildInfo().mBuildId));
     pluginsJson.emplace_back(addSingleLineChart(
         "players",
-        ll::service::getLevel().has_value() ? ll::service::getLevel()->getActivePlayerCount() : 0
+        ll::service::getLevel().transform([](auto& level) { return level.getActivePlayerCount(); }).value_or(0)
     ));
-    pluginsJson.emplace_back(
-        addSimplePie("online_mode", ll::service::getPropertiesSettings()->useOnlineAuthentication() ? "true" : "false")
-    );
+    pluginsJson.emplace_back(addSimplePie(
+        "online_mode",
+        ll::service::getPropertiesSettings().value().useOnlineAuthentication() ? "true" : "false"
+    ));
     std::unordered_map<std::string_view, int> platforms;
-    if (ll::service::getLevel().has_value()) {
-        ll::service::getLevel()->forEachPlayer([&platforms](Player& player) {
+    ll::service::getLevel().transform([&platforms](auto& level) {
+        level.forEachPlayer([&platforms](Player& player) {
             std::string_view platformName = magic_enum::enum_name(player.getPlatform());
             if (platforms.find(platformName) == platforms.end()) {
                 platforms.emplace(platformName, 1);
@@ -112,7 +113,8 @@ static nlohmann::json getCustomCharts() {
             }
             return true;
         });
-    }
+        return true;
+    });
     pluginsJson.emplace_back(addAdvancedPie("player_platform", std::move(platforms)));
 
     return pluginsJson;

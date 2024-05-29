@@ -73,7 +73,7 @@ public:
     // symbol:
     // ??0ContextObject@QuickJS@Scripting@@QEAA@UContextId@2@PEAUJSContext@@VWeakLifetimeScope@2@$$QEAUModuleBindingBundle@2@$$QEAV?$unique_ptr@VScriptObjectFactory@Scripting@@U?$default_delete@VScriptObjectFactory@Scripting@@@std@@@std@@$$QEAV?$unique_ptr@VObjectInspector@QuickJS@Scripting@@U?$default_delete@VObjectInspector@QuickJS@Scripting@@@std@@@8@$$QEAV?$unique_ptr@VIPrinter@Scripting@@U?$default_delete@VIPrinter@Scripting@@@std@@@8@PEAVIDependencyLoader@2@PEAUJSRuntime@@AEBUContextConfig@2@@Z
     MCAPI
-    ContextObject(struct Scripting::ContextId, struct JSContext*, class Scripting::WeakLifetimeScope scope, struct Scripting::ModuleBindingBundle&&, std::unique_ptr<class Scripting::ScriptObjectFactory>&& factory, std::unique_ptr<class Scripting::QuickJS::ObjectInspector>&&, std::unique_ptr<class Scripting::IPrinter>&&, class Scripting::IDependencyLoader* loader, struct JSRuntime*, struct Scripting::ContextConfig const&);
+    ContextObject(struct Scripting::ContextId, struct JSContext*, class Scripting::WeakLifetimeScope scope, struct Scripting::ModuleBindingBundle&& bindings, std::unique_ptr<class Scripting::ScriptObjectFactory>&& factory, std::unique_ptr<class Scripting::QuickJS::ObjectInspector>&&, std::unique_ptr<class Scripting::IPrinter>&&, class Scripting::IDependencyLoader* loader, struct JSRuntime*, struct Scripting::ContextConfig const&);
 
     // symbol:
     // ?addUnhandledPromiseRejection@ContextObject@QuickJS@Scripting@@QEAAXPEAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
@@ -82,7 +82,7 @@ public:
     // symbol:
     // ?call@ContextObject@QuickJS@Scripting@@QEAA?AVResultAny@3@U?$TypedObjectHandle@UClosureType@Scripting@@@3@PEAVmeta_any@entt@@IAEBVmeta_type@7@@Z
     MCAPI class Scripting::ResultAny
-    call(struct Scripting::TypedObjectHandle<struct Scripting::ClosureType>, entt::meta_any* args, uint, entt::meta_type const&);
+    call(struct Scripting::TypedObjectHandle<struct Scripting::ClosureType>, entt::meta_any* args, uint argc, entt::meta_type const&);
 
     // symbol:
     // ?getFutureResult@ContextObject@QuickJS@Scripting@@QEBA?AVResultAny@3@U?$TypedObjectHandle@UFutureType@Scripting@@@3@AEBVmeta_type@entt@@@Z
@@ -100,7 +100,7 @@ public:
 
     // symbol:
     // ?run@ContextObject@QuickJS@Scripting@@QEAA?AVResultAny@3@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-    MCAPI class Scripting::ResultAny run(std::string const& scriptName, std::string const&);
+    MCAPI class Scripting::ResultAny run(std::string const& scriptName, std::string const& scriptData);
 
     // symbol: ??1ContextObject@QuickJS@Scripting@@QEAA@XZ
     MCAPI ~ContextObject();

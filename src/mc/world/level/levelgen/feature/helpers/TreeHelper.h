@@ -24,13 +24,26 @@ MCAPI bool isValidTreePosition(
 
 // symbol:
 // ?placeRadialBlockGroup@TreeHelper@@YA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEBVBlock@@HH_NAEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@3@@Z
-MCAPI std::optional<class BlockPos>
-placeRadialBlockGroup(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random&, class Block const& block, int radius, int, bool, std::vector<class BlockDescriptor> const&);
+MCAPI std::optional<class BlockPos> placeRadialBlockGroup(
+    class IBlockWorldGenAPI& target,
+    class BlockPos const&    pos,
+    class Random&,
+    class Block const&                        block,
+    int                                       radius,
+    int                                       coreWidth,
+    bool                                      simplify,
+    std::vector<class BlockDescriptor> const& mayGrowThrough
+);
 
 // symbol:
 // ?prepareSpawn@TreeHelper@@YA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@HAEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@2@Z
-MCAPI bool
-prepareSpawn(class IBlockWorldGenAPI const& target, class BlockPos const& pos, int treeHeight, std::vector<class BlockDescriptor> const&, std::vector<class BlockDescriptor> const&);
+MCAPI bool prepareSpawn(
+    class IBlockWorldGenAPI const&            target,
+    class BlockPos const&                     pos,
+    int                                       treeHeight,
+    std::vector<class BlockDescriptor> const& mayGrowOn,
+    std::vector<class BlockDescriptor> const& mayGrowThrough
+);
 // NOLINTEND
 
 }; // namespace TreeHelper

@@ -7,12 +7,23 @@
 #include "mc/enums/Compressibility.h"
 #include "mc/network/NetworkPeer.h"
 
+class NetherNetInstance;
+
 class WebRTCNetworkPeer : public ::NetworkPeer {
 public:
     // prevent constructor by default
     WebRTCNetworkPeer& operator=(WebRTCNetworkPeer const&);
     WebRTCNetworkPeer(WebRTCNetworkPeer const&);
     WebRTCNetworkPeer();
+
+    std::string                                           mSendBuffer;              // this+0x18
+    std::vector<std::string, std::allocator<std::string>> mReadBuffers;             // this+0x38
+    std::shared_ptr<NetherNetInstance>                    mNetherNetInstance;       // this+0x50
+    uint64_t                                              mRemoteUserId;            // this+0x60
+    bool                                                  mWasConnected;            // this+0x68
+    bool                                                  mConnectionLost;          // this+0x69
+    NetworkPeer::NetworkStatus                            mNetherNetNetworkStatus;  // this+0x70
+    unsigned int                                          mNumNetworkStatusUpdates; // this+0xA8
 
 public:
     // NOLINTBEGIN

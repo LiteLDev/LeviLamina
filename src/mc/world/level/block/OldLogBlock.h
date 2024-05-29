@@ -33,11 +33,11 @@ public:
     virtual ~OldLogBlock() = default;
 
     // symbol:
-    // ??0OldLogBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@VBlockLegacy@@@@V?$optional@ULogBlockMapColors@@@2@W4OldLogType@@@Z
+    // ??0OldLogBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@$$CBVBlockLegacy@@@@V?$optional@ULogBlockMapColors@@@2@W4OldLogType@@@Z
     MCAPI OldLogBlock(
         std::string const& nameId,
         int                id,
-        class WeakPtr<class BlockLegacy>,
+        class WeakPtr<class BlockLegacy const>,
         std::optional<struct LogBlockMapColors> mapColors,
         ::OldLogType
     );

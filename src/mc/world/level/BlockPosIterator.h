@@ -21,7 +21,7 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ??0FromCenter@BlockPosIterator@@QEAA@AEBVBlockPos@@0@Z
-        MCAPI FromCenter(class BlockPos const& pos, class BlockPos const&);
+        MCAPI FromCenter(class BlockPos const& pos, class BlockPos const& reach);
 
         // symbol: ?begin@FromCenter@BlockPosIterator@@QEBA?AV12@XZ
         MCAPI class BlockPosIterator::FromCenter begin() const;

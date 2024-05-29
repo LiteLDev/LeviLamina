@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ScriptDebuggerWatchdog {
+// auto generated inclusion list
+#include "mc/scripting/debugger/IScriptDebuggerWatchdog.h"
+
+class ScriptDebuggerWatchdog : public ::IScriptDebuggerWatchdog {
 public:
     // prevent constructor by default
     ScriptDebuggerWatchdog& operator=(ScriptDebuggerWatchdog const&);

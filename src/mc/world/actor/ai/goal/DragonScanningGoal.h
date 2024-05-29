@@ -42,7 +42,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?SITTING_ATTACK_VIEW_RANGE@DragonScanningGoal@@0MA
     MCAPI static float SITTING_ATTACK_VIEW_RANGE;
@@ -52,17 +52,6 @@ private:
 
     // symbol: ?SITTING_SCANNING_IDLE_TICKS@DragonScanningGoal@@0HA
     MCAPI static int SITTING_SCANNING_IDLE_TICKS;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $SITTING_ATTACK_VIEW_RANGE() { return SITTING_ATTACK_VIEW_RANGE; }
-
-    static auto& $SITTING_CHARGE_VIEW_RANGE() { return SITTING_CHARGE_VIEW_RANGE; }
-
-    static auto& $SITTING_SCANNING_IDLE_TICKS() { return SITTING_SCANNING_IDLE_TICKS; }
 
     // NOLINTEND
 };

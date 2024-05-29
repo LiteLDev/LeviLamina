@@ -18,8 +18,12 @@ MCAPI void onAbortDestroyBlock(class ServerPlayer& player, class BlockPos const&
 
 // symbol:
 // ?onBeforeMovementSimulation@ServerPlayerBlockUseHandler@@YAXAEAVServerPlayer@@AEBVPlayerBlockActions@@V?$unique_ptr@VItemStackRequestData@@U?$default_delete@VItemStackRequestData@@@std@@@std@@V?$NonOwnerPointer@VTextFilteringProcessor@@@Bedrock@@@Z
-MCAPI void
-onBeforeMovementSimulation(class ServerPlayer& player, class PlayerBlockActions const&, std::unique_ptr<class ItemStackRequestData>, class Bedrock::NonOwnerPointer<class TextFilteringProcessor>);
+MCAPI void onBeforeMovementSimulation(
+    class ServerPlayer&                                          player,
+    class PlayerBlockActions const&                              blockActions,
+    std::unique_ptr<class ItemStackRequestData>                  itemStackRequest,
+    class Bedrock::NonOwnerPointer<class TextFilteringProcessor> textFilter
+);
 
 // symbol: ?onCrackBlock@ServerPlayerBlockUseHandler@@YAXAEAVServerPlayer@@AEBVBlockPos@@H@Z
 MCAPI void onCrackBlock(class ServerPlayer& player, class BlockPos const& pos, int data);

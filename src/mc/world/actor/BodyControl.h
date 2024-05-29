@@ -26,22 +26,8 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_allowUpdateBodyRotation@BodyControl@@AEBA_NAEBVMob@@@Z
-    MCAPI bool _allowUpdateBodyRotation(class Mob const& mob) const;
-
-    // NOLINTEND
-
-private:
-    // NOLINTBEGIN
     // symbol: ?MAX_CLAMP_ANGLE@BodyControl@@0MB
     MCAPI static float const MAX_CLAMP_ANGLE;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $MAX_CLAMP_ANGLE() { return MAX_CLAMP_ANGLE; }
 
     // NOLINTEND
 };

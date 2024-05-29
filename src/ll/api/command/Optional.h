@@ -109,6 +109,121 @@ public:
         return static_cast<T&&>(std::forward<U>(right));
     }
 
+    template <class Fn>
+    constexpr auto and_then(Fn&& fn) & {
+        using Ret = std::invoke_result_t<Fn, T&>;
+        if (has_value()) {
+            return std::invoke(std::forward<Fn>(fn), static_cast<T&>(mValue));
+        } else {
+            return std::remove_cvref_t<Ret>{};
+        }
+    }
+
+    template <class Fn>
+    constexpr auto and_then(Fn&& fn) const& {
+        using Ret = std::invoke_result_t<Fn, T const&>;
+        if (has_value()) {
+            return std::invoke(std::forward<Fn>(fn), static_cast<T const&>(mValue));
+        } else {
+            return std::remove_cvref_t<Ret>{};
+        }
+    }
+
+    template <class Fn>
+    constexpr auto and_then(Fn&& fn) && {
+        using Ret = std::invoke_result_t<Fn, T>;
+        if (has_value()) {
+            return std::invoke(std::forward<Fn>(fn), static_cast<T&&>(mValue));
+        } else {
+            return std::remove_cvref_t<Ret>{};
+        }
+    }
+
+    template <class Fn>
+    constexpr auto and_then(Fn&& fn) const&& {
+        using Ret = std::invoke_result_t<Fn, T const>;
+        if (has_value()) {
+            return std::invoke(std::forward<Fn>(fn), static_cast<T const&&>(mValue));
+        } else {
+            return std::remove_cvref_t<Ret>{};
+        }
+    }
+
+    template <class Fn>
+    constexpr auto transform(Fn&& fn) & {
+        using Ret = std::remove_cv_t<std::invoke_result_t<Fn, T&>>;
+        if (has_value()) {
+            return std::optional<Ret>{
+                std::_Construct_from_invoke_result_tag{},
+                std::forward<Fn>(fn),
+                static_cast<T&>(mValue)
+            };
+        } else {
+            return std::optional<Ret>{};
+        }
+    }
+
+    template <class Fn>
+    constexpr auto transform(Fn&& fn) const& {
+        using Ret = std::remove_cv_t<std::invoke_result_t<Fn, T const&>>;
+        if (has_value()) {
+            return std::optional<Ret>{
+                std::_Construct_from_invoke_result_tag{},
+                std::forward<Fn>(fn),
+                static_cast<T const&>(mValue)
+            };
+        } else {
+            return std::optional<Ret>{};
+        }
+    }
+
+    template <class Fn>
+    constexpr auto transform(Fn&& fn) && {
+        using Ret = std::remove_cv_t<std::invoke_result_t<Fn, T>>;
+        if (has_value()) {
+            return std::optional<Ret>{
+                std::_Construct_from_invoke_result_tag{},
+                std::forward<Fn>(fn),
+                static_cast<T&&>(mValue)
+            };
+        } else {
+            return std::optional<Ret>{};
+        }
+    }
+
+    template <class Fn>
+    constexpr auto transform(Fn&& fn) const&& {
+        using Ret = std::remove_cv_t<std::invoke_result_t<Fn, T const>>;
+        if (has_value()) {
+            return std::optional<Ret>{
+                std::_Construct_from_invoke_result_tag{},
+                std::forward<Fn>(fn),
+                static_cast<T const&&>(mValue)
+            };
+        } else {
+            return std::optional<Ret>{};
+        }
+    }
+    template <std::invocable<> Fn>
+        requires std::copy_constructible<T>
+    constexpr std::optional<T> or_else(Fn&& fn) const& {
+        if (has_value()) {
+            return *this;
+        } else {
+            return std::invoke(std::forward<Fn>(fn));
+        }
+    }
+
+    template <std::invocable<> Fn>
+        requires std::move_constructible<T>
+    constexpr std::optional<T> or_else(Fn&& fn) && {
+        if (has_value()) {
+            return std::move(*this);
+        } else {
+            return std::invoke(std::forward<Fn>(fn));
+        }
+    }
+
     [[nodiscard]] constexpr T const&& value_or_default() const&& { return std::move(value()); }
     [[nodiscard]] constexpr T&&       value_or_default() && { return std::move(value()); }
     [[nodiscard]] constexpr T const&  value_or_default() const& { return value(); }

@@ -14,16 +14,16 @@ public:
 
     // ChunkLocalNoiseCache inner types define
     struct CacheEntry {
-        float shiftedX;
-        float shiftedZ;
-        float continentalness;
-        float weirdness;
-        float erosion;
-        float offset;
-        float factor;
-        float jag;
-        float temperature;
-        float humidity;
+        float mShiftedX;
+        float mShiftedZ;
+        float mContinentalness;
+        float mWeirdness;
+        float mErosion;
+        float mOffset;
+        float mFactor;
+        float mJag;
+        float mTemperature;
+        float mHumidity;
     };
 
     DividedPos2d<4> const                         mFirstQuartPos;     // this+0x0

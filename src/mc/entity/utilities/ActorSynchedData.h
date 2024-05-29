@@ -68,7 +68,7 @@ MCAPI void updateSize(class Actor& actor);
 MCAPI void updateTarget(class Actor& actor, struct ActorUniqueID& target);
 
 // symbol: ?updateTintColor@ActorSynchedData@@YAXAEAVColor@mce@@AEBW4PaletteColor@@@Z
-MCAPI void updateTintColor(class mce::Color&, ::PaletteColor const&);
+MCAPI void updateTintColor(class mce::Color& tintColor, ::PaletteColor const&);
 // NOLINTEND
 
 }; // namespace ActorSynchedData

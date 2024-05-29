@@ -70,7 +70,7 @@ public:
     virtual bool hasDataDrivenResult() const;
 
     // vIndex: 11, symbol: ?itemValidForRecipe@Recipe@@UEBA_NAEBVItemDescriptor@@AEBVItemStack@@@Z
-    virtual bool itemValidForRecipe(class ItemDescriptor const&, class ItemStack const& item) const;
+    virtual bool itemValidForRecipe(class ItemDescriptor const& recipeItem, class ItemStack const& item) const;
 
     // vIndex: 12, symbol: ?itemsMatch@Recipe@@UEBA_NAEBVItemDescriptor@@0@Z
     virtual bool itemsMatch(class ItemDescriptor const& lhs, class ItemDescriptor const& rhs) const;
@@ -114,7 +114,7 @@ public:
     MCAPI int getWidth() const;
 
     // symbol: ?setNetId@Recipe@@QEAAXAEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@@Z
-    MCAPI void setNetId(RecipeNetId const&);
+    MCAPI void setNetId(RecipeNetId const& recipeNetId);
 
     // symbol: ?isAnyAuxValue@Recipe@@SA_NAEBVItemDescriptor@@@Z
     MCAPI static bool isAnyAuxValue(class ItemDescriptor const& ii);

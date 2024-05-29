@@ -13,7 +13,46 @@
 
 #include "ll/api/command/runtime/RuntimeOverload.h"
 
+#include "mc/nbt/CompoundTag.h"
+
+#include "ll/core/LeviLamina.h"
+
+template <>
+struct fmt::formatter<CommandRegistry::Symbol> : fmt::formatter<std::string> {
+    template <class FormatContext>
+    auto format(CommandRegistry::Symbol const& t, FormatContext& ctx) const {
+        std::string str = ll::service::getCommandRegistry()->symbolToString(t);
+        if (str == "SYMBOL_ERROR") {
+            str = std::to_string(t.mValue);
+        }
+        return formatter<std::string>::format(str, ctx);
+    }
+};
+
 using namespace ll::command;
+
+template <>
+bool CommandRegistry::parse<CompoundTagVariant>(
+    void*                              storage,
+    CommandRegistry::ParseToken const& token,
+    CommandOrigin const& /*origin*/,
+    int /*version*/,
+    std::string& error,
+    std::vector<std::string>& /*errorParams*/
+) const {
+    size_t      parsedLength{};
+    std::string str = token.toString();
+    auto        res = CompoundTagVariant::parse(str, parsedLength);
+    std::cout << str << std::endl;
+    if (res) {
+        (*(CompoundTagVariant*)storage) = std::move(*res);
+        return true;
+    } else {
+        // parsedLength
+        error = res.error().message();
+        return false;
+    }
+}
 
 struct ParamTest {
     int             p1;
@@ -30,6 +69,11 @@ struct ParamTest2 {
     CommandBlockName           block;
     DimensionType              dim;
     std::unique_ptr<::Command> subcmd;
+};
+
+struct ParamTest3 {
+    CompoundTagVariant snbt;
+    Json::Value        json;
 };
 
 LL_AUTO_TYPE_INSTANCE_HOOK(
@@ -60,13 +104,10 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
         .postfix("st")
         .optional("p3")
         .optional("p2")
-        .execute<lambda>();
-    cmd.overload<ParamTest>().required("p1").text("gr").required("p5").optional("p2").optional("p3").execute<lambda>();
-    cmd.overload<ParamTest2>()
-        .required("block")
-        .required("dim")
-        .optional("subcmd")
-        .execute<[](CommandOrigin const& ori, CommandOutput& output, ParamTest2 const& param, ::Command const&) {
+        .execute(lambda);
+    cmd.overload<ParamTest>().required("p1").text("gr").required("p5").optional("p2").optional("p3").execute(lambda);
+    cmd.overload<ParamTest2>().required("block").required("dim").optional("subcmd").execute(
+        [](CommandOrigin const& ori, CommandOutput& output, ParamTest2 const& param, ::Command const&) {
             output.success("block: {}", param.block.getDescriptionId());
             output.success("dim: {}", param.dim.id);
 
@@ -74,7 +115,9 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
                 output.success("subcmd: {}", param.subcmd->getCommandName());
                 param.subcmd->run(ori, output);
             }
-        }>();
+        }
+    );
+    cmd.overload().text("throw").execute([](CommandOrigin const&, CommandOutput&) { throw std::runtime_error{"hi"}; });
 
     CommandRegistrar::getInstance().tryRegisterSoftEnum("hello", {"SoftEnum1", "af1451"});
 
@@ -105,4 +148,29 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
             output.success("SoftEnum : {}", self["se"].get<ParamKind::SoftEnum>());
             output.success("Enum : {}", self["enummmmm"].get<ParamKind::Enum>());
         });
+
+    cmd.overload<ParamTest3>()
+        .text("nbt")
+        .required("snbt")
+        .modify([](CommandParameterData& data) {
+            data.mEnumOrPostfixSymbol = CommandRegistry::HardNonTerminal::JsonObject;
+        })
+        .execute([](CommandOrigin const&, CommandOutput& output, ParamTest3 const& param) {
+            output.success("snbt: {}", param.snbt.toSnbt(SnbtFormat::PrettyChatPrint));
+        });
+    cmd.overload<ParamTest3>().text("json").required("json").execute(
+        [](CommandOrigin const&, CommandOutput& output, ParamTest3 const& param) {
+            output.success("json: {}", param.json.toStyledString());
+            ll::logger.debug("mParseTables : {}", ll::service::getCommandRegistry()->mParseTables | std::views::keys);
+            auto& table = ll::service::getCommandRegistry()->mParseTables.begin()->second;
+            ll::logger.debug("first : {}", table.first | std::views::keys);
+            // ll::logger.debug("first : {}", table.first);
+            ll::logger.debug("second : {}", table.follow | std::views::keys);
+
+            for (auto [k, v] : table.predict) {
+                if (ll::service::getCommandRegistry()->symbolToString(k.first) == "{")
+                    ll::logger.debug("{} : {}", k, v);
+            }
+        }
+    );
 }

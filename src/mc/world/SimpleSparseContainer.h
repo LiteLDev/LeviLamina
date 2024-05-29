@@ -45,7 +45,7 @@ public:
     // symbol:
     // ??0SimpleSparseContainer@@QEAA@AEAVContainer@@W4SparseContainerBackingSetType@@V?$unique_ptr@VISparseContainerSetListener@@U?$default_delete@VISparseContainerSetListener@@@std@@@std@@V?$unique_ptr@VIPlayerContainerSetter@@U?$default_delete@VIPlayerContainerSetter@@@std@@@4@@Z
     MCAPI
-    SimpleSparseContainer(class Container&, ::SparseContainerBackingSetType, std::unique_ptr<class ISparseContainerSetListener>, std::unique_ptr<class IPlayerContainerSetter>);
+    SimpleSparseContainer(class Container& backingContainer, ::SparseContainerBackingSetType backingSetType, std::unique_ptr<class ISparseContainerSetListener>, std::unique_ptr<class IPlayerContainerSetter>);
 
     // symbol: ?clearItem@SimpleSparseContainer@@QEAAXH@Z
     MCAPI void clearItem(int slot);

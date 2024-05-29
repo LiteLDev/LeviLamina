@@ -27,6 +27,9 @@ public:
     // vIndex: 0, symbol: __gen_??1ScriptNavigationFloatComponent@ScriptModuleMinecraft@@UEAA@XZ
     virtual ~ScriptNavigationFloatComponent() = default;
 
+    // vIndex: 1, symbol: ?_isValid@ScriptNavigationFloatComponent@ScriptModuleMinecraft@@EEBA_NXZ
+    virtual bool _isValid() const;
+
     // symbol:
     // ?bind@ScriptNavigationFloatComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptNavigationFloatComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptNavigationFloatComponent>

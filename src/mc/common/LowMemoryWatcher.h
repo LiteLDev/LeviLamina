@@ -9,7 +9,7 @@ public:
     LowMemoryWatcher(LowMemoryWatcher const&);
     LowMemoryWatcher();
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?mPlatformToldUsLowMemory@LowMemoryWatcher@@0_NA
     MCAPI static bool mPlatformToldUsLowMemory;
@@ -21,17 +21,6 @@ private:
     // symbol:
     // ?mTimeToResetWarning@LowMemoryWatcher@@0V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@A
     MCAPI static std::chrono::steady_clock::time_point mTimeToResetWarning;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mPlatformToldUsLowMemory() { return mPlatformToldUsLowMemory; }
-
-    static auto& $mPleaseLeakMemory() { return mPleaseLeakMemory; }
-
-    static auto& $mTimeToResetWarning() { return mTimeToResetWarning; }
 
     // NOLINTEND
 };

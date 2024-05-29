@@ -68,7 +68,7 @@ public:
 
     // symbol:
     // ?getCurses@EnchantUtils@@SAXAEBVItemStackBase@@AEAV?$vector@VEnchantmentInstance@@V?$allocator@VEnchantmentInstance@@@std@@@std@@@Z
-    MCAPI static void getCurses(class ItemStackBase const& item, std::vector<class EnchantmentInstance>&);
+    MCAPI static void getCurses(class ItemStackBase const& item, std::vector<class EnchantmentInstance>& outputCurses);
 
     // symbol: ?getDamageReduction@EnchantUtils@@SAMAEBVActorDamageSource@@AEBVMob@@@Z
     MCAPI static float getDamageReduction(class ActorDamageSource const& source, class Mob const& target);
@@ -152,18 +152,11 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol:
     // ?mEnchantmentNames@EnchantUtils@@0V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@A
     MCAPI static std::vector<std::string> mEnchantmentNames;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $mEnchantmentNames() { return mEnchantmentNames; }
 
     // NOLINTEND
 };

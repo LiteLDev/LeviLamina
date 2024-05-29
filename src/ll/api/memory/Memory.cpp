@@ -28,11 +28,13 @@ FuncPtr resolveSymbol(char const* symbol) {
 }
 
 FuncPtr resolveSymbol(std::string_view symbol, bool disableErrorOutput) {
-    if (disableErrorOutput) {
-        return pl::symbol_provider::pl_resolve_symbol_silent(symbol.data());
-    } else {
-        return resolveSymbol(symbol.data());
+    static Logger sLogger("LeviLamina", true);
+    auto          res = pl::symbol_provider::pl_resolve_symbol_silent_n(symbol.data(), symbol.size());
+    if (!disableErrorOutput && res == nullptr) {
+        sLogger.fatal("Could not find symbol in memory: {}", symbol);
+        sLogger.fatal("In module: {}", win_utils::getCallerModuleFileName());
     }
+    return res;
 }
 
 FuncPtr resolveSignature(std::string_view signature) {
@@ -56,7 +58,7 @@ FuncPtr resolveSignature(std::string_view signature) {
         } else if (c == '?') {
             pattern.emplace_back(std::nullopt);
         } else if (isxdigit(c) && (++i < signature.size() && isxdigit(signature[i]))) {
-            pattern.emplace_back(string_utils::svtouc(signature.substr(i - 1, 2), nullptr, 16));
+            pattern.emplace_back(string_utils::svtouc(signature.substr(i - 1, 2), nullptr, 16).value());
         } else {
             return nullptr;
         }

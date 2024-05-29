@@ -30,7 +30,7 @@ public:
     // symbol:
     // ??0ScriptDataDrivenActorTriggerAfterEvent@ScriptModuleMinecraft@@QEAA@AEBUActorDefinitionEndedEvent@@AEBVWeakLifetimeScope@Scripting@@@Z
     MCAPI ScriptDataDrivenActorTriggerAfterEvent(
-        struct ActorDefinitionEndedEvent const&,
+        struct ActorDefinitionEndedEvent const&   actorDefinitionEvent,
         class Scripting::WeakLifetimeScope const& scope
     );
 

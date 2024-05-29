@@ -19,13 +19,18 @@ class ScriptTypeFamilyComponent : public ::ScriptModuleMinecraft::ScriptActorCom
 public:
     // prevent constructor by default
     ScriptTypeFamilyComponent& operator=(ScriptTypeFamilyComponent const&);
-    ScriptTypeFamilyComponent(ScriptTypeFamilyComponent const&);
     ScriptTypeFamilyComponent();
 
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1ScriptTypeFamilyComponent@ScriptModuleMinecraft@@UEAA@XZ
     virtual ~ScriptTypeFamilyComponent() = default;
+
+    // vIndex: 1, symbol: ?_isValid@ScriptTypeFamilyComponent@ScriptModuleMinecraft@@MEBA_NXZ
+    virtual bool _isValid() const;
+
+    // symbol: ??0ScriptTypeFamilyComponent@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
+    MCAPI ScriptTypeFamilyComponent(class ScriptModuleMinecraft::ScriptTypeFamilyComponent const&);
 
     // symbol:
     // ?getTypeFamilies@ScriptTypeFamilyComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@$$V@Scripting@@XZ

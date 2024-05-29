@@ -20,9 +20,6 @@ namespace CerealHelpers {
 // symbol: ?bindBoundingBox@CerealHelpers@@YAXAEAUReflectionCtx@cereal@@@Z
 MCAPI void bindBoundingBox(struct cereal::ReflectionCtx&);
 
-// symbol: ?bindBrightness@CerealHelpers@@YAXAEAUReflectionCtx@cereal@@@Z
-MCAPI void bindBrightness(struct cereal::ReflectionCtx&);
-
 // symbol: ?bindColor@CerealHelpers@@YAXAEAUReflectionCtx@cereal@@@Z
 MCAPI void bindColor(struct cereal::ReflectionCtx&);
 
@@ -32,17 +29,11 @@ MCAPI void bindGlmVec2(struct cereal::ReflectionCtx&);
 // symbol: ?bindHelpers@CerealHelpers@@YAXAEAUReflectionCtx@cereal@@@Z
 MCAPI void bindHelpers(struct cereal::ReflectionCtx&);
 
-// symbol: ?bindIdentifierString@CerealHelpers@@YAXAEAUReflectionCtx@cereal@@@Z
-MCAPI void bindIdentifierString(struct cereal::ReflectionCtx&);
-
 // symbol: ?bindIntRange@CerealHelpers@@YAXAEAUReflectionCtx@cereal@@@Z
 MCAPI void bindIntRange(struct cereal::ReflectionCtx&);
 
 // symbol: ?bindLocIdString@CerealHelpers@@YAXAEAUReflectionCtx@cereal@@@Z
 MCAPI void bindLocIdString(struct cereal::ReflectionCtx&);
-
-// symbol: ?bindMceUUID@CerealHelpers@@YAXAEAUReflectionCtx@cereal@@@Z
-MCAPI void bindMceUUID(struct cereal::ReflectionCtx&);
 
 // symbol: ?bindResourcePath@CerealHelpers@@YAXAEAUReflectionCtx@cereal@@@Z
 MCAPI void bindResourcePath(struct cereal::ReflectionCtx&);

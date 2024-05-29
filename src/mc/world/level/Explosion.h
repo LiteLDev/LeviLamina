@@ -71,5 +71,8 @@ public:
     // ?_getActorsInRange@Explosion@@AEBA?AV?$vector@V?$not_null@PEAVActor@@@gsl@@V?$allocator@V?$not_null@PEAVActor@@@gsl@@@std@@@std@@PEAVActor@@M@Z
     MCAPI std::vector<gsl::not_null<class Actor*>> _getActorsInRange(class Actor* optSource, float range) const;
 
+    // symbol: ?getEyePos@Explosion@@AEBA?AVVec3@@AEAVActor@@@Z
+    MCAPI class Vec3 getEyePos(class Actor&) const;
+
     // NOLINTEND
 };

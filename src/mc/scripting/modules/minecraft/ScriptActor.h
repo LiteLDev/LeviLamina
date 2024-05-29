@@ -365,8 +365,8 @@ public:
     // symbol:
     // ?playAnimation@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$optional@UScriptPlayAnimationOptions@ScriptModuleMinecraft@@@7@@Z
     MCAPI class Scripting::Result<void> playAnimation(
-        class Actor& self,
-        std::string const&,
+        class Actor&                                                                   self,
+        std::string const&                                                             animationName,
         std::optional<struct ScriptModuleMinecraft::ScriptPlayAnimationOptions> const& options
     );
 

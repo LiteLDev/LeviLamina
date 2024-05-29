@@ -1,7 +1,7 @@
 #include "mc/server/commands/BlockStateCommandParam.h"
 #include "ll/api/utils/StringUtils.h"
 
-std::optional<Block::BlockStateValueType> BlockStateCommandParam::toStateValue() const {
+ll::Expected<Block::BlockStateValueType> BlockStateCommandParam::toStateValue() const {
     switch (mType) {
     case Type::Integer:
         return ll::string_utils::svtoi(mValue);
@@ -12,15 +12,18 @@ std::optional<Block::BlockStateValueType> BlockStateCommandParam::toStateValue()
     case Type::String:
         return mValue;
     default:
-        return std::nullopt;
+        return ll::makeErrorCodeError(std::errc::invalid_argument);
     }
 }
-Block::BlockStatesType BlockStateCommandParam::toStateMap(std::vector<BlockStateCommandParam> const& vec) {
+ll::Expected<Block::BlockStatesType> BlockStateCommandParam::toStateMap(std::vector<BlockStateCommandParam> const& vec
+) {
     Block::BlockStatesType res;
     res.reserve(vec.size());
     for (auto& p : vec) {
         if (auto val = p.toStateValue(); val) {
             res.emplace_back(p.mBlockState, *std::move(val));
+        } else {
+            return ll::forwardError(val.error());
         }
     }
     return res;

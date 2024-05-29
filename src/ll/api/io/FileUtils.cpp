@@ -39,6 +39,8 @@ bool writeFile(const fs::path& filePath, std::string_view content, bool isBinary
     std::ofstream           fWrite;
     std::ios_base::openmode mode = std::ios_base::out;
     if (isBinary) mode |= std::ios_base::binary;
+    std::error_code ec;
+    fs::create_directories(filePath.parent_path(), ec);
     fWrite.open(filePath, mode);
     if (!fWrite.is_open()) {
         return false;
@@ -101,7 +103,7 @@ data::Version getVersion(std::filesystem::path const& filePath) {
 // modified from Thomas Monkman's
 class FileWatcher::Impl {
 private:
-    std::function<void(std::filesystem::path const& file, FileActionType eventType)> mCallback;
+    std::function<void(std::filesystem::path const&, FileActionType)> mCallback;
 
     std::wstring mFilename; // not empty for single file
 

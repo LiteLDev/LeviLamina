@@ -2,10 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/biome/BiomeComponentBase.h"
-
-struct CustomMapFoliageColorAttributes : public ::BiomeComponentBase {
+struct CustomMapFoliageColorAttributes {
 public:
     // prevent constructor by default
     CustomMapFoliageColorAttributes& operator=(CustomMapFoliageColorAttributes const&);

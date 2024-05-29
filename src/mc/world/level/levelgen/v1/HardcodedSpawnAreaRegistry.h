@@ -17,12 +17,14 @@ public:
     MCAPI HardcodedSpawnAreaRegistry();
 
     // symbol:
-    // ?getMobSpawnsForType@HardcodedSpawnAreaRegistry@@QEBAAEBV?$vector@VMobSpawnerData@@V?$allocator@VMobSpawnerData@@@std@@@std@@W4HardcodedSpawnAreaType@@@Z
-    MCAPI std::vector<class MobSpawnerData> const& getMobSpawnsForType(::HardcodedSpawnAreaType type) const;
+    // ?getMobSpawnsForType@HardcodedSpawnAreaRegistry@@QEBAAEBV?$vector@V?$shared_ptr@VMobSpawnerData@@@std@@V?$allocator@V?$shared_ptr@VMobSpawnerData@@@std@@@2@@std@@W4HardcodedSpawnAreaType@@@Z
+    MCAPI std::vector<std::shared_ptr<class MobSpawnerData>> const& getMobSpawnsForType(::HardcodedSpawnAreaType type
+    ) const;
 
     // symbol:
-    // ?initMobSpawnsForType@HardcodedSpawnAreaRegistry@@QEAAXW4HardcodedSpawnAreaType@@$$QEAV?$vector@VMobSpawnerData@@V?$allocator@VMobSpawnerData@@@std@@@std@@@Z
-    MCAPI void initMobSpawnsForType(::HardcodedSpawnAreaType type, std::vector<class MobSpawnerData>&& mobList);
+    // ?initMobSpawnsForType@HardcodedSpawnAreaRegistry@@QEAAXW4HardcodedSpawnAreaType@@$$QEAV?$vector@V?$shared_ptr@VMobSpawnerData@@@std@@V?$allocator@V?$shared_ptr@VMobSpawnerData@@@std@@@2@@std@@@Z
+    MCAPI void
+    initMobSpawnsForType(::HardcodedSpawnAreaType type, std::vector<std::shared_ptr<class MobSpawnerData>>&& mobList);
 
     // NOLINTEND
 };

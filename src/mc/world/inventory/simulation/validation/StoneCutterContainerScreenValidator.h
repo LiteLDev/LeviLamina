@@ -24,7 +24,7 @@ public:
     // vIndex: 3, symbol:
     // ?getCraftResult@StoneCutterContainerScreenValidator@@UEAA?AUContainerValidationCraftResult@@AEBVContainerScreenContext@@AEAVContainerScreenValidation@@V?$unique_ptr@UContainerValidationCraftInputs@@U?$default_delete@UContainerValidationCraftInputs@@@std@@@std@@@Z
     virtual struct ContainerValidationCraftResult
-    getCraftResult(class ContainerScreenContext const&, class ContainerScreenValidation&, std::unique_ptr<struct ContainerValidationCraftInputs>);
+    getCraftResult(class ContainerScreenContext const& screenContext, class ContainerScreenValidation&, std::unique_ptr<struct ContainerValidationCraftInputs>);
 
     // symbol: ??0StoneCutterContainerScreenValidator@@QEAA@XZ
     MCAPI StoneCutterContainerScreenValidator();
@@ -35,7 +35,9 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_recipeMatches@StoneCutterContainerScreenValidator@@AEBA_NAEBVContainerScreenContext@@AEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@AEBVItemStack@@@Z
-    MCAPI bool _recipeMatches(class ContainerScreenContext const&, RecipeNetId const&, class ItemStack const&) const;
+    MCAPI bool
+    _recipeMatches(class ContainerScreenContext const& screenContext, RecipeNetId const& recipeNetId, class ItemStack const&)
+        const;
 
     // NOLINTEND
 };

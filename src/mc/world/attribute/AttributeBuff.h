@@ -10,6 +10,7 @@ class AttributeBuff {
 public:
     // prevent constructor by default
     AttributeBuff& operator=(AttributeBuff const&);
+    AttributeBuff(AttributeBuff const&);
     AttributeBuff();
 
 public:
@@ -25,9 +26,6 @@ public:
 
     // vIndex: 3, symbol: ?setDurationAmplifier@AttributeBuff@@UEAAXV?$shared_ptr@VAmplifier@@@std@@@Z
     virtual void setDurationAmplifier(std::shared_ptr<class Amplifier> amplifier);
-
-    // symbol: ??0AttributeBuff@@QEAA@AEBV0@@Z
-    MCAPI AttributeBuff(class AttributeBuff const&);
 
     // symbol: ?getAmount@AttributeBuff@@QEBAMXZ
     MCAPI float getAmount() const;

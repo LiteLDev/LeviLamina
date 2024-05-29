@@ -53,8 +53,8 @@ public:
     virtual void uploadFileToRealmStorage(
         std::string const&      uploadId,
         class Core::Path const& path,
-        int,
-        std::string const& realmsGuid
+        int                     slotIndex,
+        std::string const&      realmsGuid
     ) = 0;
 
     // symbol: ??0FileUploadManager@@QEAA@AEAVTaskGroup@@V?$shared_ptr@VIFileChunkUploader@@@std@@@Z
@@ -102,26 +102,17 @@ public:
 
     // NOLINTEND
 
-protected:
+    // protected:
     // NOLINTBEGIN
     // symbol: ?CHUNK_UPLOAD_SIZE@FileUploadManager@@1HB
     MCAPI static int const CHUNK_UPLOAD_SIZE;
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?BOUNDARY@FileUploadManager@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const BOUNDARY;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $BOUNDARY() { return BOUNDARY; }
-
-    static auto& $CHUNK_UPLOAD_SIZE() { return CHUNK_UPLOAD_SIZE; }
 
     // NOLINTEND
 };

@@ -30,8 +30,14 @@ MCAPI extern struct FlatteningUtils::LegacyBlockInfo const LegacyConcreteInfo;
 // symbol: ?LegacyConcretePowderInfo@FlatteningUtils@@3ULegacyBlockInfo@1@B
 MCAPI extern struct FlatteningUtils::LegacyBlockInfo const LegacyConcretePowderInfo;
 
+// symbol: ?LegacyCoralFanInfo@FlatteningUtils@@3ULegacyBlockInfo@1@B
+MCAPI extern struct FlatteningUtils::LegacyBlockInfo const LegacyCoralFanInfo;
+
 // symbol: ?LegacyCoralInfo@FlatteningUtils@@3ULegacyBlockInfo@1@B
 MCAPI extern struct FlatteningUtils::LegacyBlockInfo const LegacyCoralInfo;
+
+// symbol: ?LegacyDeadCoralFanInfo@FlatteningUtils@@3ULegacyBlockInfo@1@B
+MCAPI extern struct FlatteningUtils::LegacyBlockInfo const LegacyDeadCoralFanInfo;
 
 // symbol: ?LegacyFenceInfo@FlatteningUtils@@3ULegacyBlockInfo@1@B
 MCAPI extern struct FlatteningUtils::LegacyBlockInfo const LegacyFenceInfo;
@@ -59,6 +65,12 @@ MCAPI extern struct FlatteningUtils::LegacyBlockInfo const LegacyLogInfo;
 
 // symbol: ?LegacyPlanksInfo@FlatteningUtils@@3ULegacyBlockInfo@1@B
 MCAPI extern struct FlatteningUtils::LegacyBlockInfo const LegacyPlanksInfo;
+
+// symbol: ?LegacyRedFlowerInfo@FlatteningUtils@@3ULegacyBlockInfo@1@B
+MCAPI extern struct FlatteningUtils::LegacyBlockInfo const LegacyRedFlowerInfo;
+
+// symbol: ?LegacySaplingInfo@FlatteningUtils@@3ULegacyBlockInfo@1@B
+MCAPI extern struct FlatteningUtils::LegacyBlockInfo const LegacySaplingInfo;
 
 // symbol: ?LegacyShulkerBoxInfo@FlatteningUtils@@3ULegacyBlockInfo@1@B
 MCAPI extern struct FlatteningUtils::LegacyBlockInfo const LegacyShulkerBoxInfo;

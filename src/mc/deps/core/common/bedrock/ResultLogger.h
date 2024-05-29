@@ -28,11 +28,11 @@ public:
     MCAPI static class brstd::copyable_function<void(::Bedrock::LogLevel, ::LogAreaID, std::string const&)>& _hook();
 
     // symbol:
-    // ?log@ResultLogger@Bedrock@@CAXV?$optional@W4LogLevel@Bedrock@@@std@@V?$optional@W4LogAreaID@@@4@AEBVerror_code@4@AEBUCallStack@2@@Z
+    // ?log@ResultLogger@Bedrock@@CAXV?$optional@W4LogLevel@Bedrock@@@std@@V?$optional@W4LogAreaID@@@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@AEBUCallStack@2@@Z
     MCAPI static void
     log(std::optional<::Bedrock::LogLevel>,
-        std::optional<::LogAreaID> logArea,
-        std::error_code const&     errorCode,
+        std::optional<::LogAreaID>,
+        std::string const&,
         struct Bedrock::CallStack const&);
 
     // NOLINTEND

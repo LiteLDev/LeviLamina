@@ -14,13 +14,14 @@
 
 #include "ll/api/base/MsvcPredefine.h"
 
-namespace ll {
-class Logger;
-}
-
 struct _EXCEPTION_RECORD;   // NOLINT(bugprone-reserved-identifier)
 struct _CONTEXT;            // NOLINT(bugprone-reserved-identifier)
 struct _EXCEPTION_POINTERS; // NOLINT(bugprone-reserved-identifier)
+
+namespace ll {
+class Logger;
+class OutputStream;
+} // namespace ll
 
 namespace ll::inline utils::error_utils {
 
@@ -34,17 +35,19 @@ public:
     _EXCEPTION_POINTERS* getExceptionPointer() const noexcept { return expPtr; }
 };
 
-struct UntypedException {
+struct UntypedExceptionRef {
     static constexpr uint msc                = 0x6D7363; // 'msc'
     static constexpr uint exceptionCodeOfCpp = (msc | 0xE0000000);
 
     void*                          exceptionObject;
-    _EXCEPTION_RECORD const*       exc;
+    ::_EXCEPTION_RECORD const*     exc;
     void*                          handle    = nullptr;
     RealInternal::ThrowInfo const* throwInfo = nullptr;
     _CatchableTypeArray const*     cArray    = nullptr;
 
-    LLNDAPI explicit UntypedException(_EXCEPTION_RECORD const& er);
+    LLNDAPI explicit UntypedExceptionRef(std::exception_ptr const& ptr);
+
+    LLNDAPI explicit UntypedExceptionRef(::_EXCEPTION_RECORD const& er);
 
     [[nodiscard]] uint getNumCatchableTypes() const { return cArray ? cArray->nCatchableTypes : 0u; }
 
@@ -62,6 +65,15 @@ struct UntypedException {
     [[nodiscard]] T rva2va(auto addr) const {
         return reinterpret_cast<T>((uintptr_t)handle + (uintptr_t)(addr));
     }
+    template <class T>
+    [[nodiscard]] optional_ref<T> tryGet() const {
+        for (uint i = 0, e = getNumCatchableTypes(); i < e; i++) {
+            if ((*getTypeInfo(i)) == typeid(T)) {
+                return reinterpret_cast<T*>(reinterpret_cast<char*>(exceptionObject) + getThisDisplacement(i));
+            }
+        }
+        return nullptr;
+    }
 };
 
 [[noreturn]] inline void translateSEHtoCE(uint ntStatus, struct _EXCEPTION_POINTERS* expPtr) {
@@ -71,19 +83,16 @@ struct UntypedException {
 // only set for the current thread
 LLAPI void setSehTranslator();
 
-LLNDAPI std::error_category const& u8system_category() noexcept;
-
-LLNDAPI std::error_category const& ntstatus_category() noexcept;
-
 LLNDAPI std::system_error getWinLastError() noexcept;
 
-LLNDAPI _EXCEPTION_RECORD& current_exception() noexcept;
-LLNDAPI _CONTEXT&          current_exception_context() noexcept;
+LLNDAPI optional_ref<::_EXCEPTION_RECORD> current_exception_record() noexcept;
+LLNDAPI optional_ref<_CONTEXT> current_exception_context() noexcept;
 
-LLNDAPI std::exception_ptr createExceptionPtr(_EXCEPTION_RECORD const&) noexcept;
+LLNDAPI std::exception_ptr createExceptionPtr(::_EXCEPTION_RECORD const&) noexcept;
 
 #if _HAS_CXX23
-LLNDAPI std::stacktrace stacktraceFromContext(_CONTEXT const& context, size_t skip = 0, size_t maxDepth = ~0ui64);
+LLNDAPI std::stacktrace
+        stacktraceFromContext(optional_ref<_CONTEXT const> context, size_t skip = 0, size_t maxDepth = ~0ui64);
 
 inline std::stacktrace stacktraceFromCurrExc(size_t skip = 0, size_t maxDepth = ~0ui64) {
     return stacktraceFromContext(current_exception_context(), skip, maxDepth);
@@ -94,13 +103,24 @@ LLNDAPI std::string makeExceptionString(std::exception_ptr ePtr) noexcept;
 
 LLAPI void printCurrentException(ll::Logger& l, std::exception_ptr const& = std::current_exception()) noexcept;
 
-inline void printException(ll::Logger& l, _EXCEPTION_RECORD const& e) noexcept {
+LLAPI void
+printCurrentException(ll::OutputStream& stream, std::exception_ptr const& = std::current_exception()) noexcept;
+
+inline void printException(ll::Logger& l, ::_EXCEPTION_RECORD const& e) noexcept {
     printCurrentException(l, createExceptionPtr(e));
 }
+inline void printException(ll::OutputStream& stream, ::_EXCEPTION_RECORD const& e) noexcept {
+    printCurrentException(stream, createExceptionPtr(e));
+}
+
 template <class T>
     requires(!std::is_same_v<T, std::exception_ptr>)
 inline void printException(ll::Logger& l, T const& e) noexcept {
     printCurrentException(l, std::make_exception_ptr(e));
 }
-
+template <class T>
+    requires(!std::is_same_v<T, std::exception_ptr>)
+inline void printException(ll::OutputStream& stream, T const& e) noexcept {
+    printCurrentException(stream, std::make_exception_ptr(e));
+}
 } // namespace ll::inline utils::error_utils

@@ -113,6 +113,13 @@ namespace Scripting::internal { struct FetchAsAnyComponent; }
 
 namespace Scripting {
 // NOLINTBEGIN
+// symbol:
+// ?GetDefaultArgCount@Scripting@@YAIAEBV?$vector@UArgumentDetails@Scripting@@V?$allocator@UArgumentDetails@Scripting@@@std@@@std@@@Z
+MCAPI uint GetDefaultArgCount(std::vector<struct Scripting::ArgumentDetails> const&);
+
+// symbol: ?GetInjectedArgCount@Scripting@@YAIPEAVIFunction@Reflection@1@@Z
+MCAPI uint GetInjectedArgCount(class Scripting::Reflection::IFunction*);
+
 // symbol: ?LogMessage@Scripting@@YAXW4LogLevel@1@PEBDI1ZZ
 MCAPI void LogMessage(::Scripting::LogLevel, char const*, uint, char const*, ...);
 

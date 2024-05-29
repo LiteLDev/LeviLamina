@@ -45,6 +45,9 @@ public:
     // ?removeListener@WeakLifetimeScope@Scripting@@QEBAXV?$shared_ptr@VILifetimeScopeListener@Scripting@@@std@@@Z
     MCAPI void removeListener(std::shared_ptr<class Scripting::ILifetimeScopeListener> listener) const;
 
+    // symbol: ?reset@WeakLifetimeScope@Scripting@@QEAAXXZ
+    MCAPI void reset();
+
     // symbol: ?valid@WeakLifetimeScope@Scripting@@QEBA_NXZ
     MCAPI bool valid() const;
 

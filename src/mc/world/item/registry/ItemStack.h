@@ -67,7 +67,7 @@ public:
     MCAPI void _assignNetIdVariant(class ItemStack const& fromItem) const;
 
     // symbol: ?clientInitLegacyRequestId@ItemStack@@QEAAXAEBV?$TypedClientNetId@UItemStackLegacyRequestIdTag@@H$0A@@@@Z
-    MCAPI void clientInitLegacyRequestId(ItemStackLegacyRequestId const&);
+    MCAPI void clientInitLegacyRequestId(ItemStackLegacyRequestId const& legacyClientRequestId);
 
     // symbol: ?clone@ItemStack@@QEBA?AV1@XZ
     MCAPI class ItemStack clone() const;
@@ -95,9 +95,6 @@ public:
 
     // symbol: ?matchesNetIdVariant@ItemStack@@QEBA_NAEBV1@@Z
     MCAPI bool matchesNetIdVariant(class ItemStack const& other) const;
-
-    // symbol: ?mineBlock@ItemStack@@QEAAXAEBVBlock@@HHHPEAVMob@@@Z
-    MCAPI void mineBlock(class Block const& block, int x, int y, int z, class Mob* owner);
 
     // symbol: ??4ItemStack@@QEAAAEAV0@AEBV0@@Z
     MCAPI class ItemStack& operator=(class ItemStack const& rhs);

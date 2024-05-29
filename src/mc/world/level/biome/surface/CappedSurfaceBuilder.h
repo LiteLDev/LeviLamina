@@ -77,8 +77,12 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?addSurfaceMaterial@CappedSurfaceBuilder@VanillaSurfaceBuilders@@AEBAXAEAVBlockVolume@@VPos@@HAEBV?$function@$$A6APEBVBlock@@H@Z@std@@@Z
-    MCAPI void
-    addSurfaceMaterial(class BlockVolume&, class Pos, int, std::function<class Block const*(int)> const&) const;
+    MCAPI void addSurfaceMaterial(
+        class BlockVolume&                            blockVolume,
+        class Pos                                     currentPosition,
+        int                                           endHeight,
+        std::function<class Block const*(int)> const& getBlockFn
+    ) const;
 
     // NOLINTEND
 };

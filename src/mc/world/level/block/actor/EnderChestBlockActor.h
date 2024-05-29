@@ -31,17 +31,10 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?ITEMS_SIZE@EnderChestBlockActor@@0HB
     MCAPI static int const ITEMS_SIZE;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $ITEMS_SIZE() { return ITEMS_SIZE; }
 
     // NOLINTEND
 };

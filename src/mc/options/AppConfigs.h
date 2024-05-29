@@ -115,7 +115,7 @@ public:
     virtual bool isSaveToCloudOn() const;
 
     // vIndex: 30, symbol: ?setCanAccessWorldCallback@AppConfigs@@UEAAXAEAVIMinecraftGame@@@Z
-    virtual void setCanAccessWorldCallback(class IMinecraftGame&);
+    virtual void setCanAccessWorldCallback(class IMinecraftGame& minecraftGame);
 
     // vIndex: 31, symbol:
     // ?getAdditionalClientPacks@AppConfigs@@UEBA?AV?$vector@UPackIdVersion@@V?$allocator@UPackIdVersion@@@std@@@std@@_N@Z
@@ -134,7 +134,11 @@ public:
     // ?getFeedbackURL@AppConfigs@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getFeedbackURL() const;
 
-    // vIndex: 35, symbol: ?applyLevelDataOverride@AppConfigs@@UEBAXAEAVLevelData@@@Z
+    // vIndex: 35, symbol:
+    // ?getHelpCenterURL@AppConfigs@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    virtual std::string getHelpCenterURL() const;
+
+    // vIndex: 36, symbol: ?applyLevelDataOverride@AppConfigs@@UEBAXAEAVLevelData@@@Z
     virtual void applyLevelDataOverride(class LevelData&) const;
 
     // symbol: ??0AppConfigs@@QEAA@XZ

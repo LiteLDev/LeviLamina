@@ -14,7 +14,7 @@ public:
     MCAPI CallbackToken();
 
     // symbol: ??0CallbackToken@@QEAA@V?$weak_ptr@VCallbackTokenCancelState@@@std@@@Z
-    MCAPI explicit CallbackToken(std::weak_ptr<class CallbackTokenCancelState>);
+    MCAPI explicit CallbackToken(std::weak_ptr<class CallbackTokenCancelState> cancelState);
 
     // symbol: ?cancelCallback@CallbackToken@@QEAAXXZ
     MCAPI void cancelCallback();

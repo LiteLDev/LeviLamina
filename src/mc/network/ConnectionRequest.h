@@ -28,9 +28,6 @@ public:
     // symbol: ??0ConnectionRequest@@QEAA@AEBV0@@Z
     MCAPI ConnectionRequest(class ConnectionRequest const& other);
 
-    // symbol: ?containsValidContents@ConnectionRequest@@QEBA_NXZ
-    MCAPI bool containsValidContents() const;
-
     // symbol:
     // ?getAnimatedImageData@ConnectionRequest@@QEBA?AV?$vector@VAnimatedImageData@@V?$allocator@VAnimatedImageData@@@std@@@std@@XZ
     MCAPI std::vector<class AnimatedImageData> getAnimatedImageData() const;
@@ -152,6 +149,9 @@ public:
 
     // symbol: ?isTrustedSkin@ConnectionRequest@@QEBA_NXZ
     MCAPI bool isTrustedSkin() const;
+
+    // symbol: ?isValid@ConnectionRequest@@QEBA_NXZ
+    MCAPI bool isValid() const;
 
     // symbol: ?toString@ConnectionRequest@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string toString();

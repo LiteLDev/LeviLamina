@@ -52,7 +52,7 @@ public:
 
     // NOLINTEND
 
-private:
+    // private:
     // NOLINTBEGIN
     // symbol: ?FOLIAGE_BOTTOM_LEFT@FoliageColor@@0VColor@mce@@B
     MCAPI static class mce::Color const FOLIAGE_BOTTOM_LEFT;
@@ -85,31 +85,6 @@ private:
     // symbol:
     // ?mGrassPalettes@FoliageColor@@0V?$array@V?$unique_ptr@V?$array@H$0BAAAA@@std@@U?$default_delete@V?$array@H$0BAAAA@@std@@@2@@std@@$04@std@@A
     MCAPI static std::array<std::unique_ptr<std::array<int, 65536>>, 5> mGrassPalettes;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $FOLIAGE_BOTTOM_LEFT() { return FOLIAGE_BOTTOM_LEFT; }
-
-    static auto& $FOLIAGE_BOTTOM_RIGHT() { return FOLIAGE_BOTTOM_RIGHT; }
-
-    static auto& $FOLIAGE_TOP_LEFT() { return FOLIAGE_TOP_LEFT; }
-
-    static auto& $FOLIAGE_TOP_RIGHT() { return FOLIAGE_TOP_RIGHT; }
-
-    static auto& $GRASS_BOTTOM_LEFT() { return GRASS_BOTTOM_LEFT; }
-
-    static auto& $GRASS_BOTTOM_RIGHT() { return GRASS_BOTTOM_RIGHT; }
-
-    static auto& $GRASS_TOP_LEFT() { return GRASS_TOP_LEFT; }
-
-    static auto& $GRASS_TOP_RIGHT() { return GRASS_TOP_RIGHT; }
-
-    static auto& $mFoliagePalettes() { return mFoliagePalettes; }
-
-    static auto& $mGrassPalettes() { return mGrassPalettes; }
 
     // NOLINTEND
 };

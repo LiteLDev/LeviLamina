@@ -18,7 +18,7 @@ public:
     virtual ~ItemEventResponseFactory();
 
     // vIndex: 1, symbol: ?initializeFactory@ItemEventResponseFactory@@UEAAXAEBVExperiments@@@Z
-    virtual void initializeFactory(class Experiments const&);
+    virtual void initializeFactory(class Experiments const& experiments);
 
     // vIndex: 2, symbol: ?initSchema@ItemEventResponseFactory@@UEAAXXZ
     virtual void initSchema();

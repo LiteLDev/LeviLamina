@@ -5,7 +5,7 @@
 namespace VanillaBlocks {
 // NOLINTBEGIN
 // symbol: ?assignBlocks@VanillaBlocks@@YAXAEBVExperiments@@@Z
-MCAPI void assignBlocks(class Experiments const&);
+MCAPI void assignBlocks(class Experiments const& experiments);
 
 // symbol: ?mBambooSapling@VanillaBlocks@@3PEBVBlock@@EB
 MCAPI extern class Block const* mBambooSapling;

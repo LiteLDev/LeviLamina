@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/AutomaticID.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace mce { class Color; }
@@ -19,6 +16,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ?initAdditionalCommonComponents@VanillaBiomes@@SAXAEAVBiomeRegistry@@@Z
+    MCAPI static void initAdditionalCommonComponents(class BiomeRegistry&);
+
     // symbol: ?initBiomeComponents@VanillaBiomes@@SAXAEAVBiomeComponentFactory@@@Z
     MCAPI static void initBiomeComponents(class BiomeComponentFactory& factory);
 
@@ -27,11 +27,12 @@ public:
 
     // symbol:
     // ?initBiomes@VanillaBiomes@@SAXAEAVBiomeRegistry@@AEBUSpawnSettings@@AEBVBaseGameVersion@@AEBVExperiments@@@Z
-    MCAPI static void
-    initBiomes(class BiomeRegistry& registry, struct SpawnSettings const&, class BaseGameVersion const& baseGameVersion, class Experiments const&);
-
-    // symbol: ?initClientOnlyComponents@VanillaBiomes@@SAXAEAVBiomeRegistry@@@Z
-    MCAPI static void initClientOnlyComponents(class BiomeRegistry& registry);
+    MCAPI static void initBiomes(
+        class BiomeRegistry&         registry,
+        struct SpawnSettings const&  spawnSettings,
+        class BaseGameVersion const& baseGameVersion,
+        class Experiments const&     experiments
+    );
 
     // symbol: ?initDefaultWorldGenComponents@VanillaBiomes@@SAXAEAVIWorldRegistriesProvider@@@Z
     MCAPI static void initDefaultWorldGenComponents(class IWorldRegistriesProvider& registries);
@@ -54,18 +55,6 @@ public:
 
     // symbol: ?mPlayerValidSpawns@VanillaBiomes@@2V?$set@HU?$less@H@std@@V?$allocator@H@2@@std@@A
     MCAPI static std::set<int> mPlayerValidSpawns;
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    // symbol:
-    // ?addBiomeDimensionAttributeComponentHelper@VanillaBiomes@@CAXAEAVBiomeRegistry@@AEBVHashedString@@V?$AutomaticID@VDimension@@H@@@Z
-    MCAPI static void addBiomeDimensionAttributeComponentHelper(
-        class BiomeRegistry&      registry,
-        class HashedString const& name,
-        DimensionType             dimensionType
-    );
 
     // NOLINTEND
 };

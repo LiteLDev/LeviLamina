@@ -33,8 +33,8 @@ lip config GitHubMirrorURL <github-mirror-url>
 例如：
 
 ```sh
-lip config https://goproxy.cn
-lip config https://github.bibk.top
+lip config GoModuleProxyURL https://goproxy.cn
+lip config GitHubMirrorURL https://github.bibk.top
 ```
 
 这两个镜像我们已在中国大陆测试过可用，当然你仍然可以使用其他镜像。

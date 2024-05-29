@@ -16,8 +16,14 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ??0StructureAnimationData@@QEAA@V?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@AEBVStructureSettings@@EAEBVBlockPos@@@Z
-    MCAPI
-    StructureAnimationData(std::unique_ptr<class CommandArea>, uint64, std::string const& structureName, class StructureSettings const& structureSettings, uchar, class BlockPos const&);
+    MCAPI StructureAnimationData(
+        std::unique_ptr<class CommandArea> cmdArea,
+        uint64                             tickQueued,
+        std::string const&                 structureName,
+        class StructureSettings const&     structureSettings,
+        uchar                              structureVersion,
+        class BlockPos const&              placementPos
+    );
 
     // symbol: ?allBlocksPlaced@StructureAnimationData@@QEBA_NXZ
     MCAPI bool allBlocksPlaced() const;
@@ -61,7 +67,7 @@ public:
 
     // symbol:
     // ?setCmdArea@StructureAnimationData@@QEAAXV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@@Z
-    MCAPI void setCmdArea(std::unique_ptr<class CommandArea>);
+    MCAPI void setCmdArea(std::unique_ptr<class CommandArea> cmdArea);
 
     // symbol: ?setQueueID@StructureAnimationData@@QEAAXI@Z
     MCAPI void setQueueID(uint);

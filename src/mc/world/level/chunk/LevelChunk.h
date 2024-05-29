@@ -19,6 +19,11 @@
 #include "mc/world/level/chunk/SubChunkInitMode.h"
 #include "mc/world/level/chunk/SubChunkStorage.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace br::worldgen { class StructureInstance; }
+// clang-format on
+
 class LevelChunk {
 public:
     // LevelChunk inner types declare
@@ -113,6 +118,12 @@ public:
 
     // symbol: ?addHardcodedSpawningArea@LevelChunk@@QEAAXAEBVBoundingBox@@W4HardcodedSpawnAreaType@@@Z
     MCAPI void addHardcodedSpawningArea(class BoundingBox const& spawnerAABB, ::HardcodedSpawnAreaType type);
+
+    // symbol: ?addStructure@LevelChunk@@QEAAXV?$shared_ptr@$$CBVStructureInstance@worldgen@br@@@std@@@Z
+    MCAPI void addStructure(std::shared_ptr<class br::worldgen::StructureInstance const>);
+
+    // symbol: ?addStructureReference@LevelChunk@@QEAAXV?$shared_ptr@$$CBVStructureInstance@worldgen@br@@@std@@@Z
+    MCAPI void addStructureReference(std::shared_ptr<class br::worldgen::StructureInstance const>);
 
     // symbol:
     // ?addSubChunkBlockEntitiesToLevelChunk@LevelChunk@@QEAAXAEAV?$unordered_map@VChunkBlockPos@@V?$shared_ptr@VBlockActor@@@std@@U?$hash@VChunkBlockPos@@@3@U?$equal_to@VChunkBlockPos@@@3@V?$allocator@U?$pair@$$CBVChunkBlockPos@@V?$shared_ptr@VBlockActor@@@std@@@std@@@3@@std@@@Z
@@ -245,7 +256,7 @@ public:
         gsl::span<gsl::not_null<class Actor const*>> ignoredEntities,
         class AABB const&                            bb,
         std::vector<class Actor*>&                   entities,
-        bool
+        bool                                         useHitbox
     ) const;
 
     // symbol:
@@ -684,7 +695,7 @@ public:
     // symbol:
     // ?_fixupCorruptedBlockActors@LevelChunk@@IEAAXAEAV?$unordered_map@VChunkBlockPos@@V?$shared_ptr@VBlockActor@@@std@@U?$hash@VChunkBlockPos@@@3@U?$equal_to@VChunkBlockPos@@@3@V?$allocator@U?$pair@$$CBVChunkBlockPos@@V?$shared_ptr@VBlockActor@@@std@@@std@@@3@@std@@V?$buffer_span_mut@USubChunk@@@@@Z
     MCAPI void
-    _fixupCorruptedBlockActors(std::unordered_map<class ChunkBlockPos, std::shared_ptr<class BlockActor>>&, class buffer_span_mut<struct SubChunk>);
+    _fixupCorruptedBlockActors(std::unordered_map<class ChunkBlockPos, std::shared_ptr<class BlockActor>>& deserialized, class buffer_span_mut<struct SubChunk>);
 
     // symbol: ?_generateOriginalLighting@LevelChunk@@IEAAXAEAVChunkViewSource@@_N@Z
     MCAPI void _generateOriginalLighting(class ChunkViewSource& neighborhood, bool enforceBorderCheck);
@@ -762,17 +773,10 @@ public:
 
     // NOLINTEND
 
-protected:
+    // protected:
     // NOLINTBEGIN
     // symbol: ?UPDATE_MAP_BIT_SHIFT@LevelChunk@@1HB
     MCAPI static int const UPDATE_MAP_BIT_SHIFT;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $UPDATE_MAP_BIT_SHIFT() { return UPDATE_MAP_BIT_SHIFT; }
 
     // NOLINTEND
 };

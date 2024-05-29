@@ -27,6 +27,9 @@ public:
     // vIndex: 0, symbol: __gen_??1ScriptMovementGlideComponent@ScriptModuleMinecraft@@UEAA@XZ
     virtual ~ScriptMovementGlideComponent() = default;
 
+    // vIndex: 1, symbol: ?_isValid@ScriptMovementGlideComponent@ScriptModuleMinecraft@@MEBA_NXZ
+    virtual bool _isValid() const;
+
     // symbol:
     // ?getSpeedWhenTurning@ScriptMovementGlideComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@M$$V@Scripting@@XZ
     MCAPI class Scripting::Result<float> getSpeedWhenTurning() const;

@@ -39,34 +39,34 @@ public:
     // vIndex: 10, symbol: __gen_??1Warden@@UEAA@XZ
     virtual ~Warden() = default;
 
-    // vIndex: 24, symbol: ?canDisableShield@Warden@@UEAA_NXZ
+    // vIndex: 22, symbol: ?canDisableShield@Warden@@UEAA_NXZ
     virtual bool canDisableShield();
 
-    // vIndex: 28, symbol: ?normalTick@Warden@@UEAAXXZ
+    // vIndex: 26, symbol: ?normalTick@Warden@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 60, symbol: ?setTarget@Warden@@UEAAXPEAVActor@@@Z
+    // vIndex: 56, symbol: ?setTarget@Warden@@UEAAXPEAVActor@@@Z
     virtual void setTarget(class Actor* target);
 
-    // vIndex: 74, symbol: ?isInvulnerableTo@Warden@@UEBA_NAEBVActorDamageSource@@@Z
+    // vIndex: 70, symbol: ?isInvulnerableTo@Warden@@UEBA_NAEBVActorDamageSource@@@Z
     virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
-    // vIndex: 105, symbol: ?onSynchedDataUpdate@Warden@@UEAAXH@Z
+    // vIndex: 101, symbol: ?onSynchedDataUpdate@Warden@@UEAAXH@Z
     virtual void onSynchedDataUpdate(int dataId);
 
-    // vIndex: 141, symbol: ?onPush@Warden@@UEAAXAEAVActor@@@Z
+    // vIndex: 137, symbol: ?onPush@Warden@@UEAAXAEAVActor@@@Z
     virtual void onPush(class Actor& source);
 
-    // vIndex: 152, symbol: ?_hurt@Warden@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 148, symbol: ?_hurt@Warden@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 167, symbol: ?checkSpawnRules@Warden@@UEAA_N_N@Z
+    // vIndex: 162, symbol: ?checkSpawnRules@Warden@@UEAA_N_N@Z
     virtual bool checkSpawnRules(bool);
 
-    // vIndex: 168, symbol: ?checkSpawnObstruction@Warden@@UEBA_NXZ
+    // vIndex: 163, symbol: ?checkSpawnObstruction@Warden@@UEBA_NXZ
     virtual bool checkSpawnObstruction() const;
 
-    // vIndex: 174, symbol: ?doHurtTarget@Warden@@MEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
+    // vIndex: 169, symbol: ?doHurtTarget@Warden@@MEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
     virtual bool doHurtTarget(class Actor* target, ::ActorDamageCause const& cause);
 
     // symbol: ??0Warden@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

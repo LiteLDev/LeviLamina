@@ -17,36 +17,43 @@ struct ThreadPool::Impl {
     std::mutex                        mutex;
     std::condition_variable           condition;
     bool                              stop{false};
+    Impl(size_t nThreads) {
+        for (size_t i = 0; i < nThreads; ++i) {
+            workers.emplace_back([this] {
+                ll::error_utils::setSehTranslator();
+                for (;;) {
+                    std::function<void()> task;
+                    {
+                        std::unique_lock lock{mutex};
+                        condition.wait(lock, [this] { return stop || !tasks.empty(); });
+                        if (stop && tasks.empty()) return;
+                        task = std::move(tasks.front());
+                        tasks.pop();
+                    }
+                    task();
+                }
+            });
+        }
+    }
+    ~Impl() {
+        {
+            std::lock_guard lock{mutex};
+            stop = true;
+        }
+        condition.notify_all();
+        for (auto& worker : workers) {
+            if (worker.joinable()) worker.join();
+        }
+    }
 };
 
-ThreadPool::ThreadPool(size_t nThreads) : impl(std::make_unique<Impl>()) {
-    for (size_t i = 0; i < nThreads; ++i) {
-        impl->workers.emplace_back([this] {
-            ll::error_utils::setSehTranslator();
-            for (;;) {
-                std::function<void()> task;
-                {
-                    std::unique_lock lock{impl->mutex};
-                    impl->condition.wait(lock, [this] { return impl->stop || !impl->tasks.empty(); });
-                    if (impl->stop && impl->tasks.empty()) return;
-                    task = std::move(impl->tasks.front());
-                    impl->tasks.pop();
-                }
-                task();
-            }
-        });
-    }
-}
-ThreadPool::~ThreadPool() {
-    {
-        std::lock_guard lock{impl->mutex};
-        impl->stop = true;
-    }
-    impl->condition.notify_all();
-    for (auto& worker : impl->workers) {
-        if (worker.joinable()) worker.join();
-    }
-}
+ThreadPool::ThreadPool(size_t nThreads) : impl(std::make_unique<Impl>(nThreads)) {}
+
+void ThreadPool::resize(size_t nThreads) { impl = std::make_unique<Impl>(nThreads); }
+
+void ThreadPool::destroy() { impl.reset(); }
+
+ThreadPool::~ThreadPool() {}
 void ThreadPool::addTaskImpl(std::function<void()> task) {
     {
         std::lock_guard lock{impl->mutex};

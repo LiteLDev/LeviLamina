@@ -20,9 +20,9 @@ size_t getVolatileOffset(void* impl) {
             return offset;
         }
     }
-    throw std::runtime_error("can't parse closure asm offset");
+    std::terminate();
 };
-using T = NativeClosure<void*>;
+using T = NativeClosure<void*()>;
 void initNativeClosure(void* t, void* impl, size_t offset, size_t size) {
     impl      = unwrapFuncPtrJmp(impl);
     auto self = (T*)t;

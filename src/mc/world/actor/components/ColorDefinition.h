@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?setColorChoice@ColorDefinition@@QEAAXAEBH@Z
-    MCAPI void setColorChoice(int const&);
+    MCAPI void setColorChoice(int const& colorChoice);
 
     // symbol:
     // ?buildSchema@ColorDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UColorDefinition@@@JsonUtil@@@std@@@Z

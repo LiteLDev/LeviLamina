@@ -46,28 +46,28 @@ public:
     // vIndex: 10, symbol: __gen_??1ExperienceOrb@@UEAA@XZ
     virtual ~ExperienceOrb() = default;
 
-    // vIndex: 40, symbol: ?getShadowRadius@ExperienceOrb@@UEBAMXZ
+    // vIndex: 38, symbol: ?getShadowRadius@ExperienceOrb@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 44, symbol: ?playerTouch@ExperienceOrb@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 42, symbol: ?playerTouch@ExperienceOrb@@UEAAXAEAVPlayer@@@Z
     virtual void playerTouch(class Player& player);
 
-    // vIndex: 74, symbol: ?isInvulnerableTo@ExperienceOrb@@UEBA_NAEBVActorDamageSource@@@Z
+    // vIndex: 70, symbol: ?isInvulnerableTo@ExperienceOrb@@UEBA_NAEBVActorDamageSource@@@Z
     virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
-    // vIndex: 147, symbol: ?doWaterSplashEffect@ExperienceOrb@@MEAAXXZ
+    // vIndex: 143, symbol: ?doWaterSplashEffect@ExperienceOrb@@MEAAXXZ
     virtual void doWaterSplashEffect();
 
-    // vIndex: 152, symbol: ?_hurt@ExperienceOrb@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 148, symbol: ?_hurt@ExperienceOrb@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 153, symbol: ?readAdditionalSaveData@ExperienceOrb@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 149, symbol: ?readAdditionalSaveData@ExperienceOrb@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 154, symbol: ?addAdditionalSaveData@ExperienceOrb@@UEBAXAEAVCompoundTag@@@Z
+    // vIndex: 150, symbol: ?addAdditionalSaveData@ExperienceOrb@@UEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 155, symbol: ?_playStepSound@ExperienceOrb@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 151, symbol: ?_playStepSound@ExperienceOrb@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
     virtual void _playStepSound(class BlockPos const& pos, class Block const& onBlock);
 
     // symbol: ??0ExperienceOrb@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

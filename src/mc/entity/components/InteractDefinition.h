@@ -19,8 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?addInteraction@InteractDefinition@@QEAAXAEBUInteraction@@@Z
-    MCAPI void addInteraction(struct Interaction const& interaction);
+    // symbol: ?addInteraction@InteractDefinition@@QEAAXAEBVInteraction@@@Z
+    MCAPI void addInteraction(class Interaction const& interaction);
 
     // symbol: ?initialize@InteractDefinition@@QEBAXAEAVEntityContext@@AEAVInteractComponent@@@Z
     MCAPI void initialize(class EntityContext& entity, class InteractComponent& component) const;

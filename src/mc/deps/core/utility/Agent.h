@@ -24,12 +24,12 @@ MCAPI extern float const MOVE_EPSILON;
 
 // symbol: ?getNextBlock@Agent@Util@@YA?AUBlockQueryResult@AgentComponents@@AEAVBlockSource@@VVec3@@MW4Direction@4@@Z
 MCAPI struct AgentComponents::BlockQueryResult
-getNextBlock(class BlockSource& source, class Vec3 curPos, float, ::AgentComponents::Direction direction);
+getNextBlock(class BlockSource& source, class Vec3 curPos, float bodyRot, ::AgentComponents::Direction direction);
 
 // symbol:
 // ?getNextBlockSweep@Agent@Util@@YA?AUBlockQueryResult@AgentComponents@@AEAVBlockSource@@VVec3@@MW4Direction@4@@Z
 MCAPI struct AgentComponents::BlockQueryResult
-getNextBlockSweep(class BlockSource& source, class Vec3 curPos, float, ::AgentComponents::Direction direction);
+getNextBlockSweep(class BlockSource& source, class Vec3 curPos, float bodyRot, ::AgentComponents::Direction direction);
 
 // symbol:
 // ?getNextBlockUnfiltered@Agent@Util@@YA?AUBlockQueryResult@AgentComponents@@AEAVBlockSource@@VVec3@@MW4Direction@4@@Z

@@ -34,12 +34,12 @@ public:
     // ?executeEvent@HoeItem@@UEBAXAEAVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRenderParams@@@Z
     virtual void executeEvent(class ItemStackBase& item, std::string const& name, class RenderParams& params) const;
 
-    // vIndex: 49, symbol: ?getEnchantSlot@HoeItem@@UEBAHXZ
+    // vIndex: 50, symbol: ?getEnchantSlot@HoeItem@@UEBAHXZ
     virtual int getEnchantSlot() const;
 
     // symbol:
     // ??0HoeItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVTier@Item@@AEBVExperiments@@@Z
-    MCAPI HoeItem(std::string const& name, int id, class Item::Tier const& tier, class Experiments const&);
+    MCAPI HoeItem(std::string const& name, int id, class Item::Tier const& tier, class Experiments const& experiments);
 
     // NOLINTEND
 };

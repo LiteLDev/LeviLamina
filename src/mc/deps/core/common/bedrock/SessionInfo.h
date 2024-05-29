@@ -25,6 +25,13 @@ public:
     // symbol: ?getCrashTimestamp@SessionInfo@Bedrock@@QEBA_JXZ
     MCAPI int64 getCrashTimestamp() const;
 
+    // symbol: ?getErrorCode@SessionInfo@Bedrock@@QEBAAEBV?$optional@I@std@@XZ
+    MCAPI std::optional<uint> const& getErrorCode() const;
+
+    // symbol:
+    // ?getErrorMessage@SessionInfo@Bedrock@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    MCAPI std::string const& getErrorMessage() const;
+
     // symbol:
     // ?getSessionId@SessionInfo@Bedrock@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& getSessionId() const;

@@ -79,7 +79,7 @@ public:
     virtual void updatePosition(class Vec3 const& pos);
 
     // vIndex: 19, symbol: ?updateAndCenter@TickingArea@@UEAAXAEAVLevelStorage@@UTick@@@Z
-    virtual void updateAndCenter(class LevelStorage& levelStorage, struct Tick);
+    virtual void updateAndCenter(class LevelStorage& levelStorage, struct Tick currentLevelTick);
 
     // vIndex: 20, symbol: ?findOwner@TickingArea@@UEAAPEAVActor@@AEAE@Z
     virtual class Actor* findOwner(uchar& pendingChunks);

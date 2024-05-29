@@ -92,11 +92,11 @@ public:
     // symbol:
     // ?_updateFlowerPotEntity@FlowerPotBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVFlowerPotBlockActor@@PEBVBlock@@AEAVActor@@@Z
     MCAPI void _updateFlowerPotEntity(
-        class BlockSource&    region,
-        class BlockPos const& blockPos,
-        class FlowerPotBlockActor*,
-        class Block const*,
-        class Actor& sourceActor
+        class BlockSource&         region,
+        class BlockPos const&      blockPos,
+        class FlowerPotBlockActor* flowerPotEntity,
+        class Block const*         flowerBlock,
+        class Actor&               sourceActor
     ) const;
 
     // NOLINTEND

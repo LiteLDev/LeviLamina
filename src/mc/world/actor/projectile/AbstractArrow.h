@@ -46,31 +46,31 @@ public:
     // vIndex: 10, symbol: ??1AbstractArrow@@UEAA@XZ
     virtual ~AbstractArrow();
 
-    // vIndex: 26, symbol: ?lerpMotion@AbstractArrow@@UEAAXAEBVVec3@@@Z
+    // vIndex: 24, symbol: ?lerpMotion@AbstractArrow@@UEAAXAEBVVec3@@@Z
     virtual void lerpMotion(class Vec3 const& delta);
 
-    // vIndex: 40, symbol: ?getShadowRadius@AbstractArrow@@UEBAMXZ
+    // vIndex: 38, symbol: ?getShadowRadius@AbstractArrow@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 44, symbol: ?playerTouch@AbstractArrow@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 42, symbol: ?playerTouch@AbstractArrow@@UEAAXAEAVPlayer@@@Z
     virtual void playerTouch(class Player& player);
 
-    // vIndex: 96, symbol: ?getSourceUniqueID@AbstractArrow@@MEBA?AUActorUniqueID@@XZ
+    // vIndex: 92, symbol: ?getSourceUniqueID@AbstractArrow@@MEBA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID getSourceUniqueID() const;
 
-    // vIndex: 100, symbol: ?canChangeDimensionsUsingPortal@AbstractArrow@@UEBA_NXZ
+    // vIndex: 96, symbol: ?canChangeDimensionsUsingPortal@AbstractArrow@@UEBA_NXZ
     virtual bool canChangeDimensionsUsingPortal() const;
 
-    // vIndex: 153, symbol: ?readAdditionalSaveData@AbstractArrow@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 149, symbol: ?readAdditionalSaveData@AbstractArrow@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 154, symbol: ?addAdditionalSaveData@AbstractArrow@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 150, symbol: ?addAdditionalSaveData@AbstractArrow@@MEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 157, symbol: ?shoot@AbstractArrow@@UEAAXAEBVVec3@@MM0@Z
+    // vIndex: 153, symbol: ?shoot@AbstractArrow@@UEAAXAEBVVec3@@MM0@Z
     virtual void shoot(class Vec3 const& dir, float pow, float uncertainty, class Vec3 const& baseSpeed);
 
-    // vIndex: 158, symbol: ?_getPickupItem@Arrow@@MEBA?AVItemStack@@XZ
+    // vIndex: 154, symbol: ?_getPickupItem@Arrow@@MEBA?AVItemStack@@XZ
     virtual class ItemStack _getPickupItem() const = 0;
 
     // symbol: ??0AbstractArrow@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
@@ -91,7 +91,7 @@ public:
 
     // symbol: ?spawnPlayerProjectile@AbstractArrow@@SAPEAVActor@@AEBUActorDefinitionIdentifier@@AEAVPlayer@@VVec3@@@Z
     MCAPI static class Actor*
-    spawnPlayerProjectile(struct ActorDefinitionIdentifier const& id, class Player& player, class Vec3);
+    spawnPlayerProjectile(struct ActorDefinitionIdentifier const& id, class Player& player, class Vec3 aimDir);
 
     // NOLINTEND
 

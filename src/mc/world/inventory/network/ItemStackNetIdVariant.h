@@ -35,10 +35,10 @@ public:
     MCAPI bool isValid() const;
 
     // symbol: ??4ItemStackNetIdVariant@@QEAAAEAU0@AEBV?$TypedClientNetId@UItemStackLegacyRequestIdTag@@H$0A@@@@Z
-    MCAPI struct ItemStackNetIdVariant& operator=(ItemStackLegacyRequestId const&);
+    MCAPI struct ItemStackNetIdVariant& operator=(ItemStackLegacyRequestId const& legacyClientRequestId);
 
     // symbol: ??4ItemStackNetIdVariant@@QEAAAEAU0@AEBV?$TypedServerNetId@UItemStackNetIdTag@@H$0A@@@@Z
-    MCAPI struct ItemStackNetIdVariant& operator=(ItemStackNetId const&);
+    MCAPI struct ItemStackNetIdVariant& operator=(ItemStackNetId const& serverNetId);
 
     // symbol: ??4ItemStackNetIdVariant@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct ItemStackNetIdVariant& operator=(struct ItemStackNetIdVariant&&);

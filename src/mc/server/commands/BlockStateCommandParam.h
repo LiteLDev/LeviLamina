@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/world/level/block/Block.h"
 
+#include "ll/api/Expected.h"
+
 class BlockStateCommandParam {
 public:
     // BlockStateCommandParam inner types define
@@ -18,9 +20,9 @@ public:
     std::string mValue;      // this+0x20
     Type        mType;       // this+0x40
 
-    LLNDAPI std::optional<Block::BlockStateValueType> toStateValue() const;
+    LLNDAPI ll::Expected<Block::BlockStateValueType> toStateValue() const;
 
-    LLNDAPI static Block::BlockStatesType toStateMap(std::vector<BlockStateCommandParam> const&);
+    LLNDAPI static ll::Expected<Block::BlockStatesType> toStateMap(std::vector<BlockStateCommandParam> const&);
 
 public:
     // NOLINTBEGIN
