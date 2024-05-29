@@ -7,6 +7,8 @@
 namespace mce { class Color; }
 // clang-format on
 
+class Actor;
+
 class IDimension {
 
 public:
@@ -40,6 +42,9 @@ public:
 
     // vIndex: 9
     virtual void forEachPlayer(std::function<bool(class Player&)> callback) const = 0;
+
+    // vIndex: 10
+    virtual Actor* fetchEntity(struct ActorUniqueID actorID, bool getRemoved) const = 0;
 
     // NOLINTEND
 };
