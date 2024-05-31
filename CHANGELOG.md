@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.12.4] - 2024-05-31
+
+### Changed
+
+- Allow copy SpawnParticleEffectPacket
+- Update MaterialType.h (#1529)
+- Remove useless check in plugin manager
+- Refactoring winapis
+- Fill LogArea (#1535)
+- Fix Dimension vtable (#1538)
+
 ## [0.12.3] - 2024-05-03
 
 ### Added
@@ -524,7 +535,8 @@ For lip and tooth-hub test only.
 [#1502]: https://github.com/LiteLDev/LeviLamina/issues/1502
 [#1520]: https://github.com/LiteLDev/LeviLamina/issues/1520
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.12.3...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.12.4...HEAD
+[0.12.4]: https://github.com/LiteLDev/LeviLamina/compare/v0.12.3...v0.12.4
 [0.12.3]: https://github.com/LiteLDev/LeviLamina/compare/v0.12.2...v0.12.3
 [0.12.2]: https://github.com/LiteLDev/LeviLamina/compare/v0.12.1...v0.12.2
 [0.12.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.12.0...v0.12.1
