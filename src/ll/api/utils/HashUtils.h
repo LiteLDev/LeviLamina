@@ -42,18 +42,6 @@ constexpr void hashCombine(T const& v, size_t& seed) {
 }
 
 template <class T>
-    requires(std::is_trivially_destructible_v<T>)
-[[nodiscard]] constexpr uint64 rawHashType(T const& v) {
-    uint64           hash  = 0xcbf29ce484222325;
-    constexpr uint64 prime = 0x100000001b3;
-    meta::unroll<sizeof(T)>([&](size_t i) {
-        hash ^= reinterpret_cast<char const*>(std::addressof(v))[i];
-        hash *= prime;
-    });
-    return hash;
-}
-
-template <class T>
 [[nodiscard]] constexpr uint64 hashType(std::vector<T> const& v) {
     size_t seed = v.size();
     for (auto const& x : v) {
