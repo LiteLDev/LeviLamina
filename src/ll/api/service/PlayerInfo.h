@@ -22,6 +22,7 @@ public:
 
     LLAPI static PlayerInfo& getInstance();
 
+    LLAPI bool erase(mce::UUID);
     LLNDAPI optional_ref<PlayerInfoEntry const> fromUuid(mce::UUID) const;
     LLNDAPI optional_ref<PlayerInfoEntry const> fromXuid(std::string_view) const;
     LLNDAPI optional_ref<PlayerInfoEntry const> fromName(std::string_view) const;

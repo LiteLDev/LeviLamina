@@ -43,6 +43,9 @@ public:
         });
         listener =
             event::EventBus::getInstance().emplaceListener<event::PlayerJoinEvent>([this](event::PlayerJoinEvent& ev) {
+                if (ev.self().isSimulated()) {
+                    return;
+                }
                 std::lock_guard lock(mutex);
 
                 auto uuid = ev.self().getUuid();
@@ -72,6 +75,17 @@ PlayerInfo::PlayerInfo() : impl(std::make_unique<Impl>()) {}
 PlayerInfo& PlayerInfo::getInstance() {
     static PlayerInfo instance;
     return instance;
+}
+bool PlayerInfo::erase(mce::UUID key) {
+    std::lock_guard lock(impl->mutex);
+    if (auto i = impl->uuids.find(key); i != impl->uuids.end()) {
+        impl->xuids.erase(i->second->xuid);
+        impl->names.erase(i->second->name);
+        impl->storage.del(key.asString());
+        impl->uuids.erase(i);
+        return true;
+    }
+    return false;
 }
 optional_ref<PlayerInfo::PlayerInfoEntry const> PlayerInfo::fromUuid(mce::UUID key) const {
     std::lock_guard lock(impl->mutex);
