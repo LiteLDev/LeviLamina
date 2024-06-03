@@ -20,6 +20,6 @@ namespace std {
 template <typename A, typename T>
 class hash<AutomaticID<A, T>> {
 public:
-    size_t operator()(const AutomaticID<A, T>& dimId) const { return std::hash<T>()(dimId.id); }
+    size_t operator()(const AutomaticID<A, T>& dimId) const { return static_cast<size_t>(dimId.id); }
 };
 } // namespace std
