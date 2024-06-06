@@ -146,4 +146,9 @@ LLNDAPI std::pair<std::tm, int> getLocalTime() {
     return {time, sysTime.wMilliseconds};
 }
 
+LLNDAPI bool isSupportColorOutput() {
+    DWORD temp;
+    return GetConsoleMode((HANDLE)GetStdHandle(STD_OUTPUT_HANDLE), &temp) != 0;
+}
+
 } // namespace ll::inline utils::win_utils

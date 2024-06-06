@@ -13,9 +13,11 @@
 #include <system_error>
 #include <utility>
 
+#include "ctre/ctre-unicode.hpp"
 #include "fmt/chrono.h" // IWYU pragma: keep
 #include "fmt/color.h"
 #include "fmt/core.h"
+
 
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/StringUtils.h"
@@ -51,6 +53,17 @@ void OutputStream::print(std::string_view s) const noexcept {
             if (!logger->ignoreConfig && !ll::globalConfig.logger.colorLog) {
                 str = removeEscapeCode(str);
             }
+            if (!win_utils::isSupportColorOutput()) {
+                std::string res;
+                auto        i     = ctre::iterator<"\x1B(?:[@-Z\\-_]|\\[[0-?]*[ -/]*[@-~])">(str);
+                auto        begin = i.orig_begin;
+                for (; i.current_match; ++i) {
+                    if (begin != i.current_match.begin()) res += std::string_view{begin, i.current_match.begin()};
+                    begin = i.current;
+                }
+                if (begin != str.end()) res += std::string_view{begin, str.end()};
+                str = res;
+            }
             fmt::print("{}\n", str);
         }
         if (logger->ignoreConfig) return;
@@ -79,14 +92,22 @@ void OutputStream::print(std::string_view s) const noexcept {
         }
     } catch (...) {
         try {
-            fmt::print(
-                "\x1b[31mERROR IN LOGGER API:\n{}\x1b[91m\n{}\x1b[0m\n",
-                error_utils::makeExceptionString(std::current_exception()),
-                tou8str(s)
-            );
+            if (win_utils::isSupportColorOutput())
+                fmt::print(
+                    "\x1b[31mERROR IN LOGGER API:\n{}\x1b[91m\n{}\x1b[0m\n",
+                    error_utils::makeExceptionString(std::current_exception()),
+                    tou8str(s)
+                );
+            else
+                fmt::print(
+                    "ERROR IN LOGGER API:\n{}\n{}",
+                    error_utils::makeExceptionString(std::current_exception()),
+                    tou8str(s)
+                );
         } catch (...) {
             try {
-                fmt::print("\x1b[31mUNKNOWN ERROR IN LOGGER API\x1b[0m\n");
+                if (win_utils::isSupportColorOutput()) fmt::print("\x1b[31mUNKNOWN ERROR IN LOGGER API\x1b[0m\n");
+                else fmt::print("UNKNOWN ERROR IN LOGGER API\n");
             } catch (...) {}
         }
     }
@@ -132,8 +153,7 @@ Logger::Logger(std::string_view title, bool ignoreConfig)
           fmt::fg(fmt::color::light_sea_green),
           {},
           {},
-      }
-  }),
+      }}),
   warn(OutputStream{
       *this,
       "WARN",
@@ -143,8 +163,7 @@ Logger::Logger(std::string_view title, bool ignoreConfig)
           fmt::fg(fmt::terminal_color::bright_yellow),
           fmt::fg(fmt::terminal_color::bright_yellow),
           fmt::fg(fmt::terminal_color::bright_yellow) | fmt::emphasis::bold,
-      }
-  }),
+      }}),
   error(OutputStream{
       *this,
       "ERROR",
@@ -154,8 +173,7 @@ Logger::Logger(std::string_view title, bool ignoreConfig)
           fmt::fg(fmt::terminal_color::bright_red),
           fmt::fg(fmt::terminal_color::bright_red),
           fmt::fg(fmt::terminal_color::bright_red) | fmt::emphasis::bold,
-      }
-  }),
+      }}),
   fatal(OutputStream{
       *this,
       "FATAL",
@@ -165,8 +183,7 @@ Logger::Logger(std::string_view title, bool ignoreConfig)
           fmt::fg(fmt::color::red),
           fmt::fg(fmt::color::red),
           fmt::fg(fmt::color::red) | fmt::emphasis::bold,
-      }
-  }) {}
+      }}) {}
 
 void Logger::resetFile() {
     if (ofs) {

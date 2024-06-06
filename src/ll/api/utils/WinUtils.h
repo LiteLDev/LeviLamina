@@ -33,6 +33,8 @@ LLNDAPI std::string getModuleFileName(void* handle, void* process = nullptr);
 
 LLNDAPI std::pair<std::tm, int> getLocalTime(); // tm & ms
 
+LLNDAPI bool isSupportColorOutput();
+
 [[nodiscard]] inline std::string getCallerModuleFileName(void* addr = _ReturnAddress()) {
     return getModuleFileName(getModuleHandle(addr));
 }
