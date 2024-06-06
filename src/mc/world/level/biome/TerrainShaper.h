@@ -15,6 +15,11 @@ public:
     // TerrainShaper inner types define
     struct Point {
     public:
+        float mContinents;
+        float mErosion;
+        float mRidges;
+        float mWeirdness;
+    public:
         // prevent constructor by default
         Point& operator=(Point const&);
         Point(Point const&);
