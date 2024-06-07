@@ -130,7 +130,7 @@ std::string getModuleFileName(void* handle, void* process) {
 #endif
 }
 
-LLNDAPI std::pair<std::tm, int> getLocalTime() {
+std::pair<std::tm, int> getLocalTime() {
     SYSTEMTIME sysTime;
     GetLocalTime(&sysTime);
     std::tm time{
@@ -146,4 +146,11 @@ LLNDAPI std::pair<std::tm, int> getLocalTime() {
     return {time, sysTime.wMilliseconds};
 }
 
+bool isStdoutSupportAnsi() {
+    DWORD mode;
+    if (GetConsoleMode(GetStdHandle(STD_OUTPUT_HANDLE), &mode)) {
+        return mode | ENABLE_VIRTUAL_TERMINAL_PROCESSING;
+    }
+    return false;
+}
 } // namespace ll::inline utils::win_utils

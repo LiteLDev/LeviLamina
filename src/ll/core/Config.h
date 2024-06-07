@@ -10,6 +10,7 @@
 #include "ll/core/tweak/ForceEnableCheatCommands.h"
 #include "ll/core/tweak/SimpleServerLogger.h"
 #include "ll/core/tweak/Statistics.h"
+#include "ll/api/utils/WinUtils.h"
 
 #include "mc/server/commands/CommandPermissionLevel.h"
 
@@ -21,7 +22,7 @@ struct LeviConfig {
 
     std::string language = "system";
     struct {
-        bool colorLog = true;
+        bool colorLog = win_utils::isStdoutSupportAnsi();
         int  logLevel = 4;
     } logger{};
 
