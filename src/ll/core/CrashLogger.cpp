@@ -14,10 +14,8 @@
 
 #include <windows.h>
 
-#if _HAS_CXX23
 #include "DbgHelp.h"
 #pragma comment(lib, "DbgHelp.lib")
-#endif
 
 namespace ll {
 using namespace i18n_literals;
@@ -60,8 +58,6 @@ void CrashLogger::initCrashLogger() {
     crashLogger.info("CrashLogger enabled successfully"_tr());
     return;
 }
-
-#if _HAS_CXX23
 
 static struct CrashInfo {
     HANDLE                                         process{};
@@ -322,5 +318,4 @@ CrashLoggerNew::CrashLoggerNew() {
 }
 
 CrashLoggerNew::~CrashLoggerNew() { SetUnhandledExceptionFilter((LPTOP_LEVEL_EXCEPTION_FILTER)previous); }
-#endif
 } // namespace ll

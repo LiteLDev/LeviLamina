@@ -1,5 +1,5 @@
 #include "ll/api/utils/StacktraceUtils.h"
-#if _HAS_CXX23
+
 #include <mutex>
 
 #include "ll/api/io/FileUtils.h"
@@ -272,5 +272,3 @@ std::string toString(_CONTEXT const& c) {
          );
 }
 } // namespace ll::inline utils::stacktrace_utils
-
-#endif

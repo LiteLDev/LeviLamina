@@ -8,9 +8,7 @@
 #include <string_view>
 #include <thread>
 
-#if _HAS_CXX23
 #include <spanstream>
-#endif
 
 #include "ll/api/Logger.h"
 #include "ll/api/utils/ErrorUtils.h"
@@ -38,11 +36,9 @@ static std::optional<time_t> tryParseTime(std::string_view expression, std::stri
     std::tm tm{};
     auto    time_now = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
     localtime_s(&tm, &time_now);
-#if _HAS_CXX23
     if (std::ispanstream{expression} >> std::get_time(&tm, format.data())) {
         return std::mktime(&tm);
     }
-#endif
     return std::nullopt;
 }
 std::chrono::system_clock::time_point parseTime(std::string_view expression) {

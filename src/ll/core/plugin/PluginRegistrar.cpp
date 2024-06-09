@@ -125,7 +125,6 @@ void PluginRegistrar::loadAllPlugins() {
             for (auto& dependency : *manifest.dependencies) {
                 if (!manifests.contains(dependency.name) || !checkVersion(manifests.at(dependency.name), dependency)) {
                     error = true;
-#if _HAS_CXX23
                     logger.error("Missing dependency {0}"_tr(
                         dependency.version
                             .transform([&](auto& ver) {
@@ -133,7 +132,6 @@ void PluginRegistrar::loadAllPlugins() {
                             })
                             .value_or(dependency.name)
                     ));
-#endif
                 }
             }
             if (error) {
@@ -162,14 +160,12 @@ void PluginRegistrar::loadAllPlugins() {
         for (auto& conflict : *manifest.conflicts) {
             if (manifests.contains(conflict.name) && checkVersion(manifests.at(conflict.name), conflict)) {
                 conflicts.emplace_back(name);
-#if _HAS_CXX23
                 logger.error("{0} conflicts with {1}"_tr(
                     name,
                     conflict.version
                         .transform([&](auto& ver) { return fmt::format("{} v{}", conflict.name, ver.to_string()); })
                         .value_or(conflict.name)
                 ));
-#endif
             }
         }
     }
@@ -333,8 +329,32 @@ Expected<> PluginRegistrar::loadPlugin(std::string_view name) noexcept {
         }
     }
     auto& manifest = *res;
-    // TODO: check deps,...,......
-    return PluginManagerRegistry::getInstance().loadPlugin(std::move(manifest)).transform([&, this]() {
+    auto& reg      = PluginManagerRegistry::getInstance();
+    if (manifest.dependencies) {
+        for (auto& dependency : *manifest.dependencies) {
+            if (!reg.hasPlugin(dependency.name)
+                || !checkVersion(reg.getPlugin(dependency.name)->getManifest(), dependency)) {
+                return makeStringError("Missing dependency {0}"_tr(
+                    dependency.version
+                        .transform([&](auto& ver) { return fmt::format("{} v{}", dependency.name, ver.to_string()); })
+                        .value_or(dependency.name)
+                ));
+            }
+        }
+    }
+    if (manifest.conflicts) {
+        for (auto& conflict : *manifest.conflicts) {
+            if (reg.hasPlugin(conflict.name) && checkVersion(reg.getPlugin(conflict.name)->getManifest(), conflict)) {
+                return makeStringError("{0} conflicts with {1}"_tr(
+                    name,
+                    conflict.version
+                        .transform([&](auto& ver) { return fmt::format("{} v{}", conflict.name, ver.to_string()); })
+                        .value_or(conflict.name)
+                ));
+            }
+        }
+    }
+    return reg.loadPlugin(std::move(manifest)).transform([&, this]() {
         impl->deps.emplace(std::string{name});
         {
             using namespace ll::command;

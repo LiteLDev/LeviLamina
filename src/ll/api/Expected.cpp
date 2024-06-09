@@ -10,7 +10,7 @@
 #endif
 
 namespace ll {
-#if defined(LL_DEBUG) && _HAS_CXX23
+#if defined(LL_DEBUG)
 struct ErrorInfoBase::Impl {
     std::stacktrace stacktrace = std::stacktrace::current(1);
 };

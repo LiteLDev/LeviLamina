@@ -82,7 +82,6 @@ void* getModuleHandle(void* addr) {
 }
 
 std::optional<std::filesystem::path> getModulePath(void* handle, void* process) {
-#if _HAS_CXX23
     return adaptFixedSizeToAllocatedResult(
                [module = (HMODULE)handle,
                 process](wchar_t* value, size_t valueLength, size_t& valueLengthNeededWithNul) -> bool {
@@ -115,19 +114,12 @@ std::optional<std::filesystem::path> getModulePath(void* handle, void* process) 
                    return true;
                }
     ).transform([](auto&& path) { return std::filesystem::path(path); });
-#else
-    return {};
-#endif
 }
 
 std::string getModuleFileName(void* handle, void* process) {
-#if _HAS_CXX23
     return getModulePath(handle, process)
         .transform([](auto&& path) { return u8str2str(path.filename().u8string()); })
         .value_or("unknown module");
-#else
-    return {};
-#endif
 }
 
 std::pair<std::tm, int> getLocalTime() {

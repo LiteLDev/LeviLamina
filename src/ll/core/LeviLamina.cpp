@@ -46,7 +46,7 @@
 #include <winbase.h>
 #include <winnt.h>
 
-#if defined(LL_DEBUG) && _HAS_CXX23
+#if defined(LL_DEBUG)
 #include "ll/api/utils/StacktraceUtils.h"
 #endif
 
@@ -219,9 +219,7 @@ void leviLaminaMain() {
     }
     if (globalConfig.modules.crashLogger.enabled) {
         if (globalConfig.modules.crashLogger.useBuiltin) {
-#if _HAS_CXX23
             static CrashLoggerNew crashLogger{};
-#endif
         } else {
             CrashLogger::initCrashLogger();
         }
@@ -246,7 +244,7 @@ void leviLaminaMain() {
 
 LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::High, "main", int, int argc, char* argv[]) {
 
-#if defined(LL_DEBUG) && _HAS_CXX23
+#if defined(LL_DEBUG)
     static stacktrace_utils::SymbolLoader symbols{};
 #endif
     setServerStatus(ServerStatus::Default);

@@ -10,10 +10,8 @@
 
 #include "windows.h"
 
-#if _HAS_CXX23
 #include "DbgHelp.h"
 #pragma comment(lib, "DbgHelp.lib")
-#endif
 
 #ifdef LL_DEBUG
 #include "ll/api/utils/StacktraceUtils.h"
@@ -125,8 +123,6 @@ std::exception_ptr createExceptionPtr(_EXCEPTION_RECORD const& rec) noexcept {
     return res;
 }
 
-#if _HAS_CXX23
-
 std::stacktrace stacktraceFromContext(optional_ref<_CONTEXT const> context, size_t skip, size_t maxDepth) {
     if (!context) {
         return {};
@@ -175,8 +171,6 @@ std::stacktrace stacktraceFromContext(optional_ref<_CONTEXT const> context, size
     }
     return *reinterpret_cast<std::stacktrace*>(&realStacktrace);
 }
-
-#endif
 
 template <class T>
 static std::exception_ptr getNested(T const& e) {
@@ -285,7 +279,7 @@ std::string makeExceptionString(std::exception_ptr ePtr) noexcept {
 
 void printCurrentException(ll::OutputStream& stream, std::exception_ptr const& e) noexcept {
     try {
-#if defined(LL_DEBUG) && _HAS_CXX23
+#if defined(LL_DEBUG)
         std::string res;
         auto        stacktrace = stacktraceFromCurrExc();
         if (stacktrace.empty()) {

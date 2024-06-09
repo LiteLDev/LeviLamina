@@ -129,12 +129,10 @@ Expected<> NativePluginManager::load(Manifest manifest) {
         return error;
     }
     if (!GetProcAddress(lib, "ll_memory_operator_overrided")) {
-        // TODO: change to error before release
         using namespace i18n_literals;
-        logger.error(
+        return makeStringError(
             "The plugin is not using the unified memory allocation operator, will not be loaded in next version."_tr()
         );
-        // return false;
     }
     currentLoadingPlugin->setHandle(lib);
     currentLoadingPlugin->onLoad(reinterpret_cast<Plugin::callback_t*>(GetProcAddress(lib, "ll_plugin_load")));
