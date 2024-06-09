@@ -52,7 +52,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: levilamina-${{ matrix.mode }}${{ matrix.use_mimalloc == true && '-mimalloc' || '' }}-windows-x64-${{ github.sha }}
+          name: levilamina-${{ matrix.mode }}${{ matrix.use_mimalloc == true && '' || '-nonmimalloc' }}-windows-x64-${{ github.sha }}
           path: |
             build/packages/l/levilamina/windows/x64/${{ matrix.mode }}/bin/
 
