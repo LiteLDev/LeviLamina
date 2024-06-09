@@ -14,7 +14,7 @@ class UpdatePlayerGameTypePacket : public ::Packet {
 public:
     GameType      mPlayerGameType; // this+0x30
     ActorUniqueID mTargetPlayer;   // this+0x38
-    int           mTick;           // Added in version 1.20.80, the order is not fully confirmed yet.
+    int           mTick;
 
     // prevent constructor by default
     UpdatePlayerGameTypePacket& operator=(UpdatePlayerGameTypePacket const&);

@@ -43,7 +43,7 @@ public:
     uint64                       mServerBlockTypeRegistryChecksum;
     bool                         mServerEnabledClientSideGeneration;
     bool                         mBlockNetworkIdsAreHashes;
-    bool                         mHardcore; // Added at 1.20.80, order not entirely certain at this time
+    bool                         mHardcore;
     std::vector<std::pair<std::string, CompoundTag>> mBlockProperties;
 
     // prevent constructor by default
