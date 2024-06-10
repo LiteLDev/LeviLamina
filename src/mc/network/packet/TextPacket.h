@@ -15,7 +15,7 @@ public:
     TextPacketType           mType;       // this+0x30
     std::string              mAuthor;     // this+0x38
     std::string              mMessage;    // this+0x58
-    std::vector<std::string> params;      // this+0x78
+    std::vector<std::string> mParams;     // this+0x78
     bool                     mLocalize;   // this+0x90
     std::string              mXuid;       // this+0x98
     std::string              mPlatformId; // this+0xB8

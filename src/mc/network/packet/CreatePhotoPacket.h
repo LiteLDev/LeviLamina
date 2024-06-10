@@ -10,10 +10,9 @@
 
 class CreatePhotoPacket : public ::Packet {
 public:
-    std::string mPhotoItemName; // this+0x30
-
-    ActorUniqueID mId;        // this+0x50
-    std::string   mPhotoName; // this+0x58
+    std::string   mPhotoItemName; // this+0x30
+    ActorUniqueID mId;            // this+0x50
+    std::string   mPhotoName;     // this+0x58
 
     // prevent constructor by default
     CreatePhotoPacket& operator=(CreatePhotoPacket const&);

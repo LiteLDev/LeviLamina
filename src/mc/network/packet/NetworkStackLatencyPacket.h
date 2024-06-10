@@ -9,8 +9,8 @@
 
 class NetworkStackLatencyPacket : public ::Packet {
 public:
-    std::chrono::steady_clock::time_point createTime; // this+0x30
-    bool                                  fromServer; // this+0x38
+    std::chrono::steady_clock::time_point mCreateTime; // this+0x30
+    bool                                  mFromServer; // this+0x38
 
     // prevent constructor by default
     NetworkStackLatencyPacket& operator=(NetworkStackLatencyPacket const&);

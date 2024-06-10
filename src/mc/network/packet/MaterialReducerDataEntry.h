@@ -6,8 +6,8 @@
 
 struct MaterialReducerDataEntry {
 public:
-    int                                     fromItemKey;        // this+0x0
-    std::vector<MaterialReducerEntryOutput> toItemIdsAndCounts; // this+0x8
+    int                                     mFromItemKey;        // this+0x0
+    std::vector<MaterialReducerEntryOutput> mToItemIdsAndCounts; // this+0x8
 
     // prevent constructor by default
     MaterialReducerDataEntry& operator=(MaterialReducerDataEntry const&);

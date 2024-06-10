@@ -13,8 +13,8 @@
 
 class SetHudPacket : public ::Packet {
 public:
-    std::vector<HudElement> elements;
-    HudVisibility           visibility;
+    std::vector<HudElement> mElements;
+    HudVisibility           mVisibility;
 
     // prevent constructor by default
     SetHudPacket& operator=(SetHudPacket const&);

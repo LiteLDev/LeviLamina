@@ -41,6 +41,7 @@ public:
     public:
         HeightMapDataType                         mHeightMapType;
         std::array<std::array<schar, 16UL>, 16UL> mSubchunkHeightMap;
+
         // prevent constructor by default
         HeightmapData& operator=(HeightmapData const&);
         HeightmapData(HeightmapData const&);
@@ -76,6 +77,7 @@ public:
         SubChunkRequestResult   mResult;
         HeightmapData           mHeightMapData;
         uint64                  mBlobId;
+
         // prevent constructor by default
         SubChunkPacketData& operator=(SubChunkPacketData const&);
         SubChunkPacketData(SubChunkPacketData const&);
