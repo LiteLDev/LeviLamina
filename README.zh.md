@@ -26,20 +26,7 @@ LeviLamina（以下简称“本软件”）由LiteLDev（以下简称“开发�
 
 ## 安装
 
-该项目使用 [lip](https://github.com/lippkg/lip)。如果您尚未在本地安装，请前往查看。
-
-首先，创建一个新的目录用于您的Minecraft服务器，并进入该目录：
-
-```sh
-mkdir myserver
-cd myserver
-```
-
-接下来，使用lip安装捆绑了Minecraft Bedrock Server的LeviLamina：
-
-```sh
-lip install github.com/LiteLDev/LeviLamina
-```
+请参考 [快速入门](https://levilamina.liteldev.com/zh/quickstart/)
 
 ## 使用方法
 

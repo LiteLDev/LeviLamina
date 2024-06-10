@@ -30,22 +30,7 @@ If you have any questions or comments about this disclaimer, please contact the 
 
 ## Install
 
-This project uses [lip](https://github.com/lippkg/lip). Go check them out if you don't have them locally installed.
-
-First, create a new directory for your Minecraft server and enter it:
-
-```sh
-mkdir myserver
-cd myserver
-```
-
-Then, install LeviLamina bundled with Minecraft Bedrock Server using lip:
-
-```sh
-lip install github.com/LiteLDev/LeviLamina
-```
-
-For more information, please refer to [the documentation](https://levilamina.liteldev.com).
+Please refer to [Quickstart](https://levilamina.liteldev.com/quickstart/)
 
 ## Usage
 

@@ -2,7 +2,7 @@
 
 ## Before You Begin
 
-We strongly recommend using [lip](https://github.com/lippkg/lip) for plugin installation. If you have not installed it locally yet, please go ahead and check it out.
+We strongly recommend using [lip](https://docs.lippkg.com/install/) for plugin installation. If you have not installed it locally yet, please go ahead and check it out.
 
 The following content is for a quick start with using lip.
 

@@ -2,7 +2,7 @@
 
 ## 开始之前
 
-我们强烈推荐你使用 [lip](https://github.com/lippkg/lip) 来进行插件安装。如果您尚未在本地安装，请前往查看。
+我们强烈推荐你使用 [lip](https://docs.lippkg.com/zh/install/) 来进行插件安装。如果您尚未在本地安装，请前往查看。
 
 以下内容针对使用 lip 的情况下进行快速入门。
 
@@ -11,19 +11,19 @@
 
 ## 配置代理或镜像
 
-如果你有代理可用，使用以下命令配置代理（支持socks5，http，https）：
+如果你有**代理**可用，使用以下命令配置代理（支持socks5，http，https）：
 
 ```sh
 lip config ProxyURL <proxy-url>
 ```
 
-例如你的代理地址是 `http://127.0.0.1:8080`，你可以使用以下命令配置代理：
+例如你的**代理**地址是 `http://127.0.0.1:8080`，你可以使用以下命令配置代理：
 
 ```sh
 lip config ProxyURL http://127.0.0.1:8080
 ```
 
-如果你本地没有代理可用，你可以使用以下命令配置镜像源：
+如果你本地没有代理可用，你可以使用以下命令配置**镜像源**：
 
 ```sh
 lip config GoModuleProxyURL <go-module-proxy-url>
