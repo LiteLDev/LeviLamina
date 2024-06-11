@@ -1,3 +1,11 @@
+# 公告
+
+由于Mojang计划在未来发布的二进制文件中移除符号文件，这个仓库将被归档。
+
+尽管[社区请求提供完整的PDB文件](https://feedback.minecraft.net/hc/en-us/community/posts/23093086772109-Request-for-Complete-PDB-for-Minecraft-Bedrock-Dedicated-Server)，Mojang拒绝了这个请求，并且现在打算在未来的发布中移除符号文件。
+
+Mojang这种对社区的态度让我们感到非常失望。我们呼吁社区采取行动，让我们的声音被听到。通过在社交媒体上表达我们的关切并向Mojang施加压力，我们希望他们能够重新考虑这个决定。社区的团结和共同努力或许能促使Mojang改变他们的做法。
+
 # LeviLamina
 
 ![LeviLamina](https://socialify.git.ci/LiteLDev/LeviLamina/image?description=1&font=Raleway&forks=1&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FLiteLDev%2FLeviLamina%2FHEAD%2Fdocs%2Fimg%2Flogo.svg&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Auto)
