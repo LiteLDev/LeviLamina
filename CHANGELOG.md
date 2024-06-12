@@ -5,7 +5,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.0.0] - 2024-06-12
+
+<span style="font-size:5em;">Farewell, BDS modders!</span>
 
 ## [0.12.4] - 2024-05-31
 
@@ -535,7 +537,7 @@ For lip and tooth-hub test only.
 [#1502]: https://github.com/LiteLDev/LeviLamina/issues/1502
 [#1520]: https://github.com/LiteLDev/LeviLamina/issues/1520
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.12.4...HEAD
+[1.0.0]: https://github.com/LiteLDev/LeviLamina/compare/v0.12.4...v1.0.0
 [0.12.4]: https://github.com/LiteLDev/LeviLamina/compare/v0.12.3...v0.12.4
 [0.12.3]: https://github.com/LiteLDev/LeviLamina/compare/v0.12.2...v0.12.3
 [0.12.2]: https://github.com/LiteLDev/LeviLamina/compare/v0.12.1...v0.12.2
