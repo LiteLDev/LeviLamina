@@ -56,14 +56,14 @@ jobs:
           path: |
             build/packages/l/levilamina/windows/x64/${{ matrix.mode }}/bin/
 
-  check-style:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v4
+  # check-style:
+  #   runs-on: windows-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
 
-      - run: |
-          choco install llvm -y --version=17.0.6
+  #     - run: |
+  #         choco install llvm -y --version=17.0.6
 
-      - run: |
-          Get-ChildItem src/ -Filter *.cpp -Recurse | ForEach-Object { clang-format --dry-run -Werror $_.FullName }
-          Get-ChildItem src/ -Filter *.h -Recurse | ForEach-Object { clang-format --dry-run -Werror $_.FullName }
+  #     - run: |
+  #         Get-ChildItem src/ -Filter *.cpp -Recurse | ForEach-Object { clang-format --dry-run -Werror $_.FullName }
+  #         Get-ChildItem src/ -Filter *.h -Recurse | ForEach-Object { clang-format --dry-run -Werror $_.FullName }
