@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.0] - 2024-06-12
 
-<span style="font-size:5em;">Farewell, BDS modders!</span>
+### Farewell, BDS modders!
 
 ## [0.12.4] - 2024-05-31
 
