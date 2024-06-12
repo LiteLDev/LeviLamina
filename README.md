@@ -1,4 +1,4 @@
-<span style="font-size:5em;">Farewell, BDS modders!</span>
+# Farewell, Bedrock modders!
 
 This repository will be archived because Mojang plans to remove the symbols file from their future released binaries.
 
