@@ -2,6 +2,15 @@
 
 ![LeviLamina](https://socialify.git.ci/LiteLDev/LeviLamina/image?description=1&font=Raleway&forks=1&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FLiteLDev%2FLeviLamina%2FHEAD%2Fdocs%2Fimg%2Flogo.svg&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Auto)
 
+[![Discord](https://img.shields.io/discord/849252980430864384?style=for-the-badge&logo=discord)
+](https://discord.gg/v5R5P4vRZk)
+[![Telegram](https://img.shields.io/badge/Telegram-blue?style=for-the-badge&logo=telegram)
+](https://t.me/LiteLoader)  
+[![656669024](https://img.shields.io/badge/656669024-red?style=for-the-badge&logo=tencent%20qq)
+](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=ndxRXO1HARA8ing7OunMClOz3cQTogL0&authKey=D7QTcqnzhBzuh3zc%2F70FjgklsVvkCImTjSRqHMwYGCLwIFpxzp%2FflC97Y7AUG%2Fpy&noverify=0&group_code=656669024) 
+[![850517473](https://img.shields.io/badge/850517473-red?style=for-the-badge&logo=tencent%20qq)](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=YFHRYvpO6mjqE5QeZxcMIlahGzWR3JLA&authKey=M8p8hkdctNSyXJo7Ux%2FzdNu4VL2jLiqMGakM3eHlA4ZLvjdwtL%2F1SIKE51s%2FKcp6&noverify=0&group_code=850517473) 
+[![1evilamina](https://img.shields.io/badge/1evilamina-red?style=for-the-badge&logo=tencent%20qq)](https://pd.qq.com/s/a13gu04rv)  
+
 轻量级、模块化和多功能的Minecraft Bedrock Server BDS插件加载器，曾被称为LiteLoaderBDS
 
 LeviLamina是一个非官方的插件加载器，旨在为Minecraft Bedrock Server BDS提供必不可少的API支持。它拥有全面的API，一系列的实用接口，一个强大的事件系统，以及对基本接口的全面支持。LeviLamina提供了一个广泛的API，一个强大的事件系统，以及丰富的封装开发基础设施接口，为增强Bedrock Edition BDS的附加游戏功能和功能提供了坚实的基础。通过利用插件，扩展BDS功能的过程变得轻而易举，具有用户友好的开发过程和灵活的方法。
