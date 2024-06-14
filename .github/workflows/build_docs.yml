@@ -72,7 +72,7 @@ jobs:
           path: site/
 
   deploy:
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
     needs:
       - merge
     permissions:
