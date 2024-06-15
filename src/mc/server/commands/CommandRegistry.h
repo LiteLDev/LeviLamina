@@ -254,14 +254,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??0Overload@CommandRegistry@@QEAA@$$QEAU01@@Z
-        MCAPI Overload(struct CommandRegistry::Overload&&);
-
         // symbol: ??4LexicalToken@CommandRegistry@@QEAAAEAU01@AEBUToken@CommandLexer@@@Z
         MCAPI struct CommandRegistry::LexicalToken& operator=(struct CommandLexer::Token const&);
-
-        // symbol: ??1Overload@CommandRegistry@@QEAA@XZ
-        MCAPI ~Overload();
 
         // NOLINTEND
     };
