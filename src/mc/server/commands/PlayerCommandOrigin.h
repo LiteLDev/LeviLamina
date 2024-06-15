@@ -11,7 +11,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -92,10 +91,6 @@ public:
 
     // symbol: ??0PlayerCommandOrigin@@QEAA@AEAVPlayer@@@Z
     MCAPI explicit PlayerCommandOrigin(class Player& origin);
-
-    // symbol:
-    // ?load@PlayerCommandOrigin@@SA?AV?$unique_ptr@VPlayerCommandOrigin@@U?$default_delete@VPlayerCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVLevel@@@Z
-    MCAPI static std::unique_ptr<class PlayerCommandOrigin> load(class CompoundTag const& tag, class Level& level);
 
     // NOLINTEND
 };

@@ -73,15 +73,37 @@ public:
         // symbol: ??0Text@SignBlockActor@@QEAA@XZ
         MCAPI Text();
 
+        // symbol: ?getColor@Text@SignBlockActor@@QEBAAEBVColor@mce@@XZ
+        MCAPI class mce::Color const& getColor() const;
+
         // symbol:
         // ?getMessage@Text@SignBlockActor@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
         MCAPI std::string const& getMessage() const;
+
+        // symbol: ?getTextObject@Text@SignBlockActor@@QEBAAEBVTextObjectRoot@@XZ
+        MCAPI class TextObjectRoot const& getTextObject() const;
+
+        // symbol: ?isGlowing@Text@SignBlockActor@@QEBA?B_NXZ
+        MCAPI bool const isGlowing() const;
 
         // symbol: ?load@Text@SignBlockActor@@QEAAXAEBVCompoundTag@@W4LoadMode@12@@Z
         MCAPI void load(class CompoundTag const& tag, ::SignBlockActor::Text::LoadMode);
 
         // symbol: ?save@Text@SignBlockActor@@QEBA_NAEAVCompoundTag@@@Z
         MCAPI bool save(class CompoundTag& tag) const;
+
+        // symbol: ?setColor@Text@SignBlockActor@@QEAAXAEBVColor@mce@@@Z
+        MCAPI void setColor(class mce::Color const& color);
+
+        // symbol:
+        // ?setEditedBy@Text@SignBlockActor@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+        MCAPI void setEditedBy(std::string const&);
+
+        // symbol: ?setGlowing@Text@SignBlockActor@@QEAAX_N@Z
+        MCAPI void setGlowing(bool);
+
+        // symbol: ?setHideGlowOutline@Text@SignBlockActor@@QEAAX_N@Z
+        MCAPI void setHideGlowOutline(bool);
 
         // symbol: ?setMessage@Text@SignBlockActor@@QEAAXVTextObjectRoot@@@Z
         MCAPI void setMessage(class TextObjectRoot message);
@@ -105,6 +127,9 @@ public:
 
         // symbol: ?_parseOtherAttributes@Text@SignBlockActor@@AEAAXAEBVCompoundTag@@@Z
         MCAPI void _parseOtherAttributes(class CompoundTag const& tag);
+
+        // symbol: ?_parseText@Text@SignBlockActor@@AEAAXAEBVCompoundTag@@@Z
+        MCAPI void _parseText(class CompoundTag const& tag);
 
         // NOLINTEND
     };

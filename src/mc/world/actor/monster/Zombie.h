@@ -10,7 +10,6 @@
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
-#include "mc/enums/ArmorTextureType.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/InputMode.h"
 #include "mc/enums/MaterialType.h"
@@ -47,13 +46,13 @@ public:
     // vIndex: 10, symbol: ??1Zombie@@UEAA@XZ
     virtual ~Zombie();
 
-    // vIndex: 103, symbol: ?canPickupItem@Zombie@@UEBA_NAEBVItemStack@@@Z
+    // vIndex: 101, symbol: ?canPickupItem@Zombie@@UEBA_NAEBVItemStack@@@Z
     virtual bool canPickupItem(class ItemStack const& item) const;
 
-    // vIndex: 162, symbol: ?checkSpawnRules@Zombie@@UEAA_N_N@Z
+    // vIndex: 160, symbol: ?checkSpawnRules@Zombie@@UEAA_N_N@Z
     virtual bool checkSpawnRules(bool fromSpawner);
 
-    // vIndex: 170, symbol: ?getArmorValue@Zombie@@MEBAHXZ
+    // vIndex: 168, symbol: ?getArmorValue@Zombie@@MEBAHXZ
     virtual int getArmorValue() const;
 
     // symbol: ??0Zombie@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

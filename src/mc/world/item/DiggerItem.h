@@ -54,12 +54,8 @@ public:
     // vIndex: 51, symbol: ?getEnchantValue@DiggerItem@@UEBAHXZ
     virtual int getEnchantValue() const;
 
-    // vIndex: 76, symbol: ?getDestroySpeed@DiggerItem@@UEBAMAEBVItemStackBase@@AEBVBlock@@@Z
+    // vIndex: 77, symbol: ?getDestroySpeed@DiggerItem@@UEBAMAEBVItemStackBase@@AEBVBlock@@@Z
     virtual float getDestroySpeed(class ItemStackBase const& item, class Block const& block) const;
-
-    // vIndex: 80, symbol: ?mineBlock@DiggerItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
-    virtual bool
-    mineBlock(class ItemStack& itemInstance, class Block const& block, int x, int y, int z, class Actor* owner) const;
 
     // symbol: ?setBlocks@DiggerItem@@QEAAXAEBV?$vector@PEBVBlock@@V?$allocator@PEBVBlock@@@std@@@std@@@Z
     MCAPI void setBlocks(std::vector<class Block const*> const& blocks);
@@ -69,10 +65,10 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol:
-    // ??0DiggerItem@@IEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHAEBVTier@Item@@AEBV?$vector@PEBVBlock@@V?$allocator@PEBVBlock@@@std@@@2@@Z
+    // ??0DiggerItem@@IEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@FHAEBVTier@Item@@AEBV?$vector@PEBVBlock@@V?$allocator@PEBVBlock@@@std@@@2@@Z
     MCAPI DiggerItem(
         std::string const&                     name,
-        int                                    id,
+        short                                  id,
         int                                    attackDamage,
         class Item::Tier const&                tier,
         std::vector<class Block const*> const& blocks

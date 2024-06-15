@@ -17,9 +17,6 @@ public:
     // symbol: ?getIsExperienceDropEnabled@ExperienceRewardComponent@@QEBA_NXZ
     MCAPI bool getIsExperienceDropEnabled() const;
 
-    // symbol: ?getOnBredExperience@ExperienceRewardComponent@@QEBAHAEAVActor@@@Z
-    MCAPI int getOnBredExperience(class Actor& owner) const;
-
     // symbol: ?getOnDeathExperience@ExperienceRewardComponent@@QEBAHAEAVActor@@@Z
     MCAPI int getOnDeathExperience(class Actor& owner) const;
 

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/scripting/DebuggerLogLevel.h"
 #include "mc/external/scripting/IDebuggerController.h"
 
 // auto generated forward declare list
@@ -50,6 +51,10 @@ public:
     // ?sendMessage@Debugger@QuickJS@Scripting@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void sendMessage(std::string const&) const;
 
+    // vIndex: 8, symbol:
+    // ?sendLog@Debugger@QuickJS@Scripting@@UEBAXW4DebuggerLogLevel@3@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+    virtual void sendLog(::Scripting::DebuggerLogLevel, std::string_view) const;
+
     // NOLINTEND
 
     // private:
@@ -59,6 +64,9 @@ public:
 
     // symbol: ?ContextToId@Debugger@QuickJS@Scripting@@CAIPEAUJSContext@@PEAX@Z
     MCAPI static uint ContextToId(struct JSContext* ctx, void*);
+
+    // symbol: ?NotifyResume@Debugger@QuickJS@Scripting@@CAXPEAX@Z
+    MCAPI static void NotifyResume(void*);
 
     // symbol: ?ToTypeName@Debugger@QuickJS@Scripting@@CAPEBDPEAUJSContext@@UJSValue@@@Z
     MCAPI static char const* ToTypeName(struct JSContext* ctx, struct JSValue val);

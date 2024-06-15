@@ -892,6 +892,12 @@ MCAPI extern class HashedString const MusicDiscCat;
 // symbol: ?MusicDiscChirp@VanillaItemNames@@3VHashedString@@B
 MCAPI extern class HashedString const MusicDiscChirp;
 
+// symbol: ?MusicDiscCreator@VanillaItemNames@@3VHashedString@@B
+MCAPI extern class HashedString const MusicDiscCreator;
+
+// symbol: ?MusicDiscCreatorMusicBox@VanillaItemNames@@3VHashedString@@B
+MCAPI extern class HashedString const MusicDiscCreatorMusicBox;
+
 // symbol: ?MusicDiscFar@VanillaItemNames@@3VHashedString@@B
 MCAPI extern class HashedString const MusicDiscFar;
 
@@ -906,6 +912,9 @@ MCAPI extern class HashedString const MusicDiscOtherside;
 
 // symbol: ?MusicDiscPigstep@VanillaItemNames@@3VHashedString@@B
 MCAPI extern class HashedString const MusicDiscPigstep;
+
+// symbol: ?MusicDiscPrecipice@VanillaItemNames@@3VHashedString@@B
+MCAPI extern class HashedString const MusicDiscPrecipice;
 
 // symbol: ?MusicDiscRelic@VanillaItemNames@@3VHashedString@@B
 MCAPI extern class HashedString const MusicDiscRelic;
@@ -999,6 +1008,12 @@ MCAPI extern class HashedString const OakSign;
 
 // symbol: ?OcelotSpawnEgg@VanillaItemNames@@3VHashedString@@B
 MCAPI extern class HashedString const OcelotSpawnEgg;
+
+// symbol: ?OminousBottle@VanillaItemNames@@3VHashedString@@B
+MCAPI extern class HashedString const OminousBottle;
+
+// symbol: ?OminousTrialKey@VanillaItemNames@@3VHashedString@@B
+MCAPI extern class HashedString const OminousTrialKey;
 
 // symbol: ?OrangeDye@VanillaItemNames@@3VHashedString@@B
 MCAPI extern class HashedString const OrangeDye;

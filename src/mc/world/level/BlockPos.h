@@ -50,9 +50,6 @@ public:
     // symbol: ??9BlockPos@@QEBA_NAEBV0@@Z
     MCAPI bool operator!=(class BlockPos const&) const;
 
-    // symbol: ??HBlockPos@@QEBA?AV0@AEBV0@@Z
-    MCAPI class BlockPos operator+(class BlockPos const&) const;
-
     // symbol: ??8BlockPos@@QEBA_NAEBV0@@Z
     MCAPI bool operator==(class BlockPos const& rhs) const;
 
@@ -61,6 +58,9 @@ public:
 
     // symbol: ?relative@BlockPos@@QEBA?AV1@EH@Z
     MCAPI class BlockPos relative(uchar facing, int steps) const;
+
+    // symbol: ?toCommandString@BlockPos@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    MCAPI std::string toCommandString() const;
 
     // symbol: ?toString@BlockPos@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string toString() const;

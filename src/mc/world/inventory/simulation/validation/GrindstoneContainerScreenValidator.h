@@ -11,12 +11,14 @@ public:
     // prevent constructor by default
     GrindstoneContainerScreenValidator& operator=(GrindstoneContainerScreenValidator const&);
     GrindstoneContainerScreenValidator(GrindstoneContainerScreenValidator const&);
-    GrindstoneContainerScreenValidator();
 
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1GrindstoneContainerScreenValidator@@UEAA@XZ
     virtual ~GrindstoneContainerScreenValidator() = default;
+
+    // symbol: ??0GrindstoneContainerScreenValidator@@QEAA@XZ
+    MCAPI GrindstoneContainerScreenValidator();
 
     // NOLINTEND
 };

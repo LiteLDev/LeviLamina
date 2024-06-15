@@ -16,9 +16,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??8RangeComparison@ScriptModuleMinecraft@@QEBA_NAEBU01@@Z
-    MCAPI bool operator==(struct ScriptModuleMinecraft::RangeComparison const&) const;
-
     // symbol:
     // ?bind@RangeComparison@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@URangeComparison@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::RangeComparison> bind();

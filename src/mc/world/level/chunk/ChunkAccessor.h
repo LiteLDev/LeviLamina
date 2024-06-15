@@ -25,12 +25,6 @@ public:
     // symbol: ??0ChunkAccessor@worldgen@br@@QEAA@AEAVDimension@@AEBVBiomeSource@@@Z
     MCAPI ChunkAccessor(class Dimension&, class BiomeSource const&);
 
-    // symbol: ?biomeSource@ChunkAccessor@worldgen@br@@QEBAAEBVBiomeSource@@XZ
-    MCAPI class BiomeSource const& biomeSource() const;
-
-    // symbol: ?dimension@ChunkAccessor@worldgen@br@@QEAAAEAVDimension@@XZ
-    MCAPI class Dimension& dimension();
-
     // symbol: ?getFirstFreeHeight@ChunkAccessor@worldgen@br@@QEBAHHHW4Type@HeightmapProjection@23@@Z
     MCAPI int getFirstFreeHeight(int, int, ::br::worldgen::HeightmapProjection::Type) const;
 

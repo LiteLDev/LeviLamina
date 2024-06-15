@@ -4,14 +4,21 @@
 
 struct ActorSelectorArgs {
 public:
-    // prevent constructor by default
-    ActorSelectorArgs& operator=(ActorSelectorArgs const&);
-    ActorSelectorArgs(ActorSelectorArgs const&);
-
-public:
     // NOLINTBEGIN
     // symbol: ??0ActorSelectorArgs@@QEAA@XZ
     MCAPI ActorSelectorArgs();
+
+    // symbol: ??0ActorSelectorArgs@@QEAA@$$QEAU0@@Z
+    MCAPI ActorSelectorArgs(struct ActorSelectorArgs&&);
+
+    // symbol: ??0ActorSelectorArgs@@QEAA@AEBU0@@Z
+    MCAPI ActorSelectorArgs(struct ActorSelectorArgs const&);
+
+    // symbol: ??4ActorSelectorArgs@@QEAAAEAU0@$$QEAU0@@Z
+    MCAPI struct ActorSelectorArgs& operator=(struct ActorSelectorArgs&&);
+
+    // symbol: ??4ActorSelectorArgs@@QEAAAEAU0@AEBU0@@Z
+    MCAPI struct ActorSelectorArgs& operator=(struct ActorSelectorArgs const&);
 
     // symbol: ??1ActorSelectorArgs@@QEAA@XZ
     MCAPI ~ActorSelectorArgs();

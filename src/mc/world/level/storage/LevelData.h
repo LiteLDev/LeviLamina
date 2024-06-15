@@ -151,11 +151,17 @@ public:
     // symbol: ?getGenerator@LevelData@@QEBA?AW4GeneratorType@@XZ
     MCAPI ::GeneratorType getGenerator() const;
 
+    // symbol: ?getIsSingleUseWorld@LevelData@@QEBA?B_NXZ
+    MCAPI bool const getIsSingleUseWorld() const;
+
     // symbol: ?getLANBroadcast@LevelData@@QEBA_NXZ
     MCAPI bool getLANBroadcast() const;
 
     // symbol: ?getLANBroadcastIntent@LevelData@@QEBA_NXZ
     MCAPI bool getLANBroadcastIntent() const;
+
+    // symbol: ?getLastSaved@LevelData@@QEBA_JXZ
+    MCAPI int64 getLastSaved() const;
 
     // symbol: ?getLevelName@LevelData@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& getLevelName() const;
@@ -175,6 +181,9 @@ public:
     // symbol: ?getLoadedPlayerTag@LevelData@@QEAAAEAVCompoundTag@@XZ
     MCAPI class CompoundTag& getLoadedPlayerTag();
 
+    // symbol: ?getMinCompatibleClientVersion@LevelData@@QEBAAEBVGameVersion@@XZ
+    MCAPI class GameVersion const& getMinCompatibleClientVersion() const;
+
     // symbol: ?getMultiplayerGameIntent@LevelData@@QEBA_NXZ
     MCAPI bool getMultiplayerGameIntent() const;
 
@@ -183,6 +192,9 @@ public:
 
     // symbol: ?getNetherType@LevelData@@QEBA?AW4NetherWorldType@@XZ
     MCAPI ::NetherWorldType getNetherType() const;
+
+    // symbol: ?getNetworkVersion@LevelData@@QEBAHXZ
+    MCAPI int getNetworkVersion() const;
 
     // symbol: ?getOnlySpawnV1Villagers@LevelData@@QEBA_NXZ
     MCAPI bool getOnlySpawnV1Villagers() const;
@@ -258,6 +270,9 @@ public:
 
     // symbol: ?hasCheatsEnabled@LevelData@@QEBA_NXZ
     MCAPI bool hasCheatsEnabled() const;
+
+    // symbol: ?hasCloudSaveInfo@LevelData@@QEBA_NXZ
+    MCAPI bool hasCloudSaveInfo() const;
 
     // symbol: ?hasCommandsEnabled@LevelData@@QEBA_NXZ
     MCAPI bool hasCommandsEnabled() const;
@@ -384,6 +399,9 @@ public:
 
     // symbol: ?setHasLockedResourcePack@LevelData@@QEAAX_N@Z
     MCAPI void setHasLockedResourcePack(bool hasLockedPack);
+
+    // symbol: ?setIsHardcore@LevelData@@QEAAX_N@Z
+    MCAPI void setIsHardcore(bool);
 
     // symbol: ?setLANBroadcast@LevelData@@QEAAX_N@Z
     MCAPI void setLANBroadcast(bool broadcast);

@@ -10,7 +10,6 @@
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
-#include "mc/enums/ArmorTextureType.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/InputMode.h"
 #include "mc/enums/MaterialType.h"
@@ -64,16 +63,16 @@ public:
     // vIndex: 26, symbol: ?normalTick@Strider@@MEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 136, symbol: ?getNextStep@Strider@@MEAAMM@Z
+    // vIndex: 134, symbol: ?getNextStep@Strider@@MEAAMM@Z
     virtual float getNextStep(float);
 
-    // vIndex: 147, symbol: ?shouldTryMakeStepSound@Strider@@MEAA_NXZ
+    // vIndex: 145, symbol: ?shouldTryMakeStepSound@Strider@@MEAA_NXZ
     virtual bool shouldTryMakeStepSound();
 
-    // vIndex: 151, symbol: ?_playStepSound@Strider@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 149, symbol: ?_playStepSound@Strider@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
     virtual void _playStepSound(class BlockPos const&, class Block const& onBlock);
 
-    // vIndex: 186, symbol: ?_getWalkTargetValue@Strider@@UEAAMAEBVBlockPos@@@Z
+    // vIndex: 184, symbol: ?_getWalkTargetValue@Strider@@UEAAMAEBVBlockPos@@@Z
     virtual float _getWalkTargetValue(class BlockPos const& pos);
 
     // symbol: ??0Strider@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

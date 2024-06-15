@@ -56,5 +56,8 @@ public:
     virtual int
     getContainerSize(class ContainerScreenContext const& screenContext, class Container const& container) const;
 
+    // symbol: ??0HorseEquipContainerValidation@@QEAA@AEBVContainerScreenContext@@@Z
+    MCAPI explicit HorseEquipContainerValidation(class ContainerScreenContext const& screenContext);
+
     // NOLINTEND
 };

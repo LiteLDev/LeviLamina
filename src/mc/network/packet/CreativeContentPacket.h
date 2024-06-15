@@ -35,9 +35,5 @@ public:
     // symbol: ??0CreativeContentPacket@@QEAA@XZ
     MCAPI CreativeContentPacket();
 
-    // symbol:
-    // ??0CreativeContentPacket@@QEAA@AEBV?$vector@VCreativeItemEntry@@V?$allocator@VCreativeItemEntry@@@std@@@std@@@Z
-    MCAPI explicit CreativeContentPacket(std::vector<class CreativeItemEntry> const& content);
-
     // NOLINTEND
 };

@@ -61,5 +61,8 @@ public:
     // symbol: ?anyAnimationsFinished@ActorAnimationControllerStatePlayer@@QEBA_NXZ
     MCAPI bool anyAnimationsFinished() const;
 
+    // symbol: ?getStateTime@ActorAnimationControllerStatePlayer@@QEBAMXZ
+    MCAPI float getStateTime() const;
+
     // NOLINTEND
 };

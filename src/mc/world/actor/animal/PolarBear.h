@@ -10,7 +10,6 @@
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
-#include "mc/enums/ArmorTextureType.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/InputMode.h"
 #include "mc/enums/MaterialType.h"
@@ -42,7 +41,7 @@ public:
     // vIndex: 26, symbol: ?normalTick@PolarBear@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 93, symbol: ?canFreeze@PolarBear@@UEBA_NXZ
+    // vIndex: 91, symbol: ?canFreeze@PolarBear@@UEBA_NXZ
     virtual bool canFreeze() const;
 
     // symbol: ??0PolarBear@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

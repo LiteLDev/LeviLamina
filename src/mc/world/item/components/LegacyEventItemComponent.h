@@ -25,13 +25,6 @@ public:
     // vIndex: 9, symbol: ?_initializeComponent@LegacyEventItemComponent@@UEAAXXZ
     virtual void _initializeComponent();
 
-    // symbol: ??0LegacyEventItemComponent@@QEAA@$$QEAULegacyEventItemComponentData@@@Z
-    MCAPI explicit LegacyEventItemComponent(struct LegacyEventItemComponentData&&);
-
-    // symbol:
-    // ?executeTrigger@LegacyEventItemComponent@@QEBA_NAEAVItemStackBase@@AEBVDefinitionTrigger@@AEAVRenderParams@@@Z
-    MCAPI bool executeTrigger(class ItemStackBase&, class DefinitionTrigger const&, class RenderParams&) const;
-
     // symbol: ?getIdentifier@LegacyEventItemComponent@@SAAEBVHashedString@@XZ
     MCAPI static class HashedString const& getIdentifier();
 

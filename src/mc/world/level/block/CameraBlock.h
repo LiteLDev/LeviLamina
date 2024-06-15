@@ -30,7 +30,7 @@ public:
     // vIndex: 0, symbol: __gen_??1CameraBlock@@UEAA@XZ
     virtual ~CameraBlock() = default;
 
-    // vIndex: 60, symbol: ?canBeUsedInCommands@CameraBlock@@UEBA_NAEBVBaseGameVersion@@@Z
+    // vIndex: 61, symbol: ?canBeUsedInCommands@CameraBlock@@UEBA_NAEBVBaseGameVersion@@@Z
     virtual bool canBeUsedInCommands(class BaseGameVersion const& requiredBaseGameVersion) const;
 
     // symbol: ??0CameraBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

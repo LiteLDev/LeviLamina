@@ -3,16 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/Rotation.h"
 #include "mc/world/level/levelgen/adjustment/Type.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class BlockSource;
 class BoundingBox;
 class Random;
-class StructurePoolElement;
 namespace br::worldgen { struct JigsawJunction; }
 namespace br::worldgen { struct Rigid; }
 // clang-format on
@@ -42,11 +39,6 @@ public:
     // vIndex: 3, symbol:
     // ?postProcess@PoolElementStructureSection@worldgen@br@@UEBA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
     virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&) const;
-
-    // symbol:
-    // ??0PoolElementStructureSection@worldgen@br@@QEAA@AEBVStructurePoolElement@@VBlockPos@@HW4Rotation@@VBoundingBox@@AEBV?$vector@UJigsawJunction@worldgen@br@@V?$allocator@UJigsawJunction@worldgen@br@@@std@@@std@@@Z
-    MCAPI
-    PoolElementStructureSection(class StructurePoolElement const&, class BlockPos, int, ::Rotation, class BoundingBox, std::vector<struct br::worldgen::JigsawJunction> const&);
 
     // NOLINTEND
 };

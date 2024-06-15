@@ -25,9 +25,6 @@ public:
     // vIndex: 9, symbol: ?_initializeComponent@LegacyOnUseTriggerItemComponent@@UEAAXXZ
     virtual void _initializeComponent();
 
-    // symbol: ??0LegacyOnUseTriggerItemComponent@@QEAA@$$QEAULegacyOnUseTriggerItemComponentData@@@Z
-    MCAPI explicit LegacyOnUseTriggerItemComponent(struct LegacyOnUseTriggerItemComponentData&&);
-
     // symbol: ?getIdentifier@LegacyOnUseTriggerItemComponent@@SAAEBVHashedString@@XZ
     MCAPI static class HashedString const& getIdentifier();
 

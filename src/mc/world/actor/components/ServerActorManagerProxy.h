@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/components/IActorManagerProxy.h"
+#include "mc/world/actor/components/ActorManagerProxy.h"
 
-class ServerActorManagerProxy : public ::IActorManagerProxy {
+class ServerActorManagerProxy : public ::ActorManagerProxy {
 public:
     // prevent constructor by default
     ServerActorManagerProxy& operator=(ServerActorManagerProxy const&);
@@ -23,10 +23,13 @@ public:
     // vIndex: 2, symbol: ?validate@ServerActorManagerProxy@@UEAA_NAEBVActor@@@Z
     virtual bool validate(class Actor const& actor);
 
-    // vIndex: 3, symbol: ?removeActorInLevelChunk@ServerActorManagerProxy@@UEAAXAEBVActor@@@Z
+    // vIndex: 3, symbol: ?removeActor@ActorManagerProxy@@UEAAXAEAVActor@@@Z
+    virtual void removeActor(class Actor&);
+
+    // vIndex: 4, symbol: ?removeActorInLevelChunk@ServerActorManagerProxy@@UEAAXAEBVActor@@@Z
     virtual void removeActorInLevelChunk(class Actor const& actor);
 
-    // vIndex: 4, symbol: ?deleteActorFromWorldInLevelChunk@ServerActorManagerProxy@@UEAAXAEBVActor@@@Z
+    // vIndex: 5, symbol: ?deleteActorFromWorldInLevelChunk@ServerActorManagerProxy@@UEAAXAEBVActor@@@Z
     virtual void deleteActorFromWorldInLevelChunk(class Actor const& actor);
 
     // NOLINTEND

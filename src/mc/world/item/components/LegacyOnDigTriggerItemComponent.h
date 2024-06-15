@@ -38,8 +38,8 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_onMineBlock@LegacyOnDigTriggerItemComponent@@AEAAXAEA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
-    MCAPI void _onMineBlock(bool&, class ItemStack&, class Block const&, int, int, int, class Actor*);
+    // symbol: ?_onMineBlock@LegacyOnDigTriggerItemComponent@@AEAAXAEA_NAEAVItemStack@@AEBVBlock@@HHHAEAVActor@@@Z
+    MCAPI void _onMineBlock(bool&, class ItemStack&, class Block const&, int, int, int, class Actor&);
 
     // NOLINTEND
 };

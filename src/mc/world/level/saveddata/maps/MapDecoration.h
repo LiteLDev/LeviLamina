@@ -16,10 +16,12 @@ public:
     // prevent constructor by default
     MapDecoration& operator=(MapDecoration const&);
     MapDecoration(MapDecoration const&);
-    MapDecoration();
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0MapDecoration@@QEAA@XZ
+    MCAPI MapDecoration();
+
     // symbol:
     // ??0MapDecoration@@QEAA@W4Type@0@CCCAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVColor@mce@@@Z
     MCAPI MapDecoration(
@@ -48,6 +50,12 @@ public:
 
     // symbol: ?getY@MapDecoration@@QEBACXZ
     MCAPI schar getY() const;
+
+    // symbol: ?load@MapDecoration@@QEAAXAEBVCompoundTag@@@Z
+    MCAPI void load(class CompoundTag const& tag);
+
+    // symbol: ?save@MapDecoration@@QEAAXAEAVCompoundTag@@@Z
+    MCAPI void save(class CompoundTag& tag);
 
     // symbol: ??1MapDecoration@@QEAA@XZ
     MCAPI ~MapDecoration();

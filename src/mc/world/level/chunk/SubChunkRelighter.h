@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/chunk/SubChunkBrightnessStorage.h"
-
 class SubChunkRelighter {
 public:
     // prevent constructor by default
@@ -82,20 +79,6 @@ public:
         struct Brightness         newAbsorption
     );
 
-    // symbol: ?getBlock@SubChunkRelighter@@QEAAXAEBVPos@@AEAPEBVBlock@@1@Z
-    MCAPI void getBlock(class Pos const& pos, class Block const*& block, class Block const*& extraBlock);
-
-    // symbol: ?getCentralSubchunkOrigin@SubChunkRelighter@@QEAA?AVPos@@XZ
-    MCAPI class Pos getCentralSubchunkOrigin();
-
-    // symbol: ?getLightPair@SubChunkRelighter@@QEBA?AULightPair@SubChunkBrightnessStorage@@AEBVPos@@@Z
-    MCAPI struct SubChunkBrightnessStorage::LightPair getLightPair(class Pos const& coord) const;
-
-    // symbol:
-    // ?getLightPairWithPlaceholderCheck@SubChunkRelighter@@QEBA?AULightPair@SubChunkBrightnessStorage@@AEBVPos@@AEBU23@@Z
-    MCAPI struct SubChunkBrightnessStorage::LightPair
-    getLightPairWithPlaceholderCheck(class Pos const& coord, struct SubChunkBrightnessStorage::LightPair const&) const;
-
     // symbol:
     // ?relightSubChunk@SubChunkRelighter@@QEAAXAEBVLevelChunk@@AEBV?$vector@USubChunkLightUpdate@@V?$allocator@USubChunkLightUpdate@@@std@@@std@@AEAV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@4@@Z
     MCAPI void
@@ -118,9 +101,6 @@ public:
         struct Brightness oldAbsorption,
         struct Brightness newAbsorption
     );
-
-    // symbol: ?update@SubChunkRelighter@@QEAAXAEBVBlockPos@@_K@Z
-    MCAPI void update(class BlockPos const&, uint64);
 
     // symbol: ??1SubChunkRelighter@@QEAA@XZ
     MCAPI ~SubChunkRelighter();
@@ -151,9 +131,6 @@ public:
 
     // symbol: ?_getLight@SubChunkRelighter@@AEAAEUSubChunkLightIndex@@@Z
     MCAPI uchar _getLight(struct SubChunkLightIndex index);
-
-    // symbol: ?_getLightPair@SubChunkRelighter@@AEBA?AULightPair@SubChunkBrightnessStorage@@USubChunkLightIndex@@@Z
-    MCAPI struct SubChunkBrightnessStorage::LightPair _getLightPair(struct SubChunkLightIndex coordIndex) const;
 
     // NOLINTEND
 

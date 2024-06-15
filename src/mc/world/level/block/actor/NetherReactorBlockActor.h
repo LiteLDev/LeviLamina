@@ -24,5 +24,8 @@ public:
     // vIndex: 2, symbol: ?save@NetherReactorBlockActor@@UEBA_NAEAVCompoundTag@@@Z
     virtual bool save(class CompoundTag& tag) const;
 
+    // symbol: ??0NetherReactorBlockActor@@QEAA@AEBVBlockPos@@@Z
+    MCAPI explicit NetherReactorBlockActor(class BlockPos const& pos);
+
     // NOLINTEND
 };

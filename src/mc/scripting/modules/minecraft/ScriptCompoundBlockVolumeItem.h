@@ -19,6 +19,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0ScriptCompoundBlockVolumeItem@ScriptModuleMinecraft@@QEAA@AEBVCompoundBlockVolumeItem@@@Z
+    MCAPI explicit ScriptCompoundBlockVolumeItem(class CompoundBlockVolumeItem const&);
+
     // symbol: ??0ScriptCompoundBlockVolumeItem@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
     MCAPI ScriptCompoundBlockVolumeItem(class ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem const&);
 

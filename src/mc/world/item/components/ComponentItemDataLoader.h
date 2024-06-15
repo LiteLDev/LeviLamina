@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class ComponentItemDataLoader {
@@ -20,11 +19,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0ComponentItemDataLoader@@QEAA@VSemVersion@@_N1AEBVExperiments@@AEBUReflectionCtx@cereal@@V?$function@$$A6AXAEAV?$LoadResult@UComponentItemDataAll_Latest@@@Puv@@@Z@std@@@Z
-    MCAPI
-    ComponentItemDataLoader(class SemVersion, bool, bool, class Experiments const&, struct cereal::ReflectionCtx const&, std::function<void(class Puv::LoadResult<struct ComponentItemDataAll_Latest>&)>);
-
     // symbol: ?load@ComponentItemDataLoader@@QEBA?AV?$LoadResult@UComponentItemDataAll_Latest@@@Puv@@AEBVValue@Json@@@Z
     MCAPI class Puv::LoadResult<struct ComponentItemDataAll_Latest> load(class Json::Value const&) const;
 

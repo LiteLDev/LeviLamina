@@ -16,6 +16,7 @@ namespace ScriptModuleMinecraft {
 struct ScriptBiomeSearchOptions {
 public:
     // prevent constructor by default
+    ScriptBiomeSearchOptions& operator=(ScriptBiomeSearchOptions const&);
     ScriptBiomeSearchOptions(ScriptBiomeSearchOptions const&);
     ScriptBiomeSearchOptions();
 
@@ -23,14 +24,6 @@ public:
     // NOLINTBEGIN
     // symbol: ?getBoundingSize@ScriptBiomeSearchOptions@ScriptModuleMinecraft@@QEBA?AVVec3@@XZ
     MCAPI class Vec3 getBoundingSize() const;
-
-    // symbol: ??4ScriptBiomeSearchOptions@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptBiomeSearchOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptBiomeSearchOptions&&);
-
-    // symbol: ??4ScriptBiomeSearchOptions@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptBiomeSearchOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptBiomeSearchOptions const&);
 
     // symbol: ?validate@ScriptBiomeSearchOptions@ScriptModuleMinecraft@@QEBA?AV?$Result@X$$V@Scripting@@XZ
     MCAPI class Scripting::Result<void> validate() const;

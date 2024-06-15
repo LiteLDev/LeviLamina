@@ -7,6 +7,7 @@
 namespace Scripting { class ILifetimeScopeListener; }
 namespace Scripting { class LifetimeRegistry; }
 namespace Scripting { class LifetimeRegistryReference; }
+namespace Scripting { struct ContextId; }
 // clang-format on
 
 namespace Scripting {
@@ -28,6 +29,9 @@ public:
 
     // symbol: ?addListener@WeakLifetimeScope@Scripting@@QEBAXV?$weak_ptr@VILifetimeScopeListener@Scripting@@@std@@@Z
     MCAPI void addListener(std::weak_ptr<class Scripting::ILifetimeScopeListener> listener) const;
+
+    // symbol: ?getContextId@WeakLifetimeScope@Scripting@@QEBA?AUContextId@2@XZ
+    MCAPI struct Scripting::ContextId getContextId() const;
 
     // symbol: ?getLifetimeRegistry@WeakLifetimeScope@Scripting@@QEBAPEAVLifetimeRegistry@2@XZ
     MCAPI class Scripting::LifetimeRegistry* getLifetimeRegistry() const;

@@ -23,8 +23,8 @@ public:
     // symbol: ?onLevelInitialized@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@@Z
     MCVAPI ::EventResult onLevelInitialized(class Level& level);
 
-    // symbol: ?onLevelRemovedActor@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@AEAVActor@@@Z
-    MCVAPI ::EventResult onLevelRemovedActor(class Level& level, class Actor& actor);
+    // symbol: ?onLevelRemovedActor@LevelEventListener@@UEAA?AW4EventResult@@AEAVActor@@@Z
+    MCVAPI ::EventResult onLevelRemovedActor(class Actor&);
 
     // symbol: ?onLevelRemovedPlayer@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@AEAVPlayer@@@Z
     MCVAPI ::EventResult onLevelRemovedPlayer(class Level& level, class Player& player);

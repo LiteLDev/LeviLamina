@@ -31,6 +31,9 @@ public:
     // symbol: ??0NetworkIdentifier@@QEAA@AEBUsockaddr_in6@@@Z
     MCAPI explicit NetworkIdentifier(struct sockaddr_in6 const& address);
 
+    // symbol: ??0NetworkIdentifier@@QEAA@_K@Z
+    MCAPI explicit NetworkIdentifier(uint64);
+
     // symbol: ?getAddress@NetworkIdentifier@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getAddress() const;
 

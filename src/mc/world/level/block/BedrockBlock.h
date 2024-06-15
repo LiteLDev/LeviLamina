@@ -30,10 +30,10 @@ public:
     // vIndex: 0, symbol: __gen_??1BedrockBlock@@UEAA@XZ
     virtual ~BedrockBlock() = default;
 
-    // vIndex: 47, symbol: ?canBeOriginalSurface@BedrockBlock@@UEBA_NXZ
+    // vIndex: 48, symbol: ?canBeOriginalSurface@BedrockBlock@@UEBA_NXZ
     virtual bool canBeOriginalSurface() const;
 
-    // vIndex: 141, symbol: ?_addHardCodedBlockComponents@BedrockBlock@@UEAAXAEBVExperiments@@@Z
+    // vIndex: 142, symbol: ?_addHardCodedBlockComponents@BedrockBlock@@UEAAXAEBVExperiments@@@Z
     virtual void _addHardCodedBlockComponents(class Experiments const&);
 
     // symbol: ??0BedrockBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

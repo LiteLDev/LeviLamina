@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Block;
 namespace FlatteningUtils { struct Instance; }
 // clang-format on
 
@@ -16,9 +15,6 @@ namespace FlatteningUtils::Coral {
 // NOLINTBEGIN
 // symbol: ?get@Coral@FlatteningUtils@@YA?AUInstance@2@XZ
 MCAPI struct FlatteningUtils::Instance get();
-
-// symbol: ?getBlockComplexAliasCallback@Coral@FlatteningUtils@@YA?AV?$function@$$A6APEBVBlock@@H@Z@std@@XZ
-MCAPI std::function<class Block const*(int)> getBlockComplexAliasCallback();
 
 // symbol:
 // ?getColorSplitStates@Coral@FlatteningUtils@@YA?AV?$vector@USplitBlock@RemovedStateCollection@BlockLegacy@@V?$allocator@USplitBlock@RemovedStateCollection@BlockLegacy@@@std@@@std@@_N@Z

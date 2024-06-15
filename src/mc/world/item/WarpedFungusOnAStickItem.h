@@ -42,10 +42,6 @@ public:
     // vIndex: 51, symbol: ?getEnchantValue@WarpedFungusOnAStickItem@@UEBAHXZ
     virtual int getEnchantValue() const;
 
-    // vIndex: 80, symbol: ?mineBlock@WarpedFungusOnAStickItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
-    virtual bool
-    mineBlock(class ItemStack& item, class Block const& block, int x, int y, int z, class Actor* owner) const;
-
     // symbol:
     // ??0WarpedFungusOnAStickItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEAUReflectionCtx@cereal@@@Z
     MCAPI WarpedFungusOnAStickItem(std::string const&, int, struct cereal::ReflectionCtx&);

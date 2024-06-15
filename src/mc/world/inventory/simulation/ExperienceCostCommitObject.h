@@ -26,8 +26,5 @@ public:
     // vIndex: 3, symbol: ?commit@ExperienceCostCommitObject@@UEAAXAEBVContainerScreenContext@@@Z
     virtual void commit(class ContainerScreenContext const& screenContext);
 
-    // symbol: ??0ExperienceCostCommitObject@@QEAA@H@Z
-    MCAPI explicit ExperienceCostCommitObject(int);
-
     // NOLINTEND
 };

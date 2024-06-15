@@ -30,7 +30,7 @@ public:
     // vIndex: 0, symbol: __gen_??1SnowBlock@@UEAA@XZ
     virtual ~SnowBlock() = default;
 
-    // vIndex: 55, symbol: ?waterSpreadCausesSpawn@SnowBlock@@UEBA_NXZ
+    // vIndex: 56, symbol: ?waterSpreadCausesSpawn@SnowBlock@@UEBA_NXZ
     virtual bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0SnowBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

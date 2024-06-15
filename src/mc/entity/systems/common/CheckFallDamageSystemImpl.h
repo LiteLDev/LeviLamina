@@ -9,11 +9,11 @@
 namespace CheckFallDamageSystemImpl {
 // NOLINTBEGIN
 // symbol:
-// ?checkFallDamage@CheckFallDamageSystemImpl@@YAXAEAVActorOwnerComponent@@AEBUMoveRequestComponent@@V?$Optional@$$CBV?$FlagComponent@UOnGroundFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@UActorTickedFlag@@@@@@_N@Z
+// ?checkFallDamage@CheckFallDamageSystemImpl@@YAXAEAVActorOwnerComponent@@AEBUMoveRequestComponent@@V?$Optional@$$CBUOnGroundFlagComponent@@@@V?$Optional@$$CBV?$FlagComponent@UActorTickedFlag@@@@@@_N@Z
 MCAPI void checkFallDamage(
     class ActorOwnerComponent&,
     struct MoveRequestComponent const&,
-    class Optional<class FlagComponent<struct OnGroundFlag> const>,
+    class Optional<struct OnGroundFlagComponent const>,
     class Optional<class FlagComponent<struct ActorTickedFlag> const>,
     bool
 );

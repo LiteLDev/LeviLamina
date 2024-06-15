@@ -69,9 +69,6 @@ public:
     // symbol: ?isDay@TheEndDimension@@UEBA_NXZ
     MCVAPI bool isDay() const;
 
-    // symbol: ?isFoggyAt@TheEndDimension@@UEBA_NHH@Z
-    MCVAPI bool isFoggyAt(int x, int z) const;
-
     // symbol: ?isNaturalDimension@TheEndDimension@@UEBA_NXZ
     MCVAPI bool isNaturalDimension() const;
 
@@ -98,6 +95,9 @@ public:
 
     // symbol: ?upgradeLevelChunk@TheEndDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@1@Z
     MCVAPI void upgradeLevelChunk(class ChunkSource& source, class LevelChunk& lc, class LevelChunk& generatedChunk);
+
+    // symbol: ??0TheEndDimension@@QEAA@AEAVILevel@@AEAVScheduler@@@Z
+    MCAPI TheEndDimension(class ILevel& level, class Scheduler& context);
 
     // symbol: ?AMBIENT_MULTIPLIER@TheEndDimension@@2MB
     MCAPI static float const AMBIENT_MULTIPLIER;

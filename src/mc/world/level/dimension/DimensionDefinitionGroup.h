@@ -29,11 +29,13 @@ public:
 public:
     // prevent constructor by default
     DimensionDefinitionGroup& operator=(DimensionDefinitionGroup const&);
-    DimensionDefinitionGroup(DimensionDefinitionGroup const&);
     DimensionDefinitionGroup();
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0DimensionDefinitionGroup@@QEAA@AEBV0@@Z
+    MCAPI DimensionDefinitionGroup(class DimensionDefinitionGroup const&);
+
     // symbol: ??0DimensionDefinitionGroup@@QEAA@AEAUReflectionCtx@cereal@@QEAVResourcePackManager@@_N@Z
     MCAPI DimensionDefinitionGroup(struct cereal::ReflectionCtx&, class ResourcePackManager* const, bool);
 

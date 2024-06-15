@@ -135,6 +135,10 @@ public:
     // symbol: ?requestResourceReload@Minecraft@@QEAAXXZ
     MCAPI void requestResourceReload();
 
+    // symbol:
+    // ?requestServerShutdown@Minecraft@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI void requestServerShutdown(std::string const& message);
+
     // symbol: ?startLeaveGame@Minecraft@@QEAAX_N@Z
     MCAPI void startLeaveGame(bool stopNetwork);
 

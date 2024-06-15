@@ -93,6 +93,9 @@ public:
     // symbol: ?_writeInteger@BinaryStream@@AEAAXEPEBD0@Z
     MCAPI void _writeInteger(uchar, char const*, char const*);
 
+    // symbol: ?_writeInteger@BinaryStream@@AEAAXIPEBD0@Z
+    MCAPI void _writeInteger(uint, char const*, char const*);
+
     // symbol: ?_writeInteger@BinaryStream@@AEAAXGPEBD0@Z
     MCAPI void _writeInteger(ushort, char const*, char const*);
 

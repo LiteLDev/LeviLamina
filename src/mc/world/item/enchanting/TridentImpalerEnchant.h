@@ -26,8 +26,20 @@ public:
     // vIndex: 5, symbol: ?getMaxLevel@TridentImpalerEnchant@@UEBAHXZ
     virtual int getMaxLevel() const;
 
-    // vIndex: 7, symbol: ?getDamageBonus@TridentImpalerEnchant@@UEBAMHAEBVActor@@@Z
-    virtual float getDamageBonus(int level, class Actor const& target) const;
+    // vIndex: 8, symbol: ?getDamageBonus@TridentImpalerEnchant@@UEBAMHAEBVActor@@0@Z
+    virtual float getDamageBonus(int, class Actor const&, class Actor const&) const;
+
+    // symbol:
+    // ??0TridentImpalerEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_view@DU?$char_traits@D@std@@@std@@2H_NH@Z
+    MCAPI TridentImpalerEnchant(
+        ::Enchant::Type      type,
+        ::Enchant::Frequency frequency,
+        std::string_view     stringId,
+        std::string_view     description,
+        int                  primarySlots,
+        bool                 isLootable,
+        int                  secondarySlots
+    );
 
     // NOLINTEND
 };

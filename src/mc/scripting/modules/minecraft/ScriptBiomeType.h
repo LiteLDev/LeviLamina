@@ -18,22 +18,14 @@ class ScriptBiomeType {
 public:
     // prevent constructor by default
     ScriptBiomeType& operator=(ScriptBiomeType const&);
+    ScriptBiomeType(ScriptBiomeType const&);
     ScriptBiomeType();
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptBiomeType@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
-    MCAPI ScriptBiomeType(class ScriptModuleMinecraft::ScriptBiomeType const&);
-
     // symbol:
     // ?getId@ScriptBiomeType@ScriptModuleMinecraft@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getId() const;
-
-    // symbol: ??4ScriptBiomeType@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
-    MCAPI class ScriptModuleMinecraft::ScriptBiomeType& operator=(class ScriptModuleMinecraft::ScriptBiomeType&&);
-
-    // symbol: ??1ScriptBiomeType@ScriptModuleMinecraft@@QEAA@XZ
-    MCAPI ~ScriptBiomeType();
 
     // symbol:
     // ?bind@ScriptBiomeType@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptBiomeType@ScriptModuleMinecraft@@@Scripting@@XZ

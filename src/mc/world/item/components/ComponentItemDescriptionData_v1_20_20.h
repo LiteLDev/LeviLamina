@@ -30,11 +30,5 @@ public:
     // symbol: ?bindType@ComponentItemDescriptionData_v1_20_20@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
-    // symbol: ?FIRST_VERSION@ComponentItemDescriptionData_v1_20_20@@2VSemVersion@@B
-    MCAPI static class SemVersion const FIRST_VERSION;
-
-    // symbol: ?LAST_VERSION@ComponentItemDescriptionData_v1_20_20@@2VSemVersion@@B
-    MCAPI static class SemVersion const LAST_VERSION;
-
     // NOLINTEND
 };

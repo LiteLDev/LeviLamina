@@ -26,9 +26,6 @@ public:
     // symbol: ?applyGravity@LegacyBlockPlacementProcessor@@QEBAAEAVBlockPos@@AEAVBlockSource@@HAEAV2@@Z
     MCAPI class BlockPos& applyGravity(class BlockSource& region, int yOffset, class BlockPos& pos) const;
 
-    // symbol: ?canPlace@LegacyBlockPlacementProcessor@@QEAA_NXZ
-    MCAPI bool canPlace();
-
     // symbol: ??1LegacyBlockPlacementProcessor@@QEAA@XZ
     MCAPI ~LegacyBlockPlacementProcessor();
 

@@ -37,15 +37,6 @@ public:
     // ?appendDebugInfo@FollowCaravanGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol:
-    // ??0FollowCaravanGoal@@QEAA@AEAVMob@@MHAEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@@Z
-    MCAPI FollowCaravanGoal(
-        class Mob&                               mob,
-        float                                    speed,
-        int                                      caravanLimit,
-        std::vector<struct MobDescriptor> const& targetTypes
-    );
-
     // NOLINTEND
 
     // private:

@@ -25,9 +25,6 @@ public:
     // vIndex: 9, symbol: ?_initializeComponent@LegacyOnHurtActorTriggerItemComponent@@UEAAXXZ
     virtual void _initializeComponent();
 
-    // symbol: ??0LegacyOnHurtActorTriggerItemComponent@@QEAA@$$QEAULegacyOnHurtActorTriggerItemComponentData@@@Z
-    MCAPI explicit LegacyOnHurtActorTriggerItemComponent(struct LegacyOnHurtActorTriggerItemComponentData&&);
-
     // symbol: ?getIdentifier@LegacyOnHurtActorTriggerItemComponent@@SAAEBVHashedString@@XZ
     MCAPI static class HashedString const& getIdentifier();
 
@@ -35,8 +32,8 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_onHurtActor@LegacyOnHurtActorTriggerItemComponent@@AEAAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
-    MCAPI void _onHurtActor(class ItemStack&, class Actor&, class Mob&);
+    // symbol: ?_onHurtActor@LegacyOnHurtActorTriggerItemComponent@@AEAAXAEAHAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
+    MCAPI void _onHurtActor(int&, class ItemStack&, class Actor&, class Mob&);
 
     // NOLINTEND
 };

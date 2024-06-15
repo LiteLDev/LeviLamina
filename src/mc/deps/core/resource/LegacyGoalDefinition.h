@@ -3,7 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/entity/utilities/ActorDamageCause.h"
 #include "mc/enums/POIType.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Json { class Value; }
+// clang-format on
 
 struct LegacyGoalDefinition {
 public:
@@ -16,10 +22,6 @@ public:
 
     // symbol: ??0LegacyGoalDefinition@@QEAA@AEBU0@@Z
     MCAPI LegacyGoalDefinition(struct LegacyGoalDefinition const&);
-
-    // symbol:
-    // ?_getPOITypeFromString@LegacyGoalDefinition@@QEAA?AW4POIType@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI ::POIType _getPOITypeFromString(std::string);
 
     // symbol: ??4LegacyGoalDefinition@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct LegacyGoalDefinition& operator=(struct LegacyGoalDefinition&&);
@@ -34,11 +36,11 @@ public:
     MCAPI ~LegacyGoalDefinition();
 
     // symbol:
-    // ?CreateGoal@LegacyGoalDefinition@@SA?AV?$unique_ptr@VGoal@@U?$default_delete@VGoal@@@std@@@std@@AEAVMob@@AEBU1@@Z
-    MCAPI static std::unique_ptr<class Goal> CreateGoal(class Mob&, struct LegacyGoalDefinition const&);
+    // ?createGoal@LegacyGoalDefinition@@SA?AV?$unique_ptr@VGoal@@U?$default_delete@VGoal@@@std@@@std@@AEAVMob@@AEBU1@@Z
+    MCAPI static std::unique_ptr<class Goal> createGoal(class Mob&, struct LegacyGoalDefinition const&);
 
-    // symbol: ?GoalExists@LegacyGoalDefinition@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static bool GoalExists(std::string const&);
+    // symbol: ?goalExists@LegacyGoalDefinition@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI static bool goalExists(std::string const&);
 
     // symbol: ?init@LegacyGoalDefinition@@SAXXZ
     MCAPI static void init();
@@ -52,6 +54,21 @@ public:
         std::string,
         std::function<std::unique_ptr<class Goal>(class Mob&, struct LegacyGoalDefinition const&)>>
         mGoalMap;
+
+    // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol: ?_controlFlagsFromArr@LegacyGoalDefinition@@CAHAEBVValue@Json@@@Z
+    MCAPI static int _controlFlagsFromArr(class Json::Value const&);
+
+    // symbol:
+    // ?_getPOITypeFromString@LegacyGoalDefinition@@CA?AW4POIType@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI static ::POIType _getPOITypeFromString(std::string);
+
+    // symbol:
+    // ?_getPanicGoalDamageSources@LegacyGoalDefinition@@CA?AV?$vector@W4ActorDamageCause@@V?$allocator@W4ActorDamageCause@@@std@@@std@@AEBUConstDeserializeDataParams@@@Z
+    MCAPI static std::vector<::ActorDamageCause> _getPanicGoalDamageSources(struct ConstDeserializeDataParams const&);
 
     // NOLINTEND
 };

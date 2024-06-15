@@ -19,25 +19,13 @@ public:
     // prevent constructor by default
     ScriptItemEnchantmentType& operator=(ScriptItemEnchantmentType const&);
     ScriptItemEnchantmentType(ScriptItemEnchantmentType const&);
+    ScriptItemEnchantmentType();
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptItemEnchantmentType@ScriptModuleMinecraft@@QEAA@XZ
-    MCAPI ScriptItemEnchantmentType();
-
     // symbol:
     // ?getName@ScriptItemEnchantmentType@ScriptModuleMinecraft@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getName() const;
-
-    // symbol: ?getType@ScriptItemEnchantmentType@ScriptModuleMinecraft@@QEBA?AW4Type@Enchant@@XZ
-    MCAPI ::Enchant::Type getType() const;
-
-    // symbol: ??4ScriptItemEnchantmentType@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptItemEnchantmentType&
-    operator=(struct ScriptModuleMinecraft::ScriptItemEnchantmentType&&);
-
-    // symbol: ??8ScriptItemEnchantmentType@ScriptModuleMinecraft@@QEBA_NAEBU01@@Z
-    MCAPI bool operator==(struct ScriptModuleMinecraft::ScriptItemEnchantmentType const& other) const;
 
     // symbol: ??1ScriptItemEnchantmentType@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptItemEnchantmentType();

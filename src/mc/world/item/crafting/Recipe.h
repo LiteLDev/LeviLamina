@@ -12,6 +12,47 @@ namespace mce { class UUID; }
 
 class Recipe {
 public:
+    // Recipe inner types declare
+    // clang-format off
+    struct ConstructionContext;
+    class Results;
+    // clang-format on
+
+    // Recipe inner types define
+    struct ConstructionContext {
+    public:
+        // prevent constructor by default
+        ConstructionContext& operator=(ConstructionContext const&);
+        ConstructionContext(ConstructionContext const&);
+        ConstructionContext();
+
+    public:
+        // NOLINTBEGIN
+        // symbol: ??1ConstructionContext@Recipe@@QEAA@XZ
+        MCAPI ~ConstructionContext();
+
+        // NOLINTEND
+    };
+
+    class Results {
+    public:
+        // prevent constructor by default
+        Results& operator=(Results const&);
+        Results(Results const&);
+        Results();
+
+    public:
+        // NOLINTBEGIN
+        // symbol: ??0Results@Recipe@@QEAA@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@@Z
+        MCAPI explicit Results(std::vector<class ItemInstance> const&);
+
+        // symbol: ??1Results@Recipe@@QEAA@XZ
+        MCAPI ~Results();
+
+        // NOLINTEND
+    };
+
+public:
     // prevent constructor by default
     Recipe& operator=(Recipe const&);
     Recipe(Recipe const&);
@@ -33,21 +74,21 @@ public:
     // vIndex: 3, symbol: ?getIngredient@BannerAddPatternRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
     virtual class RecipeIngredient const& getIngredient(int x, int y) const = 0;
 
-    // vIndex: 4, symbol:
-    // ?getResultItem@BannerAddPatternRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
-    virtual std::vector<class ItemInstance> const& getResultItem() const = 0;
-
-    // vIndex: 5, symbol: ?isShapeless@ShapedRecipe@@UEBA_NXZ
+    // vIndex: 4, symbol: ?isShapeless@ShapedRecipe@@UEBA_NXZ
     virtual bool isShapeless() const = 0;
 
-    // vIndex: 6, symbol: ?matches@BannerAddPatternRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
+    // vIndex: 5, symbol: ?matches@BannerAddPatternRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
     virtual bool matches(class CraftingContainer const& craftSlots, class CraftingContext const&) const = 0;
 
-    // vIndex: 7, symbol: ?size@BannerAddPatternRecipe@@UEBAHXZ
+    // vIndex: 6, symbol: ?size@BannerAddPatternRecipe@@UEBAHXZ
     virtual int size() const = 0;
 
-    // vIndex: 8, symbol: ?getId@Recipe@@UEBAAEBVUUID@mce@@XZ
+    // vIndex: 7, symbol: ?getId@Recipe@@UEBAAEBVUUID@mce@@XZ
     virtual class mce::UUID const& getId() const;
+
+    // vIndex: 8, symbol:
+    // ?getResultItems@Recipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
+    virtual std::vector<class ItemInstance> const& getResultItems() const;
 
     // vIndex: 9, symbol: ?isMultiRecipe@Recipe@@UEBA_NXZ
     virtual bool isMultiRecipe() const;
@@ -68,27 +109,20 @@ public:
     // vIndex: 14, symbol: ?getIngredientsHash@Recipe@@UEBA_KXZ
     virtual uint64 getIngredientsHash() const;
 
-    // vIndex: 15, symbol: ?loadResultList@Recipe@@UEBAXAEBVBlockPalette@@@Z
-    virtual void loadResultList(class BlockPalette const&) const;
-
     // symbol: ?countQuantityOfIngredient@Recipe@@QEBAHAEBVItemInstance@@@Z
     MCAPI int countQuantityOfIngredient(class ItemInstance const& ingredient) const;
+
+    // symbol: ?getConstructionContext@Recipe@@QEBA?AUConstructionContext@1@XZ
+    MCAPI struct Recipe::ConstructionContext getConstructionContext() const;
 
     // symbol: ?getHeight@Recipe@@QEBAHXZ
     MCAPI int getHeight() const;
 
-    // symbol:
-    // ?getIngredients@Recipe@@QEBAAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@std@@XZ
-    MCAPI std::vector<class RecipeIngredient> const& getIngredients() const;
-
     // symbol: ?getNetId@Recipe@@QEBAAEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@XZ
     MCAPI RecipeNetId const& getNetId() const;
 
-    // symbol: ?getPriority@Recipe@@QEBAHXZ
-    MCAPI int getPriority() const;
-
-    // symbol: ?getRecipeId@Recipe@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-    MCAPI std::string getRecipeId() const;
+    // symbol: ?getRecipeId@Recipe@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    MCAPI std::string const& getRecipeId() const;
 
     // symbol: ?getTag@Recipe@@QEBAAEBVHashedString@@XZ
     MCAPI class HashedString const& getTag() const;
@@ -109,15 +143,8 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    // symbol:
-    // ??0Recipe@@IEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@VHashedString@@AEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@V?$optional@VRecipeUnlockingRequirement@@@2@VSemVersion@@@Z
-    MCAPI Recipe(
-        std::string_view,
-        class HashedString,
-        std::vector<class RecipeIngredient> const&,
-        std::optional<class RecipeUnlockingRequirement>,
-        class SemVersion
-    );
+    // symbol: ??0Recipe@@IEAA@$$QEAUConstructionContext@0@@Z
+    MCAPI explicit Recipe(struct Recipe::ConstructionContext&&);
 
     // NOLINTEND
 };

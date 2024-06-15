@@ -92,9 +92,15 @@ public:
 
     public:
         // NOLINTBEGIN
+        // symbol: ??0Overload@CommandRegistry@@QEAA@$$QEAU01@@Z
+        MCAPI Overload(struct CommandRegistry::Overload&&);
+
         // symbol:
         // ??0Overload@CommandRegistry@@QEAA@VCommandVersion@@P6A?AV?$unique_ptr@VCommand@@U?$default_delete@VCommand@@@std@@@std@@XZ@Z
         MCAPI Overload(class CommandVersion version_, std::unique_ptr<class Command> (*alloc_)());
+
+        // symbol: ??1Overload@CommandRegistry@@QEAA@XZ
+        MCAPI ~Overload();
 
         // NOLINTEND
     };
@@ -301,11 +307,12 @@ public:
     // prevent constructor by default
     CommandRegistry& operator=(CommandRegistry const&);
     CommandRegistry(CommandRegistry const&);
+    CommandRegistry();
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0CommandRegistry@@QEAA@XZ
-    MCAPI CommandRegistry();
+    // symbol: ??0CommandRegistry@@QEAA@_N@Z
+    MCAPI explicit CommandRegistry(bool);
 
     // symbol:
     // ?addEnumValueConstraints@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@W4SemanticConstraint@@@Z
@@ -415,6 +422,9 @@ public:
 
     // symbol: ??1CommandRegistry@@QEAA@XZ
     MCAPI ~CommandRegistry();
+
+    // symbol: ?CODE_STATUS_PROPERTY_NAME@CommandRegistry@@2PEBDEB
+    MCAPI static char const* CODE_STATUS_PROPERTY_NAME;
 
     // symbol: ?COMMAND_NAME_ENUM_NAME@CommandRegistry@@2PEBDEB
     MCAPI static char const* COMMAND_NAME_ENUM_NAME;

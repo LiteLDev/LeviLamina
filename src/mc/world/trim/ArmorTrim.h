@@ -14,8 +14,14 @@ public:
     // symbol: ??0ArmorTrim@@QEAA@AEBVCompoundTag@@@Z
     MCAPI explicit ArmorTrim(class CompoundTag const& tag);
 
+    // symbol: ??0ArmorTrim@@QEAA@VHashedString@@0@Z
+    MCAPI ArmorTrim(class HashedString patternId, class HashedString materialId);
+
     // symbol: ?getMaterialId@ArmorTrim@@QEBAAEBVHashedString@@XZ
     MCAPI class HashedString const& getMaterialId() const;
+
+    // symbol: ?getPatternId@ArmorTrim@@QEBAAEBVHashedString@@XZ
+    MCAPI class HashedString const& getPatternId() const;
 
     // symbol: ??1ArmorTrim@@QEAA@XZ
     MCAPI ~ArmorTrim();

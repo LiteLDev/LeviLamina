@@ -76,9 +76,6 @@ public:
     // symbol: ?tickLevel@ChunkRecyclerTelemetryData@@QEAAXAEBVLevel@@@Z
     MCAPI void tickLevel(class Level const& level);
 
-    // symbol: ?taskStarted@ChunkRecyclerTelemetryData@@SA?AVTaskInfo@1@XZ
-    MCAPI static class ChunkRecyclerTelemetryData::TaskInfo taskStarted();
-
     // NOLINTEND
 
     // private:

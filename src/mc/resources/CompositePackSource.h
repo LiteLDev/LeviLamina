@@ -13,6 +13,7 @@ public:
     // prevent constructor by default
     CompositePackSource& operator=(CompositePackSource const&);
     CompositePackSource(CompositePackSource const&);
+    CompositePackSource();
 
 public:
     // NOLINTBEGIN
@@ -32,17 +33,8 @@ public:
         Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider
     );
 
-    // symbol: ??0CompositePackSource@@QEAA@XZ
-    MCAPI CompositePackSource();
-
     // symbol: ??0CompositePackSource@@QEAA@$$QEAV?$vector@PEAVPackSource@@V?$allocator@PEAVPackSource@@@std@@@std@@@Z
     MCAPI explicit CompositePackSource(std::vector<class PackSource*>&& packSources);
-
-    // symbol: ?addPackSource@CompositePackSource@@QEAAXPEAVPackSource@@@Z
-    MCAPI void addPackSource(class PackSource* packSource);
-
-    // symbol: ?clear@CompositePackSource@@QEAAXXZ
-    MCAPI void clear();
 
     // NOLINTEND
 };

@@ -26,6 +26,13 @@ public:
     MCAPI explicit SubscriptionBodyBase(std::unique_ptr<class Bedrock::PubSub::SubscriptionContext>&& context);
 
     // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol: ?_disconnect@SubscriptionBodyBase@Detail@PubSub@Bedrock@@AEAAXXZ
+    MCAPI void _disconnect();
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::PubSub::Detail

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/codebuilder/IMessenger.h"
+#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/enums/AgentActionType.h"
 
 // auto generated forward declare list
@@ -17,6 +18,7 @@ class ItemInstance;
 class LevelChunk;
 class Mob;
 class Player;
+namespace CodeBuilder { class IClient; }
 namespace CodeBuilder { class IMessenger; }
 namespace Json { class Value; }
 // clang-format on
@@ -187,6 +189,9 @@ public:
         class ItemInstance const&   tradedFor,
         int                         traderEmeraldCount
     ) const;
+
+    // symbol: ??0Messenger@CodeBuilder@@QEAA@V?$NonOwnerPointer@VIClient@CodeBuilder@@@Bedrock@@@Z
+    MCAPI explicit Messenger(class Bedrock::NonOwnerPointer<class CodeBuilder::IClient>);
 
     // NOLINTEND
 };

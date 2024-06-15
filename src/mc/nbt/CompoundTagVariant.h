@@ -11,9 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0CompoundTagVariant@@QEAA@$$QEAVTag@@@Z
-    MCAPI explicit CompoundTagVariant(class Tag&& tag);
-
     // symbol: ?emplace@CompoundTagVariant@@QEAAAEAVTag@@$$QEAV2@@Z
     MCAPI class Tag& emplace(class Tag&& tag);
 
@@ -22,9 +19,6 @@ public:
 
     // symbol: ?get@CompoundTagVariant@@QEBAPEBVTag@@XZ
     MCAPI class Tag const* get() const;
-
-    // symbol: ??CCompoundTagVariant@@QEBAPEBVTag@@XZ
-    MCAPI class Tag const* operator->() const;
 
     // symbol: ??1CompoundTagVariant@@QEAA@XZ
     MCAPI ~CompoundTagVariant();

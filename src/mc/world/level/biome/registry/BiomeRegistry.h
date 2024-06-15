@@ -5,16 +5,16 @@
 // auto generated inclusion list
 #include "mc/common/TagRegistry.h"
 #include "mc/common/wrapper/IDType.h"
-#include "mc/common/wrapper/StackRefResult.h"
-#include "mc/entity/gamerefs_entity/IEntityRegistryOwner.h"
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 #include "mc/world/AutomaticID.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
 namespace Json { class Value; }
 // clang-format on
 
-class BiomeRegistry : public ::IEntityRegistryOwner {
+class BiomeRegistry : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // BiomeRegistry inner types declare
     // clang-format off
@@ -47,17 +47,14 @@ public:
     // vIndex: 0, symbol: ??1BiomeRegistry@@UEAA@XZ
     virtual ~BiomeRegistry();
 
-    // vIndex: 1, symbol: ?getEntityRegistry@BiomeRegistry@@UEBA?AV?$StackRefResult@$$CBVEntityRegistry@@@@XZ
-    virtual class StackRefResult<class EntityRegistry const> getEntityRegistry() const;
-
-    // vIndex: 2, symbol: ?getEntityRegistry@BiomeRegistry@@UEAA?AV?$StackRefResult@VEntityRegistry@@@@XZ
-    virtual class StackRefResult<class EntityRegistry> getEntityRegistry();
-
     // symbol: ??0BiomeRegistry@@QEAA@XZ
     MCAPI BiomeRegistry();
 
-    // symbol: ?forEachBiome@BiomeRegistry@@QEBAXV?$function@$$A6AXAEAVBiome@@@Z@std@@@Z
-    MCAPI void forEachBiome(std::function<void(class Biome&)> callback) const;
+    // symbol: ?forEachBiome@BiomeRegistry@@QEBAXV?$function@$$A6AXAEBVBiome@@@Z@std@@@Z
+    MCAPI void forEachBiome(std::function<void(class Biome const&)> callback) const;
+
+    // symbol: ?forEachNonConstBiome@BiomeRegistry@@QEAAXV?$function@$$A6AXAEAVBiome@@@Z@std@@@Z
+    MCAPI void forEachNonConstBiome(std::function<void(class Biome&)>);
 
     // symbol:
     // ?getBiomesInDimension@BiomeRegistry@@QEBA?AV?$vector@PEBVBiome@@V?$allocator@PEBVBiome@@@std@@@std@@V?$AutomaticID@VDimension@@H@@@Z
@@ -105,8 +102,8 @@ public:
     // symbol: ?_initTagRegistry@BiomeRegistry@@AEAAXXZ
     MCAPI void _initTagRegistry();
 
-    // symbol: ?_save@BiomeRegistry@@AEAAXAEAVLevelStorage@@@Z
-    MCAPI void _save(class LevelStorage&);
+    // symbol: ?_save@BiomeRegistry@@AEBAXAEAVLevelStorage@@@Z
+    MCAPI void _save(class LevelStorage&) const;
 
     // symbol:
     // ?_loadSingleBiome@BiomeRegistry@@CA?AULoadedBiome@1@AEAVResourcePackManager@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z

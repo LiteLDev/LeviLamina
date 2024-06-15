@@ -102,9 +102,6 @@ public:
     // symbol: ?enableAsyncFlush@NetworkSystem@@QEAAXAEBVNetworkIdentifier@@@Z
     MCAPI void enableAsyncFlush(class NetworkIdentifier const& id);
 
-    // symbol: ?flush@NetworkSystem@@QEAAXAEBVNetworkIdentifier@@$$QEAV?$function@$$A6AXXZ@std@@@Z
-    MCAPI void flush(class NetworkIdentifier const& id, std::function<void()>&& callback);
-
     // symbol:
     // ?getCompressedPeerForUser@NetworkSystem@@QEAA?AV?$weak_ptr@VCompressedNetworkPeer@@@std@@AEBVNetworkIdentifier@@@Z
     MCAPI std::weak_ptr<class CompressedNetworkPeer> getCompressedPeerForUser(class NetworkIdentifier const& id);
@@ -154,10 +151,6 @@ public:
     // symbol: ?send@NetworkSystem@@QEAAXAEBVNetworkIdentifier@@AEBVPacket@@W4SubClientId@@@Z
     MCAPI void send(class NetworkIdentifier const& id, class Packet const& packet, ::SubClientId senderSubId);
 
-    // symbol:
-    // ?sendToMultiple@NetworkSystem@@QEAAXAEBV?$vector@UNetworkIdentifierWithSubId@@V?$allocator@UNetworkIdentifierWithSubId@@@std@@@std@@AEBVPacket@@@Z
-    MCAPI void sendToMultiple(std::vector<struct NetworkIdentifierWithSubId> const& ids, class Packet const& packet);
-
     // symbol: ?setCloseConnection@NetworkSystem@@QEAAXAEBVNetworkIdentifier@@@Z
     MCAPI void setCloseConnection(class NetworkIdentifier const& id);
 
@@ -176,6 +169,10 @@ public:
 
     // symbol: ?_getTransportLayer@NetworkSystem@@IEBA?AW4TransportLayer@@XZ
     MCAPI ::TransportLayer _getTransportLayer() const;
+
+    // symbol:
+    // ?_initNetworkStatistics@NetworkSystem@@IEAAX$$QEAV?$unique_ptr@VNetworkStatistics@@U?$default_delete@VNetworkStatistics@@@std@@@std@@@Z
+    MCAPI void _initNetworkStatistics(std::unique_ptr<class NetworkStatistics>&&);
 
     // symbol: ?_isUsingNetherNetTransportLayer@NetworkSystem@@IEBA_NXZ
     MCAPI bool _isUsingNetherNetTransportLayer() const;

@@ -40,16 +40,15 @@ public:
     // vIndex: 9, symbol: ?onPlayerDimensionChanged@FollowOwnerGoal@@UEAAXPEAVPlayer@@V?$AutomaticID@VDimension@@H@@1@Z
     virtual void onPlayerDimensionChanged(class Player* player, DimensionType fromDimension, DimensionType toDimension);
 
-    // symbol: ??0FollowOwnerGoal@@QEAA@AEAVMob@@MMM_N1M@Z
-    MCAPI FollowOwnerGoal(
-        class Mob& mob,
-        float      speed,
-        float      startDistance,
-        float      stopDistance,
-        bool,
-        bool,
-        float maxDistance
-    );
+    // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol: ?_canReachOwner@FollowOwnerGoal@@AEBA_NAEAVMob@@AEAVNavigationComponent@@@Z
+    MCAPI bool _canReachOwner(class Mob&, class NavigationComponent&) const;
+
+    // symbol: ?_tryToGetTeleportPosition@FollowOwnerGoal@@AEBA?AV?$optional@VVec3@@@std@@AEAVMob@@@Z
+    MCAPI std::optional<class Vec3> _tryToGetTeleportPosition(class Mob&) const;
 
     // NOLINTEND
 };

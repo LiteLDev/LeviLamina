@@ -10,7 +10,6 @@ public:
     // prevent constructor by default
     BehaviorNode& operator=(BehaviorNode const&);
     BehaviorNode(BehaviorNode const&);
-    BehaviorNode();
 
 public:
     // NOLINTBEGIN
@@ -22,6 +21,12 @@ public:
 
     // vIndex: 2, symbol: ?initializeFromDefinition@BehaviorNode@@MEAAXAEAVActor@@@Z
     virtual void initializeFromDefinition(class Actor& owner);
+
+    // symbol: ??0BehaviorNode@@QEAA@XZ
+    MCAPI BehaviorNode();
+
+    // symbol: ?getBehaviorData@BehaviorNode@@QEAAAEAVBehaviorData@@XZ
+    MCAPI class BehaviorData& getBehaviorData();
 
     // NOLINTEND
 };

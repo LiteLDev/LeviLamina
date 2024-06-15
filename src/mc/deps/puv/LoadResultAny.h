@@ -5,7 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class SemVersion;
-namespace Puv { struct Logger; }
+namespace Puv { class Logger; }
 // clang-format on
 
 namespace Puv {
@@ -22,8 +22,8 @@ public:
     // symbol: ??0LoadResultAny@Puv@@QEAA@$$QEAV01@@Z
     MCAPI LoadResultAny(class Puv::LoadResultAny&&);
 
-    // symbol: ?log@LoadResultAny@Puv@@QEAAAEAULogger@2@XZ
-    MCAPI struct Puv::Logger& log();
+    // symbol: ?log@LoadResultAny@Puv@@QEAAAEAVLogger@2@XZ
+    MCAPI class Puv::Logger& log();
 
     // symbol: ??BLoadResultAny@Puv@@QEBA_NXZ
     MCAPI explicit operator bool() const;
@@ -34,8 +34,8 @@ public:
     // symbol: ??1LoadResultAny@Puv@@QEAA@XZ
     MCAPI ~LoadResultAny();
 
-    // symbol: ?makeError@LoadResultAny@Puv@@SA?AV12@ULogger@2@@Z
-    MCAPI static class Puv::LoadResultAny makeError(struct Puv::Logger);
+    // symbol: ?makeError@LoadResultAny@Puv@@SA?AV12@VLogger@2@@Z
+    MCAPI static class Puv::LoadResultAny makeError(class Puv::Logger);
 
     // NOLINTEND
 };

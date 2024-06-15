@@ -14,6 +14,7 @@
 namespace Automation { class AutomationClient; }
 namespace Bedrock { class EnableNonOwnerReferences; }
 namespace CodeBuilder { class GameContext; }
+namespace CodeBuilder { class IClient; }
 namespace CodeBuilder { class IManager; }
 namespace CodeBuilder { class IMessenger; }
 namespace CodeBuilder { class IRequestHandler; }
@@ -28,6 +29,7 @@ namespace CodeBuilder { struct ErrorMessage; }
 namespace CodeBuilder { struct EventMessage; }
 namespace CodeBuilder { struct RequestHeader; }
 namespace Json { class Value; }
+namespace Util::CodeBuilder { struct Event; }
 // clang-format on
 
 namespace CodeBuilder {

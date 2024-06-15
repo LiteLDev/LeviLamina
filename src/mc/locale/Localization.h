@@ -63,9 +63,6 @@ public:
         std::vector<std::string> const& blockedKeys
     );
 
-    // symbol: ??1Localization@@QEAA@XZ
-    MCAPI ~Localization();
-
     // symbol:
     // ?getLangFilePath@Localization@@SA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI static class Core::PathBuffer<std::string> getLangFilePath(std::string const& langCode);
@@ -93,6 +90,10 @@ public:
     // symbol:
     // ?_replaceTokens@Localization@@IEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
     MCAPI void _replaceTokens(std::string& string, std::vector<std::string> const& params) const;
+
+    // symbol:
+    // ?_getDigitGroupSeparator@Localization@@KA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
+    MCAPI static std::string _getDigitGroupSeparator(std::string const&);
 
     // symbol:
     // ?_isCommaSeperatedLanguage@Localization@@KA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

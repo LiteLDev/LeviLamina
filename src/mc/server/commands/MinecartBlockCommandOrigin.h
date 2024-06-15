@@ -11,7 +11,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -64,11 +63,6 @@ public:
 
     // symbol: ??0MinecartBlockCommandOrigin@@QEAA@AEAVBlockSource@@AEBUActorUniqueID@@@Z
     MCAPI MinecartBlockCommandOrigin(class BlockSource& region, struct ActorUniqueID const& minecartId);
-
-    // symbol:
-    // ?load@MinecartBlockCommandOrigin@@SA?AV?$unique_ptr@VMinecartBlockCommandOrigin@@U?$default_delete@VMinecartBlockCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVLevel@@@Z
-    MCAPI static std::unique_ptr<class MinecartBlockCommandOrigin>
-    load(class CompoundTag const& tag, class Level& level);
 
     // NOLINTEND
 };

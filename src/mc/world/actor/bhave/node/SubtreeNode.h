@@ -11,7 +11,6 @@ public:
     // prevent constructor by default
     SubtreeNode& operator=(SubtreeNode const&);
     SubtreeNode(SubtreeNode const&);
-    SubtreeNode();
 
 public:
     // NOLINTBEGIN
@@ -23,6 +22,9 @@ public:
 
     // vIndex: 2, symbol: ?initializeFromDefinition@SubtreeNode@@MEAAXAEAVActor@@@Z
     virtual void initializeFromDefinition(class Actor& owner);
+
+    // symbol: ??0SubtreeNode@@QEAA@XZ
+    MCAPI SubtreeNode();
 
     // NOLINTEND
 };

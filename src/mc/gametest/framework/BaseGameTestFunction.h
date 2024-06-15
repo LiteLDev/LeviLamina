@@ -49,10 +49,6 @@ public:
         std::vector<std::string> tags
     );
 
-    // symbol:
-    // ?getBatchName@BaseGameTestFunction@gametest@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-    MCAPI std::string const& getBatchName() const;
-
     // symbol: ?getRotate@BaseGameTestFunction@gametest@@QEBA_NXZ
     MCAPI bool getRotate() const;
 

@@ -84,8 +84,14 @@ MCAPI bool levelChunkNeedsUpgrade(class LevelChunk const& lc);
 // symbol: ?upgradeArmorStandComponents@VanillaLevelChunkUpgrade@@YA_NAEAVCompoundTag@@@Z
 MCAPI bool upgradeArmorStandComponents(class CompoundTag& tag);
 
+// symbol: ?upgradeLevelChunk@VanillaLevelChunkUpgrade@@YAXAEAVLevelChunk@@0AEAVBlockSource@@@Z
+MCAPI void upgradeLevelChunk(class LevelChunk& lc, class LevelChunk& generatedChunk, class BlockSource& region);
+
 // symbol: ?upgradeOldLimboEntity@VanillaLevelChunkUpgrade@@YAXAEAVCompoundTag@@W4LimboEntitiesVersion@@_N@Z
 MCAPI void upgradeOldLimboEntity(class CompoundTag& tag, ::LimboEntitiesVersion vers, bool);
+
+// symbol: ?upgradeWorldHeight@VanillaLevelChunkUpgrade@@YAXAEAVLevelChunk@@0AEAVBlockSource@@@Z
+MCAPI void upgradeWorldHeight(class LevelChunk& lc, class LevelChunk& generatedChunk, class BlockSource& region);
 // NOLINTEND
 
 }; // namespace VanillaLevelChunkUpgrade

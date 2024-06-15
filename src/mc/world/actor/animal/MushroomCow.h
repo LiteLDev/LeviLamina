@@ -10,7 +10,6 @@
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
-#include "mc/enums/ArmorTextureType.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/InputMode.h"
 #include "mc/enums/MaterialType.h"
@@ -39,7 +38,7 @@ public:
     // vIndex: 10, symbol: __gen_??1MushroomCow@@UEAA@XZ
     virtual ~MushroomCow() = default;
 
-    // vIndex: 162, symbol: ?checkSpawnRules@MushroomCow@@UEAA_N_N@Z
+    // vIndex: 160, symbol: ?checkSpawnRules@MushroomCow@@UEAA_N_N@Z
     virtual bool checkSpawnRules(bool fromSpawner);
 
     // symbol: ??0MushroomCow@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

@@ -2,16 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/common/wrapper/StackRefResult.h"
+
 class ActorRuntimeIDManager {
 public:
     // prevent constructor by default
     ActorRuntimeIDManager& operator=(ActorRuntimeIDManager const&);
     ActorRuntimeIDManager(ActorRuntimeIDManager const&);
+    ActorRuntimeIDManager();
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ActorRuntimeIDManager@@QEAA@XZ
-    MCAPI ActorRuntimeIDManager();
+    // symbol: ??0ActorRuntimeIDManager@@QEAA@V?$not_null@V?$StackRefResult@VGameplayUserManager@@@@@gsl@@@Z
+    MCAPI explicit ActorRuntimeIDManager(gsl::not_null<class StackRefResult<class GameplayUserManager>>);
 
     // symbol: ?addRuntimeActorEntity@ActorRuntimeIDManager@@QEAAXVActorRuntimeID@@VWeakEntityRef@@@Z
     MCAPI void addRuntimeActorEntity(class ActorRuntimeID, class WeakEntityRef entityRef);
@@ -26,8 +30,8 @@ public:
     // ?getRuntimeActorList@ActorRuntimeIDManager@@QEBA?AV?$vector@PEAVActor@@V?$allocator@PEAVActor@@@std@@@std@@XZ
     MCAPI std::vector<class Actor*> getRuntimeActorList() const;
 
-    // symbol: ?initialize@ActorRuntimeIDManager@@QEAAXAEAVActorManager@@AEAVGameplayUserManager@@@Z
-    MCAPI void initialize(class ActorManager&, class GameplayUserManager&);
+    // symbol: ?initialize@ActorRuntimeIDManager@@QEAAXAEAVActorManager@@@Z
+    MCAPI void initialize(class ActorManager&);
 
     // symbol: ?removeRuntimeActorEntity@ActorRuntimeIDManager@@QEAAXVActorRuntimeID@@@Z
     MCAPI void removeRuntimeActorEntity(class ActorRuntimeID);

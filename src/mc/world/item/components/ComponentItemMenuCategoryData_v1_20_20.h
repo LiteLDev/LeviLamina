@@ -34,15 +34,9 @@ public:
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // symbol:
-    // ?upgrade@ComponentItemMenuCategoryData_v1_20_20@@SA?AV?$optional@UComponentItemMenuCategoryData_v1_20_20@@@std@@$$QEAV?$optional@W4CreativeItemCategory@@@3@@Z
-    MCAPI static std::optional<struct ComponentItemMenuCategoryData_v1_20_20>
-    upgrade(std::optional<::CreativeItemCategory>&&);
-
-    // symbol: ?FIRST_VERSION@ComponentItemMenuCategoryData_v1_20_20@@2VSemVersion@@B
-    MCAPI static class SemVersion const FIRST_VERSION;
-
-    // symbol: ?LAST_VERSION@ComponentItemMenuCategoryData_v1_20_20@@2VSemVersion@@B
-    MCAPI static class SemVersion const LAST_VERSION;
+    // ?upgrade@ComponentItemMenuCategoryData_v1_20_20@@SAXAEAV?$optional@W4CreativeItemCategory@@@std@@AEAV?$optional@UComponentItemMenuCategoryData_v1_20_20@@@3@@Z
+    MCAPI static void
+    upgrade(std::optional<::CreativeItemCategory>&, std::optional<struct ComponentItemMenuCategoryData_v1_20_20>&);
 
     // NOLINTEND
 };

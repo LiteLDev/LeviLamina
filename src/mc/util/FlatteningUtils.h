@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/wrapper/WeakPtr.h"
 #include "mc/enums/CoralColor.h"
 #include "mc/enums/WoodType.h"
 #include "mc/world/level/block/BlockLegacy.h"
@@ -30,6 +31,9 @@ MCAPI extern struct FlatteningUtils::LegacyBlockInfo const LegacyConcreteInfo;
 // symbol: ?LegacyConcretePowderInfo@FlatteningUtils@@3ULegacyBlockInfo@1@B
 MCAPI extern struct FlatteningUtils::LegacyBlockInfo const LegacyConcretePowderInfo;
 
+// symbol: ?LegacyCoralBlockInfo@FlatteningUtils@@3ULegacyBlockInfo@1@B
+MCAPI extern struct FlatteningUtils::LegacyBlockInfo const LegacyCoralBlockInfo;
+
 // symbol: ?LegacyCoralFanInfo@FlatteningUtils@@3ULegacyBlockInfo@1@B
 MCAPI extern struct FlatteningUtils::LegacyBlockInfo const LegacyCoralFanInfo;
 
@@ -38,6 +42,9 @@ MCAPI extern struct FlatteningUtils::LegacyBlockInfo const LegacyCoralInfo;
 
 // symbol: ?LegacyDeadCoralFanInfo@FlatteningUtils@@3ULegacyBlockInfo@1@B
 MCAPI extern struct FlatteningUtils::LegacyBlockInfo const LegacyDeadCoralFanInfo;
+
+// symbol: ?LegacyDoublePlantInfo@FlatteningUtils@@3ULegacyBlockInfo@1@B
+MCAPI extern struct FlatteningUtils::LegacyBlockInfo const LegacyDoublePlantInfo;
 
 // symbol: ?LegacyFenceInfo@FlatteningUtils@@3ULegacyBlockInfo@1@B
 MCAPI extern struct FlatteningUtils::LegacyBlockInfo const LegacyFenceInfo;
@@ -84,6 +91,12 @@ MCAPI extern struct FlatteningUtils::LegacyBlockInfo const LegacyStainedGlassPan
 // symbol: ?LegacyStoneInfo@FlatteningUtils@@3ULegacyBlockInfo@1@B
 MCAPI extern struct FlatteningUtils::LegacyBlockInfo const LegacyStoneInfo;
 
+// symbol: ?LegacyStoneSlab1Info@FlatteningUtils@@3ULegacyBlockInfo@1@B
+MCAPI extern struct FlatteningUtils::LegacyBlockInfo const LegacyStoneSlab1Info;
+
+// symbol: ?LegacyTallGrassInfo@FlatteningUtils@@3ULegacyBlockInfo@1@B
+MCAPI extern struct FlatteningUtils::LegacyBlockInfo const LegacyTallGrassInfo;
+
 // symbol: ?LegacyTerracottaInfo@FlatteningUtils@@3ULegacyBlockInfo@1@B
 MCAPI extern struct FlatteningUtils::LegacyBlockInfo const LegacyTerracottaInfo;
 
@@ -103,6 +116,11 @@ MCAPI extern struct FlatteningUtils::LegacyBlockInfo const LegacyWoolInfo;
 // ?addUpdate@FlatteningUtils@@YAXAEAVCompoundTagUpdaterContext@@EEEAEBULegacyBlockInfo@1@AEBV?$vector@V?$shared_ptr@VRemovedState@FlatteningUtils@@@std@@V?$allocator@V?$shared_ptr@VRemovedState@FlatteningUtils@@@std@@@2@@std@@@Z
 MCAPI void
 addUpdate(class CompoundTagUpdaterContext&, uchar, uchar, uchar, struct FlatteningUtils::LegacyBlockInfo const&, std::vector<std::shared_ptr<class FlatteningUtils::RemovedState>> const&);
+
+// symbol:
+// ?getComplexAliasBlocks@FlatteningUtils@@YA?AV?$vector@V?$WeakPtr@$$CBVBlockLegacy@@@@V?$allocator@V?$WeakPtr@$$CBVBlockLegacy@@@@@std@@@std@@AEBULegacyBlockInfo@1@_K@Z
+MCAPI std::vector<class WeakPtr<class BlockLegacy const>>
+      getComplexAliasBlocks(struct FlatteningUtils::LegacyBlockInfo const&, uint64);
 
 // symbol:
 // ?getSimpleBlockComplexAliasCallback@FlatteningUtils@@YA?AV?$function@$$A6APEBVBlock@@H@Z@std@@AEBULegacyBlockInfo@1@_K@Z

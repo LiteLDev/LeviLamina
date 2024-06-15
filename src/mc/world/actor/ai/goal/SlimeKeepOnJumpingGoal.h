@@ -28,8 +28,5 @@ public:
     // ?appendDebugInfo@SlimeKeepOnJumpingGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0SlimeKeepOnJumpingGoal@@QEAA@AEAVMob@@@Z
-    MCAPI explicit SlimeKeepOnJumpingGoal(class Mob& mob);
-
     // NOLINTEND
 };

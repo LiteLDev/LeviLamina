@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinition;
 namespace ScriptModuleMinecraft { class ScriptDynamicPropertiesDefinition; }
 // clang-format on
 
@@ -22,6 +23,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0ScriptActorType@ScriptModuleMinecraft@@QEAA@AEAVActorDefinition@@@Z
+    MCAPI explicit ScriptActorType(class ActorDefinition& definition);
+
     // symbol:
     // ?addDynamicPropertiesDefinition@ScriptActorType@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBVScriptDynamicPropertiesDefinition@2@@Z
     MCAPI class Scripting::Result<void>

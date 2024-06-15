@@ -28,6 +28,9 @@ public:
     // ?registerActorGameplayHandler@ActorEventCoordinator@@QEAAX$$QEAV?$unique_ptr@VActorGameplayHandler@@U?$default_delete@VActorGameplayHandler@@@std@@@std@@@Z
     MCAPI void registerActorGameplayHandler(std::unique_ptr<class ActorGameplayHandler>&& handler);
 
+    // symbol: ?registerWithGameplayUserManagerEvents@ActorEventCoordinator@@QEAAXAEAVGameplayUserManager@@@Z
+    MCAPI void registerWithGameplayUserManagerEvents(class GameplayUserManager&);
+
     // symbol: ?sendActorCreated@ActorEventCoordinator@@QEAAXAEAVActor@@W4ActorInitializationMethod@@@Z
     MCAPI void sendActorCreated(class Actor&, ::ActorInitializationMethod);
 
@@ -69,6 +72,13 @@ public:
 
     // symbol: ?sendServerPlayerAuthInputReceived@ActorEventCoordinator@@QEAAXAEAVPlayer@@@Z
     MCAPI void sendServerPlayerAuthInputReceived(class Player&);
+
+    // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol: ?_onGameplayUserAdded@ActorEventCoordinator@@AEAAXAEAVEntityContext@@@Z
+    MCAPI void _onGameplayUserAdded(class EntityContext&);
 
     // NOLINTEND
 };

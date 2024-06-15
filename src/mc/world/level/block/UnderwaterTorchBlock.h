@@ -30,19 +30,19 @@ public:
     // vIndex: 0, symbol: __gen_??1UnderwaterTorchBlock@@UEAA@XZ
     virtual ~UnderwaterTorchBlock() = default;
 
-    // vIndex: 32, symbol: ?isWaterBlocking@UnderwaterTorchBlock@@UEBA_NXZ
+    // vIndex: 33, symbol: ?isWaterBlocking@UnderwaterTorchBlock@@UEBA_NXZ
     virtual bool isWaterBlocking() const;
 
-    // vIndex: 56, symbol: ?canContainLiquid@UnderwaterTorchBlock@@UEBA_NXZ
+    // vIndex: 57, symbol: ?canContainLiquid@UnderwaterTorchBlock@@UEBA_NXZ
     virtual bool canContainLiquid() const;
 
-    // vIndex: 60, symbol: ?canBeUsedInCommands@UnderwaterTorchBlock@@UEBA_NAEBVBaseGameVersion@@@Z
+    // vIndex: 61, symbol: ?canBeUsedInCommands@UnderwaterTorchBlock@@UEBA_NAEBVBaseGameVersion@@@Z
     virtual bool canBeUsedInCommands(class BaseGameVersion const& requiredBaseGameVersion) const;
 
-    // vIndex: 85, symbol: ?mayPlace@UnderwaterTorchBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 86, symbol: ?mayPlace@UnderwaterTorchBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 133, symbol:
+    // vIndex: 134, symbol:
     // ?animateTickBedrockLegacy@UnderwaterTorchBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/TypedObjectHandle.h"
 #include "mc/world/events/EventResult.h"
 
 // auto generated forward declare list
@@ -11,8 +10,6 @@
 class Actor;
 class Level;
 class Player;
-namespace ScriptModuleMinecraft { class IScriptWorldAfterEvents; }
-namespace Scripting { class WeakLifetimeScope; }
 struct LevelGameRuleChangeEvent;
 struct LevelNotificationEvent;
 struct LevelStartLeaveGameEvent;
@@ -45,8 +42,8 @@ public:
     virtual ::EventResult onLevelRemovedPlayer(class Level&, class Player& player);
 
     // vIndex: 4, symbol:
-    // ?onLevelRemovedActor@ScriptLevelEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEAVLevel@@AEAVActor@@@Z
-    virtual ::EventResult onLevelRemovedActor(class Level&, class Actor& actor);
+    // ?onLevelRemovedActor@ScriptLevelEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEAVActor@@@Z
+    virtual ::EventResult onLevelRemovedActor(class Actor&);
 
     // vIndex: 5, symbol:
     // ?onLevelTick@ScriptLevelEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEAVLevel@@@Z
@@ -77,14 +74,6 @@ public:
     // vIndex: 12, symbol:
     // ?onEvent@ScriptLevelEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUScriptingInitializeEvent@@@Z
     virtual ::EventResult onEvent(struct ScriptingInitializeEvent const&);
-
-    // symbol:
-    // ??0ScriptLevelEventListener@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VIScriptWorldAfterEvents@ScriptModuleMinecraft@@@3@_N@Z
-    MCAPI ScriptLevelEventListener(
-        class Scripting::WeakLifetimeScope const&,
-        struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldAfterEvents>,
-        bool
-    );
 
     // NOLINTEND
 };

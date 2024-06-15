@@ -11,6 +11,7 @@ public:
     // prevent constructor by default
     Int64Tag& operator=(Int64Tag const&);
     Int64Tag(Int64Tag const&);
+    Int64Tag();
 
 public:
     // NOLINTBEGIN
@@ -37,9 +38,6 @@ public:
 
     // vIndex: 10, symbol: ?hash@Int64Tag@@UEBA_KXZ
     virtual uint64 hash() const;
-
-    // symbol: ??0Int64Tag@@QEAA@XZ
-    MCAPI Int64Tag();
 
     // symbol: ??0Int64Tag@@QEAA@_J@Z
     MCAPI explicit Int64Tag(int64 data);

@@ -51,9 +51,6 @@ public:
     // symbol: ?init@NetherDimension@@UEAAXAEBVStructureSetRegistry@worldgen@br@@@Z
     MCVAPI void init(class br::worldgen::StructureSetRegistry const&);
 
-    // symbol: ?isFoggyAt@NetherDimension@@UEBA_NHH@Z
-    MCVAPI bool isFoggyAt(int x, int z) const;
-
     // symbol: ?isNaturalDimension@NetherDimension@@UEBA_NXZ
     MCVAPI bool isNaturalDimension() const;
 

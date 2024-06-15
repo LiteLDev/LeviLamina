@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Puv::v1_20_50 { struct RecordItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -17,6 +16,7 @@ public:
     // prevent constructor by default
     RecordItemComponent& operator=(RecordItemComponent const&);
     RecordItemComponent(RecordItemComponent const&);
+    RecordItemComponent();
 
 public:
     // NOLINTBEGIN
@@ -51,12 +51,6 @@ public:
 
     // vIndex: 9, symbol: ?_initializeComponent@ItemComponent@@MEAAXXZ
     virtual void _initializeComponent();
-
-    // symbol: ??0RecordItemComponent@@QEAA@XZ
-    MCAPI RecordItemComponent();
-
-    // symbol: ??0RecordItemComponent@@QEAA@U0v1_20_50@Puv@@@Z
-    MCAPI explicit RecordItemComponent(struct Puv::v1_20_50::RecordItemComponent);
 
     // symbol: ??0RecordItemComponent@@QEAA@W4LevelSoundEvent@Legacy@Puv@@MH@Z
     MCAPI RecordItemComponent(::Puv::Legacy::LevelSoundEvent, float, int);

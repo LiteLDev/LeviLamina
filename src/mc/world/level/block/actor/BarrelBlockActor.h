@@ -32,8 +32,5 @@ public:
     // symbol: ?stopOpen@BarrelBlockActor@@UEAAXAEAVPlayer@@@Z
     MCVAPI void stopOpen(class Player& player);
 
-    // symbol: ??0BarrelBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI explicit BarrelBlockActor(class BlockPos const& pos);
-
     // NOLINTEND
 };

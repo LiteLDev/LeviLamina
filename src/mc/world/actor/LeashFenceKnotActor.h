@@ -10,7 +10,6 @@
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
-#include "mc/enums/ArmorTextureType.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/InputMode.h"
 #include "mc/enums/MaterialType.h"
@@ -56,28 +55,25 @@ public:
     // vIndex: 38, symbol: ?getShadowRadius@LeashFenceKnotActor@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 45, symbol: ?isPickable@LeashFenceKnotActor@@UEAA_NXZ
-    virtual bool isPickable();
-
-    // vIndex: 126, symbol: ?getInteraction@LeashFenceKnotActor@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z
+    // vIndex: 124, symbol: ?getInteraction@LeashFenceKnotActor@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z
     virtual bool getInteraction(class Player& player, class ActorInteraction& interaction, class Vec3 const& location);
 
-    // vIndex: 149, symbol: ?readAdditionalSaveData@LeashFenceKnotActor@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147, symbol: ?readAdditionalSaveData@LeashFenceKnotActor@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 150, symbol: ?addAdditionalSaveData@LeashFenceKnotActor@@UEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148, symbol: ?addAdditionalSaveData@LeashFenceKnotActor@@UEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 153, symbol: ?getWidth@LeashFenceKnotActor@@UEBAHXZ
+    // vIndex: 151, symbol: ?getWidth@LeashFenceKnotActor@@UEBAHXZ
     virtual int getWidth() const;
 
-    // vIndex: 154, symbol: ?getHeight@LeashFenceKnotActor@@UEBAHXZ
+    // vIndex: 152, symbol: ?getHeight@LeashFenceKnotActor@@UEBAHXZ
     virtual int getHeight() const;
 
-    // vIndex: 155, symbol: ?dropItem@LeashFenceKnotActor@@UEAAXXZ
+    // vIndex: 153, symbol: ?dropItem@LeashFenceKnotActor@@UEAAXXZ
     virtual void dropItem();
 
-    // vIndex: 157, symbol: ?wouldSurvive@LeashFenceKnotActor@@UEAA_NAEAVBlockSource@@@Z
+    // vIndex: 155, symbol: ?wouldSurvive@LeashFenceKnotActor@@UEAA_NAEAVBlockSource@@@Z
     virtual bool wouldSurvive(class BlockSource& region);
 
     // symbol:

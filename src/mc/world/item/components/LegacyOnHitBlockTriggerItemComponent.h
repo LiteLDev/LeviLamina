@@ -25,9 +25,6 @@ public:
     // vIndex: 9, symbol: ?_initializeComponent@LegacyOnHitBlockTriggerItemComponent@@UEAAXXZ
     virtual void _initializeComponent();
 
-    // symbol: ??0LegacyOnHitBlockTriggerItemComponent@@QEAA@$$QEAULegacyOnHitBlockTriggerItemComponentData@@@Z
-    MCAPI explicit LegacyOnHitBlockTriggerItemComponent(struct LegacyOnHitBlockTriggerItemComponentData&&);
-
     // symbol: ?getIdentifier@LegacyOnHitBlockTriggerItemComponent@@SAAEBVHashedString@@XZ
     MCAPI static class HashedString const& getIdentifier();
 

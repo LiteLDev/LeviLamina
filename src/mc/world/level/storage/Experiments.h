@@ -13,9 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?Cameras@Experiments@@QEBA_NXZ
-    MCAPI bool Cameras() const;
-
     // symbol: ?DataDrivenBiomes@Experiments@@QEBA_NXZ
     MCAPI bool DataDrivenBiomes() const;
 
@@ -30,9 +27,6 @@ public:
 
     // symbol: ?UpcomingCreatorFeatures@Experiments@@QEBA_NXZ
     MCAPI bool UpcomingCreatorFeatures() const;
-
-    // symbol: ?UpdateAnnouncedLive2023@Experiments@@QEBA_NXZ
-    MCAPI bool UpdateAnnouncedLive2023() const;
 
     // symbol: ?VillagerTradesRebalance@Experiments@@QEBA_NXZ
     MCAPI bool VillagerTradesRebalance() const;

@@ -32,9 +32,6 @@ public:
     // vIndex: 3, symbol: ?resolve@TextObjectSelector@@UEBA?AVValue@Json@@AEBUResolveData@@@Z
     virtual class Json::Value resolve(struct ResolveData const&) const;
 
-    // symbol: ??0TextObjectSelector@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI explicit TextObjectSelector(std::string selectorString);
-
     // symbol:
     // ?RAW_TEXT_SELECTOR_KEY@TextObjectSelector@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const RAW_TEXT_SELECTOR_KEY;

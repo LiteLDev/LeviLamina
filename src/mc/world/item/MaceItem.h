@@ -40,7 +40,7 @@ public:
     // vIndex: 50, symbol: ?getEnchantSlot@MaceItem@@UEBAHXZ
     virtual int getEnchantSlot() const;
 
-    // vIndex: 77, symbol: ?hurtActor@MaceItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
+    // vIndex: 78, symbol: ?hurtActor@MaceItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
     virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
 
     // symbol: ??0MaceItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVTier@Item@@@Z

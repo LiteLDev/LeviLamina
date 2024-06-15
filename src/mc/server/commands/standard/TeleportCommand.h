@@ -49,6 +49,9 @@ public:
 
     // private:
     // NOLINTBEGIN
+    // symbol: ?doArmorStandTeleportBackwardCompability@TeleportCommand@@AEBAXAEAVActor@@PEBV2@@Z
+    MCAPI void doArmorStandTeleportBackwardCompability(class Actor& target, class Actor const*) const;
+
     // symbol:
     // ?getFacingDirection@TeleportCommand@@AEBA?AW4FacingResult@RotationCommandUtils@@AEBVCommandOrigin@@AEAVCommandOutput@@AEAVVec3@@PEAVActor@@@Z
     MCAPI ::RotationCommandUtils::FacingResult

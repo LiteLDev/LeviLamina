@@ -11,7 +11,6 @@ public:
     // prevent constructor by default
     InteractActionNode& operator=(InteractActionNode const&);
     InteractActionNode(InteractActionNode const&);
-    InteractActionNode();
 
 public:
     // NOLINTBEGIN
@@ -23,6 +22,9 @@ public:
 
     // vIndex: 2, symbol: ?initializeFromDefinition@InteractActionNode@@EEAAXAEAVActor@@@Z
     virtual void initializeFromDefinition(class Actor& owner);
+
+    // symbol: ??0InteractActionNode@@QEAA@XZ
+    MCAPI InteractActionNode();
 
     // NOLINTEND
 };

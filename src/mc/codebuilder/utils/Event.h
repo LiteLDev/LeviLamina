@@ -4,7 +4,7 @@
 
 namespace Util::CodeBuilder {
 
-class Event {
+struct Event {
 public:
     // prevent constructor by default
     Event& operator=(Event const&);
@@ -13,6 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0Event@CodeBuilder@Util@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI explicit Event(std::string const& name);
+
     // symbol: ??1Event@CodeBuilder@Util@@QEAA@XZ
     MCAPI ~Event();
 

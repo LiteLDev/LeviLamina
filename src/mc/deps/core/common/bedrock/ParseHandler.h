@@ -36,12 +36,6 @@ public:
     // symbol: ?Null@ParseHandler@JSONObject@Bedrock@@QEAA_NXZ
     MCAPI bool Null();
 
-    // symbol: ?StartArray@ParseHandler@JSONObject@Bedrock@@QEAA_NXZ
-    MCAPI bool StartArray();
-
-    // symbol: ?StartObject@ParseHandler@JSONObject@Bedrock@@QEAA_NXZ
-    MCAPI bool StartObject();
-
     // symbol: ?String@ParseHandler@JSONObject@Bedrock@@QEAA_NPEBDI_N@Z
     MCAPI bool String(char const* str, uint length, bool copy);
 

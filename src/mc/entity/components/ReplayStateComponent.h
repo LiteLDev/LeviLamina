@@ -43,6 +43,9 @@ public:
     // symbol: ?getCurrentTick@ReplayStateComponent@@QEBA_KXZ
     MCAPI uint64 getCurrentTick() const;
 
+    // symbol: ?notifyOfExternalCorrection@ReplayStateComponent@@QEBAXXZ
+    MCAPI void notifyOfExternalCorrection() const;
+
     // symbol: ??4ReplayStateComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class ReplayStateComponent& operator=(class ReplayStateComponent&&);
 

@@ -27,7 +27,6 @@ namespace ScriptModuleMinecraft { struct ScriptItemUseOnAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptItemUseOnBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerJoinAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerLeaveAfterEvent; }
-namespace ScriptModuleMinecraft { struct ScriptTickEvent; }
 namespace ScriptModuleMinecraft { struct ScriptWeatherChangedAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptWorldInitializeAfterEvent; }
 namespace Scripting { class ModuleBindingBuilder; }
@@ -159,10 +158,6 @@ public:
     // ?onActorCreated@ScriptV010Events@ScriptModuleMinecraft@@QEAAXAEAV?$StrongTypedObjectHandle@UScriptActorCreateEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     MCAPI void
     onActorCreated(class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptActorCreateEvent>&);
-
-    // symbol:
-    // ?onLevelTick@ScriptV010Events@ScriptModuleMinecraft@@QEAAXAEAV?$StrongTypedObjectHandle@UScriptTickEvent@ScriptModuleMinecraft@@@Scripting@@@Z
-    MCAPI void onLevelTick(class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptTickEvent>&);
 
     // symbol: ??4ScriptV010Events@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptV010Events& operator=(class ScriptModuleMinecraft::ScriptV010Events&&);

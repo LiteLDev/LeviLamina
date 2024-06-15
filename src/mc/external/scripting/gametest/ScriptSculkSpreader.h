@@ -37,6 +37,10 @@ public:
     // symbol: ?getTotalCharge@ScriptSculkSpreader@ScriptModuleGameTest@@QEBA?AV?$Result@H$$V@Scripting@@XZ
     MCAPI class Scripting::Result<int> getTotalCharge() const;
 
+    // symbol: ??4ScriptSculkSpreader@ScriptModuleGameTest@@QEAAAEAV01@$$QEAV01@@Z
+    MCAPI class ScriptModuleGameTest::ScriptSculkSpreader&
+    operator=(class ScriptModuleGameTest::ScriptSculkSpreader&& rhs);
+
     // symbol: ??1ScriptSculkSpreader@ScriptModuleGameTest@@QEAA@XZ
     MCAPI ~ScriptSculkSpreader();
 

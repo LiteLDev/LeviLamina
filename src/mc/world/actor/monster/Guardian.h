@@ -10,7 +10,6 @@
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
-#include "mc/enums/ArmorTextureType.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/InputMode.h"
 #include "mc/enums/MaterialType.h"
@@ -46,25 +45,25 @@ public:
     // vIndex: 10, symbol: __gen_??1Guardian@@UEAA@XZ
     virtual ~Guardian() = default;
 
-    // vIndex: 56, symbol: ?setTarget@Guardian@@UEAAXPEAVActor@@@Z
+    // vIndex: 55, symbol: ?setTarget@Guardian@@UEAAXPEAVActor@@@Z
     virtual void setTarget(class Actor* target);
 
-    // vIndex: 148, symbol: ?_hurt@Guardian@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 146, symbol: ?_hurt@Guardian@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 149, symbol: ?readAdditionalSaveData@Guardian@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147, symbol: ?readAdditionalSaveData@Guardian@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 150, symbol: ?addAdditionalSaveData@Guardian@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148, symbol: ?addAdditionalSaveData@Guardian@@MEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 162, symbol: ?checkSpawnRules@Guardian@@UEAA_N_N@Z
+    // vIndex: 160, symbol: ?checkSpawnRules@Guardian@@UEAA_N_N@Z
     virtual bool checkSpawnRules(bool fromSpawner);
 
-    // vIndex: 167, symbol: ?getMaxHeadXRot@Guardian@@UEAAMXZ
+    // vIndex: 165, symbol: ?getMaxHeadXRot@Guardian@@UEAAMXZ
     virtual float getMaxHeadXRot();
 
-    // vIndex: 192, symbol: ?isDarkEnoughToSpawn@Guardian@@MEBA_NXZ
+    // vIndex: 190, symbol: ?isDarkEnoughToSpawn@Guardian@@MEBA_NXZ
     virtual bool isDarkEnoughToSpawn() const;
 
     // symbol: ??0Guardian@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

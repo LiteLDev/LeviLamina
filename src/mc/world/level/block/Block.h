@@ -33,6 +33,9 @@ public:
     // vIndex: 1, symbol: ?getRenderLayer@Block@@UEBA?AW4BlockRenderLayer@@XZ
     virtual ::BlockRenderLayer getRenderLayer() const;
 
+    // symbol: ??0Block@@QEAA@GV?$not_null@PEAVBlockLegacy@@@gsl@@@Z
+    MCAPI Block(ushort data, gsl::not_null<class BlockLegacy*> oldBlock);
+
     // symbol: ??0Block@@QEAA@GV?$not_null@PEAVBlockLegacy@@@gsl@@VCompoundTag@@AEBI@Z
     MCAPI Block(ushort data, gsl::not_null<class BlockLegacy*> oldBlock, class CompoundTag serId, uint const&);
 
@@ -187,6 +190,12 @@ public:
     // symbol: ?executeTrigger@Block@@QEBA_NAEBVDefinitionTrigger@@AEAVRenderParams@@@Z
     MCAPI bool executeTrigger(class DefinitionTrigger const& trigger, class RenderParams& params) const;
 
+    // symbol: ?finalizeBlockComponentStorage@Block@@QEAAXXZ
+    MCAPI void finalizeBlockComponentStorage();
+
+    // symbol: ?finalizeBlockCustomComponentEvents@Block@@QEAAXAEAVScriptBlockCustomComponentsFinalizer@@@Z
+    MCAPI void finalizeBlockCustomComponentEvents(class ScriptBlockCustomComponentsFinalizer&);
+
     // symbol: ?forEachState@Block@@QEBAXV?$function@$$A6A_NAEBVBlockState@@H@Z@std@@@Z
     MCAPI void forEachState(std::function<bool(class BlockState const&, int)> callback) const;
 
@@ -195,9 +204,6 @@ public:
 
     // symbol: ?getBlockEntityType@Block@@QEBA?AW4BlockActorType@@XZ
     MCAPI ::BlockActorType getBlockEntityType() const;
-
-    // symbol: ?getBlockState@Block@@QEBAPEBVBlockState@@AEBVHashedString@@@Z
-    MCAPI class BlockState const* getBlockState(class HashedString const&) const;
 
     // symbol: ?getBurnOdds@Block@@QEBAHXZ
     MCAPI int getBurnOdds() const;
@@ -342,11 +348,6 @@ public:
 
     // symbol: ?ignoreEntitiesOnPistonMove@Block@@QEBA_NXZ
     MCAPI bool ignoreEntitiesOnPistonMove() const;
-
-    // symbol: ?initParams@Block@@QEBAXAEAVRenderParams@@AEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
-    MCAPI void
-    initParams(class RenderParams& params, class BlockSource& region, class BlockPos const& pos, class Actor* actor)
-        const;
 
     // symbol: ?isAir@Block@@QEBA_NXZ
     MCAPI bool isAir() const;
@@ -589,14 +590,6 @@ public:
 
     // symbol: ?tryGetUninfested@Block@@QEBAPEBV1@XZ
     MCAPI class Block const* tryGetUninfested() const;
-
-    // symbol: ?trySpawnResourcesOnExplosion@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEBV1@M@Z
-    MCAPI void trySpawnResourcesOnExplosion(
-        class BlockSource&    region,
-        class BlockPos const& pos,
-        class Block const&    block,
-        float                 explosionRadius
-    ) const;
 
     // symbol: ?tryToPlace@Block@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@PEBUActorBlockSyncMessage@@@Z
     MCAPI bool

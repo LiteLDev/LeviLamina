@@ -10,7 +10,6 @@
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
-#include "mc/enums/ArmorTextureType.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/InputMode.h"
 #include "mc/enums/MaterialType.h"
@@ -40,19 +39,19 @@ public:
     // vIndex: 10, symbol: __gen_??1MinecartHopper@@UEAA@XZ
     virtual ~MinecartHopper() = default;
 
-    // vIndex: 153, symbol: ?destroy@MinecartHopper@@UEAAXAEBVActorDamageSource@@_N@Z
+    // vIndex: 151, symbol: ?destroy@MinecartHopper@@UEAAXAEBVActorDamageSource@@_N@Z
     virtual void destroy(class ActorDamageSource const& source, bool dropMinecartComponents);
 
-    // vIndex: 154, symbol: ?getType@MinecartHopper@@UEAA?AW4MinecartType@@XZ
+    // vIndex: 152, symbol: ?getType@MinecartHopper@@UEAA?AW4MinecartType@@XZ
     virtual ::MinecartType getType();
 
-    // vIndex: 155, symbol: ?getDefaultDisplayBlock@MinecartHopper@@UEBAPEBVBlock@@XZ
+    // vIndex: 153, symbol: ?getDefaultDisplayBlock@MinecartHopper@@UEBAPEBVBlock@@XZ
     virtual class Block const* getDefaultDisplayBlock() const;
 
-    // vIndex: 156, symbol: ?getDefaultDisplayOffset@MinecartHopper@@UEBAHXZ
+    // vIndex: 154, symbol: ?getDefaultDisplayOffset@MinecartHopper@@UEBAHXZ
     virtual int getDefaultDisplayOffset() const;
 
-    // vIndex: 157, symbol: ?applyNaturalSlowdown@MinecartHopper@@UEAAXAEAVBlockSource@@@Z
+    // vIndex: 155, symbol: ?applyNaturalSlowdown@MinecartHopper@@UEAAXAEAVBlockSource@@@Z
     virtual void applyNaturalSlowdown(class BlockSource& region);
 
     // symbol: ??0MinecartHopper@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

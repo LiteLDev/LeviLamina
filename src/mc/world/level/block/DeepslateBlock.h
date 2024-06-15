@@ -30,10 +30,10 @@ public:
     // vIndex: 0, symbol: __gen_??1DeepslateBlock@@UEAA@XZ
     virtual ~DeepslateBlock() = default;
 
-    // vIndex: 47, symbol: ?canBeOriginalSurface@DeepslateBlock@@UEBA_NXZ
+    // vIndex: 48, symbol: ?canBeOriginalSurface@DeepslateBlock@@UEBA_NXZ
     virtual bool canBeOriginalSurface() const;
 
-    // vIndex: 139, symbol: ?tryGetInfested@DeepslateBlock@@UEBAPEBVBlock@@AEBV2@@Z
+    // vIndex: 140, symbol: ?tryGetInfested@DeepslateBlock@@UEBAPEBVBlock@@AEBV2@@Z
     virtual class Block const* tryGetInfested(class Block const& block) const;
 
     // symbol: ??0DeepslateBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

@@ -20,5 +20,8 @@ public:
     // vIndex: 3, symbol: ?place@DiscFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
+    // symbol: ??0DiscFeature@@QEAA@AEBVBlock@@H@Z
+    MCAPI DiscFeature(class Block const& block, int radius);
+
     // NOLINTEND
 };

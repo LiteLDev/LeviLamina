@@ -7,11 +7,6 @@
 #include "mc/enums/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace gametest { struct TestParameters; }
-// clang-format on
-
 class GameTestRequestPacket : public ::Packet {
 public:
     // prevent constructor by default
@@ -39,13 +34,6 @@ public:
 
     // symbol: ??0GameTestRequestPacket@@QEAA@XZ
     MCAPI GameTestRequestPacket();
-
-    // symbol: ?getParams@GameTestRequestPacket@@QEBAAEBUTestParameters@gametest@@XZ
-    MCAPI struct gametest::TestParameters const& getParams() const;
-
-    // symbol:
-    // ?getTestName@GameTestRequestPacket@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-    MCAPI std::string getTestName() const;
 
     // NOLINTEND
 };

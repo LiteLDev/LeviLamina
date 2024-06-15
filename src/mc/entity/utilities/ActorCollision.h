@@ -17,6 +17,9 @@ MCAPI bool getCollidableMobNear(class EntityContext const& provider);
 // ?getOnewayPhysicsBlocks@ActorCollision@@YAAEBV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@AEBVEntityContext@@@Z
 MCAPI std::vector<class AABB> const& getOnewayPhysicsBlocks(class EntityContext const& provider);
 
+// symbol: ?getPickRadius@ActorCollision@@YAMAEBVEntityContext@@@Z
+MCAPI float getPickRadius(class EntityContext const&);
+
 // symbol: ?getPushedByID@ActorCollision@@YA?AUActorUniqueID@@AEBVEntityContext@@@Z
 MCAPI struct ActorUniqueID getPushedByID(class EntityContext const& provider);
 
@@ -35,11 +38,17 @@ MCAPI bool hasVerticalCollision(class EntityContext const& provider);
 // symbol: ?initializeActor@ActorCollision@@YAXAEAVEntityContext@@@Z
 MCAPI void initializeActor(class EntityContext& provider);
 
+// symbol: ?initializePickable@ActorCollision@@YAXAEAVEntityContext@@M@Z
+MCAPI void initializePickable(class EntityContext&, float);
+
 // symbol: ?isKnockedBackOnDeath@ActorCollision@@YA_NAEBVEntityContext@@@Z
 MCAPI bool isKnockedBackOnDeath(class EntityContext const& provider);
 
 // symbol: ?isOnGround@ActorCollision@@YA_NAEBVEntityContext@@@Z
 MCAPI bool isOnGround(class EntityContext const& provider);
+
+// symbol: ?isPickable@ActorCollision@@YA_NAEBVEntityContext@@@Z
+MCAPI bool isPickable(class EntityContext const&);
 
 // symbol: ?isStuckInCollider@ActorCollision@@YA_NAEBVEntityContext@@@Z
 MCAPI bool isStuckInCollider(class EntityContext const& provider);
@@ -68,8 +77,14 @@ MCAPI void setHorizontalCollision(class EntityContext& provider, bool value);
 // symbol: ?setIsKnockedBackOnDeath@ActorCollision@@YAXAEAVEntityContext@@_N@Z
 MCAPI void setIsKnockedBackOnDeath(class EntityContext& provider, bool value);
 
+// symbol: ?setIsPickable@ActorCollision@@YAXAEAVEntityContext@@_N@Z
+MCAPI void setIsPickable(class EntityContext&, bool);
+
 // symbol: ?setOnGround@ActorCollision@@YAXAEAVEntityContext@@_N@Z
 MCAPI void setOnGround(class EntityContext& provider, bool value);
+
+// symbol: ?setPickRadius@ActorCollision@@YAXAEAVEntityContext@@M@Z
+MCAPI void setPickRadius(class EntityContext&, float);
 
 // symbol: ?setPushedBy@ActorCollision@@YAXAEAVEntityContext@@VStrictEntityContext@@AEBUActorUniqueID@@@Z
 MCAPI void

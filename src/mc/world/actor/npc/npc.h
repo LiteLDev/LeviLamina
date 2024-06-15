@@ -10,7 +10,6 @@
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
-#include "mc/enums/ArmorTextureType.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/InputMode.h"
 #include "mc/enums/MaterialType.h"
@@ -51,32 +50,32 @@ public:
     // vIndex: 37, symbol: ?getNameTagTextColor@Npc@@UEBA?AVColor@mce@@XZ
     virtual class mce::Color getNameTagTextColor() const;
 
-    // vIndex: 54, symbol: ?isTargetable@Npc@@UEBA_NXZ
+    // vIndex: 53, symbol: ?isTargetable@Npc@@UEBA_NXZ
     virtual bool isTargetable() const;
 
-    // vIndex: 104, symbol: ?canBePulledIntoVehicle@Npc@@UEBA_NXZ
+    // vIndex: 102, symbol: ?canBePulledIntoVehicle@Npc@@UEBA_NXZ
     virtual bool canBePulledIntoVehicle() const;
 
-    // vIndex: 110, symbol:
+    // vIndex: 108, symbol:
     // ?buildDebugInfo@Npc@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void buildDebugInfo(std::string& out) const;
 
-    // vIndex: 113, symbol: ?canBeAffected@Npc@@UEBA_NI@Z
+    // vIndex: 111, symbol: ?canBeAffected@Npc@@UEBA_NI@Z
     virtual bool canBeAffected(uint) const;
 
-    // vIndex: 133, symbol: ?die@Npc@@UEAAXAEBVActorDamageSource@@@Z
+    // vIndex: 131, symbol: ?die@Npc@@UEAAXAEBVActorDamageSource@@@Z
     virtual void die(class ActorDamageSource const&);
 
-    // vIndex: 148, symbol: ?_hurt@Npc@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 146, symbol: ?_hurt@Npc@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float, bool, bool);
 
-    // vIndex: 153, symbol: ?knockback@Npc@@UEAAXPEAVActor@@HMMMMM@Z
+    // vIndex: 151, symbol: ?knockback@Npc@@UEAAXPEAVActor@@HMMMMM@Z
     virtual void knockback(class Actor*, int, float, float, float, float, float);
 
-    // vIndex: 187, symbol: ?canExistWhenDisallowMob@Npc@@UEBA_NXZ
+    // vIndex: 185, symbol: ?canExistWhenDisallowMob@Npc@@UEBA_NXZ
     virtual bool canExistWhenDisallowMob() const;
 
-    // vIndex: 189, symbol: ?newServerAiStep@Npc@@UEAAXXZ
+    // vIndex: 187, symbol: ?newServerAiStep@Npc@@UEAAXXZ
     virtual void newServerAiStep();
 
     // symbol: ??0Npc@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

@@ -30,7 +30,7 @@ public:
     // vIndex: 0, symbol: __gen_??1InfestedDeepslateBlock@@UEAA@XZ
     virtual ~InfestedDeepslateBlock() = default;
 
-    // vIndex: 140, symbol: ?tryGetUninfested@InfestedDeepslateBlock@@UEBAPEBVBlock@@AEBV2@@Z
+    // vIndex: 141, symbol: ?tryGetUninfested@InfestedDeepslateBlock@@UEBAPEBVBlock@@AEBV2@@Z
     virtual class Block const* tryGetUninfested(class Block const& block) const;
 
     // symbol:

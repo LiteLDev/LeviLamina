@@ -34,10 +34,6 @@ public:
     MCAPI void onBeforeWatchdogTerminate(class Scripting::StrongTypedObjectHandle<
                                          struct ScriptModuleMinecraft::ScriptWatchdogTerminateBeforeEvent>);
 
-    // symbol: ??4ScriptSystemBeforeEvents@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
-    MCAPI class ScriptModuleMinecraft::ScriptSystemBeforeEvents&
-    operator=(class ScriptModuleMinecraft::ScriptSystemBeforeEvents&&);
-
     // symbol:
     // ?registerHandler@ScriptSystemBeforeEvents@ScriptModuleMinecraft@@QEAAXU?$TypedObjectHandle@VScriptSystemBeforeEvents@ScriptModuleMinecraft@@@Scripting@@@Z
     MCAPI void

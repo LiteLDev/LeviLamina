@@ -30,13 +30,13 @@ public:
     // vIndex: 0, symbol: __gen_??1SmithingTableBlock@@UEAA@XZ
     virtual ~SmithingTableBlock() = default;
 
-    // vIndex: 31, symbol: ?isCraftingBlock@SmithingTableBlock@@UEBA_NXZ
+    // vIndex: 32, symbol: ?isCraftingBlock@SmithingTableBlock@@UEBA_NXZ
     virtual bool isCraftingBlock() const;
 
-    // vIndex: 149, symbol: ?isInteractiveBlock@SmithingTableBlock@@UEBA_NXZ
+    // vIndex: 150, symbol: ?isInteractiveBlock@SmithingTableBlock@@UEBA_NXZ
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 151, symbol: ?use@SmithingTableBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152, symbol: ?use@SmithingTableBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // symbol:

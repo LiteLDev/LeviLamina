@@ -14,6 +14,9 @@ public:
     // symbol: ?getHitResult@HitResultWrapper@@QEAAAEAVHitResult@@XZ
     MCAPI class HitResult& getHitResult();
 
+    // symbol: ?getLiquidHitResult@HitResultWrapper@@QEAAAEAVHitResult@@XZ
+    MCAPI class HitResult& getLiquidHitResult();
+
     // symbol: ?initialize@HitResultWrapper@@QEAAXAEAVActorManager@@AEAVGameplayUserManager@@@Z
     MCAPI void initialize(class ActorManager&, class GameplayUserManager&);
 

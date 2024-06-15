@@ -26,7 +26,7 @@ public:
     // vIndex: 5, symbol: ?getMaxLevel@FrostWalkerEnchant@@UEBAHXZ
     virtual int getMaxLevel() const;
 
-    // vIndex: 12, symbol: ?isTreasureOnly@FrostWalkerEnchant@@UEBA_NXZ
+    // vIndex: 14, symbol: ?isTreasureOnly@FrostWalkerEnchant@@UEBA_NXZ
     virtual bool isTreasureOnly() const;
 
     // NOLINTEND

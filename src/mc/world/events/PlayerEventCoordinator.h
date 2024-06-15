@@ -15,14 +15,12 @@ public:
     // prevent constructor by default
     PlayerEventCoordinator& operator=(PlayerEventCoordinator const&);
     PlayerEventCoordinator(PlayerEventCoordinator const&);
+    PlayerEventCoordinator();
 
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1PlayerEventCoordinator@@UEAA@XZ
     virtual ~PlayerEventCoordinator() = default;
-
-    // symbol: ??0PlayerEventCoordinator@@QEAA@XZ
-    MCAPI PlayerEventCoordinator();
 
     // symbol: ?getPlayerGameplayHandler@PlayerEventCoordinator@@QEAAAEAVPlayerGameplayHandler@@XZ
     MCAPI class PlayerGameplayHandler& getPlayerGameplayHandler();

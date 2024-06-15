@@ -12,7 +12,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -93,10 +92,6 @@ public:
         std::string const&    name,
         class BlockPos const& pos
     );
-
-    // symbol:
-    // ?load@BlockCommandOrigin@@SA?AV?$unique_ptr@VBlockCommandOrigin@@U?$default_delete@VBlockCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVLevel@@@Z
-    MCAPI static std::unique_ptr<class BlockCommandOrigin> load(class CompoundTag const& tag, class Level& level);
 
     // NOLINTEND
 

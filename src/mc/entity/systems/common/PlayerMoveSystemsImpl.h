@@ -12,7 +12,6 @@
 #include "mc/deps/core/data/Read.h"
 #include "mc/deps/core/data/Write.h"
 #include "mc/entity/EntityFactoryT.h"
-#include "mc/entity/EntityModifier.h"
 #include "mc/world/components/FlagComponent.h"
 
 namespace PlayerMoveSystemsImpl {};

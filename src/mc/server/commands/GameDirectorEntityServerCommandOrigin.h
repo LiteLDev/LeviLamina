@@ -11,7 +11,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -45,11 +44,6 @@ public:
 
     // symbol: ??0GameDirectorEntityServerCommandOrigin@@QEAA@AEAVActor@@@Z
     MCAPI explicit GameDirectorEntityServerCommandOrigin(class Actor& origin);
-
-    // symbol:
-    // ?load@GameDirectorEntityServerCommandOrigin@@SA?AV?$unique_ptr@VGameDirectorEntityServerCommandOrigin@@U?$default_delete@VGameDirectorEntityServerCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVLevel@@@Z
-    MCAPI static std::unique_ptr<class GameDirectorEntityServerCommandOrigin>
-    load(class CompoundTag const& tag, class Level& level);
 
     // NOLINTEND
 };

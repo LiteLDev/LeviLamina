@@ -11,9 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0GameDataSaveTimer@@QEAA@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@@Z
-    MCAPI explicit GameDataSaveTimer(std::chrono::nanoseconds);
-
     // symbol: ?areStorageActionsAllowed@GameDataSaveTimer@@QEBA_NXZ
     MCAPI bool areStorageActionsAllowed() const;
 

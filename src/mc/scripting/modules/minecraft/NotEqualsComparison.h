@@ -16,9 +16,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??8NotEqualsComparison@ScriptModuleMinecraft@@QEBA_NAEBU01@@Z
-    MCAPI bool operator==(struct ScriptModuleMinecraft::NotEqualsComparison const&) const;
-
     // symbol: ??1NotEqualsComparison@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~NotEqualsComparison();
 

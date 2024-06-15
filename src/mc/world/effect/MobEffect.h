@@ -18,13 +18,15 @@ public:
     struct FactorCalculationData {
     public:
         // prevent constructor by default
-        FactorCalculationData& operator=(FactorCalculationData const&);
         FactorCalculationData();
 
     public:
         // NOLINTBEGIN
         // symbol: ??0FactorCalculationData@MobEffect@@QEAA@AEBU01@@Z
         MCAPI FactorCalculationData(struct MobEffect::FactorCalculationData const&);
+
+        // symbol: ??4FactorCalculationData@MobEffect@@QEAAAEAU01@AEBU01@@Z
+        MCAPI struct MobEffect::FactorCalculationData& operator=(struct MobEffect::FactorCalculationData const&);
 
         // symbol:
         // ?save@FactorCalculationData@MobEffect@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
@@ -50,16 +52,22 @@ public:
     // vIndex: 0, symbol: ??1MobEffect@@UEAA@XZ
     virtual ~MobEffect();
 
-    // vIndex: 1, symbol: ?applyEffects@MobEffect@@UEBAXPEAVActor@@HH@Z
-    virtual void applyEffects(class Actor* target, int durationTicks, int amplification) const;
+    // vIndex: 1, symbol: ?applyEffects@MobEffect@@UEBAXAEAVActor@@HH@Z
+    virtual void applyEffects(class Actor& target, int durationTicks, int amplification) const;
 
-    // vIndex: 2, symbol: ?removeEffects@MobEffect@@UEAAXPEAVActor@@@Z
-    virtual void removeEffects(class Actor* target);
+    // vIndex: 2, symbol: ?removeEffects@MobEffect@@UEAAXAEAVBaseAttributeMap@@@Z
+    virtual void removeEffects(class BaseAttributeMap&);
 
-    // vIndex: 3, symbol: ?updateEffects@MobEffect@@UEAAXPEAVActor@@HH@Z
-    virtual void updateEffects(class Actor* target, int durationTicks, int amplification);
+    // vIndex: 3, symbol: ?onEffectExpired@MobEffect@@UEBAXAEAVActor@@@Z
+    virtual void onEffectExpired(class Actor&) const;
 
-    // vIndex: 4, symbol: ?applyInstantaneousEffect@MobEffect@@UEBAXPEAVActor@@00HM@Z
+    // vIndex: 4, symbol: ?onActorRemovedAfterDeath@MobEffect@@UEBAXAEAVActor@@H@Z
+    virtual void onActorRemovedAfterDeath(class Actor&, int) const;
+
+    // vIndex: 5, symbol: ?onActorHurt@MobEffect@@UEBAXAEAVActor@@HAEBVActorDamageSource@@M@Z
+    virtual void onActorHurt(class Actor&, int, class ActorDamageSource const&, float) const;
+
+    // vIndex: 6, symbol: ?applyInstantaneousEffect@MobEffect@@UEBAXPEAVActor@@00HM@Z
     virtual void applyInstantaneousEffect(
         class Actor* source,
         class Actor* owner,
@@ -68,16 +76,14 @@ public:
         float        scale
     ) const;
 
-    // vIndex: 5, symbol: ?isInstantaneous@MobEffect@@UEBA_NXZ
+    // vIndex: 7, symbol: ?isInstantaneous@MobEffect@@UEBA_NXZ
     virtual bool isInstantaneous() const;
 
-    // vIndex: 6, symbol: ?getAttributeModifierValue@MobEffect@@UEBAMHAEBVAttributeModifier@@@Z
+    // vIndex: 8, symbol: ?getAttributeModifierValue@MobEffect@@UEBAMHAEBVAttributeModifier@@@Z
     virtual float getAttributeModifierValue(int amplifier, class AttributeModifier const& modifier) const;
 
-    // symbol:
-    // ??0MobEffect@@QEAA@IAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_NHH01AEBUFactorCalculationData@0@@Z
-    MCAPI
-    MobEffect(uint id, std::string const& resourceName, std::string const& locName, bool isHarmful, int color, int icon, std::string const& iconName, bool drawParticles, struct MobEffect::FactorCalculationData const&);
+    // symbol: ??0MobEffect@@QEAA@IAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_NHH01@Z
+    MCAPI MobEffect(uint, std::string const&, std::string const&, bool, int, int, std::string const&, bool);
 
     // symbol: ?addAttributeBuff@MobEffect@@QEAAXAEBVAttribute@@V?$shared_ptr@VAttributeBuff@@@std@@@Z
     MCAPI void addAttributeBuff(class Attribute const& attribute, std::shared_ptr<class AttributeBuff> buff);
@@ -85,6 +91,12 @@ public:
     // symbol: ?addAttributeModifier@MobEffect@@QEAAXAEBVAttribute@@V?$shared_ptr@VAttributeModifier@@@std@@@Z
     MCAPI void
     addAttributeModifier(class Attribute const& attribute, std::shared_ptr<class AttributeModifier> modifier);
+
+    // symbol: ?applyModsAndBuffs@MobEffect@@QEBAXAEAVBaseAttributeMap@@HH@Z
+    MCAPI void applyModsAndBuffs(class BaseAttributeMap&, int, int) const;
+
+    // symbol: ?getColor@MobEffect@@QEBAAEBVColor@mce@@XZ
+    MCAPI class mce::Color const& getColor() const;
 
     // symbol: ?getDescriptionId@MobEffect@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& getDescriptionId() const;
@@ -94,6 +106,9 @@ public:
 
     // symbol: ?getId@MobEffect@@QEBAIXZ
     MCAPI uint getId() const;
+
+    // symbol: ?getParticleEffect@MobEffect@@QEBAAEBVHashedString@@_N@Z
+    MCAPI class HashedString const& getParticleEffect(bool) const;
 
     // symbol: ?getResourceName@MobEffect@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& getResourceName() const;
@@ -110,6 +125,9 @@ public:
     // symbol: ?setValueAmplifier@MobEffect@@QEAAXV?$shared_ptr@VAmplifier@@@std@@@Z
     MCAPI void setValueAmplifier(std::shared_ptr<class Amplifier> amplifier);
 
+    // symbol: ?updateEffects@MobEffect@@QEAAXPEAVActor@@HH@Z
+    MCAPI void updateEffects(class Actor* target, int durationTicks, int amplification);
+
     // symbol:
     // ?viewAttributeModifiers@MobEffect@@QEBAAEBV?$vector@U?$pair@PEBVAttribute@@V?$shared_ptr@VAttributeModifier@@@std@@@std@@V?$allocator@U?$pair@PEBVAttribute@@V?$shared_ptr@VAttributeModifier@@@std@@@std@@@2@@std@@XZ
     MCAPI std::vector<std::pair<class Attribute const*, std::shared_ptr<class AttributeModifier>>> const&
@@ -124,8 +142,8 @@ public:
     // symbol: ?getNameById@MobEffect@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@Z
     MCAPI static std::string getNameById(uint);
 
-    // symbol: ?initEffects@MobEffect@@SAXAEBVBaseGameVersion@@@Z
-    MCAPI static void initEffects(class BaseGameVersion const&);
+    // symbol: ?initEffects@MobEffect@@SAXAEBVBaseGameVersion@@AEBVExperiments@@@Z
+    MCAPI static void initEffects(class BaseGameVersion const&, class Experiments const&);
 
     // symbol: ?shutdownEffects@MobEffect@@SAXXZ
     MCAPI static void shutdownEffects();
@@ -187,6 +205,9 @@ public:
     // symbol: ?HUNGER@MobEffect@@2PEAV1@EA
     MCAPI static class MobEffect* HUNGER;
 
+    // symbol: ?INFESTED@MobEffect@@2PEAV1@EA
+    MCAPI static class MobEffect* INFESTED;
+
     // symbol: ?INVISIBILITY@MobEffect@@2PEAV1@EA
     MCAPI static class MobEffect* INVISIBILITY;
 
@@ -205,8 +226,14 @@ public:
     // symbol: ?NIGHT_VISION@MobEffect@@2PEAV1@EA
     MCAPI static class MobEffect* NIGHT_VISION;
 
+    // symbol: ?OOZING@MobEffect@@2PEAV1@EA
+    MCAPI static class MobEffect* OOZING;
+
     // symbol: ?POISON@MobEffect@@2PEAV1@EA
     MCAPI static class MobEffect* POISON;
+
+    // symbol: ?RAID_OMEN@MobEffect@@2PEAV1@EA
+    MCAPI static class MobEffect* RAID_OMEN;
 
     // symbol: ?REGENERATION@MobEffect@@2PEAV1@EA
     MCAPI static class MobEffect* REGENERATION;
@@ -217,11 +244,20 @@ public:
     // symbol: ?SLOW_FALLING@MobEffect@@2PEAV1@EA
     MCAPI static class MobEffect* SLOW_FALLING;
 
+    // symbol: ?TRIAL_OMEN@MobEffect@@2PEAV1@EA
+    MCAPI static class MobEffect* TRIAL_OMEN;
+
     // symbol: ?WATER_BREATHING@MobEffect@@2PEAV1@EA
     MCAPI static class MobEffect* WATER_BREATHING;
 
     // symbol: ?WEAKNESS@MobEffect@@2PEAV1@EA
     MCAPI static class MobEffect* WEAKNESS;
+
+    // symbol: ?WEAVING@MobEffect@@2PEAV1@EA
+    MCAPI static class MobEffect* WEAVING;
+
+    // symbol: ?WIND_CHARGED@MobEffect@@2PEAV1@EA
+    MCAPI static class MobEffect* WIND_CHARGED;
 
     // symbol: ?WITHER@MobEffect@@2PEAV1@EA
     MCAPI static class MobEffect* WITHER;
@@ -244,6 +280,9 @@ public:
     // symbol: ?_createTemporalBuff@MobEffect@@IEBA?AVTemporalAttributeBuff@@AEBVAttributeBuff@@HH@Z
     MCAPI class TemporalAttributeBuff
     _createTemporalBuff(class AttributeBuff const& baseBuff, int duration, int amplification) const;
+
+    // symbol: ?_setParticleEffectIds@MobEffect@@IEAAXPEBD0@Z
+    MCAPI void _setParticleEffectIds(char const*, char const*);
 
     // NOLINTEND
 

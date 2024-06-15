@@ -36,6 +36,9 @@ MCAPI extern ::SubChunkFormat const CurrentSubChunkFormat;
 // symbol: ?DevInitiallyMuteMusic@SharedConstants@@3_NB
 MCAPI extern bool const DevInitiallyMuteMusic;
 
+// symbol: ?DeviceIdMaxLength@SharedConstants@@3_KB
+MCAPI extern uint64 const DeviceIdMaxLength;
+
 // symbol: ?EduDiscoveryProtocolVersion@SharedConstants@@3HB
 MCAPI extern int const EduDiscoveryProtocolVersion;
 

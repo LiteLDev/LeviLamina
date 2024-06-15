@@ -20,10 +20,6 @@ public:
     // symbol: ??0ScriptPlayAnimationOptions@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
     MCAPI ScriptPlayAnimationOptions(struct ScriptModuleMinecraft::ScriptPlayAnimationOptions const&);
 
-    // symbol: ??4ScriptPlayAnimationOptions@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptPlayAnimationOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptPlayAnimationOptions&&);
-
     // symbol: ??4ScriptPlayAnimationOptions@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptPlayAnimationOptions&
     operator=(struct ScriptModuleMinecraft::ScriptPlayAnimationOptions const&);

@@ -32,9 +32,6 @@ public:
     // symbol: ?_getLegacyActorType@ActorDefinitionIdentifier@@QEBA?AW4ActorType@@XZ
     MCAPI ::ActorType _getLegacyActorType() const;
 
-    // symbol: ?clear@ActorDefinitionIdentifier@@QEAAXXZ
-    MCAPI void clear();
-
     // symbol: ?getCanonicalHash@ActorDefinitionIdentifier@@QEBAAEBVHashedString@@XZ
     MCAPI class HashedString const& getCanonicalHash() const;
 
@@ -88,16 +85,6 @@ public:
 
     // symbol: ??1ActorDefinitionIdentifier@@QEAA@XZ
     MCAPI ~ActorDefinitionIdentifier();
-
-    // symbol: ?EVENT_BEGIN@ActorDefinitionIdentifier@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-    MCAPI static std::string const EVENT_BEGIN;
-
-    // symbol: ?EVENT_END@ActorDefinitionIdentifier@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-    MCAPI static std::string const EVENT_END;
-
-    // symbol:
-    // ?NAMESPACE_SEPARATOR@ActorDefinitionIdentifier@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-    MCAPI static std::string const NAMESPACE_SEPARATOR;
 
     // NOLINTEND
 

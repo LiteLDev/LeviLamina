@@ -11,7 +11,6 @@ public:
     // prevent constructor by default
     UseActorNode& operator=(UseActorNode const&);
     UseActorNode(UseActorNode const&);
-    UseActorNode();
 
 public:
     // NOLINTBEGIN
@@ -20,6 +19,9 @@ public:
 
     // vIndex: 1, symbol: ?tick@UseActorNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
     virtual ::BehaviorStatus tick(class Actor& owner);
+
+    // symbol: ??0UseActorNode@@QEAA@XZ
+    MCAPI UseActorNode();
 
     // NOLINTEND
 };

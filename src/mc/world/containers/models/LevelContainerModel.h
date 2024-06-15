@@ -5,11 +5,9 @@
 // auto generated inclusion list
 #include "mc/world/containers/ContainerCategory.h"
 #include "mc/world/containers/ContainerEnumName.h"
-#include "mc/world/containers/ContainerExpandStatus.h"
-#include "mc/world/containers/models/ContainerModel.h"
 #include "mc/world/level/block/utils/BlockActorType.h"
 
-class LevelContainerModel : public ::ContainerModel {
+class LevelContainerModel {
 public:
     // prevent constructor by default
     LevelContainerModel& operator=(LevelContainerModel const&);
@@ -18,35 +16,35 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ?containerContentChanged@LevelContainerModel@@UEAAXH@Z
-    virtual void containerContentChanged(int slot);
+    // symbol: ?_getContainer@LevelContainerModel@@EEBAPEAVContainer@@XZ
+    MCVAPI class Container* _getContainer() const;
 
-    // vIndex: 1, symbol: __gen_??1LevelContainerModel@@UEAA@XZ
-    virtual ~LevelContainerModel() = default;
+    // symbol: ?_getContainerOffset@LevelContainerModel@@MEBAHXZ
+    MCVAPI int _getContainerOffset() const;
 
-    // vIndex: 2, symbol: ?postInit@LevelContainerModel@@UEAAXXZ
-    virtual void postInit();
+    // symbol: ?_onItemChanged@LevelContainerModel@@MEAAXHAEBVItemStack@@0@Z
+    MCVAPI void _onItemChanged(int modelSlot, class ItemStack const& oldItem, class ItemStack const& newItem);
 
-    // vIndex: 3, symbol: ?releaseResources@LevelContainerModel@@UEAAXXZ
-    virtual void releaseResources();
+    // symbol: ?containerContentChanged@LevelContainerModel@@UEAAXH@Z
+    MCVAPI void containerContentChanged(int slot);
 
-    // vIndex: 7, symbol: ?getContainerWeakRef@LevelContainerModel@@UEBA?AVContainerWeakRef@@XZ
-    virtual class ContainerWeakRef getContainerWeakRef() const;
+    // symbol: ?containerRemoved@LevelContainerModel@@UEAAXXZ
+    MCVAPI void containerRemoved();
 
-    // vIndex: 14, symbol: ?isValid@LevelContainerModel@@UEAA_NXZ
-    virtual bool isValid();
+    // symbol: ?getContainerWeakRef@LevelContainerModel@@UEBA?AVContainerWeakRef@@XZ
+    MCVAPI class ContainerWeakRef getContainerWeakRef() const;
 
-    // vIndex: 20, symbol: ?isSlotDisabled@LevelContainerModel@@UEBA_NH@Z
-    virtual bool isSlotDisabled(int) const;
+    // symbol: ?isSlotDisabled@LevelContainerModel@@UEBA_NH@Z
+    MCVAPI bool isSlotDisabled(int) const;
 
-    // vIndex: 21, symbol: ?_getContainer@LevelContainerModel@@EEBAPEAVContainer@@XZ
-    virtual class Container* _getContainer() const;
+    // symbol: ?isValid@LevelContainerModel@@UEAA_NXZ
+    MCVAPI bool isValid();
 
-    // vIndex: 22, symbol: ?_getContainerOffset@LevelContainerModel@@MEBAHXZ
-    virtual int _getContainerOffset() const;
+    // symbol: ?postInit@LevelContainerModel@@UEAAXXZ
+    MCVAPI void postInit();
 
-    // vIndex: 24, symbol: ?_onItemChanged@LevelContainerModel@@MEAAXHAEBVItemStack@@0@Z
-    virtual void _onItemChanged(int modelSlot, class ItemStack const& oldItem, class ItemStack const& newItem);
+    // symbol: ?releaseResources@LevelContainerModel@@UEAAXXZ
+    MCVAPI void releaseResources();
 
     // symbol: ??0LevelContainerModel@@QEAA@W4ContainerEnumName@@HAEAVPlayer@@UActorUniqueID@@W4ContainerCategory@@@Z
     MCAPI LevelContainerModel(
@@ -67,6 +65,9 @@ public:
         class BlockPos const& blockPos,
         ::ContainerCategory   category
     );
+
+    // symbol: ?getContainerHelper@LevelContainerModel@@SAPEAVContainer@@AEAVPlayer@@AEBUActorUniqueID@@@Z
+    MCAPI static class Container* getContainerHelper(class Player& player, struct ActorUniqueID const& actorUniqueId);
 
     // symbol: ?getContainerHelper@LevelContainerModel@@SAPEAVContainer@@AEAVPlayer@@W4BlockActorType@@AEBVBlockPos@@@Z
     MCAPI static class Container*

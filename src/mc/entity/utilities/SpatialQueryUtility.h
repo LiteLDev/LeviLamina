@@ -26,15 +26,5 @@ public:
     MCAPI static void
     testForCollidableMobs(class StrictEntityContext const& except, class LocalSpatialEntityFetcher&, class AABB const&, class AABB const& intersectTestBox, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct CollidableMobFlag>>, struct AABBShapeComponent const> view, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct FallingBlockFlag>>>, struct CollisionShapes&);
 
-    // symbol:
-    // ?testForEntityStacking@SpatialQueryUtility@@SAXAEBVStrictEntityContext@@AEAVLocalSpatialEntityFetcher@@AEBVAABB@@V?$ViewT@VStrictEntityContext@@$$CBUAABBShapeComponent@@$$CBUActorDataFlagComponent@@@@AEAUCollisionShapes@@@Z
-    MCAPI static void
-    testForEntityStacking(class StrictEntityContext const&, class LocalSpatialEntityFetcher&, class AABB const&, class ViewT<class StrictEntityContext, struct AABBShapeComponent const, struct ActorDataFlagComponent const>, struct CollisionShapes&);
-
-    // symbol:
-    // ?tryFetchEntity@SpatialQueryUtility@@SA?AVStrictEntityContext@@AEAVLocalSpatialEntityFetcher@@AEBUActorUniqueID@@@Z
-    MCAPI static class StrictEntityContext
-    tryFetchEntity(class LocalSpatialEntityFetcher&, struct ActorUniqueID const&);
-
     // NOLINTEND
 };

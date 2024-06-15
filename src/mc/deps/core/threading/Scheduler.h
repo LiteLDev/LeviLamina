@@ -34,6 +34,9 @@ public:
     // symbol: ?processCoroutines@Scheduler@@QEAAXV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@0@Z
     MCAPI void processCoroutines(std::chrono::nanoseconds timeSinceSwap, std::chrono::nanoseconds minTimeCap);
 
+    // symbol: ?queueCallback@Scheduler@@QEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@@Z
+    MCAPI void queueCallback(std::shared_ptr<class BackgroundTaskBase> task);
+
     // symbol: ?setTargetFPS@Scheduler@@QEAAXI@Z
     MCAPI void setTargetFPS(uint FPS);
 

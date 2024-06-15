@@ -31,8 +31,5 @@ public:
     // ?appendDebugInfo@LeapAtTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0LeapAtTargetGoal@@QEAA@AEAVMob@@M_N1@Z
-    MCAPI LeapAtTargetGoal(class Mob& mob, float yd, bool mustBeOnGround, bool);
-
     // NOLINTEND
 };

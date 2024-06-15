@@ -20,5 +20,8 @@ public:
     // vIndex: 3, symbol: ?place@LegacyForestRockFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual bool place(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
 
+    // symbol: ??0LegacyForestRockFeature@@QEAA@AEBVFeatureRegistry@@@Z
+    MCAPI explicit LegacyForestRockFeature(class FeatureRegistry const& registry);
+
     // NOLINTEND
 };

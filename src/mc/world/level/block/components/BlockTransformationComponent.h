@@ -10,6 +10,7 @@ public:
     // BlockTransformationComponent inner types declare
     // clang-format off
     struct RotationType;
+    struct ScaleType;
     // clang-format on
 
     // BlockTransformationComponent inner types define
@@ -19,13 +20,14 @@ public:
         RotationType& operator=(RotationType const&);
         RotationType(RotationType const&);
         RotationType();
+    };
 
+    struct ScaleType {
     public:
-        // NOLINTBEGIN
-        // symbol: ?rotationTypeFromVec3@RotationType@BlockTransformationComponent@@QEAAXAEBVVec3@@@Z
-        MCAPI void rotationTypeFromVec3(class Vec3 const& arr);
-
-        // NOLINTEND
+        // prevent constructor by default
+        ScaleType& operator=(ScaleType const&);
+        ScaleType(ScaleType const&);
+        ScaleType();
     };
 
 public:

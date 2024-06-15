@@ -37,9 +37,6 @@ public:
     // ?getRelativePath@ResourceLocation@@QEBAAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
     MCAPI class Core::PathBuffer<std::string> const& getRelativePath() const;
 
-    // symbol: ??8ResourceLocation@@QEBA_NAEBV0@@Z
-    MCAPI bool operator==(class ResourceLocation const& rhs) const;
-
     // symbol: ?serialize@ResourceLocation@@QEBAXAEAVValue@Json@@@Z
     MCAPI void serialize(class Json::Value& out) const;
 

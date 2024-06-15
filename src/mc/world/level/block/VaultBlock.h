@@ -30,29 +30,29 @@ public:
     // vIndex: 0, symbol: __gen_??1VaultBlock@@UEAA@XZ
     virtual ~VaultBlock() = default;
 
-    // vIndex: 97, symbol: ?getPlacementBlock@VaultBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+    // vIndex: 98, symbol: ?getPlacementBlock@VaultBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
     virtual class Block const&
     getPlacementBlock(class Actor const&, class BlockPos const&, uchar, class Vec3 const&, int) const;
 
-    // vIndex: 128, symbol: ?getVariant@VaultBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129, symbol: ?getVariant@VaultBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const&) const;
 
-    // vIndex: 130, symbol: ?getRenderBlock@VaultBlock@@UEBAAEBVBlock@@XZ
+    // vIndex: 131, symbol: ?getRenderBlock@VaultBlock@@UEBAAEBVBlock@@XZ
     virtual class Block const& getRenderBlock() const;
 
-    // vIndex: 131, symbol: ?getMappedFace@VaultBlock@@UEBAEEAEBVBlock@@@Z
+    // vIndex: 132, symbol: ?getMappedFace@VaultBlock@@UEBAEEAEBVBlock@@@Z
     virtual uchar getMappedFace(uchar, class Block const&) const;
 
-    // vIndex: 132, symbol: ?getFaceFlip@VaultBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
+    // vIndex: 133, symbol: ?getFaceFlip@VaultBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
     virtual ::Flip getFaceFlip(uchar, class Block const&) const;
 
-    // vIndex: 136, symbol: ?getLightEmission@VaultBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
+    // vIndex: 137, symbol: ?getLightEmission@VaultBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
     virtual struct Brightness getLightEmission(class Block const&) const;
 
-    // vIndex: 149, symbol: ?isInteractiveBlock@VaultBlock@@UEBA_NXZ
+    // vIndex: 150, symbol: ?isInteractiveBlock@VaultBlock@@UEBA_NXZ
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 151, symbol: ?use@VaultBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152, symbol: ?use@VaultBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
     virtual bool use(class Player&, class BlockPos const&, uchar) const;
 
     // symbol: ??0VaultBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

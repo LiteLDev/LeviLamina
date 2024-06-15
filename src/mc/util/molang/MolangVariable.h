@@ -32,6 +32,9 @@ public:
     // symbol: ?getVariableName@MolangVariable@@SAAEBVHashedString@@W4MolangVariableIndex@@@Z
     MCAPI static class HashedString const& getVariableName(::MolangVariableIndex index);
 
+    // symbol: ?initVariableMaps@MolangVariable@@SAXXZ
+    MCAPI static void initVariableMaps();
+
     // symbol: ?processWaterMark@MolangVariable@@SAXXZ
     MCAPI static void processWaterMark();
 

@@ -10,7 +10,6 @@
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
-#include "mc/enums/ArmorTextureType.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/InputMode.h"
 #include "mc/enums/MaterialType.h"
@@ -48,19 +47,19 @@ public:
     // vIndex: 38, symbol: ?getShadowRadius@FishingHook@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 75, symbol: ?handleEntityEvent@FishingHook@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 74, symbol: ?handleEntityEvent@FishingHook@@UEAAXW4ActorEvent@@H@Z
     virtual void handleEntityEvent(::ActorEvent eventId, int data);
 
-    // vIndex: 89, symbol: ?save@FishingHook@@UEBA_NAEAVCompoundTag@@@Z
+    // vIndex: 87, symbol: ?save@FishingHook@@UEBA_NAEAVCompoundTag@@@Z
     virtual bool save(class CompoundTag& entityTag) const;
 
-    // vIndex: 92, symbol: ?getSourceUniqueID@FishingHook@@UEBA?AUActorUniqueID@@XZ
+    // vIndex: 90, symbol: ?getSourceUniqueID@FishingHook@@UEBA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID getSourceUniqueID() const;
 
-    // vIndex: 96, symbol: ?canChangeDimensionsUsingPortal@FishingHook@@UEBA_NXZ
+    // vIndex: 94, symbol: ?canChangeDimensionsUsingPortal@FishingHook@@UEBA_NXZ
     virtual bool canChangeDimensionsUsingPortal() const;
 
-    // vIndex: 134, symbol: ?shouldDropDeathLoot@FishingHook@@UEBA_NXZ
+    // vIndex: 132, symbol: ?shouldDropDeathLoot@FishingHook@@UEBA_NXZ
     virtual bool shouldDropDeathLoot() const;
 
     // symbol: ??0FishingHook@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

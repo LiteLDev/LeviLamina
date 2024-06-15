@@ -10,7 +10,6 @@
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
-#include "mc/enums/ArmorTextureType.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/InputMode.h"
 #include "mc/enums/MaterialType.h"
@@ -39,11 +38,11 @@ public:
     // vIndex: 10, symbol: __gen_??1CaveSpider@@UEAA@XZ
     virtual ~CaveSpider() = default;
 
-    // vIndex: 121, symbol:
+    // vIndex: 119, symbol:
     // ?getDebugText@CaveSpider@@EEAAXAEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
     virtual void getDebugText(std::vector<std::string>& outputInfo);
 
-    // vIndex: 193, symbol: ?getModelScale@CaveSpider@@UEBAMXZ
+    // vIndex: 191, symbol: ?getModelScale@CaveSpider@@UEBAMXZ
     virtual float getModelScale() const;
 
     // symbol: ??0CaveSpider@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

@@ -6,12 +6,14 @@
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/Result.h"
 #include "mc/external/scripting/StrongTypedObjectHandle.h"
+#include "mc/external/scripting/WeakTypedObjectHandle.h"
 #include "mc/world/actor/player/PlayerScoreSetFunction.h"
 
 // auto generated forward declare list
 // clang-format off
 class Objective;
 namespace ScriptModuleMinecraft { class ScriptActor; }
+namespace ScriptModuleMinecraft { class ScriptScoreboard; }
 namespace ScriptModuleMinecraft { class ScriptScoreboardIdentity; }
 namespace ScriptModuleMinecraft { class ScriptScoreboardScoreInfo; }
 // clang-format on
@@ -27,6 +29,11 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol:
+    // ??0ScriptScoreboardObjective@ScriptModuleMinecraft@@QEAA@V?$WeakTypedObjectHandle@VScriptScoreboard@ScriptModuleMinecraft@@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI
+    ScriptScoreboardObjective(class Scripting::WeakTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboard>, std::string const&);
+
     // symbol:
     // ?addScore@ScriptScoreboardObjective@ScriptModuleMinecraft@@QEAA?AV?$Result@H$$V@Scripting@@AEAV?$variant@V?$StrongTypedObjectHandle@VScriptScoreboardIdentity@ScriptModuleMinecraft@@@Scripting@@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@H@Z
     MCAPI class Scripting::Result<int> addScore(
@@ -71,10 +78,6 @@ public:
                    class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardIdentity>,
                    class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>,
                    std::string> const&) const;
-
-    // symbol: ??4ScriptScoreboardObjective@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
-    MCAPI class ScriptModuleMinecraft::ScriptScoreboardObjective&
-    operator=(class ScriptModuleMinecraft::ScriptScoreboardObjective&&);
 
     // symbol:
     // ?removeParticipant@ScriptScoreboardObjective@ScriptModuleMinecraft@@QEAA?AV?$Result@_N$$V@Scripting@@AEAV?$variant@V?$StrongTypedObjectHandle@VScriptScoreboardIdentity@ScriptModuleMinecraft@@@Scripting@@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@Z

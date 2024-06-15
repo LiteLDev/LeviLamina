@@ -16,12 +16,6 @@ public:
     // symbol: ?drain@ScopedAutoreleasePool@@QEAAXXZ
     MCAPI void drain();
 
-    // symbol: ?drainNow@ScopedAutoreleasePool@@QEAAXXZ
-    MCAPI void drainNow();
-
-    // symbol: ?reset@ScopedAutoreleasePool@@QEAAXXZ
-    MCAPI void reset();
-
     // symbol: ??1ScopedAutoreleasePool@@QEAA@XZ
     MCAPI ~ScopedAutoreleasePool();
 

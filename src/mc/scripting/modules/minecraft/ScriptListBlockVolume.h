@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
 class Vec3;
 namespace ScriptModuleMinecraft { class ScriptBlockLocationIterator; }
 namespace ScriptModuleMinecraft { class ScriptBlockVolumeBase; }
@@ -20,8 +21,8 @@ namespace ScriptModuleMinecraft {
 class ScriptListBlockVolume : public ::ScriptModuleMinecraft::ScriptBlockVolumeBase {
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptListBlockVolume@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptListBlockVolume();
+    // vIndex: 0, symbol: __gen_??1ScriptListBlockVolume@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptListBlockVolume() = default;
 
     // vIndex: 1, symbol:
     // ?getBlockLocationIterator@ScriptListBlockVolume@ScriptModuleMinecraft@@UEAA?AV?$StrongTypedObjectHandle@VScriptBlockLocationIterator@ScriptModuleMinecraft@@@Scripting@@VWeakLifetimeScope@4@@Z
@@ -31,8 +32,15 @@ public:
     // symbol: ??0ScriptListBlockVolume@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ScriptListBlockVolume();
 
+    // symbol: ??0ScriptListBlockVolume@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
+    MCAPI ScriptListBlockVolume(class ScriptModuleMinecraft::ScriptListBlockVolume&&);
+
     // symbol: ??0ScriptListBlockVolume@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
     MCAPI ScriptListBlockVolume(class ScriptModuleMinecraft::ScriptListBlockVolume const&);
+
+    // symbol:
+    // ??0ScriptListBlockVolume@ScriptModuleMinecraft@@QEAA@AEBV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@@Z
+    MCAPI explicit ScriptListBlockVolume(std::vector<class BlockPos> const&);
 
     // symbol:
     // ??0ScriptListBlockVolume@ScriptModuleMinecraft@@QEAA@AEBV?$vector@VVec3@@V?$allocator@VVec3@@@std@@@std@@@Z
@@ -41,6 +49,10 @@ public:
     // symbol:
     // ?add@ScriptListBlockVolume@ScriptModuleMinecraft@@QEAAXAEBV?$vector@VVec3@@V?$allocator@VVec3@@@std@@@std@@@Z
     MCAPI void add(std::vector<class Vec3> const&);
+
+    // symbol: ??4ScriptListBlockVolume@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
+    MCAPI class ScriptModuleMinecraft::ScriptListBlockVolume&
+    operator=(class ScriptModuleMinecraft::ScriptListBlockVolume&&);
 
     // symbol: ??4ScriptListBlockVolume@ScriptModuleMinecraft@@QEAAAEAV01@AEBV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptListBlockVolume&

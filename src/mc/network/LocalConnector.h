@@ -82,9 +82,6 @@ public:
     // symbol: ?host@LocalConnector@@QEAAXAEBVNetworkIdentifier@@@Z
     MCAPI void host(class NetworkIdentifier const& id);
 
-    // symbol: ?runEvents@LocalConnector@@QEAAXXZ
-    MCAPI void runEvents();
-
     // NOLINTEND
 
     // private:

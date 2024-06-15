@@ -47,6 +47,13 @@ public:
         DebugSpatialPacketModifiers& operator=(DebugSpatialPacketModifiers const&);
         DebugSpatialPacketModifiers(DebugSpatialPacketModifiers const&);
         DebugSpatialPacketModifiers();
+
+    public:
+        // NOLINTBEGIN
+        // symbol: ?getSavingsPercentage@DebugSpatialPacketModifiers@SpatialActorNetworkData@@QEBAMXZ
+        MCAPI float getSavingsPercentage() const;
+
+        // NOLINTEND
     };
 
 public:
@@ -62,18 +69,6 @@ public:
 
     // symbol: ?enableAutoSend@SpatialActorNetworkData@@QEAAX_N@Z
     MCAPI void enableAutoSend(bool enable);
-
-    // symbol: ?getLastSentPositionForAddingEntity@SpatialActorNetworkData@@QEAA?AVVec3@@XZ
-    MCAPI class Vec3 getLastSentPositionForAddingEntity();
-
-    // symbol: ?getLastSentRotationForAddingEntity@SpatialActorNetworkData@@QEAA?AVVec2@@XZ
-    MCAPI class Vec2 getLastSentRotationForAddingEntity();
-
-    // symbol: ?getLastSentYBodyRotationForAddingEntity@SpatialActorNetworkData@@QEAAMXZ
-    MCAPI float getLastSentYBodyRotationForAddingEntity();
-
-    // symbol: ?getLastSentYHeadRotationForAddingEntity@SpatialActorNetworkData@@QEAAMXZ
-    MCAPI float getLastSentYHeadRotationForAddingEntity();
 
     // symbol: ?handleClientData@SpatialActorNetworkData@@QEAAXAEBVMoveActorAbsoluteData@@@Z
     MCAPI void handleClientData(class MoveActorAbsoluteData const& moveData);
@@ -92,6 +87,9 @@ public:
 
     // symbol: ?teleportEntity@SpatialActorNetworkData@@QEAAXAEBVVec3@@AEBVVec2@@M@Z
     MCAPI void teleportEntity(class Vec3 const& pos, class Vec2 const& rot, float yHeadRot);
+
+    // symbol: ?getDebugSpatialPacketModifiers@SpatialActorNetworkData@@SAAEAUDebugSpatialPacketModifiers@1@XZ
+    MCAPI static struct SpatialActorNetworkData::DebugSpatialPacketModifiers& getDebugSpatialPacketModifiers();
 
     // NOLINTEND
 

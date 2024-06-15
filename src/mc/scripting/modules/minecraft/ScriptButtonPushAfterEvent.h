@@ -16,6 +16,10 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??4ScriptButtonPushAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
+    MCAPI struct ScriptModuleMinecraft::ScriptButtonPushAfterEvent&
+    operator=(struct ScriptModuleMinecraft::ScriptButtonPushAfterEvent&&);
+
     // symbol:
     // ?bind@ScriptButtonPushAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptButtonPushAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptButtonPushAfterEvent> bind();

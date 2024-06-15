@@ -11,6 +11,7 @@ public:
     // prevent constructor by default
     ClientEventCoordinatorManager& operator=(ClientEventCoordinatorManager const&);
     ClientEventCoordinatorManager(ClientEventCoordinatorManager const&);
+    ClientEventCoordinatorManager();
 
 public:
     // NOLINTBEGIN
@@ -28,9 +29,6 @@ public:
     // vIndex: 4, symbol:
     // ?getLevelEventCoordinator@ClientEventCoordinatorManager@@UEAA?AV?$not_null@V?$StackRefResult@VLevelEventCoordinator@@@@@gsl@@XZ
     virtual gsl::not_null<class StackRefResult<class LevelEventCoordinator>> getLevelEventCoordinator();
-
-    // symbol: ??0ClientEventCoordinatorManager@@QEAA@XZ
-    MCAPI ClientEventCoordinatorManager();
 
     // NOLINTEND
 };

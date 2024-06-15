@@ -30,33 +30,33 @@ public:
     // vIndex: 0, symbol: __gen_??1BarrelBlock@@UEAA@XZ
     virtual ~BarrelBlock() = default;
 
-    // vIndex: 30, symbol: ?isContainerBlock@BarrelBlock@@UEBA_NXZ
+    // vIndex: 31, symbol: ?isContainerBlock@BarrelBlock@@UEBA_NXZ
     virtual bool isContainerBlock() const;
 
-    // vIndex: 46, symbol: ?isSignalSource@BarrelBlock@@UEBA_NXZ
+    // vIndex: 47, symbol: ?isSignalSource@BarrelBlock@@UEBA_NXZ
     virtual bool isSignalSource() const;
 
-    // vIndex: 110, symbol: ?hasComparatorSignal@BarrelBlock@@UEBA_NXZ
+    // vIndex: 111, symbol: ?hasComparatorSignal@BarrelBlock@@UEBA_NXZ
     virtual bool hasComparatorSignal() const;
 
-    // vIndex: 111, symbol: ?getComparatorSignal@BarrelBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
+    // vIndex: 112, symbol: ?getComparatorSignal@BarrelBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
     virtual int
     getComparatorSignal(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
         const;
 
-    // vIndex: 128, symbol: ?getVariant@BarrelBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129, symbol: ?getVariant@BarrelBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 132, symbol: ?getFaceFlip@BarrelBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
+    // vIndex: 133, symbol: ?getFaceFlip@BarrelBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
     virtual ::Flip getFaceFlip(uchar face, class Block const& block) const;
 
-    // vIndex: 142, symbol: ?onRemove@BarrelBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 143, symbol: ?onRemove@BarrelBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 149, symbol: ?isInteractiveBlock@BarrelBlock@@UEBA_NXZ
+    // vIndex: 150, symbol: ?isInteractiveBlock@BarrelBlock@@UEBA_NXZ
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 151, symbol: ?use@BarrelBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152, symbol: ?use@BarrelBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // symbol: ??0BarrelBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z

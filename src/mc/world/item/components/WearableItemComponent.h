@@ -60,8 +60,8 @@ public:
     // symbol: ??0WearableItemComponent@@QEAA@W4EquipmentSlot@Legacy@Puv@@H@Z
     MCAPI WearableItemComponent(::Puv::Legacy::EquipmentSlot, int);
 
-    // symbol: ?dispense@WearableItemComponent@@QEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-    MCAPI bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, uchar) const;
+    // symbol: ?dispense@WearableItemComponent@@QEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@@Z
+    MCAPI bool dispense(class BlockSource&, class Container&, int, class Vec3 const&) const;
 
     // symbol: ?getArmorValue@WearableItemComponent@@QEBAHXZ
     MCAPI int getArmorValue() const;
@@ -72,8 +72,8 @@ public:
     // symbol: ?getSlot@WearableItemComponent@@QEBA?AW4EquipmentSlot@Legacy@Puv@@XZ
     MCAPI ::Puv::Legacy::EquipmentSlot getSlot() const;
 
-    // symbol: ?isArmor@WearableItemComponent@@QEBA_NXZ
-    MCAPI bool isArmor() const;
+    // symbol: ?isHumanoidArmor@WearableItemComponent@@QEBA_NXZ
+    MCAPI bool isHumanoidArmor() const;
 
     // symbol: ?shouldAllowStacking@WearableItemComponent@@QEBA_NXZ
     MCAPI bool shouldAllowStacking() const;

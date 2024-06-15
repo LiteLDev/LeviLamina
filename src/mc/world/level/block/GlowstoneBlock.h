@@ -30,7 +30,7 @@ public:
     // vIndex: 0, symbol: __gen_??1GlowstoneBlock@@UEAA@XZ
     virtual ~GlowstoneBlock() = default;
 
-    // vIndex: 63, symbol: ?dispense@GlowstoneBlock@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 64, symbol: ?dispense@GlowstoneBlock@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 

@@ -5,11 +5,14 @@
 // auto generated inclusion list
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/Result.h"
+#include "mc/external/scripting/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
 class WeakEntityRef;
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
+namespace ScriptModuleMinecraft { class ScriptItemStack; }
+namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
@@ -43,11 +46,34 @@ public:
     MCAPI class Scripting::Result<float> getProbability() const;
 
     // symbol:
-    // ?getTameItems@ScriptTameableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@$$V@Scripting@@XZ
-    MCAPI class Scripting::Result<std::vector<std::string>> getTameItems() const;
+    // ?getTameItems@ScriptTameableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$vector@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@$$V@Scripting@@XZ
+    MCAPI class Scripting::Result<
+        std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>>
+    getTameItems() const;
 
-    // symbol: ?tame@ScriptTameableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_N$$V@Scripting@@XZ
-    MCAPI class Scripting::Result<bool> tame() const;
+    // symbol:
+    // ?getTameItems_010@ScriptTameableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@$$V@Scripting@@XZ
+    MCAPI class Scripting::Result<std::vector<std::string>> getTameItems_010() const;
+
+    // symbol: ?isTamed@ScriptTameableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_N$$V@Scripting@@XZ
+    MCAPI class Scripting::Result<bool> isTamed() const;
+
+    // symbol:
+    // ?tame@ScriptTameableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_N$$V@Scripting@@AEAVScriptPlayer@2@@Z
+    MCAPI class Scripting::Result<bool> tame(class ScriptModuleMinecraft::ScriptPlayer&) const;
+
+    // symbol: ?tame_010@ScriptTameableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_N$$V@Scripting@@XZ
+    MCAPI class Scripting::Result<bool> tame_010() const;
+
+    // symbol:
+    // ?tamedToPlayer@ScriptTameableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@XZ
+    MCAPI class Scripting::Result<
+        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>>>
+    tamedToPlayer() const;
+
+    // symbol:
+    // ?tamedToPlayerId@ScriptTameableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@$$V@Scripting@@XZ
+    MCAPI class Scripting::Result<std::optional<std::string>> tamedToPlayerId() const;
 
     // symbol:
     // ?bind@ScriptTameableComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptTameableComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z

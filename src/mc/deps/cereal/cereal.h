@@ -16,7 +16,6 @@
 namespace cereal { class BasicLoader; }
 namespace cereal { class BasicSaver; }
 namespace cereal { class Constraint; }
-namespace cereal { class NumericConstraint; }
 namespace cereal { class PropertyReader; }
 namespace cereal { class SerializerContext; }
 namespace cereal { class SerializerEnumMapping; }

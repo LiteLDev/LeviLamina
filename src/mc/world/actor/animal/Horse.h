@@ -10,7 +10,6 @@
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
-#include "mc/enums/ArmorTextureType.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/HorseFlags.h"
 #include "mc/enums/InputMode.h"
@@ -52,70 +51,64 @@ public:
     // vIndex: 43, symbol: ?isImmobile@Horse@@UEBA_NXZ
     virtual bool isImmobile() const;
 
-    // vIndex: 63, symbol: ?onFailedTame@Horse@@UEAAXXZ
+    // vIndex: 62, symbol: ?onFailedTame@Horse@@UEAAXXZ
     virtual void onFailedTame();
 
-    // vIndex: 64, symbol: ?setStanding@Horse@@UEAAX_N@Z
+    // vIndex: 63, symbol: ?setStanding@Horse@@UEAAX_N@Z
     virtual void setStanding(bool value);
 
-    // vIndex: 74, symbol: ?feed@Horse@@UEAAXH@Z
+    // vIndex: 73, symbol: ?feed@Horse@@UEAAXH@Z
     virtual void feed(int itemId);
 
-    // vIndex: 93, symbol: ?canFreeze@Horse@@UEBA_NXZ
+    // vIndex: 91, symbol: ?canFreeze@Horse@@UEBA_NXZ
     virtual bool canFreeze() const;
 
-    // vIndex: 99, symbol: ?getControllingPlayer@Horse@@UEBA?AUActorUniqueID@@XZ
+    // vIndex: 97, symbol: ?getControllingPlayer@Horse@@UEBA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID getControllingPlayer() const;
 
-    // vIndex: 100, symbol: ?causeFallDamageToActor@Horse@@MEAAMMMVActorDamageSource@@@Z
+    // vIndex: 98, symbol: ?causeFallDamageToActor@Horse@@MEAAMMMVActorDamageSource@@@Z
     virtual float causeFallDamageToActor(float, float, class ActorDamageSource);
 
-    // vIndex: 101, symbol: ?onSynchedDataUpdate@Horse@@UEAAXH@Z
+    // vIndex: 99, symbol: ?onSynchedDataUpdate@Horse@@UEAAXH@Z
     virtual void onSynchedDataUpdate(int dataId);
 
-    // vIndex: 118, symbol: ?openContainerComponent@Horse@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 116, symbol: ?openContainerComponent@Horse@@UEAAXAEAVPlayer@@@Z
     virtual void openContainerComponent(class Player& player);
 
-    // vIndex: 133, symbol: ?die@Horse@@UEAAXAEBVActorDamageSource@@@Z
+    // vIndex: 131, symbol: ?die@Horse@@UEAAXAEBVActorDamageSource@@@Z
     virtual void die(class ActorDamageSource const& damagesource);
 
-    // vIndex: 146, symbol: ?updateEntitySpecificMolangVariables@Horse@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 144, symbol: ?updateEntitySpecificMolangVariables@Horse@@UEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // vIndex: 148, symbol: ?_hurt@Horse@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 146, symbol: ?_hurt@Horse@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float dmg, bool knock, bool ignite);
 
-    // vIndex: 151, symbol: ?_playStepSound@Horse@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 149, symbol: ?_playStepSound@Horse@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
     virtual void _playStepSound(class BlockPos const& pos, class Block const& _onBlock);
 
-    // vIndex: 170, symbol: ?getArmorValue@Horse@@UEBAHXZ
-    virtual int getArmorValue() const;
-
-    // vIndex: 192, symbol: ?setType@Horse@@UEAAXH@Z
+    // vIndex: 190, symbol: ?setType@Horse@@UEAAXH@Z
     virtual void setType(int i);
 
-    // vIndex: 193, symbol: ?getType@Horse@@UEBAHXZ
+    // vIndex: 191, symbol: ?getType@Horse@@UEBAHXZ
     virtual int getType() const;
 
-    // vIndex: 194, symbol: ?setHorseEating@Horse@@UEAAX_N@Z
+    // vIndex: 192, symbol: ?setHorseEating@Horse@@UEAAX_N@Z
     virtual void setHorseEating(bool state);
 
-    // vIndex: 195, symbol: ?getStandAnim@Horse@@UEBAMM@Z
+    // vIndex: 193, symbol: ?getStandAnim@Horse@@UEBAMM@Z
     virtual float getStandAnim(float a) const;
 
-    // vIndex: 196, symbol: ?isAdult@Horse@@UEBA_NXZ
-    virtual bool isAdult() const;
-
-    // vIndex: 197, symbol: ?isHorseEating@Horse@@UEBA_NXZ
+    // vIndex: 194, symbol: ?isHorseEating@Horse@@UEBA_NXZ
     virtual bool isHorseEating() const;
 
-    // vIndex: 198, symbol: ?isMouthOpen@Horse@@UEBA_NXZ
+    // vIndex: 195, symbol: ?isMouthOpen@Horse@@UEBA_NXZ
     virtual bool isMouthOpen() const;
 
-    // vIndex: 199, symbol: ?makeMad@Horse@@UEAAXXZ
+    // vIndex: 196, symbol: ?makeMad@Horse@@UEAAXXZ
     virtual void makeMad();
 
-    // vIndex: 200, symbol: ?tameToPlayer@Horse@@UEAA_NAEAVPlayer@@_N@Z
+    // vIndex: 197, symbol: ?tameToPlayer@Horse@@UEAA_NAEAVPlayer@@_N@Z
     virtual bool tameToPlayer(class Player& player, bool tamingParticles);
 
     // symbol: ??0Horse@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
@@ -167,8 +160,8 @@ public:
     // symbol: ?_setHorseFlag@Horse@@AEAAXW4HorseFlags@@_N@Z
     MCAPI void _setHorseFlag(::HorseFlags flag, bool value);
 
-    // symbol: ?_setHorseType@Horse@@AEAA_NAEAW4ActorType@@@Z
-    MCAPI bool _setHorseType(::ActorType& actorType);
+    // symbol: ?_setHorseType@Horse@@AEAA_NW4ActorType@@@Z
+    MCAPI bool _setHorseType(::ActorType actorType);
 
     // NOLINTEND
 };

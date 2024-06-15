@@ -67,20 +67,17 @@ public:
     // symbol: ?forceCheckAllNeighChunkSavedStat@Dimension@@UEBA_NXZ
     MCVAPI bool forceCheckAllNeighChunkSavedStat() const;
 
-    // symbol: ?getBiomeRegistry@Dimension@@UEAAAEAVBiomeRegistry@@XZ
-    MCVAPI class BiomeRegistry& getBiomeRegistry();
-
     // symbol: ?getBiomeRegistry@Dimension@@UEBAAEBVBiomeRegistry@@XZ
     MCVAPI class BiomeRegistry const& getBiomeRegistry() const;
+
+    // symbol: ?getBiomeRegistry@Dimension@@UEAAAEAVBiomeRegistry@@XZ
+    MCVAPI class BiomeRegistry& getBiomeRegistry();
 
     // symbol: ?getBrightnessDependentFogColor@Dimension@@UEBA?AVColor@mce@@AEBV23@M@Z
     MCVAPI class mce::Color getBrightnessDependentFogColor(class mce::Color const& baseColor, float brightness) const;
 
     // symbol: ?getBrightnessRamp@Dimension@@UEBAAEBVDimensionBrightnessRamp@@XZ
     MCVAPI class DimensionBrightnessRamp const& getBrightnessRamp() const;
-
-    // symbol: ?getClearColorScale@Dimension@@UEAAMXZ
-    MCVAPI float getClearColorScale();
 
     // symbol: ?getCloudHeight@Dimension@@UEBAFXZ
     MCVAPI short getCloudHeight() const;
@@ -106,9 +103,6 @@ public:
     // symbol: ?getTimeOfDay@Dimension@@MEBAMHM@Z
     MCVAPI float getTimeOfDay(int time, float a) const;
 
-    // symbol: ?hasBedrockFog@Dimension@@UEAA_NXZ
-    MCVAPI bool hasBedrockFog();
-
     // symbol: ?hasGround@Dimension@@UEBA_NXZ
     MCVAPI bool hasGround() const;
 
@@ -129,9 +123,6 @@ public:
 
     // symbol: ?isDay@Dimension@@UEBA_NXZ
     MCVAPI bool isDay() const;
-
-    // symbol: ?isFoggyAt@Dimension@@UEBA_NHH@Z
-    MCVAPI bool isFoggyAt(int x, int z) const;
 
     // symbol: ?isNaturalDimension@Dimension@@UEBA_NXZ
     MCVAPI bool isNaturalDimension() const;
@@ -321,6 +312,9 @@ public:
 
     // symbol: ?getSunAngle@Dimension@@QEBAMM@Z
     MCAPI float getSunAngle(float a) const;
+
+    // symbol: ?getTargetMetaData@Dimension@@QEAA?AV?$shared_ptr@$$CBVLevelChunkMetaData@@@std@@XZ
+    MCAPI std::shared_ptr<class LevelChunkMetaData const> getTargetMetaData();
 
     // symbol: ?getTickingAreas@Dimension@@QEAAAEAVTickingAreaList@@XZ
     MCAPI class TickingAreaList& getTickingAreas();

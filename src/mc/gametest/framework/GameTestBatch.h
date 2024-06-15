@@ -13,20 +13,17 @@ class GameTestBatch {
 public:
     // prevent constructor by default
     GameTestBatch& operator=(GameTestBatch const&);
-    GameTestBatch(GameTestBatch const&);
     GameTestBatch();
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getName@GameTestBatch@gametest@@QEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-    MCAPI std::string const& getName();
+    // symbol: ??0GameTestBatch@gametest@@QEAA@AEBV01@@Z
+    MCAPI GameTestBatch(class gametest::GameTestBatch const&);
 
     // symbol:
-    // ?getTestFunctions@GameTestBatch@gametest@@QEAAAEBV?$vector@V?$shared_ptr@VBaseGameTestFunction@gametest@@@std@@V?$allocator@V?$shared_ptr@VBaseGameTestFunction@gametest@@@std@@@2@@std@@XZ
-    MCAPI std::vector<std::shared_ptr<class gametest::BaseGameTestFunction>> const& getTestFunctions();
-
-    // symbol: ?runBeforeBatchFunction@GameTestBatch@gametest@@QEAAXXZ
-    MCAPI void runBeforeBatchFunction();
+    // ??0GameTestBatch@gametest@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$shared_ptr@VBaseGameTestFunction@gametest@@@std@@V?$allocator@V?$shared_ptr@VBaseGameTestFunction@gametest@@@std@@@2@@3@V?$function@$$A6AXXZ@3@@Z
+    MCAPI
+    GameTestBatch(std::string name, std::vector<std::shared_ptr<class gametest::BaseGameTestFunction>>, std::function<void()>);
 
     // symbol: ??1GameTestBatch@gametest@@QEAA@XZ
     MCAPI ~GameTestBatch();

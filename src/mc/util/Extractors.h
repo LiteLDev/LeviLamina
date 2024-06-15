@@ -10,13 +10,6 @@ public:
     Extractors& operator=(Extractors const&);
     Extractors(Extractors const&);
     Extractors();
-
-public:
-    // NOLINTBEGIN
-    // symbol: ??1Extractors@MovementDataExtractionUtility@@QEAA@XZ
-    MCAPI ~Extractors();
-
-    // NOLINTEND
 };
 
 }; // namespace MovementDataExtractionUtility

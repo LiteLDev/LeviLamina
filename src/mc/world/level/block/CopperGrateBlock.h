@@ -37,7 +37,7 @@ public:
     getCollisionShapeForCamera(class AABB&, class Block const&, class IConstBlockSource const&, class BlockPos const&)
         const;
 
-    // vIndex: 56, symbol: ?canContainLiquid@CopperGrateBlock@@UEBA_NXZ
+    // vIndex: 57, symbol: ?canContainLiquid@CopperGrateBlock@@UEBA_NXZ
     virtual bool canContainLiquid() const;
 
     // symbol:

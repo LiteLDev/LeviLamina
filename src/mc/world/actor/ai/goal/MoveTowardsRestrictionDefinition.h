@@ -10,14 +10,12 @@ public:
     // prevent constructor by default
     MoveTowardsRestrictionDefinition& operator=(MoveTowardsRestrictionDefinition const&);
     MoveTowardsRestrictionDefinition(MoveTowardsRestrictionDefinition const&);
+    MoveTowardsRestrictionDefinition();
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1MoveTowardsRestrictionDefinition@@UEAA@XZ
-    virtual ~MoveTowardsRestrictionDefinition();
-
-    // symbol: ??0MoveTowardsRestrictionDefinition@@QEAA@XZ
-    MCAPI MoveTowardsRestrictionDefinition();
+    // vIndex: 0, symbol: __gen_??1MoveTowardsRestrictionDefinition@@UEAA@XZ
+    virtual ~MoveTowardsRestrictionDefinition() = default;
 
     // symbol: ?initialize@MoveTowardsRestrictionDefinition@@QEBAXAEAVEntityContext@@AEAVMoveTowardsRestrictionGoal@@@Z
     MCAPI void initialize(class EntityContext& entity, class MoveTowardsRestrictionGoal& goal) const;

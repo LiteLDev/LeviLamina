@@ -20,12 +20,31 @@ public:
     // symbol: ?clear@MolangVariableMap@@QEAAAEAV1@XZ
     MCAPI class MolangVariableMap& clear();
 
+    // symbol: ?getConstScriptArgReference@MolangVariableMap@@QEBAPEBUMolangScriptArg@@AEBW4MolangVariableIndex@@@Z
+    MCAPI struct MolangScriptArg const* getConstScriptArgReference(::MolangVariableIndex const& molangVariableIndex
+    ) const;
+
+    // symbol: ?getMolangVariable@MolangVariableMap@@QEBAAEBUMolangScriptArg@@AEBW4MolangVariableIndex@@AEA_N@Z
+    MCAPI struct MolangScriptArg const&
+    getMolangVariable(::MolangVariableIndex const& molangVariableIndex, bool& doesVariableExist) const;
+
     // symbol: ?getMolangVariable@MolangVariableMap@@QEBAAEBUMolangScriptArg@@_KPEBD@Z
     MCAPI struct MolangScriptArg const& getMolangVariable(uint64 variableNameHash, char const*) const;
 
     // symbol: ?getMolangVariable@MolangVariableMap@@QEBAAEBUMolangScriptArg@@AEB_KAEA_N@Z
     MCAPI struct MolangScriptArg const&
     getMolangVariable(uint64 const& variableNameHash, bool& doesVariableExist) const;
+
+    // symbol: ?getNonConstScriptArgReference@MolangVariableMap@@QEAAPEAUMolangScriptArg@@AEBW4MolangVariableIndex@@@Z
+    MCAPI struct MolangScriptArg* getNonConstScriptArgReference(::MolangVariableIndex const& molangVariableIndex);
+
+    // symbol:
+    // ?getOrAddNonConstScriptArgReference@MolangVariableMap@@QEAAPEAUMolangScriptArg@@AEBW4MolangVariableIndex@@@Z
+    MCAPI struct MolangScriptArg* getOrAddNonConstScriptArgReference(::MolangVariableIndex const& molangVariableIndex);
+
+    // symbol: ?getPublicMolangVariable@MolangVariableMap@@QEBAAEBUMolangScriptArg@@AEBW4MolangVariableIndex@@AEA_N@Z
+    MCAPI struct MolangScriptArg const&
+    getPublicMolangVariable(::MolangVariableIndex const& molangVariableIndex, bool& doesVariableExist) const;
 
     // symbol: ??4MolangVariableMap@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class MolangVariableMap& operator=(class MolangVariableMap&& rhs);

@@ -26,9 +26,6 @@ public:
     // symbol: ?init@EducationOptions@@QEAAXAEBVLevelData@@@Z
     MCAPI void init(class LevelData const& levelData);
 
-    // symbol: ?getPackCapability@EducationOptions@@SA?AVPackCapability@@XZ
-    MCAPI static class PackCapability getPackCapability();
-
     // symbol: ?isBaseCodeBuilderEnabled@EducationOptions@@SA_NXZ
     MCAPI static bool isBaseCodeBuilderEnabled();
 

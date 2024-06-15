@@ -30,11 +30,11 @@ public:
     // vIndex: 0, symbol: __gen_??1ShulkerBoxBlock@@UEAA@XZ
     virtual ~ShulkerBoxBlock() = default;
 
-    // vIndex: 118, symbol:
+    // vIndex: 119, symbol:
     // ?buildDescriptionId@ShulkerBoxBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
     virtual std::string buildDescriptionId(class Block const&) const;
 
-    // vIndex: 120, symbol: ?getColor@ShulkerBoxBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 121, symbol: ?getColor@ShulkerBoxBlock@@UEBAHAEBVBlock@@@Z
     virtual int getColor(class Block const& block) const;
 
     // symbol: ??0ShulkerBoxBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

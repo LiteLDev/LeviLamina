@@ -62,6 +62,9 @@ public:
     // symbol: ??0SimpleBlockVolume@@QEAA@$$QEAVBlockPos@@0@Z
     MCAPI SimpleBlockVolume(class BlockPos&& from, class BlockPos&& to);
 
+    // symbol: ??0SimpleBlockVolume@@QEAA@AEBVBlockPos@@0@Z
+    MCAPI SimpleBlockVolume(class BlockPos const& from, class BlockPos const& to);
+
     // symbol: ?begin@SimpleBlockVolume@@QEBA?AVSimpleBlockVolumeIterator@@XZ
     MCAPI class SimpleBlockVolumeIterator begin() const;
 

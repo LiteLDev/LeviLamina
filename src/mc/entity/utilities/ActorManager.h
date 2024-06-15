@@ -107,5 +107,8 @@ public:
     // symbol: ?_onChunkDiscarded@ActorManager@@AEAAXAEAVLevelChunk@@@Z
     MCAPI void _onChunkDiscarded(class LevelChunk&);
 
+    // symbol: ?_removeActorEntityReferences@ActorManager@@AEAAXAEAVActor@@@Z
+    MCAPI void _removeActorEntityReferences(class Actor& actor);
+
     // NOLINTEND
 };

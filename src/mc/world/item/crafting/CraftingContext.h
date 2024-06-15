@@ -39,18 +39,6 @@ public:
     // symbol: ??0CraftingContext@@QEAA@V?$not_null@V?$NonOwnerPointer@VILevel@@@Bedrock@@@gsl@@@Z
     MCAPI explicit CraftingContext(Bedrock::NotNullNonOwnerPtr<class ILevel> level);
 
-    // symbol: ?getBaseGameVersion@CraftingContext@@QEBA?AVBaseGameVersion@@XZ
-    MCAPI class BaseGameVersion getBaseGameVersion() const;
-
-    // symbol: ?getTrimMaterialRegistry@CraftingContext@@QEBA?BV?$weak_ptr@$$CBVTrimMaterialRegistry@@@std@@XZ
-    MCAPI std::weak_ptr<class TrimMaterialRegistry const> const getTrimMaterialRegistry() const;
-
-    // symbol: ?getTrimPatternRegistry@CraftingContext@@QEBA?BV?$weak_ptr@$$CBVTrimPatternRegistry@@@std@@XZ
-    MCAPI std::weak_ptr<class TrimPatternRegistry const> const getTrimPatternRegistry() const;
-
-    // symbol: ?getTrimPatternRegistry@CraftingContext@@QEAA?BV?$weak_ptr@VTrimPatternRegistry@@@std@@XZ
-    MCAPI std::weak_ptr<class TrimPatternRegistry> const getTrimPatternRegistry();
-
     // symbol: ??1CraftingContext@@QEAA@XZ
     MCAPI ~CraftingContext();
 

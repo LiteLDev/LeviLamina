@@ -10,6 +10,7 @@
 #include "mc/events/MinecraftEventing.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/world/AutomaticID.h"
+#include "mc/world/item/components/ItemUseMethod.h"
 
 class LegacyTelemetryEventPacket : public ::Packet {
 public:
@@ -101,6 +102,9 @@ public:
 
     // symbol: ??0LegacyTelemetryEventPacket@@QEAA@PEBVPlayer@@HV?$not_null@PEBVActor@@@gsl@@@Z
     MCAPI LegacyTelemetryEventPacket(class Player const*, int, gsl::not_null<class Actor const*>);
+
+    // symbol: ??0LegacyTelemetryEventPacket@@QEAA@AEBVPlayer@@AEBVItemStackBase@@W4ItemUseMethod@@H@Z
+    MCAPI LegacyTelemetryEventPacket(class Player const&, class ItemStackBase const&, ::ItemUseMethod, int);
 
     // symbol: ??0LegacyTelemetryEventPacket@@QEAA@PEBVPlayer@@FIF@Z
     MCAPI LegacyTelemetryEventPacket(class Player const*, short, uint, short);

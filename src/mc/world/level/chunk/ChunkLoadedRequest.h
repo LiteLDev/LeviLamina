@@ -47,6 +47,9 @@ public:
     // symbol: ??1ChunkLoadedRequest@@QEAA@XZ
     MCAPI ~ChunkLoadedRequest();
 
+    // symbol: ?isValidTag@ChunkLoadedRequest@@SA_NAEBVCompoundTag@@@Z
+    MCAPI static bool isValidTag(class CompoundTag const& tag);
+
     // symbol:
     // ?load@ChunkLoadedRequest@@SA?AUDeserializedChunkLoadedRequest@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCompoundTag@@AEAVICommandOriginLoader@@0@Z
     MCAPI static struct DeserializedChunkLoadedRequest load(

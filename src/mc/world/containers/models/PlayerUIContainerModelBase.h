@@ -3,8 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/containers/ContainerCategory.h"
-#include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/containers/ContainerExpandStatus.h"
 #include "mc/world/containers/models/ContainerModel.h"
 
@@ -43,14 +41,6 @@ public:
 
     // vIndex: 24, symbol: ?_onItemChanged@PlayerUIContainerModelBase@@MEAAXHAEBVItemStack@@0@Z
     virtual void _onItemChanged(int modelSlot, class ItemStack const& oldItem, class ItemStack const& newItem);
-
-    // symbol: ??0PlayerUIContainerModelBase@@QEAA@W4ContainerEnumName@@AEAVPlayer@@HW4ContainerCategory@@@Z
-    MCAPI PlayerUIContainerModelBase(
-        ::ContainerEnumName containerName,
-        class Player&       player,
-        int                 containerSize,
-        ::ContainerCategory category
-    );
 
     // NOLINTEND
 

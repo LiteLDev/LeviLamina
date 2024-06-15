@@ -13,9 +13,6 @@ public:
     // symbol: ??0KeyFrameTransformData@@QEAA@AEBV0@@Z
     MCAPI KeyFrameTransformData(class KeyFrameTransformData const&);
 
-    // symbol: ?addChannelTransform@KeyFrameTransformData@@QEAAXAEBVExpressionNode@@AEBVVec3@@@Z
-    MCAPI void addChannelTransform(class ExpressionNode const& expression, class Vec3 const& axis);
-
     // symbol: ?addChannelTransform@KeyFrameTransformData@@QEAAXAEBVExpressionNode@@H@Z
     MCAPI void addChannelTransform(class ExpressionNode const& expression, int axisIndex);
 

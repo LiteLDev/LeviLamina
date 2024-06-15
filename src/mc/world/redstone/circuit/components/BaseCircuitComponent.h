@@ -103,9 +103,6 @@ public:
     // symbol: ?addSourceItem@BaseCircuitComponent@@QEAAXAEBVItem@CircuitComponentList@@@Z
     MCAPI void addSourceItem(class CircuitComponentList::Item const& item);
 
-    // symbol: ?isRemoved@BaseCircuitComponent@@QEBA_NXZ
-    MCAPI bool isRemoved() const;
-
     // NOLINTEND
 
     // protected:

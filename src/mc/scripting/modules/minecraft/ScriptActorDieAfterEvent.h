@@ -19,6 +19,10 @@ public:
     // symbol: ??0ScriptActorDieAfterEvent@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
     MCAPI ScriptActorDieAfterEvent(struct ScriptModuleMinecraft::ScriptActorDieAfterEvent&&);
 
+    // symbol: ??4ScriptActorDieAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
+    MCAPI struct ScriptModuleMinecraft::ScriptActorDieAfterEvent&
+    operator=(struct ScriptModuleMinecraft::ScriptActorDieAfterEvent&&);
+
     // symbol: ??1ScriptActorDieAfterEvent@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptActorDieAfterEvent();
 

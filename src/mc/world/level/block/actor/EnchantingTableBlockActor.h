@@ -38,5 +38,8 @@ public:
     // vIndex: 41, symbol: ?_onUpdatePacket@EnchantingTableBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
     virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
 
+    // symbol: ??0EnchantingTableBlockActor@@QEAA@AEBVBlockPos@@@Z
+    MCAPI explicit EnchantingTableBlockActor(class BlockPos const& pos);
+
     // NOLINTEND
 };

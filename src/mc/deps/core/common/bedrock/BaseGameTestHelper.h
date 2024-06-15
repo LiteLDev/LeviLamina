@@ -429,15 +429,6 @@ public:
     // symbol: ?_absoluteVec@BaseGameTestHelper@gametest@@IEBA?AVVec3@@AEBV3@@Z
     MCAPI class Vec3 _absoluteVec(class Vec3 const&) const;
 
-    // symbol: ?_relativeConnectivity@BaseGameTestHelper@gametest@@IEBAXAEA_N000@Z
-    MCAPI void _relativeConnectivity(bool& north, bool& east, bool& south, bool& west) const;
-
-    // symbol: ?_relativePos@BaseGameTestHelper@gametest@@IEBA?AVBlockPos@@AEBV3@@Z
-    MCAPI class BlockPos _relativePos(class BlockPos const&) const;
-
-    // symbol: ?_relativeVec@BaseGameTestHelper@gametest@@IEBA?AVVec3@@AEBV3@@Z
-    MCAPI class Vec3 _relativeVec(class Vec3 const&) const;
-
     // NOLINTEND
 };
 

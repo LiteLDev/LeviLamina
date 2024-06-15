@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/KeyFrameLerpStyle.h"
 #include "mc/external/glm/mat.h"
 
 class KeyFrameLerpMode {
@@ -18,6 +19,9 @@ public:
 
     // symbol: ??4KeyFrameLerpMode@@QEAAAEAV0@AEBV0@@Z
     MCAPI class KeyFrameLerpMode& operator=(class KeyFrameLerpMode const&);
+
+    // symbol: ?setLerpStyle@KeyFrameLerpMode@@QEAAXW4KeyFrameLerpStyle@@@Z
+    MCAPI void setLerpStyle(::KeyFrameLerpStyle lerpStyle);
 
     // NOLINTEND
 };

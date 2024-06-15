@@ -50,6 +50,9 @@ public:
     // symbol: ??4PromiseAny@Scripting@@QEAAAEAV01@AEBV01@@Z
     MCAPI class Scripting::PromiseAny& operator=(class Scripting::PromiseAny const& rhs);
 
+    // symbol: ?valid@PromiseAny@Scripting@@QEBA_NXZ
+    MCAPI bool valid() const;
+
     // NOLINTEND
 
     // protected:

@@ -15,12 +15,14 @@ public:
     // prevent constructor by default
     CompositeDefinition& operator=(CompositeDefinition const&);
     CompositeDefinition(CompositeDefinition const&);
-    CompositeDefinition();
 
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1CompositeDefinition@@UEAA@XZ
     virtual ~CompositeDefinition() = default;
+
+    // symbol: ??0CompositeDefinition@@QEAA@XZ
+    MCAPI CompositeDefinition();
 
     // NOLINTEND
 

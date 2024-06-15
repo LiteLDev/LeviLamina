@@ -10,7 +10,6 @@
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
-#include "mc/enums/ArmorTextureType.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/InputMode.h"
 #include "mc/enums/MaterialType.h"
@@ -42,16 +41,16 @@ public:
     // vIndex: 10, symbol: __gen_??1Dolphin@@UEAA@XZ
     virtual ~Dolphin() = default;
 
-    // vIndex: 104, symbol: ?canBePulledIntoVehicle@Dolphin@@UEBA_NXZ
+    // vIndex: 102, symbol: ?canBePulledIntoVehicle@Dolphin@@UEBA_NXZ
     virtual bool canBePulledIntoVehicle() const;
 
-    // vIndex: 160, symbol: ?aiStep@Dolphin@@UEAAXXZ
+    // vIndex: 158, symbol: ?aiStep@Dolphin@@UEAAXXZ
     virtual void aiStep();
 
-    // vIndex: 182, symbol: ?createAIGoals@Dolphin@@UEAA_NXZ
+    // vIndex: 180, symbol: ?createAIGoals@Dolphin@@UEAA_NXZ
     virtual bool createAIGoals();
 
-    // vIndex: 186, symbol: ?_getWalkTargetValue@Dolphin@@UEAAMAEBVBlockPos@@@Z
+    // vIndex: 184, symbol: ?_getWalkTargetValue@Dolphin@@UEAAMAEBVBlockPos@@@Z
     virtual float _getWalkTargetValue(class BlockPos const& pos);
 
     // symbol: ??0Dolphin@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

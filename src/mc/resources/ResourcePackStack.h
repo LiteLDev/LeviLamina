@@ -43,6 +43,9 @@ public:
     // ?add@ResourcePackStack@@QEAAXVPackInstance@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIResourcePackRepository@@@Bedrock@@@gsl@@_N@Z
     MCAPI void add(class PackInstance, Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository const> const&, bool);
 
+    // symbol: ?generateAssetSet@ResourcePackStack@@QEAAXXZ
+    MCAPI void generateAssetSet();
+
     // symbol:
     // ?getPackTelemetryNamesWithVersion@ResourcePackStack@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@W4PackType@@@Z
     MCAPI std::vector<std::string> getPackTelemetryNamesWithVersion(::PackType) const;
@@ -55,6 +58,9 @@ public:
 
     // symbol: ?hasPlatformLockedContent@ResourcePackStack@@QEBA_NXZ
     MCAPI bool hasPlatformLockedContent() const;
+
+    // symbol: ?iteratePacks@ResourcePackStack@@QEBAXAEBV?$function@$$A6AXAEBVPackInstance@@@Z@std@@@Z
+    MCAPI void iteratePacks(std::function<void(class PackInstance const&)> const& callback) const;
 
     // symbol: ?removeDuplicates@ResourcePackStack@@QEAAXXZ
     MCAPI void removeDuplicates();

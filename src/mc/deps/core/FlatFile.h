@@ -9,9 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace Core { class FileImpl; }
-namespace Core { class FileOpenMode; }
-namespace Core { class FileSystemImpl; }
-namespace Core { class Path; }
 namespace Core { class Result; }
 // clang-format on
 
@@ -71,17 +68,6 @@ public:
 
     // vIndex: 14, symbol: ?_getRemainingSize@FlatFile@Core@@UEAA?AVResult@2@PEA_K@Z
     virtual class Core::Result _getRemainingSize(uint64* pFileSize);
-
-    // symbol:
-    // ??0FlatFile@Core@@QEAA@PEAVFileSystemImpl@1@VFileOpenMode@1@V?$unique_ptr@VFileImpl@Core@@U?$default_delete@VFileImpl@Core@@@std@@@std@@AEBVPath@1@_K4@Z
-    MCAPI FlatFile(
-        class Core::FileSystemImpl*           pTransaction,
-        class Core::FileOpenMode              fileOpenMode,
-        std::unique_ptr<class Core::FileImpl> baseFile,
-        class Core::Path const&               path,
-        uint64                                seekPos,
-        uint64                                fileSize
-    );
 
     // NOLINTEND
 };

@@ -20,14 +20,9 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ?_minecartComeOffRailSystem@MinecartComeOffRailSystem@@SAXAEAVStrictEntityContext@@AEBVRailMovementComponent@@AEAUStateVectorComponent@@V?$Optional@$$CBV?$FlagComponent@UOnGroundFlag@@@@@@V?$EntityModifier@UMoveRequestComponent@@@@@Z
-    MCAPI static void _minecartComeOffRailSystem(
-        class StrictEntityContext&         context,
-        class RailMovementComponent const& railMovementComponent,
-        struct StateVectorComponent&,
-        class Optional<class FlagComponent<struct OnGroundFlag> const>,
-        class EntityModifier<struct MoveRequestComponent> mod
-    );
+    // ?_minecartComeOffRailSystem@MinecartComeOffRailSystem@@SAXAEAVStrictEntityContext@@AEBVRailMovementComponent@@AEAUStateVectorComponent@@V?$Optional@$$CBUOnGroundFlagComponent@@@@V?$EntityModifier@UMoveRequestComponent@@@@@Z
+    MCAPI static void
+    _minecartComeOffRailSystem(class StrictEntityContext&, class RailMovementComponent const&, struct StateVectorComponent&, class Optional<struct OnGroundFlagComponent const>, class EntityModifier<struct MoveRequestComponent>);
 
     // symbol: ?createSystem@MinecartComeOffRailSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
@@ -37,7 +32,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol:
-    // ?_tickMinecartComeOffRailSystem@MinecartComeOffRailSystem@@CAXV?$ViewT@VStrictEntityContext@@U?$Exclude@USnapOnRailComponent@@@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@$$CBVRailMovementComponent@@UStateVectorComponent@@V?$Optional@$$CBV?$FlagComponent@UOnGroundFlag@@@@@@@@V?$EntityModifier@UMoveRequestComponent@@@@@Z
+    // ?_tickMinecartComeOffRailSystem@MinecartComeOffRailSystem@@CAXV?$ViewT@VStrictEntityContext@@U?$Exclude@USnapOnRailComponent@@@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@$$CBVRailMovementComponent@@UStateVectorComponent@@V?$Optional@$$CBUOnGroundFlagComponent@@@@@@V?$EntityModifier@UMoveRequestComponent@@@@@Z
     MCAPI static void _tickMinecartComeOffRailSystem(
         class ViewT<
             class StrictEntityContext,
@@ -45,8 +40,8 @@ public:
             struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,
             class RailMovementComponent const,
             struct StateVectorComponent,
-            class Optional<class FlagComponent<struct OnGroundFlag> const>> view,
-        class EntityModifier<struct MoveRequestComponent>                   mod
+            class Optional<struct OnGroundFlagComponent const>> view,
+        class EntityModifier<struct MoveRequestComponent>       mod
     );
 
     // NOLINTEND

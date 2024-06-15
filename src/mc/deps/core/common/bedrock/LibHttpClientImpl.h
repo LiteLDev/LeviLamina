@@ -23,11 +23,12 @@ public:
     // prevent constructor by default
     LibHttpClientImpl& operator=(LibHttpClientImpl const&);
     LibHttpClientImpl(LibHttpClientImpl const&);
+    LibHttpClientImpl();
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1LibHttpClientImpl@Http@Bedrock@@UEAA@XZ
-    virtual ~LibHttpClientImpl();
+    // vIndex: 0, symbol: __gen_??1LibHttpClientImpl@Http@Bedrock@@UEAA@XZ
+    virtual ~LibHttpClientImpl() = default;
 
     // vIndex: 1, symbol:
     // ?send@LibHttpClientImpl@Http@Bedrock@@UEAA?AV?$shared_ptr@V?$IAsyncResult@VResponse@Http@Bedrock@@@Threading@Bedrock@@@std@@$$QEAVRequest@23@@Z
@@ -39,9 +40,6 @@ public:
 
     // vIndex: 3, symbol: ?shutdown@LibHttpClientImpl@Http@Bedrock@@UEAAXXZ
     virtual void shutdown();
-
-    // symbol: ??0LibHttpClientImpl@Http@Bedrock@@QEAA@XZ
-    MCAPI LibHttpClientImpl();
 
     // NOLINTEND
 
@@ -69,6 +67,9 @@ public:
 
     // symbol: ?_untrack@LibHttpClientImpl@Http@Bedrock@@AEAAXV?$not_null@PEAUHC_CALL@@@gsl@@@Z
     MCAPI void _untrack(gsl::not_null<struct HC_CALL*>);
+
+    // symbol: ?_convertRequestBody@LibHttpClientImpl@Http@Bedrock@@CAJV?$not_null@PEAUHC_CALL@@@gsl@@AEBVRequest@23@@Z
+    MCAPI static long _convertRequestBody(gsl::not_null<struct HC_CALL*>, class Bedrock::Http::Request const& request);
 
     // symbol:
     // ?_convertResponseBody@LibHttpClientImpl@Http@Bedrock@@CAJV?$not_null@PEAUHC_CALL@@@gsl@@AEAVResponse@23@@Z

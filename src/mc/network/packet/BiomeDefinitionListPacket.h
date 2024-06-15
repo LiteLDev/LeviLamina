@@ -39,5 +39,8 @@ public:
     // symbol: ??0BiomeDefinitionListPacket@@QEAA@XZ
     MCAPI BiomeDefinitionListPacket();
 
+    // symbol: ??0BiomeDefinitionListPacket@@QEAA@VCompoundTag@@@Z
+    MCAPI explicit BiomeDefinitionListPacket(class CompoundTag biomeData);
+
     // NOLINTEND
 };

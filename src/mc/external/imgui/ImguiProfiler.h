@@ -112,8 +112,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1Timer@ImguiProfiler@@UEAA@XZ
-        virtual ~Timer();
+        // vIndex: 0, symbol: __gen_??1Timer@ImguiProfiler@@UEAA@XZ
+        virtual ~Timer() = default;
 
         // NOLINTEND
     };
@@ -129,9 +129,6 @@ public:
         // NOLINTBEGIN
         // vIndex: 0, symbol: ??1ManualTimer@ImguiProfiler@@UEAA@XZ
         virtual ~ManualTimer();
-
-        // symbol: ??0ManualTimer@ImguiProfiler@@QEAA@PEBD0_N@Z
-        MCAPI ManualTimer(char const* group, char const* name, bool isClient);
 
         // symbol: ?mark@ManualTimer@ImguiProfiler@@QEAAXXZ
         MCAPI void mark();

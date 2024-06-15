@@ -16,6 +16,10 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??4ScriptItemReleaseUseAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
+    MCAPI struct ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent&
+    operator=(struct ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent&&);
+
     // symbol:
     // ?bind@ScriptItemReleaseUseAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptItemReleaseUseAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent>

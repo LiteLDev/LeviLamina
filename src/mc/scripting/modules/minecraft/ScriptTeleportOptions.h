@@ -10,13 +10,11 @@ namespace ScriptModuleMinecraft {
 struct ScriptTeleportOptions {
 public:
     // prevent constructor by default
+    ScriptTeleportOptions(ScriptTeleportOptions const&);
     ScriptTeleportOptions();
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptTeleportOptions@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
-    MCAPI ScriptTeleportOptions(struct ScriptModuleMinecraft::ScriptTeleportOptions const&);
-
     // symbol: ??4ScriptTeleportOptions@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptTeleportOptions&
     operator=(struct ScriptModuleMinecraft::ScriptTeleportOptions&&);

@@ -7,6 +7,9 @@
 
 namespace BiomeDecorationSystem {
 // NOLINTBEGIN
+// symbol: ?consolidateDecorationFeatures@BiomeDecorationSystem@@YAXAEAVBiomeRegistry@@@Z
+MCAPI void consolidateDecorationFeatures(class BiomeRegistry& registry);
+
 // symbol:
 // ?decorate@BiomeDecorationSystem@@YAXAEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@AEAV?$vector@PEBVBiome@@V?$allocator@PEBVBiome@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@6@AEBVIPreliminarySurfaceProvider@@@Z
 MCAPI void

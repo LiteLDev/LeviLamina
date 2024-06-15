@@ -16,6 +16,10 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??4ScriptPlayerLeaveAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
+    MCAPI struct ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent&
+    operator=(struct ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent&&);
+
     // symbol: ??1ScriptPlayerLeaveAfterEvent@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptPlayerLeaveAfterEvent();
 

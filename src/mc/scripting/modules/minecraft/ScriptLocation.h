@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class Vec3;
+class VecXZ;
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -22,11 +23,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?bind@ScriptLocation@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@VVec3@@@Scripting@@XZ
-    MCAPI static class Scripting::InterfaceBindingBuilder<class Vec3> bind();
+    // symbol: ?bindVec3@ScriptLocation@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@VVec3@@@Scripting@@XZ
+    MCAPI static class Scripting::InterfaceBindingBuilder<class Vec3> bindVec3();
 
-    // symbol: ?bind_V010@ScriptLocation@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VVec3@@@Scripting@@XZ
-    MCAPI static class Scripting::ClassBindingBuilder<class Vec3> bind_V010();
+    // symbol: ?bindVec3_V010@ScriptLocation@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VVec3@@@Scripting@@XZ
+    MCAPI static class Scripting::ClassBindingBuilder<class Vec3> bindVec3_V010();
+
+    // symbol: ?bindVecXZ@ScriptLocation@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@VVecXZ@@@Scripting@@XZ
+    MCAPI static class Scripting::InterfaceBindingBuilder<class VecXZ> bindVecXZ();
 
     // NOLINTEND
 };

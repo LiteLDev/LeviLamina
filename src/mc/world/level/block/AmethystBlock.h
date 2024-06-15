@@ -33,7 +33,7 @@ public:
     // vIndex: 17, symbol: ?onProjectileHit@AmethystBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVActor@@@Z
     virtual void onProjectileHit(class BlockSource& region, class BlockPos const& pos, class Actor const&) const;
 
-    // vIndex: 48, symbol: ?isSilentWhenJumpingOff@AmethystBlock@@UEBA_NXZ
+    // vIndex: 49, symbol: ?isSilentWhenJumpingOff@AmethystBlock@@UEBA_NXZ
     virtual bool isSilentWhenJumpingOff() const;
 
     // symbol: ??0AmethystBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z

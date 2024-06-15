@@ -30,13 +30,13 @@ public:
     // vIndex: 0, symbol: __gen_??1BuddingAmethystBlock@@UEAA@XZ
     virtual ~BuddingAmethystBlock() = default;
 
-    // vIndex: 48, symbol: ?isSilentWhenJumpingOff@BuddingAmethystBlock@@UEBA_NXZ
+    // vIndex: 49, symbol: ?isSilentWhenJumpingOff@BuddingAmethystBlock@@UEBA_NXZ
     virtual bool isSilentWhenJumpingOff() const;
 
-    // vIndex: 95, symbol: ?asItemInstance@BuddingAmethystBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96, symbol: ?asItemInstance@BuddingAmethystBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 148, symbol: ?randomTick@BuddingAmethystBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 149, symbol: ?randomTick@BuddingAmethystBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // symbol:

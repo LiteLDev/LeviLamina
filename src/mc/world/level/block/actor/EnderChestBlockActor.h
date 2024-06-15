@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/actor/ChestBlockActor.h"
+#include "mc/world/level/block/utils/BlockActorRendererId.h"
+#include "mc/world/level/block/utils/BlockActorType.h"
 
 class EnderChestBlockActor : public ::ChestBlockActor {
 public:
@@ -23,11 +25,23 @@ public:
     // symbol: ?getName@EnderChestBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCVAPI std::string getName() const;
 
+    // symbol: ?openBy@EnderChestBlockActor@@UEAAXAEAVPlayer@@@Z
+    MCVAPI void openBy(class Player&);
+
     // symbol: ?playCloseSound@EnderChestBlockActor@@MEAAXAEAVBlockSource@@@Z
     MCVAPI void playCloseSound(class BlockSource& region);
 
     // symbol: ?playOpenSound@EnderChestBlockActor@@MEAAXAEAVBlockSource@@@Z
     MCVAPI void playOpenSound(class BlockSource& region);
+
+    // symbol:
+    // ??0EnderChestBlockActor@@QEAA@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockActorRendererId@@AEBVBlockPos@@@Z
+    MCAPI EnderChestBlockActor(
+        ::BlockActorType       type,
+        std::string const&     id,
+        ::BlockActorRendererId renderId,
+        class BlockPos const&  pos
+    );
 
     // NOLINTEND
 

@@ -139,8 +139,8 @@ public:
     deleteData(std::string const& key, ::DBHelpers::Category category);
 
     // vIndex: 12, symbol:
-    // ?getStatistics@DBStorage@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void getStatistics(std::string& stats) const;
+    // ?getStatistics@DBStorage@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4StatsType@LevelStorage@@@Z
+    virtual void getStatistics(std::string&, ::LevelStorage::StatsType) const;
 
     // vIndex: 14, symbol: ?getLevelStorageState@DBStorage@@UEBA?AULevelStorageResult@Core@@XZ
     virtual struct Core::LevelStorageResult getLevelStorageState() const;
@@ -168,8 +168,8 @@ public:
     // vIndex: 21, symbol: ?releaseSnapshot@DBStorage@@UEAAXXZ
     virtual void releaseSnapshot();
 
-    // vIndex: 22, symbol: ?compactStorage@DBStorage@@UEAAXXZ
-    virtual void compactStorage();
+    // vIndex: 22, symbol: ?compactStorage@DBStorage@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@XZ
+    virtual std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> compactStorage();
 
     // vIndex: 23, symbol: ?syncAndSuspendStorage@DBStorage@@UEAAXXZ
     virtual void syncAndSuspendStorage();

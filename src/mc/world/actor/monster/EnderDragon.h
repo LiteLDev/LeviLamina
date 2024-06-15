@@ -10,7 +10,6 @@
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
-#include "mc/enums/ArmorTextureType.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/InputMode.h"
 #include "mc/enums/MaterialType.h"
@@ -55,34 +54,34 @@ public:
     // vIndex: 43, symbol: ?isImmobile@EnderDragon@@UEBA_NXZ
     virtual bool isImmobile() const;
 
-    // vIndex: 61, symbol: ?setSitting@EnderDragon@@UEAAX_N@Z
+    // vIndex: 60, symbol: ?setSitting@EnderDragon@@UEAAX_N@Z
     virtual void setSitting(bool value);
 
-    // vIndex: 70, symbol: ?isInvulnerableTo@EnderDragon@@UEBA_NAEBVActorDamageSource@@@Z
+    // vIndex: 69, symbol: ?isInvulnerableTo@EnderDragon@@UEBA_NAEBVActorDamageSource@@@Z
     virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
-    // vIndex: 75, symbol: ?handleEntityEvent@EnderDragon@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 74, symbol: ?handleEntityEvent@EnderDragon@@UEAAXW4ActorEvent@@H@Z
     virtual void handleEntityEvent(::ActorEvent id, int data);
 
-    // vIndex: 96, symbol: ?canChangeDimensionsUsingPortal@EnderDragon@@UEBA_NXZ
+    // vIndex: 94, symbol: ?canChangeDimensionsUsingPortal@EnderDragon@@UEBA_NXZ
     virtual bool canChangeDimensionsUsingPortal() const;
 
-    // vIndex: 104, symbol: ?canBePulledIntoVehicle@EnderDragon@@UEBA_NXZ
+    // vIndex: 102, symbol: ?canBePulledIntoVehicle@EnderDragon@@UEBA_NXZ
     virtual bool canBePulledIntoVehicle() const;
 
-    // vIndex: 113, symbol: ?canBeAffected@EnderDragon@@UEBA_NI@Z
+    // vIndex: 111, symbol: ?canBeAffected@EnderDragon@@UEBA_NI@Z
     virtual bool canBeAffected(uint) const;
 
-    // vIndex: 133, symbol: ?die@EnderDragon@@UEAAXAEBVActorDamageSource@@@Z
+    // vIndex: 131, symbol: ?die@EnderDragon@@UEAAXAEBVActorDamageSource@@@Z
     virtual void die(class ActorDamageSource const& source);
 
-    // vIndex: 146, symbol: ?updateEntitySpecificMolangVariables@EnderDragon@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 144, symbol: ?updateEntitySpecificMolangVariables@EnderDragon@@UEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // vIndex: 148, symbol: ?_hurt@EnderDragon@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 146, symbol: ?_hurt@EnderDragon@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 190, symbol: ?tickDeath@EnderDragon@@MEAAXXZ
+    // vIndex: 188, symbol: ?tickDeath@EnderDragon@@MEAAXXZ
     virtual void tickDeath();
 
     // symbol: ??0EnderDragon@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

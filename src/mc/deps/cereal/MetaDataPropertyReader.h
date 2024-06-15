@@ -22,7 +22,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol:
-    // ?getProperty@MetaDataPropertyReader@cereal@@UEBA?AUmeta_prop@entt@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+    // ?getProperty@MetaDataPropertyReader@cereal@@EEBA?AUmeta_prop@entt@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     virtual entt::meta_prop getProperty(std::string_view) const;
 
     // vIndex: 1, symbol: __gen_??1MetaDataPropertyReader@cereal@@UEAA@XZ

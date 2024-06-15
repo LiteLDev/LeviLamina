@@ -14,10 +14,12 @@ public:
     public:
         // prevent constructor by default
         Descriptions& operator=(Descriptions const&);
-        Descriptions();
 
     public:
         // NOLINTBEGIN
+        // symbol: ??0Descriptions@FeatureTerrainAdjustments@@QEAA@XZ
+        MCAPI Descriptions();
+
         // symbol: ??0Descriptions@FeatureTerrainAdjustments@@QEAA@AEBU01@@Z
         MCAPI Descriptions(struct FeatureTerrainAdjustments::Descriptions const&);
 

@@ -46,6 +46,9 @@ public:
     // symbol: ??0ListBlockVolume@@QEAA@AEBV0@@Z
     MCAPI ListBlockVolume(class ListBlockVolume const&);
 
+    // symbol: ??0ListBlockVolume@@QEAA@AEBV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@@Z
+    MCAPI explicit ListBlockVolume(std::vector<class BlockPos> const&);
+
     // symbol: ??0ListBlockVolume@@QEAA@AEBV?$vector@VVec3@@V?$allocator@VVec3@@@std@@@std@@@Z
     MCAPI explicit ListBlockVolume(std::vector<class Vec3> const&);
 
@@ -54,9 +57,6 @@ public:
 
     // symbol: ?erase@ListBlockVolume@@QEAAXAEBV?$vector@VVec3@@V?$allocator@VVec3@@@std@@@std@@@Z
     MCAPI void erase(std::vector<class Vec3> const&);
-
-    // symbol: ?getChangeCount@ListBlockVolume@@QEBA_KXZ
-    MCAPI uint64 getChangeCount() const;
 
     // symbol: ?insert@ListBlockVolume@@QEAAXAEBV?$vector@VVec3@@V?$allocator@VVec3@@@std@@@std@@@Z
     MCAPI void insert(std::vector<class Vec3> const&);

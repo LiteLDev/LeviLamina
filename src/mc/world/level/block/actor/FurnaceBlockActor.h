@@ -62,6 +62,9 @@ public:
     // symbol: ?onNeighborChanged@FurnaceBlockActor@@UEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCVAPI void onNeighborChanged(class BlockSource& region, class BlockPos const& position);
 
+    // symbol: ?onRemoved@FurnaceBlockActor@@UEAAXAEAVBlockSource@@@Z
+    MCVAPI void onRemoved(class BlockSource&);
+
     // symbol: ?save@FurnaceBlockActor@@UEBA_NAEAVCompoundTag@@@Z
     MCVAPI bool save(class CompoundTag& tag) const;
 

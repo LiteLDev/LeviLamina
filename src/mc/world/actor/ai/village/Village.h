@@ -82,17 +82,8 @@ public:
     // symbol: ?addVillager@Village@@QEAAXAEBUActorUniqueID@@@Z
     MCAPI void addVillager(struct ActorUniqueID const&);
 
-    // symbol: ?alwaysTickRaid@Village@@QEBA_NXZ
-    MCAPI bool alwaysTickRaid() const;
-
-    // symbol: ?canRemove@Village@@QEBA_NXZ
-    MCAPI bool canRemove() const;
-
     // symbol: ?checkNeedMoreVillagers@Village@@QEBA_NXZ
     MCAPI bool checkNeedMoreVillagers() const;
-
-    // symbol: ?clearOwnedPOIs@Village@@QEAAXXZ
-    MCAPI void clearOwnedPOIs();
 
     // symbol: ?debugDraw@Village@@QEAAXXZ
     MCAPI void debugDraw();
@@ -136,10 +127,6 @@ public:
     // symbol: ?getStanding@Village@@QEAAHAEBUActorUniqueID@@@Z
     MCAPI int getStanding(struct ActorUniqueID const& playerID);
 
-    // symbol:
-    // ?getUnclaimedPOIs@Village@@QEBAAEBV?$array@V?$vector@V?$weak_ptr@VPOIInstance@@@std@@V?$allocator@V?$weak_ptr@VPOIInstance@@@std@@@2@@std@@$02@std@@XZ
-    MCAPI std::array<std::vector<std::weak_ptr<class POIInstance>>, 3> const& getUnclaimedPOIs() const;
-
     // symbol: ?getUniqueID@Village@@QEBA?AVUUID@mce@@XZ
     MCAPI class mce::UUID getUniqueID() const;
 
@@ -180,9 +167,6 @@ public:
     // symbol: ?rewardAllPlayers@Village@@QEAAXH@Z
     MCAPI void rewardAllPlayers(int deltaAmount);
 
-    // symbol: ?saveEntireVillage@Village@@QEAAXAEAVLevelStorage@@@Z
-    MCAPI void saveEntireVillage(class LevelStorage&);
-
     // symbol: ?setSavedDwellerPosition@Village@@QEAAXW4DwellerRole@@AEBUActorUniqueID@@VBlockPos@@@Z
     MCAPI void setSavedDwellerPosition(::DwellerRole role, struct ActorUniqueID const& id, class BlockPos pos);
 
@@ -206,9 +190,6 @@ public:
 
     // symbol: ?withinVillageBounds@Village@@QEBA_NAEBVVec3@@M@Z
     MCAPI bool withinVillageBounds(class Vec3 const& pos, float tolerance) const;
-
-    // symbol: ??1Village@@QEAA@XZ
-    MCAPI ~Village();
 
     // symbol: ?isValidRegisteredPOI@Village@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static bool isValidRegisteredPOI(class BlockSource& region, class BlockPos const& position);

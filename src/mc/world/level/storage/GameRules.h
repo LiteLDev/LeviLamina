@@ -50,8 +50,8 @@ public:
     // symbol: ?getRules@GameRules@@QEBAAEBV?$vector@VGameRule@@V?$allocator@VGameRule@@@std@@@std@@XZ
     MCAPI std::vector<class GameRule> const& getRules() const;
 
-    // symbol: ?getTagData@GameRules@@QEAAXAEBVCompoundTag@@@Z
-    MCAPI void getTagData(class CompoundTag const& tag);
+    // symbol: ?getTagData@GameRules@@QEAAXAEBVCompoundTag@@AEBVBaseGameVersion@@@Z
+    MCAPI void getTagData(class CompoundTag const&, class BaseGameVersion const&);
 
     // symbol: ?hasRule@GameRules@@QEBA_NUGameRuleId@@@Z
     MCAPI bool hasRule(struct GameRuleId ruleType) const;

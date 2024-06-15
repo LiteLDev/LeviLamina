@@ -9,10 +9,12 @@ public:
     // prevent constructor by default
     ActivationArguments& operator=(ActivationArguments const&);
     ActivationArguments(ActivationArguments const&);
-    ActivationArguments();
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0ActivationArguments@Bedrock@@QEAA@XZ
+    MCAPI ActivationArguments();
+
     // symbol: ?preParseArguments@ActivationArguments@Bedrock@@QEAAXXZ
     MCAPI void preParseArguments();
 

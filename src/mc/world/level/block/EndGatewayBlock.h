@@ -45,22 +45,22 @@ public:
         class optional_ref<class GetCollisionShapeInterface const> entity
     ) const;
 
-    // vIndex: 32, symbol: ?isWaterBlocking@EndGatewayBlock@@UEBA_NXZ
+    // vIndex: 33, symbol: ?isWaterBlocking@EndGatewayBlock@@UEBA_NXZ
     virtual bool isWaterBlocking() const;
 
-    // vIndex: 55, symbol: ?waterSpreadCausesSpawn@EndGatewayBlock@@UEBA_NXZ
+    // vIndex: 56, symbol: ?waterSpreadCausesSpawn@EndGatewayBlock@@UEBA_NXZ
     virtual bool waterSpreadCausesSpawn() const;
 
-    // vIndex: 56, symbol: ?canContainLiquid@EndGatewayBlock@@UEBA_NXZ
+    // vIndex: 57, symbol: ?canContainLiquid@EndGatewayBlock@@UEBA_NXZ
     virtual bool canContainLiquid() const;
 
-    // vIndex: 77, symbol: ?canRenderSelectionOverlay@EndGatewayBlock@@UEBA_NW4BlockRenderLayer@@@Z
+    // vIndex: 78, symbol: ?canRenderSelectionOverlay@EndGatewayBlock@@UEBA_NW4BlockRenderLayer@@@Z
     virtual bool canRenderSelectionOverlay(::BlockRenderLayer) const;
 
-    // vIndex: 95, symbol: ?asItemInstance@EndGatewayBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96, symbol: ?asItemInstance@EndGatewayBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 133, symbol:
+    // vIndex: 134, symbol:
     // ?animateTickBedrockLegacy@EndGatewayBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 

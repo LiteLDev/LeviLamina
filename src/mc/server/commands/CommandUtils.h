@@ -100,10 +100,6 @@ isFunctionValid(class CommandOutput& output, class FunctionEntry& functionEntry,
 // symbol: ?isPlayerSpawnedMob@CommandUtils@@YA_NAEBVActor@@0@Z
 MCAPI bool isPlayerSpawnedMob(class Actor const& entity, class Actor const& summoner);
 
-// symbol:
-// ?isValidCommandEntity@CommandUtils@@YA_NAEBV?$vector@W4ActorType@@V?$allocator@W4ActorType@@@std@@@std@@W4ActorType@@@Z
-MCAPI bool isValidCommandEntity(std::vector<::ActorType> const& invalidEntities, ::ActorType type);
-
 // symbol: ?nameEntity@CommandUtils@@YAXAEAVActor@@_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
 MCAPI void nameEntity(class Actor& actor, bool nameSet, std::string const& actorName);
 

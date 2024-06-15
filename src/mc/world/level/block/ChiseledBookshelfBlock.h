@@ -30,24 +30,24 @@ public:
     // vIndex: 0, symbol: __gen_??1ChiseledBookshelfBlock@@UEAA@XZ
     virtual ~ChiseledBookshelfBlock() = default;
 
-    // vIndex: 95, symbol: ?asItemInstance@ChiseledBookshelfBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96, symbol: ?asItemInstance@ChiseledBookshelfBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
-    // vIndex: 110, symbol: ?hasComparatorSignal@ChiseledBookshelfBlock@@UEBA_NXZ
+    // vIndex: 111, symbol: ?hasComparatorSignal@ChiseledBookshelfBlock@@UEBA_NXZ
     virtual bool hasComparatorSignal() const;
 
-    // vIndex: 111, symbol:
+    // vIndex: 112, symbol:
     // ?getComparatorSignal@ChiseledBookshelfBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
     virtual int
     getComparatorSignal(class BlockSource& region, class BlockPos const& pos, class Block const&, uchar) const;
 
-    // vIndex: 142, symbol: ?onRemove@ChiseledBookshelfBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 143, symbol: ?onRemove@ChiseledBookshelfBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 149, symbol: ?isInteractiveBlock@ChiseledBookshelfBlock@@UEBA_NXZ
+    // vIndex: 150, symbol: ?isInteractiveBlock@ChiseledBookshelfBlock@@UEBA_NXZ
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 150, symbol: ?use@ChiseledBookshelfBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@EV?$optional@VVec3@@@std@@@Z
+    // vIndex: 151, symbol: ?use@ChiseledBookshelfBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@EV?$optional@VVec3@@@std@@@Z
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face, std::optional<class Vec3>) const;
 
     // symbol: ??0ChiseledBookshelfBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

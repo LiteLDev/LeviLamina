@@ -31,9 +31,6 @@ public:
     virtual std::optional<class br::worldgen::GenerationStub>
     findValidGenerationPoint(struct br::worldgen::GenerationContext&) const;
 
-    // symbol: ??0JigsawStructure@worldgen@br@@QEAA@$$QEAU012@@Z
-    MCAPI JigsawStructure(struct br::worldgen::JigsawStructure&&);
-
     // NOLINTEND
 };
 

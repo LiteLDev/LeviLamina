@@ -30,7 +30,7 @@ public:
     // vIndex: 0, symbol: __gen_??1EnderChestBlock@@UEAA@XZ
     virtual ~EnderChestBlock() = default;
 
-    // vIndex: 133, symbol:
+    // vIndex: 134, symbol:
     // ?animateTickBedrockLegacy@EnderChestBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 

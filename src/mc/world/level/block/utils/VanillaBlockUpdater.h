@@ -88,6 +88,9 @@ public:
     // symbol: ?addUpdaters_1_20_80@VanillaBlockUpdater@@CAXAEAVCompoundTagUpdaterContext@@@Z
     MCAPI static void addUpdaters_1_20_80(class CompoundTagUpdaterContext&);
 
+    // symbol: ?addUpdaters_1_21_0@VanillaBlockUpdater@@CAXAEAVCompoundTagUpdaterContext@@@Z
+    MCAPI static void addUpdaters_1_21_0(class CompoundTagUpdaterContext&);
+
     // NOLINTEND
 
     // private:

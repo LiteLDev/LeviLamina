@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/resources/PackErrorType.h"
 #include "mc/resources/PackType.h"
 
 // auto generated forward declare list
@@ -48,11 +49,33 @@ public:
     // symbol: ?hasErrors@PackReport@@QEBA_NXZ
     MCAPI bool hasErrors() const;
 
+    // symbol: ?hasErrors@PackReport@@QEAA_NW4PackErrorType@@@Z
+    MCAPI bool hasErrors(::PackErrorType packErrorType);
+
+    // symbol: ??4PackReport@@QEAAAEAV0@$$QEAV0@@Z
+    MCAPI class PackReport& operator=(class PackReport&&);
+
     // symbol: ?serialize@PackReport@@QEAAXAEAVValue@Json@@@Z
     MCAPI void serialize(class Json::Value& out);
 
+    // symbol: ?setAttemptedUpgrade@PackReport@@QEAAXXZ
+    MCAPI void setAttemptedUpgrade();
+
+    // symbol: ?setIdentity@PackReport@@QEAAXAEBUPackIdVersion@@@Z
+    MCAPI void setIdentity(struct PackIdVersion const& identity);
+
     // symbol: ?setLocation@PackReport@@QEAAXAEBVResourceLocation@@@Z
     MCAPI void setLocation(class ResourceLocation const& location);
+
+    // symbol:
+    // ?setOriginalIdentity@PackReport@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+    MCAPI void setOriginalIdentity(std::string const& originalName, std::string const& originalVersion);
+
+    // symbol: ?setPackType@PackReport@@QEAAXW4PackType@@@Z
+    MCAPI void setPackType(::PackType packType);
+
+    // symbol: ?setUpgradeSuccess@PackReport@@QEAAXXZ
+    MCAPI void setUpgradeSuccess();
 
     // symbol: ?wasUpgraded@PackReport@@QEBA_NXZ
     MCAPI bool wasUpgraded() const;

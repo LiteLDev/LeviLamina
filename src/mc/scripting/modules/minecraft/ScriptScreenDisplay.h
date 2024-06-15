@@ -26,6 +26,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0ScriptScreenDisplay@ScriptModuleMinecraft@@QEAA@AEBVPlayer@@@Z
+    MCAPI explicit ScriptScreenDisplay(class Player const& player);
+
     // symbol:
     // ?getHiddenHudElements@ScriptScreenDisplay@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$vector@W4HudElement@@V?$allocator@W4HudElement@@@std@@@std@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<std::vector<::HudElement>> getHiddenHudElements();
@@ -83,6 +86,9 @@ public:
     MCAPI class Scripting::Result<std::string>
     _getJsonString(class Player&, std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface, std::vector<std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>>> const&)
         const;
+
+    // symbol: ?_tryGetPlayer@ScriptScreenDisplay@ScriptModuleMinecraft@@AEBAPEAVPlayer@@XZ
+    MCAPI class Player* _tryGetPlayer() const;
 
     // NOLINTEND
 };

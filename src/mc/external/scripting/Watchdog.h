@@ -11,6 +11,7 @@ namespace Scripting { class IWatchdog; }
 namespace Scripting { struct ContextId; }
 namespace Scripting { struct WatchdogEvent; }
 namespace Scripting { struct WatchdogSettings; }
+namespace Scripting::QuickJS { class ContextTimings; }
 struct JSContext;
 struct JSRuntime;
 // clang-format on
@@ -29,28 +30,25 @@ public:
     // vIndex: 0, symbol: __gen_??1Watchdog@QuickJS@Scripting@@UEAA@XZ
     virtual ~Watchdog() = default;
 
-    // vIndex: 1, symbol: ?beginTiming@Watchdog@QuickJS@Scripting@@UEAAXUContextId@3@@Z
-    virtual void beginTiming(struct Scripting::ContextId);
-
-    // vIndex: 2, symbol: ?endTiming@Watchdog@QuickJS@Scripting@@UEAAXUContextId@3@@Z
-    virtual void endTiming(struct Scripting::ContextId);
-
-    // vIndex: 3, symbol: ?update@Watchdog@QuickJS@Scripting@@UEAAXXZ
-    virtual void update();
-
-    // vIndex: 4, symbol:
-    // ?getTotalFrameTime@Watchdog@QuickJS@Scripting@@UEBA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@XZ
-    virtual std::chrono::nanoseconds getTotalFrameTime() const;
-
-    // vIndex: 5, symbol:
+    // vIndex: 1, symbol:
     // ?setWatchdogEventHandler@Watchdog@QuickJS@Scripting@@UEAAXV?$function@$$A6AXUWatchdogEvent@Scripting@@@Z@std@@@Z
     virtual void setWatchdogEventHandler(std::function<void(struct Scripting::WatchdogEvent)>);
 
-    // vIndex: 6, symbol: ?pausePerformanceWatchdog@Watchdog@QuickJS@Scripting@@UEAAX_N@Z
-    virtual void pausePerformanceWatchdog(bool pause);
+    // vIndex: 2, symbol: ?beginTiming@Watchdog@QuickJS@Scripting@@UEAAXUContextId@3@@Z
+    virtual void beginTiming(struct Scripting::ContextId);
 
-    // vIndex: 7, symbol: ?resetWatchdogTimes@Watchdog@QuickJS@Scripting@@UEAAXXZ
-    virtual void resetWatchdogTimes();
+    // vIndex: 3, symbol: ?endTiming@Watchdog@QuickJS@Scripting@@UEAAXUContextId@3@@Z
+    virtual void endTiming(struct Scripting::ContextId);
+
+    // vIndex: 4, symbol: ?endFrame@Watchdog@QuickJS@Scripting@@UEAAXXZ
+    virtual void endFrame();
+
+    // vIndex: 5, symbol: ?resetTimings@Watchdog@QuickJS@Scripting@@UEAAXXZ
+    virtual void resetTimings();
+
+    // vIndex: 6, symbol:
+    // ?collectTotalFrameTime@Watchdog@QuickJS@Scripting@@UEBA?AV?$duration@_JU?$ratio@$00$0PECEA@@std@@@chrono@std@@XZ
+    virtual std::chrono::microseconds collectTotalFrameTime() const;
 
     // symbol: ??0Watchdog@QuickJS@Scripting@@QEAA@PEAUJSRuntime@@UWatchdogSettings@2@@Z
     MCAPI Watchdog(struct JSRuntime* rt, struct Scripting::WatchdogSettings settings);
@@ -59,8 +57,11 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_updateContextTiming@Watchdog@QuickJS@Scripting@@AEAAXUContextId@3@@Z
-    MCAPI void _updateContextTiming(struct Scripting::ContextId);
+    // symbol: ?_endContextTiming@Watchdog@QuickJS@Scripting@@AEAAXUContextId@3@@Z
+    MCAPI void _endContextTiming(struct Scripting::ContextId);
+
+    // symbol: ?_getOrCreateContextTime@Watchdog@QuickJS@Scripting@@AEAAAEAVContextTimings@23@UContextId@3@@Z
+    MCAPI class Scripting::QuickJS::ContextTimings& _getOrCreateContextTime(struct Scripting::ContextId);
 
     // symbol: ?_outOfMemoryHandler@Watchdog@QuickJS@Scripting@@CAXPEAUJSContext@@PEAX@Z
     MCAPI static void _outOfMemoryHandler(struct JSContext* ctx, void*);

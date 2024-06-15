@@ -144,11 +144,5 @@ public:
     MCAPI std::unique_ptr<class BiomeSource>
     _makeBiomeSource(class XoroshiroPositionalRandomFactory const&, class BiomeRegistry const& biomeRegistry, class Biome const*);
 
-    // symbol:
-    // ?_updateNoiseAndGenerateBaseBlock@OverworldGeneratorMultinoise@@AEBA?BUBlockGenerationResult@1@MAEBVBlockPos@@FPEAVAquifer@@_NPEBVChunkBlender@@AEBVBlock@@PEAVOreVeinifier@@@Z
-    MCAPI struct OverworldGeneratorMultinoise::BlockGenerationResult const
-    _updateNoiseAndGenerateBaseBlock(float, class BlockPos const&, short, class Aquifer*, bool, class ChunkBlender const*, class Block const&, class OreVeinifier*)
-        const;
-
     // NOLINTEND
 };

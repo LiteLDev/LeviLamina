@@ -21,6 +21,9 @@ public:
     // symbol: ?registerForGameplayUserManagerEvents@TickTimeManager@@QEAAXAEAVGameplayUserManager@@@Z
     MCAPI void registerForGameplayUserManagerEvents(class GameplayUserManager&);
 
+    // symbol: ?registerForPlayerSleepManagerEvents@TickTimeManager@@QEAAXAEAVServerPlayerSleepManager@@@Z
+    MCAPI void registerForPlayerSleepManagerEvents(class ServerPlayerSleepManager&);
+
     // symbol: ?setPacketSender@TickTimeManager@@QEAAXAEAVPacketSender@@@Z
     MCAPI void setPacketSender(class PacketSender&);
 
@@ -34,6 +37,9 @@ public:
 
     // private:
     // NOLINTBEGIN
+    // symbol: ?_onWakeUpAllPlayers@TickTimeManager@@AEAAXXZ
+    MCAPI void _onWakeUpAllPlayers();
+
     // symbol: ?_syncTime@TickTimeManager@@AEAAX_J@Z
     MCAPI void _syncTime(int64);
 

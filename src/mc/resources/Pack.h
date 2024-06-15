@@ -47,14 +47,29 @@ public:
     // symbol: ?getManifestPtr@Pack@@QEAAPEAVPackManifest@@XZ
     MCAPI class PackManifest* getManifestPtr();
 
+    // symbol: ?getSubpackInfoStack@Pack@@QEAAPEAVSubpackInfoCollection@@XZ
+    MCAPI class SubpackInfoCollection* getSubpackInfoStack();
+
     // symbol: ?move@Pack@@QEAAX$$QEAV1@@Z
     MCAPI void move(class Pack&& pack);
 
     // symbol: ?notifyDeleted@Pack@@QEAAXXZ
     MCAPI void notifyDeleted();
 
+    // symbol: ?notifyUpdated@Pack@@QEAAXXZ
+    MCAPI void notifyUpdated();
+
     // symbol: ?registerPackDeletedCallback@Pack@@QEAAXPEAXV?$function@$$A6AXAEAVPack@@@Z@std@@@Z
     MCAPI void registerPackDeletedCallback(void* ptr, std::function<void(class Pack&)> callback);
+
+    // symbol: ?registerPackUpdatedCallback@Pack@@QEAAXPEAXV?$function@$$A6AXAEAVPack@@@Z@std@@@Z
+    MCAPI void registerPackUpdatedCallback(void* ptr, std::function<void(class Pack&)> callback);
+
+    // symbol: ?unregisterPackDeletedCallback@Pack@@QEAAXPEAX@Z
+    MCAPI void unregisterPackDeletedCallback(void* ptr);
+
+    // symbol: ?unregisterPackUpdatedCallback@Pack@@QEAAXPEAX@Z
+    MCAPI void unregisterPackUpdatedCallback(void* ptr);
 
     // symbol:
     // ?createPack@Pack@@SA?AV?$unique_ptr@VPack@@U?$default_delete@VPack@@@std@@@std@@AEBVResourceLocation@@W4PackType@@W4PackOrigin@@AEAVIPackManifestFactory@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@PEAVPackSourceReport@@@Z
@@ -75,13 +90,6 @@ public:
         class PackAccessStrategy const& accessStrategy,
         class PackReport&               report
     );
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    // symbol: ?_loadLocalizationFiles@Pack@@AEAAXXZ
-    MCAPI void _loadLocalizationFiles();
 
     // NOLINTEND
 

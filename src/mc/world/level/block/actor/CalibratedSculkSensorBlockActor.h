@@ -18,8 +18,5 @@ public:
     // vIndex: 0, symbol: __gen_??1CalibratedSculkSensorBlockActor@@UEAA@XZ
     virtual ~CalibratedSculkSensorBlockActor() = default;
 
-    // symbol: ??0CalibratedSculkSensorBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI explicit CalibratedSculkSensorBlockActor(class BlockPos const& pos);
-
     // NOLINTEND
 };

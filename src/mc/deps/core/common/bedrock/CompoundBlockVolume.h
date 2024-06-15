@@ -31,6 +31,13 @@ public:
     // symbol: ?clear@CompoundBlockVolume@@QEAAX_N@Z
     MCAPI void clear(bool);
 
+    // symbol: ?forEachPosition@CompoundBlockVolume@@QEBAXAEBV?$function@$$A6A_NAEBVBlockPos@@@Z@std@@@Z
+    MCAPI void forEachPosition(std::function<bool(class BlockPos const&)> const&) const;
+
+    // symbol:
+    // ?getAbsoluteVolumeList@CompoundBlockVolume@@QEBA?AV?$vector@VCompoundBlockVolumeItem@@V?$allocator@VCompoundBlockVolumeItem@@@std@@@std@@XZ
+    MCAPI std::vector<class CompoundBlockVolumeItem> getAbsoluteVolumeList() const;
+
     // symbol: ?getBoundingBox@CompoundBlockVolume@@QEBA?AVBoundingBox@@XZ
     MCAPI class BoundingBox getBoundingBox() const;
 
@@ -42,6 +49,10 @@ public:
 
     // symbol: ?getOrigin@CompoundBlockVolume@@QEBAAEBVBlockPos@@XZ
     MCAPI class BlockPos const& getOrigin() const;
+
+    // symbol:
+    // ?getVolumeList@CompoundBlockVolume@@QEBA?AV?$vector@VCompoundBlockVolumeItem@@V?$allocator@VCompoundBlockVolumeItem@@@std@@@std@@XZ
+    MCAPI std::vector<class CompoundBlockVolumeItem> getVolumeList() const;
 
     // symbol: ?isEmpty@CompoundBlockVolume@@QEBA_NXZ
     MCAPI bool isEmpty() const;

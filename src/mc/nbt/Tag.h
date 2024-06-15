@@ -14,6 +14,7 @@ public:
     // prevent constructor by default
     Tag& operator=(Tag const&);
     Tag(Tag const&);
+    Tag();
 
 public:
     // NOLINTBEGIN
@@ -60,13 +61,6 @@ public:
 
     // symbol: ?NullString@Tag@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const NullString;
-
-    // NOLINTEND
-
-    // protected:
-    // NOLINTBEGIN
-    // symbol: ??0Tag@@IEAA@XZ
-    MCAPI Tag();
 
     // NOLINTEND
 };

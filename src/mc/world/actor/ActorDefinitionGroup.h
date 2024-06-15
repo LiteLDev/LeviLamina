@@ -65,6 +65,9 @@ public:
     // symbol: ?getComponentFactory@ActorDefinitionGroup@@QEAAPEAVActorComponentFactory@@XZ
     MCAPI class ActorComponentFactory* getComponentFactory();
 
+    // symbol: ?setComponentFactory@ActorDefinitionGroup@@QEAAXPEAVActorComponentFactory@@@Z
+    MCAPI void setComponentFactory(class ActorComponentFactory* componentFactory);
+
     // symbol:
     // ?tryGetDefinition@ActorDefinitionGroup@@QEAA?AVActorDefinitionPtr@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class ActorDefinitionPtr tryGetDefinition(std::string const& definitionId);

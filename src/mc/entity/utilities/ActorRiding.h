@@ -2,10 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/common/wrapper/ViewT.h"
+
 namespace ActorRiding {
 // NOLINTBEGIN
 // symbol: ?clearVehiclePrev@ActorRiding@@YAXAEAVEntityContext@@@Z
 MCAPI void clearVehiclePrev(class EntityContext& provider);
+
+// symbol:
+// ?getPassengerClosestTo@ActorRiding@@YA?AVStrictEntityContext@@AEBVVec3@@AEBUVehicleComponent@@AEBV?$ViewT@VStrictEntityContext@@$$CBUStateVectorComponent@@@@@Z
+MCAPI class StrictEntityContext
+getPassengerClosestTo(class Vec3 const&, struct VehicleComponent const&, class ViewT<class StrictEntityContext, struct StateVectorComponent const> const&);
 
 // symbol:
 // ?getPassengers@ActorRiding@@YAAEBV?$vector@UStrictActorIDEntityContextPair@@V?$allocator@UStrictActorIDEntityContextPair@@@std@@@std@@AEBVEntityContext@@@Z

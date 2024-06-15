@@ -99,7 +99,10 @@ public:
     // vIndex: 22, symbol: __unk_vfn_22
     virtual void __unk_vfn_22();
 
-    // vIndex: 23, symbol:
+    // vIndex: 23, symbol: __unk_vfn_23
+    virtual void __unk_vfn_23();
+
+    // vIndex: 24, symbol:
     // ?handleEvent@ScriptPlayerGameplayHandler@@UEAA?AW4HandlerResult@@AEBUPlayerDisconnectEvent@@@Z
     virtual ::HandlerResult handleEvent(struct PlayerDisconnectEvent const&);
 

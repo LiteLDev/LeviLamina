@@ -46,9 +46,6 @@ public:
     forEachIn(class Core::Path const& path, std::function<void(class Core::Path const&)> callback, bool recurseAnyways)
         const;
 
-    // symbol: ?getFolderName@PackInstance@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-    MCAPI std::string const& getFolderName() const;
-
     // symbol: ?getLoadTime@PackInstance@@QEBANXZ
     MCAPI double getLoadTime() const;
 
@@ -84,6 +81,9 @@ public:
     // ?getSubpackFolderName@PackInstance@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& getSubpackFolderName() const;
 
+    // symbol: ?getSubpackIndex@PackInstance@@QEBAHXZ
+    MCAPI int getSubpackIndex() const;
+
     // symbol: ?getTierInfo@PackInstance@@QEBA?AVContentTierInfo@@XZ
     MCAPI class ContentTierInfo getTierInfo() const;
 
@@ -96,6 +96,9 @@ public:
     // symbol: ?isBaseGamePack@PackInstance@@QEBA_NXZ
     MCAPI bool isBaseGamePack() const;
 
+    // symbol: ?isSlicePack@PackInstance@@QEBA_NXZ
+    MCAPI bool isSlicePack() const;
+
     // symbol: ?isZipped@PackInstance@@QEBA_NXZ
     MCAPI bool isZipped() const;
 
@@ -104,6 +107,9 @@ public:
 
     // symbol: ??8PackInstance@@QEBA_NAEBV0@@Z
     MCAPI bool operator==(class PackInstance const& rhs) const;
+
+    // symbol: ?setLocale@PackInstance@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI void setLocale(std::string const& locale);
 
     // symbol: ??1PackInstance@@QEAA@XZ
     MCAPI ~PackInstance();

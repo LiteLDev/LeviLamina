@@ -46,13 +46,6 @@ public:
         RequestSlotIdAssignment& operator=(RequestSlotIdAssignment const&);
         RequestSlotIdAssignment(RequestSlotIdAssignment const&);
         RequestSlotIdAssignment();
-
-    public:
-        // NOLINTBEGIN
-        // symbol: ??1RequestSlotIdAssignment@ItemStackRequestActionHandler@@QEAA@XZ
-        MCAPI ~RequestSlotIdAssignment();
-
-        // NOLINTEND
     };
 
     struct ScreenData {
@@ -141,6 +134,9 @@ public:
     // ?getFilteredStrings@ItemStackRequestActionHandler@@QEBAAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@V?$TypedClientNetId@UItemStackRequestIdTag@@H$0A@@@@Z
     MCAPI std::vector<std::string> const& getFilteredStrings(ItemStackRequestId) const;
 
+    // symbol: ?getRequestId@ItemStackRequestActionHandler@@QEBAAEBV?$TypedClientNetId@UItemStackRequestIdTag@@H$0A@@@XZ
+    MCAPI ItemStackRequestId const& getRequestId() const;
+
     // symbol: ?getScreenContext@ItemStackRequestActionHandler@@QEBAAEBVContainerScreenContext@@XZ
     MCAPI class ContainerScreenContext const& getScreenContext() const;
 
@@ -148,10 +144,21 @@ public:
     // ?handleRequestAction@ItemStackRequestActionHandler@@QEAA?AW4ItemStackNetResult@@AEBVItemStackRequestAction@@@Z
     MCAPI ::ItemStackNetResult handleRequestAction(class ItemStackRequestAction const& requestAction);
 
+    // symbol: ?isValidationCraftingImplemented@ItemStackRequestActionHandler@@QEAA_NXZ
+    MCAPI bool isValidationCraftingImplemented();
+
+    // symbol:
+    // ?tryCraft@ItemStackRequestActionHandler@@QEAA?AV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@V?$unique_ptr@UContainerValidationCraftInputs@@U?$default_delete@UContainerValidationCraftInputs@@@std@@@3@@Z
+    MCAPI std::vector<class ItemInstance> tryCraft(std::unique_ptr<struct ContainerValidationCraftInputs>);
+
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
+    // symbol:
+    // ?_handleDestroy@ItemStackRequestActionHandler@@AEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionDestroy@@@Z
+    MCAPI ::ItemStackNetResult _handleDestroy(class ItemStackRequestActionDestroy const& requestAction);
+
     // symbol:
     // ?_handlePlaceInItemContainer@ItemStackRequestActionHandler@@AEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionPlaceInItemContainer@@@Z
     MCAPI ::ItemStackNetResult

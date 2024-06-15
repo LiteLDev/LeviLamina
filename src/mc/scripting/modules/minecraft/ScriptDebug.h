@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { class DependencyLocator; }
+namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -22,8 +23,9 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ?disableWatchdog@ScriptDebug@ScriptModuleMinecraft@@SA?AV?$Result@X$$V@Scripting@@AEAVDependencyLocator@4@_N@Z
-    MCAPI static class Scripting::Result<void> disableWatchdog(class Scripting::DependencyLocator&, bool);
+    // ?disableWatchdogTimingWarnings@ScriptDebug@ScriptModuleMinecraft@@SA?AV?$Result@X$$V@Scripting@@AEAVWeakLifetimeScope@4@AEAVDependencyLocator@4@_N@Z
+    MCAPI static class Scripting::Result<void>
+    disableWatchdogTimingWarnings(class Scripting::WeakLifetimeScope&, class Scripting::DependencyLocator&, bool);
 
     // NOLINTEND
 };

@@ -10,7 +10,6 @@
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
-#include "mc/enums/ArmorTextureType.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/InputMode.h"
 #include "mc/enums/MaterialType.h"
@@ -39,13 +38,13 @@ public:
     // vIndex: 10, symbol: ??1WaterAnimal@@UEAA@XZ
     virtual ~WaterAnimal();
 
-    // vIndex: 162, symbol: ?checkSpawnRules@WaterAnimal@@UEAA_N_N@Z
+    // vIndex: 160, symbol: ?checkSpawnRules@WaterAnimal@@UEAA_N_N@Z
     virtual bool checkSpawnRules(bool fromSpawner);
 
-    // vIndex: 192, symbol: ?getFlopVerticalVelocityFactor@WaterAnimal@@UEBAMXZ
+    // vIndex: 190, symbol: ?getFlopVerticalVelocityFactor@WaterAnimal@@UEBAMXZ
     virtual float getFlopVerticalVelocityFactor() const;
 
-    // vIndex: 193, symbol: ?getFlopHorizontalVelocityFactor@WaterAnimal@@UEBAMXZ
+    // vIndex: 191, symbol: ?getFlopHorizontalVelocityFactor@WaterAnimal@@UEBAMXZ
     virtual float getFlopHorizontalVelocityFactor() const;
 
     // symbol: ??0WaterAnimal@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

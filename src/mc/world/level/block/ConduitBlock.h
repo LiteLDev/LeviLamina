@@ -30,10 +30,10 @@ public:
     // vIndex: 0, symbol: __gen_??1ConduitBlock@@UEAA@XZ
     virtual ~ConduitBlock() = default;
 
-    // vIndex: 56, symbol: ?canContainLiquid@ConduitBlock@@UEBA_NXZ
+    // vIndex: 57, symbol: ?canContainLiquid@ConduitBlock@@UEBA_NXZ
     virtual bool canContainLiquid() const;
 
-    // vIndex: 84, symbol: ?mayPlace@ConduitBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
+    // vIndex: 85, symbol: ?mayPlace@ConduitBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar facing) const;
 
     // symbol: ??0ConduitBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

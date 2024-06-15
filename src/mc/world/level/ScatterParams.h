@@ -97,6 +97,9 @@ public:
     MCAPI static void
     initMolangParams(class RenderParams& molangParams, class BlockPos const& pos, class Random& random);
 
+    // symbol: ?initScatterParamIndices@ScatterParams@@SAXXZ
+    MCAPI static void initScatterParamIndices();
+
     // NOLINTEND
 
     // private:

@@ -71,9 +71,6 @@ public:
     // symbol: ?DEFERRED_DEFAULT_FOG_DEFINITION@FogDefinition@@2U1@B
     MCAPI static struct FogDefinition const DEFERRED_DEFAULT_FOG_DEFINITION;
 
-    // symbol: ?DEFERRED_DEFAULT_VOLUME_COEFFICIENT_WATER_SETTING@FogDefinition@@2UFogVolumetricCoefficientSetting@@B
-    MCAPI static struct FogVolumetricCoefficientSetting const DEFERRED_DEFAULT_VOLUME_COEFFICIENT_WATER_SETTING;
-
     // symbol: ?DEFERRED_DEFAULT_VOLUME_DENSITY_AIR_SETTING@FogDefinition@@2UFogVolumetricDensitySetting@@B
     MCAPI static struct FogVolumetricDensitySetting const DEFERRED_DEFAULT_VOLUME_DENSITY_AIR_SETTING;
 

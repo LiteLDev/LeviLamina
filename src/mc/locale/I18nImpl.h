@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/optional_ref.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/locale/I18n.h"
 
@@ -13,6 +12,28 @@ namespace Json { class Value; }
 // clang-format on
 
 class I18nImpl : public ::I18n {
+public:
+    // I18nImpl inner types declare
+    // clang-format off
+    struct CurrentLanguageInfo;
+    // clang-format on
+
+    // I18nImpl inner types define
+    struct CurrentLanguageInfo {
+    public:
+        // prevent constructor by default
+        CurrentLanguageInfo& operator=(CurrentLanguageInfo const&);
+        CurrentLanguageInfo(CurrentLanguageInfo const&);
+        CurrentLanguageInfo();
+
+    public:
+        // NOLINTBEGIN
+        // symbol: ??1CurrentLanguageInfo@I18nImpl@@QEAA@XZ
+        MCAPI ~CurrentLanguageInfo();
+
+        // NOLINTEND
+    };
+
 public:
     // prevent constructor by default
     I18nImpl& operator=(I18nImpl const&);
@@ -87,56 +108,54 @@ public:
     // ?chooseLanguage@I18nImpl@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void chooseLanguage(std::string const&);
 
-    // vIndex: 17, symbol: ?chooseLanguage@I18nImpl@@UEAAXAEBVLocalization@@@Z
-    virtual void chooseLanguage(class Localization const&);
-
-    // vIndex: 18, symbol:
+    // vIndex: 17, symbol:
     // ?get@I18nImpl@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@V?$shared_ptr@VLocalization@@@3@@Z
     virtual std::string get(std::string const&, std::vector<std::string> const&, std::shared_ptr<class Localization>);
 
-    // vIndex: 19, symbol:
+    // vIndex: 18, symbol:
     // ?get@I18nImpl@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@V?$shared_ptr@VLocalization@@@3@@Z
     virtual std::string get(std::string const&, std::shared_ptr<class Localization>);
 
-    // vIndex: 20, symbol:
+    // vIndex: 19, symbol:
     // ?getPackKeywordValue@I18nImpl@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPackManifest@@AEBV23@@Z
     virtual std::string getPackKeywordValue(class PackManifest const&, std::string const&);
 
-    // vIndex: 21, symbol:
+    // vIndex: 20, symbol:
     // ?getPackKeywordValueForTelemetry@I18nImpl@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPackManifest@@AEBV23@@Z
     virtual std::string getPackKeywordValueForTelemetry(class PackManifest const&, std::string const&);
 
-    // vIndex: 22, symbol:
+    // vIndex: 21, symbol:
     // ?hasPackKeyEntry@I18nImpl@@UEAA_NAEBVPackManifest@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual bool hasPackKeyEntry(class PackManifest const&, std::string const&);
 
-    // vIndex: 23, symbol:
+    // vIndex: 22, symbol:
     // ?getSupportedLanguageCodes@I18nImpl@@UEAAAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
     virtual std::vector<std::string> const& getSupportedLanguageCodes();
 
-    // vIndex: 24, symbol:
+    // vIndex: 23, symbol:
     // ?getLanguageName@I18nImpl@@UEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
     virtual std::string const& getLanguageName(std::string const&);
 
-    // vIndex: 25, symbol:
+    // vIndex: 24, symbol:
     // ?getLocaleFor@I18nImpl@@UEAA?BV?$shared_ptr@VLocalization@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
     virtual std::shared_ptr<class Localization> const getLocaleFor(std::string const&);
 
-    // vIndex: 26, symbol:
+    // vIndex: 25, symbol:
     // ?getLocaleCodeFor@I18nImpl@@UEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
     virtual std::string const& getLocaleCodeFor(std::string const&);
 
-    // vIndex: 27, symbol: ?getCurrentLanguage@I18nImpl@@UEAA?AV?$optional_ref@$$CBVLocalization@@@@XZ
-    virtual class optional_ref<class Localization const> getCurrentLanguage();
+    // vIndex: 26, symbol:
+    // ?getCurrentLanguage@I18nImpl@@UEAA?AV?$not_null@V?$shared_ptr@$$CBVLocalization@@@std@@@gsl@@XZ
+    virtual gsl::not_null<std::shared_ptr<class Localization const>> getCurrentLanguage();
 
-    // vIndex: 28, symbol: ?languageSupportsHypenSplitting@I18nImpl@@UEAA_NXZ
+    // vIndex: 27, symbol: ?languageSupportsHypenSplitting@I18nImpl@@UEAA_NXZ
     virtual bool languageSupportsHypenSplitting();
 
-    // vIndex: 29, symbol:
+    // vIndex: 28, symbol:
     // ?getLocalizedAssetFileWithFallback@I18nImpl@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@0@Z
     virtual std::string getLocalizedAssetFileWithFallback(std::string const&, std::string const&);
 
-    // vIndex: 30, symbol:
+    // vIndex: 29, symbol:
     // ?isPackKeyword@I18nImpl@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual bool isPackKeyword(std::string const&);
 
@@ -147,6 +166,9 @@ public:
 
     // private:
     // NOLINTBEGIN
+    // symbol: ?_chooseLanguage@I18nImpl@@AEAAXAEBV?$shared_ptr@VLocalization@@@std@@@Z
+    MCAPI void _chooseLanguage(std::shared_ptr<class Localization> const&);
+
     // symbol:
     // ?_findAvailableLanguageNames@I18nImpl@@AEAAXAEBVValue@Json@@AEAV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@@Z
     MCAPI void _findAvailableLanguageNames(class Json::Value const&, std::unordered_map<std::string, std::string>&);
@@ -167,8 +189,8 @@ public:
     MCAPI std::shared_ptr<class Localization> _getFirstLocalization();
 
     // symbol:
-    // ?_getPackKeywordLocale@I18nImpl@@AEAAAEAVLocalization@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class Localization& _getPackKeywordLocale(std::string const&);
+    // ?_getPackKeywordLocale@I18nImpl@@AEAA?AV?$not_null@V?$shared_ptr@VLocalization@@@std@@@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI gsl::not_null<std::shared_ptr<class Localization>> _getPackKeywordLocale(std::string const&);
 
     // symbol: ?_notifyLanguagesLoaded@I18nImpl@@AEAAXXZ
     MCAPI void _notifyLanguagesLoaded();

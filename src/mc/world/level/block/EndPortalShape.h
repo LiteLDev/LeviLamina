@@ -14,6 +14,9 @@ public:
     // symbol: ??0EndPortalShape@@QEAA@AEAVBlockSource@@VBlockPos@@@Z
     MCAPI EndPortalShape(class BlockSource& region, class BlockPos pos);
 
+    // symbol: ?getOrigin@EndPortalShape@@QEBA?AVBlockPos@@XZ
+    MCAPI class BlockPos getOrigin() const;
+
     // symbol: ?isValid@EndPortalShape@@QEAA_NAEAVBlockSource@@@Z
     MCAPI bool isValid(class BlockSource& region);
 

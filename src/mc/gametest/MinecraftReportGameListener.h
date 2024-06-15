@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace gametest { class BaseGameTestInstance; }
-namespace gametest { class GameTestTicker; }
 namespace gametest { struct GameTestError; }
 // clang-format on
 
@@ -29,9 +28,6 @@ public:
 
     // vIndex: 3, symbol: ?onTestFailed@MinecraftReportGameListener@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
     virtual void onTestFailed(class gametest::BaseGameTestInstance&);
-
-    // symbol: ??0MinecraftReportGameListener@@QEAA@AEAVMinecraftGameTestInstance@@AEAVGameTestTicker@gametest@@@Z
-    MCAPI MinecraftReportGameListener(class MinecraftGameTestInstance&, class gametest::GameTestTicker&);
 
     // NOLINTEND
 

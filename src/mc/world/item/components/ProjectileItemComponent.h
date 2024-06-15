@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Puv::v1_20_50 { struct ProjectileItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -53,15 +52,13 @@ public:
     // vIndex: 9, symbol: ?_initializeComponent@ItemComponent@@MEAAXXZ
     virtual void _initializeComponent();
 
-    // symbol: ??0ProjectileItemComponent@@QEAA@U0v1_20_50@Puv@@@Z
-    MCAPI explicit ProjectileItemComponent(struct Puv::v1_20_50::ProjectileItemComponent);
-
     // symbol: ??0ProjectileItemComponent@@QEAA@W4ActorType@@M@Z
     MCAPI ProjectileItemComponent(::ActorType, float);
 
-    // symbol: ?dispense@ProjectileItemComponent@@QEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-    MCAPI bool
-    dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+    // symbol:
+    // ?createProjectileActor@ProjectileItemComponent@@QEBAPEAVActor@@AEAVBlockSource@@AEBVItemStack@@AEBVVec3@@2@Z
+    MCAPI class Actor*
+    createProjectileActor(class BlockSource&, class ItemStack const&, class Vec3 const&, class Vec3 const&) const;
 
     // symbol: ?getShootDir@ProjectileItemComponent@@QEBA?AVVec3@@AEBVPlayer@@M@Z
     MCAPI class Vec3 getShootDir(class Player const& player, float angleOffset) const;

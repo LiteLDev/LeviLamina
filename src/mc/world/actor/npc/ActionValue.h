@@ -9,12 +9,10 @@ public:
     // prevent constructor by default
     ActionValue& operator=(ActionValue const&);
     ActionValue(ActionValue const&);
+    ActionValue();
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ActionValue@npc@@QEAA@XZ
-    MCAPI ActionValue();
-
     // symbol: ??4ActionValue@npc@@QEAAAEAU01@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     MCAPI struct npc::ActionValue& operator=(std::string_view newName);
 

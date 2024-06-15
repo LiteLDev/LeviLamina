@@ -41,7 +41,7 @@ public:
         bool                       showCategory
     ) const;
 
-    // vIndex: 83, symbol:
+    // vIndex: 84, symbol:
     // ?buildEffectDescriptionName@ShulkerBoxBlockItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemStackBase@@@Z
     virtual std::string buildEffectDescriptionName(class ItemStackBase const&) const;
 

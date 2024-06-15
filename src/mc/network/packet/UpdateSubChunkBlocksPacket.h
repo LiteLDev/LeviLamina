@@ -9,55 +9,6 @@
 
 class UpdateSubChunkBlocksPacket : public ::Packet {
 public:
-    // UpdateSubChunkBlocksPacket inner types declare
-    // clang-format off
-    struct BlocksChangedInfo;
-    struct NetworkBlockInfo;
-    // clang-format on
-
-    // UpdateSubChunkBlocksPacket inner types define
-    struct BlocksChangedInfo {
-    public:
-        // prevent constructor by default
-        BlocksChangedInfo& operator=(BlocksChangedInfo const&);
-        BlocksChangedInfo(BlocksChangedInfo const&);
-
-    public:
-        // NOLINTBEGIN
-        // symbol: ??0BlocksChangedInfo@UpdateSubChunkBlocksPacket@@QEAA@XZ
-        MCAPI BlocksChangedInfo();
-
-        // symbol:
-        // ?add@BlocksChangedInfo@UpdateSubChunkBlocksPacket@@QEAAXAEBVBlockPos@@IAEBVBlock@@HPEBUActorBlockSyncMessage@@@Z
-        MCAPI void
-        add(class BlockPos const&               pos,
-            uint                                layer,
-            class Block const&                  block,
-            int                                 updateFlags,
-            struct ActorBlockSyncMessage const* syncMsg);
-
-        // symbol: ??1BlocksChangedInfo@UpdateSubChunkBlocksPacket@@QEAA@XZ
-        MCAPI ~BlocksChangedInfo();
-
-        // NOLINTEND
-    };
-
-    struct NetworkBlockInfo {
-    public:
-        // prevent constructor by default
-        NetworkBlockInfo& operator=(NetworkBlockInfo const&);
-        NetworkBlockInfo(NetworkBlockInfo const&);
-        NetworkBlockInfo();
-
-    public:
-        // NOLINTBEGIN
-        // symbol: ??1NetworkBlockInfo@UpdateSubChunkBlocksPacket@@QEAA@XZ
-        MCAPI ~NetworkBlockInfo();
-
-        // NOLINTEND
-    };
-
-public:
     // prevent constructor by default
     UpdateSubChunkBlocksPacket& operator=(UpdateSubChunkBlocksPacket const&);
     UpdateSubChunkBlocksPacket(UpdateSubChunkBlocksPacket const&);
@@ -85,9 +36,9 @@ public:
     MCAPI UpdateSubChunkBlocksPacket();
 
     // symbol:
-    // ??0UpdateSubChunkBlocksPacket@@QEAA@AEBV?$vector@UNetworkBlockInfo@UpdateSubChunkBlocksPacket@@V?$allocator@UNetworkBlockInfo@UpdateSubChunkBlocksPacket@@@std@@@std@@0@Z
+    // ??0UpdateSubChunkBlocksPacket@@QEAA@AEBV?$vector@UUpdateSubChunkNetworkBlockInfo@@V?$allocator@UUpdateSubChunkNetworkBlockInfo@@@std@@@std@@0@Z
     MCAPI
-    UpdateSubChunkBlocksPacket(std::vector<struct UpdateSubChunkBlocksPacket::NetworkBlockInfo> const&, std::vector<struct UpdateSubChunkBlocksPacket::NetworkBlockInfo> const&);
+    UpdateSubChunkBlocksPacket(std::vector<struct UpdateSubChunkNetworkBlockInfo> const&, std::vector<struct UpdateSubChunkNetworkBlockInfo> const&);
 
     // symbol: ?setSubChunkPosition@UpdateSubChunkBlocksPacket@@QEAAXAEBVSubChunkPos@@@Z
     MCAPI void setSubChunkPosition(class SubChunkPos const& subChunkPos);

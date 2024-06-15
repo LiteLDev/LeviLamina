@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/common/bedrock/JSONType.h"
 #include "mc/deps/core/common/bedrock/NodeBase.h"
 #include "mc/deps/core/common/bedrock/ObjectNode.h"
 #include "mc/deps/core/common/bedrock/list.h"

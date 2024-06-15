@@ -40,9 +40,6 @@ public:
     // symbol: ?addModule@PackManifest@@QEAAXAEBVResourceInformation@@@Z
     MCAPI void addModule(class ResourceInformation const& resourceInfo);
 
-    // symbol: ?addPackDependency@PackManifest@@QEAAXAEBUPackIdVersion@@@Z
-    MCAPI void addPackDependency(struct PackIdVersion const& packId);
-
     // symbol: ?getContentIdentity@PackManifest@@QEBAAEBVContentIdentity@@XZ
     MCAPI class ContentIdentity const& getContentIdentity() const;
 
@@ -98,8 +95,8 @@ public:
     // symbol: ?getPackOrigin@PackManifest@@QEBA?AW4PackOrigin@@XZ
     MCAPI ::PackOrigin getPackOrigin() const;
 
-    // symbol: ?getPackScope@PackManifest@@QEBA?AW4PackScope@@XZ
-    MCAPI ::PackScope getPackScope() const;
+    // symbol: ?getPackSettings@PackManifest@@QEBAAEBVValue@Json@@XZ
+    MCAPI class Json::Value const& getPackSettings() const;
 
     // symbol: ?getPackSize@PackManifest@@QEBA_KXZ
     MCAPI uint64 getPackSize() const;
@@ -117,8 +114,11 @@ public:
     // symbol: ?hasClientScript@PackManifest@@QEBA_NXZ
     MCAPI bool hasClientScript() const;
 
-    // symbol: ?hasModule@PackManifest@@QEBA_NAEBUPackIdVersion@@@Z
-    MCAPI bool hasModule(struct PackIdVersion const& moduleIdentity) const;
+    // symbol: ?hasEducationMetadata@PackManifest@@QEBA_NXZ
+    MCAPI bool hasEducationMetadata() const;
+
+    // symbol: ?hasLegacyModuleDependencies@PackManifest@@QEBA_NXZ
+    MCAPI bool hasLegacyModuleDependencies() const;
 
     // symbol: ?hasPackCapability@PackManifest@@QEBA_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     MCAPI bool hasPackCapability(std::string_view capability) const;
@@ -135,8 +135,11 @@ public:
     // symbol: ?isPremium@PackManifest@@QEBA_NXZ
     MCAPI bool isPremium() const;
 
-    // symbol: ?isRestrictedPack@PackManifest@@QEBA_NXZ
-    MCAPI bool isRestrictedPack() const;
+    // symbol: ?isUsingPackDescriptionKeyword@PackManifest@@QEBA_NXZ
+    MCAPI bool isUsingPackDescriptionKeyword() const;
+
+    // symbol: ?isUsingPackNameKeyword@PackManifest@@QEBA_NXZ
+    MCAPI bool isUsingPackNameKeyword() const;
 
     // symbol: ?serialize@PackManifest@@QEBAXW4PackManifestFormat@@AEAVValue@Json@@@Z
     MCAPI void serialize(::PackManifestFormat formatVersion, class Json::Value& destination) const;
@@ -147,8 +150,15 @@ public:
     // symbol: ?setDescription@PackManifest@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void setDescription(std::string const& description);
 
+    // symbol: ?setHasEducationMetadata@PackManifest@@QEAAX_N@Z
+    MCAPI void setHasEducationMetadata(bool containsEducationMetadata);
+
     // symbol: ?setIdentity@PackManifest@@QEAAXAEBUPackIdVersion@@@Z
     MCAPI void setIdentity(struct PackIdVersion const& identity);
+
+    // symbol:
+    // ?setLanguageCodesForPackKeywords@PackManifest@@QEAAXV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
+    MCAPI void setLanguageCodesForPackKeywords(std::vector<std::string> languageCodes);
 
     // symbol: ?setLastModifiedDate@PackManifest@@QEAAX_J@Z
     MCAPI void setLastModifiedDate(int64 lastModifiedDate);
@@ -165,6 +175,9 @@ public:
 
     // symbol: ?setPackCategory@PackManifest@@QEAAXW4PackCategory@@@Z
     MCAPI void setPackCategory(::PackCategory packCategory);
+
+    // symbol: ?setPackOrigin@PackManifest@@QEAAXW4PackOrigin@@@Z
+    MCAPI void setPackOrigin(::PackOrigin packOrigin);
 
     // symbol: ?setPackType@PackManifest@@QEAAXW4PackType@@@Z
     MCAPI void setPackType(::PackType packType);

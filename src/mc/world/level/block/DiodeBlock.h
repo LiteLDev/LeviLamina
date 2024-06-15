@@ -30,33 +30,30 @@ public:
     // vIndex: 0, symbol: ??1DiodeBlock@@UEAA@XZ
     virtual ~DiodeBlock();
 
-    // vIndex: 46, symbol: ?isSignalSource@DiodeBlock@@UEBA_NXZ
+    // vIndex: 47, symbol: ?isSignalSource@DiodeBlock@@UEBA_NXZ
     virtual bool isSignalSource() const;
 
-    // vIndex: 53, symbol: ?getDirectSignal@DiodeBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@H@Z
+    // vIndex: 54, symbol: ?getDirectSignal@DiodeBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@H@Z
     virtual int getDirectSignal(class BlockSource& region, class BlockPos const& pos, int dir) const;
 
-    // vIndex: 65, symbol: ?onRedstoneUpdate@DiodeBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
+    // vIndex: 66, symbol: ?onRedstoneUpdate@DiodeBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
     virtual void
     onRedstoneUpdate(class BlockSource& region, class BlockPos const& pos, int strength, bool isFirstTime) const;
 
-    // vIndex: 85, symbol: ?mayPlace@DiodeBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 86, symbol: ?mayPlace@DiodeBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 128, symbol: ?getVariant@DiodeBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129, symbol: ?getVariant@DiodeBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 129, symbol: ?canSpawnOn@DiodeBlock@@UEBA_NPEAVActor@@@Z
+    // vIndex: 130, symbol: ?canSpawnOn@DiodeBlock@@UEBA_NPEAVActor@@@Z
     virtual bool canSpawnOn(class Actor*) const;
 
-    // vIndex: 153, symbol: ?canSurvive@DiodeBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 154, symbol: ?canSurvive@DiodeBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 163, symbol: ?getSignal@DiodeBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@H@Z
     virtual int getSignal(class BlockSource& region, class BlockPos const& pos, int dir) const;
-
-    // vIndex: 164, symbol: ?isLocked@DiodeBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool isLocked(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 165, symbol: ?isSameDiode@DiodeBlock@@UEBA_NAEBVBlock@@@Z
     virtual bool isSameDiode(class Block const& block) const;
@@ -85,14 +82,8 @@ public:
     // vIndex: 173, symbol: ?getTurnOffDelay@DiodeBlock@@MEBAHAEBVBlock@@@Z
     virtual int getTurnOffDelay(class Block const& block) const;
 
-    // vIndex: 174, symbol: ?getTurnOnDelay@RepeaterBlock@@MEBAHAEBVBlock@@@Z
-    virtual int getTurnOnDelay(class Block const& block) const = 0;
-
-    // vIndex: 175, symbol: ?getOnBlock@RepeaterBlock@@MEBAPEBVBlock@@PEBV2@@Z
-    virtual class Block const* getOnBlock(class Block const* block) const = 0;
-
-    // vIndex: 176, symbol: ?getOffBlock@RepeaterBlock@@MEBAPEBVBlock@@PEBV2@@Z
-    virtual class Block const* getOffBlock(class Block const* block) const = 0;
+    // symbol: ?isLocked@DiodeBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    MCVAPI bool isLocked(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ??0DiodeBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
     MCAPI DiodeBlock(std::string const& nameId, int id, bool on);

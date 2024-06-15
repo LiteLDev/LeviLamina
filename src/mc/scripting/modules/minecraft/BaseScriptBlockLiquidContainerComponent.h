@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/CauldronLiquidType.h"
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/Result.h"
 #include "mc/scripting/modules/minecraft/BaseScriptBlockComponent.h"
@@ -15,7 +14,6 @@ class BlockPos;
 class BlockSource;
 class CauldronBlockActor;
 namespace ScriptModuleMinecraft { class BaseScriptBlockComponent; }
-namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -40,17 +38,6 @@ public:
     virtual class Scripting::Result<void> setFillLevel(int level);
 
     // symbol:
-    // ??0BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@QEAA@AEAVBlockSource@@VBlockPos@@AEBVWeakLifetimeScope@Scripting@@W4CauldronLiquidType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ScriptFluidType@1@@Z
-    MCAPI BaseScriptBlockLiquidContainerComponent(
-        class BlockSource&,
-        class BlockPos,
-        class Scripting::WeakLifetimeScope const&,
-        ::CauldronLiquidType,
-        std::string const&,
-        ::ScriptModuleMinecraft::ScriptFluidType
-    );
-
-    // symbol:
     // ?getFillLevel@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@H$$V@Scripting@@XZ
     MCAPI class Scripting::Result<int> getFillLevel();
 
@@ -64,9 +51,6 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?_isValidLiquid@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@IEBA_NXZ
-    MCAPI bool _isValidLiquid() const;
-
     // symbol:
     // ?_tryGetCauldronBlockActor@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@IEAAPEAVCauldronBlockActor@@XZ
     MCAPI class CauldronBlockActor* _tryGetCauldronBlockActor();

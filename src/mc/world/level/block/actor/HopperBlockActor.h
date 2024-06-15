@@ -48,6 +48,9 @@ public:
     // symbol: ?onNeighborChanged@HopperBlockActor@@UEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCVAPI void onNeighborChanged(class BlockSource& region, class BlockPos const& position);
 
+    // symbol: ?onRemoved@HopperBlockActor@@UEAAXAEAVBlockSource@@@Z
+    MCVAPI void onRemoved(class BlockSource&);
+
     // symbol: ?save@HopperBlockActor@@UEBA_NAEAVCompoundTag@@@Z
     MCVAPI bool save(class CompoundTag& tag) const;
 

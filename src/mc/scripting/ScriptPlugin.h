@@ -8,11 +8,11 @@
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { class IDependencyLoader; }
+namespace Scripting { class ScriptContext; }
 namespace Scripting { struct Capabilities; }
 namespace Scripting { struct ModuleBinding; }
 namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting { struct ScriptData; }
-namespace mce { class UUID; }
 // clang-format on
 
 class ScriptPlugin : public ::Scripting::IDependencyLoader {
@@ -36,9 +36,15 @@ public:
     MCAPI ScriptPlugin(class ScriptPlugin&& rhs);
 
     // symbol:
-    // ??0ScriptPlugin@@QEAA@V?$shared_ptr@VIScriptPluginSource@@@std@@$$QEAUModuleDescriptor@Scripting@@$$QEAV?$vector@UModuleDescriptor@Scripting@@V?$allocator@UModuleDescriptor@Scripting@@@std@@@2@$$QEAUCapabilities@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@AEBVUUID@mce@@44@Z
+    // ??0ScriptPlugin@@QEAA@V?$shared_ptr@VIScriptPluginSource@@@std@@$$QEAUModuleDescriptor@Scripting@@$$QEAV?$vector@UModuleDescriptor@Scripting@@V?$allocator@UModuleDescriptor@Scripting@@@std@@@2@$$QEAUCapabilities@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@AEBUPackIdVersion@@44@Z
     MCAPI
-    ScriptPlugin(std::shared_ptr<class IScriptPluginSource>, struct Scripting::ModuleDescriptor&&, std::vector<struct Scripting::ModuleDescriptor>&&, struct Scripting::Capabilities&&, std::string const&, class mce::UUID const&, std::string const&, std::string const&);
+    ScriptPlugin(std::shared_ptr<class IScriptPluginSource>, struct Scripting::ModuleDescriptor&&, std::vector<struct Scripting::ModuleDescriptor>&&, struct Scripting::Capabilities&&, std::string const&, struct PackIdVersion const&, std::string const&, std::string const&);
+
+    // symbol: ?getModuleDescriptor@ScriptPlugin@@QEBAAEBUModuleDescriptor@Scripting@@XZ
+    MCAPI struct Scripting::ModuleDescriptor const& getModuleDescriptor() const;
+
+    // symbol: ?getScriptContext@ScriptPlugin@@QEAAAEAVScriptContext@Scripting@@XZ
+    MCAPI class Scripting::ScriptContext& getScriptContext();
 
     // NOLINTEND
 

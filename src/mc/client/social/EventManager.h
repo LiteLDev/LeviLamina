@@ -84,6 +84,10 @@ public:
     MCAPI void removeCommonProperty(std::string const& name);
 
     // symbol:
+    // ?removeDynamicCommonProperty@EventManager@Events@Social@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI void removeDynamicCommonProperty(std::string const&);
+
+    // symbol:
     // ?removeGlobalProperty@EventManager@Events@Social@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void removeGlobalProperty(std::string const& name);
 

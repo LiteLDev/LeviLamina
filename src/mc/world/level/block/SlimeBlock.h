@@ -31,21 +31,21 @@ public:
     // vIndex: 0, symbol: __gen_??1SlimeBlock@@UEAA@XZ
     virtual ~SlimeBlock() = default;
 
-    // vIndex: 73, symbol:
+    // vIndex: 74, symbol:
     // ?updateEntityAfterFallOn@SlimeBlock@@UEBAXAEBVBlockPos@@AEAUUpdateEntityAfterFallOnInterface@@@Z
     virtual void
     updateEntityAfterFallOn(class BlockPos const& pos, struct UpdateEntityAfterFallOnInterface& entity) const;
 
-    // vIndex: 74, symbol: ?isBounceBlock@SlimeBlock@@UEBA_NXZ
+    // vIndex: 75, symbol: ?isBounceBlock@SlimeBlock@@UEBA_NXZ
     virtual bool isBounceBlock() const;
 
-    // vIndex: 141, symbol: ?_addHardCodedBlockComponents@SlimeBlock@@MEAAXAEBVExperiments@@@Z
+    // vIndex: 142, symbol: ?_addHardCodedBlockComponents@SlimeBlock@@MEAAXAEBVExperiments@@@Z
     virtual void _addHardCodedBlockComponents(class Experiments const&);
 
-    // vIndex: 144, symbol: ?onStandOn@SlimeBlock@@UEBAXAEAVEntityContext@@AEBVBlockPos@@@Z
+    // vIndex: 145, symbol: ?onStandOn@SlimeBlock@@UEBAXAEAVEntityContext@@AEBVBlockPos@@@Z
     virtual void onStandOn(class EntityContext& entity, class BlockPos const& pos) const;
 
-    // vIndex: 156, symbol: ?getExtraRenderLayers@SlimeBlock@@UEBAHXZ
+    // vIndex: 157, symbol: ?getExtraRenderLayers@SlimeBlock@@UEBAHXZ
     virtual int getExtraRenderLayers() const;
 
     // symbol: ??0SlimeBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z

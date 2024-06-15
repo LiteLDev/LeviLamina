@@ -34,7 +34,6 @@ namespace Core { class DiskAccessTracker; }
 namespace Core { class File; }
 namespace Core { class FileImpl; }
 namespace Core { class FileOpenMode; }
-namespace Core { class FileSizePresetManager; }
 namespace Core { class FileSizePresetToken; }
 namespace Core { class FileStats; }
 namespace Core { class FileStorageArea; }

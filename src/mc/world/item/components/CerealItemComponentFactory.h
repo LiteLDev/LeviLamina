@@ -52,10 +52,6 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ?addAllComponentUpgrades@CerealItemComponentFactory@@SAXAEAVCerealDocumentUpgrader@@AEBUReflectionCtx@cereal@@@Z
-    MCAPI static void addAllComponentUpgrades(class CerealDocumentUpgrader&, struct cereal::ReflectionCtx const&);
-
-    // symbol:
     // ?constructItemComponent@CerealItemComponentFactory@@SA?AV?$shared_ptr@VItemComponent@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBUReflectionCtx@cereal@@@Z
     MCAPI static std::shared_ptr<class ItemComponent>
     constructItemComponent(std::string const&, struct cereal::ReflectionCtx const&);

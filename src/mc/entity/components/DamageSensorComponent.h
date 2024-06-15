@@ -28,23 +28,17 @@ public:
     // symbol: ??4DamageSensorComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class DamageSensorComponent& operator=(class DamageSensorComponent&&);
 
-    // symbol: ?recordDamage@DamageSensorComponent@@QEAA_NAEAVActor@@PEAV2@W4ActorDamageCause@@MVBlockPos@@@Z
-    MCAPI bool recordDamage(class Actor&, class Actor*, ::ActorDamageCause, float, class BlockPos);
+    // symbol: ?recordBlockDamage@DamageSensorComponent@@QEAA_NAEAVActor@@W4ActorDamageCause@@MVBlockPos@@@Z
+    MCAPI bool recordBlockDamage(class Actor&, ::ActorDamageCause, float, class BlockPos);
 
     // symbol:
-    // ?recordDamage@DamageSensorComponent@@QEAA_NAEAVActor@@PEAV2@W4ActorDamageCause@@MVVariantParameterList@@@Z
-    MCAPI bool recordDamage(class Actor&, class Actor*, ::ActorDamageCause, float, class VariantParameterList);
+    // ?recordGenericDamage@DamageSensorComponent@@QEAA_NAEAVActor@@PEAV2@W4ActorDamageCause@@MVVariantParameterList@@@Z
+    MCAPI bool recordGenericDamage(class Actor&, class Actor*, ::ActorDamageCause, float, class VariantParameterList);
 
     // symbol:
-    // ?recordDamage@DamageSensorComponent@@QEAA_NAEAVActor@@AEBVActorDamageSource@@MMVVariantParameterList@@_N@Z
-    MCAPI bool recordDamage(
-        class Actor&                   owner,
-        class ActorDamageSource const& source,
-        float                          amount,
-        float                          fatal,
-        class VariantParameterList     parameters,
-        bool
-    );
+    // ?recordGenericDamage@DamageSensorComponent@@QEAA_NAEAVActor@@AEBVActorDamageSource@@MMVVariantParameterList@@_N@Z
+    MCAPI bool
+    recordGenericDamage(class Actor&, class ActorDamageSource const&, float, float, class VariantParameterList, bool);
 
     // NOLINTEND
 

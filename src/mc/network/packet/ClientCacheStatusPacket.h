@@ -12,6 +12,7 @@ public:
     // prevent constructor by default
     ClientCacheStatusPacket& operator=(ClientCacheStatusPacket const&);
     ClientCacheStatusPacket(ClientCacheStatusPacket const&);
+    ClientCacheStatusPacket();
 
 public:
     // NOLINTBEGIN
@@ -31,9 +32,6 @@ public:
     // vIndex: 8, symbol:
     // ?_read@ClientCacheStatusPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
-
-    // symbol: ??0ClientCacheStatusPacket@@QEAA@XZ
-    MCAPI ClientCacheStatusPacket();
 
     // NOLINTEND
 };

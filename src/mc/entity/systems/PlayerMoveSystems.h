@@ -11,9 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createApplyAutoJumpingToInputSystem@PlayerMoveSystems@@SA?AUTickingSystemWithInfo@@XZ
-    MCAPI static struct TickingSystemWithInfo createApplyAutoJumpingToInputSystem();
-
     // symbol: ?createLocalPlayerFilterAutoJumpSystem@PlayerMoveSystems@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createLocalPlayerFilterAutoJumpSystem();
 

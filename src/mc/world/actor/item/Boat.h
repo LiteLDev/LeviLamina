@@ -10,7 +10,6 @@
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
-#include "mc/enums/ArmorTextureType.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/InputMode.h"
 #include "mc/enums/MaterialType.h"
@@ -55,25 +54,22 @@ public:
     // vIndex: 38, symbol: ?getShadowRadius@Boat@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 45, symbol: ?isPickable@Boat@@UEAA_NXZ
-    virtual bool isPickable();
-
-    // vIndex: 70, symbol: ?isInvulnerableTo@Boat@@UEBA_NAEBVActorDamageSource@@@Z
+    // vIndex: 69, symbol: ?isInvulnerableTo@Boat@@UEBA_NAEBVActorDamageSource@@@Z
     virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
-    // vIndex: 99, symbol: ?getControllingPlayer@Boat@@UEBA?AUActorUniqueID@@XZ
+    // vIndex: 97, symbol: ?getControllingPlayer@Boat@@UEBA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID getControllingPlayer() const;
 
-    // vIndex: 102, symbol: ?canAddPassenger@Boat@@UEBA_NAEAVActor@@@Z
+    // vIndex: 100, symbol: ?canAddPassenger@Boat@@UEBA_NAEAVActor@@@Z
     virtual bool canAddPassenger(class Actor&) const;
 
-    // vIndex: 123, symbol: ?getPassengerYRotation@Boat@@UEBAMAEBVActor@@@Z
+    // vIndex: 121, symbol: ?getPassengerYRotation@Boat@@UEBAMAEBVActor@@@Z
     virtual float getPassengerYRotation(class Actor const&) const;
 
-    // vIndex: 148, symbol: ?_hurt@Boat@@EEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 146, symbol: ?_hurt@Boat@@EEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 153, symbol: ?destroy@Boat@@UEAAXPEAVActor@@@Z
+    // vIndex: 151, symbol: ?destroy@Boat@@UEAAXPEAVActor@@@Z
     virtual void destroy(class Actor* source);
 
     // symbol: ??0Boat@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

@@ -11,14 +11,12 @@ public:
     // prevent constructor by default
     BarrelContainerScreenValidator& operator=(BarrelContainerScreenValidator const&);
     BarrelContainerScreenValidator(BarrelContainerScreenValidator const&);
+    BarrelContainerScreenValidator();
 
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1BarrelContainerScreenValidator@@UEAA@XZ
     virtual ~BarrelContainerScreenValidator() = default;
-
-    // symbol: ??0BarrelContainerScreenValidator@@QEAA@XZ
-    MCAPI BarrelContainerScreenValidator();
 
     // NOLINTEND
 };

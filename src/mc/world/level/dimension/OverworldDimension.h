@@ -58,5 +58,8 @@ public:
     // symbol: ?upgradeLevelChunk@OverworldDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@1@Z
     MCVAPI void upgradeLevelChunk(class ChunkSource& source, class LevelChunk& lc, class LevelChunk& generatedChunk);
 
+    // symbol: ??0OverworldDimension@@QEAA@AEAVILevel@@AEAVScheduler@@@Z
+    MCAPI OverworldDimension(class ILevel& level, class Scheduler& context);
+
     // NOLINTEND
 };

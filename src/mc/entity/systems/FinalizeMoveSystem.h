@@ -21,9 +21,8 @@ public:
     MCAPI static struct TickingSystemWithInfo create();
 
     // symbol:
-    // ?tick@FinalizeMoveSystem@@SAXV?$ViewT@VStrictEntityContext@@$$CBUAABBShapeComponent@@$$CBUMoveRequestComponent@@$$CBUOffsetsComponent@@UStateVectorComponent@@V?$Optional@$$CBV?$FlagComponent@UOnGroundFlag@@@@@@V?$Optional@$$CBUMovementAbilitiesComponent@@@@@@V?$EntityModifier@V?$FlagComponent@UOnGroundFlag@@@@V?$FlagComponent@UCollisionFlag@@@@V?$FlagComponent@UHorizontalCollisionFlag@@@@V?$FlagComponent@UVerticalCollisionFlag@@@@V?$FlagComponent@UCollidableMobNearFlag@@@@@@@Z
-    MCAPI static void
-        tick(class ViewT<class StrictEntityContext, struct AABBShapeComponent const, struct MoveRequestComponent const, struct OffsetsComponent const, struct StateVectorComponent, class Optional<class FlagComponent<struct OnGroundFlag> const>, class Optional<struct MovementAbilitiesComponent const>>, class EntityModifier<class FlagComponent<struct OnGroundFlag>, class FlagComponent<struct CollisionFlag>, class FlagComponent<struct HorizontalCollisionFlag>, class FlagComponent<struct VerticalCollisionFlag>, class FlagComponent<struct CollidableMobNearFlag>>);
+    // ?tick@FinalizeMoveSystem@@SAXV?$ViewT@VStrictEntityContext@@$$CBUAABBShapeComponent@@$$CBUMoveRequestComponent@@$$CBUOffsetsComponent@@UStateVectorComponent@@V?$Optional@$$CBUOnGroundFlagComponent@@@@V?$Optional@$$CBUMovementAbilitiesComponent@@@@@@V?$EntityModifier@UOnGroundFlagComponent@@V?$FlagComponent@UCollisionFlag@@@@V?$FlagComponent@UHorizontalCollisionFlag@@@@V?$FlagComponent@UVerticalCollisionFlag@@@@V?$FlagComponent@UCollidableMobNearFlag@@@@@@@Z
+    MCAPI static void tick(class ViewT<class StrictEntityContext, struct AABBShapeComponent const, struct MoveRequestComponent const, struct OffsetsComponent const, struct StateVectorComponent, class Optional<struct OnGroundFlagComponent const>, class Optional<struct MovementAbilitiesComponent const>>, class EntityModifier<struct OnGroundFlagComponent, class FlagComponent<struct CollisionFlag>, class FlagComponent<struct HorizontalCollisionFlag>, class FlagComponent<struct VerticalCollisionFlag>, class FlagComponent<struct CollidableMobNearFlag>>);
 
     // NOLINTEND
 };

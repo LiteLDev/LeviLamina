@@ -33,7 +33,7 @@ public:
     // vIndex: 44, symbol: ?isDestructive@MinecartItem@@UEBA_NH@Z
     virtual bool isDestructive(int) const;
 
-    // vIndex: 73, symbol: ?dispense@MinecartItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 74, symbol: ?dispense@MinecartItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 

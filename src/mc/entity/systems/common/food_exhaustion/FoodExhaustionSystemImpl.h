@@ -19,10 +19,10 @@
 namespace FoodExhaustionSystemImpl {
 // NOLINTBEGIN
 // symbol:
-// ?doFoodExhaustion@FoodExhaustionSystemImpl@@YAXAEBVStrictEntityContext@@V?$Optional@$$CBV?$FlagComponent@UOnGroundFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@UInWaterFlag@@@@@@AEBVExhaustionComponent@@AEBUActorGameTypeComponent@@AEBUServerPlayerCurrentMovementComponent@@AEBUStateVectorComponent@@AEBUActorDataFlagComponent@@AEBUGetAttachPositionViews@@V?$EntityModifier@UAttributeRequestComponent@@@@W4GameType@@AEBVIConstBlockSource@@@Z
+// ?doFoodExhaustion@FoodExhaustionSystemImpl@@YAXAEBVStrictEntityContext@@V?$Optional@$$CBUOnGroundFlagComponent@@@@V?$Optional@$$CBV?$FlagComponent@UInWaterFlag@@@@@@AEBVExhaustionComponent@@AEBUActorGameTypeComponent@@AEBUServerPlayerCurrentMovementComponent@@AEBUStateVectorComponent@@AEBUActorDataFlagComponent@@AEBUGetAttachPositionViews@@V?$EntityModifier@UAttributeRequestComponent@@@@W4GameType@@AEBVIConstBlockSource@@@Z
 MCAPI void doFoodExhaustion(
-    class StrictEntityContext const&                               entity,
-    class Optional<class FlagComponent<struct OnGroundFlag> const> onGround,
+    class StrictEntityContext const&                   entity,
+    class Optional<struct OnGroundFlagComponent const> onGround,
     class Optional<class FlagComponent<struct InWaterFlag> const>,
     class ExhaustionComponent const& attributes,
     struct ActorGameTypeComponent const&,

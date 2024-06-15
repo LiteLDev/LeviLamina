@@ -55,6 +55,9 @@ public:
     // symbol: ?getDrawPos@MovingBlockActor@@QEBA?AVVec3@@AEBVIConstBlockSource@@M@Z
     MCAPI class Vec3 getDrawPos(class IConstBlockSource const& region, float a) const;
 
+    // symbol: ?getWrappedBlock@MovingBlockActor@@QEBAAEBVBlock@@XZ
+    MCAPI class Block const& getWrappedBlock() const;
+
     // symbol: ?moveCollidedEntities@MovingBlockActor@@QEAAXAEAVPistonBlockActor@@AEAVBlockSource@@@Z
     MCAPI void moveCollidedEntities(class PistonBlockActor& pistonBlock, class BlockSource& region);
 

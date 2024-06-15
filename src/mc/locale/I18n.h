@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/optional_ref.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 
 class I18n {
@@ -83,57 +82,55 @@ public:
     // ?chooseLanguage@I18nImpl@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void chooseLanguage(std::string const&) = 0;
 
-    // vIndex: 17, symbol: ?chooseLanguage@I18nImpl@@UEAAXAEBVLocalization@@@Z
-    virtual void chooseLanguage(class Localization const&) = 0;
-
-    // vIndex: 18, symbol:
+    // vIndex: 17, symbol:
     // ?get@I18nImpl@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@V?$shared_ptr@VLocalization@@@3@@Z
     virtual std::string
     get(std::string const&, std::vector<std::string> const&, std::shared_ptr<class Localization>) = 0;
 
-    // vIndex: 19, symbol:
+    // vIndex: 18, symbol:
     // ?get@I18nImpl@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@V?$shared_ptr@VLocalization@@@3@@Z
     virtual std::string get(std::string const&, std::shared_ptr<class Localization>) = 0;
 
-    // vIndex: 20, symbol:
+    // vIndex: 19, symbol:
     // ?getPackKeywordValue@I18nImpl@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPackManifest@@AEBV23@@Z
     virtual std::string getPackKeywordValue(class PackManifest const&, std::string const&) = 0;
 
-    // vIndex: 21, symbol:
+    // vIndex: 20, symbol:
     // ?getPackKeywordValueForTelemetry@I18nImpl@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPackManifest@@AEBV23@@Z
     virtual std::string getPackKeywordValueForTelemetry(class PackManifest const&, std::string const&) = 0;
 
-    // vIndex: 22, symbol:
+    // vIndex: 21, symbol:
     // ?hasPackKeyEntry@I18nImpl@@UEAA_NAEBVPackManifest@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual bool hasPackKeyEntry(class PackManifest const&, std::string const&) = 0;
 
-    // vIndex: 23, symbol:
+    // vIndex: 22, symbol:
     // ?getSupportedLanguageCodes@I18nImpl@@UEAAAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
     virtual std::vector<std::string> const& getSupportedLanguageCodes() = 0;
 
-    // vIndex: 24, symbol:
+    // vIndex: 23, symbol:
     // ?getLanguageName@I18nImpl@@UEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
     virtual std::string const& getLanguageName(std::string const&) = 0;
 
-    // vIndex: 25, symbol:
+    // vIndex: 24, symbol:
     // ?getLocaleFor@I18nImpl@@UEAA?BV?$shared_ptr@VLocalization@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
     virtual std::shared_ptr<class Localization> const getLocaleFor(std::string const&) = 0;
 
-    // vIndex: 26, symbol:
+    // vIndex: 25, symbol:
     // ?getLocaleCodeFor@I18nImpl@@UEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
     virtual std::string const& getLocaleCodeFor(std::string const&) = 0;
 
-    // vIndex: 27, symbol: ?getCurrentLanguage@I18nImpl@@UEAA?AV?$optional_ref@$$CBVLocalization@@@@XZ
-    virtual class optional_ref<class Localization const> getCurrentLanguage() = 0;
+    // vIndex: 26, symbol:
+    // ?getCurrentLanguage@I18nImpl@@UEAA?AV?$not_null@V?$shared_ptr@$$CBVLocalization@@@std@@@gsl@@XZ
+    virtual gsl::not_null<std::shared_ptr<class Localization const>> getCurrentLanguage() = 0;
 
-    // vIndex: 28, symbol: ?languageSupportsHypenSplitting@I18nImpl@@UEAA_NXZ
+    // vIndex: 27, symbol: ?languageSupportsHypenSplitting@I18nImpl@@UEAA_NXZ
     virtual bool languageSupportsHypenSplitting() = 0;
 
-    // vIndex: 29, symbol:
+    // vIndex: 28, symbol:
     // ?getLocalizedAssetFileWithFallback@I18nImpl@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@0@Z
     virtual std::string getLocalizedAssetFileWithFallback(std::string const&, std::string const&) = 0;
 
-    // vIndex: 30, symbol:
+    // vIndex: 29, symbol:
     // ?isPackKeyword@I18nImpl@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual bool isPackKeyword(std::string const&) = 0;
 

@@ -7,10 +7,12 @@ public:
     // prevent constructor by default
     TradeTableData& operator=(TradeTableData const&);
     TradeTableData(TradeTableData const&);
-    TradeTableData();
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0TradeTableData@@QEAA@XZ
+    MCAPI TradeTableData();
+
     // symbol: ??1TradeTableData@@QEAA@XZ
     MCAPI ~TradeTableData();
 

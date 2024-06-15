@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/scripting/DebuggerLogLevel.h"
 #include "mc/external/scripting/FutureStatus.h"
 #include "mc/external/scripting/Privilege.h"
 #include "mc/external/scripting/Result.h"
@@ -57,6 +58,7 @@ namespace Scripting { struct WatchdogEvent; }
 namespace Scripting { struct WatchdogSettings; }
 namespace Scripting::QuickJS { class ClassRegistry; }
 namespace Scripting::QuickJS { class ContextObject; }
+namespace Scripting::QuickJS { class ContextTimings; }
 namespace Scripting::QuickJS { class ContextUserData; }
 namespace Scripting::QuickJS { class ObjectInspector; }
 namespace Scripting::QuickJS { class RegisteredClass; }

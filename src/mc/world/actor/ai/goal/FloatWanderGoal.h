@@ -28,17 +28,6 @@ public:
     // ?appendDebugInfo@FloatWanderGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0FloatWanderGoal@@QEAA@AEAVMob@@MMM_N1UFloatRange@@@Z
-    MCAPI FloatWanderGoal(
-        class Mob&        mob,
-        float             xzDist,
-        float             yDist,
-        float             yOffset,
-        bool              mustReach,
-        bool              randomReselect,
-        struct FloatRange floatDuration
-    );
-
     // NOLINTEND
 
     // private:

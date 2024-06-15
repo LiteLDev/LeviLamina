@@ -90,4 +90,11 @@ public:
     MCAPI bool _isRequestActionAllowed(class ItemStackRequestAction const& requestAction);
 
     // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol: ?_pushScreen@ItemStackNetManagerBase@@AEAAXVContainerScreenContext@@@Z
+    MCAPI void _pushScreen(class ContainerScreenContext screenContext);
+
+    // NOLINTEND
 };

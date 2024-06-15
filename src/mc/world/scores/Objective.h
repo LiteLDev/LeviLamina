@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include "mc/world/actor/player/PlayerScoreSetFunction.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -51,6 +52,12 @@ public:
     // symbol: ?hasScore@Objective@@QEBA_NAEBUScoreboardId@@@Z
     MCAPI bool hasScore(struct ScoreboardId const& id) const;
 
+    // symbol: ?hasScores@Objective@@QEBA_NXZ
+    MCAPI bool hasScores() const;
+
+    // symbol: ?setDisplayName@Objective@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI void setDisplayName(std::string const& displayName);
+
     // symbol:
     // ?deserialize@Objective@@SA?AV?$unique_ptr@VObjective@@U?$default_delete@VObjective@@@std@@@std@@AEBVCompoundTag@@AEAVScoreboard@@@Z
     MCAPI static std::unique_ptr<class Objective>
@@ -59,6 +66,17 @@ public:
     // symbol:
     // ?serialize@Objective@@SA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBV1@@Z
     MCAPI static std::unique_ptr<class CompoundTag> serialize(class Objective const& toSave);
+
+    // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol: ?_modifyPlayerScore@Objective@@AEAA_NAEAHAEBUScoreboardId@@HW4PlayerScoreSetFunction@@@Z
+    MCAPI bool
+    _modifyPlayerScore(int& result, struct ScoreboardId const& id, int value, ::PlayerScoreSetFunction action);
+
+    // symbol: ?_resetPlayer@Objective@@AEAAXAEBUScoreboardId@@@Z
+    MCAPI void _resetPlayer(struct ScoreboardId const& id);
 
     // NOLINTEND
 };

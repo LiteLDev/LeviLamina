@@ -186,5 +186,8 @@ public:
     // symbol: ?_selectNextMoveDirection@ProjectileComponent@@AEAAXAEBVActor@@W4EAxis@1@@Z
     MCAPI void _selectNextMoveDirection(class Actor const& owner, ::ProjectileComponent::EAxis avoidAxis);
 
+    // symbol: ?_tryReflect@ProjectileComponent@@AEAA_NAEAVActor@@AEAVLevel@@@Z
+    MCAPI bool _tryReflect(class Actor&, class Level&);
+
     // NOLINTEND
 };

@@ -16,7 +16,6 @@ public:
     // prevent constructor by default
     AppPlatformWindows& operator=(AppPlatformWindows const&);
     AppPlatformWindows(AppPlatformWindows const&);
-    AppPlatformWindows();
 
 public:
     // NOLINTBEGIN
@@ -81,6 +80,9 @@ public:
 
     // symbol: ??1AppPlatformWindows@@UEAA@XZ
     MCVAPI ~AppPlatformWindows();
+
+    // symbol: ??0AppPlatformWindows@@QEAA@XZ
+    MCAPI AppPlatformWindows();
 
     // symbol:
     // ?EXPERIMENTS_ACTIVE_KEY@AppPlatformWindows@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B

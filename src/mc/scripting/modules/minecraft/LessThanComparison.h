@@ -16,9 +16,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??8LessThanComparison@ScriptModuleMinecraft@@QEBA_NAEBU01@@Z
-    MCAPI bool operator==(struct ScriptModuleMinecraft::LessThanComparison const&) const;
-
     // symbol:
     // ?bind@LessThanComparison@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@ULessThanComparison@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::LessThanComparison> bind();

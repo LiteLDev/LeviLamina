@@ -11,12 +11,14 @@ public:
     // prevent constructor by default
     BlastFurnaceContainerScreenValidator& operator=(BlastFurnaceContainerScreenValidator const&);
     BlastFurnaceContainerScreenValidator(BlastFurnaceContainerScreenValidator const&);
-    BlastFurnaceContainerScreenValidator();
 
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1BlastFurnaceContainerScreenValidator@@UEAA@XZ
     virtual ~BlastFurnaceContainerScreenValidator() = default;
+
+    // symbol: ??0BlastFurnaceContainerScreenValidator@@QEAA@XZ
+    MCAPI BlastFurnaceContainerScreenValidator();
 
     // NOLINTEND
 };

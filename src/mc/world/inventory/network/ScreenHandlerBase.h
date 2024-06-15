@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScreenHandlerBase@@UEAA@XZ
-    virtual ~ScreenHandlerBase() = default;
+    // vIndex: 0, symbol: ??1ScreenHandlerBase@@UEAA@XZ
+    virtual ~ScreenHandlerBase();
 
     // vIndex: 1, symbol: ?handleAction@ScreenHandlerBase@@UEAA?AW4ItemStackNetResult@@AEBVItemStackRequestAction@@@Z
     virtual ::ItemStackNetResult handleAction(class ItemStackRequestAction const& requestAction);
@@ -28,6 +28,9 @@ public:
 
     // vIndex: 4, symbol: ?postRequest@ScreenHandlerBase@@UEAAX_N@Z
     virtual void postRequest(bool wasSuccess);
+
+    // symbol: ??0ScreenHandlerBase@@QEAA@AEAVItemStackRequestActionHandler@@@Z
+    MCAPI explicit ScreenHandlerBase(class ItemStackRequestActionHandler&);
 
     // NOLINTEND
 };

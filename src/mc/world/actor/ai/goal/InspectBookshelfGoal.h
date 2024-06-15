@@ -37,15 +37,5 @@ public:
     // vIndex: 17, symbol: ?findTargetBlock@InspectBookshelfGoal@@UEAA_NXZ
     virtual bool findTargetBlock();
 
-    // symbol: ??0InspectBookshelfGoal@@QEAA@AEAVMob@@MHHHM@Z
-    MCAPI InspectBookshelfGoal(
-        class Mob& mob,
-        float      speedModifier,
-        int        searchRange,
-        int        searchHeight,
-        int        searchCount,
-        float      goalRadius
-    );
-
     // NOLINTEND
 };

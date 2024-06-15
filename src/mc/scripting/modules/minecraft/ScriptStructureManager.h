@@ -14,7 +14,6 @@ class ServerLevel;
 class StructureTemplate;
 class Vec3;
 namespace ScriptModuleMinecraft { class ScriptDimension; }
-namespace ScriptModuleMinecraft { class ScriptSimpleBlockVolume; }
 namespace ScriptModuleMinecraft { class ScriptStructureTemplate; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidStructureError; }
 namespace ScriptModuleMinecraft { struct ScriptStructureCreateOptions; }
@@ -54,11 +53,11 @@ public:
     createEmptyStructure(std::string const&, class Vec3 const&, ::StructureRedstoneSaveMode);
 
     // symbol:
-    // ?createStructureFromWorld@ScriptStructureManager@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptStructureTemplate@ScriptModuleMinecraft@@@Scripting@@UInvalidArgumentError@2@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$StrongTypedObjectHandle@VScriptDimension@ScriptModuleMinecraft@@@4@AEBVScriptSimpleBlockVolume@2@AEBV?$optional@UScriptStructureCreateOptions@ScriptModuleMinecraft@@@6@@Z
+    // ?createStructureFromWorld@ScriptStructureManager@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptStructureTemplate@ScriptModuleMinecraft@@@Scripting@@UInvalidArgumentError@2@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$StrongTypedObjectHandle@VScriptDimension@ScriptModuleMinecraft@@@4@AEBVVec3@@2AEBV?$optional@UScriptStructureCreateOptions@ScriptModuleMinecraft@@@6@@Z
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptStructureTemplate>,
         struct Scripting::InvalidArgumentError>
-    createStructureFromWorld(std::string const&, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptDimension> const&, class ScriptModuleMinecraft::ScriptSimpleBlockVolume const&, std::optional<struct ScriptModuleMinecraft::ScriptStructureCreateOptions> const&);
+    createStructureFromWorld(std::string const&, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptDimension> const&, class Vec3 const&, class Vec3 const&, std::optional<struct ScriptModuleMinecraft::ScriptStructureCreateOptions> const&);
 
     // symbol:
     // ?deleteStructure@ScriptStructureManager@ScriptModuleMinecraft@@QEAA?AV?$Result@_NUInvalidArgumentError@Scripting@@@Scripting@@AEBV?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$StrongTypedObjectHandle@VScriptStructureTemplate@ScriptModuleMinecraft@@@Scripting@@@std@@@Z
@@ -69,10 +68,6 @@ public:
                         class ScriptModuleMinecraft::ScriptStructureTemplate>> const&);
 
     // symbol:
-    // ?getIds@ScriptStructureManager@ScriptModuleMinecraft@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
-    MCAPI std::vector<std::string> getIds() const;
-
-    // symbol:
     // ?getOrCreateScriptStructure@ScriptStructureManager@ScriptModuleMinecraft@@QEAA?AV?$StrongTypedObjectHandle@VScriptStructureTemplate@ScriptModuleMinecraft@@@Scripting@@AEAVStructureTemplate@@@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptStructureTemplate>
     getOrCreateScriptStructure(class StructureTemplate&);
@@ -81,6 +76,10 @@ public:
     // ?getStructure@ScriptStructureManager@ScriptModuleMinecraft@@QEAA?AV?$optional@V?$StrongTypedObjectHandle@VScriptStructureTemplate@ScriptModuleMinecraft@@@Scripting@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z
     MCAPI std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptStructureTemplate>>
           getStructure(std::string const&);
+
+    // symbol:
+    // ?getWorldStructureIds@ScriptStructureManager@ScriptModuleMinecraft@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
+    MCAPI std::vector<std::string> getWorldStructureIds() const;
 
     // symbol: ??4ScriptStructureManager@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptStructureManager&

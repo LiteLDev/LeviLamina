@@ -11,6 +11,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0StructureIntegrityProcessor@@QEAA@MI@Z
+    MCAPI StructureIntegrityProcessor(float integrity, uint startSeed);
+
     // symbol: ?generateFlagsForIndices@StructureIntegrityProcessor@@QEBA?AV?$vector@_NV?$allocator@_N@std@@@std@@HH@Z
     MCAPI std::vector<bool> generateFlagsForIndices(int startIndex, int endIndex) const;
 

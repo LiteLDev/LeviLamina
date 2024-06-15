@@ -31,11 +31,22 @@ public:
     // vIndex: 5, symbol: ?getMaxLevel@SoulSpeedEnchant@@UEBAHXZ
     virtual int getMaxLevel() const;
 
-    // vIndex: 12, symbol: ?isTreasureOnly@SoulSpeedEnchant@@UEBA_NXZ
+    // vIndex: 14, symbol: ?isTreasureOnly@SoulSpeedEnchant@@UEBA_NXZ
     virtual bool isTreasureOnly() const;
 
-    // vIndex: 13, symbol: ?isDiscoverable@SoulSpeedEnchant@@UEBA_NXZ
+    // vIndex: 15, symbol: ?isDiscoverable@SoulSpeedEnchant@@UEBA_NXZ
     virtual bool isDiscoverable() const;
+
+    // symbol:
+    // ??0SoulSpeedEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_view@DU?$char_traits@D@std@@@std@@2HH@Z
+    MCAPI SoulSpeedEnchant(
+        ::Enchant::Type      type,
+        ::Enchant::Frequency frequency,
+        std::string_view     stringId,
+        std::string_view     description,
+        int                  primarySlots,
+        int                  secondarySlots
+    );
 
     // symbol: ?getLevel@SoulSpeedEnchant@@SAHAEBVActor@@@Z
     MCAPI static int getLevel(class Actor const& entity);

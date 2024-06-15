@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1LookAtActorGoal@@UEAA@XZ
-    virtual ~LookAtActorGoal();
+    // vIndex: 0, symbol: __gen_??1LookAtActorGoal@@UEAA@XZ
+    virtual ~LookAtActorGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@LookAtActorGoal@@UEAA_NXZ
     virtual bool canUse();

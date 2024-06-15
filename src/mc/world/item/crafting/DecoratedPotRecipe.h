@@ -33,18 +33,19 @@ public:
     // vIndex: 3, symbol: ?getIngredient@DecoratedPotRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
     virtual class RecipeIngredient const& getIngredient(int, int) const;
 
-    // vIndex: 4, symbol:
-    // ?getResultItem@DecoratedPotRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
-    virtual std::vector<class ItemInstance> const& getResultItem() const;
-
-    // vIndex: 6, symbol: ?matches@DecoratedPotRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
+    // vIndex: 5, symbol: ?matches@DecoratedPotRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
     virtual bool matches(class CraftingContainer const& craftSlots, class CraftingContext const&) const;
 
-    // vIndex: 7, symbol: ?size@DecoratedPotRecipe@@UEBAHXZ
+    // vIndex: 6, symbol: ?size@DecoratedPotRecipe@@UEBAHXZ
     virtual int size() const;
 
-    // symbol: ??0DecoratedPotRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBVUUID@mce@@@Z
-    MCAPI DecoratedPotRecipe(std::string_view recipeId, class mce::UUID const& uuid);
+    // vIndex: 8, symbol:
+    // ?getResultItems@DecoratedPotRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
+    virtual std::vector<class ItemInstance> const& getResultItems() const;
+
+    // symbol:
+    // ??0DecoratedPotRecipe@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVUUID@mce@@@Z
+    MCAPI DecoratedPotRecipe(std::string const&, class mce::UUID const&);
 
     // symbol: ?ID@DecoratedPotRecipe@@2VUUID@mce@@B
     MCAPI static class mce::UUID const ID;

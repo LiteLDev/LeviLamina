@@ -51,11 +51,11 @@ public:
     virtual bool
     isObstructingChests(class BlockSource& region, class BlockPos const& pos, class Block const& thisBlock) const;
 
-    // vIndex: 61, symbol: ?checkIsPathable@StructureVoidBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
+    // vIndex: 62, symbol: ?checkIsPathable@StructureVoidBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
     virtual bool
     checkIsPathable(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
 
-    // vIndex: 77, symbol: ?canRenderSelectionOverlay@StructureVoidBlock@@UEBA_NW4BlockRenderLayer@@@Z
+    // vIndex: 78, symbol: ?canRenderSelectionOverlay@StructureVoidBlock@@UEBA_NW4BlockRenderLayer@@@Z
     virtual bool canRenderSelectionOverlay(::BlockRenderLayer) const;
 
     // symbol: ??0StructureVoidBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

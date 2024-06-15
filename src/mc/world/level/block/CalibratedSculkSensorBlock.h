@@ -30,16 +30,16 @@ public:
     // vIndex: 0, symbol: __gen_??1CalibratedSculkSensorBlock@@UEAA@XZ
     virtual ~CalibratedSculkSensorBlock() = default;
 
-    // vIndex: 71, symbol: ?setupRedstoneComponent@CalibratedSculkSensorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 72, symbol: ?setupRedstoneComponent@CalibratedSculkSensorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 128, symbol: ?getVariant@CalibratedSculkSensorBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129, symbol: ?getVariant@CalibratedSculkSensorBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 131, symbol: ?getMappedFace@CalibratedSculkSensorBlock@@UEBAEEAEBVBlock@@@Z
+    // vIndex: 132, symbol: ?getMappedFace@CalibratedSculkSensorBlock@@UEBAEEAEBVBlock@@@Z
     virtual uchar getMappedFace(uchar face, class Block const& block) const;
 
-    // vIndex: 132, symbol: ?getFaceFlip@CalibratedSculkSensorBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
+    // vIndex: 133, symbol: ?getFaceFlip@CalibratedSculkSensorBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
     virtual ::Flip getFaceFlip(uchar face, class Block const& block) const;
 
     // symbol: ??0CalibratedSculkSensorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

@@ -20,25 +20,25 @@ public:
     // vIndex: 1, symbol: ?init@Inventory@@UEAAXXZ
     virtual void init();
 
-    // vIndex: 10, symbol: ?setItem@Inventory@@UEAAXHAEBVItemStack@@@Z
+    // vIndex: 12, symbol: ?setItem@Inventory@@UEAAXHAEBVItemStack@@@Z
     virtual void setItem(int slot, class ItemStack const& item);
 
-    // vIndex: 11, symbol: ?setItemWithForceBalance@Inventory@@UEAAXHAEBVItemStack@@_N@Z
+    // vIndex: 13, symbol: ?setItemWithForceBalance@Inventory@@UEAAXHAEBVItemStack@@_N@Z
     virtual void setItemWithForceBalance(int slot, class ItemStack const& item, bool forceBalanced);
 
-    // vIndex: 23, symbol: ?getEmptySlotsCount@Inventory@@UEBAHXZ
+    // vIndex: 26, symbol: ?getEmptySlotsCount@Inventory@@UEBAHXZ
     virtual int getEmptySlotsCount() const;
 
-    // vIndex: 38, symbol: ?add@Inventory@@UEAA_NAEAVItemStack@@@Z
+    // vIndex: 41, symbol: ?add@Inventory@@UEAA_NAEAVItemStack@@@Z
     virtual bool add(class ItemStack& item);
 
-    // vIndex: 39, symbol: ?canAdd@Inventory@@UEBA_NAEBVItemStack@@@Z
+    // vIndex: 42, symbol: ?canAdd@Inventory@@UEBA_NAEBVItemStack@@@Z
     virtual bool canAdd(class ItemStack const& item) const;
 
-    // vIndex: 43, symbol: ?getFirstEmptySlot@Inventory@@UEBAHXZ
+    // vIndex: 46, symbol: ?getFirstEmptySlot@Inventory@@UEBAHXZ
     virtual int getFirstEmptySlot() const;
 
-    // vIndex: 44, symbol: ?setContainerSize@Inventory@@UEAAXH@Z
+    // vIndex: 47, symbol: ?setContainerSize@Inventory@@UEAAXH@Z
     virtual void setContainerSize(int size);
 
     // symbol: ??0Inventory@@QEAA@PEAVPlayer@@@Z
@@ -46,6 +46,9 @@ public:
 
     // symbol: ?dropSlot@Inventory@@QEAAXH_N00@Z
     MCAPI void dropSlot(int slot, bool onlyClearContainer, bool dropAll, bool randomly);
+
+    // symbol: ?getComplexItems@Inventory@@QEAA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+    MCAPI std::vector<class ItemStack> getComplexItems();
 
     // symbol: ?setupDefault@Inventory@@QEAAXXZ
     MCAPI void setupDefault();

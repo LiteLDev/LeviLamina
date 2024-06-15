@@ -221,6 +221,9 @@ public:
     // symbol: ?_getCurrentState@VaultBlockActor@@CA?AW4VaultBlockState@@AEBVBlock@@@Z
     MCAPI static ::VaultBlockState _getCurrentState(class Block const&);
 
+    // symbol: ?_isOminous@VaultBlockActor@@CA_NAEBVBlockSource@@VBlockPos@@@Z
+    MCAPI static bool _isOminous(class BlockSource const&, class BlockPos);
+
     // symbol: ?_javaSpawnItem@VaultBlockActor@@CAXAEAVBlockSource@@AEBVItemStack@@HEVVec3@@@Z
     MCAPI static void _javaSpawnItem(class BlockSource&, class ItemStack const&, int, uchar, class Vec3);
 

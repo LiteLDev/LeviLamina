@@ -18,12 +18,12 @@
 namespace MobJumpFromGroundSystemImpl {
 // NOLINTBEGIN
 // symbol:
-// ?doFilter@MobJumpFromGroundSystemImpl@@YAXAEBVStrictEntityContext@@AEBV?$Optional@V?$FlagComponent@ULocalPlayerComponentFlag@@@@@@AEBV?$Optional@V?$FlagComponent@ULavaSlimeFlag@@@@@@AEBV?$Optional@V?$FlagComponent@USquidFlag@@@@@@V?$EntityModifier@V?$FlagComponent@ULocalPlayerJumpRequestFlag@@@@V?$FlagComponent@ULavaSlimeJumpRequestFlag@@@@V?$FlagComponent@USquidJumpRequestFlag@@@@V?$FlagComponent@UOtherJumpRequestFlag@@@@@@@Z
+// ?doFilter@MobJumpFromGroundSystemImpl@@YAXAEBVStrictEntityContext@@AEBV?$Optional@$$CBV?$FlagComponent@ULocalPlayerComponentFlag@@@@@@AEBV?$Optional@$$CBV?$FlagComponent@ULavaSlimeFlag@@@@@@AEBV?$Optional@$$CBV?$FlagComponent@USquidFlag@@@@@@V?$EntityModifier@V?$FlagComponent@ULocalPlayerJumpRequestFlag@@@@V?$FlagComponent@ULavaSlimeJumpRequestFlag@@@@V?$FlagComponent@USquidJumpRequestFlag@@@@V?$FlagComponent@UOtherJumpRequestFlag@@@@@@@Z
 MCAPI void doFilter(
-    class StrictEntityContext const&                                            context,
-    class Optional<class FlagComponent<struct LocalPlayerComponentFlag>> const& localPlayer,
-    class Optional<class FlagComponent<struct LavaSlimeFlag>> const&,
-    class Optional<class FlagComponent<struct SquidFlag>> const&,
+    class StrictEntityContext const&                                                  context,
+    class Optional<class FlagComponent<struct LocalPlayerComponentFlag> const> const& localPlayer,
+    class Optional<class FlagComponent<struct LavaSlimeFlag> const> const&,
+    class Optional<class FlagComponent<struct SquidFlag> const> const&,
     class EntityModifier<
         class FlagComponent<struct LocalPlayerJumpRequestFlag>,
         class FlagComponent<struct LavaSlimeJumpRequestFlag>,

@@ -10,9 +10,9 @@
 // clang-format off
 class SemVersion;
 namespace Puv { class LoadResultAny; }
+namespace Puv { class Logger; }
 namespace Puv { class ParserBase; }
 namespace Puv { class Upgrader; }
-namespace Puv { struct Logger; }
 namespace Puv::internal { struct PathElement; }
 namespace cereal { class SerializerEnumMapping; }
 namespace cereal { struct ReflectionCtx; }

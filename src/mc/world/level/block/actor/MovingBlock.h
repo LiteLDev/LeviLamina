@@ -42,18 +42,21 @@ public:
     virtual class AABB const&
     getVisualShapeInWorld(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 73, symbol:
+    // vIndex: 26, symbol: ?isMovingBlock@MovingBlock@@UEBA_NXZ
+    virtual bool isMovingBlock() const;
+
+    // vIndex: 74, symbol:
     // ?updateEntityAfterFallOn@MovingBlock@@UEBAXAEBVBlockPos@@AEAUUpdateEntityAfterFallOnInterface@@@Z
     virtual void
     updateEntityAfterFallOn(class BlockPos const& pos, struct UpdateEntityAfterFallOnInterface& entity) const;
 
-    // vIndex: 95, symbol: ?asItemInstance@MovingBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96, symbol: ?asItemInstance@MovingBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 108, symbol: ?pushesUpFallingBlocks@MovingBlock@@UEBA_NXZ
+    // vIndex: 109, symbol: ?pushesUpFallingBlocks@MovingBlock@@UEBA_NXZ
     virtual bool pushesUpFallingBlocks() const;
 
-    // vIndex: 141, symbol: ?_addHardCodedBlockComponents@MovingBlock@@MEAAXAEBVExperiments@@@Z
+    // vIndex: 142, symbol: ?_addHardCodedBlockComponents@MovingBlock@@MEAAXAEBVExperiments@@@Z
     virtual void _addHardCodedBlockComponents(class Experiments const&);
 
     // symbol: ??0MovingBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

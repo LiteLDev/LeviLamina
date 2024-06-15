@@ -4,11 +4,10 @@
 
 struct ActorInfo {
 public:
-    // prevent constructor by default
-    ActorInfo();
-
-public:
     // NOLINTBEGIN
+    // symbol: ??0ActorInfo@@QEAA@XZ
+    MCAPI ActorInfo();
+
     // symbol: ??0ActorInfo@@QEAA@AEBU0@@Z
     MCAPI ActorInfo(struct ActorInfo const&);
 

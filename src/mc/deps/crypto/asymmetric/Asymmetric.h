@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/crypto/asymmetric/Padding.h"
+#include "mc/deps/crypto/asymmetric/PrivateKeySigningFormat.h"
 #include "mc/deps/crypto/asymmetric/PubKeyFormat.h"
 #include "mc/deps/crypto/asymmetric/System.h"
 #include "mc/deps/crypto/hash/HashType.h"
@@ -41,8 +42,13 @@ public:
     decryptData(std::string const& privateKey, std::string const& data, ::Crypto::Asymmetric::Padding);
 
     // vIndex: 4, symbol:
-    // ?signData@Asymmetric@1Crypto@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV34@0W4HashType@Hash@2@@Z
-    virtual std::string signData(std::string const& privateKey, std::string const& data, ::Crypto::Hash::HashType hash);
+    // ?signData@Asymmetric@1Crypto@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV34@0W4HashType@Hash@2@W4PrivateKeySigningFormat@12@@Z
+    virtual std::string signData(
+        std::string const&,
+        std::string const&,
+        ::Crypto::Hash::HashType,
+        ::Crypto::Asymmetric::PrivateKeySigningFormat
+    );
 
     // vIndex: 5, symbol:
     // ?verifyData@Asymmetric@1Crypto@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00W4HashType@Hash@2@@Z

@@ -95,9 +95,6 @@ public:
     // symbol: ?allowsResourcePackDevelopment@AppPlatform@@UEBA_NXZ
     MCVAPI bool allowsResourcePackDevelopment() const;
 
-    // symbol: ?alwaysUseZippedPacksForDlc@AppPlatform@@UEBA_NXZ
-    MCVAPI bool alwaysUseZippedPacksForDlc() const;
-
     // symbol: ?areThreadsFrozen@AppPlatform@@UEBA_NXZ
     MCVAPI bool areThreadsFrozen() const;
 
@@ -112,6 +109,9 @@ public:
 
     // symbol: ?canManageLegacyData@AppPlatform@@UEBA_NXZ
     MCVAPI bool canManageLegacyData() const;
+
+    // symbol: ?canMigrateWorldData@AppPlatform@@UEBA_NXZ
+    MCVAPI bool canMigrateWorldData() const;
 
     // symbol: ?canSwapVRMode@AppPlatform@@UEBA_N_N@Z
     MCVAPI bool canSwapVRMode(bool inVRMode) const;
@@ -633,6 +633,9 @@ public:
     // symbol: ?restartRequested@AppPlatform@@UEAA_NXZ
     MCVAPI bool restartRequested();
 
+    // symbol: ?saveTreatmentPacksAsZips@AppPlatform@@UEBA_NXZ
+    MCVAPI bool saveTreatmentPacksAsZips() const;
+
     // symbol: ?setARVRPlatform@AppPlatform@@UEAAXW4ARVRPlatform@@@Z
     MCVAPI void setARVRPlatform(::ARVRPlatform platform);
 
@@ -694,6 +697,11 @@ public:
 
     // symbol: ?showDialog@AppPlatform@@UEAAXH@Z
     MCVAPI void showDialog(int dialogId);
+
+    // symbol:
+    // ?showOSUserDialog@AppPlatform@@UEAA?AV?$shared_ptr@V?$IAsyncResult@_N@Threading@Bedrock@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@00@Z
+    MCVAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<bool>>
+           showOSUserDialog(std::string, std::string, std::string);
 
     // symbol: ?showPlatformEmptyStoreDialog@AppPlatform@@UEAAX$$QEAV?$function@$$A6AX_N@Z@std@@@Z
     MCVAPI void showPlatformEmptyStoreDialog(std::function<void(bool)>&& callback);

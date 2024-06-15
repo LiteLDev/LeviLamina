@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Level;
 class PositionTrackingId;
 namespace PositionTrackingDB { class TrackingRecord; }
 // clang-format on
@@ -22,10 +23,16 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0PositionTrackingDBClient@PositionTrackingDB@@QEAA@AEAVLevel@@@Z
+    MCAPI explicit PositionTrackingDBClient(class Level& level);
+
     // symbol:
     // ?findTracker@PositionTrackingDBClient@PositionTrackingDB@@QEAA?AW4ResultCode@2@AEBVPositionTrackingId@@PEAPEAVTrackingRecord@2@@Z
     MCAPI ::PositionTrackingDB::ResultCode
     findTracker(class PositionTrackingId const& id, class PositionTrackingDB::TrackingRecord** outRecord);
+
+    // symbol: ??1PositionTrackingDBClient@PositionTrackingDB@@QEAA@XZ
+    MCAPI ~PositionTrackingDBClient();
 
     // NOLINTEND
 };

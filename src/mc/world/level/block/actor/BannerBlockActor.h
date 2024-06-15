@@ -38,9 +38,6 @@ public:
     // vIndex: 41, symbol: ?_onUpdatePacket@BannerBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
     virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
 
-    // symbol: ??0BannerBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI explicit BannerBlockActor(class BlockPos const& pos);
-
     // symbol: ?getBaseColorInt@BannerBlockActor@@QEBAEXZ
     MCAPI uchar getBaseColorInt() const;
 

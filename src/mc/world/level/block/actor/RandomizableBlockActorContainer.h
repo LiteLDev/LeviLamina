@@ -24,6 +24,9 @@ public:
     // symbol: ?initializeContainerContents@RandomizableBlockActorContainer@@UEAAXAEAVBlockSource@@@Z
     MCVAPI void initializeContainerContents(class BlockSource& region);
 
+    // symbol: ?onRemoved@RandomizableBlockActorContainer@@UEAAXAEAVBlockSource@@@Z
+    MCVAPI void onRemoved(class BlockSource&);
+
     // symbol: ?setContainerChanged@RandomizableBlockActorContainer@@UEAAXH@Z
     MCVAPI void setContainerChanged(int slot);
 

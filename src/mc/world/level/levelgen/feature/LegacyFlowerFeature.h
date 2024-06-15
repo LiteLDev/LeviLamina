@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/FlowerPlacementType.h"
 #include "mc/world/level/levelgen/feature/Feature.h"
 
 class LegacyFlowerFeature : public ::Feature {
@@ -19,6 +20,9 @@ public:
 
     // vIndex: 3, symbol: ?place@LegacyFlowerFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    // symbol: ??0LegacyFlowerFeature@@QEAA@W4FlowerPlacementType@@@Z
+    MCAPI explicit LegacyFlowerFeature(::FlowerPlacementType placementType);
 
     // NOLINTEND
 };
