@@ -10,7 +10,6 @@
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
-#include "mc/enums/ArmorTextureType.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/InputMode.h"
 #include "mc/enums/MaterialType.h"
@@ -40,16 +39,13 @@ public:
     // vIndex: 10, symbol: __gen_??1DragonFireball@@UEAA@XZ
     virtual ~DragonFireball() = default;
 
-    // vIndex: 45, symbol: ?isPickable@DragonFireball@@UEAA_NXZ
-    virtual bool isPickable();
-
-    // vIndex: 148, symbol: ?_hurt@DragonFireball@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 146, symbol: ?_hurt@DragonFireball@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 154, symbol: ?getTrailParticle@DragonFireball@@MEAA?AW4ParticleType@@XZ
+    // vIndex: 152, symbol: ?getTrailParticle@DragonFireball@@MEAA?AW4ParticleType@@XZ
     virtual ::ParticleType getTrailParticle();
 
-    // vIndex: 155, symbol: ?shouldBurn@DragonFireball@@MEAA_NXZ
+    // vIndex: 153, symbol: ?shouldBurn@DragonFireball@@MEAA_NXZ
     virtual bool shouldBurn();
 
     // symbol: ??0DragonFireball@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

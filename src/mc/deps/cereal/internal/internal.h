@@ -91,6 +91,9 @@ saveSequenceContainer(class cereal::internal::BasicSchema const&, struct cereal:
 
 // symbol: ?shouldHavename@internal@cereal@@YA_NW4ReflectedType@12@@Z
 MCAPI bool shouldHavename(::cereal::internal::ReflectedType);
+
+// symbol: ?toString@internal@cereal@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@N@Z
+MCAPI std::string toString(double);
 // NOLINTEND
 
 }; // namespace cereal::internal

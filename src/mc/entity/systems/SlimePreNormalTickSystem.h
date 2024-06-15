@@ -26,16 +26,12 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol:
-    // ?_doSlimePreNormalTickSystem@SlimePreNormalTickSystem@@CAXAEAVStrictEntityContext@@AEAVActorOwnerComponent@@V?$Optional@$$CBV?$FlagComponent@UOnGroundFlag@@@@@@V?$EntityModifier@V?$FlagComponent@USlimeWasOnGroundPreNormalTick@@@@@@@Z
-    MCAPI static void _doSlimePreNormalTickSystem(
-        class StrictEntityContext& context,
-        class ActorOwnerComponent&,
-        class Optional<class FlagComponent<struct OnGroundFlag> const>                  onGround,
-        class EntityModifier<class FlagComponent<struct SlimeWasOnGroundPreNormalTick>> mod
-    );
+    // ?_doSlimePreNormalTickSystem@SlimePreNormalTickSystem@@CAXAEAVStrictEntityContext@@AEAVActorOwnerComponent@@V?$Optional@$$CBUOnGroundFlagComponent@@@@V?$EntityModifier@V?$FlagComponent@USlimeWasOnGroundPreNormalTick@@@@@@@Z
+    MCAPI static void
+    _doSlimePreNormalTickSystem(class StrictEntityContext&, class ActorOwnerComponent&, class Optional<struct OnGroundFlagComponent const>, class EntityModifier<class FlagComponent<struct SlimeWasOnGroundPreNormalTick>>);
 
     // symbol:
-    // ?_tickSlimePreNormalTickSystem@SlimePreNormalTickSystem@@CAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@USlimeFlag@@@@@@VActorOwnerComponent@@V?$Optional@$$CBV?$FlagComponent@UOnGroundFlag@@@@@@@@V?$EntityModifier@V?$FlagComponent@USlimeWasOnGroundPreNormalTick@@@@@@@Z
+    // ?_tickSlimePreNormalTickSystem@SlimePreNormalTickSystem@@CAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@USlimeFlag@@@@@@VActorOwnerComponent@@V?$Optional@$$CBUOnGroundFlagComponent@@@@@@V?$EntityModifier@V?$FlagComponent@USlimeWasOnGroundPreNormalTick@@@@@@@Z
     MCAPI static void _tickSlimePreNormalTickSystem(
         class ViewT<
             class StrictEntityContext,
@@ -43,7 +39,7 @@ public:
                 class FlagComponent<struct ActorMovementTickNeededFlag>,
                 class FlagComponent<struct SlimeFlag>>,
             class ActorOwnerComponent,
-            class Optional<class FlagComponent<struct OnGroundFlag> const>>             view,
+            class Optional<struct OnGroundFlagComponent const>>                         view,
         class EntityModifier<class FlagComponent<struct SlimeWasOnGroundPreNormalTick>> mod
     );
 

@@ -11,12 +11,14 @@ public:
     // prevent constructor by default
     SmokerContainerScreenValidator& operator=(SmokerContainerScreenValidator const&);
     SmokerContainerScreenValidator(SmokerContainerScreenValidator const&);
-    SmokerContainerScreenValidator();
 
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1SmokerContainerScreenValidator@@UEAA@XZ
     virtual ~SmokerContainerScreenValidator() = default;
+
+    // symbol: ??0SmokerContainerScreenValidator@@QEAA@XZ
+    MCAPI SmokerContainerScreenValidator();
 
     // NOLINTEND
 };

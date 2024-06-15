@@ -68,8 +68,8 @@ public:
         struct ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewComponentError>
     tryRegisterComponent(class Scripting::WeakLifetimeScope&, class HashedString const&, struct ScriptModuleMinecraft::IScriptItemCustomComponentClosures const&);
 
-    // vIndex: 2, symbol: ?reset@ScriptItemCustomComponentRegistry@ScriptModuleMinecraft@@UEAAXXZ
-    virtual void reset();
+    // vIndex: 2, symbol: ?onReload@ScriptItemCustomComponentRegistry@ScriptModuleMinecraft@@UEAAXXZ
+    virtual void onReload();
 
     // vIndex: 3, symbol:
     // ?getEventListener@ScriptItemCustomComponentRegistry@ScriptModuleMinecraft@@UEAAAEAVScriptDeferredEventListener@@XZ

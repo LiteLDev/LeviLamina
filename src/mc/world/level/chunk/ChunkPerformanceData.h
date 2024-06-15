@@ -48,11 +48,18 @@ public:
     // symbol: ??0ChunkPerformanceData@@QEAA@XZ
     MCAPI ChunkPerformanceData();
 
-    // symbol: ?recordLoadedChunk@ChunkPerformanceData@@QEAAXAEBVLevelChunk@@@Z
-    MCAPI void recordLoadedChunk(class LevelChunk const& chunk);
+    // symbol: ?registerForLevelChunkEvents@ChunkPerformanceData@@QEAAXAEAVILevelChunkEventManagerConnector@@@Z
+    MCAPI void registerForLevelChunkEvents(class ILevelChunkEventManagerConnector&);
 
     // symbol: ?resetAll@ChunkPerformanceData@@QEAAXXZ
     MCAPI void resetAll();
+
+    // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol: ?_onChunkLoaded@ChunkPerformanceData@@AEAAXAEAVChunkSource@@AEAVLevelChunk@@H@Z
+    MCAPI void _onChunkLoaded(class ChunkSource&, class LevelChunk&, int);
 
     // NOLINTEND
 };

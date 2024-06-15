@@ -33,17 +33,17 @@ public:
     // vIndex: 23, symbol: ?canProvideSupport@EnchantingTableBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
     virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType) const;
 
-    // vIndex: 31, symbol: ?isCraftingBlock@EnchantingTableBlock@@UEBA_NXZ
+    // vIndex: 32, symbol: ?isCraftingBlock@EnchantingTableBlock@@UEBA_NXZ
     virtual bool isCraftingBlock() const;
 
-    // vIndex: 61, symbol: ?checkIsPathable@EnchantingTableBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
+    // vIndex: 62, symbol: ?checkIsPathable@EnchantingTableBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
     virtual bool
     checkIsPathable(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
 
-    // vIndex: 149, symbol: ?isInteractiveBlock@EnchantingTableBlock@@UEBA_NXZ
+    // vIndex: 150, symbol: ?isInteractiveBlock@EnchantingTableBlock@@UEBA_NXZ
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 151, symbol: ?use@EnchantingTableBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152, symbol: ?use@EnchantingTableBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // symbol: ??0EnchantingTableBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

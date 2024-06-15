@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/common/wrapper/StackRefResult.h"
-#include "mc/common/wrapper/WeakRef.h"
 #include "mc/deps/core/PathBuffer.h"
 #include "mc/deps/core/common/bedrock/pubsub/Connector.h"
 
@@ -31,13 +30,15 @@ public:
     // vIndex: 1, symbol: __gen_??1PhotoManager@@UEAA@XZ
     virtual ~PhotoManager() = default;
 
-    // symbol:
-    // ??0PhotoManager@@QEAA@AEBV?$StackRefResult@VLevelStorage@@@@_NAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@Z
-    MCAPI
-    PhotoManager(class StackRefResult<class LevelStorage> const&, bool, class Core::PathBuffer<std::string> const&);
+    // symbol: ??0PhotoManager@@QEAA@AEBV?$StackRefResult@VLevelStorage@@@@_N@Z
+    MCAPI PhotoManager(class StackRefResult<class LevelStorage> const&, bool);
 
     // symbol: ?createPhotoStorage@PhotoManager@@QEAAXXZ
     MCAPI void createPhotoStorage();
+
+    // symbol:
+    // ?createScreenshotsFolder@PhotoManager@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVAppPlatform@@@Z
+    MCAPI void createScreenshotsFolder(std::string const&, class AppPlatform&);
 
     // symbol: ?getPhotoStorage@PhotoManager@@QEAAAEAVPhotoStorage@@XZ
     MCAPI class PhotoStorage& getPhotoStorage();
@@ -48,11 +49,6 @@ public:
 
     // symbol: ?takePicture@PhotoManager@@QEAAXAEAVImageBuffer@cg@@PEAVActor@@1AEAUScreenshotOptions@@@Z
     MCAPI void takePicture(class cg::ImageBuffer&, class Actor*, class Actor*, struct ScreenshotOptions&);
-
-    // symbol:
-    // ?initializeScreenshotsFolder@PhotoManager@@SA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@V?$WeakRef@VLevelStorage@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVAppPlatform@@@Z
-    MCAPI static class Core::PathBuffer<std::string>
-    initializeScreenshotsFolder(class WeakRef<class LevelStorage>, std::string const&, class AppPlatform&);
 
     // NOLINTEND
 

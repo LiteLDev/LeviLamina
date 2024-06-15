@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Puv::v1_20_50 { struct ShouldDespawnItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -51,9 +50,6 @@ public:
 
     // vIndex: 9, symbol: ?_initializeComponent@ShouldDespawnItemComponent@@UEAAXXZ
     virtual void _initializeComponent();
-
-    // symbol: ??0ShouldDespawnItemComponent@@QEAA@U0v1_20_50@Puv@@@Z
-    MCAPI explicit ShouldDespawnItemComponent(struct Puv::v1_20_50::ShouldDespawnItemComponent);
 
     // symbol:
     // ?bindType@ShouldDespawnItemComponent@@SAXAEAUReflectionCtx@cereal@@AEBV?$vector@W4AllExperiments@@V?$allocator@W4AllExperiments@@@std@@@std@@V?$optional@VSemVersion@@@5@@Z

@@ -30,10 +30,10 @@ public:
     // vIndex: 0, symbol: __gen_??1GlazedTerracottaBlock@@UEAA@XZ
     virtual ~GlazedTerracottaBlock() = default;
 
-    // vIndex: 49, symbol: ?isValidAuxValue@GlazedTerracottaBlock@@UEBA_NH@Z
+    // vIndex: 50, symbol: ?isValidAuxValue@GlazedTerracottaBlock@@UEBA_NH@Z
     virtual bool isValidAuxValue(int value) const;
 
-    // vIndex: 97, symbol:
+    // vIndex: 98, symbol:
     // ?getPlacementBlock@GlazedTerracottaBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
     virtual class Block const& getPlacementBlock(
         class Actor const&    by,

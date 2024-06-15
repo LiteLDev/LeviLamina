@@ -25,9 +25,6 @@ public:
     // symbol: ?garbageCollectEntity@ActorGarbageCollector@@QEAAXV?$OwnerPtr@VEntityContext@@@@@Z
     MCAPI void garbageCollectEntity(class OwnerPtr<class EntityContext>);
 
-    // symbol: ?garbageCollectEntityWhenChunkDiscarded@ActorGarbageCollector@@QEAAXV?$OwnerPtr@VEntityContext@@@@@Z
-    MCAPI void garbageCollectEntityWhenChunkDiscarded(class OwnerPtr<class EntityContext>);
-
     // symbol: ?update@ActorGarbageCollector@@QEAAXXZ
     MCAPI void update();
 

@@ -14,6 +14,7 @@ namespace Core { class FileStats; }
 namespace Core { class FileSystemImpl; }
 namespace Core { class Path; }
 namespace Core { class Result; }
+namespace Core { class StorageAreaStateListener; }
 namespace Core { class StorageAreasTree; }
 // clang-format on
 
@@ -159,6 +160,9 @@ public:
     // symbol:
     // ?getRootPath@FileStorageArea@Core@@QEBAAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@XZ
     MCAPI class Core::PathBuffer<std::string> const& getRootPath() const;
+
+    // symbol: ?removeStateListener@FileStorageArea@Core@@QEAAXPEAVStorageAreaStateListener@2@@Z
+    MCAPI void removeStateListener(class Core::StorageAreaStateListener*);
 
     // symbol:
     // ?getStorageAreaForPath@FileStorageArea@Core@@SA?AVResult@2@AEAV?$shared_ptr@VFileStorageArea@Core@@@std@@AEBVPath@2@@Z

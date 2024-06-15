@@ -16,10 +16,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?buildNetworkTag@VanillaBlockData@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-    MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-
     // symbol: ?bindType@VanillaBlockData@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 

@@ -25,6 +25,9 @@ MCAPI struct TickingSystemWithInfo createImmuneSpiderSystem();
 // symbol: ?createImmuneWitherBossSystem@BlockMovementSlowdownMultiplierSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createImmuneWitherBossSystem();
 
+// symbol: ?createWeavingMobSystem@BlockMovementSlowdownMultiplierSystem@@YA?AUTickingSystemWithInfo@@XZ
+MCAPI struct TickingSystemWithInfo createWeavingMobSystem();
+
 // symbol:
 // ?tickAdjustFallDistance@BlockMovementSlowdownMultiplierSystem@@YAXAEBUBlockMovementSlowdownAppliedComponent@@AEAUFallDistanceComponent@@@Z
 MCAPI void tickAdjustFallDistance(struct BlockMovementSlowdownAppliedComponent const&, struct FallDistanceComponent&);
@@ -43,6 +46,11 @@ tickImmunePlayer(class StrictEntityContext const&, struct BlockMovementSlowdownM
 // ?tickImmuneSlowdown@BlockMovementSlowdownMultiplierSystem@@YAXAEBVStrictEntityContext@@AEAUBlockMovementSlowdownMultiplierComponent@@V?$EntityModifier@UBlockMovementSlowdownAppliedComponent@@@@@Z
 MCAPI void
 tickImmuneSlowdown(class StrictEntityContext const&, struct BlockMovementSlowdownMultiplierComponent&, class EntityModifier<struct BlockMovementSlowdownAppliedComponent>);
+
+// symbol:
+// ?tickWeavingSlowdownOverride@BlockMovementSlowdownMultiplierSystem@@YAXAEBVStrictEntityContext@@AEAUBlockMovementSlowdownMultiplierComponent@@AEBUMobEffectsComponent@@@Z
+MCAPI void
+tickWeavingSlowdownOverride(class StrictEntityContext const&, struct BlockMovementSlowdownMultiplierComponent&, struct MobEffectsComponent const&);
 // NOLINTEND
 
 }; // namespace BlockMovementSlowdownMultiplierSystem

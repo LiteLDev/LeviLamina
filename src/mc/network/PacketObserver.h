@@ -25,9 +25,6 @@ public:
         // symbol: ??0PacketStats@PacketObserver@@QEAA@I@Z
         MCAPI explicit PacketStats(uint id);
 
-        // symbol: ??YPacketStats@PacketObserver@@QEAAXAEBU01@@Z
-        MCAPI void operator+=(struct PacketObserver::PacketStats const& packetStats);
-
         // NOLINTEND
     };
 

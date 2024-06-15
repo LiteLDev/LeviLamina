@@ -30,10 +30,10 @@ public:
     // vIndex: 0, symbol: ??1RotatedPillarBlock@@UEAA@XZ
     virtual ~RotatedPillarBlock();
 
-    // vIndex: 95, symbol: ?asItemInstance@RotatedPillarBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96, symbol: ?asItemInstance@RotatedPillarBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
-    // vIndex: 97, symbol: ?getPlacementBlock@RotatedPillarBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+    // vIndex: 98, symbol: ?getPlacementBlock@RotatedPillarBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
     virtual class Block const& getPlacementBlock(
         class Actor const&    by,
         class BlockPos const& pos,
@@ -42,7 +42,7 @@ public:
         int                   itemValue
     ) const;
 
-    // vIndex: 131, symbol: ?getMappedFace@RotatedPillarBlock@@UEBAEEAEBVBlock@@@Z
+    // vIndex: 132, symbol: ?getMappedFace@RotatedPillarBlock@@UEBAEEAEBVBlock@@@Z
     virtual uchar getMappedFace(uchar face, class Block const& block) const;
 
     // symbol:

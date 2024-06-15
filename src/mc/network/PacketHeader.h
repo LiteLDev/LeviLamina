@@ -8,11 +8,4 @@ public:
     PacketHeader& operator=(PacketHeader const&);
     PacketHeader(PacketHeader const&);
     PacketHeader();
-
-public:
-    // NOLINTBEGIN
-    // symbol: ?getChannel@PacketHeader@@QEBAIXZ
-    MCAPI uint getChannel() const;
-
-    // NOLINTEND
 };

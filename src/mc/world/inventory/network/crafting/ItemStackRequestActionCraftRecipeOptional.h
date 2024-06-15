@@ -11,7 +11,6 @@ public:
     // prevent constructor by default
     ItemStackRequestActionCraftRecipeOptional& operator=(ItemStackRequestActionCraftRecipeOptional const&);
     ItemStackRequestActionCraftRecipeOptional(ItemStackRequestActionCraftRecipeOptional const&);
-    ItemStackRequestActionCraftRecipeOptional();
 
 public:
     // NOLINTBEGIN
@@ -27,6 +26,9 @@ public:
     // vIndex: 5, symbol:
     // ?_read@ItemStackRequestActionCraftRecipeOptional@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+
+    // symbol: ??0ItemStackRequestActionCraftRecipeOptional@@QEAA@XZ
+    MCAPI ItemStackRequestActionCraftRecipeOptional();
 
     // NOLINTEND
 };

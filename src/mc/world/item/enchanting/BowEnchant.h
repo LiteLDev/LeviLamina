@@ -26,7 +26,7 @@ public:
     // vIndex: 5, symbol: ?getMaxLevel@BowEnchant@@UEBAHXZ
     virtual int getMaxLevel() const;
 
-    // vIndex: 14, symbol: ?_isValidEnchantmentTypeForCategory@BowEnchant@@EEBA_NW4Type@Enchant@@@Z
+    // vIndex: 16, symbol: ?_isValidEnchantmentTypeForCategory@BowEnchant@@EEBA_NW4Type@Enchant@@@Z
     virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
 
     // NOLINTEND

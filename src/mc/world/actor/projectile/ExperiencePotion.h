@@ -10,7 +10,6 @@
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
-#include "mc/enums/ArmorTextureType.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/InputMode.h"
 #include "mc/enums/MaterialType.h"
@@ -39,13 +38,13 @@ public:
     // vIndex: 10, symbol: __gen_??1ExperiencePotion@@UEAA@XZ
     virtual ~ExperiencePotion() = default;
 
-    // vIndex: 153, symbol: ?getThrowPower@ExperiencePotion@@MEAAMXZ
+    // vIndex: 151, symbol: ?getThrowPower@ExperiencePotion@@MEAAMXZ
     virtual float getThrowPower();
 
-    // vIndex: 154, symbol: ?getThrowUpAngleOffset@ExperiencePotion@@MEAAMXZ
+    // vIndex: 152, symbol: ?getThrowUpAngleOffset@ExperiencePotion@@MEAAMXZ
     virtual float getThrowUpAngleOffset();
 
-    // vIndex: 155, symbol: ?getGravity@ExperiencePotion@@MEAAMXZ
+    // vIndex: 153, symbol: ?getGravity@ExperiencePotion@@MEAAMXZ
     virtual float getGravity();
 
     // symbol: ??0ExperiencePotion@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

@@ -6,6 +6,8 @@
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/Closure.h"
 #include "mc/external/scripting/Generator.h"
+#include "mc/external/scripting/Promise.h"
+#include "mc/external/scripting/Result.h"
 #include "mc/external/scripting/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
@@ -14,7 +16,10 @@ class ServerLevel;
 namespace ScriptModuleMinecraft { class ScriptSystemAfterEvents; }
 namespace ScriptModuleMinecraft { class ScriptSystemBeforeEvents; }
 namespace Scripting { class DependencyLocator; }
+namespace Scripting { class ScriptObjectFactory; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct EngineError; }
+namespace Scripting { struct Error; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -62,6 +67,12 @@ public:
     // symbol:
     // ?runTimeout@ScriptSystem@ScriptModuleMinecraft@@QEAAIV?$Closure@$$A6AXXZ$$V@Scripting@@V?$optional@I@std@@@Z
     MCAPI uint runTimeout(class Scripting::Closure<void()>, std::optional<uint> delay);
+
+    // symbol:
+    // ?waitTicks@ScriptSystem@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$Promise@XUError@Scripting@@X@Scripting@@UEngineError@2@@Scripting@@AEAVScriptObjectFactory@4@I@Z
+    MCAPI class Scripting::
+        Result<class Scripting::Promise<void, struct Scripting::Error, void>, struct Scripting::EngineError>
+        waitTicks(class Scripting::ScriptObjectFactory&, uint);
 
     // symbol:
     // ?bind@ScriptSystem@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptSystem@ScriptModuleMinecraft@@@Scripting@@XZ

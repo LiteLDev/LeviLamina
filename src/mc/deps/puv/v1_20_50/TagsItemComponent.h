@@ -13,11 +13,13 @@ struct TagsItemComponent {
 public:
     // prevent constructor by default
     TagsItemComponent& operator=(TagsItemComponent const&);
-    TagsItemComponent(TagsItemComponent const&);
     TagsItemComponent();
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0TagsItemComponent@v1_20_50@Puv@@QEAA@AEBU012@@Z
+    MCAPI TagsItemComponent(struct Puv::v1_20_50::TagsItemComponent const&);
+
     // symbol: ??1TagsItemComponent@v1_20_50@Puv@@QEAA@XZ
     MCAPI ~TagsItemComponent();
 

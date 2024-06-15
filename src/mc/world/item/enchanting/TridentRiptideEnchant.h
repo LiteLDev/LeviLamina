@@ -29,5 +29,17 @@ public:
     // vIndex: 5, symbol: ?getMaxLevel@TridentRiptideEnchant@@UEBAHXZ
     virtual int getMaxLevel() const;
 
+    // symbol:
+    // ??0TridentRiptideEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_view@DU?$char_traits@D@std@@@std@@2H_NH@Z
+    MCAPI TridentRiptideEnchant(
+        ::Enchant::Type      type,
+        ::Enchant::Frequency frequency,
+        std::string_view     stringId,
+        std::string_view     description,
+        int                  primarySlots,
+        bool                 isLootable,
+        int                  secondarySlots
+    );
+
     // NOLINTEND
 };

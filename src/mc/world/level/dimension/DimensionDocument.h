@@ -26,28 +26,6 @@ public:
         // Dimension inner types define
         struct Components {
         public:
-            // Components inner types declare
-            // clang-format off
-            struct Bounds;
-            // clang-format on
-
-            // Components inner types define
-            struct Bounds {
-            public:
-                // prevent constructor by default
-                Bounds& operator=(Bounds const&);
-                Bounds(Bounds const&);
-                Bounds();
-
-            public:
-                // NOLINTBEGIN
-                // symbol: ?bindType@Bounds@Components@Dimension@DimensionDocument@@SAXAEAUReflectionCtx@cereal@@@Z
-                MCAPI static void bindType(struct cereal::ReflectionCtx&);
-
-                // NOLINTEND
-            };
-
-        public:
             // prevent constructor by default
             Components(Components const&);
             Components();

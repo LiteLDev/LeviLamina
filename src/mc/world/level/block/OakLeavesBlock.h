@@ -31,13 +31,13 @@ public:
     // vIndex: 0, symbol: __gen_??1OakLeavesBlock@@UEAA@XZ
     virtual ~OakLeavesBlock() = default;
 
-    // vIndex: 121, symbol: ?getColor@OakLeavesBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 122, symbol: ?getColor@OakLeavesBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual int getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
 
-    // vIndex: 128, symbol: ?getVariant@OakLeavesBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129, symbol: ?getVariant@OakLeavesBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const&) const;
 
-    // vIndex: 159, symbol: ?getMapColor@OakLeavesBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 160, symbol: ?getMapColor@OakLeavesBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const&) const;
 
     // symbol:

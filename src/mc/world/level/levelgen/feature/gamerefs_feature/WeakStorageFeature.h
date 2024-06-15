@@ -27,9 +27,6 @@ public:
     // symbol: ??0WeakStorageFeature@@IEAA@$$QEAV0@@Z
     MCAPI WeakStorageFeature(class WeakStorageFeature&& other);
 
-    // symbol: ?_isSet@WeakStorageFeature@@IEBA_NXZ
-    MCAPI bool _isSet() const;
-
     // symbol: ??4WeakStorageFeature@@IEAAAEAV0@$$QEAV0@@Z
     MCAPI class WeakStorageFeature& operator=(class WeakStorageFeature&& other);
 

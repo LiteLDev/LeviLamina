@@ -10,12 +10,14 @@ public:
 public:
     // prevent constructor by default
     BreathableComponent& operator=(BreathableComponent const&);
-    BreathableComponent(BreathableComponent const&);
 
 public:
     // NOLINTBEGIN
     // symbol: ??0BreathableComponent@@QEAA@XZ
     MCAPI BreathableComponent();
+
+    // symbol: ??0BreathableComponent@@QEAA@AEBV0@@Z
+    MCAPI BreathableComponent(class BreathableComponent const&);
 
     // symbol: ?addAdditionalSaveData@BreathableComponent@@QEBAXAEAVCompoundTag@@@Z
     MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;

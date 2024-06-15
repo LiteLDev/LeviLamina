@@ -54,11 +54,16 @@ public:
         // symbol: ??8ShooterAmmunitionEntry@ShooterItemComponent@@QEBA_NAEBU01@@Z
         MCAPI bool operator==(struct ShooterItemComponent::ShooterAmmunitionEntry const&) const;
 
+        // symbol: ??1ShooterAmmunitionEntry@ShooterItemComponent@@QEAA@XZ
+        MCAPI ~ShooterAmmunitionEntry();
+
         // NOLINTEND
     };
 
 public:
     // prevent constructor by default
+    ShooterItemComponent& operator=(ShooterItemComponent const&);
+    ShooterItemComponent(ShooterItemComponent const&);
     ShooterItemComponent();
 
 public:
@@ -92,29 +97,14 @@ public:
     // vIndex: 8, symbol: ?_useOn@ItemComponent@@MEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
     virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
 
-    // vIndex: 9, symbol: ?_initializeComponent@ItemComponent@@MEAAXXZ
+    // vIndex: 9, symbol: ?_initializeComponent@ShooterItemComponent@@UEAAXXZ
     virtual void _initializeComponent();
-
-    // symbol: ??0ShooterItemComponent@@QEAA@AEBV0@@Z
-    MCAPI ShooterItemComponent(class ShooterItemComponent const&);
 
     // symbol: ??0ShooterItemComponent@@QEAA@AEBU0v1_20_50@Puv@@@Z
     MCAPI explicit ShooterItemComponent(struct Puv::v1_20_50::ShooterItemComponent const&);
 
-    // symbol: ??4ShooterItemComponent@@QEAAAEAV0@$$QEAV0@@Z
-    MCAPI class ShooterItemComponent& operator=(class ShooterItemComponent&&);
-
-    // symbol: ??4ShooterItemComponent@@QEAAAEAV0@AEBV0@@Z
-    MCAPI class ShooterItemComponent& operator=(class ShooterItemComponent const&);
-
     // symbol: ?releaseUsing@ShooterItemComponent@@QEBA_NAEAVItemStack@@PEAVPlayer@@H@Z
     MCAPI bool releaseUsing(class ItemStack& item, class Player* player, int durationLeft) const;
-
-    // symbol: ?use@ShooterItemComponent@@QEBA_NAEAVItemStack@@AEAVPlayer@@@Z
-    MCAPI bool use(class ItemStack& instance, class Player& player) const;
-
-    // symbol: ?useTimeDepleted@ShooterItemComponent@@QEBAXAEAVItemStack@@AEAVPlayer@@@Z
-    MCAPI void useTimeDepleted(class ItemStack&, class Player&) const;
 
     // symbol:
     // ?bindType@ShooterItemComponent@@SAXAEAUReflectionCtx@cereal@@AEBV?$vector@W4AllExperiments@@V?$allocator@W4AllExperiments@@@std@@@std@@V?$optional@VSemVersion@@@5@@Z

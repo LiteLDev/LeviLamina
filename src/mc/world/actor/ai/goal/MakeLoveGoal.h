@@ -37,9 +37,6 @@ public:
     // ?appendDebugInfo@MakeLoveGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0MakeLoveGoal@@QEAA@AEAVVillagerBase@@@Z
-    MCAPI explicit MakeLoveGoal(class VillagerBase& villager);
-
     // NOLINTEND
 
     // private:

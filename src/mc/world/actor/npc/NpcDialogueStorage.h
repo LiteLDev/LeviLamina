@@ -15,10 +15,6 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ?getScene@NpcDialogueStorage@@QEAAPEAUNpcDialogueScene@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI struct NpcDialogueScene* getScene(std::string const&);
-
-    // symbol:
     // ?getScene@NpcDialogueStorage@@QEBAPEBUNpcDialogueScene@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI struct NpcDialogueScene const* getScene(std::string const&) const;
 

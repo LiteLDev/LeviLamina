@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/external/scripting/DebuggerLogLevel.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { class IDebuggerController; }
@@ -52,6 +55,10 @@ public:
 
     // symbol: ?isConnected@ScriptDebugger@@QEBA_NXZ
     MCAPI bool isConnected() const;
+
+    // symbol:
+    // ?sendLog@ScriptDebugger@@QEAAXW4DebuggerLogLevel@Scripting@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+    MCAPI void sendLog(::Scripting::DebuggerLogLevel, std::string_view);
 
     // symbol: ?waitAutoAttach@ScriptDebugger@@QEAAXV?$duration@_JU?$ratio@$00$00@std@@@chrono@std@@0@Z
     MCAPI void waitAutoAttach(std::chrono::seconds, std::chrono::seconds);

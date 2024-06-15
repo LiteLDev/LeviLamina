@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Puv { class VersionRange; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -31,14 +32,11 @@ public:
     // symbol: ?bindType@ComponentItemData_v1_20_80@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
-    // symbol: ?moveDeprecatedData@ComponentItemData_v1_20_80@@SAXAEAU1@AEAUComponentItemData_v1_20_50@@@Z
-    MCAPI static void moveDeprecatedData(struct ComponentItemData_v1_20_80&, struct ComponentItemData_v1_20_50&);
+    // symbol: ?moveDeprecatedData@ComponentItemData_v1_20_80@@SAXAEAUComponentItemData_v1_20_60@@AEAU1@@Z
+    MCAPI static void moveDeprecatedData(struct ComponentItemData_v1_20_60&, struct ComponentItemData_v1_20_80&);
 
-    // symbol: ?FIRST_VERSION@ComponentItemData_v1_20_80@@2VSemVersion@@B
-    MCAPI static class SemVersion const FIRST_VERSION;
-
-    // symbol: ?LAST_VERSION@ComponentItemData_v1_20_80@@2VSemVersion@@B
-    MCAPI static class SemVersion const LAST_VERSION;
+    // symbol: ?SUPPORTED_VERSIONS@ComponentItemData_v1_20_80@@2VVersionRange@Puv@@B
+    MCAPI static class Puv::VersionRange const SUPPORTED_VERSIONS;
 
     // NOLINTEND
 };

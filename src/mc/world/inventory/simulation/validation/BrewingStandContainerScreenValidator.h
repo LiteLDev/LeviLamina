@@ -11,12 +11,14 @@ public:
     // prevent constructor by default
     BrewingStandContainerScreenValidator& operator=(BrewingStandContainerScreenValidator const&);
     BrewingStandContainerScreenValidator(BrewingStandContainerScreenValidator const&);
-    BrewingStandContainerScreenValidator();
 
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1BrewingStandContainerScreenValidator@@UEAA@XZ
     virtual ~BrewingStandContainerScreenValidator() = default;
+
+    // symbol: ??0BrewingStandContainerScreenValidator@@QEAA@XZ
+    MCAPI BrewingStandContainerScreenValidator();
 
     // NOLINTEND
 };

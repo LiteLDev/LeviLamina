@@ -17,11 +17,11 @@ namespace Puv::v1_20_50 { struct DiggerItemComponent; }
 namespace Puv::v1_20_50 { struct EnchantableItemComponent; }
 namespace Puv::v1_20_50 { struct EntityPlacerItemComponent; }
 namespace Puv::v1_20_50 { struct FoodItemComponent; }
-namespace Puv::v1_20_50 { struct IconItemComponent; }
 namespace Puv::v1_20_50 { struct InteractButtonItemComponent; }
 namespace Puv::v1_20_50 { struct PlanterItemComponent; }
 namespace Puv::v1_20_50 { struct ProjectileItemComponent; }
 namespace Puv::v1_20_50 { struct ShooterItemComponent; }
+namespace Puv::v1_20_50 { struct TagsItemComponent; }
 namespace Puv::v1_20_50::BlockDescriptorSerializer { struct BlockDescriptorProxy; }
 namespace cereal { class Constraint; }
 namespace cereal { class SerializerContext; }

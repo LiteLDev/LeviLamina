@@ -76,8 +76,14 @@ public:
     // symbol: ?getIntegrityValue@StructureSettings@@QEBAMXZ
     MCAPI float getIntegrityValue() const;
 
+    // symbol: ?getIsWaterLogged@StructureSettings@@QEBA_NXZ
+    MCAPI bool getIsWaterLogged() const;
+
     // symbol: ?getMirror@StructureSettings@@QEBA?AW4Mirror@@XZ
     MCAPI ::Mirror getMirror() const;
+
+    // symbol: ?getPivot@StructureSettings@@QEBAAEBVVec3@@XZ
+    MCAPI class Vec3 const& getPivot() const;
 
     // symbol: ?getRotation@StructureSettings@@QEBA?AW4Rotation@@XZ
     MCAPI ::Rotation getRotation() const;
@@ -106,6 +112,9 @@ public:
     // symbol: ?setAnimationSeconds@StructureSettings@@QEAAXM@Z
     MCAPI void setAnimationSeconds(float seconds);
 
+    // symbol: ?setAnimationTicks@StructureSettings@@QEAAXI@Z
+    MCAPI void setAnimationTicks(uint ticks);
+
     // symbol: ?setIgnoreBlocks@StructureSettings@@QEAAX_N@Z
     MCAPI void setIgnoreBlocks(bool ignoreBlocks);
 
@@ -123,6 +132,9 @@ public:
 
     // symbol: ?setIsWaterLogged@StructureSettings@@QEAAX_N@Z
     MCAPI void setIsWaterLogged(bool);
+
+    // symbol: ?setLastTouchedByPlayerID@StructureSettings@@QEAAXUActorUniqueID@@@Z
+    MCAPI void setLastTouchedByPlayerID(struct ActorUniqueID lastTouchedByPlayerID);
 
     // symbol: ?setMirror@StructureSettings@@QEAAXW4Mirror@@@Z
     MCAPI void setMirror(::Mirror mirror);

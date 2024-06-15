@@ -34,9 +34,9 @@ public:
     MCAPI ~WebToken();
 
     // symbol:
-    // ?createFromData@WebToken@@SA?AV?$unique_ptr@VWebToken@@U?$default_delete@VWebToken@@@std@@@std@@AEBVValue@Json@@AEBVPrivateKeyManager@@@Z
+    // ?createFromData@WebToken@@SA?AV?$unique_ptr@VWebToken@@U?$default_delete@VWebToken@@@std@@@std@@AEBVValue@Json@@AEBVPrivateKeyManager@@V?$variant@UPublicKeySignatureType@@UCertificateThumbprintSignatureType@@@3@@Z
     MCAPI static std::unique_ptr<class WebToken>
-    createFromData(class Json::Value const& dataInfo, class PrivateKeyManager const& manager);
+    createFromData(class Json::Value const&, class PrivateKeyManager const&, std::variant<struct PublicKeySignatureType, struct CertificateThumbprintSignatureType>);
 
     // NOLINTEND
 

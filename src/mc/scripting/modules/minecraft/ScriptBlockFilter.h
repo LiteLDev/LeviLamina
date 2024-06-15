@@ -18,11 +18,10 @@ namespace ScriptModuleMinecraft {
 
 class ScriptBlockFilter {
 public:
-    // prevent constructor by default
-    ScriptBlockFilter();
-
-public:
     // NOLINTBEGIN
+    // symbol: ??0ScriptBlockFilter@ScriptModuleMinecraft@@QEAA@XZ
+    MCAPI ScriptBlockFilter();
+
     // symbol: ??0ScriptBlockFilter@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
     MCAPI ScriptBlockFilter(class ScriptModuleMinecraft::ScriptBlockFilter&&);
 

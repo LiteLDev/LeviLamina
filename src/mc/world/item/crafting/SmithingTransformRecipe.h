@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/item/crafting/Recipe.h"
 #include "mc/world/item/crafting/ShapelessRecipe.h"
 
 // auto generated forward declare list
@@ -26,17 +27,17 @@ public:
     // ?assemble@SmithingTransformRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@AEAVCraftingContext@@@Z
     virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&, class CraftingContext&) const;
 
-    // vIndex: 6, symbol: ?matches@SmithingTransformRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
+    // vIndex: 5, symbol: ?matches@SmithingTransformRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
     virtual bool matches(class CraftingContainer const&, class CraftingContext const&) const;
 
     // symbol:
-    // ??0SmithingTransformRecipe@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVRecipeIngredient@@11AEBVItemInstance@@AEBVHashedString@@@Z
+    // ??0SmithingTransformRecipe@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVRecipeIngredient@@11$$QEAVResults@Recipe@@AEBVHashedString@@@Z
     MCAPI SmithingTransformRecipe(
         std::string const& recipeId,
         class RecipeIngredient const&,
         class RecipeIngredient const&,
         class RecipeIngredient const&,
-        class ItemInstance const& resultItem,
+        class Recipe::Results&&   resultItem,
         class HashedString const& tag
     );
 

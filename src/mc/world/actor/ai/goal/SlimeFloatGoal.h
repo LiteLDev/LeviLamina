@@ -28,8 +28,5 @@ public:
     // ?appendDebugInfo@SlimeFloatGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0SlimeFloatGoal@@QEAA@AEAVMob@@@Z
-    MCAPI explicit SlimeFloatGoal(class Mob& mob);
-
     // NOLINTEND
 };

@@ -209,6 +209,9 @@ public:
         ::PlayerScoreSetFunction   action
     );
 
+    // symbol: ?registerScoreboardIdentity@Scoreboard@@QEAAAEBVScoreboardIdentityRef@@AEBVCompoundTag@@@Z
+    MCAPI class ScoreboardIdentityRef const& registerScoreboardIdentity(class CompoundTag const& loadedData);
+
     // symbol:
     // ?registerScoreboardIdentity@Scoreboard@@QEAAAEBVScoreboardIdentityRef@@AEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class ScoreboardIdentityRef const&
@@ -227,9 +230,6 @@ public:
     // symbol: ?removeObjective@Scoreboard@@QEAA_NPEAVObjective@@@Z
     MCAPI bool removeObjective(class Objective* objective);
 
-    // symbol: ?removeScoreListener@Scoreboard@@QEAAXAEBVPlayer@@@Z
-    MCAPI void removeScoreListener(class Player const& player);
-
     // symbol:
     // ?removeScoreListener@Scoreboard@@QEAAXAEBVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void removeScoreListener(class Player const& player, std::string const& objective);
@@ -242,9 +242,6 @@ public:
 
     // symbol: ?tryGetIdScore@Scoreboard@@QEBA?AV?$optional@UScoreInfo@@@std@@AEBUScoreboardId@@AEB_K@Z
     MCAPI std::optional<struct ScoreInfo> tryGetIdScore(struct ScoreboardId const&, uint64 const&) const;
-
-    // symbol: ?shouldClearScoresOnDeath@Scoreboard@@SA_NAEBVActor@@@Z
-    MCAPI static bool shouldClearScoresOnDeath(class Actor const& actor);
 
     // symbol: ?DEFAULT_CRITERIA@Scoreboard@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const DEFAULT_CRITERIA;

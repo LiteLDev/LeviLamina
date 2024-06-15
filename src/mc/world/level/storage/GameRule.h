@@ -117,8 +117,10 @@ public:
     // symbol: ?setInt@GameRule@@QEAA_NHPEA_NPEAVValidationError@1@@Z
     MCAPI bool setInt(int value, bool* pValidated, class GameRule::ValidationError* errorOutput);
 
-    // symbol: ?setTagDataNotFoundCallback@GameRule@@QEAAAEAV1@V?$function@$$A6AXAEAVGameRule@@@Z@std@@@Z
-    MCAPI class GameRule& setTagDataNotFoundCallback(TagDataNotFoundCallback cb);
+    // symbol:
+    // ?setTagDataNotFoundCallback@GameRule@@QEAAAEAV1@V?$function@$$A6AXAEAVGameRule@@AEBVBaseGameVersion@@@Z@std@@@Z
+    MCAPI class GameRule&
+        setTagDataNotFoundCallback(std::function<void(class GameRule&, class BaseGameVersion const&)>);
 
     // symbol:
     // ?setValidateValueCallback@GameRule@@QEAAAEAV1@V?$function@$$A6A_NAEBTValue@GameRule@@PEAVValidationError@2@@Z@std@@@Z

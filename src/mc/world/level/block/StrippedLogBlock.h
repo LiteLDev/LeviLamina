@@ -30,10 +30,10 @@ public:
     // vIndex: 0, symbol: __gen_??1StrippedLogBlock@@UEAA@XZ
     virtual ~StrippedLogBlock() = default;
 
-    // vIndex: 128, symbol: ?getVariant@StrippedLogBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129, symbol: ?getVariant@StrippedLogBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const&) const;
 
-    // vIndex: 159, symbol:
+    // vIndex: 160, symbol:
     // ?getMapColor@StrippedLogBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual class mce::Color
     getMapColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;

@@ -26,11 +26,22 @@ public:
     // vIndex: 5, symbol: ?getMaxLevel@SwiftSneakEnchant@@UEBAHXZ
     virtual int getMaxLevel() const;
 
-    // vIndex: 12, symbol: ?isTreasureOnly@SwiftSneakEnchant@@UEBA_NXZ
+    // vIndex: 14, symbol: ?isTreasureOnly@SwiftSneakEnchant@@UEBA_NXZ
     virtual bool isTreasureOnly() const;
 
-    // vIndex: 13, symbol: ?isDiscoverable@SwiftSneakEnchant@@UEBA_NXZ
+    // vIndex: 15, symbol: ?isDiscoverable@SwiftSneakEnchant@@UEBA_NXZ
     virtual bool isDiscoverable() const;
+
+    // symbol:
+    // ??0SwiftSneakEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_view@DU?$char_traits@D@std@@@std@@2HH@Z
+    MCAPI SwiftSneakEnchant(
+        ::Enchant::Type      type,
+        ::Enchant::Frequency frequency,
+        std::string_view     stringId,
+        std::string_view     description,
+        int                  primarySlots,
+        int                  secondarySlots
+    );
 
     // symbol: ?getExtraSneakingMovementFactor@SwiftSneakEnchant@@SAMAEBVActor@@@Z
     MCAPI static float getExtraSneakingMovementFactor(class Actor const& entity);

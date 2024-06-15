@@ -39,10 +39,10 @@ public:
     // vIndex: 25, symbol: ?canConnect@ChainBlock@@UEBA_NAEBVBlock@@E0@Z
     virtual bool canConnect(class Block const& otherBlock, uchar toOther, class Block const& thisBlock) const;
 
-    // vIndex: 56, symbol: ?canContainLiquid@ChainBlock@@UEBA_NXZ
+    // vIndex: 57, symbol: ?canContainLiquid@ChainBlock@@UEBA_NXZ
     virtual bool canContainLiquid() const;
 
-    // vIndex: 95, symbol: ?asItemInstance@ChainBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96, symbol: ?asItemInstance@ChainBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
     // symbol: ??0ChainBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z

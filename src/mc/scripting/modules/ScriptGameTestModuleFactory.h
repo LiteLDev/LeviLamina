@@ -14,7 +14,6 @@ namespace Scripting { struct ModuleBinding; }
 namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting { struct UUID; }
 namespace Scripting { struct Version; }
-namespace gametest { class GameTestRegistry; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -29,9 +28,6 @@ public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1ScriptGameTestModuleFactory@@UEAA@XZ
     virtual ~ScriptGameTestModuleFactory() = default;
-
-    // symbol: ??0ScriptGameTestModuleFactory@@QEAA@AEAVGameTestRegistry@gametest@@@Z
-    MCAPI explicit ScriptGameTestModuleFactory(class gametest::GameTestRegistry&);
 
     // symbol:
     // ?getModuleUUIDAsString@ScriptGameTestModuleFactory@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ

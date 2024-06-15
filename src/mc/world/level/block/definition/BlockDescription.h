@@ -12,11 +12,10 @@ public:
     // BlockDescription inner types define
     struct BlockTraits {
     public:
-        // prevent constructor by default
-        BlockTraits();
-
-    public:
         // NOLINTBEGIN
+        // symbol: ??0BlockTraits@BlockDescription@@QEAA@XZ
+        MCAPI BlockTraits();
+
         // symbol: ??0BlockTraits@BlockDescription@@QEAA@AEBU01@@Z
         MCAPI BlockTraits(struct BlockDescription::BlockTraits const&);
 

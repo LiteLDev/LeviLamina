@@ -101,18 +101,20 @@ public:
         bool                isClientSide
     );
 
-    // symbol: ?getContainerEnumName@ContainerModel@@QEBA?AW4ContainerEnumName@@XZ
-    MCAPI ::ContainerEnumName getContainerEnumName() const;
+    // symbol: ?_useLegacyTransactions@ContainerModel@@QEBA_NXZ
+    MCAPI bool _useLegacyTransactions() const;
 
-    // symbol:
-    // ?getContainerStringName@ContainerModel@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-    MCAPI std::string const& getContainerStringName() const;
+    // symbol: ?getContainerSlot@ContainerModel@@QEBAHH@Z
+    MCAPI int getContainerSlot(int modelSlot) const;
 
-    // symbol: ?initContainerRuntimeId@ContainerModel@@QEAAXXZ
-    MCAPI void initContainerRuntimeId();
+    // symbol: ?getModelSlot@ContainerModel@@QEBAHH@Z
+    MCAPI int getModelSlot(int containerSlot) const;
 
     // symbol: ?isContainerSlotInRange@ContainerModel@@QEBA_NH@Z
     MCAPI bool isContainerSlotInRange(int containerSlot) const;
+
+    // symbol: ?isIntermediaryCategory@ContainerModel@@QEBA_NXZ
+    MCAPI bool isIntermediaryCategory() const;
 
     // symbol: ?networkUpdateItem@ContainerModel@@QEAAXHAEBVItemStack@@0@Z
     MCAPI void networkUpdateItem(int modelSlot, class ItemStack const& oldItem, class ItemStack const& newItem);
@@ -127,11 +129,15 @@ public:
     registerPlayerNotificationCallback(std::function<void(int, class ItemStack const&, class ItemStack const&)> callback
     );
 
-    // symbol: ?serverInitItemStackIds@ContainerModel@@QEAAXXZ
-    MCAPI void serverInitItemStackIds();
+    // symbol: ?setItemSource@ContainerModel@@QEAAXHAEBUSlotData@@@Z
+    MCAPI void setItemSource(int slot, struct SlotData const& srcSlot);
 
-    // symbol: ?setClientUIContainer@ContainerModel@@QEAAXPEAVSparseContainerClient@@@Z
-    MCAPI void setClientUIContainer(class SparseContainerClient*);
+    // NOLINTEND
+
+    // protected:
+    // NOLINTBEGIN
+    // symbol: ?_notifyPlayer@ContainerModel@@IEAAXHAEBVItemStack@@0@Z
+    MCAPI void _notifyPlayer(int modelSlot, class ItemStack const& oldItem, class ItemStack const& newItem);
 
     // NOLINTEND
 

@@ -10,7 +10,6 @@
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
-#include "mc/enums/ArmorTextureType.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/InputMode.h"
 #include "mc/enums/MaterialType.h"
@@ -42,10 +41,10 @@ public:
     // vIndex: 10, symbol: __gen_??1Tadpole@@UEAA@XZ
     virtual ~Tadpole() = default;
 
-    // vIndex: 192, symbol: ?getFlopVerticalVelocityFactor@Tadpole@@UEBAMXZ
+    // vIndex: 190, symbol: ?getFlopVerticalVelocityFactor@Tadpole@@UEBAMXZ
     virtual float getFlopVerticalVelocityFactor() const;
 
-    // vIndex: 193, symbol: ?getFlopHorizontalVelocityFactor@Tadpole@@UEBAMXZ
+    // vIndex: 191, symbol: ?getFlopHorizontalVelocityFactor@Tadpole@@UEBAMXZ
     virtual float getFlopHorizontalVelocityFactor() const;
 
     // symbol: ??0Tadpole@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

@@ -19,8 +19,8 @@ public:
     // symbol: ??0SeedItemComponentLegacy@@QEAA@AEAVItem@@@Z
     MCAPI explicit SeedItemComponentLegacy(class Item& owner);
 
-    // symbol: ?init@SeedItemComponentLegacy@@QEAA_NAEAVValue@Json@@AEBVSemVersion@@@Z
-    MCAPI bool init(class Json::Value& data, class SemVersion const& engineVersion);
+    // symbol: ?init@SeedItemComponentLegacy@@QEAA_NAEBVValue@Json@@AEBVSemVersion@@@Z
+    MCAPI bool init(class Json::Value const& data, class SemVersion const& engineVersion);
 
     // symbol: ?isPlanting@SeedItemComponentLegacy@@QEBA_NXZ
     MCAPI bool isPlanting() const;

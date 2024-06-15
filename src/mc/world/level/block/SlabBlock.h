@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/WeakPtr.h"
 #include "mc/common/wrapper/optional_ref.h"
 #include "mc/enums/FertilizerType.h"
 #include "mc/enums/Flip.h"
@@ -46,37 +45,37 @@ public:
         class BlockPos const&                                           pos
     ) const;
 
-    // vIndex: 38, symbol: ?isSlabBlock@SlabBlock@@UEBA_NXZ
+    // vIndex: 39, symbol: ?isSlabBlock@SlabBlock@@UEBA_NXZ
     virtual bool isSlabBlock() const;
 
-    // vIndex: 39, symbol: ?isDoubleSlabBlock@SlabBlock@@UEBA_NXZ
+    // vIndex: 40, symbol: ?isDoubleSlabBlock@SlabBlock@@UEBA_NXZ
     virtual bool isDoubleSlabBlock() const;
 
-    // vIndex: 61, symbol: ?checkIsPathable@SlabBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
+    // vIndex: 62, symbol: ?checkIsPathable@SlabBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
     virtual bool
     checkIsPathable(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
 
-    // vIndex: 72, symbol: ?getRedstoneProperty@SlabBlock@@UEBA?AW4BlockProperty@@AEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 73, symbol: ?getRedstoneProperty@SlabBlock@@UEBA?AW4BlockProperty@@AEAVBlockSource@@AEBVBlockPos@@@Z
     virtual ::BlockProperty getRedstoneProperty(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 89, symbol: ?breaksFallingBlocks@SlabBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
+    // vIndex: 90, symbol: ?breaksFallingBlocks@SlabBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
     virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
 
-    // vIndex: 95, symbol: ?asItemInstance@SlabBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96, symbol: ?asItemInstance@SlabBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 106, symbol: ?getMobToSpawn@SlabBlock@@UEBAPEBVMobSpawnerData@@AEBVSpawnConditions@@AEAVBlockSource@@@Z
+    // vIndex: 107, symbol: ?getMobToSpawn@SlabBlock@@UEBAPEBVMobSpawnerData@@AEBVSpawnConditions@@AEAVBlockSource@@@Z
     virtual class MobSpawnerData const*
     getMobToSpawn(class SpawnConditions const& conditions, class BlockSource& region) const;
 
     // symbol:
-    // ??0SlabBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NAEBVMaterial@@V?$WeakPtr@$$CBVBlockLegacy@@@@@Z
+    // ??0SlabBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NAEBVMaterial@@AEBVHashedString@@@Z
     MCAPI SlabBlock(
-        std::string const&                     nameId,
-        int                                    id,
-        bool                                   _fullsize,
-        class Material const&                  mat,
-        class WeakPtr<class BlockLegacy const> baseSlab
+        std::string const&        nameId,
+        int                       id,
+        bool                      _fullsize,
+        class Material const&     mat,
+        class HashedString const& baseSlab
     );
 
     // NOLINTEND

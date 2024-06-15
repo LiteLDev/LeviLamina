@@ -21,9 +21,9 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ??0LevelStorageManager@@QEAA@V?$OwnerPtr@VLevelStorage@@@@V?$unique_ptr@VGameDataSaveTimer@@U?$default_delete@VGameDataSaveTimer@@@std@@@std@@V?$unique_ptr@VUserStorageChecker@@U?$default_delete@VUserStorageChecker@@@std@@@3@@Z
+    // ??0LevelStorageManager@@QEAA@V?$OwnerPtr@VLevelStorage@@@@V?$unique_ptr@VGameDataSaveTimer@@U?$default_delete@VGameDataSaveTimer@@@std@@@std@@V?$unique_ptr@VUserStorageChecker@@U?$default_delete@VUserStorageChecker@@@std@@@3@AEAVIMinecraftEventing@@@Z
     MCAPI
-    LevelStorageManager(class OwnerPtr<class LevelStorage>, std::unique_ptr<class GameDataSaveTimer>, std::unique_ptr<class UserStorageChecker>);
+    LevelStorageManager(class OwnerPtr<class LevelStorage>, std::unique_ptr<class GameDataSaveTimer>, std::unique_ptr<class UserStorageChecker>, class IMinecraftEventing&);
 
     // symbol: ?getLevelStorage@LevelStorageManager@@QEAAAEAVLevelStorage@@XZ
     MCAPI class LevelStorage& getLevelStorage();
@@ -56,11 +56,6 @@ public:
     // symbol:
     // ?registerOnCanStartGameSaveTimerCheckCallback@LevelStorageManager@@QEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6A_NXZ@std@@@Z
     MCAPI class Bedrock::PubSub::Subscription registerOnCanStartGameSaveTimerCheckCallback(std::function<bool()>);
-
-    // symbol:
-    // ?registerOnPollSaveGameStatisticsCallback@LevelStorageManager@@QEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXAEAVLevelStorage@@@Z@std@@@Z
-    MCAPI class Bedrock::PubSub::Subscription
-        registerOnPollSaveGameStatisticsCallback(std::function<void(class LevelStorage&)>);
 
     // symbol:
     // ?registerOnSaveCallback@LevelStorageManager@@QEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXAEAVLevelStorage@@@Z@std@@@Z

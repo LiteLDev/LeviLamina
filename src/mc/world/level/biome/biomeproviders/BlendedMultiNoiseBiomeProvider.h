@@ -24,6 +24,12 @@ public:
         class BiomeRegistry const& biomeRegistry
     );
 
+    // symbol: ?hasBiome@BlendedMultiNoiseBiomeProvider@@QEBA_N_K@Z
+    MCAPI bool hasBiome(uint64) const;
+
+    // symbol: ?hasBiomeByHashId@BlendedMultiNoiseBiomeProvider@@QEBA_N_K@Z
+    MCAPI bool hasBiomeByHashId(uint64) const;
+
     // symbol: ?tryGetBiome@BlendedMultiNoiseBiomeProvider@@QEBAPEBVBiome@@AEBUGetBiomeOptions@@@Z
     MCAPI class Biome const* tryGetBiome(struct GetBiomeOptions const&) const;
 
@@ -35,14 +41,6 @@ public:
 
     // symbol: ??1BlendedMultiNoiseBiomeProvider@@QEAA@XZ
     MCAPI ~BlendedMultiNoiseBiomeProvider();
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    // symbol:
-    // ?_selectBestFittingBiome@BlendedMultiNoiseBiomeProvider@@AEBAPEBVBiome@@AEBUTargetPoint@@PEAUHint@RTree@@@Z
-    MCAPI class Biome const* _selectBestFittingBiome(struct TargetPoint const& current, struct RTree::Hint*) const;
 
     // NOLINTEND
 };

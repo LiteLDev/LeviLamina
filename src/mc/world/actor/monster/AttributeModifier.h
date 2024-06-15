@@ -71,9 +71,6 @@ public:
     // symbol: ?getOperation@AttributeModifier@@QEBAHXZ
     MCAPI int getOperation() const;
 
-    // symbol: ?isSerializable@AttributeModifier@@QEBA_NXZ
-    MCAPI bool isSerializable() const;
-
     // symbol: ??4AttributeModifier@@QEAAAEAV0@AEBV0@@Z
     MCAPI class AttributeModifier& operator=(class AttributeModifier const& rhs);
 

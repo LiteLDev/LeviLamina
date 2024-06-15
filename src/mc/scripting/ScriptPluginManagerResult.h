@@ -17,11 +17,15 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ?getOrCreatePluginResults@ScriptPluginManagerResult@@QEAAAEAVScriptPluginResult@@AEBUModuleDescriptor@Scripting@@@Z
-    MCAPI class ScriptPluginResult& getOrCreatePluginResults(struct Scripting::ModuleDescriptor const& descriptor);
+    // ?getOrCreatePluginResults@ScriptPluginManagerResult@@QEAAAEAVScriptPluginResult@@UPackIdVersion@@AEBUModuleDescriptor@Scripting@@@Z
+    MCAPI class ScriptPluginResult&
+    getOrCreatePluginResults(struct PackIdVersion, struct Scripting::ModuleDescriptor const&);
 
-    // symbol: ?writeToContentLog@ScriptPluginManagerResult@@QEBAXXZ
-    MCAPI void writeToContentLog() const;
+    // symbol: ?logMessages@ScriptPluginManagerResult@@QEBAXXZ
+    MCAPI void logMessages() const;
+
+    // symbol: ?logPlugins@ScriptPluginManagerResult@@QEBAXXZ
+    MCAPI void logPlugins() const;
 
     // symbol: ??1ScriptPluginManagerResult@@QEAA@XZ
     MCAPI ~ScriptPluginManagerResult();

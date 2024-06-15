@@ -26,8 +26,8 @@ MCAPI struct TickingSystemWithInfo createHoneyOrSlimeStandOnSystem();
 MCAPI void onStandOnSlowingBlock(class Vec3&, bool);
 
 // symbol:
-// ?tickNotifierFilter@BlockPosNotificationSystem@@YAXU?$type_list@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@UOnGroundFlag@@@@@@@entt@@AEBVStrictEntityContext@@AEBUBlockPosTrackerComponent@@AEBV?$Optional@$$CBUVehicleInputIntentComponent@@@@V?$EntityModifier@V?$FlagComponent@UStandOnHoneyOrSlimeBlock@@@@V?$FlagComponent@UStandOnOtherBlock@@@@@@@Z
-MCAPI void tickNotifierFilter(entt::type_list<struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct OnGroundFlag>>>, class StrictEntityContext const&, struct BlockPosTrackerComponent const&, class Optional<struct VehicleInputIntentComponent const> const&, class EntityModifier<class FlagComponent<struct StandOnHoneyOrSlimeBlock>, class FlagComponent<struct StandOnOtherBlock>>);
+// ?tickNotifierFilter@BlockPosNotificationSystem@@YAXU?$type_list@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@UOnGroundFlagComponent@@@@@entt@@AEBVStrictEntityContext@@AEBUBlockPosTrackerComponent@@AEBV?$Optional@$$CBUVehicleInputIntentComponent@@@@V?$EntityModifier@V?$FlagComponent@UStandOnHoneyOrSlimeBlock@@@@V?$FlagComponent@UStandOnOtherBlock@@@@@@@Z
+MCAPI void tickNotifierFilter(entt::type_list<struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, struct OnGroundFlagComponent>>, class StrictEntityContext const&, struct BlockPosTrackerComponent const&, class Optional<struct VehicleInputIntentComponent const> const&, class EntityModifier<class FlagComponent<struct StandOnHoneyOrSlimeBlock>, class FlagComponent<struct StandOnOtherBlock>>);
 // NOLINTEND
 
 }; // namespace BlockPosNotificationSystem

@@ -27,6 +27,9 @@ public:
     // vIndex: 4, symbol: ?postRequest@ScreenHandlerBeacon@@MEAAX_N@Z
     virtual void postRequest(bool wasSuccess);
 
+    // symbol: ??0ScreenHandlerBeacon@@QEAA@AEBVContainerScreenContext@@AEAVItemStackRequestActionHandler@@@Z
+    MCAPI ScreenHandlerBeacon(class ContainerScreenContext const& screenContext, class ItemStackRequestActionHandler&);
+
     // NOLINTEND
 
     // private:

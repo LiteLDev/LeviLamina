@@ -11,11 +11,13 @@ struct ScriptItemStopUseOnAfterEvent {
 public:
     // prevent constructor by default
     ScriptItemStopUseOnAfterEvent& operator=(ScriptItemStopUseOnAfterEvent const&);
-    ScriptItemStopUseOnAfterEvent(ScriptItemStopUseOnAfterEvent const&);
     ScriptItemStopUseOnAfterEvent();
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0ScriptItemStopUseOnAfterEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
+    MCAPI ScriptItemStopUseOnAfterEvent(struct ScriptModuleMinecraft::ScriptItemStopUseOnAfterEvent const&);
+
     // symbol: ??4ScriptItemStopUseOnAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptItemStopUseOnAfterEvent&
     operator=(struct ScriptModuleMinecraft::ScriptItemStopUseOnAfterEvent&&);

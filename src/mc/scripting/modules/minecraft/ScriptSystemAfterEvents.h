@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/StrongTypedObjectHandle.h"
 #include "mc/external/scripting/TypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/ScriptAsyncEventMetadata.h"
 
@@ -12,7 +11,6 @@
 class ServerLevel;
 namespace Json { class Value; }
 namespace ScriptModuleMinecraft { class ScriptTickSignal; }
-namespace ScriptModuleMinecraft { struct ScriptEventCommandMessageAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptTickEvent; }
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -101,11 +99,6 @@ public:
 
     // symbol: ?getScriptTickSignal@ScriptSystemAfterEvents@ScriptModuleMinecraft@@QEAAAEAVScriptTickSignal@2@XZ
     MCAPI class ScriptModuleMinecraft::ScriptTickSignal& getScriptTickSignal();
-
-    // symbol:
-    // ?onScriptCommandMessageEvent@ScriptSystemAfterEvents@ScriptModuleMinecraft@@QEAAXV?$StrongTypedObjectHandle@UScriptEventCommandMessageAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
-    MCAPI void onScriptCommandMessageEvent(class Scripting::StrongTypedObjectHandle<
-                                           struct ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent>);
 
     // symbol: ??4ScriptSystemAfterEvents@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptSystemAfterEvents&

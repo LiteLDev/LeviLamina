@@ -90,6 +90,9 @@ public:
     // symbol: ?log@ContentLog@@QEAAX_NW4LogLevel@@W4LogArea@@ZZ
     MCAPI void log(bool, ::LogLevel, ::LogArea, ...);
 
+    // symbol: ?unregisterEndPoint@ContentLog@@QEAAXV?$not_null@PEAVContentLogEndPoint@@@gsl@@@Z
+    MCAPI void unregisterEndPoint(gsl::not_null<class ContentLogEndPoint*> endPoint);
+
     // symbol: ?updateEnabledStatus@ContentLog@@QEAAXXZ
     MCAPI void updateEnabledStatus();
 

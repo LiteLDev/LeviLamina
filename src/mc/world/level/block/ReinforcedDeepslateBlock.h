@@ -30,7 +30,7 @@ public:
     // vIndex: 0, symbol: __gen_??1ReinforcedDeepslateBlock@@UEAA@XZ
     virtual ~ReinforcedDeepslateBlock() = default;
 
-    // vIndex: 47, symbol: ?canBeOriginalSurface@ReinforcedDeepslateBlock@@UEBA_NXZ
+    // vIndex: 48, symbol: ?canBeOriginalSurface@ReinforcedDeepslateBlock@@UEBA_NXZ
     virtual bool canBeOriginalSurface() const;
 
     // symbol: ??0ReinforcedDeepslateBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

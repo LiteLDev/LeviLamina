@@ -17,7 +17,7 @@ public:
     // vIndex: 0, symbol: __gen_??1AttackDamageMobEffect@@UEAA@XZ
     virtual ~AttackDamageMobEffect() = default;
 
-    // vIndex: 6, symbol: ?getAttributeModifierValue@AttackDamageMobEffect@@UEBAMHAEBVAttributeModifier@@@Z
+    // vIndex: 8, symbol: ?getAttributeModifierValue@AttackDamageMobEffect@@UEBAMHAEBVAttributeModifier@@@Z
     virtual float getAttributeModifierValue(int amplifier, class AttributeModifier const& modifier) const;
 
     // symbol: ??0AttackDamageMobEffect@@QEAA@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_NHH@Z

@@ -254,10 +254,6 @@ public:
     // symbol: ?_validateChildrenAreNumerical@ExpressionNode@@AEBA_NW4MolangVersion@@@Z
     MCAPI bool _validateChildrenAreNumerical(::MolangVersion version) const;
 
-    // symbol: ?executeMolangProgram@ExpressionNode@@AEBAAEBUMolangScriptArg@@AEAVRenderParams@@AEAUMolangEvalParams@@@Z
-    MCAPI struct MolangScriptArg const&
-    executeMolangProgram(class RenderParams& renderParams, struct MolangEvalParams& state) const;
-
     // symbol: ?findClosingOp@ExpressionNode@@AEBA_NAEA_KW4ExpressionOp@@@Z
     MCAPI bool findClosingOp(uint64& i, ::ExpressionOp endOp) const;
 

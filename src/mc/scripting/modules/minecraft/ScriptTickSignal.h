@@ -49,6 +49,9 @@ public:
 
     public:
         // NOLINTBEGIN
+        // symbol: ??0Slot@ScriptTickSignal@ScriptModuleMinecraft@@QEAA@$$QEAU012@@Z
+        MCAPI Slot(struct ScriptModuleMinecraft::ScriptTickSignal::Slot&&);
+
         // symbol: ??1Slot@ScriptTickSignal@ScriptModuleMinecraft@@QEAA@XZ
         MCAPI ~Slot();
 
@@ -69,6 +72,9 @@ public:
 
     // symbol: ?scheduleTimeout@ScriptTickSignal@ScriptModuleMinecraft@@QEAAI$$QEAV?$Closure@$$A6AXXZ$$V@Scripting@@II@Z
     MCAPI uint scheduleTimeout(class Scripting::Closure<void()>&&, uint delay, uint currentTick);
+
+    // symbol: ?scheduleTimeout@ScriptTickSignal@ScriptModuleMinecraft@@QEAAIV?$function@$$A6AXXZ@std@@II@Z
+    MCAPI uint scheduleTimeout(std::function<void()>, uint, uint);
 
     // symbol:
     // ?scheduleTimeoutSafe@ScriptTickSignal@ScriptModuleMinecraft@@QEAAI$$QEAV?$Closure@$$A6AXXZ$$V@Scripting@@I@Z

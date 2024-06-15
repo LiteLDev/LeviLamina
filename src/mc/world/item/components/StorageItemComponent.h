@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Puv::v1_20_50 { struct StorageItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -23,9 +22,6 @@ public:
     // vIndex: 0, symbol: __gen_??1StorageItemComponent@@UEAA@XZ
     virtual ~StorageItemComponent() = default;
 
-    // symbol: ??0StorageItemComponent@@QEAA@U0v1_20_50@Puv@@@Z
-    MCAPI explicit StorageItemComponent(struct Puv::v1_20_50::StorageItemComponent);
-
     // symbol: ?calculateAddableCount@StorageItemComponent@@QEBAIAEBVItemStack@@AEBVItemStackBase@@@Z
     MCAPI uint calculateAddableCount(class ItemStack const& item, class ItemStackBase const&) const;
 
@@ -40,9 +36,6 @@ public:
 
     // symbol: ?tryRemoveOneFromItemStack@StorageItemComponent@@QEBA?AVItemStack@@AEAV2@@Z
     MCAPI class ItemStack tryRemoveOneFromItemStack(class ItemStack& item) const;
-
-    // symbol: ?use@StorageItemComponent@@QEBA_NAEAVItemStack@@AEAVPlayer@@@Z
-    MCAPI bool use(class ItemStack& item, class Player& player) const;
 
     // symbol: ?getIdentifier@StorageItemComponent@@SAAEBVHashedString@@XZ
     MCAPI static class HashedString const& getIdentifier();

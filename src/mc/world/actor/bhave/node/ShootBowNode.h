@@ -11,7 +11,6 @@ public:
     // prevent constructor by default
     ShootBowNode& operator=(ShootBowNode const&);
     ShootBowNode(ShootBowNode const&);
-    ShootBowNode();
 
 public:
     // NOLINTBEGIN
@@ -23,6 +22,9 @@ public:
 
     // vIndex: 2, symbol: ?initializeFromDefinition@ShootBowNode@@EEAAXAEAVActor@@@Z
     virtual void initializeFromDefinition(class Actor& owner);
+
+    // symbol: ??0ShootBowNode@@QEAA@XZ
+    MCAPI ShootBowNode();
 
     // NOLINTEND
 };

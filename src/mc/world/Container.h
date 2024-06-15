@@ -76,106 +76,115 @@ public:
     // vIndex: 4, symbol: ?removeContentChangeListener@Container@@UEAAXPEAVContainerContentChangeListener@@@Z
     virtual void removeContentChangeListener(class ContainerContentChangeListener* listener);
 
-    // vIndex: 5, symbol: ?getItem@CraftingContainer@@UEBAAEBVItemStack@@H@Z
+    // vIndex: 5, symbol: ?addRemovedListener@Container@@UEAAXPEAVContainerRemovedListener@@@Z
+    virtual void addRemovedListener(class ContainerRemovedListener*);
+
+    // vIndex: 6, symbol: ?removeRemovedListener@Container@@UEAAXPEAVContainerRemovedListener@@@Z
+    virtual void removeRemovedListener(class ContainerRemovedListener*);
+
+    // vIndex: 7, symbol: ?getItem@CraftingContainer@@UEBAAEBVItemStack@@H@Z
     virtual class ItemStack const& getItem(int slot) const = 0;
 
-    // vIndex: 6, symbol: ?hasRoomForItem@Container@@UEAA_NAEBVItemStack@@@Z
+    // vIndex: 8, symbol: ?hasRoomForItem@Container@@UEAA_NAEBVItemStack@@@Z
     virtual bool hasRoomForItem(class ItemStack const& item);
 
-    // vIndex: 7, symbol: ?addItem@Container@@UEAA_NAEAVItemStack@@@Z
+    // vIndex: 9, symbol: ?addItem@Container@@UEAA_NAEAVItemStack@@@Z
     virtual bool addItem(class ItemStack& item);
 
-    // vIndex: 8, symbol: ?addItemWithForceBalance@Container@@UEAA_NAEAVItemStack@@@Z
+    // vIndex: 10, symbol: ?addItemWithForceBalance@Container@@UEAA_NAEAVItemStack@@@Z
     virtual bool addItemWithForceBalance(class ItemStack& item);
 
-    // vIndex: 9, symbol: ?addItemToFirstEmptySlot@Container@@UEAA_NAEBVItemStack@@@Z
+    // vIndex: 11, symbol: ?addItemToFirstEmptySlot@Container@@UEAA_NAEBVItemStack@@@Z
     virtual bool addItemToFirstEmptySlot(class ItemStack const& item);
 
-    // vIndex: 10, symbol: ?setItem@CraftingContainer@@UEAAXHAEBVItemStack@@@Z
+    // vIndex: 12, symbol: ?setItem@CraftingContainer@@UEAAXHAEBVItemStack@@@Z
     virtual void setItem(int slot, class ItemStack const& item) = 0;
 
-    // vIndex: 11, symbol: ?setItemWithForceBalance@Container@@UEAAXHAEBVItemStack@@_N@Z
+    // vIndex: 13, symbol: ?setItemWithForceBalance@Container@@UEAAXHAEBVItemStack@@_N@Z
     virtual void setItemWithForceBalance(int slot, class ItemStack const& item, bool forceBalanced);
 
-    // vIndex: 12, symbol: ?removeItem@Container@@UEAAXHH@Z
+    // vIndex: 14, symbol: ?removeItem@Container@@UEAAXHH@Z
     virtual void removeItem(int slot, int count);
 
-    // vIndex: 13, symbol: ?removeAllItems@Container@@UEAAXXZ
+    // vIndex: 15, symbol: ?removeAllItems@Container@@UEAAXXZ
     virtual void removeAllItems();
 
-    // vIndex: 14, symbol: ?removeAllItemsWithForceBalance@Container@@UEAAXXZ
+    // vIndex: 16, symbol: ?removeAllItemsWithForceBalance@Container@@UEAAXXZ
     virtual void removeAllItemsWithForceBalance();
 
-    // vIndex: 15, symbol: ?dropSlotContent@Container@@UEAAXAEAVBlockSource@@AEBVVec3@@_NH@Z
+    // vIndex: 17, symbol: ?containerRemoved@Container@@UEAAXXZ
+    virtual void containerRemoved();
+
+    // vIndex: 18, symbol: ?dropSlotContent@Container@@UEAAXAEAVBlockSource@@AEBVVec3@@_NH@Z
     virtual void dropSlotContent(class BlockSource&, class Vec3 const&, bool, int);
 
-    // vIndex: 16, symbol: ?dropContents@Container@@UEAAXAEAVBlockSource@@AEBVVec3@@_N@Z
+    // vIndex: 19, symbol: ?dropContents@Container@@UEAAXAEAVBlockSource@@AEBVVec3@@_N@Z
     virtual void dropContents(class BlockSource& region, class Vec3 const& pos, bool randomizeDrop);
 
-    // vIndex: 17, symbol: ?getContainerSize@CraftingContainer@@UEBAHXZ
+    // vIndex: 20, symbol: ?getContainerSize@CraftingContainer@@UEBAHXZ
     virtual int getContainerSize() const = 0;
 
-    // vIndex: 18, symbol: ?getMaxStackSize@CraftingContainer@@UEBAHXZ
+    // vIndex: 21, symbol: ?getMaxStackSize@CraftingContainer@@UEBAHXZ
     virtual int getMaxStackSize() const = 0;
 
-    // vIndex: 19, symbol: ?startOpen@EnderChestContainer@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 22, symbol: ?startOpen@EnderChestContainer@@UEAAXAEAVPlayer@@@Z
     virtual void startOpen(class Player& player) = 0;
 
-    // vIndex: 20, symbol: ?stopOpen@Container@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 23, symbol: ?stopOpen@Container@@UEAAXAEAVPlayer@@@Z
     virtual void stopOpen(class Player&);
 
-    // vIndex: 21, symbol: ?getSlotCopies@Container@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+    // vIndex: 24, symbol: ?getSlotCopies@Container@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
     virtual std::vector<class ItemStack> getSlotCopies() const;
 
-    // vIndex: 22, symbol:
+    // vIndex: 25, symbol:
     // ?getSlots@Container@@UEBA?BV?$vector@PEBVItemStack@@V?$allocator@PEBVItemStack@@@std@@@std@@XZ
     virtual std::vector<class ItemStack const*> const getSlots() const;
 
-    // vIndex: 23, symbol: ?getEmptySlotsCount@Container@@UEBAHXZ
+    // vIndex: 26, symbol: ?getEmptySlotsCount@Container@@UEBAHXZ
     virtual int getEmptySlotsCount() const;
 
-    // vIndex: 24, symbol: ?getItemCount@Container@@UEBAHAEBVItemStack@@@Z
+    // vIndex: 27, symbol: ?getItemCount@Container@@UEBAHAEBVItemStack@@@Z
     virtual int getItemCount(class ItemStack const& compare) const;
 
-    // vIndex: 25, symbol: ?findFirstSlotForItem@Container@@UEBAHAEBVItemStack@@@Z
+    // vIndex: 28, symbol: ?findFirstSlotForItem@Container@@UEBAHAEBVItemStack@@@Z
     virtual int findFirstSlotForItem(class ItemStack const& item) const;
 
-    // vIndex: 26, symbol: ?canPushInItem@Container@@UEBA_NHHAEBVItemStack@@@Z
+    // vIndex: 29, symbol: ?canPushInItem@Container@@UEBA_NHHAEBVItemStack@@@Z
     virtual bool canPushInItem(int, int, class ItemStack const&) const;
 
-    // vIndex: 27, symbol: ?canPullOutItem@Container@@UEBA_NHHAEBVItemStack@@@Z
+    // vIndex: 30, symbol: ?canPullOutItem@Container@@UEBA_NHHAEBVItemStack@@@Z
     virtual bool canPullOutItem(int, int, class ItemStack const&) const;
 
-    // vIndex: 28, symbol: ?setContainerChanged@Container@@UEAAXH@Z
+    // vIndex: 31, symbol: ?setContainerChanged@Container@@UEAAXH@Z
     virtual void setContainerChanged(int slot);
 
-    // vIndex: 29, symbol: ?setContainerMoved@Container@@UEAAXXZ
+    // vIndex: 32, symbol: ?setContainerMoved@Container@@UEAAXXZ
     virtual void setContainerMoved();
 
-    // vIndex: 30, symbol:
+    // vIndex: 33, symbol:
     // ?setCustomName@Container@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void setCustomName(std::string const& name);
 
-    // vIndex: 31, symbol: ?hasCustomName@Container@@UEBA_NXZ
+    // vIndex: 34, symbol: ?hasCustomName@Container@@UEBA_NXZ
     virtual bool hasCustomName() const;
 
-    // vIndex: 32, symbol: ?readAdditionalSaveData@Container@@UEAAXAEBVCompoundTag@@@Z
+    // vIndex: 35, symbol: ?readAdditionalSaveData@Container@@UEAAXAEBVCompoundTag@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag);
 
-    // vIndex: 33, symbol: ?addAdditionalSaveData@Container@@UEAAXAEAVCompoundTag@@@Z
+    // vIndex: 36, symbol: ?addAdditionalSaveData@Container@@UEAAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag);
 
-    // vIndex: 34, symbol:
+    // vIndex: 37, symbol:
     // ?createTransactionContext@Container@@UEAAXV?$function@$$A6AXAEAVContainer@@HAEBVItemStack@@1@Z@std@@V?$function@$$A6AXXZ@3@@Z
     virtual void createTransactionContext(TransactionContext callback, std::function<void()> execute);
 
-    // vIndex: 35, symbol: ?initializeContainerContents@Container@@UEAAXAEAVBlockSource@@@Z
+    // vIndex: 38, symbol: ?initializeContainerContents@Container@@UEAAXAEAVBlockSource@@@Z
     virtual void initializeContainerContents(class BlockSource& region);
 
-    // vIndex: 36, symbol: ?isEmpty@Container@@UEBA_NXZ
+    // vIndex: 39, symbol: ?isEmpty@Container@@UEBA_NXZ
     virtual bool isEmpty() const;
 
-    // vIndex: 37, symbol: ?isSlotDisabled@Container@@UEBA_NH@Z
+    // vIndex: 40, symbol: ?isSlotDisabled@Container@@UEBA_NH@Z
     virtual bool isSlotDisabled(int) const;
 
     // symbol: ??0Container@@QEAA@AEBV0@@Z
@@ -183,6 +192,9 @@ public:
 
     // symbol: ??0Container@@QEAA@W4ContainerType@@@Z
     MCAPI explicit Container(::ContainerType type);
+
+    // symbol: ??0Container@@QEAA@W4ContainerType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+    MCAPI Container(::ContainerType type, std::string const& name, bool customName);
 
     // symbol: ?addCloseListener@Container@@QEAAXPEAVContainerCloseListener@@@Z
     MCAPI void addCloseListener(class ContainerCloseListener*);
@@ -201,6 +213,9 @@ public:
 
     // symbol: ?getRuntimeId@Container@@QEBAAEBV?$TypedRuntimeId@UContainerRuntimeIdTag@@I$0A@@@XZ
     MCAPI ContainerRuntimeId const& getRuntimeId() const;
+
+    // symbol: ?hasRemovedListeners@Container@@QEBA_NXZ
+    MCAPI bool hasRemovedListeners() const;
 
     // symbol: ?initRuntimeId@Container@@QEAAXXZ
     MCAPI void initRuntimeId();
@@ -234,6 +249,9 @@ public:
 
     // symbol: ?_getEmptySlotsCount@Container@@IEBAHHH@Z
     MCAPI int _getEmptySlotsCount(int start, int end) const;
+
+    // symbol: ?_initRuntimeId@Container@@IEAAXAEBV?$TypedRuntimeId@UContainerRuntimeIdTag@@I$0A@@@@Z
+    MCAPI void _initRuntimeId(ContainerRuntimeId const& containerIdToCopy);
 
     // symbol: ?_serverInitId@Container@@IEAAXHAEAVItemStack@@V?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
     MCAPI void

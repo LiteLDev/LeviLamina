@@ -96,6 +96,9 @@ public:
     // symbol: ?onRemoved@ChestBlockActor@@UEAAXAEAVBlockSource@@@Z
     MCVAPI void onRemoved(class BlockSource&);
 
+    // symbol: ?openBy@ChestBlockActor@@UEAAXAEAVPlayer@@@Z
+    MCVAPI void openBy(class Player& p);
+
     // symbol: ?playCloseSound@ChestBlockActor@@MEAAXAEAVBlockSource@@@Z
     MCVAPI void playCloseSound(class BlockSource& region);
 
@@ -181,9 +184,6 @@ public:
 
     // symbol: ?onMove@ChestBlockActor@@QEAAXAEAVBlockSource@@AEBVBlockPos@@1@Z
     MCAPI void onMove(class BlockSource& region, class BlockPos const& from, class BlockPos const& to);
-
-    // symbol: ?openBy@ChestBlockActor@@QEAAXAEAVPlayer@@@Z
-    MCAPI void openBy(class Player& p);
 
     // symbol: ?pairWith@ChestBlockActor@@QEAAXPEAV1@_N@Z
     MCAPI void pairWith(class ChestBlockActor* chest, bool lead);

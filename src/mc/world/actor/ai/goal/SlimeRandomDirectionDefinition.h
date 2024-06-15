@@ -16,17 +16,12 @@ public:
     // prevent constructor by default
     SlimeRandomDirectionDefinition& operator=(SlimeRandomDirectionDefinition const&);
     SlimeRandomDirectionDefinition(SlimeRandomDirectionDefinition const&);
+    SlimeRandomDirectionDefinition();
 
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1SlimeRandomDirectionDefinition@@UEAA@XZ
     virtual ~SlimeRandomDirectionDefinition() = default;
-
-    // symbol: ??0SlimeRandomDirectionDefinition@@QEAA@XZ
-    MCAPI SlimeRandomDirectionDefinition();
-
-    // symbol: ?initialize@SlimeRandomDirectionDefinition@@QEBAXAEAVEntityContext@@AEAVSlimeRandomDirectionGoal@@@Z
-    MCAPI void initialize(class EntityContext& entity, class SlimeRandomDirectionGoal& goal) const;
 
     // symbol:
     // ?buildSchema@SlimeRandomDirectionDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VSlimeRandomDirectionDefinition@@@JsonUtil@@@3@@Z

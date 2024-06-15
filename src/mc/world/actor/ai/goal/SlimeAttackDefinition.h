@@ -16,17 +16,12 @@ public:
     // prevent constructor by default
     SlimeAttackDefinition& operator=(SlimeAttackDefinition const&);
     SlimeAttackDefinition(SlimeAttackDefinition const&);
+    SlimeAttackDefinition();
 
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1SlimeAttackDefinition@@UEAA@XZ
     virtual ~SlimeAttackDefinition() = default;
-
-    // symbol: ??0SlimeAttackDefinition@@QEAA@XZ
-    MCAPI SlimeAttackDefinition();
-
-    // symbol: ?initialize@SlimeAttackDefinition@@QEBAXAEAVEntityContext@@AEAVSlimeAttackGoal@@@Z
-    MCAPI void initialize(class EntityContext& entity, class SlimeAttackGoal& goal) const;
 
     // symbol:
     // ?buildSchema@SlimeAttackDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VSlimeAttackDefinition@@@JsonUtil@@@3@@Z

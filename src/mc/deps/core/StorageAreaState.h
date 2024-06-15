@@ -8,8 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace Core { class FileStorageArea; }
-namespace Core { class Path; }
-namespace Core { class StorageAreaStateListener; }
 // clang-format on
 
 namespace Core {
@@ -23,12 +21,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0StorageAreaState@Core@@QEAA@VPath@1@@Z
-    MCAPI explicit StorageAreaState(class Core::Path storageAreaRootPath);
-
-    // symbol: ?addListener@StorageAreaState@Core@@QEAAXPEAVStorageAreaStateListener@2@@Z
-    MCAPI void addListener(class Core::StorageAreaStateListener* l);
-
     // symbol: ?checkUserStorage@StorageAreaState@Core@@QEAAXAEAV?$weak_ptr@VFileStorageArea@Core@@@std@@_K11@Z
     MCAPI void checkUserStorage(std::weak_ptr<class Core::FileStorageArea>&, uint64, uint64, uint64);
 
@@ -40,9 +32,6 @@ public:
 
     // symbol: ?notifyCriticalDiskError@StorageAreaState@Core@@QEAAXAEBW4LevelStorageState@2@@Z
     MCAPI void notifyCriticalDiskError(::Core::LevelStorageState const& errorCode);
-
-    // symbol: ?removeListener@StorageAreaState@Core@@QEAAXPEAVStorageAreaStateListener@2@@Z
-    MCAPI void removeListener(class Core::StorageAreaStateListener* l);
 
     // symbol: ??1StorageAreaState@Core@@QEAA@XZ
     MCAPI ~StorageAreaState();

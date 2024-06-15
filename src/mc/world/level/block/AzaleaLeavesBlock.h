@@ -31,21 +31,21 @@ public:
     // vIndex: 0, symbol: __gen_??1AzaleaLeavesBlock@@UEAA@XZ
     virtual ~AzaleaLeavesBlock() = default;
 
-    // vIndex: 121, symbol: ?getColor@AzaleaLeavesBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 122, symbol: ?getColor@AzaleaLeavesBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual int getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
 
-    // vIndex: 125, symbol: ?onGraphicsModeChanged@AzaleaLeavesBlock@@UEAAXAEBUBlockGraphicsModeChangeContext@@@Z
+    // vIndex: 126, symbol: ?onGraphicsModeChanged@AzaleaLeavesBlock@@UEAAXAEBUBlockGraphicsModeChangeContext@@@Z
     virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const& context);
 
-    // vIndex: 128, symbol: ?getVariant@AzaleaLeavesBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129, symbol: ?getVariant@AzaleaLeavesBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const&) const;
 
-    // vIndex: 155, symbol:
+    // vIndex: 156, symbol:
     // ?getRenderLayer@AzaleaLeavesBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
     virtual ::BlockRenderLayer
     getRenderLayer(class Block const&, class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 159, symbol:
+    // vIndex: 160, symbol:
     // ?getMapColor@AzaleaLeavesBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual class mce::Color
     getMapColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;

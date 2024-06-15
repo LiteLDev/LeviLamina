@@ -28,15 +28,6 @@ public:
     );
 
     // symbol:
-    // ?loadRequest@ChunkLoadActionList@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCompoundTag@@AEAVICommandOriginLoader@@0@Z
-    MCAPI void loadRequest(
-        std::string const&          key,
-        class CompoundTag const&    tag,
-        class ICommandOriginLoader& loader,
-        std::string const&          dimensionPrefix
-    );
-
-    // symbol:
     // ?loadRequests@ChunkLoadActionList@@QEAAXAEAVLevelStorage@@AEAVICommandOriginLoader@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void
     loadRequests(class LevelStorage& storage, class ICommandOriginLoader& loader, std::string const& dimensionPrefix);

@@ -52,8 +52,12 @@ public:
     // vIndex: 10, symbol: ?hash@Int64Tag@@UEBA_KXZ
     virtual uint64 hash() const;
 
+    // symbol: ??0Int64Tag@@QEAA@_J@Z
+    MCAPI explicit Int64Tag(int64 data);
+
     // NOLINTEND
 };
+
 namespace ll::nbt_literals {
 [[nodiscard]] inline Int64Tag operator""_l(uint64 num) { return Int64Tag{(int64)num}; }
 } // namespace ll::nbt_literals

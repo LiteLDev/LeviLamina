@@ -43,6 +43,9 @@ public:
     // symbol: ??0EndGatewayBlockActor@@QEAA@AEBVBlockPos@@@Z
     MCAPI explicit EndGatewayBlockActor(class BlockPos const& pos);
 
+    // symbol: ?getExitPosition@EndGatewayBlockActor@@QEBA?AVBlockPos@@XZ
+    MCAPI class BlockPos getExitPosition() const;
+
     // symbol: ?setExitPosition@EndGatewayBlockActor@@QEAAXAEBVBlockPos@@@Z
     MCAPI void setExitPosition(class BlockPos const& exitPosition);
 
@@ -51,6 +54,10 @@ public:
 
     // symbol: ?findExitPortal@EndGatewayBlockActor@@SA?AVBlockPos@@AEAVWorldGenerator@@AEBV2@@Z
     MCAPI static class BlockPos findExitPortal(class WorldGenerator& endGenerator, class BlockPos const& origin);
+
+    // symbol: ?findTallestBlock@EndGatewayBlockActor@@SA?AVBlockPos@@AEAVBlockSource@@AEBV2@H_N@Z
+    MCAPI static class BlockPos
+    findTallestBlock(class BlockSource& region, class BlockPos const& around, int dist, bool allowBedrock);
 
     // symbol: ?findValidSpawnAround@EndGatewayBlockActor@@SA?AVBlockPos@@AEAVBlockSource@@AEBV2@_NH@Z
     MCAPI static class BlockPos findValidSpawnAround(

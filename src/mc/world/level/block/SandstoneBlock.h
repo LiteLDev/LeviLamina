@@ -30,17 +30,17 @@ public:
     // vIndex: 0, symbol: __gen_??1SandstoneBlock@@UEAA@XZ
     virtual ~SandstoneBlock() = default;
 
-    // vIndex: 47, symbol: ?canBeOriginalSurface@SandstoneBlock@@UEBA_NXZ
+    // vIndex: 48, symbol: ?canBeOriginalSurface@SandstoneBlock@@UEBA_NXZ
     virtual bool canBeOriginalSurface() const;
 
-    // vIndex: 95, symbol: ?asItemInstance@SandstoneBlock@@MEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96, symbol: ?asItemInstance@SandstoneBlock@@MEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
-    // vIndex: 118, symbol:
+    // vIndex: 119, symbol:
     // ?buildDescriptionId@SandstoneBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
     virtual std::string buildDescriptionId(class Block const&) const;
 
-    // vIndex: 119, symbol: ?isAuxValueRelevantForPicking@SandstoneBlock@@UEBA_NXZ
+    // vIndex: 120, symbol: ?isAuxValueRelevantForPicking@SandstoneBlock@@UEBA_NXZ
     virtual bool isAuxValueRelevantForPicking() const;
 
     // symbol:

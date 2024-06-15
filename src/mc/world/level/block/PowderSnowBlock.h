@@ -43,25 +43,25 @@ public:
     // vIndex: 25, symbol: ?canConnect@PowderSnowBlock@@UEBA_NAEBVBlock@@E0@Z
     virtual bool canConnect(class Block const& otherBlock, uchar toOther, class Block const& thisBlock) const;
 
-    // vIndex: 32, symbol: ?isWaterBlocking@PowderSnowBlock@@UEBA_NXZ
+    // vIndex: 33, symbol: ?isWaterBlocking@PowderSnowBlock@@UEBA_NXZ
     virtual bool isWaterBlocking() const;
 
-    // vIndex: 54, symbol: ?canBeDestroyedByWaterSpread@PowderSnowBlock@@UEBA_NXZ
+    // vIndex: 55, symbol: ?canBeDestroyedByWaterSpread@PowderSnowBlock@@UEBA_NXZ
     virtual bool canBeDestroyedByWaterSpread() const;
 
-    // vIndex: 56, symbol: ?canContainLiquid@PowderSnowBlock@@UEBA_NXZ
+    // vIndex: 57, symbol: ?canContainLiquid@PowderSnowBlock@@UEBA_NXZ
     virtual bool canContainLiquid() const;
 
-    // vIndex: 89, symbol: ?breaksFallingBlocks@PowderSnowBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
+    // vIndex: 90, symbol: ?breaksFallingBlocks@PowderSnowBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
     virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
 
-    // vIndex: 95, symbol: ?asItemInstance@PowderSnowBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96, symbol: ?asItemInstance@PowderSnowBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 116, symbol: ?causesFreezeEffect@PowderSnowBlock@@UEBA_NXZ
+    // vIndex: 117, symbol: ?causesFreezeEffect@PowderSnowBlock@@UEBA_NXZ
     virtual bool causesFreezeEffect() const;
 
-    // vIndex: 141, symbol: ?_addHardCodedBlockComponents@PowderSnowBlock@@MEAAXAEBVExperiments@@@Z
+    // vIndex: 142, symbol: ?_addHardCodedBlockComponents@PowderSnowBlock@@MEAAXAEBVExperiments@@@Z
     virtual void _addHardCodedBlockComponents(class Experiments const&);
 
     // symbol:

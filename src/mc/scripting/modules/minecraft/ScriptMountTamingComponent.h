@@ -5,11 +5,13 @@
 // auto generated inclusion list
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/Result.h"
+#include "mc/external/scripting/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
 class WeakEntityRef;
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
+namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
@@ -39,8 +41,28 @@ public:
         std::string const&                        id
     );
 
+    // symbol: ?isTamed@ScriptMountTamingComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_N$$V@Scripting@@XZ
+    MCAPI class Scripting::Result<bool> isTamed() const;
+
+    // symbol: ?isTamedToPlayer@ScriptMountTamingComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_N$$V@Scripting@@XZ
+    MCAPI class Scripting::Result<bool> isTamedToPlayer() const;
+
     // symbol: ?setTamed@ScriptMountTamingComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@X$$V@Scripting@@_N@Z
     MCAPI class Scripting::Result<void> setTamed(bool showParticles) const;
+
+    // symbol:
+    // ?setTamedToPlayer@ScriptMountTamingComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_N$$V@Scripting@@_NAEAVScriptPlayer@2@@Z
+    MCAPI class Scripting::Result<bool> setTamedToPlayer(bool, class ScriptModuleMinecraft::ScriptPlayer&) const;
+
+    // symbol:
+    // ?tamedToPlayer@ScriptMountTamingComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@XZ
+    MCAPI class Scripting::Result<
+        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>>>
+    tamedToPlayer() const;
+
+    // symbol:
+    // ?tamedToPlayerId@ScriptMountTamingComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@$$V@Scripting@@XZ
+    MCAPI class Scripting::Result<std::optional<std::string>> tamedToPlayerId() const;
 
     // symbol:
     // ?bind@ScriptMountTamingComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptMountTamingComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z

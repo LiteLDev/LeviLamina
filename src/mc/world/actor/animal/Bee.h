@@ -10,7 +10,6 @@
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
-#include "mc/enums/ArmorTextureType.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/InputMode.h"
 #include "mc/enums/MaterialType.h"
@@ -42,7 +41,7 @@ public:
     // vIndex: 10, symbol: ??1Bee@@UEAA@XZ
     virtual ~Bee();
 
-    // vIndex: 101, symbol: ?onSynchedDataUpdate@Bee@@UEAAXH@Z
+    // vIndex: 99, symbol: ?onSynchedDataUpdate@Bee@@UEAAXH@Z
     virtual void onSynchedDataUpdate(int dataId);
 
     // symbol: ??0Bee@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

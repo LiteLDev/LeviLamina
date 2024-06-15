@@ -8,11 +8,6 @@
 #include "mc/deps/core/resource/ResourceLoader.h"
 #include "mc/resources/ResourcePackStackType.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Core { class Path; }
-// clang-format on
-
 class ResourcePackManager : public ::ResourceLoader {
 public:
     // prevent constructor by default
@@ -161,14 +156,8 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_calculateMinEngineVersionFromFullStack@ResourcePackManager@@AEAAXXZ
-    MCAPI void _calculateMinEngineVersionFromFullStack();
-
     // symbol: ?_composeFullStack@ResourcePackManager@@AEAAXXZ
     MCAPI void _composeFullStack();
-
-    // symbol: ?_getPackForResource@ResourcePackManager@@AEBAPEAVPackInstance@@AEBVPath@Core@@@Z
-    MCAPI class PackInstance* _getPackForResource(class Core::Path const& resourceName) const;
 
     // symbol:
     // ?_getResourcesOfGroup@ResourcePackManager@@AEBAXAEBVPackInstance@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@V?$allocator@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@std@@@4@@Z

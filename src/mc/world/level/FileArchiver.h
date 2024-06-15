@@ -18,12 +18,28 @@ class FileArchiver : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // FileArchiver inner types declare
     // clang-format off
+    struct EduCloudImportInfo;
     class IWorldConverter;
     class ProgressReporter;
     struct Result;
     // clang-format on
 
     // FileArchiver inner types define
+    struct EduCloudImportInfo {
+    public:
+        // prevent constructor by default
+        EduCloudImportInfo& operator=(EduCloudImportInfo const&);
+        EduCloudImportInfo(EduCloudImportInfo const&);
+        EduCloudImportInfo();
+
+    public:
+        // NOLINTBEGIN
+        // symbol: ??1EduCloudImportInfo@FileArchiver@@QEAA@XZ
+        MCAPI ~EduCloudImportInfo();
+
+        // NOLINTEND
+    };
+
     class IWorldConverter {
     public:
         // prevent constructor by default
@@ -55,10 +71,12 @@ public:
         // prevent constructor by default
         Result& operator=(Result const&);
         Result(Result const&);
-        Result();
 
     public:
         // NOLINTBEGIN
+        // symbol: ??0Result@FileArchiver@@QEAA@XZ
+        MCAPI Result();
+
         // symbol: ??1Result@FileArchiver@@QEAA@XZ
         MCAPI ~Result();
 

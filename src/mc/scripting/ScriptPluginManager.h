@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { class DependencyLocator; }
+namespace Scripting { class ScriptEngine; }
 namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting { struct ScriptContextResult; }
 // clang-format on
@@ -22,6 +23,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
+    // ??0ScriptPluginManager@@QEAA@AEAVScriptEngine@Scripting@@V?$unique_ptr@VIScriptTelemetryLogger@@U?$default_delete@VIScriptTelemetryLogger@@@std@@@std@@@Z
+    MCAPI ScriptPluginManager(class Scripting::ScriptEngine&, std::unique_ptr<class IScriptTelemetryLogger>);
+
+    // symbol:
     // ?discoverPlugins@ScriptPluginManager@@QEAA?AVScriptPluginManagerResult@@W4ResourceType@ResourceInformation@@AEAVIScriptPluginSourceEnumerator@@AEBVScriptPackConfigurationManager@@PEAVDependencyLocator@Scripting@@AEBV?$vector@V?$function@$$A6A_NAEBVPackManifest@@AEBUModuleDescriptor@Scripting@@1AEAVScriptPluginResult@@@Z@std@@V?$allocator@V?$function@$$A6A_NAEBVPackManifest@@AEBUModuleDescriptor@Scripting@@1AEAVScriptPluginResult@@@Z@std@@@2@@std@@@Z
     MCAPI class ScriptPluginManagerResult
     discoverPlugins(::ResourceInformation::ResourceType, class IScriptPluginSourceEnumerator&, class ScriptPackConfigurationManager const&, class Scripting::DependencyLocator*, std::vector<std::function<bool(class PackManifest const&, struct Scripting::ModuleDescriptor const&, struct Scripting::ModuleDescriptor const&, class ScriptPluginResult&)>> const&);
@@ -30,12 +35,22 @@ public:
     // ?getPluginStats@ScriptPluginManager@@QEBA?AV?$vector@UScriptPluginStats@@V?$allocator@UScriptPluginStats@@@std@@@std@@XZ
     MCAPI std::vector<struct ScriptPluginStats> getPluginStats() const;
 
+    // symbol:
+    // ?getPlugins@ScriptPluginManager@@QEBAAEBV?$vector@V?$unique_ptr@VScriptPlugin@@U?$default_delete@VScriptPlugin@@@std@@@std@@V?$allocator@V?$unique_ptr@VScriptPlugin@@U?$default_delete@VScriptPlugin@@@std@@@std@@@2@@std@@XZ
+    MCAPI std::vector<std::unique_ptr<class ScriptPlugin>> const& getPlugins() const;
+
+    // symbol: ?releaseAll@ScriptPluginManager@@QEAAXXZ
+    MCAPI void releaseAll();
+
     // symbol: ?releasePlugins@ScriptPluginManager@@QEAAXXZ
     MCAPI void releasePlugins();
 
     // symbol:
     // ?runAll@ScriptPluginManager@@QEAA?AVScriptPluginManagerResult@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
     MCAPI class ScriptPluginManagerResult runAll(std::vector<std::string>);
+
+    // symbol: ??1ScriptPluginManager@@QEAA@XZ
+    MCAPI ~ScriptPluginManager();
 
     // symbol: ?getPackCapability@ScriptPluginManager@@SA?AVPackCapability@@XZ
     MCAPI static class PackCapability getPackCapability();

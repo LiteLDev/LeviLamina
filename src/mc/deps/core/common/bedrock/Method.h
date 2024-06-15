@@ -13,9 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?name@Method@Http@Bedrock@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-    MCAPI std::string const& name() const;
-
     // symbol: ?DEL@Method@Http@Bedrock@@2V123@B
     MCAPI static class Bedrock::Http::Method const DEL;
 

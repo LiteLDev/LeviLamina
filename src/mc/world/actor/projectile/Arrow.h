@@ -10,7 +10,6 @@
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
-#include "mc/enums/ArmorTextureType.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/InputMode.h"
 #include "mc/enums/MaterialType.h"
@@ -48,25 +47,25 @@ public:
     // vIndex: 42, symbol: ?playerTouch@Arrow@@UEAAXAEAVPlayer@@@Z
     virtual void playerTouch(class Player& player);
 
-    // vIndex: 128, symbol: ?setAuxValue@Arrow@@UEAAXH@Z
+    // vIndex: 126, symbol: ?setAuxValue@Arrow@@UEAAXH@Z
     virtual void setAuxValue(int aux);
 
-    // vIndex: 149, symbol: ?readAdditionalSaveData@Arrow@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147, symbol: ?readAdditionalSaveData@Arrow@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 150, symbol: ?addAdditionalSaveData@Arrow@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148, symbol: ?addAdditionalSaveData@Arrow@@MEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 153, symbol: ?shoot@Arrow@@UEAAXAEBVVec3@@MM0@Z
+    // vIndex: 151, symbol: ?shoot@Arrow@@UEAAXAEBVVec3@@MM0@Z
     virtual void shoot(class Vec3 const& dir, float pow, float uncertainty, class Vec3 const& baseSpeed);
 
-    // vIndex: 154, symbol: ?_getPickupItem@Arrow@@MEBA?AVItemStack@@XZ
+    // vIndex: 152, symbol: ?_getPickupItem@Arrow@@MEBA?AVItemStack@@XZ
     virtual class ItemStack _getPickupItem() const;
 
-    // vIndex: 155, symbol: ?applyParticleColor@Arrow@@MEAAXPEAVParticle@@@Z
+    // vIndex: 153, symbol: ?applyParticleColor@Arrow@@MEAAXPEAVParticle@@@Z
     virtual void applyParticleColor(class Particle* p);
 
-    // vIndex: 156, symbol: ?getEffectColor@Arrow@@MEAA?AVColor@mce@@XZ
+    // vIndex: 154, symbol: ?getEffectColor@Arrow@@MEAA?AVColor@mce@@XZ
     virtual class mce::Color getEffectColor();
 
     // symbol: ??0Arrow@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

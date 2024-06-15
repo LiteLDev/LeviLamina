@@ -32,7 +32,7 @@ public:
     // vIndex: 45, symbol: ?isLiquidClipItem@BottleItem@@UEBA_NXZ
     virtual bool isLiquidClipItem() const;
 
-    // vIndex: 73, symbol: ?dispense@BottleItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 74, symbol: ?dispense@BottleItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 

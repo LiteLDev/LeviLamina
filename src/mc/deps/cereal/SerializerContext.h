@@ -21,14 +21,12 @@ public:
     struct LogEntry {
     public:
         // prevent constructor by default
+        LogEntry& operator=(LogEntry const&);
         LogEntry(LogEntry const&);
         LogEntry();
 
     public:
         // NOLINTBEGIN
-        // symbol: ??4LogEntry@SerializerContext@cereal@@QEAAAEAU012@AEBU012@@Z
-        MCAPI struct cereal::SerializerContext::LogEntry& operator=(struct cereal::SerializerContext::LogEntry const&);
-
         // symbol: ??1LogEntry@SerializerContext@cereal@@QEAA@XZ
         MCAPI ~LogEntry();
 

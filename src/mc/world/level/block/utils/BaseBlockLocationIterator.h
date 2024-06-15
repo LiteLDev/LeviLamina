@@ -28,6 +28,9 @@ public:
     // symbol: ?done@BaseBlockLocationIterator@@QEBA_NXZ
     MCAPI bool done() const;
 
+    // symbol: ??9BaseBlockLocationIterator@@QEAA_NAEBV0@@Z
+    MCAPI bool operator!=(class BaseBlockLocationIterator const& rhs);
+
     // symbol: ??DBaseBlockLocationIterator@@QEBA?AVBlockPos@@XZ
     MCAPI class BlockPos operator*() const;
 

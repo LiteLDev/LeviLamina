@@ -21,16 +21,15 @@ MCAPI ::
         RocketAttached
         fireworksRocketMoveClientEntity(class StrictEntityContext const&, struct SynchedActorDataComponent const&, struct StateVectorComponent&, struct ActorRotationComponent&, class LocalSpatialEntityFetcher&, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct MobFlag>>, struct StateVectorComponent const> const&, class EntityModifier<struct ActorSetPositionRequestComponent, struct AttachedRocketsComponent>);
 
+// symbol:
+// ?fireworksRocketMoveServerEntity@FireworksMovementSystems@@YAXAEBVStrictEntityContext@@AEBUSynchedActorDataComponent@@AEAUStateVectorComponent@@AEAUActorRotationComponent@@AEAVLocalSpatialEntityFetcher@@AEBV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UMobFlag@@@@@@$$CBUStateVectorComponent@@@@V?$EntityModifier@UActorSetPositionRequestComponent@@UAttachedRocketsComponent@@@@V?$EntityModifier@UMoveRequestComponent@@@@@Z
+MCAPI void fireworksRocketMoveServerEntity(class StrictEntityContext const&, struct SynchedActorDataComponent const&, struct StateVectorComponent&, struct ActorRotationComponent&, class LocalSpatialEntityFetcher&, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct MobFlag>>, struct StateVectorComponent const> const&, class EntityModifier<struct ActorSetPositionRequestComponent, struct AttachedRocketsComponent>, class EntityModifier<struct MoveRequestComponent>);
+
 // symbol: ?registerAttachedRocketSystems@FireworksMovementSystems@@YAXAEAVEntitySystems@@_N@Z
 MCAPI void registerAttachedRocketSystems(class EntitySystems&, bool);
 
 // symbol: ?registerRocketMovementSystems@FireworksMovementSystems@@YAXAEAVEntitySystems@@_N@Z
 MCAPI void registerRocketMovementSystems(class EntitySystems&, bool);
-
-// symbol:
-// ?removeRocketsNotAttachedToThis@FireworksMovementSystems@@YAXAEBUActorUniqueID@@AEBV?$ViewT@VStrictEntityContext@@$$CBUSynchedActorDataComponent@@@@AEAV?$vector@VStrictEntityContext@@V?$allocator@VStrictEntityContext@@@std@@@std@@@Z
-MCAPI void
-removeRocketsNotAttachedToThis(struct ActorUniqueID const&, class ViewT<class StrictEntityContext, struct SynchedActorDataComponent const> const&, std::vector<class StrictEntityContext>&);
 
 // symbol:
 // ?simulateAttachedRocket@FireworksMovementSystems@@YAXAEBVStrictEntityContext@@AEBUActorUniqueID@@AEAUStateVectorComponent@@AEAVLocalSpatialEntityFetcher@@AEBV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UMobFlag@@@@@@$$CBUStateVectorComponent@@@@V?$EntityModifier@UActorSetPositionRequestComponent@@UAttachedRocketsComponent@@@@@Z

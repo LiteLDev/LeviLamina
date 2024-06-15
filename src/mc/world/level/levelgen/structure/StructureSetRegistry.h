@@ -41,9 +41,6 @@ public:
     // symbol: ?size@StructureSetRegistry@worldgen@br@@QEBA_KXZ
     MCAPI uint64 size() const;
 
-    // symbol: ??1StructureSetRegistry@worldgen@br@@QEAA@XZ
-    MCAPI ~StructureSetRegistry();
-
     // NOLINTEND
 };
 

@@ -10,7 +10,6 @@
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
-#include "mc/enums/ArmorTextureType.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/InputMode.h"
 #include "mc/enums/MaterialType.h"
@@ -50,13 +49,13 @@ public:
     // vIndex: 38, symbol: ?getShadowRadius@AreaEffectCloud@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 60, symbol: ?setOwner@AreaEffectCloud@@UEAAXUActorUniqueID@@@Z
+    // vIndex: 59, symbol: ?setOwner@AreaEffectCloud@@UEAAXUActorUniqueID@@@Z
     virtual void setOwner(struct ActorUniqueID ownerID);
 
-    // vIndex: 149, symbol: ?readAdditionalSaveData@AreaEffectCloud@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147, symbol: ?readAdditionalSaveData@AreaEffectCloud@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 150, symbol: ?addAdditionalSaveData@AreaEffectCloud@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148, symbol: ?addAdditionalSaveData@AreaEffectCloud@@MEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ??0AreaEffectCloud@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
@@ -121,12 +120,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_getSpawnTick@AreaEffectCloud@@AEBA_KXZ
-    MCAPI uint64 _getSpawnTick() const;
-
-    // symbol: ?_setSpawnTick@AreaEffectCloud@@AEAAX_J@Z
-    MCAPI void _setSpawnTick(int64 time);
-
     // symbol: ?_spawnParticles@AreaEffectCloud@@AEAAXAEAVRandom@@IM@Z
     MCAPI void _spawnParticles(class Random& random, uint numParticles, float radius);
 

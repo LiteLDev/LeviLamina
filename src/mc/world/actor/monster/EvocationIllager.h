@@ -10,7 +10,6 @@
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
-#include "mc/enums/ArmorTextureType.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/InputMode.h"
 #include "mc/enums/MaterialType.h"
@@ -36,23 +35,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 4, symbol:
-    // ?reloadHardcoded@EvocationIllager@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
-
     // vIndex: 10, symbol: __gen_??1EvocationIllager@@UEAA@XZ
     virtual ~EvocationIllager() = default;
 
-    // vIndex: 133, symbol: ?die@EvocationIllager@@UEAAXAEBVActorDamageSource@@@Z
-    virtual void die(class ActorDamageSource const& source);
-
-    // vIndex: 160, symbol: ?aiStep@EvocationIllager@@UEAAXXZ
-    virtual void aiStep();
-
-    // vIndex: 168, symbol: ?isAlliedTo@EvocationIllager@@UEAA_NPEAVMob@@@Z
+    // vIndex: 166, symbol: ?isAlliedTo@EvocationIllager@@UEAA_NPEAVMob@@@Z
     virtual bool isAlliedTo(class Mob* other);
 
-    // vIndex: 170, symbol: ?getArmorValue@EvocationIllager@@MEBAHXZ
+    // vIndex: 168, symbol: ?getArmorValue@EvocationIllager@@MEBAHXZ
     virtual int getArmorValue() const;
 
     // symbol: ??0EvocationIllager@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

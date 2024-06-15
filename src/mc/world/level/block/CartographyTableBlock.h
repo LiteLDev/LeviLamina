@@ -30,13 +30,13 @@ public:
     // vIndex: 0, symbol: __gen_??1CartographyTableBlock@@UEAA@XZ
     virtual ~CartographyTableBlock() = default;
 
-    // vIndex: 31, symbol: ?isCraftingBlock@CartographyTableBlock@@UEBA_NXZ
+    // vIndex: 32, symbol: ?isCraftingBlock@CartographyTableBlock@@UEBA_NXZ
     virtual bool isCraftingBlock() const;
 
-    // vIndex: 149, symbol: ?isInteractiveBlock@CartographyTableBlock@@UEBA_NXZ
+    // vIndex: 150, symbol: ?isInteractiveBlock@CartographyTableBlock@@UEBA_NXZ
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 151, symbol: ?use@CartographyTableBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152, symbol: ?use@CartographyTableBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // symbol: ??0CartographyTableBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

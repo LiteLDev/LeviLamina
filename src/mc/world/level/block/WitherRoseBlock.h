@@ -30,28 +30,28 @@ public:
     // vIndex: 0, symbol: __gen_??1WitherRoseBlock@@UEAA@XZ
     virtual ~WitherRoseBlock() = default;
 
-    // vIndex: 79, symbol:
+    // vIndex: 80, symbol:
     // ?onFertilized@WitherRoseBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
     virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, ::FertilizerType) const;
 
-    // vIndex: 81, symbol: ?canBeFertilized@WitherRoseBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 82, symbol: ?canBeFertilized@WitherRoseBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual bool
     canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
 
-    // vIndex: 86, symbol: ?mayPlaceOn@WitherRoseBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 87, symbol: ?mayPlaceOn@WitherRoseBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlaceOn(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 118, symbol:
+    // vIndex: 119, symbol:
     // ?buildDescriptionId@WitherRoseBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
     virtual std::string buildDescriptionId(class Block const&) const;
 
-    // vIndex: 119, symbol: ?isAuxValueRelevantForPicking@WitherRoseBlock@@UEBA_NXZ
+    // vIndex: 120, symbol: ?isAuxValueRelevantForPicking@WitherRoseBlock@@UEBA_NXZ
     virtual bool isAuxValueRelevantForPicking() const;
 
-    // vIndex: 129, symbol: ?canSpawnOn@WitherRoseBlock@@UEBA_NPEAVActor@@@Z
+    // vIndex: 130, symbol: ?canSpawnOn@WitherRoseBlock@@UEBA_NPEAVActor@@@Z
     virtual bool canSpawnOn(class Actor* actor) const;
 
-    // vIndex: 133, symbol:
+    // vIndex: 134, symbol:
     // ?animateTickBedrockLegacy@WitherRoseBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 

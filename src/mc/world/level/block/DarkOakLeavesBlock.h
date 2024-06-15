@@ -31,7 +31,7 @@ public:
     // vIndex: 0, symbol: __gen_??1DarkOakLeavesBlock@@UEAA@XZ
     virtual ~DarkOakLeavesBlock() = default;
 
-    // vIndex: 128, symbol: ?getVariant@DarkOakLeavesBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129, symbol: ?getVariant@DarkOakLeavesBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const&) const;
 
     // symbol:

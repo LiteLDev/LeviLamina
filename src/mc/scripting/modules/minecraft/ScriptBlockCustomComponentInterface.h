@@ -22,9 +22,6 @@ public:
     // symbol: ??0ScriptBlockCustomComponentInterface@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
     MCAPI ScriptBlockCustomComponentInterface(struct ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const&);
 
-    // symbol: ?isEmpty@ScriptBlockCustomComponentInterface@ScriptModuleMinecraft@@QEBA_NXZ
-    MCAPI bool isEmpty() const;
-
     // symbol: ??4ScriptBlockCustomComponentInterface@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptBlockCustomComponentInterface&
     operator=(struct ScriptModuleMinecraft::ScriptBlockCustomComponentInterface&&);

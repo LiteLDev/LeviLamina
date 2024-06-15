@@ -53,5 +53,10 @@ public:
     // symbol: ?setSkullType@SkullBlockActor@@QEAAXH@Z
     MCAPI void setSkullType(int type);
 
+    // symbol:
+    // ?getSkullType@SkullBlockActor@@SA?AV?$optional@W4SkullType@SkullBlockActor@@@std@@AEAVBlockSource@@AEBVBlockPos@@@Z
+    MCAPI static std::optional<::SkullBlockActor::SkullType>
+    getSkullType(class BlockSource& region, class BlockPos const& pos);
+
     // NOLINTEND
 };

@@ -32,26 +32,17 @@ public:
     // vIndex: 3, symbol: ?getIngredient@ShapedRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
     virtual class RecipeIngredient const& getIngredient(int x, int y) const;
 
-    // vIndex: 4, symbol:
-    // ?getResultItem@ShapedRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
-    virtual std::vector<class ItemInstance> const& getResultItem() const;
-
-    // vIndex: 5, symbol: ?isShapeless@ShapedRecipe@@UEBA_NXZ
+    // vIndex: 4, symbol: ?isShapeless@ShapedRecipe@@UEBA_NXZ
     virtual bool isShapeless() const;
 
-    // vIndex: 6, symbol: ?matches@ShapedRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
+    // vIndex: 5, symbol: ?matches@ShapedRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
     virtual bool matches(class CraftingContainer const& craftSlots, class CraftingContext const&) const;
 
-    // vIndex: 7, symbol: ?size@ShapedRecipe@@UEBAHXZ
+    // vIndex: 6, symbol: ?size@ShapedRecipe@@UEBAHXZ
     virtual int size() const;
 
-    // vIndex: 15, symbol: ?loadResultList@ShapedRecipe@@UEBAXAEBVBlockPalette@@@Z
-    virtual void loadResultList(class BlockPalette const& blockPalette) const;
-
-    // symbol:
-    // ??0ShapedRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashedString@@_NHPEBVUUID@mce@@V?$optional@VRecipeUnlockingRequirement@@@2@AEBVSemVersion@@@Z
-    MCAPI
-    ShapedRecipe(std::string_view, int, int, std::vector<class RecipeIngredient> const&, std::vector<class ItemInstance> const&, class HashedString, bool, int, class mce::UUID const*, std::optional<class RecipeUnlockingRequirement>, class SemVersion const&);
+    // symbol: ??0ShapedRecipe@@QEAA@$$QEAUConstructionContext@Recipe@@HH_N@Z
+    MCAPI ShapedRecipe(struct Recipe::ConstructionContext&&, int, int, bool);
 
     // symbol: ?assumeSymmetry@ShapedRecipe@@QEBA_NXZ
     MCAPI bool assumeSymmetry() const;

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/Result.h"
 #include "mc/external/scripting/StrongTypedObjectHandle.h"
 
@@ -14,6 +13,7 @@ class ItemContext;
 namespace ScriptModuleMinecraft { class ScriptContainerSlot; }
 namespace ScriptModuleMinecraft { class ScriptContainerWrapper; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct Error; }
 // clang-format on
 
@@ -94,24 +94,20 @@ public:
     // ?_getItemContext@ScriptBlockInventoryComponentContainer@ScriptModuleMinecraft@@MEBA?AVItemContext@@H@Z
     virtual class ItemContext _getItemContext(int slot) const = 0;
 
+    // symbol: ??0ScriptContainer@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@@Z
+    MCAPI explicit ScriptContainer(class Scripting::WeakLifetimeScope const& scope);
+
     // symbol:
     // ?addItem@ScriptContainer@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@AEBVScriptItemStack@2@@Z
     MCAPI class Scripting::Result<
         std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>>
     addItem(class ScriptModuleMinecraft::ScriptItemStack const&) const;
 
-    // symbol: ?isValid@ScriptContainer@ScriptModuleMinecraft@@QEBA_NXZ
-    MCAPI bool isValid() const;
-
     // symbol:
     // ?transferItem@ScriptContainer@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@HAEAVScriptContainerWrapper@2@@Z
     MCAPI class Scripting::Result<
         std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>>
     transferItem(int, class ScriptModuleMinecraft::ScriptContainerWrapper&) const;
-
-    // symbol:
-    // ?bind@ScriptContainer@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptContainer@ScriptModuleMinecraft@@@Scripting@@XZ
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptContainer> bind();
 
     // NOLINTEND
 

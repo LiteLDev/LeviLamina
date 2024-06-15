@@ -36,6 +36,9 @@ public:
     // symbol: ?clear@ServerPlayerMovementComponent@@QEAAXXZ
     MCAPI void clear();
 
+    // symbol: ?empty@ServerPlayerMovementComponent@@QEBA_NXZ
+    MCAPI bool empty() const;
+
     // symbol: ?front@ServerPlayerMovementComponent@@QEAAAEAUMovementPackets@@XZ
     MCAPI struct MovementPackets& front();
 

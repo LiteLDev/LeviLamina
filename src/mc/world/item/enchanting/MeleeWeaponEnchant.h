@@ -26,17 +26,28 @@ public:
     // vIndex: 5, symbol: ?getMaxLevel@MeleeWeaponEnchant@@UEBAHXZ
     virtual int getMaxLevel() const;
 
-    // vIndex: 7, symbol: ?getDamageBonus@MeleeWeaponEnchant@@UEBAMHAEBVActor@@@Z
-    virtual float getDamageBonus(int level, class Actor const& target) const;
+    // vIndex: 8, symbol: ?getDamageBonus@MeleeWeaponEnchant@@UEBAMHAEBVActor@@0@Z
+    virtual float getDamageBonus(int, class Actor const&, class Actor const&) const;
 
-    // vIndex: 8, symbol: ?doPostAttack@MeleeWeaponEnchant@@UEBAXAEAVActor@@0H@Z
+    // vIndex: 9, symbol: ?doPostAttack@MeleeWeaponEnchant@@UEBAXAEAVActor@@0H@Z
     virtual void doPostAttack(class Actor& attacker, class Actor& victim, int level) const;
 
-    // vIndex: 10, symbol: ?isMeleeDamageEnchant@MeleeWeaponEnchant@@UEBA_NXZ
+    // vIndex: 12, symbol: ?isMeleeDamageEnchant@MeleeWeaponEnchant@@UEBA_NXZ
     virtual bool isMeleeDamageEnchant() const;
 
-    // vIndex: 14, symbol: ?_isValidEnchantmentTypeForCategory@MeleeWeaponEnchant@@EEBA_NW4Type@Enchant@@@Z
+    // vIndex: 16, symbol: ?_isValidEnchantmentTypeForCategory@MeleeWeaponEnchant@@EEBA_NW4Type@Enchant@@@Z
     virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
+
+    // symbol:
+    // ??0MeleeWeaponEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_view@DU?$char_traits@D@std@@@std@@2HH@Z
+    MCAPI MeleeWeaponEnchant(
+        ::Enchant::Type      type,
+        ::Enchant::Frequency frequency,
+        std::string_view     stringId,
+        std::string_view     description,
+        int                  primarySlots,
+        int                  secondarySlots
+    );
 
     // NOLINTEND
 

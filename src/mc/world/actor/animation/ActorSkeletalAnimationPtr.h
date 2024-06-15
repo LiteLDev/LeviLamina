@@ -20,8 +20,17 @@ public:
         class HashedString const& name
     );
 
+    // symbol: ?getName@ActorSkeletalAnimationPtr@@QEBAAEBVHashedString@@XZ
+    MCAPI class HashedString const& getName() const;
+
     // symbol: ?isNull@ActorSkeletalAnimationPtr@@QEBA_NXZ
     MCAPI bool isNull() const;
+
+    // symbol: ??CActorSkeletalAnimationPtr@@QEAAPEAVActorSkeletalAnimation@@XZ
+    MCAPI class ActorSkeletalAnimation* operator->();
+
+    // symbol: ??CActorSkeletalAnimationPtr@@QEBAPEBVActorSkeletalAnimation@@XZ
+    MCAPI class ActorSkeletalAnimation const* operator->() const;
 
     // symbol: ??4ActorSkeletalAnimationPtr@@QEAAAEAV0@AEBV0@@Z
     MCAPI class ActorSkeletalAnimationPtr& operator=(class ActorSkeletalAnimationPtr const&);

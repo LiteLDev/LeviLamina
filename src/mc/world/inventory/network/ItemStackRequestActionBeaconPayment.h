@@ -25,5 +25,11 @@ public:
     // ?_read@ItemStackRequestActionBeaconPayment@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
+    // symbol: ?getPrimaryEffectId@ItemStackRequestActionBeaconPayment@@QEBAHXZ
+    MCAPI int getPrimaryEffectId() const;
+
+    // symbol: ?getSecondaryEffectId@ItemStackRequestActionBeaconPayment@@QEBAHXZ
+    MCAPI int getSecondaryEffectId() const;
+
     // NOLINTEND
 };

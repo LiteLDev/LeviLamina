@@ -32,5 +32,8 @@ public:
             root
     );
 
+    // symbol: ?setComponent@IsStackableDefinition@@SAXAEAVEntityContext@@@Z
+    MCAPI static void setComponent(class EntityContext&);
+
     // NOLINTEND
 };

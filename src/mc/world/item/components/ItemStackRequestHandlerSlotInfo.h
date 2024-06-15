@@ -7,11 +7,12 @@ public:
     // prevent constructor by default
     ItemStackRequestHandlerSlotInfo& operator=(ItemStackRequestHandlerSlotInfo const&);
     ItemStackRequestHandlerSlotInfo(ItemStackRequestHandlerSlotInfo const&);
+    ItemStackRequestHandlerSlotInfo();
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ItemStackRequestHandlerSlotInfo@@QEAA@XZ
-    MCAPI ItemStackRequestHandlerSlotInfo();
+    // symbol: ??BItemStackRequestHandlerSlotInfo@@QEBA_NXZ
+    MCAPI explicit operator bool() const;
 
     // symbol: ??1ItemStackRequestHandlerSlotInfo@@QEAA@XZ
     MCAPI ~ItemStackRequestHandlerSlotInfo();

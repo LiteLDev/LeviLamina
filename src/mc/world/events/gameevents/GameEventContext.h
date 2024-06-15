@@ -8,11 +8,4 @@ public:
     GameEventContext& operator=(GameEventContext const&);
     GameEventContext(GameEventContext const&);
     GameEventContext();
-
-public:
-    // NOLINTBEGIN
-    // symbol: ??0GameEventContext@@QEAA@AEBVVec3@@PEAVActor@@PEBVBlock@@@Z
-    MCAPI GameEventContext(class Vec3 const& origin, class Actor* source, class Block const* affectedBlock);
-
-    // NOLINTEND
 };

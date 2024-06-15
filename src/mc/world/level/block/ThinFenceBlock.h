@@ -83,13 +83,13 @@ public:
     // vIndex: 25, symbol: ?canConnect@ThinFenceBlock@@UEBA_NAEBVBlock@@E0@Z
     virtual bool canConnect(class Block const& otherBlock, uchar toOther, class Block const& thisBlock) const;
 
-    // vIndex: 35, symbol: ?isThinFenceBlock@ThinFenceBlock@@UEBA_NXZ
+    // vIndex: 36, symbol: ?isThinFenceBlock@ThinFenceBlock@@UEBA_NXZ
     virtual bool isThinFenceBlock() const;
 
-    // vIndex: 56, symbol: ?canContainLiquid@ThinFenceBlock@@UEBA_NXZ
+    // vIndex: 57, symbol: ?canContainLiquid@ThinFenceBlock@@UEBA_NXZ
     virtual bool canContainLiquid() const;
 
-    // vIndex: 89, symbol: ?breaksFallingBlocks@ThinFenceBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
+    // vIndex: 90, symbol: ?breaksFallingBlocks@ThinFenceBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
     virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
 
     // symbol:

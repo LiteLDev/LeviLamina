@@ -41,6 +41,11 @@ public:
     // vIndex: 5, symbol: ?reset@NetworkStatistics@@UEAAXXZ
     virtual void reset();
 
+    // symbol:
+    // ??0NetworkStatistics@@QEAA@AEAVServerNetworkSystem@@W4TrackerType@@$$QEAV?$function@$$A6A_NAEAURakNetStatistics@RakNet@@@Z@std@@V?$not_null@V?$NonOwnerPointer@VNetworkDebugManager@@@Bedrock@@@gsl@@@Z
+    MCAPI
+    NetworkStatistics(class ServerNetworkSystem& network, ::TrackerType type, std::function<bool(struct RakNet::RakNetStatistics&)>&& getRakNetStatsReading, Bedrock::NotNullNonOwnerPtr<class NetworkDebugManager>);
+
     // symbol: ?getVerboseInfo@NetworkStatistics@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getVerboseInfo() const;
 

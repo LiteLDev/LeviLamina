@@ -10,7 +10,6 @@
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
-#include "mc/enums/ArmorTextureType.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/InputMode.h"
 #include "mc/enums/MaterialType.h"
@@ -39,7 +38,7 @@ public:
     // vIndex: 10, symbol: __gen_??1Salmon@@UEAA@XZ
     virtual ~Salmon() = default;
 
-    // vIndex: 182, symbol: ?createAIGoals@Salmon@@UEAA_NXZ
+    // vIndex: 180, symbol: ?createAIGoals@Salmon@@UEAA_NXZ
     virtual bool createAIGoals();
 
     // symbol: ??0Salmon@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

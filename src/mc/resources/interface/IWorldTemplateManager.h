@@ -30,8 +30,9 @@ public:
     findInstalledWorldTemplateByUUID(std::vector<class mce::UUID> const& packUUIDs) const = 0;
 
     // vIndex: 2, symbol:
-    // ?registerModifiedCallback@WorldTemplateManager@@UEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXXZ@std@@@Z
-    virtual class Bedrock::PubSub::Subscription registerModifiedCallback(std::function<void()>) = 0;
+    // ?registerModifiedCallback@WorldTemplateManager@@UEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXAEBU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@std@@@Z@std@@@Z
+    virtual class Bedrock::PubSub::Subscription
+        registerModifiedCallback(std::function<void(std::pair<std::string, bool> const&)>) = 0;
 
     // vIndex: 3, symbol:
     // ?getLocalTemplates@WorldTemplateManager@@UEBAAEBV?$vector@V?$unique_ptr@UWorldTemplateInfo@@U?$default_delete@UWorldTemplateInfo@@@std@@@std@@V?$allocator@V?$unique_ptr@UWorldTemplateInfo@@U?$default_delete@UWorldTemplateInfo@@@std@@@std@@@2@@std@@XZ

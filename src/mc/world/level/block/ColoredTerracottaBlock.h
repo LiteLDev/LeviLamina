@@ -30,7 +30,7 @@ public:
     // vIndex: 0, symbol: __gen_??1ColoredTerracottaBlock@@UEAA@XZ
     virtual ~ColoredTerracottaBlock() = default;
 
-    // vIndex: 95, symbol: ?asItemInstance@ColoredTerracottaBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96, symbol: ?asItemInstance@ColoredTerracottaBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
     // symbol:

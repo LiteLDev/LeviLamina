@@ -38,6 +38,15 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ?GetScenarioId@LevelSettings@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    MCAPI std::string const& GetScenarioId() const;
+
+    // symbol: ?GetServerId@LevelSettings@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    MCAPI std::string const& GetServerId() const;
+
+    // symbol: ?GetWorldId@LevelSettings@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    MCAPI std::string const& GetWorldId() const;
+
     // symbol: ??0LevelSettings@@QEAA@XZ
     MCAPI LevelSettings();
 
@@ -305,8 +314,14 @@ public:
     // symbol: ?setRandomSeed@LevelSettings@@QEAAAEAV1@VLevelSeed64@@@Z
     MCAPI class LevelSettings& setRandomSeed(class LevelSeed64 seed);
 
+    // symbol: ?setScenarioId@LevelSettings@@QEAAAEAV1@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI class LevelSettings& setScenarioId(std::string);
+
     // symbol: ?setServerChunkTickRange@LevelSettings@@QEAAAEAV1@I@Z
     MCAPI class LevelSettings& setServerChunkTickRange(uint serverChunkTickRange);
+
+    // symbol: ?setServerId@LevelSettings@@QEAAAEAV1@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI class LevelSettings& setServerId(std::string);
 
     // symbol: ?setSpawnSettings@LevelSettings@@QEAAAEAV1@USpawnSettings@@@Z
     MCAPI class LevelSettings& setSpawnSettings(struct SpawnSettings spawnSettings);
@@ -316,6 +331,9 @@ public:
 
     // symbol: ?setUseMsaGamertagsOnly@LevelSettings@@QEAAAEAV1@_N@Z
     MCAPI class LevelSettings& setUseMsaGamertagsOnly(bool useMsaGamertagsOnly);
+
+    // symbol: ?setWorldId@LevelSettings@@QEAAAEAV1@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI class LevelSettings& setWorldId(std::string);
 
     // symbol: ?setXblBroadcastIntent@LevelSettings@@QEAAAEAV1@W4GamePublishSetting@Social@@@Z
     MCAPI class LevelSettings& setXblBroadcastIntent(::Social::GamePublishSetting xblBroadcastIntent);

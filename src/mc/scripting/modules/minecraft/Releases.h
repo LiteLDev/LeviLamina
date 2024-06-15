@@ -21,6 +21,9 @@ MCAPI extern struct Scripting::Version const V110;
 // symbol: ?V1100@Releases@ScriptModuleMinecraft@@3UVersion@Scripting@@B
 MCAPI extern struct Scripting::Version const V1100;
 
+// symbol: ?V1110@Releases@ScriptModuleMinecraft@@3UVersion@Scripting@@B
+MCAPI extern struct Scripting::Version const V1110;
+
 // symbol: ?V120@Releases@ScriptModuleMinecraft@@3UVersion@Scripting@@B
 MCAPI extern struct Scripting::Version const V120;
 

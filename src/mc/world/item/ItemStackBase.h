@@ -118,6 +118,9 @@ public:
     // symbol: ?constructItemEnchantsFromUserData@ItemStackBase@@QEBA?AVItemEnchants@@XZ
     MCAPI class ItemEnchants constructItemEnchantsFromUserData() const;
 
+    // symbol: ?deserializeComponents@ItemStackBase@@QEAAXAEAVIDataInput@@@Z
+    MCAPI void deserializeComponents(class IDataInput& input);
+
     // symbol: ?getArmorSlot@ItemStackBase@@QEBA?AW4ArmorSlot@@XZ
     MCAPI ::ArmorSlot getArmorSlot() const;
 
@@ -143,6 +146,9 @@ public:
     // symbol:
     // ?getCanPlaceOn@ItemStackBase@@QEBAAEBV?$vector@PEBVBlockLegacy@@V?$allocator@PEBVBlockLegacy@@@std@@@std@@XZ
     MCAPI std::vector<class BlockLegacy const*> const& getCanPlaceOn() const;
+
+    // symbol: ?getCategoryName@ItemStackBase@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    MCAPI std::string getCategoryName() const;
 
     // symbol: ?getChargedItem@ItemStackBase@@QEBAAEBVItemInstance@@XZ
     MCAPI class ItemInstance const& getChargedItem() const;
@@ -227,6 +233,9 @@ public:
     // symbol: ?getRawNameId@ItemStackBase@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getRawNameId() const;
 
+    // symbol: ?getRequiredBaseGameVersion@ItemStackBase@@QEBAAEBVBaseGameVersion@@XZ
+    MCAPI class BaseGameVersion const& getRequiredBaseGameVersion() const;
+
     // symbol: ?getUseAnimation@ItemStackBase@@QEBA?AW4UseAnimation@Legacy@Puv@@XZ
     MCAPI ::Puv::Legacy::UseAnimation getUseAnimation() const;
 
@@ -272,9 +281,6 @@ public:
     // symbol: ?hurtAndBreak@ItemStackBase@@QEAA_NHPEAVActor@@@Z
     MCAPI bool hurtAndBreak(int deltaDamage, class Actor* owner);
 
-    // symbol: ?initParams@ItemStackBase@@QEAAXAEAVRenderParams@@PEAVActor@@@Z
-    MCAPI void initParams(class RenderParams& params, class Actor* actor);
-
     // symbol: ?isArmorItem@ItemStackBase@@QEBA_NXZ
     MCAPI bool isArmorItem() const;
 
@@ -313,6 +319,15 @@ public:
 
     // symbol: ?isHorseArmorItem@ItemStackBase@@QEBA_NXZ
     MCAPI bool isHorseArmorItem() const;
+
+    // symbol: ?isHumanoidArmorItem@ItemStackBase@@QEBA_NXZ
+    MCAPI bool isHumanoidArmorItem() const;
+
+    // symbol: ?isHumanoidWearableBlockItem@ItemStackBase@@QEBA_NXZ
+    MCAPI bool isHumanoidWearableBlockItem() const;
+
+    // symbol: ?isHumanoidWearableItem@ItemStackBase@@QEBA_NXZ
+    MCAPI bool isHumanoidWearableItem() const;
 
     // symbol: ?isInstance@ItemStackBase@@QEBA_NAEBVHashedString@@_N@Z
     MCAPI bool isInstance(class HashedString const& itemName, bool useItemLookup) const;
@@ -361,9 +376,6 @@ public:
 
     // symbol: ?isValidAuxValue@ItemStackBase@@QEBA_NH@Z
     MCAPI bool isValidAuxValue(int value) const;
-
-    // symbol: ?isWearableItem@ItemStackBase@@QEBA_NXZ
-    MCAPI bool isWearableItem() const;
 
     // symbol: ?load@ItemStackBase@@QEAAXAEBVCompoundTag@@@Z
     MCAPI void load(class CompoundTag const& compoundTag);
@@ -427,6 +439,9 @@ public:
     // ?sendEventTriggered@ItemStackBase@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVRenderParams@@@Z
     MCAPI bool sendEventTriggered(std::string const& event, class RenderParams const& params);
 
+    // symbol: ?serializeComponents@ItemStackBase@@QEBAXAEAVIDataOutput@@@Z
+    MCAPI void serializeComponents(class IDataOutput& output) const;
+
     // symbol: ?set@ItemStackBase@@QEAAXH@Z
     MCAPI void set(int inCount);
 
@@ -476,6 +491,9 @@ public:
 
     // symbol: ?setShowPickUp@ItemStackBase@@QEAAX_N@Z
     MCAPI void setShowPickUp(bool show);
+
+    // symbol: ?setStackSize@ItemStackBase@@QEAAXE@Z
+    MCAPI void setStackSize(uchar);
 
     // symbol:
     // ?setUserData@ItemStackBase@@QEAAXV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@@Z

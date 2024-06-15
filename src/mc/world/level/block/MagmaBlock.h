@@ -30,26 +30,26 @@ public:
     // vIndex: 0, symbol: __gen_??1MagmaBlock@@UEAA@XZ
     virtual ~MagmaBlock() = default;
 
-    // vIndex: 92, symbol: ?neighborChanged@MagmaBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 93, symbol: ?neighborChanged@MagmaBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 128, symbol: ?getVariant@MagmaBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129, symbol: ?getVariant@MagmaBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 133, symbol: ?animateTickBedrockLegacy@MagmaBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 134, symbol: ?animateTickBedrockLegacy@MagmaBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // vIndex: 146, symbol: ?shouldTickOnSetBlock@MagmaBlock@@UEBA_NXZ
+    // vIndex: 147, symbol: ?shouldTickOnSetBlock@MagmaBlock@@UEBA_NXZ
     virtual bool shouldTickOnSetBlock() const;
 
-    // vIndex: 147, symbol: ?tick@MagmaBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148, symbol: ?tick@MagmaBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 148, symbol: ?randomTick@MagmaBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 149, symbol: ?randomTick@MagmaBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 158, symbol: ?getEmissiveBrightness@MagmaBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
+    // vIndex: 159, symbol: ?getEmissiveBrightness@MagmaBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
     virtual struct Brightness getEmissiveBrightness(class Block const&) const;
 
     // symbol: ??0MagmaBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

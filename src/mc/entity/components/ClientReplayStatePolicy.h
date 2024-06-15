@@ -21,8 +21,8 @@ public:
     // vIndex: 1, symbol: ?isReplayNeeded@ClientReplayStatePolicy@@UEBA_NW4AdvanceFrameResult@@@Z
     virtual bool isReplayNeeded(::AdvanceFrameResult result) const;
 
-    // vIndex: 2, symbol: ?canRewindToFrame@ClientReplayStatePolicy@@UEAA_NAEBVEntityContext@@_K1@Z
-    virtual bool canRewindToFrame(class EntityContext const&, uint64, uint64);
+    // vIndex: 2, symbol: ?canRewindToFrame@ClientReplayStatePolicy@@UEAA_NAEBVEntityContext@@_K@Z
+    virtual bool canRewindToFrame(class EntityContext const&, uint64);
 
     // vIndex: 3, symbol:
     // ?shouldCorrectMovement@ClientReplayStatePolicy@@UEAA?AUMovementCorrection@@AEAVEntityContext@@AEBVPlayerAuthInputPacket@@_K@Z
@@ -34,6 +34,9 @@ public:
 
     // vIndex: 5, symbol: ?storeCurrentFrameSupported@ClientReplayStatePolicy@@UEAAX_KAEAVEntityContext@@@Z
     virtual void storeCurrentFrameSupported(uint64, class EntityContext&);
+
+    // vIndex: 6, symbol: ?notifyOfExternalCorrection@ClientReplayStatePolicy@@UEAAX_K@Z
+    virtual void notifyOfExternalCorrection(uint64);
 
     // symbol: ?_checkSupportedFrame@ClientReplayStatePolicy@@QEBA_NAEAVEntityContext@@@Z
     MCAPI bool _checkSupportedFrame(class EntityContext&) const;

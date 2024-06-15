@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Puv { struct Logger; }
+namespace Puv { class Logger; }
 namespace Puv::internal { struct PathElement; }
 namespace cereal { class SerializerEnumMapping; }
 namespace cereal { struct ReflectionCtx; }
@@ -46,33 +46,34 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0CerealUpgraderBase@internal@Puv@@QEAA@AEBUReflectionCtx@cereal@@@Z
+    // symbol: ??1CerealUpgraderBase@internal@Puv@@QEAA@XZ
+    MCAPI ~CerealUpgraderBase();
+
+    // NOLINTEND
+
+    // protected:
+    // NOLINTBEGIN
+    // symbol: ??0CerealUpgraderBase@internal@Puv@@IEAA@AEBUReflectionCtx@cereal@@@Z
     MCAPI explicit CerealUpgraderBase(struct cereal::ReflectionCtx const&);
 
-    // symbol: ?after@CerealUpgraderBase@internal@Puv@@QEAAXV?$function@$$A6AXAEAVmeta_any@entt@@0@Z@std@@@Z
-    MCAPI void after(std::function<void(entt::meta_any&, entt::meta_any&)>);
-
     // symbol:
-    // ?callback@CerealUpgraderBase@internal@Puv@@QEAAXV?$function@$$A6AXAEAVmeta_any@entt@@0@Z@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@5@1@Z
+    // ?bindCallback@CerealUpgraderBase@internal@Puv@@IEAAXV?$function@$$A6AXAEAVmeta_any@entt@@0@Z@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@5@1@Z
     MCAPI void
-        callback(std::function<void(entt::meta_any&, entt::meta_any&)>, std::vector<std::string>, std::vector<std::string>);
+        bindCallback(std::function<void(entt::meta_any&, entt::meta_any&)>, std::vector<std::string>, std::vector<std::string>);
 
-    // symbol: ?ctx@CerealUpgraderBase@internal@Puv@@QEBAAEBUReflectionCtx@cereal@@XZ
+    // symbol: ?ctx@CerealUpgraderBase@internal@Puv@@IEBAAEBUReflectionCtx@cereal@@XZ
     MCAPI struct cereal::ReflectionCtx const& ctx() const;
 
     // symbol:
-    // ?ignore@CerealUpgraderBase@internal@Puv@@QEAAXV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
+    // ?ignore@CerealUpgraderBase@internal@Puv@@IEAAXV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
     MCAPI void ignore(std::vector<std::string>);
 
     // symbol:
-    // ?move@CerealUpgraderBase@internal@Puv@@QEAAXV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@0@Z
+    // ?move@CerealUpgraderBase@internal@Puv@@IEAAXV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@0@Z
     MCAPI void move(std::vector<std::string>, std::vector<std::string>);
 
-    // symbol: ?performUpgrade@CerealUpgraderBase@internal@Puv@@QEBAXAEAVmeta_any@entt@@V45@AEAULogger@3@@Z
-    MCAPI void performUpgrade(entt::meta_any&, entt::meta_any, struct Puv::Logger&) const;
-
-    // symbol: ??1CerealUpgraderBase@internal@Puv@@QEAA@XZ
-    MCAPI ~CerealUpgraderBase();
+    // symbol: ?performUpgrade@CerealUpgraderBase@internal@Puv@@IEBAXAEAVmeta_any@entt@@V45@AEAVLogger@3@@Z
+    MCAPI void performUpgrade(entt::meta_any&, entt::meta_any, class Puv::Logger&) const;
 
     // NOLINTEND
 
@@ -120,8 +121,8 @@ public:
     MCAPI bool isReflected(entt::meta_type const&) const;
 
     // symbol:
-    // ?iterate@CerealUpgraderBase@internal@Puv@@AEBA_NAEBVmeta_type@entt@@AEAVmeta_any@5@1AEAUUpgradeState@123@@Z
-    MCAPI bool
+    // ?iterate@CerealUpgraderBase@internal@Puv@@AEBAHAEBVmeta_type@entt@@AEAVmeta_any@5@1AEAUUpgradeState@123@@Z
+    MCAPI int
     iterate(entt::meta_type const&, entt::meta_any&, entt::meta_any&, struct Puv::internal::CerealUpgraderBase::UpgradeState&)
         const;
 

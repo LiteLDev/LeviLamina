@@ -4,6 +4,7 @@
 #include "mc/deps/core/utility/BasicTimer.h"
 
 // auto generated inclusion list
+#include "mc/common/wrapper/StackRefResult.h"
 #include "mc/enums/ObjectiveSortOrder.h"
 #include "mc/world/scores/Scoreboard.h"
 
@@ -90,8 +91,10 @@ public:
     // vIndex: 15, symbol: ?isClientSide@ServerScoreboard@@MEBA_NXZ
     virtual bool isClientSide() const;
 
-    // symbol: ??0ServerScoreboard@@QEAA@VCommandSoftEnumRegistry@@PEAVLevelStorage@@@Z
-    MCAPI ServerScoreboard(class CommandSoftEnumRegistry registry, class LevelStorage* levelStorage);
+    // symbol:
+    // ??0ServerScoreboard@@QEAA@VCommandSoftEnumRegistry@@PEAVLevelStorage@@AEBV?$not_null@V?$StackRefResult@VGameplayUserManager@@@@@gsl@@@Z
+    MCAPI
+    ServerScoreboard(class CommandSoftEnumRegistry, class LevelStorage*, gsl::not_null<class StackRefResult<class GameplayUserManager>> const&);
 
     // symbol:
     // ?deserialize@ServerScoreboard@@QEAAXV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@@Z
@@ -103,33 +106,33 @@ public:
     // symbol: ?initializeWithLevelStorageManager@ServerScoreboard@@QEAAXAEAVLevelStorageManager@@@Z
     MCAPI void initializeWithLevelStorageManager(class LevelStorageManager&);
 
+    // symbol: ?intializeWithActorManager@ServerScoreboard@@QEAAXAEAVActorManager@@@Z
+    MCAPI void intializeWithActorManager(class ActorManager&);
+
     // symbol:
     // ?serialize@ServerScoreboard@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
     MCAPI std::unique_ptr<class CompoundTag> serialize() const;
-
-    // symbol:
-    // ?setClearDisplayObjectiveCallback@ServerScoreboard@@QEAAXV?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVDisplayObjective@@@Z@std@@@Z
-    MCAPI void
-    setClearDisplayObjectiveCallback(std::function<void(std::string const&, class DisplayObjective const&)> callback);
-
-    // symbol: ?setIdentityUpdatedCallback@ServerScoreboard@@QEAAXV?$function@$$A6AXAEBUScoreboardId@@@Z@std@@@Z
-    MCAPI void setIdentityUpdatedCallback(std::function<void(struct ScoreboardId const&)> callback);
-
-    // symbol: ?setScoreChangedCallback@ServerScoreboard@@QEAAXV?$function@$$A6AXAEBUScoreboardId@@@Z@std@@@Z
-    MCAPI void setScoreChangedCallback(std::function<void(struct ScoreboardId const&)> callback);
-
-    // symbol: ?setScoreRemovedCallback@ServerScoreboard@@QEAAXV?$function@$$A6AXAEBUScoreboardId@@@Z@std@@@Z
-    MCAPI void setScoreRemovedCallback(std::function<void(struct ScoreboardId const&)> callback);
-
-    // symbol:
-    // ?setSetDisplayObjectiveCallback@ServerScoreboard@@QEAAXV?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVDisplayObjective@@@Z@std@@@Z
-    MCAPI void
-    setSetDisplayObjectiveCallback(std::function<void(std::string const&, class DisplayObjective const&)> callback);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
+    // symbol:
+    // ?_clearAllScoreTagsForObjective@ServerScoreboard@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVDisplayObjective@@@Z
+    MCAPI void _clearAllScoreTagsForObjective(std::string const&, class DisplayObjective const&);
+
+    // symbol: ?_getPlayer@ServerScoreboard@@AEBAPEAVPlayer@@UActorUniqueID@@@Z
+    MCAPI class Player* _getPlayer(struct ActorUniqueID) const;
+
+    // symbol: ?_getValidGameplayUserManager@ServerScoreboard@@AEBA?AV?$StackRefResult@VGameplayUserManager@@@@XZ
+    MCAPI class StackRefResult<class GameplayUserManager> _getValidGameplayUserManager() const;
+
+    // symbol: ?_onGameplayUserRemoved@ServerScoreboard@@AEAAXAEAVEntityContext@@@Z
+    MCAPI void _onGameplayUserRemoved(class EntityContext&);
+
+    // symbol: ?_onRemoveActorEntityReferences@ServerScoreboard@@AEAAXAEAVActor@@@Z
+    MCAPI void _onRemoveActorEntityReferences(class Actor&);
+
     // symbol: ?_onSaveEvent@ServerScoreboard@@AEAAXAEAVLevelStorage@@@Z
     MCAPI void _onSaveEvent(class LevelStorage&);
 
@@ -143,6 +146,13 @@ public:
         std::string const&                 objName,
         int                                score
     );
+
+    // symbol:
+    // ?_updateAllScoreTagsForObjective@ServerScoreboard@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVDisplayObjective@@@Z
+    MCAPI void _updateAllScoreTagsForObjective(std::string const&, class DisplayObjective const&);
+
+    // symbol: ?_updateScoreTag@ServerScoreboard@@AEAAXAEBUScoreboardId@@_N@Z
+    MCAPI void _updateScoreTag(struct ScoreboardId const&, bool);
 
     // NOLINTEND
 };

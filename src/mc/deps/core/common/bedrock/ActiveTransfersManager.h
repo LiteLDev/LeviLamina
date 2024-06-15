@@ -76,6 +76,10 @@ public:
     // ?startTransfer@ActiveTransfersManager@Server@ClientBlobCache@@QEBA?AVTransferBuilder@23@AEBVNetworkIdentifier@@@Z
     MCAPI class ClientBlobCache::Server::TransferBuilder startTransfer(class NetworkIdentifier const& client) const;
 
+    // symbol:
+    // ?tryStartTransfer@ActiveTransfersManager@Server@ClientBlobCache@@QEBA?AVTransferBuilder@23@AEBVNetworkIdentifier@@@Z
+    MCAPI class ClientBlobCache::Server::TransferBuilder tryStartTransfer(class NetworkIdentifier const& client) const;
+
     // symbol: ?updateNetworkConditions@ActiveTransfersManager@Server@ClientBlobCache@@QEAAXAEAVServerNetworkSystem@@@Z
     MCAPI void updateNetworkConditions(class ServerNetworkSystem&);
 

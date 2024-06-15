@@ -16,8 +16,14 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0Spawner@@QEAA@AEAVLevel@@@Z
+    MCAPI explicit Spawner(class Level& level);
+
     // symbol: ?getSpawnRules@Spawner@@QEBAPEBVActorSpawnRuleGroup@@XZ
     MCAPI class ActorSpawnRuleGroup const* getSpawnRules() const;
+
+    // symbol: ?getSpawnRulesMutable@Spawner@@QEBAPEAVActorSpawnRuleGroup@@XZ
+    MCAPI class ActorSpawnRuleGroup* getSpawnRulesMutable() const;
 
     // symbol: ?getSpawnSettings@Spawner@@QEBAAEBUSpawnSettings@@XZ
     MCAPI struct SpawnSettings const& getSpawnSettings() const;
@@ -79,6 +85,12 @@ public:
     // symbol: ?tick@Spawner@@QEAAXAEAVBlockSource@@AEBVLevelChunk@@@Z
     MCAPI void tick(class BlockSource& region, class LevelChunk const& chunk);
 
+    // symbol: ?tickMobCount@Spawner@@QEAAXXZ
+    MCAPI void tickMobCount();
+
+    // symbol: ??1Spawner@@QEAA@XZ
+    MCAPI ~Spawner();
+
     // symbol:
     // ?findNextSpawnBlockUnder@Spawner@@SA_NAEBVBlockSource@@AEAVBlockPos@@W4MaterialType@@W4SpawnBlockRequirements@@@Z
     MCAPI static bool findNextSpawnBlockUnder(
@@ -104,6 +116,16 @@ public:
     // ?_postProcessSpawnMobs@Spawner@@IEAAXAEAVBlockSource@@HHAEAVRandomize@@_NAEBV?$function@$$A6AXAEBVBlockPos@@AEAVSpawnConditions@@@Z@std@@AEBV?$function@$$A6A_NAEBVBlockSource@@VBlockPos@@@Z@5@@Z
     MCAPI void
     _postProcessSpawnMobs(class BlockSource& region, int xo, int zo, class Randomize& randomize, bool, std::function<void(class BlockPos const&, class SpawnConditions&)> const& spawnMobClusterCallback, std::function<bool(class BlockSource const&, class BlockPos)> const&);
+
+    // symbol:
+    // ?_spawnMobInCluster@Spawner@@IEAAXAEAVBlockSource@@AEBUActorDefinitionIdentifier@@AEBVBlockPos@@AEBVSpawnConditions@@AEAV?$vector@PEAVMob@@V?$allocator@PEAVMob@@@std@@@std@@@Z
+    MCAPI void _spawnMobInCluster(
+        class BlockSource&                      region,
+        struct ActorDefinitionIdentifier const& id,
+        class BlockPos const&                   pos,
+        class SpawnConditions const&            conditions,
+        std::vector<class Mob*>&                spawnGroup
+    );
 
     // symbol:
     // ?_spawnStructureMob@Spawner@@IEAAXAEAVBlockSource@@AEBVBlockPos@@AEBUHardcodedSpawningArea@LevelChunk@@AEBVSpawnConditions@@@Z
@@ -159,22 +181,12 @@ public:
     MCAPI void
     _spawnMobCluster(class BlockSource& region, class BlockPos const& pos, class SpawnConditions& conditions);
 
-    // symbol:
-    // ?_spawnMobInCluster@Spawner@@AEAAXAEAVBlockSource@@UActorDefinitionIdentifier@@AEBVBlockPos@@AEBVSpawnConditions@@AEAV?$vector@PEAVMob@@V?$allocator@PEAVMob@@@std@@@std@@@Z
-    MCAPI void _spawnMobInCluster(
-        class BlockSource&               region,
-        struct ActorDefinitionIdentifier id,
-        class BlockPos const&            pos,
-        class SpawnConditions const&     conditions,
-        std::vector<class Mob*>&         spawnGroup
-    );
-
     // symbol: ?_updateMobCounts@Spawner@@AEAAXAEBUActorDefinitionIdentifier@@AEBVSpawnConditions@@@Z
     MCAPI void
     _updateMobCounts(struct ActorDefinitionIdentifier const& actualId, class SpawnConditions const& conditions);
 
-    // symbol: ?_isInsideAncientCity@Spawner@@CA_NAEBVBlockSource@@VBlockPos@@@Z
-    MCAPI static bool _isInsideAncientCity(class BlockSource const& region, class BlockPos pos);
+    // symbol: ?_hardcodedAllowStructureMobSpawns@Spawner@@CA_NAEBVBlockSource@@VBlockPos@@@Z
+    MCAPI static bool _hardcodedAllowStructureMobSpawns(class BlockSource const&, class BlockPos);
 
     // NOLINTEND
 

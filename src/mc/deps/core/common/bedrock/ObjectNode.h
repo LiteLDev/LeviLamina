@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock::JSONObject { class MemoryPage; }
 namespace Bedrock::JSONObject { class ValueWrapper; }
 // clang-format on
 
@@ -34,8 +35,14 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ?begin@ObjectNode@JSONObject@Bedrock@@QEAA?AV?$iterator_base@$0A@@123@XZ
+    MCAPI class Bedrock::JSONObject::ObjectNode::iterator_base<0> begin();
+
     // symbol: ?clear@ObjectNode@JSONObject@Bedrock@@QEAAXXZ
     MCAPI void clear();
+
+    // symbol: ?end@ObjectNode@JSONObject@Bedrock@@QEAA?AV?$iterator_base@$0A@@123@XZ
+    MCAPI class Bedrock::JSONObject::ObjectNode::iterator_base<0> end();
 
     // symbol:
     // ?insert@ObjectNode@JSONObject@Bedrock@@QEAA?AV?$iterator_base@$0A@@123@V?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBVValueWrapper@23@_N@Z
@@ -44,6 +51,13 @@ public:
 
     // symbol: ?setContents@ObjectNode@JSONObject@Bedrock@@QEAA_NAEBVValueWrapper@23@@Z
     MCAPI bool setContents(class Bedrock::JSONObject::ValueWrapper const& contents);
+
+    // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol: ??0ObjectNode@JSONObject@Bedrock@@AEAA@PEAVMemoryPage@12@@Z
+    MCAPI explicit ObjectNode(class Bedrock::JSONObject::MemoryPage*);
 
     // NOLINTEND
 };

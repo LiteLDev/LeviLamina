@@ -33,7 +33,7 @@ public:
     // vIndex: 25, symbol: ?canConnect@MangroveRootsBlock@@UEBA_NAEBVBlock@@E0@Z
     virtual bool canConnect(class Block const& otherBlock, uchar toOther, class Block const& thisBlock) const;
 
-    // vIndex: 56, symbol: ?canContainLiquid@MangroveRootsBlock@@UEBA_NXZ
+    // vIndex: 57, symbol: ?canContainLiquid@MangroveRootsBlock@@UEBA_NXZ
     virtual bool canContainLiquid() const;
 
     // symbol:

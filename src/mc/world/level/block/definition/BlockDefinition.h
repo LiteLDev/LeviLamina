@@ -45,8 +45,5 @@ public:
     // symbol: ?getCerealDocumentUpgrader@BlockDefinition@@CAPEAVCerealDocumentUpgrader@@AEBUReflectionCtx@cereal@@@Z
     MCAPI static class CerealDocumentUpgrader* getCerealDocumentUpgrader(struct cereal::ReflectionCtx const&);
 
-    // symbol: ?initCerealDocumentUpgrader@BlockDefinition@@CAAEAVCerealDocumentUpgrader@@AEAUReflectionCtx@cereal@@@Z
-    MCAPI static class CerealDocumentUpgrader& initCerealDocumentUpgrader(struct cereal::ReflectionCtx&);
-
     // NOLINTEND
 };

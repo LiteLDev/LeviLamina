@@ -34,9 +34,6 @@ public:
     // symbol: ?bindType@BlockFlammableDescription@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
-    // symbol: ?registerVersionUpgrades@BlockFlammableDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet&);
-
     // symbol: ?CATCH_CHANCE_DEFAULT@BlockFlammableDescription@@2HB
     MCAPI static int const CATCH_CHANCE_DEFAULT;
 

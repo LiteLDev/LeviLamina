@@ -11,14 +11,12 @@ public:
     // prevent constructor by default
     ChestContainerScreenValidator& operator=(ChestContainerScreenValidator const&);
     ChestContainerScreenValidator(ChestContainerScreenValidator const&);
+    ChestContainerScreenValidator();
 
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1ChestContainerScreenValidator@@UEAA@XZ
     virtual ~ChestContainerScreenValidator() = default;
-
-    // symbol: ??0ChestContainerScreenValidator@@QEAA@XZ
-    MCAPI ChestContainerScreenValidator();
 
     // NOLINTEND
 };

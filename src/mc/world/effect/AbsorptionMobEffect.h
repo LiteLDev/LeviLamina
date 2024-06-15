@@ -17,11 +17,11 @@ public:
     // vIndex: 0, symbol: __gen_??1AbsorptionMobEffect@@UEAA@XZ
     virtual ~AbsorptionMobEffect() = default;
 
-    // vIndex: 1, symbol: ?applyEffects@AbsorptionMobEffect@@UEBAXPEAVActor@@HH@Z
-    virtual void applyEffects(class Actor* target, int durationTicks, int amplification) const;
+    // vIndex: 1, symbol: ?applyEffects@AbsorptionMobEffect@@UEBAXAEAVActor@@HH@Z
+    virtual void applyEffects(class Actor& target, int durationTicks, int amplification) const;
 
-    // vIndex: 2, symbol: ?removeEffects@AbsorptionMobEffect@@UEAAXPEAVActor@@@Z
-    virtual void removeEffects(class Actor* target);
+    // vIndex: 2, symbol: ?removeEffects@AbsorptionMobEffect@@UEAAXAEAVBaseAttributeMap@@@Z
+    virtual void removeEffects(class BaseAttributeMap&);
 
     // NOLINTEND
 };

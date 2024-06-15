@@ -6,6 +6,7 @@
 // clang-format off
 namespace Scripting { class IWatchdog; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ContextId; }
 // clang-format on
 
 class ScriptWatchdog {
@@ -18,15 +19,16 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ??0ScriptWatchdog@@QEAA@AEAVIWatchdog@Scripting@@AEAVServerLevel@@PEAVScriptPluginManager@@VWeakLifetimeScope@2@PEAVServerInstance@@@Z
-    MCAPI
-    ScriptWatchdog(class Scripting::IWatchdog&, class ServerLevel&, class ScriptPluginManager*, class Scripting::WeakLifetimeScope, class ServerInstance*);
+    // ??0ScriptWatchdog@@QEAA@AEAVIWatchdog@Scripting@@AEAVServerLevel@@PEAVScriptPluginManager@@VWeakLifetimeScope@2@@Z
+    MCAPI ScriptWatchdog(
+        class Scripting::IWatchdog&,
+        class ServerLevel&,
+        class ScriptPluginManager*,
+        class Scripting::WeakLifetimeScope
+    );
 
-    // symbol: ?disableWatchdog@ScriptWatchdog@@QEAAX_N@Z
-    MCAPI void disableWatchdog(bool);
-
-    // symbol: ?sendTelemetry@ScriptWatchdog@@QEAAXXZ
-    MCAPI void sendTelemetry();
+    // symbol: ?disableTimingWarnings@ScriptWatchdog@@QEAAXUContextId@Scripting@@_N@Z
+    MCAPI void disableTimingWarnings(struct Scripting::ContextId, bool);
 
     // NOLINTEND
 };

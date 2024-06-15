@@ -25,22 +25,22 @@ public:
         std::function<void(int, class ItemStack const&)> onNetIdChanged
     );
 
-    // vIndex: 5, symbol: ?getItem@SimpleContainer@@UEBAAEBVItemStack@@H@Z
+    // vIndex: 7, symbol: ?getItem@SimpleContainer@@UEBAAEBVItemStack@@H@Z
     virtual class ItemStack const& getItem(int slot) const;
 
-    // vIndex: 10, symbol: ?setItem@SimpleContainer@@UEAAXHAEBVItemStack@@@Z
+    // vIndex: 12, symbol: ?setItem@SimpleContainer@@UEAAXHAEBVItemStack@@@Z
     virtual void setItem(int slot, class ItemStack const& item);
 
-    // vIndex: 17, symbol: ?getContainerSize@SimpleContainer@@UEBAHXZ
+    // vIndex: 20, symbol: ?getContainerSize@SimpleContainer@@UEBAHXZ
     virtual int getContainerSize() const;
 
-    // vIndex: 18, symbol: ?getMaxStackSize@SimpleContainer@@UEBAHXZ
+    // vIndex: 21, symbol: ?getMaxStackSize@SimpleContainer@@UEBAHXZ
     virtual int getMaxStackSize() const;
 
-    // vIndex: 19, symbol: ?startOpen@SimpleContainer@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 22, symbol: ?startOpen@SimpleContainer@@UEAAXAEAVPlayer@@@Z
     virtual void startOpen(class Player&);
 
-    // vIndex: 20, symbol: ?stopOpen@SimpleContainer@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 23, symbol: ?stopOpen@SimpleContainer@@UEAAXAEAVPlayer@@@Z
     virtual void stopOpen(class Player&);
 
     // symbol:

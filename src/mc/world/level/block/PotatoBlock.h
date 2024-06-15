@@ -41,7 +41,7 @@ public:
     virtual class AABB const&
     getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 128, symbol: ?getVariant@PotatoBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129, symbol: ?getVariant@PotatoBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const& block) const;
 
     // vIndex: 165, symbol: ?getBaseSeed@PotatoBlock@@UEBA?BVItemInstance@@XZ

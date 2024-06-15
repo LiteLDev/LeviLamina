@@ -19,9 +19,6 @@ public:
     // symbol: ??DLevelDataWrapper@@QEBAAEBVLevelData@@XZ
     MCAPI class LevelData const& operator*() const;
 
-    // symbol: ??CLevelDataWrapper@@QEAAPEAVLevelData@@XZ
-    MCAPI class LevelData* operator->();
-
     // symbol: ??CLevelDataWrapper@@QEBAPEBVLevelData@@XZ
     MCAPI class LevelData const* operator->() const;
 

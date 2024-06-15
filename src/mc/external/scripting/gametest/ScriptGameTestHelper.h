@@ -200,6 +200,10 @@ public:
     getSculkSpreader(class Vec3 const&);
 
     // symbol:
+    // ?getTestDirection@ScriptGameTestHelper@ScriptModuleGameTest@@QEBA?AW4ScriptFacing@ScriptModuleMinecraft@@XZ
+    MCAPI ::ScriptModuleMinecraft::ScriptFacing getTestDirection() const;
+
+    // symbol:
     // ?idle@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Promise@XUError@Scripting@@X@Scripting@@AEAVScriptObjectFactory@4@H@Z
     MCAPI class Scripting::Promise<void, struct Scripting::Error, void>
     idle(class Scripting::ScriptObjectFactory& factory, int tickDelay);
@@ -404,6 +408,9 @@ public:
     // symbol:
     // ?worldPosition@ScriptGameTestHelper@ScriptModuleGameTest@@QEBA?AV?$Result@VVec3@@UGameTestError@gametest@@@Scripting@@AEBVVec3@@@Z
     MCAPI class Scripting::Result<class Vec3, struct gametest::GameTestError> worldPosition(class Vec3 const&) const;
+
+    // symbol: ??1ScriptGameTestHelper@ScriptModuleGameTest@@QEAA@XZ
+    MCAPI ~ScriptGameTestHelper();
 
     // NOLINTEND
 

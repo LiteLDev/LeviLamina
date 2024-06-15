@@ -21,7 +21,7 @@ public:
     MCAPI static struct TickingSystemWithInfo createWaterTravelSystem();
 
     // symbol:
-    // ?tickWaterTravelSystem@WaterTravelSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@$$CBV?$FlagComponent@UActorMovementTickNeededFlag@@@@$$CBV?$FlagComponent@UWaterTravelFlag@@@@@@$$CBUMovementAttributesComponent@@$$CBUSwimSpeedMultiplierComponent@@$$CBUWaterWalkSpeedEnchantComponent@@UMobTravelComponent@@V?$Optional@$$CBV?$FlagComponent@UDolphinFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@UOnGroundFlag@@@@@@@@V?$ViewT@VStrictEntityContext@@$$CBUMovementAttributesComponent@@$$CBUMovementSpeedComponent@@@@V?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UPlayerComponentFlag@@@@@@@@@Z
+    // ?tickWaterTravelSystem@WaterTravelSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@$$CBV?$FlagComponent@UActorMovementTickNeededFlag@@@@$$CBV?$FlagComponent@UWaterTravelFlag@@@@@@$$CBUMovementAttributesComponent@@$$CBUSwimSpeedMultiplierComponent@@$$CBUWaterWalkSpeedEnchantComponent@@UMobTravelComponent@@V?$Optional@$$CBV?$FlagComponent@UDolphinFlag@@@@@@V?$Optional@$$CBUOnGroundFlagComponent@@@@@@V?$ViewT@VStrictEntityContext@@$$CBUMovementAttributesComponent@@$$CBUMovementSpeedComponent@@@@V?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UPlayerComponentFlag@@@@@@@@@Z
     MCAPI static void tickWaterTravelSystem(
         class ViewT<
             class StrictEntityContext,
@@ -33,7 +33,7 @@ public:
             struct WaterWalkSpeedEnchantComponent const,
             struct MobTravelComponent,
             class Optional<class FlagComponent<struct DolphinFlag> const>,
-            class Optional<class FlagComponent<struct OnGroundFlag> const>> view,
+            class Optional<struct OnGroundFlagComponent const>> view,
         class ViewT<
             class StrictEntityContext,
             struct MovementAttributesComponent const,

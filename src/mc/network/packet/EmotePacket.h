@@ -40,14 +40,5 @@ public:
     // symbol: ??0EmotePacket@@QEAA@XZ
     MCAPI EmotePacket();
 
-    // symbol: ?isServerSide@EmotePacket@@QEBA_NXZ
-    MCAPI bool isServerSide() const;
-
-    // symbol: ?setEmoteChatMute@EmotePacket@@QEAAXXZ
-    MCAPI void setEmoteChatMute();
-
-    // symbol: ?setServerSide@EmotePacket@@QEAAXXZ
-    MCAPI void setServerSide();
-
     // NOLINTEND
 };

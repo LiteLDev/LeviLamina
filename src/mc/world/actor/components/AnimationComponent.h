@@ -34,10 +34,6 @@ public:
     MCAPI std::unordered_map<::SkeletalHierarchyIndex, std::vector<class BoneOrientation>>& getAllBoneOrientations();
 
     // symbol:
-    // ?getAnimationComponentInitFunction@AnimationComponent@@QEBAAEBV?$function@$$A6AXAEAVActorAnimationPlayer@@@Z@std@@XZ
-    MCAPI std::function<void(class ActorAnimationPlayer&)> const& getAnimationComponentInitFunction() const;
-
-    // symbol:
     // ?getBoneOrientations@AnimationComponent@@QEAAPEAV?$vector@VBoneOrientation@@V?$allocator@VBoneOrientation@@@std@@@std@@W4SkeletalHierarchyIndex@@_N@Z
     MCAPI std::vector<class BoneOrientation>*
           getBoneOrientations(::SkeletalHierarchyIndex skeletalHierarchyIndex, bool missingIsOkay);

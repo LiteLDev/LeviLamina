@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/common/wrapper/Optional.h"
-#include "mc/world/components/FlagComponent.h"
 
 namespace SneakMovementSystem {
 // NOLINTBEGIN
@@ -17,14 +16,14 @@ MCAPI class AABB
 getMaxCollisionVolume(class Vec3 const&, struct MaxAutoStepComponent const&, struct AABBShapeComponent const&);
 
 // symbol:
-// ?storeSneakStateAndReturnDoSneakMovement@SneakMovementSystem@@YA_NAEBUActorDataFlagComponent@@V?$Optional@$$CBUMoveInputComponent@@@@V?$Optional@$$CBV?$FlagComponent@UOnGroundFlag@@@@@@AEAUMoveRequestComponent@@@Z
+// ?storeSneakStateAndReturnDoSneakMovement@SneakMovementSystem@@YA_NAEBUActorDataFlagComponent@@V?$Optional@$$CBUMoveInputComponent@@@@V?$Optional@$$CBUOnGroundFlagComponent@@@@AEAUMoveRequestComponent@@@Z
 MCAPI bool
-storeSneakStateAndReturnDoSneakMovement(struct ActorDataFlagComponent const&, class Optional<struct MoveInputComponent const>, class Optional<class FlagComponent<struct OnGroundFlag> const>, struct MoveRequestComponent&);
+storeSneakStateAndReturnDoSneakMovement(struct ActorDataFlagComponent const&, class Optional<struct MoveInputComponent const>, class Optional<struct OnGroundFlagComponent const>, struct MoveRequestComponent&);
 
 // symbol:
-// ?tickSneakMovementSystem@SneakMovementSystem@@YAXAEBUActorDataFlagComponent@@AEBUAABBShapeComponent@@AEBUMaxAutoStepComponent@@V?$Optional@$$CBUMoveInputComponent@@@@V?$Optional@$$CBV?$FlagComponent@UOnGroundFlag@@@@@@AEAUMoveRequestComponent@@AEAUStateVectorComponent@@@Z
+// ?tickSneakMovementSystem@SneakMovementSystem@@YAXAEBUActorDataFlagComponent@@AEBUAABBShapeComponent@@AEBUMaxAutoStepComponent@@V?$Optional@$$CBUMoveInputComponent@@@@V?$Optional@$$CBUOnGroundFlagComponent@@@@AEAUMoveRequestComponent@@AEAUStateVectorComponent@@@Z
 MCAPI void
-tickSneakMovementSystem(struct ActorDataFlagComponent const&, struct AABBShapeComponent const&, struct MaxAutoStepComponent const&, class Optional<struct MoveInputComponent const>, class Optional<class FlagComponent<struct OnGroundFlag> const>, struct MoveRequestComponent&, struct StateVectorComponent&);
+tickSneakMovementSystem(struct ActorDataFlagComponent const&, struct AABBShapeComponent const&, struct MaxAutoStepComponent const&, class Optional<struct MoveInputComponent const>, class Optional<struct OnGroundFlagComponent const>, struct MoveRequestComponent&, struct StateVectorComponent&);
 // NOLINTEND
 
 }; // namespace SneakMovementSystem

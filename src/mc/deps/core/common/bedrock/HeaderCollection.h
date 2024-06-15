@@ -22,10 +22,6 @@ public:
     MCAPI void add(std::string const&, std::string const&);
 
     // symbol:
-    // ?addNoSafetyChecks@HeaderCollection@Http@Bedrock@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-    MCAPI void addNoSafetyChecks(std::string const&, std::string const&);
-
-    // symbol:
     // ?begin@HeaderCollection@Http@Bedrock@@QEBA?AV?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@std@@XZ
     MCAPI std::_List_const_iterator<std::_List_val<std::_List_simple_types<std::pair<std::string const, std::string>>>>
           begin() const;

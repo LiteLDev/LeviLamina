@@ -30,10 +30,10 @@ public:
     // vIndex: 0, symbol: __gen_??1SculkCatalystBlock@@UEAA@XZ
     virtual ~SculkCatalystBlock() = default;
 
-    // vIndex: 128, symbol: ?getVariant@SculkCatalystBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129, symbol: ?getVariant@SculkCatalystBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 147, symbol: ?tick@SculkCatalystBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148, symbol: ?tick@SculkCatalystBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // symbol:

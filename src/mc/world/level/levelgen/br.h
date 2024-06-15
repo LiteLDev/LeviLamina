@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/enums/Rotation.h"
-#include "mc/world/level/levelgen/GenerationStub.h"
 #include "mc/world/level/levelgen/JigsawExpansion.h"
 #include "mc/world/level/levelgen/JigsawSectionDataKey.h"
 #include "mc/world/level/levelgen/RandomSpreadPlacement.h"
@@ -35,6 +34,7 @@ namespace br::worldgen { struct JigsawJunction; }
 namespace br::worldgen { struct JigsawPieceState; }
 namespace br::worldgen { struct JigsawStructure; }
 namespace br::worldgen { struct Rigid; }
+namespace br::worldgen { struct SpawnerData; }
 namespace br::worldgen { struct Structure; }
 namespace br::worldgen { struct StructurePlacement; }
 namespace br::worldgen { struct StructureSet; }

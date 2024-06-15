@@ -9,7 +9,6 @@
 // clang-format off
 namespace gametest { class BaseGameTestInstance; }
 namespace gametest { class IGameTestListener; }
-namespace gametest { class MultipleTestTracker; }
 // clang-format on
 
 class TestSummaryDisplayer : public ::gametest::IGameTestListener {
@@ -42,9 +41,6 @@ public:
 
     // vIndex: 6, symbol: ?onTestRetryFinished@IGameTestListener@gametest@@UEAAXAEAVBaseGameTestInstance@2@@Z
     virtual void onTestRetryFinished(class gametest::BaseGameTestInstance&);
-
-    // symbol: ??0TestSummaryDisplayer@@QEAA@AEAVLevel@@AEAVMultipleTestTracker@gametest@@@Z
-    MCAPI TestSummaryDisplayer(class Level& level, class gametest::MultipleTestTracker&);
 
     // NOLINTEND
 

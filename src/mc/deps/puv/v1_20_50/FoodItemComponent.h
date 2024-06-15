@@ -12,15 +12,13 @@ namespace Puv::v1_20_50 {
 struct FoodItemComponent {
 public:
     // prevent constructor by default
+    FoodItemComponent(FoodItemComponent const&);
     FoodItemComponent();
 
 public:
     // NOLINTBEGIN
     // symbol: ??0FoodItemComponent@v1_20_50@Puv@@QEAA@$$QEAU012@@Z
     MCAPI FoodItemComponent(struct Puv::v1_20_50::FoodItemComponent&&);
-
-    // symbol: ??0FoodItemComponent@v1_20_50@Puv@@QEAA@AEBU012@@Z
-    MCAPI FoodItemComponent(struct Puv::v1_20_50::FoodItemComponent const&);
 
     // symbol: ??4FoodItemComponent@v1_20_50@Puv@@QEAAAEAU012@$$QEAU012@@Z
     MCAPI struct Puv::v1_20_50::FoodItemComponent& operator=(struct Puv::v1_20_50::FoodItemComponent&&);

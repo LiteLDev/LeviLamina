@@ -75,25 +75,24 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol:
-    // ?_loadItemData@ItemRegistry@@AEAAXAEAVResourcePackManager@@V?$function@$$A6AXAEAV?$WeakPtr@VItem@@@@AEAVValue@Json@@AEBVSemVersion@@_NAEBVExperiments@@@Z@std@@AEBVExperiments@@W4ItemVersion@@@Z
+    // ?_loadItemData@ItemRegistry@@AEAAXAEAVResourcePackManager@@V?$function@$$A6AXAEAV?$WeakPtr@VItem@@@@AEBVValue@Json@@AEBVSemVersion@@_NAEBVExperiments@@@Z@std@@AEBVExperiments@@W4ItemVersion@@@Z
     MCAPI void _loadItemData(
-        class ResourcePackManager& resourcePackManager,
+        class ResourcePackManager&,
         std::function<
-            void(class WeakPtr<class Item>&, class Json::Value&, class SemVersion const&, bool, class Experiments const&)>
-                                 initCallback,
-        class Experiments const& enableDataDrivenItems,
+            void(class WeakPtr<class Item>&, class Json::Value const&, class SemVersion const&, bool, class Experiments const&)>,
+        class Experiments const&,
         ::ItemVersion
     );
 
     // symbol:
-    // ?_loadItemDefinition@ItemRegistry@@AEAAXAEAVValue@Json@@_NV?$function@$$A6AXAEAV?$WeakPtr@VItem@@@@AEAVValue@Json@@AEBVSemVersion@@_NAEBVExperiments@@@Z@std@@AEBVExperiments@@W4ItemVersion@@W4PackType@@AEBVSemVersion@@AEAUReflectionCtx@cereal@@@Z
+    // ?_loadItemDefinition@ItemRegistry@@AEAAXAEBVValue@Json@@_NV?$function@$$A6AXAEAV?$WeakPtr@VItem@@@@AEBVValue@Json@@AEBVSemVersion@@_NAEBVExperiments@@@Z@std@@AEBVExperiments@@W4ItemVersion@@W4PackType@@AEBVSemVersion@@AEAUReflectionCtx@cereal@@@Z
     MCAPI void
-    _loadItemDefinition(class Json::Value&, bool, std::function<void(class WeakPtr<class Item>&, class Json::Value&, class SemVersion const&, bool, class Experiments const&)>, class Experiments const&, ::ItemVersion, ::PackType, class SemVersion const&, struct cereal::ReflectionCtx&);
+    _loadItemDefinition(class Json::Value const&, bool, std::function<void(class WeakPtr<class Item>&, class Json::Value const&, class SemVersion const&, bool, class Experiments const&)>, class Experiments const&, ::ItemVersion, ::PackType, class SemVersion const&, struct cereal::ReflectionCtx&);
 
     // symbol:
-    // ?_parseItemDefinition@ItemRegistry@@AEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@_NV?$function@$$A6AXAEAV?$WeakPtr@VItem@@@@AEAVValue@Json@@AEBVSemVersion@@_NAEBVExperiments@@@Z@3@AEBVExperiments@@W4ItemVersion@@W4PackType@@AEBVPath@Core@@AEAUReflectionCtx@cereal@@@Z
+    // ?_parseItemDefinition@ItemRegistry@@AEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V23@_NV?$function@$$A6AXAEAV?$WeakPtr@VItem@@@@AEBVValue@Json@@AEBVSemVersion@@_NAEBVExperiments@@@Z@3@AEBVExperiments@@W4ItemVersion@@W4PackType@@AEBVPath@Core@@AEAUReflectionCtx@cereal@@@Z
     MCAPI std::string
-    _parseItemDefinition(std::string const&, bool, std::function<void(class WeakPtr<class Item>&, class Json::Value&, class SemVersion const&, bool, class Experiments const&)>, class Experiments const&, ::ItemVersion, ::PackType, class Core::Path const&, struct cereal::ReflectionCtx&);
+    _parseItemDefinition(std::string, bool, std::function<void(class WeakPtr<class Item>&, class Json::Value const&, class SemVersion const&, bool, class Experiments const&)>, class Experiments const&, ::ItemVersion, ::PackType, class Core::Path const&, struct cereal::ReflectionCtx&);
 
     // symbol: ?addItemToTagMap@ItemRegistry@@AEAAXAEBVItem@@@Z
     MCAPI void addItemToTagMap(class Item const& item);

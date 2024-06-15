@@ -67,8 +67,8 @@ public:
     // symbol: ??0CameraItemComponentLegacy@@QEAA@AEAVItem@@@Z
     MCAPI explicit CameraItemComponentLegacy(class Item& owner);
 
-    // symbol: ?init@CameraItemComponentLegacy@@QEAA_NAEAVValue@Json@@AEBVSemVersion@@@Z
-    MCAPI bool init(class Json::Value& data, class SemVersion const& engineVersion);
+    // symbol: ?init@CameraItemComponentLegacy@@QEAA_NAEBVValue@Json@@AEBVSemVersion@@@Z
+    MCAPI bool init(class Json::Value const& data, class SemVersion const& engineVersion);
 
     // NOLINTEND
 

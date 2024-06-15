@@ -36,8 +36,5 @@ public:
     // ?_read@DimensionDataPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0DimensionDataPacket@@QEAA@AEBVDimensionDefinitionGroup@@@Z
-    MCAPI explicit DimensionDataPacket(class DimensionDefinitionGroup const&);
-
     // NOLINTEND
 };

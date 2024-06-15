@@ -19,6 +19,9 @@ public:
     // symbol: ?initAdditionalCommonComponents@VanillaBiomes@@SAXAEAVBiomeRegistry@@@Z
     MCAPI static void initAdditionalCommonComponents(class BiomeRegistry&);
 
+    // symbol: ?initBiomeComponentGlue@VanillaBiomes@@SAXAEAVBiomeComponentFactory@@@Z
+    MCAPI static void initBiomeComponentGlue(class BiomeComponentFactory&);
+
     // symbol: ?initBiomeComponents@VanillaBiomes@@SAXAEAVBiomeComponentFactory@@@Z
     MCAPI static void initBiomeComponents(class BiomeComponentFactory& factory);
 

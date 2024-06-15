@@ -58,6 +58,9 @@ public:
     // symbol: ?_isPlayerSuspended@PlayerDimensionTransferManager@@AEBA_NAEBVPlayer@@@Z
     MCAPI bool _isPlayerSuspended(class Player const&) const;
 
+    // symbol: ?_onGameplayUserRemoved@PlayerDimensionTransferManager@@AEAAXAEAVEntityContext@@@Z
+    MCAPI void _onGameplayUserRemoved(class EntityContext&);
+
     // symbol: ?_playerChangeDimension@PlayerDimensionTransferManager@@AEAA_NAEAVPlayer@@AEAVChangeDimensionRequest@@@Z
     MCAPI bool _playerChangeDimension(class Player&, class ChangeDimensionRequest&);
 

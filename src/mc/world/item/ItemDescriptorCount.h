@@ -55,6 +55,9 @@ public:
     // symbol: ?getStackSize@ItemDescriptorCount@@QEBAFXZ
     MCAPI short getStackSize() const;
 
+    // symbol: ??BItemDescriptorCount@@QEBA_NXZ
+    MCAPI explicit operator bool() const;
+
     // symbol: ?setStackSize@ItemDescriptorCount@@QEAAXF@Z
     MCAPI void setStackSize(short size);
 

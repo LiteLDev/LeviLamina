@@ -45,10 +45,12 @@ public:
     // prevent constructor by default
     SerializedAbilitiesData& operator=(SerializedAbilitiesData const&);
     SerializedAbilitiesData(SerializedAbilitiesData const&);
-    SerializedAbilitiesData();
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0SerializedAbilitiesData@@QEAA@XZ
+    MCAPI SerializedAbilitiesData();
+
     // symbol: ??0SerializedAbilitiesData@@QEAA@UActorUniqueID@@AEBVLayeredAbilities@@@Z
     MCAPI SerializedAbilitiesData(struct ActorUniqueID, class LayeredAbilities const&);
 

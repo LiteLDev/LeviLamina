@@ -20,10 +20,6 @@ public:
     // symbol: ??0LevelChunkGarbageCollector@@QEAA@AEAVDimension@@@Z
     MCAPI explicit LevelChunkGarbageCollector(class Dimension& dim);
 
-    // symbol:
-    // ?acquireDiscardedChunk@LevelChunkGarbageCollector@@QEAAXV?$unique_ptr@VLevelChunk@@U?$default_delete@VLevelChunk@@@std@@@std@@@Z
-    MCAPI void acquireDiscardedChunk(std::unique_ptr<class LevelChunk> discarded);
-
     // symbol: ?getPendingDeletesCount@LevelChunkGarbageCollector@@QEBA_KXZ
     MCAPI uint64 getPendingDeletesCount() const;
 

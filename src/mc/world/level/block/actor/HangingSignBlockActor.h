@@ -21,5 +21,8 @@ public:
     // vIndex: 19, symbol: ?getShadowRadius@HangingSignBlockActor@@UEBAMAEAVBlockSource@@@Z
     virtual float getShadowRadius(class BlockSource&) const;
 
+    // symbol: ??0HangingSignBlockActor@@QEAA@AEBVBlockPos@@@Z
+    MCAPI explicit HangingSignBlockActor(class BlockPos const& pos);
+
     // NOLINTEND
 };

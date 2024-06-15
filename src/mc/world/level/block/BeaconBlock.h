@@ -30,13 +30,13 @@ public:
     // vIndex: 0, symbol: __gen_??1BeaconBlock@@UEAA@XZ
     virtual ~BeaconBlock() = default;
 
-    // vIndex: 56, symbol: ?canContainLiquid@BeaconBlock@@UEBA_NXZ
+    // vIndex: 57, symbol: ?canContainLiquid@BeaconBlock@@UEBA_NXZ
     virtual bool canContainLiquid() const;
 
-    // vIndex: 149, symbol: ?isInteractiveBlock@BeaconBlock@@UEBA_NXZ
+    // vIndex: 150, symbol: ?isInteractiveBlock@BeaconBlock@@UEBA_NXZ
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 151, symbol: ?use@BeaconBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152, symbol: ?use@BeaconBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // symbol: ??0BeaconBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

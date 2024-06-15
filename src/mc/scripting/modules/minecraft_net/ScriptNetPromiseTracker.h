@@ -2,16 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/external/scripting/Promise.h"
-#include "mc/external/scripting/StrongTypedObjectHandle.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraftNet { struct ScriptNetHeader; }
-namespace ScriptModuleMinecraftNet { struct ScriptNetRequest; }
-namespace ScriptModuleMinecraftNet { struct ScriptNetResponse; }
-namespace Scripting { struct Error; }
 // clang-format on
 
 namespace ScriptModuleMinecraftNet {
@@ -63,11 +56,6 @@ public:
     // symbol:
     // ?rejectAll@ScriptNetPromiseTracker@ScriptModuleMinecraftNet@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void rejectAll(std::string const& reason);
-
-    // symbol:
-    // ?track@ScriptNetPromiseTracker@ScriptModuleMinecraftNet@@QEAAIAEBV?$Promise@V?$StrongTypedObjectHandle@UScriptNetResponse@ScriptModuleMinecraftNet@@@Scripting@@UError@2@X@Scripting@@AEBV?$StrongTypedObjectHandle@UScriptNetRequest@ScriptModuleMinecraftNet@@@4@@Z
-    MCAPI uint
-    track(class Scripting::Promise<class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraftNet::ScriptNetResponse>, struct Scripting::Error, void> const&, class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraftNet::ScriptNetRequest> const&);
 
     // NOLINTEND
 };

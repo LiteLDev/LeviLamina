@@ -6,19 +6,15 @@
 #include "mc/enums/SignTextSide.h"
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/Result.h"
-#include "mc/external/scripting/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/BaseScriptBlockComponent.h"
 #include "mc/world/item/components/ItemColor.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
-class BlockSource;
 namespace ScriptModuleMinecraft { class BaseScriptBlockComponent; }
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
 namespace ScriptModuleMinecraft { struct ScriptRawTextInterface; }
-namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -72,12 +68,6 @@ public:
     // ?bind@ScriptBlockSignComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptBlockSignComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockSignComponent>
     bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&);
-
-    // symbol:
-    // ?tryCreate@ScriptBlockSignComponent@ScriptModuleMinecraft@@SA?AV?$optional@V?$StrongTypedObjectHandle@VScriptBlockSignComponent@ScriptModuleMinecraft@@@Scripting@@@std@@AEAVBlockSource@@VBlockPos@@AEBVWeakLifetimeScope@Scripting@@@Z
-    MCAPI static std::optional<
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockSignComponent>>
-    tryCreate(class BlockSource& region, class BlockPos position, class Scripting::WeakLifetimeScope const& scope);
 
     // symbol: ?ComponentId@ScriptBlockSignComponent@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ComponentId;

@@ -7,6 +7,11 @@
 
 namespace LevelUtils {
 // NOLINTBEGIN
+// symbol:
+// ?extinguishFire@LevelUtils@@YA_NAEAVIBlockSource@@AEBVBlockPos@@EPEAVActor@@AEAVLevelSoundManager@@PEAVPlayer@@@Z
+MCAPI bool
+extinguishFire(class IBlockSource&, class BlockPos const&, uchar, class Actor*, class LevelSoundManager&, class Player*);
+
 // symbol: ?getDay@LevelUtils@@YAHH@Z
 MCAPI int getDay(int);
 

@@ -27,25 +27,25 @@ public:
         std::function<void(int, class ItemStack const&)> onNetIdChanged
     );
 
-    // vIndex: 5, symbol: ?getItem@CraftingContainer@@UEBAAEBVItemStack@@H@Z
+    // vIndex: 7, symbol: ?getItem@CraftingContainer@@UEBAAEBVItemStack@@H@Z
     virtual class ItemStack const& getItem(int slot) const;
 
-    // vIndex: 10, symbol: ?setItem@CraftingContainer@@UEAAXHAEBVItemStack@@@Z
+    // vIndex: 12, symbol: ?setItem@CraftingContainer@@UEAAXHAEBVItemStack@@@Z
     virtual void setItem(int slot, class ItemStack const& item);
 
-    // vIndex: 17, symbol: ?getContainerSize@CraftingContainer@@UEBAHXZ
+    // vIndex: 20, symbol: ?getContainerSize@CraftingContainer@@UEBAHXZ
     virtual int getContainerSize() const;
 
-    // vIndex: 18, symbol: ?getMaxStackSize@CraftingContainer@@UEBAHXZ
+    // vIndex: 21, symbol: ?getMaxStackSize@CraftingContainer@@UEBAHXZ
     virtual int getMaxStackSize() const;
 
-    // vIndex: 19, symbol: ?startOpen@CraftingContainer@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 22, symbol: ?startOpen@CraftingContainer@@UEAAXAEAVPlayer@@@Z
     virtual void startOpen(class Player&);
 
-    // vIndex: 20, symbol: ?stopOpen@CraftingContainer@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 23, symbol: ?stopOpen@CraftingContainer@@UEAAXAEAVPlayer@@@Z
     virtual void stopOpen(class Player&);
 
-    // vIndex: 28, symbol: ?setContainerChanged@CraftingContainer@@UEAAXH@Z
+    // vIndex: 31, symbol: ?setContainerChanged@CraftingContainer@@UEAAXH@Z
     virtual void setContainerChanged(int slot);
 
     // symbol: ??0CraftingContainer@@QEAA@HH@Z

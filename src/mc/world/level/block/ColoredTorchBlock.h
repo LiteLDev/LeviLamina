@@ -31,13 +31,13 @@ public:
     // vIndex: 0, symbol: __gen_??1ColoredTorchBlock@@UEAA@XZ
     virtual ~ColoredTorchBlock() = default;
 
-    // vIndex: 60, symbol: ?canBeUsedInCommands@ColoredTorchBlock@@UEBA_NAEBVBaseGameVersion@@@Z
+    // vIndex: 61, symbol: ?canBeUsedInCommands@ColoredTorchBlock@@UEBA_NAEBVBaseGameVersion@@@Z
     virtual bool canBeUsedInCommands(class BaseGameVersion const& requiredBaseGameVersion) const;
 
-    // vIndex: 95, symbol: ?asItemInstance@ColoredTorchBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96, symbol: ?asItemInstance@ColoredTorchBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
-    // vIndex: 97, symbol: ?getPlacementBlock@ColoredTorchBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+    // vIndex: 98, symbol: ?getPlacementBlock@ColoredTorchBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
     virtual class Block const& getPlacementBlock(
         class Actor const&    by,
         class BlockPos const& pos,
@@ -46,17 +46,17 @@ public:
         int                   itemValue
     ) const;
 
-    // vIndex: 118, symbol:
+    // vIndex: 119, symbol:
     // ?buildDescriptionId@ColoredTorchBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
     virtual std::string buildDescriptionId(class Block const&) const;
 
-    // vIndex: 119, symbol: ?isAuxValueRelevantForPicking@ColoredTorchBlock@@UEBA_NXZ
+    // vIndex: 120, symbol: ?isAuxValueRelevantForPicking@ColoredTorchBlock@@UEBA_NXZ
     virtual bool isAuxValueRelevantForPicking() const;
 
-    // vIndex: 128, symbol: ?getVariant@ColoredTorchBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129, symbol: ?getVariant@ColoredTorchBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 133, symbol:
+    // vIndex: 134, symbol:
     // ?animateTickBedrockLegacy@ColoredTorchBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 

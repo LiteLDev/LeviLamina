@@ -36,8 +36,8 @@ public:
     // symbol: ?onCriticalDiskError@ServerInstance@@UEAAX_NAEBW4LevelStorageState@Core@@@Z
     MCVAPI void onCriticalDiskError(bool bSet, ::Core::LevelStorageState const& errorCode);
 
-    // symbol: ?onCriticalScriptError@ServerInstance@@UEAAXPEBD@Z
-    MCVAPI void onCriticalScriptError(char const*);
+    // symbol: ?onCriticalScriptError@ServerInstance@@UEAAXPEBD0@Z
+    MCVAPI void onCriticalScriptError(char const*, char const*);
 
     // symbol: ?onGameModeChanged@ServerInstance@@UEAAXXZ
     MCVAPI void onGameModeChanged();
@@ -108,9 +108,9 @@ public:
     MCAPI class Bedrock::NonOwnerPointer<class ServerTextSettings> getServerTextSettings() const;
 
     // symbol:
-    // ?initializeServer@ServerInstance@@QEAA_NAEAVIMinecraftApp@@AEAVAllowList@@PEAVPermissionsFile@@AEBV?$not_null@V?$NonOwnerPointer@VFilePathManager@Core@@@Bedrock@@@gsl@@V?$duration@_JU?$ratio@$00$00@std@@@chrono@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@9@55VLevelSettings@@H_NUConnectionDefinition@@7AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@9@5AEBVUUID@mce@@AEAVIMinecraftEventing@@AEBV?$not_null@V?$NonOwnerPointer@VIResourcePackRepository@@@Bedrock@@@6@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentTierManager@@@Bedrock@@@6@AEAVResourcePackManager@@V?$function@$$A6A?AV?$OwnerPtr@VLevelStorage@@@@AEAVScheduler@@@Z@9@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@9@PEAVLevelData@@5555V?$unique_ptr@VEducationOptions@@U?$default_delete@VEducationOptions@@@std@@@9@PEAVResourcePackManager@@V?$function@$$A6AXXZ@9@V?$function@$$A6AXXZ@9@PEAVServerMetrics@@PEAVDebugEndPoint@@7V?$shared_ptr@VFileStorageArea@Core@@@9@AEBUNetworkSettingOptions@@777V?$optional@UPlayerMovementSettings@@@9@V?$optional@UScriptSettings@@@9@AEBVExperiments@@7MV?$optional@_N@9@W4ForceBlockNetworkIdsAreHashes@@AEBUNetworkPermissions@@V?$not_null@V?$NonOwnerPointer@VNetworkSessionOwner@@@Bedrock@@@6@V?$NonOwnerPointer@VCDNConfig@@@Bedrock@@AEAUReflectionCtx@cereal@@V?$NonOwnerPointer@VServerTextSettings@@@Bedrock@@@Z
+    // ?initializeServer@ServerInstance@@QEAA_NAEAVIMinecraftApp@@AEAVAllowList@@PEAVPermissionsFile@@AEBV?$not_null@V?$NonOwnerPointer@VFilePathManager@Core@@@Bedrock@@@gsl@@V?$duration@_JU?$ratio@$00$00@std@@@chrono@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@9@55VLevelSettings@@H_NUConnectionDefinition@@7AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@9@5AEBVUUID@mce@@AEAVIMinecraftEventing@@AEBV?$not_null@V?$NonOwnerPointer@VIResourcePackRepository@@@Bedrock@@@6@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentTierManager@@@Bedrock@@@6@AEAVResourcePackManager@@V?$function@$$A6A?AV?$OwnerPtr@VLevelStorage@@@@AEAVScheduler@@@Z@9@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@9@PEAVLevelData@@55555V?$unique_ptr@VEducationOptions@@U?$default_delete@VEducationOptions@@@std@@@9@PEAVResourcePackManager@@V?$function@$$A6AXXZ@9@V?$function@$$A6AXXZ@9@PEAVServerMetrics@@PEAVDebugEndPoint@@7V?$shared_ptr@VFileStorageArea@Core@@@9@AEBUNetworkSettingOptions@@777V?$optional@UPlayerMovementSettings@@@9@V?$optional@UScriptSettings@@@9@AEBVExperiments@@7MV?$optional@_N@9@W4ForceBlockNetworkIdsAreHashes@@AEBUNetworkPermissions@@V?$not_null@V?$NonOwnerPointer@VNetworkSessionOwner@@@Bedrock@@@6@V?$NonOwnerPointer@VCDNConfig@@@Bedrock@@AEAUReflectionCtx@cereal@@V?$NonOwnerPointer@VServerTextSettings@@@Bedrock@@@Z
     MCAPI bool
-    initializeServer(class IMinecraftApp&, class AllowList&, class PermissionsFile*, Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const&, std::chrono::seconds, std::string, std::string, std::string, class LevelSettings, int, bool, struct ConnectionDefinition, bool, std::vector<std::string> const&, std::string, class mce::UUID const&, class IMinecraftEventing&, Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository> const&, Bedrock::NotNullNonOwnerPtr<class IContentTierManager const> const&, class ResourcePackManager&, std::function<class OwnerPtr<class LevelStorage>(class Scheduler&)>, std::string const&, class LevelData*, std::string, std::string, std::string, std::string, std::unique_ptr<class EducationOptions>, class ResourcePackManager*, std::function<void()>, std::function<void()>, class ServerMetrics*, class DebugEndPoint*, bool, std::shared_ptr<class Core::FileStorageArea>, struct NetworkSettingOptions const&, bool, bool, bool, std::optional<struct PlayerMovementSettings>, std::optional<struct ScriptSettings>, class Experiments const&, bool, float, std::optional<bool>, ::ForceBlockNetworkIdsAreHashes, struct NetworkPermissions const&, Bedrock::NotNullNonOwnerPtr<class NetworkSessionOwner>, class Bedrock::NonOwnerPointer<class CDNConfig>, struct cereal::ReflectionCtx&, class Bedrock::NonOwnerPointer<class ServerTextSettings>);
+    initializeServer(class IMinecraftApp&, class AllowList&, class PermissionsFile*, Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const&, std::chrono::seconds, std::string, std::string, std::string, class LevelSettings, int, bool, struct ConnectionDefinition, bool, std::vector<std::string> const&, std::string, class mce::UUID const&, class IMinecraftEventing&, Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository> const&, Bedrock::NotNullNonOwnerPtr<class IContentTierManager const> const&, class ResourcePackManager&, std::function<class OwnerPtr<class LevelStorage>(class Scheduler&)>, std::string const&, class LevelData*, std::string, std::string, std::string, std::string, std::string, std::unique_ptr<class EducationOptions>, class ResourcePackManager*, std::function<void()>, std::function<void()>, class ServerMetrics*, class DebugEndPoint*, bool, std::shared_ptr<class Core::FileStorageArea>, struct NetworkSettingOptions const&, bool, bool, bool, std::optional<struct PlayerMovementSettings>, std::optional<struct ScriptSettings>, class Experiments const&, bool, float, std::optional<bool>, ::ForceBlockNetworkIdsAreHashes, struct NetworkPermissions const&, Bedrock::NotNullNonOwnerPtr<class NetworkSessionOwner>, class Bedrock::NonOwnerPointer<class CDNConfig>, struct cereal::ReflectionCtx&, class Bedrock::NonOwnerPointer<class ServerTextSettings>);
 
     // symbol: ?isRealmsStoriesEnabled@ServerInstance@@QEBA_NXZ
     MCAPI bool isRealmsStoriesEnabled() const;
@@ -120,6 +120,9 @@ public:
 
     // symbol: ?queueForServerThread@ServerInstance@@QEAAXV?$function@$$A6AXXZ@std@@@Z
     MCAPI void queueForServerThread(std::function<void()> command);
+
+    // symbol: ?setScriptWatchdogCriticalErrorCallback@ServerInstance@@QEAAXV?$function@$$A6AXPEBD@Z@std@@@Z
+    MCAPI void setScriptWatchdogCriticalErrorCallback(std::function<void(char const*)>);
 
     // symbol: ?setUnrecoverableErrorCallback@ServerInstance@@QEAAXV?$function@$$A6AXPEBD0@Z@std@@@Z
     MCAPI void setUnrecoverableErrorCallback(std::function<void(char const*, char const*)>);
@@ -141,9 +144,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_onUnrecoverableError@ServerInstance@@AEAAXPEBD0@Z
-    MCAPI void _onUnrecoverableError(char const*, char const*);
-
     // symbol: ?_resetServerScriptManager@ServerInstance@@AEAAXXZ
     MCAPI void _resetServerScriptManager();
 

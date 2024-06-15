@@ -31,10 +31,10 @@ public:
     // vIndex: 0, symbol: __gen_??1WoolCarpetBlock@@UEAA@XZ
     virtual ~WoolCarpetBlock() = default;
 
-    // vIndex: 27, symbol: ?canDamperVibrations@WoolCarpetBlock@@UEBA_NXZ
+    // vIndex: 28, symbol: ?canDamperVibrations@WoolCarpetBlock@@UEBA_NXZ
     virtual bool canDamperVibrations() const;
 
-    // vIndex: 63, symbol: ?dispense@WoolCarpetBlock@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 64, symbol: ?dispense@WoolCarpetBlock@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar) const;
 

@@ -32,6 +32,12 @@ public:
     // ?registerLevelGameplayHandler@LevelEventCoordinator@@QEAAX$$QEAV?$unique_ptr@VLevelGameplayHandler@@U?$default_delete@VLevelGameplayHandler@@@std@@@std@@@Z
     MCAPI void registerLevelGameplayHandler(std::unique_ptr<class LevelGameplayHandler>&& handler);
 
+    // symbol: ?registerWithActorManagerEvents@LevelEventCoordinator@@QEAAXAEAVActorManager@@@Z
+    MCAPI void registerWithActorManagerEvents(class ActorManager&);
+
+    // symbol: ?registerWithGameplayUserManagerEvents@LevelEventCoordinator@@QEAAXAEAVGameplayUserManager@@@Z
+    MCAPI void registerWithGameplayUserManagerEvents(class GameplayUserManager&);
+
     // symbol:
     // ?sendEvent@LevelEventCoordinator@@QEAA?AW4CoordinatorResult@@V?$EventRef@U?$MutableLevelGameplayEvent@W4CoordinatorResult@@@@@@@Z
     MCAPI ::CoordinatorResult sendEvent(class EventRef<struct MutableLevelGameplayEvent<::CoordinatorResult>>);
@@ -42,8 +48,8 @@ public:
     // symbol: ?sendLevelInitialized@LevelEventCoordinator@@QEAAXAEAVLevel@@@Z
     MCAPI void sendLevelInitialized(class Level& level);
 
-    // symbol: ?sendLevelRemovedActor@LevelEventCoordinator@@QEAAXAEAVLevel@@AEAVActor@@@Z
-    MCAPI void sendLevelRemovedActor(class Level& level, class Actor& actor);
+    // symbol: ?sendLevelRemovedActor@LevelEventCoordinator@@QEAAXAEAVActor@@@Z
+    MCAPI void sendLevelRemovedActor(class Actor&);
 
     // symbol: ?sendLevelTick@LevelEventCoordinator@@QEAAXAEAVLevel@@@Z
     MCAPI void sendLevelTick(class Level& level);
@@ -59,8 +65,8 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_onGameRuleChange@LevelEventCoordinator@@AEAAXAEBVGameRules@@AEBUGameRuleId@@@Z
-    MCAPI void _onGameRuleChange(class GameRules const&, struct GameRuleId const&);
+    // symbol: ?_onGameplayUserAdded@LevelEventCoordinator@@AEAAXAEAVEntityContext@@@Z
+    MCAPI void _onGameplayUserAdded(class EntityContext&);
 
     // NOLINTEND
 };

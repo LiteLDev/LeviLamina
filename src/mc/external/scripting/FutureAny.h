@@ -51,6 +51,9 @@ public:
     // symbol: ??4FutureAny@Scripting@@QEAAAEAV01@AEBV01@@Z
     MCAPI class Scripting::FutureAny& operator=(class Scripting::FutureAny const& rhs);
 
+    // symbol: ?valid@FutureAny@Scripting@@QEBA_NXZ
+    MCAPI bool valid() const;
+
     // NOLINTEND
 };
 

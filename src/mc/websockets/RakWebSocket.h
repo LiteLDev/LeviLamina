@@ -62,6 +62,9 @@ public:
     // symbol: ?send@RakWebSocket@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI bool send(std::string const& message);
 
+    // symbol: ?sendBinary@RakWebSocket@@QEAA_NPEBE_K@Z
+    MCAPI bool sendBinary(uchar const* data, uint64 size);
+
     // NOLINTEND
 
     // protected:

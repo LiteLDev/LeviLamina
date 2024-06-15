@@ -41,8 +41,5 @@ public:
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar, class Vec3 const&) const;
 
-    // symbol: ??0WaterLilyBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI WaterLilyBlockItem(std::string const& name, int blockId);
-
     // NOLINTEND
 };

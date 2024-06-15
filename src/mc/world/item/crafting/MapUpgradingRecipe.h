@@ -33,18 +33,19 @@ public:
     // vIndex: 3, symbol: ?getIngredient@MapUpgradingRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
     virtual class RecipeIngredient const& getIngredient(int x, int y) const;
 
-    // vIndex: 4, symbol:
-    // ?getResultItem@MapUpgradingRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
-    virtual std::vector<class ItemInstance> const& getResultItem() const;
-
-    // vIndex: 6, symbol: ?matches@MapUpgradingRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
+    // vIndex: 5, symbol: ?matches@MapUpgradingRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
     virtual bool matches(class CraftingContainer const& craftSlots, class CraftingContext const&) const;
 
-    // vIndex: 7, symbol: ?size@MapUpgradingRecipe@@UEBAHXZ
+    // vIndex: 6, symbol: ?size@MapUpgradingRecipe@@UEBAHXZ
     virtual int size() const;
 
-    // symbol: ??0MapUpgradingRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBVUUID@mce@@@Z
-    MCAPI MapUpgradingRecipe(std::string_view recipeId, class mce::UUID const& uuid);
+    // vIndex: 8, symbol:
+    // ?getResultItems@MapUpgradingRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
+    virtual std::vector<class ItemInstance> const& getResultItems() const;
+
+    // symbol:
+    // ??0MapUpgradingRecipe@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVUUID@mce@@@Z
+    MCAPI MapUpgradingRecipe(std::string const&, class mce::UUID const&);
 
     // symbol: ?CartographyTableID@MapUpgradingRecipe@@2VUUID@mce@@B
     MCAPI static class mce::UUID const CartographyTableID;

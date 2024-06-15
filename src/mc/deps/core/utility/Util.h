@@ -7,6 +7,7 @@
 #include "mc/deps/core/utility/NumberConversionResult.h"
 #include "mc/deps/puv/EquipmentSlot.h"
 #include "mc/entity/components/agent/Direction.h"
+#include "mc/enums/BoneTransformType.h"
 #include "mc/enums/LogArea.h"
 #include "mc/world/AutomaticID.h"
 
@@ -33,6 +34,9 @@ MCAPI extern std::string const EMPTY_GUID;
 
 // symbol: ?EMPTY_STRING@Util@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
 MCAPI extern std::string const EMPTY_STRING;
+
+// symbol: ?HEX_CHARS@Util@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+MCAPI extern std::string const HEX_CHARS;
 
 // symbol: ?NEW_LINE@Util@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
 MCAPI extern std::string const NEW_LINE;
@@ -151,9 +155,6 @@ MCAPI std::string getNameWithoutNamespace(std::string const& name);
 // symbol: ?getNamespace@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
 MCAPI std::string getNamespace(std::string const& name);
 
-// symbol: ?hashCode@Util@@YAIV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-MCAPI uint hashCode(std::string_view str);
-
 // symbol: ?hashCodeAsUtf16@Util@@YAIV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
 MCAPI uint hashCodeAsUtf16(std::string_view);
 
@@ -183,6 +184,9 @@ MCAPI bool isUpperCaseAlphabetic(char c);
 
 // symbol: ?isValidNamespaceFormat@Util@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
 MCAPI bool isValidNamespaceFormat(std::string const& name);
+
+// symbol: ?isValidPfid@Util@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+MCAPI bool isValidPfid(std::string const&);
 
 // symbol: ?isValidUTF8@Util@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
 MCAPI bool isValidUTF8(std::string const& content);
@@ -286,6 +290,9 @@ MCAPI void toLowerInPlace(std::string& str);
 
 // symbol: ?toPascalCase@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@D@Z
 MCAPI std::string toPascalCase(std::string const& src, char delimiter);
+
+// symbol: ?toString@Util@@YAPEBDW4BoneTransformType@@@Z
+MCAPI char const* toString(::BoneTransformType boneTransformType);
 
 // symbol: ?toString@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
 MCAPI std::string toString(std::string const& inputStr);

@@ -7,7 +7,6 @@
 
 // auto generated inclusion list
 #include "mc/network/TypedServerNetId.h"
-#include "mc/world/item/crafting/RecipeUnlockingRequirement.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -112,7 +111,7 @@ public:
     );
 
     // symbol:
-    // ?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV23@AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashedString@@_NHPEBVUUID@mce@@V?$optional@VRecipeUnlockingRequirement@@@2@AEBVSemVersion@@@Z@3@V?$optional@VRecipeUnlockingRequirement@@@3@AEBVSemVersion@@_N@Z
+    // ?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV23@AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashedString@@_NHPEBVUUID@mce@@AEBVRecipeUnlockingRequirement@@AEBVSemVersion@@@Z@3@AEBVRecipeUnlockingRequirement@@AEBVSemVersion@@_N@Z
     MCAPI void addShapedRecipe(
         std::string                             recipeId,
         class ItemInstance const&               result,
@@ -122,15 +121,15 @@ public:
         int                                     types,
         std::function<std::unique_ptr<
             class
-            ShapedRecipe>(std::string, int, int, std::vector<class RecipeIngredient> const&, std::vector<class ItemInstance> const&, class HashedString, bool, int, class mce::UUID const*, std::optional<class RecipeUnlockingRequirement>, class SemVersion const&)>
-                                                        tags,
-        std::optional<class RecipeUnlockingRequirement> priority,
-        class SemVersion const&                         constructor,
+            ShapedRecipe>(std::string, int, int, std::vector<class RecipeIngredient> const&, std::vector<class ItemInstance> const&, class HashedString, bool, int, class mce::UUID const*, class RecipeUnlockingRequirement const&, class SemVersion const&)>
+                                                tags,
+        class RecipeUnlockingRequirement const& priority,
+        class SemVersion const&                 constructor,
         bool
     );
 
     // symbol:
-    // ?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashedString@@_NHPEBVUUID@mce@@V?$optional@VRecipeUnlockingRequirement@@@2@AEBVSemVersion@@@Z@3@V?$optional@VRecipeUnlockingRequirement@@@3@AEBVSemVersion@@_N@Z
+    // ?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashedString@@_NHPEBVUUID@mce@@AEBVRecipeUnlockingRequirement@@AEBVSemVersion@@@Z@3@AEBVRecipeUnlockingRequirement@@AEBVSemVersion@@_N@Z
     MCAPI void addShapedRecipe(
         std::string                             recipeId,
         class ItemInstance const&               result,
@@ -140,15 +139,15 @@ public:
         int                                     types,
         std::function<std::unique_ptr<
             class
-            ShapedRecipe>(std::string, int, int, std::vector<class RecipeIngredient> const&, std::vector<class ItemInstance> const&, class HashedString, bool, int, class mce::UUID const*, std::optional<class RecipeUnlockingRequirement>, class SemVersion const&)>
-                                                        tags,
-        std::optional<class RecipeUnlockingRequirement> priority,
-        class SemVersion const&                         constructor,
+            ShapedRecipe>(std::string, int, int, std::vector<class RecipeIngredient> const&, std::vector<class ItemInstance> const&, class HashedString, bool, int, class mce::UUID const*, class RecipeUnlockingRequirement const&, class SemVersion const&)>
+                                                tags,
+        class RecipeUnlockingRequirement const& priority,
+        class SemVersion const&                 constructor,
         bool
     );
 
     // symbol:
-    // ?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@3@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashedString@@_NHPEBVUUID@mce@@V?$optional@VRecipeUnlockingRequirement@@@2@AEBVSemVersion@@@Z@3@V?$optional@VRecipeUnlockingRequirement@@@3@AEBVSemVersion@@_N@Z
+    // ?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@3@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashedString@@_NHPEBVUUID@mce@@AEBVRecipeUnlockingRequirement@@AEBVSemVersion@@@Z@3@AEBVRecipeUnlockingRequirement@@AEBVSemVersion@@_N@Z
     MCAPI void addShapedRecipe(
         std::string                             recipeId,
         std::vector<class ItemInstance> const&  result,
@@ -158,15 +157,15 @@ public:
         int                                     types,
         std::function<std::unique_ptr<
             class
-            ShapedRecipe>(std::string, int, int, std::vector<class RecipeIngredient> const&, std::vector<class ItemInstance> const&, class HashedString, bool, int, class mce::UUID const*, std::optional<class RecipeUnlockingRequirement>, class SemVersion const&)>
-                                                        tags,
-        std::optional<class RecipeUnlockingRequirement> priority,
-        class SemVersion const&                         constructor,
+            ShapedRecipe>(std::string, int, int, std::vector<class RecipeIngredient> const&, std::vector<class ItemInstance> const&, class HashedString, bool, int, class mce::UUID const*, class RecipeUnlockingRequirement const&, class SemVersion const&)>
+                                                tags,
+        class RecipeUnlockingRequirement const& priority,
+        class SemVersion const&                 constructor,
         bool
     );
 
     // symbol:
-    // ?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV23@2AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashedString@@_NHPEBVUUID@mce@@V?$optional@VRecipeUnlockingRequirement@@@2@AEBVSemVersion@@@Z@3@V?$optional@VRecipeUnlockingRequirement@@@3@AEBVSemVersion@@_N@Z
+    // ?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV23@2AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashedString@@_NHPEBVUUID@mce@@AEBVRecipeUnlockingRequirement@@AEBVSemVersion@@@Z@3@AEBVRecipeUnlockingRequirement@@AEBVSemVersion@@_N@Z
     MCAPI void addShapedRecipe(
         std::string,
         class ItemInstance const&,
@@ -177,14 +176,14 @@ public:
         int,
         std::function<std::unique_ptr<
             class
-            ShapedRecipe>(std::string, int, int, std::vector<class RecipeIngredient> const&, std::vector<class ItemInstance> const&, class HashedString, bool, int, class mce::UUID const*, std::optional<class RecipeUnlockingRequirement>, class SemVersion const&)>,
-        std::optional<class RecipeUnlockingRequirement>,
+            ShapedRecipe>(std::string, int, int, std::vector<class RecipeIngredient> const&, std::vector<class ItemInstance> const&, class HashedString, bool, int, class mce::UUID const*, class RecipeUnlockingRequirement const&, class SemVersion const&)>,
+        class RecipeUnlockingRequirement const&,
         class SemVersion const&,
         bool
     );
 
     // symbol:
-    // ?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV23@22AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashedString@@_NHPEBVUUID@mce@@V?$optional@VRecipeUnlockingRequirement@@@2@AEBVSemVersion@@@Z@3@V?$optional@VRecipeUnlockingRequirement@@@3@AEBVSemVersion@@_N@Z
+    // ?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV23@22AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashedString@@_NHPEBVUUID@mce@@AEBVRecipeUnlockingRequirement@@AEBVSemVersion@@@Z@3@AEBVRecipeUnlockingRequirement@@AEBVSemVersion@@_N@Z
     MCAPI void addShapedRecipe(
         std::string,
         class ItemInstance const&,
@@ -196,21 +195,21 @@ public:
         int,
         std::function<std::unique_ptr<
             class
-            ShapedRecipe>(std::string, int, int, std::vector<class RecipeIngredient> const&, std::vector<class ItemInstance> const&, class HashedString, bool, int, class mce::UUID const*, std::optional<class RecipeUnlockingRequirement>, class SemVersion const&)>,
-        std::optional<class RecipeUnlockingRequirement>,
+            ShapedRecipe>(std::string, int, int, std::vector<class RecipeIngredient> const&, std::vector<class ItemInstance> const&, class HashedString, bool, int, class mce::UUID const*, class RecipeUnlockingRequirement const&, class SemVersion const&)>,
+        class RecipeUnlockingRequirement const&,
         class SemVersion const&,
         bool
     );
 
     // symbol:
-    // ?addShapelessRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapelessRecipe@@U?$default_delete@VShapelessRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@AEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashedString@@HPEBVUUID@mce@@V?$optional@VRecipeUnlockingRequirement@@@2@AEBVSemVersion@@@Z@3@V?$optional@VRecipeUnlockingRequirement@@@3@AEBVSemVersion@@@Z
+    // ?addShapelessRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapelessRecipe@@U?$default_delete@VShapelessRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@AEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashedString@@HPEBVUUID@mce@@AEBVRecipeUnlockingRequirement@@AEBVSemVersion@@@Z@3@AEBVRecipeUnlockingRequirement@@AEBVSemVersion@@@Z
     MCAPI void
-    addShapelessRecipe(std::string, class ItemInstance const&, std::vector<class Recipes::Type> const&, std::vector<class HashedString> const&, int, std::function<std::unique_ptr<class ShapelessRecipe>(std::string, std::vector<class RecipeIngredient> const&, std::vector<class ItemInstance> const&, class HashedString, int, class mce::UUID const*, std::optional<class RecipeUnlockingRequirement>, class SemVersion const&)>, std::optional<class RecipeUnlockingRequirement>, class SemVersion const&);
+    addShapelessRecipe(std::string, class ItemInstance const&, std::vector<class Recipes::Type> const&, std::vector<class HashedString> const&, int, std::function<std::unique_ptr<class ShapelessRecipe>(std::string, std::vector<class RecipeIngredient> const&, std::vector<class ItemInstance> const&, class HashedString, int, class mce::UUID const*, class RecipeUnlockingRequirement const&, class SemVersion const&)>, class RecipeUnlockingRequirement const&, class SemVersion const&);
 
     // symbol:
-    // ?addShulkerBoxRecipe@Recipes@@QEAAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@3@V?$optional@VRecipeUnlockingRequirement@@@3@AEBVSemVersion@@@Z
+    // ?addShulkerBoxRecipe@Recipes@@QEAAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@3@AEBVRecipeUnlockingRequirement@@AEBVSemVersion@@@Z
     MCAPI void
-    addShulkerBoxRecipe(std::string&, class ItemInstance const&, std::vector<class Recipes::Type> const&, std::vector<class HashedString> const&, std::optional<class RecipeUnlockingRequirement>, class SemVersion const&);
+    addShulkerBoxRecipe(std::string&, class ItemInstance const&, std::vector<class Recipes::Type> const&, std::vector<class HashedString> const&, class RecipeUnlockingRequirement const&, class SemVersion const&);
 
     // symbol: ?clearRecipes@Recipes@@QEAAXXZ
     MCAPI void clearRecipes();
@@ -269,11 +268,6 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    // symbol:
-    // ?_createUnlockingRequirementFromContext@Recipes@@IEBA?AV?$optional@VRecipeUnlockingRequirement@@@std@@W4UnlockingContext@RecipeUnlockingRequirement@@@Z
-    MCAPI std::optional<class RecipeUnlockingRequirement>
-          _createUnlockingRequirementFromContext(::RecipeUnlockingRequirement::UnlockingContext) const;
-
     // symbol:
     // ?_loadDataDrivenRecipes@Recipes@@IEAAXAEBV?$vector@VPackInstance@@V?$allocator@VPackInstance@@@std@@@std@@@Z
     MCAPI void _loadDataDrivenRecipes(std::vector<class PackInstance> const& resourcePacksNewestToOldest);

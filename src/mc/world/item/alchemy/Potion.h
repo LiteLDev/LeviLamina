@@ -27,14 +27,6 @@ public:
         float                   timeMod
     ) const;
 
-    // symbol:
-    // ?effectDurationToString@Potion@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@MAEBVMobEffectInstance@@@Z
-    MCAPI std::string effectDurationToString(::Potion::PotionType, float, class MobEffectInstance const&) const;
-
-    // symbol:
-    // ?effectPotencyToString@Potion@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVMobEffectInstance@@@Z
-    MCAPI std::string effectPotencyToString(class MobEffectInstance const&) const;
-
     // symbol: ?getDescriptionId@Potion@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getDescriptionId() const;
 
@@ -53,13 +45,8 @@ public:
     MCAPI std::vector<class MobEffectInstance> const& getMobEffects() const;
 
     // symbol:
-    // ?getPotentencyDescription@Potion@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@M@Z
-    MCAPI std::string getPotentencyDescription(::Potion::PotionType, float) const;
-
-    // symbol:
-    // ?getPotentencyDescription@Potion@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@MV?$basic_string_view@DU?$char_traits@D@std@@@3@AEBVMobEffectInstance@@@Z
-    MCAPI std::string
-          getPotentencyDescription(::Potion::PotionType, float, std::string_view, class MobEffectInstance const&) const;
+    // ?getPotencyDescription@Potion@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@M@Z
+    MCAPI std::string getPotencyDescription(::Potion::PotionType, float) const;
 
     // symbol: ?getPotionId@Potion@@QEBAHXZ
     MCAPI int getPotionId() const;
@@ -74,8 +61,25 @@ public:
     MCAPI ~Potion();
 
     // symbol:
+    // ?appendMobEffectText@Potion@@SAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionVariant@1@IHAEBVPlayer@@@Z
+    MCAPI static void appendMobEffectText(std::string&, ::Potion::PotionVariant, uint, int, class Player const&);
+
+    // symbol:
+    // ?effectDurationToString@Potion@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@MAEBVMobEffectInstance@@@Z
+    MCAPI static std::string effectDurationToString(::Potion::PotionType, float, class MobEffectInstance const&);
+
+    // symbol:
+    // ?effectPotencyToString@Potion@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVMobEffectInstance@@@Z
+    MCAPI static std::string effectPotencyToString(class MobEffectInstance const&);
+
+    // symbol:
     // ?getBasePotion@Potion@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@@Z
     MCAPI static std::string getBasePotion(::Potion::PotionType);
+
+    // symbol:
+    // ?getPotencyDescription@Potion@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@MV?$basic_string_view@DU?$char_traits@D@std@@@3@AEBVMobEffectInstance@@@Z
+    MCAPI static std::string
+    getPotencyDescription(::Potion::PotionType, float, std::string_view, class MobEffectInstance const&);
 
     // symbol: ?getPotion@Potion@@SA?AV?$shared_ptr@$$CBVPotion@@@std@@V?$basic_string_view@DU?$char_traits@D@std@@@3@@Z
     MCAPI static std::shared_ptr<class Potion const> getPotion(std::string_view potionNameId);
@@ -86,8 +90,8 @@ public:
     // symbol: ?getPotionCount@Potion@@SAHXZ
     MCAPI static int getPotionCount();
 
-    // symbol: ?initPotions@Potion@@SAXXZ
-    MCAPI static void initPotions();
+    // symbol: ?initPotions@Potion@@SAXAEBVBaseGameVersion@@AEBVExperiments@@@Z
+    MCAPI static void initPotions(class BaseGameVersion const&, class Experiments const&);
 
     // symbol: ?shutdownPotions@Potion@@SAXXZ
     MCAPI static void shutdownPotions();
@@ -103,6 +107,9 @@ public:
 
     // symbol: ?Healing@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
     MCAPI static std::shared_ptr<class Potion const> const Healing;
+
+    // symbol: ?Infested@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+    MCAPI static std::shared_ptr<class Potion const> const Infested;
 
     // symbol: ?Invisibility@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
     MCAPI static std::shared_ptr<class Potion const> const Invisibility;
@@ -157,6 +164,9 @@ public:
 
     // symbol: ?Nightvision@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
     MCAPI static std::shared_ptr<class Potion const> const Nightvision;
+
+    // symbol: ?Oozing@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+    MCAPI static std::shared_ptr<class Potion const> const Oozing;
 
     // symbol: ?Poison@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
     MCAPI static std::shared_ptr<class Potion const> const Poison;
@@ -217,6 +227,12 @@ public:
 
     // symbol: ?Weakness@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
     MCAPI static std::shared_ptr<class Potion const> const Weakness;
+
+    // symbol: ?Weaving@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+    MCAPI static std::shared_ptr<class Potion const> const Weaving;
+
+    // symbol: ?WindCharged@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+    MCAPI static std::shared_ptr<class Potion const> const WindCharged;
 
     // symbol: ?Wither@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
     MCAPI static std::shared_ptr<class Potion const> const Wither;

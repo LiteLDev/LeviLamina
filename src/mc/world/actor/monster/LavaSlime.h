@@ -11,7 +11,6 @@
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
-#include "mc/enums/ArmorTextureType.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/InputMode.h"
 #include "mc/enums/MaterialType.h"
@@ -46,25 +45,25 @@ public:
     // vIndex: 41, symbol: ?getBrightness@LavaSlime@@UEBAMMAEBVIConstBlockSource@@@Z
     virtual float getBrightness(float, class IConstBlockSource const&) const;
 
-    // vIndex: 52, symbol: ?isOnFire@LavaSlime@@MEBA_NXZ
+    // vIndex: 51, symbol: ?isOnFire@LavaSlime@@MEBA_NXZ
     virtual bool isOnFire() const;
 
-    // vIndex: 162, symbol: ?checkSpawnRules@LavaSlime@@UEAA_N_N@Z
+    // vIndex: 160, symbol: ?checkSpawnRules@LavaSlime@@UEAA_N_N@Z
     virtual bool checkSpawnRules(bool fromSpawner);
 
-    // vIndex: 170, symbol: ?getArmorValue@LavaSlime@@UEBAHXZ
+    // vIndex: 168, symbol: ?getArmorValue@LavaSlime@@UEBAHXZ
     virtual int getArmorValue() const;
 
-    // vIndex: 192, symbol: ?isDarkEnoughToSpawn@LavaSlime@@UEBA_NXZ
+    // vIndex: 190, symbol: ?isDarkEnoughToSpawn@LavaSlime@@UEBA_NXZ
     virtual bool isDarkEnoughToSpawn() const;
 
-    // vIndex: 193, symbol: ?doPlayLandSound@LavaSlime@@MEAA_NXZ
+    // vIndex: 191, symbol: ?doPlayLandSound@LavaSlime@@MEAA_NXZ
     virtual bool doPlayLandSound();
 
-    // vIndex: 195, symbol: ?decreaseSquish@LavaSlime@@MEAAXXZ
+    // vIndex: 193, symbol: ?decreaseSquish@LavaSlime@@MEAAXXZ
     virtual void decreaseSquish();
 
-    // vIndex: 196, symbol: ?createChild@LavaSlime@@MEAA?AV?$OwnerPtr@VEntityContext@@@@H@Z
+    // vIndex: 194, symbol: ?createChild@LavaSlime@@MEAA?AV?$OwnerPtr@VEntityContext@@@@H@Z
     virtual class OwnerPtr<class EntityContext> createChild(int i);
 
     // symbol: ??0LavaSlime@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

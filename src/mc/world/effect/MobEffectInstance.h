@@ -62,8 +62,8 @@ public:
         bool displayAnimation
     );
 
-    // symbol: ?applyEffects@MobEffectInstance@@QEAAXPEAVActor@@@Z
-    MCAPI void applyEffects(class Actor* mob);
+    // symbol: ?applyEffects@MobEffectInstance@@QEAAXAEAVActor@@@Z
+    MCAPI void applyEffects(class Actor&);
 
     // symbol: ?displaysOnScreenTextureAnimation@MobEffectInstance@@QEBA_NXZ
     MCAPI bool displaysOnScreenTextureAnimation() const;
@@ -105,6 +105,15 @@ public:
     // symbol: ?isEffectVisible@MobEffectInstance@@QEBA_NXZ
     MCAPI bool isEffectVisible() const;
 
+    // symbol: ?onActorHurt@MobEffectInstance@@QEBAXAEAVActor@@AEBVActorDamageSource@@M@Z
+    MCAPI void onActorHurt(class Actor&, class ActorDamageSource const&, float) const;
+
+    // symbol: ?onActorRemovedAfterDeath@MobEffectInstance@@QEBAXAEAVActor@@@Z
+    MCAPI void onActorRemovedAfterDeath(class Actor&) const;
+
+    // symbol: ?onEffectsExpired@MobEffectInstance@@QEBAXAEAVActor@@@Z
+    MCAPI void onEffectsExpired(class Actor&) const;
+
     // symbol: ??9MobEffectInstance@@QEBA_NAEBV0@@Z
     MCAPI bool operator!=(class MobEffectInstance const& obj) const;
 
@@ -114,8 +123,8 @@ public:
     // symbol: ??4MobEffectInstance@@QEAAAEAV0@AEBV0@@Z
     MCAPI class MobEffectInstance& operator=(class MobEffectInstance const&);
 
-    // symbol: ?removeEffects@MobEffectInstance@@QEBAXPEAVActor@@@Z
-    MCAPI void removeEffects(class Actor* mob) const;
+    // symbol: ?removeEffects@MobEffectInstance@@QEBAXAEAVBaseAttributeMap@@@Z
+    MCAPI void removeEffects(class BaseAttributeMap&) const;
 
     // symbol: ?save@MobEffectInstance@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
     MCAPI std::unique_ptr<class CompoundTag> save() const;
@@ -142,12 +151,8 @@ public:
     MCAPI ~MobEffectInstance();
 
     // symbol:
-    // ?areAllEffectsAmbientOrInvisible@MobEffectInstance@@SA_NAEBV?$vector@VMobEffectInstance@@V?$allocator@VMobEffectInstance@@@std@@@std@@@Z
-    MCAPI static bool areAllEffectsAmbientOrInvisible(std::vector<class MobEffectInstance> const& effects);
-
-    // symbol:
-    // ?getColorValue@MobEffectInstance@@SA?AVColor@mce@@AEBV?$vector@VMobEffectInstance@@V?$allocator@VMobEffectInstance@@@std@@@std@@@Z
-    MCAPI static class mce::Color getColorValue(std::vector<class MobEffectInstance> const& effects);
+    // ?getAverageColorValue@MobEffectInstance@@SA?AVColor@mce@@AEBV?$vector@VMobEffectInstance@@V?$allocator@VMobEffectInstance@@@std@@@std@@@Z
+    MCAPI static class mce::Color getAverageColorValue(std::vector<class MobEffectInstance> const&);
 
     // symbol: ?load@MobEffectInstance@@SA?AV1@AEBVCompoundTag@@@Z
     MCAPI static class MobEffectInstance load(class CompoundTag const& tag);
@@ -157,6 +162,9 @@ public:
 
     // symbol: ?NO_EFFECT@MobEffectInstance@@2V1@B
     MCAPI static class MobEffectInstance const NO_EFFECT;
+
+    // symbol: ?splashDurationMultiplier@MobEffectInstance@@2MA
+    MCAPI static float splashDurationMultiplier;
 
     // NOLINTEND
 };

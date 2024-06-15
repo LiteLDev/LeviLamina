@@ -38,8 +38,5 @@ public:
     // symbol: ??0ItemStackRequestPacket@@QEAA@XZ
     MCAPI ItemStackRequestPacket();
 
-    // symbol: ?getRequestBatch@ItemStackRequestPacket@@QEBAAEBVItemStackRequestBatch@@XZ
-    MCAPI class ItemStackRequestBatch const& getRequestBatch() const;
-
     // NOLINTEND
 };

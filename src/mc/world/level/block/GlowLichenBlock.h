@@ -30,17 +30,17 @@ public:
     // vIndex: 0, symbol: __gen_??1GlowLichenBlock@@UEAA@XZ
     virtual ~GlowLichenBlock() = default;
 
-    // vIndex: 79, symbol:
+    // vIndex: 80, symbol:
     // ?onFertilized@GlowLichenBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
     virtual bool
     onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, ::FertilizerType fType)
         const;
 
-    // vIndex: 81, symbol: ?canBeFertilized@GlowLichenBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 82, symbol: ?canBeFertilized@GlowLichenBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual bool
     canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
 
-    // vIndex: 135, symbol: ?init@GlowLichenBlock@@UEAAAEAVBlockLegacy@@XZ
+    // vIndex: 136, symbol: ?init@GlowLichenBlock@@UEAAAEAVBlockLegacy@@XZ
     virtual class BlockLegacy& init();
 
     // vIndex: 163, symbol: ?getMultifaceBlock@GlowLichenBlock@@UEBAAEBVBlock@@XZ

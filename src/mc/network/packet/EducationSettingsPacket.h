@@ -38,8 +38,5 @@ public:
     // symbol: ??0EducationSettingsPacket@@QEAA@XZ
     MCAPI EducationSettingsPacket();
 
-    // symbol: ??0EducationSettingsPacket@@QEAA@UEducationLevelSettings@@@Z
-    MCAPI explicit EducationSettingsPacket(struct EducationLevelSettings settings);
-
     // NOLINTEND
 };

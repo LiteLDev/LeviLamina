@@ -12,7 +12,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -104,8 +103,8 @@ public:
     virtual class mce::UUID const& getUUID() const;
 
     // vIndex: 26, symbol:
-    // ?handleCommandOutputCallback@CommandOrigin@@UEBAXH$$QEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAVValue@Json@@@Z
-    virtual void handleCommandOutputCallback(int, std::string&&, class Json::Value&&) const;
+    // ?handleCommandOutputCallback@CommandOrigin@@UEBAXH$$QEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    virtual void handleCommandOutputCallback(int, std::string&&) const;
 
     // vIndex: 27, symbol: ?updateValues@CommandOrigin@@UEAAXXZ
     virtual void updateValues();

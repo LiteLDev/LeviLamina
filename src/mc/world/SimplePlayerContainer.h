@@ -18,7 +18,7 @@ public:
     // vIndex: 0, symbol: __gen_??1SimplePlayerContainer@@UEAA@XZ
     virtual ~SimplePlayerContainer() = default;
 
-    // vIndex: 10, symbol: ?setItem@SimplePlayerContainer@@UEAAXHAEBVItemStack@@@Z
+    // vIndex: 12, symbol: ?setItem@SimplePlayerContainer@@UEAAXHAEBVItemStack@@@Z
     virtual void setItem(int slot, class ItemStack const& item);
 
     // symbol:

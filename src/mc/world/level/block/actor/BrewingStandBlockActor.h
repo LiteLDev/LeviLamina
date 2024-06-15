@@ -44,6 +44,9 @@ public:
     // symbol: ?onMove@BrewingStandBlockActor@@UEAAXXZ
     MCVAPI void onMove();
 
+    // symbol: ?onRemoved@BrewingStandBlockActor@@UEAAXAEAVBlockSource@@@Z
+    MCVAPI void onRemoved(class BlockSource&);
+
     // symbol: ?save@BrewingStandBlockActor@@UEBA_NAEAVCompoundTag@@@Z
     MCVAPI bool save(class CompoundTag& tag) const;
 

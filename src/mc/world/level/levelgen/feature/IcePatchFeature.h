@@ -20,5 +20,8 @@ public:
     // vIndex: 3, symbol: ?place@IcePatchFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
+    // symbol: ??0IcePatchFeature@@QEAA@H@Z
+    MCAPI explicit IcePatchFeature(int radius);
+
     // NOLINTEND
 };

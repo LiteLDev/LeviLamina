@@ -34,7 +34,7 @@ public:
     // vIndex: 0, symbol: __gen_??1CoalItem@@UEAA@XZ
     virtual ~CoalItem() = default;
 
-    // vIndex: 82, symbol:
+    // vIndex: 83, symbol:
     // ?buildDescriptionId@CoalItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 

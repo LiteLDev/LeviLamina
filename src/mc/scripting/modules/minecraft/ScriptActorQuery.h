@@ -19,6 +19,7 @@ namespace ScriptModuleMinecraft { class ScriptPlayerIterator; }
 namespace ScriptModuleMinecraft { struct ScriptActorQueryOptions; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct Error; }
+struct ActorSelectorArgs;
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -33,6 +34,11 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
+    // ?constructSelectorArgs@ScriptActorQuery@ScriptModuleMinecraft@@SA?AV?$Result@UActorSelectorArgs@@$$V@Scripting@@W4ActorSelectorType@@AEBV?$optional@UScriptActorQueryOptions@ScriptModuleMinecraft@@@std@@PEAVDimension@@@Z
+    MCAPI static class Scripting::Result<struct ActorSelectorArgs>
+    constructSelectorArgs(::ActorSelectorType, std::optional<struct ScriptModuleMinecraft::ScriptActorQueryOptions> const&, class Dimension*);
+
+    // symbol:
     // ?getAllPlayers@ScriptActorQuery@ScriptModuleMinecraft@@SA?AV?$Result@V?$vector@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@$$V@Scripting@@AEBVWeakLifetimeScope@4@AEAVLevel@@@Z
     MCAPI static class Scripting::Result<
         std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>>>
@@ -42,6 +48,10 @@ public:
     // ?matches@ScriptActorQuery@ScriptModuleMinecraft@@SA?AV?$Result@_N$$V@Scripting@@AEBVActor@@AEBV?$optional@UScriptActorQueryOptions@ScriptModuleMinecraft@@@std@@@Z
     MCAPI static class Scripting::Result<bool>
     matches(class Actor const&, std::optional<struct ScriptModuleMinecraft::ScriptActorQueryOptions> const&);
+
+    // symbol:
+    // ?matches@ScriptActorQuery@ScriptModuleMinecraft@@SA?AV?$Result@_N$$V@Scripting@@AEBVActor@@AEBUActorSelectorArgs@@@Z
+    MCAPI static class Scripting::Result<bool> matches(class Actor const&, struct ActorSelectorArgs const&);
 
     // symbol:
     // ?queryActors@ScriptActorQuery@ScriptModuleMinecraft@@SA?AV?$Result@V?$vector@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@$$V@Scripting@@W4ActorSelectorType@@AEBV?$optional@UScriptActorQueryOptions@ScriptModuleMinecraft@@@std@@AEBVWeakLifetimeScope@4@PEAVDimension@@AEAVLevel@@@Z

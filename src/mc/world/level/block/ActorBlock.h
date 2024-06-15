@@ -30,11 +30,11 @@ public:
     // vIndex: 0, symbol: ??1ActorBlock@@UEAA@XZ
     virtual ~ActorBlock();
 
-    // vIndex: 92, symbol: ?neighborChanged@ActorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 93, symbol: ?neighborChanged@ActorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 104, symbol: ?triggerEvent@ActorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@HH@Z
+    // vIndex: 105, symbol: ?triggerEvent@ActorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@HH@Z
     virtual void triggerEvent(class BlockSource& region, class BlockPos const& pos, int b0, int b1) const;
 
     // NOLINTEND

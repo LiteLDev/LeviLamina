@@ -64,6 +64,12 @@ public:
     // symbol: ?restoreAndPopStackState@MolangEvalParams@@QEAAXXZ
     MCAPI void restoreAndPopStackState();
 
+    // symbol: ?setPushedValue@MolangEvalParams@@QEAAXM@Z
+    MCAPI void setPushedValue(float);
+
+    // symbol: ?setReturnValue@MolangEvalParams@@QEAAXM@Z
+    MCAPI void setReturnValue(float);
+
     // symbol: ??1MolangEvalParams@@QEAA@XZ
     MCAPI ~MolangEvalParams();
 

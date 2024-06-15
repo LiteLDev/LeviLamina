@@ -8,6 +8,7 @@
 #include "mc/enums/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/world/containers/ContainerID.h"
+#include "mc/world/containers/ContainerType.h"
 
 class ContainerClosePacket : public ::Packet {
 public:
@@ -40,8 +41,8 @@ public:
     // symbol: ??0ContainerClosePacket@@QEAA@XZ
     MCAPI ContainerClosePacket();
 
-    // symbol: ??0ContainerClosePacket@@QEAA@W4ContainerID@@_N@Z
-    MCAPI ContainerClosePacket(::ContainerID containerId, bool);
+    // symbol: ??0ContainerClosePacket@@QEAA@W4ContainerID@@W4ContainerType@@_N@Z
+    MCAPI ContainerClosePacket(::ContainerID, ::ContainerType, bool);
 
     // NOLINTEND
 };

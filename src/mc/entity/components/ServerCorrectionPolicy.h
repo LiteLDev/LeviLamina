@@ -21,8 +21,8 @@ public:
     // vIndex: 1, symbol: ?isReplayNeeded@ServerCorrectionPolicy@@UEBA_NW4AdvanceFrameResult@@@Z
     virtual bool isReplayNeeded(::AdvanceFrameResult) const;
 
-    // vIndex: 2, symbol: ?canRewindToFrame@ServerCorrectionPolicy@@UEAA_NAEBVEntityContext@@_K1@Z
-    virtual bool canRewindToFrame(class EntityContext const&, uint64, uint64);
+    // vIndex: 2, symbol: ?canRewindToFrame@ServerCorrectionPolicy@@UEAA_NAEBVEntityContext@@_K@Z
+    virtual bool canRewindToFrame(class EntityContext const&, uint64);
 
     // vIndex: 3, symbol:
     // ?shouldCorrectMovement@ServerCorrectionPolicy@@UEAA?AUMovementCorrection@@AEAVEntityContext@@AEBVPlayerAuthInputPacket@@_K@Z
@@ -34,6 +34,9 @@ public:
 
     // vIndex: 5, symbol: ?storeCurrentFrameSupported@ServerCorrectionPolicy@@UEAAX_KAEAVEntityContext@@@Z
     virtual void storeCurrentFrameSupported(uint64, class EntityContext&);
+
+    // vIndex: 6, symbol: ?notifyOfExternalCorrection@ServerCorrectionPolicy@@UEAAX_K@Z
+    virtual void notifyOfExternalCorrection(uint64);
 
     // NOLINTEND
 };

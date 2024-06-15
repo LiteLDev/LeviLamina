@@ -30,15 +30,6 @@ public:
     );
 
     // symbol:
-    // ?_tickReadyToContinueServer@DimensionTransitionSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Exclude@UPassengerComponent@@UVehicleComponent@@UDimensionTransitionComponent@@@@UPlayerChangeDimensionRequestComponent@@@@@Z
-    MCAPI static void _tickReadyToContinueServer(
-        class ViewT<
-            class StrictEntityContext,
-            struct Exclude<struct PassengerComponent, struct VehicleComponent, struct DimensionTransitionComponent>,
-            struct PlayerChangeDimensionRequestComponent> view
-    );
-
-    // symbol:
     // ?_tickVehicleDismount@DimensionTransitionSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@UPlayerChangeDimensionRequestComponent@@UPassengerComponent@@@@@@V?$ViewT@VStrictEntityContext@@U?$Include@UPlayerChangeDimensionRequestComponent@@@@$$CBUVehicleComponent@@@@V?$EntityModifier@V?$FlagComponent@UStopRidingRequestFlag@@@@V?$FlagComponent@UExitFromPassengerFlag@@@@@@@Z
     MCAPI static void _tickVehicleDismount(
         class ViewT<

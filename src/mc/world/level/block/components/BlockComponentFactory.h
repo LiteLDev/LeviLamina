@@ -54,21 +54,12 @@ public:
     MCAPI void initializeFactory(class Experiments const& experiments);
 
     // symbol:
-    // ?addAllComponentUpgrades@BlockComponentFactory@@SAXAEAVCerealDocumentUpgrader@@AEBUReflectionCtx@cereal@@@Z
-    MCAPI static void addAllComponentUpgrades(class CerealDocumentUpgrader&, struct cereal::ReflectionCtx const&);
-
-    // symbol:
     // ?getPropRegisteredCerealComponents@BlockComponentFactory@@SAAEAV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UComponentMetadata@BlockComponentFactory@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UComponentMetadata@BlockComponentFactory@@@std@@@2@@std@@AEBUReflectionCtx@cereal@@@Z
     MCAPI static std::unordered_map<std::string, struct BlockComponentFactory::ComponentMetadata>&
     getPropRegisteredCerealComponents(struct cereal::ReflectionCtx const&);
 
     // symbol: ?registerAllCerealDescriptions@BlockComponentFactory@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void registerAllCerealDescriptions(struct cereal::ReflectionCtx&);
-
-    // symbol:
-    // ?registerComponentUpgrade@BlockComponentFactory@@SAXAEAVCerealDocumentUpgrader@@V?$shared_ptr@VCerealSchemaUpgrade@@@std@@@Z
-    MCAPI static void
-    registerComponentUpgrade(class CerealDocumentUpgrader&, std::shared_ptr<class CerealSchemaUpgrade>);
 
     // NOLINTEND
 

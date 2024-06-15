@@ -3,7 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/InMemoryAccessMode.h"
+#include "mc/deps/core/PathBuffer.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Core { class Path; }
+// clang-format on
 
 class InMemoryFile {
 public:
@@ -14,14 +19,30 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?close@InMemoryFile@@QEAA?AVStatus@leveldb@@W4InMemoryAccessMode@@@Z
-    MCAPI leveldb::Status close(::InMemoryAccessMode mode);
+    // symbol: ??0InMemoryFile@@QEAA@AEBVPath@Core@@@Z
+    MCAPI explicit InMemoryFile(class Core::Path const& fileName);
 
-    // symbol: ?open@InMemoryFile@@QEAA?AVStatus@leveldb@@W4InMemoryAccessMode@@@Z
-    MCAPI leveldb::Status open(::InMemoryAccessMode mode);
+    // symbol: ?flushToDisk@InMemoryFile@@QEAA?AVStatus@leveldb@@PEAVEnv@3@@Z
+    MCAPI leveldb::Status flushToDisk(leveldb::Env* env);
 
-    // symbol: ?read@InMemoryFile@@QEBA?AVStatus@leveldb@@_K0PEAVSlice@3@PEADAEA_K@Z
-    MCAPI leveldb::Status read(uint64 offset, uint64 n, leveldb::Slice* result, char* scratch, uint64& bytesRead) const;
+    // symbol:
+    // ?getFilename@InMemoryFile@@QEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+    MCAPI class Core::PathBuffer<std::string> getFilename() const;
+
+    // symbol: ?getFlushSize@InMemoryFile@@QEBA_KXZ
+    MCAPI uint64 getFlushSize() const;
+
+    // symbol: ?isReadyForFlush@InMemoryFile@@QEBA_NXZ
+    MCAPI bool isReadyForFlush() const;
+
+    // symbol: ?isSafeToDelete@InMemoryFile@@QEBA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI bool isSafeToDelete(std::string&) const;
+
+    // symbol: ?markForDelete@InMemoryFile@@QEAAXXZ
+    MCAPI void markForDelete();
+
+    // symbol: ??1InMemoryFile@@QEAA@XZ
+    MCAPI ~InMemoryFile();
 
     // NOLINTEND
 };

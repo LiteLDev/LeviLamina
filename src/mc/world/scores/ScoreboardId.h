@@ -33,8 +33,14 @@ public:
     // symbol: ?isValid@ScoreboardId@@QEBA_NXZ
     MCAPI bool isValid() const;
 
+    // symbol: ??BScoreboardId@@QEBA_NXZ
+    MCAPI explicit operator bool() const;
+
     // symbol: ??9ScoreboardId@@QEBA_NAEBU0@@Z
     MCAPI bool operator!=(struct ScoreboardId const& rhs) const;
+
+    // symbol: ??EScoreboardId@@QEAAAEAU0@XZ
+    MCAPI struct ScoreboardId& operator++();
 
     // symbol: ??4ScoreboardId@@QEAAAEAU0@AEBU0@@Z
     MCAPI struct ScoreboardId& operator=(struct ScoreboardId const& scoreboardId);

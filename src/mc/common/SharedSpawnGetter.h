@@ -20,8 +20,5 @@ public:
     // vIndex: 1, symbol: ?getSharedSpawnPosition@SharedSpawnGetter@@UEBAAEBVBlockPos@@XZ
     virtual class BlockPos const& getSharedSpawnPosition() const;
 
-    // symbol: ??0SharedSpawnGetter@@QEAA@AEAVLevelData@@@Z
-    MCAPI explicit SharedSpawnGetter(class LevelData&);
-
     // NOLINTEND
 };

@@ -70,9 +70,6 @@ public:
     // symbol: ?bindType@BlockGeometryDescription@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
-    // symbol: ?registerVersionUpgrades@BlockGeometryDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet&);
-
     // symbol: ?CROSS_GEO_NAME@BlockGeometryDescription@@2VHashedString@@B
     MCAPI static class HashedString const CROSS_GEO_NAME;
 

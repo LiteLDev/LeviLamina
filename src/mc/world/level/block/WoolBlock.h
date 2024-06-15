@@ -31,10 +31,10 @@ public:
     // vIndex: 0, symbol: __gen_??1WoolBlock@@UEAA@XZ
     virtual ~WoolBlock() = default;
 
-    // vIndex: 27, symbol: ?canDamperVibrations@WoolBlock@@UEBA_NXZ
+    // vIndex: 28, symbol: ?canDamperVibrations@WoolBlock@@UEBA_NXZ
     virtual bool canDamperVibrations() const;
 
-    // vIndex: 28, symbol: ?canOccludeVibrations@WoolBlock@@UEBA_NXZ
+    // vIndex: 29, symbol: ?canOccludeVibrations@WoolBlock@@UEBA_NXZ
     virtual bool canOccludeVibrations() const;
 
     // symbol: ??0WoolBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4BlockColor@@@Z

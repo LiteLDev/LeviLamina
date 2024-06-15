@@ -29,8 +29,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MinecraftGameTest@@UEAA@XZ
-    virtual ~MinecraftGameTest() = default;
+    // vIndex: 0, symbol: ??1MinecraftGameTest@@UEAA@XZ
+    virtual ~MinecraftGameTest();
 
     // vIndex: 23, symbol:
     // ?onLevelDestruction@MinecraftGameTest@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

@@ -6,6 +6,11 @@
 #include "mc/common/wrapper/StackRefResult.h"
 #include "mc/world/actor/player/PlayerSleepManager.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock::PubSub { class Subscription; }
+// clang-format on
+
 class ServerPlayerSleepManager : public ::PlayerSleepManager {
 public:
     // prevent constructor by default
@@ -28,6 +33,10 @@ public:
 
     // symbol: ?enoughPlayersDeepSleeping@ServerPlayerSleepManager@@QEBA_NXZ
     MCAPI bool enoughPlayersDeepSleeping() const;
+
+    // symbol:
+    // ?registerOnWakeUpAllPlayers@ServerPlayerSleepManager@@QEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXXZ@std@@@Z
+    MCAPI class Bedrock::PubSub::Subscription registerOnWakeUpAllPlayers(std::function<void()> callback);
 
     // symbol:
     // ?registerWithPlayerDimensionTransferConnector@ServerPlayerSleepManager@@QEAAXAEAVIPlayerDimensionTransferConnector@@@Z

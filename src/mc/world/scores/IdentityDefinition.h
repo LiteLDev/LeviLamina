@@ -59,6 +59,12 @@ public:
     // symbol: ?isEntityType@IdentityDefinition@@QEBA_NXZ
     MCAPI bool isEntityType() const;
 
+    // symbol: ?isFakeType@IdentityDefinition@@QEBA_NXZ
+    MCAPI bool isFakeType() const;
+
+    // symbol: ?isHiddenFakePlayerType@IdentityDefinition@@QEBA_NXZ
+    MCAPI bool isHiddenFakePlayerType() const;
+
     // symbol: ?isPlayerType@IdentityDefinition@@QEBA_NXZ
     MCAPI bool isPlayerType() const;
 

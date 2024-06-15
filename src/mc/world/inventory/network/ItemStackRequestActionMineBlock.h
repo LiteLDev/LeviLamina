@@ -29,6 +29,12 @@ public:
     // ?_read@ItemStackRequestActionMineBlock@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
+    // symbol: ?getPreValidationStatus@ItemStackRequestActionMineBlock@@QEBA?AW4PreValidationStatus@1@XZ
+    MCAPI ::ItemStackRequestActionMineBlock::PreValidationStatus getPreValidationStatus() const;
+
+    // symbol: ?getPredictedDurability@ItemStackRequestActionMineBlock@@QEBAHXZ
+    MCAPI int getPredictedDurability() const;
+
     // symbol: ?getSrc@ItemStackRequestActionMineBlock@@QEBA?AUItemStackRequestSlotInfo@@XZ
     MCAPI struct ItemStackRequestSlotInfo getSrc() const;
 

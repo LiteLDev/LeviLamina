@@ -31,6 +31,7 @@ namespace ScriptModuleMinecraft { struct ScriptSoundOptions; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct Error; }
+namespace Scripting { struct PropertyOutOfBoundsError; }
 struct ScoreboardId;
 // clang-format on
 
@@ -45,8 +46,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptPlayer@ScriptModuleMinecraft@@UEAA@XZ
-    virtual ~ScriptPlayer() = default;
+    // vIndex: 0, symbol: ??1ScriptPlayer@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptPlayer();
 
     // vIndex: 1, symbol: ?setUnloaded@ScriptPlayer@ScriptModuleMinecraft@@UEAAXAEAVActor@@@Z
     virtual void setUnloaded(class Actor&);
@@ -188,8 +189,10 @@ public:
     // symbol: ?setOp@ScriptPlayer@ScriptModuleMinecraft@@QEBA?AV?$Result@X$$V@Scripting@@_N@Z
     MCAPI class Scripting::Result<void> setOp(bool) const;
 
-    // symbol: ?setSelectedSlot@ScriptPlayer@ScriptModuleMinecraft@@QEBA?AV?$Result@X$$V@Scripting@@H@Z
-    MCAPI class Scripting::Result<void> setSelectedSlot(int slot) const;
+    // symbol:
+    // ?setSelectedSlot@ScriptPlayer@ScriptModuleMinecraft@@QEBA?AV?$Result@XUError@Scripting@@UPropertyOutOfBoundsError@2@@Scripting@@H@Z
+    MCAPI class Scripting::Result<void, struct Scripting::Error, struct Scripting::PropertyOutOfBoundsError>
+    setSelectedSlot(int slot) const;
 
     // symbol:
     // ?setSpawnPoint@ScriptPlayer@ScriptModuleMinecraft@@QEBA?AV?$Result@XUScriptLocationOutOfWorldBoundsError@ScriptModuleMinecraft@@UError@Scripting@@@Scripting@@AEBV?$optional@UScriptDimensionLocation@ScriptModuleMinecraft@@@std@@@Z

@@ -12,7 +12,6 @@
 #include "mc/enums/AgentTravelType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
-#include "mc/enums/ArmorTextureType.h"
 #include "mc/enums/GameType.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/InputMode.h"
@@ -51,6 +50,9 @@ public:
     // vIndex: 26, symbol: ?normalTick@Agent@@UEAAXXZ
     virtual void normalTick();
 
+    // vIndex: 27, symbol: ?baseTick@Agent@@UEAAXXZ
+    virtual void baseTick();
+
     // vIndex: 34, symbol: ?isInvisible@Agent@@UEBA_NXZ
     virtual bool isInvisible() const;
 
@@ -60,46 +62,43 @@ public:
     // vIndex: 37, symbol: ?getNameTagTextColor@Agent@@UEBA?AVColor@mce@@XZ
     virtual class mce::Color getNameTagTextColor() const;
 
-    // vIndex: 45, symbol: ?isPickable@Agent@@UEAA_NXZ
-    virtual bool isPickable();
-
-    // vIndex: 54, symbol: ?isTargetable@Agent@@UEBA_NXZ
+    // vIndex: 53, symbol: ?isTargetable@Agent@@UEBA_NXZ
     virtual bool isTargetable() const;
 
-    // vIndex: 60, symbol: ?setOwner@Agent@@UEAAXUActorUniqueID@@@Z
+    // vIndex: 59, symbol: ?setOwner@Agent@@UEAAXUActorUniqueID@@@Z
     virtual void setOwner(struct ActorUniqueID id);
 
-    // vIndex: 75, symbol: ?handleEntityEvent@Agent@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 74, symbol: ?handleEntityEvent@Agent@@UEAAXW4ActorEvent@@H@Z
     virtual void handleEntityEvent(::ActorEvent id, int data);
 
-    // vIndex: 84, symbol: ?setCarriedItem@Agent@@UEAAXAEBVItemStack@@@Z
+    // vIndex: 82, symbol: ?setCarriedItem@Agent@@UEAAXAEBVItemStack@@@Z
     virtual void setCarriedItem(class ItemStack const& item);
 
-    // vIndex: 104, symbol: ?canBePulledIntoVehicle@Agent@@UEBA_NXZ
+    // vIndex: 102, symbol: ?canBePulledIntoVehicle@Agent@@UEBA_NXZ
     virtual bool canBePulledIntoVehicle() const;
 
-    // vIndex: 113, symbol: ?canBeAffected@Agent@@UEBA_NI@Z
+    // vIndex: 111, symbol: ?canBeAffected@Agent@@UEBA_NI@Z
     virtual bool canBeAffected(uint) const;
 
-    // vIndex: 132, symbol: ?kill@Agent@@UEAAXXZ
+    // vIndex: 130, symbol: ?kill@Agent@@UEAAXXZ
     virtual void kill();
 
-    // vIndex: 146, symbol: ?updateEntitySpecificMolangVariables@Agent@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 144, symbol: ?updateEntitySpecificMolangVariables@Agent@@UEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // vIndex: 148, symbol: ?_hurt@Agent@@EEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 146, symbol: ?_hurt@Agent@@EEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 153, symbol: ?knockback@Agent@@UEAAXPEAVActor@@HMMMMM@Z
+    // vIndex: 151, symbol: ?knockback@Agent@@UEAAXPEAVActor@@HMMMMM@Z
     virtual void knockback(class Actor*, int, float, float, float, float, float);
 
-    // vIndex: 182, symbol: ?createAIGoals@Agent@@UEAA_NXZ
+    // vIndex: 180, symbol: ?createAIGoals@Agent@@UEAA_NXZ
     virtual bool createAIGoals();
 
-    // vIndex: 187, symbol: ?canExistWhenDisallowMob@Agent@@UEBA_NXZ
+    // vIndex: 185, symbol: ?canExistWhenDisallowMob@Agent@@UEBA_NXZ
     virtual bool canExistWhenDisallowMob() const;
 
-    // vIndex: 188, symbol:
+    // vIndex: 186, symbol:
     // ?initBodyControl@Agent@@EEAA?AV?$unique_ptr@VBodyControl@@U?$default_delete@VBodyControl@@@std@@@std@@XZ
     virtual std::unique_ptr<class BodyControl> initBodyControl();
 
@@ -151,6 +150,12 @@ public:
 
     // symbol: ?shrug@Agent@@QEAAXXZ
     MCAPI void shrug();
+
+    // symbol: ?startCommandMode@Agent@@QEAAXXZ
+    MCAPI void startCommandMode();
+
+    // symbol: ?stopCommandMode@Agent@@QEAAXXZ
+    MCAPI void stopCommandMode();
 
     // symbol: ?swingArm@Agent@@QEAAXXZ
     MCAPI void swingArm();

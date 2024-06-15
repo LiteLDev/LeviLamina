@@ -27,9 +27,6 @@ public:
     // vIndex: 5, symbol: ?postProcessMobsAt@Igloo@@UEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
     virtual void postProcessMobsAt(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 
-    // symbol: ??0Igloo@@QEAA@FHH@Z
-    MCAPI Igloo(short seaLevel, int west, int north);
-
     // NOLINTEND
 
     // private:

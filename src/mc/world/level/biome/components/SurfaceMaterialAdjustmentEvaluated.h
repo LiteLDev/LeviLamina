@@ -11,6 +11,12 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ?empty@SurfaceMaterialAdjustmentEvaluated@@QEBA_NXZ
+    MCAPI bool empty() const;
+
+    // symbol: ?makeAdjustments@SurfaceMaterialAdjustmentEvaluated@@QEBAXAEAUSurfaceMaterialBlocks@@H@Z
+    MCAPI void makeAdjustments(struct SurfaceMaterialBlocks& blockPalette, int height) const;
+
     // symbol: ??1SurfaceMaterialAdjustmentEvaluated@@QEAA@XZ
     MCAPI ~SurfaceMaterialAdjustmentEvaluated();
 

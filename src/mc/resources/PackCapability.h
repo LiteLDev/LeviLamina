@@ -15,6 +15,7 @@ public:
         // ValidationResult inner types declare
         // clang-format off
         struct Failed;
+        struct NotFound;
         struct Succeeded;
         // clang-format on
 
@@ -32,6 +33,14 @@ public:
             MCAPI ~Failed();
 
             // NOLINTEND
+        };
+
+        struct NotFound {
+        public:
+            // prevent constructor by default
+            NotFound& operator=(NotFound const&);
+            NotFound(NotFound const&);
+            NotFound();
         };
 
         struct Succeeded {

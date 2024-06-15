@@ -11,7 +11,6 @@ public:
     // prevent constructor by default
     MoveNode& operator=(MoveNode const&);
     MoveNode(MoveNode const&);
-    MoveNode();
 
 public:
     // NOLINTBEGIN
@@ -23,6 +22,9 @@ public:
 
     // vIndex: 2, symbol: ?initializeFromDefinition@MoveNode@@EEAAXAEAVActor@@@Z
     virtual void initializeFromDefinition(class Actor& owner);
+
+    // symbol: ??0MoveNode@@QEAA@XZ
+    MCAPI MoveNode();
 
     // NOLINTEND
 

@@ -31,6 +31,9 @@ MCAPI bool onMoveActorAbsolutePacket(struct ServerPlayerMovementComponent&, clas
 // ?onPlayerAuthInputPacket@ServerPlayerInputSystem@@YA_NAEAUServerPlayerMovementComponent@@AEBVPlayerAuthInputPacket@@@Z
 MCAPI bool
 onPlayerAuthInputPacket(struct ServerPlayerMovementComponent& component, class PlayerAuthInputPacket const& packet);
+
+// symbol: ?transferInteractPackets@ServerPlayerInputSystem@@YAXAEAUServerPlayerMovementComponent@@AEAVEntityContext@@@Z
+MCAPI void transferInteractPackets(struct ServerPlayerMovementComponent&, class EntityContext&);
 // NOLINTEND
 
 }; // namespace ServerPlayerInputSystem

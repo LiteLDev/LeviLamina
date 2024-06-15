@@ -41,10 +41,10 @@ public:
     // vIndex: 72, symbol: ?use@GoatHornItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
     virtual class ItemStack& use(class ItemStack& item, class Player& player) const;
 
-    // vIndex: 89, symbol: ?getCooldownType@GoatHornItem@@UEBAAEBVHashedString@@XZ
+    // vIndex: 90, symbol: ?getCooldownType@GoatHornItem@@UEBAAEBVHashedString@@XZ
     virtual class HashedString const& getCooldownType() const;
 
-    // vIndex: 90, symbol: ?getCooldownTime@GoatHornItem@@UEBAHXZ
+    // vIndex: 91, symbol: ?getCooldownTime@GoatHornItem@@UEBAHXZ
     virtual int getCooldownTime() const;
 
     // vIndex: 110, symbol: ?canBeCharged@GoatHornItem@@UEBA_NXZ

@@ -29,6 +29,9 @@ public:
     // symbol: ?applyEnchant@EnchantUtils@@SAHAEAVItemStackBase@@AEBVItemEnchants@@_N@Z
     MCAPI static int applyEnchant(class ItemStackBase& out, class ItemEnchants const& enchants, bool allowNonVanilla);
 
+    // symbol: ?calculateAfterBreachArmorFraction@EnchantUtils@@SAMAEBUActorUniqueID@@AEBVMob@@M@Z
+    MCAPI static float calculateAfterBreachArmorFraction(struct ActorUniqueID const&, class Mob const&, float);
+
     // symbol: ?canEnchant@EnchantUtils@@SA?AUEnchantResult@@AEBVItemStackBase@@AEBVEnchantmentInstance@@_N@Z
     MCAPI static struct EnchantResult
     canEnchant(class ItemStackBase const& item, class EnchantmentInstance const& enchant, bool allowNonVanilla);
@@ -48,11 +51,17 @@ public:
     // symbol: ?determineActivation@EnchantUtils@@SAHW4Type@Enchant@@@Z
     MCAPI static int determineActivation(::Enchant::Type enchantType);
 
+    // symbol: ?determineCompatibility@EnchantUtils@@SAHW4Type@Enchant@@@Z
+    MCAPI static int determineCompatibility(::Enchant::Type type);
+
     // symbol: ?doPostDamageEffects@EnchantUtils@@SAXAEAVActor@@0@Z
     MCAPI static void doPostDamageEffects(class Actor& victim, class Actor& attacker);
 
     // symbol: ?doPostHurtEffects@EnchantUtils@@SAXAEAVMob@@0@Z
     MCAPI static void doPostHurtEffects(class Mob& victim, class Mob& attacker);
+
+    // symbol: ?doPostItemHurtActorEffects@EnchantUtils@@SAXAEAVActor@@0AEBVItemEnchants@@@Z
+    MCAPI static void doPostItemHurtActorEffects(class Actor&, class Actor&, class ItemEnchants const&);
 
     // symbol: ?generateEnchantedBook@EnchantUtils@@SA?AVItemInstance@@AEBVEnchantmentInstance@@@Z
     MCAPI static class ItemInstance generateEnchantedBook(class EnchantmentInstance const& enchant);

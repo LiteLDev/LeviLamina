@@ -132,28 +132,34 @@ public:
     // vIndex: 6, symbol: ?getDamageProtection@Enchant@@UEBAHHAEBVActorDamageSource@@@Z
     virtual int getDamageProtection(int level, class ActorDamageSource const& source) const;
 
-    // vIndex: 7, symbol: ?getDamageBonus@Enchant@@UEBAMHAEBVActor@@@Z
-    virtual float getDamageBonus(int level, class Actor const& target) const;
+    // vIndex: 7, symbol: ?getAfterBreachArmorFraction@Enchant@@UEBAMHM@Z
+    virtual float getAfterBreachArmorFraction(int, float) const;
 
-    // vIndex: 8, symbol: ?doPostAttack@Enchant@@UEBAXAEAVActor@@0H@Z
+    // vIndex: 8, symbol: ?getDamageBonus@Enchant@@UEBAMHAEBVActor@@0@Z
+    virtual float getDamageBonus(int, class Actor const&, class Actor const&) const;
+
+    // vIndex: 9, symbol: ?doPostAttack@Enchant@@UEBAXAEAVActor@@0H@Z
     virtual void doPostAttack(class Actor& attacker, class Actor& victim, int level) const;
 
-    // vIndex: 9, symbol: ?doPostHurt@Enchant@@UEBAXAEAVItemInstance@@AEAVActor@@1H@Z
+    // vIndex: 10, symbol: ?doPostItemHurtActor@Enchant@@UEBAXAEAVActor@@0H@Z
+    virtual void doPostItemHurtActor(class Actor&, class Actor&, int) const;
+
+    // vIndex: 11, symbol: ?doPostHurt@Enchant@@UEBAXAEAVItemInstance@@AEAVActor@@1H@Z
     virtual void doPostHurt(class ItemInstance& item, class Actor& victim, class Actor& attacker, int level) const;
 
-    // vIndex: 10, symbol: ?isMeleeDamageEnchant@Enchant@@UEBA_NXZ
+    // vIndex: 12, symbol: ?isMeleeDamageEnchant@Enchant@@UEBA_NXZ
     virtual bool isMeleeDamageEnchant() const;
 
-    // vIndex: 11, symbol: ?isProtectionEnchant@Enchant@@UEBA_NXZ
+    // vIndex: 13, symbol: ?isProtectionEnchant@Enchant@@UEBA_NXZ
     virtual bool isProtectionEnchant() const;
 
-    // vIndex: 12, symbol: ?isTreasureOnly@Enchant@@UEBA_NXZ
+    // vIndex: 14, symbol: ?isTreasureOnly@Enchant@@UEBA_NXZ
     virtual bool isTreasureOnly() const;
 
-    // vIndex: 13, symbol: ?isDiscoverable@Enchant@@UEBA_NXZ
+    // vIndex: 15, symbol: ?isDiscoverable@Enchant@@UEBA_NXZ
     virtual bool isDiscoverable() const;
 
-    // vIndex: 14, symbol: ?_isValidEnchantmentTypeForCategory@Enchant@@EEBA_NW4Type@1@@Z
+    // vIndex: 16, symbol: ?_isValidEnchantmentTypeForCategory@Enchant@@EEBA_NW4Type@1@@Z
     virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
 
     // symbol: ??0Enchant@@QEAA@W4Type@0@W4Frequency@0@V?$basic_string_view@DU?$char_traits@D@std@@@std@@2HH@Z
@@ -177,11 +183,20 @@ public:
         bool                 isLootable
     );
 
+    // symbol: ?canEnchant@Enchant@@QEBA_NH_N@Z
+    MCAPI bool canEnchant(int slot, bool allowNonVanilla) const;
+
+    // symbol: ?getDescription@Enchant@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    MCAPI std::string getDescription() const;
+
     // symbol: ?getDescriptionId@Enchant@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getDescriptionId() const;
 
     // symbol: ?getEnchantType@Enchant@@QEBA?AW4Type@1@XZ
     MCAPI ::Enchant::Type getEnchantType() const;
+
+    // symbol: ?getFrequency@Enchant@@QEBA?AW4Frequency@1@XZ
+    MCAPI ::Enchant::Frequency getFrequency() const;
 
     // symbol: ?getStringId@Enchant@@QEBAAEBVHashedString@@XZ
     MCAPI class HashedString const& getStringId() const;
@@ -191,6 +206,9 @@ public:
 
     // symbol: ?isDisabled@Enchant@@QEBA_NXZ
     MCAPI bool isDisabled() const;
+
+    // symbol: ?isLootable@Enchant@@QEBA_NXZ
+    MCAPI bool isLootable() const;
 
     // symbol: ?enchantSlotFromString@Enchant@@SA?AW4Slot@1@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     MCAPI static ::Enchant::Slot enchantSlotFromString(std::string_view str);

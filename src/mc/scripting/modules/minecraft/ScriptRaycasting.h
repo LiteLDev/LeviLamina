@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/external/scripting/Result.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
@@ -21,8 +24,8 @@ MCAPI std::optional<struct ScriptModuleMinecraft::ScriptRaycasting::BlockHitInfo
 getBlockFromRay(class BlockSource const& region, class Vec3 const& pos, class Vec3 const& vector, struct ScriptModuleMinecraft::ScriptBlockRaycastOptions const&);
 
 // symbol:
-// ?getEntitiesFromRay@ScriptRaycasting@ScriptModuleMinecraft@@YA?AV?$vector@UEntityHitInfo@ScriptRaycasting@ScriptModuleMinecraft@@V?$allocator@UEntityHitInfo@ScriptRaycasting@ScriptModuleMinecraft@@@std@@@std@@AEAVBlockSource@@AEBVVec3@@1AEBUScriptEntityRaycastOptions@2@V?$optional@PEBVActor@@@4@@Z
-MCAPI std::vector<struct ScriptModuleMinecraft::ScriptRaycasting::EntityHitInfo>
+// ?getEntitiesFromRay@ScriptRaycasting@ScriptModuleMinecraft@@YA?AV?$Result@V?$vector@UEntityHitInfo@ScriptRaycasting@ScriptModuleMinecraft@@V?$allocator@UEntityHitInfo@ScriptRaycasting@ScriptModuleMinecraft@@@std@@@std@@$$V@Scripting@@AEAVBlockSource@@AEBVVec3@@1AEBUScriptEntityRaycastOptions@2@V?$optional@PEBVActor@@@std@@@Z
+MCAPI class Scripting::Result<std::vector<struct ScriptModuleMinecraft::ScriptRaycasting::EntityHitInfo>>
 getEntitiesFromRay(class BlockSource&, class Vec3 const&, class Vec3 const&, struct ScriptModuleMinecraft::ScriptEntityRaycastOptions const&, std::optional<class Actor const*>);
 // NOLINTEND
 

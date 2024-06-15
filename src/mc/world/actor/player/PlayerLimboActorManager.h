@@ -38,10 +38,6 @@ public:
     // symbol: ?saveOwnedLimboActorsForPlayer@PlayerLimboActorManager@@QEBAXUActorUniqueID@@@Z
     MCAPI void saveOwnedLimboActorsForPlayer(struct ActorUniqueID) const;
 
-    // symbol:
-    // ?transferAgentToOwnedEntityLimbo@PlayerLimboActorManager@@QEAA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEAVActor@@@Z
-    MCAPI std::unique_ptr<class CompoundTag> transferAgentToOwnedEntityLimbo(class Actor&);
-
     // symbol: ??1PlayerLimboActorManager@@QEAA@XZ
     MCAPI ~PlayerLimboActorManager();
 

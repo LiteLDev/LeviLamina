@@ -11,7 +11,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -35,9 +34,9 @@ public:
     virtual std::unique_ptr<class CommandOrigin> clone() const;
 
     // symbol:
-    // ??0ScriptActorCommandOrigin@@QEAA@AEBVActor@@V?$function@$$A6AXH$$QEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAVValue@Json@@@Z@std@@V?$optional@W4CommandPermissionLevel@@@3@@Z
+    // ??0ScriptActorCommandOrigin@@QEAA@AEBVActor@@V?$function@$$A6AXH$$QEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@std@@V?$optional@W4CommandPermissionLevel@@@3@@Z
     MCAPI
-    ScriptActorCommandOrigin(class Actor const&, std::function<void(int, std::string&&, class Json::Value&&)>, std::optional<::CommandPermissionLevel>);
+    ScriptActorCommandOrigin(class Actor const&, std::function<void(int, std::string&&)>, std::optional<::CommandPermissionLevel>);
 
     // NOLINTEND
 };

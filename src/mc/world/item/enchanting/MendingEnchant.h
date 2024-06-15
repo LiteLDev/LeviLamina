@@ -26,7 +26,7 @@ public:
     // vIndex: 5, symbol: ?getMaxLevel@MendingEnchant@@UEBAHXZ
     virtual int getMaxLevel() const;
 
-    // vIndex: 12, symbol: ?isTreasureOnly@MendingEnchant@@UEBA_NXZ
+    // vIndex: 14, symbol: ?isTreasureOnly@MendingEnchant@@UEBA_NXZ
     virtual bool isTreasureOnly() const;
 
     // NOLINTEND

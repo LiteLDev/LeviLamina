@@ -11,7 +11,6 @@
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 #include "mc/resources/PackCategory.h"
 #include "mc/resources/PackOrigin.h"
-#include "mc/resources/PackType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -106,9 +105,6 @@ public:
 
     // symbol: ?isSlicePack@ResourcePack@@QEBA_NXZ
     MCAPI bool isSlicePack() const;
-
-    // symbol: ?isType@ResourcePack@@QEBA_NW4PackType@@@Z
-    MCAPI bool isType(::PackType packType) const;
 
     // symbol: ?isZipped@ResourcePack@@QEBA_NXZ
     MCAPI bool isZipped() const;

@@ -31,10 +31,12 @@ public:
 public:
     // prevent constructor by default
     MolangMemberArray& operator=(MolangMemberArray const&);
-    MolangMemberArray();
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0MolangMemberArray@@QEAA@XZ
+    MCAPI MolangMemberArray();
+
     // symbol: ??0MolangMemberArray@@QEAA@AEBU0@@Z
     MCAPI MolangMemberArray(struct MolangMemberArray const&);
 

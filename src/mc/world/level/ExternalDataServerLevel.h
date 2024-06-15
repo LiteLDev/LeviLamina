@@ -21,8 +21,8 @@ public:
     // vIndex: 0, symbol: __gen_??1ExternalDataServerLevel@@UEAA@XZ
     virtual ~ExternalDataServerLevel() = default;
 
-    // vIndex: 1, symbol: ?isInGame@ExternalDataServerLevel@@UEBA_NXZ
-    virtual bool isInGame() const;
+    // vIndex: 1, symbol: ?isInWorldAndNotShowingAnyMenuScreens@ExternalDataServerLevel@@UEBA_NXZ
+    virtual bool isInWorldAndNotShowingAnyMenuScreens() const;
 
     // vIndex: 2, symbol: ?getAdventureSettings@ExternalDataServerLevel@@UEBAAEBUAdventureSettings@@XZ
     virtual struct AdventureSettings const& getAdventureSettings() const;

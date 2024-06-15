@@ -10,7 +10,6 @@
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
-#include "mc/enums/ArmorTextureType.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/InputMode.h"
 #include "mc/enums/MaterialType.h"
@@ -39,22 +38,22 @@ public:
     // vIndex: 10, symbol: __gen_??1Silverfish@@UEAA@XZ
     virtual ~Silverfish() = default;
 
-    // vIndex: 75, symbol: ?handleEntityEvent@Silverfish@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 74, symbol: ?handleEntityEvent@Silverfish@@UEAAXW4ActorEvent@@H@Z
     virtual void handleEntityEvent(::ActorEvent id, int data);
 
-    // vIndex: 151, symbol: ?_playStepSound@Silverfish@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 149, symbol: ?_playStepSound@Silverfish@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
     virtual void _playStepSound(class BlockPos const& pos, class Block const& onBlock);
 
-    // vIndex: 154, symbol: ?spawnAnim@Silverfish@@UEAAXXZ
+    // vIndex: 152, symbol: ?spawnAnim@Silverfish@@UEAAXXZ
     virtual void spawnAnim();
 
-    // vIndex: 162, symbol: ?checkSpawnRules@Silverfish@@UEAA_N_N@Z
+    // vIndex: 160, symbol: ?checkSpawnRules@Silverfish@@UEAA_N_N@Z
     virtual bool checkSpawnRules(bool fromSpawner);
 
-    // vIndex: 186, symbol: ?_getWalkTargetValue@Silverfish@@UEAAMAEBVBlockPos@@@Z
+    // vIndex: 184, symbol: ?_getWalkTargetValue@Silverfish@@UEAAMAEBVBlockPos@@@Z
     virtual float _getWalkTargetValue(class BlockPos const& pos);
 
-    // vIndex: 192, symbol: ?isDarkEnoughToSpawn@Silverfish@@UEBA_NXZ
+    // vIndex: 190, symbol: ?isDarkEnoughToSpawn@Silverfish@@UEBA_NXZ
     virtual bool isDarkEnoughToSpawn() const;
 
     // symbol: ??0Silverfish@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

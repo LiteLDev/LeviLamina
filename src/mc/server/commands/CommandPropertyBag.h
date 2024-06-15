@@ -16,12 +16,14 @@ public:
     // prevent constructor by default
     CommandPropertyBag& operator=(CommandPropertyBag const&);
     CommandPropertyBag(CommandPropertyBag const&);
-    CommandPropertyBag();
 
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1CommandPropertyBag@@UEAA@XZ
     virtual ~CommandPropertyBag() = default;
+
+    // symbol: ??0CommandPropertyBag@@QEAA@XZ
+    MCAPI CommandPropertyBag();
 
     // symbol: ??0CommandPropertyBag@@QEAA@AEBVValue@Json@@@Z
     MCAPI explicit CommandPropertyBag(class Json::Value const& jsonValue);
@@ -29,6 +31,10 @@ public:
     // symbol:
     // ?addToResultList@CommandPropertyBag@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
     MCAPI void addToResultList(std::string const& key, std::string const& element);
+
+    // symbol:
+    // ?clone@CommandPropertyBag@@QEBA?AV?$unique_ptr@VCommandPropertyBag@@U?$default_delete@VCommandPropertyBag@@@std@@@std@@XZ
+    MCAPI std::unique_ptr<class CommandPropertyBag> clone() const;
 
     // symbol:
     // ?set@CommandPropertyBag@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@@Z

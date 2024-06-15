@@ -30,9 +30,6 @@ public:
     // ??0FunctionAction@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@2@@Z
     MCAPI FunctionAction(std::string const& filePath, std::unique_ptr<class CommandOrigin>);
 
-    // symbol: ?isValidTag@FunctionAction@@SA_NAEBVCompoundTag@@@Z
-    MCAPI static bool isValidTag(class CompoundTag const& tag);
-
     // symbol:
     // ?load@FunctionAction@@SA?AV?$unique_ptr@VFunctionAction@@U?$default_delete@VFunctionAction@@@std@@@std@@AEBVCompoundTag@@AEAVICommandOriginLoader@@@Z
     MCAPI static std::unique_ptr<class FunctionAction>

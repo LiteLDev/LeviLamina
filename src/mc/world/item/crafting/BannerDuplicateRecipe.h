@@ -33,18 +33,19 @@ public:
     // vIndex: 3, symbol: ?getIngredient@BannerDuplicateRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
     virtual class RecipeIngredient const& getIngredient(int x, int y) const;
 
-    // vIndex: 4, symbol:
-    // ?getResultItem@BannerDuplicateRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
-    virtual std::vector<class ItemInstance> const& getResultItem() const;
-
-    // vIndex: 6, symbol: ?matches@BannerDuplicateRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
+    // vIndex: 5, symbol: ?matches@BannerDuplicateRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
     virtual bool matches(class CraftingContainer const& craftSlots, class CraftingContext const&) const;
 
-    // vIndex: 7, symbol: ?size@BannerDuplicateRecipe@@UEBAHXZ
+    // vIndex: 6, symbol: ?size@BannerDuplicateRecipe@@UEBAHXZ
     virtual int size() const;
 
-    // symbol: ??0BannerDuplicateRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBVUUID@mce@@@Z
-    MCAPI BannerDuplicateRecipe(std::string_view recipeId, class mce::UUID const& uuid);
+    // vIndex: 8, symbol:
+    // ?getResultItems@BannerDuplicateRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
+    virtual std::vector<class ItemInstance> const& getResultItems() const;
+
+    // symbol:
+    // ??0BannerDuplicateRecipe@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVUUID@mce@@@Z
+    MCAPI BannerDuplicateRecipe(std::string const&, class mce::UUID const&);
 
     // symbol: ?ID@BannerDuplicateRecipe@@2VUUID@mce@@B
     MCAPI static class mce::UUID const ID;

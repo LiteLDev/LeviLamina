@@ -41,10 +41,10 @@ public:
     virtual class AABB const&
     getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 56, symbol: ?canContainLiquid@MobSpawnerBlock@@UEBA_NXZ
+    // vIndex: 57, symbol: ?canContainLiquid@MobSpawnerBlock@@UEBA_NXZ
     virtual bool canContainLiquid() const;
 
-    // vIndex: 149, symbol: ?isInteractiveBlock@MobSpawnerBlock@@UEBA_NXZ
+    // vIndex: 150, symbol: ?isInteractiveBlock@MobSpawnerBlock@@UEBA_NXZ
     virtual bool isInteractiveBlock() const;
 
     // symbol: ??0MobSpawnerBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

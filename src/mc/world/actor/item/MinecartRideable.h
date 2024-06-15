@@ -10,7 +10,6 @@
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
-#include "mc/enums/ArmorTextureType.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/InputMode.h"
 #include "mc/enums/MaterialType.h"
@@ -40,7 +39,7 @@ public:
     // vIndex: 10, symbol: __gen_??1MinecartRideable@@UEAA@XZ
     virtual ~MinecartRideable() = default;
 
-    // vIndex: 154, symbol: ?getType@MinecartRideable@@UEAA?AW4MinecartType@@XZ
+    // vIndex: 152, symbol: ?getType@MinecartRideable@@UEAA?AW4MinecartType@@XZ
     virtual ::MinecartType getType();
 
     // symbol: ??0MinecartRideable@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

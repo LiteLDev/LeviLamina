@@ -33,21 +33,21 @@ public:
     // vIndex: 3, symbol: ?getIngredient@ShieldRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
     virtual class RecipeIngredient const& getIngredient(int, int) const;
 
-    // vIndex: 4, symbol:
-    // ?getResultItem@ShieldRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
-    virtual std::vector<class ItemInstance> const& getResultItem() const;
-
-    // vIndex: 5, symbol: ?isShapeless@ShieldRecipe@@UEBA_NXZ
+    // vIndex: 4, symbol: ?isShapeless@ShieldRecipe@@UEBA_NXZ
     virtual bool isShapeless() const;
 
-    // vIndex: 6, symbol: ?matches@ShieldRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
+    // vIndex: 5, symbol: ?matches@ShieldRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
     virtual bool matches(class CraftingContainer const& craftSlots, class CraftingContext const&) const;
 
-    // vIndex: 7, symbol: ?size@ShieldRecipe@@UEBAHXZ
+    // vIndex: 6, symbol: ?size@ShieldRecipe@@UEBAHXZ
     virtual int size() const;
 
-    // symbol: ??0ShieldRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@PEBVUUID@mce@@@Z
-    MCAPI ShieldRecipe(std::string_view recipeId, class mce::UUID const* uuid);
+    // vIndex: 8, symbol:
+    // ?getResultItems@ShieldRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
+    virtual std::vector<class ItemInstance> const& getResultItems() const;
+
+    // symbol: ??0ShieldRecipe@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBVUUID@mce@@@Z
+    MCAPI ShieldRecipe(std::string const&, class mce::UUID const*);
 
     // symbol: ?ID@ShieldRecipe@@2VUUID@mce@@A
     MCAPI static class mce::UUID ID;

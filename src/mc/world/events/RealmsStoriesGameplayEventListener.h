@@ -16,11 +16,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?onEvent@RealmsStoriesGameplayEventListener@@UEAA?AW4EventResult@@AEBUActorAcquiredItemEvent@@@Z
-    MCVAPI ::EventResult onEvent(struct ActorAcquiredItemEvent const&);
-
     // symbol: ?onEvent@RealmsStoriesGameplayEventListener@@UEAA?AW4EventResult@@AEBUActorKilledEvent@@@Z
     MCVAPI ::EventResult onEvent(struct ActorKilledEvent const&);
+
+    // symbol: ?onEvent@RealmsStoriesGameplayEventListener@@UEAA?AW4EventResult@@AEBUActorAcquiredItemEvent@@@Z
+    MCVAPI ::EventResult onEvent(struct ActorAcquiredItemEvent const&);
 
     // symbol: ?onPlayerMove@RealmsStoriesGameplayEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
     MCVAPI ::EventResult onPlayerMove(class Player&);

@@ -221,8 +221,8 @@ public:
     MCAPI void
     getActors(struct ActorDefinitionIdentifier const&, class AABB const& bb, std::vector<class Actor*>& actors) const;
 
-    // symbol: ?getBiome@LevelChunk@@QEBAAEAVBiome@@AEBVChunkBlockPos@@@Z
-    MCAPI class Biome& getBiome(class ChunkBlockPos const& pos) const;
+    // symbol: ?getBiome@LevelChunk@@QEBAAEBVBiome@@AEBVChunkBlockPos@@@Z
+    MCAPI class Biome const& getBiome(class ChunkBlockPos const& pos) const;
 
     // symbol: ?getBlock@LevelChunk@@QEBAAEBVBlock@@AEBVChunkBlockPos@@@Z
     MCAPI class Block const& getBlock(class ChunkBlockPos const& pos) const;
@@ -362,9 +362,6 @@ public:
     // symbol: ?getSubChunk@LevelChunk@@QEBAPEBUSubChunk@@F@Z
     MCAPI struct SubChunk const* getSubChunk(short) const;
 
-    // symbol: ?getSubChunkAbsoluteIndexFromSubChunkIndex@LevelChunk@@QEBAF_K@Z
-    MCAPI short getSubChunkAbsoluteIndexFromSubChunkIndex(uint64) const;
-
     // symbol: ?getSurfaceBiome@LevelChunk@@QEBAAEBVBiome@@VChunkBlockPos@@@Z
     MCAPI class Biome const& getSurfaceBiome(class ChunkBlockPos pos) const;
 
@@ -467,6 +464,12 @@ public:
 
     // symbol: ?populateHeightMapDataForSubChunkPacket@LevelChunk@@QEBAXFAEAUSubChunkPacketData@SubChunkPacket@@@Z
     MCAPI void populateHeightMapDataForSubChunkPacket(short, struct SubChunkPacket::SubChunkPacketData&) const;
+
+    // symbol: ?pruneBiomesAboveHeightmap@LevelChunk@@QEAAXXZ
+    MCAPI void pruneBiomesAboveHeightmap();
+
+    // symbol: ?recalculateSubchunkHashes@LevelChunk@@QEAAX_N@Z
+    MCAPI void recalculateSubchunkHashes(bool network);
 
     // symbol: ?recomputeHeightMap@LevelChunk@@QEAAX_N@Z
     MCAPI void recomputeHeightMap(bool resetLighting);
@@ -576,6 +579,9 @@ public:
     // symbol: ?setHadSerializedEntities@LevelChunk@@QEAAXXZ
     MCAPI void setHadSerializedEntities();
 
+    // symbol: ?setIsClientGeneratedChunk@LevelChunk@@QEAAX_N@Z
+    MCAPI void setIsClientGeneratedChunk(bool);
+
     // symbol: ?setMetaData@LevelChunk@@QEAAXV?$shared_ptr@VLevelChunkMetaData@@@std@@@Z
     MCAPI void setMetaData(std::shared_ptr<class LevelChunkMetaData>);
 
@@ -616,6 +622,9 @@ public:
     // symbol: ?toWorldPos@LevelChunk@@QEBA?AVBlockPos@@AEBVChunkBlockPos@@@Z
     MCAPI class BlockPos toWorldPos(class ChunkBlockPos const&) const;
 
+    // symbol: ?tryChangeState@LevelChunk@@QEAA_NW4ChunkState@@0@Z
+    MCAPI bool tryChangeState(::ChunkState from, ::ChunkState to);
+
     // symbol: ?trySpawnSkeletonTrap@LevelChunk@@QEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void trySpawnSkeletonTrap(class BlockSource& region, class BlockPos const& pos);
 
@@ -633,6 +642,11 @@ public:
 
     // symbol: ?borderBlocksAreEnabled@LevelChunk@@SA_NXZ
     MCAPI static bool borderBlocksAreEnabled();
+
+    // symbol:
+    // ?createNew@LevelChunk@@SA?AV?$unique_ptr@VLevelChunk@@ULevelChunkPhase1Deleter@@@std@@AEAVDimension@@VChunkPos@@_NW4SubChunkInitMode@@@Z
+    MCAPI static std::unique_ptr<class LevelChunk, struct LevelChunkPhase1Deleter>
+    createNew(class Dimension& dimension, class ChunkPos cp, bool readOnly, ::SubChunkInitMode initBlocks);
 
     // symbol:
     // ?deserialize2DData@LevelChunk@@SA?AV?$tuple@V?$array@VChunkLocalHeight@@$0BAA@@std@@V?$array@UBiomeChunkData@@$0BAA@@2@@std@@AEAVIDataInput@@@Z
@@ -713,6 +727,9 @@ public:
 
     // symbol: ?_placeBlockEntity@LevelChunk@@IEAAXV?$shared_ptr@VBlockActor@@@std@@@Z
     MCAPI void _placeBlockEntity(std::shared_ptr<class BlockActor> te);
+
+    // symbol: ?_reassignSubChunks@LevelChunk@@IEAAXV?$buffer_span_mut@USubChunk@@@@@Z
+    MCAPI void _reassignSubChunks(class buffer_span_mut<struct SubChunk> newChunks);
 
     // symbol: ?_recalcHeight@LevelChunk@@IEAA_NAEBVChunkBlockPos@@PEAVBlockSource@@@Z
     MCAPI bool _recalcHeight(class ChunkBlockPos const& start, class BlockSource* source);

@@ -29,10 +29,6 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ?clone@ScriptBlockPermutation@ScriptModuleMinecraft@@QEBA?AV?$StrongTypedObjectHandle@VScriptBlockPermutation@ScriptModuleMinecraft@@@Scripting@@XZ
-    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation> clone() const;
-
-    // symbol:
     // ?getAllPropertiesV010@ScriptBlockPermutation@ScriptModuleMinecraft@@QEAA?AV?$vector@V?$optional@V?$StrongTypedObjectHandle@VIScriptBlockProperty@ScriptModuleMinecraft@@@Scripting@@@std@@V?$allocator@V?$optional@V?$StrongTypedObjectHandle@VIScriptBlockProperty@ScriptModuleMinecraft@@@Scripting@@@std@@@2@@std@@XZ
     MCAPI std::vector<
         std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::IScriptBlockProperty>>>
@@ -78,6 +74,10 @@ public:
         matches(std::string, std::optional<std::unordered_map<std::string, std::variant<int, std::string, bool>>>)
             const;
 
+    // symbol: ??4ScriptBlockPermutation@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
+    MCAPI class ScriptModuleMinecraft::ScriptBlockPermutation&
+    operator=(class ScriptModuleMinecraft::ScriptBlockPermutation&& rhs);
+
     // symbol: ?setBlock@ScriptBlockPermutation@ScriptModuleMinecraft@@QEAAXAEBVBlock@@@Z
     MCAPI void setBlock(class Block const& block);
 
@@ -91,6 +91,9 @@ public:
         std::string                          name,
         std::variant<int, std::string, bool> value
     );
+
+    // symbol: ??1ScriptBlockPermutation@ScriptModuleMinecraft@@QEAA@XZ
+    MCAPI ~ScriptBlockPermutation();
 
     // symbol:
     // ?bind@ScriptBlockPermutation@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptBlockPermutation@ScriptModuleMinecraft@@@Scripting@@XZ

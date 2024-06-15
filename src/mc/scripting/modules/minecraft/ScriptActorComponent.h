@@ -61,14 +61,6 @@ public:
     // ?_functionError@ScriptActorComponent@ScriptModuleMinecraft@@IEBA?AUError@Scripting@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     MCAPI struct Scripting::Error _functionError(std::string_view) const;
 
-    // symbol:
-    // ?_getPropertyError@ScriptActorComponent@ScriptModuleMinecraft@@IEBA?AUError@Scripting@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI struct Scripting::Error _getPropertyError(std::string_view) const;
-
-    // symbol:
-    // ?_setPropertyError@ScriptActorComponent@ScriptModuleMinecraft@@IEBA?AUError@Scripting@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI struct Scripting::Error _setPropertyError(std::string_view) const;
-
     // symbol: ?_tryGetOwner@ScriptActorComponent@ScriptModuleMinecraft@@IEBAPEAVActor@@XZ
     MCAPI class Actor* _tryGetOwner() const;
 

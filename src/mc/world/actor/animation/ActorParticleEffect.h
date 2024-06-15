@@ -7,5 +7,11 @@ public:
     // prevent constructor by default
     ActorParticleEffect& operator=(ActorParticleEffect const&);
     ActorParticleEffect(ActorParticleEffect const&);
-    ActorParticleEffect();
+
+public:
+    // NOLINTBEGIN
+    // symbol: ??0ActorParticleEffect@@QEAA@XZ
+    MCAPI ActorParticleEffect();
+
+    // NOLINTEND
 };

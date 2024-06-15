@@ -31,17 +31,17 @@ public:
     // vIndex: 0, symbol: __gen_??1JungleLeavesBlock@@UEAA@XZ
     virtual ~JungleLeavesBlock() = default;
 
-    // vIndex: 121, symbol: ?getColor@JungleLeavesBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 122, symbol: ?getColor@JungleLeavesBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual int getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
 
-    // vIndex: 128, symbol: ?getVariant@JungleLeavesBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129, symbol: ?getVariant@JungleLeavesBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const&) const;
 
-    // vIndex: 155, symbol:
+    // vIndex: 156, symbol:
     // ?getRenderLayer@JungleLeavesBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
     virtual ::BlockRenderLayer getRenderLayer(class Block const&, class BlockSource&, class BlockPos const&) const;
 
-    // vIndex: 159, symbol:
+    // vIndex: 160, symbol:
     // ?getMapColor@JungleLeavesBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const&) const;
 

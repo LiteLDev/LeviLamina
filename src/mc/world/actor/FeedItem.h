@@ -32,7 +32,6 @@ public:
 
 public:
     // prevent constructor by default
-    FeedItem& operator=(FeedItem const&);
     FeedItem();
 
 public:
@@ -45,6 +44,9 @@ public:
 
     // symbol: ??4FeedItem@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct FeedItem& operator=(struct FeedItem&&);
+
+    // symbol: ??4FeedItem@@QEAAAEAU0@AEBU0@@Z
+    MCAPI struct FeedItem& operator=(struct FeedItem const&);
 
     // symbol: ??1FeedItem@@QEAA@XZ
     MCAPI ~FeedItem();

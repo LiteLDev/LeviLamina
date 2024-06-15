@@ -24,40 +24,40 @@ public:
         std::function<void(int, class ItemStack const&)> onNetIdChanged
     );
 
-    // vIndex: 5, symbol: ?getItem@FillingContainer@@UEBAAEBVItemStack@@H@Z
+    // vIndex: 7, symbol: ?getItem@FillingContainer@@UEBAAEBVItemStack@@H@Z
     virtual class ItemStack const& getItem(int slot) const;
 
-    // vIndex: 10, symbol: ?setItem@FillingContainer@@UEAAXHAEBVItemStack@@@Z
+    // vIndex: 12, symbol: ?setItem@FillingContainer@@UEAAXHAEBVItemStack@@@Z
     virtual void setItem(int slot, class ItemStack const& item);
 
-    // vIndex: 11, symbol: ?setItemWithForceBalance@FillingContainer@@UEAAXHAEBVItemStack@@_N@Z
+    // vIndex: 13, symbol: ?setItemWithForceBalance@FillingContainer@@UEAAXHAEBVItemStack@@_N@Z
     virtual void setItemWithForceBalance(int slot, class ItemStack const& item, bool forceBalanced);
 
-    // vIndex: 12, symbol: ?removeItem@FillingContainer@@UEAAXHH@Z
+    // vIndex: 14, symbol: ?removeItem@FillingContainer@@UEAAXHH@Z
     virtual void removeItem(int slot, int count);
 
-    // vIndex: 17, symbol: ?getContainerSize@FillingContainer@@UEBAHXZ
+    // vIndex: 20, symbol: ?getContainerSize@FillingContainer@@UEBAHXZ
     virtual int getContainerSize() const;
 
-    // vIndex: 18, symbol: ?getMaxStackSize@FillingContainer@@UEBAHXZ
+    // vIndex: 21, symbol: ?getMaxStackSize@FillingContainer@@UEBAHXZ
     virtual int getMaxStackSize() const;
 
-    // vIndex: 19, symbol: ?startOpen@FillingContainer@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 22, symbol: ?startOpen@FillingContainer@@UEAAXAEAVPlayer@@@Z
     virtual void startOpen(class Player&);
 
-    // vIndex: 38, symbol: ?add@FillingContainer@@UEAA_NAEAVItemStack@@@Z
+    // vIndex: 41, symbol: ?add@FillingContainer@@UEAA_NAEAVItemStack@@@Z
     virtual bool add(class ItemStack& item);
 
-    // vIndex: 39, symbol: ?canAdd@FillingContainer@@UEBA_NAEBVItemStack@@@Z
+    // vIndex: 42, symbol: ?canAdd@FillingContainer@@UEBA_NAEBVItemStack@@@Z
     virtual bool canAdd(class ItemStack const& item) const;
 
-    // vIndex: 40, symbol: ?clearSlot@FillingContainer@@UEAAXH@Z
+    // vIndex: 43, symbol: ?clearSlot@FillingContainer@@UEAAXH@Z
     virtual void clearSlot(int slot);
 
-    // vIndex: 41, symbol: ?clearInventory@FillingContainer@@UEAAHH@Z
+    // vIndex: 44, symbol: ?clearInventory@FillingContainer@@UEAAHH@Z
     virtual int clearInventory(int resizeTo);
 
-    // vIndex: 42, symbol: ?load@FillingContainer@@UEAAXAEBVListTag@@AEBVSemVersion@@AEAVLevel@@@Z
+    // vIndex: 45, symbol: ?load@FillingContainer@@UEAAXAEBVListTag@@AEBVSemVersion@@AEAVLevel@@@Z
     virtual void load(class ListTag const& inventoryList, class SemVersion const& version, class Level& level);
 
     // symbol: ??0FillingContainer@@QEAA@PEAVPlayer@@HW4ContainerType@@@Z
@@ -96,9 +96,6 @@ public:
 
     // symbol: ?_doDrop@FillingContainer@@IEAAXAEAVItemStack@@_N@Z
     MCAPI void _doDrop(class ItemStack& item, bool randomly);
-
-    // symbol: ?_fixBackwardCompabilityItem@FillingContainer@@IEAAXAEAVItemStack@@@Z
-    MCAPI void _fixBackwardCompabilityItem(class ItemStack& item);
 
     // symbol: ?_getFreeSlot@FillingContainer@@IEBAHXZ
     MCAPI int _getFreeSlot() const;

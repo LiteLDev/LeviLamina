@@ -166,6 +166,9 @@ MCAPI extern class BlockStateVariant<int> const DEPRECATED;
 // symbol: ?DEPRECATED_Color@VanillaStates@@3V?$BlockStateVariant@W4BlockColor@@@@B
 MCAPI extern class BlockStateVariant<::BlockColor> const DEPRECATED_Color;
 
+// symbol: ?DEPRECATED_DoublePlantType@VanillaStates@@3V?$BlockStateVariant@W4DoublePlantType@@@@B
+MCAPI extern class BlockStateVariant<::DoublePlantType> const DEPRECATED_DoublePlantType;
+
 // symbol: ?Damage@VanillaStates@@3V?$BlockStateVariant@W4AnvilDamage@@@@B
 MCAPI extern class BlockStateVariant<::AnvilDamage> const Damage;
 
@@ -183,9 +186,6 @@ MCAPI extern class BlockStateVariant<bool> const DisarmedBit;
 
 // symbol: ?DoorHingeBit@VanillaStates@@3V?$BlockStateVariant@_N@@B
 MCAPI extern class BlockStateVariant<bool> const DoorHingeBit;
-
-// symbol: ?DoublePlantType@VanillaStates@@3V?$BlockStateVariant@W4DoublePlantType@@@@B
-MCAPI extern class BlockStateVariant<::DoublePlantType> const DoublePlantType;
 
 // symbol: ?DragDown@VanillaStates@@3V?$BlockStateVariant@_N@@B
 MCAPI extern class BlockStateVariant<bool> const DragDown;
@@ -279,6 +279,9 @@ MCAPI extern class BlockStateVariant<::OldLeavesType> const OldLeavesType;
 
 // symbol: ?OldLogType@VanillaStates@@3V?$BlockStateVariant@W4OldLogType@@@@B
 MCAPI extern class BlockStateVariant<::OldLogType> const OldLogType;
+
+// symbol: ?Ominous@VanillaStates@@3V?$BlockStateVariant@_N@@B
+MCAPI extern class BlockStateVariant<bool> const Ominous;
 
 // symbol: ?OpenBit@VanillaStates@@3V?$BlockStateVariant@_N@@B
 MCAPI extern class BlockStateVariant<bool> const OpenBit;

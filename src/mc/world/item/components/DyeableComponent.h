@@ -66,6 +66,9 @@ public:
     // symbol: ?setColor@DyeableComponent@@QEBAXAEAVItemStackBase@@AEBVColor@mce@@@Z
     MCAPI void setColor(class ItemStackBase& instance, class mce::Color const& color) const;
 
+    // symbol: ?ResetDefaultLeatherColor@DyeableComponent@@SAXXZ
+    MCAPI static void ResetDefaultLeatherColor();
+
     // symbol: ?getIdentifier@DyeableComponent@@SAAEBVHashedString@@XZ
     MCAPI static class HashedString const& getIdentifier();
 

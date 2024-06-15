@@ -30,7 +30,7 @@ public:
     // vIndex: 0, symbol: __gen_??1BookshelfBlock@@UEAA@XZ
     virtual ~BookshelfBlock() = default;
 
-    // vIndex: 133, symbol: ?animateTickBedrockLegacy@BookshelfBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 134, symbol: ?animateTickBedrockLegacy@BookshelfBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 
     // symbol: ??0BookshelfBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

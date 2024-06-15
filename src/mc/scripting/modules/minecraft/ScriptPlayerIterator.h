@@ -27,6 +27,10 @@ public:
     MCAPI explicit ScriptPlayerIterator(std::vector<class Scripting::StrongTypedObjectHandle<
                                             class ScriptModuleMinecraft::ScriptPlayer>>&&);
 
+    // symbol: ??4ScriptPlayerIterator@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
+    MCAPI class ScriptModuleMinecraft::ScriptPlayerIterator&
+    operator=(class ScriptModuleMinecraft::ScriptPlayerIterator&&);
+
     // symbol:
     // ?bind@ScriptPlayerIterator@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptPlayerIterator@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptPlayerIterator> bind();

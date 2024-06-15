@@ -15,9 +15,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptChatSendBeforeEvent@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
-    MCAPI ScriptChatSendBeforeEvent(struct ScriptModuleMinecraft::ScriptChatSendBeforeEvent&&);
-
     // symbol: ??0ScriptChatSendBeforeEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
     MCAPI ScriptChatSendBeforeEvent(struct ScriptModuleMinecraft::ScriptChatSendBeforeEvent const&);
 

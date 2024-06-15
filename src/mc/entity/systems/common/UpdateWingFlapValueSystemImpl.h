@@ -10,9 +10,9 @@
 namespace UpdateWingFlapValueSystemImpl {
 // NOLINTBEGIN
 // symbol:
-// ?tick@UpdateWingFlapValueSystemImpl@@YAXU?$type_list@U?$Include@V?$FlagComponent@UActorTickedFlag@@@@@@@entt@@V?$Optional@$$CBV?$FlagComponent@UOnGroundFlag@@@@@@AEAUWingFlapComponent@@@Z
+// ?tick@UpdateWingFlapValueSystemImpl@@YAXU?$type_list@U?$Include@V?$FlagComponent@UActorTickedFlag@@@@@@@entt@@V?$Optional@$$CBUOnGroundFlagComponent@@@@AEAUWingFlapComponent@@@Z
 MCAPI void
-tick(entt::type_list<struct Include<class FlagComponent<struct ActorTickedFlag>>>, class Optional<class FlagComponent<struct OnGroundFlag> const>, struct WingFlapComponent&);
+tick(entt::type_list<struct Include<class FlagComponent<struct ActorTickedFlag>>>, class Optional<struct OnGroundFlagComponent const>, struct WingFlapComponent&);
 // NOLINTEND
 
 }; // namespace UpdateWingFlapValueSystemImpl

@@ -43,9 +43,6 @@ public:
     // symbol: ?makeErrorResponse@LibHttpClientErrorCatergory@Http@Bedrock@@SA?AVResponse@23@J@Z
     MCAPI static class Bedrock::Http::Response makeErrorResponse(long);
 
-    // symbol: ?make_error_code@LibHttpClientErrorCatergory@Http@Bedrock@@SA?AVerror_code@std@@J@Z
-    MCAPI static std::error_code make_error_code(long);
-
     // NOLINTEND
 };
 

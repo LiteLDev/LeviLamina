@@ -70,8 +70,5 @@ public:
     // symbol: ??1ActorHistory@@QEAA@XZ
     MCAPI ~ActorHistory();
 
-    // symbol: ?copyEntityState@ActorHistory@@SAXAEBVEntityContext@@AEAV2@_N@Z
-    MCAPI static void copyEntityState(class EntityContext const&, class EntityContext&, bool);
-
     // NOLINTEND
 };

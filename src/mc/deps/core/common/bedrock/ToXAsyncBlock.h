@@ -32,11 +32,11 @@ public:
     // vIndex: 2, symbol: ?getError@?$AsyncResultBase@PEAUXAsyncBlock@@@Threading@Bedrock@@UEBA?AVerror_code@std@@XZ
     virtual std::error_code getError() const;
 
-    // vIndex: 3, symbol: ?getResult@?$AsyncResultBase@PEAUXAsyncBlock@@@Threading@Bedrock@@UEBAPEAUXAsyncBlock@@XZ
-    virtual struct XAsyncBlock* getResult() const;
-
-    // vIndex: 4, symbol: ?cancel@?$AsyncResultBase@PEAUXAsyncBlock@@@Threading@Bedrock@@UEAAXXZ
+    // vIndex: 3, symbol: ?cancel@?$AsyncResultBase@PEAUXAsyncBlock@@@Threading@Bedrock@@UEAAXXZ
     virtual void cancel();
+
+    // vIndex: 4, symbol: ?getResult@?$AsyncResultBase@PEAUXAsyncBlock@@@Threading@Bedrock@@UEBAPEAUXAsyncBlock@@XZ
+    virtual struct XAsyncBlock* getResult() const;
 
     // vIndex: 5, symbol:
     // ?addOnComplete@?$AsyncResultBase@PEAUXAsyncBlock@@@Threading@Bedrock@@UEAAXV?$function@$$A6AXAEBV?$IAsyncResult@PEAUXAsyncBlock@@@Threading@Bedrock@@@Z@std@@@Z

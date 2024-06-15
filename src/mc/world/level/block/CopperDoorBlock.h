@@ -34,13 +34,13 @@ public:
     // vIndex: 18, symbol: ?onLightningHit@CopperDoorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void onLightningHit(class BlockSource&, class BlockPos const&) const;
 
-    // vIndex: 26, symbol: ?tryGetCopperBehavior@CopperDoorBlock@@UEBAPEBVCopperBehavior@@XZ
+    // vIndex: 27, symbol: ?tryGetCopperBehavior@CopperDoorBlock@@UEBAPEBVCopperBehavior@@XZ
     virtual class CopperBehavior const* tryGetCopperBehavior() const;
 
-    // vIndex: 148, symbol: ?randomTick@CopperDoorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 149, symbol: ?randomTick@CopperDoorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void randomTick(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // vIndex: 151, symbol: ?use@CopperDoorBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152, symbol: ?use@CopperDoorBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
     virtual bool use(class Player&, class BlockPos const&, uchar) const;
 
     // symbol:

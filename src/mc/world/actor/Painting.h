@@ -10,7 +10,6 @@
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
-#include "mc/enums/ArmorTextureType.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/InputMode.h"
 #include "mc/enums/MaterialType.h"
@@ -49,25 +48,22 @@ public:
     // vIndex: 38, symbol: ?getShadowRadius@Painting@@UEBAMXZ
     virtual float getShadowRadius() const;
 
-    // vIndex: 45, symbol: ?isPickable@Painting@@UEAA_NXZ
-    virtual bool isPickable();
-
-    // vIndex: 149, symbol: ?readAdditionalSaveData@Painting@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147, symbol: ?readAdditionalSaveData@Painting@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 150, symbol: ?addAdditionalSaveData@Painting@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148, symbol: ?addAdditionalSaveData@Painting@@MEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 153, symbol: ?getWidth@Painting@@UEBAHXZ
+    // vIndex: 151, symbol: ?getWidth@Painting@@UEBAHXZ
     virtual int getWidth() const;
 
-    // vIndex: 154, symbol: ?getHeight@Painting@@UEBAHXZ
+    // vIndex: 152, symbol: ?getHeight@Painting@@UEBAHXZ
     virtual int getHeight() const;
 
-    // vIndex: 155, symbol: ?dropItem@Painting@@UEAAXXZ
+    // vIndex: 153, symbol: ?dropItem@Painting@@UEAAXXZ
     virtual void dropItem();
 
-    // vIndex: 156, symbol: ?placeHangingEntity@Painting@@UEAA_NAEAVBlockSource@@H@Z
+    // vIndex: 154, symbol: ?placeHangingEntity@Painting@@UEAA_NAEAVBlockSource@@H@Z
     virtual bool placeHangingEntity(class BlockSource& region, int direction);
 
     // symbol: ??0Painting@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

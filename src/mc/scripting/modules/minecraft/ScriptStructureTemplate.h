@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/enums/AnimationMode.h"
 #include "mc/enums/Mirror.h"
 #include "mc/enums/Rotation.h"
@@ -11,19 +10,14 @@
 #include "mc/external/scripting/EnumBindingBuilder.h"
 #include "mc/external/scripting/Result.h"
 #include "mc/external/scripting/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/WeakTypedObjectHandle.h"
 #include "mc/world/level/levelgen/structure/StructureRedstoneSaveMode.h"
 
 // auto generated forward declare list
 // clang-format off
-class LevelStorage;
-class StructureManager;
 class StructureTemplate;
 class Vec3;
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
-namespace ScriptModuleMinecraft { class ScriptStructureManager; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidStructureError; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct EngineError; }
 namespace Scripting { struct InvalidArgumentError; }
 // clang-format on
@@ -42,21 +36,12 @@ public:
     MCAPI ScriptStructureTemplate(class ScriptModuleMinecraft::ScriptStructureTemplate const&);
 
     // symbol:
-    // ??0ScriptStructureTemplate@ScriptModuleMinecraft@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@VWeakLifetimeScope@Scripting@@V?$WeakTypedObjectHandle@VScriptStructureManager@ScriptModuleMinecraft@@@7@AEAVLevelStorage@@@Z
-    MCAPI
-    ScriptStructureTemplate(std::string const&, Bedrock::NotNullNonOwnerPtr<class StructureManager>, class Scripting::WeakLifetimeScope, class Scripting::WeakTypedObjectHandle<class ScriptModuleMinecraft::ScriptStructureManager>, class LevelStorage&);
-
-    // symbol:
     // ?getBlockPermutation@ScriptStructureTemplate@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptBlockPermutation@ScriptModuleMinecraft@@@Scripting@@@std@@UScriptInvalidStructureError@ScriptModuleMinecraft@@UInvalidArgumentError@Scripting@@@Scripting@@AEBVVec3@@@Z
     MCAPI class Scripting::Result<
         std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>>,
         struct ScriptModuleMinecraft::ScriptInvalidStructureError,
         struct Scripting::InvalidArgumentError>
     getBlockPermutation(class Vec3 const&) const;
-
-    // symbol:
-    // ?getId@ScriptStructureTemplate@ScriptModuleMinecraft@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-    MCAPI std::string const& getId() const;
 
     // symbol:
     // ?getSize@ScriptStructureTemplate@ScriptModuleMinecraft@@QEBA?AV?$Result@VVec3@@UScriptInvalidStructureError@ScriptModuleMinecraft@@@Scripting@@XZ
@@ -83,16 +68,12 @@ public:
     MCAPI class Scripting::Result<void, struct ScriptModuleMinecraft::ScriptInvalidStructureError> saveToWorld();
 
     // symbol:
-    // ?setBlockPermutation@ScriptStructureTemplate@ScriptModuleMinecraft@@QEAA?AV?$Result@XUInvalidArgumentError@Scripting@@UScriptInvalidStructureError@ScriptModuleMinecraft@@@Scripting@@AEBVVec3@@V?$optional@V?$StrongTypedObjectHandle@VScriptBlockPermutation@ScriptModuleMinecraft@@@Scripting@@@std@@_N@Z
+    // ?setBlockPermutation@ScriptStructureTemplate@ScriptModuleMinecraft@@QEAA?AV?$Result@XUInvalidArgumentError@Scripting@@UScriptInvalidStructureError@ScriptModuleMinecraft@@@Scripting@@AEBVVec3@@V?$optional@V?$StrongTypedObjectHandle@VScriptBlockPermutation@ScriptModuleMinecraft@@@Scripting@@@std@@@Z
     MCAPI class Scripting::Result<
         void,
         struct Scripting::InvalidArgumentError,
         struct ScriptModuleMinecraft::ScriptInvalidStructureError>
-    setBlockPermutation(
-        class Vec3 const&,
-        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>>,
-        bool
-    );
+    setBlockPermutation(class Vec3 const&, std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>>);
 
     // symbol:
     // ?bind@ScriptStructureTemplate@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptStructureTemplate@ScriptModuleMinecraft@@@Scripting@@XZ

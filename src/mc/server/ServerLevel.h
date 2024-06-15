@@ -104,9 +104,6 @@ public:
     // symbol: ?setCommandsEnabled@ServerLevel@@UEAAX_N@Z
     MCVAPI void setCommandsEnabled(bool commandsEnabled);
 
-    // symbol: ?setServerTickOffset@ServerLevel@@UEAAX_J@Z
-    MCVAPI void setServerTickOffset(int64);
-
     // symbol: ?setWorldTemplateOptionsUnlocked@ServerLevel@@UEAAXXZ
     MCVAPI void setWorldTemplateOptionsUnlocked();
 
@@ -177,9 +174,6 @@ public:
 
     // symbol: ?_onPlayerWakeUp@ServerLevel@@AEAAXAEAVPlayer@@@Z
     MCAPI void _onPlayerWakeUp(class Player& player);
-
-    // symbol: ?_onRemoveActorEntityReferences@ServerLevel@@AEAAXAEAVActor@@@Z
-    MCAPI void _onRemoveActorEntityReferences(class Actor& actor);
 
     // symbol: ?_onSleepingPlayerListUpdated@ServerLevel@@AEAAXAEBUPlayerSleepStatus@@@Z
     MCAPI void _onSleepingPlayerListUpdated(struct PlayerSleepStatus const&);

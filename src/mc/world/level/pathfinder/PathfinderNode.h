@@ -28,11 +28,20 @@ public:
     // symbol: ?equals@PathfinderNode@@QEAA_NPEAV1@@Z
     MCAPI bool equals(class PathfinderNode* o);
 
+    // symbol: ?getCostMalus@PathfinderNode@@QEBAMXZ
+    MCAPI float getCostMalus() const;
+
     // symbol: ?getType@PathfinderNode@@QEBA?AW4NodeType@@XZ
     MCAPI ::NodeType getType() const;
 
     // symbol: ?inOpenSet@PathfinderNode@@QEAA_NXZ
     MCAPI bool inOpenSet();
+
+    // symbol: ?setCostMalus@PathfinderNode@@QEAAXM@Z
+    MCAPI void setCostMalus(float costMalus);
+
+    // symbol: ?setMoveMalus@PathfinderNode@@QEAAXM@Z
+    MCAPI void setMoveMalus(float moveMalus);
 
     // NOLINTEND
 };

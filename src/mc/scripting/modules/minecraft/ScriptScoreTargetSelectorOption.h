@@ -12,10 +12,12 @@ struct ScriptScoreTargetSelectorOption {
 public:
     // prevent constructor by default
     ScriptScoreTargetSelectorOption(ScriptScoreTargetSelectorOption const&);
-    ScriptScoreTargetSelectorOption();
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0ScriptScoreTargetSelectorOption@ScriptModuleMinecraft@@QEAA@XZ
+    MCAPI ScriptScoreTargetSelectorOption();
+
     // symbol: ??4ScriptScoreTargetSelectorOption@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption&
     operator=(struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption&&);

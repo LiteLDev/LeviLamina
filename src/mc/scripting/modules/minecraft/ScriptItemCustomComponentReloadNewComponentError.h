@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 namespace Scripting { struct ErrorBinding; }
 // clang-format on
 
@@ -20,9 +19,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptItemCustomComponentReloadNewComponentError@ScriptModuleMinecraft@@QEAA@AEBVHashedString@@@Z
-    MCAPI explicit ScriptItemCustomComponentReloadNewComponentError(class HashedString const&);
-
     // symbol: ??1ScriptItemCustomComponentReloadNewComponentError@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptItemCustomComponentReloadNewComponentError();
 

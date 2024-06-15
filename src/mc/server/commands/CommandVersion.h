@@ -16,15 +16,6 @@ public:
     // symbol: ??0CommandVersion@@QEAA@HH@Z
     MCAPI CommandVersion(int from, int to);
 
-    // symbol: ?covers@CommandVersion@@QEBA_NAEBV1@@Z
-    MCAPI bool covers(class CommandVersion const& rhs) const;
-
-    // symbol: ?isCompatible@CommandVersion@@QEBA_NH@Z
-    MCAPI bool isCompatible(int version) const;
-
-    // symbol: ??9CommandVersion@@QEBA_NAEBV0@@Z
-    MCAPI bool operator!=(class CommandVersion const& rhs) const;
-
     // symbol: ?getLatestCompatibleSemVersion@CommandVersion@@SA?AVSemVersion@@H@Z
     MCAPI static class SemVersion getLatestCompatibleSemVersion(int version);
 

@@ -33,6 +33,9 @@ public:
 
     // protected:
     // NOLINTBEGIN
+    // symbol: ??0PublisherBase@Detail@PubSub@Bedrock@@IEAA@$$QEAV0123@@Z
+    MCAPI PublisherBase(class Bedrock::PubSub::Detail::PublisherBase&& other);
+
     // symbol: ?_clear@PublisherBase@Detail@PubSub@Bedrock@@IEAAXXZ
     MCAPI void _clear();
 

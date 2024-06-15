@@ -74,5 +74,15 @@ public:
     // symbol: ?getEyePos@Explosion@@AEBA?AVVec3@@AEAVActor@@@Z
     MCAPI class Vec3 getEyePos(class Actor&) const;
 
+    // symbol:
+    // ?_addOrMergeItemStack@Explosion@@CAXAEBVItemStack@@VBlockPos@@AEAV?$vector@U?$pair@VItemStack@@VBlockPos@@@std@@V?$allocator@U?$pair@VItemStack@@VBlockPos@@@std@@@2@@std@@@Z
+    MCAPI static void
+    _addOrMergeItemStack(class ItemStack const&, class BlockPos, std::vector<std::pair<class ItemStack, class BlockPos>>&);
+
+    // symbol:
+    // ?_spawnExtraResourcesAndMergeItemDropsForBlock@Explosion@@CAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@AEAV?$vector@U?$pair@VItemStack@@VBlockPos@@@std@@V?$allocator@U?$pair@VItemStack@@VBlockPos@@@std@@@2@@std@@@Z
+    MCAPI static void
+    _spawnExtraResourcesAndMergeItemDropsForBlock(class BlockSource&, class BlockPos const&, class Block const&, class Randomize&, struct ResourceDropsContext const&, std::vector<std::pair<class ItemStack, class BlockPos>>&);
+
     // NOLINTEND
 };

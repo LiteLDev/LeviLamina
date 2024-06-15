@@ -18,8 +18,23 @@ public:
     MCAPI
     PropertyContainer(gsl::not_null<std::shared_ptr<class PropertyGroup const>>, class RenderParams& renderParams);
 
+    // symbol: ?addAdditionalSaveDataToCompoundTag@PropertyContainer@@QEBAXAEAVCompoundTag@@@Z
+    MCAPI void addAdditionalSaveDataToCompoundTag(class CompoundTag& compoundTag) const;
+
     // symbol: ?addEntryToSyncData@PropertyContainer@@QEBAXAEBVPropertyMetadata@@AEAUPropertySyncData@@@Z
     MCAPI void addEntryToSyncData(class PropertyMetadata const&, struct PropertySyncData&) const;
+
+    // symbol: ?getBoolValue@PropertyContainer@@QEBA?AV?$optional@_N@std@@_K@Z
+    MCAPI std::optional<bool> getBoolValue(uint64) const;
+
+    // symbol: ?getEnumIndexValue@PropertyContainer@@QEBA?AV?$optional@_K@std@@_K@Z
+    MCAPI std::optional<uint64> getEnumIndexValue(uint64) const;
+
+    // symbol: ?getFloatValue@PropertyContainer@@QEBA?AV?$optional@M@std@@_K@Z
+    MCAPI std::optional<float> getFloatValue(uint64) const;
+
+    // symbol: ?getIntValue@PropertyContainer@@QEBA?AV?$optional@H@std@@_K@Z
+    MCAPI std::optional<int> getIntValue(uint64) const;
 
     // symbol: ?getMolangValue@PropertyContainer@@QEBA_N_KAEAUMolangScriptArg@@@Z
     MCAPI bool getMolangValue(uint64, struct MolangScriptArg& out) const;
@@ -34,6 +49,12 @@ public:
         std::string const&,
         std::string const& canonicalName
     );
+
+    // symbol: ?setBoolValue@PropertyContainer@@QEAAX_K_N@Z
+    MCAPI void setBoolValue(uint64, bool value);
+
+    // symbol: ?setEnumIndexValue@PropertyContainer@@QEAAX_K0@Z
+    MCAPI void setEnumIndexValue(uint64, uint64 value);
 
     // symbol: ?setFloatValue@PropertyContainer@@QEAAX_KM@Z
     MCAPI void setFloatValue(uint64, float value);

@@ -10,7 +10,6 @@
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
-#include "mc/enums/ArmorTextureType.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/InputMode.h"
 #include "mc/enums/MaterialType.h"
@@ -45,28 +44,28 @@ public:
     // vIndex: 26, symbol: ?normalTick@Warden@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 56, symbol: ?setTarget@Warden@@UEAAXPEAVActor@@@Z
+    // vIndex: 55, symbol: ?setTarget@Warden@@UEAAXPEAVActor@@@Z
     virtual void setTarget(class Actor* target);
 
-    // vIndex: 70, symbol: ?isInvulnerableTo@Warden@@UEBA_NAEBVActorDamageSource@@@Z
+    // vIndex: 69, symbol: ?isInvulnerableTo@Warden@@UEBA_NAEBVActorDamageSource@@@Z
     virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
-    // vIndex: 101, symbol: ?onSynchedDataUpdate@Warden@@UEAAXH@Z
+    // vIndex: 99, symbol: ?onSynchedDataUpdate@Warden@@UEAAXH@Z
     virtual void onSynchedDataUpdate(int dataId);
 
-    // vIndex: 137, symbol: ?onPush@Warden@@UEAAXAEAVActor@@@Z
+    // vIndex: 135, symbol: ?onPush@Warden@@UEAAXAEAVActor@@@Z
     virtual void onPush(class Actor& source);
 
-    // vIndex: 148, symbol: ?_hurt@Warden@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 146, symbol: ?_hurt@Warden@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 162, symbol: ?checkSpawnRules@Warden@@UEAA_N_N@Z
+    // vIndex: 160, symbol: ?checkSpawnRules@Warden@@UEAA_N_N@Z
     virtual bool checkSpawnRules(bool);
 
-    // vIndex: 163, symbol: ?checkSpawnObstruction@Warden@@UEBA_NXZ
+    // vIndex: 161, symbol: ?checkSpawnObstruction@Warden@@UEBA_NXZ
     virtual bool checkSpawnObstruction() const;
 
-    // vIndex: 169, symbol: ?doHurtTarget@Warden@@MEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
+    // vIndex: 167, symbol: ?doHurtTarget@Warden@@MEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
     virtual bool doHurtTarget(class Actor* target, ::ActorDamageCause const& cause);
 
     // symbol: ??0Warden@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z

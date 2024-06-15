@@ -41,6 +41,9 @@ public:
     MCAPI class Scripting::WeakTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestSequence>
     thenIdle(int tickDelay);
 
+    // symbol: ?thenSucceed@ScriptGameTestSequence@ScriptModuleGameTest@@QEAAXXZ
+    MCAPI void thenSucceed();
+
     // symbol:
     // ?thenWait@ScriptGameTestSequence@ScriptModuleGameTest@@QEAA?AV?$WeakTypedObjectHandle@VScriptGameTestSequence@ScriptModuleGameTest@@@Scripting@@V?$Closure@$$A6AXXZ$$V@4@@Z
     MCAPI class Scripting::WeakTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestSequence>

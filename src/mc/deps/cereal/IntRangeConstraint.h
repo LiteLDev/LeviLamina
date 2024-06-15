@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/cereal/BasicNumericConstraint.h"
 #include "mc/deps/cereal/Constraint.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace cereal { class Constraint; }
-namespace cereal { class NumericConstraint; }
 namespace cereal { class SerializerContext; }
 namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
@@ -33,11 +33,11 @@ public:
     // vIndex: 2, symbol: ?description@IntRangeConstraint@Puv@@UEBA?AUConstraintDescription@internal@cereal@@XZ
     virtual struct cereal::internal::ConstraintDescription description() const;
 
-    // symbol: ?constraintMax@IntRangeConstraint@Puv@@QEAAAEAV12@VNumericConstraint@cereal@@@Z
-    MCAPI class Puv::IntRangeConstraint& constraintMax(class cereal::NumericConstraint);
+    // symbol: ?constraintMax@IntRangeConstraint@Puv@@QEAAAEAV12@V?$BasicNumericConstraint@N@cereal@@@Z
+    MCAPI class Puv::IntRangeConstraint& constraintMax(class cereal::BasicNumericConstraint<double>);
 
-    // symbol: ?constraintMin@IntRangeConstraint@Puv@@QEAAAEAV12@VNumericConstraint@cereal@@@Z
-    MCAPI class Puv::IntRangeConstraint& constraintMin(class cereal::NumericConstraint);
+    // symbol: ?constraintMin@IntRangeConstraint@Puv@@QEAAAEAV12@V?$BasicNumericConstraint@N@cereal@@@Z
+    MCAPI class Puv::IntRangeConstraint& constraintMin(class cereal::BasicNumericConstraint<double>);
 
     // NOLINTEND
 };

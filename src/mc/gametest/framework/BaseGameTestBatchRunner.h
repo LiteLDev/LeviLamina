@@ -7,12 +7,10 @@
 
 // auto generated forward declare list
 // clang-format off
-class TestSummaryDisplayer;
 namespace gametest { class BaseGameTestFunction; }
 namespace gametest { class BaseGameTestInstance; }
 namespace gametest { class GameTestBatch; }
 namespace gametest { class GameTestTicker; }
-namespace gametest { class MultipleTestTracker; }
 namespace gametest { struct TestParameters; }
 // clang-format on
 
@@ -47,15 +45,6 @@ public:
         class gametest::GameTestTicker&,
         struct gametest::TestParameters&& params
     );
-
-    // symbol:
-    // ?getTestInstances@BaseGameTestBatchRunner@gametest@@QEBAAEBV?$vector@V?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@V?$allocator@V?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@@2@@std@@XZ
-    MCAPI std::vector<std::shared_ptr<class gametest::BaseGameTestInstance>> const& getTestInstances() const;
-
-    // symbol:
-    // ?setBatchTestTracker@BaseGameTestBatchRunner@gametest@@QEAAXV?$unique_ptr@VMultipleTestTracker@gametest@@U?$default_delete@VMultipleTestTracker@gametest@@@std@@@std@@V?$weak_ptr@VTestSummaryDisplayer@@@4@@Z
-    MCAPI void
-        setBatchTestTracker(std::unique_ptr<class gametest::MultipleTestTracker>, std::weak_ptr<class TestSummaryDisplayer>);
 
     // symbol: ?start@BaseGameTestBatchRunner@gametest@@QEAAXXZ
     MCAPI void start();

@@ -19,9 +19,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptGameRules@ScriptModuleMinecraft@@QEAA@V?$not_null@PEAVLevel@@@gsl@@@Z
-    MCAPI explicit ScriptGameRules(gsl::not_null<class Level*>);
-
     // symbol: ?bind@ScriptGameRules@ScriptModuleMinecraft@@SAXAEAVModuleBindingBuilder@Scripting@@AEBVLevel@@@Z
     MCAPI static void bind(class Scripting::ModuleBindingBuilder&, class Level const&);
 

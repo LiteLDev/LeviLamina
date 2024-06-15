@@ -40,13 +40,13 @@ public:
     // vIndex: 11, symbol: ?getVisualShape@HoneyBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
 
-    // vIndex: 141, symbol: ?_addHardCodedBlockComponents@HoneyBlock@@MEAAXAEBVExperiments@@@Z
+    // vIndex: 142, symbol: ?_addHardCodedBlockComponents@HoneyBlock@@MEAAXAEBVExperiments@@@Z
     virtual void _addHardCodedBlockComponents(class Experiments const&);
 
-    // vIndex: 144, symbol: ?onStandOn@HoneyBlock@@UEBAXAEAVEntityContext@@AEBVBlockPos@@@Z
+    // vIndex: 145, symbol: ?onStandOn@HoneyBlock@@UEBAXAEAVEntityContext@@AEBVBlockPos@@@Z
     virtual void onStandOn(class EntityContext& entity, class BlockPos const& pos) const;
 
-    // vIndex: 156, symbol: ?getExtraRenderLayers@HoneyBlock@@UEBAHXZ
+    // vIndex: 157, symbol: ?getExtraRenderLayers@HoneyBlock@@UEBAHXZ
     virtual int getExtraRenderLayers() const;
 
     // symbol: ??0HoneyBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z

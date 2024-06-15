@@ -4,7 +4,6 @@
 #include "mc/server/commands/CommandOriginData.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/enums/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
@@ -43,16 +42,6 @@ public:
 
     // symbol: ??0CommandRequestPacket@@QEAA@AEAVCommandContext@@_N@Z
     MCAPI CommandRequestPacket(class CommandContext& context, bool internalSource);
-
-    // symbol:
-    // ?createCommandContext@CommandRequestPacket@@QEBA?AV?$unique_ptr@VCommandContext@@U?$default_delete@VCommandContext@@@std@@@std@@AEBVNetworkIdentifier@@AEBV?$NonOwnerPointer@VILevel@@@Bedrock@@@Z
-    MCAPI std::unique_ptr<class CommandContext> createCommandContext(
-        class NetworkIdentifier const&                      source,
-        class Bedrock::NonOwnerPointer<class ILevel> const& level
-    ) const;
-
-    // symbol: ?getInternalSource@CommandRequestPacket@@QEBA_NXZ
-    MCAPI bool getInternalSource() const;
 
     // NOLINTEND
 };

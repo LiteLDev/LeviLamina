@@ -36,8 +36,14 @@ public:
     // ?_read@ItemStackRequestActionBeaconPayment@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream) = 0;
 
+    // symbol: ??0ItemStackRequestAction@@QEAA@W4ItemStackRequestActionType@@@Z
+    MCAPI explicit ItemStackRequestAction(::ItemStackRequestActionType actionType);
+
     // symbol: ?getActionType@ItemStackRequestAction@@QEBA?AW4ItemStackRequestActionType@@XZ
     MCAPI ::ItemStackRequestActionType getActionType() const;
+
+    // symbol: ?write@ItemStackRequestAction@@QEBAXAEAVBinaryStream@@@Z
+    MCAPI void write(class BinaryStream& stream) const;
 
     // symbol:
     // ?getActionTypeName@ItemStackRequestAction@@SA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ItemStackRequestActionType@@@Z

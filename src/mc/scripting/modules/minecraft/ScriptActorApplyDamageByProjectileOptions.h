@@ -10,19 +10,12 @@ namespace ScriptModuleMinecraft {
 struct ScriptActorApplyDamageByProjectileOptions {
 public:
     // prevent constructor by default
+    ScriptActorApplyDamageByProjectileOptions& operator=(ScriptActorApplyDamageByProjectileOptions const&);
     ScriptActorApplyDamageByProjectileOptions(ScriptActorApplyDamageByProjectileOptions const&);
     ScriptActorApplyDamageByProjectileOptions();
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4ScriptActorApplyDamageByProjectileOptions@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions&&);
-
-    // symbol: ??4ScriptActorApplyDamageByProjectileOptions@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions const&);
-
     // symbol: ??8ScriptActorApplyDamageByProjectileOptions@ScriptModuleMinecraft@@QEBA_NAEBU01@@Z
     MCAPI bool operator==(struct ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions const& other) const;
 

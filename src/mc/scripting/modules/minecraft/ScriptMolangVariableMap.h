@@ -31,6 +31,10 @@ public:
     // symbol: ?getVariableMap@ScriptMolangVariableMap@ScriptModuleMinecraft@@QEAAAEAVMolangVariableMap@@XZ
     MCAPI class MolangVariableMap& getVariableMap();
 
+    // symbol: ??4ScriptMolangVariableMap@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
+    MCAPI class ScriptModuleMinecraft::ScriptMolangVariableMap&
+    operator=(class ScriptModuleMinecraft::ScriptMolangVariableMap&&);
+
     // symbol:
     // ?setColorRBGA_V010@ScriptMolangVariableMap@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVScriptColor@2@@Z
     MCAPI class Scripting::Result<void>

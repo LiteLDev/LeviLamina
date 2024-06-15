@@ -17,6 +17,7 @@ struct BlockMaterialInstancesDescription : public ::BlockComponentDescription {
 public:
     // prevent constructor by default
     BlockMaterialInstancesDescription& operator=(BlockMaterialInstancesDescription const&);
+    BlockMaterialInstancesDescription();
 
 public:
     // NOLINTBEGIN
@@ -44,9 +45,6 @@ public:
     // vIndex: 9, symbol:
     // ?initializeFromNetwork@BlockMaterialInstancesDescription@@UEAAXAEBVCompoundTag@@AEBUReflectionCtx@cereal@@@Z
     virtual void initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx const&);
-
-    // symbol: ??0BlockMaterialInstancesDescription@@QEAA@XZ
-    MCAPI BlockMaterialInstancesDescription();
 
     // symbol: ??0BlockMaterialInstancesDescription@@QEAA@$$QEAU0@@Z
     MCAPI BlockMaterialInstancesDescription(struct BlockMaterialInstancesDescription&&);

@@ -4,50 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/common/wrapper/StackRefResult.h"
-#include "mc/world/AutomaticID.h"
 
 class LevelChunkSaveManager {
-public:
-    // LevelChunkSaveManager inner types declare
-    // clang-format off
-    struct LevelChunkQueuedSavingElement;
-    class CompareLevelChunkQueuedSavingElement;
-    // clang-format on
-
-    // LevelChunkSaveManager inner types define
-    struct LevelChunkQueuedSavingElement {
-    public:
-        // prevent constructor by default
-        LevelChunkQueuedSavingElement& operator=(LevelChunkQueuedSavingElement const&);
-        LevelChunkQueuedSavingElement(LevelChunkQueuedSavingElement const&);
-        LevelChunkQueuedSavingElement();
-
-    public:
-        // NOLINTBEGIN
-        // symbol:
-        // ??0LevelChunkQueuedSavingElement@LevelChunkSaveManager@@QEAA@VChunkPos@@V?$AutomaticID@VDimension@@H@@H@Z
-        MCAPI LevelChunkQueuedSavingElement(class ChunkPos, DimensionType, int);
-
-        // NOLINTEND
-    };
-
-    class CompareLevelChunkQueuedSavingElement {
-    public:
-        // prevent constructor by default
-        CompareLevelChunkQueuedSavingElement& operator=(CompareLevelChunkQueuedSavingElement const&);
-        CompareLevelChunkQueuedSavingElement(CompareLevelChunkQueuedSavingElement const&);
-        CompareLevelChunkQueuedSavingElement();
-
-    public:
-        // NOLINTBEGIN
-        // symbol:
-        // ??RCompareLevelChunkQueuedSavingElement@LevelChunkSaveManager@@QEAA_NAEBULevelChunkQueuedSavingElement@1@0@Z
-        MCAPI bool
-        operator()(struct LevelChunkSaveManager::LevelChunkQueuedSavingElement const&, struct LevelChunkSaveManager::LevelChunkQueuedSavingElement const&);
-
-        // NOLINTEND
-    };
-
 public:
     // prevent constructor by default
     LevelChunkSaveManager& operator=(LevelChunkSaveManager const&);
@@ -64,11 +22,30 @@ public:
     // symbol: ?isChunkSaveInProgress@LevelChunkSaveManager@@QEAA_NXZ
     MCAPI bool isChunkSaveInProgress();
 
+    // symbol: ?registerForLevelChunkManagerEvents@LevelChunkSaveManager@@QEAAXAEAVILevelChunkEventManagerConnector@@@Z
+    MCAPI void registerForLevelChunkManagerEvents(class ILevelChunkEventManagerConnector&);
+
     // symbol: ?startLeaveGame@LevelChunkSaveManager@@QEAAXXZ
     MCAPI void startLeaveGame();
 
+    // symbol: ?trySaveChunks@LevelChunkSaveManager@@QEAAXXZ
+    MCAPI void trySaveChunks();
+
     // symbol: ??1LevelChunkSaveManager@@QEAA@XZ
     MCAPI ~LevelChunkSaveManager();
+
+    // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol: ?_findRandomChunkToSave@LevelChunkSaveManager@@AEAAXXZ
+    MCAPI void _findRandomChunkToSave();
+
+    // symbol: ?_onChunkLoaded@LevelChunkSaveManager@@AEAAXAEAVChunkSource@@AEAVLevelChunk@@H@Z
+    MCAPI void _onChunkLoaded(class ChunkSource&, class LevelChunk&, int);
+
+    // symbol: ?_shouldDoSave@LevelChunkSaveManager@@AEBA_NXZ
+    MCAPI bool _shouldDoSave() const;
 
     // NOLINTEND
 };

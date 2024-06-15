@@ -24,8 +24,5 @@ public:
     // vIndex: 4, symbol: ?postProcess@DesertPyramidPiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
     virtual bool postProcess(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 
-    // symbol: ??0DesertPyramidPiece@@QEAA@FHH@Z
-    MCAPI DesertPyramidPiece(short seaLevel, int west, int north);
-
     // NOLINTEND
 };

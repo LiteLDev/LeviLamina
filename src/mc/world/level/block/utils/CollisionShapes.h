@@ -28,8 +28,5 @@ public:
     // symbol: ?reserve@CollisionShapes@@QEAAX_K@Z
     MCAPI void reserve(uint64);
 
-    // symbol: ?size@CollisionShapes@@QEBA_KXZ
-    MCAPI uint64 size() const;
-
     // NOLINTEND
 };

@@ -114,6 +114,11 @@ public:
     MCAPI static void
     parse(class Json::Value const&, std::vector<::Puv::Legacy::LevelSoundEvent>&, char const*, char const*);
 
+    // symbol:
+    // ?parse@Parser@@SAXAEBVValue@Json@@AEAV?$vector@UActorDefinitionIdentifier@@V?$allocator@UActorDefinitionIdentifier@@@std@@@std@@PEBD2@Z
+    MCAPI static void
+    parse(class Json::Value const&, std::vector<struct ActorDefinitionIdentifier>&, char const*, char const*);
+
     // symbol: ?parse@Parser@@SAXAEBVValue@Json@@AEAW4ActorType@@PEBD2@Z
     MCAPI static void parse(class Json::Value const&, ::ActorType&, char const*, char const*);
 

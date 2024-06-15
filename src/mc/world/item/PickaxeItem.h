@@ -36,7 +36,7 @@ public:
     // vIndex: 50, symbol: ?getEnchantSlot@PickaxeItem@@UEBAHXZ
     virtual int getEnchantSlot() const;
 
-    // vIndex: 76, symbol: ?getDestroySpeed@PickaxeItem@@UEBAMAEBVItemStackBase@@AEBVBlock@@@Z
+    // vIndex: 77, symbol: ?getDestroySpeed@PickaxeItem@@UEBAMAEBVItemStackBase@@AEBVBlock@@@Z
     virtual float getDestroySpeed(class ItemStackBase const& item, class Block const& block) const;
 
     // symbol: ??0PickaxeItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVTier@Item@@@Z

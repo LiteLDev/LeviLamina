@@ -37,8 +37,5 @@ public:
     // ?appendDebugInfo@FollowParentGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0FollowParentGoal@@QEAA@AEAVMob@@M@Z
-    MCAPI FollowParentGoal(class Mob& mob, float speed);
-
     // NOLINTEND
 };

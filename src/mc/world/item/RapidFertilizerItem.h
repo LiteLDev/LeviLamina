@@ -29,7 +29,7 @@ public:
     // vIndex: 0, symbol: __gen_??1RapidFertilizerItem@@UEAA@XZ
     virtual ~RapidFertilizerItem() = default;
 
-    // vIndex: 91, symbol: ?fixupCommon@RapidFertilizerItem@@UEBAXAEAVItemStackBase@@@Z
+    // vIndex: 92, symbol: ?fixupCommon@RapidFertilizerItem@@UEBAXAEAVItemStackBase@@@Z
     virtual void fixupCommon(class ItemStackBase& stack) const;
 
     // NOLINTEND

@@ -41,15 +41,5 @@ public:
     // vIndex: 17, symbol: ?_getOwnedPOI@HideGoal@@MEBA?AV?$weak_ptr@VPOIInstance@@@std@@W4POIType@@@Z
     virtual std::weak_ptr<class POIInstance> _getOwnedPOI(::POIType type) const;
 
-    // symbol: ??0HideGoal@@QEAA@AEAVMob@@MMMW4POIType@@@Z
-    MCAPI HideGoal(class Mob& mob, float speedModifier, float cooldownTimeout, float duration, ::POIType poiType);
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    // symbol: ?_sendSoundTheAlarmAchievement@HideGoal@@AEBAXXZ
-    MCAPI void _sendSoundTheAlarmAchievement() const;
-
     // NOLINTEND
 };

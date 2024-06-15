@@ -18,14 +18,5 @@ public:
 
 public:
     std::array<LightPair, 2048> mLightValues; // this+0x0
-
-public:
-    // NOLINTBEGIN
-    // symbol: ??0SubChunkBrightnessStorage@@QEAA@XZ
-    MCAPI SubChunkBrightnessStorage();
-
-    // symbol: ?reset@SubChunkBrightnessStorage@@QEAAX_N@Z
-    MCAPI void reset(bool);
-
-    // NOLINTEND
+    SubChunkBrightnessStorage();
 };
