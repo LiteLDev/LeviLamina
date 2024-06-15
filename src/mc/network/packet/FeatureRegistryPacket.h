@@ -6,6 +6,7 @@
 #include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/enums/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/world/level/levelgen/feature/registry/FeatureRegistry.h"
 
 class FeatureRegistryPacket : public ::Packet {
 public:

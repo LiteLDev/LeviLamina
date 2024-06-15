@@ -57,9 +57,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0MapDecoration@@QEAA@XZ
-    MCAPI MapDecoration();
-
     // symbol:
     // ??0MapDecoration@@QEAA@W4Type@0@CCCAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVColor@mce@@@Z
     MCAPI MapDecoration(

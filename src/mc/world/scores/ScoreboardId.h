@@ -9,11 +9,7 @@ public:
     int64               mRawId;       // this+0x0
     IdentityDefinition* mIdentityDef; // this+0x8
 
-    ScoreboardId& operator++() {
-        ++mRawId;
-        return *this;
-    }
-
+public:
     // NOLINTBEGIN
     // symbol: ??0ScoreboardId@@QEAA@XZ
     MCAPI ScoreboardId();

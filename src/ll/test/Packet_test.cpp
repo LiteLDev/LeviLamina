@@ -351,7 +351,6 @@ PACKET_SIZE_ASSERT(MovePlayerPacket, 0x70);
 PACKET_SIZE_ASSERT(PassengerJumpPacket, 0x38);
 PACKET_SIZE_ASSERT(UpdateBlockPacket, 0x48);
 PACKET_SIZE_ASSERT(AddPaintingPacket, 0x70);
-PACKET_SIZE_ASSERT(TickSyncPacket, 0x40);
 PACKET_SIZE_ASSERT(LevelSoundEventPacketV1, 0x50);
 PACKET_SIZE_ASSERT(LevelEventPacket, 0x48);
 PACKET_SIZE_ASSERT(BlockEventPacket, 0x48);
