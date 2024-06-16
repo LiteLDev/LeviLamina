@@ -19,10 +19,10 @@ public:
     std::string              mFilteredMessage; // this+0x78
     bool                     mUnknown;         // this+0x98
     std::vector<std::string> mParams;          // this+0xA0
-    bool                     mLocalize;        // this+0x90
-    std::string              mXuid;            // this+0x98
-    std::string              mPlatformId;      // this+0xB8
-    int                      mArraySize;       // this+0xD8
+    bool                     mLocalize;        // this+0x88
+    std::string              mXuid;            // this+0xC0
+    std::string              mPlatformId;      // this+0xE0
+    int                      mArraySize;       // this+0x100
 
     [[nodiscard]] inline static TextPacket createRawMessage(std::string_view msg) {
         auto res  = TextPacket{};
