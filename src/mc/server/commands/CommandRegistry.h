@@ -501,35 +501,35 @@ public:
 
     std::function<void(Packet const&)>                          mNetworkUpdateCallback;        // this+0x0
     std::function<int(bool&, std::string const&, Actor const&)> mGetScoreForObjective;         // this+0x40
-    std::vector<ParseRule>                                      mRules;                        // this+0x80
-    std::map<uint, ParseTable>                                  mParseTables;                  // this+0x98
-    std::vector<OptionalParameterChain>                         mOptionals;                    // this+0xA8
-    std::vector<std::string>                                    mEnumValues;                   // this+0xC0
-    std::vector<Enum>                                           mEnums;                        // this+0xD8
-    std::vector<int>                                            mUnknown1;                     // this+0xF0
-    std::vector<int>                                            mUnknown2;                     // this+0x108
-    std::vector<Factorization>                                  mFactorizations;               // this+0x120
-    std::vector<std::string>                                    mPostfixes;                    // this+0x138
-    std::map<std::string, uint>                                 mEnumLookup;                   // this+0x150
-    std::map<std::string, uint64>                               mEnumValueLookup;              // this+0x160
-    std::map<std::string, int>                                  mUnknown3;                     // this+0x170
-    std::map<std::string, int>                                  mChainedSubcommandLookUp;      // this+0x180
-    std::vector<Symbol>                                         mCommandSymbols;               // this+0x190
-    std::map<std::string, Signature>                            mSignatures;                   // this+0x1A8
-    std::map<Bedrock::typeid_t<CommandRegistry>, int>           mTypeLookup;                   // this+0x1B8
-    std::map<std::string, std::string>                          mAliases;                      // this+0x1C8
-    std::vector<SemanticConstraint>                             mSemanticConstraints;          // this+0x1D8
-    std::map<SemanticConstraint, uchar>                         mSemanticConstraintLookup;     // this+0x1F0
-    std::vector<ConstrainedValue>                               mConstrainedValues;            // this+0x200
-    std::map<std::pair<uint64, uint>, uint>                     mConstrainedValueLookup;       // this+0x218
-    std::vector<SoftEnum>                                       mSoftEnums;                    // this+0x228
-    std::map<std::string, uint>                                 mSoftEnumLookup;               // this+0x240
-    std::vector<RegistryState>                                  mStateStack;                   // this+0x250
-    ParamSymbols                                                mArgs;                         // this+0x268
-    std::unordered_map<uchar, uchar>                            mSkipOnEpsAutocompleteSymbols; // this+0x2C8
-    std::unordered_map<uchar, uchar>                            mAllowEmptySymbols;            // this+0x308
-    std::function<void(CommandFlag&, std::string const&)>       mCommandOverrideFunctor;       // this+0x348
-    bool                                                        mEduMode;                      // this+0x388
+    bool                                                        mEduMode;                      // this+0x80
+    std::vector<ParseRule>                                      mRules;                        // this+0x88
+    std::map<uint, ParseTable>                                  mParseTables;                  // this+0xA0
+    std::vector<OptionalParameterChain>                         mOptionals;                    // this+0xB0
+    std::vector<std::string>                                    mEnumValues;                   // this+0xC8
+    std::vector<Enum>                                           mEnums;                        // this+0xE0
+    std::vector<int>                                            mUnknown1;                     // this+0xF8
+    std::vector<int>                                            mUnknown2;                     // this+0x110
+    std::vector<Factorization>                                  mFactorizations;               // this+0x128
+    std::vector<std::string>                                    mPostfixes;                    // this+0x140
+    std::map<std::string, uint>                                 mEnumLookup;                   // this+0x158
+    std::map<std::string, uint64>                               mEnumValueLookup;              // this+0x168
+    std::map<std::string, int>                                  mUnknown3;                     // this+0x178
+    std::map<std::string, int>                                  mChainedSubcommandLookUp;      // this+0x188
+    std::vector<Symbol>                                         mCommandSymbols;               // this+0x198
+    std::map<std::string, Signature>                            mSignatures;                   // this+0x1B0
+    std::map<Bedrock::typeid_t<CommandRegistry>, int>           mTypeLookup;                   // this+0x1C0
+    std::map<std::string, std::string>                          mAliases;                      // this+0x1D0
+    std::vector<SemanticConstraint>                             mSemanticConstraints;          // this+0x1E0
+    std::map<SemanticConstraint, uchar>                         mSemanticConstraintLookup;     // this+0x1F8
+    std::vector<ConstrainedValue>                               mConstrainedValues;            // this+0x208
+    std::map<std::pair<uint64, uint>, uint>                     mConstrainedValueLookup;       // this+0x220
+    std::vector<SoftEnum>                                       mSoftEnums;                    // this+0x230
+    std::map<std::string, uint>                                 mSoftEnumLookup;               // this+0x248
+    std::vector<RegistryState>                                  mStateStack;                   // this+0x258
+    ParamSymbols                                                mArgs;                         // this+0x270
+    std::unordered_map<uchar, uchar>                            mSkipOnEpsAutocompleteSymbols; // this+0x2D0
+    std::unordered_map<uchar, uchar>                            mAllowEmptySymbols;            // this+0x310
+    std::function<void(CommandFlag&, std::string const&)>       mCommandOverrideFunctor;       // this+0x350
 
     template <typename T>
     bool parse(

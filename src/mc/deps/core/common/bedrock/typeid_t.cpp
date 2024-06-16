@@ -14,3 +14,10 @@ Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, CommandInte
         "VCommandRegistry@@@1@XZ@4V21@A"
     );
 }
+template <>
+Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, struct ActorDefinitionIdentifier const*>() {
+    return *(Bedrock::typeid_t<CommandRegistry>*)LL_RESOLVE_SYMBOL(
+        "?id@?1???$type_id@VCommandRegistry@@PEBUActorDefinitionIdentifier@@@Bedrock@@YA?AV?$typeid_t@VCommandRegistry@"
+        "@@1@XZ@4V21@A"
+    );
+}
