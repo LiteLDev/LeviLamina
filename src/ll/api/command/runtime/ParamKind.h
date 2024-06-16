@@ -16,6 +16,7 @@
 #include "mc/server/commands/RelativeFloat.h"
 #include "mc/server/commands/WildcardCommandSelector.h"
 #include "mc/world/AutomaticID.h"
+#include "mc/world/actor/ActorDefinitionIdentifier.h"
 #include "mc/world/actor/player/Player.h"
 #include "mc/world/effect/MobEffect.h"
 #include "mc/world/level/Command.h"
@@ -45,7 +46,7 @@ enum Kind : ParamKindType {
     BlockName,
     BlockState,
     Effect,
-    // ActorType,
+    ActorType,
     Command,
     RelativeFloat,
     IntegerRange,
@@ -75,7 +76,7 @@ using ParamKindList = meta::TypeList<
     CommandBlockName,
     std::vector<BlockStateCommandParam>,
     MobEffect const*,
-    // ActorDefinitionIdentifier const*,
+    ActorDefinitionIdentifier const*,
     std::unique_ptr<::Command>,
     RelativeFloat,
     CommandIntegerRange,
