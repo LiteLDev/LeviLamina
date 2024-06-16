@@ -158,9 +158,9 @@ LL_TYPE_INSTANCE_HOOK(
     CommandRegistry,
     "??0CommandRegistry@@QEAA@_N@Z",
     CommandRegistry*,
-    bool idk // I don't know what is it
+    bool eduMode
 ) {
-    return commandRegistry = origin(idk);
+    return commandRegistry = origin(eduMode);
 }
 LL_INSTANCE_HOOK(CommandRegistryDestructor, HookPriority::High, "??1CommandRegistry@@QEAA@XZ", void) {
     commandRegistry = nullptr;

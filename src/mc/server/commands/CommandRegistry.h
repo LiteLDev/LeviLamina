@@ -529,6 +529,7 @@ public:
     std::unordered_map<uchar, uchar>                            mSkipOnEpsAutocompleteSymbols; // this+0x2C8
     std::unordered_map<uchar, uchar>                            mAllowEmptySymbols;            // this+0x308
     std::function<void(CommandFlag&, std::string const&)>       mCommandOverrideFunctor;       // this+0x348
+    bool                                                        mEduMode;                      // this+0x388
 
     template <typename T>
     bool parse(
