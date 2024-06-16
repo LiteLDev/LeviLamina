@@ -161,8 +161,20 @@ public:
             } PlayerWaxedOrUnwaxedCopper;
 
             struct {
-                int score;
+                std::string action;
+            } CodeBuilderRuntimeAction;
+
+            struct {
+                std::string name;
+                int         score;
             } CodeBuilderScoreboard;
+
+            struct {
+                short mItemId;
+                int   mItemAux;
+                int   mUseMethod;
+                int   mCount;
+            } ItemUsedEvent;
         };                                     // this+0x8
         std::string mEntityName;               // this+0x28
         std::string mCommandName;              // this+0x48

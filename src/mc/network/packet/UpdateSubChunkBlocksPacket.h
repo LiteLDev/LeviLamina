@@ -14,11 +14,11 @@ public:
     // UpdateSubChunkBlocksPacket inner types declare
     // clang-format off
     struct BlocksChangedInfo;
-    struct NetworkBlockInfo;
+    struct UpdateSubChunkNetworkBlockInfo;
     // clang-format on
 
     // UpdateSubChunkBlocksPacket inner types define
-    struct NetworkBlockInfo {
+    struct UpdateSubChunkNetworkBlockInfo {
 
     public:
         NetworkBlockPosition  mPos;         // this+0x0
@@ -29,14 +29,14 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ??1NetworkBlockInfo@UpdateSubChunkBlocksPacket@@QEAA@XZ
-        MCAPI ~NetworkBlockInfo();
+        MCAPI ~UpdateSubChunkNetworkBlockInfo();
         // NOLINTEND
     };
 
     struct BlocksChangedInfo {
     public:
-        std::vector<NetworkBlockInfo> mStandards; // this+0x0
-        std::vector<NetworkBlockInfo> mExtras;    // this+0x18
+        std::vector<UpdateSubChunkNetworkBlockInfo> mStandards; // this+0x0
+        std::vector<UpdateSubChunkNetworkBlockInfo> mExtras;    // this+0x18
 
     public:
         // NOLINTBEGIN

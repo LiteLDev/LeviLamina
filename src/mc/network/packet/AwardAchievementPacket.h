@@ -9,6 +9,8 @@
 
 class AwardAchievementPacket : public ::Packet {
 public:
+    int mAchievementID;
+
     // prevent constructor by default
     AwardAchievementPacket& operator=(AwardAchievementPacket const&);
     AwardAchievementPacket(AwardAchievementPacket const&);
