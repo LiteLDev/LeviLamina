@@ -152,8 +152,15 @@ LL_INSTANCE_HOOK(ResourcePackRepositoryDestructor, HookPriority::High, "??1Resou
 // CommandRegistry
 static std::atomic<CommandRegistry*> commandRegistry;
 
-LL_TYPE_INSTANCE_HOOK(CommandRegistryConstructor, HookPriority::High, CommandRegistry, "??0CommandRegistry@@QEAA@XZ", CommandRegistry*) {
-    return commandRegistry = origin();
+LL_TYPE_INSTANCE_HOOK(
+    CommandRegistryConstructor,
+    HookPriority::High,
+    CommandRegistry,
+    "??0CommandRegistry@@QEAA@_N@Z",
+    CommandRegistry*,
+    bool idk // I don't know what is it
+) {
+    return commandRegistry = origin(idk);
 }
 LL_INSTANCE_HOOK(CommandRegistryDestructor, HookPriority::High, "??1CommandRegistry@@QEAA@XZ", void) {
     commandRegistry = nullptr;
