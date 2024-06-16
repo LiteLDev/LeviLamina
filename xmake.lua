@@ -6,7 +6,7 @@ add_repositories("liteldev-repo https://github.com/LiteLDev/xmake-repo.git")
 
 -- Dependencies from xmake-repo.
 add_requires("ctre")
-add_requires("entt")
+add_requires("entt master")
 add_requires("expected-lite")
 add_requires("fmt")
 add_requires("gsl")
