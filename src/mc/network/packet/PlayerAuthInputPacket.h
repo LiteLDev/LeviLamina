@@ -23,7 +23,7 @@ public:
     enum class InputData : int {
         Ascend                     = 0x0,
         Descend                    = 0x1,
-        NorthJump                  = 0x2,
+        NorthJump_Deprecated       = 0x2,
         JumpDown                   = 0x3,
         SprintDown                 = 0x4,
         ChangeHeight               = 0x5,
@@ -69,6 +69,8 @@ public:
         InClientPredictedInVehicle = 0x2D,
         PaddlingLeft               = 0x2E,
         PaddlingRight              = 0x2F,
+        BlockBreakingDelayEnabled  = 0x30,
+        Input_Num                  = 0x31,
     };
 
 public:

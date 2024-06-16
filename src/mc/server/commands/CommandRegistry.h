@@ -152,6 +152,10 @@ public:
         BlockStateArrayCont       = 0x100055,
         Command                   = 0x100056,
         SlashCommand              = 0x100057,
+        CodeBuilderArg            = 0x100058,
+        CodeBuilderArgs           = 0x100059,
+        CodeBuilderSelectParam    = 0x10005a,
+        CodeBuilderSelector       = 0x10005b,
         Count,
     };
 

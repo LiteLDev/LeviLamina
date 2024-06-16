@@ -81,8 +81,11 @@ public:
         CrossbowQuickCharge = 0x23,
         SoulSpeed           = 0x24,
         SwiftSneak          = 0x25,
-        Count               = 0x26,
-        Invalid             = 0x27,
+        WindBurst           = 0x26,
+        Density             = 0x27,
+        Breach              = 0x28,
+        NumEnchantments     = 0x29,
+        InvalidEnchantment  = 0x2A,
     };
 
     enum class Activation : int {

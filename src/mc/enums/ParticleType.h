@@ -96,5 +96,6 @@ enum class ParticleType : int {
     VaultConnection       = 0x5A,
     WindExplosion         = 0x5B,
     WolfArmorCrack        = 0x5C,
-    Count                 = 0x5D,
+    OminousItemSpawner    = 0x5D,
+    Count                 = 0x5E,
 };

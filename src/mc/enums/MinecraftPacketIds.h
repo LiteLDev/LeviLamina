@@ -26,7 +26,7 @@ enum class MinecraftPacketIds : int {
     PassengerJump                     = 0x14,
     UpdateBlock                       = 0x15,
     AddPainting                       = 0x16,
-    TickSync                          = 0x17,
+    TickSync_Deprecated               = 0x17,
     LevelSoundEventV1                 = 0x18,
     LevelEvent                        = 0x19,
     BlockEvent                        = 0x1A,
@@ -212,5 +212,6 @@ enum class MinecraftPacketIds : int {
     PlayerToggleCrafterSlotRequest    = 0x132,
     SetPlayerInventoryOptions         = 0x133,
     SetHud                            = 0x134,
-    EndId                             = 0x135,
+    AwardAchievementPacket            = 0x135,
+    EndId                             = 0x136,
 };
