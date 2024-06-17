@@ -1,6 +1,21 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/common/BrightnessPair.h"
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include "mc/enums/StorageVersion.h"
+#include "mc/network/packet/UpdateSubChunkBlocksPacket.h"
+#include "mc/world/level/ChunkPos.h"
+#include "mc/world/level/LevelListener.h"
+#include "mc/world/level/SubChunkPos.h"
+#include "mc/world/level/chunk/ChunkKey.h"
+#include "mc/world/level/chunk/LevelChunkGarbageCollector.h"
+#include "mc/world/level/dimension/ActorChunkTransferEntry.h"
+#include "mc/world/level/dimension/ActorUnloadedChunkTransferEntry.h"
+#include "mc/world/level/dimension/DimensionHeightRange.h"
+#include "mc/world/level/dimension/IDimension.h"
+#include "mc/world/level/levelgen/v1/FeatureTerrainAdjustments.h"
+#include "mc/world/level/saveddata/SavedData.h"
 
 // auto generated inclusion list
 #include "mc/common/wrapper/OwnerPtr.h"
@@ -15,7 +30,36 @@ namespace br::worldgen { class StructureSetRegistry; }
 namespace mce { class Color; }
 // clang-format on
 
-class Dimension {
+class ServerPlayer;
+class BaseLightTextureImageBuilder;
+class DimensionBrightnessRamp;
+class LevelChunkMetaData;
+class TaskGroup;
+class PostprocessingManager;
+class SubChunkInterlocker;
+class WireframeQueue;
+class RuntimeLightingManager;
+class LevelChunkBuilderData;
+class BlockEventDispatcher;
+class TickingAreaList;
+class WorldGenerator;
+class Weather;
+class Seasons;
+class GameEventDispatcher;
+class ChunkBuildOrderPolicyBase;
+class VillageManager;
+class CircuitSystem;
+struct NetworkIdentifierWithSubId;
+class ChunkLoadActionList;
+class DelayActionList;
+class ILevel;
+class ChunkSource;
+
+class Dimension : public IDimension,
+                  public LevelListener,
+                  public SavedData,
+                  public Bedrock::EnableNonOwnerReferences,
+                  public std::enable_shared_from_this<Dimension> {
 public:
     // Dimension inner types declare
     // clang-format off
@@ -25,10 +69,13 @@ public:
     // Dimension inner types define
     struct PlayerReplicationStructures {
     public:
-        // prevent constructor by default
-        PlayerReplicationStructures& operator=(PlayerReplicationStructures const&);
-        PlayerReplicationStructures(PlayerReplicationStructures const&);
-        PlayerReplicationStructures();
+        struct PlayerAtChunk {
+            ChunkPos chunkPos;      // this+0x0
+            ushort   playerIndex{}; // this+0x8
+        };
+        std::unordered_map<ChunkPos, std::vector<ushort>> mPlayersAtChunks;    // this+0x0
+        std::vector<PlayerAtChunk>                        mPlayerInterestMap;  // this+0x40
+        std::vector<gsl::not_null<ServerPlayer*>>         unwrappedPlayerList; // this+0x58
 
     public:
         // NOLINTBEGIN
@@ -40,6 +87,72 @@ public:
         // NOLINTEND
     };
 
+    std::vector<ActorChunkTransferEntry> mActorChunkTransferQueue; // this+0x68
+    std::unordered_map<ChunkKey, std::vector<ActorUnloadedChunkTransferEntry>>
+        mActorUnloadedChunkTransferQueue; // this+0x80
+
+    ILevel&                                          mLevel;                      // this+0xC0
+    DimensionHeightRange                             mHeightRange;                // this+0xC4
+    short                                            mSeaLevel;                   // this+0xCC
+    uchar                                            mBlockSource[8];             // this+0xCE
+    float                                            mMobsPerChunkSurface[8];     // this+0xE0
+    float                                            mMobsPerChunkUnderground[8]; // this+0xF8
+    BrightnessPair                                   mDefaultBrightness;          // this+0x118
+    std::unique_ptr<BaseLightTextureImageBuilder>    mLightTextureImageBuilder;   // this+0x120
+    std::unique_ptr<DimensionBrightnessRamp>         mDimensionBrightnessRamp;    // this+0x128
+    std::shared_ptr<LevelChunkMetaData>              mTargetMetaData;             // this+0x130
+    std::unique_ptr<RuntimeLightingManager>          mRuntimeLightingManager;     // this+0x140
+    std::string                                      mName;                       // this+0x148
+    DimensionType                                    mId;                         // this+0x168
+    bool                                             mUltraWarm;                  // this+0x16C
+    bool                                             mHasCeiling;                 // this+0x16D
+    bool                                             mHasWeather;                 // this+0x16E
+    bool                                             mHasSkylight;                // this+0x16F
+    Brightness                                       mSkyDarken;                  // this+0x170
+    std::unique_ptr<BlockEventDispatcher>            mDispatcher;                 // this+0x178
+    std::unique_ptr<TaskGroup>                       mTaskGroup;                  // this+0x180
+    std::unique_ptr<TaskGroup>                       mChunkGenTaskGroup;          // this+0x188
+    std::unique_ptr<PostprocessingManager>           mPostProcessingManager;      // this+0x190
+    std::unique_ptr<SubChunkInterlocker>             mSubChunkInterlocker;        // this+0x198
+    std::unique_ptr<ChunkSource>                     mChunkSource;                // this+0x1A0
+    WorldGenerator*                                  mWorldGenerator;             // this+0x1A8
+    std::unique_ptr<Weather>                         mWeather;                    // this+0x1B0
+    std::unique_ptr<Seasons>                         mSeasons;                    // this+0x1B8
+    std::unique_ptr<GameEventDispatcher>             mGameEventDispatcher;        // this+0x1C0
+    std::unique_ptr<CircuitSystem>                   mCircuitSystem;              // this+0x1C8
+    int                                              CIRCUIT_TICK_RATE;           // this+0x1D0
+    int                                              mCircuitSystemTickRate;      // this+0x1D4
+    std::unordered_map<ActorUniqueID, WeakEntityRef> mActorIDEntityIDMap;         // this+0x1D8
+    std::vector<WeakEntityRef>                       mDisplayEntities;            // this+0x218
+    std::shared_ptr<WireframeQueue>                  mWireframeQueue;             // this+0x230
+    FeatureTerrainAdjustments                        mFeatureTerrainAdjustments;  // this+0x240
+
+    std::unordered_map<ChunkPos, std::vector<std::unique_ptr<CompoundTag>>> mLimboEntities; // this+0x288
+
+    std::set<ActorUniqueID>                    mEntitiesToMoveChunks;       // this+0x2C8
+    std::shared_ptr<TickingAreaList>           mTickingAreaList;            // this+0x2D8
+    LevelChunkGarbageCollector                 mLevelChunkGarbageCollector; // this+0x2E8
+    std::set<ActorUniqueID>                    mWitherIDs;                  // this+0x560
+    std::unique_ptr<LevelChunkBuilderData>     mLevelChunkBuilderData;      // this+0x570
+    std::chrono::steady_clock::time_point      mLastPruneTime;              // this+0x578
+    std::chrono::steady_clock::time_point      mNextPruneTime;              // this+0x580
+    std::unique_ptr<ChunkBuildOrderPolicyBase> mChunkBuildOrderPolicy;      // this+0x588
+    std::unique_ptr<VillageManager>            mVillageManager;             // this+0x590
+    std::vector<NetworkIdentifierWithSubId>    mTemporaryPlayerIds;         // this+0x598
+    std::unique_ptr<ChunkLoadActionList>       mChunkLoadActionList;        // this+0x5B0
+    std::unique_ptr<DelayActionList>           mDelayActionList;            // this+0x5B8
+
+    std::unordered_map<SubChunkPos, UpdateSubChunkBlocksPacket::BlocksChangedInfo>
+        mBlocksChangedBySubChunkMap; // this+0x5C8
+
+    // Scripting::StrongObjectHandle
+    uchar mClientScriptDimension[0x48]; // this+0x600
+
+    std::unique_ptr<PlayerReplicationStructures> mReplicationStructures; // this+0x648
+    std::vector<WeakEntityRef>                   mPlayersToReplicate;    // this+0x650
+    bool                                         mRunChunkGenWatchDog;   // this+0x668
+
+
 public:
     // prevent constructor by default
     Dimension& operator=(Dimension const&);
@@ -48,94 +161,136 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
+    // symbol: ??1Dimension@@UEAA@XZ
+    virtual ~Dimension();
+
+    // vIndex: 1, symbol: ?isNaturalDimension@Dimension@@UEBA_NXZ
+    virtual bool isNaturalDimension() const;
+
+    // vIndex: 2, symbol: ?getDimensionId@Dimension@@UEBA?AV?$AutomaticID@VDimension@@H@@XZ
+    virtual DimensionType getDimensionId() const;
+
+    // vIndex: 3,  symbol: ?sendPacketForPosition@Dimension@@UEAAXAEBVBlockPos@@AEBVPacket@@PEBVPlayer@@@Z
+    virtual void
+    sendPacketForPosition(class BlockPos const& position, class Packet const& packet, class Player const* except);
+
+    // vIndex: 4, symbol: ?flushLevelChunkGarbageCollector@Dimension@@UEAAXXZ
+    virtual void flushLevelChunkGarbageCollector();
+
+    // vIndex: 5, symbol: ?initializeWithLevelStorageManager@Dimension@@UEAAXAEAVLevelStorageManager@@@Z
+    virtual void initializeWithLevelStorageManager(class LevelStorageManager&);
+
+    // vIndex: 6, symbol: ?getBiomeRegistry@Dimension@@UEAAAEAVBiomeRegistry@@XZ
+    virtual class BiomeRegistry& getBiomeRegistry();
+
+    // vIndex: 7, symbol: ?getBiomeRegistry@Dimension@@UEBAAEBVBiomeRegistry@@XZ
+    virtual class BiomeRegistry const& getBiomeRegistry() const;
+
+    // vIndex: 9, symbol: ?forEachPlayer@Dimension@@UEBAXV?$function@$$A6A_NAEAVPlayer@@@Z@std@@@Z
+    virtual void forEachPlayer(std::function<bool(class Player&)> callback) const;
+
+    // vIndex: 10, symbol: ?fetchEntity@Dimension@@UEBAPEAVActor@@UActorUniqueID@@_N@Z
+    virtual class Actor* fetchEntity(struct ActorUniqueID actorID, bool getRemoved) const;
+
+    // vIndex: 11, symbol: ?init@Dimension@@UEAAXAEBVStructureSetRegistry@worldgen@br@@@Z
+    virtual void init(class br::worldgen::StructureSetRegistry const&);
+
+    // vIndex: 12, symbol: ?tick@Dimension@@UEAAXXZ
+    virtual void tick();
+
+    // vIndex: 13, symbol: ?tickRedstone@Dimension@@UEAAXXZ
+    virtual void tickRedstone();
+
+    // vIndex: 14
+    virtual std::unique_ptr<class WorldGenerator> createGenerator(class br::worldgen::StructureSetRegistry const&) = 0;
+
+    // vIndex: 15
+    virtual void
+    upgradeLevelChunk(class ChunkSource& source, class LevelChunk& lc, class LevelChunk& generatedChunk) = 0;
+
+    // vIndex: 16
+    virtual void fixWallChunk(class ChunkSource&, class LevelChunk&) = 0;
+
+    // vIndex: 17
+    virtual bool levelChunkNeedsUpgrade(class LevelChunk const&) const = 0;
+
+    // vIndex: 18, symbol: ?isValidSpawn@Dimension@@UEBA_NHH@Z
+    virtual bool isValidSpawn(int x, int z) const;
+
+    // vIndex: 19, symbol: ?getBrightnessDependentFogColor@Dimension@@UEBA?AVColor@mce@@AEBV23@M@Z
+    virtual class mce::Color getBrightnessDependentFogColor(class mce::Color const& baseColor, float brightness) const;
+
+    // vIndex: 20, symbol: ?hasPrecipitationFog@Dimension@@UEBA_NXZ
+    virtual bool hasPrecipitationFog() const;
+
+    // vIndex: 21, symbol: ?getCloudHeight@Dimension@@UEBAFXZ
+    virtual short getCloudHeight() const;
+
+    // vIndex: 22, symbol: ?getDefaultBiome@Dimension@@UEBA?AVHashedString@@XZ
+    virtual class HashedString getDefaultBiome() const;
+
+    // vIndex: 23, symbol: ?hasGround@Dimension@@UEBA_NXZ
+    virtual bool hasGround() const;
+
+    // vIndex: 24, symbol: ?showSky@Dimension@@UEBA_NXZ
+    virtual bool showSky() const;
+
+    // vIndex: 25, symbol: ?getSpawnPos@Dimension@@UEBA?AVBlockPos@@XZ
+    virtual class BlockPos getSpawnPos() const;
+
+    // vIndex: 26, symbol: ?getSpawnYPosition@Dimension@@UEBAHXZ
+    virtual int getSpawnYPosition() const;
+
+    // vIndex: 27, symbol: ?mayRespawnViaBed@Dimension@@UEBA_NXZ
+    virtual bool mayRespawnViaBed(void) const;
+
+    // vIndex: 28, symbol: ?isDay@Dimension@@UEBA_NXZ
+    virtual bool isDay() const;
+
+    // vIndex: 29, symbol: ?getTimeOfDay@Dimension@@MEBAMHM@Z
+    virtual float getTimeOfDay(int time, float a) const;
+
+    // vIndex: 30, symbol: ?getSunIntensity@Dimension@@UEBAMMAEBVVec3@@M@Z
+    virtual float getSunIntensity(float a, class Vec3 const& viewVector, float minInfluenceAngle) const;
+
+    // vIndex: 31, symbol: ?forceCheckAllNeighChunkSavedStat@Dimension@@UEBA_NXZ
+    virtual bool forceCheckAllNeighChunkSavedStat() const;
+
+    // vIndex: 32, vIndex: 34, symbol: ?sendBroadcast@Dimension@@UEAAXAEBVPacket@@PEAVPlayer@@@Z
+    virtual void sendBroadcast(class Packet const& packet, class Player* except);
+
+    // vIndex: 33, symbol: ?is2DPositionRelevantForPlayer@Dimension@@UEBA_NAEBVBlockPos@@AEAVPlayer@@@Z
+    virtual bool is2DPositionRelevantForPlayer(class BlockPos const& position, class Player& player) const;
+
+    // vIndex: 34, symbol: ?isActorRelevantForPlayer@Dimension@@UEBA_NAEAVPlayer@@AEBVActor@@@Z
+    virtual bool isActorRelevantForPlayer(class Player& player, class Actor const& actor) const;
+
+    // vIndex: 35, symbol: ?getLightTextureImageBuilder@Dimension@@UEBAPEAVBaseLightTextureImageBuilder@@XZ
+    virtual class BaseLightTextureImageBuilder* getLightTextureImageBuilder() const;
+
+    // vIndex: 36, symbol: ?getBrightnessRamp@Dimension@@UEBAAEBVDimensionBrightnessRamp@@XZ
+    virtual class DimensionBrightnessRamp const& getBrightnessRamp() const;
+
+    // vIndex: 37, symbol: ?startLeaveGame@Dimension@@UEAAXXZ
+    virtual void startLeaveGame();
+
+    // vIndex: 38, symbol:
     // ?_createChunkBuildOrderPolicy@Dimension@@EEAA?AV?$unique_ptr@VChunkBuildOrderPolicyBase@@U?$default_delete@VChunkBuildOrderPolicyBase@@@std@@@std@@XZ
-    MCVAPI std::unique_ptr<class ChunkBuildOrderPolicyBase> _createChunkBuildOrderPolicy();
+    virtual std::unique_ptr<class ChunkBuildOrderPolicyBase> _createChunkBuildOrderPolicy();
 
-    // symbol: ?deserialize@Dimension@@UEAAXAEBVCompoundTag@@@Z
-    MCVAPI void deserialize(class CompoundTag const& tag);
+    // vIndex: 39
+    virtual void _upgradeOldLimboEntity(class CompoundTag& tag, ::LimboEntitiesVersion vers) = 0;
 
-    // symbol: ?fetchEntity@Dimension@@UEBAPEAVActor@@UActorUniqueID@@_N@Z
-    MCVAPI class Actor* fetchEntity(struct ActorUniqueID actorID, bool getRemoved) const;
+    // vIndex: 40
+    virtual std::unique_ptr<class ChunkSource> _wrapStorageForVersionCompatibility(
+        std::unique_ptr<class ChunkSource> storageSource,
+        ::StorageVersion                   levelVersion
+    ) = 0;
 
-    // symbol: ?flushLevelChunkGarbageCollector@Dimension@@UEAAXXZ
-    MCVAPI void flushLevelChunkGarbageCollector();
-
-    // symbol: ?forEachPlayer@Dimension@@UEBAXV?$function@$$A6A_NAEAVPlayer@@@Z@std@@@Z
-    MCVAPI void forEachPlayer(std::function<bool(class Player&)> callback) const;
-
-    // symbol: ?forceCheckAllNeighChunkSavedStat@Dimension@@UEBA_NXZ
-    MCVAPI bool forceCheckAllNeighChunkSavedStat() const;
-
-    // symbol: ?getBiomeRegistry@Dimension@@UEBAAEBVBiomeRegistry@@XZ
-    MCVAPI class BiomeRegistry const& getBiomeRegistry() const;
-
-    // symbol: ?getBiomeRegistry@Dimension@@UEAAAEAVBiomeRegistry@@XZ
-    MCVAPI class BiomeRegistry& getBiomeRegistry();
-
-    // symbol: ?getBrightnessDependentFogColor@Dimension@@UEBA?AVColor@mce@@AEBV23@M@Z
-    MCVAPI class mce::Color getBrightnessDependentFogColor(class mce::Color const& baseColor, float brightness) const;
-
-    // symbol: ?getBrightnessRamp@Dimension@@UEBAAEBVDimensionBrightnessRamp@@XZ
-    MCVAPI class DimensionBrightnessRamp const& getBrightnessRamp() const;
-
-    // symbol: ?getCloudHeight@Dimension@@UEBAFXZ
-    MCVAPI short getCloudHeight() const;
-
-    // symbol: ?getDefaultBiome@Dimension@@UEBA?AVHashedString@@XZ
-    MCVAPI class HashedString getDefaultBiome() const;
-
-    // symbol: ?getDimensionId@Dimension@@UEBA?AV?$AutomaticID@VDimension@@H@@XZ
-    MCVAPI DimensionType getDimensionId() const;
-
-    // symbol: ?getLightTextureImageBuilder@Dimension@@UEBAPEAVBaseLightTextureImageBuilder@@XZ
-    MCVAPI class BaseLightTextureImageBuilder* getLightTextureImageBuilder() const;
-
-    // symbol: ?getSpawnPos@Dimension@@UEBA?AVBlockPos@@XZ
-    MCVAPI class BlockPos getSpawnPos() const;
-
-    // symbol: ?getSpawnYPosition@Dimension@@UEBAHXZ
-    MCVAPI int getSpawnYPosition() const;
-
-    // symbol: ?getSunIntensity@Dimension@@UEBAMMAEBVVec3@@M@Z
-    MCVAPI float getSunIntensity(float a, class Vec3 const& viewVector, float minInfluenceAngle) const;
-
-    // symbol: ?getTimeOfDay@Dimension@@MEBAMHM@Z
-    MCVAPI float getTimeOfDay(int time, float a) const;
-
-    // symbol: ?hasGround@Dimension@@UEBA_NXZ
-    MCVAPI bool hasGround() const;
-
-    // symbol: ?hasPrecipitationFog@Dimension@@UEBA_NXZ
-    MCVAPI bool hasPrecipitationFog() const;
-
-    // symbol: ?init@Dimension@@UEAAXAEBVStructureSetRegistry@worldgen@br@@@Z
-    MCVAPI void init(class br::worldgen::StructureSetRegistry const&);
-
-    // symbol: ?initializeWithLevelStorageManager@Dimension@@UEAAXAEAVLevelStorageManager@@@Z
-    MCVAPI void initializeWithLevelStorageManager(class LevelStorageManager&);
-
-    // symbol: ?is2DPositionRelevantForPlayer@Dimension@@UEBA_NAEBVBlockPos@@AEAVPlayer@@@Z
-    MCVAPI bool is2DPositionRelevantForPlayer(class BlockPos const& position, class Player& player) const;
-
-    // symbol: ?isActorRelevantForPlayer@Dimension@@UEBA_NAEAVPlayer@@AEBVActor@@@Z
-    MCVAPI bool isActorRelevantForPlayer(class Player& player, class Actor const& actor) const;
-
-    // symbol: ?isDay@Dimension@@UEBA_NXZ
-    MCVAPI bool isDay() const;
-
-    // symbol: ?isNaturalDimension@Dimension@@UEBA_NXZ
-    MCVAPI bool isNaturalDimension() const;
-
-    // symbol: ?isValidSpawn@Dimension@@UEBA_NHH@Z
-    MCVAPI bool isValidSpawn(int x, int z) const;
-
-    // symbol: ?mayRespawnViaBed@Dimension@@UEBA_NXZ
-    MCVAPI bool mayRespawnViaBed() const;
-
-    // symbol:
+    // LevelListener vtable overloaded functions
+    // vIndex: 4, symbol:
     // ?onBlockChanged@Dimension@@UEAAXAEAVBlockSource@@AEBVBlockPos@@IAEBVBlock@@2HPEBUActorBlockSyncMessage@@W4BlockChangedEventTarget@@PEAVActor@@@Z
-    MCVAPI void onBlockChanged(
+    virtual void onBlockChanged(
         class BlockSource&                  source,
         class BlockPos const&               pos,
         uint                                layer,
@@ -147,39 +302,24 @@ public:
         class Actor*                        blockChangeSource
     );
 
-    // symbol: ?onBlockEvent@Dimension@@UEAAXAEAVBlockSource@@HHHHH@Z
-    MCVAPI void onBlockEvent(class BlockSource& source, int x, int y, int z, int b0, int b1);
+    // LevelListener->BlockSourceListener vtable overloaded function
+    // vIndex: 8, symbol: ?onBlockEvent@Dimension@@UEAAXAEAVBlockSource@@HHHHH@Z
+    virtual void onBlockEvent(class BlockSource& source, int x, int y, int z, int b0, int b1);
 
-    // symbol: ?onChunkLoaded@Dimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
-    MCVAPI void onChunkLoaded(class ChunkSource& source, class LevelChunk& lc);
+    // LevelListener vtable overloaded functions
+    // vIndex: 19,symbol: ?onChunkLoaded@Dimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
+    virtual void onChunkLoaded(class ChunkSource& source, class LevelChunk& lc);
 
-    // symbol: ?onLevelDestruction@Dimension@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI void onLevelDestruction(std::string const&);
+    // vIndex: 23, symbol:
+    // ?onLevelDestruction@Dimension@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    virtual void onLevelDestruction(std::string const&);
 
-    // symbol: ?sendBroadcast@Dimension@@UEAAXAEBVPacket@@PEAVPlayer@@@Z
-    MCVAPI void sendBroadcast(class Packet const& packet, class Player* except);
-
-    // symbol: ?sendPacketForPosition@Dimension@@UEAAXAEBVBlockPos@@AEBVPacket@@PEBVPlayer@@@Z
-    MCVAPI void
-    sendPacketForPosition(class BlockPos const& position, class Packet const& packet, class Player const* except);
+    // SavedData vtable overloaded functions
+    // symbol: ?deserialize@Dimension@@UEAAXAEBVCompoundTag@@@Z
+    virtual void deserialize(class CompoundTag const& tag);
 
     // symbol: ?serialize@Dimension@@UEBAXAEAVCompoundTag@@@Z
-    MCVAPI void serialize(class CompoundTag& tag) const;
-
-    // symbol: ?showSky@Dimension@@UEBA_NXZ
-    MCVAPI bool showSky() const;
-
-    // symbol: ?startLeaveGame@Dimension@@UEAAXXZ
-    MCVAPI void startLeaveGame();
-
-    // symbol: ?tick@Dimension@@UEAAXXZ
-    MCVAPI void tick();
-
-    // symbol: ?tickRedstone@Dimension@@UEAAXXZ
-    MCVAPI void tickRedstone();
-
-    // symbol: ??1Dimension@@UEAA@XZ
-    MCVAPI ~Dimension();
+    virtual void serialize(class CompoundTag& tag) const;
 
     // symbol:
     // ??0Dimension@@QEAA@AEAVILevel@@V?$AutomaticID@VDimension@@H@@VDimensionHeightRange@@AEAVScheduler@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
