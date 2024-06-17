@@ -131,7 +131,7 @@ Expected<> NativePluginManager::load(Manifest manifest) {
     if (!GetProcAddress(lib, "ll_memory_operator_overrided")) {
         using namespace i18n_literals;
         return makeStringError(
-            "The plugin is not using the unified memory allocation operator, will not be loaded in next version."_tr()
+            "The plugin is not using the unified memory allocation operator, will not be loaded."_tr()
         );
     }
     currentLoadingPlugin->setHandle(lib);
