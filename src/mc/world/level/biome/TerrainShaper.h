@@ -19,6 +19,7 @@ public:
         float mErosion;
         float mRidges;
         float mWeirdness;
+
     public:
         // prevent constructor by default
         Point& operator=(Point const&);

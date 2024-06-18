@@ -44,6 +44,7 @@ public:
     bool                         mServerEnabledClientSideGeneration;
     bool                         mBlockNetworkIdsAreHashes;
     bool                         mHardcore;
+
     std::vector<std::pair<std::string, CompoundTag>> mBlockProperties;
 
     // prevent constructor by default
