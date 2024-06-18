@@ -18,13 +18,13 @@ template <class T, template <class...> class U, class... Ts>
 struct is_in_types<T, U<Ts...>> : std::bool_constant<(std::is_same_v<T, Ts> || ...)> {};
 
 template <class T, class U>
-static constexpr bool is_in_types_v = is_in_types<T, U>::value;
+inline constexpr bool is_in_types_v = is_in_types<T, U>::value;
 
 template <class T, class U>
 concept IsInTypes = is_in_types_v<T, U>;
 
 template <class T, class... Ts>
-static constexpr bool is_one_of_v = (std::is_same_v<T, Ts> || ...);
+inline constexpr bool is_one_of_v = (std::is_same_v<T, Ts> || ...);
 
 template <class T, class... Ts>
 struct is_one_of : std::bool_constant<is_one_of_v<T, Ts...>> {};
@@ -33,7 +33,7 @@ template <class T, class... Ts>
 concept IsOneOf = is_one_of_v<T, Ts...>;
 
 template <class T, class... Ts>
-static constexpr bool is_all_same_v = (std::is_same_v<T, Ts> && ...);
+inline constexpr bool is_all_same_v = (std::is_same_v<T, Ts> && ...);
 
 template <class T, class... Ts>
 struct is_all_same : std::bool_constant<is_all_same_v<T, Ts...>> {};
@@ -42,10 +42,10 @@ template <class T, class... Ts>
 concept IsAllSame = is_all_same_v<T, Ts...>;
 
 template <class T>
-static constexpr bool is_string_v = std::is_constructible_v<std::string, T>;
+inline constexpr bool is_string_v = std::is_constructible_v<std::string, T>;
 
 template <class T>
-constexpr bool is_non_char_integral_v =
+inline constexpr bool is_non_char_integral_v =
     is_one_of_v<std::remove_cv_t<T>, bool, schar, uchar, short, ushort, int, uint, long, ulong, int64, uint64>;
 
 template <class T>
@@ -104,15 +104,6 @@ struct LL_EBO VectorBaseTag {};
 template <typename T>
 concept IsVectorBase = std::is_base_of_v<VectorBaseTag, T>;
 
-template <class T>
-concept TupleLike = std::_Tuple_like<T> || (!Rangeable<T> && requires(T t) {
-                        std::tuple_size<std::remove_cvref_t<T>>::value;
-                        std::get<0>(t);
-                    });
-
-template <class T>
-concept ArrayLike = Rangeable<T> && !requires { typename std::remove_cvref_t<T>::mapped_type; };
-
 template <class T, template <class...> class Z>
 inline constexpr bool is_specialization_of_v = false;
 
@@ -124,6 +115,20 @@ struct is_specialization_of : std::bool_constant<is_specialization_of_v<T, Z>> {
 
 template <class T, template <class...> class Z>
 concept Specializes = is_specialization_of_v<T, Z>;
+
+template <class T>
+inline constexpr bool tuple_like_impl =
+    is_specialization_of_v<T, ::std::tuple> || is_specialization_of_v<T, ::std::pair> || ::std::_Is_std_array_v<T>
+    || ::std::_Is_subrange_v<T>;
+
+template <class T>
+concept TupleLike = tuple_like_impl<std::remove_cvref_t<T>> || (!Rangeable<T> && requires(T t) {
+                        std::tuple_size<std::remove_cvref_t<T>>::value;
+                        std::get<0>(t);
+                    });
+
+template <class T>
+concept ArrayLike = Rangeable<T> && !requires { typename std::remove_cvref_t<T>::mapped_type; };
 
 template <template <class...> class T, class... Ts>
 void DerivedFromSpecializationImpl(T<Ts...> const&);

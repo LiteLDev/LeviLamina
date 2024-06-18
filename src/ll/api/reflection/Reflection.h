@@ -30,7 +30,7 @@ template <class T>
 inline constexpr auto const name_array_v = boost::pfr::names_as_array<std::remove_cvref_t<T>>();
 
 template <Reflectable T, class F>
-constexpr void forEachMember(T&& value, F&& func) {
+inline constexpr void forEachMember(T&& value, F&& func) {
     boost::pfr::for_each_field(std::forward<T>(value), [func = std::forward<F>(func)](auto&& field, std::size_t idx) {
         func(name_array_v<T>[idx], std::forward<decltype((field))>(field));
     });
