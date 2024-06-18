@@ -48,12 +48,6 @@ public:
     // symbol: ??BBlockPos@@QEBA?AVVec3@@XZ
     MCAPI explicit operator class Vec3() const;
 
-    // symbol: ??9BlockPos@@QEBA_NAEBV0@@Z
-    MCAPI bool operator!=(class BlockPos const&) const;
-
-    // symbol: ??8BlockPos@@QEBA_NAEBV0@@Z
-    MCAPI bool operator==(class BlockPos const& rhs) const;
-
     // symbol: ?randomSeed@BlockPos@@QEBAHXZ
     MCAPI int randomSeed() const;
 
