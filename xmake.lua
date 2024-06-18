@@ -16,8 +16,8 @@ add_requires("magic_enum v0.9.5")
 add_requires("nlohmann_json v3.11.3")
 add_requires("rapidjson v1.1.0")
 add_requires("mimalloc 2.1.2")
-add_requires("openssl 1.1.1-w", {configs={shared=false}})
-add_requires("cpp-httplib 0.14.3", {configs={ssl=true}})
+add_requires("openssl 1.1.1-w", {configs = {shared = false}})
+add_requires("cpp-httplib 0.14.3", {configs = {ssl = true}})
 
 -- Dependencies from liteldev-repo.
 add_requires("pcg_cpp v1.0.0")
@@ -46,7 +46,48 @@ option("use_mimalloc")
     set_description("Enable mimalloc")
 
 target("LeviLamina")
+    set_languages("c++20")
+    set_kind("shared")
+    set_symbols("debug")
+    set_exceptions("none")
+    add_files(
+        "src/ll/api/**.cpp",
+        "src/ll/core/**.cpp",
+        "src/ll/core/**.rc",
+        "src/mc/**.cpp"
+    )
+    set_configdir("$(buildir)/config")
+    set_configvar("LL_WORKSPACE_FOLDER", "$(projectdir)")
     add_configfiles("src/(ll/core/Version.h.in)")
+    add_headerfiles("src/(ll/api/**.h)", "src/(mc/**.h)")
+    add_includedirs("src", "$(buildir)/config")
+    set_pcxxheader("src/ll/api/Global.h")
+    add_packages("demangler", "mimalloc", "preloader", "cpp-httplib")
+    add_packages(
+        "entt",
+        "expected-lite",
+        "fmt",
+        "gsl",
+        "leveldb",
+        "magic_enum",
+        "nlohmann_json",
+        "rapidjson",
+        "ctre",
+        "pcg_cpp",
+        "pfr",
+        "symbolprovider",
+        "bdslibrary",
+        {public = true}
+    )
+    add_defines(
+        "_AMD64_",
+        "NOMINMAX",
+        "UNICODE",
+        "WIN32_LEAN_AND_MEAN",
+        "ENTT_PACKED_PAGE=128", -- public = true
+        "LL_EXPORT",
+        "_HAS_CXX23=1" -- work around to enable c++23
+    )
     add_cxflags(
         "/utf-8",
         "/permissive-",
@@ -72,48 +113,7 @@ target("LeviLamina")
         "-Wno-pragma-system-header-outside-header",
         {tools = {"clang_cl"}}
     )
-    add_defines(
-        "_AMD64_",
-        "NOMINMAX",
-        "UNICODE",
-        "WIN32_LEAN_AND_MEAN",
-        "ENTT_PACKED_PAGE=128",
-        "LL_EXPORT",
-        "_HAS_CXX23=1" -- work around to enable c++23
-    )
-    add_files(
-        "src/ll/api/**.cpp",
-        "src/ll/core/**.cpp",
-        "src/ll/core/**.rc",
-        "src/mc/**.cpp"
-    )
-    add_headerfiles("src/(ll/api/**.h)", "src/(mc/**.h)")
-    add_includedirs("src", "$(buildir)/config")
-    add_packages("demangler", "mimalloc", "preloader", "cpp-httplib")
-    add_packages(
-        "entt",
-        "expected-lite",
-        "fmt",
-        "gsl",
-        "leveldb",
-        "magic_enum",
-        "nlohmann_json",
-        "rapidjson",
-        "ctre",
-        "pcg_cpp",
-        "pfr",
-        "symbolprovider",
-        "bdslibrary",
-        { public = true }
-    )
     add_shflags("/DELAYLOAD:bedrock_server.dll")
-    set_configdir("$(buildir)/config")
-    set_configvar("LL_WORKSPACE_FOLDER", "$(projectdir)")
-    set_exceptions("none")
-    set_kind("shared")
-    set_languages("c++20")
-    set_pcxxheader("src/ll/api/Global.h")
-    set_symbols("debug")
 
     if has_config("tests") then
         add_packages("gtest")
@@ -132,6 +132,7 @@ target("LeviLamina")
             io.writefile("src/ll/test/include_all.cpp", "// auto gen when build test\n")
         end)
     end
+
     if has_config("use_mimalloc") then
         add_defines("LL_USE_MIMALLOC")
     end
