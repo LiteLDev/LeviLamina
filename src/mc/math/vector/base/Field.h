@@ -184,12 +184,12 @@ public:
 };
 
 template <IsField T, std::convertible_to<typename T::first_type> V>
-[[nodiscard]] inline constexpr auto operator*(V const& v, T const& t) noexcept {
+[[nodiscard]] constexpr auto operator*(V const& v, T const& t) noexcept {
     return T{static_cast<typename T::first_type>(v)} * t;
 }
 
 template <IsField T, std::convertible_to<typename T::first_type> V>
-[[nodiscard]] inline constexpr auto operator/(V const& v, T const& t) noexcept {
+[[nodiscard]] constexpr auto operator/(V const& v, T const& t) noexcept {
     return T{static_cast<typename T::first_type>(v)} / t;
 }
 

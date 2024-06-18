@@ -232,7 +232,7 @@ void PluginRegistrar::loadAllPlugins() {
             logger.info("{0} loaded"_tr(name));
         } else {
             loadErrored.emplace(name);
-            logger.error("Failed to load {0}"_tr(name));
+            logger.error("Failed to load plugin {0}"_tr(name));
             res.error().log(logger.error);
         }
     }
@@ -279,7 +279,7 @@ LL_TYPE_INSTANCE_HOOK(
             if (auto res = registrar.enablePlugin(name); res) {
                 count++;
             } else {
-                logger.error("Failed to enable {0}"_tr(name));
+                logger.error("Failed to enable plugin {0}"_tr(name));
                 res.error().log(logger.error);
             }
         }

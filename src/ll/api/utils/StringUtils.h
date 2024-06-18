@@ -21,8 +21,8 @@ namespace ll::inline utils::string_utils {
 
 // "2021-03-24"  ->  ["2021", "03", "24"]  (use '-' as split pattern)
 template <class T>
-[[nodiscard]] inline constexpr auto
-splitByPattern(T&& str, std::string_view pattern, bool keepEmpty = false) -> decltype(auto) {
+[[nodiscard]] constexpr auto splitByPattern(T&& str, std::string_view pattern, bool keepEmpty = false) -> decltype(auto
+                                                                                                       ) {
     using ReturnTypeElement = std::conditional_t<std::is_same_v<T&&, std::string&&>, std::string, std::string_view>;
     using ReturnType        = std::vector<ReturnTypeElement>;
     std::string_view s{str};
@@ -47,7 +47,7 @@ splitByPattern(T&& str, std::string_view pattern, bool keepEmpty = false) -> dec
  * @param newValue  The string to replace with
  * @return std::string  The modified input std::string
  */
-inline constexpr std::string& replaceAll(std::string& str, std::string_view oldValue, std::string_view newValue) {
+constexpr std::string& replaceAll(std::string& str, std::string_view oldValue, std::string_view newValue) {
     for (std::string::size_type pos(0); pos != std::string::npos; pos += newValue.length()) {
         if ((pos = str.find(oldValue, pos)) != std::string::npos) str.replace(pos, oldValue.length(), newValue);
         else break;
@@ -55,14 +55,14 @@ inline constexpr std::string& replaceAll(std::string& str, std::string_view oldV
     return str;
 }
 
-[[nodiscard]] inline constexpr std::string
+[[nodiscard]] constexpr std::string
 replaceAll(std::string const& str, std::string_view oldValue, std::string_view newValue) {
     std::string ret = str;
     replaceAll(ret, oldValue, newValue);
     return ret;
 }
 
-inline constexpr bool
+constexpr bool
 replaceContent(std::string& str, std::string_view before, std::string_view after, std::string_view relplaceWith) {
     auto startOffset = str.find(before);
     if (startOffset == std::string::npos) return false;
@@ -96,7 +96,7 @@ LLNDAPI std::string decompress(std::string_view);
  */
 template <class T>
     requires std::is_integral_v<T>
-[[nodiscard]] inline constexpr std::string
+[[nodiscard]] constexpr std::string
 intToHexStr(T value, bool upperCase = true, bool no0x = true, bool noLeadingZero = true) {
     std::string result;
     if (value < 0) result += '-';
@@ -112,7 +112,7 @@ intToHexStr(T value, bool upperCase = true, bool no0x = true, bool noLeadingZero
     return result;
 }
 
-[[nodiscard]]inline constexpr std::string strToHexStr(std::string_view value, bool upperCase = false, bool addSpace = false) {
+[[nodiscard]] constexpr std::string strToHexStr(std::string_view value, bool upperCase = false, bool addSpace = false) {
     constexpr char hexStr[2][17] = {"0123456789abcdef", "0123456789ABCDEF"};
     std::string    hex;
     hex.reserve(value.size() * (addSpace ? 3 : 2));
@@ -125,7 +125,7 @@ intToHexStr(T value, bool upperCase = true, bool no0x = true, bool noLeadingZero
     return hex;
 }
 
-[[nodiscard]] inline constexpr std::string applyTextStyle(fmt::text_style const& ts, std::string_view str) {
+[[nodiscard]] constexpr std::string applyTextStyle(fmt::text_style const& ts, std::string_view str) {
     std::string res;
     bool        has_style = false;
     if (ts.has_emphasis()) {

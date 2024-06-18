@@ -57,7 +57,7 @@ void registerPluginManageCommand() {
     cmd.overload<LeviCommand3>().text("load").required("plugin").execute(
         [](CommandOrigin const&, CommandOutput& output, LeviCommand3 const& param) {
             if (ll::plugin::PluginManagerRegistry::getInstance().hasPlugin(param.plugin)) {
-                output.error("Plugin already {0} loaded"_tr(param.plugin));
+                output.error("Plugin {0} already loaded"_tr(param.plugin));
                 return;
             }
             if (auto res = ll::plugin::PluginRegistrar::getInstance().loadPlugin(param.plugin); res) {

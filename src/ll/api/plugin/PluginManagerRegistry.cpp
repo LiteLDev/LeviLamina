@@ -45,7 +45,7 @@ Expected<> PluginManagerRegistry::unloadPlugin(std::string_view name) noexcept {
     try {
         std::lock_guard lock(impl->mutex);
         if (!hasPlugin(name)) {
-            return makeStringError("Plugin not found"_tr());
+            return makeStringError("Plugin {0} not found"_tr(name));
         }
         return getManagerForPlugin(name)->unload(name).transform([&, this] {
             impl->loadedPlugins.erase(std::string{name});
@@ -59,7 +59,7 @@ Expected<> PluginManagerRegistry::enablePlugin(std::string_view name) const noex
     try {
         std::lock_guard lock(impl->mutex);
         if (!hasPlugin(name)) {
-            return makeStringError("Plugin not found"_tr());
+            return makeStringError("Plugin {0} not found"_tr(name));
         }
         return getManagerForPlugin(name)->enable(name);
     } catch (...) {
@@ -71,7 +71,7 @@ Expected<> PluginManagerRegistry::disablePlugin(std::string_view name) const noe
     try {
         std::lock_guard lock(impl->mutex);
         if (!hasPlugin(name)) {
-            return makeStringError("Plugin not found"_tr());
+            return makeStringError("Plugin {0} not found"_tr(name));
         }
         return getManagerForPlugin(name)->disable(name);
     } catch (...) {
