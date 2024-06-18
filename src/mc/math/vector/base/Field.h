@@ -183,6 +183,16 @@ public:
     }
 };
 
+template <IsField T, std::convertible_to<typename T::first_type> V>
+[[nodiscard]] inline constexpr auto operator*(V const& v, T const& t) noexcept {
+    return T{static_cast<typename T::first_type>(v)} * t;
+}
+
+template <IsField T, std::convertible_to<typename T::first_type> V>
+[[nodiscard]] inline constexpr auto operator/(V const& v, T const& t) noexcept {
+    return T{static_cast<typename T::first_type>(v)} / t;
+}
+
 #define LL_VEC_GEN_BASIC_MATH_FUNC_FLOAT(TYPE, NAME)                                                                   \
     template <TYPE T>                                                                                                  \
     [[nodiscard]] constexpr T NAME(T const& x) noexcept {                                                              \

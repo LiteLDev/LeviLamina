@@ -22,7 +22,6 @@ public:
     bool                     mLocalize;        // this+0x88
     std::string              mXuid;            // this+0xC0
     std::string              mPlatformId;      // this+0xE0
-    int                      mArraySize;       // this+0x100
 
     [[nodiscard]] inline static TextPacket createRawMessage(std::string_view msg) {
         auto res  = TextPacket{};

@@ -145,6 +145,7 @@ LL_AUTO_STATIC_HOOK(GeneratePacketHook, HookPriority::Normal, "main", int, int a
 #include "mc/network/packet/AutomationClientConnectPacket.h"
 #include "mc/network/packet/AvailableActorIdentifiersPacket.h"
 #include "mc/network/packet/AvailableCommandsPacket.h"
+#include "mc/network/packet/AwardAchievementPacket.h"
 #include "mc/network/packet/BiomeDefinitionListPacket.h"
 #include "mc/network/packet/BlockActorDataPacket.h"
 #include "mc/network/packet/BlockEventPacket.h"
@@ -306,7 +307,6 @@ LL_AUTO_STATIC_HOOK(GeneratePacketHook, HookPriority::Normal, "main", int, int a
 #include "mc/network/packet/SyncActorPropertyPacket.h"
 #include "mc/network/packet/TakeItemActorPacket.h"
 #include "mc/network/packet/TextPacket.h"
-#include "mc/network/packet/TickSyncPacket.h"
 #include "mc/network/packet/TickingAreasLoadStatusPacket.h"
 #include "mc/network/packet/ToastRequestPacket.h"
 #include "mc/network/packet/TransferPacket.h"
@@ -338,9 +338,9 @@ PACKET_SIZE_ASSERT(DisconnectPacket, 0x60);
 PACKET_SIZE_ASSERT(ResourcePacksInfoPacket, 0x80);
 PACKET_SIZE_ASSERT(ResourcePackStackPacket, 0x130);
 PACKET_SIZE_ASSERT(ResourcePackClientResponsePacket, 0x48);
-PACKET_SIZE_ASSERT(TextPacket, 0xD8);
+PACKET_SIZE_ASSERT(TextPacket, 0x100);
 PACKET_SIZE_ASSERT(SetTimePacket, 0x38);
-PACKET_SIZE_ASSERT(StartGamePacket, 0x660);
+PACKET_SIZE_ASSERT(StartGamePacket, 0x6C0);
 PACKET_SIZE_ASSERT(AddPlayerPacket, 0x620);
 PACKET_SIZE_ASSERT(AddActorPacket, 0x1B0);
 PACKET_SIZE_ASSERT(RemoveActorPacket, 0x38);
@@ -493,7 +493,7 @@ PACKET_SIZE_ASSERT(SubChunkPacket, 0x60);
 PACKET_SIZE_ASSERT(SubChunkRequestPacket, 0x80);
 PACKET_SIZE_ASSERT(PlayerStartItemCooldownPacket, 0x58);
 PACKET_SIZE_ASSERT(ScriptMessagePacket, 0x70);
-PACKET_SIZE_ASSERT(CodeBuilderSourcePacket, 0x58);
+PACKET_SIZE_ASSERT(CodeBuilderSourcePacket, 0x38);
 PACKET_SIZE_ASSERT(TickingAreasLoadStatusPacket, 0x38);
 PACKET_SIZE_ASSERT(DimensionDataPacket, 0x40);
 PACKET_SIZE_ASSERT(AgentActionEventPacket, 0x68);
@@ -523,6 +523,7 @@ PACKET_SIZE_ASSERT(RefreshEntitlementsPacket, 0x30);
 PACKET_SIZE_ASSERT(PlayerToggleCrafterSlotRequestPacket, 0x48);
 PACKET_SIZE_ASSERT(SetPlayerInventoryOptionsPacket, 0x48);
 PACKET_SIZE_ASSERT(SetHudPacket, 0x50);
+PACKET_SIZE_ASSERT(AwardAchievementPacket, 0x38);
 
 #pragma endregion
 

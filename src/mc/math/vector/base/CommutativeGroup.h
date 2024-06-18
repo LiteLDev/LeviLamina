@@ -105,6 +105,16 @@ public:
     }
 };
 
+template <IsCommutativeGroup T, std::convertible_to<typename T::first_type> V>
+[[nodiscard]] inline constexpr auto operator+(V const& v, T const& t) noexcept {
+    return T{static_cast<typename T::first_type>(v)} + t;
+}
+
+template <IsCommutativeGroup T, std::convertible_to<typename T::first_type> V>
+[[nodiscard]] inline constexpr auto operator-(V const& v, T const& t) noexcept {
+    return T{static_cast<typename T::first_type>(v)} - t;
+}
+
 template <IsCommutativeGroup T>
 [[nodiscard]] constexpr T min(T const& a, T const& b) noexcept {
     T tmp;

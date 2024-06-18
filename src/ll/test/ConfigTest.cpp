@@ -148,4 +148,8 @@ LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &Se
 
     ll::logger.debug("789\xDB\xFE");
     ll::logger.debug("789\xDB\xFE");
+
+    Vec3 v1{2};
+
+    ll::logger.debug("{}", 3 / v1);
 }

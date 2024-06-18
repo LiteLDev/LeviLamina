@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/events/MinecraftEventing.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,7 +10,7 @@
 
 class AwardAchievementPacket : public ::Packet {
 public:
-    int mAchievementID;
+    MinecraftEventing::AchievementIds mAchievementId;
 
     // prevent constructor by default
     AwardAchievementPacket& operator=(AwardAchievementPacket const&);
