@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/network/NetworkSystem.h"
 
-class ClientNetworkSystem : public NetworkSystem {
+class ClientNetworkSystem {
 public:
     // prevent constructor by default
     ClientNetworkSystem& operator=(ClientNetworkSystem const&);
