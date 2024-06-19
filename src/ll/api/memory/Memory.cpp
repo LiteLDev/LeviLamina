@@ -37,17 +37,10 @@ FuncPtr resolveSymbol(std::string_view symbol, bool disableErrorOutput) {
     return res;
 }
 
-FuncPtr resolveSignature(std::string_view signature) {
-    static auto      bdsSpan = win_utils::getImageRange();
-    std::span<uchar> span;
+FuncPtr resolveSignature(std::string_view signature) { return resolveSignature(signature, win_utils::getImageRange()); }
 
-    if (auto pos = signature.find('!'); pos != std::string_view::npos) {
-        span      = win_utils::getImageRange(signature.substr(0, pos));
-        signature = signature.substr(1 + pos);
-    } else {
-        span = bdsSpan;
-    }
-    if (span.empty()) {
+FuncPtr resolveSignature(std::string_view signature, std::span<uchar> range) {
+    if (range.empty()) {
         return nullptr;
     }
     std::vector<std::optional<uchar>> pattern;
@@ -66,18 +59,18 @@ FuncPtr resolveSignature(std::string_view signature) {
     if (pattern.empty()) {
         return nullptr;
     }
-    for (size_t i = 0; i < span.size() - pattern.size(); ++i) {
+    for (size_t i = 0; i < range.size() - pattern.size(); ++i) {
         bool   match = true;
         size_t iter  = 0;
         for (auto& c : pattern) {
-            if (span[i + iter] != c) {
+            if (range[i + iter] != c) {
                 match = false;
                 break;
             }
             iter++;
         }
         if (match) {
-            return &span[i];
+            return &range[i];
         }
     }
     return nullptr;

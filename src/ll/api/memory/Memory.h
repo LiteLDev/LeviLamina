@@ -62,11 +62,19 @@ LLNDAPI FuncPtr resolveSymbol(char const* symbol);
 LLNDAPI FuncPtr resolveSymbol(std::string_view symbol, bool disableErrorOutput);
 
 /**
- * @brief resolve signature to function pointer
- * @param t Signature
+ * @brief resolve signature to function pointer from bds image
+ * @param signature signature
  * @return function pointer
  */
 LLNDAPI FuncPtr resolveSignature(std::string_view signature);
+
+/**
+ * @brief resolve signature to function pointer from given range
+ * @param signature signature
+ * @param range search range
+ * @return function pointer
+ */
+LLNDAPI FuncPtr resolveSignature(std::string_view signature, std::span<uchar> range);
 
 /**
  * @brief lookup symbol name of a function address
