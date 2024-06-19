@@ -120,8 +120,10 @@ Expected<> Plugin::onDisable() noexcept {
         }
         if (!mImpl->onDisable || mImpl->onDisable(*this)) {
             setState(State::Disabled);
-            event::EventBus::getInstance().removePluginListeners(mImpl->manifest.name);
-            command::CommandRegistrar::getInstance().disablePluginCommands(mImpl->manifest.name);
+            if (ll::getServerStatus() != ll::ServerStatus::Stopping) {
+                event::EventBus::getInstance().removePluginListeners(mImpl->manifest.name);
+                command::CommandRegistrar::getInstance().disablePluginCommands(mImpl->manifest.name);
+            }
             return {};
         } else {
             return makeStringError("The plugin cannot be disabled"_tr());
