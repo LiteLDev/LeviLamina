@@ -26,7 +26,7 @@ public:
     using AccessorFn        = std::function<AccessorT>;
     using AccessorFnPointer = AccessorFn const*;
 
-    uchar filler[1352];
+    uchar filler[232];
 
     // NOLINTBEGIN
     // symbol: ??0ExpressionNode@@QEAA@XZ

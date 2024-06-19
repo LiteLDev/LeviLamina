@@ -7,7 +7,7 @@
 #include "mc/network/NetworkSystem.h"
 #include "mc/services/ServiceReference.h"
 
-class ServerNetworkSystem {
+class ServerNetworkSystem : NetworkSystem {
 public:
     // prevent constructor by default
     ServerNetworkSystem& operator=(ServerNetworkSystem const&);
