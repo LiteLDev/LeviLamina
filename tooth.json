@@ -1,18 +1,18 @@
 {
   "format_version": 2,
   "tooth": "github.com/LiteLDev/LeviLamina",
-  "version": "0.13.0",
+  "version": "0.13.1",
   "info": {
     "name": "LeviLamina",
     "description": "A lightweight, modular and versatile plugin loader for Minecraft Bedrock Server BDS, formerly known as LiteLoaderBDS",
     "author": "LiteLDev",
     "tags": []
   },
-  "asset_url": "https://github.com/LiteLDev/LeviLamina/releases/download/v0.13.0/levilamina-release-windows-x64.zip",
+  "asset_url": "https://github.com/LiteLDev/LeviLamina/releases/download/v0.13.1/levilamina-release-windows-x64.zip",
   "dependencies": {
     "github.com/LiteLDev/bds": ">=1.21.0 <1.21.10",
     "github.com/LiteLDev/CrashLogger": "1.1.x",
-    "github.com/LiteLDev/levilamina-loc": "1.1.x",
+    "github.com/LiteLDev/levilamina-loc": "1.2.x",
     "github.com/LiteLDev/PeEditor": "3.7.x",
     "github.com/LiteLDev/PreLoader": "1.6.x"
   },

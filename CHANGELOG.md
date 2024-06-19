@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.13.1] - 2024-06-19
+
+### Fixed
+
+- Fix exception while shutting down
+
 ## [0.13.0] - 2024-06-19
 
 ### Added
@@ -539,7 +545,15 @@ First preview release.
 
 For lip and tooth-hub test only.
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.0...HEAD
+[#1481]: https://github.com/LiteLDev/LeviLamina/issues/1481
+[#1483]: https://github.com/LiteLDev/LeviLamina/issues/1483
+[#1492]: https://github.com/LiteLDev/LeviLamina/issues/1492
+[#1499]: https://github.com/LiteLDev/LeviLamina/issues/1499
+[#1502]: https://github.com/LiteLDev/LeviLamina/issues/1502
+[#1520]: https://github.com/LiteLDev/LeviLamina/issues/1520
+
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.1...HEAD
+[0.13.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.0...v0.13.1
 [0.13.0]: https://github.com/LiteLDev/LeviLamina/compare/v0.12.4...v0.13.0
 [0.12.4]: https://github.com/LiteLDev/LeviLamina/compare/v0.12.3...v0.12.4
 [0.12.3]: https://github.com/LiteLDev/LeviLamina/compare/v0.12.2...v0.12.3
