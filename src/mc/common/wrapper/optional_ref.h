@@ -113,6 +113,8 @@ public:
     [[nodiscard]] constexpr decltype(auto) rbegin() const { return (get().rbegin()); }
     [[nodiscard]] constexpr decltype(auto) crend() const { return (get().crend()); }
     [[nodiscard]] constexpr decltype(auto) crbegin() const { return (get().crbegin()); }
+
+#if _HAS_CXX23
     template <class Fn>
     constexpr auto and_then(Fn&& fn) const {
         using Ret = std::invoke_result_t<Fn, T&>;
@@ -153,6 +155,7 @@ public:
             return std::invoke(std::forward<Fn>(fn));
         }
     }
+#endif // _HAS_CXX23
 };
 // NOLINTEND
 template <typename T>
