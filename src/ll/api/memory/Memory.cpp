@@ -3,6 +3,7 @@
 #include <optional>
 #include <vector>
 
+#include "libhat.hpp"
 #include "pl/SymbolProvider.h"
 
 #include "ll/api/Logger.h"
@@ -43,39 +44,13 @@ FuncPtr resolveSignature(std::string_view signature, std::span<uchar> range) {
     if (range.empty()) {
         return nullptr;
     }
-    std::vector<std::optional<uchar>> pattern;
-    for (size_t i = 0; i < signature.size(); ++i) {
-        auto& c = signature[i];
-        if (c == ' ') {
-            continue;
-        } else if (c == '?') {
-            pattern.emplace_back(std::nullopt);
-        } else if (isxdigit(c) && (++i < signature.size() && isxdigit(signature[i]))) {
-            pattern.emplace_back(string_utils::svtouc(signature.substr(i - 1, 2), nullptr, 16).value());
-        } else {
-            return nullptr;
-        }
-    }
-    if (pattern.empty()) {
+    if (auto res = hat::parse_signature(signature); !res.has_value()) {
         return nullptr;
+    } else {
+        auto& byteRange = reinterpret_cast<std::span<std::byte>&>(range);
+        return const_cast<std::byte*>(hat::find_pattern(byteRange.begin(), byteRange.end(), res.value()).get());
     }
-    for (size_t i = 0; i < range.size() - pattern.size(); ++i) {
-        bool   match = true;
-        size_t iter  = 0;
-        for (auto& c : pattern) {
-            if (range[i + iter] != c) {
-                match = false;
-                break;
-            }
-            iter++;
-        }
-        if (match) {
-            return &range[i];
-        }
-    }
-    return nullptr;
 }
-
 std::vector<std::string> lookupSymbol(FuncPtr func) {
     std::vector<std::string> symbols;
     size_t                   length;

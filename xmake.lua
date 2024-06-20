@@ -26,6 +26,7 @@ add_requires("demangler v17.0.7")
 add_requires("preloader v1.6.3")
 add_requires("symbolprovider v1.1.0")
 add_requires("bdslibrary 1.21.0.03")
+add_requires("libhat 2024.4.16")
 
 if has_config("tests") then
     add_requires("gtest")
@@ -62,7 +63,7 @@ target("LeviLamina")
     add_headerfiles("src/(ll/api/**.h)", "src/(mc/**.h)")
     add_includedirs("src", "$(buildir)/config")
     set_pcxxheader("src/ll/api/Global.h")
-    add_packages("demangler", "mimalloc", "preloader", "cpp-httplib")
+    add_packages("demangler", "mimalloc", "preloader", "cpp-httplib", "libhat")
     add_packages(
         "entt",
         "expected-lite",
@@ -116,6 +117,7 @@ target("LeviLamina")
     add_shflags("/DELAYLOAD:bedrock_server.dll")
 
     if has_config("tests") then
+        add_defines("LL_DEBUG")
         add_packages("gtest")
         add_files("src/ll/test/**.cpp")
 
