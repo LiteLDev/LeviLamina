@@ -41,7 +41,7 @@ public:
         if (contains(node)) {
             auto& deps = data.at(node);
             if (deps.dependBy.size() == 0) {
-                for (auto& dependency : deps.dependOn) {
+                for (auto& dependency : std::unordered_set<T>{deps.dependOn}) {
                     eraseDependency(node, dependency);
                 }
                 data.erase(node);
