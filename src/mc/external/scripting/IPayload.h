@@ -25,14 +25,14 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ?runOn@IPayload@Scripting@@UEAA?AVResultAny@2@UContextId@2@AEAVNativeRuntime@2@V?$optional@W4Privilege@Scripting@@@std@@@Z
-    MCVAPI class Scripting::ResultAny
-    runOn(struct Scripting::ContextId, class Scripting::NativeRuntime&, std::optional<::Scripting::Privilege>);
-
-    // symbol:
     // ?runOn@IPayload@Scripting@@UEAA?AVResultAny@2@UContextId@2@AEAVStringBasedRuntime@2@V?$optional@W4Privilege@Scripting@@@std@@@Z
     MCVAPI class Scripting::ResultAny
     runOn(struct Scripting::ContextId, class Scripting::StringBasedRuntime&, std::optional<::Scripting::Privilege>);
+
+    // symbol:
+    // ?runOn@IPayload@Scripting@@UEAA?AVResultAny@2@UContextId@2@AEAVNativeRuntime@2@V?$optional@W4Privilege@Scripting@@@std@@@Z
+    MCVAPI class Scripting::ResultAny
+    runOn(struct Scripting::ContextId, class Scripting::NativeRuntime&, std::optional<::Scripting::Privilege>);
 
     // NOLINTEND
 };
