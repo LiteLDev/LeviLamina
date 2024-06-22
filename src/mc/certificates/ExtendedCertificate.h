@@ -24,6 +24,10 @@ public:
     MCAPI static std::string getIdentityName(class Certificate const&);
 
     // symbol:
+    // ?getTitleID@ExtendedCertificate@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCertificate@@@Z
+    MCAPI static std::string getTitleID(class Certificate const& cert);
+
+    // symbol:
     // ?getXuid@ExtendedCertificate@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCertificate@@_N@Z
     MCAPI static std::string getXuid(class Certificate const&, bool);
 
