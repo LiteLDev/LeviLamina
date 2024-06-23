@@ -67,13 +67,12 @@ toDumpString(std::string const& str, fmt::color defaultc, std::string const& def
             res = str;
         } else {
             try {
-                res = nlohmann::json{str}.dump(
+                res = nlohmann::json(std::move(str)).dump(
                     -1,
                     ' ',
                     (bool)(format & SnbtFormat::ForceAscii),
                     nlohmann::json::error_handler_t::strict
                 );
-                res = res.substr(1, res.size() - 2);
             } catch (...) {
                 base64 = true;
                 res    = "\"" + ll::base64_utils::encode(str) + "\"";
