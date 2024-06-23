@@ -2,9 +2,11 @@
 
 #include <functional>
 #include <memory>
+#include <span>
 #include <string>
 #include <type_traits>
 #include <vector>
+
 
 #include "ll/api/base/FixedString.h"
 #include "ll/api/base/Macro.h"
