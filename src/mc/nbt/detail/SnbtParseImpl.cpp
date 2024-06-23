@@ -426,6 +426,7 @@ Expected<R> parseNumArray(std::string_view& s, F&& f) {
         return forwardError(skipped.error());
     }
     if (s.front() == ']') {
+        s.remove_prefix(1);
         return R{};
     }
     T res;
