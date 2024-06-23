@@ -78,7 +78,7 @@ void scanSpaces(std::string_view& s) noexcept {
 
 Expected<> skipWhitespace(std::string_view& s) {
     scanSpaces(s);
-    while (s.front() == '/' || s.front() == '#' || s.front() == ';') {
+    while (s.starts_with('/') || s.starts_with('#') || s.starts_with(';')) {
         s.remove_prefix(1);
         if (auto res = scanComment(s); !res) {
             return res;
@@ -422,19 +422,12 @@ Expected<std::string> parseString(std::string_view& s) {
 }
 template <class R, class T, class H, class F>
 Expected<R> parseNumArray(std::string_view& s, F&& f) {
-    if (auto skipped = skipWhitespace(s); !skipped) {
-        return forwardError(skipped.error());
-    }
-    if (s.front() == ']') {
-        s.remove_prefix(1);
-        return R{};
-    }
     T res;
     while (!s.empty()) {
         if (auto skipped = skipWhitespace(s); !skipped) {
             return forwardError(skipped.error());
         }
-        if (s.front() == ']') {
+        if (s.starts_with(']')) {
             s.remove_prefix(1);
             return res;
         }
@@ -521,32 +514,19 @@ Expected<CompoundTagVariant> parseList(std::string_view& s) {
             return forwardError(array.error());
         }
     }
-    if (auto skipped = skipWhitespace(s); !skipped) {
-        return forwardError(skipped.error());
-    }
-    if (s.front() == ']') {
-        s.remove_prefix(1);
-        return ListTag{};
-    }
-    auto res = ListTag{};
-
-    bool settedType = false;
-
+    ListTag res{};
     while (!s.empty()) {
         if (auto skipped = skipWhitespace(s); !skipped) {
             return forwardError(skipped.error());
         }
-        if (s.front() == ']') {
+        if (s.starts_with(']')) {
             s.remove_prefix(1);
+            if (!res.mList.empty()) res.mType = res.mList.front()->getId();
             return res;
         }
         auto value = parseSnbtValueNonSkip(s);
         if (!value) {
             return forwardError(value.error());
-        }
-        if (!settedType) {
-            res.mType  = value->index();
-            settedType = true;
         }
         res.mList.emplace_back(value->toUnique());
 
@@ -556,6 +536,7 @@ Expected<CompoundTagVariant> parseList(std::string_view& s) {
         switch (s.front()) {
         case ']':
             s.remove_prefix(1);
+            res.mType = res.mList.front()->getId();
             return res;
         case ',': {
             s.remove_prefix(1);
@@ -572,7 +553,7 @@ Expected<CompoundTagVariant> parseCompound(std::string_view& s) {
     if (auto skipped = skipWhitespace(s); !skipped) {
         return forwardError(skipped.error());
     }
-    if (s.front() == '}') {
+    if (s.starts_with('}')) {
         s.remove_prefix(1);
         return CompoundTag{};
     }
@@ -581,7 +562,7 @@ Expected<CompoundTagVariant> parseCompound(std::string_view& s) {
         if (auto skipped = skipWhitespace(s); !skipped) {
             return forwardError(skipped.error());
         }
-        if (s.front() == '}') {
+        if (s.starts_with('}')) {
             s.remove_prefix(1);
             return res;
         }
