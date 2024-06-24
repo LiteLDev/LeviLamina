@@ -25,7 +25,7 @@ add_requires("pfr 2.1.1")
 add_requires("demangler v17.0.7")
 add_requires("preloader v1.6.3")
 add_requires("symbolprovider v1.1.0")
-add_requires("bdslibrary 1.21.0.03")
+add_requires("bdslibrary 1.21.1.03")
 add_requires("libhat 2024.4.16")
 
 if has_config("tests") then
