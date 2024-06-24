@@ -10,6 +10,7 @@ public:
     uint                  mRuntimeId;   // this+0xC
     uchar                 mUpdateFlags; // this+0x10
     ActorBlockSyncMessage mSyncMessage; // this+0x18
+
 public:
     // prevent constructor by default
     UpdateSubChunkNetworkBlockInfo& operator=(UpdateSubChunkNetworkBlockInfo const&);

@@ -13,8 +13,10 @@
 
 class UpdateSubChunkBlocksPacket : public ::Packet {
 public:
-    UpdateSubChunkBlocksChangedInfo mBlocksChanged;         // this+0x30
-    NetworkBlockPosition            mSubChunkBlockPosition; // this+0x60
+    using BlocksChangedInfo = UpdateSubChunkBlocksChangedInfo;
+
+    BlocksChangedInfo    mBlocksChanged;         // this+0x30
+    NetworkBlockPosition mSubChunkBlockPosition; // this+0x60
 
 public:
     // NOLINTBEGIN
