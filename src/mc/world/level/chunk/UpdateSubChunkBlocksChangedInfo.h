@@ -1,8 +1,13 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/UpdateSubChunkNetworkBlockInfo.h"
 
 struct UpdateSubChunkBlocksChangedInfo {
+public:
+    std::vector<UpdateSubChunkNetworkBlockInfo> mStandards; // this+0x0
+    std::vector<UpdateSubChunkNetworkBlockInfo> mExtras;    // this+0x18
+
 public:
     // prevent constructor by default
     UpdateSubChunkBlocksChangedInfo& operator=(UpdateSubChunkBlocksChangedInfo const&);

@@ -142,8 +142,7 @@ public:
     std::unique_ptr<ChunkLoadActionList>       mChunkLoadActionList;        // this+0x5B0
     std::unique_ptr<DelayActionList>           mDelayActionList;            // this+0x5B8
 
-    std::unordered_map<SubChunkPos, UpdateSubChunkBlocksPacket::BlocksChangedInfo>
-        mBlocksChangedBySubChunkMap; // this+0x5C8
+    std::unordered_map<SubChunkPos, UpdateSubChunkBlocksChangedInfo> mBlocksChangedBySubChunkMap; // this+0x5C8
 
     // Scripting::StrongObjectHandle
     uchar mClientScriptDimension[0x48]; // this+0x600
