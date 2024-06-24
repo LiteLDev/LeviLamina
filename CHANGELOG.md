@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.13.3] - 2024-06-24
+
+### Added
+
+- Adapted to BDS version 1.21.1 @Lovelylavender4
+
+### Fixed
+
+- Fixed missing include in memory.h @ShrBox
+- Fixed UpdateSubChunkBlocksPacket. @Lovelylavender4
+
+### Changed
+
+- Adjusted the position of UpdateSubChunkBlocksChangedInfo and UpdateSubChunkNetworkBlockInfo. @Lovelylavender4
+
 ## [0.13.2] - 2024-06-23
 
 ### Changed
@@ -569,7 +584,8 @@ For lip and tooth-hub test only.
 [#1520]: https://github.com/LiteLDev/LeviLamina/issues/1520
 [#1552]: https://github.com/LiteLDev/LeviLamina/issues/1552
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.2...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.3...HEAD
+[0.13.3]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.2...v0.13.3
 [0.13.2]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.1...v0.13.2
 [0.13.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.0...v0.13.1
 [0.13.0]: https://github.com/LiteLDev/LeviLamina/compare/v0.12.4...v0.13.0
