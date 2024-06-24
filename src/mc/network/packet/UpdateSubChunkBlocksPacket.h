@@ -2,9 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/network/NetworkBlockPosition.h"
-#include "mc/network/UpdateSubChunkNetworkBlockInfo.h"
+#include "mc/network/packet/UpdateSubChunkBlocksChangedInfo.h"
+#include "mc/network/packet/UpdateSubChunkNetworkBlockInfo.h"
 #include "mc/world/level/ActorBlockSyncMessage.h"
-#include "mc/world/level/chunk/UpdateSubChunkBlocksChangedInfo.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"

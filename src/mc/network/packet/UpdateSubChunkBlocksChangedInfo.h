@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/network/UpdateSubChunkNetworkBlockInfo.h"
+#include "mc/network/packet/UpdateSubChunkNetworkBlockInfo.h"
 
 struct UpdateSubChunkBlocksChangedInfo {
 public:
