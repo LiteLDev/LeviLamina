@@ -108,7 +108,7 @@ public:
         }
         return static_cast<T&&>(std::forward<U>(right));
     }
-
+#if _HAS_CXX23
     template <class Fn>
     constexpr auto and_then(Fn&& fn) & {
         using Ret = std::invoke_result_t<Fn, T&>;
@@ -223,6 +223,7 @@ public:
             return std::invoke(std::forward<Fn>(fn));
         }
     }
+#endif // _HAS_CXX23
 
     [[nodiscard]] constexpr T const&& value_or_default() const&& { return std::move(value()); }
     [[nodiscard]] constexpr T&&       value_or_default() && { return std::move(value()); }
