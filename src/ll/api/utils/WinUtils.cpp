@@ -118,7 +118,7 @@ std::optional<std::filesystem::path> getModulePath(void* handle, void* process) 
 
 std::string getModuleFileName(void* handle, void* process) {
     return getModulePath(handle, process)
-        .transform([](auto&& path) { return u8str2str(path.filename().u8string()); })
+        .transform([](auto&& path) { return u8str2str(path.stem().u8string()); })
         .value_or("unknown module");
 }
 
