@@ -42,7 +42,7 @@ void CrashLogger::initCrashLogger() {
 
     std::wstring cmd = string_utils::str2wstr(fmt::format(
         "{} {} \"{}\"",
-        globalConfig.modules.crashLogger.externalPath,
+        globalConfig.modules.crashLogger.externalpath,
         GetCurrentProcessId(),
         ll::getBdsVersion().to_string()
     ));
