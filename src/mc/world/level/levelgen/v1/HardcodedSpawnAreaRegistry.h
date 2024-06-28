@@ -1,11 +1,15 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/biome/MobSpawnerData.h"
 
 // auto generated inclusion list
 #include "mc/enums/HardcodedSpawnAreaType.h"
 
 class HardcodedSpawnAreaRegistry {
+public:
+    char filler[0x40]; // WorldGenerator::WorldGenerator line=12
+
 public:
     // prevent constructor by default
     HardcodedSpawnAreaRegistry& operator=(HardcodedSpawnAreaRegistry const&);

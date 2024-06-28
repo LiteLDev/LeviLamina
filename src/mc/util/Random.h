@@ -52,7 +52,7 @@ public:
     MCAPI Random();
 
     // symbol: ??0Random@@QEAA@I_N@Z
-    MCAPI Random(uint seed, bool);
+    MCAPI Random(uint seed, bool onlyUsedDeterministically);
 
     // symbol: ?nextFloat@Random@@QEAAMMM@Z
     MCAPI float nextFloat(float, float);
