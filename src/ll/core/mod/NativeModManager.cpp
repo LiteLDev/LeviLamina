@@ -133,11 +133,18 @@ Expected<> NativeModManager::load(Manifest manifest) {
         return makeStringError("The mod is not using the unified memory allocation operator, will not be loaded."_tr());
     }
     currentLoadingMod->setHandle(lib);
-    currentLoadingMod->onLoad(reinterpret_cast<Mod::callback_t*>(GetProcAddress(lib, "ll_mod_load")));
-    currentLoadingMod->onUnload(reinterpret_cast<Mod::callback_t*>(GetProcAddress(lib, "ll_mod_unload")));
-    currentLoadingMod->onEnable(reinterpret_cast<Mod::callback_t*>(GetProcAddress(lib, "ll_mod_enable")));
-    currentLoadingMod->onDisable(reinterpret_cast<Mod::callback_t*>(GetProcAddress(lib, "ll_mod_disable")));
-
+    // TODO: remove in future
+    if (auto addr = GetProcAddress(lib, "ll_plugin_load"); addr) {
+        currentLoadingMod->onLoad(reinterpret_cast<Mod::callback_t*>(addr));
+        currentLoadingMod->onUnload(reinterpret_cast<Mod::callback_t*>(GetProcAddress(lib, "ll_plugin_unload")));
+        currentLoadingMod->onEnable(reinterpret_cast<Mod::callback_t*>(GetProcAddress(lib, "ll_plugin_enable")));
+        currentLoadingMod->onDisable(reinterpret_cast<Mod::callback_t*>(GetProcAddress(lib, "ll_plugin_disable")));
+    } else {
+        currentLoadingMod->onLoad(reinterpret_cast<Mod::callback_t*>(GetProcAddress(lib, "ll_mod_load")));
+        currentLoadingMod->onUnload(reinterpret_cast<Mod::callback_t*>(GetProcAddress(lib, "ll_mod_unload")));
+        currentLoadingMod->onEnable(reinterpret_cast<Mod::callback_t*>(GetProcAddress(lib, "ll_mod_enable")));
+        currentLoadingMod->onDisable(reinterpret_cast<Mod::callback_t*>(GetProcAddress(lib, "ll_mod_disable")));
+    }
     return currentLoadingMod->onLoad().transform([&, this] {
         addMod(currentLoadingMod->getManifest().name, currentLoadingMod);
         handleMap[lib] = currentLoadingMod;
