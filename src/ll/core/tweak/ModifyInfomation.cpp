@@ -97,24 +97,21 @@ LL_STATIC_HOOK(
         serverLogger.fatal("!!! Unable to format log output message !!!");
         return;
     }
-
-    std::istringstream iss(buffer);
-    std::string        line;
+    if (buffer.ends_with('\n')) {
+        buffer.pop_back();
+        if (buffer.ends_with('\r')) {
+            buffer.pop_back();
+        }
+    }
+    std::istringstream iss(std::move(buffer));
 
     bool knownPriority = loggerMap.contains(priority);
 
     auto& slogger = knownPriority ? loggerMap.at(priority) : serverLogger.warn;
 
+    std::string line;
     while (std::getline(iss, line)) {
-        if (line.ends_with('\n')) {
-            line.pop_back();
-            if (line.ends_with('\r')) {
-                line.pop_back();
-            }
-        }
-
         if (!serverStarted) tryModifyServerStartInfo(line);
-
         if (!knownPriority) {
             line = fmt::format("<LVL|{}> {}", priority, line);
         }

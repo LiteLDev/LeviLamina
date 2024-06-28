@@ -241,10 +241,9 @@ void ModRegistrar::loadAllMods() {
     }
     size_t loadedCount = sort.sorted.size() - loadErrored.size();
 
-    for (auto& errored : loadErrored) {
-        impl->deps.erase(errored);
+    for (auto& errored : std::ranges::reverse_view(sort.sorted)) {
+        if (loadErrored.contains(errored)) impl->deps.erase(errored);
     }
-
     static ll::memory::HookRegistrar<EnableAllMods, DisableAllMods> reg;
 
     logger.info("{0} mod(s) loaded"_tr(loadedCount));
@@ -272,6 +271,7 @@ LL_TYPE_INSTANCE_HOOK(
     }
     if (!names.empty()) {
         logger.info("Enabling mods..."_tr());
+
         auto   begin = std::chrono::steady_clock::now();
         size_t count{};
         for (auto& name : names) {
