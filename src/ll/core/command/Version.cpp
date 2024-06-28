@@ -21,7 +21,7 @@ void registerVersionCommand() {
     auto& cmd = CommandRegistrar::getInstance()
                     .getOrCreateCommand("version", "Query serverversion information"_tr(), config.permission);
     cmd.overload().execute([&](CommandOrigin const&, CommandOutput& output) {
-        output.success("This server is running Bedrock Dedicated Server version {0} with §bLeviLamina-{1}§r."_tr(
+        output.success("This server is running game version {0} with §bLeviLamina-{1}§r."_tr(
             ll::getBdsVersion(),
             ll::getLoaderVersion()
         ));

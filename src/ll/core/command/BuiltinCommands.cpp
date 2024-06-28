@@ -18,7 +18,7 @@ LL_TYPE_INSTANCE_HOOK(
     registerVersionCommand();
     registerMemstatsCommand();
     registerCrashCommand();
-    registerPluginManageCommand();
+    registerModManageCommand();
 }
 LL_STATIC_HOOK(
     registerTpdimCommands,

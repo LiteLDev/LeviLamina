@@ -5,7 +5,7 @@
 #include "ll/api/event/EventBus.h"
 #include "ll/api/event/MultiListener.h"
 #include "ll/api/event/server/ServiceEvents.h"
-#include "ll/api/plugin/NativePlugin.h"
+#include "ll/api/mod/NativeMod.h"
 #include "ll/api/service/Service.h"
 #include "ll/api/service/ServiceId.h"
 
@@ -31,7 +31,7 @@ struct GetServiceError : ErrorInfoBase {
 struct QueryServiceResult {
     std::string              name;
     size_t                   version;
-    std::string              pluginName;
+    std::string              modName;
     std::shared_ptr<Service> service;
 };
 
@@ -76,13 +76,13 @@ public:
     LLNDAPI std::optional<QueryServiceResult> queryService(std::string_view name);
 
     LLAPI bool registerService(
-        std::shared_ptr<Service> const&        service,
-        std::shared_ptr<plugin::Plugin> const& plugin = plugin::NativePlugin::current()
+        std::shared_ptr<Service> const&  service,
+        std::shared_ptr<mod::Mod> const& mod = mod::NativeMod::current()
     );
 
     LLAPI bool unregisterService(ServiceId const& id);
 
-    LLAPI void unregisterService(plugin::Plugin const& plugin);
+    LLAPI void unregisterService(mod::Mod const& mod);
 
     ServiceManager(ServiceManager const&)            = delete;
     ServiceManager(ServiceManager&&)                 = delete;

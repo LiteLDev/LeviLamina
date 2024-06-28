@@ -8,7 +8,7 @@
 #include "ll/api/data/Version.h"
 #include "ll/api/utils/HashUtils.h"
 
-namespace ll::plugin {
+namespace ll::mod {
 struct Dependency {
     std::string                  name;
     std::optional<data::Version> version;
@@ -17,18 +17,18 @@ struct Dependency {
         return name == other.name && version == other.version;
     }
 };
-} // namespace ll::plugin
+} // namespace ll::mod
 namespace std {
 template <>
-struct hash<ll::plugin::Dependency> {
-    size_t operator()(ll::plugin::Dependency const& d) const noexcept {
+struct hash<ll::mod::Dependency> {
+    size_t operator()(ll::mod::Dependency const& d) const noexcept {
         size_t hash = std::hash<std::string>{}(d.name);
         ll::hash_utils::hashCombine(std::hash<std::optional<ll::data::Version>>{}(d.version), hash);
         return hash;
     }
 };
 } // namespace std
-namespace ll::plugin {
+namespace ll::mod {
 struct Manifest {
     std::string                                                 entry;
     std::string                                                 name;
@@ -43,4 +43,4 @@ struct Manifest {
     std::optional<std::unordered_set<Dependency>>               loadBefore{};
     std::optional<std::unordered_map<std::string, std::string>> extraInfo{};
 };
-} // namespace ll::plugin
+} // namespace ll::mod

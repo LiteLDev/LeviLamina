@@ -3,10 +3,10 @@
 #include <concepts>
 #include <memory>
 
-#include "ll/api/plugin/NativePlugin.h" // IWYU pragma: keep
-#include "ll/api/plugin/Plugin.h"
+#include "ll/api/mod/Mod.h"
+#include "ll/api/mod/NativeMod.h" // IWYU pragma: keep
 
-namespace ll::plugin {
+namespace ll::mod {
 
 template <typename T>
 concept Loadable = requires(T t) {
@@ -30,31 +30,31 @@ concept Disableable = requires(T t) {
 
 #define LL_REGISTER_PLUGIN(CLAZZ, BINDER)                                                                              \
     extern "C" {                                                                                                       \
-    _declspec(dllexport) bool ll_plugin_load(ll::plugin::NativePlugin& self) {                                         \
-        static_assert(ll::plugin::Loadable<CLAZZ>, #CLAZZ " must be Loadable");                                        \
+    _declspec(dllexport) bool ll_mod_load(ll::mod::NativeMod& self) {                                                  \
+        static_assert(ll::mod::Loadable<CLAZZ>, #CLAZZ " must be Loadable");                                           \
         static_assert(                                                                                                 \
-            std::constructible_from<CLAZZ, ll::plugin::NativePlugin&>,                                                 \
-            #CLAZZ " must be constructible from NativePlugin&"                                                         \
+            std::constructible_from<CLAZZ, ll::mod::NativeMod&>,                                                       \
+            #CLAZZ " must be constructible from NativeMod&"                                                            \
         );                                                                                                             \
         (BINDER) = std::make_unique<CLAZZ>(self);                                                                      \
-        ll::plugin::bindToPlugin((BINDER), self);                                                                      \
+        ll::mod::bindToMod((BINDER), self);                                                                            \
         return (BINDER)->load();                                                                                       \
     }                                                                                                                  \
     }
 
-template <ll::plugin::Loadable T>
-inline void bindToPlugin(std::unique_ptr<T>& myPlugin, ll::plugin::Plugin& self) {
-    if constexpr (ll::plugin::Enableable<T>) {
-        self.onEnable([&myPlugin](auto&) { return myPlugin->enable(); });
+template <ll::mod::Loadable T>
+inline void bindToMod(std::unique_ptr<T>& myMod, ll::mod::Mod& self) {
+    if constexpr (ll::mod::Enableable<T>) {
+        self.onEnable([&myMod](auto&) { return myMod->enable(); });
     }
-    if constexpr (ll::plugin::Disableable<T>) {
-        self.onDisable([&myPlugin](auto&) { return myPlugin->disable(); });
+    if constexpr (ll::mod::Disableable<T>) {
+        self.onDisable([&myMod](auto&) { return myMod->disable(); });
     }
-    if constexpr (ll::plugin::Unloadable<T>) {
-        self.onUnload([&myPlugin](auto& self) {
-            bool result = myPlugin->unload();
+    if constexpr (ll::mod::Unloadable<T>) {
+        self.onUnload([&myMod](auto& self) {
+            bool result = myMod->unload();
             if (result) {
-                myPlugin.reset();
+                myMod.reset();
                 self.onEnable({});
                 self.onDisable({});
                 self.onUnload({});
@@ -64,4 +64,4 @@ inline void bindToPlugin(std::unique_ptr<T>& myPlugin, ll::plugin::Plugin& self)
     }
 }
 
-} // namespace ll::plugin
+} // namespace ll::mod

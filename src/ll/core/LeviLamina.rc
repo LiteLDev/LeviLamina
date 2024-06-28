@@ -17,12 +17,12 @@ BEGIN
         BLOCK "080404b0"
         BEGIN
             VALUE "CompanyName", "LiteLDev"
-            VALUE "FileDescription", "A light-weight plugin loader for Bedrock Dedicated Server"
+            VALUE "FileDescription", "A light-weight mod loader for Minecraft Bedrock Edition"
             VALUE "FileVersion", LL_FILE_VERSION_STRING
             VALUE "InternalName", "LeviLamina.dll"
             VALUE "LegalCopyright", "Copyright (c) 2021-present LiteLDev. Distributed under LGPL-3.0."
             VALUE "OriginalFilename", "LeviLamina.dll"
-            VALUE "ProductName", "LeviLamina for BDS"
+            VALUE "ProductName", "LeviLamina for Minecraft"
             VALUE "ProductVersion", LL_FILE_VERSION_STRING
         END
     END

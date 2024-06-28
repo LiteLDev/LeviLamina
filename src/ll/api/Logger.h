@@ -5,7 +5,7 @@
  *
  * Create Logger
  * @code
- * Logger logger("MyPlugin"); // Create a logger (default: only log to console)
+ * Logger logger("MyMod"); // Create a logger (default: only log to console)
  * @endcode
  * Use Logger
  * @code

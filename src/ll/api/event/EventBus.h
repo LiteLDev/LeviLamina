@@ -15,41 +15,41 @@
 #include "ll/api/event/Listener.h"
 #include "ll/api/event/ListenerBase.h"
 
-namespace ll::plugin {
-class Plugin;
+namespace ll::mod {
+class Mod;
 }
 namespace ll::event {
 class EmitterBase;
 
 class EventBus {
-    friend plugin::Plugin;
+    friend mod::Mod;
     class EventBusImpl;
     std::unique_ptr<EventBusImpl> impl;
     EventBus();
 
-    size_t removePluginListeners(std::string_view pluginName);
+    size_t removeModListeners(std::string_view modName);
 
-    size_t removePluginEventEmitters(std::string_view pluginName);
+    size_t removeModEventEmitters(std::string_view modName);
 
 public:
     LLNDAPI static EventBus& getInstance();
 
     LLAPI void publish(Event&, EventId);
 
-    LLAPI void publish(std::string_view pluginName, Event&, EventId);
+    LLAPI void publish(std::string_view modName, Event&, EventId);
 
     LLAPI void setEventEmitter(
         std::function<std::unique_ptr<EmitterBase>(ListenerBase&)> fn,
         EventId                                                    eventId,
-        std::weak_ptr<plugin::Plugin>                              plugin = plugin::NativePlugin::current()
+        std::weak_ptr<mod::Mod>                                    mod = mod::NativeMod::current()
     );
 
     template <std::derived_from<Event> T>
     void setEventEmitter(
         std::function<std::unique_ptr<EmitterBase>(ListenerBase&)> fn,
-        std::weak_ptr<plugin::Plugin>                              plugin = plugin::NativePlugin::current()
+        std::weak_ptr<mod::Mod>                                    mod = mod::NativeMod::current()
     ) {
-        setEventEmitter(std::move(fn), getEventId<T>, plugin);
+        setEventEmitter(std::move(fn), getEventId<T>, mod);
     }
 
     template <class T>
@@ -61,9 +61,9 @@ public:
 
     template <class T>
         requires(std::derived_from<std::remove_cvref_t<T>, Event>)
-    void publish(std::string_view pluginName, T&& event) {
+    void publish(std::string_view modName, T&& event) {
         static_assert(std::is_final_v<std::remove_cvref_t<T>>, "Only final classes can publish");
-        publish(pluginName, event, getEventId<T>);
+        publish(modName, event, getEventId<T>);
     }
 
     LLNDAPI size_t getListenerCount(EventId);

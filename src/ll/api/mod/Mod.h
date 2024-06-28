@@ -7,32 +7,32 @@
 #include "ll/api/Expected.h"
 #include "ll/api/Logger.h"
 #include "ll/api/base/Macro.h"
-#include "ll/api/plugin/Manifest.h"
+#include "ll/api/mod/Manifest.h"
 
-namespace ll::plugin {
+namespace ll::mod {
 
-LLAPI std::filesystem::path const& getPluginsRoot();
+LLAPI std::filesystem::path const& getModsRoot();
 
-class PluginManager;
-class Plugin {
+class ModManager;
+class Mod {
 
 public:
     enum class State {
         Enabled,
         Disabled,
     };
-    using callback_t = bool(Plugin&);
+    using callback_t = bool(Mod&);
     using CallbackFn = std::function<callback_t>;
 
-    LLNDAPI explicit Plugin(Manifest manifest);
+    LLNDAPI explicit Mod(Manifest manifest);
 
-    LLAPI ~Plugin();
+    LLAPI ~Mod();
 
     LLNDAPI State getState() const;
 
     LLNDAPI Manifest const& getManifest() const;
 
-    LLNDAPI std::filesystem::path const& getPluginDir() const;
+    LLNDAPI std::filesystem::path const& getModDir() const;
 
     LLNDAPI std::filesystem::path const& getDataDir() const;
 
@@ -77,9 +77,9 @@ protected:
     LLAPI Expected<> onDisable() noexcept;
 
 private:
-    friend PluginManager;
+    friend ModManager;
 
     struct Impl;
     std::unique_ptr<Impl> mImpl;
 };
-} // namespace ll::plugin
+} // namespace ll::mod

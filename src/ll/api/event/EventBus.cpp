@@ -37,21 +37,21 @@ public:
                         "Error in Listener<{}>[{}] of {}:",
                         event.getId().name,
                         l->getId(),
-                        l->pluginPtr.expired() ? "unknown plugin" : l->pluginPtr.lock()->getManifest().name
+                        l->modPtr.expired() ? "unknown mod" : l->modPtr.lock()->getManifest().name
                     );
                 } catch (...) {}
                 error_utils::printCurrentException(logger);
             }
         }
     }
-    void publish(std::string_view pluginName, Event& event) {
+    void publish(std::string_view modName, Event& event) {
         std::lock_guard lock(mutex);
         for (auto& l : listeners) {
-            if (l->pluginPtr.expired()) {
+            if (l->modPtr.expired()) {
                 continue;
             }
-            auto ptr = l->pluginPtr.lock();
-            if (!ptr || ptr->getManifest().name != pluginName) {
+            auto ptr = l->modPtr.lock();
+            if (!ptr || ptr->getManifest().name != modName) {
                 continue;
             }
             try {
@@ -59,7 +59,7 @@ public:
             } catch (...) {
                 auto llock = ll::Logger::lock();
                 try {
-                    logger.error("Error in Listener<{}>[{}] of {}:", event.getId().name, l->getId(), pluginName);
+                    logger.error("Error in Listener<{}>[{}] of {}:", event.getId().name, l->getId(), modName);
                 } catch (...) {}
                 error_utils::printCurrentException(logger);
             }
@@ -81,7 +81,7 @@ class EventBus::EventBusImpl {
 public:
     struct Factory {
         std::function<std::unique_ptr<EmitterBase>(ListenerBase&)> func;
-        std::weak_ptr<ll::plugin::Plugin>                          plugin;
+        std::weak_ptr<ll::mod::Mod>                                mod;
     };
 
     std::unordered_map<EventId, Factory> emitterFactory;
@@ -91,9 +91,9 @@ public:
     std::recursive_mutex mutex;
 
     struct ListenerInfo {
-        std::weak_ptr<ll::plugin::Plugin> plugin;
-        std::weak_ptr<ListenerBase>       listener;
-        std::unordered_set<EventId>       watches;
+        std::weak_ptr<ll::mod::Mod> mod;
+        std::weak_ptr<ListenerBase> listener;
+        std::unordered_set<EventId> watches;
     };
 
     std::unordered_map<ListenerId, ListenerInfo> listeners;
@@ -135,11 +135,11 @@ EventBus& EventBus::getInstance() {
 void EventBus::setEventEmitter(
     std::function<std::unique_ptr<EmitterBase>(ListenerBase&)> fn,
     EventId                                                    eventId,
-    std::weak_ptr<plugin::Plugin>                              plugin
+    std::weak_ptr<mod::Mod>                                    mod
 ) {
     std::lock_guard lock(impl->mutex);
 
-    impl->emitterFactory.try_emplace(eventId, std::move(fn), std::move(plugin));
+    impl->emitterFactory.try_emplace(eventId, std::move(fn), std::move(mod));
 }
 void EventBus::publish(Event& event, EventId eventId) {
     optional_ref<CallbackStream> callback = nullptr;
@@ -153,7 +153,7 @@ void EventBus::publish(Event& event, EventId eventId) {
     }
     callback->publish(event);
 }
-void EventBus::publish(std::string_view pluginName, Event& event, EventId eventId) {
+void EventBus::publish(std::string_view modName, Event& event, EventId eventId) {
     optional_ref<CallbackStream> callback = nullptr;
     {
         std::lock_guard lock(impl->mutex);
@@ -163,7 +163,7 @@ void EventBus::publish(std::string_view pluginName, Event& event, EventId eventI
             return;
         }
     }
-    callback->publish(pluginName, event);
+    callback->publish(modName, event);
 }
 size_t EventBus::getListenerCount(EventId eventId) {
     if (auto i = impl->streams.find(eventId); i != impl->streams.end()) {
@@ -178,7 +178,7 @@ bool EventBus::addListener(ListenerPtr const& listener, EventId eventId) {
     std::lock_guard lock(impl->mutex);
     if (impl->addListener(listener, eventId)) {
         auto& info    = impl->listeners[listener->getId()];
-        info.plugin   = listener->pluginPtr;
+        info.mod      = listener->modPtr;
         info.listener = listener;
         info.watches.emplace(eventId);
         return true;
@@ -227,16 +227,16 @@ bool EventBus::hasListener(ListenerId id, EventId eventId) const {
         return impl->listeners[id].watches.contains(eventId);
     }
 }
-size_t EventBus::removePluginListeners(std::string_view pluginName) {
+size_t EventBus::removeModListeners(std::string_view modName) {
     std::lock_guard lock(impl->mutex);
     size_t          count{};
     for (auto& [id, listener] : impl->listeners) {
-        if (listener.plugin.expired()) {
+        if (listener.mod.expired()) {
             count += removeListener(id);
             continue;
         }
-        if (auto plugin = listener.plugin.lock()) {
-            if (plugin->getManifest().name != pluginName) {
+        if (auto mod = listener.mod.lock()) {
+            if (mod->getManifest().name != modName) {
                 continue;
             }
         }
@@ -244,15 +244,15 @@ size_t EventBus::removePluginListeners(std::string_view pluginName) {
     }
     return count;
 }
-size_t EventBus::removePluginEventEmitters(std::string_view pluginName) {
+size_t EventBus::removeModEventEmitters(std::string_view modName) {
     std::lock_guard lock(impl->mutex);
     size_t          count{};
     for (auto& [id, factory] : impl->emitterFactory) {
-        if (factory.plugin.expired()) {
+        if (factory.mod.expired()) {
             count += impl->emitterFactory.erase(id);
         }
-        if (auto plugin = factory.plugin.lock()) {
-            if (plugin->getManifest().name != pluginName) {
+        if (auto mod = factory.mod.lock()) {
+            if (mod->getManifest().name != modName) {
                 continue;
             }
         }

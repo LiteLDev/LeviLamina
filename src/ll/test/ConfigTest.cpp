@@ -114,7 +114,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &Se
 
     auto helloReflection = TestClass<int>{};
 
-    // ll::config::saveConfig(helloReflection, "plugins/Test/config/testconfig.json");
+    // ll::config::saveConfig(helloReflection, "mods/Test/config/testconfig.json");
 
     auto list = ll::string_utils::splitByPattern("structure.trs", ".");
 

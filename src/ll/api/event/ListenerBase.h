@@ -4,7 +4,7 @@
 
 #include "ll/api/base/StdInt.h"
 #include "ll/api/event/EventId.h"
-#include "ll/api/plugin/NativePlugin.h"
+#include "ll/api/mod/NativeMod.h"
 
 namespace ll::event {
 class EventBus;
@@ -28,13 +28,10 @@ class ListenerBase {
     EventPriority priority;
 
 protected:
-    LLAPI explicit ListenerBase(
-        EventPriority                 priority,
-        std::weak_ptr<plugin::Plugin> plugin = plugin::NativePlugin::current()
-    );
+    LLAPI explicit ListenerBase(EventPriority priority, std::weak_ptr<mod::Mod> mod = mod::NativeMod::current());
 
 public:
-    std::weak_ptr<plugin::Plugin> pluginPtr;
+    std::weak_ptr<mod::Mod> modPtr;
 
     ListenerBase(ListenerBase&&)                 = delete;
     ListenerBase(ListenerBase const&)            = delete;

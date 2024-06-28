@@ -12,15 +12,15 @@
   "dependencies": {
     "github.com/LiteLDev/bds": ">=1.21.0 <1.21.10",
     "github.com/LiteLDev/CrashLogger": "1.1.x",
-    "github.com/LiteLDev/levilamina-loc": "1.2.x",
+    "github.com/LiteLDev/levilamina-loc": "1.3.x",
     "github.com/LiteLDev/PeEditor": "3.7.x",
-    "github.com/LiteLDev/PreLoader": "1.7.x"
+    "github.com/LiteLDev/PreLoader": "1.8.x"
   },
   "files": {
     "place": [
       {
         "src": "LeviLamina/*",
-        "dest": "plugins/LeviLamina/"
+        "dest": "mods/LeviLamina/"
       }
     ],
     "remove": [

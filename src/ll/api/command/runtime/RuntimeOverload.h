@@ -15,7 +15,7 @@ class RuntimeOverload : private OverloadData {
     struct Impl;
     std::unique_ptr<Impl> impl;
 
-    RuntimeOverload(CommandHandle&, std::weak_ptr<plugin::Plugin> plugin);
+    RuntimeOverload(CommandHandle&, std::weak_ptr<mod::Mod> mod);
 
     void addParam(std::string_view name, ParamKindType kind, CommandParameterDataType type);
 

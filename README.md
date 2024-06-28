@@ -30,11 +30,11 @@ If you have any questions or comments about this notice, please contact `litelde
 ![English](https://img.shields.io/badge/English-inactive?style=for-the-badge)
 [![中文](https://img.shields.io/badge/简体中文-informational?style=for-the-badge)](README.zh.md)
 
-A lightweight, modular and versatile plugin loader for Minecraft Bedrock Server BDS, formerly known as LiteLoaderBDS
+A lightweight, modular and versatile plugin loader for Minecraft Bedrock Edition, formerly known as LiteLoaderBDS
 
-LeviLamina is an unofficial plugin loader designed to offer indispensable API support for Minecraft Bedrock Dedicated Server. It boasts a comprehensive API, an array of utility interfaces, a robust event system, and comprehensive support for basic interfaces. LeviLamina provides an expansive API, a powerful event system, and a wealth of encapsulated development infrastructure interfaces, forming a solid foundation for augmenting the Bedrock Edition BDS with additional gameplay features and functionalities. By leveraging plugins, the process of extending BDS functionality becomes effortless, with a user-friendly development process and an adaptable approach.
+LeviLamina is an unofficial plugin loader designed to offer indispensable API support for Minecraft Bedrock Edition. It boasts a comprehensive API, an array of utility interfaces, a robust event system, and comprehensive support for basic interfaces. LeviLamina provides an expansive API, a powerful event system, and a wealth of encapsulated development infrastructure interfaces, forming a solid foundation for augmenting the Minecraft Bedrock Edition with additional gameplay features and functionalities. By leveraging plugins, the process of extending Bedrock functionality becomes effortless, with a user-friendly development process and an adaptable approach.
 
-Developers can effortlessly author plugins in languages such as C++, JavaScript, Lua, Python, C#, and others. This seamless integration empowers them to effortlessly expand and personalize BDS functionality, facilitating an intuitive learning experience and unparalleled flexibility.
+Developers can effortlessly author plugins in languages such as C++, JavaScript, Lua, Python, C#, and others. This seamless integration empowers them to effortlessly expand and personalize Bedrock functionality, facilitating an intuitive learning experience and unparalleled flexibility.
 
 For more information, please refer to [the documentation](https://levilamina.liteldev.com).
 
@@ -43,7 +43,7 @@ For more information, please refer to [the documentation](https://levilamina.lit
 !!! warning
     Before installing and using LeviLamina, please be sure to read and understand the following disclaimer.
 
-LeviLamina (hereinafter referred to as "this software") is developed and provided by LiteLDev (hereinafter referred to as "the developer"). This software is designed to enable users to extend the functionality of Minecraft Bedrock Server BDS (hereinafter referred to as "BDS") by loading plugins. This software is not affiliated with Mojang Studios (hereinafter referred to as "Mojang") or Microsoft Corporation (hereinafter referred to as "Microsoft"). The developer is not responsible for any content, quality, functionality, security or legality of any plugins loaded by this software. Users should use this software at their own discretion and assume all related risks.
+LeviLamina (hereinafter referred to as "this software") is developed and provided by LiteLDev (hereinafter referred to as "the developer"). This software is designed to enable users to extend the functionality of Minecraft Bedrock Edition (hereinafter referred to as "MCBE") by loading plugins. This software is not affiliated with Mojang Studios (hereinafter referred to as "Mojang") or Microsoft Corporation (hereinafter referred to as "Microsoft"). The developer is not responsible for any content, quality, functionality, security or legality of any plugins loaded by this software. Users should use this software at their own discretion and assume all related risks.
 
 The developer does not guarantee the stability, reliability, accuracy or completeness of this software. The developer is not liable for any defects, errors, viruses or other harmful components that may exist in this software. The developer is not liable for any direct or indirect damages (including but not limited to data loss, device damage, profit loss etc.) caused by the use of this software.
 

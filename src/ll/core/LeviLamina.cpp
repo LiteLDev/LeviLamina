@@ -15,7 +15,7 @@
 #include "ll/api/Logger.h"
 #include "ll/api/i18n/I18n.h"
 #include "ll/api/memory/Hook.h"
-#include "ll/api/plugin/Plugin.h"
+#include "ll/api/mod/Mod.h"
 #include "ll/api/service/Bedrock.h"
 #include "ll/api/service/PlayerInfo.h"
 #include "ll/api/service/ServerInfo.h"
@@ -30,7 +30,7 @@
 #include "ll/core/CrashLogger.h"
 #include "ll/core/Version.h"
 #include "ll/core/command/BuiltinCommands.h"
-#include "ll/core/plugin/PluginRegistrar.h"
+#include "ll/core/mod/ModRegistrar.h"
 
 #include <windows.h>
 
@@ -126,7 +126,7 @@ void printWelcomeMsg() {
     logger.info(R"(        | |__|  __/\ V /| | |__| (_| | | | | | | | | | | (_| |        )");
     logger.info(R"(        |_____\___| \_/ |_|_____\__,_|_| |_| |_|_|_| |_|\__,_|        )");
     logger.info(R"(                                                                      )");
-    logger.info(R"(        --------   Light-Weight BDS Plugin Loader   ----------        )");
+    logger.info(R"(        -----------   Light-Weight Mod Loader   --------------        )");
     logger.info(R"(                                                                      )");
     logger.info(R"(                                                                      )");
 
@@ -187,7 +187,7 @@ void leviLaminaMain() {
     // Init LL Logger
     Logger::setDefaultFile(u8"logs/LeviLamina-latest.log", false);
 
-    ::ll::i18n::load(plugin::getPluginsRoot() / u8"LeviLamina/lang");
+    ::ll::i18n::load(mod::getModsRoot() / u8"LeviLamina/lang");
 
     loadLeviConfig();
 
@@ -225,7 +225,7 @@ void leviLaminaMain() {
 
     command::registerCommands();
 
-    plugin::PluginRegistrar::getInstance().loadAllPlugins();
+    mod::ModRegistrar::getInstance().loadAllMods();
 }
 
 LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::High, "main", int, int argc, char* argv[]) {

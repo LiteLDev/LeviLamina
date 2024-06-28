@@ -82,8 +82,7 @@ class Overload : private OverloadData {
         return *this;
     }
 
-    explicit Overload(CommandHandle& handle, std::weak_ptr<plugin::Plugin> plugin)
-    : OverloadData(handle, std::move(plugin)) {}
+    explicit Overload(CommandHandle& handle, std::weak_ptr<mod::Mod> mod) : OverloadData(handle, std::move(mod)) {}
 
 public:
     [[nodiscard]] constexpr Overload& optional(std::string_view name) {

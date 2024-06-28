@@ -7,7 +7,7 @@
 #include "ll/api/i18n/I18n.h"
 #include "ll/api/io/FileUtils.h"
 #include "ll/api/memory/Hook.h"
-#include "ll/api/plugin/PluginManagerRegistry.h"
+#include "ll/api/mod/ModManagerRegistry.h"
 #include "ll/api/schedule/Scheduler.h"
 #include "ll/api/schedule/Task.h"
 #include "ll/api/service/Bedrock.h"
@@ -91,14 +91,14 @@ static nlohmann::json addSingleLineChart(std::string_view key, const int value) 
 }
 
 static nlohmann::json getCustomCharts() {
-    nlohmann::json pluginsJson;
-    pluginsJson.emplace_back(addSimplePie("levilamina_version", ll::getLoaderVersion().to_string()));
-    pluginsJson.emplace_back(addSimplePie("minecraft_version", Common::getBuildInfo().mBuildId));
-    pluginsJson.emplace_back(addSingleLineChart(
+    nlohmann::json modsJson;
+    modsJson.emplace_back(addSimplePie("levilamina_version", ll::getLoaderVersion().to_string()));
+    modsJson.emplace_back(addSimplePie("minecraft_version", Common::getBuildInfo().mBuildId));
+    modsJson.emplace_back(addSingleLineChart(
         "players",
         ll::service::getLevel().transform([](auto& level) { return level.getActivePlayerCount(); }).value_or(0)
     ));
-    pluginsJson.emplace_back(addSimplePie(
+    modsJson.emplace_back(addSimplePie(
         "online_mode",
         ll::service::getPropertiesSettings().value().useOnlineAuthentication() ? "true" : "false"
     ));
@@ -115,9 +115,9 @@ static nlohmann::json getCustomCharts() {
         });
         return true;
     });
-    pluginsJson.emplace_back(addAdvancedPie("player_platform", std::move(platforms)));
+    modsJson.emplace_back(addAdvancedPie("player_platform", std::move(platforms)));
 
-    return pluginsJson;
+    return modsJson;
 }
 
 struct Statistics::Impl {
@@ -156,20 +156,20 @@ struct Statistics::Impl {
         using namespace ll::chrono_literals;
         namespace fs = std::filesystem;
 
-        if (!fs::exists(plugin::getPluginsRoot() / u8"LeviLamina/data")) {
-            fs::create_directory(plugin::getPluginsRoot() / u8"LeviLamina/data");
+        if (!fs::exists(mod::getModsRoot() / u8"LeviLamina/data")) {
+            fs::create_directory(mod::getModsRoot() / u8"LeviLamina/data");
         }
-        if (!fs::exists(plugin::getPluginsRoot() / u8"LeviLamina/data/statisticsUuid")) {
+        if (!fs::exists(mod::getModsRoot() / u8"LeviLamina/data/statisticsUuid")) {
             std::string uuid   = mce::UUID::random().asString();
             json["serverUUID"] = uuid;
-            ll::file_utils::writeFile(plugin::getPluginsRoot() / u8"LeviLamina/data/statisticsUuid", uuid);
+            ll::file_utils::writeFile(mod::getModsRoot() / u8"LeviLamina/data/statisticsUuid", uuid);
         } else {
-            auto uuidFile = ll::file_utils::readFile(plugin::getPluginsRoot() / u8"LeviLamina/data/statisticsUuid");
+            auto uuidFile = ll::file_utils::readFile(mod::getModsRoot() / u8"LeviLamina/data/statisticsUuid");
             if (uuidFile.has_value()) {
                 json["serverUUID"] = uuidFile.value();
             } else {
                 std::string uuid = mce::UUID::random().asString();
-                ll::file_utils::writeFile(plugin::getPluginsRoot() / u8"LeviLamina/data/statisticsUuid", uuid);
+                ll::file_utils::writeFile(mod::getModsRoot() / u8"LeviLamina/data/statisticsUuid", uuid);
             }
         }
         json["osName"]    = ll::win_utils::isWine() ? "Linux" : "Windows";

@@ -13,15 +13,15 @@
 #include "ll/api/base/StdInt.h"
 #include "ll/api/command/EnumName.h"
 #include "ll/api/command/SoftEnum.h"
-#include "ll/api/plugin/NativePlugin.h"
+#include "ll/api/mod/NativeMod.h"
 
 #include "mc/deps/core/common/bedrock/typeid_t.h"
 #include "mc/server/commands/CommandFlag.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/server/commands/CommandRegistry.h"
 
-namespace ll::plugin {
-class Plugin;
+namespace ll::mod {
+class Mod;
 }
 
 namespace ll::command {
@@ -29,14 +29,14 @@ namespace ll::command {
 class CommandHandle;
 
 class CommandRegistrar {
-    friend plugin::Plugin;
+    friend mod::Mod;
     friend CommandHandle;
     struct Impl;
     std::unique_ptr<Impl> impl;
 
     CommandRegistrar();
 
-    void disablePluginCommands(std::string_view pluginName);
+    void disableModCommands(std::string_view modName);
 
     char const* addText(CommandHandle&, std::string_view);
 
@@ -46,11 +46,11 @@ public:
     LLNDAPI static CommandRegistrar& getInstance();
 
     LLNDAPI CommandHandle& getOrCreateCommand(
-        std::string const&            name,
-        std::string const&            description = {},
-        CommandPermissionLevel        requirement = CommandPermissionLevel::Any,
-        CommandFlag                   flag        = CommandFlagValue::NotCheat,
-        std::weak_ptr<plugin::Plugin> plugin      = plugin::NativePlugin::current()
+        std::string const&      name,
+        std::string const&      description = {},
+        CommandPermissionLevel  requirement = CommandPermissionLevel::Any,
+        CommandFlag             flag        = CommandFlagValue::NotCheat,
+        std::weak_ptr<mod::Mod> mod         = mod::NativeMod::current()
     );
 
     LLAPI bool hasEnum(std::string const& name);

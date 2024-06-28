@@ -12,11 +12,11 @@ public:
     using callback_fn = std::function<void(event_type&)>;
 
     explicit Listener(
-        callback_fn                   fn,
-        EventPriority                 priority = EventPriority::Normal,
-        std::weak_ptr<plugin::Plugin> plugin   = plugin::NativePlugin::current()
+        callback_fn             fn,
+        EventPriority           priority = EventPriority::Normal,
+        std::weak_ptr<mod::Mod> mod      = mod::NativeMod::current()
     )
-    : ListenerBase(priority, std::move(plugin)),
+    : ListenerBase(priority, std::move(mod)),
       callback(std::move(fn)) {}
 
     ~Listener() override = default;
@@ -24,11 +24,11 @@ public:
     void call(Event& event) override { callback(static_cast<event_type&>(event)); }
 
     static std::shared_ptr<Listener> create(
-        callback_fn                   fn,
-        EventPriority                 priority = EventPriority::Normal,
-        std::weak_ptr<plugin::Plugin> plugin   = plugin::NativePlugin::current()
+        callback_fn             fn,
+        EventPriority           priority = EventPriority::Normal,
+        std::weak_ptr<mod::Mod> mod      = mod::NativeMod::current()
     ) {
-        return std::make_shared<Listener>(std::move(fn), priority, std::move(plugin));
+        return std::make_shared<Listener>(std::move(fn), priority, std::move(mod));
     }
 
 private:

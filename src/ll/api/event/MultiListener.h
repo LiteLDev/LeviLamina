@@ -16,11 +16,11 @@ public:
 
     template <class Callable>
     explicit MultiListener(
-        Callable&&                    fn,
-        EventPriority                 priority = EventPriority::Normal,
-        std::weak_ptr<plugin::Plugin> plugin   = plugin::NativePlugin::current()
+        Callable&&              fn,
+        EventPriority           priority = EventPriority::Normal,
+        std::weak_ptr<mod::Mod> mod      = mod::NativeMod::current()
     )
-    : ListenerBase(priority, std::move(plugin)) {
+    : ListenerBase(priority, std::move(mod)) {
         event_list::forEach([fn = std::forward<Callable>(fn), this]<class E>() {
             callback.emplace(getEventId<E>, [fn](Event& ev) { static_cast<void>(fn(static_cast<E&>(ev))); });
         });
@@ -32,11 +32,11 @@ public:
 
     template <class Callable>
     static std::shared_ptr<MultiListener> create(
-        Callable&&                    fn,
-        EventPriority                 priority = EventPriority::Normal,
-        std::weak_ptr<plugin::Plugin> plugin   = plugin::NativePlugin::current()
+        Callable&&              fn,
+        EventPriority           priority = EventPriority::Normal,
+        std::weak_ptr<mod::Mod> mod      = mod::NativeMod::current()
     ) {
-        return std::make_shared<MultiListener>(std::forward<Callable>(fn), priority, std::move(plugin));
+        return std::make_shared<MultiListener>(std::forward<Callable>(fn), priority, std::move(mod));
     }
 
 private:

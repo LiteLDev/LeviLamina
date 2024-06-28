@@ -11,11 +11,11 @@ public:
     using callback_fn = std::function<void(CompoundTag&)>;
 
     explicit DynamicListener(
-        callback_fn                   fn,
-        EventPriority                 priority = EventPriority::Normal,
-        std::weak_ptr<plugin::Plugin> plugin   = plugin::NativePlugin::current()
+        callback_fn             fn,
+        EventPriority           priority = EventPriority::Normal,
+        std::weak_ptr<mod::Mod> mod      = mod::NativeMod::current()
     )
-    : ListenerBase(priority, std::move(plugin)),
+    : ListenerBase(priority, std::move(mod)),
       callback(std::move(fn)) {}
 
     ~DynamicListener() override = default;
@@ -28,11 +28,11 @@ public:
     }
 
     static std::shared_ptr<DynamicListener> create(
-        callback_fn                   fn,
-        EventPriority                 priority = EventPriority::Normal,
-        std::weak_ptr<plugin::Plugin> plugin   = plugin::NativePlugin::current()
+        callback_fn             fn,
+        EventPriority           priority = EventPriority::Normal,
+        std::weak_ptr<mod::Mod> mod      = mod::NativeMod::current()
     ) {
-        return std::make_shared<DynamicListener>(std::move(fn), priority, std::move(plugin));
+        return std::make_shared<DynamicListener>(std::move(fn), priority, std::move(mod));
     }
 
 private:

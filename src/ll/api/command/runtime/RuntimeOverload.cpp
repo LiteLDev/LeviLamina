@@ -11,8 +11,8 @@ struct RuntimeOverload::Impl {
     std::vector<std::pair<std::string, ParamKindType>> params;
 };
 
-RuntimeOverload::RuntimeOverload(CommandHandle& handle, std::weak_ptr<plugin::Plugin> plugin)
-: OverloadData(handle, std::move(plugin)),
+RuntimeOverload::RuntimeOverload(CommandHandle& handle, std::weak_ptr<mod::Mod> mod)
+: OverloadData(handle, std::move(mod)),
   impl(std::make_unique<Impl>()) {}
 
 RuntimeOverload::RuntimeOverload(RuntimeOverload&&) = default;

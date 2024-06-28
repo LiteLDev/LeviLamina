@@ -8,6 +8,6 @@ void registerVersionCommand();
 void registerTpdimCommand();
 void registerMemstatsCommand();
 void registerCrashCommand();
-void registerPluginManageCommand();
+void registerModManageCommand();
 
 } // namespace ll::command

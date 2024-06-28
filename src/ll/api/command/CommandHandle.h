@@ -25,19 +25,18 @@ class CommandHandle {
 
     char const* storeStr(std::string_view);
 
-    size_t disablePluginOverloads(std::string_view pluginName);
+    size_t disableModOverloads(std::string_view modName);
 
 public:
     CommandHandle(CommandRegistrar& registrar, CommandRegistry::Signature& signature, bool owned);
     ~CommandHandle();
 
     template <reflection::Reflectable Params = EmptyParam>
-    [[nodiscard]] auto
-    overload(std::weak_ptr<plugin::Plugin> plugin = plugin::NativePlugin::current()) -> Overload<Params> {
-        return Overload<Params>{*this, std::move(plugin)};
+    [[nodiscard]] auto overload(std::weak_ptr<mod::Mod> mod = mod::NativeMod::current()) -> Overload<Params> {
+        return Overload<Params>{*this, std::move(mod)};
     }
 
-    LLNDAPI RuntimeOverload runtimeOverload(std::weak_ptr<plugin::Plugin> plugin = plugin::NativePlugin::current());
+    LLNDAPI RuntimeOverload runtimeOverload(std::weak_ptr<mod::Mod> mod = mod::NativeMod::current());
 
     LLAPI void alias(std::string_view alias);
 

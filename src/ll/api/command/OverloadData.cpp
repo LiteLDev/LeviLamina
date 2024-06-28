@@ -21,14 +21,14 @@ namespace ll::command {
 
 struct OverloadData::Impl {
     CommandHandle&                                                       handle;
-    std::weak_ptr<plugin::Plugin>                                        plugin;
+    std::weak_ptr<mod::Mod>                                              mod;
     std::optional<memory::FunctionalClosure<CommandRegistry::FactoryFn>> factoryClosure{}; // for delay emplace
     std::vector<CommandParameterData>                                    params;
     std::recursive_mutex                                                 mutex;
 };
 
-OverloadData::OverloadData(CommandHandle& handle, std::weak_ptr<plugin::Plugin> plugin)
-: impl(std::make_unique<Impl>(handle, std::move(plugin))) {}
+OverloadData::OverloadData(CommandHandle& handle, std::weak_ptr<mod::Mod> mod)
+: impl(std::make_unique<Impl>(handle, std::move(mod))) {}
 
 OverloadData& OverloadData::operator=(OverloadData&&) = default;
 OverloadData::OverloadData(OverloadData&&)            = default;
@@ -37,7 +37,7 @@ OverloadData::~OverloadData()                         = default;
 CommandRegistry::FactoryFn*        OverloadData::getFactory() { return impl->factoryClosure.value().get(); }
 std::vector<CommandParameterData>& OverloadData::getParams() { return impl->params; }
 CommandHandle&                     OverloadData::getHandle() { return impl->handle; }
-std::weak_ptr<plugin::Plugin>&     OverloadData::getPlugin() { return impl->plugin; }
+std::weak_ptr<mod::Mod>&           OverloadData::getMod() { return impl->mod; }
 
 char const* OverloadData::storeStr(std::string_view str) { return impl->handle.storeStr(str); }
 

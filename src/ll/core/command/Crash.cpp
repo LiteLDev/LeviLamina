@@ -16,7 +16,7 @@ struct Code {
 };
 
 void registerCrashCommand() {
-    auto config = ll::globalConfig.modules.command.pluginManageCommand;
+    auto config = ll::globalConfig.modules.command.modManageCommand;
     if (!config.enabled) {
         return;
     }

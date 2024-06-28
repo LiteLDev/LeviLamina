@@ -1,4 +1,4 @@
-#include "ll/core/plugin/PluginRegistrar.h"
+#include "ll/core/mod/ModRegistrar.h"
 
 #include <chrono>
 #include <cstddef>
@@ -13,24 +13,21 @@
 #include <utility>
 #include <vector>
 
-#include "nlohmann/json.hpp"
-#include "nlohmann/json_fwd.hpp"
-
 #include "ll/api/data/DependencyGraph.h"
 #include "ll/api/data/Version.h"
 #include "ll/api/i18n/I18n.h"
 #include "ll/api/io/FileUtils.h"
 #include "ll/api/memory/Hook.h"
-#include "ll/api/plugin/Manifest.h"
-#include "ll/api/plugin/Plugin.h"
-#include "ll/api/plugin/PluginManager.h"
-#include "ll/api/plugin/PluginManagerRegistry.h"
+#include "ll/api/mod/Manifest.h"
+#include "ll/api/mod/Mod.h"
+#include "ll/api/mod/ModManager.h"
+#include "ll/api/mod/ModManagerRegistry.h"
 #include "ll/api/reflection/Deserialization.h"
 #include "ll/api/service/ServerInfo.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/core/LeviLamina.h"
-#include "ll/core/plugin/NativePluginManager.h"
+#include "ll/core/mod/NativeModManager.h"
 
 #include "ll/api/command/CommandRegistrar.h"
 
@@ -38,20 +35,25 @@
 #include "mc/server/ServerInstance.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 
+#include "nlohmann/json.hpp"
+#include "nlohmann/json_fwd.hpp"
+
+#include "pl/PreLoader.h"
+
 namespace ll::command {
-enum class PluginNames {};
+enum class ModNames {};
 }
 
-namespace ll::plugin {
+namespace ll::mod {
 using namespace ::ll::i18n_literals;
 
-struct PluginRegistrar::Impl {
+struct ModRegistrar::Impl {
     std::recursive_mutex               mutex;
     data::DependencyGraph<std::string> deps;
 };
 
-PluginRegistrar::PluginRegistrar() : impl(std::make_unique<Impl>()) {}
-PluginRegistrar::~PluginRegistrar() = default;
+ModRegistrar::ModRegistrar() : impl(std::make_unique<Impl>()) {}
+ModRegistrar::~ModRegistrar() = default;
 
 static bool checkVersion(Manifest const& real, Dependency const& need) {
     if (!real.version || !need.version) {
@@ -69,36 +71,37 @@ static Expected<Manifest> loadManifest(std::filesystem::path const& dir) {
         return makeStringError("Manifest is not a valid JSON text"_tr());
     }
     return ::ll::reflection::deserialize_to<Manifest>(json).and_then([&](auto&& manifest) -> Expected<Manifest> {
-        if (manifest.type == "preload-native" /*NativePluginTypeName*/) {
-            return makeSuccessError(); // bypass preloader plugin
+        using namespace pl;
+        if (manifest.type == preloadModManagerName) {
+            return makeSuccessError(); // bypass preloader mod
         }
         if (std::string dirName = string_utils::u8str2str(dir.filename().u8string()); manifest.name != dirName) {
-            return makeStringError("Plugin name {0} do not match folder {1}"_tr(manifest.name, dirName));
+            return makeStringError("Mod name {0} do not match folder {1}"_tr(manifest.name, dirName));
         }
         return manifest;
     });
 }
 
-PluginRegistrar& PluginRegistrar::getInstance() {
-    static PluginRegistrar instance;
+ModRegistrar& ModRegistrar::getInstance() {
+    static ModRegistrar instance;
     return instance;
 }
 
-void PluginRegistrar::loadAllPlugins() {
+void ModRegistrar::loadAllMods() {
     std::lock_guard lock(impl->mutex);
 
     std::unordered_map<std::string, Manifest> manifests;
 
-    logger.info("Loading plugins..."_tr());
+    logger.info("Loading mods..."_tr());
 
-    auto& registry = PluginManagerRegistry::getInstance();
+    auto& registry = ModManagerRegistry::getInstance();
 
-    if (!registry.addManager(std::make_shared<NativePluginManager>())) {
-        logger.error("Failed to create native plugin manager"_tr());
+    if (!registry.addManager(std::make_shared<NativeModManager>())) {
+        logger.error("Failed to create native mod manager"_tr());
         return;
     }
 
-    for (auto& file : std::filesystem::directory_iterator(getPluginsRoot())) {
+    for (auto& file : std::filesystem::directory_iterator(getModsRoot())) {
         if (!file.is_directory()) {
             continue;
         }
@@ -228,11 +231,11 @@ void PluginRegistrar::loadAllPlugins() {
             }
         }
         logger.info("Loading {0} v{1}"_tr(name, manifest.version.value_or(data::Version{0, 0, 0})));
-        if (auto res = registry.loadPlugin(std::move(manifest)); res) {
+        if (auto res = registry.loadMod(std::move(manifest)); res) {
             logger.info("{0} loaded"_tr(name));
         } else {
             loadErrored.emplace(name);
-            logger.error("Failed to load plugin {0}"_tr(name));
+            logger.error("Failed to load mod {0}"_tr(name));
             res.error().log(logger.error);
         }
     }
@@ -242,18 +245,18 @@ void PluginRegistrar::loadAllPlugins() {
         impl->deps.erase(errored);
     }
 
-    static ll::memory::HookRegistrar<EnableAllPlugins, DisableAllPlugins> reg;
+    static ll::memory::HookRegistrar<EnableAllMods, DisableAllMods> reg;
 
-    logger.info("{0} plugin(s) loaded"_tr(loadedCount));
+    logger.info("{0} mod(s) loaded"_tr(loadedCount));
 }
 
-std::vector<std::string> PluginRegistrar::getSortedPluginNames() const {
+std::vector<std::string> ModRegistrar::getSortedModNames() const {
     std::lock_guard lock(impl->mutex);
     return impl->deps.sort().sorted;
 }
 
 LL_TYPE_INSTANCE_HOOK(
-    PluginRegistrar::EnableAllPlugins,
+    ModRegistrar::EnableAllMods,
     ll::memory::HookPriority::High,
     ServerInstanceEventCoordinator,
     &ServerInstanceEventCoordinator::sendServerThreadStarted,
@@ -261,30 +264,30 @@ LL_TYPE_INSTANCE_HOOK(
     ::ServerInstance& ins
 ) {
     origin(ins);
-    auto& registrar = PluginRegistrar::getInstance();
-    auto  names     = registrar.getSortedPluginNames();
+    auto& registrar = ModRegistrar::getInstance();
+    auto  names     = registrar.getSortedModNames();
     {
         using namespace ll::command;
-        CommandRegistrar::getInstance().tryRegisterSoftEnum(enum_name_v<PluginNames>, names);
+        CommandRegistrar::getInstance().tryRegisterSoftEnum(enum_name_v<ModNames>, names);
     }
     if (!names.empty()) {
-        logger.info("Enabling plugins..."_tr());
+        logger.info("Enabling mods..."_tr());
         auto   begin = std::chrono::steady_clock::now();
         size_t count{};
         for (auto& name : names) {
-            auto plugin = PluginManagerRegistry::getInstance().getPlugin(name);
-            if (!plugin) continue;
-            if (plugin->isEnabled()) continue;
-            logger.info("Enabling {0} v{1}"_tr(name, plugin->getManifest().version.value_or(data::Version{0, 0, 0})));
-            if (auto res = registrar.enablePlugin(name); res) {
+            auto mod = ModManagerRegistry::getInstance().getMod(name);
+            if (!mod) continue;
+            if (mod->isEnabled()) continue;
+            logger.info("Enabling {0} v{1}"_tr(name, mod->getManifest().version.value_or(data::Version{0, 0, 0})));
+            if (auto res = registrar.enableMod(name); res) {
                 count++;
             } else {
-                logger.error("Failed to enable plugin {0}"_tr(name));
+                logger.error("Failed to enable mod {0}"_tr(name));
                 res.error().log(logger.error);
             }
         }
         if (count > 0) {
-            logger.info("{0} plugin(s) enabled in ({1:.1f}s)"_tr(
+            logger.info("{0} mod(s) enabled in ({1:.1f}s)"_tr(
                 count,
                 std::chrono::duration_cast<std::chrono::duration<double>>(std::chrono::steady_clock::now() - begin)
                     .count()
@@ -294,23 +297,23 @@ LL_TYPE_INSTANCE_HOOK(
     setServerStatus(ServerStatus::Running);
 }
 LL_TYPE_INSTANCE_HOOK(
-    PluginRegistrar::DisableAllPlugins,
+    ModRegistrar::DisableAllMods,
     HookPriority::Low,
     ServerInstance,
     &ServerInstance::leaveGameSync,
     void
 ) {
     setServerStatus(ServerStatus::Stopping);
-    auto& registrar = PluginRegistrar::getInstance();
-    auto  names     = registrar.getSortedPluginNames();
+    auto& registrar = ModRegistrar::getInstance();
+    auto  names     = registrar.getSortedModNames();
     if (!names.empty()) {
-        logger.info("Disabling plugins..."_tr());
+        logger.info("Disabling mods..."_tr());
         for (auto& name : std::ranges::reverse_view(names)) {
-            auto plugin = PluginManagerRegistry::getInstance().getPlugin(name);
-            if (!plugin) continue;
-            if (plugin->isDisabled()) continue;
-            logger.info("Disabling {0} v{1}"_tr(name, plugin->getManifest().version.value_or(data::Version{0, 0, 0})));
-            if (auto res = registrar.disablePlugin(name); !res) {
+            auto mod = ModManagerRegistry::getInstance().getMod(name);
+            if (!mod) continue;
+            if (mod->isDisabled()) continue;
+            logger.info("Disabling {0} v{1}"_tr(name, mod->getManifest().version.value_or(data::Version{0, 0, 0})));
+            if (auto res = registrar.disableMod(name); !res) {
                 res.error().log(logger.warn);
             }
         }
@@ -318,22 +321,21 @@ LL_TYPE_INSTANCE_HOOK(
     origin();
 }
 
-Expected<> PluginRegistrar::loadPlugin(std::string_view name) noexcept {
+Expected<> ModRegistrar::loadMod(std::string_view name) noexcept {
     std::lock_guard lock(impl->mutex);
-    auto            res = loadManifest(getPluginsRoot() / string_utils::sv2u8sv(name));
+    auto            res = loadManifest(getModsRoot() / string_utils::sv2u8sv(name));
     if (!res) {
         if (res.error()) {
             return forwardError(makeStringError("Failed to load manifest for {0}"_tr(name)).value().join(res.error()));
         } else {
-            return makeStringError("Plugin does not exist, or the manifest is empty"_tr());
+            return makeStringError("Mod does not exist, or the manifest is empty"_tr());
         }
     }
     auto& manifest = *res;
-    auto& reg      = PluginManagerRegistry::getInstance();
+    auto& reg      = ModManagerRegistry::getInstance();
     if (manifest.dependencies) {
         for (auto& dependency : *manifest.dependencies) {
-            if (!reg.hasPlugin(dependency.name)
-                || !checkVersion(reg.getPlugin(dependency.name)->getManifest(), dependency)) {
+            if (!reg.hasMod(dependency.name) || !checkVersion(reg.getMod(dependency.name)->getManifest(), dependency)) {
                 return makeStringError("Missing dependency {0}"_tr(
                     dependency.version
                         .transform([&](auto& ver) { return fmt::format("{} v{}", dependency.name, ver.to_string()); })
@@ -344,7 +346,7 @@ Expected<> PluginRegistrar::loadPlugin(std::string_view name) noexcept {
     }
     if (manifest.conflicts) {
         for (auto& conflict : *manifest.conflicts) {
-            if (reg.hasPlugin(conflict.name) && checkVersion(reg.getPlugin(conflict.name)->getManifest(), conflict)) {
+            if (reg.hasMod(conflict.name) && checkVersion(reg.getMod(conflict.name)->getManifest(), conflict)) {
                 return makeStringError("{0} conflicts with {1}"_tr(
                     name,
                     conflict.version
@@ -354,30 +356,30 @@ Expected<> PluginRegistrar::loadPlugin(std::string_view name) noexcept {
             }
         }
     }
-    return reg.loadPlugin(std::move(manifest)).transform([&, this]() {
+    return reg.loadMod(std::move(manifest)).transform([&, this]() {
         impl->deps.emplace(std::string{name});
         {
             using namespace ll::command;
-            CommandRegistrar::getInstance().addSoftEnumValues(enum_name_v<PluginNames>, {std::string{name}});
+            CommandRegistrar::getInstance().addSoftEnumValues(enum_name_v<ModNames>, {std::string{name}});
         }
     });
 }
-Expected<> PluginRegistrar::unloadPlugin(std::string_view name) noexcept {
+Expected<> ModRegistrar::unloadMod(std::string_view name) noexcept {
     std::lock_guard lock(impl->mutex);
     auto            dependents = impl->deps.dependentBy(std::string{name});
     if (!dependents.empty()) {
         return makeStringError("{0} still depends on {1}"_tr(dependents, name));
     }
-    return PluginManagerRegistry::getInstance().unloadPlugin(name).transform([&, this]() {
+    return ModManagerRegistry::getInstance().unloadMod(name).transform([&, this]() {
         impl->deps.erase(std::string{name});
     });
 }
-Expected<> PluginRegistrar::enablePlugin(std::string_view name) noexcept {
+Expected<> ModRegistrar::enableMod(std::string_view name) noexcept {
     std::lock_guard lock(impl->mutex);
-    auto&           registry   = PluginManagerRegistry::getInstance();
+    auto&           registry   = ModManagerRegistry::getInstance();
     auto            dependents = impl->deps.dependentOn(std::string{name});
     std::erase_if(dependents, [&](auto& name) {
-        if (auto ptr = registry.getPlugin(name); ptr) {
+        if (auto ptr = registry.getMod(name); ptr) {
             return ptr->isEnabled();
         }
         return false;
@@ -385,14 +387,14 @@ Expected<> PluginRegistrar::enablePlugin(std::string_view name) noexcept {
     if (!dependents.empty()) {
         return makeStringError("Dependency {0} of {1} is not enabled"_tr(dependents, name));
     }
-    return registry.enablePlugin(name);
+    return registry.enableMod(name);
 }
-Expected<> PluginRegistrar::disablePlugin(std::string_view name) noexcept {
+Expected<> ModRegistrar::disableMod(std::string_view name) noexcept {
     std::lock_guard lock(impl->mutex);
-    auto&           registry   = PluginManagerRegistry::getInstance();
+    auto&           registry   = ModManagerRegistry::getInstance();
     auto            dependents = impl->deps.dependentBy(std::string{name});
     std::erase_if(dependents, [&](auto& name) {
-        if (auto ptr = registry.getPlugin(name); ptr) {
+        if (auto ptr = registry.getMod(name); ptr) {
             return ptr->isDisabled();
         }
         return true;
@@ -400,6 +402,6 @@ Expected<> PluginRegistrar::disablePlugin(std::string_view name) noexcept {
     if (!dependents.empty()) {
         return makeStringError("{0} still depends on {1}"_tr(dependents, name));
     }
-    return registry.disablePlugin(name);
+    return registry.disableMod(name);
 }
-} // namespace ll::plugin
+} // namespace ll::mod

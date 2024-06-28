@@ -17,24 +17,24 @@ std::string GetServiceError::message() const noexcept {
     }
 }
 
-// to avoid a lifetime dependency on external Plugin
+// to avoid a lifetime dependency on external Mod
 struct ServiceInfo {
     std::string              name;
     size_t                   version;
-    std::string              pluginName;
+    std::string              modName;
     std::shared_ptr<Service> service;
 
-    ServiceInfo(std::string name, size_t version, std::string pluginName, std::shared_ptr<Service> const& service)
+    ServiceInfo(std::string name, size_t version, std::string modName, std::shared_ptr<Service> const& service)
     : name(std::move(name)),
       version(version),
-      pluginName(std::move(pluginName)),
+      modName(std::move(modName)),
       service(service) {}
 
-    ServiceInfo(ServiceId const& id, std::string pluginName, std::shared_ptr<Service> const& service)
-    : ServiceInfo(std::string{id.name}, id.version, std::move(pluginName), service) {}
+    ServiceInfo(ServiceId const& id, std::string modName, std::shared_ptr<Service> const& service)
+    : ServiceInfo(std::string{id.name}, id.version, std::move(modName), service) {}
 
     bool operator==(ServiceInfo const& other) const noexcept {
-        return name == other.name && version == other.version && pluginName == other.pluginName;
+        return name == other.name && version == other.version && modName == other.modName;
     }
 
     bool operator==(ServiceId const& other) const noexcept { return name == other.name && version == other.version; }
@@ -47,7 +47,7 @@ struct hash<ll::service::ServiceInfo> {
     size_t operator()(ll::service::ServiceInfo const& info) const noexcept {
         size_t hash = std::hash<std::string_view>{}(info.name);
         ll::hash_utils::hashCombine(std::hash<size_t>{}(info.version), hash);
-        ll::hash_utils::hashCombine(std::hash<std::string_view>{}(info.pluginName), hash);
+        ll::hash_utils::hashCombine(std::hash<std::string_view>{}(info.modName), hash);
         return hash;
     }
 };
@@ -61,17 +61,17 @@ public:
 
     std::unordered_map<std::string_view, std::unique_ptr<ServiceInfo>> services;
 
-    std::unordered_map<std::string_view, std::unordered_set<ServiceInfo*>> pluginServices; // plugin name -> services
+    std::unordered_map<std::string_view, std::unordered_set<ServiceInfo*>> modServices; // mod name -> services
 
-    bool addService(std::shared_ptr<Service> const& service, std::shared_ptr<plugin::Plugin> const& plugin) {
+    bool addService(std::shared_ptr<Service> const& service, std::shared_ptr<mod::Mod> const& mod) {
         std::lock_guard lock(mutex);
         auto            id = service->getServiceId();
         if (services.contains(id.name)) {
             return false;
         }
 
-        auto info = std::make_unique<ServiceInfo>(id, plugin ? plugin->getManifest().name : "", service);
-        pluginServices[info->pluginName].insert(info.get());
+        auto info = std::make_unique<ServiceInfo>(id, mod ? mod->getManifest().name : "", service);
+        modServices[info->modName].insert(info.get());
         services.emplace(info->name, std::move(info));
 
         // notify the service that it has been registered or updated
@@ -94,19 +94,19 @@ public:
         // invalidate the service, to notify the service that it is being removed,
         // so they can do cleanup and other stuff
         it->second->service->invalidate();
-        pluginServices[it->second->pluginName].erase(it->second.get());
+        modServices[it->second->modName].erase(it->second.get());
         services.erase(it);
 
         return true;
     }
 
-    void removeService(std::string_view pluginName) {
+    void removeService(std::string_view modName) {
         std::lock_guard lock(mutex);
-        if (auto it = pluginServices.find(pluginName); it != pluginServices.end()) {
+        if (auto it = modServices.find(modName); it != modServices.end()) {
             for (auto& info : it->second) {
                 services.erase(info->name);
             }
-            pluginServices.erase(it);
+            modServices.erase(it);
         }
     }
 };
@@ -126,7 +126,7 @@ Expected<std::shared_ptr<Service>> ServiceManager::getService(ServiceId const& i
 std::optional<QueryServiceResult> ServiceManager::queryService(std::string_view name) {
     std::lock_guard lock(impl->mutex);
     if (auto it = impl->services.find(name); it != impl->services.end()) {
-        return QueryServiceResult{it->second->name, it->second->version, it->second->pluginName, it->second->service};
+        return QueryServiceResult{it->second->name, it->second->version, it->second->modName, it->second->service};
     }
     return std::nullopt;
 }
@@ -136,17 +136,14 @@ bool ServiceManager::unregisterService(ServiceId const& id) {
     return impl->removeService(id);
 }
 
-void ServiceManager::unregisterService(plugin::Plugin const& plugin) {
+void ServiceManager::unregisterService(mod::Mod const& mod) {
     std::lock_guard lock(impl->mutex);
-    impl->removeService(plugin.getManifest().name);
+    impl->removeService(mod.getManifest().name);
 }
 
-bool ServiceManager::registerService(
-    std::shared_ptr<Service> const&        service,
-    std::shared_ptr<plugin::Plugin> const& plugin
-) {
+bool ServiceManager::registerService(std::shared_ptr<Service> const& service, std::shared_ptr<mod::Mod> const& mod) {
     std::lock_guard lock(impl->mutex);
-    return impl->addService(service, plugin);
+    return impl->addService(service, mod);
 }
 
 ServiceManager& ServiceManager::getInstance() {

@@ -1,4 +1,4 @@
-#include "ll/core/plugin/NativePluginManager.h"
+#include "ll/core/mod/NativeModManager.h"
 
 #include <cstddef>
 #include <filesystem>
@@ -14,10 +14,10 @@
 #include "pl/dependency/DependencyWalker.h"
 
 #include "ll/api/i18n/I18n.h"
-#include "ll/api/plugin/Manifest.h"
-#include "ll/api/plugin/NativePlugin.h"
-#include "ll/api/plugin/Plugin.h"
-#include "ll/api/plugin/PluginManager.h"
+#include "ll/api/mod/Manifest.h"
+#include "ll/api/mod/Mod.h"
+#include "ll/api/mod/ModManager.h"
+#include "ll/api/mod/NativeMod.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/api/utils/WinUtils.h"
@@ -29,20 +29,20 @@
 #include "processenv.h"
 #include "winerror.h"
 
-namespace ll::plugin {
+namespace ll::mod {
 using namespace i18n_literals;
 
-NativePluginManager::NativePluginManager() : PluginManager(NativePluginManagerName) {
-    handleMap[win_utils::getCurrentModuleHandle()] = NativePlugin::current();
+NativeModManager::NativeModManager() : ModManager(NativeModManagerName) {
+    handleMap[win_utils::getCurrentModuleHandle()] = NativeMod::current();
 }
-NativePluginManager::~NativePluginManager() = default;
+NativeModManager::~NativeModManager() = default;
 
-static std::shared_ptr<NativePlugin> currentLoadingPlugin;
+static std::shared_ptr<NativeMod> currentLoadingMod;
 
-std::shared_ptr<NativePlugin> NativePluginManager::getPluginByHandle(Handle handle) {
+std::shared_ptr<NativeMod> NativeModManager::getModByHandle(Handle handle) {
     auto l(lock());
-    if (currentLoadingPlugin) { // for getCurrent before main
-        return currentLoadingPlugin;
+    if (currentLoadingMod) { // for getCurrent before main
+        return currentLoadingMod;
     }
     if (handleMap.contains(handle)) {
         return handleMap.at(handle);
@@ -88,15 +88,15 @@ static std::string diagnosticDependency(std::filesystem::path const& path) {
     return stream.str();
 }
 
-Expected<> NativePluginManager::load(Manifest manifest) {
+Expected<> NativeModManager::load(Manifest manifest) {
     auto l(lock());
-    currentLoadingPlugin = std::make_shared<NativePlugin>(std::move(manifest));
+    currentLoadingMod = std::make_shared<NativeMod>(std::move(manifest));
     struct Remover {
-        ~Remover() { currentLoadingPlugin = nullptr; };
+        ~Remover() { currentLoadingMod = nullptr; };
     } r;
 
-    auto pluginDir =
-        std::filesystem::canonical(getPluginsRoot() / string_utils::sv2u8sv(currentLoadingPlugin->getManifest().name));
+    auto modDir =
+        std::filesystem::canonical(getModsRoot() / string_utils::sv2u8sv(currentLoadingMod->getManifest().name));
 
     if (auto res = win_utils::adaptFixedSizeToAllocatedResult(
             [](wchar_t* value, size_t valueLength, size_t& valueLengthNeededWithNul) -> bool {
@@ -115,10 +115,10 @@ Expected<> NativePluginManager::load(Manifest manifest) {
         if (!res->empty()) {
             *res += L";";
         }
-        *res += pluginDir.wstring();
+        *res += modDir.wstring();
         SetEnvironmentVariableW(L"PATH", res->c_str());
     }
-    auto entry = pluginDir / string_utils::sv2u8sv(currentLoadingPlugin->getManifest().entry);
+    auto entry = modDir / string_utils::sv2u8sv(currentLoadingMod->getManifest().entry);
     auto lib   = LoadLibraryW(entry.c_str());
     if (!lib) {
         auto       e = error_utils::getWinLastError();
@@ -130,26 +130,25 @@ Expected<> NativePluginManager::load(Manifest manifest) {
     }
     if (!GetProcAddress(lib, "ll_memory_operator_overrided")) {
         using namespace i18n_literals;
-        return makeStringError("The plugin is not using the unified memory allocation operator, will not be loaded."_tr(
-        ));
+        return makeStringError("The mod is not using the unified memory allocation operator, will not be loaded."_tr());
     }
-    currentLoadingPlugin->setHandle(lib);
-    currentLoadingPlugin->onLoad(reinterpret_cast<Plugin::callback_t*>(GetProcAddress(lib, "ll_plugin_load")));
-    currentLoadingPlugin->onUnload(reinterpret_cast<Plugin::callback_t*>(GetProcAddress(lib, "ll_plugin_unload")));
-    currentLoadingPlugin->onEnable(reinterpret_cast<Plugin::callback_t*>(GetProcAddress(lib, "ll_plugin_enable")));
-    currentLoadingPlugin->onDisable(reinterpret_cast<Plugin::callback_t*>(GetProcAddress(lib, "ll_plugin_disable")));
+    currentLoadingMod->setHandle(lib);
+    currentLoadingMod->onLoad(reinterpret_cast<Mod::callback_t*>(GetProcAddress(lib, "ll_mod_load")));
+    currentLoadingMod->onUnload(reinterpret_cast<Mod::callback_t*>(GetProcAddress(lib, "ll_mod_unload")));
+    currentLoadingMod->onEnable(reinterpret_cast<Mod::callback_t*>(GetProcAddress(lib, "ll_mod_enable")));
+    currentLoadingMod->onDisable(reinterpret_cast<Mod::callback_t*>(GetProcAddress(lib, "ll_mod_disable")));
 
-    return currentLoadingPlugin->onLoad().transform([&, this] {
-        addPlugin(currentLoadingPlugin->getManifest().name, currentLoadingPlugin);
-        handleMap[lib] = currentLoadingPlugin;
+    return currentLoadingMod->onLoad().transform([&, this] {
+        addMod(currentLoadingMod->getManifest().name, currentLoadingMod);
+        handleMap[lib] = currentLoadingMod;
     });
 }
 
-Expected<> NativePluginManager::unload(std::string_view name) {
+Expected<> NativeModManager::unload(std::string_view name) {
     auto l(lock());
-    auto ptr = std::static_pointer_cast<NativePlugin>(getPlugin(name));
+    auto ptr = std::static_pointer_cast<NativeMod>(getMod(name));
     if (!ptr->hasOnUnload()) {
-        return makeStringError("The plugin does not register an unload function"_tr());
+        return makeStringError("The mod does not register an unload function"_tr());
     }
     if (auto res = ptr->onDisable().and_then([&] { return ptr->onUnload(); }); !res) {
         return res;
@@ -158,7 +157,7 @@ Expected<> NativePluginManager::unload(std::string_view name) {
         return makeExceptionError(std::make_exception_ptr(error_utils::getWinLastError()));
     }
     handleMap.erase(ptr->getHandle());
-    erasePlugin(name);
+    eraseMod(name);
     return {};
 }
-} // namespace ll::plugin
+} // namespace ll::mod

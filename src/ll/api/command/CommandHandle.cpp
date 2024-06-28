@@ -32,13 +32,13 @@ CommandHandle::~CommandHandle() = default;
 
 CommandRegistrar& CommandHandle::getRegistrar() { return impl->registrar; }
 
-size_t CommandHandle::disablePluginOverloads(std::string_view pluginName) {
+size_t CommandHandle::disableModOverloads(std::string_view modName) {
     std::lock_guard lock{impl->mutex};
-    if (pluginName.empty()) {
+    if (modName.empty()) {
         return 0;
     }
     return std::erase_if(impl->overloads, [&](auto& overload) -> bool {
-        if (!overload.getPlugin().expired() && (overload.getPlugin().lock()->getManifest().name != pluginName)) {
+        if (!overload.getMod().expired() && (overload.getMod().lock()->getManifest().name != modName)) {
             return false;
         }
         std::erase_if(impl->signature.overloads, [&](auto& o) {
@@ -84,8 +84,8 @@ char const* CommandHandle::storeStr(std::string_view str) {
     }
 }
 
-RuntimeOverload CommandHandle::runtimeOverload(std::weak_ptr<plugin::Plugin> plugin) {
-    return RuntimeOverload{*this, std::move(plugin)};
+RuntimeOverload CommandHandle::runtimeOverload(std::weak_ptr<mod::Mod> mod) {
+    return RuntimeOverload{*this, std::move(mod)};
 }
 
 void CommandHandle::alias(std::string_view alias) {

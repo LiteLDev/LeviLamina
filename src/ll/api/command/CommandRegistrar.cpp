@@ -38,7 +38,7 @@ CommandHandle& CommandRegistrar::getOrCreateCommand(
     std::string const&     description,
     CommandPermissionLevel requirement,
     CommandFlag            flag,
-    std::weak_ptr<plugin::Plugin> /*plugin*/
+    std::weak_ptr<mod::Mod> /*mod*/
 ) {
     std::lock_guard lock{impl->mutex};
     auto&           registry  = getRegistry();
@@ -57,10 +57,10 @@ CommandHandle& CommandRegistrar::getOrCreateCommand(
     }
 }
 
-void CommandRegistrar::disablePluginCommands(std::string_view pluginName) {
+void CommandRegistrar::disableModCommands(std::string_view modName) {
     std::lock_guard lock{impl->mutex};
     for (auto& [name, handle] : impl->commands) {
-        handle.disablePluginOverloads(pluginName);
+        handle.disableModOverloads(modName);
     }
 }
 

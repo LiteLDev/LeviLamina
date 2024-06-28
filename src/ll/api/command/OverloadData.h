@@ -7,7 +7,7 @@
 
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
-#include "ll/api/plugin/NativePlugin.h"
+#include "ll/api/mod/NativeMod.h"
 
 #include "mc/deps/core/common/bedrock/typeid_t.h"
 #include "mc/server/commands/CommandParameterData.h"
@@ -30,12 +30,12 @@ protected:
     LLNDAPI CommandRegistry::FactoryFn* getFactory();
     LLNDAPI std::vector<CommandParameterData>& getParams();
     LLNDAPI CommandHandle&                     getHandle();
-    LLNDAPI std::weak_ptr<plugin::Plugin>& getPlugin();
+    LLNDAPI std::weak_ptr<mod::Mod>& getMod();
     LLNDAPI std::lock_guard<std::recursive_mutex> lock();
 
     LLNDAPI char const* storeStr(std::string_view);
 
-    LLNDAPI explicit OverloadData(CommandHandle& handle, std::weak_ptr<plugin::Plugin> plugin);
+    LLNDAPI explicit OverloadData(CommandHandle& handle, std::weak_ptr<mod::Mod> mod);
 
     LLNDAPI CommandParameterData& back();
 
