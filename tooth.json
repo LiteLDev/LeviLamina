@@ -19,12 +19,8 @@
   "files": {
     "place": [
       {
-        "src": "LeviLamina.dll",
-        "dest": "LeviLamina.dll"
-      },
-      {
-        "src": "LeviLamina.pdb",
-        "dest": "LeviLamina.pdb"
+        "src": "LeviLamina/*",
+        "dest": "plugins/LeviLamina/"
       }
     ],
     "remove": [

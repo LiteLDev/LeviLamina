@@ -560,3 +560,5 @@ fabric.properties
 
 # Test
 src/ll/test/include_all.cpp
+
+/bin/

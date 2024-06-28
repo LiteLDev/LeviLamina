@@ -62,8 +62,6 @@ Logger                                logger("LeviLamina");
 std::chrono::steady_clock::time_point severStartBeginTime;
 std::chrono::steady_clock::time_point severStartEndTime;
 
-void fixCurrentDirectory() { SetCurrentDirectoryW(win_utils::getModulePath(nullptr).value().parent_path().c_str()); }
-
 void checkOtherBdsInstance() {
     auto currentPath = win_utils::getModulePath(nullptr).value();
     // and pid is not current process
@@ -186,16 +184,8 @@ extern std::string globalDefaultLocaleName;
 
 void leviLaminaMain() {
     error_utils::setSehTranslator();
-
-    // Prohibit pop-up windows to facilitate automatic restart
-    SetErrorMode(SEM_FAILCRITICALERRORS | SEM_NOGPFAULTERRORBOX | SEM_NOOPENFILEERRORBOX | SEM_NOALIGNMENTFAULTEXCEPT);
-
     // Init LL Logger
     Logger::setDefaultFile(u8"logs/LeviLamina-latest.log", false);
-
-    // Create Plugin Directory
-    std::error_code ec;
-    fs::create_directories(plugin::getPluginsRoot(), ec);
 
     ::ll::i18n::load(plugin::getPluginsRoot() / u8"LeviLamina/lang");
 
@@ -207,9 +197,6 @@ void leviLaminaMain() {
     }
 
     checkProtocolVersion();
-
-    // Fix problems
-    fixCurrentDirectory();
 
     if (globalConfig.modules.checkRunningBDS) {
         checkOtherBdsInstance();
@@ -240,7 +227,6 @@ void leviLaminaMain() {
 
     plugin::PluginRegistrar::getInstance().loadAllPlugins();
 }
-
 
 LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::High, "main", int, int argc, char* argv[]) {
 

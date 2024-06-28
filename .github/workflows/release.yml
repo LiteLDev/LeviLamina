@@ -50,7 +50,7 @@ jobs:
         with:
           name: levilamina-${{ matrix.mode }}${{ matrix.use_mimalloc == false && '-nonmimalloc' || '' }}-windows-x64-${{ github.sha }}
           path: |
-            build/packages/l/levilamina/windows/x64/${{ matrix.mode }}/bin/
+            bin/
 
   update-release-notes:
     permissions:
