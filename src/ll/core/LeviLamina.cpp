@@ -126,7 +126,7 @@ void printWelcomeMsg() {
     logger.info(R"(        | |__|  __/\ V /| | |__| (_| | | | | | | | | | | (_| |        )");
     logger.info(R"(        |_____\___| \_/ |_|_____\__,_|_| |_| |_|_|_| |_|\__,_|        )");
     logger.info(R"(                                                                      )");
-    logger.info(R"(        -----------   Light-Weight Mod Loader   --------------        )");
+    logger.info(R"(        ------------   Light-Weight Mod Loader   -------------        )");
     logger.info(R"(                                                                      )");
     logger.info(R"(                                                                      )");
 
