@@ -26,6 +26,6 @@ public:
 
 std::unique_ptr<class MyMod> myMod114;
 
-LL_REGISTER_PLUGIN(MyMod, myMod114);
+LL_REGISTER_MOD(MyMod, myMod114);
 
 } // namespace test

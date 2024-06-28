@@ -28,7 +28,7 @@ concept Disableable = requires(T t) {
     { t.disable() } -> std::same_as<bool>;
 };
 
-#define LL_REGISTER_PLUGIN(CLAZZ, BINDER)                                                                              \
+#define LL_REGISTER_MOD(CLAZZ, BINDER)                                                                                 \
     extern "C" {                                                                                                       \
     _declspec(dllexport) bool ll_mod_load(ll::mod::NativeMod& self) {                                                  \
         static_assert(ll::mod::Loadable<CLAZZ>, #CLAZZ " must be Loadable");                                           \
