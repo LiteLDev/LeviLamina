@@ -213,8 +213,7 @@ StackTraceEntryInfo getInfo(std::stacktrace_entry const& entry) {
     if (&*bdsRange.begin() <= entry.native_handle() && entry.native_handle() < &*bdsRange.end()) {
         size_t length{};
         uint   disp{};
-        // TODO: replace to pl_lookup_symbol_disp when Preloader released
-        auto str = pl::symbol_provider::pl_lookup_symbol(entry.native_handle(), &length /* ,&disp */);
+        auto   str = pl::symbol_provider::pl_lookup_symbol_disp(entry.native_handle(), &length, &disp);
         if (length) {
             static auto bdsName = win_utils::getModuleFileName(nullptr);
             std::string demangledName(2048, '\0');

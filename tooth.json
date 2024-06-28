@@ -14,7 +14,7 @@
     "github.com/LiteLDev/CrashLogger": "1.1.x",
     "github.com/LiteLDev/levilamina-loc": "1.2.x",
     "github.com/LiteLDev/PeEditor": "3.7.x",
-    "github.com/LiteLDev/PreLoader": "1.6.x"
+    "github.com/LiteLDev/PreLoader": "1.7.x"
   },
   "files": {
     "place": [
