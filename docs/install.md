@@ -62,7 +62,9 @@ lip install --upgrade github.com/LiteLDev/LeviLamina
 !!! danger
     Upgrading LeviLamina may result in data loss. Please make sure you have a backup of your data before upgrading.
 
-### Install Manually
+### Install Manually(Not recommended)
+
+Only developers who want to debug new version will install manually, manual installation will only install basic parts that allow LeviLamina run, it lacks of CrashLogger, I18N and so on.
 
 #### Downloading Necessary Files
 

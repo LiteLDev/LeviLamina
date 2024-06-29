@@ -60,7 +60,9 @@ lip install --upgrade github.com/LiteLDev/LeviLamina
 !!! danger
     升级 LeviLamina 可能会导致数据丢失。请确保在升级之前备份你的数据。
 
-### 手动安装
+### 手动安装（不推荐）
+
+手动安装是开发者在调试新版本时才会使用的安装方式，手动安装只会安装能够让LeviLamina运行的基本组件，缺少CrashLogger和I18N等组件
 
 #### 准备所需文件
 

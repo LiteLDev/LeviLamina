@@ -90,6 +90,12 @@ If you have a proxy available , use the following command to configure the proxy
 lip config ProxyURL <proxy-url>
 ```
 
+If you have mistakenly configured a proxy server when you don't have one, you can unconfigure it with the following command:
+
+```sh
+lip config ProxyURL ""
+```
+
 For example, if your proxy address is `http://127.0.0.1:8080`, you can use the following command to configure the proxy:
 
 ```sh
