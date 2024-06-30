@@ -5,7 +5,7 @@
 #include "ll/api/io/FileUtils.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/StringUtils.h"
-#include "ll/api/utils/WinUtils.h"
+#include "ll/api/utils/SystemUtils.h"
 
 #include "pl/SymbolProvider.h"
 
@@ -94,7 +94,7 @@ public:
                         (void)debugControl->WaitForEvent(0, INFINITE);
                     }
                     (void
-                    )debugSymbols->AppendSymbolPathWide(win_utils::getModulePath(nullptr).value().parent_path().c_str()
+                    )debugSymbols->AppendSymbolPathWide(sys_utils::getModulePath(nullptr).value().parent_path().c_str()
                     );
                     (void)debugSymbols->RemoveSymbolOptions(
                         SYMOPT_NO_CPP | SYMOPT_LOAD_ANYTHING | SYMOPT_NO_UNQUALIFIED_LOADS | SYMOPT_IGNORE_NT_SYMPATH
@@ -208,14 +208,14 @@ uintptr_t tryGetSymbolAddress(std::string_view symbol) {
 StackTraceEntryInfo getInfo(std::stacktrace_entry const& entry) {
     DbgEngData data;
 
-    static auto bdsRange = win_utils::getImageRange();
+    static auto bdsRange = sys_utils::getImageRange();
 
     if (&*bdsRange.begin() <= entry.native_handle() && entry.native_handle() < &*bdsRange.end()) {
         size_t length{};
         uint   disp{};
         auto   str = pl::symbol_provider::pl_lookup_symbol_disp(entry.native_handle(), &length, &disp);
         if (length) {
-            static auto bdsName = win_utils::getModuleFileName(nullptr);
+            static auto bdsName = sys_utils::getModuleFileName(nullptr);
             std::string demangledName(2048, '\0');
             size_t      strLength = UnDecorateSymbolName(str[0], demangledName.data(), 2048, UNDNAME_NAME_ONLY);
             demangledName.resize(strLength);

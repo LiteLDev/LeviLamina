@@ -1,6 +1,7 @@
 #pragma once
 
 #include <concepts>
+#include <cstddef>
 #include <filesystem>
 #include <optional>
 #include <span>
@@ -11,7 +12,7 @@
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
 
-namespace ll::inline utils::win_utils {
+namespace ll::inline utils::sys_utils {
 
 extern "C" struct _IMAGE_DOS_HEADER __ImageBase; // NOLINT(bugprone-reserved-identifier)
 
@@ -23,7 +24,7 @@ LLNDAPI std::string const& getSystemName();
 
 LLNDAPI bool isWine();
 
-LLNDAPI std::span<uchar> getImageRange(std::string_view name = "");
+LLNDAPI std::span<std::byte> getImageRange(std::string_view name = "");
 
 LLNDAPI void* getModuleHandle(void* addr);
 
@@ -67,4 +68,4 @@ template <std::invocable<wchar_t*, size_t, size_t&> Fn>
     }
     return result;
 }
-} // namespace ll::inline utils::win_utils
+} // namespace ll::inline utils::sys_utils

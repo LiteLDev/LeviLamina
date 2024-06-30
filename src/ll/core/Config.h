@@ -7,7 +7,7 @@
 
 #include "ll/api/base/Macro.h"
 #include "ll/api/reflection/Dispatcher.h"
-#include "ll/api/utils/WinUtils.h"
+#include "ll/api/utils/SystemUtils.h"
 #include "ll/core/tweak/ForceEnableCheatCommands.h"
 #include "ll/core/tweak/SimpleServerLogger.h"
 #include "ll/core/tweak/Statistics.h"
@@ -22,7 +22,7 @@ struct LeviConfig {
 
     std::string language = "system";
     struct {
-        bool colorLog = win_utils::isStdoutSupportAnsi();
+        bool colorLog = sys_utils::isStdoutSupportAnsi();
         int  logLevel = 4;
     } logger{};
 

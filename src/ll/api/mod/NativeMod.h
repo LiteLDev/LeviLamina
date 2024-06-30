@@ -6,7 +6,7 @@
 #include "ll/api/base/Macro.h"
 #include "ll/api/mod/Manifest.h"
 #include "ll/api/mod/Mod.h"
-#include "ll/api/utils/WinUtils.h"
+#include "ll/api/utils/SystemUtils.h"
 
 namespace ll::mod {
 
@@ -32,7 +32,7 @@ public:
 
     LLNDAPI static std::shared_ptr<NativeMod> getByHandle(Handle handle);
 
-    LLNDAPI static std::shared_ptr<NativeMod> current(Handle handle = win_utils::getCurrentModuleHandle());
+    LLNDAPI static std::shared_ptr<NativeMod> current(Handle handle = sys_utils::getCurrentModuleHandle());
 };
 
 } // namespace ll::mod

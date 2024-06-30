@@ -10,7 +10,7 @@
 #include "ll/api/service/ServerInfo.h"
 #include "ll/api/thread/GlobalThreadPauser.h"
 #include "ll/api/utils/StringUtils.h"
-#include "ll/api/utils/WinUtils.h"
+#include "ll/api/utils/SystemUtils.h"
 
 #include "mc/deps/core/common/bedrock/IMemoryAllocator.h"
 
@@ -23,7 +23,7 @@ FuncPtr resolveSymbol(char const* symbol) {
     auto          res = pl::symbol_provider::pl_resolve_symbol_silent(symbol);
     if (res == nullptr) {
         sLogger.fatal("Could not find symbol in memory: {}", symbol);
-        sLogger.fatal("In module: {}", win_utils::getCallerModuleFileName());
+        sLogger.fatal("In module: {}", sys_utils::getCallerModuleFileName());
     }
     return res;
 }
@@ -33,22 +33,21 @@ FuncPtr resolveSymbol(std::string_view symbol, bool disableErrorOutput) {
     auto          res = pl::symbol_provider::pl_resolve_symbol_silent_n(symbol.data(), symbol.size());
     if (!disableErrorOutput && res == nullptr) {
         sLogger.fatal("Could not find symbol in memory: {}", symbol);
-        sLogger.fatal("In module: {}", win_utils::getCallerModuleFileName());
+        sLogger.fatal("In module: {}", sys_utils::getCallerModuleFileName());
     }
     return res;
 }
 
-FuncPtr resolveSignature(std::string_view signature) { return resolveSignature(signature, win_utils::getImageRange()); }
+FuncPtr resolveSignature(std::string_view signature) { return resolveSignature(signature, sys_utils::getImageRange()); }
 
-FuncPtr resolveSignature(std::string_view signature, std::span<uchar> range) {
+FuncPtr resolveSignature(std::string_view signature, std::span<std::byte> range) {
     if (range.empty()) {
         return nullptr;
     }
     if (auto res = hat::parse_signature(signature); !res.has_value()) {
         return nullptr;
     } else {
-        auto& byteRange = reinterpret_cast<std::span<std::byte>&>(range);
-        return const_cast<std::byte*>(hat::find_pattern(byteRange.begin(), byteRange.end(), res.value()).get());
+        return const_cast<std::byte*>(hat::find_pattern(range.begin(), range.end(), res.value()).get());
     }
 }
 std::vector<std::string> lookupSymbol(FuncPtr func) {

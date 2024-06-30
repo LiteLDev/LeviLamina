@@ -1,13 +1,13 @@
 #include "ll/api/i18n/I18n.h"
 #include "ll/api/io/FileUtils.h"
 #include "ll/api/utils/StringUtils.h"
-#include "ll/api/utils/WinUtils.h"
+#include "ll/api/utils/SystemUtils.h"
 
 namespace fs = std::filesystem;
 
 using ll::file_utils::u8path;
 using ll::string_utils::splitByPattern;
-using ll::win_utils::getSystemLocaleName;
+using ll::sys_utils::getSystemLocaleName;
 
 namespace ll::i18n {
 

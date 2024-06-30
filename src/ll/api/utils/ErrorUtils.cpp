@@ -6,7 +6,7 @@
 #include "ll/api/memory/Memory.h"
 #include "ll/api/reflection/Reflection.h"
 #include "ll/api/utils/StringUtils.h"
-#include "ll/api/utils/WinUtils.h"
+#include "ll/api/utils/SystemUtils.h"
 
 #include "windows.h"
 
@@ -202,7 +202,7 @@ std::string makeExceptionString(std::exception_ptr ePtr) noexcept {
             try {
                 UntypedExceptionRef exc{*rt};
                 std::string         handleName =
-                    win_utils::getModulePath(exc.handle)
+                    sys_utils::getModulePath(exc.handle)
                         .transform([](auto&& path) { return string_utils::u8str2str(path.stem().u8string()); })
                         .value_or("unknown module");
                 if (exc.getNumCatchableTypes() > 0) {

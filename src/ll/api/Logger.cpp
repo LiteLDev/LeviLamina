@@ -19,7 +19,7 @@
 
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/StringUtils.h"
-#include "ll/api/utils/WinUtils.h"
+#include "ll/api/utils/SystemUtils.h"
 #include "ll/core/Config.h"
 
 using namespace ll::string_utils;
@@ -38,7 +38,7 @@ void OutputStream::print(std::string_view s) const noexcept {
     try {
         auto lock = Logger::lock();
 
-        auto [time, ms] = win_utils::getLocalTime();
+        auto [time, ms] = sys_utils::getLocalTime();
 
         if (logger->ignoreConfig || checkLogLevel(logger->consoleLevel, level)) {
             std::string str = fmt::format(

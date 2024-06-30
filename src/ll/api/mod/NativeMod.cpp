@@ -22,10 +22,10 @@ NativeMod::Handle NativeMod::getHandle() const { return mImpl->handle; }
 
 std::shared_ptr<NativeMod> NativeMod::getByHandle(Handle handle) {
 
-    if (handle == win_utils::getCurrentModuleHandle()) {
+    if (handle == sys_utils::getCurrentModuleHandle()) {
         static auto llSelf = std::make_shared<NativeMod>(
             Manifest{"./../../LeviLamina.dll", "LeviLamina", std::string{NativeModManagerName}},
-            win_utils::getCurrentModuleHandle()
+            sys_utils::getCurrentModuleHandle()
         );
         return llSelf;
     }

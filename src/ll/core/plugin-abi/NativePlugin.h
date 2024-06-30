@@ -4,7 +4,7 @@
 #include <string_view>
 
 #include "ll/api/base/Macro.h"
-#include "ll/api/utils/WinUtils.h"
+#include "ll/api/utils/SystemUtils.h"
 #include "ll/core/plugin-abi/Manifest.h"
 #include "ll/core/plugin-abi/Plugin.h"
 
@@ -32,7 +32,7 @@ public:
 
     LLNDAPI static std::shared_ptr<NativePlugin> getByHandle(Handle handle);
 
-    LLNDAPI static std::shared_ptr<NativePlugin> current(Handle handle = win_utils::getCurrentModuleHandle());
+    LLNDAPI static std::shared_ptr<NativePlugin> current(Handle handle = sys_utils::getCurrentModuleHandle());
 };
 
 } // namespace ll::plugin

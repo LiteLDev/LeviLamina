@@ -21,7 +21,7 @@
 #include "ll/api/service/ServerInfo.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/HashUtils.h"
-#include "ll/api/utils/WinUtils.h"
+#include "ll/api/utils/SystemUtils.h"
 
 #include "mc/server/common/DedicatedServer.h"
 #include "mc/server/common/commands/StopCommand.h"
@@ -63,7 +63,7 @@ std::chrono::steady_clock::time_point severStartBeginTime;
 std::chrono::steady_clock::time_point severStartEndTime;
 
 void checkOtherBdsInstance() {
-    auto currentPath = win_utils::getModulePath(nullptr).value();
+    auto currentPath = sys_utils::getModulePath(nullptr).value();
     // and pid is not current process
     std::vector<DWORD> pids;
     ::PROCESSENTRY32W  pe32;
@@ -89,7 +89,7 @@ void checkOtherBdsInstance() {
         auto handle = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ | PROCESS_TERMINATE, false, pid);
         if (handle) {
             // Get the full path of the process
-            auto path = win_utils::getModulePath(nullptr, handle).value();
+            auto path = sys_utils::getModulePath(nullptr, handle).value();
             // Compare the path
             if (path == currentPath) {
                 logger.error("Detected the existence of another BDS process with the same path!"_tr());

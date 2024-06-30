@@ -20,7 +20,7 @@
 #include "ll/api/mod/NativeMod.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/StringUtils.h"
-#include "ll/api/utils/WinUtils.h"
+#include "ll/api/utils/SystemUtils.h"
 #include "ll/core/LeviLamina.h"
 
 #include "errhandlingapi.h"
@@ -33,7 +33,7 @@ namespace ll::mod {
 using namespace i18n_literals;
 
 NativeModManager::NativeModManager() : ModManager(NativeModManagerName) {
-    handleMap[win_utils::getCurrentModuleHandle()] = NativeMod::current();
+    handleMap[sys_utils::getCurrentModuleHandle()] = NativeMod::current();
 }
 NativeModManager::~NativeModManager() = default;
 
@@ -98,7 +98,7 @@ Expected<> NativeModManager::load(Manifest manifest) {
     auto modDir =
         std::filesystem::canonical(getModsRoot() / string_utils::sv2u8sv(currentLoadingMod->getManifest().name));
 
-    if (auto res = win_utils::adaptFixedSizeToAllocatedResult(
+    if (auto res = sys_utils::adaptFixedSizeToAllocatedResult(
             [](wchar_t* value, size_t valueLength, size_t& valueLengthNeededWithNul) -> bool {
                 ::SetLastError(ERROR_SUCCESS);
                 valueLengthNeededWithNul = ::GetEnvironmentVariableW(L"PATH", value, static_cast<DWORD>(valueLength));

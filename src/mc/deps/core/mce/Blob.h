@@ -33,7 +33,7 @@ public:
 
     [[nodiscard]] _CONSTEXPR23 Blob() = default;
 
-    [[nodiscard]] _CONSTEXPR23 Blob(std::span<uchar> s, Deleter deleter = {}) : mSize(s.size()) { // NOLINT
+    [[nodiscard]] _CONSTEXPR23 Blob(std::span<value_type> s, Deleter deleter = {}) : mSize(s.size()) { // NOLINT
         mBlob = pointer_type(new value_type[mSize], deleter);
         std::copy(s.begin(), s.end(), mBlob.get());
     }
@@ -42,7 +42,7 @@ public:
 
     [[nodiscard]] _CONSTEXPR23 size_type size() const { return mSize; }
 
-    [[nodiscard]] _CONSTEXPR23 std::span<uchar> view() const { return {data(), size()}; }
+    [[nodiscard]] _CONSTEXPR23 std::span<value_type> view() const { return {data(), size()}; }
 
     LL_CLANG_CEXPR Blob&       operator=(Blob&&) noexcept = default;
     [[nodiscard]] _CONSTEXPR23 Blob(Blob&&) noexcept      = default;

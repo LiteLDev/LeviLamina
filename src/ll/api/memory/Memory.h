@@ -76,7 +76,7 @@ LLNDAPI FuncPtr resolveSignature(std::string_view signature);
  * @param range search range
  * @return function pointer
  */
-LLNDAPI FuncPtr resolveSignature(std::string_view signature, std::span<uchar> range);
+LLNDAPI FuncPtr resolveSignature(std::string_view signature, std::span<std::byte> range);
 
 /**
  * @brief lookup symbol name of a function address
@@ -178,7 +178,7 @@ template <template <class> class P, class T>
 }
 
 template <FixedString symbol>
-inline FuncPtr symbolCache = resolveSymbol(symbol);
+inline FuncPtr symbolCache = resolveSymbol(symbol, false);
 
 template <FixedString signature>
 inline FuncPtr signatureCache = resolveSignature(signature);

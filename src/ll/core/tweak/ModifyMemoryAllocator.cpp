@@ -4,7 +4,7 @@
 #include "mc/deps/core/common/bedrock/IMemoryAllocator.h"
 #include "mc/deps/core/common/bedrock/Memory.h"
 
-#include "ll/api/utils/WinUtils.h"
+#include "ll/api/utils/SystemUtils.h"
 
 #include "mimalloc.h"
 
@@ -198,7 +198,7 @@ public:
         std::unordered_map<std::string, MemSize> res;
 
         for (auto& [fn, mem] : getDebugMap()) {
-            auto name = win_utils::getModuleFileName(win_utils::getModuleHandle(fn));
+            auto name = sys_utils::getModuleFileName(sys_utils::getModuleHandle(fn));
 
             res[name].a += mem.a;
             res[name].f += mem.f;

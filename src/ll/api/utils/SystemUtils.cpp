@@ -1,4 +1,4 @@
-#include "ll/api/utils/WinUtils.h"
+#include "ll/api/utils/SystemUtils.h"
 
 #include <string>
 
@@ -14,7 +14,7 @@
 #include "psapi.h"
 
 using namespace ll::string_utils;
-namespace ll::inline utils::win_utils {
+namespace ll::inline utils::sys_utils {
 
 std::string getSystemLocaleName() {
     wchar_t buf[LOCALE_NAME_MAX_LENGTH]{};
@@ -54,7 +54,7 @@ bool isWine() {
     return result;
 }
 
-std::span<uchar> getImageRange(std::string_view name) {
+std::span<std::byte> getImageRange(std::string_view name) {
     static auto process = GetCurrentProcess();
     HMODULE     rangeStart;
     if (name.empty()) {
@@ -65,7 +65,7 @@ std::span<uchar> getImageRange(std::string_view name) {
     if (rangeStart) {
         MODULEINFO moduleInfo;
         if (GetModuleInformation(process, rangeStart, &moduleInfo, sizeof(MODULEINFO))) {
-            return {(uchar*)rangeStart, moduleInfo.SizeOfImage};
+            return {(std::byte*)rangeStart, moduleInfo.SizeOfImage};
         }
     }
     return {};
@@ -145,4 +145,4 @@ bool isStdoutSupportAnsi() {
     }
     return false;
 }
-} // namespace ll::inline utils::win_utils
+} // namespace ll::inline utils::sys_utils

@@ -17,7 +17,7 @@
 // #include "mc/world/level/LevelChunkTag.h"
 // #include "mc/world/level/storage/LevelStorage.h"
 
-#include "ll/api/utils/WinUtils.h"
+#include "ll/api/utils/SystemUtils.h"
 
 #include "mc/nbt/CompoundTag.h"
 #include "mc/server/ServerLevel.h"
@@ -130,13 +130,13 @@ LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &Se
     // ll::reflection::deserialize(helloReflection, ll::reflection::serialize<CompoundTagVariant>(helloReflection));
 
     ll::logger.debug("0x{:X}", (uintptr_t)ll::memory::resolveIdentifier(&FillCommand::execute));
-    ll::logger.debug("0x{:X}", (uintptr_t)ll::win_utils::getImageRange().data());
+    ll::logger.debug("0x{:X}", (uintptr_t)ll::sys_utils::getImageRange().data());
 
-    ll::logger.debug("0x{:X}", (uintptr_t)ll::win_utils::getImageRange().size());
+    ll::logger.debug("0x{:X}", (uintptr_t)ll::sys_utils::getImageRange().size());
     ll::logger.debug(
         "0x{:X}",
         (uintptr_t)ll::memory::resolveIdentifier(&FillCommand::execute)
-            - (uintptr_t)ll::win_utils::getImageRange("LeviLamina.dll").data()
+            - (uintptr_t)ll::sys_utils::getImageRange("LeviLamina.dll").data()
     );
 
     ll::logger.debug("{}", ll::reflection::getRawName<&FillCommand::execute>());

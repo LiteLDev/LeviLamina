@@ -9,7 +9,7 @@
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/StacktraceUtils.h"
 #include "ll/api/utils/StringUtils.h"
-#include "ll/api/utils/WinUtils.h"
+#include "ll/api/utils/SystemUtils.h"
 #include "ll/core/Config.h"
 
 #include <windows.h>
@@ -72,7 +72,7 @@ static struct CrashInfo {
 
 static void dumpSystemInfo() {
     crashInfo.logger.info("System Info:");
-    crashInfo.logger.info("  |OS Version: {} {}", win_utils::getSystemName(), []() -> std::string {
+    crashInfo.logger.info("  |OS Version: {} {}", sys_utils::getSystemName(), []() -> std::string {
         RTL_OSVERSIONINFOW osVersionInfoW = [] {
             RTL_OSVERSIONINFOW osVersionInfoW{};
             typedef uint(WINAPI * RtlGetVersionPtr)(PRTL_OSVERSIONINFOW);
@@ -100,7 +100,7 @@ static void dumpSystemInfo() {
             osVersion += " " + wstr2str(osVersionInfoW.szCSDVersion);
         }
         return osVersion;
-    }() + (win_utils::isWine() ? " (wine)" : ""));
+    }() + (sys_utils::isWine() ? " (wine)" : ""));
     crashInfo.logger.info("  |CPU: {}", []() -> std::string {
         int cpuInfo[4] = {-1};
         __cpuid(cpuInfo, (int)0x80000000);

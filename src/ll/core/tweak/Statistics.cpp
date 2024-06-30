@@ -15,7 +15,7 @@
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/RandomUtils.h"
 #include "ll/api/utils/StringUtils.h"
-#include "ll/api/utils/WinUtils.h"
+#include "ll/api/utils/SystemUtils.h"
 #include "ll/core/LeviLamina.h"
 
 
@@ -172,7 +172,7 @@ struct Statistics::Impl {
                 ll::file_utils::writeFile(mod::getModsRoot() / u8"LeviLamina/data/statisticsUuid", uuid);
             }
         }
-        json["osName"]    = ll::win_utils::isWine() ? "Linux" : "Windows";
+        json["osName"]    = ll::sys_utils::isWine() ? "Linux(wine)" : "Windows";
         json["osArch"]    = "amd64";
         json["osVersion"] = "";
         json["coreCount"] = getCpuCoreCount();

@@ -9,7 +9,7 @@
 #include "ll/api/memory/Memory.h"
 #include "ll/api/service/ServerInfo.h"
 #include "ll/api/thread/GlobalThreadPauser.h"
-#include "ll/api/utils/WinUtils.h"
+#include "ll/api/utils/SystemUtils.h"
 
 namespace ll::memory {
 
@@ -41,7 +41,7 @@ FuncPtr resolveIdentifier(std::string_view identifier, bool disableErrorOutput) 
     // }
     if (!disableErrorOutput) {
         hookLogger.fatal("Could not find symbol/signature in memory: {}", identifier);
-        hookLogger.fatal("In module: {}", win_utils::getCallerModuleFileName());
+        hookLogger.fatal("In module: {}", sys_utils::getCallerModuleFileName());
     }
     return nullptr;
 }

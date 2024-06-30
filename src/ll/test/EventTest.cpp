@@ -135,19 +135,6 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 
     using namespace ll::event;
 
-    // auto str = ll::toFixedString<ll::reflection::type_raw_name_v<FileActionEvent>>();
-
-    // ll::logger.debug("{}", str.buf);
-
-    auto fileWatcher = std::make_shared<ll::file_utils::FileWatcher>(
-        "./",
-        [](std::filesystem::path const& path, ll::file_utils::FileWatcher::FileActionType type) {
-            ll::logger.debug("FileWatcher: {} {}", path, magic_enum::enum_name(type));
-        }
-    );
-
-    remover.add<DelayTask>(2min, [=] { auto file = fileWatcher; });
-
     bus.emplaceListener<ExecutingCommandEvent>([](ExecutingCommandEvent& ev) {
         ll::logger.debug("ExecutingCommandEvent: {}", ev.commandContext().mCommand);
         ll::logger.debug("origin: {}", ev.commandContext().mOrigin->serialize().toSnbt());
