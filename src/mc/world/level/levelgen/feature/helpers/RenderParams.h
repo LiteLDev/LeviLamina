@@ -7,7 +7,7 @@
 
 class RenderParams {
 public:
-    char filler[0x1F0]; // BDS1.20.61 ActorDefinitionDescriptor::_executeEvent line=256
+    char filler[0x1F0]; // IDA BDS-WIN 1.20.61 ActorDefinitionDescriptor::_executeEvent line=256
 
 public:
     // prevent constructor by default

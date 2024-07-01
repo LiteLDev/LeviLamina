@@ -64,7 +64,7 @@ LLNDAPI FuncPtr resolveSymbol(char const* symbol);
 LLNDAPI FuncPtr resolveSymbol(std::string_view symbol, bool disableErrorOutput);
 
 /**
- * @brief resolve signature to function pointer from bds image
+ * @brief resolve signature to function pointer from process image
  * @param signature signature
  * @return function pointer
  */

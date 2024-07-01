@@ -13,6 +13,7 @@
 #include "fmt/core.h"
 
 #include "ll/api/Logger.h"
+#include "ll/api/Versions.h"
 #include "ll/api/i18n/I18n.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/mod/Mod.h"
@@ -242,7 +243,7 @@ LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::High, "main", int, int arg
             break;
         case "-v"_h:
         case "--version"_h:
-            fmt::print("{}", getBdsVersion().to_string());
+            fmt::print("{}", getGameVersion().to_string());
             return 0;
         case "--protocolversion"_h:
             fmt::print("{}", getServerProtocolVersion());

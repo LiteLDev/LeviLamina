@@ -9,6 +9,6 @@ enum class BlockUpdateFlag : uchar {
     NoGraphic           = 1 << 2,
     Priority            = 1 << 3,
     ForceNoticeListener = 1 << 4,
-    All                 = Neighbors | Network, // default value in BDS
+    All                 = Neighbors | Network, // default value
     AllPriority         = All | Priority,
 };

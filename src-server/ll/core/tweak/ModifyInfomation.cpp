@@ -1,7 +1,8 @@
 #include "ll/api/io/FunctionStream.h"
 #include "ll/api/io/StreamRedirector.h"
 #include "ll/api/memory/Hook.h"
-#include "ll/api/service/ServerInfo.h"
+#include "ll/api/service/ServerInfo.h" 
+#include "ll/api/Versions.h"
 #include "ll/core/Config.h"
 #include "ll/core/LeviLamina.h"
 #include "ll/core/Version.h"
@@ -119,7 +120,7 @@ LL_STATIC_HOOK(
     }
 }
 
-// Block BDS from adding LOG metadata
+// Block from adding LOG metadata
 
 LL_TYPE_INSTANCE_HOOK(
     AppendLogEntryMetadataHook,

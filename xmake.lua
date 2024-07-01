@@ -1,8 +1,5 @@
 add_rules("mode.release", "mode.debug")
 
-set_allowedarchs("windows|x64")
-set_defaultarchs("windows|x64")
-
 add_repositories("liteldev-repo https://github.com/LiteLDev/xmake-repo.git")
 
 -- Dependencies from xmake-repo.
@@ -25,7 +22,6 @@ add_requires("pfr 2.1.1")
 add_requires("demangler v17.0.7")
 add_requires("preloader v1.8.0")
 add_requires("symbolprovider v1.1.0")
-add_requires("bdslibrary 1.21.1.03")
 add_requires("libhat 2024.4.16")
 
 if has_config("tests") then
@@ -34,6 +30,20 @@ end
 
 if not has_config("vs_runtime") then
     set_runtimes("MD")
+end
+
+if is_config("build-platform", "Dedicated.*") then
+    add_requires("bdslibrary 1.21.1.03")
+end
+
+if is_config("build-platform", "DedicatedWin", "UWP") then
+    set_allowedarchs("windows|x64")
+elseif is_config("build-platform", "DedicatedLinux") then
+    set_allowedarchs("linux|x86_64")
+elseif is_config("build-platform", "Android") then
+    set_allowedarchs("android|arm64-v8a")
+elseif is_config("build-platform", "iOS") then
+    set_allowedarchs("iphoneos|arm64")
 end
 
 option("tests")
@@ -46,6 +56,11 @@ option("use_mimalloc")
     set_showmenu(true)
     set_description("Enable mimalloc")
 
+option("build-platform")
+    set_default("DedicatedWin")
+    set_showmenu(true)
+    set_values("Android", "iOS", "UWP", "DedicatedWin", "DedicatedLinux")
+
 target("LeviLamina")
     set_languages("c++20")
     set_kind("shared")
@@ -54,7 +69,6 @@ target("LeviLamina")
     add_files(
         "src/ll/api/**.cpp",
         "src/ll/core/**.cpp",
-        "src/ll/core/**.rc",
         "src/mc/**.cpp"
     )
     set_configdir("$(buildir)/config")
@@ -81,40 +95,62 @@ target("LeviLamina")
         {public = true}
     )
     add_defines(
-        "_AMD64_",
-        "NOMINMAX",
-        "UNICODE",
-        "WIN32_LEAN_AND_MEAN",
         "ENTT_PACKED_PAGE=128", -- public = true
         "LL_EXPORT",
         "_HAS_CXX23=1" -- work around to enable c++23
     )
-    add_cxflags(
-        "/utf-8",
-        "/permissive-",
-        "/EHa",
-        "/W4",
-        "/w44265",
-        "/w44289",
-        "/w44296",
-        "/w45263",
-        "/w44738",
-        "/w45204"
-    )
-    add_cxflags(
-        "/EHs",
-        "-Wno-microsoft-cast",
-        "-Wno-invalid-offsetof",
-        "-Wno-c++2b-extensions",
-        "-Wno-microsoft-include",
-        "-Wno-overloaded-virtual",
-        "-Wno-ignored-qualifiers",
-        "-Wno-missing-field-initializers",
-        "-Wno-potentially-evaluated-expression",
-        "-Wno-pragma-system-header-outside-header",
-        {tools = {"clang_cl"}}
-    )
-    add_shflags("/DELAYLOAD:bedrock_server.dll")
+
+    if is_config("build-platform", "DedicatedWin", "UWP") then
+        add_defines(
+            "_AMD64_",
+            "NOMINMAX",
+            "UNICODE",
+            "WIN32_LEAN_AND_MEAN"
+        )
+        add_cxflags(
+            "/utf-8",
+            "/permissive-",
+            "/EHa",
+            "/W4",
+            "/w44265",
+            "/w44289",
+            "/w44296",
+            "/w45263",
+            "/w44738",
+            "/w45204"
+        )
+        add_cxflags(
+            "/EHs",
+            "-Wno-microsoft-cast",
+            "-Wno-invalid-offsetof",
+            "-Wno-c++2b-extensions",
+            "-Wno-microsoft-include",
+            "-Wno-overloaded-virtual",
+            "-Wno-ignored-qualifiers",
+            "-Wno-missing-field-initializers",
+            "-Wno-potentially-evaluated-expression",
+            "-Wno-pragma-system-header-outside-header",
+            {tools = {"clang_cl"}}
+        ) 
+        add_files("src/ll/core/**.rc")
+    end
+
+    if is_config("build-platform", "Dedicated.*") then
+        add_shflags("/DELAYLOAD:bedrock_server.dll")
+        add_defines("LL_PLAT_SERVER")
+        add_packages("bdslibrary", {public = true})
+        add_headerfiles("src-server/(ll/api/**.h)"
+        -- , "src-server/(mc/**.h)"
+        )
+        add_includedirs("src-server")
+        add_files(
+            "src-server/ll/api/**.cpp",
+            "src-server/ll/core/**.cpp"
+            -- "src-server/mc/**.cpp"
+        )
+    else
+        add_defines("LL_PLAT_CLIENT")
+    end
 
     if has_config("tests") then
         add_defines("LL_DEBUG")

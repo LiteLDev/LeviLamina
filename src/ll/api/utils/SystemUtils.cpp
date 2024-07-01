@@ -45,7 +45,7 @@ std::string const& getSystemName() {
 
 bool isWine() {
     static bool result = []() {
-        HMODULE ntdll = GetModuleHandleW(L"ntdll.dll");
+        HMODULE ntdll = GetModuleHandle(L"ntdll.dll");
         if (!ntdll) return false;
         auto funcWineGetVersion = GetProcAddress(ntdll, "wine_get_version");
         if (funcWineGetVersion) return true;
@@ -141,7 +141,7 @@ std::pair<std::tm, int> getLocalTime() {
 bool isStdoutSupportAnsi() {
     DWORD mode;
     if (GetConsoleMode(GetStdHandle(STD_OUTPUT_HANDLE), &mode)) {
-        return mode | ENABLE_VIRTUAL_TERMINAL_PROCESSING;
+        return mode & ENABLE_VIRTUAL_TERMINAL_PROCESSING;
     }
     return false;
 }

@@ -208,18 +208,19 @@ uintptr_t tryGetSymbolAddress(std::string_view symbol) {
 StackTraceEntryInfo getInfo(std::stacktrace_entry const& entry) {
     DbgEngData data;
 
-    static auto bdsRange = sys_utils::getImageRange();
+    static auto processRange = sys_utils::getImageRange();
 
-    if (&*bdsRange.begin() <= entry.native_handle() && entry.native_handle() < &*bdsRange.end()) {
+    if (&*processRange.begin() <= entry.native_handle() && entry.native_handle() < &*processRange.end()) {
         size_t length{};
         uint   disp{};
         auto   str = pl::symbol_provider::pl_lookup_symbol_disp(entry.native_handle(), &length, &disp);
         if (length) {
-            static auto bdsName = sys_utils::getModuleFileName(nullptr);
-            std::string demangledName(2048, '\0');
-            size_t      strLength = UnDecorateSymbolName(str[0], demangledName.data(), 2048, UNDNAME_NAME_ONLY);
+            static auto processName = sys_utils::getModuleFileName(nullptr);
+            std::string demangledName(0x1000, '\0');
+            size_t      strLength =
+                UnDecorateSymbolName(str[0], demangledName.data(), (DWORD)demangledName.size(), UNDNAME_NAME_ONLY);
             demangledName.resize(strLength);
-            StackTraceEntryInfo res{disp, bdsName + '!' + demangledName};
+            StackTraceEntryInfo res{disp, processName + '!' + demangledName};
             pl::symbol_provider::pl_free_lookup_result(str);
             return res;
         }

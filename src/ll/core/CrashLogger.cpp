@@ -3,9 +3,9 @@
 #include <chrono>
 
 #include "ll/api/Logger.h"
+#include "ll/api/Versions.h"
 #include "ll/api/data/Version.h"
 #include "ll/api/i18n/I18n.h"
-#include "ll/api/service/ServerInfo.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/StacktraceUtils.h"
 #include "ll/api/utils/StringUtils.h"
@@ -44,7 +44,7 @@ void CrashLogger::initCrashLogger() {
         "{} {} \"{}\"",
         globalConfig.modules.crashLogger.externalpath,
         GetCurrentProcessId(),
-        ll::getBdsVersion().to_string()
+        ll::getGameVersion().to_string()
     ));
     if (!CreateProcess(nullptr, cmd.data(), &sa, &sa, true, 0, nullptr, nullptr, &si, &pi)) {
         crashLogger.error("Couldn't Create CrashLogger Daemon Process"_tr());
@@ -75,10 +75,10 @@ static void dumpSystemInfo() {
     crashInfo.logger.info("  |OS Version: {} {}", sys_utils::getSystemName(), []() -> std::string {
         RTL_OSVERSIONINFOW osVersionInfoW = [] {
             RTL_OSVERSIONINFOW osVersionInfoW{};
-            typedef uint(WINAPI * RtlGetVersionPtr)(PRTL_OSVERSIONINFOW);
-            HMODULE hMod = ::GetModuleHandleW(L"ntdll.dll");
+            HMODULE            hMod = ::GetModuleHandleW(L"ntdll.dll");
             if (hMod) {
-                auto fxPtr = (RtlGetVersionPtr)::GetProcAddress(hMod, "RtlGetVersion");
+                using RtlGetVersionPtr = uint(WINAPI*)(PRTL_OSVERSIONINFOW);
+                auto fxPtr             = (RtlGetVersionPtr)::GetProcAddress(hMod, "RtlGetVersion");
                 if (fxPtr != nullptr) {
                     osVersionInfoW.dwOSVersionInfoSize = sizeof(osVersionInfoW);
                     if (0 == fxPtr(&osVersionInfoW)) {
@@ -244,7 +244,7 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
 
         fmt::print("\n");
 
-        crashInfo.logger.info("BDS Crashed! Generating Stacktrace and MiniDump...");
+        crashInfo.logger.info("Process Crashed! Generating Stacktrace and MiniDump...");
         try {
             genMiniDumpFile(e);
         } catch (...) {

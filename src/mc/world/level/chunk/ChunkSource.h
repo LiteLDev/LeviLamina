@@ -28,7 +28,7 @@ public:
         Deferred = 0x1,
     };
 
-    /*These member variables were obtained by analyzing BDS 1.20.61 using IDA.*/
+    /*These member variables were obtained by analyzing BDS-WIN 1.20.61 using IDA.*/
     int                          mChunkSide;             // this+0x18
     Level*                       mLevel;                 // this+0x20
     Dimension*                   mDimension;             // this+0x28

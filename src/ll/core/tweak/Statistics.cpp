@@ -1,6 +1,7 @@
 #include "ll/core/tweak/Statistics.h"
 
 
+#include "ll/api/Versions.h"
 #include "ll/api/chrono/GameChrono.h"
 #include "ll/api/event/EventBus.h"
 #include "ll/api/event/server/ServerStartedEvent.h"

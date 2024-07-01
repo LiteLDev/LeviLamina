@@ -1,5 +1,6 @@
 #include "ll/core/command/BuiltinCommands.h"
 
+#include "ll/api/Versions.h"
 #include "ll/api/command/CommandHandle.h"
 #include "ll/api/command/CommandRegistrar.h"
 #include "ll/api/i18n/I18n.h"
@@ -22,7 +23,7 @@ void registerVersionCommand() {
                     .getOrCreateCommand("version", "Query serverversion information"_tr(), config.permission);
     cmd.overload().execute([&](CommandOrigin const&, CommandOutput& output) {
         output.success("This server is running game version {0} with §bLeviLamina-{1}§r."_tr(
-            ll::getBdsVersion(),
+            ll::getGameVersion(),
             ll::getLoaderVersion()
         ));
     });
