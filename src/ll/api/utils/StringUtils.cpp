@@ -150,7 +150,7 @@ std::string getMcCodeFromTextStyle(fmt::text_style style) {
                 {"§t", 0x21497B}, {"§u", 0x9A5CC6}, {"§f", 0xFFFFFF}
             };
             // clang-format on
-            double           minDis = DBL_MAX;
+            double           minDis = std::numeric_limits<double>::max();
             std::string_view minStr;
             for (auto& [k, v] : carr) {
                 auto dis = v.distanceTo(color);

@@ -23,11 +23,13 @@ public:
 
     [[nodiscard]] inline std::string toString() { return ll::string_utils::strToHexStr(final()); }
 
-    inline void update(std::string_view data) { update(data.data(), (uint)data.size()); }
-
-    template <class T, size_t N>
-    inline void update(std::span<T, N> data) {
-        update(data.data(), (uint)(data.size() * sizeof(T)));
+    inline void update(std::string_view data) {
+        constexpr const auto max = std::numeric_limits<uint>::max();
+        while (data.size() > max) {
+            update(data.data(), max);
+            data.remove_prefix(max);
+        }
+        update(data.data(), (uint)data.size());
     }
 
 public:

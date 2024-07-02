@@ -219,8 +219,8 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
     try {
         crashInfo.date                      = fmt::format("{:%Y-%m-%d_%H-%M-%S}", fmt::localtime(_time64(nullptr)));
         crashInfo.logger.playerLevel        = -2;
-        crashInfo.logger.fileLevel          = INT32_MAX;
-        crashInfo.logger.consoleLevel       = INT32_MAX;
+        crashInfo.logger.fileLevel          = std::numeric_limits<int>::max();
+        crashInfo.logger.consoleLevel       = std::numeric_limits<int>::max();
         crashInfo.logger.info.consoleFormat = {"{0} [{1}] {3}", "{:%T}.{:0>3}", "{}", "", "{}"};
         crashInfo.logger.info.style         = {
             fmt::fg(fmt::color::light_blue),
