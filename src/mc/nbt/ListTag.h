@@ -17,12 +17,6 @@ public:
     using Tag::operator==;
 
 public:
-    [[nodiscard]] constexpr ListTag(ListTag&&)   = default;
-    LL_CLANG_CEXPR ListTag& operator=(ListTag&&) = default;
-
-    [[nodiscard]] constexpr ListTag(ListTag const& other) = default;
-    constexpr ListTag& operator=(ListTag const& other)    = default;
-
     [[nodiscard]] constexpr ListTag(List tags) : List(std::move(tags)) {
         if (!empty()) mType = front().getId();
     }
