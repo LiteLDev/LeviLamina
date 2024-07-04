@@ -23,8 +23,10 @@ public:
         }
     }
     Dispatcher& operator=(Storage const& other) {
-        storage = other;
-        call();
+        if (&other != this) {
+            storage = other;
+            call();
+        }
         return *this;
     }
     Dispatcher& operator=(Storage&& other) {

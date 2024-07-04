@@ -6,24 +6,16 @@
 #include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/nbt/Tag.h"
 
-class StringTag : public ::Tag {
+class StringTag : public ::Tag, public std::string {
 public:
-    std::string data;
+    using Tag::operator==;
 
     [[nodiscard]] constexpr StringTag() = default;
 
-    [[nodiscard]] constexpr StringTag(std::string str) : data(std::move(str)) {} // NOLINT
-    [[nodiscard]] constexpr StringTag(std::string_view str) : data(str) {}       // NOLINT
+    [[nodiscard]] constexpr StringTag(std::string str) : std::string(std::move(str)) {}
+    [[nodiscard]] constexpr StringTag(std::string_view str) : std::string(str) {}
     template <size_t N>
-    [[nodiscard]] constexpr StringTag(char const (&str)[N]) : StringTag(std::string_view{str, N - 1}) {} // NOLINT
-
-    [[nodiscard]] constexpr operator std::string const&() const { return data; } // NOLINT
-
-    [[nodiscard]] constexpr operator std::string_view() const { return data; } // NOLINT
-
-    [[nodiscard]] constexpr operator std::string&() { return data; } // NOLINT
-
-    [[nodiscard]] constexpr operator std::string&&() && { return std::move(data); } // NOLINT
+    [[nodiscard]] constexpr StringTag(char const (&str)[N]) : std::string(str) {}
 
 public:
     // NOLINTBEGIN

@@ -6,23 +6,17 @@
 #include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/nbt/Tag.h"
 
-class IntArrayTag : public ::Tag {
+class IntArrayTag : public ::Tag, public std::vector<int> {
 public:
-    std::vector<int> data;
+    using Array = std::vector<int>;
 
-    [[nodiscard]] constexpr operator std::vector<int> const&() const { return data; }
-    [[nodiscard]] constexpr operator std::vector<int>&() { return data; }
+    using Tag::operator==;
 
     [[nodiscard]] constexpr IntArrayTag() = default;
 
-    [[nodiscard]] constexpr IntArrayTag(std::vector<int> arr) : data(std::move(arr)) {} // NOLINT
+    [[nodiscard]] constexpr IntArrayTag(Array arr) : Array(std::move(arr)) {} // NOLINT
 
-    [[nodiscard]] constexpr IntArrayTag(std::initializer_list<int> val) : data(std::move(val)) {} // NOLINT
-
-    [[nodiscard]] constexpr int const& operator[](size_t index) const { return data[index]; }
-    [[nodiscard]] constexpr int&       operator[](size_t index) { return data[index]; }
-
-    [[nodiscard]] constexpr size_t size() const { return data.size(); }
+    [[nodiscard]] constexpr IntArrayTag(std::initializer_list<int> val) : Array(val) {} // NOLINT
 
 public:
     // NOLINTBEGIN

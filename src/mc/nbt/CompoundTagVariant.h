@@ -62,13 +62,11 @@ public:
 
     [[nodiscard]] constexpr CompoundTagVariant(std::nullptr_t) {}
 
-    [[nodiscard]] inline bool operator==(CompoundTagVariant const& other) const {
-        return mTagStorage == other.mTagStorage;
-    }
+    [[nodiscard]] inline bool operator==(CompoundTagVariant const& other) const { return get() == other.get(); }
 
     [[nodiscard]] inline CompoundTagVariant(Variant tag) : mTagStorage(std::move(tag)) {}
 
-    [[nodiscard]] CompoundTagVariant(std::unique_ptr<Tag>&& tag) {
+    [[nodiscard]] CompoundTagVariant(UniqueTagPtr&& tag) {
         if (!tag) {
             return;
         }
@@ -76,8 +74,7 @@ public:
             mTagStorage = std::move((Types::get<I>&)*tag);
         });
     }
-    [[nodiscard]] CompoundTagVariant(std::unique_ptr<Tag> const& tag)
-    : CompoundTagVariant(tag ? tag->copy() : std::unique_ptr<Tag>{}) {}
+    [[nodiscard]] CompoundTagVariant(UniqueTagPtr const& tag) : CompoundTagVariant(tag ? tag->copy() : nullptr) {}
     template <std::derived_from<Tag> T>
     [[nodiscard]] constexpr CompoundTagVariant(T tag) : mTagStorage(std::move(tag)) {}
     template <std::integral T>
@@ -116,17 +113,19 @@ public:
     [[nodiscard]] bool hold() const noexcept {
         return std::holds_alternative<T>(mTagStorage);
     }
+    [[nodiscard]] bool hold(::Tag::Type type) const noexcept { return getId() == type; }
+
     // consistency with json
-    [[nodiscard]] bool is_array() const noexcept { return hold<ListTag>(); }
-    [[nodiscard]] bool is_binary() const noexcept { return hold<ByteArrayTag>() || hold<IntArrayTag>(); }
-    [[nodiscard]] bool is_boolean() const noexcept { return hold<ByteTag>(); }
-    [[nodiscard]] bool is_null() const noexcept { return hold<EndTag>(); }
-    [[nodiscard]] bool is_number_float() const noexcept { return hold<FloatTag>() || hold<DoubleTag>(); }
+    [[nodiscard]] bool is_array() const noexcept { return hold(Tag::List); }
+    [[nodiscard]] bool is_binary() const noexcept { return hold(Tag::ByteArray) || hold(Tag::IntArray); }
+    [[nodiscard]] bool is_boolean() const noexcept { return hold(Tag::Byte); }
+    [[nodiscard]] bool is_null() const noexcept { return hold(Tag::End); }
+    [[nodiscard]] bool is_number_float() const noexcept { return hold(Tag::Float) || hold(Tag::Double); }
     [[nodiscard]] bool is_number_integer() const noexcept {
-        return hold<ByteTag>() || hold<ShortTag>() || hold<IntTag>() || hold<Int64Tag>();
+        return hold(Tag::Byte) || hold(Tag::Short) || hold(Tag::Int) || hold(Tag::Int64);
     }
-    [[nodiscard]] bool is_object() const noexcept { return hold<CompoundTag>(); }
-    [[nodiscard]] bool is_string() const noexcept { return hold<StringTag>(); }
+    [[nodiscard]] bool is_object() const noexcept { return hold(Tag::Compound); }
+    [[nodiscard]] bool is_string() const noexcept { return hold(Tag::String); }
     [[nodiscard]] bool is_number() const noexcept { return is_number_float() || is_number_integer(); }
     [[nodiscard]] bool is_primitive() const noexcept { return is_null() || is_string() || is_number() || is_binary(); }
     [[nodiscard]] bool is_structured() const noexcept { return is_array() || is_object(); }
@@ -194,20 +193,20 @@ public:
     [[nodiscard]] Tag const& get() const { return reinterpret_cast<Tag const&>(mTagStorage); }
 
     template <std::derived_from<Tag> T>
-    [[nodiscard]] T& emplace() {
+    T& emplace() {
         return mTagStorage.emplace<T>();
     }
 
-    [[nodiscard]] std::unique_ptr<Tag>& operator[](size_t index) {
-        if (hold<ListTag>()) {
+    [[nodiscard]] UniqueTagPtr& operator[](size_t index) {
+        if (hold(Tag::List)) {
             return get<ListTag>()[index];
         } else {
             throw std::runtime_error("tag not hold an array");
         }
     }
 
-    [[nodiscard]] std::unique_ptr<Tag> const& operator[](size_t index) const {
-        if (hold<ListTag>()) {
+    [[nodiscard]] UniqueTagPtr const& operator[](size_t index) const {
+        if (hold(Tag::List)) {
             return get<ListTag>()[index];
         } else {
             throw std::runtime_error("tag not hold an array");
@@ -218,14 +217,14 @@ public:
         if (is_null()) {
             mTagStorage = CompoundTag{};
         }
-        if (!hold<CompoundTag>()) {
+        if (!hold(Tag::Compound)) {
             throw std::runtime_error("tag not hold an object");
         }
         return get<CompoundTag>()[index];
     }
 
     [[nodiscard]] CompoundTagVariant const& operator[](char const* index) const {
-        if (!hold<CompoundTag>()) {
+        if (!hold(Tag::Compound)) {
             throw std::runtime_error("tag not hold an object");
         }
         return get<CompoundTag>()[index];
@@ -235,28 +234,28 @@ public:
         if (is_null()) {
             mTagStorage = CompoundTag{};
         }
-        if (!hold<CompoundTag>()) {
+        if (!hold(Tag::Compound)) {
             throw std::runtime_error("tag not hold an object");
         }
         return get<CompoundTag>()[index];
     }
 
     [[nodiscard]] CompoundTagVariant const& operator[](std::string const& index) const {
-        if (!hold<CompoundTag>()) {
+        if (!hold(Tag::Compound)) {
             throw std::runtime_error("tag not hold an object");
         }
         return get<CompoundTag>()[index];
     }
 
-    [[nodiscard]] std::unique_ptr<Tag> toUnique() const& {
+    [[nodiscard]] UniqueTagPtr toUnique() const& {
         return std::visit(
             [](auto& val) -> std::unique_ptr<Tag> { return std::make_unique<std::decay_t<decltype(val)>>(val); },
             mTagStorage
         );
     }
-    [[nodiscard]] operator std::unique_ptr<Tag>() const { return toUnique(); } // NOLINT
+    [[nodiscard]] operator UniqueTagPtr() const { return toUnique(); } // NOLINT
 
-    [[nodiscard]] std::unique_ptr<Tag> toUnique() && {
+    [[nodiscard]] UniqueTagPtr toUnique() && {
         return std::visit(
             [](auto&& val) -> std::unique_ptr<Tag> {
                 return std::make_unique<std::decay_t<decltype(val)>>(std::move(val));
@@ -275,7 +274,7 @@ public:
         if (is_null()) {
             mTagStorage = ListTag{};
         }
-        if (!hold<ListTag>()) {
+        if (!hold(Tag::List)) {
             throw std::runtime_error("tag not hold an array");
         }
         get<ListTag>().add(std::move(val).toUnique());
@@ -315,16 +314,16 @@ public:
             throw std::runtime_error("tag not hold a number");
         }
     }
-    [[nodiscard]] constexpr operator std::string const&() const { // NOLINT
+    [[nodiscard]] operator std::string const&() const { // NOLINT
         return get<StringTag>();
     }
-    [[nodiscard]] constexpr operator std::string&() { // NOLINT
+    [[nodiscard]] operator std::string&() { // NOLINT
         return get<StringTag>();
     }
-    [[nodiscard]] constexpr operator std::string&&() && { // NOLINT
+    [[nodiscard]] operator std::string&&() && { // NOLINT
         return std::move(get<StringTag>());
     }
-    [[nodiscard]] constexpr operator std::string_view() const { // NOLINT
+    [[nodiscard]] operator std::string_view() const { // NOLINT
         return get<StringTag>();
     }
     static CompoundTagVariant object(std::initializer_list<CompoundTag::TagMap::value_type> init = {}) {
@@ -337,10 +336,10 @@ public:
     if (tags.empty()) {
         mType = Tag::End;
     } else {
-        mType = tags[0].index();
-        mList.reserve(tags.size());
+        mType = tags.front().index();
+        reserve(tags.size());
         for (auto& tag : tags) {
-            mList.emplace_back(std::move(tag).toUnique());
+            emplace_back(std::move(tag).toUnique());
         }
     }
 }
@@ -349,9 +348,63 @@ public:
         mType = Tag::End;
     } else {
         mType = tags.begin()->index();
-        mList.reserve(tags.size());
+        reserve(tags.size());
         for (auto& tag : tags) {
-            mList.emplace_back(tag.toUnique());
+            emplace_back(tag.toUnique());
         }
     }
 }
+[[nodiscard]] inline bool operator==(UniqueTagPtr const& l, CompoundTagVariant const& r) {
+    return l ? (*l == r.get()) : false;
+}
+[[nodiscard]] inline bool operator==(CompoundTagVariant const& l, UniqueTagPtr const& r) {
+    return r ? (l.get() == *r) : false;
+}
+
+template <std::derived_from<Tag> T>
+[[nodiscard]] inline T& UniqueTagPtr::get() const {
+    if (hold<T>()) {
+        return *static_cast<T*>(ptr);
+    }
+    throw std::runtime_error("not the expected type");
+}
+[[nodiscard]] inline bool UniqueTagPtr::contains(std::string_view key) const noexcept {
+    if (is_object()) {
+        return get<CompoundTag>().contains(key);
+    }
+    return false;
+}
+[[nodiscard]] inline bool UniqueTagPtr::contains(std::string_view key, Tag::Type type) const noexcept {
+    if (is_object()) {
+        return get<CompoundTag>().contains(key, type);
+    }
+    return false;
+}
+[[nodiscard]] inline size_t UniqueTagPtr::size() const noexcept {
+    switch (index()) {
+    case Tag::Byte:
+    case Tag::Short:
+    case Tag::Int:
+    case Tag::Int64:
+    case Tag::Float:
+    case Tag::Double:
+    case Tag::String:
+        return 1;
+    case Tag::List:
+        return get<ListTag>().size();
+    case Tag::Compound:
+        return get<CompoundTag>().size();
+    case Tag::IntArray:
+        return get<IntArrayTag>().size();
+    case Tag::ByteArray:
+        return get<ByteArrayTag>().size();
+    case Tag::End:
+        return 0;
+    default:
+        _STL_UNREACHABLE;
+    }
+}
+[[nodiscard]] inline UniqueTagPtr::operator std::string const&() const { return get<StringTag>(); }
+[[nodiscard]] inline UniqueTagPtr::operator std::string&() & { return get<StringTag>(); }
+[[nodiscard]] inline UniqueTagPtr::operator std::string&&() && { return std::move(get<StringTag>()); }
+[[nodiscard]] inline UniqueTagPtr::operator std::string_view() const { return get<StringTag>(); }

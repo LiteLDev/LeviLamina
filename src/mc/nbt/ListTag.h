@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/nbt/UniqueTagPtr.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -8,48 +9,25 @@
 
 class CompoundTagVariant;
 
-class ListTag : public ::Tag {
+class ListTag : public ::Tag, public std::vector<UniqueTagPtr> {
 public:
-    using List = std::vector<std::unique_ptr<Tag>>;
+    using List = std::vector<UniqueTagPtr>;
+    Tag::Type mType{Tag::End};
 
-    List      mList;
-    Tag::Type mType;
+    using Tag::operator==;
 
 public:
     [[nodiscard]] constexpr ListTag(ListTag&&)   = default;
     LL_CLANG_CEXPR ListTag& operator=(ListTag&&) = default;
 
-    [[nodiscard]] constexpr ListTag(ListTag const& other) : mType(other.mType) {
-        mList.reserve(other.mList.size());
-        for (auto& tag : other.mList) {
-            mList.emplace_back(tag->copy());
-        }
-    }
-    constexpr ListTag& operator=(ListTag const& other) {
-        if (this != &other) {
-            *this = ListTag{other};
-        }
-        return *this;
-    }
+    [[nodiscard]] constexpr ListTag(ListTag const& other) = default;
+    constexpr ListTag& operator=(ListTag const& other)    = default;
 
-    [[nodiscard]] constexpr ListTag(List tags) {
-        if (tags.empty()) {
-            mType = Tag::End;
-        } else {
-            mType = tags[0]->getId();
-            mList = std::move(tags);
-        }
+    [[nodiscard]] constexpr ListTag(List tags) : List(std::move(tags)) {
+        if (!empty()) mType = front().getId();
     }
     [[nodiscard]] constexpr ListTag(std::initializer_list<CompoundTagVariant> tags);
     [[nodiscard]] constexpr ListTag(std::vector<CompoundTagVariant> tags);
-
-    [[nodiscard]] constexpr std::unique_ptr<Tag>&       operator[](size_t index) { return mList[index]; }
-    [[nodiscard]] constexpr std::unique_ptr<Tag> const& operator[](size_t index) const { return mList[index]; }
-
-    [[nodiscard]] constexpr std::unique_ptr<Tag>&       at(size_t index) { return mList[index]; }
-    [[nodiscard]] constexpr std::unique_ptr<Tag> const& at(size_t index) const { return mList[index]; }
-
-    [[nodiscard]] constexpr size_t size() const { return mList.size(); }
 
 public:
     // NOLINTBEGIN

@@ -521,14 +521,14 @@ Expected<CompoundTagVariant> parseList(std::string_view& s) {
         }
         if (s.starts_with(']')) {
             s.remove_prefix(1);
-            if (!res.mList.empty()) res.mType = res.mList.front()->getId();
+            if (!res.empty()) res.mType = res.front().getId();
             return res;
         }
         auto value = parseSnbtValueNonSkip(s);
         if (!value) {
             return forwardError(value.error());
         }
-        res.mList.emplace_back(value->toUnique());
+        res.emplace_back(value->toUnique());
 
         if (auto skipped = skipWhitespace(s); !skipped) {
             return forwardError(skipped.error());
@@ -536,7 +536,7 @@ Expected<CompoundTagVariant> parseList(std::string_view& s) {
         switch (s.front()) {
         case ']':
             s.remove_prefix(1);
-            res.mType = res.mList.front()->getId();
+            res.mType = res.front().getId();
             return res;
         case ',': {
             s.remove_prefix(1);

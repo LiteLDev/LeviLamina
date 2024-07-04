@@ -157,7 +157,7 @@ std::string TypedToSnbt(DoubleTag const& self, uchar, SnbtFormat format) {
     return toDumpNumber(getString(self.data), format);
 }
 std::string TypedToSnbt(StringTag const& self, uchar, SnbtFormat format) {
-    std::string res = toDumpString(self.data, fmt::color::sandy_brown, cf::GOLD, format, false);
+    std::string res = toDumpString(self, fmt::color::sandy_brown, cf::GOLD, format, false);
     return res;
 }
 std::string TypedToSnbt(ListTag const& self, uchar indent, SnbtFormat format) {
@@ -168,7 +168,6 @@ std::string TypedToSnbt(ListTag const& self, uchar indent, SnbtFormat format) {
 
     std::string lbracket{"["}, rbracket{"]"};
 
-
     if ((int)format & (int)SnbtFormat::Colored) {
         if ((int)format & (int)SnbtFormat::Console) {
             lbracket = ll::string_utils::applyTextStyle(bracketColor, lbracket);
@@ -178,10 +177,9 @@ std::string TypedToSnbt(ListTag const& self, uchar indent, SnbtFormat format) {
             rbracket = WrapColorCode(rbracket, cf::MATERIAL_DIAMOND);
         }
     }
-
     res += lbracket;
 
-    size_t      i = self.mList.size();
+    size_t      i = self.size();
     std::string indentSpace(indent, ' ');
 
     bool isMinimized = isMinimize(format);
@@ -190,20 +188,17 @@ std::string TypedToSnbt(ListTag const& self, uchar indent, SnbtFormat format) {
     if (isNewLine && self.size() > 0) {
         res += '\n';
     }
-
-    for (auto& tag : self.mList) {
+    for (auto& tag : self) {
         i--;
         if (isNewLine) {
             res += indentSpace;
         }
-
         auto key = tag->toSnbt(format, indent);
 
         if (isNewLine) {
             ll::string_utils::replaceAll(key, "\n", "\n" + indentSpace);
         }
         res += key;
-
 
         if (i > 0) {
             res += ',';
@@ -237,7 +232,6 @@ std::string TypedToSnbt(CompoundTag const& self, uchar indent, SnbtFormat format
             rbracket = WrapColorCode(rbracket, cf::LIGHT_PURPLE);
         }
     }
-
     res += lbracket;
 
     size_t      i = self.mTags.size();
@@ -255,7 +249,6 @@ std::string TypedToSnbt(CompoundTag const& self, uchar indent, SnbtFormat format
         if (isNewLine) {
             res += indentSpace;
         }
-
         auto keyStr = toDumpString(k, fmt::color::sky_blue, cf::AQUA, format, true);
 
         res += keyStr;
@@ -265,7 +258,6 @@ std::string TypedToSnbt(CompoundTag const& self, uchar indent, SnbtFormat format
         if (!isMinimized) {
             res += ' ';
         }
-
         auto key = v.toSnbt(format, indent);
 
         if (isNewLine) {
@@ -298,7 +290,6 @@ std::string TypedToSnbt(ByteArrayTag const& self, uchar indent, SnbtFormat forma
     if (static_cast<bool>(format & SnbtFormat::CommentMarks)) {
         lbracket = "[ /*B;*/";
     }
-
     if ((int)format & (int)SnbtFormat::Colored) {
         if ((int)format & (int)SnbtFormat::Console) {
             lbracket = ll::string_utils::applyTextStyle(bracketColor, lbracket);
@@ -308,7 +299,6 @@ std::string TypedToSnbt(ByteArrayTag const& self, uchar indent, SnbtFormat forma
             rbracket = WrapColorCode(rbracket, cf::YELLOW);
         }
     }
-
     res += lbracket;
 
     size_t      i = self.size();
@@ -320,18 +310,15 @@ std::string TypedToSnbt(ByteArrayTag const& self, uchar indent, SnbtFormat forma
     if (isNewLine && self.size() > 0) {
         res += '\n';
     }
-
     std::string back{"b"};
     if (static_cast<bool>(format & SnbtFormat::CommentMarks)) {
         back = " /*b*/";
     }
-
-    for (auto& tag : self.data) {
+    for (auto& tag : self) {
         i--;
         if (isNewLine) {
             res += indentSpace;
         }
-
         res += toDumpNumber(getString(tag) + back, format);
 
         if (i > 0) {
@@ -382,7 +369,7 @@ std::string TypedToSnbt(IntArrayTag const& self, uchar indent, SnbtFormat format
         res += '\n';
     }
 
-    for (auto& tag : self.data) {
+    for (auto& tag : self) {
         i--;
         if (isNewLine) {
             res += indentSpace;
