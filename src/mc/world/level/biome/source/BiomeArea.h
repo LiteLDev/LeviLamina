@@ -1,8 +1,14 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/biome/Biome.h"
 
 class BiomeArea {
+public:
+    uint                      mStrideX; // this+0x0
+    uint                      mStrideY; // this+0x4
+    std::vector<const Biome*> mBiomes;  // this+0x8
+
 public:
     // prevent constructor by default
     BiomeArea& operator=(BiomeArea const&);
