@@ -7,7 +7,7 @@ class BiomeArea {
 public:
     uint                      mStrideX; // this+0x0
     uint                      mStrideY; // this+0x4
-    std::vector<const Biome*> mBiomes;  // this+0x8
+    std::vector<Biome const*> mBiomes;  // this+0x8
 
 public:
     // prevent constructor by default
