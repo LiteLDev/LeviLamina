@@ -18,6 +18,9 @@ public:
     Math();
 
 public:
+    static float log2(float t) { return std::log(t) / std::log(2.0); }
+
+public:
     // NOLINTBEGIN
     // symbol: ?absMax@Math@mce@@SAMMM@Z
     MCAPI static float absMax(float a, float b);
