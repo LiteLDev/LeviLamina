@@ -25,6 +25,7 @@
 //#include "mc/world/actor/player/Player.h"
 //#include "mc/world/level/BlockPalette.h"
 //#include "mc/world/level/BlockSource.h"
+//#include "mc/world/level/BlockTickingQueue.h"
 //#include "mc/world/level/BlockVolumeTarget.h"
 //#include "mc/world/level/ChunkBlockPos.h"
 //#include "mc/world/level/ChunkPos.h"
@@ -43,12 +44,14 @@
 //#include "mc/world/level/biome/surface/PerlinSimplexNoise.h"
 //#include "mc/world/level/block/Block.h"
 //#include "mc/world/level/block/BlockVolume.h"
+//#include "mc/world/level/block/actor/EndGatewayBlockActor.h"
 //#include "mc/world/level/block/registry/BlockTypeRegistry.h"
 //#include "mc/world/level/block/utils/BedrockBlockNames.h"
 //#include "mc/world/level/block/utils/VanillaBlockTypeIds.h"
 //#include "mc/world/level/chunk/ChunkGeneratorStructureState.h"
 //#include "mc/world/level/chunk/ChunkViewSource.h"
 //#include "mc/world/level/chunk/LevelChunk.h"
+//#include "mc/world/level/chunk/LevelChunkBlockActorAccessToken.h"
 //#include "mc/world/level/chunk/PostprocessingManager.h"
 //#include "mc/world/level/chunk/VanillaLevelChunkUpgrade.h"
 //#include "mc/world/level/dimension/Dimension.h"
@@ -61,6 +64,7 @@
 //#include "mc/world/level/levelgen/feature/DesertWellFeature.h"
 //#include "mc/world/level/levelgen/feature/FlowerFeature.h"
 //#include "mc/world/level/levelgen/feature/LakeFeature.h"
+//#include "mc/world/level/levelgen/feature/SpikeFeature.h"
 //#include "mc/world/level/levelgen/feature/VanillaTreeFeature.h"
 //#include "mc/world/level/levelgen/feature/gamerefs_feature/FeatureRefTraits.h"
 //#include "mc/world/level/levelgen/feature/helpers/RenderParams.h"
@@ -81,16 +85,12 @@
 //#include "mc/world/level/levelgen/v1/TheEndGenerator.h"
 //#include "mc/world/level/levelgen/v1/WorldGenCache.h"
 //#include "mc/world/level/storage/LevelData.h"
-//#include "mc/world/level/levelgen/feature/SpikeFeature.h"
-//#include "mc/world/level/block/actor/EndGatewayBlockActor.h"
-//#include "mc/world/level/BlockTickingQueue.h"
-//#include "mc/world/level/chunk/LevelChunkBlockActorAccessToken.h"
 //
 //#include "mc/entity/systems/common/BiomeDecorationSystem.h"
 //#include "mc/resources/VanillaGameVersions.h"
 //#include "mc/world/components/FeatureHelper.h"
-//#include <numeric>
 //#include <mc/world/level/levelgen/feature/EndIslandFeature.h>
+//#include <numeric>
 //
 //// namespace Bedrock {
 //// namespace Threading {
@@ -208,403 +208,405 @@
 //        WorldGenerator::postProcessStructureFeatures(blockSource, mRandom, chunkPosL.x, chunkPosL.z);
 //        WorldGenerator::postProcessStructures(blockSource, mRandom, chunkPosL.x, chunkPosL.z);
 //        return true;
-//    //    int                                                            v5;               // edx
-//    //    bool                                                           Has_value;        // al
-//    //    unsigned __int8                                                v9;               // r14
-//    //    __int64                                                        v10;              // rsi
-//    //    std::string*                                                   Ptr;              // rbx
-//    //    unsigned int                                                   v16;              // edi
-//    //    unsigned int                                                   v17;              // edi
-//    //    std::string*                                                   v18;              // rbx
-//    //    SpikeFeature::EndSpike*                                        Myfirst;          // rdi
-//    //    SpikeFeature::EndSpike*                                        Mylast;           // r14
-//    //    int                                                            CenterZ;          // ebx
-//    //    unsigned __int64                                               v22;              // rdx
-//    //    SpikeFeature::EndSpike*                                        v23;              // rax
-//    //    unsigned __int64                                               v24;              // r8
-//    //    unsigned __int64                                               v25;              // r8
-//    //    unsigned int                                                   v26;              // eax
-//    //    std::string*                                                   v27;              // rbx
-//    //    unsigned int                                                   v28;              // edi
-//    //    unsigned int                                                   v29;              // ebx
-//    //    char                                                           v30;              // al
-//    //    unsigned __int64                                               v31;              // r8
-//    //    std::string*                                                   v32;              // rbx
-//    //    signed int                                                     v33;              // r13d
-//    //    signed int                                                     v34;              // r12d
-//    //    unsigned int                                                   v35;              // edi
-//    //    unsigned int                                                   v36;              // esi
-//    //    __int16                                                        Heightmap;        // ax
-//    //    int                                                            v38;              // r14d
-//    //    BlockLegacy*                                                   v39;              // rcx
-//    //    unsigned __int64                                               Hash;             // rbx
-//    //    unsigned int                                                   v41;              // eax
-//    //    unsigned int                                                   v42;              // ebx
-//    //    unsigned int                                                   v43;              // edi
-//    //    __int16                                                        v44;              // ax
-//    //    int                                                            v45;              // r14d
-//    //    unsigned int                                                   v46;              // eax
-//    //    BlockActor*                                                    BlockEntity;      // rax
-//    //    EndGatewayBlockActor*                                          v48;              // rbx
-//    //    const BlockPos*                                                v49;              // rax
-//    //    std::string*                                                   v50;              // rbx
-//    //    BlockTickingQueue*                                             TickQueue;        // rax
-//    //    BlockTickingQueue*                                             v52;              // rax
-//    //    LevelChunkBlockActorAccessToken*                               mChunk;           // rbx
-//    //    LevelChunkBlockActorAccessToken*                               v54;              // rdi
-//    //    unsigned __int64                                               v55;              // rdx
-//    //    LevelChunkBlockActorAccessToken*                               v56;              // rax
-//    //    unsigned __int64                                               v57;              // r8
-//    //    unsigned __int64                                               v58;              // r8
-//    //    PostprocessingManager::LockedChunk*                            v59;              // rcx
-//    //    PostprocessingManager::LockedChunk*                            v60;              // rsi
-//    //    Bedrock::Threading::UniqueLock<std::mutex>*                    p_mChunkLock;     // rdi
-//    //    volatile signed __int32*                                       v62;              // rbx
-//    //    unsigned __int64                                               v63;              // rdx
-//    //    PostprocessingManager::LockedChunk*                            v64;              // rax
-//    //    std::_Ref_count_base*                                          Rep;              // rbx
-//    //    BlockPos                                                       pos;              // [rsp+40h] [rbp-C0h] BYREF
-//    //    BlockPos                                                       v83;              // [rsp+4Ch] [rbp-B4h] BYREF
-//    //    BlockPos                                                       v84;              // [rsp+58h] [rbp-A8h] BYREF
-//    //    BlockPos                                                       v85;              // [rsp+64h] [rbp-9Ch] BYREF
-//    //    BlockPos                                                       target;           // [rsp+70h] [rbp-90h] BYREF
-//    //    BlockPos                                                       v87;              // [rsp+7Ch] [rbp-84h] BYREF
-//    //    TheEndGenerator*                                               v88;              // [rsp+88h] [rbp-78h] BYREF
-//    //    Feature*                                                        v89;              // [rsp+98h] [rbp-68h] BYREF
-//    //    std::string                                                    name;             // [rsp+B0h] [rbp-50h] BYREF
-//    //    std::string                                                    v91;              // [rsp+D0h] [rbp-30h] BYREF
-//    //    std::string                                                    v92;              // [rsp+F0h] [rbp-10h] BYREF
-//    //    std::string                                                    v93;              // [rsp+110h] [rbp+10h] BYREF
-//    //    std::string                                                    v94;              // [rsp+130h] [rbp+30h] BYREF
-//    //    BlockPos                                                       gatewayPos;       // [rsp+160h] [rbp+60h] BYREF
-//    //    ChunkPos                                                       centerPos;        // [rsp+180h] [rbp+80h] BYREF
-//    //    BlockPos                                                       featurePlacement; // [rsp+188h] [rbp+88h] BYREF
-//    //    std::vector<SpikeFeature::EndSpike>                            spikes;           // [rsp+1B0h] [rbp+B0h] BYREF
-//    //    EndIslandFeature                                               endIslands;       // [rsp+1C8h] [rbp+C8h] BYREF
-//    //    BlockTickingQueue                                              randomTickQueue;  // [rsp+200h] [rbp+100h] BYREF
-//    //    BlockTickingQueue                                              instaTickQueue;   // [rsp+250h] [rbp+150h] BYREF
-//    //    SpikeFeature                       spikeFeature;                                 // [rsp+2F0h] [rbp+1F0h] BYREF
-//    //    Random                             v113;                                         // [rsp+4D0h] [rbp+3D0h] BYREF
+//        //    int                                                            v5;               // edx
+//        //    bool                                                           Has_value;        // al
+//        //    unsigned __int8                                                v9;               // r14
+//        //    __int64                                                        v10;              // rsi
+//        //    std::string*                                                   Ptr;              // rbx
+//        //    unsigned int                                                   v16;              // edi
+//        //    unsigned int                                                   v17;              // edi
+//        //    std::string*                                                   v18;              // rbx
+//        //    SpikeFeature::EndSpike*                                        Myfirst;          // rdi
+//        //    SpikeFeature::EndSpike*                                        Mylast;           // r14
+//        //    int                                                            CenterZ;          // ebx
+//        //    unsigned __int64                                               v22;              // rdx
+//        //    SpikeFeature::EndSpike*                                        v23;              // rax
+//        //    unsigned __int64                                               v24;              // r8
+//        //    unsigned __int64                                               v25;              // r8
+//        //    unsigned int                                                   v26;              // eax
+//        //    std::string*                                                   v27;              // rbx
+//        //    unsigned int                                                   v28;              // edi
+//        //    unsigned int                                                   v29;              // ebx
+//        //    char                                                           v30;              // al
+//        //    unsigned __int64                                               v31;              // r8
+//        //    std::string*                                                   v32;              // rbx
+//        //    signed int                                                     v33;              // r13d
+//        //    signed int                                                     v34;              // r12d
+//        //    unsigned int                                                   v35;              // edi
+//        //    unsigned int                                                   v36;              // esi
+//        //    __int16                                                        Heightmap;        // ax
+//        //    int                                                            v38;              // r14d
+//        //    BlockLegacy*                                                   v39;              // rcx
+//        //    unsigned __int64                                               Hash;             // rbx
+//        //    unsigned int                                                   v41;              // eax
+//        //    unsigned int                                                   v42;              // ebx
+//        //    unsigned int                                                   v43;              // edi
+//        //    __int16                                                        v44;              // ax
+//        //    int                                                            v45;              // r14d
+//        //    unsigned int                                                   v46;              // eax
+//        //    BlockActor*                                                    BlockEntity;      // rax
+//        //    EndGatewayBlockActor*                                          v48;              // rbx
+//        //    const BlockPos*                                                v49;              // rax
+//        //    std::string*                                                   v50;              // rbx
+//        //    BlockTickingQueue*                                             TickQueue;        // rax
+//        //    BlockTickingQueue*                                             v52;              // rax
+//        //    LevelChunkBlockActorAccessToken*                               mChunk;           // rbx
+//        //    LevelChunkBlockActorAccessToken*                               v54;              // rdi
+//        //    unsigned __int64                                               v55;              // rdx
+//        //    LevelChunkBlockActorAccessToken*                               v56;              // rax
+//        //    unsigned __int64                                               v57;              // r8
+//        //    unsigned __int64                                               v58;              // r8
+//        //    PostprocessingManager::LockedChunk*                            v59;              // rcx
+//        //    PostprocessingManager::LockedChunk*                            v60;              // rsi
+//        //    Bedrock::Threading::UniqueLock<std::mutex>*                    p_mChunkLock;     // rdi
+//        //    volatile signed __int32*                                       v62;              // rbx
+//        //    unsigned __int64                                               v63;              // rdx
+//        //    PostprocessingManager::LockedChunk*                            v64;              // rax
+//        //    std::_Ref_count_base*                                          Rep;              // rbx
+//        //    BlockPos                                                       pos;              // [rsp+40h] [rbp-C0h]
+//        //    BYREF BlockPos                                                       v83;              // [rsp+4Ch]
+//        //    [rbp-B4h] BYREF BlockPos                                                       v84;              //
+//        //    [rsp+58h] [rbp-A8h] BYREF BlockPos                                                       v85; // [rsp+64h]
+//        //    [rbp-9Ch] BYREF BlockPos                                                       target;           //
+//        //    [rsp+70h] [rbp-90h] BYREF BlockPos                                                       v87; // [rsp+7Ch]
+//        //    [rbp-84h] BYREF TheEndGenerator*                                               v88;              //
+//        //    [rsp+88h] [rbp-78h] BYREF Feature*                                                        v89; //
+//        //    [rsp+98h] [rbp-68h] BYREF std::string                                                    name; //
+//        //    [rsp+B0h] [rbp-50h] BYREF std::string                                                    v91; // [rsp+D0h]
+//        //    [rbp-30h] BYREF std::string                                                    v92;              //
+//        //    [rsp+F0h] [rbp-10h] BYREF std::string                                                    v93; //
+//        //    [rsp+110h] [rbp+10h] BYREF std::string                                                    v94; //
+//        //    [rsp+130h] [rbp+30h] BYREF BlockPos                                                       gatewayPos; //
+//        //    [rsp+160h] [rbp+60h] BYREF ChunkPos                                                       centerPos; //
+//        //    [rsp+180h] [rbp+80h] BYREF BlockPos featurePlacement; // [rsp+188h] [rbp+88h] BYREF
+//        //    std::vector<SpikeFeature::EndSpike>                            spikes;           // [rsp+1B0h] [rbp+B0h]
+//        //    BYREF EndIslandFeature                                               endIslands;       // [rsp+1C8h]
+//        //    [rbp+C8h] BYREF BlockTickingQueue                                              randomTickQueue;  //
+//        //    [rsp+200h] [rbp+100h] BYREF BlockTickingQueue                                              instaTickQueue;
+//        //    // [rsp+250h] [rbp+150h] BYREF SpikeFeature                       spikeFeature; // [rsp+2F0h] [rbp+1F0h]
+//        //    BYREF Random                             v113;                                         // [rsp+4D0h]
+//        //    [rbp+3D0h] BYREF
 //
-//    //    centerPos.x         = neighborhood.getArea().mBounds.min.x + 1;
-//    //    centerPos.z         = neighborhood.getArea().mBounds.min.z + 1;
-//    //    auto     levelChunk = neighborhood.getExistingChunk(centerPos);
-//    //    ChunkPos Position   = levelChunk->getPosition();
-//    //    if (neighborhood.getArea().mBounds.mVolume != 9) {
-//    //    }
-//    //    Dimension& dimension = levelChunk->getDimension();
+//        //    centerPos.x         = neighborhood.getArea().mBounds.min.x + 1;
+//        //    centerPos.z         = neighborhood.getArea().mBounds.min.z + 1;
+//        //    auto     levelChunk = neighborhood.getExistingChunk(centerPos);
+//        //    ChunkPos Position   = levelChunk->getPosition();
+//        //    if (neighborhood.getArea().mBounds.mVolume != 9) {
+//        //    }
+//        //    Dimension& dimension = levelChunk->getDimension();
 //
-//    //    std::optional<std::vector<PostprocessingManager::LockedChunk>> ownsNeighborhood =
-//    //        dimension.mPostProcessingManager->tryLock(Position, neighborhood);
+//        //    std::optional<std::vector<PostprocessingManager::LockedChunk>> ownsNeighborhood =
+//        //        dimension.mPostProcessingManager->tryLock(Position, neighborhood);
 //
-//    //    if (ownsNeighborhood.has_value()) {
-//    //        std::vector<LevelChunkBlockActorAccessToken> blockEntityLock = neighborhood.enableBlockEntityAccess();
-//    //        Dimension&                                   ndimension      = neighborhood.getDimension();
-//    //        Level&                                       level           = neighborhood.getLevel();
-//    //        BlockSource                                  source(level, ndimension, neighborhood, 0, 1, 1);
-//    //        source.setTickingQueue(instaTickQueue);
-//    //        source.setRandomTickingQueue(&source, &randomTickQueue);
-//    //        BlockPos min   = levelChunk->getMin();
-//    //        Biome    biome = source.getBiome(min);
-//    //        BlockPos origin(Position, 0);
-//    //        LODWORD(v12) = -1724254968 * Position->x - 245998635 * Position->z;
-//    //        v113.IRandom::__vftable =
-//    //            (Random_vtbl*)IRandom::`vftable'; Bedrock::EnableNonOwnerReferences::EnableNonOwnerReferences(
-//    //                &v113.Bedrock::EnableNonOwnerReferences
-//    //            );
-//    //        v113.IRandom::__vftable = (Random_vtbl*)Random::`vftable '{for `IRandom'
-//    //    };
-//    //    v113.Bedrock::EnableNonOwnerReferences::__vftable =
-//    //        (Bedrock::EnableNonOwnerReferences_vtbl*)Random::`vftable '{for `Bedrock::EnableNonOwnerReferences'
-//    //
-//    //v113.mRandom.mObject.__vftable =
-//    //    (Core::Random_vtbl*)Core::Random::`vftable'; v113.mRandom.mObject.mFakeUniformRandomInt = 0;
-//    //v113.mRandom.mObject.mTest_OnlyUsedDeterministically                                        = 0;
-//    //Core::Random::_setSeed(&v113.mRandom.mObject, (unsigned int)v12);
-//    //v113.mRandom.mThreadIdInitialized     = 0;
-//    //*(_QWORD*)&v113.mRandom.mThreadId._Id = 0i64;
-//    //LODWORD(v12)                          = this->mLevel->getSeed(this->mLevel);
-//    //Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
-//    //Core::Random::_setSeed(&v113.mRandom.mObject, (unsigned int)v12);
-//    //Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
-//    //v16 = ((Core::Random::_genRandInt32(&v113.mRandom.mObject) >> 1) & 0xFFFFFFFE) + 1;
-//    //Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
-//    //LODWORD(v12) = ((Core::Random::_genRandInt32(&v113.mRandom.mObject) >> 1) & 0xFFFFFFFE) + 1;
-//    //v17          = ((__int64(__fastcall*)(Level*))this->mLevel->getSeed)(this->mLevel)
-//    //    ^ (Position->z * (_DWORD)v12 + Position->x * v16);
-//    //Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
-//    //Core::Random::_setSeed(&v113.mRandom.mObject, v17);
-//    //WorldGenerator::postProcessStructureFeatures(this, &source, &v113, Position->x, Position->z);
-//    //v18 = &label_305;
-//    //if (_TSS2 > *(_DWORD*)(v10 + 1400)) {
-//    //    j__Init_thread_header(&_TSS2);
-//    //    if (_TSS2 == -1) {
-//    //        Core::Profile::constructLabel(&label_305, "TheEndGenerator::postProcess");
-//    //        j_atexit(TheEndGenerator::postProcess_::_31_::_dynamic_atexit_destructor_for__label_305__);
-//    //        j__Init_thread_footer(&_TSS2);
-//    //    }
-//    //}
-//    //if (_TSS3 > *(_DWORD*)(v10 + 1400)) {
-//    //    j__Init_thread_header(&_TSS3);
-//    //    if (_TSS3 == -1) {
-//    //        if (label_305._Mypair._Myval2._Myres >= 0x10) v18 = (std::string*)label_305._Mypair._Myval2._Bx._Ptr;
-//    //        v91._Mypair._Myval2._Bx._Ptr = 0i64;
-//    //        v91._Mypair._Myval2._Mysize  = 0i64;
-//    //        v91._Mypair._Myval2._Myres   = 15i64;
-//    //        v25                          = -1i64;
-//    //        do ++v25;
-//    //        while (Core::Profile::Area::CHUNK_LOAD_SYSTEM_2[v25]);
-//    //        std::string::assign(&v91, "Chunk load system", v25);
-//    //        v70 = Core::Profile::findOrCreateGroup(&v91, 0xBC8F8Fu);
-//    //        Core::Profile::GroupToken::GroupToken(&token_305, v70, v18->_Mypair._Myval2._Bx._Buf, 0xBC8F8Fu);
-//    //        if (v91._Mypair._Myval2._Myres >= 0x10) {
-//    //            v71 = v91._Mypair._Myval2._Myres + 1;
-//    //            v72 = v91._Mypair._Myval2._Bx._Ptr;
-//    //            if (v91._Mypair._Myval2._Myres + 1 >= 0x1000) {
-//    //                v71 = v91._Mypair._Myval2._Myres + 40;
-//    //                v72 = (char*)*((_QWORD*)v91._Mypair._Myval2._Bx._Ptr - 1);
-//    //                if ((unsigned __int64)(v91._Mypair._Myval2._Bx._Ptr - v72 - 8) > 0x1F)
-//    //                    _invalid_parameter_noinfo_noreturn();
-//    //            }
-//    //            operator delete(v72, v71);
-//    //        }
-//    //        j_atexit(TheEndGenerator::postProcess_::_31_::_dynamic_atexit_destructor_for__token_305__);
-//    //        j__Init_thread_footer(&_TSS3);
-//    //    }
-//    //}
-//    //Core::Profile::ProfileSectionGroup::ProfileSectionGroup(&ProfileSectionGroup13, &token_305, 0);
-//    //this->decorateWorldGenPostProcess(this, Biome, levelChunk._Ptr, &source, &v113);
-//    //Core::Profile::ProfileSectionGroup::~ProfileSectionGroup(&ProfileSectionGroup13);
-//    //memset(&spikes, 0, sizeof(spikes));
-//    //TheEndSpikeHelper::getSpikesForLevel(&spikes, this->mLevel);
-//    //Myfirst = spikes._Mypair._Myval2._Myfirst;
-//    //Mylast  = spikes._Mypair._Myval2._Mylast;
-//    //if (spikes._Mypair._Myval2._Myfirst != spikes._Mypair._Myval2._Mylast) {
-//    //    do {
-//    //        if (SpikeFeature::EndSpike::startsInChunk(Myfirst, &origin)) {
-//    //            memset(&spikeFeature, 0, sizeof(spikeFeature));
-//    //            SpikeFeature::SpikeFeature(&spikeFeature, Myfirst);
-//    //            CenterZ = SpikeFeature::EndSpike::getCenterZ(Myfirst);
-//    //            pos.x   = SpikeFeature::EndSpike::getCenterX(Myfirst);
-//    //            pos.y   = 45;
-//    //            pos.z   = CenterZ;
-//    //            SpikeFeature::place(&spikeFeature, &source, &pos, &v113);
-//    //            Feature::~Feature(&spikeFeature);
-//    //        }
-//    //        ++Myfirst;
-//    //    } while (Myfirst != Mylast);
-//    //    Myfirst = spikes._Mypair._Myval2._Myfirst;
-//    //}
-//    //if (Myfirst) {
-//    //    v22 = 44 * (spikes._Mypair._Myval2._Myend - Myfirst);
-//    //    v23 = Myfirst;
-//    //    if (v22 >= 0x1000) {
-//    //        v22     += 39i64;
-//    //        Myfirst  = *(SpikeFeature::EndSpike**)&Myfirst[-1].mTopBoundingBox.max.y;
-//    //        if ((unsigned __int64)((char*)v23 - (char*)Myfirst - 8) > 0x1F) _invalid_parameter_noinfo_noreturn();
-//    //    }
-//    //    operator delete(Myfirst, v22);
-//    //}
-//    //if (Position->x * (__int64)Position->x + Position->z * (__int64)Position->z > 4096) {
-//    //    if (TheEndGenerator::getIslandHeightValue(this, Position->x, Position->z, 1, 1) < -20.0) {
-//    //        Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
-//    //        v26 = Core::Random::_genRandInt32(&v113.mRandom.mObject);
-//    //        if (v26 == 14 * (v26 / 0xE)) {
-//    //            v27 = &label_323;
-//    //            if (_TSS5 > *(_DWORD*)(v10 + 1400)) {
-//    //                j__Init_thread_header(&_TSS5);
-//    //                if (_TSS5 == -1) {
-//    //                    Core::Profile::constructLabel(&label_323, "TheEndGenerator::postProcess");
-//    //                    j_atexit(TheEndGenerator::postProcess_::_45_::_dynamic_atexit_destructor_for__label_323__);
-//    //                    j__Init_thread_footer(&_TSS5);
-//    //                }
-//    //            }
-//    //            if (_TSS6 > *(_DWORD*)(v10 + 1400)) {
-//    //                j__Init_thread_header(&_TSS6);
-//    //                if (_TSS6 == -1) {
-//    //                    if (label_323._Mypair._Myval2._Myres >= 0x10)
-//    //                        v27 = (std::string*)label_323._Mypair._Myval2._Bx._Ptr;
-//    //                    v92._Mypair._Myval2._Bx._Ptr = 0i64;
-//    //                    v92._Mypair._Myval2._Mysize  = 0i64;
-//    //                    v92._Mypair._Myval2._Myres   = 15i64;
-//    //                    v31                          = -1i64;
-//    //                    do ++v31;
-//    //                    while (Core::Profile::Area::CHUNK_LOAD_SYSTEM_2[v31]);
-//    //                    std::string::assign(&v92, "Chunk load system", v31);
-//    //                    v73 = Core::Profile::findOrCreateGroup(&v92, 0xBC8F8Fu);
-//    //                    Core::Profile::GroupToken::GroupToken(
-//    //                        &token_323,
-//    //                        v73,
-//    //                        v27->_Mypair._Myval2._Bx._Buf,
-//    //                        0xBC8F8Fu
-//    //                    );
-//    //                    if (v92._Mypair._Myval2._Myres >= 0x10) {
-//    //                        v74 = v92._Mypair._Myval2._Myres + 1;
-//    //                        v75 = v92._Mypair._Myval2._Bx._Ptr;
-//    //                        if (v92._Mypair._Myval2._Myres + 1 >= 0x1000) {
-//    //                            v74 = v92._Mypair._Myval2._Myres + 40;
-//    //                            v75 = (char*)*((_QWORD*)v92._Mypair._Myval2._Bx._Ptr - 1);
-//    //                            if ((unsigned __int64)(v92._Mypair._Myval2._Bx._Ptr - v75 - 8) > 0x1F)
-//    //                                _invalid_parameter_noinfo_noreturn();
-//    //                        }
-//    //                        operator delete(v75, v74);
-//    //                    }
-//    //                    j_atexit(TheEndGenerator::postProcess_::_45_::_dynamic_atexit_destructor_for__token_323__);
-//    //                    j__Init_thread_footer(&_TSS6);
-//    //                }
-//    //            }
-//    //            Core::Profile::ProfileSectionGroup::ProfileSectionGroup(&ProfileSectionGroup14, &token_323, 0);
-//    //            Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
-//    //            v28 = (Core::Random::_genRandInt32(&v113.mRandom.mObject) & 0xF) + 8;
-//    //            Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
-//    //            v29 = (Core::Random::_genRandInt32(&v113.mRandom.mObject) & 0xF) + 55;
-//    //            Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
-//    //            v30                = Core::Random::_genRandInt32(&v113.mRandom.mObject);
-//    //            featurePlacement.x = v28 + origin.x;
-//    //            featurePlacement.y = v29 + origin.y;
-//    //            featurePlacement.z = (v30 & 0xF) + 8 + origin.z;
-//    //            memset(&endIslands, 0, sizeof(endIslands));
-//    //            Feature::Feature(&endIslands, 0i64);
-//    //            endIslands.__vftable = (EndIslandFeature_vtbl*)EndIslandFeature::`vftable'; EndIslandFeature::place(
-//    //                &endIslands,
-//    //                &source,
-//    //                &featurePlacement,
-//    //                &v113
-//    //            );
-//    //            Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
-//    //            if ((Core::Random::_genRandInt32(&v113.mRandom.mObject) & 3) == 0)
-//    //                EndIslandFeature::place(&endIslands, &source, &featurePlacement, &v113);
-//    //            Feature::~Feature(&endIslands);
-//    //            Core::Profile::ProfileSectionGroup::~ProfileSectionGroup(&ProfileSectionGroup14);
-//    //        }
-//    //    }
-//    //    if (TheEndGenerator::getIslandHeightValue(this, Position->x, Position->z, 1, 1) > 40.0) {
-//    //        v32 = &label_338;
-//    //        if (_TSS7 > *(_DWORD*)(v10 + 1400)) {
-//    //            j__Init_thread_header(&_TSS7);
-//    //            if (_TSS7 == -1) {
-//    //                Core::Profile::constructLabel(&label_338, "TheEndGenerator::postProcess");
-//    //                j_atexit(TheEndGenerator::postProcess_::_51_::_dynamic_atexit_destructor_for__label_338__);
-//    //                j__Init_thread_footer(&_TSS7);
-//    //            }
-//    //        }
-//    //        if (_TSS8 > *(_DWORD*)(v10 + 1400)) {
-//    //            j__Init_thread_header(&_TSS8);
-//    //            if (_TSS8 == -1) {
-//    //                if (label_338._Mypair._Myval2._Myres >= 0x10)
-//    //                    v32 = (std::string*)label_338._Mypair._Myval2._Bx._Ptr;
-//    //                v93._Mypair._Myval2._Bx._Ptr = 0i64;
-//    //                v93._Mypair._Myval2._Mysize  = 0i64;
-//    //                v93._Mypair._Myval2._Myres   = 15i64;
-//    //                v57                          = -1i64;
-//    //                do ++v57;
-//    //                while (Core::Profile::Area::CHUNK_LOAD_SYSTEM_2[v57]);
-//    //                std::string::assign(&v93, "Chunk load system", v57);
-//    //                v76 = Core::Profile::findOrCreateGroup(&v93, 0xBC8F8Fu);
-//    //                Core::Profile::GroupToken::GroupToken(&token_338, v76, v32->_Mypair._Myval2._Bx._Buf, 0xBC8F8Fu);
-//    //                if (v93._Mypair._Myval2._Myres >= 0x10) {
-//    //                    v77 = v93._Mypair._Myval2._Myres + 1;
-//    //                    v78 = v93._Mypair._Myval2._Bx._Ptr;
-//    //                    if (v93._Mypair._Myval2._Myres + 1 >= 0x1000) {
-//    //                        v77 = v93._Mypair._Myval2._Myres + 40;
-//    //                        v78 = (char*)*((_QWORD*)v93._Mypair._Myval2._Bx._Ptr - 1);
-//    //                        if ((unsigned __int64)(v93._Mypair._Myval2._Bx._Ptr - v78 - 8) > 0x1F)
-//    //                            _invalid_parameter_noinfo_noreturn();
-//    //                    }
-//    //                    operator delete(v78, v77);
-//    //                }
-//    //                j_atexit(TheEndGenerator::postProcess_::_51_::_dynamic_atexit_destructor_for__token_338__);
-//    //                j__Init_thread_footer(&_TSS8);
-//    //            }
-//    //        }
-//    //        Core::Profile::ProfileSectionGroup::ProfileSectionGroup(&ProfileSectionGroup15, &token_338, 0);
-//    //        Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
-//    //        v33 = Core::Random::_genRandInt32(&v113.mRandom.mObject) % 5;
-//    //        v34 = 0;
-//    //        if (v33 > 0) {
-//    //            do {
-//    //                Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
-//    //                v35 = (Core::Random::_genRandInt32(&v113.mRandom.mObject) & 0xF) + 8;
-//    //                Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
-//    //                v36       = (Core::Random::_genRandInt32(&v113.mRandom.mObject) & 0xF) + 8;
-//    //                v83.x     = v35 + origin.x;
-//    //                v83.y     = origin.y;
-//    //                v83.z     = v36 + origin.z;
-//    //                Heightmap = BlockSource::getHeightmap(&source, &v83);
-//    //                if (Heightmap > 0) {
-//    //                    v38   = Heightmap - 1;
-//    //                    v84.x = v35 + origin.x;
-//    //                    v84.y = Heightmap + origin.y;
-//    //                    v84.z = v36 + origin.z;
-//    //                    if (BlockSource::isEmptyBlock(&source, &v84)) {
-//    //                        v85.x = v35 + origin.x;
-//    //                        v85.y = v38 + origin.y;
-//    //                        v85.z = v36 + origin.z;
-//    //                        v39   = BlockSource::getBlock(&source, &v85)->mLegacyBlock.ptr_;
-//    //                        if (!v39) gsl::details::terminate(0i64);
-//    //                        Hash = HashedString::getHash(&v39->mNameInfo.mFullName);
-//    //                        if (Hash == HashedString::getHash(&VanillaBlockTypeIds::EndStone)) {
-//    //                            target.x = v35 + origin.x;
-//    //                            target.y = v38 + origin.y + 1;
-//    //                            target.z = v36 + origin.z;
-//    //                            ChorusFlowerBlock::generatePlant(&source, &target, &v113, 8);
-//    //                        }
-//    //                    }
-//    //                }
-//    //                ++v34;
-//    //            } while (v34 < v33);
-//    //            v10 = *(_QWORD*)&gatewayPos.x;
-//    //        }
-//    //        Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
-//    //        v41 = Core::Random::_genRandInt32(&v113.mRandom.mObject);
-//    //        if (v41 == 700 * (v41 / 0x2BC)) {
-//    //            Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
-//    //            v42 = (Core::Random::_genRandInt32(&v113.mRandom.mObject) & 0xF) + 8;
-//    //            Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
-//    //            v43   = (Core::Random::_genRandInt32(&v113.mRandom.mObject) & 0xF) + 8;
-//    //            v87.x = v42 + origin.x;
-//    //            v87.y = origin.y;
-//    //            v87.z = v43 + origin.z;
-//    //            v44   = BlockSource::getHeightmap(&source, &v87);
-//    //            v45   = v44;
-//    //            if (v44 > 0) {
-//    //                Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
-//    //                v46          = Core::Random::_genRandInt32(&v113.mRandom.mObject);
-//    //                gatewayPos.x = v42 + origin.x;
-//    //                gatewayPos.y = v45 + v46 % 7 + 3 + origin.y;
-//    //                gatewayPos.z = v43 + origin.z;
-//    //                memset(&v89, 0, sizeof(v89));
-//    //                Feature::Feature(&v89, 0i64);
-//    //                v89.__vftable = (Feature_vtbl*)EndGatewayFeature::`vftable'; EndGatewayFeature::place(
-//    //                    (EndGatewayFeature*)&v89,
-//    //                    &source,
-//    //                    &gatewayPos,
-//    //                    &v113
-//    //                );
-//    //                Feature::~Feature(&v89);
-//    //                BlockEntity = BlockSource::getBlockEntity(&source, &gatewayPos);
-//    //                v48         = (EndGatewayBlockActor*)BlockEntity;
-//    //                if (BlockEntity) {
-//    //                    if (*BlockActor::getType(BlockEntity) == 24) {
-//    //                        v49 = v88->mDimension->getSpawnPos(v88->mDimension, (BlockPos*)&v88);
-//    //                        EndGatewayBlockActor::setExitPosition(v48, v49);
-//    //                    }
-//    //                }
-//    //            }
-//    //        }
-//    //        Core::Profile::ProfileSectionGroup::~ProfileSectionGroup(&ProfileSectionGroup15);
-//    //    }
-//    //}
-//    //v50 = &label_373;
-//    //BlockTickingQueue::tickAllPendingTicks(&instaTickQueue, &source, WorldGenerator::TICKING_QUEUE_PASS_LIMIT);
-//    //BlockTickingQueue::tickAllPendingTicks(&randomTickQueue, &source, WorldGenerator::TICKING_QUEUE_PASS_LIMIT);
-//    //TickQueue = LevelChunk::getTickQueue(levelChunk._Ptr);
-//    //BlockTickingQueue::acquireAllTicks(TickQueue, &instaTickQueue);
-//    //v52 = LevelChunk::getRandomTickQueue(levelChunk._Ptr);
-//    //BlockTickingQueue::acquireAllTicks(v52, &randomTickQueue);
-//    //mChunk = blockEntityLock._Mypair._Myval2._Myfirst;
-//    //v9        = 1;
-//    //return v9;
+//        //    if (ownsNeighborhood.has_value()) {
+//        //        std::vector<LevelChunkBlockActorAccessToken> blockEntityLock = neighborhood.enableBlockEntityAccess();
+//        //        Dimension&                                   ndimension      = neighborhood.getDimension();
+//        //        Level&                                       level           = neighborhood.getLevel();
+//        //        BlockSource                                  source(level, ndimension, neighborhood, 0, 1, 1);
+//        //        source.setTickingQueue(instaTickQueue);
+//        //        source.setRandomTickingQueue(&source, &randomTickQueue);
+//        //        BlockPos min   = levelChunk->getMin();
+//        //        Biome    biome = source.getBiome(min);
+//        //        BlockPos origin(Position, 0);
+//        //        LODWORD(v12) = -1724254968 * Position->x - 245998635 * Position->z;
+//        //        v113.IRandom::__vftable =
+//        //            (Random_vtbl*)IRandom::`vftable'; Bedrock::EnableNonOwnerReferences::EnableNonOwnerReferences(
+//        //                &v113.Bedrock::EnableNonOwnerReferences
+//        //            );
+//        //        v113.IRandom::__vftable = (Random_vtbl*)Random::`vftable '{for `IRandom'
+//        //    };
+//        //    v113.Bedrock::EnableNonOwnerReferences::__vftable =
+//        //        (Bedrock::EnableNonOwnerReferences_vtbl*)Random::`vftable '{for `Bedrock::EnableNonOwnerReferences'
+//        //
+//        // v113.mRandom.mObject.__vftable =
+//        //    (Core::Random_vtbl*)Core::Random::`vftable'; v113.mRandom.mObject.mFakeUniformRandomInt = 0;
+//        // v113.mRandom.mObject.mTest_OnlyUsedDeterministically                                        = 0;
+//        // Core::Random::_setSeed(&v113.mRandom.mObject, (unsigned int)v12);
+//        // v113.mRandom.mThreadIdInitialized     = 0;
+//        //*(_QWORD*)&v113.mRandom.mThreadId._Id = 0i64;
+//        // LODWORD(v12)                          = this->mLevel->getSeed(this->mLevel);
+//        // Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
+//        // Core::Random::_setSeed(&v113.mRandom.mObject, (unsigned int)v12);
+//        // Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
+//        // v16 = ((Core::Random::_genRandInt32(&v113.mRandom.mObject) >> 1) & 0xFFFFFFFE) + 1;
+//        // Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
+//        // LODWORD(v12) = ((Core::Random::_genRandInt32(&v113.mRandom.mObject) >> 1) & 0xFFFFFFFE) + 1;
+//        // v17          = ((__int64(__fastcall*)(Level*))this->mLevel->getSeed)(this->mLevel)
+//        //    ^ (Position->z * (_DWORD)v12 + Position->x * v16);
+//        // Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
+//        // Core::Random::_setSeed(&v113.mRandom.mObject, v17);
+//        // WorldGenerator::postProcessStructureFeatures(this, &source, &v113, Position->x, Position->z);
+//        // v18 = &label_305;
+//        // if (_TSS2 > *(_DWORD*)(v10 + 1400)) {
+//        //    j__Init_thread_header(&_TSS2);
+//        //    if (_TSS2 == -1) {
+//        //        Core::Profile::constructLabel(&label_305, "TheEndGenerator::postProcess");
+//        //        j_atexit(TheEndGenerator::postProcess_::_31_::_dynamic_atexit_destructor_for__label_305__);
+//        //        j__Init_thread_footer(&_TSS2);
+//        //    }
+//        //}
+//        // if (_TSS3 > *(_DWORD*)(v10 + 1400)) {
+//        //    j__Init_thread_header(&_TSS3);
+//        //    if (_TSS3 == -1) {
+//        //        if (label_305._Mypair._Myval2._Myres >= 0x10) v18 = (std::string*)label_305._Mypair._Myval2._Bx._Ptr;
+//        //        v91._Mypair._Myval2._Bx._Ptr = 0i64;
+//        //        v91._Mypair._Myval2._Mysize  = 0i64;
+//        //        v91._Mypair._Myval2._Myres   = 15i64;
+//        //        v25                          = -1i64;
+//        //        do ++v25;
+//        //        while (Core::Profile::Area::CHUNK_LOAD_SYSTEM_2[v25]);
+//        //        std::string::assign(&v91, "Chunk load system", v25);
+//        //        v70 = Core::Profile::findOrCreateGroup(&v91, 0xBC8F8Fu);
+//        //        Core::Profile::GroupToken::GroupToken(&token_305, v70, v18->_Mypair._Myval2._Bx._Buf, 0xBC8F8Fu);
+//        //        if (v91._Mypair._Myval2._Myres >= 0x10) {
+//        //            v71 = v91._Mypair._Myval2._Myres + 1;
+//        //            v72 = v91._Mypair._Myval2._Bx._Ptr;
+//        //            if (v91._Mypair._Myval2._Myres + 1 >= 0x1000) {
+//        //                v71 = v91._Mypair._Myval2._Myres + 40;
+//        //                v72 = (char*)*((_QWORD*)v91._Mypair._Myval2._Bx._Ptr - 1);
+//        //                if ((unsigned __int64)(v91._Mypair._Myval2._Bx._Ptr - v72 - 8) > 0x1F)
+//        //                    _invalid_parameter_noinfo_noreturn();
+//        //            }
+//        //            operator delete(v72, v71);
+//        //        }
+//        //        j_atexit(TheEndGenerator::postProcess_::_31_::_dynamic_atexit_destructor_for__token_305__);
+//        //        j__Init_thread_footer(&_TSS3);
+//        //    }
+//        //}
+//        // Core::Profile::ProfileSectionGroup::ProfileSectionGroup(&ProfileSectionGroup13, &token_305, 0);
+//        // this->decorateWorldGenPostProcess(this, Biome, levelChunk._Ptr, &source, &v113);
+//        // Core::Profile::ProfileSectionGroup::~ProfileSectionGroup(&ProfileSectionGroup13);
+//        // memset(&spikes, 0, sizeof(spikes));
+//        // TheEndSpikeHelper::getSpikesForLevel(&spikes, this->mLevel);
+//        // Myfirst = spikes._Mypair._Myval2._Myfirst;
+//        // Mylast  = spikes._Mypair._Myval2._Mylast;
+//        // if (spikes._Mypair._Myval2._Myfirst != spikes._Mypair._Myval2._Mylast) {
+//        //    do {
+//        //        if (SpikeFeature::EndSpike::startsInChunk(Myfirst, &origin)) {
+//        //            memset(&spikeFeature, 0, sizeof(spikeFeature));
+//        //            SpikeFeature::SpikeFeature(&spikeFeature, Myfirst);
+//        //            CenterZ = SpikeFeature::EndSpike::getCenterZ(Myfirst);
+//        //            pos.x   = SpikeFeature::EndSpike::getCenterX(Myfirst);
+//        //            pos.y   = 45;
+//        //            pos.z   = CenterZ;
+//        //            SpikeFeature::place(&spikeFeature, &source, &pos, &v113);
+//        //            Feature::~Feature(&spikeFeature);
+//        //        }
+//        //        ++Myfirst;
+//        //    } while (Myfirst != Mylast);
+//        //    Myfirst = spikes._Mypair._Myval2._Myfirst;
+//        //}
+//        // if (Myfirst) {
+//        //    v22 = 44 * (spikes._Mypair._Myval2._Myend - Myfirst);
+//        //    v23 = Myfirst;
+//        //    if (v22 >= 0x1000) {
+//        //        v22     += 39i64;
+//        //        Myfirst  = *(SpikeFeature::EndSpike**)&Myfirst[-1].mTopBoundingBox.max.y;
+//        //        if ((unsigned __int64)((char*)v23 - (char*)Myfirst - 8) > 0x1F) _invalid_parameter_noinfo_noreturn();
+//        //    }
+//        //    operator delete(Myfirst, v22);
+//        //}
+//        // if (Position->x * (__int64)Position->x + Position->z * (__int64)Position->z > 4096) {
+//        //    if (TheEndGenerator::getIslandHeightValue(this, Position->x, Position->z, 1, 1) < -20.0) {
+//        //        Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
+//        //        v26 = Core::Random::_genRandInt32(&v113.mRandom.mObject);
+//        //        if (v26 == 14 * (v26 / 0xE)) {
+//        //            v27 = &label_323;
+//        //            if (_TSS5 > *(_DWORD*)(v10 + 1400)) {
+//        //                j__Init_thread_header(&_TSS5);
+//        //                if (_TSS5 == -1) {
+//        //                    Core::Profile::constructLabel(&label_323, "TheEndGenerator::postProcess");
+//        //                    j_atexit(TheEndGenerator::postProcess_::_45_::_dynamic_atexit_destructor_for__label_323__);
+//        //                    j__Init_thread_footer(&_TSS5);
+//        //                }
+//        //            }
+//        //            if (_TSS6 > *(_DWORD*)(v10 + 1400)) {
+//        //                j__Init_thread_header(&_TSS6);
+//        //                if (_TSS6 == -1) {
+//        //                    if (label_323._Mypair._Myval2._Myres >= 0x10)
+//        //                        v27 = (std::string*)label_323._Mypair._Myval2._Bx._Ptr;
+//        //                    v92._Mypair._Myval2._Bx._Ptr = 0i64;
+//        //                    v92._Mypair._Myval2._Mysize  = 0i64;
+//        //                    v92._Mypair._Myval2._Myres   = 15i64;
+//        //                    v31                          = -1i64;
+//        //                    do ++v31;
+//        //                    while (Core::Profile::Area::CHUNK_LOAD_SYSTEM_2[v31]);
+//        //                    std::string::assign(&v92, "Chunk load system", v31);
+//        //                    v73 = Core::Profile::findOrCreateGroup(&v92, 0xBC8F8Fu);
+//        //                    Core::Profile::GroupToken::GroupToken(
+//        //                        &token_323,
+//        //                        v73,
+//        //                        v27->_Mypair._Myval2._Bx._Buf,
+//        //                        0xBC8F8Fu
+//        //                    );
+//        //                    if (v92._Mypair._Myval2._Myres >= 0x10) {
+//        //                        v74 = v92._Mypair._Myval2._Myres + 1;
+//        //                        v75 = v92._Mypair._Myval2._Bx._Ptr;
+//        //                        if (v92._Mypair._Myval2._Myres + 1 >= 0x1000) {
+//        //                            v74 = v92._Mypair._Myval2._Myres + 40;
+//        //                            v75 = (char*)*((_QWORD*)v92._Mypair._Myval2._Bx._Ptr - 1);
+//        //                            if ((unsigned __int64)(v92._Mypair._Myval2._Bx._Ptr - v75 - 8) > 0x1F)
+//        //                                _invalid_parameter_noinfo_noreturn();
+//        //                        }
+//        //                        operator delete(v75, v74);
+//        //                    }
+//        //                    j_atexit(TheEndGenerator::postProcess_::_45_::_dynamic_atexit_destructor_for__token_323__);
+//        //                    j__Init_thread_footer(&_TSS6);
+//        //                }
+//        //            }
+//        //            Core::Profile::ProfileSectionGroup::ProfileSectionGroup(&ProfileSectionGroup14, &token_323, 0);
+//        //            Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
+//        //            v28 = (Core::Random::_genRandInt32(&v113.mRandom.mObject) & 0xF) + 8;
+//        //            Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
+//        //            v29 = (Core::Random::_genRandInt32(&v113.mRandom.mObject) & 0xF) + 55;
+//        //            Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
+//        //            v30                = Core::Random::_genRandInt32(&v113.mRandom.mObject);
+//        //            featurePlacement.x = v28 + origin.x;
+//        //            featurePlacement.y = v29 + origin.y;
+//        //            featurePlacement.z = (v30 & 0xF) + 8 + origin.z;
+//        //            memset(&endIslands, 0, sizeof(endIslands));
+//        //            Feature::Feature(&endIslands, 0i64);
+//        //            endIslands.__vftable = (EndIslandFeature_vtbl*)EndIslandFeature::`vftable';
+//        //            EndIslandFeature::place(
+//        //                &endIslands,
+//        //                &source,
+//        //                &featurePlacement,
+//        //                &v113
+//        //            );
+//        //            Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
+//        //            if ((Core::Random::_genRandInt32(&v113.mRandom.mObject) & 3) == 0)
+//        //                EndIslandFeature::place(&endIslands, &source, &featurePlacement, &v113);
+//        //            Feature::~Feature(&endIslands);
+//        //            Core::Profile::ProfileSectionGroup::~ProfileSectionGroup(&ProfileSectionGroup14);
+//        //        }
+//        //    }
+//        //    if (TheEndGenerator::getIslandHeightValue(this, Position->x, Position->z, 1, 1) > 40.0) {
+//        //        v32 = &label_338;
+//        //        if (_TSS7 > *(_DWORD*)(v10 + 1400)) {
+//        //            j__Init_thread_header(&_TSS7);
+//        //            if (_TSS7 == -1) {
+//        //                Core::Profile::constructLabel(&label_338, "TheEndGenerator::postProcess");
+//        //                j_atexit(TheEndGenerator::postProcess_::_51_::_dynamic_atexit_destructor_for__label_338__);
+//        //                j__Init_thread_footer(&_TSS7);
+//        //            }
+//        //        }
+//        //        if (_TSS8 > *(_DWORD*)(v10 + 1400)) {
+//        //            j__Init_thread_header(&_TSS8);
+//        //            if (_TSS8 == -1) {
+//        //                if (label_338._Mypair._Myval2._Myres >= 0x10)
+//        //                    v32 = (std::string*)label_338._Mypair._Myval2._Bx._Ptr;
+//        //                v93._Mypair._Myval2._Bx._Ptr = 0i64;
+//        //                v93._Mypair._Myval2._Mysize  = 0i64;
+//        //                v93._Mypair._Myval2._Myres   = 15i64;
+//        //                v57                          = -1i64;
+//        //                do ++v57;
+//        //                while (Core::Profile::Area::CHUNK_LOAD_SYSTEM_2[v57]);
+//        //                std::string::assign(&v93, "Chunk load system", v57);
+//        //                v76 = Core::Profile::findOrCreateGroup(&v93, 0xBC8F8Fu);
+//        //                Core::Profile::GroupToken::GroupToken(&token_338, v76, v32->_Mypair._Myval2._Bx._Buf,
+//        //                0xBC8F8Fu); if (v93._Mypair._Myval2._Myres >= 0x10) {
+//        //                    v77 = v93._Mypair._Myval2._Myres + 1;
+//        //                    v78 = v93._Mypair._Myval2._Bx._Ptr;
+//        //                    if (v93._Mypair._Myval2._Myres + 1 >= 0x1000) {
+//        //                        v77 = v93._Mypair._Myval2._Myres + 40;
+//        //                        v78 = (char*)*((_QWORD*)v93._Mypair._Myval2._Bx._Ptr - 1);
+//        //                        if ((unsigned __int64)(v93._Mypair._Myval2._Bx._Ptr - v78 - 8) > 0x1F)
+//        //                            _invalid_parameter_noinfo_noreturn();
+//        //                    }
+//        //                    operator delete(v78, v77);
+//        //                }
+//        //                j_atexit(TheEndGenerator::postProcess_::_51_::_dynamic_atexit_destructor_for__token_338__);
+//        //                j__Init_thread_footer(&_TSS8);
+//        //            }
+//        //        }
+//        //        Core::Profile::ProfileSectionGroup::ProfileSectionGroup(&ProfileSectionGroup15, &token_338, 0);
+//        //        Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
+//        //        v33 = Core::Random::_genRandInt32(&v113.mRandom.mObject) % 5;
+//        //        v34 = 0;
+//        //        if (v33 > 0) {
+//        //            do {
+//        //                Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
+//        //                v35 = (Core::Random::_genRandInt32(&v113.mRandom.mObject) & 0xF) + 8;
+//        //                Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
+//        //                v36       = (Core::Random::_genRandInt32(&v113.mRandom.mObject) & 0xF) + 8;
+//        //                v83.x     = v35 + origin.x;
+//        //                v83.y     = origin.y;
+//        //                v83.z     = v36 + origin.z;
+//        //                Heightmap = BlockSource::getHeightmap(&source, &v83);
+//        //                if (Heightmap > 0) {
+//        //                    v38   = Heightmap - 1;
+//        //                    v84.x = v35 + origin.x;
+//        //                    v84.y = Heightmap + origin.y;
+//        //                    v84.z = v36 + origin.z;
+//        //                    if (BlockSource::isEmptyBlock(&source, &v84)) {
+//        //                        v85.x = v35 + origin.x;
+//        //                        v85.y = v38 + origin.y;
+//        //                        v85.z = v36 + origin.z;
+//        //                        v39   = BlockSource::getBlock(&source, &v85)->mLegacyBlock.ptr_;
+//        //                        if (!v39) gsl::details::terminate(0i64);
+//        //                        Hash = HashedString::getHash(&v39->mNameInfo.mFullName);
+//        //                        if (Hash == HashedString::getHash(&VanillaBlockTypeIds::EndStone)) {
+//        //                            target.x = v35 + origin.x;
+//        //                            target.y = v38 + origin.y + 1;
+//        //                            target.z = v36 + origin.z;
+//        //                            ChorusFlowerBlock::generatePlant(&source, &target, &v113, 8);
+//        //                        }
+//        //                    }
+//        //                }
+//        //                ++v34;
+//        //            } while (v34 < v33);
+//        //            v10 = *(_QWORD*)&gatewayPos.x;
+//        //        }
+//        //        Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
+//        //        v41 = Core::Random::_genRandInt32(&v113.mRandom.mObject);
+//        //        if (v41 == 700 * (v41 / 0x2BC)) {
+//        //            Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
+//        //            v42 = (Core::Random::_genRandInt32(&v113.mRandom.mObject) & 0xF) + 8;
+//        //            Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
+//        //            v43   = (Core::Random::_genRandInt32(&v113.mRandom.mObject) & 0xF) + 8;
+//        //            v87.x = v42 + origin.x;
+//        //            v87.y = origin.y;
+//        //            v87.z = v43 + origin.z;
+//        //            v44   = BlockSource::getHeightmap(&source, &v87);
+//        //            v45   = v44;
+//        //            if (v44 > 0) {
+//        //                Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
+//        //                v46          = Core::Random::_genRandInt32(&v113.mRandom.mObject);
+//        //                gatewayPos.x = v42 + origin.x;
+//        //                gatewayPos.y = v45 + v46 % 7 + 3 + origin.y;
+//        //                gatewayPos.z = v43 + origin.z;
+//        //                memset(&v89, 0, sizeof(v89));
+//        //                Feature::Feature(&v89, 0i64);
+//        //                v89.__vftable = (Feature_vtbl*)EndGatewayFeature::`vftable'; EndGatewayFeature::place(
+//        //                    (EndGatewayFeature*)&v89,
+//        //                    &source,
+//        //                    &gatewayPos,
+//        //                    &v113
+//        //                );
+//        //                Feature::~Feature(&v89);
+//        //                BlockEntity = BlockSource::getBlockEntity(&source, &gatewayPos);
+//        //                v48         = (EndGatewayBlockActor*)BlockEntity;
+//        //                if (BlockEntity) {
+//        //                    if (*BlockActor::getType(BlockEntity) == 24) {
+//        //                        v49 = v88->mDimension->getSpawnPos(v88->mDimension, (BlockPos*)&v88);
+//        //                        EndGatewayBlockActor::setExitPosition(v48, v49);
+//        //                    }
+//        //                }
+//        //            }
+//        //        }
+//        //        Core::Profile::ProfileSectionGroup::~ProfileSectionGroup(&ProfileSectionGroup15);
+//        //    }
+//        //}
+//        // v50 = &label_373;
+//        // BlockTickingQueue::tickAllPendingTicks(&instaTickQueue, &source, WorldGenerator::TICKING_QUEUE_PASS_LIMIT);
+//        // BlockTickingQueue::tickAllPendingTicks(&randomTickQueue, &source, WorldGenerator::TICKING_QUEUE_PASS_LIMIT);
+//        // TickQueue = LevelChunk::getTickQueue(levelChunk._Ptr);
+//        // BlockTickingQueue::acquireAllTicks(TickQueue, &instaTickQueue);
+//        // v52 = LevelChunk::getRandomTickQueue(levelChunk._Ptr);
+//        // BlockTickingQueue::acquireAllTicks(v52, &randomTickQueue);
+//        // mChunk = blockEntityLock._Mypair._Myval2._Myfirst;
+//        // v9        = 1;
+//        // return v9;
 //    }
 //
 //    void loadChunk(LevelChunk& levelchunk, bool forceImmediateReplacementDataLoad) {
