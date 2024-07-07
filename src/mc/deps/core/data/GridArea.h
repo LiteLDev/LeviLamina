@@ -9,9 +9,9 @@
 template <typename T0>
 class GridArea {
 public:
-    std::function<void(buffer_span_mut<T0>)>                    destroy;    // this+0x0
-    std::function<void(buffer_span<Pos>, buffer_span_mut<T0>)>  generate;   // this+0x40
-    std::function<void(buffer_span_mut<T0>, buffer_span<uint>)> add;        // this+0x80
+    std::function<void(buffer_span_mut<T0>)>                    mDestroy;   // this+0x0
+    std::function<void(buffer_span<Pos>, buffer_span_mut<T0>)>  mGenerate;  // this+0x40
+    std::function<void(buffer_span_mut<T0>, buffer_span<uint>)> mAdd;       // this+0x80
     struct Bounds                                               mBounds;    // this+0xC0
     std::vector<T0>                                             mChunks;    // this+0xF0
     std::vector<T0>                                             mNewChunks; // this+0x108

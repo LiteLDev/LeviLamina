@@ -12,10 +12,10 @@ public:
         Flatten = 0x1,
     };
 
-    class Pos dim;
-    int       area;
-    int       volume;
-    int       side;
+    class Pos mDim;
+    int       mArea;
+    int       mVolume;
+    int       mSide;
 
 public:
     // NOLINTBEGIN
