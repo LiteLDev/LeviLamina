@@ -31,7 +31,6 @@ bool unhook(FuncPtr target, FuncPtr detour, bool suspendThreads) {
 }
 
 FuncPtr resolveIdentifier(std::string_view identifier, bool disableErrorOutput) {
-    static Logger hookLogger(selfModName, true);
     if (auto pl = resolveSymbol(identifier, true); pl) {
         return pl;
     } else if (auto sig = resolveSignature(identifier); sig) {
@@ -41,8 +40,8 @@ FuncPtr resolveIdentifier(std::string_view identifier, bool disableErrorOutput) 
     //     return dbgeng;
     // }
     if (!disableErrorOutput) {
-        hookLogger.fatal("Could not find symbol/signature in memory: {}", identifier);
-        hookLogger.fatal("In module: {}", sys_utils::getCallerModuleFileName());
+        getLogger().fatal("Could not find symbol/signature in memory: {}", identifier);
+        getLogger().fatal("In module: {}", sys_utils::getCallerModuleFileName());
     }
     return nullptr;
 }

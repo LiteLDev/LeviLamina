@@ -22,8 +22,8 @@ LL_TYPE_INSTANCE_HOOK(TickSyncTaskPool::Worker, HookPriority::Low, ServerLevel, 
         try {
             f();
         } catch (...) {
-            logger.error("Error in TickSyncTaskPool:");
-            error_utils::printCurrentException(logger);
+            getLogger().error("Error in TickSyncTaskPool:");
+            error_utils::printCurrentException(getLogger());
         }
     }
     origin();

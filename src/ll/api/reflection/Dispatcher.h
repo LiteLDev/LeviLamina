@@ -37,6 +37,6 @@ public:
 
     operator Storage const&() const { return storage; } // NOLINT
 
-    operator Storage&() const { return storage; } // NOLINT
+    operator Storage&() { return storage; } // NOLINT
 };
 } // namespace ll::reflection

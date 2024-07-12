@@ -92,12 +92,12 @@ void ModRegistrar::loadAllMods() {
 
     std::unordered_map<std::string, Manifest> manifests;
 
-    logger.info("Loading mods..."_tr());
+    getLogger().info("Loading mods..."_tr());
 
     auto& registry = ModManagerRegistry::getInstance();
 
     if (!registry.addManager(std::make_shared<NativeModManager>())) {
-        logger.error("Failed to create native mod manager"_tr());
+        getLogger().error("Failed to create native mod manager"_tr());
         return;
     }
 
@@ -110,9 +110,10 @@ void ModRegistrar::loadAllMods() {
             });
             !res) {
             if (res.error()) {
-                logger.error("Failed to load manifest for {0}"_tr(string_utils::u8str2str(file.path().stem().u8string())
-                ));
-                res.error().log(logger.error);
+                getLogger().error(
+                    "Failed to load manifest for {0}"_tr(string_utils::u8str2str(file.path().stem().u8string()))
+                );
+                res.error().log(getLogger().error);
             }
             continue;
         }
@@ -128,7 +129,7 @@ void ModRegistrar::loadAllMods() {
             for (auto& dependency : *manifest.dependencies) {
                 if (!manifests.contains(dependency.name) || !checkVersion(manifests.at(dependency.name), dependency)) {
                     error = true;
-                    logger.error("Missing dependency {0}"_tr(
+                    getLogger().error("Missing dependency {0}"_tr(
                         dependency.version
                             .transform([&](auto& ver) {
                                 return fmt::format("{} v{}", dependency.name, ver.to_string());
@@ -138,7 +139,7 @@ void ModRegistrar::loadAllMods() {
                 }
             }
             if (error) {
-                logger.error("The dependencies of {0} are missing, will not be loaded"_tr(name));
+                getLogger().error("The dependencies of {0} are missing, will not be loaded"_tr(name));
                 continue;
             }
             for (auto& dependency : *manifest.dependencies) {
@@ -163,7 +164,7 @@ void ModRegistrar::loadAllMods() {
         for (auto& conflict : *manifest.conflicts) {
             if (manifests.contains(conflict.name) && checkVersion(manifests.at(conflict.name), conflict)) {
                 conflicts.emplace_back(name);
-                logger.error("{0} conflicts with {1}"_tr(
+                getLogger().error("{0} conflicts with {1}"_tr(
                     name,
                     conflict.version
                         .transform([&](auto& ver) { return fmt::format("{} v{}", conflict.name, ver.to_string()); })
@@ -185,7 +186,7 @@ void ModRegistrar::loadAllMods() {
                 }
             }
             if (deniedByConflict) {
-                logger.error("The dependencies of {0} are in conflict, will not be loaded"_tr(name));
+                getLogger().error("The dependencies of {0} are in conflict, will not be loaded"_tr(name));
                 continue;
             }
             for (auto& dependency : *manifest.dependencies) {
@@ -211,7 +212,7 @@ void ModRegistrar::loadAllMods() {
     }
     auto sort = impl->deps.sort();
     for (auto& name : sort.unsorted) {
-        logger.error("The dependencies of {0} are in loops, will not be loaded"_tr(name));
+        getLogger().error("The dependencies of {0} are in loops, will not be loaded"_tr(name));
     }
 
     std::unordered_set<std::string> loadErrored;
@@ -225,18 +226,18 @@ void ModRegistrar::loadAllMods() {
                 }
             }
             if (deniedByDepError) {
-                logger.error("The dependencies of {0} is not loaded, will not be loaded"_tr(name));
+                getLogger().error("The dependencies of {0} is not loaded, will not be loaded"_tr(name));
                 loadErrored.emplace(name);
                 continue;
             }
         }
-        logger.info("Loading {0} v{1}"_tr(name, manifest.version.value_or(data::Version{0, 0, 0})));
+        getLogger().info("Loading {0} v{1}"_tr(name, manifest.version.value_or(data::Version{0, 0, 0})));
         if (auto res = registry.loadMod(std::move(manifest)); res) {
-            logger.info("{0} loaded"_tr(name));
+            getLogger().info("{0} loaded"_tr(name));
         } else {
             loadErrored.emplace(name);
-            logger.error("Failed to load mod {0}"_tr(name));
-            res.error().log(logger.error);
+            getLogger().error("Failed to load mod {0}"_tr(name));
+            res.error().log(getLogger().error);
         }
     }
     size_t loadedCount = sort.sorted.size() - loadErrored.size();
@@ -246,7 +247,7 @@ void ModRegistrar::loadAllMods() {
     }
     static ll::memory::HookRegistrar<EnableAllMods, DisableAllMods> reg;
 
-    logger.info("{0} mod(s) loaded"_tr(loadedCount));
+    getLogger().info("{0} mod(s) loaded"_tr(loadedCount));
 }
 
 std::vector<std::string> ModRegistrar::getSortedModNames() const {
@@ -270,7 +271,7 @@ LL_TYPE_INSTANCE_HOOK(
         CommandRegistrar::getInstance().tryRegisterSoftEnum(enum_name_v<ModNames>, names);
     }
     if (!names.empty()) {
-        logger.info("Enabling mods..."_tr());
+        getLogger().info("Enabling mods..."_tr());
 
         auto   begin = std::chrono::steady_clock::now();
         size_t count{};
@@ -278,16 +279,16 @@ LL_TYPE_INSTANCE_HOOK(
             auto mod = ModManagerRegistry::getInstance().getMod(name);
             if (!mod) continue;
             if (mod->isEnabled()) continue;
-            logger.info("Enabling {0} v{1}"_tr(name, mod->getManifest().version.value_or(data::Version{0, 0, 0})));
+            getLogger().info("Enabling {0} v{1}"_tr(name, mod->getManifest().version.value_or(data::Version{0, 0, 0})));
             if (auto res = registrar.enableMod(name); res) {
                 count++;
             } else {
-                logger.error("Failed to enable mod {0}"_tr(name));
-                res.error().log(logger.error);
+                getLogger().error("Failed to enable mod {0}"_tr(name));
+                res.error().log(getLogger().error);
             }
         }
         if (count > 0) {
-            logger.info("{0} mod(s) enabled in ({1:.1f}s)"_tr(
+            getLogger().info("{0} mod(s) enabled in ({1:.1f}s)"_tr(
                 count,
                 std::chrono::duration_cast<std::chrono::duration<double>>(std::chrono::steady_clock::now() - begin)
                     .count()
@@ -307,14 +308,15 @@ LL_TYPE_INSTANCE_HOOK(
     auto& registrar = ModRegistrar::getInstance();
     auto  names     = registrar.getSortedModNames();
     if (!names.empty()) {
-        logger.info("Disabling mods..."_tr());
+        getLogger().info("Disabling mods..."_tr());
         for (auto& name : std::ranges::reverse_view(names)) {
             auto mod = ModManagerRegistry::getInstance().getMod(name);
             if (!mod) continue;
             if (mod->isDisabled()) continue;
-            logger.info("Disabling {0} v{1}"_tr(name, mod->getManifest().version.value_or(data::Version{0, 0, 0})));
+            getLogger().info("Disabling {0} v{1}"_tr(name, mod->getManifest().version.value_or(data::Version{0, 0, 0}))
+            );
             if (auto res = registrar.disableMod(name); !res) {
-                res.error().log(logger.warn);
+                res.error().log(getLogger().warn);
             }
         }
     }

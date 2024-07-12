@@ -33,14 +33,14 @@ public:
             } catch (...) {
                 auto llock = ll::Logger::lock();
                 try {
-                    logger.error(
+                    getLogger().error(
                         "Error in Listener<{}>[{}] of {}:",
                         event.getId().name,
                         l->getId(),
                         l->modPtr.expired() ? "unknown mod" : l->modPtr.lock()->getManifest().name
                     );
                 } catch (...) {}
-                error_utils::printCurrentException(logger);
+                error_utils::printCurrentException(getLogger());
             }
         }
     }
@@ -59,9 +59,9 @@ public:
             } catch (...) {
                 auto llock = ll::Logger::lock();
                 try {
-                    logger.error("Error in Listener<{}>[{}] of {}:", event.getId().name, l->getId(), modName);
+                    getLogger().error("Error in Listener<{}>[{}] of {}:", event.getId().name, l->getId(), modName);
                 } catch (...) {}
-                error_utils::printCurrentException(logger);
+                error_utils::printCurrentException(getLogger());
             }
         }
     }

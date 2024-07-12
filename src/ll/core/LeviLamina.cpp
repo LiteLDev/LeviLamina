@@ -1,7 +1,7 @@
 #include "ll/core/LeviLamina.h"
 #include "ll/api/Versions.h"
 namespace ll {
-std::shared_ptr<mod::NativeMod> getSelfModIns() {
+std::shared_ptr<mod::NativeMod> const& getSelfModIns() {
     static auto llSelf = std::make_shared<mod::NativeMod>(
         mod::Manifest{
             .entry{"LeviLamina.dll"},
@@ -13,5 +13,5 @@ std::shared_ptr<mod::NativeMod> getSelfModIns() {
     );
     return llSelf;
 }
-Logger& logger = getSelfModIns()->getLogger();
+Logger& getLogger() { return getSelfModIns()->getLogger(); }
 } // namespace ll

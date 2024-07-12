@@ -15,7 +15,7 @@ namespace ll::command {
 using namespace ll::i18n_literals;
 
 void registerVersionCommand() {
-    auto config = ll::globalConfig.modules.command.versionCommand;
+    auto config = ll::getLeviConfig().modules.command.versionCommand;
     if (!config.enabled) {
         return;
     }

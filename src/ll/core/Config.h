@@ -18,14 +18,9 @@ namespace ll {
 
 struct LeviConfig {
 
-    int version = 25;
+    int version = 26;
 
     std::string language = "system";
-    struct {
-        bool colorLog = sys_utils::isStdoutSupportAnsi();
-        int  logLevel = 4;
-    } logger{};
-
     struct {
         struct {
             bool        enabled      = true;
@@ -67,9 +62,7 @@ struct LeviConfig {
     } modules{};
 };
 
-extern LeviConfig globalConfig;
-
-bool loadLeviConfig();
+LeviConfig& getLeviConfig();
 
 bool saveLeviConfig();
 

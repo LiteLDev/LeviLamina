@@ -20,21 +20,19 @@
 namespace ll::memory {
 
 FuncPtr resolveSymbol(char const* symbol) {
-    static Logger sLogger(selfModName, true);
     auto          res = pl::symbol_provider::pl_resolve_symbol_silent(symbol);
     if (res == nullptr) {
-        sLogger.fatal("Could not find symbol in memory: {}", symbol);
-        sLogger.fatal("In module: {}", sys_utils::getCallerModuleFileName());
+        getLogger().fatal("Could not find symbol in memory: {}", symbol);
+        getLogger().fatal("In module: {}", sys_utils::getCallerModuleFileName());
     }
     return res;
 }
 
 FuncPtr resolveSymbol(std::string_view symbol, bool disableErrorOutput) {
-    static Logger sLogger(selfModName, true);
     auto          res = pl::symbol_provider::pl_resolve_symbol_silent_n(symbol.data(), symbol.size());
     if (!disableErrorOutput && res == nullptr) {
-        sLogger.fatal("Could not find symbol in memory: {}", symbol);
-        sLogger.fatal("In module: {}", sys_utils::getCallerModuleFileName());
+        getLogger().fatal("Could not find symbol in memory: {}", symbol);
+        getLogger().fatal("In module: {}", sys_utils::getCallerModuleFileName());
     }
     return res;
 }

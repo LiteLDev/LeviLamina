@@ -51,7 +51,7 @@ struct LeviCommand3 {
 };
 
 void registerModManageCommand() {
-    auto config = ll::globalConfig.modules.command.modManageCommand;
+    auto config = ll::getLeviConfig().modules.command.modManageCommand;
     if (!config.enabled) {
         return;
     }

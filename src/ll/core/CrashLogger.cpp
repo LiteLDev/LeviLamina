@@ -43,7 +43,7 @@ void CrashLogger::initCrashLogger() {
 
     std::wstring cmd = string_utils::str2wstr(fmt::format(
         "{} {} \"{}\"",
-        getSelfModIns()->getModDir() / sv2u8sv(globalConfig.modules.crashLogger.externalpath),
+        getSelfModIns()->getModDir() / sv2u8sv(getLeviConfig().modules.crashLogger.externalpath),
         GetCurrentProcessId(),
         ll::getGameVersion().to_string()
     ));
@@ -61,14 +61,14 @@ void CrashLogger::initCrashLogger() {
 }
 
 static struct CrashInfo {
-    HANDLE                                         process{};
-    HANDLE                                         thread{};
-    DWORD                                          processId{};
-    DWORD                                          threadId{};
-    std::string                                    date;
-    Logger                                         logger{"CrashLogger"};
-    std::filesystem::path                          path{};
-    decltype(ll::globalConfig.modules.crashLogger) settings{};
+    HANDLE                                            process{};
+    HANDLE                                            thread{};
+    DWORD                                             processId{};
+    DWORD                                             threadId{};
+    std::string                                       date;
+    Logger                                            logger{"CrashLogger"};
+    std::filesystem::path                             path{};
+    decltype(ll::getLeviConfig().modules.crashLogger) settings{};
 } crashInfo;
 
 static void dumpSystemInfo() {
@@ -229,7 +229,7 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
             {},
             {},
         };
-        crashInfo.settings = ll::globalConfig.modules.crashLogger;
+        crashInfo.settings = ll::getLeviConfig().modules.crashLogger;
         crashInfo.path     = file_utils::u8path(crashInfo.settings.logPath);
         crashInfo.logger.setFile(
             u8str2str((crashInfo.path / (crashInfo.settings.logPrefix + crashInfo.date + ".log")).u8string())

@@ -162,7 +162,7 @@ public:
 
     [[nodiscard]] nlohmann::ordered_json serialize() const override {
         if (!isValid()) {
-            ll::logger.error("Failed to serialize Slider: invalid data");
+            ll::getLogger().error("Failed to serialize Slider: invalid data");
             return {};
         }
         return {
@@ -208,7 +208,7 @@ public:
 
     [[nodiscard]] nlohmann::ordered_json serialize() const override {
         if (!isValid()) {
-            ll::logger.error("Failed to serialize StepSlider: invalid data");
+            ll::getLogger().error("Failed to serialize StepSlider: invalid data");
             return {};
         }
         return {

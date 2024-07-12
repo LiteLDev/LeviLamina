@@ -33,7 +33,7 @@ struct TpTarget {
 };
 
 void registerTpdimCommand() {
-    auto config = ll::globalConfig.modules.command.tpdimOverload;
+    auto config = ll::getLeviConfig().modules.command.tpdimOverload;
     if (!config.enabled) {
         return;
     }

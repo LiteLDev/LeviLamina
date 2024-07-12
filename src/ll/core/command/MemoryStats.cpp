@@ -12,7 +12,7 @@ namespace ll::command {
 using namespace ll::i18n_literals;
 
 void registerMemstatsCommand() {
-    auto config = ll::globalConfig.modules.command.modManageCommand;
+    auto config = ll::getLeviConfig().modules.command.modManageCommand;
     if (!config.enabled) {
         return;
     }

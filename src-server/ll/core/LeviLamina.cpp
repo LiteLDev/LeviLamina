@@ -91,10 +91,11 @@ void checkOtherBdsInstance() {
             auto path = sys_utils::getModulePath(nullptr, handle).value();
             // Compare the path
             if (path == currentPath) {
-                logger.error("Detected the existence of another BDS process with the same path!"_tr());
-                logger.error("This may cause the network port and the level to be occupied"_tr());
+                getLogger().error("Detected the existence of another BDS process with the same path!"_tr());
+                getLogger().error("This may cause the network port and the level to be occupied"_tr());
                 while (true) {
-                    logger.error("Do you want to terminate the process with PID {0}?  (y=Yes, n=No, e=Exit)"_tr(pid));
+                    getLogger().error("Do you want to terminate the process with PID {0}?  (y=Yes, n=No, e=Exit)"_tr(pid
+                    ));
                     char input;
                     rewind(stdin);
                     input = static_cast<char>(getchar());
@@ -118,6 +119,7 @@ void checkOtherBdsInstance() {
 
 void printWelcomeMsg() {
     auto lock = Logger::lock();
+    auto& logger = getLogger();
     logger.info(R"(                                                                      )");
     logger.info(R"(         _               _ _                    _                     )");
     logger.info(R"(        | |    _____   _(_) |    __ _ _ __ ___ (_)_ __   __ _         )");
@@ -136,11 +138,11 @@ void printWelcomeMsg() {
 void checkProtocolVersion() {
     auto currentProtocol = getNetworkProtocolVersion();
     if (TARGET_BDS_PROTOCOL_VERSION != currentProtocol) {
-        logger.warn("Protocol version not match, target version: {0}, current version: {1}"_tr(
+        getLogger().warn("Protocol version not match, target version: {0}, current version: {1}"_tr(
             TARGET_BDS_PROTOCOL_VERSION,
             currentProtocol
         ));
-        logger.warn(
+        getLogger().warn(
             "This will most likely crash the server, please use the LeviLamina that matches the BDS version!"_tr()
         );
     }
@@ -183,28 +185,26 @@ extern std::string globalDefaultLocaleName;
 
 void leviLaminaMain() {
     error_utils::setSehTranslator();
-    // Init LL Logger
-    Logger::setDefaultFile(u8"logs/LeviLamina-latest.log", false);
 
     ::ll::i18n::load(getSelfModIns()->getLangDir());
 
-    loadLeviConfig();
+    auto& config = getLeviConfig();
 
     // Update default language
-    if (globalConfig.language != "system") {
-        i18n::globalDefaultLocaleName = globalConfig.language;
+    if (config.language != "system") {
+        i18n::globalDefaultLocaleName = config.language;
     }
 
     checkProtocolVersion();
 
-    if (globalConfig.modules.checkRunningBDS) {
+    if (config.modules.checkRunningBDS) {
         checkOtherBdsInstance();
     }
-    if (globalConfig.modules.playerInfo.alwaysLaunch) {
+    if (config.modules.playerInfo.alwaysLaunch) {
         service::PlayerInfo::getInstance();
     }
-    if (globalConfig.modules.crashLogger.enabled) {
-        if (globalConfig.modules.crashLogger.useBuiltin) {
+    if (config.modules.crashLogger.enabled) {
+        if (config.modules.crashLogger.useBuiltin) {
             static CrashLoggerNew crashLogger{};
         } else {
             CrashLogger::initCrashLogger();
@@ -219,7 +219,7 @@ void leviLaminaMain() {
     printWelcomeMsg();
 
 #ifdef LL_DEBUG
-    logger.warn("LeviLamina is running in DEBUG mode!"_tr());
+    getLogger().warn("LeviLamina is running in DEBUG mode!"_tr());
 #endif
 
     command::registerCommands();
@@ -236,9 +236,6 @@ LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::High, "main", int, int arg
     severStartBeginTime = std::chrono::steady_clock::now();
     for (int i = 0; i < argc; ++i) {
         switch (doHash(argv[i])) {
-        case "--noColor"_h:
-            globalConfig.logger.colorLog = false;
-            break;
         case "-v"_h:
         case "--version"_h:
             fmt::print("{}", getGameVersion().to_string());
@@ -254,7 +251,7 @@ LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::High, "main", int, int arg
     try {
         leviLaminaMain();
     } catch (...) {
-        error_utils::printCurrentException(logger);
+        error_utils::printCurrentException(getLogger());
     }
     auto res = origin(argc, argv);
     setServerStatus(ServerStatus::Default);

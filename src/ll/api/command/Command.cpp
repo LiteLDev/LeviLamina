@@ -8,9 +8,9 @@ namespace ll::command::detail {
 void printCommandError(::Command const& command, ::CommandOutput& output) noexcept {
     auto lock = ll::Logger::lock();
     try {
-        logger.error("Error in command {}:", command.getCommandName());
+        getLogger().error("Error in command {}:", command.getCommandName());
         output.error("command threw an exception");
     } catch (...) {}
-    error_utils::printCurrentException(logger);
+    error_utils::printCurrentException(getLogger());
 }
 } // namespace ll::command::detail

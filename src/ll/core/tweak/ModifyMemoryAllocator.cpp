@@ -63,7 +63,7 @@ public:
                 str.pop_back();
             }
         }
-        logger.info(str);
+        getLogger().info(str);
     }
 
     virtual void logCurrentState() { mi_stats_print_out(miOutput, nullptr); }
@@ -91,6 +91,7 @@ public:
         PROCESS_MEMORY_COUNTERS_EX info{.cb = sizeof(PROCESS_MEMORY_COUNTERS_EX)};
         GetProcessMemoryInfo(GetCurrentProcess(), (PPROCESS_MEMORY_COUNTERS)&info, info.cb);
         // clang-format off
+        auto& logger= getLogger();
         logger.info("heap stats: {:>12} {:>12}", "peak", "current");
         logger.info("  reserved: {:>12} {:>12}", memStr(summary.cbMaxReserve), memStr(summary.cbReserved));
         logger.info(" committed: {:>12} {:>12}", "", memStr(summary.cbCommitted));
@@ -205,7 +206,7 @@ public:
         }
 
         for (auto& [module, mem] : res) {
-            logger.info(
+            getLogger().info(
                 " {:<32} alloc: {:>12}, free: {:>12}, curr: {:>12}",
                 module,
                 memStr(mem.a),

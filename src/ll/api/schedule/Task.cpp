@@ -20,13 +20,13 @@ namespace ll::schedule::detail {
 void printScheduleError(TaskBase& task) noexcept {
     auto lock = ll::Logger::lock();
     try {
-        logger.error(
+        getLogger().error(
             "Error in schedule task[{}] of {}:",
             task.getId(),
             task.modPtr.expired() ? "unknown mod" : task.modPtr.lock()->getManifest().name
         );
     } catch (...) {}
-    error_utils::printCurrentException(logger);
+    error_utils::printCurrentException(getLogger());
 }
 uint64 nextTaskId() noexcept {
     static std::atomic_uint64_t id{0};

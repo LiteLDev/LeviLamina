@@ -33,7 +33,7 @@ LL_STATIC_HOOK(
     char const*               pszFormat,
     char*                     va
 ) {
-    if (ll::globalConfig.modules.tweak.disableAutoCompactionLog
+    if (ll::getLeviConfig().modules.tweak.disableAutoCompactionLog
         && std::string_view{func}.starts_with("DBStorage::_scheduleNextAutoCompaction")) {
         static_assert(&DBStorage::_scheduleNextAutoCompaction); // make sure function exist
         return;

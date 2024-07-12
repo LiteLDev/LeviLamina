@@ -8,6 +8,7 @@
 
 #include "ll/api/base/StdInt.h"
 #include "ll/api/memory/Memory.h"
+#include "ll/core/LeviLamina.h"
 
 #include <memoryapi.h>
 #include <winnt.h>
@@ -20,7 +21,8 @@ size_t getVolatileOffset(void* impl) {
             return offset;
         }
     }
-    std::terminate();
+    getLogger().fatal("ClosureMagicNumber does not found 0x{}", impl);
+    return 0;
 };
 using T = NativeClosure<void*()>;
 void initNativeClosure(void* t, void* impl, size_t offset, size_t size) {

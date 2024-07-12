@@ -188,7 +188,7 @@ struct Statistics::Impl {
                 scheduler.add<ll::schedule::RepeatTask>(30min, [this]() { submitData(); });
             });
         });
-        ll::logger.info("Statistics has been enabled, you can disable statistics in configuration file"_tr());
+        ll::getLogger().info("Statistics has been enabled, you can disable statistics in configuration file"_tr());
     }
 };
 
