@@ -18,6 +18,8 @@ data::Version getGameVersion() {
     return ver;
 }
 
+int getNetworkProtocolVersion() { return SharedConstants::NetworkProtocolVersion; }
+
 data::Version getLoaderVersion() {
     static auto ver = [] {
         auto v = data::Version{

@@ -2,6 +2,7 @@
 
 #include "ll/api/mod/ModManagerRegistry.h"
 #include "ll/api/mod/NativeMod.h"
+#include "ll/core/LeviLamina.h"
 #include "ll/core/mod/NativeModManager.h"
 
 namespace ll::mod {
@@ -21,13 +22,8 @@ void NativeMod::setHandle(Handle handle) { mImpl->handle = handle; }
 NativeMod::Handle NativeMod::getHandle() const { return mImpl->handle; }
 
 std::shared_ptr<NativeMod> NativeMod::getByHandle(Handle handle) {
-
     if (handle == sys_utils::getCurrentModuleHandle()) {
-        static auto llSelf = std::make_shared<NativeMod>(
-            Manifest{"./../../LeviLamina.dll", "LeviLamina", std::string{NativeModManagerName}},
-            sys_utils::getCurrentModuleHandle()
-        );
-        return llSelf;
+        return getSelfModIns();
     }
     auto manger =
         std::static_pointer_cast<NativeModManager>(ModManagerRegistry::getInstance().getManager(NativeModManagerName));

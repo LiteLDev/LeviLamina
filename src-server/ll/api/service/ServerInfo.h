@@ -14,6 +14,5 @@ enum class ServerStatus {
 void setServerStatus(ServerStatus);
 
 LLNDAPI ServerStatus getServerStatus();
-LLNDAPI int           getServerProtocolVersion();
-LLNDAPI bool          setServerMotd(std::string const& serverName, bool shouldAnnounce = true);
+LLNDAPI bool         setServerMotd(std::string const& serverName, bool shouldAnnounce = true);
 } // namespace ll

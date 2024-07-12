@@ -8,13 +8,11 @@
 namespace ll {
 using namespace i18n_literals;
 
-static constexpr std::u8string_view leviConfigPath = u8R"(mods\LeviLamina\config\config.json)";
-
 struct LeviConfig globalConfig;
 
 bool loadLeviConfig() {
     try {
-        if (ll::config::loadConfig(globalConfig, leviConfigPath)) {
+        if (ll::config::loadConfig(globalConfig, getSelfModIns()->getConfigDir() / u8"config.json")) {
             return true;
         }
     } catch (...) {
@@ -22,7 +20,7 @@ bool loadLeviConfig() {
         ll::error_utils::printCurrentException(logger);
     }
     try {
-        if (ll::config::saveConfig(globalConfig, leviConfigPath)) {
+        if (ll::config::saveConfig(globalConfig, getSelfModIns()->getConfigDir() / u8"config.json")) {
             logger.warn("LeviConfig rewrite successfully"_tr());
         } else {
             logger.error("LeviConfig rewrite failed"_tr());
@@ -38,7 +36,7 @@ bool loadLeviConfig() {
 bool saveLeviConfig() {
     bool res{};
     try {
-        res = ll::config::saveConfig(globalConfig, leviConfigPath);
+        res = ll::config::saveConfig(globalConfig, getSelfModIns()->getConfigDir() / u8"config.json");
     } catch (...) {
         res = false;
         ll::error_utils::printCurrentException(logger);

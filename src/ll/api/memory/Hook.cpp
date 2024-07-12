@@ -10,6 +10,7 @@
 #include "ll/api/service/ServerInfo.h"
 #include "ll/api/thread/GlobalThreadPauser.h"
 #include "ll/api/utils/SystemUtils.h"
+#include "ll/core/LeviLamina.h"
 
 namespace ll::memory {
 
@@ -30,7 +31,7 @@ bool unhook(FuncPtr target, FuncPtr detour, bool suspendThreads) {
 }
 
 FuncPtr resolveIdentifier(std::string_view identifier, bool disableErrorOutput) {
-    static Logger hookLogger("LeviLamina", true);
+    static Logger hookLogger(selfModName, true);
     if (auto pl = resolveSymbol(identifier, true); pl) {
         return pl;
     } else if (auto sig = resolveSignature(identifier); sig) {

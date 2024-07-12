@@ -58,8 +58,6 @@ using namespace hash_literals;
 using namespace i18n_literals;
 
 namespace fs = std::filesystem;
-
-Logger                                logger("LeviLamina");
 std::chrono::steady_clock::time_point severStartBeginTime;
 std::chrono::steady_clock::time_point severStartEndTime;
 
@@ -136,7 +134,7 @@ void printWelcomeMsg() {
 }
 
 void checkProtocolVersion() {
-    auto currentProtocol = getServerProtocolVersion();
+    auto currentProtocol = getNetworkProtocolVersion();
     if (TARGET_BDS_PROTOCOL_VERSION != currentProtocol) {
         logger.warn("Protocol version not match, target version: {0}, current version: {1}"_tr(
             TARGET_BDS_PROTOCOL_VERSION,
@@ -188,7 +186,7 @@ void leviLaminaMain() {
     // Init LL Logger
     Logger::setDefaultFile(u8"logs/LeviLamina-latest.log", false);
 
-    ::ll::i18n::load(mod::getModsRoot() / u8"LeviLamina/lang");
+    ::ll::i18n::load(getSelfModIns()->getLangDir());
 
     loadLeviConfig();
 
@@ -246,7 +244,7 @@ LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::High, "main", int, int arg
             fmt::print("{}", getGameVersion().to_string());
             return 0;
         case "--protocolversion"_h:
-            fmt::print("{}", getServerProtocolVersion());
+            fmt::print("{}", getNetworkProtocolVersion());
             return 0;
         default:
             break;

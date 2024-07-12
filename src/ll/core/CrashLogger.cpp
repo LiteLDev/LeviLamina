@@ -11,6 +11,7 @@
 #include "ll/api/utils/StringUtils.h"
 #include "ll/api/utils/SystemUtils.h"
 #include "ll/core/Config.h"
+#include "ll/core/LeviLamina.h"
 
 #include <windows.h>
 
@@ -42,7 +43,7 @@ void CrashLogger::initCrashLogger() {
 
     std::wstring cmd = string_utils::str2wstr(fmt::format(
         "{} {} \"{}\"",
-        globalConfig.modules.crashLogger.externalpath,
+        getSelfModIns()->getModDir() / sv2u8sv(globalConfig.modules.crashLogger.externalpath),
         GetCurrentProcessId(),
         ll::getGameVersion().to_string()
     ));

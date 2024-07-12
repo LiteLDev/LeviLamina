@@ -9,11 +9,15 @@
 
 #include "ll/api/mod/Mod.h"
 #include "ll/api/service/Bedrock.h"
+#include "ll/core/LeviLamina.h"
 #include "ll/core/mod/ModRegistrar.h"
+
+#include "mc/deps/core/utility/Util.h"
 #include "mc/server/commands/CommandOrigin.h"
 #include "mc/server/commands/CommandOutput.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/server/commands/CommandRegistry.h"
+
 #include <string>
 #include <string_view>
 #include <vector>
@@ -51,8 +55,11 @@ void registerModManageCommand() {
     if (!config.enabled) {
         return;
     }
-    auto& cmd = CommandRegistrar::getInstance()
-                    .getOrCreateCommand("levilamina", "LeviLamina's main command"_tr(), config.permission);
+    auto& cmd = CommandRegistrar::getInstance().getOrCreateCommand(
+        Util::toLower(selfModName),
+        "LeviLamina's main command"_tr(),
+        config.permission
+    );
     cmd.alias("ll");
     cmd.overload<LeviCommand3>().text("load").required("mod").execute(
         [](CommandOrigin const&, CommandOutput& output, LeviCommand3 const& param) {

@@ -11,6 +11,7 @@
 #include "ll/api/thread/GlobalThreadPauser.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/api/utils/SystemUtils.h"
+#include "ll/core/LeviLamina.h"
 
 #include "mc/deps/core/common/bedrock/IMemoryAllocator.h"
 
@@ -19,7 +20,7 @@
 namespace ll::memory {
 
 FuncPtr resolveSymbol(char const* symbol) {
-    static Logger sLogger("LeviLamina", true);
+    static Logger sLogger(selfModName, true);
     auto          res = pl::symbol_provider::pl_resolve_symbol_silent(symbol);
     if (res == nullptr) {
         sLogger.fatal("Could not find symbol in memory: {}", symbol);
@@ -29,7 +30,7 @@ FuncPtr resolveSymbol(char const* symbol) {
 }
 
 FuncPtr resolveSymbol(std::string_view symbol, bool disableErrorOutput) {
-    static Logger sLogger("LeviLamina", true);
+    static Logger sLogger(selfModName, true);
     auto          res = pl::symbol_provider::pl_resolve_symbol_silent_n(symbol.data(), symbol.size());
     if (!disableErrorOutput && res == nullptr) {
         sLogger.fatal("Could not find symbol in memory: {}", symbol);

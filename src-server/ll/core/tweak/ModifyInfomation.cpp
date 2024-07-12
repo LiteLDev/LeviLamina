@@ -1,8 +1,8 @@
+#include "ll/api/Versions.h"
 #include "ll/api/io/FunctionStream.h"
 #include "ll/api/io/StreamRedirector.h"
 #include "ll/api/memory/Hook.h"
-#include "ll/api/service/ServerInfo.h" 
-#include "ll/api/Versions.h"
+#include "ll/api/service/ServerInfo.h"
 #include "ll/core/Config.h"
 #include "ll/core/LeviLamina.h"
 #include "ll/core/Version.h"
@@ -14,6 +14,9 @@
 MCAPI void BedrockLogOut(uint priority, char const* pszFormat, ...); // NOLINT
 
 namespace ll {
+extern std::chrono::steady_clock::time_point severStartBeginTime;
+extern std::chrono::steady_clock::time_point severStartEndTime;
+
 // disable auto compaction log
 LL_STATIC_HOOK(
     DiagnosticsLogHook,
@@ -54,7 +57,7 @@ void tryModifyServerStartInfo(std::string& s) {
         if (s.starts_with("Version: ")) {
             s += fmt::format(
                 "(ProtocolVersion {}) with {}",
-                ll::getServerProtocolVersion(),
+                ll::getNetworkProtocolVersion(),
                 fmt::format(fg(fmt::color::light_sky_blue), "LeviLamina-{}", ll::getLoaderVersion())
             );
         }
