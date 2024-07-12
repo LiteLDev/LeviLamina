@@ -1,44 +1,44 @@
 {
-  "format_version": 2,
-  "tooth": "github.com/LiteLDev/LeviLamina",
-  "version": "0.13.3",
-  "info": {
-    "name": "LeviLamina",
-    "description": "A lightweight, modular and versatile plugin loader for Minecraft Bedrock Server BDS, formerly known as LiteLoaderBDS",
-    "author": "LiteLDev",
-    "tags": []
-  },
-  "asset_url": "https://github.com/LiteLDev/LeviLamina/releases/download/v0.13.3/levilamina-release-windows-x64.zip",
-  "dependencies": {
-    "github.com/LiteLDev/bds": ">=1.21.0 <1.21.10",
-    "github.com/LiteLDev/CrashLogger": "1.1.x",
-    "github.com/LiteLDev/levilamina-loc": "1.3.x",
-    "github.com/LiteLDev/PeEditor": "3.7.x",
-    "github.com/LiteLDev/PreLoader": "1.8.x"
-  },
-  "files": {
-    "place": [
-      {
-        "src": "LeviLamina/*",
-        "dest": "mods/LeviLamina/"
-      }
-    ],
-    "remove": [
-      "bedrock_server_mod.exe"
-    ]
-  },
-  "platforms": [
-    {
-      "goos": "windows",
-      "goarch": "amd64",
-      "commands": {
-        "post_install": [
-          ".\\PeEditor.exe -mb"
+    "format_version": 2,
+    "tooth": "github.com/LiteLDev/LeviLamina",
+    "version": "0.13.3",
+    "info": {
+        "name": "LeviLamina",
+        "description": "A lightweight, modular and versatile plugin loader for Minecraft Bedrock Server BDS, formerly known as LiteLoaderBDS",
+        "author": "LiteLDev",
+        "tags": []
+    },
+    "asset_url": "https://github.com/LiteLDev/LeviLamina/releases/download/v0.13.3/levilamina-release-windows-x64.zip",
+    "dependencies": {
+        "github.com/LiteLDev/bds": ">=1.21.2 <1.21.10",
+        "github.com/LiteLDev/CrashLogger": "1.1.x",
+        "github.com/LiteLDev/levilamina-loc": "1.3.x",
+        "github.com/LiteLDev/PeEditor": "3.7.x",
+        "github.com/LiteLDev/PreLoader": "1.9.x"
+    },
+    "files": {
+        "place": [
+            {
+                "src": "LeviLamina/*",
+                "dest": "plugins/LeviLamina/"
+            }
         ],
-        "post_uninstall": [
-          "IF EXIST bedrock_server.exe (DEL bedrock_server.exe.bak) ELSE (REN bedrock_server.exe.bak bedrock_server.exe)"
+        "remove": [
+            "bedrock_server_mod.exe"
         ]
-      }
-    }
-  ]
+    },
+    "platforms": [
+        {
+            "goos": "windows",
+            "goarch": "amd64",
+            "commands": {
+                "post_install": [
+                    ".\\PeEditor.exe -mb"
+                ],
+                "post_uninstall": [
+                    "IF EXIST bedrock_server.exe (DEL bedrock_server.exe.bak) ELSE (REN bedrock_server.exe.bak bedrock_server.exe)"
+                ]
+            }
+        }
+    ]
 }

@@ -7,11 +7,13 @@
 #include "ll/api/service/Bedrock.h"
 #include "ll/api/service/ServerInfo.h"
 
+#include "pl/Config.h"
+
 namespace ll::mod {
 using namespace i18n_literals;
 
 std::filesystem::path const& getModsRoot() {
-    static std::filesystem::path path = u8"mods/";
+    static std::filesystem::path path{(char8_t*)pl::pl_mods_path};
     return path;
 }
 

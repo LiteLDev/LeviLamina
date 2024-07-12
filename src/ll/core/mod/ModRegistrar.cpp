@@ -38,7 +38,7 @@
 #include "nlohmann/json.hpp"
 #include "nlohmann/json_fwd.hpp"
 
-#include "pl/PreLoader.h"
+#include "pl/Config.h"
 
 namespace ll::command {
 enum class ModNames {};
@@ -72,7 +72,7 @@ static Expected<Manifest> loadManifest(std::filesystem::path const& dir) {
     }
     return ::ll::reflection::deserialize_to<Manifest>(json).and_then([&](auto&& manifest) -> Expected<Manifest> {
         using namespace pl;
-        if (manifest.type == preloadModManagerName) {
+        if (manifest.type == pl::pl_mod_manager_name) {
             return makeSuccessError(); // bypass preloader mod
         }
         if (std::string dirName = string_utils::u8str2str(dir.filename().u8string()); manifest.name != dirName) {

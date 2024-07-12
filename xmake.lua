@@ -20,7 +20,7 @@ add_requires("cpp-httplib 0.14.3", {configs = {ssl = true}})
 add_requires("pcg_cpp v1.0.0")
 add_requires("pfr 2.1.1")
 add_requires("demangler v17.0.7")
-add_requires("preloader v1.8.0")
+add_requires("preloader v1.9.0")
 add_requires("symbolprovider v1.1.0")
 add_requires("libhat 2024.4.16")
 

@@ -23,53 +23,17 @@
 #include "ll/api/utils/SystemUtils.h"
 #include "ll/core/Config.h"
 
+#include "pl/Config.h"
+
 using namespace ll::string_utils;
 
 namespace ll {
-
-struct LoggerConfig {
-    int         version  = 1;
-    bool        colorLog = sys_utils::isStdoutSupportAnsi();
-    int         logLevel = 4;
-    std::string logPath  = "logs/LeviLamina-latest.log";
-};
-
-LoggerConfig& getLoggerConfig() {
-    static LoggerConfig config = []() {
-        LoggerConfig res;
-        try {
-            if (ll::config::loadConfig(res, "loggerConfig.json")) {
-                return res;
-            }
-        } catch (...) {
-            fmt::print(
-                "\x1b[91mLoggerConfig load failed\n{}\x1b[0m\n",
-                error_utils::makeExceptionString(std::current_exception())
-            );
-        }
-        try {
-            if (ll::config::saveConfig(res, "loggerConfig.json")) {
-                fmt::print("\x1b[93mLoggerConfig rewrite successfully\x1b[0m\n");
-            } else {
-                fmt::print("\x1b[91mLoggerConfig rewrite failed\x1b[0m\n");
-            }
-        } catch (...) {
-            fmt::print(
-                "\x1b[91mLoggerConfig rewrite failed\n{}\x1b[0m\n",
-                error_utils::makeExceptionString(std::current_exception())
-            );
-        }
-        return res;
-    }();
-    return config;
-}
-
-static std::ofstream            defaultFile(file_utils::u8path(getLoggerConfig().logPath), std::ios::out);
+static std::ofstream            defaultFile(file_utils::u8path(pl::pl_log_path), std::ios::out);
 static Logger::player_output_fn defaultPlayerOutputCallback;
 
 static bool checkLogLevel(int level, int outLevel) {
     if (level >= outLevel) return true;
-    if (level == -1 && getLoggerConfig().logLevel >= outLevel) return true;
+    if (level == -1 && pl::pl_log_level >= outLevel) return true;
     return false;
 }
 
@@ -87,7 +51,7 @@ void OutputStream::print(std::string_view s) const noexcept {
                 applyTextStyle(style[2], fmt::format(fmt::runtime(consoleFormat[3]), logger->title)),
                 applyTextStyle(style[3], fmt::format(fmt::runtime(consoleFormat[4]), replaceMcToAnsiCode(s)))
             );
-            if (!getLoggerConfig().colorLog) {
+            if (!(bool)pl::pl_color_log) {
                 str = removeEscapeCode(str);
             }
             fmt::print("{}\n", str);
