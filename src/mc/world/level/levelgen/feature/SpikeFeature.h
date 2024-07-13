@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/phys/AABB.h"
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/Feature.h"
@@ -14,6 +15,14 @@ public:
 
     // SpikeFeature inner types define
     class EndSpike {
+    public:
+        int const  mCenterX;
+        int const  mCenterZ;
+        int const  mRadius;
+        int const  mHeight;
+        bool const mGuarded;
+        AABB const mTopBoundingBox;
+
     public:
         // prevent constructor by default
         EndSpike& operator=(EndSpike const&);
@@ -42,6 +51,11 @@ public:
 
         // NOLINTEND
     };
+
+public:
+    EndSpike const& mSpike;
+    BlockPos        mCrystalBeamTarget;
+    bool            mCrystalInvulnerable;
 
 public:
     // prevent constructor by default
