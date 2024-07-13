@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/biome/Parameter.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -9,6 +10,21 @@ namespace ClimateUtils { struct Parameter; }
 
 struct ClimateParameters {
 public:
+    ClimateUtils::Parameter mTemperature;
+    ClimateUtils::Parameter mHumidity;
+    ClimateUtils::Parameter mContinentalness;
+    ClimateUtils::Parameter mErosion;
+    ClimateUtils::Parameter mDepth;
+    ClimateUtils::Parameter mWeirdness;
+    float                   mOffset;
+    ClimateUtils::Parameter mTemperature2;
+    ClimateUtils::Parameter mHumidity2;
+    ClimateUtils::Parameter mContinentalness2;
+    ClimateUtils::Parameter mErosion2;
+    ClimateUtils::Parameter mDepth2;
+    ClimateUtils::Parameter mWeirdness2;
+    ClimateUtils::Parameter mOffset2;
+
     // prevent constructor by default
     ClimateParameters& operator=(ClimateParameters const&);
     ClimateParameters(ClimateParameters const&);
