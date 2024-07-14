@@ -90,6 +90,7 @@
 //#include "mc/resources/VanillaGameVersions.h"
 //#include "mc/world/components/FeatureHelper.h"
 //#include <mc/world/level/levelgen/feature/EndIslandFeature.h>
+//#include <mc/world/level/levelgen/feature/helpers/TheEndSpikeHelper.h>
 //#include <numeric>
 //
 //// namespace Bedrock {
@@ -680,7 +681,7 @@
 //        uint64                 v27;
 //
 //        Height          = getDimension().getHeight();
-//        levelHeightBits = mce::Math::log2((float)Height);
+//        levelHeightBits = std::log((float)Height) / std::log(2.0f);
 //        getHeights(&noiseBuffer, 2 * chunkPos.x, 0, 2 * chunkPos.z);
 //        for (xc = 0; xc < 2; ++xc) {
 //            for (zc = 0; zc < 2; ++zc) {
@@ -917,6 +918,41 @@
 //
 //    bool isOutsideCentralIslandArea(const ChunkPos* chunkPos) {
 //        return chunkPos->x * chunkPos->x + chunkPos->z * chunkPos->z > 4096;
+//    }
+//
+//    virtual void postProcessMobsAt(BlockSource& blockSource, int chunkWestBlock, int chunkNorthBlock, Random& random) {
+//        BlockPos pos;
+//
+//        Level&                              level  = blockSource.getLevel();
+//        std::vector<SpikeFeature::EndSpike> spikes = TheEndSpikeHelper::getSpikesForLevel(level);
+//        for (auto& v : spikes) {
+//            bool v12 = v.getCenterX() >= chunkWestBlock && v.getCenterX() < chunkWestBlock + 16;
+//            bool v13 = v.getCenterZ() >= chunkNorthBlock && v.getCenterZ() < chunkNorthBlock + 16;
+//            if (v12 && v13) {
+//                SpikeFeature spikeFeature = SpikeFeature::SpikeFeature(v);
+//                int          CenterZ      = v.getCenterZ();
+//                pos.x                     = v.getCenterX();
+//                pos.y                     = 45;
+//                pos.z                     = CenterZ;
+//                spikeFeature.postProcessMobsAt(blockSource, pos, random);
+//            }
+//        }
+//        WorldGenerator::postProcessMobsAt(blockSource, chunkWestBlock, chunkNorthBlock, random);
+//    }
+//
+//    virtual void prepareAndComputeHeights(
+//        BlockVolume&        box,
+//        ChunkPos const&     chunkPos,
+//        std::vector<short>& ZXheights,
+//        bool                factorInBeardsAndShavers,
+//        int                 skipTopN
+//    ) {
+//        prepareHeights(box, chunkPos, factorInBeardsAndShavers, ZXheights, skipTopN);
+//    }
+//
+//    void
+//    prepareHeights(TheEndGenerator* this, BlockVolume* box, const ChunkPos* chunkPos, bool factorInBeardsAndShavers) {
+//        TheEndGenerator::_prepareHeights(this, box, chunkPos, factorInBeardsAndShavers, 0i64, 0);
 //    }
 //};
 //
