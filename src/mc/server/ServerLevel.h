@@ -51,11 +51,11 @@ public:
     // symbol: ?getLevelChunkMetaDataManager@ServerLevel@@UEAAPEAVLevelChunkMetaDataManager@@XZ
     MCVAPI class LevelChunkMetaDataManager* getLevelChunkMetaDataManager();
 
-    // symbol: ?getPlayerSleepManager@ServerLevel@@UEAAAEAVPlayerSleepManager@@XZ
-    MCVAPI class PlayerSleepManager& getPlayerSleepManager();
-
     // symbol: ?getPlayerSleepManager@ServerLevel@@UEBAAEBVPlayerSleepManager@@XZ
     MCVAPI class PlayerSleepManager const& getPlayerSleepManager() const;
+
+    // symbol: ?getPlayerSleepManager@ServerLevel@@UEAAAEAVPlayerSleepManager@@XZ
+    MCVAPI class PlayerSleepManager& getPlayerSleepManager();
 
     // symbol: ?getPositionTrackerDBServer@ServerLevel@@UEBAPEAVPositionTrackingDBServer@PositionTrackingDB@@XZ
     MCVAPI class PositionTrackingDB::PositionTrackingDBServer* getPositionTrackerDBServer() const;

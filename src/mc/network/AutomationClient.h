@@ -38,20 +38,20 @@ public:
     // symbol: ?playerListChanged@AutomationClient@Automation@@UEAAXXZ
     MCVAPI void playerListChanged();
 
-    // symbol: ?send@AutomationClient@Automation@@UEAAXAEBUChatMessage@CodeBuilder@@@Z
-    MCVAPI void send(struct CodeBuilder::ChatMessage const& message);
-
     // symbol: ?send@AutomationClient@Automation@@UEAAXAEBUErrorMessage@CodeBuilder@@@Z
     MCVAPI void send(struct CodeBuilder::ErrorMessage const& message);
 
     // symbol: ?send@AutomationClient@Automation@@UEAAXAEBUCommandMessage@CodeBuilder@@@Z
     MCVAPI void send(struct CodeBuilder::CommandMessage const& message);
 
-    // symbol: ?send@AutomationClient@Automation@@UEAAXAEBUEventMessage@CodeBuilder@@@Z
-    MCVAPI void send(struct CodeBuilder::EventMessage const& message);
-
     // symbol: ?send@AutomationClient@Automation@@UEAAXAEBUAgentMessage@CodeBuilder@@@Z
     MCVAPI void send(struct CodeBuilder::AgentMessage const& message);
+
+    // symbol: ?send@AutomationClient@Automation@@UEAAXAEBUChatMessage@CodeBuilder@@@Z
+    MCVAPI void send(struct CodeBuilder::ChatMessage const& message);
+
+    // symbol: ?send@AutomationClient@Automation@@UEAAXAEBUEventMessage@CodeBuilder@@@Z
+    MCVAPI void send(struct CodeBuilder::EventMessage const& message);
 
     // symbol: ?tick@AutomationClient@Automation@@UEAAXXZ
     MCVAPI void tick();

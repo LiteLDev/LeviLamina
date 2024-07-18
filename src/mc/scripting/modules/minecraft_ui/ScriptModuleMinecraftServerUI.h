@@ -27,6 +27,7 @@ namespace ScriptModuleMinecraftServerUI { class ScriptMessageFormData; }
 namespace ScriptModuleMinecraftServerUI { class ScriptMessageFormResponse; }
 namespace ScriptModuleMinecraftServerUI { class ScriptModalFormData; }
 namespace ScriptModuleMinecraftServerUI { class ScriptModalFormResponse; }
+namespace ScriptModuleMinecraftServerUI { class ScriptUIManager; }
 namespace Scripting { class DependencyLocator; }
 namespace Scripting { class ScriptObjectFactory; }
 namespace Scripting { struct ContextConfig; }
