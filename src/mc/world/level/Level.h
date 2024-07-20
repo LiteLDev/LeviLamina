@@ -154,24 +154,12 @@ public:
         class UserEntityIdentifierComponent const* userIdentifier
     );
 
-    // symbol: ?broadcastLocalEvent@Level@@UEAAXAEAVBlockSource@@W4LevelEvent@@AEBVVec3@@AEBVBlock@@@Z
-    MCVAPI void
-    broadcastLocalEvent(class BlockSource& region, ::LevelEvent type, class Vec3 const& pos, class Block const& block);
-
     // symbol: ?broadcastLocalEvent@Level@@UEAAXAEAVBlockSource@@W4LevelEvent@@AEBVVec3@@H@Z
     MCVAPI void broadcastLocalEvent(class BlockSource& region, ::LevelEvent type, class Vec3 const& pos, int data);
 
-    // symbol:
-    // ?broadcastSoundEvent@Level@@UEAAXAEAVDimension@@W4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N4@Z
-    MCVAPI void broadcastSoundEvent(
-        class Dimension&                        dimension,
-        ::Puv::Legacy::LevelSoundEvent          type,
-        class Vec3 const&                       pos,
-        int                                     data,
-        struct ActorDefinitionIdentifier const& identifier,
-        bool                                    isBabyMob,
-        bool                                    isGlobal
-    );
+    // symbol: ?broadcastLocalEvent@Level@@UEAAXAEAVBlockSource@@W4LevelEvent@@AEBVVec3@@AEBVBlock@@@Z
+    MCVAPI void
+    broadcastLocalEvent(class BlockSource& region, ::LevelEvent type, class Vec3 const& pos, class Block const& block);
 
     // symbol:
     // ?broadcastSoundEvent@Level@@UEAAXAEAVBlockSource@@W4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N4@Z
@@ -181,6 +169,18 @@ public:
         class Vec3 const&                       pos,
         int                                     data,
         struct ActorDefinitionIdentifier const& entityType,
+        bool                                    isBabyMob,
+        bool                                    isGlobal
+    );
+
+    // symbol:
+    // ?broadcastSoundEvent@Level@@UEAAXAEAVDimension@@W4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N4@Z
+    MCVAPI void broadcastSoundEvent(
+        class Dimension&                        dimension,
+        ::Puv::Legacy::LevelSoundEvent          type,
+        class Vec3 const&                       pos,
+        int                                     data,
+        struct ActorDefinitionIdentifier const& identifier,
         bool                                    isBabyMob,
         bool                                    isGlobal
     );
@@ -212,21 +212,21 @@ public:
     MCVAPI int countUsersWithMatchingNetworkId(class NetworkIdentifier const& networkId) const;
 
     // symbol:
-    // ?createMapSavedData@Level@@UEAAAEAVMapItemSavedData@@AEBV?$vector@UActorUniqueID@@V?$allocator@UActorUniqueID@@@std@@@std@@AEBVBlockPos@@V?$AutomaticID@VDimension@@H@@H@Z
-    MCVAPI class MapItemSavedData& createMapSavedData(
-        std::vector<struct ActorUniqueID> const& mapIds,
-        class BlockPos const&                    origin,
-        DimensionType                            dimension,
-        int                                      returnScaleLevel
-    );
-
-    // symbol:
     // ?createMapSavedData@Level@@UEAAAEAVMapItemSavedData@@AEBUActorUniqueID@@AEBVBlockPos@@V?$AutomaticID@VDimension@@H@@H@Z
     MCVAPI class MapItemSavedData& createMapSavedData(
         struct ActorUniqueID const& uuid,
         class BlockPos const&       origin,
         DimensionType               dimension,
         int                         returnScaleLevel
+    );
+
+    // symbol:
+    // ?createMapSavedData@Level@@UEAAAEAVMapItemSavedData@@AEBV?$vector@UActorUniqueID@@V?$allocator@UActorUniqueID@@@std@@@std@@AEBVBlockPos@@V?$AutomaticID@VDimension@@H@@H@Z
+    MCVAPI class MapItemSavedData& createMapSavedData(
+        std::vector<struct ActorUniqueID> const& mapIds,
+        class BlockPos const&                    origin,
+        DimensionType                            dimension,
+        int                                      returnScaleLevel
     );
 
     // symbol: ?createPhotoStorage@Level@@UEAAXXZ
@@ -344,11 +344,11 @@ public:
     // symbol: ?getActorEventCoordinator@Level@@UEAAAEAVActorEventCoordinator@@XZ
     MCVAPI class ActorEventCoordinator& getActorEventCoordinator();
 
-    // symbol: ?getActorFactory@Level@@UEBAAEBVActorFactory@@XZ
-    MCVAPI class ActorFactory const& getActorFactory() const;
-
     // symbol: ?getActorFactory@Level@@UEAAAEAVActorFactory@@XZ
     MCVAPI class ActorFactory& getActorFactory();
+
+    // symbol: ?getActorFactory@Level@@UEBAAEBVActorFactory@@XZ
+    MCVAPI class ActorFactory const& getActorFactory() const;
 
     // symbol: ?getActorInfoRegistry@Level@@UEAAPEAVActorInfoRegistry@@XZ
     MCVAPI class ActorInfoRegistry* getActorInfoRegistry();
@@ -356,11 +356,11 @@ public:
     // symbol: ?getActorPropertyGroup@Level@@UEBAAEAVPropertyGroupManager@@XZ
     MCVAPI class PropertyGroupManager& getActorPropertyGroup() const;
 
-    // symbol: ?getAdventureSettings@Level@@UEBAAEBUAdventureSettings@@XZ
-    MCVAPI struct AdventureSettings const& getAdventureSettings() const;
-
     // symbol: ?getAdventureSettings@Level@@UEAAAEAUAdventureSettings@@XZ
     MCVAPI struct AdventureSettings& getAdventureSettings();
+
+    // symbol: ?getAdventureSettings@Level@@UEBAAEBUAdventureSettings@@XZ
+    MCVAPI struct AdventureSettings const& getAdventureSettings() const;
 
     // symbol: ?getArmorTrimUnloader@Level@@UEAAPEAVArmorTrimUnloader@@XZ
     MCVAPI class ArmorTrimUnloader* getArmorTrimUnloader();
@@ -377,11 +377,11 @@ public:
     // symbol: ?getBiomeComponentFactory@Level@@UEBAAEBVBiomeComponentFactory@@XZ
     MCVAPI class BiomeComponentFactory const& getBiomeComponentFactory() const;
 
-    // symbol: ?getBiomeManager@Level@@UEBAAEBVBiomeManager@@XZ
-    MCVAPI class BiomeManager const& getBiomeManager() const;
-
     // symbol: ?getBiomeManager@Level@@UEAAAEAVBiomeManager@@XZ
     MCVAPI class BiomeManager& getBiomeManager();
+
+    // symbol: ?getBiomeManager@Level@@UEBAAEBVBiomeManager@@XZ
+    MCVAPI class BiomeManager const& getBiomeManager() const;
 
     // symbol: ?getBiomeRegistry@Level@@UEAAAEAVBiomeRegistry@@XZ
     MCVAPI class BiomeRegistry& getBiomeRegistry();
@@ -417,11 +417,11 @@ public:
     // ?getBossEventSubscriptionManager@Level@@UEAA?AV?$not_null@V?$NonOwnerPointer@VBossEventSubscriptionManager@@@Bedrock@@@gsl@@XZ
     MCVAPI Bedrock::NotNullNonOwnerPtr<class BossEventSubscriptionManager> getBossEventSubscriptionManager();
 
-    // symbol: ?getCameraPresets@Level@@UEBAAEBVCameraPresets@@XZ
-    MCVAPI class CameraPresets const& getCameraPresets() const;
-
     // symbol: ?getCameraPresets@Level@@UEAAAEAVCameraPresets@@XZ
     MCVAPI class CameraPresets& getCameraPresets();
+
+    // symbol: ?getCameraPresets@Level@@UEBAAEBVCameraPresets@@XZ
+    MCVAPI class CameraPresets const& getCameraPresets() const;
 
     // symbol: ?getCapabilities@Level@@UEBAAEBUISharedController@PlayerCapabilities@@XZ
     MCVAPI struct PlayerCapabilities::ISharedController const& getCapabilities() const;
@@ -590,14 +590,14 @@ public:
     MCVAPI class LevelStorage& getLevelStorage();
 
     // symbol:
-    // ?getLightTextureImageBuilderFactory@Level@@UEAAAEAV?$Factory@VBaseLightTextureImageBuilder@@AEAVLevel@@AEAVScheduler@@@@XZ
-    MCVAPI class Factory<class BaseLightTextureImageBuilder, class Level&, class Scheduler&>&
-    getLightTextureImageBuilderFactory();
-
-    // symbol:
     // ?getLightTextureImageBuilderFactory@Level@@UEBAAEBV?$Factory@VBaseLightTextureImageBuilder@@AEAVLevel@@AEAVScheduler@@@@XZ
     MCVAPI class Factory<class BaseLightTextureImageBuilder, class Level&, class Scheduler&> const&
     getLightTextureImageBuilderFactory() const;
+
+    // symbol:
+    // ?getLightTextureImageBuilderFactory@Level@@UEAAAEAV?$Factory@VBaseLightTextureImageBuilder@@AEAVLevel@@AEAVScheduler@@@@XZ
+    MCVAPI class Factory<class BaseLightTextureImageBuilder, class Level&, class Scheduler&>&
+    getLightTextureImageBuilderFactory();
 
     // symbol: ?getLiquidHitResult@Level@@UEAAAEAVHitResult@@XZ
     MCVAPI class HitResult& getLiquidHitResult();
@@ -605,14 +605,14 @@ public:
     // symbol: ?getLootTables@Level@@UEAAAEAVLootTables@@XZ
     MCVAPI class LootTables& getLootTables();
 
-    // symbol: ?getMapSavedData@Level@@UEAAPEAVMapItemSavedData@@UActorUniqueID@@@Z
-    MCVAPI class MapItemSavedData* getMapSavedData(struct ActorUniqueID uuid);
-
     // symbol: ?getMapSavedData@Level@@UEAAPEAVMapItemSavedData@@AEBVCompoundTag@@@Z
     MCVAPI class MapItemSavedData* getMapSavedData(class CompoundTag const& instance);
 
     // symbol: ?getMapSavedData@Level@@UEAAPEAVMapItemSavedData@@PEBVCompoundTag@@@Z
     MCVAPI class MapItemSavedData* getMapSavedData(class CompoundTag const* instance);
+
+    // symbol: ?getMapSavedData@Level@@UEAAPEAVMapItemSavedData@@UActorUniqueID@@@Z
+    MCVAPI class MapItemSavedData* getMapSavedData(struct ActorUniqueID uuid);
 
     // symbol: ?getMob@Level@@UEBAPEAVMob@@UActorUniqueID@@@Z
     MCVAPI class Mob* getMob(struct ActorUniqueID mobId) const;
@@ -660,14 +660,14 @@ public:
     // ?getPlatformPlayer@Level@@UEBAPEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI class Player* getPlatformPlayer(std::string const& platformOnlineId) const;
 
-    // symbol: ?getPlayer@Level@@UEBAPEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI class Player* getPlayer(std::string const& name) const;
+    // symbol: ?getPlayer@Level@@UEBAPEAVPlayer@@AEBVUUID@mce@@@Z
+    MCVAPI class Player* getPlayer(class mce::UUID const& uuid) const;
 
     // symbol: ?getPlayer@Level@@UEBAPEAVPlayer@@UActorUniqueID@@@Z
     MCVAPI class Player* getPlayer(struct ActorUniqueID entityID) const;
 
-    // symbol: ?getPlayer@Level@@UEBAPEAVPlayer@@AEBVUUID@mce@@@Z
-    MCVAPI class Player* getPlayer(class mce::UUID const& uuid) const;
+    // symbol: ?getPlayer@Level@@UEBAPEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCVAPI class Player* getPlayer(std::string const& name) const;
 
     // symbol: ?getPlayerAbilities@Level@@UEAAPEAVLayeredAbilities@@AEBUActorUniqueID@@@Z
     MCVAPI class LayeredAbilities* getPlayerAbilities(struct ActorUniqueID const& playerId);
@@ -741,11 +741,11 @@ public:
     // symbol: ?getSavedData@Level@@UEAAAEAVSavedDataStorage@@XZ
     MCVAPI class SavedDataStorage& getSavedData();
 
-    // symbol: ?getScoreboard@Level@@UEAAAEAVScoreboard@@XZ
-    MCVAPI class Scoreboard& getScoreboard();
-
     // symbol: ?getScoreboard@Level@@UEBAAEBVScoreboard@@XZ
     MCVAPI class Scoreboard const& getScoreboard() const;
+
+    // symbol: ?getScoreboard@Level@@UEAAAEAVScoreboard@@XZ
+    MCVAPI class Scoreboard& getScoreboard();
 
     // symbol:
     // ?getScreenshotsFolder@Level@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
@@ -791,20 +791,20 @@ public:
     // symbol: ?getSpecialMultiplier@Level@@UEBAMV?$AutomaticID@VDimension@@H@@@Z
     MCVAPI float getSpecialMultiplier(DimensionType dimensionType) const;
 
-    // symbol: ?getStructureManager@Level@@UEAA?AV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@XZ
-    MCVAPI Bedrock::NotNullNonOwnerPtr<class StructureManager> getStructureManager();
-
     // symbol: ?getStructureManager@Level@@UEBA?BV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@XZ
     MCVAPI Bedrock::NotNullNonOwnerPtr<class StructureManager> const getStructureManager() const;
+
+    // symbol: ?getStructureManager@Level@@UEAA?AV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@XZ
+    MCVAPI Bedrock::NotNullNonOwnerPtr<class StructureManager> getStructureManager();
 
     // symbol: ?getSubChunkRequestManager@Level@@UEAAPEAVSubChunkRequestManager@@XZ
     MCVAPI class SubChunkRequestManager* getSubChunkRequestManager();
 
-    // symbol: ?getSurfaceBuilderRegistry@Level@@UEAAAEAVSurfaceBuilderRegistry@@XZ
-    MCVAPI class SurfaceBuilderRegistry& getSurfaceBuilderRegistry();
-
     // symbol: ?getSurfaceBuilderRegistry@Level@@UEBAAEBVSurfaceBuilderRegistry@@XZ
     MCVAPI class SurfaceBuilderRegistry const& getSurfaceBuilderRegistry() const;
+
+    // symbol: ?getSurfaceBuilderRegistry@Level@@UEAAAEAVSurfaceBuilderRegistry@@XZ
+    MCVAPI class SurfaceBuilderRegistry& getSurfaceBuilderRegistry();
 
     // symbol: ?getSyncTasksGroup@Level@@UEAAAEAVTaskGroup@@XZ
     MCVAPI class TaskGroup& getSyncTasksGroup();
@@ -832,11 +832,11 @@ public:
     // symbol: ?getTradeTables@Level@@UEAAPEAVTradeTables@@XZ
     MCVAPI class TradeTables* getTradeTables();
 
-    // symbol: ?getTrimMaterialRegistry@Level@@UEBA?AV?$weak_ptr@$$CBVTrimMaterialRegistry@@@std@@XZ
-    MCVAPI std::weak_ptr<class TrimMaterialRegistry const> getTrimMaterialRegistry() const;
-
     // symbol: ?getTrimMaterialRegistry@Level@@UEAA?AV?$weak_ptr@VTrimMaterialRegistry@@@std@@XZ
     MCVAPI std::weak_ptr<class TrimMaterialRegistry> getTrimMaterialRegistry();
+
+    // symbol: ?getTrimMaterialRegistry@Level@@UEBA?AV?$weak_ptr@$$CBVTrimMaterialRegistry@@@std@@XZ
+    MCVAPI std::weak_ptr<class TrimMaterialRegistry const> getTrimMaterialRegistry() const;
 
     // symbol: ?getTrimPatternRegistry@Level@@UEAA?AV?$weak_ptr@VTrimPatternRegistry@@@std@@XZ
     MCVAPI std::weak_ptr<class TrimPatternRegistry> getTrimPatternRegistry();
@@ -1004,9 +1004,9 @@ public:
     );
 
     // symbol:
-    // ?playSound@Level@@UEAAXAEBVIConstBlockSource@@W4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N4@Z
+    // ?playSound@Level@@UEAAXV?$AutomaticID@VDimension@@H@@W4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N4@Z
     MCVAPI void playSound(
-        class IConstBlockSource const&          region,
+        DimensionType                           dimension,
         ::Puv::Legacy::LevelSoundEvent          type,
         class Vec3 const&                       pos,
         int                                     data,
@@ -1016,9 +1016,9 @@ public:
     );
 
     // symbol:
-    // ?playSound@Level@@UEAAXV?$AutomaticID@VDimension@@H@@W4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N4@Z
+    // ?playSound@Level@@UEAAXAEBVIConstBlockSource@@W4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N4@Z
     MCVAPI void playSound(
-        DimensionType                           dimension,
+        class IConstBlockSource const&          region,
         ::Puv::Legacy::LevelSoundEvent          type,
         class Vec3 const&                       pos,
         int                                     data,
