@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/util/ExpressionNode.h"
 
 class ScatterParams {
 public:
@@ -29,6 +30,14 @@ public:
 
     struct CoordinateRange {
     public:
+        ExpressionNode mMin;          // this+0x0
+        ExpressionNode mMax;          // this+E8
+        int            mStepSize;     // this+1D0
+        int            mGridOffset;   // this+1D4
+        int            mDistribution; // this+1D8
+        int            mExtentMin;    // this+1DC
+        int            mExtentMax;    // this+1E0
+        int            mUnknown1;     // this+1E4
         // prevent constructor by default
         CoordinateRange& operator=(CoordinateRange const&);
 
