@@ -12,29 +12,29 @@ public:
     ~SimpleService() override = default;
 
     void invalidate() override {
-        logger.info("SimpleService at address {} is being invalidated", reinterpret_cast<void*>(this));
+        ll::getLogger().info("SimpleService at address {} is being invalidated", reinterpret_cast<void*>(this));
     }
 };
 
 void test() {
     auto lock = ll::Logger::lock();
-    logger.warn("Testing service manager");
+    ll::getLogger().warn("Testing service manager");
     auto  service = std::make_shared<SimpleService>();
     auto& sm      = ServiceManager::getInstance();
 
     std::shared_ptr<SimpleService> simpleService;
     auto l = sm.subscribeService<SimpleService>([&](std::shared_ptr<SimpleService> const& service) {
-        logger.warn("Received service at address {}", reinterpret_cast<void*>(service.get()));
+        ll::getLogger().warn("Received service at address {}", reinterpret_cast<void*>(service.get()));
         simpleService = service;
     });
 
-    logger.warn("Registering service");
+    ll::getLogger().warn("Registering service");
     sm.registerService(service);
-    logger.warn("Using service at address {}", reinterpret_cast<void*>(simpleService.get()));
+    ll::getLogger().warn("Using service at address {}", reinterpret_cast<void*>(simpleService.get()));
 
-    logger.warn("Unregistering service");
+    ll::getLogger().warn("Unregistering service");
     sm.unregisterService(service->getServiceId());
-    logger.warn("Using service at address {}", reinterpret_cast<void*>(simpleService.get()));
+    ll::getLogger().warn("Using service at address {}", reinterpret_cast<void*>(simpleService.get()));
 
     event::EventBus::getInstance().removeListener(l);
 }

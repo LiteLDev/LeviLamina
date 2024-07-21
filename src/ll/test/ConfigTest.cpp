@@ -106,10 +106,10 @@ LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &Se
     auto        sbbbbbb  = DataItem::create(1, s);
     auto        sbbbbbb1 = DataItem::create(1, f);
     auto        sbbbbbb2 = DataItem::create(1, str);
-
-    ll::logger.debug("DataItem {} {}", typeid(*sbbbbbb).name(), sbbbbbb->getData<int>().value());
-    ll::logger.debug("DataItem {} {}", typeid(*sbbbbbb1).name(), sbbbbbb1->getData<float>().value());
-    ll::logger.debug("DataItem {} {}", typeid(*sbbbbbb2).name(), sbbbbbb2->getData<std::string>().value());
+    
+    ll::getLogger().debug("DataItem {} {}", typeid(*sbbbbbb).name(), sbbbbbb->getData<int>().value());
+    ll::getLogger().debug("DataItem {} {}", typeid(*sbbbbbb1).name(), sbbbbbb1->getData<float>().value());
+    ll::getLogger().debug("DataItem {} {}", typeid(*sbbbbbb2).name(), sbbbbbb2->getData<std::string>().value());
 
 
     auto helloReflection = TestClass<int>{};
@@ -118,38 +118,38 @@ LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &Se
 
     auto list = ll::string_utils::splitByPattern("structure.trs", ".");
 
-    ll::logger.debug(
+    ll::getLogger().debug(
         "reflection NBT: {}",
         ll::reflection::serialize<CompoundTagVariant>(helloReflection)
             .value()
             .toSnbt(SnbtFormat::PrettyConsolePrint | SnbtFormat::ArrayLineFeed)
     );
 
-    ll::logger.debug("reflection json: {}", ll::reflection::serialize<nlohmann::json>(helloReflection).value().dump(4));
+    ll::getLogger().debug("reflection json: {}", ll::reflection::serialize<nlohmann::json>(helloReflection).value().dump(4));
 
     // ll::reflection::deserialize(helloReflection, ll::reflection::serialize<CompoundTagVariant>(helloReflection));
 
-    ll::logger.debug("0x{:X}", (uintptr_t)ll::memory::resolveIdentifier(&FillCommand::execute));
-    ll::logger.debug("0x{:X}", (uintptr_t)ll::sys_utils::getImageRange().data());
+    ll::getLogger().debug("0x{:X}", (uintptr_t)ll::memory::resolveIdentifier(&FillCommand::execute));
+    ll::getLogger().debug("0x{:X}", (uintptr_t)ll::sys_utils::getImageRange().data());
 
-    ll::logger.debug("0x{:X}", (uintptr_t)ll::sys_utils::getImageRange().size());
-    ll::logger.debug(
+    ll::getLogger().debug("0x{:X}", (uintptr_t)ll::sys_utils::getImageRange().size());
+    ll::getLogger().debug(
         "0x{:X}",
         (uintptr_t)ll::memory::resolveIdentifier(&FillCommand::execute)
             - (uintptr_t)ll::sys_utils::getImageRange("LeviLamina.dll").data()
     );
 
-    ll::logger.debug("{}", ll::reflection::getRawName<&FillCommand::execute>());
-    ll::logger.debug("{}", ll::reflection::getRawName<&ServerLevel::_subTick>());
+    ll::getLogger().debug("{}", ll::reflection::getRawName<&FillCommand::execute>());
+    ll::getLogger().debug("{}", ll::reflection::getRawName<&ServerLevel::_subTick>());
 
     ll::reflection::deserialize(helloReflection, CompoundTagVariant::parse(R"({"structure":{"hello":""}})").value())
         .error()
-        .log(ll::logger.error);
+        .log(ll::getLogger().error);
 
-    ll::logger.debug("789\xDB\xFE");
-    ll::logger.debug("789\xDB\xFE");
+    ll::getLogger().debug("789\xDB\xFE");
+    ll::getLogger().debug("789\xDB\xFE");
 
     Vec3 v1{2};
 
-    ll::logger.debug("{}", 3 / v1);
+    ll::getLogger().debug("{}", 3 / v1);
 }

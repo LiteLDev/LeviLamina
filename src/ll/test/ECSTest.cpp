@@ -40,23 +40,23 @@ namespace ll::test::ecstest {
 void registerTimingCommand() {
     constexpr static size_t counttick = 100;
     auto&                   cmd =
-        ll::command::CommandRegistrar::getInstance()
+        ::ll::command::CommandRegistrar::getInstance()
             .getOrCreateCommand("timing", "timing", CommandPermissionLevel::GameDirectors, CommandFlagValue::None);
     cmd.overload().execute([](CommandOrigin const&, CommandOutput&) {
         auto thread = std::thread([] {
-            auto& system = ll::service::getLevel()->getEntitySystems();
+            auto& system = ::ll::service::getLevel()->getEntitySystems();
 
             auto& collection = system.getDefaultCollection();
             {
                 std::lock_guard lock(collection.mTimingMutex);
                 system.mEnableTimingCapture = true;
-                ll::logger.warn("EnableTimingCapture");
+                ::ll::getLogger().warn("EnableTimingCapture");
             }
 
             std::unordered_map<uint, DefaultEntitySystemsCollection::ECSTiming> timings{};
-            using namespace ll::chrono;
+            using namespace ::ll::chrono;
             using namespace chrono_literals;
-            ll::thread::TickSyncSleep<GameTickClock> sleeper;
+            ::ll::thread::TickSyncSleep<GameTickClock> sleeper;
             auto                                     begin = std::chrono::steady_clock::now();
             for (size_t i = 0; i < counttick; i++) {
                 sleeper.sleepFor(1_tick);
@@ -93,12 +93,12 @@ void registerTimingCommand() {
 
             std::ranges::sort(orderdTiming, [](TimingData const& a, TimingData const& b) { return a.avg > b.avg; });
 
-            ll::logger.warn("TPS: {:.5f}", double(counttick) / std::chrono::duration<double>(end - begin).count());
-            ll::logger.warn("ECS cost {:.5f}ms per tick", allTime);
+            ::ll::getLogger().warn("TPS: {:.5f}", double(counttick) / std::chrono::duration<double>(end - begin).count());
+            ::ll::getLogger().warn("ECS cost {:.5f}ms per tick", allTime);
 
             for (size_t i = 0; i < orderdTiming.size() && i < 20; i++) {
                 auto& data = orderdTiming[i];
-                ll::logger.warn(
+                ::ll::getLogger().warn(
                     "  | {:.5f}ms {} for {:0>3} {}",
                     data.avg,
                     double(data.count) / counttick,
@@ -113,7 +113,7 @@ void registerTimingCommand() {
 
 LL_TYPE_INSTANCE_HOOK(
     registerBuiltinCommands,
-    ll::memory::HookPriority::Normal,
+    ::ll::memory::HookPriority::Normal,
     ServerInstanceEventCoordinator,
     &ServerInstanceEventCoordinator::sendServerThreadStarted,
     void,
@@ -123,6 +123,6 @@ LL_TYPE_INSTANCE_HOOK(
     registerTimingCommand();
 }
 
-ll::memory::HookRegistrar<registerBuiltinCommands> hooks{};
+::ll::memory::HookRegistrar<registerBuiltinCommands> hooks{};
 
 } // namespace ll::test::ecstest
