@@ -161,15 +161,15 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     cmd.overload<ParamTest3>().text("json").required("json").execute(
         [](CommandOrigin const&, CommandOutput& output, ParamTest3 const& param) {
             output.success("json: {}", param.json.toStyledString());
-            ll::logger.debug("mParseTables : {}", ll::service::getCommandRegistry()->mParseTables | std::views::keys);
+            ll::getLogger().debug("mParseTables : {}", ll::service::getCommandRegistry()->mParseTables | std::views::keys);
             auto& table = ll::service::getCommandRegistry()->mParseTables.begin()->second;
-            ll::logger.debug("first : {}", table.first | std::views::keys);
-            // ll::logger.debug("first : {}", table.first);
-            ll::logger.debug("second : {}", table.follow | std::views::keys);
+            ll::getLogger().debug("first : {}", table.first | std::views::keys);
+            // ll::getLogger().debug("first : {}", table.first);
+            ll::getLogger().debug("second : {}", table.follow | std::views::keys);
 
             for (auto [k, v] : table.predict) {
                 if (ll::service::getCommandRegistry()->symbolToString(k.first) == "{")
-                    ll::logger.debug("{} : {}", k, v);
+                    ll::getLogger().debug("{} : {}", k, v);
             }
         }
     );

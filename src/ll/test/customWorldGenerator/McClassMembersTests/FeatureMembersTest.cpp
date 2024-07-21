@@ -19,10 +19,10 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 ) {
     origin();
 
-    ll::logger.debug("calculateBoundingBox");
-    ll::logger.debug("StructureStart:");
-    ll::logger.debug("mChunkX={}", this->mChunkX);
-    ll::logger.debug("mChunkZ={}", this->mChunkZ);
+    ll::getLogger().debug("calculateBoundingBox");
+    ll::getLogger().debug("StructureStart:");
+    ll::getLogger().debug("mChunkX={}", this->mChunkX);
+    ll::getLogger().debug("mChunkZ={}", this->mChunkZ);
     unhook();
 }
 
@@ -35,10 +35,10 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 ) {
     bool rtv = origin();
 
-    ll::logger.debug("{}<-calculateBoundingBox", rtv);
-    ll::logger.debug("WorldChangeTransaction:");
+    ll::getLogger().debug("{}<-calculateBoundingBox", rtv);
+    ll::getLogger().debug("WorldChangeTransaction:");
     for (auto& v : this->mData->mChanges) {
-        ll::logger.debug(
+        ll::getLogger().debug(
             "mData->mChanges[{},{{{},{},{}}}]",
             v.first.toString(),
             v.second.mUpdateFlags,

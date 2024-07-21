@@ -104,7 +104,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serve
 
     if (!nbt2) {
 
-        ll::logger.debug(
+        ll::getLogger().debug(
             "{}, at: \"{}\"",
             nbt2.error().message(),
             std::string_view{
@@ -113,7 +113,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serve
             }
         );
     } else {
-        ll::logger.debug("success {} {}", iter, snbt2.size());
+        ll::getLogger().debug("success {} {}", iter, snbt2.size());
     }
 
     CompoundTag nbt3;
@@ -126,53 +126,53 @@ LL_AUTO_TYPE_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serve
 
     auto lock = ll::Logger::lock();
 
-    ll::logger.debug("\n{}", nbt3["hello"][", "] == "world");
+    ll::getLogger().debug("\n{}", nbt3["hello"][", "] == "world");
 
-    ll::logger.debug("\n{}", nbt.toSnbt(SnbtFormat::Colored | SnbtFormat::Console | SnbtFormat::Jsonify));
+    ll::getLogger().debug("\n{}", nbt.toSnbt(SnbtFormat::Colored | SnbtFormat::Console | SnbtFormat::Jsonify));
 
-    ll::logger.debug("\n{}", nbt.toSnbt(SnbtFormat::PrettyConsolePrint));
-    ll::logger.debug("\n{}", nbt2.value().toSnbt(SnbtFormat::PrettyConsolePrint));
+    ll::getLogger().debug("\n{}", nbt.toSnbt(SnbtFormat::PrettyConsolePrint));
+    ll::getLogger().debug("\n{}", nbt2.value().toSnbt(SnbtFormat::PrettyConsolePrint));
 
-    ll::logger.debug("\n{}", nbt3.toSnbt(SnbtFormat::PrettyConsolePrint));
+    ll::getLogger().debug("\n{}", nbt3.toSnbt(SnbtFormat::PrettyConsolePrint));
 
-    ll::logger.debug(
+    ll::getLogger().debug(
         "\n{}",
         CompoundTagVariant::parse(StringTag{nbt2.value().toNetworkNbt()}.toSnbt())
             ->get<StringTag>()
             .toSnbt(SnbtFormat::PrettyConsolePrint | SnbtFormat::ForceAscii)
     );
 
-    ll::logger.debug("\n{}", nbt.equals(nbt2.value()));
+    ll::getLogger().debug("\n{}", nbt.equals(nbt2.value()));
 
-    ll::logger.debug("\n{}", nbt.toSnbt() == nbt2.value().toSnbt());
+    ll::getLogger().debug("\n{}", nbt.toSnbt() == nbt2.value().toSnbt());
 
-    ll::logger.debug(
+    ll::getLogger().debug(
         "\n{}",
         CompoundTag::fromBinaryNbt(nbt.toBinaryNbt()).value()
             == CompoundTag::fromBinaryNbt(nbt2.value().toBinaryNbt()).value()
     );
-    ll::logger.debug("\n{}", nbt.toBinaryNbt() == nbt2.value().toBinaryNbt());
+    ll::getLogger().debug("\n{}", nbt.toBinaryNbt() == nbt2.value().toBinaryNbt());
 
-    ll::logger.debug(
+    ll::getLogger().debug(
         "\n{}",
         CompoundTag::fromNetworkNbt(nbt.toNetworkNbt()).value()
             == CompoundTag::fromNetworkNbt(nbt2.value().toNetworkNbt()).value()
     );
 
-    ll::logger.debug("\n{}", nbt.toNetworkNbt() == nbt2.value().toNetworkNbt());
+    ll::getLogger().debug("\n{}", nbt.toNetworkNbt() == nbt2.value().toNetworkNbt());
 
 
-    ll::logger.debug(ColorFormat::AQUA);
-    ll::logger.debug(ColorFormat::MINECOIN_GOLD);
-    ll::logger.debug(ColorFormat::LIGHT_PURPLE);
+    ll::getLogger().debug(ColorFormat::AQUA);
+    ll::getLogger().debug(ColorFormat::MINECOIN_GOLD);
+    ll::getLogger().debug(ColorFormat::LIGHT_PURPLE);
 
     using namespace ll::string_utils;
 
-    ll::logger.debug("\n{}", replaceAnsiToMcCode(nbt.toSnbt(SnbtFormat::Colored | SnbtFormat::Console)));
-    ll::logger.debug("\n{}", (nbt2.value().toSnbt(SnbtFormat::Colored)));
+    ll::getLogger().debug("\n{}", replaceAnsiToMcCode(nbt.toSnbt(SnbtFormat::Colored | SnbtFormat::Console)));
+    ll::getLogger().debug("\n{}", (nbt2.value().toSnbt(SnbtFormat::Colored)));
 
 
-    ll::logger.debug(
+    ll::getLogger().debug(
         "\n{}",
         CompoundTag::fromSnbt(R"({
     Findable: 0b,

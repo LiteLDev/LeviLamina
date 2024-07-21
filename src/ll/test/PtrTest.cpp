@@ -22,11 +22,11 @@ struct SystemCategory;
 
 
 auto test() {
-    // ll::logger.warn("mAllSystemsInfo");
+    // ll::getLogger().warn("mAllSystemsInfo");
     // auto& systems = ll::service::getLevel()->getEntitySystems().getDefaultCollection();
 
     // for (auto& info : systems.mAllSystemsInfo) {
-    //     ll::logger.warn("info {}", info.mName);
+    //     ll::getLogger().warn("info {}", info.mName);
     // }
 
     // struct EntitySystems::EditorSystemCategory
@@ -45,19 +45,19 @@ auto test() {
 
     // auto& vec = systems.mTickingSystemCategories;
 
-    // ll::logger.warn("info safe:{} ", ((char*)&*vec.end() - (char*)&*vec.begin()) / vec.size());
+    // ll::getLogger().warn("info safe:{} ", ((char*)&*vec.end() - (char*)&*vec.begin()) / vec.size());
     // for (auto& category :
     //      systems.mTickingSystemCategories) {
-    //     ll::logger.warn("category :{} ", category.mCategory.value);
+    //     ll::getLogger().warn("category :{} ", category.mCategory.value);
     //     for (auto id : category.mSystems) {
-    //         ll::logger.warn("category sys:{} ", id);
+    //         ll::getLogger().warn("category sys:{} ", id);
     //     }
-    //     ll::logger.warn("timing :{} ", category.mTimings.size());
+    //     ll::getLogger().warn("timing :{} ", category.mTimings.size());
     //     for (auto timing : category.mTimings) {
-    //         ll::logger.warn("category sys:{} {}", timing.mMsTime,timing.mCount);
+    //         ll::getLogger().warn("category sys:{} {}", timing.mMsTime,timing.mCount);
     //     }
     // }
-    // ll::logger.warn("mAllSystemsInfo size {} {}", systems.mAllSystemsInfo.size(), systems.mAllSystems.size());
+    // ll::getLogger().warn("mAllSystemsInfo size {} {}", systems.mAllSystemsInfo.size(), systems.mAllSystems.size());
 }
 
 LL_AUTO_TYPE_INSTANCE_HOOK(
@@ -79,7 +79,7 @@ class Test;
 #include "mc/world/components/FlagComponent.h"
 
 size_t printHello(size_t data, int a) {
-    ll::logger.warn("hello aaaaaaaa {} {}", data, a);
+    ll::getLogger().warn("hello aaaaaaaa {} {}", data, a);
     if (data != 123) throw std::runtime_error("Test New Crash Logger");
     return 0;
 }
@@ -94,13 +94,13 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     &BlockDefinitionGroup::registerBlocks,
     void
 ) {
-    ll::error_utils::printException(ll::logger, ll::error_utils::getWinLastError());
+    ll::error_utils::printException(ll::getLogger(), ll::error_utils::getWinLastError());
 
     try {
         char* pp = (char*)(0x123);
         *pp      = 'a';
     } catch (...) {
-        ll::error_utils::printCurrentException(ll::logger);
+        ll::error_utils::printCurrentException(ll::getLogger());
     }
 
     try {
@@ -108,7 +108,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
         int b = 2 / a;
         std::cout << "b = " << b << std::endl;
     } catch (...) {
-        ll::error_utils::printCurrentException(ll::logger);
+        ll::error_utils::printCurrentException(ll::getLogger());
     }
     try {
         try {
@@ -123,7 +123,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
             std::throw_with_nested(std::system_error(std::error_code{1, std::generic_category()}, "run() failed"));
         }
     } catch (...) {
-        ll::error_utils::printCurrentException(ll::logger);
+        ll::error_utils::printCurrentException(ll::getLogger());
     }
     // throw std::runtime_error("Test New Crash Logger");
 
@@ -144,7 +144,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 
     // std::clog << "hii  " << bool(ptr) << ' ' << ptr->getTypeName() << std::endl;
     // std::cout << "hii  " << bool(ptr) << ' ' << ptr->getTypeName() << std::endl;
-    ll::logger.warn(
+    ll::getLogger().warn(
         "{}",
         ll::memory::resolveIdentifier(
             "`anonymous namespace'::DefaultEntitySystemsCollection::internalGatherSystemTimings"
@@ -165,6 +165,6 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 //     void,
 //     EntityRegistry& registry
 // ) {
-//     ll::logger.debug("tick {} {}", registry.mName, std::chrono::system_clock::now());
+//     ll::getLogger().debug("tick {} {}", registry.mName, std::chrono::system_clock::now());
 //     origin(registry);
 // }

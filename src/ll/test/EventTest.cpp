@@ -92,19 +92,19 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     static std::atomic_uint times{};
 
     auto listener = ll::event::Listener<TestEventB>::create([](TestEventB& ev) {
-        ll::logger.debug("I'm 1, receive: {}, str: {}, {}", ev.getId().name, ev.some, times++);
+        ll::getLogger().debug("I'm 1, receive: {}, str: {}, {}", ev.getId().name, ev.some, times++);
     });
     bus.addListener<TestEvent1>(listener);
     bus.addListener<TestEvent2>(listener);
 
     auto listener2 = ll::event::Listener<TestEvent2>::create(
         [](TestEvent2& ev) {
-            ll::logger.debug("I'm 2, receive: {}, str: {}, {}", ev.getId().name, ev.some, times++);
+            ll::getLogger().debug("I'm 2, receive: {}, str: {}, {}", ev.getId().name, ev.some, times++);
 
-            ll::logger.debug("I'm 2, this can cancel, now isCancelled: {}", ev.isCancelled());
-            ll::logger.debug("try cancel");
+            ll::getLogger().debug("I'm 2, this can cancel, now isCancelled: {}", ev.isCancelled());
+            ll::getLogger().debug("try cancel");
             ev.cancel();
-            ll::logger.debug("I'm 2, this can cancel, now isCancelled: {}", ev.isCancelled());
+            ll::getLogger().debug("I'm 2, this can cancel, now isCancelled: {}", ev.isCancelled());
 
             if (times.load() == 5) {
                 throw std::runtime_error("hello");
@@ -113,11 +113,11 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
         ll::event::EventPriority::High
     );
 
-    ll::logger.debug("I'm 1 myid: {}", listener->getId());
-    ll::logger.debug("I'm 2 myid: {}", listener2->getId());
+    ll::getLogger().debug("I'm 1 myid: {}", listener->getId());
+    ll::getLogger().debug("I'm 2 myid: {}", listener2->getId());
 
-    ll::logger.debug("eventid: {}", ll::event::getEventId<TestEvent1>.name);
-    ll::logger.debug("eventid: {}", ll::event::getEventId<TestEvent2>.name);
+    ll::getLogger().debug("eventid: {}", ll::event::getEventId<TestEvent1>.name);
+    ll::getLogger().debug("eventid: {}", ll::event::getEventId<TestEvent2>.name);
 
     bus.publish(TestEvent1{});
     TestEvent2 e2{"I'm reused TestEvent2......"};
@@ -125,9 +125,9 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 
     bus.removeListener<TestEvent2>(listener);
 
-    ll::logger.debug("remove 1, 2");
+    ll::getLogger().debug("remove 1, 2");
 
-    ll::logger.debug("repeat add, res: {}", bus.addListener<TestEvent2>(listener2));
+    ll::getLogger().debug("repeat add, res: {}", bus.addListener<TestEvent2>(listener2));
 
     bus.publish(TestEvent1{});
     bus.publish(TestEvent2{});
@@ -136,24 +136,24 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     using namespace ll::event;
 
     bus.emplaceListener<ExecutingCommandEvent>([](ExecutingCommandEvent& ev) {
-        ll::logger.debug("ExecutingCommandEvent: {}", ev.commandContext().mCommand);
-        ll::logger.debug("origin: {}", ev.commandContext().mOrigin->serialize().toSnbt());
+        ll::getLogger().debug("ExecutingCommandEvent: {}", ev.commandContext().mCommand);
+        ll::getLogger().debug("origin: {}", ev.commandContext().mOrigin->serialize().toSnbt());
     });
     bus.emplaceListener<ExecutedCommandEvent>([](ExecutedCommandEvent& ev) {
-        ll::logger.debug("ExecutedCommandEvent: {}", ev.commandContext().mCommand);
-        ll::logger.debug("result: {}", ev.result().getFullCode());
+        ll::getLogger().debug("ExecutedCommandEvent: {}", ev.commandContext().mCommand);
+        ll::getLogger().debug("result: {}", ev.result().getFullCode());
     });
     bus.emplaceListener<PlayerConnectEvent>([](PlayerConnectEvent& ev) {
-        ll::logger.debug("Player connect: {} {}", ev.self().getRealName(), ev.self().getIPAndPort());
+        ll::getLogger().debug("Player connect: {} {}", ev.self().getRealName(), ev.self().getIPAndPort());
     });
     bus.emplaceListener<PlayerJoinEvent>([](PlayerJoinEvent& ev) {
-        ll::logger.debug("Player join: {} {}", ev.self().getRealName(), ev.self().getLocaleName());
+        ll::getLogger().debug("Player join: {} {}", ev.self().getRealName(), ev.self().getLocaleName());
     });
     bus.emplaceListener<PlayerLeaveEvent>([](PlayerLeaveEvent& ev) {
-        ll::logger.debug("Player leave: {}", ev.self().getRealName());
+        ll::getLogger().debug("Player leave: {}", ev.self().getRealName());
     });
     bus.emplaceListener<PlayerAttackEvent>([](PlayerAttackEvent& ev) {
-        ll::logger.debug(
+        ll::getLogger().debug(
             "Player {} attack {} cause {}",
             ev.self().getRealName(),
             ev.target().getTypeName(),
@@ -161,34 +161,34 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
         );
     });
     bus.emplaceListener<PlayerDieEvent>([](PlayerDieEvent& ev) {
-        ll::logger
+        ll::getLogger()
             .debug("Player {} died source {}", ev.self().getRealName(), magic_enum::enum_name(ev.source().getCause()));
     });
     bus.emplaceListener<PlayerRespawnEvent>([](PlayerRespawnEvent& ev) {
-        ll::logger.debug("Player {} respawned", ev.self().getRealName());
+        ll::getLogger().debug("Player {} respawned", ev.self().getRealName());
     });
     bus.emplaceListener<PlayerJumpEvent>([](PlayerJumpEvent& ev) {
-        ll::logger.debug("Player {} jumped", ev.self().getRealName());
+        ll::getLogger().debug("Player {} jumped", ev.self().getRealName());
     });
     bus.emplaceListener<PlayerAddExperienceEvent>([](PlayerAddExperienceEvent& ev) {
-        ll::logger.debug("Player {} add experience {}", ev.self().getRealName(), ev.experience());
+        ll::getLogger().debug("Player {} add experience {}", ev.self().getRealName(), ev.experience());
         if (ev.experience() == 114514) {
             ev.cancel();
         }
     });
     bus.emplaceListener<PlayerPickUpItemEvent>([](PlayerPickUpItemEvent& ev) {
-        ll::logger.debug("Player {} take {}", ev.self().getRealName(), ev.itemActor().item().getTypeName());
+        ll::getLogger().debug("Player {} take {}", ev.self().getRealName(), ev.itemActor().item().getTypeName());
     });
     bus.emplaceListener<PlayerSwingEvent>([](PlayerSwingEvent& ev) {
-        ll::logger.debug("Player {} left click", ev.self().getRealName());
+        ll::getLogger().debug("Player {} left click", ev.self().getRealName());
     });
     auto listenersp = Listener<PlayerSprintEvent>::create([](PlayerSprintEvent& ev) {
         switch (ev.getId().hash) {
         case ll::event::getEventId<PlayerSprintingEvent>.hash: {
-            ll::logger.debug("Player {} start sprint", ev.self().getRealName());
+            ll::getLogger().debug("Player {} start sprint", ev.self().getRealName());
         } break;
         case ll::event::getEventId<PlayerSprintedEvent>.hash: {
-            ll::logger.debug("Player {} stop sprint", ev.self().getRealName());
+            ll::getLogger().debug("Player {} stop sprint", ev.self().getRealName());
         } break;
         default:
             break;
@@ -197,14 +197,14 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     bus.addListener<PlayerSprintingEvent>(listenersp);
     bus.addListener<PlayerSprintedEvent>(listenersp);
     auto mul = MultiListener<PlayerSneakingEvent, PlayerSneakedEvent>::create([](auto&& ev) {
-        ll::logger
+        ll::getLogger()
             .debug("Player {} MultiListener of {}", ev.self().getRealName(), ll::reflection::type_raw_name_v<decltype(ev)>);
     });
     bus.addListener(mul);
 
     auto dl = DynamicListener::create([](CompoundTag& nbt) {
         // nbt["cancelled"] = true;
-        ll::logger.debug("{}", nbt.toSnbt(SnbtFormat::PrettyConsolePrint));
+        ll::getLogger().debug("{}", nbt.toSnbt(SnbtFormat::PrettyConsolePrint));
     });
 
 
@@ -216,7 +216,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     bus.addListener(dl, getEventId<SpawnedMobEvent>);
 
     bus.emplaceListener<BlockChangedEvent>([](BlockChangedEvent& ev) {
-        ll::logger
+        ll::getLogger()
             .debug("Block Changed Pos: {} Dimension: {}", ev.pos().toString(), ev.blockSource().getDimensionId().id);
     });
 }

@@ -993,7 +993,7 @@
 //    // Json::Value  layer;
 //    // Json::Reader reader;
 //    // reader.parse(layerstr, layer, 0);
-//    // ll::logger.warn("Superflat worlds will be created based on the following option:{}", layer.toStyledString());
+//    // ll::getLogger().warn("Superflat worlds will be created based on the following option:{}", layer.toStyledString());
 //    // return std::make_unique<MyFlatWorldGenerator>(*this, level.getSeed(), layer);
 //
 //    std::unique_ptr<WorldGenerator> worldGenerator;
