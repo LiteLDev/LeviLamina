@@ -16,10 +16,10 @@
 //
 //     origin(flatWorldGeneratorOptions, s);
 //
-//     ll::logger.warn("FlatWorldGeneratorGeneratePrototypeBlockValuesHook");
-//     ll::logger.warn("flatWorldGeneratorOptions.mEncodingVersion={}", flatWorldGeneratorOptions.mEncodingVersion);
-//     ll::logger.warn("flatWorldGeneratorOptions.mWorldVersion={}", (int)flatWorldGeneratorOptions.mWorldVersion);
-//     ll::logger.warn(
+//     ll::getLogger().warn("FlatWorldGeneratorGeneratePrototypeBlockValuesHook");
+//     ll::getLogger().warn("flatWorldGeneratorOptions.mEncodingVersion={}", flatWorldGeneratorOptions.mEncodingVersion);
+//     ll::getLogger().warn("flatWorldGeneratorOptions.mWorldVersion={}", (int)flatWorldGeneratorOptions.mWorldVersion);
+//     ll::getLogger().warn(
 //         "flatWorldGeneratorOptions.mStructureOptions={}",
 //         flatWorldGeneratorOptions.mStructureOptions.toStyledString()
 //     );
