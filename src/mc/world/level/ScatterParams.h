@@ -33,9 +33,9 @@ public:
         enum class Distribution : int {
             uniform          = 0x1,
             gaussian         = 0x2,
-            inverse_gaussian = 0x3,
-            jittered_grid    = 0x4,
-            fixed_grid       = 0x5,
+            inverseGaussian = 0x3,
+            jitteredGrid    = 0x4,
+            fixedGrid       = 0x5,
             triangle         = 0x6
         };
         ExpressionNode mMin;          // this+0x0
