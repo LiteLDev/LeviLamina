@@ -33,7 +33,7 @@ if not has_config("vs_runtime") then
 end
 
 if is_config("build-platform", "Dedicated.*") then
-    add_requires("bdslibrary 1.21.1.03")
+    add_requires("bdslibrary 1.21.3.01")
 end
 
 if is_config("build-platform", "DedicatedWin", "UWP") then
