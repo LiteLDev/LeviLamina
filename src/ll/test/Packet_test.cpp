@@ -55,14 +55,17 @@ inline void forEachPacket(
                 );
 
                 if (packet->getName() != className) {
-                    ll::getLogger().error("intresting, different name, get: {}, typeid: {}", packet->getName(), className);
+                    ll::getLogger()
+                        .error("intresting, different name, get: {}, typeid: {}", packet->getName(), className);
                 }
 
                 if (!className.starts_with(enumName)) {
                     if (className.ends_with("V1") || className.ends_with("V2")) {
-                        ll::getLogger().error("intresting, different enum name, get: {}, typeid: {}", enumName, className);
+                        ll::getLogger()
+                            .error("intresting, different enum name, get: {}, typeid: {}", enumName, className);
                     } else {
-                        ll::getLogger().fatal("intresting, different enum name, get: {}, typeid: {}", enumName, className);
+                        ll::getLogger()
+                            .fatal("intresting, different enum name, get: {}, typeid: {}", enumName, className);
                     }
                 }
             }
@@ -163,6 +166,7 @@ LL_AUTO_STATIC_HOOK(GeneratePacketHook, HookPriority::Normal, "main", int, int a
 #include "mc/network/packet/ClientCacheMissResponsePacket.h"
 #include "mc/network/packet/ClientCacheStatusPacket.h"
 #include "mc/network/packet/ClientToServerHandshakePacket.h"
+#include "mc/network/packet/ClientboundCloseFormPacket.h"
 #include "mc/network/packet/ClientboundDebugRendererPacket.h"
 #include "mc/network/packet/ClientboundMapItemDataPacket.h"
 #include "mc/network/packet/CodeBuilderPacket.h"
@@ -524,6 +528,7 @@ PACKET_SIZE_ASSERT(PlayerToggleCrafterSlotRequestPacket, 0x48);
 PACKET_SIZE_ASSERT(SetPlayerInventoryOptionsPacket, 0x48);
 PACKET_SIZE_ASSERT(SetHudPacket, 0x50);
 PACKET_SIZE_ASSERT(AwardAchievementPacket, 0x38);
+PACKET_SIZE_ASSERT(ClientboundCloseFormPacket, 0x30);
 
 #pragma endregion
 
