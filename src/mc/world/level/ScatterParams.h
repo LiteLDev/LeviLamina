@@ -31,12 +31,12 @@ public:
     struct CoordinateRange {
     public:
         enum class Distribution : int {
-            uniform         = 0x1,
-            gaussian        = 0x2,
-            inverseGaussian = 0x3,
-            jitteredGrid    = 0x4,
-            fixedGrid       = 0x5,
-            triangle        = 0x6
+            Uniform         = 0x1,
+            Gaussian        = 0x2,
+            InverseGaussian = 0x3,
+            JitteredGrid    = 0x4,
+            FixedGrid       = 0x5,
+            Triangle        = 0x6
         };
         ExpressionNode mMin;          // this+0x0
         ExpressionNode mMax;          // this+0xE8
