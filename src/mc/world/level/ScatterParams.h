@@ -39,13 +39,15 @@ public:
             triangle        = 0x6
         };
         ExpressionNode mMin;          // this+0x0
-        ExpressionNode mMax;          // this+E8
-        int            mStepSize;     // this+1D0
-        int            mGridOffset;   // this+1D4
-        Distribution   mDistribution; // this+1D8
-        int            mExtentMin;    // this+1DC
-        int            mExtentMax;    // this+1E0
-        int            mUnknown1;     // this+1E4
+        ExpressionNode mMax;          // this+0xE8
+        int            mStepSize;     // this+0x1D0
+        int            mGridOffset;   // this+0x1D4
+        Distribution   mDistribution; // this+0x1D8
+        struct Extent {
+            int min; // this+0x0
+            int max; // this+0x4
+        };
+        std::optional<Extent> extent; // this+0x1DC
         // prevent constructor by default
         CoordinateRange& operator=(CoordinateRange const&);
 
