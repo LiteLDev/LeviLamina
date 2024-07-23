@@ -7,6 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.13.4] - 2024-07-23
+
+### Added
+
+- Adapted to BDS version 1.21.3 @Lovelylavender4
+- Added abi compatibility to mods  @OEOTYAN
+- Completes the member variables of ISurfaceBuilder::BuildParameters,BiomeArea,SpikeFeature @Lovelylavender4
+- Completes the member variables of ClimateParameters,BiomeDecorationFeature,ScatterParams::CoordinateRange @killcerr
+
+### Fixed
+
+- Fixed a bug where optional would not compile under C++20 @OEOTYAN
+- Fixed the size of HardcodedSpawnAreaRegistry @Lovelylavender4
+- Fixed hash with size_t @OEOTYAN
+- Fixed the parent class of MultidimensionalArray @Lovelylavender4
+
+### Changed
+
+- Move levilamina to standard folder @OEOTYAN
+- Rename plugin to mod @OEOTYAN
+- Refactored nbt @OEOTYAN
+- Make the naming of Bounds and GridArea member variables more standardized @Lovelylavender4
+
 ## [0.13.3] - 2024-06-24
 
 ### Added
@@ -584,7 +607,8 @@ For lip and tooth-hub test only.
 [#1520]: https://github.com/LiteLDev/LeviLamina/issues/1520
 [#1552]: https://github.com/LiteLDev/LeviLamina/issues/1552
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.3...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.4...HEAD
+[0.13.4]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.3...v0.13.4
 [0.13.3]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.2...v0.13.3
 [0.13.2]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.1...v0.13.2
 [0.13.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.0...v0.13.1
