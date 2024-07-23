@@ -36,7 +36,7 @@ public:
             InverseGaussian = 0x3,
             JitteredGrid    = 0x4,
             FixedGrid       = 0x5,
-            Triangle        = 0x6
+            Triangle        = 0x6,
         };
         ExpressionNode mMin;          // this+0x0
         ExpressionNode mMax;          // this+0xE8

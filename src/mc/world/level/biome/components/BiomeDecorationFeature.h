@@ -1,18 +1,18 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/ScatterParams.h"
 #include "mc/util/ExpressionNode.h"
+#include "mc/world/level/ScatterParams.h"
 #include "mc/world/level/levelgen/feature/gamerefs_feature/WeakStorageFeature.h"
 
 struct BiomeDecorationFeature {
 public:
-    enum class CoordinateEvalOrder : long long {
+    enum class CoordinateEvalOrder : int {
         xzy = 0x1,
         yxz = 0x2,
         yzx = 0x3,
         zxy = 0x4,
-        zyx = 0x5
+        zyx = 0x5,
     };
     ScatterParams::CoordinateRange mX;                   // this+0x0
     ScatterParams::CoordinateRange mY;                   // this+0x1E8
