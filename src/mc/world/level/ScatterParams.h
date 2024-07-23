@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/util/ExpressionNode.h"
 
 class ScatterParams {
 public:
@@ -29,6 +30,24 @@ public:
 
     struct CoordinateRange {
     public:
+        enum class Distribution : int {
+            Uniform         = 0x1,
+            Gaussian        = 0x2,
+            InverseGaussian = 0x3,
+            JitteredGrid    = 0x4,
+            FixedGrid       = 0x5,
+            Triangle        = 0x6
+        };
+        ExpressionNode mMin;          // this+0x0
+        ExpressionNode mMax;          // this+0xE8
+        int            mStepSize;     // this+0x1D0
+        int            mGridOffset;   // this+0x1D4
+        Distribution   mDistribution; // this+0x1D8
+        struct Extent {
+            int min; // this+0x0
+            int max; // this+0x4
+        };
+        std::optional<Extent> extent; // this+0x1DC
         // prevent constructor by default
         CoordinateRange& operator=(CoordinateRange const&);
 
