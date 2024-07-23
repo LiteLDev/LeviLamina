@@ -31,23 +31,28 @@ public:
     struct CoordinateRange {
     public:
         enum class Distribution : int {
+            SingleValued    = 0x0,
             Uniform         = 0x1,
             Gaussian        = 0x2,
             InverseGaussian = 0x3,
-            JitteredGrid    = 0x4,
-            FixedGrid       = 0x5,
+            FixedGrid       = 0x4,
+            JitteredGrid    = 0x5,
             Triangle        = 0x6,
         };
-        ExpressionNode mMin;          // this+0x0
-        ExpressionNode mMax;          // this+0xE8
-        int            mStepSize;     // this+0x1D0
-        int            mGridOffset;   // this+0x1D4
-        Distribution   mDistribution; // this+0x1D8
         struct Extent {
-            int min; // this+0x0
-            int max; // this+0x4
+            int mMin;
+            int mMax;
         };
-        std::optional<Extent> extent; // this+0x1DC
+
+    public:
+        ExpressionNode        mMinOrSingleValue; // this+0x0
+        ExpressionNode        mMax;              // this+0xE8
+        int                   mGridStepSize;     // this+0x1D0
+        int                   mGridOffset;       // this+0x1D4
+        Distribution          mDistribution;     // this+0x1D8
+        std::optional<Extent> mFastPathRange;    // this+0x1DC
+
+    public:
         // prevent constructor by default
         CoordinateRange& operator=(CoordinateRange const&);
 

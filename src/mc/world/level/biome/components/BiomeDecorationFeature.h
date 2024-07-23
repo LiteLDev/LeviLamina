@@ -14,6 +14,8 @@ public:
         zxy = 0x4,
         zyx = 0x5,
     };
+
+public:
     ScatterParams::CoordinateRange mX;                   // this+0x0
     ScatterParams::CoordinateRange mY;                   // this+0x1E8
     ScatterParams::CoordinateRange mZ;                   // this+0x3D0
@@ -25,6 +27,8 @@ public:
     WeakStorageFeature             mFeature;             // this+0x798
     HashedString                   mIdentifier;          // this+0x7B0
     std::string                    mPlacementPass;       // this+0x7E0
+
+public:
     // prevent constructor by default
     BiomeDecorationFeature& operator=(BiomeDecorationFeature const&);
     BiomeDecorationFeature();
