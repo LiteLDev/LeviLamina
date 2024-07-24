@@ -4,7 +4,7 @@
     "version": "0.13.4",
     "info": {
         "name": "LeviLamina",
-        "description": "A lightweight, modular and versatile plugin loader for Minecraft Bedrock Server BDS, formerly known as LiteLoaderBDS",
+        "description": "A lightweight, modular and versatile mod loader for Minecraft Bedrock Server BDS, formerly known as LiteLoaderBDS",
         "author": "LiteLDev",
         "tags": []
     },

@@ -2,7 +2,7 @@
 
 ## Before You Begin
 
-We strongly recommend using [lip](https://docs.lippkg.com/install/) for plugin installation. If you have not installed it locally yet, please go ahead and check it out.
+We strongly recommend using [lip](https://docs.lippkg.com/install/) for mod installation. If you have not installed it locally yet, please go ahead and check it out.
 
 The following content is for a quick start with using lip.
 
@@ -34,15 +34,15 @@ To start the server, simply run `bedrock_server_mod.exe`:
 
 ## Updating LeviLamina
 
-Don't update LeviLamina in the same location when it comes to data security. Instead, we recommend creating a new directory, installing the new version of LeviLamina there, and subsequently copying the `worlds` directory from the old location to the new location. Then, follow the instructions provided by the plugin developers to migrate the configuration files and data files of the plugins you are using to the new directory.
+Don't update LeviLamina in the same location when it comes to data security. Instead, we recommend creating a new directory, installing the new version of LeviLamina there, and subsequently copying the `worlds` directory from the old location to the new location. Then, follow the instructions provided by the mod developers to migrate the configuration files and data files of the mods you are using to the new directory.
 
-## Finding Plugins
+## Finding Mods
 
-Before installing a plugin, you'll need to find what you want to install. The best place to find plugins is [lip index](https://www.lippkg.com), lip's official plugin registry, but you can also find many plugins on [our forum](https://bbs.liteldev.com/) and other places around the web.
+Before installing a mod, you'll need to find what you want to install. The best place to find mods is [lip index](https://www.lippkg.com), lip's official mod registry, but you can also find many mods on [MineBBS](https://www.minebbs.com/) and other places around the web.
 
-## Installing Plugins
+## Installing Mods
 
-For most plugins, especially those on lip index, installation is as simple as running `lip install <plugin>`.
+For most mods, especially those on lip index, installation is as simple as running `lip install <mod>`.
 
 For example, to install [levianticheat](https://github.com/LiteLDev/LeviAntiCheat), you would run:
 
@@ -56,29 +56,29 @@ Or install a specific version:
 lip install github.com/LiteLDev/LeviAntiCheat@1.0.0
 ```
 
-However, some plugins may require additional steps to install. Follow the instructions provided by the plugin developers to install the plugins you are using.
+However, some mods may require additional steps to install. Follow the instructions provided by the mod developers to install the mods you are using.
 
 ## Troubleshooting
 
-If the problem occurred during playing the game, the first step to troubleshooting installing plugins is to check the log of your server. Your server's most recent logs will be stored to the `logs/LeviLamina-latest.log` file. You may need to scroll near the beginning of this file to see when plugins were loaded.
+If the problem occurred during playing the game, the first step to troubleshooting installing mods is to check the log of your server. Your server's most recent logs will be stored to the `logs/server-latest.log` file. You may need to scroll near the beginning of this file to see when mods were loaded.
 
 Check [FAQ](faq.md) for frequently occurring problems.
 
 If you see something like this:
 
 ```plaintext
-ERROR: failed to parse and download specifier string list: failed to install specifier: failed to download from all Go proxies: failed to download from all Go proxies: [failed to download file: cannot download file (HTTP 404 Not Found): https://goproxy.io/github.com/tooth-hub/myplugin/@v/v1.1.0.zip]
+ERROR: failed to parse and download specifier string list: failed to install specifier: failed to download from all Go proxies: failed to download from all Go proxies: [failed to download file: cannot download file (HTTP 404 Not Found): https://goproxy.io/github.com/tooth-hub/mymod/@v/v1.1.0.zip]
 ```
 
-This means that the version of the plugin you tried to install does not exist. You should double-check that you typed the plugin name and version correctly.
+This means that the version of the mod you tried to install does not exist. You should double-check that you typed the mod name and version correctly.
 
 If you see something like this:
 
 ```plaintext
-ERROR: failed to resolve dependencies: installed tooth github.com/tooth-hub/otherplugin does not match dependency 1.20.41
+ERROR: failed to resolve dependencies: installed tooth github.com/tooth-hub/othermod does not match dependency 1.20.41
 ```
 
-This means that the version of the plugin you tried to install is incompatible with the installed version of another plugin, LeviLamina or BDS. Try to install another version of the plugin or update the installed plugin.
+This means that the version of the mod you tried to install is incompatible with the installed version of another mod, LeviLamina or BDS. Try to install another version of the mod or update the installed mod.
 
 If your network cannot directly access GitHub or GoProxy, you can set up a proxy or mirror:
 

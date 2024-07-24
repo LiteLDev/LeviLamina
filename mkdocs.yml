@@ -13,8 +13,8 @@ nav:
   - faq.md
 
   - Tutorials:
-      - tutorials/create_your_first_plugin.md
-      - tutorials/publish_your_first_plugin.md
+      - tutorials/create_your_first_mod.md
+      - tutorials/publish_your_first_mod.md
       - tutorials/publish_your_first_pack.md
 
   - Guides:
@@ -29,7 +29,7 @@ nav:
 
   - APIs: https://levilamina.liteldev.com/api
 
-  - Plugins: https://lippkg.com
+  - Mods: https://lippkg.com
 
   - links.md
 
@@ -103,6 +103,6 @@ plugins:
             Guides: 指南
             APIs: 接口
             Engines: 引擎
-            Plugins: 插件
+            Mods: 模组
 
   - search

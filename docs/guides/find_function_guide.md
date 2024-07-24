@@ -85,7 +85,7 @@ Our subsequent practice proved that this function indeed returns the player's co
 
 In fact, this function is very simple, the naming of the function is also very intuitive, and the process of finding it is also straightforward. In our development, relying on such a method to find the target is the most basic skill.
 
-## How to Find Functions After Determining the Plugin Purpose?
+## How to Find Functions After Determining the Mod Purpose?
 
 Sometimes, our purpose in finding functions is not to call them, but to modify their behavior to meet our needs.
 

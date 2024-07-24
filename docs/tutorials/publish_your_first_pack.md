@@ -1,4 +1,4 @@
-# Publishing Your First Pack
+# Publishing your first pack
 
 First, you should ensure that you have installed [lip](https://github.com/lippkg/lip).
 

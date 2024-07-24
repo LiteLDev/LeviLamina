@@ -4,11 +4,11 @@ This repository will be archived because Mojang plans to remove the symbols file
 
 Despite [the community's request for full PDB files](https://feedback.minecraft.net/hc/en-us/community/posts/23093086772109-Request-for-Complete-PDB-for-Minecraft-Bedrock-Dedicated-Server), Mojang has refused and now intends to remove the symbols file from future releases.
 
-This will make it impossible to debug the server and develop plugins, leading to the end of the development of LeviLamina and other plugins.
+This will make it impossible to debug the server and develop mods, leading to the end of the development of LeviLamina and other mods.
 
-As a result, no important plugins will be developed in the future, such as **critical bug fixes**, **anti-cheat plugins**, and other feature plugins that the community needs. However, those who develop cheats will still be able to do so, making it difficult for the community to create anti-cheat plugins to protect the server.
+As a result, no important mods will be developed in the future, such as **critical bug fixes**, **anti-cheat mods**, and other feature mods that the community needs. However, those who develop cheats will still be able to do so, making it difficult for the community to create anti-cheat mods to protect the server.
 
-Mojang has not excelled in developing the server, and now they are making it impossible for the community to develop plugins. This is a very poor decision.
+Mojang has not excelled in developing the server, and now they are making it impossible for the community to develop mods. This is a very poor decision.
 
 Mojang's stance against the community is **deeply disappointing**. We urge the community to take action and make our voices heard. By expressing our concerns on social media and applying pressure on Mojang, we hope they will reconsider their decision. Community unity and collective effort might encourage Mojang to change their approach.
 
@@ -30,11 +30,11 @@ If you have any questions or comments about this notice, please contact `litelde
 ![English](https://img.shields.io/badge/English-inactive?style=for-the-badge)
 [![中文](https://img.shields.io/badge/简体中文-informational?style=for-the-badge)](README.zh.md)
 
-A lightweight, modular and versatile plugin loader for Minecraft Bedrock Edition, formerly known as LiteLoaderBDS
+A lightweight, modular and versatile mod loader for Minecraft Bedrock Edition, formerly known as LiteLoaderBDS
 
-LeviLamina is an unofficial plugin loader designed to offer indispensable API support for Minecraft Bedrock Edition. It boasts a comprehensive API, an array of utility interfaces, a robust event system, and comprehensive support for basic interfaces. LeviLamina provides an expansive API, a powerful event system, and a wealth of encapsulated development infrastructure interfaces, forming a solid foundation for augmenting the Minecraft Bedrock Edition with additional gameplay features and functionalities. By leveraging plugins, the process of extending Bedrock functionality becomes effortless, with a user-friendly development process and an adaptable approach.
+LeviLamina is an unofficial mod loader designed to offer indispensable API support for Minecraft Bedrock Edition. It boasts a comprehensive API, an array of utility interfaces, a robust event system, and comprehensive support for basic interfaces. LeviLamina provides an expansive API, a powerful event system, and a wealth of encapsulated development infrastructure interfaces, forming a solid foundation for augmenting the Minecraft Bedrock Edition with additional gameplay features and functionalities. By leveraging mods, the process of extending Bedrock functionality becomes effortless, with a user-friendly development process and an adaptable approach.
 
-Developers can effortlessly author plugins in languages such as C++, JavaScript, Lua, Python, C#, and others. This seamless integration empowers them to effortlessly expand and personalize Bedrock functionality, facilitating an intuitive learning experience and unparalleled flexibility.
+Developers can effortlessly author mods in languages such as C++, JavaScript, Lua, Python, C#, and others. This seamless integration empowers them to effortlessly expand and personalize Bedrock functionality, facilitating an intuitive learning experience and unparalleled flexibility.
 
 For more information, please refer to [the documentation](https://levilamina.liteldev.com).
 
@@ -43,7 +43,7 @@ For more information, please refer to [the documentation](https://levilamina.lit
 !!! warning
     Before installing and using LeviLamina, please be sure to read and understand the following disclaimer.
 
-LeviLamina (hereinafter referred to as "this software") is developed and provided by LiteLDev (hereinafter referred to as "the developer"). This software is designed to enable users to extend the functionality of Minecraft Bedrock Edition (hereinafter referred to as "MCBE") by loading plugins. This software is not affiliated with Mojang Studios (hereinafter referred to as "Mojang") or Microsoft Corporation (hereinafter referred to as "Microsoft"). The developer is not responsible for any content, quality, functionality, security or legality of any plugins loaded by this software. Users should use this software at their own discretion and assume all related risks.
+LeviLamina (hereinafter referred to as "this software") is developed and provided by LiteLDev (hereinafter referred to as "the developer"). This software is designed to enable users to extend the functionality of Minecraft Bedrock Edition (hereinafter referred to as "MCBE") by loading mods. This software is not affiliated with Mojang Studios (hereinafter referred to as "Mojang") or Microsoft Corporation (hereinafter referred to as "Microsoft"). The developer is not responsible for any content, quality, functionality, security or legality of any mods loaded by this software. Users should use this software at their own discretion and assume all related risks.
 
 The developer does not guarantee the stability, reliability, accuracy or completeness of this software. The developer is not liable for any defects, errors, viruses or other harmful components that may exist in this software. The developer is not liable for any direct or indirect damages (including but not limited to data loss, device damage, profit loss etc.) caused by the use of this software.
 

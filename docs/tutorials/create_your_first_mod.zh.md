@@ -1,10 +1,10 @@
-# 创建你的第一个插件
+# 创建你的第一个模组
 
 ## 简介
 
-这个教程旨在帮助你开始在LeviLamina中进行插件开发。它绝不是LeviLamina中所有可能性的完整教程，而是基础知识的总体概述。首先确保您了解C++，在 IDE中设置工作区，然后介绍大多数LeviLamina插件的基本知识。
+这个教程旨在帮助你开始在LeviLamina中进行模组开发。它绝不是LeviLamina中所有可能性的完整教程，而是基础知识的总体概述。首先确保您了解C++，在 IDE中设置工作区，然后介绍大多数LeviLamina模组的基本知识。
 
-在这个教程中，我们将会创建一个简单的插件，用于实现以下功能：
+在这个教程中，我们将会创建一个简单的模组，用于实现以下功能：
 
 - 玩家可以输入`/suicide`指令自杀
 - 玩家首次登录服务器时给予一个钟
@@ -22,7 +22,7 @@
 - 调用Minecraft函数
 
 !!! info
-    本教程的所有源码可以在[futrime/better-suicide](https://github.com/futrime/better-suicide)找到。我们建议你一边看源码一边看教程。如果你已经安装了[lip](https://docs.lippkg.com)，你还可以直接运行以下代码在LeviLamina实例环境中安装本教程中实现的插件。
+    本教程的所有源码可以在[futrime/better-suicide](https://github.com/futrime/better-suicide)找到。我们建议你一边看源码一边看教程。如果你已经安装了[lip](https://docs.lippkg.com)，你还可以直接运行以下代码在LeviLamina实例环境中安装本教程中实现的模组。
 
     ```shell
     lip install github.com/futrime/better-suicide
@@ -41,7 +41,7 @@
 
 ## 设置工作区
 
-在开发插件（或学习C++）之前，您需要设置一个开发环境。这包括但不限于以下内容：
+在开发模组（或学习C++）之前，您需要设置一个开发环境。这包括但不限于以下内容：
 
 - [xmake](https://xmake.io)
 - [Visual Studio Code](https://code.visualstudio.com)
@@ -49,7 +49,7 @@
 - [Visual Studio 2022](https://visualstudio.microsoft.com/) （安装Visual Studio 2022时，请确保勾选了C++桌面应用开发这一项）
 
 !!! warning
-    如果你安装的不是最新版本的Visual Studio 2022、MSVC和Windows SDK，则后续在构建、加载、运行插件中有可能遇到问题。如果你遇到了类似`xxx is not a member of std`这样的问题，请考虑这个可能性。本教程测试构建的环境是Visual Studio Community 2022 17.8.1、MSVC v143 - VS 2022 C++ x64/x86 build tools (v14.38-17.8)、Windows 11 SDK (10.0.22000.0)
+    如果你安装的不是最新版本的Visual Studio 2022、MSVC和Windows SDK，则后续在构建、加载、运行模组中有可能遇到问题。如果你遇到了类似`xxx is not a member of std`这样的问题，请考虑这个可能性。本教程测试构建的环境是Visual Studio Community 2022 17.8.1、MSVC v143 - VS 2022 C++ x64/x86 build tools (v14.38-17.8)、Windows 11 SDK (10.0.22000.0)
 
 !!! tip
     由于LeviLamina项目极大，如果你使用Visual Studio Code，其自带的Intellisense系统可能不堪重负。我们建议你安装clangd插件并使用clangd进行代码检查等。安装clangd和对应的插件后，你需要运行以下命令生成`compile_commands.json`，然后重启VSCode以使clangd生效。
@@ -60,21 +60,21 @@
 
 然后，你需要在某处安装LeviLamina。本教程针对的是LeviLamina 0.6.3，对于其它版本，可能需要做一些修改。
 
-## 创建插件仓库
+## 创建模组仓库
 
-访问[levilamina-plugin-template](https://github.com/LiteLDev/levilamina-plugin-template)，点击`Use this template`以使用这个模板初始化你的插件仓库。
+访问[levilamina-mod-template](https://github.com/LiteLDev/levilamina-mod-template)，点击`Use this template`以使用这个模板初始化你的模组仓库。
 
-![Create from template](img/levilamina-plugin-template.png)
+![Create from template](img/levilamina-mod-template.png)
 
-将插件仓库使用Git克隆到本地，然后使用VSCode打开。你需要修改其中的一些文件，填写你的插件信息。
+将模组仓库使用Git克隆到本地，然后使用VSCode打开。你需要修改其中的一些文件，填写你的模组信息。
 
-首先，你需要修改`xmake.lua`中插件名字信息。修改插件名字是为了指定你的插件的名字，这个名字将会在LeviLamina中显示。名字允许英文大小写、数字、中划线，不允许包括空格和其他特殊字符，建议采用`example-plugin`或`ExamplePlugin`这两种形式。在这里，我们的插件命名为`better-suicide`。
+首先，你需要修改`xmake.lua`中模组名字信息。修改模组名字是为了指定你的模组的名字，这个名字将会在LeviLamina中显示。名字允许英文大小写、数字、中划线，不允许包括空格和其他特殊字符，建议采用`example-mod`或`ExampleMod`这两种形式。在这里，我们的模组命名为`better-suicide`。
 
 ```lua
-target("better-suicide") -- Change this to your plugin name.
+target("better-suicide") -- Change this to your mod name.
 ```
 
-接着，修改`tooth.json`的内容。`tooth.json`为lip安装插件包提供了相关信息，正确配置后，你的插件将会被[lip Index](https://lippkg.com)收录，并能被全世界的用户下载安装。将`tooth`字段的值改为这个插件的GitHub仓库地址，填写`info`中各个信息字段，然后根据仓库release地址填写`asset_url`字段，修改依赖的LeviLamina版本，并根据在`xmake.lua`中填写的插件名修改`place`的`src`和`dest`。对于本文的插件，以下是一个可行的参考：
+接着，修改`tooth.json`的内容。`tooth.json`为lip安装模组包提供了相关信息，正确配置后，你的模组将会被[lip Index](https://lippkg.com)收录，并能被全世界的用户下载安装。将`tooth`字段的值改为这个模组的GitHub仓库地址，填写`info`中各个信息字段，然后根据仓库release地址填写`asset_url`字段，修改依赖的LeviLamina版本，并根据在`xmake.lua`中填写的模组名修改`place`的`src`和`dest`。对于本文的模组，以下是一个可行的参考：
 
 ```json
 {
@@ -87,7 +87,7 @@ target("better-suicide") -- Change this to your plugin name.
         "author": "futrime",
         "tags": [
             "levilamina",
-            "plugin"
+            "mod"
         ]
     },
     "asset_url": "https://github.com/futrime/better-suicide/releases/download/v0.6.0/better-suicide-windows-x64.zip",
@@ -106,15 +106,15 @@ target("better-suicide") -- Change this to your plugin name.
 
 ```
 
-然后，你需要修改`LICENSE`文件中的版权信息。你可以在[这里](https://choosealicense.com/licenses/)选择一个适合你的插件的开源协议。请放心，你的插件不需要开源，因为插件模板使用了CC0协议，你可以随意修改或删除`LICENSE`文件。但是，我们建议你使用一个开源协议，因为这样可以让其他人更容易地使用你的插件和帮助你改进你的插件。
+然后，你需要修改`LICENSE`文件中的版权信息。你可以在[这里](https://choosealicense.com/licenses/)选择一个适合你的模组的开源协议。请放心，你的模组不需要开源，因为模组模板使用了CC0协议，你可以随意修改或删除`LICENSE`文件。但是，我们建议你使用一个开源协议，因为这样可以让其他人更容易地使用你的模组和帮助你改进你的模组。
 
-接下来，你需要修改`README.md`文件中的内容。这个文件将会在你的插件仓库主页显示，你可以在这里介绍你的插件的功能、使用方法、配置文件、指令等等。
+接下来，你需要修改`README.md`文件中的内容。这个文件将会在你的模组仓库主页显示，你可以在这里介绍你的模组的功能、使用方法、配置文件、指令等等。
 
-最后，你需要修改命名空间名。将`MyPlugin.cpp`和`MyPlugin.h`中命名空间`my_plugin`改成你想要的名字。按照C++常见惯例，命名空间名应当使用小写字母和下划线，且应当保持一致。这里，我们统一改成`better_suicide`。同样，你可以将`MyPlugin.cpp`和`MyPlugin.h`改为你想要的名字，但同时要记得把源文件中的`#include MyPlugin.h`改为新的头文件名。
+最后，你需要修改命名空间名。将`MyMod.cpp`和`MyMod.h`中命名空间`my_mod`改成你想要的名字。按照C++常见惯例，命名空间名应当使用小写字母和下划线，且应当保持一致。这里，我们统一改成`better_suicide`。同样，你可以将`MyMod.cpp`和`MyMod.h`改为你想要的名字，但同时要记得把源文件中的`#include MyMod.h`改为新的头文件名。
 
-## 构建你的插件
+## 构建你的模组
 
-在一切开始之前，先让我们尝试构建一下空的插件。
+在一切开始之前，先让我们尝试构建一下空的模组。
 
 先更新一下仓库：
 
@@ -152,10 +152,10 @@ xmake
 
 ## 补充`#include`
 
-在`MyPlugin.cpp`中补充`#include`，最终效果看起来是这样的：
+在`MyMod.cpp`中补充`#include`，最终效果看起来是这样的：
 
 ```cpp
-#include "MyPlugin.h"
+#include "MyPMod.h"
 
 #include "Config.h"
 
@@ -172,8 +172,8 @@ xmake
 #include <ll/api/event/player/PlayerUseItemEvent.h>
 #include <ll/api/form/ModalForm.h>
 #include <ll/api/io/FileUtils.h>
-#include <ll/api/plugin/NativePlugin.h>
-#include <ll/api/plugin/PluginManagerRegistry.h>
+#include <ll/api/mod/NativeMod.h>
+#include <ll/api/mod/ModManagerRegistry.h>
 #include <ll/api/service/Bedrock.h>
 #include <mc/entity/utilities/ActorType.h>
 #include <mc/server/commands/CommandOrigin.h>
@@ -187,16 +187,16 @@ xmake
 
 ## 注册指令`/suicide`
 
-在BDS中，指令并不是一开始就能够注册的，而是需要在特定的程序执行之后才能注册。因此，你不能在插件加载时注册插件，而只能在插件启用时注册指令。一般来说，还应当在插件禁用时解注册指令，以防止出现未定义行为。
+在BDS中，指令并不是一开始就能够注册的，而是需要在特定的程序执行之后才能注册。因此，你不能在模组加载时注册模组，而只能在模组启用时注册指令。一般来说，还应当在模组禁用时解注册指令，以防止出现未定义行为。
 
 !!! warning
-    插件在加载时，会调用其构造函数。但请不要将事件订阅、指令注册等任何与游戏相关的操作放在构造函数中，因为这些操作需要在游戏加载完成后才能进行。如果你在构造函数中进行了这些操作，那么你的插件将很有可能会在加载时崩溃。
+    模组在加载时，会调用其构造函数。但请不要将事件订阅、指令注册等任何与游戏相关的操作放在构造函数中，因为这些操作需要在游戏加载完成后才能进行。如果你在构造函数中进行了这些操作，那么你的模组将很有可能会在加载时崩溃。
 
 !!! tip
-    一般来说，插件的构造函数中只需要进行一些与游戏无关初始化操作即可，例如初始化日志系统、初始化配置文件、初始化数据库等等。
+    一般来说，模组的构造函数中只需要进行一些与游戏无关初始化操作即可，例如初始化日志系统、初始化配置文件、初始化数据库等等。
 
 ```cpp
-auto enable(ll::plugin::NativePlugin& /*self*/) -> bool {
+bool enable() {
 
     // ...
 
@@ -265,34 +265,39 @@ command.overload().execute<[](CommandOrigin const& origin, CommandOutput& output
 ```
 
 !!! note
-    指令的重载意味着指令的一个模式，例如`ll <load|unload|reload> <plugin:string>` 是一个重载，而`ll list`是另一个重载。下面是一个例子，来自LeviLamina的插件管理指令：
+    指令的重载意味着指令的一个模式，例如`ll <unload|reload|reactivate> <mod:string>` 是一个重载，而`ll list`是另一个重载。下面是一个例子，来自LeviLamina的模组管理指令：
 
 ```cpp
-enum LeviCommandOperation : int { load = 0, unload = 1, reload = 2 };
-
+enum LeviCommandOperation : int {
+    unload,
+    reload,
+    reactivate,
+};
 struct LeviCommand {
     LeviCommandOperation operation;
-    std::string          plugin;
+    SoftEnum<ModNames>   mod;
 };
 
-void registerPluginManageCommand() {
-    auto& cmd = CommandRegistrar::getInstance()
-                .getOrCreateCommand("levilamina", "LeviLamina's main command"_tr(), CommandPermissionLevel::Host);
-    ll::service::getCommandRegistry()->registerAlias("levilamina", "ll");
+void registerModManageCommand() {
+cmd.alias("ll");
+    cmd.overload<LeviCommand3>().text("load").required("mod").execute(
+        [](CommandOrigin const&, CommandOutput& output, LeviCommand3 const& param) {
+            // ...
+        }
+    ); // ll load <mod:string>
     cmd.overload<LeviCommand>()
         .required("operation")
-        .required("plugin")
-        .execute<[](CommandOrigin const& origin, CommandOutput& output, LeviCommand const& param, ::Command const& cmd
-                 ) {
+        .required("mod")
+        .execute([](CommandOrigin const&, CommandOutput& output, LeviCommand const& param) {
             // ...
-        }>(); // ll <load|unload|reload> <plugin:string>
-    cmd.overload().text("list").execute<[](CommandOrigin const& origin, CommandOutput& output) {
+        }); // ll <unload|reload|reactivate> <mod:string>
+    cmd.overload().text("list").execute([](CommandOrigin const&, CommandOutput& output) {
         // ...
-    }>(); // ll list
+    }); // ll list
 }
 ```
 
-在回调函数中，我们首先尝试获取指令的执行来源。在这里，我们需要进行一个判定，因为控制台、命令方块乃至各种实体都能够执行指令，但自杀插件应当只响应玩家的请求。如果错误的执行来源执行了自杀指令，那么应当提示一个错误信息。
+在回调函数中，我们首先尝试获取指令的执行来源。在这里，我们需要进行一个判定，因为控制台、命令方块乃至各种实体都能够执行指令，但自杀模组应当只响应玩家的请求。如果错误的执行来源执行了自杀指令，那么应当提示一个错误信息。
 
 ```cpp
 auto* entity = origin.getEntity();
@@ -315,15 +320,15 @@ getInstance().getLogger().info("{} killed themselves", player->getRealName());
     由于BDS缺乏RTTI信息，因此不能够使用`dynamic_cast<T>()`。
 
 !!! tip
-    你可能注意到另一个函数`player->getName()`，但我们并没有使用它。这是因为玩家的名字是可以通过插件或其它方式进行修改的，而`player->getRealName()`的结果则是（一般来说较为）固定的。
+    你可能注意到另一个函数`player->getName()`，但我们并没有使用它。这是因为玩家的名字是可以通过模组或其它方式进行修改的，而`player->getRealName()`的结果则是（一般来说较为）固定的。
 
 到这一步，指令对象已经配置完毕，当服务器启动后，指令对象将被加载到游戏中。
 
-在`enable()`函数的末尾，返回一个`true`，代表插件启用成功。如果在`enable()`函数中返回了`false`，则LeviLamina会认为插件启用失败，并在控制台上提示错误信息。
+在`enable()`函数的末尾，返回一个`true`，代表模组启用成功。如果在`enable()`函数中返回了`false`，则LeviLamina会认为模组启用失败，并在控制台上提示错误信息。
 
 ## 读取配置文件
 
-我们的插件的第二个功能是玩家首次进入服务器时，给予一个钟；第三个功能是使用钟的时候，弹出确认自杀的提示，玩家确认后可以自杀。但这两个功能有个小问题：服务器管理员可能已经安装了其它的插件，实现了类似的功能，而不希望使用这个自杀插件中这几个功能。我们希望能提供某种方式，允许管理员开关这两个功能。
+我们的模组的第二个功能是玩家首次进入服务器时，给予一个钟；第三个功能是使用钟的时候，弹出确认自杀的提示，玩家确认后可以自杀。但这两个功能有个小问题：服务器管理员可能已经安装了其它的模组，实现了类似的功能，而不希望使用这个自杀模组中这几个功能。我们希望能提供某种方式，允许管理员开关这两个功能。
 
 我们在此非常高兴地宣布，LeviLamina在C++中，实现了配置文件与配置信息结构体的反射。这意味着，我们可以在C++中定义一个结构体，然后在配置文件中定义这个结构体的实例，LeviLamina会自动将配置文件中的内容读取到结构体实例中。这样，我们就可以在C++中直接使用这个结构体实例，而不需要自己去解析配置文件。
 
@@ -352,7 +357,7 @@ Config config;
 然后，我们读取配置文件并将配置信息保存到成员变量中。
 
 ```cpp
-auto load(ll::plugin::NativePlugin& self) -> bool {
+bool load() {
     
     // ...
 
@@ -372,14 +377,14 @@ auto load(ll::plugin::NativePlugin& self) -> bool {
 }
 ```
 
-在这段代码中，我们首先获取插件的配置文件路径，然后调用`ll::config::loadConfig()`函数，将配置文件中的配置信息读取到结构体实例中。如果读取失败，我们将会在控制台上输出警告信息，并将默认配置信息保存到配置文件中。
+在这段代码中，我们首先获取模组的配置文件路径，然后调用`ll::config::loadConfig()`函数，将配置文件中的配置信息读取到结构体实例中。如果读取失败，我们将会在控制台上输出警告信息，并将默认配置信息保存到配置文件中。
 
 !!! note
     由于配置文件读取是在构造函数内进行的，所以在后续操作中可以保证配置文件已经读取成功了。
 
 ## 将玩家进服信息持久化保存在数据库中
 
-我们的插件的第二个功能是玩家首次进入服务器时，给予一个钟。但是，如果我们将进服信息保存在内存中，那么当服务器重启后，玩家的进服信息就会丢失。因此，我们需要将玩家的进服信息持久化保存在数据库中。LeviLamina提供了KV数据库的封装，可以让我们在C++中直接使用数据库。
+我们的模组的第二个功能是玩家首次进入服务器时，给予一个钟。但是，如果我们将进服信息保存在内存中，那么当服务器重启后，玩家的进服信息就会丢失。因此，我们需要将玩家的进服信息持久化保存在数据库中。LeviLamina提供了KV数据库的封装，可以让我们在C++中直接使用数据库。
 
 首先，我们在匿名命名空间中增加一个成员变量，用于保存数据库实例。
 
@@ -396,7 +401,7 @@ std::unique_ptr<ll::data::KeyValueDB> playerDb;
 然后，我们在`load`函数中，初始化数据库实例。
 
 ```cpp
-auto load(ll::plugin::NativePlugin& self) -> bool {
+bool load() {
         
     // ...
 
@@ -408,16 +413,16 @@ auto load(ll::plugin::NativePlugin& self) -> bool {
 }
 ```
 
-在这段代码中，我们首先获取插件的数据库路径，然后调用`std::make_unique<ll::data::KeyValueDB>()`函数，创建一个数据库实例。如果数据库路径不存在，那么`std::make_unique<ll::data::KeyValueDB>()`函数会自动创建数据库路径。
+在这段代码中，我们首先获取模组的数据库路径，然后调用`std::make_unique<ll::data::KeyValueDB>()`函数，创建一个数据库实例。如果数据库路径不存在，那么`std::make_unique<ll::data::KeyValueDB>()`函数会自动创建数据库路径。
 
 !!! note
     由于数据库初始化是在构造函数内进行的，所以在后续操作中可以保证数据库已经初始化成功了。
 
 ## 玩家首次进服时，给予一个钟
 
-我们的插件的第二个功能是玩家首次进入服务器时，给予一个钟。我们需要在玩家进服时，判断玩家是否首次进服，如果是，则给予一个钟。
+我们的模组的第二个功能是玩家首次进入服务器时，给予一个钟。我们需要在玩家进服时，判断玩家是否首次进服，如果是，则给予一个钟。
 
-在BDS中，玩家进服时，会触发事件`PlayerJoinEvent`。在LeviLamina中，我们可以订阅这个事件，当这个事件被触发时，插件可以在这里实现玩家进服时的逻辑。
+在BDS中，玩家进服时，会触发事件`PlayerJoinEvent`。在LeviLamina中，我们可以订阅这个事件，当这个事件被触发时，模组可以在这里实现玩家进服时的逻辑。
 
 在匿名命名空间中，我们增加一个事件监听器指针：
 
@@ -428,7 +433,7 @@ ll::event::ListenerPtr playerJoinEventListener;
 在`enable()`函数中注册这个事件监听器，并在`disable()`函数中取消注册。
 
 ```cpp
-auto enable(ll::plugin::NativePlugin& /*self*/) -> bool {
+bool enable() {
 
     // ...
 
@@ -467,7 +472,7 @@ auto enable(ll::plugin::NativePlugin& /*self*/) -> bool {
 
 }
 
-auto disable(ll::plugin::NativePlugin& /*self*/) -> bool {
+bool disable() {
 
     // ...
 
@@ -480,7 +485,7 @@ auto disable(ll::plugin::NativePlugin& /*self*/) -> bool {
 }
 ```
 
-让我们将这些代码拆开来看。在回调lambda函数中，我们捕获了配置中的`doGiveClockOnFirstJoin`，以及插件的logger和数据库实例。然后，我们判断配置中的`doGiveClockOnFirstJoin`是否为`true`，如果是，则继续执行逻辑。
+让我们将这些代码拆开来看。在回调lambda函数中，我们捕获了配置中的`doGiveClockOnFirstJoin`，以及模组的logger和数据库实例。然后，我们判断配置中的`doGiveClockOnFirstJoin`是否为`true`，如果是，则继续执行逻辑。
 
 ```cpp
 [doGiveClockOnFirstJoin = config.doGiveClockOnFirstJoin,
@@ -503,7 +508,7 @@ auto& uuid   = player.getUuid();
     这里获取的UUID的类型是`mce::UUID`而不是`std::string`。我们建议只有在需要时才将UUID转换为`std::string`，因为`mce::UUID`的实现更加高效。
 
 !!! danger
-    请不要使用XUID作为玩家的唯一标识符。虽然在LiteLoaderBDS时代，不少插件使用XUID作为玩家的唯一标识符，但这是不正确的。XUID是Xbox Live的标识符，而不是玩家的标识符。如果服务器没有开启在线模式，或者存在假人，那么XUID的行为将是不可预测的。因此，我们强烈建议使用UUID作为玩家的唯一标识符。
+    请不要使用XUID作为玩家的唯一标识符。虽然在LiteLoaderBDS时代，不少模组使用XUID作为玩家的唯一标识符，但这是不正确的。XUID是Xbox Live的标识符，而不是玩家的标识符。如果服务器没有开启在线模式，或者存在假人，那么XUID的行为将是不可预测的。因此，我们强烈建议使用UUID作为玩家的唯一标识符。
 
 然后，我们使用玩家的UUID作为键，从数据库中获取玩家是否已经进服过。如果玩家已经进服过，那么我们就不需要再给予玩家一个钟了。
 
@@ -547,7 +552,7 @@ eventBus.removeListener(playerJoinEventListener);
 
 ## 使用钟的时候，弹出确认自杀的提示
 
-我们的插件的第三个功能是使用钟的时候，弹出确认自杀的提示，玩家确认后可以自杀。我们需要订阅玩家使用物品的事件，当玩家使用钟时，弹出确认自杀的提示。
+我们的模组的第三个功能是使用钟的时候，弹出确认自杀的提示，玩家确认后可以自杀。我们需要订阅玩家使用物品的事件，当玩家使用钟时，弹出确认自杀的提示。
 
 在匿名命名空间中，我们增加一个事件监听器指针：
 
@@ -558,7 +563,7 @@ ll::event::ListenerPtr playerUseItemEventListener;
 在`enable()`函数中注册这个事件监听器，并在`disable()`函数中取消注册。
 
 ```cpp
-auto enable(ll::plugin::NativePlugin& /*self*/) -> bool {
+bool enable() {
 
     // ...
 
@@ -593,7 +598,7 @@ auto enable(ll::plugin::NativePlugin& /*self*/) -> bool {
 
 }
 
-auto disable(ll::plugin::NativePlugin& /*self*/) -> bool {
+bool disable() {
 
     // ...
 
@@ -654,9 +659,9 @@ ll::form::ModalForm form(
 form.sendTo(player);
 ```
 
-## 运行你的插件
+## 运行你的模组
 
-如果你的插件正常构建完毕，你应该能看到`bin/`目录内有一个以你的插件名为名的目录。将这个目录拷贝到LeviLamina目录中的`plugins/`目录里面（如果没有，请创建），得到如下的文件结构：
+如果你的模组正常构建完毕，你应该能看到`bin/`目录内有一个以你的模组名为名的目录。将这个目录拷贝到LeviLamina目录中的`plugins/`目录里面（如果没有，请创建），得到如下的文件结构：
 
 ```text
 /path/to/levilamina/plugins/better-suicide
@@ -668,11 +673,11 @@ form.sendTo(player);
 
 ## 下一步？
 
-你可以[公开发布你的插件](./publish_your_first_plugin.zh.md)，让更多的人使用你的插件。
+你可以[公开发布你的模组](./publish_your_first_mod.zh.md)，让更多的人使用你的模组。
 
 ## 更进一步的练习
 
-我们可以在这个插件的基础上，增加一些功能，来练习LeviLamina插件开发的更多知识。下面是一些可能的练习：
+我们可以在这个模组的基础上，增加一些功能，来练习LeviLamina模组开发的更多知识。下面是一些可能的练习：
 
 - 设置玩家自杀的冷却时间
 - 让玩家自杀时，保留所有物品不掉落
