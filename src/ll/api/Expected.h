@@ -9,6 +9,8 @@
 #include <memory>
 #include <string_view>
 
+#include "ll/api/base/Macro.h"
+
 class CommandOutput;
 
 namespace ll {
