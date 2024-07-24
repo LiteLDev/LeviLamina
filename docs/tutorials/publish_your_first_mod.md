@@ -1,6 +1,6 @@
 # Publish your first mod
 
-In the tutorial [Create Your First Mod](mod.md), we created a simple mod. In this tutorial, we will learn how to publish a mod.
+In the tutorial [Create Your First Mod](create_your_first_mod.md), we created a simple mod. In this tutorial, we will learn how to publish a mod.
 
 ### Prerequisites
 
