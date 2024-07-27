@@ -21,3 +21,17 @@ Minecraft Bedrock Edition的最初版本缺乏Minecraft Java Edition中存在的
 但随着LiteLoaderBDS2.0的扩展，它开始像自助餐上的小猪一样膨胀起来。它的性能急剧下降，让我们摸不着头脑。
 
 就在那时，我们做出了一个大胆的决定，从头开始重建整个项目。随着我们更深入地研究改造过程，很明显，一个新的开始值得一个全新的绰号。因此，我们涉足了拉丁语根源的古老艺术，保留了人们喜爱的缩写“ll”，瞧！LeviLamina诞生了，这个名字与我们宏伟的创造相称。
+
+## 常见错误码
+
+### 126
+
+缺少LeviLamina或模组的依赖项，请确保LeviLamina或模组已完全安装。您可以在依赖诊断(Dependency diagnostic)中看到缺少的依赖项。
+
+### 127
+
+LeviLamina或模组的依赖版本不正确。您可以在依赖诊断(Dependency diagnostic)中知道哪些依赖项版本不正确。
+
+### 1114
+
+Vcredist版本太老。更新[vcredist](https://learn.microsoft.com/cpp/windows/latest-supported-vc-redist?view=msvc-170)以解决此错误。
