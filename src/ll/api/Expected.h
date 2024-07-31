@@ -76,11 +76,6 @@ struct StringError : ErrorInfoBase {
     StringError(std::string str) : str(std::move(str)) {}
     std::string message() const noexcept override { return str; }
 };
-struct CStringError : ErrorInfoBase {
-    char const* cstr;
-    CStringError(char const* cstr) : cstr(cstr) {}
-    std::string message() const noexcept override { return cstr; }
-};
 struct ErrorCodeError : ErrorInfoBase {
     std::error_code ec;
     ErrorCodeError(std::error_code ec) : ec(ec) {}
@@ -95,8 +90,6 @@ inline Unexpected makeError(Args&&... args) noexcept {
     return ::nonstd::make_unexpected(::ll::Error{std::make_shared<T>(std::forward<Args>(args)...)});
 }
 inline Unexpected makeStringError(std::string str) noexcept { return makeError<StringError>(std::move(str)); }
-
-inline Unexpected makeStringError(char const* cstr) noexcept { return makeError<CStringError>(cstr); }
 
 inline Unexpected makeErrorCodeError(std::error_code ec) noexcept { return makeError<ErrorCodeError>(ec); }
 
