@@ -44,10 +44,10 @@ public:
 
     template <std::derived_from<IFeature> T, class... Args>
     T& registerFeature(std::string const& name, Args&&... args) {
-        auto ptr = std::make_unique<T>(std::forward<Args>(args)...);
-        auto res = *ptr;
+        auto  ptr = std::make_unique<T>(std::forward<Args>(args)...);
+        auto& ref = *ptr;
         _registerFeature(name, std::move(ptr));
-        return res;
+        return ref;
     }
 
 public:

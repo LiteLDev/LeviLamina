@@ -28,10 +28,10 @@ public:
 public:
     template <std::derived_from<StructureFeature> T, class... Args>
     T& registerFeature(Args&&... args) {
-        auto ptr = std::make_unique<T>(std::forward<Args>(args)...);
-        auto res = *ptr;
+        auto  ptr = std::make_unique<T>(std::forward<Args>(args)...);
+        auto& ref = *ptr;
         mStructureFeatures.push_back(std::move(ptr));
-        return res;
+        return ref;
     }
 
 public:
