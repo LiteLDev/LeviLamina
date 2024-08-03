@@ -4,6 +4,7 @@
 
 #include "ll/api/i18n/I18n.h"
 #include "ll/api/memory/Memory.h"
+#include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/StringUtils.h"
 
 #include "ll/core/Config.h"
@@ -145,4 +146,22 @@ bool isStdoutSupportAnsi() {
     }
     return false;
 }
+
+std::optional<std::system_error> DynamicLibrary::load(std::filesystem::path const& path) noexcept {
+    if (lib) {
+        return std::system_error{{}};
+    }
+    lib = LoadLibrary(path.c_str());
+    if (!lib) {
+        return error_utils::getWinLastError();
+    }
+    return {};
+}
+std::optional<std::system_error> DynamicLibrary::free() noexcept {
+    if (!FreeLibrary((HMODULE)lib)) {
+        return error_utils::getWinLastError();
+    }
+    return {};
+}
+void* DynamicLibrary::getAddress(char const* symbol) noexcept { return GetProcAddress((HMODULE)lib, symbol); }
 } // namespace ll::inline utils::sys_utils

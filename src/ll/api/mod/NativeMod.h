@@ -18,21 +18,18 @@ class NativeMod : public Mod {
     struct Impl;
     std::unique_ptr<Impl> mImpl;
 
-public:
-    using Handle = void*;
-
 protected:
-    void setHandle(Handle handle);
+    sys_utils::DynamicLibrary& getDynamicLibrary();
 
 public:
-    NativeMod(Manifest manifest, Handle handle = nullptr);
+    NativeMod(Manifest manifest, sys_utils::HandleT handle = nullptr);
     ~NativeMod();
 
-    LLNDAPI Handle getHandle() const;
+    LLNDAPI sys_utils::HandleT getHandle() const;
 
-    LLNDAPI static std::shared_ptr<NativeMod> getByHandle(Handle handle);
+    LLNDAPI static std::shared_ptr<NativeMod> getByHandle(sys_utils::HandleT handle);
 
-    LLNDAPI static std::shared_ptr<NativeMod> current(Handle handle = sys_utils::getCurrentModuleHandle());
+    LLNDAPI static std::shared_ptr<NativeMod> current(sys_utils::HandleT handle = sys_utils::getCurrentModuleHandle());
 };
 
 } // namespace ll::mod

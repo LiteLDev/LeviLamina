@@ -24,7 +24,6 @@
 #include "ll/core/LeviLamina.h"
 
 #include "errhandlingapi.h"
-#include "libloaderapi.h"
 #include "minwindef.h"
 #include "processenv.h"
 #include "winerror.h"
@@ -119,35 +118,37 @@ Expected<> NativeModManager::load(Manifest manifest) {
         SetEnvironmentVariableW(L"PATH", res->c_str());
     }
     auto entry = modDir / string_utils::sv2u8sv(currentLoadingMod->getManifest().entry);
-    auto lib   = LoadLibraryW(entry.c_str());
-    if (!lib) {
-        auto       e = error_utils::getWinLastError();
+    if (auto e = currentLoadingMod->getDynamicLibrary().load(entry); e) {
         Expected<> error{makeExceptionError(std::make_exception_ptr(e))};
-        if (e.code().value() == 126 || e.code().value() == 127) {
+        if (e->code().value() == 126 || e->code().value() == 127) {
             error.error().join(makeStringError(diagnosticDependency(entry)));
         }
         return error;
     }
-    if (!GetProcAddress(lib, "ll_memory_operator_overrided")) {
+    auto& lib = currentLoadingMod->getDynamicLibrary();
+    if (!lib.getAddress("ll_memory_operator_overrided")) {
         using namespace i18n_literals;
-        return makeStringError("The mod is not using the unified memory allocation operator, will not be loaded."_tr());
+        return makeStringError(
+            "{0} will not be loaded because it isn't using the unified memory allocation operator"_tr(
+                currentLoadingMod->getManifest().name
+            )
+        );
     }
-    currentLoadingMod->setHandle(lib);
-    // TODO: remove in future
-    if (auto addr = GetProcAddress(lib, "ll_plugin_load"); addr) {
-        currentLoadingMod->onLoad(reinterpret_cast<Mod::callback_t*>(addr));
-        currentLoadingMod->onUnload(reinterpret_cast<Mod::callback_t*>(GetProcAddress(lib, "ll_plugin_unload")));
-        currentLoadingMod->onEnable(reinterpret_cast<Mod::callback_t*>(GetProcAddress(lib, "ll_plugin_enable")));
-        currentLoadingMod->onDisable(reinterpret_cast<Mod::callback_t*>(GetProcAddress(lib, "ll_plugin_disable")));
+    // TODO: remove in release
+    if (auto addr = lib.getAddress<Mod::callback_t*>("ll_plugin_load"); addr) {
+        currentLoadingMod->onLoad(addr);
+        currentLoadingMod->onUnload(lib.getAddress<Mod::callback_t*>("ll_plugin_unload"));
+        currentLoadingMod->onEnable(lib.getAddress<Mod::callback_t*>("ll_plugin_enable"));
+        currentLoadingMod->onDisable(lib.getAddress<Mod::callback_t*>("ll_plugin_disable"));
     } else {
-        currentLoadingMod->onLoad(reinterpret_cast<Mod::callback_t*>(GetProcAddress(lib, "ll_mod_load")));
-        currentLoadingMod->onUnload(reinterpret_cast<Mod::callback_t*>(GetProcAddress(lib, "ll_mod_unload")));
-        currentLoadingMod->onEnable(reinterpret_cast<Mod::callback_t*>(GetProcAddress(lib, "ll_mod_enable")));
-        currentLoadingMod->onDisable(reinterpret_cast<Mod::callback_t*>(GetProcAddress(lib, "ll_mod_disable")));
+        currentLoadingMod->onLoad(lib.getAddress<Mod::callback_t*>("ll_mod_load"));
+        currentLoadingMod->onUnload(lib.getAddress<Mod::callback_t*>("ll_mod_unload"));
+        currentLoadingMod->onEnable(lib.getAddress<Mod::callback_t*>("ll_mod_enable"));
+        currentLoadingMod->onDisable(lib.getAddress<Mod::callback_t*>("ll_mod_disable"));
     }
     return currentLoadingMod->onLoad().transform([&, this] {
         addMod(currentLoadingMod->getManifest().name, currentLoadingMod);
-        handleMap[lib] = currentLoadingMod;
+        handleMap[lib.handle()] = currentLoadingMod;
     });
 }
 
@@ -160,8 +161,8 @@ Expected<> NativeModManager::unload(std::string_view name) {
     if (auto res = ptr->onDisable().and_then([&] { return ptr->onUnload(); }); !res) {
         return res;
     }
-    if (!FreeLibrary((HMODULE)ptr->getHandle())) {
-        return makeExceptionError(std::make_exception_ptr(error_utils::getWinLastError()));
+    if (auto err = ptr->getDynamicLibrary().free(); err) {
+        return makeExceptionError(std::make_exception_ptr(*err));
     }
     handleMap.erase(ptr->getHandle());
     eraseMod(name);

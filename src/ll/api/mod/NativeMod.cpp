@@ -8,20 +8,21 @@
 namespace ll::mod {
 
 struct NativeMod::Impl {
-    Handle handle;
+    sys_utils::HandleT        handle; // for ll self
+    sys_utils::DynamicLibrary lib;
 };
 
-NativeMod::NativeMod(Manifest manifest, Handle handle)
+NativeMod::NativeMod(Manifest manifest, sys_utils::HandleT handle)
 : Mod(std::move(manifest)),
   mImpl(std::make_unique<Impl>(handle)) {}
 
 NativeMod::~NativeMod() = default;
 
-void NativeMod::setHandle(Handle handle) { mImpl->handle = handle; }
+sys_utils::DynamicLibrary& NativeMod::getDynamicLibrary() { return mImpl->lib; }
 
-NativeMod::Handle NativeMod::getHandle() const { return mImpl->handle; }
+sys_utils::HandleT NativeMod::getHandle() const { return mImpl->handle ? mImpl->handle : (mImpl->lib.handle()); }
 
-std::shared_ptr<NativeMod> NativeMod::getByHandle(Handle handle) {
+std::shared_ptr<NativeMod> NativeMod::getByHandle(sys_utils::HandleT handle) {
     if (handle == sys_utils::getCurrentModuleHandle()) {
         return getSelfModIns();
     }
@@ -33,6 +34,6 @@ std::shared_ptr<NativeMod> NativeMod::getByHandle(Handle handle) {
     return manger->getModByHandle(handle);
 }
 
-std::shared_ptr<NativeMod> NativeMod::current(Handle handle) { return getByHandle(handle); }
+std::shared_ptr<NativeMod> NativeMod::current(sys_utils::HandleT handle) { return getByHandle(handle); }
 
 } // namespace ll::mod

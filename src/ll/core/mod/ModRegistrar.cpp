@@ -119,11 +119,22 @@ void ModRegistrar::loadAllMods() {
         }
     }
 
-    std::unordered_set<std::string> needLoad;
+    std::unordered_set<std::string> loadingQueueHash;
+    std::vector<std::string>        pendingRemoved;
+    std::queue<std::string>         loadingQueue;
+
     for (auto& [name, manifest] : manifests) {
         if (manifest.passive == true) {
             continue;
         }
+        loadingQueue.push(name);
+        loadingQueueHash.emplace(name);
+    }
+
+    while (!loadingQueue.empty()) {
+        auto name = std::move(loadingQueue.front());
+        loadingQueue.pop();
+        auto& manifest = manifests.at(name);
         if (manifest.dependencies) {
             bool error = false;
             for (auto& dependency : *manifest.dependencies) {
@@ -139,31 +150,34 @@ void ModRegistrar::loadAllMods() {
                 }
             }
             if (error) {
-                getLogger().error("The dependencies of {0} are missing, will not be loaded"_tr(name));
+                getLogger().error("{0} will not be loaded because the dependencies are missing"_tr(name));
+                pendingRemoved.emplace_back(name);
                 continue;
             }
             for (auto& dependency : *manifest.dependencies) {
-                needLoad.emplace(dependency.name);
+                if (loadingQueueHash.emplace(dependency.name).second) {
+                    loadingQueue.push(dependency.name);
+                }
             }
         }
-        needLoad.emplace(name);
         if (manifest.optionalDependencies) {
             for (auto& dependency : *manifest.optionalDependencies) {
                 if (manifests.contains(dependency.name) && checkVersion(manifests.at(dependency.name), dependency)) {
-                    needLoad.emplace(dependency.name);
+                    if (loadingQueueHash.emplace(dependency.name).second) {
+                        loadingQueue.push(dependency.name);
+                    }
                 }
             }
         }
     }
-    std::vector<std::string> conflicts;
-    for (auto& name : needLoad) {
+    for (auto& name : loadingQueueHash) {
         auto& manifest = manifests.at(name);
         if (!manifest.conflicts) {
             continue;
         }
         for (auto& conflict : *manifest.conflicts) {
             if (manifests.contains(conflict.name) && checkVersion(manifests.at(conflict.name), conflict)) {
-                conflicts.emplace_back(name);
+                pendingRemoved.emplace_back(name);
                 getLogger().error("{0} conflicts with {1}"_tr(
                     name,
                     conflict.version
@@ -173,20 +187,20 @@ void ModRegistrar::loadAllMods() {
             }
         }
     }
-    for (auto& name : conflicts) {
-        needLoad.erase(name);
+    for (auto& name : pendingRemoved) {
+        loadingQueueHash.erase(name);
     }
-    for (auto& name : needLoad) {
+    for (auto& name : loadingQueueHash) {
         auto& manifest = manifests.at(name);
         if (manifest.dependencies) {
-            bool deniedByConflict = false;
+            bool denied = false;
             for (auto& dependency : *manifest.dependencies) {
-                if (!needLoad.contains(dependency.name)) {
-                    deniedByConflict = true;
+                if (!loadingQueueHash.contains(dependency.name)) {
+                    denied = true;
                 }
             }
-            if (deniedByConflict) {
-                getLogger().error("The dependencies of {0} are in conflict, will not be loaded"_tr(name));
+            if (denied) {
+                getLogger().error("{0} will not be loaded because the dependencies can't loaded"_tr(name));
                 continue;
             }
             for (auto& dependency : *manifest.dependencies) {
@@ -197,14 +211,15 @@ void ModRegistrar::loadAllMods() {
         }
         if (manifest.optionalDependencies) {
             for (auto& dependency : *manifest.optionalDependencies) {
-                if (needLoad.contains(dependency.name)) {
+                if (loadingQueueHash.contains(dependency.name)) {
                     impl->deps.emplaceDependency(name, dependency.name);
                 }
             }
         }
         if (manifest.loadBefore) {
             for (auto& dependency : *manifest.loadBefore) {
-                if (needLoad.contains(dependency.name) && checkVersion(manifests.at(dependency.name), dependency)) {
+                if (loadingQueueHash.contains(dependency.name)
+                    && checkVersion(manifests.at(dependency.name), dependency)) {
                     impl->deps.emplaceDependency(dependency.name, name);
                 }
             }
@@ -212,9 +227,12 @@ void ModRegistrar::loadAllMods() {
     }
     auto sort = impl->deps.sort();
     for (auto& name : sort.unsorted) {
-        getLogger().error("The dependencies of {0} are in loops, will not be loaded"_tr(name));
+        getLogger().error(
+            "{0} will not be loaded because the dependency are in loops"_tr(
+                name
+            )
+        );
     }
-
     std::unordered_set<std::string> loadErrored;
     for (auto& name : sort.sorted) {
         auto& manifest = manifests.at(name);
@@ -226,7 +244,7 @@ void ModRegistrar::loadAllMods() {
                 }
             }
             if (deniedByDepError) {
-                getLogger().error("The dependencies of {0} is not loaded, will not be loaded"_tr(name));
+                getLogger().error("{0} will not be loaded because the dependencies are not loaded"_tr(name));
                 loadErrored.emplace(name);
                 continue;
             }
