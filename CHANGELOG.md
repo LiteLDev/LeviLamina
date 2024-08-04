@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.13.5] - 2024-08-04
+
+### Added
+
+- Completes the member variables of the ItemStackRequestActionTransferBase class
+
+### Changed
+
+- Remove cstring error
+
+### Fixed
+
+- Fix mod dependency [#1559]
+- Ensure valid reference return in FeatureRegistry
+
 ## [0.13.4] - 2024-07-23
 
 ### Added
@@ -16,13 +31,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Completes the member variables of ISurfaceBuilder::BuildParameters,BiomeArea,SpikeFeature @Lovelylavender4
 - Completes the member variables of ClimateParameters,BiomeDecorationFeature,ScatterParams::CoordinateRange @killcerr
 
-### Fixed
-
-- Fixed a bug where optional would not compile under C++20 @OEOTYAN
-- Fixed the size of HardcodedSpawnAreaRegistry @Lovelylavender4
-- Fixed hash with size_t @OEOTYAN
-- Fixed the parent class of MultidimensionalArray @Lovelylavender4
-
 ### Changed
 
 - Move levilamina to standard folder @OEOTYAN
@@ -30,20 +38,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Refactored nbt @OEOTYAN
 - Make the naming of Bounds and GridArea member variables more standardized @Lovelylavender4
 
+### Fixed
+
+- Fixed a bug where optional would not compile under C++20 @OEOTYAN
+- Fixed the size of HardcodedSpawnAreaRegistry @Lovelylavender4
+- Fixed hash with size_t @OEOTYAN
+- Fixed the parent class of MultidimensionalArray @Lovelylavender4
+
 ## [0.13.3] - 2024-06-24
 
 ### Added
 
 - Adapted to BDS version 1.21.1 @Lovelylavender4
 
+### Changed
+
+- Adjusted the position of UpdateSubChunkBlocksChangedInfo and UpdateSubChunkNetworkBlockInfo. @Lovelylavender4
+
 ### Fixed
 
 - Fixed missing include in memory.h @ShrBox
 - Fixed UpdateSubChunkBlocksPacket. @Lovelylavender4
-
-### Changed
-
-- Adjusted the position of UpdateSubChunkBlocksChangedInfo and UpdateSubChunkNetworkBlockInfo. @Lovelylavender4
 
 ## [0.13.2] - 2024-06-23
 
@@ -606,8 +621,10 @@ For lip and tooth-hub test only.
 [#1502]: https://github.com/LiteLDev/LeviLamina/issues/1502
 [#1520]: https://github.com/LiteLDev/LeviLamina/issues/1520
 [#1552]: https://github.com/LiteLDev/LeviLamina/issues/1552
+[#1559]: https://github.com/LiteLDev/LeviLamina/issues/1559
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.4...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.5...HEAD
+[0.13.5]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.4...v0.13.5
 [0.13.4]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.3...v0.13.4
 [0.13.3]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.2...v0.13.3
 [0.13.2]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.1...v0.13.2
