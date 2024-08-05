@@ -14,13 +14,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1WeavingMobEffect@@UEAA@XZ
+    // vIndex: 0
     virtual ~WeavingMobEffect() = default;
 
-    // vIndex: 4, symbol: ?onActorRemovedAfterDeath@WeavingMobEffect@@UEBAXAEAVActor@@H@Z
+    // vIndex: 4
     virtual void onActorRemovedAfterDeath(class Actor&, int) const;
 
-    // symbol: ?COBWEB_SLOWDOWN_OVERRIDE@WeavingMobEffect@@2VVec3@@B
     MCAPI static class Vec3 const COBWEB_SLOWDOWN_OVERRIDE;
 
     // NOLINTEND

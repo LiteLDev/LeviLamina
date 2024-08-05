@@ -20,24 +20,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ItemReleaseInventoryTransaction@@UEAA@XZ
+    // vIndex: 0
     virtual ~ItemReleaseInventoryTransaction() = default;
 
-    // vIndex: 1, symbol:
-    // ?read@ItemReleaseInventoryTransaction@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 1
     virtual class Bedrock::Result<void> read(class ReadOnlyBinaryStream& stream);
 
-    // vIndex: 2, symbol: ?write@ItemReleaseInventoryTransaction@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 2
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 3, symbol: ?postLoadItems@ItemReleaseInventoryTransaction@@UEAAXAEAVBlockPalette@@_N@Z
+    // vIndex: 3
     virtual void postLoadItems(class BlockPalette& blockPalette, bool isClientSide);
 
-    // vIndex: 4, symbol: ?handle@ItemReleaseInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z
+    // vIndex: 4
     virtual ::InventoryTransactionError handle(class Player& player, bool isSenderAuthority) const;
 
-    // vIndex: 5, symbol:
-    // ?onTransactionError@ItemReleaseInventoryTransaction@@UEBAXAEAVPlayer@@W4InventoryTransactionError@@@Z
+    // vIndex: 5
     virtual void onTransactionError(class Player& player, ::InventoryTransactionError error) const;
 
     // NOLINTEND

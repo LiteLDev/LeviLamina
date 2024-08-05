@@ -26,72 +26,64 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CrossbowItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~CrossbowItem() = default;
 
-    // vIndex: 5, symbol: ?getMaxUseDuration@CrossbowItem@@UEBAHPEBVItemStack@@@Z
+    // vIndex: 5
     virtual int getMaxUseDuration(class ItemStack const* instance) const;
 
-    // vIndex: 50, symbol: ?getEnchantSlot@CrossbowItem@@UEBAHXZ
+    // vIndex: 50
     virtual int getEnchantSlot() const;
 
-    // vIndex: 72, symbol: ?use@CrossbowItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+    // vIndex: 72
     virtual class ItemStack& use(class ItemStack& instance, class Player& player) const;
 
-    // vIndex: 75, symbol:
-    // ?useTimeDepleted@CrossbowItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
+    // vIndex: 75
     virtual ::ItemUseMethod
     useTimeDepleted(class ItemStack& inoutInstance, class Level* level, class Player* player) const;
 
-    // vIndex: 76, symbol: ?releaseUsing@CrossbowItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z
+    // vIndex: 76
     virtual void releaseUsing(class ItemStack& item, class Player* player, int durationLeft) const;
 
-    // vIndex: 96, symbol: ?enchantProjectile@CrossbowItem@@UEBAXAEBVItemStackBase@@AEAVActor@@@Z
+    // vIndex: 96
     virtual void enchantProjectile(class ItemStackBase const&, class Actor& projectile) const;
 
-    // vIndex: 103, symbol:
-    // ?setIconInfo@CrossbowItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+    // vIndex: 103
     virtual class Item& setIconInfo(std::string const& name, int id);
 
-    // vIndex: 104, symbol: ?getIconInfo@CrossbowItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
+    // vIndex: 104
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const& item, int, bool inInventoryPane) const;
 
-    // vIndex: 106, symbol: ?getAnimationFrameFor@CrossbowItem@@UEBAHPEAVMob@@_NPEBVItemStack@@1@Z
+    // vIndex: 106
     virtual int
     getAnimationFrameFor(class Mob* holder, bool asItemEntity, class ItemStack const* item, bool shouldAnimate) const;
 
-    // vIndex: 110, symbol: ?canBeCharged@CrossbowItem@@UEBA_NXZ
+    // vIndex: 110
     virtual bool canBeCharged() const;
 
-    // vIndex: 111, symbol: ?playSoundIncrementally@CrossbowItem@@UEBAXAEBVItemStack@@AEAVMob@@@Z
+    // vIndex: 111
     virtual void playSoundIncrementally(class ItemStack const& item, class Mob& mob) const;
 
-    // symbol: ??0CrossbowItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI CrossbowItem(std::string const& name, int id);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_getMaxUseDuration@CrossbowItem@@AEBA?BHAEBVItemStack@@@Z
     MCAPI int const _getMaxUseDuration(class ItemStack const& instance) const;
 
-    // symbol: ?_getShootDir@CrossbowItem@@AEBA?AVVec3@@AEBVPlayer@@M@Z
     MCAPI class Vec3 _getShootDir(class Player const& player, float angleOffset) const;
 
-    // symbol: ?_shootArrow@CrossbowItem@@AEBAXAEBVItemInstance@@0AEAVPlayer@@@Z
     MCAPI void
     _shootArrow(class ItemInstance const& crossbow, class ItemInstance const& projectileInstance, class Player& player)
         const;
 
-    // symbol: ?_shootFirework@CrossbowItem@@AEBAXAEBVItemInstance@@AEAVPlayer@@@Z
     MCAPI void _shootFirework(class ItemInstance const& projectileInstance, class Player& player) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?DEFAULT_USE_DURATION@CrossbowItem@@0HB
     MCAPI static int const DEFAULT_USE_DURATION;
 
     // NOLINTEND

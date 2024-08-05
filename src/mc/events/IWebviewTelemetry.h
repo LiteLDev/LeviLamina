@@ -14,22 +14,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1IWebviewTelemetry@@UEAA@XZ
+    // vIndex: 0
     virtual ~IWebviewTelemetry() = default;
 
-    // vIndex: 1, symbol: __unk_vfn_1
+    // vIndex: 1
     virtual void __unk_vfn_1();
 
-    // vIndex: 6, symbol: ?onDownloadBegin@IWebviewTelemetry@@UEAAXAEBUWebviewDownloadInfo@@@Z
+    // vIndex: 6
     virtual void onDownloadBegin(struct WebviewDownloadInfo const& downloadInfo);
 
-    // vIndex: 8, symbol: ?onDownloadComplete@IWebviewTelemetry@@UEAAXAEBUWebviewDownloadInfo@@@Z
+    // vIndex: 8
     virtual void onDownloadComplete(struct WebviewDownloadInfo const& downloadInfo);
 
-    // vIndex: 9, symbol: ?onDownloadCanceled@IWebviewTelemetry@@UEAAXAEBUWebviewDownloadInfo@@@Z
+    // vIndex: 9
     virtual void onDownloadCanceled(struct WebviewDownloadInfo const& downloadInfo);
 
-    // symbol: ??0IWebviewTelemetry@@QEAA@AEBVIMinecraftEventing@@@Z
     MCAPI explicit IWebviewTelemetry(class IMinecraftEventing const& eventing);
 
     // NOLINTEND

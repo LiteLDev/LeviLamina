@@ -14,26 +14,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ServerEventCoordinatorManager@@UEAA@XZ
+    // vIndex: 0
     virtual ~ServerEventCoordinatorManager() = default;
 
-    // vIndex: 3, symbol:
-    // ?getServerPlayerEventCoordinator@ServerEventCoordinatorManager@@UEAA?AV?$StackRefResult@VServerPlayerEventCoordinator@@@@XZ
+    // vIndex: 3
     virtual class StackRefResult<class ServerPlayerEventCoordinator> getServerPlayerEventCoordinator();
 
-    // vIndex: 4, symbol:
-    // ?getLevelEventCoordinator@ServerEventCoordinatorManager@@UEAA?AV?$not_null@V?$StackRefResult@VLevelEventCoordinator@@@@@gsl@@XZ
+    // vIndex: 4
     virtual gsl::not_null<class StackRefResult<class LevelEventCoordinator>> getLevelEventCoordinator();
 
-    // vIndex: 5, symbol:
-    // ?getServerLevelEventCoordinator@ServerEventCoordinatorManager@@UEAA?AV?$StackRefResult@VServerLevelEventCoordinator@@@@XZ
+    // vIndex: 5
     virtual class StackRefResult<class ServerLevelEventCoordinator> getServerLevelEventCoordinator();
 
-    // vIndex: 6, symbol:
-    // ?getServerNetworkEventCoordinator@ServerEventCoordinatorManager@@UEAA?AV?$StackRefResult@VServerNetworkEventCoordinator@@@@XZ
+    // vIndex: 6
     virtual class StackRefResult<class ServerNetworkEventCoordinator> getServerNetworkEventCoordinator();
 
-    // symbol: ??0ServerEventCoordinatorManager@@QEAA@XZ
     MCAPI ServerEventCoordinatorManager();
 
     // NOLINTEND

@@ -11,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0WorldTemplateManagerProxy@@QEAA@AEBUWorldTemplateManagerProxyCallbacks@@@Z
     MCAPI explicit WorldTemplateManagerProxy(struct WorldTemplateManagerProxyCallbacks const& callbacks);
 
-    // symbol: ??1WorldTemplateManagerProxy@@QEAA@XZ
     MCAPI ~WorldTemplateManagerProxy();
 
     // NOLINTEND

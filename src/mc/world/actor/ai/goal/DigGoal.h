@@ -31,17 +31,13 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __gen_??1Definition@DigGoal@@UEAA@XZ
+        // vIndex: 0
         virtual ~Definition() = default;
 
-        // symbol: ??0Definition@DigGoal@@QEAA@XZ
         MCAPI Definition();
 
-        // symbol: ?initialize@Definition@DigGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext& entity, class DigGoal& goal) const;
 
-        // symbol:
-        // ?buildSchema@Definition@DigGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDefinition@DigGoal@@@JsonUtil@@@4@@Z
         MCAPI static void buildSchema(
             std::string const& name,
             std::shared_ptr<
@@ -59,36 +55,33 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DigGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~DigGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@DigGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@DigGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@DigGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@DigGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@DigGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@DigGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0DigGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit DigGoal(class Mob& mob);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_canUse@DigGoal@@AEBA?AW4CanUseResult@1@XZ
     MCAPI ::DigGoal::CanUseResult _canUse() const;
 
     // NOLINTEND

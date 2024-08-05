@@ -15,17 +15,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SHFillerCorridor@@UEAA@XZ
+    // vIndex: 0
     virtual ~SHFillerCorridor() = default;
 
-    // vIndex: 2, symbol: ?getType@SHFillerCorridor@@UEBA?AW4StructurePieceType@@XZ
+    // vIndex: 2
     virtual ::StructurePieceType getType() const;
 
-    // vIndex: 4, symbol: ?postProcess@SHFillerCorridor@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+    // vIndex: 4
     virtual bool postProcess(class BlockSource& region, class Random&, class BoundingBox const& chunkBB);
 
-    // symbol:
-    // ?findPieceBox@SHFillerCorridor@@SA?AVBoundingBox@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@HHHH@Z
     MCAPI static class BoundingBox findPieceBox(
         std::vector<std::unique_ptr<class StructurePiece>>& pieces,
         class Random&,

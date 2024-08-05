@@ -11,7 +11,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?getNextID@ClassID@@CA_KXZ
     MCAPI static uint64 getNextID();
 
     // NOLINTEND

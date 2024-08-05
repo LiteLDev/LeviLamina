@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1Instance@FlatteningUtils@@QEAA@XZ
     MCAPI ~Instance();
 
     // NOLINTEND

@@ -14,22 +14,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ServerActorManagerProxy@@UEAA@XZ
+    // vIndex: 0
     virtual ~ServerActorManagerProxy() = default;
 
-    // vIndex: 1, symbol: ?initializeActor@ServerActorManagerProxy@@UEAAXAEAVActor@@@Z
+    // vIndex: 1
     virtual void initializeActor(class Actor& actor);
 
-    // vIndex: 2, symbol: ?validate@ServerActorManagerProxy@@UEAA_NAEBVActor@@@Z
+    // vIndex: 2
     virtual bool validate(class Actor const& actor);
 
-    // vIndex: 3, symbol: ?removeActor@ActorManagerProxy@@UEAAXAEAVActor@@@Z
+    // vIndex: 3
     virtual void removeActor(class Actor&);
 
-    // vIndex: 4, symbol: ?removeActorInLevelChunk@ServerActorManagerProxy@@UEAAXAEBVActor@@@Z
+    // vIndex: 4
     virtual void removeActorInLevelChunk(class Actor const& actor);
 
-    // vIndex: 5, symbol: ?deleteActorFromWorldInLevelChunk@ServerActorManagerProxy@@UEAAXAEBVActor@@@Z
+    // vIndex: 5
     virtual void deleteActorFromWorldInLevelChunk(class Actor const& actor);
 
     // NOLINTEND

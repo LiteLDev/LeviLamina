@@ -27,18 +27,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1HoeItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~HoeItem() = default;
 
-    // vIndex: 7, symbol:
-    // ?executeEvent@HoeItem@@UEBAXAEAVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRenderParams@@@Z
+    // vIndex: 7
     virtual void executeEvent(class ItemStackBase& item, std::string const& name, class RenderParams& params) const;
 
-    // vIndex: 50, symbol: ?getEnchantSlot@HoeItem@@UEBAHXZ
+    // vIndex: 50
     virtual int getEnchantSlot() const;
 
-    // symbol:
-    // ??0HoeItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVTier@Item@@AEBVExperiments@@@Z
     MCAPI HoeItem(std::string const& name, int id, class Item::Tier const& tier, class Experiments const& experiments);
 
     // NOLINTEND

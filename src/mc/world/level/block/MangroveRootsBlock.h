@@ -27,17 +27,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MangroveRootsBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~MangroveRootsBlock() = default;
 
-    // vIndex: 25, symbol: ?canConnect@MangroveRootsBlock@@UEBA_NAEBVBlock@@E0@Z
+    // vIndex: 25
     virtual bool canConnect(class Block const& otherBlock, uchar toOther, class Block const& thisBlock) const;
 
-    // vIndex: 57, symbol: ?canContainLiquid@MangroveRootsBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // symbol:
-    // ??0MangroveRootsBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI MangroveRootsBlock(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND

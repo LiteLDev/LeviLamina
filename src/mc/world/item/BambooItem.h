@@ -26,19 +26,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BambooItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~BambooItem() = default;
 
-    // vIndex: 32, symbol: ?getLevelDataForAuxValue@BambooItem@@UEBAHH@Z
+    // vIndex: 32
     virtual int getLevelDataForAuxValue(int auxValue) const;
 
-    // vIndex: 118, symbol:
-    // ?_useOn@BambooItem@@UEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+    // vIndex: 118
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const& clickPos)
         const;
 
-    // symbol: ??0BambooItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI BambooItem(std::string const& name, int id);
 
     // NOLINTEND

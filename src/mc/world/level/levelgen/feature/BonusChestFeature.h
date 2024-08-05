@@ -14,17 +14,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BonusChestFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~BonusChestFeature();
 
-    // vIndex: 3, symbol: ?place@BonusChestFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 3
     virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_place@BonusChestFeature@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     MCAPI bool _place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // NOLINTEND

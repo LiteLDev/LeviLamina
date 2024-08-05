@@ -10,16 +10,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ActorEventResponseFactory@@UEAA@XZ
+    // vIndex: 0
     virtual ~ActorEventResponseFactory();
 
-    // symbol: ??0ActorEventResponseFactory@@QEAA@XZ
     MCAPI ActorEventResponseFactory();
 
-    // symbol: ?initSchema@ActorEventResponseFactory@@QEAAXXZ
     MCAPI void initSchema();
 
-    // symbol: ?initializeFactory@ActorEventResponseFactory@@QEAAXAEBVExperiments@@@Z
     MCAPI void initializeFactory(class Experiments const& experiments);
 
     // NOLINTEND

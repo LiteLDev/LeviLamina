@@ -27,16 +27,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1HangingActorItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~HangingActorItem() = default;
 
-    // vIndex: 118, symbol:
-    // ?_useOn@HangingActorItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+    // vIndex: 118
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor&, class BlockPos pos, uchar face, class Vec3 const& clickPos) const;
 
-    // symbol:
-    // ??0HangingActorItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ActorType@@@Z
     MCAPI HangingActorItem(std::string const& name, int id, ::ActorType type);
 
     // NOLINTEND

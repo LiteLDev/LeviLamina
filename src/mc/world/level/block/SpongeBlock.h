@@ -27,55 +27,48 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SpongeBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~SpongeBlock() = default;
 
-    // vIndex: 50, symbol: ?isValidAuxValue@SpongeBlock@@UEBA_NH@Z
+    // vIndex: 50
     virtual bool isValidAuxValue(int value) const;
 
-    // vIndex: 93, symbol: ?neighborChanged@SpongeBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 93
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@SpongeBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
-    // vIndex: 119, symbol:
-    // ?buildDescriptionId@SpongeBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
+    // vIndex: 119
     virtual std::string buildDescriptionId(class Block const&) const;
 
-    // vIndex: 120, symbol: ?isAuxValueRelevantForPicking@SpongeBlock@@UEBA_NXZ
+    // vIndex: 120
     virtual bool isAuxValueRelevantForPicking() const;
 
-    // vIndex: 134, symbol: ?animateTickBedrockLegacy@SpongeBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 134
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // vIndex: 146, symbol: ?onPlace@SpongeBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 146
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 148, symbol: ?tick@SpongeBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // symbol: ??0SpongeBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI SpongeBlock(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_attemptAbsorbWater@SpongeBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void _attemptAbsorbWater(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ?_evaporateWater@SpongeBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void _evaporateWater(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ?_performAbsorbWater@SpongeBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI bool _performAbsorbWater(class BlockSource& region, class BlockPos const& startPos) const;
 
-    // symbol: ?_setShouldDry@SpongeBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void _setShouldDry(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ?_spawnAbsorbParticles@SpongeBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void _spawnAbsorbParticles(class BlockSource& region, class BlockPos const& pos) const;
 
     // NOLINTEND

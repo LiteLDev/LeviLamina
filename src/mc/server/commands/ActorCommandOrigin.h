@@ -24,55 +24,51 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ActorCommandOrigin@@UEAA@XZ
+    // vIndex: 0
     virtual ~ActorCommandOrigin() = default;
 
-    // vIndex: 1, symbol:
-    // ?getRequestId@ActorCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 1
     virtual std::string const& getRequestId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@ActorCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 3, symbol: ?getBlockPosition@ActorCommandOrigin@@UEBA?AVBlockPos@@XZ
+    // vIndex: 3
     virtual class BlockPos getBlockPosition() const;
 
-    // vIndex: 4, symbol: ?getWorldPosition@ActorCommandOrigin@@UEBA?AVVec3@@XZ
+    // vIndex: 4
     virtual class Vec3 getWorldPosition() const;
 
-    // vIndex: 5, symbol: ?getRotation@ActorCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
+    // vIndex: 5
     virtual std::optional<class Vec2> getRotation() const;
 
-    // vIndex: 6, symbol: ?getLevel@ActorCommandOrigin@@UEBAPEAVLevel@@XZ
+    // vIndex: 6
     virtual class Level* getLevel() const;
 
-    // vIndex: 7, symbol: ?getDimension@ActorCommandOrigin@@UEBAPEAVDimension@@XZ
+    // vIndex: 7
     virtual class Dimension* getDimension() const;
 
-    // vIndex: 8, symbol: ?getEntity@ActorCommandOrigin@@UEBAPEAVActor@@XZ
+    // vIndex: 8
     virtual class Actor* getEntity() const;
 
-    // vIndex: 9, symbol: ?getPermissionsLevel@ActorCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
+    // vIndex: 9
     virtual ::CommandPermissionLevel getPermissionsLevel() const;
 
-    // vIndex: 10, symbol:
-    // ?clone@ActorCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
+    // vIndex: 10
     virtual std::unique_ptr<class CommandOrigin> clone() const;
 
-    // vIndex: 18, symbol: ?isSelectorExpansionAllowed@ActorCommandOrigin@@UEBA_NXZ
+    // vIndex: 18
     virtual bool isSelectorExpansionAllowed() const;
 
-    // vIndex: 23, symbol: ?getOriginType@ActorCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
+    // vIndex: 23
     virtual ::CommandOriginType getOriginType() const;
 
-    // vIndex: 29, symbol: ?serialize@ActorCommandOrigin@@UEBA?AVCompoundTag@@XZ
+    // vIndex: 29
     virtual class CompoundTag serialize() const;
 
-    // vIndex: 30, symbol: ?isValid@ActorCommandOrigin@@UEBA_NXZ
+    // vIndex: 30
     virtual bool isValid() const;
 
-    // symbol: ??0ActorCommandOrigin@@QEAA@AEAVActor@@@Z
     MCAPI explicit ActorCommandOrigin(class Actor& origin);
 
     // NOLINTEND

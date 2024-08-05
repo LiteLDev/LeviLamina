@@ -15,36 +15,33 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SendEventGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~SendEventGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@SendEventGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@SendEventGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@SendEventGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@SendEventGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@SendEventGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@SendEventGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0SendEventGoal@@QEAA@AEAVMob@@AEBV?$vector@USendEventData@@V?$allocator@USendEventData@@@std@@@std@@@Z
     MCAPI SendEventGoal(class Mob& caster, std::vector<struct SendEventData> const& spellTypes);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_selectBestSpell@SendEventGoal@@AEAAHXZ
     MCAPI int _selectBestSpell();
 
     // NOLINTEND

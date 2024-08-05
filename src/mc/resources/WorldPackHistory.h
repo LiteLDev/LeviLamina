@@ -14,16 +14,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0WorldPackHistory@@QEAA@XZ
     MCAPI WorldPackHistory();
 
-    // symbol: ??0WorldPackHistory@@QEAA@AEBV0@@Z
     MCAPI WorldPackHistory(class WorldPackHistory const&);
 
-    // symbol: ?initializeFromJson@WorldPackHistory@@QEAA_NAEBVValue@Json@@@Z
     MCAPI bool initializeFromJson(class Json::Value const& value);
 
-    // symbol: ??1WorldPackHistory@@QEAA@XZ
     MCAPI ~WorldPackHistory();
 
     // NOLINTEND

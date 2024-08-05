@@ -15,33 +15,31 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1StompAttackGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~StompAttackGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@StompAttackGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@StompAttackGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@StompAttackGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@StompAttackGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@StompAttackGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@StompAttackGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?_attemptAttack@StompAttackGoal@@IEAAXAEAVActor@@@Z
     MCAPI void _attemptAttack(class Actor& target);
 
     // NOLINTEND

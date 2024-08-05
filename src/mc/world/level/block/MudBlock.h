@@ -27,37 +27,33 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MudBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~MudBlock() = default;
 
-    // vIndex: 5, symbol:
-    // ?getCollisionShape@MudBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 5
     virtual class AABB
     getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 6, symbol:
-    // ?getCollisionShapeForCamera@MudBlock@@UEBA_NAEAVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 6
     virtual bool
     getCollisionShapeForCamera(class AABB&, class Block const&, class IConstBlockSource const&, class BlockPos const&)
         const;
 
-    // vIndex: 48, symbol: ?canBeOriginalSurface@MudBlock@@UEBA_NXZ
+    // vIndex: 48
     virtual bool canBeOriginalSurface() const;
 
-    // vIndex: 90, symbol: ?breaksFallingBlocks@MudBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
+    // vIndex: 90
     virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
 
-    // vIndex: 143, symbol: ?onRemove@MudBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 143
     virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 149, symbol: ?randomTick@MudBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 149
     virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // symbol: ??0MudBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI MudBlock(std::string const& nameId, int id);
 
-    // symbol: ?BLOCK_AABB@MudBlock@@2VAABB@@A
     MCAPI static class AABB BLOCK_AABB;
 
     // NOLINTEND

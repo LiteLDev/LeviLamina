@@ -12,13 +12,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ActivationArguments@Bedrock@@QEAA@XZ
     MCAPI ActivationArguments();
 
-    // symbol: ?preParseArguments@ActivationArguments@Bedrock@@QEAAXXZ
     MCAPI void preParseArguments();
 
-    // symbol: ??1ActivationArguments@Bedrock@@QEAA@XZ
     MCAPI ~ActivationArguments();
 
     // NOLINTEND

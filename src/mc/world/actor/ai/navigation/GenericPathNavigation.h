@@ -14,22 +14,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1GenericPathNavigation@@UEAA@XZ
+    // vIndex: 0
     virtual ~GenericPathNavigation() = default;
 
-    // vIndex: 1, symbol: ?initializeInternal@GenericPathNavigation@@UEAAXAEAVMob@@PEAUNavigationDescription@@@Z
+    // vIndex: 1
     virtual void initializeInternal(class Mob& mob, struct NavigationDescription* description);
 
-    // vIndex: 2, symbol: ?tick@GenericPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
+    // vIndex: 2
     virtual void tick(class NavigationComponent& parent, class Mob& mob);
 
-    // vIndex: 3, symbol: ?getTempMobPos@GenericPathNavigation@@MEBA?AVVec3@@AEBVMob@@@Z
+    // vIndex: 3
     virtual class Vec3 getTempMobPos(class Mob const& mob) const;
 
-    // vIndex: 9, symbol: ?stop@GenericPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
+    // vIndex: 9
     virtual void stop(class NavigationComponent& parent, class Mob& mob);
 
-    // vIndex: 12, symbol: ?updatePath@GenericPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
+    // vIndex: 12
     virtual void updatePath(class NavigationComponent& parent, class Mob& mob);
 
     // NOLINTEND

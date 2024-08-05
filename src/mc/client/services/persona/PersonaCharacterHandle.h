@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?INVALID@PersonaCharacterHandle@persona@@2U12@B
     MCAPI static struct persona::PersonaCharacterHandle const INVALID;
 
     // NOLINTEND

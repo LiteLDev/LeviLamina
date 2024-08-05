@@ -15,25 +15,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MusicBlockActor@@UEAA@XZ
+    // vIndex: 0
     virtual ~MusicBlockActor() = default;
 
-    // vIndex: 1, symbol: ?load@MusicBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 1
     virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 2, symbol: ?save@MusicBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+    // vIndex: 2
     virtual bool save(class CompoundTag& tag) const;
 
-    // symbol: ??0MusicBlockActor@@QEAA@AEBVBlockPos@@@Z
     MCAPI explicit MusicBlockActor(class BlockPos const& pos);
 
-    // symbol: ?playNote@MusicBlockActor@@QEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void playNote(class BlockSource& region, class BlockPos const& pos);
 
-    // symbol: ?tune@MusicBlockActor@@QEAAXXZ
     MCAPI void tune();
 
-    // symbol: ?getInstrumentIndex@MusicBlockActor@@SA?AV?$optional@H@std@@AEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static std::optional<int> getInstrumentIndex(class BlockSource& region, class BlockPos const& pos);
 
     // NOLINTEND

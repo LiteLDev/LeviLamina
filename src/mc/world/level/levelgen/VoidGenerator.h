@@ -22,14 +22,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 47, symbol: ?createNoiseCache@VoidGenerator@@MEBA?AVChunkLocalNoiseCache@@VChunkPos@@@Z
+    // vIndex: 47
     virtual class ChunkLocalNoiseCache createNoiseCache(class ChunkPos chunkPos) const;
 
-    // vIndex: 48, symbol: ?createWorldGenCache@VoidGenerator@@MEBA?AVWorldGenCache@@VChunkPos@@@Z
+    // vIndex: 48
     virtual class WorldGenCache createWorldGenCache(class ChunkPos chunkPos) const;
 
-    // vIndex: 45, symbol:
-    // ?decorateWorldGenLoadChunk@VoidGenerator@@MEBAXAEBVBiome@@AEAVLevelChunk@@AEAVBlockVolumeTarget@@AEAVRandom@@AEBVChunkPos@@@Z
+    // vIndex: 45
     virtual void decorateWorldGenLoadChunk(
         class Biome const&       biome,
         class LevelChunk&        lc,
@@ -38,8 +37,7 @@ public:
         class ChunkPos const&    pos
     ) const;
 
-    // vIndex: 46, symbol:
-    // ?decorateWorldGenPostProcess@VoidGenerator@@MEBAXAEBVBiome@@AEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@@Z
+    // vIndex: 46
     virtual void decorateWorldGenPostProcess(
         class Biome const& biome,
         class LevelChunk&  lc,
@@ -47,26 +45,25 @@ public:
         class Random&      random
     ) const;
 
-    // vIndex: 43, symbol: ?findSpawnPosition@VoidGenerator@@UEBA?AVBlockPos@@XZ
+    // vIndex: 43
     virtual class BlockPos findSpawnPosition() const;
 
-    // vIndex: 40, symbol: ?getBiomeArea@VoidGenerator@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z
+    // vIndex: 40
     virtual class BiomeArea getBiomeArea(class BoundingBox const& area, uint scale) const;
 
-    // vIndex: 41, symbol: ?getBiomeSource@VoidGenerator@@UEBAAEBVBiomeSource@@XZ
+    // vIndex: 41
     virtual class BiomeSource const& getBiomeSource() const;
 
-    // vIndex: 42, symbol: ?getBlockVolumeDimensions@VoidGenerator@@UEBA?AUBlockVolumeDimensions@WorldGenerator@@XZ
+    // vIndex: 42
     virtual struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const;
 
-    // vIndex: 11, symbol: ?loadChunk@VoidGenerator@@UEAAXAEAVLevelChunk@@_N@Z
+    // vIndex: 11
     virtual void loadChunk(class LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
-    // vIndex: 9, symbol: ?postProcess@VoidGenerator@@UEAA_NAEAVChunkViewSource@@@Z
+    // vIndex: 9
     virtual bool postProcess(class ChunkViewSource& neighborhood);
 
-    // vIndex: 39, symbol:
-    // ?prepareAndComputeHeights@VoidGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@AEAV?$vector@FV?$allocator@F@std@@@std@@_NH@Z
+    // vIndex: 39
     virtual void prepareAndComputeHeights(
         class BlockVolume&    box,
         class ChunkPos const& chunkPos,
@@ -75,10 +72,9 @@ public:
         int                   skipTopN
     );
 
-    // vIndex: 38, symbol: ?prepareHeights@VoidGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@_N@Z
+    // vIndex: 38
     virtual void prepareHeights(class BlockVolume& box, class ChunkPos const& chunkPos, bool factorInBeardsAndShavers);
 
-    // symbol: ??0VoidGenerator@@QEAA@AEAVDimension@@@Z
     MCAPI VoidGenerator(class Dimension& dimension);
 
     // NOLINTEND

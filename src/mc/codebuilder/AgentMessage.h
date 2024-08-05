@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1AgentMessage@CodeBuilder@@QEAA@XZ
     MCAPI ~AgentMessage();
 
     // NOLINTEND

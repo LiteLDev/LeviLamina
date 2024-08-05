@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0Quaternion@@QEAA@AEBVMatrix@@@Z
     MCAPI explicit Quaternion(class Matrix const& rot);
 
     // NOLINTEND

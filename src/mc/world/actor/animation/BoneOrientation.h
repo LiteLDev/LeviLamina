@@ -10,16 +10,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0BoneOrientation@@QEAA@XZ
     MCAPI BoneOrientation();
 
-    // symbol: ?getName@BoneOrientation@@QEBAAEBVHashedString@@XZ
     MCAPI class HashedString const& getName() const;
 
-    // symbol: ?getPivot@BoneOrientation@@QEAAAEAVVec3@@XZ
     MCAPI class Vec3& getPivot();
 
-    // symbol: ?getPivot@BoneOrientation@@QEBAAEBVVec3@@XZ
     MCAPI class Vec3 const& getPivot() const;
 
     // NOLINTEND

@@ -27,14 +27,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1FaceDirectionalBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~FaceDirectionalBlock();
 
-    // vIndex: 50, symbol: ?isValidAuxValue@FaceDirectionalBlock@@UEBA_NH@Z
+    // vIndex: 50
     virtual bool isValidAuxValue(int auxValue) const;
 
-    // vIndex: 98, symbol:
-    // ?getPlacementBlock@FaceDirectionalBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+    // vIndex: 98
     virtual class Block const& getPlacementBlock(
         class Actor const&    by,
         class BlockPos const& pos,
@@ -43,17 +42,15 @@ public:
         int                   itemValue
     ) const;
 
-    // vIndex: 131, symbol: ?getRenderBlock@FaceDirectionalBlock@@UEBAAEBVBlock@@XZ
+    // vIndex: 131
     virtual class Block const& getRenderBlock() const;
 
-    // vIndex: 132, symbol: ?getMappedFace@FaceDirectionalBlock@@UEBAEEAEBVBlock@@@Z
+    // vIndex: 132
     virtual uchar getMappedFace(uchar face, class Block const& block) const;
 
-    // vIndex: 133, symbol: ?getFaceFlip@FaceDirectionalBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
+    // vIndex: 133
     virtual ::Flip getFaceFlip(uchar face, class Block const& block) const;
 
-    // symbol:
-    // ??0FaceDirectionalBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@_NM@Z
     MCAPI FaceDirectionalBlock(
         std::string const&    nameId,
         int                   id,
@@ -62,13 +59,10 @@ public:
         float                 yRotOffset
     );
 
-    // symbol: ?getFaceFlipStatic@FaceDirectionalBlock@@SA?AW4Flip@@EAEBVBlock@@_N@Z
     MCAPI static ::Flip getFaceFlipStatic(uchar face, class Block const& block, bool horizontalOnly);
 
-    // symbol: ?getFacingDirection@FaceDirectionalBlock@@SAEAEBVBlock@@_N@Z
     MCAPI static uchar getFacingDirection(class Block const& block, bool horizontalOnly);
 
-    // symbol: ?getMappedFaceStatic@FaceDirectionalBlock@@SAEEAEBVBlock@@_N@Z
     MCAPI static uchar getMappedFaceStatic(uchar face, class Block const& block, bool horizontalOnly);
 
     // NOLINTEND

@@ -18,16 +18,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptValue@Scripting@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptValue();
 
-    // symbol: ??0ScriptValue@Scripting@@QEAA@XZ
     MCAPI ScriptValue();
 
-    // symbol: ?getContextId@ScriptValue@Scripting@@QEBA?AUContextId@2@XZ
     MCAPI struct Scripting::ContextId getContextId() const;
 
-    // symbol: ?getWeakLifetimeScope@ScriptValue@Scripting@@QEBA?AVWeakLifetimeScope@2@XZ
     MCAPI class Scripting::WeakLifetimeScope getWeakLifetimeScope() const;
 
     // NOLINTEND

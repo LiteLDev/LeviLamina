@@ -30,14 +30,11 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __gen_??1Definition@SonicBoomGoal@@UEAA@XZ
+        // vIndex: 0
         virtual ~Definition() = default;
 
-        // symbol: ?initialize@Definition@SonicBoomGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext& entity, class SonicBoomGoal& goal) const;
 
-        // symbol:
-        // ?buildSchema@Definition@SonicBoomGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDefinition@SonicBoomGoal@@@JsonUtil@@@4@@Z
         MCAPI static void buildSchema(
             std::string const& name,
             std::shared_ptr<
@@ -55,29 +52,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SonicBoomGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~SonicBoomGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@SonicBoomGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@SonicBoomGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@SonicBoomGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@SonicBoomGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@SonicBoomGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@SonicBoomGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0SonicBoomGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit SonicBoomGoal(class Mob& mob);
 
     // NOLINTEND

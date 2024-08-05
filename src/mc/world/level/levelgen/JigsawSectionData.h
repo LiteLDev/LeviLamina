@@ -20,19 +20,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0JigsawSectionData@worldgen@br@@QEAA@$$QEAV012@@Z
     MCAPI JigsawSectionData(class br::worldgen::JigsawSectionData&&);
 
-    // symbol: ??0JigsawSectionData@worldgen@br@@QEAA@AEBV012@@Z
     MCAPI JigsawSectionData(class br::worldgen::JigsawSectionData const&);
 
-    // symbol: ?push@JigsawSectionData@worldgen@br@@QEAA?AW4JigsawSectionDataKey@23@PEBVStructurePoolElement@@H@Z
     MCAPI ::br::worldgen::JigsawSectionDataKey push(class StructurePoolElement const*, int);
 
-    // symbol: ?reserve@JigsawSectionData@worldgen@br@@QEAAX_K@Z
     MCAPI void reserve(uint64);
 
-    // symbol: ??1JigsawSectionData@worldgen@br@@QEAA@XZ
     MCAPI ~JigsawSectionData();
 
     // NOLINTEND

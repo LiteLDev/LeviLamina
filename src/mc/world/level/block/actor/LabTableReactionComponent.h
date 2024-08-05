@@ -11,16 +11,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1LabTableReactionComponent@@UEAA@XZ
+    // vIndex: 0
     virtual ~LabTableReactionComponent();
 
-    // vIndex: 1, symbol: ?_onStart@LabTableReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z
+    // vIndex: 1
     virtual void _onStart(class LabTableReaction& owner, class BlockSource& region);
 
-    // vIndex: 2, symbol: ?_onTick@LabTableReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z
+    // vIndex: 2
     virtual void _onTick(class LabTableReaction& owner, class BlockSource& region);
 
-    // vIndex: 3, symbol: ?_onEnd@LabTableReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z
+    // vIndex: 3
     virtual void _onEnd(class LabTableReaction&, class BlockSource&);
 
     // NOLINTEND

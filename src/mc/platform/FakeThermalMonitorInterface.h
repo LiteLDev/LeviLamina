@@ -14,19 +14,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FakeThermalMonitorInterface@@UEAA@XZ
+    // vIndex: 0
     virtual ~FakeThermalMonitorInterface() = default;
 
-    // vIndex: 1, symbol: ?getThermalState@FakeThermalMonitorInterface@@UEBA?AW4ThermalState@@XZ
+    // vIndex: 1
     virtual ::ThermalState getThermalState() const;
 
-    // vIndex: 2, symbol: ?getThermalValueCelsius@FakeThermalMonitorInterface@@UEBAMXZ
+    // vIndex: 2
     virtual float getThermalValueCelsius() const;
 
-    // vIndex: 3, symbol: ?isLowBatteryModeEnabled@FakeThermalMonitorInterface@@UEBA_NXZ
+    // vIndex: 3
     virtual bool isLowBatteryModeEnabled() const;
 
-    // symbol: ??0FakeThermalMonitorInterface@@QEAA@XZ
     MCAPI FakeThermalMonitorInterface();
 
     // NOLINTEND

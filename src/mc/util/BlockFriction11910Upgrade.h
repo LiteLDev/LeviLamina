@@ -21,22 +21,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BlockFriction11910Upgrade@BlockFrictionVersioning@@UEAA@XZ
+    // vIndex: 0
     virtual ~BlockFriction11910Upgrade() = default;
 
-    // vIndex: 1, symbol:
-    // ?previousSchema@BlockFriction11910Upgrade@BlockFrictionVersioning@@UEBA_NAEBV?$GenericValue@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@@rapidjson@@@Z
+    // vIndex: 1
     virtual bool previousSchema(rapidjson::GenericValue<
                                 rapidjson::UTF8<char>,
                                 rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>> const&) const;
 
-    // vIndex: 2, symbol:
-    // ?upgradeToNext@BlockFriction11910Upgrade@BlockFrictionVersioning@@UEBAXAEAV?$GenericDocument@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@VCrtAllocator@2@@rapidjson@@AEBVSemVersion@@@Z
+    // vIndex: 2
     virtual void
     upgradeToNext(rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&, class SemVersion const&)
         const;
 
-    // symbol: ??0BlockFriction11910Upgrade@BlockFrictionVersioning@@QEAA@XZ
     MCAPI BlockFriction11910Upgrade();
 
     // NOLINTEND

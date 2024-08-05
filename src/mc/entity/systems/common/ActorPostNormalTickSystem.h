@@ -11,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystemClient@ActorPostNormalTickSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystemClient();
 
-    // symbol: ?createSystemServer@ActorPostNormalTickSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystemServer();
 
     // NOLINTEND

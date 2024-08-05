@@ -36,8 +36,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?placeDecoration@AttachableDecoration@TreeHelper@@QEBAXAEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEBUDirectionMask@12@@Z
     MCAPI void placeDecoration(
         class IBlockWorldGenAPI&                                      target,
         class BlockPos const&                                         pos,
@@ -45,15 +43,12 @@ public:
         struct TreeHelper::AttachableDecoration::DirectionMask const& mask
     ) const;
 
-    // symbol: ??1AttachableDecoration@TreeHelper@@QEAA@XZ
     MCAPI ~AttachableDecoration();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_placeMultiDecoration@AttachableDecoration@TreeHelper@@AEBAXAEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEBVBlock@@1@Z
     MCAPI void _placeMultiDecoration(
         class IBlockWorldGenAPI& target,
         class BlockPos const&    pos,

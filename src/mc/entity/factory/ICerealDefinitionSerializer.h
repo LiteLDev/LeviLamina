@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ICerealDefinitionSerializer@@UEAA@XZ
     MCVAPI ~ICerealDefinitionSerializer();
 
     // NOLINTEND

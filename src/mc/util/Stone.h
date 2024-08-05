@@ -9,7 +9,6 @@ namespace FlatteningUtils { struct Instance; }
 
 namespace FlatteningUtils::Stone {
 // NOLINTBEGIN
-// symbol: ?get@Stone@FlatteningUtils@@YA?AUInstance@2@XZ
 MCAPI struct FlatteningUtils::Instance get();
 // NOLINTEND
 

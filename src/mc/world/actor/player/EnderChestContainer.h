@@ -13,28 +13,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1EnderChestContainer@@UEAA@XZ
+    // vIndex: 0
     virtual ~EnderChestContainer() = default;
 
-    // vIndex: 5, symbol: ?addRemovedListener@EnderChestContainer@@UEAAXPEAVContainerRemovedListener@@@Z
+    // vIndex: 5
     virtual void addRemovedListener(class ContainerRemovedListener*);
 
-    // vIndex: 6, symbol: ?removeRemovedListener@EnderChestContainer@@UEAAXPEAVContainerRemovedListener@@@Z
+    // vIndex: 6
     virtual void removeRemovedListener(class ContainerRemovedListener*);
 
-    // vIndex: 22, symbol: ?startOpen@EnderChestContainer@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 22
     virtual void startOpen(class Player& player);
 
-    // vIndex: 23, symbol: ?stopOpen@EnderChestContainer@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 23
     virtual void stopOpen(class Player& player);
 
-    // symbol: ??0EnderChestContainer@@QEAA@XZ
     MCAPI EnderChestContainer();
 
-    // symbol: ?setActiveChest@EnderChestContainer@@QEAAXPEAVChestBlockActor@@@Z
     MCAPI void setActiveChest(class ChestBlockActor* chest);
 
-    // symbol: ?ITEMS_SIZE@EnderChestContainer@@2HB
     MCAPI static int const ITEMS_SIZE;
 
     // NOLINTEND

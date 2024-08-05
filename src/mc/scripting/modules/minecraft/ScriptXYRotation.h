@@ -22,11 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?bind@ScriptXYRotation@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@VVec2@@@Scripting@@XZ
     MCAPI static class Scripting::InterfaceBindingBuilder<class Vec2> bind();
 
-    // symbol:
-    // ?bindV010@ScriptXYRotation@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptXYRotation@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptXYRotation> bindV010();
 
     // NOLINTEND

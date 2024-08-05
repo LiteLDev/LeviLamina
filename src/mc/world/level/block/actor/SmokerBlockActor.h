@@ -14,10 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getName@SmokerBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCVAPI std::string getName() const;
 
-    // symbol: ??0SmokerBlockActor@@QEAA@AEBVBlockPos@@@Z
     MCAPI explicit SmokerBlockActor(class BlockPos const& blockPos);
 
     // NOLINTEND

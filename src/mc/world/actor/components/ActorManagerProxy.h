@@ -14,7 +14,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?removeActor@ActorManagerProxy@@UEAAXAEAVActor@@@Z
     MCVAPI void removeActor(class Actor&);
 
     // NOLINTEND

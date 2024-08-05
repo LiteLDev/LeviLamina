@@ -27,13 +27,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1RailBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~RailBlock() = default;
 
-    // vIndex: 129, symbol: ?getVariant@RailBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const& block) const;
 
-    // symbol: ??0RailBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI RailBlock(std::string const& nameId, int id);
 
     // NOLINTEND

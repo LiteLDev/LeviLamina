@@ -14,10 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SmoothStoneSelector@@UEAA@XZ
+    // vIndex: 0
     virtual ~SmoothStoneSelector();
 
-    // vIndex: 1, symbol: ?next@SmoothStoneSelector@@UEBAAEBVBlock@@AEAVRandom@@HHH_N@Z
+    // vIndex: 1
     virtual class Block const& next(class Random& random, int, int, int, bool isEdge) const;
 
     // NOLINTEND

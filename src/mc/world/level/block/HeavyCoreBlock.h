@@ -27,22 +27,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1HeavyCoreBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~HeavyCoreBlock() = default;
 
-    // vIndex: 19, symbol:
-    // ?liquidCanFlowIntoFromDirection@HeavyCoreBlock@@UEBA_NEAEBV?$function@$$A6AAEBVBlock@@AEBVBlockPos@@@Z@std@@AEBVBlockPos@@@Z
+    // vIndex: 19
     virtual bool
     liquidCanFlowIntoFromDirection(uchar, std::function<class Block const&(class BlockPos const&)> const&, class BlockPos const&)
         const;
 
-    // vIndex: 23, symbol: ?canProvideSupport@HeavyCoreBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
+    // vIndex: 23
     virtual bool canProvideSupport(class Block const&, uchar, ::BlockSupportType) const;
 
-    // vIndex: 57, symbol: ?canContainLiquid@HeavyCoreBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // symbol: ??0HeavyCoreBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI HeavyCoreBlock(std::string const&, int);
 
     // NOLINTEND

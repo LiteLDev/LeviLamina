@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@ActorRefreshComponentsSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
     // NOLINTEND

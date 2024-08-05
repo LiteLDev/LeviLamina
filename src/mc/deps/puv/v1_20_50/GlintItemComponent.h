@@ -18,7 +18,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?bindType@GlintItemComponent@v1_20_50@Puv@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // NOLINTEND

@@ -19,32 +19,29 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ServerMapDataManager@@UEAA@XZ
+    // vIndex: 0
     virtual ~ServerMapDataManager() = default;
 
-    // vIndex: 1, symbol:
-    // ?registerOnCreateMapSavedDataCallback@ServerMapDataManager@@UEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXAEAVMapItemSavedData@@@Z@std@@@Z
+    // vIndex: 1
     virtual class Bedrock::PubSub::Subscription
         registerOnCreateMapSavedDataCallback(std::function<void(class MapItemSavedData&)>);
 
-    // vIndex: 2, symbol:
-    // ?registerOnGameplayUserAddedSubscription@ServerMapDataManager@@UEAAXAEAVGameplayUserManager@@@Z
+    // vIndex: 2
     virtual void registerOnGameplayUserAddedSubscription(class GameplayUserManager&);
 
-    // vIndex: 3, symbol: ?createMapSavedData@ServerMapDataManager@@UEAAAEAVMapItemSavedData@@AEBUActorUniqueID@@@Z
+    // vIndex: 3
     virtual class MapItemSavedData& createMapSavedData(struct ActorUniqueID const&);
 
-    // vIndex: 4, symbol: ?requestMapInfo@ServerMapDataManager@@UEAAXUActorUniqueID@@_N@Z
+    // vIndex: 4
     virtual void requestMapInfo(struct ActorUniqueID, bool);
 
-    // vIndex: 5, symbol: ?_copyAndLockMap@ServerMapDataManager@@EEAAXUActorUniqueID@@0@Z
+    // vIndex: 5
     virtual void _copyAndLockMap(struct ActorUniqueID, struct ActorUniqueID);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_onGameplayUserAdded@ServerMapDataManager@@AEAAXAEAVEntityContext@@@Z
     MCAPI void _onGameplayUserAdded(class EntityContext&);
 
     // NOLINTEND

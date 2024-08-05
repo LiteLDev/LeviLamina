@@ -41,17 +41,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 9, symbol: ?postProcess@OverworldGenerator@@UEAA_NAEAVChunkViewSource@@@Z
+    // vIndex: 9
     virtual bool postProcess(class ChunkViewSource& neighborhood);
 
-    // vIndex: 11, symbol: ?loadChunk@OverworldGenerator@@UEAAXAEAVLevelChunk@@_N@Z
+    // vIndex: 11
     virtual void loadChunk(class LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
-    // vIndex: 38,  symbol: ?prepareHeights@OverworldGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@_N@Z
+    // vIndex: 38
     virtual void prepareHeights(class BlockVolume& box, class ChunkPos const& chunkPos, bool factorInBeardsAndShavers);
 
-    // vIndex: 39, symbol:
-    // ?prepareAndComputeHeights@OverworldGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@AEAV?$vector@FV?$allocator@F@std@@@std@@_NH@Z
+    // vIndex: 39
     virtual void prepareAndComputeHeights(
         class BlockVolume&    box,
         class ChunkPos const& chunkPos,
@@ -60,14 +59,13 @@ public:
         int                   skipTopN
     );
 
-    // vIndex: 40, symbol: ?getBiomeArea@OverworldGenerator@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z
+    // vIndex: 40
     virtual class BiomeArea getBiomeArea(class BoundingBox const& area, uint scale) const;
 
-    // vIndex: 42, symbol: ?getBlockVolumeDimensions@OverworldGenerator@@UEBA?AUBlockVolumeDimensions@WorldGenerator@@XZ
+    // vIndex: 42
     virtual struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const;
 
-    // vIndex: 46, symbol:
-    // ?decorateWorldGenLoadChunk@OverworldGenerator@@MEBAXAEBVBiome@@AEAVLevelChunk@@AEAVBlockVolumeTarget@@AEAVRandom@@AEBVChunkPos@@@Z
+    // vIndex: 46
     virtual void decorateWorldGenLoadChunk(
         class Biome const&       biome,
         class LevelChunk&        lc,
@@ -86,8 +84,7 @@ public:
     // vIndex: 50
     virtual std::optional<class XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory() const = 0;
 
-    // vIndex: 51, symbol:
-    // ?tryMakeAquifer@OverworldGenerator@@MEBA?AV?$unique_ptr@VAquifer@@U?$default_delete@VAquifer@@@std@@@std@@AEBVChunkPos@@AEBVSurfaceLevelCache@@FFF@Z
+    // vIndex: 51
     virtual std::unique_ptr<class Aquifer> tryMakeAquifer(
         class ChunkPos const&          chunkPos,
         class SurfaceLevelCache const& surfaceLevelCache,
@@ -96,10 +93,10 @@ public:
         short                          seaLevel
     ) const;
 
-    // vIndex: 52, symbol: ?createNoiseCache@OverworldGenerator@@MEBA?AVChunkLocalNoiseCache@@VChunkPos@@@Z
+    // vIndex: 52
     virtual class ChunkLocalNoiseCache createNoiseCache(class ChunkPos chunkPos) const;
 
-    // vIndex: 53, symbol: ?createWorldGenCache@OverworldGenerator@@MEBA?AVWorldGenCache@@VChunkPos@@@Z
+    // vIndex: 53
     virtual class WorldGenCache createWorldGenCache(class ChunkPos) const;
 
     // vIndex: 54
@@ -120,14 +117,10 @@ public:
         int                                                                   skipTopN
     ) = 0;
 
-    // symbol: ??1OverworldGenerator@@UEAA@XZ
     virtual ~OverworldGenerator();
 
-    // symbol: ??0OverworldGenerator@@QEAA@AEAVDimension@@_N@Z
     MCAPI OverworldGenerator(class Dimension&, bool);
 
-    // symbol:
-    // ?buildSurfaces@OverworldGenerator@@QEAAXAEAUThreadData@1@AEAVBlockVolume@@AEAVLevelChunk@@AEBVChunkPos@@AEBVSurfaceLevelCache@@@Z
     MCAPI void buildSurfaces(
         struct OverworldGenerator::ThreadData& thread,
         class BlockVolume&                     blocks,

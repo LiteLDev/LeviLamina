@@ -28,41 +28,36 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MovingBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~MovingBlock() = default;
 
-    // vIndex: 5, symbol:
-    // ?getCollisionShape@MovingBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 5
     virtual class AABB
     getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 10, symbol:
-    // ?getVisualShapeInWorld@MovingBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
+    // vIndex: 10
     virtual class AABB const&
     getVisualShapeInWorld(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 26, symbol: ?isMovingBlock@MovingBlock@@UEBA_NXZ
+    // vIndex: 26
     virtual bool isMovingBlock() const;
 
-    // vIndex: 74, symbol:
-    // ?updateEntityAfterFallOn@MovingBlock@@UEBAXAEBVBlockPos@@AEAUUpdateEntityAfterFallOnInterface@@@Z
+    // vIndex: 74
     virtual void
     updateEntityAfterFallOn(class BlockPos const& pos, struct UpdateEntityAfterFallOnInterface& entity) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@MovingBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 109, symbol: ?pushesUpFallingBlocks@MovingBlock@@UEBA_NXZ
+    // vIndex: 109
     virtual bool pushesUpFallingBlocks() const;
 
-    // vIndex: 142, symbol: ?_addHardCodedBlockComponents@MovingBlock@@MEAAXAEBVExperiments@@@Z
+    // vIndex: 142
     virtual void _addHardCodedBlockComponents(class Experiments const&);
 
-    // symbol: ??0MovingBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI MovingBlock(std::string const& nameId, int id);
 
-    // symbol: ?onFallOn@MovingBlock@@QEBAXAEAUBlockFallOnEvent@BlockEvents@@@Z
     MCAPI void onFallOn(struct BlockEvents::BlockFallOnEvent&) const;
 
     // NOLINTEND

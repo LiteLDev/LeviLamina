@@ -19,11 +19,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CherryTreeCanopy@@UEAA@XZ
+    // vIndex: 0
     virtual ~CherryTreeCanopy() = default;
 
-    // vIndex: 1, symbol:
-    // ?placeCanopy@CherryTreeCanopy@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@AEBUTreeParams@TreeHelper@@AEBV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@3@@Z
+    // vIndex: 1
     virtual std::optional<class BlockPos>
     placeCanopy(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random, class RenderParams&, struct TreeHelper::TreeParams const& treeParams, std::vector<class BlockPos> const&)
         const;
@@ -32,8 +31,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_placeLayerOfLeaves@CherryTreeCanopy@@AEBAXAEAVIBlockWorldGenAPI@@AEAVRandom@@AEBVBlockPos@@HAEBVBlock@@HAEBUTreeParams@TreeHelper@@@Z
     MCAPI void _placeLayerOfLeaves(
         class IBlockWorldGenAPI& target,
         class Random&            random,
@@ -44,8 +41,6 @@ public:
         struct TreeHelper::TreeParams const& treeParams
     ) const;
 
-    // symbol:
-    // ?_placeLayerOfLeavesWithHangingLeavesBelow@CherryTreeCanopy@@AEBAXAEAVIBlockWorldGenAPI@@AEAVRandom@@AEBVBlockPos@@HAEBVBlock@@HAEBUTreeParams@TreeHelper@@@Z
     MCAPI void _placeLayerOfLeavesWithHangingLeavesBelow(
         class IBlockWorldGenAPI& target,
         class Random&            random,
@@ -56,8 +51,6 @@ public:
         struct TreeHelper::TreeParams const& treeParams
     ) const;
 
-    // symbol:
-    // ?_tryPlaceBlock@CherryTreeCanopy@@AEBA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEBVBlock@@AEBUTreeParams@TreeHelper@@@Z
     MCAPI bool _tryPlaceBlock(
         class IBlockWorldGenAPI& target,
         class BlockPos const&    pos,

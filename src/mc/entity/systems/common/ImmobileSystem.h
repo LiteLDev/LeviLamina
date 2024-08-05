@@ -15,15 +15,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@ImmobileSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?doImmobileSystem@ImmobileSystem@@CAXAEBVStrictEntityContext@@AEAULocalMoveVelocityComponent@@AEAUMobRotationComponent@@AEAUStateVectorComponent@@V?$EntityModifier@V?$FlagComponent@UMobIsJumpingFlag@@@@@@@Z
     MCAPI static void doImmobileSystem(
         class StrictEntityContext const& context,
         struct LocalMoveVelocityComponent&,

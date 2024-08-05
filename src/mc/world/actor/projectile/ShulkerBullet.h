@@ -35,28 +35,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 4, symbol: ?reloadHardcoded@ShulkerBullet@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 4
     virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: __gen_??1ShulkerBullet@@UEAA@XZ
+    // vIndex: 10
     virtual ~ShulkerBullet() = default;
 
-    // vIndex: 26, symbol: ?normalTick@ShulkerBullet@@UEAAXXZ
+    // vIndex: 26
     virtual void normalTick();
 
-    // vIndex: 51, symbol: ?isOnFire@ShulkerBullet@@UEBA_NXZ
+    // vIndex: 51
     virtual bool isOnFire() const;
 
-    // vIndex: 90, symbol: ?getSourceUniqueID@ShulkerBullet@@UEBA?AUActorUniqueID@@XZ
+    // vIndex: 90
     virtual struct ActorUniqueID getSourceUniqueID() const;
 
-    // vIndex: 147, symbol: ?readAdditionalSaveData@ShulkerBullet@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 148, symbol: ?addAdditionalSaveData@ShulkerBullet@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // symbol: ??0ShulkerBullet@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI ShulkerBullet(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

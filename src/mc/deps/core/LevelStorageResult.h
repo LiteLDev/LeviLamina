@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1LevelStorageResult@Core@@QEAA@XZ
     MCAPI ~LevelStorageResult();
 
     // NOLINTEND

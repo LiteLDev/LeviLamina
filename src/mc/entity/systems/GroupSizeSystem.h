@@ -14,26 +14,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1GroupSizeSystem@@UEAA@XZ
+    // vIndex: 0
     virtual ~GroupSizeSystem() = default;
 
-    // vIndex: 1, symbol: ?registerEvents@ISystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
+    // vIndex: 1
     virtual void registerEvents(entt::dispatcher&);
 
-    // vIndex: 2, symbol: ?tick@GroupSizeSystem@@UEAAXAEAVEntityRegistry@@@Z
+    // vIndex: 2
     virtual void tick(class EntityRegistry& registry);
 
-    // vIndex: 3, symbol: ?singleTick@ITickingSystem@@UEAAXAEAVEntityRegistry@@AEAVEntityContext@@@Z
+    // vIndex: 3
     virtual void singleTick(class EntityRegistry& registry, class EntityContext& entity);
 
-    // vIndex: 4, symbol: ?singleTick@ITickingSystem@@UEAAXAEAVEntityRegistry@@AEAVStrictEntityContext@@@Z
+    // vIndex: 4
     virtual void singleTick(class EntityRegistry& registry, class StrictEntityContext& entity);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_tickComponent@GroupSizeSystem@@CAXAEAVActorOwnerComponent@@AEAVGroupSizeComponent@@@Z
     MCAPI static void _tickComponent(class ActorOwnerComponent&, class GroupSizeComponent& groupSizeComponent);
 
     // NOLINTEND

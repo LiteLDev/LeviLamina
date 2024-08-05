@@ -20,16 +20,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1UnderwaterCaveFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~UnderwaterCaveFeature() = default;
 
-    // vIndex: 5, symbol:
-    // ?carveEllipsoidVolume@UnderwaterCaveFeature@@MEBA_NAEAVIBlockWorldGenAPI@@AEBUCarverConfiguration@CaveFeatureUtils@@AEAVRandom@@AEBVChunkPos@@AEBVVec3@@AEBVBoundingBox@@MMAEBUCarvingParameters@4@@Z
+    // vIndex: 5
     virtual bool
     carveEllipsoidVolume(class IBlockWorldGenAPI& target, struct CaveFeatureUtils::CarverConfiguration const& configuration, class Random& random, class ChunkPos const& pos, class Vec3 const& startPos, class BoundingBox const& volume, float rad, float yRad, struct CaveFeatureUtils::CarvingParameters const&)
         const;
 
-    // symbol: ?isDiggable@UnderwaterCaveFeature@@SA_NAEBVBlock@@@Z
     MCAPI static bool isDiggable(class Block const& block);
 
     // NOLINTEND

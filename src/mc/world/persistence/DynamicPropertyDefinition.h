@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1DynamicPropertyDefinition@@QEAA@XZ
     MCAPI ~DynamicPropertyDefinition();
 
     // NOLINTEND

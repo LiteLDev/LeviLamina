@@ -14,18 +14,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?_read@ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     MCVAPI class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ?_write@ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING@@MEBAXAEAVBinaryStream@@@Z
     MCVAPI void _write(class BinaryStream& stream) const;
 
-    // symbol:
-    // ?postLoadItems_DEPRECATEDASKTYLAING@ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING@@UEAAXAEAVBlockPalette@@_N@Z
     MCVAPI void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette& blockPalette, bool isClientSide);
 
-    // symbol: ??0ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING@@QEAA@XZ
     MCAPI ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING();
 
     // NOLINTEND

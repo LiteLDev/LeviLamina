@@ -27,15 +27,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1EndGatewayBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~EndGatewayBlock() = default;
 
-    // vIndex: 1, symbol:
-    // ?newBlockEntity@EndGatewayBlock@@UEBA?AV?$shared_ptr@VBlockActor@@@std@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 1
     virtual std::shared_ptr<class BlockActor> newBlockEntity(class BlockPos const& pos, class Block const& block) const;
 
-    // vIndex: 7, symbol:
-    // ?addCollisionShapes@EndGatewayBlock@@UEBA_NAEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 7
     virtual bool addCollisionShapes(
         class Block const&                                         block,
         class IConstBlockSource const&                             region,
@@ -45,26 +43,24 @@ public:
         class optional_ref<class GetCollisionShapeInterface const> entity
     ) const;
 
-    // vIndex: 33, symbol: ?isWaterBlocking@EndGatewayBlock@@UEBA_NXZ
+    // vIndex: 33
     virtual bool isWaterBlocking() const;
 
-    // vIndex: 56, symbol: ?waterSpreadCausesSpawn@EndGatewayBlock@@UEBA_NXZ
+    // vIndex: 56
     virtual bool waterSpreadCausesSpawn() const;
 
-    // vIndex: 57, symbol: ?canContainLiquid@EndGatewayBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // vIndex: 78, symbol: ?canRenderSelectionOverlay@EndGatewayBlock@@UEBA_NW4BlockRenderLayer@@@Z
+    // vIndex: 78
     virtual bool canRenderSelectionOverlay(::BlockRenderLayer) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@EndGatewayBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 134, symbol:
-    // ?animateTickBedrockLegacy@EndGatewayBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 134
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // symbol: ??0EndGatewayBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI EndGatewayBlock(std::string const& nameId, int id);
 
     // NOLINTEND

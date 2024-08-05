@@ -11,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createCleanupSystem@TriggerJumpSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createCleanupSystem();
 
-    // symbol: ?createTriggerJumpSystem@TriggerJumpSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createTriggerJumpSystem();
 
     // NOLINTEND

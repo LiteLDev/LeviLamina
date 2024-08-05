@@ -20,23 +20,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BlockQueuedTickingDescription@@UEAA@XZ
+    // vIndex: 0
     virtual ~BlockQueuedTickingDescription() = default;
 
-    // vIndex: 1, symbol:
-    // ?getName@BlockQueuedTickingDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 1
     virtual std::string const& getName() const;
 
-    // vIndex: 3, symbol: ?initializeComponent@BlockQueuedTickingDescription@@UEBAXAEAVBlockComponentStorage@@@Z
+    // vIndex: 3
     virtual void initializeComponent(class BlockComponentStorage&) const;
 
-    // symbol: ??0BlockQueuedTickingDescription@@QEAA@XZ
     MCAPI BlockQueuedTickingDescription();
 
-    // symbol: ?bindType@BlockQueuedTickingDescription@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
-    // symbol: ?NameID@BlockQueuedTickingDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const NameID;
 
     // NOLINTEND

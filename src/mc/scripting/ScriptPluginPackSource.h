@@ -19,29 +19,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptPluginPackSource@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptPluginPackSource() = default;
 
-    // vIndex: 1, symbol: ?getManifest@ScriptPluginPackSource@@UEAAAEBVPackManifest@@XZ
+    // vIndex: 1
     virtual class PackManifest const& getManifest();
 
-    // vIndex: 2, symbol:
-    // ?enumerateScripts@ScriptPluginPackSource@@UEAA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+    // vIndex: 2
     virtual std::vector<std::string> enumerateScripts(std::string const&);
 
-    // vIndex: 3, symbol:
-    // ?loadScript@ScriptPluginPackSource@@UEAA?AV?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+    // vIndex: 3
     virtual std::optional<std::string> loadScript(std::string const&);
 
-    // vIndex: 4, symbol:
-    // ?removeRootFromPath@ScriptPluginPackSource@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
+    // vIndex: 4
     virtual std::string removeRootFromPath(std::string const& path);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_removeRootFromPath@ScriptPluginPackSource@@AEAA?AVPath@Core@@AEBV23@@Z
     MCAPI class Core::Path _removeRootFromPath(class Core::Path const& pathIn);
 
     // NOLINTEND

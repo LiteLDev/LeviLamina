@@ -16,33 +16,29 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BeaconContainerManagerModel@@UEAA@XZ
+    // vIndex: 0
     virtual ~BeaconContainerManagerModel() = default;
 
-    // vIndex: 6, symbol:
-    // ?getItemCopies@BeaconContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+    // vIndex: 6
     virtual std::vector<class ItemStack> getItemCopies() const;
 
-    // vIndex: 7, symbol: ?setSlot@BeaconContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
+    // vIndex: 7
     virtual void setSlot(int slot, class ItemStack const& item, bool fromNetwork);
 
-    // vIndex: 8, symbol: ?getSlot@BeaconContainerManagerModel@@UEBAAEBVItemStack@@H@Z
+    // vIndex: 8
     virtual class ItemStack const& getSlot(int slot) const;
 
-    // vIndex: 17, symbol: ?_postInit@BeaconContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+    // vIndex: 17
     virtual class ContainerScreenContext _postInit();
 
-    // symbol: ??0BeaconContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
     MCAPI BeaconContainerManagerModel(::ContainerID containerId, class Player& player, class BlockPos const& blockPos);
 
-    // symbol: ?PAYMENT_SLOT@BeaconContainerManagerModel@@2HB
     MCAPI static int const PAYMENT_SLOT;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_resetSelectionState@BeaconContainerManagerModel@@AEAAXXZ
     MCAPI void _resetSelectionState();
 
     // NOLINTEND

@@ -13,13 +13,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1AgentBodyControl@@UEAA@XZ
+    // vIndex: 0
     virtual ~AgentBodyControl() = default;
 
-    // vIndex: 1, symbol: ?clientTick@AgentBodyControl@@UEAAXAEAVMob@@@Z
+    // vIndex: 1
     virtual void clientTick(class Mob& mob);
 
-    // symbol: ??0AgentBodyControl@@QEAA@XZ
     MCAPI AgentBodyControl();
 
     // NOLINTEND

@@ -20,7 +20,6 @@ namespace cereal { struct ReflectionCtx; }
 
 namespace Puv::internal {
 // NOLINTBEGIN
-// symbol: ?getAny@internal@Puv@@YAAEAVmeta_any@entt@@AEAVLoadResultAny@2@@Z
 MCAPI entt::meta_any& getAny(class Puv::LoadResultAny&);
 // NOLINTEND
 

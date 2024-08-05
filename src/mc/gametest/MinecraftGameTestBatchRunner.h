@@ -22,16 +22,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MinecraftGameTestBatchRunner@@UEAA@XZ
+    // vIndex: 0
     virtual ~MinecraftGameTestBatchRunner() = default;
 
-    // vIndex: 1, symbol:
-    // ?_createGameTestInstance@MinecraftGameTestBatchRunner@@MEAA?AV?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@AEAVBaseGameTestFunction@gametest@@@Z
+    // vIndex: 1
     virtual std::shared_ptr<class gametest::BaseGameTestInstance>
     _createGameTestInstance(class gametest::BaseGameTestFunction& function);
 
-    // vIndex: 2, symbol:
-    // ?_runTest@MinecraftGameTestBatchRunner@@MEAAXV?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@AEAVGameTestTicker@gametest@@@Z
+    // vIndex: 2
     virtual void _runTest(std::shared_ptr<class gametest::BaseGameTestInstance> test, class gametest::GameTestTicker&);
 
     // NOLINTEND

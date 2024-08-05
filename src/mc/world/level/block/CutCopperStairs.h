@@ -28,28 +28,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CutCopperStairs@@UEAA@XZ
+    // vIndex: 0
     virtual ~CutCopperStairs() = default;
 
-    // vIndex: 18, symbol: ?onLightningHit@CutCopperStairs@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 18
     virtual void onLightningHit(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 27, symbol: ?tryGetCopperBehavior@CutCopperStairs@@UEBAPEBVCopperBehavior@@XZ
+    // vIndex: 27
     virtual class CopperBehavior const* tryGetCopperBehavior() const;
 
-    // vIndex: 149, symbol: ?randomTick@CutCopperStairs@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 149
     virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 152, symbol: ?use@CutCopperStairs@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    // symbol:
-    // ??0CutCopperStairs@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVBlockLegacy@@W4CopperType@@AEBVHashedString@@@Z
     MCAPI
     CutCopperStairs(std::string const& nameId, int id, class BlockLegacy const& base, ::CopperType, class HashedString const&);
 
-    // symbol:
-    // ??0CutCopperStairs@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVBlockLegacy@@W4CopperType@@AEBVHashedString@@33@Z
     MCAPI
     CutCopperStairs(std::string const& nameId, int id, class BlockLegacy const& base, ::CopperType, class HashedString const&, class HashedString const&, class HashedString const&);
 

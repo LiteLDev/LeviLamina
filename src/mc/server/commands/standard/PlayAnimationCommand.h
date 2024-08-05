@@ -15,20 +15,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1PlayAnimationCommand@@UEAA@XZ
+    // vIndex: 0
     virtual ~PlayAnimationCommand();
 
-    // vIndex: 2, symbol: ?execute@PlayAnimationCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+    // vIndex: 2
     virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    // symbol: ?setup@PlayAnimationCommand@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry& registry);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?mStopExpressionVersion@PlayAnimationCommand@@0W4MolangVersion@@B
     MCAPI static ::MolangVersion const mStopExpressionVersion;
 
     // NOLINTEND

@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1TradeGroup@@QEAA@XZ
     MCAPI ~TradeGroup();
 
     // NOLINTEND

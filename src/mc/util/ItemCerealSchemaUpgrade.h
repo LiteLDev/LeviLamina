@@ -14,11 +14,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ItemCerealSchemaUpgrade@@UEAA@XZ
+    // vIndex: 0
     virtual ~ItemCerealSchemaUpgrade();
 
-    // symbol:
-    // ??0ItemCerealSchemaUpgrade@@QEAA@VSemVersion@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
     MCAPI ItemCerealSchemaUpgrade(class SemVersion, std::string const&, std::string const&);
 
     // NOLINTEND

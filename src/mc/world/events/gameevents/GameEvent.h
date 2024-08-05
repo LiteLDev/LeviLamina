@@ -14,7 +14,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getType@GameEvent@@QEBA?BW4GameEventType@GameEventConfig@@XZ
     MCAPI ::GameEventConfig::GameEventType const getType() const;
 
     // NOLINTEND

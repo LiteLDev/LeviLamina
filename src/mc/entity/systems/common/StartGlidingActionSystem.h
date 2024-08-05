@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@StartGlidingActionSystem@@SA?AUTickingSystemWithInfo@@_N@Z
     MCAPI static struct TickingSystemWithInfo createSystem(bool);
 
     // NOLINTEND

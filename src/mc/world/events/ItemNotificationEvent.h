@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ItemNotificationEvent@@QEAA@XZ
     MCAPI ~ItemNotificationEvent();
 
     // NOLINTEND

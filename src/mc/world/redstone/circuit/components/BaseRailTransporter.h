@@ -17,11 +17,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BaseRailTransporter@@UEAA@XZ
+    // vIndex: 0
     virtual ~BaseRailTransporter() = default;
 
-    // vIndex: 11, symbol:
-    // ?addSource@BaseRailTransporter@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
+    // vIndex: 11
     virtual bool addSource(
         class CircuitSceneGraph&         graph,
         class CircuitTrackingInfo const& info,
@@ -29,15 +28,14 @@ public:
         bool&                            bDirectlyPowered
     );
 
-    // vIndex: 12, symbol:
-    // ?allowConnection@BaseRailTransporter@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
+    // vIndex: 12
     virtual bool
     allowConnection(class CircuitSceneGraph& graph, class CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
-    // vIndex: 14, symbol: ?evaluate@BaseRailTransporter@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
+    // vIndex: 14
     virtual bool evaluate(class CircuitSystem& system, class BlockPos const& pos);
 
-    // vIndex: 23, symbol: ?getCircuitComponentType@BaseRailTransporter@@UEBA?AW4CircuitComponentType@@XZ
+    // vIndex: 23
     virtual ::CircuitComponentType getCircuitComponentType() const;
 
     // NOLINTEND

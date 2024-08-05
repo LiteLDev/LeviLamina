@@ -16,8 +16,6 @@ namespace ScriptModuleMinecraft { struct ValueParams; }
 
 namespace ActorHasPropertySelectorUtils {
 // NOLINTBEGIN
-// symbol:
-// ?checkBoolProperty@ActorHasPropertySelectorUtils@@YA_NAEBVPropertyComponent@@AEBVHashedString@@AEBV?$variant@VCommandRationalRange@@_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@_N@Z
 MCAPI bool checkBoolProperty(
     class PropertyComponent const&,
     class HashedString const&,
@@ -25,13 +23,9 @@ MCAPI bool checkBoolProperty(
     bool
 );
 
-// symbol:
-// ?checkIntProperty@ActorHasPropertySelectorUtils@@YA_NAEBVPropertyComponent@@AEBVHashedString@@AEAVCommandRationalRange@@_N@Z
 MCAPI bool
 checkIntProperty(class PropertyComponent const&, class HashedString const&, class CommandRationalRange&, bool);
 
-// symbol:
-// ?checkRationalCommandRange@ActorHasPropertySelectorUtils@@YA_NAEBVPropertyComponent@@AEBVHashedString@@AEBV?$variant@VCommandRationalRange@@_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@_N@Z
 MCAPI bool checkRationalCommandRange(
     class PropertyComponent const&,
     class HashedString const&,
@@ -39,8 +33,6 @@ MCAPI bool checkRationalCommandRange(
     bool
 );
 
-// symbol:
-// ?checkStringProperty@ActorHasPropertySelectorUtils@@YA_NAEBVPropertyComponent@@AEBVHashedString@@AEBV?$variant@VCommandRationalRange@@_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@_N@Z
 MCAPI bool checkStringProperty(
     class PropertyComponent const&,
     class HashedString const&,
@@ -48,8 +40,6 @@ MCAPI bool checkStringProperty(
     bool
 );
 
-// symbol:
-// ?parseComparison@ActorHasPropertySelectorUtils@@YA?AV?$variant@VCommandRationalRange@@_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@AEBV?$variant@ULessThanComparison@ScriptModuleMinecraft@@ULessThanOrEqualsComparison@2@UGreaterThanComparison@2@UGreaterThanOrEqualsComparison@2@UEqualsComparison@2@UNotEqualsComparison@2@URangeComparison@2@@3@_N@Z
 MCAPI std::variant<class CommandRationalRange, bool, std::string> parseComparison(
     std::variant<
         struct ScriptModuleMinecraft::LessThanComparison,
@@ -62,8 +52,6 @@ MCAPI std::variant<class CommandRationalRange, bool, std::string> parseCompariso
     bool
 );
 
-// symbol:
-// ?parseValueParams@ActorHasPropertySelectorUtils@@YA?AV?$variant@VCommandRationalRange@@_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@AEBUValueParams@ScriptModuleMinecraft@@_N@Z
 MCAPI std::variant<class CommandRationalRange, bool, std::string>
       parseValueParams(struct ScriptModuleMinecraft::ValueParams const&, bool);
 // NOLINTEND

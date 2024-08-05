@@ -18,31 +18,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SettingsCommandPacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~SettingsCommandPacket() = default;
 
-    // vIndex: 1, symbol: ?getId@SettingsCommandPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@SettingsCommandPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@SettingsCommandPacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 8, symbol:
-    // ?_read@SettingsCommandPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0SettingsCommandPacket@@QEAA@XZ
     MCAPI SettingsCommandPacket();
 
-    // symbol:
-    // ?getCommandString@SettingsCommandPacket@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& getCommandString() const;
 
-    // symbol: ?getSupressOutput@SettingsCommandPacket@@QEBA_NXZ
     MCAPI bool getSupressOutput() const;
 
     // NOLINTEND

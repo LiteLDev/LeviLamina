@@ -23,59 +23,55 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CameraItemComponentLegacy@@UEAA@XZ
+    // vIndex: 0
     virtual ~CameraItemComponentLegacy() = default;
 
-    // vIndex: 1, symbol: ?blackBarsDuration@CameraItemComponentLegacy@@UEBAMXZ
+    // vIndex: 1
     virtual float blackBarsDuration() const;
 
-    // vIndex: 2, symbol: ?blackBarsScreenRatio@CameraItemComponentLegacy@@UEBAMXZ
+    // vIndex: 2
     virtual float blackBarsScreenRatio() const;
 
-    // vIndex: 3, symbol: ?shutterScreenRatio@CameraItemComponentLegacy@@UEBAMXZ
+    // vIndex: 3
     virtual float shutterScreenRatio() const;
 
-    // vIndex: 4, symbol: ?shutterDuration@CameraItemComponentLegacy@@UEBAMXZ
+    // vIndex: 4
     virtual float shutterDuration() const;
 
-    // vIndex: 5, symbol: ?pictureDuration@CameraItemComponentLegacy@@UEBAMXZ
+    // vIndex: 5
     virtual float pictureDuration() const;
 
-    // vIndex: 6, symbol: ?slideAwayDuration@CameraItemComponentLegacy@@UEBAMXZ
+    // vIndex: 6
     virtual float slideAwayDuration() const;
 
-    // vIndex: 7, symbol: ?canPlace@CameraItemComponentLegacy@@UEBA_NAEBVItemStack@@AEAVActor@@AEBVBlockPos@@E@Z
+    // vIndex: 7
     virtual bool
     canPlace(class ItemStack const& instance, class Actor& actor, class BlockPos const& blockPos, uchar face) const;
 
-    // vIndex: 8, symbol: ?takePictureNow@CameraItemComponentLegacy@@UEAAXAEAVPlayer@@PEAVActor@@1@Z
+    // vIndex: 8
     virtual void takePictureNow(class Player& player, class Actor* camera, class Actor* target);
 
-    // vIndex: 9, symbol: ?registerCallbacks@CameraItemComponentLegacy@@UEAAXPEAVCameraCallbacks@@@Z
+    // vIndex: 9
     virtual void registerCallbacks(class CameraCallbacks* callbacks);
 
-    // vIndex: 10, symbol: ?use@CameraItemComponentLegacy@@UEAAXAEAVItemStack@@AEAVPlayer@@@Z
+    // vIndex: 10
     virtual void use(class ItemStack& instance, class Player& player);
 
-    // vIndex: 11, symbol: ?releaseUsing@CameraItemComponentLegacy@@UEAAXAEAVItemStack@@AEAVPlayer@@H@Z
+    // vIndex: 11
     virtual void releaseUsing(class ItemStack& instance, class Player& player, int durationLeft);
 
-    // vIndex: 12, symbol: ?useOn@CameraItemComponentLegacy@@UEAA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
+    // vIndex: 12
     virtual bool
     useOn(class ItemStack& instance, class Actor& actor, class BlockPos const& blockPos, uchar face, class Vec3 const&);
 
-    // symbol: ??0CameraItemComponentLegacy@@QEAA@AEAVItem@@@Z
     MCAPI explicit CameraItemComponentLegacy(class Item& owner);
 
-    // symbol: ?init@CameraItemComponentLegacy@@QEAA_NAEBVValue@Json@@AEBVSemVersion@@@Z
     MCAPI bool init(class Json::Value const& data, class SemVersion const& engineVersion);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_tryPlace@CameraItemComponentLegacy@@AEBA?AW4UseAction@1@AEBVItemStack@@AEAVActor@@AEBVBlockPos@@EAEAVVec3@@@Z
     MCAPI ::CameraItemComponentLegacy::UseAction _tryPlace(
         class ItemStack const& instance,
         class Actor&           actor,

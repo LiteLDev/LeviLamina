@@ -14,13 +14,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1HugeFungusFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~HugeFungusFeature();
 
-    // vIndex: 3, symbol: ?place@HugeFungusFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 3
     virtual bool place(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
 
-    // symbol: ??0HugeFungusFeature@@QEAA@_N@Z
     MCAPI explicit HugeFungusFeature(bool isBlue);
 
     // NOLINTEND

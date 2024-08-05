@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1FilterInputs@@QEAA@XZ
     MCAPI ~FilterInputs();
 
     // NOLINTEND

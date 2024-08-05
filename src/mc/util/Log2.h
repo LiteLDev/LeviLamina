@@ -10,10 +10,8 @@ namespace FlatteningUtils { struct Instance; }
 
 namespace FlatteningUtils::Log2 {
 // NOLINTBEGIN
-// symbol: ?get@Log2@FlatteningUtils@@YA?AUInstance@2@XZ
 MCAPI struct FlatteningUtils::Instance get();
 
-// symbol: ?getBlockComplexAliasCallback@Log2@FlatteningUtils@@YA?AV?$function@$$A6APEBVBlock@@H@Z@std@@XZ
 MCAPI std::function<class Block const*(int)> getBlockComplexAliasCallback();
 // NOLINTEND
 

@@ -16,30 +16,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LevelDbWritableFile@@UEAA@XZ
+    // vIndex: 0
     virtual ~LevelDbWritableFile() = default;
 
-    // vIndex: 1, symbol: ?Append@LevelDbWritableFile@@UEAA?AVStatus@leveldb@@AEBVSlice@3@@Z
+    // vIndex: 1
     virtual leveldb::Status Append(leveldb::Slice const& slice);
 
-    // vIndex: 2, symbol: ?Close@LevelDbWritableFile@@UEAA?AVStatus@leveldb@@XZ
+    // vIndex: 2
     virtual leveldb::Status Close();
 
-    // vIndex: 3, symbol: ?Flush@LevelDbWritableFile@@UEAA?AVStatus@leveldb@@XZ
+    // vIndex: 3
     virtual leveldb::Status Flush();
 
-    // vIndex: 4, symbol: ?Sync@LevelDbWritableFile@@UEAA?AVStatus@leveldb@@XZ
+    // vIndex: 4
     virtual leveldb::Status Sync();
 
-    // symbol:
-    // ??0LevelDbWritableFile@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAVFile@Core@@@Z
     MCAPI LevelDbWritableFile(std::string filename, class Core::File&& file);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?SyncDirIfManifest@LevelDbWritableFile@@AEAA?AVStatus@leveldb@@XZ
     MCAPI leveldb::Status SyncDirIfManifest();
 
     // NOLINTEND

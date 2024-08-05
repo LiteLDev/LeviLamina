@@ -11,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getTicksSinceLastVibration@ClientVibrationComponent@@QEBA?AV?$optional@_K@std@@AEBVILevel@@@Z
     MCAPI std::optional<uint64> getTicksSinceLastVibration(class ILevel const& level) const;
 
-    // symbol: ?setLastVibrationTick@ClientVibrationComponent@@QEAAXUTick@@@Z
     MCAPI void setLastVibrationTick(struct Tick);
 
     // NOLINTEND

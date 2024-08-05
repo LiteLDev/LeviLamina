@@ -24,31 +24,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptBlockRecordPlayerComponentV010@ScriptModuleMinecraft@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptBlockRecordPlayerComponentV010() = default;
 
-    // symbol:
-    // ?bind@ScriptBlockRecordPlayerComponentV010@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptBlockRecordPlayerComponentV010@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockRecordPlayerComponentV010>
     bind();
 
-    // symbol: ?ComponentId@ScriptBlockRecordPlayerComponentV010@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ComponentId;
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol:
-    // ?clearRecord@ScriptBlockRecordPlayerComponentV010@ScriptModuleMinecraft@@IEAA?AV?$Result@X$$V@Scripting@@XZ
     MCAPI class Scripting::Result<void> clearRecord();
 
-    // symbol:
-    // ?isPlaying@ScriptBlockRecordPlayerComponentV010@ScriptModuleMinecraft@@IEAA?AV?$Result@_N$$V@Scripting@@XZ
     MCAPI class Scripting::Result<bool> isPlaying();
 
-    // symbol:
-    // ?setRecord@ScriptBlockRecordPlayerComponentV010@ScriptModuleMinecraft@@IEAA?AV?$Result@X$$V@Scripting@@AEBVScriptItemType@2@@Z
     MCAPI class Scripting::Result<void> setRecord(class ScriptModuleMinecraft::ScriptItemType const& itemType);
 
     // NOLINTEND

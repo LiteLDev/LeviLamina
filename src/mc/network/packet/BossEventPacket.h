@@ -31,30 +31,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BossEventPacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~BossEventPacket();
 
-    // vIndex: 1, symbol: ?getId@BossEventPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@BossEventPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@BossEventPacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 8, symbol:
-    // ?_read@BossEventPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0BossEventPacket@@QEAA@XZ
     MCAPI BossEventPacket();
 
-    // symbol: ??0BossEventPacket@@QEAA@W4BossEventUpdateType@@AEAVRaidBossComponent@@@Z
     MCAPI BossEventPacket(::BossEventUpdateType type, class RaidBossComponent& component);
 
-    // symbol: ??0BossEventPacket@@QEAA@W4BossEventUpdateType@@UActorUniqueID@@AEAVBossComponent@@@Z
     MCAPI BossEventPacket(::BossEventUpdateType type, struct ActorUniqueID bossID, class BossComponent& component);
 
     // NOLINTEND

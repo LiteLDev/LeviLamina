@@ -79,8 +79,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol:
-        // ?processReplicationForPlayers@PlayerReplicationStructures@Dimension@@QEAAXAEBV?$vector@VWeakEntityRef@@V?$allocator@VWeakEntityRef@@@std@@@std@@PEAV2@@Z
         MCAPI void
         processReplicationForPlayers(std::vector<class WeakEntityRef> const& playerList, class Dimension* owner);
 
@@ -160,44 +158,43 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1Dimension@@UEAA@XZ
     virtual ~Dimension();
 
-    // vIndex: 1, symbol: ?isNaturalDimension@Dimension@@UEBA_NXZ
+    // vIndex: 1
     virtual bool isNaturalDimension() const;
 
-    // vIndex: 2, symbol: ?getDimensionId@Dimension@@UEBA?AV?$AutomaticID@VDimension@@H@@XZ
+    // vIndex: 2
     virtual DimensionType getDimensionId() const;
 
-    // vIndex: 3,  symbol: ?sendPacketForPosition@Dimension@@UEAAXAEBVBlockPos@@AEBVPacket@@PEBVPlayer@@@Z
+    // vIndex: 3
     virtual void
     sendPacketForPosition(class BlockPos const& position, class Packet const& packet, class Player const* except);
 
-    // vIndex: 4, symbol: ?flushLevelChunkGarbageCollector@Dimension@@UEAAXXZ
+    // vIndex: 4
     virtual void flushLevelChunkGarbageCollector();
 
-    // vIndex: 5, symbol: ?initializeWithLevelStorageManager@Dimension@@UEAAXAEAVLevelStorageManager@@@Z
+    // vIndex: 5
     virtual void initializeWithLevelStorageManager(class LevelStorageManager&);
 
-    // vIndex: 6, symbol: ?getBiomeRegistry@Dimension@@UEAAAEAVBiomeRegistry@@XZ
+    // vIndex: 6
     virtual class BiomeRegistry& getBiomeRegistry();
 
-    // vIndex: 7, symbol: ?getBiomeRegistry@Dimension@@UEBAAEBVBiomeRegistry@@XZ
+    // vIndex: 7
     virtual class BiomeRegistry const& getBiomeRegistry() const;
 
-    // vIndex: 9, symbol: ?forEachPlayer@Dimension@@UEBAXV?$function@$$A6A_NAEAVPlayer@@@Z@std@@@Z
+    // vIndex: 9
     virtual void forEachPlayer(std::function<bool(class Player&)> callback) const;
 
-    // vIndex: 10, symbol: ?fetchEntity@Dimension@@UEBAPEAVActor@@UActorUniqueID@@_N@Z
+    // vIndex: 10
     virtual class Actor* fetchEntity(struct ActorUniqueID actorID, bool getRemoved) const;
 
-    // vIndex: 11, symbol: ?init@Dimension@@UEAAXAEBVStructureSetRegistry@worldgen@br@@@Z
+    // vIndex: 11
     virtual void init(class br::worldgen::StructureSetRegistry const&);
 
-    // vIndex: 12, symbol: ?tick@Dimension@@UEAAXXZ
+    // vIndex: 12
     virtual void tick();
 
-    // vIndex: 13, symbol: ?tickRedstone@Dimension@@UEAAXXZ
+    // vIndex: 13
     virtual void tickRedstone();
 
     // vIndex: 14
@@ -213,68 +210,67 @@ public:
     // vIndex: 17
     virtual bool levelChunkNeedsUpgrade(class LevelChunk const&) const = 0;
 
-    // vIndex: 18, symbol: ?isValidSpawn@Dimension@@UEBA_NHH@Z
+    // vIndex: 18
     virtual bool isValidSpawn(int x, int z) const;
 
-    // vIndex: 19, symbol: ?getBrightnessDependentFogColor@Dimension@@UEBA?AVColor@mce@@AEBV23@M@Z
+    // vIndex: 19
     virtual class mce::Color getBrightnessDependentFogColor(class mce::Color const& baseColor, float brightness) const;
 
-    // vIndex: 20, symbol: ?hasPrecipitationFog@Dimension@@UEBA_NXZ
+    // vIndex: 20
     virtual bool hasPrecipitationFog() const;
 
-    // vIndex: 21, symbol: ?getCloudHeight@Dimension@@UEBAFXZ
+    // vIndex: 21
     virtual short getCloudHeight() const;
 
-    // vIndex: 22, symbol: ?getDefaultBiome@Dimension@@UEBA?AVHashedString@@XZ
+    // vIndex: 22
     virtual class HashedString getDefaultBiome() const;
 
-    // vIndex: 23, symbol: ?hasGround@Dimension@@UEBA_NXZ
+    // vIndex: 23
     virtual bool hasGround() const;
 
-    // vIndex: 24, symbol: ?showSky@Dimension@@UEBA_NXZ
+    // vIndex: 24
     virtual bool showSky() const;
 
-    // vIndex: 25, symbol: ?getSpawnPos@Dimension@@UEBA?AVBlockPos@@XZ
+    // vIndex: 25
     virtual class BlockPos getSpawnPos() const;
 
-    // vIndex: 26, symbol: ?getSpawnYPosition@Dimension@@UEBAHXZ
+    // vIndex: 26
     virtual int getSpawnYPosition() const;
 
-    // vIndex: 27, symbol: ?mayRespawnViaBed@Dimension@@UEBA_NXZ
+    // vIndex: 27
     virtual bool mayRespawnViaBed(void) const;
 
-    // vIndex: 28, symbol: ?isDay@Dimension@@UEBA_NXZ
+    // vIndex: 28
     virtual bool isDay() const;
 
-    // vIndex: 29, symbol: ?getTimeOfDay@Dimension@@MEBAMHM@Z
+    // vIndex: 29
     virtual float getTimeOfDay(int time, float a) const;
 
-    // vIndex: 30, symbol: ?getSunIntensity@Dimension@@UEBAMMAEBVVec3@@M@Z
+    // vIndex: 30
     virtual float getSunIntensity(float a, class Vec3 const& viewVector, float minInfluenceAngle) const;
 
-    // vIndex: 31, symbol: ?forceCheckAllNeighChunkSavedStat@Dimension@@UEBA_NXZ
+    // vIndex: 31
     virtual bool forceCheckAllNeighChunkSavedStat() const;
 
-    // vIndex: 32, vIndex: 34, symbol: ?sendBroadcast@Dimension@@UEAAXAEBVPacket@@PEAVPlayer@@@Z
+    // vIndex: 32
     virtual void sendBroadcast(class Packet const& packet, class Player* except);
 
-    // vIndex: 33, symbol: ?is2DPositionRelevantForPlayer@Dimension@@UEBA_NAEBVBlockPos@@AEAVPlayer@@@Z
+    // vIndex: 33
     virtual bool is2DPositionRelevantForPlayer(class BlockPos const& position, class Player& player) const;
 
-    // vIndex: 34, symbol: ?isActorRelevantForPlayer@Dimension@@UEBA_NAEAVPlayer@@AEBVActor@@@Z
+    // vIndex: 34
     virtual bool isActorRelevantForPlayer(class Player& player, class Actor const& actor) const;
 
-    // vIndex: 35, symbol: ?getLightTextureImageBuilder@Dimension@@UEBAPEAVBaseLightTextureImageBuilder@@XZ
+    // vIndex: 35
     virtual class BaseLightTextureImageBuilder* getLightTextureImageBuilder() const;
 
-    // vIndex: 36, symbol: ?getBrightnessRamp@Dimension@@UEBAAEBVDimensionBrightnessRamp@@XZ
+    // vIndex: 36
     virtual class DimensionBrightnessRamp const& getBrightnessRamp() const;
 
-    // vIndex: 37, symbol: ?startLeaveGame@Dimension@@UEAAXXZ
+    // vIndex: 37
     virtual void startLeaveGame();
 
-    // vIndex: 38, symbol:
-    // ?_createChunkBuildOrderPolicy@Dimension@@EEAA?AV?$unique_ptr@VChunkBuildOrderPolicyBase@@U?$default_delete@VChunkBuildOrderPolicyBase@@@std@@@std@@XZ
+    // vIndex: 38
     virtual std::unique_ptr<class ChunkBuildOrderPolicyBase> _createChunkBuildOrderPolicy();
 
     // vIndex: 39
@@ -287,8 +283,7 @@ public:
     ) = 0;
 
     // LevelListener vtable overloaded functions
-    // vIndex: 4, symbol:
-    // ?onBlockChanged@Dimension@@UEAAXAEAVBlockSource@@AEBVBlockPos@@IAEBVBlock@@2HPEBUActorBlockSyncMessage@@W4BlockChangedEventTarget@@PEAVActor@@@Z
+    // vIndex: 4
     virtual void onBlockChanged(
         class BlockSource&                  source,
         class BlockPos const&               pos,
@@ -302,26 +297,21 @@ public:
     );
 
     // LevelListener->BlockSourceListener vtable overloaded function
-    // vIndex: 8, symbol: ?onBlockEvent@Dimension@@UEAAXAEAVBlockSource@@HHHHH@Z
+    // vIndex: 8
     virtual void onBlockEvent(class BlockSource& source, int x, int y, int z, int b0, int b1);
 
     // LevelListener vtable overloaded functions
-    // vIndex: 19,symbol: ?onChunkLoaded@Dimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
+    // vIndex: 19
     virtual void onChunkLoaded(class ChunkSource& source, class LevelChunk& lc);
 
-    // vIndex: 23, symbol:
-    // ?onLevelDestruction@Dimension@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 23
     virtual void onLevelDestruction(std::string const&);
 
     // SavedData vtable overloaded functions
-    // symbol: ?deserialize@Dimension@@UEAAXAEBVCompoundTag@@@Z
     virtual void deserialize(class CompoundTag const& tag);
 
-    // symbol: ?serialize@Dimension@@UEBAXAEAVCompoundTag@@@Z
     virtual void serialize(class CompoundTag& tag) const;
 
-    // symbol:
-    // ??0Dimension@@QEAA@AEAVILevel@@V?$AutomaticID@VDimension@@H@@VDimensionHeightRange@@AEAVScheduler@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI Dimension(
         class ILevel&              level,
         DimensionType              dimId,
@@ -330,8 +320,6 @@ public:
         std::string                name
     );
 
-    // symbol:
-    // ?addActorUnloadedChunkTransferToQueue@Dimension@@QEAAXAEBVChunkPos@@0V?$AutomaticID@VDimension@@H@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@5@@Z
     MCAPI void addActorUnloadedChunkTransferToQueue(
         class ChunkPos const&,
         class ChunkPos const&,
@@ -340,207 +328,136 @@ public:
         std::unique_ptr<class CompoundTag> entityTag
     );
 
-    // symbol: ?addPlayerToReplication@Dimension@@QEAAXAEBVWeakEntityRef@@@Z
     MCAPI void addPlayerToReplication(class WeakEntityRef const& player);
 
-    // symbol: ?addWither@Dimension@@QEAAXAEBUActorUniqueID@@@Z
     MCAPI void addWither(struct ActorUniqueID const& id);
 
-    // symbol: ?clearPlayerReplicationList@Dimension@@QEAAXXZ
     MCAPI void clearPlayerReplicationList();
 
-    // symbol: ?distanceToNearestPlayerSqr2D@Dimension@@QEAAMVVec3@@@Z
     MCAPI float distanceToNearestPlayerSqr2D(class Vec3 origin);
 
-    // symbol: ?fetchAnyInteractablePlayer@Dimension@@QEBAPEAVPlayer@@AEBVVec3@@M@Z
     MCAPI class Player* fetchAnyInteractablePlayer(class Vec3 const&, float maxDist) const;
 
-    // symbol: ?fetchNearestAttackablePlayer@Dimension@@QEBAPEAVPlayer@@AEAVActor@@M@Z
     MCAPI class Player* fetchNearestAttackablePlayer(class Actor& source, float maxDist) const;
 
-    // symbol: ?fetchNearestAttackablePlayer@Dimension@@QEBAPEAVPlayer@@VBlockPos@@MPEAVActor@@@Z
     MCAPI class Player*
     fetchNearestAttackablePlayer(class BlockPos source, float maxDist, class Actor* sourceActor) const;
 
-    // symbol: ?fetchNearestInteractablePlayer@Dimension@@QEBAPEAVPlayer@@AEAVActor@@M@Z
     MCAPI class Player* fetchNearestInteractablePlayer(class Actor& source, float maxDist) const;
 
-    // symbol: ?fetchNearestInteractablePlayer@Dimension@@QEBAPEAVPlayer@@AEBVVec3@@M@Z
     MCAPI class Player* fetchNearestInteractablePlayer(class Vec3 const&, float maxDist) const;
 
-    // symbol: ?fetchNearestPlayer@Dimension@@QEBAPEAVPlayer@@AEBVVec3@@M_NV?$function@$$A6A_NAEBVPlayer@@@Z@std@@@Z
     MCAPI class Player*
     fetchNearestPlayer(class Vec3 const&, float maxDist, bool, std::function<bool(class Player const&)>) const;
 
-    // symbol: ?findPlayer@Dimension@@QEBAPEAVPlayer@@V?$function@$$A6A_NAEBVPlayer@@@Z@std@@@Z
     MCAPI class Player* findPlayer(std::function<bool(class Player const&)> pred) const;
 
-    // symbol: ?flagEntityforChunkMove@Dimension@@QEAAXAEAVActor@@@Z
     MCAPI void flagEntityforChunkMove(class Actor& e);
 
-    // symbol: ?flushRunTimeLighting@Dimension@@QEAAXXZ
     MCAPI void flushRunTimeLighting();
 
-    // symbol: ?getBlockEventDispatcher@Dimension@@QEAAAEAVBlockEventDispatcher@@XZ
     MCAPI class BlockEventDispatcher& getBlockEventDispatcher();
 
-    // symbol: ?getBlockSourceFromMainChunkSource@Dimension@@QEBAAEAVBlockSource@@XZ
     MCAPI class BlockSource& getBlockSourceFromMainChunkSource() const;
 
-    // symbol: ?getChunkBuildOrderPolicy@Dimension@@QEAAAEAVChunkBuildOrderPolicyBase@@XZ
     MCAPI class ChunkBuildOrderPolicyBase& getChunkBuildOrderPolicy();
 
-    // symbol: ?getChunkLoadActionList@Dimension@@QEAA?AV?$not_null@PEAVChunkLoadActionList@@@gsl@@XZ
     MCAPI gsl::not_null<class ChunkLoadActionList*> getChunkLoadActionList();
 
-    // symbol: ?getChunkSource@Dimension@@QEBAAEAVChunkSource@@XZ
     MCAPI class ChunkSource& getChunkSource() const;
 
-    // symbol: ?getCircuitSystem@Dimension@@QEAAAEAVCircuitSystem@@XZ
     MCAPI class CircuitSystem& getCircuitSystem();
 
-    // symbol: ?getDelayActionList@Dimension@@QEAA?AV?$not_null@PEAVDelayActionList@@@gsl@@XZ
     MCAPI gsl::not_null<class DelayActionList*> getDelayActionList();
 
-    // symbol:
-    // ?getDisplayEntities@Dimension@@QEAAAEAV?$vector@VWeakEntityRef@@V?$allocator@VWeakEntityRef@@@std@@@std@@XZ
     MCAPI std::vector<class WeakEntityRef>& getDisplayEntities();
 
-    // symbol:
-    // ?getEntityIdMap@Dimension@@QEAAAEAV?$unordered_map@UActorUniqueID@@VWeakEntityRef@@U?$hash@UActorUniqueID@@@std@@U?$equal_to@UActorUniqueID@@@4@V?$allocator@U?$pair@$$CBUActorUniqueID@@VWeakEntityRef@@@std@@@4@@std@@XZ
     MCAPI std::unordered_map<struct ActorUniqueID, class WeakEntityRef>& getEntityIdMap();
 
-    // symbol: ?getFeatureTerrainAdjustments@Dimension@@QEAAAEAVFeatureTerrainAdjustments@@XZ
     MCAPI class FeatureTerrainAdjustments& getFeatureTerrainAdjustments();
 
-    // symbol: ?getGameEventDispatcher@Dimension@@QEBAPEAVGameEventDispatcher@@XZ
     MCAPI class GameEventDispatcher* getGameEventDispatcher() const;
 
-    // symbol: ?getHeight@Dimension@@QEBAFXZ
     MCAPI short getHeight() const;
 
-    // symbol: ?getHeightInSubchunks@Dimension@@QEBAGXZ
     MCAPI ushort getHeightInSubchunks() const;
 
-    // symbol: ?getHeightRange@Dimension@@QEBAAEBVDimensionHeightRange@@XZ
     MCAPI class DimensionHeightRange const& getHeightRange() const;
 
-    // symbol: ?getLevel@Dimension@@QEBAAEAVLevel@@XZ
     MCAPI class Level& getLevel() const;
 
-    // symbol: ?getLevelConst@Dimension@@QEBAAEBVLevel@@XZ
     MCAPI class Level const& getLevelConst() const;
 
-    // symbol: ?getMinHeight@Dimension@@QEBAFXZ
     MCAPI short getMinHeight() const;
 
-    // symbol: ?getMoonBrightness@Dimension@@QEBAMXZ
     MCAPI float getMoonBrightness() const;
 
-    // symbol: ?getMoonPhase@Dimension@@QEBAHXZ
     MCAPI int getMoonPhase() const;
 
-    // symbol: ?getPopCap@Dimension@@QEBAMH_N@Z
     MCAPI float getPopCap(int catID, bool surface) const;
 
-    // symbol: ?getSeasons@Dimension@@QEAAAEAVSeasons@@XZ
     MCAPI class Seasons& getSeasons();
 
-    // symbol: ?getSkyDarken@Dimension@@QEBA?AUBrightness@@XZ
     MCAPI struct Brightness getSkyDarken() const;
 
-    // symbol: ?getSunAngle@Dimension@@QEBAMM@Z
     MCAPI float getSunAngle(float a) const;
 
-    // symbol: ?getTargetMetaData@Dimension@@QEAA?AV?$shared_ptr@$$CBVLevelChunkMetaData@@@std@@XZ
     MCAPI std::shared_ptr<class LevelChunkMetaData const> getTargetMetaData();
 
-    // symbol: ?getTickingAreas@Dimension@@QEAAAEAVTickingAreaList@@XZ
     MCAPI class TickingAreaList& getTickingAreas();
 
-    // symbol: ?getTickingAreasConst@Dimension@@QEBAAEBVTickingAreaList@@XZ
     MCAPI class TickingAreaList const& getTickingAreasConst() const;
 
-    // symbol: ?getTimeOfDay@Dimension@@QEBAMM@Z
     MCAPI float getTimeOfDay(float a) const;
 
-    // symbol:
-    // ?getVillageManager@Dimension@@QEBAAEBV?$unique_ptr@VVillageManager@@U?$default_delete@VVillageManager@@@std@@@std@@XZ
     MCAPI std::unique_ptr<class VillageManager> const& getVillageManager() const;
 
-    // symbol: ?getWeakRef@Dimension@@QEAA?AV?$WeakRef@VDimension@@@@XZ
     MCAPI class WeakRef<class Dimension> getWeakRef();
 
-    // symbol: ?getWeather@Dimension@@QEBAAEAVWeather@@XZ
     MCAPI class Weather& getWeather() const;
 
-    // symbol: ?getWorldGenerator@Dimension@@QEBAPEAVWorldGenerator@@XZ
     MCAPI class WorldGenerator* getWorldGenerator() const;
 
-    // symbol: ?hasCeiling@Dimension@@QEBA_NXZ
     MCAPI bool hasCeiling() const;
 
-    // symbol: ?hasSkylight@Dimension@@QEBA_NXZ
     MCAPI bool hasSkylight() const;
 
-    // symbol: ?isChunkKnown@Dimension@@QEBA_NAEBVChunkPos@@@Z
     MCAPI bool isChunkKnown(class ChunkPos const& chunkPos) const;
 
-    // symbol: ?isClientSideGenerationEnabled@Dimension@@QEBA?B_NXZ
     MCAPI bool const isClientSideGenerationEnabled() const;
 
-    // symbol: ?isHeightWithinRange@Dimension@@QEBA_NAEBF@Z
     MCAPI bool isHeightWithinRange(short const& height) const;
 
-    // symbol: ?isLeaveGameDone@Dimension@@QEAA_NXZ
     MCAPI bool isLeaveGameDone();
 
-    // symbol: ?isRedstoneTick@Dimension@@QEAA_NXZ
     MCAPI bool isRedstoneTick();
 
-    // symbol: ?isSubChunkHeightWithinRange@Dimension@@QEBA_NAEBF@Z
     MCAPI bool isSubChunkHeightWithinRange(short const&) const;
 
-    // symbol: ?isUltraWarm@Dimension@@QEBA_NXZ
     MCAPI bool isUltraWarm() const;
 
-    // symbol:
-    // ?onStaticTickingAreaAdded@Dimension@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void onStaticTickingAreaAdded(std::string const& tickingAreaName);
 
-    // symbol: ?pauseAndFlushTaskGroups@Dimension@@QEAAXXZ
     MCAPI void pauseAndFlushTaskGroups();
 
-    // symbol: ?processPlayerReplication@Dimension@@QEAAXXZ
     MCAPI void processPlayerReplication();
 
-    // symbol: ?registerEntity@Dimension@@QEAAXAEBUActorUniqueID@@V?$WeakRef@VEntityContext@@@@@Z
     MCAPI void registerEntity(struct ActorUniqueID const& actorID, class WeakRef<class EntityContext> entityRef);
 
-    // symbol: ?removeActorByID@Dimension@@QEAAXAEBUActorUniqueID@@@Z
     MCAPI void removeActorByID(struct ActorUniqueID const& id);
 
-    // symbol: ?removeWither@Dimension@@QEAAXAEBUActorUniqueID@@@Z
     MCAPI void removeWither(struct ActorUniqueID const& id);
 
-    // symbol: ?sendPacketForEntity@Dimension@@QEAAXAEBVActor@@AEBVPacket@@PEBVPlayer@@@Z
     MCAPI void sendPacketForEntity(class Actor const& actor, class Packet const& packet, class Player const* except);
 
-    // symbol:
-    // ?sendPacketToClients@Dimension@@QEAAXAEBVPacket@@V?$vector@UNetworkIdentifierWithSubId@@V?$allocator@UNetworkIdentifierWithSubId@@@std@@@std@@@Z
     MCAPI void sendPacketToClients(class Packet const& packet, std::vector<struct NetworkIdentifierWithSubId> ids);
 
-    // symbol: ?setCeiling@Dimension@@QEAAX_N@Z
     MCAPI void setCeiling(bool ceiling);
 
-    // symbol: ?setSkylight@Dimension@@QEAAX_N@Z
     MCAPI void setSkylight(bool skylight);
 
-    // symbol: ?setUltraWarm@Dimension@@QEAAX_N@Z
     MCAPI void setUltraWarm(bool warm);
 
-    // symbol:
-    // ?transferEntity@Dimension@@QEAAXAEBVChunkPos@@AEBVVec3@@V?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@_N@Z
     MCAPI void transferEntity(
         class ChunkPos const&,
         class Vec3 const&                  spawnPos,
@@ -548,11 +465,8 @@ public:
         bool
     );
 
-    // symbol: ?transferEntityToUnloadedChunk@Dimension@@QEAAXAEAVActor@@PEAVLevelChunk@@@Z
     MCAPI void transferEntityToUnloadedChunk(class Actor& actor, class LevelChunk*);
 
-    // symbol:
-    // ?transferEntityToUnloadedChunk@Dimension@@QEAAXAEBVChunkPos@@0V?$AutomaticID@VDimension@@H@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@5@@Z
     MCAPI void transferEntityToUnloadedChunk(
         class ChunkPos const&,
         class ChunkPos const&,
@@ -561,19 +475,14 @@ public:
         std::unique_ptr<class CompoundTag> entityTag
     );
 
-    // symbol: ?tryGarbageCollectStructures@Dimension@@QEAAXXZ
     MCAPI void tryGarbageCollectStructures();
 
-    // symbol: ?tryLoadLimboEntities@Dimension@@QEAAXAEBVChunkPos@@@Z
     MCAPI void tryLoadLimboEntities(class ChunkPos const& loadPos);
 
-    // symbol: ?unregisterDisplayEntity@Dimension@@QEAAXV?$WeakRef@VEntityContext@@@@@Z
     MCAPI void unregisterDisplayEntity(class WeakRef<class EntityContext>);
 
-    // symbol: ?unregisterEntity@Dimension@@QEAAXAEBUActorUniqueID@@@Z
     MCAPI void unregisterEntity(struct ActorUniqueID const& actorID);
 
-    // symbol: ?updateBlockLight@Dimension@@QEAAXAEBVBlockPos@@UBrightness@@111_N@Z
     MCAPI void updateBlockLight(
         class BlockPos const& blockPos,
         struct Brightness     oldBrightness,
@@ -583,42 +492,32 @@ public:
         bool                  isSunLight
     );
 
-    // symbol: ?updateDimensionBlockSourceTick@Dimension@@QEAAXXZ
     MCAPI void updateDimensionBlockSourceTick();
 
-    // symbol: ?CurrentLimboEntitiesVersion@Dimension@@2W4LimboEntitiesVersion@@B
     MCAPI static ::LimboEntitiesVersion const CurrentLimboEntitiesVersion;
 
-    // symbol: ?LOW_CPU_PACKET_BLOCK_LIMIT@Dimension@@2IB
     MCAPI static uint const LOW_CPU_PACKET_BLOCK_LIMIT;
 
-    // symbol: ?MOON_BRIGHTNESS_PER_PHASE@Dimension@@2QBMB
     MCAPI static float const MOON_BRIGHTNESS_PER_PHASE[];
 
-    // symbol: ?STRUCTURE_PRUNE_INTERVAL@Dimension@@2V?$duration@_JU?$ratio@$00$00@std@@@chrono@std@@B
     MCAPI static std::chrono::seconds const STRUCTURE_PRUNE_INTERVAL;
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?_completeEntityTransfer@Dimension@@IEAAXV?$OwnerPtr@VEntityContext@@@@_N@Z
     MCAPI void _completeEntityTransfer(class OwnerPtr<class EntityContext>, bool);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_processEntityChunkTransfers@Dimension@@AEAAXXZ
     MCAPI void _processEntityChunkTransfers();
 
-    // symbol: ?_sendBlockEntityUpdatePacket@Dimension@@AEAAXAEBVNetworkBlockPosition@@@Z
     MCAPI void _sendBlockEntityUpdatePacket(class NetworkBlockPosition const& pos);
 
-    // symbol: ?_sendBlocksChangedPackets@Dimension@@AEAAXXZ
     MCAPI void _sendBlocksChangedPackets();
 
-    // symbol: ?_tickEntityChunkMoves@Dimension@@AEAAXXZ
     MCAPI void _tickEntityChunkMoves();
 
     // NOLINTEND

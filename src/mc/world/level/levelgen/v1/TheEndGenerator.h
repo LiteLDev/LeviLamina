@@ -28,8 +28,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 45, symbol:
-    // ?decorateWorldGenLoadChunk@TheEndGenerator@@MEBAXAEBVBiome@@AEAVLevelChunk@@AEAVBlockVolumeTarget@@AEAVRandom@@AEBVChunkPos@@@Z
+    // vIndex: 45
     virtual void decorateWorldGenLoadChunk(
         class Biome const&       biome,
         class LevelChunk&        lc,
@@ -38,8 +37,7 @@ public:
         class ChunkPos const&    pos
     ) const;
 
-    // vIndex: 46, symbol:
-    // ?decorateWorldGenPostProcess@TheEndGenerator@@MEBAXAEBVBiome@@AEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@@Z
+    // vIndex: 46
     virtual void decorateWorldGenPostProcess(
         class Biome const& biome,
         class LevelChunk&  lc,
@@ -47,33 +45,31 @@ public:
         class Random&      random
     ) const;
 
-    // vIndex: 42, symbol: ?findSpawnPosition@TheEndGenerator@@UEBA?AVBlockPos@@XZ
+    // vIndex: 42
     virtual class BlockPos findSpawnPosition() const;
 
-    // vIndex: 39, symbol: ?getBiomeArea@TheEndGenerator@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z
+    // vIndex: 39
     virtual class BiomeArea getBiomeArea(class BoundingBox const& area, uint scale) const;
 
-    // vIndex: 40, symbol: ?getBiomeSource@TheEndGenerator@@UEBAAEBVBiomeSource@@XZ
+    // vIndex: 40
     virtual class BiomeSource const& getBiomeSource() const;
 
-    // vIndex: 41, symbol: ?getBlockVolumeDimensions@TheEndGenerator@@UEBA?AUBlockVolumeDimensions@WorldGenerator@@XZ
+    // vIndex: 41
     virtual struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const;
 
-    // symbol: ?getPreliminarySurfaceLevel@TheEndGenerator@@UEBA?AV?$optional@F@std@@V?$DividedPos2d@$03@@@Z
     virtual std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4> worldQuartPos) const;
 
-    // vIndex: 11, symbol: ?loadChunk@TheEndGenerator@@UEAAXAEAVLevelChunk@@_N@Z
+    // vIndex: 11
     virtual void loadChunk(class LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad);
 
-    // vIndex: 9, symbol: ?postProcess@TheEndGenerator@@UEAA_NAEAVChunkViewSource@@@Z
+    // vIndex: 9
     virtual bool postProcess(class ChunkViewSource& neighborhood);
 
-    // vIndex: 12, symbol: ?postProcessMobsAt@TheEndGenerator@@UEAAXAEAVBlockSource@@HHAEAVRandom@@@Z
+    // vIndex: 12
     virtual void
     postProcessMobsAt(class BlockSource& blockSource, int chunkWestBlock, int chunkNorthBlock, class Random& random);
 
-    // vIndex: 38, symbol:
-    // ?prepareAndComputeHeights@TheEndGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@AEAV?$vector@FV?$allocator@F@std@@@std@@_NH@Z
+    // vIndex: 38
     virtual void prepareAndComputeHeights(
         class BlockVolume&    box,
         class ChunkPos const& chunkPos,
@@ -82,29 +78,22 @@ public:
         int                   skipTopN
     );
 
-    // vIndex: 37, symbol: ?prepareHeights@TheEndGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@_N@Z
+    // vIndex: 37
     virtual void prepareHeights(class BlockVolume& box, class ChunkPos const& chunkPos, bool factorInBeardsAndShavers);
 
-    // symbol: ??0TheEndGenerator@@QEAA@AEAVDimension@@IPEBVBiome@@@Z
     MCAPI TheEndGenerator(class Dimension&, uint, class Biome const*);
 
-    // symbol: ?buildSurfaces@TheEndGenerator@@QEAAXAEAVBlockVolume@@AEBVChunkPos@@AEAVLevelChunk@@@Z
     MCAPI void buildSurfaces(class BlockVolume& box, class ChunkPos const& chunkPos, class LevelChunk& levelChunk);
 
-    // symbol:
-    // ?generateDensityCellsForChunk@TheEndGenerator@@QEBA?AV?$MultidimensionalArray@M$02$02$0CB@@Util@@AEBVChunkPos@@@Z
     MCAPI class Util::MultidimensionalArray<float, 3, 3, 33> generateDensityCellsForChunk(class ChunkPos const& chunkPos
     ) const;
 
-    // symbol: ?isOutsideCentralIslandArea@TheEndGenerator@@SA_NAEBVChunkPos@@@Z
     MCAPI static bool isOutsideCentralIslandArea(class ChunkPos const& chunkPos);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_prepareHeights@TheEndGenerator@@AEAAXAEAVBlockVolume@@AEBVChunkPos@@_NPEAV?$vector@FV?$allocator@F@std@@@std@@H@Z
     MCAPI void _prepareHeights(
         class BlockVolume&    box,
         class ChunkPos const& chunkPos,
@@ -113,7 +102,6 @@ public:
         int                   skipTopN
     );
 
-    // symbol: ?getIslandHeightValue@TheEndGenerator@@AEBAMHHHH@Z
     MCAPI float getIslandHeightValue(int chunkX, int chunkZ, int, int) const;
 
     // NOLINTEND

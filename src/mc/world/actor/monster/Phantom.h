@@ -35,19 +35,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1Phantom@@UEAA@XZ
+    // vIndex: 10
     virtual ~Phantom() = default;
 
-    // vIndex: 26, symbol: ?normalTick@Phantom@@UEAAXXZ
+    // vIndex: 26
     virtual void normalTick();
 
-    // vIndex: 66, symbol: ?shouldRender@Phantom@@UEBA_NXZ
+    // vIndex: 66
     virtual bool shouldRender() const;
 
-    // vIndex: 160, symbol: ?checkSpawnRules@Phantom@@UEAA_N_N@Z
+    // vIndex: 160
     virtual bool checkSpawnRules(bool fromSpawner);
 
-    // symbol: ??0Phantom@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Phantom(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

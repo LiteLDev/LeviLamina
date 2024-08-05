@@ -27,29 +27,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FrostedIceBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~FrostedIceBlock() = default;
 
-    // vIndex: 90, symbol: ?breaksFallingBlocks@FrostedIceBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
+    // vIndex: 90
     virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
 
-    // vIndex: 95, symbol: ?playerWillDestroy@FrostedIceBlock@@UEBAPEBVBlock@@AEAVPlayer@@AEBVBlockPos@@AEBV2@@Z
+    // vIndex: 95
     virtual class Block const*
     playerWillDestroy(class Player& player, class BlockPos const& pos, class Block const& block) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@FrostedIceBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 146, symbol: ?onPlace@FrostedIceBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 146
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 148, symbol: ?tick@FrostedIceBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // symbol: ??0FrostedIceBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
     MCAPI FrostedIceBlock(std::string const& nameId, int id, bool packed);
 
-    // symbol: ?_slightlyMelt@FrostedIceBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@_N@Z
     MCAPI void
     _slightlyMelt(class BlockSource& region, class BlockPos const& pos, class Random& random, bool propagate) const;
 
@@ -57,10 +55,8 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?MAX_AGE@FrostedIceBlock@@0HB
     MCAPI static int const MAX_AGE;
 
-    // symbol: ?MIN_NEIGHBORS@FrostedIceBlock@@0HB
     MCAPI static int const MIN_NEIGHBORS;
 
     // NOLINTEND

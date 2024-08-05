@@ -35,31 +35,28 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1Cat@@UEAA@XZ
+    // vIndex: 10
     virtual ~Cat() = default;
 
-    // vIndex: 61, symbol: ?onTame@Cat@@UEAAXXZ
+    // vIndex: 61
     virtual void onTame();
 
-    // vIndex: 68, symbol: ?getAmbientSound@Cat@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 68
     virtual ::Puv::Legacy::LevelSoundEvent getAmbientSound() const;
 
-    // vIndex: 144, symbol: ?updateEntitySpecificMolangVariables@Cat@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 144
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // vIndex: 158, symbol: ?aiStep@Cat@@UEAAXXZ
+    // vIndex: 158
     virtual void aiStep();
 
-    // symbol: ??0Cat@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI
     Cat(class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext);
 
-    // symbol: ?SNEAK_SPEED_MOD@Cat@@2MB
     MCAPI static float const SNEAK_SPEED_MOD;
 
-    // symbol: ?SPRINT_SPEED_MOD@Cat@@2MB
     MCAPI static float const SPRINT_SPEED_MOD;
 
     // NOLINTEND

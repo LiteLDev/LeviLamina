@@ -30,90 +30,75 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BaseGameTestInstance@gametest@@UEAA@XZ
+    // vIndex: 0
     virtual ~BaseGameTestInstance();
 
-    // vIndex: 1, symbol: ?initialize@BaseGameTestInstance@gametest@@UEAAXXZ
+    // vIndex: 1
     virtual void initialize();
 
-    // vIndex: 2, symbol: ?hasStructureBlock@MinecraftGameTestInstance@@UEBA_NXZ
+    // vIndex: 2
     virtual bool hasStructureBlock() const = 0;
 
-    // vIndex: 3, symbol: ?clearStructure@MinecraftGameTestInstance@@UEAAXXZ
+    // vIndex: 3
     virtual void clearStructure() = 0;
 
-    // vIndex: 4, symbol: ?spawnStructure@BaseGameTestInstance@gametest@@UEAAXXZ
+    // vIndex: 4
     virtual void spawnStructure();
 
-    // vIndex: 5, symbol: ?getStructureBounds@MinecraftGameTestInstance@@UEBA?AV?$optional@VAABB@@@std@@XZ
+    // vIndex: 5
     virtual std::optional<class AABB> getStructureBounds() const = 0;
 
-    // vIndex: 6, symbol: ?getStructureBlockPivot@MinecraftGameTestInstance@@UEBA?AV?$optional@VVec3@@@std@@XZ
+    // vIndex: 6
     virtual std::optional<class Vec3> getStructureBlockPivot() const = 0;
 
-    // vIndex: 7, symbol: ?getStructureBlockPosPivot@MinecraftGameTestInstance@@UEBA?AV?$optional@VVec3@@@std@@XZ
+    // vIndex: 7
     virtual std::optional<class Vec3> getStructureBlockPosPivot() const = 0;
 
-    // vIndex: 8, symbol: ?getStructureBoundingBox@MinecraftGameTestInstance@@UEBA?AVBoundingBox@@XZ
+    // vIndex: 8
     virtual class BoundingBox getStructureBoundingBox() const = 0;
 
-    // vIndex: 9, symbol: ?getStructureDimension@MinecraftGameTestInstance@@UEBA?AV?$AutomaticID@VDimension@@H@@XZ
+    // vIndex: 9
     virtual DimensionType getStructureDimension() const = 0;
 
-    // vIndex: 10, symbol: ?_getLevelTick@MinecraftGameTestInstance@@MEBAHXZ
+    // vIndex: 10
     virtual int _getLevelTick() const = 0;
 
-    // vIndex: 11, symbol: ?_isTestReady@MinecraftGameTestInstance@@MEAA_NXZ
+    // vIndex: 11
     virtual bool _isTestReady() = 0;
 
-    // vIndex: 12, symbol: ?_rerun@BaseGameTestInstance@gametest@@MEAAXXZ
+    // vIndex: 12
     virtual void _rerun();
 
-    // vIndex: 13, symbol: ?_removeSimulatedPlayers@BaseGameTestInstance@gametest@@MEAAXXZ
+    // vIndex: 13
     virtual void _removeSimulatedPlayers();
 
-    // symbol:
-    // ??0BaseGameTestInstance@gametest@@QEAA@AEBVBaseGameTestFunction@1@V?$unique_ptr@VIGameTestHelperProvider@gametest@@U?$default_delete@VIGameTestHelperProvider@gametest@@@std@@@std@@@Z
     MCAPI BaseGameTestInstance(
         class gametest::BaseGameTestFunction const&,
         std::unique_ptr<class gametest::IGameTestHelperProvider> helper
     );
 
-    // symbol: ?addListener@BaseGameTestInstance@gametest@@QEAAXV?$shared_ptr@VIGameTestListener@gametest@@@std@@@Z
     MCAPI void addListener(std::shared_ptr<class gametest::IGameTestListener> listener);
 
-    // symbol: ?createSequence@BaseGameTestInstance@gametest@@QEAAAEAVGameTestSequence@2@XZ
     MCAPI class gametest::GameTestSequence& createSequence();
 
-    // symbol: ?fail@BaseGameTestInstance@gametest@@QEAAXUGameTestError@2@_N@Z
     MCAPI void fail(struct gametest::GameTestError error, bool);
 
-    // symbol: ?finish@BaseGameTestInstance@gametest@@QEAAX_N@Z
     MCAPI void finish(bool);
 
-    // symbol: ?getError@BaseGameTestInstance@gametest@@QEBAAEBV?$optional@UGameTestError@gametest@@@std@@XZ
     MCAPI std::optional<struct gametest::GameTestError> const& getError() const;
 
-    // symbol: ?getRotation@BaseGameTestInstance@gametest@@QEBA?AW4Rotation@@XZ
     MCAPI ::Rotation getRotation() const;
 
-    // symbol:
-    // ?getTestName@BaseGameTestInstance@gametest@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& getTestName() const;
 
-    // symbol: ?hasRetryAttempts@BaseGameTestInstance@gametest@@QEBA_NXZ
     MCAPI bool hasRetryAttempts() const;
 
-    // symbol: ?removeListener@BaseGameTestInstance@gametest@@QEAAXV?$shared_ptr@VIGameTestListener@gametest@@@std@@@Z
     MCAPI void removeListener(std::shared_ptr<class gametest::IGameTestListener> listener);
 
-    // symbol: ?startExecution@BaseGameTestInstance@gametest@@QEAAXXZ
     MCAPI void startExecution();
 
-    // symbol: ?succeed@BaseGameTestInstance@gametest@@QEAAXXZ
     MCAPI void succeed();
 
-    // symbol: ?tick@BaseGameTestInstance@gametest@@QEAAXXZ
     MCAPI void tick();
 
     // NOLINTEND

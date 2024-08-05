@@ -14,13 +14,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1TakePictureCommand@@UEAA@XZ
+    // vIndex: 0
     virtual ~TakePictureCommand() = default;
 
-    // vIndex: 2, symbol: ?execute@TakePictureCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+    // vIndex: 2
     virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    // symbol: ?setup@TakePictureCommand@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry& registry);
 
     // NOLINTEND

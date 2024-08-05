@@ -22,25 +22,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SetHudPacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~SetHudPacket();
 
-    // vIndex: 1, symbol: ?getId@SetHudPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol: ?getName@SetHudPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@SetHudPacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream&) const;
 
-    // vIndex: 8, symbol: ?_read@SetHudPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
 
-    // symbol: ??0SetHudPacket@@QEAA@XZ
     MCAPI SetHudPacket();
 
-    // symbol: ??0SetHudPacket@@QEAA@V?$vector@W4HudElement@@V?$allocator@W4HudElement@@@std@@@std@@W4HudVisibility@@@Z
     MCAPI SetHudPacket(std::vector<::HudElement>, ::HudVisibility);
 
     // NOLINTEND

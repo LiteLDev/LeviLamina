@@ -35,19 +35,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 4, symbol: ?reloadHardcoded@Animal@@MEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 4
     virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: ??1Animal@@UEAA@XZ
+    // vIndex: 10
     virtual ~Animal();
 
-    // vIndex: 69, symbol: ?isInvulnerableTo@Animal@@UEBA_NAEBVActorDamageSource@@@Z
+    // vIndex: 69
     virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
-    // vIndex: 184, symbol: ?_getWalkTargetValue@Animal@@MEAAMAEBVBlockPos@@@Z
+    // vIndex: 184
     virtual float _getWalkTargetValue(class BlockPos const& pos);
 
-    // symbol: ??0Animal@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Animal(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

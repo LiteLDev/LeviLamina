@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BlockGeometryComponent@@UEAA@XZ
+    // vIndex: 0
     virtual ~BlockGeometryComponent() = default;
 
     // NOLINTEND

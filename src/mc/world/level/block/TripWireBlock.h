@@ -27,55 +27,50 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1TripWireBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~TripWireBlock() = default;
 
-    // vIndex: 5, symbol:
-    // ?getCollisionShape@TripWireBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 5
     virtual class AABB
     getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 11, symbol: ?getVisualShape@TripWireBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
+    // vIndex: 11
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
 
-    // vIndex: 95, symbol: ?playerWillDestroy@TripWireBlock@@UEBAPEBVBlock@@AEAVPlayer@@AEBVBlockPos@@AEBV2@@Z
+    // vIndex: 95
     virtual class Block const*
     playerWillDestroy(class Player& player, class BlockPos const& pos, class Block const& block) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@TripWireBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 102, symbol: ?shouldTriggerEntityInside@TripWireBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
+    // vIndex: 102
     virtual bool
     shouldTriggerEntityInside(class BlockSource& region, class BlockPos const& pos, class Actor& entity) const;
 
-    // vIndex: 143, symbol: ?onRemove@TripWireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 143
     virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 146, symbol: ?onPlace@TripWireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 146
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 148, symbol: ?tick@TripWireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 162, symbol: ?entityInside@TripWireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
+    // vIndex: 162
     virtual void entityInside(class BlockSource& region, class BlockPos const& pos, class Actor& entity) const;
 
-    // symbol: ??0TripWireBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI TripWireBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_checkPressed@TripWireBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void _checkPressed(class BlockSource&, class BlockPos const&) const;
 
-    // symbol: ?_isEntityInsideTriggerable@TripWireBlock@@AEBA_NAEBVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
     MCAPI bool _isEntityInsideTriggerable(class BlockSource const&, class BlockPos const&, class Actor&) const;
 
-    // symbol: ?_updateSource@TripWireBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void _updateSource(class BlockSource&, class BlockPos const&) const;
 
     // NOLINTEND

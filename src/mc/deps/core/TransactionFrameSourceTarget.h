@@ -19,11 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1TransactionFrameSourceTarget@Core@@QEAA@XZ
     MCAPI ~TransactionFrameSourceTarget();
 
-    // symbol:
-    // ?exec@TransactionFrameSourceTarget@Core@@SA?AVResult@2@AEBVPath@2@0V?$function@$$A6A?AVResult@Core@@AEAVTransactionFrameSourceTarget@2@@Z@std@@1@Z
     MCAPI static class Core::Result exec(
         class Core::Path const&                                                      source,
         class Core::Path const&                                                      target,
@@ -35,7 +32,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ??0TransactionFrameSourceTarget@Core@@AEAA@AEBVPath@1@0@Z
     MCAPI TransactionFrameSourceTarget(class Core::Path const& source, class Core::Path const& target);
 
     // NOLINTEND

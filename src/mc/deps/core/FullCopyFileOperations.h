@@ -20,7 +20,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?copyDirectory@FullCopyFileOperations@Core@@SA?AVResult@2@PEAVFileSystemImpl@2@AEBVPath@2@01@Z
     MCAPI static class Core::Result copyDirectory(
         class Core::FileSystemImpl* pSourceTransaction,
         class Core::Path const&     sourceDirectoryPath,
@@ -28,7 +27,6 @@ public:
         class Core::Path const&     targetDirectoryPath
     );
 
-    // symbol: ?copyFile@FullCopyFileOperations@Core@@SA?AVResult@2@PEAVFileSystemImpl@2@AEBVPath@2@01@Z
     MCAPI static class Core::Result copyFile(
         class Core::FileSystemImpl* pSourceTransaction,
         class Core::Path const&     sourceFilePath,
@@ -36,7 +34,6 @@ public:
         class Core::Path const&     targetFilePath
     );
 
-    // symbol: ?moveFile@FullCopyFileOperations@Core@@SA?AVResult@2@PEAVFileSystemImpl@2@AEBVPath@2@01@Z
     MCAPI static class Core::Result moveFile(
         class Core::FileSystemImpl* pSourceTransaction,
         class Core::Path const&     sourceFilePath,

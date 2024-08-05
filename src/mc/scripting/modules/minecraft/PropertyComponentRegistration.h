@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1PropertyComponentRegistration@ScriptPropertyComponents@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~PropertyComponentRegistration();
 
     // NOLINTEND

@@ -15,32 +15,30 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MountPathingGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~MountPathingGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@MountPathingGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@MountPathingGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@MountPathingGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@MountPathingGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@MountPathingGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@MountPathingGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // vIndex: 10, symbol: ?_getAttackReachSqr@MountPathingGoal@@MEAAMXZ
+    // vIndex: 10
     virtual float _getAttackReachSqr();
 
-    // symbol: ??0MountPathingGoal@@QEAA@AEAVMob@@MM_N@Z
     MCAPI MountPathingGoal(class Mob& mob, float speed, float targetDist, bool trackTarget);
 
     // NOLINTEND

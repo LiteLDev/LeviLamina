@@ -13,13 +13,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SlimeMoveControl@@UEAA@XZ
+    // vIndex: 0
     virtual ~SlimeMoveControl() = default;
 
-    // vIndex: 2, symbol: ?tick@SlimeMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
+    // vIndex: 2
     virtual void tick(class MoveControlComponent& parent, class Mob& mob);
 
-    // symbol: ??0SlimeMoveControl@@QEAA@XZ
     MCAPI SlimeMoveControl();
 
     // NOLINTEND

@@ -17,20 +17,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@VillagerV2PreTravelSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_doVillagerV2PreTravel@VillagerV2PreTravelSystem@@CAXAEBVStrictEntityContext@@AEBUActorDataFlagComponent@@V?$EntityModifier@V?$FlagComponent@USkipMobTravelFlag@@@@@@@Z
     MCAPI static void
     _doVillagerV2PreTravel(class StrictEntityContext const&, struct ActorDataFlagComponent const&, class EntityModifier<class FlagComponent<struct SkipMobTravelFlag>>);
 
-    // symbol:
-    // ?_tick@VillagerV2PreTravelSystem@@CAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@UVillagerV2Flag@@@@@@$$CBUActorDataFlagComponent@@@@V?$EntityModifier@V?$FlagComponent@USkipMobTravelFlag@@@@@@@Z
     MCAPI static void _tick(
         class ViewT<
             class StrictEntityContext,

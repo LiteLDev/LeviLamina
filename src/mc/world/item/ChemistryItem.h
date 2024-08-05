@@ -26,13 +26,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ChemistryItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~ChemistryItem();
 
-    // vIndex: 92, symbol: ?fixupCommon@ChemistryItem@@UEBAXAEAVItemStackBase@@@Z
+    // vIndex: 92
     virtual void fixupCommon(class ItemStackBase& stack) const;
 
-    // symbol: ?validate@ChemistryItem@@SAXAEAVItemStackBase@@@Z
     MCAPI static void validate(class ItemStackBase& stack);
 
     // NOLINTEND

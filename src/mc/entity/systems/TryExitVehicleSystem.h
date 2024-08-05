@@ -19,15 +19,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@TryExitVehicleSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_tickTryExitVehicle@TryExitVehicleSystem@@CAXAEBVStrictEntityContext@@AEBUPassengerComponent@@V?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@U?$Exclude@V?$FlagComponent@UBoatFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@UMobFlag@@@@@@$$CBUMovementAttributesComponent@@$$CBUVehicleComponent@@$$CBUActorDataFlagComponent@@$$CBUActorDataControllingSeatIndexComponent@@@@AEAV?$EntityModifier@V?$FlagComponent@UStopRidingRequestFlag@@@@V?$FlagComponent@UExitFromPassengerFlag@@@@@@@Z
     MCAPI static void _tickTryExitVehicle(
         class StrictEntityContext const& entity,
         struct PassengerComponent const&,

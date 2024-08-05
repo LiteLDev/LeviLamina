@@ -35,16 +35,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1Rabbit@@UEAA@XZ
+    // vIndex: 10
     virtual ~Rabbit() = default;
 
-    // vIndex: 99, symbol: ?onSynchedDataUpdate@Rabbit@@UEAAXH@Z
+    // vIndex: 99
     virtual void onSynchedDataUpdate(int dataId);
 
-    // vIndex: 144, symbol: ?updateEntitySpecificMolangVariables@Rabbit@@MEAAXAEAVRenderParams@@@Z
+    // vIndex: 144
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // symbol: ??0Rabbit@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Rabbit(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

@@ -4,7 +4,6 @@
 
 namespace PlayerPreMobTravelSystem {
 // NOLINTBEGIN
-// symbol: ?createStorePositionSystem@PlayerPreMobTravelSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createStorePositionSystem();
 // NOLINTEND
 

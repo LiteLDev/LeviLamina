@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1VersionRequestKey@Scripting@@QEAA@XZ
     MCAPI ~VersionRequestKey();
 
     // NOLINTEND

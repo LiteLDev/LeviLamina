@@ -16,14 +16,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptUnloadedChunksError@ScriptModuleMinecraft@@QEAA@_K0@Z
     MCAPI ScriptUnloadedChunksError(uint64, uint64);
 
-    // symbol: ??1ScriptUnloadedChunksError@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptUnloadedChunksError();
 
-    // symbol:
-    // ?bind@ScriptUnloadedChunksError@ScriptModuleMinecraft@@SA?AV?$ErrorBindingBuilder@UScriptUnloadedChunksError@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ErrorBindingBuilder<struct ScriptModuleMinecraft::ScriptUnloadedChunksError> bind();
 
     // NOLINTEND

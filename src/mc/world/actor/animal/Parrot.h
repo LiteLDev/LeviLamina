@@ -35,50 +35,46 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 5, symbol: ?reloadHardcodedClient@Parrot@@MEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 5
     virtual void reloadHardcodedClient(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: __gen_??1Parrot@@UEAA@XZ
+    // vIndex: 10
     virtual ~Parrot() = default;
 
-    // vIndex: 38, symbol: ?getShadowRadius@Parrot@@UEBAMXZ
+    // vIndex: 38
     virtual float getShadowRadius() const;
 
-    // vIndex: 60, symbol: ?setSitting@Parrot@@UEAAX_N@Z
+    // vIndex: 60
     virtual void setSitting(bool value);
 
-    // vIndex: 67, symbol: ?playAmbientSound@Parrot@@UEAAXXZ
+    // vIndex: 67
     virtual void playAmbientSound();
 
-    // vIndex: 68, symbol: ?getAmbientSound@Parrot@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 68
     virtual ::Puv::Legacy::LevelSoundEvent getAmbientSound() const;
 
-    // vIndex: 69, symbol: ?isInvulnerableTo@Parrot@@UEBA_NAEBVActorDamageSource@@@Z
+    // vIndex: 69
     virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
-    // vIndex: 102, symbol: ?canBePulledIntoVehicle@Parrot@@UEBA_NXZ
+    // vIndex: 102
     virtual bool canBePulledIntoVehicle() const;
 
-    // vIndex: 149, symbol: ?_playStepSound@Parrot@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 149
     virtual void _playStepSound(class BlockPos const& pos, class Block const& onBlock);
 
-    // vIndex: 184, symbol: ?_getWalkTargetValue@Parrot@@UEAAMAEBVBlockPos@@@Z
+    // vIndex: 184
     virtual float _getWalkTargetValue(class BlockPos const& pos);
 
-    // symbol: ??0Parrot@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Parrot(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?getFlap@Parrot@@QEBAMXZ
     MCAPI float getFlap() const;
 
-    // symbol: ?getFlapSpeed@Parrot@@QEBAMXZ
     MCAPI float getFlapSpeed() const;
 
-    // symbol: ?postAiStep@Parrot@@QEAAXXZ
     MCAPI void postAiStep();
 
     // NOLINTEND

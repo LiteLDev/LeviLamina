@@ -27,20 +27,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1HatchetItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~HatchetItem() = default;
 
-    // vIndex: 7, symbol:
-    // ?executeEvent@HatchetItem@@UEBAXAEAVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRenderParams@@@Z
+    // vIndex: 7
     virtual void executeEvent(class ItemStackBase& item, std::string const& name, class RenderParams& params) const;
 
-    // vIndex: 50, symbol: ?getEnchantSlot@HatchetItem@@UEBAHXZ
+    // vIndex: 50
     virtual int getEnchantSlot() const;
 
-    // vIndex: 77, symbol: ?getDestroySpeed@HatchetItem@@UEBAMAEBVItemStackBase@@AEBVBlock@@@Z
+    // vIndex: 77
     virtual float getDestroySpeed(class ItemStackBase const& item, class Block const& block) const;
 
-    // symbol: ??0HatchetItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVTier@Item@@@Z
     MCAPI HatchetItem(std::string const& name, int id, class Item::Tier const& tier);
 
     // NOLINTEND

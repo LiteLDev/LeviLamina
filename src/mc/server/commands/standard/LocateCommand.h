@@ -14,23 +14,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LocateCommand@@UEAA@XZ
+    // vIndex: 0
     virtual ~LocateCommand() = default;
 
-    // vIndex: 2, symbol: ?execute@LocateCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+    // vIndex: 2
     virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    // symbol: ?setup@LocateCommand@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry& registry);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_executeLocateBiome@LocateCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     MCAPI void _executeLocateBiome(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    // symbol: ?_executeLocateStructure@LocateCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     MCAPI void _executeLocateStructure(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // NOLINTEND

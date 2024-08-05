@@ -14,13 +14,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BatteryMonitorInterface@@UEAA@XZ
+    // vIndex: 0
     virtual ~BatteryMonitorInterface() = default;
 
-    // vIndex: 1, symbol: ?getBatteryStatus@FakeBatteryMonitorInterface@@UEBA?AW4BatteryStatus@@XZ
+    // vIndex: 1
     virtual ::BatteryStatus getBatteryStatus() const = 0;
 
-    // vIndex: 2, symbol: ?getBatteryLevel@FakeBatteryMonitorInterface@@UEBAMXZ
+    // vIndex: 2
     virtual float getBatteryLevel() const = 0;
 
     // NOLINTEND

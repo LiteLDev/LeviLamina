@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1BlockTryPlaceByPlayerEvent@@QEAA@XZ
     MCAPI ~BlockTryPlaceByPlayerEvent();
 
     // NOLINTEND

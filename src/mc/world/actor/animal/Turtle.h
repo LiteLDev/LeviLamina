@@ -35,19 +35,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1Turtle@@UEAA@XZ
+    // vIndex: 10
     virtual ~Turtle() = default;
 
-    // vIndex: 38, symbol: ?getShadowRadius@Turtle@@UEBAMXZ
+    // vIndex: 38
     virtual float getShadowRadius() const;
 
-    // vIndex: 131, symbol: ?die@Turtle@@UEAAXAEBVActorDamageSource@@@Z
+    // vIndex: 131
     virtual void die(class ActorDamageSource const& source);
 
-    // vIndex: 184, symbol: ?_getWalkTargetValue@Turtle@@UEAAMAEBVBlockPos@@@Z
+    // vIndex: 184
     virtual float _getWalkTargetValue(class BlockPos const& pos);
 
-    // symbol: ??0Turtle@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Turtle(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

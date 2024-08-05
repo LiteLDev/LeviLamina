@@ -27,21 +27,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ActorBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~ActorBlock();
 
-    // vIndex: 93, symbol: ?neighborChanged@ActorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 93
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 105, symbol: ?triggerEvent@ActorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@HH@Z
+    // vIndex: 105
     virtual void triggerEvent(class BlockSource& region, class BlockPos const& pos, int b0, int b1) const;
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ??0ActorBlock@@IEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI ActorBlock(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND

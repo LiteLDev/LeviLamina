@@ -16,20 +16,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@UpdateRenderPosSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_doUpdateRenderPosSystem@UpdateRenderPosSystem@@CAXAEBVStrictEntityContext@@AEBUStateVectorComponent@@AEAURenderPositionComponent@@@Z
     MCAPI static void
     _doUpdateRenderPosSystem(class StrictEntityContext const&, struct StateVectorComponent const&, struct RenderPositionComponent&);
 
-    // symbol:
-    // ?_tickUpdateRenderPosSystem@UpdateRenderPosSystem@@CAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@$$CBUStateVectorComponent@@URenderPositionComponent@@@@@Z
     MCAPI static void
     _tickUpdateRenderPosSystem(class ViewT<
                                class StrictEntityContext,

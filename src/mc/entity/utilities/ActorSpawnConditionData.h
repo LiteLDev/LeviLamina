@@ -10,10 +10,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4ActorSpawnConditionData@@QEAAAEAU0@AEBU0@@Z
     MCAPI struct ActorSpawnConditionData& operator=(struct ActorSpawnConditionData const&);
 
-    // symbol: ??1ActorSpawnConditionData@@QEAA@XZ
     MCAPI ~ActorSpawnConditionData();
 
     // NOLINTEND

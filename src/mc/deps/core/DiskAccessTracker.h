@@ -20,20 +20,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0DiskAccessTracker@Core@@QEAA@XZ
     MCAPI DiskAccessTracker();
 
-    // symbol: ?addIgnoredPath@DiskAccessTracker@Core@@QEAAXAEBVPath@2@@Z
     MCAPI void addIgnoredPath(class Core::Path const& path);
 
-    // symbol: ?getDiskAccessTracker@DiskAccessTracker@Core@@SAAEAV12@XZ
     MCAPI static class Core::DiskAccessTracker& getDiskAccessTracker();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_addNewWriteOperation@DiskAccessTracker@Core@@AEAAX_KW4WriteOperation@2@AEBVPath@2@@Z
     MCAPI void _addNewWriteOperation(uint64 amount, ::Core::WriteOperation, class Core::Path const& path);
 
     // NOLINTEND

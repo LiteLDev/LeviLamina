@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1PrivilegeScope@QuickJS@Scripting@@QEAA@XZ
     MCAPI ~PrivilegeScope();
 
     // NOLINTEND

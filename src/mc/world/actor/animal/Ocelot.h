@@ -35,23 +35,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1Ocelot@@UEAA@XZ
+    // vIndex: 10
     virtual ~Ocelot() = default;
 
-    // vIndex: 144, symbol: ?updateEntitySpecificMolangVariables@Ocelot@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 144
     virtual void updateEntitySpecificMolangVariables(class RenderParams&);
 
-    // symbol: ??0Ocelot@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Ocelot(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?SNEAK_SPEED_MOD@Ocelot@@2MB
     MCAPI static float const SNEAK_SPEED_MOD;
 
-    // symbol: ?SPRINT_SPEED_MOD@Ocelot@@2MB
     MCAPI static float const SPRINT_SPEED_MOD;
 
     // NOLINTEND

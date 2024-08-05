@@ -30,11 +30,9 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __gen_??1TakeFlowerDefinition@TakeFlowerGoal@@UEAA@XZ
+        // vIndex: 0
         virtual ~TakeFlowerDefinition() = default;
 
-        // symbol:
-        // ?buildSchema@TakeFlowerDefinition@TakeFlowerGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VTakeFlowerDefinition@TakeFlowerGoal@@@JsonUtil@@@4@@Z
         MCAPI static void buildSchema(
             std::string const&                                name,
             std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
@@ -53,29 +51,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1TakeFlowerGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~TakeFlowerGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@TakeFlowerGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@TakeFlowerGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@TakeFlowerGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@TakeFlowerGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@TakeFlowerGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@TakeFlowerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0TakeFlowerGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit TakeFlowerGoal(class Mob& mob);
 
     // NOLINTEND

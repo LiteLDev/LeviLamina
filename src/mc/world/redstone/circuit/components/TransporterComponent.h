@@ -13,14 +13,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1TransporterComponent@@UEAA@XZ
+    // vIndex: 0
     virtual ~TransporterComponent() = default;
 
-    // vIndex: 7, symbol: ?canConsumerPower@TransporterComponent@@UEBA_NXZ
+    // vIndex: 7
     virtual bool canConsumerPower() const;
 
-    // vIndex: 11, symbol:
-    // ?addSource@TransporterComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
+    // vIndex: 11
     virtual bool addSource(
         class CircuitSceneGraph&         graph,
         class CircuitTrackingInfo const& info,
@@ -28,21 +27,19 @@ public:
         bool&                            bDirectlyPowered
     );
 
-    // vIndex: 12, symbol:
-    // ?allowConnection@TransporterComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
+    // vIndex: 12
     virtual bool
     allowConnection(class CircuitSceneGraph& graph, class CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
-    // vIndex: 14, symbol: ?evaluate@TransporterComponent@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
+    // vIndex: 14
     virtual bool evaluate(class CircuitSystem& system, class BlockPos const& pos);
 
-    // vIndex: 15, symbol: ?cacheValues@TransporterComponent@@UEAAXAEAVCircuitSystem@@AEBVBlockPos@@@Z
+    // vIndex: 15
     virtual void cacheValues(class CircuitSystem& system, class BlockPos const& pos);
 
-    // vIndex: 23, symbol: ?getCircuitComponentType@TransporterComponent@@UEBA?AW4CircuitComponentType@@XZ
+    // vIndex: 23
     virtual ::CircuitComponentType getCircuitComponentType() const;
 
-    // symbol: ??0TransporterComponent@@QEAA@XZ
     MCAPI TransporterComponent();
 
     // NOLINTEND

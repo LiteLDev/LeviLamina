@@ -35,56 +35,51 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 3, symbol: ?outOfWorld@ThrownTrident@@UEAAXXZ
+    // vIndex: 3
     virtual void outOfWorld();
 
-    // vIndex: 4, symbol: ?reloadHardcoded@ThrownTrident@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 4
     virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: __gen_??1ThrownTrident@@UEAA@XZ
+    // vIndex: 10
     virtual ~ThrownTrident() = default;
 
-    // vIndex: 42, symbol: ?playerTouch@ThrownTrident@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 42
     virtual void playerTouch(class Player& player);
 
-    // vIndex: 65, symbol: ?isEnchanted@ThrownTrident@@UEBA_NXZ
+    // vIndex: 65
     virtual bool isEnchanted() const;
 
-    // vIndex: 76, symbol: ?despawn@ThrownTrident@@UEAAXXZ
+    // vIndex: 76
     virtual void despawn();
 
-    // vIndex: 146, symbol: ?_hurt@ThrownTrident@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 146
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 147, symbol: ?readAdditionalSaveData@ThrownTrident@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 148, symbol: ?addAdditionalSaveData@ThrownTrident@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 151, symbol: ?shoot@ThrownTrident@@UEAAXAEBVVec3@@MM0@Z
+    // vIndex: 151
     virtual void shoot(class Vec3 const& dir, float pow, float uncertainty, class Vec3 const& baseSpeed);
 
-    // vIndex: 152, symbol: ?_getPickupItem@ThrownTrident@@MEBA?AVItemStack@@XZ
+    // vIndex: 152
     virtual class ItemStack _getPickupItem() const;
 
-    // symbol: ??0ThrownTrident@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI ThrownTrident(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?doNormalTick@ThrownTrident@@QEAAXXZ
     MCAPI void doNormalTick();
 
-    // symbol: ?getPickupItem@ThrownTrident@@QEBA?AVItemStack@@XZ
     MCAPI class ItemStack getPickupItem() const;
 
-    // symbol: ?returnWithLoyalty@ThrownTrident@@QEAAXH@Z
     MCAPI void returnWithLoyalty(int enchantLevel);
 
-    // symbol: ?setTridentItem@ThrownTrident@@QEAAXAEBVItemStack@@@Z
     MCAPI void setTridentItem(class ItemStack const& item);
 
     // NOLINTEND

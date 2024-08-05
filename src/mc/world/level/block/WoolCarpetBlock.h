@@ -28,25 +28,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1WoolCarpetBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~WoolCarpetBlock() = default;
 
-    // vIndex: 28, symbol: ?canDamperVibrations@WoolCarpetBlock@@UEBA_NXZ
+    // vIndex: 28
     virtual bool canDamperVibrations() const;
 
-    // vIndex: 64, symbol: ?dispense@WoolCarpetBlock@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 64
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar) const;
 
-    // symbol:
-    // ??0WoolCarpetBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4BlockColor@@@Z
     MCAPI WoolCarpetBlock(std::string const& nameId, int id, ::BlockColor color);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_tryEquipCarpet@WoolCarpetBlock@@CA_NPEAVActor@@AEBVItemStack@@@Z
     MCAPI static bool _tryEquipCarpet(class Actor* actor, class ItemStack const&);
 
     // NOLINTEND

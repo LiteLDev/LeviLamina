@@ -35,52 +35,48 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 4, symbol: ?reloadHardcoded@PrimedTnt@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 4
     virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 5, symbol:
-    // ?reloadHardcodedClient@PrimedTnt@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 5
     virtual void reloadHardcodedClient(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 6, symbol:
-    // ?initializeComponents@PrimedTnt@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 6
     virtual void initializeComponents(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: __gen_??1PrimedTnt@@UEAA@XZ
+    // vIndex: 10
     virtual ~PrimedTnt() = default;
 
-    // vIndex: 12, symbol: ?getOwnerEntityType@PrimedTnt@@UEAA?AW4ActorType@@XZ
+    // vIndex: 12
     virtual ::ActorType getOwnerEntityType();
 
-    // vIndex: 23, symbol: ?teleportTo@PrimedTnt@@UEAAXAEBVVec3@@_NHH1@Z
+    // vIndex: 23
     virtual void teleportTo(class Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool);
 
-    // vIndex: 26, symbol: ?normalTick@PrimedTnt@@UEAAXXZ
+    // vIndex: 26
     virtual void normalTick();
 
-    // vIndex: 38, symbol: ?getShadowRadius@PrimedTnt@@UEBAMXZ
+    // vIndex: 38
     virtual float getShadowRadius() const;
 
-    // vIndex: 90, symbol: ?getSourceUniqueID@PrimedTnt@@UEBA?AUActorUniqueID@@XZ
+    // vIndex: 90
     virtual struct ActorUniqueID getSourceUniqueID() const;
 
-    // vIndex: 146, symbol: ?_hurt@PrimedTnt@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 146
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 147, symbol: ?readAdditionalSaveData@PrimedTnt@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 148, symbol: ?addAdditionalSaveData@PrimedTnt@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148
     virtual void addAdditionalSaveData(class CompoundTag& entityTag) const;
 
-    // symbol: ??0PrimedTnt@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI PrimedTnt(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?postNormalTick@PrimedTnt@@QEAAXXZ
     MCAPI void postNormalTick();
 
     // NOLINTEND

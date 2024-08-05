@@ -24,7 +24,7 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __gen_??1Definition@TimerActorFlag1Goal@@UEAA@XZ
+        // vIndex: 0
         virtual ~Definition() = default;
 
         // NOLINTEND
@@ -38,7 +38,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1TimerActorFlag1Goal@@UEAA@XZ
+    // vIndex: 0
     virtual ~TimerActorFlag1Goal() = default;
 
     // NOLINTEND

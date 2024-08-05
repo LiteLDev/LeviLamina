@@ -16,19 +16,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@WaterAnimalPreAIStepSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_doWaterAnimalPreAIStepSystem@WaterAnimalPreAIStepSystem@@CAXAEBVStrictEntityContext@@AEAVActorOwnerComponent@@@Z
     MCAPI static void _doWaterAnimalPreAIStepSystem(class StrictEntityContext const&, class ActorOwnerComponent&);
 
-    // symbol:
-    // ?_tickWaterAnimalPreAIStepSystem@WaterAnimalPreAIStepSystem@@CAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@UWaterAnimalFlag@@@@@@VActorOwnerComponent@@@@@Z
     MCAPI static void _tickWaterAnimalPreAIStepSystem(class ViewT<
                                                       class StrictEntityContext,
                                                       struct Include<

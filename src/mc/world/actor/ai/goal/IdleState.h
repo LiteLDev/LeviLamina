@@ -14,16 +14,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1IdleState@@UEAA@XZ
+    // vIndex: 0
     virtual ~IdleState() = default;
 
-    // vIndex: 1, symbol: ?tick@IdleState@@UEAAXXZ
+    // vIndex: 1
     virtual void tick();
 
-    // vIndex: 2, symbol: ?start@IdleState@@UEAAXXZ
+    // vIndex: 2
     virtual void start();
 
-    // vIndex: 3, symbol: ?stop@PetSleepWithOwnerState@@UEAAXXZ
+    // vIndex: 3
     virtual void stop();
 
     // NOLINTEND

@@ -15,39 +15,35 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1EatCarriedItemGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~EatCarriedItemGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@EatCarriedItemGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@EatCarriedItemGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@EatCarriedItemGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@EatCarriedItemGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@EatCarriedItemGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@EatCarriedItemGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0EatCarriedItemGoal@@QEAA@AEAVMob@@H@Z
     MCAPI EatCarriedItemGoal(class Mob& mob, int startDelay);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?CHEW_CHANCE@EatCarriedItemGoal@@0HB
     MCAPI static int const CHEW_CHANCE;
 
-    // symbol: ?EATING_TIME@EatCarriedItemGoal@@0HB
     MCAPI static int const EATING_TIME;
 
     // NOLINTEND

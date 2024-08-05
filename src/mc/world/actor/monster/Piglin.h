@@ -35,19 +35,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1Piglin@@UEAA@XZ
+    // vIndex: 10
     virtual ~Piglin() = default;
 
-    // vIndex: 124, symbol: ?getInteraction@Piglin@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z
+    // vIndex: 124
     virtual bool getInteraction(class Player& player, class ActorInteraction& interaction, class Vec3 const& location);
 
-    // vIndex: 144, symbol: ?updateEntitySpecificMolangVariables@Piglin@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 144
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // vIndex: 190, symbol: ?isDarkEnoughToSpawn@Piglin@@UEBA_NXZ
+    // vIndex: 190
     virtual bool isDarkEnoughToSpawn() const;
 
-    // symbol: ??0Piglin@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Piglin(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

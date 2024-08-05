@@ -11,13 +11,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FileAccessTransforms@@UEAA@XZ
+    // vIndex: 0
     virtual ~FileAccessTransforms() = default;
 
-    // vIndex: 1, symbol: ?readTransform@FileAccessTransforms@@UEBA_NAEAV?$vector@EV?$allocator@E@std@@@std@@@Z
+    // vIndex: 1
     virtual bool readTransform(std::vector<uchar>& stream) const;
 
-    // vIndex: 2, symbol: ?writeTransform@FileAccessTransforms@@UEBA_NAEAV?$vector@EV?$allocator@E@std@@@std@@@Z
+    // vIndex: 2
     virtual bool writeTransform(std::vector<uchar>& stream) const;
 
     // NOLINTEND

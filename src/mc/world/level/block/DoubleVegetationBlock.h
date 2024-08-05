@@ -27,20 +27,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DoubleVegetationBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~DoubleVegetationBlock() = default;
 
-    // vIndex: 80, symbol:
-    // ?onFertilized@DoubleVegetationBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
+    // vIndex: 80
     virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, ::FertilizerType) const;
 
-    // vIndex: 82, symbol: ?canBeFertilized@DoubleVegetationBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 82
     virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
 
-    // vIndex: 122, symbol: ?getColor@DoubleVegetationBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 122
     virtual int getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
 
-    // symbol: ??0DoubleVegetationBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI DoubleVegetationBlock(std::string const&, int);
 
     // NOLINTEND

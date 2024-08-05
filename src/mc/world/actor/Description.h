@@ -11,16 +11,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ?getJsonName@AmphibiousMoveControlDescription@@UEBAPEBDXZ
+    // vIndex: 0
     virtual char const* getJsonName() const = 0;
 
-    // vIndex: 1, symbol: __gen_??1Description@@UEAA@XZ
+    // vIndex: 1
     virtual ~Description() = default;
 
-    // vIndex: 2, symbol: ?deserializeData@Description@@UEAAXUDeserializeDataParams@@@Z
+    // vIndex: 2
     virtual void deserializeData(struct DeserializeDataParams);
 
-    // symbol: ?parseDescription@Description@@QEAAPEAU1@UDeserializeDataParams@@@Z
     MCAPI struct Description* parseDescription(struct DeserializeDataParams deserializeDataParams);
 
     // NOLINTEND

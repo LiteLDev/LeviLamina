@@ -27,36 +27,35 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LadderBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~LadderBlock() = default;
 
-    // vIndex: 11, symbol: ?getVisualShape@LadderBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
+    // vIndex: 11
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
 
-    // vIndex: 13, symbol:
-    // ?getLiquidClipVolume@LadderBlock@@UEBA_NAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@AEAVAABB@@@Z
+    // vIndex: 13
     virtual bool getLiquidClipVolume(class Block const&, class BlockSource&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 33, symbol: ?isWaterBlocking@LadderBlock@@UEBA_NXZ
+    // vIndex: 33
     virtual bool isWaterBlocking() const;
 
-    // vIndex: 52, symbol: ?sanitizeFillBlock@LadderBlock@@UEBAAEBVBlock@@AEBV2@@Z
+    // vIndex: 52
     virtual class Block const& sanitizeFillBlock(class Block const&) const;
 
-    // vIndex: 56, symbol: ?waterSpreadCausesSpawn@LadderBlock@@UEBA_NXZ
+    // vIndex: 56
     virtual bool waterSpreadCausesSpawn() const;
 
-    // vIndex: 57, symbol: ?canContainLiquid@LadderBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // vIndex: 85, symbol: ?mayPlace@LadderBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
+    // vIndex: 85
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar face) const;
 
-    // vIndex: 93, symbol: ?neighborChanged@LadderBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 93
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 98, symbol: ?getPlacementBlock@LadderBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+    // vIndex: 98
     virtual class Block const& getPlacementBlock(
         class Actor const&    by,
         class BlockPos const& pos,
@@ -65,13 +64,12 @@ public:
         int                   itemValue
     ) const;
 
-    // vIndex: 148, symbol: ?tick@LadderBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
-    // vIndex: 154, symbol: ?canSurvive@LadderBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 154
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ??0LadderBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI LadderBlock(std::string const& nameId, int id);
 
     // NOLINTEND

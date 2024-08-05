@@ -26,23 +26,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1TridentItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~TridentItem() = default;
 
-    // vIndex: 19, symbol: ?isThrowable@TridentItem@@UEBA_NXZ
+    // vIndex: 19
     virtual bool isThrowable() const;
 
-    // vIndex: 34, symbol: ?getMaxDamage@TridentItem@@UEBAFXZ
+    // vIndex: 34
     virtual short getMaxDamage() const;
 
-    // vIndex: 35, symbol: ?getAttackDamage@TridentItem@@UEBAHXZ
+    // vIndex: 35
     virtual int getAttackDamage() const;
 
-    // vIndex: 43, symbol: ?canDestroyInCreative@TridentItem@@UEBA_NXZ
+    // vIndex: 43
     virtual bool canDestroyInCreative() const;
 
-    // vIndex: 48, symbol:
-    // ?appendFormattedHovertext@TridentItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+    // vIndex: 48
     virtual void appendFormattedHovertext(
         class ItemStackBase const& stack,
         class Level&               level,
@@ -50,36 +49,33 @@ public:
         bool                       showCategory
     ) const;
 
-    // vIndex: 50, symbol: ?getEnchantSlot@TridentItem@@UEBAHXZ
+    // vIndex: 50
     virtual int getEnchantSlot() const;
 
-    // vIndex: 51, symbol: ?getEnchantValue@TridentItem@@UEBAHXZ
+    // vIndex: 51
     virtual int getEnchantValue() const;
 
-    // vIndex: 72, symbol: ?use@TridentItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+    // vIndex: 72
     virtual class ItemStack& use(class ItemStack& instance, class Player& player) const;
 
-    // vIndex: 74, symbol: ?dispense@TridentItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 74
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
-    // vIndex: 76, symbol: ?releaseUsing@TridentItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z
+    // vIndex: 76
     virtual void releaseUsing(class ItemStack& item, class Player* player, int durationLeft) const;
 
-    // vIndex: 78, symbol: ?hurtActor@TridentItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
+    // vIndex: 78
     virtual void hurtActor(class ItemStack& item, class Actor& actor, class Mob& attacker) const;
 
-    // symbol: ?CHARGE_THRESHOLD_TIME@TridentItem@@2HB
     MCAPI static int const CHARGE_THRESHOLD_TIME;
 
-    // symbol: ?THROW_THRESHOLD_TIME@TridentItem@@2HB
     MCAPI static int const THROW_THRESHOLD_TIME;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_setupProjectile@TridentItem@@AEBAPEAVActor@@PEAV2@VItemStack@@_N@Z
     MCAPI class Actor* _setupProjectile(class Actor*, class ItemStack item, bool creative) const;
 
     // NOLINTEND

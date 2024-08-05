@@ -23,16 +23,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ContextScopeListener@QuickJS@Scripting@@UEAA@XZ
+    // vIndex: 0
     virtual ~ContextScopeListener() = default;
 
-    // vIndex: 1, symbol:
-    // ?onMakeObject@ContextScopeListener@QuickJS@Scripting@@UEAAXAEAVLifetimeRegistry@3@UObjectHandle@3@AEBVmeta_type@entt@@I@Z
+    // vIndex: 1
     virtual void
     onMakeObject(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle, entt::meta_type const&, uint);
 
-    // vIndex: 2, symbol:
-    // ?onDestroyObject@ContextScopeListener@QuickJS@Scripting@@UEAAXAEAVLifetimeRegistry@3@UObjectHandle@3@AEBVmeta_type@entt@@I@Z
+    // vIndex: 2
     virtual void onDestroyObject(
         class Scripting::LifetimeRegistry& registry,
         struct Scripting::ObjectHandle     handle,
@@ -40,13 +38,11 @@ public:
         uint
     );
 
-    // vIndex: 3, symbol:
-    // ?onTrackObject@ContextScopeListener@QuickJS@Scripting@@UEAAXAEAVLifetimeRegistry@3@UObjectHandle@3@AEBVmeta_type@entt@@I@Z
+    // vIndex: 3
     virtual void
     onTrackObject(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle, entt::meta_type const&, uint);
 
-    // vIndex: 4, symbol:
-    // ?onUntrackObject@ContextScopeListener@QuickJS@Scripting@@UEAAXAEAVLifetimeRegistry@3@UObjectHandle@3@AEBVmeta_type@entt@@I@Z
+    // vIndex: 4
     virtual void onUntrackObject(
         class Scripting::LifetimeRegistry& registry,
         struct Scripting::ObjectHandle     handle,
@@ -54,24 +50,20 @@ public:
         uint
     );
 
-    // vIndex: 5, symbol:
-    // ?onObjectReducedToSingleOwner@ContextScopeListener@QuickJS@Scripting@@UEAAXAEAVLifetimeRegistry@3@UObjectHandle@3@@Z
+    // vIndex: 5
     virtual void
     onObjectReducedToSingleOwner(class Scripting::LifetimeRegistry& registry, struct Scripting::ObjectHandle handle);
 
-    // vIndex: 6, symbol:
-    // ?onObjectPromotedToMultipleOwners@ContextScopeListener@QuickJS@Scripting@@UEAAXAEAVLifetimeRegistry@3@UObjectHandle@3@@Z
+    // vIndex: 6
     virtual void onObjectPromotedToMultipleOwners(
         class Scripting::LifetimeRegistry& registry,
         struct Scripting::ObjectHandle     handle
     );
 
-    // vIndex: 7, symbol:
-    // ?onPreLifetimeScopeDestroy@ContextScopeListener@QuickJS@Scripting@@UEAAXAEAVLifetimeRegistry@3@@Z
+    // vIndex: 7
     virtual void onPreLifetimeScopeDestroy(class Scripting::LifetimeRegistry& registry);
 
-    // vIndex: 8, symbol:
-    // ?onPostLifetimeScopeDestroy@ContextScopeListener@QuickJS@Scripting@@UEAAXAEAVLifetimeRegistry@3@@Z
+    // vIndex: 8
     virtual void onPostLifetimeScopeDestroy(class Scripting::LifetimeRegistry&);
 
     // NOLINTEND

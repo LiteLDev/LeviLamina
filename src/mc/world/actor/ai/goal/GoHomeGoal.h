@@ -30,14 +30,11 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __gen_??1GoHomeDefinition@GoHomeGoal@@UEAA@XZ
+        // vIndex: 0
         virtual ~GoHomeDefinition() = default;
 
-        // symbol: ?initialize@GoHomeDefinition@GoHomeGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext& entity, class GoHomeGoal& goal) const;
 
-        // symbol:
-        // ?buildSchema@GoHomeDefinition@GoHomeGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VGoHomeDefinition@GoHomeGoal@@@JsonUtil@@@4@@Z
         MCAPI static void buildSchema(
             std::string const& name,
             std::shared_ptr<
@@ -56,42 +53,37 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1GoHomeGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~GoHomeGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@GoHomeGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@GoHomeGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@GoHomeGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@GoHomeGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@GoHomeGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@GoHomeGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0GoHomeGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit GoHomeGoal(class Mob& mob);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_hasReachedHome@GoHomeGoal@@AEBA_NXZ
     MCAPI bool _hasReachedHome() const;
 
-    // symbol: ?_hasRequiredComponents@GoHomeGoal@@AEBA_NXZ
     MCAPI bool _hasRequiredComponents() const;
 
-    // symbol: ?_triggerOnFailedEvents@GoHomeGoal@@AEAAXXZ
     MCAPI void _triggerOnFailedEvents();
 
     // NOLINTEND

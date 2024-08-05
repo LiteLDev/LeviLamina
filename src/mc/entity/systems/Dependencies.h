@@ -15,7 +15,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1Dependencies@@QEAA@XZ
     MCAPI ~Dependencies();
 
     // NOLINTEND

@@ -14,16 +14,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1AddActorEntityProxy@@UEAA@XZ
+    // vIndex: 0
     virtual ~AddActorEntityProxy() = default;
 
-    // vIndex: 1, symbol: ?initializeActor@AddActorEntityProxy@@UEAAXAEAVActor@@@Z
+    // vIndex: 1
     virtual void initializeActor(class Actor& actor);
 
-    // vIndex: 2, symbol: ?reloadActor@AddActorEntityProxy@@UEAAXAEAVActor@@@Z
+    // vIndex: 2
     virtual void reloadActor(class Actor& actor);
 
-    // symbol: ??0AddActorEntityProxy@@QEAA@AEAVDimension@@@Z
     MCAPI explicit AddActorEntityProxy(class Dimension& dimension);
 
     // NOLINTEND

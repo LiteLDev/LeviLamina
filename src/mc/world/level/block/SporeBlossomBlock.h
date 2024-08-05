@@ -27,36 +27,33 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SporeBlossomBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~SporeBlossomBlock() = default;
 
-    // vIndex: 5, symbol:
-    // ?getCollisionShape@SporeBlossomBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 5
     virtual class AABB
     getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 57, symbol: ?canContainLiquid@SporeBlossomBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // vIndex: 86, symbol: ?mayPlace@SporeBlossomBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 86
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 93, symbol: ?neighborChanged@SporeBlossomBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 93
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 134, symbol:
-    // ?animateTickBedrockLegacy@SporeBlossomBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 134
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // vIndex: 148, symbol: ?tick@SporeBlossomBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
-    // vIndex: 154, symbol: ?canSurvive@SporeBlossomBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 154
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ??0SporeBlossomBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI SporeBlossomBlock(std::string const& nameId, int id);
 
     // NOLINTEND

@@ -14,10 +14,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ShulkerBoxContainerScreenValidator@@UEAA@XZ
+    // vIndex: 0
     virtual ~ShulkerBoxContainerScreenValidator() = default;
 
-    // symbol: ??0ShulkerBoxContainerScreenValidator@@QEAA@XZ
     MCAPI ShulkerBoxContainerScreenValidator();
 
     // NOLINTEND

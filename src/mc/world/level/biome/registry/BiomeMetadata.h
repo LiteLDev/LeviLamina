@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1BiomeMetadata@@QEAA@XZ
     MCAPI ~BiomeMetadata();
 
     // NOLINTEND

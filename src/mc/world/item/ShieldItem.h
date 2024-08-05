@@ -26,14 +26,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ShieldItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~ShieldItem() = default;
 
-    // vIndex: 37, symbol: ?isHandEquipped@ShieldItem@@UEBA_NXZ
+    // vIndex: 37
     virtual bool isHandEquipped() const;
 
-    // vIndex: 48, symbol:
-    // ?appendFormattedHovertext@ShieldItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+    // vIndex: 48
     virtual void appendFormattedHovertext(
         class ItemStackBase const& stack,
         class Level&               level,
@@ -41,50 +40,48 @@ public:
         bool                       showCategory
     ) const;
 
-    // vIndex: 49, symbol: ?isValidRepairItem@ShieldItem@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z
+    // vIndex: 49
     virtual bool isValidRepairItem(
         class ItemStackBase const&   source,
         class ItemStackBase const&   repairItem,
         class BaseGameVersion const& baseGameVersion
     ) const;
 
-    // vIndex: 50, symbol: ?getEnchantSlot@ShieldItem@@UEBAHXZ
+    // vIndex: 50
     virtual int getEnchantSlot() const;
 
-    // vIndex: 72, symbol: ?use@ShieldItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+    // vIndex: 72
     virtual class ItemStack& use(class ItemStack& item, class Player&) const;
 
-    // vIndex: 74, symbol: ?dispense@ShieldItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 74
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
-    // vIndex: 78, symbol: ?hurtActor@ShieldItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
+    // vIndex: 78
     virtual void hurtActor(class ItemStack& item, class Actor& actor, class Mob& attacker) const;
 
-    // vIndex: 83, symbol:
-    // ?buildDescriptionId@ShieldItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+    // vIndex: 83
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 85, symbol:
-    // ?readUserData@ShieldItem@@UEBAXAEAVItemStackBase@@AEAVIDataInput@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 85
     virtual void
     readUserData(class ItemStackBase& stack, class IDataInput& input, class ReadOnlyBinaryStream& underlyingStream)
         const;
 
-    // vIndex: 86, symbol: ?writeUserData@ShieldItem@@UEBAXAEBVItemStackBase@@AEAVIDataOutput@@@Z
+    // vIndex: 86
     virtual void writeUserData(class ItemStackBase const& stack, class IDataOutput& output) const;
 
-    // vIndex: 88, symbol: ?inventoryTick@ShieldItem@@UEBA_NAEAVItemStack@@AEAVLevel@@AEAVActor@@H_N@Z
+    // vIndex: 88
     virtual bool
     inventoryTick(class ItemStack& item, class Level& level, class Actor& owner, int slot, bool selected) const;
 
-    // vIndex: 90, symbol: ?getCooldownType@ShieldItem@@UEBAAEBVHashedString@@XZ
+    // vIndex: 90
     virtual class HashedString const& getCooldownType() const;
 
-    // vIndex: 91, symbol: ?getCooldownTime@ShieldItem@@UEBAHXZ
+    // vIndex: 91
     virtual int getCooldownTime() const;
 
-    // vIndex: 94, symbol: ?getInHandUpdateType@ShieldItem@@UEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemStack@@1_N2@Z
+    // vIndex: 94
     virtual ::InHandUpdateType getInHandUpdateType(
         class Player const&    player,
         class ItemStack const& oldItem,
@@ -93,25 +90,19 @@ public:
         bool                   slotChanged
     ) const;
 
-    // vIndex: 98, symbol: ?getEquipSound@ShieldItem@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 98
     virtual ::Puv::Legacy::LevelSoundEvent getEquipSound() const;
 
-    // symbol: ?playBlockSound@ShieldItem@@QEBAXPEAVPlayer@@@Z
     MCAPI void playBlockSound(class Player* player) const;
 
-    // symbol: ?playBreakSound@ShieldItem@@QEBAXPEAVPlayer@@@Z
     MCAPI void playBreakSound(class Player* player) const;
 
-    // symbol: ?EFFECTIVE_BLOCK_DELAY@ShieldItem@@2HB
     MCAPI static int const EFFECTIVE_BLOCK_DELAY;
 
-    // symbol: ?IN_HAND_BLOCK_DURATION@ShieldItem@@2HB
     MCAPI static int const IN_HAND_BLOCK_DURATION;
 
-    // symbol: ?NO_SHIELD_PATTERN@ShieldItem@@2HB
     MCAPI static int const NO_SHIELD_PATTERN;
 
-    // symbol: ?TIMESTAMP_TAG@ShieldItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const TIMESTAMP_TAG;
 
     // NOLINTEND

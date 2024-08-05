@@ -8,7 +8,7 @@
 class OverworldBrightnessRamp : public ::DimensionBrightnessRamp {
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1OverworldBrightnessRamp@@UEAA@XZ
+    // vIndex: 0
     virtual ~OverworldBrightnessRamp() = default;
 
     // NOLINTEND

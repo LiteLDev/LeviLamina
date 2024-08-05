@@ -15,17 +15,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SlimeRandomDirectionGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~SlimeRandomDirectionGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@SlimeRandomDirectionGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 6, symbol: ?tick@SlimeRandomDirectionGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@SlimeRandomDirectionGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
     // NOLINTEND

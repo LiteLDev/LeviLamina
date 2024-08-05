@@ -15,19 +15,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ClientEventCoordinatorManager@@UEAA@XZ
+    // vIndex: 0
     virtual ~ClientEventCoordinatorManager() = default;
 
-    // vIndex: 1, symbol:
-    // ?getRemotePlayerEventCoordinator@ClientEventCoordinatorManager@@UEAA?AV?$StackRefResult@VPlayerEventCoordinator@@@@XZ
+    // vIndex: 1
     virtual class StackRefResult<class PlayerEventCoordinator> getRemotePlayerEventCoordinator();
 
-    // vIndex: 2, symbol:
-    // ?getClientPlayerEventCoordinator@ClientEventCoordinatorManager@@UEAA?AV?$StackRefResult@VClientPlayerEventCoordinator@@@@XZ
+    // vIndex: 2
     virtual class StackRefResult<class ClientPlayerEventCoordinator> getClientPlayerEventCoordinator();
 
-    // vIndex: 4, symbol:
-    // ?getLevelEventCoordinator@ClientEventCoordinatorManager@@UEAA?AV?$not_null@V?$StackRefResult@VLevelEventCoordinator@@@@@gsl@@XZ
+    // vIndex: 4
     virtual gsl::not_null<class StackRefResult<class LevelEventCoordinator>> getLevelEventCoordinator();
 
     // NOLINTEND

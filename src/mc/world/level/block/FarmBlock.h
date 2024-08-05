@@ -27,59 +27,55 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FarmBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~FarmBlock() = default;
 
-    // vIndex: 5, symbol:
-    // ?getCollisionShape@FarmBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 5
     virtual class AABB
     getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 9, symbol: ?getOutline@FarmBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
+    // vIndex: 9
     virtual class AABB const&
     getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 23, symbol: ?canProvideSupport@FarmBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
+    // vIndex: 23
     virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType) const;
 
-    // vIndex: 57, symbol: ?canContainLiquid@FarmBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // vIndex: 65, symbol: ?transformOnFall@FarmBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@M@Z
+    // vIndex: 65
     virtual void
     transformOnFall(class BlockSource& region, class BlockPos const& pos, class Actor* actor, float fallDistance) const;
 
-    // vIndex: 93, symbol: ?neighborChanged@FarmBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 93
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 129, symbol: ?getVariant@FarmBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 143, symbol: ?onRemove@FarmBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 143
     virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 148, symbol: ?tick@FarmBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 149, symbol: ?randomTick@FarmBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 149
     virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
-    // vIndex: 154, symbol: ?canSurvive@FarmBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 154
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ??0FarmBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI FarmBlock(std::string const& nameId, int id);
 
-    // symbol: ?BLOCK_AABB@FarmBlock@@2VAABB@@A
     MCAPI static class AABB BLOCK_AABB;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_becomeDirt@FarmBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
     MCAPI void _becomeDirt(class BlockSource&, class BlockPos const&, class Actor*) const;
 
     // NOLINTEND

@@ -10,13 +10,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0WaterMovementComponent@@QEAA@XZ
     MCAPI WaterMovementComponent();
 
-    // symbol: ?getDragFactor@WaterMovementComponent@@QEBAMXZ
     MCAPI float getDragFactor() const;
 
-    // symbol: ?initFromDefinition@WaterMovementComponent@@QEAAXAEAVActor@@@Z
     MCAPI void initFromDefinition(class Actor& owner);
 
     // NOLINTEND

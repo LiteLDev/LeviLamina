@@ -35,30 +35,26 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1Sheep@@UEAA@XZ
+    // vIndex: 10
     virtual ~Sheep() = default;
 
-    // vIndex: 74, symbol: ?handleEntityEvent@Sheep@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 74
     virtual void handleEntityEvent(::ActorEvent id, int data);
 
-    // symbol: ??0Sheep@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Sheep(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?isGrazing@Sheep@@QEBA_NXZ
     MCAPI bool isGrazing() const;
 
-    // symbol: ?preAiStep@Sheep@@QEAAXXZ
     MCAPI void preAiStep();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?EAT_ANIMATION_TICKS@Sheep@@0HB
     MCAPI static int const EAT_ANIMATION_TICKS;
 
     // NOLINTEND

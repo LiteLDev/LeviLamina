@@ -20,14 +20,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ServerFileChunkUploader@@UEAA@XZ
+    // vIndex: 0
     virtual ~ServerFileChunkUploader() = default;
 
-    // vIndex: 1, symbol: ?update@ServerFileChunkUploader@@UEAAXXZ
+    // vIndex: 1
     virtual void update();
 
-    // vIndex: 2, symbol:
-    // ?initFileUploader@ServerFileChunkUploader@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUFileInfo@@HAEBVValue@Json@@V?$function@$$A6AX_N@Z@3@@Z
+    // vIndex: 2
     virtual void initFileUploader(
         std::string const&        uploadId,
         struct FileInfo const&    file,
@@ -36,18 +35,16 @@ public:
         std::function<void(bool)> callback
     );
 
-    // vIndex: 3, symbol:
-    // ?getServerMissingChunks@ServerFileChunkUploader@@UEBAXAEBUFileInfo@@V?$function@$$A6AXV?$vector@UFileChunkInfo@@V?$allocator@UFileChunkInfo@@@std@@@std@@@Z@std@@@Z
+    // vIndex: 3
     virtual void getServerMissingChunks(
         struct FileInfo const&                                 file,
         std::function<void(std::vector<struct FileChunkInfo>)> callback
     ) const;
 
-    // vIndex: 4, symbol: ?confirmChunkReceived@ServerFileChunkUploader@@UEAAXAEBUFileInfo@@AEBUFileChunkInfo@@@Z
+    // vIndex: 4
     virtual void confirmChunkReceived(struct FileInfo const&, struct FileChunkInfo const&);
 
-    // vIndex: 5, symbol:
-    // ?uploadChunk@ServerFileChunkUploader@@UEAAXAEBUFileInfo@@AEBUFileChunkInfo@@AEBV?$vector@EV?$allocator@E@std@@@std@@V?$function@$$A6AX_N@Z@5@@Z
+    // vIndex: 5
     virtual void uploadChunk(
         struct FileInfo const&      file,
         struct FileChunkInfo const& chunk,
@@ -55,8 +52,7 @@ public:
         std::function<void(bool)>   onCompleteCallback
     );
 
-    // vIndex: 6, symbol:
-    // ?uploadStream@IFileChunkUploader@@UEAAXAEBUFileInfo@@_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXW4UploadStreamResult@IFileChunkUploader@@@Z@4@@Z
+    // vIndex: 6
     virtual void uploadStream(
         struct FileInfo const&                                        file,
         uint64                                                        streamSize,
@@ -64,19 +60,19 @@ public:
         std::function<void(::IFileChunkUploader::UploadStreamResult)> onCompleteCallback
     );
 
-    // vIndex: 7, symbol: ?canCancelUpload@ServerFileChunkUploader@@UEBA_NAEBUFileInfo@@@Z
+    // vIndex: 7
     virtual bool canCancelUpload(struct FileInfo const& file) const;
 
-    // vIndex: 8, symbol: ?cancelUpload@ServerFileChunkUploader@@UEAAXAEBUFileInfo@@@Z
+    // vIndex: 8
     virtual void cancelUpload(struct FileInfo const& file);
 
-    // vIndex: 9, symbol: ?getInitErrorCode@ServerFileChunkUploader@@UEBA?AW4UploadError@@XZ
+    // vIndex: 9
     virtual ::UploadError getInitErrorCode() const;
 
-    // vIndex: 10, symbol: ?getUploadProgress@ServerFileChunkUploader@@UEBAMAEBUFileInfo@@@Z
+    // vIndex: 10
     virtual float getUploadProgress(struct FileInfo const& file) const;
 
-    // vIndex: 11, symbol: ?getChunkInfo@ServerFileChunkUploader@@UEBA?AUFileChunkInfo@@AEBUFileInfo@@H@Z
+    // vIndex: 11
     virtual struct FileChunkInfo getChunkInfo(struct FileInfo const& file, int chunkID) const;
 
     // NOLINTEND

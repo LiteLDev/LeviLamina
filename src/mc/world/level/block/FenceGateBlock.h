@@ -28,48 +28,45 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FenceGateBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~FenceGateBlock() = default;
 
-    // vIndex: 5, symbol:
-    // ?getCollisionShape@FenceGateBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 5
     virtual class AABB
     getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 9, symbol:
-    // ?getOutline@FenceGateBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
+    // vIndex: 9
     virtual class AABB const&
     getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 13, symbol:
-    // ?getLiquidClipVolume@FenceGateBlock@@UEBA_NAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@AEAVAABB@@@Z
+    // vIndex: 13
     virtual bool getLiquidClipVolume(class Block const&, class BlockSource&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 25, symbol: ?canConnect@FenceGateBlock@@UEBA_NAEBVBlock@@E0@Z
+    // vIndex: 25
     virtual bool canConnect(class Block const& otherBlock, uchar toOther, class Block const& thisBlock) const;
 
-    // vIndex: 35, symbol: ?isFenceGateBlock@FenceGateBlock@@UEBA_NXZ
+    // vIndex: 35
     virtual bool isFenceGateBlock() const;
 
-    // vIndex: 57, symbol: ?canContainLiquid@FenceGateBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // vIndex: 66, symbol: ?onRedstoneUpdate@FenceGateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
+    // vIndex: 66
     virtual void
     onRedstoneUpdate(class BlockSource& region, class BlockPos const& pos, int strength, bool isFirstTime) const;
 
-    // vIndex: 72, symbol: ?setupRedstoneComponent@FenceGateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 72
     virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 79, symbol: ?ignoreEntitiesOnPistonMove@FenceGateBlock@@UEBA_NAEBVBlock@@@Z
+    // vIndex: 79
     virtual bool ignoreEntitiesOnPistonMove(class Block const& block) const;
 
-    // vIndex: 93, symbol: ?neighborChanged@FenceGateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 93
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 98, symbol: ?getPlacementBlock@FenceGateBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+    // vIndex: 98
     virtual class Block const& getPlacementBlock(
         class Actor const&    by,
         class BlockPos const& pos,
@@ -78,36 +75,31 @@ public:
         int                   itemValue
     ) const;
 
-    // vIndex: 146, symbol: ?onPlace@FenceGateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 146
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 148, symbol: ?tick@FenceGateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
-    // vIndex: 150, symbol: ?isInteractiveBlock@FenceGateBlock@@UEBA_NXZ
+    // vIndex: 150
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 152, symbol: ?use@FenceGateBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    // vIndex: 161, symbol: ?_onHitByActivatingAttack@FenceGateBlock@@EEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
+    // vIndex: 161
     virtual void _onHitByActivatingAttack(class BlockSource&, class BlockPos const&, class Actor*) const;
 
-    // symbol: ??0FenceGateBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4WoodType@@@Z
     MCAPI FenceGateBlock(std::string const& nameId, int id, ::WoodType woodType);
 
-    // symbol: ?resolveIsInWall@FenceGateBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void resolveIsInWall(class BlockSource& region, class BlockPos const& pos) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_onOpenChanged@FenceGateBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void _onOpenChanged(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol:
-    // ?_setOpen@FenceGateBlock@@AEBAXAEAVBlockSource@@V?$not_null@PEBVBlock@@@gsl@@AEBVBlockPos@@PEAVPlayer@@_N@Z
     MCAPI void _setOpen(
         class BlockSource&                region,
         gsl::not_null<class Block const*> block,
@@ -116,7 +108,6 @@ public:
         bool                              shouldBeOpen
     ) const;
 
-    // symbol: ?_getShape@FenceGateBlock@@CAAEBVAABB@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
     MCAPI static class AABB const& _getShape(class BlockPos const&, class Block const&, class AABB&, bool);
 
     // NOLINTEND

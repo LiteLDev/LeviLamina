@@ -14,23 +14,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1WeepingVinesClusterFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~WeepingVinesClusterFeature() = default;
 
-    // vIndex: 3, symbol: ?place@WeepingVinesClusterFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 3
     virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_isInvalidPlacementLocation@WeepingVinesClusterFeature@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI bool _isInvalidPlacementLocation(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ?_placeRoofNetherWart@WeepingVinesClusterFeature@@AEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     MCAPI void _placeRoofNetherWart(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // symbol: ?_placeRoofWeepingVines@WeepingVinesClusterFeature@@AEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     MCAPI void _placeRoofWeepingVines(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // NOLINTEND

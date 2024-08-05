@@ -4,7 +4,6 @@
 
 namespace VanillaSemVersions {
 // NOLINTBEGIN
-// symbol: ?ExposeCustomFeatureVersion@VanillaSemVersions@@3VSemVersion@@B
 MCAPI extern class SemVersion const ExposeCustomFeatureVersion;
 // NOLINTEND
 

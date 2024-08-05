@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1RealmEventForPlayer@@QEAA@XZ
     MCAPI ~RealmEventForPlayer();
 
     // NOLINTEND

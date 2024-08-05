@@ -12,10 +12,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0BeardKernel@@QEAA@XZ
     MCAPI BeardKernel();
 
-    // symbol: ?getContribution@BeardKernel@@SAMHHH@Z
     MCAPI static float getContribution(int, int, int);
 
     // NOLINTEND

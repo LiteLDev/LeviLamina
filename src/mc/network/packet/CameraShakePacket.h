@@ -24,30 +24,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1CameraShakePacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~CameraShakePacket();
 
-    // vIndex: 1, symbol: ?getId@CameraShakePacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@CameraShakePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@CameraShakePacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 8, symbol:
-    // ?_read@CameraShakePacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0CameraShakePacket@@QEAA@XZ
     MCAPI CameraShakePacket();
 
-    // symbol: ??0CameraShakePacket@@QEAA@W4CameraShakeAction@@@Z
     MCAPI explicit CameraShakePacket(::CameraShakeAction);
 
-    // symbol: ??0CameraShakePacket@@QEAA@MMW4CameraShakeType@@@Z
     MCAPI CameraShakePacket(float intensity, float seconds, ::CameraShakeType);
 
     // NOLINTEND

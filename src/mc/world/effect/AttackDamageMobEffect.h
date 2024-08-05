@@ -14,13 +14,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1AttackDamageMobEffect@@UEAA@XZ
+    // vIndex: 0
     virtual ~AttackDamageMobEffect() = default;
 
-    // vIndex: 8, symbol: ?getAttributeModifierValue@AttackDamageMobEffect@@UEBAMHAEBVAttributeModifier@@@Z
+    // vIndex: 8
     virtual float getAttributeModifierValue(int amplifier, class AttributeModifier const& modifier) const;
 
-    // symbol: ??0AttackDamageMobEffect@@QEAA@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_NHH@Z
     MCAPI AttackDamageMobEffect(
         int                id,
         std::string const& resourceName,
@@ -30,10 +29,8 @@ public:
         int                icon
     );
 
-    // symbol: ?getDamageAfterDamageBoost@AttackDamageMobEffect@@SAMMH@Z
     MCAPI static float getDamageAfterDamageBoost(float initialDamage, int count);
 
-    // symbol: ?getDamageAfterWeakness@AttackDamageMobEffect@@SAMMH@Z
     MCAPI static float getDamageAfterWeakness(float initialDamage, int count);
 
     // NOLINTEND

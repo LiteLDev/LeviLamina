@@ -17,10 +17,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?set@PackSetting@@QEAAXAEBVValue@Json@@@Z
     MCAPI void set(class Json::Value const& value);
 
-    // symbol: ??1PackSetting@@QEAA@XZ
     MCAPI ~PackSetting();
 
     // NOLINTEND

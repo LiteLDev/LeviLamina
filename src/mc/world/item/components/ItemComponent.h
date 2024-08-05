@@ -16,35 +16,34 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ItemComponent@@UEAA@XZ
+    // vIndex: 0
     virtual ~ItemComponent() = default;
 
-    // vIndex: 1, symbol: ?checkComponentDataForContentErrors@ItemComponent@@UEBA_NXZ
+    // vIndex: 1
     virtual bool checkComponentDataForContentErrors() const;
 
-    // vIndex: 2, symbol: ?writeSettings@ItemComponent@@UEAAXXZ
+    // vIndex: 2
     virtual void writeSettings();
 
-    // vIndex: 3, symbol: ?isNetworkComponent@ItemComponent@@UEBA_NXZ
+    // vIndex: 3
     virtual bool isNetworkComponent() const;
 
-    // vIndex: 4, symbol:
-    // ?buildNetworkTag@ItemComponent@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBUReflectionCtx@cereal@@@Z
+    // vIndex: 4
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const&) const;
 
-    // vIndex: 5, symbol: ?initializeFromNetwork@ItemComponent@@UEAA_NAEBVCompoundTag@@AEBUReflectionCtx@cereal@@@Z
+    // vIndex: 5
     virtual bool initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx const&);
 
-    // vIndex: 6, symbol: ?handleVersionBasedInitialization@ItemComponent@@UEAAXAEBVSemVersion@@@Z
+    // vIndex: 6
     virtual void handleVersionBasedInitialization(class SemVersion const&);
 
-    // vIndex: 7, symbol: ?_canUseOn@ItemComponent@@MEBA_NAEBVItemStack@@AEAVActor@@AEBVBlockPos@@E@Z
+    // vIndex: 7
     virtual bool _canUseOn(class ItemStack const&, class Actor&, class BlockPos const&, uchar) const;
 
-    // vIndex: 8, symbol: ?_useOn@ItemComponent@@MEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
+    // vIndex: 8
     virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
 
-    // vIndex: 9, symbol: ?_initializeComponent@ItemComponent@@MEAAXXZ
+    // vIndex: 9
     virtual void _initializeComponent();
 
     // NOLINTEND

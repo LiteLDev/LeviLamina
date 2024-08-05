@@ -27,33 +27,30 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DragonEggBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~DragonEggBlock() = default;
 
-    // vIndex: 90, symbol: ?breaksFallingBlocks@DragonEggBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
+    // vIndex: 90
     virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
 
-    // vIndex: 101, symbol: ?attack@DragonEggBlock@@UEBA_NPEAVPlayer@@AEBVBlockPos@@@Z
+    // vIndex: 101
     virtual bool attack(class Player* player, class BlockPos const& pos) const;
 
-    // vIndex: 152, symbol: ?use@DragonEggBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    // vIndex: 163, symbol: ?getDustColor@DragonEggBlock@@UEBA?AVColor@mce@@AEBVBlock@@@Z
+    // vIndex: 163
     virtual class mce::Color getDustColor(class Block const& block) const;
 
-    // vIndex: 164, symbol:
-    // ?getDustParticleName@DragonEggBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
+    // vIndex: 164
     virtual std::string getDustParticleName(class Block const&) const;
 
-    // symbol: ??0DragonEggBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI DragonEggBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_attemptTeleport@DragonEggBlock@@CAXAEAVBlockSource@@AEAVRandom@@AEBVBlockPos@@@Z
     MCAPI static void _attemptTeleport(class BlockSource&, class Random&, class BlockPos const&);
 
     // NOLINTEND

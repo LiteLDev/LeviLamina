@@ -20,28 +20,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SpawnParticleEffectPacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~SpawnParticleEffectPacket();
 
-    // vIndex: 1, symbol: ?getId@SpawnParticleEffectPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@SpawnParticleEffectPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@SpawnParticleEffectPacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 8, symbol:
-    // ?_read@SpawnParticleEffectPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0SpawnParticleEffectPacket@@QEAA@XZ
     MCAPI SpawnParticleEffectPacket();
 
-    // symbol:
-    // ??0SpawnParticleEffectPacket@@QEAA@AEBVVec3@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@EV?$optional@VMolangVariableMap@@@3@@Z
     MCAPI SpawnParticleEffectPacket(
         class Vec3 const&                      pos,
         std::string const&                     name,

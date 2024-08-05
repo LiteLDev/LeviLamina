@@ -41,7 +41,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1ComponentInfo@ScriptItemCustomComponentRegistry@ScriptModuleMinecraft@@QEAA@XZ
         MCAPI ~ComponentInfo();
 
         // NOLINTEND
@@ -55,11 +54,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptItemCustomComponentRegistry@ScriptModuleMinecraft@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptItemCustomComponentRegistry() = default;
 
-    // vIndex: 1, symbol:
-    // ?tryRegisterComponent@ScriptItemCustomComponentRegistry@ScriptModuleMinecraft@@UEAA?AV?$Result@XUScriptItemCustomComponentAlreadyRegisteredError@ScriptModuleMinecraft@@UScriptItemCustomComponentReloadVersionError@2@UScriptItemCustomComponentReloadNewEventError@2@UScriptItemCustomComponentReloadNewComponentError@2@@Scripting@@AEAVWeakLifetimeScope@4@AEBVHashedString@@AEBUIScriptItemCustomComponentClosures@2@@Z
+    // vIndex: 1
     virtual class Scripting::Result<
         void,
         struct ScriptModuleMinecraft::ScriptItemCustomComponentAlreadyRegisteredError,
@@ -68,15 +66,12 @@ public:
         struct ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewComponentError>
     tryRegisterComponent(class Scripting::WeakLifetimeScope&, class HashedString const&, struct ScriptModuleMinecraft::IScriptItemCustomComponentClosures const&);
 
-    // vIndex: 2, symbol: ?onReload@ScriptItemCustomComponentRegistry@ScriptModuleMinecraft@@UEAAXXZ
+    // vIndex: 2
     virtual void onReload();
 
-    // vIndex: 3, symbol:
-    // ?getEventListener@ScriptItemCustomComponentRegistry@ScriptModuleMinecraft@@UEAAAEAVScriptDeferredEventListener@@XZ
+    // vIndex: 3
     virtual class ScriptDeferredEventListener& getEventListener();
 
-    // symbol:
-    // ??0ScriptItemCustomComponentRegistry@ScriptModuleMinecraft@@QEAA@VItemRegistryRef@@$$QEAV?$unique_ptr@VIScriptItemCustomComponentSignalCollection@ScriptModuleMinecraft@@U?$default_delete@VIScriptItemCustomComponentSignalCollection@ScriptModuleMinecraft@@@std@@@std@@@Z
     MCAPI
     ScriptItemCustomComponentRegistry(class ItemRegistryRef, std::unique_ptr<class ScriptModuleMinecraft::IScriptItemCustomComponentSignalCollection>&&);
 
@@ -84,10 +79,8 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_tryRegisterItem@ScriptItemCustomComponentRegistry@ScriptModuleMinecraft@@AEAAXPEAVItem@@@Z
     MCAPI void _tryRegisterItem(class Item*);
 
-    // symbol: ?_tryRegisterLoadedItems@ScriptItemCustomComponentRegistry@ScriptModuleMinecraft@@AEAAXXZ
     MCAPI void _tryRegisterLoadedItems();
 
     // NOLINTEND

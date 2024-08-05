@@ -26,35 +26,31 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FireChargeItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~FireChargeItem() = default;
 
-    // vIndex: 44, symbol: ?isDestructive@FireChargeItem@@UEBA_NH@Z
+    // vIndex: 44
     virtual bool isDestructive(int auxValue) const;
 
-    // vIndex: 73, symbol:
-    // ?createProjectileActor@FireChargeItem@@UEBAPEAVActor@@AEAVBlockSource@@AEBVItemStack@@AEBVVec3@@2@Z
+    // vIndex: 73
     virtual class Actor*
     createProjectileActor(class BlockSource&, class ItemStack const&, class Vec3 const&, class Vec3 const&) const;
 
-    // vIndex: 74, symbol: ?dispense@FireChargeItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 74
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
-    // vIndex: 116, symbol: ?_calculatePlacePos@FireChargeItem@@EEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
+    // vIndex: 116
     virtual bool
     _calculatePlacePos(class ItemStackBase& instance, class Actor& actor, uchar& face, class BlockPos& pos) const;
 
-    // vIndex: 118, symbol:
-    // ?_useOn@FireChargeItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+    // vIndex: 118
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const& clickPos)
         const;
 
-    // symbol: ??0FireChargeItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI FireChargeItem(std::string const& name, int id);
 
-    // symbol: ?LEVEL_SOUND_EVENT_VOLUME@FireChargeItem@@2HB
     MCAPI static int const LEVEL_SOUND_EVENT_VOLUME;
 
     // NOLINTEND

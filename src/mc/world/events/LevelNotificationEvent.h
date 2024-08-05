@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1LevelNotificationEvent@@QEAA@XZ
     MCAPI ~LevelNotificationEvent();
 
     // NOLINTEND

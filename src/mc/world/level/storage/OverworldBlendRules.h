@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1OverworldBlendRules@@QEAA@XZ
     MCAPI ~OverworldBlendRules();
 
     // NOLINTEND

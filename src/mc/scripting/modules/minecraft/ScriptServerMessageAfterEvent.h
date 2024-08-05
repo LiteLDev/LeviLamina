@@ -16,18 +16,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptServerMessageAfterEvent@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
     MCAPI ScriptServerMessageAfterEvent(struct ScriptModuleMinecraft::ScriptServerMessageAfterEvent&&);
 
-    // symbol: ??4ScriptServerMessageAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptServerMessageAfterEvent&
     operator=(struct ScriptModuleMinecraft::ScriptServerMessageAfterEvent&&);
 
-    // symbol: ??1ScriptServerMessageAfterEvent@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptServerMessageAfterEvent();
 
-    // symbol:
-    // ?bind@ScriptServerMessageAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilderReadOnly@UScriptServerMessageAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilderReadOnly<
         struct ScriptModuleMinecraft::ScriptServerMessageAfterEvent>
     bind();

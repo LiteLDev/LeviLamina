@@ -19,14 +19,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?addOnIncreaseSoundDefinition@AngerLevelDefinition@@QEAAXAEBVSoundDefinition@@@Z
     MCAPI void addOnIncreaseSoundDefinition(class SoundDefinition const&);
 
-    // symbol: ?initialize@AngerLevelDefinition@@QEBAXAEAVEntityContext@@AEAVAngerLevelComponent@@@Z
     MCAPI void initialize(class EntityContext& entity, class AngerLevelComponent& component) const;
 
-    // symbol:
-    // ?buildSchema@AngerLevelDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VAngerLevelDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void buildSchema(
         std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AngerLevelDefinition>>&
             root

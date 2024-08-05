@@ -21,14 +21,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol:
-    // ?getProperty@MetaDataPropertyReader@cereal@@EEBA?AUmeta_prop@entt@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+    // vIndex: 0
     virtual entt::meta_prop getProperty(std::string_view) const;
 
-    // vIndex: 1, symbol: __gen_??1MetaDataPropertyReader@cereal@@UEAA@XZ
+    // vIndex: 1
     virtual ~MetaDataPropertyReader() = default;
 
-    // symbol: ??0MetaDataPropertyReader@cereal@@QEAA@AEBUmeta_data@entt@@@Z
     MCAPI explicit MetaDataPropertyReader(entt::meta_data const&);
 
     // NOLINTEND

@@ -32,7 +32,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??0ContentLogEndPointData@ContentLog@@QEAA@V?$not_null@PEAVContentLogEndPoint@@@gsl@@@Z
         MCAPI explicit ContentLogEndPointData(gsl::not_null<class ContentLogEndPoint*>);
 
         // NOLINTEND
@@ -47,10 +46,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??0ContentLogScope@ContentLog@@QEAA@VStaticOptimizedString@Bedrock@@@Z
         MCAPI explicit ContentLogScope(class Bedrock::StaticOptimizedString);
 
-        // symbol: ??1ContentLogScope@ContentLog@@QEAA@XZ
         MCAPI ~ContentLogScope();
 
         // NOLINTEND
@@ -75,38 +72,29 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ContentLog@@UEAA@XZ
+    // vIndex: 0
     virtual ~ContentLog() = default;
 
-    // symbol: ??0ContentLog@@QEAA@XZ
     MCAPI ContentLog();
 
-    // symbol: ?getScope@ContentLog@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getScope();
 
-    // symbol: ?isEnabled@ContentLog@@QEBA_NXZ
     MCAPI bool isEnabled() const;
 
-    // symbol: ?log@ContentLog@@QEAAX_NW4LogLevel@@W4LogArea@@ZZ
     MCAPI void log(bool, ::LogLevel, ::LogArea, ...);
 
-    // symbol: ?unregisterEndPoint@ContentLog@@QEAAXV?$not_null@PEAVContentLogEndPoint@@@gsl@@@Z
     MCAPI void unregisterEndPoint(gsl::not_null<class ContentLogEndPoint*> endPoint);
 
-    // symbol: ?updateEnabledStatus@ContentLog@@QEAAXXZ
     MCAPI void updateEnabledStatus();
 
-    // symbol: ?getBedrockLogAreaFromContentLogArea@ContentLog@@SA?BW4LogAreaID@@W4LogArea@@@Z
     MCAPI static ::LogAreaID const getBedrockLogAreaFromContentLogArea(::LogArea contentLogArea);
 
-    // symbol: ?getLogAreaName@ContentLog@@SAPEBDW4LogArea@@@Z
     MCAPI static char const* getLogAreaName(::LogArea area);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_writeToLog@ContentLog@@AEAAX_NW4LogArea@@W4LogLevel@@AEAPEAD@Z
     MCAPI void _writeToLog(bool, ::LogArea, ::LogLevel, char*&);
 
     // NOLINTEND

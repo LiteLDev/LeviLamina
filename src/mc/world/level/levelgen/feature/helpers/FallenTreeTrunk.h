@@ -16,16 +16,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FallenTreeTrunk@@UEAA@XZ
+    // vIndex: 0
     virtual ~FallenTreeTrunk() = default;
 
-    // vIndex: 1, symbol:
-    // ?placeTrunk@FallenTreeTrunk@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@HAEAVRenderParams@@AEBUTreeParams@TreeHelper@@PEBVITreeCanopy@@@Z
+    // vIndex: 1
     virtual std::optional<class BlockPos>
     placeTrunk(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random, int treeHeight, class RenderParams& renderParams, struct TreeHelper::TreeParams const& treeParams, class ITreeCanopy const*)
         const;
 
-    // vIndex: 2, symbol: ?getTreeHeight@FallenTreeTrunk@@UEBAHAEAVRandom@@@Z
+    // vIndex: 2
     virtual int getTreeHeight(class Random& random) const;
 
     // NOLINTEND

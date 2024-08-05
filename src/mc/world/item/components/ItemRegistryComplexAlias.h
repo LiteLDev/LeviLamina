@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ItemRegistryComplexAlias@@QEAA@XZ
     MCAPI ~ItemRegistryComplexAlias();
 
     // NOLINTEND

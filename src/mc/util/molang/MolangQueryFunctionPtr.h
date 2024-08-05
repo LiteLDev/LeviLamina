@@ -17,7 +17,6 @@ struct MolangQueryFunctionPtr {
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1MolangQueryFunctionPtr@@QEAA@XZ
     MCAPI ~MolangQueryFunctionPtr();
 
     // NOLINTEND

@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1LocIdString@CerealHelpers@@QEAA@XZ
     MCAPI ~LocIdString();
 
     // NOLINTEND

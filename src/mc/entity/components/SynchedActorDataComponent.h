@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1SynchedActorDataComponent@@QEAA@XZ
     MCAPI ~SynchedActorDataComponent();
 
     // NOLINTEND

@@ -19,13 +19,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BlockFallOnEventComponent@BlockEvents@@UEAA@XZ
+    // vIndex: 0
     virtual ~BlockFallOnEventComponent() = default;
 
-    // symbol: ??0BlockFallOnEventComponent@BlockEvents@@QEAA@V?$not_null@PEAVBlock@@@gsl@@@Z
     MCAPI explicit BlockFallOnEventComponent(gsl::not_null<class Block*>);
 
-    // symbol: ??0BlockFallOnEventComponent@BlockEvents@@QEAA@V?$not_null@PEAVBlockLegacy@@@gsl@@@Z
     MCAPI explicit BlockFallOnEventComponent(gsl::not_null<class BlockLegacy*>);
 
     // NOLINTEND

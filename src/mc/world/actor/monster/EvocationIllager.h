@@ -35,16 +35,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1EvocationIllager@@UEAA@XZ
+    // vIndex: 10
     virtual ~EvocationIllager() = default;
 
-    // vIndex: 166, symbol: ?isAlliedTo@EvocationIllager@@UEAA_NPEAVMob@@@Z
+    // vIndex: 166
     virtual bool isAlliedTo(class Mob* other);
 
-    // vIndex: 168, symbol: ?getArmorValue@EvocationIllager@@MEBAHXZ
+    // vIndex: 168
     virtual int getArmorValue() const;
 
-    // symbol: ??0EvocationIllager@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI EvocationIllager(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

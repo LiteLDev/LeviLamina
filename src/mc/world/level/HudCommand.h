@@ -14,13 +14,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1HudCommand@@UEAA@XZ
+    // vIndex: 0
     virtual ~HudCommand() = default;
 
-    // vIndex: 2, symbol: ?execute@HudCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+    // vIndex: 2
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
-    // symbol: ?setup@HudCommand@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry&);
 
     // NOLINTEND

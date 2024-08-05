@@ -22,18 +22,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0ScriptEntityRaycastHit@ScriptModuleMinecraft@@QEAA@AEBV?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@M@Z
     MCAPI ScriptEntityRaycastHit(
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor> const&,
         float
     );
 
-    // symbol: ??1ScriptEntityRaycastHit@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptEntityRaycastHit();
 
-    // symbol:
-    // ?bind@ScriptEntityRaycastHit@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@VScriptEntityRaycastHit@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::InterfaceBindingBuilder<class ScriptModuleMinecraft::ScriptEntityRaycastHit> bind();
 
     // NOLINTEND

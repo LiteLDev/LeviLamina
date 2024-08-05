@@ -4,7 +4,6 @@
 
 namespace SendMotionToServerSystem {
 // NOLINTBEGIN
-// symbol: ?createSystem@SendMotionToServerSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createSystem();
 // NOLINTEND
 

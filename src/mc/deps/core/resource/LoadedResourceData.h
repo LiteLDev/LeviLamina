@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1LoadedResourceData@@QEAA@XZ
     MCAPI ~LoadedResourceData();
 
     // NOLINTEND

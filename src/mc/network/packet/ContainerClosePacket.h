@@ -21,27 +21,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ContainerClosePacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~ContainerClosePacket();
 
-    // vIndex: 1, symbol: ?getId@ContainerClosePacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@ContainerClosePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@ContainerClosePacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 8, symbol:
-    // ?_read@ContainerClosePacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0ContainerClosePacket@@QEAA@XZ
     MCAPI ContainerClosePacket();
 
-    // symbol: ??0ContainerClosePacket@@QEAA@W4ContainerID@@W4ContainerType@@_N@Z
     MCAPI ContainerClosePacket(::ContainerID, ::ContainerType, bool);
 
     // NOLINTEND

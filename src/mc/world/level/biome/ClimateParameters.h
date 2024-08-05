@@ -32,7 +32,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ClimateParameters@@QEAA@UParameter@ClimateUtils@@00000M@Z
     MCAPI ClimateParameters(
         struct ClimateUtils::Parameter temperature,
         struct ClimateUtils::Parameter humidity,

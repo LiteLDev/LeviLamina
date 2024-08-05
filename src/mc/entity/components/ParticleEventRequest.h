@@ -19,7 +19,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1BreakingItemData@ParticleEventRequest@@QEAA@XZ
         MCAPI ~BreakingItemData();
 
         // NOLINTEND

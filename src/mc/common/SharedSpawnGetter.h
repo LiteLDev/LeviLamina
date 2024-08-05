@@ -14,10 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SharedSpawnGetter@@UEAA@XZ
+    // vIndex: 0
     virtual ~SharedSpawnGetter() = default;
 
-    // vIndex: 1, symbol: ?getSharedSpawnPosition@SharedSpawnGetter@@UEBAAEBVBlockPos@@XZ
+    // vIndex: 1
     virtual class BlockPos const& getSharedSpawnPosition() const;
 
     // NOLINTEND

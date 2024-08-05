@@ -21,16 +21,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1GetItemSpaceCommand@AgentCommands@@UEAA@XZ
+    // vIndex: 0
     virtual ~GetItemSpaceCommand() = default;
 
-    // vIndex: 1, symbol: ?execute@GetItemSpaceCommand@AgentCommands@@UEAAXXZ
+    // vIndex: 1
     virtual void execute();
 
-    // vIndex: 2, symbol: ?isDone@GetItemSpaceCommand@AgentCommands@@UEAA_NXZ
+    // vIndex: 2
     virtual bool isDone();
 
-    // vIndex: 4, symbol: ?fireCommandDoneEvent@GetItemSpaceCommand@AgentCommands@@UEAAXXZ
+    // vIndex: 4
     virtual void fireCommandDoneEvent();
 
     // NOLINTEND

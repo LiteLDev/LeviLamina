@@ -9,7 +9,6 @@ namespace cereal { struct ReflectionCtx; }
 
 namespace ComponentItemData {
 // NOLINTBEGIN
-// symbol: ?bindTypes@ComponentItemData@@YAXAEAUReflectionCtx@cereal@@@Z
 MCAPI void bindTypes(struct cereal::ReflectionCtx&);
 // NOLINTEND
 

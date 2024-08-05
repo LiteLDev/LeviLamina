@@ -19,14 +19,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LootItemActorKilledCondition@@UEAA@XZ
+    // vIndex: 0
     virtual ~LootItemActorKilledCondition() = default;
 
-    // vIndex: 1, symbol: ?applies@LootItemActorKilledCondition@@UEAA_NAEAVRandom@@AEAVLootTableContext@@@Z
+    // vIndex: 1
     virtual bool applies(class Random& random, class LootTableContext& context);
 
-    // symbol:
-    // ?deserialize@LootItemActorKilledCondition@@SA?AV?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@VValue@Json@@@Z
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value object);
 
     // NOLINTEND

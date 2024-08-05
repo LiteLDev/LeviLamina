@@ -31,14 +31,11 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1Definition@JumpAroundTargetGoal@@UEAA@XZ
+        // vIndex: 0
         virtual ~Definition();
 
-        // symbol: ?initialize@Definition@JumpAroundTargetGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext&, class JumpAroundTargetGoal&) const;
 
-        // symbol:
-        // ?buildSchema@Definition@JumpAroundTargetGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDefinition@JumpAroundTargetGoal@@@JsonUtil@@@4@@Z
         MCAPI static void
         buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class JumpAroundTargetGoal::Definition>>&);
 
@@ -61,43 +58,38 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1JumpAroundTargetGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~JumpAroundTargetGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@JumpAroundTargetGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@JumpAroundTargetGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 3, symbol: ?canBeInterrupted@JumpAroundTargetGoal@@UEAA_NXZ
+    // vIndex: 3
     virtual bool canBeInterrupted();
 
-    // vIndex: 4, symbol: ?start@JumpAroundTargetGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@JumpAroundTargetGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@JumpAroundTargetGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@JumpAroundTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string&) const;
 
-    // symbol: ??0JumpAroundTargetGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit JumpAroundTargetGoal(class Mob&);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_calculateOptimalJumpVector@JumpAroundTargetGoal@@AEBA?AV?$optional@UJump@JumpAroundTargetGoal@@@std@@AEBVVec3@@@Z
     MCAPI std::optional<struct JumpAroundTargetGoal::Jump> _calculateOptimalJumpVector(class Vec3 const&) const;
 
-    // symbol: ?_snapToSurface@JumpAroundTargetGoal@@AEBA?AV?$optional@VBlockPos@@@std@@AEBVVec3@@@Z
     MCAPI std::optional<class BlockPos> _snapToSurface(class Vec3 const&) const;
 
     // NOLINTEND

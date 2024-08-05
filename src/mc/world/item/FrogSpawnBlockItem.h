@@ -26,23 +26,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FrogSpawnBlockItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~FrogSpawnBlockItem() = default;
 
-    // vIndex: 45, symbol: ?isLiquidClipItem@FrogSpawnBlockItem@@UEBA_NXZ
+    // vIndex: 45
     virtual bool isLiquidClipItem() const;
 
-    // vIndex: 116, symbol:
-    // ?_calculatePlacePos@FrogSpawnBlockItem@@UEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
+    // vIndex: 116
     virtual bool
     _calculatePlacePos(class ItemStackBase& instance, class Actor& actor, uchar& face, class BlockPos& pos) const;
 
-    // vIndex: 118, symbol:
-    // ?_useOn@FrogSpawnBlockItem@@UEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+    // vIndex: 118
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const&) const;
 
-    // symbol: ??0FrogSpawnBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI FrogSpawnBlockItem(std::string const& name, int blockId);
 
     // NOLINTEND

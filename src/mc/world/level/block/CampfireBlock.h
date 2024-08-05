@@ -27,68 +27,64 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CampfireBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~CampfireBlock() = default;
 
-    // vIndex: 20, symbol: ?hasVariableLighting@CampfireBlock@@UEBA_NXZ
+    // vIndex: 20
     virtual bool hasVariableLighting() const;
 
-    // vIndex: 23, symbol: ?canProvideSupport@CampfireBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
+    // vIndex: 23
     virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType) const;
 
-    // vIndex: 33, symbol: ?isWaterBlocking@CampfireBlock@@UEBA_NXZ
+    // vIndex: 33
     virtual bool isWaterBlocking() const;
 
-    // vIndex: 56, symbol: ?waterSpreadCausesSpawn@CampfireBlock@@UEBA_NXZ
+    // vIndex: 56
     virtual bool waterSpreadCausesSpawn() const;
 
-    // vIndex: 57, symbol: ?canContainLiquid@CampfireBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // vIndex: 62, symbol: ?checkIsPathable@CampfireBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
+    // vIndex: 62
     virtual bool checkIsPathable(class Actor& entity, class BlockPos const&, class BlockPos const& pathPos) const;
 
-    // vIndex: 86, symbol: ?mayPlace@CampfireBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 86
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 93, symbol: ?neighborChanged@CampfireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 93
     virtual void neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@CampfireBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
-    // vIndex: 130, symbol: ?canSpawnOn@CampfireBlock@@UEBA_NPEAVActor@@@Z
+    // vIndex: 130
     virtual bool canSpawnOn(class Actor*) const;
 
-    // vIndex: 134, symbol: ?animateTickBedrockLegacy@CampfireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 134
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // vIndex: 137, symbol: ?getLightEmission@CampfireBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
+    // vIndex: 137
     virtual struct Brightness getLightEmission(class Block const& block) const;
 
-    // vIndex: 143, symbol: ?onRemove@CampfireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 143
     virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 146, symbol: ?onPlace@CampfireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 146
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 152, symbol: ?use@CampfireBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    // vIndex: 162, symbol: ?entityInside@CampfireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
+    // vIndex: 162
     virtual void entityInside(class BlockSource& region, class BlockPos const& pos, class Actor& entity) const;
 
-    // symbol: ??0CampfireBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N_N@Z
     MCAPI CampfireBlock(std::string const& nameId, int id, bool spawnRandomParticles, bool);
 
-    // symbol: ?isLit@CampfireBlock@@SA_NAEBVBlock@@@Z
     MCAPI static bool isLit(class Block const& block);
 
-    // symbol: ?tryDouseFire@CampfireBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@_N@Z
     MCAPI static bool
     tryDouseFire(class BlockSource& region, class BlockPos const& pos, class Actor* sourceActor, bool needsWater);
 
-    // symbol: ?tryLightFire@CampfireBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
     MCAPI static bool tryLightFire(class BlockSource& region, class BlockPos const& pos, class Actor* sourceActor);
 
     // NOLINTEND

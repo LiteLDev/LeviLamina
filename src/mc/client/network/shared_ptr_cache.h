@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?remove@shared_ptr_cache@httpclient@xbox@@SAXPEAX@Z
     MCAPI static void remove(void*);
 
     // NOLINTEND

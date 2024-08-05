@@ -28,83 +28,67 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptContainer@ScriptModuleMinecraft@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptContainer() = default;
 
-    // vIndex: 1, symbol: ?getSize@ScriptContainer@ScriptModuleMinecraft@@UEBA?AV?$Result@H$$V@Scripting@@XZ
+    // vIndex: 1
     virtual class Scripting::Result<int> getSize() const;
 
-    // vIndex: 2, symbol: ?getEmptySlotsCount@ScriptContainer@ScriptModuleMinecraft@@UEBA?AV?$Result@H$$V@Scripting@@XZ
+    // vIndex: 2
     virtual class Scripting::Result<int> getEmptySlotsCount() const;
 
-    // vIndex: 3, symbol:
-    // ?setItemV010@ScriptContainer@ScriptModuleMinecraft@@UEBA?AV?$Result@X$$V@Scripting@@HAEBVScriptItemStack@2@@Z
+    // vIndex: 3
     virtual class Scripting::Result<void>
     setItemV010(int slot, class ScriptModuleMinecraft::ScriptItemStack const&) const;
 
-    // vIndex: 4, symbol:
-    // ?setItem@ScriptContainer@ScriptModuleMinecraft@@UEBA?AV?$Result@X$$V@Scripting@@HAEBV?$optional@VScriptItemStack@ScriptModuleMinecraft@@@std@@@Z
+    // vIndex: 4
     virtual class Scripting::Result<void>
     setItem(int slot, std::optional<class ScriptModuleMinecraft::ScriptItemStack> const&) const;
 
-    // vIndex: 5, symbol:
-    // ?getItem@ScriptContainer@ScriptModuleMinecraft@@UEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@H@Z
+    // vIndex: 5
     virtual class Scripting::Result<
         std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>>
     getItem(int slot) const;
 
-    // vIndex: 6, symbol:
-    // ?addItemV010@ScriptContainer@ScriptModuleMinecraft@@UEBA?AV?$Result@X$$V@Scripting@@AEBVScriptItemStack@2@@Z
+    // vIndex: 6
     virtual class Scripting::Result<void> addItemV010(class ScriptModuleMinecraft::ScriptItemStack const&) const;
 
-    // vIndex: 7, symbol:
-    // ?transferItemV010@ScriptContainer@ScriptModuleMinecraft@@UEBA?AV?$Result@_N$$V@Scripting@@HHAEAV12@@Z
+    // vIndex: 7
     virtual class Scripting::Result<bool>
     transferItemV010(int, int, class ScriptModuleMinecraft::ScriptContainer&) const;
 
-    // vIndex: 8, symbol:
-    // ?moveItem@ScriptContainer@ScriptModuleMinecraft@@UEBA?AV?$Result@X$$V@Scripting@@HHAEAVScriptContainerWrapper@2@@Z
+    // vIndex: 8
     virtual class Scripting::Result<void>
     moveItem(int, int, class ScriptModuleMinecraft::ScriptContainerWrapper&) const;
 
-    // vIndex: 9, symbol:
-    // ?swapItemsV010@ScriptContainer@ScriptModuleMinecraft@@UEBA?AV?$Result@_N$$V@Scripting@@HHAEAV12@@Z
+    // vIndex: 9
     virtual class Scripting::Result<bool>
     swapItemsV010(int slot, int, class ScriptModuleMinecraft::ScriptContainer&) const;
 
-    // vIndex: 10, symbol:
-    // ?swapItems@ScriptContainer@ScriptModuleMinecraft@@UEBA?AV?$Result@X$$V@Scripting@@HHAEAVScriptContainerWrapper@2@@Z
+    // vIndex: 10
     virtual class Scripting::Result<void>
     swapItems(int slot, int, class ScriptModuleMinecraft::ScriptContainerWrapper&) const;
 
-    // vIndex: 11, symbol:
-    // ?getSlot@ScriptContainer@ScriptModuleMinecraft@@UEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptContainerSlot@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@H@Z
+    // vIndex: 11
     virtual class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptContainerSlot>>
     getSlot(int slot) const;
 
-    // vIndex: 12, symbol: ?clearAll@ScriptContainer@ScriptModuleMinecraft@@UEBA?AV?$Result@X$$V@Scripting@@XZ
+    // vIndex: 12
     virtual class Scripting::Result<void> clearAll() const;
 
-    // vIndex: 13, symbol:
-    // ?_tryGetContainer@ScriptBlockInventoryComponentContainer@ScriptModuleMinecraft@@MEBAPEAVContainer@@XZ
+    // vIndex: 13
     virtual class Container* _tryGetContainer() const = 0;
 
-    // vIndex: 14, symbol:
-    // ?_getItemContext@ScriptBlockInventoryComponentContainer@ScriptModuleMinecraft@@MEBA?AVItemContext@@H@Z
+    // vIndex: 14
     virtual class ItemContext _getItemContext(int slot) const = 0;
 
-    // symbol: ??0ScriptContainer@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@@Z
     MCAPI explicit ScriptContainer(class Scripting::WeakLifetimeScope const& scope);
 
-    // symbol:
-    // ?addItem@ScriptContainer@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@AEBVScriptItemStack@2@@Z
     MCAPI class Scripting::Result<
         std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>>
     addItem(class ScriptModuleMinecraft::ScriptItemStack const&) const;
 
-    // symbol:
-    // ?transferItem@ScriptContainer@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@HAEAVScriptContainerWrapper@2@@Z
     MCAPI class Scripting::Result<
         std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>>
     transferItem(int, class ScriptModuleMinecraft::ScriptContainerWrapper&) const;
@@ -113,8 +97,6 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    // symbol:
-    // ?_isSlotInvalid@ScriptContainer@ScriptModuleMinecraft@@KA?AV?$optional@UError@Scripting@@@std@@AEAVContainer@@H@Z
     MCAPI static std::optional<struct Scripting::Error> _isSlotInvalid(class Container& container, int slot);
 
     // NOLINTEND

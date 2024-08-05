@@ -14,57 +14,39 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1EventCoordinatorManager@@UEAA@XZ
+    // vIndex: 0
     virtual ~EventCoordinatorManager();
 
-    // vIndex: 1, symbol:
-    // ?getRemotePlayerEventCoordinator@EventCoordinatorManager@@UEAA?AV?$StackRefResult@VPlayerEventCoordinator@@@@XZ
+    // vIndex: 1
     virtual class StackRefResult<class PlayerEventCoordinator> getRemotePlayerEventCoordinator();
 
-    // vIndex: 2, symbol:
-    // ?getClientPlayerEventCoordinator@EventCoordinatorManager@@UEAA?AV?$StackRefResult@VClientPlayerEventCoordinator@@@@XZ
+    // vIndex: 2
     virtual class StackRefResult<class ClientPlayerEventCoordinator> getClientPlayerEventCoordinator();
 
-    // vIndex: 3, symbol:
-    // ?getServerPlayerEventCoordinator@EventCoordinatorManager@@UEAA?AV?$StackRefResult@VServerPlayerEventCoordinator@@@@XZ
+    // vIndex: 3
     virtual class StackRefResult<class ServerPlayerEventCoordinator> getServerPlayerEventCoordinator();
 
-    // vIndex: 4, symbol:
-    // ?getLevelEventCoordinator@ClientEventCoordinatorManager@@UEAA?AV?$not_null@V?$StackRefResult@VLevelEventCoordinator@@@@@gsl@@XZ
+    // vIndex: 4
     virtual gsl::not_null<class StackRefResult<class LevelEventCoordinator>> getLevelEventCoordinator() = 0;
 
-    // vIndex: 5, symbol:
-    // ?getServerLevelEventCoordinator@EventCoordinatorManager@@UEAA?AV?$StackRefResult@VServerLevelEventCoordinator@@@@XZ
+    // vIndex: 5
     virtual class StackRefResult<class ServerLevelEventCoordinator> getServerLevelEventCoordinator();
 
-    // vIndex: 6, symbol:
-    // ?getServerNetworkEventCoordinator@EventCoordinatorManager@@UEAA?AV?$StackRefResult@VServerNetworkEventCoordinator@@@@XZ
+    // vIndex: 6
     virtual class StackRefResult<class ServerNetworkEventCoordinator> getServerNetworkEventCoordinator();
 
-    // symbol: ??0EventCoordinatorManager@@QEAA@XZ
     MCAPI EventCoordinatorManager();
 
-    // symbol:
-    // ?getActorEventCoordinator@EventCoordinatorManager@@QEAA?AV?$not_null@V?$StackRefResult@VActorEventCoordinator@@@@@gsl@@XZ
     MCAPI gsl::not_null<class StackRefResult<class ActorEventCoordinator>> getActorEventCoordinator();
 
-    // symbol:
-    // ?getBlockEventCoordinator@EventCoordinatorManager@@QEAA?AV?$not_null@V?$StackRefResult@VBlockEventCoordinator@@@@@gsl@@XZ
     MCAPI gsl::not_null<class StackRefResult<class BlockEventCoordinator>> getBlockEventCoordinator();
 
-    // symbol:
-    // ?getItemEventCoordinator@EventCoordinatorManager@@QEAA?AV?$not_null@V?$StackRefResult@VItemEventCoordinator@@@@@gsl@@XZ
     MCAPI gsl::not_null<class StackRefResult<class ItemEventCoordinator>> getItemEventCoordinator();
 
-    // symbol:
-    // ?getScriptDeferredEventCoordinator@EventCoordinatorManager@@QEAA?AV?$not_null@V?$StackRefResult@VScriptDeferredEventCoordinator@@@@@gsl@@XZ
     MCAPI gsl::not_null<class StackRefResult<class ScriptDeferredEventCoordinator>> getScriptDeferredEventCoordinator();
 
-    // symbol:
-    // ?getScriptingEventCoordinator@EventCoordinatorManager@@QEAA?AV?$not_null@V?$StackRefResult@VScriptingEventCoordinator@@@@@gsl@@XZ
     MCAPI gsl::not_null<class StackRefResult<class ScriptingEventCoordinator>> getScriptingEventCoordinator();
 
-    // symbol: ?createEventCoordinatorManager@EventCoordinatorManager@@SA?AV?$OwnerPtr@VEventCoordinatorManager@@@@_N@Z
     MCAPI static class OwnerPtr<class EventCoordinatorManager> createEventCoordinatorManager(bool);
 
     // NOLINTEND

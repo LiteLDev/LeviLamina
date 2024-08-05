@@ -28,31 +28,26 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LodestoneCompassItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~LodestoneCompassItem() = default;
 
-    // vIndex: 106, symbol: ?getAnimationFrameFor@LodestoneCompassItem@@UEBAHPEAVMob@@_NPEBVItemStack@@1@Z
+    // vIndex: 106
     virtual int
     getAnimationFrameFor(class Mob* holder, bool asItemEntity, class ItemStack const* item, bool shouldAnimate) const;
 
-    // vIndex: 118, symbol:
-    // ?_useOn@LodestoneCompassItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+    // vIndex: 118
     virtual class InteractionResult
     _useOn(class ItemStack& item, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
         const;
 
-    // symbol: ??0LodestoneCompassItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI LodestoneCompassItem(std::string const& name, int id);
 
-    // symbol: ?linkCompassToLodestone@LodestoneCompassItem@@SA_NAEAVItemStack@@AEAVBlockSource@@VBlockPos@@@Z
     MCAPI static bool linkCompassToLodestone(class ItemStack& item, class BlockSource& region, class BlockPos pos);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_tryGetOrAddComponent@LodestoneCompassItem@@CAPEAVLodestoneCompassComponent@@PEAVTrackingRecord@PositionTrackingDB@@AEBV?$variant@UActorUniqueID@@U?$pair@VBlockPos@@V?$AutomaticID@VDimension@@H@@@std@@@std@@@Z
     MCAPI static class LodestoneCompassComponent* _tryGetOrAddComponent(
         class PositionTrackingDB::TrackingRecord*                                           record,
         std::variant<struct ActorUniqueID, std::pair<class BlockPos, DimensionType>> const& calcId

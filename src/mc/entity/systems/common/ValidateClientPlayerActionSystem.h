@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?registerSystems@ValidateClientPlayerActionSystem@@SAXAEAVEntitySystems@@_N@Z
     MCAPI static void registerSystems(class EntitySystems&, bool);
 
     // NOLINTEND

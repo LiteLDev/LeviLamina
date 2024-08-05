@@ -15,30 +15,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1EnchantingTableBlockActor@@UEAA@XZ
+    // vIndex: 0
     virtual ~EnchantingTableBlockActor() = default;
 
-    // vIndex: 1, symbol: ?load@EnchantingTableBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 1
     virtual void load(class Level& level, class CompoundTag const& base, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 2, symbol: ?save@EnchantingTableBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+    // vIndex: 2
     virtual bool save(class CompoundTag& tag) const;
 
-    // vIndex: 7, symbol: ?tick@EnchantingTableBlockActor@@UEAAXAEAVBlockSource@@@Z
+    // vIndex: 7
     virtual void tick(class BlockSource& region);
 
-    // vIndex: 26, symbol:
-    // ?getName@EnchantingTableBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 26
     virtual std::string getName() const;
 
-    // vIndex: 40, symbol:
-    // ?_getUpdatePacket@EnchantingTableBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
+    // vIndex: 40
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
-    // vIndex: 41, symbol: ?_onUpdatePacket@EnchantingTableBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
+    // vIndex: 41
     virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
 
-    // symbol: ??0EnchantingTableBlockActor@@QEAA@AEBVBlockPos@@@Z
     MCAPI explicit EnchantingTableBlockActor(class BlockPos const& pos);
 
     // NOLINTEND

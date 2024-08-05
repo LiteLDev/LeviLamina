@@ -26,16 +26,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScaffoldingBlockItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScaffoldingBlockItem() = default;
 
-    // vIndex: 118, symbol:
-    // ?_useOn@ScaffoldingBlockItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+    // vIndex: 118
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const& clickPos)
         const;
 
-    // symbol: ??0ScaffoldingBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI ScaffoldingBlockItem(std::string const& name, int id);
 
     // NOLINTEND

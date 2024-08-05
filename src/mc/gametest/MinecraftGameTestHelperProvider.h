@@ -21,16 +21,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MinecraftGameTestHelperProvider@@UEAA@XZ
+    // vIndex: 0
     virtual ~MinecraftGameTestHelperProvider() = default;
 
-    // vIndex: 1, symbol:
-    // ?createGameTestHelper@MinecraftGameTestHelperProvider@@UEAA?AV?$unique_ptr@VBaseGameTestHelper@gametest@@U?$default_delete@VBaseGameTestHelper@gametest@@@std@@@std@@AEAVBaseGameTestInstance@gametest@@@Z
+    // vIndex: 1
     virtual std::unique_ptr<class gametest::BaseGameTestHelper>
     createGameTestHelper(class gametest::BaseGameTestInstance&);
 
-    // vIndex: 2, symbol:
-    // ?clone@MinecraftGameTestHelperProvider@@UEAA?AV?$unique_ptr@VIGameTestHelperProvider@gametest@@U?$default_delete@VIGameTestHelperProvider@gametest@@@std@@@std@@XZ
+    // vIndex: 2
     virtual std::unique_ptr<class gametest::IGameTestHelperProvider> clone();
 
     // NOLINTEND

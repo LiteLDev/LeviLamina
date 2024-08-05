@@ -14,20 +14,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ItemStackRequestActionCraftRecipeOptional@@UEAA@XZ
+    // vIndex: 0
     virtual ~ItemStackRequestActionCraftRecipeOptional() = default;
 
-    // vIndex: 2, symbol: ?getFilteredStringIndex@ItemStackRequestActionCraftRecipeOptional@@UEBAHXZ
+    // vIndex: 2
     virtual int getFilteredStringIndex() const;
 
-    // vIndex: 4, symbol: ?_write@ItemStackRequestActionCraftRecipeOptional@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void _write(class BinaryStream& stream) const;
 
-    // vIndex: 5, symbol:
-    // ?_read@ItemStackRequestActionCraftRecipeOptional@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 5
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0ItemStackRequestActionCraftRecipeOptional@@QEAA@XZ
     MCAPI ItemStackRequestActionCraftRecipeOptional();
 
     // NOLINTEND

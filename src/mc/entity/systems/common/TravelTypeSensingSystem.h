@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createTravelTypeSensingSystem@TravelTypeSensingSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createTravelTypeSensingSystem();
 
     // NOLINTEND

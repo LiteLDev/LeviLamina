@@ -35,23 +35,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 4, symbol:
-    // ?reloadHardcoded@ZombieVillager@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 4
     virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: __gen_??1ZombieVillager@@UEAA@XZ
+    // vIndex: 10
     virtual ~ZombieVillager() = default;
 
-    // vIndex: 74, symbol: ?handleEntityEvent@ZombieVillager@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 74
     virtual void handleEntityEvent(::ActorEvent id, int data);
 
-    // vIndex: 147, symbol: ?readAdditionalSaveData@ZombieVillager@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 148, symbol: ?addAdditionalSaveData@ZombieVillager@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // symbol: ??0ZombieVillager@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI ZombieVillager(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

@@ -14,22 +14,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SetDataFromColorIndexFunction@@UEAA@XZ
+    // vIndex: 0
     virtual ~SetDataFromColorIndexFunction() = default;
 
-    // vIndex: 1, symbol: ?apply@SetDataFromColorIndexFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
+    // vIndex: 1
     virtual void apply(class ItemStack& item, class Random& random, class LootTableContext& context);
 
-    // vIndex: 3, symbol:
-    // ?apply@SetDataFromColorIndexFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
+    // vIndex: 3
     virtual void apply(class ItemInstance& item, class Random& random, class LootTableContext& context);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_applyImpl@SetDataFromColorIndexFunction@@AEAA_NAEAPEBVItem@@PEBVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAH@Z
     MCAPI bool _applyImpl(class Item const*&, class Actor const* thisEntity, std::string const&, int&);
 
     // NOLINTEND

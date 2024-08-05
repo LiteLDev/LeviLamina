@@ -26,14 +26,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BannerItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~BannerItem() = default;
 
-    // vIndex: 42, symbol: ?isWearableThroughLootTable@BannerItem@@UEBA_NPEBVCompoundTag@@@Z
+    // vIndex: 42
     virtual bool isWearableThroughLootTable(class CompoundTag const* userData) const;
 
-    // vIndex: 48, symbol:
-    // ?appendFormattedHovertext@BannerItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+    // vIndex: 48
     virtual void appendFormattedHovertext(
         class ItemStackBase const& stack,
         class Level&               level,
@@ -41,27 +40,22 @@ public:
         bool                       showCategory
     ) const;
 
-    // vIndex: 56, symbol: ?isValidAuxValue@BannerItem@@UEBA_NH@Z
+    // vIndex: 56
     virtual bool isValidAuxValue(int auxValue) const;
 
-    // vIndex: 83, symbol:
-    // ?buildDescriptionId@BannerItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+    // vIndex: 83
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 92, symbol: ?fixupCommon@BannerItem@@UEBAXAEAVItemStackBase@@@Z
+    // vIndex: 92
     virtual void fixupCommon(class ItemStackBase&) const;
 
-    // vIndex: 118, symbol:
-    // ?_useOn@BannerItem@@UEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+    // vIndex: 118
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const& clickPos)
         const;
 
-    // symbol: ??0BannerItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI BannerItem(std::string const& name, int id);
 
-    // symbol:
-    // ?getPatternAndColorPairsFromItemStack@BannerItem@@SA?AV?$vector@U?$pair@V?$not_null@PEBVBannerPattern@@@gsl@@W4ItemColor@@@std@@V?$allocator@U?$pair@V?$not_null@PEBVBannerPattern@@@gsl@@W4ItemColor@@@std@@@2@@std@@AEBVItemStackBase@@@Z
     MCAPI static std::vector<std::pair<gsl::not_null<class BannerPattern const*>, ::ItemColor>>
     getPatternAndColorPairsFromItemStack(class ItemStackBase const& item);
 

@@ -29,16 +29,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptAsyncGameTestFunction@ScriptModuleGameTest@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptAsyncGameTestFunction() = default;
 
-    // vIndex: 2, symbol:
-    // ?run@ScriptAsyncGameTestFunction@ScriptModuleGameTest@@UEBA?AV?$unique_ptr@VIGameTestFunctionRunResult@gametest@@U?$default_delete@VIGameTestFunctionRunResult@gametest@@@std@@@std@@AEAVBaseGameTestHelper@gametest@@AEAVIGameTestFunctionContext@6@@Z
+    // vIndex: 2
     virtual std::unique_ptr<class gametest::IGameTestFunctionRunResult>
     run(class gametest::BaseGameTestHelper&, class gametest::IGameTestFunctionContext&) const;
 
-    // symbol:
-    // ??0ScriptAsyncGameTestFunction@ScriptModuleGameTest@@QEAA@VWeakLifetimeScope@Scripting@@V?$Closure@$$A6A?AV?$Future@X@Scripting@@U?$TypedObjectHandle@VScriptGameTestHelper@ScriptModuleGameTest@@@2@@Z$$V@3@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI
     ScriptAsyncGameTestFunction(class Scripting::WeakLifetimeScope scope, class Scripting::Closure<class Scripting::Future<void>(struct Scripting::TypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestHelper>)>, std::string const&);
 

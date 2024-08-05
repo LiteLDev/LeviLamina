@@ -11,14 +11,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LevelBlockDestroyerProxy@@UEAA@XZ
+    // vIndex: 0
     virtual ~LevelBlockDestroyerProxy() = default;
 
-    // vIndex: 1, symbol:
-    // ?sendEvents@LevelBlockDestroyerProxy@@UEAAXAEAVLevelEventManager@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 1
     virtual void sendEvents(class LevelEventManager&, class BlockSource&, class BlockPos const&, class Block const&);
 
-    // vIndex: 2, symbol: ?dropResources@LevelBlockDestroyerProxy@@UEAAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 2
     virtual void dropResources(class BlockSource&, class BlockPos const&, class Block const&);
 
     // NOLINTEND

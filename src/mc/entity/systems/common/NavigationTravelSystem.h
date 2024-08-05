@@ -15,11 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createNavigationTravelSystem@NavigationTravelSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createNavigationTravelSystem();
 
-    // symbol:
-    // ?tickNavigationTravelSystem@NavigationTravelSystem@@SAXV?$ViewT@VStrictEntityContext@@VActorOwnerComponent@@UMobTravelComponent@@VNavigationComponent@@@@V?$EntityModifier@UMobTravelComponent@@@@@Z
     MCAPI static void
         tickNavigationTravelSystem(class ViewT<class StrictEntityContext, class ActorOwnerComponent, struct MobTravelComponent, class NavigationComponent>, class EntityModifier<struct MobTravelComponent>);
 

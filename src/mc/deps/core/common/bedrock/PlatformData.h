@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?get@PlatformData@PlatformUtils@Bedrock@@SAAEAU123@XZ
     MCAPI static struct Bedrock::PlatformUtils::PlatformData& get();
 
     // NOLINTEND

@@ -25,8 +25,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?run@StringBasedRuntime@Scripting@@UEAA?AVResultAny@2@UContextId@2@PEAVIPayload@2@V?$optional@W4Privilege@Scripting@@@std@@@Z
     MCVAPI class Scripting::ResultAny
     run(struct Scripting::ContextId           contextId,
         class Scripting::IPayload*            payload,

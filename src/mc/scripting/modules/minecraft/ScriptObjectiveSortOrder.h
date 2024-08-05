@@ -18,19 +18,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?bind@ScriptObjectiveSortOrder@ScriptModuleMinecraft@@SA?AV?$EnumBindingBuilder@W4ScriptObjectiveSortOrderType@ScriptModuleMinecraft@@W412@@Scripting@@XZ
     MCAPI static class Scripting::EnumBindingBuilder<
         ::ScriptModuleMinecraft::ScriptObjectiveSortOrderType,
         ::ScriptModuleMinecraft::ScriptObjectiveSortOrderType>
     bind();
 
-    // symbol:
-    // ?toObjectiveSortOrder@ScriptObjectiveSortOrder@ScriptModuleMinecraft@@SA?AW4ObjectiveSortOrder@@W4ScriptObjectiveSortOrderType@2@@Z
     MCAPI static ::ObjectiveSortOrder toObjectiveSortOrder(::ScriptModuleMinecraft::ScriptObjectiveSortOrderType order);
 
-    // symbol:
-    // ?toScriptObjectiveSortOrder@ScriptObjectiveSortOrder@ScriptModuleMinecraft@@SA?AW4ScriptObjectiveSortOrderType@2@W4ObjectiveSortOrder@@@Z
     MCAPI static ::ScriptModuleMinecraft::ScriptObjectiveSortOrderType
     toScriptObjectiveSortOrder(::ObjectiveSortOrder order);
 

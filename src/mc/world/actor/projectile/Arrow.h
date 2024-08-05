@@ -35,65 +35,57 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 4, symbol: ?reloadHardcoded@Arrow@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 4
     virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: __gen_??1Arrow@@UEAA@XZ
+    // vIndex: 10
     virtual ~Arrow() = default;
 
-    // vIndex: 26, symbol: ?normalTick@Arrow@@UEAAXXZ
+    // vIndex: 26
     virtual void normalTick();
 
-    // vIndex: 42, symbol: ?playerTouch@Arrow@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 42
     virtual void playerTouch(class Player& player);
 
-    // vIndex: 126, symbol: ?setAuxValue@Arrow@@UEAAXH@Z
+    // vIndex: 126
     virtual void setAuxValue(int aux);
 
-    // vIndex: 147, symbol: ?readAdditionalSaveData@Arrow@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 148, symbol: ?addAdditionalSaveData@Arrow@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 151, symbol: ?shoot@Arrow@@UEAAXAEBVVec3@@MM0@Z
+    // vIndex: 151
     virtual void shoot(class Vec3 const& dir, float pow, float uncertainty, class Vec3 const& baseSpeed);
 
-    // vIndex: 152, symbol: ?_getPickupItem@Arrow@@MEBA?AVItemStack@@XZ
+    // vIndex: 152
     virtual class ItemStack _getPickupItem() const;
 
-    // vIndex: 153, symbol: ?applyParticleColor@Arrow@@MEAAXPEAVParticle@@@Z
+    // vIndex: 153
     virtual void applyParticleColor(class Particle* p);
 
-    // vIndex: 154, symbol: ?getEffectColor@Arrow@@MEAA?AVColor@mce@@XZ
+    // vIndex: 154
     virtual class mce::Color getEffectColor();
 
-    // symbol: ??0Arrow@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Arrow(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?addMobEffect@Arrow@@QEAAXVMobEffectInstance@@@Z
     MCAPI void addMobEffect(class MobEffectInstance effect);
 
-    // symbol: ?getAuxValue@Arrow@@QEBAHXZ
     MCAPI int getAuxValue() const;
 
-    // symbol: ?setCritical@Arrow@@QEAAX_N@Z
     MCAPI void setCritical(bool isCrit);
 
-    // symbol: ?setEnchantFlame@Arrow@@QEAAXH@Z
     MCAPI void setEnchantFlame(int level);
 
-    // symbol: ?setEnchantInfinity@Arrow@@QEAAXH@Z
     MCAPI void setEnchantInfinity(int level);
 
-    // symbol: ?setEnchantPower@Arrow@@QEAAXH@Z
     MCAPI void setEnchantPower(int level);
 
-    // symbol: ?setEnchantPunch@Arrow@@QEAAXH@Z
     MCAPI void setEnchantPunch(int level);
 
     // NOLINTEND

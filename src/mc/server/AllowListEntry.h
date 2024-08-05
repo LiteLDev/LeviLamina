@@ -31,16 +31,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1AllowListEntry@@UEAA@XZ
+    // vIndex: 0
     virtual ~AllowListEntry();
 
-    // vIndex: 1, symbol: ?serialize@AllowListEntry@@UEAAXAEAVValue@Json@@@Z
+    // vIndex: 1
     virtual void serialize(class Json::Value& root);
 
-    // vIndex: 2, symbol: ?deserialize@AllowListEntry@@UEAAXAEAVValue@Json@@@Z
+    // vIndex: 2
     virtual void deserialize(class Json::Value& root);
 
-    // symbol: ??0AllowListEntry@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI explicit AllowListEntry(std::string name);
 
     // NOLINTEND

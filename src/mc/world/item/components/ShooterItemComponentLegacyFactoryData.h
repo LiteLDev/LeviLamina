@@ -26,11 +26,9 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??4ShooterAmmunitionEntry@ShooterItemComponentLegacyFactoryData@@QEAAAEAU01@$$QEAU01@@Z
         MCAPI struct ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry&
         operator=(struct ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry&&);
 
-        // symbol: ??4ShooterAmmunitionEntry@ShooterItemComponentLegacyFactoryData@@QEAAAEAU01@AEBU01@@Z
         MCAPI struct ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry&
         operator=(struct ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry const&);
 
@@ -44,17 +42,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ShooterItemComponentLegacyFactoryData@@UEAA@XZ
+    // vIndex: 0
     virtual ~ShooterItemComponentLegacyFactoryData() = default;
 
-    // symbol: ??4ShooterItemComponentLegacyFactoryData@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct ShooterItemComponentLegacyFactoryData& operator=(struct ShooterItemComponentLegacyFactoryData&&);
 
-    // symbol: ??4ShooterItemComponentLegacyFactoryData@@QEAAAEAU0@AEBU0@@Z
     MCAPI struct ShooterItemComponentLegacyFactoryData& operator=(struct ShooterItemComponentLegacyFactoryData const&);
 
-    // symbol:
-    // ?bindType@ShooterItemComponentLegacyFactoryData@@SAXAEAUReflectionCtx@cereal@@AEBV?$vector@W4AllExperiments@@V?$allocator@W4AllExperiments@@@std@@@std@@V?$optional@VSemVersion@@@5@@Z
     MCAPI static void
     bindType(struct cereal::ReflectionCtx&, std::vector<::AllExperiments> const&, std::optional<class SemVersion>);
 

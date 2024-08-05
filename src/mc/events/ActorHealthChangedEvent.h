@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ActorHealthChangedEvent@@QEAA@XZ
     MCAPI ~ActorHealthChangedEvent();
 
     // NOLINTEND

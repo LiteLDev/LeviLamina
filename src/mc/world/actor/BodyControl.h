@@ -13,20 +13,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BodyControl@@UEAA@XZ
+    // vIndex: 0
     virtual ~BodyControl();
 
-    // vIndex: 1, symbol: ?clientTick@BodyControl@@UEAAXAEAVMob@@@Z
+    // vIndex: 1
     virtual void clientTick(class Mob& mob);
 
-    // symbol: ??0BodyControl@@QEAA@XZ
     MCAPI BodyControl();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?MAX_CLAMP_ANGLE@BodyControl@@0MB
     MCAPI static float const MAX_CLAMP_ANGLE;
 
     // NOLINTEND

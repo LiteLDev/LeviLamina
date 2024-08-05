@@ -11,16 +11,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createActorMoveSystem@ActorMoveSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createActorMoveSystem();
 
-    // symbol: ?createConfigureDepenetrationSystem@ActorMoveSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createConfigureDepenetrationSystem();
 
-    // symbol: ?createUpdateDepenetrationSystem@ActorMoveSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createUpdateDepenetrationSystem();
 
-    // symbol: ?createUpdateHitboxSystem@ActorMoveSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createUpdateHitboxSystem();
 
     // NOLINTEND

@@ -22,30 +22,28 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ClassroomModeListener@@UEAA@XZ
+    // vIndex: 0
     virtual ~ClassroomModeListener() = default;
 
-    // vIndex: 3, symbol: ?onAreaChanged@ClassroomModeListener@@UEAAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 3
     virtual void onAreaChanged(class BlockSource& source, class BlockPos const& min, class BlockPos const& max);
 
-    // vIndex: 4, symbol:
-    // ?onBlockChanged@ClassroomModeListener@@UEAAXAEAVBlockSource@@AEBVBlockPos@@IAEBVBlock@@2HPEBUActorBlockSyncMessage@@W4BlockChangedEventTarget@@PEAVActor@@@Z
+    // vIndex: 4
     virtual void
     onBlockChanged(class BlockSource& source, class BlockPos const& pos, uint layer, class Block const& block, class Block const& oldBlock, int updateFlags, struct ActorBlockSyncMessage const* syncMsg, ::BlockChangedEventTarget, class Actor*);
 
-    // vIndex: 17, symbol: ?onEntityAdded@ClassroomModeListener@@UEAAXAEAVActor@@@Z
+    // vIndex: 17
     virtual void onEntityAdded(class Actor& entity);
 
-    // vIndex: 18, symbol: ?onEntityRemoved@ClassroomModeListener@@UEAAXAEAVActor@@@Z
+    // vIndex: 18
     virtual void onEntityRemoved(class Actor& entity);
 
-    // vIndex: 19, symbol: ?onChunkLoaded@ClassroomModeListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
+    // vIndex: 19
     virtual void onChunkLoaded(class ChunkSource& source, class LevelChunk& lc);
 
-    // vIndex: 22, symbol: ?onChunkUnloaded@ClassroomModeListener@@UEAAXAEAVLevelChunk@@@Z
+    // vIndex: 22
     virtual void onChunkUnloaded(class LevelChunk& lc);
 
-    // symbol: ??0ClassroomModeListener@@QEAA@AEAVIMinecraftEventing@@@Z
     MCAPI explicit ClassroomModeListener(class IMinecraftEventing& eventing);
 
     // NOLINTEND

@@ -13,13 +13,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 1, symbol: ??1NavigationDescription@@UEAA@XZ
+    // vIndex: 1
     virtual ~NavigationDescription();
 
-    // vIndex: 2, symbol: ?deserializeData@NavigationDescription@@UEAAXUDeserializeDataParams@@@Z
+    // vIndex: 2
     virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
-    // symbol: ??0NavigationDescription@@QEAA@XZ
     MCAPI NavigationDescription();
 
     // NOLINTEND

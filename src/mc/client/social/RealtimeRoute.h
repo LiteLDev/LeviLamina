@@ -12,7 +12,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0RealtimeRoute@Events@Social@@QEAA@XZ
     MCAPI RealtimeRoute();
 
     // NOLINTEND

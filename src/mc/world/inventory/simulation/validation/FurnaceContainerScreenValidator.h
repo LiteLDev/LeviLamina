@@ -14,15 +14,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1FurnaceContainerScreenValidator@@UEAA@XZ
+    // vIndex: 0
     virtual ~FurnaceContainerScreenValidator();
 
-    // vIndex: 1, symbol:
-    // ?postCommitItemRemoved@FurnaceContainerScreenValidator@@UEAA?AV?$shared_ptr@VContainerValidationCommitObject@@@std@@W4ContainerEnumName@@HAEBVItemStack@@@Z
+    // vIndex: 1
     virtual std::shared_ptr<class ContainerValidationCommitObject>
     postCommitItemRemoved(::ContainerEnumName containerEnumName, int slot, class ItemStack const& item);
 
-    // symbol: ??0FurnaceContainerScreenValidator@@QEAA@XZ
     MCAPI FurnaceContainerScreenValidator();
 
     // NOLINTEND

@@ -23,62 +23,57 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ClientAutomationCommandOrigin@@UEAA@XZ
+    // vIndex: 0
     virtual ~ClientAutomationCommandOrigin() = default;
 
-    // vIndex: 1, symbol:
-    // ?getRequestId@ClientAutomationCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 1
     virtual std::string const& getRequestId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@ClientAutomationCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 3, symbol: ?getBlockPosition@ClientAutomationCommandOrigin@@UEBA?AVBlockPos@@XZ
+    // vIndex: 3
     virtual class BlockPos getBlockPosition() const;
 
-    // vIndex: 4, symbol: ?getWorldPosition@ClientAutomationCommandOrigin@@UEBA?AVVec3@@XZ
+    // vIndex: 4
     virtual class Vec3 getWorldPosition() const;
 
-    // vIndex: 5, symbol: ?getRotation@ClientAutomationCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
+    // vIndex: 5
     virtual std::optional<class Vec2> getRotation() const;
 
-    // vIndex: 6, symbol: ?getLevel@ClientAutomationCommandOrigin@@UEBAPEAVLevel@@XZ
+    // vIndex: 6
     virtual class Level* getLevel() const;
 
-    // vIndex: 7, symbol: ?getDimension@ClientAutomationCommandOrigin@@UEBAPEAVDimension@@XZ
+    // vIndex: 7
     virtual class Dimension* getDimension() const;
 
-    // vIndex: 8, symbol: ?getEntity@ClientAutomationCommandOrigin@@UEBAPEAVActor@@XZ
+    // vIndex: 8
     virtual class Actor* getEntity() const;
 
-    // vIndex: 9, symbol: ?getPermissionsLevel@ClientAutomationCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
+    // vIndex: 9
     virtual ::CommandPermissionLevel getPermissionsLevel() const;
 
-    // vIndex: 10, symbol:
-    // ?clone@ClientAutomationCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
+    // vIndex: 10
     virtual std::unique_ptr<class CommandOrigin> clone() const;
 
-    // vIndex: 17, symbol: ?canUseCommandsWithoutCheatsEnabled@ClientAutomationCommandOrigin@@UEBA_NXZ
+    // vIndex: 17
     virtual bool canUseCommandsWithoutCheatsEnabled() const;
 
-    // vIndex: 18, symbol: ?isSelectorExpansionAllowed@ClientAutomationCommandOrigin@@UEBA_NXZ
+    // vIndex: 18
     virtual bool isSelectorExpansionAllowed() const;
 
-    // vIndex: 23, symbol: ?getOriginType@ClientAutomationCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
+    // vIndex: 23
     virtual ::CommandOriginType getOriginType() const;
 
-    // vIndex: 24, symbol: ?toCommandOriginData@ClientAutomationCommandOrigin@@UEBA?AUCommandOriginData@@XZ
+    // vIndex: 24
     virtual struct CommandOriginData toCommandOriginData() const;
 
-    // vIndex: 29, symbol: ?serialize@ClientAutomationCommandOrigin@@UEBA?AVCompoundTag@@XZ
+    // vIndex: 29
     virtual class CompoundTag serialize() const;
 
-    // vIndex: 30, symbol: ?isValid@ClientAutomationCommandOrigin@@UEBA_NXZ
+    // vIndex: 30
     virtual bool isValid() const;
 
-    // symbol:
-    // ??0ClientAutomationCommandOrigin@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI explicit ClientAutomationCommandOrigin(std::string const& requestId);
 
     // NOLINTEND

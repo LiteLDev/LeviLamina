@@ -27,16 +27,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BedrockBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~BedrockBlock() = default;
 
-    // vIndex: 48, symbol: ?canBeOriginalSurface@BedrockBlock@@UEBA_NXZ
+    // vIndex: 48
     virtual bool canBeOriginalSurface() const;
 
-    // vIndex: 142, symbol: ?_addHardCodedBlockComponents@BedrockBlock@@UEAAXAEBVExperiments@@@Z
+    // vIndex: 142
     virtual void _addHardCodedBlockComponents(class Experiments const&);
 
-    // symbol: ??0BedrockBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI BedrockBlock(std::string const& nameId, int id);
 
     // NOLINTEND

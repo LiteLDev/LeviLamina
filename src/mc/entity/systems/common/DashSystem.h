@@ -17,15 +17,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@DashSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_tickDashSystem@DashSystem@@CAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorTickedFlag@@@@@@VActorOwnerComponent@@UDashCooldownTimerComponent@@@@V?$EntityModifier@UDashCooldownTimerComponent@@@@@Z
     MCAPI static void _tickDashSystem(
         class ViewT<
             class StrictEntityContext,

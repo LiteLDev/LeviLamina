@@ -14,11 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0EquipmentTableDropChance@@QEAA@W4SlotWithDropChance@@M@Z
     MCAPI EquipmentTableDropChance(::SlotWithDropChance, float);
 
-    // symbol:
-    // ?setSlotFromEquipmentSlotName@EquipmentTableDropChance@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void setSlotFromEquipmentSlotName(std::string const&);
 
     // NOLINTEND

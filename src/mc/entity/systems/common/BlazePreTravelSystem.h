@@ -16,18 +16,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@BlazePreTravelSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_doBlazePreTravelSystem@BlazePreTravelSystem@@CAXAEBVStrictEntityContext@@AEAVActorOwnerComponent@@@Z
     MCAPI static void _doBlazePreTravelSystem(class StrictEntityContext const&, class ActorOwnerComponent&);
 
-    // symbol:
-    // ?_tickBlazePreTravelSystem@BlazePreTravelSystem@@CAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@UBlazeFlag@@@@@@VActorOwnerComponent@@@@@Z
     MCAPI static void _tickBlazePreTravelSystem(class ViewT<
                                                 class StrictEntityContext,
                                                 struct Include<

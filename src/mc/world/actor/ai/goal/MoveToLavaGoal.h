@@ -15,10 +15,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MoveToLavaGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~MoveToLavaGoal() = default;
 
-    // symbol: ??0MoveToLavaGoal@@QEAA@AEAVMob@@MHHHM@Z
     MCAPI MoveToLavaGoal(
         class Mob& mob,
         float      speedModifier,

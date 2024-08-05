@@ -19,10 +19,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BlockUnitCubeComponent@@UEAA@XZ
+    // vIndex: 0
     virtual ~BlockUnitCubeComponent() = default;
 
-    // symbol: ?mBlockSchematic@BlockUnitCubeComponent@@2V?$shared_ptr@UBlockSchematic@ClientBlockPipeline@@@std@@A
     MCAPI static std::shared_ptr<struct ClientBlockPipeline::BlockSchematic> mBlockSchematic;
 
     // NOLINTEND

@@ -14,28 +14,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SculkSensorVibrationConfig@@UEAA@XZ
+    // vIndex: 0
     virtual ~SculkSensorVibrationConfig() = default;
 
-    // vIndex: 1, symbol:
-    // ?onSignalReceive@SculkSensorVibrationConfig@@UEAAXAEAVBlockSource@@AEBVBlockPos@@AEBVGameEvent@@PEAVActor@@MI3@Z
+    // vIndex: 1
     virtual void
     onSignalReceive(class BlockSource& region, class BlockPos const&, class GameEvent const&, class Actor* source, float distance, uint, class Actor*);
 
-    // vIndex: 2, symbol: ?isValidVibration@VibrationListenerConfig@@UEAA_NAEBVGameEvent@@@Z
+    // vIndex: 2
     virtual bool isValidVibration(class GameEvent const&);
 
-    // vIndex: 3, symbol:
-    // ?shouldListen@SculkSensorVibrationConfig@@UEAA_NAEAVBlockSource@@AEBVGameEvent@@AEBUGameEventContext@@@Z
+    // vIndex: 3
     virtual bool shouldListen(class BlockSource& region, class GameEvent const&, struct GameEventContext const&);
 
-    // vIndex: 4, symbol: ?onSerializableDataChanged@SculkSensorVibrationConfig@@UEAAXAEAVBlockSource@@@Z
+    // vIndex: 4
     virtual void onSerializableDataChanged(class BlockSource&);
 
-    // vIndex: 5, symbol: ?canReceiveOnlyIfAdjacentChunksAreTicking@SculkSensorVibrationConfig@@UEBA_NXZ
+    // vIndex: 5
     virtual bool canReceiveOnlyIfAdjacentChunksAreTicking() const;
 
-    // symbol: ??0SculkSensorVibrationConfig@@QEAA@AEBVBlockPos@@@Z
     MCAPI explicit SculkSensorVibrationConfig(class BlockPos const& pos);
 
     // NOLINTEND

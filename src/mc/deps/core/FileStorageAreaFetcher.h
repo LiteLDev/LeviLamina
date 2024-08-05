@@ -24,11 +24,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FileStorageAreaFetcher@Core@@UEAA@XZ
+    // vIndex: 0
     virtual ~FileStorageAreaFetcher() = default;
 
-    // vIndex: 1, symbol:
-    // ?getStorageAreaForPath@FileStorageAreaFetcher@Core@@UEBA?AVResult@2@AEAV?$shared_ptr@VFileStorageArea@Core@@@std@@AEBVPath@2@@Z
+    // vIndex: 1
     virtual class Core::Result
     getStorageAreaForPath(std::shared_ptr<class Core::FileStorageArea>&, class Core::Path const&) const;
 

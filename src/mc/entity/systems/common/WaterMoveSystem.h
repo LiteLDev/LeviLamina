@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createWaterMoveSystem@WaterMoveSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createWaterMoveSystem();
 
     // NOLINTEND

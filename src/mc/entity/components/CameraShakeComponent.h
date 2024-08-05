@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getMaxIntensity@CameraShakeComponent@@SAMXZ
     MCAPI static float getMaxIntensity();
 
     // NOLINTEND

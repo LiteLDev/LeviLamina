@@ -16,10 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0SpawnSettings@@QEAA@AEBU0@@Z
     MCAPI SpawnSettings(struct SpawnSettings const&);
 
-    // symbol: ??1SpawnSettings@@QEAA@XZ
     MCAPI ~SpawnSettings();
 
     // NOLINTEND

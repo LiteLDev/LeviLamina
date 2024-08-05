@@ -11,16 +11,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ItemStackNetManagerScreen@@UEAA@XZ
+    // vIndex: 0
     virtual ~ItemStackNetManagerScreen() = default;
 
-    // symbol: ??0ItemStackNetManagerScreen@@QEAA@AEAVEntityRegistry@@@Z
     MCAPI explicit ItemStackNetManagerScreen(class EntityRegistry& registry);
 
-    // symbol: ?getEntity@ItemStackNetManagerScreen@@QEAAAEAVEntityContext@@XZ
     MCAPI class EntityContext& getEntity();
 
-    // symbol: ?getEntity@ItemStackNetManagerScreen@@QEBAAEBVEntityContext@@XZ
     MCAPI class EntityContext const& getEntity() const;
 
     // NOLINTEND

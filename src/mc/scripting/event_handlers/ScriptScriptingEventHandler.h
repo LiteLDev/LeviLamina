@@ -24,32 +24,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptScriptingEventHandler@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptScriptingEventHandler() = default;
 
-    // vIndex: 1, symbol:
-    // ?handleEvent@?$Impl@U?$type_list@U?$MutableScriptingGameplayEvent@W4CoordinatorResult@@@@$$CBU?$ScriptingGameplayEvent@W4CoordinatorResult@@@@@entt@@@?$EventHandlerDispatcher@VScriptingEventHandler@@@Details@@MEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAU?$MutableScriptingGameplayEvent@W4CoordinatorResult@@@@@Z
+    // vIndex: 1
     virtual struct GameplayHandlerResult<::CoordinatorResult>
     handleEvent(struct MutableScriptingGameplayEvent<::CoordinatorResult>& event);
 
-    // vIndex: 2, symbol:
-    // ?handleEvent@?$Impl@U?$type_list@$$CBU?$ScriptingGameplayEvent@W4CoordinatorResult@@@@@entt@@@?$EventHandlerDispatcher@VScriptingEventHandler@@@Details@@MEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEBU?$ScriptingGameplayEvent@W4CoordinatorResult@@@@@Z
+    // vIndex: 2
     virtual struct GameplayHandlerResult<::CoordinatorResult>
     handleEvent(struct ScriptingGameplayEvent<::CoordinatorResult> const& event);
 
-    // vIndex: 3, symbol: __unk_vfn_3
+    // vIndex: 3
     virtual void __unk_vfn_3();
 
-    // vIndex: 4, symbol:
-    // ?handleEvent@ScriptScriptingEventHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUBeforeWatchdogTerminateEvent@@@Z
+    // vIndex: 4
     virtual struct GameplayHandlerResult<::CoordinatorResult> handleEvent(struct BeforeWatchdogTerminateEvent&);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_handleWatchdogTerminateEvent@ScriptScriptingEventHandler@@AEBA_NAEAUBeforeWatchdogTerminateEvent@@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VScriptSystemBeforeEvents@ScriptModuleMinecraft@@@4@@Z
     MCAPI bool
     _handleWatchdogTerminateEvent(struct BeforeWatchdogTerminateEvent&, class Scripting::WeakLifetimeScope const& scope, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptSystemBeforeEvents>)
         const;

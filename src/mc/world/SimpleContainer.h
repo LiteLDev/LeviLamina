@@ -15,36 +15,34 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SimpleContainer@@UEAA@XZ
+    // vIndex: 0
     virtual ~SimpleContainer();
 
-    // vIndex: 2, symbol: ?serverInitItemStackIds@SimpleContainer@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
+    // vIndex: 2
     virtual void serverInitItemStackIds(
         int                                              containerSlot,
         int                                              count,
         std::function<void(int, class ItemStack const&)> onNetIdChanged
     );
 
-    // vIndex: 7, symbol: ?getItem@SimpleContainer@@UEBAAEBVItemStack@@H@Z
+    // vIndex: 7
     virtual class ItemStack const& getItem(int slot) const;
 
-    // vIndex: 12, symbol: ?setItem@SimpleContainer@@UEAAXHAEBVItemStack@@@Z
+    // vIndex: 12
     virtual void setItem(int slot, class ItemStack const& item);
 
-    // vIndex: 20, symbol: ?getContainerSize@SimpleContainer@@UEBAHXZ
+    // vIndex: 20
     virtual int getContainerSize() const;
 
-    // vIndex: 21, symbol: ?getMaxStackSize@SimpleContainer@@UEBAHXZ
+    // vIndex: 21
     virtual int getMaxStackSize() const;
 
-    // vIndex: 22, symbol: ?startOpen@SimpleContainer@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 22
     virtual void startOpen(class Player&);
 
-    // vIndex: 23, symbol: ?stopOpen@SimpleContainer@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 23
     virtual void stopOpen(class Player&);
 
-    // symbol:
-    // ??0SimpleContainer@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NHW4ContainerType@@@Z
     MCAPI SimpleContainer(std::string const& name, bool customName, int size, ::ContainerType containerType);
 
     // NOLINTEND

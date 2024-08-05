@@ -27,14 +27,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1InfestedDeepslateBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~InfestedDeepslateBlock() = default;
 
-    // vIndex: 141, symbol: ?tryGetUninfested@InfestedDeepslateBlock@@UEBAPEBVBlock@@AEBV2@@Z
+    // vIndex: 141
     virtual class Block const* tryGetUninfested(class Block const& block) const;
 
-    // symbol:
-    // ??0InfestedDeepslateBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI InfestedDeepslateBlock(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND

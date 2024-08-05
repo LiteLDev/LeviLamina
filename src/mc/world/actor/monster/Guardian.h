@@ -35,83 +35,70 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 4, symbol: ?reloadHardcoded@Guardian@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 4
     virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 5, symbol:
-    // ?reloadHardcodedClient@Guardian@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 5
     virtual void reloadHardcodedClient(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: __gen_??1Guardian@@UEAA@XZ
+    // vIndex: 10
     virtual ~Guardian() = default;
 
-    // vIndex: 55, symbol: ?setTarget@Guardian@@UEAAXPEAVActor@@@Z
+    // vIndex: 55
     virtual void setTarget(class Actor* target);
 
-    // vIndex: 146, symbol: ?_hurt@Guardian@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 146
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 147, symbol: ?readAdditionalSaveData@Guardian@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 148, symbol: ?addAdditionalSaveData@Guardian@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 160, symbol: ?checkSpawnRules@Guardian@@UEAA_N_N@Z
+    // vIndex: 160
     virtual bool checkSpawnRules(bool fromSpawner);
 
-    // vIndex: 165, symbol: ?getMaxHeadXRot@Guardian@@UEAAMXZ
+    // vIndex: 165
     virtual float getMaxHeadXRot();
 
-    // vIndex: 190, symbol: ?isDarkEnoughToSpawn@Guardian@@MEBA_NXZ
+    // vIndex: 190
     virtual bool isDarkEnoughToSpawn() const;
 
-    // symbol: ??0Guardian@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Guardian(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?getAttackDuration@Guardian@@QEAAHXZ
     MCAPI int getAttackDuration();
 
-    // symbol: ?getMoveEyeVector@Guardian@@QEAA?AVVec3@@XZ
     MCAPI class Vec3 getMoveEyeVector();
 
-    // symbol: ?getTargetEntity@Guardian@@QEBAPEAVActor@@XZ
     MCAPI class Actor* getTargetEntity() const;
 
-    // symbol: ?isElder@Guardian@@QEBA_NXZ
     MCAPI bool isElder() const;
 
-    // symbol: ?isElderGhost@Guardian@@QEBA_NXZ
     MCAPI bool isElderGhost() const;
 
-    // symbol: ?preAiStep@Guardian@@QEAAXXZ
     MCAPI void preAiStep();
 
-    // symbol: ?setAttackTime@Guardian@@QEAAXH@Z
     MCAPI void setAttackTime(int time);
 
-    // symbol: ?setElder@Guardian@@QEAAX_N@Z
     MCAPI void setElder(bool value);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?registerLoopingSounds@Guardian@@IEAAXXZ
     MCAPI void registerLoopingSounds();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?ATTACK_TIME@Guardian@@0HB
     MCAPI static int const ATTACK_TIME;
 
-    // symbol: ?FIRST_DAMAGE_TIME@Guardian@@0HB
     MCAPI static int const FIRST_DAMAGE_TIME;
 
     // NOLINTEND

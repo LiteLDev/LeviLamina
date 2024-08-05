@@ -28,22 +28,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MesaSurfaceBuilder@VanillaSurfaceBuilders@@UEAA@XZ
+    // vIndex: 0
     virtual ~MesaSurfaceBuilder() = default;
 
-    // vIndex: 1, symbol: ?init@MesaSurfaceBuilder@VanillaSurfaceBuilders@@UEAAXAEAVBiome@@I@Z
+    // vIndex: 1
     virtual void init(class Biome&, uint);
 
-    // vIndex: 2, symbol:
-    // ?buildSurfaceAt@MesaSurfaceBuilder@VanillaSurfaceBuilders@@UEBAXAEBUBuildParameters@ISurfaceBuilder@@@Z
+    // vIndex: 2
     virtual void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const& parameters) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_buildSurface@MesaSurfaceBuilder@VanillaSurfaceBuilders@@AEBAXAEBVBlockPos@@MAEAVRandom@@AEAVBlockVolume@@HFAEBUMesaSurfaceBlocks@@AEBUSurfaceMaterialBlocks@@M@Z
     MCAPI void _buildSurface(
         class BlockPos const& pos,
         float                 depthValue,
@@ -56,16 +53,12 @@ public:
         float
     ) const;
 
-    // symbol: ?_init@MesaSurfaceBuilder@VanillaSurfaceBuilders@@AEAAXI@Z
     MCAPI void _init(uint levelSeed);
 
-    // symbol: ?generateBands@MesaSurfaceBuilder@VanillaSurfaceBuilders@@AEAAXAEAVRandom@@@Z
     MCAPI void generateBands(class Random& random);
 
-    // symbol: ?getBand@MesaSurfaceBuilder@VanillaSurfaceBuilders@@AEBA?AW4BlockColor@@HHH@Z
     MCAPI ::BlockColor getBand(int worldX, int y, int worldZ) const;
 
-    // symbol: ?makeBands@MesaSurfaceBuilder@VanillaSurfaceBuilders@@AEAAXAEAVRandom@@HW4BlockColor@@@Z
     MCAPI void makeBands(class Random& random, int, ::BlockColor color);
 
     // NOLINTEND

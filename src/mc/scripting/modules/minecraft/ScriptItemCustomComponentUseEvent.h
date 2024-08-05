@@ -18,11 +18,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4ScriptItemCustomComponentUseEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptItemCustomComponentUseEvent&
     operator=(struct ScriptModuleMinecraft::ScriptItemCustomComponentUseEvent&&);
 
-    // symbol: ?bind@ScriptItemCustomComponentUseEvent@ScriptModuleMinecraft@@SA?AUClassBinding@Scripting@@XZ
     MCAPI static struct Scripting::ClassBinding bind();
 
     // NOLINTEND

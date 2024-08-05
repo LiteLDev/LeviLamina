@@ -9,8 +9,6 @@
 
 namespace ServerMoveInputHandlerSystemUtils {
 // NOLINTBEGIN
-// symbol:
-// ?_tickServerMoveInputHandler@ServerMoveInputHandlerSystemUtils@@YAXAEAVStrictEntityContext@@AEBUMovementAbilitiesComponent@@AEBUServerPlayerCurrentMovementComponent@@AEAUClientInputLockComponent@@AEAUMoveInputComponent@@AEAUActorDataFlagComponent@@AEAUActorDataDirtyFlagsComponent@@AEAUVanillaClientGameplayComponent@@V?$Optional@$$CBUSneakingComponent@@@@V?$Optional@$$CBV?$FlagComponent@UInWaterFlag@@@@@@AEAV?$OptionalGlobal@$$CBVPlayerMovementSettingsComponent@@@@@Z
 MCAPI void
 _tickServerMoveInputHandler(class StrictEntityContext&, struct MovementAbilitiesComponent const&, struct ServerPlayerCurrentMovementComponent const&, struct ClientInputLockComponent&, struct MoveInputComponent&, struct ActorDataFlagComponent&, struct ActorDataDirtyFlagsComponent&, struct VanillaClientGameplayComponent&, class Optional<struct SneakingComponent const>, class Optional<class FlagComponent<struct InWaterFlag> const>, class OptionalGlobal<class PlayerMovementSettingsComponent const>&);
 // NOLINTEND

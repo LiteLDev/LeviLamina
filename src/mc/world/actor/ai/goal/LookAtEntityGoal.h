@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LookAtEntityGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~LookAtEntityGoal() = default;
 
     // NOLINTEND

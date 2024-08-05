@@ -27,52 +27,48 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SweetBerryBushBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~SweetBerryBushBlock() = default;
 
-    // vIndex: 3, symbol:
-    // ?hasTag@SweetBerryBushBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 3
     virtual bool
     hasTag(class BlockSource& region, class BlockPos const& pos, class Block const& block, std::string const& tagName)
         const;
 
-    // vIndex: 5, symbol:
-    // ?getCollisionShape@SweetBerryBushBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 5
     virtual class AABB
     getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 11, symbol: ?getVisualShape@SweetBerryBushBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
+    // vIndex: 11
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
 
-    // vIndex: 57, symbol: ?canContainLiquid@SweetBerryBushBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // vIndex: 62, symbol: ?checkIsPathable@SweetBerryBushBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
+    // vIndex: 62
     virtual bool
     checkIsPathable(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
 
-    // vIndex: 80, symbol:
-    // ?onFertilized@SweetBerryBushBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
+    // vIndex: 80
     virtual bool
     onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* actor, ::FertilizerType fType)
         const;
 
-    // vIndex: 82, symbol: ?canBeFertilized@SweetBerryBushBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 82
     virtual bool
     canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
 
-    // vIndex: 86, symbol: ?mayPlace@SweetBerryBushBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 86
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 87, symbol: ?mayPlaceOn@SweetBerryBushBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 87
     virtual bool mayPlaceOn(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@SweetBerryBushBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 106, symbol:
-    // ?executeEvent@SweetBerryBushBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVActor@@@Z
+    // vIndex: 106
     virtual void executeEvent(
         class BlockSource&    region,
         class BlockPos const& pos,
@@ -81,46 +77,42 @@ public:
         class Actor&          sourceEntity
     ) const;
 
-    // vIndex: 129, symbol: ?getVariant@SweetBerryBushBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 139, symbol: ?dealsContactDamage@SweetBerryBushBlock@@UEBA_NAEBVActor@@AEBVBlock@@_N@Z
+    // vIndex: 139
     virtual bool dealsContactDamage(class Actor const& actor, class Block const& block, bool isPathFinding) const;
 
-    // vIndex: 149, symbol: ?randomTick@SweetBerryBushBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 149
     virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 150, symbol: ?isInteractiveBlock@SweetBerryBushBlock@@UEBA_NXZ
+    // vIndex: 150
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 152, symbol: ?use@SweetBerryBushBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    // vIndex: 154, symbol: ?canSurvive@SweetBerryBushBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 154
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 155, symbol: ?getRenderLayer@SweetBerryBushBlock@@UEBA?AW4BlockRenderLayer@@XZ
+    // vIndex: 155
     virtual ::BlockRenderLayer getRenderLayer() const;
 
-    // vIndex: 156, symbol:
-    // ?getRenderLayer@SweetBerryBushBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 156
     virtual ::BlockRenderLayer
     getRenderLayer(class Block const& block, class BlockSource&, class BlockPos const& pos) const;
 
-    // vIndex: 162, symbol: ?entityInside@SweetBerryBushBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
+    // vIndex: 162
     virtual void entityInside(class BlockSource& region, class BlockPos const& pos, class Actor& entity) const;
 
-    // symbol: ??0SweetBerryBushBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI SweetBerryBushBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_growBush@SweetBerryBushBlock@@CA_NAEAVBlockSource@@AEBVBlockPos@@_NPEAVActor@@@Z
     MCAPI static bool _growBush(class BlockSource&, class BlockPos const&, bool, class Actor*);
 
-    // symbol: ?_pickBerries@SweetBerryBushBlock@@CA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVActor@@@Z
     MCAPI static bool _pickBerries(class BlockSource&, class BlockPos const&, class Block const&, class Actor&);
 
     // NOLINTEND

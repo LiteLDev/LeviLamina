@@ -27,33 +27,30 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1IceBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~IceBlock() = default;
 
-    // vIndex: 90, symbol: ?breaksFallingBlocks@IceBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
+    // vIndex: 90
     virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
 
-    // vIndex: 95, symbol: ?playerWillDestroy@IceBlock@@UEBAPEBVBlock@@AEAVPlayer@@AEBVBlockPos@@AEBV2@@Z
+    // vIndex: 95
     virtual class Block const*
     playerWillDestroy(class Player& player, class BlockPos const& pos, class Block const& block) const;
 
-    // vIndex: 142, symbol: ?_addHardCodedBlockComponents@IceBlock@@UEAAXAEBVExperiments@@@Z
+    // vIndex: 142
     virtual void _addHardCodedBlockComponents(class Experiments const&);
 
-    // vIndex: 149, symbol: ?randomTick@IceBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 149
     virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // symbol: ??0IceBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
     MCAPI IceBlock(std::string const& nameId, int id, bool packed);
 
-    // symbol: ?melt@IceBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static void melt(class BlockSource& region, class BlockPos const& pos);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_getMeltedBlockAndSendEvents@IceBlock@@CAAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static class Block const& _getMeltedBlockAndSendEvents(class BlockSource&, class BlockPos const&);
 
     // NOLINTEND

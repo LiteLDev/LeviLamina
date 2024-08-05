@@ -23,15 +23,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1IScriptEngine@Scripting@@UEAA@XZ
+    // vIndex: 0
     virtual ~IScriptEngine();
 
-    // vIndex: 1, symbol:
-    // ?createScriptingContext@ScriptEngine@Scripting@@UEAA?AUScriptContextResult@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUModuleDescriptor@2@AEBV?$vector@UModuleDescriptor@Scripting@@V?$allocator@UModuleDescriptor@Scripting@@@std@@@5@PEAVIDependencyLoader@2@PEAVIPrinter@2@AEBUContextConfig@2@@Z
+    // vIndex: 1
     virtual struct Scripting::ScriptContextResult
     createScriptingContext(std::string const&, struct Scripting::ModuleDescriptor const&, std::vector<struct Scripting::ModuleDescriptor> const&, class Scripting::IDependencyLoader*, class Scripting::IPrinter*, struct Scripting::ContextConfig const&) = 0;
 
-    // vIndex: 2, symbol: ?getRegistryManager@ScriptEngine@Scripting@@UEAAAEAVRegistryManager@2@XZ
+    // vIndex: 2
     virtual class Scripting::RegistryManager& getRegistryManager() = 0;
 
     // NOLINTEND

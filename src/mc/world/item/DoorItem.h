@@ -27,23 +27,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DoorItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~DoorItem() = default;
 
-    // vIndex: 118, symbol:
-    // ?_useOn@DoorItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+    // vIndex: 118
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const& clickPos)
         const;
 
-    // symbol:
-    // ??0DoorItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4DoorType@DoorBlock@@@Z
     MCAPI DoorItem(std::string const& name, int id, ::DoorBlock::DoorType type);
 
-    // symbol: ?getDoorBlock@DoorItem@@QEBAPEBVBlock@@XZ
     MCAPI class Block const* getDoorBlock() const;
 
-    // symbol: ?place@DoorItem@@SA_NPEAVBlockSource@@HHHHPEBVBlock@@@Z
     MCAPI static bool place(class BlockSource* source, int x, int y, int z, int dir, class Block const* block);
 
     // NOLINTEND

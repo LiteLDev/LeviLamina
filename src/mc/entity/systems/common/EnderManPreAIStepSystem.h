@@ -17,11 +17,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@EnderManPreAIStepSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
-    // symbol:
-    // ?tick@EnderManPreAIStepSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@UEnderManFlag@@@@V?$FlagComponent@UMobIsJumpingFlag@@@@@@@@V?$EntityModifier@V?$FlagComponent@UMobIsJumpingFlag@@@@@@@Z
     MCAPI static void tick(
         class ViewT<
             class StrictEntityContext,

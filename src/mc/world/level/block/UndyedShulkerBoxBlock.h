@@ -27,66 +27,59 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1UndyedShulkerBoxBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~UndyedShulkerBoxBlock() = default;
 
-    // vIndex: 5, symbol:
-    // ?getCollisionShape@UndyedShulkerBoxBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 5
     virtual class AABB
     getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 9, symbol:
-    // ?getOutline@UndyedShulkerBoxBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
+    // vIndex: 9
     virtual class AABB const&
     getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 23, symbol: ?canProvideSupport@UndyedShulkerBoxBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
+    // vIndex: 23
     virtual bool canProvideSupport(class Block const&, uchar, ::BlockSupportType) const;
 
-    // vIndex: 64, symbol: ?dispense@UndyedShulkerBoxBlock@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 64
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
-    // vIndex: 72, symbol: ?setupRedstoneComponent@UndyedShulkerBoxBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 72
     virtual void setupRedstoneComponent(class BlockSource&, class BlockPos const&) const;
 
-    // vIndex: 90, symbol: ?breaksFallingBlocks@UndyedShulkerBoxBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
+    // vIndex: 90
     virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion version) const;
 
-    // vIndex: 95, symbol: ?playerWillDestroy@UndyedShulkerBoxBlock@@UEBAPEBVBlock@@AEAVPlayer@@AEBVBlockPos@@AEBV2@@Z
+    // vIndex: 95
     virtual class Block const*
     playerWillDestroy(class Player& player, class BlockPos const& pos, class Block const& block) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@UndyedShulkerBoxBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
-    // vIndex: 98, symbol:
-    // ?getPlacementBlock@UndyedShulkerBoxBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+    // vIndex: 98
     virtual class Block const&
     getPlacementBlock(class Actor const&, class BlockPos const&, uchar, class Vec3 const&, int itemValue) const;
 
-    // vIndex: 121, symbol: ?getColor@UndyedShulkerBoxBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 121
     virtual int getColor(class Block const&) const;
 
-    // symbol: ??0UndyedShulkerBoxBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI UndyedShulkerBoxBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_isValidAttach@UndyedShulkerBoxBlock@@AEBA_NAEAVBlockSource@@VBlockPos@@E@Z
     MCAPI bool _isValidAttach(class BlockSource& region, class BlockPos pos, uchar direction) const;
 
-    // symbol: ?_tryGetShape@UndyedShulkerBoxBlock@@CA_NAEBVIConstBlockSource@@AEBVBlockPos@@AEAVAABB@@@Z
     MCAPI static bool _tryGetShape(class IConstBlockSource const&, class BlockPos const&, class AABB&);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?SHULKER_BOX_DOESNT_BREAK_FALLING_BLOCK_VERSION@UndyedShulkerBoxBlock@@1VBaseGameVersion@@B
     MCAPI static class BaseGameVersion const SHULKER_BOX_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
     // NOLINTEND

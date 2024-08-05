@@ -19,23 +19,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?addConditionalBandwidthOptimization@ConditionalBandwidthOptimizationDefinition@@QEAAXAEBUConditionalBandwidthOptimization@@@Z
     MCAPI void addConditionalBandwidthOptimization(struct ConditionalBandwidthOptimization const& optimization);
 
-    // symbol:
-    // ?addDefaultBandwidthOptimization@ConditionalBandwidthOptimizationDefinition@@QEAAXAEBUConditionalBandwidthOptimization@@@Z
     MCAPI void addDefaultBandwidthOptimization(struct ConditionalBandwidthOptimization const& optimization);
 
-    // symbol:
-    // ?initialize@ConditionalBandwidthOptimizationDefinition@@QEBAXAEAVEntityContext@@AEAVConditionalBandwidthOptimizationComponent@@@Z
     MCAPI void initialize(class EntityContext&, class ConditionalBandwidthOptimizationComponent& component) const;
 
-    // symbol: ??1ConditionalBandwidthOptimizationDefinition@@QEAA@XZ
     MCAPI ~ConditionalBandwidthOptimizationDefinition();
 
-    // symbol:
-    // ?buildSchema@ConditionalBandwidthOptimizationDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VConditionalBandwidthOptimizationDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
                                       class JsonUtil::EmptyClass,
                                       class ConditionalBandwidthOptimizationDefinition>>& root);

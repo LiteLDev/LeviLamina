@@ -26,27 +26,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DyePowderItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~DyePowderItem() = default;
 
-    // vIndex: 15, symbol: ?isDye@DyePowderItem@@UEBA_NXZ
+    // vIndex: 15
     virtual bool isDye() const;
 
-    // vIndex: 16, symbol: ?getItemColor@DyePowderItem@@UEBA?AW4ItemColor@@XZ
+    // vIndex: 16
     virtual ::ItemColor getItemColor() const;
 
-    // vIndex: 56, symbol: ?isValidAuxValue@DyePowderItem@@UEBA_NH@Z
+    // vIndex: 56
     virtual bool isValidAuxValue(int auxValue) const;
 
-    // vIndex: 83, symbol:
-    // ?buildDescriptionId@DyePowderItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+    // vIndex: 83
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 103, symbol:
-    // ?setIconInfo@DyePowderItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+    // vIndex: 103
     virtual class Item& setIconInfo(std::string const& name, int id);
 
-    // symbol: ??0DyePowderItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ItemColor@@@Z
     MCAPI DyePowderItem(std::string const&, int, ::ItemColor);
 
     // NOLINTEND

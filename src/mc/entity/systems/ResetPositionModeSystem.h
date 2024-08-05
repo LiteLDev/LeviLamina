@@ -16,11 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createResetPositionModeSystem@ResetPositionModeSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createResetPositionModeSystem();
 
-    // symbol:
-    // ?tickResetPositionModeSystem@ResetPositionModeSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@UPlayerPositionModeComponent@@@@@Z
     MCAPI static void
     tickResetPositionModeSystem(class ViewT<
                                 class StrictEntityContext,

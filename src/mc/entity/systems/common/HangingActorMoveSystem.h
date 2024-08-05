@@ -11,8 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?createSystems@HangingActorMoveSystem@@SA?AV?$vector@UTickingSystemWithInfo@@V?$allocator@UTickingSystemWithInfo@@@std@@@std@@XZ
     MCAPI static std::vector<struct TickingSystemWithInfo> createSystems();
 
     // NOLINTEND

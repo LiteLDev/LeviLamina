@@ -18,23 +18,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0DefinitionTrigger@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4FilterSubject@Legacy@Puv@@VExpressionNode@@@Z
     MCAPI DefinitionTrigger(std::string, ::Puv::Legacy::FilterSubject, class ExpressionNode);
 
-    // symbol: ?canTrigger@DefinitionTrigger@@QEBA_NAEAVRenderParams@@@Z
     MCAPI bool canTrigger(class RenderParams& params) const;
 
-    // symbol: ??4DefinitionTrigger@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class DefinitionTrigger& operator=(class DefinitionTrigger&&);
 
-    // symbol: ??4DefinitionTrigger@@QEAAAEAV0@AEBV0@@Z
     MCAPI class DefinitionTrigger& operator=(class DefinitionTrigger const&);
 
-    // symbol: ??1DefinitionTrigger@@QEAA@XZ
     MCAPI ~DefinitionTrigger();
 
-    // symbol: ?bindType@DefinitionTrigger@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // NOLINTEND

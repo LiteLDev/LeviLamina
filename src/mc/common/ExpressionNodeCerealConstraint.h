@@ -21,21 +21,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol:
-    // ?doValidate@ExpressionNodeCerealConstraint@@EEBAXAEBVmeta_any@entt@@AEAVSerializerContext@cereal@@@Z
+    // vIndex: 0
     virtual void doValidate(entt::meta_any const&, class cereal::SerializerContext&) const;
 
-    // vIndex: 1, symbol: ??1ExpressionNodeCerealConstraint@@UEAA@XZ
+    // vIndex: 1
     virtual ~ExpressionNodeCerealConstraint();
 
-    // vIndex: 2, symbol: ?description@ExpressionNodeCerealConstraint@@UEBA?AUConstraintDescription@internal@cereal@@XZ
+    // vIndex: 2
     virtual struct cereal::internal::ConstraintDescription description() const;
 
-    // symbol: ?disallowSideEffects@ExpressionNodeCerealConstraint@@QEAAAEAV1@_N@Z
     MCAPI class ExpressionNodeCerealConstraint& disallowSideEffects(bool);
 
-    // symbol:
-    // ?onlyAllowQueries@ExpressionNodeCerealConstraint@@QEAAAEAV1@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
     MCAPI class ExpressionNodeCerealConstraint& onlyAllowQueries(std::vector<std::string> const&);
 
     // NOLINTEND

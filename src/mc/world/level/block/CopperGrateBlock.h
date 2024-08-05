@@ -28,24 +28,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CopperGrateBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~CopperGrateBlock() = default;
 
-    // vIndex: 6, symbol:
-    // ?getCollisionShapeForCamera@CopperGrateBlock@@UEBA_NAEAVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 6
     virtual bool
     getCollisionShapeForCamera(class AABB&, class Block const&, class IConstBlockSource const&, class BlockPos const&)
         const;
 
-    // vIndex: 57, symbol: ?canContainLiquid@CopperGrateBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // symbol:
-    // ??0CopperGrateBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4CopperType@@AEBVHashedString@@@Z
     MCAPI CopperGrateBlock(std::string const&, int, ::CopperType, class HashedString const&);
 
-    // symbol:
-    // ??0CopperGrateBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4CopperType@@AEBVHashedString@@22@Z
     MCAPI
     CopperGrateBlock(std::string const&, int, ::CopperType, class HashedString const&, class HashedString const&, class HashedString const&);
 

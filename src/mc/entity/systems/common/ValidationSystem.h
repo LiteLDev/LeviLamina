@@ -32,23 +32,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ValidationSystem@PlayerValidation@@UEAA@XZ
+    // vIndex: 0
     virtual ~ValidationSystem() = default;
 
-    // vIndex: 1, symbol: __unk_vfn_1
+    // vIndex: 1
     virtual void __unk_vfn_1();
 
-    // vIndex: 2, symbol: __unk_vfn_2
+    // vIndex: 2
     virtual void __unk_vfn_2();
 
-    // vIndex: 3, symbol: __unk_vfn_3
+    // vIndex: 3
     virtual void __unk_vfn_3();
 
-    // vIndex: 4, symbol: __unk_vfn_4
+    // vIndex: 4
     virtual void __unk_vfn_4();
 
-    // vIndex: 5, symbol:
-    // ?tick@ValidationSystem@PlayerValidation@@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UPlayerComponentFlag@@@@@@U?$Read@UStateVectorComponent@@@@U?$Write@VActorOwnerComponent@@@@U?$AddRemove@$$V@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
+    // vIndex: 5
     virtual void tick(class StrictExecutionContext<
                       struct Filter<class FlagComponent<struct PlayerComponentFlag>>,
                       struct Read<struct StateVectorComponent>,
@@ -58,8 +57,6 @@ public:
                       struct GlobalWrite<>,
                       struct EntityFactoryT<>>&);
 
-    // symbol:
-    // ?createSystem@ValidationSystem@PlayerValidation@@SA?AUTickingSystemWithInfo@@$$QEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI static struct TickingSystemWithInfo createSystem(std::string&&);
 
     // NOLINTEND

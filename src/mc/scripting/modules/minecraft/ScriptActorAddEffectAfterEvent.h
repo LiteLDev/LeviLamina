@@ -16,12 +16,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4ScriptActorAddEffectAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptActorAddEffectAfterEvent&
     operator=(struct ScriptModuleMinecraft::ScriptActorAddEffectAfterEvent&&);
 
-    // symbol:
-    // ?bind@ScriptActorAddEffectAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilderReadOnly@UScriptActorAddEffectAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilderReadOnly<
         struct ScriptModuleMinecraft::ScriptActorAddEffectAfterEvent>
     bind();

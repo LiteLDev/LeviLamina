@@ -19,13 +19,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FlushableStorageAreaEnv@@UEAA@XZ
+    // vIndex: 0
     virtual ~FlushableStorageAreaEnv() = default;
 
-    // vIndex: 20, symbol: ?flushToPermanentStorage@FlushableStorageAreaEnv@@UEAAXXZ
+    // vIndex: 20
     virtual void flushToPermanentStorage();
 
-    // symbol: ??0FlushableStorageAreaEnv@@QEAA@PEAVEnv@leveldb@@V?$shared_ptr@VFileStorageArea@Core@@@std@@@Z
     MCAPI FlushableStorageAreaEnv(leveldb::Env* env, std::shared_ptr<class Core::FileStorageArea> storageArea);
 
     // NOLINTEND

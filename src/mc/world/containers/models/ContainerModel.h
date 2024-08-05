@@ -17,83 +17,81 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ?containerContentChanged@ContainerModel@@UEAAXH@Z
+    // vIndex: 0
     virtual void containerContentChanged(int slot);
 
-    // vIndex: 1, symbol: ??1ContainerModel@@UEAA@XZ
+    // vIndex: 1
     virtual ~ContainerModel();
 
-    // vIndex: 2, symbol: ?postInit@ContainerModel@@UEAAXXZ
+    // vIndex: 2
     virtual void postInit();
 
-    // vIndex: 3, symbol: ?releaseResources@ContainerModel@@UEAAXXZ
+    // vIndex: 3
     virtual void releaseResources();
 
-    // vIndex: 4, symbol: ?getContainerSize@ContainerModel@@UEBAHXZ
+    // vIndex: 4
     virtual int getContainerSize() const;
 
-    // vIndex: 5, symbol: ?getFilteredContainerSize@ContainerModel@@UEBAHXZ
+    // vIndex: 5
     virtual int getFilteredContainerSize() const;
 
-    // vIndex: 6, symbol: ?tick@ContainerModel@@UEAAXH@Z
+    // vIndex: 6
     virtual void tick(int selectedSlot);
 
-    // vIndex: 7, symbol: ?getContainerWeakRef@ContainerModel@@UEBA?AVContainerWeakRef@@XZ
+    // vIndex: 7
     virtual class ContainerWeakRef getContainerWeakRef() const;
 
-    // vIndex: 8, symbol: ?getItemStack@ContainerModel@@UEBAAEBVItemStack@@H@Z
+    // vIndex: 8
     virtual class ItemStack const& getItemStack(int modelSlot) const;
 
-    // vIndex: 9, symbol: ?getItems@ContainerModel@@UEBAAEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+    // vIndex: 9
     virtual std::vector<class ItemStack> const& getItems() const;
 
-    // vIndex: 10, symbol: ?getItemInstance@ContainerModel@@UEBAAEBVItemInstance@@H@Z
+    // vIndex: 10
     virtual class ItemInstance const& getItemInstance(int modelSlot) const;
 
-    // vIndex: 11, symbol: ?getItemStackBase@ContainerModel@@UEBAAEBVItemStackBase@@H@Z
+    // vIndex: 11
     virtual class ItemStackBase const& getItemStackBase(int modelSlot) const;
 
-    // vIndex: 12, symbol: ?isItemInstanceBased@ContainerModel@@UEBA_NXZ
+    // vIndex: 12
     virtual bool isItemInstanceBased() const;
 
-    // vIndex: 13, symbol: ?setItem@ContainerModel@@UEAAXHAEBVItemStack@@@Z
+    // vIndex: 13
     virtual void setItem(int modelSlot, class ItemStack const& item);
 
-    // vIndex: 14, symbol: ?isValid@ContainerModel@@UEAA_NXZ
+    // vIndex: 14
     virtual bool isValid();
 
-    // vIndex: 15, symbol: ?isItemFiltered@ContainerModel@@UEBA_NAEBVItemStackBase@@@Z
+    // vIndex: 15
     virtual bool isItemFiltered(class ItemStackBase const& item) const;
 
-    // vIndex: 16, symbol: ?isExpanableItemFiltered@ContainerModel@@UEBA_NH@Z
+    // vIndex: 16
     virtual bool isExpanableItemFiltered(int index) const;
 
-    // vIndex: 17, symbol: ?getItemExpandStatus@ContainerModel@@UEBA?AW4ContainerExpandStatus@@H@Z
+    // vIndex: 17
     virtual ::ContainerExpandStatus getItemExpandStatus(int itemId) const;
 
-    // vIndex: 18, symbol:
-    // ?getItemGroupName@ContainerModel@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+    // vIndex: 18
     virtual std::string const& getItemGroupName(int) const;
 
-    // vIndex: 19, symbol: ?switchItemExpando@ContainerModel@@UEAAXH@Z
+    // vIndex: 19
     virtual void switchItemExpando(int itemId);
 
-    // vIndex: 20, symbol: ?isSlotDisabled@ContainerModel@@UEBA_NH@Z
+    // vIndex: 20
     virtual bool isSlotDisabled(int) const;
 
-    // vIndex: 21, symbol: ?_getContainer@ContainerModel@@MEBAPEAVContainer@@XZ
+    // vIndex: 21
     virtual class Container* _getContainer() const;
 
-    // vIndex: 22, symbol: ?_getContainerOffset@ContainerModel@@MEBAHXZ
+    // vIndex: 22
     virtual int _getContainerOffset() const;
 
-    // vIndex: 23, symbol: ?_init@ContainerModel@@MEAAXXZ
+    // vIndex: 23
     virtual void _init();
 
-    // vIndex: 24, symbol: ?_onItemChanged@ContainerModel@@MEAAXHAEBVItemStack@@0@Z
+    // vIndex: 24
     virtual void _onItemChanged(int modelSlot, class ItemStack const& oldItem, class ItemStack const& newItem);
 
-    // symbol: ??0ContainerModel@@QEAA@W4ContainerEnumName@@HW4ContainerCategory@@_N@Z
     MCAPI ContainerModel(
         ::ContainerEnumName containerName,
         int                 containerSize,
@@ -101,49 +99,38 @@ public:
         bool                isClientSide
     );
 
-    // symbol: ?_useLegacyTransactions@ContainerModel@@QEBA_NXZ
     MCAPI bool _useLegacyTransactions() const;
 
-    // symbol: ?getContainerSlot@ContainerModel@@QEBAHH@Z
     MCAPI int getContainerSlot(int modelSlot) const;
 
-    // symbol: ?getModelSlot@ContainerModel@@QEBAHH@Z
     MCAPI int getModelSlot(int containerSlot) const;
 
-    // symbol: ?isContainerSlotInRange@ContainerModel@@QEBA_NH@Z
     MCAPI bool isContainerSlotInRange(int containerSlot) const;
 
-    // symbol: ?isIntermediaryCategory@ContainerModel@@QEBA_NXZ
     MCAPI bool isIntermediaryCategory() const;
 
-    // symbol: ?networkUpdateItem@ContainerModel@@QEAAXHAEBVItemStack@@0@Z
     MCAPI void networkUpdateItem(int modelSlot, class ItemStack const& oldItem, class ItemStack const& newItem);
 
-    // symbol: ?registerOnContainerChangedCallback@ContainerModel@@QEAAXV?$function@$$A6AXHAEBVItemStack@@0@Z@std@@@Z
     MCAPI void
     registerOnContainerChangedCallback(std::function<void(int, class ItemStack const&, class ItemStack const&)> callback
     );
 
-    // symbol: ?registerPlayerNotificationCallback@ContainerModel@@QEAAXV?$function@$$A6AXHAEBVItemStack@@0@Z@std@@@Z
     MCAPI void
     registerPlayerNotificationCallback(std::function<void(int, class ItemStack const&, class ItemStack const&)> callback
     );
 
-    // symbol: ?setItemSource@ContainerModel@@QEAAXHAEBUSlotData@@@Z
     MCAPI void setItemSource(int slot, struct SlotData const& srcSlot);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?_notifyPlayer@ContainerModel@@IEAAXHAEBVItemStack@@0@Z
     MCAPI void _notifyPlayer(int modelSlot, class ItemStack const& oldItem, class ItemStack const& newItem);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_onClientUIItemNetworkChanged@ContainerModel@@AEAAXHAEBVItemStack@@0@Z
     MCAPI void
     _onClientUIItemNetworkChanged(int containerSlot, class ItemStack const& oldItem, class ItemStack const& newItem);
 

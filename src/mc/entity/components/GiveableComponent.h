@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getInteraction@GiveableComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
     MCAPI bool getInteraction(class Actor& owner, class Player& player, class ActorInteraction& interaction);
 
     // NOLINTEND

@@ -26,25 +26,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CarrotOnAStickItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~CarrotOnAStickItem() = default;
 
-    // vIndex: 37, symbol: ?isHandEquipped@CarrotOnAStickItem@@UEBA_NXZ
+    // vIndex: 37
     virtual bool isHandEquipped() const;
 
-    // vIndex: 47, symbol: ?requiresInteract@CarrotOnAStickItem@@UEBA_NXZ
+    // vIndex: 47
     virtual bool requiresInteract() const;
 
-    // vIndex: 50, symbol: ?getEnchantSlot@CarrotOnAStickItem@@UEBAHXZ
+    // vIndex: 50
     virtual int getEnchantSlot() const;
 
-    // vIndex: 51, symbol: ?getEnchantValue@CarrotOnAStickItem@@UEBAHXZ
+    // vIndex: 51
     virtual int getEnchantValue() const;
 
-    // vIndex: 78, symbol: ?hurtActor@CarrotOnAStickItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
+    // vIndex: 78
     virtual void hurtActor(class ItemStack& item, class Actor& actor, class Mob& attacker) const;
 
-    // symbol: ??0CarrotOnAStickItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z
     MCAPI CarrotOnAStickItem(std::string const& name, short id);
 
     // NOLINTEND

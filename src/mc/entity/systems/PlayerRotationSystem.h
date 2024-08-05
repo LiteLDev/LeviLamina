@@ -4,7 +4,6 @@
 
 namespace PlayerRotationSystem {
 // NOLINTBEGIN
-// symbol: ?createSystem@PlayerRotationSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createSystem();
 // NOLINTEND
 

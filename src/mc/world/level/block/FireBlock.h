@@ -27,76 +27,68 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FireBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~FireBlock() = default;
 
-    // vIndex: 5, symbol:
-    // ?getCollisionShape@FireBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 5
     virtual class AABB
     getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 9, symbol: ?getOutline@FireBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
+    // vIndex: 9
     virtual class AABB const&
     getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 56, symbol: ?waterSpreadCausesSpawn@FireBlock@@UEBA_NXZ
+    // vIndex: 56
     virtual bool waterSpreadCausesSpawn() const;
 
-    // vIndex: 57, symbol: ?canContainLiquid@FireBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // vIndex: 62, symbol: ?checkIsPathable@FireBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
+    // vIndex: 62
     virtual bool
     checkIsPathable(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
 
-    // vIndex: 83, symbol: ?mayPick@FireBlock@@UEBA_NXZ
+    // vIndex: 83
     virtual bool mayPick() const;
 
-    // vIndex: 86, symbol: ?mayPlace@FireBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 86
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 93, symbol: ?neighborChanged@FireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 93
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 134, symbol: ?animateTickBedrockLegacy@FireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 134
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // vIndex: 146, symbol: ?onPlace@FireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 146
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 148, symbol: ?tick@FireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 162, symbol: ?entityInside@FireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
+    // vIndex: 162
     virtual void entityInside(class BlockSource&, class BlockPos const&, class Actor& entity) const;
 
-    // symbol: ??0FireBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI FireBlock(std::string const& nameId, int id);
 
-    // symbol: ?checkBurn@FireBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@HAEAVRandomize@@H@Z
     MCAPI void
     checkBurn(class BlockSource& region, class BlockPos const& pos, int chance, class Randomize& randomize, int age)
         const;
 
-    // symbol: ?isSolidToppedBlock@FireBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static bool isSolidToppedBlock(class BlockSource& region, class BlockPos const& pos);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_tryAddToTickingQueue@FireBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     MCAPI void _tryAddToTickingQueue(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // symbol: ?_trySpawnSoulFire@FireBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI bool _trySpawnSoulFire(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ?getFireOdds@FireBlock@@AEBAMAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI float getFireOdds(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ?isValidFireLocation@FireBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI bool isValidFireLocation(class BlockSource& region, class BlockPos const& pos) const;
 
     // NOLINTEND

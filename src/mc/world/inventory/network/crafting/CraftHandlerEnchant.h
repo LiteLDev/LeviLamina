@@ -19,28 +19,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CraftHandlerEnchant@@UEAA@XZ
+    // vIndex: 0
     virtual ~CraftHandlerEnchant() = default;
 
-    // vIndex: 3, symbol: ?endRequestBatch@CraftHandlerEnchant@@MEAAXXZ
+    // vIndex: 3
     virtual void endRequestBatch();
 
-    // vIndex: 4, symbol:
-    // ?_handleCraftAction@CraftHandlerEnchant@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z
+    // vIndex: 4
     virtual ::ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const& requestAction);
 
-    // vIndex: 5, symbol: ?_postCraftRequest@CraftHandlerEnchant@@MEAAX_N@Z
+    // vIndex: 5
     virtual void _postCraftRequest(bool wasSuccess);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_getEnchantingModel@CraftHandlerEnchant@@AEBAAEAVEnchantingContainerManagerModel@@XZ
     MCAPI class EnchantingContainerManagerModel& _getEnchantingModel() const;
 
-    // symbol:
-    // ?_handleEnchant@CraftHandlerEnchant@@AEAA?AW4ItemStackNetResult@@AEBV?$ItemStackRequestActionCraft@V?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@$0M@@@@Z
     MCAPI ::ItemStackNetResult _handleEnchant(class ItemStackRequestActionCraft<RecipeNetId, 12> const& requestAction);
 
     // NOLINTEND

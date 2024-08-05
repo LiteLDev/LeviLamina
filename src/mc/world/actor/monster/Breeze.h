@@ -35,13 +35,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1Breeze@@UEAA@XZ
+    // vIndex: 10
     virtual ~Breeze() = default;
 
-    // vIndex: 98, symbol: ?causeFallDamageToActor@Breeze@@UEAAMMMVActorDamageSource@@@Z
+    // vIndex: 98
     virtual float causeFallDamageToActor(float, float, class ActorDamageSource);
 
-    // symbol: ??0Breeze@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Breeze(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
 
     // NOLINTEND

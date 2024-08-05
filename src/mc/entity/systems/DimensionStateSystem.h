@@ -14,11 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?isDimensionReady@DimensionStateSystem@@SA_NAEBVEntityContext@@@Z
     MCAPI static bool isDimensionReady(class EntityContext const& entity);
 
-    // symbol:
-    // ?setDimensionState@DimensionStateSystem@@SAXAEAVEntityContext@@W4DimensionState@DimensionStateComponent@@@Z
     MCAPI static void setDimensionState(class EntityContext& entity, ::DimensionStateComponent::DimensionState state);
 
     // NOLINTEND

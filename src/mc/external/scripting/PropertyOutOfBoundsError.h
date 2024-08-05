@@ -13,14 +13,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0PropertyOutOfBoundsError@Scripting@@QEAA@$$QEAU01@@Z
     MCAPI PropertyOutOfBoundsError(struct Scripting::PropertyOutOfBoundsError&&);
 
-    // symbol:
-    // ??0PropertyOutOfBoundsError@Scripting@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@NNN@Z
     MCAPI PropertyOutOfBoundsError(std::string const&, double, double, double);
 
-    // symbol: ??1PropertyOutOfBoundsError@Scripting@@QEAA@XZ
     MCAPI ~PropertyOutOfBoundsError();
 
     // NOLINTEND

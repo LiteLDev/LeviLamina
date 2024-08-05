@@ -30,23 +30,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SystemImpl@ServerStandInCauldronSystem@@UEAA@XZ
+    // vIndex: 0
     virtual ~SystemImpl() = default;
 
-    // vIndex: 1, symbol: ?registerEvents@ISystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
+    // vIndex: 1
     virtual void registerEvents(entt::dispatcher&);
 
-    // vIndex: 2, symbol: __unk_vfn_2
+    // vIndex: 2
     virtual void __unk_vfn_2();
 
-    // vIndex: 3, symbol: __unk_vfn_3
+    // vIndex: 3
     virtual void __unk_vfn_3();
 
-    // vIndex: 4, symbol: __unk_vfn_4
+    // vIndex: 4
     virtual void __unk_vfn_4();
 
-    // vIndex: 5, symbol:
-    // ?tick@SystemImpl@ServerStandInCauldronSystem@@MEAAXAEAV?$StrictExecutionContext@U?$Filter@UUpdateWaterStateRequestComponent@@@@U?$Read@VActorOwnerComponent@@@@U?$Write@$$V@@U?$AddRemove@$$V@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
+    // vIndex: 5
     virtual void tick(class StrictExecutionContext<
                       struct Filter<struct UpdateWaterStateRequestComponent>,
                       struct Read<class ActorOwnerComponent>,
@@ -56,8 +55,7 @@ public:
                       struct GlobalWrite<>,
                       struct EntityFactoryT<>>&);
 
-    // vIndex: 6, symbol:
-    // ?singleTick@SystemImpl@ServerStandInCauldronSystem@@MEAAXAEAV?$StrictExecutionContext@U?$Filter@UUpdateWaterStateRequestComponent@@@@U?$Read@VActorOwnerComponent@@@@U?$Write@$$V@@U?$AddRemove@$$V@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@AEAVStrictEntityContext@@@Z
+    // vIndex: 6
     virtual void
     singleTick(class StrictExecutionContext<struct Filter<struct UpdateWaterStateRequestComponent>, struct Read<class ActorOwnerComponent>, struct Write<>, struct AddRemove<>, struct GlobalRead<>, struct GlobalWrite<>, struct EntityFactoryT<>>&, class StrictEntityContext&);
 
@@ -65,7 +63,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_checkInsideCauldron@SystemImpl@ServerStandInCauldronSystem@@CAXAEAVActorOwnerComponent@@@Z
     MCAPI static void _checkInsideCauldron(class ActorOwnerComponent&);
 
     // NOLINTEND

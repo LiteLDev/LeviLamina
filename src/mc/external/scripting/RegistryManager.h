@@ -19,18 +19,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?createLifetimeRegistry@RegistryManager@Scripting@@QEAA?AV?$unique_ptr@VLifetimeRegistry@Scripting@@U?$default_delete@VLifetimeRegistry@Scripting@@@std@@@std@@XZ
     MCAPI std::unique_ptr<class Scripting::LifetimeRegistry> createLifetimeRegistry();
 
-    // symbol: ?getRegistryByContextId@RegistryManager@Scripting@@QEAAPEAVLifetimeRegistry@2@UContextId@2@@Z
     MCAPI class Scripting::LifetimeRegistry* getRegistryByContextId(struct Scripting::ContextId);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_returnExpiredIdsToFreeList@RegistryManager@Scripting@@AEAAXXZ
     MCAPI void _returnExpiredIdsToFreeList();
 
     // NOLINTEND

@@ -27,19 +27,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LoomBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~LoomBlock() = default;
 
-    // vIndex: 32, symbol: ?isCraftingBlock@LoomBlock@@UEBA_NXZ
+    // vIndex: 32
     virtual bool isCraftingBlock() const;
 
-    // vIndex: 150, symbol: ?isInteractiveBlock@LoomBlock@@UEBA_NXZ
+    // vIndex: 150
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 152, symbol: ?use@LoomBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    // symbol: ??0LoomBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI LoomBlock(std::string const& nameId, int id);
 
     // NOLINTEND

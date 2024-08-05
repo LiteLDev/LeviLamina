@@ -28,22 +28,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1HayBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~HayBlock() = default;
 
-    // vIndex: 96, symbol: ?asItemInstance@HayBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
-    // vIndex: 129, symbol: ?getVariant@HayBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 142, symbol: ?_addHardCodedBlockComponents@HayBlock@@MEAAXAEBVExperiments@@@Z
+    // vIndex: 142
     virtual void _addHardCodedBlockComponents(class Experiments const&);
 
-    // symbol: ??0HayBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI HayBlock(std::string const& nameId, int id);
 
-    // symbol: ?onFallOn@HayBlock@@QEBAXAEAUBlockFallOnEvent@BlockEvents@@@Z
     MCAPI void onFallOn(struct BlockEvents::BlockFallOnEvent&) const;
 
     // NOLINTEND

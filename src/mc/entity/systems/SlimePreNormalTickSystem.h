@@ -18,20 +18,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@SlimePreNormalTickSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_doSlimePreNormalTickSystem@SlimePreNormalTickSystem@@CAXAEAVStrictEntityContext@@AEAVActorOwnerComponent@@V?$Optional@$$CBUOnGroundFlagComponent@@@@V?$EntityModifier@V?$FlagComponent@USlimeWasOnGroundPreNormalTick@@@@@@@Z
     MCAPI static void
     _doSlimePreNormalTickSystem(class StrictEntityContext&, class ActorOwnerComponent&, class Optional<struct OnGroundFlagComponent const>, class EntityModifier<class FlagComponent<struct SlimeWasOnGroundPreNormalTick>>);
 
-    // symbol:
-    // ?_tickSlimePreNormalTickSystem@SlimePreNormalTickSystem@@CAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@USlimeFlag@@@@@@VActorOwnerComponent@@V?$Optional@$$CBUOnGroundFlagComponent@@@@@@V?$EntityModifier@V?$FlagComponent@USlimeWasOnGroundPreNormalTick@@@@@@@Z
     MCAPI static void _tickSlimePreNormalTickSystem(
         class ViewT<
             class StrictEntityContext,

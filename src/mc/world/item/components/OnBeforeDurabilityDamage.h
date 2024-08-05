@@ -18,7 +18,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getIdentifier@OnBeforeDurabilityDamage@PublisherItemComponent@@SAAEBVHashedString@@XZ
     MCAPI static class HashedString const& getIdentifier();
 
     // NOLINTEND

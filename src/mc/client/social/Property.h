@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1Property@Events@Social@@QEAA@XZ
     MCAPI ~Property();
 
     // NOLINTEND

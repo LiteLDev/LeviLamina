@@ -22,13 +22,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ChunkAccessor@worldgen@br@@QEAA@AEAVDimension@@AEBVBiomeSource@@@Z
     MCAPI ChunkAccessor(class Dimension&, class BiomeSource const&);
 
-    // symbol: ?getFirstFreeHeight@ChunkAccessor@worldgen@br@@QEBAHHHW4Type@HeightmapProjection@23@@Z
     MCAPI int getFirstFreeHeight(int, int, ::br::worldgen::HeightmapProjection::Type) const;
 
-    // symbol: ??1ChunkAccessor@worldgen@br@@QEAA@XZ
     MCAPI ~ChunkAccessor();
 
     // NOLINTEND

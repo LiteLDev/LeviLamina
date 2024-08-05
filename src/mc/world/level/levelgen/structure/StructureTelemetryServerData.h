@@ -10,13 +10,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0StructureTelemetryServerData@@QEAA@XZ
     MCAPI StructureTelemetryServerData();
 
-    // symbol: ?hasBeenActivatedByRedstone@StructureTelemetryServerData@@QEAA_NXZ
     MCAPI bool hasBeenActivatedByRedstone();
 
-    // symbol: ?setHasBeenActivedByRedstone@StructureTelemetryServerData@@QEAAXXZ
     MCAPI void setHasBeenActivedByRedstone();
 
     // NOLINTEND

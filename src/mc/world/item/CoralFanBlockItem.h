@@ -26,21 +26,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CoralFanBlockItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~CoralFanBlockItem() = default;
 
-    // vIndex: 32, symbol: ?getLevelDataForAuxValue@CoralFanBlockItem@@UEBAHH@Z
+    // vIndex: 32
     virtual int getLevelDataForAuxValue(int auxValue) const;
 
-    // vIndex: 56, symbol: ?isValidAuxValue@CoralFanBlockItem@@UEBA_NH@Z
+    // vIndex: 56
     virtual bool isValidAuxValue(int auxValue) const;
 
-    // vIndex: 118, symbol:
-    // ?_useOn@CoralFanBlockItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+    // vIndex: 118
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const&) const;
 
-    // symbol: ??0CoralFanBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI CoralFanBlockItem(std::string const& name, int id);
 
     // NOLINTEND

@@ -13,22 +13,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SharedRecursiveMutexBase@Threading@Bedrock@@UEAA@XZ
+    // vIndex: 0
     virtual ~SharedRecursiveMutexBase() = default;
 
-    // vIndex: 1, symbol: ?_threadHoldsSharedLock@SharedRecursiveMutex@Threading@Bedrock@@MEAA_NVid@thread@std@@@Z
+    // vIndex: 1
     virtual bool _threadHoldsSharedLock(std::thread::id) = 0;
 
-    // vIndex: 2, symbol: ?_shouldLockForSharedAccess@SharedRecursiveMutex@Threading@Bedrock@@MEAA_NVid@thread@std@@@Z
+    // vIndex: 2
     virtual bool _shouldLockForSharedAccess(std::thread::id) = 0;
 
-    // vIndex: 3, symbol: ?_shouldUnLockForSharedAccess@SharedRecursiveMutex@Threading@Bedrock@@MEAA_NVid@thread@std@@@Z
+    // vIndex: 3
     virtual bool _shouldUnLockForSharedAccess(std::thread::id) = 0;
 
-    // symbol: ?lock@SharedRecursiveMutexBase@Threading@Bedrock@@QEAAXXZ
     MCAPI void lock();
 
-    // symbol: ?unlock@SharedRecursiveMutexBase@Threading@Bedrock@@QEAAXXZ
     MCAPI void unlock();
 
     // NOLINTEND

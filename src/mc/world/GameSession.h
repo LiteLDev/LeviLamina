@@ -16,8 +16,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0GameSession@@QEAA@AEAVServerNetworkSystem@@V?$unique_ptr@VServerNetworkHandler@@U?$default_delete@VServerNetworkHandler@@@std@@@std@@AEAVLoopbackPacketSender@@V?$unique_ptr@VNetEventCallback@@U?$default_delete@VNetEventCallback@@@std@@@3@U?$pair@V?$unique_ptr@VLevel@@U?$default_delete@VLevel@@@std@@@std@@V?$OwnerPtr@VEntityContext@@@@@3@W4SubClientId@@@Z
     MCAPI GameSession(
         class ServerNetworkSystem&                  network,
         std::unique_ptr<class ServerNetworkHandler> serverNetworkHandler,
@@ -27,11 +25,8 @@ public:
         ::SubClientId subid
     );
 
-    // symbol: ?getServerNetworkHandler@GameSession@@QEAA?AV?$NonOwnerPointer@VServerNetworkHandler@@@Bedrock@@XZ
     MCAPI class Bedrock::NonOwnerPointer<class ServerNetworkHandler> getServerNetworkHandler();
 
-    // symbol:
-    // ?setLevel@GameSession@@QEAAXU?$pair@V?$unique_ptr@VLevel@@U?$default_delete@VLevel@@@std@@@std@@V?$OwnerPtr@VEntityContext@@@@@std@@@Z
     MCAPI void setLevel(std::pair<std::unique_ptr<class Level>, class OwnerPtr<class EntityContext>>);
 
     // NOLINTEND

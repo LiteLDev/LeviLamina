@@ -25,62 +25,51 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1Debugger@QuickJS@Scripting@@UEAA@XZ
+    // vIndex: 0
     virtual ~Debugger() = default;
 
-    // vIndex: 1, symbol: ?listen@Debugger@QuickJS@Scripting@@UEAA_NG@Z
+    // vIndex: 1
     virtual bool listen(ushort port);
 
-    // vIndex: 2, symbol:
-    // ?connect@Debugger@QuickJS@Scripting@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
+    // vIndex: 2
     virtual bool connect(std::string const& host, ushort port);
 
-    // vIndex: 3, symbol: ?disconnect@Debugger@QuickJS@Scripting@@UEAAXXZ
+    // vIndex: 3
     virtual void disconnect();
 
-    // vIndex: 4, symbol: ?pollConnections@Debugger@QuickJS@Scripting@@UEAAXXZ
+    // vIndex: 4
     virtual void pollConnections();
 
-    // vIndex: 5, symbol: ?closed@Debugger@QuickJS@Scripting@@UEBA_NXZ
+    // vIndex: 5
     virtual bool closed() const;
 
-    // vIndex: 6, symbol: ?isListening@Debugger@QuickJS@Scripting@@UEBA_NXZ
+    // vIndex: 6
     virtual bool isListening() const;
 
-    // vIndex: 7, symbol:
-    // ?sendMessage@Debugger@QuickJS@Scripting@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void sendMessage(std::string const&) const;
 
-    // vIndex: 8, symbol:
-    // ?sendLog@Debugger@QuickJS@Scripting@@UEBAXW4DebuggerLogLevel@3@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+    // vIndex: 8
     virtual void sendLog(::Scripting::DebuggerLogLevel, std::string_view) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_tryAttach@Debugger@QuickJS@Scripting@@AEAA_NXZ
     MCAPI bool _tryAttach();
 
-    // symbol: ?ContextToId@Debugger@QuickJS@Scripting@@CAIPEAUJSContext@@PEAX@Z
     MCAPI static uint ContextToId(struct JSContext* ctx, void*);
 
-    // symbol: ?NotifyResume@Debugger@QuickJS@Scripting@@CAXPEAX@Z
     MCAPI static void NotifyResume(void*);
 
-    // symbol: ?ToTypeName@Debugger@QuickJS@Scripting@@CAPEBDPEAUJSContext@@UJSValue@@@Z
     MCAPI static char const* ToTypeName(struct JSContext* ctx, struct JSValue val);
 
-    // symbol: ?TransportClose@Debugger@QuickJS@Scripting@@CAXPEAUJSRuntime@@PEAX@Z
     MCAPI static void TransportClose(struct JSRuntime* rt, void*);
 
-    // symbol: ?TransportPeek@Debugger@QuickJS@Scripting@@CA_KPEAX@Z
     MCAPI static uint64 TransportPeek(void*);
 
-    // symbol: ?TransportRead@Debugger@QuickJS@Scripting@@CA_KPEAXPEAD_K@Z
     MCAPI static uint64 TransportRead(void*, char* buffer, uint64 length);
 
-    // symbol: ?TransportWrite@Debugger@QuickJS@Scripting@@CA_KPEAXPEBD_K@Z
     MCAPI static uint64 TransportWrite(void*, char const* buffer, uint64 length);
 
     // NOLINTEND

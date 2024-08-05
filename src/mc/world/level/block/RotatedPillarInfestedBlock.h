@@ -27,17 +27,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1RotatedPillarInfestedBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~RotatedPillarInfestedBlock() = default;
 
-    // vIndex: 97, symbol:
-    // ?spawnAfterBreak@RotatedPillarInfestedBlock@@EEBAXAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@AEBUResourceDropsContext@@@Z
+    // vIndex: 97
     virtual void
     spawnAfterBreak(class BlockSource&, class Block const&, class BlockPos const&, struct ResourceDropsContext const&)
         const;
 
-    // symbol:
-    // ??0RotatedPillarInfestedBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI RotatedPillarInfestedBlock(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND

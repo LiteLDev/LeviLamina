@@ -21,17 +21,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DamageAbsorptionItemComponent@@UEAA@XZ
+    // vIndex: 0
     virtual ~DamageAbsorptionItemComponent() = default;
 
-    // symbol:
-    // ??0DamageAbsorptionItemComponent@@QEAA@AEBV?$vector@W4ActorDamageCause@@V?$allocator@W4ActorDamageCause@@@std@@@std@@@Z
     MCAPI explicit DamageAbsorptionItemComponent(std::vector<::ActorDamageCause> const&);
 
-    // symbol: ?getIdentifier@DamageAbsorptionItemComponent@@SAAEBVHashedString@@XZ
     MCAPI static class HashedString const& getIdentifier();
 
-    // symbol: ?VALID_SLOTS@DamageAbsorptionItemComponent@@2V?$array@W4ArmorSlot@@$00@std@@B
     MCAPI static std::array<::ArmorSlot, 1> const VALID_SLOTS;
 
     // NOLINTEND

@@ -40,17 +40,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1TeleportCommand@@UEAA@XZ
+    // vIndex: 0
     virtual ~TeleportCommand() = default;
 
-    // vIndex: 2, symbol: ?execute@TeleportCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+    // vIndex: 2
     virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    // symbol: ?applyTarget@TeleportCommand@@SAXAEAVActor@@VTeleportTarget@@_N@Z
     MCAPI static void applyTarget(class Actor& victim, class TeleportTarget target, bool);
 
-    // symbol:
-    // ?computeTarget@TeleportCommand@@SA?AVTeleportTarget@@AEAVActor@@VVec3@@PEAV4@V?$AutomaticID@VDimension@@H@@AEBV?$optional@VRotationData@RotationCommandUtils@@@std@@H@Z
     MCAPI static class TeleportTarget computeTarget(
         class Actor&  victim,
         class Vec3    destination,
@@ -60,24 +57,18 @@ public:
         int commandVersion
     );
 
-    // symbol: ?setup@TeleportCommand@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry& registry);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?doArmorStandTeleportBackwardCompability@TeleportCommand@@AEBAXAEAVActor@@PEBV2@@Z
     MCAPI void doArmorStandTeleportBackwardCompability(class Actor& target, class Actor const*) const;
 
-    // symbol:
-    // ?getFacingDirection@TeleportCommand@@AEBA?AW4FacingResult@RotationCommandUtils@@AEBVCommandOrigin@@AEAVCommandOutput@@AEAVVec3@@PEAVActor@@@Z
     MCAPI ::RotationCommandUtils::FacingResult
     getFacingDirection(class CommandOrigin const& origin, class CommandOutput& output, class Vec3& faceTarget, class Actor*)
         const;
 
-    // symbol:
-    // ?getCommandAreaForTargets@TeleportCommand@@CA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVCommandOrigin@@AEBV?$CommandSelectorResults@VActor@@@@VVec3@@H_N@Z
     MCAPI static std::unique_ptr<class CommandArea> getCommandAreaForTargets(
         class CommandOrigin const&                       origin,
         class CommandSelectorResults<class Actor> const& targets,

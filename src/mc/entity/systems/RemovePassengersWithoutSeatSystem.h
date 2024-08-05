@@ -17,11 +17,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@RemovePassengersWithoutSeatSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
-    // symbol:
-    // ?removePassengersWithoutSeat@RemovePassengersWithoutSeatSystem@@SAXAEAVStrictEntityContext@@AEBVRideableComponent@@AEAUVehicleComponent@@AEAV?$EntityModifier@V?$FlagComponent@UStopRidingRequestFlag@@@@@@@Z
     MCAPI static void removePassengersWithoutSeat(
         class StrictEntityContext&,
         class RideableComponent const&,
@@ -33,8 +30,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_tickRemovePassengersWithoutSeat@RemovePassengersWithoutSeatSystem@@CAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@$$CBVRideableComponent@@UVehicleComponent@@@@V?$EntityModifier@V?$FlagComponent@UStopRidingRequestFlag@@@@@@@Z
     MCAPI static void _tickRemovePassengersWithoutSeat(
         class ViewT<
             class StrictEntityContext,

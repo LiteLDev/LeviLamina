@@ -14,13 +14,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SendShowStoreOfferCommand@@UEAA@XZ
+    // vIndex: 0
     virtual ~SendShowStoreOfferCommand() = default;
 
-    // vIndex: 2, symbol: ?execute@SendShowStoreOfferCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+    // vIndex: 2
     virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    // symbol: ?setup@SendShowStoreOfferCommand@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry& registry);
 
     // NOLINTEND

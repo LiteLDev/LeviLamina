@@ -35,67 +35,58 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1Wolf@@UEAA@XZ
+    // vIndex: 10
     virtual ~Wolf() = default;
 
-    // vIndex: 60, symbol: ?setSitting@Wolf@@UEAAX_N@Z
+    // vIndex: 60
     virtual void setSitting(bool value);
 
-    // vIndex: 68, symbol: ?getAmbientSound@Wolf@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 68
     virtual ::Puv::Legacy::LevelSoundEvent getAmbientSound() const;
 
-    // vIndex: 74, symbol: ?handleEntityEvent@Wolf@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 74
     virtual void handleEntityEvent(::ActorEvent id, int data);
 
-    // vIndex: 88, symbol: ?load@Wolf@@UEAA_NAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 88
     virtual bool load(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 99, symbol: ?onSynchedDataUpdate@Wolf@@UEAAXH@Z
+    // vIndex: 99
     virtual void onSynchedDataUpdate(int dataId);
 
-    // vIndex: 146, symbol: ?_hurt@Wolf@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 146
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 166, symbol: ?isAlliedTo@Wolf@@UEAA_NPEAVMob@@@Z
+    // vIndex: 166
     virtual bool isAlliedTo(class Mob* other);
 
-    // vIndex: 181, symbol: ?onBorn@Wolf@@UEAAXAEAVActor@@0@Z
+    // vIndex: 181
     virtual void onBorn(class Actor& parentLeft, class Actor& parentRight);
 
-    // vIndex: 187, symbol: ?newServerAiStep@Wolf@@UEAAXXZ
+    // vIndex: 187
     virtual void newServerAiStep();
 
-    // symbol: ??0Wolf@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Wolf(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?getHeadRollAngle@Wolf@@QEAAMM@Z
     MCAPI float getHeadRollAngle(float a);
 
-    // symbol: ?getShakeAnim@Wolf@@QEBAMXZ
     MCAPI float getShakeAnim() const;
 
-    // symbol: ?getTailAngle@Wolf@@QEAAMXZ
     MCAPI float getTailAngle();
 
-    // symbol: ?isShaking@Wolf@@QEBA_NXZ
     MCAPI bool isShaking() const;
 
-    // symbol: ?postNormalTick@Wolf@@QEAAXXZ
     MCAPI void postNormalTick();
 
-    // symbol:
-    // ?getCustomHurtSound@Wolf@@SA?AV?$optional@W4LevelSoundEvent@Legacy@Puv@@@std@@AEAVMob@@W4ActorDamageCause@@@Z
     MCAPI static std::optional<::Puv::Legacy::LevelSoundEvent> getCustomHurtSound(class Mob&, ::ActorDamageCause);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_avoidSnowBury@Wolf@@AEAAXXZ
     MCAPI void _avoidSnowBury();
 
     // NOLINTEND

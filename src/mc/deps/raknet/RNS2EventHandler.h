@@ -13,7 +13,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1RNS2EventHandler@RakNet@@UEAA@XZ
+    // vIndex: 0
     virtual ~RNS2EventHandler();
 
     // NOLINTEND

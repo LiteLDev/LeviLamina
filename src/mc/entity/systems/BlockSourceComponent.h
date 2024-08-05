@@ -15,10 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0BlockSourceComponent@@QEAA@V?$WeakRef@VBlockSource@@@@@Z
     MCAPI explicit BlockSourceComponent(class WeakRef<class BlockSource>);
 
-    // symbol: ?tryGetBlockSource@BlockSourceComponent@@QEBA?AV?$StackRefResult@VBlockSource@@@@XZ
     MCAPI class StackRefResult<class BlockSource> tryGetBlockSource() const;
 
     // NOLINTEND

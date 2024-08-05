@@ -35,22 +35,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1Pufferfish@@UEAA@XZ
+    // vIndex: 10
     virtual ~Pufferfish() = default;
 
-    // vIndex: 26, symbol: ?normalTick@Pufferfish@@UEAAXXZ
+    // vIndex: 26
     virtual void normalTick();
 
-    // vIndex: 29, symbol: ?startRiding@Pufferfish@@UEAA_NAEAVActor@@@Z
+    // vIndex: 29
     virtual bool startRiding(class Actor&);
 
-    // vIndex: 144, symbol: ?updateEntitySpecificMolangVariables@Pufferfish@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 144
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // vIndex: 146, symbol: ?_hurt@Pufferfish@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 146
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // symbol: ??0Pufferfish@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Pufferfish(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

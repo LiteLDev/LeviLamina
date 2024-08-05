@@ -20,27 +20,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1LevelEventGenericPacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~LevelEventGenericPacket();
 
-    // vIndex: 1, symbol: ?getId@LevelEventGenericPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@LevelEventGenericPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@LevelEventGenericPacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 8, symbol:
-    // ?_read@LevelEventGenericPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0LevelEventGenericPacket@@QEAA@XZ
     MCAPI LevelEventGenericPacket();
 
-    // symbol: ??0LevelEventGenericPacket@@QEAA@W4LevelEvent@@AEBVCompoundTag@@@Z
     MCAPI LevelEventGenericPacket(::LevelEvent eventId, class CompoundTag const& data);
 
     // NOLINTEND

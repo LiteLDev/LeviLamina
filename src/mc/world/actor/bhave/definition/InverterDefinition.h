@@ -19,10 +19,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1InverterDefinition@@UEAA@XZ
+    // vIndex: 0
     virtual ~InverterDefinition() = default;
 
-    // vIndex: 1, symbol: ?load@InverterDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
+    // vIndex: 1
     virtual void load(class Json::Value value, class BehaviorFactory const& factory);
 
     // NOLINTEND

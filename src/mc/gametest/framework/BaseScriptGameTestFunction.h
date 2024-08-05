@@ -25,16 +25,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BaseScriptGameTestFunction@ScriptModuleGameTest@@UEAA@XZ
+    // vIndex: 0
     virtual ~BaseScriptGameTestFunction() = default;
 
-    // vIndex: 1, symbol:
-    // ?createContext@BaseScriptGameTestFunction@ScriptModuleGameTest@@UEBA?AV?$unique_ptr@VIGameTestFunctionContext@gametest@@U?$default_delete@VIGameTestFunctionContext@gametest@@@std@@@std@@AEAVBaseGameTestHelper@gametest@@@Z
+    // vIndex: 1
     virtual std::unique_ptr<class gametest::IGameTestFunctionContext>
     createContext(class gametest::BaseGameTestHelper& helper) const;
 
-    // symbol:
-    // ??0BaseScriptGameTestFunction@ScriptModuleGameTest@@QEAA@VWeakLifetimeScope@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI BaseScriptGameTestFunction(class Scripting::WeakLifetimeScope scope, std::string const&);
 
     // NOLINTEND

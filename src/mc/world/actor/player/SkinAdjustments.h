@@ -10,7 +10,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0SkinAdjustments@@QEAA@XZ
     MCAPI SkinAdjustments();
 
     // NOLINTEND

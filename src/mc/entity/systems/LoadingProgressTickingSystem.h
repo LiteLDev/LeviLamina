@@ -14,8 +14,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?mChunksNeededForLoadOffsets@LoadingProgressTickingSystem@@0V?$vector@VChunkPos@@V?$allocator@VChunkPos@@@std@@@std@@B
     MCAPI static std::vector<class ChunkPos> const mChunksNeededForLoadOffsets;
 
     // NOLINTEND

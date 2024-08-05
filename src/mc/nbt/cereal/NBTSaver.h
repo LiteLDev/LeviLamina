@@ -19,13 +19,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1NBTSaver@@UEAA@XZ
+    // vIndex: 0
     virtual ~NBTSaver();
 
-    // symbol: ?getSavedCompoundTag@NBTSaver@@QEAA?AVCompoundTag@@XZ
     MCAPI class CompoundTag getSavedCompoundTag();
 
-    // symbol: ?getSavedTag@NBTSaver@@QEAA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
     MCAPI std::unique_ptr<class Tag> getSavedTag();
 
     // NOLINTEND

@@ -24,18 +24,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptNavigationWalkComponent@ScriptModuleMinecraft@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptNavigationWalkComponent() = default;
 
-    // vIndex: 1, symbol: ?_isValid@ScriptNavigationWalkComponent@ScriptModuleMinecraft@@EEBA_NXZ
+    // vIndex: 1
     virtual bool _isValid() const;
 
-    // symbol:
-    // ?bind@ScriptNavigationWalkComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptNavigationWalkComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptNavigationWalkComponent>
     bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&);
 
-    // symbol: ?ComponentId@ScriptNavigationWalkComponent@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ComponentId;
 
     // NOLINTEND

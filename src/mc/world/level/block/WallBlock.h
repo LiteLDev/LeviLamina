@@ -28,62 +28,59 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1WallBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~WallBlock();
 
-    // vIndex: 4, symbol:
-    // ?clip@WallBlock@@UEBA?AVHitResult@@AEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@3W4ShapeType@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 4
     virtual class HitResult
     clip(class Block const&, class BlockSource const&, class BlockPos const&, class Vec3 const&, class Vec3 const&, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 5, symbol:
-    // ?getCollisionShape@WallBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 5
     virtual class AABB
     getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 9, symbol: ?getOutline@WallBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
+    // vIndex: 9
     virtual class AABB const&
     getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 10, symbol:
-    // ?getVisualShapeInWorld@WallBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
+    // vIndex: 10
     virtual class AABB const&
     getVisualShapeInWorld(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 13, symbol: ?getLiquidClipVolume@WallBlock@@UEBA_NAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@AEAVAABB@@@Z
+    // vIndex: 13
     virtual bool getLiquidClipVolume(class Block const&, class BlockSource&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 23, symbol: ?canProvideSupport@WallBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
+    // vIndex: 23
     virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType type) const;
 
-    // vIndex: 25, symbol: ?canConnect@WallBlock@@UEBA_NAEBVBlock@@E0@Z
+    // vIndex: 25
     virtual bool canConnect(class Block const& otherBlock, uchar, class Block const&) const;
 
-    // vIndex: 37, symbol: ?isWallBlock@WallBlock@@UEBA_NXZ
+    // vIndex: 37
     virtual bool isWallBlock() const;
 
-    // vIndex: 57, symbol: ?canContainLiquid@WallBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // vIndex: 70, symbol: ?onStructureBlockPlace@WallBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 70
     virtual void onStructureBlockPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 71, symbol: ?onStructureNeighborBlockPlace@WallBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 71
     virtual void onStructureNeighborBlockPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 90, symbol: ?breaksFallingBlocks@WallBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
+    // vIndex: 90
     virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion version) const;
 
-    // vIndex: 93, symbol: ?neighborChanged@WallBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 93
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@WallBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
-    // vIndex: 98, symbol: ?getPlacementBlock@WallBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+    // vIndex: 98
     virtual class Block const& getPlacementBlock(
         class Actor const&    by,
         class BlockPos const& pos,
@@ -92,73 +89,58 @@ public:
         int                   itemValue
     ) const;
 
-    // vIndex: 119, symbol:
-    // ?buildDescriptionId@WallBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
+    // vIndex: 119
     virtual std::string buildDescriptionId(class Block const&) const;
 
-    // vIndex: 120, symbol: ?isAuxValueRelevantForPicking@WallBlock@@UEBA_NXZ
+    // vIndex: 120
     virtual bool isAuxValueRelevantForPicking() const;
 
-    // vIndex: 129, symbol: ?getVariant@WallBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 146, symbol: ?onPlace@WallBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 146
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 148, symbol: ?tick@WallBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 160, symbol: ?getMapColor@WallBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 160
     virtual class mce::Color
     getMapColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
-    // symbol: ??0WallBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVBlockLegacy@@@Z
     MCAPI WallBlock(std::string const& nameId, int id, class BlockLegacy const& baseBlock);
 
-    // symbol: ??0WallBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI WallBlock(std::string const& nameId, int id, class Material const& material);
 
-    // symbol: ?tryFixWallStates@WallBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@H@Z
     MCAPI void tryFixWallStates(class BlockSource& region, class BlockPos const& pos, int updateFlags) const;
 
-    // symbol: ?POST_HEIGHT@WallBlock@@2MB
     MCAPI static float const POST_HEIGHT;
 
-    // symbol: ?POST_WIDTH@WallBlock@@2MB
     MCAPI static float const POST_WIDTH;
 
-    // symbol: ?WALL_HEIGHT@WallBlock@@2MB
     MCAPI static float const WALL_HEIGHT;
 
-    // symbol:
-    // ?WALL_NAMES@WallBlock@@2V?$array@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$0O@@std@@B
     MCAPI static std::array<std::string, 14> const WALL_NAMES;
 
-    // symbol: ?WALL_WIDTH@WallBlock@@2MB
     MCAPI static float const WALL_WIDTH;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_desiredConnectionState@WallBlock@@AEBA?AW4WallConnectionType@@AEAVBlockSource@@AEBVBlockPos@@E@Z
     MCAPI ::WallConnectionType
     _desiredConnectionState(class BlockSource& region, class BlockPos const& pos, uchar neighbor) const;
 
-    // symbol: ?_isCovered@WallBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVAABB@@@Z
     MCAPI bool _isCovered(class BlockSource& region, class BlockPos const& pos, class AABB const& testAABB) const;
 
-    // symbol: ?_shouldBePost@WallBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     MCAPI bool _shouldBePost(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
-    // symbol: ?_tryAddToTickingQueue@WallBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI bool _tryAddToTickingQueue(class BlockSource& region, class BlockPos const& pos) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?WALL_DOESNT_BREAK_FALLING_BLOCK_VERSION@WallBlock@@0VBaseGameVersion@@B
     MCAPI static class BaseGameVersion const WALL_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
     // NOLINTEND

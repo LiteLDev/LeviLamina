@@ -22,10 +22,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1InputFileStream@Core@@UEAA@XZ
+    // vIndex: 0
     virtual ~InputFileStream() = default;
 
-    // symbol: ??0InputFileStream@Core@@QEAA@AEBVPath@1@H@Z
     MCAPI InputFileStream(class Core::Path const&, int);
 
     // NOLINTEND

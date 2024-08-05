@@ -27,42 +27,38 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CherrySaplingBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~CherrySaplingBlock() = default;
 
-    // vIndex: 57, symbol: ?canContainLiquid@CherrySaplingBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // vIndex: 80, symbol:
-    // ?onFertilized@CherrySaplingBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
+    // vIndex: 80
     virtual bool
     onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* actor, ::FertilizerType fType)
         const;
 
-    // vIndex: 82, symbol: ?canBeFertilized@CherrySaplingBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 82
     virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
 
-    // vIndex: 86, symbol: ?mayPlace@CherrySaplingBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 86
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 149, symbol: ?randomTick@CherrySaplingBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 149
     virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 155, symbol: ?getRenderLayer@CherrySaplingBlock@@UEBA?AW4BlockRenderLayer@@XZ
+    // vIndex: 155
     virtual ::BlockRenderLayer getRenderLayer() const;
 
-    // vIndex: 156, symbol:
-    // ?getRenderLayer@CherrySaplingBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 156
     virtual ::BlockRenderLayer getRenderLayer(class Block const&, class BlockSource&, class BlockPos const&) const;
 
-    // symbol: ??0CherrySaplingBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI CherrySaplingBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?advanceTree@CherrySaplingBlock@@IEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@PEAVActor@@@Z
     MCAPI bool
     advanceTree(class BlockSource& region, class BlockPos const& pos, class Random& random, class Actor*) const;
 
@@ -70,7 +66,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_growTree@CherrySaplingBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@_N@Z
     MCAPI bool
     _growTree(class BlockSource& region, class BlockPos const& pos, class Random& random, bool useRandom) const;
 

@@ -18,20 +18,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ActiveTransfer@Server@ClientBlobCache@@QEAA@XZ
     MCAPI ActiveTransfer();
 
-    // symbol: ??0ActiveTransfer@Server@ClientBlobCache@@QEAA@AEAVActiveTransfersManager@12@AEBVNetworkIdentifier@@@Z
     MCAPI
     ActiveTransfer(class ClientBlobCache::Server::ActiveTransfersManager& cache, class NetworkIdentifier const& client);
 
-    // symbol: ?isDone@ActiveTransfer@Server@ClientBlobCache@@QEBA_NXZ
     MCAPI bool isDone() const;
 
-    // symbol: ?onAckReceived@ActiveTransfer@Server@ClientBlobCache@@QEAAX_K@Z
     MCAPI void onAckReceived(uint64 acked);
 
-    // symbol: ?shouldBeSent@ActiveTransfer@Server@ClientBlobCache@@QEBA_NXZ
     MCAPI bool shouldBeSent() const;
 
     // NOLINTEND

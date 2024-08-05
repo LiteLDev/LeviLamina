@@ -19,8 +19,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?blockFilterTickEntity@InitialTickFilterSystem@@SAXAEBVStrictEntityContext@@AEBUStateVectorComponent@@AEAV?$EntityModifier@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@AEBVIConstBlockSource@@@Z
     MCAPI static void blockFilterTickEntity(
         class StrictEntityContext const& context,
         struct StateVectorComponent const&,
@@ -28,14 +26,10 @@ public:
         class IConstBlockSource const&                                                 region
     );
 
-    // symbol: ?createBlockFilterSystem@InitialTickFilterSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createBlockFilterSystem();
 
-    // symbol: ?createTickingAreaFilterSystem@InitialTickFilterSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createTickingAreaFilterSystem();
 
-    // symbol:
-    // ?tickingAreaFilterTickEntity@InitialTickFilterSystem@@SAXAEAVStrictEntityContext@@AEAVTickWorldComponent@@AEBUCurrentTickComponent@@AEAV?$EntityModifier@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@@Z
     MCAPI static void tickingAreaFilterTickEntity(
         class StrictEntityContext& context,
         class TickWorldComponent&,
@@ -47,8 +41,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_blockFilterTickView@InitialTickFilterSystem@@CAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@$$CBUStateVectorComponent@@U?$Exclude@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@UGlobalActorFlag@@@@@@@@V?$ViewT@VStrictEntityContext@@$$CBUDimensionTypeComponent@@@@V?$OptionalGlobal@$$CBULocalConstBlockSourceFactoryComponent@@@@V?$EntityModifier@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@@Z
     MCAPI static void _blockFilterTickView(
         class ViewT<
             class StrictEntityContext,
@@ -62,8 +54,6 @@ public:
         class EntityModifier<class FlagComponent<struct ActorMovementTickNeededFlag>> modifier
     );
 
-    // symbol:
-    // ?_tickingAreaFilterTickView@InitialTickFilterSystem@@CAXV?$OptionalGlobal@$$CBUCurrentTickComponent@@@@V?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@VTickWorldComponent@@@@V?$EntityModifier@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@@Z
     MCAPI static void _tickingAreaFilterTickView(
         class OptionalGlobal<struct CurrentTickComponent const>,
         class ViewT<

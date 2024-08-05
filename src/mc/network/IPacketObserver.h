@@ -19,7 +19,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1IPacketObserver@@UEAA@XZ
+    // vIndex: 0
     virtual ~IPacketObserver();
 
     // NOLINTEND

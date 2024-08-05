@@ -23,11 +23,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1WorkerPoolHandleImpl@Bedrock@@UEAA@XZ
+    // vIndex: 0
     virtual ~WorkerPoolHandleImpl() = default;
 
-    // vIndex: 1, symbol:
-    // ?get@WorkerPoolHandleImpl@Bedrock@@UEBA?AV?$not_null@V?$NonOwnerPointer@VWorkerPool@@@Bedrock@@@gsl@@XZ
+    // vIndex: 1
     virtual Bedrock::NotNullNonOwnerPtr<class WorkerPool> get() const;
 
     // NOLINTEND

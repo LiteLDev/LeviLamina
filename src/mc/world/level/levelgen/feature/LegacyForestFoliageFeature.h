@@ -18,13 +18,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LegacyForestFoliageFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~LegacyForestFoliageFeature() = default;
 
-    // vIndex: 3, symbol: ?place@LegacyForestFoliageFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 3
     virtual bool place(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
 
-    // symbol: ??0LegacyForestFoliageFeature@@QEAA@W4Type@0@AEAVFeatureRegistry@@@Z
     MCAPI LegacyForestFoliageFeature(::LegacyForestFoliageFeature::Type forestType, class FeatureRegistry& registry);
 
     // NOLINTEND

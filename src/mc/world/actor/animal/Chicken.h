@@ -35,13 +35,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1Chicken@@UEAA@XZ
+    // vIndex: 10
     virtual ~Chicken() = default;
 
-    // vIndex: 149, symbol: ?_playStepSound@Chicken@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 149
     virtual void _playStepSound(class BlockPos const& pos, class Block const& onBlock);
 
-    // symbol: ??0Chicken@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Chicken(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

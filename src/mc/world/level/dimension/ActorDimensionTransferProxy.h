@@ -13,17 +13,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ActorDimensionTransferProxy@@UEAA@XZ
+    // vIndex: 0
     virtual ~ActorDimensionTransferProxy() = default;
 
-    // vIndex: 1, symbol: ?transferTickingArea@ActorDimensionTransferProxy@@UEBAXAEAVActor@@AEAVDimension@@@Z
+    // vIndex: 1
     virtual void transferTickingArea(class Actor&, class Dimension&) const;
 
-    // vIndex: 2, symbol: ?removeActorFromLevelChunk@ActorDimensionTransferProxy@@UEBAXAEAVActor@@@Z
+    // vIndex: 2
     virtual void removeActorFromLevelChunk(class Actor&) const;
 
-    // vIndex: 3, symbol:
-    // ?transferActorToDimension@ActorDimensionTransferProxy@@UEBAXAEBVActor@@AEAVDimension@@AEBVVec3@@V?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@_N@Z
+    // vIndex: 3
     virtual void transferActorToDimension(
         class Actor const&,
         class Dimension&,
@@ -32,7 +31,6 @@ public:
         bool
     ) const;
 
-    // symbol: ??0ActorDimensionTransferProxy@@QEAA@XZ
     MCAPI ActorDimensionTransferProxy();
 
     // NOLINTEND

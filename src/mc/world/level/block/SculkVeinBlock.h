@@ -27,23 +27,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SculkVeinBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~SculkVeinBlock() = default;
 
-    // vIndex: 62, symbol: ?checkIsPathable@SculkVeinBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
+    // vIndex: 62
     virtual bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@SculkVeinBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
-    // vIndex: 163, symbol: ?getMultifaceBlock@SculkVeinBlock@@UEBAAEBVBlock@@XZ
+    // vIndex: 163
     virtual class Block const& getMultifaceBlock() const;
 
-    // vIndex: 164, symbol: ?getMultifaceSpreader@SculkVeinBlock@@UEBAAEBVMultifaceSpreader@@XZ
+    // vIndex: 164
     virtual class MultifaceSpreader const& getMultifaceSpreader() const;
 
-    // symbol:
-    // ??0SculkVeinBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI SculkVeinBlock(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND

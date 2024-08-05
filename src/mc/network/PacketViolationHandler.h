@@ -15,8 +15,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_handleViolation@PacketViolationHandler@@AEAA?AW4PacketViolationResponse@@W4MinecraftPacketIds@@AEBVerror_code@std@@AEBVNetworkIdentifier@@PEA_N@Z
     MCAPI ::PacketViolationResponse
     _handleViolation(::MinecraftPacketIds, std::error_code const&, class NetworkIdentifier const&, bool*);
 

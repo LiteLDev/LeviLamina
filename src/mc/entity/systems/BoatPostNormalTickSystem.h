@@ -4,7 +4,6 @@
 
 namespace BoatPostNormalTickSystem {
 // NOLINTBEGIN
-// symbol: ?createSystem@BoatPostNormalTickSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createSystem();
 // NOLINTEND
 

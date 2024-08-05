@@ -11,7 +11,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1IScreenChangedEventing@@UEAA@XZ
+    // vIndex: 0
     virtual ~IScreenChangedEventing();
 
     // NOLINTEND

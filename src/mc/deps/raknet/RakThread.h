@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?Create@RakThread@RakNet@@SAHP6AIPEAX@Z0H@Z
     MCAPI static int Create(uint (*)(void*), void*, int);
 
     // NOLINTEND

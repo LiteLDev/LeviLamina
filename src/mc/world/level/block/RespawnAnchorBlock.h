@@ -27,47 +27,43 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1RespawnAnchorBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~RespawnAnchorBlock() = default;
 
-    // vIndex: 111, symbol: ?hasComparatorSignal@RespawnAnchorBlock@@UEBA_NXZ
+    // vIndex: 111
     virtual bool hasComparatorSignal() const;
 
-    // vIndex: 112, symbol: ?getComparatorSignal@RespawnAnchorBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
+    // vIndex: 112
     virtual int
     getComparatorSignal(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
         const;
 
-    // vIndex: 115, symbol: ?canSpawnAt@RespawnAnchorBlock@@UEBA_NAEBVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 115
     virtual bool canSpawnAt(class BlockSource const& region, class BlockPos const& pos) const;
 
-    // vIndex: 116, symbol: ?notifySpawnedAt@RespawnAnchorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 116
     virtual void notifySpawnedAt(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 129, symbol: ?getVariant@RespawnAnchorBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 134, symbol:
-    // ?animateTickBedrockLegacy@RespawnAnchorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 134
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // vIndex: 137, symbol: ?getLightEmission@RespawnAnchorBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
+    // vIndex: 137
     virtual struct Brightness getLightEmission(class Block const& block) const;
 
-    // vIndex: 146, symbol: ?onPlace@RespawnAnchorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 146
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 150, symbol: ?isInteractiveBlock@RespawnAnchorBlock@@UEBA_NXZ
+    // vIndex: 150
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 152, symbol: ?use@RespawnAnchorBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& anchorBlockPos, uchar face) const;
 
-    // symbol: ??0RespawnAnchorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI RespawnAnchorBlock(std::string const& nameId, int id);
 
-    // symbol:
-    // ?addItem@RespawnAnchorBlock@@SA_NAEAVContainer@@HAEBVItemStack@@AEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
     MCAPI static bool addItem(
         class Container&       fromContainer,
         int                    slot,
@@ -81,13 +77,10 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_bumpCharge@RespawnAnchorBlock@@CAXAEAVBlockSource@@AEBVBlockPos@@PEAVPlayer@@F@Z
     MCAPI static void _bumpCharge(class BlockSource&, class BlockPos const&, class Player*, short);
 
-    // symbol: ?_explode@RespawnAnchorBlock@@CAXAEAVPlayer@@AEBVBlockPos@@AEAVBlockSource@@AEAVLevel@@@Z
     MCAPI static void _explode(class Player&, class BlockPos const&, class BlockSource&, class Level&);
 
-    // symbol: ?_trySetSpawn@RespawnAnchorBlock@@CA_NAEAVPlayer@@AEBVBlockPos@@AEAVBlockSource@@AEAVLevel@@@Z
     MCAPI static bool _trySetSpawn(class Player&, class BlockPos const&, class BlockSource&, class Level&);
 
     // NOLINTEND

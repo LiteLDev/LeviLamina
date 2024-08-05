@@ -13,7 +13,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?mPreferedSeparator@PathString@SFAT@@0DA
     MCAPI static char mPreferedSeparator;
 
     // NOLINTEND

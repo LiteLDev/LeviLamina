@@ -14,10 +14,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1RuinedPortalStart@@UEAA@XZ
+    // vIndex: 0
     virtual ~RuinedPortalStart() = default;
 
-    // symbol: ??0RuinedPortalStart@@QEAA@AEAVBiomeRegistry@@AEBVBiomeSource@@HHAEBVIPreliminarySurfaceProvider@@@Z
     MCAPI
     RuinedPortalStart(class BiomeRegistry& registry, class BiomeSource const& source, int chunkX, int chunkZ, class IPreliminarySurfaceProvider const&);
 

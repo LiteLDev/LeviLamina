@@ -16,17 +16,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4ScriptItemCompleteUseAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptItemCompleteUseAfterEvent&
     operator=(struct ScriptModuleMinecraft::ScriptItemCompleteUseAfterEvent&&);
 
-    // symbol:
-    // ?bind@ScriptItemCompleteUseAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptItemCompleteUseAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemCompleteUseAfterEvent>
     bind();
 
-    // symbol:
-    // ?bindV010@ScriptItemCompleteUseAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptItemCompleteUseAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemCompleteUseAfterEvent>
     bindV010();
 

@@ -25,69 +25,57 @@ namespace AgentComponents::Actions { struct Turn; }
 
 namespace AgentComponents::Actions {
 // NOLINTBEGIN
-// symbol: ?_startAction@Actions@AgentComponents@@YAXAEAVEntityContext@@W4CurrentCmdVersion@@AEBUAttack@12@@Z
 MCAPI void
 _startAction(class EntityContext& entity, ::CurrentCmdVersion, struct AgentComponents::Actions::Attack const& action);
 
-// symbol: ?_startAction@Actions@AgentComponents@@YAXAEAVEntityContext@@W4CurrentCmdVersion@@AEBUCollect@12@@Z
 MCAPI void
 _startAction(class EntityContext& entity, ::CurrentCmdVersion, struct AgentComponents::Actions::Collect const& action);
 
-// symbol: ?_startAction@Actions@AgentComponents@@YAXAEAVEntityContext@@W4CurrentCmdVersion@@AEBUDrop@12@@Z
 MCAPI void
 _startAction(class EntityContext& entity, ::CurrentCmdVersion, struct AgentComponents::Actions::Drop const& action);
 
-// symbol: ?_startAction@Actions@AgentComponents@@YAXAEAVEntityContext@@W4CurrentCmdVersion@@AEBUDropAll@12@@Z
 MCAPI void
 _startAction(class EntityContext& entity, ::CurrentCmdVersion, struct AgentComponents::Actions::DropAll const& action);
 
-// symbol: ?_startAction@Actions@AgentComponents@@YAXAEAVEntityContext@@W4CurrentCmdVersion@@AEBUInspectData@12@@Z
 MCAPI void _startAction(
     class EntityContext& entity,
     ::CurrentCmdVersion,
     struct AgentComponents::Actions::InspectData const& action
 );
 
-// symbol: ?_startAction@Actions@AgentComponents@@YAXAEAVEntityContext@@W4CurrentCmdVersion@@AEBUInspectItemCount@12@@Z
 MCAPI void _startAction(
     class EntityContext& entity,
     ::CurrentCmdVersion,
     struct AgentComponents::Actions::InspectItemCount const& action
 );
 
-// symbol: ?_startAction@Actions@AgentComponents@@YAXAEAVEntityContext@@W4CurrentCmdVersion@@AEBUInspectItemDetail@12@@Z
 MCAPI void _startAction(
     class EntityContext& entity,
     ::CurrentCmdVersion,
     struct AgentComponents::Actions::InspectItemDetail const& action
 );
 
-// symbol: ?_startAction@Actions@AgentComponents@@YAXAEAVEntityContext@@W4CurrentCmdVersion@@AEBUInspectItemSpace@12@@Z
 MCAPI void _startAction(
     class EntityContext& entity,
     ::CurrentCmdVersion,
     struct AgentComponents::Actions::InspectItemSpace const& action
 );
 
-// symbol: ?_startAction@Actions@AgentComponents@@YAXAEAVEntityContext@@W4CurrentCmdVersion@@AEBUPlaceBlock@12@@Z
 MCAPI void _startAction(
     class EntityContext& entity,
     ::CurrentCmdVersion,
     struct AgentComponents::Actions::PlaceBlock const& action
 );
 
-// symbol: ?_startAction@Actions@AgentComponents@@YAXAEAVEntityContext@@W4CurrentCmdVersion@@AEBUTill@12@@Z
 MCAPI void
 _startAction(class EntityContext& entity, ::CurrentCmdVersion, struct AgentComponents::Actions::Till const& action);
 
-// symbol: ?_startAction@Actions@AgentComponents@@YAXAEAVEntityContext@@W4CurrentCmdVersion@@AEBUTransferItemTo@12@@Z
 MCAPI void _startAction(
     class EntityContext& entity,
     ::CurrentCmdVersion,
     struct AgentComponents::Actions::TransferItemTo const& action
 );
 
-// symbol: ?_startAction@Actions@AgentComponents@@YAXAEAVEntityContext@@W4CurrentCmdVersion@@AEBUTurn@12@@Z
 MCAPI void
 _startAction(class EntityContext& entity, ::CurrentCmdVersion, struct AgentComponents::Actions::Turn const& action);
 // NOLINTEND

@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1Block@CodeBuilder@@QEAA@XZ
     MCAPI ~Block();
 
     // NOLINTEND

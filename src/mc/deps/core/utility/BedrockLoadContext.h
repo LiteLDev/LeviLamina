@@ -11,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0BedrockLoadContext@@QEAA@AEBVSemVersion@@@Z
     MCAPI explicit BedrockLoadContext(class SemVersion const& engineVersion);
 
-    // symbol: ??1BedrockLoadContext@@QEAA@XZ
     MCAPI ~BedrockLoadContext();
 
     // NOLINTEND

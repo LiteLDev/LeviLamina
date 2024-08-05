@@ -24,38 +24,30 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptHealthComponent@ScriptModuleMinecraft@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptHealthComponent() = default;
 
-    // vIndex: 3, symbol:
-    // ?setCurrent@ScriptHealthComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N$$V@Scripting@@AEBM@Z
+    // vIndex: 3
     virtual class Scripting::Result<bool> setCurrent(float const&) const;
 
-    // vIndex: 7, symbol:
-    // ?resetToMinValue@ScriptHealthComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@X$$V@Scripting@@XZ
+    // vIndex: 7
     virtual class Scripting::Result<void> resetToMinValue() const;
 
-    // vIndex: 8, symbol:
-    // ?resetToMaxValue@ScriptHealthComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@X$$V@Scripting@@XZ
+    // vIndex: 8
     virtual class Scripting::Result<void> resetToMaxValue() const;
 
-    // vIndex: 9, symbol:
-    // ?resetToDefaultValue@ScriptHealthComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@X$$V@Scripting@@XZ
+    // vIndex: 9
     virtual class Scripting::Result<void> resetToDefaultValue() const;
 
-    // symbol:
-    // ?bind@ScriptHealthComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptHealthComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptHealthComponent>
     bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&);
 
-    // symbol: ?ComponentId@ScriptHealthComponent@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ComponentId;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?notifyHealthChange@ScriptHealthComponent@ScriptModuleMinecraft@@AEBAXMM@Z
     MCAPI void notifyHealthChange(float, float) const;
 
     // NOLINTEND

@@ -11,15 +11,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptBlockCustomComponentsFinalizer@@QEAA@AEAVScriptBlockCustomComponentsRegistry@@@Z
     MCAPI explicit ScriptBlockCustomComponentsFinalizer(class ScriptBlockCustomComponentsRegistry&);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_finalizeBlockWithScriptRegistry@ScriptBlockCustomComponentsFinalizer@@AEAA_NPEBVBlockCustomComponentsComponent@@@Z
     MCAPI bool _finalizeBlockWithScriptRegistry(class BlockCustomComponentsComponent const*);
 
     // NOLINTEND

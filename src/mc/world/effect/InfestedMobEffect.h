@@ -14,10 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1InfestedMobEffect@@UEAA@XZ
+    // vIndex: 0
     virtual ~InfestedMobEffect() = default;
 
-    // vIndex: 5, symbol: ?onActorHurt@InfestedMobEffect@@UEBAXAEAVActor@@HAEBVActorDamageSource@@M@Z
+    // vIndex: 5
     virtual void onActorHurt(class Actor&, int, class ActorDamageSource const&, float) const;
 
     // NOLINTEND

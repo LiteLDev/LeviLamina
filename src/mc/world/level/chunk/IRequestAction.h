@@ -21,22 +21,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1IRequestAction@@UEAA@XZ
+    // vIndex: 0
     virtual ~IRequestAction();
 
-    // vIndex: 1, symbol: ?execute@FunctionAction@@UEAAXAEAVServerLevel@@AEAVDimension@@@Z
+    // vIndex: 1
     virtual void execute(class ServerLevel& level, class Dimension& dimension) = 0;
 
-    // vIndex: 2, symbol: ?serialize@IRequestAction@@UEAAXAEAVCompoundTag@@@Z
+    // vIndex: 2
     virtual void serialize(class CompoundTag& tag);
 
-    // vIndex: 3, symbol: ??8IRequestAction@@UEBA_NAEBV0@@Z
+    // vIndex: 3
     virtual bool operator==(class IRequestAction const& action) const;
 
-    // symbol: ??0IRequestAction@@QEAA@AEBW4RequestActionType@0@@Z
     MCAPI explicit IRequestAction(::IRequestAction::RequestActionType const& actionType);
 
-    // symbol: ?isValidTag@IRequestAction@@SA_NAEBVCompoundTag@@@Z
     MCAPI static bool isValidTag(class CompoundTag const& tag);
 
     // NOLINTEND

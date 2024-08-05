@@ -22,13 +22,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LoggingInterfaceGeneric@Http@Bedrock@@UEAA@XZ
+    // vIndex: 0
     virtual ~LoggingInterfaceGeneric() = default;
 
-    // vIndex: 1, symbol: ?threadId@LoggingInterfaceGeneric@Http@Bedrock@@UEAA_KXZ
+    // vIndex: 1
     virtual uint64 threadId();
 
-    // vIndex: 2, symbol: ?writeToDebugger@LoggingInterfaceGeneric@Http@Bedrock@@UEAAXPEBDW4HCTraceLevel@@0@Z
+    // vIndex: 2
     virtual void writeToDebugger(char const* area, ::HCTraceLevel level, char const* message);
 
     // NOLINTEND

@@ -17,11 +17,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BastionPiece@@UEAA@XZ
+    // vIndex: 0
     virtual ~BastionPiece() = default;
 
-    // vIndex: 13, symbol:
-    // ?generateHeightAtPosition@BastionPiece@@UEBAHAEBVBlockPos@@AEAVDimension@@AEAVBlockVolume@@AEAV?$unordered_map@VChunkPos@@V?$unique_ptr@V?$vector@FV?$allocator@F@std@@@std@@U?$default_delete@V?$vector@FV?$allocator@F@std@@@std@@@2@@std@@U?$hash@VChunkPos@@@3@U?$equal_to@VChunkPos@@@3@V?$allocator@U?$pair@$$CBVChunkPos@@V?$unique_ptr@V?$vector@FV?$allocator@F@std@@@std@@U?$default_delete@V?$vector@FV?$allocator@F@std@@@std@@@2@@std@@@std@@@3@@std@@@Z
+    // vIndex: 13
     virtual int generateHeightAtPosition(
         class BlockPos const&                                                    pos,
         class Dimension&                                                         dim,
@@ -29,18 +28,16 @@ public:
         std::unordered_map<class ChunkPos, std::unique_ptr<std::vector<short>>>& chunkHeightCache
     ) const;
 
-    // vIndex: 14, symbol: ?getSupportBlock@BastionPiece@@UEBAPEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@AEBV2@@Z
+    // vIndex: 14
     virtual class Block const*
     getSupportBlock(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
 
-    // vIndex: 15, symbol: ?getBeardStabilizeBlock@BastionPiece@@UEBAAEBVBlock@@AEBV2@@Z
+    // vIndex: 15
     virtual class Block const& getBeardStabilizeBlock(class Block const&) const;
 
-    // vIndex: 16, symbol: ?getTerrainAdjustmentEffect@BastionPiece@@UEBA?AW4AdjustmentEffect@@XZ
+    // vIndex: 16
     virtual ::AdjustmentEffect getTerrainAdjustmentEffect() const;
 
-    // symbol:
-    // ?addPieces@BastionPiece@@SAXVBlockPos@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@AEAVJigsawStructureRegistry@@W4VanillaBiomeTypes@@AEAVDimension@@@Z
     MCAPI static void addPieces(
         class BlockPos                                      position,
         std::vector<std::unique_ptr<class StructurePiece>>& pieces,

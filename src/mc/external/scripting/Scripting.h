@@ -115,27 +115,18 @@ namespace Scripting::internal { struct FetchAsAnyComponent; }
 
 namespace Scripting {
 // NOLINTBEGIN
-// symbol:
-// ?GetDefaultArgCount@Scripting@@YAIAEBV?$vector@UArgumentDetails@Scripting@@V?$allocator@UArgumentDetails@Scripting@@@std@@@std@@@Z
 MCAPI uint GetDefaultArgCount(std::vector<struct Scripting::ArgumentDetails> const&);
 
-// symbol: ?GetInjectedArgCount@Scripting@@YAIPEAVIFunction@Reflection@1@@Z
 MCAPI uint GetInjectedArgCount(class Scripting::Reflection::IFunction*);
 
-// symbol: ?LogMessage@Scripting@@YAXW4LogLevel@1@PEBDI1ZZ
 MCAPI void LogMessage(::Scripting::LogLevel, char const*, uint, char const*, ...);
 
-// symbol: ?RED_COLOR_FORMAT@Scripting@@3PEBDEB
 MCAPI extern char const* RED_COLOR_FORMAT;
 
-// symbol:
-// ?_versionSplit@Scripting@@YA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@D@Z
 MCAPI std::vector<std::string> _versionSplit(std::string const& str, char delim);
 
-// symbol: ?defaultLogFunction@Scripting@@YAXPEAXW4LogLevel@1@PEBDI2@Z
 MCAPI void defaultLogFunction(void*, ::Scripting::LogLevel level, char const*, uint, char const* message);
 
-// symbol: ?logUserData@Scripting@@3PEAXEA
 MCAPI extern void* logUserData;
 // NOLINTEND
 

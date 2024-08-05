@@ -27,66 +27,62 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CandleBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~CandleBlock() = default;
 
-    // vIndex: 11, symbol: ?getVisualShape@CandleBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
+    // vIndex: 11
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
 
-    // vIndex: 23, symbol: ?canProvideSupport@CandleBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
+    // vIndex: 23
     virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType type) const;
 
-    // vIndex: 56, symbol: ?waterSpreadCausesSpawn@CandleBlock@@UEBA_NXZ
+    // vIndex: 56
     virtual bool waterSpreadCausesSpawn() const;
 
-    // vIndex: 96, symbol: ?asItemInstance@CandleBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
-    // vIndex: 150, symbol: ?isInteractiveBlock@CandleBlock@@UEBA_NXZ
+    // vIndex: 150
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 152, symbol: ?use@CandleBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar) const;
 
-    // vIndex: 163, symbol: ?_getNumCandles@CandleBlock@@MEBAHAEBVBlock@@@Z
+    // vIndex: 163
     virtual int _getNumCandles(class Block const& block) const;
 
-    // vIndex: 164, symbol:
-    // ?_iterateCandles@CandleBlock@@MEBAXAEBVBlock@@AEBVBlockPos@@V?$function@$$A6AXAEBVVec3@@H@Z@std@@@Z
+    // vIndex: 164
     virtual void _iterateCandles(
         class Block const&                          block,
         class BlockPos const&                       pos,
         std::function<void(class Vec3 const&, int)> callback
     ) const;
 
-    // vIndex: 165, symbol: ?_tryLightOnFire@CandleBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
+    // vIndex: 165
     virtual void _tryLightOnFire(class BlockSource& region, class BlockPos const& pos, class Actor* sourceActor) const;
 
-    // vIndex: 166, symbol: ?onLand@AnvilBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 166
     virtual void onLand(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 167, symbol: ?isFreeToFall@FallingBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 167
     virtual bool isFreeToFall(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 168, symbol: ?startFalling@FallingBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@_N@Z
+    // vIndex: 168
     virtual void
     startFalling(class BlockSource& region, class BlockPos const& pos, class Block const& oldBlock, bool creative)
         const;
 
-    // vIndex: 169, symbol: ?getInputSignal@DiodeBlock@@MEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 169
     virtual int getInputSignal(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ??0CandleBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI CandleBlock(std::string const& nameId, int id);
 
-    // symbol: ?tryLightFire@CandleBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
     MCAPI static bool tryLightFire(class BlockSource& region, class BlockPos const& pos, class Actor* sourceActor);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_forEachCandle@CandleBlock@@CAXAEBVBlock@@AEBVBlockPos@@V?$function@$$A6AXAEBVVec3@@H@Z@std@@@Z
     MCAPI static void _forEachCandle(
         class Block const&                          block,
         class BlockPos const&                       pos,

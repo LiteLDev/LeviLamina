@@ -14,11 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CalibratedSculkSensorVibrationConfig@@UEAA@XZ
+    // vIndex: 0
     virtual ~CalibratedSculkSensorVibrationConfig() = default;
 
-    // vIndex: 3, symbol:
-    // ?shouldListen@CalibratedSculkSensorVibrationConfig@@UEAA_NAEAVBlockSource@@AEBVGameEvent@@AEBUGameEventContext@@@Z
+    // vIndex: 3
     virtual bool shouldListen(class BlockSource& region, class GameEvent const&, struct GameEventContext const&);
 
     // NOLINTEND

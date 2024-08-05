@@ -36,28 +36,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1Scheduler@@UEAA@XZ
+    // vIndex: 0
     virtual ~Scheduler() = default;
 
-    // symbol: ??0Scheduler@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@Z
     MCAPI Scheduler(std::string name, uint FPS);
 
-    // symbol: ?changeThread@Scheduler@@QEAAXVid@thread@std@@@Z
     MCAPI void changeThread(std::thread::id newOwner);
 
-    // symbol: ?getCoroutinePool@Scheduler@@QEAAAEAVWorkerPool@@XZ
     MCAPI class WorkerPool& getCoroutinePool();
 
-    // symbol: ?processCoroutines@Scheduler@@QEAAXV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@0@Z
     MCAPI void processCoroutines(std::chrono::nanoseconds timeSinceSwap, std::chrono::nanoseconds minTimeCap);
 
-    // symbol: ?queueCallback@Scheduler@@QEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@@Z
     MCAPI void queueCallback(std::shared_ptr<class BackgroundTaskBase> task);
 
-    // symbol: ?setTargetFPS@Scheduler@@QEAAXI@Z
     MCAPI void setTargetFPS(uint FPS);
 
-    // symbol: ?AVERAGE_TASK_TOLERANCE@Scheduler@@2MB
     MCAPI static float const AVERAGE_TASK_TOLERANCE;
 
     // NOLINTEND

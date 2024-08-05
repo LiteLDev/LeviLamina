@@ -14,10 +14,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1HUDContainerScreenValidator@@UEAA@XZ
+    // vIndex: 0
     virtual ~HUDContainerScreenValidator() = default;
 
-    // symbol: ??0HUDContainerScreenValidator@@QEAA@XZ
     MCAPI HUDContainerScreenValidator();
 
     // NOLINTEND

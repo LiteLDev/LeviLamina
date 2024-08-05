@@ -22,7 +22,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0RotationData@RotationCommandUtils@@QEAA@AEBVRelativeFloat@@0AEBV?$optional@VVec2@@@std@@@Z
     MCAPI RotationData(
         class RelativeFloat const&       x,
         class RelativeFloat const&       y,

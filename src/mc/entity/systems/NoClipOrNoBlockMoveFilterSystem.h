@@ -14,11 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?create@NoClipOrNoBlockMoveFilterSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo create();
 
-    // symbol:
-    // ?tick@NoClipOrNoBlockMoveFilterSystem@@SAXAEBVStrictEntityContext@@AEBUMoveRequestComponent@@AEBUOffsetsComponent@@AEBUActorDataFlagComponent@@AEAUAABBShapeComponent@@AEAUStateVectorComponent@@AEAUSubBBsComponent@@V?$EntityModifier@UMoveRequestComponent@@@@AEBVIConstBlockSource@@@Z
     MCAPI static void
     tick(class StrictEntityContext const&, struct MoveRequestComponent const&, struct OffsetsComponent const&, struct ActorDataFlagComponent const&, struct AABBShapeComponent&, struct StateVectorComponent&, struct SubBBsComponent&, class EntityModifier<struct MoveRequestComponent>, class IConstBlockSource const&);
 

@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ChemistryIngredient@@QEAA@XZ
     MCAPI ~ChemistryIngredient();
 
     // NOLINTEND

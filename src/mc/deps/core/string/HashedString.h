@@ -126,10 +126,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getEmptyString@HashedString@@SAAEBV1@XZ
     MCAPI static class HashedString const& getEmptyString();
 
-    // symbol: ?defaultErrorValue@HashedString@@2V1@A
     MCAPI static class HashedString defaultErrorValue;
 
     // NOLINTEND

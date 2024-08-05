@@ -27,14 +27,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LingeringPotionItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~LingeringPotionItem() = default;
 
-    // vIndex: 19, symbol: ?isThrowable@LingeringPotionItem@@UEBA_NXZ
+    // vIndex: 19
     virtual bool isThrowable() const;
 
-    // vIndex: 48, symbol:
-    // ?appendFormattedHovertext@LingeringPotionItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+    // vIndex: 48
     virtual void appendFormattedHovertext(
         class ItemStackBase const& stack,
         class Level&               level,
@@ -42,33 +41,29 @@ public:
         bool                       showCategory
     ) const;
 
-    // vIndex: 72, symbol: ?use@LingeringPotionItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+    // vIndex: 72
     virtual class ItemStack& use(class ItemStack& instance, class Player& player) const;
 
-    // vIndex: 73, symbol:
-    // ?createProjectileActor@LingeringPotionItem@@UEBAPEAVActor@@AEAVBlockSource@@AEBVItemStack@@AEBVVec3@@2@Z
+    // vIndex: 73
     virtual class Actor*
     createProjectileActor(class BlockSource&, class ItemStack const&, class Vec3 const&, class Vec3 const&) const;
 
-    // vIndex: 74, symbol: ?dispense@LingeringPotionItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 74
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
-    // vIndex: 83, symbol:
-    // ?buildDescriptionId@LingeringPotionItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+    // vIndex: 83
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 103, symbol:
-    // ?setIconInfo@LingeringPotionItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+    // vIndex: 103
     virtual class Item& setIconInfo(std::string const& name, int id);
 
-    // vIndex: 104, symbol: ?getIconInfo@LingeringPotionItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
+    // vIndex: 104
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const& item, int, bool inInventoryPane) const;
 
-    // vIndex: 119, symbol: ?getPotionType@LingeringPotionItem@@UEBA?AW4PotionType@Potion@@XZ
+    // vIndex: 119
     virtual ::Potion::PotionType getPotionType() const;
 
-    // symbol: ??0LingeringPotionItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI LingeringPotionItem(std::string const& name, int id);
 
     // NOLINTEND

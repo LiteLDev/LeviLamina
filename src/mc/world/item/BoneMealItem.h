@@ -26,27 +26,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BoneMealItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~BoneMealItem() = default;
 
-    // vIndex: 15, symbol: ?isDye@BoneMealItem@@UEBA_NXZ
+    // vIndex: 15
     virtual bool isDye() const;
 
-    // vIndex: 16, symbol: ?getItemColor@BoneMealItem@@UEBA?AW4ItemColor@@XZ
+    // vIndex: 16
     virtual ::ItemColor getItemColor() const;
 
-    // vIndex: 56, symbol: ?isValidAuxValue@BoneMealItem@@UEBA_NH@Z
+    // vIndex: 56
     virtual bool isValidAuxValue(int) const;
 
-    // vIndex: 83, symbol:
-    // ?buildDescriptionId@BoneMealItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+    // vIndex: 83
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 103, symbol:
-    // ?setIconInfo@BoneMealItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+    // vIndex: 103
     virtual class Item& setIconInfo(std::string const&, int);
 
-    // symbol: ??0BoneMealItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
     MCAPI BoneMealItem(std::string const&, int, bool);
 
     // NOLINTEND

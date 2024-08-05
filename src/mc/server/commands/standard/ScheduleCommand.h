@@ -22,7 +22,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1FunctionInfo@ScheduleCommand@@QEAA@XZ
         MCAPI ~FunctionInfo();
 
         // NOLINTEND
@@ -36,26 +35,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScheduleCommand@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScheduleCommand() = default;
 
-    // vIndex: 2, symbol: ?execute@ScheduleCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+    // vIndex: 2
     virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    // symbol: ?setup@ScheduleCommand@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry& registry);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_delay@ScheduleCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     MCAPI void _delay(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    // symbol: ?_onAreaLoaded@ScheduleCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     MCAPI void _onAreaLoaded(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    // symbol: ?_tryGetFunction@ScheduleCommand@@AEBA?AUFunctionInfo@1@AEAVFunctionManager@@AEAVCommandOutput@@@Z
     MCAPI struct ScheduleCommand::FunctionInfo
     _tryGetFunction(class FunctionManager& functionManager, class CommandOutput& output) const;
 

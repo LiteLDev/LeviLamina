@@ -20,11 +20,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SwimWanderDefinition@@UEAA@XZ
+    // vIndex: 0
     virtual ~SwimWanderDefinition() = default;
 
-    // symbol:
-    // ?buildSchema@SwimWanderDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VSwimWanderDefinition@@@JsonUtil@@@3@@Z
     MCAPI static void buildSchema(
         std::string const& name,
         std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SwimWanderDefinition>>&

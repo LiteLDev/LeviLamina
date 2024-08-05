@@ -15,10 +15,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1LevelCrashDumpManager@@UEAA@XZ
+    // vIndex: 0
     virtual ~LevelCrashDumpManager();
 
-    // vIndex: 1, symbol: ?setCrashDumpLogStringID@LevelCrashDumpManager@@UEBAXW4CrashDumpLogStringID@@@Z
+    // vIndex: 1
     virtual void setCrashDumpLogStringID(::CrashDumpLogStringID) const;
 
     // NOLINTEND

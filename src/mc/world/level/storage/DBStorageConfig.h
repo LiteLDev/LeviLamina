@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1DBStorageConfig@@QEAA@XZ
     MCAPI ~DBStorageConfig();
 
     // NOLINTEND

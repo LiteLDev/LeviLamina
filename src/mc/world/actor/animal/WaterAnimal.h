@@ -35,26 +35,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: ??1WaterAnimal@@UEAA@XZ
+    // vIndex: 10
     virtual ~WaterAnimal();
 
-    // vIndex: 160, symbol: ?checkSpawnRules@WaterAnimal@@UEAA_N_N@Z
+    // vIndex: 160
     virtual bool checkSpawnRules(bool fromSpawner);
 
-    // vIndex: 190, symbol: ?getFlopVerticalVelocityFactor@WaterAnimal@@UEBAMXZ
+    // vIndex: 190
     virtual float getFlopVerticalVelocityFactor() const;
 
-    // vIndex: 191, symbol: ?getFlopHorizontalVelocityFactor@WaterAnimal@@UEBAMXZ
+    // vIndex: 191
     virtual float getFlopHorizontalVelocityFactor() const;
 
-    // symbol: ??0WaterAnimal@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI WaterAnimal(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?preAiStep@WaterAnimal@@QEAAXXZ
     MCAPI void preAiStep();
 
     // NOLINTEND

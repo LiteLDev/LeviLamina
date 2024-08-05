@@ -19,8 +19,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?buildSchema@FlyingSpeedDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UFlyingSpeedDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void buildSchema(
         std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct FlyingSpeedDefinition>>&
             root

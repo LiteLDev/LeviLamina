@@ -23,15 +23,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MovementScriptActorComponent@ScriptModuleMinecraft@@UEAA@XZ
+    // vIndex: 0
     virtual ~MovementScriptActorComponent() = default;
 
-    // vIndex: 2, symbol:
-    // ?getMaxTurn@MovementScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@M$$V@Scripting@@XZ
+    // vIndex: 2
     virtual class Scripting::Result<float> getMaxTurn() const;
 
-    // symbol:
-    // ?bind@MovementScriptActorComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VMovementScriptActorComponent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::MovementScriptActorComponent> bind();
 
     // NOLINTEND

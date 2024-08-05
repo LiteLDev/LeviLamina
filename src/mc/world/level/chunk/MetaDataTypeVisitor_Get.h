@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1MetaDataTypeVisitor_Get@@QEAA@XZ
     MCAPI ~MetaDataTypeVisitor_Get();
 
     // NOLINTEND

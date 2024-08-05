@@ -25,7 +25,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1DocumentableEventExecution@ScriptDeferredEventCoordinator@@QEAA@XZ
         MCAPI ~DocumentableEventExecution();
 
         // NOLINTEND
@@ -39,14 +38,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptDeferredEventCoordinator@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptDeferredEventCoordinator() = default;
 
-    // symbol: ?sendAllDeferredEvents@ScriptDeferredEventCoordinator@@QEAAXXZ
     MCAPI void sendAllDeferredEvents();
 
-    // symbol:
-    // ?generateOrderDocumentationForVersion@ScriptDeferredEventCoordinator@@SAXAEBUModuleDescriptor@Scripting@@AEAVValue@Json@@@Z
     MCAPI static void
     generateOrderDocumentationForVersion(struct Scripting::ModuleDescriptor const&, class Json::Value&);
 
@@ -54,24 +50,18 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_sendFlushBlockCustomComponentAfterEvents@ScriptDeferredEventCoordinator@@AEAA_NXZ
     MCAPI bool _sendFlushBlockCustomComponentAfterEvents();
 
-    // symbol: ?_sendFlushItemCustomComponentAfterEvents@ScriptDeferredEventCoordinator@@AEAA_NXZ
     MCAPI bool _sendFlushItemCustomComponentAfterEvents();
 
-    // symbol: ?_sendFlushSystemAfterEvents@ScriptDeferredEventCoordinator@@AEAA_NXZ
     MCAPI bool _sendFlushSystemAfterEvents();
 
-    // symbol: ?_sendFlushWorldAfterEvents@ScriptDeferredEventCoordinator@@AEAA_NXZ
     MCAPI bool _sendFlushWorldAfterEvents();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?sEventExecutionOrder@ScriptDeferredEventCoordinator@@0V?$vector@UDocumentableEventExecution@ScriptDeferredEventCoordinator@@V?$allocator@UDocumentableEventExecution@ScriptDeferredEventCoordinator@@@std@@@std@@B
     MCAPI static std::vector<struct ScriptDeferredEventCoordinator::DocumentableEventExecution> const
         sEventExecutionOrder;
 

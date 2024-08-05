@@ -45,24 +45,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1WorldGenerator@@UEAA@XZ
     virtual ~WorldGenerator();
 
-    // vIndex: 33, symbol: ?init@WorldGenerator@@UEAAXXZ
+    // vIndex: 33
     virtual void init();
 
-    // vIndex: 34, symbol: ?findStructureFeatureTypeAt@WorldGenerator@@UEAA?AW4StructureFeatureType@@AEBVBlockPos@@@Z
+    // vIndex: 34
     virtual ::StructureFeatureType findStructureFeatureTypeAt(class BlockPos const& pos);
 
-    // vIndex: 35, symbol: ?isStructureFeatureTypeAt@WorldGenerator@@UEBA_NAEBVBlockPos@@W4StructureFeatureType@@@Z
+    // vIndex: 35
     virtual bool isStructureFeatureTypeAt(class BlockPos const& pos, ::StructureFeatureType type) const;
 
-    // vIndex: 36, symbol:
-    // ?findNearestStructureFeature@WorldGenerator@@UEAA_NW4StructureFeatureType@@AEBVBlockPos@@AEAV3@_NV?$optional@VHashedString@@@std@@@Z
+    // vIndex: 36
     virtual bool
     findNearestStructureFeature(::StructureFeatureType, class BlockPos const&, class BlockPos&, bool, std::optional<class HashedString>);
 
-    // vIndex: 37, symbol: ?garbageCollectBlueprints@WorldGenerator@@UEAAXV?$buffer_span@VChunkPos@@@@@Z
+    // vIndex: 37
     virtual void garbageCollectBlueprints(class buffer_span<class ChunkPos> activeChunks);
 
     // vIndex: 38
@@ -90,10 +88,10 @@ public:
     // vIndex: 43
     virtual class BlockPos findSpawnPosition() const = 0;
 
-    // vIndex: 44, symbol: ?addHardcodedSpawnAreas@WorldGenerator@@UEAAXAEAVLevelChunk@@@Z
+    // vIndex: 44
     virtual void addHardcodedSpawnAreas(class LevelChunk& lc);
 
-    // vIndex: 45, symbol: ?debugRender@WorldGenerator@@UEAAXXZ
+    // vIndex: 45
     virtual void debugRender();
 
     // vIndex: 46
@@ -114,53 +112,39 @@ public:
     ) const = 0;
 
     // IPreliminarySurfaceProvider vtable overloaded functions
-    // symbol: ?getPreliminarySurfaceLevel@WorldGenerator@@UEBA?AV?$optional@F@std@@V?$DividedPos2d@$03@@@Z
     virtual std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4> worldPos) const;
 
     // ChunkSource vtable overloaded function
-    // symbol: ?postProcessMobsAt@WorldGenerator@@UEAAXAEAVBlockSource@@HHAEAVRandom@@@Z
     virtual void
     postProcessMobsAt(class BlockSource& blockSource, int chunkWestBlock, int chunkNorthBlock, class Random& random);
 
-    // symbol: ??0WorldGenerator@@QEAA@AEAVDimension@@@Z
     MCAPI explicit WorldGenerator(class Dimension& dimension);
 
-    // symbol:
-    // ??0WorldGenerator@@QEAA@AEAVDimension@@V?$unique_ptr@VStructureFeatureRegistry@@U?$default_delete@VStructureFeatureRegistry@@@std@@@std@@@Z
     MCAPI WorldGenerator(class Dimension& dimension, std::unique_ptr<class StructureFeatureRegistry>);
 
-    // symbol: ?computeChunkHeightMap@WorldGenerator@@QEAA?AV?$vector@FV?$allocator@F@std@@@std@@AEBVChunkPos@@@Z
     MCAPI std::vector<short> computeChunkHeightMap(class ChunkPos const& pos);
 
-    // symbol: ?getStructureFeatureRegistry@WorldGenerator@@QEBAAEAVStructureFeatureRegistry@@XZ
     MCAPI class StructureFeatureRegistry& getStructureFeatureRegistry() const;
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?postProcessStructureFeatures@WorldGenerator@@IEAAXAEAVBlockSource@@AEAVRandom@@HH@Z
     MCAPI void postProcessStructureFeatures(class BlockSource& region, class Random& random, int chunkX, int chunkZ);
 
-    // symbol: ?postProcessStructures@WorldGenerator@@IEAAXAEAVBlockSource@@AEAVRandom@@HH@Z
     MCAPI void postProcessStructures(class BlockSource&, class Random&, int, int);
 
-    // symbol: ?preProcessStructures@WorldGenerator@@IEAAXAEAVDimension@@AEBVChunkPos@@AEBVBiomeSource@@@Z
     MCAPI void preProcessStructures(class Dimension&, class ChunkPos const&, class BiomeSource const&);
 
-    // symbol:
-    // ?prepareStructureFeatureBlueprints@WorldGenerator@@IEAAXAEAVDimension@@AEBVChunkPos@@AEBVBiomeSource@@AEBVIPreliminarySurfaceProvider@@@Z
     MCAPI void
     prepareStructureFeatureBlueprints(class Dimension& dimension, class ChunkPos const& cp, class BiomeSource const& biomeSource, class IPreliminarySurfaceProvider const&);
 
-    // symbol: ?waitForStructures@WorldGenerator@@IEAAXXZ
     MCAPI void waitForStructures();
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?TICKING_QUEUE_PASS_LIMIT@WorldGenerator@@1_KB
     MCAPI static uint64 const TICKING_QUEUE_PASS_LIMIT;
 
     // NOLINTEND

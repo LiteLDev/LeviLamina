@@ -11,15 +11,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@ResetJumpRidingScaleSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_doResetJumpRidingScaleSystem@ResetJumpRidingScaleSystem@@CAXAEBVStrictEntityContext@@AEAUJumpRidingScaleComponent@@AEAUVanillaClientGameplayComponent@@@Z
     MCAPI static void
     _doResetJumpRidingScaleSystem(class StrictEntityContext const&, struct JumpRidingScaleComponent&, struct VanillaClientGameplayComponent&);
 

@@ -46,22 +46,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1IScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAA@XZ
+    // vIndex: 0
     virtual ~IScriptWorldBeforeEvents() = default;
 
-    // vIndex: 1, symbol:
-    // ?onBeforeChat@IScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAA?AV?$optional@V?$StrongTypedObjectHandle@UScriptChatSendBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@std@@AEBUChatEvent@@AEBVPlayer@@@Z
+    // vIndex: 1
     virtual std::optional<
         class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptChatSendBeforeEvent>>
     onBeforeChat(struct ChatEvent const&, class Player const&);
 
-    // vIndex: 2, symbol:
-    // ?onBeforeWorldInitialize@IScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAAXAEBV?$StrongTypedObjectHandle@VScriptBlockComponentRegistry@ScriptModuleMinecraft@@@Scripting@@AEBV?$StrongTypedObjectHandle@VScriptItemComponentRegistry@ScriptModuleMinecraft@@@4@@Z
+    // vIndex: 2
     virtual void
     onBeforeWorldInitialize(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockComponentRegistry> const&, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemComponentRegistry> const&);
 
-    // vIndex: 3, symbol:
-    // ?onBeforeWeatherChangedEvent@IScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAA?AV?$optional@V?$StrongTypedObjectHandle@UScriptWeatherChangedBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@std@@W4ScriptWeatherType@2@0H@Z
+    // vIndex: 3
     virtual std::optional<
         class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptWeatherChangedBeforeEvent>>
     onBeforeWeatherChangedEvent(
@@ -70,62 +67,53 @@ public:
         int
     );
 
-    // vIndex: 4, symbol:
-    // ?onBeforePlayerInteractWithEntity@IScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAA?AV?$optional@V?$StrongTypedObjectHandle@UScriptPlayerInteractWithEntityBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@std@@AEAVPlayer@@AEAVActor@@AEBUPlayerInteractWithEntityBeforeEvent@@@Z
+    // vIndex: 4
     virtual std::optional<class Scripting::StrongTypedObjectHandle<
         struct ScriptModuleMinecraft::ScriptPlayerInteractWithEntityBeforeEvent>>
     onBeforePlayerInteractWithEntity(class Player&, class Actor&, struct PlayerInteractWithEntityBeforeEvent const&);
 
-    // vIndex: 5, symbol:
-    // ?onBeforePlayerInteractWithBlock@IScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAA?AV?$optional@V?$StrongTypedObjectHandle@UScriptPlayerInteractWithBlockBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@std@@AEAVPlayer@@AEBUPlayerInteractWithBlockBeforeEvent@@@Z
+    // vIndex: 5
     virtual std::optional<class Scripting::StrongTypedObjectHandle<
         struct ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent>>
     onBeforePlayerInteractWithBlock(class Player&, struct PlayerInteractWithBlockBeforeEvent const&);
 
-    // vIndex: 6, symbol:
-    // ?onBeforePlayerGameModeChange@IScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAA?AV?$optional@V?$StrongTypedObjectHandle@UScriptPlayerGameModeChangeBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@std@@AEBVPlayer@@W4GameType@@1@Z
+    // vIndex: 6
     virtual std::optional<
         class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptPlayerGameModeChangeBeforeEvent>>
     onBeforePlayerGameModeChange(class Player const&, ::GameType, ::GameType);
 
-    // vIndex: 7, symbol: ?onBeforePlayerLeave@IScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAAXAEBVPlayer@@@Z
+    // vIndex: 7
     virtual void onBeforePlayerLeave(class Player const&);
 
-    // vIndex: 8, symbol: ?onBeforeActorRemove@IScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAAXAEBVActor@@@Z
+    // vIndex: 8
     virtual void onBeforeActorRemove(class Actor const&);
 
-    // vIndex: 9, symbol:
-    // ?onBeforeEffectAddedEventSend@IScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAA?AV?$optional@V?$StrongTypedObjectHandle@UScriptActorAddEffectBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@std@@AEAUActorAddEffectEvent@@AEBVActor@@@Z
+    // vIndex: 9
     virtual std::optional<
         class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent>>
     onBeforeEffectAddedEventSend(struct ActorAddEffectEvent&, class Actor const&);
 
-    // vIndex: 10, symbol:
-    // ?onBeforeExplosion@IScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAA?AV?$optional@V?$StrongTypedObjectHandle@UScriptExplosionStartedBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@std@@AEBUExplosionStartedEvent@@@Z
+    // vIndex: 10
     virtual std::optional<
         class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent>>
     onBeforeExplosion(struct ExplosionStartedEvent const&);
 
-    // vIndex: 11, symbol:
-    // ?onBeforePlayerBreakBlock@IScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAA?AV?$optional@V?$StrongTypedObjectHandle@UScriptPlayerBreakBlockBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@std@@AEBVPlayer@@AEBUBlockTryDestroyByPlayerEvent@@@Z
+    // vIndex: 11
     virtual std::optional<
         class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent>>
     onBeforePlayerBreakBlock(class Player const&, struct BlockTryDestroyByPlayerEvent const&);
 
-    // vIndex: 12, symbol:
-    // ?onBeforePlayerPlaceBlock@IScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAA?AV?$optional@V?$StrongTypedObjectHandle@UScriptPlayerPlaceBlockBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@std@@AEBVPlayer@@AEBUBlockTryPlaceByPlayerEvent@@@Z
+    // vIndex: 12
     virtual std::optional<
         class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent>>
     onBeforePlayerPlaceBlock(class Player const&, struct BlockTryPlaceByPlayerEvent const&);
 
-    // vIndex: 13, symbol:
-    // ?onBeforeItemUse@IScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAA?AV?$optional@V?$StrongTypedObjectHandle@UScriptItemUseBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@std@@AEBVPlayer@@AEBUItemUseEvent@@@Z
+    // vIndex: 13
     virtual std::optional<
         class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptItemUseBeforeEvent>>
     onBeforeItemUse(class Player const&, struct ItemUseEvent const&);
 
-    // vIndex: 14, symbol:
-    // ?onBeforeItemUseOn@IScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAA?AV?$optional@V?$StrongTypedObjectHandle@UScriptItemUseOnBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@std@@AEBVPlayer@@AEBUItemUseOnEvent@@@Z
+    // vIndex: 14
     virtual std::optional<
         class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent>>
     onBeforeItemUseOn(class Player const&, struct ItemUseOnEvent const&);

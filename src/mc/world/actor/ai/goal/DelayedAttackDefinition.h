@@ -19,17 +19,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DelayedAttackDefinition@@UEAA@XZ
+    // vIndex: 0
     virtual ~DelayedAttackDefinition() = default;
 
-    // symbol: ??0DelayedAttackDefinition@@QEAA@XZ
     MCAPI DelayedAttackDefinition();
 
-    // symbol: ?initialize@DelayedAttackDefinition@@QEBAXAEAVEntityContext@@AEAVDelayedAttackGoal@@@Z
     MCAPI void initialize(class EntityContext& entity, class DelayedAttackGoal& goal) const;
 
-    // symbol:
-    // ?buildSchema@DelayedAttackDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDelayedAttackDefinition@@@JsonUtil@@@3@@Z
     MCAPI static void buildSchema(
         std::string const& name,
         std::shared_ptr<

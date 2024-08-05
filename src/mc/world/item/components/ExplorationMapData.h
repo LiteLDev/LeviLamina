@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ExplorationMapData@@QEAA@XZ
     MCAPI ~ExplorationMapData();
 
     // NOLINTEND

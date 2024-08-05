@@ -16,11 +16,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MangroveTreeRoots@@UEAA@XZ
+    // vIndex: 0
     virtual ~MangroveTreeRoots() = default;
 
-    // vIndex: 1, symbol:
-    // ?placeRoots@MangroveTreeRoots@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@HAEAVRenderParams@@AEBUTreeParams@TreeHelper@@@Z
+    // vIndex: 1
     virtual std::optional<class BlockPos> placeRoots(
         class IBlockWorldGenAPI& target,
         class BlockPos const&    pos,
@@ -34,19 +33,13 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_canPlaceRoot@MangroveTreeRoots@@AEBA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@@Z
     MCAPI bool _canPlaceRoot(class IBlockWorldGenAPI& target, class BlockPos const& pos) const;
 
-    // symbol: ?_placeRoot@MangroveTreeRoots@@AEBAXAEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@@Z
     MCAPI void _placeRoot(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random) const;
 
-    // symbol:
-    // ?_potentialRootPositions@MangroveTreeRoots@@AEBA?AV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@AEBVBlockPos@@EAEAVRandom@@0@Z
     MCAPI std::vector<class BlockPos>
     _potentialRootPositions(class BlockPos const& pos, uchar, class Random& random, class BlockPos const& origin) const;
 
-    // symbol:
-    // ?_simulateRoots@MangroveTreeRoots@@AEBA_NAEAVIBlockWorldGenAPI@@AEAVRandom@@AEBVBlockPos@@2EPEAV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@HAEBUTreeParams@TreeHelper@@@Z
     MCAPI bool _simulateRoots(
         class IBlockWorldGenAPI& target,
         class Random&            random,
@@ -62,7 +55,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?RANDOM_SKEW_CHANCE@MangroveTreeRoots@@0MB
     MCAPI static float const RANDOM_SKEW_CHANCE;
 
     // NOLINTEND

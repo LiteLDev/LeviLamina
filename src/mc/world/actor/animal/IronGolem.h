@@ -35,34 +35,33 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1IronGolem@@UEAA@XZ
+    // vIndex: 10
     virtual ~IronGolem() = default;
 
-    // vIndex: 38, symbol: ?getShadowRadius@IronGolem@@UEBAMXZ
+    // vIndex: 38
     virtual float getShadowRadius() const;
 
-    // vIndex: 74, symbol: ?handleEntityEvent@IronGolem@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 74
     virtual void handleEntityEvent(::ActorEvent id, int data);
 
-    // vIndex: 131, symbol: ?die@IronGolem@@UEAAXAEBVActorDamageSource@@@Z
+    // vIndex: 131
     virtual void die(class ActorDamageSource const& source);
 
-    // vIndex: 144, symbol: ?updateEntitySpecificMolangVariables@IronGolem@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 144
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // vIndex: 149, symbol: ?_playStepSound@IronGolem@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 149
     virtual void _playStepSound(class BlockPos const& pos, class Block const& onBlock);
 
-    // vIndex: 157, symbol: ?hurtEffects@IronGolem@@UEAAXAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 157
     virtual void hurtEffects(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 158, symbol: ?aiStep@IronGolem@@UEAAXXZ
+    // vIndex: 158
     virtual void aiStep();
 
-    // vIndex: 167, symbol: ?doHurtTarget@IronGolem@@UEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
+    // vIndex: 167
     virtual bool doHurtTarget(class Actor* target, ::ActorDamageCause const& cause);
 
-    // symbol: ??0IronGolem@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI IronGolem(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

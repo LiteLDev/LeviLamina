@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ScriptBlockCustomComponentData@@QEAA@XZ
     MCAPI ~ScriptBlockCustomComponentData();
 
     // NOLINTEND

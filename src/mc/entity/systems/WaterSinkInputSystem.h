@@ -16,16 +16,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createWaterSinkInputSystem@WaterSinkInputSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createWaterSinkInputSystem();
 
-    // symbol:
-    // ?doInWaterSinkInputSystem@WaterSinkInputSystem@@SAXAEBUMovementAbilitiesComponent@@AEBUMoveInputComponent@@AEAUStateVectorComponent@@@Z
     MCAPI static void
     doInWaterSinkInputSystem(struct MovementAbilitiesComponent const&, struct MoveInputComponent const&, struct StateVectorComponent&);
 
-    // symbol:
-    // ?tickWaterSinkInputSystem@WaterSinkInputSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@UPlayerInputRequestComponent@@V?$FlagComponent@UInWaterFlag@@@@@@$$CBUMovementAbilitiesComponent@@$$CBUMoveInputComponent@@UStateVectorComponent@@@@@Z
     MCAPI static void tickWaterSinkInputSystem(class ViewT<
                                                class StrictEntityContext,
                                                struct Include<

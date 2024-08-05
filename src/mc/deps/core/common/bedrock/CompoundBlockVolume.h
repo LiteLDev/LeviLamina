@@ -19,81 +19,56 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CompoundBlockVolume@@UEAA@XZ
+    // vIndex: 0
     virtual ~CompoundBlockVolume() = default;
 
-    // symbol: ??0CompoundBlockVolume@@QEAA@XZ
     MCAPI CompoundBlockVolume();
 
-    // symbol: ?capacity@CompoundBlockVolume@@QEBA_KXZ
     MCAPI uint64 capacity() const;
 
-    // symbol: ?clear@CompoundBlockVolume@@QEAAX_N@Z
     MCAPI void clear(bool);
 
-    // symbol: ?forEachPosition@CompoundBlockVolume@@QEBAXAEBV?$function@$$A6A_NAEBVBlockPos@@@Z@std@@@Z
     MCAPI void forEachPosition(std::function<bool(class BlockPos const&)> const&) const;
 
-    // symbol:
-    // ?getAbsoluteVolumeList@CompoundBlockVolume@@QEBA?AV?$vector@VCompoundBlockVolumeItem@@V?$allocator@VCompoundBlockVolumeItem@@@std@@@std@@XZ
     MCAPI std::vector<class CompoundBlockVolumeItem> getAbsoluteVolumeList() const;
 
-    // symbol: ?getBoundingBox@CompoundBlockVolume@@QEBA?AVBoundingBox@@XZ
     MCAPI class BoundingBox getBoundingBox() const;
 
-    // symbol: ?getMax@CompoundBlockVolume@@QEBA?AVBlockPos@@XZ
     MCAPI class BlockPos getMax() const;
 
-    // symbol: ?getMin@CompoundBlockVolume@@QEBA?AVBlockPos@@XZ
     MCAPI class BlockPos getMin() const;
 
-    // symbol: ?getOrigin@CompoundBlockVolume@@QEBAAEBVBlockPos@@XZ
     MCAPI class BlockPos const& getOrigin() const;
 
-    // symbol:
-    // ?getVolumeList@CompoundBlockVolume@@QEBA?AV?$vector@VCompoundBlockVolumeItem@@V?$allocator@VCompoundBlockVolumeItem@@@std@@@std@@XZ
     MCAPI std::vector<class CompoundBlockVolumeItem> getVolumeList() const;
 
-    // symbol: ?isEmpty@CompoundBlockVolume@@QEBA_NXZ
     MCAPI bool isEmpty() const;
 
-    // symbol: ?isInside@CompoundBlockVolume@@QEBA_NAEBVBlockPos@@@Z
     MCAPI bool isInside(class BlockPos const& pos) const;
 
-    // symbol: ??4CompoundBlockVolume@@QEAAAEAV0@AEBV0@@Z
     MCAPI class CompoundBlockVolume& operator=(class CompoundBlockVolume const& other);
 
-    // symbol: ??8CompoundBlockVolume@@QEBA_NAEBV0@@Z
     MCAPI bool operator==(class CompoundBlockVolume const& other) const;
 
-    // symbol:
-    // ?peekLastVolume@CompoundBlockVolume@@QEBA?AV?$optional@VCompoundBlockVolumeItem@@@std@@V?$optional@W4CompoundBlockVolumePositionRelativity@@@3@@Z
     MCAPI std::optional<class CompoundBlockVolumeItem>
           peekLastVolume(std::optional<::CompoundBlockVolumePositionRelativity>) const;
 
-    // symbol: ?popVolume@CompoundBlockVolume@@QEAA_NXZ
     MCAPI bool popVolume();
 
-    // symbol: ?pushVolume@CompoundBlockVolume@@QEAAX$$QEAVCompoundBlockVolumeItem@@@Z
     MCAPI void pushVolume(class CompoundBlockVolumeItem&& item);
 
-    // symbol: ?setOrigin@CompoundBlockVolume@@QEAAXAEBVBlockPos@@_N@Z
     MCAPI void setOrigin(class BlockPos const&, bool);
 
-    // symbol: ?translateOrigin@CompoundBlockVolume@@QEAAXAEBVBlockPos@@_N@Z
     MCAPI void translateOrigin(class BlockPos const&, bool);
 
-    // symbol: ?volumeCount@CompoundBlockVolume@@QEBA_KXZ
     MCAPI uint64 volumeCount() const;
 
-    // symbol: ?bindType@CompoundBlockVolume@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?_recalculateBounds@CompoundBlockVolume@@IEAAXXZ
     MCAPI void _recalculateBounds();
 
     // NOLINTEND

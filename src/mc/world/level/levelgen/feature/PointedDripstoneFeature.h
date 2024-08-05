@@ -14,11 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1PointedDripstoneFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~PointedDripstoneFeature() = default;
 
-    // vIndex: 1, symbol:
-    // ?place@PointedDripstoneFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
+    // vIndex: 1
     virtual std::optional<class BlockPos> place(
         class IBlockWorldGenAPI& target,
         class BlockPos const&    pos,
@@ -26,16 +25,13 @@ public:
         class RenderParams&      renderParams
     ) const;
 
-    // vIndex: 2, symbol:
-    // ?isValidPlacement@IFeature@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 2
     virtual bool isValidPlacement(std::string const&);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_createBaseDripstonePatch@PointedDripstoneFeature@@CAXAEAVIBlockWorldGenAPI@@AEAVRandom@@AEBVBlockPos@@@Z
     MCAPI static void
     _createBaseDripstonePatch(class IBlockWorldGenAPI& target, class Random& random, class BlockPos const&);
 

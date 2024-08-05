@@ -36,25 +36,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1MinecartHopper@@UEAA@XZ
+    // vIndex: 10
     virtual ~MinecartHopper() = default;
 
-    // vIndex: 151, symbol: ?destroy@MinecartHopper@@UEAAXAEBVActorDamageSource@@_N@Z
+    // vIndex: 151
     virtual void destroy(class ActorDamageSource const& source, bool dropMinecartComponents);
 
-    // vIndex: 152, symbol: ?getType@MinecartHopper@@UEAA?AW4MinecartType@@XZ
+    // vIndex: 152
     virtual ::MinecartType getType();
 
-    // vIndex: 153, symbol: ?getDefaultDisplayBlock@MinecartHopper@@UEBAPEBVBlock@@XZ
+    // vIndex: 153
     virtual class Block const* getDefaultDisplayBlock() const;
 
-    // vIndex: 154, symbol: ?getDefaultDisplayOffset@MinecartHopper@@UEBAHXZ
+    // vIndex: 154
     virtual int getDefaultDisplayOffset() const;
 
-    // vIndex: 155, symbol: ?applyNaturalSlowdown@MinecartHopper@@UEAAXAEAVBlockSource@@@Z
+    // vIndex: 155
     virtual void applyNaturalSlowdown(class BlockSource& region);
 
-    // symbol: ??0MinecartHopper@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI MinecartHopper(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

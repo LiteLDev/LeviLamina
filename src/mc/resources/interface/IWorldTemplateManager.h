@@ -21,21 +21,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1IWorldTemplateManager@@UEAA@XZ
+    // vIndex: 0
     virtual ~IWorldTemplateManager();
 
-    // vIndex: 1, symbol:
-    // ?findInstalledWorldTemplateByUUID@WorldTemplateManager@@UEBAPEBUWorldTemplateInfo@@AEBV?$vector@VUUID@mce@@V?$allocator@VUUID@mce@@@std@@@std@@@Z
+    // vIndex: 1
     virtual struct WorldTemplateInfo const*
     findInstalledWorldTemplateByUUID(std::vector<class mce::UUID> const& packUUIDs) const = 0;
 
-    // vIndex: 2, symbol:
-    // ?registerModifiedCallback@WorldTemplateManager@@UEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXAEBU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@std@@@Z@std@@@Z
+    // vIndex: 2
     virtual class Bedrock::PubSub::Subscription
         registerModifiedCallback(std::function<void(std::pair<std::string, bool> const&)>) = 0;
 
-    // vIndex: 3, symbol:
-    // ?getLocalTemplates@WorldTemplateManager@@UEBAAEBV?$vector@V?$unique_ptr@UWorldTemplateInfo@@U?$default_delete@UWorldTemplateInfo@@@std@@@std@@V?$allocator@V?$unique_ptr@UWorldTemplateInfo@@U?$default_delete@UWorldTemplateInfo@@@std@@@std@@@2@@std@@XZ
+    // vIndex: 3
     virtual std::vector<std::unique_ptr<struct WorldTemplateInfo>> const& getLocalTemplates() const = 0;
 
     // NOLINTEND

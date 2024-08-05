@@ -36,46 +36,42 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1Skeleton@@UEAA@XZ
+    // vIndex: 10
     virtual ~Skeleton() = default;
 
-    // vIndex: 26, symbol: ?normalTick@Skeleton@@UEAAXXZ
+    // vIndex: 26
     virtual void normalTick();
 
-    // vIndex: 55, symbol: ?setTarget@Skeleton@@UEAAXPEAVActor@@@Z
+    // vIndex: 55
     virtual void setTarget(class Actor* target);
 
-    // vIndex: 91, symbol: ?canFreeze@Skeleton@@UEBA_NXZ
+    // vIndex: 91
     virtual bool canFreeze() const;
 
-    // vIndex: 111, symbol: ?canBeAffected@Skeleton@@UEBA_NI@Z
+    // vIndex: 111
     virtual bool canBeAffected(uint effectId) const;
 
-    // vIndex: 119, symbol:
-    // ?getDebugText@Skeleton@@EEAAXAEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
+    // vIndex: 119
     virtual void getDebugText(std::vector<std::string>& outputInfo);
 
-    // vIndex: 131, symbol: ?die@Skeleton@@UEAAXAEBVActorDamageSource@@@Z
+    // vIndex: 131
     virtual void die(class ActorDamageSource const& source);
 
-    // vIndex: 167, symbol: ?doHurtTarget@Skeleton@@UEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
+    // vIndex: 167
     virtual bool doHurtTarget(class Actor* target, ::ActorDamageCause const& cause);
 
-    // symbol: ??0Skeleton@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Skeleton(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?setWitherParent@Skeleton@@QEAAXPEAVWitherBoss@@@Z
     MCAPI void setWitherParent(class WitherBoss* wither);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?SPEED_MODIFIER_ATTACK_UUID@Skeleton@@0VUUID@mce@@B
     MCAPI static class mce::UUID const SPEED_MODIFIER_ATTACK_UUID;
 
     // NOLINTEND

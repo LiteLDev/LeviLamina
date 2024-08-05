@@ -27,29 +27,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MyceliumBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~MyceliumBlock() = default;
 
-    // vIndex: 134, symbol: ?animateTickBedrockLegacy@MyceliumBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 134
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // vIndex: 149, symbol: ?randomTick@MyceliumBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 149
     virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // symbol: ??0MyceliumBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI MyceliumBlock(std::string const& nameId, int id);
 
-    // symbol: ?MIN_BRIGHTNESS_TO_PERSIST@MyceliumBlock@@2UBrightness@@B
     MCAPI static struct Brightness const MIN_BRIGHTNESS_TO_PERSIST;
 
-    // symbol: ?MIN_BRIGHTNESS_TO_SPREAD@MyceliumBlock@@2UBrightness@@B
     MCAPI static struct Brightness const MIN_BRIGHTNESS_TO_SPREAD;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_canSpreadToBlock@MyceliumBlock@@AEBA_NAEBVBlockSource@@AEBVBlockPos@@@Z
     MCAPI bool _canSpreadToBlock(class BlockSource const& region, class BlockPos const& blockPos) const;
 
     // NOLINTEND

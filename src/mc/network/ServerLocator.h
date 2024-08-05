@@ -17,17 +17,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ServerLocator@@UEAA@XZ
+    // vIndex: 0
     virtual ~ServerLocator();
 
-    // vIndex: 1, symbol: ?_onDisable@ServerLocator@@EEAAXXZ
+    // vIndex: 1
     virtual void _onDisable();
 
-    // vIndex: 2, symbol: ?_onEnable@ServerLocator@@EEAAXXZ
+    // vIndex: 2
     virtual void _onEnable();
 
-    // vIndex: 3, symbol:
-    // ?startAnnouncingServer@NetherNetServerLocator@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0V?$NonOwnerPointer@VAppPlatform@@@Bedrock@@W4GameType@@HH_N3@Z
+    // vIndex: 3
     virtual void startAnnouncingServer(
         std::string const&,
         std::string const&,
@@ -39,39 +38,34 @@ public:
         bool
     ) = 0;
 
-    // vIndex: 4, symbol:
-    // ?stopAnnouncingServer@NetherNetServerLocator@@UEAAXV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
+    // vIndex: 4
     virtual void stopAnnouncingServer(class Bedrock::NonOwnerPointer<class AppPlatform> appPlatform) = 0;
 
-    // vIndex: 5, symbol: ?startServerDiscovery@NetherNetServerLocator@@UEAAXUPortPair@@@Z
+    // vIndex: 5
     virtual void startServerDiscovery(struct PortPair) = 0;
 
-    // vIndex: 6, symbol: ?stopServerDiscovery@NetherNetServerLocator@@UEAAXXZ
+    // vIndex: 6
     virtual void stopServerDiscovery() = 0;
 
-    // vIndex: 7, symbol: ?addCustomServer@RakNetServerLocator@@UEAAXAEBVAsynchronousIPResolver@@H@Z
+    // vIndex: 7
     virtual void addCustomServer(class AsynchronousIPResolver const& futureIP, int port) = 0;
 
-    // vIndex: 8, symbol:
-    // ?addCustomServer@RakNetServerLocator@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+    // vIndex: 8
     virtual void addCustomServer(std::string const& address, int port) = 0;
 
-    // vIndex: 9, symbol:
-    // ?getServerList@NetherNetServerLocator@@UEBA?AV?$vector@UPingedCompatibleServer@@V?$allocator@UPingedCompatibleServer@@@std@@@std@@XZ
+    // vIndex: 9
     virtual std::vector<struct PingedCompatibleServer> getServerList() const = 0;
 
-    // vIndex: 10, symbol: ?clearServerList@NetherNetServerLocator@@UEAAXXZ
+    // vIndex: 10
     virtual void clearServerList() = 0;
 
-    // vIndex: 11, symbol: ?update@NetherNetServerLocator@@UEAAXXZ
+    // vIndex: 11
     virtual void update() = 0;
 
-    // vIndex: 12, symbol:
-    // ?getPingTimeForGUID@RakNetServerLocator@@UEAAMAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 12
     virtual float getPingTimeForGUID(std::string const& guid) = 0;
 
-    // vIndex: 13, symbol:
-    // ?checkCanConnectToCustomServerAsync@StubServerLocator@@UEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$function@$$A6AXW4ServerConnectivityTestResult@@@Z@3@@Z
+    // vIndex: 13
     virtual void checkCanConnectToCustomServerAsync(
         std::string                                         hostIpAddress,
         int                                                 port,

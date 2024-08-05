@@ -14,7 +14,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1EducationLocalLevelSettings@@QEAA@XZ
     MCAPI ~EducationLocalLevelSettings();
 
     // NOLINTEND

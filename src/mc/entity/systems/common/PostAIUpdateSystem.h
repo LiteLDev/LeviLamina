@@ -16,15 +16,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@PostAIUpdateSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?doPostAiUpdate@PostAIUpdateSystem@@CAXAEAVStrictEntityContext@@V?$Optional@$$CBUOnGroundFlagComponent@@@@AEAUNoActionTimeComponent@@V?$EntityModifier@V?$FlagComponent@UWasOnGroundFlag@@@@@@@Z
     MCAPI static void
     doPostAiUpdate(class StrictEntityContext&, class Optional<struct OnGroundFlagComponent const>, struct NoActionTimeComponent&, class EntityModifier<class FlagComponent<struct WasOnGroundFlag>>);
 

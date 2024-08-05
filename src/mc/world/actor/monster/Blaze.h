@@ -35,35 +35,33 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 5, symbol: ?reloadHardcodedClient@Blaze@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 5
     virtual void reloadHardcodedClient(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: __gen_??1Blaze@@UEAA@XZ
+    // vIndex: 10
     virtual ~Blaze() = default;
 
-    // vIndex: 26, symbol: ?normalTick@Blaze@@UEAAXXZ
+    // vIndex: 26
     virtual void normalTick();
 
-    // vIndex: 41, symbol: ?getBrightness@Blaze@@UEBAMMAEBVIConstBlockSource@@@Z
+    // vIndex: 41
     virtual float getBrightness(float, class IConstBlockSource const&) const;
 
-    // vIndex: 51, symbol: ?isOnFire@Blaze@@UEBA_NXZ
+    // vIndex: 51
     virtual bool isOnFire() const;
 
-    // vIndex: 158, symbol: ?aiStep@Blaze@@UEAAXXZ
+    // vIndex: 158
     virtual void aiStep();
 
-    // vIndex: 190, symbol: ?isDarkEnoughToSpawn@Blaze@@UEBA_NXZ
+    // vIndex: 190
     virtual bool isDarkEnoughToSpawn() const;
 
-    // symbol: ??0Blaze@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Blaze(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?preTravel@Blaze@@QEAAXXZ
     MCAPI void preTravel();
 
     // NOLINTEND

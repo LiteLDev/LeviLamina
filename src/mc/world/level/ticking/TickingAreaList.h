@@ -14,11 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1TickingAreaList@@UEAA@XZ
+    // vIndex: 0
     virtual ~TickingAreaList();
 
-    // vIndex: 1, symbol:
-    // ?removeDistantEntityAreasAndCheckForRemoved@TickingAreaList@@UEAA_NAEBV?$vector@VVec3@@V?$allocator@VVec3@@@std@@@std@@V?$function@$$A6AXAEBVITickingArea@@@Z@3@AEAVLevelStorage@@@Z
+    // vIndex: 1
     virtual bool removeDistantEntityAreasAndCheckForRemoved(
         std::vector<class Vec3> const&                 playerPositions,
         std::function<void(class ITickingArea const&)> requeue,

@@ -21,7 +21,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?execute@MoveToPositionIntent@sim@@QEAA?AW4ExecutionResult@2@AEAVSimulatedPlayer@@@Z
     MCAPI ::sim::ExecutionResult execute(class SimulatedPlayer&);
 
     // NOLINTEND

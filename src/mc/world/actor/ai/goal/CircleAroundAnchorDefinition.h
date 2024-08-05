@@ -19,17 +19,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CircleAroundAnchorDefinition@@UEAA@XZ
+    // vIndex: 0
     virtual ~CircleAroundAnchorDefinition() = default;
 
-    // symbol: ??0CircleAroundAnchorDefinition@@QEAA@XZ
     MCAPI CircleAroundAnchorDefinition();
 
-    // symbol: ?initialize@CircleAroundAnchorDefinition@@QEBAXAEAVEntityContext@@AEAVCircleAroundAnchorGoal@@@Z
     MCAPI void initialize(class EntityContext& entity, class CircleAroundAnchorGoal& goal) const;
 
-    // symbol:
-    // ?buildSchema@CircleAroundAnchorDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VCircleAroundAnchorDefinition@@@JsonUtil@@@3@@Z
     MCAPI static void buildSchema(
         std::string const& name,
         std::shared_ptr<

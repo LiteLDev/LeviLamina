@@ -27,34 +27,29 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1StoneSlabBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~StoneSlabBlock() = default;
 
-    // vIndex: 50, symbol: ?isValidAuxValue@StoneSlabBlock@@UEBA_NH@Z
+    // vIndex: 50
     virtual bool isValidAuxValue(int auxValue) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@StoneSlabBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
-    // vIndex: 119, symbol:
-    // ?buildDescriptionId@StoneSlabBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
+    // vIndex: 119
     virtual std::string buildDescriptionId(class Block const&) const;
 
-    // vIndex: 120, symbol: ?isAuxValueRelevantForPicking@StoneSlabBlock@@UEBA_NXZ
+    // vIndex: 120
     virtual bool isAuxValueRelevantForPicking() const;
 
-    // vIndex: 129, symbol: ?getVariant@StoneSlabBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 160, symbol: ?getMapColor@StoneSlabBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 160
     virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const& block) const;
 
-    // symbol:
-    // ??0StoneSlabBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NAEBVHashedString@@@Z
     MCAPI StoneSlabBlock(std::string const& nameId, int id, bool fullSize, class HashedString const& baseSlab);
 
-    // symbol:
-    // ?SLAB_NAMES@StoneSlabBlock@@2V?$array@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$07@std@@B
     MCAPI static std::array<std::string, 8> const SLAB_NAMES;
 
     // NOLINTEND

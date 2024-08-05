@@ -28,30 +28,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SlimeBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~SlimeBlock() = default;
 
-    // vIndex: 74, symbol:
-    // ?updateEntityAfterFallOn@SlimeBlock@@UEBAXAEBVBlockPos@@AEAUUpdateEntityAfterFallOnInterface@@@Z
+    // vIndex: 74
     virtual void
     updateEntityAfterFallOn(class BlockPos const& pos, struct UpdateEntityAfterFallOnInterface& entity) const;
 
-    // vIndex: 75, symbol: ?isBounceBlock@SlimeBlock@@UEBA_NXZ
+    // vIndex: 75
     virtual bool isBounceBlock() const;
 
-    // vIndex: 142, symbol: ?_addHardCodedBlockComponents@SlimeBlock@@MEAAXAEBVExperiments@@@Z
+    // vIndex: 142
     virtual void _addHardCodedBlockComponents(class Experiments const&);
 
-    // vIndex: 145, symbol: ?onStandOn@SlimeBlock@@UEBAXAEAVEntityContext@@AEBVBlockPos@@@Z
+    // vIndex: 145
     virtual void onStandOn(class EntityContext& entity, class BlockPos const& pos) const;
 
-    // vIndex: 157, symbol: ?getExtraRenderLayers@SlimeBlock@@UEBAHXZ
+    // vIndex: 157
     virtual int getExtraRenderLayers() const;
 
-    // symbol: ??0SlimeBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI SlimeBlock(std::string const& nameId, int id, class Material const& material);
 
-    // symbol: ?onFallOn@SlimeBlock@@QEBAXAEAUBlockFallOnEvent@BlockEvents@@@Z
     MCAPI void onFallOn(struct BlockEvents::BlockFallOnEvent&) const;
 
     // NOLINTEND

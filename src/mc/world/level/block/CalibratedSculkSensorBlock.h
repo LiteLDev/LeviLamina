@@ -27,25 +27,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CalibratedSculkSensorBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~CalibratedSculkSensorBlock() = default;
 
-    // vIndex: 72, symbol: ?setupRedstoneComponent@CalibratedSculkSensorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 72
     virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 129, symbol: ?getVariant@CalibratedSculkSensorBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 132, symbol: ?getMappedFace@CalibratedSculkSensorBlock@@UEBAEEAEBVBlock@@@Z
+    // vIndex: 132
     virtual uchar getMappedFace(uchar face, class Block const& block) const;
 
-    // vIndex: 133, symbol: ?getFaceFlip@CalibratedSculkSensorBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
+    // vIndex: 133
     virtual ::Flip getFaceFlip(uchar face, class Block const& block) const;
 
-    // symbol: ??0CalibratedSculkSensorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI CalibratedSculkSensorBlock(std::string const& nameId, int id);
 
-    // symbol: ?getInputStrength@CalibratedSculkSensorBlock@@SAHAEBVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static int getInputStrength(class BlockSource const& region, class BlockPos const& pos);
 
     // NOLINTEND

@@ -9,7 +9,6 @@ namespace cereal { struct ReflectionCtx; }
 
 namespace WorldTransferResultType {
 // NOLINTBEGIN
-// symbol: ?bindType@WorldTransferResultType@@YAXAEAUReflectionCtx@cereal@@@Z
 MCAPI void bindType(struct cereal::ReflectionCtx&);
 // NOLINTEND
 

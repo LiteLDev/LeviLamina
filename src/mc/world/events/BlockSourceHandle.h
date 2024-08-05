@@ -15,10 +15,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BlockSourceHandle@@UEAA@XZ
+    // vIndex: 0
     virtual ~BlockSourceHandle() = default;
 
-    // vIndex: 2, symbol: ?onSourceDestroyed@BlockSourceHandle@@UEAAXAEAVBlockSource@@@Z
+    // vIndex: 2
     virtual void onSourceDestroyed(class BlockSource& source);
 
     // NOLINTEND

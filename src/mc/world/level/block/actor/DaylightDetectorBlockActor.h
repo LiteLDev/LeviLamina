@@ -15,10 +15,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DaylightDetectorBlockActor@@UEAA@XZ
+    // vIndex: 0
     virtual ~DaylightDetectorBlockActor() = default;
 
-    // vIndex: 7, symbol: ?tick@DaylightDetectorBlockActor@@UEAAXAEAVBlockSource@@@Z
+    // vIndex: 7
     virtual void tick(class BlockSource& region);
 
     // NOLINTEND

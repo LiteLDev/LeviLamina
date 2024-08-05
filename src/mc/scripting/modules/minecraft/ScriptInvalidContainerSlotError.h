@@ -15,14 +15,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptInvalidContainerSlotError@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ScriptInvalidContainerSlotError();
 
-    // symbol: ??1ScriptInvalidContainerSlotError@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptInvalidContainerSlotError();
 
-    // symbol:
-    // ?bind@ScriptInvalidContainerSlotError@ScriptModuleMinecraft@@SA?AV?$ErrorBindingBuilder@UScriptInvalidContainerSlotError@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ErrorBindingBuilder<struct ScriptModuleMinecraft::ScriptInvalidContainerSlotError>
     bind();
 

@@ -35,16 +35,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1Armadillo@@UEAA@XZ
+    // vIndex: 10
     virtual ~Armadillo() = default;
 
-    // vIndex: 38, symbol: ?getShadowRadius@Armadillo@@UEBAMXZ
+    // vIndex: 38
     virtual float getShadowRadius() const;
 
-    // symbol: ??0Armadillo@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Armadillo(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
 
-    // symbol: ?getCustomHurtSound@Armadillo@@SA?AV?$optional@W4LevelSoundEvent@Legacy@Puv@@@std@@AEAVMob@@@Z
     MCAPI static std::optional<::Puv::Legacy::LevelSoundEvent> getCustomHurtSound(class Mob&);
 
     // NOLINTEND

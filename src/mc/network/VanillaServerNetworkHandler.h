@@ -20,11 +20,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1VanillaServerNetworkHandler@@UEAA@XZ
+    // vIndex: 0
     virtual ~VanillaServerNetworkHandler() = default;
 
-    // vIndex: 1, symbol:
-    // ?handle@VanillaServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVResourcePackClientResponsePacket@@@Z
+    // vIndex: 1
     virtual void handle(class NetworkIdentifier const& source, class ResourcePackClientResponsePacket const& packet);
 
     // NOLINTEND

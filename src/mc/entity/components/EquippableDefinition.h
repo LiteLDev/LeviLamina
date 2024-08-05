@@ -19,11 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?initialize@EquippableDefinition@@QEBAXAEAVEntityContext@@AEAVEquippableComponent@@@Z
     MCAPI void initialize(class EntityContext&, class EquippableComponent& component) const;
 
-    // symbol:
-    // ?buildSchema@EquippableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VEquippableDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void buildSchema(
         std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EquippableDefinition>>&
             root

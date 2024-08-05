@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1XboxLiveUserObserver@Social@@UEAA@XZ
     MCVAPI ~XboxLiveUserObserver();
 
     // NOLINTEND

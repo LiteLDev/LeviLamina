@@ -35,34 +35,31 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1Bat@@UEAA@XZ
+    // vIndex: 10
     virtual ~Bat() = default;
 
-    // vIndex: 146, symbol: ?_hurt@Bat@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 146
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 147, symbol: ?readAdditionalSaveData@Bat@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 148, symbol: ?addAdditionalSaveData@Bat@@UEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148
     virtual void addAdditionalSaveData(class CompoundTag& entityTag) const;
 
-    // vIndex: 159, symbol: ?pushActors@Bat@@UEAAXXZ
+    // vIndex: 159
     virtual void pushActors();
 
-    // vIndex: 187, symbol: ?newServerAiStep@Bat@@MEAAXXZ
+    // vIndex: 187
     virtual void newServerAiStep();
 
-    // symbol: ??0Bat@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI
     Bat(class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext);
 
-    // symbol: ?postNormalTick@Bat@@QEAAXXZ
     MCAPI void postNormalTick();
 
-    // symbol: ?hasRestingBlockAbove@Bat@@SA_NAEBVVec3@@AEBVBlockSource@@@Z
     MCAPI static bool hasRestingBlockAbove(class Vec3 const&, class BlockSource const& region);
 
     // NOLINTEND

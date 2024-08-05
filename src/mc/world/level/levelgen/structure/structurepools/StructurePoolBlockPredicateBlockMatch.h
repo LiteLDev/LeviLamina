@@ -14,23 +14,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1StructurePoolBlockPredicateBlockMatch@@UEAA@XZ
+    // vIndex: 0
     virtual ~StructurePoolBlockPredicateBlockMatch() = default;
 
-    // vIndex: 1, symbol: ?test@StructurePoolBlockPredicateBlockMatch@@UEBA_NAEBVBlock@@AEAVRandomize@@@Z
+    // vIndex: 1
     virtual bool test(class Block const& block, class Randomize&) const;
 
-    // vIndex: 2, symbol: ?test@StructurePoolBlockPredicateBlockMatch@@UEBA_NAEBVBlockPos@@0AEAVRandomize@@@Z
+    // vIndex: 2
     virtual bool test(class BlockPos const&, class BlockPos const&, class Randomize&) const;
 
-    // vIndex: 3, symbol: ?finalize@IStructurePoolBlockPredicate@@UEAA_NAEAVBlockSource@@AEAVIRandom@@@Z
+    // vIndex: 3
     virtual bool finalize(class BlockSource&, class IRandom&);
 
-    // symbol: ??0StructurePoolBlockPredicateBlockMatch@@QEAA@AEBVBlock@@@Z
     MCAPI explicit StructurePoolBlockPredicateBlockMatch(class Block const& block);
 
-    // symbol:
-    // ??0StructurePoolBlockPredicateBlockMatch@@QEAA@V?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@std@@@Z
     MCAPI explicit StructurePoolBlockPredicateBlockMatch(std::vector<class HashedString>);
 
     // NOLINTEND

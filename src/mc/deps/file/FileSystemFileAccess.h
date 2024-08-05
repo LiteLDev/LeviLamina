@@ -31,10 +31,10 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __gen_??1FileSystemFileReadAccess@FileSystemFileAccess@@UEAA@XZ
+        // vIndex: 0
         virtual ~FileSystemFileReadAccess() = default;
 
-        // vIndex: 1, symbol: ?fread@FileSystemFileReadAccess@FileSystemFileAccess@@UEBA_KPEAX_K10@Z
+        // vIndex: 1
         virtual uint64 fread(void* buffer, uint64 size, uint64 count, void* file) const;
 
         // NOLINTEND
@@ -49,10 +49,10 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __gen_??1FileSystemFileWriteAccess@FileSystemFileAccess@@UEAA@XZ
+        // vIndex: 0
         virtual ~FileSystemFileWriteAccess() = default;
 
-        // vIndex: 1, symbol: ?fwrite@FileSystemFileWriteAccess@FileSystemFileAccess@@UEAA_KPEBX_K1PEAX@Z
+        // vIndex: 1
         virtual uint64 fwrite(void const* buffer, uint64 size, uint64 count, void* file);
 
         // NOLINTEND
@@ -66,32 +66,30 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FileSystemFileAccess@@UEAA@XZ
+    // vIndex: 0
     virtual ~FileSystemFileAccess() = default;
 
-    // vIndex: 1, symbol:
-    // ?fopen@FileSystemFileAccess@@UEAAPEAXAEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 1
     virtual void* fopen(class Core::Path const& filePath, std::string const& mode);
 
-    // vIndex: 2, symbol: ?fclose@FileSystemFileAccess@@UEAAHPEAX@Z
+    // vIndex: 2
     virtual int fclose(void* file);
 
-    // vIndex: 3, symbol: ?fseek@FileSystemFileAccess@@UEAAHPEAX_JH@Z
+    // vIndex: 3
     virtual int fseek(void* file, int64 offset, int origin);
 
-    // vIndex: 4, symbol: ?ftell@FileSystemFileAccess@@UEAA_JPEAX@Z
+    // vIndex: 4
     virtual int64 ftell(void* file);
 
-    // vIndex: 5, symbol: ?getReadInterface@FileSystemFileAccess@@UEBAPEBVIFileReadAccess@@XZ
+    // vIndex: 5
     virtual class IFileReadAccess const* getReadInterface() const;
 
-    // vIndex: 6, symbol: ?getWriteInterface@FileSystemFileAccess@@UEAAPEAVIFileWriteAccess@@XZ
+    // vIndex: 6
     virtual class IFileWriteAccess* getWriteInterface();
 
-    // vIndex: 7, symbol: ?unload@FileSystemFileAccess@@UEAAXXZ
+    // vIndex: 7
     virtual void unload();
 
-    // symbol: ??0FileSystemFileAccess@@QEAA@W4FileSystemMode@@@Z
     MCAPI explicit FileSystemFileAccess(::FileSystemMode mode);
 
     // NOLINTEND

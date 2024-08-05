@@ -11,13 +11,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1PrintStream@@UEAA@XZ
+    // vIndex: 0
     virtual ~PrintStream();
 
-    // vIndex: 1, symbol: ?print@PrintStream@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 1
     virtual void print(std::string const&);
 
-    // symbol: ?println@PrintStream@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void println(std::string const&);
 
     // NOLINTEND

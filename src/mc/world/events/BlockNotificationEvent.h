@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1BlockNotificationEvent@@QEAA@XZ
     MCAPI ~BlockNotificationEvent();
 
     // NOLINTEND

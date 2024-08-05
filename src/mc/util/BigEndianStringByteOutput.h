@@ -10,22 +10,22 @@ public:
     using StringByteOutput::StringByteOutput;
 
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BigEndianStringByteOutput@@UEAA@XZ
+    // vIndex: 0
     virtual ~BigEndianStringByteOutput();
 
-    // vIndex: 3, symbol: ?writeFloat@BigEndianStringByteOutput@@UEAAXM@Z
+    // vIndex: 3
     virtual void writeFloat(float v);
 
-    // vIndex: 4, symbol: ?writeDouble@BigEndianStringByteOutput@@UEAAXN@Z
+    // vIndex: 4
     virtual void writeDouble(double v);
 
-    // vIndex: 6, symbol: ?writeShort@BigEndianStringByteOutput@@UEAAXF@Z
+    // vIndex: 6
     virtual void writeShort(short v);
 
-    // vIndex: 7, symbol: ?writeInt@BigEndianStringByteOutput@@UEAAXH@Z
+    // vIndex: 7
     virtual void writeInt(int v);
 
-    // vIndex: 8, symbol: ?writeLongLong@BigEndianStringByteOutput@@UEAAX_J@Z
+    // vIndex: 8
     virtual void writeLongLong(int64 v);
 
     // NOLINTEND

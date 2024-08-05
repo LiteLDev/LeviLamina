@@ -19,10 +19,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1IUnknownBlockTypeRegistry@@UEAA@XZ
+    // vIndex: 0
     virtual ~IUnknownBlockTypeRegistry();
 
-    // vIndex: 1, symbol: ?getUnknownBlock@UnknownBlockTypeRegistry@@UEAAAEBVBlock@@AEBVCompoundTag@@@Z
+    // vIndex: 1
     virtual class Block const& getUnknownBlock(class CompoundTag const& serId) = 0;
 
     // NOLINTEND

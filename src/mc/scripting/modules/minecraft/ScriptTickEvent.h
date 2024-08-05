@@ -16,8 +16,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?bindV010@ScriptTickEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilderReadOnly@UScriptTickEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilderReadOnly<struct ScriptModuleMinecraft::ScriptTickEvent> bindV010();
 
     // NOLINTEND

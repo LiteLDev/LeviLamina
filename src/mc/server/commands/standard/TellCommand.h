@@ -14,21 +14,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1TellCommand@@UEAA@XZ
+    // vIndex: 0
     virtual ~TellCommand() = default;
 
-    // vIndex: 2, symbol: ?execute@TellCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+    // vIndex: 2
     virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    // symbol: ?setup@TellCommand@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry& registry);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_sendMessageToPlayer@TellCommand@@CAXAEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1AEBUCommandOriginIdentity@@AEAVLevel@@@Z
     MCAPI static void _sendMessageToPlayer(
         class Player&                       player,
         std::string const&                  message,

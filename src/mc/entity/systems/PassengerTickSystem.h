@@ -11,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createMobPostPassengerTickSystem@PassengerTickSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createMobPostPassengerTickSystem();
 
-    // symbol: ?createPlayerPostPassengerTickSystem@PassengerTickSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createPlayerPostPassengerTickSystem();
 
     // NOLINTEND

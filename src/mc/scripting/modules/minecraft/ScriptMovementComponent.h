@@ -24,15 +24,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptMovementComponent@ScriptModuleMinecraft@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptMovementComponent() = default;
 
-    // symbol:
-    // ?bind@ScriptMovementComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptMovementComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMovementComponent>
     bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&);
 
-    // symbol: ?ComponentId@ScriptMovementComponent@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ComponentId;
 
     // NOLINTEND

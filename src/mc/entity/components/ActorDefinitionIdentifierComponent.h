@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ActorDefinitionIdentifierComponent@@QEAA@XZ
     MCAPI ~ActorDefinitionIdentifierComponent();
 
     // NOLINTEND

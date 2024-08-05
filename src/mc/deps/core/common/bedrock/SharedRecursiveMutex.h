@@ -21,16 +21,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SharedRecursiveMutex@Threading@Bedrock@@UEAA@XZ
+    // vIndex: 0
     virtual ~SharedRecursiveMutex();
 
-    // vIndex: 1, symbol: ?_threadHoldsSharedLock@SharedRecursiveMutex@Threading@Bedrock@@MEAA_NVid@thread@std@@@Z
+    // vIndex: 1
     virtual bool _threadHoldsSharedLock(std::thread::id);
 
-    // vIndex: 2, symbol: ?_shouldLockForSharedAccess@SharedRecursiveMutex@Threading@Bedrock@@MEAA_NVid@thread@std@@@Z
+    // vIndex: 2
     virtual bool _shouldLockForSharedAccess(std::thread::id);
 
-    // vIndex: 3, symbol: ?_shouldUnLockForSharedAccess@SharedRecursiveMutex@Threading@Bedrock@@MEAA_NVid@thread@std@@@Z
+    // vIndex: 3
     virtual bool _shouldUnLockForSharedAccess(std::thread::id);
 
     // NOLINTEND

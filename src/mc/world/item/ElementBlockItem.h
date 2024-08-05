@@ -26,10 +26,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ElementBlockItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~ElementBlockItem() = default;
 
-    // vIndex: 92, symbol: ?fixupCommon@ElementBlockItem@@EEBAXAEAVItemStackBase@@@Z
+    // vIndex: 92
     virtual void fixupCommon(class ItemStackBase& stack) const;
 
     // NOLINTEND

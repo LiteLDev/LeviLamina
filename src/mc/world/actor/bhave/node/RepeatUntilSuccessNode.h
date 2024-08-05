@@ -15,13 +15,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1RepeatUntilSuccessNode@@UEAA@XZ
+    // vIndex: 0
     virtual ~RepeatUntilSuccessNode() = default;
 
-    // vIndex: 1, symbol: ?tick@RepeatUntilSuccessNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+    // vIndex: 1
     virtual ::BehaviorStatus tick(class Actor& owner);
 
-    // vIndex: 2, symbol: ?initializeFromDefinition@RepeatUntilSuccessNode@@MEAAXAEAVActor@@@Z
+    // vIndex: 2
     virtual void initializeFromDefinition(class Actor& owner);
 
     // NOLINTEND

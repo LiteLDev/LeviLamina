@@ -21,14 +21,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol:
-    // ?getProperty@MetaTypePropertyReader@cereal@@EEBA?AUmeta_prop@entt@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+    // vIndex: 0
     virtual entt::meta_prop getProperty(std::string_view) const;
 
-    // vIndex: 1, symbol: ??1MetaTypePropertyReader@cereal@@UEAA@XZ
+    // vIndex: 1
     virtual ~MetaTypePropertyReader();
 
-    // symbol: ??0MetaTypePropertyReader@cereal@@QEAA@AEBVmeta_type@entt@@@Z
     MCAPI explicit MetaTypePropertyReader(entt::meta_type const&);
 
     // NOLINTEND

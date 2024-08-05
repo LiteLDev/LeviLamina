@@ -14,10 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0CrashDumpEventData@@QEAA@W4CrashDumpLogStringID@@0@Z
     MCAPI CrashDumpEventData(::CrashDumpLogStringID, ::CrashDumpLogStringID);
 
-    // symbol: ?kFormat@CrashDumpEventData@@2QBUCrashDumpFormatEntryImpl@@B
     MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
 
     // NOLINTEND

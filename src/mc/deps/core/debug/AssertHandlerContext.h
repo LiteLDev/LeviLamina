@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1AssertHandlerContext@@QEAA@XZ
     MCAPI ~AssertHandlerContext();
 
     // NOLINTEND

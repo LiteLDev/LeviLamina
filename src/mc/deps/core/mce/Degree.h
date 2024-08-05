@@ -18,10 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0Degree@mce@@QEAA@URadian@1@@Z
     MCAPI explicit Degree(struct mce::Radian rad);
 
-    // symbol: ?asFloat@Degree@mce@@QEBAAEBMXZ
     MCAPI float const& asFloat() const;
 
     // NOLINTEND

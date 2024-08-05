@@ -22,16 +22,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0ScriptTripWireTripAfterEvent@ScriptModuleMinecraft@@QEAA@AEBUTripWireTripEvent@@AEBVWeakLifetimeScope@Scripting@@@Z
     MCAPI ScriptTripWireTripAfterEvent(struct TripWireTripEvent const&, class Scripting::WeakLifetimeScope const&);
 
-    // symbol: ??4ScriptTripWireTripAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptTripWireTripAfterEvent&
     operator=(struct ScriptModuleMinecraft::ScriptTripWireTripAfterEvent&&);
 
-    // symbol:
-    // ?bind@ScriptTripWireTripAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptTripWireTripAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptTripWireTripAfterEvent>
     bind();
 

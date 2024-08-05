@@ -26,11 +26,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1GoatHornItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~GoatHornItem() = default;
 
-    // vIndex: 48, symbol:
-    // ?appendFormattedHovertext@GoatHornItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+    // vIndex: 48
     virtual void appendFormattedHovertext(
         class ItemStackBase const& instance,
         class Level&               level,
@@ -38,22 +37,20 @@ public:
         bool                       showCategory
     ) const;
 
-    // vIndex: 72, symbol: ?use@GoatHornItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+    // vIndex: 72
     virtual class ItemStack& use(class ItemStack& item, class Player& player) const;
 
-    // vIndex: 90, symbol: ?getCooldownType@GoatHornItem@@UEBAAEBVHashedString@@XZ
+    // vIndex: 90
     virtual class HashedString const& getCooldownType() const;
 
-    // vIndex: 91, symbol: ?getCooldownTime@GoatHornItem@@UEBAHXZ
+    // vIndex: 91
     virtual int getCooldownTime() const;
 
-    // vIndex: 110, symbol: ?canBeCharged@GoatHornItem@@UEBA_NXZ
+    // vIndex: 110
     virtual bool canBeCharged() const;
 
-    // symbol: ??0GoatHornItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI GoatHornItem(std::string const& name, int id);
 
-    // symbol: ?addGoatHornVarationSaveData@GoatHornItem@@SAXAEAVGoat@@AEAVItemStack@@@Z
     MCAPI static void addGoatHornVarationSaveData(class Goat&, class ItemStack& instance);
 
     // NOLINTEND

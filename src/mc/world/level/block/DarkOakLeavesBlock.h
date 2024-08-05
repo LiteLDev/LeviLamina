@@ -28,14 +28,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DarkOakLeavesBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~DarkOakLeavesBlock() = default;
 
-    // vIndex: 129, symbol: ?getVariant@DarkOakLeavesBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const&) const;
 
-    // symbol:
-    // ??0DarkOakLeavesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@$$CBVBlockLegacy@@@@@Z
     MCAPI DarkOakLeavesBlock(std::string const&, int, class WeakPtr<class BlockLegacy const>);
 
     // NOLINTEND

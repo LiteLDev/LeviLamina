@@ -16,19 +16,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@EyeOfEnderPreNormalTickSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_doEyeOfEnderPreNormalTickSystem@EyeOfEnderPreNormalTickSystem@@CAXAEBVStrictEntityContext@@AEAVActorOwnerComponent@@@Z
     MCAPI static void _doEyeOfEnderPreNormalTickSystem(class StrictEntityContext const&, class ActorOwnerComponent&);
 
-    // symbol:
-    // ?_tickEyeOfEnderPreNormalTickSystem@EyeOfEnderPreNormalTickSystem@@CAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@UEyeOfEnderFlag@@@@@@VActorOwnerComponent@@@@@Z
     MCAPI static void _tickEyeOfEnderPreNormalTickSystem(class ViewT<
                                                          class StrictEntityContext,
                                                          struct Include<

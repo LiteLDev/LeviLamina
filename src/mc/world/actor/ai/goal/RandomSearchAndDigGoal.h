@@ -31,20 +31,15 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1Definition@RandomSearchAndDigGoal@@UEAA@XZ
+        // vIndex: 0
         virtual ~Definition();
 
-        // symbol: ??0Definition@RandomSearchAndDigGoal@@QEAA@XZ
         MCAPI Definition();
 
-        // symbol: ?addBlockDescriptor@Definition@RandomSearchAndDigGoal@@QEAAXAEBVBlockDescriptor@@@Z
         MCAPI void addBlockDescriptor(class BlockDescriptor const&);
 
-        // symbol: ?initialize@Definition@RandomSearchAndDigGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext& entity, class RandomSearchAndDigGoal& goal) const;
 
-        // symbol:
-        // ?buildSchema@Definition@RandomSearchAndDigGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDefinition@RandomSearchAndDigGoal@@@JsonUtil@@@4@@Z
         MCAPI static void buildSchema(
             std::string const&                              name,
             std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
@@ -63,45 +58,39 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1RandomSearchAndDigGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~RandomSearchAndDigGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@RandomSearchAndDigGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@RandomSearchAndDigGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@RandomSearchAndDigGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@RandomSearchAndDigGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@RandomSearchAndDigGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@RandomSearchAndDigGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0RandomSearchAndDigGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit RandomSearchAndDigGoal(class Mob& mob);
 
-    // symbol: ?_canUse@RandomSearchAndDigGoal@@QEAA?AW4CanUseOutcome@1@XZ
     MCAPI ::RandomSearchAndDigGoal::CanUseOutcome _canUse();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_digUpItems@RandomSearchAndDigGoal@@AEAAXXZ
     MCAPI void _digUpItems();
 
-    // symbol: ?_isValidTarget@RandomSearchAndDigGoal@@AEBA_NAEBVBlockSource@@VBlockPos@@@Z
     MCAPI bool _isValidTarget(class BlockSource const&, class BlockPos) const;
 
-    // symbol: ?_triggerEvent@RandomSearchAndDigGoal@@AEBAXAEBVActorDefinitionTrigger@@@Z
     MCAPI void _triggerEvent(class ActorDefinitionTrigger const&) const;
 
     // NOLINTEND

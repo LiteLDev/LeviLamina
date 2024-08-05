@@ -23,19 +23,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptServerNetworkEventListener@ScriptModuleMinecraft@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptServerNetworkEventListener() = default;
 
-    // vIndex: 1, symbol:
-    // ?onEvent@?$EventListenerDispatcher@VServerNetworkEventListener@@@@MEAA?AW4EventResult@@AEBUServerNetworkGameplayNotificationEvent@@@Z
+    // vIndex: 1
     virtual ::EventResult onEvent(struct ServerNetworkGameplayNotificationEvent const& event);
 
-    // vIndex: 2, symbol:
-    // ?onMessage@ScriptServerNetworkEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUMessageEvent@@@Z
+    // vIndex: 2
     virtual ::EventResult onMessage(struct MessageEvent const&);
 
-    // vIndex: 3, symbol:
-    // ?onEvent@ScriptServerNetworkEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUChatEvent@@@Z
+    // vIndex: 3
     virtual ::EventResult onEvent(struct ChatEvent const&);
 
     // NOLINTEND

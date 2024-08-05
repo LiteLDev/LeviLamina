@@ -16,24 +16,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CherryTreeTrunk@@UEAA@XZ
+    // vIndex: 0
     virtual ~CherryTreeTrunk() = default;
 
-    // vIndex: 1, symbol:
-    // ?placeTrunk@CherryTreeTrunk@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@HAEAVRenderParams@@AEBUTreeParams@TreeHelper@@PEBVITreeCanopy@@@Z
+    // vIndex: 1
     virtual std::optional<class BlockPos>
     placeTrunk(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random, int treeHeight, class RenderParams& renderParams, struct TreeHelper::TreeParams const& treeParams, class ITreeCanopy const*)
         const;
 
-    // vIndex: 2, symbol: ?getTreeHeight@CherryTreeTrunk@@UEBAHAEAVRandom@@@Z
+    // vIndex: 2
     virtual int getTreeHeight(class Random& random) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_generateBranch@CherryTreeTrunk@@AEBA?AVBlockPos@@AEAVIBlockWorldGenAPI@@AEBVBlock@@1AEAVRandom@@HV2@AEBUTreeParams@TreeHelper@@3H_N@Z
     MCAPI class BlockPos _generateBranch(
         class IBlockWorldGenAPI& target,
         class Block const&,
@@ -47,8 +44,6 @@ public:
         bool
     ) const;
 
-    // symbol:
-    // ?_tryPlaceBlock@CherryTreeTrunk@@AEBA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEBVBlock@@AEBUTreeParams@TreeHelper@@@Z
     MCAPI bool _tryPlaceBlock(
         class IBlockWorldGenAPI&             target,
         class BlockPos const&                pos,

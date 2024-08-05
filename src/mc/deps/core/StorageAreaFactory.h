@@ -13,8 +13,6 @@ namespace Core { class Path; }
 
 namespace Core::StorageAreaFactory {
 // NOLINTBEGIN
-// symbol:
-// ?createBasicStorageAreaForCurrentPlatform@StorageAreaFactory@Core@@YA?AV?$shared_ptr@VFileStorageArea@Core@@@std@@W4FileAccessType@2@AEBVPath@2@_N@Z
 MCAPI std::shared_ptr<class Core::FileStorageArea> createBasicStorageAreaForCurrentPlatform(
     ::Core::FileAccessType  fileAccessType,
     class Core::Path const& rootPath,

@@ -7,7 +7,6 @@
 
 namespace DifficultyUtils {
 // NOLINTBEGIN
-// symbol: ?getSpecialMultiplier@DifficultyUtils@@YAMW4Difficulty@@HM@Z
 MCAPI float getSpecialMultiplier(::Difficulty, int, float);
 // NOLINTEND
 

@@ -16,16 +16,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CrafterContainerManagerModel@@UEAA@XZ
+    // vIndex: 0
     virtual ~CrafterContainerManagerModel() = default;
 
-    // vIndex: 7, symbol: ?setSlot@CrafterContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
+    // vIndex: 7
     virtual void setSlot(int, class ItemStack const&, bool);
 
-    // vIndex: 17, symbol: ?_postInit@CrafterContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+    // vIndex: 17
     virtual class ContainerScreenContext _postInit();
 
-    // symbol: ??0CrafterContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
     MCAPI CrafterContainerManagerModel(::ContainerID, class Player&, class BlockPos const&);
 
     // NOLINTEND

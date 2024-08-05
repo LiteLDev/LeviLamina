@@ -16,13 +16,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4ActionValue@npc@@QEAAAEAU01@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     MCAPI struct npc::ActionValue& operator=(std::string_view newName);
 
-    // symbol: ?rawValue@ActionValue@npc@@QEBA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@XZ
     MCAPI std::string_view rawValue() const;
 
-    // symbol: ??1ActionValue@npc@@QEAA@XZ
     MCAPI ~ActionValue();
 
     // NOLINTEND

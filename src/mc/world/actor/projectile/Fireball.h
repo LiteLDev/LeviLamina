@@ -36,37 +36,36 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: ??1Fireball@@UEAA@XZ
+    // vIndex: 10
     virtual ~Fireball();
 
-    // vIndex: 26, symbol: ?normalTick@Fireball@@UEAAXXZ
+    // vIndex: 26
     virtual void normalTick();
 
-    // vIndex: 41, symbol: ?getBrightness@Fireball@@UEBAMMAEBVIConstBlockSource@@@Z
+    // vIndex: 41
     virtual float getBrightness(float, class IConstBlockSource const&) const;
 
-    // vIndex: 90, symbol: ?getSourceUniqueID@Fireball@@UEBA?AUActorUniqueID@@XZ
+    // vIndex: 90
     virtual struct ActorUniqueID getSourceUniqueID() const;
 
-    // vIndex: 94, symbol: ?canChangeDimensionsUsingPortal@Fireball@@UEBA_NXZ
+    // vIndex: 94
     virtual bool canChangeDimensionsUsingPortal() const;
 
-    // vIndex: 147, symbol: ?readAdditionalSaveData@Fireball@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 148, symbol: ?addAdditionalSaveData@Fireball@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 151, symbol: ?getInertia@Fireball@@MEAAMXZ
+    // vIndex: 151
     virtual float getInertia();
 
-    // vIndex: 152, symbol: ?getTrailParticle@Fireball@@MEAA?AW4ParticleType@@XZ
+    // vIndex: 152
     virtual ::ParticleType getTrailParticle();
 
-    // vIndex: 153, symbol: ?shouldBurn@Fireball@@MEAA_NXZ
+    // vIndex: 153
     virtual bool shouldBurn();
 
-    // symbol: ??0Fireball@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Fireball(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
@@ -77,7 +76,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_setPower@Fireball@@AEAAXAEBVVec3@@@Z
     MCAPI void _setPower(class Vec3 const& power);
 
     // NOLINTEND

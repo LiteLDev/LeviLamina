@@ -48,27 +48,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0SerializedAbilitiesData@@QEAA@XZ
     MCAPI SerializedAbilitiesData();
 
-    // symbol: ??0SerializedAbilitiesData@@QEAA@UActorUniqueID@@AEBVLayeredAbilities@@@Z
     MCAPI SerializedAbilitiesData(struct ActorUniqueID, class LayeredAbilities const&);
 
-    // symbol: ?fillIn@SerializedAbilitiesData@@QEBAXAEAVLayeredAbilities@@@Z
     MCAPI void fillIn(class LayeredAbilities&) const;
 
-    // symbol: ?getTargetPlayer@SerializedAbilitiesData@@QEBA?AUActorUniqueID@@XZ
     MCAPI struct ActorUniqueID getTargetPlayer() const;
 
-    // symbol: ??1SerializedAbilitiesData@@QEAA@XZ
     MCAPI ~SerializedAbilitiesData();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?ABILITIES_LAYER_MAP@SerializedAbilitiesData@@0V?$array@W4SerializedAbilitiesLayer@SerializedAbilitiesData@@$04@std@@B
     MCAPI static std::array<::SerializedAbilitiesData::SerializedAbilitiesLayer, 5> const ABILITIES_LAYER_MAP;
 
     // NOLINTEND

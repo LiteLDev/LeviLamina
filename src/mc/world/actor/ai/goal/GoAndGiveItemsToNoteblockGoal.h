@@ -29,17 +29,13 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1Definition@GoAndGiveItemsToNoteblockGoal@@UEAA@XZ
+        // vIndex: 0
         virtual ~Definition();
 
-        // symbol: ??0Definition@GoAndGiveItemsToNoteblockGoal@@QEAA@XZ
         MCAPI Definition();
 
-        // symbol: ?initialize@Definition@GoAndGiveItemsToNoteblockGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext& entity, class GoAndGiveItemsToNoteblockGoal& goal) const;
 
-        // symbol:
-        // ?buildSchema@Definition@GoAndGiveItemsToNoteblockGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDefinition@GoAndGiveItemsToNoteblockGoal@@@JsonUtil@@@4@@Z
         MCAPI static void buildSchema(
             std::string const&                                     name,
             std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
@@ -58,29 +54,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1GoAndGiveItemsToNoteblockGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~GoAndGiveItemsToNoteblockGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@GoAndGiveItemsToNoteblockGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@GoAndGiveItemsToNoteblockGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@GoAndGiveItemsToNoteblockGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@GoAndGiveItemsToNoteblockGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@GoAndGiveItemsToNoteblockGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@GoAndGiveItemsToNoteblockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0GoAndGiveItemsToNoteblockGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit GoAndGiveItemsToNoteblockGoal(class Mob& mob);
 
     // NOLINTEND

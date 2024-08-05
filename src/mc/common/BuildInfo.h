@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1BuildInfo@Common@@QEAA@XZ
     MCAPI ~BuildInfo();
 
     // NOLINTEND

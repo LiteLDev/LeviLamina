@@ -20,36 +20,33 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1TestSummaryDisplayer@@UEAA@XZ
+    // vIndex: 0
     virtual ~TestSummaryDisplayer() = default;
 
-    // vIndex: 1, symbol:
-    // ?onTestStructureLoaded@GameTestBatchRunnerGameTestListener@gametest@@UEAAXAEAVBaseGameTestInstance@2@@Z
+    // vIndex: 1
     virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance&);
 
-    // vIndex: 2, symbol: ?onTestPassed@TestSummaryDisplayer@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
+    // vIndex: 2
     virtual void onTestPassed(class gametest::BaseGameTestInstance&);
 
-    // vIndex: 3, symbol: ?onTestFailed@TestSummaryDisplayer@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
+    // vIndex: 3
     virtual void onTestFailed(class gametest::BaseGameTestInstance&);
 
-    // vIndex: 4, symbol: ?onTestStarted@IGameTestListener@gametest@@UEAAXAEAVBaseGameTestInstance@2@@Z
+    // vIndex: 4
     virtual void onTestStarted(class gametest::BaseGameTestInstance&);
 
-    // vIndex: 5, symbol: ?onTestRetryStarted@IGameTestListener@gametest@@UEAAXAEAVBaseGameTestInstance@2@@Z
+    // vIndex: 5
     virtual void onTestRetryStarted(class gametest::BaseGameTestInstance&);
 
-    // vIndex: 6, symbol: ?onTestRetryFinished@IGameTestListener@gametest@@UEAAXAEAVBaseGameTestInstance@2@@Z
+    // vIndex: 6
     virtual void onTestRetryFinished(class gametest::BaseGameTestInstance&);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_say@TestSummaryDisplayer@@AEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
     MCAPI void _say(std::string const& text, std::string const&) const;
 
-    // symbol: ?_showTestSummaryIfAllDone@TestSummaryDisplayer@@AEBAXXZ
     MCAPI void _showTestSummaryIfAllDone() const;
 
     // NOLINTEND

@@ -16,13 +16,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?deserialize@RandomValueBounds@@QEAAXAEBVValue@Json@@@Z
     MCAPI void deserialize(class Json::Value const& object);
 
-    // symbol: ?getFloat@RandomValueBounds@@QEBAMAEAVRandom@@@Z
     MCAPI float getFloat(class Random& random) const;
 
-    // symbol: ?getInt@RandomValueBounds@@QEBAHAEAVRandom@@@Z
     MCAPI int getInt(class Random& random) const;
 
     // NOLINTEND

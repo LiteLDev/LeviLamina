@@ -13,7 +13,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?RefillTag@SnappyDecompressor@snappy@@AEAA_NXZ
     MCAPI bool RefillTag();
 
     // NOLINTEND

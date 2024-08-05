@@ -23,60 +23,54 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptCommandOrigin@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptCommandOrigin();
 
-    // vIndex: 1, symbol:
-    // ?getRequestId@ScriptCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 1
     virtual std::string const& getRequestId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@ScriptCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 3, symbol: ?getBlockPosition@ScriptCommandOrigin@@UEBA?AVBlockPos@@XZ
+    // vIndex: 3
     virtual class BlockPos getBlockPosition() const;
 
-    // vIndex: 4, symbol: ?getWorldPosition@ScriptCommandOrigin@@UEBA?AVVec3@@XZ
+    // vIndex: 4
     virtual class Vec3 getWorldPosition() const;
 
-    // vIndex: 5, symbol: ?getRotation@ScriptCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
+    // vIndex: 5
     virtual std::optional<class Vec2> getRotation() const;
 
-    // vIndex: 6, symbol: ?getLevel@ScriptCommandOrigin@@UEBAPEAVLevel@@XZ
+    // vIndex: 6
     virtual class Level* getLevel() const;
 
-    // vIndex: 7, symbol: ?getDimension@ScriptCommandOrigin@@UEBAPEAVDimension@@XZ
+    // vIndex: 7
     virtual class Dimension* getDimension() const;
 
-    // vIndex: 8, symbol: ?getEntity@ScriptCommandOrigin@@UEBAPEAVActor@@XZ
+    // vIndex: 8
     virtual class Actor* getEntity() const;
 
-    // vIndex: 9, symbol: ?getPermissionsLevel@ScriptCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
+    // vIndex: 9
     virtual ::CommandPermissionLevel getPermissionsLevel() const;
 
-    // vIndex: 10, symbol:
-    // ?clone@ScriptCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
+    // vIndex: 10
     virtual std::unique_ptr<class CommandOrigin> clone() const;
 
-    // vIndex: 17, symbol: ?canUseCommandsWithoutCheatsEnabled@ScriptCommandOrigin@@UEBA_NXZ
+    // vIndex: 17
     virtual bool canUseCommandsWithoutCheatsEnabled() const;
 
-    // vIndex: 18, symbol: ?isSelectorExpansionAllowed@ScriptCommandOrigin@@UEBA_NXZ
+    // vIndex: 18
     virtual bool isSelectorExpansionAllowed() const;
 
-    // vIndex: 23, symbol: ?getOriginType@ScriptCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
+    // vIndex: 23
     virtual ::CommandOriginType getOriginType() const;
 
-    // vIndex: 26, symbol:
-    // ?handleCommandOutputCallback@ScriptCommandOrigin@@UEBAXH$$QEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 26
     virtual void handleCommandOutputCallback(int, std::string&&) const;
 
-    // vIndex: 30, symbol: ?isValid@ScriptCommandOrigin@@UEBA_NXZ
+    // vIndex: 30
     virtual bool isValid() const;
 
-    // symbol:
-    // ??0ScriptCommandOrigin@@QEAA@AEAVServerLevel@@PEAVDimension@@V?$function@$$A6AXH$$QEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@std@@V?$optional@W4CommandPermissionLevel@@@4@@Z
     MCAPI ScriptCommandOrigin(
         class ServerLevel& origin,
         class Dimension*   dimension,

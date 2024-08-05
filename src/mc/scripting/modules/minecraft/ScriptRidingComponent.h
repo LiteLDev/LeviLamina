@@ -26,23 +26,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptRidingComponent@ScriptModuleMinecraft@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptRidingComponent() = default;
 
-    // vIndex: 1, symbol: ?_isValid@ScriptRidingComponent@ScriptModuleMinecraft@@MEBA_NXZ
+    // vIndex: 1
     virtual bool _isValid() const;
 
-    // symbol:
-    // ?getEntityRidingOn@ScriptRidingComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>
     getEntityRidingOn() const;
 
-    // symbol:
-    // ?bind@ScriptRidingComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptRidingComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptRidingComponent>
     bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&);
 
-    // symbol: ?ComponentId@ScriptRidingComponent@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ComponentId;
 
     // NOLINTEND

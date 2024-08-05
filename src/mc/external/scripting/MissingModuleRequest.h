@@ -18,10 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0MissingModuleRequest@Scripting@@QEAA@AEBUModuleDescriptor@1@0@Z
     MCAPI MissingModuleRequest(struct Scripting::ModuleDescriptor const&, struct Scripting::ModuleDescriptor const&);
 
-    // symbol: ??1MissingModuleRequest@Scripting@@QEAA@XZ
     MCAPI ~MissingModuleRequest();
 
     // NOLINTEND

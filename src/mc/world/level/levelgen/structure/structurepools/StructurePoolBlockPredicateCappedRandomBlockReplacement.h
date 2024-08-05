@@ -15,27 +15,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1StructurePoolBlockPredicateCappedRandomBlockReplacement@@UEAA@XZ
+    // vIndex: 0
     virtual ~StructurePoolBlockPredicateCappedRandomBlockReplacement() = default;
 
-    // vIndex: 1, symbol:
-    // ?test@StructurePoolBlockPredicateCappedRandomBlockReplacement@@UEBA_NAEBVBlock@@AEAVRandomize@@@Z
+    // vIndex: 1
     virtual bool test(class Block const& block, class Randomize&) const;
 
-    // vIndex: 2, symbol:
-    // ?test@StructurePoolBlockPredicateCappedRandomBlockReplacement@@UEBA_NAEBVBlockPos@@0AEAVRandomize@@@Z
+    // vIndex: 2
     virtual bool test(class BlockPos const& pos, class BlockPos const&, class Randomize&) const;
 
-    // vIndex: 3, symbol:
-    // ?finalize@StructurePoolBlockPredicateCappedRandomBlockReplacement@@UEAA_NAEAVBlockSource@@AEAVIRandom@@@Z
+    // vIndex: 3
     virtual bool finalize(class BlockSource& region, class IRandom& random);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol:
-    // ?_finalize@StructurePoolBlockPredicateCappedRandomBlockReplacement@@IEAA_NAEAVBlockSource@@AEAVIRandom@@V?$function@$$A6AXAEAVBlockPos@@@Z@std@@@Z
     MCAPI bool _finalize(class BlockSource& region, class IRandom& random, std::function<void(class BlockPos&)>);
 
     // NOLINTEND

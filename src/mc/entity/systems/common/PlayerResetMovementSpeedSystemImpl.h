@@ -4,8 +4,6 @@
 
 namespace PlayerResetMovementSpeedSystemImpl {
 // NOLINTBEGIN
-// symbol:
-// ?_doPlayerResetMovementSpeedSystem@PlayerResetMovementSpeedSystemImpl@@YAXAEBUMovementAttributesComponent@@AEAUMovementSpeedComponent@@@Z
 MCAPI void _doPlayerResetMovementSpeedSystem(struct MovementAttributesComponent const&, struct MovementSpeedComponent&);
 // NOLINTEND
 

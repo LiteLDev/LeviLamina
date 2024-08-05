@@ -11,11 +11,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1GameSpecificNetEventCallback@@UEAA@XZ
+    // vIndex: 0
     virtual ~GameSpecificNetEventCallback() = default;
 
-    // vIndex: 1, symbol:
-    // ?handle@GameSpecificNetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVResourcePackClientResponsePacket@@@Z
+    // vIndex: 1
     virtual void handle(class NetworkIdentifier const&, class ResourcePackClientResponsePacket const&);
 
     // NOLINTEND

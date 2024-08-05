@@ -27,22 +27,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ChemicalHeatBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~ChemicalHeatBlock() = default;
 
-    // vIndex: 61, symbol: ?canBeUsedInCommands@ChemicalHeatBlock@@UEBA_NAEBVBaseGameVersion@@@Z
+    // vIndex: 61
     virtual bool canBeUsedInCommands(class BaseGameVersion const& requiredBaseGameVersion) const;
 
-    // vIndex: 146, symbol: ?onPlace@ChemicalHeatBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 146
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 148, symbol: ?tick@ChemicalHeatBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 157, symbol: ?getExtraRenderLayers@ChemicalHeatBlock@@UEBAHXZ
+    // vIndex: 157
     virtual int getExtraRenderLayers() const;
 
-    // symbol: ??0ChemicalHeatBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI ChemicalHeatBlock(std::string const& nameId, int id);
 
     // NOLINTEND

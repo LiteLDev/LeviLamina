@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1DragonBaseGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~DragonBaseGoal();
 
     // NOLINTEND

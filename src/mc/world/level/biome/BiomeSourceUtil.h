@@ -4,11 +4,8 @@
 
 namespace BiomeSourceUtil {
 // NOLINTBEGIN
-// symbol: ?determineDestinationHeight@BiomeSourceUtil@@YAFAEBVDimension@@VBlockPos@@@Z
 MCAPI short determineDestinationHeight(class Dimension const& dimension, class BlockPos destination);
 
-// symbol:
-// ?locateBiome@BiomeSourceUtil@@YA?AV?$optional@VBlockPos@@@std@@AEBV?$function@$$A6A_NAEBVBiome@@@Z@3@AEBVBiomeSource@@AEBVBoundingBox@@I@Z
 MCAPI std::optional<class BlockPos> locateBiome(
     std::function<bool(class Biome const&)> const& predicate,
     class BiomeSource const&                       biomeSource,
@@ -16,8 +13,6 @@ MCAPI std::optional<class BlockPos> locateBiome(
     uint                                           resolution
 );
 
-// symbol:
-// ?locateBiome@BiomeSourceUtil@@YA?AV?$optional@VBlockPos@@@std@@AEBV?$function@$$A6A_NAEBVBiome@@@Z@3@AEBVBiomeSource@@AEBVBlockPos@@2I@Z
 MCAPI std::optional<class BlockPos> locateBiome(
     std::function<bool(class Biome const&)> const& predicate,
     class BiomeSource const&                       biomeSource,
@@ -26,8 +21,6 @@ MCAPI std::optional<class BlockPos> locateBiome(
     uint resolution
 );
 
-// symbol:
-// ?locateBiome@BiomeSourceUtil@@YA?AV?$optional@VBlockPos@@@std@@AEBV?$function@$$A6A_NAEBVBiome@@@Z@3@AEBVBiomeSource@@AEBVBlockPos@@VBoundingBox@@I@Z
 MCAPI std::optional<class BlockPos> locateBiome(
     std::function<bool(class Biome const&)> const& predicate,
     class BiomeSource const&                       biomeSource,

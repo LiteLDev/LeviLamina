@@ -15,17 +15,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1MineshaftPiece@@UEAA@XZ
+    // vIndex: 0
     virtual ~MineshaftPiece();
 
-    // vIndex: 6, symbol: ?isInInvalidLocation@MineshaftPiece@@UEAA_NAEAVBlockSource@@AEBVBoundingBox@@@Z
+    // vIndex: 6
     virtual bool isInInvalidLocation(class BlockSource& region, class BoundingBox const& chunkBB);
 
-    // vIndex: 10, symbol: ?canBeReplaced@MineshaftPiece@@UEAA_NAEAVBlockSource@@HHHAEBVBoundingBox@@@Z
+    // vIndex: 10
     virtual bool canBeReplaced(class BlockSource& region, int x, int y, int z, class BoundingBox const& chunkBB);
 
-    // symbol:
-    // ?createRandomShaftPiece@MineshaftPiece@@QEAA?AV?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@AEAUMineshaftData@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@3@AEAVRandom@@HHHHH@Z
     MCAPI std::unique_ptr<class StructurePiece> createRandomShaftPiece(
         struct MineshaftData&                               metadata,
         std::vector<std::unique_ptr<class StructurePiece>>& pieces,
@@ -37,8 +35,6 @@ public:
         int                                                 genDepth
     );
 
-    // symbol:
-    // ?generateAndAddPiece@MineshaftPiece@@QEAAPEAVStructurePiece@@AEAV2@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@HHHHH@Z
     MCAPI class StructurePiece* generateAndAddPiece(
         class StructurePiece&                               startPiece,
         std::vector<std::unique_ptr<class StructurePiece>>& pieces,
@@ -50,7 +46,6 @@ public:
         int                                                 depth
     );
 
-    // symbol: ?setPlanksBlock@MineshaftPiece@@QEAAXAEAVBlockSource@@AEBVBlock@@HHH@Z
     MCAPI void setPlanksBlock(class BlockSource& region, class Block const&, int x, int y, int z);
 
     // NOLINTEND

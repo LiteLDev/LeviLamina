@@ -10,10 +10,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0RailMovementComponent@@QEAA@XZ
     MCAPI RailMovementComponent();
 
-    // symbol: ?getMaxSpeed@RailMovementComponent@@QEBAMXZ
     MCAPI float getMaxSpeed() const;
 
     // NOLINTEND

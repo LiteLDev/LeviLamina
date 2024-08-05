@@ -12,7 +12,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1NbtToBlockCache@BlockSerializationUtils@@QEAA@XZ
     MCAPI ~NbtToBlockCache();
 
     // NOLINTEND

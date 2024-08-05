@@ -11,8 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0VehicleRenderingRidingOffsetComponent@@QEAA@AEBV?$vector@URenderingRidingOffsetInfo@@V?$allocator@URenderingRidingOffsetInfo@@@std@@@std@@@Z
     MCAPI explicit VehicleRenderingRidingOffsetComponent(std::vector<struct RenderingRidingOffsetInfo> const&);
 
     // NOLINTEND

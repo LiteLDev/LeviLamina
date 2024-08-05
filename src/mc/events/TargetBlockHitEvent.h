@@ -10,10 +10,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0TargetBlockHitEvent@@QEAA@AEBU0@@Z
     MCAPI TargetBlockHitEvent(struct TargetBlockHitEvent const&);
 
-    // symbol: ??1TargetBlockHitEvent@@QEAA@XZ
     MCAPI ~TargetBlockHitEvent();
 
     // NOLINTEND

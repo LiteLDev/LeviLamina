@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?toServerNetworkSystem@ClientOrServerNetworkSystemRef@@QEAAAEAVServerNetworkSystem@@XZ
     MCAPI class ServerNetworkSystem& toServerNetworkSystem();
 
     // NOLINTEND

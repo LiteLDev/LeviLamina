@@ -12,7 +12,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?isReadyToSimulate@MovementPackets@@QEBA_NXZ
     MCAPI bool isReadyToSimulate() const;
 
     // NOLINTEND

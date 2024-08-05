@@ -26,46 +26,42 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BlockItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~BlockItem();
 
-    // vIndex: 44, symbol: ?isDestructive@BlockItem@@UEBA_NH@Z
+    // vIndex: 44
     virtual bool isDestructive(int auxValue) const;
 
-    // vIndex: 56, symbol: ?isValidAuxValue@BlockItem@@UEBA_NH@Z
+    // vIndex: 56
     virtual bool isValidAuxValue(int auxValue) const;
 
-    // vIndex: 83, symbol:
-    // ?buildDescriptionId@BlockItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+    // vIndex: 83
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 104, symbol: ?getIconInfo@BlockItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
+    // vIndex: 104
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const& item, int, bool) const;
 
-    // vIndex: 108, symbol: ?getLightEmission@BlockItem@@UEBA?AUBrightness@@H@Z
+    // vIndex: 108
     virtual struct Brightness getLightEmission(int data) const;
 
-    // vIndex: 109, symbol: ?getIconYOffset@BlockItem@@UEBAHXZ
+    // vIndex: 109
     virtual int getIconYOffset() const;
 
-    // vIndex: 116, symbol: ?_calculatePlacePos@BlockItem@@MEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
+    // vIndex: 116
     virtual bool
     _calculatePlacePos(class ItemStackBase& instance, class Actor& entity, uchar& face, class BlockPos& pos) const;
 
-    // vIndex: 118, symbol:
-    // ?_useOn@BlockItem@@MEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+    // vIndex: 118
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const& clickPos)
         const;
 
-    // symbol: ??0BlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVHashedString@@@Z
     MCAPI BlockItem(std::string const&, int, class HashedString const&);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?_displayHeightLimitErrorMessages@BlockItem@@IEBAXAEAVActor@@H_N@Z
     MCAPI void _displayHeightLimitErrorMessages(class Actor& actor, int y, bool) const;
 
     // NOLINTEND

@@ -10,7 +10,6 @@ namespace MovementDataExtractionUtility { struct MovementSnapshotComponent; }
 
 namespace MovementDataExtractionUtility {
 // NOLINTBEGIN
-// symbol: ?extractPackedSnapshot@MovementDataExtractionUtility@@YAXAEAVEntityRegistry@@0AEBVStrictEntityContext@@1_N@Z
 MCAPI void extractPackedSnapshot(
     class EntityRegistry&,
     class EntityRegistry&,
@@ -19,7 +18,6 @@ MCAPI void extractPackedSnapshot(
     bool
 );
 
-// symbol: ?getOrCreateSnapshotExtractors@MovementDataExtractionUtility@@YAAEBUExtractors@1@XZ
 MCAPI struct MovementDataExtractionUtility::Extractors const& getOrCreateSnapshotExtractors();
 // NOLINTEND
 

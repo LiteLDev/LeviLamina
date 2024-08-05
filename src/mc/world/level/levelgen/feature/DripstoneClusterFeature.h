@@ -14,11 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DripstoneClusterFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~DripstoneClusterFeature() = default;
 
-    // vIndex: 1, symbol:
-    // ?place@DripstoneClusterFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
+    // vIndex: 1
     virtual std::optional<class BlockPos> place(
         class IBlockWorldGenAPI& target,
         class BlockPos const&    pos,
@@ -26,18 +25,15 @@ public:
         class RenderParams&      renderParams
     ) const;
 
-    // vIndex: 2, symbol:
-    // ?isValidPlacement@IFeature@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 2
     virtual bool isValidPlacement(std::string const&);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_getDripstoneHeight@DripstoneClusterFeature@@CAHAEAVRandom@@HHMH@Z
     MCAPI static int _getDripstoneHeight(class Random& random, int dx, int dz, float, int maxHeight);
 
-    // symbol: ?_placeColumn@DripstoneClusterFeature@@CA_NAEAVIBlockWorldGenAPI@@AEAVRandom@@AEBVBlockPos@@HHMNHM@Z
     MCAPI static bool _placeColumn(
         class IBlockWorldGenAPI& target,
         class Random&            random,
@@ -50,7 +46,6 @@ public:
         float
     );
 
-    // symbol: ?_replaceBlocksWithDripstoneBlocks@DripstoneClusterFeature@@CAXAEAVIBlockWorldGenAPI@@AEBVBlockPos@@HE@Z
     MCAPI static void _replaceBlocksWithDripstoneBlocks(
         class IBlockWorldGenAPI& target,
         class BlockPos const&,

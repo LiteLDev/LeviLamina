@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1BossbarManager@@QEAA@XZ
     MCAPI ~BossbarManager();
 
     // NOLINTEND

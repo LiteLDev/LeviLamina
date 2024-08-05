@@ -29,7 +29,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1FromRequest@ScriptFormPromiseTracker@@QEAA@XZ
         MCAPI ~FromRequest();
 
         // NOLINTEND
@@ -47,22 +46,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?onEvent@ScriptFormPromiseTracker@@UEAA?AW4EventResult@@AEBUPlayerFormResponseEvent@@@Z
     MCVAPI ::EventResult onEvent(struct PlayerFormResponseEvent const& formResponseEvent);
 
-    // symbol: ?onEvent@ScriptFormPromiseTracker@@UEAA?AW4EventResult@@AEBUPlayerFormCloseEvent@@@Z
     MCVAPI ::EventResult onEvent(struct PlayerFormCloseEvent const& formCloseEvent);
 
-    // symbol: ??0ScriptFormPromiseTracker@@QEAA@XZ
     MCAPI ScriptFormPromiseTracker();
 
-    // symbol: ?handleFormResponse@ScriptFormPromiseTracker@@QEAAXIAEBVValue@Json@@@Z
     MCAPI void handleFormResponse(uint formId, class Json::Value const&);
 
-    // symbol: ?handlePlayerQuit@ScriptFormPromiseTracker@@QEAAXAEBVNetworkIdentifier@@@Z
     MCAPI void handlePlayerQuit(class NetworkIdentifier const& playerId);
 
-    // symbol: ?rejectAllForShutdown@ScriptFormPromiseTracker@@QEAAXXZ
     MCAPI void rejectAllForShutdown();
 
     // NOLINTEND

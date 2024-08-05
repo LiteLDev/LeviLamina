@@ -7,8 +7,6 @@
 
 namespace GameRuleUtils {
 // NOLINTBEGIN
-// symbol:
-// ?setGameRule@GameRuleUtils@@YAXAEAVLevel@@AEBUGameRuleId@@V?$variant@HM_N@std@@PEAVValidationError@GameRule@@_N@Z
 MCAPI void setGameRule(
     class Level&,
     struct GameRuleId const&,

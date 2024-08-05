@@ -9,14 +9,10 @@
 
 namespace RideJumpTriggerSystem {
 // NOLINTBEGIN
-// symbol: ?createPassengerSystem@RideJumpTriggerSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createPassengerSystem();
 
-// symbol: ?createVehicleSystem@RideJumpTriggerSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createVehicleSystem();
 
-// symbol:
-// ?tickPassengerJumpTriggerSystem@RideJumpTriggerSystem@@YAXU?$type_list@U?$Include@UPlayerInputRequestComponent@@@@@entt@@AEBVStrictEntityContext@@AEBUMoveInputComponent@@AEBUPassengerComponent@@AEAUJumpRidingScaleComponent@@AEAUVanillaClientGameplayComponent@@AEBV?$ViewT@VStrictEntityContext@@$$CBUVehicleComponent@@$$CBUActorDataFlagComponent@@UVehicleInputIntentComponent@@V?$Optional@$$CBUOnGroundFlagComponent@@@@V?$Optional@$$CBUPassengerComponent@@@@@@@Z
 MCAPI void tickPassengerJumpTriggerSystem(entt::type_list<struct Include<struct PlayerInputRequestComponent>>, class StrictEntityContext const&, struct MoveInputComponent const&, struct PassengerComponent const&, struct JumpRidingScaleComponent&, struct VanillaClientGameplayComponent&, class ViewT<class StrictEntityContext, struct VehicleComponent const, struct ActorDataFlagComponent const, struct VehicleInputIntentComponent, class Optional<struct OnGroundFlagComponent const>, class Optional<struct PassengerComponent const>> const&);
 // NOLINTEND
 

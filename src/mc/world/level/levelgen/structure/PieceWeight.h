@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1PieceWeight@@QEAA@XZ
     MCAPI ~PieceWeight();
 
     // NOLINTEND

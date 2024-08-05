@@ -19,7 +19,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1ReleaseDetails@ScriptBindingReleaseList@@QEAA@XZ
         MCAPI ~ReleaseDetails();
 
         // NOLINTEND
@@ -33,8 +32,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0ScriptBindingReleaseList@@QEAA@V?$vector@UReleaseDetails@ScriptBindingReleaseList@@V?$allocator@UReleaseDetails@ScriptBindingReleaseList@@@std@@@std@@@Z
     MCAPI explicit ScriptBindingReleaseList(std::vector<struct ScriptBindingReleaseList::ReleaseDetails>);
 
     // NOLINTEND

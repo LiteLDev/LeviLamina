@@ -16,8 +16,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?bind@LessThanOrEqualsComparison@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@ULessThanOrEqualsComparison@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::LessThanOrEqualsComparison>
     bind();
 

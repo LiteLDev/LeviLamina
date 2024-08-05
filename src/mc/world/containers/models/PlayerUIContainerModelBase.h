@@ -15,38 +15,37 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ?containerContentChanged@PlayerUIContainerModelBase@@UEAAXH@Z
+    // vIndex: 0
     virtual void containerContentChanged(int slot);
 
-    // vIndex: 1, symbol: __gen_??1PlayerUIContainerModelBase@@UEAA@XZ
+    // vIndex: 1
     virtual ~PlayerUIContainerModelBase() = default;
 
-    // vIndex: 2, symbol: ?postInit@PlayerUIContainerModelBase@@UEAAXXZ
+    // vIndex: 2
     virtual void postInit();
 
-    // vIndex: 3, symbol: ?releaseResources@PlayerUIContainerModelBase@@UEAAXXZ
+    // vIndex: 3
     virtual void releaseResources();
 
-    // vIndex: 7, symbol: ?getContainerWeakRef@PlayerUIContainerModelBase@@UEBA?AVContainerWeakRef@@XZ
+    // vIndex: 7
     virtual class ContainerWeakRef getContainerWeakRef() const;
 
-    // vIndex: 14, symbol: ?isValid@PlayerUIContainerModelBase@@UEAA_NXZ
+    // vIndex: 14
     virtual bool isValid();
 
-    // vIndex: 21, symbol: ?_getContainer@PlayerUIContainerModelBase@@MEBAPEAVContainer@@XZ
+    // vIndex: 21
     virtual class Container* _getContainer() const;
 
-    // vIndex: 22, symbol: ?_getContainerOffset@PlayerUIContainerModelBase@@MEBAHXZ
+    // vIndex: 22
     virtual int _getContainerOffset() const;
 
-    // vIndex: 24, symbol: ?_onItemChanged@PlayerUIContainerModelBase@@MEAAXHAEBVItemStack@@0@Z
+    // vIndex: 24
     virtual void _onItemChanged(int modelSlot, class ItemStack const& oldItem, class ItemStack const& newItem);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?_refreshContainer@PlayerUIContainerModelBase@@IEAAX_N@Z
     MCAPI void _refreshContainer(bool initial);
 
     // NOLINTEND

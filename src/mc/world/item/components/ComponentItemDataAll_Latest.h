@@ -10,13 +10,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ComponentItemDataAll_Latest@@QEAA@XZ
     MCAPI ComponentItemDataAll_Latest();
 
-    // symbol: ??0ComponentItemDataAll_Latest@@QEAA@$$QEAU0@@Z
     MCAPI ComponentItemDataAll_Latest(struct ComponentItemDataAll_Latest&&);
 
-    // symbol: ??1ComponentItemDataAll_Latest@@QEAA@XZ
     MCAPI ~ComponentItemDataAll_Latest();
 
     // NOLINTEND

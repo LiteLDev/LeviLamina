@@ -26,17 +26,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1RepeaterCapacitor@@UEAA@XZ
+    // vIndex: 0
     virtual ~RepeaterCapacitor() = default;
 
-    // vIndex: 1, symbol: ?getStrength@RepeaterCapacitor@@UEBAHXZ
+    // vIndex: 1
     virtual int getStrength() const;
 
-    // vIndex: 3, symbol: ?setStrength@RepeaterCapacitor@@UEAAXH@Z
+    // vIndex: 3
     virtual void setStrength(int strength);
 
-    // vIndex: 11, symbol:
-    // ?addSource@RepeaterCapacitor@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
+    // vIndex: 11
     virtual bool addSource(
         class CircuitSceneGraph&         graph,
         class CircuitTrackingInfo const& info,
@@ -44,25 +43,23 @@ public:
         bool&                            bDirectlyPowered
     );
 
-    // vIndex: 13, symbol: ?checkLock@RepeaterCapacitor@@UEAAXAEAVCircuitSystem@@AEBVBlockPos@@@Z
+    // vIndex: 13
     virtual void checkLock(class CircuitSystem& system, class BlockPos const& pos);
 
-    // vIndex: 14, symbol: ?evaluate@RepeaterCapacitor@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
+    // vIndex: 14
     virtual bool evaluate(class CircuitSystem& system, class BlockPos const& pos);
 
-    // vIndex: 15, symbol: ?cacheValues@RepeaterCapacitor@@UEAAXAEAVCircuitSystem@@AEBVBlockPos@@@Z
+    // vIndex: 15
     virtual void cacheValues(class CircuitSystem& system, class BlockPos const& pos);
 
-    // vIndex: 16, symbol: ?updateDependencies@RepeaterCapacitor@@UEAAXAEAVCircuitSceneGraph@@AEBVBlockPos@@@Z
+    // vIndex: 16
     virtual void updateDependencies(class CircuitSceneGraph& system, class BlockPos const& pos);
 
-    // vIndex: 23, symbol: ?getCircuitComponentType@RepeaterCapacitor@@UEBA?AW4CircuitComponentType@@XZ
+    // vIndex: 23
     virtual ::CircuitComponentType getCircuitComponentType() const;
 
-    // symbol: ??0RepeaterCapacitor@@QEAA@XZ
     MCAPI RepeaterCapacitor();
 
-    // symbol: ?setDelay@RepeaterCapacitor@@QEAAXH@Z
     MCAPI void setDelay(int delay);
 
     // NOLINTEND

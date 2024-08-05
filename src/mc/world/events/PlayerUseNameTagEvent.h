@@ -10,10 +10,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0PlayerUseNameTagEvent@@QEAA@AEBU0@@Z
     MCAPI PlayerUseNameTagEvent(struct PlayerUseNameTagEvent const&);
 
-    // symbol: ??1PlayerUseNameTagEvent@@QEAA@XZ
     MCAPI ~PlayerUseNameTagEvent();
 
     // NOLINTEND

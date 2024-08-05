@@ -14,21 +14,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SimplePositionalRandomFactory@@UEAA@XZ
+    // vIndex: 0
     virtual ~SimplePositionalRandomFactory() = default;
 
-    // vIndex: 1, symbol:
-    // ?forBlockPos@SimplePositionalRandomFactory@@UEBA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@AEBVBlockPos@@@Z
+    // vIndex: 1
     virtual std::unique_ptr<class IRandom> forBlockPos(class BlockPos const& blockPos) const;
 
-    // vIndex: 2, symbol:
-    // ?forString@SimplePositionalRandomFactory@@UEBA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+    // vIndex: 2
     virtual std::unique_ptr<class IRandom> forString(std::string const& string) const;
 
-    // symbol: ??0SimplePositionalRandomFactory@@QEAA@_J@Z
     MCAPI explicit SimplePositionalRandomFactory(int64 seed);
 
-    // symbol: ?forBlockPosImpl@SimplePositionalRandomFactory@@QEBA?AVSimpleRandom@@AEBVBlockPos@@@Z
     MCAPI class SimpleRandom forBlockPosImpl(class BlockPos const& blockPos) const;
 
     // NOLINTEND

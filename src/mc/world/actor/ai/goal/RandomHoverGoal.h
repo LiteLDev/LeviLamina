@@ -15,26 +15,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1RandomHoverGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~RandomHoverGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@RandomHoverGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@RandomHoverGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@RandomHoverGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 6, symbol: ?tick@RandomHoverGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@RandomHoverGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0RandomHoverGoal@@QEAA@AEAVMob@@MHMMMUIntRange@@@Z
     MCAPI RandomHoverGoal(
         class Mob&      mob,
         float           speedMultiplier,
@@ -49,13 +47,10 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?_computeNewTarget@RandomHoverGoal@@IEAA_NXZ
     MCAPI bool _computeNewTarget();
 
-    // symbol: ?_findNewTarget@RandomHoverGoal@@IEBA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@XZ
     MCAPI std::unique_ptr<class Path> _findNewTarget() const;
 
-    // symbol: ?_moveToTarget@RandomHoverGoal@@IEAAXXZ
     MCAPI void _moveToTarget();
 
     // NOLINTEND

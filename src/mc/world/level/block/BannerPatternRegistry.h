@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1BannerPatternRegistry@@QEAA@XZ
     MCAPI ~BannerPatternRegistry();
 
     // NOLINTEND

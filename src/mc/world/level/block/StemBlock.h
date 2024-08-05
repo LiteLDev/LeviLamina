@@ -27,58 +27,55 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1StemBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~StemBlock() = default;
 
-    // vIndex: 11, symbol: ?getVisualShape@StemBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
+    // vIndex: 11
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
 
-    // vIndex: 30, symbol: ?isStemBlock@StemBlock@@UEBA_NXZ
+    // vIndex: 30
     virtual bool isStemBlock() const;
 
-    // vIndex: 57, symbol: ?canContainLiquid@StemBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // vIndex: 80, symbol: ?onFertilized@StemBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
+    // vIndex: 80
     virtual bool
     onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor*, ::FertilizerType fType) const;
 
-    // vIndex: 82, symbol: ?canBeFertilized@StemBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 82
     virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
 
-    // vIndex: 87, symbol: ?mayPlaceOn@StemBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 87
     virtual bool mayPlaceOn(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 93, symbol: ?neighborChanged@StemBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 93
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@StemBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 121, symbol: ?getColor@StemBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 121
     virtual int getColor(class Block const& block) const;
 
-    // vIndex: 122, symbol: ?getColor@StemBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 122
     virtual int getColor(class BlockSource&, class BlockPos const&, class Block const& block) const;
 
-    // vIndex: 123, symbol: ?getColorAtPos@StemBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 123
     virtual int getColorAtPos(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 149, symbol: ?randomTick@StemBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 149
     virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // symbol: ??0StemBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVBlockLegacy@@@Z
     MCAPI StemBlock(std::string const& nameId, int id, class BlockLegacy const& fruit);
 
-    // symbol: ?getFruitBlock@StemBlock@@QEBAAEBVBlockLegacy@@XZ
     MCAPI class BlockLegacy const& getFruitBlock() const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?getGrowthSpeed@StemBlock@@AEBAMAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI float getGrowthSpeed(class BlockSource& region, class BlockPos const& pos) const;
 
     // NOLINTEND

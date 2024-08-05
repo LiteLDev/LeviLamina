@@ -35,41 +35,34 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1Panda@@UEAA@XZ
+    // vIndex: 10
     virtual ~Panda() = default;
 
-    // vIndex: 68, symbol: ?getAmbientSound@Panda@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 68
     virtual ::Puv::Legacy::LevelSoundEvent getAmbientSound() const;
 
-    // vIndex: 147, symbol: ?readAdditionalSaveData@Panda@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 183, symbol: ?setTransitioningSitting@Panda@@UEAAX_N@Z
+    // vIndex: 183
     virtual void setTransitioningSitting(bool value);
 
-    // symbol: ??0Panda@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Panda(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?getLieOnBackAmount@Panda@@QEBAMM@Z
     MCAPI float getLieOnBackAmount(float a) const;
 
-    // symbol: ?getSitAmount@Panda@@QEBAMM@Z
     MCAPI float getSitAmount(float a) const;
 
-    // symbol: ?postNormalTick@Panda@@QEAAXXZ
     MCAPI void postNormalTick();
 
-    // symbol: ?updateLaying@Panda@@QEAAXXZ
     MCAPI void updateLaying();
 
-    // symbol: ?updateRollAmount@Panda@@QEAAXXZ
     MCAPI void updateRollAmount();
 
-    // symbol: ?updateSitting@Panda@@QEAAXXZ
     MCAPI void updateSitting();
 
     // NOLINTEND

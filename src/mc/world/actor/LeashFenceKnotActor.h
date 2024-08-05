@@ -35,59 +35,53 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 4, symbol:
-    // ?reloadHardcoded@LeashFenceKnotActor@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 4
     virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 5, symbol:
-    // ?reloadHardcodedClient@LeashFenceKnotActor@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 5
     virtual void reloadHardcodedClient(::ActorInitializationMethod, class VariantParameterList const&);
 
-    // vIndex: 10, symbol: __gen_??1LeashFenceKnotActor@@UEAA@XZ
+    // vIndex: 10
     virtual ~LeashFenceKnotActor() = default;
 
-    // vIndex: 13, symbol: ?remove@LeashFenceKnotActor@@UEAAXXZ
+    // vIndex: 13
     virtual void remove();
 
-    // vIndex: 23, symbol: ?teleportTo@LeashFenceKnotActor@@UEAAXAEBVVec3@@_NHH1@Z
+    // vIndex: 23
     virtual void teleportTo(class Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool);
 
-    // vIndex: 38, symbol: ?getShadowRadius@LeashFenceKnotActor@@UEBAMXZ
+    // vIndex: 38
     virtual float getShadowRadius() const;
 
-    // vIndex: 124, symbol: ?getInteraction@LeashFenceKnotActor@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z
+    // vIndex: 124
     virtual bool getInteraction(class Player& player, class ActorInteraction& interaction, class Vec3 const& location);
 
-    // vIndex: 147, symbol: ?readAdditionalSaveData@LeashFenceKnotActor@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 148, symbol: ?addAdditionalSaveData@LeashFenceKnotActor@@UEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 151, symbol: ?getWidth@LeashFenceKnotActor@@UEBAHXZ
+    // vIndex: 151
     virtual int getWidth() const;
 
-    // vIndex: 152, symbol: ?getHeight@LeashFenceKnotActor@@UEBAHXZ
+    // vIndex: 152
     virtual int getHeight() const;
 
-    // vIndex: 153, symbol: ?dropItem@LeashFenceKnotActor@@UEAAXXZ
+    // vIndex: 153
     virtual void dropItem();
 
-    // vIndex: 155, symbol: ?wouldSurvive@LeashFenceKnotActor@@UEAA_NAEAVBlockSource@@@Z
+    // vIndex: 155
     virtual bool wouldSurvive(class BlockSource& region);
 
-    // symbol:
-    // ??0LeashFenceKnotActor@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI LeashFenceKnotActor(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?numberofAnimalsAttached@LeashFenceKnotActor@@QEAAHXZ
     MCAPI int numberofAnimalsAttached();
 
-    // symbol: ?removeAnimals@LeashFenceKnotActor@@QEAAXXZ
     MCAPI void removeAnimals();
 
     // NOLINTEND

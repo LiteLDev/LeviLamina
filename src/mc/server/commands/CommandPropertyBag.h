@@ -19,32 +19,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CommandPropertyBag@@UEAA@XZ
+    // vIndex: 0
     virtual ~CommandPropertyBag() = default;
 
-    // symbol: ??0CommandPropertyBag@@QEAA@XZ
     MCAPI CommandPropertyBag();
 
-    // symbol: ??0CommandPropertyBag@@QEAA@AEBVValue@Json@@@Z
     MCAPI explicit CommandPropertyBag(class Json::Value const& jsonValue);
 
-    // symbol:
-    // ?addToResultList@CommandPropertyBag@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
     MCAPI void addToResultList(std::string const& key, std::string const& element);
 
-    // symbol:
-    // ?clone@CommandPropertyBag@@QEBA?AV?$unique_ptr@VCommandPropertyBag@@U?$default_delete@VCommandPropertyBag@@@std@@@std@@XZ
     MCAPI std::unique_ptr<class CommandPropertyBag> clone() const;
 
-    // symbol:
-    // ?set@CommandPropertyBag@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@@Z
     MCAPI void set(std::string const& key, class BlockPos const& pos);
 
-    // symbol:
-    // ?set@CommandPropertyBag@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVValue@Json@@@Z
     MCAPI void set(std::string const& key, class Json::Value const& val);
 
-    // symbol: ?set@CommandPropertyBag@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VVec3@@@Z
     MCAPI void set(std::string const& key, class Vec3 size);
 
     // NOLINTEND

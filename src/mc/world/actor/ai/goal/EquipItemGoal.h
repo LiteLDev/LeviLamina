@@ -30,14 +30,11 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __gen_??1Definition@EquipItemGoal@@UEAA@XZ
+        // vIndex: 0
         virtual ~Definition() = default;
 
-        // symbol: ?initialize@Definition@EquipItemGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext& entity, class EquipItemGoal& goal) const;
 
-        // symbol:
-        // ?buildSchema@Definition@EquipItemGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDefinition@EquipItemGoal@@@JsonUtil@@@4@@Z
         MCAPI static void buildSchema(
             std::string const& name,
             std::shared_ptr<
@@ -55,33 +52,29 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1EquipItemGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~EquipItemGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@EquipItemGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@EquipItemGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 6, symbol: ?tick@EquipItemGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@EquipItemGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0EquipItemGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit EquipItemGoal(class Mob& mob);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_dropItem@EquipItemGoal@@AEBAXAEBVItemStack@@@Z
     MCAPI void _dropItem(class ItemStack const& item) const;
 
-    // symbol: ?_sendMobEquipmentPacket@EquipItemGoal@@AEBAXVMobEquipmentPacket@@@Z
     MCAPI void _sendMobEquipmentPacket(class MobEquipmentPacket) const;
 
     // NOLINTEND

@@ -16,10 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getValue@FloatRange@@QEBAMAEAVRandom@@@Z
     MCAPI float getValue(class Random& random) const;
 
-    // symbol: ?parseJson@FloatRange@@QEAA_NAEBVValue@Json@@MM@Z
     MCAPI bool parseJson(class Json::Value const& node, float minDefault, float maxDefault);
 
     // NOLINTEND

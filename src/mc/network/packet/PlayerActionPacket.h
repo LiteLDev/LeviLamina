@@ -26,37 +26,30 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1PlayerActionPacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~PlayerActionPacket();
 
-    // vIndex: 1, symbol: ?getId@PlayerActionPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@PlayerActionPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@PlayerActionPacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 8, symbol:
-    // ?_read@PlayerActionPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0PlayerActionPacket@@QEAA@XZ
     MCAPI PlayerActionPacket();
 
-    // symbol: ??0PlayerActionPacket@@QEAA@W4PlayerActionType@@VActorRuntimeID@@@Z
     MCAPI PlayerActionPacket(::PlayerActionType action, class ActorRuntimeID runtimeId);
 
-    // symbol: ??0PlayerActionPacket@@QEAA@W4PlayerActionType@@AEBVBlockPos@@VActorRuntimeID@@@Z
     MCAPI PlayerActionPacket(::PlayerActionType action, class BlockPos const& pos, class ActorRuntimeID runtimeId);
 
-    // symbol: ??0PlayerActionPacket@@QEAA@W4PlayerActionType@@AEBVBlockPos@@HVActorRuntimeID@@@Z
     MCAPI
     PlayerActionPacket(::PlayerActionType action, class BlockPos const& pos, int data, class ActorRuntimeID runtimeId);
 
-    // symbol: ??0PlayerActionPacket@@QEAA@W4PlayerActionType@@AEBVBlockPos@@EVActorRuntimeID@@@Z
     MCAPI PlayerActionPacket(
         ::PlayerActionType    action,
         class BlockPos const& pos,
@@ -64,7 +57,6 @@ public:
         class ActorRuntimeID  runtimeId
     );
 
-    // symbol: ??0PlayerActionPacket@@QEAA@W4PlayerActionType@@AEBVBlockPos@@1HVActorRuntimeID@@@Z
     MCAPI PlayerActionPacket(
         ::PlayerActionType    action,
         class BlockPos const& pos,
@@ -73,10 +65,8 @@ public:
         class ActorRuntimeID runtimeId
     );
 
-    // symbol: ?getIsFromServerPlayerMovementSystem@PlayerActionPacket@@QEBA_NXZ
     MCAPI bool getIsFromServerPlayerMovementSystem() const;
 
-    // symbol: ?setFromServerPlayerMovementSystem@PlayerActionPacket@@QEAAX_N@Z
     MCAPI void setFromServerPlayerMovementSystem(bool);
 
     // NOLINTEND

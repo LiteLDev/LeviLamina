@@ -17,8 +17,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?bind@ScriptInputPermissionCategory@ScriptModuleMinecraft@@SA?AV?$EnumBindingBuilder@W4ClientInputLockCategory@@W41@@Scripting@@XZ
     MCAPI static class Scripting::EnumBindingBuilder<::ClientInputLockCategory, ::ClientInputLockCategory> bind();
 
     // NOLINTEND

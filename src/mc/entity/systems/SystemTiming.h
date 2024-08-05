@@ -17,7 +17,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1SystemTiming@@QEAA@XZ
     MCAPI ~SystemTiming();
 
     // NOLINTEND

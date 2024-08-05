@@ -14,26 +14,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SwiftSneakEnchant@@UEAA@XZ
+    // vIndex: 0
     virtual ~SwiftSneakEnchant() = default;
 
-    // vIndex: 2, symbol: ?getMinCost@SwiftSneakEnchant@@UEBAHH@Z
+    // vIndex: 2
     virtual int getMinCost(int level) const;
 
-    // vIndex: 3, symbol: ?getMaxCost@SwiftSneakEnchant@@UEBAHH@Z
+    // vIndex: 3
     virtual int getMaxCost(int level) const;
 
-    // vIndex: 5, symbol: ?getMaxLevel@SwiftSneakEnchant@@UEBAHXZ
+    // vIndex: 5
     virtual int getMaxLevel() const;
 
-    // vIndex: 14, symbol: ?isTreasureOnly@SwiftSneakEnchant@@UEBA_NXZ
+    // vIndex: 14
     virtual bool isTreasureOnly() const;
 
-    // vIndex: 15, symbol: ?isDiscoverable@SwiftSneakEnchant@@UEBA_NXZ
+    // vIndex: 15
     virtual bool isDiscoverable() const;
 
-    // symbol:
-    // ??0SwiftSneakEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_view@DU?$char_traits@D@std@@@std@@2HH@Z
     MCAPI SwiftSneakEnchant(
         ::Enchant::Type      type,
         ::Enchant::Frequency frequency,
@@ -43,10 +41,8 @@ public:
         int                  secondarySlots
     );
 
-    // symbol: ?getExtraSneakingMovementFactor@SwiftSneakEnchant@@SAMAEBVActor@@@Z
     MCAPI static float getExtraSneakingMovementFactor(class Actor const& entity);
 
-    // symbol: ?getLevel@SwiftSneakEnchant@@SAHAEBVActor@@@Z
     MCAPI static int getLevel(class Actor const& entity);
 
     // NOLINTEND

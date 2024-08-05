@@ -49,14 +49,13 @@ protected:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1DataItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~DataItem();
 
-    // vIndex: 1, symbol: ?isDataEqual@DataItem@@UEBA_NAEBV1@@Z
+    // vIndex: 1
     virtual bool isDataEqual(class DataItem const&) const;
 
-    // vIndex: 2, symbol:
-    // ?clone@?$DataItem2@M@@UEBA?AV?$unique_ptr@VDataItem@@U?$default_delete@VDataItem@@@std@@@std@@XZ
+    // vIndex: 2
     virtual std::unique_ptr<class DataItem> clone() const = 0;
 
     // NOLINTEND

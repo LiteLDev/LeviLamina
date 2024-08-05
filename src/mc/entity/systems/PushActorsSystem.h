@@ -11,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@PushActorsSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
-    // symbol: ?pushActors@PushActorsSystem@@SAXAEAVActorOwnerComponent@@@Z
     MCAPI static void pushActors(class ActorOwnerComponent&);
 
     // NOLINTEND

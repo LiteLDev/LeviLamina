@@ -16,8 +16,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?bind@ScriptItemEnchantmentTypeNotCompatibleError@ScriptModuleMinecraft@@SA?AV?$ErrorBindingBuilder@UScriptItemEnchantmentTypeNotCompatibleError@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ErrorBindingBuilder<
         struct ScriptModuleMinecraft::ScriptItemEnchantmentTypeNotCompatibleError>
     bind();

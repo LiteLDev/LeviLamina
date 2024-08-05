@@ -16,8 +16,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0FilterParamDefinition@@QEAA@W4FilterParamType@@W4FilterParamRequirement@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VFilterInput@@UFilterStringMap@@@Z
     MCAPI FilterParamDefinition(
         ::FilterParamType        type,
         ::FilterParamRequirement requirement,
@@ -26,8 +24,6 @@ public:
         struct FilterStringMap   stringMap
     );
 
-    // symbol:
-    // ??0FilterParamDefinition@@QEAA@W4FilterParamType@@W4FilterParamRequirement@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4FilterParamOption@@VFilterInput@@UFilterStringMap@@@Z
     MCAPI FilterParamDefinition(
         ::FilterParamType        type,
         ::FilterParamRequirement requirement,
@@ -37,7 +33,6 @@ public:
         struct FilterStringMap   stringMap
     );
 
-    // symbol: ??1FilterParamDefinition@@QEAA@XZ
     MCAPI ~FilterParamDefinition();
 
     // NOLINTEND

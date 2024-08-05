@@ -14,10 +14,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1TargetGoalDefinition@@UEAA@XZ
+    // vIndex: 0
     virtual ~TargetGoalDefinition();
 
-    // symbol: ?initialize@TargetGoalDefinition@@QEBAXAEAVEntityContext@@AEAVTargetGoal@@@Z
     MCAPI void initialize(class EntityContext& entity, class TargetGoal& goal) const;
 
     // NOLINTEND

@@ -19,13 +19,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LegacyEventItemComponent@@UEAA@XZ
+    // vIndex: 0
     virtual ~LegacyEventItemComponent() = default;
 
-    // vIndex: 9, symbol: ?_initializeComponent@LegacyEventItemComponent@@UEAAXXZ
+    // vIndex: 9
     virtual void _initializeComponent();
 
-    // symbol: ?getIdentifier@LegacyEventItemComponent@@SAAEBVHashedString@@XZ
     MCAPI static class HashedString const& getIdentifier();
 
     // NOLINTEND

@@ -19,8 +19,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?bind@ScriptBlockComponents@ScriptModuleMinecraft@@SAXAEAVModuleBindingBuilder@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
     MCAPI static void
     bind(class Scripting::ModuleBindingBuilder&, class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&);
 

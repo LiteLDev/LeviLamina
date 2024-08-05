@@ -16,8 +16,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?bind@ScriptStructureCreateOptions@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@UScriptStructureCreateOptions@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptStructureCreateOptions>
     bind();
 

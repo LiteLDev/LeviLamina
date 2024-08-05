@@ -22,7 +22,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0BiomeInit@OperationNodeFilters@@QEAA@AEBVBiomeRegistry@@AEBVBiome@@1W4GeneratorType@@@Z
     MCAPI BiomeInit(
         class BiomeRegistry const& registry,
         class Biome const&         defaultOceanBiome,

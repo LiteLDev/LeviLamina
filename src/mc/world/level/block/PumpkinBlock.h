@@ -27,42 +27,39 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1PumpkinBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~PumpkinBlock() = default;
 
-    // vIndex: 25, symbol: ?canConnect@PumpkinBlock@@UEBA_NAEBVBlock@@E0@Z
+    // vIndex: 25
     virtual bool canConnect(class Block const&, uchar, class Block const&) const;
 
-    // vIndex: 64, symbol: ?dispense@PumpkinBlock@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 64
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
-    // vIndex: 86, symbol: ?mayPlace@PumpkinBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 86
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@PumpkinBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 129, symbol: ?getVariant@PumpkinBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 132, symbol: ?getMappedFace@PumpkinBlock@@UEBAEEAEBVBlock@@@Z
+    // vIndex: 132
     virtual uchar getMappedFace(uchar face, class Block const& block) const;
 
-    // vIndex: 146, symbol: ?onPlace@PumpkinBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 146
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ??0PumpkinBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N1@Z
     MCAPI PumpkinBlock(std::string const& nameId, int id, bool lit, bool carved);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_canDispense@PumpkinBlock@@AEBA_NAEAVBlockSource@@AEBVVec3@@E@Z
     MCAPI bool _canDispense(class BlockSource& region, class Vec3 const& pos, uchar face) const;
 
-    // symbol: ?_canSpawnGolem@PumpkinBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI bool _canSpawnGolem(class BlockSource& region, class BlockPos const& pos) const;
 
     // NOLINTEND

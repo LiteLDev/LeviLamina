@@ -19,11 +19,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1IconItemComponentLegacyFactoryData@@UEAA@XZ
+    // vIndex: 0
     virtual ~IconItemComponentLegacyFactoryData();
 
-    // symbol:
-    // ?bindType@IconItemComponentLegacyFactoryData@@SAXAEAUReflectionCtx@cereal@@AEBV?$vector@W4AllExperiments@@V?$allocator@W4AllExperiments@@@std@@@std@@V?$optional@VSemVersion@@@5@@Z
     MCAPI static void
     bindType(struct cereal::ReflectionCtx&, std::vector<::AllExperiments> const&, std::optional<class SemVersion>);
 

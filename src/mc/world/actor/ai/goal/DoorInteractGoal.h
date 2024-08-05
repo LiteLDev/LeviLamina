@@ -16,34 +16,30 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1DoorInteractGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~DoorInteractGoal();
 
-    // vIndex: 1, symbol: ?canUse@DoorInteractGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@DoorInteractGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@DoorInteractGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 6, symbol: ?tick@DoorInteractGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@DoorInteractGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0DoorInteractGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit DoorInteractGoal(class Mob& mob);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_findBlockingDoorAtPos@DoorInteractGoal@@CAPEBVDoorBlock@@AEBVBlockPos@@AEBVMob@@PEAVPath@@AEAW4Type@Direction@@3@Z
     MCAPI static class DoorBlock const* _findBlockingDoorAtPos(
         class BlockPos const& bpos,
         class Mob const&      mob,

@@ -15,13 +15,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4ComponentItemDescriptionData_v1_20@@QEAAAEAU0@AEBU0@@Z
     MCAPI struct ComponentItemDescriptionData_v1_20& operator=(struct ComponentItemDescriptionData_v1_20 const&);
 
-    // symbol: ??1ComponentItemDescriptionData_v1_20@@QEAA@XZ
     MCAPI ~ComponentItemDescriptionData_v1_20();
 
-    // symbol: ?bindType@ComponentItemDescriptionData_v1_20@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // NOLINTEND

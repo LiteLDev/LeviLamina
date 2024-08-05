@@ -14,10 +14,8 @@ public:
     virtual ~IBlockWorldGenAPI() = default;
 
     // NOLINTBEGIN
-    // symbol: ?canGetChunk@IBlockWorldGenAPI@@UEBA_NXZ
     MCVAPI bool canGetChunk() const;
 
-    // symbol: ?getChunk@IBlockWorldGenAPI@@UEAAPEAVLevelChunk@@AEBVChunkPos@@@Z
     MCVAPI class LevelChunk* getChunk(class ChunkPos const& pos);
 
     // NOLINTEND

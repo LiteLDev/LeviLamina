@@ -27,19 +27,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DeepslateRedStoneOreBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~DeepslateRedStoneOreBlock() = default;
 
-    // vIndex: 96, symbol: ?asItemInstance@DeepslateRedStoneOreBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 148, symbol: ?tick@DeepslateRedStoneOreBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 163, symbol: ?_lightUpBlock@DeepslateRedStoneOreBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 163
     virtual void _lightUpBlock(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ??0DeepslateRedStoneOreBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
     MCAPI DeepslateRedStoneOreBlock(std::string const& nameId, int id, bool lit);
 
     // NOLINTEND

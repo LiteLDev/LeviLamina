@@ -14,10 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BlueIceFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~BlueIceFeature() = default;
 
-    // vIndex: 3, symbol: ?place@BlueIceFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 3
     virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // NOLINTEND

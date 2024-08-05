@@ -26,7 +26,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ActorPathingData@@QEAA@XZ
     MCAPI ~ActorPathingData();
 
     // NOLINTEND

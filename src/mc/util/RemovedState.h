@@ -19,16 +19,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1RemovedState@FlatteningUtils@@UEAA@XZ
+    // vIndex: 0
     virtual ~RemovedState();
 
-    // vIndex: 1, symbol: ?addValue@RemovedIntState@FlatteningUtils@@UEAAXAEBVCompoundTag@@@Z
+    // vIndex: 1
     virtual void addValue(class CompoundTag const&) = 0;
 
-    // vIndex: 2, symbol: ?match@RemovedIntState@FlatteningUtils@@UEBAXAEAVCompoundTagUpdaterNodeBuilder@@_K@Z
+    // vIndex: 2
     virtual void match(class CompoundTagUpdaterNodeBuilder&, uint64) const = 0;
 
-    // vIndex: 3, symbol: ?valueCount@RemovedIntState@FlatteningUtils@@UEBA_KXZ
+    // vIndex: 3
     virtual uint64 valueCount() const = 0;
 
     // NOLINTEND

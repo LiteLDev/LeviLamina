@@ -28,25 +28,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1JungleLeavesBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~JungleLeavesBlock() = default;
 
-    // vIndex: 122, symbol: ?getColor@JungleLeavesBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 122
     virtual int getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
 
-    // vIndex: 129, symbol: ?getVariant@JungleLeavesBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const&) const;
 
-    // vIndex: 156, symbol:
-    // ?getRenderLayer@JungleLeavesBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 156
     virtual ::BlockRenderLayer getRenderLayer(class Block const&, class BlockSource&, class BlockPos const&) const;
 
-    // vIndex: 160, symbol:
-    // ?getMapColor@JungleLeavesBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 160
     virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const&) const;
 
-    // symbol:
-    // ??0JungleLeavesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@$$CBVBlockLegacy@@@@@Z
     MCAPI JungleLeavesBlock(std::string const&, int, class WeakPtr<class BlockLegacy const>);
 
     // NOLINTEND

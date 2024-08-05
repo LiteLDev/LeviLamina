@@ -15,36 +15,33 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DragonTakeoffGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~DragonTakeoffGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@DragonTakeoffGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@DragonTakeoffGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@DragonTakeoffGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@DragonTakeoffGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@DragonTakeoffGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@DragonTakeoffGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0DragonTakeoffGoal@@QEAA@AEAVEnderDragon@@@Z
     MCAPI explicit DragonTakeoffGoal(class EnderDragon& mob);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_findNewTarget@DragonTakeoffGoal@@AEAAXXZ
     MCAPI void _findNewTarget();
 
     // NOLINTEND

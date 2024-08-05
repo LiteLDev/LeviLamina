@@ -15,24 +15,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1HurtByTargetGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~HurtByTargetGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@HurtByTargetGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 4, symbol: ?start@HurtByTargetGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@HurtByTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // vIndex: 11, symbol: ?alertOther@HurtByTargetGoal@@MEAAXPEAVMob@@0@Z
+    // vIndex: 11
     virtual void alertOther(class Mob* other, class Mob* hurtByMob);
 
-    // symbol:
-    // ??0HurtByTargetGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@_N@Z
     MCAPI HurtByTargetGoal(class Mob& mob, std::vector<struct MobDescriptor> const& targetTypes, bool hurtOwner);
 
     // NOLINTEND

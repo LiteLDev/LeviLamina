@@ -14,16 +14,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LootEnchant@@UEAA@XZ
+    // vIndex: 0
     virtual ~LootEnchant() = default;
 
-    // vIndex: 2, symbol: ?getMinCost@LootEnchant@@UEBAHH@Z
+    // vIndex: 2
     virtual int getMinCost(int level) const;
 
-    // vIndex: 3, symbol: ?getMaxCost@LootEnchant@@UEBAHH@Z
+    // vIndex: 3
     virtual int getMaxCost(int level) const;
 
-    // vIndex: 5, symbol: ?getMaxLevel@LootEnchant@@UEBAHXZ
+    // vIndex: 5
     virtual int getMaxLevel() const;
 
     // NOLINTEND

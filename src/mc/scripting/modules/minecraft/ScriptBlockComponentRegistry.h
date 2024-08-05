@@ -26,8 +26,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?registerCustomComponent@ScriptBlockComponentRegistry@ScriptModuleMinecraft@@QEAA?AV?$Result@XUEngineError@Scripting@@UError@2@@Scripting@@AEAVWeakLifetimeScope@4@AEAVDependencyLocator@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UScriptBlockCustomComponentInterface@2@@Z
     MCAPI class Scripting::Result<void, struct Scripting::EngineError, struct Scripting::Error> registerCustomComponent(
         class Scripting::WeakLifetimeScope&,
         class Scripting::DependencyLocator&,
@@ -35,7 +33,6 @@ public:
         struct ScriptModuleMinecraft::ScriptBlockCustomComponentInterface
     );
 
-    // symbol: ?bind@ScriptBlockComponentRegistry@ScriptModuleMinecraft@@SA?AUClassBinding@Scripting@@XZ
     MCAPI static struct Scripting::ClassBinding bind();
 
     // NOLINTEND

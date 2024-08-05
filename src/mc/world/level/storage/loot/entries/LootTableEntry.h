@@ -14,12 +14,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol:
-    // ?_createItem@LootTableEntry@@MEBA_NAEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEAVRandom@@AEAVLootTableContext@@@Z
+    // vIndex: 0
     virtual bool
     _createItem(std::vector<class ItemStack>& output, class Random& random, class LootTableContext& context) const;
 
-    // vIndex: 1, symbol: __gen_??1LootTableEntry@@UEAA@XZ
+    // vIndex: 1
     virtual ~LootTableEntry() = default;
 
     // NOLINTEND

@@ -27,15 +27,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1GlowstoneBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~GlowstoneBlock() = default;
 
-    // vIndex: 64, symbol: ?dispense@GlowstoneBlock@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 64
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
-    // symbol:
-    // ??0GlowstoneBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI GlowstoneBlock(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND

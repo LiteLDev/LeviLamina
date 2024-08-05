@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?mergeAABBs@AABBBucket@@QEAAXXZ
     MCAPI void mergeAABBs();
 
     // NOLINTEND

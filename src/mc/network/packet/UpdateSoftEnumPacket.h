@@ -21,28 +21,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1UpdateSoftEnumPacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~UpdateSoftEnumPacket();
 
-    // vIndex: 1, symbol: ?getId@UpdateSoftEnumPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@UpdateSoftEnumPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@UpdateSoftEnumPacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 8, symbol:
-    // ?_read@UpdateSoftEnumPacket@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0UpdateSoftEnumPacket@@QEAA@XZ
     MCAPI UpdateSoftEnumPacket();
 
-    // symbol:
-    // ??0UpdateSoftEnumPacket@@QEAA@W4SoftEnumUpdateType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
     MCAPI UpdateSoftEnumPacket(
         ::SoftEnumUpdateType            type,
         std::string const&              enumName,

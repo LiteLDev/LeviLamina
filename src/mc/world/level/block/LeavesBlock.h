@@ -28,58 +28,53 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1LeavesBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~LeavesBlock();
 
-    // vIndex: 23, symbol: ?canProvideSupport@LeavesBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
+    // vIndex: 23
     virtual bool canProvideSupport(class Block const&, uchar, ::BlockSupportType) const;
 
-    // vIndex: 24, symbol: ?canProvideMultifaceSupport@LeavesBlock@@UEBA_NAEBVBlock@@E@Z
+    // vIndex: 24
     virtual bool canProvideMultifaceSupport(class Block const&, uchar) const;
 
-    // vIndex: 57, symbol: ?canContainLiquid@LeavesBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // vIndex: 90, symbol: ?breaksFallingBlocks@LeavesBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
+    // vIndex: 90
     virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
 
-    // vIndex: 98, symbol: ?getPlacementBlock@LeavesBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+    // vIndex: 98
     virtual class Block const&
     getPlacementBlock(class Actor const&, class BlockPos const&, uchar, class Vec3 const&, int itemValue) const;
 
-    // vIndex: 122, symbol: ?getColor@LeavesBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 122
     virtual int getColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
-    // vIndex: 125, symbol: ?isSeasonTinted@LeavesBlock@@UEBA_NAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 125
     virtual bool isSeasonTinted(class Block const& block, class BlockSource& region, class BlockPos const& p) const;
 
-    // vIndex: 126, symbol: ?onGraphicsModeChanged@LeavesBlock@@UEAAXAEBUBlockGraphicsModeChangeContext@@@Z
+    // vIndex: 126
     virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const& context);
 
-    // vIndex: 143, symbol: ?onRemove@LeavesBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 143
     virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 149, symbol: ?randomTick@LeavesBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 149
     virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
-    // vIndex: 156, symbol:
-    // ?getRenderLayer@LeavesBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 156
     virtual ::BlockRenderLayer
     getRenderLayer(class Block const&, class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 160, symbol: ?getMapColor@LeavesBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 160
     virtual class mce::Color
     getMapColor(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
 
-    // symbol:
-    // ??0LeavesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@$$CBVBlockLegacy@@@@@Z
     MCAPI LeavesBlock(std::string const& nameId, int id, class WeakPtr<class BlockLegacy const> sapling);
 
-    // symbol: ?getSeasonsColor@LeavesBlock@@QEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@HH@Z
     MCAPI class mce::Color
     getSeasonsColor(class BlockSource& region, class BlockPos const& pos, int startColumn, int endColumn) const;
 
-    // symbol: ?runDecay@LeavesBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@H@Z
     MCAPI static void runDecay(class BlockSource& region, class BlockPos const& pos, int range);
 
     // NOLINTEND

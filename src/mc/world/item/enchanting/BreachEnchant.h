@@ -14,22 +14,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BreachEnchant@@UEAA@XZ
+    // vIndex: 0
     virtual ~BreachEnchant() = default;
 
-    // vIndex: 2, symbol: ?getMinCost@BreachEnchant@@UEBAHH@Z
+    // vIndex: 2
     virtual int getMinCost(int) const;
 
-    // vIndex: 3, symbol: ?getMaxCost@BreachEnchant@@UEBAHH@Z
+    // vIndex: 3
     virtual int getMaxCost(int) const;
 
-    // vIndex: 5, symbol: ?getMaxLevel@BreachEnchant@@UEBAHXZ
+    // vIndex: 5
     virtual int getMaxLevel() const;
 
-    // vIndex: 7, symbol: ?getAfterBreachArmorFraction@BreachEnchant@@UEBAMHM@Z
+    // vIndex: 7
     virtual float getAfterBreachArmorFraction(int, float) const;
 
-    // vIndex: 8, symbol: ?getDamageBonus@BreachEnchant@@UEBAMHAEBVActor@@0@Z
+    // vIndex: 8
     virtual float getDamageBonus(int, class Actor const&, class Actor const&) const;
 
     // NOLINTEND

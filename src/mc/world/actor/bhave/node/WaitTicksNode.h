@@ -14,16 +14,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1WaitTicksNode@@UEAA@XZ
+    // vIndex: 0
     virtual ~WaitTicksNode() = default;
 
-    // vIndex: 1, symbol: ?tick@WaitTicksNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+    // vIndex: 1
     virtual ::BehaviorStatus tick(class Actor& owner);
 
-    // vIndex: 2, symbol: ?initializeFromDefinition@WaitTicksNode@@EEAAXAEAVActor@@@Z
+    // vIndex: 2
     virtual void initializeFromDefinition(class Actor& owner);
 
-    // symbol: ??0WaitTicksNode@@QEAA@XZ
     MCAPI WaitTicksNode();
 
     // NOLINTEND

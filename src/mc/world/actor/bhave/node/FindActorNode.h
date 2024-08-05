@@ -15,13 +15,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FindActorNode@@UEAA@XZ
+    // vIndex: 0
     virtual ~FindActorNode() = default;
 
-    // vIndex: 1, symbol: ?tick@FindActorNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+    // vIndex: 1
     virtual ::BehaviorStatus tick(class Actor& owner);
 
-    // vIndex: 2, symbol: ?initializeFromDefinition@FindActorNode@@EEAAXAEAVActor@@@Z
+    // vIndex: 2
     virtual void initializeFromDefinition(class Actor& owner);
 
     // NOLINTEND

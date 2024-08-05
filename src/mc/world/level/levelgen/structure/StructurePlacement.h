@@ -22,10 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?isStructureChunk@StructurePlacement@worldgen@br@@QEBA_NAEBUChunkGeneratorStructureState@23@VChunkPos@@@Z
     MCAPI bool isStructureChunk(struct br::worldgen::ChunkGeneratorStructureState const&, class ChunkPos) const;
 
-    // symbol: ?randomeSpread@StructurePlacement@worldgen@br@@SA?AU123@HHHW4Type@RandomSpreadPlacement@23@@Z
     MCAPI static struct br::worldgen::StructurePlacement
     randomeSpread(int, int, int, ::br::worldgen::RandomSpreadPlacement::Type);
 

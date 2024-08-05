@@ -19,11 +19,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1RoofedTreeCanopy@@UEAA@XZ
+    // vIndex: 0
     virtual ~RoofedTreeCanopy() = default;
 
-    // vIndex: 1, symbol:
-    // ?placeCanopy@RoofedTreeCanopy@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@AEBUTreeParams@TreeHelper@@AEBV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@3@@Z
+    // vIndex: 1
     virtual std::optional<class BlockPos>
     placeCanopy(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random, class RenderParams&, struct TreeHelper::TreeParams const&, std::vector<class BlockPos> const&)
         const;
@@ -32,8 +31,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_placeLeafAt@RoofedTreeCanopy@@AEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@V?$not_null@PEBVBlock@@@gsl@@@Z
     MCAPI std::optional<class BlockPos>
     _placeLeafAt(class IBlockWorldGenAPI& target, class BlockPos const& pos, gsl::not_null<class Block const*>) const;
 

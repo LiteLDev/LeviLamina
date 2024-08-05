@@ -13,10 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0VariantParameterList@@QEAA@XZ
     MCAPI VariantParameterList();
 
-    // symbol: ?hasParameter@VariantParameterList@@QEBA_NW4FilterSubject@Legacy@Puv@@@Z
     MCAPI bool hasParameter(::Puv::Legacy::FilterSubject) const;
 
     // NOLINTEND

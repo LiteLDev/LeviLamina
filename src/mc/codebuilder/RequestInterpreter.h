@@ -21,8 +21,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?process@RequestInterpreter@CodeBuilder@@QEBAXAEAVIRequestHandler@2@AEBURequestHeader@2@AEBVValue@Json@@@Z
     MCAPI void process(
         class CodeBuilder::IRequestHandler&      sender,
         struct CodeBuilder::RequestHeader const& header,
@@ -33,7 +31,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_parse@RequestInterpreter@CodeBuilder@@CA_NAEBVValue@Json@@AEAUCommandRequest@2@@Z
     MCAPI static bool _parse(class Json::Value const& command, struct CodeBuilder::CommandRequest& request);
 
     // NOLINTEND

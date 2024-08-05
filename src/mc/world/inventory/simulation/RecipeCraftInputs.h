@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1RecipeCraftInputs@@QEAA@XZ
     MCAPI ~RecipeCraftInputs();
 
     // NOLINTEND

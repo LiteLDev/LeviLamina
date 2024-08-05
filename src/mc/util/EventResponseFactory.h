@@ -10,20 +10,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1EventResponseFactory@@UEAA@XZ
+    // vIndex: 0
     virtual ~EventResponseFactory();
 
-    // vIndex: 1, symbol: ?initializeFactory@BlockEventResponseFactory@@UEAAXAEBVExperiments@@@Z
+    // vIndex: 1
     virtual void initializeFactory(class Experiments const& experiments) = 0;
 
-    // vIndex: 2, symbol: ?initSchema@BlockEventResponseFactory@@UEAAXXZ
+    // vIndex: 2
     virtual void initSchema() = 0;
 
-    // symbol: ??0EventResponseFactory@@QEAA@XZ
     MCAPI EventResponseFactory();
 
-    // symbol:
-    // ?initSchema@EventResponseFactory@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSemVersion@@@Z
     MCAPI void initSchema(std::string const& schemaName, class SemVersion const& version);
 
     // NOLINTEND

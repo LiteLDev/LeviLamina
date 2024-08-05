@@ -26,18 +26,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1WaterLilyBlockItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~WaterLilyBlockItem() = default;
 
-    // vIndex: 45, symbol: ?isLiquidClipItem@WaterLilyBlockItem@@UEBA_NXZ
+    // vIndex: 45
     virtual bool isLiquidClipItem() const;
 
-    // vIndex: 116, symbol:
-    // ?_calculatePlacePos@WaterLilyBlockItem@@UEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
+    // vIndex: 116
     virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, uchar& face, class BlockPos& pos) const;
 
-    // vIndex: 118, symbol:
-    // ?_useOn@WaterLilyBlockItem@@UEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+    // vIndex: 118
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar, class Vec3 const&) const;
 

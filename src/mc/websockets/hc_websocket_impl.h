@@ -13,7 +13,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1hc_websocket_impl@httpclient@xbox@@UEAA@XZ
+    // vIndex: 0
     virtual ~hc_websocket_impl();
 
     // NOLINTEND

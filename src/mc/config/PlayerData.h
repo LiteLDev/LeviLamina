@@ -25,19 +25,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1PlayerData@PlayerCapabilities@@UEAA@XZ
+    // vIndex: 0
     virtual ~PlayerData() = default;
 
-    // vIndex: 1, symbol: ?isAbilityEnabled@PlayerData@PlayerCapabilities@@UEBA_NW4AbilitiesIndex@@@Z
+    // vIndex: 1
     virtual bool isAbilityEnabled(::AbilitiesIndex ability) const;
 
-    // vIndex: 2, symbol: ?isTeacher@PlayerData@PlayerCapabilities@@UEBA_NXZ
+    // vIndex: 2
     virtual bool isTeacher() const;
 
-    // vIndex: 3, symbol: ?isOperator@PlayerData@PlayerCapabilities@@UEBA_NXZ
+    // vIndex: 3
     virtual bool isOperator() const;
 
-    // symbol: ??0PlayerData@PlayerCapabilities@@QEAA@AEBVPlayer@@@Z
     MCAPI explicit PlayerData(class Player const& player);
 
     // NOLINTEND

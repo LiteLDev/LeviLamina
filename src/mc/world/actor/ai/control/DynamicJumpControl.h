@@ -14,35 +14,33 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DynamicJumpControl@@UEAA@XZ
+    // vIndex: 0
     virtual ~DynamicJumpControl() = default;
 
-    // vIndex: 1, symbol: ?initializeInternal@DynamicJumpControl@@UEAAXAEAVMob@@PEAUJumpControlDescription@@@Z
+    // vIndex: 1
     virtual void initializeInternal(class Mob& mob, struct JumpControlDescription* description);
 
-    // vIndex: 2, symbol:
-    // ?clone@DynamicJumpControl@@UEBA?AV?$unique_ptr@VJumpControl@@U?$default_delete@VJumpControl@@@std@@@std@@XZ
+    // vIndex: 2
     virtual std::unique_ptr<class JumpControl> clone() const;
 
-    // vIndex: 3, symbol: ?tick@DynamicJumpControl@@MEAAXAEAVJumpControlComponent@@AEAVMob@@@Z
+    // vIndex: 3
     virtual void tick(class JumpControlComponent& parent, class Mob& mob);
 
-    // vIndex: 4, symbol: ?getJumpDelay@DynamicJumpControl@@MEBAHAEBVJumpControlComponent@@@Z
+    // vIndex: 4
     virtual int getJumpDelay(class JumpControlComponent const& parent) const;
 
-    // vIndex: 5, symbol: ?getJumpPower@DynamicJumpControl@@MEBAMAEBVJumpControlComponent@@@Z
+    // vIndex: 5
     virtual float getJumpPower(class JumpControlComponent const& parent) const;
 
-    // vIndex: 6, symbol: ?getJumpType@DynamicJumpControl@@MEBA?AW4JumpType@@AEBVJumpControlComponent@@@Z
+    // vIndex: 6
     virtual ::JumpType getJumpType(class JumpControlComponent const& parent) const;
 
-    // vIndex: 7, symbol: ?setJumpType@DynamicJumpControl@@MEAAXAEAVJumpControlComponent@@W4JumpType@@@Z
+    // vIndex: 7
     virtual void setJumpType(class JumpControlComponent& parent, ::JumpType type);
 
-    // vIndex: 8, symbol: ?resetSpeedModifier@DynamicJumpControl@@MEAAXAEBVJumpControlComponent@@AEAVMob@@@Z
+    // vIndex: 8
     virtual void resetSpeedModifier(class JumpControlComponent const& parent, class Mob& mob);
 
-    // symbol: ??0DynamicJumpControl@@QEAA@XZ
     MCAPI DynamicJumpControl();
 
     // NOLINTEND

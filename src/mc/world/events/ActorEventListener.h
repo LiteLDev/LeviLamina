@@ -18,71 +18,66 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ActorEventListener@@UEAA@XZ
+    // vIndex: 0
     virtual ~ActorEventListener();
 
-    // vIndex: 1, symbol: ?onEvent@ActorEventListener@@UEAA?AW4EventResult@@AEBUActorNotificationEvent@@@Z
+    // vIndex: 1
     virtual ::EventResult onEvent(struct ActorNotificationEvent const&);
 
-    // vIndex: 2, symbol:
-    // ?onActorDefinitionEvent@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@UActorDefinitionModifier@@V?$allocator@UActorDefinitionModifier@@@std@@@5@@Z
+    // vIndex: 2
     virtual ::EventResult onActorDefinitionEvent(
         class Actor&                                 actor,
         std::string const&                           event,
         std::vector<struct ActorDefinitionModifier>& modifiers
     );
 
-    // vIndex: 3, symbol: ?onActorTick@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@@Z
+    // vIndex: 3
     virtual ::EventResult onActorTick(class Actor& actor);
 
-    // vIndex: 4, symbol: ?onActorSneakChanged@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@_N@Z
+    // vIndex: 4
     virtual ::EventResult onActorSneakChanged(class Actor& actor, bool isSneaking);
 
-    // vIndex: 5, symbol: ?onActorStartRiding@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@0@Z
+    // vIndex: 5
     virtual ::EventResult onActorStartRiding(class Actor& actor, class Actor&);
 
-    // vIndex: 6, symbol: ?onActorStopRiding@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@_N11@Z
+    // vIndex: 6
     virtual ::EventResult onActorStopRiding(class Actor& actor, bool, bool actorIsBeingDestroyed, bool);
 
-    // vIndex: 7, symbol:
-    // ?onActorCreated@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@W4ActorInitializationMethod@@@Z
+    // vIndex: 7
     virtual ::EventResult onActorCreated(class Actor&, ::ActorInitializationMethod);
 
-    // vIndex: 8, symbol:
-    // ?onActorCreationAttemptFailed@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+    // vIndex: 8
     virtual ::EventResult onActorCreationAttemptFailed(class Actor& actor, std::string_view message);
 
-    // vIndex: 9, symbol: ?onActorTeleported@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@@Z
+    // vIndex: 9
     virtual ::EventResult onActorTeleported(class Actor& actor);
 
-    // vIndex: 10, symbol: ?onActorAttackedActor@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@0@Z
+    // vIndex: 10
     virtual ::EventResult onActorAttackedActor(class Actor& actor, class Actor& target);
 
-    // vIndex: 11, symbol:
-    // ?onActorMobInteraction@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@W4InteractionType@MinecraftEventing@@W4ActorType@@@Z
+    // vIndex: 11
     virtual ::EventResult onActorMobInteraction(
         class Actor&                         actor,
         ::MinecraftEventing::InteractionType interactionType,
         ::ActorType                          interactedActorType
     );
 
-    // vIndex: 12, symbol: ?onActorTargetAcquired@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@0@Z
+    // vIndex: 12
     virtual ::EventResult onActorTargetAcquired(class Actor& actor, class Actor& target);
 
-    // vIndex: 13, symbol: ?onPlayerAuthInputReceived@ActorEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
+    // vIndex: 13
     virtual ::EventResult onPlayerAuthInputReceived(class Player&);
 
-    // vIndex: 14, symbol: ?onPlayerAuthInputApplied@ActorEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
+    // vIndex: 14
     virtual ::EventResult onPlayerAuthInputApplied(class Player&);
 
-    // vIndex: 15, symbol: ?onPlayerAIStepBegin@ActorEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
+    // vIndex: 15
     virtual ::EventResult onPlayerAIStepBegin(class Player&);
 
-    // vIndex: 16, symbol: ?onPlayerAIStepEnd@ActorEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
+    // vIndex: 16
     virtual ::EventResult onPlayerAIStepEnd(class Player&);
 
-    // vIndex: 17, symbol:
-    // ?onActorMovementRewindCorrected@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@_KW4ReplayCorrectionResult@@@Z
+    // vIndex: 17
     virtual ::EventResult onActorMovementRewindCorrected(class Actor&, uint64, ::ReplayCorrectionResult);
 
     // NOLINTEND

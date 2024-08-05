@@ -14,20 +14,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ClearRealmEventsCommand@@UEAA@XZ
+    // vIndex: 0
     virtual ~ClearRealmEventsCommand() = default;
 
-    // vIndex: 2, symbol: ?execute@ClearRealmEventsCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+    // vIndex: 2
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
-    // symbol: ?setup@ClearRealmEventsCommand@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry&);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?mServer@ClearRealmEventsCommand@@0PEAVDedicatedServer@@EA
     MCAPI static class DedicatedServer* mServer;
 
     // NOLINTEND

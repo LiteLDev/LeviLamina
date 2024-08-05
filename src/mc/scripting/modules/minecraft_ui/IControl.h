@@ -23,11 +23,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1IControl@ScriptModuleMinecraftServerUI@@UEAA@XZ
+    // vIndex: 0
     virtual ~IControl();
 
-    // vIndex: 1, symbol:
-    // ?buildJson@DropdownControl@ScriptModuleMinecraftServerUI@@UEBA?AV?$Result@VValue@Json@@$$V@Scripting@@AEAVPlayer@@W4CurrentCmdVersion@@@Z
+    // vIndex: 1
     virtual class Scripting::Result<class Json::Value> buildJson(class Player&, ::CurrentCmdVersion) const = 0;
 
     // NOLINTEND

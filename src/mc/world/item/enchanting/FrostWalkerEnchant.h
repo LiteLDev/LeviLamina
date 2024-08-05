@@ -14,19 +14,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FrostWalkerEnchant@@UEAA@XZ
+    // vIndex: 0
     virtual ~FrostWalkerEnchant() = default;
 
-    // vIndex: 2, symbol: ?getMinCost@FrostWalkerEnchant@@UEBAHH@Z
+    // vIndex: 2
     virtual int getMinCost(int level) const;
 
-    // vIndex: 3, symbol: ?getMaxCost@FrostWalkerEnchant@@UEBAHH@Z
+    // vIndex: 3
     virtual int getMaxCost(int level) const;
 
-    // vIndex: 5, symbol: ?getMaxLevel@FrostWalkerEnchant@@UEBAHXZ
+    // vIndex: 5
     virtual int getMaxLevel() const;
 
-    // vIndex: 14, symbol: ?isTreasureOnly@FrostWalkerEnchant@@UEBA_NXZ
+    // vIndex: 14
     virtual bool isTreasureOnly() const;
 
     // NOLINTEND

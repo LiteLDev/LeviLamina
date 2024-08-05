@@ -28,51 +28,41 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ElementBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~ElementBlock() = default;
 
-    // vIndex: 61, symbol: ?canBeUsedInCommands@ElementBlock@@UEBA_NAEBVBaseGameVersion@@@Z
+    // vIndex: 61
     virtual bool canBeUsedInCommands(class BaseGameVersion const& requiredBaseGameVersion) const;
 
-    // vIndex: 119, symbol:
-    // ?buildDescriptionId@ElementBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
+    // vIndex: 119
     virtual std::string buildDescriptionId(class Block const&) const;
 
-    // vIndex: 138, symbol: ?tryLegacyUpgrade@ElementBlock@@UEBAPEBVBlock@@G@Z
+    // vIndex: 138
     virtual class Block const* tryLegacyUpgrade(ushort extraData) const;
 
-    // vIndex: 160, symbol: ?getMapColor@ElementBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 160
     virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const& block) const;
 
-    // symbol: ??0ElementBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ElementType@@@Z
     MCAPI ElementBlock(std::string const& nameId, int id, ::ElementType type);
 
-    // symbol: ?getElementInfo@ElementBlock@@SA?AUElementInfo@@W4ElementType@@@Z
     MCAPI static struct ElementInfo getElementInfo(::ElementType e);
 
-    // symbol: ?getIngredientForElement@ElementBlock@@SA?AVRecipeIngredient@@W4ElementType@@H@Z
     MCAPI static class RecipeIngredient getIngredientForElement(::ElementType e, int stackCount);
 
-    // symbol: ?getItemForElement@ElementBlock@@SA?AVItemInstance@@W4ElementType@@H@Z
     MCAPI static class ItemInstance getItemForElement(::ElementType e, int stackCount);
 
-    // symbol: ?initElements@ElementBlock@@SAXXZ
     MCAPI static void initElements();
 
-    // symbol: ?isElement@ElementBlock@@SA_NAEBVItemStackBase@@@Z
     MCAPI static bool isElement(class ItemStackBase const& item);
 
-    // symbol: ?shutdownElements@ElementBlock@@SAXXZ
     MCAPI static void shutdownElements();
 
-    // symbol: ?tryGetBlockLegacyForElement@ElementBlock@@SAPEBVBlockLegacy@@W4ElementType@@@Z
     MCAPI static class BlockLegacy const* tryGetBlockLegacyForElement(::ElementType e);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?mElements@ElementBlock@@0V?$vector@PEBVBlockLegacy@@V?$allocator@PEBVBlockLegacy@@@std@@@std@@A
     MCAPI static std::vector<class BlockLegacy const*> mElements;
 
     // NOLINTEND

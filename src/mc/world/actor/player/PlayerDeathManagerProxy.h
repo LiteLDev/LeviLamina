@@ -14,16 +14,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1PlayerDeathManagerProxy@@UEAA@XZ
+    // vIndex: 0
     virtual ~PlayerDeathManagerProxy() = default;
 
-    // vIndex: 1, symbol: ?fetchActor@PlayerDeathManagerProxy@@UEBAPEAVActor@@UActorUniqueID@@@Z
+    // vIndex: 1
     virtual class Actor* fetchActor(struct ActorUniqueID actorUniqueID) const;
 
-    // vIndex: 2, symbol: ?shouldShowDeathMessages@PlayerDeathManagerProxy@@UEBA_NXZ
+    // vIndex: 2
     virtual bool shouldShowDeathMessages() const;
 
-    // symbol: ??0PlayerDeathManagerProxy@@QEAA@AEAVServerLevel@@@Z
     MCAPI explicit PlayerDeathManagerProxy(class ServerLevel& serverLevel);
 
     // NOLINTEND

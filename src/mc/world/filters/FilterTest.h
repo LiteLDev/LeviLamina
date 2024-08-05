@@ -24,7 +24,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1Definition@FilterTest@@QEAA@XZ
         MCAPI ~Definition();
 
         // NOLINTEND
@@ -38,41 +37,37 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1FilterTest@@UEAA@XZ
+    // vIndex: 0
     virtual ~FilterTest();
 
-    // vIndex: 1, symbol: ?setup@FilterTest@@UEAA_NAEBUDefinition@1@AEBUFilterInputs@@@Z
+    // vIndex: 1
     virtual bool setup(struct FilterTest::Definition const& definition, struct FilterInputs const& inputs);
 
-    // vIndex: 2, symbol: ?evaluate@ActorBoolPropertyTest@@UEBA_NAEBUFilterContext@@@Z
+    // vIndex: 2
     virtual bool evaluate(struct FilterContext const& context) const = 0;
 
-    // vIndex: 3, symbol: ?finalizeParsedValue@FilterTest@@UEAAXAEAVIWorldRegistriesProvider@@@Z
+    // vIndex: 3
     virtual void finalizeParsedValue(class IWorldRegistriesProvider& registries);
 
-    // vIndex: 4, symbol: ?getName@ActorBoolPropertyTest@@UEBA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@XZ
+    // vIndex: 4
     virtual std::string_view getName() const = 0;
 
-    // vIndex: 5, symbol: ?_serializeDomain@FilterTest@@MEBA?AVValue@Json@@XZ
+    // vIndex: 5
     virtual class Json::Value _serializeDomain() const;
 
-    // vIndex: 6, symbol: ?_serializeValue@ActorBoolPropertyTest@@MEBA?AVValue@Json@@XZ
+    // vIndex: 6
     virtual class Json::Value _serializeValue() const = 0;
 
-    // symbol: ?serialize@FilterTest@@QEBA?AVValue@Json@@XZ
     MCAPI class Json::Value serialize() const;
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?_testValuesWithOperator@FilterTest@@IEBA_N_N0@Z
     MCAPI bool _testValuesWithOperator(bool a, bool b) const;
 
-    // symbol: ?_testValuesWithOperator@FilterTest@@IEBA_NMM@Z
     MCAPI bool _testValuesWithOperator(float a, float b) const;
 
-    // symbol: ?_testValuesWithOperator@FilterTest@@IEBA_NHH@Z
     MCAPI bool _testValuesWithOperator(int a, int b) const;
 
     // NOLINTEND

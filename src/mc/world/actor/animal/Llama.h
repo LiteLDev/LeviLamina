@@ -35,22 +35,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1Llama@@UEAA@XZ
+    // vIndex: 10
     virtual ~Llama() = default;
 
-    // vIndex: 62, symbol: ?onFailedTame@Llama@@UEAAXXZ
+    // vIndex: 62
     virtual void onFailedTame();
 
-    // vIndex: 98, symbol: ?causeFallDamageToActor@Llama@@MEAAMMMVActorDamageSource@@@Z
+    // vIndex: 98
     virtual float causeFallDamageToActor(float, float, class ActorDamageSource);
 
-    // vIndex: 144, symbol: ?updateEntitySpecificMolangVariables@Llama@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 144
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // vIndex: 149, symbol: ?_playStepSound@Llama@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 149
     virtual void _playStepSound(class BlockPos const& pos, class Block const& onBlock);
 
-    // symbol: ??0Llama@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Llama(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

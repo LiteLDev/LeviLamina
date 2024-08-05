@@ -21,36 +21,33 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1GameTestInstanceLedger@@UEAA@XZ
+    // vIndex: 0
     virtual ~GameTestInstanceLedger() = default;
 
-    // vIndex: 1, symbol: ?onTestStructureLoaded@GameTestInstanceLedger@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
+    // vIndex: 1
     virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance&);
 
-    // vIndex: 2, symbol: ?onTestPassed@IGameTestListener@gametest@@UEAAXAEAVBaseGameTestInstance@2@@Z
+    // vIndex: 2
     virtual void onTestPassed(class gametest::BaseGameTestInstance&);
 
-    // vIndex: 3, symbol: ?onTestFailed@IGameTestListener@gametest@@UEAAXAEAVBaseGameTestInstance@2@@Z
+    // vIndex: 3
     virtual void onTestFailed(class gametest::BaseGameTestInstance&);
 
-    // vIndex: 4, symbol: ?onTestStarted@IGameTestListener@gametest@@UEAAXAEAVBaseGameTestInstance@2@@Z
+    // vIndex: 4
     virtual void onTestStarted(class gametest::BaseGameTestInstance&);
 
-    // vIndex: 5, symbol: ?onTestRetryStarted@IGameTestListener@gametest@@UEAAXAEAVBaseGameTestInstance@2@@Z
+    // vIndex: 5
     virtual void onTestRetryStarted(class gametest::BaseGameTestInstance&);
 
-    // vIndex: 6, symbol: ?onTestRetryFinished@IGameTestListener@gametest@@UEAAXAEAVBaseGameTestInstance@2@@Z
+    // vIndex: 6
     virtual void onTestRetryFinished(class gametest::BaseGameTestInstance&);
 
-    // symbol: ?clear@GameTestInstanceLedger@@QEAAXV?$AutomaticID@VDimension@@H@@@Z
     MCAPI void clear(DimensionType dimension);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?GAME_TEST_INSTANCE_PREFIX@GameTestInstanceLedger@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const GAME_TEST_INSTANCE_PREFIX;
 
     // NOLINTEND

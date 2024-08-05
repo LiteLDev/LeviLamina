@@ -19,21 +19,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1TextObjectLocalizedTextWithParams@@UEAA@XZ
+    // vIndex: 0
     virtual ~TextObjectLocalizedTextWithParams() = default;
 
-    // vIndex: 1, symbol:
-    // ?asString@TextObjectLocalizedTextWithParams@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 1
     virtual std::string asString() const;
 
-    // vIndex: 2, symbol: ?asJsonValue@TextObjectLocalizedTextWithParams@@UEBA?AVValue@Json@@XZ
+    // vIndex: 2
     virtual class Json::Value asJsonValue() const;
 
-    // vIndex: 3, symbol: ?resolve@TextObjectLocalizedTextWithParams@@UEBA?AVValue@Json@@AEBUResolveData@@@Z
+    // vIndex: 3
     virtual class Json::Value resolve(struct ResolveData const&) const;
 
-    // symbol:
-    // ??0TextObjectLocalizedTextWithParams@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@@Z
     MCAPI TextObjectLocalizedTextWithParams(std::string text, std::vector<std::string> const& params);
 
     // NOLINTEND

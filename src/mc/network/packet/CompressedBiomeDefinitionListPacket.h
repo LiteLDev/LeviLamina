@@ -17,27 +17,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CompressedBiomeDefinitionListPacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~CompressedBiomeDefinitionListPacket() = default;
 
-    // vIndex: 1, symbol: ?getId@CompressedBiomeDefinitionListPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@CompressedBiomeDefinitionListPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@CompressedBiomeDefinitionListPacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 5, symbol:
-    // ?read@CompressedBiomeDefinitionListPacket@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 5
     virtual class Bedrock::Result<void> read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0CompressedBiomeDefinitionListPacket@@QEAA@XZ
     MCAPI CompressedBiomeDefinitionListPacket();
 
-    // symbol: ??0CompressedBiomeDefinitionListPacket@@QEAA@VCompoundTag@@@Z
     MCAPI explicit CompressedBiomeDefinitionListPacket(class CompoundTag biomeData);
 
     // NOLINTEND

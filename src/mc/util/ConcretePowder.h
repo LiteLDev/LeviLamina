@@ -9,7 +9,6 @@ namespace FlatteningUtils { struct Instance; }
 
 namespace FlatteningUtils::ConcretePowder {
 // NOLINTBEGIN
-// symbol: ?get@ConcretePowder@FlatteningUtils@@YA?AUInstance@2@XZ
 MCAPI struct FlatteningUtils::Instance get();
 // NOLINTEND
 

@@ -35,30 +35,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1PolarBear@@UEAA@XZ
+    // vIndex: 10
     virtual ~PolarBear() = default;
 
-    // vIndex: 26, symbol: ?normalTick@PolarBear@@UEAAXXZ
+    // vIndex: 26
     virtual void normalTick();
 
-    // vIndex: 91, symbol: ?canFreeze@PolarBear@@UEBA_NXZ
+    // vIndex: 91
     virtual bool canFreeze() const;
 
-    // symbol: ??0PolarBear@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI PolarBear(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?getStandingAnimationScale@PolarBear@@QEAAMM@Z
     MCAPI float getStandingAnimationScale(float a);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?STAND_ANIMATION_TICKS@PolarBear@@0MB
     MCAPI static float const STAND_ANIMATION_TICKS;
 
     // NOLINTEND

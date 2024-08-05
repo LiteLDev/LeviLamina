@@ -19,11 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?addEnvironmentTrigger@EnvironmentSensorDefinition@@QEAAXAEBVActorDefinitionTrigger@@@Z
     MCAPI void addEnvironmentTrigger(class ActorDefinitionTrigger const& trigger);
 
-    // symbol:
-    // ?buildSchema@EnvironmentSensorDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VEnvironmentSensorDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void buildSchema(
         std::shared_ptr<
             class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EnvironmentSensorDefinition>>& root

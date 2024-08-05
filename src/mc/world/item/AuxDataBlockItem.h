@@ -26,17 +26,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1AuxDataBlockItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~AuxDataBlockItem() = default;
 
-    // vIndex: 32, symbol: ?getLevelDataForAuxValue@AuxDataBlockItem@@UEBAHH@Z
+    // vIndex: 32
     virtual int getLevelDataForAuxValue(int auxValue) const;
 
-    // vIndex: 83, symbol:
-    // ?buildDescriptionId@AuxDataBlockItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+    // vIndex: 83
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // symbol: ??0AuxDataBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HPEBVBlock@@@Z
     MCAPI AuxDataBlockItem(std::string const& name, int id, class Block const* parentBlock);
 
     // NOLINTEND

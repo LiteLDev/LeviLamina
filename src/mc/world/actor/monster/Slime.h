@@ -36,81 +36,72 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 4, symbol: ?reloadHardcoded@Slime@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 4
     virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: ??1Slime@@UEAA@XZ
+    // vIndex: 10
     virtual ~Slime();
 
-    // vIndex: 13, symbol: ?remove@Slime@@UEAAXXZ
+    // vIndex: 13
     virtual void remove();
 
-    // vIndex: 38, symbol: ?getShadowRadius@Slime@@UEBAMXZ
+    // vIndex: 38
     virtual float getShadowRadius() const;
 
-    // vIndex: 99, symbol: ?onSynchedDataUpdate@Slime@@UEAAXH@Z
+    // vIndex: 99
     virtual void onSynchedDataUpdate(int dataId);
 
-    // vIndex: 147, symbol: ?readAdditionalSaveData@Slime@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 148, symbol: ?addAdditionalSaveData@Slime@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 158, symbol: ?aiStep@Slime@@UEAAXXZ
+    // vIndex: 158
     virtual void aiStep();
 
-    // vIndex: 160, symbol: ?checkSpawnRules@Slime@@UEAA_N_N@Z
+    // vIndex: 160
     virtual bool checkSpawnRules(bool fromSpawner);
 
-    // vIndex: 184, symbol: ?_getWalkTargetValue@Slime@@MEAAMAEBVBlockPos@@@Z
+    // vIndex: 184
     virtual float _getWalkTargetValue(class BlockPos const& pos);
 
-    // vIndex: 191, symbol: ?doPlayLandSound@Slime@@MEAA_NXZ
+    // vIndex: 191
     virtual bool doPlayLandSound();
 
-    // vIndex: 192, symbol: ?playJumpSound@Slime@@MEAAXXZ
+    // vIndex: 192
     virtual void playJumpSound();
 
-    // vIndex: 193, symbol: ?decreaseSquish@Slime@@MEAAXXZ
+    // vIndex: 193
     virtual void decreaseSquish();
 
-    // vIndex: 194, symbol: ?createChild@Slime@@MEAA?AV?$OwnerPtr@VEntityContext@@@@H@Z
+    // vIndex: 194
     virtual class OwnerPtr<class EntityContext> createChild(int i);
 
-    // symbol: ??0Slime@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Slime(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?getOldSquishValue@Slime@@QEBAMXZ
     MCAPI float getOldSquishValue() const;
 
-    // symbol: ?getSquishValue@Slime@@QEBAMXZ
     MCAPI float getSquishValue() const;
 
-    // symbol: ?postNormalTick@Slime@@QEAAX_N@Z
     MCAPI void postNormalTick(bool wasOnGround);
 
-    // symbol: ?preNormalTick@Slime@@QEAAXXZ
     MCAPI void preNormalTick();
 
-    // symbol: ?getSpawnRulesCallback@Slime@@SA?AV?$function@$$A6A_NAEBVSpawnConditions@@AEAVBlockSource@@@Z@std@@XZ
     MCAPI static std::function<bool(class SpawnConditions const&, class BlockSource&)> getSpawnRulesCallback();
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?justJumped@Slime@@IEAAXXZ
     MCAPI void justJumped();
 
-    // symbol: ?justLanded@Slime@@IEAAXXZ
     MCAPI void justLanded();
 
-    // symbol: ?setSlimeSize@Slime@@IEAAXH@Z
     MCAPI void setSlimeSize(int size);
 
     // NOLINTEND

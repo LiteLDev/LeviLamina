@@ -32,28 +32,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1UpdateTradePacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~UpdateTradePacket();
 
-    // vIndex: 1, symbol: ?getId@UpdateTradePacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@UpdateTradePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@UpdateTradePacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream& bitStream) const;
 
-    // vIndex: 8, symbol:
-    // ?_read@UpdateTradePacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0UpdateTradePacket@@QEAA@XZ
     MCAPI UpdateTradePacket();
 
-    // symbol:
-    // ??0UpdateTradePacket@@QEAA@W4ContainerID@@W4ContainerType@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAVCompoundTag@@AEBUActorUniqueID@@4H_N5@Z
     MCAPI UpdateTradePacket(
         ::ContainerID               containerID,
         ::ContainerType             type,

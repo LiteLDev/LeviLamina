@@ -28,21 +28,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1PlanksBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~PlanksBlock() = default;
 
-    // vIndex: 119, symbol:
-    // ?buildDescriptionId@PlanksBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
+    // vIndex: 119
     virtual std::string buildDescriptionId(class Block const&) const;
 
-    // vIndex: 142, symbol: ?_addHardCodedBlockComponents@PlanksBlock@@UEAAXAEBVExperiments@@@Z
+    // vIndex: 142
     virtual void _addHardCodedBlockComponents(class Experiments const&);
 
-    // symbol: ??0PlanksBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4WoodType@@@Z
     MCAPI PlanksBlock(std::string const&, int, ::WoodType);
 
-    // symbol:
-    // ?WOOD_NAMES@PlanksBlock@@2V?$array@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$08@std@@B
     MCAPI static std::array<std::string, 9> const WOOD_NAMES;
 
     // NOLINTEND

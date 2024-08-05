@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?watches@Performance@@2VStopwatchHandler@@A
     MCAPI static class StopwatchHandler watches;
 
     // NOLINTEND

@@ -10,11 +10,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4ComponentItemDeprecatedComponentData_v1_20_30@@QEAAAEAU0@AEBU0@@Z
     MCAPI struct ComponentItemDeprecatedComponentData_v1_20_30&
     operator=(struct ComponentItemDeprecatedComponentData_v1_20_30 const&);
 
-    // symbol: ??1ComponentItemDeprecatedComponentData_v1_20_30@@QEAA@XZ
     MCAPI ~ComponentItemDeprecatedComponentData_v1_20_30();
 
     // NOLINTEND

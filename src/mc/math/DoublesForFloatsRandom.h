@@ -23,10 +23,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1DoublesForFloatsRandom@NoiseUtils@@UEAA@XZ
+    // vIndex: 0
     virtual ~DoublesForFloatsRandom();
 
-    // vIndex: 5, symbol: ?nextFloat@DoublesForFloatsRandom@NoiseUtils@@UEAAMXZ
+    // vIndex: 5
     virtual float nextFloat();
 
     // NOLINTEND

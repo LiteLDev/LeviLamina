@@ -26,30 +26,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptBlockInventoryComponent@ScriptModuleMinecraft@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptBlockInventoryComponent() = default;
 
-    // symbol: ??0ScriptBlockInventoryComponent@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
     MCAPI ScriptBlockInventoryComponent(class ScriptModuleMinecraft::ScriptBlockInventoryComponent const&);
 
-    // symbol:
-    // ?getOrCreateContainer@ScriptBlockInventoryComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptContainerWrapper@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<
         std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptContainerWrapper>>>
     getOrCreateContainer();
 
-    // symbol:
-    // ?getOrCreateContainerV010@ScriptBlockInventoryComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptBlockInventoryComponentContainer@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<std::optional<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockInventoryComponentContainer>>>
     getOrCreateContainerV010();
 
-    // symbol:
-    // ?bind@ScriptBlockInventoryComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptBlockInventoryComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockInventoryComponent>
     bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&);
 
-    // symbol: ?ComponentId@ScriptBlockInventoryComponent@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ComponentId;
 
     // NOLINTEND

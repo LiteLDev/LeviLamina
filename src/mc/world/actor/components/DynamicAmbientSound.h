@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1DynamicAmbientSound@@QEAA@XZ
     MCAPI ~DynamicAmbientSound();
 
     // NOLINTEND

@@ -19,7 +19,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ?initialize@Definition@TripodCameraActivatedComponent@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext&, class TripodCameraActivatedComponent& component) const;
 
         // NOLINTEND

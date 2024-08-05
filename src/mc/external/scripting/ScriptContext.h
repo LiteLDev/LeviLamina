@@ -25,41 +25,29 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptContext@Scripting@@QEAA@XZ
     MCAPI ScriptContext();
 
-    // symbol: ??0ScriptContext@Scripting@@QEAA@$$QEAV01@@Z
     MCAPI ScriptContext(class Scripting::ScriptContext&& rhs);
 
-    // symbol:
-    // ??0ScriptContext@Scripting@@QEAA@PEAVIRuntime@1@UContextId@1@V?$unique_ptr@VLifetimeRegistry@Scripting@@U?$default_delete@VLifetimeRegistry@Scripting@@@std@@@std@@@Z
     MCAPI
     ScriptContext(class Scripting::IRuntime*, struct Scripting::ContextId, std::unique_ptr<class Scripting::LifetimeRegistry>);
 
-    // symbol: ?getContextId@ScriptContext@Scripting@@QEBA?AUContextId@2@XZ
     MCAPI struct Scripting::ContextId getContextId() const;
 
-    // symbol: ?getRuntime@ScriptContext@Scripting@@QEAAPEAVIRuntime@2@XZ
     MCAPI class Scripting::IRuntime* getRuntime();
 
-    // symbol: ?getWeakLifetimeScope@ScriptContext@Scripting@@QEBA?AVWeakLifetimeScope@2@XZ
     MCAPI class Scripting::WeakLifetimeScope getWeakLifetimeScope() const;
 
-    // symbol: ??4ScriptContext@Scripting@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class Scripting::ScriptContext& operator=(class Scripting::ScriptContext&& rhs);
 
-    // symbol:
-    // ?run@ScriptContext@Scripting@@QEAA?AVResultAny@2@AEAVIPayload@2@V?$optional@W4Privilege@Scripting@@@std@@@Z
     MCAPI class Scripting::ResultAny run(class Scripting::IPayload& payload, std::optional<::Scripting::Privilege>);
 
-    // symbol: ??1ScriptContext@Scripting@@QEAA@XZ
     MCAPI ~ScriptContext();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_destroy@ScriptContext@Scripting@@AEAAXXZ
     MCAPI void _destroy();
 
     // NOLINTEND

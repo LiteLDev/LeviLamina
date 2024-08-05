@@ -28,14 +28,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1AcaciaLeavesBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~AcaciaLeavesBlock() = default;
 
-    // vIndex: 129, symbol: ?getVariant@AcaciaLeavesBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const&) const;
 
-    // symbol:
-    // ??0AcaciaLeavesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@$$CBVBlockLegacy@@@@@Z
     MCAPI AcaciaLeavesBlock(std::string const&, int, class WeakPtr<class BlockLegacy const>);
 
     // NOLINTEND

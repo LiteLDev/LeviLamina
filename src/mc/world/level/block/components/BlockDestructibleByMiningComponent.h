@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BlockDestructibleByMiningComponent@@UEAA@XZ
+    // vIndex: 0
     virtual ~BlockDestructibleByMiningComponent() = default;
 
     // NOLINTEND

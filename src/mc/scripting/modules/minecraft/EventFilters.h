@@ -14,7 +14,6 @@ namespace Scripting { class ModuleBindingBuilder; }
 
 namespace ScriptModuleMinecraft::EventFilters {
 // NOLINTBEGIN
-// symbol: ?bindFilters@EventFilters@ScriptModuleMinecraft@@YAXAEAVModuleBindingBuilder@Scripting@@@Z
 MCAPI void bindFilters(class Scripting::ModuleBindingBuilder&);
 // NOLINTEND
 

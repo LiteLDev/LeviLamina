@@ -15,30 +15,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SneezeGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~SneezeGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@SneezeGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@SneezeGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@SneezeGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@SneezeGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@SneezeGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@SneezeGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol:
-    // ??0SneezeGoal@@QEAA@AEAVMob@@MMMAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@11MAEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@3@M@Z
     MCAPI SneezeGoal(
         class Mob&                               mob,
         float                                    cooldownTime,

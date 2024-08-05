@@ -23,33 +23,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1VolumeEntityManager@@UEAA@XZ
+    // vIndex: 0
     virtual ~VolumeEntityManager();
 
-    // symbol: ?getVolumeInstanceCount@VolumeEntityManager@@QEBA_KXZ
     MCAPI uint64 getVolumeInstanceCount() const;
 
-    // symbol:
-    // ?getVolumeInstances@VolumeEntityManager@@QEBAAEBV?$vector@V?$OwnerPtr@VEntityContext@@@@V?$allocator@V?$OwnerPtr@VEntityContext@@@@@std@@@std@@V?$AutomaticID@VDimension@@H@@@Z
     MCAPI std::vector<class OwnerPtr<class EntityContext>> const& getVolumeInstances(DimensionType dimension) const;
 
-    // symbol:
-    // ?registerComponentNetRelevancy@VolumeEntityManager@@SAXAEAVComponentNetRelevancyRegistry@@AEBUReflectionCtx@cereal@@@Z
     MCAPI static void
     registerComponentNetRelevancy(class ComponentNetRelevancyRegistry&, struct cereal::ReflectionCtx const&);
 
-    // symbol: ?isTriggerVolumesEnabled@VolumeEntityManager@@2_NA
     MCAPI static bool isTriggerVolumesEnabled;
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ??0VolumeEntityManager@@IEAA@V?$StackRefResult@VEntityRegistry@@@@AEAUReflectionCtx@cereal@@@Z
     MCAPI VolumeEntityManager(class StackRefResult<class EntityRegistry>, struct cereal::ReflectionCtx&);
 
-    // symbol:
-    // ?_createVolumeEntity@VolumeEntityManager@@IEAA?AV?$OwnerPtr@VEntityContext@@@@AEBVDefinitionInstanceGroup@@@Z
     MCAPI class OwnerPtr<class EntityContext> _createVolumeEntity(class DefinitionInstanceGroup const& definitionGroup);
 
     // NOLINTEND

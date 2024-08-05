@@ -14,16 +14,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FishingEnchant@@UEAA@XZ
+    // vIndex: 0
     virtual ~FishingEnchant() = default;
 
-    // vIndex: 2, symbol: ?getMinCost@FishingEnchant@@UEBAHH@Z
+    // vIndex: 2
     virtual int getMinCost(int level) const;
 
-    // vIndex: 3, symbol: ?getMaxCost@FishingEnchant@@UEBAHH@Z
+    // vIndex: 3
     virtual int getMaxCost(int level) const;
 
-    // vIndex: 5, symbol: ?getMaxLevel@FishingEnchant@@UEBAHXZ
+    // vIndex: 5
     virtual int getMaxLevel() const;
 
     // NOLINTEND

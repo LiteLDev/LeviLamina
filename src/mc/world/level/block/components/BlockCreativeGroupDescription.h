@@ -21,14 +21,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BlockCreativeGroupDescription@@UEAA@XZ
+    // vIndex: 0
     virtual ~BlockCreativeGroupDescription() = default;
 
-    // vIndex: 1, symbol:
-    // ?getName@BlockCreativeGroupDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 1
     virtual std::string const& getName() const;
 
-    // symbol: ?NameID@BlockCreativeGroupDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const NameID;
 
     // NOLINTEND

@@ -36,10 +36,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1LargeFireball@@UEAA@XZ
+    // vIndex: 10
     virtual ~LargeFireball() = default;
 
-    // symbol: ??0LargeFireball@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI LargeFireball(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

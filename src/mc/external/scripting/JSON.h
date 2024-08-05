@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1JSON@Scripting@@QEAA@XZ
     MCAPI ~JSON();
 
     // NOLINTEND

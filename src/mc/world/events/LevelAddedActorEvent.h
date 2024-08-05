@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1LevelAddedActorEvent@@QEAA@XZ
     MCAPI ~LevelAddedActorEvent();
 
     // NOLINTEND

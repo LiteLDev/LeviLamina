@@ -14,10 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1WindChargedMobEffect@@UEAA@XZ
+    // vIndex: 0
     virtual ~WindChargedMobEffect() = default;
 
-    // vIndex: 4, symbol: ?onActorRemovedAfterDeath@WindChargedMobEffect@@UEBAXAEAVActor@@H@Z
+    // vIndex: 4
     virtual void onActorRemovedAfterDeath(class Actor&, int) const;
 
     // NOLINTEND

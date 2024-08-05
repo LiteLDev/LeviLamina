@@ -25,30 +25,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SetSpawnPositionPacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~SetSpawnPositionPacket();
 
-    // vIndex: 1, symbol: ?getId@SetSpawnPositionPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@SetSpawnPositionPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@SetSpawnPositionPacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 8, symbol:
-    // ?_read@SetSpawnPositionPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0SetSpawnPositionPacket@@QEAA@XZ
     MCAPI SetSpawnPositionPacket();
 
-    // symbol: ??0SetSpawnPositionPacket@@QEAA@V?$AutomaticID@VDimension@@H@@AEBVBlockPos@@1@Z
     MCAPI SetSpawnPositionPacket(DimensionType dimension, class BlockPos const& playerPosition, class BlockPos const&);
 
-    // symbol: ??0SetSpawnPositionPacket@@QEAA@W4SpawnPositionType@@V?$AutomaticID@VDimension@@H@@AEBVBlockPos@@@Z
     MCAPI SetSpawnPositionPacket(::SpawnPositionType spawnPosType, DimensionType dimension, class BlockPos const& pos);
 
     // NOLINTEND

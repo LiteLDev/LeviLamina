@@ -25,14 +25,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SystemTickDelegate@FallingBlockSystemOnLand@@UEAA@XZ
+    // vIndex: 0
     virtual ~SystemTickDelegate();
 
-    // vIndex: 1, symbol:
-    // ?onLand@SystemTickDelegate@FallingBlockSystemOnLand@@UEAAXAEBVFallingBlock@@AEAVIBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 1
     virtual void onLand(class FallingBlock const& block, class IBlockSource& region, class BlockPos const& pos);
 
-    // vIndex: 2, symbol: ?breakBlock@SystemTickDelegate@FallingBlockSystemOnLand@@UEAAXAEAVFallingBlockActor@@@Z
+    // vIndex: 2
     virtual void breakBlock(class FallingBlockActor&);
 
     // NOLINTEND

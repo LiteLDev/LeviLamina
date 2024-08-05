@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?get@BlockStateRegistry@@SAAEAV1@XZ
     MCAPI static class BlockStateRegistry& get();
 
     // NOLINTEND

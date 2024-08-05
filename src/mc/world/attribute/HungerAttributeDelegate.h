@@ -14,16 +14,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1HungerAttributeDelegate@@UEAA@XZ
+    // vIndex: 0
     virtual ~HungerAttributeDelegate() = default;
 
-    // vIndex: 1, symbol: ?tick@HungerAttributeDelegate@@UEAAXXZ
+    // vIndex: 1
     virtual void tick();
 
-    // vIndex: 2, symbol: ?notify@HungerAttributeDelegate@@UEAAX_J@Z
+    // vIndex: 2
     virtual void notify(int64 type);
 
-    // symbol: ??0HungerAttributeDelegate@@QEAA@AEBVAttributeInstance@@PEAVPlayer@@@Z
     MCAPI HungerAttributeDelegate(class AttributeInstance const& attribute, class Player* player);
 
     // NOLINTEND

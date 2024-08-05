@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?addComponentsToBlocks@VanillaDataDrivenGeometry@@SAXAEBVExperiments@@@Z
     MCAPI static void addComponentsToBlocks(class Experiments const&);
 
     // NOLINTEND

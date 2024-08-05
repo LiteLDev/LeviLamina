@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1PlayerInputPermissionCategoryChangeEvent@@QEAA@XZ
     MCAPI ~PlayerInputPermissionCategoryChangeEvent();
 
     // NOLINTEND

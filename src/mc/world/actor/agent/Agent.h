@@ -38,142 +38,119 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 6, symbol: ?initializeComponents@Agent@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 6
     virtual void initializeComponents(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: __gen_??1Agent@@UEAA@XZ
+    // vIndex: 10
     virtual ~Agent() = default;
 
-    // vIndex: 23, symbol: ?teleportTo@Agent@@UEAAXAEBVVec3@@_NHH1@Z
+    // vIndex: 23
     virtual void teleportTo(class Vec3 const& pos, bool shouldStopRiding, int cause, int entityType, bool);
 
-    // vIndex: 26, symbol: ?normalTick@Agent@@UEAAXXZ
+    // vIndex: 26
     virtual void normalTick();
 
-    // vIndex: 27, symbol: ?baseTick@Agent@@UEAAXXZ
+    // vIndex: 27
     virtual void baseTick();
 
-    // vIndex: 34, symbol: ?isInvisible@Agent@@UEBA_NXZ
+    // vIndex: 34
     virtual bool isInvisible() const;
 
-    // vIndex: 35, symbol: ?canShowNameTag@Agent@@UEBA_NXZ
+    // vIndex: 35
     virtual bool canShowNameTag() const;
 
-    // vIndex: 37, symbol: ?getNameTagTextColor@Agent@@UEBA?AVColor@mce@@XZ
+    // vIndex: 37
     virtual class mce::Color getNameTagTextColor() const;
 
-    // vIndex: 53, symbol: ?isTargetable@Agent@@UEBA_NXZ
+    // vIndex: 53
     virtual bool isTargetable() const;
 
-    // vIndex: 59, symbol: ?setOwner@Agent@@UEAAXUActorUniqueID@@@Z
+    // vIndex: 59
     virtual void setOwner(struct ActorUniqueID id);
 
-    // vIndex: 74, symbol: ?handleEntityEvent@Agent@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 74
     virtual void handleEntityEvent(::ActorEvent id, int data);
 
-    // vIndex: 82, symbol: ?setCarriedItem@Agent@@UEAAXAEBVItemStack@@@Z
+    // vIndex: 82
     virtual void setCarriedItem(class ItemStack const& item);
 
-    // vIndex: 102, symbol: ?canBePulledIntoVehicle@Agent@@UEBA_NXZ
+    // vIndex: 102
     virtual bool canBePulledIntoVehicle() const;
 
-    // vIndex: 111, symbol: ?canBeAffected@Agent@@UEBA_NI@Z
+    // vIndex: 111
     virtual bool canBeAffected(uint) const;
 
-    // vIndex: 130, symbol: ?kill@Agent@@UEAAXXZ
+    // vIndex: 130
     virtual void kill();
 
-    // vIndex: 144, symbol: ?updateEntitySpecificMolangVariables@Agent@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 144
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // vIndex: 146, symbol: ?_hurt@Agent@@EEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 146
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 151, symbol: ?knockback@Agent@@UEAAXPEAVActor@@HMMMMM@Z
+    // vIndex: 151
     virtual void knockback(class Actor*, int, float, float, float, float, float);
 
-    // vIndex: 180, symbol: ?createAIGoals@Agent@@UEAA_NXZ
+    // vIndex: 180
     virtual bool createAIGoals();
 
-    // vIndex: 185, symbol: ?canExistWhenDisallowMob@Agent@@UEBA_NXZ
+    // vIndex: 185
     virtual bool canExistWhenDisallowMob() const;
 
-    // vIndex: 186, symbol:
-    // ?initBodyControl@Agent@@EEAA?AV?$unique_ptr@VBodyControl@@U?$default_delete@VBodyControl@@@std@@@std@@XZ
+    // vIndex: 186
     virtual std::unique_ptr<class BodyControl> initBodyControl();
 
-    // symbol: ??0Agent@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Agent(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?checkTravelType@Agent@@QEAA?AW4AgentTravelType@@XZ
     MCAPI ::AgentTravelType checkTravelType();
 
-    // symbol: ?doClientTravel@Agent@@QEAAXAEBVAABB@@@Z
     MCAPI void doClientTravel(class AABB const& aabb);
 
-    // symbol: ?doServerTravel@Agent@@QEAA?AVVec3@@AEBVAABB@@W4AgentTravelType@@@Z
     MCAPI class Vec3 doServerTravel(class AABB const& aabb, ::AgentTravelType travelType);
 
-    // symbol: ?getMoveSpeedScalar@Agent@@QEBAMXZ
     MCAPI float getMoveSpeedScalar() const;
 
-    // symbol: ?getSelectedSlot@Agent@@QEBAHXZ
     MCAPI int getSelectedSlot() const;
 
-    // symbol: ?getSwingAnimationDuration@Agent@@QEBAHXZ
     MCAPI int getSwingAnimationDuration() const;
 
-    // symbol: ?handleAnimationEvent@Agent@@QEAAXW4AgentAnimation@@@Z
     MCAPI void handleAnimationEvent(::AgentAnimation);
 
-    // symbol: ?isEmoting@Agent@@QEBA_NXZ
     MCAPI bool isEmoting() const;
 
-    // symbol: ?isValidSlotNum@Agent@@QEAA_NH@Z
     MCAPI bool isValidSlotNum(int slotNum);
 
-    // symbol: ?setGameType@Agent@@QEAAXW4GameType@@@Z
     MCAPI void setGameType(::GameType gameType);
 
-    // symbol: ?setMoveTarget@Agent@@QEAAXVVec2@@@Z
     MCAPI void setMoveTarget(class Vec2 target);
 
-    // symbol: ?setMoveTarget@Agent@@QEAAXM@Z
     MCAPI void setMoveTarget(float target);
 
-    // symbol: ?setNameTagFromOwner@Agent@@QEAAXAEBVPlayer@@@Z
     MCAPI void setNameTagFromOwner(class Player const& player);
 
-    // symbol: ?shrug@Agent@@QEAAXXZ
     MCAPI void shrug();
 
-    // symbol: ?startCommandMode@Agent@@QEAAXXZ
     MCAPI void startCommandMode();
 
-    // symbol: ?stopCommandMode@Agent@@QEAAXXZ
     MCAPI void stopCommandMode();
 
-    // symbol: ?swingArm@Agent@@QEAAXXZ
     MCAPI void swingArm();
 
-    // symbol: ?tryFireCreateEvent@Agent@@QEAAXAEAVPlayer@@@Z
     MCAPI void tryFireCreateEvent(class Player& player);
 
-    // symbol: ?roundTeleportPos@Agent@@SA?AVVec3@@AEBV2@@Z
     MCAPI static class Vec3 roundTeleportPos(class Vec3 const& pos);
 
-    // symbol: ?tryGetFromEntity@Agent@@SAPEAV1@AEAVEntityContext@@_N@Z
     MCAPI static class Agent* tryGetFromEntity(class EntityContext& entity, bool);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_isOnGround@Agent@@AEAA_NAEBVAABB@@@Z
     MCAPI bool _isOnGround(class AABB const& aabb);
 
     // NOLINTEND

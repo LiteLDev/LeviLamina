@@ -14,18 +14,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SculkVeinMultifaceSpreader@@UEAA@XZ
+    // vIndex: 0
     virtual ~SculkVeinMultifaceSpreader();
 
-    // vIndex: 1, symbol: ?_canSpreadFrom@SculkVeinMultifaceSpreader@@UEBA_NAEBVBlock@@E@Z
+    // vIndex: 1
     virtual bool _canSpreadFrom(class Block const& block, uchar facing) const;
 
-    // vIndex: 2, symbol:
-    // ?_canSpreadInto@SculkVeinMultifaceSpreader@@UEBA_NAEAVIBlockWorldGenAPI@@AEBVBlock@@AEBVBlockPos@@E@Z
+    // vIndex: 2
     virtual bool
     _canSpreadInto(class IBlockWorldGenAPI& target, class Block const& self, class BlockPos const& pos, uchar) const;
 
-    // vIndex: 3, symbol: ?_isOtherBlockValidAsSource@SculkVeinMultifaceSpreader@@UEBA_NAEBVBlock@@@Z
+    // vIndex: 3
     virtual bool _isOtherBlockValidAsSource(class Block const& block) const;
 
     // NOLINTEND

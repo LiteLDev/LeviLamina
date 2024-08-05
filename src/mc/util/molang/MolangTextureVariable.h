@@ -7,7 +7,6 @@ struct MolangTextureVariable : HashedString {
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1MolangTextureVariable@@QEAA@XZ
     MCAPI ~MolangTextureVariable();
 
     // NOLINTEND

@@ -6,10 +6,8 @@
 struct InternalSystemInfo : public SystemInfo {
 public:
     // NOLINTBEGIN
-    // symbol: ??0InternalSystemInfo@@QEAA@$$QEAU0@@Z
     MCAPI InternalSystemInfo(struct InternalSystemInfo&&);
 
-    // symbol: ??1InternalSystemInfo@@QEAA@XZ
     MCAPI ~InternalSystemInfo();
 
     // NOLINTEND

@@ -25,24 +25,20 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __gen_??1PillagerOutpostPiece@PillagerOutpostPieces@@UEAA@XZ
+        // vIndex: 0
         virtual ~PillagerOutpostPiece() = default;
 
-        // vIndex: 4, symbol:
-        // ?postProcess@PillagerOutpostPiece@PillagerOutpostPieces@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+        // vIndex: 4
         virtual bool postProcess(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 
-        // vIndex: 5, symbol:
-        // ?postProcessMobsAt@PillagerOutpostPiece@PillagerOutpostPieces@@UEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+        // vIndex: 5
         virtual void
         postProcessMobsAt(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 
-        // vIndex: 12, symbol:
-        // ?addHardcodedSpawnAreas@PillagerOutpostPiece@PillagerOutpostPieces@@UEBAXAEAVLevelChunk@@@Z
+        // vIndex: 12
         virtual void addHardcodedSpawnAreas(class LevelChunk& chunk) const;
 
-        // vIndex: 13, symbol:
-        // ?_handleDataMarker@PillagerOutpostPiece@PillagerOutpostPieces@@MEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@AEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+        // vIndex: 13
         virtual void _handleDataMarker(
             std::string const&       markerId,
             class BlockPos const&    position,
@@ -51,8 +47,6 @@ public:
             class BoundingBox const& chunkBB
         );
 
-        // symbol:
-        // ??0PillagerOutpostPiece@PillagerOutpostPieces@@QEAA@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@W4Rotation@@M_NAEAVDimension@@@Z
         MCAPI PillagerOutpostPiece(
             Bedrock::NotNullNonOwnerPtr<class StructureManager> structureManager,
             std::string                                         templateName,
@@ -67,8 +61,6 @@ public:
 
         // private:
         // NOLINTBEGIN
-        // symbol:
-        // ?_addMobsFromPositions@PillagerOutpostPiece@PillagerOutpostPieces@@AEAAXAEBVBoundingBox@@AEBUActorDefinitionIdentifier@@AEAVBlockSource@@AEBV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@@Z
         MCAPI void _addMobsFromPositions(
             class BoundingBox const&                chunkBB,
             struct ActorDefinitionIdentifier const& definition,
@@ -87,8 +79,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_addPiece@PillagerOutpostPieces@@CAXV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBVBlockPos@@AEBW4Rotation@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@AEAVDimension@@@Z
     MCAPI static void _addPiece(
         Bedrock::NotNullNonOwnerPtr<class StructureManager> structureManager,
         class BlockPos const&                               position,
@@ -98,8 +88,6 @@ public:
         class Dimension&                                    dimension
     );
 
-    // symbol:
-    // ?_addScatteredPieces@PillagerOutpostPieces@@CAXV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEAVRandom@@AEBW4Rotation@@AEBVBlockPos@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVDimension@@@Z
     MCAPI static void _addScatteredPieces(
         Bedrock::NotNullNonOwnerPtr<class StructureManager> structureManager,
         class Random&                                       random,
@@ -113,18 +101,12 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?MSC_FEATURES@PillagerOutpostPieces@@0V?$array@V?$basic_string_view@DU?$char_traits@D@std@@@std@@$06@std@@A
     MCAPI static std::array<std::string_view, 7> MSC_FEATURES;
 
-    // symbol: ?PILLAGER_LOOT@PillagerOutpostPieces@@0V?$basic_string_view@DU?$char_traits@D@std@@@std@@A
     MCAPI static std::string_view PILLAGER_LOOT;
 
-    // symbol: ?STRUCTURE_WATCHTOWER@PillagerOutpostPieces@@0V?$basic_string_view@DU?$char_traits@D@std@@@std@@A
     MCAPI static std::string_view STRUCTURE_WATCHTOWER;
 
-    // symbol:
-    // ?STRUCTURE_WATCHTOWER_OVERGROWN@PillagerOutpostPieces@@0V?$basic_string_view@DU?$char_traits@D@std@@@std@@A
     MCAPI static std::string_view STRUCTURE_WATCHTOWER_OVERGROWN;
 
     // NOLINTEND

@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1GlobalBinding@Scripting@@QEAA@XZ
     MCAPI ~GlobalBinding();
 
     // NOLINTEND

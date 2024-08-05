@@ -21,7 +21,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1TeleportTarget@@QEAA@XZ
     MCAPI ~TeleportTarget();
 
     // NOLINTEND

@@ -36,66 +36,58 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1EnderMan@@UEAA@XZ
+    // vIndex: 10
     virtual ~EnderMan() = default;
 
-    // vIndex: 26, symbol: ?normalTick@EnderMan@@UEAAXXZ
+    // vIndex: 26
     virtual void normalTick();
 
-    // vIndex: 66, symbol: ?shouldRender@EnderMan@@UEBA_NXZ
+    // vIndex: 66
     virtual bool shouldRender() const;
 
-    // vIndex: 68, symbol: ?getAmbientSound@EnderMan@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 68
     virtual ::Puv::Legacy::LevelSoundEvent getAmbientSound() const;
 
-    // vIndex: 112, symbol: ?canBeAffectedByArrow@EnderMan@@UEBA_NAEBVMobEffectInstance@@@Z
+    // vIndex: 112
     virtual bool canBeAffectedByArrow(class MobEffectInstance const& effect) const;
 
-    // vIndex: 146, symbol: ?_hurt@EnderMan@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 146
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 147, symbol: ?readAdditionalSaveData@EnderMan@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 148, symbol: ?addAdditionalSaveData@EnderMan@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 157, symbol: ?hurtEffects@EnderMan@@UEAAXAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 157
     virtual void hurtEffects(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 187, symbol: ?newServerAiStep@EnderMan@@UEAAXXZ
+    // vIndex: 187
     virtual void newServerAiStep();
 
-    // symbol: ??0EnderMan@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI EnderMan(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?getCarryingBlock@EnderMan@@QEBAAEBVBlock@@XZ
     MCAPI class Block const& getCarryingBlock() const;
 
-    // symbol: ?setCarryingBlock@EnderMan@@QEAAXAEBVBlock@@@Z
     MCAPI void setCarryingBlock(class Block const& block);
 
-    // symbol: ?shutdown@EnderMan@@SAXXZ
     MCAPI static void shutdown();
 
-    // symbol: ?SPEED_MODIFIER_ATTACKING@EnderMan@@2V?$shared_ptr@VAttributeModifier@@@std@@A
     MCAPI static std::shared_ptr<class AttributeModifier> SPEED_MODIFIER_ATTACKING;
 
-    // symbol: ?SPEED_MODIFIER_ATTACKING_UUID@EnderMan@@2VUUID@mce@@B
     MCAPI static class mce::UUID const SPEED_MODIFIER_ATTACKING_UUID;
 
-    // symbol: ?mMayTake@EnderMan@@2V?$set@PEBVBlock@@U?$less@PEBVBlock@@@std@@V?$allocator@PEBVBlock@@@3@@std@@A
     MCAPI static std::set<class Block const*> mMayTake;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?mMayTakeIsSetup@EnderMan@@0_NA
     MCAPI static bool mMayTakeIsSetup;
 
     // NOLINTEND

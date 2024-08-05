@@ -27,16 +27,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ConduitBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~ConduitBlock() = default;
 
-    // vIndex: 57, symbol: ?canContainLiquid@ConduitBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // vIndex: 85, symbol: ?mayPlace@ConduitBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
+    // vIndex: 85
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar facing) const;
 
-    // symbol: ??0ConduitBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI ConduitBlock(std::string const& nameId, int id);
 
     // NOLINTEND

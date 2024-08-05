@@ -11,7 +11,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SurfaceMaterialAttributes@@UEAA@XZ
+    // vIndex: 0
     virtual ~SurfaceMaterialAttributes();
 
     // NOLINTEND

@@ -19,7 +19,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1PlaceBlockDefinition@@UEAA@XZ
+    // vIndex: 0
     virtual ~PlaceBlockDefinition() = default;
 
     // NOLINTEND

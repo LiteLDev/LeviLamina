@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1SecureStorageKey@@QEAA@XZ
     MCAPI ~SecureStorageKey();
 
     // NOLINTEND

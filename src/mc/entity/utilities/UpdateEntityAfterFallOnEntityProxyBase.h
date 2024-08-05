@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?mDummy@UpdateEntityAfterFallOnEntityProxyBase@@2VVec3@@A
     MCAPI static class Vec3 mDummy;
 
     // NOLINTEND

@@ -15,38 +15,34 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1MeleeAttackBaseGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~MeleeAttackBaseGoal();
 
-    // vIndex: 1, symbol: ?canUse@MeleeAttackBaseGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@MeleeAttackBaseGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@MeleeAttackBaseGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@MeleeAttackBaseGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 10, symbol: ?_attemptMoveToTarget@MeleeAttackBaseGoal@@MEAAXAEAVActor@@@Z
+    // vIndex: 10
     virtual void _attemptMoveToTarget(class Actor&);
 
-    // symbol: ??0MeleeAttackBaseGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit MeleeAttackBaseGoal(class Mob&);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?_attemptAttackTarget@MeleeAttackBaseGoal@@IEAAXAEAVActor@@_N1@Z
     MCAPI void _attemptAttackTarget(class Actor&, bool, bool);
 
-    // symbol: ?_attemptMoveToTargetPosition@MeleeAttackBaseGoal@@IEAAXAEAVActor@@_NM@Z
     MCAPI void _attemptMoveToTargetPosition(class Actor&, bool, float);
 
-    // symbol: ?_inSunlight@MeleeAttackBaseGoal@@IEBA_NAEBVActor@@@Z
     MCAPI bool _inSunlight(class Actor const&) const;
 
     // NOLINTEND

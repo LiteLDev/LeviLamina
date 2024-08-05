@@ -30,30 +30,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1LabTablePacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~LabTablePacket();
 
-    // vIndex: 1, symbol: ?getId@LabTablePacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@LabTablePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@LabTablePacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 8, symbol:
-    // ?_read@LabTablePacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0LabTablePacket@@QEAA@XZ
     MCAPI LabTablePacket();
 
-    // symbol: ??0LabTablePacket@@QEAA@AEBVBlockPos@@W4LabTableReactionType@@@Z
     MCAPI LabTablePacket(class BlockPos const& pos, ::LabTableReactionType reaction);
 
-    // symbol: ??0LabTablePacket@@QEAA@W4Type@0@AEBVBlockPos@@@Z
     MCAPI LabTablePacket(::LabTablePacket::Type type, class BlockPos const& pos);
 
     // NOLINTEND

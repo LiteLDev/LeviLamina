@@ -10,7 +10,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0AllWorkerConfigurations@@QEAA@XZ
     MCAPI AllWorkerConfigurations();
 
     // NOLINTEND

@@ -20,28 +20,28 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1IntArrayTag@@UEAA@XZ
+    // vIndex: 0
     virtual ~IntArrayTag() = default;
 
-    // vIndex: 2, symbol: ?write@IntArrayTag@@UEBAXAEAVIDataOutput@@@Z
+    // vIndex: 2
     virtual void write(class IDataOutput& dos) const;
 
-    // vIndex: 3, symbol: ?load@IntArrayTag@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVIDataInput@@@Z
+    // vIndex: 3
     virtual class Bedrock::Result<void> load(class IDataInput& dis);
 
-    // vIndex: 4, symbol: ?toString@IntArrayTag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 4
     virtual std::string toString() const;
 
-    // vIndex: 5, symbol: ?getId@IntArrayTag@@UEBA?AW4Type@Tag@@XZ
+    // vIndex: 5
     virtual ::Tag::Type getId() const;
 
-    // vIndex: 6, symbol: ?equals@IntArrayTag@@UEBA_NAEBVTag@@@Z
+    // vIndex: 6
     virtual bool equals(class Tag const& rhs) const;
 
-    // vIndex: 9, symbol: ?copy@IntArrayTag@@UEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
+    // vIndex: 9
     virtual std::unique_ptr<class Tag> copy() const;
 
-    // vIndex: 10, symbol: ?hash@IntArrayTag@@UEBA_KXZ
+    // vIndex: 10
     virtual uint64 hash() const;
 
     // NOLINTEND

@@ -18,10 +18,8 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ??0NumberNode@JSONObject@Bedrock@@AEAA@PEAVMemoryPage@12@_J@Z
     MCAPI NumberNode(class Bedrock::JSONObject::MemoryPage*, int64 value);
 
-    // symbol: ??0NumberNode@JSONObject@Bedrock@@AEAA@PEAVMemoryPage@12@N@Z
     MCAPI NumberNode(class Bedrock::JSONObject::MemoryPage*, double value);
 
     // NOLINTEND

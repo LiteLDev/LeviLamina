@@ -14,13 +14,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LegacyIceFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~LegacyIceFeature() = default;
 
-    // vIndex: 3, symbol: ?place@LegacyIceFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 3
     virtual bool place(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
 
-    // symbol: ??0LegacyIceFeature@@QEAA@AEBVFeatureRegistry@@@Z
     MCAPI explicit LegacyIceFeature(class FeatureRegistry const& registry);
 
     // NOLINTEND

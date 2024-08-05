@@ -27,26 +27,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1UnderwaterTorchBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~UnderwaterTorchBlock() = default;
 
-    // vIndex: 33, symbol: ?isWaterBlocking@UnderwaterTorchBlock@@UEBA_NXZ
+    // vIndex: 33
     virtual bool isWaterBlocking() const;
 
-    // vIndex: 57, symbol: ?canContainLiquid@UnderwaterTorchBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // vIndex: 61, symbol: ?canBeUsedInCommands@UnderwaterTorchBlock@@UEBA_NAEBVBaseGameVersion@@@Z
+    // vIndex: 61
     virtual bool canBeUsedInCommands(class BaseGameVersion const& requiredBaseGameVersion) const;
 
-    // vIndex: 86, symbol: ?mayPlace@UnderwaterTorchBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 86
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 134, symbol:
-    // ?animateTickBedrockLegacy@UnderwaterTorchBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 134
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // symbol: ??0UnderwaterTorchBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI UnderwaterTorchBlock(std::string const& nameId, int id);
 
     // NOLINTEND

@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1StoredCommand@npc@@QEAA@XZ
     MCAPI ~StoredCommand();
 
     // NOLINTEND

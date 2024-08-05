@@ -26,28 +26,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1LevelSoundEventPacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~LevelSoundEventPacket();
 
-    // vIndex: 1, symbol: ?getId@LevelSoundEventPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@LevelSoundEventPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@LevelSoundEventPacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 8, symbol:
-    // ?_read@LevelSoundEventPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0LevelSoundEventPacket@@QEAA@XZ
     MCAPI LevelSoundEventPacket();
 
-    // symbol:
-    // ??0LevelSoundEventPacket@@QEAA@W4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N3@Z
     MCAPI LevelSoundEventPacket(
         ::Puv::Legacy::LevelSoundEvent id,
         class Vec3 const&              pos,

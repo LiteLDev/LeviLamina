@@ -35,7 +35,6 @@ public:
 
         public:
             // NOLINTBEGIN
-            // symbol: ??1Description@Contents@BlockCulling@v1_20_60@Puv@@QEAA@XZ
             MCAPI ~Description();
 
             // NOLINTEND
@@ -57,11 +56,9 @@ public:
 
             public:
                 // NOLINTBEGIN
-                // symbol: ??4GeometryPart@Rule@Contents@BlockCulling@v1_20_60@Puv@@QEAAAEAU012345@$$QEAU012345@@Z
                 MCAPI struct Puv::v1_20_60::BlockCulling::Contents::Rule::GeometryPart&
                 operator=(struct Puv::v1_20_60::BlockCulling::Contents::Rule::GeometryPart&&);
 
-                // symbol: ??4GeometryPart@Rule@Contents@BlockCulling@v1_20_60@Puv@@QEAAAEAU012345@AEBU012345@@Z
                 MCAPI struct Puv::v1_20_60::BlockCulling::Contents::Rule::GeometryPart&
                 operator=(struct Puv::v1_20_60::BlockCulling::Contents::Rule::GeometryPart const&);
 
@@ -75,11 +72,9 @@ public:
 
         public:
             // NOLINTBEGIN
-            // symbol: ??4Rule@Contents@BlockCulling@v1_20_60@Puv@@QEAAAEAU01234@$$QEAU01234@@Z
             MCAPI struct Puv::v1_20_60::BlockCulling::Contents::Rule&
             operator=(struct Puv::v1_20_60::BlockCulling::Contents::Rule&&);
 
-            // symbol: ??4Rule@Contents@BlockCulling@v1_20_60@Puv@@QEAAAEAU01234@AEBU01234@@Z
             MCAPI struct Puv::v1_20_60::BlockCulling::Contents::Rule&
             operator=(struct Puv::v1_20_60::BlockCulling::Contents::Rule const&);
 
@@ -93,14 +88,11 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??4Contents@BlockCulling@v1_20_60@Puv@@QEAAAEAU0123@$$QEAU0123@@Z
         MCAPI struct Puv::v1_20_60::BlockCulling::Contents& operator=(struct Puv::v1_20_60::BlockCulling::Contents&&);
 
-        // symbol: ??4Contents@BlockCulling@v1_20_60@Puv@@QEAAAEAU0123@AEBU0123@@Z
         MCAPI struct Puv::v1_20_60::BlockCulling::Contents&
         operator=(struct Puv::v1_20_60::BlockCulling::Contents const&);
 
-        // symbol: ??1Contents@BlockCulling@v1_20_60@Puv@@QEAA@XZ
         MCAPI ~Contents();
 
         // NOLINTEND
@@ -114,7 +106,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?bindType@BlockCulling@v1_20_60@Puv@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // NOLINTEND

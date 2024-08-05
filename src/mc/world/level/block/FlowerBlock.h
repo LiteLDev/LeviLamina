@@ -31,69 +31,62 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FlowerBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~FlowerBlock() = default;
 
-    // vIndex: 5, symbol:
-    // ?getCollisionShape@FlowerBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 5
     virtual class AABB
     getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 9, symbol:
-    // ?getOutline@FlowerBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
+    // vIndex: 9
     virtual class AABB const&
     getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 16, symbol: ?randomlyModifyPosition@FlowerBlock@@UEBA?AVVec3@@AEBVBlockPos@@@Z
+    // vIndex: 16
     virtual class Vec3 randomlyModifyPosition(class BlockPos const& pos) const;
 
-    // vIndex: 57, symbol: ?canContainLiquid@FlowerBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // vIndex: 80, symbol:
-    // ?onFertilized@FlowerBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
+    // vIndex: 80
     virtual bool
     onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, ::FertilizerType fType)
         const;
 
-    // vIndex: 82, symbol: ?canBeFertilized@FlowerBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 82
     virtual bool
     canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
 
-    // vIndex: 86, symbol: ?mayPlace@FlowerBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 86
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 87, symbol: ?mayPlaceOn@FlowerBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 87
     virtual bool mayPlaceOn(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@FlowerBlock@@MEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
-    // vIndex: 142, symbol: ?_addHardCodedBlockComponents@FlowerBlock@@UEAAXAEBVExperiments@@@Z
+    // vIndex: 142
     virtual void _addHardCodedBlockComponents(class Experiments const&);
 
-    // vIndex: 155, symbol: ?getRenderLayer@FlowerBlock@@UEBA?AW4BlockRenderLayer@@XZ
+    // vIndex: 155
     virtual ::BlockRenderLayer getRenderLayer() const;
 
-    // vIndex: 156, symbol:
-    // ?getRenderLayer@FlowerBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 156
     virtual ::BlockRenderLayer
     getRenderLayer(class Block const& block, class BlockSource&, class BlockPos const& pos) const;
 
-    // vIndex: 160, symbol: ?getMapColor@FlowerBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 160
     virtual class mce::Color
     getMapColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
-    // symbol:
-    // ??0FlowerBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4Type@0@AEBVMaterial@@@Z
     MCAPI FlowerBlock(std::string const& nameId, int id, ::FlowerBlock::Type type, class Material const& material);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_randomWalk@FlowerBlock@@AEBA_NAEAVBlockSource@@AEAH11H@Z
     MCAPI bool _randomWalk(class BlockSource& region, int& xx, int& yy, int& zz, int j) const;
 
     // NOLINTEND

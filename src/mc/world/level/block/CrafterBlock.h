@@ -27,69 +27,66 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CrafterBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~CrafterBlock() = default;
 
-    // vIndex: 31, symbol: ?isContainerBlock@CrafterBlock@@UEBA_NXZ
+    // vIndex: 31
     virtual bool isContainerBlock() const;
 
-    // vIndex: 66, symbol: ?onRedstoneUpdate@CrafterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
+    // vIndex: 66
     virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int, bool) const;
 
-    // vIndex: 72, symbol: ?setupRedstoneComponent@CrafterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 72
     virtual void setupRedstoneComponent(class BlockSource&, class BlockPos const&) const;
 
-    // vIndex: 98, symbol: ?getPlacementBlock@CrafterBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+    // vIndex: 98
     virtual class Block const&
     getPlacementBlock(class Actor const&, class BlockPos const&, uchar, class Vec3 const&, int) const;
 
-    // vIndex: 111, symbol: ?hasComparatorSignal@CrafterBlock@@UEBA_NXZ
+    // vIndex: 111
     virtual bool hasComparatorSignal() const;
 
-    // vIndex: 112, symbol: ?getComparatorSignal@CrafterBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
+    // vIndex: 112
     virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, uchar) const;
 
-    // vIndex: 129, symbol: ?getVariant@CrafterBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const&) const;
 
-    // vIndex: 131, symbol: ?getRenderBlock@CrafterBlock@@UEBAAEBVBlock@@XZ
+    // vIndex: 131
     virtual class Block const& getRenderBlock() const;
 
-    // vIndex: 132, symbol: ?getMappedFace@CrafterBlock@@UEBAEEAEBVBlock@@@Z
+    // vIndex: 132
     virtual uchar getMappedFace(uchar, class Block const&) const;
 
-    // vIndex: 133, symbol: ?getFaceFlip@CrafterBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
+    // vIndex: 133
     virtual ::Flip getFaceFlip(uchar, class Block const&) const;
 
-    // vIndex: 143, symbol: ?onRemove@CrafterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 143
     virtual void onRemove(class BlockSource&, class BlockPos const&) const;
 
-    // vIndex: 146, symbol: ?onPlace@CrafterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 146
     virtual void onPlace(class BlockSource&, class BlockPos const&) const;
 
-    // vIndex: 148, symbol: ?tick@CrafterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // vIndex: 150, symbol: ?isInteractiveBlock@CrafterBlock@@UEBA_NXZ
+    // vIndex: 150
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 152, symbol: ?use@CrafterBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player&, class BlockPos const&, uchar) const;
 
-    // vIndex: 153, symbol: ?allowStateMismatchOnPlacement@CrafterBlock@@UEBA_NAEBVBlock@@0@Z
+    // vIndex: 153
     virtual bool allowStateMismatchOnPlacement(class Block const&, class Block const&) const;
 
-    // symbol: ??0CrafterBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI CrafterBlock(std::string const&, int);
 
-    // symbol: ?getAttachedFace@CrafterBlock@@SAHH@Z
     MCAPI static int getAttachedFace(int);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?dispenseFrom@CrafterBlock@@IEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void dispenseFrom(class BlockSource&, class BlockPos const&) const;
 
     // NOLINTEND

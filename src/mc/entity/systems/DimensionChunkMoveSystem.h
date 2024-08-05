@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createDimensionChunkMoveSystem@DimensionChunkMoveSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createDimensionChunkMoveSystem();
 
     // NOLINTEND

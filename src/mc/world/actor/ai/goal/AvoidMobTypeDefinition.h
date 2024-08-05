@@ -19,17 +19,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1AvoidMobTypeDefinition@@UEAA@XZ
+    // vIndex: 0
     virtual ~AvoidMobTypeDefinition() = default;
 
-    // symbol: ??0AvoidMobTypeDefinition@@QEAA@XZ
     MCAPI AvoidMobTypeDefinition();
 
-    // symbol: ?initialize@AvoidMobTypeDefinition@@QEBAXAEAVEntityContext@@AEAVAvoidMobTypeGoal@@@Z
     MCAPI void initialize(class EntityContext& entity, class AvoidMobTypeGoal& goal) const;
 
-    // symbol:
-    // ?buildSchema@AvoidMobTypeDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VAvoidMobTypeDefinition@@@JsonUtil@@@3@@Z
     MCAPI static void buildSchema(
         std::string const& name,
         std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AvoidMobTypeDefinition>>&

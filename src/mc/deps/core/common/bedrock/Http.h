@@ -37,10 +37,8 @@ struct XAsyncBlock;
 
 namespace Bedrock::Http {
 // NOLINTBEGIN
-// symbol: ?initializeLibHttpClient@Http@Bedrock@@YA?AV?$shared_ptr@VLibHttpClientInstance@Http@Bedrock@@@std@@XZ
 MCAPI std::shared_ptr<class Bedrock::Http::LibHttpClientInstance> initializeLibHttpClient();
 
-// symbol: ?isInitialized@Http@Bedrock@@YA_NXZ
 MCAPI bool isInitialized();
 // NOLINTEND
 

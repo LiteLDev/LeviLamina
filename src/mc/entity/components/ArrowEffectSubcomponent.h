@@ -19,19 +19,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ArrowEffectSubcomponent@@UEAA@XZ
+    // vIndex: 0
     virtual ~ArrowEffectSubcomponent() = default;
 
-    // vIndex: 1, symbol: ?readfromJSON@ArrowEffectSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
+    // vIndex: 1
     virtual void readfromJSON(class Json::Value&, class SemVersion const&);
 
-    // vIndex: 2, symbol: ?writetoJSON@ArrowEffectSubcomponent@@UEBAXAEAVValue@Json@@@Z
+    // vIndex: 2
     virtual void writetoJSON(class Json::Value& component) const;
 
-    // vIndex: 3, symbol: ?doOnHitEffect@ArrowEffectSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
+    // vIndex: 3
     virtual void doOnHitEffect(class Actor& owner, class ProjectileComponent& component);
 
-    // vIndex: 4, symbol: ?getName@ArrowEffectSubcomponent@@UEAAPEBDXZ
+    // vIndex: 4
     virtual char const* getName();
 
     // NOLINTEND

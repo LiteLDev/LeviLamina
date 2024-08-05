@@ -16,7 +16,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1SyncedAttribute@@QEAA@XZ
     MCAPI ~SyncedAttribute();
 
     // NOLINTEND

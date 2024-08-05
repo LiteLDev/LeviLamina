@@ -14,19 +14,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FurnaceResultContainerValidation@@UEAA@XZ
+    // vIndex: 0
     virtual ~FurnaceResultContainerValidation() = default;
 
-    // vIndex: 1, symbol:
-    // ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
+    // vIndex: 1
     virtual bool isValidSlotForContainer(
         class ContainerScreenContext const& screenContext,
         class Container const&              container,
         int                                 slot
     ) const;
 
-    // vIndex: 2, symbol:
-    // ?isItemAllowedInSlot@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@HAEBVItemStackBase@@H@Z
+    // vIndex: 2
     virtual bool isItemAllowedInSlot(
         class ContainerScreenContext const& screenContext,
         int                                 slot,
@@ -34,27 +32,26 @@ public:
         int                                 amount
     ) const;
 
-    // vIndex: 3, symbol: ?getAvailableSetCount@ContainerValidationBase@@UEBAHHAEBVItemStackBase@@@Z
+    // vIndex: 3
     virtual int getAvailableSetCount(int slot, class ItemStackBase const& item) const;
 
-    // vIndex: 4, symbol: ?isItemAllowedToAdd@ContainerValidationBase@@UEBA_NAEBVItemStack@@@Z
+    // vIndex: 4
     virtual bool isItemAllowedToAdd(class ItemStack const& item) const;
 
-    // vIndex: 5, symbol:
-    // ?isItemAllowedToRemove@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVItemStackBase@@@Z
+    // vIndex: 5
     virtual bool
     isItemAllowedToRemove(class ContainerScreenContext const& screenContext, class ItemStackBase const& item) const;
 
-    // vIndex: 6, symbol: ?canItemMoveToContainer@ContainerValidationBase@@UEBA_NAEBVItemStackBase@@@Z
+    // vIndex: 6
     virtual bool canItemMoveToContainer(class ItemStackBase const& item) const;
 
-    // vIndex: 7, symbol: ?canDestroy@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@@Z
+    // vIndex: 7
     virtual bool canDestroy(class ContainerScreenContext const& screenContext) const;
 
-    // vIndex: 8, symbol: ?getContainerOffset@FurnaceResultContainerValidation@@UEBAHAEBVContainerScreenContext@@@Z
+    // vIndex: 8
     virtual int getContainerOffset(class ContainerScreenContext const& screenContext) const;
 
-    // vIndex: 9, symbol: ?getContainerSize@ContainerValidationBase@@UEBAHAEBVContainerScreenContext@@AEBVContainer@@@Z
+    // vIndex: 9
     virtual int
     getContainerSize(class ContainerScreenContext const& screenContext, class Container const& container) const;
 

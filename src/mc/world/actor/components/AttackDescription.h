@@ -11,13 +11,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ?getJsonName@AttackDescription@@UEBAPEBDXZ
+    // vIndex: 0
     virtual char const* getJsonName() const;
 
-    // vIndex: 1, symbol: ??1AttackDescription@@UEAA@XZ
+    // vIndex: 1
     virtual ~AttackDescription();
 
-    // vIndex: 2, symbol: ?deserializeData@AttackDescription@@UEAAXUDeserializeDataParams@@@Z
+    // vIndex: 2
     virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
     // NOLINTEND

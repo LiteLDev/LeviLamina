@@ -20,11 +20,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1UIProfanityContext@@UEAA@XZ
+    // vIndex: 0
     virtual ~UIProfanityContext() = default;
 
-    // symbol:
-    // ?filterProfanityFromString@UIProfanityContext@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ProfanityFilterContext@@AEBV23@_N@Z
     MCAPI std::string
     filterProfanityFromString(::ProfanityFilterContext stringContext, std::string const& str, bool allowFilterOverride)
         const;

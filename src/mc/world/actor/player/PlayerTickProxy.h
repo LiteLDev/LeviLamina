@@ -14,22 +14,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1PlayerTickProxy@@UEAA@XZ
+    // vIndex: 0
     virtual ~PlayerTickProxy() = default;
 
-    // vIndex: 1, symbol: ?preReplicationTick@PlayerTickProxy@@UEAAXAEAVServerPlayer@@AEBUTick@@AEAVEntityContext@@@Z
+    // vIndex: 1
     virtual void preReplicationTick(class ServerPlayer&, struct Tick const&, class EntityContext&);
 
-    // vIndex: 2, symbol: ?playerTick@PlayerTickProxy@@UEAAXAEAVPlayer@@AEBUTick@@@Z
+    // vIndex: 2
     virtual void playerTick(class Player&, struct Tick const&);
 
-    // vIndex: 3, symbol: ?clearDimensionPlayerReplicationList@PlayerTickProxy@@UEAAXAEAVDimension@@@Z
+    // vIndex: 3
     virtual void clearDimensionPlayerReplicationList(class Dimension&);
 
-    // vIndex: 4, symbol: ?processDimensionPlayerReplication@PlayerTickProxy@@UEAAXAEAVDimension@@@Z
+    // vIndex: 4
     virtual void processDimensionPlayerReplication(class Dimension&);
 
-    // vIndex: 5, symbol: ?postReplicationtick@PlayerTickProxy@@UEAAXAEAVServerPlayer@@AEBUTick@@@Z
+    // vIndex: 5
     virtual void postReplicationtick(class ServerPlayer&, struct Tick const&);
 
     // NOLINTEND

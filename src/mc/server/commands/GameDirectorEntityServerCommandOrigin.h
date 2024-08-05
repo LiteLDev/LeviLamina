@@ -23,26 +23,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1GameDirectorEntityServerCommandOrigin@@UEAA@XZ
+    // vIndex: 0
     virtual ~GameDirectorEntityServerCommandOrigin() = default;
 
-    // vIndex: 9, symbol: ?getPermissionsLevel@GameDirectorEntityServerCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
+    // vIndex: 9
     virtual ::CommandPermissionLevel getPermissionsLevel() const;
 
-    // vIndex: 10, symbol:
-    // ?clone@GameDirectorEntityServerCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
+    // vIndex: 10
     virtual std::unique_ptr<class CommandOrigin> clone() const;
 
-    // vIndex: 17, symbol: ?canUseCommandsWithoutCheatsEnabled@GameDirectorEntityServerCommandOrigin@@UEBA_NXZ
+    // vIndex: 17
     virtual bool canUseCommandsWithoutCheatsEnabled() const;
 
-    // vIndex: 18, symbol: ?isSelectorExpansionAllowed@GameDirectorEntityServerCommandOrigin@@UEBA_NXZ
+    // vIndex: 18
     virtual bool isSelectorExpansionAllowed() const;
 
-    // vIndex: 23, symbol: ?getOriginType@GameDirectorEntityServerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
+    // vIndex: 23
     virtual ::CommandOriginType getOriginType() const;
 
-    // symbol: ??0GameDirectorEntityServerCommandOrigin@@QEAA@AEAVActor@@@Z
     MCAPI explicit GameDirectorEntityServerCommandOrigin(class Actor& origin);
 
     // NOLINTEND

@@ -31,8 +31,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 55, symbol:
-    // ?_prepareHeights@OverworldGenerator2d@@EEAAXAEAVBlockVolume@@AEBVChunkPos@@AEBVWorldGenCache@@PEAVAquifer@@$$QEAV?$function@$$A6AXAEBVBlockPos@@AEBVBlock@@H@Z@std@@_NPEAV?$vector@FV?$allocator@F@std@@@7@H@Z
+    // vIndex: 55
     virtual void _prepareHeights(
         class BlockVolume&                                                    box,
         class ChunkPos const&                                                 chunkPos,
@@ -44,8 +43,7 @@ public:
         int                                                                   skipTopN
     );
 
-    // vIndex: 46, symbol:
-    // ?decorateWorldGenPostProcess@OverworldGenerator2d@@EEBAXAEBVBiome@@AEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@@Z
+    // vIndex: 46
     virtual void decorateWorldGenPostProcess(
         class Biome const& biome,
         class LevelChunk&  lc,
@@ -53,40 +51,34 @@ public:
         class Random&      random
     ) const;
 
-    // vIndex: 42, symbol: ?findSpawnPosition@OverworldGenerator2d@@UEBA?AVBlockPos@@XZ
+    // vIndex: 42
     virtual class BlockPos findSpawnPosition() const;
 
-    // vIndex: 47, symbol:
-    // ?generateDensityCellsForChunk@OverworldGenerator2d@@UEBA?AV?$MultidimensionalArray@M$04$04$0CJ@@Util@@AEBVChunkPos@@@Z
+    // vIndex: 47
     virtual class Util::MultidimensionalArray<float, 5, 5, 41>
     generateDensityCellsForChunk(class ChunkPos const& chunkPos) const;
 
-    // vIndex: 40, symbol: ?getBiomeSource@OverworldGenerator2d@@UEBAAEBVBiomeSource@@XZ
+    // vIndex: 40
     virtual class BiomeSource const& getBiomeSource() const;
 
-    // vIndex: 48, symbol: ?getLevelGenHeight@OverworldGenerator2d@@UEBAHXZ
+    // vIndex: 48
     virtual int getLevelGenHeight() const;
 
-    // vIndex: 54, symbol:
-    // ?getMaterialAdjNoise@OverworldGenerator2d@@MEBAAEBV?$unique_ptr@VPerlinSimplexNoise@@U?$default_delete@VPerlinSimplexNoise@@@std@@@std@@XZ
+    // vIndex: 54
     virtual std::unique_ptr<class PerlinSimplexNoise> const& getMaterialAdjNoise() const;
 
-    // vIndex: 53, symbol: ?getSurfaceNoise@OverworldGenerator2d@@MEAAAEBVPerlinSimplexNoise@@XZ
+    // vIndex: 53
     virtual class PerlinSimplexNoise const& getSurfaceNoise();
 
-    // vIndex: 49, symbol:
-    // ?getXoroshiroPositionalRandomFactory@OverworldGenerator2d@@EEBA?AV?$optional@VXoroshiroPositionalRandomFactory@@@std@@XZ
+    // vIndex: 49
     virtual std::optional<class XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory() const;
 
-    // symbol: ??0OverworldGenerator2d@@QEAA@AEAVDimension@@I_NPEBVBiome@@@Z
     MCAPI OverworldGenerator2d(class Dimension&, uint, bool, class Biome const*);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_generateDensityCellsForChunk@OverworldGenerator2d@@AEBA?AV?$MultidimensionalArray@M$04$04$0CJ@@Util@@AEBVChunkPos@@@Z
     MCAPI class Util::MultidimensionalArray<float, 5, 5, 41>
     _generateDensityCellsForChunk(class ChunkPos const& chunkPos) const;
 

@@ -27,43 +27,35 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1NyliumBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~NyliumBlock() = default;
 
-    // vIndex: 80, symbol:
-    // ?onFertilized@NyliumBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
+    // vIndex: 80
     virtual bool
     onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, ::FertilizerType fType)
         const;
 
-    // vIndex: 82, symbol: ?canBeFertilized@NyliumBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 82
     virtual bool
     canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
 
-    // vIndex: 149, symbol: ?randomTick@NyliumBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 149
     virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // symbol: ??0NyliumBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI NyliumBlock(std::string const& nameId, int id);
 
-    // symbol: ?canBeNylium@NyliumBlock@@QEBA_NAEBVBlockSource@@AEBVBlockPos@@@Z
     MCAPI bool canBeNylium(class BlockSource const& region, class BlockPos const& pos) const;
 
-    // symbol: ?crimsonBlockProvider@NyliumBlock@@SAAEBVBlock@@AEBVRandomize@@@Z
     MCAPI static class Block const& crimsonBlockProvider(class Randomize const& randomize);
 
-    // symbol: ?netherSproutBlockProvider@NyliumBlock@@SAAEBVBlock@@AEBVRandomize@@@Z
     MCAPI static class Block const& netherSproutBlockProvider(class Randomize const& randomize);
 
-    // symbol: ?warpedBlockProvider@NyliumBlock@@SAAEBVBlock@@AEBVRandomize@@@Z
     MCAPI static class Block const& warpedBlockProvider(class Randomize const& randomize);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_scatterVegetation@NyliumBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@V?$function@$$A6AAEBVBlock@@AEBVRandomize@@@Z@std@@@Z
     MCAPI bool
     _scatterVegetation(class BlockSource& region, class BlockPos const& pos, class Random& random, std::function<class Block const&(class Randomize const&)>)
         const;

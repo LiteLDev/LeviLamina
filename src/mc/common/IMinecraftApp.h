@@ -11,7 +11,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1IMinecraftApp@@UEAA@XZ
+    // vIndex: 0
     virtual ~IMinecraftApp();
 
     // NOLINTEND

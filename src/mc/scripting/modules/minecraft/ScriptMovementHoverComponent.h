@@ -24,18 +24,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptMovementHoverComponent@ScriptModuleMinecraft@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptMovementHoverComponent() = default;
 
-    // vIndex: 1, symbol: ?_isValid@ScriptMovementHoverComponent@ScriptModuleMinecraft@@MEBA_NXZ
+    // vIndex: 1
     virtual bool _isValid() const;
 
-    // symbol:
-    // ?bind@ScriptMovementHoverComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptMovementHoverComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMovementHoverComponent>
     bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&);
 
-    // symbol: ?ComponentId@ScriptMovementHoverComponent@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ComponentId;
 
     // NOLINTEND

@@ -14,13 +14,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LegacyForestRockFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~LegacyForestRockFeature() = default;
 
-    // vIndex: 3, symbol: ?place@LegacyForestRockFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 3
     virtual bool place(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
 
-    // symbol: ??0LegacyForestRockFeature@@QEAA@AEBVFeatureRegistry@@@Z
     MCAPI explicit LegacyForestRockFeature(class FeatureRegistry const& registry);
 
     // NOLINTEND

@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1PlayerIDs@Social@@QEAA@XZ
     MCAPI ~PlayerIDs();
 
     // NOLINTEND

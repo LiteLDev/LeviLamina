@@ -19,11 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?initialize@NpcDefinition@@QEBAXAEAVEntityContext@@AEAVNpcComponent@@@Z
     MCAPI void initialize(class EntityContext& entity, class NpcComponent& component) const;
 
-    // symbol:
-    // ?buildSchema@NpcDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VNpcDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void buildSchema(
         std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class NpcDefinition>>& root
     );

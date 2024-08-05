@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?tick@GameTestClearTask@@QEAAXXZ
     MCAPI void tick();
 
     // NOLINTEND

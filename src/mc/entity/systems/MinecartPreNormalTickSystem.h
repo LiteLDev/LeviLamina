@@ -17,23 +17,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@MinecartPreNormalTickSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_doMinecartPreNormalTickSystem@MinecartPreNormalTickSystem@@CAXAEAVStrictEntityContext@@AEAVActorOwnerComponent@@V?$EntityModifier@UMinecartPreNormalTickBlockPosComponent@@@@@Z
     MCAPI static void _doMinecartPreNormalTickSystem(
         class StrictEntityContext& context,
         class ActorOwnerComponent&,
         class EntityModifier<struct MinecartPreNormalTickBlockPosComponent> mod
     );
 
-    // symbol:
-    // ?_tickMinecartPreNormalTickSystem@MinecartPreNormalTickSystem@@CAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@UMinecartFlag@@@@@@VActorOwnerComponent@@@@V?$EntityModifier@UMinecartPreNormalTickBlockPosComponent@@@@@Z
     MCAPI static void _tickMinecartPreNormalTickSystem(
         class ViewT<
             class StrictEntityContext,

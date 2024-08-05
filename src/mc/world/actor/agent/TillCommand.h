@@ -21,13 +21,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1TillCommand@AgentCommands@@UEAA@XZ
+    // vIndex: 0
     virtual ~TillCommand() = default;
 
-    // vIndex: 1, symbol: ?execute@TillCommand@AgentCommands@@UEAAXXZ
+    // vIndex: 1
     virtual void execute();
 
-    // vIndex: 2, symbol: ?isDone@TillCommand@AgentCommands@@UEAA_NXZ
+    // vIndex: 2
     virtual bool isDone();
 
     // NOLINTEND

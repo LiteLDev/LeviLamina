@@ -24,18 +24,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptNavigationClimbComponent@ScriptModuleMinecraft@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptNavigationClimbComponent() = default;
 
-    // vIndex: 1, symbol: ?_isValid@ScriptNavigationClimbComponent@ScriptModuleMinecraft@@MEBA_NXZ
+    // vIndex: 1
     virtual bool _isValid() const;
 
-    // symbol:
-    // ?bind@ScriptNavigationClimbComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptNavigationClimbComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptNavigationClimbComponent>
     bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&);
 
-    // symbol: ?ComponentId@ScriptNavigationClimbComponent@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ComponentId;
 
     // NOLINTEND

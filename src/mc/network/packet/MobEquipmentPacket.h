@@ -29,30 +29,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1MobEquipmentPacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~MobEquipmentPacket();
 
-    // vIndex: 1, symbol: ?getId@MobEquipmentPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@MobEquipmentPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@MobEquipmentPacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 8, symbol:
-    // ?_read@MobEquipmentPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0MobEquipmentPacket@@QEAA@XZ
     MCAPI MobEquipmentPacket();
 
-    // symbol: ??0MobEquipmentPacket@@QEAA@$$QEAV0@@Z
     MCAPI MobEquipmentPacket(class MobEquipmentPacket&&);
 
-    // symbol: ??0MobEquipmentPacket@@QEAA@VActorRuntimeID@@AEBVItemStack@@HHW4ContainerID@@@Z
     MCAPI MobEquipmentPacket(
         class ActorRuntimeID   runtimeId,
         class ItemStack const& item,
@@ -61,7 +56,6 @@ public:
         ::ContainerID          containerId
     );
 
-    // symbol: ??0MobEquipmentPacket@@QEAA@VActorRuntimeID@@AEBVNetworkItemStackDescriptor@@HHW4ContainerID@@@Z
     MCAPI MobEquipmentPacket(
         class ActorRuntimeID                    runtimeId,
         class NetworkItemStackDescriptor const& item,

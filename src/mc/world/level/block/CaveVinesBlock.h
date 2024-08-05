@@ -28,50 +28,45 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CaveVinesBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~CaveVinesBlock() = default;
 
-    // vIndex: 3, symbol:
-    // ?hasTag@CaveVinesBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 3
     virtual bool
     hasTag(class BlockSource& region, class BlockPos const& pos, class Block const& block, std::string const& tagName)
         const;
 
-    // vIndex: 5, symbol:
-    // ?getCollisionShape@CaveVinesBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 5
     virtual class AABB
     getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 9, symbol:
-    // ?getOutline@CaveVinesBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
+    // vIndex: 9
     virtual class AABB const&
     getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 57, symbol: ?canContainLiquid@CaveVinesBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // vIndex: 80, symbol:
-    // ?onFertilized@CaveVinesBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
+    // vIndex: 80
     virtual bool
     onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, ::FertilizerType fType)
         const;
 
-    // vIndex: 82, symbol: ?canBeFertilized@CaveVinesBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 82
     virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
 
-    // vIndex: 86, symbol: ?mayPlace@CaveVinesBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 86
     virtual bool mayPlace(class BlockSource&, class BlockPos const&) const;
 
-    // vIndex: 93, symbol: ?neighborChanged@CaveVinesBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 93
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@CaveVinesBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 106, symbol:
-    // ?executeEvent@CaveVinesBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVActor@@@Z
+    // vIndex: 106
     virtual void executeEvent(
         class BlockSource&    region,
         class BlockPos const& pos,
@@ -80,45 +75,39 @@ public:
         class Actor&          sourceEntity
     ) const;
 
-    // vIndex: 129, symbol: ?getVariant@CaveVinesBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const&) const;
 
-    // vIndex: 143, symbol: ?onRemove@CaveVinesBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 143
     virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 146, symbol: ?onPlace@CaveVinesBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 146
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 148, symbol: ?tick@CaveVinesBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 149, symbol: ?randomTick@CaveVinesBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 149
     virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 152, symbol: ?use@CaveVinesBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    // vIndex: 154, symbol: ?canSurvive@CaveVinesBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 154
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol:
-    // ??0CaveVinesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4CaveVinesVariant@@@Z
     MCAPI CaveVinesBlock(std::string const& nameId, int id, ::CaveVinesVariant variant);
 
-    // symbol: ?tryGrow@CaveVinesBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@MM@Z
     MCAPI static void tryGrow(class BlockSource& region, class BlockPos const& pos, float, float);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_isCaveVinesBlock@CaveVinesBlock@@AEBA_NAEBVBlock@@@Z
     MCAPI bool _isCaveVinesBlock(class Block const& block) const;
 
-    // symbol: ?_pickBerries@CaveVinesBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
     MCAPI bool _pickBerries(class BlockSource&, class BlockPos const&, class Actor&) const;
 
-    // symbol: ?_updateBlockBasedOnNeighborBelow@CaveVinesBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void _updateBlockBasedOnNeighborBelow(class BlockSource& region, class BlockPos const& pos) const;
 
     // NOLINTEND

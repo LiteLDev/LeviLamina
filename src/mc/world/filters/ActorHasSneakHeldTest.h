@@ -20,13 +20,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ActorHasSneakHeldTest@@UEAA@XZ
+    // vIndex: 0
     virtual ~ActorHasSneakHeldTest();
 
-    // vIndex: 2, symbol: ?evaluate@ActorHasSneakHeldTest@@UEBA_NAEBUFilterContext@@@Z
+    // vIndex: 2
     virtual bool evaluate(struct FilterContext const&) const;
 
-    // vIndex: 4, symbol: ?getName@ActorHasSneakHeldTest@@UEBA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@XZ
+    // vIndex: 4
     virtual std::string_view getName() const;
 
     // NOLINTEND

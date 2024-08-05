@@ -15,10 +15,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ConsumeItemNode@@UEAA@XZ
+    // vIndex: 0
     virtual ~ConsumeItemNode() = default;
 
-    // vIndex: 1, symbol: ?tick@ConsumeItemNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+    // vIndex: 1
     virtual ::BehaviorStatus tick(class Actor& owner);
 
     // NOLINTEND

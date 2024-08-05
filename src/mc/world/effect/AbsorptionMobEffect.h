@@ -14,13 +14,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1AbsorptionMobEffect@@UEAA@XZ
+    // vIndex: 0
     virtual ~AbsorptionMobEffect() = default;
 
-    // vIndex: 1, symbol: ?applyEffects@AbsorptionMobEffect@@UEBAXAEAVActor@@HH@Z
+    // vIndex: 1
     virtual void applyEffects(class Actor& target, int durationTicks, int amplification) const;
 
-    // vIndex: 2, symbol: ?removeEffects@AbsorptionMobEffect@@UEAAXAEAVBaseAttributeMap@@@Z
+    // vIndex: 2
     virtual void removeEffects(class BaseAttributeMap&);
 
     // NOLINTEND

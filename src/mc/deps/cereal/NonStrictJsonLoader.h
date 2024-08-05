@@ -21,7 +21,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1NonStrictJsonLoader@cereal@@UEAA@XZ
+    // vIndex: 0
     virtual ~NonStrictJsonLoader();
 
     // NOLINTEND

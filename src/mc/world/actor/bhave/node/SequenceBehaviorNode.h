@@ -15,13 +15,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SequenceBehaviorNode@@UEAA@XZ
+    // vIndex: 0
     virtual ~SequenceBehaviorNode() = default;
 
-    // vIndex: 1, symbol: ?tick@SequenceBehaviorNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+    // vIndex: 1
     virtual ::BehaviorStatus tick(class Actor& owner);
 
-    // vIndex: 2, symbol: ?initializeFromDefinition@SequenceBehaviorNode@@MEAAXAEAVActor@@@Z
+    // vIndex: 2
     virtual void initializeFromDefinition(class Actor& owner);
 
     // NOLINTEND

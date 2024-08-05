@@ -35,13 +35,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1MushroomCow@@UEAA@XZ
+    // vIndex: 10
     virtual ~MushroomCow() = default;
 
-    // vIndex: 160, symbol: ?checkSpawnRules@MushroomCow@@UEAA_N_N@Z
+    // vIndex: 160
     virtual bool checkSpawnRules(bool fromSpawner);
 
-    // symbol: ??0MushroomCow@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI MushroomCow(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

@@ -21,7 +21,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1ScopedPop@SchemaReader@cereal@@QEAA@XZ
         MCAPI ~ScopedPop();
 
         // NOLINTEND
@@ -35,10 +34,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?isSequenceReader@SchemaReader@cereal@@UEBA_NXZ
     MCVAPI bool isSequenceReader() const;
 
-    // symbol: ?scopedPop@SchemaReader@cereal@@QEAA?AUScopedPop@12@XZ
     MCAPI struct cereal::SchemaReader::ScopedPop scopedPop();
 
     // NOLINTEND

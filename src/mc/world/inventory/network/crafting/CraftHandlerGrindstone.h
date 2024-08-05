@@ -17,18 +17,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CraftHandlerGrindstone@@UEAA@XZ
+    // vIndex: 0
     virtual ~CraftHandlerGrindstone() = default;
 
-    // vIndex: 4, symbol:
-    // ?_handleCraftAction@CraftHandlerGrindstone@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z
+    // vIndex: 4
     virtual ::ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const& requestAction);
 
-    // vIndex: 5, symbol: ?_postCraftRequest@CraftHandlerGrindstone@@EEAAX_N@Z
+    // vIndex: 5
     virtual void _postCraftRequest(bool wasSuccess);
 
-    // symbol:
-    // ?getResultItem@CraftHandlerGrindstone@@SA?AU?$pair@VItemStack@@UItemStackNetIdVariant@@@std@@AEBVItemStack@@0@Z
     MCAPI static std::pair<class ItemStack, struct ItemStackNetIdVariant>
     getResultItem(class ItemStack const&, class ItemStack const&);
 
@@ -36,15 +33,10 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_getExperienceFromItem@CraftHandlerGrindstone@@AEBAHAEBVItemStack@@@Z
     MCAPI int _getExperienceFromItem(class ItemStack const& stack) const;
 
-    // symbol:
-    // ?_resolveNetIdAndValidate@CraftHandlerGrindstone@@AEAA_NW4ContainerEnumName@@EAEBUItemStackNetIdVariant@@@Z
     MCAPI bool _resolveNetIdAndValidate(::ContainerEnumName, uchar slot, struct ItemStackNetIdVariant const& netId);
 
-    // symbol:
-    // ?_getResultItemWithNoEnchants@CraftHandlerGrindstone@@CA?AVItemStack@@AEAV2@AEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEA_N@Z
     MCAPI static class ItemStack
     _getResultItemWithNoEnchants(class ItemStack&, std::vector<class ItemStack> const&, bool&);
 

@@ -14,13 +14,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ExecuteCommand@@UEAA@XZ
+    // vIndex: 0
     virtual ~ExecuteCommand() = default;
 
-    // vIndex: 2, symbol: ?execute@ExecuteCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+    // vIndex: 2
     virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    // symbol: ?setup@ExecuteCommand@@SAXAEAVCommandRegistry@@_NH@Z
     MCAPI static void setup(class CommandRegistry& registry, bool, int);
 
     // NOLINTEND

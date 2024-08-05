@@ -25,23 +25,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1PlayJumpSoundSystemImpl@@UEAA@XZ
+    // vIndex: 0
     virtual ~PlayJumpSoundSystemImpl() = default;
 
-    // vIndex: 1, symbol: ?registerEvents@ISystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
+    // vIndex: 1
     virtual void registerEvents(entt::dispatcher&);
 
-    // vIndex: 2, symbol: __unk_vfn_2
+    // vIndex: 2
     virtual void __unk_vfn_2();
 
-    // vIndex: 3, symbol: __unk_vfn_3
+    // vIndex: 3
     virtual void __unk_vfn_3();
 
-    // vIndex: 4, symbol: __unk_vfn_4
+    // vIndex: 4
     virtual void __unk_vfn_4();
 
-    // vIndex: 5, symbol:
-    // ?tick@PlayJumpSoundSystemImpl@@EEAAXAEAV?$StrictExecutionContext@U?$Filter@UTriggerJumpRequestComponent@@V?$FlagComponent@ULavaSlimeFlag@@@@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UMobFlag@@@@V?$FlagComponent@UParrotFlag@@@@UVehicleComponent@@V?$FlagComponent@UCamelFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@@@U?$Read@UActorDefinitionIdentifierComponent@@UDimensionTypeComponent@@USoundEventPlayerComponent@@UActorDataFlagComponent@@UStateVectorComponent@@UAABBShapeComponent@@UActorRotationComponent@@UMobBodyRotationComponent@@UPassengerComponent@@URenderRotationComponent@@UStandAnimationComponent@@UOffsetsComponent@@UVanillaOffsetComponent@@UPassengerRenderingRidingOffsetComponent@@@@U?$Write@$$V@@U?$AddRemove@$$V@@U?$GlobalRead@ULocalConstBlockSourceFactoryComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
+    // vIndex: 5
     virtual void tick(class StrictExecutionContext<
                       struct Filter<
                           struct TriggerJumpRequestComponent,
@@ -73,17 +72,12 @@ public:
                       struct GlobalWrite<>,
                       struct EntityFactoryT<>>&);
 
-    // vIndex: 6, symbol:
-    // ?singleTick@PlayJumpSoundSystemImpl@@EEAAXAEAV?$StrictExecutionContext@U?$Filter@UTriggerJumpRequestComponent@@V?$FlagComponent@ULavaSlimeFlag@@@@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UMobFlag@@@@V?$FlagComponent@UParrotFlag@@@@UVehicleComponent@@V?$FlagComponent@UCamelFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@@@U?$Read@UActorDefinitionIdentifierComponent@@UDimensionTypeComponent@@USoundEventPlayerComponent@@UActorDataFlagComponent@@UStateVectorComponent@@UAABBShapeComponent@@UActorRotationComponent@@UMobBodyRotationComponent@@UPassengerComponent@@URenderRotationComponent@@UStandAnimationComponent@@UOffsetsComponent@@UVanillaOffsetComponent@@UPassengerRenderingRidingOffsetComponent@@@@U?$Write@$$V@@U?$AddRemove@$$V@@U?$GlobalRead@ULocalConstBlockSourceFactoryComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@AEAVStrictEntityContext@@@Z
+    // vIndex: 6
     virtual void
     singleTick(class StrictExecutionContext<struct Filter<struct TriggerJumpRequestComponent, class FlagComponent<struct LavaSlimeFlag>, class FlagComponent<struct HorseFlag>, class FlagComponent<struct MobFlag>, class FlagComponent<struct ParrotFlag>, struct VehicleComponent, class FlagComponent<struct CamelFlag>, class FlagComponent<struct PlayerComponentFlag>>, struct Read<struct ActorDefinitionIdentifierComponent, struct DimensionTypeComponent, struct SoundEventPlayerComponent, struct ActorDataFlagComponent, struct StateVectorComponent, struct AABBShapeComponent, struct ActorRotationComponent, struct MobBodyRotationComponent, struct PassengerComponent, struct RenderRotationComponent, struct StandAnimationComponent, struct OffsetsComponent, struct VanillaOffsetComponent, struct PassengerRenderingRidingOffsetComponent>, struct Write<>, struct AddRemove<>, struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>, struct GlobalWrite<>, struct EntityFactoryT<>>&, class StrictEntityContext&);
 
-    // symbol:
-    // ?doPlayJumpSoundSystem@PlayJumpSoundSystemImpl@@SAXAEBVStrictEntityContext@@AEBUActorDefinitionIdentifierComponent@@AEBUSoundEventPlayerComponent@@AEBUActorDataFlagComponent@@AEBUStateVectorComponent@@AEBUAABBShapeComponent@@AEBV?$ViewT@VStrictEntityContext@@USoundEventRequestQueueComponent@@@@AEBUGetAttachPositionViews@@W4SoundType@PlayJumpSoundSystem@@AEBVIConstBlockSource@@@Z
     MCAPI static void doPlayJumpSoundSystem(class StrictEntityContext const&, struct ActorDefinitionIdentifierComponent const&, struct SoundEventPlayerComponent const&, struct ActorDataFlagComponent const&, struct StateVectorComponent const&, struct AABBShapeComponent const&, class ViewT<class StrictEntityContext, struct SoundEventRequestQueueComponent> const&, struct GetAttachPositionViews const&, ::PlayJumpSoundSystem::SoundType, class IConstBlockSource const&);
 
-    // symbol:
-    // ?sendSoundRequest@PlayJumpSoundSystemImpl@@SAXAEBVIConstBlockSource@@AEBUActorDataFlagComponent@@AEBUActorDefinitionIdentifierComponent@@AEBVVec3@@V?$OptionalComponentWrapper@USoundEventRequestQueueComponent@@@@H@Z
     MCAPI static void sendSoundRequest(
         class IConstBlockSource const& region,
         struct ActorDataFlagComponent const&,

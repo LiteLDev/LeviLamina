@@ -13,16 +13,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1GameTestRuleHelper@gametest@@UEAA@XZ
+    // vIndex: 0
     virtual ~GameTestRuleHelper() = default;
 
-    // vIndex: 1, symbol: ?addRuleToClear@GameTestRuleHelper@gametest@@UEAAXH@Z
+    // vIndex: 1
     virtual void addRuleToClear(int);
 
-    // vIndex: 2, symbol: ?clearRules@GameTestRuleHelper@gametest@@UEAAXXZ
+    // vIndex: 2
     virtual void clearRules();
 
-    // vIndex: 3, symbol: ?restoreRules@GameTestRuleHelper@gametest@@UEAAXXZ
+    // vIndex: 3
     virtual void restoreRules();
 
     // NOLINTEND

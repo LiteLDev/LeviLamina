@@ -9,7 +9,6 @@ namespace FlatteningUtils { struct Instance; }
 
 namespace FlatteningUtils::Planks {
 // NOLINTBEGIN
-// symbol: ?get@Planks@FlatteningUtils@@YA?AUInstance@2@XZ
 MCAPI struct FlatteningUtils::Instance get();
 // NOLINTEND
 

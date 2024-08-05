@@ -11,38 +11,37 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1IRandom@@UEAA@XZ
+    // vIndex: 0
     virtual ~IRandom();
 
-    // vIndex: 1, symbol: ?nextInt@Random@Core@@UEAAHXZ
+    // vIndex: 1
     virtual int nextInt() = 0;
 
-    // vIndex: 2, symbol: ?nextInt@Random@Core@@UEAAHH@Z
+    // vIndex: 2
     virtual int nextInt(int n) = 0;
 
-    // vIndex: 3, symbol: ?nextLong@Random@Core@@UEAA_JXZ
+    // vIndex: 3
     virtual int64 nextLong() = 0;
 
-    // vIndex: 4, symbol: ?nextBoolean@Random@Core@@UEAA_NXZ
+    // vIndex: 4
     virtual bool nextBoolean() = 0;
 
-    // vIndex: 5, symbol: ?nextFloat@Random@Core@@UEAAMXZ
+    // vIndex: 5
     virtual float nextFloat() = 0;
 
-    // vIndex: 6, symbol: ?nextDouble@Random@Core@@UEAANXZ
+    // vIndex: 6
     virtual double nextDouble() = 0;
 
-    // vIndex: 7, symbol: ?nextGaussianDouble@Random@Core@@UEAANXZ
+    // vIndex: 7
     virtual double nextGaussianDouble() = 0;
 
-    // vIndex: 8, symbol: ?consumeCount@Random@Core@@UEAAXI@Z
+    // vIndex: 8
     virtual void consumeCount(uint count) = 0;
 
-    // vIndex: 9, symbol: ?fork@Random@Core@@UEAA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@XZ
+    // vIndex: 9
     virtual std::unique_ptr<class IRandom> fork() = 0;
 
-    // vIndex: 10, symbol:
-    // ?forkPositional@IRandom@@UEAA?AV?$unique_ptr@VIPositionalRandomFactory@@U?$default_delete@VIPositionalRandomFactory@@@std@@@std@@XZ
+    // vIndex: 10
     virtual std::unique_ptr<class IPositionalRandomFactory> forkPositional();
 
     // NOLINTEND

@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ContainerValidationSlotInfo@@QEAA@XZ
     MCAPI ~ContainerValidationSlotInfo();
 
     // NOLINTEND

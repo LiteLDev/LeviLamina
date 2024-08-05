@@ -44,8 +44,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 45, symbol:
-    // ?decorateWorldGenLoadChunk@NetherGenerator@@MEBAXAEBVBiome@@AEAVLevelChunk@@AEAVBlockVolumeTarget@@AEAVRandom@@AEBVChunkPos@@@Z
+    // vIndex: 45
     virtual void decorateWorldGenLoadChunk(
         class Biome const&       biome,
         class LevelChunk&        lc,
@@ -54,8 +53,7 @@ public:
         class ChunkPos const&    pos
     ) const;
 
-    // vIndex: 46, symbol:
-    // ?decorateWorldGenPostProcess@NetherGenerator@@MEBAXAEBVBiome@@AEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@@Z
+    // vIndex: 46
     virtual void decorateWorldGenPostProcess(
         class Biome const& biome,
         class LevelChunk&  lc,
@@ -63,26 +61,25 @@ public:
         class Random&      random
     ) const;
 
-    // vIndex: 42, symbol: ?findSpawnPosition@NetherGenerator@@UEBA?AVBlockPos@@XZ
+    // vIndex: 42
     virtual class BlockPos findSpawnPosition() const;
 
-    // vIndex: 39, symbol: ?getBiomeArea@NetherGenerator@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z
+    // vIndex: 39
     virtual class BiomeArea getBiomeArea(class BoundingBox const& area, uint scale) const;
 
-    // vIndex: 40, symbol: ?getBiomeSource@NetherGenerator@@UEBAAEBVBiomeSource@@XZ
+    // vIndex: 40
     virtual class BiomeSource const& getBiomeSource() const;
 
-    // vIndex: 41, symbol: ?getBlockVolumeDimensions@NetherGenerator@@UEBA?AUBlockVolumeDimensions@WorldGenerator@@XZ
+    // vIndex: 41
     virtual struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const;
 
-    // vIndex: 11, symbol: ?loadChunk@NetherGenerator@@UEAAXAEAVLevelChunk@@_N@Z
+    // vIndex: 11
     virtual void loadChunk(class LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad);
 
-    // vIndex: 9, symbol: ?postProcess@NetherGenerator@@UEAA_NAEAVChunkViewSource@@@Z
+    // vIndex: 9
     virtual bool postProcess(class ChunkViewSource& neighborhood);
 
-    // vIndex: 38, symbol:
-    // ?prepareAndComputeHeights@NetherGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@AEAV?$vector@FV?$allocator@F@std@@@std@@_NH@Z
+    // vIndex: 38
     virtual void prepareAndComputeHeights(
         class BlockVolume&    box,
         class ChunkPos const& chunkPos,
@@ -91,17 +88,13 @@ public:
         int                   skipTopN
     );
 
-    // vIndex: 37, symbol: ?prepareHeights@NetherGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@_N@Z
+    // vIndex: 37
     virtual void prepareHeights(class BlockVolume& box, class ChunkPos const& chunkPos, bool factorInBeardsAndShavers);
 
-    // symbol: ??0NetherGenerator@@QEAA@AEAVDimension@@IPEBVBiome@@@Z
     MCAPI NetherGenerator(class Dimension&, uint, class Biome const*);
 
-    // symbol: ?buildSurfaces@NetherGenerator@@QEAAXAEAVBlockVolume@@AEAVLevelChunk@@AEBVChunkPos@@@Z
     MCAPI void buildSurfaces(class BlockVolume& blocks, class LevelChunk& levelChunk, class ChunkPos const& chunkPos);
 
-    // symbol:
-    // ?generateDensityCellsForChunk@NetherGenerator@@QEBA?AV?$MultidimensionalArray@M$04$04$0BB@@Util@@AEBVChunkPos@@@Z
     MCAPI class Util::MultidimensionalArray<float, 5, 5, 17> generateDensityCellsForChunk(class ChunkPos const& chunkPos
     ) const;
 
@@ -109,8 +102,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_prepareHeights@NetherGenerator@@AEAAXAEAVBlockVolume@@AEBVChunkPos@@_NPEAV?$vector@FV?$allocator@F@std@@@std@@H@Z
     MCAPI void _prepareHeights(
         class BlockVolume&    box,
         class ChunkPos const& chunkPos,

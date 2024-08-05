@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1MobSpawnerPermutation@@QEAA@XZ
     MCAPI ~MobSpawnerPermutation();
 
     // NOLINTEND

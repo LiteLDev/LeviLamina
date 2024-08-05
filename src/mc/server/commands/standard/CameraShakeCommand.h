@@ -14,23 +14,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CameraShakeCommand@@UEAA@XZ
+    // vIndex: 0
     virtual ~CameraShakeCommand() = default;
 
-    // vIndex: 2, symbol: ?execute@CameraShakeCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+    // vIndex: 2
     virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    // symbol: ?setup@CameraShakeCommand@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry& registry);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_executeAdd@CameraShakeCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     MCAPI void _executeAdd(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    // symbol: ?_executeStop@CameraShakeCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     MCAPI void _executeStop(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // NOLINTEND

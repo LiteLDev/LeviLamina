@@ -27,64 +27,58 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MangrovePropaguleBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~MangrovePropaguleBlock() = default;
 
-    // vIndex: 9, symbol:
-    // ?getOutline@MangrovePropaguleBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
+    // vIndex: 9
     virtual class AABB const&
     getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 11, symbol: ?getVisualShape@MangrovePropaguleBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
+    // vIndex: 11
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
 
-    // vIndex: 16, symbol: ?randomlyModifyPosition@MangrovePropaguleBlock@@UEBA?AVVec3@@AEBVBlockPos@@@Z
+    // vIndex: 16
     virtual class Vec3 randomlyModifyPosition(class BlockPos const& pos) const;
 
-    // vIndex: 56, symbol: ?waterSpreadCausesSpawn@MangrovePropaguleBlock@@UEBA_NXZ
+    // vIndex: 56
     virtual bool waterSpreadCausesSpawn() const;
 
-    // vIndex: 57, symbol: ?canContainLiquid@MangrovePropaguleBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // vIndex: 80, symbol:
-    // ?onFertilized@MangrovePropaguleBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
+    // vIndex: 80
     virtual bool
     onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* actor, ::FertilizerType) const;
 
-    // vIndex: 82, symbol: ?canBeFertilized@MangrovePropaguleBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 82
     virtual bool
     canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
 
-    // vIndex: 87, symbol: ?mayPlaceOn@MangrovePropaguleBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 87
     virtual bool mayPlaceOn(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 129, symbol: ?getVariant@MangrovePropaguleBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 136, symbol: ?init@MangrovePropaguleBlock@@UEAAAEAVBlockLegacy@@XZ
+    // vIndex: 136
     virtual class BlockLegacy& init();
 
-    // vIndex: 149, symbol: ?randomTick@MangrovePropaguleBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 149
     virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 154, symbol: ?canSurvive@MangrovePropaguleBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 154
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ??0MangrovePropaguleBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI MangrovePropaguleBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_growTree@MangrovePropaguleBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     MCAPI bool _growTree(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // symbol: ?_isFullyGrown@MangrovePropaguleBlock@@AEBA_NAEBVBlock@@@Z
     MCAPI bool _isFullyGrown(class Block const& block) const;
 
-    // symbol: ?_isHanging@MangrovePropaguleBlock@@AEBA_NAEBVBlock@@@Z
     MCAPI bool _isHanging(class Block const& block) const;
 
     // NOLINTEND

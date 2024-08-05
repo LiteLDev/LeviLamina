@@ -11,19 +11,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1InMemoryWritableFile@@UEAA@XZ
+    // vIndex: 0
     virtual ~InMemoryWritableFile() = default;
 
-    // vIndex: 1, symbol: ?Append@InMemoryWritableFile@@UEAA?AVStatus@leveldb@@AEBVSlice@3@@Z
+    // vIndex: 1
     virtual leveldb::Status Append(leveldb::Slice const& data);
 
-    // vIndex: 2, symbol: ?Close@InMemoryWritableFile@@UEAA?AVStatus@leveldb@@XZ
+    // vIndex: 2
     virtual leveldb::Status Close();
 
-    // vIndex: 3, symbol: ?Flush@InMemoryWritableFile@@UEAA?AVStatus@leveldb@@XZ
+    // vIndex: 3
     virtual leveldb::Status Flush();
 
-    // vIndex: 4, symbol: ?Sync@InMemoryWritableFile@@UEAA?AVStatus@leveldb@@XZ
+    // vIndex: 4
     virtual leveldb::Status Sync();
 
     // NOLINTEND

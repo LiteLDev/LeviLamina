@@ -7,8 +7,6 @@
 
 namespace StructureFeatureTypeUtils {
 // NOLINTBEGIN
-// symbol:
-// ?isFeatureTypeAllowedForExperiments@StructureFeatureTypeUtils@@YA_NW4StructureFeatureType@@AEBVExperiments@@@Z
 MCAPI bool isFeatureTypeAllowedForExperiments(::StructureFeatureType, class Experiments const&);
 // NOLINTEND
 

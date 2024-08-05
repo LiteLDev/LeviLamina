@@ -11,13 +11,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1NullLogger@@UEAA@XZ
+    // vIndex: 0
     virtual ~NullLogger() = default;
 
-    // vIndex: 1, symbol: ?Logv@NullLogger@@UEAAXPEBDPEAD@Z
+    // vIndex: 1
     virtual void Logv(char const*, char*);
 
-    // symbol: ?instance@NullLogger@@2V1@A
     MCAPI static class NullLogger instance;
 
     // NOLINTEND

@@ -10,11 +10,8 @@
 
 namespace ActorPlayMovementSoundSystemImpl {
 // NOLINTBEGIN
-// symbol: ?doPlayMovementSound@ActorPlayMovementSoundSystemImpl@@YAXAEAVActorOwnerComponent@@@Z
 MCAPI void doPlayMovementSound(class ActorOwnerComponent&);
 
-// symbol:
-// ?tick@ActorPlayMovementSoundSystemImpl@@YAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@U?$Exclude@UPassengerComponent@@V?$FlagComponent@UActorRemovedFlag@@@@@@VActorOwnerComponent@@@@@Z
 MCAPI void tick(class ViewT<
                 class StrictEntityContext,
                 struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,

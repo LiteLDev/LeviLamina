@@ -10,10 +10,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0CommandSyntaxInformation@@QEAA@XZ
     MCAPI CommandSyntaxInformation();
 
-    // symbol: ??1CommandSyntaxInformation@@QEAA@XZ
     MCAPI ~CommandSyntaxInformation();
 
     // NOLINTEND

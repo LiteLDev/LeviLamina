@@ -20,11 +20,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1RangedAttackDefinition@@UEAA@XZ
+    // vIndex: 0
     virtual ~RangedAttackDefinition() = default;
 
-    // symbol:
-    // ?buildSchema@RangedAttackDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VRangedAttackDefinition@@@JsonUtil@@@3@@Z
     MCAPI static void buildSchema(
         std::string const& name,
         std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RangedAttackDefinition>>&

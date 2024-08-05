@@ -22,14 +22,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SwampSurfaceBuilder@VanillaSurfaceBuilders@@UEAA@XZ
+    // vIndex: 0
     virtual ~SwampSurfaceBuilder() = default;
 
-    // vIndex: 1, symbol: ?init@SwampSurfaceBuilder@VanillaSurfaceBuilders@@UEAAXAEAVBiome@@I@Z
+    // vIndex: 1
     virtual void init(class Biome&, uint);
 
-    // vIndex: 2, symbol:
-    // ?buildSurfaceAt@SwampSurfaceBuilder@VanillaSurfaceBuilders@@UEBAXAEBUBuildParameters@ISurfaceBuilder@@@Z
+    // vIndex: 2
     virtual void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const& parameters) const;
 
     // NOLINTEND

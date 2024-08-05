@@ -49,10 +49,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ?HEIGHT_COLUMN_ABOVE_SUBCHUNK@HeightmapData@SubChunkPacket@@2CB
         MCAPI static schar const HEIGHT_COLUMN_ABOVE_SUBCHUNK;
 
-        // symbol: ?HEIGHT_COLUMN_BELOW_SUBCHUNK@HeightmapData@SubChunkPacket@@2CB
         MCAPI static schar const HEIGHT_COLUMN_BELOW_SUBCHUNK;
 
         // NOLINTEND
@@ -85,10 +83,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??0SubChunkPacketData@SubChunkPacket@@QEAA@$$QEAU01@@Z
         MCAPI SubChunkPacketData(struct SubChunkPacket::SubChunkPacketData&&);
 
-        // symbol: ??1SubChunkPacketData@SubChunkPacket@@QEAA@XZ
         MCAPI ~SubChunkPacketData();
 
         // NOLINTEND
@@ -106,27 +102,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SubChunkPacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~SubChunkPacket();
 
-    // vIndex: 1, symbol: ?getId@SubChunkPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@SubChunkPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@SubChunkPacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 8, symbol:
-    // ?_read@SubChunkPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0SubChunkPacket@@QEAA@XZ
     MCAPI SubChunkPacket();
 
-    // symbol: ??0SubChunkPacket@@QEAA@AEBV?$AutomaticID@VDimension@@H@@AEBVSubChunkPos@@_N@Z
     MCAPI SubChunkPacket(DimensionType const& dimension, class SubChunkPos const& centerPos, bool cacheEnabled);
 
     // NOLINTEND

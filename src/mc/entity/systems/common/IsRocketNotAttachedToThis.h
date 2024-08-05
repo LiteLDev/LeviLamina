@@ -18,7 +18,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??RIsRocketNotAttachedToThis@FireworksMovementSystems@@QEBA_NAEBVStrictEntityContext@@@Z
     MCAPI bool operator()(class StrictEntityContext const&) const;
 
     // NOLINTEND

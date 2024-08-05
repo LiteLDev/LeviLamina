@@ -10,10 +10,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0MolangEntityVariable@@QEAA@AEBVHashedString@@@Z
     MCAPI explicit MolangEntityVariable(class HashedString const& value);
 
-    // symbol: ??1MolangEntityVariable@@QEAA@XZ
     MCAPI ~MolangEntityVariable();
 
     // NOLINTEND

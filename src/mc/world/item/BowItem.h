@@ -26,23 +26,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BowItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~BowItem() = default;
 
-    // vIndex: 50, symbol: ?getEnchantSlot@BowItem@@UEBAHXZ
+    // vIndex: 50
     virtual int getEnchantSlot() const;
 
-    // vIndex: 96, symbol: ?enchantProjectile@BowItem@@UEBAXAEBVItemStackBase@@AEAVActor@@@Z
+    // vIndex: 96
     virtual void enchantProjectile(class ItemStackBase const&, class Actor& projectile) const;
 
-    // vIndex: 103, symbol:
-    // ?setIconInfo@BowItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+    // vIndex: 103
     virtual class Item& setIconInfo(std::string const& name, int id);
 
-    // vIndex: 104, symbol: ?getIconInfo@BowItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
+    // vIndex: 104
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const& item, int, bool inInventoryPane) const;
 
-    // symbol: ??0BowItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI BowItem(std::string const& name, int id);
 
     // NOLINTEND

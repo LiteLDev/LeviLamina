@@ -14,7 +14,6 @@ public:
     ItemStackNetIdVariant mNetIdVariant;       // this+0x8
 public:
     // NOLINTBEGIN
-    // symbol: ??1ItemStackRequestSlotInfo@@QEAA@XZ
     MCAPI ~ItemStackRequestSlotInfo();
 
     // NOLINTEND

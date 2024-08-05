@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1PlayerGetExperienceOrbEvent@@QEAA@XZ
     MCAPI ~PlayerGetExperienceOrbEvent();
 
     // NOLINTEND

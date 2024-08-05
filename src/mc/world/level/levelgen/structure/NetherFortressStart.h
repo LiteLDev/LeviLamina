@@ -14,10 +14,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1NetherFortressStart@@UEAA@XZ
+    // vIndex: 0
     virtual ~NetherFortressStart() = default;
 
-    // symbol: ??0NetherFortressStart@@QEAA@AEAVRandom@@FHH@Z
     MCAPI NetherFortressStart(class Random& random, short seaLevel, int chunkX, int chunkZ);
 
     // NOLINTEND

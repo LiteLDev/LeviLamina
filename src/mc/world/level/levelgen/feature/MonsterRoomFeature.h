@@ -13,13 +13,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1MonsterRoomFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~MonsterRoomFeature();
 
-    // vIndex: 3, symbol: ?place@MonsterRoomFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 3
     virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // symbol: ??0MonsterRoomFeature@@QEAA@XZ
     MCAPI MonsterRoomFeature();
 
     // NOLINTEND

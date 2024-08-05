@@ -27,11 +27,9 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??4BucketContext@ChunkRecyclerTelemetryData@@QEAAAEAU01@AEBU01@@Z
         MCAPI struct ChunkRecyclerTelemetryData::BucketContext&
         operator=(struct ChunkRecyclerTelemetryData::BucketContext const&);
 
-        // symbol: ??1BucketContext@ChunkRecyclerTelemetryData@@QEAA@XZ
         MCAPI ~BucketContext();
 
         // NOLINTEND
@@ -52,38 +50,29 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ChunkRecyclerTelemetryData@@UEAA@XZ
+    // vIndex: 0
     virtual ~ChunkRecyclerTelemetryData() = default;
 
-    // symbol: ??0ChunkRecyclerTelemetryData@@QEAA@XZ
     MCAPI ChunkRecyclerTelemetryData();
 
-    // symbol: ?endLevel@ChunkRecyclerTelemetryData@@QEAAXAEAVLevel@@@Z
     MCAPI void endLevel(class Level& level);
 
-    // symbol: ?recordCacheCheck@ChunkRecyclerTelemetryData@@QEAAXAEBVLevelChunk@@@Z
     MCAPI void recordCacheCheck(class LevelChunk const& lc);
 
-    // symbol: ?recordChunkDeleted@ChunkRecyclerTelemetryData@@QEAAXAEBVLevelChunk@@@Z
     MCAPI void recordChunkDeleted(class LevelChunk const& lc);
 
-    // symbol: ?recordTaskCompleted@ChunkRecyclerTelemetryData@@QEAAXAEBVLevelChunk@@AEBVTaskInfo@1@@Z
     MCAPI void recordTaskCompleted(class LevelChunk const& lc, class ChunkRecyclerTelemetryData::TaskInfo const&);
 
-    // symbol: ?startLevel@ChunkRecyclerTelemetryData@@QEAAXAEBVLevel@@@Z
     MCAPI void startLevel(class Level const& level);
 
-    // symbol: ?tickLevel@ChunkRecyclerTelemetryData@@QEAAXAEBVLevel@@@Z
     MCAPI void tickLevel(class Level const& level);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_reset@ChunkRecyclerTelemetryData@@AEAAXXZ
     MCAPI void _reset();
 
-    // symbol: ?_setIsLocked@ChunkRecyclerTelemetryData@@AEAAXXZ
     MCAPI void _setIsLocked();
 
     // NOLINTEND

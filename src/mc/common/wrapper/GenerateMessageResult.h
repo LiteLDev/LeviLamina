@@ -15,7 +15,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1GenerateMessageResult@@QEAA@XZ
     MCAPI ~GenerateMessageResult();
 
     // NOLINTEND

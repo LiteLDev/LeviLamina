@@ -21,10 +21,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1IRNS2_Berkley@RakNet@@UEAA@XZ
+    // vIndex: 0
     virtual ~IRNS2_Berkley();
 
-    // vIndex: 1, symbol: __unk_vfn_1
+    // vIndex: 1
     virtual void __unk_vfn_1();
 
     // NOLINTEND

@@ -11,10 +11,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1IFileReadAccess@@UEAA@XZ
+    // vIndex: 0
     virtual ~IFileReadAccess() = default;
 
-    // vIndex: 1, symbol: ?fread@FileSystemFileReadAccess@FileSystemFileAccess@@UEBA_KPEAX_K10@Z
+    // vIndex: 1
     virtual uint64 fread(void* buffer, uint64 size, uint64 count, void* file) const = 0;
 
     // NOLINTEND

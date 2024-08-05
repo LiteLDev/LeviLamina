@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1GenerationContext@worldgen@br@@QEAA@XZ
     MCAPI ~GenerationContext();
 
     // NOLINTEND

@@ -13,19 +13,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1IPropertySetter@Reflection@Scripting@@UEAA@XZ
+    // vIndex: 0
     virtual ~IPropertySetter() = default;
 
-    // vIndex: 1, symbol: __unk_vfn_1
+    // vIndex: 1
     virtual void __unk_vfn_1() = 0;
 
-    // vIndex: 2, symbol: __unk_vfn_2
+    // vIndex: 2
     virtual void __unk_vfn_2() = 0;
 
-    // vIndex: 3, symbol: __unk_vfn_3
+    // vIndex: 3
     virtual void __unk_vfn_3() = 0;
 
-    // vIndex: 4, symbol: ?isMemberFunction@IPropertySetter@Reflection@Scripting@@UEBA_NXZ
+    // vIndex: 4
     virtual bool isMemberFunction() const;
 
     // NOLINTEND

@@ -10,13 +10,9 @@ namespace ScriptModuleMinecraft { struct ScriptMusicOptions; }
 
 namespace ScriptModuleMinecraft::ScriptSoundUtils {
 // NOLINTBEGIN
-// symbol:
-// ?createPlayMusicPacket@ScriptSoundUtils@ScriptModuleMinecraft@@YA?AV?$unique_ptr@VLevelEventGenericPacket@@U?$default_delete@VLevelEventGenericPacket@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@V?$optional@UScriptMusicOptions@ScriptModuleMinecraft@@@4@_N@Z
 MCAPI std::unique_ptr<class LevelEventGenericPacket>
       createPlayMusicPacket(std::string const&, std::optional<struct ScriptModuleMinecraft::ScriptMusicOptions>, bool);
 
-// symbol:
-// ?createStopMusicPacket@ScriptSoundUtils@ScriptModuleMinecraft@@YA?AV?$unique_ptr@VLevelEventGenericPacket@@U?$default_delete@VLevelEventGenericPacket@@@std@@@std@@XZ
 MCAPI std::unique_ptr<class LevelEventGenericPacket> createStopMusicPacket();
 // NOLINTEND
 

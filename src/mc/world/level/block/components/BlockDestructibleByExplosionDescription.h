@@ -21,22 +21,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BlockDestructibleByExplosionDescription@@UEAA@XZ
+    // vIndex: 0
     virtual ~BlockDestructibleByExplosionDescription() = default;
 
-    // vIndex: 1, symbol:
-    // ?getName@BlockDestructibleByExplosionDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 1
     virtual std::string const& getName() const;
 
-    // vIndex: 3, symbol:
-    // ?initializeComponent@BlockDestructibleByExplosionDescription@@UEBAXAEAVBlockComponentStorage@@@Z
+    // vIndex: 3
     virtual void initializeComponent(class BlockComponentStorage&) const;
 
-    // symbol: ?bindType@BlockDestructibleByExplosionDescription@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
-    // symbol:
-    // ?NameID@BlockDestructibleByExplosionDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const NameID;
 
     // NOLINTEND

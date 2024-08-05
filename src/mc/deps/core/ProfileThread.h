@@ -13,10 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ProfileThread@Profile@Core@@QEAA@PEBD@Z
     MCAPI explicit ProfileThread(char const* name);
 
-    // symbol: ??1ProfileThread@Profile@Core@@QEAA@XZ
     MCAPI ~ProfileThread();
 
     // NOLINTEND

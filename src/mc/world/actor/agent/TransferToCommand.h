@@ -21,13 +21,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1TransferToCommand@AgentCommands@@UEAA@XZ
+    // vIndex: 0
     virtual ~TransferToCommand() = default;
 
-    // vIndex: 1, symbol: ?execute@TransferToCommand@AgentCommands@@UEAAXXZ
+    // vIndex: 1
     virtual void execute();
 
-    // vIndex: 2, symbol: ?isDone@TransferToCommand@AgentCommands@@UEAA_NXZ
+    // vIndex: 2
     virtual bool isDone();
 
     // NOLINTEND

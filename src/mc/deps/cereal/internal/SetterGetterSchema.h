@@ -28,33 +28,29 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol:
-    // ?doLoad@SetterGetterSchema@internal@cereal@@EEBAXAEAUSchemaReader@3@AEAVmeta_any@entt@@AEBV56@AEAVSerializerContext@3@@Z
+    // vIndex: 0
     virtual void
     doLoad(struct cereal::SchemaReader&, entt::meta_any&, entt::meta_any const&, class cereal::SerializerContext&)
         const;
 
-    // vIndex: 1, symbol:
-    // ?doSave@SetterGetterSchema@internal@cereal@@EEBAXAEAUSchemaWriter@3@AEBVmeta_any@entt@@AEAVSerializerContext@3@@Z
+    // vIndex: 1
     virtual void doSave(struct cereal::SchemaWriter&, entt::meta_any const&, class cereal::SerializerContext&) const;
 
-    // vIndex: 2, symbol: ?doVerifyInitialization@SetterGetterSchema@internal@cereal@@EEBA_NAEBVmeta_any@entt@@@Z
+    // vIndex: 2
     virtual bool doVerifyInitialization(entt::meta_any const&) const;
 
-    // vIndex: 3, symbol: ?makeDescription@SetterGetterSchema@internal@cereal@@EEBA?AUSchemaDescription@3@XZ
+    // vIndex: 3
     virtual struct cereal::SchemaDescription makeDescription() const;
 
-    // vIndex: 4, symbol: __gen_??1SetterGetterSchema@internal@cereal@@UEAA@XZ
+    // vIndex: 4
     virtual ~SetterGetterSchema() = default;
 
-    // vIndex: 6, symbol: ?enumMapping@SetterGetterSchema@internal@cereal@@UEAAXVSerializerEnumMapping@3@@Z
+    // vIndex: 6
     virtual void enumMapping(class cereal::SerializerEnumMapping);
 
-    // vIndex: 7, symbol: ?enumMapping@SetterGetterSchema@internal@cereal@@UEBAPEBVSerializerEnumMapping@3@XZ
+    // vIndex: 7
     virtual class cereal::SerializerEnumMapping const* enumMapping() const;
 
-    // symbol:
-    // ??0SetterGetterSchema@internal@cereal@@QEAA@AEBUReflectionCtx@2@V?$unique_ptr@VBasicSchema@internal@cereal@@U?$default_delete@VBasicSchema@internal@cereal@@@std@@@std@@1@Z
     MCAPI
     SetterGetterSchema(struct cereal::ReflectionCtx const&, std::unique_ptr<class cereal::internal::BasicSchema>, std::unique_ptr<class cereal::internal::BasicSchema>);
 

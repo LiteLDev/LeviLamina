@@ -19,13 +19,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0WindOffsetter@DripstoneUtils@@QEAA@XZ
     MCAPI WindOffsetter();
 
-    // symbol: ??0WindOffsetter@DripstoneUtils@@QEAA@HAEAVRandom@@AEBUUniformFloat@ValueProviders@@@Z
     MCAPI WindOffsetter(int originY, class Random& random, struct ValueProviders::UniformFloat const&);
 
-    // symbol: ?offset@WindOffsetter@DripstoneUtils@@QEBA?AVBlockPos@@V3@@Z
     MCAPI class BlockPos offset(class BlockPos pos) const;
 
     // NOLINTEND

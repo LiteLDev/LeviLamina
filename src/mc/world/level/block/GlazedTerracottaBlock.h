@@ -27,14 +27,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1GlazedTerracottaBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~GlazedTerracottaBlock() = default;
 
-    // vIndex: 50, symbol: ?isValidAuxValue@GlazedTerracottaBlock@@UEBA_NH@Z
+    // vIndex: 50
     virtual bool isValidAuxValue(int value) const;
 
-    // vIndex: 98, symbol:
-    // ?getPlacementBlock@GlazedTerracottaBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+    // vIndex: 98
     virtual class Block const& getPlacementBlock(
         class Actor const&    by,
         class BlockPos const& pos,
@@ -43,7 +42,6 @@ public:
         int                   itemValue
     ) const;
 
-    // symbol: ??0GlazedTerracottaBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI GlazedTerracottaBlock(std::string const& nameId, int id);
 
     // NOLINTEND

@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4InsideBubbleColumnBlockComponent@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct InsideBubbleColumnBlockComponent& operator=(struct InsideBubbleColumnBlockComponent&&);
 
     // NOLINTEND

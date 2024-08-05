@@ -27,26 +27,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1PickaxeItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~PickaxeItem() = default;
 
-    // vIndex: 31, symbol: ?canDestroySpecial@PickaxeItem@@UEBA_NAEBVBlock@@@Z
+    // vIndex: 31
     virtual bool canDestroySpecial(class Block const& block) const;
 
-    // vIndex: 50, symbol: ?getEnchantSlot@PickaxeItem@@UEBAHXZ
+    // vIndex: 50
     virtual int getEnchantSlot() const;
 
-    // vIndex: 77, symbol: ?getDestroySpeed@PickaxeItem@@UEBAMAEBVItemStackBase@@AEBVBlock@@@Z
+    // vIndex: 77
     virtual float getDestroySpeed(class ItemStackBase const& item, class Block const& block) const;
 
-    // symbol: ??0PickaxeItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVTier@Item@@@Z
     MCAPI PickaxeItem(std::string const& name, int id, class Item::Tier const& tier);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_isTierOneBlock@PickaxeItem@@AEBA?B_NAEBVBlockLegacy@@@Z
     MCAPI bool const _isTierOneBlock(class BlockLegacy const& block) const;
 
     // NOLINTEND

@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1OwnedProperty@QuickJS@Scripting@@QEAA@XZ
     MCAPI ~OwnedProperty();
 
     // NOLINTEND

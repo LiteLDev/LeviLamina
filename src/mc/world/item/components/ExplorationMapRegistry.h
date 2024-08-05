@@ -15,20 +15,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getExplorationMapDataByMapType@ExplorationMapRegistry@@SAPEBUExplorationMapData@@W4MapType@@@Z
     MCAPI static struct ExplorationMapData const* getExplorationMapDataByMapType(::MapType);
 
-    // symbol: ?isExplorationMap@ExplorationMapRegistry@@SA_NW4MapType@@@Z
     MCAPI static bool isExplorationMap(::MapType);
 
-    // symbol: ?isExplorationMapMarker@ExplorationMapRegistry@@SA_NW4Type@MapDecoration@@@Z
     MCAPI static bool isExplorationMapMarker(::MapDecoration::Type);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?mRegistry@ExplorationMapRegistry@@0V?$array@UExplorationMapData@@$0L@@std@@B
     MCAPI static std::array<struct ExplorationMapData, 11> const mRegistry;
 
     // NOLINTEND

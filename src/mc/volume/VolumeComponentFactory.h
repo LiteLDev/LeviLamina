@@ -11,10 +11,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1VolumeComponentFactory@@UEAA@XZ
+    // vIndex: 0
     virtual ~VolumeComponentFactory() = default;
 
-    // symbol: ?registerVolumeComponentDefinitions@VolumeComponentFactory@@QEAAX_N@Z
     MCAPI void registerVolumeComponentDefinitions(bool);
 
     // NOLINTEND

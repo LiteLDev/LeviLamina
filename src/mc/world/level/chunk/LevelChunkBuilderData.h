@@ -10,10 +10,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0LevelChunkBuilderData@@QEAA@XZ
     MCAPI LevelChunkBuilderData();
 
-    // symbol: ??1LevelChunkBuilderData@@QEAA@XZ
     MCAPI ~LevelChunkBuilderData();
 
     // NOLINTEND

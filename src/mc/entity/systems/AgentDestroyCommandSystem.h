@@ -14,19 +14,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1AgentDestroyCommandSystem@@UEAA@XZ
+    // vIndex: 0
     virtual ~AgentDestroyCommandSystem() = default;
 
-    // vIndex: 1, symbol: ?registerEvents@ISystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
+    // vIndex: 1
     virtual void registerEvents(entt::dispatcher&);
 
-    // vIndex: 2, symbol: ?tick@AgentDestroyCommandSystem@@UEAAXAEAVEntityRegistry@@@Z
+    // vIndex: 2
     virtual void tick(class EntityRegistry& registry);
 
-    // vIndex: 3, symbol: ?singleTick@ITickingSystem@@UEAAXAEAVEntityRegistry@@AEAVEntityContext@@@Z
+    // vIndex: 3
     virtual void singleTick(class EntityRegistry& registry, class EntityContext& entity);
 
-    // vIndex: 4, symbol: ?singleTick@ITickingSystem@@UEAAXAEAVEntityRegistry@@AEAVStrictEntityContext@@@Z
+    // vIndex: 4
     virtual void singleTick(class EntityRegistry& registry, class StrictEntityContext& entity);
 
     // NOLINTEND

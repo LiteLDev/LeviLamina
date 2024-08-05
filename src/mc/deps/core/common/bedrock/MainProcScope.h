@@ -12,10 +12,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0MainProcScope@Threading@Bedrock@@QEAA@XZ
     MCAPI MainProcScope();
 
-    // symbol: ??1MainProcScope@Threading@Bedrock@@QEAA@XZ
     MCAPI ~MainProcScope();
 
     // NOLINTEND

@@ -23,50 +23,49 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FlatFile@Core@@UEAA@XZ
+    // vIndex: 0
     virtual ~FlatFile() = default;
 
-    // vIndex: 1, symbol:
-    // ?_getPath@FlatFile@Core@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@XZ
+    // vIndex: 1
     virtual class Core::PathBuffer<std::string> _getPath() const;
 
-    // vIndex: 2, symbol: ?_getBlockSize@FlatFile@Core@@UEBA_KXZ
+    // vIndex: 2
     virtual uint64 _getBlockSize() const;
 
-    // vIndex: 3, symbol: ?_isOpen@FlatFile@Core@@UEAA_NXZ
+    // vIndex: 3
     virtual bool _isOpen();
 
-    // vIndex: 4, symbol: ?_close@FlatFile@Core@@UEAA?AVResult@2@XZ
+    // vIndex: 4
     virtual class Core::Result _close();
 
-    // vIndex: 5, symbol: ?_read@FlatFile@Core@@UEAA?AVResult@2@PEAX_KPEA_K@Z
+    // vIndex: 5
     virtual class Core::Result _read(void* pBuffer, uint64 numBytes, uint64* pNumBytesRead);
 
-    // vIndex: 6, symbol: ?_readExactly@FlatFile@Core@@UEAA?AVResult@2@PEAX_K@Z
+    // vIndex: 6
     virtual class Core::Result _readExactly(void* buf, uint64 numBytes);
 
-    // vIndex: 7, symbol: ?_skip@FlatFile@Core@@UEAA?AVResult@2@_K@Z
+    // vIndex: 7
     virtual class Core::Result _skip(uint64 numBytes);
 
-    // vIndex: 8, symbol: ?_readAtPosition@FlatFile@Core@@UEAA?AVResult@2@_KPEAX0PEA_K@Z
+    // vIndex: 8
     virtual class Core::Result _readAtPosition(uint64 position, void* pBuf, uint64 numBytes, uint64* pNumBytesRead);
 
-    // vIndex: 9, symbol: ?_getPosition@FlatFile@Core@@UEAA?AVResult@2@PEA_K@Z
+    // vIndex: 9
     virtual class Core::Result _getPosition(uint64* pPosition);
 
-    // vIndex: 10, symbol: ?_setPosition@FlatFile@Core@@UEAA?AVResult@2@_K@Z
+    // vIndex: 10
     virtual class Core::Result _setPosition(uint64 position);
 
-    // vIndex: 11, symbol: ?_write@FlatFile@Core@@UEAA?AVResult@2@PEBX_K@Z
+    // vIndex: 11
     virtual class Core::Result _write(void const* pBuf, uint64 numBytes);
 
-    // vIndex: 12, symbol: ?_flush@FlatFile@Core@@UEAA?AVResult@2@XZ
+    // vIndex: 12
     virtual class Core::Result _flush();
 
-    // vIndex: 13, symbol: ?_getSize@FlatFile@Core@@UEAA?AVResult@2@PEA_K@Z
+    // vIndex: 13
     virtual class Core::Result _getSize(uint64* pSize);
 
-    // vIndex: 14, symbol: ?_getRemainingSize@FlatFile@Core@@UEAA?AVResult@2@PEA_K@Z
+    // vIndex: 14
     virtual class Core::Result _getRemainingSize(uint64* pFileSize);
 
     // NOLINTEND

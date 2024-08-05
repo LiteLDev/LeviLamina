@@ -30,27 +30,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0ScriptItemCustomComponentCompleteUseEvent@ScriptModuleMinecraft@@QEAA@AEAW4ItemUseMethod@@AEBVItemStack@@AEAV3@AEAVPlayer@@AEAVLevel@@AEBVWeakLifetimeScope@Scripting@@@Z
     MCAPI
     ScriptItemCustomComponentCompleteUseEvent(::ItemUseMethod&, class ItemStack const&, class ItemStack&, class Player&, class Level&, class Scripting::WeakLifetimeScope const&);
 
-    // symbol: ??4ScriptItemCustomComponentCompleteUseEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptItemCustomComponentCompleteUseEvent&
     operator=(struct ScriptModuleMinecraft::ScriptItemCustomComponentCompleteUseEvent&&);
 
-    // symbol: ?bind@ScriptItemCustomComponentCompleteUseEvent@ScriptModuleMinecraft@@SA?AUClassBinding@Scripting@@XZ
     MCAPI static struct Scripting::ClassBinding bind();
 
-    // symbol:
-    // ?getClosure@ScriptItemCustomComponentCompleteUseEvent@ScriptModuleMinecraft@@SA?AV?$optional@V?$Closure@$$A6AXV?$StrongTypedObjectHandle@UScriptItemCustomComponentCompleteUseEvent@ScriptModuleMinecraft@@@Scripting@@@Z$$V@Scripting@@@std@@AEBUIScriptItemCustomComponentClosures@2@@Z
     MCAPI static std::optional<
         class Scripting::Closure<void(class Scripting::StrongTypedObjectHandle<
                                       struct ScriptModuleMinecraft::ScriptItemCustomComponentCompleteUseEvent>)>>
     getClosure(struct ScriptModuleMinecraft::IScriptItemCustomComponentClosures const&);
 
-    // symbol:
-    // ?getConnectors@ScriptItemCustomComponentCompleteUseEvent@ScriptModuleMinecraft@@SA?AU?$ScriptItemCustomComponentConnectors@$$A6AXAEAW4ItemUseMethod@@AEBVItemStack@@AEAV2@AEAVPlayer@@AEAVLevel@@@Z$$V@@AEAVComponentItem@@@Z
     MCAPI static struct ScriptItemCustomComponentConnectors<
         void(::ItemUseMethod&, class ItemStack const&, class ItemStack&, class Player&, class Level&)>
     getConnectors(class ComponentItem&);

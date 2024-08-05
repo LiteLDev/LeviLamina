@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ServerInstanceRequestResourceReload@@QEAA@XZ
     MCAPI ~ServerInstanceRequestResourceReload();
 
     // NOLINTEND

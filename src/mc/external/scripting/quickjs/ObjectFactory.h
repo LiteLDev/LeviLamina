@@ -21,11 +21,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ObjectFactory@QuickJS@Scripting@@UEAA@XZ
+    // vIndex: 0
     virtual ~ObjectFactory() = default;
 
-    // vIndex: 1, symbol:
-    // ?makePromise@ObjectFactory@QuickJS@Scripting@@UEAA?AV?$StrongTypedObjectHandle@UPromiseType@Scripting@@@3@XZ
+    // vIndex: 1
     virtual class Scripting::StrongTypedObjectHandle<struct Scripting::PromiseType> makePromise();
 
     // NOLINTEND

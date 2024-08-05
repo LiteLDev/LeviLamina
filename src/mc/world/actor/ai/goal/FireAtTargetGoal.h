@@ -31,24 +31,17 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __gen_??1Definition@FireAtTargetGoal@@UEAA@XZ
+        // vIndex: 0
         virtual ~Definition() = default;
 
-        // symbol: ?initialize@Definition@FireAtTargetGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext&, class FireAtTargetGoal&) const;
 
-        // symbol: ?setOwnerAnchor@Definition@FireAtTargetGoal@@QEAAXAEBH@Z
         MCAPI void setOwnerAnchor(int const&);
 
-        // symbol:
-        // ?setProjectileDefinitionByName@Definition@FireAtTargetGoal@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
         MCAPI void setProjectileDefinitionByName(std::string const&);
 
-        // symbol: ?setTargetAnchor@Definition@FireAtTargetGoal@@QEAAXAEBH@Z
         MCAPI void setTargetAnchor(int const&);
 
-        // symbol:
-        // ?buildSchema@Definition@FireAtTargetGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDefinition@FireAtTargetGoal@@@JsonUtil@@@4@@Z
         MCAPI static void
         buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class FireAtTargetGoal::Definition>>&);
 
@@ -63,39 +56,35 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FireAtTargetGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~FireAtTargetGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@FireAtTargetGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@FireAtTargetGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@FireAtTargetGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@FireAtTargetGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@FireAtTargetGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@FireAtTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string&) const;
 
-    // symbol: ??0FireAtTargetGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit FireAtTargetGoal(class Mob&);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_getCurrentTime@FireAtTargetGoal@@AEBA_KXZ
     MCAPI uint64 _getCurrentTime() const;
 
-    // symbol: ?_getAnchorAndOffsetPosition@FireAtTargetGoal@@CA?AVVec3@@AEBVActor@@W4ProjectileAnchor@@AEBV2@@Z
     MCAPI static class Vec3 _getAnchorAndOffsetPosition(class Actor const&, ::ProjectileAnchor, class Vec3 const&);
 
     // NOLINTEND

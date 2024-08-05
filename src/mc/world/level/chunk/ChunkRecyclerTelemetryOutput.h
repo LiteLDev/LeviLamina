@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ChunkRecyclerTelemetryOutput@@QEAA@XZ
     MCAPI ~ChunkRecyclerTelemetryOutput();
 
     // NOLINTEND

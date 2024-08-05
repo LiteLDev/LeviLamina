@@ -25,21 +25,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptPropertyRegistry@ScriptModuleMinecraft@@QEAA@AEAVServerLevel@@@Z
     MCAPI explicit ScriptPropertyRegistry(class ServerLevel& level);
 
-    // symbol:
-    // ?registerEntityTypeDynamicProperties@ScriptPropertyRegistry@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@VWeakLifetimeScope@4@AEBVScriptDynamicPropertiesDefinition@2@V?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VScriptActorType@ScriptModuleMinecraft@@@std@@@Z
     MCAPI class Scripting::Result<void>
     registerEntityTypeDynamicProperties(class Scripting::WeakLifetimeScope, class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&, std::variant<std::string, class ScriptModuleMinecraft::ScriptActorType>);
 
-    // symbol:
-    // ?registerWorldDynamicProperties@ScriptPropertyRegistry@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBVScriptDynamicPropertiesDefinition@2@@Z
     MCAPI class Scripting::Result<void>
     registerWorldDynamicProperties(class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&);
 
-    // symbol:
-    // ?bind@ScriptPropertyRegistry@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptPropertyRegistry@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptPropertyRegistry> bind();
 
     // NOLINTEND

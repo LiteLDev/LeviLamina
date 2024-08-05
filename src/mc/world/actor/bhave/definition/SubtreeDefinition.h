@@ -19,10 +19,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SubtreeDefinition@@UEAA@XZ
+    // vIndex: 0
     virtual ~SubtreeDefinition() = default;
 
-    // vIndex: 1, symbol: ?load@SubtreeDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
+    // vIndex: 1
     virtual void load(class Json::Value node, class BehaviorFactory const& factory);
 
     // NOLINTEND

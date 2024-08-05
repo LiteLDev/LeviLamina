@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ActorEquippedArmorEvent@@QEAA@XZ
     MCAPI ~ActorEquippedArmorEvent();
 
     // NOLINTEND

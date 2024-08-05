@@ -10,10 +10,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0PlayerInteractWithEntityBeforeEvent@@QEAA@AEBU0@@Z
     MCAPI PlayerInteractWithEntityBeforeEvent(struct PlayerInteractWithEntityBeforeEvent const&);
 
-    // symbol: ??1PlayerInteractWithEntityBeforeEvent@@QEAA@XZ
     MCAPI ~PlayerInteractWithEntityBeforeEvent();
 
     // NOLINTEND

@@ -19,20 +19,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DragonFlamingDefinition@@UEAA@XZ
+    // vIndex: 0
     virtual ~DragonFlamingDefinition() = default;
 
-    // vIndex: 1, symbol: ?validateMobType@DragonFlamingDefinition@@UEBA_NAEAVMob@@@Z
+    // vIndex: 1
     virtual bool validateMobType(class Mob& mob) const;
 
-    // symbol: ??0DragonFlamingDefinition@@QEAA@XZ
     MCAPI DragonFlamingDefinition();
 
-    // symbol: ?initialize@DragonFlamingDefinition@@QEBAXAEAVEntityContext@@AEAVDragonFlamingGoal@@@Z
     MCAPI void initialize(class EntityContext& entity, class DragonFlamingGoal& goal) const;
 
-    // symbol:
-    // ?buildSchema@DragonFlamingDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDragonFlamingDefinition@@@JsonUtil@@@3@@Z
     MCAPI static void buildSchema(
         std::string const& name,
         std::shared_ptr<

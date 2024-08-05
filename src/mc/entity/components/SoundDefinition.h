@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1SoundDefinition@@QEAA@XZ
     MCAPI ~SoundDefinition();
 
     // NOLINTEND

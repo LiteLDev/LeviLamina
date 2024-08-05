@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1PlayerDimensionChangeAfterEvent@@QEAA@XZ
     MCAPI ~PlayerDimensionChangeAfterEvent();
 
     // NOLINTEND

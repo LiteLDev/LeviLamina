@@ -17,75 +17,65 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ContainerManagerModel@@UEAA@XZ
+    // vIndex: 0
     virtual ~ContainerManagerModel();
 
-    // vIndex: 1, symbol: ?getContainerId@ContainerManagerModel@@UEBA?AW4ContainerID@@XZ
+    // vIndex: 1
     virtual ::ContainerID getContainerId() const;
 
-    // vIndex: 2, symbol: ?setContainerId@ContainerManagerModel@@UEAAXW4ContainerID@@@Z
+    // vIndex: 2
     virtual void setContainerId(::ContainerID id);
 
-    // vIndex: 3, symbol: ?getContainerType@ContainerManagerModel@@UEBA?AW4ContainerType@@XZ
+    // vIndex: 3
     virtual ::ContainerType getContainerType() const;
 
-    // vIndex: 4, symbol: ?setContainerType@ContainerManagerModel@@UEAAXW4ContainerType@@@Z
+    // vIndex: 4
     virtual void setContainerType(::ContainerType type);
 
-    // vIndex: 5, symbol: ?serverInitItemStackIds@ContainerManagerModel@@UEAAXXZ
+    // vIndex: 5
     virtual void serverInitItemStackIds();
 
-    // vIndex: 11, symbol: ?tick@ContainerManagerModel@@MEAA_NXZ
+    // vIndex: 11
     virtual bool tick();
 
-    // vIndex: 12, symbol: ?debitPlayerLevels@ContainerManagerModel@@UEAAXH@Z
+    // vIndex: 12
     virtual void debitPlayerLevels(int levels);
 
-    // vIndex: 13, symbol: ?isCreativeMode@ContainerManagerModel@@UEBA_NXZ
+    // vIndex: 13
     virtual bool isCreativeMode() const;
 
-    // vIndex: 14, symbol: ?isClientSide@ContainerManagerModel@@UEBA_NXZ
+    // vIndex: 14
     virtual bool isClientSide() const;
 
-    // vIndex: 15, symbol: ?isServerAuthoritative@ContainerManagerModel@@UEBA_NXZ
+    // vIndex: 15
     virtual bool isServerAuthoritative() const;
 
-    // vIndex: 16, symbol: ?isValid@ContainerManagerModel@@UEAA_NM@Z
+    // vIndex: 16
     virtual bool isValid(float pickRange);
 
-    // vIndex: 17, symbol: ?_postInit@AnvilContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+    // vIndex: 17
     virtual class ContainerScreenContext _postInit() = 0;
 
-    // symbol: ??0ContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@@Z
     MCAPI ContainerManagerModel(::ContainerID containerId, class Player& player);
 
-    // symbol: ?getPlayer@ContainerManagerModel@@QEBAAEAVPlayer@@XZ
     MCAPI class Player& getPlayer() const;
 
-    // symbol: ?postInit@ContainerManagerModel@@QEAAXXZ
     MCAPI void postInit();
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?_addContainer@ContainerManagerModel@@IEAAXV?$shared_ptr@VContainerModel@@@std@@@Z
     MCAPI void _addContainer(std::shared_ptr<class ContainerModel> containerModel);
 
-    // symbol: ?_containerScreenContext@ContainerManagerModel@@IEAA?AVContainerScreenContext@@AEBVBlockPos@@@Z
     MCAPI class ContainerScreenContext _containerScreenContext(class BlockPos const& blockPos);
 
-    // symbol: ?_containerScreenContext@ContainerManagerModel@@IEAA?AVContainerScreenContext@@UActorUniqueID@@@Z
     MCAPI class ContainerScreenContext _containerScreenContext(struct ActorUniqueID actorId);
 
-    // symbol: ?_getContainer@ContainerManagerModel@@IEBA?AV?$shared_ptr@VContainerModel@@@std@@W4ContainerEnumName@@@Z
     MCAPI std::shared_ptr<class ContainerModel> _getContainer(::ContainerEnumName collectionEnumName) const;
 
-    // symbol: ?_isPlayerInRangeOfPosition@ContainerManagerModel@@IEBA_NAEBVBlockPos@@M@Z
     MCAPI bool _isPlayerInRangeOfPosition(class BlockPos const& blockPos, float pickRange) const;
 
-    // symbol:
-    // ?_appendCopies@ContainerManagerModel@@KAXAEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBV23@@Z
     MCAPI static void _appendCopies(std::vector<class ItemStack>& out, std::vector<class ItemStack> const& items);
 
     // NOLINTEND

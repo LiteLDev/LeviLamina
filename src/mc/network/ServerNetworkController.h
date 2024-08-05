@@ -19,20 +19,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ServerNetworkController@@UEAA@XZ
+    // vIndex: 0
     virtual ~ServerNetworkController() = default;
 
-    // vIndex: 1, symbol: ?isDedicatedServer@ServerNetworkController@@UEBA_NXZ
+    // vIndex: 1
     virtual bool isDedicatedServer() const;
 
-    // vIndex: 2, symbol: ?isHost@ServerNetworkController@@UEBA_NAEBVUUID@mce@@@Z
+    // vIndex: 2
     virtual bool isHost(class mce::UUID const& playerID) const;
 
-    // vIndex: 3, symbol: ?canChangePermission@ServerNetworkController@@UEBA_NAEBVUUID@mce@@AEBVServerPlayer@@@Z
+    // vIndex: 3
     virtual bool canChangePermission(class mce::UUID const& playerId, class ServerPlayer const& player) const;
 
-    // symbol:
-    // ??0ServerNetworkController@@QEAA@_NAEBVUUID@mce@@V?$function@$$A6A_NAEBVServerPlayer@@W4AbilitiesIndex@@@Z@std@@@Z
     MCAPI
     ServerNetworkController(bool isDedicatedServer, class mce::UUID const&, std::function<bool(class ServerPlayer const&, ::AbilitiesIndex)>);
 

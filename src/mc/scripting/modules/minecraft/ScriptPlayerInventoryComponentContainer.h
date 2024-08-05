@@ -32,26 +32,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptPlayerInventoryComponentContainer@ScriptModuleMinecraft@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptPlayerInventoryComponentContainer();
 
-    // vIndex: 13, symbol:
-    // ?_tryGetContainer@ScriptPlayerInventoryComponentContainer@ScriptModuleMinecraft@@MEBAPEAVContainer@@XZ
+    // vIndex: 13
     virtual class Container* _tryGetContainer() const;
 
-    // vIndex: 14, symbol:
-    // ?_getItemContext@ScriptPlayerInventoryComponentContainer@ScriptModuleMinecraft@@MEBA?AVItemContext@@H@Z
+    // vIndex: 14
     virtual class ItemContext _getItemContext(int slot) const;
 
-    // symbol:
-    // ??0ScriptPlayerInventoryComponentContainer@ScriptModuleMinecraft@@QEAA@AEBVWeakEntityRef@@AEBVWeakLifetimeScope@Scripting@@@Z
     MCAPI ScriptPlayerInventoryComponentContainer(
         class WeakEntityRef const&                entityRef,
         class Scripting::WeakLifetimeScope const& scope
     );
 
-    // symbol:
-    // ?bindV010@ScriptPlayerInventoryComponentContainer@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptPlayerInventoryComponentContainer@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<
         class ScriptModuleMinecraft::ScriptPlayerInventoryComponentContainer>
     bindV010();

@@ -27,18 +27,15 @@ public:
     int                                                   mGroup;        // this+0x38
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SubscriptionBodyBase@Detail@PubSub@Bedrock@@UEAA@XZ
+    // vIndex: 0
     virtual ~SubscriptionBodyBase();
 
-    // symbol:
-    // ??0SubscriptionBodyBase@Detail@PubSub@Bedrock@@QEAA@$$QEAV?$unique_ptr@VSubscriptionContext@PubSub@Bedrock@@U?$default_delete@VSubscriptionContext@PubSub@Bedrock@@@std@@@std@@@Z
     MCAPI explicit SubscriptionBodyBase(std::unique_ptr<class Bedrock::PubSub::SubscriptionContext>&& context);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_disconnect@SubscriptionBodyBase@Detail@PubSub@Bedrock@@AEAAXXZ
     MCAPI void _disconnect();
 
     // NOLINTEND

@@ -14,13 +14,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1NetherSpringFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~NetherSpringFeature();
 
-    // vIndex: 3, symbol: ?place@NetherSpringFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 3
     virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // symbol: ??0NetherSpringFeature@@QEAA@AEBVBlock@@_N@Z
     MCAPI NetherSpringFeature(class Block const&, bool);
 
     // NOLINTEND

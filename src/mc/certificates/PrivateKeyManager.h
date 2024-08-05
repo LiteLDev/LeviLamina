@@ -15,17 +15,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1PrivateKeyManager@@UEAA@XZ
+    // vIndex: 0
     virtual ~PrivateKeyManager();
 
-    // vIndex: 1, symbol: ?isValid@PrivateKeyManager@@UEBA_NXZ
+    // vIndex: 1
     virtual bool isValid() const;
 
-    // symbol: ??0PrivateKeyManager@@QEAA@W4System@Asymmetric@Crypto@@@Z
     MCAPI explicit PrivateKeyManager(::Crypto::Asymmetric::System system);
 
-    // symbol:
-    // ?computeSecret@PrivateKeyManager@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVKeyManager@@@Z
     MCAPI std::string computeSecret(class KeyManager const&) const;
 
     // NOLINTEND

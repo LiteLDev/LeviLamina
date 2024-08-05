@@ -35,54 +35,50 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 4, symbol: ?reloadHardcoded@Boat@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 4
     virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 5, symbol: ?reloadHardcodedClient@Boat@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 5
     virtual void reloadHardcodedClient(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: __gen_??1Boat@@UEAA@XZ
+    // vIndex: 10
     virtual ~Boat() = default;
 
-    // vIndex: 26, symbol: ?normalTick@Boat@@UEAAXXZ
+    // vIndex: 26
     virtual void normalTick();
 
-    // vIndex: 31, symbol:
-    // ?getExitTip@Boat@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@W4InputMode@@W4NewInteractionModel@@@Z
+    // vIndex: 31
     virtual std::string getExitTip(std::string const& kind, ::InputMode mode, ::NewInteractionModel scheme) const;
 
-    // vIndex: 38, symbol: ?getShadowRadius@Boat@@UEBAMXZ
+    // vIndex: 38
     virtual float getShadowRadius() const;
 
-    // vIndex: 69, symbol: ?isInvulnerableTo@Boat@@UEBA_NAEBVActorDamageSource@@@Z
+    // vIndex: 69
     virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
-    // vIndex: 97, symbol: ?getControllingPlayer@Boat@@UEBA?AUActorUniqueID@@XZ
+    // vIndex: 97
     virtual struct ActorUniqueID getControllingPlayer() const;
 
-    // vIndex: 100, symbol: ?canAddPassenger@Boat@@UEBA_NAEAVActor@@@Z
+    // vIndex: 100
     virtual bool canAddPassenger(class Actor&) const;
 
-    // vIndex: 121, symbol: ?getPassengerYRotation@Boat@@UEBAMAEBVActor@@@Z
+    // vIndex: 121
     virtual float getPassengerYRotation(class Actor const&) const;
 
-    // vIndex: 146, symbol: ?_hurt@Boat@@EEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 146
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 151, symbol: ?destroy@Boat@@UEAAXPEAVActor@@@Z
+    // vIndex: 151
     virtual void destroy(class Actor* source);
 
-    // symbol: ??0Boat@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Boat(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?getWoodID@Boat@@QEBAEXZ
     MCAPI uchar getWoodID() const;
 
-    // symbol: ?postNormalTick@Boat@@QEAAXXZ
     MCAPI void postNormalTick();
 
     // NOLINTEND

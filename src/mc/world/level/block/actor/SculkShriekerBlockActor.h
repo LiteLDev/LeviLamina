@@ -15,41 +15,35 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SculkShriekerBlockActor@@UEAA@XZ
+    // vIndex: 0
     virtual ~SculkShriekerBlockActor() = default;
 
-    // vIndex: 1, symbol: ?load@SculkShriekerBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 1
     virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 2, symbol: ?save@SculkShriekerBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+    // vIndex: 2
     virtual bool save(class CompoundTag& tag) const;
 
-    // vIndex: 7, symbol: ?tick@SculkShriekerBlockActor@@UEAAXAEAVBlockSource@@@Z
+    // vIndex: 7
     virtual void tick(class BlockSource& region);
 
-    // vIndex: 13, symbol: ?onRemoved@SculkShriekerBlockActor@@UEAAXAEAVBlockSource@@@Z
+    // vIndex: 13
     virtual void onRemoved(class BlockSource& region);
 
-    // symbol: ??0SculkShriekerBlockActor@@QEAA@AEBVBlockPos@@@Z
     MCAPI explicit SculkShriekerBlockActor(class BlockPos const& pos);
 
-    // symbol: ?tryRespond@SculkShriekerBlockActor@@QEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void tryRespond(class BlockSource& region, class BlockPos const& pos);
 
-    // symbol: ?tryShriek@SculkShriekerBlockActor@@QEAA_NAEAVBlockSource@@VBlockPos@@AEAVPlayer@@@Z
     MCAPI bool tryShriek(class BlockSource& region, class BlockPos pos, class Player&);
 
-    // symbol: ?tryGet@SculkShriekerBlockActor@@SAPEAV1@AEAVBlockSource@@VBlockPos@@@Z
     MCAPI static class SculkShriekerBlockActor* tryGet(class BlockSource& region, class BlockPos blockPos);
 
-    // symbol: ?tryGetPlayerInHierarchy@SculkShriekerBlockActor@@SAPEAVPlayer@@PEAVActor@@@Z
     MCAPI static class Player* tryGetPlayerInHierarchy(class Actor* actor);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_canRespond@SculkShriekerBlockActor@@CA_NAEBVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static bool _canRespond(class BlockSource const& region, class BlockPos const& pos);
 
     // NOLINTEND

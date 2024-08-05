@@ -9,7 +9,6 @@ namespace Scripting { struct Version; }
 
 namespace ScriptLiveEventsUtilities::Betas {
 // NOLINTBEGIN
-// symbol: ?CURRENT@Betas@ScriptLiveEventsUtilities@@3UVersion@Scripting@@B
 MCAPI extern struct Scripting::Version const CURRENT;
 // NOLINTEND
 

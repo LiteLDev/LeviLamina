@@ -14,13 +14,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LegacySwampFoliageFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~LegacySwampFoliageFeature() = default;
 
-    // vIndex: 3, symbol: ?place@LegacySwampFoliageFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 3
     virtual bool place(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
 
-    // symbol: ??0LegacySwampFoliageFeature@@QEAA@AEAVFeatureRegistry@@@Z
     MCAPI explicit LegacySwampFoliageFeature(class FeatureRegistry& registry);
 
     // NOLINTEND

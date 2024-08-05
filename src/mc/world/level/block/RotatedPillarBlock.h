@@ -27,13 +27,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1RotatedPillarBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~RotatedPillarBlock();
 
-    // vIndex: 96, symbol: ?asItemInstance@RotatedPillarBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
-    // vIndex: 98, symbol: ?getPlacementBlock@RotatedPillarBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+    // vIndex: 98
     virtual class Block const& getPlacementBlock(
         class Actor const&    by,
         class BlockPos const& pos,
@@ -42,21 +42,17 @@ public:
         int                   itemValue
     ) const;
 
-    // vIndex: 132, symbol: ?getMappedFace@RotatedPillarBlock@@UEBAEEAEBVBlock@@@Z
+    // vIndex: 132
     virtual uchar getMappedFace(uchar face, class Block const& block) const;
 
-    // symbol:
-    // ??0RotatedPillarBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI RotatedPillarBlock(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?mRotatedX@RotatedPillarBlock@@0QBHB
     MCAPI static int const mRotatedX[];
 
-    // symbol: ?mRotatedZ@RotatedPillarBlock@@0QBHB
     MCAPI static int const mRotatedZ[];
 
     // NOLINTEND

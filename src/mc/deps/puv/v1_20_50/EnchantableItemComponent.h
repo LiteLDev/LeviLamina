@@ -17,14 +17,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4EnchantableItemComponent@v1_20_50@Puv@@QEAAAEAU012@AEBU012@@Z
     MCAPI struct Puv::v1_20_50::EnchantableItemComponent&
     operator=(struct Puv::v1_20_50::EnchantableItemComponent const&);
 
-    // symbol: ??1EnchantableItemComponent@v1_20_50@Puv@@QEAA@XZ
     MCAPI ~EnchantableItemComponent();
 
-    // symbol: ?bindType@EnchantableItemComponent@v1_20_50@Puv@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // NOLINTEND

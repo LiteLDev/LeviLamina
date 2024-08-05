@@ -18,7 +18,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?MAX@Tick@@2U1@B
     MCAPI static struct Tick const MAX;
 
     // NOLINTEND

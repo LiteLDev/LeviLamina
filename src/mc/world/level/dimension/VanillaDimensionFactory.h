@@ -7,8 +7,6 @@
 
 namespace VanillaDimensionFactory {
 // NOLINTBEGIN
-// symbol:
-// ?registerDimensionTypes@VanillaDimensionFactory@@YAXAEAV?$OwnerPtrFactory@VDimension@@AEAVILevel@@AEAVScheduler@@@@@Z
 MCAPI void
 registerDimensionTypes(class OwnerPtrFactory<class Dimension, class ILevel&, class Scheduler&>& dimensionFactory);
 // NOLINTEND

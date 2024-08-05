@@ -9,7 +9,6 @@ class EntitySystems;
 
 namespace VanillaSystemsRegistration::Jump {
 // NOLINTBEGIN
-// symbol: ?registerNormalJumpSystems@Jump@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@@Z
 MCAPI void registerNormalJumpSystems(class EntitySystems&);
 // NOLINTEND
 

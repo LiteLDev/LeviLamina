@@ -14,16 +14,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SubtreeNode@@UEAA@XZ
+    // vIndex: 0
     virtual ~SubtreeNode() = default;
 
-    // vIndex: 1, symbol: ?tick@SubtreeNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+    // vIndex: 1
     virtual ::BehaviorStatus tick(class Actor& owner);
 
-    // vIndex: 2, symbol: ?initializeFromDefinition@SubtreeNode@@MEAAXAEAVActor@@@Z
+    // vIndex: 2
     virtual void initializeFromDefinition(class Actor& owner);
 
-    // symbol: ??0SubtreeNode@@QEAA@XZ
     MCAPI SubtreeNode();
 
     // NOLINTEND

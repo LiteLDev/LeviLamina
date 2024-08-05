@@ -27,72 +27,67 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ObserverBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~ObserverBlock() = default;
 
-    // vIndex: 47, symbol: ?isSignalSource@ObserverBlock@@UEBA_NXZ
+    // vIndex: 47
     virtual bool isSignalSource() const;
 
-    // vIndex: 50, symbol: ?isValidAuxValue@ObserverBlock@@UEBA_NH@Z
+    // vIndex: 50
     virtual bool isValidAuxValue(int value) const;
 
-    // vIndex: 59, symbol:
-    // ?shouldConnectToRedstone@ObserverBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@W4Type@Direction@@@Z
+    // vIndex: 59
     virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
 
-    // vIndex: 66, symbol: ?onRedstoneUpdate@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
+    // vIndex: 66
     virtual void
     onRedstoneUpdate(class BlockSource& region, class BlockPos const& pos, int strength, bool isFirstTime) const;
 
-    // vIndex: 69, symbol: ?movedByPiston@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 69
     virtual void movedByPiston(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 72, symbol: ?setupRedstoneComponent@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 72
     virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 93, symbol: ?neighborChanged@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 93
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 129, symbol: ?getVariant@ObserverBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 131, symbol: ?getRenderBlock@ObserverBlock@@UEBAAEBVBlock@@XZ
+    // vIndex: 131
     virtual class Block const& getRenderBlock() const;
 
-    // vIndex: 132, symbol: ?getMappedFace@ObserverBlock@@UEBAEEAEBVBlock@@@Z
+    // vIndex: 132
     virtual uchar getMappedFace(uchar face, class Block const& block) const;
 
-    // vIndex: 133, symbol: ?getFaceFlip@ObserverBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
+    // vIndex: 133
     virtual ::Flip getFaceFlip(uchar face, class Block const& block) const;
 
-    // vIndex: 143, symbol: ?onRemove@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 143
     virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 146, symbol: ?onPlace@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 146
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 148, symbol: ?tick@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 153, symbol: ?allowStateMismatchOnPlacement@ObserverBlock@@UEBA_NAEBVBlock@@0@Z
+    // vIndex: 153
     virtual bool allowStateMismatchOnPlacement(class Block const&, class Block const&) const;
 
-    // symbol: ??0ObserverBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI ObserverBlock(std::string const& nameId, int id);
 
-    // symbol: ?MAX_TICK_DELAY@ObserverBlock@@2UTick@@B
     MCAPI static struct Tick const MAX_TICK_DELAY;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_installCircuit@ObserverBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@_N2@Z
     MCAPI void
     _installCircuit(class BlockSource& region, class BlockPos const& pos, bool calledFromLoad, bool turnOn) const;
 
-    // symbol: ?_updateState@ObserverBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVPulseCapacitor@@_N@Z
     MCAPI void
     _updateState(class BlockSource& region, class BlockPos const& pos, class PulseCapacitor& component, bool turnOn)
         const;

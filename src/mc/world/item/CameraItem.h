@@ -26,10 +26,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CameraItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~CameraItem() = default;
 
-    // symbol: ??0CameraItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI CameraItem(std::string const&, int);
 
     // NOLINTEND

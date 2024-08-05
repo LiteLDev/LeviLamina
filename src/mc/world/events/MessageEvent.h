@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1MessageEvent@@QEAA@XZ
     MCAPI ~MessageEvent();
 
     // NOLINTEND

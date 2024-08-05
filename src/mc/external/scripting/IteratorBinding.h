@@ -18,10 +18,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1IteratorBinding@Scripting@@UEAA@XZ
+    // vIndex: 0
     virtual ~IteratorBinding();
 
-    // symbol: ??0IteratorBinding@Scripting@@QEAA@V?$shared_ptr@VIFunction@Reflection@Scripting@@@std@@@Z
     MCAPI explicit IteratorBinding(std::shared_ptr<class Scripting::Reflection::IFunction>);
 
     // NOLINTEND

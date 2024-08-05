@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ScopedPath@internal@Puv@@QEAA@XZ
     MCAPI ~ScopedPath();
 
     // NOLINTEND

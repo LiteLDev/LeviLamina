@@ -15,15 +15,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptChatSendBeforeEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
     MCAPI ScriptChatSendBeforeEvent(struct ScriptModuleMinecraft::ScriptChatSendBeforeEvent const&);
 
-    // symbol:
-    // ?bind@ScriptChatSendBeforeEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptChatSendBeforeEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptChatSendBeforeEvent> bind();
 
-    // symbol:
-    // ?bindV010@ScriptChatSendBeforeEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptChatSendBeforeEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptChatSendBeforeEvent>
     bindV010();
 

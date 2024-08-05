@@ -27,64 +27,60 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CoralPlantBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~CoralPlantBlock() = default;
 
-    // vIndex: 5, symbol:
-    // ?getCollisionShape@CoralPlantBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 5
     virtual class AABB
     getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 9, symbol:
-    // ?getOutline@CoralPlantBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
+    // vIndex: 9
     virtual class AABB const&
     getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 16, symbol: ?randomlyModifyPosition@CoralPlantBlock@@UEBA?AVVec3@@AEBVBlockPos@@@Z
+    // vIndex: 16
     virtual class Vec3 randomlyModifyPosition(class BlockPos const& pos) const;
 
-    // vIndex: 33, symbol: ?isWaterBlocking@CoralPlantBlock@@UEBA_NXZ
+    // vIndex: 33
     virtual bool isWaterBlocking() const;
 
-    // vIndex: 56, symbol: ?waterSpreadCausesSpawn@CoralPlantBlock@@UEBA_NXZ
+    // vIndex: 56
     virtual bool waterSpreadCausesSpawn() const;
 
-    // vIndex: 62, symbol: ?checkIsPathable@CoralPlantBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
+    // vIndex: 62
     virtual bool
     checkIsPathable(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
 
-    // vIndex: 81, symbol: ?mayConsumeFertilizer@CoralPlantBlock@@UEBA_NAEAVBlockSource@@@Z
+    // vIndex: 81
     virtual bool mayConsumeFertilizer(class BlockSource& region) const;
 
-    // vIndex: 87, symbol: ?mayPlaceOn@CoralPlantBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 87
     virtual bool mayPlaceOn(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 93, symbol: ?neighborChanged@CoralPlantBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 93
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 146, symbol: ?onPlace@CoralPlantBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 146
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 148, symbol: ?tick@CoralPlantBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 154, symbol: ?canSurvive@CoralPlantBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 154
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 160, symbol: ?getMapColor@CoralPlantBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 160
     virtual class mce::Color
     getMapColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
-    // symbol: ??0CoralPlantBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI CoralPlantBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?checkAlive@CoralPlantBlock@@IEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void checkAlive(class BlockSource& region, class BlockPos const& pos) const;
 
     // NOLINTEND

@@ -14,10 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1GetSpawnPointCommand@@UEAA@XZ
+    // vIndex: 0
     virtual ~GetSpawnPointCommand() = default;
 
-    // vIndex: 2, symbol: ?execute@GetSpawnPointCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+    // vIndex: 2
     virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // NOLINTEND

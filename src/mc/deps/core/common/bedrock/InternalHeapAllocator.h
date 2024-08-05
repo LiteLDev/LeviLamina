@@ -15,28 +15,28 @@ namespace Bedrock::Memory {
 class InternalHeapAllocator : public ::Bedrock::Memory::IMemoryAllocator {
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1InternalHeapAllocator@Memory@Bedrock@@UEAA@XZ
+    // vIndex: 0
     virtual ~InternalHeapAllocator() = default;
 
-    // vIndex: 1, symbol: ?allocate@InternalHeapAllocator@Memory@Bedrock@@UEAAPEAX_K@Z
+    // vIndex: 1
     virtual void* allocate(uint64 size);
 
-    // vIndex: 2, symbol: ?release@InternalHeapAllocator@Memory@Bedrock@@UEAAXPEAX@Z
+    // vIndex: 2
     virtual void release(void* ptr);
 
-    // vIndex: 3, symbol: ?alignedAllocate@InternalHeapAllocator@Memory@Bedrock@@UEAAPEAX_K0@Z
+    // vIndex: 3
     virtual void* alignedAllocate(uint64 size, uint64 alignment);
 
-    // vIndex: 4, symbol: ?alignedRelease@InternalHeapAllocator@Memory@Bedrock@@UEAAXPEAX@Z
+    // vIndex: 4
     virtual void alignedRelease(void* ptr);
 
-    // vIndex: 5, symbol: ?getUsableSize@InternalHeapAllocator@Memory@Bedrock@@UEAA_KPEAX@Z
+    // vIndex: 5
     virtual uint64 getUsableSize(void* ptr);
 
-    // vIndex: 6, symbol: ?logCurrentState@InternalHeapAllocator@Memory@Bedrock@@UEAAXXZ
+    // vIndex: 6
     virtual void logCurrentState();
 
-    // vIndex: 7, symbol: ?_realloc@InternalHeapAllocator@Memory@Bedrock@@EEAAPEAXV?$not_null@PEAX@gsl@@_K@Z
+    // vIndex: 7
     virtual void* _realloc(gsl::not_null<void*> p, uint64 newSize);
 
     // NOLINTEND

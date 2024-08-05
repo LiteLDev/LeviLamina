@@ -18,14 +18,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createGenericSystem@NormalTickFilterSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createGenericSystem();
 
-    // symbol: ?createLocalPlayerSystem@NormalTickFilterSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createLocalPlayerSystem();
 
-    // symbol:
-    // ?tickGenericSystem@NormalTickFilterSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@@@V?$Optional@$$CBVDimensionStateComponent@@@@@@V?$EntityModifier@V?$FlagComponent@USkipNormalTick@@@@@@@Z
     MCAPI static void tickGenericSystem(
         class ViewT<
             class StrictEntityContext,
@@ -36,8 +32,6 @@ public:
         class EntityModifier<class FlagComponent<struct SkipNormalTick>> mod
     );
 
-    // symbol:
-    // ?tickLocalPlayerSystem@NormalTickFilterSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@ULocalPlayerComponentFlag@@@@@@V?$Optional@$$CBVLoadingStateComponent@@@@@@V?$EntityModifier@V?$FlagComponent@USkipNormalTick@@@@@@@Z
     MCAPI static void tickLocalPlayerSystem(
         class ViewT<
             class StrictEntityContext,

@@ -21,11 +21,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1IGetPlacementBlockCallback@BlockTrait@@UEAA@XZ
+    // vIndex: 0
     virtual ~IGetPlacementBlockCallback() = default;
 
-    // vIndex: 1, symbol:
-    // ?getPlacementBlock@UpdateCardinalGetPlacementBlockCallback@PlacementDirection@BlockTrait@@UEBA?AV?$not_null@PEBVBlock@@@gsl@@V45@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+    // vIndex: 1
     virtual gsl::not_null<class Block const*> getPlacementBlock(
         gsl::not_null<class Block const*>,
         class Actor const&,

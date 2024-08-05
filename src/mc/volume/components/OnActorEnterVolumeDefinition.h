@@ -16,13 +16,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?initialize@OnActorEnterVolumeDefinition@@QEBAXAEAVEntityContext@@AEAVOnActorEnterVolumeComponent@@@Z
     MCAPI void initialize(class EntityContext&, class OnActorEnterVolumeComponent& component) const;
 
-    // symbol: ??1OnActorEnterVolumeDefinition@@QEAA@XZ
     MCAPI ~OnActorEnterVolumeDefinition();
 
-    // symbol: ?bindType@OnActorEnterVolumeDefinition@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // NOLINTEND

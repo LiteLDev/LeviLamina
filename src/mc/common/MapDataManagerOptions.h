@@ -14,22 +14,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MapDataManagerOptions@@UEAA@XZ
+    // vIndex: 0
     virtual ~MapDataManagerOptions() = default;
 
-    // vIndex: 1, symbol: ?isPremiumWorldTemplate@MapDataManagerOptions@@UEBA_NXZ
+    // vIndex: 1
     virtual bool isPremiumWorldTemplate() const;
 
-    // vIndex: 2, symbol: ?isLegacyLevel@MapDataManagerOptions@@UEBA_NXZ
+    // vIndex: 2
     virtual bool isLegacyLevel() const;
 
-    // vIndex: 3, symbol: ?hasMapsCenteredToOrigin@MapDataManagerOptions@@UEBA_NXZ
+    // vIndex: 3
     virtual bool hasMapsCenteredToOrigin() const;
 
-    // vIndex: 4, symbol: ?getWorldCenter@MapDataManagerOptions@@UEBAAEBVBlockPos@@XZ
+    // vIndex: 4
     virtual class BlockPos const& getWorldCenter() const;
 
-    // symbol: ??0MapDataManagerOptions@@QEAA@AEAVLevelData@@@Z
     MCAPI explicit MapDataManagerOptions(class LevelData&);
 
     // NOLINTEND

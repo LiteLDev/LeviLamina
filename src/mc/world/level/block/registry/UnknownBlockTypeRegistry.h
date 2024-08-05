@@ -14,18 +14,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1UnknownBlockTypeRegistry@@UEAA@XZ
+    // vIndex: 0
     virtual ~UnknownBlockTypeRegistry() = default;
 
-    // vIndex: 1, symbol: ?getUnknownBlock@UnknownBlockTypeRegistry@@UEAAAEBVBlock@@AEBVCompoundTag@@@Z
+    // vIndex: 1
     virtual class Block const& getUnknownBlock(class CompoundTag const& serId);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_registerBlock@UnknownBlockTypeRegistry@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_K@Z
     MCAPI void _registerBlock(std::string const& name, uint64 serIdHash);
 
     // NOLINTEND

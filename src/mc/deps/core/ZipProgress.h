@@ -12,13 +12,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ZipProgress@ZipUtils@Core@@UEAA@XZ
+    // vIndex: 0
     virtual ~ZipProgress();
 
-    // vIndex: 1, symbol: ?clear@ZipProgress@ZipUtils@Core@@UEAAXXZ
+    // vIndex: 1
     virtual void clear();
 
-    // symbol: ??0ZipProgress@ZipUtils@Core@@QEAA@XZ
     MCAPI ZipProgress();
 
     // NOLINTEND

@@ -20,10 +20,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ItemStackResponseSlotInfo@@QEAA@$$QEAU0@@Z
     MCAPI ItemStackResponseSlotInfo(struct ItemStackResponseSlotInfo&&);
 
-    // symbol: ??1ItemStackResponseSlotInfo@@QEAA@XZ
     MCAPI ~ItemStackResponseSlotInfo();
 
     // NOLINTEND

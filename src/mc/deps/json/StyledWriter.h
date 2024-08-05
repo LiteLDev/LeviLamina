@@ -26,37 +26,28 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1StyledWriter@Json@@UEAA@XZ
+    // vIndex: 0
     virtual ~StyledWriter();
 
-    // vIndex: 1, symbol:
-    // ?write@StyledWriter@Json@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVValue@2@@Z
+    // vIndex: 1
     virtual std::string write(class Json::Value const&);
 
-    // symbol: ??0StyledWriter@Json@@QEAA@XZ
     MCAPI StyledWriter();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?indent@StyledWriter@Json@@AEAAXXZ
     MCAPI void indent();
 
-    // symbol: ?pushValue@StyledWriter@Json@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void pushValue(std::string const& value);
 
-    // symbol: ?unindent@StyledWriter@Json@@AEAAXXZ
     MCAPI void unindent();
 
-    // symbol: ?writeArrayValue@StyledWriter@Json@@AEAAXAEBVValue@2@@Z
     MCAPI void writeArrayValue(class Json::Value const& value);
 
-    // symbol: ?writeValue@StyledWriter@Json@@AEAAXAEBVValue@2@@Z
     MCAPI void writeValue(class Json::Value const& value);
 
-    // symbol:
-    // ?writeWithIndent@StyledWriter@Json@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void writeWithIndent(std::string const& value);
 
     // NOLINTEND

@@ -19,11 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?initialize@BoostableDefinition@@QEBAXAEAVEntityContext@@AEAVBoostableComponent@@@Z
     MCAPI void initialize(class EntityContext&, class BoostableComponent& component) const;
 
-    // symbol:
-    // ?buildSchema@BoostableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VBoostableDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void buildSchema(
         std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BoostableDefinition>>&
             root

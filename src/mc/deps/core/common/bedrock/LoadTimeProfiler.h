@@ -20,13 +20,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LoadTimeProfiler@Core@@UEAA@XZ
+    // vIndex: 0
     virtual ~LoadTimeProfiler() = default;
 
-    // symbol: ??0LoadTimeProfiler@Core@@QEAA@XZ
     MCAPI LoadTimeProfiler();
 
-    // symbol: ?setEnabled@LoadTimeProfiler@Core@@QEAAX_N@Z
     MCAPI void setEnabled(bool enabled);
 
     // NOLINTEND

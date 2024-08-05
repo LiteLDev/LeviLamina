@@ -4,7 +4,6 @@
 
 namespace SlabBlockItemUtil {
 // NOLINTBEGIN
-// symbol: ?convertToDoubleBlock@SlabBlockItemUtil@@YAXAEAVItemStack@@AEAVActor@@AEBVBlockPos@@AEBVBlock@@@Z
 MCAPI void convertToDoubleBlock(
     class ItemStack&      instance,
     class Actor&          actor,

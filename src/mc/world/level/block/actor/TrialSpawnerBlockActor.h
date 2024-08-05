@@ -15,32 +15,29 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1TrialSpawnerBlockActor@@UEAA@XZ
+    // vIndex: 0
     virtual ~TrialSpawnerBlockActor() = default;
 
-    // vIndex: 1, symbol: ?load@TrialSpawnerBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 1
     virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
 
-    // vIndex: 2, symbol: ?save@TrialSpawnerBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+    // vIndex: 2
     virtual bool save(class CompoundTag&) const;
 
-    // vIndex: 7, symbol: ?tick@TrialSpawnerBlockActor@@UEAAXAEAVBlockSource@@@Z
+    // vIndex: 7
     virtual void tick(class BlockSource&);
 
-    // vIndex: 13, symbol: ?onRemoved@TrialSpawnerBlockActor@@UEAAXAEAVBlockSource@@@Z
+    // vIndex: 13
     virtual void onRemoved(class BlockSource&);
 
-    // vIndex: 40, symbol:
-    // ?_getUpdatePacket@TrialSpawnerBlockActor@@EEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
+    // vIndex: 40
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
-    // vIndex: 41, symbol: ?_onUpdatePacket@TrialSpawnerBlockActor@@EEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
+    // vIndex: 41
     virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
 
-    // symbol: ??0TrialSpawnerBlockActor@@QEAA@AEBVBlockPos@@@Z
     MCAPI explicit TrialSpawnerBlockActor(class BlockPos const&);
 
-    // symbol: ?setMob@TrialSpawnerBlockActor@@QEAAXAEAVBlockSource@@AEBUActorDefinitionIdentifier@@PEAVActor@@@Z
     MCAPI void setMob(class BlockSource&, struct ActorDefinitionIdentifier const&, class Actor*);
 
     // NOLINTEND

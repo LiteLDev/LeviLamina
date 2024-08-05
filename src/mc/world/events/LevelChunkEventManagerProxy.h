@@ -14,28 +14,28 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LevelChunkEventManagerProxy@@UEAA@XZ
+    // vIndex: 0
     virtual ~LevelChunkEventManagerProxy() = default;
 
-    // vIndex: 1, symbol: ?isReadOnly@LevelChunkEventManagerProxy@@UEBA_NAEBVLevelChunk@@@Z
+    // vIndex: 1
     virtual bool isReadOnly(class LevelChunk const&) const;
 
-    // vIndex: 2, symbol: ?setOnChunkLoadedCalled@LevelChunkEventManagerProxy@@UEAA_NAEAVLevelChunk@@@Z
+    // vIndex: 2
     virtual bool setOnChunkLoadedCalled(class LevelChunk&);
 
-    // vIndex: 3, symbol: ?onTickingStarted@LevelChunkEventManagerProxy@@UEAAXAEAVLevelChunk@@@Z
+    // vIndex: 3
     virtual void onTickingStarted(class LevelChunk&);
 
-    // vIndex: 4, symbol: ?setupRedstoneCircuit@LevelChunkEventManagerProxy@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
+    // vIndex: 4
     virtual void setupRedstoneCircuit(class ChunkSource&, class LevelChunk&);
 
-    // vIndex: 5, symbol: ?getClosestPlayerDistanceSquared@LevelChunkEventManagerProxy@@UEBAHAEBVLevelChunk@@@Z
+    // vIndex: 5
     virtual int getClosestPlayerDistanceSquared(class LevelChunk const&) const;
 
-    // vIndex: 6, symbol: ?isOwnedByTickingThread@LevelChunkEventManagerProxy@@UEBA_NAEBVLevelChunk@@@Z
+    // vIndex: 6
     virtual bool isOwnedByTickingThread(class LevelChunk const&) const;
 
-    // vIndex: 7, symbol: ?onTickingStopped@LevelChunkEventManagerProxy@@UEAAXAEAVLevelChunk@@@Z
+    // vIndex: 7
     virtual void onTickingStopped(class LevelChunk&);
 
     // NOLINTEND

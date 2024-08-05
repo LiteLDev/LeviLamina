@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1Member@internal@cereal@@QEAA@XZ
     MCAPI ~Member();
 
     // NOLINTEND

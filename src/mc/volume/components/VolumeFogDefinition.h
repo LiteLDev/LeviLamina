@@ -16,13 +16,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?initialize@VolumeFogDefinition@@QEBAXAEAVEntityContext@@AEAVVolumeFogComponent@@@Z
     MCAPI void initialize(class EntityContext& entity, class VolumeFogComponent& component) const;
 
-    // symbol: ??1VolumeFogDefinition@@QEAA@XZ
     MCAPI ~VolumeFogDefinition();
 
-    // symbol: ?bindType@VolumeFogDefinition@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // NOLINTEND

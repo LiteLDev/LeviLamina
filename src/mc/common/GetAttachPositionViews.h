@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0GetAttachPositionViews@@QEAA@$$QEAU0@@Z
     MCAPI GetAttachPositionViews(struct GetAttachPositionViews&&);
 
     // NOLINTEND

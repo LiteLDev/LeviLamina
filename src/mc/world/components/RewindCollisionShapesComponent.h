@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1RewindCollisionShapesComponent@@QEAA@XZ
     MCAPI ~RewindCollisionShapesComponent();
 
     // NOLINTEND

@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1OptionalString@@QEAA@XZ
     MCAPI ~OptionalString();
 
     // NOLINTEND

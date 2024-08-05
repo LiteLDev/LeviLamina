@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4AbilitiesRequestComponent@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct AbilitiesRequestComponent& operator=(struct AbilitiesRequestComponent&&);
 
     // NOLINTEND

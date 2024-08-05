@@ -21,27 +21,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BinaryRequestBody@Http@Bedrock@@UEAA@XZ
+    // vIndex: 0
     virtual ~BinaryRequestBody();
 
-    // vIndex: 1, symbol:
-    // ?read@BinaryRequestBody@Http@Bedrock@@MEAA?AUReadResult@IRequestBody@Internal@23@V?$span@E$0?0@gsl@@@Z
+    // vIndex: 1
     virtual struct Bedrock::Http::Internal::IRequestBody::ReadResult read(gsl::span<uchar> destination);
 
-    // vIndex: 2, symbol: ?getSize@BinaryRequestBody@Http@Bedrock@@MEAA_KXZ
+    // vIndex: 2
     virtual uint64 getSize();
 
-    // vIndex: 3, symbol: ?cancel@BinaryRequestBody@Http@Bedrock@@MEAAXXZ
+    // vIndex: 3
     virtual void cancel();
 
-    // vIndex: 4, symbol:
-    // ?getLoggableSource@BinaryRequestBody@Http@Bedrock@@MEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 4
     virtual std::string const& getLoggableSource() const;
 
-    // vIndex: 5, symbol: ?getLoggableData@BinaryRequestBody@Http@Bedrock@@MEBA?AV?$span@$$CBE$0?0@gsl@@XZ
+    // vIndex: 5
     virtual gsl::span<uchar const> getLoggableData() const;
 
-    // symbol: ?setData@BinaryRequestBody@Http@Bedrock@@QEAAXV?$span@$$CBE$0?0@gsl@@@Z
     MCAPI void setData(gsl::span<uchar const> data);
 
     // NOLINTEND

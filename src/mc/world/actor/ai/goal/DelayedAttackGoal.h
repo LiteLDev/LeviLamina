@@ -15,49 +15,43 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DelayedAttackGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~DelayedAttackGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@DelayedAttackGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@DelayedAttackGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@DelayedAttackGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@DelayedAttackGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@DelayedAttackGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@DelayedAttackGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0DelayedAttackGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit DelayedAttackGoal(class Mob& mob);
 
-    // symbol: ?_isTargetInLineOfSightLegacy@DelayedAttackGoal@@SA_NAEBVMob@@AEBVActor@@@Z
     MCAPI static bool _isTargetInLineOfSightLegacy(class Mob const&, class Actor const&);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_attemptStartAttacking@DelayedAttackGoal@@AEBAXPEAVActor@@@Z
     MCAPI void _attemptStartAttacking(class Actor* target) const;
 
-    // symbol: ?_manageAttackTime@DelayedAttackGoal@@AEAAXXZ
     MCAPI void _manageAttackTime();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?mMinLineOfSightFixVersion@DelayedAttackGoal@@0VBaseGameVersion@@B
     MCAPI static class BaseGameVersion const mMinLineOfSightFixVersion;
 
     // NOLINTEND

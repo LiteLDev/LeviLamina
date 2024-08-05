@@ -26,13 +26,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SharedData@PlayerCapabilities@@UEAA@XZ
+    // vIndex: 0
     virtual ~SharedData() = default;
 
-    // vIndex: 1, symbol: ?isGameRuleEnabled@SharedData@PlayerCapabilities@@UEBA?AV?$optional@_N@std@@UGameRuleId@@@Z
+    // vIndex: 1
     virtual std::optional<bool> isGameRuleEnabled(struct GameRuleId rule) const;
 
-    // vIndex: 2, symbol: ?getChatRestrictionLevel@SharedData@PlayerCapabilities@@UEBA?AW4ChatRestrictionLevel@@XZ
+    // vIndex: 2
     virtual ::ChatRestrictionLevel getChatRestrictionLevel() const;
 
     // NOLINTEND

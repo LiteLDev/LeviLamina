@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1CommandMessage@CodeBuilder@@QEAA@XZ
     MCAPI ~CommandMessage();
 
     // NOLINTEND

@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1LevelStorageEventingContext@@QEAA@XZ
     MCAPI ~LevelStorageEventingContext();
 
     // NOLINTEND

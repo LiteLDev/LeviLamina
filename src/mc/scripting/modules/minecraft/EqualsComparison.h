@@ -16,11 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1EqualsComparison@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~EqualsComparison();
 
-    // symbol:
-    // ?bind@EqualsComparison@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@UEqualsComparison@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::EqualsComparison> bind();
 
     // NOLINTEND

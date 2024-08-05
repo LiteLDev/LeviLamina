@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ContextIdFreeList@Scripting@@QEAA@XZ
     MCAPI ~ContextIdFreeList();
 
     // NOLINTEND

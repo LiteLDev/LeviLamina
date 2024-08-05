@@ -17,8 +17,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?bind@ScriptActorInitializationCause@ScriptModuleMinecraft@@SA?AV?$EnumBindingBuilder@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorInitializationMethod@@@Scripting@@XZ
     MCAPI static class Scripting::EnumBindingBuilder<std::string, ::ActorInitializationMethod> bind();
 
     // NOLINTEND

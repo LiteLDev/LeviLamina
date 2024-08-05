@@ -27,46 +27,44 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1AmethystClusterBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~AmethystClusterBlock() = default;
 
-    // vIndex: 11, symbol: ?getVisualShape@AmethystClusterBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
+    // vIndex: 11
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
 
-    // vIndex: 23, symbol: ?canProvideSupport@AmethystClusterBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
+    // vIndex: 23
     virtual bool canProvideSupport(class Block const& block, uchar face, ::BlockSupportType type) const;
 
-    // vIndex: 62, symbol: ?checkIsPathable@AmethystClusterBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
+    // vIndex: 62
     virtual bool
     checkIsPathable(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
 
-    // vIndex: 85, symbol: ?mayPlace@AmethystClusterBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
+    // vIndex: 85
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar facing) const;
 
-    // vIndex: 86, symbol: ?mayPlace@AmethystClusterBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 86
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 93, symbol: ?neighborChanged@AmethystClusterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 93
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 136, symbol: ?init@AmethystClusterBlock@@UEAAAEAVBlockLegacy@@XZ
+    // vIndex: 136
     virtual class BlockLegacy& init();
 
-    // vIndex: 148, symbol: ?tick@AmethystClusterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
-    // vIndex: 154, symbol: ?canSurvive@AmethystClusterBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 154
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ??0AmethystClusterBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHH@Z
     MCAPI AmethystClusterBlock(std::string const& nameId, int id, int height, int);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_shapeFromDirection@AmethystClusterBlock@@AEBA?AVAABB@@H@Z
     MCAPI class AABB _shapeFromDirection(int facing) const;
 
     // NOLINTEND

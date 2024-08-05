@@ -22,26 +22,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ClientInputUpdateSystemInternal@@UEAA@XZ
+    // vIndex: 0
     virtual ~ClientInputUpdateSystemInternal() = default;
 
-    // vIndex: 1, symbol: ?registerEvents@ISystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
+    // vIndex: 1
     virtual void registerEvents(entt::dispatcher&);
 
-    // vIndex: 2, symbol: __unk_vfn_2
+    // vIndex: 2
     virtual void __unk_vfn_2();
 
-    // vIndex: 3, symbol: __unk_vfn_3
+    // vIndex: 3
     virtual void __unk_vfn_3();
 
-    // vIndex: 4, symbol: __unk_vfn_4
+    // vIndex: 4
     virtual void __unk_vfn_4();
 
-    // vIndex: 5, symbol: ?singleTick@ITickingSystem@@UEAAXAEAVEntityRegistry@@AEAVEntityContext@@@Z
+    // vIndex: 5
     virtual void singleTick(class EntityRegistry& registry, class EntityContext& entity);
 
-    // vIndex: 6, symbol:
-    // ?tick@ClientInputUpdateSystemInternal@@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UCanStandOnSnowFlag@@@@V?$FlagComponent@UHasLightweightFamilyFlag@@@@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UMobFlag@@@@V?$FlagComponent@UParrotFlag@@@@UVehicleComponent@@V?$FlagComponent@UCamelFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@ULocalPlayerComponentFlag@@@@UPlayerInputRequestComponent@@@@U?$Read@UAABBShapeComponent@@UMovementAbilitiesComponent@@UActorTypeComponent@@UFallDistanceComponent@@UPassengerComponent@@UActorGameTypeComponent@@UActorDataFlagComponent@@UVehicleComponent@@UActorRotationComponent@@UMobBodyRotationComponent@@URenderRotationComponent@@UStandAnimationComponent@@UOffsetsComponent@@UVanillaOffsetComponent@@UPassengerRenderingRidingOffsetComponent@@UMovementAttributesComponent@@UDimensionTypeComponent@@V?$FlagComponent@UImmuneToLavaDragFlag@@@@UMobEffectsComponent@@USneakingComponent@@UStateVectorComponent@@USubBBsComponent@@V?$FlagComponent@UInWaterFlag@@@@@@U?$Write@VActorOwnerComponent@@UClientInputLockComponent@@UMoveInputComponent@@URawMoveInputComponent@@UActorDataFlagComponent@@UActorDataDirtyFlagsComponent@@UVanillaClientGameplayComponent@@@@U?$AddRemove@$$V@@U?$GlobalRead@UExternalDataComponent@@ULocalConstBlockSourceFactoryComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
+    // vIndex: 6
     virtual void tick(class StrictExecutionContext<
                       struct Filter<
                           class FlagComponent<struct CanStandOnSnowFlag>,

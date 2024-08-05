@@ -13,26 +13,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1HugeMushroomFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~HugeMushroomFeature();
 
-    // vIndex: 3, symbol: ?place@HugeMushroomFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 3
     virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // symbol: ??0HugeMushroomFeature@@QEAA@XZ
     MCAPI HugeMushroomFeature();
 
-    // symbol: ??0HugeMushroomFeature@@QEAA@H@Z
     MCAPI explicit HugeMushroomFeature(int forcedType);
 
-    // symbol: ?placeFixed@HugeMushroomFeature@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@HH@Z
     MCAPI bool placeFixed(class BlockSource& region, class BlockPos const& pos, int mushroomType, int height) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_canSurvive@HugeMushroomFeature@@AEBA_NAEBVBlock@@@Z
     MCAPI bool _canSurvive(class Block const& belowBlock) const;
 
     // NOLINTEND

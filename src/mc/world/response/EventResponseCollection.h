@@ -20,8 +20,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?buildSchema@EventResponseCollection@@SA?AV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UEventResponseCollection@@@JsonUtil@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBVSemVersion@@AEBV?$Factory@VEventResponse@@$$V@@@Z
     MCAPI static std::shared_ptr<
         class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>>
     buildSchema(

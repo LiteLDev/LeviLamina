@@ -14,16 +14,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0Attribute@@QEAA@AEBVHashedString@@W4RedefinitionMode@@_N@Z
     MCAPI Attribute(class HashedString const& name, ::RedefinitionMode redefMode, bool isSyncable);
 
-    // symbol: ?getName@Attribute@@QEBAAEBVHashedString@@XZ
     MCAPI class HashedString const& getName() const;
 
-    // symbol: ?getRedefinitionMode@Attribute@@QEBA?AW4RedefinitionMode@@XZ
     MCAPI ::RedefinitionMode getRedefinitionMode() const;
 
-    // symbol: ?getByName@Attribute@@SAAEAV1@AEBVHashedString@@@Z
     MCAPI static class Attribute& getByName(class HashedString const& attribute);
 
     // NOLINTEND

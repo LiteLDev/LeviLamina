@@ -11,16 +11,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?isValid@ChanceInformation@@QEBA_NXZ
     MCAPI bool isValid() const;
 
-    // symbol: ?roll@ChanceInformation@@QEBA_NAEAVRandom@@@Z
     MCAPI bool roll(class Random& random) const;
 
-    // symbol: ?set@ChanceInformation@@QEAAXM@Z
     MCAPI void set(float value);
 
-    // symbol: ?set@ChanceInformation@@QEAAXII@Z
     MCAPI void set(uint, uint);
 
     // NOLINTEND

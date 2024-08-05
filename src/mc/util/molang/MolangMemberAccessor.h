@@ -7,7 +7,6 @@ struct MolangMemberAccessor : HashedString {
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1MolangMemberAccessor@@QEAA@XZ
     MCAPI ~MolangMemberAccessor();
 
     // NOLINTEND

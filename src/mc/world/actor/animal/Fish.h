@@ -35,22 +35,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 6, symbol: ?initializeComponents@Fish@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 6
     virtual void initializeComponents(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: ??1Fish@@UEAA@XZ
+    // vIndex: 10
     virtual ~Fish();
 
-    // vIndex: 29, symbol: ?startRiding@Fish@@UEAA_NAEAVActor@@@Z
+    // vIndex: 29
     virtual bool startRiding(class Actor&);
 
-    // vIndex: 144, symbol: ?updateEntitySpecificMolangVariables@Fish@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 144
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // vIndex: 180, symbol: ?createAIGoals@Fish@@UEAA_NXZ
+    // vIndex: 180
     virtual bool createAIGoals();
 
-    // symbol: ??0Fish@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Fish(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

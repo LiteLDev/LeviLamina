@@ -11,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?setReplacementItemDescriptor@BoostItem@@QEAAXAEBVItemDescriptor@@@Z
     MCAPI void setReplacementItemDescriptor(class ItemDescriptor const& replacementItemDescriptor);
 
-    // symbol: ??1BoostItem@@QEAA@XZ
     MCAPI ~BoostItem();
 
     // NOLINTEND

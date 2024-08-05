@@ -27,17 +27,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ShulkerBoxBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~ShulkerBoxBlock() = default;
 
-    // vIndex: 119, symbol:
-    // ?buildDescriptionId@ShulkerBoxBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
+    // vIndex: 119
     virtual std::string buildDescriptionId(class Block const&) const;
 
-    // vIndex: 121, symbol: ?getColor@ShulkerBoxBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 121
     virtual int getColor(class Block const& block) const;
 
-    // symbol: ??0ShulkerBoxBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI ShulkerBoxBlock(std::string const& nameId, int id);
 
     // NOLINTEND

@@ -16,21 +16,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DefendTrustedTargetGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~DefendTrustedTargetGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@DefendTrustedTargetGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 4, symbol: ?start@DefendTrustedTargetGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@DefendTrustedTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol:
-    // ??0DefendTrustedTargetGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@MH_NHW4LevelSoundEvent@Legacy@Puv@@AEBVActorDefinitionTrigger@@@Z
     MCAPI DefendTrustedTargetGoal(
         class Mob&                               mob,
         std::vector<struct MobDescriptor> const& targetTypes,
@@ -46,7 +43,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_findTrustedTarget@DefendTrustedTargetGoal@@AEAA?AUActorUniqueID@@AEBVTrustComponent@@@Z
     MCAPI struct ActorUniqueID _findTrustedTarget(class TrustComponent const& trust);
 
     // NOLINTEND

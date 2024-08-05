@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ChatMessage@CodeBuilder@@QEAA@XZ
     MCAPI ~ChatMessage();
 
     // NOLINTEND

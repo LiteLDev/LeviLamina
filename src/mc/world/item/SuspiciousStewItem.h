@@ -26,25 +26,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SuspiciousStewItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~SuspiciousStewItem() = default;
 
-    // vIndex: 59, symbol: ?uniqueAuxValues@SuspiciousStewItem@@UEBA_NXZ
+    // vIndex: 59
     virtual bool uniqueAuxValues() const;
 
-    // vIndex: 75, symbol:
-    // ?useTimeDepleted@SuspiciousStewItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
+    // vIndex: 75
     virtual ::ItemUseMethod
     useTimeDepleted(class ItemStack& inoutInstance, class Level* level, class Player* player) const;
 
-    // symbol: ?applyStewEffect@SuspiciousStewItem@@SAXAEBVItemStack@@AEAVActor@@@Z
     MCAPI static void applyStewEffect(class ItemStack const& inoutInstance, class Actor& actor);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_getStewEffects@SuspiciousStewItem@@CAAEBV?$array@VMobEffectInstance@@$0L@@std@@XZ
     MCAPI static std::array<class MobEffectInstance, 11> const& _getStewEffects();
 
     // NOLINTEND

@@ -6,7 +6,6 @@
 struct MolangArrayVariable : HashedString {
 public:
     // NOLINTBEGIN
-    // symbol: ??1MolangArrayVariable@@QEAA@XZ
     MCAPI ~MolangArrayVariable();
 
     // NOLINTEND

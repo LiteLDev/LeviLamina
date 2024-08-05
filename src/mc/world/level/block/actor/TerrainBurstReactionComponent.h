@@ -14,10 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1TerrainBurstReactionComponent@@UEAA@XZ
+    // vIndex: 0
     virtual ~TerrainBurstReactionComponent() = default;
 
-    // vIndex: 3, symbol: ?_onEnd@TerrainBurstReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z
+    // vIndex: 3
     virtual void _onEnd(class LabTableReaction& owner, class BlockSource& region);
 
     // NOLINTEND

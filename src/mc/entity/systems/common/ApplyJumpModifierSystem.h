@@ -11,11 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createApplyJumpModifierSystem@ApplyJumpModifierSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createApplyJumpModifierSystem();
 
-    // symbol:
-    // ?tickApplyJumpModifierSystem@ApplyJumpModifierSystem@@SAXAEBVStrictEntityContext@@AEBUTriggerJumpRequestComponent@@AEBUActorRotationComponent@@AEBUMovementAttributesComponent@@AEBUMobEffectsComponent@@AEBUMobTravelComponent@@AEAUJumpPendingScaleComponent@@AEAUStateVectorComponent@@@Z
     MCAPI static void
     tickApplyJumpModifierSystem(class StrictEntityContext const&, struct TriggerJumpRequestComponent const&, struct ActorRotationComponent const&, struct MovementAttributesComponent const&, struct MobEffectsComponent const&, struct MobTravelComponent const&, struct JumpPendingScaleComponent&, struct StateVectorComponent&);
 

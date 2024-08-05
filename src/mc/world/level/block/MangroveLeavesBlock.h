@@ -28,20 +28,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MangroveLeavesBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~MangroveLeavesBlock() = default;
 
-    // vIndex: 80, symbol:
-    // ?onFertilized@MangroveLeavesBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
+    // vIndex: 80
     virtual bool
     onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, ::FertilizerType) const;
 
-    // vIndex: 82, symbol: ?canBeFertilized@MangroveLeavesBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 82
     virtual bool
     canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
 
-    // symbol:
-    // ??0MangroveLeavesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@$$CBVBlockLegacy@@@@@Z
     MCAPI MangroveLeavesBlock(std::string const& nameId, int id, class WeakPtr<class BlockLegacy const> sapling);
 
     // NOLINTEND

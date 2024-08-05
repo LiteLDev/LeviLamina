@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1PlayerActionAcceptanceComponent@@QEAA@XZ
     MCAPI ~PlayerActionAcceptanceComponent();
 
     // NOLINTEND

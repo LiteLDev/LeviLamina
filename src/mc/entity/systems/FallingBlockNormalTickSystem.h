@@ -16,20 +16,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@FallingBlockNormalTickSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_doFallingBlockNormalTickSystem@FallingBlockNormalTickSystem@@CAXAEBVStrictEntityContext@@AEAVActorOwnerComponent@@AEAVITickDelegate@@@Z
     MCAPI static void
     _doFallingBlockNormalTickSystem(class StrictEntityContext const&, class ActorOwnerComponent&, class ITickDelegate&);
 
-    // symbol:
-    // ?_tickFallingBlockNormalTickSystem@FallingBlockNormalTickSystem@@CAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@UFallingBlockFlag@@@@@@VActorOwnerComponent@@@@@Z
     MCAPI static void _tickFallingBlockNormalTickSystem(class ViewT<
                                                         class StrictEntityContext,
                                                         struct Include<

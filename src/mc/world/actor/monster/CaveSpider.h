@@ -35,17 +35,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1CaveSpider@@UEAA@XZ
+    // vIndex: 10
     virtual ~CaveSpider() = default;
 
-    // vIndex: 119, symbol:
-    // ?getDebugText@CaveSpider@@EEAAXAEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
+    // vIndex: 119
     virtual void getDebugText(std::vector<std::string>& outputInfo);
 
-    // vIndex: 191, symbol: ?getModelScale@CaveSpider@@UEBAMXZ
+    // vIndex: 191
     virtual float getModelScale() const;
 
-    // symbol: ??0CaveSpider@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI CaveSpider(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

@@ -16,23 +16,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1WorkComposterGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~WorkComposterGoal() = default;
 
-    // vIndex: 4, symbol: ?start@WorkComposterGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 18, symbol: ?useWorkstation@WorkComposterGoal@@UEAAXXZ
+    // vIndex: 18
     virtual void useWorkstation();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_tryCompostItems@WorkComposterGoal@@AEAA_NXZ
     MCAPI bool _tryCompostItems();
 
-    // symbol: ?_tryEmptyComposter@WorkComposterGoal@@AEAA_NXZ
     MCAPI bool _tryEmptyComposter();
 
     // NOLINTEND

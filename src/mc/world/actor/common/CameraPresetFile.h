@@ -18,10 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1CameraPresetFile@CameraPresetsInternals@@QEAA@XZ
     MCAPI ~CameraPresetFile();
 
-    // symbol: ?bindType@CameraPresetFile@CameraPresetsInternals@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // NOLINTEND

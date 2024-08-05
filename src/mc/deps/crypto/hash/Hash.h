@@ -34,28 +34,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1Hash@0Crypto@@UEAA@XZ
+    // vIndex: 0
     virtual ~Hash();
 
-    // vIndex: 1, symbol: ?reset@Hash@1Crypto@@UEAAXXZ
+    // vIndex: 1
     virtual void reset();
 
-    // vIndex: 2, symbol: ?update@Hash@1Crypto@@UEAAXPEBXI@Z
+    // vIndex: 2
     virtual void update(void const* data, uint size);
 
-    // vIndex: 3, symbol: ?final@Hash@1Crypto@@UEAAXPEAE@Z
+    // vIndex: 3
     virtual void final(uchar* result);
 
-    // vIndex: 4, symbol: ?resultSize@Hash@1Crypto@@UEBA_KXZ
+    // vIndex: 4
     virtual uint64 resultSize() const;
 
-    // symbol: ??0Hash@0Crypto@@QEAA@W4HashType@01@@Z
     MCAPI explicit Hash(::Crypto::Hash::HashType type);
 
-    // symbol: ?final@Hash@1Crypto@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string final();
 
-    // symbol: ?getUUID@Hash@1Crypto@@QEAA?AVUUID@mce@@XZ
     MCAPI class mce::UUID getUUID();
 
     // NOLINTEND

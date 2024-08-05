@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getPackSettings@PackSettingsFactory@@QEAAPEAVPackSettings@@AEBVPackManifest@@@Z
     MCAPI class PackSettings* getPackSettings(class PackManifest const& manifest);
 
     // NOLINTEND

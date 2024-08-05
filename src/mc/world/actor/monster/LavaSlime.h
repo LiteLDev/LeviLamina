@@ -36,37 +36,36 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 4, symbol: ?reloadHardcoded@LavaSlime@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 4
     virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: __gen_??1LavaSlime@@UEAA@XZ
+    // vIndex: 10
     virtual ~LavaSlime() = default;
 
-    // vIndex: 41, symbol: ?getBrightness@LavaSlime@@UEBAMMAEBVIConstBlockSource@@@Z
+    // vIndex: 41
     virtual float getBrightness(float, class IConstBlockSource const&) const;
 
-    // vIndex: 51, symbol: ?isOnFire@LavaSlime@@MEBA_NXZ
+    // vIndex: 51
     virtual bool isOnFire() const;
 
-    // vIndex: 160, symbol: ?checkSpawnRules@LavaSlime@@UEAA_N_N@Z
+    // vIndex: 160
     virtual bool checkSpawnRules(bool fromSpawner);
 
-    // vIndex: 168, symbol: ?getArmorValue@LavaSlime@@UEBAHXZ
+    // vIndex: 168
     virtual int getArmorValue() const;
 
-    // vIndex: 190, symbol: ?isDarkEnoughToSpawn@LavaSlime@@UEBA_NXZ
+    // vIndex: 190
     virtual bool isDarkEnoughToSpawn() const;
 
-    // vIndex: 191, symbol: ?doPlayLandSound@LavaSlime@@MEAA_NXZ
+    // vIndex: 191
     virtual bool doPlayLandSound();
 
-    // vIndex: 193, symbol: ?decreaseSquish@LavaSlime@@MEAAXXZ
+    // vIndex: 193
     virtual void decreaseSquish();
 
-    // vIndex: 194, symbol: ?createChild@LavaSlime@@MEAA?AV?$OwnerPtr@VEntityContext@@@@H@Z
+    // vIndex: 194
     virtual class OwnerPtr<class EntityContext> createChild(int i);
 
-    // symbol: ??0LavaSlime@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI LavaSlime(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

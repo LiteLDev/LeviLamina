@@ -19,25 +19,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptCompoundBlockVolumeItem@ScriptModuleMinecraft@@QEAA@AEBVCompoundBlockVolumeItem@@@Z
     MCAPI explicit ScriptCompoundBlockVolumeItem(class CompoundBlockVolumeItem const&);
 
-    // symbol: ??0ScriptCompoundBlockVolumeItem@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
     MCAPI ScriptCompoundBlockVolumeItem(class ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem const&);
 
-    // symbol: ??4ScriptCompoundBlockVolumeItem@ScriptModuleMinecraft@@QEAAAEAV01@AEBV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem&
     operator=(class ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem const&);
 
-    // symbol:
-    // ?toCompoundBlockVolumeItem@ScriptCompoundBlockVolumeItem@ScriptModuleMinecraft@@QEBA?AVCompoundBlockVolumeItem@@XZ
     MCAPI class CompoundBlockVolumeItem toCompoundBlockVolumeItem() const;
 
-    // symbol: ??1ScriptCompoundBlockVolumeItem@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptCompoundBlockVolumeItem();
 
-    // symbol:
-    // ?bindInterface@ScriptCompoundBlockVolumeItem@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@VScriptCompoundBlockVolumeItem@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::InterfaceBindingBuilder<class ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem>
     bindInterface();
 

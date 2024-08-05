@@ -14,64 +14,59 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ItemEventListener@@UEAA@XZ
+    // vIndex: 0
     virtual ~ItemEventListener() = default;
 
-    // vIndex: 1, symbol: ?onInventoryItemOpened@ItemEventListener@@UEAA?AW4EventResult@@_N@Z
+    // vIndex: 1
     virtual ::EventResult onInventoryItemOpened(bool workbench);
 
-    // vIndex: 2, symbol: ?onInventoryItemClosed@ItemEventListener@@UEAA?AW4EventResult@@XZ
+    // vIndex: 2
     virtual ::EventResult onInventoryItemClosed();
 
-    // vIndex: 3, symbol:
-    // ?onItemTransferredFromContainer@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 3
     virtual ::EventResult
     onItemTransferredFromContainer(class ItemStackBase const& item, std::string const& srcContainerName);
 
-    // vIndex: 4, symbol:
-    // ?onItemTransferredToContainer@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 4
     virtual ::EventResult
     onItemTransferredToContainer(class ItemStackBase const& item, std::string const& dstContainerName);
 
-    // vIndex: 5, symbol:
-    // ?onPreviewItemPopulatedInContainer@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 5
     virtual ::EventResult
     onPreviewItemPopulatedInContainer(class ItemStackBase const& item, std::string const& containerName);
 
-    // vIndex: 6, symbol: ?onInventoryLayoutSelected@ItemEventListener@@UEAA?AW4EventResult@@HH@Z
+    // vIndex: 6
     virtual ::EventResult onInventoryLayoutSelected(int activeInventoryLayout, int activeInventoryLeftTabIndex);
 
-    // vIndex: 7, symbol:
-    // ?onInventoryItemCraftedAutomaticallyByRecipe@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@@Z
+    // vIndex: 7
     virtual ::EventResult onInventoryItemCraftedAutomaticallyByRecipe(class ItemStackBase const& item);
 
-    // vIndex: 8, symbol: ?onRecipeSelected@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@@Z
+    // vIndex: 8
     virtual ::EventResult onRecipeSelected(class ItemStackBase const& item);
 
-    // vIndex: 9, symbol: ?onItemSmelted@ItemEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemDescriptor@@1@Z
+    // vIndex: 9
     virtual ::EventResult
     onItemSmelted(class Player& player, class ItemDescriptor const& item, class ItemDescriptor const& lastFuelItem);
 
-    // vIndex: 10, symbol: ?onItemSpawningActor@ItemEventListener@@UEAA?AW4EventResult@@AEBVActor@@@Z
+    // vIndex: 10
     virtual ::EventResult onItemSpawningActor(class Actor const&);
 
-    // vIndex: 11, symbol: ?onItemSpawnedActor@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@AEBVActor@@@Z
+    // vIndex: 11
     virtual ::EventResult onItemSpawnedActor(class ItemStackBase const& item, class Actor const& spawnedActor);
 
-    // vIndex: 12, symbol: ?onItemModifiedActor@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@AEBVActor@@@Z
+    // vIndex: 12
     virtual ::EventResult onItemModifiedActor(class ItemStackBase const& item, class Actor const& modifiedActor);
 
-    // vIndex: 13, symbol: ?onItemSelectedSlot@ItemEventListener@@UEAA?AW4EventResult@@H@Z
+    // vIndex: 13
     virtual ::EventResult onItemSelectedSlot(int slot);
 
-    // vIndex: 14, symbol: ?onItemSelected@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@@Z
+    // vIndex: 14
     virtual ::EventResult onItemSelected(class ItemStackBase const&);
 
-    // vIndex: 15, symbol:
-    // ?onItemDefinitionEventTriggered@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 15
     virtual ::EventResult onItemDefinitionEventTriggered(class ItemStackBase const& item, std::string const& event);
 
-    // vIndex: 16, symbol: ?onEvent@ItemEventListener@@UEAA?AW4EventResult@@AEBUItemNotificationEvent@@@Z
+    // vIndex: 16
     virtual ::EventResult onEvent(struct ItemNotificationEvent const&);
 
     // NOLINTEND

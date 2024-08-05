@@ -27,14 +27,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ColoredTerracottaBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~ColoredTerracottaBlock() = default;
 
-    // vIndex: 96, symbol: ?asItemInstance@ColoredTerracottaBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
-    // symbol:
-    // ??0ColoredTerracottaBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI ColoredTerracottaBlock(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND

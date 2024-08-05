@@ -18,22 +18,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ParticleOnHitSubcomponent@@UEAA@XZ
+    // vIndex: 0
     virtual ~ParticleOnHitSubcomponent() = default;
 
-    // vIndex: 1, symbol: ?readfromJSON@ParticleOnHitSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
+    // vIndex: 1
     virtual void readfromJSON(class Json::Value& value, class SemVersion const& engineVersion);
 
-    // vIndex: 2, symbol: ?writetoJSON@ParticleOnHitSubcomponent@@UEBAXAEAVValue@Json@@@Z
+    // vIndex: 2
     virtual void writetoJSON(class Json::Value& component) const;
 
-    // vIndex: 3, symbol: ?doOnHitEffect@ParticleOnHitSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
+    // vIndex: 3
     virtual void doOnHitEffect(class Actor& owner, class ProjectileComponent& component);
 
-    // vIndex: 4, symbol: ?getName@ParticleOnHitSubcomponent@@UEAAPEBDXZ
+    // vIndex: 4
     virtual char const* getName();
 
-    // symbol: ??0ParticleOnHitSubcomponent@@QEAA@XZ
     MCAPI ParticleOnHitSubcomponent();
 
     // NOLINTEND

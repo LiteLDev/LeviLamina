@@ -29,78 +29,65 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptItemCustomComponentClosures@ScriptModuleMinecraft@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptItemCustomComponentClosures() = default;
 
-    // vIndex: 1, symbol:
-    // ?getVersion@?$ScriptItemCustomComponentClosuresBinding@UScriptItemCustomComponentClosures@ScriptModuleMinecraft@@@ScriptModuleMinecraft@@UEBA?AUVersion@Scripting@@XZ
+    // vIndex: 1
     virtual struct Scripting::Version getVersion() const;
 
-    // vIndex: 2, symbol:
-    // ?toFlags@?$ScriptItemCustomComponentClosuresBinding@UScriptItemCustomComponentClosures@ScriptModuleMinecraft@@@ScriptModuleMinecraft@@UEBA?AUScriptItemCustomComponentClosureFlags@2@XZ
+    // vIndex: 2
     virtual struct ScriptModuleMinecraft::ScriptItemCustomComponentClosureFlags toFlags() const;
 
-    // vIndex: 3, symbol:
-    // ?onUse@ScriptItemCustomComponentClosures@ScriptModuleMinecraft@@UEBA?AV?$optional@V?$Closure@$$A6AXV?$StrongTypedObjectHandle@UScriptItemCustomComponentUseEvent@ScriptModuleMinecraft@@@Scripting@@@Z$$V@Scripting@@@std@@XZ
+    // vIndex: 3
     virtual std::optional<
         class Scripting::Closure<void(class Scripting::StrongTypedObjectHandle<
                                       struct ScriptModuleMinecraft::ScriptItemCustomComponentUseEvent>)>>
     onUse() const;
 
-    // vIndex: 4, symbol:
-    // ?onUseOn@ScriptItemCustomComponentClosures@ScriptModuleMinecraft@@UEBA?AV?$optional@V?$Closure@$$A6AXV?$StrongTypedObjectHandle@UScriptItemCustomComponentUseOnEvent@ScriptModuleMinecraft@@@Scripting@@@Z$$V@Scripting@@@std@@XZ
+    // vIndex: 4
     virtual std::optional<
         class Scripting::Closure<void(class Scripting::StrongTypedObjectHandle<
                                       struct ScriptModuleMinecraft::ScriptItemCustomComponentUseOnEvent>)>>
     onUseOn() const;
 
-    // vIndex: 5, symbol:
-    // ?onCompleteUse@ScriptItemCustomComponentClosures@ScriptModuleMinecraft@@UEBA?AV?$optional@V?$Closure@$$A6AXV?$StrongTypedObjectHandle@UScriptItemCustomComponentCompleteUseEvent@ScriptModuleMinecraft@@@Scripting@@@Z$$V@Scripting@@@std@@XZ
+    // vIndex: 5
     virtual std::optional<
         class Scripting::Closure<void(class Scripting::StrongTypedObjectHandle<
                                       struct ScriptModuleMinecraft::ScriptItemCustomComponentCompleteUseEvent>)>>
     onCompleteUse() const;
 
-    // vIndex: 6, symbol:
-    // ?onConsume@ScriptItemCustomComponentClosures@ScriptModuleMinecraft@@UEBA?AV?$optional@V?$Closure@$$A6AXV?$StrongTypedObjectHandle@UScriptItemCustomComponentConsumeEvent@ScriptModuleMinecraft@@@Scripting@@@Z$$V@Scripting@@@std@@XZ
+    // vIndex: 6
     virtual std::optional<
         class Scripting::Closure<void(class Scripting::StrongTypedObjectHandle<
                                       struct ScriptModuleMinecraft::ScriptItemCustomComponentConsumeEvent>)>>
     onConsume() const;
 
-    // vIndex: 7, symbol:
-    // ?onBeforeDurabilityDamage@ScriptItemCustomComponentClosures@ScriptModuleMinecraft@@UEBA?AV?$optional@V?$Closure@$$A6AXV?$StrongTypedObjectHandle@UScriptItemCustomComponentBeforeDurabilityDamageEvent@ScriptModuleMinecraft@@@Scripting@@@Z$$V@Scripting@@@std@@XZ
+    // vIndex: 7
     virtual std::optional<class Scripting::Closure<
         void(class Scripting::StrongTypedObjectHandle<
              struct ScriptModuleMinecraft::ScriptItemCustomComponentBeforeDurabilityDamageEvent>)>>
     onBeforeDurabilityDamage() const;
 
-    // vIndex: 8, symbol:
-    // ?onHitEntity@ScriptItemCustomComponentClosures@ScriptModuleMinecraft@@UEBA?AV?$optional@V?$Closure@$$A6AXV?$StrongTypedObjectHandle@UScriptItemCustomComponentHitEntityEvent@ScriptModuleMinecraft@@@Scripting@@@Z$$V@Scripting@@@std@@XZ
+    // vIndex: 8
     virtual std::optional<
         class Scripting::Closure<void(class Scripting::StrongTypedObjectHandle<
                                       struct ScriptModuleMinecraft::ScriptItemCustomComponentHitEntityEvent>)>>
     onHitEntity() const;
 
-    // vIndex: 9, symbol:
-    // ?onMineBlock@ScriptItemCustomComponentClosures@ScriptModuleMinecraft@@UEBA?AV?$optional@V?$Closure@$$A6AXV?$StrongTypedObjectHandle@UScriptItemCustomComponentMineBlockEvent@ScriptModuleMinecraft@@@Scripting@@@Z$$V@Scripting@@@std@@XZ
+    // vIndex: 9
     virtual std::optional<
         class Scripting::Closure<void(class Scripting::StrongTypedObjectHandle<
                                       struct ScriptModuleMinecraft::ScriptItemCustomComponentMineBlockEvent>)>>
     onMineBlock() const;
 
-    // symbol: ??0ScriptItemCustomComponentClosures@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
     MCAPI ScriptItemCustomComponentClosures(struct ScriptModuleMinecraft::ScriptItemCustomComponentClosures const&);
 
-    // symbol: ??4ScriptItemCustomComponentClosures@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptItemCustomComponentClosures&
     operator=(struct ScriptModuleMinecraft::ScriptItemCustomComponentClosures&&);
 
-    // symbol: ??4ScriptItemCustomComponentClosures@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptItemCustomComponentClosures&
     operator=(struct ScriptModuleMinecraft::ScriptItemCustomComponentClosures const&);
 
-    // symbol: ?bind@ScriptItemCustomComponentClosures@ScriptModuleMinecraft@@SA?AUInterfaceBinding@Scripting@@XZ
     MCAPI static struct Scripting::InterfaceBinding bind();
 
     // NOLINTEND

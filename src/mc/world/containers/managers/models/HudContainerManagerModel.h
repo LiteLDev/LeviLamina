@@ -16,29 +16,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1HudContainerManagerModel@@UEAA@XZ
+    // vIndex: 0
     virtual ~HudContainerManagerModel() = default;
 
-    // vIndex: 6, symbol:
-    // ?getItemCopies@HudContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+    // vIndex: 6
     virtual std::vector<class ItemStack> getItemCopies() const;
 
-    // vIndex: 7, symbol: ?setSlot@HudContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
+    // vIndex: 7
     virtual void setSlot(int slot, class ItemStack const& item, bool);
 
-    // vIndex: 8, symbol: ?getSlot@HudContainerManagerModel@@UEBAAEBVItemStack@@H@Z
+    // vIndex: 8
     virtual class ItemStack const& getSlot(int slot) const;
 
-    // vIndex: 9, symbol: ?setData@HudContainerManagerModel@@UEAAXHH@Z
+    // vIndex: 9
     virtual void setData(int id, int value);
 
-    // vIndex: 10, symbol: ?broadcastChanges@HudContainerManagerModel@@UEAAXXZ
+    // vIndex: 10
     virtual void broadcastChanges();
 
-    // vIndex: 17, symbol: ?_postInit@HudContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+    // vIndex: 17
     virtual class ContainerScreenContext _postInit();
 
-    // symbol: ??0HudContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@@Z
     MCAPI HudContainerManagerModel(::ContainerID containerId, class Player& player);
 
     // NOLINTEND

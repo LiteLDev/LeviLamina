@@ -11,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createInputDependentActorServerAnimationSystem@ServerAnimationSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createInputDependentActorServerAnimationSystem();
 
-    // symbol: ?createInputIndependentActorServerAnimationSystem@ServerAnimationSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createInputIndependentActorServerAnimationSystem();
 
     // NOLINTEND

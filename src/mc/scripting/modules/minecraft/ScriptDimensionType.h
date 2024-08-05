@@ -18,11 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?getTypeId@ScriptDimensionType@ScriptModuleMinecraft@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getTypeId() const;
 
-    // symbol: ?bind@ScriptDimensionType@ScriptModuleMinecraft@@SAXAEAVModuleBindingBuilder@Scripting@@@Z
     MCAPI static void bind(class Scripting::ModuleBindingBuilder&);
 
     // NOLINTEND

@@ -19,13 +19,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?getChunkAtPositionLoadedAndTickingError@ScriptBlockValidator@ScriptModuleMinecraft@@QEAA?AV?$optional@UScriptLocationInUnloadedChunkError@ScriptModuleMinecraft@@@std@@XZ
     MCAPI std::optional<struct ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError>
           getChunkAtPositionLoadedAndTickingError();
 
-    // symbol:
-    // ?getPositionWithinWorldBoundsError@ScriptBlockValidator@ScriptModuleMinecraft@@QEAA?AV?$optional@UScriptLocationOutOfWorldBoundsError@ScriptModuleMinecraft@@@std@@XZ
     MCAPI std::optional<struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
           getPositionWithinWorldBoundsError();
 

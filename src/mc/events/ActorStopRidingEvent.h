@@ -10,10 +10,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ActorStopRidingEvent@@QEAA@AEBU0@@Z
     MCAPI ActorStopRidingEvent(struct ActorStopRidingEvent const&);
 
-    // symbol: ??1ActorStopRidingEvent@@QEAA@XZ
     MCAPI ~ActorStopRidingEvent();
 
     // NOLINTEND

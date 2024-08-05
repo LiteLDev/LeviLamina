@@ -18,20 +18,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?bind@ScriptPlayerInputPermissions@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptPlayerInputPermissions@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptPlayerInputPermissions> bind();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_setPermissionCategory@ScriptPlayerInputPermissions@ScriptModuleMinecraft@@AEAA?AV?$Result@X$$V@Scripting@@W4ClientInputLockCategory@@_N@Z
     MCAPI class Scripting::Result<void> _setPermissionCategory(::ClientInputLockCategory, bool);
 
-    // symbol:
-    // ?_makeCategoryPropertyBinding@ScriptPlayerInputPermissions@ScriptModuleMinecraft@@CAXAEAV?$ClassBindingBuilder@VScriptPlayerInputPermissions@ScriptModuleMinecraft@@@Scripting@@W4ClientInputLockCategory@@@Z
     MCAPI static void _makeCategoryPropertyBinding(
         class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptPlayerInputPermissions>&,
         ::ClientInputLockCategory

@@ -13,7 +13,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1Source@snappy@@UEAA@XZ
+    // vIndex: 0
     virtual ~Source();
 
     // NOLINTEND

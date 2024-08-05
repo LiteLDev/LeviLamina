@@ -15,7 +15,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ComponentInfo@@QEAA@XZ
     MCAPI ~ComponentInfo();
 
     // NOLINTEND

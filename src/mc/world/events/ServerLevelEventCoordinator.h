@@ -14,13 +14,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ServerLevelEventCoordinator@@UEAA@XZ
+    // vIndex: 0
     virtual ~ServerLevelEventCoordinator() = default;
 
-    // symbol: ?sendLevelAddedPlayer@ServerLevelEventCoordinator@@QEAAXAEAVLevel@@AEAVPlayer@@@Z
     MCAPI void sendLevelAddedPlayer(class Level& level, class Player& player);
 
-    // symbol: ?sendLevelRemovedPlayer@ServerLevelEventCoordinator@@QEAAXAEAVLevel@@AEAVPlayer@@@Z
     MCAPI void sendLevelRemovedPlayer(class Level& level, class Player& player);
 
     // NOLINTEND

@@ -21,18 +21,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptLocationOutOfWorldBoundsError@ScriptModuleMinecraft@@QEAA@AEBVVec3@@@Z
     MCAPI explicit ScriptLocationOutOfWorldBoundsError(class Vec3 const&);
 
-    // symbol:
-    // ??0ScriptLocationOutOfWorldBoundsError@ScriptModuleMinecraft@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@@Z
     MCAPI ScriptLocationOutOfWorldBoundsError(std::string const&, class Vec3 const&);
 
-    // symbol: ??1ScriptLocationOutOfWorldBoundsError@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptLocationOutOfWorldBoundsError();
 
-    // symbol:
-    // ?bind@ScriptLocationOutOfWorldBoundsError@ScriptModuleMinecraft@@SA?AV?$ErrorBindingBuilder@UScriptLocationOutOfWorldBoundsError@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ErrorBindingBuilder<struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     bind();
 

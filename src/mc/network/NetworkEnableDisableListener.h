@@ -14,28 +14,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1NetworkEnableDisableListener@@UEAA@XZ
+    // vIndex: 0
     virtual ~NetworkEnableDisableListener();
 
-    // vIndex: 1, symbol: ?_onDisable@RakNetServerLocator@@EEAAXXZ
+    // vIndex: 1
     virtual void _onDisable() = 0;
 
-    // vIndex: 2, symbol: ?_onEnable@RakNetServerLocator@@EEAAXXZ
+    // vIndex: 2
     virtual void _onEnable() = 0;
 
-    // symbol: ??0NetworkEnableDisableListener@@QEAA@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
     MCAPI explicit NetworkEnableDisableListener(class Bedrock::NonOwnerPointer<class AppPlatform> const& appPlatform);
 
-    // symbol: ?disable@NetworkEnableDisableListener@@QEAAXXZ
     MCAPI void disable();
 
-    // symbol: ?isDisabled@NetworkEnableDisableListener@@QEBA_NXZ
     MCAPI bool isDisabled() const;
 
-    // symbol: ?isEnabled@NetworkEnableDisableListener@@QEBA_NXZ
     MCAPI bool isEnabled() const;
 
-    // symbol: ?tryEnable@NetworkEnableDisableListener@@QEAAXXZ
     MCAPI void tryEnable();
 
     // NOLINTEND

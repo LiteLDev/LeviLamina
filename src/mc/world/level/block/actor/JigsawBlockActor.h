@@ -15,31 +15,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1JigsawBlockActor@@UEAA@XZ
+    // vIndex: 0
     virtual ~JigsawBlockActor() = default;
 
-    // vIndex: 1, symbol: ?load@JigsawBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 1
     virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 2, symbol: ?save@JigsawBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+    // vIndex: 2
     virtual bool save(class CompoundTag& tag) const;
 
-    // vIndex: 37, symbol:
-    // ?getUgcStrings@JigsawBlockActor@@UEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBVCompoundTag@@@Z
+    // vIndex: 37
     virtual std::vector<std::string> getUgcStrings(class CompoundTag const&) const;
 
-    // vIndex: 38, symbol:
-    // ?setUgcStrings@JigsawBlockActor@@UEBAXAEAVCompoundTag@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
+    // vIndex: 38
     virtual void setUgcStrings(class CompoundTag&, std::vector<std::string> const&) const;
 
-    // vIndex: 40, symbol:
-    // ?_getUpdatePacket@JigsawBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
+    // vIndex: 40
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
 
-    // vIndex: 41, symbol: ?_onUpdatePacket@JigsawBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
+    // vIndex: 41
     virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
 
-    // symbol: ??0JigsawBlockActor@@QEAA@AEBVBlockPos@@@Z
     MCAPI explicit JigsawBlockActor(class BlockPos const& pos);
 
     // NOLINTEND

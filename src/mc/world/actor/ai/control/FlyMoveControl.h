@@ -13,13 +13,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FlyMoveControl@@UEAA@XZ
+    // vIndex: 0
     virtual ~FlyMoveControl() = default;
 
-    // vIndex: 2, symbol: ?tick@FlyMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
+    // vIndex: 2
     virtual void tick(class MoveControlComponent& parent, class Mob& mob);
 
-    // symbol: ??0FlyMoveControl@@QEAA@XZ
     MCAPI FlyMoveControl();
 
     // NOLINTEND

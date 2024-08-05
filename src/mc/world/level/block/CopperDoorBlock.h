@@ -28,27 +28,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CopperDoorBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~CopperDoorBlock() = default;
 
-    // vIndex: 18, symbol: ?onLightningHit@CopperDoorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 18
     virtual void onLightningHit(class BlockSource&, class BlockPos const&) const;
 
-    // vIndex: 27, symbol: ?tryGetCopperBehavior@CopperDoorBlock@@UEBAPEBVCopperBehavior@@XZ
+    // vIndex: 27
     virtual class CopperBehavior const* tryGetCopperBehavior() const;
 
-    // vIndex: 149, symbol: ?randomTick@CopperDoorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 149
     virtual void randomTick(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // vIndex: 152, symbol: ?use@CopperDoorBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player&, class BlockPos const&, uchar) const;
 
-    // symbol:
-    // ??0CopperDoorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4DoorType@DoorBlock@@W4CopperType@@AEBVHashedString@@@Z
     MCAPI CopperDoorBlock(std::string const&, int, ::DoorBlock::DoorType, ::CopperType, class HashedString const&);
 
-    // symbol:
-    // ??0CopperDoorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4DoorType@DoorBlock@@W4CopperType@@AEBVHashedString@@33@Z
     MCAPI
     CopperDoorBlock(std::string const&, int, ::DoorBlock::DoorType, ::CopperType, class HashedString const&, class HashedString const&, class HashedString const&);
 

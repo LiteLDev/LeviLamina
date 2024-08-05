@@ -15,26 +15,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1StompEggGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~StompEggGoal() = default;
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@StompEggGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // vIndex: 18, symbol: ?_createBreakProgressParticles@StompEggGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z
+    // vIndex: 18
     virtual void _createBreakProgressParticles(class Level& level, class BlockSource& region, class BlockPos pos);
 
-    // vIndex: 19, symbol: ?_createDestroyParticles@StompEggGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z
+    // vIndex: 19
     virtual void _createDestroyParticles(class Level& level, class BlockSource& region, class BlockPos pos);
 
-    // vIndex: 20, symbol: ?_playBreakProgressSound@StompEggGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z
+    // vIndex: 20
     virtual void _playBreakProgressSound(class Level& level, class BlockSource& region, class BlockPos pos);
 
-    // vIndex: 21, symbol: ?_playDestroySound@StompEggGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z
+    // vIndex: 21
     virtual void _playDestroySound(class Level& level, class BlockSource& region, class BlockPos pos);
 
-    // symbol: ??0StompEggGoal@@QEAA@AEAVMob@@MHHMH@Z
     MCAPI StompEggGoal(
         class Mob& mob,
         float      speedModifier,

@@ -23,13 +23,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ?doValidate@NullConstraint@cereal@@EEBAXAEBVmeta_any@entt@@AEAVSerializerContext@2@@Z
+    // vIndex: 0
     virtual void doValidate(entt::meta_any const&, class cereal::SerializerContext&) const;
 
-    // vIndex: 1, symbol: ??1NullConstraint@cereal@@UEAA@XZ
+    // vIndex: 1
     virtual ~NullConstraint();
 
-    // vIndex: 2, symbol: ?description@NullConstraint@cereal@@UEBA?AUConstraintDescription@internal@2@XZ
+    // vIndex: 2
     virtual struct cereal::internal::ConstraintDescription description() const;
 
     // NOLINTEND

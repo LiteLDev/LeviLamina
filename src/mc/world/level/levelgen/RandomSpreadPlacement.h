@@ -24,8 +24,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?placementChunk@RandomSpreadPlacement@worldgen@br@@QEBA?AVChunkPos@@AEBUStructurePlacement@23@AEBUChunkGeneratorStructureState@23@V4@@Z
     MCAPI class ChunkPos placementChunk(
         struct br::worldgen::StructurePlacement const&,
         struct br::worldgen::ChunkGeneratorStructureState const&,

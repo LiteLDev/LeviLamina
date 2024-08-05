@@ -17,13 +17,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1OnPlacedTrigger@@UEAA@XZ
+    // vIndex: 0
     virtual ~OnPlacedTrigger() = default;
 
-    // symbol: ?finalize@OnPlacedTrigger@@QEAAXV?$not_null@PEAVBlockPlaceEventComponent@BlockEvents@@@gsl@@@Z
     MCAPI void finalize(gsl::not_null<class BlockEvents::BlockPlaceEventComponent*>);
 
-    // symbol: ?onPlace@OnPlacedTrigger@@QEBAXAEBUBlockPlaceEvent@BlockEvents@@@Z
     MCAPI void onPlace(struct BlockEvents::BlockPlaceEvent const&) const;
 
     // NOLINTEND

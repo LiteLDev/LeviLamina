@@ -18,110 +18,93 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ActorDamageSource@@UEAA@XZ
+    // vIndex: 0
     virtual ~ActorDamageSource() = default;
 
-    // vIndex: 1, symbol: ?isEntitySource@ActorDamageSource@@UEBA_NXZ
+    // vIndex: 1
     virtual bool isEntitySource() const;
 
-    // vIndex: 2, symbol: ?isChildEntitySource@ActorDamageSource@@UEBA_NXZ
+    // vIndex: 2
     virtual bool isChildEntitySource() const;
 
-    // vIndex: 3, symbol: ?isBlockSource@ActorDamageSource@@UEBA_NXZ
+    // vIndex: 3
     virtual bool isBlockSource() const;
 
-    // vIndex: 4, symbol: ?isFire@ActorDamageSource@@UEBA_NXZ
+    // vIndex: 4
     virtual bool isFire() const;
 
-    // vIndex: 5, symbol: ?isReducedByResistanceEffect@ActorDamageSource@@UEBA_NXZ
+    // vIndex: 5
     virtual bool isReducedByResistanceEffect() const;
 
-    // vIndex: 6, symbol: ?isReducedByEnchantReduction@ActorDamageSource@@UEBA_NXZ
+    // vIndex: 6
     virtual bool isReducedByEnchantReduction() const;
 
-    // vIndex: 7, symbol: ?isReducedByArmorReduction@ActorDamageSource@@UEBA_NXZ
+    // vIndex: 7
     virtual bool isReducedByArmorReduction() const;
 
-    // vIndex: 8, symbol: ?isFallingBlockDamage@ActorDamageSource@@UEBA_NXZ
+    // vIndex: 8
     virtual bool isFallingBlockDamage() const;
 
-    // vIndex: 9, symbol: ?isFallDamage@ActorDamageSource@@UEBA_NXZ
+    // vIndex: 9
     virtual bool isFallDamage() const;
 
-    // vIndex: 10, symbol:
-    // ?getDeathMessage@ActorDamageSource@@UEBA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@PEAVActor@@@Z
+    // vIndex: 10
     virtual std::pair<std::string, std::vector<std::string>>
     getDeathMessage(std::string deadName, class Actor* dead) const;
 
-    // vIndex: 11, symbol: ?getIsCreative@ActorDamageSource@@UEBA_NXZ
+    // vIndex: 11
     virtual bool getIsCreative() const;
 
-    // vIndex: 12, symbol: ?getIsWorldBuilder@ActorDamageSource@@UEBA_NXZ
+    // vIndex: 12
     virtual bool getIsWorldBuilder() const;
 
-    // vIndex: 13, symbol: ?getEntityUniqueID@ActorDamageSource@@UEBA?AUActorUniqueID@@XZ
+    // vIndex: 13
     virtual struct ActorUniqueID getEntityUniqueID() const;
 
-    // vIndex: 14, symbol: ?getEntityType@ActorDamageSource@@UEBA?AW4ActorType@@XZ
+    // vIndex: 14
     virtual ::ActorType getEntityType() const;
 
-    // vIndex: 15, symbol: ?getEntityCategories@ActorDamageSource@@UEBA?AW4ActorCategory@@XZ
+    // vIndex: 15
     virtual ::ActorCategory getEntityCategories() const;
 
-    // vIndex: 16, symbol: ?getDamagingEntityIsCreative@ActorDamageSource@@UEBA_NXZ
+    // vIndex: 16
     virtual bool getDamagingEntityIsCreative() const;
 
-    // vIndex: 17, symbol: ?getDamagingEntityIsWorldBuilder@ActorDamageSource@@UEBA_NXZ
+    // vIndex: 17
     virtual bool getDamagingEntityIsWorldBuilder() const;
 
-    // vIndex: 18, symbol: ?getDamagingEntityUniqueID@ActorDamageSource@@UEBA?AUActorUniqueID@@XZ
+    // vIndex: 18
     virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
 
-    // vIndex: 19, symbol: ?getDamagingEntityType@ActorDamageSource@@UEBA?AW4ActorType@@XZ
+    // vIndex: 19
     virtual ::ActorType getDamagingEntityType() const;
 
-    // vIndex: 20, symbol: ?getDamagingEntityCategories@ActorDamageSource@@UEBA?AW4ActorCategory@@XZ
+    // vIndex: 20
     virtual ::ActorCategory getDamagingEntityCategories() const;
 
-    // vIndex: 21, symbol:
-    // ?clone@ActorDamageSource@@UEBA?AV?$unique_ptr@VActorDamageSource@@U?$default_delete@VActorDamageSource@@@std@@@std@@XZ
+    // vIndex: 21
     virtual std::unique_ptr<class ActorDamageSource> clone() const;
 
-    // symbol: ??0ActorDamageSource@@QEAA@W4ActorDamageCause@@@Z
     MCAPI explicit ActorDamageSource(::ActorDamageCause cause);
 
-    // symbol: ?getCause@ActorDamageSource@@QEBA?AW4ActorDamageCause@@XZ
     MCAPI ::ActorDamageCause getCause() const;
 
-    // symbol: ?setCause@ActorDamageSource@@QEAAXW4ActorDamageCause@@@Z
     MCAPI void setCause(::ActorDamageCause cause);
 
-    // symbol:
-    // ?generateDamageCauseCommandEnum@ActorDamageSource@@SA?AV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorDamageCause@@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorDamageCause@@@std@@@2@@std@@V?$optional@UVersion@Scripting@@@3@@Z
     MCAPI static std::vector<std::pair<std::string, ::ActorDamageCause>>
         generateDamageCauseCommandEnum(std::optional<struct Scripting::Version>);
 
-    // symbol:
-    // ?generateNewDamageCauseCommandEnum@ActorDamageSource@@SA?AV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorDamageCause@@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorDamageCause@@@std@@@2@@std@@V?$optional@UVersion@Scripting@@@3@@Z
     MCAPI static std::vector<std::pair<std::string, ::ActorDamageCause>>
         generateNewDamageCauseCommandEnum(std::optional<struct Scripting::Version>);
 
-    // symbol:
-    // ?generateVersionedDamageCauseCommandEnum@ActorDamageSource@@SA?AV?$vector@VVersionedActorDamageCause@@V?$allocator@VVersionedActorDamageCause@@@std@@@std@@XZ
     MCAPI static std::vector<class VersionedActorDamageCause> generateVersionedDamageCauseCommandEnum();
 
-    // symbol: ?getCauseMapVersionCutoffInclusive@ActorDamageSource@@SA?AW4ActorDamageCause@@UVersion@Scripting@@@Z
     MCAPI static ::ActorDamageCause getCauseMapVersionCutoffInclusive(struct Scripting::Version);
 
-    // symbol: ?isDamageCausedByMob@ActorDamageSource@@SA_NW4ActorDamageCause@@@Z
     MCAPI static bool isDamageCausedByMob(::ActorDamageCause cause);
 
-    // symbol:
-    // ?lookupCause@ActorDamageSource@@SA?AW4ActorDamageCause@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI static ::ActorDamageCause lookupCause(std::string const& name);
 
-    // symbol:
-    // ?lookupCauseName@ActorDamageSource@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorDamageCause@@@Z
     MCAPI static std::string const& lookupCauseName(::ActorDamageCause);
 
     // NOLINTEND

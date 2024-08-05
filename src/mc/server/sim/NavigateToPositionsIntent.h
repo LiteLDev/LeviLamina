@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1NavigateToPositionsIntent@sim@@QEAA@XZ
     MCAPI ~NavigateToPositionsIntent();
 
     // NOLINTEND

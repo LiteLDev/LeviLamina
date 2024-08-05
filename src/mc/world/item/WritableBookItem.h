@@ -26,33 +26,26 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1WritableBookItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~WritableBookItem() = default;
 
-    // vIndex: 47, symbol: ?requiresInteract@WritableBookItem@@UEBA_NXZ
+    // vIndex: 47
     virtual bool requiresInteract() const;
 
-    // vIndex: 72, symbol: ?use@WritableBookItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+    // vIndex: 72
     virtual class ItemStack& use(class ItemStack& instance, class Player& player) const;
 
-    // vIndex: 105, symbol:
-    // ?getInteractText@WritableBookItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPlayer@@@Z
+    // vIndex: 105
     virtual std::string getInteractText(class Player const&) const;
 
-    // symbol: ?addPageAt@WritableBookItem@@SAXAEAVItemStack@@HAEBUPageContent@@@Z
     MCAPI static void addPageAt(class ItemStack& book, int index, struct PageContent const& page);
 
-    // symbol: ?deletePage@WritableBookItem@@SA?AUPageContent@@AEAVItemStack@@H@Z
     MCAPI static struct PageContent deletePage(class ItemStack& book, int index);
 
-    // symbol: ?replacePage@WritableBookItem@@SAXAEAVItemStack@@HAEBUPageContent@@@Z
     MCAPI static void replacePage(class ItemStack& book, int index, struct PageContent const& page);
 
-    // symbol:
-    // ?signBook@WritableBookItem@@SAXAEAVItemStack@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@11@Z
     MCAPI static void signBook(class ItemStack& book, std::string title, std::string author, std::string xuid);
 
-    // symbol: ?swapPages@WritableBookItem@@SAXAEAVItemStack@@HH@Z
     MCAPI static void swapPages(class ItemStack& book, int page1, int page2);
 
     // NOLINTEND

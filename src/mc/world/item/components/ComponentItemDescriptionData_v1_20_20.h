@@ -15,19 +15,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ComponentItemDescriptionData_v1_20_20@@QEAA@$$QEAU0@@Z
     MCAPI ComponentItemDescriptionData_v1_20_20(struct ComponentItemDescriptionData_v1_20_20&&);
 
-    // symbol: ??4ComponentItemDescriptionData_v1_20_20@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct ComponentItemDescriptionData_v1_20_20& operator=(struct ComponentItemDescriptionData_v1_20_20&&);
 
-    // symbol: ??4ComponentItemDescriptionData_v1_20_20@@QEAAAEAU0@AEBU0@@Z
     MCAPI struct ComponentItemDescriptionData_v1_20_20& operator=(struct ComponentItemDescriptionData_v1_20_20 const&);
 
-    // symbol: ??1ComponentItemDescriptionData_v1_20_20@@QEAA@XZ
     MCAPI ~ComponentItemDescriptionData_v1_20_20();
 
-    // symbol: ?bindType@ComponentItemDescriptionData_v1_20_20@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // NOLINTEND

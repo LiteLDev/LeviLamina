@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1PlayerEatFoodEvent@@QEAA@XZ
     MCAPI ~PlayerEatFoodEvent();
 
     // NOLINTEND

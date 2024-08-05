@@ -17,13 +17,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0TagsItemComponent@v1_20_50@Puv@@QEAA@AEBU012@@Z
     MCAPI TagsItemComponent(struct Puv::v1_20_50::TagsItemComponent const&);
 
-    // symbol: ??1TagsItemComponent@v1_20_50@Puv@@QEAA@XZ
     MCAPI ~TagsItemComponent();
 
-    // symbol: ?bindType@TagsItemComponent@v1_20_50@Puv@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // NOLINTEND

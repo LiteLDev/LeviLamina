@@ -21,7 +21,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?bindV010@ScriptNumberRange@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UFloatRange@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct FloatRange> bindV010();
 
     // NOLINTEND

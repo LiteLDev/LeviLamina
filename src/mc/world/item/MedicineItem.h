@@ -26,35 +26,30 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MedicineItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~MedicineItem() = default;
 
-    // vIndex: 56, symbol: ?isValidAuxValue@MedicineItem@@UEBA_NH@Z
+    // vIndex: 56
     virtual bool isValidAuxValue(int auxValue) const;
 
-    // vIndex: 72, symbol: ?use@MedicineItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+    // vIndex: 72
     virtual class ItemStack& use(class ItemStack& item, class Player& player) const;
 
-    // vIndex: 75, symbol:
-    // ?useTimeDepleted@MedicineItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
+    // vIndex: 75
     virtual ::ItemUseMethod
     useTimeDepleted(class ItemStack& inoutInstance, class Level* level, class Player* player) const;
 
-    // vIndex: 83, symbol:
-    // ?buildDescriptionId@MedicineItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+    // vIndex: 83
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 103, symbol:
-    // ?setIconInfo@MedicineItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+    // vIndex: 103
     virtual class Item& setIconInfo(std::string const& name, int id);
 
-    // vIndex: 104, symbol: ?getIconInfo@MedicineItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
+    // vIndex: 104
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const& item, int, bool) const;
 
-    // symbol: ??0MedicineItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI MedicineItem(std::string const& name, int id);
 
-    // symbol: ?getMobEffect@MedicineItem@@SAPEBVMobEffect@@AEBVItemStack@@@Z
     MCAPI static class MobEffect const* getMobEffect(class ItemStack const& instance);
 
     // NOLINTEND

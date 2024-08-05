@@ -19,10 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?bindTypes@TransformationProxy@BlockTransformationSerializer@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindTypes(struct cereal::ReflectionCtx&);
 
-    // symbol: ?from@TransformationProxy@BlockTransformationSerializer@@SAXAEAUBlockTransformationDescription@@U12@@Z
     MCAPI static void
     from(struct BlockTransformationDescription&, struct BlockTransformationSerializer::TransformationProxy);
 

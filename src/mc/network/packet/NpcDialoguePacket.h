@@ -30,31 +30,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1NpcDialoguePacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~NpcDialoguePacket();
 
-    // vIndex: 1, symbol: ?getId@NpcDialoguePacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@NpcDialoguePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@NpcDialoguePacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 8, symbol:
-    // ?_read@NpcDialoguePacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0NpcDialoguePacket@@QEAA@XZ
     MCAPI NpcDialoguePacket();
 
-    // symbol: ??0NpcDialoguePacket@@QEAA@UActorUniqueID@@@Z
     MCAPI explicit NpcDialoguePacket(struct ActorUniqueID);
 
-    // symbol:
-    // ?initializePacket@NpcDialoguePacket@@SA_NAEAV1@PEBVNpcDialogueStorage@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI static bool
     initializePacket(class NpcDialoguePacket&, class NpcDialogueStorage const* storage, std::string const&);
 
@@ -62,8 +56,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_verifyJson@NpcDialoguePacket@@AEBA?AV?$Result@XVerror_code@std@@@Bedrock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Bedrock::Result<void> _verifyJson(std::string const&) const;
 
     // NOLINTEND

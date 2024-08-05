@@ -15,10 +15,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BlockMaterialInstancesComponent@@UEAA@XZ
+    // vIndex: 0
     virtual ~BlockMaterialInstancesComponent() = default;
 
-    // symbol: ?getRenderLayer@BlockMaterialInstancesComponent@@QEBA?AW4BlockRenderLayer@@XZ
     MCAPI ::BlockRenderLayer getRenderLayer() const;
 
     // NOLINTEND

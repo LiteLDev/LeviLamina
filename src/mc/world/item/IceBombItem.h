@@ -26,34 +26,31 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1IceBombItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~IceBombItem() = default;
 
-    // vIndex: 19, symbol: ?isThrowable@IceBombItem@@UEBA_NXZ
+    // vIndex: 19
     virtual bool isThrowable() const;
 
-    // vIndex: 72, symbol: ?use@IceBombItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+    // vIndex: 72
     virtual class ItemStack& use(class ItemStack& item, class Player& player) const;
 
-    // vIndex: 73, symbol:
-    // ?createProjectileActor@IceBombItem@@UEBAPEAVActor@@AEAVBlockSource@@AEBVItemStack@@AEBVVec3@@2@Z
+    // vIndex: 73
     virtual class Actor*
     createProjectileActor(class BlockSource&, class ItemStack const&, class Vec3 const&, class Vec3 const&) const;
 
-    // vIndex: 74, symbol: ?dispense@IceBombItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 74
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
-    // vIndex: 90, symbol: ?getCooldownType@IceBombItem@@UEBAAEBVHashedString@@XZ
+    // vIndex: 90
     virtual class HashedString const& getCooldownType() const;
 
-    // vIndex: 91, symbol: ?getCooldownTime@IceBombItem@@UEBAHXZ
+    // vIndex: 91
     virtual int getCooldownTime() const;
 
-    // symbol: ??0IceBombItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI IceBombItem(std::string const& nameId, int id);
 
-    // symbol: ?ICE_BOMB_COOLDOWN@IceBombItem@@2VHashedString@@B
     MCAPI static class HashedString const ICE_BOMB_COOLDOWN;
 
     // NOLINTEND

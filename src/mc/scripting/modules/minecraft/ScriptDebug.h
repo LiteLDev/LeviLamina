@@ -22,8 +22,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?disableWatchdogTimingWarnings@ScriptDebug@ScriptModuleMinecraft@@SA?AV?$Result@X$$V@Scripting@@AEAVWeakLifetimeScope@4@AEAVDependencyLocator@4@_N@Z
     MCAPI static class Scripting::Result<void>
     disableWatchdogTimingWarnings(class Scripting::WeakLifetimeScope&, class Scripting::DependencyLocator&, bool);
 

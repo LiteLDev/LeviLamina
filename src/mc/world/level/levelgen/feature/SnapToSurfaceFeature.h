@@ -17,11 +17,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SnapToSurfaceFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~SnapToSurfaceFeature() = default;
 
-    // vIndex: 1, symbol:
-    // ?place@SnapToSurfaceFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
+    // vIndex: 1
     virtual std::optional<class BlockPos> place(
         class IBlockWorldGenAPI& target,
         class BlockPos const&    pos,
@@ -29,19 +28,15 @@ public:
         class RenderParams&      renderParams
     ) const;
 
-    // vIndex: 2, symbol:
-    // ?isValidPlacement@IFeature@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 2
     virtual bool isValidPlacement(std::string const&);
 
-    // symbol: ??0SnapToSurfaceFeature@@QEAA@XZ
     MCAPI SnapToSurfaceFeature();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_findSnapPos@SnapToSurfaceFeature@@AEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@W4Surface@1@@Z
     MCAPI std::optional<class BlockPos>
     _findSnapPos(class IBlockWorldGenAPI& target, class BlockPos const& pos, ::SnapToSurfaceFeature::Surface) const;
 

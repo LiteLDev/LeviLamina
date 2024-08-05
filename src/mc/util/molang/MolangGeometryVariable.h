@@ -7,7 +7,6 @@ struct MolangGeometryVariable : HashedString {
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1MolangGeometryVariable@@QEAA@XZ
     MCAPI ~MolangGeometryVariable();
 
     // NOLINTEND

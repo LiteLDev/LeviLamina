@@ -26,20 +26,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SpyglassItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~SpyglassItem() = default;
 
-    // vIndex: 58, symbol: ?getViewDamping@SpyglassItem@@UEBAMXZ
+    // vIndex: 58
     virtual float getViewDamping() const;
 
-    // vIndex: 72, symbol: ?use@SpyglassItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+    // vIndex: 72
     virtual class ItemStack& use(class ItemStack& instance, class Player& player) const;
 
-    // vIndex: 75, symbol:
-    // ?useTimeDepleted@SpyglassItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
+    // vIndex: 75
     virtual ::ItemUseMethod useTimeDepleted(class ItemStack& inoutInstance, class Level*, class Player* player) const;
 
-    // vIndex: 76, symbol: ?releaseUsing@SpyglassItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z
+    // vIndex: 76
     virtual void releaseUsing(class ItemStack& inoutInstance, class Player* player, int) const;
 
     // NOLINTEND

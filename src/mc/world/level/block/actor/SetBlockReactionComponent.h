@@ -14,10 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SetBlockReactionComponent@@UEAA@XZ
+    // vIndex: 0
     virtual ~SetBlockReactionComponent() = default;
 
-    // vIndex: 3, symbol: ?_onEnd@SetBlockReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z
+    // vIndex: 3
     virtual void _onEnd(class LabTableReaction& owner, class BlockSource& region);
 
     // NOLINTEND

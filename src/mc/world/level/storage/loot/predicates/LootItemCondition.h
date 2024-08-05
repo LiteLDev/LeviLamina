@@ -16,14 +16,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1LootItemCondition@@UEAA@XZ
+    // vIndex: 0
     virtual ~LootItemCondition();
 
-    // vIndex: 1, symbol: ?applies@LootItemActorHasMarkVariantCondition@@UEAA_NAEAVRandom@@AEAVLootTableContext@@@Z
+    // vIndex: 1
     virtual bool applies(class Random& random, class LootTableContext& context) = 0;
 
-    // symbol:
-    // ?deserialize@LootItemCondition@@SA?AV?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@VValue@Json@@@Z
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value object);
 
     // NOLINTEND

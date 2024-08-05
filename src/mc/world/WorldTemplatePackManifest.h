@@ -14,17 +14,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1WorldTemplatePackManifest@@UEAA@XZ
+    // vIndex: 0
     virtual ~WorldTemplatePackManifest();
 
-    // vIndex: 1, symbol:
-    // ?clone@WorldTemplatePackManifest@@UEBA?AV?$unique_ptr@VPackManifest@@U?$default_delete@VPackManifest@@@std@@@std@@XZ
+    // vIndex: 1
     virtual std::unique_ptr<class PackManifest> clone() const;
 
-    // symbol: ??0WorldTemplatePackManifest@@QEAA@XZ
     MCAPI WorldTemplatePackManifest();
 
-    // symbol: ?getGameType@WorldTemplatePackManifest@@QEBA?AW4GameType@@XZ
     MCAPI ::GameType getGameType() const;
 
     // NOLINTEND

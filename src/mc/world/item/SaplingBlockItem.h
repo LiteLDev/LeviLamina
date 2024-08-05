@@ -26,14 +26,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SaplingBlockItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~SaplingBlockItem() = default;
 
-    // vIndex: 83, symbol:
-    // ?buildDescriptionId@SaplingBlockItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+    // vIndex: 83
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // symbol: ??0SaplingBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI SaplingBlockItem(std::string const&, int);
 
     // NOLINTEND

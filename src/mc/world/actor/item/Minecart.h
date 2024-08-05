@@ -36,88 +36,79 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 4, symbol: ?reloadHardcoded@Minecart@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 4
     virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 5, symbol:
-    // ?reloadHardcodedClient@Minecart@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 5
     virtual void reloadHardcodedClient(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: ??1Minecart@@UEAA@XZ
+    // vIndex: 10
     virtual ~Minecart();
 
-    // vIndex: 17, symbol: ?getInterpolatedBodyYaw@Minecart@@UEBAMM@Z
+    // vIndex: 17
     virtual float getInterpolatedBodyYaw(float a) const;
 
-    // vIndex: 38, symbol: ?getShadowRadius@Minecart@@UEBAMXZ
+    // vIndex: 38
     virtual float getShadowRadius() const;
 
-    // vIndex: 69, symbol: ?isInvulnerableTo@Minecart@@UEBA_NAEBVActorDamageSource@@@Z
+    // vIndex: 69
     virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
-    // vIndex: 97, symbol: ?getControllingPlayer@Minecart@@UEBA?AUActorUniqueID@@XZ
+    // vIndex: 97
     virtual struct ActorUniqueID getControllingPlayer() const;
 
-    // vIndex: 130, symbol: ?kill@Minecart@@MEAAXXZ
+    // vIndex: 130
     virtual void kill();
 
-    // vIndex: 146, symbol: ?_hurt@Minecart@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 146
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 147, symbol: ?readAdditionalSaveData@Minecart@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 148, symbol: ?addAdditionalSaveData@Minecart@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 151, symbol: ?destroy@Minecart@@UEAAXAEBVActorDamageSource@@_N@Z
+    // vIndex: 151
     virtual void destroy(class ActorDamageSource const& source, bool dropMinecartComponents);
 
-    // vIndex: 152, symbol: ?getType@MinecartChest@@UEAA?AW4MinecartType@@XZ
+    // vIndex: 152
     virtual ::MinecartType getType() = 0;
 
-    // vIndex: 153, symbol: ?getDefaultDisplayBlock@Minecart@@UEBAPEBVBlock@@XZ
+    // vIndex: 153
     virtual class Block const* getDefaultDisplayBlock() const;
 
-    // vIndex: 154, symbol: ?getDefaultDisplayOffset@Minecart@@UEBAHXZ
+    // vIndex: 154
     virtual int getDefaultDisplayOffset() const;
 
-    // vIndex: 155, symbol: ?applyNaturalSlowdown@Minecart@@MEAAXAEAVBlockSource@@@Z
+    // vIndex: 155
     virtual void applyNaturalSlowdown(class BlockSource& region);
 
-    // vIndex: 156, symbol: ?_lazyInitDisplayBlock@Minecart@@EEAAXXZ
+    // vIndex: 156
     virtual void _lazyInitDisplayBlock();
 
-    // symbol: ??0Minecart@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Minecart(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?dropMinecartWithContentsAndRemove@Minecart@@QEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@_N@Z
     MCAPI void dropMinecartWithContentsAndRemove(std::string_view, bool dropMinecartComponents);
 
-    // symbol: ?postNormalTick@Minecart@@QEAAXAEBVBlockPos@@@Z
     MCAPI void postNormalTick(class BlockPos const&);
 
-    // symbol: ?preNormalTick@Minecart@@QEAA?AVBlockPos@@XZ
     MCAPI class BlockPos preNormalTick();
 
-    // symbol: ?setCustomDisplay@Minecart@@QEAAX_N@Z
     MCAPI void setCustomDisplay(bool displayValue);
 
-    // symbol: ?setDisplayBlock@Minecart@@QEAAXAEBVBlock@@@Z
     MCAPI void setDisplayBlock(class Block const& block);
 
-    // symbol: ?getHeightOffset@Minecart@@SAMAEBUAABBShapeComponent@@@Z
     MCAPI static float getHeightOffset(struct AABBShapeComponent const&);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_registerLoopingSounds@Minecart@@AEAAXXZ
     MCAPI void _registerLoopingSounds();
 
     // NOLINTEND

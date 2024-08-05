@@ -13,23 +13,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ContainerScreenValidatorBase@@UEAA@XZ
+    // vIndex: 0
     virtual ~ContainerScreenValidatorBase();
 
-    // vIndex: 1, symbol:
-    // ?postCommitItemRemoved@ContainerScreenValidatorBase@@UEAA?AV?$shared_ptr@VContainerValidationCommitObject@@@std@@W4ContainerEnumName@@HAEBVItemStack@@@Z
+    // vIndex: 1
     virtual std::shared_ptr<class ContainerValidationCommitObject>
     postCommitItemRemoved(::ContainerEnumName, int, class ItemStack const&);
 
-    // vIndex: 2, symbol: ?isCraftingImplemented@ContainerScreenValidatorBase@@UEAA_NXZ
+    // vIndex: 2
     virtual bool isCraftingImplemented();
 
-    // vIndex: 3, symbol:
-    // ?getCraftResult@ContainerScreenValidatorBase@@UEAA?AUContainerValidationCraftResult@@AEBVContainerScreenContext@@AEAVContainerScreenValidation@@V?$unique_ptr@UContainerValidationCraftInputs@@U?$default_delete@UContainerValidationCraftInputs@@@std@@@std@@@Z
+    // vIndex: 3
     virtual struct ContainerValidationCraftResult
     getCraftResult(class ContainerScreenContext const& screenContext, class ContainerScreenValidation&, std::unique_ptr<struct ContainerValidationCraftInputs>);
 
-    // symbol: ??0ContainerScreenValidatorBase@@QEAA@XZ
     MCAPI ContainerScreenValidatorBase();
 
     // NOLINTEND

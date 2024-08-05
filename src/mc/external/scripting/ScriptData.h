@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ScriptData@Scripting@@QEAA@XZ
     MCAPI ~ScriptData();
 
     // NOLINTEND

@@ -16,8 +16,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?bind@ScriptGameTestDebug@ScriptModuleGameTest@@SA?AV?$ClassBindingBuilder@VScriptGameTestDebug@ScriptModuleGameTest@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleGameTest::ScriptGameTestDebug> bind();
 
     // NOLINTEND

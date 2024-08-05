@@ -21,49 +21,42 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol:
-    // ?clone@MolangDescriptor@@UEBA?AV?$unique_ptr@UBaseDescriptor@ItemDescriptor@@U?$default_delete@UBaseDescriptor@ItemDescriptor@@@std@@@std@@XZ
+    // vIndex: 0
     virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> clone() const;
 
-    // vIndex: 1, symbol: ?sameItems@MolangDescriptor@@UEBA_NAEBUBaseDescriptor@ItemDescriptor@@_N@Z
+    // vIndex: 1
     virtual bool sameItems(struct ItemDescriptor::BaseDescriptor const&, bool) const;
 
-    // vIndex: 2, symbol: ?sameItem@MolangDescriptor@@UEBA_NAEBUItemEntry@ItemDescriptor@@_N@Z
+    // vIndex: 2
     virtual bool sameItem(struct ItemDescriptor::ItemEntry const&, bool) const;
 
-    // vIndex: 3, symbol:
-    // ?getFullName@MolangDescriptor@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 3
     virtual std::string const& getFullName() const;
 
-    // vIndex: 6, symbol:
-    // ?toMap@MolangDescriptor@@UEBA?AV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@XZ
+    // vIndex: 6
     virtual std::map<std::string, std::string> toMap() const;
 
-    // vIndex: 7, symbol: ?save@MolangDescriptor@@UEBA?AV?$optional@VCompoundTag@@@std@@XZ
+    // vIndex: 7
     virtual std::optional<class CompoundTag> save() const;
 
-    // vIndex: 8, symbol: ?serialize@MolangDescriptor@@UEBAXAEAVValue@Json@@@Z
+    // vIndex: 8
     virtual void serialize(class Json::Value& val) const;
 
-    // vIndex: 9, symbol: ?serialize@MolangDescriptor@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 9
     virtual void serialize(class BinaryStream& stream) const;
 
-    // vIndex: 10, symbol: ?getType@MolangDescriptor@@UEBA?AW4InternalType@ItemDescriptor@@XZ
+    // vIndex: 10
     virtual ::ItemDescriptor::InternalType getType() const;
 
-    // vIndex: 12, symbol: ?getHash@MolangDescriptor@@UEBA_KXZ
+    // vIndex: 12
     virtual uint64 getHash() const;
 
-    // vIndex: 15, symbol: __gen_??1MolangDescriptor@@UEAA@XZ
+    // vIndex: 15
     virtual ~MolangDescriptor() = default;
 
-    // symbol:
-    // ?deserialize@MolangDescriptor@@SA?AV?$Result@V?$unique_ptr@UMolangDescriptor@@U?$default_delete@UMolangDescriptor@@@std@@@std@@Verror_code@2@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     MCAPI static class Bedrock::Result<std::unique_ptr<struct MolangDescriptor>>
     deserialize(class ReadOnlyBinaryStream&);
 
-    // symbol:
-    // ?fromExpressionTag@MolangDescriptor@@SA?AV?$unique_ptr@UMolangDescriptor@@U?$default_delete@UMolangDescriptor@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4MolangVersion@@@Z
     MCAPI static std::unique_ptr<struct MolangDescriptor>
     fromExpressionTag(std::string const& tagExpression, ::MolangVersion molangVersion);
 

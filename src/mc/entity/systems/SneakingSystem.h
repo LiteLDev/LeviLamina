@@ -22,23 +22,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SneakingSystem@@UEAA@XZ
+    // vIndex: 0
     virtual ~SneakingSystem() = default;
 
-    // vIndex: 1, symbol: __unk_vfn_1
+    // vIndex: 1
     virtual void __unk_vfn_1();
 
-    // vIndex: 2, symbol: __unk_vfn_2
+    // vIndex: 2
     virtual void __unk_vfn_2();
 
-    // vIndex: 3, symbol: __unk_vfn_3
+    // vIndex: 3
     virtual void __unk_vfn_3();
 
-    // vIndex: 4, symbol: __unk_vfn_4
+    // vIndex: 4
     virtual void __unk_vfn_4();
 
-    // vIndex: 5, symbol:
-    // ?tick@SneakingSystem@@EEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UActorTickedFlag@@@@@@U?$Read@V?$FlagComponent@UPlayerComponentFlag@@@@@@U?$Write@USneakingComponent@@VActorOwnerComponent@@@@U?$AddRemove@$$V@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
+    // vIndex: 5
     virtual void tick(class StrictExecutionContext<
                       struct Filter<class FlagComponent<struct ActorTickedFlag>>,
                       struct Read<class FlagComponent<struct PlayerComponentFlag>>,
@@ -48,12 +47,9 @@ public:
                       struct GlobalWrite<>,
                       struct EntityFactoryT<>>& context);
 
-    // symbol:
-    // ?_tickSneakingSystem@SneakingSystem@@SAXAEAVStrictEntityContext@@AEBV?$FlagComponent@UPlayerComponentFlag@@@@AEAUSneakingComponent@@AEAVActorOwnerComponent@@@Z
     MCAPI static void
     _tickSneakingSystem(class StrictEntityContext&, class FlagComponent<struct PlayerComponentFlag> const&, struct SneakingComponent& sneaking, class ActorOwnerComponent&);
 
-    // symbol: ?createSystem@SneakingSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
     // NOLINTEND

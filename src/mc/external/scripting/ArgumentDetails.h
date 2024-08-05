@@ -12,10 +12,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ArgumentDetails@Scripting@@QEAA@AEBU01@@Z
     MCAPI ArgumentDetails(struct Scripting::ArgumentDetails const&);
 
-    // symbol: ??1ArgumentDetails@Scripting@@QEAA@XZ
     MCAPI ~ArgumentDetails();
 
     // NOLINTEND

@@ -27,26 +27,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ShovelItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~ShovelItem() = default;
 
-    // vIndex: 7, symbol:
-    // ?executeEvent@ShovelItem@@UEBAXAEAVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRenderParams@@@Z
+    // vIndex: 7
     virtual void executeEvent(class ItemStackBase& item, std::string const& name, class RenderParams& params) const;
 
-    // vIndex: 31, symbol: ?canDestroySpecial@ShovelItem@@UEBA_NAEBVBlock@@@Z
+    // vIndex: 31
     virtual bool canDestroySpecial(class Block const& block) const;
 
-    // vIndex: 50, symbol: ?getEnchantSlot@ShovelItem@@UEBAHXZ
+    // vIndex: 50
     virtual int getEnchantSlot() const;
 
-    // vIndex: 118, symbol:
-    // ?_useOn@ShovelItem@@MEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+    // vIndex: 118
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
         const;
 
-    // symbol: ??0ShovelItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVTier@Item@@@Z
     MCAPI ShovelItem(std::string const& name, int id, class Item::Tier const& tier);
 
     // NOLINTEND

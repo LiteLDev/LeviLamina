@@ -14,36 +14,28 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1KickCommand@@UEAA@XZ
+    // vIndex: 0
     virtual ~KickCommand() = default;
 
-    // vIndex: 2, symbol: ?execute@KickCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+    // vIndex: 2
     virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    // symbol: ?setup@KickCommand@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry& registry);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_canKickPlayerOrGenerateFailureOutput@KickCommand@@AEBA_NAEBVPlayer@@AEAVCommandOutput@@PEAVLevel@@@Z
     MCAPI bool
     _canKickPlayerOrGenerateFailureOutput(class Player const& player, class CommandOutput& output, class Level* level)
         const;
 
-    // symbol:
-    // ?_findTarget@KickCommand@@AEBAPEBVPlayer@@AEBVCommandOrigin@@AEAVCommandOutput@@AEAVLevel@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@33@Z
     MCAPI class Player const*
     _findTarget(class CommandOrigin const& origin, class CommandOutput& output, class Level& level, std::string const& message, std::string const& reason, std::string const&)
         const;
 
-    // symbol:
-    // ?_generateSuccessOutput@KickCommand@@AEBAXAEAVCommandOutput@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
     MCAPI void _generateSuccessOutput(class CommandOutput& output, std::string const&, std::string const& reason) const;
 
-    // symbol:
-    // ?_loopPlayers@KickCommand@@AEBAPEBVPlayer@@AEBVCommandOrigin@@AEAVCommandOutput@@AEAVLevel@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@3V?$function@$$A6A_NPEBVPlayer@@@Z@7@@Z
     MCAPI class Player const* _loopPlayers(
         class CommandOrigin const&,
         class CommandOutput&,
@@ -53,8 +45,6 @@ public:
         std::function<bool(class Player const*)> condition
     ) const;
 
-    // symbol:
-    // ?_kickPlayer@KickCommand@@CAXPEAVMinecraft@@AEBVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI static void
     _kickPlayer(class Minecraft* game, class Player const& matchingPlayer, std::string const& message);
 

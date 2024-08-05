@@ -45,30 +45,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SetPlayerInventoryOptionsPacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~SetPlayerInventoryOptionsPacket();
 
-    // vIndex: 1, symbol: ?getId@SetPlayerInventoryOptionsPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@SetPlayerInventoryOptionsPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@SetPlayerInventoryOptionsPacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream&) const;
 
-    // vIndex: 8, symbol:
-    // ?_read@SetPlayerInventoryOptionsPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
 
-    // symbol: ??0SetPlayerInventoryOptionsPacket@@QEAA@XZ
     MCAPI SetPlayerInventoryOptionsPacket();
 
-    // symbol: ??0SetPlayerInventoryOptionsPacket@@QEAA@AEBUInventoryOptions@@@Z
     MCAPI explicit SetPlayerInventoryOptionsPacket(struct InventoryOptions const&);
 
-    // symbol: ?getInventoryOptions@SetPlayerInventoryOptionsPacket@@QEBAAEBUInventoryOptions@@XZ
     MCAPI struct InventoryOptions const& getInventoryOptions() const;
 
     // NOLINTEND

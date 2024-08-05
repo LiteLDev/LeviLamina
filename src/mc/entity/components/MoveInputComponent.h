@@ -10,10 +10,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0MoveInputComponent@@QEAA@XZ
     MCAPI MoveInputComponent();
 
-    // symbol: ??4MoveInputComponent@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct MoveInputComponent& operator=(struct MoveInputComponent&&);
 
     // NOLINTEND

@@ -19,20 +19,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1GuardianAttackDefinition@@UEAA@XZ
+    // vIndex: 0
     virtual ~GuardianAttackDefinition() = default;
 
-    // vIndex: 1, symbol: ?validateMobType@GuardianAttackDefinition@@UEBA_NAEAVMob@@@Z
+    // vIndex: 1
     virtual bool validateMobType(class Mob& mob) const;
 
-    // symbol: ??0GuardianAttackDefinition@@QEAA@XZ
     MCAPI GuardianAttackDefinition();
 
-    // symbol: ?initialize@GuardianAttackDefinition@@QEBAXAEAVEntityContext@@AEAVGuardianAttackGoal@@@Z
     MCAPI void initialize(class EntityContext& entity, class GuardianAttackGoal& goal) const;
 
-    // symbol:
-    // ?buildSchema@GuardianAttackDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VGuardianAttackDefinition@@@JsonUtil@@@3@@Z
     MCAPI static void buildSchema(
         std::string const& name,
         std::shared_ptr<

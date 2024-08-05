@@ -10,13 +10,9 @@ namespace AgentComponents { struct ActionDetails; }
 
 namespace AgentInteractSystem {
 // NOLINTBEGIN
-// symbol:
-// ?initialize@AgentInteractSystem@@YAXAEAVEntityContext@@AEBUStateVectorComponent@@AEBUMobBodyRotationComponent@@AEBUActionDetails@AgentComponents@@AEBVInteract@6@@Z
 MCAPI void
 initialize(class EntityContext& entity, struct StateVectorComponent const&, struct MobBodyRotationComponent const&, struct AgentComponents::ActionDetails const& details, class AgentComponents::Interact const&);
 
-// symbol:
-// ?tick@AgentInteractSystem@@YAXAEAVEntityContext@@AEBUStateVectorComponent@@AEBUMobBodyRotationComponent@@AEBUActionDetails@AgentComponents@@AEBVInteract@6@@Z
 MCAPI void
 tick(class EntityContext& entity, struct StateVectorComponent const&, struct MobBodyRotationComponent const&, struct AgentComponents::ActionDetails const& details, class AgentComponents::Interact const&);
 // NOLINTEND

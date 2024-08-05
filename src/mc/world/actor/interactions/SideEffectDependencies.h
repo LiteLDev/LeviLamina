@@ -13,16 +13,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SideEffectDependencies@Mining@Interactions@@UEAA@XZ
+    // vIndex: 0
     virtual ~SideEffectDependencies() = default;
 
-    // vIndex: 1, symbol: ?legacyMineBlock@SideEffectDependencies@Mining@Interactions@@UEAAXXZ
+    // vIndex: 1
     virtual void legacyMineBlock();
 
-    // vIndex: 2, symbol: ?creatorHook@SideEffectDependencies@Mining@Interactions@@UEAAXXZ
+    // vIndex: 2
     virtual void creatorHook();
 
-    // vIndex: 3, symbol: ?legacyHurtAndBreak@SideEffectDependencies@Mining@Interactions@@UEAAXH@Z
+    // vIndex: 3
     virtual void legacyHurtAndBreak(int);
 
     // NOLINTEND

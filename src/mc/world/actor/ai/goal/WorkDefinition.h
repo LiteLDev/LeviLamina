@@ -12,13 +12,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1WorkDefinition@@UEAA@XZ
+    // vIndex: 0
     virtual ~WorkDefinition();
 
-    // symbol: ??0WorkDefinition@@QEAA@XZ
     MCAPI WorkDefinition();
 
-    // symbol: ??4WorkDefinition@@QEAAAEAV0@AEBV0@@Z
     MCAPI class WorkDefinition& operator=(class WorkDefinition const&);
 
     // NOLINTEND

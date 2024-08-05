@@ -15,39 +15,35 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BreatheAirGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~BreatheAirGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@BreatheAirGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@BreatheAirGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 3, symbol: ?canBeInterrupted@BreatheAirGoal@@UEAA_NXZ
+    // vIndex: 3
     virtual bool canBeInterrupted();
 
-    // vIndex: 4, symbol: ?start@BreatheAirGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 6, symbol: ?tick@BreatheAirGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@BreatheAirGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0BreatheAirGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit BreatheAirGoal(class Mob& mob);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_determineApproximateDepth@BreatheAirGoal@@AEAAHXZ
     MCAPI int _determineApproximateDepth();
 
-    // symbol: ?_findAirPosition@BreatheAirGoal@@AEAAXXZ
     MCAPI void _findAirPosition();
 
     // NOLINTEND

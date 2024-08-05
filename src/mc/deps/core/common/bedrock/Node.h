@@ -22,24 +22,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?asObject@Node@JSONObject@Bedrock@@QEAAPEAVObjectNode@23@XZ
     MCAPI class Bedrock::JSONObject::ObjectNode* asObject();
 
-    // symbol: ?getType@Node@JSONObject@Bedrock@@QEBA?AW4JSONType@23@XZ
     MCAPI ::Bedrock::JSONObject::JSONType getType() const;
 
-    // symbol: ??4Node@JSONObject@Bedrock@@QEAAPEAV012@AEBVValueWrapper@12@@Z
     MCAPI class Bedrock::JSONObject::Node* operator=(class Bedrock::JSONObject::ValueWrapper const& rhs);
 
-    // symbol:
-    // ?toJSONString@Node@JSONObject@Bedrock@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string toJSONString() const;
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ??1Node@JSONObject@Bedrock@@IEAA@XZ
     MCAPI ~Node();
 
     // NOLINTEND

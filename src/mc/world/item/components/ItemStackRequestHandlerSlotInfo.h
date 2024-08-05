@@ -11,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??BItemStackRequestHandlerSlotInfo@@QEBA_NXZ
     MCAPI explicit operator bool() const;
 
-    // symbol: ??1ItemStackRequestHandlerSlotInfo@@QEAA@XZ
     MCAPI ~ItemStackRequestHandlerSlotInfo();
 
     // NOLINTEND

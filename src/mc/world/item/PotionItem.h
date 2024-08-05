@@ -27,14 +27,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1PotionItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~PotionItem();
 
-    // vIndex: 44, symbol: ?isDestructive@PotionItem@@UEBA_NH@Z
+    // vIndex: 44
     virtual bool isDestructive(int auxValue) const;
 
-    // vIndex: 48, symbol:
-    // ?appendFormattedHovertext@PotionItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+    // vIndex: 48
     virtual void appendFormattedHovertext(
         class ItemStackBase const& stack,
         class Level&               level,
@@ -42,59 +41,51 @@ public:
         bool                       showCategory
     ) const;
 
-    // vIndex: 56, symbol: ?isValidAuxValue@PotionItem@@UEBA_NH@Z
+    // vIndex: 56
     virtual bool isValidAuxValue(int auxValue) const;
 
-    // vIndex: 59, symbol: ?uniqueAuxValues@PotionItem@@UEBA_NXZ
+    // vIndex: 59
     virtual bool uniqueAuxValues() const;
 
-    // vIndex: 72, symbol: ?use@PotionItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+    // vIndex: 72
     virtual class ItemStack& use(class ItemStack& instance, class Player& player) const;
 
-    // vIndex: 74, symbol: ?dispense@PotionItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 74
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
-    // vIndex: 75, symbol: ?useTimeDepleted@PotionItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
+    // vIndex: 75
     virtual ::ItemUseMethod useTimeDepleted(class ItemStack& instance, class Level* level, class Player* player) const;
 
-    // vIndex: 83, symbol:
-    // ?buildDescriptionId@PotionItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+    // vIndex: 83
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 84, symbol:
-    // ?buildEffectDescriptionName@PotionItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemStackBase@@@Z
+    // vIndex: 84
     virtual std::string buildEffectDescriptionName(class ItemStackBase const&) const;
 
-    // vIndex: 103, symbol:
-    // ?setIconInfo@PotionItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+    // vIndex: 103
     virtual class Item& setIconInfo(std::string const& name, int id);
 
-    // vIndex: 104, symbol: ?getIconInfo@PotionItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
+    // vIndex: 104
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const& item, int, bool) const;
 
-    // vIndex: 118, symbol:
-    // ?_useOn@PotionItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+    // vIndex: 118
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar, class Vec3 const& clickPos) const;
 
-    // vIndex: 119, symbol: ?getPotionType@PotionItem@@UEBA?AW4PotionType@Potion@@XZ
+    // vIndex: 119
     virtual ::Potion::PotionType getPotionType() const;
 
-    // symbol: ??0PotionItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI PotionItem(std::string const& name, int id);
 
-    // symbol: ?applyEffect@PotionItem@@SAXPEAVThrownPotion@@AEBVItemStack@@@Z
     MCAPI static void applyEffect(class ThrownPotion* potion, class ItemStack const& slotItem);
 
-    // symbol: ?isDestructivePotion@PotionItem@@SA_NW4PotionVariant@Potion@@@Z
     MCAPI static bool isDestructivePotion(::Potion::PotionVariant potionVariant);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_isBlockConvertibleToMud@PotionItem@@AEBA?B_NAEBVBlockLegacy@@@Z
     MCAPI bool const _isBlockConvertibleToMud(class BlockLegacy const&) const;
 
     // NOLINTEND

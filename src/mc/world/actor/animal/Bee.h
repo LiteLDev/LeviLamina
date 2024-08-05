@@ -35,29 +35,26 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 5, symbol: ?reloadHardcodedClient@Bee@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 5
     virtual void reloadHardcodedClient(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: ??1Bee@@UEAA@XZ
+    // vIndex: 10
     virtual ~Bee();
 
-    // vIndex: 99, symbol: ?onSynchedDataUpdate@Bee@@UEAAXH@Z
+    // vIndex: 99
     virtual void onSynchedDataUpdate(int dataId);
 
-    // symbol: ??0Bee@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI
     Bee(class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext);
 
-    // symbol: ?postNormalTick@Bee@@QEAAXXZ
     MCAPI void postNormalTick();
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?_registerLoopingSounds@Bee@@IEAAXXZ
     MCAPI void _registerLoopingSounds();
 
     // NOLINTEND

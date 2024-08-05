@@ -14,7 +14,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ExternalLinkSettings@@QEAA@XZ
     MCAPI ~ExternalLinkSettings();
 
     // NOLINTEND

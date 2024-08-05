@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ActorAttackEvent@@QEAA@XZ
     MCAPI ~ActorAttackEvent();
 
     // NOLINTEND

@@ -21,25 +21,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?flush@ContentLogFileEndPoint@@UEAAXXZ
     MCVAPI void flush();
 
-    // symbol: ?isEnabled@ContentLogFileEndPoint@@UEBA_NXZ
     MCVAPI bool isEnabled() const;
 
-    // symbol: ?log@ContentLogFileEndPoint@@UEAAXW4LogArea@@W4LogLevel@@PEBD@Z
     MCVAPI void log(::LogArea area, ::LogLevel level, char const* message);
 
-    // symbol: ?logOnlyOnce@ContentLogFileEndPoint@@UEBA_NXZ
     MCVAPI bool logOnlyOnce() const;
 
-    // symbol: ?setEnabled@ContentLogFileEndPoint@@UEAAX_N@Z
     MCVAPI void setEnabled(bool newState);
 
-    // symbol: ??0ContentLogFileEndPoint@@QEAA@VPath@Core@@0V?$optional@W4LogLevel@@@std@@@Z
     MCAPI ContentLogFileEndPoint(class Core::Path, class Core::Path, std::optional<::LogLevel>);
 
-    // symbol: ?FILE_NAME@ContentLogFileEndPoint@@2V?$basic_string_view@DU?$char_traits@D@std@@@std@@B
     MCAPI static std::string_view const FILE_NAME;
 
     // NOLINTEND

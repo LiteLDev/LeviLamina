@@ -21,16 +21,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1InspectDataCommand@AgentCommands@@UEAA@XZ
+    // vIndex: 0
     virtual ~InspectDataCommand() = default;
 
-    // vIndex: 1, symbol: ?execute@InspectDataCommand@AgentCommands@@UEAAXXZ
+    // vIndex: 1
     virtual void execute();
 
-    // vIndex: 2, symbol: ?isDone@InspectDataCommand@AgentCommands@@UEAA_NXZ
+    // vIndex: 2
     virtual bool isDone();
 
-    // vIndex: 4, symbol: ?fireCommandDoneEvent@InspectDataCommand@AgentCommands@@UEAAXXZ
+    // vIndex: 4
     virtual void fireCommandDoneEvent();
 
     // NOLINTEND

@@ -19,17 +19,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FertilizeFarmBlockDefinition@@UEAA@XZ
+    // vIndex: 0
     virtual ~FertilizeFarmBlockDefinition() = default;
 
-    // symbol: ??0FertilizeFarmBlockDefinition@@QEAA@XZ
     MCAPI FertilizeFarmBlockDefinition();
 
-    // symbol: ?initialize@FertilizeFarmBlockDefinition@@QEBAXAEAVEntityContext@@AEAVFertilizeFarmBlockGoal@@@Z
     MCAPI void initialize(class EntityContext& entity, class FertilizeFarmBlockGoal& goal) const;
 
-    // symbol:
-    // ?buildSchema@FertilizeFarmBlockDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VFertilizeFarmBlockDefinition@@@JsonUtil@@@3@@Z
     MCAPI static void buildSchema(
         std::string const& name,
         std::shared_ptr<

@@ -11,28 +11,28 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
+    // vIndex: 0
     virtual void __unk_vfn_0() = 0;
 
-    // vIndex: 1, symbol: __unk_vfn_1
+    // vIndex: 1
     virtual void __unk_vfn_1() = 0;
 
-    // vIndex: 2, symbol: __unk_vfn_2
+    // vIndex: 2
     virtual void __unk_vfn_2() = 0;
 
-    // vIndex: 3, symbol: __unk_vfn_3
+    // vIndex: 3
     virtual void __unk_vfn_3() = 0;
 
-    // vIndex: 4, symbol: __unk_vfn_4
+    // vIndex: 4
     virtual void __unk_vfn_4() = 0;
 
-    // vIndex: 5, symbol: ??1IDefinitionInstance@@UEAA@XZ
+    // vIndex: 5
     virtual ~IDefinitionInstance();
 
-    // vIndex: 6, symbol: __unk_vfn_6
+    // vIndex: 6
     virtual void __unk_vfn_6() = 0;
 
-    // vIndex: 7, symbol: ?getRuntimeTypeId@IDefinitionInstance@@UEBAGXZ
+    // vIndex: 7
     virtual ushort getRuntimeTypeId() const;
 
     // NOLINTEND

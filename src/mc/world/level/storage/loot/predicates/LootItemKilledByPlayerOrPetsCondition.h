@@ -14,10 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LootItemKilledByPlayerOrPetsCondition@@UEAA@XZ
+    // vIndex: 0
     virtual ~LootItemKilledByPlayerOrPetsCondition() = default;
 
-    // vIndex: 1, symbol: ?applies@LootItemKilledByPlayerOrPetsCondition@@UEAA_NAEAVRandom@@AEAVLootTableContext@@@Z
+    // vIndex: 1
     virtual bool applies(class Random& random, class LootTableContext& context);
 
     // NOLINTEND

@@ -14,13 +14,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CentralSpikedFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~CentralSpikedFeature() = default;
 
-    // vIndex: 3, symbol: ?place@CentralSpikedFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 3
     virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // symbol: ??0CentralSpikedFeature@@QEAA@AEBVBlock@@@Z
     MCAPI explicit CentralSpikedFeature(class Block const& block);
 
     // NOLINTEND

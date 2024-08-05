@@ -31,25 +31,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CoalItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~CoalItem() = default;
 
-    // vIndex: 83, symbol:
-    // ?buildDescriptionId@CoalItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+    // vIndex: 83
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 103, symbol:
-    // ?setIconInfo@CoalItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+    // vIndex: 103
     virtual class Item& setIconInfo(std::string const&, int);
 
-    // vIndex: 104, symbol: ?getIconInfo@CoalItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
+    // vIndex: 104
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
 
-    // vIndex: 112, symbol: ?getFurnaceXPmultiplier@CoalItem@@UEBAMAEBVItemStackBase@@@Z
+    // vIndex: 112
     virtual float getFurnaceXPmultiplier(class ItemStackBase const& instance) const;
 
-    // symbol:
-    // ??0CoalItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEAUReflectionCtx@cereal@@W4Type@0@@Z
     MCAPI CoalItem(std::string const&, int, struct cereal::ReflectionCtx&, ::CoalItem::Type);
 
     // NOLINTEND

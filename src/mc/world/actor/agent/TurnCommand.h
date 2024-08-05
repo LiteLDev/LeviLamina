@@ -21,16 +21,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1TurnCommand@AgentCommands@@UEAA@XZ
+    // vIndex: 0
     virtual ~TurnCommand() = default;
 
-    // vIndex: 1, symbol: ?execute@TurnCommand@AgentCommands@@UEAAXXZ
+    // vIndex: 1
     virtual void execute();
 
-    // vIndex: 2, symbol: ?isDone@TurnCommand@AgentCommands@@UEAA_NXZ
+    // vIndex: 2
     virtual bool isDone();
 
-    // vIndex: 3, symbol: ?tick@TurnCommand@AgentCommands@@UEAAXXZ
+    // vIndex: 3
     virtual void tick();
 
     // NOLINTEND

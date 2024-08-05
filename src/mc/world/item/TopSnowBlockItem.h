@@ -26,14 +26,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1TopSnowBlockItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~TopSnowBlockItem() = default;
 
-    // vIndex: 32, symbol: ?getLevelDataForAuxValue@TopSnowBlockItem@@UEBAHH@Z
+    // vIndex: 32
     virtual int getLevelDataForAuxValue(int auxValue) const;
 
-    // vIndex: 118, symbol:
-    // ?_useOn@TopSnowBlockItem@@UEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+    // vIndex: 118
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const&) const;
 

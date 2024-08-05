@@ -30,11 +30,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SmithingTemplateItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~SmithingTemplateItem() = default;
 
-    // vIndex: 48, symbol:
-    // ?appendFormattedHovertext@SmithingTemplateItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+    // vIndex: 48
     virtual void appendFormattedHovertext(
         class ItemStackBase const& stack,
         class Level&               level,
@@ -42,12 +41,9 @@ public:
         bool                       showCategory
     ) const;
 
-    // vIndex: 83, symbol:
-    // ?buildDescriptionId@SmithingTemplateItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+    // vIndex: 83
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // symbol:
-    // ??0SmithingTemplateItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4UpgradeType@0@0@Z
     MCAPI
     SmithingTemplateItem(std::string const& name, int id, ::SmithingTemplateItem::UpgradeType, std::string const&);
 

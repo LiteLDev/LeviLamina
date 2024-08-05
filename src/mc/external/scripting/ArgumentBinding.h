@@ -12,13 +12,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ArgumentBinding@Scripting@@QEAA@XZ
     MCAPI ArgumentBinding();
 
-    // symbol: ??0ArgumentBinding@Scripting@@QEAA@$$QEAU01@@Z
     MCAPI ArgumentBinding(struct Scripting::ArgumentBinding&&);
 
-    // symbol: ??1ArgumentBinding@Scripting@@QEAA@XZ
     MCAPI ~ArgumentBinding();
 
     // NOLINTEND

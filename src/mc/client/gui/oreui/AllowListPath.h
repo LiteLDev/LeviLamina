@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1AllowListPath@OreUI@@QEAA@XZ
     MCAPI ~AllowListPath();
 
     // NOLINTEND

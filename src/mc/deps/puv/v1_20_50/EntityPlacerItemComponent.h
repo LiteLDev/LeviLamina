@@ -17,17 +17,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4EntityPlacerItemComponent@v1_20_50@Puv@@QEAAAEAU012@$$QEAU012@@Z
     MCAPI struct Puv::v1_20_50::EntityPlacerItemComponent& operator=(struct Puv::v1_20_50::EntityPlacerItemComponent&&);
 
-    // symbol: ??4EntityPlacerItemComponent@v1_20_50@Puv@@QEAAAEAU012@AEBU012@@Z
     MCAPI struct Puv::v1_20_50::EntityPlacerItemComponent&
     operator=(struct Puv::v1_20_50::EntityPlacerItemComponent const&);
 
-    // symbol: ??1EntityPlacerItemComponent@v1_20_50@Puv@@QEAA@XZ
     MCAPI ~EntityPlacerItemComponent();
 
-    // symbol: ?bindType@EntityPlacerItemComponent@v1_20_50@Puv@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // NOLINTEND

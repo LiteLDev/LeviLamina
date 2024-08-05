@@ -14,17 +14,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1PoweredBlockComponent@@UEAA@XZ
+    // vIndex: 0
     virtual ~PoweredBlockComponent() = default;
 
-    // vIndex: 1, symbol: ?getStrength@PoweredBlockComponent@@UEBAHXZ
+    // vIndex: 1
     virtual int getStrength() const;
 
-    // vIndex: 7, symbol: ?canConsumerPower@PoweredBlockComponent@@UEBA_NXZ
+    // vIndex: 7
     virtual bool canConsumerPower() const;
 
-    // vIndex: 11, symbol:
-    // ?addSource@PoweredBlockComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
+    // vIndex: 11
     virtual bool addSource(
         class CircuitSceneGraph&         graph,
         class CircuitTrackingInfo const& info,
@@ -32,21 +31,19 @@ public:
         bool&                            bDirectlyPowered
     );
 
-    // vIndex: 12, symbol:
-    // ?allowConnection@PoweredBlockComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
+    // vIndex: 12
     virtual bool
     allowConnection(class CircuitSceneGraph& graph, class CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
-    // vIndex: 14, symbol: ?evaluate@PoweredBlockComponent@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
+    // vIndex: 14
     virtual bool evaluate(class CircuitSystem& system, class BlockPos const& pos);
 
-    // vIndex: 20, symbol: ?hasChildrenSource@PoweredBlockComponent@@UEBA_NXZ
+    // vIndex: 20
     virtual bool hasChildrenSource() const;
 
-    // vIndex: 23, symbol: ?getCircuitComponentType@PoweredBlockComponent@@UEBA?AW4CircuitComponentType@@XZ
+    // vIndex: 23
     virtual ::CircuitComponentType getCircuitComponentType() const;
 
-    // symbol: ??0PoweredBlockComponent@@QEAA@E@Z
     MCAPI explicit PoweredBlockComponent(uchar connections);
 
     // NOLINTEND

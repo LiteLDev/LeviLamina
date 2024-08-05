@@ -27,14 +27,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CryingObsidianBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~CryingObsidianBlock() = default;
 
-    // vIndex: 134, symbol:
-    // ?animateTickBedrockLegacy@CryingObsidianBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 134
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // symbol: ??0CryingObsidianBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI CryingObsidianBlock(std::string const& nameId, int id);
 
     // NOLINTEND

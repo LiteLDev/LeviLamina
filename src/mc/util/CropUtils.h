@@ -4,7 +4,6 @@
 
 namespace CropUtils {
 // NOLINTBEGIN
-// symbol: ?getGrowthSpeed@CropUtils@@YAMAEBVBlockLegacy@@AEBVBlockSource@@AEBVBlockPos@@@Z
 MCAPI float
 getGrowthSpeed(class BlockLegacy const& legacyBlock, class BlockSource const& region, class BlockPos const& pos);
 // NOLINTEND

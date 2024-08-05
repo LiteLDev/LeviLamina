@@ -14,19 +14,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1StructurePoolBlockPredicateBlockMatchRandom@@UEAA@XZ
+    // vIndex: 0
     virtual ~StructurePoolBlockPredicateBlockMatchRandom() = default;
 
-    // vIndex: 1, symbol: ?test@StructurePoolBlockPredicateBlockMatchRandom@@UEBA_NAEBVBlock@@AEAVRandomize@@@Z
+    // vIndex: 1
     virtual bool test(class Block const& block, class Randomize& randomize) const;
 
-    // vIndex: 2, symbol: ?test@StructurePoolBlockPredicateBlockMatchRandom@@UEBA_NAEBVBlockPos@@0AEAVRandomize@@@Z
+    // vIndex: 2
     virtual bool test(class BlockPos const& pos, class BlockPos const& refPos, class Randomize& randomize) const;
 
-    // vIndex: 3, symbol: ?finalize@IStructurePoolBlockPredicate@@UEAA_NAEAVBlockSource@@AEAVIRandom@@@Z
+    // vIndex: 3
     virtual bool finalize(class BlockSource&, class IRandom&);
 
-    // symbol: ??0StructurePoolBlockPredicateBlockMatchRandom@@QEAA@AEBVBlock@@M@Z
     MCAPI StructurePoolBlockPredicateBlockMatchRandom(class Block const& block, float probability);
 
     // NOLINTEND

@@ -14,14 +14,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MineshaftFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~MineshaftFeature() = default;
 
-    // vIndex: 2, symbol: ?shouldPostProcessMobs@MineshaftFeature@@UEBA_NXZ
+    // vIndex: 2
     virtual bool shouldPostProcessMobs() const;
 
-    // vIndex: 5, symbol:
-    // ?isFeatureChunk@MineshaftFeature@@UEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z
+    // vIndex: 5
     virtual bool isFeatureChunk(
         class BiomeSource const& biomeSource,
         class Random&            random,
@@ -31,8 +30,7 @@ public:
         class Dimension const& dimension
     );
 
-    // vIndex: 6, symbol:
-    // ?createStructureStart@MineshaftFeature@@MEAA?AV?$unique_ptr@VStructureStart@@U?$default_delete@VStructureStart@@@std@@@std@@AEAVDimension@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVIPreliminarySurfaceProvider@@@Z
+    // vIndex: 6
     virtual std::unique_ptr<class StructureStart>
     createStructureStart(class Dimension& generator, class BiomeSource const& biomeSource, class Random& random, class ChunkPos const& lc, class IPreliminarySurfaceProvider const&);
 

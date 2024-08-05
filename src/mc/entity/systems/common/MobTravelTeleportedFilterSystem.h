@@ -17,11 +17,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?create@MobTravelTeleportedFilterSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo create();
 
-    // symbol:
-    // ?tick@MobTravelTeleportedFilterSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UHasTeleportedFlag@@@@UMobTravelComponent@@@@@@V?$EntityModifier@UMobTravelComponent@@@@@Z
     MCAPI static void
         tick(class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct HasTeleportedFlag>, struct MobTravelComponent>>, class EntityModifier<struct MobTravelComponent>);
 

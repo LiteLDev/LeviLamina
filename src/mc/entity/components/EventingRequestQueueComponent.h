@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0EventingRequestQueueComponent@@QEAA@$$QEAU0@@Z
     MCAPI EventingRequestQueueComponent(struct EventingRequestQueueComponent&&);
 
     // NOLINTEND

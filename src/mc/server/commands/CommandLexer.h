@@ -64,16 +64,12 @@ public:
     CommandLexer::Token mToken; // this+0x8
 public:
     // NOLINTBEGIN
-    // symbol: ??0CommandLexer@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI explicit CommandLexer(std::string const& commandInput);
 
-    // symbol: ?next@CommandLexer@@QEBAAEBUToken@1@XZ
     MCAPI struct CommandLexer::Token const& next() const;
 
-    // symbol: ?step@CommandLexer@@QEAAXXZ
     MCAPI void step();
 
-    // symbol: ?isDigit@CommandLexer@@SA_ND@Z
     MCAPI static bool isDigit(char c);
 
     // NOLINTEND

@@ -27,11 +27,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DriedKelpBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~DriedKelpBlock() = default;
 
-    // symbol:
-    // ??0DriedKelpBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI DriedKelpBlock(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND

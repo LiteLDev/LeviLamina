@@ -7,10 +7,8 @@
 
 namespace PlayerMovementSettingsImpl {
 // NOLINTBEGIN
-// symbol: ?_getDefaultServerAuthMode@PlayerMovementSettingsImpl@@YA?AW4ServerAuthMovementMode@@XZ
 MCAPI ::ServerAuthMovementMode _getDefaultServerAuthMode();
 
-// symbol: ?_getVehicleAntiCheatMovement@PlayerMovementSettingsImpl@@YA_NW4ServerAuthMovementMode@@@Z
 MCAPI bool _getVehicleAntiCheatMovement(::ServerAuthMovementMode);
 // NOLINTEND
 

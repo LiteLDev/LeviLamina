@@ -13,16 +13,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1GlideMoveControl@@UEAA@XZ
+    // vIndex: 0
     virtual ~GlideMoveControl() = default;
 
-    // vIndex: 1, symbol: ?initializeInternal@GlideMoveControl@@UEAAXAEAVMob@@PEAUMoveControlDescription@@@Z
+    // vIndex: 1
     virtual void initializeInternal(class Mob&, struct MoveControlDescription* description);
 
-    // vIndex: 2, symbol: ?tick@GlideMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
+    // vIndex: 2
     virtual void tick(class MoveControlComponent& parent, class Mob& mob);
 
-    // symbol: ??0GlideMoveControl@@QEAA@XZ
     MCAPI GlideMoveControl();
 
     // NOLINTEND

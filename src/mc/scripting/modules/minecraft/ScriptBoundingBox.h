@@ -21,8 +21,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?bind@ScriptBoundingBox@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@VBoundingBox@@@Scripting@@XZ
     MCAPI static class Scripting::InterfaceBindingBuilder<class BoundingBox> bind();
 
     // NOLINTEND

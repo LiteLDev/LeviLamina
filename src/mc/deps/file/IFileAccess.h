@@ -19,32 +19,30 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1IFileAccess@@UEAA@XZ
+    // vIndex: 0
     virtual ~IFileAccess();
 
-    // vIndex: 1, symbol:
-    // ?fopen@FileSystemFileAccess@@UEAAPEAXAEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 1
     virtual void* fopen(class Core::Path const& filePath, std::string const& mode) = 0;
 
-    // vIndex: 2, symbol: ?fclose@FileSystemFileAccess@@UEAAHPEAX@Z
+    // vIndex: 2
     virtual int fclose(void* file) = 0;
 
-    // vIndex: 3, symbol: ?fseek@FileSystemFileAccess@@UEAAHPEAX_JH@Z
+    // vIndex: 3
     virtual int fseek(void* file, int64 offset, int origin) = 0;
 
-    // vIndex: 4, symbol: ?ftell@FileSystemFileAccess@@UEAA_JPEAX@Z
+    // vIndex: 4
     virtual int64 ftell(void* file) = 0;
 
-    // vIndex: 5, symbol: ?getReadInterface@FileSystemFileAccess@@UEBAPEBVIFileReadAccess@@XZ
+    // vIndex: 5
     virtual class IFileReadAccess const* getReadInterface() const = 0;
 
-    // vIndex: 6, symbol: ?getWriteInterface@FileSystemFileAccess@@UEAAPEAVIFileWriteAccess@@XZ
+    // vIndex: 6
     virtual class IFileWriteAccess* getWriteInterface() = 0;
 
-    // vIndex: 7, symbol: ?unload@FileSystemFileAccess@@UEAAXXZ
+    // vIndex: 7
     virtual void unload() = 0;
 
-    // symbol: ??0IFileAccess@@QEAA@XZ
     MCAPI IFileAccess();
 
     // NOLINTEND

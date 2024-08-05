@@ -24,7 +24,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ?bindType@ConstrainedString@VolumeIdentifier@@SAXAEAUReflectionCtx@cereal@@@Z
         MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
         // NOLINTEND
@@ -38,10 +37,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??8VolumeIdentifier@@QEBA_NAEBU0@@Z
     MCAPI bool operator==(struct VolumeIdentifier const&) const;
 
-    // symbol: ?bindType@VolumeIdentifier@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // NOLINTEND

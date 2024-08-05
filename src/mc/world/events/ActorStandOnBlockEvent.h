@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ActorStandOnBlockEvent@@QEAA@XZ
     MCAPI ~ActorStandOnBlockEvent();
 
     // NOLINTEND

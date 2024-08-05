@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?setAmbientSoundRemainingTime@AmbientSoundComponent@@SAXAEAVActor@@M@Z
     MCAPI static void setAmbientSoundRemainingTime(class Actor& owner, float seconds);
 
     // NOLINTEND

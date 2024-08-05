@@ -29,7 +29,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1TypeStats@ScriptPluginHandleCounter@@QEAA@XZ
         MCAPI ~TypeStats();
 
         // NOLINTEND
@@ -43,11 +42,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptPluginHandleCounter@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptPluginHandleCounter() = default;
 
-    // vIndex: 1, symbol:
-    // ?onMakeObject@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@UObjectHandle@3@AEBVmeta_type@entt@@I@Z
+    // vIndex: 1
     virtual void onMakeObject(
         class Scripting::LifetimeRegistry&,
         struct Scripting::ObjectHandle,
@@ -55,8 +53,7 @@ public:
         uint                   size
     );
 
-    // vIndex: 2, symbol:
-    // ?onDestroyObject@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@UObjectHandle@3@AEBVmeta_type@entt@@I@Z
+    // vIndex: 2
     virtual void onDestroyObject(
         class Scripting::LifetimeRegistry&,
         struct Scripting::ObjectHandle,
@@ -64,8 +61,7 @@ public:
         uint                   size
     );
 
-    // vIndex: 3, symbol:
-    // ?onTrackObject@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@UObjectHandle@3@AEBVmeta_type@entt@@I@Z
+    // vIndex: 3
     virtual void onTrackObject(
         class Scripting::LifetimeRegistry&,
         struct Scripting::ObjectHandle,
@@ -73,8 +69,7 @@ public:
         uint                   size
     );
 
-    // vIndex: 4, symbol:
-    // ?onUntrackObject@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@UObjectHandle@3@AEBVmeta_type@entt@@I@Z
+    // vIndex: 4
     virtual void onUntrackObject(
         class Scripting::LifetimeRegistry&,
         struct Scripting::ObjectHandle,
@@ -82,25 +77,22 @@ public:
         uint                   size
     );
 
-    // vIndex: 5, symbol:
-    // ?onObjectReducedToSingleOwner@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@UObjectHandle@3@@Z
+    // vIndex: 5
     virtual void onObjectReducedToSingleOwner(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle);
 
-    // vIndex: 6, symbol:
-    // ?onObjectPromotedToMultipleOwners@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@UObjectHandle@3@@Z
+    // vIndex: 6
     virtual void onObjectPromotedToMultipleOwners(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle);
 
-    // vIndex: 7, symbol: ?onPreLifetimeScopeDestroy@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@@Z
+    // vIndex: 7
     virtual void onPreLifetimeScopeDestroy(class Scripting::LifetimeRegistry&);
 
-    // vIndex: 8, symbol: ?onPostLifetimeScopeDestroy@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@@Z
+    // vIndex: 8
     virtual void onPostLifetimeScopeDestroy(class Scripting::LifetimeRegistry&);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_getOrMakeStats@ScriptPluginHandleCounter@@AEAAPEAUTypeStats@1@AEBVmeta_type@entt@@@Z
     MCAPI struct ScriptPluginHandleCounter::TypeStats* _getOrMakeStats(entt::meta_type const& type);
 
     // NOLINTEND

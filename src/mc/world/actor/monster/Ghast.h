@@ -35,25 +35,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 4, symbol: ?reloadHardcoded@Ghast@@MEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 4
     virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: __gen_??1Ghast@@UEAA@XZ
+    // vIndex: 10
     virtual ~Ghast() = default;
 
-    // vIndex: 144, symbol: ?updateEntitySpecificMolangVariables@Ghast@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 144
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // vIndex: 146, symbol: ?_hurt@Ghast@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 146
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 184, symbol: ?_getWalkTargetValue@Ghast@@UEAAMAEBVBlockPos@@@Z
+    // vIndex: 184
     virtual float _getWalkTargetValue(class BlockPos const& pos);
 
-    // vIndex: 190, symbol: ?isDarkEnoughToSpawn@Ghast@@UEBA_NXZ
+    // vIndex: 190
     virtual bool isDarkEnoughToSpawn() const;
 
-    // symbol: ??0Ghast@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Ghast(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

@@ -16,7 +16,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??RSizeSetVisitor@UpdateBoundingBox@@QEAAXAEBUUpdateFromValue@ShouldUpdateBoundingBoxRequestComponent@@@Z
     MCAPI void operator()(struct ShouldUpdateBoundingBoxRequestComponent::UpdateFromValue const&);
 
     // NOLINTEND

@@ -27,13 +27,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MelonBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~MelonBlock() = default;
 
-    // vIndex: 25, symbol: ?canConnect@MelonBlock@@UEBA_NAEBVBlock@@E0@Z
+    // vIndex: 25
     virtual bool canConnect(class Block const&, uchar, class Block const&) const;
 
-    // symbol: ??0MelonBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI MelonBlock(std::string const& nameId, int id);
 
     // NOLINTEND

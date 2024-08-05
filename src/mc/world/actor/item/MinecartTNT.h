@@ -36,45 +36,42 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1MinecartTNT@@UEAA@XZ
+    // vIndex: 10
     virtual ~MinecartTNT() = default;
 
-    // vIndex: 26, symbol: ?normalTick@MinecartTNT@@UEAAXXZ
+    // vIndex: 26
     virtual void normalTick();
 
-    // vIndex: 74, symbol: ?handleEntityEvent@MinecartTNT@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 74
     virtual void handleEntityEvent(::ActorEvent eventId, int data);
 
-    // vIndex: 98, symbol: ?causeFallDamageToActor@MinecartTNT@@MEAAMMMVActorDamageSource@@@Z
+    // vIndex: 98
     virtual float causeFallDamageToActor(float, float, class ActorDamageSource);
 
-    // vIndex: 146, symbol: ?_hurt@MinecartTNT@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 146
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 151, symbol: ?destroy@MinecartTNT@@UEAAXAEBVActorDamageSource@@_N@Z
+    // vIndex: 151
     virtual void destroy(class ActorDamageSource const& source, bool dropMinecartComponents);
 
-    // vIndex: 152, symbol: ?getType@MinecartTNT@@UEAA?AW4MinecartType@@XZ
+    // vIndex: 152
     virtual ::MinecartType getType();
 
-    // vIndex: 153, symbol: ?getDefaultDisplayBlock@MinecartTNT@@UEBAPEBVBlock@@XZ
+    // vIndex: 153
     virtual class Block const* getDefaultDisplayBlock() const;
 
-    // symbol: ??0MinecartTNT@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI MinecartTNT(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?primeFuse@MinecartTNT@@QEAAXW4ActorDamageCause@@@Z
     MCAPI void primeFuse(::ActorDamageCause cause);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?DEFAULT_FUSE_LENGTH@MinecartTNT@@0HB
     MCAPI static int const DEFAULT_FUSE_LENGTH;
 
     // NOLINTEND

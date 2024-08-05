@@ -9,7 +9,6 @@ class Player;
 
 namespace HitDetection {
 // NOLINTBEGIN
-// symbol: ?searchActors@HitDetection@@YAXAEBVVec3@@M0AEBVAABB@@PEAVActor@@PEAVPlayer@@AEAMAEAPEAV4@AEAV2@_N@Z
 MCAPI void searchActors(
     Vec3 const& rayDir,
     float       tMax,

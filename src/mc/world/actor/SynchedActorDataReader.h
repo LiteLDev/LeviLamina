@@ -14,10 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getPosition@SynchedActorDataReader@@QEBA?AVBlockPos@@G@Z
     MCAPI class BlockPos getPosition(ushort id) const;
 
-    // symbol: ?getStatusFlag@SynchedActorDataReader@@QEBA_NW4ActorFlags@@@Z
     MCAPI bool getStatusFlag(::ActorFlags flag) const;
 
     // NOLINTEND

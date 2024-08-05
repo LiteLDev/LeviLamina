@@ -23,19 +23,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0ScriptActorAddEffectBeforeEvent@ScriptModuleMinecraft@@QEAA@AEAUActorAddEffectEvent@@AEBVActor@@AEBVWeakLifetimeScope@Scripting@@@Z
     MCAPI
     ScriptActorAddEffectBeforeEvent(struct ActorAddEffectEvent&, class Actor const&, class Scripting::WeakLifetimeScope const&);
 
-    // symbol: ?copyTo@ScriptActorAddEffectBeforeEvent@ScriptModuleMinecraft@@QEAAXAEAUActorAddEffectEvent@@@Z
     MCAPI void copyTo(struct ActorAddEffectEvent&);
 
-    // symbol: ??1ScriptActorAddEffectBeforeEvent@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptActorAddEffectBeforeEvent();
 
-    // symbol:
-    // ?bind@ScriptActorAddEffectBeforeEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptActorAddEffectBeforeEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent>
     bind();
 

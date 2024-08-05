@@ -16,13 +16,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 1, symbol: __gen_??1PlayerUIContainerModel@@UEAA@XZ
+    // vIndex: 1
     virtual ~PlayerUIContainerModel() = default;
 
-    // vIndex: 22, symbol: ?_getContainerOffset@PlayerUIContainerModel@@MEBAHXZ
+    // vIndex: 22
     virtual int _getContainerOffset() const;
 
-    // symbol: ??0PlayerUIContainerModel@@QEAA@W4ContainerEnumName@@AEAVPlayer@@@Z
     MCAPI PlayerUIContainerModel(::ContainerEnumName containerName, class Player& player);
 
     // NOLINTEND

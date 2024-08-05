@@ -20,7 +20,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?bootstrap@Structures@worldgen@br@@SAXAEAVStructureRegistry@23@AEBVBaseGameVersion@@AEBVExperiments@@@Z
     MCAPI static void
     bootstrap(class br::worldgen::StructureRegistry&, class BaseGameVersion const&, class Experiments const&);
 

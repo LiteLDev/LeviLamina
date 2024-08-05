@@ -15,17 +15,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MeleeBoxAttackGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~MeleeBoxAttackGoal() = default;
 
-    // vIndex: 6, symbol: ?tick@MeleeBoxAttackGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@MeleeBoxAttackGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string&) const;
 
-    // symbol: ??0MeleeBoxAttackGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit MeleeBoxAttackGoal(class Mob&);
 
     // NOLINTEND

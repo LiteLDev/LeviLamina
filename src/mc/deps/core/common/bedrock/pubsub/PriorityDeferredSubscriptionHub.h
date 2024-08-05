@@ -34,7 +34,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1DequeuedEntry@PriorityDeferredSubscriptionHub@PubSub@Bedrock@@QEAA@XZ
         MCAPI ~DequeuedEntry();
 
         // NOLINTEND
@@ -49,7 +48,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1QueueEntry@PriorityDeferredSubscriptionHub@PubSub@Bedrock@@QEAA@XZ
         MCAPI ~QueueEntry();
 
         // NOLINTEND
@@ -62,28 +60,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1PriorityDeferredSubscriptionHub@PubSub@Bedrock@@UEAA@XZ
+    // vIndex: 0
     virtual ~PriorityDeferredSubscriptionHub() = default;
 
-    // vIndex: 3, symbol: ?flushPendingEvents@PriorityDeferredSubscriptionHub@PubSub@Bedrock@@UEAAXXZ
+    // vIndex: 3
     virtual void flushPendingEvents();
 
-    // vIndex: 8, symbol:
-    // ?getHubType@PriorityDeferredSubscriptionHub@PubSub@Bedrock@@UEBA?AW4HubType@DeferredSubscriptionHub@23@XZ
+    // vIndex: 8
     virtual ::Bedrock::PubSub::DeferredSubscriptionHub::HubType getHubType() const;
 
-    // vIndex: 10, symbol:
-    // ?_enqueue@PriorityDeferredSubscriptionHub@PubSub@Bedrock@@EEAAXV?$function@$$A6AXXZ@std@@W4ConnectPosition@23@V?$optional@H@5@@Z
+    // vIndex: 10
     virtual void _enqueue(std::function<void()> fn, ::Bedrock::PubSub::ConnectPosition at, std::optional<int> group);
 
-    // vIndex: 11, symbol: ?_runOneEvent@PriorityDeferredSubscriptionHub@PubSub@Bedrock@@EEAA_NXZ
+    // vIndex: 11
     virtual bool _runOneEvent();
 
-    // vIndex: 12, symbol:
-    // ?_runDequeuedEntry@PriorityDeferredSubscriptionHub@PubSub@Bedrock@@MEAAXAEBUDequeuedEntry@123@@Z
+    // vIndex: 12
     virtual void _runDequeuedEntry(struct Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry const& entry);
 
-    // symbol: ??0PriorityDeferredSubscriptionHub@PubSub@Bedrock@@QEAA@XZ
     MCAPI PriorityDeferredSubscriptionHub();
 
     // NOLINTEND

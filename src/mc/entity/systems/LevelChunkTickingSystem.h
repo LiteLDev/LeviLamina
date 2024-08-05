@@ -14,27 +14,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LevelChunkTickingSystem@@UEAA@XZ
+    // vIndex: 0
     virtual ~LevelChunkTickingSystem() = default;
 
-    // vIndex: 1, symbol: ?registerEvents@ISystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
+    // vIndex: 1
     virtual void registerEvents(entt::dispatcher&);
 
-    // vIndex: 2, symbol: ?tick@LevelChunkTickingSystem@@UEAAXAEAVEntityRegistry@@@Z
+    // vIndex: 2
     virtual void tick(class EntityRegistry& registry);
 
-    // vIndex: 3, symbol: ?singleTick@ITickingSystem@@UEAAXAEAVEntityRegistry@@AEAVEntityContext@@@Z
+    // vIndex: 3
     virtual void singleTick(class EntityRegistry& registry, class EntityContext& entity);
 
-    // vIndex: 4, symbol: ?singleTick@ITickingSystem@@UEAAXAEAVEntityRegistry@@AEAVStrictEntityContext@@@Z
+    // vIndex: 4
     virtual void singleTick(class EntityRegistry& registry, class StrictEntityContext& entity);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_determineLevelChunksToTick@LevelChunkTickingSystem@@CAXAEBVActor@@AEAVBlockSource@@AEAVLoadedChunksComponent@@AEAV?$vector@V?$shared_ptr@VLevelChunk@@@std@@V?$allocator@V?$shared_ptr@VLevelChunk@@@std@@@2@@std@@3AEBUTick@@@Z
     MCAPI static void _determineLevelChunksToTick(
         class Actor const& actor,
         class BlockSource& region,
@@ -44,13 +42,9 @@ public:
         struct Tick const& currentTick
     );
 
-    // symbol:
-    // ?_tickLevelChunksAroundActor@LevelChunkTickingSystem@@CAXAEAVActor@@AEAVBlockSource@@AEAVLoadedChunksComponent@@@Z
     MCAPI static void
     _tickLevelChunksAroundActor(class Actor& actor, class BlockSource& region, class LoadedChunksComponent&);
 
-    // symbol:
-    // ?_tickLevelChunksAroundActorView@LevelChunkTickingSystem@@CAXAEAVActorOwnerComponent@@AEAVLoadedChunksComponent@@@Z
     MCAPI static void _tickLevelChunksAroundActorView(class ActorOwnerComponent&, class LoadedChunksComponent&);
 
     // NOLINTEND

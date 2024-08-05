@@ -21,22 +21,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BlockMapColor11910Upgrade@BlockMapColorVersioning@@UEAA@XZ
+    // vIndex: 0
     virtual ~BlockMapColor11910Upgrade() = default;
 
-    // vIndex: 1, symbol:
-    // ?previousSchema@BlockMapColor11910Upgrade@BlockMapColorVersioning@@UEBA_NAEBV?$GenericValue@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@@rapidjson@@@Z
+    // vIndex: 1
     virtual bool previousSchema(rapidjson::GenericValue<
                                 rapidjson::UTF8<char>,
                                 rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>> const&) const;
 
-    // vIndex: 2, symbol:
-    // ?upgradeToNext@BlockMapColor11910Upgrade@BlockMapColorVersioning@@UEBAXAEAV?$GenericDocument@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@VCrtAllocator@2@@rapidjson@@AEBVSemVersion@@@Z
+    // vIndex: 2
     virtual void
     upgradeToNext(rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&, class SemVersion const&)
         const;
 
-    // symbol: ??0BlockMapColor11910Upgrade@BlockMapColorVersioning@@QEAA@XZ
     MCAPI BlockMapColor11910Upgrade();
 
     // NOLINTEND

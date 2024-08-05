@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0AsyncBlockInternalGuard@@QEAA@PEAUXAsyncBlock@@@Z
     MCAPI explicit AsyncBlockInternalGuard(struct XAsyncBlock*);
 
     // NOLINTEND

@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1AnyAndJSValue@Scripting@@QEAA@XZ
     MCAPI ~AnyAndJSValue();
 
     // NOLINTEND

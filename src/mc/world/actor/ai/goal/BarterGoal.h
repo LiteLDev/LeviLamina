@@ -15,33 +15,29 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BarterGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~BarterGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@BarterGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@BarterGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 6, symbol: ?tick@BarterGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@BarterGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0BarterGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit BarterGoal(class Mob& mob);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_getThrowVector@BarterGoal@@AEAA?AVVec3@@XZ
     MCAPI class Vec3 _getThrowVector();
 
-    // symbol: ?_sendBarterEventPacket@BarterGoal@@AEAAXPEAVBarterComponent@@@Z
     MCAPI void _sendBarterEventPacket(class BarterComponent*);
 
     // NOLINTEND

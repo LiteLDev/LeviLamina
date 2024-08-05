@@ -26,11 +26,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScatteredFeatureStart@RandomScatteredLargeFeatureDetails@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScatteredFeatureStart() = default;
 
-    // symbol:
-    // ??0ScatteredFeatureStart@RandomScatteredLargeFeatureDetails@@QEAA@AEBVBiomeSource@@FHHAEBVIPreliminarySurfaceProvider@@@Z
     MCAPI
     ScatteredFeatureStart(class BiomeSource const& source, short seaLevel, int chunkX, int chunkZ, class IPreliminarySurfaceProvider const&);
 

@@ -21,10 +21,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BlockPartVisibilityDescription@@UEAA@XZ
+    // vIndex: 0
     virtual ~BlockPartVisibilityDescription() = default;
 
-    // symbol: ?NameID@BlockPartVisibilityDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const NameID;
 
     // NOLINTEND

@@ -27,42 +27,38 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1AzaleaBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~AzaleaBlock() = default;
 
-    // vIndex: 5, symbol:
-    // ?getCollisionShape@AzaleaBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 5
     virtual class AABB
     getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 24, symbol: ?canProvideMultifaceSupport@AzaleaBlock@@UEBA_NAEBVBlock@@E@Z
+    // vIndex: 24
     virtual bool canProvideMultifaceSupport(class Block const& block, uchar face) const;
 
-    // vIndex: 33, symbol: ?isWaterBlocking@AzaleaBlock@@UEBA_NXZ
+    // vIndex: 33
     virtual bool isWaterBlocking() const;
 
-    // vIndex: 80, symbol:
-    // ?onFertilized@AzaleaBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
+    // vIndex: 80
     virtual bool
     onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* actor, ::FertilizerType fType)
         const;
 
-    // vIndex: 82, symbol: ?canBeFertilized@AzaleaBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 82
     virtual bool
     canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
 
-    // vIndex: 87, symbol: ?mayPlaceOn@AzaleaBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 87
     virtual bool mayPlaceOn(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ??0AzaleaBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI AzaleaBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_growTree@AzaleaBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     MCAPI bool _growTree(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // NOLINTEND

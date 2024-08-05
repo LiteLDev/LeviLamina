@@ -11,17 +11,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?start@PetSleepWithOwnerState@@UEAAXXZ
     MCVAPI void start();
 
-    // symbol: ?stop@PetSleepWithOwnerState@@UEAAXXZ
     MCVAPI void stop();
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?dampenSpeed@PetSleepWithOwnerState@@IEAAXXZ
     MCAPI void dampenSpeed();
 
     // NOLINTEND

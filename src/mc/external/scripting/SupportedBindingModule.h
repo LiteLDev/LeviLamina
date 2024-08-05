@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1SupportedBindingModule@Scripting@@QEAA@XZ
     MCAPI ~SupportedBindingModule();
 
     // NOLINTEND

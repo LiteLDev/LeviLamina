@@ -28,7 +28,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1IRequestBody@Internal@Http@Bedrock@@UEAA@XZ
     MCVAPI ~IRequestBody();
 
     // NOLINTEND

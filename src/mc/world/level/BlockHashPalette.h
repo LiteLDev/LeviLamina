@@ -14,22 +14,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BlockHashPalette@@UEAA@XZ
+    // vIndex: 0
     virtual ~BlockHashPalette() = default;
 
-    // vIndex: 1, symbol: ?getPaletteType@BlockHashPalette@@UEAA?AW4PaletteType@BlockPalette@@XZ
+    // vIndex: 1
     virtual ::BlockPalette::PaletteType getPaletteType();
 
-    // vIndex: 2, symbol: ?appendBlock@BlockHashPalette@@UEAAXAEBVBlock@@@Z
+    // vIndex: 2
     virtual void appendBlock(class Block const& block);
 
-    // vIndex: 3, symbol: ?getBlock@BlockHashPalette@@UEBAAEBVBlock@@AEBI@Z
+    // vIndex: 3
     virtual class Block const& getBlock(uint const&) const;
 
-    // vIndex: 4, symbol: ?assignBlockNetworkId@BlockHashPalette@@MEBAXAEBVBlock@@_K@Z
+    // vIndex: 4
     virtual void assignBlockNetworkId(class Block const& block, uint64) const;
 
-    // symbol: ??0BlockHashPalette@@QEAA@AEAVLevel@@@Z
     MCAPI explicit BlockHashPalette(class Level& level);
 
     // NOLINTEND

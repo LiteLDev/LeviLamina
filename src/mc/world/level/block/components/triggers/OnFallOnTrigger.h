@@ -17,13 +17,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1OnFallOnTrigger@@UEAA@XZ
+    // vIndex: 0
     virtual ~OnFallOnTrigger() = default;
 
-    // symbol: ?finalize@OnFallOnTrigger@@QEAAXV?$not_null@PEAVBlockFallOnEventComponent@BlockEvents@@@gsl@@@Z
     MCAPI void finalize(gsl::not_null<class BlockEvents::BlockFallOnEventComponent*>);
 
-    // symbol: ?onFallOn@OnFallOnTrigger@@QEBAXAEAUBlockFallOnEvent@BlockEvents@@@Z
     MCAPI void onFallOn(struct BlockEvents::BlockFallOnEvent&) const;
 
     // NOLINTEND

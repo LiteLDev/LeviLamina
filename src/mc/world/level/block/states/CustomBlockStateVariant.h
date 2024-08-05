@@ -14,13 +14,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CustomBlockStateVariant@@UEAA@XZ
+    // vIndex: 0
     virtual ~CustomBlockStateVariant() = default;
 
-    // vIndex: 1, symbol: ?toNBT@CustomBlockStateVariant@@UEBAXAEAVCompoundTag@@H@Z
+    // vIndex: 1
     virtual void toNBT(class CompoundTag& tag, int val) const;
 
-    // vIndex: 2, symbol: ?fromNBT@CustomBlockStateVariant@@UEBA_NAEBVCompoundTag@@AEAH@Z
+    // vIndex: 2
     virtual bool fromNBT(class CompoundTag const& tag, int& outValue) const;
 
     // NOLINTEND

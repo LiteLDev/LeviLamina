@@ -27,22 +27,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1TorchflowerCropBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~TorchflowerCropBlock() = default;
 
-    // vIndex: 9, symbol:
-    // ?getOutline@TorchflowerCropBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
+    // vIndex: 9
     virtual class AABB const&
     getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 80, symbol:
-    // ?onFertilized@TorchflowerCropBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
+    // vIndex: 80
     virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, ::FertilizerType) const;
 
-    // vIndex: 129, symbol: ?getVariant@TorchflowerCropBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 164, symbol: ?setGrowth@TorchflowerCropBlock@@UEBAAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@AEBV2@GH@Z
+    // vIndex: 164
     virtual class Block const& setGrowth(
         class BlockSource&    region,
         class BlockPos const& pos,
@@ -51,10 +49,9 @@ public:
         int updateFlags
     ) const;
 
-    // vIndex: 165, symbol: ?getBaseSeed@TorchflowerCropBlock@@UEBA?BVItemInstance@@XZ
+    // vIndex: 165
     virtual class ItemInstance const getBaseSeed() const;
 
-    // symbol: ??0TorchflowerCropBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI TorchflowerCropBlock(std::string const& nameId, int id);
 
     // NOLINTEND

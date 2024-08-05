@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createTeleportInterpolatorResetSystem@TeleportInterpolatorResetSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createTeleportInterpolatorResetSystem();
 
     // NOLINTEND

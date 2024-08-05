@@ -27,10 +27,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1UnknownBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~UnknownBlock() = default;
 
-    // symbol: ??0UnknownBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI UnknownBlock(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND

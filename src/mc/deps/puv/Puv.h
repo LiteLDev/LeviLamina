@@ -52,7 +52,6 @@ namespace cereal::internal { struct ConstraintDescription; }
 
 namespace Puv {
 // NOLINTBEGIN
-// symbol: ?pickFormatVersion@Puv@@YA?AVSemVersion@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
 MCAPI class SemVersion pickFormatVersion(std::string const&);
 // NOLINTEND
 

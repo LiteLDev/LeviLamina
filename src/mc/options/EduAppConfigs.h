@@ -11,10 +11,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1EduAppConfigs@@UEAA@XZ
+    // vIndex: 0
     virtual ~EduAppConfigs() = default;
 
-    // symbol: ?EDUResourcePack@EduAppConfigs@@2UPackIdVersion@@B
     MCAPI static struct PackIdVersion const EDUResourcePack;
 
     // NOLINTEND

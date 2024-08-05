@@ -16,44 +16,38 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LoomContainerManagerModel@@UEAA@XZ
+    // vIndex: 0
     virtual ~LoomContainerManagerModel() = default;
 
-    // vIndex: 6, symbol:
-    // ?getItemCopies@LoomContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+    // vIndex: 6
     virtual std::vector<class ItemStack> getItemCopies() const;
 
-    // vIndex: 7, symbol: ?setSlot@LoomContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
+    // vIndex: 7
     virtual void setSlot(int slot, class ItemStack const& item, bool fromNetwork);
 
-    // vIndex: 8, symbol: ?getSlot@LoomContainerManagerModel@@UEBAAEBVItemStack@@H@Z
+    // vIndex: 8
     virtual class ItemStack const& getSlot(int slot) const;
 
-    // vIndex: 9, symbol: ?setData@LoomContainerManagerModel@@UEAAXHH@Z
+    // vIndex: 9
     virtual void setData(int id, int value);
 
-    // vIndex: 10, symbol: ?broadcastChanges@LoomContainerManagerModel@@UEAAXXZ
+    // vIndex: 10
     virtual void broadcastChanges();
 
-    // vIndex: 16, symbol: ?isValid@LoomContainerManagerModel@@UEAA_NM@Z
+    // vIndex: 16
     virtual bool isValid(float pickRange);
 
-    // vIndex: 17, symbol: ?_postInit@LoomContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+    // vIndex: 17
     virtual class ContainerScreenContext _postInit();
 
-    // symbol: ??0LoomContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
     MCAPI LoomContainerManagerModel(::ContainerID containerId, class Player& player, class BlockPos const& blockPos);
 
-    // symbol: ?BANNER_SLOT@LoomContainerManagerModel@@2HB
     MCAPI static int const BANNER_SLOT;
 
-    // symbol: ?DYE_SLOT@LoomContainerManagerModel@@2HB
     MCAPI static int const DYE_SLOT;
 
-    // symbol: ?MATERIAL_SLOT@LoomContainerManagerModel@@2HB
     MCAPI static int const MATERIAL_SLOT;
 
-    // symbol: ?RESULT_SLOT@LoomContainerManagerModel@@2HB
     MCAPI static int const RESULT_SLOT;
 
     // NOLINTEND

@@ -25,58 +25,50 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptItemGameplayHandler@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptItemGameplayHandler() = default;
 
-    // vIndex: 1, symbol:
-    // ?handleEvent@?$Impl@U?$type_list@$$CBU?$ItemGameplayEvent@X@@U?$MutableItemGameplayEvent@W4CoordinatorResult@@@@@entt@@@?$EventHandlerDispatcher@VItemGameplayHandler@@@Details@@MEAA?AW4HandlerResult@@AEBU?$ItemGameplayEvent@X@@@Z
+    // vIndex: 1
     virtual ::HandlerResult handleEvent(struct ItemGameplayEvent<void> const& event);
 
-    // vIndex: 2, symbol:
-    // ?handleEvent@?$Impl@U?$type_list@U?$MutableItemGameplayEvent@W4CoordinatorResult@@@@@entt@@@?$EventHandlerDispatcher@VItemGameplayHandler@@@Details@@MEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAU?$MutableItemGameplayEvent@W4CoordinatorResult@@@@@Z
+    // vIndex: 2
     virtual struct GameplayHandlerResult<::CoordinatorResult>
     handleEvent(struct MutableItemGameplayEvent<::CoordinatorResult>& event);
 
-    // vIndex: 3, symbol: __unk_vfn_3
+    // vIndex: 3
     virtual void __unk_vfn_3();
 
-    // vIndex: 4, symbol: __unk_vfn_4
+    // vIndex: 4
     virtual void __unk_vfn_4();
 
-    // vIndex: 5, symbol: __unk_vfn_5
+    // vIndex: 5
     virtual void __unk_vfn_5();
 
-    // vIndex: 6, symbol: __unk_vfn_6
+    // vIndex: 6
     virtual void __unk_vfn_6();
 
-    // vIndex: 7, symbol: __unk_vfn_7
+    // vIndex: 7
     virtual void __unk_vfn_7();
 
-    // vIndex: 8, symbol: __unk_vfn_8
+    // vIndex: 8
     virtual void __unk_vfn_8();
 
-    // vIndex: 9, symbol: __unk_vfn_9
+    // vIndex: 9
     virtual void __unk_vfn_9();
 
-    // vIndex: 10, symbol:
-    // ?handleEvent@ScriptItemGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUItemUseOnEvent@@@Z
+    // vIndex: 10
     virtual struct GameplayHandlerResult<::CoordinatorResult> handleEvent(struct ItemUseOnEvent&);
 
-    // vIndex: 11, symbol:
-    // ?handleEvent@ScriptItemGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUItemUseEvent@@@Z
+    // vIndex: 11
     virtual struct GameplayHandlerResult<::CoordinatorResult> handleEvent(struct ItemUseEvent&);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_handleItemUseEvent@ScriptItemGameplayHandler@@AEAA_NAEAUItemUseEvent@@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VIScriptWorldBeforeEvents@ScriptModuleMinecraft@@@4@@Z
     MCAPI bool
     _handleItemUseEvent(struct ItemUseEvent&, class Scripting::WeakLifetimeScope const& scope, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>);
 
-    // symbol:
-    // ?_handleItemUseOnEvent@ScriptItemGameplayHandler@@AEAA_NAEAUItemUseOnEvent@@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VIScriptWorldBeforeEvents@ScriptModuleMinecraft@@@4@@Z
     MCAPI bool
     _handleItemUseOnEvent(struct ItemUseOnEvent&, class Scripting::WeakLifetimeScope const& scope, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>);
 

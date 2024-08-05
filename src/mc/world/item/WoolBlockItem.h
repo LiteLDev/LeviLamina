@@ -26,11 +26,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1WoolBlockItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~WoolBlockItem() = default;
 
-    // vIndex: 83, symbol:
-    // ?buildDescriptionId@WoolBlockItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+    // vIndex: 83
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
     // NOLINTEND

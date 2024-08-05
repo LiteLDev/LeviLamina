@@ -14,10 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ?getJsonName@NavigationFlyDescription@@UEBAPEBDXZ
+    // vIndex: 0
     virtual char const* getJsonName() const;
 
-    // vIndex: 1, symbol: ??1NavigationFlyDescription@@UEAA@XZ
+    // vIndex: 1
     virtual ~NavigationFlyDescription();
 
     // NOLINTEND

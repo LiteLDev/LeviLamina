@@ -15,23 +15,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SilverfishMergeWithStoneGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~SilverfishMergeWithStoneGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@SilverfishMergeWithStoneGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@SilverfishMergeWithStoneGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@SilverfishMergeWithStoneGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@SilverfishMergeWithStoneGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0SilverfishMergeWithStoneGoal@@QEAA@AEAVSilverfish@@@Z
     MCAPI explicit SilverfishMergeWithStoneGoal(class Silverfish& silverfish);
 
     // NOLINTEND

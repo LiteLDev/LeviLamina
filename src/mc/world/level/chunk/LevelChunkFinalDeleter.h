@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??RLevelChunkFinalDeleter@@QEAAXPEAVLevelChunk@@@Z
     MCAPI void operator()(class LevelChunk* lc);
 
     // NOLINTEND

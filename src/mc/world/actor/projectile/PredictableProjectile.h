@@ -35,14 +35,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 9, symbol: ?_doInitialMove@PredictableProjectile@@MEAAXXZ
+    // vIndex: 9
     virtual void _doInitialMove();
 
-    // vIndex: 10, symbol: ??1PredictableProjectile@@UEAA@XZ
+    // vIndex: 10
     virtual ~PredictableProjectile();
 
-    // symbol:
-    // ??0PredictableProjectile@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI PredictableProjectile(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

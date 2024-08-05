@@ -12,16 +12,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CapacitorComponent@@UEAA@XZ
+    // vIndex: 0
     virtual ~CapacitorComponent() = default;
 
-    // vIndex: 23, symbol: ?getCircuitComponentType@CapacitorComponent@@UEBA?AW4CircuitComponentType@@XZ
+    // vIndex: 23
     virtual ::CircuitComponentType getCircuitComponentType() const;
 
-    // vIndex: 25, symbol: ?getPoweroutDirection@CapacitorComponent@@UEBAEXZ
+    // vIndex: 25
     virtual uchar getPoweroutDirection() const;
 
-    // symbol: ??0CapacitorComponent@@QEAA@XZ
     MCAPI CapacitorComponent();
 
     // NOLINTEND

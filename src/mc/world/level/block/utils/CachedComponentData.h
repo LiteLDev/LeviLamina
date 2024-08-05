@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?cacheComponentData@CachedComponentData@@QEAAXAEBVBlock@@@Z
     MCAPI void cacheComponentData(class Block const& block);
 
     // NOLINTEND

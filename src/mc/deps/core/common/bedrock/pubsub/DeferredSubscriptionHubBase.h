@@ -24,32 +24,31 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1DeferredSubscriptionHubBase@PubSub@Bedrock@@UEAA@XZ
+    // vIndex: 0
     virtual ~DeferredSubscriptionHubBase();
 
-    // vIndex: 1, symbol: ?runDeferredEvents@DeferredSubscriptionHubBase@PubSub@Bedrock@@UEAA_K_K@Z
+    // vIndex: 1
     virtual uint64 runDeferredEvents(uint64);
 
-    // vIndex: 2, symbol:
-    // ?runDeferredEventsForDuration@DeferredSubscriptionHubBase@PubSub@Bedrock@@UEAA_KV?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@@Z
+    // vIndex: 2
     virtual uint64 runDeferredEventsForDuration(std::chrono::milliseconds);
 
-    // vIndex: 4, symbol: ?clear@DeferredSubscriptionHubBase@PubSub@Bedrock@@UEAAXXZ
+    // vIndex: 4
     virtual void clear();
 
-    // vIndex: 5, symbol: ?erase@DeferredSubscriptionHubBase@PubSub@Bedrock@@UEAA_KAEAVRawSubscription@23@@Z
+    // vIndex: 5
     virtual uint64 erase(class Bedrock::PubSub::RawSubscription& subscription);
 
-    // vIndex: 6, symbol: ?size@DeferredSubscriptionHubBase@PubSub@Bedrock@@UEBA_KXZ
+    // vIndex: 6
     virtual uint64 size() const;
 
-    // vIndex: 7, symbol: ?empty@DeferredSubscriptionHubBase@PubSub@Bedrock@@UEBA_NXZ
+    // vIndex: 7
     virtual bool empty() const;
 
-    // vIndex: 9, symbol: ?_join@DeferredSubscriptionHubBase@PubSub@Bedrock@@EEAAX$$QEAVDeferredSubscription@23@@Z
+    // vIndex: 9
     virtual void _join(class Bedrock::PubSub::DeferredSubscription&& subscription);
 
-    // vIndex: 11, symbol: ?_runOneEvent@PriorityDeferredSubscriptionHub@PubSub@Bedrock@@EEAA_NXZ
+    // vIndex: 11
     virtual bool _runOneEvent() = 0;
 
     // NOLINTEND

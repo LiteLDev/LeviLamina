@@ -28,47 +28,43 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptItemCustomComponentAsyncSignalCollection@ScriptModuleMinecraft@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptItemCustomComponentAsyncSignalCollection();
 
-    // vIndex: 1, symbol: ?onLevelTickEnd@ScriptDeferredEventListener@@UEAAXXZ
+    // vIndex: 1
     virtual void onLevelTickEnd();
 
-    // vIndex: 2, symbol: ?onRunAsyncJobs@ScriptDeferredEventListener@@UEAAXXZ
+    // vIndex: 2
     virtual void onRunAsyncJobs();
 
-    // vIndex: 3, symbol: ?onRunSystemTick@ScriptDeferredEventListener@@UEAA_NXZ
+    // vIndex: 3
     virtual bool onRunSystemTick();
 
-    // vIndex: 4, symbol: ?onFlushWorldAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
+    // vIndex: 4
     virtual bool onFlushWorldAfterEvents();
 
-    // vIndex: 5, symbol: ?onFlushSystemAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
+    // vIndex: 5
     virtual bool onFlushSystemAfterEvents();
 
-    // vIndex: 6, symbol: ?onFlushEditorExtensionContextAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
+    // vIndex: 6
     virtual bool onFlushEditorExtensionContextAfterEvents();
 
-    // vIndex: 7, symbol: ?onFlushBlockCustomComponentAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
+    // vIndex: 7
     virtual bool onFlushBlockCustomComponentAfterEvents();
 
-    // vIndex: 8, symbol: ?onFlushEditorDataStoreAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
+    // vIndex: 8
     virtual bool onFlushEditorDataStoreAfterEvents();
 
-    // vIndex: 9, symbol:
-    // ?onFlushItemCustomComponentAfterEvents@ScriptItemCustomComponentAsyncSignalCollection@ScriptModuleMinecraft@@UEAA_NXZ
+    // vIndex: 9
     virtual bool onFlushItemCustomComponentAfterEvents();
 
-    // vIndex: 10, symbol:
-    // ?onPreFlushAfterEvents@ScriptItemCustomComponentAsyncSignalCollection@ScriptModuleMinecraft@@UEAAXXZ
+    // vIndex: 10
     virtual void onPreFlushAfterEvents();
 
-    // vIndex: 11, symbol:
-    // ?onPostFlushAfterEvents@ScriptItemCustomComponentAsyncSignalCollection@ScriptModuleMinecraft@@UEAAXXZ
+    // vIndex: 11
     virtual void onPostFlushAfterEvents();
 
-    // vIndex: 12, symbol:
-    // ?subscribeToItemForComponent@ScriptItemCustomComponentSignalCollection@ScriptModuleMinecraft@@UEAAXAEAVComponentItem@@AEBVHashedString@@AEBUIScriptItemCustomComponentClosures@2@AEAVWeakLifetimeScope@Scripting@@H@Z
+    // vIndex: 12
     virtual void subscribeToItemForComponent(
         class ComponentItem&,
         class HashedString const&,
@@ -77,11 +73,9 @@ public:
         int
     ) = 0;
 
-    // vIndex: 13, symbol: ?clear@ScriptItemCustomComponentSignalCollection@ScriptModuleMinecraft@@UEAAXXZ
+    // vIndex: 13
     virtual void clear() = 0;
 
-    // symbol:
-    // ?generateOrderDocumentation@ScriptItemCustomComponentAsyncSignalCollection@ScriptModuleMinecraft@@QEAAXAEBUModuleDescriptor@Scripting@@AEAVValue@Json@@@Z
     MCAPI void generateOrderDocumentation(struct Scripting::ModuleDescriptor const&, class Json::Value&);
 
     // NOLINTEND

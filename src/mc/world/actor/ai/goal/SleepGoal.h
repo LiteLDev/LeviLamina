@@ -16,32 +16,30 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SleepGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~SleepGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@SleepGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@SleepGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@SleepGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@SleepGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@SleepGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@SleepGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // vIndex: 16, symbol: ?_getRepathTime@SleepGoal@@EEBA_KXZ
+    // vIndex: 16
     virtual uint64 _getRepathTime() const;
 
-    // symbol: ??0SleepGoal@@QEAA@AEAVMob@@MMM_NMHM@Z
     MCAPI SleepGoal(
         class Mob& mob,
         float      walkSpeed,
@@ -57,10 +55,8 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_lockPosToBedPos@SleepGoal@@AEAAXXZ
     MCAPI void _lockPosToBedPos();
 
-    // symbol: ?_wakeUp@SleepGoal@@AEAAXXZ
     MCAPI void _wakeUp();
 
     // NOLINTEND

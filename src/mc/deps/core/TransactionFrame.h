@@ -21,14 +21,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1TransactionFrame@Core@@QEAA@XZ
     MCAPI ~TransactionFrame();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ??0TransactionFrame@Core@@AEAA@W4FileAccessType@1@AEBVPath@1@@Z
     MCAPI TransactionFrame(::Core::FileAccessType accessType, class Core::Path const& path);
 
     // NOLINTEND

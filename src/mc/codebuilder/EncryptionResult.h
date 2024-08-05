@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1EncryptionResult@CodeBuilder@@QEAA@XZ
     MCAPI ~EncryptionResult();
 
     // NOLINTEND

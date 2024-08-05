@@ -15,27 +15,26 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ServerCorrectionPolicy@@UEAA@XZ
+    // vIndex: 0
     virtual ~ServerCorrectionPolicy() = default;
 
-    // vIndex: 1, symbol: ?isReplayNeeded@ServerCorrectionPolicy@@UEBA_NW4AdvanceFrameResult@@@Z
+    // vIndex: 1
     virtual bool isReplayNeeded(::AdvanceFrameResult) const;
 
-    // vIndex: 2, symbol: ?canRewindToFrame@ServerCorrectionPolicy@@UEAA_NAEBVEntityContext@@_K@Z
+    // vIndex: 2
     virtual bool canRewindToFrame(class EntityContext const&, uint64);
 
-    // vIndex: 3, symbol:
-    // ?shouldCorrectMovement@ServerCorrectionPolicy@@UEAA?AUMovementCorrection@@AEAVEntityContext@@AEBVPlayerAuthInputPacket@@_K@Z
+    // vIndex: 3
     virtual struct MovementCorrection
     shouldCorrectMovement(class EntityContext&, class PlayerAuthInputPacket const&, uint64);
 
-    // vIndex: 4, symbol: ?flagUnsupportedMovement@ServerCorrectionPolicy@@UEAAX_K@Z
+    // vIndex: 4
     virtual void flagUnsupportedMovement(uint64);
 
-    // vIndex: 5, symbol: ?storeCurrentFrameSupported@ServerCorrectionPolicy@@UEAAX_KAEAVEntityContext@@@Z
+    // vIndex: 5
     virtual void storeCurrentFrameSupported(uint64, class EntityContext&);
 
-    // vIndex: 6, symbol: ?notifyOfExternalCorrection@ServerCorrectionPolicy@@UEAAX_K@Z
+    // vIndex: 6
     virtual void notifyOfExternalCorrection(uint64);
 
     // NOLINTEND

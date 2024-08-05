@@ -20,11 +20,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SlimeRandomDirectionDefinition@@UEAA@XZ
+    // vIndex: 0
     virtual ~SlimeRandomDirectionDefinition() = default;
 
-    // symbol:
-    // ?buildSchema@SlimeRandomDirectionDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VSlimeRandomDirectionDefinition@@@JsonUtil@@@3@@Z
     MCAPI static void buildSchema(
         std::string const& name,
         std::shared_ptr<

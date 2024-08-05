@@ -15,17 +15,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1IslandOperationNode@@UEAA@XZ
+    // vIndex: 0
     virtual ~IslandOperationNode() = default;
 
-    // vIndex: 1, symbol: ?init@OperationNodeBase@OperationNodeDetails@@UEAAX_J@Z
+    // vIndex: 1
     virtual void init(int64 seed);
 
-    // vIndex: 2, symbol: __unk_vfn_2
+    // vIndex: 2
     virtual void __unk_vfn_2();
 
-    // vIndex: 3, symbol:
-    // ?_fillArea@IslandOperationNode@@EEBAXAEAV?$WorkingData@W4Terrain@OperationNodeValues@@D@OperationNodeDetails@@AEBVPos2d@@1@Z
+    // vIndex: 3
     virtual void _fillArea(
         class OperationNodeDetails::WorkingData<::OperationNodeValues::Terrain, char>&,
         class Pos2d const& origin,

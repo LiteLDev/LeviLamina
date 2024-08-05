@@ -15,23 +15,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1WitherTargetHighestDamage@@UEAA@XZ
+    // vIndex: 0
     virtual ~WitherTargetHighestDamage() = default;
 
-    // vIndex: 1, symbol: ?canUse@WitherTargetHighestDamage@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@WitherTargetHighestDamage@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@WitherTargetHighestDamage@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@WitherTargetHighestDamage@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // vIndex: 10, symbol: ?_canAttack@WitherTargetHighestDamage@@EEAA_NPEAVMob@@PEAVActor@@_N2PEAPEBUMobDescriptor@@@Z
+    // vIndex: 10
     virtual bool _canAttack(
         class Mob*                   testMob,
         class Actor*                 target,
@@ -40,15 +39,12 @@ public:
         struct MobDescriptor const** outDescriptorMatch
     );
 
-    // symbol:
-    // ??0WitherTargetHighestDamage@@QEAA@AEAVWitherBoss@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@@Z
     MCAPI WitherTargetHighestDamage(class WitherBoss& witherBoss, std::vector<struct MobDescriptor> const& targetTypes);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?getHighestDamageTarget@WitherTargetHighestDamage@@AEAAPEAVPlayer@@XZ
     MCAPI class Player* getHighestDamageTarget();
 
     // NOLINTEND

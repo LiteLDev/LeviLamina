@@ -17,19 +17,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FileStream@Core@@UEAA@XZ
+    // vIndex: 0
     virtual ~FileStream() = default;
 
-    // symbol: ??0FileStream@Core@@QEAA@XZ
     MCAPI FileStream();
 
-    // symbol: ??0FileStream@Core@@QEAA@AEBVPath@1@H@Z
     MCAPI FileStream(class Core::Path const&, int);
 
-    // symbol: ?close@FileStream@Core@@QEAAXXZ
     MCAPI void close();
 
-    // symbol: ?open@FileStream@Core@@QEAAXAEBVPath@2@H@Z
     MCAPI void open(class Core::Path const&, int);
 
     // NOLINTEND

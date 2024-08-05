@@ -14,19 +14,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1PlayerContainerSetter@@UEAA@XZ
+    // vIndex: 0
     virtual ~PlayerContainerSetter() = default;
 
-    // vIndex: 1, symbol: ?setArmor@PlayerContainerSetter@@UEAAXHAEBVItemStack@@@Z
+    // vIndex: 1
     virtual void setArmor(int slot, class ItemStack const& item);
 
-    // vIndex: 2, symbol: ?setOffhandSlot@PlayerContainerSetter@@UEAAXAEBVItemStack@@@Z
+    // vIndex: 2
     virtual void setOffhandSlot(class ItemStack const& item);
 
-    // vIndex: 3, symbol: ?setPlayerUIItem@PlayerContainerSetter@@UEAAXHAEBVItemStack@@@Z
+    // vIndex: 3
     virtual void setPlayerUIItem(int slot, class ItemStack const& item);
 
-    // symbol: ??0PlayerContainerSetter@@QEAA@AEAVPlayer@@@Z
     MCAPI explicit PlayerContainerSetter(class Player& player);
 
     // NOLINTEND

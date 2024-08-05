@@ -16,14 +16,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@PassengerFreezeMovementSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
-    // symbol: ?freezeMovement@PassengerFreezeMovementSystem@@SAXAEAVStrictEntityContext@@AEAUStateVectorComponent@@@Z
     MCAPI static void freezeMovement(class StrictEntityContext&, struct StateVectorComponent&);
 
-    // symbol:
-    // ?tickPassengerFreezeMovementSystem@PassengerFreezeMovementSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@UPassengerComponent@@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@UStateVectorComponent@@@@@Z
     MCAPI static void tickPassengerFreezeMovementSystem(
         class ViewT<
             class StrictEntityContext,

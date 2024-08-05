@@ -15,69 +15,63 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
+    // vIndex: 0
     virtual void __unk_vfn_0();
 
-    // vIndex: 1, symbol: ?Release@?$Api@$01UITaskQueue@@@@UEAAIXZ
+    // vIndex: 1
     virtual uint Release();
 
-    // vIndex: 2, symbol: ?QueryApi@?$Api@$01UITaskQueue@@@@UEAAJW4ApiId@@PEAPEAX@Z
+    // vIndex: 2
     virtual long QueryApi(::ApiId, void**);
 
-    // vIndex: 3, symbol: ?GetHandle@TaskQueueImpl@@UEAAPEAUXTaskQueueObject@@XZ
+    // vIndex: 3
     virtual struct XTaskQueueObject* GetHandle();
 
-    // vIndex: 4, symbol: ?GetPortContext@TaskQueueImpl@@UEAAJW4XTaskQueuePort@@PEAPEAUITaskQueuePortContext@@@Z
+    // vIndex: 4
     virtual long GetPortContext(::XTaskQueuePort, struct ITaskQueuePortContext**);
 
-    // vIndex: 5, symbol:
-    // ?RegisterWaitHandle@TaskQueueImpl@@UEAAJW4XTaskQueuePort@@PEAX1P6AX1_N@ZPEAUXTaskQueueRegistrationToken@@@Z
+    // vIndex: 5
     virtual long
     RegisterWaitHandle(::XTaskQueuePort, void*, void*, void (*)(void*, bool), struct XTaskQueueRegistrationToken*);
 
-    // vIndex: 6, symbol: ?UnregisterWaitHandle@TaskQueueImpl@@UEAAXUXTaskQueueRegistrationToken@@@Z
+    // vIndex: 6
     virtual void UnregisterWaitHandle(struct XTaskQueueRegistrationToken);
 
-    // vIndex: 7, symbol:
-    // ?RegisterSubmitCallback@TaskQueueImpl@@UEAAJPEAXP6AX0PEAUXTaskQueueObject@@W4XTaskQueuePort@@@ZPEAUXTaskQueueRegistrationToken@@@Z
+    // vIndex: 7
     virtual long
     RegisterSubmitCallback(void*, void (*)(void*, struct XTaskQueueObject*, ::XTaskQueuePort), struct XTaskQueueRegistrationToken*);
 
-    // vIndex: 8, symbol: ?UnregisterSubmitCallback@TaskQueueImpl@@UEAAXUXTaskQueueRegistrationToken@@@Z
+    // vIndex: 8
     virtual void UnregisterSubmitCallback(struct XTaskQueueRegistrationToken);
 
-    // vIndex: 9, symbol: ?CanTerminate@TaskQueueImpl@@UEAA_NXZ
+    // vIndex: 9
     virtual bool CanTerminate();
 
-    // vIndex: 10, symbol: ?CanClose@TaskQueueImpl@@UEAA_NXZ
+    // vIndex: 10
     virtual bool CanClose();
 
-    // vIndex: 11, symbol: ?Terminate@TaskQueueImpl@@UEAAJ_NPEAXP6AX1@Z@Z
+    // vIndex: 11
     virtual long Terminate(bool, void*, void (*)(void*));
 
-    // vIndex: 12, symbol: __gen_??1TaskQueueImpl@@UEAA@XZ
+    // vIndex: 12
     virtual ~TaskQueueImpl() = default;
 
-    // vIndex: 13, symbol: ?QueryApiImpl@?$Api@$01UITaskQueue@@@@MEAAPEAXW4ApiId@@@Z
+    // vIndex: 13
     virtual void* QueryApiImpl(::ApiId);
 
-    // vIndex: 14, symbol: ?RundownObject@TaskQueueImpl@@MEAAXXZ
+    // vIndex: 14
     virtual void RundownObject();
 
-    // symbol: ?Initialize@TaskQueueImpl@@QEAAJPEAUXTaskQueuePortObject@@0@Z
     MCAPI long Initialize(struct XTaskQueuePortObject*, struct XTaskQueuePortObject*);
 
-    // symbol: ?Initialize@TaskQueueImpl@@QEAAJW4XTaskQueueDispatchMode@@0_N1@Z
     MCAPI long Initialize(::XTaskQueueDispatchMode, ::XTaskQueueDispatchMode, bool, bool);
 
-    // symbol: ??0TaskQueueImpl@@QEAA@XZ
     MCAPI TaskQueueImpl();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?OnTerminationCallback@TaskQueueImpl@@CAXPEAX@Z
     MCAPI static void OnTerminationCallback(void*);
 
     // NOLINTEND

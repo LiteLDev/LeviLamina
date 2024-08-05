@@ -35,22 +35,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1EvocationFang@@UEAA@XZ
+    // vIndex: 10
     virtual ~EvocationFang() = default;
 
-    // vIndex: 26, symbol: ?normalTick@EvocationFang@@UEAAXXZ
+    // vIndex: 26
     virtual void normalTick();
 
-    // vIndex: 38, symbol: ?getShadowRadius@EvocationFang@@UEBAMXZ
+    // vIndex: 38
     virtual float getShadowRadius() const;
 
-    // vIndex: 74, symbol: ?handleEntityEvent@EvocationFang@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 74
     virtual void handleEntityEvent(::ActorEvent id, int data);
 
-    // vIndex: 90, symbol: ?getSourceUniqueID@EvocationFang@@UEBA?AUActorUniqueID@@XZ
+    // vIndex: 90
     virtual struct ActorUniqueID getSourceUniqueID() const;
 
-    // symbol: ??0EvocationFang@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI EvocationFang(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
@@ -61,7 +60,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_dealDamageTo@EvocationFang@@AEAAXAEAVMob@@@Z
     MCAPI void _dealDamageTo(class Mob& entity);
 
     // NOLINTEND

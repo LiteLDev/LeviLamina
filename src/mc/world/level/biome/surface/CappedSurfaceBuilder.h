@@ -33,19 +33,16 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __gen_??1MaterialHelper@CappedSurfaceBuilder@VanillaSurfaceBuilders@@UEAA@XZ
+        // vIndex: 0
         virtual ~MaterialHelper() = default;
 
-        // vIndex: 1, symbol:
-        // ?isFoundationBlock@MaterialHelper@CappedSurfaceBuilder@VanillaSurfaceBuilders@@UEBA_NAEBVBlock@@@Z
+        // vIndex: 1
         virtual bool isFoundationBlock(class Block const& block) const;
 
-        // vIndex: 2, symbol:
-        // ?isWaterBlock@MaterialHelper@CappedSurfaceBuilder@VanillaSurfaceBuilders@@UEBA_NAEBVBlock@@@Z
+        // vIndex: 2
         virtual bool isWaterBlock(class Block const& block) const;
 
-        // vIndex: 3, symbol:
-        // ?isSolidBlock@MaterialHelper@CappedSurfaceBuilder@VanillaSurfaceBuilders@@UEBA_NAEBVBlock@@@Z
+        // vIndex: 3
         virtual bool isSolidBlock(class Block const& block) const;
 
         // NOLINTEND
@@ -58,25 +55,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CappedSurfaceBuilder@VanillaSurfaceBuilders@@UEAA@XZ
+    // vIndex: 0
     virtual ~CappedSurfaceBuilder() = default;
 
-    // vIndex: 1, symbol: ?init@CappedSurfaceBuilder@VanillaSurfaceBuilders@@UEAAXAEAVBiome@@I@Z
+    // vIndex: 1
     virtual void init(class Biome&, uint);
 
-    // vIndex: 2, symbol:
-    // ?buildSurfaceAt@CappedSurfaceBuilder@VanillaSurfaceBuilders@@UEBAXAEBUBuildParameters@ISurfaceBuilder@@@Z
+    // vIndex: 2
     virtual void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const& parameters) const;
 
-    // symbol: ??0CappedSurfaceBuilder@VanillaSurfaceBuilders@@QEAA@XZ
     MCAPI CappedSurfaceBuilder();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?addSurfaceMaterial@CappedSurfaceBuilder@VanillaSurfaceBuilders@@AEBAXAEAVBlockVolume@@VPos@@HAEBV?$function@$$A6APEBVBlock@@H@Z@std@@@Z
     MCAPI void addSurfaceMaterial(
         class BlockVolume&                            blockVolume,
         class Pos                                     currentPosition,

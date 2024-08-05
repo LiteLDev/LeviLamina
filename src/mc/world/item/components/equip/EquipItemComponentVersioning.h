@@ -4,7 +4,6 @@
 
 namespace EquipItemComponentVersioning {
 // NOLINTBEGIN
-// symbol: ?isSupported@EquipItemComponentVersioning@@YA_NAEBVLevel@@VBaseGameVersion@@@Z
 MCAPI bool isSupported(class Level const&, class BaseGameVersion);
 // NOLINTEND
 

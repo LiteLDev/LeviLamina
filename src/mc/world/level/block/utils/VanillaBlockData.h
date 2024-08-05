@@ -16,7 +16,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?bindType@VanillaBlockData@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // NOLINTEND

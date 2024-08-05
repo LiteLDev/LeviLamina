@@ -21,31 +21,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1InventoryContentPacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~InventoryContentPacket();
 
-    // vIndex: 1, symbol: ?getId@InventoryContentPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@InventoryContentPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@InventoryContentPacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 8, symbol:
-    // ?_read@InventoryContentPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0InventoryContentPacket@@QEAA@XZ
     MCAPI InventoryContentPacket();
 
-    // symbol:
-    // ??0InventoryContentPacket@@QEAA@W4ContainerID@@AEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@@Z
     MCAPI InventoryContentPacket(::ContainerID id, std::vector<class ItemStack> const& items);
 
-    // symbol: ?fromPlayerInventoryId@InventoryContentPacket@@SA?AV1@W4ContainerID@@AEAVPlayer@@@Z
     MCAPI static class InventoryContentPacket fromPlayerInventoryId(::ContainerID id, class Player& player);
 
     // NOLINTEND

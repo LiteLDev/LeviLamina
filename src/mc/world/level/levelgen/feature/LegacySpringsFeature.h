@@ -14,13 +14,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LegacySpringsFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~LegacySpringsFeature() = default;
 
-    // vIndex: 3, symbol: ?place@LegacySpringsFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 3
     virtual bool place(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
 
-    // symbol: ??0LegacySpringsFeature@@QEAA@AEBVFeatureRegistry@@AEBVBaseGameVersion@@@Z
     MCAPI LegacySpringsFeature(class FeatureRegistry const& registry, class BaseGameVersion const& baseGameVersion);
 
     // NOLINTEND

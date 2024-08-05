@@ -14,15 +14,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1EducationMetadataError@@UEAA@XZ
+    // vIndex: 0
     virtual ~EducationMetadataError();
 
-    // vIndex: 2, symbol:
-    // ?getLocErrorMessageMap@EducationMetadataError@@EEBAAEBV?$unordered_map@HV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@H@2@U?$equal_to@H@2@V?$allocator@U?$pair@$$CBHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@std@@XZ
+    // vIndex: 2
     virtual std::unordered_map<int, std::string> const& getLocErrorMessageMap() const;
 
-    // vIndex: 3, symbol:
-    // ?getEventErrorMessageMap@EducationMetadataError@@EEBAAEBV?$unordered_map@HV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@H@2@U?$equal_to@H@2@V?$allocator@U?$pair@$$CBHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@std@@XZ
+    // vIndex: 3
     virtual std::unordered_map<int, std::string> const& getEventErrorMessageMap() const;
 
     // NOLINTEND

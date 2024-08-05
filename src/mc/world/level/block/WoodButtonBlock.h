@@ -27,10 +27,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1WoodButtonBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~WoodButtonBlock() = default;
 
-    // symbol: ??0WoodButtonBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI WoodButtonBlock(std::string const& nameId, int id);
 
     // NOLINTEND

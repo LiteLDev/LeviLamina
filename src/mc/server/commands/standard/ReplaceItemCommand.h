@@ -19,21 +19,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ReplaceItemCommand@@UEAA@XZ
+    // vIndex: 0
     virtual ~ReplaceItemCommand() = default;
 
-    // vIndex: 2, symbol: ?execute@ReplaceItemCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+    // vIndex: 2
     virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    // symbol: ?setup@ReplaceItemCommand@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry& registry);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_outputError@ReplaceItemCommand@@AEBAXAEAVCommandOutput@@UReplacementResults@Util@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void
     _outputError(class CommandOutput& output, struct Util::ReplacementResults, std::string const& itemName) const;
 

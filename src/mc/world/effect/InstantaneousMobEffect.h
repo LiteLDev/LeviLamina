@@ -14,16 +14,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1InstantaneousMobEffect@@UEAA@XZ
+    // vIndex: 0
     virtual ~InstantaneousMobEffect() = default;
 
-    // vIndex: 7, symbol: ?isInstantaneous@InstantaneousMobEffect@@UEBA_NXZ
+    // vIndex: 7
     virtual bool isInstantaneous() const;
 
-    // vIndex: 9, symbol: ?isDurationEffectTick@InstantaneousMobEffect@@UEBA_NHH@Z
+    // vIndex: 9
     virtual bool isDurationEffectTick(int remainingDuration, int) const;
 
-    // symbol: ??0InstantaneousMobEffect@@QEAA@IAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_NHH@Z
     MCAPI InstantaneousMobEffect(
         uint               _id,
         std::string const& resourceName,

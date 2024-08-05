@@ -23,17 +23,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptRGBA@ScriptModuleMinecraft@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptRGBA() = default;
 
-    // vIndex: 1, symbol: ?isValid@ScriptRGBA@ScriptModuleMinecraft@@UEBA_NXZ
+    // vIndex: 1
     virtual bool isValid() const;
 
-    // symbol: ??0ScriptRGBA@ScriptModuleMinecraft@@QEAA@AEBVColor@mce@@@Z
     MCAPI explicit ScriptRGBA(class mce::Color const&);
 
-    // symbol:
-    // ?bind@ScriptRGBA@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@VScriptRGBA@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::InterfaceBindingBuilder<class ScriptModuleMinecraft::ScriptRGBA> bind();
 
     // NOLINTEND

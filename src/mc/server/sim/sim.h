@@ -25,13 +25,10 @@ namespace sim { struct VoidMoveIntent; }
 
 namespace sim {
 // NOLINTBEGIN
-// symbol: ?lookAt@sim@@YA?AULookAtIntent@1@AEAVSimulatedPlayer@@AEAVEntityContext@@W4LookDuration@1@@Z
 MCAPI struct sim::LookAtIntent lookAt(class SimulatedPlayer&, class EntityContext&, ::sim::LookDuration);
 
-// symbol: ?lookAt@sim@@YA?AULookAtIntent@1@AEAVSimulatedPlayer@@U?$vec@$02M$0A@@glm@@W4LookDuration@1@@Z
 MCAPI struct sim::LookAtIntent lookAt(class SimulatedPlayer&, struct glm::vec<3, float, 0>, ::sim::LookDuration);
 
-// symbol: ?startBuild@sim@@YA?AUBuildIntent@1@AEAVSimulatedPlayer@@AEAVBlockSource@@H@Z
 MCAPI struct sim::BuildIntent startBuild(class SimulatedPlayer&, class BlockSource&, int);
 // NOLINTEND
 

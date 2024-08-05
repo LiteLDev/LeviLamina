@@ -27,50 +27,48 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CakeBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~CakeBlock() = default;
 
-    // vIndex: 11, symbol: ?getVisualShape@CakeBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
+    // vIndex: 11
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
 
-    // vIndex: 62, symbol: ?checkIsPathable@CakeBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
+    // vIndex: 62
     virtual bool
     checkIsPathable(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
 
-    // vIndex: 85, symbol: ?mayPlace@CakeBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
+    // vIndex: 85
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar face) const;
 
-    // vIndex: 93, symbol: ?neighborChanged@CakeBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 93
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@CakeBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 111, symbol: ?hasComparatorSignal@CakeBlock@@UEBA_NXZ
+    // vIndex: 111
     virtual bool hasComparatorSignal() const;
 
-    // vIndex: 112, symbol: ?getComparatorSignal@CakeBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
+    // vIndex: 112
     virtual int
     getComparatorSignal(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
         const;
 
-    // vIndex: 129, symbol: ?getVariant@CakeBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 148, symbol: ?tick@CakeBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
-    // vIndex: 152, symbol: ?use@CakeBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar) const;
 
-    // vIndex: 154, symbol: ?canSurvive@CakeBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 154
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ??0CakeBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI CakeBlock(std::string const& nameId, int id);
 
-    // symbol: ?removeCakeSlice@CakeBlock@@SAXAEAVPlayer@@AEAVBlockSource@@AEBVBlockPos@@PEBVBlock@@@Z
     MCAPI static void
     removeCakeSlice(class Player& player, class BlockSource& region, class BlockPos const& pos, class Block const*);
 

@@ -26,22 +26,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LeadItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~LeadItem() = default;
 
-    // vIndex: 118, symbol:
-    // ?_useOn@LeadItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+    // vIndex: 118
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
         const;
 
-    // symbol: ??0LeadItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI LeadItem(std::string const& name, int id);
 
-    // symbol: ?bindPlayerMobs@LeadItem@@SA_NAEAVActor@@HHHPEAVItemInstance@@@Z
     MCAPI static bool bindPlayerMobs(class Actor&, int x, int y, int z, class ItemInstance* itemUsed);
 
-    // symbol: ?canBindPlayerMobs@LeadItem@@SA_NAEBVActor@@AEBVBlockPos@@@Z
     MCAPI static bool canBindPlayerMobs(class Actor const& entity, class BlockPos const& blockPos);
 
     // NOLINTEND

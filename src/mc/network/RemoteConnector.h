@@ -15,11 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1RemoteConnector@@UEAA@XZ
     MCVAPI ~RemoteConnector();
 
-    // symbol:
-    // ??0RemoteConnector@@QEAA@AEAUConnectionCallbacks@Connector@@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
     MCAPI
     RemoteConnector(struct Connector::ConnectionCallbacks&, class Bedrock::NonOwnerPointer<class AppPlatform> const&);
 

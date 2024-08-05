@@ -11,10 +11,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LevelDbLogger@@UEAA@XZ
+    // vIndex: 0
     virtual ~LevelDbLogger() = default;
 
-    // vIndex: 1, symbol: ?Logv@LevelDbLogger@@EEAAXPEBDPEAD@Z
+    // vIndex: 1
     virtual void Logv(char const*, char*);
 
     // NOLINTEND

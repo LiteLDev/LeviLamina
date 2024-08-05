@@ -14,16 +14,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1AgentLookControl@@UEAA@XZ
+    // vIndex: 0
     virtual ~AgentLookControl() = default;
 
-    // vIndex: 1, symbol: ?initializeInternal@AgentLookControl@@UEAAXAEAVMob@@@Z
+    // vIndex: 1
     virtual void initializeInternal(class Mob& mob);
 
-    // vIndex: 2, symbol: ?tick@AgentLookControl@@UEAAXAEAVMob@@@Z
+    // vIndex: 2
     virtual void tick(class Mob& mob);
 
-    // symbol: ?sBaseYMax@AgentLookControl@@2MA
     MCAPI static float sBaseYMax;
 
     // NOLINTEND

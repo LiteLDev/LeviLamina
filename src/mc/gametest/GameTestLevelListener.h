@@ -19,13 +19,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?onEvent@GameTestLevelListener@@UEAA?AW4EventResult@@AEBULevelNotificationEvent@@@Z
     MCVAPI ::EventResult onEvent(struct LevelNotificationEvent const& event);
 
-    // symbol: ?onLevelTickEnd@GameTestLevelListener@@UEAAXXZ
     MCVAPI void onLevelTickEnd();
 
-    // symbol: ??0GameTestLevelListener@@QEAA@AEAVGameTestTicker@gametest@@@Z
     MCAPI explicit GameTestLevelListener(class gametest::GameTestTicker&);
 
     // NOLINTEND

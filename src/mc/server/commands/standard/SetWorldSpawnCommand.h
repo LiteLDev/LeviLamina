@@ -14,13 +14,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SetWorldSpawnCommand@@UEAA@XZ
+    // vIndex: 0
     virtual ~SetWorldSpawnCommand() = default;
 
-    // vIndex: 2, symbol: ?execute@SetWorldSpawnCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+    // vIndex: 2
     virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    // symbol: ?setup@SetWorldSpawnCommand@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry& registry);
 
     // NOLINTEND

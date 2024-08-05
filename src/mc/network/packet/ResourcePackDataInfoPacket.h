@@ -25,28 +25,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ResourcePackDataInfoPacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~ResourcePackDataInfoPacket();
 
-    // vIndex: 1, symbol: ?getId@ResourcePackDataInfoPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@ResourcePackDataInfoPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@ResourcePackDataInfoPacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 8, symbol:
-    // ?_read@ResourcePackDataInfoPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0ResourcePackDataInfoPacket@@QEAA@XZ
     MCAPI ResourcePackDataInfoPacket();
 
-    // symbol:
-    // ??0ResourcePackDataInfoPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@IH_K0_NW4PackType@@@Z
     MCAPI ResourcePackDataInfoPacket(
         std::string const& name,
         uint               chunkSize,

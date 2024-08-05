@@ -27,17 +27,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1StructureVoidBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~StructureVoidBlock() = default;
 
-    // vIndex: 5, symbol:
-    // ?getCollisionShape@StructureVoidBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 5
     virtual class AABB
     getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 7, symbol:
-    // ?addCollisionShapes@StructureVoidBlock@@UEBA_NAEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 7
     virtual bool addCollisionShapes(
         class Block const&                                         block,
         class IConstBlockSource const&                             region,
@@ -47,18 +45,17 @@ public:
         class optional_ref<class GetCollisionShapeInterface const> entity
     ) const;
 
-    // vIndex: 14, symbol: ?isObstructingChests@StructureVoidBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 14
     virtual bool
     isObstructingChests(class BlockSource& region, class BlockPos const& pos, class Block const& thisBlock) const;
 
-    // vIndex: 62, symbol: ?checkIsPathable@StructureVoidBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
+    // vIndex: 62
     virtual bool
     checkIsPathable(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
 
-    // vIndex: 78, symbol: ?canRenderSelectionOverlay@StructureVoidBlock@@UEBA_NW4BlockRenderLayer@@@Z
+    // vIndex: 78
     virtual bool canRenderSelectionOverlay(::BlockRenderLayer) const;
 
-    // symbol: ??0StructureVoidBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI StructureVoidBlock(std::string const& nameId, int id);
 
     // NOLINTEND

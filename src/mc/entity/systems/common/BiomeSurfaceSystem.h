@@ -7,7 +7,6 @@
 
 namespace BiomeSurfaceSystem {
 // NOLINTBEGIN
-// symbol: ?buildSurfaceAt@BiomeSurfaceSystem@@YAXAEBUBuildParameters@ISurfaceBuilder@@@Z
 MCAPI void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const& parameters);
 // NOLINTEND
 

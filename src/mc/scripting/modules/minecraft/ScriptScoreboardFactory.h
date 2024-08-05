@@ -23,8 +23,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?getHandle@ScriptScoreboardFactory@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptScoreboard@ScriptModuleMinecraft@@@Scripting@@AEAVWeakLifetimeScope@4@AEAVLevel@@@Z
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboard>
     getHandle(class Scripting::WeakLifetimeScope&, class Level&);
 

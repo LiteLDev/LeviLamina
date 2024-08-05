@@ -12,7 +12,6 @@ struct MolangMemberVariable {
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1MolangMemberVariable@@QEAA@XZ
     MCAPI ~MolangMemberVariable();
 
     // NOLINTEND

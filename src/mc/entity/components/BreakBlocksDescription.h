@@ -13,16 +13,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ?getJsonName@BreakBlocksDescription@@UEBAPEBDXZ
+    // vIndex: 0
     virtual char const* getJsonName() const;
 
-    // vIndex: 1, symbol: ??1BreakBlocksDescription@@UEAA@XZ
+    // vIndex: 1
     virtual ~BreakBlocksDescription();
 
-    // vIndex: 2, symbol: ?deserializeData@BreakBlocksDescription@@UEAAXUDeserializeDataParams@@@Z
+    // vIndex: 2
     virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
-    // symbol: ??0BreakBlocksDescription@@QEAA@XZ
     MCAPI BreakBlocksDescription();
 
     // NOLINTEND

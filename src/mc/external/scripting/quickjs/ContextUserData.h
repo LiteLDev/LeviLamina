@@ -29,8 +29,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0ContextUserData@QuickJS@Scripting@@QEAA@UContextId@2@VWeakLifetimeScope@2@AEAVClassRegistry@12@AEAUResolvedTypes@12@AEAVScriptObjectFactory@2@AEAVObjectInspector@12@PEAVIPrinter@2@AEBV?$vector@UModuleBinding@Scripting@@V?$allocator@UModuleBinding@Scripting@@@std@@@std@@UContextConfig@2@@Z
     MCAPI ContextUserData(
         struct Scripting::ContextId,
         class Scripting::WeakLifetimeScope,
@@ -43,19 +41,13 @@ public:
         struct Scripting::ContextConfig
     );
 
-    // symbol: ?PopParseContext@ContextUserData@QuickJS@Scripting@@QEAAXXZ
     MCAPI void PopParseContext();
 
-    // symbol:
-    // ?PushParseContext@ContextUserData@QuickJS@Scripting@@QEAAXW4ParseContext@23@AEBVmeta_type@entt@@V?$variant@V?$basic_string_view@DU?$char_traits@D@std@@@std@@I@std@@@Z
     MCAPI void
     PushParseContext(::Scripting::QuickJS::ParseContext, entt::meta_type const&, std::variant<std::string_view, uint>);
 
-    // symbol: ?ResetParseContext@ContextUserData@QuickJS@Scripting@@QEAAXXZ
     MCAPI void ResetParseContext();
 
-    // symbol:
-    // ?getParseContextErrorMessage@ContextUserData@QuickJS@Scripting@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getParseContextErrorMessage();
 
     // NOLINTEND

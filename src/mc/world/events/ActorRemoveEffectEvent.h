@@ -10,10 +10,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ActorRemoveEffectEvent@@QEAA@AEBU0@@Z
     MCAPI ActorRemoveEffectEvent(struct ActorRemoveEffectEvent const&);
 
-    // symbol: ??1ActorRemoveEffectEvent@@QEAA@XZ
     MCAPI ~ActorRemoveEffectEvent();
 
     // NOLINTEND

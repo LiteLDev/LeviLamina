@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?post@GameEventDispatcher@@QEAAXAEAVBlockSource@@PEAVActor@@AEBVGameEvent@@AEBVBlockPos@@PEBVBlock@@@Z
     MCAPI void post(
         class BlockSource& region,
         class Actor*       source,
@@ -20,7 +19,6 @@ public:
         class Block const*    affectedBlock
     );
 
-    // symbol: ?post@GameEventDispatcher@@QEAAXAEAVBlockSource@@PEAVActor@@AEBVGameEvent@@AEBVVec3@@PEBVBlock@@@Z
     MCAPI void post(
         class BlockSource& region,
         class Actor*       source,

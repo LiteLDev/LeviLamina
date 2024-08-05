@@ -31,7 +31,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1PausedPacket@NetworkConnection@@QEAA@XZ
         MCAPI ~PausedPacket();
 
         // NOLINTEND
@@ -60,8 +59,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0NetworkConnection@@QEAA@AEBVNetworkIdentifier@@V?$shared_ptr@VNetworkPeer@@@std@@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@3@_NV?$NonOwnerPointer@VIPacketObserver@@@Bedrock@@AEAVScheduler@@33@Z
     MCAPI NetworkConnection(
         class NetworkIdentifier const&,
         std::shared_ptr<class NetworkPeer>,
@@ -73,12 +70,9 @@ public:
         bool
     );
 
-    // symbol:
-    // ?receivePacket@NetworkConnection@@QEAA?AW4DataStatus@NetworkPeer@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@5@@Z
     MCAPI ::NetworkPeer::DataStatus
     receivePacket(std::string&, std::shared_ptr<std::chrono::steady_clock::time_point> const&);
 
-    // symbol: ??1NetworkConnection@@QEAA@XZ
     MCAPI ~NetworkConnection();
 
     // NOLINTEND

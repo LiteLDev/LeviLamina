@@ -26,21 +26,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SaddleItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~SaddleItem() = default;
 
-    // vIndex: 74, symbol: ?dispense@SaddleItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 74
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar) const;
 
-    // symbol: ??0SaddleItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z
     MCAPI SaddleItem(std::string const& nameId, short id);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_tryEquipSaddleViaComponents@SaddleItem@@CA_NAEAVActor@@AEBVItemStack@@@Z
     MCAPI static bool _tryEquipSaddleViaComponents(class Actor& actor, class ItemStack const&);
 
     // NOLINTEND

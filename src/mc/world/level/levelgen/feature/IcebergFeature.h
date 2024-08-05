@@ -14,20 +14,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1IcebergFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~IcebergFeature() = default;
 
-    // vIndex: 3, symbol: ?place@IcebergFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 3
     virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_isIcebergBlock@IcebergFeature@@AEBA_NAEBVBlock@@@Z
     MCAPI bool _isIcebergBlock(class Block const& block) const;
 
-    // symbol: ?carve@IcebergFeature@@AEBAXHHAEBVBlockPos@@AEAVBlockSource@@_NM0HH@Z
     MCAPI void carve(
         int                   radius,
         int                   yOff,
@@ -40,8 +38,6 @@ public:
         int                   ellipseC
     ) const;
 
-    // symbol:
-    // ?generateIcebergBlock@IcebergFeature@@AEBAXAEAVBlockSource@@AEAVRandom@@AEBVBlockPos@@HHHHHH_N3MHAEBVBlock@@@Z
     MCAPI void generateIcebergBlock(
         class BlockSource&    region,
         class Random&         random,
@@ -59,10 +55,8 @@ public:
         class Block const&    blockToPlace
     ) const;
 
-    // symbol: ?heightDependentRadiusRound@IcebergFeature@@AEBAHAEAVRandom@@HHH@Z
     MCAPI int heightDependentRadiusRound(class Random& random, int yOff, int height, int width) const;
 
-    // symbol: ?setIcebergBlock@IcebergFeature@@AEBAXAEBVBlockPos@@AEAVBlockSource@@AEAVRandom@@HH_N3AEBVBlock@@@Z
     MCAPI void setIcebergBlock(
         class BlockPos const& pos,
         class BlockSource&    region,
@@ -74,7 +68,6 @@ public:
         class Block const&    blockToPlace
     ) const;
 
-    // symbol: ?signedDistanceEllipse@IcebergFeature@@AEBAMHHAEBVBlockPos@@HHM@Z
     MCAPI float signedDistanceEllipse(int xo, int zo, class BlockPos const& origin, int a, int c, float angle) const;
 
     // NOLINTEND

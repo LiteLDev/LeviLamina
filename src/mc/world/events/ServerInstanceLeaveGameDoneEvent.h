@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ServerInstanceLeaveGameDoneEvent@@QEAA@XZ
     MCAPI ~ServerInstanceLeaveGameDoneEvent();
 
     // NOLINTEND

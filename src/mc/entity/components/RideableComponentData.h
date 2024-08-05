@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1RideableComponentData@@QEAA@XZ
     MCAPI ~RideableComponentData();
 
     // NOLINTEND

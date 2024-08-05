@@ -8,10 +8,10 @@
 class NetherBrightnessRamp : public ::DimensionBrightnessRamp {
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1NetherBrightnessRamp@@UEAA@XZ
+    // vIndex: 0
     virtual ~NetherBrightnessRamp() = default;
 
-    // vIndex: 2, symbol: ?getBaseAmbientValue@NetherBrightnessRamp@@UEBAMXZ
+    // vIndex: 2
     virtual float getBaseAmbientValue() const;
 
     // NOLINTEND

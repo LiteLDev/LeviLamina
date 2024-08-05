@@ -22,14 +22,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getBoundingSize@ScriptBiomeSearchOptions@ScriptModuleMinecraft@@QEBA?AVVec3@@XZ
     MCAPI class Vec3 getBoundingSize() const;
 
-    // symbol: ?validate@ScriptBiomeSearchOptions@ScriptModuleMinecraft@@QEBA?AV?$Result@X$$V@Scripting@@XZ
     MCAPI class Scripting::Result<void> validate() const;
 
-    // symbol:
-    // ?bind@ScriptBiomeSearchOptions@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@UScriptBiomeSearchOptions@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptBiomeSearchOptions>
     bind();
 

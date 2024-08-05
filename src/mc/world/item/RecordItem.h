@@ -27,26 +27,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1RecordItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~RecordItem() = default;
 
-    // vIndex: 3, symbol:
-    // ?setDescriptionId@RecordItem@@UEAAAEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 3
     virtual class RecordItem& setDescriptionId(std::string const&);
 
-    // vIndex: 83, symbol:
-    // ?buildDescriptionId@RecordItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+    // vIndex: 83
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 103, symbol:
-    // ?setIconInfo@RecordItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+    // vIndex: 103
     virtual class Item& setIconInfo(std::string const&, int);
 
-    // vIndex: 104, symbol: ?getIconInfo@RecordItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
+    // vIndex: 104
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
 
-    // symbol:
-    // ??0RecordItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEAUReflectionCtx@cereal@@W4LevelSoundEvent@Legacy@Puv@@@Z
     MCAPI RecordItem(std::string const&, int, struct cereal::ReflectionCtx&, ::Puv::Legacy::LevelSoundEvent);
 
     // NOLINTEND

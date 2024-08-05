@@ -28,25 +28,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BirchLeavesBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~BirchLeavesBlock() = default;
 
-    // vIndex: 122, symbol: ?getColor@BirchLeavesBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 122
     virtual int getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
 
-    // vIndex: 129, symbol: ?getVariant@BirchLeavesBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const&) const;
 
-    // vIndex: 156, symbol:
-    // ?getRenderLayer@BirchLeavesBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 156
     virtual ::BlockRenderLayer getRenderLayer(class Block const&, class BlockSource&, class BlockPos const&) const;
 
-    // vIndex: 160, symbol:
-    // ?getMapColor@BirchLeavesBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 160
     virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const&) const;
 
-    // symbol:
-    // ??0BirchLeavesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@$$CBVBlockLegacy@@@@@Z
     MCAPI BirchLeavesBlock(std::string const&, int, class WeakPtr<class BlockLegacy const>);
 
     // NOLINTEND

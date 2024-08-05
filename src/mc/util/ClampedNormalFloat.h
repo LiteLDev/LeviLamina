@@ -18,10 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?generateNext@ClampedNormalFloat@ValueProviders@@QEBAMAEAVRandom@@@Z
     MCAPI float generateNext(class Random& random) const;
 
-    // symbol: ?generateNext@ClampedNormalFloat@ValueProviders@@SAMAEAVRandom@@MMMM@Z
     MCAPI static float generateNext(class Random& random, float, float, float min, float max);
 
     // NOLINTEND

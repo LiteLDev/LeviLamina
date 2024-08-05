@@ -16,20 +16,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScreenHandlerLabTable@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScreenHandlerLabTable() = default;
 
-    // vIndex: 1, symbol:
-    // ?handleAction@ScreenHandlerLabTable@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestAction@@@Z
+    // vIndex: 1
     virtual ::ItemStackNetResult handleAction(class ItemStackRequestAction const& requestAction);
 
-    // vIndex: 2, symbol: ?endRequest@ScreenHandlerLabTable@@MEAA?AW4ItemStackNetResult@@XZ
+    // vIndex: 2
     virtual ::ItemStackNetResult endRequest();
 
-    // vIndex: 4, symbol: ?postRequest@ScreenHandlerLabTable@@MEAAX_N@Z
+    // vIndex: 4
     virtual void postRequest(bool wasSuccess);
 
-    // symbol: ??0ScreenHandlerLabTable@@QEAA@AEBVContainerScreenContext@@AEAVItemStackRequestActionHandler@@@Z
     MCAPI
     ScreenHandlerLabTable(class ContainerScreenContext const& screenContext, class ItemStackRequestActionHandler&);
 
@@ -37,8 +35,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_handleLabTableCombine@ScreenHandlerLabTable@@AEAA?AW4ItemStackNetResult@@AEBV?$ItemStackRequestActionDataless@$08@@@Z
     MCAPI ::ItemStackNetResult _handleLabTableCombine(class ItemStackRequestActionDataless<9> const&);
 
     // NOLINTEND

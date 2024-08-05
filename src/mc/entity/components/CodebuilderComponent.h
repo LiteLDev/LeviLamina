@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?resetCodeStatus@CodebuilderComponent@@QEAAXXZ
     MCAPI void resetCodeStatus();
 
     // NOLINTEND

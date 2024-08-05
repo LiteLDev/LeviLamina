@@ -20,19 +20,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ObjectHandle@Scripting@@QEAA@XZ
     MCAPI ObjectHandle();
 
-    // symbol: ??0ObjectHandle@Scripting@@QEAA@_K@Z
     MCAPI explicit ObjectHandle(uint64);
 
-    // symbol: ??0ObjectHandle@Scripting@@QEAA@W4ObjectHandleValue@1@UContextId@1@@Z
     MCAPI ObjectHandle(::Scripting::ObjectHandleValue, struct Scripting::ContextId);
 
-    // symbol: ?combine@ObjectHandle@Scripting@@QEBA_KXZ
     MCAPI uint64 combine() const;
 
-    // symbol: ?empty@ObjectHandle@Scripting@@QEBA_NXZ
     MCAPI bool empty() const;
 
     // NOLINTEND

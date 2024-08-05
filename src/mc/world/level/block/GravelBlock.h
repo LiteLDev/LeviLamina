@@ -27,33 +27,30 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1GravelBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~GravelBlock() = default;
 
-    // vIndex: 48, symbol: ?canBeOriginalSurface@GravelBlock@@UEBA_NXZ
+    // vIndex: 48
     virtual bool canBeOriginalSurface() const;
 
-    // vIndex: 80, symbol:
-    // ?onFertilized@GravelBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
+    // vIndex: 80
     virtual bool
     onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, ::FertilizerType fType)
         const;
 
-    // vIndex: 81, symbol: ?mayConsumeFertilizer@GravelBlock@@UEBA_NAEAVBlockSource@@@Z
+    // vIndex: 81
     virtual bool mayConsumeFertilizer(class BlockSource& region) const;
 
-    // vIndex: 82, symbol: ?canBeFertilized@GravelBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 82
     virtual bool
     canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
 
-    // vIndex: 163, symbol: ?getDustColor@GravelBlock@@UEBA?AVColor@mce@@AEBVBlock@@@Z
+    // vIndex: 163
     virtual class mce::Color getDustColor(class Block const& block) const;
 
-    // vIndex: 164, symbol:
-    // ?getDustParticleName@GravelBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
+    // vIndex: 164
     virtual std::string getDustParticleName(class Block const&) const;
 
-    // symbol: ??0GravelBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI GravelBlock(std::string const& nameId, int type);
 
     // NOLINTEND

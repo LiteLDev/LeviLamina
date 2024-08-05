@@ -19,26 +19,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SoulSpeedEnchant@@UEAA@XZ
+    // vIndex: 0
     virtual ~SoulSpeedEnchant() = default;
 
-    // vIndex: 2, symbol: ?getMinCost@SoulSpeedEnchant@@UEBAHH@Z
+    // vIndex: 2
     virtual int getMinCost(int level) const;
 
-    // vIndex: 3, symbol: ?getMaxCost@SoulSpeedEnchant@@UEBAHH@Z
+    // vIndex: 3
     virtual int getMaxCost(int level) const;
 
-    // vIndex: 5, symbol: ?getMaxLevel@SoulSpeedEnchant@@UEBAHXZ
+    // vIndex: 5
     virtual int getMaxLevel() const;
 
-    // vIndex: 14, symbol: ?isTreasureOnly@SoulSpeedEnchant@@UEBA_NXZ
+    // vIndex: 14
     virtual bool isTreasureOnly() const;
 
-    // vIndex: 15, symbol: ?isDiscoverable@SoulSpeedEnchant@@UEBA_NXZ
+    // vIndex: 15
     virtual bool isDiscoverable() const;
 
-    // symbol:
-    // ??0SoulSpeedEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_view@DU?$char_traits@D@std@@@std@@2HH@Z
     MCAPI SoulSpeedEnchant(
         ::Enchant::Type      type,
         ::Enchant::Frequency frequency,
@@ -48,16 +46,12 @@ public:
         int                  secondarySlots
     );
 
-    // symbol: ?getLevel@SoulSpeedEnchant@@SAHAEBVActor@@@Z
     MCAPI static int getLevel(class Actor const& entity);
 
-    // symbol: ?getSpeedBoost@SoulSpeedEnchant@@SAMH@Z
     MCAPI static float getSpeedBoost(int level);
 
-    // symbol: ?shouldSpawnParticles@SoulSpeedEnchant@@SA_NAEBVActor@@@Z
     MCAPI static bool shouldSpawnParticles(class Actor const& entity);
 
-    // symbol: ?SOUL_SPEED_BOOST_UUID@SoulSpeedEnchant@@2VUUID@mce@@B
     MCAPI static class mce::UUID const SOUL_SPEED_BOOST_UUID;
 
     // NOLINTEND

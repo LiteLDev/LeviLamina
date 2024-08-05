@@ -20,31 +20,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ResourcePackClientResponsePacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~ResourcePackClientResponsePacket() = default;
 
-    // vIndex: 1, symbol: ?getId@ResourcePackClientResponsePacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@ResourcePackClientResponsePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@ResourcePackClientResponsePacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 8, symbol:
-    // ?_read@ResourcePackClientResponsePacket@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0ResourcePackClientResponsePacket@@QEAA@XZ
     MCAPI ResourcePackClientResponsePacket();
 
-    // symbol:
-    // ?getDownloadingPacks@ResourcePackClientResponsePacket@@QEBAAEBV?$set@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
     MCAPI std::set<std::string> const& getDownloadingPacks() const;
 
-    // symbol: ?isResponse@ResourcePackClientResponsePacket@@QEBA_NW4ResourcePackResponse@@@Z
     MCAPI bool isResponse(::ResourcePackResponse haveThis) const;
 
     // NOLINTEND

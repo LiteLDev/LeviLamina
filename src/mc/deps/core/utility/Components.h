@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1Components@Url@Util@@QEAA@XZ
     MCAPI ~Components();
 
     // NOLINTEND

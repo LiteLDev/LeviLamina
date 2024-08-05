@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1BlockPermutationDescription@@QEAA@XZ
     MCAPI ~BlockPermutationDescription();
 
     // NOLINTEND

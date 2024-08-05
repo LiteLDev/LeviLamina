@@ -27,23 +27,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MinecartItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~MinecartItem() = default;
 
-    // vIndex: 44, symbol: ?isDestructive@MinecartItem@@UEBA_NH@Z
+    // vIndex: 44
     virtual bool isDestructive(int) const;
 
-    // vIndex: 74, symbol: ?dispense@MinecartItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 74
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
-    // vIndex: 118, symbol:
-    // ?_useOn@MinecartItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+    // vIndex: 118
     virtual class InteractionResult
     _useOn(class ItemStack& item, class Actor& entity, class BlockPos pos, uchar, class Vec3 const&) const;
 
-    // symbol:
-    // ??0MinecartItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4MinecartType@@@Z
     MCAPI MinecartItem(std::string const& name, int id, ::MinecartType type);
 
     // NOLINTEND

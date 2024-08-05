@@ -14,36 +14,34 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1PulseCapacitor@@UEAA@XZ
+    // vIndex: 0
     virtual ~PulseCapacitor() = default;
 
-    // vIndex: 1, symbol: ?getStrength@PulseCapacitor@@UEBAHXZ
+    // vIndex: 1
     virtual int getStrength() const;
 
-    // vIndex: 3, symbol: ?setStrength@PulseCapacitor@@UEAAXH@Z
+    // vIndex: 3
     virtual void setStrength(int strength);
 
-    // vIndex: 6, symbol: ?canConsumePowerAnyDirection@PulseCapacitor@@UEBA_NXZ
+    // vIndex: 6
     virtual bool canConsumePowerAnyDirection() const;
 
-    // vIndex: 7, symbol: ?canConsumerPower@PulseCapacitor@@UEBA_NXZ
+    // vIndex: 7
     virtual bool canConsumerPower() const;
 
-    // vIndex: 12, symbol:
-    // ?allowConnection@PulseCapacitor@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
+    // vIndex: 12
     virtual bool
     allowConnection(class CircuitSceneGraph& graph, class CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
-    // vIndex: 14, symbol: ?evaluate@PulseCapacitor@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
+    // vIndex: 14
     virtual bool evaluate(class CircuitSystem& system, class BlockPos const& pos);
 
-    // vIndex: 23, symbol: ?getCircuitComponentType@PulseCapacitor@@UEBA?AW4CircuitComponentType@@XZ
+    // vIndex: 23
     virtual ::CircuitComponentType getCircuitComponentType() const;
 
-    // vIndex: 25, symbol: ?getPoweroutDirection@PulseCapacitor@@UEBAEXZ
+    // vIndex: 25
     virtual uchar getPoweroutDirection() const;
 
-    // symbol: ??0PulseCapacitor@@QEAA@XZ
     MCAPI PulseCapacitor();
 
     // NOLINTEND

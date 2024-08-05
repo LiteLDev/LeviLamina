@@ -16,16 +16,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1RakWebSocketClient@@UEAA@XZ
+    // vIndex: 0
     virtual ~RakWebSocketClient();
 
-    // vIndex: 8, symbol: ?_updateState@RakWebSocketClient@@MEAAXXZ
+    // vIndex: 8
     virtual void _updateState();
 
-    // vIndex: 9, symbol: ?_genMaskingKey@RakWebSocketClient@@MEBAIXZ
+    // vIndex: 9
     virtual uint _genMaskingKey() const;
 
-    // symbol: ??0RakWebSocketClient@@QEAA@V?$unique_ptr@VTcpProxy@@U?$default_delete@VTcpProxy@@@std@@@std@@@Z
     MCAPI explicit RakWebSocketClient(std::unique_ptr<class TcpProxy> proxy);
 
     // NOLINTEND

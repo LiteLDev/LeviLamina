@@ -33,7 +33,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0CircuitTrackingInfo@@QEAA@V?$not_null@PEAVBaseCircuitComponent@@@gsl@@AEBVBlockPos@@H@Z
     MCAPI CircuitTrackingInfo(gsl::not_null<class BaseCircuitComponent*>, class BlockPos const&, int);
 
     // NOLINTEND

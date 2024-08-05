@@ -23,7 +23,6 @@ public:
     std::chrono::steady_clock::time_point startAtTime;      // this+0x20
 public:
     // NOLINTBEGIN
-    // symbol: ?NoAffinity@TaskStartInfoBase@@2Vid@thread@std@@B
     MCAPI static std::thread::id const NoAffinity;
 
     // NOLINTEND

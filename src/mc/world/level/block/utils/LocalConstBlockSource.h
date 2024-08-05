@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1LocalConstBlockSource@@QEAA@XZ
     MCAPI ~LocalConstBlockSource();
 
     // NOLINTEND

@@ -12,26 +12,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SidePoweredComponent@@UEAA@XZ
+    // vIndex: 0
     virtual ~SidePoweredComponent();
 
-    // vIndex: 6, symbol: ?canConsumePowerAnyDirection@SidePoweredComponent@@UEBA_NXZ
+    // vIndex: 6
     virtual bool canConsumePowerAnyDirection() const;
 
-    // vIndex: 7, symbol: ?canConsumerPower@SidePoweredComponent@@UEBA_NXZ
+    // vIndex: 7
     virtual bool canConsumerPower() const;
 
-    // vIndex: 10, symbol: ?removeSource@SidePoweredComponent@@UEAAXAEBVBlockPos@@PEBVBaseCircuitComponent@@@Z
+    // vIndex: 10
     virtual void removeSource(class BlockPos const& posSource, class BaseCircuitComponent const* pComponent);
 
-    // vIndex: 12, symbol:
-    // ?allowConnection@SidePoweredComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
+    // vIndex: 12
     virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const& info, bool&);
 
-    // vIndex: 22, symbol: ?removeFromAnySourceList@SidePoweredComponent@@MEAAXPEBVBaseCircuitComponent@@@Z
+    // vIndex: 22
     virtual void removeFromAnySourceList(class BaseCircuitComponent const* component);
 
-    // vIndex: 25, symbol: ?getPoweroutDirection@SidePoweredComponent@@UEBAEXZ
+    // vIndex: 25
     virtual uchar getPoweroutDirection() const;
 
     // NOLINTEND

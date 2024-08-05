@@ -23,29 +23,26 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ActorServerCommandOrigin@@UEAA@XZ
+    // vIndex: 0
     virtual ~ActorServerCommandOrigin() = default;
 
-    // vIndex: 9, symbol: ?getPermissionsLevel@ActorServerCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
+    // vIndex: 9
     virtual ::CommandPermissionLevel getPermissionsLevel() const;
 
-    // vIndex: 10, symbol:
-    // ?clone@ActorServerCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
+    // vIndex: 10
     virtual std::unique_ptr<class CommandOrigin> clone() const;
 
-    // vIndex: 18, symbol: ?isSelectorExpansionAllowed@ActorServerCommandOrigin@@UEBA_NXZ
+    // vIndex: 18
     virtual bool isSelectorExpansionAllowed() const;
 
-    // vIndex: 23, symbol: ?getOriginType@ActorServerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
+    // vIndex: 23
     virtual ::CommandOriginType getOriginType() const;
 
-    // vIndex: 29, symbol: ?serialize@ActorServerCommandOrigin@@UEBA?AVCompoundTag@@XZ
+    // vIndex: 29
     virtual class CompoundTag serialize() const;
 
-    // symbol: ?getTargetOther@ActorServerCommandOrigin@@QEBA?AUActorUniqueID@@XZ
     MCAPI struct ActorUniqueID getTargetOther() const;
 
-    // symbol: ?setTargetOther@ActorServerCommandOrigin@@QEAAXUActorUniqueID@@@Z
     MCAPI void setTargetOther(struct ActorUniqueID);
 
     // NOLINTEND

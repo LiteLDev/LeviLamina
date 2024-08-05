@@ -15,17 +15,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1AddOceanTemperatureOperationNode@@UEAA@XZ
+    // vIndex: 0
     virtual ~AddOceanTemperatureOperationNode() = default;
 
-    // vIndex: 1, symbol: ?init@OperationNodeBase@OperationNodeDetails@@UEAAX_J@Z
+    // vIndex: 1
     virtual void init(int64 seed);
 
-    // vIndex: 2, symbol: __unk_vfn_2
+    // vIndex: 2
     virtual void __unk_vfn_2();
 
-    // vIndex: 3, symbol:
-    // ?_fillArea@AddOceanTemperatureOperationNode@@MEBAXAEAV?$WorkingData@W4BiomeTemperatureCategory@@D@OperationNodeDetails@@AEBVPos2d@@1@Z
+    // vIndex: 3
     virtual void _fillArea(
         class OperationNodeDetails::WorkingData<::BiomeTemperatureCategory, char>&,
         class Pos2d const& origin,

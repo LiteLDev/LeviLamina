@@ -25,19 +25,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1PoolElementStructureSection@worldgen@br@@UEAA@XZ
+    // vIndex: 0
     virtual ~PoolElementStructureSection() = default;
 
-    // vIndex: 1, symbol:
-    // ?appendJunctions@PoolElementStructureSection@worldgen@br@@UEAAXAEBVBoundingBox@@AEAV?$vector@UJigsawJunction@worldgen@br@@V?$allocator@UJigsawJunction@worldgen@br@@@std@@@std@@@Z
+    // vIndex: 1
     virtual void appendJunctions(class BoundingBox const&, std::vector<struct br::worldgen::JigsawJunction>&);
 
-    // vIndex: 2, symbol:
-    // ?appendRigid@PoolElementStructureSection@worldgen@br@@UEAAXW4Type@TerrainAdjustment@23@AEAV?$vector@URigid@worldgen@br@@V?$allocator@URigid@worldgen@br@@@std@@@std@@@Z
+    // vIndex: 2
     virtual void appendRigid(::br::worldgen::TerrainAdjustment::Type, std::vector<struct br::worldgen::Rigid>&);
 
-    // vIndex: 3, symbol:
-    // ?postProcess@PoolElementStructureSection@worldgen@br@@UEBA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+    // vIndex: 3
     virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&) const;
 
     // NOLINTEND

@@ -15,7 +15,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getDeliveryMode@GameEventListener@@UEBA?AW4DeliveryMode@1@XZ
     MCVAPI ::GameEventListener::DeliveryMode getDeliveryMode() const;
 
     // NOLINTEND

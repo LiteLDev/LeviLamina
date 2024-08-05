@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1NetworkAddress@@QEAA@XZ
     MCAPI ~NetworkAddress();
 
     // NOLINTEND

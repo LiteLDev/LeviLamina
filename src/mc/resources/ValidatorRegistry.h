@@ -37,7 +37,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1ValidatorRegistryValidators@ValidatorRegistry@@QEAA@XZ
         MCAPI ~ValidatorRegistryValidators();
 
         // NOLINTEND
@@ -51,18 +50,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ValidatorRegistry@@UEAA@XZ
+    // vIndex: 0
     virtual ~ValidatorRegistry() = default;
 
-    // symbol:
-    // ?findValidators@ValidatorRegistry@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVValidatorRegistryValidators@1@@Z
     MCAPI static bool findValidators(
         std::string const&                                    validatorName,
         class ValidatorRegistry::ValidatorRegistryValidators& validatorPair
     );
 
-    // symbol:
-    // ?registerValidators@ValidatorRegistry@@SAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@V?$function@$$A6A?AVContentTierIncompatibleReason@@AEBVPackInstance@@AEBVContentTierInfo@@@Z@3@V?$function@$$A6A?AVContentTierIncompatibleReason@@AEBUSubpackInfo@@AEBVContentTierInfo@@@Z@3@@Z
     MCAPI static void registerValidators(
         std::string_view validatorName,
         std::function<class ContentTierIncompatibleReason(class PackInstance const&, class ContentTierInfo const&)>
@@ -75,7 +70,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_get@ValidatorRegistry@@CA?AV?$NonOwnerPointer@VValidatorRegistry@@@Bedrock@@XZ
     MCAPI static class Bedrock::NonOwnerPointer<class ValidatorRegistry> _get();
 
     // NOLINTEND

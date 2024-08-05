@@ -14,14 +14,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ActorComponentFactory@@UEAA@XZ
+    // vIndex: 0
     virtual ~ActorComponentFactory() = default;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_initialize@ActorComponentFactory@@AEAAXAEBVExperiments@@@Z
     MCAPI void _initialize(class Experiments const& experiments);
 
     // NOLINTEND

@@ -43,7 +43,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ?tick@PlayerRideInLavaInOverworldAchievementTracker@Strider@@QEAAXAEAV2@@Z
         MCAPI void tick(class Strider&);
 
         // NOLINTEND
@@ -57,25 +56,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1Strider@@UEAA@XZ
+    // vIndex: 10
     virtual ~Strider() = default;
 
-    // vIndex: 26, symbol: ?normalTick@Strider@@MEAAXXZ
+    // vIndex: 26
     virtual void normalTick();
 
-    // vIndex: 134, symbol: ?getNextStep@Strider@@MEAAMM@Z
+    // vIndex: 134
     virtual float getNextStep(float);
 
-    // vIndex: 145, symbol: ?shouldTryMakeStepSound@Strider@@MEAA_NXZ
+    // vIndex: 145
     virtual bool shouldTryMakeStepSound();
 
-    // vIndex: 149, symbol: ?_playStepSound@Strider@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 149
     virtual void _playStepSound(class BlockPos const&, class Block const& onBlock);
 
-    // vIndex: 184, symbol: ?_getWalkTargetValue@Strider@@UEAAMAEBVBlockPos@@@Z
+    // vIndex: 184
     virtual float _getWalkTargetValue(class BlockPos const& pos);
 
-    // symbol: ??0Strider@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Strider(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

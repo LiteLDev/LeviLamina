@@ -24,7 +24,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1PlainData@SoundEventRequest@@QEAA@XZ
         MCAPI ~PlainData();
 
         // NOLINTEND
@@ -46,14 +45,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0SoundEventRequest@@QEAA@$$QEAU0@@Z
     MCAPI SoundEventRequest(struct SoundEventRequest&&);
 
-    // symbol: ??1SoundEventRequest@@QEAA@XZ
     MCAPI ~SoundEventRequest();
 
-    // symbol:
-    // ?tryPlaySound@SoundEventRequest@@SA?AV?$optional@USoundEventRequest@@@std@@V?$AutomaticID@VDimension@@H@@AEBUActorDataFlagComponent@@AEBUActorDefinitionIdentifier@@W4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@H@Z
     MCAPI static std::optional<struct SoundEventRequest> tryPlaySound(
         DimensionType                           dimension,
         struct ActorDataFlagComponent const&    actorData,

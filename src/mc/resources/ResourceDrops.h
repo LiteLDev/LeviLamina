@@ -14,7 +14,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ResourceDrops@@QEAA@XZ
     MCAPI ~ResourceDrops();
 
     // NOLINTEND

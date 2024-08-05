@@ -19,13 +19,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ServerTextSettings@@UEAA@XZ
+    // vIndex: 0
     virtual ~ServerTextSettings() = default;
 
-    // symbol: ??0ServerTextSettings@@QEAA@AEBV?$bitset@$02@std@@@Z
     MCAPI explicit ServerTextSettings(std::bitset<3> const&);
 
-    // symbol: ?getEnabledServerTextEvents@ServerTextSettings@@QEBAAEBV?$bitset@$02@std@@XZ
     MCAPI std::bitset<3> const& getEnabledServerTextEvents() const;
 
     // NOLINTEND

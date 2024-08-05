@@ -27,63 +27,58 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1GrassBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~GrassBlock() = default;
 
-    // vIndex: 48, symbol: ?canBeOriginalSurface@GrassBlock@@UEBA_NXZ
+    // vIndex: 48
     virtual bool canBeOriginalSurface() const;
 
-    // vIndex: 56, symbol: ?waterSpreadCausesSpawn@GrassBlock@@UEBA_NXZ
+    // vIndex: 56
     virtual bool waterSpreadCausesSpawn() const;
 
-    // vIndex: 80, symbol:
-    // ?onFertilized@GrassBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
+    // vIndex: 80
     virtual bool
     onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, ::FertilizerType fType)
         const;
 
-    // vIndex: 82, symbol: ?canBeFertilized@GrassBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 82
     virtual bool
     canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
 
-    // vIndex: 89, symbol: ?tryToTill@GrassBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@AEAVItemStack@@@Z
+    // vIndex: 89
     virtual bool
     tryToTill(class BlockSource& region, class BlockPos const& pos, class Actor& entity, class ItemStack& item) const;
 
-    // vIndex: 99, symbol: ?calcVariant@GrassBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVColor@mce@@@Z
+    // vIndex: 99
     virtual int
     calcVariant(class BlockSource& region, class BlockPos const& pos, class mce::Color const& baseColor) const;
 
-    // vIndex: 121, symbol: ?getColor@GrassBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 121
     virtual int getColor(class Block const& block) const;
 
-    // vIndex: 122, symbol: ?getColor@GrassBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 122
     virtual int getColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
-    // vIndex: 149, symbol: ?randomTick@GrassBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 149
     virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 152, symbol: ?use@GrassBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    // vIndex: 160, symbol: ?getMapColor@GrassBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 160
     virtual class mce::Color
     getMapColor(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
 
-    // symbol: ??0GrassBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI GrassBlock(std::string const& nameId, int id);
 
-    // symbol: ?fertilize@GrassBlock@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandomize@@@Z
     MCAPI bool fertilize(class BlockSource& region, class BlockPos const& pos, class Randomize& randomize) const;
 
-    // symbol: ?MIN_BRIGHTNESS@GrassBlock@@2UBrightness@@B
     MCAPI static struct Brightness const MIN_BRIGHTNESS;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_canBeGrass@GrassBlock@@AEBA_NAEBVBlockSource@@AEBVBlockPos@@@Z
     MCAPI bool _canBeGrass(class BlockSource const& region, class BlockPos const& pos) const;
 
     // NOLINTEND

@@ -22,21 +22,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1FastWriter@Json@@UEAA@XZ
+    // vIndex: 0
     virtual ~FastWriter();
 
-    // vIndex: 1, symbol:
-    // ?write@FastWriter@Json@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVValue@2@@Z
+    // vIndex: 1
     virtual std::string write(class Json::Value const&);
 
-    // symbol: ??0FastWriter@Json@@QEAA@XZ
     MCAPI FastWriter();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?writeValue@FastWriter@Json@@AEAAXAEBVValue@2@@Z
     MCAPI void writeValue(class Json::Value const& value);
 
     // NOLINTEND

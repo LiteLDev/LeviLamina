@@ -19,8 +19,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?buildSchema@ReflectProjectileDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VReflectProjectileDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
     buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ReflectProjectileDefinition>>&);
@@ -29,8 +27,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_addProjectileToReflect@ReflectProjectileDefinition@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void _addProjectileToReflect(std::string const&);
 
     // NOLINTEND

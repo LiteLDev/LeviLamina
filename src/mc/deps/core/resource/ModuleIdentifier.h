@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ModuleIdentifier@@QEAA@XZ
     MCAPI ~ModuleIdentifier();
 
     // NOLINTEND

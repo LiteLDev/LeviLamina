@@ -21,16 +21,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1GetItemDetailsCommand@AgentCommands@@UEAA@XZ
+    // vIndex: 0
     virtual ~GetItemDetailsCommand() = default;
 
-    // vIndex: 1, symbol: ?execute@GetItemDetailsCommand@AgentCommands@@UEAAXXZ
+    // vIndex: 1
     virtual void execute();
 
-    // vIndex: 2, symbol: ?isDone@GetItemDetailsCommand@AgentCommands@@UEAA_NXZ
+    // vIndex: 2
     virtual bool isDone();
 
-    // vIndex: 4, symbol: ?fireCommandDoneEvent@GetItemDetailsCommand@AgentCommands@@UEAAXXZ
+    // vIndex: 4
     virtual void fireCommandDoneEvent();
 
     // NOLINTEND

@@ -35,60 +35,54 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 4, symbol: ?reloadHardcoded@AbstractArrow@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 4
     virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 6, symbol:
-    // ?initializeComponents@AbstractArrow@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 6
     virtual void initializeComponents(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: ??1AbstractArrow@@UEAA@XZ
+    // vIndex: 10
     virtual ~AbstractArrow();
 
-    // vIndex: 24, symbol: ?lerpMotion@AbstractArrow@@UEAAXAEBVVec3@@@Z
+    // vIndex: 24
     virtual void lerpMotion(class Vec3 const& delta);
 
-    // vIndex: 38, symbol: ?getShadowRadius@AbstractArrow@@UEBAMXZ
+    // vIndex: 38
     virtual float getShadowRadius() const;
 
-    // vIndex: 42, symbol: ?playerTouch@AbstractArrow@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 42
     virtual void playerTouch(class Player& player);
 
-    // vIndex: 90, symbol: ?getSourceUniqueID@AbstractArrow@@MEBA?AUActorUniqueID@@XZ
+    // vIndex: 90
     virtual struct ActorUniqueID getSourceUniqueID() const;
 
-    // vIndex: 94, symbol: ?canChangeDimensionsUsingPortal@AbstractArrow@@UEBA_NXZ
+    // vIndex: 94
     virtual bool canChangeDimensionsUsingPortal() const;
 
-    // vIndex: 147, symbol: ?readAdditionalSaveData@AbstractArrow@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 148, symbol: ?addAdditionalSaveData@AbstractArrow@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 151, symbol: ?shoot@AbstractArrow@@UEAAXAEBVVec3@@MM0@Z
+    // vIndex: 151
     virtual void shoot(class Vec3 const& dir, float pow, float uncertainty, class Vec3 const& baseSpeed);
 
-    // vIndex: 152, symbol: ?_getPickupItem@Arrow@@MEBA?AVItemStack@@XZ
+    // vIndex: 152
     virtual class ItemStack _getPickupItem() const = 0;
 
-    // symbol: ??0AbstractArrow@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI AbstractArrow(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?setFavoredSlot@AbstractArrow@@QEAAXH@Z
     MCAPI void setFavoredSlot(int favoredSlot);
 
-    // symbol: ?setIsCreative@AbstractArrow@@QEAAX_N@Z
     MCAPI void setIsCreative(bool creativeOnly);
 
-    // symbol: ?setIsPlayerOwned@AbstractArrow@@QEAAX_N@Z
     MCAPI void setIsPlayerOwned(bool isPlayerOwned);
 
-    // symbol: ?spawnPlayerProjectile@AbstractArrow@@SAPEAVActor@@AEBUActorDefinitionIdentifier@@AEAVPlayer@@VVec3@@@Z
     MCAPI static class Actor*
     spawnPlayerProjectile(struct ActorDefinitionIdentifier const& id, class Player& player, class Vec3 aimDir);
 
@@ -96,7 +90,6 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?_canPickup@AbstractArrow@@IEBA_NAEBVPlayer@@@Z
     MCAPI bool _canPickup(class Player const& player) const;
 
     // NOLINTEND
