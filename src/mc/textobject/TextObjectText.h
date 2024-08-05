@@ -19,24 +19,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1TextObjectText@@UEAA@XZ
+    // vIndex: 0
     virtual ~TextObjectText() = default;
 
-    // vIndex: 1, symbol:
-    // ?asString@TextObjectText@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 1
     virtual std::string asString() const;
 
-    // vIndex: 2, symbol: ?asJsonValue@TextObjectText@@UEBA?AVValue@Json@@XZ
+    // vIndex: 2
     virtual class Json::Value asJsonValue() const;
 
-    // vIndex: 3, symbol: ?resolve@TextObjectText@@UEBA?AVValue@Json@@AEBUResolveData@@@Z
+    // vIndex: 3
     virtual class Json::Value resolve(struct ResolveData const&) const;
 
-    // symbol: ??0TextObjectText@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI explicit TextObjectText(std::string text);
 
-    // symbol:
-    // ?asJsonValue@TextObjectText@@SA?AVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI static class Json::Value asJsonValue(std::string const& textField);
 
     // NOLINTEND

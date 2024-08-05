@@ -17,41 +17,32 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MinecraftReportGameListener@@UEAA@XZ
+    // vIndex: 0
     virtual ~MinecraftReportGameListener() = default;
 
-    // vIndex: 1, symbol: ?onTestStructureLoaded@MinecraftReportGameListener@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
+    // vIndex: 1
     virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance&);
 
-    // vIndex: 2, symbol: ?onTestPassed@MinecraftReportGameListener@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
+    // vIndex: 2
     virtual void onTestPassed(class gametest::BaseGameTestInstance&);
 
-    // vIndex: 3, symbol: ?onTestFailed@MinecraftReportGameListener@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
+    // vIndex: 3
     virtual void onTestFailed(class gametest::BaseGameTestInstance&);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_generateErrorDescription@MinecraftReportGameListener@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUGameTestError@gametest@@@Z
     MCAPI std::string _generateErrorDescription(struct gametest::GameTestError const&) const;
 
-    // symbol: ?_reportFailure@MinecraftReportGameListener@@AEAAXAEBUGameTestError@gametest@@AEAVBlockSource@@@Z
     MCAPI void _reportFailure(struct gametest::GameTestError const& error, class BlockSource& region);
 
-    // symbol:
-    // ?_say@MinecraftReportGameListener@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
     MCAPI void _say(std::string const&, std::string const& text);
 
-    // symbol: ?_spawnBeacon@MinecraftReportGameListener@@AEAAXAEBVBlock@@@Z
     MCAPI void _spawnBeacon(class Block const&);
 
-    // symbol:
-    // ?_spawnLectern@MinecraftReportGameListener@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void _spawnLectern(std::string const& text);
 
-    // symbol: ?_visualizeFailedTest@MinecraftReportGameListener@@AEAAXAEBUGameTestError@gametest@@AEAVBlockSource@@@Z
     MCAPI void _visualizeFailedTest(struct gametest::GameTestError const& error, class BlockSource&);
 
     // NOLINTEND

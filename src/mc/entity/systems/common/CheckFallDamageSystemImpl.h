@@ -8,8 +8,6 @@
 
 namespace CheckFallDamageSystemImpl {
 // NOLINTBEGIN
-// symbol:
-// ?checkFallDamage@CheckFallDamageSystemImpl@@YAXAEAVActorOwnerComponent@@AEBUMoveRequestComponent@@V?$Optional@$$CBUOnGroundFlagComponent@@@@V?$Optional@$$CBV?$FlagComponent@UActorTickedFlag@@@@@@_N@Z
 MCAPI void checkFallDamage(
     class ActorOwnerComponent&,
     struct MoveRequestComponent const&,

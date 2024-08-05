@@ -40,39 +40,35 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 4, symbol: ?reloadHardcoded@Zombie@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 4
     virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: ??1Zombie@@UEAA@XZ
+    // vIndex: 10
     virtual ~Zombie();
 
-    // vIndex: 101, symbol: ?canPickupItem@Zombie@@UEBA_NAEBVItemStack@@@Z
+    // vIndex: 101
     virtual bool canPickupItem(class ItemStack const& item) const;
 
-    // vIndex: 160, symbol: ?checkSpawnRules@Zombie@@UEAA_N_N@Z
+    // vIndex: 160
     virtual bool checkSpawnRules(bool fromSpawner);
 
-    // vIndex: 168, symbol: ?getArmorValue@Zombie@@MEBAHXZ
+    // vIndex: 168
     virtual int getArmorValue() const;
 
-    // symbol: ??0Zombie@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Zombie(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?setZombieType@Zombie@@QEAAXW4ZombieType@1@@Z
     MCAPI void setZombieType(::Zombie::ZombieType type);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?SPAWN_BONUS_UUID@Zombie@@1VUUID@mce@@B
     MCAPI static class mce::UUID const SPAWN_BONUS_UUID;
 
-    // symbol: ?SPAWN_REINFORCEMENTS_CHANCE@Zombie@@1VAttribute@@B
     MCAPI static class Attribute const SPAWN_REINFORCEMENTS_CHANCE;
 
     // NOLINTEND

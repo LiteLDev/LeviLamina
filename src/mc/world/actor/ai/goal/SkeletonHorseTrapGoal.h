@@ -16,33 +16,29 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SkeletonHorseTrapGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~SkeletonHorseTrapGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@SkeletonHorseTrapGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 4, symbol: ?start@SkeletonHorseTrapGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 6, symbol: ?tick@SkeletonHorseTrapGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@SkeletonHorseTrapGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& debugInfo) const;
 
-    // symbol: ??0SkeletonHorseTrapGoal@@QEAA@AEAVHorse@@HM@Z
     MCAPI SkeletonHorseTrapGoal(class Horse& mob, int trapLifeTicks, float triggerDistance);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_createHorse@SkeletonHorseTrapGoal@@AEAAPEAVHorse@@AEBW4Difficulty@@@Z
     MCAPI class Horse* _createHorse(::Difficulty const& difficulty);
 
-    // symbol: ?_createSkeleton@SkeletonHorseTrapGoal@@AEAAPEAVSkeleton@@AEBW4Difficulty@@AEBVHorse@@@Z
     MCAPI class Skeleton* _createSkeleton(::Difficulty const& difficulty, class Horse const& otherHorse);
 
     // NOLINTEND

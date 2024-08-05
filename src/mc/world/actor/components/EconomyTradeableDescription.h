@@ -14,13 +14,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ?getJsonName@EconomyTradeableDescription@@UEBAPEBDXZ
+    // vIndex: 0
     virtual char const* getJsonName() const;
 
-    // vIndex: 1, symbol: ??1EconomyTradeableDescription@@UEAA@XZ
+    // vIndex: 1
     virtual ~EconomyTradeableDescription();
 
-    // vIndex: 2, symbol: ?deserializeData@EconomyTradeableDescription@@UEAAXUDeserializeDataParams@@@Z
+    // vIndex: 2
     virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
     // NOLINTEND

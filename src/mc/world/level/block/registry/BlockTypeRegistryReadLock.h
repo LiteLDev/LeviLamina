@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1BlockTypeRegistryReadLock@@QEAA@XZ
     MCAPI ~BlockTypeRegistryReadLock();
 
     // NOLINTEND

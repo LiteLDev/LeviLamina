@@ -15,32 +15,30 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1RandomStrollGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~RandomStrollGoal();
 
-    // vIndex: 1, symbol: ?canUse@RandomStrollGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@RandomStrollGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@RandomStrollGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@RandomStrollGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@RandomStrollGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@RandomStrollGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // vIndex: 10, symbol: ?_setWantedPosition@RandomStrollGoal@@MEAA_NXZ
+    // vIndex: 10
     virtual bool _setWantedPosition();
 
-    // symbol: ??0RandomStrollGoal@@QEAA@AEAVMob@@MHHH@Z
     MCAPI RandomStrollGoal(class Mob& mob, float speed, int xzDist, int yDist, int interval);
 
     // NOLINTEND

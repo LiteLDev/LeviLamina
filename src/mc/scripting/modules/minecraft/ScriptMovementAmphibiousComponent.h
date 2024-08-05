@@ -24,23 +24,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptMovementAmphibiousComponent@ScriptModuleMinecraft@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptMovementAmphibiousComponent() = default;
 
-    // vIndex: 1, symbol: ?_isValid@ScriptMovementAmphibiousComponent@ScriptModuleMinecraft@@MEBA_NXZ
+    // vIndex: 1
     virtual bool _isValid() const;
 
-    // symbol:
-    // ?bind@ScriptMovementAmphibiousComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptMovementAmphibiousComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMovementAmphibiousComponent>
     bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&);
 
-    // symbol:
-    // ?bindV010@ScriptMovementAmphibiousComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptMovementAmphibiousComponent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMovementAmphibiousComponent>
     bindV010();
 
-    // symbol: ?ComponentId@ScriptMovementAmphibiousComponent@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ComponentId;
 
     // NOLINTEND

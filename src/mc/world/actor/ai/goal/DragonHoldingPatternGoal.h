@@ -15,36 +15,33 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DragonHoldingPatternGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~DragonHoldingPatternGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@DragonHoldingPatternGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@DragonHoldingPatternGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@DragonHoldingPatternGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@DragonHoldingPatternGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@DragonHoldingPatternGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@DragonHoldingPatternGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0DragonHoldingPatternGoal@@QEAA@AEAVEnderDragon@@@Z
     MCAPI explicit DragonHoldingPatternGoal(class EnderDragon& mob);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?findNewTarget@DragonHoldingPatternGoal@@AEAAXXZ
     MCAPI void findNewTarget();
 
     // NOLINTEND

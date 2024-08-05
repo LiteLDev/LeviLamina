@@ -35,42 +35,37 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1EnderCrystal@@UEAA@XZ
+    // vIndex: 10
     virtual ~EnderCrystal() = default;
 
-    // vIndex: 26, symbol: ?normalTick@EnderCrystal@@UEAAXXZ
+    // vIndex: 26
     virtual void normalTick();
 
-    // vIndex: 38, symbol: ?getShadowRadius@EnderCrystal@@UEBAMXZ
+    // vIndex: 38
     virtual float getShadowRadius() const;
 
-    // vIndex: 69, symbol: ?isInvulnerableTo@EnderCrystal@@UEBA_NAEBVActorDamageSource@@@Z
+    // vIndex: 69
     virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
-    // vIndex: 146, symbol: ?_hurt@EnderCrystal@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 146
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 147, symbol: ?readAdditionalSaveData@EnderCrystal@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 148, symbol: ?addAdditionalSaveData@EnderCrystal@@UEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // symbol: ??0EnderCrystal@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI EnderCrystal(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?setBeamTarget@EnderCrystal@@QEAAXAEBVBlockPos@@@Z
     MCAPI void setBeamTarget(class BlockPos const& target);
 
-    // symbol:
-    // ?setCrystalDamagedCallback@EnderCrystal@@QEAAXV?$function@$$A6AXAEAVEnderCrystal@@AEBVActorDamageSource@@@Z@std@@@Z
     MCAPI void setCrystalDamagedCallback(std::function<void(class EnderCrystal&, class ActorDamageSource const&)>);
 
-    // symbol: ?HEAL_DISTANCE@EnderCrystal@@2MB
     MCAPI static float const HEAL_DISTANCE;
 
     // NOLINTEND

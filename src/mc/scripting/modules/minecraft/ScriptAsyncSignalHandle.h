@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ScriptAsyncSignalHandle@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptAsyncSignalHandle();
 
     // NOLINTEND

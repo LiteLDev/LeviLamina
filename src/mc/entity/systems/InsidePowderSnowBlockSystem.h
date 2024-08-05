@@ -4,10 +4,8 @@
 
 namespace InsidePowderSnowBlockSystem {
 // NOLINTBEGIN
-// symbol: ?createClientSideSpawnParticleSystem@InsidePowderSnowBlockSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createClientSideSpawnParticleSystem();
 
-// symbol: ?createServerSideClearFireSystem@InsidePowderSnowBlockSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createServerSideClearFireSystem();
 // NOLINTEND
 

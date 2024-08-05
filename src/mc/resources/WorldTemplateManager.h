@@ -23,25 +23,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1WorldTemplateManager@@UEAA@XZ
+    // vIndex: 0
     virtual ~WorldTemplateManager();
 
-    // vIndex: 1, symbol:
-    // ?findInstalledWorldTemplateByUUID@WorldTemplateManager@@UEBAPEBUWorldTemplateInfo@@AEBV?$vector@VUUID@mce@@V?$allocator@VUUID@mce@@@std@@@std@@@Z
+    // vIndex: 1
     virtual struct WorldTemplateInfo const*
     findInstalledWorldTemplateByUUID(std::vector<class mce::UUID> const& packUUIDs) const;
 
-    // vIndex: 2, symbol:
-    // ?registerModifiedCallback@WorldTemplateManager@@UEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXAEBU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@std@@@Z@std@@@Z
+    // vIndex: 2
     virtual class Bedrock::PubSub::Subscription
         registerModifiedCallback(std::function<void(std::pair<std::string, bool> const&)>);
 
-    // vIndex: 3, symbol:
-    // ?getLocalTemplates@WorldTemplateManager@@UEBAAEBV?$vector@V?$unique_ptr@UWorldTemplateInfo@@U?$default_delete@UWorldTemplateInfo@@@std@@@std@@V?$allocator@V?$unique_ptr@UWorldTemplateInfo@@U?$default_delete@UWorldTemplateInfo@@@std@@@std@@@2@@std@@XZ
+    // vIndex: 3
     virtual std::vector<std::unique_ptr<struct WorldTemplateInfo>> const& getLocalTemplates() const;
 
-    // symbol:
-    // ??0WorldTemplateManager@@QEAA@AEAVPackManifestFactory@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@AEAVPackSourceFactory@@AEBV?$not_null@V?$NonOwnerPointer@VFilePathManager@Core@@@Bedrock@@@3@_N@Z
     MCAPI WorldTemplateManager(
         class PackManifestFactory&                                          packManifestFactory,
         Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider,
@@ -50,25 +45,19 @@ public:
         bool                                                                initAsync
     );
 
-    // symbol: ?findInstalledWorldTemplate@WorldTemplateManager@@QEBAPEBUWorldTemplateInfo@@AEBUPackIdVersion@@@Z
     MCAPI struct WorldTemplateInfo const* findInstalledWorldTemplate(struct PackIdVersion const& packIdentityToFind
     ) const;
 
-    // symbol:
-    // ?getWorldTemplatesPath@WorldTemplateManager@@QEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
     MCAPI class Core::PathBuffer<std::string> getWorldTemplatesPath() const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_initialize@WorldTemplateManager@@AEAAXXZ
     MCAPI void _initialize();
 
-    // symbol: ?_initializePackSources@WorldTemplateManager@@AEAAXXZ
     MCAPI void _initializePackSources();
 
-    // symbol: ?_onDiscoverWorldTemplate@WorldTemplateManager@@AEAAXAEBVPack@@@Z
     MCAPI void _onDiscoverWorldTemplate(class Pack const& pack);
 
     // NOLINTEND

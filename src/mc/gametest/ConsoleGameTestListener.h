@@ -20,25 +20,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ConsoleGameTestListener@@UEAA@XZ
+    // vIndex: 0
     virtual ~ConsoleGameTestListener() = default;
 
-    // vIndex: 1, symbol: ?onTestStructureLoaded@ConsoleGameTestListener@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
+    // vIndex: 1
     virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance& test);
 
-    // vIndex: 2, symbol: ?onTestPassed@ConsoleGameTestListener@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
+    // vIndex: 2
     virtual void onTestPassed(class gametest::BaseGameTestInstance& test);
 
-    // vIndex: 3, symbol: ?onTestFailed@ConsoleGameTestListener@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
+    // vIndex: 3
     virtual void onTestFailed(class gametest::BaseGameTestInstance& test);
 
-    // vIndex: 4, symbol: ?onTestStarted@IGameTestListener@gametest@@UEAAXAEAVBaseGameTestInstance@2@@Z
+    // vIndex: 4
     virtual void onTestStarted(class gametest::BaseGameTestInstance&);
 
-    // vIndex: 5, symbol: ?onTestRetryStarted@IGameTestListener@gametest@@UEAAXAEAVBaseGameTestInstance@2@@Z
+    // vIndex: 5
     virtual void onTestRetryStarted(class gametest::BaseGameTestInstance&);
 
-    // vIndex: 6, symbol: ?onTestRetryFinished@IGameTestListener@gametest@@UEAAXAEAVBaseGameTestInstance@2@@Z
+    // vIndex: 6
     virtual void onTestRetryFinished(class gametest::BaseGameTestInstance&);
 
     // NOLINTEND

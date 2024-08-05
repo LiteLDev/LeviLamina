@@ -55,23 +55,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FoodExhaustionSystemImpl@FoodExhaustionSystemImpl@@UEAA@XZ
+    // vIndex: 0
     virtual ~FoodExhaustionSystemImpl() = default;
 
-    // vIndex: 1, symbol: __unk_vfn_1
+    // vIndex: 1
     virtual void __unk_vfn_1();
 
-    // vIndex: 2, symbol: __unk_vfn_2
+    // vIndex: 2
     virtual void __unk_vfn_2();
 
-    // vIndex: 3, symbol: __unk_vfn_3
+    // vIndex: 3
     virtual void __unk_vfn_3();
 
-    // vIndex: 4, symbol: __unk_vfn_4
+    // vIndex: 4
     virtual void __unk_vfn_4();
 
-    // vIndex: 5, symbol:
-    // ?tick@FoodExhaustionSystemImpl@1@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UActorMovementTickNeededFlag@@@@UPassengerComponent@@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UMobFlag@@@@V?$FlagComponent@UParrotFlag@@@@UVehicleComponent@@V?$FlagComponent@UCamelFlag@@@@@@U?$Read@UDimensionTypeComponent@@VExhaustionComponent@@UOnGroundFlagComponent@@UActorGameTypeComponent@@UServerPlayerCurrentMovementComponent@@UStateVectorComponent@@UActorDataFlagComponent@@V?$FlagComponent@UInWaterFlag@@@@UActorRotationComponent@@UMobBodyRotationComponent@@UPassengerComponent@@URenderRotationComponent@@UStandAnimationComponent@@UAABBShapeComponent@@UOffsetsComponent@@UVanillaOffsetComponent@@UPassengerRenderingRidingOffsetComponent@@@@U?$Write@$$V@@U?$AddRemove@UAttributeRequestComponent@@@@U?$GlobalRead@ULocalConstBlockSourceFactoryComponent@@UExternalDataComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
+    // vIndex: 5
     virtual void tick(class StrictExecutionContext<
                       struct Filter<
                           class FlagComponent<struct ActorMovementTickNeededFlag>,

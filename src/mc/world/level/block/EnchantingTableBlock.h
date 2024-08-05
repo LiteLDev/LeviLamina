@@ -27,26 +27,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1EnchantingTableBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~EnchantingTableBlock() = default;
 
-    // vIndex: 23, symbol: ?canProvideSupport@EnchantingTableBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
+    // vIndex: 23
     virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType) const;
 
-    // vIndex: 32, symbol: ?isCraftingBlock@EnchantingTableBlock@@UEBA_NXZ
+    // vIndex: 32
     virtual bool isCraftingBlock() const;
 
-    // vIndex: 62, symbol: ?checkIsPathable@EnchantingTableBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
+    // vIndex: 62
     virtual bool
     checkIsPathable(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
 
-    // vIndex: 150, symbol: ?isInteractiveBlock@EnchantingTableBlock@@UEBA_NXZ
+    // vIndex: 150
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 152, symbol: ?use@EnchantingTableBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    // symbol: ??0EnchantingTableBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI EnchantingTableBlock(std::string const& nameId, int id);
 
     // NOLINTEND

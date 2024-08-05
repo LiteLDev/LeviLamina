@@ -27,47 +27,45 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ChorusFlowerBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~ChorusFlowerBlock() = default;
 
-    // vIndex: 17, symbol: ?onProjectileHit@ChorusFlowerBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVActor@@@Z
+    // vIndex: 17
     virtual void onProjectileHit(class BlockSource&, class BlockPos const&, class Actor const&) const;
 
-    // vIndex: 23, symbol: ?canProvideSupport@ChorusFlowerBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
+    // vIndex: 23
     virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType type) const;
 
-    // vIndex: 33, symbol: ?isWaterBlocking@ChorusFlowerBlock@@UEBA_NXZ
+    // vIndex: 33
     virtual bool isWaterBlocking() const;
 
-    // vIndex: 55, symbol: ?canBeDestroyedByWaterSpread@ChorusFlowerBlock@@UEBA_NXZ
+    // vIndex: 55
     virtual bool canBeDestroyedByWaterSpread() const;
 
-    // vIndex: 57, symbol: ?canContainLiquid@ChorusFlowerBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // vIndex: 86, symbol: ?mayPlace@ChorusFlowerBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 86
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 93, symbol: ?neighborChanged@ChorusFlowerBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 93
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 129, symbol: ?getVariant@ChorusFlowerBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 148, symbol: ?tick@ChorusFlowerBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 149, symbol: ?randomTick@ChorusFlowerBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 149
     virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 154, symbol: ?canSurvive@ChorusFlowerBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 154
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ??0ChorusFlowerBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI ChorusFlowerBlock(std::string const& nameId, int id);
 
-    // symbol: ?generatePlant@ChorusFlowerBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@H@Z
     MCAPI static void generatePlant(
         class BlockSource&    region,
         class BlockPos const& target,
@@ -75,26 +73,20 @@ public:
         int                   maxHorizontalSpread
     );
 
-    // symbol: ?BRANCH_DIRECTIONS@ChorusFlowerBlock@@2HB
     MCAPI static int const BRANCH_DIRECTIONS;
 
-    // symbol: ?DEAD_AGE@ChorusFlowerBlock@@2GB
     MCAPI static ushort const DEAD_AGE;
 
-    // symbol: ?GROW_RATE@ChorusFlowerBlock@@2HB
     MCAPI static int const GROW_RATE;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_placeDeadFlower@ChorusFlowerBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void _placeDeadFlower(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ?_placeGrownFlower@ChorusFlowerBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@H@Z
     MCAPI void _placeGrownFlower(class BlockSource& region, class BlockPos const& pos, int newAge) const;
 
-    // symbol: ?_growTreeRecursive@ChorusFlowerBlock@@CAXAEAVBlockSource@@AEBVBlockPos@@1AEAVRandom@@HH@Z
     MCAPI static void _growTreeRecursive(
         class BlockSource&    region,
         class BlockPos const& current,

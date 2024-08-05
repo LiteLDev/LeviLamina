@@ -14,20 +14,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DedicatedWSServerCommand@@UEAA@XZ
+    // vIndex: 0
     virtual ~DedicatedWSServerCommand() = default;
 
-    // vIndex: 2, symbol: ?execute@DedicatedWSServerCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+    // vIndex: 2
     virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    // symbol: ?setup@DedicatedWSServerCommand@@SAXAEAVCommandRegistry@@AEAVIMinecraftApp@@@Z
     MCAPI static void setup(class CommandRegistry& registry, class IMinecraftApp& app);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?mApp@DedicatedWSServerCommand@@0PEAVIMinecraftApp@@EA
     MCAPI static class IMinecraftApp* mApp;
 
     // NOLINTEND

@@ -25,11 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0LookAtIntent@sim@@QEAA@XZ
     MCAPI LookAtIntent();
 
-    // symbol:
-    // ??0LookAtIntent@sim@@QEAA@V?$variant@UVoidLookAtIntent@sim@@ULookAtPositionIntent@2@UContinuousLookAtPositionIntent@2@ULookAtEntityIntent@2@UContinuousLookAtEntityIntent@2@@std@@@Z
     MCAPI explicit LookAtIntent(std::variant<
                                 struct sim::VoidLookAtIntent,
                                 struct sim::LookAtPositionIntent,
@@ -37,16 +34,12 @@ public:
                                 struct sim::LookAtEntityIntent,
                                 struct sim::ContinuousLookAtEntityIntent>);
 
-    // symbol: ?execute@LookAtIntent@sim@@QEAA?AW4ExecutionResult@2@AEAVSimulatedPlayer@@@Z
     MCAPI ::sim::ExecutionResult execute(class SimulatedPlayer&);
 
-    // symbol: ?finalize@LookAtIntent@sim@@QEAAXAEAVSimulatedPlayer@@@Z
     MCAPI void finalize(class SimulatedPlayer&);
 
-    // symbol: ?reset@LookAtIntent@sim@@QEAAXXZ
     MCAPI void reset();
 
-    // symbol: ??1LookAtIntent@sim@@QEAA@XZ
     MCAPI ~LookAtIntent();
 
     // NOLINTEND

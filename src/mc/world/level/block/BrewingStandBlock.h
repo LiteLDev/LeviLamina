@@ -27,17 +27,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BrewingStandBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~BrewingStandBlock() = default;
 
-    // vIndex: 5, symbol:
-    // ?getCollisionShape@BrewingStandBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 5
     virtual class AABB
     getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 7, symbol:
-    // ?addCollisionShapes@BrewingStandBlock@@UEBA_NAEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 7
     virtual bool addCollisionShapes(
         class Block const&                                         block,
         class IConstBlockSource const&                             region,
@@ -47,8 +45,7 @@ public:
         class optional_ref<class GetCollisionShapeInterface const> entity
     ) const;
 
-    // vIndex: 8, symbol:
-    // ?addAABBs@BrewingStandBlock@@UEBAXAEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
+    // vIndex: 8
     virtual void addAABBs(
         class Block const&             block,
         class IConstBlockSource const& region,
@@ -57,53 +54,49 @@ public:
         std::vector<class AABB>&       inoutBoxes
     ) const;
 
-    // vIndex: 9, symbol:
-    // ?getOutline@BrewingStandBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
+    // vIndex: 9
     virtual class AABB const&
     getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 23, symbol: ?canProvideSupport@BrewingStandBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
+    // vIndex: 23
     virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType type) const;
 
-    // vIndex: 31, symbol: ?isContainerBlock@BrewingStandBlock@@UEBA_NXZ
+    // vIndex: 31
     virtual bool isContainerBlock() const;
 
-    // vIndex: 32, symbol: ?isCraftingBlock@BrewingStandBlock@@UEBA_NXZ
+    // vIndex: 32
     virtual bool isCraftingBlock() const;
 
-    // vIndex: 62, symbol: ?checkIsPathable@BrewingStandBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
+    // vIndex: 62
     virtual bool
     checkIsPathable(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@BrewingStandBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 111, symbol: ?hasComparatorSignal@BrewingStandBlock@@UEBA_NXZ
+    // vIndex: 111
     virtual bool hasComparatorSignal() const;
 
-    // vIndex: 112, symbol: ?getComparatorSignal@BrewingStandBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
+    // vIndex: 112
     virtual int
     getComparatorSignal(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
         const;
 
-    // vIndex: 119, symbol:
-    // ?buildDescriptionId@BrewingStandBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
+    // vIndex: 119
     virtual std::string buildDescriptionId(class Block const&) const;
 
-    // vIndex: 134, symbol:
-    // ?animateTickBedrockLegacy@BrewingStandBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 134
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // vIndex: 143, symbol: ?onRemove@BrewingStandBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 143
     virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 150, symbol: ?isInteractiveBlock@BrewingStandBlock@@UEBA_NXZ
+    // vIndex: 150
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 152, symbol: ?use@BrewingStandBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    // symbol: ??0BrewingStandBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI BrewingStandBlock(std::string const& nameId, int id);
 
     // NOLINTEND

@@ -15,37 +15,33 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SummonActorGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~SummonActorGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@SummonActorGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@SummonActorGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@SummonActorGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@SummonActorGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@SummonActorGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@SummonActorGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol:
-    // ??0SummonActorGoal@@QEAA@AEAVMob@@AEBV?$vector@USummonSpellData@@V?$allocator@USummonSpellData@@@std@@@std@@@Z
     MCAPI SummonActorGoal(class Mob& caster, std::vector<struct SummonSpellData> const& spellTypes);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_createSpellEntity@SummonActorGoal@@AEBAXMMMMMHUActorDefinitionIdentifier@@@Z
     MCAPI void _createSpellEntity(
         float                            x,
         float                            z,
@@ -56,7 +52,6 @@ public:
         struct ActorDefinitionIdentifier summonType
     ) const;
 
-    // symbol: ?_selectBestSpell@SummonActorGoal@@AEBAHAEAVActor@@@Z
     MCAPI int _selectBestSpell(class Actor& target) const;
 
     // NOLINTEND

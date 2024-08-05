@@ -23,17 +23,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0ScriptItemUseBeforeEvent@ScriptModuleMinecraft@@QEAA@AEBVPlayer@@AEBUItemUseEvent@@AEBVWeakLifetimeScope@Scripting@@@Z
     MCAPI
     ScriptItemUseBeforeEvent(class Player const&, struct ItemUseEvent const&, class Scripting::WeakLifetimeScope const&);
 
-    // symbol:
-    // ?bind@ScriptItemUseBeforeEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptItemUseBeforeEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemUseBeforeEvent> bind();
 
-    // symbol:
-    // ?bindV010@ScriptItemUseBeforeEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptItemUseBeforeEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemUseBeforeEvent>
     bindV010();
 

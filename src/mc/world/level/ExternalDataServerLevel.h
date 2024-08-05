@@ -18,28 +18,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ExternalDataServerLevel@@UEAA@XZ
+    // vIndex: 0
     virtual ~ExternalDataServerLevel() = default;
 
-    // vIndex: 1, symbol: ?isInWorldAndNotShowingAnyMenuScreens@ExternalDataServerLevel@@UEBA_NXZ
+    // vIndex: 1
     virtual bool isInWorldAndNotShowingAnyMenuScreens() const;
 
-    // vIndex: 2, symbol: ?getAdventureSettings@ExternalDataServerLevel@@UEBAAEBUAdventureSettings@@XZ
+    // vIndex: 2
     virtual struct AdventureSettings const& getAdventureSettings() const;
 
-    // vIndex: 3, symbol: ?getPlayMode@ExternalDataServerLevel@@UEBA?AW4ClientPlayMode@@XZ
+    // vIndex: 3
     virtual ::ClientPlayMode getPlayMode() const;
 
-    // vIndex: 4, symbol: ?getInputMode@ExternalDataServerLevel@@UEBA?AW4InputMode@@XZ
+    // vIndex: 4
     virtual ::InputMode getInputMode() const;
 
-    // vIndex: 5, symbol: ?getDefaultGameType@ExternalDataServerLevel@@UEBA?AW4GameType@@XZ
+    // vIndex: 5
     virtual ::GameType getDefaultGameType() const;
 
-    // vIndex: 6, symbol: ?getSmoothRotationSpeed@ExternalDataServerLevel@@UEBAMXZ
+    // vIndex: 6
     virtual float getSmoothRotationSpeed() const;
 
-    // symbol: ??0ExternalDataServerLevel@@QEAA@V?$not_null@V?$NonOwnerPointer@$$CBVILevel@@@Bedrock@@@gsl@@@Z
     MCAPI explicit ExternalDataServerLevel(Bedrock::NotNullNonOwnerPtr<class ILevel const> level);
 
     // NOLINTEND

@@ -14,10 +14,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MaterialReducerContainerScreenValidator@@UEAA@XZ
+    // vIndex: 0
     virtual ~MaterialReducerContainerScreenValidator() = default;
 
-    // symbol: ??0MaterialReducerContainerScreenValidator@@QEAA@XZ
     MCAPI MaterialReducerContainerScreenValidator();
 
     // NOLINTEND

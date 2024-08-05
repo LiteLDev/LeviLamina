@@ -27,25 +27,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1StoneBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~StoneBlock() = default;
 
-    // vIndex: 48, symbol: ?canBeOriginalSurface@StoneBlock@@UEBA_NXZ
+    // vIndex: 48
     virtual bool canBeOriginalSurface() const;
 
-    // vIndex: 96, symbol: ?asItemInstance@StoneBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
-    // vIndex: 140, symbol: ?tryGetInfested@StoneBlock@@UEBAPEBVBlock@@AEBV2@@Z
+    // vIndex: 140
     virtual class Block const* tryGetInfested(class Block const& block) const;
 
-    // vIndex: 142, symbol: ?_addHardCodedBlockComponents@StoneBlock@@UEAAXAEBVExperiments@@@Z
+    // vIndex: 142
     virtual void _addHardCodedBlockComponents(class Experiments const&);
 
-    // vIndex: 160, symbol: ?getMapColor@StoneBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 160
     virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const& block) const;
 
-    // symbol: ??0StoneBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI StoneBlock(std::string const& nameId, int id);
 
     // NOLINTEND

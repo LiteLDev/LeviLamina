@@ -15,8 +15,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?_setPreviousPosRot@SetPreviousPosRotSystem@@SAXAEAVStrictEntityContext@@AEAUStateVectorComponent@@AEAUActorRotationComponent@@V?$EntityModifier@V?$FlagComponent@UPrevPosRotSetThisTickFlag@@@@@@@Z
     MCAPI static void _setPreviousPosRot(
         class StrictEntityContext& entity,
         struct StateVectorComponent&,
@@ -24,7 +22,6 @@ public:
         class EntityModifier<class FlagComponent<struct PrevPosRotSetThisTickFlag>> modifier
     );
 
-    // symbol: ?_setPreviousPosRotSystem@SetPreviousPosRotSystem@@SAXAEBVEntityContext@@@Z
     MCAPI static void _setPreviousPosRotSystem(class EntityContext const&);
 
     // NOLINTEND

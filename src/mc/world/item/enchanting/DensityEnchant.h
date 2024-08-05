@@ -14,19 +14,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DensityEnchant@@UEAA@XZ
+    // vIndex: 0
     virtual ~DensityEnchant() = default;
 
-    // vIndex: 2, symbol: ?getMinCost@DensityEnchant@@UEBAHH@Z
+    // vIndex: 2
     virtual int getMinCost(int) const;
 
-    // vIndex: 3, symbol: ?getMaxCost@DensityEnchant@@UEBAHH@Z
+    // vIndex: 3
     virtual int getMaxCost(int) const;
 
-    // vIndex: 5, symbol: ?getMaxLevel@DensityEnchant@@UEBAHXZ
+    // vIndex: 5
     virtual int getMaxLevel() const;
 
-    // vIndex: 8, symbol: ?getDamageBonus@DensityEnchant@@UEBAMHAEBVActor@@0@Z
+    // vIndex: 8
     virtual float getDamageBonus(int, class Actor const&, class Actor const&) const;
 
     // NOLINTEND

@@ -25,8 +25,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?bootstrap@StructurePools@worldgen@br@@SAXV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEAVFeatureRegistry@@AEAVJigsawStructureRegistry@@AEBVBaseGameVersion@@AEBVExperiments@@@Z
     MCAPI static void
     bootstrap(Bedrock::NotNullNonOwnerPtr<class StructureManager>, class FeatureRegistry&, class JigsawStructureRegistry&, class BaseGameVersion const&, class Experiments const&);
 

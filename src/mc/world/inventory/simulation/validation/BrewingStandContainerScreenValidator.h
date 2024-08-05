@@ -14,10 +14,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BrewingStandContainerScreenValidator@@UEAA@XZ
+    // vIndex: 0
     virtual ~BrewingStandContainerScreenValidator() = default;
 
-    // symbol: ??0BrewingStandContainerScreenValidator@@QEAA@XZ
     MCAPI BrewingStandContainerScreenValidator();
 
     // NOLINTEND

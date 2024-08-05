@@ -18,29 +18,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1MobEffectSubcomponent@@UEAA@XZ
+    // vIndex: 0
     virtual ~MobEffectSubcomponent();
 
-    // vIndex: 1, symbol: ?readfromJSON@MobEffectSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
+    // vIndex: 1
     virtual void readfromJSON(class Json::Value& component, class SemVersion const& engineVersion);
 
-    // vIndex: 2, symbol: ?writetoJSON@MobEffectSubcomponent@@UEBAXAEAVValue@Json@@@Z
+    // vIndex: 2
     virtual void writetoJSON(class Json::Value& component) const;
 
-    // vIndex: 3, symbol: ?doOnHitEffect@MobEffectSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
+    // vIndex: 3
     virtual void doOnHitEffect(class Actor& owner, class ProjectileComponent& component);
 
-    // vIndex: 4, symbol: ?getName@MobEffectSubcomponent@@UEAAPEBDXZ
+    // vIndex: 4
     virtual char const* getName();
 
-    // symbol: ??0MobEffectSubcomponent@@QEAA@XZ
     MCAPI MobEffectSubcomponent();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_addEffectFromJSON@MobEffectSubcomponent@@AEAAXAEAVValue@Json@@@Z
     MCAPI void _addEffectFromJSON(class Json::Value& component);
 
     // NOLINTEND

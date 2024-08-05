@@ -18,22 +18,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1StickInGroundSubcomponent@@UEAA@XZ
+    // vIndex: 0
     virtual ~StickInGroundSubcomponent() = default;
 
-    // vIndex: 1, symbol: ?readfromJSON@StickInGroundSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
+    // vIndex: 1
     virtual void readfromJSON(class Json::Value& component, class SemVersion const& engineVersion);
 
-    // vIndex: 2, symbol: ?writetoJSON@StickInGroundSubcomponent@@UEBAXAEAVValue@Json@@@Z
+    // vIndex: 2
     virtual void writetoJSON(class Json::Value& component) const;
 
-    // vIndex: 3, symbol: ?doOnHitEffect@StickInGroundSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
+    // vIndex: 3
     virtual void doOnHitEffect(class Actor& owner, class ProjectileComponent& component);
 
-    // vIndex: 4, symbol: ?getName@StickInGroundSubcomponent@@UEAAPEBDXZ
+    // vIndex: 4
     virtual char const* getName();
 
-    // symbol: ??0StickInGroundSubcomponent@@QEAA@XZ
     MCAPI StickInGroundSubcomponent();
 
     // NOLINTEND

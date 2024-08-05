@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?initialize@ScatterParamsMolangVariableIndices@@QEAAXXZ
     MCAPI void initialize();
 
     // NOLINTEND

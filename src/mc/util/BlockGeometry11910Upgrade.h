@@ -21,22 +21,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BlockGeometry11910Upgrade@BlockGeometryVersioning@@UEAA@XZ
+    // vIndex: 0
     virtual ~BlockGeometry11910Upgrade() = default;
 
-    // vIndex: 1, symbol:
-    // ?previousSchema@BlockGeometry11910Upgrade@BlockGeometryVersioning@@UEBA_NAEBV?$GenericValue@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@@rapidjson@@@Z
+    // vIndex: 1
     virtual bool previousSchema(rapidjson::GenericValue<
                                 rapidjson::UTF8<char>,
                                 rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>> const&) const;
 
-    // vIndex: 2, symbol:
-    // ?upgradeToNext@BlockGeometry11910Upgrade@BlockGeometryVersioning@@UEBAXAEAV?$GenericDocument@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@VCrtAllocator@2@@rapidjson@@AEBVSemVersion@@@Z
+    // vIndex: 2
     virtual void
     upgradeToNext(rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&, class SemVersion const&)
         const;
 
-    // symbol: ??0BlockGeometry11910Upgrade@BlockGeometryVersioning@@QEAA@XZ
     MCAPI BlockGeometry11910Upgrade();
 
     // NOLINTEND

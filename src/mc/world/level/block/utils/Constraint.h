@@ -23,19 +23,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol:
-    // ?doValidate@Constraint@BlockGeometrySerializer@@UEBAXAEBVmeta_any@entt@@AEAVSerializerContext@cereal@@@Z
+    // vIndex: 0
     virtual void doValidate(entt::meta_any const&, class cereal::SerializerContext&) const;
 
-    // vIndex: 1, symbol: __gen_??1Constraint@BlockGeometrySerializer@@UEAA@XZ
+    // vIndex: 1
     virtual ~Constraint() = default;
 
-    // vIndex: 2, symbol:
-    // ?description@Constraint@BlockGeometrySerializer@@UEBA?AUConstraintDescription@internal@cereal@@XZ
+    // vIndex: 2
     virtual struct cereal::internal::ConstraintDescription description() const;
 
-    // symbol:
-    // ?checkValidVanillaName@Constraint@BlockGeometrySerializer@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI static bool checkValidVanillaName(std::string const&);
 
     // NOLINTEND

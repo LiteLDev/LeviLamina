@@ -27,10 +27,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BlueIceBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~BlueIceBlock() = default;
 
-    // symbol: ??0BlueIceBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI BlueIceBlock(std::string const& nameId, int id);
 
     // NOLINTEND

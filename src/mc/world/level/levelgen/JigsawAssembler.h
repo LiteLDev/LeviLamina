@@ -26,8 +26,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?construct@JigsawAssembler@worldgen@br@@SA?AV?$optional@VGenerationStub@worldgen@br@@@std@@AEAUGenerationContext@23@AEBVWorldGenContext@23@V?$basic_string_view@DU?$char_traits@D@std@@@5@2HVBlockPos@@W4Type@HeightmapProjection@23@HH$$QEAVPoolAliasLookup@PoolAliasBinding@@W4JigsawExpansion@23@@Z
     MCAPI static std::optional<class br::worldgen::GenerationStub> construct(
         struct br::worldgen::GenerationContext&,
         class br::worldgen::WorldGenContext const&,

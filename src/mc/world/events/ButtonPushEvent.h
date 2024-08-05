@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ButtonPushEvent@@QEAA@XZ
     MCAPI ~ButtonPushEvent();
 
     // NOLINTEND

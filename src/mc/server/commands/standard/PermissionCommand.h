@@ -14,33 +14,28 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1PermissionCommand@@UEAA@XZ
+    // vIndex: 0
     virtual ~PermissionCommand() = default;
 
-    // vIndex: 2, symbol: ?execute@PermissionCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+    // vIndex: 2
     virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    // symbol: ?setup@PermissionCommand@@SAXAEAVCommandRegistry@@PEAVPermissionsFile@@@Z
     MCAPI static void setup(class CommandRegistry& registry, class PermissionsFile* permissionsFile);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?list@PermissionCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     MCAPI void list(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    // symbol: ?reload@PermissionCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     MCAPI void reload(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    // symbol: ?set@PermissionCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     MCAPI void set(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?mPermissionsFile@PermissionCommand@@0PEAVPermissionsFile@@EA
     MCAPI static class PermissionsFile* mPermissionsFile;
 
     // NOLINTEND

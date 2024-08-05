@@ -9,7 +9,6 @@ class Block;
 
 namespace FlatteningUtils::WoodenDoubleSlab {
 // NOLINTBEGIN
-// symbol: ?getComplexAliasCallback@WoodenDoubleSlab@FlatteningUtils@@YA?AV?$function@$$A6APEBVBlock@@H@Z@std@@XZ
 MCAPI std::function<class Block const*(int)> getComplexAliasCallback();
 // NOLINTEND
 

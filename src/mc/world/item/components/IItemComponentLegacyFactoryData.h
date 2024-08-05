@@ -18,11 +18,9 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??4Components@IItemComponentLegacyFactoryData@@QEAAAEAU01@$$QEAU01@@Z
         MCAPI struct IItemComponentLegacyFactoryData::Components&
         operator=(struct IItemComponentLegacyFactoryData::Components&&);
 
-        // symbol: ??4Components@IItemComponentLegacyFactoryData@@QEAAAEAU01@AEBU01@@Z
         MCAPI struct IItemComponentLegacyFactoryData::Components&
         operator=(struct IItemComponentLegacyFactoryData::Components const&);
 

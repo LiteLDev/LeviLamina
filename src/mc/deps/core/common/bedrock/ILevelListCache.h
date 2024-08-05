@@ -19,7 +19,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ILevelListCache@@UEAA@XZ
+    // vIndex: 0
     virtual ~ILevelListCache();
 
     // NOLINTEND

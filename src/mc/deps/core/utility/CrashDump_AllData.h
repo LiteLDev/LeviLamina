@@ -10,7 +10,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0CrashDump_AllData@@QEAA@XZ
     MCAPI CrashDump_AllData();
 
     // NOLINTEND

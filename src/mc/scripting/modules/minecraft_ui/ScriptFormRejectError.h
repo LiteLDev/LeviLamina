@@ -17,14 +17,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptFormRejectError@ScriptModuleMinecraftServerUI@@QEAA@W4ScriptFormRejectReason@1@@Z
     MCAPI explicit ScriptFormRejectError(::ScriptModuleMinecraftServerUI::ScriptFormRejectReason reason);
 
-    // symbol: ??1ScriptFormRejectError@ScriptModuleMinecraftServerUI@@QEAA@XZ
     MCAPI ~ScriptFormRejectError();
 
-    // symbol:
-    // ?bind@ScriptFormRejectError@ScriptModuleMinecraftServerUI@@SA?AV?$ErrorBindingBuilder@VScriptFormRejectError@ScriptModuleMinecraftServerUI@@@Scripting@@XZ
     MCAPI static class Scripting::ErrorBindingBuilder<class ScriptModuleMinecraftServerUI::ScriptFormRejectError>
     bind();
 

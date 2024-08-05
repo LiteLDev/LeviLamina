@@ -14,8 +14,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0POIBlueprint@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4POIType@@M_N_K3000@Z
     MCAPI POIBlueprint(
         std::string name,
         ::POIType   type,

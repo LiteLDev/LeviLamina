@@ -14,13 +14,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1RaidOmenMobEffect@@UEAA@XZ
+    // vIndex: 0
     virtual ~RaidOmenMobEffect() = default;
 
-    // vIndex: 1, symbol: ?applyEffects@RaidOmenMobEffect@@UEBAXAEAVActor@@HH@Z
+    // vIndex: 1
     virtual void applyEffects(class Actor&, int, int) const;
 
-    // vIndex: 3, symbol: ?onEffectExpired@RaidOmenMobEffect@@UEBAXAEAVActor@@@Z
+    // vIndex: 3
     virtual void onEffectExpired(class Actor&) const;
 
     // NOLINTEND

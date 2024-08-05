@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1BlockMenuCategory@@QEAA@XZ
     MCAPI ~BlockMenuCategory();
 
     // NOLINTEND

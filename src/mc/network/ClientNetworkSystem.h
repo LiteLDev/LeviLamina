@@ -11,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?tryGetLocalNetworkId@ClientNetworkSystem@@QEBA?AV?$optional@VNetworkIdentifier@@@std@@XZ
     MCAPI std::optional<class NetworkIdentifier> tryGetLocalNetworkId() const;
 
-    // symbol: ?tryGetServerId@ClientNetworkSystem@@QEBA?AV?$optional@VNetworkIdentifier@@@std@@XZ
     MCAPI std::optional<class NetworkIdentifier> tryGetServerId() const;
 
     // NOLINTEND

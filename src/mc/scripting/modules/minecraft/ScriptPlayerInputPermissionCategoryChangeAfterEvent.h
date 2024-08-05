@@ -17,12 +17,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4ScriptPlayerInputPermissionCategoryChangeAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptPlayerInputPermissionCategoryChangeAfterEvent&
     operator=(struct ScriptModuleMinecraft::ScriptPlayerInputPermissionCategoryChangeAfterEvent&&);
 
-    // symbol:
-    // ?bind@ScriptPlayerInputPermissionCategoryChangeAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptPlayerInputPermissionCategoryChangeAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<
         struct ScriptModuleMinecraft::ScriptPlayerInputPermissionCategoryChangeAfterEvent>
     bind();

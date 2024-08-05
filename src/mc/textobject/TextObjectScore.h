@@ -19,31 +19,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1TextObjectScore@@UEAA@XZ
+    // vIndex: 0
     virtual ~TextObjectScore() = default;
 
-    // vIndex: 1, symbol:
-    // ?asString@TextObjectScore@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 1
     virtual std::string asString() const;
 
-    // vIndex: 2, symbol: ?asJsonValue@TextObjectScore@@UEBA?AVValue@Json@@XZ
+    // vIndex: 2
     virtual class Json::Value asJsonValue() const;
 
-    // vIndex: 3, symbol: ?resolve@TextObjectScore@@UEBA?AVValue@Json@@AEBUResolveData@@@Z
+    // vIndex: 3
     virtual class Json::Value resolve(struct ResolveData const&) const;
 
-    // symbol: ?RAW_TEXT_SCORE_KEY@TextObjectScore@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const RAW_TEXT_SCORE_KEY;
 
-    // symbol:
-    // ?RAW_TEXT_SCORE_NAME_KEY@TextObjectScore@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const RAW_TEXT_SCORE_NAME_KEY;
 
-    // symbol:
-    // ?RAW_TEXT_SCORE_OBJECTIVE_KEY@TextObjectScore@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const RAW_TEXT_SCORE_OBJECTIVE_KEY;
 
-    // symbol: ?RAW_TEXT_SCORE_STAR@TextObjectScore@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const RAW_TEXT_SCORE_STAR;
 
     // NOLINTEND

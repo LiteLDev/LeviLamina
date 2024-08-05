@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ScriptingNotificationEvent@@QEAA@XZ
     MCAPI ~ScriptingNotificationEvent();
 
     // NOLINTEND

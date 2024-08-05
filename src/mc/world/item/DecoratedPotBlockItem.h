@@ -26,25 +26,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DecoratedPotBlockItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~DecoratedPotBlockItem() = default;
 
-    // vIndex: 48, symbol:
-    // ?appendFormattedHovertext@DecoratedPotBlockItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+    // vIndex: 48
     virtual void appendFormattedHovertext(class ItemStackBase const&, class Level&, std::string&, bool) const;
 
-    // vIndex: 92, symbol: ?fixupCommon@DecoratedPotBlockItem@@UEBAXAEAVItemStackBase@@@Z
+    // vIndex: 92
     virtual void fixupCommon(class ItemStackBase&) const;
 
-    // symbol: ??0DecoratedPotBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI DecoratedPotBlockItem(std::string const&, int);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?buildIngredientItemList@DecoratedPotBlockItem@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBVCompoundTag@@@Z
     MCAPI std::string buildIngredientItemList(class CompoundTag const*) const;
 
     // NOLINTEND

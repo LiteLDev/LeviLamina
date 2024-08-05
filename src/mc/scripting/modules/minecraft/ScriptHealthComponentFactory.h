@@ -25,15 +25,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptHealthComponentFactory@ScriptModuleMinecraft@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptHealthComponentFactory() = default;
 
-    // vIndex: 1, symbol:
-    // ?createComponent@ScriptHealthComponentFactory@ScriptModuleMinecraft@@UEAA?AV?$StrongTypedObjectHandle@VScriptActorComponent@ScriptModuleMinecraft@@@Scripting@@VWeakEntityRef@@AEBVWeakLifetimeScope@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 1
     virtual class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActorComponent>
     createComponent(class WeakEntityRef entity, class Scripting::WeakLifetimeScope const& scope, std::string const& id);
 
-    // vIndex: 2, symbol: ?hasComponent@ScriptHealthComponentFactory@ScriptModuleMinecraft@@UEBA_NVWeakEntityRef@@@Z
+    // vIndex: 2
     virtual bool hasComponent(class WeakEntityRef entity) const;
 
     // NOLINTEND

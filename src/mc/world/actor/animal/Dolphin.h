@@ -35,25 +35,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 6, symbol: ?initializeComponents@Dolphin@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 6
     virtual void initializeComponents(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: __gen_??1Dolphin@@UEAA@XZ
+    // vIndex: 10
     virtual ~Dolphin() = default;
 
-    // vIndex: 102, symbol: ?canBePulledIntoVehicle@Dolphin@@UEBA_NXZ
+    // vIndex: 102
     virtual bool canBePulledIntoVehicle() const;
 
-    // vIndex: 158, symbol: ?aiStep@Dolphin@@UEAAXXZ
+    // vIndex: 158
     virtual void aiStep();
 
-    // vIndex: 180, symbol: ?createAIGoals@Dolphin@@UEAA_NXZ
+    // vIndex: 180
     virtual bool createAIGoals();
 
-    // vIndex: 184, symbol: ?_getWalkTargetValue@Dolphin@@UEAAMAEBVBlockPos@@@Z
+    // vIndex: 184
     virtual float _getWalkTargetValue(class BlockPos const& pos);
 
-    // symbol: ??0Dolphin@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Dolphin(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

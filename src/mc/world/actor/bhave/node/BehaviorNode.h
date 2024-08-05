@@ -13,19 +13,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BehaviorNode@@UEAA@XZ
+    // vIndex: 0
     virtual ~BehaviorNode();
 
-    // vIndex: 1, symbol: ?tick@ActivateToolNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+    // vIndex: 1
     virtual ::BehaviorStatus tick(class Actor& owner) = 0;
 
-    // vIndex: 2, symbol: ?initializeFromDefinition@BehaviorNode@@MEAAXAEAVActor@@@Z
+    // vIndex: 2
     virtual void initializeFromDefinition(class Actor& owner);
 
-    // symbol: ??0BehaviorNode@@QEAA@XZ
     MCAPI BehaviorNode();
 
-    // symbol: ?getBehaviorData@BehaviorNode@@QEAAAEAVBehaviorData@@XZ
     MCAPI class BehaviorData& getBehaviorData();
 
     // NOLINTEND

@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ScopeExit@Bedrock@@QEAA@XZ
     MCAPI ~ScopeExit();
 
     // NOLINTEND

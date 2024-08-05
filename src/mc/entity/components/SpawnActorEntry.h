@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1SpawnActorEntry@@QEAA@XZ
     MCAPI ~SpawnActorEntry();
 
     // NOLINTEND

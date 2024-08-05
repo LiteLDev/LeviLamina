@@ -17,77 +17,62 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol:
-    // ?getOnAnyPlayerChangeDimensionPreSuspendRegionConnector@PlayerDimensionTransferer@@UEAAAEAV?$Connector@$$A6AXV?$AutomaticID@VDimension@@H@@@Z@PubSub@Bedrock@@XZ
+    // vIndex: 0
     virtual class Bedrock::PubSub::Connector<void(DimensionType)>&
     getOnAnyPlayerChangeDimensionPreSuspendRegionConnector();
 
-    // vIndex: 1, symbol:
-    // ?getOnAnyPlayerChangeDimensionPrepareRegionCompleteConnector@PlayerDimensionTransferer@@UEAAAEAV?$Connector@$$A6AXXZ@PubSub@Bedrock@@XZ
+    // vIndex: 1
     virtual class Bedrock::PubSub::Connector<void()>& getOnAnyPlayerChangeDimensionPrepareRegionCompleteConnector();
 
-    // vIndex: 2, symbol: __gen_??1PlayerDimensionTransferer@@UEAA@XZ
+    // vIndex: 2
     virtual ~PlayerDimensionTransferer() = default;
 
-    // vIndex: 3, symbol:
-    // ?playerSaveLimboActors@PlayerDimensionTransferer@@UEAAXAEAVPlayer@@AEAVChangeDimensionRequest@@AEAVDimension@@PEAVPlayerLimboActorManager@@@Z
+    // vIndex: 3
     virtual void
     playerSaveLimboActors(class Player&, class ChangeDimensionRequest&, class Dimension&, class PlayerLimboActorManager*);
 
-    // vIndex: 4, symbol: ?playerDestroyRemotePlayers@PlayerDimensionTransferer@@UEAAXAEAVGameplayUserManager@@@Z
+    // vIndex: 4
     virtual void playerDestroyRemotePlayers(class GameplayUserManager&);
 
-    // vIndex: 5, symbol:
-    // ?playerStartChangeDimensionSuspendRegion@PlayerDimensionTransferer@@UEAAXAEAVPlayer@@V?$AutomaticID@VDimension@@H@@@Z
+    // vIndex: 5
     virtual void playerStartChangeDimensionSuspendRegion(class Player&, DimensionType);
 
-    // vIndex: 6, symbol:
-    // ?setTransitionLocation@PlayerDimensionTransferer@@UEAAXAEAVPlayer@@AEAVChangeDimensionRequest@@AEAVDimension@@@Z
+    // vIndex: 6
     virtual void setTransitionLocation(class Player&, class ChangeDimensionRequest&, class Dimension&);
 
-    // vIndex: 7, symbol:
-    // ?syncTransitionComponentTargetPosition@PlayerDimensionTransferer@@UEAAXAEAVPlayer@@AEBVChangeDimensionRequest@@@Z
+    // vIndex: 7
     virtual void syncTransitionComponentTargetPosition(class Player&, class ChangeDimensionRequest const&);
 
-    // vIndex: 8, symbol:
-    // ?playerDestroyRegion@PlayerDimensionTransferer@@UEAAXAEAVPlayer@@AEBVChangeDimensionRequest@@@Z
+    // vIndex: 8
     virtual void playerDestroyRegion(class Player&, class ChangeDimensionRequest const&);
 
-    // vIndex: 9, symbol:
-    // ?playerPrepareRegion@PlayerDimensionTransferer@@UEAAXAEAVPlayer@@AEBVChangeDimensionRequest@@AEBVDimension@@@Z
+    // vIndex: 9
     virtual void playerPrepareRegion(class Player&, class ChangeDimensionRequest const&, class Dimension const&);
 
-    // vIndex: 10, symbol:
-    // ?playerWaitForServer@PlayerDimensionTransferer@@UEAA_NAEAVPlayer@@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@Z
+    // vIndex: 10
     virtual bool playerWaitForServer(class Player&, std::chrono::steady_clock::time_point);
 
-    // vIndex: 11, symbol:
-    // ?playerWaitForDimensionTransitionSystem@PlayerDimensionTransferer@@UEAA_NAEBVPlayer@@AEAVEntityRegistry@@@Z
+    // vIndex: 11
     virtual bool playerWaitForDimensionTransitionSystem(class Player const&, class EntityRegistry&);
 
-    // vIndex: 12, symbol:
-    // ?sendClientRespawnMovePacketFromServer@PlayerDimensionTransferer@@UEAAXAEBVPlayer@@AEAVChangeDimensionRequest@@@Z
+    // vIndex: 12
     virtual void sendClientRespawnMovePacketFromServer(class Player const&, class ChangeDimensionRequest&);
 
-    // vIndex: 13, symbol: ?waitForSubChunks@PlayerDimensionTransferer@@UEAA_NAEAVPlayer@@AEBVDimension@@@Z
+    // vIndex: 13
     virtual bool waitForSubChunks(class Player&, class Dimension const&);
 
-    // vIndex: 14, symbol: ?startWaitForRespawn@PlayerDimensionTransferer@@UEAAXAEBVPlayer@@@Z
+    // vIndex: 14
     virtual void startWaitForRespawn(class Player const&);
 
-    // vIndex: 15, symbol:
-    // ?playerSwitchDimension@PlayerDimensionTransferer@@UEAAXAEAVPlayer@@AEAVChangeDimensionRequest@@PEAUAddLimboActorHelper@@@Z
+    // vIndex: 15
     virtual void playerSwitchDimension(class Player&, class ChangeDimensionRequest&, struct AddLimboActorHelper*);
 
-    // vIndex: 16, symbol:
-    // ?doRespawnIfReady@PlayerDimensionTransferer@@UEAA_NAEAVPlayer@@AEAVChangeDimensionRequest@@PEAUAddLimboActorHelper@@@Z
+    // vIndex: 16
     virtual bool doRespawnIfReady(class Player&, class ChangeDimensionRequest&, struct AddLimboActorHelper*);
 
-    // vIndex: 17, symbol: ?setPacketSender@PlayerDimensionTransferer@@UEAAXAEAVPacketSender@@@Z
+    // vIndex: 17
     virtual void setPacketSender(class PacketSender&);
 
-    // symbol:
-    // ??0PlayerDimensionTransferer@@QEAA@V?$unique_ptr@VIPlayerDimensionTransferProxy@@U?$default_delete@VIPlayerDimensionTransferProxy@@@std@@@std@@_NAEBV?$not_null@V?$StackRefResult@VPortalForcer@@@@@gsl@@V?$unique_ptr@VISharedSpawnGetter@@U?$default_delete@VISharedSpawnGetter@@@std@@@2@AEBV?$StackRefResult@VLevelStorage@@@@@Z
     MCAPI
     PlayerDimensionTransferer(std::unique_ptr<class IPlayerDimensionTransferProxy>, bool, gsl::not_null<class StackRefResult<class PortalForcer>> const&, std::unique_ptr<class ISharedSpawnGetter>, class StackRefResult<class LevelStorage> const&);
 
@@ -95,11 +80,8 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_finalizeDimensionChange@PlayerDimensionTransferer@@AEAAXAEAVPlayer@@AEBVChangeDimensionRequest@@@Z
     MCAPI void _finalizeDimensionChange(class Player&, class ChangeDimensionRequest const&);
 
-    // symbol:
-    // ?_loadAgentFromTag@PlayerDimensionTransferer@@AEAAXAEAVPlayer@@AEAVChangeDimensionRequest@@AEAUAddLimboActorHelper@@@Z
     MCAPI void _loadAgentFromTag(class Player&, class ChangeDimensionRequest&, struct AddLimboActorHelper&);
 
     // NOLINTEND

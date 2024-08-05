@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1BeforeWatchdogTerminateEvent@@QEAA@XZ
     MCAPI ~BeforeWatchdogTerminateEvent();
 
     // NOLINTEND

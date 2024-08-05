@@ -11,13 +11,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1EnableNonOwnerReferences@Bedrock@@UEAA@XZ
+    // vIndex: 0
     virtual ~EnableNonOwnerReferences();
 
-    // symbol: ??0EnableNonOwnerReferences@Bedrock@@QEAA@XZ
     MCAPI EnableNonOwnerReferences();
 
-    // symbol: ??0EnableNonOwnerReferences@Bedrock@@QEAA@AEBV01@@Z
     MCAPI EnableNonOwnerReferences(class Bedrock::EnableNonOwnerReferences const&);
 
     // NOLINTEND

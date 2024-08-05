@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ScriptContextResult@Scripting@@QEAA@XZ
     MCAPI ~ScriptContextResult();
 
     // NOLINTEND

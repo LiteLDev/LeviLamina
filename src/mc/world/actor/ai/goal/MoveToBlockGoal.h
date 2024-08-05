@@ -16,46 +16,39 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MoveToBlockGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~MoveToBlockGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@MoveToBlockGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@MoveToBlockGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@MoveToBlockGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@MoveToBlockGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@MoveToBlockGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@MoveToBlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol:
-    // ??0MoveToBlockGoal@@QEAA@AEAVMob@@MHHHHMVVec3@@MW4TargetSelectionMethod@@V?$vector@VActorDefinitionTrigger@@V?$allocator@VActorDefinitionTrigger@@@std@@@std@@3V?$vector@VItemDescriptor@@V?$allocator@VItemDescriptor@@@std@@@5@AEBVActorFilterGroup@@@Z
     MCAPI MoveToBlockGoal(class Mob& mob, float speedModifier, int searchRange, int searchHeight, int tickInterval, int stayDurationTicks, float goalRadius, class Vec3 targetPositionOffset, float chanceToStart, ::TargetSelectionMethod targetSelectionMethod, std::vector<class ActorDefinitionTrigger> onReachTriggers, std::vector<class ActorDefinitionTrigger> onStayCompletedTriggers, std::vector<class ItemDescriptor> targetBlocks, class ActorFilterGroup const&);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_checkIfStuck@MoveToBlockGoal@@AEAAXXZ
     MCAPI void _checkIfStuck();
 
-    // symbol: ?_isValidTarget@MoveToBlockGoal@@AEBA_NAEBVBlock@@@Z
     MCAPI bool _isValidTarget(class Block const& candidateBlock) const;
 
-    // symbol: ?_moveToBlock@MoveToBlockGoal@@AEAAXXZ
     MCAPI void _moveToBlock();
 
-    // symbol: ?_pathIsValid@MoveToBlockGoal@@AEAA_NPEBVPath@@@Z
     MCAPI bool _pathIsValid(class Path const* path);
 
     // NOLINTEND

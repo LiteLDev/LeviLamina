@@ -17,12 +17,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?createResetMoveDirectionJumpPendingSystem@ResetMoveDirectionJumpPendingSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createResetMoveDirectionJumpPendingSystem();
 
-    // symbol:
-    // ?tickResetMoveDirectionJumpPendingSystem@ResetMoveDirectionJumpPendingSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@UOnGroundFlagComponent@@@@U?$Exclude@V?$FlagComponent@UMobAllowStandSlidingFlag@@@@@@$$CBUJumpPendingScaleComponent@@$$CBUActorDataFlagComponent@@$$CBUActorDataControllingSeatIndexComponent@@$$CBUVehicleComponent@@UMobTravelComponent@@@@@Z
     MCAPI static void
         tickResetMoveDirectionJumpPendingSystem(class ViewT<
                                                 class StrictEntityContext,

@@ -14,17 +14,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptDebuggerWatchdog@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptDebuggerWatchdog() = default;
 
-    // vIndex: 1, symbol: ?requireClose@ScriptDebuggerWatchdog@@UEBA_NXZ
+    // vIndex: 1
     virtual bool requireClose() const;
 
-    // vIndex: 2, symbol:
-    // ?startListenTimeout@ScriptDebuggerWatchdog@@UEAAXV?$duration@_JU?$ratio@$00$00@std@@@chrono@std@@@Z
+    // vIndex: 2
     virtual void startListenTimeout(std::chrono::seconds);
 
-    // vIndex: 3, symbol: ?listenTimeoutExpired@ScriptDebuggerWatchdog@@UEBA_NXZ
+    // vIndex: 3
     virtual bool listenTimeoutExpired() const;
 
     // NOLINTEND

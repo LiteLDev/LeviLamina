@@ -14,25 +14,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1TickTimeManagerProxy@@UEAA@XZ
+    // vIndex: 0
     virtual ~TickTimeManagerProxy() = default;
 
-    // vIndex: 1, symbol: ?shouldUpdateWorldTime@TickTimeManagerProxy@@UEBA_NXZ
+    // vIndex: 1
     virtual bool shouldUpdateWorldTime() const;
 
-    // vIndex: 2, symbol: ?setWorldTickTime@TickTimeManagerProxy@@UEAAXH@Z
+    // vIndex: 2
     virtual void setWorldTickTime(int);
 
-    // vIndex: 3, symbol: ?getWorldTickTime@TickTimeManagerProxy@@UEBAHXZ
+    // vIndex: 3
     virtual int getWorldTickTime() const;
 
-    // vIndex: 4, symbol: ?incrementCurrentTick@TickTimeManagerProxy@@UEAAXXZ
+    // vIndex: 4
     virtual void incrementCurrentTick();
 
-    // vIndex: 5, symbol: ?getCurrentTick@TickTimeManagerProxy@@UEBA?AUTick@@XZ
+    // vIndex: 5
     virtual struct Tick getCurrentTick() const;
 
-    // symbol: ??0TickTimeManagerProxy@@QEAA@AEAVLevelData@@@Z
     MCAPI explicit TickTimeManagerProxy(class LevelData&);
 
     // NOLINTEND

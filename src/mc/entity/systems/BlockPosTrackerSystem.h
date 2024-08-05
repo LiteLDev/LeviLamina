@@ -4,7 +4,6 @@
 
 namespace BlockPosTrackerSystem {
 // NOLINTBEGIN
-// symbol: ?createSystem@BlockPosTrackerSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createSystem();
 // NOLINTEND
 

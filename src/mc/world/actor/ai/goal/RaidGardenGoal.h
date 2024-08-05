@@ -15,30 +15,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1RaidGardenGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~RaidGardenGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@RaidGardenGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@RaidGardenGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@RaidGardenGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 6, symbol: ?tick@RaidGardenGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@RaidGardenGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // vIndex: 11, symbol: ?isValidTarget@RaidGardenGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 11
     virtual bool isValidTarget(class BlockSource& region, class BlockPos const& pos);
 
-    // symbol:
-    // ??0RaidGardenGoal@@QEAA@AEAVMob@@MHHHMHHHHAEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@@Z
     MCAPI
     RaidGardenGoal(class Mob& mob, float speedModifier, int searchRange, int searchHeight, int searchCount, float goalRadius, int maxToEat, int hasEatenFillDelay, int eatDelay, int initialEatDelay, std::vector<class BlockDescriptor> const&);
 

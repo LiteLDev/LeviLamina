@@ -17,14 +17,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1OnPlayerDestroyedTrigger@@UEAA@XZ
+    // vIndex: 0
     virtual ~OnPlayerDestroyedTrigger() = default;
 
-    // symbol:
-    // ?finalize@OnPlayerDestroyedTrigger@@QEAAXV?$not_null@PEAVBlockPlayerDestroyEventComponent@BlockEvents@@@gsl@@@Z
     MCAPI void finalize(gsl::not_null<class BlockEvents::BlockPlayerDestroyEventComponent*>);
 
-    // symbol: ?onPlayerDestroy@OnPlayerDestroyedTrigger@@QEBAXAEBUBlockPlayerDestroyEvent@BlockEvents@@@Z
     MCAPI void onPlayerDestroy(struct BlockEvents::BlockPlayerDestroyEvent const&) const;
 
     // NOLINTEND

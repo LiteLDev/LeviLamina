@@ -15,25 +15,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1UnlockRecipeCommand@@UEAA@XZ
+    // vIndex: 0
     virtual ~UnlockRecipeCommand() = default;
 
-    // vIndex: 2, symbol: ?execute@UnlockRecipeCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+    // vIndex: 2
     virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    // symbol: ?setup@UnlockRecipeCommand@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry& registry);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_handleAllRecipes@UnlockRecipeCommand@@AEBAXAEAVCommandOutput@@AEBV?$CommandSelectorResults@VPlayer@@@@@Z
     MCAPI void _handleAllRecipes(class CommandOutput&, class CommandSelectorResults<class Player> const&) const;
 
-    // symbol:
-    // ?_handleSpecificRecipe@UnlockRecipeCommand@@AEBAXAEAVCommandOutput@@AEBV?$CommandSelectorResults@VPlayer@@@@AEBVRecipes@@@Z
     MCAPI void
     _handleSpecificRecipe(class CommandOutput&, class CommandSelectorResults<class Player> const&, class Recipes const&)
         const;

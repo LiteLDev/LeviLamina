@@ -11,10 +11,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1IdentifierDescription@@UEAA@XZ
+    // vIndex: 0
     virtual ~IdentifierDescription();
 
-    // vIndex: 1, symbol: ?getJsonName@IdentifierDescription@@UEBAPEBDXZ
+    // vIndex: 1
     virtual char const* getJsonName() const;
 
     // NOLINTEND

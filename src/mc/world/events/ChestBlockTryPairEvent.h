@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ChestBlockTryPairEvent@@QEAA@XZ
     MCAPI ~ChestBlockTryPairEvent();
 
     // NOLINTEND

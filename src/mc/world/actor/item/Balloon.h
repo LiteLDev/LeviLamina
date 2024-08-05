@@ -35,26 +35,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 4, symbol: ?reloadHardcoded@Balloon@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 4
     virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: __gen_??1Balloon@@UEAA@XZ
+    // vIndex: 10
     virtual ~Balloon() = default;
 
-    // vIndex: 13, symbol: ?remove@Balloon@@UEAAXXZ
+    // vIndex: 13
     virtual void remove();
 
-    // vIndex: 146, symbol: ?_hurt@Balloon@@UEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 146
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // symbol: ??0Balloon@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Balloon(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?remove@Balloon@@QEAAX_N@Z
     MCAPI void remove(bool shouldPop);
 
     // NOLINTEND

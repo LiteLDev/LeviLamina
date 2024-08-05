@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1BlockSet@@QEAA@XZ
     MCAPI ~BlockSet();
 
     // NOLINTEND

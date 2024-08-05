@@ -26,19 +26,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1PumpkinBlockItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~PumpkinBlockItem() = default;
 
-    // vIndex: 50, symbol: ?getEnchantSlot@PumpkinBlockItem@@UEBAHXZ
+    // vIndex: 50
     virtual int getEnchantSlot() const;
 
-    // vIndex: 97, symbol: ?getEquipLocation@PumpkinBlockItem@@UEBA?AW4ActorLocation@@XZ
+    // vIndex: 97
     virtual ::ActorLocation getEquipLocation() const;
 
-    // vIndex: 98, symbol: ?getEquipSound@PumpkinBlockItem@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 98
     virtual ::Puv::Legacy::LevelSoundEvent getEquipSound() const;
 
-    // symbol: ??0PumpkinBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI PumpkinBlockItem(std::string const& name, int id);
 
     // NOLINTEND

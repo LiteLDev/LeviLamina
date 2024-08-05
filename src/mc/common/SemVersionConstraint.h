@@ -20,19 +20,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ?doValidate@SemVersionConstraint@@EEBAXAEBVmeta_any@entt@@AEAVSerializerContext@cereal@@@Z
+    // vIndex: 0
     virtual void doValidate(entt::meta_any const& any, class cereal::SerializerContext& context) const;
 
-    // vIndex: 1, symbol: ??1SemVersionConstraint@@UEAA@XZ
+    // vIndex: 1
     virtual ~SemVersionConstraint();
 
-    // vIndex: 2, symbol: ?description@SemVersionConstraint@@UEBA?AUConstraintDescription@internal@cereal@@XZ
+    // vIndex: 2
     virtual struct cereal::internal::ConstraintDescription description() const;
 
-    // symbol: ??0SemVersionConstraint@@QEAA@XZ
     MCAPI SemVersionConstraint();
 
-    // symbol: ?min@SemVersionConstraint@@QEAAAEAV1@AEBVSemVersion@@@Z
     MCAPI class SemVersionConstraint& min(class SemVersion const& m);
 
     // NOLINTEND

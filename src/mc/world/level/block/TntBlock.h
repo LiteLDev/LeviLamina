@@ -27,57 +27,52 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1TntBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~TntBlock() = default;
 
-    // vIndex: 63, symbol: ?shouldDispense@TntBlock@@UEBA_NAEAVBlockSource@@AEAVContainer@@@Z
+    // vIndex: 63
     virtual bool shouldDispense(class BlockSource& region, class Container& container) const;
 
-    // vIndex: 64, symbol: ?dispense@TntBlock@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 64
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
-    // vIndex: 66, symbol: ?onRedstoneUpdate@TntBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
+    // vIndex: 66
     virtual void
     onRedstoneUpdate(class BlockSource& region, class BlockPos const& pos, int strength, bool isFirstTime) const;
 
-    // vIndex: 72, symbol: ?setupRedstoneComponent@TntBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 72
     virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 91, symbol: ?destroy@TntBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@PEAVActor@@@Z
+    // vIndex: 91
     virtual void
     destroy(class BlockSource& region, class BlockPos const& pos, class Block const& block, class Actor* entitySource)
         const;
 
-    // vIndex: 119, symbol:
-    // ?buildDescriptionId@TntBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
+    // vIndex: 119
     virtual std::string buildDescriptionId(class Block const&) const;
 
-    // vIndex: 120, symbol: ?isAuxValueRelevantForPicking@TntBlock@@UEBA_NXZ
+    // vIndex: 120
     virtual bool isAuxValueRelevantForPicking() const;
 
-    // vIndex: 129, symbol: ?getVariant@TntBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 144, symbol: ?onExploded@TntBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
+    // vIndex: 144
     virtual void onExploded(class BlockSource& region, class BlockPos const& pos, class Actor* entitySource) const;
 
-    // vIndex: 146, symbol: ?onPlace@TntBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 146
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 152, symbol: ?use@TntBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    // symbol: ??0TntBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI TntBlock(std::string const& nameId, int id);
 
-    // symbol: ?_setAllowUnderwater@TntBlock@@QEBAXPEAVActor@@@Z
     MCAPI void _setAllowUnderwater(class Actor* e) const;
 
-    // symbol: ?_shouldAllowUnderwater@TntBlock@@QEBA_NAEBVBlock@@@Z
     MCAPI bool _shouldAllowUnderwater(class Block const& block) const;
 
-    // symbol: ?tryLightTnt@TntBlock@@SA_NAEAVPlayer@@AEBVBlockPos@@@Z
     MCAPI static bool tryLightTnt(class Player& player, class BlockPos const& pos);
 
     // NOLINTEND

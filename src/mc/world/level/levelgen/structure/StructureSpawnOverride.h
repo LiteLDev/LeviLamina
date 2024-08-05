@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1StructureSpawnOverride@worldgen@br@@QEAA@XZ
     MCAPI ~StructureSpawnOverride();
 
     // NOLINTEND

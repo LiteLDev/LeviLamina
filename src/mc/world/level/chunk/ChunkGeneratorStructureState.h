@@ -25,8 +25,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?findNearestStructureFeature@ChunkGeneratorStructureState@worldgen@br@@QEBA?AV?$optional@VBlockPos@@@std@@AEAVDimension@@W4StructureFeatureType@@AEBVBlockPos@@AEBVBiomeSource@@_N@Z
     MCAPI std::optional<class BlockPos> findNearestStructureFeature(
         class Dimension&,
         ::StructureFeatureType,
@@ -35,24 +33,17 @@ public:
         bool
     ) const;
 
-    // symbol: ??4ChunkGeneratorStructureState@worldgen@br@@QEAAAEAU012@$$QEAU012@@Z
     MCAPI struct br::worldgen::ChunkGeneratorStructureState&
     operator=(struct br::worldgen::ChunkGeneratorStructureState&&);
 
-    // symbol: ??1ChunkGeneratorStructureState@worldgen@br@@QEAA@XZ
     MCAPI ~ChunkGeneratorStructureState();
 
-    // symbol:
-    // ?createFlat@ChunkGeneratorStructureState@worldgen@br@@SA?AU123@_JAEBVBiomeSource@@V?$vector@V?$shared_ptr@$$CBUStructureSet@worldgen@br@@@std@@V?$allocator@V?$shared_ptr@$$CBUStructureSet@worldgen@br@@@std@@@2@@std@@@Z
     MCAPI static struct br::worldgen::ChunkGeneratorStructureState
     createFlat(int64, class BiomeSource const&, std::vector<std::shared_ptr<struct br::worldgen::StructureSet const>>);
 
-    // symbol:
-    // ?createNormal@ChunkGeneratorStructureState@worldgen@br@@SA?AU123@_JAEBVBiomeSource@@AEBVStructureSetRegistry@23@@Z
     MCAPI static struct br::worldgen::ChunkGeneratorStructureState
     createNormal(int64, class BiomeSource const&, class br::worldgen::StructureSetRegistry const&);
 
-    // symbol: ?createVoid@ChunkGeneratorStructureState@worldgen@br@@SA?AU123@_J@Z
     MCAPI static struct br::worldgen::ChunkGeneratorStructureState createVoid(int64);
 
     // NOLINTEND

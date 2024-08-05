@@ -16,11 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?_doServerPlayerFallDamageSystem@ServerPlayerFallDamageSystem@@SAXAEBVStrictEntityContext@@AEBUMovementAbilitiesComponent@@AEBUActorDataFlagComponent@@AEBUStateVectorComponent@@AEAVActorOwnerComponent@@AEAUFallDistanceComponent@@V?$Optional@$$CBV?$FlagComponent@UWasOnGroundFlag@@@@@@V?$Optional@$$CBUOnGroundFlagComponent@@@@V?$Optional@$$CBV?$FlagComponent@UHasTeleportedFlag@@@@@@V?$EntityModifier@V?$FlagComponent@UHasTeleportedFlag@@@@V?$FlagComponent@UWasOnGroundFlag@@@@@@@Z
     MCAPI static void _doServerPlayerFallDamageSystem(class StrictEntityContext const&, struct MovementAbilitiesComponent const&, struct ActorDataFlagComponent const&, struct StateVectorComponent const&, class ActorOwnerComponent&, struct FallDistanceComponent&, class Optional<class FlagComponent<struct WasOnGroundFlag> const>, class Optional<struct OnGroundFlagComponent const>, class Optional<class FlagComponent<struct HasTeleportedFlag> const>, class EntityModifier<class FlagComponent<struct HasTeleportedFlag>, class FlagComponent<struct WasOnGroundFlag>>);
 
-    // symbol: ?createSystem@ServerPlayerFallDamageSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
     // NOLINTEND

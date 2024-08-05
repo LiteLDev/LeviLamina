@@ -27,17 +27,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ChestBoatItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~ChestBoatItem() = default;
 
-    // vIndex: 83, symbol:
-    // ?buildDescriptionId@ChestBoatItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+    // vIndex: 83
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 119, symbol: ?_getActorType@ChestBoatItem@@EEBA?AW4ActorType@@XZ
+    // vIndex: 119
     virtual ::ActorType _getActorType() const;
 
-    // symbol: ??0ChestBoatItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH@Z
     MCAPI ChestBoatItem(std::string const& name, int id, int woodType);
 
     // NOLINTEND

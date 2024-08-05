@@ -22,15 +22,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0SubChunk@@QEAA@PEBVBlock@@_N1AEAVSpinLock@@C@Z
     MCAPI SubChunk(class Block const* initBlock, bool maxSkyLight, bool fullyLit, class SpinLock& spinLock, schar);
 
-    // symbol:
-    // ?deserialize@SubChunk@@QEAAXAEAVIDataInput@@AEBVBlockPalette@@AEBVSubChunkPos@@V?$optional@PEAUDeserializationChanges@@@std@@@Z
     MCAPI void
     deserialize(class IDataInput& stream, class BlockPalette const& palette, class SubChunkPos const& subChunkPos, std::optional<struct DeserializationChanges*>);
 
-    // symbol: ?fetchBlocks@SubChunk@@QEBAXAEBVBlockPos@@0FAEAVBlockVolume@@@Z
     MCAPI void fetchBlocks(
         class BlockPos const& subChunkOrigin,
         class BlockPos const& volumeOrigin,
@@ -38,8 +34,6 @@ public:
         class BlockVolume&    volume
     ) const;
 
-    // symbol:
-    // ?fetchBlocksInBox@SubChunk@@QEBAXAEBVBlockPos@@AEBVBoundingBox@@AEBV?$function@$$A6A_NAEBVBlock@@@Z@std@@AEAV?$vector@V?$BlockDataFetchResult@VBlock@@@@V?$allocator@V?$BlockDataFetchResult@VBlock@@@@@std@@@5@@Z
     MCAPI void fetchBlocksInBox(
         class BlockPos const&                                 positionOfChunk,
         class BoundingBox const&                              box,
@@ -47,8 +41,6 @@ public:
         std::vector<class BlockDataFetchResult<class Block>>& output
     ) const;
 
-    // symbol:
-    // ?fetchBlocksInCylinder@SubChunk@@QEBAXAEBVBlockPos@@0IIAEBV?$function@$$A6A_NAEBVBlock@@@Z@std@@AEAV?$vector@V?$BlockDataFetchResult@VBlock@@@@V?$allocator@V?$BlockDataFetchResult@VBlock@@@@@std@@@4@@Z
     MCAPI void fetchBlocksInCylinder(
         class BlockPos const&                                 positionOfChunk,
         class BlockPos const&                                 pos,
@@ -58,87 +50,60 @@ public:
         std::vector<class BlockDataFetchResult<class Block>>& output
     ) const;
 
-    // symbol: ?getAbsoluteIndex@SubChunk@@QEBACXZ
     MCAPI schar getAbsoluteIndex() const;
 
-    // symbol: ?getBlock@SubChunk@@QEBAAEBVBlock@@G@Z
     MCAPI class Block const& getBlock(ushort index) const;
 
-    // symbol: ?getExtraBlock@SubChunk@@QEBAAEBVBlock@@G@Z
     MCAPI class Block const& getExtraBlock(ushort index) const;
 
-    // symbol: ?getLight@SubChunk@@QEBA?AULightPair@SubChunkBrightnessStorage@@G@Z
     MCAPI struct SubChunkBrightnessStorage::LightPair getLight(ushort idx) const;
 
-    // symbol: ?getSubChunkState@SubChunk@@QEBA?AW4SubChunkState@1@XZ
     MCAPI ::SubChunk::SubChunkState getSubChunkState() const;
 
-    // symbol: ?initialize@SubChunk@@QEAAXPEBVBlock@@_N1AEAVSpinLock@@C@Z
     MCAPI void
     initialize(class Block const* initBlock, bool maxSkyLight, bool fullyLit, class SpinLock& spinLock, schar);
 
-    // symbol: ?isEmpty@SubChunk@@QEBA_NXZ
     MCAPI bool isEmpty() const;
 
-    // symbol: ?isPlaceHolderSubChunk@SubChunk@@QEBA_NXZ
     MCAPI bool isPlaceHolderSubChunk() const;
 
-    // symbol: ?isUniform@SubChunk@@QEBA_NAEBVBlock@@@Z
     MCAPI bool isUniform(class Block const& block) const;
 
-    // symbol: ??4SubChunk@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct SubChunk& operator=(struct SubChunk&& rhs);
 
-    // symbol: ?prune@SubChunk@@QEAAXW4PruneType@SubChunkStorageUnit@@@Z
     MCAPI void prune(::SubChunkStorageUnit::PruneType);
 
-    // symbol:
-    // ?recalculateHashAndSerialize@SubChunk@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
     MCAPI std::string recalculateHashAndSerialize(bool);
 
-    // symbol: ?reset@SubChunk@@QEAAXPEBVBlock@@_N1@Z
     MCAPI void reset(class Block const* resetBlock, bool maxSkyLight, bool fullyLit);
 
-    // symbol: ?safeToModify@SubChunk@@QEBA_NXZ
     MCAPI bool safeToModify() const;
 
-    // symbol: ?serialize@SubChunk@@QEBAXAEAVIDataOutput@@_N@Z
     MCAPI void serialize(class IDataOutput& stream, bool network) const;
 
-    // symbol: ?setBlock@SubChunk@@QEAAXGAEBVBlock@@@Z
     MCAPI void setBlock(ushort, class Block const&);
 
-    // symbol: ?setBlockLight@SubChunk@@QEAAXGE@Z
     MCAPI void setBlockLight(ushort index, uchar lightValue);
 
-    // symbol: ?setFromBlockVolume@SubChunk@@QEAAXAEBVBlockVolume@@F@Z
     MCAPI void setFromBlockVolume(class BlockVolume const& box, short height);
 
-    // symbol: ?setSkyLight@SubChunk@@QEAAXGE@Z
     MCAPI void setSkyLight(ushort, uchar);
 
-    // symbol: ??1SubChunk@@QEAA@XZ
     MCAPI ~SubChunk();
 
-    // symbol: ?flushGarbageCollectors@SubChunk@@SAXXZ
     MCAPI static void flushGarbageCollectors();
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?_createBlockLightStorage@SubChunk@@IEAAXXZ
     MCAPI void _createBlockLightStorage();
 
-    // symbol:
-    // ?_replaceBlocks@SubChunk@@IEAAXEV?$unique_ptr@V?$SubChunkStorage@VBlock@@@@U?$default_delete@V?$SubChunkStorage@VBlock@@@@@std@@@std@@AEAV?$LockGuard@VSpinLock@@@Threading@Bedrock@@@Z
     MCAPI void
     _replaceBlocks(uchar layer, std::unique_ptr<class SubChunkStorage<class Block>> newStorage, class Bedrock::Threading::LockGuard<class SpinLock>&);
 
-    // symbol: ?_resetLight@SubChunk@@IEAAX_N0@Z
     MCAPI void _resetLight(bool maxSkyLight, bool maxLight);
 
-    // symbol: ?_setBlock@SubChunk@@IEAAXEGAEBVBlock@@@Z
     MCAPI void _setBlock(uchar layer, ushort index, class Block const& block);
 
     // NOLINTEND

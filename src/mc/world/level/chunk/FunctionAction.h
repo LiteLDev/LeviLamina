@@ -14,24 +14,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FunctionAction@@UEAA@XZ
+    // vIndex: 0
     virtual ~FunctionAction() = default;
 
-    // vIndex: 1, symbol: ?execute@FunctionAction@@UEAAXAEAVServerLevel@@AEAVDimension@@@Z
+    // vIndex: 1
     virtual void execute(class ServerLevel& level, class Dimension& dimension);
 
-    // vIndex: 2, symbol: ?serialize@FunctionAction@@UEAAXAEAVCompoundTag@@@Z
+    // vIndex: 2
     virtual void serialize(class CompoundTag& tag);
 
-    // vIndex: 3, symbol: ??8FunctionAction@@UEBA_NAEBVIRequestAction@@@Z
+    // vIndex: 3
     virtual bool operator==(class IRequestAction const& action) const;
 
-    // symbol:
-    // ??0FunctionAction@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@2@@Z
     MCAPI FunctionAction(std::string const& filePath, std::unique_ptr<class CommandOrigin>);
 
-    // symbol:
-    // ?load@FunctionAction@@SA?AV?$unique_ptr@VFunctionAction@@U?$default_delete@VFunctionAction@@@std@@@std@@AEBVCompoundTag@@AEAVICommandOriginLoader@@@Z
     MCAPI static std::unique_ptr<class FunctionAction>
     load(class CompoundTag const& tag, class ICommandOriginLoader& loader);
 
@@ -39,10 +35,8 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_printOriginInvalidError@FunctionAction@@AEAAXAEAVServerLevel@@@Z
     MCAPI void _printOriginInvalidError(class ServerLevel& level);
 
-    // symbol: ?_printOutput@FunctionAction@@AEAAXAEAVServerLevel@@H@Z
     MCAPI void _printOutput(class ServerLevel& level, int successCount);
 
     // NOLINTEND

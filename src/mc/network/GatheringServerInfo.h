@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1GatheringServerInfo@@QEAA@XZ
     MCAPI ~GatheringServerInfo();
 
     // NOLINTEND

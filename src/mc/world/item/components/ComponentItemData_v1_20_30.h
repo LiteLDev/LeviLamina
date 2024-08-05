@@ -17,16 +17,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ComponentItemData_v1_20_30@@QEAA@XZ
     MCAPI ~ComponentItemData_v1_20_30();
 
-    // symbol: ?bindType@ComponentItemData_v1_20_30@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
-    // symbol: ?moveDeprecatedData@ComponentItemData_v1_20_30@@SAXAEAUComponentItemData_v1_20_20@@AEAU1@@Z
     MCAPI static void moveDeprecatedData(struct ComponentItemData_v1_20_20&, struct ComponentItemData_v1_20_30&);
 
-    // symbol: ?SUPPORTED_VERSIONS@ComponentItemData_v1_20_30@@2VVersionRange@Puv@@B
     MCAPI static class Puv::VersionRange const SUPPORTED_VERSIONS;
 
     // NOLINTEND

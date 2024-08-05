@@ -14,13 +14,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1IcePatchFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~IcePatchFeature() = default;
 
-    // vIndex: 3, symbol: ?place@IcePatchFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 3
     virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // symbol: ??0IcePatchFeature@@QEAA@H@Z
     MCAPI explicit IcePatchFeature(int radius);
 
     // NOLINTEND

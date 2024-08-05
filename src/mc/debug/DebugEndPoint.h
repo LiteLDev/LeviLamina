@@ -30,18 +30,15 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1VanillaWorldChecker@DebugEndPoint@@UEAA@XZ
+        // vIndex: 0
         virtual ~VanillaWorldChecker();
 
-        // vIndex: 1, symbol:
-        // ?onActiveResourcePacksChanged@VanillaWorldChecker@DebugEndPoint@@UEAAXAEAVResourcePackManager@@@Z
+        // vIndex: 1
         virtual void onActiveResourcePacksChanged(class ResourcePackManager& mgr);
 
-        // vIndex: 5, symbol:
-        // ?onResourceManagerDestroyed@VanillaWorldChecker@DebugEndPoint@@UEAAXAEAVResourcePackManager@@@Z
+        // vIndex: 5
         virtual void onResourceManagerDestroyed(class ResourcePackManager& mgr);
 
-        // symbol: ?checkWorldData@VanillaWorldChecker@DebugEndPoint@@QEAAXAEBVPath@Core@@@Z
         MCAPI void checkWorldData(class Core::Path const& levelPath);
 
         // NOLINTEND
@@ -55,36 +52,26 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?contentAssert@DebugEndPoint@@MEAAXW4LogArea@@W4LogLevel@@PEBD@Z
     MCVAPI void contentAssert(::LogArea area, ::LogLevel level, char const* message);
 
-    // symbol: ?flush@DebugEndPoint@@UEAAXXZ
     MCVAPI void flush();
 
-    // symbol: ?isEnabled@DebugEndPoint@@UEBA_NXZ
     MCVAPI bool isEnabled() const;
 
-    // symbol: ?log@DebugEndPoint@@UEAAXW4LogArea@@W4LogLevel@@PEBD@Z
     MCVAPI void log(::LogArea area, ::LogLevel level, char const* message);
 
-    // symbol: ?logOnlyOnce@DebugEndPoint@@UEBA_NXZ
     MCVAPI bool logOnlyOnce() const;
 
-    // symbol: ?setEnabled@DebugEndPoint@@UEAAX_N@Z
     MCVAPI void setEnabled(bool newState);
 
-    // symbol: ??0DebugEndPoint@@QEAA@V?$optional@W4LogLevel@@@std@@@Z
     MCAPI explicit DebugEndPoint(std::optional<::LogLevel>);
 
-    // symbol: ?initializeContentLogging@DebugEndPoint@@QEAAXAEAVResourcePackManager@@AEBVPath@Core@@@Z
     MCAPI void initializeContentLogging(class ResourcePackManager& mgr, class Core::Path const& levelPath);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?mAssertAreas@DebugEndPoint@@0V?$unordered_map@W4LogArea@@_NU?$hash@W4LogArea@@@std@@U?$equal_to@W4LogArea@@@3@V?$allocator@U?$pair@$$CBW4LogArea@@_N@std@@@3@@std@@B
     MCAPI static std::unordered_map<::LogArea, bool> const mAssertAreas;
 
     // NOLINTEND

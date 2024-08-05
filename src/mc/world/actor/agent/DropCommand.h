@@ -21,13 +21,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DropCommand@AgentCommands@@UEAA@XZ
+    // vIndex: 0
     virtual ~DropCommand() = default;
 
-    // vIndex: 1, symbol: ?execute@DropCommand@AgentCommands@@UEAAXXZ
+    // vIndex: 1
     virtual void execute();
 
-    // vIndex: 2, symbol: ?isDone@DropCommand@AgentCommands@@UEAA_NXZ
+    // vIndex: 2
     virtual bool isDone();
 
     // NOLINTEND

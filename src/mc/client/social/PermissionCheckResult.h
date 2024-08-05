@@ -13,10 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?denyReasonsForTelemetry@PermissionCheckResult@Social@@QEBAHXZ
     MCAPI int denyReasonsForTelemetry() const;
 
-    // symbol: ??1PermissionCheckResult@Social@@QEAA@XZ
     MCAPI ~PermissionCheckResult();
 
     // NOLINTEND

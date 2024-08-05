@@ -16,19 +16,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@SetPreviousPositionSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_doSetPreviousPositionSystem@SetPreviousPositionSystem@@CAXAEBVStrictEntityContext@@AEAUStateVectorComponent@@@Z
     MCAPI static void _doSetPreviousPositionSystem(class StrictEntityContext const&, struct StateVectorComponent&);
 
-    // symbol:
-    // ?_tickSetPreviousPositionSystem@SetPreviousPositionSystem@@CAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@UNeedSetPreviousPosition@@@@@@UStateVectorComponent@@@@@Z
     MCAPI static void _tickSetPreviousPositionSystem(class ViewT<
                                                      class StrictEntityContext,
                                                      struct Include<

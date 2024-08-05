@@ -26,7 +26,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1InProgressRequest@ScriptNetPromiseTracker@ScriptModuleMinecraftNet@@QEAA@XZ
         MCAPI ~InProgressRequest();
 
         // NOLINTEND
@@ -40,12 +39,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?handleFailure@ScriptNetPromiseTracker@ScriptModuleMinecraftNet@@QEAAXIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void handleFailure(uint requestId, std::string const& reason);
 
-    // symbol:
-    // ?handleResponse@ScriptNetPromiseTracker@ScriptModuleMinecraftNet@@QEAAXIAEBV?$vector@UScriptNetHeader@ScriptModuleMinecraftNet@@V?$allocator@UScriptNetHeader@ScriptModuleMinecraftNet@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@I@Z
     MCAPI void handleResponse(
         uint                                                                 requestId,
         std::vector<struct ScriptModuleMinecraftNet::ScriptNetHeader> const& headers,
@@ -53,8 +48,6 @@ public:
         uint                                                                 status
     );
 
-    // symbol:
-    // ?rejectAll@ScriptNetPromiseTracker@ScriptModuleMinecraftNet@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void rejectAll(std::string const& reason);
 
     // NOLINTEND

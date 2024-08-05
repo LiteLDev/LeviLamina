@@ -35,28 +35,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1Silverfish@@UEAA@XZ
+    // vIndex: 10
     virtual ~Silverfish() = default;
 
-    // vIndex: 74, symbol: ?handleEntityEvent@Silverfish@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 74
     virtual void handleEntityEvent(::ActorEvent id, int data);
 
-    // vIndex: 149, symbol: ?_playStepSound@Silverfish@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 149
     virtual void _playStepSound(class BlockPos const& pos, class Block const& onBlock);
 
-    // vIndex: 152, symbol: ?spawnAnim@Silverfish@@UEAAXXZ
+    // vIndex: 152
     virtual void spawnAnim();
 
-    // vIndex: 160, symbol: ?checkSpawnRules@Silverfish@@UEAA_N_N@Z
+    // vIndex: 160
     virtual bool checkSpawnRules(bool fromSpawner);
 
-    // vIndex: 184, symbol: ?_getWalkTargetValue@Silverfish@@UEAAMAEBVBlockPos@@@Z
+    // vIndex: 184
     virtual float _getWalkTargetValue(class BlockPos const& pos);
 
-    // vIndex: 190, symbol: ?isDarkEnoughToSpawn@Silverfish@@UEBA_NXZ
+    // vIndex: 190
     virtual bool isDarkEnoughToSpawn() const;
 
-    // symbol: ??0Silverfish@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Silverfish(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

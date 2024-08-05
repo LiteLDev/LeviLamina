@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1MolangContextVariableMapWithCleanup@@QEAA@XZ
     MCAPI ~MolangContextVariableMapWithCleanup();
 
     // NOLINTEND

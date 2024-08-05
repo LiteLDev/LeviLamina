@@ -22,15 +22,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FastDispatchPublisherBase_MultiThreaded@Detail@PubSub@Bedrock@@UEAA@XZ
+    // vIndex: 0
     virtual ~FastDispatchPublisherBase_MultiThreaded() = default;
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol:
-    // ?_loadDispatchTargets@FastDispatchPublisherBase_MultiThreaded@Detail@PubSub@Bedrock@@IEBA_NAEAVDispatchTargets@234@@Z
     MCAPI bool _loadDispatchTargets(class Bedrock::PubSub::Detail::DispatchTargets& targets) const;
 
     // NOLINTEND

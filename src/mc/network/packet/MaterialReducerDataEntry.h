@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1MaterialReducerDataEntry@@QEAA@XZ
     MCAPI ~MaterialReducerDataEntry();
 
     // NOLINTEND

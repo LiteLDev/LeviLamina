@@ -23,17 +23,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BackgroundWorker@@UEAA@XZ
+    // vIndex: 0
     virtual ~BackgroundWorker();
 
-    // vIndex: 1, symbol: ?isAsync@BackgroundWorker@@UEBA_NXZ
+    // vIndex: 1
     virtual bool isAsync() const;
 
-    // vIndex: 2, symbol: ?canTaskRunAgain@BackgroundWorker@@UEBA_NXZ
+    // vIndex: 2
     virtual bool canTaskRunAgain() const;
 
-    // symbol:
-    // ??0BackgroundWorker@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NAEBVOSThreadPriority@Threading@Bedrock@@V?$optional@_K@2@V?$optional@H@2@AEAVWorkerPool@@1@Z
     MCAPI BackgroundWorker(
         std::string                                       name,
         bool                                              async,
@@ -44,42 +42,32 @@ public:
         bool                                              suppressProfiling
     );
 
-    // symbol: ?getApproximateTaskCount@BackgroundWorker@@QEBA_KXZ
     MCAPI uint64 getApproximateTaskCount() const;
 
-    // symbol: ?getThreadId@BackgroundWorker@@QEBA?AVid@thread@std@@XZ
     MCAPI std::thread::id getThreadId() const;
 
-    // symbol: ?isIdle@BackgroundWorker@@QEBA_NXZ
     MCAPI bool isIdle() const;
 
-    // symbol: ?queue@BackgroundWorker@@QEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@@Z
     MCAPI void queue(std::shared_ptr<class BackgroundTaskBase> task);
 
-    // symbol: ?requestStop@BackgroundWorker@@QEAAX_N@Z
     MCAPI void requestStop(bool wait);
 
-    // symbol: ?start@BackgroundWorker@@QEAAXXZ
     MCAPI void start();
 
-    // symbol: ?wake@BackgroundWorker@@QEAAXXZ
     MCAPI void wake();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_processNextTask@BackgroundWorker@@AEAA_NXZ
     MCAPI bool _processNextTask();
 
-    // symbol: ?_runOneTask@BackgroundWorker@@AEAA?AW4RunOneResult@1@XZ
     MCAPI ::BackgroundWorker::RunOneResult _runOneTask();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?gLocalWorkerMappingSingleton@BackgroundWorker@@0PEAV1@EA
     MCAPI static class BackgroundWorker* gLocalWorkerMappingSingleton;
 
     // NOLINTEND

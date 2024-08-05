@@ -14,10 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1NetherFireFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~NetherFireFeature();
 
-    // vIndex: 3, symbol: ?place@NetherFireFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 3
     virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
     // NOLINTEND

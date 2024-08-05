@@ -14,23 +14,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ?updateDecayDelay@DefaultSculkBehavior@@UEBAHH@Z
+    // vIndex: 0
     virtual int updateDecayDelay(int currentValue) const;
 
-    // vIndex: 1, symbol: ?updateFacingData@DefaultSculkBehavior@@UEBAHHAEBVBlock@@@Z
+    // vIndex: 1
     virtual int updateFacingData(int currentValue, class Block const&) const;
 
-    // vIndex: 2, symbol: ?canChangeBlockOnSpread@DefaultSculkBehavior@@UEBA_NXZ
+    // vIndex: 2
     virtual bool canChangeBlockOnSpread() const;
 
-    // vIndex: 3, symbol:
-    // ?attemptSpreadVeins@DefaultSculkBehavior@@UEBA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEBVBlock@@HAEAVSculkSpreader@@@Z
+    // vIndex: 3
     virtual bool
     attemptSpreadVeins(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Block const& block, int, class SculkSpreader&)
         const;
 
-    // vIndex: 4, symbol:
-    // ?attemptUseCharge@DefaultSculkBehavior@@UEBAHAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@2HHAEAVRandom@@AEAVSculkSpreader@@_N@Z
+    // vIndex: 4
     virtual int attemptUseCharge(
         class IBlockWorldGenAPI&,
         class BlockSource*,
@@ -43,8 +41,7 @@ public:
         bool
     ) const;
 
-    // vIndex: 5, symbol:
-    // ?onDischarged@DefaultSculkBehavior@@UEBAXAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 5
     virtual void onDischarged(class IBlockWorldGenAPI&, class BlockSource*, class BlockPos const&) const;
 
     // NOLINTEND

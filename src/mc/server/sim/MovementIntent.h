@@ -23,8 +23,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0MovementIntent@sim@@QEAA@V?$variant@UVoidMoveIntent@sim@@UMoveInDirectionIntent@2@UMoveToPositionIntent@2@UNavigateToPositionsIntent@2@UNavigateToEntityIntent@2@@std@@@Z
     MCAPI explicit MovementIntent(std::variant<
                                   struct sim::VoidMoveIntent,
                                   struct sim::MoveInDirectionIntent,
@@ -32,10 +30,8 @@ public:
                                   struct sim::NavigateToPositionsIntent,
                                   struct sim::NavigateToEntityIntent>);
 
-    // symbol: ?finalize@MovementIntent@sim@@QEAAXAEAVSimulatedPlayer@@@Z
     MCAPI void finalize(class SimulatedPlayer&);
 
-    // symbol: ??1MovementIntent@sim@@QEAA@XZ
     MCAPI ~MovementIntent();
 
     // NOLINTEND

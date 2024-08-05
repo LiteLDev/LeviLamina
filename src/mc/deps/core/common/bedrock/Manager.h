@@ -25,18 +25,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1Manager@CodeBuilder@@UEAA@XZ
+    // vIndex: 0
     virtual ~Manager() = default;
 
-    // vIndex: 1, symbol:
-    // ?getAutomationClient@Manager@CodeBuilder@@UEBA?AV?$not_null@V?$NonOwnerPointer@VAutomationClient@Automation@@@Bedrock@@@gsl@@XZ
+    // vIndex: 1
     virtual Bedrock::NotNullNonOwnerPtr<class Automation::AutomationClient> getAutomationClient() const;
 
-    // vIndex: 2, symbol:
-    // ?getEventing@Manager@CodeBuilder@@UEBA?AV?$not_null@V?$NonOwnerPointer@VIMessenger@CodeBuilder@@@Bedrock@@@gsl@@XZ
+    // vIndex: 2
     virtual Bedrock::NotNullNonOwnerPtr<class CodeBuilder::IMessenger> getEventing() const;
 
-    // symbol: ??0Manager@CodeBuilder@@QEAA@AEAVIMinecraftApp@@@Z
     MCAPI explicit Manager(class IMinecraftApp&);
 
     // NOLINTEND

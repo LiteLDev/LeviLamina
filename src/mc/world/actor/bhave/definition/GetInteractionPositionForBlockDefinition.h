@@ -19,10 +19,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1GetInteractionPositionForBlockDefinition@@UEAA@XZ
+    // vIndex: 0
     virtual ~GetInteractionPositionForBlockDefinition();
 
-    // vIndex: 1, symbol: ?load@GetInteractionPositionForBlockDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
+    // vIndex: 1
     virtual void load(class Json::Value value, class BehaviorFactory const& factory);
 
     // NOLINTEND

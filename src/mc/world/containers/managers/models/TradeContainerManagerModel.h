@@ -16,29 +16,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1TradeContainerManagerModel@@UEAA@XZ
+    // vIndex: 0
     virtual ~TradeContainerManagerModel() = default;
 
-    // vIndex: 6, symbol:
-    // ?getItemCopies@TradeContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+    // vIndex: 6
     virtual std::vector<class ItemStack> getItemCopies() const;
 
-    // vIndex: 7, symbol: ?setSlot@TradeContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
+    // vIndex: 7
     virtual void setSlot(int slot, class ItemStack const& item, bool);
 
-    // vIndex: 8, symbol: ?getSlot@TradeContainerManagerModel@@UEBAAEBVItemStack@@H@Z
+    // vIndex: 8
     virtual class ItemStack const& getSlot(int slot) const;
 
-    // vIndex: 10, symbol: ?broadcastChanges@TradeContainerManagerModel@@UEAAXXZ
+    // vIndex: 10
     virtual void broadcastChanges();
 
-    // vIndex: 16, symbol: ?isValid@TradeContainerManagerModel@@UEAA_NM@Z
+    // vIndex: 16
     virtual bool isValid(float pickRange);
 
-    // vIndex: 17, symbol: ?_postInit@TradeContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+    // vIndex: 17
     virtual class ContainerScreenContext _postInit();
 
-    // symbol: ??0TradeContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBUActorUniqueID@@@Z
     MCAPI
     TradeContainerManagerModel(::ContainerID containerId, class Player& player, struct ActorUniqueID const& uniqueId);
 

@@ -19,7 +19,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1Node@CompoundTagUpdater@@QEAA@XZ
         MCAPI ~Node();
 
         // NOLINTEND
@@ -33,14 +32,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getVersion@CompoundTagUpdater@@QEBAIXZ
     MCAPI uint getVersion() const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_update@CompoundTagUpdater@@AEBA_NAEBUNode@1@AEAVCompoundTag@@@Z
     MCAPI bool _update(struct CompoundTagUpdater::Node const&, class CompoundTag&) const;
 
     // NOLINTEND

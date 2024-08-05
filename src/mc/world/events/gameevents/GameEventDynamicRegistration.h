@@ -14,27 +14,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0GameEventDynamicRegistration@@QEAA@V?$shared_ptr@VGameEventListener@@@std@@@Z
     MCAPI explicit GameEventDynamicRegistration(std::shared_ptr<class GameEventListener> listener);
 
-    // symbol:
-    // ?onActorLoadedIntoChunk@GameEventDynamicRegistration@@QEAAXAEBVBlockSource@@VChunkPos@@V?$AutomaticID@VDimension@@H@@@Z
     MCAPI void
     onActorLoadedIntoChunk(class BlockSource const& region, class ChunkPos chunkPos, DimensionType dimensionId);
 
-    // symbol:
-    // ?onActorMovedBetweenChunks@GameEventDynamicRegistration@@QEAAXAEBVBlockSource@@VChunkPos@@V?$AutomaticID@VDimension@@H@@@Z
     MCAPI void onActorMovedBetweenChunks(class BlockSource const& region, class ChunkPos, DimensionType);
 
-    // symbol: ?onActorRemoved@GameEventDynamicRegistration@@QEAAXXZ
     MCAPI void onActorRemoved();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_onActorChangedChunk@GameEventDynamicRegistration@@AEAAXAEBVBlockSource@@VChunkPos@@V?$AutomaticID@VDimension@@H@@@Z
     MCAPI void _onActorChangedChunk(class BlockSource const& region, class ChunkPos, DimensionType);
 
     // NOLINTEND

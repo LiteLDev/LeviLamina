@@ -11,10 +11,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BlockSelector@@UEAA@XZ
+    // vIndex: 0
     virtual ~BlockSelector();
 
-    // vIndex: 1, symbol: ?next@MossStoneSelector@@UEBAAEBVBlock@@AEAVRandom@@HHH_N@Z
+    // vIndex: 1
     virtual class Block const& next(class Random& random, int worldX, int worldY, int worldZ, bool isEdge) const = 0;
 
     // NOLINTEND

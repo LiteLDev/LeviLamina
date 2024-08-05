@@ -4,8 +4,6 @@
 
 namespace StoreLocalMovementVelocitySystemUtils {
 // NOLINTBEGIN
-// symbol:
-// ?storeLocalMovementVelocity@StoreLocalMovementVelocitySystemUtils@@YAXAEBUMobTravelComponent@@AEAUCurrentLocalMoveVelocityComponent@@@Z
 MCAPI void storeLocalMovementVelocity(struct MobTravelComponent const&, struct CurrentLocalMoveVelocityComponent&);
 // NOLINTEND
 

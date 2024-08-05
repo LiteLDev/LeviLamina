@@ -11,15 +11,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@ShulkerPostAiStepSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_doShulkerPostAiStepSystem@ShulkerPostAiStepSystem@@CAXAEBVStrictEntityContext@@AEAUActorRotationComponent@@AEAUMobBodyRotationComponent@@AEAUStateVectorComponent@@@Z
     MCAPI static void
     _doShulkerPostAiStepSystem(class StrictEntityContext const&, struct ActorRotationComponent&, struct MobBodyRotationComponent&, struct StateVectorComponent&);
 

@@ -17,11 +17,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CraftHandlerLoom@@UEAA@XZ
+    // vIndex: 0
     virtual ~CraftHandlerLoom() = default;
 
-    // vIndex: 4, symbol:
-    // ?_handleCraftAction@CraftHandlerLoom@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z
+    // vIndex: 4
     virtual ::ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const& requestAction);
 
     // NOLINTEND

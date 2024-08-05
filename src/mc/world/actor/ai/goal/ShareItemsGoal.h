@@ -15,30 +15,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ShareItemsGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~ShareItemsGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@ShareItemsGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@ShareItemsGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@ShareItemsGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@ShareItemsGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@ShareItemsGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@ShareItemsGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol:
-    // ??0ShareItemsGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@MHM@Z
     MCAPI ShareItemsGoal(
         class Mob&                               mob,
         std::vector<struct MobDescriptor> const& mobFilters,
@@ -51,8 +48,6 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    // symbol:
-    // ?selectEntityToShareWith@ShareItemsGoal@@IEAA?AU?$pair@HVItemStack@@@std@@AEBV?$vector@U?$pair@HVItemStack@@@std@@V?$allocator@U?$pair@HVItemStack@@@std@@@2@@3@@Z
     MCAPI std::pair<int, class ItemStack>
           selectEntityToShareWith(std::vector<std::pair<int, class ItemStack>> const& shareableItems);
 

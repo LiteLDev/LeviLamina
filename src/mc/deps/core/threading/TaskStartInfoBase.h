@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?NoAffinity@TaskStartInfoBase@@2Vid@thread@std@@B
     MCAPI static std::thread::id const NoAffinity;
 
     // NOLINTEND

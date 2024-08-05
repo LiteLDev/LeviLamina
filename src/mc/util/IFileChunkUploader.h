@@ -14,27 +14,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1IFileChunkUploader@@UEAA@XZ
+    // vIndex: 0
     virtual ~IFileChunkUploader();
 
-    // vIndex: 1, symbol: ?update@IFileChunkUploader@@UEAAXXZ
+    // vIndex: 1
     virtual void update();
 
-    // vIndex: 2, symbol: __unk_vfn_2
+    // vIndex: 2
     virtual void __unk_vfn_2() = 0;
 
-    // vIndex: 3, symbol:
-    // ?getServerMissingChunks@IFileChunkUploader@@UEBAXAEBUFileInfo@@V?$function@$$A6AXV?$vector@UFileChunkInfo@@V?$allocator@UFileChunkInfo@@@std@@@std@@@Z@std@@@Z
+    // vIndex: 3
     virtual void getServerMissingChunks(
         struct FileInfo const&                                 file,
         std::function<void(std::vector<struct FileChunkInfo>)> callback
     ) const;
 
-    // vIndex: 4, symbol: ?confirmChunkReceived@IFileChunkUploader@@UEAAXAEBUFileInfo@@AEBUFileChunkInfo@@@Z
+    // vIndex: 4
     virtual void confirmChunkReceived(struct FileInfo const& file, struct FileChunkInfo const& chunk);
 
-    // vIndex: 5, symbol:
-    // ?uploadChunk@IFileChunkUploader@@UEAAXAEBUFileInfo@@AEBUFileChunkInfo@@AEBV?$vector@EV?$allocator@E@std@@@std@@V?$function@$$A6AX_N@Z@5@@Z
+    // vIndex: 5
     virtual void uploadChunk(
         struct FileInfo const&      file,
         struct FileChunkInfo const& chunk,
@@ -42,8 +40,7 @@ public:
         std::function<void(bool)>   onCompleteCallback
     );
 
-    // vIndex: 6, symbol:
-    // ?uploadStream@IFileChunkUploader@@UEAAXAEBUFileInfo@@_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXW4UploadStreamResult@IFileChunkUploader@@@Z@4@@Z
+    // vIndex: 6
     virtual void uploadStream(
         struct FileInfo const&                                        file,
         uint64                                                        streamSize,
@@ -51,22 +48,21 @@ public:
         std::function<void(::IFileChunkUploader::UploadStreamResult)> onCompleteCallback
     );
 
-    // vIndex: 7, symbol: __unk_vfn_7
+    // vIndex: 7
     virtual void __unk_vfn_7() = 0;
 
-    // vIndex: 8, symbol: __unk_vfn_8
+    // vIndex: 8
     virtual void __unk_vfn_8() = 0;
 
-    // vIndex: 9, symbol: __unk_vfn_9
+    // vIndex: 9
     virtual void __unk_vfn_9() = 0;
 
-    // vIndex: 10, symbol: __unk_vfn_10
+    // vIndex: 10
     virtual void __unk_vfn_10() = 0;
 
-    // vIndex: 11, symbol: ?getChunkInfo@IFileChunkUploader@@UEBA?AUFileChunkInfo@@AEBUFileInfo@@H@Z
+    // vIndex: 11
     virtual struct FileChunkInfo getChunkInfo(struct FileInfo const& file, int chunkID) const;
 
-    // symbol: ??0IFileChunkUploader@@QEAA@XZ
     MCAPI IFileChunkUploader();
 
     // NOLINTEND

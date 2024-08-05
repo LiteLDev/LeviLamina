@@ -21,17 +21,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptRGB@ScriptModuleMinecraft@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptRGB() = default;
 
-    // vIndex: 1, symbol: ?isValid@ScriptRGB@ScriptModuleMinecraft@@UEBA_NXZ
+    // vIndex: 1
     virtual bool isValid() const;
 
-    // symbol: ?getColor@ScriptRGB@ScriptModuleMinecraft@@QEBAAEBVColor@mce@@XZ
     MCAPI class mce::Color const& getColor() const;
 
-    // symbol:
-    // ?bind@ScriptRGB@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@VScriptRGB@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::InterfaceBindingBuilder<class ScriptModuleMinecraft::ScriptRGB> bind();
 
     // NOLINTEND

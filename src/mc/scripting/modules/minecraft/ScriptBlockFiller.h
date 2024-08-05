@@ -32,16 +32,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0ScriptBlockFiller@ScriptModuleMinecraft@@QEAA@AEBUScriptBlockFillOptions@1@V?$not_null@PEAVDimension@@@gsl@@VWeakLifetimeScope@Scripting@@@Z
     MCAPI ScriptBlockFiller(
         struct ScriptModuleMinecraft::ScriptBlockFillOptions const&,
         gsl::not_null<class Dimension*>,
         class Scripting::WeakLifetimeScope
     );
 
-    // symbol:
-    // ?fillBlocks@ScriptBlockFiller@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptListBlockVolume@ScriptModuleMinecraft@@@Scripting@@UScriptUnloadedChunksError@ScriptModuleMinecraft@@UEngineError@2@UError@2@@Scripting@@AEBV?$variant@V?$StrongTypedObjectHandle@VScriptBlockVolumeBase@ScriptModuleMinecraft@@@Scripting@@V?$StrongTypedObjectHandle@VScriptCompoundBlockVolume@ScriptModuleMinecraft@@@2@@std@@AEBV?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$StrongTypedObjectHandle@VScriptBlockType@ScriptModuleMinecraft@@@Scripting@@V?$StrongTypedObjectHandle@VScriptBlockPermutation@ScriptModuleMinecraft@@@4@@6@@Z
     MCAPI class Scripting::
         Result<
             class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptListBlockVolume>,
@@ -50,16 +46,12 @@ public:
             struct Scripting::Error>
         fillBlocks(std::variant<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockVolumeBase>, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptCompoundBlockVolume>> const&, std::variant<std::string, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockType>, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>> const&);
 
-    // symbol: ??1ScriptBlockFiller@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptBlockFiller();
 
-    // symbol: ?ERROR_MSG_FILL_BAD_HEIGHT@ScriptBlockFiller@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ERROR_MSG_FILL_BAD_HEIGHT;
 
-    // symbol: ?ERROR_MSG_FILL_TOO_BIG@ScriptBlockFiller@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ERROR_MSG_FILL_TOO_BIG;
 
-    // symbol: ?ERROR_MSG_FILL_UNKNOWN_BLOCK@ScriptBlockFiller@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ERROR_MSG_FILL_UNKNOWN_BLOCK;
 
     // NOLINTEND

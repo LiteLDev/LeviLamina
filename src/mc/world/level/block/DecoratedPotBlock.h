@@ -27,56 +27,50 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DecoratedPotBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~DecoratedPotBlock() = default;
 
-    // vIndex: 17, symbol: ?onProjectileHit@DecoratedPotBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVActor@@@Z
+    // vIndex: 17
     virtual void onProjectileHit(class BlockSource&, class BlockPos const&, class Actor const&) const;
 
-    // vIndex: 23, symbol: ?canProvideSupport@DecoratedPotBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
+    // vIndex: 23
     virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType type) const;
 
-    // vIndex: 57, symbol: ?canContainLiquid@DecoratedPotBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // vIndex: 62, symbol: ?checkIsPathable@DecoratedPotBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
+    // vIndex: 62
     virtual bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
 
-    // vIndex: 95, symbol: ?playerWillDestroy@DecoratedPotBlock@@UEBAPEBVBlock@@AEAVPlayer@@AEBVBlockPos@@AEBV2@@Z
+    // vIndex: 95
     virtual class Block const*
     playerWillDestroy(class Player& player, class BlockPos const& pos, class Block const& block) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@DecoratedPotBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const* blockActor) const;
 
-    // vIndex: 111, symbol: ?hasComparatorSignal@DecoratedPotBlock@@UEBA_NXZ
+    // vIndex: 111
     virtual bool hasComparatorSignal() const;
 
-    // vIndex: 112, symbol: ?getComparatorSignal@DecoratedPotBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
+    // vIndex: 112
     virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, uchar) const;
 
-    // vIndex: 143, symbol: ?onRemove@DecoratedPotBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 143
     virtual void onRemove(class BlockSource&, class BlockPos const&) const;
 
-    // vIndex: 150, symbol: ?isInteractiveBlock@DecoratedPotBlock@@UEBA_NXZ
+    // vIndex: 150
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 152, symbol: ?use@DecoratedPotBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player&, class BlockPos const&, uchar) const;
 
-    // symbol: ??0DecoratedPotBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI DecoratedPotBlock(std::string const& name, int id);
 
-    // symbol:
-    // ?getItemInstanceUserData@DecoratedPotBlock@@SA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@V?$not_null@PEBVDecoratedPotBlockActor@@@gsl@@@Z
     MCAPI static std::unique_ptr<class CompoundTag>
         getItemInstanceUserData(gsl::not_null<class DecoratedPotBlockActor const*>);
 
-    // symbol:
-    // ?getSherdItems@DecoratedPotBlock@@SA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBVDecoratedPotBlockActor@@@Z
     MCAPI static std::vector<class ItemStack> getSherdItems(class DecoratedPotBlockActor const&);
 
-    // symbol: ?isShatteringItem@DecoratedPotBlock@@SA_NAEBVItemStack@@@Z
     MCAPI static bool isShatteringItem(class ItemStack const&);
 
     // NOLINTEND

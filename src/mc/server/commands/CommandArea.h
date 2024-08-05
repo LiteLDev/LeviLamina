@@ -11,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getDimensionBlockSource@CommandArea@@QEAAAEAVBlockSource@@XZ
     MCAPI class BlockSource& getDimensionBlockSource();
 
-    // symbol: ??1CommandArea@@QEAA@XZ
     MCAPI ~CommandArea();
 
     // NOLINTEND

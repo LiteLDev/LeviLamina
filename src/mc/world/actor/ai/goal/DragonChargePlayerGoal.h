@@ -15,29 +15,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DragonChargePlayerGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~DragonChargePlayerGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@DragonChargePlayerGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@DragonChargePlayerGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@DragonChargePlayerGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@DragonChargePlayerGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@DragonChargePlayerGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@DragonChargePlayerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0DragonChargePlayerGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit DragonChargePlayerGoal(class Mob& mob);
 
     // NOLINTEND

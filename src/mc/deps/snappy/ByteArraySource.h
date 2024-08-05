@@ -13,16 +13,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ByteArraySource@snappy@@UEAA@XZ
+    // vIndex: 0
     virtual ~ByteArraySource();
 
-    // vIndex: 1, symbol: ?Available@ByteArraySource@snappy@@UEBA_KXZ
+    // vIndex: 1
     virtual uint64 Available() const;
 
-    // vIndex: 2, symbol: ?Peek@ByteArraySource@snappy@@UEAAPEBDPEA_K@Z
+    // vIndex: 2
     virtual char const* Peek(uint64* len);
 
-    // vIndex: 3, symbol: ?Skip@ByteArraySource@snappy@@UEAAX_K@Z
+    // vIndex: 3
     virtual void Skip(uint64 n);
 
     // NOLINTEND

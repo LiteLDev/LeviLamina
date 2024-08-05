@@ -11,13 +11,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1FlushableEnv@@UEAA@XZ
+    // vIndex: 0
     virtual ~FlushableEnv();
 
-    // vIndex: 20, symbol: ?flushToPermanentStorage@FlushableStorageAreaEnv@@UEAAXXZ
+    // vIndex: 20
     virtual void flushToPermanentStorage() = 0;
 
-    // symbol: ??0FlushableEnv@@QEAA@PEAVEnv@leveldb@@@Z
     MCAPI explicit FlushableEnv(leveldb::Env* env);
 
     // NOLINTEND

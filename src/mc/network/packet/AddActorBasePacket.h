@@ -16,7 +16,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1AddActorBasePacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~AddActorBasePacket();
 
     // NOLINTEND

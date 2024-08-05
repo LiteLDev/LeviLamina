@@ -16,24 +16,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1AcaciaTreeTrunk@@UEAA@XZ
+    // vIndex: 0
     virtual ~AcaciaTreeTrunk() = default;
 
-    // vIndex: 1, symbol:
-    // ?placeTrunk@AcaciaTreeTrunk@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@HAEAVRenderParams@@AEBUTreeParams@TreeHelper@@PEBVITreeCanopy@@@Z
+    // vIndex: 1
     virtual std::optional<class BlockPos>
     placeTrunk(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random, int treeHeight, class RenderParams& renderParams, struct TreeHelper::TreeParams const& treeParams, class ITreeCanopy const*)
         const;
 
-    // vIndex: 2, symbol: ?getTreeHeight@AcaciaTreeTrunk@@UEBAHAEAVRandom@@@Z
+    // vIndex: 2
     virtual int getTreeHeight(class Random& random) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_placeLeaningBranches@AcaciaTreeTrunk@@AEBAXAEAVIBlockWorldGenAPI@@AEBVBlockPos@@1AEAVRandom@@AEAVRenderParams@@HHHAEBUTreeParams@TreeHelper@@@Z
     MCAPI void _placeLeaningBranches(
         class IBlockWorldGenAPI&             target,
         class BlockPos const&                pos,
@@ -46,8 +43,6 @@ public:
         struct TreeHelper::TreeParams const& treeParams
     ) const;
 
-    // symbol:
-    // ?_placeVerticalBranches@AcaciaTreeTrunk@@AEBAXAEAVIBlockWorldGenAPI@@AEBVBlockPos@@1AEAVRandom@@AEAVRenderParams@@AEBUTreeParams@TreeHelper@@@Z
     MCAPI void _placeVerticalBranches(
         class IBlockWorldGenAPI&             target,
         class BlockPos const&                pos,

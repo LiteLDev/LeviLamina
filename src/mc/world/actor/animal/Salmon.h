@@ -35,13 +35,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1Salmon@@UEAA@XZ
+    // vIndex: 10
     virtual ~Salmon() = default;
 
-    // vIndex: 180, symbol: ?createAIGoals@Salmon@@UEAA_NXZ
+    // vIndex: 180
     virtual bool createAIGoals();
 
-    // symbol: ??0Salmon@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Salmon(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

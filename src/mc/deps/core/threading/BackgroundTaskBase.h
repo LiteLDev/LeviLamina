@@ -23,10 +23,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??0CurrentTaskAutoScope@BackgroundTaskBase@@QEAA@PEAV1@@Z
         MCAPI explicit CurrentTaskAutoScope(class BackgroundTaskBase* curr);
 
-        // symbol: ??1CurrentTaskAutoScope@BackgroundTaskBase@@QEAA@XZ
         MCAPI ~CurrentTaskAutoScope();
 
         // NOLINTEND
@@ -41,7 +39,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??RPendingComparer@BackgroundTaskBase@@QEBA_NAEBV?$shared_ptr@VBackgroundTaskBase@@@std@@0@Z
         MCAPI bool operator()(
             std::shared_ptr<class BackgroundTaskBase> const& lhs,
             std::shared_ptr<class BackgroundTaskBase> const& rhs
@@ -58,54 +55,41 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BackgroundTaskBase@@UEAA@XZ
+    // vIndex: 0
     virtual ~BackgroundTaskBase();
 
-    // symbol: ??0BackgroundTaskBase@@QEAA@V?$not_null@PEAVIBackgroundTaskOwner@@@gsl@@AEBUTaskStartInfoBase@@_N@Z
     MCAPI BackgroundTaskBase(
         gsl::not_null<class IBackgroundTaskOwner*> group,
         struct TaskStartInfoBase const&            startInfo,
         bool                                       isAsync
     );
 
-    // symbol: ?canBeRunBy@BackgroundTaskBase@@QEBA_NVid@thread@std@@@Z
     MCAPI bool canBeRunBy(std::thread::id workerId) const;
 
-    // symbol: ?getGroup@BackgroundTaskBase@@QEAAPEAVIBackgroundTaskOwner@@XZ
     MCAPI class IBackgroundTaskOwner* getGroup();
 
-    // symbol: ?getGroupState@BackgroundTaskBase@@QEBA?AW4TaskGroupState@@XZ
     MCAPI ::TaskGroupState getGroupState() const;
 
-    // symbol:
-    // ?getStartAfterTime@BackgroundTaskBase@@QEBA?AV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@XZ
     MCAPI std::chrono::steady_clock::time_point getStartAfterTime() const;
 
-    // symbol: ?hasAffinity@BackgroundTaskBase@@QEBA_NXZ
     MCAPI bool hasAffinity() const;
 
-    // symbol: ?isAsync@BackgroundTaskBase@@QEBA_NXZ
     MCAPI bool isAsync() const;
 
-    // symbol:
-    // ?isReadyToStart@BackgroundTaskBase@@QEBA_NV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@Z
     MCAPI bool isReadyToStart(std::chrono::steady_clock::time_point t) const;
 
-    // symbol: ?setNext@BackgroundTaskBase@@QEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@@Z
     MCAPI void setNext(std::shared_ptr<class BackgroundTaskBase> next);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?taskComplete@BackgroundTaskBase@@IEAAXXZ
     MCAPI void taskComplete();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?gCurrentTask@BackgroundTaskBase@@0PEAV1@EA
     MCAPI static class BackgroundTaskBase* gCurrentTask;
 
     // NOLINTEND

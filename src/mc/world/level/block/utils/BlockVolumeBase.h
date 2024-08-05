@@ -14,35 +14,34 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BlockVolumeBase@@UEAA@XZ
+    // vIndex: 0
     virtual ~BlockVolumeBase();
 
-    // vIndex: 1, symbol: ?getBoundingBox@ListBlockVolume@@UEBA?AVBoundingBox@@XZ
+    // vIndex: 1
     virtual class BoundingBox getBoundingBox() const = 0;
 
-    // vIndex: 2, symbol: ?getMin@ListBlockVolume@@UEBA?AVBlockPos@@XZ
+    // vIndex: 2
     virtual class BlockPos getMin() const = 0;
 
-    // vIndex: 3, symbol: ?getMax@ListBlockVolume@@UEBA?AVBlockPos@@XZ
+    // vIndex: 3
     virtual class BlockPos getMax() const = 0;
 
-    // vIndex: 4, symbol: ?getSpan@ListBlockVolume@@UEBA?AU?$vec@$02H$0A@@glm@@XZ
+    // vIndex: 4
     virtual struct glm::vec<3, int, 0> getSpan() const = 0;
 
-    // vIndex: 5, symbol: ?getCapacity@ListBlockVolume@@UEBAHXZ
+    // vIndex: 5
     virtual int getCapacity() const = 0;
 
-    // vIndex: 6, symbol: ?isInside@ListBlockVolume@@UEBA_NAEBVBlockPos@@@Z
+    // vIndex: 6
     virtual bool isInside(class BlockPos const&) const = 0;
 
-    // vIndex: 7, symbol: ?translate@ListBlockVolume@@UEAAXAEBVBlockPos@@@Z
+    // vIndex: 7
     virtual void translate(class BlockPos const&) = 0;
 
-    // vIndex: 8, symbol: ?forEach@ListBlockVolume@@UEBAXV?$function@$$A6A_NAEBVBlockPos@@@Z@std@@@Z
+    // vIndex: 8
     virtual void forEach(std::function<bool(class BlockPos const&)>) const = 0;
 
-    // vIndex: 9, symbol:
-    // ?getChunks@ListBlockVolume@@UEBA?AV?$set@VChunkPos@@U?$less@VChunkPos@@@std@@V?$allocator@VChunkPos@@@3@@std@@XZ
+    // vIndex: 9
     virtual std::set<class ChunkPos> getChunks() const = 0;
 
     // NOLINTEND

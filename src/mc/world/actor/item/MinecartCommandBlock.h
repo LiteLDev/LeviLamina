@@ -36,36 +36,33 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 6, symbol:
-    // ?initializeComponents@MinecartCommandBlock@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 6
     virtual void initializeComponents(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: __gen_??1MinecartCommandBlock@@UEAA@XZ
+    // vIndex: 10
     virtual ~MinecartCommandBlock() = default;
 
-    // vIndex: 35, symbol: ?canShowNameTag@MinecartCommandBlock@@UEBA_NXZ
+    // vIndex: 35
     virtual bool canShowNameTag() const;
 
-    // vIndex: 147, symbol: ?readAdditionalSaveData@MinecartCommandBlock@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 148, symbol: ?addAdditionalSaveData@MinecartCommandBlock@@UEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 152, symbol: ?getType@MinecartCommandBlock@@UEAA?AW4MinecartType@@XZ
+    // vIndex: 152
     virtual ::MinecartType getType();
 
-    // vIndex: 153, symbol: ?getDefaultDisplayBlock@MinecartCommandBlock@@UEBAPEBVBlock@@XZ
+    // vIndex: 153
     virtual class Block const* getDefaultDisplayBlock() const;
 
-    // vIndex: 155, symbol: ?applyNaturalSlowdown@MinecartCommandBlock@@MEAAXAEAVBlockSource@@@Z
+    // vIndex: 155
     virtual void applyNaturalSlowdown(class BlockSource& region);
 
-    // vIndex: 156, symbol: ?_lazyInitDisplayBlock@MinecartCommandBlock@@EEAAXXZ
+    // vIndex: 156
     virtual void _lazyInitDisplayBlock();
 
-    // symbol:
-    // ??0MinecartCommandBlock@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI MinecartCommandBlock(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

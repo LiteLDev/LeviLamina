@@ -15,13 +15,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?checkChatFilteringEventsAndSendChatIfTextProcessorOffline@TextFilteringUtils@@SA_NAEBV?$vector@W4TextFilteringEvent@Safety@@V?$allocator@W4TextFilteringEvent@Safety@@@std@@@std@@V?$not_null@PEAVPacketSender@@@gsl@@AEBVNetworkIdentifier@@AEBW4SubClientId@@@Z
     MCAPI static bool
     checkChatFilteringEventsAndSendChatIfTextProcessorOffline(std::vector<::Safety::TextFilteringEvent> const&, gsl::not_null<class PacketSender*>, class NetworkIdentifier const&, ::SubClientId const&);
 
-    // symbol:
-    // ?checkChatFilteringEventsAndSendToastIfClientWasMuted@TextFilteringUtils@@SAXAEBV?$vector@W4TextFilteringEvent@Safety@@V?$allocator@W4TextFilteringEvent@Safety@@@std@@@std@@V?$not_null@PEAVPacketSender@@@gsl@@AEBVNetworkIdentifier@@AEBW4SubClientId@@@Z
     MCAPI static void checkChatFilteringEventsAndSendToastIfClientWasMuted(
         std::vector<::Safety::TextFilteringEvent> const&,
         gsl::not_null<class PacketSender*> packetSender,
@@ -29,8 +25,6 @@ public:
         ::SubClientId const&               subClientId
     );
 
-    // symbol:
-    // ?findChatFilteringEvent@TextFilteringUtils@@SA_NAEBV?$vector@W4TextFilteringEvent@Safety@@V?$allocator@W4TextFilteringEvent@Safety@@@std@@@std@@W4TextFilteringEvent@Safety@@@Z
     MCAPI static bool
     findChatFilteringEvent(std::vector<::Safety::TextFilteringEvent> const&, ::Safety::TextFilteringEvent);
 

@@ -29,91 +29,82 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BambooStalkBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~BambooStalkBlock() = default;
 
-    // vIndex: 5, symbol:
-    // ?getCollisionShape@BambooStalkBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 5
     virtual class AABB
     getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 9, symbol:
-    // ?getOutline@BambooStalkBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
+    // vIndex: 9
     virtual class AABB const&
     getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 11, symbol: ?getVisualShape@BambooStalkBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
+    // vIndex: 11
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
 
-    // vIndex: 16, symbol: ?randomlyModifyPosition@BambooStalkBlock@@UEBA?AVVec3@@AEBVBlockPos@@@Z
+    // vIndex: 16
     virtual class Vec3 randomlyModifyPosition(class BlockPos const& pos) const;
 
-    // vIndex: 33, symbol: ?isWaterBlocking@BambooStalkBlock@@UEBA_NXZ
+    // vIndex: 33
     virtual bool isWaterBlocking() const;
 
-    // vIndex: 50, symbol: ?isValidAuxValue@BambooStalkBlock@@UEBA_NH@Z
+    // vIndex: 50
     virtual bool isValidAuxValue(int auxValue) const;
 
-    // vIndex: 57, symbol: ?canContainLiquid@BambooStalkBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // vIndex: 80, symbol:
-    // ?onFertilized@BambooStalkBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
+    // vIndex: 80
     virtual bool
     onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, ::FertilizerType fType)
         const;
 
-    // vIndex: 81, symbol: ?mayConsumeFertilizer@BambooStalkBlock@@UEBA_NAEAVBlockSource@@@Z
+    // vIndex: 81
     virtual bool mayConsumeFertilizer(class BlockSource& region) const;
 
-    // vIndex: 82, symbol: ?canBeFertilized@BambooStalkBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 82
     virtual bool
     canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
 
-    // vIndex: 86, symbol: ?mayPlace@BambooStalkBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 86
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 93, symbol: ?neighborChanged@BambooStalkBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 93
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 98, symbol: ?getPlacementBlock@BambooStalkBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+    // vIndex: 98
     virtual class Block const&
     getPlacementBlock(class Actor const& by, class BlockPos const& pos, uchar, class Vec3 const&, int) const;
 
-    // vIndex: 146, symbol: ?onPlace@BambooStalkBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 146
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 148, symbol: ?tick@BambooStalkBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
-    // vIndex: 149, symbol: ?randomTick@BambooStalkBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 149
     virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 154, symbol: ?canSurvive@BambooStalkBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 154
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ??0BambooStalkBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI BambooStalkBlock(std::string const& nameId, int id);
 
-    // symbol: ?getMaxHeight@BambooStalkBlock@@SAHAEBVBlockPos@@@Z
     MCAPI static int getMaxHeight(class BlockPos const& pos);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_determineNewBlockState@BambooStalkBlock@@AEBAAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI class Block const& _determineNewBlockState(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ?_getLeafSize@BambooStalkBlock@@AEBA?AW4LeafSize@@AEBVBlock@@@Z
     MCAPI ::LeafSize _getLeafSize(class Block const& block) const;
 
-    // symbol: ?_getShape@BambooStalkBlock@@AEBAAEBVAABB@@AEBVBlockPos@@AEBVBlock@@AEAV2@@Z
     MCAPI class AABB const& _getShape(class BlockPos const&, class Block const&, class AABB&) const;
 
-    // symbol: ?_getStalkThickness@BambooStalkBlock@@AEBA?AW4StalkThickness@@AEBVBlock@@@Z
     MCAPI ::StalkThickness _getStalkThickness(class Block const& block) const;
 
     // NOLINTEND

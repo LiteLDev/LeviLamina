@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1NamedMolangScript@@QEAA@XZ
     MCAPI ~NamedMolangScript();
 
     // NOLINTEND

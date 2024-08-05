@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1MolangArrayVariable@@QEAA@XZ
     MCAPI ~MolangArrayVariable();
 
     // NOLINTEND

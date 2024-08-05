@@ -27,7 +27,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1BaseGameVersionPack@BaseGamePackSlices@@QEAA@XZ
         MCAPI ~BaseGameVersionPack();
 
         // NOLINTEND
@@ -40,24 +39,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0BaseGamePackSlices@@QEAA@XZ
     MCAPI BaseGamePackSlices();
 
-    // symbol:
-    // ?addFromVersions@BaseGamePackSlices@@QEAAXAEBV?$vector@VBaseGameVersion@@V?$allocator@VBaseGameVersion@@@std@@@std@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIResourcePackRepository@@@Bedrock@@@gsl@@AEBVUUID@mce@@@Z
     MCAPI void addFromVersions(
         std::vector<class BaseGameVersion> const&                               baseGameVersions,
         Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository const> const& resourcePackRepository,
         class mce::UUID const&                                                  packId
     );
 
-    // symbol:
-    // ?applyPackSlices@BaseGamePackSlices@@QEBAXAEBVBaseGameVersion@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIResourcePackRepository@@@Bedrock@@@gsl@@AEAVResourcePackStack@@@Z
     MCAPI void
     applyPackSlices(class BaseGameVersion const&, Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository const> const&, class ResourcePackStack&)
         const;
 
-    // symbol: ??1BaseGamePackSlices@@QEAA@XZ
     MCAPI ~BaseGamePackSlices();
 
     // NOLINTEND

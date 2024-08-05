@@ -15,10 +15,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ItemStackRequestActionTransferBase@@UEAA@XZ
+    // vIndex: 0
     virtual ~ItemStackRequestActionTransferBase();
 
-    // symbol: ?getSrc@ItemStackRequestActionTransferBase@@QEBAAEBUItemStackRequestSlotInfo@@XZ
     MCAPI struct ItemStackRequestSlotInfo const& getSrc() const;
 
     // NOLINTEND

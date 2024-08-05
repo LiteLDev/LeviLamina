@@ -18,10 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1CustomComponentsItemComponent@v1_20_80@Puv@@QEAA@XZ
     MCAPI ~CustomComponentsItemComponent();
 
-    // symbol: ?bindType@CustomComponentsItemComponent@v1_20_80@Puv@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // NOLINTEND

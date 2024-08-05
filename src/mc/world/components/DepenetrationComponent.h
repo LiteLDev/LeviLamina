@@ -14,13 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4DepenetrationComponent@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct DepenetrationComponent& operator=(struct DepenetrationComponent&&);
 
-    // symbol: ??4DepenetrationComponent@@QEAAAEAU0@AEBU0@@Z
     MCAPI struct DepenetrationComponent& operator=(struct DepenetrationComponent const&);
 
-    // symbol: ??1DepenetrationComponent@@QEAA@XZ
     MCAPI ~DepenetrationComponent();
 
     // NOLINTEND

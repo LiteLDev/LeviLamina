@@ -16,29 +16,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1TimerActorFlagBaseGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~TimerActorFlagBaseGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@TimerActorFlagBaseGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@TimerActorFlagBaseGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@TimerActorFlagBaseGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@TimerActorFlagBaseGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@TimerActorFlagBaseGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@TimerActorFlagBaseGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string&) const;
 
-    // symbol: ??0TimerActorFlagBaseGoal@@QEAA@AEAVMob@@W4ActorFlags@@@Z
     MCAPI TimerActorFlagBaseGoal(class Mob&, ::ActorFlags);
 
     // NOLINTEND

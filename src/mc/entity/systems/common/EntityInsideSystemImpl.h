@@ -18,8 +18,6 @@
 
 namespace EntityInsideSystemImpl {
 // NOLINTBEGIN
-// symbol:
-// ?blockProcess@EntityInsideSystemImpl@@YAXAEBVStrictEntityContext@@V?$EntityModifier@UBlockMovementSlowdownAppliedComponent@@VFreezingComponent@@UIgnoresEntityInsideFlagComponent@@UInsideBubbleColumnBlockComponent@@U?$InsideBlockWithPosAndBlockComponent@UCactusBlockFlag@@@@U?$InsideBlockWithPosAndBlockComponent@UEndPortalBlockFlag@@@@UInsideGenericBlockComponent@@U?$InsideBlockWithPosAndBlockComponent@UHoneyBlockFlag@@@@U?$InsideBlockWithPosAndBlockComponent@UPowderSnowBlockFlag@@@@U?$InsideBlockWithPosAndBlockComponent@USweetBerryBushBlockFlag@@@@U?$InsideBlockWithPosComponent@UWaterlilyBlockFlag@@@@V?$FlagComponent@UWebBlockTag@@@@@@AEBVBlock@@AEBVBlockPos@@AEAUInsideGenericBlockComponent@@AEBVIConstBlockSource@@@Z
 MCAPI void blockProcess(class StrictEntityContext const&, class EntityModifier<struct BlockMovementSlowdownAppliedComponent, class FreezingComponent, struct IgnoresEntityInsideFlagComponent, struct InsideBubbleColumnBlockComponent, struct InsideBlockWithPosAndBlockComponent<struct CactusBlockFlag>, struct InsideBlockWithPosAndBlockComponent<struct EndPortalBlockFlag>, struct InsideGenericBlockComponent, struct InsideBlockWithPosAndBlockComponent<struct HoneyBlockFlag>, struct InsideBlockWithPosAndBlockComponent<struct PowderSnowBlockFlag>, struct InsideBlockWithPosAndBlockComponent<struct SweetBerryBushBlockFlag>, struct InsideBlockWithPosComponent<struct WaterlilyBlockFlag>, class FlagComponent<struct WebBlockTag>>, class Block const&, class BlockPos const&, struct InsideGenericBlockComponent&, class IConstBlockSource const&);
 // NOLINTEND
 

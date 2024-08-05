@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ProjectileHitEvent@@QEAA@XZ
     MCAPI ~ProjectileHitEvent();
 
     // NOLINTEND

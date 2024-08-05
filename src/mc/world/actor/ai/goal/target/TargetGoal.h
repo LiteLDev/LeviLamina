@@ -15,29 +15,28 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1TargetGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~TargetGoal();
 
-    // vIndex: 2, symbol: ?canContinueToUse@TargetGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@TargetGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@TargetGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@TargetGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@TargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // vIndex: 8, symbol: ?isTargetGoal@TargetGoal@@UEBA_NXZ
+    // vIndex: 8
     virtual bool isTargetGoal() const;
 
-    // vIndex: 10, symbol: ?_canAttack@TargetGoal@@MEAA_NPEAVMob@@PEAVActor@@_N2PEAPEBUMobDescriptor@@@Z
+    // vIndex: 10
     virtual bool _canAttack(
         class Mob*                   testMob,
         class Actor*                 target,
@@ -46,7 +45,6 @@ public:
         struct MobDescriptor const** outDescriptorMatch
     );
 
-    // symbol: ??0TargetGoal@@QEAA@AEAVMob@@_NH1M1H@Z
     MCAPI TargetGoal(
         class Mob& pathMob,
         bool       mustSee,
@@ -57,8 +55,6 @@ public:
         int        persistTargetTicks
     );
 
-    // symbol:
-    // ??0TargetGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@_NH2M2H@Z
     MCAPI TargetGoal(
         class Mob&                               pathMob,
         std::vector<struct MobDescriptor> const& targetTypes,
@@ -74,13 +70,10 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?_canAttack@TargetGoal@@IEAA_NPEAVActor@@_NPEAPEBUMobDescriptor@@@Z
     MCAPI bool _canAttack(class Actor* target, bool allowInvulnerable, struct MobDescriptor const** outDescriptorMatch);
 
-    // symbol: ?_canReachAfterDelay@TargetGoal@@IEAA_NAEAVActor@@@Z
     MCAPI bool _canReachAfterDelay(class Actor& target);
 
-    // symbol: ?_matchesTargetTypes@TargetGoal@@IEAA_NPEAVMob@@PEAVActor@@_NPEAPEBUMobDescriptor@@@Z
     MCAPI bool _matchesTargetTypes(
         class Mob*                   testMob,
         class Actor*                 target,
@@ -88,7 +81,6 @@ public:
         struct MobDescriptor const** outDescriptorMatch
     );
 
-    // symbol: ?_withinRange@TargetGoal@@IEAA_NAEBVActor@@@Z
     MCAPI bool _withinRange(class Actor const& target);
 
     // NOLINTEND

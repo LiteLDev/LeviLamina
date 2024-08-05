@@ -13,16 +13,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ?getJsonName@TransformationDescription@@UEBAPEBDXZ
+    // vIndex: 0
     virtual char const* getJsonName() const;
 
-    // vIndex: 1, symbol: ??1TransformationDescription@@UEAA@XZ
+    // vIndex: 1
     virtual ~TransformationDescription();
 
-    // vIndex: 2, symbol: ?deserializeData@TransformationDescription@@UEAAXUDeserializeDataParams@@@Z
+    // vIndex: 2
     virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
-    // symbol: ??0TransformationDescription@@QEAA@XZ
     MCAPI TransformationDescription();
 
     // NOLINTEND

@@ -37,8 +37,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0SystemParams@UpdateBoundingBox@@QEAA@AEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@UMinecartFlag@@@@V?$FlagComponent@UShulkerFlag@@@@@@U?$Read@$$V@@U?$Write@UAABBShapeComponent@@UActorDataBoundingBoxComponent@@UActorDataDirtyFlagsComponent@@UDepenetrationComponent@@UOffsetsComponent@@@@U?$AddRemove@UShouldUpdateBoundingBoxRequestComponent@@@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@M_N@Z
     MCAPI SystemParams(
         class StrictExecutionContext<
             struct Filter<

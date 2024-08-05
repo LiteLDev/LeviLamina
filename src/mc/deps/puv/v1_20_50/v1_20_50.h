@@ -31,13 +31,10 @@ namespace cereal::internal { struct ConstraintDescription; }
 
 namespace Puv::v1_20_50 {
 // NOLINTBEGIN
-// symbol: ?bindItemComponentTypes@v1_20_50@Puv@@YAXAEAUReflectionCtx@cereal@@@Z
 MCAPI void bindItemComponentTypes(struct cereal::ReflectionCtx&);
 
-// symbol: ??8v1_20_50@Puv@@YA_NAEBUBlockDescriptor@01@0@Z
 MCAPI bool operator==(struct Puv::v1_20_50::BlockDescriptor const&, struct Puv::v1_20_50::BlockDescriptor const&);
 
-// symbol: ??8v1_20_50@Puv@@YA_NAEBUCompound@BlockDescriptor@01@0@Z
 MCAPI bool
 operator==(struct Puv::v1_20_50::BlockDescriptor::Compound const&, struct Puv::v1_20_50::BlockDescriptor::Compound const&);
 // NOLINTEND

@@ -19,11 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?addExcludeItemByName@EquipItemDefinition@@QEAAXAEBVItemDescriptor@@@Z
     MCAPI void addExcludeItemByName(class ItemDescriptor const&);
 
-    // symbol:
-    // ?buildSchema@EquipItemDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VEquipItemDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
     buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EquipItemDefinition>>&);

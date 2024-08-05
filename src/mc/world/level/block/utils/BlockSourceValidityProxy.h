@@ -14,13 +14,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BlockSourceValidityProxy@@UEAA@XZ
+    // vIndex: 0
     virtual ~BlockSourceValidityProxy() = default;
 
-    // vIndex: 1, symbol: ?updateDimensionBlockSourceTick@BlockSourceValidityProxy@@UEAAXAEAVDimension@@@Z
+    // vIndex: 1
     virtual void updateDimensionBlockSourceTick(class Dimension&);
 
-    // vIndex: 2, symbol: ?updateBlockSourceTick@BlockSourceValidityProxy@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 2
     virtual void updateBlockSourceTick(class Player&);
 
     // NOLINTEND

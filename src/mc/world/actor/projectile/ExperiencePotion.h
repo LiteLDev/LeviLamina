@@ -35,19 +35,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1ExperiencePotion@@UEAA@XZ
+    // vIndex: 10
     virtual ~ExperiencePotion() = default;
 
-    // vIndex: 151, symbol: ?getThrowPower@ExperiencePotion@@MEAAMXZ
+    // vIndex: 151
     virtual float getThrowPower();
 
-    // vIndex: 152, symbol: ?getThrowUpAngleOffset@ExperiencePotion@@MEAAMXZ
+    // vIndex: 152
     virtual float getThrowUpAngleOffset();
 
-    // vIndex: 153, symbol: ?getGravity@ExperiencePotion@@MEAAMXZ
+    // vIndex: 153
     virtual float getGravity();
 
-    // symbol: ??0ExperiencePotion@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI ExperiencePotion(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

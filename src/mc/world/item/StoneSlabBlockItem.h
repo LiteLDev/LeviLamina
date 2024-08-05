@@ -26,13 +26,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1StoneSlabBlockItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~StoneSlabBlockItem() = default;
 
-    // vIndex: 32, symbol: ?getLevelDataForAuxValue@StoneSlabBlockItem@@UEBAHH@Z
+    // vIndex: 32
     virtual int getLevelDataForAuxValue(int auxValue) const;
 
-    // symbol: ??0StoneSlabBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI StoneSlabBlockItem(std::string const& name, int id);
 
     // NOLINTEND

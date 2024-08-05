@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1EncryptionRequest@CodeBuilder@@QEAA@XZ
     MCAPI ~EncryptionRequest();
 
     // NOLINTEND

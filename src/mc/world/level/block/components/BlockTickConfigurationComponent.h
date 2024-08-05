@@ -14,10 +14,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BlockTickConfigurationComponent@@UEAA@XZ
+    // vIndex: 0
     virtual ~BlockTickConfigurationComponent() = default;
 
-    // symbol: ?getRandomTickDelay@BlockTickConfigurationComponent@@QEBAHAEAVRandom@@@Z
     MCAPI int getRandomTickDelay(class Random&) const;
 
     // NOLINTEND

@@ -9,7 +9,6 @@ namespace Scripting { struct Version; }
 
 namespace Editor::ScriptModule::EditorUIModule::Internals {
 // NOLINTBEGIN
-// symbol: ?CURRENT@Internals@EditorUIModule@ScriptModule@Editor@@3UVersion@Scripting@@B
 MCAPI extern struct Scripting::Version const CURRENT;
 // NOLINTEND
 

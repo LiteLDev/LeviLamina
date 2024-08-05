@@ -16,17 +16,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ScriptWorldInitializeAfterEvent@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptWorldInitializeAfterEvent();
 
-    // symbol:
-    // ?bind@ScriptWorldInitializeAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilderReadOnly@UScriptWorldInitializeAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilderReadOnly<
         struct ScriptModuleMinecraft::ScriptWorldInitializeAfterEvent>
     bind();
 
-    // symbol:
-    // ?bindV010@ScriptWorldInitializeAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilderReadOnly@UScriptWorldInitializeAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilderReadOnly<
         struct ScriptModuleMinecraft::ScriptWorldInitializeAfterEvent>
     bindV010();

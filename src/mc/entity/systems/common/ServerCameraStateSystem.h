@@ -4,7 +4,6 @@
 
 namespace ServerCameraStateSystem {
 // NOLINTBEGIN
-// symbol: ?create@ServerCameraStateSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo create();
 // NOLINTEND
 

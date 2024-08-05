@@ -28,23 +28,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1PistonArmBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~PistonArmBlock() = default;
 
-    // vIndex: 4, symbol:
-    // ?clip@PistonArmBlock@@UEBA?AVHitResult@@AEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@3W4ShapeType@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 4
     virtual class HitResult
     clip(class Block const&, class BlockSource const&, class BlockPos const&, class Vec3 const&, class Vec3 const&, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 5, symbol:
-    // ?getCollisionShape@PistonArmBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 5
     virtual class AABB
     getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 7, symbol:
-    // ?addCollisionShapes@PistonArmBlock@@UEBA_NAEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 7
     virtual bool addCollisionShapes(
         class Block const&                                         block,
         class IConstBlockSource const&                             region,
@@ -54,45 +51,42 @@ public:
         class optional_ref<class GetCollisionShapeInterface const> entity
     ) const;
 
-    // vIndex: 23, symbol: ?canProvideSupport@PistonArmBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
+    // vIndex: 23
     virtual bool canProvideSupport(class Block const& block, uchar face, ::BlockSupportType type) const;
 
-    // vIndex: 57, symbol: ?canContainLiquid@PistonArmBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // vIndex: 90, symbol: ?breaksFallingBlocks@PistonArmBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
+    // vIndex: 90
     virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
 
-    // vIndex: 93, symbol: ?neighborChanged@PistonArmBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 93
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 94, symbol: ?getSecondPart@PistonArmBlock@@UEBA_NAEBVIConstBlockSource@@AEBVBlockPos@@AEAV3@@Z
+    // vIndex: 94
     virtual bool
     getSecondPart(class IConstBlockSource const& region, class BlockPos const& pos, class BlockPos& out) const;
 
-    // vIndex: 95, symbol: ?playerWillDestroy@PistonArmBlock@@UEBAPEBVBlock@@AEAVPlayer@@AEBVBlockPos@@AEBV2@@Z
+    // vIndex: 95
     virtual class Block const*
     playerWillDestroy(class Player& player, class BlockPos const& pos, class Block const& block) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@PistonArmBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 148, symbol: ?tick@PistonArmBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
-    // vIndex: 154, symbol: ?canSurvive@PistonArmBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 154
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol:
-    // ??0PistonArmBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4Type@PistonBlock@@@Z
     MCAPI PistonArmBlock(std::string const& nameId, int id, ::PistonBlock::Type type);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_getCollisions@PistonArmBlock@@AEBAXAEAVAABB@@00E@Z
     MCAPI void
     _getCollisions(class AABB& armBaseAABB, class AABB& armAABB, class AABB& frontAABB, uchar facingDir) const;
 

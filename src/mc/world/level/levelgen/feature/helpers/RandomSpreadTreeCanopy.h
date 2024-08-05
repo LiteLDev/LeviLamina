@@ -27,7 +27,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1WeightedBlockReference@RandomSpreadTreeCanopy@@QEAA@XZ
         MCAPI ~WeightedBlockReference();
 
         // NOLINTEND
@@ -40,16 +39,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1RandomSpreadTreeCanopy@@UEAA@XZ
+    // vIndex: 0
     virtual ~RandomSpreadTreeCanopy() = default;
 
-    // vIndex: 1, symbol:
-    // ?placeCanopy@RandomSpreadTreeCanopy@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@AEBUTreeParams@TreeHelper@@AEBV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@3@@Z
+    // vIndex: 1
     virtual std::optional<class BlockPos>
     placeCanopy(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random, class RenderParams& renderParams, struct TreeHelper::TreeParams const& treeParams, std::vector<class BlockPos> const&)
         const;
 
-    // symbol: ??0RandomSpreadTreeCanopy@@QEAA@XZ
     MCAPI RandomSpreadTreeCanopy();
 
     // NOLINTEND

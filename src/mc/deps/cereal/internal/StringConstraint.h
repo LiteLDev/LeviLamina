@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1StringConstraint@internal@cereal@@QEAA@XZ
     MCAPI ~StringConstraint();
 
     // NOLINTEND

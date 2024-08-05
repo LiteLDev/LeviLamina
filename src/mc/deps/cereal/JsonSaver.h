@@ -21,10 +21,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1JsonSaver@cereal@@UEAA@XZ
+    // vIndex: 0
     virtual ~JsonSaver();
 
-    // symbol: ?toString@JsonSaver@cereal@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string toString();
 
     // NOLINTEND

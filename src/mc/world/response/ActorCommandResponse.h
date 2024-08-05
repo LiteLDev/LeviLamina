@@ -20,8 +20,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?buildSchema@ActorCommandResponse@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UActorEventResponseCollection@@@JsonUtil@@@std@@AEBV?$Factory@VActorEventResponse@@$$V@@@Z
     MCVAPI void buildSchema(
         std::shared_ptr<
             class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ActorEventResponseCollection>>&
@@ -29,10 +27,8 @@ public:
         class Factory<class ActorEventResponse> const& factory
     ) const;
 
-    // symbol: ?executeAction@ActorCommandResponse@@UEBAXAEAVRenderParams@@@Z
     MCVAPI void executeAction(class RenderParams& pars) const;
 
-    // symbol: ?getName@ActorCommandResponse@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCVAPI std::string const& getName() const;
 
     // NOLINTEND

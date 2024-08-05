@@ -27,17 +27,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ClientRequestPlaceholderBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~ClientRequestPlaceholderBlock() = default;
 
-    // vIndex: 4, symbol:
-    // ?clip@ClientRequestPlaceholderBlock@@UEBA?AVHitResult@@AEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@3W4ShapeType@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 4
     virtual class HitResult
     clip(class Block const&, class BlockSource const&, class BlockPos const&, class Vec3 const&, class Vec3 const&, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // symbol:
-    // ??0ClientRequestPlaceholderBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI ClientRequestPlaceholderBlock(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND

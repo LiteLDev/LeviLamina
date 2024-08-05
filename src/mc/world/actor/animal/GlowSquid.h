@@ -35,25 +35,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1GlowSquid@@UEAA@XZ
+    // vIndex: 10
     virtual ~GlowSquid() = default;
 
-    // vIndex: 26, symbol: ?normalTick@GlowSquid@@UEAAXXZ
+    // vIndex: 26
     virtual void normalTick();
 
-    // vIndex: 74, symbol: ?handleEntityEvent@GlowSquid@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 74
     virtual void handleEntityEvent(::ActorEvent id, int data);
 
-    // vIndex: 146, symbol: ?_hurt@GlowSquid@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 146
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 184, symbol: ?_getWalkTargetValue@GlowSquid@@UEAAMAEBVBlockPos@@@Z
+    // vIndex: 184
     virtual float _getWalkTargetValue(class BlockPos const& pos);
 
-    // vIndex: 190, symbol: ?_getInkSquirtSoundEvent@GlowSquid@@MEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 190
     virtual ::Puv::Legacy::LevelSoundEvent _getInkSquirtSoundEvent() const;
 
-    // symbol: ??0GlowSquid@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI GlowSquid(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
@@ -64,7 +63,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_startGoingDark@GlowSquid@@AEAAXXZ
     MCAPI void _startGoingDark();
 
     // NOLINTEND

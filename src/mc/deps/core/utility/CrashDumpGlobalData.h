@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?kFormat@CrashDumpGlobalData@@2QBUCrashDumpFormatEntryImpl@@B
     MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
 
     // NOLINTEND

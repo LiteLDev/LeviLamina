@@ -14,10 +14,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1EnchantingContainerScreenValidator@@UEAA@XZ
+    // vIndex: 0
     virtual ~EnchantingContainerScreenValidator() = default;
 
-    // symbol: ??0EnchantingContainerScreenValidator@@QEAA@XZ
     MCAPI EnchantingContainerScreenValidator();
 
     // NOLINTEND

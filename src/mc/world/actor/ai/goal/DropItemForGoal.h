@@ -15,42 +15,39 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DropItemForGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~DropItemForGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@DropItemForGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@DropItemForGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@DropItemForGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@DropItemForGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@DropItemForGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@DropItemForGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // vIndex: 11, symbol: ?isValidTarget@DropItemForGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 11
     virtual bool isValidTarget(class BlockSource& region, class BlockPos const& pos);
 
-    // vIndex: 17, symbol: ?findTargetBlock@DropItemForGoal@@UEAA_NXZ
+    // vIndex: 17
     virtual bool findTargetBlock();
 
-    // symbol: ??0DropItemForGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit DropItemForGoal(class Mob& mob);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_getLootTable@DropItemForGoal@@AEAAPEAVLootTable@@XZ
     MCAPI class LootTable* _getLootTable();
 
     // NOLINTEND

@@ -19,8 +19,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?buildSchema@RailActivatorDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VRailActivatorDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
     buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RailActivatorDefinition>>& root);

@@ -21,11 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?readFromStream@FlatFileManifestInfo@Core@@QEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     MCAPI class Bedrock::Result<void> readFromStream(class ReadOnlyBinaryStream& manifestFileStream);
 
-    // symbol: ??1FlatFileManifestInfo@Core@@QEAA@XZ
     MCAPI ~FlatFileManifestInfo();
 
     // NOLINTEND

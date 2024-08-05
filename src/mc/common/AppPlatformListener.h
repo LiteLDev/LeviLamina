@@ -14,75 +14,70 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1AppPlatformListener@@UEAA@XZ
+    // vIndex: 0
     virtual ~AppPlatformListener();
 
-    // vIndex: 1, symbol: ?onLowMemory@AppPlatformListener@@UEAAXXZ
+    // vIndex: 1
     virtual void onLowMemory();
 
-    // vIndex: 2, symbol: ?onAppPaused@AppPlatformListener@@UEAAXXZ
+    // vIndex: 2
     virtual void onAppPaused();
 
-    // vIndex: 3, symbol: ?onAppUnpaused@AppPlatformListener@@UEAAXXZ
+    // vIndex: 3
     virtual void onAppUnpaused();
 
-    // vIndex: 4, symbol: ?onAppPreSuspended@AppPlatformListener@@UEAAXXZ
+    // vIndex: 4
     virtual void onAppPreSuspended();
 
-    // vIndex: 5, symbol: ?onAppSuspended@AppPlatformListener@@UEAAXXZ
+    // vIndex: 5
     virtual void onAppSuspended();
 
-    // vIndex: 6, symbol: ?onAppResumed@AppPlatformListener@@UEAAXXZ
+    // vIndex: 6
     virtual void onAppResumed();
 
-    // vIndex: 7, symbol: ?onAppFocusLost@AppPlatformListener@@UEAAXXZ
+    // vIndex: 7
     virtual void onAppFocusLost();
 
-    // vIndex: 8, symbol: ?onAppFocusGained@AppPlatformListener@@UEAAXXZ
+    // vIndex: 8
     virtual void onAppFocusGained();
 
-    // vIndex: 9, symbol: ?onAppTerminated@AppPlatformListener@@UEAAXXZ
+    // vIndex: 9
     virtual void onAppTerminated();
 
-    // vIndex: 10, symbol: ?onOperationModeChanged@AppPlatformListener@@UEAAXW4OperationMode@@@Z
+    // vIndex: 10
     virtual void onOperationModeChanged(::OperationMode operationMode);
 
-    // vIndex: 11, symbol: ?onPerformanceModeChanged@AppPlatformListener@@UEAAX_N@Z
+    // vIndex: 11
     virtual void onPerformanceModeChanged(bool boost);
 
-    // vIndex: 12, symbol: ?onPushNotificationReceived@AppPlatformListener@@UEAAXAEBVPushNotificationMessage@@@Z
+    // vIndex: 12
     virtual void onPushNotificationReceived(class PushNotificationMessage const& msg);
 
-    // vIndex: 13, symbol: ?onResizeBegin@AppPlatformListener@@UEAAXXZ
+    // vIndex: 13
     virtual void onResizeBegin();
 
-    // vIndex: 14, symbol: ?onResizeEnd@AppPlatformListener@@UEAAXXZ
+    // vIndex: 14
     virtual void onResizeEnd();
 
-    // vIndex: 15, symbol: ?onDeviceLost@AppPlatformListener@@UEAAXXZ
+    // vIndex: 15
     virtual void onDeviceLost();
 
-    // vIndex: 16, symbol: ?onAppSurfaceCreated@AppPlatformListener@@UEAAXXZ
+    // vIndex: 16
     virtual void onAppSurfaceCreated();
 
-    // vIndex: 17, symbol: ?onAppSurfaceDestroyed@AppPlatformListener@@UEAAXXZ
+    // vIndex: 17
     virtual void onAppSurfaceDestroyed();
 
-    // vIndex: 18, symbol:
-    // ?onClipboardCopy@AppPlatformListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 18
     virtual void onClipboardCopy(std::string const&);
 
-    // vIndex: 19, symbol:
-    // ?onClipboardPaste@AppPlatformListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 19
     virtual void onClipboardPaste(std::string const&);
 
-    // symbol: ??0AppPlatformListener@@QEAA@_N@Z
     MCAPI explicit AppPlatformListener(bool);
 
-    // symbol: ?initListener@AppPlatformListener@@QEAAXM@Z
     MCAPI void initListener(float priority);
 
-    // symbol: ?terminate@AppPlatformListener@@QEAAXXZ
     MCAPI void terminate();
 
     // NOLINTEND

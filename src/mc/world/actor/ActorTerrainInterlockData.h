@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?setCreationTime@ActorTerrainInterlockData@@QEAAXXZ
     MCAPI void setCreationTime();
 
     // NOLINTEND

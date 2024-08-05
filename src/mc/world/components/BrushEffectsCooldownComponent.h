@@ -11,7 +11,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?EXPIRED_TICK@BrushEffectsCooldownComponent@@0VExpiringTick@@B
     MCAPI static class ExpiringTick const EXPIRED_TICK;
 
     // NOLINTEND

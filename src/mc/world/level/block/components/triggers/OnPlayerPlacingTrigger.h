@@ -17,14 +17,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1OnPlayerPlacingTrigger@@UEAA@XZ
+    // vIndex: 0
     virtual ~OnPlayerPlacingTrigger() = default;
 
-    // symbol:
-    // ?finalize@OnPlayerPlacingTrigger@@QEAAXV?$not_null@PEAVBlockPlayerPlacingEventComponent@BlockEvents@@@gsl@@@Z
     MCAPI void finalize(gsl::not_null<class BlockEvents::BlockPlayerPlacingEventComponent*>);
 
-    // symbol: ?onPlayerPlacing@OnPlayerPlacingTrigger@@QEBAXAEAUBlockPlayerPlacingEvent@BlockEvents@@@Z
     MCAPI void onPlayerPlacing(struct BlockEvents::BlockPlayerPlacingEvent&) const;
 
     // NOLINTEND

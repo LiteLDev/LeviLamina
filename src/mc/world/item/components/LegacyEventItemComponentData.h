@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1LegacyEventItemComponentData@@QEAA@XZ
     MCAPI ~LegacyEventItemComponentData();
 
     // NOLINTEND

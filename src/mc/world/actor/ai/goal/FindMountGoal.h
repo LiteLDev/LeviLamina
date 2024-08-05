@@ -15,29 +15,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FindMountGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~FindMountGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@FindMountGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@FindMountGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@FindMountGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@FindMountGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@FindMountGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@FindMountGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0FindMountGoal@@QEAA@AEAVMob@@MH_N1MH@Z
     MCAPI FindMountGoal(
         class Mob& mob,
         float      dist,
@@ -48,7 +46,6 @@ public:
         int        maxFailedAttempts
     );
 
-    // symbol: ?isInMountRange@FindMountGoal@@QEAA_NXZ
     MCAPI bool isInMountRange();
 
     // NOLINTEND

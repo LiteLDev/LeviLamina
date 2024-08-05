@@ -13,10 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??9CommandAction@npc@@QEBA_NAEBU01@@Z
     MCAPI bool operator!=(struct npc::CommandAction const& rhs) const;
 
-    // symbol: ??1CommandAction@npc@@QEAA@XZ
     MCAPI ~CommandAction();
 
     // NOLINTEND

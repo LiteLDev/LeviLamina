@@ -11,8 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?addStatCollector@ScriptDiagnostics@@QEAAXV?$function@$$A6A?AV?$vector@UScriptStat@@V?$allocator@UScriptStat@@@std@@@std@@XZ@std@@@Z
     MCAPI void addStatCollector(std::function<std::vector<struct ScriptStat>()>);
 
     // NOLINTEND

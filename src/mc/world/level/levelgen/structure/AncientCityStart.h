@@ -14,10 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1AncientCityStart@@UEAA@XZ
+    // vIndex: 0
     virtual ~AncientCityStart() = default;
 
-    // vIndex: 2, symbol: ?isValid@AncientCityStart@@UEBA_NXZ
+    // vIndex: 2
     virtual bool isValid() const;
 
     // NOLINTEND

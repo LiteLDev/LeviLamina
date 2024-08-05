@@ -10,7 +10,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ActorParticleEffect@@QEAA@XZ
     MCAPI ActorParticleEffect();
 
     // NOLINTEND

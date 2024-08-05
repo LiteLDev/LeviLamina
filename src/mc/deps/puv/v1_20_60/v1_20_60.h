@@ -16,7 +16,6 @@ namespace cereal { struct ReflectionCtx; }
 
 namespace Puv::v1_20_60 {
 // NOLINTBEGIN
-// symbol: ?bindItemComponentTypes@v1_20_60@Puv@@YAXAEAUReflectionCtx@cereal@@@Z
 MCAPI void bindItemComponentTypes(struct cereal::ReflectionCtx&);
 // NOLINTEND
 

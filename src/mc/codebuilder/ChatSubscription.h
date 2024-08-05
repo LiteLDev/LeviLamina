@@ -13,10 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ChatSubscription@CodeBuilder@@QEAA@$$QEAU01@@Z
     MCAPI ChatSubscription(struct CodeBuilder::ChatSubscription&&);
 
-    // symbol: ??1ChatSubscription@CodeBuilder@@QEAA@XZ
     MCAPI ~ChatSubscription();
 
     // NOLINTEND

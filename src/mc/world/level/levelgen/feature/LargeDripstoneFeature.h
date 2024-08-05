@@ -27,13 +27,9 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol:
-        // ?moveBackUntilBaseIsInsideStoneAndShrinkRadiusIfNecessary@LargeDripstone@LargeDripstoneFeature@@QEAA_NAEAVIBlockWorldGenAPI@@AEBVWindOffsetter@DripstoneUtils@@@Z
         MCAPI bool
         moveBackUntilBaseIsInsideStoneAndShrinkRadiusIfNecessary(class IBlockWorldGenAPI& target, class DripstoneUtils::WindOffsetter const&);
 
-        // symbol:
-        // ?placeBlocks@LargeDripstone@LargeDripstoneFeature@@QEBAXAEAVIBlockWorldGenAPI@@AEAVRandom@@AEBVWindOffsetter@DripstoneUtils@@@Z
         MCAPI void
         placeBlocks(class IBlockWorldGenAPI& target, class Random& random, class DripstoneUtils::WindOffsetter const&)
             const;
@@ -49,11 +45,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LargeDripstoneFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~LargeDripstoneFeature() = default;
 
-    // vIndex: 1, symbol:
-    // ?place@LargeDripstoneFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
+    // vIndex: 1
     virtual std::optional<class BlockPos> place(
         class IBlockWorldGenAPI& target,
         class BlockPos const&    pos,
@@ -61,8 +56,7 @@ public:
         class RenderParams&      renderParams
     ) const;
 
-    // vIndex: 2, symbol:
-    // ?isValidPlacement@IFeature@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 2
     virtual bool isValidPlacement(std::string const&);
 
     // NOLINTEND

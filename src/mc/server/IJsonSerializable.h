@@ -16,13 +16,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1IJsonSerializable@@UEAA@XZ
+    // vIndex: 0
     virtual ~IJsonSerializable();
 
-    // vIndex: 1, symbol: ?serialize@AllowList@@UEAAXAEAVValue@Json@@@Z
+    // vIndex: 1
     virtual void serialize(class Json::Value& root) = 0;
 
-    // vIndex: 2, symbol: ?deserialize@AllowList@@UEAAXAEAVValue@Json@@@Z
+    // vIndex: 2
     virtual void deserialize(class Json::Value& root) = 0;
 
     // NOLINTEND

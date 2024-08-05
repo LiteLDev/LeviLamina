@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1SchemaDescriptor@internal@cereal@@QEAA@XZ
     MCAPI ~SchemaDescriptor();
 
     // NOLINTEND

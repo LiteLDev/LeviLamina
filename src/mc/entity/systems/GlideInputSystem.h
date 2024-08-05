@@ -11,11 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createGlideInputSystem@GlideInputSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createGlideInputSystem();
 
-    // symbol:
-    // ?doGlideInputSystem@GlideInputSystem@@SAXAEBUMovementAbilitiesComponent@@AEBUMoveInputComponent@@AEBUActorDataFlagComponent@@AEAUFallFlyTicksComponent@@AEAUStateVectorComponent@@@Z
     MCAPI static void
     doGlideInputSystem(struct MovementAbilitiesComponent const&, struct MoveInputComponent const&, struct ActorDataFlagComponent const&, struct FallFlyTicksComponent&, struct StateVectorComponent&);
 

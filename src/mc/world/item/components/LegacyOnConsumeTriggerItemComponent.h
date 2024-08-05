@@ -19,20 +19,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LegacyOnConsumeTriggerItemComponent@@UEAA@XZ
+    // vIndex: 0
     virtual ~LegacyOnConsumeTriggerItemComponent() = default;
 
-    // vIndex: 9, symbol: ?_initializeComponent@LegacyOnConsumeTriggerItemComponent@@UEAAXXZ
+    // vIndex: 9
     virtual void _initializeComponent();
 
-    // symbol: ?getIdentifier@LegacyOnConsumeTriggerItemComponent@@SAAEBVHashedString@@XZ
     MCAPI static class HashedString const& getIdentifier();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_consume@LegacyOnConsumeTriggerItemComponent@@AEAAXAEBVItemStack@@AEAV2@AEAVActor@@@Z
     MCAPI void _consume(class ItemStack const&, class ItemStack&, class Actor&);
 
     // NOLINTEND

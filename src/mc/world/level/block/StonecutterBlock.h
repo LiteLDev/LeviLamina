@@ -27,28 +27,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1StonecutterBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~StonecutterBlock() = default;
 
-    // vIndex: 23, symbol: ?canProvideSupport@StonecutterBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
+    // vIndex: 23
     virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType) const;
 
-    // vIndex: 32, symbol: ?isCraftingBlock@StonecutterBlock@@UEBA_NXZ
+    // vIndex: 32
     virtual bool isCraftingBlock() const;
 
-    // vIndex: 57, symbol: ?canContainLiquid@StonecutterBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // vIndex: 136, symbol: ?init@StonecutterBlock@@UEAAAEAVBlockLegacy@@XZ
+    // vIndex: 136
     virtual class BlockLegacy& init();
 
-    // vIndex: 150, symbol: ?isInteractiveBlock@StonecutterBlock@@UEBA_NXZ
+    // vIndex: 150
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 152, symbol: ?use@StonecutterBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    // symbol: ??0StonecutterBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI StonecutterBlock(std::string const& nameId, int id);
 
     // NOLINTEND

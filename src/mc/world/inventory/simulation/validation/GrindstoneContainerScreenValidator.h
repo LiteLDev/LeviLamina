@@ -14,10 +14,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1GrindstoneContainerScreenValidator@@UEAA@XZ
+    // vIndex: 0
     virtual ~GrindstoneContainerScreenValidator() = default;
 
-    // symbol: ??0GrindstoneContainerScreenValidator@@QEAA@XZ
     MCAPI GrindstoneContainerScreenValidator();
 
     // NOLINTEND

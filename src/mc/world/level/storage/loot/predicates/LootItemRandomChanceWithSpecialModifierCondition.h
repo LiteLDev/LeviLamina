@@ -15,11 +15,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LootItemRandomChanceWithSpecialModifierCondition@@UEAA@XZ
+    // vIndex: 0
     virtual ~LootItemRandomChanceWithSpecialModifierCondition() = default;
 
-    // vIndex: 1, symbol:
-    // ?applies@LootItemRandomChanceWithSpecialModifierCondition@@UEAA_NAEAVRandom@@AEAVLootTableContext@@@Z
+    // vIndex: 1
     virtual bool applies(class Random& random, class LootTableContext& context);
 
     // NOLINTEND

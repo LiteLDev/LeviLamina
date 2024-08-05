@@ -10,10 +10,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4HasPropertyFilter@@QEAAAEAU0@AEBU0@@Z
     MCAPI struct HasPropertyFilter& operator=(struct HasPropertyFilter const&);
 
-    // symbol: ??1HasPropertyFilter@@QEAA@XZ
     MCAPI ~HasPropertyFilter();
 
     // NOLINTEND

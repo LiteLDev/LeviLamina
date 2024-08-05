@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1TrimPattern@@QEAA@XZ
     MCAPI ~TrimPattern();
 
     // NOLINTEND

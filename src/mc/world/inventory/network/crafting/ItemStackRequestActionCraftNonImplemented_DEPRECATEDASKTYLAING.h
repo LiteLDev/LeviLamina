@@ -15,18 +15,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING@@UEAA@XZ
+    // vIndex: 0
     virtual ~ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING() = default;
 
-    // vIndex: 4, symbol:
-    // ?_write@ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING@@MEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void _write(class BinaryStream& stream) const;
 
-    // vIndex: 5, symbol:
-    // ?_read@ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 5
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING@@QEAA@XZ
     MCAPI ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING();
 
     // NOLINTEND

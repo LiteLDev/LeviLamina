@@ -21,41 +21,30 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol:
-    // ?getPictureTakenConnector@PhotoManager@@UEAAAEAV?$Connector@$$A6AXAEAVImageBuffer@cg@@PEAVActor@@1AEAUScreenshotOptions@@@Z@PubSub@Bedrock@@XZ
+    // vIndex: 0
     virtual class Bedrock::PubSub::Connector<
         void(class cg::ImageBuffer&, class Actor*, class Actor*, struct ScreenshotOptions&)>&
     getPictureTakenConnector();
 
-    // vIndex: 1, symbol: __gen_??1PhotoManager@@UEAA@XZ
+    // vIndex: 1
     virtual ~PhotoManager() = default;
 
-    // symbol: ??0PhotoManager@@QEAA@AEBV?$StackRefResult@VLevelStorage@@@@_N@Z
     MCAPI PhotoManager(class StackRefResult<class LevelStorage> const&, bool);
 
-    // symbol: ?createPhotoStorage@PhotoManager@@QEAAXXZ
     MCAPI void createPhotoStorage();
 
-    // symbol:
-    // ?createScreenshotsFolder@PhotoManager@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVAppPlatform@@@Z
     MCAPI void createScreenshotsFolder(std::string const&, class AppPlatform&);
 
-    // symbol: ?getPhotoStorage@PhotoManager@@QEAAAEAVPhotoStorage@@XZ
     MCAPI class PhotoStorage& getPhotoStorage();
 
-    // symbol:
-    // ?getScreenshotsFolder@PhotoManager@@QEBAAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
     MCAPI class Core::PathBuffer<std::string> const& getScreenshotsFolder() const;
 
-    // symbol: ?takePicture@PhotoManager@@QEAAXAEAVImageBuffer@cg@@PEAVActor@@1AEAUScreenshotOptions@@@Z
     MCAPI void takePicture(class cg::ImageBuffer&, class Actor*, class Actor*, struct ScreenshotOptions&);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_getPhotoStoragePath@PhotoManager@@AEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
     MCAPI class Core::PathBuffer<std::string> _getPhotoStoragePath();
 
     // NOLINTEND

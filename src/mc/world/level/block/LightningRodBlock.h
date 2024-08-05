@@ -27,42 +27,41 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LightningRodBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~LightningRodBlock() = default;
 
-    // vIndex: 11, symbol: ?getVisualShape@LightningRodBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
+    // vIndex: 11
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
 
-    // vIndex: 17, symbol: ?onProjectileHit@LightningRodBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVActor@@@Z
+    // vIndex: 17
     virtual void
     onProjectileHit(class BlockSource& region, class BlockPos const& pos, class Actor const& projectile) const;
 
-    // vIndex: 18, symbol: ?onLightningHit@LightningRodBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 18
     virtual void onLightningHit(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 23, symbol: ?canProvideSupport@LightningRodBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
+    // vIndex: 23
     virtual bool canProvideSupport(class Block const& block, uchar face, ::BlockSupportType type) const;
 
-    // vIndex: 25, symbol: ?canConnect@LightningRodBlock@@UEBA_NAEBVBlock@@E0@Z
+    // vIndex: 25
     virtual bool canConnect(class Block const&, uchar, class Block const&) const;
 
-    // vIndex: 47, symbol: ?isSignalSource@LightningRodBlock@@UEBA_NXZ
+    // vIndex: 47
     virtual bool isSignalSource() const;
 
-    // vIndex: 57, symbol: ?canContainLiquid@LightningRodBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // vIndex: 59, symbol:
-    // ?shouldConnectToRedstone@LightningRodBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@W4Type@Direction@@@Z
+    // vIndex: 59
     virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
 
-    // vIndex: 72, symbol: ?setupRedstoneComponent@LightningRodBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 72
     virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 90, symbol: ?breaksFallingBlocks@LightningRodBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
+    // vIndex: 90
     virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
 
-    // vIndex: 98, symbol: ?getPlacementBlock@LightningRodBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+    // vIndex: 98
     virtual class Block const& getPlacementBlock(
         class Actor const&    by,
         class BlockPos const& pos,
@@ -71,18 +70,15 @@ public:
         int                   itemValue
     ) const;
 
-    // vIndex: 134, symbol:
-    // ?animateTickBedrockLegacy@LightningRodBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 134
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // vIndex: 146, symbol: ?onPlace@LightningRodBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 146
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 148, symbol: ?tick@LightningRodBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // symbol:
-    // ??0LightningRodBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI LightningRodBlock(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND

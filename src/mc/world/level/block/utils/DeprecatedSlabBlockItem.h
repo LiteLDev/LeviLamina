@@ -26,16 +26,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1DeprecatedSlabBlockItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~DeprecatedSlabBlockItem();
 
-    // vIndex: 116, symbol:
-    // ?_calculatePlacePos@DeprecatedSlabBlockItem@@UEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
+    // vIndex: 116
     virtual bool
     _calculatePlacePos(class ItemStackBase& instance, class Actor& entity, uchar& face, class BlockPos& pos) const;
 
-    // vIndex: 118, symbol:
-    // ?_useOn@DeprecatedSlabBlockItem@@UEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+    // vIndex: 118
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
         const;
@@ -44,8 +42,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_canConvertToDoubleSlab@DeprecatedSlabBlockItem@@AEBA?AV?$optional@H@std@@AEAVItemStackBase@@AEBVActor@@AEBEAEBVBlock@@@Z
     MCAPI std::optional<int> _canConvertToDoubleSlab(
         class ItemStackBase& instance,
         class Actor const&,
@@ -53,8 +49,6 @@ public:
         class Block const& block
     ) const;
 
-    // symbol:
-    // ?_convertToDoubleSlab@DeprecatedSlabBlockItem@@AEBA_NAEAVBlockSource@@AEAVLevel@@AEBVBlockPos@@AEAVItemStack@@AEAVActor@@EAEBVVec3@@AEBVBlock@@AEBVBlockState@@H@Z
     MCAPI bool _convertToDoubleSlab(
         class BlockSource&,
         class Level&,
@@ -68,11 +62,8 @@ public:
         int
     ) const;
 
-    // symbol: ?_findSlabType@DeprecatedSlabBlockItem@@AEBAHAEBVBlock@@@Z
     MCAPI int _findSlabType(class Block const& block) const;
 
-    // symbol:
-    // ?_trySetDoubleBlock@DeprecatedSlabBlockItem@@AEBA_NAEAVBlockSource@@AEAVLevel@@AEBVBlockPos@@AEAVActor@@AEAVItemStack@@AEBVBlock@@V?$not_null@PEBVBlock@@@gsl@@@Z
     MCAPI bool _trySetDoubleBlock(
         class BlockSource&                region,
         class Level&                      level,

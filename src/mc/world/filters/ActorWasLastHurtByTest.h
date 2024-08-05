@@ -20,13 +20,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ActorWasLastHurtByTest@@UEAA@XZ
+    // vIndex: 0
     virtual ~ActorWasLastHurtByTest() = default;
 
-    // vIndex: 2, symbol: ?evaluate@ActorWasLastHurtByTest@@UEBA_NAEBUFilterContext@@@Z
+    // vIndex: 2
     virtual bool evaluate(struct FilterContext const&) const;
 
-    // vIndex: 4, symbol: ?getName@ActorWasLastHurtByTest@@UEBA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@XZ
+    // vIndex: 4
     virtual std::string_view getName() const;
 
     // NOLINTEND

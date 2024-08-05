@@ -13,13 +13,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1MeleeAttackBaseDefinition@@UEAA@XZ
+    // vIndex: 0
     virtual ~MeleeAttackBaseDefinition();
 
-    // symbol: ??0MeleeAttackBaseDefinition@@QEAA@XZ
     MCAPI MeleeAttackBaseDefinition();
 
-    // symbol: ?initialize@MeleeAttackBaseDefinition@@QEBAXAEAVEntityContext@@AEAVMeleeAttackBaseGoal@@@Z
     MCAPI void initialize(class EntityContext&, class MeleeAttackBaseGoal&) const;
 
     // NOLINTEND

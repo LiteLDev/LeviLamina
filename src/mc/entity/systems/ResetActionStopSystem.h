@@ -16,11 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createResetActionStopSystem@ResetActionStopSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createResetActionStopSystem();
 
-    // symbol:
-    // ?tickResetActionStopSystem@ResetActionStopSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@ULocalPlayerComponentFlag@@@@@@UActionOrStopComponent@@@@@Z
     MCAPI static void tickResetActionStopSystem(class ViewT<
                                                 class StrictEntityContext,
                                                 struct Include<

@@ -23,73 +23,69 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1PlayerCommandOrigin@@UEAA@XZ
+    // vIndex: 0
     virtual ~PlayerCommandOrigin() = default;
 
-    // vIndex: 1, symbol:
-    // ?getRequestId@PlayerCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 1
     virtual std::string const& getRequestId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@PlayerCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 3, symbol: ?getBlockPosition@PlayerCommandOrigin@@UEBA?AVBlockPos@@XZ
+    // vIndex: 3
     virtual class BlockPos getBlockPosition() const;
 
-    // vIndex: 4, symbol: ?getWorldPosition@PlayerCommandOrigin@@UEBA?AVVec3@@XZ
+    // vIndex: 4
     virtual class Vec3 getWorldPosition() const;
 
-    // vIndex: 5, symbol: ?getRotation@PlayerCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
+    // vIndex: 5
     virtual std::optional<class Vec2> getRotation() const;
 
-    // vIndex: 6, symbol: ?getLevel@PlayerCommandOrigin@@UEBAPEAVLevel@@XZ
+    // vIndex: 6
     virtual class Level* getLevel() const;
 
-    // vIndex: 7, symbol: ?getDimension@PlayerCommandOrigin@@UEBAPEAVDimension@@XZ
+    // vIndex: 7
     virtual class Dimension* getDimension() const;
 
-    // vIndex: 8, symbol: ?getEntity@PlayerCommandOrigin@@UEBAPEAVActor@@XZ
+    // vIndex: 8
     virtual class Actor* getEntity() const;
 
-    // vIndex: 9, symbol: ?getPermissionsLevel@PlayerCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
+    // vIndex: 9
     virtual ::CommandPermissionLevel getPermissionsLevel() const;
 
-    // vIndex: 10, symbol:
-    // ?clone@PlayerCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
+    // vIndex: 10
     virtual std::unique_ptr<class CommandOrigin> clone() const;
 
-    // vIndex: 11, symbol: ?getCursorHitBlockPos@PlayerCommandOrigin@@UEBA?AV?$optional@VBlockPos@@@std@@XZ
+    // vIndex: 11
     virtual std::optional<class BlockPos> getCursorHitBlockPos() const;
 
-    // vIndex: 12, symbol: ?getCursorHitPos@PlayerCommandOrigin@@UEBA?AV?$optional@VVec3@@@std@@XZ
+    // vIndex: 12
     virtual std::optional<class Vec3> getCursorHitPos() const;
 
-    // vIndex: 15, symbol: ?canUseAbility@PlayerCommandOrigin@@UEBA_NW4AbilitiesIndex@@@Z
+    // vIndex: 15
     virtual bool canUseAbility(::AbilitiesIndex abilityIndex) const;
 
-    // vIndex: 18, symbol: ?isSelectorExpansionAllowed@PlayerCommandOrigin@@UEBA_NXZ
+    // vIndex: 18
     virtual bool isSelectorExpansionAllowed() const;
 
-    // vIndex: 19, symbol: ?getSourceId@PlayerCommandOrigin@@UEBAAEBVNetworkIdentifier@@XZ
+    // vIndex: 19
     virtual class NetworkIdentifier const& getSourceId() const;
 
-    // vIndex: 20, symbol: ?getSourceSubId@PlayerCommandOrigin@@UEBA?AW4SubClientId@@XZ
+    // vIndex: 20
     virtual ::SubClientId getSourceSubId() const;
 
-    // vIndex: 22, symbol: ?getIdentity@PlayerCommandOrigin@@UEBA?AUCommandOriginIdentity@@XZ
+    // vIndex: 22
     virtual struct CommandOriginIdentity getIdentity() const;
 
-    // vIndex: 23, symbol: ?getOriginType@PlayerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
+    // vIndex: 23
     virtual ::CommandOriginType getOriginType() const;
 
-    // vIndex: 29, symbol: ?serialize@PlayerCommandOrigin@@UEBA?AVCompoundTag@@XZ
+    // vIndex: 29
     virtual class CompoundTag serialize() const;
 
-    // vIndex: 30, symbol: ?isValid@PlayerCommandOrigin@@UEBA_NXZ
+    // vIndex: 30
     virtual bool isValid() const;
 
-    // symbol: ??0PlayerCommandOrigin@@QEAA@AEAVPlayer@@@Z
     MCAPI explicit PlayerCommandOrigin(class Player& origin);
 
     // NOLINTEND

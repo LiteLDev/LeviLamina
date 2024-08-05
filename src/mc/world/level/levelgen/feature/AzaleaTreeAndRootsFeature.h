@@ -14,20 +14,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1AzaleaTreeAndRootsFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~AzaleaTreeAndRootsFeature() = default;
 
-    // vIndex: 3, symbol: ?place@AzaleaTreeAndRootsFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 3
     virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_isLushGroundReplaceable@AzaleaTreeAndRootsFeature@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI bool _isLushGroundReplaceable(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ?_tryPlaceAzaleaTree@AzaleaTreeAndRootsFeature@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@I@Z
     MCAPI bool
     _tryPlaceAzaleaTree(class BlockSource& region, class BlockPos const& pos, class Random& random, uint) const;
 

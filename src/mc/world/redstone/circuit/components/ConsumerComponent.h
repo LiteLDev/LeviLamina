@@ -14,14 +14,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ConsumerComponent@@UEAA@XZ
+    // vIndex: 0
     virtual ~ConsumerComponent();
 
-    // vIndex: 7, symbol: ?canConsumerPower@ConsumerComponent@@UEBA_NXZ
+    // vIndex: 7
     virtual bool canConsumerPower() const;
 
-    // vIndex: 11, symbol:
-    // ?addSource@ConsumerComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
+    // vIndex: 11
     virtual bool addSource(
         class CircuitSceneGraph&         graph,
         class CircuitTrackingInfo const& info,
@@ -29,21 +28,19 @@ public:
         bool&                            bDirectlyPowered
     );
 
-    // vIndex: 12, symbol:
-    // ?allowConnection@ConsumerComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
+    // vIndex: 12
     virtual bool
     allowConnection(class CircuitSceneGraph& graph, class CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
-    // vIndex: 14, symbol: ?evaluate@ConsumerComponent@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
+    // vIndex: 14
     virtual bool evaluate(class CircuitSystem& system, class BlockPos const& pos);
 
-    // vIndex: 21, symbol: ?isSecondaryPowered@ConsumerComponent@@UEBA_NXZ
+    // vIndex: 21
     virtual bool isSecondaryPowered() const;
 
-    // vIndex: 23, symbol: ?getCircuitComponentType@ConsumerComponent@@UEBA?AW4CircuitComponentType@@XZ
+    // vIndex: 23
     virtual ::CircuitComponentType getCircuitComponentType() const;
 
-    // symbol: ??0ConsumerComponent@@QEAA@XZ
     MCAPI ConsumerComponent();
 
     // NOLINTEND

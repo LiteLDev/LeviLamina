@@ -14,7 +14,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0MovementCorrection@@QEAA@W4CorrectionMethod@@AEBVVec3@@@Z
     MCAPI MovementCorrection(::CorrectionMethod method, class Vec3 const&);
 
     // NOLINTEND

@@ -19,7 +19,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1IAppPlatform@@UEAA@XZ
+    // vIndex: 0
     virtual ~IAppPlatform();
 
     // NOLINTEND

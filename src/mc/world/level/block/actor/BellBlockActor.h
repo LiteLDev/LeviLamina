@@ -16,32 +16,28 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BellBlockActor@@UEAA@XZ
+    // vIndex: 0
     virtual ~BellBlockActor() = default;
 
-    // vIndex: 1, symbol: ?load@BellBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 1
     virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 2, symbol: ?save@BellBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+    // vIndex: 2
     virtual bool save(class CompoundTag& tag) const;
 
-    // vIndex: 7, symbol: ?tick@BellBlockActor@@UEAAXAEAVBlockSource@@@Z
+    // vIndex: 7
     virtual void tick(class BlockSource& region);
 
-    // vIndex: 40, symbol:
-    // ?_getUpdatePacket@BellBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
+    // vIndex: 40
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
 
-    // vIndex: 41, symbol: ?_onUpdatePacket@BellBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
+    // vIndex: 41
     virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
 
-    // symbol: ?ejectItem@BellBlockActor@@QEBAXAEBVBlockPos@@AEAVActor@@@Z
     MCAPI void ejectItem(class BlockPos const& pos, class Actor& actor) const;
 
-    // symbol: ?isRinging@BellBlockActor@@QEBA_NXZ
     MCAPI bool isRinging() const;
 
-    // symbol: ?ring@BellBlockActor@@QEAA_NW4Type@Direction@@AEAVBlockSource@@PEAVActor@@_N@Z
     MCAPI bool
     ring(::Direction::Type direction, class BlockSource& region, class Actor* sourceActor, bool alarmNearbyDwellers);
 

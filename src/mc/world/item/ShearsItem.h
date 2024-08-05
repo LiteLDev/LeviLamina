@@ -26,30 +26,29 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ShearsItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~ShearsItem() = default;
 
-    // vIndex: 31, symbol: ?canDestroySpecial@ShearsItem@@UEBA_NAEBVBlock@@@Z
+    // vIndex: 31
     virtual bool canDestroySpecial(class Block const& block) const;
 
-    // vIndex: 50, symbol: ?getEnchantSlot@ShearsItem@@UEBAHXZ
+    // vIndex: 50
     virtual int getEnchantSlot() const;
 
-    // vIndex: 74, symbol: ?dispense@ShearsItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 74
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar) const;
 
-    // vIndex: 77, symbol: ?getDestroySpeed@ShearsItem@@UEBAMAEBVItemStackBase@@AEBVBlock@@@Z
+    // vIndex: 77
     virtual float getDestroySpeed(class ItemStackBase const& item, class Block const& block) const;
 
-    // vIndex: 78, symbol: ?hurtActor@ShearsItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
+    // vIndex: 78
     virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
 
-    // vIndex: 81, symbol: ?mineBlock@ShearsItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
+    // vIndex: 81
     virtual bool mineBlock(class ItemStack& item, class Block const& block, int, int, int, class Actor* owner) const;
 
-    // vIndex: 118, symbol:
-    // ?_useOn@ShearsItem@@UEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+    // vIndex: 118
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const&) const;
 
@@ -57,7 +56,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_tryShearActor@ShearsItem@@CA_NAEAVBlockSource@@AEAVActor@@@Z
     MCAPI static bool _tryShearActor(class BlockSource&, class Actor&);
 
     // NOLINTEND

@@ -13,10 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?isSuccess@ValidationResult@ResourceUri@Util@@QEBA_NXZ
     MCAPI bool isSuccess() const;
 
-    // symbol: ??1ValidationResult@ResourceUri@Util@@QEAA@XZ
     MCAPI ~ValidationResult();
 
     // NOLINTEND

@@ -26,15 +26,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DropdownControl@ScriptModuleMinecraftServerUI@@UEAA@XZ
+    // vIndex: 0
     virtual ~DropdownControl() = default;
 
-    // vIndex: 1, symbol:
-    // ?buildJson@DropdownControl@ScriptModuleMinecraftServerUI@@UEBA?AV?$Result@VValue@Json@@$$V@Scripting@@AEAVPlayer@@W4CurrentCmdVersion@@@Z
+    // vIndex: 1
     virtual class Scripting::Result<class Json::Value> buildJson(class Player&, ::CurrentCmdVersion) const;
 
-    // symbol:
-    // ??0DropdownControl@ScriptModuleMinecraftServerUI@@QEAA@V?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UScriptRawMessageInterface@ScriptModuleMinecraft@@@std@@V?$vector@V?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UScriptRawMessageInterface@ScriptModuleMinecraft@@@std@@V?$allocator@V?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UScriptRawMessageInterface@ScriptModuleMinecraft@@@std@@@2@@3@V?$optional@I@3@@Z
     MCAPI
     DropdownControl(std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>, std::vector<std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>>, std::optional<uint>);
 

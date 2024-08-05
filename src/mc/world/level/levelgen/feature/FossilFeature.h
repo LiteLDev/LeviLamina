@@ -14,18 +14,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FossilFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~FossilFeature() = default;
 
-    // vIndex: 3, symbol: ?place@FossilFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 3
     virtual bool place(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?STRUCTURE_LOCATION_FOSSIL@FossilFeature@@0QBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const STRUCTURE_LOCATION_FOSSIL[];
 
     // NOLINTEND

@@ -12,13 +12,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0RakNetRandom@RakNet@@QEAA@XZ
     MCAPI RakNetRandom();
 
-    // symbol: ?SeedMT@RakNetRandom@RakNet@@QEAAXI@Z
     MCAPI void SeedMT(uint seed);
 
-    // symbol: ??1RakNetRandom@RakNet@@QEAA@XZ
     MCAPI ~RakNetRandom();
 
     // NOLINTEND

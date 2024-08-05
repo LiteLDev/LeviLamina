@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1PlayerAddEvent@@QEAA@XZ
     MCAPI ~PlayerAddEvent();
 
     // NOLINTEND

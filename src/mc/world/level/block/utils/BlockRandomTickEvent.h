@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1BlockRandomTickEvent@@QEAA@XZ
     MCAPI ~BlockRandomTickEvent();
 
     // NOLINTEND

@@ -11,10 +11,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1IsSummonableDescription@@UEAA@XZ
+    // vIndex: 0
     virtual ~IsSummonableDescription() = default;
 
-    // vIndex: 1, symbol: ?getJsonName@IsSummonableDescription@@UEBAPEBDXZ
+    // vIndex: 1
     virtual char const* getJsonName() const;
 
     // NOLINTEND

@@ -19,16 +19,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?addDefinitionData@VolumeStorageDefinition@VolumeInstanceData@@QEBAXAEAVEntityContext@@@Z
     MCAPI void addDefinitionData(class EntityContext& entity) const;
 
-    // symbol: ??1VolumeStorageDefinition@VolumeInstanceData@@QEAA@XZ
     MCAPI ~VolumeStorageDefinition();
 
-    // symbol: ?bindType@VolumeStorageDefinition@VolumeInstanceData@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
-    // symbol: ?fromEntity@VolumeStorageDefinition@VolumeInstanceData@@SA?AU12@AEBVEntityContext@@@Z
     MCAPI static struct VolumeInstanceData::VolumeStorageDefinition fromEntity(class EntityContext const& entity);
 
     // NOLINTEND

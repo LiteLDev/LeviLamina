@@ -26,26 +26,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BedItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~BedItem() = default;
 
-    // vIndex: 56, symbol: ?isValidAuxValue@BedItem@@UEBA_NH@Z
+    // vIndex: 56
     virtual bool isValidAuxValue(int value) const;
 
-    // vIndex: 83, symbol:
-    // ?buildDescriptionId@BedItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+    // vIndex: 83
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 104, symbol: ?getIconInfo@BedItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
+    // vIndex: 104
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const& item, int, bool) const;
 
-    // vIndex: 115, symbol: ?_checkUseOnPermissions@BedItem@@EEBA_NAEAVActor@@AEAVItemStackBase@@AEBEAEBVBlockPos@@@Z
+    // vIndex: 115
     virtual bool
     _checkUseOnPermissions(class Actor& entity, class ItemStackBase& item, uchar const& face, class BlockPos const& pos)
         const;
 
-    // vIndex: 118, symbol:
-    // ?_useOn@BedItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+    // vIndex: 118
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
         const;
@@ -54,7 +52,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_tryUseOn@BedItem@@AEBA?AVInteractionResult@@AEAVItemStackBase@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     MCAPI class InteractionResult _tryUseOn(
         class ItemStackBase& instance,
         class Actor&         actor,

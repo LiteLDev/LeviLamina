@@ -11,15 +11,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@LegacyRaidTriggerSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_doRaidTriggerSystem@LegacyRaidTriggerSystem@@CAXAEBUDimensionTypeComponent@@AEBUStateVectorComponent@@AEAVActorOwnerComponent@@AEBUVillageManagerComponent@@@Z
     MCAPI static void
     _doRaidTriggerSystem(struct DimensionTypeComponent const&, struct StateVectorComponent const&, class ActorOwnerComponent&, struct VillageManagerComponent const&);
 

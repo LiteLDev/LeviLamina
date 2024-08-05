@@ -18,42 +18,33 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SetTitlePacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~SetTitlePacket();
 
-    // vIndex: 1, symbol: ?getId@SetTitlePacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@SetTitlePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@SetTitlePacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 8, symbol:
-    // ?_read@SetTitlePacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0SetTitlePacket@@QEAA@XZ
     MCAPI SetTitlePacket();
 
-    // symbol: ??0SetTitlePacket@@QEAA@AEBV0@@Z
     MCAPI SetTitlePacket(class SetTitlePacket const&);
 
-    // symbol: ??0SetTitlePacket@@QEAA@W4TitleType@0@@Z
     MCAPI explicit SetTitlePacket(::SetTitlePacket::TitleType type);
 
-    // symbol: ??0SetTitlePacket@@QEAA@W4TitleType@0@AEBVResolvedTextObject@@@Z
     MCAPI SetTitlePacket(::SetTitlePacket::TitleType type, class ResolvedTextObject const& resolvedTextObject);
 
-    // symbol: ??0SetTitlePacket@@QEAA@W4TitleType@0@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI SetTitlePacket(::SetTitlePacket::TitleType type, std::string const& titleText);
 
-    // symbol: ??0SetTitlePacket@@QEAA@HHH@Z
     MCAPI SetTitlePacket(int fadeInTime, int stayTime, int fadeOutTime);
 
-    // symbol: ??4SetTitlePacket@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class SetTitlePacket& operator=(class SetTitlePacket&&);
 
     // NOLINTEND

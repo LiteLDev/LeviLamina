@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1PressurePlatePopEvent@@QEAA@XZ
     MCAPI ~PressurePlatePopEvent();
 
     // NOLINTEND

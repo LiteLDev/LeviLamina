@@ -15,33 +15,31 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FollowTargetCaptainGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~FollowTargetCaptainGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@FollowTargetCaptainGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@FollowTargetCaptainGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@FollowTargetCaptainGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@FollowTargetCaptainGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@FollowTargetCaptainGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@FollowTargetCaptainGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_determineMovePos@FollowTargetCaptainGoal@@AEAAXXZ
     MCAPI void _determineMovePos();
 
     // NOLINTEND

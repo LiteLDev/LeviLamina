@@ -36,120 +36,101 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 4, symbol: ?reloadHardcoded@Shulker@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 4
     virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 9, symbol: ?_doInitialMove@Shulker@@UEAAXXZ
+    // vIndex: 9
     virtual void _doInitialMove();
 
-    // vIndex: 10, symbol: __gen_??1Shulker@@UEAA@XZ
+    // vIndex: 10
     virtual ~Shulker() = default;
 
-    // vIndex: 33, symbol: ?isInWall@Shulker@@UEBA_NXZ
+    // vIndex: 33
     virtual bool isInWall() const;
 
-    // vIndex: 38, symbol: ?getShadowRadius@Shulker@@UEBAMXZ
+    // vIndex: 38
     virtual float getShadowRadius() const;
 
-    // vIndex: 54, symbol: ?canAttack@Shulker@@UEBA_NPEAVActor@@_N@Z
+    // vIndex: 54
     virtual bool canAttack(class Actor* actor, bool allowInvulnerable) const;
 
-    // vIndex: 66, symbol: ?shouldRender@Shulker@@UEBA_NXZ
+    // vIndex: 66
     virtual bool shouldRender() const;
 
-    // vIndex: 69, symbol: ?isInvulnerableTo@Shulker@@UEBA_NAEBVActorDamageSource@@@Z
+    // vIndex: 69
     virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
-    // vIndex: 144, symbol: ?updateEntitySpecificMolangVariables@Shulker@@MEAAXAEAVRenderParams@@@Z
+    // vIndex: 144
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // vIndex: 146, symbol: ?_hurt@Shulker@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 146
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 147, symbol: ?readAdditionalSaveData@Shulker@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 148, symbol: ?addAdditionalSaveData@Shulker@@UEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 160, symbol: ?checkSpawnRules@Shulker@@UEAA_N_N@Z
+    // vIndex: 160
     virtual bool checkSpawnRules(bool fromSpawner);
 
-    // vIndex: 165, symbol: ?getMaxHeadXRot@Shulker@@UEAAMXZ
+    // vIndex: 165
     virtual float getMaxHeadXRot();
 
-    // vIndex: 168, symbol: ?getArmorValue@Shulker@@UEBAHXZ
+    // vIndex: 168
     virtual int getArmorValue() const;
 
-    // vIndex: 186, symbol:
-    // ?initBodyControl@Shulker@@UEAA?AV?$unique_ptr@VBodyControl@@U?$default_delete@VBodyControl@@@std@@@std@@XZ
+    // vIndex: 186
     virtual std::unique_ptr<class BodyControl> initBodyControl();
 
-    // symbol: ??0Shulker@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Shulker(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?postNormalTick@Shulker@@QEAAXXZ
     MCAPI void postNormalTick();
 
-    // symbol: ?applyShulkerBounds@Shulker@@SAXAEBUShulkerBounds@@AEAVEntityContext@@@Z
     MCAPI static void applyShulkerBounds(struct ShulkerBounds const&, class EntityContext&);
 
-    // symbol: ?computeShulkerBounds@Shulker@@SA?AUShulkerBounds@@AEBUShulkerBoundsInput@@@Z
     MCAPI static struct ShulkerBounds computeShulkerBounds(struct ShulkerBoundsInput const&);
 
-    // symbol: ?postSetPosSetShulkerAttachPosAndPeekAmount@Shulker@@SAXVSynchedActorDataWriter@@AEBVBlockPos@@@Z
     MCAPI static void
     postSetPosSetShulkerAttachPosAndPeekAmount(class SynchedActorDataWriter data, class BlockPos const&);
 
-    // symbol: ?setShulkerAttachPos@Shulker@@SAXVSynchedActorDataWriter@@AEBVBlockPos@@@Z
     MCAPI static void setShulkerAttachPos(class SynchedActorDataWriter data, class BlockPos const& pos);
 
-    // symbol: ?COVERED_ARMOR_MODIFIER@Shulker@@2V?$shared_ptr@VAttributeModifier@@@std@@A
     MCAPI static std::shared_ptr<class AttributeModifier> COVERED_ARMOR_MODIFIER;
 
-    // symbol: ?COVERED_ARMOR_MODIFIER_UUID@Shulker@@2VUUID@mce@@B
     MCAPI static class mce::UUID const COVERED_ARMOR_MODIFIER_UUID;
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?_canOpenLidAt@Shulker@@IEBA_NVBlockPos@@E@Z
     MCAPI bool _canOpenLidAt(class BlockPos position, uchar direction) const;
 
-    // symbol: ?_setPeekAmount@Shulker@@KAXVSynchedActorDataWriter@@H@Z
     MCAPI static void _setPeekAmount(class SynchedActorDataWriter data, int amount);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_calculateBB@Shulker@@AEAAXXZ
     MCAPI void _calculateBB();
 
-    // symbol: ?_isPosOccupiedByOtherShulker@Shulker@@AEBA_NVBlockPos@@@Z
     MCAPI bool _isPosOccupiedByOtherShulker(class BlockPos blockPos) const;
 
-    // symbol: ?_isValidAttach@Shulker@@AEAA_NVBlockPos@@E@Z
     MCAPI bool _isValidAttach(class BlockPos attachPos, uchar direction);
 
-    // symbol: ?_peekAmountTick@Shulker@@AEAAXXZ
     MCAPI void _peekAmountTick();
 
-    // symbol: ?_setAttachFace@Shulker@@AEAAXE@Z
     MCAPI void _setAttachFace(uchar facing);
 
-    // symbol: ?_tryAttachingToNeighbouringFaces@Shulker@@AEAA_NVBlockPos@@@Z
     MCAPI bool _tryAttachingToNeighbouringFaces(class BlockPos currentPos);
 
-    // symbol: ?_trySpawnShulker@Shulker@@AEAAXXZ
     MCAPI void _trySpawnShulker();
 
-    // symbol: ?_tryTeleportSomewhere@Shulker@@AEAA_NXZ
     MCAPI bool _tryTeleportSomewhere();
 
     // NOLINTEND

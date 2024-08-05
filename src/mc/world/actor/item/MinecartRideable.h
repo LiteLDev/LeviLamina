@@ -36,13 +36,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1MinecartRideable@@UEAA@XZ
+    // vIndex: 10
     virtual ~MinecartRideable() = default;
 
-    // vIndex: 152, symbol: ?getType@MinecartRideable@@UEAA?AW4MinecartType@@XZ
+    // vIndex: 152
     virtual ::MinecartType getType();
 
-    // symbol: ??0MinecartRideable@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI MinecartRideable(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

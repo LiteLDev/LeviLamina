@@ -20,41 +20,36 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol:
-    // ?clone@InternalItemDescriptor@@UEBA?AV?$unique_ptr@UBaseDescriptor@ItemDescriptor@@U?$default_delete@UBaseDescriptor@ItemDescriptor@@@std@@@std@@XZ
+    // vIndex: 0
     virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> clone() const;
 
-    // vIndex: 2, symbol: ?sameItem@InternalItemDescriptor@@UEBA_NAEBUItemEntry@ItemDescriptor@@_N@Z
+    // vIndex: 2
     virtual bool sameItem(struct ItemDescriptor::ItemEntry const&, bool) const;
 
-    // vIndex: 3, symbol:
-    // ?getFullName@InternalItemDescriptor@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 3
     virtual std::string const& getFullName() const;
 
-    // vIndex: 4, symbol: ?getItem@InternalItemDescriptor@@UEBA?AUItemEntry@ItemDescriptor@@XZ
+    // vIndex: 4
     virtual struct ItemDescriptor::ItemEntry getItem() const;
 
-    // vIndex: 6, symbol:
-    // ?toMap@InternalItemDescriptor@@UEBA?AV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@XZ
+    // vIndex: 6
     virtual std::map<std::string, std::string> toMap() const;
 
-    // vIndex: 7, symbol: ?save@InternalItemDescriptor@@UEBA?AV?$optional@VCompoundTag@@@std@@XZ
+    // vIndex: 7
     virtual std::optional<class CompoundTag> save() const;
 
-    // vIndex: 9, symbol: ?serialize@InternalItemDescriptor@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 9
     virtual void serialize(class BinaryStream& stream) const;
 
-    // vIndex: 10, symbol: ?getType@InternalItemDescriptor@@UEBA?AW4InternalType@ItemDescriptor@@XZ
+    // vIndex: 10
     virtual ::ItemDescriptor::InternalType getType() const;
 
-    // vIndex: 12, symbol: ?getHash@InternalItemDescriptor@@UEBA_KXZ
+    // vIndex: 12
     virtual uint64 getHash() const;
 
-    // vIndex: 15, symbol: __gen_??1InternalItemDescriptor@@UEAA@XZ
+    // vIndex: 15
     virtual ~InternalItemDescriptor() = default;
 
-    // symbol:
-    // ?deserialize@InternalItemDescriptor@@SA?AV?$Result@V?$unique_ptr@UInternalItemDescriptor@@U?$default_delete@UInternalItemDescriptor@@@std@@@std@@Verror_code@2@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     MCAPI static class Bedrock::Result<std::unique_ptr<struct InternalItemDescriptor>>
     deserialize(class ReadOnlyBinaryStream& stream);
 

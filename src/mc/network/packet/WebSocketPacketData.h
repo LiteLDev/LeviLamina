@@ -14,10 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0WebSocketPacketData@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI explicit WebSocketPacketData(std::string const& ip);
 
-    // symbol: ?read@WebSocketPacketData@@QEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     MCAPI class Bedrock::Result<void> read(class ReadOnlyBinaryStream& stream);
 
     // NOLINTEND

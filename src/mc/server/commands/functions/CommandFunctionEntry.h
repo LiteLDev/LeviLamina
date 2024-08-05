@@ -15,11 +15,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CommandFunctionEntry@@UEAA@XZ
+    // vIndex: 0
     virtual ~CommandFunctionEntry() = default;
 
-    // vIndex: 1, symbol:
-    // ?execute@CommandFunctionEntry@@UEAAXAEAVFunctionManager@@AEBVCommandOrigin@@W4FunctionQueueOrder@@@Z
+    // vIndex: 1
     virtual void
     execute(class FunctionManager& functionManager, class CommandOrigin const& origin, ::FunctionQueueOrder order);
 

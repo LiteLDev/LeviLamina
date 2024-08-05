@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1WorkerPoolManager@Bedrock@@UEAA@XZ
     MCVAPI ~WorkerPoolManager();
 
     // NOLINTEND

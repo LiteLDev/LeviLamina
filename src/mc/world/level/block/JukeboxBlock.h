@@ -27,47 +27,43 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1JukeboxBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~JukeboxBlock() = default;
 
-    // vIndex: 47, symbol: ?isSignalSource@JukeboxBlock@@UEBA_NXZ
+    // vIndex: 47
     virtual bool isSignalSource() const;
 
-    // vIndex: 59, symbol:
-    // ?shouldConnectToRedstone@JukeboxBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@W4Type@Direction@@@Z
+    // vIndex: 59
     virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
 
-    // vIndex: 72, symbol: ?setupRedstoneComponent@JukeboxBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 72
     virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 111, symbol: ?hasComparatorSignal@JukeboxBlock@@UEBA_NXZ
+    // vIndex: 111
     virtual bool hasComparatorSignal() const;
 
-    // vIndex: 112, symbol: ?getComparatorSignal@JukeboxBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
+    // vIndex: 112
     virtual int
     getComparatorSignal(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
         const;
 
-    // vIndex: 143, symbol: ?onRemove@JukeboxBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 143
     virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 146, symbol: ?onPlace@JukeboxBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 146
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 152, symbol: ?use@JukeboxBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    // symbol: ??0JukeboxBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI JukeboxBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_dropRecording@JukeboxBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void _dropRecording(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ?_installCircuit@JukeboxBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void _installCircuit(class BlockSource& region, class BlockPos const& pos) const;
 
     // NOLINTEND

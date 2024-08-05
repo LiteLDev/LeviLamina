@@ -35,25 +35,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1Endermite@@UEAA@XZ
+    // vIndex: 10
     virtual ~Endermite() = default;
 
-    // vIndex: 26, symbol: ?normalTick@Endermite@@UEAAXXZ
+    // vIndex: 26
     virtual void normalTick();
 
-    // vIndex: 147, symbol: ?readAdditionalSaveData@Endermite@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 148, symbol: ?addAdditionalSaveData@Endermite@@UEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 158, symbol: ?aiStep@Endermite@@UEAAXXZ
+    // vIndex: 158
     virtual void aiStep();
 
-    // vIndex: 160, symbol: ?checkSpawnRules@Endermite@@UEAA_N_N@Z
+    // vIndex: 160
     virtual bool checkSpawnRules(bool fromSpawner);
 
-    // symbol: ??0Endermite@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Endermite(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

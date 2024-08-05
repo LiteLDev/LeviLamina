@@ -18,10 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0AnimatedImageData@@QEAA@AEBV0@@Z
     MCAPI AnimatedImageData(class AnimatedImageData const& rhs);
 
-    // symbol: ??0AnimatedImageData@@QEAA@W4AnimatedTextureType@persona@@W4AnimationExpression@2@AEBUImage@mce@@M@Z
     MCAPI AnimatedImageData(
         ::persona::AnimatedTextureType type,
         ::persona::AnimationExpression animationExpression,
@@ -29,7 +27,6 @@ public:
         float                          frames
     );
 
-    // symbol: ??4AnimatedImageData@@QEAAAEAV0@AEBV0@@Z
     MCAPI class AnimatedImageData& operator=(class AnimatedImageData const& rhs);
 
     // NOLINTEND

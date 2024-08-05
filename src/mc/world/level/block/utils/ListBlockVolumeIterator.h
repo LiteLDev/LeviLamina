@@ -14,23 +14,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ListBlockVolumeIterator@@UEAA@XZ
+    // vIndex: 0
     virtual ~ListBlockVolumeIterator() = default;
 
-    // vIndex: 1, symbol: ??EListBlockVolumeIterator@@UEAAAEAVBaseBlockLocationIterator@@XZ
+    // vIndex: 1
     virtual class BaseBlockLocationIterator& operator++();
 
-    // vIndex: 2, symbol: ?isValid@ListBlockVolumeIterator@@UEBA_NXZ
+    // vIndex: 2
     virtual bool isValid() const;
 
-    // vIndex: 3, symbol: ?_begin@ListBlockVolumeIterator@@EEAAXXZ
+    // vIndex: 3
     virtual void _begin();
 
-    // vIndex: 4, symbol: ?_end@ListBlockVolumeIterator@@EEAAXXZ
+    // vIndex: 4
     virtual void _end();
 
-    // symbol:
-    // ??0ListBlockVolumeIterator@@QEAA@AEBVListBlockVolume@@AEBV?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@VBlockPos@@@std@@@std@@@std@@1_N@Z
     MCAPI ListBlockVolumeIterator(
         class ListBlockVolume const&,
         std::_List_const_iterator<std::_List_val<std::_List_simple_types<class BlockPos>>> const&,

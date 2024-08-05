@@ -33,28 +33,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?constructSelectorArgs@ScriptActorQuery@ScriptModuleMinecraft@@SA?AV?$Result@UActorSelectorArgs@@$$V@Scripting@@W4ActorSelectorType@@AEBV?$optional@UScriptActorQueryOptions@ScriptModuleMinecraft@@@std@@PEAVDimension@@@Z
     MCAPI static class Scripting::Result<struct ActorSelectorArgs>
     constructSelectorArgs(::ActorSelectorType, std::optional<struct ScriptModuleMinecraft::ScriptActorQueryOptions> const&, class Dimension*);
 
-    // symbol:
-    // ?getAllPlayers@ScriptActorQuery@ScriptModuleMinecraft@@SA?AV?$Result@V?$vector@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@$$V@Scripting@@AEBVWeakLifetimeScope@4@AEAVLevel@@@Z
     MCAPI static class Scripting::Result<
         std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>>>
     getAllPlayers(class Scripting::WeakLifetimeScope const& scope, class Level& level);
 
-    // symbol:
-    // ?matches@ScriptActorQuery@ScriptModuleMinecraft@@SA?AV?$Result@_N$$V@Scripting@@AEBVActor@@AEBV?$optional@UScriptActorQueryOptions@ScriptModuleMinecraft@@@std@@@Z
     MCAPI static class Scripting::Result<bool>
     matches(class Actor const&, std::optional<struct ScriptModuleMinecraft::ScriptActorQueryOptions> const&);
 
-    // symbol:
-    // ?matches@ScriptActorQuery@ScriptModuleMinecraft@@SA?AV?$Result@_N$$V@Scripting@@AEBVActor@@AEBUActorSelectorArgs@@@Z
     MCAPI static class Scripting::Result<bool> matches(class Actor const&, struct ActorSelectorArgs const&);
 
-    // symbol:
-    // ?queryActors@ScriptActorQuery@ScriptModuleMinecraft@@SA?AV?$Result@V?$vector@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@$$V@Scripting@@W4ActorSelectorType@@AEBV?$optional@UScriptActorQueryOptions@ScriptModuleMinecraft@@@std@@AEBVWeakLifetimeScope@4@PEAVDimension@@AEAVLevel@@@Z
     MCAPI static class Scripting::Result<
         std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>>
     queryActors(
@@ -65,8 +55,6 @@ public:
         class Level&                                                                level
     );
 
-    // symbol:
-    // ?queryActors_V010@ScriptActorQuery@ScriptModuleMinecraft@@SA?AV?$Result@V?$StrongTypedObjectHandle@VScriptActorIterator@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@W4ActorSelectorType@@AEBV?$optional@UScriptActorQueryOptions@ScriptModuleMinecraft@@@std@@AEBVWeakLifetimeScope@4@PEAVDimension@@AEAVLevel@@@Z
     MCAPI static class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActorIterator>>
     queryActors_V010(
@@ -77,8 +65,6 @@ public:
         class Level&                                                                level
     );
 
-    // symbol:
-    // ?queryPlayers@ScriptActorQuery@ScriptModuleMinecraft@@SA?AV?$Result@V?$vector@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@$$V@Scripting@@AEBV?$optional@UScriptActorQueryOptions@ScriptModuleMinecraft@@@std@@AEBVWeakLifetimeScope@4@PEAVDimension@@AEAVLevel@@@Z
     MCAPI static class Scripting::Result<
         std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>>>
     queryPlayers(
@@ -88,8 +74,6 @@ public:
         class Level&                                                                level
     );
 
-    // symbol:
-    // ?queryPlayers_V010@ScriptActorQuery@ScriptModuleMinecraft@@SA?AV?$Result@V?$StrongTypedObjectHandle@VScriptPlayerIterator@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@AEBV?$optional@UScriptActorQueryOptions@ScriptModuleMinecraft@@@std@@AEBVWeakLifetimeScope@4@PEAVDimension@@AEAVLevel@@@Z
     MCAPI static class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayerIterator>>
     queryPlayers_V010(
@@ -103,8 +87,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_incompatableWorldQueryOptionError@ScriptActorQuery@ScriptModuleMinecraft@@CA?AUError@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI static struct Scripting::Error _incompatableWorldQueryOptionError(std::string const& propertyName);
 
     // NOLINTEND

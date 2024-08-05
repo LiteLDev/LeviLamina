@@ -30,14 +30,11 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __gen_??1DrinkMilkDefinition@DrinkMilkGoal@@UEAA@XZ
+        // vIndex: 0
         virtual ~DrinkMilkDefinition() = default;
 
-        // symbol: ?initialize@DrinkMilkDefinition@DrinkMilkGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext& entity, class DrinkMilkGoal& goal) const;
 
-        // symbol:
-        // ?buildSchema@DrinkMilkDefinition@DrinkMilkGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDrinkMilkDefinition@DrinkMilkGoal@@@JsonUtil@@@4@@Z
         MCAPI static void buildSchema(
             std::string const&                              name,
             std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
@@ -56,29 +53,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DrinkMilkGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~DrinkMilkGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@DrinkMilkGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@DrinkMilkGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@DrinkMilkGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@DrinkMilkGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@DrinkMilkGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@DrinkMilkGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0DrinkMilkGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit DrinkMilkGoal(class Mob& mob);
 
     // NOLINTEND

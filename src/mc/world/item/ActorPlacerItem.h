@@ -26,78 +26,67 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ActorPlacerItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~ActorPlacerItem() = default;
 
-    // vIndex: 2, symbol: ?tearDown@ActorPlacerItem@@UEAAXXZ
+    // vIndex: 2
     virtual void tearDown();
 
-    // vIndex: 45, symbol: ?isLiquidClipItem@ActorPlacerItem@@UEBA_NXZ
+    // vIndex: 45
     virtual bool isLiquidClipItem() const;
 
-    // vIndex: 46, symbol: ?shouldInteractionWithBlockBypassLiquid@ActorPlacerItem@@UEBA_NAEBVBlock@@@Z
+    // vIndex: 46
     virtual bool shouldInteractionWithBlockBypassLiquid(class Block const& block) const;
 
-    // vIndex: 56, symbol: ?isValidAuxValue@ActorPlacerItem@@UEBA_NH@Z
+    // vIndex: 56
     virtual bool isValidAuxValue(int auxValue) const;
 
-    // vIndex: 60, symbol: ?isActorPlacerItem@ActorPlacerItem@@UEBA_NXZ
+    // vIndex: 60
     virtual bool isActorPlacerItem() const;
 
-    // vIndex: 61, symbol: ?isMultiColorTinted@ActorPlacerItem@@UEBA_NAEBVItemStack@@@Z
+    // vIndex: 61
     virtual bool isMultiColorTinted(class ItemStack const&) const;
 
-    // vIndex: 67, symbol: ?getBaseColor@ActorPlacerItem@@UEBA?AVColor@mce@@AEBVItemStack@@@Z
+    // vIndex: 67
     virtual class mce::Color getBaseColor(class ItemStack const&) const;
 
-    // vIndex: 68, symbol: ?getSecondaryColor@ActorPlacerItem@@UEBA?AVColor@mce@@AEBVItemStack@@@Z
+    // vIndex: 68
     virtual class mce::Color getSecondaryColor(class ItemStack const&) const;
 
-    // vIndex: 69, symbol: ?getActorIdentifier@ActorPlacerItem@@UEBA?AUActorDefinitionIdentifier@@AEBVItemStack@@@Z
+    // vIndex: 69
     virtual struct ActorDefinitionIdentifier getActorIdentifier(class ItemStack const&) const;
 
-    // vIndex: 74, symbol: ?dispense@ActorPlacerItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 74
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
-    // vIndex: 83, symbol:
-    // ?buildDescriptionId@ActorPlacerItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+    // vIndex: 83
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 104, symbol: ?getIconInfo@ActorPlacerItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
+    // vIndex: 104
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
 
-    // vIndex: 118, symbol:
-    // ?_useOn@ActorPlacerItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+    // vIndex: 118
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
         const;
 
-    // symbol:
-    // ??0ActorPlacerItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBUActorDefinitionIdentifier@@@Z
     MCAPI ActorPlacerItem(std::string const& name, int id, struct ActorDefinitionIdentifier const& actorID);
 
-    // symbol: ?forEachCustomEgg@ActorPlacerItem@@SAXVItemRegistryRef@@AEBV?$function@$$A6AXAEBVItem@@@Z@std@@@Z
     MCAPI static void forEachCustomEgg(class ItemRegistryRef, std::function<void(class Item const&)> const& callback);
 
-    // symbol:
-    // ?getCustomSpawnEggName@ActorPlacerItem@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI static std::string getCustomSpawnEggName(int);
 
-    // symbol: ?registerCustomEggs@ActorPlacerItem@@SAXVItemRegistryRef@@AEBVActorInfoRegistry@@@Z
     MCAPI static void registerCustomEggs(class ItemRegistryRef, class ActorInfoRegistry const& registry);
 
-    // symbol: ?spawnOrMoveAgent@ActorPlacerItem@@SAPEAVActor@@AEBVVec3@@AEAV2@@Z
     MCAPI static class Actor* spawnOrMoveAgent(class Vec3 const& pos, class Actor& owner);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_getActorID@ActorPlacerItem@@AEBA?AUActorDefinitionIdentifier@@AEAVBlockSource@@@Z
     MCAPI struct ActorDefinitionIdentifier _getActorID(class BlockSource& region) const;
 
-    // symbol: ?_spawnActorAt@ActorPlacerItem@@AEBAPEAVActor@@AEAVBlockSource@@AEBVVec3@@1AEBVItemStack@@PEAV2@@Z
     MCAPI class Actor* _spawnActorAt(
         class BlockSource&     region,
         class Vec3 const&      pos,
@@ -106,25 +95,18 @@ public:
         class Actor*           spawner
     ) const;
 
-    // symbol: ?_setAgentOwner@ActorPlacerItem@@CAXAEAVPlayer@@AEAVAgent@@@Z
     MCAPI static void _setAgentOwner(class Player& owner, class Agent& agent);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?EGG_MASK_ID@ActorPlacerItem@@0HB
     MCAPI static int const EGG_MASK_ID;
 
-    // symbol: ?NUM_SPAWN_EGG_TEXTURES@ActorPlacerItem@@0HB
     MCAPI static int const NUM_SPAWN_EGG_TEXTURES;
 
-    // symbol:
-    // ?mCustomSpawnEggs@ActorPlacerItem@@0V?$unordered_map@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@I@2@U?$equal_to@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@std@@A
     MCAPI static std::unordered_map<uint, std::string> mCustomSpawnEggs;
 
-    // symbol:
-    // ?mEggTextureInfoMap@ActorPlacerItem@@0V?$unordered_map@VHashedString@@UResolvedItemIconInfo@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@4@V?$allocator@U?$pair@$$CBVHashedString@@UResolvedItemIconInfo@@@std@@@4@@std@@A
     MCAPI static std::unordered_map<class HashedString, struct ResolvedItemIconInfo> mEggTextureInfoMap;
 
     // NOLINTEND

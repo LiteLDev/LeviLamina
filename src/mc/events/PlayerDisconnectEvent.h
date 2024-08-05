@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1PlayerDisconnectEvent@@QEAA@XZ
     MCAPI ~PlayerDisconnectEvent();
 
     // NOLINTEND

@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 1, symbol: ??1ActorComponentDescription@@UEAA@XZ
+    // vIndex: 1
     virtual ~ActorComponentDescription();
 
     // NOLINTEND

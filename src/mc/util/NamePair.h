@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1NamePair@TextureSetHelpers@@QEAA@XZ
     MCAPI ~NamePair();
 
     // NOLINTEND

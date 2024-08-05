@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1PlayerUpdateInteractionEvent@@QEAA@XZ
     MCAPI ~PlayerUpdateInteractionEvent();
 
     // NOLINTEND

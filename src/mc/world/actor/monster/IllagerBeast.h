@@ -35,13 +35,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1IllagerBeast@@UEAA@XZ
+    // vIndex: 10
     virtual ~IllagerBeast() = default;
 
-    // vIndex: 21, symbol: ?blockedByShield@IllagerBeast@@UEAAXAEBVActorDamageSource@@AEAVActor@@@Z
+    // vIndex: 21
     virtual void blockedByShield(class ActorDamageSource const& source, class Actor& blocker);
 
-    // symbol: ??0IllagerBeast@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI IllagerBeast(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

@@ -16,11 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??8ScriptCameraSetLocationOptions@ScriptModuleMinecraft@@QEBA_NAEBU01@@Z
     MCAPI bool operator==(struct ScriptModuleMinecraft::ScriptCameraSetLocationOptions const&) const;
 
-    // symbol:
-    // ?bind@ScriptCameraSetLocationOptions@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@UScriptCameraSetLocationOptions@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptCameraSetLocationOptions>
     bind();
 

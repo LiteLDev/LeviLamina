@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1RoleCheckerCallback@@QEAA@XZ
     MCAPI ~RoleCheckerCallback();
 
     // NOLINTEND

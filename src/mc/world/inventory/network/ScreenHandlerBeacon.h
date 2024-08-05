@@ -15,27 +15,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScreenHandlerBeacon@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScreenHandlerBeacon() = default;
 
-    // vIndex: 1, symbol: ?handleAction@ScreenHandlerBeacon@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestAction@@@Z
+    // vIndex: 1
     virtual ::ItemStackNetResult handleAction(class ItemStackRequestAction const& requestAction);
 
-    // vIndex: 2, symbol: ?endRequest@ScreenHandlerBeacon@@MEAA?AW4ItemStackNetResult@@XZ
+    // vIndex: 2
     virtual ::ItemStackNetResult endRequest();
 
-    // vIndex: 4, symbol: ?postRequest@ScreenHandlerBeacon@@MEAAX_N@Z
+    // vIndex: 4
     virtual void postRequest(bool wasSuccess);
 
-    // symbol: ??0ScreenHandlerBeacon@@QEAA@AEBVContainerScreenContext@@AEAVItemStackRequestActionHandler@@@Z
     MCAPI ScreenHandlerBeacon(class ContainerScreenContext const& screenContext, class ItemStackRequestActionHandler&);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_handleBeaconPaymentAction@ScreenHandlerBeacon@@AEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionBeaconPayment@@@Z
     MCAPI ::ItemStackNetResult _handleBeaconPaymentAction(class ItemStackRequestActionBeaconPayment const& requestAction
     );
 

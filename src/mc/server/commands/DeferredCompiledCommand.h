@@ -14,14 +14,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DeferredCompiledCommand@@UEAA@XZ
+    // vIndex: 0
     virtual ~DeferredCompiledCommand() = default;
 
-    // vIndex: 1, symbol: ?execute@DeferredCompiledCommand@@UEAAXAEAVMinecraftCommands@@@Z
+    // vIndex: 1
     virtual void execute(class MinecraftCommands&);
 
-    // symbol:
-    // ??0DeferredCompiledCommand@@QEAA@V?$not_null@PEAVCommand@@@gsl@@V?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@@Z
     MCAPI DeferredCompiledCommand(gsl::not_null<class Command*>, std::unique_ptr<class CommandOrigin> origin);
 
     // NOLINTEND

@@ -11,11 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?forEach@CerealSchemaUpgradeSet@@QEAA_NV?$function@$$A6A_NV?$shared_ptr@VCerealSchemaUpgrade@@@std@@@Z@std@@@Z
     MCAPI bool forEach(std::function<bool(std::shared_ptr<class CerealSchemaUpgrade>)> functor);
 
-    // symbol: ??1CerealSchemaUpgradeSet@@QEAA@XZ
     MCAPI ~CerealSchemaUpgradeSet();
 
     // NOLINTEND

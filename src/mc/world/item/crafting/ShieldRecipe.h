@@ -19,37 +19,33 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ShieldRecipe@@UEAA@XZ
+    // vIndex: 0
     virtual ~ShieldRecipe() = default;
 
-    // vIndex: 1, symbol:
-    // ?assemble@ShieldRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@AEAVCraftingContext@@@Z
+    // vIndex: 1
     virtual std::vector<class ItemInstance> const&
     assemble(class CraftingContainer& craftSlots, class CraftingContext&) const;
 
-    // vIndex: 2, symbol: ?getCraftingSize@ShieldRecipe@@UEBAHXZ
+    // vIndex: 2
     virtual int getCraftingSize() const;
 
-    // vIndex: 3, symbol: ?getIngredient@ShieldRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
+    // vIndex: 3
     virtual class RecipeIngredient const& getIngredient(int, int) const;
 
-    // vIndex: 4, symbol: ?isShapeless@ShieldRecipe@@UEBA_NXZ
+    // vIndex: 4
     virtual bool isShapeless() const;
 
-    // vIndex: 5, symbol: ?matches@ShieldRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
+    // vIndex: 5
     virtual bool matches(class CraftingContainer const& craftSlots, class CraftingContext const&) const;
 
-    // vIndex: 6, symbol: ?size@ShieldRecipe@@UEBAHXZ
+    // vIndex: 6
     virtual int size() const;
 
-    // vIndex: 8, symbol:
-    // ?getResultItems@ShieldRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
+    // vIndex: 8
     virtual std::vector<class ItemInstance> const& getResultItems() const;
 
-    // symbol: ??0ShieldRecipe@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBVUUID@mce@@@Z
     MCAPI ShieldRecipe(std::string const&, class mce::UUID const*);
 
-    // symbol: ?ID@ShieldRecipe@@2VUUID@mce@@A
     MCAPI static class mce::UUID ID;
 
     // NOLINTEND

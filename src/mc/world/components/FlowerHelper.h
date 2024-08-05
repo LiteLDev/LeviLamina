@@ -7,8 +7,6 @@
 
 namespace FlowerHelper {
 // NOLINTBEGIN
-// symbol:
-// ?getRandomFlowerBlock@FlowerHelper@@YAAEBVBlock@@W4FlowerPlacementType@@AEBVBlockPos@@AEAVRandom@@AEBVPerlinSimplexNoise@@@Z
 MCAPI class Block const& getRandomFlowerBlock(
     ::FlowerPlacementType           type,
     class BlockPos const&           pos,
@@ -16,8 +14,6 @@ MCAPI class Block const& getRandomFlowerBlock(
     class PerlinSimplexNoise const& biomeInfoNoise
 );
 
-// symbol:
-// ?getRandomFlowerBlock@FlowerHelper@@YAAEBVBlock@@AEBVBiome@@AEBVBlockPos@@AEAVRandom@@AEAVBiomeRegistry@@AEBVPerlinSimplexNoise@@@Z
 MCAPI class Block const& getRandomFlowerBlock(
     class Biome const&              biome,
     class BlockPos const&           pos,

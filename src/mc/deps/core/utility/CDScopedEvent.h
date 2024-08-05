@@ -14,10 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0CDScopedEvent@@QEAA@W4CrashDumpLogStringID@@00@Z
     MCAPI CDScopedEvent(::CrashDumpLogStringID, ::CrashDumpLogStringID, ::CrashDumpLogStringID);
 
-    // symbol: ??1CDScopedEvent@@QEAA@XZ
     MCAPI ~CDScopedEvent();
 
     // NOLINTEND

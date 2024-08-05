@@ -22,17 +22,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0ScriptActorIterator@ScriptModuleMinecraft@@QEAA@$$QEAV?$vector@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@@Z
     MCAPI explicit ScriptActorIterator(std::vector<class Scripting::StrongTypedObjectHandle<
                                            class ScriptModuleMinecraft::ScriptActor>>&&);
 
-    // symbol: ??4ScriptActorIterator@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptActorIterator&
     operator=(class ScriptModuleMinecraft::ScriptActorIterator&&);
 
-    // symbol:
-    // ?bind@ScriptActorIterator@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptActorIterator@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptActorIterator> bind();
 
     // NOLINTEND

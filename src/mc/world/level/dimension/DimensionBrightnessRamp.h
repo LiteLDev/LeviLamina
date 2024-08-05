@@ -11,16 +11,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DimensionBrightnessRamp@@UEAA@XZ
+    // vIndex: 0
     virtual ~DimensionBrightnessRamp() = default;
 
-    // vIndex: 1, symbol: ?buildBrightnessRamp@DimensionBrightnessRamp@@UEAAXXZ
+    // vIndex: 1
     virtual void buildBrightnessRamp();
 
-    // vIndex: 2, symbol: ?getBaseAmbientValue@DimensionBrightnessRamp@@UEBAMXZ
+    // vIndex: 2
     virtual float getBaseAmbientValue() const;
 
-    // symbol: ?getBrightnessRampValue@DimensionBrightnessRamp@@QEBAMH@Z
     MCAPI float getBrightnessRampValue(int index) const;
 
     // NOLINTEND

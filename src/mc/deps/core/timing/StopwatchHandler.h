@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?clearAll@StopwatchHandler@@QEAAXXZ
     MCAPI void clearAll();
 
     // NOLINTEND

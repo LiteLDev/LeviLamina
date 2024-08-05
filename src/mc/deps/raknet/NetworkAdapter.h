@@ -12,10 +12,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?GetNumberOfAddresses@NetworkAdapter@RakNet@@QEAAIXZ
     MCAPI uint GetNumberOfAddresses();
 
-    // symbol: ??0NetworkAdapter@RakNet@@QEAA@XZ
     MCAPI NetworkAdapter();
 
     // NOLINTEND

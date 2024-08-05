@@ -18,7 +18,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ??0NullNode@JSONObject@Bedrock@@AEAA@PEAVMemoryPage@12@@Z
     MCAPI explicit NullNode(class Bedrock::JSONObject::MemoryPage*);
 
     // NOLINTEND

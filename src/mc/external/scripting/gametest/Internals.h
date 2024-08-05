@@ -9,7 +9,6 @@ namespace Scripting { struct Version; }
 
 namespace ScriptModuleGameTest::Internals {
 // NOLINTBEGIN
-// symbol: ?CURRENT@Internals@ScriptModuleGameTest@@3UVersion@Scripting@@B
 MCAPI extern struct Scripting::Version const CURRENT;
 // NOLINTEND
 

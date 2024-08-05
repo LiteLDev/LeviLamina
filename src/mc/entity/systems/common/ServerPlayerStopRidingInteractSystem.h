@@ -4,7 +4,6 @@
 
 namespace ServerPlayerStopRidingInteractSystem {
 // NOLINTBEGIN
-// symbol: ?createSystem@ServerPlayerStopRidingInteractSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createSystem();
 // NOLINTEND
 

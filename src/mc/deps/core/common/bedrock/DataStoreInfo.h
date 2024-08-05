@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1DataStoreInfo@DataStoreDetail@Bedrock@@QEAA@XZ
     MCAPI ~DataStoreInfo();
 
     // NOLINTEND

@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?Release@AsyncState@@QEAAXXZ
     MCAPI void Release();
 
     // NOLINTEND

@@ -14,23 +14,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MinecraftScriptTelemetryLogger@@UEAA@XZ
+    // vIndex: 0
     virtual ~MinecraftScriptTelemetryLogger() = default;
 
-    // vIndex: 1, symbol: ?onPluginDiscovery@MinecraftScriptTelemetryLogger@@UEAAXAEBVScriptPluginResult@@@Z
+    // vIndex: 1
     virtual void onPluginDiscovery(class ScriptPluginResult const&);
 
-    // vIndex: 2, symbol:
-    // ?onPluginRun@MinecraftScriptTelemetryLogger@@UEAAXAEBVScriptPluginResult@@V?$duration@_JU?$ratio@$00$0PECEA@@std@@@chrono@std@@@Z
+    // vIndex: 2
     virtual void onPluginRun(class ScriptPluginResult const&, std::chrono::microseconds);
 
-    // vIndex: 3, symbol: ?onDebuggerListen@MinecraftScriptTelemetryLogger@@UEAAXXZ
+    // vIndex: 3
     virtual void onDebuggerListen();
 
-    // vIndex: 4, symbol: ?onDebuggerConnect@MinecraftScriptTelemetryLogger@@UEAAXXZ
+    // vIndex: 4
     virtual void onDebuggerConnect();
 
-    // symbol: ??0MinecraftScriptTelemetryLogger@@QEAA@AEAVIMinecraftEventing@@_N@Z
     MCAPI MinecraftScriptTelemetryLogger(class IMinecraftEventing& eventing, bool);
 
     // NOLINTEND

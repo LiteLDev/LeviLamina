@@ -20,17 +20,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1UniformHeight@worldgen@br@@UEAA@XZ
+    // vIndex: 0
     virtual ~UniformHeight() = default;
 
-    // vIndex: 1, symbol: ?sample@UniformHeight@worldgen@br@@UEBAHAEAVIRandom@@AEBVWorldGenContext@23@@Z
+    // vIndex: 1
     virtual int sample(class IRandom&, class br::worldgen::WorldGenContext const&) const;
 
-    // symbol:
-    // ?toString@UniformHeight@worldgen@br@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string toString() const;
 
-    // symbol: ?of@UniformHeight@worldgen@br@@SA?AV123@VVerticalAnchor@23@0@Z
     MCAPI static class br::worldgen::UniformHeight
         of(class br::worldgen::VerticalAnchor, class br::worldgen::VerticalAnchor);
 

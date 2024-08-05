@@ -12,13 +12,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?Decrement@LocklessUint32_t@RakNet@@QEAAIXZ
     MCAPI uint Decrement();
 
-    // symbol: ?Increment@LocklessUint32_t@RakNet@@QEAAIXZ
     MCAPI uint Increment();
 
-    // symbol: ??0LocklessUint32_t@RakNet@@QEAA@XZ
     MCAPI LocklessUint32_t();
 
     // NOLINTEND

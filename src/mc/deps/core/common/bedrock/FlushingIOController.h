@@ -18,7 +18,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?flush@FlushingIOController@Bedrock@@QEAA?AVResult@Core@@XZ
     MCAPI class Core::Result flush();
 
     // NOLINTEND

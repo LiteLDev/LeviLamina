@@ -14,19 +14,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1VillageFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~VillageFeature() = default;
 
-    // vIndex: 2, symbol: ?shouldPostProcessMobs@VillageFeature@@UEBA_NXZ
+    // vIndex: 2
     virtual bool shouldPostProcessMobs() const;
 
-    // vIndex: 3, symbol:
-    // ?getNearestGeneratedFeature@VillageFeature@@UEAA_NAEAVDimension@@AEBVBiomeSource@@AEBVBlockPos@@AEAV4@AEBVIPreliminarySurfaceProvider@@_NAEBV?$optional@VHashedString@@@std@@@Z
+    // vIndex: 3
     virtual bool
     getNearestGeneratedFeature(class Dimension&, class BiomeSource const&, class BlockPos const&, class BlockPos&, class IPreliminarySurfaceProvider const&, bool, std::optional<class HashedString> const&);
 
-    // vIndex: 5, symbol:
-    // ?isFeatureChunk@VillageFeature@@UEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z
+    // vIndex: 5
     virtual bool isFeatureChunk(
         class BiomeSource const& biomeSource,
         class Random&            random,
@@ -36,12 +34,10 @@ public:
         class Dimension const& dimension
     );
 
-    // vIndex: 6, symbol:
-    // ?createStructureStart@VillageFeature@@MEAA?AV?$unique_ptr@VStructureStart@@U?$default_delete@VStructureStart@@@std@@@std@@AEAVDimension@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVIPreliminarySurfaceProvider@@@Z
+    // vIndex: 6
     virtual std::unique_ptr<class StructureStart>
     createStructureStart(class Dimension& generator, class BiomeSource const& biomeSource, class Random& random, class ChunkPos const& chunkPos, class IPreliminarySurfaceProvider const&);
 
-    // symbol: ??0VillageFeature@@QEAA@IHH@Z
     MCAPI VillageFeature(uint seed, int, int);
 
     // NOLINTEND

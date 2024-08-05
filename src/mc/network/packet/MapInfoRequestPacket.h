@@ -15,36 +15,29 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1MapInfoRequestPacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~MapInfoRequestPacket();
 
-    // vIndex: 1, symbol: ?getId@MapInfoRequestPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@MapInfoRequestPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@MapInfoRequestPacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 8, symbol:
-    // ?_read@MapInfoRequestPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0MapInfoRequestPacket@@QEAA@XZ
     MCAPI MapInfoRequestPacket();
 
-    // symbol: ??0MapInfoRequestPacket@@QEAA@UActorUniqueID@@@Z
     MCAPI explicit MapInfoRequestPacket(struct ActorUniqueID mapId);
 
-    // symbol: ??0MapInfoRequestPacket@@QEAA@UActorUniqueID@@AEAVMapItemSavedData@@@Z
     MCAPI MapInfoRequestPacket(struct ActorUniqueID mapId, class MapItemSavedData& map);
 
-    // symbol: ?getMapId@MapInfoRequestPacket@@QEBA?AUActorUniqueID@@XZ
     MCAPI struct ActorUniqueID getMapId() const;
 
-    // symbol: ?replaceServerPixels@MapInfoRequestPacket@@QEBA_NAEAVMapItemSavedData@@@Z
     MCAPI bool replaceServerPixels(class MapItemSavedData& map) const;
 
     // NOLINTEND

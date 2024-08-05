@@ -14,15 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?getChunkViewSource@ChunksLoadedInfo@@QEBA?AV?$unique_ptr@VChunkViewSource@@U?$default_delete@VChunkViewSource@@@std@@@std@@XZ
     MCAPI std::unique_ptr<class ChunkViewSource> getChunkViewSource() const;
 
-    // symbol: ?getChunksLoadedStatus@ChunksLoadedInfo@@QEBA?AW4ChunksLoadedStatus@@XZ
     MCAPI ::ChunksLoadedStatus getChunksLoadedStatus() const;
 
-    // symbol:
-    // ?areAllChunksLoadedAndTicking@ChunksLoadedInfo@@SA?AW4ChunksLoadedStatus@@AEBVDimension@@AEAVChunkSource@@AEBUBounds@@_NUTick@@_N@Z
     MCAPI static ::ChunksLoadedStatus areAllChunksLoadedAndTicking(
         class Dimension const& dimension,
         class ChunkSource&     source,
@@ -32,8 +27,6 @@ public:
         bool                   allowNonPlayerTicking
     );
 
-    // symbol:
-    // ?calculateChunksLoadedInfo@ChunksLoadedInfo@@SA?AU1@AEBVDimension@@AEAVChunkSource@@AEBUBounds@@_NUTick@@_N55@Z
     MCAPI static struct ChunksLoadedInfo calculateChunksLoadedInfo(
         class Dimension const& dimension,
         class ChunkSource&     source,

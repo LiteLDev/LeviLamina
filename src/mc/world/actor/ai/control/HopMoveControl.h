@@ -13,17 +13,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1HopMoveControl@@UEAA@XZ
+    // vIndex: 0
     virtual ~HopMoveControl() = default;
 
-    // vIndex: 2, symbol: ?tick@HopMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
+    // vIndex: 2
     virtual void tick(class MoveControlComponent& parent, class Mob& mob);
 
-    // vIndex: 3, symbol: ?setWantedPosition@HopMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@AEBVVec3@@M@Z
+    // vIndex: 3
     virtual void
     setWantedPosition(class MoveControlComponent& parent, class Mob& mob, class Vec3 const& pos, float speed);
 
-    // symbol: ??0HopMoveControl@@QEAA@XZ
     MCAPI HopMoveControl();
 
     // NOLINTEND

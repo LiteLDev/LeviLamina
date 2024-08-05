@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4AbsoluteSizeUpdateComponent@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct AbsoluteSizeUpdateComponent& operator=(struct AbsoluteSizeUpdateComponent&&);
 
     // NOLINTEND

@@ -16,15 +16,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4ScriptActorHealthChangedAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptActorHealthChangedAfterEvent&
     operator=(struct ScriptModuleMinecraft::ScriptActorHealthChangedAfterEvent&&);
 
-    // symbol: ??1ScriptActorHealthChangedAfterEvent@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptActorHealthChangedAfterEvent();
 
-    // symbol:
-    // ?bind@ScriptActorHealthChangedAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilderReadOnly@UScriptActorHealthChangedAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilderReadOnly<
         struct ScriptModuleMinecraft::ScriptActorHealthChangedAfterEvent>
     bind();

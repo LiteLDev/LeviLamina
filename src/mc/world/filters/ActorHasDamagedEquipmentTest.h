@@ -20,15 +20,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ActorHasDamagedEquipmentTest@@UEAA@XZ
+    // vIndex: 0
     virtual ~ActorHasDamagedEquipmentTest();
 
-    // vIndex: 4, symbol:
-    // ?getName@ActorHasDamagedEquipmentTest@@UEBA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@XZ
+    // vIndex: 4
     virtual std::string_view getName() const;
 
-    // vIndex: 7, symbol:
-    // ?_isExpectedItem@ActorHasDamagedEquipmentTest@@MEBA_NAEBV?$vector@PEBVItemStack@@V?$allocator@PEBVItemStack@@@std@@@std@@@Z
+    // vIndex: 7
     virtual bool _isExpectedItem(std::vector<class ItemStack const*> const&) const;
 
     // NOLINTEND

@@ -21,20 +21,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BlockMapColorDescription@@UEAA@XZ
+    // vIndex: 0
     virtual ~BlockMapColorDescription() = default;
 
-    // vIndex: 1, symbol:
-    // ?getName@BlockMapColorDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 1
     virtual std::string const& getName() const;
 
-    // vIndex: 3, symbol: ?initializeComponent@BlockMapColorDescription@@UEBAXAEAVBlockComponentStorage@@@Z
+    // vIndex: 3
     virtual void initializeComponent(class BlockComponentStorage&) const;
 
-    // symbol: ?bindType@BlockMapColorDescription@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
-    // symbol: ?NameID@BlockMapColorDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const NameID;
 
     // NOLINTEND

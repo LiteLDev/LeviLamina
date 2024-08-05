@@ -20,14 +20,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BlockRandomTickingComponent@@UEAA@XZ
+    // vIndex: 0
     virtual ~BlockRandomTickingComponent() = default;
 
-    // symbol:
-    // ?finalize@BlockRandomTickingComponent@@QEAAXV?$not_null@PEAVBlockRandomTickEventComponent@BlockEvents@@@gsl@@@Z
     MCAPI void finalize(gsl::not_null<class BlockEvents::BlockRandomTickEventComponent*>);
 
-    // symbol: ?onTick@BlockRandomTickingComponent@@QEBAXAEBUBlockRandomTickEvent@BlockEvents@@@Z
     MCAPI void onTick(struct BlockEvents::BlockRandomTickEvent const&) const;
 
     // NOLINTEND

@@ -14,20 +14,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1AllowListCommand@@UEAA@XZ
+    // vIndex: 0
     virtual ~AllowListCommand() = default;
 
-    // vIndex: 2, symbol: ?execute@AllowListCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+    // vIndex: 2
     virtual void execute(class CommandOrigin const&, class CommandOutput& output) const;
 
-    // symbol: ?setup@AllowListCommand@@SAXAEAVCommandRegistry@@AEAVAllowListFile@@@Z
     MCAPI static void setup(class CommandRegistry& registry, class AllowListFile&);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?mAllowListFile@AllowListCommand@@0PEAVAllowListFile@@EA
     MCAPI static class AllowListFile* mAllowListFile;
 
     // NOLINTEND

@@ -27,23 +27,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1WarpedFungusOnAStickItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~WarpedFungusOnAStickItem() = default;
 
-    // vIndex: 37, symbol: ?isHandEquipped@WarpedFungusOnAStickItem@@UEBA_NXZ
+    // vIndex: 37
     virtual bool isHandEquipped() const;
 
-    // vIndex: 47, symbol: ?requiresInteract@WarpedFungusOnAStickItem@@UEBA_NXZ
+    // vIndex: 47
     virtual bool requiresInteract() const;
 
-    // vIndex: 50, symbol: ?getEnchantSlot@WarpedFungusOnAStickItem@@UEBAHXZ
+    // vIndex: 50
     virtual int getEnchantSlot() const;
 
-    // vIndex: 51, symbol: ?getEnchantValue@WarpedFungusOnAStickItem@@UEBAHXZ
+    // vIndex: 51
     virtual int getEnchantValue() const;
 
-    // symbol:
-    // ??0WarpedFungusOnAStickItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEAUReflectionCtx@cereal@@@Z
     MCAPI WarpedFungusOnAStickItem(std::string const&, int, struct cereal::ReflectionCtx&);
 
     // NOLINTEND

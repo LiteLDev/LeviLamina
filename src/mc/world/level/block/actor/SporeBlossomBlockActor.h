@@ -15,13 +15,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SporeBlossomBlockActor@@UEAA@XZ
+    // vIndex: 0
     virtual ~SporeBlossomBlockActor() = default;
 
-    // vIndex: 7, symbol: ?tick@SporeBlossomBlockActor@@UEAAXAEAVBlockSource@@@Z
+    // vIndex: 7
     virtual void tick(class BlockSource& region);
 
-    // symbol: ??0SporeBlossomBlockActor@@QEAA@AEBVBlockPos@@@Z
     MCAPI explicit SporeBlossomBlockActor(class BlockPos const& pos);
 
     // NOLINTEND

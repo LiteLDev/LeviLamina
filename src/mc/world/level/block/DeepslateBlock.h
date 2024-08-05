@@ -27,16 +27,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DeepslateBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~DeepslateBlock() = default;
 
-    // vIndex: 48, symbol: ?canBeOriginalSurface@DeepslateBlock@@UEBA_NXZ
+    // vIndex: 48
     virtual bool canBeOriginalSurface() const;
 
-    // vIndex: 140, symbol: ?tryGetInfested@DeepslateBlock@@UEBAPEBVBlock@@AEBV2@@Z
+    // vIndex: 140
     virtual class Block const* tryGetInfested(class Block const& block) const;
 
-    // symbol: ??0DeepslateBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI DeepslateBlock(std::string const& nameId, int id);
 
     // NOLINTEND

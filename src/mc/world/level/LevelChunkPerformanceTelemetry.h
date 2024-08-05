@@ -14,8 +14,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?sendPerformanceTelemetry@LevelChunkPerformanceTelemetry@@QEAAXV?$NonOwnerPointer@UChunkPerformanceData@@@Bedrock@@@Z
     MCAPI void sendPerformanceTelemetry(class Bedrock::NonOwnerPointer<struct ChunkPerformanceData>);
 
     // NOLINTEND

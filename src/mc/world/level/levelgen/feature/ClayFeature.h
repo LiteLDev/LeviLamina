@@ -14,13 +14,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ClayFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~ClayFeature() = default;
 
-    // vIndex: 3, symbol: ?place@ClayFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 3
     virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // symbol: ??0ClayFeature@@QEAA@H@Z
     MCAPI explicit ClayFeature(int radius);
 
     // NOLINTEND

@@ -11,7 +11,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FrozenNoiseBasedTemperatureFlag@@UEAA@XZ
+    // vIndex: 0
     virtual ~FrozenNoiseBasedTemperatureFlag() = default;
 
     // NOLINTEND

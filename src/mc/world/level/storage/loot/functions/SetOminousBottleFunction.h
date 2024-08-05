@@ -14,13 +14,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SetOminousBottleFunction@@UEAA@XZ
+    // vIndex: 0
     virtual ~SetOminousBottleFunction() = default;
 
-    // vIndex: 1, symbol: ?apply@SetOminousBottleFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
+    // vIndex: 1
     virtual void apply(class ItemStack&, class Random&, class LootTableContext&);
 
-    // vIndex: 3, symbol: ?apply@SetOminousBottleFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
+    // vIndex: 3
     virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
 
     // NOLINTEND

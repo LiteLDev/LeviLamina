@@ -27,42 +27,39 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1RedStoneOreBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~RedStoneOreBlock() = default;
 
-    // vIndex: 48, symbol: ?canBeOriginalSurface@RedStoneOreBlock@@UEBA_NXZ
+    // vIndex: 48
     virtual bool canBeOriginalSurface() const;
 
-    // vIndex: 96, symbol: ?asItemInstance@RedStoneOreBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 101, symbol: ?attack@RedStoneOreBlock@@UEBA_NPEAVPlayer@@AEBVBlockPos@@@Z
+    // vIndex: 101
     virtual bool attack(class Player* player, class BlockPos const& pos) const;
 
-    // vIndex: 134, symbol:
-    // ?animateTickBedrockLegacy@RedStoneOreBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 134
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // vIndex: 145, symbol: ?onStandOn@RedStoneOreBlock@@UEBAXAEAVEntityContext@@AEBVBlockPos@@@Z
+    // vIndex: 145
     virtual void onStandOn(class EntityContext& entity, class BlockPos const& pos) const;
 
-    // vIndex: 149, symbol: ?randomTick@RedStoneOreBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 149
     virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 152, symbol: ?use@RedStoneOreBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    // vIndex: 163, symbol: ?_lightUpBlock@RedStoneOreBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 163
     virtual void _lightUpBlock(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ??0RedStoneOreBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
     MCAPI RedStoneOreBlock(std::string const& nameId, int id, bool lit);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_poofParticles@RedStoneOreBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void _poofParticles(class BlockSource& region, class BlockPos const& pos) const;
 
     // NOLINTEND

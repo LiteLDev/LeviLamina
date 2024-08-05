@@ -27,49 +27,46 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SlabBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~SlabBlock();
 
-    // vIndex: 11, symbol: ?getVisualShape@SlabBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
+    // vIndex: 11
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
 
-    // vIndex: 14, symbol: ?isObstructingChests@SlabBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 14
     virtual bool
     isObstructingChests(class BlockSource& region, class BlockPos const& pos, class Block const& thisBlock) const;
 
-    // vIndex: 19, symbol:
-    // ?liquidCanFlowIntoFromDirection@SlabBlock@@UEBA_NEAEBV?$function@$$A6AAEBVBlock@@AEBVBlockPos@@@Z@std@@AEBVBlockPos@@@Z
+    // vIndex: 19
     virtual bool liquidCanFlowIntoFromDirection(
         uchar                                                           flowIntoFacing,
         std::function<class Block const&(class BlockPos const&)> const& getBlock,
         class BlockPos const&                                           pos
     ) const;
 
-    // vIndex: 39, symbol: ?isSlabBlock@SlabBlock@@UEBA_NXZ
+    // vIndex: 39
     virtual bool isSlabBlock() const;
 
-    // vIndex: 40, symbol: ?isDoubleSlabBlock@SlabBlock@@UEBA_NXZ
+    // vIndex: 40
     virtual bool isDoubleSlabBlock() const;
 
-    // vIndex: 62, symbol: ?checkIsPathable@SlabBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
+    // vIndex: 62
     virtual bool
     checkIsPathable(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
 
-    // vIndex: 73, symbol: ?getRedstoneProperty@SlabBlock@@UEBA?AW4BlockProperty@@AEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 73
     virtual ::BlockProperty getRedstoneProperty(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 90, symbol: ?breaksFallingBlocks@SlabBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
+    // vIndex: 90
     virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@SlabBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 107, symbol: ?getMobToSpawn@SlabBlock@@UEBAPEBVMobSpawnerData@@AEBVSpawnConditions@@AEAVBlockSource@@@Z
+    // vIndex: 107
     virtual class MobSpawnerData const*
     getMobToSpawn(class SpawnConditions const& conditions, class BlockSource& region) const;
 
-    // symbol:
-    // ??0SlabBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NAEBVMaterial@@AEBVHashedString@@@Z
     MCAPI SlabBlock(
         std::string const&        nameId,
         int                       id,
@@ -82,7 +79,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?TOP_SLAB_DOESNT_BREAK_FALLING_BLOCK_VERSION@SlabBlock@@0VBaseGameVersion@@B
     MCAPI static class BaseGameVersion const TOP_SLAB_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
     // NOLINTEND

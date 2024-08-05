@@ -4,7 +4,6 @@
 
 namespace StorePreviousClientInputSystem {
 // NOLINTBEGIN
-// symbol: ?createSystem@StorePreviousClientInputSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createSystem();
 // NOLINTEND
 

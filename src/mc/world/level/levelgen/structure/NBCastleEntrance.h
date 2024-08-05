@@ -15,21 +15,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1NBCastleEntrance@@UEAA@XZ
+    // vIndex: 0
     virtual ~NBCastleEntrance() = default;
 
-    // vIndex: 2, symbol: ?getType@NBCastleEntrance@@UEBA?AW4StructurePieceType@@XZ
+    // vIndex: 2
     virtual ::StructurePieceType getType() const;
 
-    // vIndex: 3, symbol:
-    // ?addChildren@NBCastleEntrance@@UEAAXAEAVStructurePiece@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@@Z
+    // vIndex: 3
     virtual void addChildren(
         class StructurePiece&                               startPiece,
         std::vector<std::unique_ptr<class StructurePiece>>& pieces,
         class Random&                                       random
     );
 
-    // vIndex: 4, symbol: ?postProcess@NBCastleEntrance@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+    // vIndex: 4
     virtual bool postProcess(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 
     // NOLINTEND

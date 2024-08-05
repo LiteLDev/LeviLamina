@@ -17,13 +17,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1OnStepOnTrigger@@UEAA@XZ
+    // vIndex: 0
     virtual ~OnStepOnTrigger() = default;
 
-    // symbol: ?finalize@OnStepOnTrigger@@QEAAXV?$not_null@PEAVBlockStepOnEventComponent@BlockEvents@@@gsl@@@Z
     MCAPI void finalize(gsl::not_null<class BlockEvents::BlockStepOnEventComponent*>);
 
-    // symbol: ?onStepOn@OnStepOnTrigger@@QEBAXAEBUBlockStepOnEvent@BlockEvents@@@Z
     MCAPI void onStepOn(struct BlockEvents::BlockStepOnEvent const&) const;
 
     // NOLINTEND

@@ -21,40 +21,33 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BlockCollisionBoxDescription@@UEAA@XZ
+    // vIndex: 0
     virtual ~BlockCollisionBoxDescription();
 
-    // vIndex: 1, symbol:
-    // ?getName@BlockCollisionBoxDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 1
     virtual std::string const& getName() const;
 
-    // vIndex: 3, symbol: ?initializeComponent@BlockCollisionBoxDescription@@UEBAXAEAVBlockComponentStorage@@@Z
+    // vIndex: 3
     virtual void initializeComponent(class BlockComponentStorage&) const;
 
-    // vIndex: 5, symbol: ?initializeComponentFromCode@BlockCollisionBoxDescription@@UEBAXAEAVBlockComponentStorage@@@Z
+    // vIndex: 5
     virtual void initializeComponentFromCode(class BlockComponentStorage&) const;
 
-    // vIndex: 7, symbol: ?isNetworkComponent@BlockCollisionBoxDescription@@UEBA_NXZ
+    // vIndex: 7
     virtual bool isNetworkComponent() const;
 
-    // vIndex: 8, symbol:
-    // ?buildNetworkTag@BlockCollisionBoxDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBUReflectionCtx@cereal@@@Z
+    // vIndex: 8
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const&) const;
 
-    // vIndex: 9, symbol:
-    // ?initializeFromNetwork@BlockCollisionBoxDescription@@UEAAXAEBVCompoundTag@@AEBUReflectionCtx@cereal@@@Z
+    // vIndex: 9
     virtual void initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx const&);
 
-    // symbol: ??0BlockCollisionBoxDescription@@QEAA@_N@Z
     MCAPI explicit BlockCollisionBoxDescription(bool enabled);
 
-    // symbol: ??0BlockCollisionBoxDescription@@QEAA@AEBVVec3@@0@Z
     MCAPI BlockCollisionBoxDescription(class Vec3 const& origin, class Vec3 const& size);
 
-    // symbol: ?bindType@BlockCollisionBoxDescription@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
-    // symbol: ?NameID@BlockCollisionBoxDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const NameID;
 
     // NOLINTEND

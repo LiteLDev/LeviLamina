@@ -28,52 +28,47 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CopperBulbBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~CopperBulbBlock() = default;
 
-    // vIndex: 18, symbol: ?onLightningHit@CopperBulbBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 18
     virtual void onLightningHit(class BlockSource&, class BlockPos const&) const;
 
-    // vIndex: 27, symbol: ?tryGetCopperBehavior@CopperBulbBlock@@UEBAPEBVCopperBehavior@@XZ
+    // vIndex: 27
     virtual class CopperBehavior const* tryGetCopperBehavior() const;
 
-    // vIndex: 59, symbol:
-    // ?shouldConnectToRedstone@CopperBulbBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@W4Type@Direction@@@Z
+    // vIndex: 59
     virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
 
-    // vIndex: 66, symbol: ?onRedstoneUpdate@CopperBulbBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
+    // vIndex: 66
     virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int, bool) const;
 
-    // vIndex: 72, symbol: ?setupRedstoneComponent@CopperBulbBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 72
     virtual void setupRedstoneComponent(class BlockSource&, class BlockPos const&) const;
 
-    // vIndex: 111, symbol: ?hasComparatorSignal@CopperBulbBlock@@UEBA_NXZ
+    // vIndex: 111
     virtual bool hasComparatorSignal() const;
 
-    // vIndex: 112, symbol: ?getComparatorSignal@CopperBulbBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
+    // vIndex: 112
     virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, uchar) const;
 
-    // vIndex: 137, symbol: ?getLightEmission@CopperBulbBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
+    // vIndex: 137
     virtual struct Brightness getLightEmission(class Block const&) const;
 
-    // vIndex: 146, symbol: ?onPlace@CopperBulbBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 146
     virtual void onPlace(class BlockSource&, class BlockPos const&) const;
 
-    // vIndex: 148, symbol: ?tick@CopperBulbBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // vIndex: 149, symbol: ?randomTick@CopperBulbBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 149
     virtual void randomTick(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // vIndex: 152, symbol: ?use@CopperBulbBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player&, class BlockPos const&, uchar) const;
 
-    // symbol:
-    // ??0CopperBulbBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HUBrightness@@W4CopperType@@AEBVHashedString@@@Z
     MCAPI CopperBulbBlock(std::string const&, int, struct Brightness, ::CopperType, class HashedString const&);
 
-    // symbol:
-    // ??0CopperBulbBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HUBrightness@@W4CopperType@@AEBVHashedString@@33@Z
     MCAPI
     CopperBulbBlock(std::string const&, int, struct Brightness, ::CopperType, class HashedString const&, class HashedString const&, class HashedString const&);
 

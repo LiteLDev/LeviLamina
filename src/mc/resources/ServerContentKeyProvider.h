@@ -14,28 +14,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ServerContentKeyProvider@@UEAA@XZ
+    // vIndex: 0
     virtual ~ServerContentKeyProvider() = default;
 
-    // vIndex: 1, symbol:
-    // ?getContentKey@ServerContentKeyProvider@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVContentIdentity@@@Z
+    // vIndex: 1
     virtual std::string getContentKey(class ContentIdentity const&) const;
 
-    // vIndex: 2, symbol:
-    // ?getAlternateContentKey@IContentKeyProvider@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVContentIdentity@@@Z
+    // vIndex: 2
     virtual std::string getAlternateContentKey(class ContentIdentity const&) const;
 
-    // vIndex: 3, symbol: ?requireEncryptedReads@IContentKeyProvider@@UEBA_NXZ
+    // vIndex: 3
     virtual bool requireEncryptedReads() const;
 
-    // vIndex: 4, symbol:
-    // ?setTempContentKeys@ServerContentKeyProvider@@UEAAXAEBV?$unordered_map@VContentIdentity@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@VContentIdentity@@@3@U?$equal_to@VContentIdentity@@@3@V?$allocator@U?$pair@$$CBVContentIdentity@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@3@@std@@@Z
+    // vIndex: 4
     virtual void setTempContentKeys(std::unordered_map<class ContentIdentity, std::string> const&);
 
-    // vIndex: 5, symbol: ?clearTempContentKeys@ServerContentKeyProvider@@UEAAXXZ
+    // vIndex: 5
     virtual void clearTempContentKeys();
 
-    // vIndex: 6, symbol: ?canAccess@ServerContentKeyProvider@@UEBA_NAEBVContentIdentity@@@Z
+    // vIndex: 6
     virtual bool canAccess(class ContentIdentity const& contentIdentity) const;
 
     // NOLINTEND

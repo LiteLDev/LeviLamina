@@ -27,26 +27,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1RedstoneBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~RedstoneBlock() = default;
 
-    // vIndex: 47, symbol: ?isSignalSource@RedstoneBlock@@UEBA_NXZ
+    // vIndex: 47
     virtual bool isSignalSource() const;
 
-    // vIndex: 59, symbol:
-    // ?shouldConnectToRedstone@RedstoneBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@W4Type@Direction@@@Z
+    // vIndex: 59
     virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
 
-    // vIndex: 72, symbol: ?setupRedstoneComponent@RedstoneBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 72
     virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 130, symbol: ?canSpawnOn@RedstoneBlock@@UEBA_NPEAVActor@@@Z
+    // vIndex: 130
     virtual bool canSpawnOn(class Actor*) const;
 
-    // vIndex: 146, symbol: ?onPlace@RedstoneBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 146
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ??0RedstoneBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI RedstoneBlock(std::string const& nameId, int id);
 
     // NOLINTEND

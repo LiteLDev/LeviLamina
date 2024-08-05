@@ -15,14 +15,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1AnvilContainerScreenValidator@@UEAA@XZ
+    // vIndex: 0
     virtual ~AnvilContainerScreenValidator() = default;
 
-    // vIndex: 2, symbol: ?isCraftingImplemented@AnvilContainerScreenValidator@@UEAA_NXZ
+    // vIndex: 2
     virtual bool isCraftingImplemented();
 
-    // vIndex: 3, symbol:
-    // ?getCraftResult@AnvilContainerScreenValidator@@UEAA?AUContainerValidationCraftResult@@AEBVContainerScreenContext@@AEAVContainerScreenValidation@@V?$unique_ptr@UContainerValidationCraftInputs@@U?$default_delete@UContainerValidationCraftInputs@@@std@@@std@@@Z
+    // vIndex: 3
     virtual struct ContainerValidationCraftResult
     getCraftResult(class ContainerScreenContext const& screenContext, class ContainerScreenValidation&, std::unique_ptr<struct ContainerValidationCraftInputs>);
 

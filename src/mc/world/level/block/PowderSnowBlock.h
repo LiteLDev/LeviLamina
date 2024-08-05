@@ -28,56 +28,49 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1PowderSnowBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~PowderSnowBlock() = default;
 
-    // vIndex: 5, symbol:
-    // ?getCollisionShape@PowderSnowBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 5
     virtual class AABB
     getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 23, symbol: ?canProvideSupport@PowderSnowBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
+    // vIndex: 23
     virtual bool canProvideSupport(class Block const& block, uchar face, ::BlockSupportType type) const;
 
-    // vIndex: 25, symbol: ?canConnect@PowderSnowBlock@@UEBA_NAEBVBlock@@E0@Z
+    // vIndex: 25
     virtual bool canConnect(class Block const& otherBlock, uchar toOther, class Block const& thisBlock) const;
 
-    // vIndex: 33, symbol: ?isWaterBlocking@PowderSnowBlock@@UEBA_NXZ
+    // vIndex: 33
     virtual bool isWaterBlocking() const;
 
-    // vIndex: 55, symbol: ?canBeDestroyedByWaterSpread@PowderSnowBlock@@UEBA_NXZ
+    // vIndex: 55
     virtual bool canBeDestroyedByWaterSpread() const;
 
-    // vIndex: 57, symbol: ?canContainLiquid@PowderSnowBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // vIndex: 90, symbol: ?breaksFallingBlocks@PowderSnowBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
+    // vIndex: 90
     virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@PowderSnowBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 117, symbol: ?causesFreezeEffect@PowderSnowBlock@@UEBA_NXZ
+    // vIndex: 117
     virtual bool causesFreezeEffect() const;
 
-    // vIndex: 142, symbol: ?_addHardCodedBlockComponents@PowderSnowBlock@@MEAAXAEBVExperiments@@@Z
+    // vIndex: 142
     virtual void _addHardCodedBlockComponents(class Experiments const&);
 
-    // symbol:
-    // ??0PowderSnowBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI PowderSnowBlock(std::string const& nameId, int id, class Material const& material);
 
-    // symbol: ?onFallOn@PowderSnowBlock@@QEBAXAEAUBlockFallOnEvent@BlockEvents@@@Z
     MCAPI void onFallOn(struct BlockEvents::BlockFallOnEvent&) const;
 
-    // symbol: ?canWalkOnTop@PowderSnowBlock@@SA_NAEBVGetCollisionShapeInterface@@@Z
     MCAPI static bool canWalkOnTop(class GetCollisionShapeInterface const& actor);
 
-    // symbol: ?clearFire@PowderSnowBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     MCAPI static void clearFire(class BlockSource& region, class BlockPos const& pos, class Block const& block);
 
-    // symbol: ?spawnPowderSnowParticles@PowderSnowBlock@@SAXAEAVLevel@@AEBVBlockPos@@@Z
     MCAPI static void spawnPowderSnowParticles(class Level& level, class BlockPos const& pos);
 
     // NOLINTEND

@@ -7,7 +7,6 @@
 
 namespace PlayJumpSoundSystem {
 // NOLINTBEGIN
-// symbol: ?createSystem@PlayJumpSoundSystem@@YA?AUTickingSystemWithInfo@@W4SoundType@1@@Z
 MCAPI struct TickingSystemWithInfo createSystem(::PlayJumpSoundSystem::SoundType);
 // NOLINTEND
 

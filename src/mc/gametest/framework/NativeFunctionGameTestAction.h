@@ -18,15 +18,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1NativeFunctionGameTestAction@gametest@@UEAA@XZ
+    // vIndex: 0
     virtual ~NativeFunctionGameTestAction() = default;
 
-    // vIndex: 1, symbol:
-    // ?run@NativeFunctionGameTestAction@gametest@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@XZ
+    // vIndex: 1
     virtual std::optional<struct gametest::GameTestError> run();
 
-    // symbol:
-    // ??0NativeFunctionGameTestAction@gametest@@QEAA@V?$function@$$A6A?AV?$optional@UGameTestError@gametest@@@std@@XZ@std@@@Z
     MCAPI explicit NativeFunctionGameTestAction(std::function<std::optional<struct gametest::GameTestError>()>);
 
     // NOLINTEND

@@ -27,19 +27,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol:
-    // ?doLoad@UndefinedSchema@internal@cereal@@EEBAXAEAUSchemaReader@3@AEAVmeta_any@entt@@AEBV56@AEAVSerializerContext@3@@Z
+    // vIndex: 0
     virtual void
     doLoad(struct cereal::SchemaReader&, entt::meta_any&, entt::meta_any const&, class cereal::SerializerContext&)
         const;
 
-    // vIndex: 3, symbol: ?makeDescription@UndefinedSchema@internal@cereal@@EEBA?AUSchemaDescription@3@XZ
+    // vIndex: 3
     virtual struct cereal::SchemaDescription makeDescription() const;
 
-    // vIndex: 4, symbol: __gen_??1UndefinedSchema@internal@cereal@@UEAA@XZ
+    // vIndex: 4
     virtual ~UndefinedSchema() = default;
 
-    // symbol: ?instance@UndefinedSchema@internal@cereal@@SAAEBV123@XZ
     MCAPI static class cereal::internal::UndefinedSchema const& instance();
 
     // NOLINTEND

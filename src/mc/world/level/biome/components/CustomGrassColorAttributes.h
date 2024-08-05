@@ -11,7 +11,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CustomGrassColorAttributes@@UEAA@XZ
+    // vIndex: 0
     virtual ~CustomGrassColorAttributes() = default;
 
     // NOLINTEND

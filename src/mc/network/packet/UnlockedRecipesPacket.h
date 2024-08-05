@@ -19,28 +19,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1UnlockedRecipesPacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~UnlockedRecipesPacket();
 
-    // vIndex: 1, symbol: ?getId@UnlockedRecipesPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@UnlockedRecipesPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@UnlockedRecipesPacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 8, symbol:
-    // ?_read@UnlockedRecipesPacket@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0UnlockedRecipesPacket@@QEAA@XZ
     MCAPI UnlockedRecipesPacket();
 
-    // symbol:
-    // ??0UnlockedRecipesPacket@@QEAA@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@W4PacketType@0@@Z
     MCAPI UnlockedRecipesPacket(std::vector<std::string>, ::UnlockedRecipesPacket::PacketType type);
 
     // NOLINTEND

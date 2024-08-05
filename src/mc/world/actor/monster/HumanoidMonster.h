@@ -35,19 +35,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: ??1HumanoidMonster@@UEAA@XZ
+    // vIndex: 10
     virtual ~HumanoidMonster();
 
-    // vIndex: 147, symbol: ?readAdditionalSaveData@HumanoidMonster@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 148, symbol: ?addAdditionalSaveData@HumanoidMonster@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 162, symbol: ?getItemUseDuration@HumanoidMonster@@UEBAHXZ
+    // vIndex: 162
     virtual int getItemUseDuration() const;
 
-    // symbol: ??0HumanoidMonster@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI HumanoidMonster(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
@@ -58,16 +57,12 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?MAX_ENCHANTED_ARMOR_CHANCE@HumanoidMonster@@0MB
     MCAPI static float const MAX_ENCHANTED_ARMOR_CHANCE;
 
-    // symbol: ?MAX_ENCHANTED_WEAPON_CHANCE@HumanoidMonster@@0MB
     MCAPI static float const MAX_ENCHANTED_WEAPON_CHANCE;
 
-    // symbol: ?MAX_PICKUP_LOOT_CHANCE@HumanoidMonster@@0MB
     MCAPI static float const MAX_PICKUP_LOOT_CHANCE;
 
-    // symbol: ?MAX_WEARING_ARMOR_CHANCE@HumanoidMonster@@0MB
     MCAPI static float const MAX_WEARING_ARMOR_CHANCE;
 
     // NOLINTEND

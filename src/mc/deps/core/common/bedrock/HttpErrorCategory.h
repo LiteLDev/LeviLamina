@@ -13,48 +13,45 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1HttpErrorCategory@Http@Bedrock@@UEAA@XZ
+    // vIndex: 0
     virtual ~HttpErrorCategory() = default;
 
-    // vIndex: 1, symbol: ?name@HttpErrorCategory@Http@Bedrock@@UEBAPEBDXZ
+    // vIndex: 1
     virtual char const* name() const;
 
-    // vIndex: 2, symbol:
-    // ?message@HttpErrorCategory@Http@Bedrock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+    // vIndex: 2
     virtual std::string message(int) const;
 
-    // vIndex: 3, symbol: ?default_error_condition@HttpErrorCategory@Http@Bedrock@@UEBA?AVerror_condition@std@@H@Z
+    // vIndex: 3
     virtual std::error_condition default_error_condition(int errorValue) const;
 
-    // vIndex: 4, symbol: ?equivalent@error_category@std@@UEBA_NHAEBVerror_condition@2@@Z
+    // vIndex: 4
     virtual bool equivalent(int, std::error_condition const&) const;
 
-    // vIndex: 5, symbol: ?equivalent@HttpErrorCategory@Http@Bedrock@@UEBA_NAEBVerror_code@std@@H@Z
+    // vIndex: 5
     virtual bool equivalent(std::error_code const& code, int condition) const;
 
-    // vIndex: 6, symbol: __unk_vfn_6
+    // vIndex: 6
     virtual void __unk_vfn_6();
 
-    // vIndex: 7, symbol: ?start@BufferedResponseBody@Http@Bedrock@@MEAA?AVerror_code@std@@V?$optional@_K@5@@Z
+    // vIndex: 7
     virtual std::error_code start(std::optional<uint64> size);
 
-    // vIndex: 8, symbol: ?write@BufferedResponseBody@Http@Bedrock@@MEAA?AVerror_code@std@@V?$span@$$CBE$0?0@gsl@@@Z
+    // vIndex: 8
     virtual std::error_code write(gsl::span<uchar const> source);
 
-    // vIndex: 9, symbol: ?complete@BufferedResponseBody@Http@Bedrock@@MEAAXXZ
+    // vIndex: 9
     virtual void complete();
 
-    // vIndex: 10, symbol: ?cancel@BufferedResponseBody@Http@Bedrock@@MEAAXXZ
+    // vIndex: 10
     virtual void cancel();
 
-    // vIndex: 11, symbol:
-    // ?getLoggableDestination@BufferedResponseBody@Http@Bedrock@@MEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 11
     virtual std::string const& getLoggableDestination() const;
 
-    // vIndex: 12, symbol: ?getLoggableData@BufferedResponseBody@Http@Bedrock@@MEBA?AV?$span@$$CBE$0?0@gsl@@XZ
+    // vIndex: 12
     virtual gsl::span<uchar const> getLoggableData() const;
 
-    // symbol: ?get@HttpErrorCategory@Http@Bedrock@@SAAEBVerror_category@std@@XZ
     MCAPI static std::error_category const& get();
 
     // NOLINTEND

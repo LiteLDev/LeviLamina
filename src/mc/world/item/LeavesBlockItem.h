@@ -26,20 +26,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LeavesBlockItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~LeavesBlockItem() = default;
 
-    // vIndex: 32, symbol: ?getLevelDataForAuxValue@LeavesBlockItem@@UEBAHH@Z
+    // vIndex: 32
     virtual int getLevelDataForAuxValue(int auxValue) const;
 
-    // vIndex: 83, symbol:
-    // ?buildDescriptionId@LeavesBlockItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+    // vIndex: 83
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 92, symbol: ?fixupCommon@LeavesBlockItem@@UEBAXAEAVItemStackBase@@@Z
+    // vIndex: 92
     virtual void fixupCommon(class ItemStackBase& stack) const;
 
-    // vIndex: 93, symbol: ?fixupCommon@LeavesBlockItem@@UEBAXAEAVItemStackBase@@AEAVLevel@@@Z
+    // vIndex: 93
     virtual void fixupCommon(class ItemStackBase& stack, class Level& level) const;
 
     // NOLINTEND

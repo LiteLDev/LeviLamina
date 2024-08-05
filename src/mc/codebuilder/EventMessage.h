@@ -18,10 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0EventMessage@CodeBuilder@@QEAA@AEBUEvent@1Util@@@Z
     MCAPI explicit EventMessage(struct Util::CodeBuilder::Event const& event);
 
-    // symbol: ??1EventMessage@CodeBuilder@@QEAA@XZ
     MCAPI ~EventMessage();
 
     // NOLINTEND

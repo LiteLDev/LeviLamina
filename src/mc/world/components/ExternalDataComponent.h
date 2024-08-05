@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ExternalDataComponent@@QEAA@XZ
     MCAPI ~ExternalDataComponent();
 
     // NOLINTEND

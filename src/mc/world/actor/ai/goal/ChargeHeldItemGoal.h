@@ -15,29 +15,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ChargeHeldItemGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~ChargeHeldItemGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@ChargeHeldItemGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@ChargeHeldItemGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@ChargeHeldItemGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@ChargeHeldItemGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@ChargeHeldItemGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@ChargeHeldItemGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0ChargeHeldItemGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit ChargeHeldItemGoal(class Mob& mob);
 
     // NOLINTEND

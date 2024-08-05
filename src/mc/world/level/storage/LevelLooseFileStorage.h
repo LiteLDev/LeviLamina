@@ -19,8 +19,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0LevelLooseFileStorage@@QEAA@AEBVPath@Core@@AEBVContentIdentity@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
     MCAPI LevelLooseFileStorage(
         class Core::Path const&                                             levelDirectory,
         class ContentIdentity const&                                        contentIdentity,

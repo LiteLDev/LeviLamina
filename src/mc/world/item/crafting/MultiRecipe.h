@@ -19,19 +19,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MultiRecipe@@UEAA@XZ
+    // vIndex: 0
     virtual ~MultiRecipe() = default;
 
-    // vIndex: 4, symbol: ?isShapeless@MultiRecipe@@EEBA_NXZ
+    // vIndex: 4
     virtual bool isShapeless() const;
 
-    // vIndex: 9, symbol: ?isMultiRecipe@MultiRecipe@@EEBA_NXZ
+    // vIndex: 9
     virtual bool isMultiRecipe() const;
 
-    // vIndex: 10, symbol: ?hasDataDrivenResult@MultiRecipe@@EEBA_NXZ
+    // vIndex: 10
     virtual bool hasDataDrivenResult() const;
 
-    // symbol: ??0MultiRecipe@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VHashedString@@@Z
     MCAPI MultiRecipe(std::string const&, class HashedString);
 
     // NOLINTEND

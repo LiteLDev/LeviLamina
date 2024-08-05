@@ -13,15 +13,10 @@ namespace FlatteningUtils { struct Instance; }
 
 namespace FlatteningUtils::Coral {
 // NOLINTBEGIN
-// symbol: ?get@Coral@FlatteningUtils@@YA?AUInstance@2@XZ
 MCAPI struct FlatteningUtils::Instance get();
 
-// symbol:
-// ?getColorSplitStates@Coral@FlatteningUtils@@YA?AV?$vector@USplitBlock@RemovedStateCollection@BlockLegacy@@V?$allocator@USplitBlock@RemovedStateCollection@BlockLegacy@@@std@@@std@@_N@Z
 MCAPI std::vector<struct BlockLegacy::RemovedStateCollection::SplitBlock> getColorSplitStates(bool);
 
-// symbol:
-// ?getDeadSplitStates@Coral@FlatteningUtils@@YA?AV?$vector@USplitBlock@RemovedStateCollection@BlockLegacy@@V?$allocator@USplitBlock@RemovedStateCollection@BlockLegacy@@@std@@@std@@W4CoralColor@@@Z
 MCAPI std::vector<struct BlockLegacy::RemovedStateCollection::SplitBlock> getDeadSplitStates(::CoralColor);
 // NOLINTEND
 

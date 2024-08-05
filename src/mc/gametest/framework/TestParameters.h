@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1TestParameters@gametest@@QEAA@XZ
     MCAPI ~TestParameters();
 
     // NOLINTEND

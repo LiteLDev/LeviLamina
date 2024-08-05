@@ -10,25 +10,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1Stopwatch@@UEAA@XZ
+    // vIndex: 0
     virtual ~Stopwatch();
 
-    // vIndex: 1, symbol: ?stop@Stopwatch@@UEAANXZ
+    // vIndex: 1
     virtual double stop();
 
-    // vIndex: 2, symbol: ?stopContinue@Stopwatch@@UEAANXZ
+    // vIndex: 2
     virtual double stopContinue();
 
-    // vIndex: 3, symbol: ?print@Stopwatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 3
     virtual void print(std::string const& prepend);
 
-    // symbol: ??0Stopwatch@@QEAA@XZ
     MCAPI Stopwatch();
 
-    // symbol: ?reset@Stopwatch@@QEAAXXZ
     MCAPI void reset();
 
-    // symbol: ?start@Stopwatch@@QEAAXXZ
     MCAPI void start();
 
     // NOLINTEND

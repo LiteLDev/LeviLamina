@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?initialize@VanillaTrialChambersJigsawStructureBlockRules@@SAXAEAVJigsawStructureRegistry@@@Z
     MCAPI static void initialize(class JigsawStructureRegistry&);
 
     // NOLINTEND

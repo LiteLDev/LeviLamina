@@ -15,22 +15,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ComparatorBlockActor@@UEAA@XZ
+    // vIndex: 0
     virtual ~ComparatorBlockActor() = default;
 
-    // vIndex: 1, symbol: ?load@ComparatorBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 1
     virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 2, symbol: ?save@ComparatorBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+    // vIndex: 2
     virtual bool save(class CompoundTag& tag) const;
 
-    // vIndex: 7, symbol: ?tick@ComparatorBlockActor@@UEAAXAEAVBlockSource@@@Z
+    // vIndex: 7
     virtual void tick(class BlockSource& region);
 
-    // vIndex: 43, symbol: ?getOutputSignal@ComparatorBlockActor@@UEAAHXZ
+    // vIndex: 43
     virtual int getOutputSignal();
 
-    // vIndex: 44, symbol: ?setOutputSignal@ComparatorBlockActor@@UEAAXH@Z
+    // vIndex: 44
     virtual void setOutputSignal(int value);
 
     // NOLINTEND

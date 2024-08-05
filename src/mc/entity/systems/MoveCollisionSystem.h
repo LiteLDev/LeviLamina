@@ -23,18 +23,12 @@ namespace BlockSourceVisitor { struct CollisionShape; }
 
 namespace MoveCollisionSystem {
 // NOLINTBEGIN
-// symbol: ?createCollisionShapesCopySystem@MoveCollisionSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createCollisionShapesCopySystem();
 
-// symbol: ?createSystem@MoveCollisionSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createSystem();
 
-// symbol:
-// ?fetchCollisionShapes@MoveCollisionSystem@@YAXAEBVStrictEntityContext@@AEBUAABBShapeComponent@@AEBUMaxAutoStepComponent@@V?$Optional@$$CBV?$FlagComponent@UCollidableMobNearFlag@@@@@@AEAUMoveRequestComponent@@AEBV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UCollidableMobFlag@@@@@@$$CBUAABBShapeComponent@@@@AEBV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UFallingBlockFlag@@@@@@@@AEBVIConstBlockSource@@AEAVLocalSpatialEntityFetcher@@AEBVGetCollisionShapeInterface@@AEAV?$vector@UCollisionShape@BlockSourceVisitor@@V?$allocator@UCollisionShape@BlockSourceVisitor@@@std@@@std@@@Z
 MCAPI void fetchCollisionShapes(class StrictEntityContext const&, struct AABBShapeComponent const&, struct MaxAutoStepComponent const&, class Optional<class FlagComponent<struct CollidableMobNearFlag> const>, struct MoveRequestComponent&, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct CollidableMobFlag>>, struct AABBShapeComponent const> const&, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct FallingBlockFlag>>> const&, class IConstBlockSource const&, class LocalSpatialEntityFetcher&, class GetCollisionShapeInterface const&, std::vector<struct BlockSourceVisitor::CollisionShape>&);
 
-// symbol:
-// ?getFetchBoxSubtraction@MoveCollisionSystem@@YA?AV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@AEBVAABB@@0@Z
 MCAPI std::vector<class AABB> getFetchBoxSubtraction(class AABB const&, class AABB const&);
 // NOLINTEND
 

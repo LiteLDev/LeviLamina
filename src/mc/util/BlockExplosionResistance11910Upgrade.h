@@ -21,22 +21,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BlockExplosionResistance11910Upgrade@BlockExplosionResistanceVersioning@@UEAA@XZ
+    // vIndex: 0
     virtual ~BlockExplosionResistance11910Upgrade() = default;
 
-    // vIndex: 1, symbol:
-    // ?previousSchema@BlockExplosionResistance11910Upgrade@BlockExplosionResistanceVersioning@@UEBA_NAEBV?$GenericValue@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@@rapidjson@@@Z
+    // vIndex: 1
     virtual bool previousSchema(rapidjson::GenericValue<
                                 rapidjson::UTF8<char>,
                                 rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>> const&) const;
 
-    // vIndex: 2, symbol:
-    // ?upgradeToNext@BlockExplosionResistance11910Upgrade@BlockExplosionResistanceVersioning@@UEBAXAEAV?$GenericDocument@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@VCrtAllocator@2@@rapidjson@@AEBVSemVersion@@@Z
+    // vIndex: 2
     virtual void
     upgradeToNext(rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&, class SemVersion const&)
         const;
 
-    // symbol: ??0BlockExplosionResistance11910Upgrade@BlockExplosionResistanceVersioning@@QEAA@XZ
     MCAPI BlockExplosionResistance11910Upgrade();
 
     // NOLINTEND

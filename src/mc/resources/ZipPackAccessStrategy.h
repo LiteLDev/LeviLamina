@@ -23,72 +23,64 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ZipPackAccessStrategy@@UEAA@XZ
+    // vIndex: 0
     virtual ~ZipPackAccessStrategy();
 
-    // vIndex: 1, symbol: ?getPackSize@ZipPackAccessStrategy@@UEBA_KXZ
+    // vIndex: 1
     virtual uint64 getPackSize() const;
 
-    // vIndex: 2, symbol: ?getPackLocation@ZipPackAccessStrategy@@UEBAAEBVResourceLocation@@XZ
+    // vIndex: 2
     virtual class ResourceLocation const& getPackLocation() const;
 
-    // vIndex: 3, symbol:
-    // ?getPackName@ZipPackAccessStrategy@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 3
     virtual std::string const& getPackName() const;
 
-    // vIndex: 4, symbol: ?isWritable@ZipPackAccessStrategy@@UEBA_NXZ
+    // vIndex: 4
     virtual bool isWritable() const;
 
-    // vIndex: 5, symbol: ?setIsTrusted@ZipPackAccessStrategy@@UEAAX_N@Z
+    // vIndex: 5
     virtual void setIsTrusted(bool newValue);
 
-    // vIndex: 6, symbol: ?isTrusted@ZipPackAccessStrategy@@UEBA_NXZ
+    // vIndex: 6
     virtual bool isTrusted() const;
 
-    // vIndex: 7, symbol: ?hasAsset@ZipPackAccessStrategy@@UEBA_NAEBVPath@Core@@_N1@Z
+    // vIndex: 7
     virtual bool hasAsset(class Core::Path const& packRelativePath, bool trustedContentOnly, bool) const;
 
-    // vIndex: 8, symbol: ?hasFolder@ZipPackAccessStrategy@@UEBA_NAEBVPath@Core@@@Z
+    // vIndex: 8
     virtual bool hasFolder(class Core::Path const& packRelativePath) const;
 
-    // vIndex: 9, symbol:
-    // ?getAsset@ZipPackAccessStrategy@@UEBA_NAEBVPath@Core@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+    // vIndex: 9
     virtual bool getAsset(class Core::Path const& packRelativePath, std::string& result, bool trustedContentOnly) const;
 
-    // vIndex: 10, symbol: ?deleteAsset@ZipPackAccessStrategy@@UEAA_NAEBVPath@Core@@@Z
+    // vIndex: 10
     virtual bool deleteAsset(class Core::Path const&);
 
-    // vIndex: 11, symbol:
-    // ?writeAsset@ZipPackAccessStrategy@@UEAA_NAEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 11
     virtual bool writeAsset(class Core::Path const& packRelativePath, std::string const& fileContent);
 
-    // vIndex: 12, symbol:
-    // ?forEachIn@ZipPackAccessStrategy@@UEBAXAEBVPath@Core@@V?$function@$$A6AXAEBVPath@Core@@@Z@std@@_N@Z
+    // vIndex: 12
     virtual void forEachIn(
         class Core::Path const&                      packRelativePath,
         std::function<void(class Core::Path const&)> callback,
         bool                                         recurseAnyways
     ) const;
 
-    // vIndex: 14, symbol: ?getStrategyType@ZipPackAccessStrategy@@UEBA?AW4PackAccessStrategyType@@XZ
+    // vIndex: 14
     virtual ::PackAccessStrategyType getStrategyType() const;
 
-    // vIndex: 15, symbol:
-    // ?getSubPath@ZipPackAccessStrategy@@UEBAAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+    // vIndex: 15
     virtual class Core::PathBuffer<std::string> const& getSubPath() const;
 
-    // vIndex: 16, symbol:
-    // ?createSubPack@ZipPackAccessStrategy@@UEBA?AV?$unique_ptr@VPackAccessStrategy@@U?$default_delete@VPackAccessStrategy@@@std@@@std@@AEBVPath@Core@@@Z
+    // vIndex: 16
     virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const& subPath) const;
 
-    // vIndex: 19, symbol: ?unload@ZipPackAccessStrategy@@UEAAXXZ
+    // vIndex: 19
     virtual void unload();
 
-    // vIndex: 21, symbol: ?readContentIdentity@ZipPackAccessStrategy@@UEBA?AVContentIdentity@@XZ
+    // vIndex: 21
     virtual class ContentIdentity readContentIdentity() const;
 
-    // symbol:
-    // ??0ZipPackAccessStrategy@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@VIFileAccess@@@Bedrock@@@gsl@@AEBVResourceLocation@@AEBVPath@Core@@@Z
     MCAPI ZipPackAccessStrategy(
         Bedrock::NotNullNonOwnerPtr<class IFileAccess> const& fileAccess,
         class ResourceLocation const&                         location,
@@ -99,8 +91,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_tryReadFromPendingQueue@ZipPackAccessStrategy@@AEBA_NAEBVPath@Core@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI bool _tryReadFromPendingQueue(class Core::Path const& packRelativePath, std::string& result) const;
 
     // NOLINTEND

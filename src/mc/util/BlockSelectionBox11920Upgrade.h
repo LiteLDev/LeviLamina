@@ -21,22 +21,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BlockSelectionBox11920Upgrade@BlockSelectionBoxVersioning@@UEAA@XZ
+    // vIndex: 0
     virtual ~BlockSelectionBox11920Upgrade() = default;
 
-    // vIndex: 1, symbol:
-    // ?previousSchema@BlockSelectionBox11920Upgrade@BlockSelectionBoxVersioning@@UEBA_NAEBV?$GenericValue@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@@rapidjson@@@Z
+    // vIndex: 1
     virtual bool previousSchema(rapidjson::GenericValue<
                                 rapidjson::UTF8<char>,
                                 rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>> const&) const;
 
-    // vIndex: 2, symbol:
-    // ?upgradeToNext@BlockSelectionBox11920Upgrade@BlockSelectionBoxVersioning@@UEBAXAEAV?$GenericDocument@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@VCrtAllocator@2@@rapidjson@@AEBVSemVersion@@@Z
+    // vIndex: 2
     virtual void
     upgradeToNext(rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&, class SemVersion const&)
         const;
 
-    // symbol: ??0BlockSelectionBox11920Upgrade@BlockSelectionBoxVersioning@@QEAA@XZ
     MCAPI BlockSelectionBox11920Upgrade();
 
     // NOLINTEND

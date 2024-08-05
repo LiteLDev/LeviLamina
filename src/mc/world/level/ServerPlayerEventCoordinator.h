@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ServerPlayerEventCoordinator@@UEAA@XZ
+    // vIndex: 0
     virtual ~ServerPlayerEventCoordinator() = default;
 
     // NOLINTEND

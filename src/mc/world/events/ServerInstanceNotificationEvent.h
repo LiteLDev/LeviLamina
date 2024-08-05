@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ServerInstanceNotificationEvent@@QEAA@XZ
     MCAPI ~ServerInstanceNotificationEvent();
 
     // NOLINTEND

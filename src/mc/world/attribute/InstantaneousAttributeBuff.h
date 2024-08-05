@@ -15,19 +15,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1InstantaneousAttributeBuff@@UEAA@XZ
+    // vIndex: 0
     virtual ~InstantaneousAttributeBuff();
 
-    // vIndex: 1, symbol: ?isInstantaneous@InstantaneousAttributeBuff@@UEBA_NXZ
+    // vIndex: 1
     virtual bool isInstantaneous() const;
 
-    // vIndex: 2, symbol: ?isSerializable@InstantaneousAttributeBuff@@UEBA_NXZ
+    // vIndex: 2
     virtual bool isSerializable() const;
 
-    // symbol: ??0InstantaneousAttributeBuff@@QEAA@MAEBVActorDamageSource@@@Z
     MCAPI InstantaneousAttributeBuff(float amount, class ActorDamageSource const& source);
 
-    // symbol: ??0InstantaneousAttributeBuff@@QEAA@MW4AttributeBuffType@@@Z
     MCAPI InstantaneousAttributeBuff(float amount, ::AttributeBuffType type);
 
     // NOLINTEND

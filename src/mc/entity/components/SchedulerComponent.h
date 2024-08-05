@@ -11,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getCurrentEventIndex@SchedulerComponent@@QEBAHXZ
     MCAPI int getCurrentEventIndex() const;
 
-    // symbol: ?setCurrentEventIndex@SchedulerComponent@@QEAAXH@Z
     MCAPI void setCurrentEventIndex(int index);
 
     // NOLINTEND

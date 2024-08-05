@@ -16,66 +16,63 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1PlayerDimensionTransferProxy@@UEAA@XZ
+    // vIndex: 0
     virtual ~PlayerDimensionTransferProxy();
 
-    // vIndex: 1, symbol:
-    // ?playerDimensionChangedEvent@PlayerDimensionTransferProxy@@UEAAXAEAVPlayer@@V?$AutomaticID@VDimension@@H@@1@Z
+    // vIndex: 1
     virtual void playerDimensionChangedEvent(class Player&, DimensionType, DimensionType);
 
-    // vIndex: 2, symbol: ?getAgent@PlayerDimensionTransferProxy@@UEAAPEAVActor@@AEAVPlayer@@@Z
+    // vIndex: 2
     virtual class Actor* getAgent(class Player&);
 
-    // vIndex: 3, symbol: ?resetAgent@PlayerDimensionTransferProxy@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 3
     virtual void resetAgent(class Player&);
 
-    // vIndex: 4, symbol: ?stopUsingItem@PlayerDimensionTransferProxy@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 4
     virtual void stopUsingItem(class Player&);
 
-    // vIndex: 5, symbol: ?hasRespawnPosition@PlayerDimensionTransferProxy@@UEBA_NAEBVPlayer@@@Z
+    // vIndex: 5
     virtual bool hasRespawnPosition(class Player const&) const;
 
-    // vIndex: 6, symbol: ?getSpawnPosition@PlayerDimensionTransferProxy@@UEBAAEBVBlockPos@@AEBVPlayer@@@Z
+    // vIndex: 6
     virtual class BlockPos const& getSpawnPosition(class Player const&) const;
 
-    // vIndex: 7, symbol: ?isRespawningFromTheEnd@PlayerDimensionTransferProxy@@UEBA_NAEBVPlayer@@@Z
+    // vIndex: 7
     virtual bool isRespawningFromTheEnd(class Player const&) const;
 
-    // vIndex: 8, symbol: ?fireWillChangeDimension@PlayerDimensionTransferProxy@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 8
     virtual void fireWillChangeDimension(class Player&);
 
-    // vIndex: 9, symbol: ?moveTo@PlayerDimensionTransferProxy@@UEAAXAEAVPlayer@@AEBVVec3@@@Z
+    // vIndex: 9
     virtual void moveTo(class Player&, class Vec3 const&);
 
-    // vIndex: 10, symbol: ?setPreviousPosition@PlayerDimensionTransferProxy@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 10
     virtual void setPreviousPosition(class Player&);
 
-    // vIndex: 11, symbol: ?resetInterpolation@PlayerDimensionTransferProxy@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 11
     virtual void resetInterpolation(class Player&);
 
-    // vIndex: 12, symbol: ?prepareRegion@PlayerDimensionTransferProxy@@UEAAXAEAVPlayer@@AEBVDimension@@@Z
+    // vIndex: 12
     virtual void prepareRegion(class Player&, class Dimension const&);
 
-    // vIndex: 13, symbol:
-    // ?createMovePlayerPacket@PlayerDimensionTransferProxy@@UEBA?AVMovePlayerPacket@@AEBVPlayer@@W4PositionMode@PlayerPositionModeComponent@@@Z
+    // vIndex: 13
     virtual class MovePlayerPacket
     createMovePlayerPacket(class Player const&, ::PlayerPositionModeComponent::PositionMode) const;
 
-    // vIndex: 14, symbol: ?setAgent@PlayerDimensionTransferProxy@@UEAAXAEAVPlayer@@AEAVActor@@@Z
+    // vIndex: 14
     virtual void setAgent(class Player&, class Actor&);
 
-    // vIndex: 15, symbol: ?calculateAgentSpawnPosition@PlayerDimensionTransferProxy@@UEBA?AVVec3@@AEBVPlayer@@@Z
+    // vIndex: 15
     virtual class Vec3 calculateAgentSpawnPosition(class Player const&) const;
 
-    // vIndex: 16, symbol: ?isRespawnReady@PlayerDimensionTransferProxy@@UEBA_NAEBVPlayer@@@Z
+    // vIndex: 16
     virtual bool isRespawnReady(class Player const&) const;
 
-    // vIndex: 17, symbol:
-    // ?hasSubChunksAt@PlayerDimensionTransferProxy@@UEBA?AU?$pair@_NV?$optional@VSubChunkPos@@@std@@@std@@AEBVPlayer@@AEBVBlockPos@@1@Z
+    // vIndex: 17
     virtual std::pair<bool, std::optional<class SubChunkPos>>
     hasSubChunksAt(class Player const&, class BlockPos const&, class BlockPos const&) const;
 
-    // vIndex: 18, symbol: ?transferTickingArea@PlayerDimensionTransferProxy@@UEAAXAEAVActor@@AEAVDimension@@@Z
+    // vIndex: 18
     virtual void transferTickingArea(class Actor&, class Dimension&);
 
     // NOLINTEND

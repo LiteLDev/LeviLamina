@@ -27,19 +27,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1StrippedLogBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~StrippedLogBlock() = default;
 
-    // vIndex: 129, symbol: ?getVariant@StrippedLogBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const&) const;
 
-    // vIndex: 160, symbol:
-    // ?getMapColor@StrippedLogBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 160
     virtual class mce::Color
     getMapColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
-    // symbol:
-    // ??0StrippedLogBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$optional@ULogBlockMapColors@@@2@@Z
     MCAPI StrippedLogBlock(std::string const& nameId, int id, std::optional<struct LogBlockMapColors> mapColors);
 
     // NOLINTEND

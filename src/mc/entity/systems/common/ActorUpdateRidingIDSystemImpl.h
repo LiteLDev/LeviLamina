@@ -10,8 +10,6 @@
 
 namespace ActorUpdateRidingIDSystemImpl {
 // NOLINTBEGIN
-// symbol:
-// ?updateRidingPrevID@ActorUpdateRidingIDSystemImpl@@YAXU?$type_list@U?$Include@V?$FlagComponent@UStopRidingRequestFlag@@@@@@@entt@@AEBVStrictEntityContext@@AEBUPassengerComponent@@V?$ViewT@VStrictEntityContext@@$$CBUVehicleComponent@@@@V?$EntityModifier@URidingPrevIDComponent@@@@@Z
 MCAPI void
 updateRidingPrevID(entt::type_list<struct Include<class FlagComponent<struct StopRidingRequestFlag>>>, class StrictEntityContext const&, struct PassengerComponent const&, class ViewT<class StrictEntityContext, struct VehicleComponent const>, class EntityModifier<struct RidingPrevIDComponent>);
 // NOLINTEND

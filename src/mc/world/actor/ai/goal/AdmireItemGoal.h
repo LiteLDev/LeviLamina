@@ -16,30 +16,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1AdmireItemGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~AdmireItemGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@AdmireItemGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@AdmireItemGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@AdmireItemGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@AdmireItemGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@AdmireItemGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@AdmireItemGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol:
-    // ??0AdmireItemGoal@@QEAA@AEAVMob@@W4LevelSoundEvent@Legacy@Puv@@UFloatRange@@AEBVActorDefinitionTrigger@@3@Z
     MCAPI
     AdmireItemGoal(class Mob& mob, ::Puv::Legacy::LevelSoundEvent sound, struct FloatRange soundIntervalRange, class ActorDefinitionTrigger const&, class ActorDefinitionTrigger const&);
 
@@ -47,7 +44,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_tryPlaceItemInInventory@AdmireItemGoal@@AEAAXAEAVContainerComponent@@AEBVShareableComponent@@@Z
     MCAPI void _tryPlaceItemInInventory(class ContainerComponent& containerComponent, class ShareableComponent const&);
 
     // NOLINTEND

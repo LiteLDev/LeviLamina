@@ -22,17 +22,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1LevelListener@@UEAA@XZ
+    // vIndex: 0
     virtual ~LevelListener();
 
-    // vIndex: 9, symbol: ?allChanged@LevelListener@@UEAAXXZ
+    // vIndex: 9
     virtual void allChanged();
 
-    // vIndex: 10, symbol: ?sendServerLegacyParticle@LevelListener@@UEAAXW4ParticleType@@AEBVVec3@@1H@Z
+    // vIndex: 10
     virtual void sendServerLegacyParticle(::ParticleType name, class Vec3 const& pos, class Vec3 const& dir, int data);
 
-    // vIndex: 11, symbol:
-    // ?addParticleEffect@LevelListener@@UEAAXAEBVHashedString@@AEBVActor@@0AEBVVec3@@AEBVMolangVariableMap@@@Z
+    // vIndex: 11
     virtual void addParticleEffect(
         class HashedString const&      effect,
         class Actor const&             actor,
@@ -41,7 +40,7 @@ public:
         class MolangVariableMap const& molangVariables
     );
 
-    // vIndex: 12, symbol: ?addTerrainParticleEffect@LevelListener@@UEAAXAEBVBlockPos@@AEBVBlock@@AEBVVec3@@MMM@Z
+    // vIndex: 12
     virtual void addTerrainParticleEffect(
         class BlockPos const& pos,
         class Block const&    block,
@@ -51,7 +50,7 @@ public:
         float                 emitterRadius
     );
 
-    // vIndex: 13, symbol: ?addTerrainSlideEffect@LevelListener@@UEAAXAEBVBlockPos@@AEBVBlock@@AEBVVec3@@MMM@Z
+    // vIndex: 13
     virtual void addTerrainSlideEffect(
         class BlockPos const& pos,
         class Block const&    block,
@@ -61,48 +60,44 @@ public:
         float                 emitterRadius
     );
 
-    // vIndex: 14, symbol:
-    // ?addBreakingItemParticleEffect@LevelListener@@UEAAXAEBVVec3@@W4ParticleType@@AEBUResolvedItemIconInfo@@@Z
+    // vIndex: 14
     virtual void
     addBreakingItemParticleEffect(class Vec3 const& pos, ::ParticleType type, struct ResolvedItemIconInfo const&);
 
-    // vIndex: 15, symbol:
-    // ?playMusic@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@MM@Z
+    // vIndex: 15
     virtual void playMusic(std::string const& name, class Vec3 const& pos, float songOffset, float volume);
 
-    // vIndex: 16, symbol:
-    // ?playStreamingMusic@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHH@Z
+    // vIndex: 16
     virtual void playStreamingMusic(std::string const& name, int x, int y, int z);
 
-    // vIndex: 17, symbol: ?onEntityAdded@LevelListener@@UEAAXAEAVActor@@@Z
+    // vIndex: 17
     virtual void onEntityAdded(class Actor& entity);
 
-    // vIndex: 18, symbol: ?onEntityRemoved@LevelListener@@UEAAXAEAVActor@@@Z
+    // vIndex: 18
     virtual void onEntityRemoved(class Actor& entity);
 
-    // vIndex: 19, symbol: ?onChunkLoaded@LevelListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
+    // vIndex: 19
     virtual void onChunkLoaded(class ChunkSource& source, class LevelChunk& lc);
 
-    // vIndex: 20, symbol: ?onChunkReloaded@LevelListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
+    // vIndex: 20
     virtual void onChunkReloaded(class ChunkSource& source, class LevelChunk& lc);
 
-    // vIndex: 21, symbol: ?onSubChunkLoaded@LevelListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@F_N@Z
+    // vIndex: 21
     virtual void onSubChunkLoaded(class ChunkSource& source, class LevelChunk& lc, short, bool);
 
-    // vIndex: 22, symbol: ?onChunkUnloaded@LevelListener@@UEAAXAEAVLevelChunk@@@Z
+    // vIndex: 22
     virtual void onChunkUnloaded(class LevelChunk& lc);
 
-    // vIndex: 23, symbol:
-    // ?onLevelDestruction@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 23
     virtual void onLevelDestruction(std::string const& levelId);
 
-    // vIndex: 24, symbol: ?levelEvent@LevelListener@@UEAAXW4LevelEvent@@AEBVVec3@@H@Z
+    // vIndex: 24
     virtual void levelEvent(::LevelEvent type, class Vec3 const& pos, int data);
 
-    // vIndex: 25, symbol: ?levelEvent@LevelListener@@UEAAXW4LevelEvent@@AEBVCompoundTag@@@Z
+    // vIndex: 25
     virtual void levelEvent(::LevelEvent type, class CompoundTag const& data);
 
-    // vIndex: 26, symbol: ?takePicture@LevelListener@@UEAAXAEAVImageBuffer@cg@@PEAVActor@@1AEAUScreenshotOptions@@@Z
+    // vIndex: 26
     virtual void takePicture(
         class cg::ImageBuffer&    outImage,
         class Actor*              camera,
@@ -110,7 +105,7 @@ public:
         struct ScreenshotOptions& screenshotOptions
     );
 
-    // vIndex: 27, symbol: ?playerListChanged@LevelListener@@UEAAXXZ
+    // vIndex: 27
     virtual void playerListChanged();
 
     // NOLINTEND

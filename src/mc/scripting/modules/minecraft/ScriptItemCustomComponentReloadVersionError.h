@@ -18,10 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ScriptItemCustomComponentReloadVersionError@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptItemCustomComponentReloadVersionError();
 
-    // symbol: ?bind@ScriptItemCustomComponentReloadVersionError@ScriptModuleMinecraft@@SA?AUErrorBinding@Scripting@@XZ
     MCAPI static struct Scripting::ErrorBinding bind();
 
     // NOLINTEND

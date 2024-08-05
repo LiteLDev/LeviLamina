@@ -16,27 +16,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1UpdatePlayerGameTypePacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~UpdatePlayerGameTypePacket();
 
-    // vIndex: 1, symbol: ?getId@UpdatePlayerGameTypePacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@UpdatePlayerGameTypePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@UpdatePlayerGameTypePacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 8, symbol:
-    // ?_read@UpdatePlayerGameTypePacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0UpdatePlayerGameTypePacket@@QEAA@XZ
     MCAPI UpdatePlayerGameTypePacket();
 
-    // symbol: ??0UpdatePlayerGameTypePacket@@QEAA@W4GameType@@AEBUActorUniqueID@@_K@Z
     MCAPI UpdatePlayerGameTypePacket(::GameType, struct ActorUniqueID const&, uint64);
 
     // NOLINTEND

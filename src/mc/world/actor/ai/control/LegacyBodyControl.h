@@ -13,13 +13,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LegacyBodyControl@@UEAA@XZ
+    // vIndex: 0
     virtual ~LegacyBodyControl() = default;
 
-    // vIndex: 1, symbol: ?clientTick@LegacyBodyControl@@UEAAXAEAVMob@@@Z
+    // vIndex: 1
     virtual void clientTick(class Mob& mob);
 
-    // symbol: ??0LegacyBodyControl@@QEAA@XZ
     MCAPI LegacyBodyControl();
 
     // NOLINTEND

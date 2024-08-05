@@ -15,39 +15,36 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1RollGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~RollGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@RollGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@RollGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 3, symbol: ?canBeInterrupted@RollGoal@@UEAA_NXZ
+    // vIndex: 3
     virtual bool canBeInterrupted();
 
-    // vIndex: 4, symbol: ?start@RollGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@RollGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@RollGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@RollGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0RollGoal@@QEAA@AEAVMob@@M@Z
     MCAPI RollGoal(class Mob& mob, float probability);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_handleRoll@RollGoal@@AEBAXHAEAVVec3@@AEAM1@Z
     MCAPI void _handleRoll(int rollCounter, class Vec3& positionDelta, float& rollX, float& rollZ) const;
 
     // NOLINTEND

@@ -11,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getDefault@PlayerMovementSettings@@SA?AU1@XZ
     MCAPI static struct PlayerMovementSettings getDefault();
 
-    // symbol: ?INVALID@PlayerMovementSettings@@2U1@B
     MCAPI static struct PlayerMovementSettings const INVALID;
 
     // NOLINTEND

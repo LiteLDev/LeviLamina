@@ -14,13 +14,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ?getJsonName@GlideMoveControlDescription@@UEBAPEBDXZ
+    // vIndex: 0
     virtual char const* getJsonName() const;
 
-    // vIndex: 1, symbol: ??1GlideMoveControlDescription@@UEAA@XZ
+    // vIndex: 1
     virtual ~GlideMoveControlDescription();
 
-    // vIndex: 2, symbol: ?deserializeData@GlideMoveControlDescription@@UEAAXUDeserializeDataParams@@@Z
+    // vIndex: 2
     virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
     // NOLINTEND

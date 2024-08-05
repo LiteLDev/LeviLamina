@@ -14,7 +14,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?checkMaterial@IConstBlockSource@@QEBA_NAEBVAABB@@W4MaterialType@@@Z
     MCAPI bool checkMaterial(class AABB const& box, ::MaterialType material) const;
 
     // NOLINTEND

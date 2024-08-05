@@ -15,24 +15,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FloatWanderGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~FloatWanderGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@FloatWanderGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 6, symbol: ?tick@FloatWanderGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@FloatWanderGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_canReach@FloatWanderGoal@@AEAA_NAEBVVec3@@M@Z
     MCAPI bool _canReach(class Vec3 const& targetPos, float dist);
 
     // NOLINTEND

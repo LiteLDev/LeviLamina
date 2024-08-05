@@ -19,14 +19,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MoveTowardsDwellingRestrictionDefinition@@UEAA@XZ
+    // vIndex: 0
     virtual ~MoveTowardsDwellingRestrictionDefinition() = default;
 
-    // symbol: ??0MoveTowardsDwellingRestrictionDefinition@@QEAA@XZ
     MCAPI MoveTowardsDwellingRestrictionDefinition();
 
-    // symbol:
-    // ?buildSchema@MoveTowardsDwellingRestrictionDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VMoveTowardsDwellingRestrictionDefinition@@@JsonUtil@@@3@@Z
     MCAPI static void buildSchema(
         std::string const&                                    name,
         std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<

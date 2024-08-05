@@ -27,72 +27,64 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FenceBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~FenceBlock() = default;
 
-    // vIndex: 4, symbol:
-    // ?clip@FenceBlock@@UEBA?AVHitResult@@AEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@3W4ShapeType@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 4
     virtual class HitResult
     clip(class Block const&, class BlockSource const&, class BlockPos const&, class Vec3 const&, class Vec3 const&, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 5, symbol:
-    // ?getCollisionShape@FenceBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 5
     virtual class AABB
     getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 7, symbol:
-    // ?addCollisionShapes@FenceBlock@@UEBA_NAEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 7
     virtual bool
     addCollisionShapes(class Block const& block, class IConstBlockSource const& region, class BlockPos const& pos, class AABB const* intersectTestBox, std::vector<class AABB>& inoutBoxes, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 9, symbol: ?getOutline@FenceBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
+    // vIndex: 9
     virtual class AABB const&
     getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 10, symbol:
-    // ?getVisualShapeInWorld@FenceBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
+    // vIndex: 10
     virtual class AABB const&
     getVisualShapeInWorld(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 13, symbol: ?getLiquidClipVolume@FenceBlock@@UEBA_NAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@AEAVAABB@@@Z
+    // vIndex: 13
     virtual bool getLiquidClipVolume(class Block const&, class BlockSource&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 23, symbol: ?canProvideSupport@FenceBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
+    // vIndex: 23
     virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType type) const;
 
-    // vIndex: 25, symbol: ?canConnect@FenceBlock@@UEBA_NAEBVBlock@@E0@Z
+    // vIndex: 25
     virtual bool canConnect(class Block const& otherBlock, uchar, class Block const&) const;
 
-    // vIndex: 34, symbol: ?isFenceBlock@FenceBlock@@UEBA_NXZ
+    // vIndex: 34
     virtual bool isFenceBlock() const;
 
-    // vIndex: 57, symbol: ?canContainLiquid@FenceBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // vIndex: 86, symbol: ?mayPlace@FenceBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 86
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 90, symbol: ?breaksFallingBlocks@FenceBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
+    // vIndex: 90
     virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion version) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@FenceBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
-    // vIndex: 119, symbol:
-    // ?buildDescriptionId@FenceBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
+    // vIndex: 119
     virtual std::string buildDescriptionId(class Block const&) const;
 
-    // vIndex: 152, symbol: ?use@FenceBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    // symbol: ??0FenceBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI FenceBlock(std::string const& nameId, int id, class Material const& material);
 
-    // symbol:
-    // ?fetchPathableNeighbors@FenceBlock@@QEBAXAEAV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@AEAVBlockSource@@AEBVBlockPos@@AEBVVec3@@@Z
     MCAPI void fetchPathableNeighbors(
         std::vector<class BlockPos>& outNeighbors,
         class BlockSource&           region,
@@ -104,7 +96,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_getShape@FenceBlock@@CAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
     MCAPI static class AABB const&
     _getShape(class IConstBlockSource const&, class BlockPos const&, class Block const&, class AABB&, bool);
 
@@ -112,7 +103,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION@FenceBlock@@0VBaseGameVersion@@B
     MCAPI static class BaseGameVersion const FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
     // NOLINTEND

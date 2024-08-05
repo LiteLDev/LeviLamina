@@ -15,12 +15,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptPlayerInteractWithEntityBeforeEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
     MCAPI ScriptPlayerInteractWithEntityBeforeEvent(struct ScriptModuleMinecraft::
                                                         ScriptPlayerInteractWithEntityBeforeEvent const&);
 
-    // symbol:
-    // ?bind@ScriptPlayerInteractWithEntityBeforeEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptPlayerInteractWithEntityBeforeEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<
         struct ScriptModuleMinecraft::ScriptPlayerInteractWithEntityBeforeEvent>
     bind();

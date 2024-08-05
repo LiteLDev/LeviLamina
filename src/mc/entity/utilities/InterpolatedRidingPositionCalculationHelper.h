@@ -16,11 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getCamelInterpolatedRidingOffset@InterpolatedRidingPositionCalculationHelper@@SA?AVVec3@@_N@Z
     MCAPI static class Vec3 getCamelInterpolatedRidingOffset(bool);
 
-    // symbol:
-    // ?getHorseInterpolatedRidingOffset@InterpolatedRidingPositionCalculationHelper@@SA?AVVec3@@AEBVStrictEntityContext@@AEBV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UHorseFlag@@@@@@$$CBUStandAnimationComponent@@@@AEBV?$ViewT@VStrictEntityContext@@$$CBUActorRotationComponent@@$$CBURenderRotationComponent@@$$CBUStateVectorComponent@@$$CBUActorDataFlagComponent@@$$CBUActorDataSeatOffsetComponent@@@@M@Z
     MCAPI static class Vec3 getHorseInterpolatedRidingOffset(
         class StrictEntityContext const&,
         class ViewT<

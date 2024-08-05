@@ -11,11 +11,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SurfaceMaterialAdjustmentAttributes@@UEAA@XZ
+    // vIndex: 0
     virtual ~SurfaceMaterialAdjustmentAttributes() = default;
 
-    // symbol:
-    // ?evaluateAdjustments@SurfaceMaterialAdjustmentAttributes@@QEBA?AUSurfaceMaterialAdjustmentEvaluated@@AEAVRenderParams@@V?$not_null@PEAVPerlinSimplexNoise@@@gsl@@AEBVBlockPos@@HH@Z
     MCAPI struct SurfaceMaterialAdjustmentEvaluated evaluateAdjustments(
         class RenderParams&                      molangParams,
         gsl::not_null<class PerlinSimplexNoise*> noise,
@@ -24,8 +22,6 @@ public:
         int                                      heightMax
     ) const;
 
-    // symbol:
-    // ?parseExpressionNodeFloat@SurfaceMaterialAdjustmentAttributes@@QEAAXAEBVCompoundTag@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1AEAVExpressionNode@@M@Z
     MCAPI void parseExpressionNodeFloat(
         class CompoundTag const& tag,
         std::string const&       tagName,

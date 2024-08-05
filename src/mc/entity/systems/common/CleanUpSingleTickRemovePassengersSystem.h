@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSingleTickSystem@CleanUpSingleTickRemovePassengersSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSingleTickSystem();
 
     // NOLINTEND

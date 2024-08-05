@@ -19,42 +19,35 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SkullBlockActor@@UEAA@XZ
+    // vIndex: 0
     virtual ~SkullBlockActor() = default;
 
-    // vIndex: 1, symbol: ?load@SkullBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 1
     virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 2, symbol: ?save@SkullBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+    // vIndex: 2
     virtual bool save(class CompoundTag& tag) const;
 
-    // vIndex: 7, symbol: ?tick@SkullBlockActor@@UEAAXAEAVBlockSource@@@Z
+    // vIndex: 7
     virtual void tick(class BlockSource& region);
 
-    // vIndex: 8, symbol: ?onChanged@SkullBlockActor@@UEAAXAEAVBlockSource@@@Z
+    // vIndex: 8
     virtual void onChanged(class BlockSource& region);
 
-    // vIndex: 40, symbol:
-    // ?_getUpdatePacket@SkullBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
+    // vIndex: 40
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
 
-    // vIndex: 41, symbol: ?_onUpdatePacket@SkullBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
+    // vIndex: 41
     virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
 
-    // symbol: ??0SkullBlockActor@@QEAA@AEBVBlockPos@@@Z
     MCAPI explicit SkullBlockActor(class BlockPos const& pos);
 
-    // symbol: ?getSkullType@SkullBlockActor@@QEBA?AW4SkullType@1@XZ
     MCAPI ::SkullBlockActor::SkullType getSkullType() const;
 
-    // symbol: ?setRotation@SkullBlockActor@@QEAAXM@Z
     MCAPI void setRotation(float rot);
 
-    // symbol: ?setSkullType@SkullBlockActor@@QEAAXH@Z
     MCAPI void setSkullType(int type);
 
-    // symbol:
-    // ?getSkullType@SkullBlockActor@@SA?AV?$optional@W4SkullType@SkullBlockActor@@@std@@AEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static std::optional<::SkullBlockActor::SkullType>
     getSkullType(class BlockSource& region, class BlockPos const& pos);
 

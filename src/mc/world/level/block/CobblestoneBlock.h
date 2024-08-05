@@ -27,14 +27,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CobblestoneBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~CobblestoneBlock() = default;
 
-    // vIndex: 140, symbol: ?tryGetInfested@CobblestoneBlock@@UEBAPEBVBlock@@AEBV2@@Z
+    // vIndex: 140
     virtual class Block const* tryGetInfested(class Block const& block) const;
 
-    // symbol:
-    // ??0CobblestoneBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI CobblestoneBlock(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND

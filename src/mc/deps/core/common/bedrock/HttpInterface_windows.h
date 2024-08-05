@@ -13,7 +13,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1HttpInterface_windows@Http@Bedrock@@UEAA@XZ
+    // vIndex: 0
     virtual ~HttpInterface_windows() = default;
 
     // NOLINTEND

@@ -20,7 +20,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1AddModifier@AttributeRequestComponent@@QEAA@XZ
         MCAPI ~AddModifier();
 
         // NOLINTEND
@@ -35,7 +34,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1RemoveModifier@AttributeRequestComponent@@QEAA@XZ
         MCAPI ~RemoveModifier();
 
         // NOLINTEND
@@ -49,7 +47,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4AttributeRequestComponent@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct AttributeRequestComponent& operator=(struct AttributeRequestComponent&&);
 
     // NOLINTEND

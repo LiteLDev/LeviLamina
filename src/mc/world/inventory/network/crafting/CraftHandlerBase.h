@@ -16,29 +16,26 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1CraftHandlerBase@@UEAA@XZ
+    // vIndex: 0
     virtual ~CraftHandlerBase();
 
-    // vIndex: 1, symbol:
-    // ?handleConsumedItem@CraftHandlerBase@@UEAA?AW4ItemStackNetResult@@W4ContainerEnumName@@EAEBVItemStack@@@Z
+    // vIndex: 1
     virtual ::ItemStackNetResult
     handleConsumedItem(::ContainerEnumName openContainerNetId, uchar slot, class ItemStack const& consumedItem);
 
-    // vIndex: 2, symbol:
-    // ?preHandleAction@CraftHandlerBase@@UEAA?AW4ItemStackNetResult@@W4ItemStackRequestActionType@@@Z
+    // vIndex: 2
     virtual ::ItemStackNetResult preHandleAction(::ItemStackRequestActionType);
 
-    // vIndex: 3, symbol: ?endRequestBatch@CraftHandlerBase@@UEAAXXZ
+    // vIndex: 3
     virtual void endRequestBatch();
 
-    // vIndex: 4, symbol:
-    // ?_handleCraftAction@CraftHandleNonImplemented_DEPRECATEDASKTYLAING@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z
+    // vIndex: 4
     virtual ::ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&) = 0;
 
-    // vIndex: 5, symbol: ?_postCraftRequest@CraftHandlerBase@@MEAAX_N@Z
+    // vIndex: 5
     virtual void _postCraftRequest(bool wasSuccess);
 
-    // vIndex: 6, symbol: ?_getLevelRecipes@CraftHandlerBase@@MEBAPEBVRecipes@@XZ
+    // vIndex: 6
     virtual class Recipes const* _getLevelRecipes() const;
 
     // NOLINTEND

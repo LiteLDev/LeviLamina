@@ -11,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?onEquipItemPickedUp@EquipItemComponent@@QEAAXVItemStack@@H@Z
     MCAPI void onEquipItemPickedUp(class ItemStack item, int);
 
-    // symbol: ??1EquipItemComponent@@QEAA@XZ
     MCAPI ~EquipItemComponent();
 
     // NOLINTEND

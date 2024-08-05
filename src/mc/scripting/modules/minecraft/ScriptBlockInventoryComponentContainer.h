@@ -28,19 +28,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptBlockInventoryComponentContainer@ScriptModuleMinecraft@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptBlockInventoryComponentContainer() = default;
 
-    // vIndex: 2, symbol:
-    // ?getEmptySlotsCount@ScriptBlockInventoryComponentContainer@ScriptModuleMinecraft@@UEBA?AV?$Result@H$$V@Scripting@@XZ
+    // vIndex: 2
     virtual class Scripting::Result<int> getEmptySlotsCount() const;
 
-    // vIndex: 13, symbol:
-    // ?_tryGetContainer@ScriptBlockInventoryComponentContainer@ScriptModuleMinecraft@@MEBAPEAVContainer@@XZ
+    // vIndex: 13
     virtual class Container* _tryGetContainer() const;
 
-    // vIndex: 14, symbol:
-    // ?_getItemContext@ScriptBlockInventoryComponentContainer@ScriptModuleMinecraft@@MEBA?AVItemContext@@H@Z
+    // vIndex: 14
     virtual class ItemContext _getItemContext(int slot) const;
 
     // NOLINTEND

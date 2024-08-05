@@ -13,13 +13,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1TimerActorFlagBaseDefinition@@UEAA@XZ
+    // vIndex: 0
     virtual ~TimerActorFlagBaseDefinition();
 
-    // symbol: ??0TimerActorFlagBaseDefinition@@QEAA@XZ
     MCAPI TimerActorFlagBaseDefinition();
 
-    // symbol: ?initialize@TimerActorFlagBaseDefinition@@QEBAXAEAVEntityContext@@AEAVTimerActorFlagBaseGoal@@@Z
     MCAPI void initialize(class EntityContext&, class TimerActorFlagBaseGoal&) const;
 
     // NOLINTEND

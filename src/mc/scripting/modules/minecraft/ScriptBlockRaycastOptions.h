@@ -17,20 +17,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4ScriptBlockRaycastOptions@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptBlockRaycastOptions&
     operator=(struct ScriptModuleMinecraft::ScriptBlockRaycastOptions&&);
 
-    // symbol: ??1ScriptBlockRaycastOptions@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptBlockRaycastOptions();
 
-    // symbol:
-    // ?bind@ScriptBlockRaycastOptions@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@UScriptBlockRaycastOptions@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptBlockRaycastOptions>
     bind();
 
-    // symbol:
-    // ?bindV010@ScriptBlockRaycastOptions@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptBlockRaycastOptions@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptBlockRaycastOptions>
     bindV010();
 

@@ -14,10 +14,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CompoundCreatorContainerScreenValidator@@UEAA@XZ
+    // vIndex: 0
     virtual ~CompoundCreatorContainerScreenValidator() = default;
 
-    // symbol: ??0CompoundCreatorContainerScreenValidator@@QEAA@XZ
     MCAPI CompoundCreatorContainerScreenValidator();
 
     // NOLINTEND

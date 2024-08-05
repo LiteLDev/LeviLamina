@@ -17,14 +17,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CraftHandlerSmithingTable@@UEAA@XZ
+    // vIndex: 0
     virtual ~CraftHandlerSmithingTable() = default;
 
-    // vIndex: 4, symbol:
-    // ?_handleCraftAction@CraftHandlerSmithingTable@@EEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z
+    // vIndex: 4
     virtual ::ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const& requestAction);
 
-    // vIndex: 6, symbol: ?_getLevelRecipes@CraftHandlerSmithingTable@@EEBAPEBVRecipes@@XZ
+    // vIndex: 6
     virtual class Recipes const* _getLevelRecipes() const;
 
     // NOLINTEND

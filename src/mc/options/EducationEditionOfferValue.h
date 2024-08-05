@@ -14,7 +14,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4EducationEditionOfferValue@@QEAAAEAV0@W4EducationEditionOffer@@@Z
     MCAPI class EducationEditionOfferValue& operator=(::EducationEditionOffer);
 
     // NOLINTEND

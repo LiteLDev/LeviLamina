@@ -15,16 +15,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1NetherReactorBlockActor@@UEAA@XZ
+    // vIndex: 0
     virtual ~NetherReactorBlockActor() = default;
 
-    // vIndex: 1, symbol: ?load@NetherReactorBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 1
     virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 2, symbol: ?save@NetherReactorBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+    // vIndex: 2
     virtual bool save(class CompoundTag& tag) const;
 
-    // symbol: ??0NetherReactorBlockActor@@QEAA@AEBVBlockPos@@@Z
     MCAPI explicit NetherReactorBlockActor(class BlockPos const& pos);
 
     // NOLINTEND

@@ -19,19 +19,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1Upgrader@Puv@@UEAA@XZ
+    // vIndex: 0
     virtual ~Upgrader();
 
-    // symbol: ??0Upgrader@Puv@@QEAA@VSemVersion@@0@Z
     MCAPI Upgrader(class SemVersion, class SemVersion);
 
-    // symbol: ?sourceVersion@Upgrader@Puv@@QEBAAEBVSemVersion@@XZ
     MCAPI class SemVersion const& sourceVersion() const;
 
-    // symbol: ?targetVersion@Upgrader@Puv@@QEBAAEBVSemVersion@@XZ
     MCAPI class SemVersion const& targetVersion() const;
 
-    // symbol: ?upgrade@Upgrader@Puv@@QEBA?AVLoadResultAny@2@V32@@Z
     MCAPI class Puv::LoadResultAny upgrade(class Puv::LoadResultAny) const;
 
     // NOLINTEND

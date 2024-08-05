@@ -11,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScorePacketInfo@@QEAA@$$QEAU0@@Z
     MCAPI ScorePacketInfo(struct ScorePacketInfo&&);
 
-    // symbol: ??1ScorePacketInfo@@QEAA@XZ
     MCAPI ~ScorePacketInfo();
 
     // NOLINTEND

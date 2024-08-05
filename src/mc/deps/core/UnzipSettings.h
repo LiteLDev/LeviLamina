@@ -12,10 +12,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0UnzipSettings@ZipUtils@Core@@QEAA@XZ
     MCAPI UnzipSettings();
 
-    // symbol: ??1UnzipSettings@ZipUtils@Core@@QEAA@XZ
     MCAPI ~UnzipSettings();
 
     // NOLINTEND

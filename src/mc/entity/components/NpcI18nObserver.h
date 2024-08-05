@@ -14,27 +14,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1NpcI18nObserver@@UEAA@XZ
+    // vIndex: 0
     virtual ~NpcI18nObserver() = default;
 
-    // vIndex: 1, symbol:
-    // ?onLanguageChanged@NpcI18nObserver@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+    // vIndex: 1
     virtual void onLanguageChanged(std::string const& code, bool languageSystemInitializing);
 
-    // vIndex: 2, symbol: __unk_vfn_2
+    // vIndex: 2
     virtual void __unk_vfn_2();
 
-    // vIndex: 3, symbol: ?onLanguagesLoaded@NpcI18nObserver@@UEAAXXZ
+    // vIndex: 3
     virtual void onLanguagesLoaded();
 
-    // symbol: ?onLanguageKeywordsLoadedFromPack@NpcI18nObserver@@UEAAXAEBVPackManifest@@@Z
     MCVAPI void onLanguageKeywordsLoadedFromPack(class PackManifest const& manifest);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_loadNpcData@NpcI18nObserver@@AEAAXXZ
     MCAPI void _loadNpcData();
 
     // NOLINTEND

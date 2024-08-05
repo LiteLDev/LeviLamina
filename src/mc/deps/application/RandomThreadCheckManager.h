@@ -15,21 +15,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1RandomThreadCheckManager@@UEAA@XZ
+    // vIndex: 0
     virtual ~RandomThreadCheckManager() = default;
 
-    // vIndex: 6, symbol: ?onAppResumed@RandomThreadCheckManager@@UEAAXXZ
+    // vIndex: 6
     virtual void onAppResumed();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?mInstance@RandomThreadCheckManager@@0V?$unique_ptr@VRandomThreadCheckManager@@U?$default_delete@VRandomThreadCheckManager@@@std@@@std@@A
     MCAPI static std::unique_ptr<class RandomThreadCheckManager> mInstance;
 
-    // symbol: ?mMutex@RandomThreadCheckManager@@0Vrecursive_mutex@std@@A
     MCAPI static std::recursive_mutex mMutex;
 
     // NOLINTEND

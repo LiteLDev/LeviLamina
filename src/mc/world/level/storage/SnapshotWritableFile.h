@@ -11,22 +11,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SnapshotWritableFile@@UEAA@XZ
+    // vIndex: 0
     virtual ~SnapshotWritableFile() = default;
 
-    // vIndex: 1, symbol: ?Append@SnapshotWritableFile@@UEAA?AVStatus@leveldb@@AEBVSlice@3@@Z
+    // vIndex: 1
     virtual leveldb::Status Append(leveldb::Slice const& data);
 
-    // vIndex: 2, symbol: ?Close@SnapshotWritableFile@@UEAA?AVStatus@leveldb@@XZ
+    // vIndex: 2
     virtual leveldb::Status Close();
 
-    // vIndex: 3, symbol: ?Flush@SnapshotWritableFile@@UEAA?AVStatus@leveldb@@XZ
+    // vIndex: 3
     virtual leveldb::Status Flush();
 
-    // vIndex: 4, symbol: ?Sync@SnapshotWritableFile@@UEAA?AVStatus@leveldb@@XZ
+    // vIndex: 4
     virtual leveldb::Status Sync();
 
-    // symbol: ??0SnapshotWritableFile@@QEAA@$$QEAPEAVWritableFile@leveldb@@AEAVshared_mutex@std@@@Z
     MCAPI SnapshotWritableFile(leveldb::WritableFile*&& r, std::shared_mutex& creationAndWriteLock);
 
     // NOLINTEND

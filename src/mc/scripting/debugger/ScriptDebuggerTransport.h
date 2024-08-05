@@ -19,38 +19,37 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptDebuggerTransport@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptDebuggerTransport() = default;
 
-    // vIndex: 1, symbol: ?listen@ScriptDebuggerTransport@@UEAA_NG@Z
+    // vIndex: 1
     virtual bool listen(ushort port);
 
-    // vIndex: 2, symbol:
-    // ?connect@ScriptDebuggerTransport@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
+    // vIndex: 2
     virtual bool connect(std::string const& host, ushort port);
 
-    // vIndex: 3, symbol: ?selectClient@ScriptDebuggerTransport@@UEAA_NXZ
+    // vIndex: 3
     virtual bool selectClient();
 
-    // vIndex: 4, symbol: ?connected@ScriptDebuggerTransport@@UEBA_NXZ
+    // vIndex: 4
     virtual bool connected() const;
 
-    // vIndex: 5, symbol: ?lostConnection@ScriptDebuggerTransport@@UEBA_NXZ
+    // vIndex: 5
     virtual bool lostConnection() const;
 
-    // vIndex: 6, symbol: ?readyClose@ScriptDebuggerTransport@@UEBA_NXZ
+    // vIndex: 6
     virtual bool readyClose() const;
 
-    // vIndex: 7, symbol: ?close@ScriptDebuggerTransport@@UEAAXXZ
+    // vIndex: 7
     virtual void close();
 
-    // vIndex: 8, symbol: ?peek@ScriptDebuggerTransport@@UEBA_NXZ
+    // vIndex: 8
     virtual bool peek() const;
 
-    // vIndex: 9, symbol: ?receive@ScriptDebuggerTransport@@UEAA_NPEAD_K@Z
+    // vIndex: 9
     virtual bool receive(char* buffer, uint64 length);
 
-    // vIndex: 10, symbol: ?send@ScriptDebuggerTransport@@UEAAXPEBD_K@Z
+    // vIndex: 10
     virtual void send(char const* buffer, uint64 length);
 
     // NOLINTEND

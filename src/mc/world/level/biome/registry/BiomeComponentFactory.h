@@ -15,11 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?registrationFinished@BiomeComponentFactory@@QEAAXXZ
     MCAPI void registrationFinished();
 
-    // symbol:
-    // ?writeComponentsToTag@BiomeComponentFactory@@QEBAXAEBVBiome@@AEBVIWorldRegistriesProvider@@AEAVCompoundTag@@@Z
     MCAPI void
     writeComponentsToTag(class Biome const&, class IWorldRegistriesProvider const&, class CompoundTag&) const;
 

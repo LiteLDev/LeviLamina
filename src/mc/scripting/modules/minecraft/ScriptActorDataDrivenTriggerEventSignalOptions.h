@@ -13,11 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4ScriptActorDataDrivenTriggerEventSignalOptions@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptActorDataDrivenTriggerEventSignalOptions&
     operator=(struct ScriptModuleMinecraft::ScriptActorDataDrivenTriggerEventSignalOptions&&);
 
-    // symbol: ??1ScriptActorDataDrivenTriggerEventSignalOptions@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptActorDataDrivenTriggerEventSignalOptions();
 
     // NOLINTEND

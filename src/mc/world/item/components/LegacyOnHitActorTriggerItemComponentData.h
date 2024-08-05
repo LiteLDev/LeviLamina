@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1LegacyOnHitActorTriggerItemComponentData@@QEAA@XZ
     MCAPI ~LegacyOnHitActorTriggerItemComponentData();
 
     // NOLINTEND

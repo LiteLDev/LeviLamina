@@ -14,13 +14,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ChangeSettingCommand@@UEAA@XZ
+    // vIndex: 0
     virtual ~ChangeSettingCommand() = default;
 
-    // vIndex: 2, symbol: ?execute@ChangeSettingCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+    // vIndex: 2
     virtual void execute(class CommandOrigin const&, class CommandOutput& output) const;
 
-    // symbol: ?setup@ChangeSettingCommand@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry& registry);
 
     // NOLINTEND

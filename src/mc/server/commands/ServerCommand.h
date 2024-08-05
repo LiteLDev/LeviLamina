@@ -17,15 +17,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ServerCommand@@UEAA@XZ
+    // vIndex: 0
     virtual ~ServerCommand();
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol:
-    // ?tryToFilterTextWithRemoteFilter@ServerCommand@@IEBA_NAEBVCommandOrigin@@AEAVCommandOutput@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBW4TextProcessingEventOrigin@@V?$function@$$A6AXAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBV?$vector@W4TextFilteringEvent@Safety@@V?$allocator@W4TextFilteringEvent@Safety@@@std@@@2@@Z@5@_N@Z
     MCAPI bool tryToFilterTextWithRemoteFilter(
         class CommandOrigin const&,
         class CommandOutput&,
@@ -35,8 +33,6 @@ public:
         bool
     ) const;
 
-    // symbol:
-    // ?kickPlayerDueToFlooding@ServerCommand@@KAXV?$NonOwnerPointer@VServerNetworkHandler@@@Bedrock@@PEAVPlayer@@AEAVIMinecraftEventing@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI static void
     kickPlayerDueToFlooding(class Bedrock::NonOwnerPointer<class ServerNetworkHandler>, class Player*, class IMinecraftEventing&, std::string const&);
 
@@ -44,7 +40,6 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?mGame@ServerCommand@@1PEAVMinecraft@@EA
     MCAPI static class Minecraft* mGame;
 
     // NOLINTEND

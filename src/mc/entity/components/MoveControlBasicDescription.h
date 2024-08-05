@@ -14,10 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ?getJsonName@MoveControlBasicDescription@@UEBAPEBDXZ
+    // vIndex: 0
     virtual char const* getJsonName() const;
 
-    // vIndex: 1, symbol: ??1MoveControlBasicDescription@@UEAA@XZ
+    // vIndex: 1
     virtual ~MoveControlBasicDescription();
 
     // NOLINTEND

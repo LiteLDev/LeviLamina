@@ -26,18 +26,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SeaPickleBlockItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~SeaPickleBlockItem() = default;
 
-    // vIndex: 32, symbol: ?getLevelDataForAuxValue@SeaPickleBlockItem@@UEBAHH@Z
+    // vIndex: 32
     virtual int getLevelDataForAuxValue(int auxValue) const;
 
-    // vIndex: 118, symbol:
-    // ?_useOn@SeaPickleBlockItem@@UEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+    // vIndex: 118
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const&) const;
 
-    // symbol: ??0SeaPickleBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI SeaPickleBlockItem(std::string const& name, int id);
 
     // NOLINTEND

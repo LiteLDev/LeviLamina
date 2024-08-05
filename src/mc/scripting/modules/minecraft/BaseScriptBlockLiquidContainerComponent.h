@@ -27,22 +27,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@UEAA@XZ
+    // vIndex: 0
     virtual ~BaseScriptBlockLiquidContainerComponent() = default;
 
-    // vIndex: 1, symbol: ?_isValid@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@MEBA_NXZ
+    // vIndex: 1
     virtual bool _isValid() const;
 
-    // vIndex: 2, symbol:
-    // ?setFillLevel@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@UEAA?AV?$Result@X$$V@Scripting@@H@Z
+    // vIndex: 2
     virtual class Scripting::Result<void> setFillLevel(int level);
 
-    // symbol:
-    // ?getFillLevel@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@H$$V@Scripting@@XZ
     MCAPI class Scripting::Result<int> getFillLevel();
 
-    // symbol:
-    // ?bind@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VBaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<
         class ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponent>
     bind();
@@ -51,12 +46,8 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    // symbol:
-    // ?_tryGetCauldronBlockActor@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@IEAAPEAVCauldronBlockActor@@XZ
     MCAPI class CauldronBlockActor* _tryGetCauldronBlockActor();
 
-    // symbol:
-    // ?_getActualCauldronLiquidType@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@KA?AW4ScriptFluidType@2@AEAVBlockSource@@VBlockPos@@@Z
     MCAPI static ::ScriptModuleMinecraft::ScriptFluidType
     _getActualCauldronLiquidType(class BlockSource& region, class BlockPos position);
 

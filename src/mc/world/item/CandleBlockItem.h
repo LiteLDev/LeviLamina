@@ -26,21 +26,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CandleBlockItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~CandleBlockItem() = default;
 
-    // vIndex: 12, symbol: ?isCandle@CandleBlockItem@@UEBA_NXZ
+    // vIndex: 12
     virtual bool isCandle() const;
 
-    // vIndex: 32, symbol: ?getLevelDataForAuxValue@CandleBlockItem@@UEBAHH@Z
+    // vIndex: 32
     virtual int getLevelDataForAuxValue(int auxValue) const;
 
-    // vIndex: 118, symbol:
-    // ?_useOn@CandleBlockItem@@UEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+    // vIndex: 118
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const&) const;
 
-    // symbol: ??0CandleBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI CandleBlockItem(std::string const& name, int id);
 
     // NOLINTEND

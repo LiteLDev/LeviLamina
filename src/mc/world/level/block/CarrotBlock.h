@@ -27,29 +27,26 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CarrotBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~CarrotBlock() = default;
 
-    // vIndex: 9, symbol:
-    // ?getOutline@CarrotBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
+    // vIndex: 9
     virtual class AABB const&
     getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 129, symbol: ?getVariant@CarrotBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 155, symbol: ?getRenderLayer@CarrotBlock@@UEBA?AW4BlockRenderLayer@@XZ
+    // vIndex: 155
     virtual ::BlockRenderLayer getRenderLayer() const;
 
-    // vIndex: 156, symbol:
-    // ?getRenderLayer@CarrotBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 156
     virtual ::BlockRenderLayer
     getRenderLayer(class Block const& block, class BlockSource&, class BlockPos const& pos) const;
 
-    // vIndex: 165, symbol: ?getBaseSeed@CarrotBlock@@UEBA?BVItemInstance@@XZ
+    // vIndex: 165
     virtual class ItemInstance const getBaseSeed() const;
 
-    // symbol: ??0CarrotBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI CarrotBlock(std::string const& nameId, int id);
 
     // NOLINTEND

@@ -16,15 +16,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@PersonaEmoteInputSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_personaEmoteInputSystem@PersonaEmoteInputSystem@@CAXAEBVStrictEntityContext@@AEBUEventingDispatcherComponent@@AEBUEmotePlayedTelemetryDataComponent@@V?$ViewT@VStrictEntityContext@@UEventingRequestQueueComponent@@@@V?$EntityModifier@UEmotePlayedTelemetryDataComponent@@UShouldStopEmotingRequestComponent@@@@@Z
     MCAPI static void _personaEmoteInputSystem(
         class StrictEntityContext const& entity,
         struct EventingDispatcherComponent const&,
@@ -34,8 +31,6 @@ public:
             modifier
     );
 
-    // symbol:
-    // ?_tickPersonaEmoteInputSystem@PersonaEmoteInputSystem@@CAXV?$ViewT@VStrictEntityContext@@U?$Include@UShouldStopEmotingRequestComponent@@@@$$CBUEventingDispatcherComponent@@$$CBUEmotePlayedTelemetryDataComponent@@@@V?$ViewT@VStrictEntityContext@@UEventingRequestQueueComponent@@@@V?$EntityModifier@UEmotePlayedTelemetryDataComponent@@UShouldStopEmotingRequestComponent@@@@@Z
     MCAPI static void _tickPersonaEmoteInputSystem(
         class ViewT<
             class StrictEntityContext,

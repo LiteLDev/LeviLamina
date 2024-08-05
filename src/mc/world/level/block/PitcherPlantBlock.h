@@ -27,17 +27,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1PitcherPlantBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~PitcherPlantBlock() = default;
 
-    // vIndex: 80, symbol:
-    // ?onFertilized@PitcherPlantBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
+    // vIndex: 80
     virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, ::FertilizerType) const;
 
-    // vIndex: 82, symbol: ?canBeFertilized@PitcherPlantBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 82
     virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
 
-    // symbol: ??0PitcherPlantBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI PitcherPlantBlock(std::string const& nameId, int id);
 
     // NOLINTEND

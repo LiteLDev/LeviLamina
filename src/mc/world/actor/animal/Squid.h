@@ -35,46 +35,41 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 4, symbol: ?reloadHardcoded@Squid@@MEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 4
     virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: ??1Squid@@UEAA@XZ
+    // vIndex: 10
     virtual ~Squid();
 
-    // vIndex: 74, symbol: ?handleEntityEvent@Squid@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 74
     virtual void handleEntityEvent(::ActorEvent id, int data);
 
-    // vIndex: 144, symbol: ?updateEntitySpecificMolangVariables@Squid@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 144
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // vIndex: 146, symbol: ?_hurt@Squid@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 146
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 160, symbol: ?checkSpawnRules@Squid@@UEAA_N_N@Z
+    // vIndex: 160
     virtual bool checkSpawnRules(bool fromSpawner);
 
-    // vIndex: 161, symbol: ?checkSpawnObstruction@Squid@@UEBA_NXZ
+    // vIndex: 161
     virtual bool checkSpawnObstruction() const;
 
-    // vIndex: 190, symbol: ?_getInkSquirtSoundEvent@Squid@@MEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 190
     virtual ::Puv::Legacy::LevelSoundEvent _getInkSquirtSoundEvent() const;
 
-    // symbol:
-    // ??0Squid@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@AEBVColor@mce@@@Z
     MCAPI
     Squid(class ActorDefinitionGroup* definitions, struct ActorDefinitionIdentifier const& definitionName, class EntityContext& entityContext, class mce::Color const&);
 
-    // symbol: ?postAiStep@Squid@@QEAAXXZ
     MCAPI void postAiStep();
 
-    // symbol: ?spawnInkParticles@Squid@@QEAAXXZ
     MCAPI void spawnInkParticles();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_randomInkDir@Squid@@AEAA?AVVec3@@XZ
     MCAPI class Vec3 _randomInkDir();
 
     // NOLINTEND

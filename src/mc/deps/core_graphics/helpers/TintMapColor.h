@@ -10,7 +10,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0TintMapColor@@QEAA@XZ
     MCAPI TintMapColor();
 
     // NOLINTEND

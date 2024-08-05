@@ -25,17 +25,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptIdentityModuleFactory@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptIdentityModuleFactory() = default;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?ModuleName@ScriptIdentityModuleFactory@@0PEBDEB
     MCAPI static char const* ModuleName;
 
-    // symbol: ?ModuleUUID@ScriptIdentityModuleFactory@@0VUUID@mce@@B
     MCAPI static class mce::UUID const ModuleUUID;
 
     // NOLINTEND

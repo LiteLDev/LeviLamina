@@ -15,17 +15,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1OceanMonumentPenthouse@@UEAA@XZ
+    // vIndex: 0
     virtual ~OceanMonumentPenthouse() = default;
 
-    // vIndex: 2, symbol: ?getType@OceanMonumentPenthouse@@UEBA?AW4StructurePieceType@@XZ
+    // vIndex: 2
     virtual ::StructurePieceType getType() const;
 
-    // vIndex: 4, symbol: ?postProcess@OceanMonumentPenthouse@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+    // vIndex: 4
     virtual bool postProcess(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 
-    // vIndex: 5, symbol:
-    // ?postProcessMobsAt@OceanMonumentPenthouse@@UEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+    // vIndex: 5
     virtual void postProcessMobsAt(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 
     // NOLINTEND

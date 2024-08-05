@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?destroyBlock@LevelBlockDestroyer@@QEAA_NAEAVBlockSource@@AEBVBlockPos@@_N@Z
     MCAPI bool destroyBlock(class BlockSource&, class BlockPos const&, bool);
 
     // NOLINTEND

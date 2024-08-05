@@ -27,22 +27,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1TrialSpawnerBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~TrialSpawnerBlock() = default;
 
-    // vIndex: 57, symbol: ?canContainLiquid@TrialSpawnerBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // vIndex: 129, symbol: ?getVariant@TrialSpawnerBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const&) const;
 
-    // vIndex: 137, symbol: ?getLightEmission@TrialSpawnerBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
+    // vIndex: 137
     virtual struct Brightness getLightEmission(class Block const&) const;
 
-    // vIndex: 150, symbol: ?isInteractiveBlock@TrialSpawnerBlock@@UEBA_NXZ
+    // vIndex: 150
     virtual bool isInteractiveBlock() const;
 
-    // symbol: ??0TrialSpawnerBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI TrialSpawnerBlock(std::string const&, int);
 
     // NOLINTEND

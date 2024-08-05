@@ -21,7 +21,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1DirectoryPickerResult@FilePickerManager@Bedrock@@QEAA@XZ
         MCAPI ~DirectoryPickerResult();
 
         // NOLINTEND

@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1http_memory_buffer@httpclient@xbox@@QEAA@XZ
     MCAPI ~http_memory_buffer();
 
     // NOLINTEND

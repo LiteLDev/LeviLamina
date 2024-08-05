@@ -37,23 +37,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SwimControlSystemImpl@SwimControlSystemImpl@@UEAA@XZ
+    // vIndex: 0
     virtual ~SwimControlSystemImpl() = default;
 
-    // vIndex: 1, symbol: __unk_vfn_1
+    // vIndex: 1
     virtual void __unk_vfn_1();
 
-    // vIndex: 2, symbol: __unk_vfn_2
+    // vIndex: 2
     virtual void __unk_vfn_2();
 
-    // vIndex: 3, symbol: __unk_vfn_3
+    // vIndex: 3
     virtual void __unk_vfn_3();
 
-    // vIndex: 4, symbol: __unk_vfn_4
+    // vIndex: 4
     virtual void __unk_vfn_4();
 
-    // vIndex: 5, symbol:
-    // ?tick@SwimControlSystemImpl@1@UEAAXAEAV?$StrictExecutionContext@U?$Filter@UMobTravelComponent@@V?$FlagComponent@UInWaterFlag@@@@V?$FlagComponent@UMobIsJumpingFlag@@@@@@U?$Read@UActorDataFlagComponent@@UMovementAbilitiesComponent@@UActorRotationComponent@@UMoveInputComponent@@UPlayerInputRequestComponent@@@@U?$Write@UStateVectorComponent@@@@U?$AddRemove@$$V@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
+    // vIndex: 5
     virtual void tick(class StrictExecutionContext<
                       struct Filter<
                           struct MobTravelComponent,

@@ -13,7 +13,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?table@CRC32@SFAT@@0QBIB
     MCAPI static uint const table[];
 
     // NOLINTEND

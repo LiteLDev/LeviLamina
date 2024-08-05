@@ -14,22 +14,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScreenHandlerBase@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScreenHandlerBase();
 
-    // vIndex: 1, symbol: ?handleAction@ScreenHandlerBase@@UEAA?AW4ItemStackNetResult@@AEBVItemStackRequestAction@@@Z
+    // vIndex: 1
     virtual ::ItemStackNetResult handleAction(class ItemStackRequestAction const& requestAction);
 
-    // vIndex: 2, symbol: ?endRequest@ScreenHandlerBase@@UEAA?AW4ItemStackNetResult@@XZ
+    // vIndex: 2
     virtual ::ItemStackNetResult endRequest();
 
-    // vIndex: 3, symbol: ?endRequestBatch@ScreenHandlerBase@@UEAAXXZ
+    // vIndex: 3
     virtual void endRequestBatch();
 
-    // vIndex: 4, symbol: ?postRequest@ScreenHandlerBase@@UEAAX_N@Z
+    // vIndex: 4
     virtual void postRequest(bool wasSuccess);
 
-    // symbol: ??0ScreenHandlerBase@@QEAA@AEAVItemStackRequestActionHandler@@@Z
     MCAPI explicit ScreenHandlerBase(class ItemStackRequestActionHandler&);
 
     // NOLINTEND

@@ -24,25 +24,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0ScriptItemUseAfterEvent@ScriptModuleMinecraft@@QEAA@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@AEBVPlayer@@AEBUItemUseEvent@@AEBVWeakLifetimeScope@3@@Z
     MCAPI
     ScriptItemUseAfterEvent(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>, class Player const&, struct ItemUseEvent const&, class Scripting::WeakLifetimeScope const&);
 
-    // symbol: ??4ScriptItemUseAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptItemUseAfterEvent&
     operator=(struct ScriptModuleMinecraft::ScriptItemUseAfterEvent&&);
 
-    // symbol: ??4ScriptItemUseAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptItemUseAfterEvent&
     operator=(struct ScriptModuleMinecraft::ScriptItemUseAfterEvent const&);
 
-    // symbol:
-    // ?bind@ScriptItemUseAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptItemUseAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemUseAfterEvent> bind();
 
-    // symbol:
-    // ?bindV010@ScriptItemUseAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptItemUseAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemUseAfterEvent> bindV010();
 
     // NOLINTEND

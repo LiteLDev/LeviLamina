@@ -14,19 +14,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getAllowList@AllowListFile@@QEBAAEAVAllowList@@XZ
     MCAPI class AllowList& getAllowList() const;
 
-    // symbol: ?reload@AllowListFile@@QEAA?AW4FileReadResult@@XZ
     MCAPI ::FileReadResult reload();
 
-    // symbol: ?syncToDisc@AllowListFile@@QEAAXXZ
     MCAPI void syncToDisc();
 
-    // symbol: ??1AllowListFile@@QEAA@XZ
     MCAPI ~AllowListFile();
 
-    // symbol: ?loadFromDefaultLocations@AllowListFile@@SA?AV1@XZ
     MCAPI static class AllowListFile loadFromDefaultLocations();
 
     // NOLINTEND

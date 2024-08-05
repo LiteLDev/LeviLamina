@@ -11,7 +11,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CustomFoliageColorAttributes@@UEAA@XZ
+    // vIndex: 0
     virtual ~CustomFoliageColorAttributes() = default;
 
     // NOLINTEND

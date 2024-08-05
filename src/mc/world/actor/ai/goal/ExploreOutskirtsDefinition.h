@@ -19,17 +19,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ExploreOutskirtsDefinition@@UEAA@XZ
+    // vIndex: 0
     virtual ~ExploreOutskirtsDefinition() = default;
 
-    // symbol: ??0ExploreOutskirtsDefinition@@QEAA@XZ
     MCAPI ExploreOutskirtsDefinition();
 
-    // symbol: ?initialize@ExploreOutskirtsDefinition@@QEBAXAEAVEntityContext@@AEAVExploreOutskirtsGoal@@@Z
     MCAPI void initialize(class EntityContext& entity, class ExploreOutskirtsGoal& goal) const;
 
-    // symbol:
-    // ?buildSchema@ExploreOutskirtsDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VExploreOutskirtsDefinition@@@JsonUtil@@@3@@Z
     MCAPI static void buildSchema(
         std::string const& name,
         std::shared_ptr<

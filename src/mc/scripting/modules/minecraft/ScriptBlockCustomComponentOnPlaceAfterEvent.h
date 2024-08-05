@@ -34,12 +34,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0ScriptBlockCustomComponentOnPlaceAfterEvent@ScriptModuleMinecraft@@QEAA@AEBUIntermediateStorage@01@AEBVWeakLifetimeScope@Scripting@@@Z
     MCAPI
     ScriptBlockCustomComponentOnPlaceAfterEvent(struct ScriptModuleMinecraft::ScriptBlockCustomComponentOnPlaceAfterEvent::IntermediateStorage const&, class Scripting::WeakLifetimeScope const&);
 
-    // symbol: ?bind@ScriptBlockCustomComponentOnPlaceAfterEvent@ScriptModuleMinecraft@@SA?AUClassBinding@Scripting@@XZ
     MCAPI static struct Scripting::ClassBinding bind();
 
     // NOLINTEND

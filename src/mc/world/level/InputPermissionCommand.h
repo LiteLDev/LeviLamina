@@ -14,26 +14,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1InputPermissionCommand@@UEAA@XZ
+    // vIndex: 0
     virtual ~InputPermissionCommand() = default;
 
-    // vIndex: 2, symbol: ?execute@InputPermissionCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+    // vIndex: 2
     virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    // symbol: ?setup@InputPermissionCommand@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry& registry);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_executeQuery@InputPermissionCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     MCAPI void _executeQuery(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    // symbol: ?_executeQueryVerbose@InputPermissionCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     MCAPI void _executeQueryVerbose(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    // symbol: ?_executeSet@InputPermissionCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     MCAPI void _executeSet(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // NOLINTEND

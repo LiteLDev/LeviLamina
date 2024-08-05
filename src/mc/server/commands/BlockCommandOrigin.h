@@ -24,68 +24,62 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BlockCommandOrigin@@UEAA@XZ
+    // vIndex: 0
     virtual ~BlockCommandOrigin();
 
-    // vIndex: 1, symbol:
-    // ?getRequestId@BlockCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 1
     virtual std::string const& getRequestId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@BlockCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 3, symbol: ?getBlockPosition@BlockCommandOrigin@@UEBA?AVBlockPos@@XZ
+    // vIndex: 3
     virtual class BlockPos getBlockPosition() const;
 
-    // vIndex: 4, symbol: ?getWorldPosition@BlockCommandOrigin@@UEBA?AVVec3@@XZ
+    // vIndex: 4
     virtual class Vec3 getWorldPosition() const;
 
-    // vIndex: 5, symbol: ?getRotation@BlockCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
+    // vIndex: 5
     virtual std::optional<class Vec2> getRotation() const;
 
-    // vIndex: 6, symbol: ?getLevel@BlockCommandOrigin@@UEBAPEAVLevel@@XZ
+    // vIndex: 6
     virtual class Level* getLevel() const;
 
-    // vIndex: 7, symbol: ?getDimension@BlockCommandOrigin@@UEBAPEAVDimension@@XZ
+    // vIndex: 7
     virtual class Dimension* getDimension() const;
 
-    // vIndex: 8, symbol: ?getEntity@BlockCommandOrigin@@UEBAPEAVActor@@XZ
+    // vIndex: 8
     virtual class Actor* getEntity() const;
 
-    // vIndex: 9, symbol: ?getPermissionsLevel@BlockCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
+    // vIndex: 9
     virtual ::CommandPermissionLevel getPermissionsLevel() const;
 
-    // vIndex: 10, symbol:
-    // ?clone@BlockCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
+    // vIndex: 10
     virtual std::unique_ptr<class CommandOrigin> clone() const;
 
-    // vIndex: 17, symbol: ?canUseCommandsWithoutCheatsEnabled@BlockCommandOrigin@@UEBA_NXZ
+    // vIndex: 17
     virtual bool canUseCommandsWithoutCheatsEnabled() const;
 
-    // vIndex: 18, symbol: ?isSelectorExpansionAllowed@BlockCommandOrigin@@UEBA_NXZ
+    // vIndex: 18
     virtual bool isSelectorExpansionAllowed() const;
 
-    // vIndex: 23, symbol: ?getOriginType@BlockCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
+    // vIndex: 23
     virtual ::CommandOriginType getOriginType() const;
 
-    // vIndex: 29, symbol: ?serialize@BlockCommandOrigin@@UEBA?AVCompoundTag@@XZ
+    // vIndex: 29
     virtual class CompoundTag serialize() const;
 
-    // vIndex: 30, symbol: ?isValid@BlockCommandOrigin@@UEBA_NXZ
+    // vIndex: 30
     virtual bool isValid() const;
 
-    // vIndex: 32, symbol: ?_getBaseCommandBlock@BlockCommandOrigin@@MEBAPEAVBaseCommandBlock@@AEAVBlockSource@@@Z
+    // vIndex: 32
     virtual class BaseCommandBlock* _getBaseCommandBlock(class BlockSource& region) const;
 
-    // vIndex: 33, symbol: ?_getBlockEntity@BlockCommandOrigin@@MEBAPEAVCommandBlockActor@@AEAVBlockSource@@@Z
+    // vIndex: 33
     virtual class CommandBlockActor* _getBlockEntity(class BlockSource& region) const;
 
-    // symbol: ??0BlockCommandOrigin@@QEAA@AEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI BlockCommandOrigin(class BlockSource& region, class BlockPos const& pos);
 
-    // symbol:
-    // ??0BlockCommandOrigin@@QEAA@AEAVLevel@@V?$AutomaticID@VDimension@@H@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@@Z
     MCAPI BlockCommandOrigin(
         class Level&          level,
         DimensionType         dimensionType,
@@ -97,8 +91,6 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    // symbol:
-    // ?_getName@BlockCommandOrigin@@IEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVBlockSource@@@Z
     MCAPI std::string _getName(class BlockSource&) const;
 
     // NOLINTEND

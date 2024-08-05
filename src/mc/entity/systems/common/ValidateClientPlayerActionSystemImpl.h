@@ -7,8 +7,6 @@
 
 namespace ValidateClientPlayerActionSystemImpl {
 // NOLINTBEGIN
-// symbol:
-// ?filterPlayerActionComparison@ValidateClientPlayerActionSystemImpl@@YAXAEBVStrictEntityContext@@AEBUPlayerActionComponent@@AEAUServerPlayerCurrentMovementComponent@@V?$EntityModifier@UPlayerActionAcceptanceComponent@@@@_N@Z
 MCAPI void filterPlayerActionComparison(
     class StrictEntityContext const&,
     struct PlayerActionComponent const&,

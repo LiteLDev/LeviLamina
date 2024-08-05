@@ -19,10 +19,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1RepeatUntilSuccessDefinition@@UEAA@XZ
+    // vIndex: 0
     virtual ~RepeatUntilSuccessDefinition() = default;
 
-    // vIndex: 1, symbol: ?load@RepeatUntilSuccessDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
+    // vIndex: 1
     virtual void load(class Json::Value value, class BehaviorFactory const& factory);
 
     // NOLINTEND

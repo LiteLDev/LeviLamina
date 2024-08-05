@@ -28,45 +28,43 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LeverBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~LeverBlock() = default;
 
-    // vIndex: 5, symbol:
-    // ?getCollisionShape@LeverBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 5
     virtual class AABB
     getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 11, symbol: ?getVisualShape@LeverBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
+    // vIndex: 11
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
 
-    // vIndex: 44, symbol: ?isLeverBlock@LeverBlock@@UEBA_NXZ
+    // vIndex: 44
     virtual bool isLeverBlock() const;
 
-    // vIndex: 47, symbol: ?isSignalSource@LeverBlock@@UEBA_NXZ
+    // vIndex: 47
     virtual bool isSignalSource() const;
 
-    // vIndex: 53, symbol: ?onFillBlock@LeverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 53
     virtual void onFillBlock(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
-    // vIndex: 59, symbol:
-    // ?shouldConnectToRedstone@LeverBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@W4Type@Direction@@@Z
+    // vIndex: 59
     virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
 
-    // vIndex: 72, symbol: ?setupRedstoneComponent@LeverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 72
     virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 85, symbol: ?mayPlace@LeverBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
+    // vIndex: 85
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar face) const;
 
-    // vIndex: 86, symbol: ?mayPlace@LeverBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 86
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 93, symbol: ?neighborChanged@LeverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 93
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 98, symbol: ?getPlacementBlock@LeverBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+    // vIndex: 98
     virtual class Block const& getPlacementBlock(
         class Actor const&    by,
         class BlockPos const& pos,
@@ -75,41 +73,38 @@ public:
         int                   itemValue
     ) const;
 
-    // vIndex: 100, symbol: ?isAttachedTo@LeverBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAV3@@Z
+    // vIndex: 100
     virtual bool
     isAttachedTo(class BlockSource& region, class BlockPos const& pos, class BlockPos& outAttachedTo) const;
 
-    // vIndex: 130, symbol: ?canSpawnOn@LeverBlock@@UEBA_NPEAVActor@@@Z
+    // vIndex: 130
     virtual bool canSpawnOn(class Actor*) const;
 
-    // vIndex: 143, symbol: ?onRemove@LeverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 143
     virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 146, symbol: ?onPlace@LeverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 146
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 148, symbol: ?tick@LeverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
-    // vIndex: 150, symbol: ?isInteractiveBlock@LeverBlock@@UEBA_NXZ
+    // vIndex: 150
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 152, symbol: ?use@LeverBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    // vIndex: 154, symbol: ?canSurvive@LeverBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 154
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 161, symbol: ?_onHitByActivatingAttack@LeverBlock@@EEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
+    // vIndex: 161
     virtual void _onHitByActivatingAttack(class BlockSource&, class BlockPos const&, class Actor*) const;
 
-    // symbol: ??0LeverBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI LeverBlock(std::string const& nameId, int id);
 
-    // symbol: ?toggle@LeverBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVPlayer@@@Z
     MCAPI void toggle(class BlockSource& region, class BlockPos const& pos, class Player* player) const;
 
-    // symbol: ?getLeverFacing@LeverBlock@@SA?AW4LeverDirection@@H@Z
     MCAPI static ::LeverDirection getLeverFacing(int facing);
 
     // NOLINTEND

@@ -27,16 +27,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DoublePlantBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~DoublePlantBlock() = default;
 
-    // vIndex: 72, symbol: ?setupRedstoneComponent@DoublePlantBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 72
     virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ??0DoublePlantBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI DoublePlantBlock(std::string const& nameId, int id);
 
-    // symbol: ?placeAt@DoublePlantBlock@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@HPEAVActor@@@Z
     MCAPI bool placeAt(class BlockSource&, class BlockPos const&, int, class Actor*) const;
 
     // NOLINTEND

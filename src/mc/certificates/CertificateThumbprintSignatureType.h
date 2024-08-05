@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1CertificateThumbprintSignatureType@@QEAA@XZ
     MCAPI ~CertificateThumbprintSignatureType();
 
     // NOLINTEND

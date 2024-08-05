@@ -36,54 +36,45 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: ??1VillagerBase@@UEAA@XZ
+    // vIndex: 10
     virtual ~VillagerBase();
 
-    // vIndex: 72, symbol: ?onLightningHit@VillagerBase@@UEAAXXZ
+    // vIndex: 72
     virtual void onLightningHit();
 
-    // vIndex: 74, symbol: ?handleEntityEvent@VillagerBase@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 74
     virtual void handleEntityEvent(::ActorEvent event, int data);
 
-    // vIndex: 147, symbol: ?readAdditionalSaveData@VillagerBase@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 148, symbol: ?addAdditionalSaveData@VillagerBase@@UEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // symbol: ??0VillagerBase@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI VillagerBase(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?consumeLoveFood@VillagerBase@@QEAAXXZ
     MCAPI void consumeLoveFood();
 
-    // symbol: ?getBreedingStackIndex@VillagerBase@@QEBAHXZ
     MCAPI int getBreedingStackIndex() const;
 
-    // symbol: ?isChasing@VillagerBase@@QEBA_NXZ
     MCAPI bool isChasing() const;
 
-    // symbol: ?isWillingToBreed@VillagerBase@@QEAA_N_N@Z
     MCAPI bool isWillingToBreed(bool consumeFoodIfNecessary);
 
-    // symbol: ?setChasing@VillagerBase@@QEAAX_N@Z
     MCAPI void setChasing(bool chasing);
 
-    // symbol: ?setWillingToBreed@VillagerBase@@QEAAX_N@Z
     MCAPI void setWillingToBreed(bool willingToBreed);
 
-    // symbol: ?stopGoals@VillagerBase@@QEAAXXZ
     MCAPI void stopGoals();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_addParticlesAroundSelf@VillagerBase@@AEAAXW4ParticleType@@@Z
     MCAPI void _addParticlesAroundSelf(::ParticleType particleType);
 
     // NOLINTEND

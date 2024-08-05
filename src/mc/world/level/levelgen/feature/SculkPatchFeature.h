@@ -14,16 +14,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SculkPatchFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~SculkPatchFeature() = default;
 
-    // vIndex: 1, symbol:
-    // ?place@SculkPatchFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
+    // vIndex: 1
     virtual std::optional<class BlockPos>
     place(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random, class RenderParams&) const;
 
-    // vIndex: 2, symbol:
-    // ?isValidPlacement@IFeature@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 2
     virtual bool isValidPlacement(std::string const&);
 
     // NOLINTEND

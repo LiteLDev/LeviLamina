@@ -15,10 +15,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1GlowItemFrameBlockActor@@UEAA@XZ
+    // vIndex: 0
     virtual ~GlowItemFrameBlockActor() = default;
 
-    // symbol: ??0GlowItemFrameBlockActor@@QEAA@VBlockPos@@@Z
     MCAPI explicit GlowItemFrameBlockActor(class BlockPos pos);
 
     // NOLINTEND

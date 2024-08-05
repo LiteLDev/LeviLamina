@@ -9,7 +9,6 @@ namespace BlockTraitConversionUtils { struct ConvertedSet; }
 
 namespace BlockTraitConversionUtils::FacingDirectionToBlockFace {
 // NOLINTBEGIN
-// symbol: ?R20U2@FacingDirectionToBlockFace@BlockTraitConversionUtils@@3UConvertedSet@2@A
 MCAPI extern struct BlockTraitConversionUtils::ConvertedSet R20U2;
 // NOLINTEND
 

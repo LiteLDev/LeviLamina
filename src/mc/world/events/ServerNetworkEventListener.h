@@ -14,14 +14,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ServerNetworkEventListener@@UEAA@XZ
+    // vIndex: 0
     virtual ~ServerNetworkEventListener() = default;
 
-    // vIndex: 1, symbol:
-    // ?onEvent@ServerNetworkEventListener@@UEAA?AW4EventResult@@AEBUServerNetworkGameplayNotificationEvent@@@Z
+    // vIndex: 1
     virtual ::EventResult onEvent(struct ServerNetworkGameplayNotificationEvent const&);
 
-    // vIndex: 2, symbol: ?onMessage@ServerNetworkEventListener@@UEAA?AW4EventResult@@AEBUMessageEvent@@@Z
+    // vIndex: 2
     virtual ::EventResult onMessage(struct MessageEvent const&);
 
     // NOLINTEND

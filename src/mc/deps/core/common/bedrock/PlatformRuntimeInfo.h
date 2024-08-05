@@ -12,10 +12,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1PlatformRuntimeInfo@Bedrock@@UEAA@XZ
+    // vIndex: 0
     virtual ~PlatformRuntimeInfo();
 
-    // symbol: ??0PlatformRuntimeInfo@Bedrock@@QEAA@XZ
     MCAPI PlatformRuntimeInfo();
 
     // NOLINTEND

@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1UUID@Scripting@@QEAA@XZ
     MCAPI ~UUID();
 
     // NOLINTEND

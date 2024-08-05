@@ -14,10 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ContainerScreenValidationActivate@@UEAA@XZ
+    // vIndex: 0
     virtual ~ContainerScreenValidationActivate() = default;
 
-    // vIndex: 3, symbol: ?tryActivate@ContainerScreenValidationActivate@@EEAA?AUContainerValidationResult@@XZ
+    // vIndex: 3
     virtual struct ContainerValidationResult tryActivate();
 
     // NOLINTEND

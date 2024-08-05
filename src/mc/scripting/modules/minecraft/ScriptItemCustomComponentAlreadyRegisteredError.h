@@ -18,11 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ScriptItemCustomComponentAlreadyRegisteredError@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptItemCustomComponentAlreadyRegisteredError();
 
-    // symbol:
-    // ?bind@ScriptItemCustomComponentAlreadyRegisteredError@ScriptModuleMinecraft@@SA?AUErrorBinding@Scripting@@XZ
     MCAPI static struct Scripting::ErrorBinding bind();
 
     // NOLINTEND

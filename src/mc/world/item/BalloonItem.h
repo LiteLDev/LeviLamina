@@ -26,32 +26,28 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BalloonItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~BalloonItem() = default;
 
-    // vIndex: 14, symbol: ?isDyeable@BalloonItem@@UEBA_NXZ
+    // vIndex: 14
     virtual bool isDyeable() const;
 
-    // vIndex: 62, symbol: ?getColor@BalloonItem@@UEBA?AVColor@mce@@PEBVCompoundTag@@AEBVItemDescriptor@@@Z
+    // vIndex: 62
     virtual class mce::Color getColor(class CompoundTag const* userData, class ItemDescriptor const& instance) const;
 
-    // vIndex: 83, symbol:
-    // ?buildDescriptionId@BalloonItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+    // vIndex: 83
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 118, symbol:
-    // ?_useOn@BalloonItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+    // vIndex: 118
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor&, class BlockPos pos, uchar face, class Vec3 const& clickPos) const;
 
-    // symbol: ??0BalloonItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI BalloonItem(std::string const& name, int id);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_createKnot@BalloonItem@@AEBAPEAVLeashFenceKnotActor@@AEAVBlockSource@@VBlockPos@@AEBVItemInstance@@@Z
     MCAPI class LeashFenceKnotActor*
     _createKnot(class BlockSource& region, class BlockPos pos, class ItemInstance const& item) const;
 

@@ -11,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?reloadComponent@AddRiderComponent@@QEAAXAEAVActor@@@Z
     MCAPI void reloadComponent(class Actor& owner);
 
-    // symbol: ??1AddRiderComponent@@QEAA@XZ
     MCAPI ~AddRiderComponent();
 
     // NOLINTEND

@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1AsyncStateRef@@QEAA@XZ
     MCAPI ~AsyncStateRef();
 
     // NOLINTEND

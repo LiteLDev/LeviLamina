@@ -20,21 +20,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CDNConfig@@UEAA@XZ
+    // vIndex: 0
     virtual ~CDNConfig() = default;
 
-    // symbol: ??0CDNConfig@@QEAA@AEBVPath@Core@@@Z
     MCAPI explicit CDNConfig(class Core::Path const&);
 
-    // symbol:
-    // ?getCDNUrls@CDNConfig@@QEAA?AV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@XZ
     MCAPI std::vector<std::pair<std::string, std::string>> getCDNUrls();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_readConfigFile@CDNConfig@@AEAAXAEBVPath@Core@@@Z
     MCAPI void _readConfigFile(class Core::Path const&);
 
     // NOLINTEND

@@ -15,42 +15,37 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DragonScanningGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~DragonScanningGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@DragonScanningGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@DragonScanningGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@DragonScanningGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@DragonScanningGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@DragonScanningGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@DragonScanningGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0DragonScanningGoal@@QEAA@AEAVEnderDragon@@@Z
     MCAPI explicit DragonScanningGoal(class EnderDragon& mob);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?SITTING_ATTACK_VIEW_RANGE@DragonScanningGoal@@0MA
     MCAPI static float SITTING_ATTACK_VIEW_RANGE;
 
-    // symbol: ?SITTING_CHARGE_VIEW_RANGE@DragonScanningGoal@@0MA
     MCAPI static float SITTING_CHARGE_VIEW_RANGE;
 
-    // symbol: ?SITTING_SCANNING_IDLE_TICKS@DragonScanningGoal@@0HA
     MCAPI static int SITTING_SCANNING_IDLE_TICKS;
 
     // NOLINTEND

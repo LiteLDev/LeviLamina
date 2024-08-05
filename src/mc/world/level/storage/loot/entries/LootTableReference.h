@@ -19,16 +19,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol:
-    // ?_createItem@LootTableReference@@MEBA_NAEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEAVRandom@@AEAVLootTableContext@@@Z
+    // vIndex: 0
     virtual bool
     _createItem(std::vector<class ItemStack>& output, class Random& random, class LootTableContext& context) const;
 
-    // vIndex: 1, symbol: __gen_??1LootTableReference@@UEAA@XZ
+    // vIndex: 1
     virtual ~LootTableReference() = default;
 
-    // symbol:
-    // ?deserialize@LootTableReference@@SA?AV?$unique_ptr@VLootPoolEntry@@U?$default_delete@VLootPoolEntry@@@std@@@std@@VValue@Json@@HHAEAV?$vector@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@V?$allocator@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@@2@@3@@Z
     MCAPI static std::unique_ptr<class LootPoolEntry> deserialize(
         class Json::Value                                      entry,
         int                                                    weight,

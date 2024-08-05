@@ -19,15 +19,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1LegacyTriggerItemComponent@@UEAA@XZ
+    // vIndex: 0
     virtual ~LegacyTriggerItemComponent();
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol:
-    // ?_dispatch@LegacyTriggerItemComponent@@IEAAXAEA_NAEAVItemStackBase@@AEBVDefinitionTrigger@@AEAVRenderParams@@@Z
     MCAPI void _dispatch(bool&, class ItemStackBase&, class DefinitionTrigger const&, class RenderParams&);
 
     // NOLINTEND

@@ -11,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createDeferredSystem@FlagPassengerRemovalSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createDeferredSystem();
 
-    // symbol: ?createImmediateSystem@FlagPassengerRemovalSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createImmediateSystem();
 
     // NOLINTEND

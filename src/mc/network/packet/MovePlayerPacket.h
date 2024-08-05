@@ -16,33 +16,28 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1MovePlayerPacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~MovePlayerPacket();
 
-    // vIndex: 1, symbol: ?getId@MovePlayerPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@MovePlayerPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@MovePlayerPacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 7, symbol: ?isValid@MovePlayerPacket@@UEBA_NXZ
+    // vIndex: 7
     virtual bool isValid() const;
 
-    // vIndex: 8, symbol:
-    // ?_read@MovePlayerPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0MovePlayerPacket@@QEAA@XZ
     MCAPI MovePlayerPacket();
 
-    // symbol: ??0MovePlayerPacket@@QEAA@AEBVPlayer@@AEBVVec3@@@Z
     MCAPI MovePlayerPacket(class Player const& player, class Vec3 const& pos);
 
-    // symbol: ??0MovePlayerPacket@@QEAA@AEBVPlayer@@W4PositionMode@PlayerPositionModeComponent@@HH@Z
     MCAPI MovePlayerPacket(
         class Player const&                         player,
         ::PlayerPositionModeComponent::PositionMode resetPosition,

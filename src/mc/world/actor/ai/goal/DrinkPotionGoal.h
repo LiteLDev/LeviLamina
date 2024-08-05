@@ -20,30 +20,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DrinkPotionGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~DrinkPotionGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@DrinkPotionGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@DrinkPotionGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@DrinkPotionGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@DrinkPotionGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@DrinkPotionGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@DrinkPotionGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol:
-    // ??0DrinkPotionGoal@@QEAA@AEAVMob@@MAEBV?$vector@UDrinkPotionData@@V?$allocator@UDrinkPotionData@@@std@@@std@@@Z
     MCAPI DrinkPotionGoal(
         class Mob&                                 mob,
         float                                      walkSpeedModifier,
@@ -54,10 +51,8 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?SPEED_MODIFIER_DRINKING_UUID@DrinkPotionGoal@@0VUUID@mce@@B
     MCAPI static class mce::UUID const SPEED_MODIFIER_DRINKING_UUID;
 
-    // symbol: ?THROTTLE_COOLDOWN@DrinkPotionGoal@@0HB
     MCAPI static int const THROTTLE_COOLDOWN;
 
     // NOLINTEND

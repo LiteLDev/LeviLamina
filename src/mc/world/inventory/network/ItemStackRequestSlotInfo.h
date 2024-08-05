@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ItemStackRequestSlotInfo@@QEAA@XZ
     MCAPI ~ItemStackRequestSlotInfo();
 
     // NOLINTEND

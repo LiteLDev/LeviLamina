@@ -16,32 +16,30 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1StonecutterContainerManagerModel@@UEAA@XZ
+    // vIndex: 0
     virtual ~StonecutterContainerManagerModel() = default;
 
-    // vIndex: 6, symbol:
-    // ?getItemCopies@StonecutterContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+    // vIndex: 6
     virtual std::vector<class ItemStack> getItemCopies() const;
 
-    // vIndex: 7, symbol: ?setSlot@StonecutterContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
+    // vIndex: 7
     virtual void setSlot(int slot, class ItemStack const& item, bool fromNetwork);
 
-    // vIndex: 8, symbol: ?getSlot@StonecutterContainerManagerModel@@UEBAAEBVItemStack@@H@Z
+    // vIndex: 8
     virtual class ItemStack const& getSlot(int slot) const;
 
-    // vIndex: 9, symbol: ?setData@StonecutterContainerManagerModel@@UEAAXHH@Z
+    // vIndex: 9
     virtual void setData(int id, int value);
 
-    // vIndex: 10, symbol: ?broadcastChanges@StonecutterContainerManagerModel@@UEAAXXZ
+    // vIndex: 10
     virtual void broadcastChanges();
 
-    // vIndex: 16, symbol: ?isValid@StonecutterContainerManagerModel@@UEAA_NM@Z
+    // vIndex: 16
     virtual bool isValid(float pickRange);
 
-    // vIndex: 17, symbol: ?_postInit@StonecutterContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+    // vIndex: 17
     virtual class ContainerScreenContext _postInit();
 
-    // symbol: ??0StonecutterContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
     MCAPI
     StonecutterContainerManagerModel(::ContainerID containerId, class Player& player, class BlockPos const& blockPos);
 

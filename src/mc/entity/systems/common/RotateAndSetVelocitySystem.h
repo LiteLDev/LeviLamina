@@ -11,11 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@RotateAndSetVelocitySystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
-    // symbol:
-    // ?doTick@RotateAndSetVelocitySystem@@SAXAEBUMoveInputComponent@@AEBUPlayerInputModeComponent@@AEBUVRMoveAdjustAngleComponent@@AEAULocalMoveVelocityComponent@@@Z
     MCAPI static void
     doTick(struct MoveInputComponent const& input, struct PlayerInputModeComponent const& inputMode, struct VRMoveAdjustAngleComponent const&, struct LocalMoveVelocityComponent&);
 

@@ -14,10 +14,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BeaconContainerScreenValidator@@UEAA@XZ
+    // vIndex: 0
     virtual ~BeaconContainerScreenValidator() = default;
 
-    // symbol: ??0BeaconContainerScreenValidator@@QEAA@XZ
     MCAPI BeaconContainerScreenValidator();
 
     // NOLINTEND

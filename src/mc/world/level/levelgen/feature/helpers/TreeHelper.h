@@ -12,18 +12,14 @@ namespace TreeHelper { struct TreeParams; }
 
 namespace TreeHelper {
 // NOLINTBEGIN
-// symbol: ?isValidTreePosition@TreeHelper@@YA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@@Z
 MCAPI bool isValidTreePosition(class IBlockWorldGenAPI const& target, class BlockPos const& pos);
 
-// symbol: ?isValidTreePosition@TreeHelper@@YA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@AEBUTreeParams@1@@Z
 MCAPI bool isValidTreePosition(
     class IBlockWorldGenAPI const&       target,
     class BlockPos const&                pos,
     struct TreeHelper::TreeParams const& treeParams
 );
 
-// symbol:
-// ?placeRadialBlockGroup@TreeHelper@@YA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEBVBlock@@HH_NAEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@3@@Z
 MCAPI std::optional<class BlockPos> placeRadialBlockGroup(
     class IBlockWorldGenAPI& target,
     class BlockPos const&    pos,
@@ -35,8 +31,6 @@ MCAPI std::optional<class BlockPos> placeRadialBlockGroup(
     std::vector<class BlockDescriptor> const& mayGrowThrough
 );
 
-// symbol:
-// ?prepareSpawn@TreeHelper@@YA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@HAEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@2@Z
 MCAPI bool prepareSpawn(
     class IBlockWorldGenAPI const&            target,
     class BlockPos const&                     pos,

@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ResourceTaskGroupScope@@QEAA@XZ
     MCAPI ~ResourceTaskGroupScope();
 
     // NOLINTEND

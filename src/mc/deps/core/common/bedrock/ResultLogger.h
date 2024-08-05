@@ -23,12 +23,8 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_hook@ResultLogger@Bedrock@@CAAEAV?$copyable_function@$$A6AXW4LogLevel@Bedrock@@W4LogAreaID@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@brstd@@XZ
     MCAPI static class brstd::copyable_function<void(::Bedrock::LogLevel, ::LogAreaID, std::string const&)>& _hook();
 
-    // symbol:
-    // ?log@ResultLogger@Bedrock@@CAXV?$optional@W4LogLevel@Bedrock@@@std@@V?$optional@W4LogAreaID@@@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@AEBUCallStack@2@@Z
     MCAPI static void
     log(std::optional<::Bedrock::LogLevel>,
         std::optional<::LogAreaID>,

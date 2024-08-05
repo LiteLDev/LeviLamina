@@ -21,7 +21,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1Prop@CurrentlyOwnedArrayProperties@QuickJS@Scripting@@QEAA@XZ
         MCAPI ~Prop();
 
         // NOLINTEND

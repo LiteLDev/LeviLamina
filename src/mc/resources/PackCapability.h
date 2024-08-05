@@ -29,7 +29,6 @@ public:
 
         public:
             // NOLINTBEGIN
-            // symbol: ??1Failed@ValidationResult@PackCapability@@QEAA@XZ
             MCAPI ~Failed();
 
             // NOLINTEND
@@ -52,7 +51,6 @@ public:
 
         public:
             // NOLINTBEGIN
-            // symbol: ??1Succeeded@ValidationResult@PackCapability@@QEAA@XZ
             MCAPI ~Succeeded();
 
             // NOLINTEND
@@ -73,7 +71,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1PackCapability@@QEAA@XZ
     MCAPI ~PackCapability();
 
     // NOLINTEND

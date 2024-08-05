@@ -13,7 +13,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FileSizePresetTokenImpl@Core@@UEAA@XZ
+    // vIndex: 0
     virtual ~FileSizePresetTokenImpl() = default;
 
     // NOLINTEND

@@ -16,10 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0FileInfo@@QEAA@VPath@Core@@HV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI FileInfo(class Core::Path _filePath, int _fileSize, std::string _fileHash);
 
-    // symbol: ??1FileInfo@@QEAA@XZ
     MCAPI ~FileInfo();
 
     // NOLINTEND

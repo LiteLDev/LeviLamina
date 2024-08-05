@@ -19,23 +19,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1Structure@worldgen@br@@UEAA@XZ
+    // vIndex: 0
     virtual ~Structure();
 
-    // vIndex: 1, symbol:
-    // ?findValidGenerationPoint@JigsawStructure@worldgen@br@@UEBA?AV?$optional@VGenerationStub@worldgen@br@@@std@@AEAUGenerationContext@23@@Z
+    // vIndex: 1
     virtual std::optional<class br::worldgen::GenerationStub>
     findValidGenerationPoint(struct br::worldgen::GenerationContext&) const = 0;
 
-    // symbol: ??0Structure@worldgen@br@@QEAA@AEBU012@@Z
     MCAPI Structure(struct br::worldgen::Structure const&);
 
-    // symbol:
-    // ?generate@Structure@worldgen@br@@QEBA?AV?$shared_ptr@VStructureInstance@worldgen@br@@@std@@AEAUGenerationContext@23@@Z
     MCAPI std::shared_ptr<class br::worldgen::StructureInstance>
           generate(struct br::worldgen::GenerationContext&) const;
 
-    // symbol: ??8Structure@worldgen@br@@QEBA_NAEBU012@@Z
     MCAPI bool operator==(struct br::worldgen::Structure const&) const;
 
     // NOLINTEND

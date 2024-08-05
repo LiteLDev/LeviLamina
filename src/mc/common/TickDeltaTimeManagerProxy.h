@@ -13,16 +13,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1TickDeltaTimeManagerProxy@@UEAA@XZ
+    // vIndex: 0
     virtual ~TickDeltaTimeManagerProxy() = default;
 
-    // vIndex: 1, symbol: ?start@TickDeltaTimeManagerProxy@@UEAAXXZ
+    // vIndex: 1
     virtual void start();
 
-    // vIndex: 2, symbol: ?calculateDeltaTimeAndReset@TickDeltaTimeManagerProxy@@UEAANXZ
+    // vIndex: 2
     virtual double calculateDeltaTimeAndReset();
 
-    // symbol: ??0TickDeltaTimeManagerProxy@@QEAA@XZ
     MCAPI TickDeltaTimeManagerProxy();
 
     // NOLINTEND

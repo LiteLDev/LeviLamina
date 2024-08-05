@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?update@EcsEventDispatcher@@QEAAXXZ
     MCAPI void update();
 
     // NOLINTEND

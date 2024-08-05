@@ -21,7 +21,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?bind@ScriptFeedItem@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UFeedItem@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct FeedItem> bind();
 
     // NOLINTEND

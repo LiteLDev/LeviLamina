@@ -27,73 +27,69 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DoublePlantBaseBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~DoublePlantBaseBlock() = default;
 
-    // vIndex: 2, symbol: ?getNextBlockPermutation@DoublePlantBaseBlock@@UEBAPEBVBlock@@AEBV2@@Z
+    // vIndex: 2
     virtual class Block const* getNextBlockPermutation(class Block const&) const;
 
-    // vIndex: 5, symbol:
-    // ?getCollisionShape@DoublePlantBaseBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 5
     virtual class AABB
     getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 9, symbol:
-    // ?getOutline@DoublePlantBaseBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
+    // vIndex: 9
     virtual class AABB const&
     getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 11, symbol: ?getVisualShape@DoublePlantBaseBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
+    // vIndex: 11
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
 
-    // vIndex: 15, symbol: ?randomlyModifyPosition@DoublePlantBaseBlock@@UEBA?AVVec3@@AEBVBlockPos@@AEAH@Z
+    // vIndex: 15
     virtual class Vec3 randomlyModifyPosition(class BlockPos const& pos, int& seed) const;
 
-    // vIndex: 16, symbol: ?randomlyModifyPosition@DoublePlantBaseBlock@@UEBA?AVVec3@@AEBVBlockPos@@@Z
+    // vIndex: 16
     virtual class Vec3 randomlyModifyPosition(class BlockPos const& pos) const;
 
-    // vIndex: 57, symbol: ?canContainLiquid@DoublePlantBaseBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // vIndex: 80, symbol:
-    // ?onFertilized@DoublePlantBaseBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
+    // vIndex: 80
     virtual bool
     onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor*, ::FertilizerType) const;
 
-    // vIndex: 82, symbol: ?canBeFertilized@DoublePlantBaseBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 82
     virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
 
-    // vIndex: 85, symbol: ?mayPlace@DoublePlantBaseBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
+    // vIndex: 85
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar) const;
 
-    // vIndex: 86, symbol: ?mayPlace@DoublePlantBaseBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 86
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 94, symbol: ?getSecondPart@DoublePlantBaseBlock@@UEBA_NAEBVIConstBlockSource@@AEBVBlockPos@@AEAV3@@Z
+    // vIndex: 94
     virtual bool
     getSecondPart(class IConstBlockSource const& region, class BlockPos const& pos, class BlockPos& out) const;
 
-    // vIndex: 95, symbol: ?playerWillDestroy@DoublePlantBaseBlock@@UEBAPEBVBlock@@AEAVPlayer@@AEBVBlockPos@@AEBV2@@Z
+    // vIndex: 95
     virtual class Block const*
     playerWillDestroy(class Player& player, class BlockPos const& pos, class Block const& block) const;
 
-    // vIndex: 146, symbol: ?onPlace@DoublePlantBaseBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 146
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 148, symbol: ?tick@DoublePlantBaseBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
-    // vIndex: 154, symbol: ?canSurvive@DoublePlantBaseBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 154
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 163, symbol: ?checkAlive@DoublePlantBaseBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 163
     virtual void checkAlive(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 165, symbol: ?_keepRelevantStateForDropping@DoublePlantBaseBlock@@MEBAAEBVBlock@@AEBV2@@Z
+    // vIndex: 165
     virtual class Block const& _keepRelevantStateForDropping(class Block const& block) const;
 
-    // symbol: ??0DoublePlantBaseBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI DoublePlantBaseBlock(std::string const& nameId, int id);
 
     // NOLINTEND

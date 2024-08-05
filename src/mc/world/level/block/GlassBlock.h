@@ -27,26 +27,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1GlassBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~GlassBlock() = default;
 
-    // vIndex: 6, symbol:
-    // ?getCollisionShapeForCamera@GlassBlock@@UEBA_NAEAVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 6
     virtual bool
     getCollisionShapeForCamera(class AABB&, class Block const&, class IConstBlockSource const&, class BlockPos const&)
         const;
 
-    // vIndex: 25, symbol: ?canConnect@GlassBlock@@UEBA_NAEBVBlock@@E0@Z
+    // vIndex: 25
     virtual bool canConnect(class Block const& otherBlock, uchar toOther, class Block const& thisBlock) const;
 
-    // vIndex: 61, symbol: ?canBeUsedInCommands@GlassBlock@@UEBA_NAEBVBaseGameVersion@@@Z
+    // vIndex: 61
     virtual bool canBeUsedInCommands(class BaseGameVersion const& requiredBaseGameVersion) const;
 
-    // vIndex: 90, symbol: ?breaksFallingBlocks@GlassBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
+    // vIndex: 90
     virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
 
-    // symbol:
-    // ??0GlassBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@_N22@Z
     MCAPI GlassBlock(std::string const&, int, class Material const&, bool, bool, bool);
 
     // NOLINTEND

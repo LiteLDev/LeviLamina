@@ -10,10 +10,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0TrailComponent@@QEAA@XZ
     MCAPI TrailComponent();
 
-    // symbol: ?initFromDefinition@TrailComponent@@QEAAXAEAVActor@@@Z
     MCAPI void initFromDefinition(class Actor& actor);
 
     // NOLINTEND

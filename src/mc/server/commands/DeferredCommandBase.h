@@ -11,10 +11,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DeferredCommandBase@@UEAA@XZ
+    // vIndex: 0
     virtual ~DeferredCommandBase() = default;
 
-    // vIndex: 1, symbol: ?execute@DeferredCommand@@UEAAXAEAVMinecraftCommands@@@Z
+    // vIndex: 1
     virtual void execute(class MinecraftCommands& commands) = 0;
 
     // NOLINTEND

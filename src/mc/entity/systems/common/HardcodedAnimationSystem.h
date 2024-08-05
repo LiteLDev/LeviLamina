@@ -15,15 +15,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@HardcodedAnimationSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?doHardcodedAnimation@HardcodedAnimationSystem@@CAXAEBVStrictEntityContext@@AEAUMobAnimationComponent@@AEBUMobBodyRotationComponent@@AEBUMobHurtTimeComponent@@AEAUActorWalkAnimationComponent@@AEBUStateVectorComponent@@AEBUActorDataFlagComponent@@V?$Optional@$$CBV?$FlagComponent@UBlazeFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@ULavaSlimeFlag@@@@@@V?$Optional@$$CBUOnFireComponent@@@@V?$Optional@$$CBUPassengerComponent@@@@V?$Optional@$$CBV?$FlagComponent@UMobIsJumpingFlag@@@@@@@Z
     MCAPI static void doHardcodedAnimation(
         class StrictEntityContext const&,
         struct MobAnimationComponent&,

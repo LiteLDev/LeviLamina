@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1IdentifierString@CerealHelpers@@QEAA@XZ
     MCAPI ~IdentifierString();
 
     // NOLINTEND

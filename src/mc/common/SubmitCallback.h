@@ -14,12 +14,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?Register@SubmitCallback@@QEAAJPEAXP6AX0PEAUXTaskQueueObject@@W4XTaskQueuePort@@@ZPEAUXTaskQueueRegistrationToken@@@Z
     MCAPI long
     Register(void*, void (*)(void*, struct XTaskQueueObject*, ::XTaskQueuePort), struct XTaskQueueRegistrationToken*);
 
-    // symbol: ?Unregister@SubmitCallback@@QEAAXUXTaskQueueRegistrationToken@@@Z
     MCAPI void Unregister(struct XTaskQueueRegistrationToken);
 
     // NOLINTEND

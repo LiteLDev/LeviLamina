@@ -35,14 +35,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1VindicationIllager@@UEAA@XZ
+    // vIndex: 10
     virtual ~VindicationIllager() = default;
 
-    // vIndex: 184, symbol: ?_getWalkTargetValue@VindicationIllager@@UEAAMAEBVBlockPos@@@Z
+    // vIndex: 184
     virtual float _getWalkTargetValue(class BlockPos const& pos);
 
-    // symbol:
-    // ??0VindicationIllager@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI VindicationIllager(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

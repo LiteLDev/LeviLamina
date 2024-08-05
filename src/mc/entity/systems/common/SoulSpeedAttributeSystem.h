@@ -16,14 +16,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?_tryProcessSoulSpeed@SoulSpeedAttributeSystem@@SAXAEAVStrictEntityContext@@AEAVActorOwnerComponent@@@Z
     MCAPI static void _tryProcessSoulSpeed(class StrictEntityContext&, class ActorOwnerComponent&);
 
-    // symbol: ?createSystem@SoulSpeedAttributeSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
-    // symbol:
-    // ?tickSystem@SoulSpeedAttributeSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@UMobFlag@@@@@@VActorOwnerComponent@@@@@Z
     MCAPI static void tickSystem(class ViewT<
                                  class StrictEntityContext,
                                  struct Include<

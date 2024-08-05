@@ -35,25 +35,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1Spider@@UEAA@XZ
+    // vIndex: 10
     virtual ~Spider() = default;
 
-    // vIndex: 38, symbol: ?getShadowRadius@Spider@@UEBAMXZ
+    // vIndex: 38
     virtual float getShadowRadius() const;
 
-    // vIndex: 66, symbol: ?shouldRender@Spider@@UEBA_NXZ
+    // vIndex: 66
     virtual bool shouldRender() const;
 
-    // vIndex: 111, symbol: ?canBeAffected@Spider@@UEBA_NI@Z
+    // vIndex: 111
     virtual bool canBeAffected(uint effectId) const;
 
-    // vIndex: 149, symbol: ?_playStepSound@Spider@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 149
     virtual void _playStepSound(class BlockPos const& pos, class Block const& onBlock);
 
-    // vIndex: 191, symbol: ?getModelScale@Spider@@UEBAMXZ
+    // vIndex: 191
     virtual float getModelScale() const;
 
-    // symbol: ??0Spider@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Spider(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

@@ -27,29 +27,26 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1StainedGlassBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~StainedGlassBlock() = default;
 
-    // vIndex: 6, symbol:
-    // ?getCollisionShapeForCamera@StainedGlassBlock@@UEBA_NAEAVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 6
     virtual bool
     getCollisionShapeForCamera(class AABB&, class Block const&, class IConstBlockSource const&, class BlockPos const&)
         const;
 
-    // vIndex: 25, symbol: ?canConnect@StainedGlassBlock@@UEBA_NAEBVBlock@@E0@Z
+    // vIndex: 25
     virtual bool canConnect(class Block const& otherBlock, uchar toOther, class Block const& thisBlock) const;
 
-    // vIndex: 90, symbol: ?breaksFallingBlocks@StainedGlassBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
+    // vIndex: 90
     virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
 
-    // symbol: ??0StainedGlassBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N1@Z
     MCAPI StainedGlassBlock(std::string const&, int, bool, bool);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?STAINED_GLASS_DOESNT_BREAK_FALLING_BLOCK_VERSION@StainedGlassBlock@@0VBaseGameVersion@@B
     MCAPI static class BaseGameVersion const STAINED_GLASS_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
     // NOLINTEND

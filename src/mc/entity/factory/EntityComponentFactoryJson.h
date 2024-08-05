@@ -14,11 +14,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1EntityComponentFactoryJson@@UEAA@XZ
+    // vIndex: 0
     virtual ~EntityComponentFactoryJson();
 
-    // symbol:
-    // ?tryGetDefinitionSerializer@EntityComponentFactoryJson@@QEBAPEAVIJsonDefinitionSerializer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class IJsonDefinitionSerializer* tryGetDefinitionSerializer(std::string const& name) const;
 
     // NOLINTEND

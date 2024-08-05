@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ScriptingInitializeEvent@@QEAA@XZ
     MCAPI ~ScriptingInitializeEvent();
 
     // NOLINTEND

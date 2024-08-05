@@ -21,16 +21,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BlockActorLevelListener@@UEAA@XZ
+    // vIndex: 0
     virtual ~BlockActorLevelListener();
 
-    // vIndex: 19, symbol: ?onChunkLoaded@BlockActorLevelListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
+    // vIndex: 19
     virtual void onChunkLoaded(class ChunkSource& source, class LevelChunk& lc);
 
-    // vIndex: 22, symbol: ?onChunkUnloaded@BlockActorLevelListener@@UEAAXAEAVLevelChunk@@@Z
+    // vIndex: 22
     virtual void onChunkUnloaded(class LevelChunk& lc);
 
-    // symbol: ??0BlockActorLevelListener@@QEAA@XZ
     MCAPI BlockActorLevelListener();
 
     // NOLINTEND

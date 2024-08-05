@@ -24,44 +24,42 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptSystemLevelEventListener@ScriptModuleMinecraft@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptSystemLevelEventListener() = default;
 
-    // vIndex: 1, symbol: ?onLevelTickEnd@ScriptDeferredEventListener@@UEAAXXZ
+    // vIndex: 1
     virtual void onLevelTickEnd();
 
-    // vIndex: 2, symbol: ?onRunAsyncJobs@ScriptDeferredEventListener@@UEAAXXZ
+    // vIndex: 2
     virtual void onRunAsyncJobs();
 
-    // vIndex: 3, symbol: ?onRunSystemTick@ScriptSystemLevelEventListener@ScriptModuleMinecraft@@UEAA_NXZ
+    // vIndex: 3
     virtual bool onRunSystemTick();
 
-    // vIndex: 4, symbol: ?onFlushWorldAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
+    // vIndex: 4
     virtual bool onFlushWorldAfterEvents();
 
-    // vIndex: 5, symbol: ?onFlushSystemAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
+    // vIndex: 5
     virtual bool onFlushSystemAfterEvents();
 
-    // vIndex: 6, symbol: ?onFlushEditorExtensionContextAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
+    // vIndex: 6
     virtual bool onFlushEditorExtensionContextAfterEvents();
 
-    // vIndex: 7, symbol: ?onFlushBlockCustomComponentAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
+    // vIndex: 7
     virtual bool onFlushBlockCustomComponentAfterEvents();
 
-    // vIndex: 8, symbol: ?onFlushEditorDataStoreAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
+    // vIndex: 8
     virtual bool onFlushEditorDataStoreAfterEvents();
 
-    // vIndex: 9, symbol: ?onFlushItemCustomComponentAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
+    // vIndex: 9
     virtual bool onFlushItemCustomComponentAfterEvents();
 
-    // vIndex: 10, symbol: ?onPreFlushAfterEvents@ScriptDeferredEventListener@@UEAAXXZ
+    // vIndex: 10
     virtual void onPreFlushAfterEvents();
 
-    // vIndex: 11, symbol: ?onPostFlushAfterEvents@ScriptDeferredEventListener@@UEAAXXZ
+    // vIndex: 11
     virtual void onPostFlushAfterEvents();
 
-    // symbol:
-    // ??0ScriptSystemLevelEventListener@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VScriptSystemAfterEvents@ScriptModuleMinecraft@@@3@@Z
     MCAPI ScriptSystemLevelEventListener(
         class Scripting::WeakLifetimeScope const&                                                 scope,
         struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptSystemAfterEvents> handle

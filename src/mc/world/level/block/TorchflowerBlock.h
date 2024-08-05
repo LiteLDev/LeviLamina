@@ -27,55 +27,53 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1TorchflowerBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~TorchflowerBlock() = default;
 
-    // vIndex: 80, symbol:
-    // ?onFertilized@TorchflowerBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
+    // vIndex: 80
     virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, ::FertilizerType) const;
 
-    // vIndex: 82, symbol: ?canBeFertilized@TorchflowerBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 82
     virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
 
-    // vIndex: 165, symbol: ?getBaseSeed@BeetrootBlock@@UEBA?BVItemInstance@@XZ
+    // vIndex: 165
     virtual class ItemInstance const getBaseSeed() const;
 
-    // vIndex: 166, symbol: ?onLand@AnvilBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 166
     virtual void onLand(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 167, symbol: ?isFreeToFall@FallingBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 167
     virtual bool isFreeToFall(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 168, symbol: ?startFalling@FallingBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@_N@Z
+    // vIndex: 168
     virtual void
     startFalling(class BlockSource& region, class BlockPos const& pos, class Block const& oldBlock, bool creative)
         const;
 
-    // vIndex: 169, symbol: ?getInputSignal@DiodeBlock@@MEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 169
     virtual int getInputSignal(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 170, symbol: ?isAlternateInput@DiodeBlock@@MEBA_NAEBVBlock@@@Z
+    // vIndex: 170
     virtual bool isAlternateInput(class Block const& block) const;
 
-    // vIndex: 171, symbol: ?getAlternateSignal@DiodeBlock@@MEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 171
     virtual int getAlternateSignal(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 172, symbol: ?getOutputSignal@DiodeBlock@@MEBAHAEBVBlock@@@Z
+    // vIndex: 172
     virtual int getOutputSignal(class Block const& block) const;
 
-    // vIndex: 173, symbol: ?getTurnOffDelay@DiodeBlock@@MEBAHAEBVBlock@@@Z
+    // vIndex: 173
     virtual int getTurnOffDelay(class Block const& block) const;
 
-    // vIndex: 174, symbol: ?getTurnOnDelay@RepeaterBlock@@MEBAHAEBVBlock@@@Z
+    // vIndex: 174
     virtual int getTurnOnDelay(class Block const& block) const;
 
-    // vIndex: 175, symbol: ?getOnBlock@RepeaterBlock@@MEBAPEBVBlock@@PEBV2@@Z
+    // vIndex: 175
     virtual class Block const* getOnBlock(class Block const* block) const;
 
-    // vIndex: 176, symbol: ?getOffBlock@RepeaterBlock@@MEBAPEBVBlock@@PEBV2@@Z
+    // vIndex: 176
     virtual class Block const* getOffBlock(class Block const* block) const;
 
-    // symbol: ??0TorchflowerBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI TorchflowerBlock(std::string const&, int);
 
     // NOLINTEND

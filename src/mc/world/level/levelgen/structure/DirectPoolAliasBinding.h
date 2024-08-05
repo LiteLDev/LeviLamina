@@ -22,15 +22,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol:
-    // ?appendResolvedAliases@DirectPoolAliasBinding@PoolAliasBindingInternal@@UEBAXAEAVIRandom@@AEAVPoolAliasLookup@PoolAliasBinding@@@Z
+    // vIndex: 0
     virtual void appendResolvedAliases(class IRandom&, class PoolAliasBinding::PoolAliasLookup&) const;
 
-    // vIndex: 1, symbol:
-    // ?forAllTargets@DirectPoolAliasBinding@PoolAliasBindingInternal@@UEBAXAEBV?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z@std@@@Z
+    // vIndex: 1
     virtual void forAllTargets(std::function<void(std::string const&, std::string const&)> const&) const;
 
-    // vIndex: 2, symbol: __gen_??1DirectPoolAliasBinding@PoolAliasBindingInternal@@UEAA@XZ
+    // vIndex: 2
     virtual ~DirectPoolAliasBinding() = default;
 
     // NOLINTEND

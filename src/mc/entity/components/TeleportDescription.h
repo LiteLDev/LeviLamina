@@ -13,16 +13,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ?getJsonName@TeleportDescription@@UEBAPEBDXZ
+    // vIndex: 0
     virtual char const* getJsonName() const;
 
-    // vIndex: 1, symbol: ??1TeleportDescription@@UEAA@XZ
+    // vIndex: 1
     virtual ~TeleportDescription();
 
-    // vIndex: 2, symbol: ?deserializeData@TeleportDescription@@UEAAXUDeserializeDataParams@@@Z
+    // vIndex: 2
     virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
-    // symbol: ??0TeleportDescription@@QEAA@XZ
     MCAPI TeleportDescription();
 
     // NOLINTEND

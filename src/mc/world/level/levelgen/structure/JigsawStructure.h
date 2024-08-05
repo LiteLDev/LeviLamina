@@ -23,11 +23,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1JigsawStructure@worldgen@br@@UEAA@XZ
+    // vIndex: 0
     virtual ~JigsawStructure();
 
-    // vIndex: 1, symbol:
-    // ?findValidGenerationPoint@JigsawStructure@worldgen@br@@UEBA?AV?$optional@VGenerationStub@worldgen@br@@@std@@AEAUGenerationContext@23@@Z
+    // vIndex: 1
     virtual std::optional<class br::worldgen::GenerationStub>
     findValidGenerationPoint(struct br::worldgen::GenerationContext&) const;
 

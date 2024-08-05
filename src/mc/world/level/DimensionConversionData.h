@@ -11,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getNetherScale@DimensionConversionData@@QEBAHXZ
     MCAPI int getNetherScale() const;
 
-    // symbol: ?getOverworldSpawnPoint@DimensionConversionData@@QEBAAEBVVec3@@XZ
     MCAPI class Vec3 const& getOverworldSpawnPoint() const;
 
     // NOLINTEND

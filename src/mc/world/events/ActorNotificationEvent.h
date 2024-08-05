@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ActorNotificationEvent@@QEAA@XZ
     MCAPI ~ActorNotificationEvent();
 
     // NOLINTEND

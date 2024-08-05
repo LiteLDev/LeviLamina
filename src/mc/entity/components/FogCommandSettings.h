@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1FogCommandSettings@@QEAA@XZ
     MCAPI ~FogCommandSettings();
 
     // NOLINTEND

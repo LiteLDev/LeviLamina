@@ -20,18 +20,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1NearestAttackableTargetDefinition@@UEAA@XZ
+    // vIndex: 0
     virtual ~NearestAttackableTargetDefinition() = default;
 
-    // vIndex: 2, symbol: ?validate@NearestAttackableTargetDefinition@@UEBA_NAEAVMob@@@Z
+    // vIndex: 2
     virtual bool validate(class Mob& mob) const;
 
-    // symbol:
-    // ?initialize@NearestAttackableTargetDefinition@@QEBAXAEAVEntityContext@@AEAVNearestAttackableTargetGoal@@@Z
     MCAPI void initialize(class EntityContext& entity, class NearestAttackableTargetGoal& goal) const;
 
-    // symbol:
-    // ?buildSchema@NearestAttackableTargetDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VNearestAttackableTargetDefinition@@@JsonUtil@@@3@@Z
     MCAPI static void buildSchema(
         std::string const& name,
         std::shared_ptr<

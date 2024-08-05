@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1PlaceBlock@Actions@AgentComponents@@QEAA@XZ
     MCAPI ~PlaceBlock();
 
     // NOLINTEND

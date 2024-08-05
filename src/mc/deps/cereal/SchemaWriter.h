@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?isSequenceWriter@SchemaWriter@cereal@@UEBA_NXZ
     MCVAPI bool isSequenceWriter() const;
 
     // NOLINTEND

@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ParseContextData@QuickJS@Scripting@@QEAA@XZ
     MCAPI ~ParseContextData();
 
     // NOLINTEND

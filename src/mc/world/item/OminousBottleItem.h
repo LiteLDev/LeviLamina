@@ -27,54 +27,47 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1OminousBottleItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~OminousBottleItem() = default;
 
-    // vIndex: 44, symbol: ?isDestructive@OminousBottleItem@@UEBA_NH@Z
+    // vIndex: 44
     virtual bool isDestructive(int) const;
 
-    // vIndex: 48, symbol:
-    // ?appendFormattedHovertext@OminousBottleItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+    // vIndex: 48
     virtual void appendFormattedHovertext(class ItemStackBase const&, class Level&, std::string&, bool) const;
 
-    // vIndex: 56, symbol: ?isValidAuxValue@OminousBottleItem@@UEBA_NH@Z
+    // vIndex: 56
     virtual bool isValidAuxValue(int) const;
 
-    // vIndex: 59, symbol: ?uniqueAuxValues@OminousBottleItem@@UEBA_NXZ
+    // vIndex: 59
     virtual bool uniqueAuxValues() const;
 
-    // vIndex: 72, symbol: ?use@OminousBottleItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+    // vIndex: 72
     virtual class ItemStack& use(class ItemStack&, class Player&) const;
 
-    // vIndex: 75, symbol:
-    // ?useTimeDepleted@OminousBottleItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
+    // vIndex: 75
     virtual ::ItemUseMethod useTimeDepleted(class ItemStack&, class Level*, class Player*) const;
 
-    // vIndex: 83, symbol:
-    // ?buildDescriptionId@OminousBottleItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+    // vIndex: 83
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 84, symbol:
-    // ?buildEffectDescriptionName@OminousBottleItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemStackBase@@@Z
+    // vIndex: 84
     virtual std::string buildEffectDescriptionName(class ItemStackBase const&) const;
 
-    // vIndex: 104, symbol: ?getIconInfo@OminousBottleItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
+    // vIndex: 104
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
 
-    // vIndex: 119, symbol: ?getPotionType@OminousBottleItem@@UEBA?AW4PotionType@Potion@@XZ
+    // vIndex: 119
     virtual ::Potion::PotionType getPotionType() const;
 
-    // symbol: ??0OminousBottleItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI OminousBottleItem(std::string const&, int);
 
-    // symbol: ?getAppliedMobEffect@OminousBottleItem@@SA?AVMobEffectInstance@@H@Z
     MCAPI static class MobEffectInstance getAppliedMobEffect(int);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?MAX_AMPLIFIER@OminousBottleItem@@0HB
     MCAPI static int const MAX_AMPLIFIER;
 
     // NOLINTEND

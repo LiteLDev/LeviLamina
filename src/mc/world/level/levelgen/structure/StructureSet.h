@@ -27,7 +27,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1Entry@StructureSet@worldgen@br@@QEAA@XZ
         MCAPI ~Entry();
 
         // NOLINTEND
@@ -41,8 +40,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?create@StructureSet@worldgen@br@@SA?AV?$shared_ptr@UStructureSet@worldgen@br@@@std@@V?$shared_ptr@$$CBUStructure@worldgen@br@@@5@UStructurePlacement@23@@Z
     MCAPI static std::shared_ptr<struct br::worldgen::StructureSet>
         create(std::shared_ptr<struct br::worldgen::Structure const>, struct br::worldgen::StructurePlacement);
 

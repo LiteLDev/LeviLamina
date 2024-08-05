@@ -16,13 +16,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DispenserContainerManagerModel@@UEAA@XZ
+    // vIndex: 0
     virtual ~DispenserContainerManagerModel() = default;
 
-    // vIndex: 17, symbol: ?_postInit@DispenserContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+    // vIndex: 17
     virtual class ContainerScreenContext _postInit();
 
-    // symbol: ??0DispenserContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
     MCAPI
     DispenserContainerManagerModel(::ContainerID containerId, class Player& player, class BlockPos const& blockPos);
 

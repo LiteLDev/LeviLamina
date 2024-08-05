@@ -15,22 +15,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1WitherRandomAttackPosGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~WitherRandomAttackPosGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@WitherRandomAttackPosGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@WitherRandomAttackPosGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@WitherRandomAttackPosGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@WitherRandomAttackPosGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // symbol: ??0WitherRandomAttackPosGoal@@QEAA@AEAVMob@@MHH@Z
     MCAPI WitherRandomAttackPosGoal(class Mob& mob, float speed, int xzDist, int yDist);
 
     // NOLINTEND

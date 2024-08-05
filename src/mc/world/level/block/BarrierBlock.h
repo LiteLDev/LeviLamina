@@ -27,19 +27,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BarrierBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~BarrierBlock() = default;
 
-    // vIndex: 25, symbol: ?canConnect@BarrierBlock@@UEBA_NAEBVBlock@@E0@Z
+    // vIndex: 25
     virtual bool canConnect(class Block const& otherBlock, uchar toOther, class Block const& thisBlock) const;
 
-    // vIndex: 57, symbol: ?canContainLiquid@BarrierBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // vIndex: 127, symbol: ?getShadeBrightness@BarrierBlock@@UEBAMAEBVBlock@@@Z
+    // vIndex: 127
     virtual float getShadeBrightness(class Block const&) const;
 
-    // symbol: ??0BarrierBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI BarrierBlock(std::string const& nameId, int id);
 
     // NOLINTEND

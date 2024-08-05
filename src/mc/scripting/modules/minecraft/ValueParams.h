@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ValueParams@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ValueParams();
 
     // NOLINTEND

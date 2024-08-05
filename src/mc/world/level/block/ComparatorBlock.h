@@ -27,74 +27,70 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ComparatorBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~ComparatorBlock() = default;
 
-    // vIndex: 47, symbol: ?isSignalSource@ComparatorBlock@@UEBA_NXZ
+    // vIndex: 47
     virtual bool isSignalSource() const;
 
-    // vIndex: 54, symbol: ?getDirectSignal@ComparatorBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@H@Z
+    // vIndex: 54
     virtual int getDirectSignal(class BlockSource& region, class BlockPos const& pos, int dir) const;
 
-    // vIndex: 59, symbol:
-    // ?shouldConnectToRedstone@ComparatorBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@W4Type@Direction@@@Z
+    // vIndex: 59
     virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
 
-    // vIndex: 66, symbol: ?onRedstoneUpdate@ComparatorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
+    // vIndex: 66
     virtual void
     onRedstoneUpdate(class BlockSource& region, class BlockPos const& pos, int strength, bool isFirstTime) const;
 
-    // vIndex: 72, symbol: ?setupRedstoneComponent@ComparatorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 72
     virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 76, symbol: ?isPreservingMediumWhenPlaced@ComparatorBlock@@UEBA_NPEBVBlockLegacy@@@Z
+    // vIndex: 76
     virtual bool isPreservingMediumWhenPlaced(class BlockLegacy const*) const;
 
-    // vIndex: 86, symbol: ?mayPlace@ComparatorBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 86
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 93, symbol: ?neighborChanged@ComparatorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 93
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@ComparatorBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 105, symbol: ?triggerEvent@ComparatorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@HH@Z
+    // vIndex: 105
     virtual void triggerEvent(class BlockSource& region, class BlockPos const& pos, int b0, int b1) const;
 
-    // vIndex: 129, symbol: ?getVariant@ComparatorBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 130, symbol: ?canSpawnOn@ComparatorBlock@@UEBA_NPEAVActor@@@Z
+    // vIndex: 130
     virtual bool canSpawnOn(class Actor*) const;
 
-    // vIndex: 146, symbol: ?onPlace@ComparatorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 146
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 148, symbol: ?tick@ComparatorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 150, symbol: ?isInteractiveBlock@ComparatorBlock@@UEBA_NXZ
+    // vIndex: 150
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 152, symbol: ?use@ComparatorBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    // vIndex: 154, symbol: ?canSurvive@ComparatorBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 154
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ??0ComparatorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
     MCAPI ComparatorBlock(std::string const& nameId, int id, bool on);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_installCircuit@ComparatorBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@_N@Z
     MCAPI void _installCircuit(class BlockSource& region, class BlockPos const& pos, bool loading) const;
 
-    // symbol: ?_refreshOutputState@ComparatorBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@H@Z
     MCAPI void _refreshOutputState(class BlockSource& region, class BlockPos const& pos, int strength) const;
 
     // NOLINTEND

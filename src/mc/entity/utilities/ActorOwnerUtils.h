@@ -4,7 +4,6 @@
 
 namespace ActorOwnerUtils {
 // NOLINTBEGIN
-// symbol: ?constActorOwnerComponentOrAssert@ActorOwnerUtils@@YAPEBVActorOwnerComponent@@AEBVEntityContext@@@Z
 MCAPI class ActorOwnerComponent const* constActorOwnerComponentOrAssert(class EntityContext const& entity);
 // NOLINTEND
 

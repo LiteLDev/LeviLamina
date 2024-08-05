@@ -15,27 +15,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1MotionPredictionHintsPacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~MotionPredictionHintsPacket();
 
-    // vIndex: 1, symbol: ?getId@MotionPredictionHintsPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@MotionPredictionHintsPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@MotionPredictionHintsPacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 8, symbol:
-    // ?_read@MotionPredictionHintsPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0MotionPredictionHintsPacket@@QEAA@XZ
     MCAPI MotionPredictionHintsPacket();
 
-    // symbol: ??0MotionPredictionHintsPacket@@QEAA@AEBVActor@@@Z
     MCAPI explicit MotionPredictionHintsPacket(class Actor const& entity);
 
     // NOLINTEND

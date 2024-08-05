@@ -18,37 +18,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?addListener@MultipleTestTracker@gametest@@QEAAXV?$shared_ptr@VIGameTestListener@gametest@@@std@@@Z
     MCAPI void addListener(std::shared_ptr<class gametest::IGameTestListener> listener);
 
-    // symbol: ?isDone@MultipleTestTracker@gametest@@QEBA_NXZ
     MCAPI bool isDone() const;
 
-    // symbol: ?removeListener@MultipleTestTracker@gametest@@QEAAXV?$shared_ptr@VIGameTestListener@gametest@@@std@@@Z
     MCAPI void removeListener(std::shared_ptr<class gametest::IGameTestListener> listener);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?sFailedOptionalTest@MultipleTestTracker@gametest@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const sFailedOptionalTest;
 
-    // symbol:
-    // ?sFailedRequiredTest@MultipleTestTracker@gametest@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const sFailedRequiredTest;
 
-    // symbol:
-    // ?sNotStartedTest@MultipleTestTracker@gametest@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const sNotStartedTest;
 
-    // symbol:
-    // ?sOnGoingTest@MultipleTestTracker@gametest@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const sOnGoingTest;
 
-    // symbol:
-    // ?sSuccessfulTest@MultipleTestTracker@gametest@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const sSuccessfulTest;
 
     // NOLINTEND

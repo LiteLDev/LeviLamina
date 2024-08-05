@@ -18,25 +18,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DouseFireSubcomponent@@UEAA@XZ
+    // vIndex: 0
     virtual ~DouseFireSubcomponent() = default;
 
-    // vIndex: 1, symbol: ?readfromJSON@DouseFireSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
+    // vIndex: 1
     virtual void readfromJSON(class Json::Value& component, class SemVersion const& engineVersion);
 
-    // vIndex: 2, symbol: ?writetoJSON@DouseFireSubcomponent@@UEBAXAEAVValue@Json@@@Z
+    // vIndex: 2
     virtual void writetoJSON(class Json::Value& component) const;
 
-    // vIndex: 3, symbol: ?doOnHitEffect@DouseFireSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
+    // vIndex: 3
     virtual void doOnHitEffect(class Actor& owner, class ProjectileComponent& component);
 
-    // vIndex: 4, symbol: ?getName@DouseFireSubcomponent@@UEAAPEBDXZ
+    // vIndex: 4
     virtual char const* getName();
 
-    // symbol: ??0DouseFireSubcomponent@@QEAA@XZ
     MCAPI DouseFireSubcomponent();
 
-    // symbol: ?douseFire@DouseFireSubcomponent@@QEAAXAEAVActor@@AEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void douseFire(class Actor& owner, class BlockSource& region, class BlockPos const& pos);
 
     // NOLINTEND

@@ -16,11 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?create@ActorUpdatePreviousPositionSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo create();
 
-    // symbol:
-    // ?tickSystem@ActorUpdatePreviousPositionSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@VActorOwnerComponent@@@@@Z
     MCAPI static void tickSystem(class ViewT<
                                  class StrictEntityContext,
                                  struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,

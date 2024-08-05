@@ -13,11 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4RemoveMobEffectsRequestComponent@TickMobEffectsSystem@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct TickMobEffectsSystem::RemoveMobEffectsRequestComponent&
     operator=(struct TickMobEffectsSystem::RemoveMobEffectsRequestComponent&&);
 
-    // symbol: ??1RemoveMobEffectsRequestComponent@TickMobEffectsSystem@@QEAA@XZ
     MCAPI ~RemoveMobEffectsRequestComponent();
 
     // NOLINTEND

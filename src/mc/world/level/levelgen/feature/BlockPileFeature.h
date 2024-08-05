@@ -14,16 +14,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BlockPileFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~BlockPileFeature() = default;
 
-    // vIndex: 3, symbol: ?place@BlockPileFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 3
     virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 4, symbol: ?getBlockToPlace@BlockPileFeature@@MEBAAEBVBlock@@AEAVRandom@@@Z
+    // vIndex: 4
     virtual class Block const& getBlockToPlace(class Random& random) const;
 
-    // symbol: ??0BlockPileFeature@@QEAA@AEBVBlock@@@Z
     MCAPI explicit BlockPileFeature(class Block const& block);
 
     // NOLINTEND

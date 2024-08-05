@@ -16,16 +16,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?createActorUpdatePostTickPositionDeltaSystem@ActorUpdatePostTickPositionDeltaSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createActorUpdatePostTickPositionDeltaSystem();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_tickActorUpdatePostTickPositionDeltaSystem@ActorUpdatePostTickPositionDeltaSystem@@CAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@$$CBUStateVectorComponent@@UPostTickPositionDeltaComponent@@@@@Z
     MCAPI static void
     _tickActorUpdatePostTickPositionDeltaSystem(class ViewT<
                                                 class StrictEntityContext,

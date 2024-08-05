@@ -16,24 +16,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ShipwreckPiece@@UEAA@XZ
+    // vIndex: 0
     virtual ~ShipwreckPiece() = default;
 
-    // vIndex: 2, symbol: ?getType@ShipwreckPiece@@UEBA?AW4StructurePieceType@@XZ
+    // vIndex: 2
     virtual ::StructurePieceType getType() const;
 
-    // vIndex: 4, symbol: ?postProcess@ShipwreckPiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+    // vIndex: 4
     virtual bool postProcess(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_calculateTargetPos@ShipwreckPiece@@CA?AVBlockPos@@AEAVBlockSource@@V2@W4Rotation@@1@Z
     MCAPI static class BlockPos
     _calculateTargetPos(class BlockSource& region, class BlockPos origin, ::Rotation rot, class BlockPos size);
 
-    // symbol: ?_calculateTargetPosLegacy@ShipwreckPiece@@CA?AVBlockPos@@AEAVBlockSource@@V2@W4Rotation@@1@Z
     MCAPI static class BlockPos
     _calculateTargetPosLegacy(class BlockSource& region, class BlockPos origin, ::Rotation rot, class BlockPos size);
 
@@ -41,8 +39,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?STRUCTURE_SHIPWRECK_TYPES@ShipwreckPiece@@0QBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const STRUCTURE_SHIPWRECK_TYPES[];
 
     // NOLINTEND

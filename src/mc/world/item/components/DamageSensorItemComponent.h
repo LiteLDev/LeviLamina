@@ -21,14 +21,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DamageSensorItemComponent@@UEAA@XZ
+    // vIndex: 0
     virtual ~DamageSensorItemComponent() = default;
 
-    // symbol:
-    // ??0DamageSensorItemComponent@@QEAA@AEBV?$vector@HV?$allocator@H@std@@@std@@W4LevelSoundEvent@Legacy@Puv@@W4ParticleType@@@Z
     MCAPI DamageSensorItemComponent(std::vector<int> const&, ::Puv::Legacy::LevelSoundEvent, ::ParticleType);
 
-    // symbol: ?getIdentifier@DamageSensorItemComponent@@SAAEBVHashedString@@XZ
     MCAPI static class HashedString const& getIdentifier();
 
     // NOLINTEND

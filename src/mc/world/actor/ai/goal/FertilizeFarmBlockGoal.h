@@ -15,46 +15,42 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FertilizeFarmBlockGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~FertilizeFarmBlockGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@FertilizeFarmBlockGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@FertilizeFarmBlockGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@FertilizeFarmBlockGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@FertilizeFarmBlockGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@FertilizeFarmBlockGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@FertilizeFarmBlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // vIndex: 11, symbol: ?isValidTarget@FertilizeFarmBlockGoal@@MEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 11
     virtual bool isValidTarget(class BlockSource& region, class BlockPos const& pos);
 
-    // symbol: ??0FertilizeFarmBlockGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit FertilizeFarmBlockGoal(class Mob& mob);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?tryFertilizeCrop@FertilizeFarmBlockGoal@@IEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI bool tryFertilizeCrop(class BlockSource& region, class BlockPos const& farmlandPos);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_findFertilizer@FertilizeFarmBlockGoal@@AEAA_NXZ
     MCAPI bool _findFertilizer();
 
     // NOLINTEND

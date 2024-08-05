@@ -15,38 +15,33 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LevelChunkSaveManagerProxy@@UEAA@XZ
+    // vIndex: 0
     virtual ~LevelChunkSaveManagerProxy() = default;
 
-    // vIndex: 1, symbol:
-    // ?getRandomDimension@LevelChunkSaveManagerProxy@@UEBA?AV?$WeakRef@VDimension@@@@AEAVDimensionManager@@@Z
+    // vIndex: 1
     virtual class WeakRef<class Dimension> getRandomDimension(class DimensionManager&) const;
 
-    // vIndex: 2, symbol:
-    // ?getRandomChunk@LevelChunkSaveManagerProxy@@UEBA?AV?$shared_ptr@VLevelChunk@@@std@@AEAVDimension@@@Z
+    // vIndex: 2
     virtual std::shared_ptr<class LevelChunk> getRandomChunk(class Dimension&) const;
 
-    // vIndex: 3, symbol:
-    // ?getChunk@LevelChunkSaveManagerProxy@@UEBA?AV?$shared_ptr@VLevelChunk@@@std@@AEAVDimension@@AEBVChunkPos@@@Z
+    // vIndex: 3
     virtual std::shared_ptr<class LevelChunk> getChunk(class Dimension&, class ChunkPos const&) const;
 
-    // vIndex: 4, symbol: ?doesNonActorDataInLevelChunkNeedSaving@LevelChunkSaveManagerProxy@@UEBA_NAEBVLevelChunk@@HH@Z
+    // vIndex: 4
     virtual bool doesNonActorDataInLevelChunkNeedSaving(class LevelChunk const&, int, int) const;
 
-    // vIndex: 5, symbol: ?doesLevelChunkNeedSaving@LevelChunkSaveManagerProxy@@UEBA_NAEBVLevelChunk@@HH@Z
+    // vIndex: 5
     virtual bool doesLevelChunkNeedSaving(class LevelChunk const&, int, int) const;
 
-    // vIndex: 6, symbol: ?saveLiveChunk@LevelChunkSaveManagerProxy@@UEAAXAEAVDimension@@AEAVLevelChunk@@@Z
+    // vIndex: 6
     virtual void saveLiveChunk(class Dimension&, class LevelChunk&);
 
-    // vIndex: 7, symbol:
-    // ?queueTaskForChunkSave@LevelChunkSaveManagerProxy@@UEAAXV?$function@$$A6A?AVTaskResult@@XZ@std@@@Z
+    // vIndex: 7
     virtual void queueTaskForChunkSave(std::function<class TaskResult()>);
 
-    // vIndex: 8, symbol: ?startLeaveGame@LevelChunkSaveManagerProxy@@UEAAXXZ
+    // vIndex: 8
     virtual void startLeaveGame();
 
-    // symbol: ??0LevelChunkSaveManagerProxy@@QEAA@AEAVRandom@@AEAVScheduler@@@Z
     MCAPI LevelChunkSaveManagerProxy(class Random&, class Scheduler&);
 
     // NOLINTEND

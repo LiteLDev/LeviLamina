@@ -15,20 +15,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MoveTowardsRestrictionGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~MoveTowardsRestrictionGoal() = default;
 
-    // vIndex: 2, symbol: ?canContinueToUse@MoveTowardsRestrictionGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@MoveTowardsRestrictionGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?_randomizeWantedPositionTowardsRestriction@MoveTowardsRestrictionGoal@@IEAA_NAEBVVec3@@@Z
     MCAPI bool _randomizeWantedPositionTowardsRestriction(class Vec3 const&);
 
     // NOLINTEND

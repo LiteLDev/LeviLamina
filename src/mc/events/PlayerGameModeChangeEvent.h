@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1PlayerGameModeChangeEvent@@QEAA@XZ
     MCAPI ~PlayerGameModeChangeEvent();
 
     // NOLINTEND

@@ -27,13 +27,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CameraBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~CameraBlock() = default;
 
-    // vIndex: 61, symbol: ?canBeUsedInCommands@CameraBlock@@UEBA_NAEBVBaseGameVersion@@@Z
+    // vIndex: 61
     virtual bool canBeUsedInCommands(class BaseGameVersion const& requiredBaseGameVersion) const;
 
-    // symbol: ??0CameraBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI CameraBlock(std::string const& nameId, int id);
 
     // NOLINTEND

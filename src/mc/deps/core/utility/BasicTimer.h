@@ -11,16 +11,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0BasicTimer@@QEAA@NV?$function@$$A6ANXZ@std@@@Z
     MCAPI BasicTimer(double timeDelay, std::function<double()> getTimeCallback);
 
-    // symbol: ?isFinished@BasicTimer@@QEBA_NXZ
     MCAPI bool isFinished() const;
 
-    // symbol: ?resetTime@BasicTimer@@QEAAXXZ
     MCAPI void resetTime();
 
-    // symbol: ??1BasicTimer@@QEAA@XZ
     MCAPI ~BasicTimer();
 
     // NOLINTEND

@@ -27,17 +27,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1InvisibleBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~InvisibleBlock() = default;
 
-    // vIndex: 4, symbol:
-    // ?clip@InvisibleBlock@@UEBA?AVHitResult@@AEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@3W4ShapeType@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 4
     virtual class HitResult
     clip(class Block const&, class BlockSource const&, class BlockPos const&, class Vec3 const&, class Vec3 const&, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // symbol:
-    // ??0InvisibleBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI InvisibleBlock(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND

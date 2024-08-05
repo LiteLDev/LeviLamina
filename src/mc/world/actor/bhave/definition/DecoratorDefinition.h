@@ -19,15 +19,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DecoratorDefinition@@UEAA@XZ
+    // vIndex: 0
     virtual ~DecoratorDefinition() = default;
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol:
-    // ?_decoratorLoadChildBehavior@DecoratorDefinition@@KA?AV?$unique_ptr@VBehaviorDefinition@@U?$default_delete@VBehaviorDefinition@@@std@@@std@@VValue@Json@@AEBVBehaviorFactory@@VBehaviorTreeDefinitionPtr@@@Z
     MCAPI static std::unique_ptr<class BehaviorDefinition> _decoratorLoadChildBehavior(
         class Json::Value               value,
         class BehaviorFactory const&    factory,

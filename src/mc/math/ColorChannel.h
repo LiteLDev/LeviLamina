@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?INVALID@ColorChannel@@2V1@B
     MCAPI static class ColorChannel const INVALID;
 
     // NOLINTEND

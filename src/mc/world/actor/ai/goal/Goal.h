@@ -13,50 +13,44 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1Goal@@UEAA@XZ
+    // vIndex: 0
     virtual ~Goal();
 
-    // vIndex: 1, symbol: ?canUse@AdmireItemGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse() = 0;
 
-    // vIndex: 2, symbol: ?canContinueToUse@Goal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 3, symbol: ?canBeInterrupted@Goal@@UEAA_NXZ
+    // vIndex: 3
     virtual bool canBeInterrupted();
 
-    // vIndex: 4, symbol: ?start@Goal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@Goal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@Goal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@AdmireItemGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const = 0;
 
-    // vIndex: 8, symbol: ?isTargetGoal@Goal@@UEBA_NXZ
+    // vIndex: 8
     virtual bool isTargetGoal() const;
 
-    // vIndex: 9, symbol: ?onPlayerDimensionChanged@Goal@@UEAAXPEAVPlayer@@V?$AutomaticID@VDimension@@H@@1@Z
+    // vIndex: 9
     virtual void onPlayerDimensionChanged(class Player* player, DimensionType fromDimension, DimensionType toDimension);
 
-    // symbol: ??0Goal@@QEAA@XZ
     MCAPI Goal();
 
-    // symbol: ?getRequiredControlFlags@Goal@@QEBAHXZ
     MCAPI int getRequiredControlFlags() const;
 
-    // symbol: ?getTypeId@Goal@@QEBAGXZ
     MCAPI ushort getTypeId() const;
 
-    // symbol: ?setRequiredControlFlags@Goal@@QEAAXH@Z
     MCAPI void setRequiredControlFlags(int requiredControlFlags);
 
-    // symbol: ?setTypeId@Goal@@QEAAXG@Z
     MCAPI void setTypeId(ushort typeId);
 
     // NOLINTEND

@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1PlayerSayCommandEvent@@QEAA@XZ
     MCAPI ~PlayerSayCommandEvent();
 
     // NOLINTEND

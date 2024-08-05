@@ -11,7 +11,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1NoiseBasedColorPaletteFlag@@UEAA@XZ
+    // vIndex: 0
     virtual ~NoiseBasedColorPaletteFlag() = default;
 
     // NOLINTEND

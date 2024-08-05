@@ -16,23 +16,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MegaTreeTrunk@@UEAA@XZ
+    // vIndex: 0
     virtual ~MegaTreeTrunk() = default;
 
-    // vIndex: 1, symbol:
-    // ?placeTrunk@MegaTreeTrunk@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@HAEAVRenderParams@@AEBUTreeParams@TreeHelper@@PEBVITreeCanopy@@@Z
+    // vIndex: 1
     virtual std::optional<class BlockPos>
     placeTrunk(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random, int treeHeight, class RenderParams& renderParams, struct TreeHelper::TreeParams const& treeParams, class ITreeCanopy const*)
         const;
 
-    // vIndex: 2, symbol: ?getTreeHeight@MegaTreeTrunk@@UEBAHAEAVRandom@@@Z
+    // vIndex: 2
     virtual int getTreeHeight(class Random& random) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_prepareSpawn@MegaTreeTrunk@@AEBA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@HAEBUTreeParams@TreeHelper@@@Z
     MCAPI bool _prepareSpawn(
         class IBlockWorldGenAPI&             target,
         class BlockPos const&                pos,

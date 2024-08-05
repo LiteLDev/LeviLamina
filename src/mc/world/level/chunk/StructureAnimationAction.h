@@ -15,27 +15,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1StructureAnimationAction@@UEAA@XZ
+    // vIndex: 0
     virtual ~StructureAnimationAction() = default;
 
-    // vIndex: 1, symbol: ?execute@StructureAnimationAction@@UEAAXAEAVServerLevel@@AEAVDimension@@@Z
+    // vIndex: 1
     virtual void execute(class ServerLevel& level, class Dimension& dimension);
 
-    // vIndex: 2, symbol: ?serialize@StructureAnimationAction@@UEAAXAEAVCompoundTag@@@Z
+    // vIndex: 2
     virtual void serialize(class CompoundTag& tag);
 
-    // vIndex: 3, symbol: ??8StructureAnimationAction@@UEBA_NAEBVIRequestAction@@@Z
+    // vIndex: 3
     virtual bool operator==(class IRequestAction const&) const;
 
-    // symbol:
-    // ??0StructureAnimationAction@@QEAA@V?$unique_ptr@VStructureAnimationData@@U?$default_delete@VStructureAnimationData@@@std@@@std@@V?$AutomaticID@VDimension@@H@@@Z
     MCAPI StructureAnimationAction(
         std::unique_ptr<class StructureAnimationData> structureAnimationData,
         DimensionType                                 dimensionType
     );
 
-    // symbol:
-    // ??0StructureAnimationAction@@QEAA@AEBVStructureSettings@@V?$AutomaticID@VDimension@@H@@AEBVBlockPos@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI StructureAnimationAction(
         class StructureSettings const& structureSettings,
         DimensionType                  dimensionType,
@@ -43,11 +39,8 @@ public:
         std::string const&             fullName
     );
 
-    // symbol: ?isValidTag@StructureAnimationAction@@SA_NAEBVCompoundTag@@@Z
     MCAPI static bool isValidTag(class CompoundTag const& tag);
 
-    // symbol:
-    // ?load@StructureAnimationAction@@SA?AV?$unique_ptr@VStructureAnimationAction@@U?$default_delete@VStructureAnimationAction@@@std@@@std@@AEBVCompoundTag@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
     MCAPI static std::unique_ptr<class StructureAnimationAction>
     load(class CompoundTag const& tag, std::string const& dimensionPrefix);
 

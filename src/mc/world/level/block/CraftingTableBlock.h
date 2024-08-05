@@ -27,19 +27,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CraftingTableBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~CraftingTableBlock() = default;
 
-    // vIndex: 32, symbol: ?isCraftingBlock@CraftingTableBlock@@UEBA_NXZ
+    // vIndex: 32
     virtual bool isCraftingBlock() const;
 
-    // vIndex: 142, symbol: ?_addHardCodedBlockComponents@CraftingTableBlock@@UEAAXAEBVExperiments@@@Z
+    // vIndex: 142
     virtual void _addHardCodedBlockComponents(class Experiments const&);
 
-    // vIndex: 152, symbol: ?use@CraftingTableBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    // symbol: ??0CraftingTableBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI CraftingTableBlock(std::string const& nameId, int id);
 
     // NOLINTEND

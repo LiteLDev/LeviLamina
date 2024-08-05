@@ -21,31 +21,30 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1AppIsland@Bedrock@@UEAA@XZ
+    // vIndex: 0
     virtual ~AppIsland();
 
-    // vIndex: 1, symbol: ?getId@AppIsland@Bedrock@@UEAAGXZ
+    // vIndex: 1
     virtual ushort getId();
 
-    // vIndex: 2, symbol: ?start@AppIsland@Bedrock@@UEAA_NXZ
+    // vIndex: 2
     virtual bool start();
 
-    // vIndex: 3, symbol: ?suspend@AppIsland@Bedrock@@UEAA_NXZ
+    // vIndex: 3
     virtual bool suspend();
 
-    // vIndex: 4, symbol: ?resume@AppIsland@Bedrock@@UEAA_NXZ
+    // vIndex: 4
     virtual bool resume();
 
-    // vIndex: 5, symbol: ?stop@AppIsland@Bedrock@@UEAA_NXZ
+    // vIndex: 5
     virtual bool stop();
 
-    // vIndex: 6, symbol: ?mainUpdate@AppIsland@Bedrock@@UEAAXXZ
+    // vIndex: 6
     virtual void mainUpdate();
 
-    // vIndex: 7, symbol: ?processActivationArguments@AppIsland@Bedrock@@UEAAXAEBVActivationArguments@2@@Z
+    // vIndex: 7
     virtual void processActivationArguments(class Bedrock::ActivationArguments const& args);
 
-    // symbol: ??0AppIsland@Bedrock@@QEAA@XZ
     MCAPI AppIsland();
 
     // NOLINTEND

@@ -26,14 +26,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LegacyDyeItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~LegacyDyeItem() = default;
 
-    // vIndex: 15, symbol: ?isDye@LegacyDyeItem@@UEBA_NXZ
+    // vIndex: 15
     virtual bool isDye() const;
 
-    // symbol:
-    // ??0LegacyDyeItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ItemColor@@_N@Z
     MCAPI LegacyDyeItem(std::string const&, int, ::ItemColor, bool);
 
     // NOLINTEND

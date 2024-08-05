@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1CommandName@@QEAA@XZ
     MCAPI ~CommandName();
 
     // NOLINTEND

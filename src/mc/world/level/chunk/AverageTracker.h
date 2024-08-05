@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?addSample@AverageTracker@@QEAAXV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@@Z
     MCAPI void addSample(std::chrono::nanoseconds dt);
 
     // NOLINTEND

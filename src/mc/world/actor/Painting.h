@@ -35,45 +35,42 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1Painting@@UEAA@XZ
+    // vIndex: 10
     virtual ~Painting() = default;
 
-    // vIndex: 13, symbol: ?remove@Painting@@UEAAXXZ
+    // vIndex: 13
     virtual void remove();
 
-    // vIndex: 25, symbol:
-    // ?tryCreateAddActorPacket@Painting@@UEAA?AV?$unique_ptr@VAddActorBasePacket@@U?$default_delete@VAddActorBasePacket@@@std@@@std@@XZ
+    // vIndex: 25
     virtual std::unique_ptr<class AddActorBasePacket> tryCreateAddActorPacket();
 
-    // vIndex: 38, symbol: ?getShadowRadius@Painting@@UEBAMXZ
+    // vIndex: 38
     virtual float getShadowRadius() const;
 
-    // vIndex: 147, symbol: ?readAdditionalSaveData@Painting@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 148, symbol: ?addAdditionalSaveData@Painting@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 151, symbol: ?getWidth@Painting@@UEBAHXZ
+    // vIndex: 151
     virtual int getWidth() const;
 
-    // vIndex: 152, symbol: ?getHeight@Painting@@UEBAHXZ
+    // vIndex: 152
     virtual int getHeight() const;
 
-    // vIndex: 153, symbol: ?dropItem@Painting@@UEAAXXZ
+    // vIndex: 153
     virtual void dropItem();
 
-    // vIndex: 154, symbol: ?placeHangingEntity@Painting@@UEAA_NAEAVBlockSource@@H@Z
+    // vIndex: 154
     virtual bool placeHangingEntity(class BlockSource& region, int direction);
 
-    // symbol: ??0Painting@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Painting(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?getCurrentMotif@Painting@@QEBAAEBVMotif@@XZ
     MCAPI class Motif const& getCurrentMotif() const;
 
     // NOLINTEND

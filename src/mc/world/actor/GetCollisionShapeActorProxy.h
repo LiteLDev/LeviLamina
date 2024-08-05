@@ -15,40 +15,39 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1GetCollisionShapeActorProxy@@UEAA@XZ
+    // vIndex: 0
     virtual ~GetCollisionShapeActorProxy() = default;
 
-    // vIndex: 1, symbol: ?getFeetAttachPosY@GetCollisionShapeActorProxy@@UEBAMXZ
+    // vIndex: 1
     virtual float getFeetAttachPosY() const;
 
-    // vIndex: 2, symbol: ?canDescendThroughBlock@GetCollisionShapeActorProxy@@UEBA_NXZ
+    // vIndex: 2
     virtual bool canDescendThroughBlock() const;
 
-    // vIndex: 3, symbol: ?getFallDistance@GetCollisionShapeActorProxy@@UEBAMXZ
+    // vIndex: 3
     virtual float getFallDistance() const;
 
-    // vIndex: 4, symbol: ?getEntityTypeId@GetCollisionShapeActorProxy@@UEBA?AW4ActorType@@XZ
+    // vIndex: 4
     virtual ::ActorType getEntityTypeId() const;
 
-    // vIndex: 5, symbol: ?isWearingLeatherBoots@GetCollisionShapeActorProxy@@UEBA_NXZ
+    // vIndex: 5
     virtual bool isWearingLeatherBoots() const;
 
-    // vIndex: 6, symbol: ?hasLightWeightFamilyTag@GetCollisionShapeActorProxy@@UEBA_NXZ
+    // vIndex: 6
     virtual bool hasLightWeightFamilyTag() const;
 
-    // vIndex: 7, symbol: ?getAABB@GetCollisionShapeActorProxy@@UEBAAEBVAABB@@XZ
+    // vIndex: 7
     virtual class AABB const& getAABB() const;
 
-    // vIndex: 8, symbol: ?isWorldBuilder@GetCollisionShapeActorProxy@@UEBA_NXZ
+    // vIndex: 8
     virtual bool isWorldBuilder() const;
 
-    // vIndex: 9, symbol: ?isRiding@GetCollisionShapeActorProxy@@UEBA_NXZ
+    // vIndex: 9
     virtual bool isRiding() const;
 
-    // vIndex: 10, symbol: ?hasPassenger@GetCollisionShapeActorProxy@@UEBA_NXZ
+    // vIndex: 10
     virtual bool hasPassenger() const;
 
-    // symbol: ??0GetCollisionShapeActorProxy@@QEAA@AEBVActor@@@Z
     MCAPI explicit GetCollisionShapeActorProxy(class Actor const&);
 
     // NOLINTEND

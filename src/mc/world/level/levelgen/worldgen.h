@@ -64,31 +64,20 @@ struct Seed128Bit;
 
 namespace br::worldgen {
 // NOLINTBEGIN
-// symbol:
-// ?expansionHackCalc@worldgen@br@@YAHAEBVBoundingBox@@AEBV?$vector@VJigsawBlockInfo@@V?$allocator@VJigsawBlockInfo@@@std@@@std@@AEBVJigsawStructureRegistry@@@Z
 MCAPI int
 expansionHackCalc(class BoundingBox const&, std::vector<class JigsawBlockInfo> const&, class JigsawStructureRegistry const&);
 
-// symbol: ?expansionHackEval@worldgen@br@@YAXHAEAVBoundingBox@@@Z
 MCAPI void expansionHackEval(int, class BoundingBox&);
 
-// symbol: ?isEmptyPool@worldgen@br@@YA_NAEBVStructureTemplatePool@@@Z
 MCAPI bool isEmptyPool(class StructureTemplatePool const&);
 
-// symbol:
-// ?noopCalc@worldgen@br@@YAHAEBVBoundingBox@@AEBV?$vector@VJigsawBlockInfo@@V?$allocator@VJigsawBlockInfo@@@std@@@std@@AEBVJigsawStructureRegistry@@@Z
 MCAPI int
 noopCalc(class BoundingBox const&, std::vector<class JigsawBlockInfo> const&, class JigsawStructureRegistry const&);
 
-// symbol: ?noopEval@worldgen@br@@YAXHAEAVBoundingBox@@@Z
 MCAPI void noopEval(int, class BoundingBox&);
 
-// symbol:
-// ?shuffledJigsawBlockId@worldgen@br@@YA?AV?$vector@_KV?$allocator@_K@std@@@std@@AEBVStructureTemplatePool@@AEAVIRandom@@@Z
 MCAPI std::vector<uint64> shuffledJigsawBlockId(class StructureTemplatePool const&, class IRandom&);
 
-// symbol:
-// ?shuffledJigsawBlocks@worldgen@br@@YA?AV?$vector@VJigsawBlockInfo@@V?$allocator@VJigsawBlockInfo@@@std@@@std@@AEBVStructurePoolElement@@VBlockPos@@W4Rotation@@AEAVIRandom@@@Z
 MCAPI std::vector<class JigsawBlockInfo>
       shuffledJigsawBlocks(class StructurePoolElement const&, class BlockPos, ::Rotation, class IRandom&);
 // NOLINTEND

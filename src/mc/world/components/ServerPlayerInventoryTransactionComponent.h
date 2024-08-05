@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4ServerPlayerInventoryTransactionComponent@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct ServerPlayerInventoryTransactionComponent&
     operator=(struct ServerPlayerInventoryTransactionComponent&&);
 

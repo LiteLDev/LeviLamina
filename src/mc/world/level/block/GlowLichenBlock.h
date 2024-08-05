@@ -27,30 +27,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1GlowLichenBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~GlowLichenBlock() = default;
 
-    // vIndex: 80, symbol:
-    // ?onFertilized@GlowLichenBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
+    // vIndex: 80
     virtual bool
     onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, ::FertilizerType fType)
         const;
 
-    // vIndex: 82, symbol: ?canBeFertilized@GlowLichenBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 82
     virtual bool
     canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
 
-    // vIndex: 136, symbol: ?init@GlowLichenBlock@@UEAAAEAVBlockLegacy@@XZ
+    // vIndex: 136
     virtual class BlockLegacy& init();
 
-    // vIndex: 163, symbol: ?getMultifaceBlock@GlowLichenBlock@@UEBAAEBVBlock@@XZ
+    // vIndex: 163
     virtual class Block const& getMultifaceBlock() const;
 
-    // vIndex: 164, symbol: ?getMultifaceSpreader@GlowLichenBlock@@UEBAAEBVMultifaceSpreader@@XZ
+    // vIndex: 164
     virtual class MultifaceSpreader const& getMultifaceSpreader() const;
 
-    // symbol:
-    // ??0GlowLichenBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI GlowLichenBlock(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND

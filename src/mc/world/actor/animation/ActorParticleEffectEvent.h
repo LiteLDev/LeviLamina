@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ActorParticleEffectEvent@@QEAA@XZ
     MCAPI ~ActorParticleEffectEvent();
 
     // NOLINTEND

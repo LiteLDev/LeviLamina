@@ -17,11 +17,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1WorldTemplatePackSource@@UEAA@XZ
+    // vIndex: 0
     virtual ~WorldTemplatePackSource() = default;
 
-    // vIndex: 5, symbol:
-    // ?load@WorldTemplatePackSource@@UEAA?AVPackSourceReport@@AEAVIPackManifestFactory@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
+    // vIndex: 5
     virtual class PackSourceReport load(
         class IPackManifestFactory&                                         manifestFactory,
         Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider

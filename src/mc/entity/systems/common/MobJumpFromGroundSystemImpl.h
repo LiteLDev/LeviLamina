@@ -17,8 +17,6 @@
 
 namespace MobJumpFromGroundSystemImpl {
 // NOLINTBEGIN
-// symbol:
-// ?doFilter@MobJumpFromGroundSystemImpl@@YAXAEBVStrictEntityContext@@AEBV?$Optional@$$CBV?$FlagComponent@ULocalPlayerComponentFlag@@@@@@AEBV?$Optional@$$CBV?$FlagComponent@ULavaSlimeFlag@@@@@@AEBV?$Optional@$$CBV?$FlagComponent@USquidFlag@@@@@@V?$EntityModifier@V?$FlagComponent@ULocalPlayerJumpRequestFlag@@@@V?$FlagComponent@ULavaSlimeJumpRequestFlag@@@@V?$FlagComponent@USquidJumpRequestFlag@@@@V?$FlagComponent@UOtherJumpRequestFlag@@@@@@@Z
 MCAPI void doFilter(
     class StrictEntityContext const&                                                  context,
     class Optional<class FlagComponent<struct LocalPlayerComponentFlag> const> const& localPlayer,
@@ -31,13 +29,9 @@ MCAPI void doFilter(
         class FlagComponent<struct OtherJumpRequestFlag>> mod
 );
 
-// symbol:
-// ?doLavaSlimeJumpFromGround@MobJumpFromGroundSystemImpl@@YAXAEBVStrictEntityContext@@AEBUAABBShapeComponent@@AEBUSynchedActorDataComponent@@AEAUStateVectorComponent@@AEBUMobEffectsComponent@@AEAV?$EntityModifier@UTriggerJumpRequestComponent@@@@AEBVIConstBlockSource@@@Z
 MCAPI void
 doLavaSlimeJumpFromGround(class StrictEntityContext const&, struct AABBShapeComponent const&, struct SynchedActorDataComponent const&, struct StateVectorComponent&, struct MobEffectsComponent const&, class EntityModifier<struct TriggerJumpRequestComponent>&, class IConstBlockSource const&);
 
-// symbol:
-// ?doLocalPlayerJumpFromGround@MobJumpFromGroundSystemImpl@@YAXAEBVStrictEntityContext@@AEBV?$Optional@$$CBVJumpControlComponent@@@@AEBUAABBShapeComponent@@AEBUActorDataFlagComponent@@AEBUActorRotationComponent@@AEBUMobEffectsComponent@@AEAUMobJumpComponent@@AEAUStateVectorComponent@@AEAUPlayerActionComponent@@AEAV?$EntityModifier@UTriggerJumpRequestComponent@@@@AEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UCanStandOnSnowFlag@@@@V?$FlagComponent@UHasLightweightFamilyFlag@@@@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UMobFlag@@@@V?$FlagComponent@UParrotFlag@@@@UVehicleComponent@@V?$FlagComponent@UCamelFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@ULocalPlayerJumpRequestFlag@@@@V?$FlagComponent@ULavaSlimeJumpRequestFlag@@@@V?$FlagComponent@USquidJumpRequestFlag@@@@V?$FlagComponent@UOtherJumpRequestFlag@@@@@@U?$Read@UAABBShapeComponent@@UMovementAbilitiesComponent@@UActorTypeComponent@@UFallDistanceComponent@@UPassengerComponent@@UActorGameTypeComponent@@UActorDataFlagComponent@@UVehicleComponent@@UActorRotationComponent@@UMobBodyRotationComponent@@URenderRotationComponent@@UStandAnimationComponent@@UOffsetsComponent@@UVanillaOffsetComponent@@UPassengerRenderingRidingOffsetComponent@@UMobEffectsComponent@@USynchedActorDataComponent@@VJumpControlComponent@@UDimensionTypeComponent@@@@U?$Write@UMobJumpComponent@@UStateVectorComponent@@UPlayerActionComponent@@@@U?$AddRemove@UTriggerJumpRequestComponent@@@@U?$GlobalRead@UExternalDataComponent@@ULocalConstBlockSourceFactoryComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@AEBVIConstBlockSource@@@Z
 MCAPI void doLocalPlayerJumpFromGround(
     class StrictEntityContext const& entity,
     class Optional<class JumpControlComponent const> const&,
@@ -91,8 +85,6 @@ MCAPI void doLocalPlayerJumpFromGround(
     class IConstBlockSource const& region
 );
 
-// symbol:
-// ?doOtherMobJumpFromGround@MobJumpFromGroundSystemImpl@@YAXAEBVStrictEntityContext@@AEBV?$Optional@$$CBVJumpControlComponent@@@@AEBUAABBShapeComponent@@AEBUActorDataFlagComponent@@AEBUActorRotationComponent@@AEBUMobEffectsComponent@@AEAUMobJumpComponent@@AEAUStateVectorComponent@@AEAV?$EntityModifier@UTriggerJumpRequestComponent@@@@_NAEBVIConstBlockSource@@@Z
 MCAPI void doOtherMobJumpFromGround(
     class StrictEntityContext const& entity,
     class Optional<class JumpControlComponent const> const&,
@@ -107,8 +99,6 @@ MCAPI void doOtherMobJumpFromGround(
     class IConstBlockSource const& region
 );
 
-// symbol:
-// ?mobJumpFromGround@MobJumpFromGroundSystemImpl@@YAXAEBVStrictEntityContext@@AEBUAABBShapeComponent@@AEBUActorDataFlagComponent@@AEBUActorRotationComponent@@AEBUMobEffectsComponent@@PEBVJumpControlComponent@@AEAUMobJumpComponent@@AEAUStateVectorComponent@@AEAV?$EntityModifier@UTriggerJumpRequestComponent@@@@AEBVIConstBlockSource@@_N@Z
 MCAPI void mobJumpFromGround(
     class StrictEntityContext const& entity,
     struct AABBShapeComponent const&,

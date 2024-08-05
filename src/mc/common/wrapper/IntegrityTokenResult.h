@@ -11,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0IntegrityTokenResult@@QEAA@$$QEAU0@@Z
     MCAPI IntegrityTokenResult(struct IntegrityTokenResult&&);
 
-    // symbol: ??1IntegrityTokenResult@@QEAA@XZ
     MCAPI ~IntegrityTokenResult();
 
     // NOLINTEND

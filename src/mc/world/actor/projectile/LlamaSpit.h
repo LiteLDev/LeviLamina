@@ -35,19 +35,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1LlamaSpit@@UEAA@XZ
+    // vIndex: 10
     virtual ~LlamaSpit() = default;
 
-    // vIndex: 26, symbol: ?normalTick@LlamaSpit@@UEAAXXZ
+    // vIndex: 26
     virtual void normalTick();
 
-    // vIndex: 41, symbol: ?getBrightness@LlamaSpit@@UEBAMMAEBVIConstBlockSource@@@Z
+    // vIndex: 41
     virtual float getBrightness(float, class IConstBlockSource const&) const;
 
-    // vIndex: 90, symbol: ?getSourceUniqueID@LlamaSpit@@UEBA?AUActorUniqueID@@XZ
+    // vIndex: 90
     virtual struct ActorUniqueID getSourceUniqueID() const;
 
-    // symbol: ??0LlamaSpit@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI LlamaSpit(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

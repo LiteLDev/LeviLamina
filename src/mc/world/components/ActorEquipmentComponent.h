@@ -11,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4ActorEquipmentComponent@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct ActorEquipmentComponent& operator=(struct ActorEquipmentComponent&&);
 
-    // symbol: ??1ActorEquipmentComponent@@QEAA@XZ
     MCAPI ~ActorEquipmentComponent();
 
     // NOLINTEND

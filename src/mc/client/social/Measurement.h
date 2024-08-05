@@ -18,10 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getValue@Measurement@Events@Social@@QEBA?AVValue@Json@@XZ
     MCAPI class Json::Value getValue() const;
 
-    // symbol: ??1Measurement@Events@Social@@QEAA@XZ
     MCAPI ~Measurement();
 
     // NOLINTEND

@@ -26,15 +26,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ToggleControl@ScriptModuleMinecraftServerUI@@UEAA@XZ
+    // vIndex: 0
     virtual ~ToggleControl() = default;
 
-    // vIndex: 1, symbol:
-    // ?buildJson@ToggleControl@ScriptModuleMinecraftServerUI@@UEBA?AV?$Result@VValue@Json@@$$V@Scripting@@AEAVPlayer@@W4CurrentCmdVersion@@@Z
+    // vIndex: 1
     virtual class Scripting::Result<class Json::Value> buildJson(class Player&, ::CurrentCmdVersion) const;
 
-    // symbol:
-    // ??0ToggleControl@ScriptModuleMinecraftServerUI@@QEAA@V?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UScriptRawMessageInterface@ScriptModuleMinecraft@@@std@@V?$optional@_N@3@@Z
     MCAPI
     ToggleControl(std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>, std::optional<bool>);
 

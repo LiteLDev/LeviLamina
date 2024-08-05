@@ -42,110 +42,97 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1HumanoidArmorItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~HumanoidArmorItem() = default;
 
-    // vIndex: 9, symbol: ?isHumanoidArmor@HumanoidArmorItem@@UEBA_NXZ
+    // vIndex: 9
     virtual bool isHumanoidArmor() const;
 
-    // vIndex: 14, symbol: ?isDyeable@HumanoidArmorItem@@UEBA_NXZ
+    // vIndex: 14
     virtual bool isDyeable() const;
 
-    // vIndex: 21, symbol: ?isTrimAllowed@HumanoidArmorItem@@UEBA_NXZ
+    // vIndex: 21
     virtual bool isTrimAllowed() const;
 
-    // vIndex: 48, symbol:
-    // ?appendFormattedHovertext@HumanoidArmorItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+    // vIndex: 48
     virtual void appendFormattedHovertext(class ItemStackBase const&, class Level&, std::string&, bool) const;
 
-    // vIndex: 49, symbol: ?isValidRepairItem@HumanoidArmorItem@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z
+    // vIndex: 49
     virtual bool
     isValidRepairItem(class ItemStackBase const&, class ItemStackBase const&, class BaseGameVersion const&) const;
 
-    // vIndex: 50, symbol: ?getEnchantSlot@HumanoidArmorItem@@UEBAHXZ
+    // vIndex: 50
     virtual int getEnchantSlot() const;
 
-    // vIndex: 51, symbol: ?getEnchantValue@HumanoidArmorItem@@UEBAHXZ
+    // vIndex: 51
     virtual int getEnchantValue() const;
 
-    // vIndex: 52, symbol: ?getArmorValue@HumanoidArmorItem@@UEBAHXZ
+    // vIndex: 52
     virtual int getArmorValue() const;
 
-    // vIndex: 53, symbol: ?getToughnessValue@HumanoidArmorItem@@UEBAHXZ
+    // vIndex: 53
     virtual int getToughnessValue() const;
 
-    // vIndex: 57, symbol: ?getDamageChance@HumanoidArmorItem@@UEBAHH@Z
+    // vIndex: 57
     virtual int getDamageChance(int) const;
 
-    // vIndex: 62, symbol: ?getColor@HumanoidArmorItem@@UEBA?AVColor@mce@@PEBVCompoundTag@@AEBVItemDescriptor@@@Z
+    // vIndex: 62
     virtual class mce::Color getColor(class CompoundTag const*, class ItemDescriptor const&) const;
 
-    // vIndex: 64, symbol: ?hasCustomColor@HumanoidArmorItem@@UEBA_NPEBVCompoundTag@@@Z
+    // vIndex: 64
     virtual bool hasCustomColor(class CompoundTag const*) const;
 
-    // vIndex: 65, symbol: ?clearColor@HumanoidArmorItem@@UEBAXAEAVItemStackBase@@@Z
+    // vIndex: 65
     virtual void clearColor(class ItemStackBase&) const;
 
-    // vIndex: 66, symbol: ?setColor@HumanoidArmorItem@@UEBAXAEAVItemStackBase@@AEBVColor@mce@@@Z
+    // vIndex: 66
     virtual void setColor(class ItemStackBase&, class mce::Color const&) const;
 
-    // vIndex: 70, symbol: ?buildIdAux@HumanoidArmorItem@@UEBAHFPEBVCompoundTag@@@Z
+    // vIndex: 70
     virtual int buildIdAux(short, class CompoundTag const*) const;
 
-    // vIndex: 72, symbol: ?use@HumanoidArmorItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+    // vIndex: 72
     virtual class ItemStack& use(class ItemStack&, class Player&) const;
 
-    // vIndex: 74, symbol: ?dispense@HumanoidArmorItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 74
     virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, uchar) const;
 
-    // vIndex: 78, symbol: ?hurtActor@HumanoidArmorItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
+    // vIndex: 78
     virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
 
-    // vIndex: 97, symbol: ?getEquipLocation@HumanoidArmorItem@@UEBA?AW4ActorLocation@@XZ
+    // vIndex: 97
     virtual ::ActorLocation getEquipLocation() const;
 
-    // vIndex: 98, symbol: ?getEquipSound@HumanoidArmorItem@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 98
     virtual ::Puv::Legacy::LevelSoundEvent getEquipSound() const;
 
-    // vIndex: 104, symbol: ?getIconInfo@HumanoidArmorItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
+    // vIndex: 104
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
 
-    // vIndex: 119, symbol: ?getArmorKnockbackResistance@HumanoidArmorItem@@UEBAMXZ
+    // vIndex: 119
     virtual float getArmorKnockbackResistance() const;
 
-    // symbol:
-    // ??0HumanoidArmorItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@FAEBVArmorMaterial@0@HW4ArmorSlot@@_N@Z
     MCAPI
     HumanoidArmorItem(std::string const&, short, class HumanoidArmorItem::ArmorMaterial const&, int, ::ArmorSlot, bool);
 
-    // symbol: ?isDamageable@HumanoidArmorItem@@SA_NAEBVItemDescriptor@@@Z
     MCAPI static bool isDamageable(class ItemDescriptor const&);
 
-    // symbol: ?CHAIN@HumanoidArmorItem@@2VArmorMaterial@1@B
     MCAPI static class HumanoidArmorItem::ArmorMaterial const CHAIN;
 
-    // symbol: ?DIAMOND@HumanoidArmorItem@@2VArmorMaterial@1@B
     MCAPI static class HumanoidArmorItem::ArmorMaterial const DIAMOND;
 
-    // symbol: ?ELYTRA@HumanoidArmorItem@@2VArmorMaterial@1@B
     MCAPI static class HumanoidArmorItem::ArmorMaterial const ELYTRA;
 
-    // symbol: ?GOLD@HumanoidArmorItem@@2VArmorMaterial@1@B
     MCAPI static class HumanoidArmorItem::ArmorMaterial const GOLD;
 
-    // symbol: ?IRON@HumanoidArmorItem@@2VArmorMaterial@1@B
     MCAPI static class HumanoidArmorItem::ArmorMaterial const IRON;
 
-    // symbol: ?LEATHER@HumanoidArmorItem@@2VArmorMaterial@1@B
     MCAPI static class HumanoidArmorItem::ArmorMaterial const LEATHER;
 
-    // symbol: ?NETHERITE@HumanoidArmorItem@@2VArmorMaterial@1@B
     MCAPI static class HumanoidArmorItem::ArmorMaterial const NETHERITE;
 
-    // symbol: ?TURTLE@HumanoidArmorItem@@2VArmorMaterial@1@B
     MCAPI static class HumanoidArmorItem::ArmorMaterial const TURTLE;
 
-    // symbol: ?mHealthPerSlot@HumanoidArmorItem@@2QBHB
     MCAPI static int const mHealthPerSlot[];
 
     // NOLINTEND

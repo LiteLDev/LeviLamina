@@ -18,10 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?loadSubscriptions@DispatchTargets@Detail@PubSub@Bedrock@@QEAA_NAEBVPublisherBase@234@@Z
     MCAPI bool loadSubscriptions(class Bedrock::PubSub::Detail::PublisherBase const&);
 
-    // symbol: ??1DispatchTargets@Detail@PubSub@Bedrock@@QEAA@XZ
     MCAPI ~DispatchTargets();
 
     // NOLINTEND

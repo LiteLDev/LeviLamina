@@ -13,7 +13,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1IFunction@Reflection@Scripting@@UEAA@XZ
+    // vIndex: 0
     virtual ~IFunction();
 
     // NOLINTEND

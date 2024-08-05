@@ -15,16 +15,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?getItemUseMethodName@ItemUseMethodMap@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ItemUseMethod@@@Z
     MCAPI static std::string const& getItemUseMethodName(::ItemUseMethod);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?mMap@ItemUseMethodMap@@0V?$BidirectionalUnorderedMap@W4ItemUseMethod@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@B
     MCAPI static class BidirectionalUnorderedMap<::ItemUseMethod, std::string> const mMap;
 
     // NOLINTEND

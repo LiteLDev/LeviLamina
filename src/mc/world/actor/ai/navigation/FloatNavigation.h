@@ -14,10 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FloatNavigation@@UEAA@XZ
+    // vIndex: 0
     virtual ~FloatNavigation() = default;
 
-    // vIndex: 10, symbol: ?travel@FloatNavigation@@MEAA_NAEAVNavigationComponent@@AEAVMob@@AEAM22@Z
+    // vIndex: 10
     virtual bool travel(class NavigationComponent& parent, class Mob& mob, float& xa, float& ya, float& za);
 
     // NOLINTEND

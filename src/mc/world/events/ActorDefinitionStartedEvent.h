@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ActorDefinitionStartedEvent@@QEAA@XZ
     MCAPI ~ActorDefinitionStartedEvent();
 
     // NOLINTEND

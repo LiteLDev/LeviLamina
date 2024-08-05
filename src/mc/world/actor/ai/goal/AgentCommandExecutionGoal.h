@@ -15,26 +15,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1AgentCommandExecutionGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~AgentCommandExecutionGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@AgentCommandExecutionGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 3, symbol: ?canBeInterrupted@AgentCommandExecutionGoal@@UEAA_NXZ
+    // vIndex: 3
     virtual bool canBeInterrupted();
 
-    // vIndex: 4, symbol: ?start@AgentCommandExecutionGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@AgentCommandExecutionGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@AgentCommandExecutionGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0AgentCommandExecutionGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit AgentCommandExecutionGoal(class Mob& mob);
 
     // NOLINTEND

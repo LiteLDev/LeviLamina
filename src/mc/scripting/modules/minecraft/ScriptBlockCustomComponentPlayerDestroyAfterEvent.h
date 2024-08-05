@@ -27,8 +27,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol:
-        // ??1IntermediateStorage@ScriptBlockCustomComponentPlayerDestroyAfterEvent@ScriptModuleMinecraft@@QEAA@XZ
         MCAPI ~IntermediateStorage();
 
         // NOLINTEND
@@ -42,22 +40,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptBlockCustomComponentPlayerDestroyAfterEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
     MCAPI
     ScriptBlockCustomComponentPlayerDestroyAfterEvent(struct ScriptModuleMinecraft::
                                                           ScriptBlockCustomComponentPlayerDestroyAfterEvent const&);
 
-    // symbol:
-    // ??0ScriptBlockCustomComponentPlayerDestroyAfterEvent@ScriptModuleMinecraft@@QEAA@AEBUIntermediateStorage@01@AEBVWeakLifetimeScope@Scripting@@@Z
     MCAPI
     ScriptBlockCustomComponentPlayerDestroyAfterEvent(struct ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerDestroyAfterEvent::IntermediateStorage const&, class Scripting::WeakLifetimeScope const&);
 
-    // symbol: ??4ScriptBlockCustomComponentPlayerDestroyAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerDestroyAfterEvent&
     operator=(struct ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerDestroyAfterEvent&&);
 
-    // symbol:
-    // ?bind@ScriptBlockCustomComponentPlayerDestroyAfterEvent@ScriptModuleMinecraft@@SA?AUClassBinding@Scripting@@XZ
     MCAPI static struct Scripting::ClassBinding bind();
 
     // NOLINTEND

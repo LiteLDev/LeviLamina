@@ -11,8 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?checkIfValid@MarketplaceSkinValidator@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI static bool checkIfValid(std::string const& geometry);
 
     // NOLINTEND

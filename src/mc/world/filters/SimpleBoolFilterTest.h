@@ -19,7 +19,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SimpleBoolFilterTest@@UEAA@XZ
+    // vIndex: 0
     virtual ~SimpleBoolFilterTest() = default;
 
     // NOLINTEND

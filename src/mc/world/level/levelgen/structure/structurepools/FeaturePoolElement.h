@@ -20,16 +20,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ?getSize@FeaturePoolElement@@UEBA?AVBlockPos@@W4Rotation@@@Z
+    // vIndex: 0
     virtual class BlockPos getSize(::Rotation rotation) const;
 
-    // vIndex: 2, symbol:
-    // ?getJigsawMarkers@FeaturePoolElement@@UEBA?AV?$vector@VJigsawBlockInfo@@V?$allocator@VJigsawBlockInfo@@@std@@@std@@VBlockPos@@AEAVLegacyStructureSettings@@PEAVBlockSource@@@Z
+    // vIndex: 2
     virtual std::vector<class JigsawBlockInfo>
     getJigsawMarkers(class BlockPos position, class LegacyStructureSettings& settings, class BlockSource* region) const;
 
-    // vIndex: 7, symbol:
-    // ?place@FeaturePoolElement@@UEBA_NAEAVBlockSource@@VBlockPos@@W4Rotation@@VBoundingBox@@AEAVRandom@@AEAV?$unordered_map@VBlockPos@@V?$optional@UActorDefinitionIdentifier@@@std@@U?$hash@VBlockPos@@@3@U?$equal_to@VBlockPos@@@3@V?$allocator@U?$pair@$$CBVBlockPos@@V?$optional@UActorDefinitionIdentifier@@@std@@@std@@@3@@std@@1@Z
+    // vIndex: 7
     virtual bool place(
         class BlockSource&                                                                   region,
         class BlockPos                                                                       position,
@@ -40,14 +38,12 @@ public:
         class BlockPos                                                                       refPos
     ) const;
 
-    // vIndex: 12, symbol: __gen_??1FeaturePoolElement@@UEAA@XZ
+    // vIndex: 12
     virtual ~FeaturePoolElement() = default;
 
-    // vIndex: 13, symbol: ?type@FeaturePoolElement@@UEBA?AW4StructurePoolElementType@@XZ
+    // vIndex: 13
     virtual ::StructurePoolElementType type() const;
 
-    // symbol:
-    // ??0FeaturePoolElement@@QEAA@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@V?$WeakRef@VIFeature@@@@@Z
     MCAPI FeaturePoolElement(
         Bedrock::NotNullNonOwnerPtr<class StructureManager> structureManager,
         class WeakRef<class IFeature>                       feature

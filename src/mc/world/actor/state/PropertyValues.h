@@ -10,13 +10,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0PropertyValues@@QEAA@AEBU0@@Z
     MCAPI PropertyValues(struct PropertyValues const&);
 
-    // symbol: ?resize@PropertyValues@@QEAAX_K000@Z
     MCAPI void resize(uint64, uint64, uint64, uint64);
 
-    // symbol: ??1PropertyValues@@QEAA@XZ
     MCAPI ~PropertyValues();
 
     // NOLINTEND

@@ -14,11 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ActiveDirectoryScreenCapabilities@@UEAA@XZ
+    // vIndex: 0
     virtual ~ActiveDirectoryScreenCapabilities();
 
-    // vIndex: 1, symbol:
-    // ?isOfType@?$TypedScreenCapabilities@UActiveDirectoryScreenCapabilities@@@@UEBA_NV?$typeid_t@VIScreenCapabilities@@@Bedrock@@@Z
+    // vIndex: 1
     virtual bool isOfType(class Bedrock::typeid_t<class IScreenCapabilities> type) const;
 
     // NOLINTEND

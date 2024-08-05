@@ -14,40 +14,33 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BookEditPacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~BookEditPacket();
 
-    // vIndex: 1, symbol: ?getId@BookEditPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@BookEditPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@BookEditPacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 8, symbol:
-    // ?_read@BookEditPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0BookEditPacket@@QEAA@XZ
     MCAPI BookEditPacket();
 
-    // symbol: ??0BookEditPacket@@QEAA@AEBV0@@Z
     MCAPI BookEditPacket(class BookEditPacket const&);
 
-    // symbol: ?getPage@BookEditPacket@@QEBA?AUPageContent@@XZ
     MCAPI struct PageContent getPage() const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_readPage@BookEditPacket@@AEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     MCAPI class Bedrock::Result<void> _readPage(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ?_writePage@BookEditPacket@@AEBAXAEAVBinaryStream@@@Z
     MCAPI void _writePage(class BinaryStream& stream) const;
 
     // NOLINTEND

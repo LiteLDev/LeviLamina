@@ -35,36 +35,31 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1Creeper@@UEAA@XZ
+    // vIndex: 10
     virtual ~Creeper() = default;
 
-    // vIndex: 26, symbol: ?normalTick@Creeper@@UEAAXXZ
+    // vIndex: 26
     virtual void normalTick();
 
-    // vIndex: 131, symbol: ?die@Creeper@@UEAAXAEBVActorDamageSource@@@Z
+    // vIndex: 131
     virtual void die(class ActorDamageSource const& source);
 
-    // symbol: ??0Creeper@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Creeper(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?getSwellDir@Creeper@@QEAAHXZ
     MCAPI int getSwellDir();
 
-    // symbol: ?getSwelling@Creeper@@QEBAMM@Z
     MCAPI float getSwelling(float a) const;
 
-    // symbol: ?tryGetFromEntity@Creeper@@SAPEAV1@AEAVEntityContext@@_N@Z
     MCAPI static class Creeper* tryGetFromEntity(class EntityContext& entity, bool);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_setSwellDir@Creeper@@AEAAXH@Z
     MCAPI void _setSwellDir(int dir);
 
     // NOLINTEND

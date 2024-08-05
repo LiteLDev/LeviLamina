@@ -14,31 +14,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1EndPodiumFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~EndPodiumFeature();
 
-    // vIndex: 3, symbol: ?place@EndPodiumFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 3
     virtual bool place(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
 
-    // symbol: ??0EndPodiumFeature@@QEAA@_N@Z
     MCAPI explicit EndPodiumFeature(bool active);
 
-    // symbol: ?CORNER_ROUNDING@EndPodiumFeature@@2MB
     MCAPI static float const CORNER_ROUNDING;
 
-    // symbol: ?END_PODIUM_CHUNK_POSITION@EndPodiumFeature@@2VBlockPos@@B
     MCAPI static class BlockPos const END_PODIUM_CHUNK_POSITION;
 
-    // symbol: ?END_PODIUM_LOCATION@EndPodiumFeature@@2VBlockPos@@B
     MCAPI static class BlockPos const END_PODIUM_LOCATION;
 
-    // symbol: ?PODIUM_PILLAR_HEIGHT@EndPodiumFeature@@2HB
     MCAPI static int const PODIUM_PILLAR_HEIGHT;
 
-    // symbol: ?PODIUM_RADIUS@EndPodiumFeature@@2HB
     MCAPI static int const PODIUM_RADIUS;
 
-    // symbol: ?RIM_RADIUS@EndPodiumFeature@@2HB
     MCAPI static int const RIM_RADIUS;
 
     // NOLINTEND

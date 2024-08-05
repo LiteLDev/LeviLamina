@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1win32_cs_autolock@httpclient@xbox@@QEAA@XZ
     MCAPI ~win32_cs_autolock();
 
     // NOLINTEND

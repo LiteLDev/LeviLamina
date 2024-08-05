@@ -22,7 +22,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1BatchEntry@LevelStorageWriteBatch@@QEAA@XZ
         MCAPI ~BatchEntry();
 
         // NOLINTEND
@@ -35,59 +34,44 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1LevelStorageWriteBatch@@UEAA@XZ
+    // vIndex: 0
     virtual ~LevelStorageWriteBatch();
 
-    // vIndex: 1, symbol:
-    // ?putKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$basic_string_view@DU?$char_traits@D@std@@@3@W4Category@DBHelpers@@@Z
+    // vIndex: 1
     virtual void putKey(std::string const& key, std::string_view data, ::DBHelpers::Category category);
 
-    // vIndex: 2, symbol:
-    // ?putKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4Category@DBHelpers@@@Z
+    // vIndex: 2
     virtual void putKey(std::string const& key, std::string const& data, ::DBHelpers::Category category);
 
-    // vIndex: 3, symbol:
-    // ?putKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV23@W4Category@DBHelpers@@@Z
+    // vIndex: 3
     virtual void putKey(std::string const& key, std::string&& data, ::DBHelpers::Category category);
 
-    // vIndex: 4, symbol:
-    // ?putKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$shared_ptr@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@3@W4Category@DBHelpers@@@Z
+    // vIndex: 4
     virtual void putKey(std::string const& key, std::shared_ptr<std::string> data, ::DBHelpers::Category category);
 
-    // vIndex: 5, symbol:
-    // ?deleteKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Category@DBHelpers@@@Z
+    // vIndex: 5
     virtual void deleteKey(std::string const& key, ::DBHelpers::Category category);
 
-    // vIndex: 6, symbol: ?flush@LevelStorageWriteBatch@@UEAAXAEAVLevelStorage@@@Z
+    // vIndex: 6
     virtual void flush(class LevelStorage& db);
 
-    // symbol: ??0LevelStorageWriteBatch@@QEAA@XZ
     MCAPI LevelStorageWriteBatch();
 
-    // symbol: ??0LevelStorageWriteBatch@@QEAA@$$QEAV0@@Z
     MCAPI LevelStorageWriteBatch(class LevelStorageWriteBatch&&);
 
-    // symbol: ?addFlushCallback@LevelStorageWriteBatch@@QEAAXV?$function@$$A6AXXZ@std@@@Z
     MCAPI void addFlushCallback(std::function<void()> callback);
 
-    // symbol: ?clear@LevelStorageWriteBatch@@QEAAXXZ
     MCAPI void clear();
 
-    // symbol:
-    // ?erase@LevelStorageWriteBatch@@QEAAXAEBV?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UBatchEntry@LevelStorageWriteBatch@@@std@@@std@@@std@@@std@@@Z
     MCAPI void erase(
         std::_Tree_const_iterator<std::_Tree_val<
             std::_Tree_simple_types<std::pair<std::string const, struct LevelStorageWriteBatch::BatchEntry>>>> const& it
     );
 
-    // symbol:
-    // ?find@LevelStorageWriteBatch@@QEBA?AV?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UBatchEntry@LevelStorageWriteBatch@@@std@@@std@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
     MCAPI std::_Tree_const_iterator<std::_Tree_val<
         std::_Tree_simple_types<std::pair<std::string const, struct LevelStorageWriteBatch::BatchEntry>>>>
           find(std::string const& key) const;
 
-    // symbol:
-    // ?find@LevelStorageWriteBatch@@QEAA?AV?$_Tree_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UBatchEntry@LevelStorageWriteBatch@@@std@@@std@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
     MCAPI std::_Tree_iterator<std::_Tree_val<
         std::_Tree_simple_types<std::pair<std::string const, struct LevelStorageWriteBatch::BatchEntry>>>>
           find(std::string const& key);
@@ -96,8 +80,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_writeKey@LevelStorageWriteBatch@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV?$shared_ptr@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@3@W4Category@DBHelpers@@@Z
     MCAPI void _writeKey(std::string const& key, std::shared_ptr<std::string>&& data, ::DBHelpers::Category category);
 
     // NOLINTEND

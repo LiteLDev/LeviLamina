@@ -22,14 +22,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?setImpactedBlocks@ScriptExplosionStartedBeforeEvent@ScriptModuleMinecraft@@QEAAXAEBV?$vector@V?$StrongTypedObjectHandle@VScriptBlock@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptBlock@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@@Z
     MCAPI void
     setImpactedBlocks(std::vector<
                       class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock>> const&);
 
-    // symbol:
-    // ?bind@ScriptExplosionStartedBeforeEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptExplosionStartedBeforeEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent>
     bind();
 

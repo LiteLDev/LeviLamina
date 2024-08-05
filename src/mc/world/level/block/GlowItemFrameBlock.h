@@ -27,13 +27,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1GlowItemFrameBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~GlowItemFrameBlock() = default;
 
-    // vIndex: 163, symbol: ?getSpawnedItemName@GlowItemFrameBlock@@UEBA?AVHashedString@@XZ
+    // vIndex: 163
     virtual class HashedString getSpawnedItemName() const;
 
-    // symbol: ??0GlowItemFrameBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI GlowItemFrameBlock(std::string const& nameId, int id);
 
     // NOLINTEND

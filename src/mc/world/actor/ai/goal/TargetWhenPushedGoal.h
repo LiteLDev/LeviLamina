@@ -15,30 +15,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1TargetWhenPushedGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~TargetWhenPushedGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@TargetWhenPushedGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@TargetWhenPushedGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 3, symbol: ?canBeInterrupted@TargetWhenPushedGoal@@UEAA_NXZ
+    // vIndex: 3
     virtual bool canBeInterrupted();
 
-    // vIndex: 4, symbol: ?start@TargetWhenPushedGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@TargetWhenPushedGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@TargetWhenPushedGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol:
-    // ??0TargetWhenPushedGoal@@QEAA@AEAVMob@@V?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@M@Z
     MCAPI TargetWhenPushedGoal(class Mob& mob, std::vector<struct MobDescriptor> targetTypes, float percentChance);
 
     // NOLINTEND

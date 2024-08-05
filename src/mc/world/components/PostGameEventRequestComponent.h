@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4PostGameEventRequestComponent@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct PostGameEventRequestComponent& operator=(struct PostGameEventRequestComponent&&);
 
     // NOLINTEND

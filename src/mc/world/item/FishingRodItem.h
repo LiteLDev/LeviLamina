@@ -27,54 +27,49 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FishingRodItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~FishingRodItem() = default;
 
-    // vIndex: 37, symbol: ?isHandEquipped@FishingRodItem@@UEBA_NXZ
+    // vIndex: 37
     virtual bool isHandEquipped() const;
 
-    // vIndex: 47, symbol: ?requiresInteract@FishingRodItem@@UEBA_NXZ
+    // vIndex: 47
     virtual bool requiresInteract() const;
 
-    // vIndex: 50, symbol: ?getEnchantSlot@FishingRodItem@@UEBAHXZ
+    // vIndex: 50
     virtual int getEnchantSlot() const;
 
-    // vIndex: 51, symbol: ?getEnchantValue@FishingRodItem@@UEBAHXZ
+    // vIndex: 51
     virtual int getEnchantValue() const;
 
-    // vIndex: 72, symbol: ?use@FishingRodItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+    // vIndex: 72
     virtual class ItemStack& use(class ItemStack& item, class Player& player) const;
 
-    // vIndex: 78, symbol: ?hurtActor@FishingRodItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
+    // vIndex: 78
     virtual void hurtActor(class ItemStack& item, class Actor& actor, class Mob& attacker) const;
 
-    // vIndex: 83, symbol:
-    // ?buildDescriptionId@FishingRodItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+    // vIndex: 83
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 99, symbol: ?shouldSendInteractionGameEvents@FishingRodItem@@UEBA_NXZ
+    // vIndex: 99
     virtual bool shouldSendInteractionGameEvents() const;
 
-    // vIndex: 103, symbol:
-    // ?setIconInfo@FishingRodItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+    // vIndex: 103
     virtual class Item& setIconInfo(std::string const&, int);
 
-    // vIndex: 104, symbol: ?getIconInfo@FishingRodItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
+    // vIndex: 104
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const& item, int, bool inInventoryPane) const;
 
-    // vIndex: 105, symbol:
-    // ?getInteractText@FishingRodItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPlayer@@@Z
+    // vIndex: 105
     virtual std::string getInteractText(class Player const&) const;
 
-    // vIndex: 106, symbol: ?getAnimationFrameFor@FishingRodItem@@UEBAHPEAVMob@@_NPEBVItemStack@@1@Z
+    // vIndex: 106
     virtual int
     getAnimationFrameFor(class Mob* holder, bool asItemEntity, class ItemStack const* item, bool shouldAnimate) const;
 
-    // vIndex: 121, symbol: ?shouldUseJsonForRenderMatrix@FishingRodItem@@UEBA_NXZ
+    // vIndex: 121
     virtual bool shouldUseJsonForRenderMatrix() const;
 
-    // symbol:
-    // ??0FishingRodItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEAUReflectionCtx@cereal@@@Z
     MCAPI FishingRodItem(std::string const&, int, struct cereal::ReflectionCtx&);
 
     // NOLINTEND

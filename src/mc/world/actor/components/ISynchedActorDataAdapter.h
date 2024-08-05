@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getSyncInfo@ISynchedActorDataAdapter@@SAPEBU1@G@Z
     MCAPI static struct ISynchedActorDataAdapter const* getSyncInfo(ushort);
 
     // NOLINTEND

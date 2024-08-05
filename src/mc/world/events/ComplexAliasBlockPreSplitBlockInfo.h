@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ComplexAliasBlockPreSplitBlockInfo@ComplexAliasBlockAchievementEventHelper@@QEAA@XZ
     MCAPI ~ComplexAliasBlockPreSplitBlockInfo();
 
     // NOLINTEND

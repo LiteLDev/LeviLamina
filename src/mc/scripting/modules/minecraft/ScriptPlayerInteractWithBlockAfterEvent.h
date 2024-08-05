@@ -24,16 +24,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptPlayerInteractWithBlockAfterEvent@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
     MCAPI
     ScriptPlayerInteractWithBlockAfterEvent(struct ScriptModuleMinecraft::ScriptPlayerInteractWithBlockAfterEvent&&);
 
-    // symbol: ??0ScriptPlayerInteractWithBlockAfterEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
     MCAPI ScriptPlayerInteractWithBlockAfterEvent(struct ScriptModuleMinecraft::
                                                       ScriptPlayerInteractWithBlockAfterEvent const&);
 
-    // symbol:
-    // ??0ScriptPlayerInteractWithBlockAfterEvent@ScriptModuleMinecraft@@QEAA@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@V?$optional@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@@std@@V?$StrongTypedObjectHandle@VScriptBlock@ScriptModuleMinecraft@@@3@W4ScriptFacing@1@VVec3@@@Z
     MCAPI ScriptPlayerInteractWithBlockAfterEvent(
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>,
         std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>,
@@ -42,16 +38,12 @@ public:
         class Vec3
     );
 
-    // symbol: ??4ScriptPlayerInteractWithBlockAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptPlayerInteractWithBlockAfterEvent&
     operator=(struct ScriptModuleMinecraft::ScriptPlayerInteractWithBlockAfterEvent&&);
 
-    // symbol: ??4ScriptPlayerInteractWithBlockAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptPlayerInteractWithBlockAfterEvent&
     operator=(struct ScriptModuleMinecraft::ScriptPlayerInteractWithBlockAfterEvent const&);
 
-    // symbol:
-    // ?bind@ScriptPlayerInteractWithBlockAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptPlayerInteractWithBlockAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<
         struct ScriptModuleMinecraft::ScriptPlayerInteractWithBlockAfterEvent>
     bind();

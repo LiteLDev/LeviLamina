@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1WorldTemplateManagerProxyCallbacks@@QEAA@XZ
     MCAPI ~WorldTemplateManagerProxyCallbacks();
 
     // NOLINTEND

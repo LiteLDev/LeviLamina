@@ -35,26 +35,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 6, symbol:
-    // ?initializeComponents@TropicalFish@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 6
     virtual void initializeComponents(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: __gen_??1TropicalFish@@UEAA@XZ
+    // vIndex: 10
     virtual ~TropicalFish() = default;
 
-    // vIndex: 29, symbol: ?startRiding@TropicalFish@@UEAA_NAEAVActor@@@Z
+    // vIndex: 29
     virtual bool startRiding(class Actor&);
 
-    // vIndex: 99, symbol: ?onSynchedDataUpdate@TropicalFish@@UEAAXH@Z
+    // vIndex: 99
     virtual void onSynchedDataUpdate(int dataId);
 
-    // vIndex: 144, symbol: ?updateEntitySpecificMolangVariables@TropicalFish@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 144
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // vIndex: 180, symbol: ?createAIGoals@TropicalFish@@UEAA_NXZ
+    // vIndex: 180
     virtual bool createAIGoals();
 
-    // symbol: ??0TropicalFish@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI TropicalFish(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

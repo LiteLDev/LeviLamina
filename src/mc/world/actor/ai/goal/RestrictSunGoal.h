@@ -15,23 +15,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1RestrictSunGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~RestrictSunGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@RestrictSunGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 4, symbol: ?start@RestrictSunGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@RestrictSunGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@RestrictSunGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0RestrictSunGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit RestrictSunGoal(class Mob& mob);
 
     // NOLINTEND

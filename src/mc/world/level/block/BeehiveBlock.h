@@ -27,18 +27,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BeehiveBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~BeehiveBlock() = default;
 
-    // vIndex: 2, symbol: ?getNextBlockPermutation@BeehiveBlock@@UEBAPEBVBlock@@AEBV2@@Z
+    // vIndex: 2
     virtual class Block const* getNextBlockPermutation(class Block const& currentBlock) const;
 
-    // vIndex: 95, symbol: ?playerWillDestroy@BeehiveBlock@@UEBAPEBVBlock@@AEAVPlayer@@AEBVBlockPos@@AEBV2@@Z
+    // vIndex: 95
     virtual class Block const*
     playerWillDestroy(class Player& player, class BlockPos const& pos, class Block const& block) const;
 
-    // vIndex: 106, symbol:
-    // ?executeEvent@BeehiveBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVActor@@@Z
+    // vIndex: 106
     virtual void executeEvent(
         class BlockSource&    region,
         class BlockPos const& pos,
@@ -47,55 +46,46 @@ public:
         class Actor&       sourceEntity
     ) const;
 
-    // vIndex: 111, symbol: ?hasComparatorSignal@BeehiveBlock@@UEBA_NXZ
+    // vIndex: 111
     virtual bool hasComparatorSignal() const;
 
-    // vIndex: 112, symbol: ?getComparatorSignal@BeehiveBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
+    // vIndex: 112
     virtual int
     getComparatorSignal(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
         const;
 
-    // vIndex: 129, symbol: ?getVariant@BeehiveBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 132, symbol: ?getMappedFace@BeehiveBlock@@UEBAEEAEBVBlock@@@Z
+    // vIndex: 132
     virtual uchar getMappedFace(uchar face, class Block const& block) const;
 
-    // vIndex: 134, symbol: ?animateTickBedrockLegacy@BeehiveBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 134
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // vIndex: 152, symbol: ?use@BeehiveBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    // symbol: ??0BeehiveBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI BeehiveBlock(std::string const& nameId, int id);
 
-    // symbol: ?emitHoneyComb@BeehiveBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void emitHoneyComb(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ?evictAll@BeehiveBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@_N@Z
     MCAPI void evictAll(class BlockSource& region, class BlockPos const& pos, bool angry) const;
 
-    // symbol: ?onPlayerPlace@BeehiveBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void onPlayerPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ?deliverNectar@BeehiveBlock@@SAXAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
     MCAPI static void deliverNectar(class BlockSource& region, class Block const& block, class BlockPos const& pos);
 
-    // symbol: ?getHiveItemWithOccupants@BeehiveBlock@@SA?AVItemStack@@AEBVBlock@@PEBVBeehiveBlockActor@@@Z
     MCAPI static class ItemStack getHiveItemWithOccupants(class Block const&, class BeehiveBlockActor const*);
 
-    // symbol: ?hasHoneyToHarvest@BeehiveBlock@@SA_NAEBVBlock@@@Z
     MCAPI static bool hasHoneyToHarvest(class Block const& block);
 
-    // symbol: ?resetHoneyLevel@BeehiveBlock@@SAXAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
     MCAPI static void resetHoneyLevel(class BlockSource& region, class Block const& block, class BlockPos const& pos);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_fillHoneyBottle@BeehiveBlock@@AEBAXAEAVPlayer@@AEAVItemStack@@1AEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void _fillHoneyBottle(
         class Player&         player,
         class ItemStack&      emptyBottle,
@@ -104,7 +94,6 @@ public:
         class BlockPos const& pos
     ) const;
 
-    // symbol: ?_playBottleSound@BeehiveBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void _playBottleSound(class BlockSource& region, class BlockPos const& pos) const;
 
     // NOLINTEND

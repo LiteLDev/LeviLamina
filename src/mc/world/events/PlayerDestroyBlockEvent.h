@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1PlayerDestroyBlockEvent@@QEAA@XZ
     MCAPI ~PlayerDestroyBlockEvent();
 
     // NOLINTEND

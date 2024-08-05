@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1PlayerStorageIds@@QEAA@XZ
     MCAPI ~PlayerStorageIds();
 
     // NOLINTEND

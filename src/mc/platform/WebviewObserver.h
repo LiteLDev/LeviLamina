@@ -11,38 +11,37 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1WebviewObserver@@UEAA@XZ
+    // vIndex: 0
     virtual ~WebviewObserver();
 
-    // vIndex: 1, symbol: __unk_vfn_1
+    // vIndex: 1
     virtual void __unk_vfn_1();
 
-    // vIndex: 2, symbol: ?onLoadingBegin@WebviewObserver@@UEAAXXZ
+    // vIndex: 2
     virtual void onLoadingBegin();
 
-    // vIndex: 3, symbol: ?onLoadingEnd@WebviewObserver@@UEAAXXZ
+    // vIndex: 3
     virtual void onLoadingEnd();
 
-    // vIndex: 4, symbol: ?onError@WebviewObserver@@UEAAXAEBUWebviewError@@@Z
+    // vIndex: 4
     virtual void onError(struct WebviewError const&);
 
-    // vIndex: 5, symbol: ?onWebviewChanged@WebviewObserver@@UEAAXXZ
+    // vIndex: 5
     virtual void onWebviewChanged();
 
-    // vIndex: 6, symbol: ?onDownloadBegin@WebviewObserver@@UEAAXAEBUWebviewDownloadInfo@@@Z
+    // vIndex: 6
     virtual void onDownloadBegin(struct WebviewDownloadInfo const&);
 
-    // vIndex: 7, symbol: ?onDownloadUpdate@WebviewObserver@@UEAAXAEBUWebviewDownloadInfo@@@Z
+    // vIndex: 7
     virtual void onDownloadUpdate(struct WebviewDownloadInfo const&);
 
-    // vIndex: 8, symbol: ?onDownloadComplete@WebviewObserver@@UEAAXAEBUWebviewDownloadInfo@@@Z
+    // vIndex: 8
     virtual void onDownloadComplete(struct WebviewDownloadInfo const&);
 
-    // vIndex: 9, symbol: ?onDownloadCanceled@WebviewObserver@@UEAAXAEBUWebviewDownloadInfo@@@Z
+    // vIndex: 9
     virtual void onDownloadCanceled(struct WebviewDownloadInfo const&);
 
-    // vIndex: 10, symbol:
-    // ?onMessageRecieved@WebviewObserver@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 10
     virtual void onMessageRecieved(std::string const&);
 
     // NOLINTEND

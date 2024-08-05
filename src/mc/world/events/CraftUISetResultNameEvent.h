@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1CraftUISetResultNameEvent@@QEAA@XZ
     MCAPI ~CraftUISetResultNameEvent();
 
     // NOLINTEND

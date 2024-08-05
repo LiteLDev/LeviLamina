@@ -16,11 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??8ScriptCameraEaseOptions@ScriptModuleMinecraft@@QEBA_NAEBU01@@Z
     MCAPI bool operator==(struct ScriptModuleMinecraft::ScriptCameraEaseOptions const&) const;
 
-    // symbol:
-    // ?bind@ScriptCameraEaseOptions@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@UScriptCameraEaseOptions@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptCameraEaseOptions> bind();
 
     // NOLINTEND

@@ -16,15 +16,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@SetPreviousWalkDistSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_tickWalkDistPrevSystem@SetPreviousWalkDistSystem@@CAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@UWalkDistComponent@@@@@Z
     MCAPI static void _tickWalkDistPrevSystem(class ViewT<
                                               class StrictEntityContext,
                                               struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,

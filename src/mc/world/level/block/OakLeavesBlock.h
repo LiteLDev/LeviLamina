@@ -28,20 +28,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1OakLeavesBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~OakLeavesBlock() = default;
 
-    // vIndex: 122, symbol: ?getColor@OakLeavesBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 122
     virtual int getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
 
-    // vIndex: 129, symbol: ?getVariant@OakLeavesBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const&) const;
 
-    // vIndex: 160, symbol: ?getMapColor@OakLeavesBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 160
     virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const&) const;
 
-    // symbol:
-    // ??0OakLeavesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@$$CBVBlockLegacy@@@@@Z
     MCAPI OakLeavesBlock(std::string const&, int, class WeakPtr<class BlockLegacy const>);
 
     // NOLINTEND

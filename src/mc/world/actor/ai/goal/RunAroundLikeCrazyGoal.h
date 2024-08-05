@@ -15,23 +15,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1RunAroundLikeCrazyGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~RunAroundLikeCrazyGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@RunAroundLikeCrazyGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@RunAroundLikeCrazyGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@RunAroundLikeCrazyGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@RunAroundLikeCrazyGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& debugInfo) const;
 
-    // symbol: ??0RunAroundLikeCrazyGoal@@QEAA@AEAVMob@@M@Z
     MCAPI RunAroundLikeCrazyGoal(class Mob& mob, float speedModifier);
 
     // NOLINTEND

@@ -35,36 +35,33 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1FireworksRocketActor@@UEAA@XZ
+    // vIndex: 10
     virtual ~FireworksRocketActor() = default;
 
-    // vIndex: 24, symbol: ?lerpMotion@FireworksRocketActor@@UEAAXAEBVVec3@@@Z
+    // vIndex: 24
     virtual void lerpMotion(class Vec3 const& delta);
 
-    // vIndex: 38, symbol: ?getShadowRadius@FireworksRocketActor@@UEBAMXZ
+    // vIndex: 38
     virtual float getShadowRadius() const;
 
-    // vIndex: 74, symbol: ?handleEntityEvent@FireworksRocketActor@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 74
     virtual void handleEntityEvent(::ActorEvent eventId, int data);
 
-    // vIndex: 99, symbol: ?onSynchedDataUpdate@FireworksRocketActor@@UEAAXH@Z
+    // vIndex: 99
     virtual void onSynchedDataUpdate(int dataId);
 
-    // vIndex: 147, symbol: ?readAdditionalSaveData@FireworksRocketActor@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 148, symbol: ?addAdditionalSaveData@FireworksRocketActor@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // symbol:
-    // ??0FireworksRocketActor@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI FireworksRocketActor(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?init@FireworksRocketActor@@QEAAXAEAVLevel@@AEBVVec3@@AEBVCompoundTag@@1UActorUniqueID@@_N@Z
     MCAPI void init(
         class Level&             level,
         class Vec3 const&        pos,
@@ -74,17 +71,12 @@ public:
         bool                     isProjectile
     );
 
-    // symbol: ?isAttachedToEntity@FireworksRocketActor@@QEBA_NXZ
     MCAPI bool isAttachedToEntity() const;
 
-    // symbol: ?postNormalTick@FireworksRocketActor@@QEAAXXZ
     MCAPI void postNormalTick();
 
-    // symbol: ?setDispensed@FireworksRocketActor@@QEAAX_N@Z
     MCAPI void setDispensed(bool dispensed);
 
-    // symbol:
-    // ?initData@FireworksRocketActor@@SAXAEAVSynchedActorDataEntityWrapper@@AEBVCompoundTag@@AEBVVec3@@UActorUniqueID@@@Z
     MCAPI static void
     initData(class SynchedActorDataEntityWrapper&, class CompoundTag const&, class Vec3 const&, struct ActorUniqueID);
 
@@ -92,13 +84,10 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?checkAchievement@FireworksRocketActor@@AEBAXXZ
     MCAPI void checkAchievement() const;
 
-    // symbol: ?dealExplosionDamage@FireworksRocketActor@@AEAAXXZ
     MCAPI void dealExplosionDamage();
 
-    // symbol: ?initTagData@FireworksRocketActor@@AEAAXAEAVRandom@@@Z
     MCAPI void initTagData(class Random& random);
 
     // NOLINTEND

@@ -35,13 +35,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1WanderingTrader@@UEAA@XZ
+    // vIndex: 10
     virtual ~WanderingTrader() = default;
 
-    // vIndex: 144, symbol: ?updateEntitySpecificMolangVariables@WanderingTrader@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 144
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // symbol: ??0WanderingTrader@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI WanderingTrader(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

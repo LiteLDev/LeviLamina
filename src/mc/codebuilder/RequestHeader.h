@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1RequestHeader@CodeBuilder@@QEAA@XZ
     MCAPI ~RequestHeader();
 
     // NOLINTEND

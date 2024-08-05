@@ -23,45 +23,42 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MinecartBlockCommandOrigin@@UEAA@XZ
+    // vIndex: 0
     virtual ~MinecartBlockCommandOrigin() = default;
 
-    // vIndex: 3, symbol: ?getBlockPosition@MinecartBlockCommandOrigin@@UEBA?AVBlockPos@@XZ
+    // vIndex: 3
     virtual class BlockPos getBlockPosition() const;
 
-    // vIndex: 4, symbol: ?getWorldPosition@MinecartBlockCommandOrigin@@UEBA?AVVec3@@XZ
+    // vIndex: 4
     virtual class Vec3 getWorldPosition() const;
 
-    // vIndex: 5, symbol: ?getRotation@MinecartBlockCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
+    // vIndex: 5
     virtual std::optional<class Vec2> getRotation() const;
 
-    // vIndex: 8, symbol: ?getEntity@MinecartBlockCommandOrigin@@UEBAPEAVActor@@XZ
+    // vIndex: 8
     virtual class Actor* getEntity() const;
 
-    // vIndex: 10, symbol:
-    // ?clone@MinecartBlockCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
+    // vIndex: 10
     virtual std::unique_ptr<class CommandOrigin> clone() const;
 
-    // vIndex: 17, symbol: ?canUseCommandsWithoutCheatsEnabled@MinecartBlockCommandOrigin@@UEBA_NXZ
+    // vIndex: 17
     virtual bool canUseCommandsWithoutCheatsEnabled() const;
 
-    // vIndex: 23, symbol: ?getOriginType@MinecartBlockCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
+    // vIndex: 23
     virtual ::CommandOriginType getOriginType() const;
 
-    // vIndex: 29, symbol: ?serialize@MinecartBlockCommandOrigin@@UEBA?AVCompoundTag@@XZ
+    // vIndex: 29
     virtual class CompoundTag serialize() const;
 
-    // vIndex: 30, symbol: ?isValid@MinecartBlockCommandOrigin@@UEBA_NXZ
+    // vIndex: 30
     virtual bool isValid() const;
 
-    // vIndex: 32, symbol:
-    // ?_getBaseCommandBlock@MinecartBlockCommandOrigin@@MEBAPEAVBaseCommandBlock@@AEAVBlockSource@@@Z
+    // vIndex: 32
     virtual class BaseCommandBlock* _getBaseCommandBlock(class BlockSource& region) const;
 
-    // vIndex: 33, symbol: ?_getBlockEntity@MinecartBlockCommandOrigin@@MEBAPEAVCommandBlockActor@@AEAVBlockSource@@@Z
+    // vIndex: 33
     virtual class CommandBlockActor* _getBlockEntity(class BlockSource& region) const;
 
-    // symbol: ??0MinecartBlockCommandOrigin@@QEAA@AEAVBlockSource@@AEBUActorUniqueID@@@Z
     MCAPI MinecartBlockCommandOrigin(class BlockSource& region, struct ActorUniqueID const& minecartId);
 
     // NOLINTEND

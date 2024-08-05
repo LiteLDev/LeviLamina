@@ -27,19 +27,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ObsidianBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~ObsidianBlock() = default;
 
-    // vIndex: 134, symbol: ?animateTickBedrockLegacy@ObsidianBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 134
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // vIndex: 142, symbol: ?_addHardCodedBlockComponents@ObsidianBlock@@UEAAXAEBVExperiments@@@Z
+    // vIndex: 142
     virtual void _addHardCodedBlockComponents(class Experiments const&);
 
-    // symbol: ??0ObsidianBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
     MCAPI ObsidianBlock(std::string const& nameId, int id, bool isGlowing);
 
-    // symbol: ?poofParticles@ObsidianBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void poofParticles(class BlockSource& region, class BlockPos const& pos) const;
 
     // NOLINTEND

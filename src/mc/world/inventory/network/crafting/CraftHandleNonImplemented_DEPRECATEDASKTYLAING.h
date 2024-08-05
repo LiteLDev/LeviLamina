@@ -17,11 +17,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CraftHandleNonImplemented_DEPRECATEDASKTYLAING@@UEAA@XZ
+    // vIndex: 0
     virtual ~CraftHandleNonImplemented_DEPRECATEDASKTYLAING() = default;
 
-    // vIndex: 4, symbol:
-    // ?_handleCraftAction@CraftHandleNonImplemented_DEPRECATEDASKTYLAING@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z
+    // vIndex: 4
     virtual ::ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&);
 
     // NOLINTEND

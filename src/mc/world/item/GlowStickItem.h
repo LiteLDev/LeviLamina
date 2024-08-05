@@ -26,26 +26,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1GlowStickItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~GlowStickItem() = default;
 
-    // vIndex: 56, symbol: ?isValidAuxValue@GlowStickItem@@UEBA_NH@Z
+    // vIndex: 56
     virtual bool isValidAuxValue(int auxValue) const;
 
-    // vIndex: 83, symbol:
-    // ?buildDescriptionId@GlowStickItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+    // vIndex: 83
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 108, symbol: ?getLightEmission@GlowStickItem@@UEBA?AUBrightness@@H@Z
+    // vIndex: 108
     virtual struct Brightness getLightEmission(int auxValue) const;
 
-    // symbol: ??0GlowStickItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI GlowStickItem(std::string const& name, int id);
 
-    // symbol: ?COLORS@GlowStickItem@@2QBW4ItemColor@@B
     MCAPI static ::ItemColor const COLORS[];
 
-    // symbol: ?MAX_ACTIVE_TICKS@GlowStickItem@@2HB
     MCAPI static int const MAX_ACTIVE_TICKS;
 
     // NOLINTEND

@@ -24,34 +24,26 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptPlugin@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptPlugin();
 
-    // vIndex: 1, symbol:
-    // ?onLoadScript@ScriptPlugin@@UEAA?AV?$optional@UScriptData@Scripting@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@V?$optional@V?$vector@UModuleBinding@Scripting@@V?$allocator@UModuleBinding@Scripting@@@std@@@std@@@3@@Z
+    // vIndex: 1
     virtual std::optional<struct Scripting::ScriptData>
     onLoadScript(std::string const& name, std::optional<std::vector<struct Scripting::ModuleBinding>>);
 
-    // symbol: ??0ScriptPlugin@@QEAA@$$QEAV0@@Z
     MCAPI ScriptPlugin(class ScriptPlugin&& rhs);
 
-    // symbol:
-    // ??0ScriptPlugin@@QEAA@V?$shared_ptr@VIScriptPluginSource@@@std@@$$QEAUModuleDescriptor@Scripting@@$$QEAV?$vector@UModuleDescriptor@Scripting@@V?$allocator@UModuleDescriptor@Scripting@@@std@@@2@$$QEAUCapabilities@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@AEBUPackIdVersion@@44@Z
     MCAPI
     ScriptPlugin(std::shared_ptr<class IScriptPluginSource>, struct Scripting::ModuleDescriptor&&, std::vector<struct Scripting::ModuleDescriptor>&&, struct Scripting::Capabilities&&, std::string const&, struct PackIdVersion const&, std::string const&, std::string const&);
 
-    // symbol: ?getModuleDescriptor@ScriptPlugin@@QEBAAEBUModuleDescriptor@Scripting@@XZ
     MCAPI struct Scripting::ModuleDescriptor const& getModuleDescriptor() const;
 
-    // symbol: ?getScriptContext@ScriptPlugin@@QEAAAEAVScriptContext@Scripting@@XZ
     MCAPI class Scripting::ScriptContext& getScriptContext();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_loadScript@ScriptPlugin@@AEAA?AV?$optional@UScriptData@Scripting@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
     MCAPI std::optional<struct Scripting::ScriptData> _loadScript(std::string const& fileName);
 
     // NOLINTEND

@@ -24,13 +24,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1Destroy@AgentCommands@@UEAA@XZ
+    // vIndex: 0
     virtual ~Destroy() = default;
 
-    // vIndex: 2, symbol: ?execute@Destroy@AgentCommands@@EEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+    // vIndex: 2
     virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    // symbol: ?setup@Destroy@AgentCommands@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry& registry);
 
     // NOLINTEND

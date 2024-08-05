@@ -21,11 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?copyTo@ScriptWeatherChangedBeforeEvent@ScriptModuleMinecraft@@QEBAXAEAULevelWeatherChangedEvent@@@Z
     MCAPI void copyTo(struct LevelWeatherChangedEvent&) const;
 
-    // symbol:
-    // ?bind@ScriptWeatherChangedBeforeEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptWeatherChangedBeforeEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptWeatherChangedBeforeEvent>
     bind();
 

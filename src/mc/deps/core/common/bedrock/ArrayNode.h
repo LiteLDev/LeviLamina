@@ -19,20 +19,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?clear@ArrayNode@JSONObject@Bedrock@@QEAAXXZ
     MCAPI void clear();
 
-    // symbol: ?setContents@ArrayNode@JSONObject@Bedrock@@QEAA_NAEBVValueWrapper@23@@Z
     MCAPI bool setContents(class Bedrock::JSONObject::ValueWrapper const& contents);
 
-    // symbol: ??1ArrayNode@JSONObject@Bedrock@@QEAA@XZ
     MCAPI ~ArrayNode();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ??0ArrayNode@JSONObject@Bedrock@@AEAA@PEAVMemoryPage@12@@Z
     MCAPI explicit ArrayNode(class Bedrock::JSONObject::MemoryPage*);
 
     // NOLINTEND

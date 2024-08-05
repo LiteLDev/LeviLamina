@@ -4,7 +4,6 @@
 
 namespace UseItemGoalUtilityInternal {
 // NOLINTBEGIN
-// symbol: ?updateEquipment@UseItemGoalUtilityInternal@@YAXAEAVMob@@AEBVItemStack@@@Z
 MCAPI void updateEquipment(class Mob& mob, class ItemStack const& item);
 // NOLINTEND
 

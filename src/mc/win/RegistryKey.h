@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1RegistryKey@@QEAA@XZ
     MCAPI ~RegistryKey();
 
     // NOLINTEND

@@ -27,67 +27,61 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FlowerPotBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~FlowerPotBlock() = default;
 
-    // vIndex: 50, symbol: ?isValidAuxValue@FlowerPotBlock@@UEBA_NH@Z
+    // vIndex: 50
     virtual bool isValidAuxValue(int value) const;
 
-    // vIndex: 56, symbol: ?waterSpreadCausesSpawn@FlowerPotBlock@@UEBA_NXZ
+    // vIndex: 56
     virtual bool waterSpreadCausesSpawn() const;
 
-    // vIndex: 57, symbol: ?canContainLiquid@FlowerPotBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // vIndex: 85, symbol: ?mayPlace@FlowerPotBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
+    // vIndex: 85
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar) const;
 
-    // vIndex: 86, symbol: ?mayPlace@FlowerPotBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 86
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 93, symbol: ?neighborChanged@FlowerPotBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 93
     virtual void neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
 
-    // vIndex: 95, symbol: ?playerWillDestroy@FlowerPotBlock@@UEBAPEBVBlock@@AEAVPlayer@@AEBVBlockPos@@AEBV2@@Z
+    // vIndex: 95
     virtual class Block const*
     playerWillDestroy(class Player& player, class BlockPos const& pos, class Block const& block) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@FlowerPotBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const* blockActor) const;
 
-    // vIndex: 143, symbol: ?onRemove@FlowerPotBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 143
     virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 148, symbol: ?tick@FlowerPotBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
-    // vIndex: 150, symbol: ?isInteractiveBlock@FlowerPotBlock@@UEBA_NXZ
+    // vIndex: 150
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 152, symbol: ?use@FlowerPotBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar) const;
 
-    // vIndex: 154, symbol: ?canSurvive@FlowerPotBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 154
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ??0FlowerPotBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI FlowerPotBlock(std::string const& nameId, int id);
 
-    // symbol: ?isValidResource@FlowerPotBlock@@SA_NAEBVBlock@@@Z
     MCAPI static bool isValidResource(class Block const& plant);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_tryPlaceFlower@FlowerPotBlock@@AEBA_NAEAVPlayer@@AEBVBlockPos@@@Z
     MCAPI bool _tryPlaceFlower(class Player& player, class BlockPos const& blockPos) const;
 
-    // symbol: ?_tryTakeFlower@FlowerPotBlock@@AEBA_NAEAVPlayer@@AEBVBlockPos@@@Z
     MCAPI bool _tryTakeFlower(class Player& player, class BlockPos const& blockPos) const;
 
-    // symbol:
-    // ?_updateFlowerPotEntity@FlowerPotBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVFlowerPotBlockActor@@PEBVBlock@@AEAVActor@@@Z
     MCAPI void _updateFlowerPotEntity(
         class BlockSource&         region,
         class BlockPos const&      blockPos,

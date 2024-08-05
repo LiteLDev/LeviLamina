@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1FlatFileSearchResult@Core@@QEAA@XZ
     MCAPI ~FlatFileSearchResult();
 
     // NOLINTEND

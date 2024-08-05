@@ -14,44 +14,43 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ITickingAreaView@@UEAA@XZ
+    // vIndex: 0
     virtual ~ITickingAreaView();
 
-    // vIndex: 1, symbol: ?init@TickingAreaView@@UEAAXAEBUBounds@@_N@Z
+    // vIndex: 1
     virtual void init(struct Bounds const& bounds, bool isCircle) = 0;
 
-    // vIndex: 2, symbol: ?tick@TickingAreaView@@UEAAXAEBUTick@@AEAVBlockSource@@_N2@Z
+    // vIndex: 2
     virtual void tick(struct Tick const& currentTick, class BlockSource& region, bool, bool randomize) = 0;
 
-    // vIndex: 3, symbol: ?tickSeasons@TickingAreaView@@UEAAXAEAVBlockSource@@AEAVRandom@@@Z
+    // vIndex: 3
     virtual void tickSeasons(class BlockSource& region, class Random& random) = 0;
 
-    // vIndex: 4, symbol: ?getDimensionId@TickingAreaView@@UEBA?AV?$AutomaticID@VDimension@@H@@XZ
+    // vIndex: 4
     virtual DimensionType getDimensionId() const = 0;
 
-    // vIndex: 5, symbol: ?getBounds@TickingAreaView@@UEBAAEBUBounds@@XZ
+    // vIndex: 5
     virtual struct Bounds const& getBounds() const = 0;
 
-    // vIndex: 6, symbol: ?isCircle@TickingAreaView@@UEBA_NXZ
+    // vIndex: 6
     virtual bool isCircle() const = 0;
 
-    // vIndex: 7, symbol: ?isDoneLoading@TickingAreaView@@UEBA_NXZ
+    // vIndex: 7
     virtual bool isDoneLoading() const = 0;
 
-    // vIndex: 8, symbol: ?checkInitialLoadDone@TickingAreaView@@UEAA_NUTick@@@Z
+    // vIndex: 8
     virtual bool checkInitialLoadDone(struct Tick currentLevelTick) = 0;
 
-    // vIndex: 9, symbol: ?checkLoadedChunkNeighborsDone@TickingAreaView@@UEBA_NAEBVBlockSource@@_N@Z
+    // vIndex: 9
     virtual bool checkLoadedChunkNeighborsDone(class BlockSource const& region, bool) const = 0;
 
-    // vIndex: 10, symbol: ?move@TickingAreaView@@UEAAXAEBUBounds@@@Z
+    // vIndex: 10
     virtual void move(struct Bounds const& bounds) = 0;
 
-    // vIndex: 11, symbol:
-    // ?createChildSource@TickingAreaView@@UEAA?AV?$unique_ptr@VChunkViewSource@@U?$default_delete@VChunkViewSource@@@std@@@std@@XZ
+    // vIndex: 11
     virtual std::unique_ptr<class ChunkViewSource> createChildSource() = 0;
 
-    // vIndex: 12, symbol: ?getAvailableChunk@TickingAreaView@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@@Z
+    // vIndex: 12
     virtual std::shared_ptr<class LevelChunk> getAvailableChunk(class ChunkPos const& cp) = 0;
 
     // NOLINTEND

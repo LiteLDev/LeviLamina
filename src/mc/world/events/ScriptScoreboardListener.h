@@ -25,19 +25,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptScoreboardListener@ScriptModuleMinecraft@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptScoreboardListener() = default;
 
-    // vIndex: 2, symbol:
-    // ?onObjectiveRemoved@ScriptScoreboardListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 2
     virtual ::EventResult onObjectiveRemoved(std::string const& objective);
 
-    // vIndex: 3, symbol:
-    // ?onScoreboardIdentityRemoved@ScriptScoreboardListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUScoreboardId@@@Z
+    // vIndex: 3
     virtual ::EventResult onScoreboardIdentityRemoved(struct ScoreboardId const& id);
 
-    // symbol:
-    // ??0ScriptScoreboardListener@ScriptModuleMinecraft@@QEAA@V?$WeakTypedObjectHandle@VScriptScoreboard@ScriptModuleMinecraft@@@Scripting@@@Z
     MCAPI explicit ScriptScoreboardListener(class Scripting::WeakTypedObjectHandle<
                                             class ScriptModuleMinecraft::ScriptScoreboard>);
 

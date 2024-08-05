@@ -19,10 +19,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CombatRegenerationListener@@UEAA@XZ
+    // vIndex: 0
     virtual ~CombatRegenerationListener() = default;
 
-    // vIndex: 1, symbol: ?onEvent@CombatRegenerationListener@@UEAA?AW4EventResult@@AEBUActorNotificationEvent@@@Z
+    // vIndex: 1
     virtual ::EventResult onEvent(struct ActorNotificationEvent const& event);
 
     // NOLINTEND

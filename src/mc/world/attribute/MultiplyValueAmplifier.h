@@ -14,10 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MultiplyValueAmplifier@@UEAA@XZ
+    // vIndex: 0
     virtual ~MultiplyValueAmplifier() = default;
 
-    // vIndex: 1, symbol: ?getAmount@MultiplyValueAmplifier@@UEBAMHM@Z
+    // vIndex: 1
     virtual float getAmount(int amplification, float scale) const;
 
     // NOLINTEND

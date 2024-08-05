@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?initialize@VanillaVillageJigsawStructureActorRules@@SAXAEAVJigsawStructureRegistry@@@Z
     MCAPI static void initialize(class JigsawStructureRegistry& jigsawRegistry);
 
     // NOLINTEND

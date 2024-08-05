@@ -16,8 +16,6 @@ namespace AgentComponents { struct ExecutingFlag; }
 
 namespace AgentActionSystems {
 // NOLINTBEGIN
-// symbol:
-// ?tickActionFailed@AgentActionSystems@@YAXAEAVStrictEntityContext@@AEAVActorOwnerComponent@@AEAV?$EntityModifier@UActionDetails@AgentComponents@@V?$FlagComponent@UAnimationShrugFlag@AgentComponents@@@@VCommandCooldown@2@V?$FlagComponent@UExecutingFlag@AgentComponents@@@@@@@Z
 MCAPI void tickActionFailed(
     class StrictEntityContext& entity,
     class ActorOwnerComponent&,

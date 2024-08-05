@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1VersionInfo@MolangVersionMap@@QEAA@XZ
     MCAPI ~VersionInfo();
 
     // NOLINTEND

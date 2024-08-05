@@ -20,17 +20,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CustomComponentsItemComponent@@UEAA@XZ
+    // vIndex: 0
     virtual ~CustomComponentsItemComponent() = default;
 
-    // symbol: ??0CustomComponentsItemComponent@@QEAA@U0v1_20_80@Puv@@@Z
     MCAPI explicit CustomComponentsItemComponent(struct Puv::v1_20_80::CustomComponentsItemComponent);
 
-    // symbol:
-    // ?getComponentNames@CustomComponentsItemComponent@@QEBAAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
     MCAPI std::vector<std::string> const& getComponentNames() const;
 
-    // symbol: ?getIdentifier@CustomComponentsItemComponent@@SAAEBVHashedString@@XZ
     MCAPI static class HashedString const& getIdentifier();
 
     // NOLINTEND

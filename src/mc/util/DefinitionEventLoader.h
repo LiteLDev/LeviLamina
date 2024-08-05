@@ -19,8 +19,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?loadEvent@DefinitionEventLoader@@SA?AVDefinitionEvent@@VValue@Json@@AEBVSemVersion@@W4TypeExecutingEvent@@PEBVEventResponseFactory@@@Z
     MCAPI static class DefinitionEvent loadEvent(
         class Json::Value                 root,
         class SemVersion const&           engineVersion,
@@ -32,8 +30,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_loadCollection@DefinitionEventLoader@@CAXAEAVDefinitionEvent@@AEBVValue@Json@@AEBVSemVersion@@W4TypeExecutingEvent@@PEBVEventResponseFactory@@@Z
     MCAPI static void _loadCollection(
         class DefinitionEvent&            defEvent,
         class Json::Value const&          collection,

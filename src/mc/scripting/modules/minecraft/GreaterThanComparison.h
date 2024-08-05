@@ -16,8 +16,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?bind@GreaterThanComparison@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@UGreaterThanComparison@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::GreaterThanComparison> bind();
 
     // NOLINTEND

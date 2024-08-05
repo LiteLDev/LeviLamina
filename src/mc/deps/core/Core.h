@@ -65,32 +65,22 @@ namespace Core::ZipUtils { class ZipSettings; }
 
 namespace Core {
 // NOLINTBEGIN
-// symbol: ?RESULT_FAILED_MESSAGE@Core@@3PEBDEB
 MCAPI extern char const* RESULT_FAILED_MESSAGE;
 
-// symbol: ?RESULT_NOT_IMPLEMENTED_MESSAGE@Core@@3PEBDEB
 MCAPI extern char const* RESULT_NOT_IMPLEMENTED_MESSAGE;
 
-// symbol: ?RESULT_SUCCEEDED_MESSAGE@Core@@3PEBDEB
 MCAPI extern char const* RESULT_SUCCEEDED_MESSAGE;
 
-// symbol: ??ICore@@YA_KW4DirectoryIterationFlags@0@0@Z
 MCAPI uint64 operator&(::Core::DirectoryIterationFlags a, ::Core::DirectoryIterationFlags b);
 
-// symbol: ??UCore@@YA?AW4DirectoryIterationFlags@0@W410@0@Z
 MCAPI ::Core::DirectoryIterationFlags operator|(::Core::DirectoryIterationFlags a, ::Core::DirectoryIterationFlags b);
 
-// symbol: ?sLockBlobName@Core@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
 MCAPI extern std::string const sLockBlobName;
 
-// symbol: ?sMultiChunkTag@Core@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
 MCAPI extern std::string const sMultiChunkTag;
 
-// symbol: ?sRootStorageArea@Core@@3V?$shared_ptr@VFileStorageArea@Core@@@std@@A
 MCAPI extern std::shared_ptr<class Core::FileStorageArea> sRootStorageArea;
 
-// symbol:
-// ?transferDirectory@Core@@YA?AVResult@1@PEAVFileSystemImpl@1@AEBVPath@1@01AEBV?$function@$$A6A?AVResult@Core@@AEBVPath@2@0@Z@std@@@Z
 MCAPI class Core::Result transferDirectory(
     class Core::FileSystemImpl*                                                                pSourceTransaction,
     class Core::Path const&                                                                    sourceDirectoryPath,

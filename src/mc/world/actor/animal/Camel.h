@@ -35,36 +35,33 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1Camel@@UEAA@XZ
+    // vIndex: 10
     virtual ~Camel() = default;
 
-    // vIndex: 19, symbol: ?getInterpolatedRidingOffset@Camel@@UEBA?AVVec3@@MH@Z
+    // vIndex: 19
     virtual class Vec3 getInterpolatedRidingOffset(float, int) const;
 
-    // vIndex: 26, symbol: ?normalTick@Camel@@UEAAXXZ
+    // vIndex: 26
     virtual void normalTick();
 
-    // vIndex: 149, symbol: ?_playStepSound@Camel@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 149
     virtual void _playStepSound(class BlockPos const&, class Block const& onBlock);
 
-    // vIndex: 158, symbol: ?aiStep@Camel@@UEAAXXZ
+    // vIndex: 158
     virtual void aiStep();
 
-    // symbol: ??0Camel@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Camel(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?getDashCooldown@Camel@@QEBA?AV?$optional@VExpiringTick@@@std@@XZ
     MCAPI std::optional<class ExpiringTick> getDashCooldown() const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_monitorSitting@Camel@@AEAAXXZ
     MCAPI void _monitorSitting();
 
     // NOLINTEND

@@ -14,18 +14,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DirectionalProducerComponent@@UEAA@XZ
+    // vIndex: 0
     virtual ~DirectionalProducerComponent() = default;
 
-    // vIndex: 12, symbol:
-    // ?allowConnection@DirectionalProducerComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
+    // vIndex: 12
     virtual bool
     allowConnection(class CircuitSceneGraph& graph, class CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
-    // symbol: ??0DirectionalProducerComponent@@QEAA@XZ
     MCAPI DirectionalProducerComponent();
 
-    // symbol: ?setAllowedConnections@DirectionalProducerComponent@@QEAAXV?$bitset@$05@std@@@Z
     MCAPI void setAllowedConnections(std::bitset<6>);
 
     // NOLINTEND

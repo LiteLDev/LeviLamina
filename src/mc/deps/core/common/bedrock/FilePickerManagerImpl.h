@@ -22,16 +22,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?directoryPickingEnabledForPlatform@FilePickerManagerImpl@Bedrock@@UEBA_NXZ
     MCVAPI bool directoryPickingEnabledForPlatform() const;
 
-    // symbol:
-    // ?pickDirectory@FilePickerManagerImpl@Bedrock@@UEAA?AV?$shared_ptr@V?$IAsyncResult@UDirectoryPickerResult@FilePickerManager@Bedrock@@@Threading@Bedrock@@@std@@AEBVDirectoryPickerConfig@2@@Z
     MCVAPI std::shared_ptr<
         class Bedrock::Threading::IAsyncResult<struct Bedrock::FilePickerManager::DirectoryPickerResult>>
     pickDirectory(class Bedrock::DirectoryPickerConfig const&);
 
-    // symbol: ??0FilePickerManagerImpl@Bedrock@@QEAA@XZ
     MCAPI FilePickerManagerImpl();
 
     // NOLINTEND

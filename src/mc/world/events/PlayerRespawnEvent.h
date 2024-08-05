@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1PlayerRespawnEvent@@QEAA@XZ
     MCAPI ~PlayerRespawnEvent();
 
     // NOLINTEND

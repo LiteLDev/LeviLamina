@@ -16,41 +16,36 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1WebRTCNetworkPeer@@UEAA@XZ
+    // vIndex: 0
     virtual ~WebRTCNetworkPeer();
 
-    // vIndex: 1, symbol:
-    // ?sendPacket@WebRTCNetworkPeer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Reliability@NetworkPeer@@W4Compressibility@@@Z
+    // vIndex: 1
     virtual void sendPacket(std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility);
 
-    // vIndex: 2, symbol:
-    // ?receivePacket@WebRTCNetworkPeer@@UEAA?AW4DataStatus@NetworkPeer@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@5@@Z
+    // vIndex: 2
     virtual ::NetworkPeer::DataStatus
     receivePacket(std::string& outData, std::shared_ptr<std::chrono::steady_clock::time_point> const&);
 
-    // vIndex: 3, symbol: ?getNetworkStatus@WebRTCNetworkPeer@@UEBA?AUNetworkStatus@NetworkPeer@@XZ
+    // vIndex: 3
     virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const;
 
-    // vIndex: 4, symbol: ?update@WebRTCNetworkPeer@@UEAAXXZ
+    // vIndex: 4
     virtual void update();
 
-    // vIndex: 6, symbol: ?isLocal@WebRTCNetworkPeer@@UEBA_NXZ
+    // vIndex: 6
     virtual bool isLocal() const;
 
-    // vIndex: 7, symbol: ?isEncrypted@WebRTCNetworkPeer@@UEBA_NXZ
+    // vIndex: 7
     virtual bool isEncrypted() const;
 
-    // symbol: ??0WebRTCNetworkPeer@@QEAA@$$QEAV?$NonOwnerPointer@UNetherNetConnector@@@Bedrock@@_K@Z
     MCAPI WebRTCNetworkPeer(class Bedrock::NonOwnerPointer<struct NetherNetConnector>&&, uint64);
 
-    // symbol: ?getPeerId@WebRTCNetworkPeer@@QEBA_KXZ
     MCAPI uint64 getPeerId() const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_updateConnectionStatus@WebRTCNetworkPeer@@AEAAXXZ
     MCAPI void _updateConnectionStatus();
 
     // NOLINTEND

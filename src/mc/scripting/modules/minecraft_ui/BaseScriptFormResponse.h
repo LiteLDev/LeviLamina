@@ -16,8 +16,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?bind@BaseScriptFormResponse@ScriptModuleMinecraftServerUI@@SA?AV?$ClassBindingBuilder@VBaseScriptFormResponse@ScriptModuleMinecraftServerUI@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraftServerUI::BaseScriptFormResponse>
     bind();
 

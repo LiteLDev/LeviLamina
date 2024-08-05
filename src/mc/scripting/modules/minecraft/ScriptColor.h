@@ -21,11 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getColor@ScriptColor@ScriptModuleMinecraft@@QEBAAEBVColor@mce@@XZ
     MCAPI class mce::Color const& getColor() const;
 
-    // symbol:
-    // ?bindV010@ScriptColor@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptColor@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptColor> bindV010();
 
     // NOLINTEND

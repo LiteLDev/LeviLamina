@@ -29,17 +29,13 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1MoveOutdoorsDefinition@MoveOutdoorsGoal@@UEAA@XZ
+        // vIndex: 0
         virtual ~MoveOutdoorsDefinition();
 
-        // symbol: ??0MoveOutdoorsDefinition@MoveOutdoorsGoal@@QEAA@XZ
         MCAPI MoveOutdoorsDefinition();
 
-        // symbol: ?initialize@MoveOutdoorsDefinition@MoveOutdoorsGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext& entity, class MoveOutdoorsGoal& goal) const;
 
-        // symbol:
-        // ?buildSchema@MoveOutdoorsDefinition@MoveOutdoorsGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VMoveOutdoorsDefinition@MoveOutdoorsGoal@@@JsonUtil@@@4@@Z
         MCAPI static void buildSchema(
             std::string const&                                    name,
             std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
@@ -58,36 +54,32 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MoveOutdoorsGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~MoveOutdoorsGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@MoveOutdoorsGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 4, symbol: ?start@MoveOutdoorsGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 6, symbol: ?tick@MoveOutdoorsGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@MoveOutdoorsGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // vIndex: 11, symbol: ?isValidTarget@MoveOutdoorsGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 11
     virtual bool isValidTarget(class BlockSource& region, class BlockPos const& pos);
 
-    // symbol: ??0MoveOutdoorsGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit MoveOutdoorsGoal(class Mob& mob);
 
-    // symbol: ?mobHasClearSpaceAbove@MoveOutdoorsGoal@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static bool mobHasClearSpaceAbove(class BlockSource& region, class BlockPos const& pos);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_setNextTargetTick@MoveOutdoorsGoal@@AEAAXXZ
     MCAPI void _setNextTargetTick();
 
     // NOLINTEND

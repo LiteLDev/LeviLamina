@@ -11,7 +11,6 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ??1OwnerStorageFeature@@IEAA@XZ
     MCAPI ~OwnerStorageFeature();
 
     // NOLINTEND

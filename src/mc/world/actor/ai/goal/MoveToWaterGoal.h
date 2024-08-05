@@ -15,10 +15,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MoveToWaterGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~MoveToWaterGoal() = default;
 
-    // symbol: ??0MoveToWaterGoal@@QEAA@AEAVMob@@MHHHM@Z
     MCAPI MoveToWaterGoal(
         class Mob& mob,
         float      speedModifier,

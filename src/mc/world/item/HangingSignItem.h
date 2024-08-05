@@ -27,29 +27,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1HangingSignItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~HangingSignItem() = default;
 
-    // vIndex: 116, symbol:
-    // ?_calculatePlacePos@HangingSignItem@@EEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
+    // vIndex: 116
     virtual bool _calculatePlacePos(class ItemStackBase&, class Actor& entity, uchar& face, class BlockPos& pos) const;
 
-    // vIndex: 119, symbol: ?getBlockToPlace@HangingSignItem@@MEBAPEBVBlock@@EAEBVActor@@VBlockPos@@@Z
+    // vIndex: 119
     virtual class Block const* getBlockToPlace(uchar face, class Actor const& entity, class BlockPos pos) const;
 
-    // symbol:
-    // ??0HangingSignItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4SignType@SignBlock@@@Z
     MCAPI HangingSignItem(std::string const& name, int id, ::SignBlock::SignType type);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_getCeilingHangingSignBlock@HangingSignItem@@AEBAPEBVBlock@@AEBVActor@@AEBEAEBVBlockPos@@@Z
     MCAPI class Block const*
     _getCeilingHangingSignBlock(class Actor const& entity, uchar const& face, class BlockPos const& pos) const;
 
-    // symbol: ?_getWallHangingSignBlock@HangingSignItem@@AEBAPEBVBlock@@AEBVActor@@AEBEAEBVBlockPos@@@Z
     MCAPI class Block const*
     _getWallHangingSignBlock(class Actor const& entity, uchar const& face, class BlockPos const& pos) const;
 

@@ -35,83 +35,72 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 4, symbol: ?reloadHardcoded@ItemActor@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 4
     virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: __gen_??1ItemActor@@UEAA@XZ
+    // vIndex: 10
     virtual ~ItemActor() = default;
 
-    // vIndex: 20, symbol: ?isFireImmune@ItemActor@@UEBA_NXZ
+    // vIndex: 20
     virtual bool isFireImmune() const;
 
-    // vIndex: 25, symbol:
-    // ?tryCreateAddActorPacket@ItemActor@@UEAA?AV?$unique_ptr@VAddActorBasePacket@@U?$default_delete@VAddActorBasePacket@@@std@@@std@@XZ
+    // vIndex: 25
     virtual std::unique_ptr<class AddActorBasePacket> tryCreateAddActorPacket();
 
-    // vIndex: 42, symbol: ?playerTouch@ItemActor@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 42
     virtual void playerTouch(class Player& player);
 
-    // vIndex: 69, symbol: ?isInvulnerableTo@ItemActor@@UEBA_NAEBVActorDamageSource@@@Z
+    // vIndex: 69
     virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
-    // vIndex: 74, symbol: ?handleEntityEvent@ItemActor@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 74
     virtual void handleEntityEvent(::ActorEvent eventId, int data);
 
-    // vIndex: 90, symbol: ?getSourceUniqueID@ItemActor@@UEBA?AUActorUniqueID@@XZ
+    // vIndex: 90
     virtual struct ActorUniqueID getSourceUniqueID() const;
 
-    // vIndex: 105, symbol: ?canSynchronizeNewEntity@ItemActor@@UEBA_NXZ
+    // vIndex: 105
     virtual bool canSynchronizeNewEntity() const;
 
-    // vIndex: 146, symbol: ?_hurt@ItemActor@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 146
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 147, symbol: ?readAdditionalSaveData@ItemActor@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 148, symbol: ?addAdditionalSaveData@ItemActor@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148
     virtual void addAdditionalSaveData(class CompoundTag& entityTag) const;
 
-    // symbol: ??0ItemActor@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI ItemActor(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?postNormalTick@ItemActor@@QEAAXXZ
     MCAPI void postNormalTick();
 
-    // symbol: ?setSourceEntity@ItemActor@@QEAAXPEBVActor@@@Z
     MCAPI void setSourceEntity(class Actor const* owner);
 
-    // symbol: ?getLiquidAABB@ItemActor@@SA?AVAABB@@AEBUAABBShapeComponent@@@Z
     MCAPI static class AABB getLiquidAABB(struct AABBShapeComponent const&);
 
-    // symbol: ?tryGetFromEntity@ItemActor@@SAPEAV1@AEAVEntityContext@@_N@Z
     MCAPI static class ItemActor* tryGetFromEntity(class EntityContext& entity, bool);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_addComponents@ItemActor@@AEAAXXZ
     MCAPI void _addComponents();
 
-    // symbol: ?_dropContents@ItemActor@@AEAAXXZ
     MCAPI void _dropContents();
 
-    // symbol: ?_merge@ItemActor@@AEAA_NPEAV1@@Z
     MCAPI bool _merge(class ItemActor* target);
 
-    // symbol: ?_validateItem@ItemActor@@AEAAXXZ
     MCAPI void _validateItem();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?LIFETIME@ItemActor@@0HB
     MCAPI static int const LIFETIME;
 
     // NOLINTEND

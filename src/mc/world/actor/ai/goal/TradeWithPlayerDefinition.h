@@ -20,11 +20,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1TradeWithPlayerDefinition@@UEAA@XZ
+    // vIndex: 0
     virtual ~TradeWithPlayerDefinition() = default;
 
-    // symbol:
-    // ?buildSchema@TradeWithPlayerDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VTradeWithPlayerDefinition@@@JsonUtil@@@3@@Z
     MCAPI static void
     buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TradeWithPlayerDefinition>>&);
 

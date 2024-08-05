@@ -9,7 +9,6 @@ namespace cereal { class SerializerEnumMapping; }
 
 namespace FlatWorldGeneratorOptionsHelper {
 // NOLINTBEGIN
-// symbol: ?worldVersionEnumMapping@FlatWorldGeneratorOptionsHelper@@YA?AVSerializerEnumMapping@cereal@@XZ
 MCAPI class cereal::SerializerEnumMapping worldVersionEnumMapping();
 // NOLINTEND
 

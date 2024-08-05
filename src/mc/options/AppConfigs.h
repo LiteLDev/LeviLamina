@@ -24,124 +24,118 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1AppConfigs@@UEAA@XZ
+    // vIndex: 0
     virtual ~AppConfigs();
 
-    // vIndex: 1, symbol: ?loadFromData@AppConfigs@@UEAAXAEBVIAppConfigData@@@Z
+    // vIndex: 1
     virtual void loadFromData(class IAppConfigData const&);
 
-    // vIndex: 2, symbol: ?arePremiumSkinPacksAllowed@AppConfigs@@UEBA_NXZ
+    // vIndex: 2
     virtual bool arePremiumSkinPacksAllowed() const;
 
-    // vIndex: 3, symbol: ?areResourcePacksAllowed@AppConfigs@@UEBA_NXZ
+    // vIndex: 3
     virtual bool areResourcePacksAllowed() const;
 
-    // vIndex: 4, symbol: ?isPlayScreenAllowed@AppConfigs@@UEBA_NXZ
+    // vIndex: 4
     virtual bool isPlayScreenAllowed() const;
 
-    // vIndex: 5, symbol: ?isChatScreenAllowed@AppConfigs@@UEBA_NXZ
+    // vIndex: 5
     virtual bool isChatScreenAllowed() const;
 
-    // vIndex: 6, symbol: ?isGameTabShownInSettings@AppConfigs@@UEBA_NXZ
+    // vIndex: 6
     virtual bool isGameTabShownInSettings() const;
 
-    // vIndex: 7, symbol: ?areEmotesSupported@AppConfigs@@UEBA_NXZ
+    // vIndex: 7
     virtual bool areEmotesSupported() const;
 
-    // vIndex: 8, symbol: ?useNormalizedFontSize@AppConfigs@@UEBA_NXZ
+    // vIndex: 8
     virtual bool useNormalizedFontSize() const;
 
-    // vIndex: 9, symbol: ?useFullScreenByDefault@AppConfigs@@UEBA_NXZ
+    // vIndex: 9
     virtual bool useFullScreenByDefault() const;
 
-    // vIndex: 10, symbol: ?muteByDefault@AppConfigs@@UEBA_NXZ
+    // vIndex: 10
     virtual bool muteByDefault() const;
 
-    // vIndex: 11, symbol: ?isCoursesCacheEnabled@AppConfigs@@UEBA_NXZ
+    // vIndex: 11
     virtual bool isCoursesCacheEnabled() const;
 
-    // vIndex: 12, symbol: ?shouldPromptBeforeExit@AppConfigs@@UEBA_NXZ
+    // vIndex: 12
     virtual bool shouldPromptBeforeExit() const;
 
-    // vIndex: 13, symbol: ?gameArgumentsNeedAuthentication@AppConfigs@@UEBA_NXZ
+    // vIndex: 13
     virtual bool gameArgumentsNeedAuthentication() const;
 
-    // vIndex: 14, symbol: ?worldBuilderDisabled@AppConfigs@@UEBA_NXZ
+    // vIndex: 14
     virtual bool worldBuilderDisabled() const;
 
-    // vIndex: 15, symbol: ?worldsAreSingleUse@AppConfigs@@UEBA_NXZ
+    // vIndex: 15
     virtual bool worldsAreSingleUse() const;
 
-    // vIndex: 16, symbol: ?getEducationEditionOffering@AppConfigs@@UEBA?AW4EducationEditionOffer@@XZ
+    // vIndex: 16
     virtual ::EducationEditionOffer getEducationEditionOffering() const;
 
-    // vIndex: 17, symbol: ?requireTrustedContent@AppConfigs@@UEBA_NXZ
+    // vIndex: 17
     virtual bool requireTrustedContent() const;
 
-    // vIndex: 18, symbol: ?isExternalPlayerCommunicationAllowed@AppConfigs@@UEBA_NXZ
+    // vIndex: 18
     virtual bool isExternalPlayerCommunicationAllowed() const;
 
-    // vIndex: 19, symbol: ?supports3DExport@AppConfigs@@UEBA_NXZ
+    // vIndex: 19
     virtual bool supports3DExport() const;
 
-    // vIndex: 20, symbol: ?requireEduLevelSettings@AppConfigs@@UEBA_NXZ
+    // vIndex: 20
     virtual bool requireEduLevelSettings() const;
 
-    // vIndex: 21, symbol: ?getConnectionDefinition@AppConfigs@@UEBA?AUConnectionDefinition@@XZ
+    // vIndex: 21
     virtual struct ConnectionDefinition getConnectionDefinition() const;
 
-    // vIndex: 22, symbol: ?supportsChangingMultiplayerDuringPlay@AppConfigs@@UEBA_NXZ
+    // vIndex: 22
     virtual bool supportsChangingMultiplayerDuringPlay() const;
 
-    // vIndex: 23, symbol: ?webSocketsDisabled@AppConfigs@@UEBA_NXZ
+    // vIndex: 23
     virtual bool webSocketsDisabled() const;
 
-    // vIndex: 24, symbol: ?sendPermissionsTelemetry@AppConfigs@@UEBA_NXZ
+    // vIndex: 24
     virtual bool sendPermissionsTelemetry() const;
 
-    // vIndex: 25, symbol: ?useEduDemoUpsellDialog@AppConfigs@@UEBA_NXZ
+    // vIndex: 25
     virtual bool useEduDemoUpsellDialog() const;
 
-    // vIndex: 26, symbol: ?allowGameArguments@AppConfigs@@UEBA_NXZ
+    // vIndex: 26
     virtual bool allowGameArguments() const;
 
-    // vIndex: 27, symbol: ?canUseAzureNotebooks@AppConfigs@@UEBA_NXZ
+    // vIndex: 27
     virtual bool canUseAzureNotebooks() const;
 
-    // vIndex: 28, symbol: ?canUseMaelstrom@AppConfigs@@UEBA?AW4MaelstromEduUsabilityStatus@1@XZ
+    // vIndex: 28
     virtual ::AppConfigs::MaelstromEduUsabilityStatus canUseMaelstrom() const;
 
-    // vIndex: 29, symbol: ?isSaveToCloudOn@AppConfigs@@UEBA_NXZ
+    // vIndex: 29
     virtual bool isSaveToCloudOn() const;
 
-    // vIndex: 30, symbol: ?setCanAccessWorldCallback@AppConfigs@@UEAAXAEAVIMinecraftGame@@@Z
+    // vIndex: 30
     virtual void setCanAccessWorldCallback(class IMinecraftGame& minecraftGame);
 
-    // vIndex: 31, symbol:
-    // ?getAdditionalClientPacks@AppConfigs@@UEBA?AV?$vector@UPackIdVersion@@V?$allocator@UPackIdVersion@@@std@@@std@@_N@Z
+    // vIndex: 31
     virtual std::vector<struct PackIdVersion> getAdditionalClientPacks(bool) const;
 
-    // vIndex: 32, symbol:
-    // ?getScreenCapabilities@AppConfigs@@UEBA?AV?$unique_ptr@VIScreenCapabilities@@U?$default_delete@VIScreenCapabilities@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+    // vIndex: 32
     virtual std::unique_ptr<class IScreenCapabilities> getScreenCapabilities(std::string const& screenName) const;
 
-    // vIndex: 33, symbol:
-    // ?createContentAccessibility@AppConfigs@@UEBA?AV?$unique_ptr@VIContentAccessibilityProvider@@U?$default_delete@VIContentAccessibilityProvider@@@std@@@std@@V?$not_null@V?$NonOwnerPointer@VIEntitlementManager@@@Bedrock@@@gsl@@@Z
+    // vIndex: 33
     virtual std::unique_ptr<class IContentAccessibilityProvider>
     createContentAccessibility(Bedrock::NotNullNonOwnerPtr<class IEntitlementManager> entitlementManager) const;
 
-    // vIndex: 34, symbol:
-    // ?getFeedbackURL@AppConfigs@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 34
     virtual std::string getFeedbackURL() const;
 
-    // vIndex: 35, symbol:
-    // ?getHelpCenterURL@AppConfigs@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 35
     virtual std::string getHelpCenterURL() const;
 
-    // vIndex: 36, symbol: ?applyLevelDataOverride@AppConfigs@@UEBAXAEAVLevelData@@@Z
+    // vIndex: 36
     virtual void applyLevelDataOverride(class LevelData&) const;
 
-    // symbol: ??0AppConfigs@@QEAA@XZ
     MCAPI AppConfigs();
 
     // NOLINTEND

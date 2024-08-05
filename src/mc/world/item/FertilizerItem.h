@@ -27,31 +27,26 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1FertilizerItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~FertilizerItem();
 
-    // vIndex: 7, symbol:
-    // ?executeEvent@FertilizerItem@@UEBAXAEAVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRenderParams@@@Z
+    // vIndex: 7
     virtual void executeEvent(class ItemStackBase& item, std::string const& name, class RenderParams& params) const;
 
-    // vIndex: 17, symbol: ?isFertilizer@FertilizerItem@@UEBA_NXZ
+    // vIndex: 17
     virtual bool isFertilizer() const;
 
-    // vIndex: 74, symbol: ?dispense@FertilizerItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 74
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
-    // vIndex: 118, symbol:
-    // ?_useOn@FertilizerItem@@MEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+    // vIndex: 118
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
         const;
 
-    // symbol:
-    // ??0FertilizerItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4FertilizerType@@@Z
     MCAPI FertilizerItem(std::string const& name, int id, ::FertilizerType type);
 
-    // symbol: ?getFertilizerType@FertilizerItem@@QEBA?AW4FertilizerType@@XZ
     MCAPI ::FertilizerType getFertilizerType() const;
 
     // NOLINTEND

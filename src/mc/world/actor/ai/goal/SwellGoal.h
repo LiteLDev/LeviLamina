@@ -15,26 +15,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SwellGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~SwellGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@SwellGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 4, symbol: ?start@SwellGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@SwellGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@SwellGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@SwellGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0SwellGoal@@QEAA@PEAVCreeper@@MM@Z
     MCAPI SwellGoal(class Creeper* creeper, float startSwellDist, float stopSwellDist);
 
     // NOLINTEND

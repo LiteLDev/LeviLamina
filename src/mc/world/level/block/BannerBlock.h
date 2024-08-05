@@ -27,60 +27,52 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BannerBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~BannerBlock() = default;
 
-    // vIndex: 5, symbol:
-    // ?getCollisionShape@BannerBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 5
     virtual class AABB
     getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 11, symbol: ?getVisualShape@BannerBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
+    // vIndex: 11
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
 
-    // vIndex: 62, symbol: ?checkIsPathable@BannerBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
+    // vIndex: 62
     virtual bool
     checkIsPathable(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
 
-    // vIndex: 93, symbol: ?neighborChanged@BannerBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 93
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@BannerBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const* blockActor) const;
 
-    // vIndex: 129, symbol: ?getVariant@BannerBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 146, symbol: ?onPlace@BannerBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 146
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 148, symbol: ?tick@BannerBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
-    // vIndex: 154, symbol: ?canSurvive@BannerBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 154
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ??0BannerBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
     MCAPI BannerBlock(std::string const& nameId, int id, bool onGround);
 
-    // symbol: ?itemInstanceFromBlockEntity@BannerBlock@@SA?AVItemInstance@@V?$not_null@PEBVBannerBlockActor@@@gsl@@@Z
     MCAPI static class ItemInstance itemInstanceFromBlockEntity(gsl::not_null<class BannerBlockActor const*>);
 
-    // symbol: ?EAST_AABB@BannerBlock@@2VAABB@@A
     MCAPI static class AABB EAST_AABB;
 
-    // symbol: ?NORTH_AABB@BannerBlock@@2VAABB@@A
     MCAPI static class AABB NORTH_AABB;
 
-    // symbol: ?SOUTH_AABB@BannerBlock@@2VAABB@@A
     MCAPI static class AABB SOUTH_AABB;
 
-    // symbol: ?STANDING_AABB@BannerBlock@@2VAABB@@A
     MCAPI static class AABB STANDING_AABB;
 
-    // symbol: ?WEST_AABB@BannerBlock@@2VAABB@@A
     MCAPI static class AABB WEST_AABB;
 
     // NOLINTEND

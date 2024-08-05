@@ -12,10 +12,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0EngineError@Scripting@@QEAA@XZ
     MCAPI EngineError();
 
-    // symbol: ??1EngineError@Scripting@@QEAA@XZ
     MCAPI ~EngineError();
 
     // NOLINTEND

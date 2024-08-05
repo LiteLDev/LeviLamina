@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1KnockBackEvent@@QEAA@XZ
     MCAPI ~KnockBackEvent();
 
     // NOLINTEND

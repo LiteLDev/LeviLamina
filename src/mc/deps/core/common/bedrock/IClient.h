@@ -21,7 +21,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1IClient@CodeBuilder@@UEAA@XZ
+    // vIndex: 0
     virtual ~IClient();
 
     // NOLINTEND

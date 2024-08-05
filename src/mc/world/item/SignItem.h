@@ -27,22 +27,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SignItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~SignItem();
 
-    // vIndex: 116, symbol: ?_calculatePlacePos@SignItem@@EEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
+    // vIndex: 116
     virtual bool _calculatePlacePos(class ItemStackBase&, class Actor& entity, uchar& face, class BlockPos& pos) const;
 
-    // vIndex: 118, symbol:
-    // ?_useOn@SignItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+    // vIndex: 118
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const&) const;
 
-    // vIndex: 119, symbol: ?getBlockToPlace@SignItem@@UEBAPEBVBlock@@EAEBVActor@@VBlockPos@@@Z
+    // vIndex: 119
     virtual class Block const* getBlockToPlace(uchar face, class Actor const& entity, class BlockPos pos) const;
 
-    // symbol:
-    // ??0SignItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4SignType@SignBlock@@@Z
     MCAPI SignItem(std::string const& name, int id, ::SignBlock::SignType type);
 
     // NOLINTEND

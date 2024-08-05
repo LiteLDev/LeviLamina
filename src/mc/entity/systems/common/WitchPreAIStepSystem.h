@@ -16,18 +16,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@WitchPreAIStepSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_doWitchPreAIStepSystem@WitchPreAIStepSystem@@CAXAEBVStrictEntityContext@@AEAVActorOwnerComponent@@@Z
     MCAPI static void _doWitchPreAIStepSystem(class StrictEntityContext const&, class ActorOwnerComponent&);
 
-    // symbol:
-    // ?_tickWitchPreAIStepSystem@WitchPreAIStepSystem@@CAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@UWitchFlag@@@@@@VActorOwnerComponent@@@@@Z
     MCAPI static void _tickWitchPreAIStepSystem(class ViewT<
                                                 class StrictEntityContext,
                                                 struct Include<

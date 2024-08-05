@@ -17,40 +17,40 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ?AddRef@TaskQueuePortContextImpl@@UEAAIXZ
+    // vIndex: 0
     virtual uint AddRef();
 
-    // vIndex: 1, symbol: ?Release@TaskQueuePortContextImpl@@UEAAIXZ
+    // vIndex: 1
     virtual uint Release();
 
-    // vIndex: 2, symbol: ?QueryApi@TaskQueuePortContextImpl@@UEAAJW4ApiId@@PEAPEAX@Z
+    // vIndex: 2
     virtual long QueryApi(::ApiId, void**);
 
-    // vIndex: 3, symbol: ?GetType@TaskQueuePortContextImpl@@UEAA?AW4XTaskQueuePort@@XZ
+    // vIndex: 3
     virtual ::XTaskQueuePort GetType();
 
-    // vIndex: 4, symbol: ?GetStatus@TaskQueuePortContextImpl@@UEAA?AW4TaskQueuePortStatus@@XZ
+    // vIndex: 4
     virtual ::TaskQueuePortStatus GetStatus();
 
-    // vIndex: 5, symbol: ?GetQueue@TaskQueuePortContextImpl@@UEAAPEAUITaskQueue@@XZ
+    // vIndex: 5
     virtual struct ITaskQueue* GetQueue();
 
-    // vIndex: 6, symbol: ?GetPort@TaskQueuePortContextImpl@@UEAAPEAUITaskQueuePort@@XZ
+    // vIndex: 6
     virtual struct ITaskQueuePort* GetPort();
 
-    // vIndex: 7, symbol: ?TrySetStatus@TaskQueuePortContextImpl@@UEAA_NW4TaskQueuePortStatus@@0@Z
+    // vIndex: 7
     virtual bool TrySetStatus(::TaskQueuePortStatus, ::TaskQueuePortStatus);
 
-    // vIndex: 8, symbol: ?SetStatus@TaskQueuePortContextImpl@@UEAAXW4TaskQueuePortStatus@@@Z
+    // vIndex: 8
     virtual void SetStatus(::TaskQueuePortStatus);
 
-    // vIndex: 9, symbol: ?ItemQueued@TaskQueuePortContextImpl@@UEAAXXZ
+    // vIndex: 9
     virtual void ItemQueued();
 
-    // vIndex: 10, symbol: ?AddSuspend@TaskQueuePortContextImpl@@UEAA_NXZ
+    // vIndex: 10
     virtual bool AddSuspend();
 
-    // vIndex: 11, symbol: ?RemoveSuspend@TaskQueuePortContextImpl@@UEAA_NXZ
+    // vIndex: 11
     virtual bool RemoveSuspend();
 
     // NOLINTEND

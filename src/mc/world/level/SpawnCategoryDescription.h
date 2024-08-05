@@ -11,10 +11,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SpawnCategoryDescription@@UEAA@XZ
+    // vIndex: 0
     virtual ~SpawnCategoryDescription() = default;
 
-    // vIndex: 1, symbol: ?getJsonName@SpawnCategoryDescription@@UEBAPEBDXZ
+    // vIndex: 1
     virtual char const* getJsonName() const;
 
     // NOLINTEND

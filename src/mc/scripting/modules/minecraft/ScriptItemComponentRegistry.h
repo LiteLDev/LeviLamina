@@ -29,11 +29,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptItemComponentRegistry@ScriptModuleMinecraft@@QEAA@AEAVIScriptItemCustomComponentRegistry@1@@Z
     MCAPI explicit ScriptItemComponentRegistry(class ScriptModuleMinecraft::IScriptItemCustomComponentRegistry&);
 
-    // symbol:
-    // ?registerCustomComponent@ScriptItemComponentRegistry@ScriptModuleMinecraft@@QEAA?AV?$Result@XUScriptItemCustomComponentNameError@ScriptModuleMinecraft@@UScriptItemCustomComponentAlreadyRegisteredError@2@UScriptItemCustomComponentReloadVersionError@2@UScriptItemCustomComponentReloadNewEventError@2@UScriptItemCustomComponentReloadNewComponentError@2@@Scripting@@AEAVWeakLifetimeScope@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAUScriptItemCustomComponentClosures@2@@Z
     MCAPI class Scripting::Result<
         void,
         struct ScriptModuleMinecraft::ScriptItemCustomComponentNameError,
@@ -43,7 +40,6 @@ public:
         struct ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewComponentError>
     registerCustomComponent(class Scripting::WeakLifetimeScope&, std::string const&, struct ScriptModuleMinecraft::ScriptItemCustomComponentClosures&);
 
-    // symbol: ?bind@ScriptItemComponentRegistry@ScriptModuleMinecraft@@SA?AUClassBinding@Scripting@@XZ
     MCAPI static struct Scripting::ClassBinding bind();
 
     // NOLINTEND

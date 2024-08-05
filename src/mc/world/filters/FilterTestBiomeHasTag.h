@@ -20,23 +20,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1FilterTestBiomeHasTag@@UEAA@XZ
+    // vIndex: 0
     virtual ~FilterTestBiomeHasTag();
 
-    // vIndex: 2, symbol: ?evaluate@FilterTestBiomeHasTag@@UEBA_NAEBUFilterContext@@@Z
+    // vIndex: 2
     virtual bool evaluate(struct FilterContext const& context) const;
 
-    // vIndex: 3, symbol: ?finalizeParsedValue@FilterTestBiomeHasTag@@UEAAXAEAVIWorldRegistriesProvider@@@Z
+    // vIndex: 3
     virtual void finalizeParsedValue(class IWorldRegistriesProvider& registries);
 
-    // vIndex: 4, symbol: ?getName@FilterTestBiomeHasTag@@UEBA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@XZ
+    // vIndex: 4
     virtual std::string_view getName() const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_evalBiome@FilterTestBiomeHasTag@@AEBA_NAEBVBiome@@AEBUFilterContext@@@Z
     MCAPI bool _evalBiome(class Biome const& b, struct FilterContext const& context) const;
 
     // NOLINTEND

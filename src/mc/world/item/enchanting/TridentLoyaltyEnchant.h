@@ -14,20 +14,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1TridentLoyaltyEnchant@@UEAA@XZ
+    // vIndex: 0
     virtual ~TridentLoyaltyEnchant() = default;
 
-    // vIndex: 2, symbol: ?getMinCost@TridentLoyaltyEnchant@@UEBAHH@Z
+    // vIndex: 2
     virtual int getMinCost(int level) const;
 
-    // vIndex: 3, symbol: ?getMaxCost@TridentLoyaltyEnchant@@UEBAHH@Z
+    // vIndex: 3
     virtual int getMaxCost(int level) const;
 
-    // vIndex: 5, symbol: ?getMaxLevel@TridentLoyaltyEnchant@@UEBAHXZ
+    // vIndex: 5
     virtual int getMaxLevel() const;
 
-    // symbol:
-    // ??0TridentLoyaltyEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_view@DU?$char_traits@D@std@@@std@@2H_NH@Z
     MCAPI TridentLoyaltyEnchant(
         ::Enchant::Type      type,
         ::Enchant::Frequency frequency,

@@ -19,7 +19,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?bind@ScriptGameRules@ScriptModuleMinecraft@@SAXAEAVModuleBindingBuilder@Scripting@@AEBVLevel@@@Z
     MCAPI static void bind(class Scripting::ModuleBindingBuilder&, class Level const&);
 
     // NOLINTEND

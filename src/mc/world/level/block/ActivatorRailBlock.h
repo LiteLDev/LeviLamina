@@ -27,17 +27,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ActivatorRailBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~ActivatorRailBlock() = default;
 
-    // vIndex: 66, symbol: ?onRedstoneUpdate@ActivatorRailBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
+    // vIndex: 66
     virtual void
     onRedstoneUpdate(class BlockSource& source, class BlockPos const& pos, int strength, bool isFirstTime) const;
 
-    // vIndex: 129, symbol: ?getVariant@ActivatorRailBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const& block) const;
 
-    // symbol: ??0ActivatorRailBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI ActivatorRailBlock(std::string const& nameId, int id);
 
     // NOLINTEND

@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1PathSwapper@internal@Puv@@QEAA@XZ
     MCAPI ~PathSwapper();
 
     // NOLINTEND

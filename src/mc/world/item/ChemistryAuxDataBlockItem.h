@@ -26,10 +26,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ChemistryAuxDataBlockItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~ChemistryAuxDataBlockItem() = default;
 
-    // vIndex: 92, symbol: ?fixupCommon@ChemistryAuxDataBlockItem@@UEBAXAEAVItemStackBase@@@Z
+    // vIndex: 92
     virtual void fixupCommon(class ItemStackBase& stack) const;
 
     // NOLINTEND

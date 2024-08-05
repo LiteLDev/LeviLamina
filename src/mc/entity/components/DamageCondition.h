@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1DamageCondition@@QEAA@XZ
     MCAPI ~DamageCondition();
 
     // NOLINTEND

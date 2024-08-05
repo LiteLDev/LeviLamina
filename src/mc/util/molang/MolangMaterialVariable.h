@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1MolangMaterialVariable@@QEAA@XZ
     MCAPI ~MolangMaterialVariable();
 
     // NOLINTEND

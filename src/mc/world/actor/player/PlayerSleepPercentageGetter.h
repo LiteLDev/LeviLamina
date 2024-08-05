@@ -14,10 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1PlayerSleepPercentageGetter@@UEAA@XZ
+    // vIndex: 0
     virtual ~PlayerSleepPercentageGetter() = default;
 
-    // vIndex: 1, symbol: ?getPlayerSleepPercentageGoal@PlayerSleepPercentageGetter@@UEBAMXZ
+    // vIndex: 1
     virtual float getPlayerSleepPercentageGoal() const;
 
     // NOLINTEND

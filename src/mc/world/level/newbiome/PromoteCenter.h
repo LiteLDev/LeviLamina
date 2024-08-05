@@ -21,11 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0PromoteCenter@OperationNodeFilters@@QEAA@AEBVBiome@@0@Z
     MCAPI PromoteCenter(class Biome const&, class Biome const&);
 
-    // symbol:
-    // ??RPromoteCenter@OperationNodeFilters@@QEBAPEBVBiome@@AEAU?$NeighborhoodReader@PEBVBiome@@$00$00@OperationNodeDetails@@@Z
     MCAPI class Biome const*
     operator()(struct OperationNodeDetails::NeighborhoodReader<class Biome const*, 1, 1>& reader) const;
 

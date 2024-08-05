@@ -15,19 +15,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1NearestPrioritizedAttackableTargetGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~NearestPrioritizedAttackableTargetGoal() = default;
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@NearestPrioritizedAttackableTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // vIndex: 11, symbol:
-    // ?_findTarget@NearestPrioritizedAttackableTargetGoal@@EEAA?AUActorUniqueID@@PEAPEBUMobDescriptor@@@Z
+    // vIndex: 11
     virtual struct ActorUniqueID _findTarget(struct MobDescriptor const** outMobDescriptor);
 
-    // symbol:
-    // ??0NearestPrioritizedAttackableTargetGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@MH_NH22HM2H2@Z
     MCAPI NearestPrioritizedAttackableTargetGoal(
         class Mob&                               mob,
         std::vector<struct MobDescriptor> const& targetTypes,

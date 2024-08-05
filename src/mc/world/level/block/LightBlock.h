@@ -27,17 +27,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LightBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~LightBlock() = default;
 
-    // vIndex: 5, symbol:
-    // ?getCollisionShape@LightBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 5
     virtual class AABB
     getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 7, symbol:
-    // ?addCollisionShapes@LightBlock@@UEBA_NAEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 7
     virtual bool addCollisionShapes(
         class Block const&                                         block,
         class IConstBlockSource const&                             region,
@@ -47,20 +45,19 @@ public:
         class optional_ref<class GetCollisionShapeInterface const> entity
     ) const;
 
-    // vIndex: 23, symbol: ?canProvideSupport@LightBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
+    // vIndex: 23
     virtual bool canProvideSupport(class Block const& block, uchar face, ::BlockSupportType type) const;
 
-    // vIndex: 77, symbol: ?isFilteredOut@LightBlock@@UEBA_NW4BlockRenderLayer@@@Z
+    // vIndex: 77
     virtual bool isFilteredOut(::BlockRenderLayer) const;
 
-    // vIndex: 85, symbol: ?mayPlace@LightBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
+    // vIndex: 85
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar face) const;
 
-    // vIndex: 86, symbol: ?mayPlace@LightBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 86
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 88, symbol:
-    // ?tryToPlace@LightBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@PEBUActorBlockSyncMessage@@@Z
+    // vIndex: 88
     virtual bool tryToPlace(
         class BlockSource&                  region,
         class BlockPos const&               pos,
@@ -68,30 +65,29 @@ public:
         struct ActorBlockSyncMessage const* syncMsg
     ) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@LightBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
-    // vIndex: 98, symbol: ?getPlacementBlock@LightBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+    // vIndex: 98
     virtual class Block const&
     getPlacementBlock(class Actor const&, class BlockPos const&, uchar, class Vec3 const&, int itemValue) const;
 
-    // vIndex: 103, symbol: ?canBeBuiltOver@LightBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlockItem@@@Z
+    // vIndex: 103
     virtual bool
     canBeBuiltOver(class BlockSource& region, class BlockPos const& pos, class BlockItem const& item) const;
 
-    // vIndex: 120, symbol: ?isAuxValueRelevantForPicking@LightBlock@@UEBA_NXZ
+    // vIndex: 120
     virtual bool isAuxValueRelevantForPicking() const;
 
-    // vIndex: 136, symbol: ?init@LightBlock@@UEAAAEAVBlockLegacy@@XZ
+    // vIndex: 136
     virtual class BlockLegacy& init();
 
-    // vIndex: 137, symbol: ?getLightEmission@LightBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
+    // vIndex: 137
     virtual struct Brightness getLightEmission(class Block const& block) const;
 
-    // vIndex: 152, symbol: ?use@LightBlock@@MEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar) const;
 
-    // symbol: ??0LightBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI LightBlock(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND

@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?hasAsyncOperationTimedOut@AsyncTracker@@QEAA_NXZ
     MCAPI bool hasAsyncOperationTimedOut();
 
     // NOLINTEND

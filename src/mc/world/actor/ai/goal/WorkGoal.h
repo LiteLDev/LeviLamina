@@ -16,52 +16,46 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1WorkGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~WorkGoal();
 
-    // vIndex: 1, symbol: ?canUse@WorkGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@WorkGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@WorkGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@WorkGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@WorkGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@WorkGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // vIndex: 18, symbol: ?useWorkstation@WorkGoal@@UEAAXXZ
+    // vIndex: 18
     virtual void useWorkstation();
 
-    // symbol: ??0WorkGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit WorkGoal(class Mob& mob);
 
-    // symbol: ?playPOISoundEvent@WorkGoal@@QEBAXXZ
     MCAPI void playPOISoundEvent() const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_isInsideOrIsNotRaining@WorkGoal@@AEAA_NXZ
     MCAPI bool _isInsideOrIsNotRaining();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?RAIN_CHECK_MAX_COOLDOWN@WorkGoal@@0HB
     MCAPI static int const RAIN_CHECK_MAX_COOLDOWN;
 
-    // symbol: ?WORK_TIMESTAMP_UPDATE_INVERVAL@WorkGoal@@0HB
     MCAPI static int const WORK_TIMESTAMP_UPDATE_INVERVAL;
 
     // NOLINTEND

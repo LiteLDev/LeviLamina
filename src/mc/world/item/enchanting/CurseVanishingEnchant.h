@@ -14,16 +14,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CurseVanishingEnchant@@UEAA@XZ
+    // vIndex: 0
     virtual ~CurseVanishingEnchant() = default;
 
-    // vIndex: 2, symbol: ?getMinCost@CurseVanishingEnchant@@UEBAHH@Z
+    // vIndex: 2
     virtual int getMinCost(int level) const;
 
-    // vIndex: 3, symbol: ?getMaxCost@CurseVanishingEnchant@@UEBAHH@Z
+    // vIndex: 3
     virtual int getMaxCost(int level) const;
 
-    // vIndex: 14, symbol: ?isTreasureOnly@CurseVanishingEnchant@@UEBA_NXZ
+    // vIndex: 14
     virtual bool isTreasureOnly() const;
 
     // NOLINTEND

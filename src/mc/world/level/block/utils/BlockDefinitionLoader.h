@@ -15,8 +15,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0BlockDefinitionLoader@@QEAA@PEAVBlockDefinitionGroup@@PEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VSemVersion@@PEBVExperiments@@_N@Z
     MCAPI BlockDefinitionLoader(
         class BlockDefinitionGroup*,
         class Core::PathBuffer<std::string> const*,
@@ -26,11 +24,8 @@ public:
         bool
     );
 
-    // symbol:
-    // ?load@BlockDefinitionLoader@@QEBA?AV?$LoadResult@UBlockDefinition@@@Puv@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Puv::LoadResult<struct BlockDefinition> load(std::string const&) const;
 
-    // symbol: ??1BlockDefinitionLoader@@QEAA@XZ
     MCAPI ~BlockDefinitionLoader();
 
     // NOLINTEND

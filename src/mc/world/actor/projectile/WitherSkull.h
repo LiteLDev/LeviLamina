@@ -36,29 +36,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 6, symbol:
-    // ?initializeComponents@WitherSkull@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 6
     virtual void initializeComponents(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: __gen_??1WitherSkull@@UEAA@XZ
+    // vIndex: 10
     virtual ~WitherSkull() = default;
 
-    // vIndex: 51, symbol: ?isOnFire@WitherSkull@@UEBA_NXZ
+    // vIndex: 51
     virtual bool isOnFire() const;
 
-    // vIndex: 125, symbol: ?canDestroyBlock@WitherSkull@@UEBA_NAEBVBlock@@@Z
+    // vIndex: 125
     virtual bool canDestroyBlock(class Block const& block) const;
 
-    // vIndex: 146, symbol: ?_hurt@WitherSkull@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 146
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 151, symbol: ?getInertia@WitherSkull@@MEAAMXZ
+    // vIndex: 151
     virtual float getInertia();
 
-    // vIndex: 153, symbol: ?shouldBurn@WitherSkull@@UEAA_NXZ
+    // vIndex: 153
     virtual bool shouldBurn();
 
-    // symbol: ??0WitherSkull@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI WitherSkull(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

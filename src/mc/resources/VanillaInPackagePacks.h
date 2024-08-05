@@ -15,11 +15,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1VanillaInPackagePacks@@UEAA@XZ
+    // vIndex: 0
     virtual ~VanillaInPackagePacks() = default;
 
-    // vIndex: 1, symbol:
-    // ?getPacks@VanillaInPackagePacks@@UEBA?AV?$vector@UMetaData@IInPackagePacks@@V?$allocator@UMetaData@IInPackagePacks@@@std@@@std@@W4PackType@@@Z
+    // vIndex: 1
     virtual std::vector<struct IInPackagePacks::MetaData> getPacks(::PackType packType) const;
 
     // NOLINTEND

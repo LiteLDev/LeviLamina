@@ -14,10 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0_ProfilerLiteTimer@@QEAA@AEAUScopedData@ProfilerLite@@Vid@thread@std@@@Z
     MCAPI _ProfilerLiteTimer(struct ProfilerLite::ScopedData& scopedData, std::thread::id threadId);
 
-    // symbol: ??1_ProfilerLiteTimer@@QEAA@XZ
     MCAPI ~_ProfilerLiteTimer();
 
     // NOLINTEND

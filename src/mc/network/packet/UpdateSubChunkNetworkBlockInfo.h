@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1UpdateSubChunkNetworkBlockInfo@@QEAA@XZ
     MCAPI ~UpdateSubChunkNetworkBlockInfo();
 
     // NOLINTEND

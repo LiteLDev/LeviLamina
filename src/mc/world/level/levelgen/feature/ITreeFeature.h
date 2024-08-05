@@ -14,15 +14,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ITreeFeature@@UEAA@XZ
     MCVAPI ~ITreeFeature();
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol:
-    // ?_place@ITreeFeature@@IEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
     MCAPI std::optional<class BlockPos> _place(
         class IBlockWorldGenAPI& target,
         class BlockPos const&    pos,

@@ -15,17 +15,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1OwnerHurtByTargetGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~OwnerHurtByTargetGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@OwnerHurtByTargetGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 4, symbol: ?start@OwnerHurtByTargetGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // symbol:
-    // ??0OwnerHurtByTargetGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@@Z
     MCAPI OwnerHurtByTargetGoal(class Mob& mob, std::vector<struct MobDescriptor> const& targetTypes);
 
     // NOLINTEND

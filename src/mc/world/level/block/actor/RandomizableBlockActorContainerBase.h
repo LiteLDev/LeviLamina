@@ -16,25 +16,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1RandomizableBlockActorContainerBase@@UEAA@XZ
+    // vIndex: 0
     virtual ~RandomizableBlockActorContainerBase();
 
-    // vIndex: 1, symbol:
-    // ?load@RandomizableBlockActorContainerBase@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 1
     virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 2, symbol: ?save@RandomizableBlockActorContainerBase@@UEBA_NAEAVCompoundTag@@@Z
+    // vIndex: 2
     virtual bool save(class CompoundTag& tag) const;
 
-    // vIndex: 34, symbol: ?eraseLootTable@RandomizableBlockActorContainerBase@@UEAAXXZ
+    // vIndex: 34
     virtual void eraseLootTable();
 
-    // symbol:
-    // ?setLootTable@RandomizableBlockActorContainerBase@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI void setLootTable(std::string const& lootTable, int lootTableSeed);
 
-    // symbol:
-    // ?unPackLootTable@RandomizableBlockActorContainerBase@@QEAAXAEAVLevel@@AEAVContainer@@V?$AutomaticID@VDimension@@H@@PEAVActor@@@Z
     MCAPI void
     unPackLootTable(class Level& level, class Container& container, DimensionType dimensionId, class Actor* actor);
 

@@ -14,13 +14,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1PistonConsumer@@UEAA@XZ
+    // vIndex: 0
     virtual ~PistonConsumer() = default;
 
-    // vIndex: 6, symbol: ?canConsumePowerAnyDirection@PistonConsumer@@UEBA_NXZ
+    // vIndex: 6
     virtual bool canConsumePowerAnyDirection() const;
 
-    // vIndex: 11, symbol: ?addSource@PistonConsumer@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
+    // vIndex: 11
     virtual bool addSource(
         class CircuitSceneGraph&         graph,
         class CircuitTrackingInfo const& info,
@@ -28,18 +28,15 @@ public:
         bool&                            bDirectlyPowered
     );
 
-    // vIndex: 12, symbol:
-    // ?allowConnection@PistonConsumer@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
+    // vIndex: 12
     virtual bool
     allowConnection(class CircuitSceneGraph& graph, class CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
-    // vIndex: 23, symbol: ?getCircuitComponentType@PistonConsumer@@UEBA?AW4CircuitComponentType@@XZ
+    // vIndex: 23
     virtual ::CircuitComponentType getCircuitComponentType() const;
 
-    // symbol: ??0PistonConsumer@@QEAA@XZ
     MCAPI PistonConsumer();
 
-    // symbol: ?setBlockPowerFace@PistonConsumer@@QEAAXE@Z
     MCAPI void setBlockPowerFace(uchar blockFace);
 
     // NOLINTEND

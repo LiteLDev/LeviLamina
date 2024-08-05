@@ -35,40 +35,34 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1OminousItemSpawner@@UEAA@XZ
+    // vIndex: 10
     virtual ~OminousItemSpawner() = default;
 
-    // vIndex: 13, symbol: ?remove@OminousItemSpawner@@UEAAXXZ
+    // vIndex: 13
     virtual void remove();
 
-    // vIndex: 27, symbol: ?baseTick@OminousItemSpawner@@UEAAXXZ
+    // vIndex: 27
     virtual void baseTick();
 
-    // vIndex: 147, symbol: ?readAdditionalSaveData@OminousItemSpawner@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147
     virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
 
-    // vIndex: 148, symbol: ?addAdditionalSaveData@OminousItemSpawner@@UEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148
     virtual void addAdditionalSaveData(class CompoundTag&) const;
 
-    // symbol:
-    // ??0OminousItemSpawner@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI
     OminousItemSpawner(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
 
-    // symbol: ?init@OminousItemSpawner@@QEAAXAEBVItemStack@@H@Z
     MCAPI void init(class ItemStack const&, int);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_clientTick@OminousItemSpawner@@AEAAXXZ
     MCAPI void _clientTick();
 
-    // symbol: ?_getItem@OminousItemSpawner@@AEAAAEBVItemStack@@XZ
     MCAPI class ItemStack const& _getItem();
 
-    // symbol: ?_onTimePassed@OminousItemSpawner@@AEAAXXZ
     MCAPI void _onTimePassed();
 
     // NOLINTEND

@@ -22,16 +22,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SharedController@PlayerCapabilities@@UEAA@XZ
+    // vIndex: 0
     virtual ~SharedController() = default;
 
-    // vIndex: 1, symbol: ?canChat@SharedController@PlayerCapabilities@@UEBA_NAEBUIPlayerData@2@@Z
+    // vIndex: 1
     virtual bool canChat(struct PlayerCapabilities::IPlayerData const& player) const;
 
-    // vIndex: 2, symbol: ?canTell@SharedController@PlayerCapabilities@@UEBA_NAEBUIPlayerData@2@@Z
+    // vIndex: 2
     virtual bool canTell(struct PlayerCapabilities::IPlayerData const& player) const;
 
-    // vIndex: 3, symbol: ?canOpenChat@SharedController@PlayerCapabilities@@UEBA_NAEBUIPlayerData@2@@Z
+    // vIndex: 3
     virtual bool canOpenChat(struct PlayerCapabilities::IPlayerData const& player) const;
 
     // NOLINTEND

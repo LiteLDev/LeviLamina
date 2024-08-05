@@ -16,11 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@ResetFrictionModifierSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
-    // symbol:
-    // ?tickResetFrictionModifierSystem@ResetFrictionModifierSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@UPlayerInputRequestComponent@@@@UFrictionModifierComponent@@@@@Z
     MCAPI static void tickResetFrictionModifierSystem(class ViewT<
                                                       class StrictEntityContext,
                                                       struct Include<

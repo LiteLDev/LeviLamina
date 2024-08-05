@@ -14,10 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ItemStackResponseContainerInfo@@QEAA@W4ContainerEnumName@@@Z
     MCAPI explicit ItemStackResponseContainerInfo(::ContainerEnumName openContainerNetId);
 
-    // symbol: ??1ItemStackResponseContainerInfo@@QEAA@XZ
     MCAPI ~ItemStackResponseContainerInfo();
 
     // NOLINTEND

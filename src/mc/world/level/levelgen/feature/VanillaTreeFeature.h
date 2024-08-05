@@ -23,11 +23,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1VanillaTreeFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~VanillaTreeFeature() = default;
 
-    // vIndex: 1, symbol:
-    // ?place@VanillaTreeFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
+    // vIndex: 1
     virtual std::optional<class BlockPos> place(
         class IBlockWorldGenAPI& target,
         class BlockPos const&    pos,
@@ -35,24 +34,19 @@ public:
         class RenderParams&      renderParams
     ) const;
 
-    // vIndex: 2, symbol:
-    // ?isValidPlacement@IFeature@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 2
     virtual bool isValidPlacement(std::string const&);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_buildSchema@VanillaTreeFeature@@CAXAEAV?$JsonSchemaObjectNode@V?$JsonParseState@VEmptyClass@JsonUtil@@UFeatureRootParseContext@FeatureLoading@@@JsonUtil@@U?$ConcreteFeatureHolder@VVanillaTreeFeature@@@FeatureLoading@@@JsonUtil@@@Z
     MCAPI static void _buildSchema(
         class JsonUtil::JsonSchemaObjectNode<
             class JsonUtil::JsonParseState<class JsonUtil::EmptyClass, struct FeatureLoading::FeatureRootParseContext>,
             struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>>& schemaNode
     );
 
-    // symbol:
-    // ?_buildVanillaCanopyVariants@VanillaTreeFeature@@CAXAEAV?$JsonSchemaObjectNode@V?$JsonParseState@VEmptyClass@JsonUtil@@UFeatureRootParseContext@FeatureLoading@@@JsonUtil@@U?$ConcreteFeatureHolder@VVanillaTreeFeature@@@FeatureLoading@@@JsonUtil@@V?$function@$$A6AAEAVITreeCanopyWrapper@@PEAU?$ConcreteFeatureHolder@VVanillaTreeFeature@@@FeatureLoading@@@Z@std@@@Z
     MCAPI static void _buildVanillaCanopyVariants(
         class JsonUtil::JsonSchemaObjectNode<
             class JsonUtil::JsonParseState<class JsonUtil::EmptyClass, struct FeatureLoading::FeatureRootParseContext>,
@@ -62,13 +56,9 @@ public:
             canopyAccessor
     );
 
-    // symbol:
-    // ?_buildVanillaRootVariants@VanillaTreeFeature@@CAXAEAV?$JsonSchemaObjectNode@V?$JsonParseState@VEmptyClass@JsonUtil@@UFeatureRootParseContext@FeatureLoading@@@JsonUtil@@U?$ConcreteFeatureHolder@VVanillaTreeFeature@@@FeatureLoading@@@JsonUtil@@V?$function@$$A6AAEAVITreeRootWrapper@@PEAU?$ConcreteFeatureHolder@VVanillaTreeFeature@@@FeatureLoading@@@Z@std@@@Z
     MCAPI static void
     _buildVanillaRootVariants(class JsonUtil::JsonSchemaObjectNode<class JsonUtil::JsonParseState<class JsonUtil::EmptyClass, struct FeatureLoading::FeatureRootParseContext>, struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>>& schemaNode, std::function<class ITreeRootWrapper&(struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>*)>);
 
-    // symbol:
-    // ?_buildVanillaTrunkVariants@VanillaTreeFeature@@CAXAEAV?$JsonSchemaObjectNode@V?$JsonParseState@VEmptyClass@JsonUtil@@UFeatureRootParseContext@FeatureLoading@@@JsonUtil@@U?$ConcreteFeatureHolder@VVanillaTreeFeature@@@FeatureLoading@@@JsonUtil@@V?$function@$$A6AAEAVITreeTrunkWrapper@@PEAU?$ConcreteFeatureHolder@VVanillaTreeFeature@@@FeatureLoading@@@Z@std@@@Z
     MCAPI static void _buildVanillaTrunkVariants(
         class JsonUtil::JsonSchemaObjectNode<
             class JsonUtil::JsonParseState<class JsonUtil::EmptyClass, struct FeatureLoading::FeatureRootParseContext>,

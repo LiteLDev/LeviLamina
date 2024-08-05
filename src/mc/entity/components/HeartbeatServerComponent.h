@@ -11,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0HeartbeatServerComponent@@QEAA@$$QEAV0@@Z
     MCAPI HeartbeatServerComponent(class HeartbeatServerComponent&&);
 
-    // symbol: ??1HeartbeatServerComponent@@QEAA@XZ
     MCAPI ~HeartbeatServerComponent();
 
     // NOLINTEND

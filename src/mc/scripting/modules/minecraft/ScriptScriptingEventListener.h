@@ -22,15 +22,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptScriptingEventListener@ScriptModuleMinecraft@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptScriptingEventListener() = default;
 
-    // vIndex: 1, symbol:
-    // ?onEvent@ScriptScriptingEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUScriptCommandMessageEvent@@@Z
+    // vIndex: 1
     virtual ::EventResult onEvent(struct ScriptCommandMessageEvent const&);
 
-    // vIndex: 2, symbol:
-    // ?onEvent@?$EventListenerDispatcher@VScriptingEventListener@@@@MEAA?AW4EventResult@@AEBUScriptingNotificationEvent@@@Z
+    // vIndex: 2
     virtual ::EventResult onEvent(struct ScriptingNotificationEvent const& event);
 
     // NOLINTEND

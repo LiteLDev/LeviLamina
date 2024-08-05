@@ -15,10 +15,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScreenHandlerHUD@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScreenHandlerHUD() = default;
 
-    // vIndex: 1, symbol: ?handleAction@ScreenHandlerHUD@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestAction@@@Z
+    // vIndex: 1
     virtual ::ItemStackNetResult handleAction(class ItemStackRequestAction const& requestAction);
 
     // NOLINTEND

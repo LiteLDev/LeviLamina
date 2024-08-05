@@ -14,10 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1RakDataOutput@@UEAA@XZ
+    // vIndex: 0
     virtual ~RakDataOutput();
 
-    // vIndex: 9, symbol: ?writeBytes@RakDataOutput@@UEAAXPEBX_K@Z
+    // vIndex: 9
     virtual void writeBytes(void const* data, uint64 bytes);
 
     // NOLINTEND

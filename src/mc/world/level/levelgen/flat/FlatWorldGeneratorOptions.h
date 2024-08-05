@@ -16,17 +16,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1FlatWorldGeneratorOptions@@QEAA@XZ
     MCAPI ~FlatWorldGeneratorOptions();
 
-    // symbol: ?getLayers@FlatWorldGeneratorOptions@@SA?AVValue@Json@@AEBVLevelData@@@Z
     MCAPI static class Json::Value getLayers(class LevelData const& levelData);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?_load@FlatWorldGeneratorOptions@@IEAA_NAEBVValue@Json@@AEBVLevelData@@@Z
     MCAPI bool _load(class Json::Value const&, class LevelData const&);
 
     // NOLINTEND

@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0TargetPoint@@QEAA@MMMMMM@Z
     MCAPI
     TargetPoint(float temperature, float humidity, float continentalness, float erosion, float depth, float weirdness);
 

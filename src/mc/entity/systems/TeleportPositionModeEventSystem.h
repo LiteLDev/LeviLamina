@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createTeleportPositionModeEventSystem@TeleportPositionModeEventSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createTeleportPositionModeEventSystem();
 
     // NOLINTEND

@@ -11,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0SystemInfo@@QEAA@$$QEAU0@@Z
     MCAPI SystemInfo(struct SystemInfo&&);
 
-    // symbol: ??1SystemInfo@@QEAA@XZ
     MCAPI ~SystemInfo();
 
     // NOLINTEND

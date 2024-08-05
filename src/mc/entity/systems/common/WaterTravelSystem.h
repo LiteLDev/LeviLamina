@@ -17,11 +17,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createWaterTravelSystem@WaterTravelSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createWaterTravelSystem();
 
-    // symbol:
-    // ?tickWaterTravelSystem@WaterTravelSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@$$CBV?$FlagComponent@UActorMovementTickNeededFlag@@@@$$CBV?$FlagComponent@UWaterTravelFlag@@@@@@$$CBUMovementAttributesComponent@@$$CBUSwimSpeedMultiplierComponent@@$$CBUWaterWalkSpeedEnchantComponent@@UMobTravelComponent@@V?$Optional@$$CBV?$FlagComponent@UDolphinFlag@@@@@@V?$Optional@$$CBUOnGroundFlagComponent@@@@@@V?$ViewT@VStrictEntityContext@@$$CBUMovementAttributesComponent@@$$CBUMovementSpeedComponent@@@@V?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UPlayerComponentFlag@@@@@@@@@Z
     MCAPI static void tickWaterTravelSystem(
         class ViewT<
             class StrictEntityContext,

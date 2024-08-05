@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ServerNetworkGameplayNotificationEvent@@QEAA@XZ
     MCAPI ~ServerNetworkGameplayNotificationEvent();
 
     // NOLINTEND

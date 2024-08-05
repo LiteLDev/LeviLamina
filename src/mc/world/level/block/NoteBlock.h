@@ -27,42 +27,39 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1NoteBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~NoteBlock() = default;
 
-    // vIndex: 66, symbol: ?onRedstoneUpdate@NoteBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
+    // vIndex: 66
     virtual void
     onRedstoneUpdate(class BlockSource& region, class BlockPos const& pos, int strength, bool isFirstTime) const;
 
-    // vIndex: 72, symbol: ?setupRedstoneComponent@NoteBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 72
     virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 101, symbol: ?attack@NoteBlock@@UEBA_NPEAVPlayer@@AEBVBlockPos@@@Z
+    // vIndex: 101
     virtual bool attack(class Player* player, class BlockPos const& pos) const;
 
-    // vIndex: 105, symbol: ?triggerEvent@NoteBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@HH@Z
+    // vIndex: 105
     virtual void triggerEvent(class BlockSource& region, class BlockPos const& pos, int instrument, int note) const;
 
-    // vIndex: 146, symbol: ?onPlace@NoteBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 146
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 150, symbol: ?isInteractiveBlock@NoteBlock@@UEBA_NXZ
+    // vIndex: 150
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 152, symbol: ?use@NoteBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    // symbol: ??0NoteBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI NoteBlock(std::string const& nameId, int id);
 
-    // symbol: ?enableSkullPlacement@NoteBlock@@QEAAAEAV1@_N@Z
     MCAPI class NoteBlock& enableSkullPlacement(bool enabled);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_triggerNoteParticle@NoteBlock@@AEBAXAEAVLevel@@AEBVVec3@@H@Z
     MCAPI void _triggerNoteParticle(class Level& level, class Vec3 const&, int note) const;
 
     // NOLINTEND

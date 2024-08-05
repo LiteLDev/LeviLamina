@@ -14,10 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1StringByteOutput@@UEAA@XZ
+    // vIndex: 0
     virtual ~StringByteOutput();
 
-    // vIndex: 9, symbol: ?writeBytes@StringByteOutput@@UEAAXPEBX_K@Z
+    // vIndex: 9
     virtual void writeBytes(void const* data, uint64 bytes);
 
     // NOLINTEND

@@ -21,22 +21,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BlockQueuedTicking11910Upgrade@BlockQueuedTickingVersioning@@UEAA@XZ
+    // vIndex: 0
     virtual ~BlockQueuedTicking11910Upgrade() = default;
 
-    // vIndex: 1, symbol:
-    // ?previousSchema@BlockQueuedTicking11910Upgrade@BlockQueuedTickingVersioning@@UEBA_NAEBV?$GenericValue@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@@rapidjson@@@Z
+    // vIndex: 1
     virtual bool previousSchema(rapidjson::GenericValue<
                                 rapidjson::UTF8<char>,
                                 rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>> const&) const;
 
-    // vIndex: 2, symbol:
-    // ?upgradeToNext@BlockQueuedTicking11910Upgrade@BlockQueuedTickingVersioning@@UEBAXAEAV?$GenericDocument@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@VCrtAllocator@2@@rapidjson@@AEBVSemVersion@@@Z
+    // vIndex: 2
     virtual void
     upgradeToNext(rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&, class SemVersion const&)
         const;
 
-    // symbol: ??0BlockQueuedTicking11910Upgrade@BlockQueuedTickingVersioning@@QEAA@XZ
     MCAPI BlockQueuedTicking11910Upgrade();
 
     // NOLINTEND

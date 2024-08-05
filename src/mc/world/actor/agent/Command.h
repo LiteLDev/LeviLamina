@@ -21,26 +21,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1Command@AgentCommands@@UEAA@XZ
+    // vIndex: 0
     virtual ~Command();
 
-    // vIndex: 1, symbol: ?execute@Command@AgentCommands@@UEAAXXZ
+    // vIndex: 1
     virtual void execute();
 
-    // vIndex: 2, symbol: ?isDone@AttackCommand@AgentCommands@@UEAA_NXZ
+    // vIndex: 2
     virtual bool isDone() = 0;
 
-    // vIndex: 3, symbol: ?tick@Command@AgentCommands@@UEAAXXZ
+    // vIndex: 3
     virtual void tick();
 
-    // vIndex: 4, symbol: ?fireCommandDoneEvent@Command@AgentCommands@@UEAAXXZ
+    // vIndex: 4
     virtual void fireCommandDoneEvent();
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?_getNextPosFromDirection@Command@AgentCommands@@IEAA?AVVec3@@W4Direction@AgentComponents@@@Z
     MCAPI class Vec3 _getNextPosFromDirection(::AgentComponents::Direction dir);
 
     // NOLINTEND

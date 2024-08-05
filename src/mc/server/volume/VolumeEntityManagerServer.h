@@ -27,35 +27,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1VolumeEntityManagerServer@@UEAA@XZ
+    // vIndex: 0
     virtual ~VolumeEntityManagerServer() = default;
 
-    // symbol: ??0VolumeEntityManagerServer@@QEAA@V?$StackRefResult@VEntityRegistry@@@@AEAUReflectionCtx@cereal@@@Z
     MCAPI VolumeEntityManagerServer(class StackRefResult<class EntityRegistry>, struct cereal::ReflectionCtx&);
 
-    // symbol:
-    // ?createVolume@VolumeEntityManagerServer@@QEAA?AU?$pair@W4CreateVolumeResult@VolumeEntityManagerServer@@V?$StackRefResult@VEntityContext@@@@@std@@AEAVLevelStorage@@AEAVPacketSender@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBVBlockPos@@3V?$AutomaticID@VDimension@@H@@2@Z
     MCAPI std::pair<::VolumeEntityManagerServer::CreateVolumeResult, class StackRefResult<class EntityContext>>
     createVolume(class LevelStorage& levelStorage, class PacketSender& packetSender, std::string const&, class BlockPos const&, class BlockPos const&, DimensionType dimensionType, std::string const&);
 
-    // symbol:
-    // ?getAllVolumesOverlappingChunkPosition@VolumeEntityManagerServer@@QEBA?AV?$vector@V?$WeakRef@VEntityContext@@@@V?$allocator@V?$WeakRef@VEntityContext@@@@@std@@@std@@AEBVChunkPos@@V?$AutomaticID@VDimension@@H@@@Z
     MCAPI std::vector<class WeakRef<class EntityContext>>
           getAllVolumesOverlappingChunkPosition(class ChunkPos const& pos, DimensionType) const;
 
-    // symbol: ?loadVolumeFiles@VolumeEntityManagerServer@@QEAAXAEBVResourcePackManager@@_N@Z
     MCAPI void loadVolumeFiles(class ResourcePackManager const& resourcePackManager, bool isExperimentalEnabled);
 
-    // symbol: ?loadVolumeInstances@VolumeEntityManagerServer@@QEAAXAEBVLevelStorage@@_N@Z
     MCAPI void loadVolumeInstances(class LevelStorage const& levelStorage, bool isExperimentalEnabled);
 
-    // symbol:
-    // ?removeAllVolumes@VolumeEntityManagerServer@@QEAA?AV?$vector@V?$OwnerPtr@VEntityContext@@@@V?$allocator@V?$OwnerPtr@VEntityContext@@@@@std@@@std@@AEAVLevelStorage@@V?$AutomaticID@VDimension@@H@@AEAVPacketSender@@@Z
     MCAPI std::vector<class OwnerPtr<class EntityContext>>
     removeAllVolumes(class LevelStorage& levelStorage, DimensionType dimensionId, class PacketSender& packetSender);
 
-    // symbol:
-    // ?removeVolumes@VolumeEntityManagerServer@@QEAA?AV?$vector@V?$OwnerPtr@VEntityContext@@@@V?$allocator@V?$OwnerPtr@VEntityContext@@@@@std@@@std@@AEAVLevelStorage@@AEBVBlockPos@@V?$AutomaticID@VDimension@@H@@AEAVPacketSender@@@Z
     MCAPI std::vector<class OwnerPtr<class EntityContext>> removeVolumes(
         class LevelStorage&   levelStorage,
         class BlockPos const& pos,
@@ -63,8 +52,6 @@ public:
         class PacketSender&   packetSender
     );
 
-    // symbol:
-    // ?removeVolumes@VolumeEntityManagerServer@@QEAA?AV?$vector@V?$OwnerPtr@VEntityContext@@@@V?$allocator@V?$OwnerPtr@VEntityContext@@@@@std@@@std@@AEAVLevelStorage@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@V?$AutomaticID@VDimension@@H@@AEAVPacketSender@@@Z
     MCAPI std::vector<class OwnerPtr<class EntityContext>> removeVolumes(
         class LevelStorage& levelStorage,
         std::string const&  name,
@@ -72,8 +59,6 @@ public:
         class PacketSender& packetSender
     );
 
-    // symbol:
-    // ?sendAllVolumesToClient@VolumeEntityManagerServer@@QEBAXAEBVUserEntityIdentifierComponent@@AEBVNetworkIdentifier@@AEAVPacketSender@@@Z
     MCAPI void sendAllVolumesToClient(
         class UserEntityIdentifierComponent const&,
         class NetworkIdentifier const& source,
@@ -84,8 +69,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_findUsableName@VolumeEntityManagerServer@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$AutomaticID@VDimension@@H@@@Z
     MCAPI std::string _findUsableName(DimensionType) const;
 
     // NOLINTEND

@@ -11,17 +11,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ServerMetrics@@UEAA@XZ
+    // vIndex: 0
     virtual ~ServerMetrics();
 
-    // vIndex: 1, symbol: ?sendPeriodicMetrics@ServerMetricsImpl@@UEAAXAEAVServerInstance@@@Z
+    // vIndex: 1
     virtual void sendPeriodicMetrics(class ServerInstance& serverInstance) = 0;
 
-    // vIndex: 2, symbol:
-    // ?sendServerTickTime@ServerMetricsImpl@@UEAAXAEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@@Z
+    // vIndex: 2
     virtual void sendServerTickTime(std::chrono::nanoseconds const& timepoint) = 0;
 
-    // vIndex: 3, symbol: ?sendChunkLoadTelemetryData@ServerMetricsImpl@@UEAAXXZ
+    // vIndex: 3
     virtual void sendChunkLoadTelemetryData() = 0;
 
     // NOLINTEND

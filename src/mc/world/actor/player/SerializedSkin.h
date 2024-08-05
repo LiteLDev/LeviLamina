@@ -9,55 +9,38 @@
 class SerializedSkin {
 public:
     // NOLINTBEGIN
-    // symbol: ??0SerializedSkin@@QEAA@XZ
     MCAPI SerializedSkin();
 
-    // symbol: ??0SerializedSkin@@QEAA@AEBVConnectionRequest@@@Z
     MCAPI explicit SerializedSkin(class ConnectionRequest const& request);
 
-    // symbol: ??0SerializedSkin@@QEAA@$$QEAV0@@Z
     MCAPI SerializedSkin(class SerializedSkin&& rhs);
 
-    // symbol: ??0SerializedSkin@@QEAA@AEBV0@@Z
     MCAPI SerializedSkin(class SerializedSkin const& rhs);
 
-    // symbol: ??0SerializedSkin@@QEAA@AEBVSubClientConnectionRequest@@@Z
     MCAPI explicit SerializedSkin(class SubClientConnectionRequest const& request);
 
-    // symbol: ?getAnimationFrames@SerializedSkin@@QEBAMW4AnimatedTextureType@persona@@@Z
     MCAPI float getAnimationFrames(::persona::AnimatedTextureType animationType) const;
 
-    // symbol: ?getName@SerializedSkin@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& getName() const;
 
-    // symbol: ?isTrustedSkin@SerializedSkin@@QEBA_NXZ
     MCAPI bool isTrustedSkin() const;
 
-    // symbol: ??4SerializedSkin@@QEAAAEAV0@AEBV0@@Z
     MCAPI class SerializedSkin& operator=(class SerializedSkin const& rhs);
 
-    // symbol: ?read@SerializedSkin@@QEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     MCAPI class Bedrock::Result<void> read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ?setIsTrustedSkin@SerializedSkin@@QEAAX_N@Z
     MCAPI void setIsTrustedSkin(bool isTrustedSkin);
 
-    // symbol: ?updateGeometryName@SerializedSkin@@QEAAXXZ
     MCAPI void updateGeometryName();
 
-    // symbol: ?useBlinkingAnimation@SerializedSkin@@QEBA_NXZ
     MCAPI bool useBlinkingAnimation() const;
 
-    // symbol: ?write@SerializedSkin@@QEBAXAEAVBinaryStream@@@Z
     MCAPI void write(class BinaryStream& stream) const;
 
-    // symbol: ??1SerializedSkin@@QEAA@XZ
     MCAPI ~SerializedSkin();
 
-    // symbol: ?createTrustedDefaultSerializedSkin@SerializedSkin@@SA?AV1@XZ
     MCAPI static class SerializedSkin createTrustedDefaultSerializedSkin();
 
-    // symbol: ?isSkinDisabled@SerializedSkin@@SA_NAEBV1@AEBVLevelData@@@Z
     MCAPI static bool isSkinDisabled(class SerializedSkin const& skin, class LevelData const& levelData);
 
     // NOLINTEND

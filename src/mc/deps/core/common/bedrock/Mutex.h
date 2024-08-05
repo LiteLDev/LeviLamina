@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1Mutex@Threading@Bedrock@@QEAA@XZ
     MCAPI ~Mutex();
 
     // NOLINTEND

@@ -31,7 +31,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1PoolEntry@WorkerPoolManagerImpl@Bedrock@@QEAA@XZ
         MCAPI ~PoolEntry();
 
         // NOLINTEND
@@ -44,8 +43,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?createWorkerPool@WorkerPoolManagerImpl@Bedrock@@UEAA?AV?$shared_ptr@VWorkerPoolHandleInterface@Bedrock@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@_KAEBVOSThreadPriority@Threading@2@V?$optional@_K@4@_NV?$optional@H@4@@Z
     MCVAPI std::shared_ptr<class Bedrock::WorkerPoolHandleInterface> createWorkerPool(
         std::string                                       name,
         uint64                                            threadCount,
@@ -55,13 +52,10 @@ public:
         std::optional<int>                                idealCore
     );
 
-    // symbol: ?init@WorkerPoolManagerImpl@Bedrock@@UEAAXXZ
     MCVAPI void init();
 
-    // symbol: ?tick@WorkerPoolManagerImpl@Bedrock@@UEAAXXZ
     MCVAPI void tick();
 
-    // symbol: ??0WorkerPoolManagerImpl@Bedrock@@QEAA@XZ
     MCAPI WorkerPoolManagerImpl();
 
     // NOLINTEND

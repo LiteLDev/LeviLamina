@@ -26,14 +26,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ShulkerBoxBlockItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~ShulkerBoxBlockItem() = default;
 
-    // vIndex: 32, symbol: ?getLevelDataForAuxValue@ShulkerBoxBlockItem@@UEBAHH@Z
+    // vIndex: 32
     virtual int getLevelDataForAuxValue(int auxValue) const;
 
-    // vIndex: 48, symbol:
-    // ?appendFormattedHovertext@ShulkerBoxBlockItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+    // vIndex: 48
     virtual void appendFormattedHovertext(
         class ItemStackBase const& stack,
         class Level&               level,
@@ -41,20 +40,15 @@ public:
         bool                       showCategory
     ) const;
 
-    // vIndex: 84, symbol:
-    // ?buildEffectDescriptionName@ShulkerBoxBlockItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemStackBase@@@Z
+    // vIndex: 84
     virtual std::string buildEffectDescriptionName(class ItemStackBase const&) const;
 
-    // symbol:
-    // ??0ShulkerBoxBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HPEBVBlock@@@Z
     MCAPI ShulkerBoxBlockItem(std::string const& name, int id, class Block const* parentBlock);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_buildContainedItemList@ShulkerBoxBlockItem@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBVCompoundTag@@@Z
     MCAPI std::string _buildContainedItemList(class CompoundTag const*) const;
 
     // NOLINTEND

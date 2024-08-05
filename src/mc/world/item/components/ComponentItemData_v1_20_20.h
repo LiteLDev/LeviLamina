@@ -16,16 +16,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ComponentItemData_v1_20_20@@QEAA@XZ
     MCAPI ComponentItemData_v1_20_20();
 
-    // symbol: ??1ComponentItemData_v1_20_20@@QEAA@XZ
     MCAPI ~ComponentItemData_v1_20_20();
 
-    // symbol: ?bindType@ComponentItemData_v1_20_20@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
-    // symbol: ?SUPPORTED_VERSIONS@ComponentItemData_v1_20_20@@2VVersionRange@Puv@@B
     MCAPI static class Puv::VersionRange const SUPPORTED_VERSIONS;
 
     // NOLINTEND

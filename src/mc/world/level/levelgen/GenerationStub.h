@@ -21,7 +21,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1BuildResult@GenerationStub@worldgen@br@@QEAA@XZ
         MCAPI ~BuildResult();
 
         // NOLINTEND

@@ -11,13 +11,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getCooldownTime@DashComponent@@QEBA?BIXZ
     MCAPI uint const getCooldownTime() const;
 
-    // symbol: ?getHorizontalMomentum@DashComponent@@QEBA?BMXZ
     MCAPI float const getHorizontalMomentum() const;
 
-    // symbol: ?getVerticalMomentum@DashComponent@@QEBA?BMXZ
     MCAPI float const getVerticalMomentum() const;
 
     // NOLINTEND

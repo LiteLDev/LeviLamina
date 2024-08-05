@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1SubpackInfo@@QEAA@XZ
     MCAPI ~SubpackInfo();
 
     // NOLINTEND

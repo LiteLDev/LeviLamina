@@ -20,10 +20,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1OutputFileStream@Core@@UEAA@XZ
+    // vIndex: 0
     virtual ~OutputFileStream() = default;
 
-    // symbol: ??0OutputFileStream@Core@@QEAA@XZ
     MCAPI OutputFileStream();
 
     // NOLINTEND

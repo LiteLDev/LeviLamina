@@ -28,7 +28,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1ConstructionContext@Recipe@@QEAA@XZ
         MCAPI ~ConstructionContext();
 
         // NOLINTEND
@@ -43,10 +42,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??0Results@Recipe@@QEAA@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@@Z
         MCAPI explicit Results(std::vector<class ItemInstance> const&);
 
-        // symbol: ??1Results@Recipe@@QEAA@XZ
         MCAPI ~Results();
 
         // NOLINTEND
@@ -60,90 +57,77 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1Recipe@@UEAA@XZ
+    // vIndex: 0
     virtual ~Recipe();
 
-    // vIndex: 1, symbol:
-    // ?assemble@BannerAddPatternRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@AEAVCraftingContext@@@Z
+    // vIndex: 1
     virtual std::vector<class ItemInstance> const&
     assemble(class CraftingContainer& craftSlots, class CraftingContext&) const = 0;
 
-    // vIndex: 2, symbol: ?getCraftingSize@BannerAddPatternRecipe@@UEBAHXZ
+    // vIndex: 2
     virtual int getCraftingSize() const = 0;
 
-    // vIndex: 3, symbol: ?getIngredient@BannerAddPatternRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
+    // vIndex: 3
     virtual class RecipeIngredient const& getIngredient(int x, int y) const = 0;
 
-    // vIndex: 4, symbol: ?isShapeless@ShapedRecipe@@UEBA_NXZ
+    // vIndex: 4
     virtual bool isShapeless() const = 0;
 
-    // vIndex: 5, symbol: ?matches@BannerAddPatternRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
+    // vIndex: 5
     virtual bool matches(class CraftingContainer const& craftSlots, class CraftingContext const&) const = 0;
 
-    // vIndex: 6, symbol: ?size@BannerAddPatternRecipe@@UEBAHXZ
+    // vIndex: 6
     virtual int size() const = 0;
 
-    // vIndex: 7, symbol: ?getId@Recipe@@UEBAAEBVUUID@mce@@XZ
+    // vIndex: 7
     virtual class mce::UUID const& getId() const;
 
-    // vIndex: 8, symbol:
-    // ?getResultItems@Recipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
+    // vIndex: 8
     virtual std::vector<class ItemInstance> const& getResultItems() const;
 
-    // vIndex: 9, symbol: ?isMultiRecipe@Recipe@@UEBA_NXZ
+    // vIndex: 9
     virtual bool isMultiRecipe() const;
 
-    // vIndex: 10, symbol: ?hasDataDrivenResult@Recipe@@UEBA_NXZ
+    // vIndex: 10
     virtual bool hasDataDrivenResult() const;
 
-    // vIndex: 11, symbol: ?itemValidForRecipe@Recipe@@UEBA_NAEBVItemDescriptor@@AEBVItemStack@@@Z
+    // vIndex: 11
     virtual bool itemValidForRecipe(class ItemDescriptor const& recipeItem, class ItemStack const& item) const;
 
-    // vIndex: 12, symbol: ?itemsMatch@Recipe@@UEBA_NAEBVItemDescriptor@@0@Z
+    // vIndex: 12
     virtual bool itemsMatch(class ItemDescriptor const& lhs, class ItemDescriptor const& rhs) const;
 
-    // vIndex: 13, symbol: ?itemsMatch@Recipe@@UEBA_NAEBVItemDescriptor@@0PEBVCompoundTag@@@Z
+    // vIndex: 13
     virtual bool
     itemsMatch(class ItemDescriptor const& lhs, class ItemDescriptor const& rhs, class CompoundTag const* rhsTag) const;
 
-    // vIndex: 14, symbol: ?getIngredientsHash@Recipe@@UEBA_KXZ
+    // vIndex: 14
     virtual uint64 getIngredientsHash() const;
 
-    // symbol: ?countQuantityOfIngredient@Recipe@@QEBAHAEBVItemInstance@@@Z
     MCAPI int countQuantityOfIngredient(class ItemInstance const& ingredient) const;
 
-    // symbol: ?getConstructionContext@Recipe@@QEBA?AUConstructionContext@1@XZ
     MCAPI struct Recipe::ConstructionContext getConstructionContext() const;
 
-    // symbol: ?getHeight@Recipe@@QEBAHXZ
     MCAPI int getHeight() const;
 
-    // symbol: ?getNetId@Recipe@@QEBAAEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@XZ
     MCAPI RecipeNetId const& getNetId() const;
 
-    // symbol: ?getRecipeId@Recipe@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& getRecipeId() const;
 
-    // symbol: ?getTag@Recipe@@QEBAAEBVHashedString@@XZ
     MCAPI class HashedString const& getTag() const;
 
-    // symbol: ?getUnlockingRequirement@Recipe@@QEBAAEBVRecipeUnlockingRequirement@@XZ
     MCAPI class RecipeUnlockingRequirement const& getUnlockingRequirement() const;
 
-    // symbol: ?getWidth@Recipe@@QEBAHXZ
     MCAPI int getWidth() const;
 
-    // symbol: ?setNetId@Recipe@@QEAAXAEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@@Z
     MCAPI void setNetId(RecipeNetId const& recipeNetId);
 
-    // symbol: ?isAnyAuxValue@Recipe@@SA_NAEBVItemDescriptor@@@Z
     MCAPI static bool isAnyAuxValue(class ItemDescriptor const& ii);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ??0Recipe@@IEAA@$$QEAUConstructionContext@0@@Z
     MCAPI explicit Recipe(struct Recipe::ConstructionContext&&);
 
     // NOLINTEND

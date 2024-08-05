@@ -13,17 +13,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptIsDyeableComponentV010@ScriptModuleMinecraft@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptIsDyeableComponentV010() = default;
 
-    // vIndex: 1, symbol: ?_isValid@AttributeScriptActorComponent@ScriptModuleMinecraft@@MEBA_NXZ
+    // vIndex: 1
     virtual bool _isValid() const;
 
-    // symbol:
-    // ?sClassName@ScriptIsDyeableComponentV010@ScriptModuleMinecraft@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const sClassName;
 
-    // symbol: ?sComponentId@ScriptIsDyeableComponentV010@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* sComponentId;
 
     // NOLINTEND

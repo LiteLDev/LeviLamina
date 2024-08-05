@@ -14,10 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getNewUniqueID@UniqueIDManager@@QEAA?AUActorUniqueID@@XZ
     MCAPI struct ActorUniqueID getNewUniqueID();
 
-    // symbol: ?setupUniqueIDManager@UniqueIDManager@@SA?AV?$OwnerPtr@VUniqueIDManager@@@@AEAVLevelData@@_N@Z
     MCAPI static class OwnerPtr<class UniqueIDManager> setupUniqueIDManager(class LevelData&, bool);
 
     // NOLINTEND

@@ -14,10 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LootItemActorHasMarkVariantCondition@@UEAA@XZ
+    // vIndex: 0
     virtual ~LootItemActorHasMarkVariantCondition() = default;
 
-    // vIndex: 1, symbol: ?applies@LootItemActorHasMarkVariantCondition@@UEAA_NAEAVRandom@@AEAVLootTableContext@@@Z
+    // vIndex: 1
     virtual bool applies(class Random& random, class LootTableContext& context);
 
     // NOLINTEND

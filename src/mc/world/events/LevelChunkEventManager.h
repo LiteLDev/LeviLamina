@@ -15,34 +15,26 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LevelChunkEventManager@@UEAA@XZ
+    // vIndex: 0
     virtual ~LevelChunkEventManager() = default;
 
-    // vIndex: 1, symbol:
-    // ?getOnChunkLoadedConnector@LevelChunkEventManager@@UEAAAEAV?$Connector@$$A6AXAEAVChunkSource@@AEAVLevelChunk@@H@Z@PubSub@Bedrock@@XZ
+    // vIndex: 1
     virtual class Bedrock::PubSub::Connector<void(class ChunkSource&, class LevelChunk&, int)>&
     getOnChunkLoadedConnector();
 
-    // vIndex: 2, symbol:
-    // ?getOnChunkReloadedConnector@LevelChunkEventManager@@UEAAAEAV?$Connector@$$A6AXAEAVChunkSource@@AEAVLevelChunk@@@Z@PubSub@Bedrock@@XZ
+    // vIndex: 2
     virtual class Bedrock::PubSub::Connector<void(class ChunkSource&, class LevelChunk&)>&
     getOnChunkReloadedConnector();
 
-    // vIndex: 3, symbol:
-    // ?getOnChunkDiscardedConnector@LevelChunkEventManager@@UEAAAEAV?$Connector@$$A6AXAEAVLevelChunk@@@Z@PubSub@Bedrock@@XZ
+    // vIndex: 3
     virtual class Bedrock::PubSub::Connector<void(class LevelChunk&)>& getOnChunkDiscardedConnector();
 
-    // symbol:
-    // ??0LevelChunkEventManager@@QEAA@V?$unique_ptr@VILevelChunkEventManagerProxy@@U?$default_delete@VILevelChunkEventManagerProxy@@@std@@@std@@@Z
     MCAPI explicit LevelChunkEventManager(std::unique_ptr<class ILevelChunkEventManagerProxy>);
 
-    // symbol: ?onChunkDiscarded@LevelChunkEventManager@@QEAAXAEAVLevelChunk@@@Z
     MCAPI void onChunkDiscarded(class LevelChunk&);
 
-    // symbol: ?onChunkLoaded@LevelChunkEventManager@@QEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
     MCAPI void onChunkLoaded(class ChunkSource&, class LevelChunk&);
 
-    // symbol: ?onChunkReloaded@LevelChunkEventManager@@QEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
     MCAPI void onChunkReloaded(class ChunkSource&, class LevelChunk&);
 
     // NOLINTEND

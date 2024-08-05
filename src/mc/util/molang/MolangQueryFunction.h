@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1MolangQueryFunction@@QEAA@XZ
     MCAPI ~MolangQueryFunction();
 
     // NOLINTEND

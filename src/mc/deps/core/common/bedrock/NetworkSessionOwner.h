@@ -19,22 +19,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1NetworkSessionOwner@@UEAA@XZ
+    // vIndex: 0
     virtual ~NetworkSessionOwner() = default;
 
-    // symbol: ??0NetworkSessionOwner@@QEAA@XZ
     MCAPI NetworkSessionOwner();
 
-    // symbol: ?createNetworkSession@NetworkSessionOwner@@QEAAXW4TransportLayer@@@Z
     MCAPI void createNetworkSession(::TransportLayer);
 
-    // symbol: ?destroyNetworkSession@NetworkSessionOwner@@QEAAXXZ
     MCAPI void destroyNetworkSession();
 
-    // symbol: ?getTransportLayer@NetworkSessionOwner@@QEBA?AW4TransportLayer@@XZ
     MCAPI ::TransportLayer getTransportLayer() const;
 
-    // symbol: ?hasNetworkSession@NetworkSessionOwner@@QEBA_NXZ
     MCAPI bool hasNetworkSession() const;
 
     // NOLINTEND

@@ -11,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4PropertySyncData@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct PropertySyncData& operator=(struct PropertySyncData&&);
 
-    // symbol: ??1PropertySyncData@@QEAA@XZ
     MCAPI ~PropertySyncData();
 
     // NOLINTEND

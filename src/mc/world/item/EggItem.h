@@ -26,20 +26,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1EggItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~EggItem() = default;
 
-    // vIndex: 19, symbol: ?isThrowable@EggItem@@UEBA_NXZ
+    // vIndex: 19
     virtual bool isThrowable() const;
 
-    // vIndex: 72, symbol: ?use@EggItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+    // vIndex: 72
     virtual class ItemStack& use(class ItemStack& instance, class Player& player) const;
 
-    // vIndex: 73, symbol: ?createProjectileActor@EggItem@@UEBAPEAVActor@@AEAVBlockSource@@AEBVItemStack@@AEBVVec3@@2@Z
+    // vIndex: 73
     virtual class Actor*
     createProjectileActor(class BlockSource&, class ItemStack const&, class Vec3 const&, class Vec3 const&) const;
 
-    // vIndex: 74, symbol: ?dispense@EggItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 74
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 

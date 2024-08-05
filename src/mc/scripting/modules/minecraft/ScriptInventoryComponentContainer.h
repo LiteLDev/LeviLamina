@@ -29,37 +29,28 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptInventoryComponentContainer@ScriptModuleMinecraft@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptInventoryComponentContainer();
 
-    // vIndex: 2, symbol:
-    // ?getEmptySlotsCount@ScriptInventoryComponentContainer@ScriptModuleMinecraft@@UEBA?AV?$Result@H$$V@Scripting@@XZ
+    // vIndex: 2
     virtual class Scripting::Result<int> getEmptySlotsCount() const;
 
-    // vIndex: 13, symbol:
-    // ?_tryGetContainer@ScriptInventoryComponentContainer@ScriptModuleMinecraft@@MEBAPEAVContainer@@XZ
+    // vIndex: 13
     virtual class Container* _tryGetContainer() const;
 
-    // vIndex: 14, symbol:
-    // ?_getItemContext@ScriptInventoryComponentContainer@ScriptModuleMinecraft@@MEBA?AVItemContext@@H@Z
+    // vIndex: 14
     virtual class ItemContext _getItemContext(int slot) const;
 
-    // symbol: ??0ScriptInventoryComponentContainer@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
     MCAPI ScriptInventoryComponentContainer(class ScriptModuleMinecraft::ScriptInventoryComponentContainer const&);
 
-    // symbol:
-    // ??0ScriptInventoryComponentContainer@ScriptModuleMinecraft@@QEAA@AEBVWeakEntityRef@@AEBVWeakLifetimeScope@Scripting@@@Z
     MCAPI ScriptInventoryComponentContainer(
         class WeakEntityRef const&                entityRef,
         class Scripting::WeakLifetimeScope const& scope
     );
 
-    // symbol: ??4ScriptInventoryComponentContainer@ScriptModuleMinecraft@@QEAAAEAV01@AEBV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptInventoryComponentContainer&
     operator=(class ScriptModuleMinecraft::ScriptInventoryComponentContainer const&);
 
-    // symbol:
-    // ?bindV010@ScriptInventoryComponentContainer@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptInventoryComponentContainer@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptInventoryComponentContainer>
     bindV010();
 

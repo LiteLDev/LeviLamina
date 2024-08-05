@@ -14,10 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1GlobalPauseCommand@@UEAA@XZ
+    // vIndex: 0
     virtual ~GlobalPauseCommand() = default;
 
-    // vIndex: 2, symbol: ?execute@GlobalPauseCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+    // vIndex: 2
     virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // NOLINTEND

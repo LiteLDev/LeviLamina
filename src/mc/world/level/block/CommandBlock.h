@@ -28,24 +28,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CommandBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~CommandBlock() = default;
 
-    // vIndex: 66, symbol: ?onRedstoneUpdate@CommandBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
+    // vIndex: 66
     virtual void
     onRedstoneUpdate(class BlockSource& region, class BlockPos const& pos, int strength, bool isFirstTime) const;
 
-    // vIndex: 72, symbol: ?setupRedstoneComponent@CommandBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 72
     virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 93, symbol: ?neighborChanged@CommandBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 93
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@CommandBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 98, symbol: ?getPlacementBlock@CommandBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+    // vIndex: 98
     virtual class Block const& getPlacementBlock(
         class Actor const&    by,
         class BlockPos const& pos,
@@ -54,46 +54,41 @@ public:
         int                   itemValue
     ) const;
 
-    // vIndex: 111, symbol: ?hasComparatorSignal@CommandBlock@@UEBA_NXZ
+    // vIndex: 111
     virtual bool hasComparatorSignal() const;
 
-    // vIndex: 112, symbol: ?getComparatorSignal@CommandBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
+    // vIndex: 112
     virtual int
     getComparatorSignal(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
         const;
 
-    // vIndex: 114, symbol: ?canInstatick@CommandBlock@@UEBA_NXZ
+    // vIndex: 114
     virtual bool canInstatick() const;
 
-    // vIndex: 129, symbol: ?getVariant@CommandBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 132, symbol: ?getMappedFace@CommandBlock@@UEBAEEAEBVBlock@@@Z
+    // vIndex: 132
     virtual uchar getMappedFace(uchar face, class Block const& block) const;
 
-    // vIndex: 146, symbol: ?onPlace@CommandBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 146
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 148, symbol: ?tick@CommandBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 150, symbol: ?isInteractiveBlock@CommandBlock@@UEBA_NXZ
+    // vIndex: 150
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 152, symbol: ?use@CommandBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    // symbol:
-    // ??0CommandBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4CommandBlockMode@@@Z
     MCAPI CommandBlock(std::string const& nameId, int id, ::CommandBlockMode mode);
 
-    // symbol: ?execute@CommandBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void execute(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ?getMode@CommandBlock@@QEBA?AW4CommandBlockMode@@XZ
     MCAPI ::CommandBlockMode getMode() const;
 
-    // symbol: ?updateBlock@CommandBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@W4CommandBlockMode@@_N@Z
     MCAPI void
     updateBlock(class BlockSource& region, class BlockPos const& pos, ::CommandBlockMode newMode, bool conditional)
         const;
@@ -102,15 +97,12 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_execute@CommandBlock@@AEBAXAEAVBlockSource@@AEAVCommandBlockActor@@AEBVBlockPos@@_N@Z
     MCAPI void
     _execute(class BlockSource& region, class CommandBlockActor& entity, class BlockPos const& pos, bool commandSet)
         const;
 
-    // symbol: ?_executeChain@CommandBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void _executeChain(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ?_executeChainBlock@CommandBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVCommandBlockActor@@_N@Z
     MCAPI bool _executeChainBlock(
         class BlockSource&       region,
         class BlockPos const&    pos,
@@ -118,14 +110,12 @@ public:
         bool                     fromTickQueue
     ) const;
 
-    // symbol: ?_installCircuit@CommandBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@_N@Z
     MCAPI void _installCircuit(class BlockSource& region, class BlockPos const& pos, bool bLoading) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?mCBModeMap@CommandBlock@@0PAHA
     MCAPI static int mCBModeMap[];
 
     // NOLINTEND

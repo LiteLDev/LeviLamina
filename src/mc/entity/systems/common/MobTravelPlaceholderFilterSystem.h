@@ -14,11 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?create@MobTravelPlaceholderFilterSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo create();
 
-    // symbol:
-    // ?tick@MobTravelPlaceholderFilterSystem@@SAXAEBVStrictEntityContext@@AEAUStateVectorComponent@@V?$EntityModifier@UMobTravelComponent@@@@AEBVIConstBlockSource@@@Z
     MCAPI static void tick(
         class StrictEntityContext const& context,
         struct StateVectorComponent&,

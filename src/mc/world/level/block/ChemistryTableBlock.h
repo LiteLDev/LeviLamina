@@ -28,29 +28,28 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ChemistryTableBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~ChemistryTableBlock() = default;
 
-    // vIndex: 32, symbol: ?isCraftingBlock@ChemistryTableBlock@@UEBA_NXZ
+    // vIndex: 32
     virtual bool isCraftingBlock() const;
 
-    // vIndex: 33, symbol: ?isWaterBlocking@ChemistryTableBlock@@UEBA_NXZ
+    // vIndex: 33
     virtual bool isWaterBlocking() const;
 
-    // vIndex: 50, symbol: ?isValidAuxValue@ChemistryTableBlock@@UEBA_NH@Z
+    // vIndex: 50
     virtual bool isValidAuxValue(int value) const;
 
-    // vIndex: 53, symbol: ?onFillBlock@ChemistryTableBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 53
     virtual void onFillBlock(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
 
-    // vIndex: 61, symbol: ?canBeUsedInCommands@ChemistryTableBlock@@UEBA_NAEBVBaseGameVersion@@@Z
+    // vIndex: 61
     virtual bool canBeUsedInCommands(class BaseGameVersion const& requiredBaseGameVersion) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@ChemistryTableBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
-    // vIndex: 98, symbol:
-    // ?getPlacementBlock@ChemistryTableBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+    // vIndex: 98
     virtual class Block const& getPlacementBlock(
         class Actor const&    by,
         class BlockPos const& pos,
@@ -59,35 +58,31 @@ public:
         int                   itemValue
     ) const;
 
-    // vIndex: 119, symbol:
-    // ?buildDescriptionId@ChemistryTableBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
+    // vIndex: 119
     virtual std::string buildDescriptionId(class Block const&) const;
 
-    // vIndex: 120, symbol: ?isAuxValueRelevantForPicking@ChemistryTableBlock@@UEBA_NXZ
+    // vIndex: 120
     virtual bool isAuxValueRelevantForPicking() const;
 
-    // vIndex: 129, symbol: ?getVariant@ChemistryTableBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 132, symbol: ?getMappedFace@ChemistryTableBlock@@UEBAEEAEBVBlock@@@Z
+    // vIndex: 132
     virtual uchar getMappedFace(uchar face, class Block const& block) const;
 
-    // vIndex: 143, symbol: ?onRemove@ChemistryTableBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 143
     virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 150, symbol: ?isInteractiveBlock@ChemistryTableBlock@@UEBA_NXZ
+    // vIndex: 150
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 152, symbol: ?use@ChemistryTableBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    // symbol: ??0ChemistryTableBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI ChemistryTableBlock(std::string const& nameId, int id);
 
-    // symbol: ?getItemForType@ChemistryTableBlock@@SA?AVItemInstance@@W4ChemistryTableType@@H@Z
     MCAPI static class ItemInstance getItemForType(::ChemistryTableType type, int stackCount);
 
-    // symbol: ?isUIValidForPlayer@ChemistryTableBlock@@SA_NAEBVBlockPos@@AEAVPlayer@@MW4ChemistryTableType@@@Z
     MCAPI static bool isUIValidForPlayer(
         class BlockPos const& pos,
         class Player&         player,

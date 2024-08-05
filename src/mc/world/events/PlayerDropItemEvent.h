@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1PlayerDropItemEvent@@QEAA@XZ
     MCAPI ~PlayerDropItemEvent();
 
     // NOLINTEND

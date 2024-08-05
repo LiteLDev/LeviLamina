@@ -22,7 +22,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??RHash@EntityContext@@QEBA_KAEBV1@@Z
         MCAPI uint64 operator()(class EntityContext const&) const;
 
         // NOLINTEND
@@ -36,29 +35,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0EntityContext@@QEAA@AEAVEntityRegistry@@VEntityId@@@Z
     MCAPI EntityContext(class EntityRegistry& registry, class EntityId entity);
 
-    // symbol: ?_registry@EntityContext@@QEBAAEAVEntityRegistry@@XZ
     MCAPI class EntityRegistry& _registry() const;
 
-    // symbol: ?getWeakRef@EntityContext@@QEBA?AV?$WeakRef@VEntityContext@@@@XZ
     MCAPI class WeakRef<class EntityContext> getWeakRef() const;
 
-    // symbol: ?isValid@EntityContext@@QEBA_NXZ
     MCAPI bool isValid() const;
 
-    // symbol: ??8EntityContext@@QEBA_NAEBV0@@Z
     MCAPI bool operator==(class EntityContext const&) const;
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?_getEntityId@EntityContext@@IEBA?AVEntityId@@XZ
     MCAPI class EntityId _getEntityId() const;
 
-    // symbol: ?_getRegistryId@EntityContext@@IEBAIXZ
     MCAPI uint _getRegistryId() const;
 
     // NOLINTEND

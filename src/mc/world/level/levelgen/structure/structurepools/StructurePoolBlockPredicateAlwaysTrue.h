@@ -13,19 +13,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1StructurePoolBlockPredicateAlwaysTrue@@UEAA@XZ
+    // vIndex: 0
     virtual ~StructurePoolBlockPredicateAlwaysTrue() = default;
 
-    // vIndex: 1, symbol: ?test@StructurePoolBlockPredicateAlwaysTrue@@UEBA_NAEBVBlock@@AEAVRandomize@@@Z
+    // vIndex: 1
     virtual bool test(class Block const& block, class Randomize& randomize) const;
 
-    // vIndex: 2, symbol: ?test@StructurePoolBlockPredicateAlwaysTrue@@UEBA_NAEBVBlockPos@@0AEAVRandomize@@@Z
+    // vIndex: 2
     virtual bool test(class BlockPos const&, class BlockPos const&, class Randomize&) const;
 
-    // vIndex: 3, symbol: ?finalize@IStructurePoolBlockPredicate@@UEAA_NAEAVBlockSource@@AEAVIRandom@@@Z
+    // vIndex: 3
     virtual bool finalize(class BlockSource&, class IRandom&);
 
-    // symbol: ??0StructurePoolBlockPredicateAlwaysTrue@@QEAA@XZ
     MCAPI StructurePoolBlockPredicateAlwaysTrue();
 
     // NOLINTEND

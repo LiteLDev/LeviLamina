@@ -35,48 +35,43 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 6, symbol:
-    // ?initializeComponents@Throwable@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 6
     virtual void initializeComponents(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: ??1Throwable@@UEAA@XZ
+    // vIndex: 10
     virtual ~Throwable();
 
-    // vIndex: 24, symbol: ?lerpMotion@Throwable@@UEAAXAEBVVec3@@@Z
+    // vIndex: 24
     virtual void lerpMotion(class Vec3 const& delta);
 
-    // vIndex: 90, symbol: ?getSourceUniqueID@Throwable@@UEBA?AUActorUniqueID@@XZ
+    // vIndex: 90
     virtual struct ActorUniqueID getSourceUniqueID() const;
 
-    // vIndex: 147, symbol: ?readAdditionalSaveData@Throwable@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 148, symbol: ?addAdditionalSaveData@Throwable@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 151, symbol: ?getThrowPower@Throwable@@UEAAMXZ
+    // vIndex: 151
     virtual float getThrowPower();
 
-    // vIndex: 152, symbol: ?getThrowUpAngleOffset@Throwable@@MEAAMXZ
+    // vIndex: 152
     virtual float getThrowUpAngleOffset();
 
-    // vIndex: 153, symbol: ?getGravity@Throwable@@MEAAMXZ
+    // vIndex: 153
     virtual float getGravity();
 
-    // symbol: ??0Throwable@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Throwable(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?shoot@Throwable@@QEAAXAEAVMob@@@Z
     MCAPI void shoot(class Mob& shooter);
 
-    // symbol: ?shoot@Throwable@@QEAAXAEBVVec3@@MM0@Z
     MCAPI void shoot(class Vec3 const& dir, float pow, float uncertainty, class Vec3 const& baseSpeed);
 
-    // symbol: ?spawnPlayerProjectile@Throwable@@SAPEAVActor@@AEBUActorDefinitionIdentifier@@AEAVPlayer@@@Z
     MCAPI static class Actor* spawnPlayerProjectile(struct ActorDefinitionIdentifier const& id, class Player& player);
 
     // NOLINTEND

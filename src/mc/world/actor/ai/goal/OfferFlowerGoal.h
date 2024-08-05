@@ -30,14 +30,11 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __gen_??1OfferFlowerDefinition@OfferFlowerGoal@@UEAA@XZ
+        // vIndex: 0
         virtual ~OfferFlowerDefinition() = default;
 
-        // symbol: ?initialize@OfferFlowerDefinition@OfferFlowerGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext& entity, class OfferFlowerGoal& goal) const;
 
-        // symbol:
-        // ?buildSchema@OfferFlowerDefinition@OfferFlowerGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VOfferFlowerDefinition@OfferFlowerGoal@@@JsonUtil@@@4@@Z
         MCAPI static void buildSchema(
             std::string const&                                  name,
             std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
@@ -45,7 +42,6 @@ public:
                 class OfferFlowerGoal::OfferFlowerDefinition>>& root
         );
 
-        // symbol: ?getStrictParsingVersion@OfferFlowerDefinition@OfferFlowerGoal@@SA?AVSemVersion@@XZ
         MCAPI static class SemVersion getStrictParsingVersion();
 
         // NOLINTEND
@@ -59,32 +55,29 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1OfferFlowerGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~OfferFlowerGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@OfferFlowerGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@OfferFlowerGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@OfferFlowerGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@OfferFlowerGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@OfferFlowerGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@OfferFlowerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0OfferFlowerGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit OfferFlowerGoal(class Mob& mob);
 
-    // symbol: ?getMaxOfferFlowerDurationTicks@OfferFlowerGoal@@QEBAHXZ
     MCAPI int getMaxOfferFlowerDurationTicks() const;
 
     // NOLINTEND

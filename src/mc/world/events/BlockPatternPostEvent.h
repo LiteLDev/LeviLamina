@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1BlockPatternPostEvent@@QEAA@XZ
     MCAPI ~BlockPatternPostEvent();
 
     // NOLINTEND

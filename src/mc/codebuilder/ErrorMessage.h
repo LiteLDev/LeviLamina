@@ -18,15 +18,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0ErrorMessage@CodeBuilder@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UMCRESULT@@@Z
     MCAPI ErrorMessage(std::string const& requestId, struct MCRESULT result);
 
-    // symbol:
-    // ??0ErrorMessage@CodeBuilder@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UMCRESULT@@0@Z
     MCAPI ErrorMessage(std::string const& requestId, struct MCRESULT result, std::string const& message);
 
-    // symbol: ??1ErrorMessage@CodeBuilder@@QEAA@XZ
     MCAPI ~ErrorMessage();
 
     // NOLINTEND

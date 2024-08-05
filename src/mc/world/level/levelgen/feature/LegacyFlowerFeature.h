@@ -15,13 +15,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LegacyFlowerFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~LegacyFlowerFeature() = default;
 
-    // vIndex: 3, symbol: ?place@LegacyFlowerFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 3
     virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // symbol: ??0LegacyFlowerFeature@@QEAA@W4FlowerPlacementType@@@Z
     MCAPI explicit LegacyFlowerFeature(::FlowerPlacementType placementType);
 
     // NOLINTEND

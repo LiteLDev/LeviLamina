@@ -13,11 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?add@TransferBuilder@Server@ClientBlobCache@@QEAAX_KAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
     MCAPI void add(uint64 id, std::string& blob, bool);
 
-    // symbol: ??1TransferBuilder@Server@ClientBlobCache@@QEAA@XZ
     MCAPI ~TransferBuilder();
 
     // NOLINTEND

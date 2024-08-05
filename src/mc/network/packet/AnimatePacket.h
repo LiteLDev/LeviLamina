@@ -19,31 +19,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1AnimatePacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~AnimatePacket();
 
-    // vIndex: 1, symbol: ?getId@AnimatePacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol: ?getName@AnimatePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@AnimatePacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 8, symbol: ?_read@AnimatePacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0AnimatePacket@@QEAA@XZ
     MCAPI AnimatePacket();
 
-    // symbol: ??0AnimatePacket@@QEAA@W4Action@0@AEAVActor@@@Z
     MCAPI AnimatePacket(::AnimatePacket::Action action, class Actor& e);
 
-    // symbol: ??0AnimatePacket@@QEAA@W4Action@0@VActorRuntimeID@@@Z
     MCAPI AnimatePacket(::AnimatePacket::Action action, class ActorRuntimeID runtimeId);
 
-    // symbol: ??0AnimatePacket@@QEAA@W4Action@0@VActorRuntimeID@@M@Z
     MCAPI AnimatePacket(::AnimatePacket::Action action, class ActorRuntimeID runtimeId, float data);
 
     // NOLINTEND

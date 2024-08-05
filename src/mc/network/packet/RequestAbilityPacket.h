@@ -20,30 +20,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1RequestAbilityPacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~RequestAbilityPacket() = default;
 
-    // vIndex: 1, symbol: ?getId@RequestAbilityPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@RequestAbilityPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@RequestAbilityPacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 8, symbol:
-    // ?_read@RequestAbilityPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0RequestAbilityPacket@@QEAA@XZ
     MCAPI RequestAbilityPacket();
 
-    // symbol: ?getAbility@RequestAbilityPacket@@QEBA?AW4AbilitiesIndex@@XZ
     MCAPI ::AbilitiesIndex getAbility() const;
 
-    // symbol: ?tryGetBool@RequestAbilityPacket@@QEBA_NAEA_N@Z
     MCAPI bool tryGetBool(bool& outValue) const;
 
     // NOLINTEND

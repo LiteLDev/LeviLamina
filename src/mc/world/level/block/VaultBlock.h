@@ -27,35 +27,34 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1VaultBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~VaultBlock() = default;
 
-    // vIndex: 98, symbol: ?getPlacementBlock@VaultBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+    // vIndex: 98
     virtual class Block const&
     getPlacementBlock(class Actor const&, class BlockPos const&, uchar, class Vec3 const&, int) const;
 
-    // vIndex: 129, symbol: ?getVariant@VaultBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const&) const;
 
-    // vIndex: 131, symbol: ?getRenderBlock@VaultBlock@@UEBAAEBVBlock@@XZ
+    // vIndex: 131
     virtual class Block const& getRenderBlock() const;
 
-    // vIndex: 132, symbol: ?getMappedFace@VaultBlock@@UEBAEEAEBVBlock@@@Z
+    // vIndex: 132
     virtual uchar getMappedFace(uchar, class Block const&) const;
 
-    // vIndex: 133, symbol: ?getFaceFlip@VaultBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
+    // vIndex: 133
     virtual ::Flip getFaceFlip(uchar, class Block const&) const;
 
-    // vIndex: 137, symbol: ?getLightEmission@VaultBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
+    // vIndex: 137
     virtual struct Brightness getLightEmission(class Block const&) const;
 
-    // vIndex: 150, symbol: ?isInteractiveBlock@VaultBlock@@UEBA_NXZ
+    // vIndex: 150
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 152, symbol: ?use@VaultBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player&, class BlockPos const&, uchar) const;
 
-    // symbol: ??0VaultBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI VaultBlock(std::string const&, int);
 
     // NOLINTEND

@@ -23,21 +23,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BaseScriptBlockComponent@ScriptModuleMinecraft@@UEAA@XZ
+    // vIndex: 0
     virtual ~BaseScriptBlockComponent();
 
-    // vIndex: 1, symbol: ?_isValid@BaseScriptBlockComponent@ScriptModuleMinecraft@@MEBA_NXZ
+    // vIndex: 1
     virtual bool _isValid() const;
 
-    // symbol: ??0BaseScriptBlockComponent@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
     MCAPI BaseScriptBlockComponent(class ScriptModuleMinecraft::BaseScriptBlockComponent const&);
 
-    // symbol:
-    // ?getBlock@BaseScriptBlockComponent@ScriptModuleMinecraft@@QEBA?AV?$StrongTypedObjectHandle@VScriptBlock@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock> getBlock() const;
 
-    // symbol:
-    // ?bind@BaseScriptBlockComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VBaseScriptBlockComponent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::BaseScriptBlockComponent> bind();
 
     // NOLINTEND

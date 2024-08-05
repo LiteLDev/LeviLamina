@@ -14,16 +14,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LookAtBlockNode@@UEAA@XZ
+    // vIndex: 0
     virtual ~LookAtBlockNode() = default;
 
-    // vIndex: 1, symbol: ?tick@LookAtBlockNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+    // vIndex: 1
     virtual ::BehaviorStatus tick(class Actor& owner);
 
-    // vIndex: 2, symbol: ?initializeFromDefinition@LookAtBlockNode@@EEAAXAEAVActor@@@Z
+    // vIndex: 2
     virtual void initializeFromDefinition(class Actor& owner);
 
-    // symbol: ??0LookAtBlockNode@@QEAA@XZ
     MCAPI LookAtBlockNode();
 
     // NOLINTEND

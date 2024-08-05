@@ -15,39 +15,35 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ConduitBlockActor@@UEAA@XZ
+    // vIndex: 0
     virtual ~ConduitBlockActor() = default;
 
-    // vIndex: 1, symbol: ?load@ConduitBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 1
     virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 2, symbol: ?save@ConduitBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+    // vIndex: 2
     virtual bool save(class CompoundTag& tag) const;
 
-    // vIndex: 7, symbol: ?tick@ConduitBlockActor@@UEAAXAEAVBlockSource@@@Z
+    // vIndex: 7
     virtual void tick(class BlockSource& region);
 
-    // vIndex: 20, symbol: ?hasAlphaLayer@ConduitBlockActor@@UEBA_NXZ
+    // vIndex: 20
     virtual bool hasAlphaLayer() const;
 
-    // vIndex: 40, symbol:
-    // ?_getUpdatePacket@ConduitBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
+    // vIndex: 40
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
 
-    // vIndex: 41, symbol: ?_onUpdatePacket@ConduitBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
+    // vIndex: 41
     virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_animateTick@ConduitBlockActor@@AEBAXAEAVBlockSource@@@Z
     MCAPI void _animateTick(class BlockSource& region) const;
 
-    // symbol: ?_checkShape@ConduitBlockActor@@AEAAXAEAVBlockSource@@@Z
     MCAPI void _checkShape(class BlockSource& region);
 
-    // symbol: ?_updateTarget@ConduitBlockActor@@AEAAXAEAVBlockSource@@@Z
     MCAPI void _updateTarget(class BlockSource& region);
 
     // NOLINTEND

@@ -27,11 +27,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1FaceDirectionalActorBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~FaceDirectionalActorBlock();
 
-    // vIndex: 98, symbol:
-    // ?getPlacementBlock@FaceDirectionalActorBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+    // vIndex: 98
     virtual class Block const& getPlacementBlock(
         class Actor const&    by,
         class BlockPos const& pos,
@@ -40,17 +39,15 @@ public:
         int                   itemValue
     ) const;
 
-    // vIndex: 131, symbol: ?getRenderBlock@FaceDirectionalActorBlock@@UEBAAEBVBlock@@XZ
+    // vIndex: 131
     virtual class Block const& getRenderBlock() const;
 
-    // vIndex: 132, symbol: ?getMappedFace@FaceDirectionalActorBlock@@UEBAEEAEBVBlock@@@Z
+    // vIndex: 132
     virtual uchar getMappedFace(uchar face, class Block const& block) const;
 
-    // vIndex: 133, symbol: ?getFaceFlip@FaceDirectionalActorBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
+    // vIndex: 133
     virtual ::Flip getFaceFlip(uchar face, class Block const& block) const;
 
-    // symbol:
-    // ??0FaceDirectionalActorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@_NM@Z
     MCAPI FaceDirectionalActorBlock(
         std::string const&    nameId,
         int                   id,

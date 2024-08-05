@@ -35,20 +35,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1ChestBoat@@UEAA@XZ
+    // vIndex: 10
     virtual ~ChestBoat() = default;
 
-    // vIndex: 32, symbol:
-    // ?getEntityLocNameString@ChestBoat@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 32
     virtual std::string getEntityLocNameString() const;
 
-    // vIndex: 130, symbol: ?kill@ChestBoat@@UEAAXXZ
+    // vIndex: 130
     virtual void kill();
 
-    // vIndex: 151, symbol: ?destroy@ChestBoat@@UEAAXPEAVActor@@@Z
+    // vIndex: 151
     virtual void destroy(class Actor* sourceActor);
 
-    // symbol: ??0ChestBoat@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI ChestBoat(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
@@ -59,7 +57,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_dropChestContents@ChestBoat@@AEAAXAEBVVec3@@@Z
     MCAPI void _dropChestContents(class Vec3 const& pos);
 
     // NOLINTEND

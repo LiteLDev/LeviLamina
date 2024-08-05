@@ -19,29 +19,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ShapelessRecipe@@UEAA@XZ
+    // vIndex: 0
     virtual ~ShapelessRecipe();
 
-    // vIndex: 1, symbol:
-    // ?assemble@ShapelessRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@AEAVCraftingContext@@@Z
+    // vIndex: 1
     virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&, class CraftingContext&) const;
 
-    // vIndex: 2, symbol: ?getCraftingSize@ShapelessRecipe@@UEBAHXZ
+    // vIndex: 2
     virtual int getCraftingSize() const;
 
-    // vIndex: 3, symbol: ?getIngredient@ShapelessRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
+    // vIndex: 3
     virtual class RecipeIngredient const& getIngredient(int x, int y) const;
 
-    // vIndex: 4, symbol: ?isShapeless@ShapelessRecipe@@UEBA_NXZ
+    // vIndex: 4
     virtual bool isShapeless() const;
 
-    // vIndex: 5, symbol: ?matches@ShapelessRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
+    // vIndex: 5
     virtual bool matches(class CraftingContainer const& craftSlots, class CraftingContext const&) const;
 
-    // vIndex: 6, symbol: ?size@ShapelessRecipe@@UEBAHXZ
+    // vIndex: 6
     virtual int size() const;
 
-    // symbol: ??0ShapelessRecipe@@QEAA@$$QEAUConstructionContext@Recipe@@@Z
     MCAPI explicit ShapelessRecipe(struct Recipe::ConstructionContext&&);
 
     // NOLINTEND

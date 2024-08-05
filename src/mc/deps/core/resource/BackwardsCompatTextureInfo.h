@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1BackwardsCompatTextureInfo@@QEAA@XZ
     MCAPI ~BackwardsCompatTextureInfo();
 
     // NOLINTEND

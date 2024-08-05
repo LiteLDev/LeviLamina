@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1PistonActionEvent@@QEAA@XZ
     MCAPI ~PistonActionEvent();
 
     // NOLINTEND

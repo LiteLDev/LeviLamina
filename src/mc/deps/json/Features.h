@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?strictMode@Features@Json@@SA?AV12@XZ
     MCAPI static class Json::Features strictMode();
 
     // NOLINTEND

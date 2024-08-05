@@ -10,8 +10,6 @@
 
 namespace LiquidPhysicsSystem {
 // NOLINTBEGIN
-// symbol:
-// ?_liquidBlockFetch@LiquidPhysicsSystem@@YAXAEBVStrictEntityContext@@AEAUStateVectorComponent@@AEAUUpdateWaterStateRequestComponent@@AEBUAABBShapeComponent@@AEBUSubBBsComponent@@V?$Optional@$$CBV?$FlagComponent@UItemActorFlag@@@@@@AEAV?$vector@ULiquidBlockEntry@@V?$allocator@ULiquidBlockEntry@@@std@@@std@@AEBVIConstBlockSource@@@Z
 MCAPI void _liquidBlockFetch(
     class StrictEntityContext const&,
     struct StateVectorComponent&,
@@ -23,13 +21,9 @@ MCAPI void _liquidBlockFetch(
     class IConstBlockSource const&        region
 );
 
-// symbol:
-// ?_markForLiquidFlow@LiquidPhysicsSystem@@YAXAEAUUpdateWaterStateRequestComponent@@AEBV?$Optional@$$CBUMovementAbilitiesComponent@@@@@Z
 MCAPI void
 _markForLiquidFlow(struct UpdateWaterStateRequestComponent&, class Optional<struct MovementAbilitiesComponent const> const&);
 
-// symbol:
-// ?_tickLiquidBlocksFetch@LiquidPhysicsSystem@@YAXV?$ViewT@VStrictEntityContext@@UStateVectorComponent@@UUpdateWaterStateRequestComponent@@$$CBUAABBShapeComponent@@$$CBUSubBBsComponent@@V?$Optional@$$CBV?$FlagComponent@UItemActorFlag@@@@@@@@V?$ViewT@VStrictEntityContext@@$$CBUDimensionTypeComponent@@@@V?$OptionalGlobal@$$CBULocalConstBlockSourceFactoryComponent@@@@@Z
 MCAPI void _tickLiquidBlocksFetch(
     class ViewT<
         class StrictEntityContext,
@@ -42,10 +36,8 @@ MCAPI void _tickLiquidBlocksFetch(
     class OptionalGlobal<struct LocalConstBlockSourceFactoryComponent const> factory
 );
 
-// symbol: ?createFilterSystem@LiquidPhysicsSystem@@YA?AUTickingSystemWithInfo@@_N@Z
 MCAPI struct TickingSystemWithInfo createFilterSystem(bool isClientSide);
 
-// symbol: ?createLiquidFetchingSystem@LiquidPhysicsSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createLiquidFetchingSystem();
 // NOLINTEND
 

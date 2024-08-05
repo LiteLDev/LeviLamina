@@ -35,32 +35,30 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1Witch@@UEAA@XZ
+    // vIndex: 10
     virtual ~Witch() = default;
 
-    // vIndex: 14, symbol: ?getFiringPos@Witch@@UEBA?AVVec3@@XZ
+    // vIndex: 14
     virtual class Vec3 getFiringPos() const;
 
-    // vIndex: 54, symbol: ?canAttack@Witch@@UEBA_NPEAVActor@@_N@Z
+    // vIndex: 54
     virtual bool canAttack(class Actor* actor, bool allowInvulnerable) const;
 
-    // vIndex: 74, symbol: ?handleEntityEvent@Witch@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 74
     virtual void handleEntityEvent(::ActorEvent id, int data);
 
-    // vIndex: 144, symbol: ?updateEntitySpecificMolangVariables@Witch@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 144
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // vIndex: 179, symbol: ?getDamageAfterEnchantReduction@Witch@@MEBAMAEBVActorDamageSource@@M@Z
+    // vIndex: 179
     virtual float getDamageAfterEnchantReduction(class ActorDamageSource const& source, float damage) const;
 
-    // symbol: ??0Witch@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Witch(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?preAiStep@Witch@@QEAAXXZ
     MCAPI void preAiStep();
 
     // NOLINTEND

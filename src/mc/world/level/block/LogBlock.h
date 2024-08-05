@@ -28,21 +28,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1LogBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~LogBlock();
 
-    // vIndex: 143, symbol: ?onRemove@LogBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 143
     virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 152, symbol: ?use@LogBlock@@MEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar) const;
 
-    // vIndex: 160, symbol: ?getMapColor@LogBlock@@MEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 160
     virtual class mce::Color
     getMapColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
-    // symbol:
-    // ??0LogBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@$$CBVBlockLegacy@@@@V?$optional@ULogBlockMapColors@@@2@@Z
     MCAPI LogBlock(
         std::string const& nameId,
         int                id,

@@ -19,14 +19,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?initialize@WASDControlledDefinition@@QEBAXAEAVEntityContext@@@Z
     MCAPI void initialize(class EntityContext& entity) const;
 
-    // symbol: ?uninitialize@WASDControlledDefinition@@QEBAXAEAVEntityContext@@@Z
     MCAPI void uninitialize(class EntityContext& entity) const;
 
-    // symbol:
-    // ?buildSchema@WASDControlledDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UWASDControlledDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
     buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct WASDControlledDefinition>>& root

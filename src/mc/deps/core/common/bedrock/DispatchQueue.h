@@ -33,31 +33,27 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __gen_??1AsyncQueueResult@DispatchQueue@Http@Bedrock@@UEAA@XZ
+        // vIndex: 0
         virtual ~AsyncQueueResult() = default;
 
-        // vIndex: 1, symbol:
-        // ?getStatus@?$AsyncResultBase@VResponse@Http@Bedrock@@@Threading@Bedrock@@UEBA?AW4AsyncStatus@23@XZ
+        // vIndex: 1
         virtual ::Bedrock::Threading::AsyncStatus getStatus() const;
 
-        // vIndex: 2, symbol:
-        // ?getError@?$AsyncResultBase@VResponse@Http@Bedrock@@@Threading@Bedrock@@UEBA?AVerror_code@std@@XZ
+        // vIndex: 2
         virtual std::error_code getError() const;
 
-        // vIndex: 3, symbol: ?cancel@?$AsyncResultBase@VResponse@Http@Bedrock@@@Threading@Bedrock@@UEAAXXZ
+        // vIndex: 3
         virtual void cancel();
 
-        // vIndex: 4, symbol:
-        // ?getResult@?$AsyncResultBase@VResponse@Http@Bedrock@@@Threading@Bedrock@@UEBA?AVResponse@Http@3@XZ
+        // vIndex: 4
         virtual class Bedrock::Http::Response getResult() const;
 
-        // vIndex: 5, symbol:
-        // ?addOnComplete@?$AsyncResultBase@VResponse@Http@Bedrock@@@Threading@Bedrock@@UEAAXV?$function@$$A6AXAEBV?$IAsyncResult@VResponse@Http@Bedrock@@@Threading@Bedrock@@@Z@std@@@Z
+        // vIndex: 5
         virtual void addOnComplete(
             std::function<void(class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response> const&)> callback
         );
 
-        // vIndex: 6, symbol: ?_cancel@AsyncQueueResult@DispatchQueue@Http@Bedrock@@UEAAXXZ
+        // vIndex: 6
         virtual void _cancel();
 
         // NOLINTEND
@@ -71,33 +67,26 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1DispatchQueue@Http@Bedrock@@UEAA@XZ
+    // vIndex: 0
     virtual ~DispatchQueue();
 
-    // vIndex: 1, symbol:
-    // ?send@DispatchQueue@Http@Bedrock@@UEAA?AV?$shared_ptr@V?$IAsyncResult@VResponse@Http@Bedrock@@@Threading@Bedrock@@@std@@$$QEAVRequest@23@@Z
+    // vIndex: 1
     virtual std::shared_ptr<class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response>>
     send(class Bedrock::Http::Request&& request);
 
-    // symbol: ??0DispatchQueue@Http@Bedrock@@QEAA@V?$shared_ptr@VDispatcherProcess@Http@Bedrock@@@std@@@Z
     MCAPI explicit DispatchQueue(std::shared_ptr<class Bedrock::Http::DispatcherProcess>);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_addNewRequest@DispatchQueue@Http@Bedrock@@AEAA?AV?$shared_ptr@V?$IAsyncResult@VResponse@Http@Bedrock@@@Threading@Bedrock@@@std@@$$QEAVRequest@23@@Z
     MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response>>
           _addNewRequest(class Bedrock::Http::Request&& request);
 
-    // symbol: ?_cleanUpCompletedRequests@DispatchQueue@Http@Bedrock@@AEAAXXZ
     MCAPI void _cleanUpCompletedRequests();
 
-    // symbol: ?_handlePendingRequest@DispatchQueue@Http@Bedrock@@AEAAXXZ
     MCAPI void _handlePendingRequest();
 
-    // symbol: ?_onCompletion@DispatchQueue@Http@Bedrock@@AEAAXXZ
     MCAPI void _onCompletion();
 
     // NOLINTEND

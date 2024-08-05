@@ -24,23 +24,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptPlayerBreakBlockBeforeEvent@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
     MCAPI ScriptPlayerBreakBlockBeforeEvent(struct ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent&&);
 
-    // symbol: ??0ScriptPlayerBreakBlockBeforeEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
     MCAPI ScriptPlayerBreakBlockBeforeEvent(struct ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent const&);
 
-    // symbol:
-    // ??0ScriptPlayerBreakBlockBeforeEvent@ScriptModuleMinecraft@@QEAA@AEBVPlayer@@AEAVDimension@@AEBVBlockPos@@AEBVItemStackBase@@AEBVWeakLifetimeScope@Scripting@@@Z
     MCAPI
     ScriptPlayerBreakBlockBeforeEvent(class Player const&, class Dimension&, class BlockPos const&, class ItemStackBase const&, class Scripting::WeakLifetimeScope const&);
 
-    // symbol: ??4ScriptPlayerBreakBlockBeforeEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent&
     operator=(struct ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent&&);
 
-    // symbol:
-    // ?bind@ScriptPlayerBreakBlockBeforeEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptPlayerBreakBlockBeforeEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent>
     bind();
 

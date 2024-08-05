@@ -23,15 +23,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol:
-    // ?doValidate@BlockDescriptorProxyConstraint@BlockDescriptorSerializer@v1_20_50@Puv@@EEBAXAEBVmeta_any@entt@@AEAVSerializerContext@cereal@@@Z
+    // vIndex: 0
     virtual void doValidate(entt::meta_any const&, class cereal::SerializerContext&) const;
 
-    // vIndex: 1, symbol: __gen_??1BlockDescriptorProxyConstraint@BlockDescriptorSerializer@v1_20_50@Puv@@UEAA@XZ
+    // vIndex: 1
     virtual ~BlockDescriptorProxyConstraint() = default;
 
-    // vIndex: 2, symbol:
-    // ?description@BlockDescriptorProxyConstraint@BlockDescriptorSerializer@v1_20_50@Puv@@UEBA?AUConstraintDescription@internal@cereal@@XZ
+    // vIndex: 2
     virtual struct cereal::internal::ConstraintDescription description() const;
 
     // NOLINTEND

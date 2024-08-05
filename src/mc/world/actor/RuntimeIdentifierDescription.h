@@ -16,13 +16,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1RuntimeIdentifierDescription@@UEAA@XZ
+    // vIndex: 0
     virtual ~RuntimeIdentifierDescription();
 
-    // vIndex: 1, symbol: ?getJsonName@RuntimeIdentifierDescription@@UEBAPEBDXZ
+    // vIndex: 1
     virtual char const* getJsonName() const;
 
-    // symbol: ?parse@RuntimeIdentifierDescription@@QEAAXAEBVValue@Json@@@Z
     MCAPI void parse(class Json::Value const& root);
 
     // NOLINTEND

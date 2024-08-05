@@ -11,13 +11,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?copyMovementAttributes@UpdateAttributesSystem@@SA?AUAttributesComponent@@AEBU2@@Z
     MCAPI static struct AttributesComponent copyMovementAttributes(struct AttributesComponent const&);
 
-    // symbol: ?createProcessRequestSystem@UpdateAttributesSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createProcessRequestSystem();
 
-    // symbol: ?createUpdateSystem@UpdateAttributesSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createUpdateSystem();
 
     // NOLINTEND

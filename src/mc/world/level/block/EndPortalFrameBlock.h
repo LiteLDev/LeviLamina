@@ -27,11 +27,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1EndPortalFrameBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~EndPortalFrameBlock() = default;
 
-    // vIndex: 7, symbol:
-    // ?addCollisionShapes@EndPortalFrameBlock@@UEBA_NAEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 7
     virtual bool addCollisionShapes(
         class Block const&                                         block,
         class IConstBlockSource const&                             region,
@@ -41,8 +40,7 @@ public:
         class optional_ref<class GetCollisionShapeInterface const> entity
     ) const;
 
-    // vIndex: 8, symbol:
-    // ?addAABBs@EndPortalFrameBlock@@UEBAXAEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
+    // vIndex: 8
     virtual void addAABBs(
         class Block const&             block,
         class IConstBlockSource const& region,
@@ -51,37 +49,34 @@ public:
         std::vector<class AABB>&       inoutBoxes
     ) const;
 
-    // vIndex: 23, symbol: ?canProvideSupport@EndPortalFrameBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
+    // vIndex: 23
     virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType) const;
 
-    // vIndex: 111, symbol: ?hasComparatorSignal@EndPortalFrameBlock@@UEBA_NXZ
+    // vIndex: 111
     virtual bool hasComparatorSignal() const;
 
-    // vIndex: 112, symbol: ?getComparatorSignal@EndPortalFrameBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
+    // vIndex: 112
     virtual int
     getComparatorSignal(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
         const;
 
-    // vIndex: 143, symbol: ?onRemove@EndPortalFrameBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 143
     virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 150, symbol: ?isInteractiveBlock@EndPortalFrameBlock@@UEBA_NXZ
+    // vIndex: 150
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 152, symbol: ?use@EndPortalFrameBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    // symbol: ??0EndPortalFrameBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI EndPortalFrameBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?createPortal@EndPortalFrameBlock@@CAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static void createPortal(class BlockSource& region, class BlockPos const& origin);
 
-    // symbol: ?removePortal@EndPortalFrameBlock@@CAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static void removePortal(class BlockSource& region, class BlockPos const& origin);
 
     // NOLINTEND

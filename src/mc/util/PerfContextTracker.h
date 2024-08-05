@@ -23,13 +23,12 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1Duration@PerfContextTracker@@UEAA@XZ
+        // vIndex: 0
         virtual ~Duration();
 
-        // vIndex: 1, symbol: ?reset@Duration@PerfContextTracker@@UEAAXXZ
+        // vIndex: 1
         virtual void reset();
 
-        // symbol: ??0Duration@PerfContextTracker@@QEAA@XZ
         MCAPI Duration();
 
         // NOLINTEND
@@ -44,10 +43,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??0EventScope@PerfContextTracker@@QEAA@W4PerfContextEvent@@@Z
         MCAPI explicit EventScope(::PerfContextEvent eventType);
 
-        // symbol: ??1EventScope@PerfContextTracker@@QEAA@XZ
         MCAPI ~EventScope();
 
         // NOLINTEND
@@ -62,10 +59,10 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __gen_??1Timer@PerfContextTracker@@UEAA@XZ
+        // vIndex: 0
         virtual ~Timer() = default;
 
-        // vIndex: 1, symbol: ?reset@Timer@PerfContextTracker@@UEAAXXZ
+        // vIndex: 1
         virtual void reset();
 
         // NOLINTEND
@@ -79,13 +76,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?incrementPacketReceivedInfo@PerfContextTracker@@QEAAXI@Z
     MCAPI void incrementPacketReceivedInfo(uint);
 
-    // symbol: ?incrementPacketSentInfo@PerfContextTracker@@QEAAXI@Z
     MCAPI void incrementPacketSentInfo(uint);
 
-    // symbol: ?getInstance@PerfContextTracker@@SAAEAV1@XZ
     MCAPI static class PerfContextTracker& getInstance();
 
     // NOLINTEND

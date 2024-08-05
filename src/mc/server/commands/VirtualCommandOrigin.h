@@ -23,82 +23,78 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1VirtualCommandOrigin@@UEAA@XZ
+    // vIndex: 0
     virtual ~VirtualCommandOrigin() = default;
 
-    // vIndex: 1, symbol:
-    // ?getRequestId@VirtualCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 1
     virtual std::string const& getRequestId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@VirtualCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 3, symbol: ?getBlockPosition@VirtualCommandOrigin@@UEBA?AVBlockPos@@XZ
+    // vIndex: 3
     virtual class BlockPos getBlockPosition() const;
 
-    // vIndex: 4, symbol: ?getWorldPosition@VirtualCommandOrigin@@UEBA?AVVec3@@XZ
+    // vIndex: 4
     virtual class Vec3 getWorldPosition() const;
 
-    // vIndex: 5, symbol: ?getRotation@VirtualCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
+    // vIndex: 5
     virtual std::optional<class Vec2> getRotation() const;
 
-    // vIndex: 6, symbol: ?getLevel@VirtualCommandOrigin@@UEBAPEAVLevel@@XZ
+    // vIndex: 6
     virtual class Level* getLevel() const;
 
-    // vIndex: 7, symbol: ?getDimension@VirtualCommandOrigin@@UEBAPEAVDimension@@XZ
+    // vIndex: 7
     virtual class Dimension* getDimension() const;
 
-    // vIndex: 8, symbol: ?getEntity@VirtualCommandOrigin@@UEBAPEAVActor@@XZ
+    // vIndex: 8
     virtual class Actor* getEntity() const;
 
-    // vIndex: 9, symbol: ?getPermissionsLevel@VirtualCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
+    // vIndex: 9
     virtual ::CommandPermissionLevel getPermissionsLevel() const;
 
-    // vIndex: 10, symbol:
-    // ?clone@VirtualCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
+    // vIndex: 10
     virtual std::unique_ptr<class CommandOrigin> clone() const;
 
-    // vIndex: 13, symbol: ?hasChatPerms@VirtualCommandOrigin@@UEBA_NXZ
+    // vIndex: 13
     virtual bool hasChatPerms() const;
 
-    // vIndex: 14, symbol: ?hasTellPerms@VirtualCommandOrigin@@UEBA_NXZ
+    // vIndex: 14
     virtual bool hasTellPerms() const;
 
-    // vIndex: 15, symbol: ?canUseAbility@VirtualCommandOrigin@@UEBA_NW4AbilitiesIndex@@@Z
+    // vIndex: 15
     virtual bool canUseAbility(::AbilitiesIndex abilityIndex) const;
 
-    // vIndex: 17, symbol: ?canUseCommandsWithoutCheatsEnabled@VirtualCommandOrigin@@UEBA_NXZ
+    // vIndex: 17
     virtual bool canUseCommandsWithoutCheatsEnabled() const;
 
-    // vIndex: 18, symbol: ?isSelectorExpansionAllowed@VirtualCommandOrigin@@UEBA_NXZ
+    // vIndex: 18
     virtual bool isSelectorExpansionAllowed() const;
 
-    // vIndex: 19, symbol: ?getSourceId@VirtualCommandOrigin@@UEBAAEBVNetworkIdentifier@@XZ
+    // vIndex: 19
     virtual class NetworkIdentifier const& getSourceId() const;
 
-    // vIndex: 21, symbol: ?getOutputReceiver@VirtualCommandOrigin@@UEBAAEBVCommandOrigin@@XZ
+    // vIndex: 21
     virtual class CommandOrigin const& getOutputReceiver() const;
 
-    // vIndex: 22, symbol: ?getIdentity@VirtualCommandOrigin@@UEBA?AUCommandOriginIdentity@@XZ
+    // vIndex: 22
     virtual struct CommandOriginIdentity getIdentity() const;
 
-    // vIndex: 23, symbol: ?getOriginType@VirtualCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
+    // vIndex: 23
     virtual ::CommandOriginType getOriginType() const;
 
-    // vIndex: 27, symbol: ?updateValues@VirtualCommandOrigin@@UEAAXXZ
+    // vIndex: 27
     virtual void updateValues();
 
-    // vIndex: 28, symbol: ?getExecutePosition@VirtualCommandOrigin@@UEBA?BVVec3@@HAEBVCommandPositionFloat@@@Z
+    // vIndex: 28
     virtual class Vec3 const getExecutePosition(int version, class CommandPositionFloat const& commandPosition) const;
 
-    // vIndex: 29, symbol: ?serialize@VirtualCommandOrigin@@UEBA?AVCompoundTag@@XZ
+    // vIndex: 29
     virtual class CompoundTag serialize() const;
 
-    // vIndex: 30, symbol: ?isValid@VirtualCommandOrigin@@UEBA_NXZ
+    // vIndex: 30
     virtual bool isValid() const;
 
-    // symbol: ??0VirtualCommandOrigin@@QEAA@AEBVCommandOrigin@@AEAVActor@@AEBVCommandPositionFloat@@H@Z
     MCAPI VirtualCommandOrigin(
         class CommandOrigin const&        outputReceiver,
         class Actor&                      entity,
@@ -106,7 +102,6 @@ public:
         int                               version
     );
 
-    // symbol: ??0VirtualCommandOrigin@@QEAA@AEBVCommandOrigin@@0AEBVCommandPositionFloat@@H@Z
     MCAPI VirtualCommandOrigin(
         class CommandOrigin const&        outputReceiver,
         class CommandOrigin const&        source,
@@ -114,8 +109,6 @@ public:
         int                               version
     );
 
-    // symbol:
-    // ??0VirtualCommandOrigin@@QEAA@V?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@0AEBVCommandPositionFloat@@H@Z
     MCAPI VirtualCommandOrigin(
         std::unique_ptr<class CommandOrigin> outputReceiver,
         std::unique_ptr<class CommandOrigin> source,
@@ -123,11 +116,8 @@ public:
         int                                  version
     );
 
-    // symbol: ?getOrigin@VirtualCommandOrigin@@QEBAPEAVCommandOrigin@@XZ
     MCAPI class CommandOrigin* getOrigin() const;
 
-    // symbol:
-    // ?load@VirtualCommandOrigin@@SA?AV?$unique_ptr@VVirtualCommandOrigin@@U?$default_delete@VVirtualCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVServerLevel@@@Z
     MCAPI static std::unique_ptr<class VirtualCommandOrigin>
     load(class CompoundTag const& tag, class ServerLevel& level);
 

@@ -22,11 +22,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ZipPackAccessStrategyOwningFileAccess@@UEAA@XZ
+    // vIndex: 0
     virtual ~ZipPackAccessStrategyOwningFileAccess() = default;
 
-    // symbol:
-    // ??0ZipPackAccessStrategyOwningFileAccess@@QEAA@V?$shared_ptr@VIFileAccess@@@std@@AEBVResourceLocation@@AEBVPath@Core@@@Z
     MCAPI ZipPackAccessStrategyOwningFileAccess(
         std::shared_ptr<class IFileAccess> fileAccess,
         class ResourceLocation const&      path,

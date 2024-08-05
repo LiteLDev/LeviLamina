@@ -19,19 +19,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ActorHasPropertyTest@@UEAA@XZ
+    // vIndex: 0
     virtual ~ActorHasPropertyTest();
 
-    // vIndex: 1, symbol: ?setup@ActorHasPropertyTest@@UEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z
+    // vIndex: 1
     virtual bool setup(struct FilterTest::Definition const& definition, struct FilterInputs const& inputs);
 
-    // vIndex: 2, symbol: ?evaluate@ActorHasPropertyTest@@UEBA_NAEBUFilterContext@@@Z
+    // vIndex: 2
     virtual bool evaluate(struct FilterContext const& context) const;
 
-    // vIndex: 4, symbol: ?getName@ActorHasPropertyTest@@UEBA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@XZ
+    // vIndex: 4
     virtual std::string_view getName() const;
 
-    // vIndex: 6, symbol: ?_serializeValue@ActorHasPropertyTest@@MEBA?AVValue@Json@@XZ
+    // vIndex: 6
     virtual class Json::Value _serializeValue() const;
 
     // NOLINTEND

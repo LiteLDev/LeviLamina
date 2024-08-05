@@ -14,16 +14,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BytesDataOutput@@UEAA@XZ
+    // vIndex: 0
     virtual ~BytesDataOutput() = default;
 
-    // vIndex: 1, symbol: ?writeString@BytesDataOutput@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+    // vIndex: 1
     virtual void writeString(std::string_view v);
 
-    // vIndex: 2, symbol: ?writeLongString@BytesDataOutput@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+    // vIndex: 2
     virtual void writeLongString(std::string_view v);
 
-    // vIndex: 5, symbol: ?writeByte@BytesDataOutput@@UEAAXD@Z
+    // vIndex: 5
     virtual void writeByte(char v);
 
     // NOLINTEND

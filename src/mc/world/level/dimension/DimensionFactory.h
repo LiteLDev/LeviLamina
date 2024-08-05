@@ -22,23 +22,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DimensionFactory@@UEAA@XZ
+    // vIndex: 0
     virtual ~DimensionFactory() = default;
 
-    // vIndex: 1, symbol:
-    // ?create@DimensionFactory@@UEBA?AV?$OwnerPtr@VDimension@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 1
     virtual class OwnerPtr<class Dimension> create(std::string const&) const;
 
-    // vIndex: 2, symbol: ?initializeDimension@DimensionFactory@@UEBAXAEAVDimension@@@Z
+    // vIndex: 2
     virtual void initializeDimension(class Dimension& dimension) const;
 
-    // symbol:
-    // ??0DimensionFactory@@QEAA@V?$not_null@V?$NonOwnerPointer@VILevel@@@Bedrock@@@gsl@@V?$not_null@V?$NonOwnerPointer@VScheduler@@@Bedrock@@@2@AEBVStructureSetRegistry@worldgen@br@@@Z
     MCAPI
     DimensionFactory(Bedrock::NotNullNonOwnerPtr<class ILevel>, Bedrock::NotNullNonOwnerPtr<class Scheduler>, class br::worldgen::StructureSetRegistry const&);
 
-    // symbol:
-    // ?getDimensionOwnerPtrFactory@DimensionFactory@@QEAAAEAV?$OwnerPtrFactory@VDimension@@AEAVILevel@@AEAVScheduler@@@@XZ
     MCAPI class OwnerPtrFactory<class Dimension, class ILevel&, class Scheduler&>& getDimensionOwnerPtrFactory();
 
     // NOLINTEND

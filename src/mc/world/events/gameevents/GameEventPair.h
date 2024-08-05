@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1GameEventPair@@QEAA@XZ
     MCAPI ~GameEventPair();
 
     // NOLINTEND

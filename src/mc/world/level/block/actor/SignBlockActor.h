@@ -31,13 +31,10 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??0CachedLineData@SignBlockActor@@QEAA@XZ
         MCAPI CachedLineData();
 
-        // symbol: ??0CachedLineData@SignBlockActor@@QEAA@$$QEAU01@@Z
         MCAPI CachedLineData(struct SignBlockActor::CachedLineData&&);
 
-        // symbol: ??1CachedLineData@SignBlockActor@@QEAA@XZ
         MCAPI ~CachedLineData();
 
         // NOLINTEND
@@ -52,7 +49,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1CachedMessageData@SignBlockActor@@QEAA@XZ
         MCAPI ~CachedMessageData();
 
         // NOLINTEND
@@ -70,65 +66,44 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??0Text@SignBlockActor@@QEAA@XZ
         MCAPI Text();
 
-        // symbol: ?getColor@Text@SignBlockActor@@QEBAAEBVColor@mce@@XZ
         MCAPI class mce::Color const& getColor() const;
 
-        // symbol:
-        // ?getMessage@Text@SignBlockActor@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
         MCAPI std::string const& getMessage() const;
 
-        // symbol: ?getTextObject@Text@SignBlockActor@@QEBAAEBVTextObjectRoot@@XZ
         MCAPI class TextObjectRoot const& getTextObject() const;
 
-        // symbol: ?isGlowing@Text@SignBlockActor@@QEBA?B_NXZ
         MCAPI bool const isGlowing() const;
 
-        // symbol: ?load@Text@SignBlockActor@@QEAAXAEBVCompoundTag@@W4LoadMode@12@@Z
         MCAPI void load(class CompoundTag const& tag, ::SignBlockActor::Text::LoadMode);
 
-        // symbol: ?save@Text@SignBlockActor@@QEBA_NAEAVCompoundTag@@@Z
         MCAPI bool save(class CompoundTag& tag) const;
 
-        // symbol: ?setColor@Text@SignBlockActor@@QEAAXAEBVColor@mce@@@Z
         MCAPI void setColor(class mce::Color const& color);
 
-        // symbol:
-        // ?setEditedBy@Text@SignBlockActor@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
         MCAPI void setEditedBy(std::string const&);
 
-        // symbol: ?setGlowing@Text@SignBlockActor@@QEAAX_N@Z
         MCAPI void setGlowing(bool);
 
-        // symbol: ?setHideGlowOutline@Text@SignBlockActor@@QEAAX_N@Z
         MCAPI void setHideGlowOutline(bool);
 
-        // symbol: ?setMessage@Text@SignBlockActor@@QEAAXVTextObjectRoot@@@Z
         MCAPI void setMessage(class TextObjectRoot message);
 
-        // symbol:
-        // ?setMessage@Text@SignBlockActor@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
         MCAPI void setMessage(std::string message);
 
-        // symbol: ??1Text@SignBlockActor@@QEAA@XZ
         MCAPI ~Text();
 
-        // symbol: ?SIGN_PERSIST_FORMATTING_TAG@Text@SignBlockActor@@2QBDB
         MCAPI static char const SIGN_PERSIST_FORMATTING_TAG[];
 
         // NOLINTEND
 
         // private:
         // NOLINTBEGIN
-        // symbol: ?_parseOldVersionText@Text@SignBlockActor@@AEAAXAEBVCompoundTag@@@Z
         MCAPI void _parseOldVersionText(class CompoundTag const& tag);
 
-        // symbol: ?_parseOtherAttributes@Text@SignBlockActor@@AEAAXAEBVCompoundTag@@@Z
         MCAPI void _parseOtherAttributes(class CompoundTag const& tag);
 
-        // symbol: ?_parseText@Text@SignBlockActor@@AEAAXAEBVCompoundTag@@@Z
         MCAPI void _parseText(class CompoundTag const& tag);
 
         // NOLINTEND
@@ -142,103 +117,78 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SignBlockActor@@UEAA@XZ
+    // vIndex: 0
     virtual ~SignBlockActor();
 
-    // vIndex: 1, symbol: ?load@SignBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 1
     virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 2, symbol: ?save@SignBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+    // vIndex: 2
     virtual bool save(class CompoundTag& tag) const;
 
-    // vIndex: 7, symbol: ?tick@SignBlockActor@@UEAAXAEAVBlockSource@@@Z
+    // vIndex: 7
     virtual void tick(class BlockSource& region);
 
-    // vIndex: 8, symbol: ?onChanged@SignBlockActor@@UEAAXAEAVBlockSource@@@Z
+    // vIndex: 8
     virtual void onChanged(class BlockSource& region);
 
-    // vIndex: 19, symbol: ?getShadowRadius@SignBlockActor@@UEBAMAEAVBlockSource@@@Z
+    // vIndex: 19
     virtual float getShadowRadius(class BlockSource& region) const;
 
-    // vIndex: 28, symbol:
-    // ?getImmersiveReaderText@SignBlockActor@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVBlockSource@@@Z
+    // vIndex: 28
     virtual std::string getImmersiveReaderText(class BlockSource&);
 
-    // vIndex: 37, symbol:
-    // ?getUgcStrings@SignBlockActor@@UEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBVCompoundTag@@@Z
+    // vIndex: 37
     virtual std::vector<std::string> getUgcStrings(class CompoundTag const&) const;
 
-    // vIndex: 38, symbol:
-    // ?setUgcStrings@SignBlockActor@@UEBAXAEAVCompoundTag@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
+    // vIndex: 38
     virtual void setUgcStrings(class CompoundTag& tag, std::vector<std::string> const& list) const;
 
-    // vIndex: 40, symbol:
-    // ?_getUpdatePacket@SignBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
+    // vIndex: 40
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
-    // vIndex: 41, symbol: ?_onUpdatePacket@SignBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
+    // vIndex: 41
     virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
 
-    // vIndex: 42, symbol: ?_playerCanUpdate@SignBlockActor@@MEBA_NAEBVPlayer@@@Z
+    // vIndex: 42
     virtual bool _playerCanUpdate(class Player const& fromPlayer) const;
 
-    // symbol:
-    // ??0SignBlockActor@@QEAA@AEBVBlockPos@@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI SignBlockActor(class BlockPos const& pos, ::BlockActorType blockActorType, std::string const&);
 
-    // symbol: ?getIsGlowing@SignBlockActor@@QEBA_NW4SignTextSide@@@Z
     MCAPI bool getIsGlowing(::SignTextSide side) const;
 
-    // symbol: ?getIsLockedForEditing@SignBlockActor@@QEAA_NAEAVILevel@@@Z
     MCAPI bool getIsLockedForEditing(class ILevel& level);
 
-    // symbol: ?getIsWaxed@SignBlockActor@@QEBA_NXZ
     MCAPI bool getIsWaxed() const;
 
-    // symbol:
-    // ?getMessage@SignBlockActor@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4SignTextSide@@@Z
     MCAPI std::string const& getMessage(::SignTextSide) const;
 
-    // symbol: ?getSideFacingPlayer@SignBlockActor@@QEBA?AW4SignTextSide@@AEBVPlayer@@@Z
     MCAPI ::SignTextSide getSideFacingPlayer(class Player const& player) const;
 
-    // symbol: ?getSignTextColor@SignBlockActor@@QEBAAEBVColor@mce@@W4SignTextSide@@@Z
     MCAPI class mce::Color const& getSignTextColor(::SignTextSide side) const;
 
-    // symbol: ?getTextObject@SignBlockActor@@QEBAAEBVTextObjectRoot@@W4SignTextSide@@@Z
     MCAPI class TextObjectRoot const& getTextObject(::SignTextSide side) const;
 
-    // symbol: ?isStringMessage@SignBlockActor@@QEBA_NW4SignTextSide@@@Z
     MCAPI bool isStringMessage(::SignTextSide side) const;
 
-    // symbol: ?serverOnlySetIsLockedForEditing@SignBlockActor@@QEAAXAEAVPlayer@@@Z
     MCAPI void serverOnlySetIsLockedForEditing(class Player& player);
 
-    // symbol: ?setHideGlowOutline@SignBlockActor@@QEAAXW4SignTextSide@@_N@Z
     MCAPI void setHideGlowOutline(::SignTextSide, bool);
 
-    // symbol: ?setIsGlowing@SignBlockActor@@QEAAXW4SignTextSide@@_N@Z
     MCAPI void setIsGlowing(::SignTextSide side, bool isGlowing);
 
-    // symbol:
-    // ?setMessageForServerScripingOnly@SignBlockActor@@QEAAXW4SignTextSide@@VTextObjectRoot@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void setMessageForServerScripingOnly(::SignTextSide side, class TextObjectRoot message, std::string ownerID);
 
-    // symbol:
-    // ?setMessageForServerScripingOnly@SignBlockActor@@QEAAXW4SignTextSide@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
     MCAPI void setMessageForServerScripingOnly(::SignTextSide side, std::string message, std::string ownerID);
 
-    // symbol: ?setSignTextColor@SignBlockActor@@QEAAXW4SignTextSide@@AEBVColor@mce@@@Z
     MCAPI void setSignTextColor(::SignTextSide side, class mce::Color const& color);
 
-    // symbol: ?setWaxed@SignBlockActor@@QEAAX_N@Z
     MCAPI void setWaxed(bool);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_updateTextFromClient@SignBlockActor@@AEAAXAEBVCompoundTag@@AEBVBlockSource@@@Z
     MCAPI void _updateTextFromClient(class CompoundTag const& data, class BlockSource const& region);
 
     // NOLINTEND

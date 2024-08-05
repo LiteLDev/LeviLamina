@@ -20,21 +20,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LegacyOnCompleteTriggerItemComponent@@UEAA@XZ
+    // vIndex: 0
     virtual ~LegacyOnCompleteTriggerItemComponent() = default;
 
-    // vIndex: 9, symbol: ?_initializeComponent@LegacyOnCompleteTriggerItemComponent@@UEAAXXZ
+    // vIndex: 9
     virtual void _initializeComponent();
 
-    // symbol: ?getIdentifier@LegacyOnCompleteTriggerItemComponent@@SAAEBVHashedString@@XZ
     MCAPI static class HashedString const& getIdentifier();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_onUseTimeDepleted@LegacyOnCompleteTriggerItemComponent@@AEAAXAEAW4ItemUseMethod@@AEBVItemStack@@AEAV3@AEAVPlayer@@AEAVLevel@@@Z
     MCAPI void
     _onUseTimeDepleted(::ItemUseMethod&, class ItemStack const&, class ItemStack&, class Player&, class Level&);
 

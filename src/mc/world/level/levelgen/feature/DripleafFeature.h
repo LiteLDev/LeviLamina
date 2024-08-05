@@ -14,17 +14,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DripleafFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~DripleafFeature() = default;
 
-    // vIndex: 3, symbol: ?place@DripleafFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 3
     virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_placeBigDripleaf@DripleafFeature@@CA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     MCAPI static bool _placeBigDripleaf(class BlockSource& region, class BlockPos const& pos, class Random& random);
 
     // NOLINTEND

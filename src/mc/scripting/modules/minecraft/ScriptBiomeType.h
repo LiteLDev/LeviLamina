@@ -23,16 +23,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?getId@ScriptBiomeType@ScriptModuleMinecraft@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getId() const;
 
-    // symbol:
-    // ?bind@ScriptBiomeType@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptBiomeType@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBiomeType> bind();
 
-    // symbol:
-    // ?getOrCreateHandle@ScriptBiomeType@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptBiomeType@ScriptModuleMinecraft@@@Scripting@@AEBVBiome@@AEBVWeakLifetimeScope@4@@Z
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBiomeType>
     getOrCreateHandle(class Biome const&, class Scripting::WeakLifetimeScope const&);
 

@@ -27,35 +27,34 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BushBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~BushBlock();
 
-    // vIndex: 5, symbol:
-    // ?getCollisionShape@BushBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 5
     virtual class AABB
     getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 56, symbol: ?waterSpreadCausesSpawn@BushBlock@@UEBA_NXZ
+    // vIndex: 56
     virtual bool waterSpreadCausesSpawn() const;
 
-    // vIndex: 87, symbol: ?mayPlaceOn@BushBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 87
     virtual bool mayPlaceOn(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 93, symbol: ?neighborChanged@BushBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 93
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 148, symbol: ?tick@BushBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 154, symbol: ?canSurvive@BushBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 154
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 163, symbol: ?checkAlive@BushBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 163
     virtual void checkAlive(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 164, symbol: ?setGrowth@BushBlock@@MEBAAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@AEBV2@GH@Z
+    // vIndex: 164
     virtual class Block const& setGrowth(
         class BlockSource&    region,
         class BlockPos const& pos,
@@ -64,16 +63,12 @@ public:
         int updateFlags
     ) const;
 
-    // symbol: ??0BushBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI BushBlock(std::string const& nameId, int id, class Material const& material);
 
-    // symbol: ?growCrops@BushBlock@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@W4FertilizerType@@@Z
     MCAPI bool growCrops(class BlockSource& region, class BlockPos const& pos, ::FertilizerType fType) const;
 
-    // symbol: ?BUSH_VISUAL_SHAPE_MAX@BushBlock@@2VVec3@@B
     MCAPI static class Vec3 const BUSH_VISUAL_SHAPE_MAX;
 
-    // symbol: ?BUSH_VISUAL_SHAPE_MIN@BushBlock@@2VVec3@@B
     MCAPI static class Vec3 const BUSH_VISUAL_SHAPE_MIN;
 
     // NOLINTEND

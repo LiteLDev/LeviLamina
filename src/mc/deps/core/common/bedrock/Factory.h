@@ -18,7 +18,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createDispatcher@Factory@Http@Bedrock@@SA?AV?$shared_ptr@VDispatcherProcess@Http@Bedrock@@@std@@XZ
     MCAPI static std::shared_ptr<class Bedrock::Http::DispatcherProcess> createDispatcher();
 
     // NOLINTEND

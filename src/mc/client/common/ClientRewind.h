@@ -22,8 +22,6 @@ namespace ClientRewind { struct ApplyReplayStateTrackerRequestComponent; }
 
 namespace ClientRewind {
 // NOLINTBEGIN
-// symbol:
-// ?extractSnapshot@ClientRewind@@YA?AUReplayStateTrackerDiff@@AEBV?$tuple@AEBUActorDataFlagComponent@@V?$Optional@$$CBUActorDataHorseFlagComponent@@@@V?$Optional@$$CBUActorDataJumpDurationComponent@@@@V?$Optional@$$CBUActorDataBoundingBoxComponent@@@@V?$Optional@$$CBUActorDataSeatOffsetComponent@@@@@std@@@Z
 MCAPI struct ReplayStateTrackerDiff extractSnapshot(std::tuple<
                                                     struct ActorDataFlagComponent const&,
                                                     class Optional<struct ActorDataHorseFlagComponent const>,
@@ -31,8 +29,6 @@ MCAPI struct ReplayStateTrackerDiff extractSnapshot(std::tuple<
                                                     class Optional<struct ActorDataBoundingBoxComponent const>,
                                                     class Optional<struct ActorDataSeatOffsetComponent const>> const&);
 
-// symbol:
-// ?tickAccumulate@ClientRewind@@YAXAEAUReplayStateTrackerComponent@@AEBV?$tuple@AEBUActorDataFlagComponent@@V?$Optional@$$CBUActorDataHorseFlagComponent@@@@V?$Optional@$$CBUActorDataJumpDurationComponent@@@@V?$Optional@$$CBUActorDataBoundingBoxComponent@@@@V?$Optional@$$CBUActorDataSeatOffsetComponent@@@@@std@@@Z
 MCAPI void tickAccumulate(struct ReplayStateTrackerComponent&, std::tuple<struct ActorDataFlagComponent const&, class Optional<struct ActorDataHorseFlagComponent const>, class Optional<struct ActorDataJumpDurationComponent const>, class Optional<struct ActorDataBoundingBoxComponent const>, class Optional<struct ActorDataSeatOffsetComponent const>> const&);
 // NOLINTEND
 

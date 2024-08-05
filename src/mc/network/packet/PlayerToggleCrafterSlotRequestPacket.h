@@ -15,24 +15,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1PlayerToggleCrafterSlotRequestPacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~PlayerToggleCrafterSlotRequestPacket() = default;
 
-    // vIndex: 1, symbol: ?getId@PlayerToggleCrafterSlotRequestPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@PlayerToggleCrafterSlotRequestPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@PlayerToggleCrafterSlotRequestPacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream&) const;
 
-    // vIndex: 8, symbol:
-    // ?_read@PlayerToggleCrafterSlotRequestPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
 
-    // symbol: ??0PlayerToggleCrafterSlotRequestPacket@@QEAA@XZ
     MCAPI PlayerToggleCrafterSlotRequestPacket();
 
     // NOLINTEND

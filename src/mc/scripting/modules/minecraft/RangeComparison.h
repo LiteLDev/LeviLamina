@@ -16,8 +16,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?bind@RangeComparison@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@URangeComparison@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::RangeComparison> bind();
 
     // NOLINTEND

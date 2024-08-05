@@ -18,14 +18,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0LookAtDefinition@@QEAA@XZ
     MCAPI LookAtDefinition();
 
-    // symbol: ?initialize@LookAtDefinition@@QEBAXAEAVEntityContext@@AEAVLookAtComponent@@@Z
     MCAPI void initialize(class EntityContext& entity, class LookAtComponent& component) const;
 
-    // symbol:
-    // ?buildSchema@LookAtDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VLookAtDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void buildSchema(
         std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class LookAtDefinition>>& root
     );

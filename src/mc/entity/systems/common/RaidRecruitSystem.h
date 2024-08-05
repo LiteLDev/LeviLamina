@@ -4,7 +4,6 @@
 
 namespace RaidRecruitSystem {
 // NOLINTBEGIN
-// symbol: ?createSystem@RaidRecruitSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createSystem();
 // NOLINTEND
 

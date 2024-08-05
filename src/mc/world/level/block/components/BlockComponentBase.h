@@ -11,7 +11,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BlockComponentBase@@UEAA@XZ
+    // vIndex: 0
     virtual ~BlockComponentBase();
 
     // NOLINTEND

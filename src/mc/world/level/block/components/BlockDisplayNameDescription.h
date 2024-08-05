@@ -21,31 +21,26 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BlockDisplayNameDescription@@UEAA@XZ
+    // vIndex: 0
     virtual ~BlockDisplayNameDescription() = default;
 
-    // vIndex: 1, symbol:
-    // ?getName@BlockDisplayNameDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 1
     virtual std::string const& getName() const;
 
-    // vIndex: 3, symbol: ?initializeComponent@BlockDisplayNameDescription@@UEBAXAEAVBlockComponentStorage@@@Z
+    // vIndex: 3
     virtual void initializeComponent(class BlockComponentStorage&) const;
 
-    // vIndex: 7, symbol: ?isNetworkComponent@BlockDisplayNameDescription@@UEBA_NXZ
+    // vIndex: 7
     virtual bool isNetworkComponent() const;
 
-    // vIndex: 8, symbol:
-    // ?buildNetworkTag@BlockDisplayNameDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBUReflectionCtx@cereal@@@Z
+    // vIndex: 8
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const&) const;
 
-    // vIndex: 9, symbol:
-    // ?initializeFromNetwork@BlockDisplayNameDescription@@UEAAXAEBVCompoundTag@@AEBUReflectionCtx@cereal@@@Z
+    // vIndex: 9
     virtual void initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx const&);
 
-    // symbol: ?bindType@BlockDisplayNameDescription@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
-    // symbol: ?NameID@BlockDisplayNameDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const NameID;
 
     // NOLINTEND

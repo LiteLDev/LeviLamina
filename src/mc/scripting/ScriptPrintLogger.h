@@ -20,29 +20,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptPrintLogger@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptPrintLogger() = default;
 
-    // vIndex: 1, symbol:
-    // ?onInfo@ScriptPrintLogger@@UEBAXUContextId@Scripting@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+    // vIndex: 1
     virtual void onInfo(struct Scripting::ContextId, std::string_view message) const;
 
-    // vIndex: 2, symbol:
-    // ?onWarn@ScriptPrintLogger@@UEBAXUContextId@Scripting@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+    // vIndex: 2
     virtual void onWarn(struct Scripting::ContextId, std::string_view message) const;
 
-    // vIndex: 3, symbol:
-    // ?onError@ScriptPrintLogger@@UEBAXUContextId@Scripting@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+    // vIndex: 3
     virtual void onError(struct Scripting::ContextId, std::string_view message) const;
 
-    // vIndex: 4, symbol: ?onException@ScriptPrintLogger@@UEBAXUContextId@Scripting@@AEBVmeta_any@entt@@@Z
+    // vIndex: 4
     virtual void onException(struct Scripting::ContextId, entt::meta_any const& e) const;
 
-    // vIndex: 5, symbol: ?shouldPrintException@ScriptPrintLogger@@UEBA_NUContextId@Scripting@@AEBVmeta_any@entt@@@Z
+    // vIndex: 5
     virtual bool shouldPrintException(struct Scripting::ContextId, entt::meta_any const& e) const;
 
-    // vIndex: 6, symbol:
-    // ?onPromiseRejection@ScriptPrintLogger@@UEBAXUContextId@Scripting@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@_N@Z
+    // vIndex: 6
     virtual void onPromiseRejection(struct Scripting::ContextId, std::string_view message, bool) const;
 
     // NOLINTEND

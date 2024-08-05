@@ -14,22 +14,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1VanillaGameModuleDedicatedServer@@UEAA@XZ
+    // vIndex: 0
     virtual ~VanillaGameModuleDedicatedServer() = default;
 
-    // vIndex: 1, symbol:
-    // ?createGameModuleServer@VanillaGameModuleDedicatedServer@@UEAA?AV?$unique_ptr@VGameModuleServer@@U?$default_delete@VGameModuleServer@@@std@@@std@@XZ
+    // vIndex: 1
     virtual std::unique_ptr<class GameModuleServer> createGameModuleServer();
 
-    // vIndex: 2, symbol:
-    // ?createInPackagePacks@VanillaGameModuleDedicatedServer@@UEAA?AV?$shared_ptr@VIInPackagePacks@@@std@@XZ
+    // vIndex: 2
     virtual std::shared_ptr<class IInPackagePacks> createInPackagePacks();
 
-    // vIndex: 3, symbol: ?registerMolangQueries@VanillaGameModuleDedicatedServer@@UEAAXXZ
+    // vIndex: 3
     virtual void registerMolangQueries();
 
-    // vIndex: 4, symbol:
-    // ?registerServerInstanceHandler@VanillaGameModuleDedicatedServer@@UEAAXAEAVServerInstanceEventCoordinator@@@Z
+    // vIndex: 4
     virtual void registerServerInstanceHandler(class ServerInstanceEventCoordinator&);
 
     // NOLINTEND

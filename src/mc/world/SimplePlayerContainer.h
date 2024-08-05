@@ -15,14 +15,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SimplePlayerContainer@@UEAA@XZ
+    // vIndex: 0
     virtual ~SimplePlayerContainer() = default;
 
-    // vIndex: 12, symbol: ?setItem@SimplePlayerContainer@@UEAAXHAEBVItemStack@@@Z
+    // vIndex: 12
     virtual void setItem(int slot, class ItemStack const& item);
 
-    // symbol:
-    // ??0SimplePlayerContainer@@QEAA@AEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NHW4ContainerType@@@Z
     MCAPI SimplePlayerContainer(
         class Player&      player,
         std::string const& name,

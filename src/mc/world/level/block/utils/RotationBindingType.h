@@ -18,7 +18,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?rotationTypeFromVec3@RotationBindingType@BlockTransformationSerializer@@QEAAXAEBVVec3@@@Z
     MCAPI void rotationTypeFromVec3(class Vec3 const&);
 
     // NOLINTEND

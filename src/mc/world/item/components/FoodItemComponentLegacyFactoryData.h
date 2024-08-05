@@ -18,14 +18,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1FoodItemComponentLegacyFactoryData@@UEAA@XZ
+    // vIndex: 0
     virtual ~FoodItemComponentLegacyFactoryData() = default;
 
-    // symbol: ??0FoodItemComponentLegacyFactoryData@@QEAA@XZ
     MCAPI FoodItemComponentLegacyFactoryData();
 
-    // symbol:
-    // ?bindType@FoodItemComponentLegacyFactoryData@@SAXAEAUReflectionCtx@cereal@@AEBV?$vector@W4AllExperiments@@V?$allocator@W4AllExperiments@@@std@@@std@@V?$optional@VSemVersion@@@5@@Z
     MCAPI static void
     bindType(struct cereal::ReflectionCtx&, std::vector<::AllExperiments> const&, std::optional<class SemVersion>);
 

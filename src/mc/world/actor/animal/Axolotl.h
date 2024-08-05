@@ -35,19 +35,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 6, symbol: ?initializeComponents@Axolotl@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 6
     virtual void initializeComponents(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: __gen_??1Axolotl@@UEAA@XZ
+    // vIndex: 10
     virtual ~Axolotl() = default;
 
-    // vIndex: 184, symbol: ?_getWalkTargetValue@Axolotl@@UEAAMAEBVBlockPos@@@Z
+    // vIndex: 184
     virtual float _getWalkTargetValue(class BlockPos const& pos);
 
-    // vIndex: 189, symbol: ?_getAdjustedAABBForSpawnCheck@Axolotl@@UEBA?AVAABB@@AEBV2@AEBVVec3@@@Z
+    // vIndex: 189
     virtual class AABB _getAdjustedAABBForSpawnCheck(class AABB const& aabb, class Vec3 const& mobPos) const;
 
-    // symbol: ??0Axolotl@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Axolotl(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

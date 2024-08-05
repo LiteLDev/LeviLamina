@@ -13,13 +13,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1AmphibiousMoveControl@@UEAA@XZ
+    // vIndex: 0
     virtual ~AmphibiousMoveControl() = default;
 
-    // vIndex: 2, symbol: ?tick@AmphibiousMoveControl@@UEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
+    // vIndex: 2
     virtual void tick(class MoveControlComponent& parent, class Mob& mob);
 
-    // symbol: ??0AmphibiousMoveControl@@QEAA@XZ
     MCAPI AmphibiousMoveControl();
 
     // NOLINTEND

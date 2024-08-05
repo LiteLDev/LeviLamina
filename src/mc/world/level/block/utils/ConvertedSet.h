@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ConvertedSet@BlockTraitConversionUtils@@QEAA@XZ
     MCAPI ~ConvertedSet();
 
     // NOLINTEND

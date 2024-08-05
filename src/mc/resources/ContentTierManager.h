@@ -14,13 +14,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ContentTierManager@@UEAA@XZ
+    // vIndex: 0
     virtual ~ContentTierManager();
 
-    // vIndex: 1, symbol: ?getContentTierInfo@ContentTierManager@@UEBA?AVContentTierInfo@@XZ
+    // vIndex: 1
     virtual class ContentTierInfo getContentTierInfo() const;
 
-    // symbol: ??0ContentTierManager@@QEAA@V?$function@$$A6A_NXZ@std@@@Z
     MCAPI explicit ContentTierManager(std::function<bool()>);
 
     // NOLINTEND

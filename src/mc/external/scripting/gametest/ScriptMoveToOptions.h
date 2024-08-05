@@ -21,26 +21,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getFaceTarget@ScriptMoveToOptions@ScriptModuleGameTest@@QEBA_NXZ
     MCAPI bool getFaceTarget() const;
 
-    // symbol: ?getSpeed@ScriptMoveToOptions@ScriptModuleGameTest@@QEBAMXZ
     MCAPI float getSpeed() const;
 
-    // symbol: ?validate@ScriptMoveToOptions@ScriptModuleGameTest@@QEBA?AV?$optional@UError@Scripting@@@std@@XZ
     MCAPI std::optional<struct Scripting::Error> validate() const;
 
-    // symbol:
-    // ?bindV1@ScriptMoveToOptions@ScriptModuleGameTest@@SA?AV?$InterfaceBindingBuilder@UScriptMoveToOptions@ScriptModuleGameTest@@@Scripting@@XZ
     MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleGameTest::ScriptMoveToOptions> bindV1();
 
-    // symbol: ?FACE_TARGET_DEFAULT@ScriptMoveToOptions@ScriptModuleGameTest@@2_NB
     MCAPI static bool const FACE_TARGET_DEFAULT;
 
-    // symbol: ?SPEED_DEFAULT@ScriptMoveToOptions@ScriptModuleGameTest@@2MB
     MCAPI static float const SPEED_DEFAULT;
 
-    // symbol: ?SPEED_MIN@ScriptMoveToOptions@ScriptModuleGameTest@@2MB
     MCAPI static float const SPEED_MIN;
 
     // NOLINTEND

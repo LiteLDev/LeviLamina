@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1WeightedStructureTemplateRegistration@@QEAA@XZ
     MCAPI ~WeightedStructureTemplateRegistration();
 
     // NOLINTEND

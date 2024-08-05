@@ -10,13 +10,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ResourceMetadata@@QEAA@XZ
     MCAPI ResourceMetadata();
 
-    // symbol: ??1ResourceMetadata@@QEAA@XZ
     MCAPI ~ResourceMetadata();
 
-    // symbol: ?PRODUCT_TYPE_ADD_ON@ResourceMetadata@@2PEBDEB
     MCAPI static char const* PRODUCT_TYPE_ADD_ON;
 
     // NOLINTEND

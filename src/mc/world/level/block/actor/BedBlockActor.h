@@ -15,51 +15,45 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BedBlockActor@@UEAA@XZ
+    // vIndex: 0
     virtual ~BedBlockActor() = default;
 
-    // vIndex: 1, symbol: ?load@BedBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 1
     virtual void load(class Level& level, class CompoundTag const& base, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 2, symbol: ?save@BedBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+    // vIndex: 2
     virtual bool save(class CompoundTag& tag) const;
 
-    // vIndex: 3, symbol: ?saveItemInstanceData@BedBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+    // vIndex: 3
     virtual bool saveItemInstanceData(class CompoundTag& tag) const;
 
-    // vIndex: 7, symbol: ?tick@BedBlockActor@@UEAAXAEAVBlockSource@@@Z
+    // vIndex: 7
     virtual void tick(class BlockSource& region);
 
-    // vIndex: 8, symbol: ?onChanged@BedBlockActor@@UEAAXAEAVBlockSource@@@Z
+    // vIndex: 8
     virtual void onChanged(class BlockSource& region);
 
-    // vIndex: 11, symbol: ?onPlace@BedBlockActor@@UEAAXAEAVBlockSource@@@Z
+    // vIndex: 11
     virtual void onPlace(class BlockSource& region);
 
-    // vIndex: 21, symbol: ?getCrackEntity@BedBlockActor@@UEAAPEAVBlockActor@@AEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 21
     virtual class BlockActor* getCrackEntity(class BlockSource& region, class BlockPos const& pos);
 
-    // vIndex: 26, symbol:
-    // ?getName@BedBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 26
     virtual std::string getName() const;
 
-    // vIndex: 40, symbol:
-    // ?_getUpdatePacket@BedBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
+    // vIndex: 40
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
 
-    // vIndex: 41, symbol: ?_onUpdatePacket@BedBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
+    // vIndex: 41
     virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
 
-    // symbol: ??0BedBlockActor@@QEAA@AEBVBlockPos@@@Z
     MCAPI explicit BedBlockActor(class BlockPos const& pos);
 
-    // symbol: ?claimPetSleepOnBed@BedBlockActor@@QEAA_NUActorUniqueID@@@Z
     MCAPI bool claimPetSleepOnBed(struct ActorUniqueID petId);
 
-    // symbol: ?startSleepingOn@BedBlockActor@@QEAAXXZ
     MCAPI void startSleepingOn();
 
-    // symbol: ?stopSleepingOn@BedBlockActor@@QEAAXAEAVBlockSource@@_N@Z
     MCAPI void stopSleepingOn(class BlockSource& region, bool forcefulAwake);
 
     // NOLINTEND

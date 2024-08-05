@@ -30,14 +30,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1HorseArmorItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~HorseArmorItem() = default;
 
-    // vIndex: 14, symbol: ?isDyeable@HorseArmorItem@@UEBA_NXZ
+    // vIndex: 14
     virtual bool isDyeable() const;
 
-    // vIndex: 48, symbol:
-    // ?appendFormattedHovertext@HorseArmorItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+    // vIndex: 48
     virtual void appendFormattedHovertext(
         class ItemStackBase const& stack,
         class Level&               level,
@@ -45,32 +44,29 @@ public:
         bool                       showCategory
     ) const;
 
-    // vIndex: 52, symbol: ?getArmorValue@HorseArmorItem@@UEBAHXZ
+    // vIndex: 52
     virtual int getArmorValue() const;
 
-    // vIndex: 62, symbol: ?getColor@HorseArmorItem@@UEBA?AVColor@mce@@PEBVCompoundTag@@AEBVItemDescriptor@@@Z
+    // vIndex: 62
     virtual class mce::Color getColor(class CompoundTag const* userData, class ItemDescriptor const&) const;
 
-    // vIndex: 64, symbol: ?hasCustomColor@HorseArmorItem@@UEBA_NPEBVCompoundTag@@@Z
+    // vIndex: 64
     virtual bool hasCustomColor(class CompoundTag const* userData) const;
 
-    // vIndex: 65, symbol: ?clearColor@HorseArmorItem@@UEBAXAEAVItemStackBase@@@Z
+    // vIndex: 65
     virtual void clearColor(class ItemStackBase&) const;
 
-    // vIndex: 66, symbol: ?setColor@HorseArmorItem@@UEBAXAEAVItemStackBase@@AEBVColor@mce@@@Z
+    // vIndex: 66
     virtual void setColor(class ItemStackBase& item, class mce::Color const& color) const;
 
-    // vIndex: 74, symbol: ?dispense@HorseArmorItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 74
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar) const;
 
-    // symbol: ??0HorseArmorItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHW4Tier@0@@Z
     MCAPI HorseArmorItem(std::string const& name, int id, int icon, ::HorseArmorItem::Tier tier);
 
-    // symbol: ?getTier@HorseArmorItem@@QEBA?AW4Tier@1@XZ
     MCAPI ::HorseArmorItem::Tier getTier() const;
 
-    // symbol: ?mHealthPerTier@HorseArmorItem@@2QBHB
     MCAPI static int const mHealthPerTier[];
 
     // NOLINTEND

@@ -27,23 +27,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BuddingAmethystBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~BuddingAmethystBlock() = default;
 
-    // vIndex: 49, symbol: ?isSilentWhenJumpingOff@BuddingAmethystBlock@@UEBA_NXZ
+    // vIndex: 49
     virtual bool isSilentWhenJumpingOff() const;
 
-    // vIndex: 96, symbol: ?asItemInstance@BuddingAmethystBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 149, symbol: ?randomTick@BuddingAmethystBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 149
     virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // symbol:
-    // ??0BuddingAmethystBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI BuddingAmethystBlock(std::string const& nameId, int id, class Material const& material);
 
-    // symbol: ?canBudGrowAtPos@BuddingAmethystBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static bool canBudGrowAtPos(class BlockSource& region, class BlockPos const& pos);
 
     // NOLINTEND

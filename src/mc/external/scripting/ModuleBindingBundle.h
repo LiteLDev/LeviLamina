@@ -13,10 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ModuleBindingBundle@Scripting@@QEAA@$$QEAU01@@Z
     MCAPI ModuleBindingBundle(struct Scripting::ModuleBindingBundle&&);
 
-    // symbol: ??1ModuleBindingBundle@Scripting@@QEAA@XZ
     MCAPI ~ModuleBindingBundle();
 
     // NOLINTEND

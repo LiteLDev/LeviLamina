@@ -22,14 +22,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SyncGameTestFunctionRunResult@gametest@@UEAA@XZ
+    // vIndex: 0
     virtual ~SyncGameTestFunctionRunResult() = default;
 
-    // vIndex: 1, symbol: ?isComplete@SyncGameTestFunctionRunResult@gametest@@UEBA_NXZ
+    // vIndex: 1
     virtual bool isComplete() const;
 
-    // vIndex: 2, symbol:
-    // ?getError@SyncGameTestFunctionRunResult@gametest@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@XZ
+    // vIndex: 2
     virtual std::optional<struct gametest::GameTestError> getError();
 
     // NOLINTEND

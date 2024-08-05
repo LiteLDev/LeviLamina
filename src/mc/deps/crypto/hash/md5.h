@@ -20,29 +20,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1md5@Hash@Crypto@@UEAA@XZ
+    // vIndex: 0
     virtual ~md5() = default;
 
-    // vIndex: 1, symbol: ?reset@md5@Hash@Crypto@@UEAAXXZ
+    // vIndex: 1
     virtual void reset();
 
-    // vIndex: 2, symbol: ?update@md5@Hash@Crypto@@UEAAXPEBXI@Z
+    // vIndex: 2
     virtual void update(void const* data, uint size);
 
-    // vIndex: 3, symbol: ?final@md5@Hash@Crypto@@UEAAXPEAE@Z
+    // vIndex: 3
     virtual void final(uchar* result);
 
-    // vIndex: 4, symbol: ?resultSize@md5@Hash@Crypto@@UEBA_KXZ
+    // vIndex: 4
     virtual uint64 resultSize() const;
 
-    // symbol: ??0md5@Hash@Crypto@@QEAA@XZ
     MCAPI md5();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_body@md5@Hash@Crypto@@AEAAPEBXPEBXI@Z
     MCAPI void const* _body(void const* data, uint size);
 
     // NOLINTEND

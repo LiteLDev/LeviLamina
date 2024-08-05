@@ -10,7 +10,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0AdventureSettings@@QEAA@XZ
     MCAPI AdventureSettings();
 
     // NOLINTEND

@@ -14,22 +14,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1HealthAttributeDelegate@@UEAA@XZ
+    // vIndex: 0
     virtual ~HealthAttributeDelegate() = default;
 
-    // vIndex: 1, symbol: ?tick@HealthAttributeDelegate@@UEAAXXZ
+    // vIndex: 1
     virtual void tick();
 
-    // vIndex: 3, symbol: ?willChange@HealthAttributeDelegate@@UEAA_NMMAEBVAttributeBuff@@@Z
+    // vIndex: 3
     virtual bool willChange(float oldValue, float newValue, class AttributeBuff const& buff);
 
-    // vIndex: 4, symbol: ?change@HealthAttributeDelegate@@UEAAMMMAEBVAttributeBuff@@@Z
+    // vIndex: 4
     virtual float change(float oldValue, float newValue, class AttributeBuff const& buff);
 
-    // vIndex: 5, symbol: ?getBuffValueWithModifiers@HealthAttributeDelegate@@UEBAMAEBVAttributeBuff@@@Z
+    // vIndex: 5
     virtual float getBuffValueWithModifiers(class AttributeBuff const& buff) const;
 
-    // symbol: ??0HealthAttributeDelegate@@QEAA@AEBVAttributeInstance@@PEAVMob@@@Z
     MCAPI HealthAttributeDelegate(class AttributeInstance const& attribute, class Mob* mob);
 
     // NOLINTEND

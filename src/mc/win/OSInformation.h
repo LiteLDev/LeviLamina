@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1OSInformation@@QEAA@XZ
     MCAPI ~OSInformation();
 
     // NOLINTEND

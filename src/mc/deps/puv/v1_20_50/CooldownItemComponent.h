@@ -17,13 +17,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4CooldownItemComponent@v1_20_50@Puv@@QEAAAEAU012@AEBU012@@Z
     MCAPI struct Puv::v1_20_50::CooldownItemComponent& operator=(struct Puv::v1_20_50::CooldownItemComponent const&);
 
-    // symbol: ??1CooldownItemComponent@v1_20_50@Puv@@QEAA@XZ
     MCAPI ~CooldownItemComponent();
 
-    // symbol: ?bindType@CooldownItemComponent@v1_20_50@Puv@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // NOLINTEND

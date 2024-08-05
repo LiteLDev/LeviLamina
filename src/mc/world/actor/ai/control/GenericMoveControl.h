@@ -13,16 +13,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1GenericMoveControl@@UEAA@XZ
+    // vIndex: 0
     virtual ~GenericMoveControl();
 
-    // vIndex: 1, symbol: ?initializeInternal@GenericMoveControl@@UEAAXAEAVMob@@PEAUMoveControlDescription@@@Z
+    // vIndex: 1
     virtual void initializeInternal(class Mob& mob, struct MoveControlDescription* description);
 
-    // vIndex: 2, symbol: ?tick@GenericMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
+    // vIndex: 2
     virtual void tick(class MoveControlComponent& parent, class Mob& mob);
 
-    // symbol: ??0GenericMoveControl@@QEAA@XZ
     MCAPI GenericMoveControl();
 
     // NOLINTEND

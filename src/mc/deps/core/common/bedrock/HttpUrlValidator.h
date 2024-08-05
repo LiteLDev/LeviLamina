@@ -24,11 +24,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1HttpUrlValidator@Http@Bedrock@@UEAA@XZ
+    // vIndex: 0
     virtual ~HttpUrlValidator() = default;
 
-    // vIndex: 1, symbol:
-    // ?send@HttpUrlValidator@Http@Bedrock@@UEAA?AV?$shared_ptr@V?$IAsyncResult@VResponse@Http@Bedrock@@@Threading@Bedrock@@@std@@$$QEAVRequest@23@@Z
+    // vIndex: 1
     virtual std::shared_ptr<class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response>>
     send(class Bedrock::Http::Request&& request);
 

@@ -23,19 +23,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1RNS2_Windows@RakNet@@UEAA@XZ
+    // vIndex: 0
     virtual ~RNS2_Windows() = default;
 
-    // vIndex: 1, symbol: ?Send@RNS2_Windows@RakNet@@UEAAHPEAURNS2_SendParameters@2@PEBDI@Z
+    // vIndex: 1
     virtual int Send(struct RakNet::RNS2_SendParameters*, char const*, uint);
 
-    // vIndex: 2, symbol: ?SetMulticastInterface@RNS2_Berkley@RakNet@@UEAAXH@Z
+    // vIndex: 2
     virtual void SetMulticastInterface(int interfaceIndex);
 
-    // vIndex: 3, symbol: ?Bind@RNS2_Windows@RakNet@@UEAA?AW4RNS2BindResult@2@PEAURNS2_BerkleyBindParameters@2@PEBDI@Z
+    // vIndex: 3
     virtual ::RakNet::RNS2BindResult Bind(struct RakNet::RNS2_BerkleyBindParameters*, char const*, uint);
 
-    // symbol: ?GetSocketLayerOverride@RNS2_Windows@RakNet@@QEAAPEAVSocketLayerOverride@2@XZ
     MCAPI class RakNet::SocketLayerOverride* GetSocketLayerOverride();
 
     // NOLINTEND

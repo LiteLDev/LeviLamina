@@ -15,20 +15,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1StrollTowardsVillageGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~StrollTowardsVillageGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@StrollTowardsVillageGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@StrollTowardsVillageGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // vIndex: 17, symbol: ?_selectRandomPosInVillage@StrollTowardsVillageGoal@@MEAA?AVBlockPos@@XZ
+    // vIndex: 17
     virtual class BlockPos _selectRandomPosInVillage();
 
-    // symbol: ??0StrollTowardsVillageGoal@@QEAA@AEAVMob@@MMMHM@Z
     MCAPI StrollTowardsVillageGoal(
         class Mob& mob,
         float      speedModifier,

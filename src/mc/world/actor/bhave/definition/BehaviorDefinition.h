@@ -16,14 +16,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BehaviorDefinition@@UEAA@XZ
+    // vIndex: 0
     virtual ~BehaviorDefinition();
 
-    // vIndex: 1, symbol: ?load@BehaviorDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
+    // vIndex: 1
     virtual void load(class Json::Value value, class BehaviorFactory const& factory);
 
-    // vIndex: 2, symbol:
-    // ?createNode@BehaviorDefinition@@UEBA?AV?$unique_ptr@VBehaviorNode@@U?$default_delete@VBehaviorNode@@@std@@@std@@AEAVActor@@AEBVBehaviorFactory@@PEAVBehaviorNode@@PEAVBehaviorData@@@Z
+    // vIndex: 2
     virtual std::unique_ptr<class BehaviorNode> createNode(
         class Actor&                 owner,
         class BehaviorFactory const& factory,

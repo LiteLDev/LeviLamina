@@ -22,7 +22,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??0Impl@CraftingContext@@QEAA@V?$not_null@V?$NonOwnerPointer@VILevel@@@Bedrock@@@gsl@@@Z
         MCAPI explicit Impl(Bedrock::NotNullNonOwnerPtr<class ILevel> level);
 
         // NOLINTEND
@@ -36,10 +35,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0CraftingContext@@QEAA@V?$not_null@V?$NonOwnerPointer@VILevel@@@Bedrock@@@gsl@@@Z
     MCAPI explicit CraftingContext(Bedrock::NotNullNonOwnerPtr<class ILevel> level);
 
-    // symbol: ??1CraftingContext@@QEAA@XZ
     MCAPI ~CraftingContext();
 
     // NOLINTEND

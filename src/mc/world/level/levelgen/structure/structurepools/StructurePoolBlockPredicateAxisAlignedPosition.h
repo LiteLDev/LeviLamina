@@ -14,19 +14,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1StructurePoolBlockPredicateAxisAlignedPosition@@UEAA@XZ
+    // vIndex: 0
     virtual ~StructurePoolBlockPredicateAxisAlignedPosition() = default;
 
-    // vIndex: 1, symbol: ?test@StructurePoolBlockPredicateAxisAlignedPosition@@UEBA_NAEBVBlock@@AEAVRandomize@@@Z
+    // vIndex: 1
     virtual bool test(class Block const& block, class Randomize& randomize) const;
 
-    // vIndex: 2, symbol: ?test@StructurePoolBlockPredicateAxisAlignedPosition@@UEBA_NAEBVBlockPos@@0AEAVRandomize@@@Z
+    // vIndex: 2
     virtual bool test(class BlockPos const& pos, class BlockPos const& refPos, class Randomize& randomize) const;
 
-    // vIndex: 3, symbol: ?finalize@IStructurePoolBlockPredicate@@UEAA_NAEAVBlockSource@@AEAVIRandom@@@Z
+    // vIndex: 3
     virtual bool finalize(class BlockSource&, class IRandom&);
 
-    // symbol: ??0StructurePoolBlockPredicateAxisAlignedPosition@@QEAA@MMHHE@Z
     MCAPI StructurePoolBlockPredicateAxisAlignedPosition(float minChance, float maxChance, int, int, uchar axis);
 
     // NOLINTEND

@@ -21,19 +21,14 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ?ALPHANUMERIC@Mode@QrSegment@qrcodegen@@2V123@B
         MCAPI static class qrcodegen::QrSegment::Mode const ALPHANUMERIC;
 
-        // symbol: ?BYTE@Mode@QrSegment@qrcodegen@@2V123@B
         MCAPI static class qrcodegen::QrSegment::Mode const BYTE;
 
-        // symbol: ?ECI@Mode@QrSegment@qrcodegen@@2V123@B
         MCAPI static class qrcodegen::QrSegment::Mode const ECI;
 
-        // symbol: ?KANJI@Mode@QrSegment@qrcodegen@@2V123@B
         MCAPI static class qrcodegen::QrSegment::Mode const KANJI;
 
-        // symbol: ?NUMERIC@Mode@QrSegment@qrcodegen@@2V123@B
         MCAPI static class qrcodegen::QrSegment::Mode const NUMERIC;
 
         // NOLINTEND
@@ -47,7 +42,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?ALPHANUMERIC_CHARSET@QrSegment@qrcodegen@@0PEBDEB
     MCAPI static char const* ALPHANUMERIC_CHARSET;
 
     // NOLINTEND

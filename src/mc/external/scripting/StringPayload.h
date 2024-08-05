@@ -26,20 +26,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1StringPayload@Scripting@@UEAA@XZ
+    // vIndex: 0
     virtual ~StringPayload();
 
-    // vIndex: 1, symbol:
-    // ?runOn@IPayload@Scripting@@UEAA?AVResultAny@2@UContextId@2@AEAVNativeRuntime@2@V?$optional@W4Privilege@Scripting@@@std@@@Z
+    // vIndex: 1
     virtual class Scripting::ResultAny
     runOn(struct Scripting::ContextId, class Scripting::NativeRuntime&, std::optional<::Scripting::Privilege>);
 
-    // vIndex: 2, symbol:
-    // ?runOn@StringPayload@Scripting@@UEAA?AVResultAny@2@UContextId@2@AEAVStringBasedRuntime@2@V?$optional@W4Privilege@Scripting@@@std@@@Z
+    // vIndex: 2
     virtual class Scripting::ResultAny
     runOn(struct Scripting::ContextId, class Scripting::StringBasedRuntime& runtime, std::optional<::Scripting::Privilege>);
 
-    // symbol: ??0StringPayload@Scripting@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
     MCAPI StringPayload(std::string scriptName, std::string scriptData);
 
     // NOLINTEND

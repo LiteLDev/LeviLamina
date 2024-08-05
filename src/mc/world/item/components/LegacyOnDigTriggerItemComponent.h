@@ -19,26 +19,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LegacyOnDigTriggerItemComponent@@UEAA@XZ
+    // vIndex: 0
     virtual ~LegacyOnDigTriggerItemComponent() = default;
 
-    // vIndex: 6, symbol: ?handleVersionBasedInitialization@LegacyOnDigTriggerItemComponent@@UEAAXAEBVSemVersion@@@Z
+    // vIndex: 6
     virtual void handleVersionBasedInitialization(class SemVersion const&);
 
-    // vIndex: 9, symbol: ?_initializeComponent@LegacyOnDigTriggerItemComponent@@UEAAXXZ
+    // vIndex: 9
     virtual void _initializeComponent();
 
-    // symbol: ??0LegacyOnDigTriggerItemComponent@@QEAA@$$QEAULegacyOnDigTriggerItemComponentData@@@Z
     MCAPI explicit LegacyOnDigTriggerItemComponent(struct LegacyOnDigTriggerItemComponentData&&);
 
-    // symbol: ?getIdentifier@LegacyOnDigTriggerItemComponent@@SAAEBVHashedString@@XZ
     MCAPI static class HashedString const& getIdentifier();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_onMineBlock@LegacyOnDigTriggerItemComponent@@AEAAXAEA_NAEAVItemStack@@AEBVBlock@@HHHAEAVActor@@@Z
     MCAPI void _onMineBlock(bool&, class ItemStack&, class Block const&, int, int, int, class Actor&);
 
     // NOLINTEND

@@ -16,8 +16,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?bind@ScriptProjectileShootOptions@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@UScriptProjectileShootOptions@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptProjectileShootOptions>
     bind();
 

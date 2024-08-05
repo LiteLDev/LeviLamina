@@ -15,14 +15,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptItemEnchantmentUnknownIdError@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ScriptItemEnchantmentUnknownIdError();
 
-    // symbol: ??1ScriptItemEnchantmentUnknownIdError@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptItemEnchantmentUnknownIdError();
 
-    // symbol:
-    // ?bind@ScriptItemEnchantmentUnknownIdError@ScriptModuleMinecraft@@SA?AV?$ErrorBindingBuilder@UScriptItemEnchantmentUnknownIdError@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ErrorBindingBuilder<struct ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError>
     bind();
 

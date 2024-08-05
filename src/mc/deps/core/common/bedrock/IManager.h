@@ -21,7 +21,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1IManager@CodeBuilder@@UEAA@XZ
+    // vIndex: 0
     virtual ~IManager();
 
     // NOLINTEND

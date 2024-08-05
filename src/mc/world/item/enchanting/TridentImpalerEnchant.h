@@ -14,23 +14,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1TridentImpalerEnchant@@UEAA@XZ
+    // vIndex: 0
     virtual ~TridentImpalerEnchant() = default;
 
-    // vIndex: 2, symbol: ?getMinCost@TridentImpalerEnchant@@UEBAHH@Z
+    // vIndex: 2
     virtual int getMinCost(int level) const;
 
-    // vIndex: 3, symbol: ?getMaxCost@TridentImpalerEnchant@@UEBAHH@Z
+    // vIndex: 3
     virtual int getMaxCost(int level) const;
 
-    // vIndex: 5, symbol: ?getMaxLevel@TridentImpalerEnchant@@UEBAHXZ
+    // vIndex: 5
     virtual int getMaxLevel() const;
 
-    // vIndex: 8, symbol: ?getDamageBonus@TridentImpalerEnchant@@UEBAMHAEBVActor@@0@Z
+    // vIndex: 8
     virtual float getDamageBonus(int, class Actor const&, class Actor const&) const;
 
-    // symbol:
-    // ??0TridentImpalerEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_view@DU?$char_traits@D@std@@@std@@2H_NH@Z
     MCAPI TridentImpalerEnchant(
         ::Enchant::Type      type,
         ::Enchant::Frequency frequency,

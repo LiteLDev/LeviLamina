@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0NoodleCavifier@@QEAA@AEBVNoodleCavifierNoises@@F@Z
     MCAPI NoodleCavifier(class NoodleCavifierNoises const&, short);
 
     // NOLINTEND

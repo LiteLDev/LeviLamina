@@ -20,13 +20,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ConstantHeight@worldgen@br@@UEAA@XZ
+    // vIndex: 0
     virtual ~ConstantHeight() = default;
 
-    // vIndex: 1, symbol: ?sample@ConstantHeight@worldgen@br@@UEBAHAEAVIRandom@@AEBVWorldGenContext@23@@Z
+    // vIndex: 1
     virtual int sample(class IRandom&, class br::worldgen::WorldGenContext const&) const;
 
-    // symbol: ?of@ConstantHeight@worldgen@br@@SA?AV123@VVerticalAnchor@23@@Z
     MCAPI static class br::worldgen::ConstantHeight of(class br::worldgen::VerticalAnchor);
 
     // NOLINTEND

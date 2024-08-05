@@ -14,11 +14,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MineshaftStart@@UEAA@XZ
+    // vIndex: 0
     virtual ~MineshaftStart() = default;
 
-    // symbol:
-    // ??0MineshaftStart@@QEAA@AEBVDimension@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVIPreliminarySurfaceProvider@@@Z
     MCAPI
     MineshaftStart(class Dimension const& dimension, class BiomeSource const& biomeSource, class Random& random, class ChunkPos const& pos, class IPreliminarySurfaceProvider const&);
 

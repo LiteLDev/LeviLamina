@@ -19,16 +19,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ShapelessChemistryRecipe@@UEAA@XZ
+    // vIndex: 0
     virtual ~ShapelessChemistryRecipe() = default;
 
-    // vIndex: 5, symbol: ?matches@ShapelessChemistryRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
+    // vIndex: 5
     virtual bool matches(class CraftingContainer const& craftSlots, class CraftingContext const&) const;
 
-    // vIndex: 7, symbol: ?getId@ShapelessChemistryRecipe@@UEBAAEBVUUID@mce@@XZ
+    // vIndex: 7
     virtual class mce::UUID const& getId() const;
 
-    // symbol: ?ID@ShapelessChemistryRecipe@@2VUUID@mce@@B
     MCAPI static class mce::UUID const ID;
 
     // NOLINTEND

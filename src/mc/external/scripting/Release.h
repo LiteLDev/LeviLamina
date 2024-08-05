@@ -18,10 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?satisfies@Release@Scripting@@QEBA_NAEBUVersion@2@@Z
     MCAPI bool satisfies(struct Scripting::Version const&) const;
 
-    // symbol: ??1Release@Scripting@@QEAA@XZ
     MCAPI ~Release();
 
     // NOLINTEND

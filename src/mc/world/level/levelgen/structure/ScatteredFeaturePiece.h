@@ -15,17 +15,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScatteredFeaturePiece@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScatteredFeaturePiece();
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ??0ScatteredFeaturePiece@@IEAA@HHHHHH@Z
     MCAPI ScatteredFeaturePiece(int west, int floor, int north, int width, int height, int depth);
 
-    // symbol: ?updateAverageGroundHeight@ScatteredFeaturePiece@@IEAA_NAEAVBlockSource@@AEBVBoundingBox@@H@Z
     MCAPI bool updateAverageGroundHeight(class BlockSource& region, class BoundingBox const& chunkBB, int offset);
 
     // NOLINTEND

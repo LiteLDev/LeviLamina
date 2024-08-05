@@ -21,26 +21,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1OpenSSLHashInterface@Hash@Crypto@@UEAA@XZ
+    // vIndex: 0
     virtual ~OpenSSLHashInterface() = default;
 
-    // vIndex: 1, symbol: ?reset@OpenSSLHashInterface@Hash@Crypto@@UEAAXXZ
+    // vIndex: 1
     virtual void reset();
 
-    // vIndex: 2, symbol: ?update@OpenSSLHashInterface@Hash@Crypto@@UEAAXPEBXI@Z
+    // vIndex: 2
     virtual void update(void const* data, uint size);
 
-    // vIndex: 3, symbol: ?final@OpenSSLHashInterface@Hash@Crypto@@UEAAXPEAE@Z
+    // vIndex: 3
     virtual void final(uchar* result);
 
-    // vIndex: 4, symbol: ?resultSize@OpenSSLHashInterface@Hash@Crypto@@UEBA_KXZ
+    // vIndex: 4
     virtual uint64 resultSize() const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_initHashContextPointer@OpenSSLHashInterface@Hash@Crypto@@AEAAXXZ
     MCAPI void _initHashContextPointer();
 
     // NOLINTEND

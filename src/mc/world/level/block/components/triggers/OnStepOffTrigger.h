@@ -17,13 +17,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1OnStepOffTrigger@@UEAA@XZ
+    // vIndex: 0
     virtual ~OnStepOffTrigger() = default;
 
-    // symbol: ?finalize@OnStepOffTrigger@@QEAAXV?$not_null@PEAVBlockStepOffEventComponent@BlockEvents@@@gsl@@@Z
     MCAPI void finalize(gsl::not_null<class BlockEvents::BlockStepOffEventComponent*>);
 
-    // symbol: ?onStepOff@OnStepOffTrigger@@QEBAXAEBUBlockStepOffEvent@BlockEvents@@@Z
     MCAPI void onStepOff(struct BlockEvents::BlockStepOffEvent const&) const;
 
     // NOLINTEND

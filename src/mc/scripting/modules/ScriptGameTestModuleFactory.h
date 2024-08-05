@@ -26,22 +26,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptGameTestModuleFactory@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptGameTestModuleFactory() = default;
 
-    // symbol:
-    // ?getModuleUUIDAsString@ScriptGameTestModuleFactory@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI static std::string getModuleUUIDAsString();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_addVersions@ScriptGameTestModuleFactory@@AEAAXXZ
     MCAPI void _addVersions();
 
-    // symbol:
-    // ?_generateBindings@ScriptGameTestModuleFactory@@AEAA?AUModuleBinding@Scripting@@AEAVModuleBindingBuilder@3@_NAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
     MCAPI struct Scripting::ModuleBinding
     _generateBindings(class Scripting::ModuleBindingBuilder&, bool, std::vector<std::string> const&);
 
@@ -49,10 +44,8 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?ModuleName@ScriptGameTestModuleFactory@@0PEBDEB
     MCAPI static char const* ModuleName;
 
-    // symbol: ?ModuleUUID@ScriptGameTestModuleFactory@@0VUUID@mce@@A
     MCAPI static class mce::UUID ModuleUUID;
 
     // NOLINTEND

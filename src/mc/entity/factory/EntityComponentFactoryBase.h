@@ -19,19 +19,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1EntityComponentFactoryBase@@MEAA@XZ
+    // vIndex: 0
     virtual ~EntityComponentFactoryBase();
 
-    // symbol:
-    // ?addComponents@EntityComponentFactoryBase@@QEBAXAEAVEntityRegistry@@AEAVEntityContext@@AEBVDefinitionInstanceGroup@@@Z
     MCAPI void addComponents(
         class EntityRegistry&                registry,
         class EntityContext&                 entity,
         class DefinitionInstanceGroup const& definitionGroup
     ) const;
 
-    // symbol:
-    // ?removeComponents@EntityComponentFactoryBase@@QEBAXAEAVEntityRegistry@@AEAVEntityContext@@AEBVDefinitionInstanceGroup@@@Z
     MCAPI void removeComponents(
         class EntityRegistry&                registry,
         class EntityContext&                 entity,

@@ -15,18 +15,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BytesDataInput@@UEAA@XZ
+    // vIndex: 0
     virtual ~BytesDataInput() = default;
 
-    // vIndex: 1, symbol:
-    // ?readStringResult@BytesDataInput@@UEAA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@Verror_code@2@@Bedrock@@XZ
+    // vIndex: 1
     virtual class Bedrock::Result<std::string> readStringResult();
 
-    // vIndex: 2, symbol:
-    // ?readLongStringResult@BytesDataInput@@UEAA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@Verror_code@2@@Bedrock@@XZ
+    // vIndex: 2
     virtual class Bedrock::Result<std::string> readLongStringResult();
 
-    // vIndex: 5, symbol: ?readByteResult@BytesDataInput@@UEAA?AV?$Result@EVerror_code@std@@@Bedrock@@XZ
+    // vIndex: 5
     virtual class Bedrock::Result<uchar> readByteResult();
 
     // NOLINTEND

@@ -18,14 +18,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0EntitySensorDefinition@@QEAA@XZ
     MCAPI EntitySensorDefinition();
 
-    // symbol: ?initialize@EntitySensorDefinition@@QEBAXAEAVEntityContext@@AEAVEntitySensorComponent@@@Z
     MCAPI void initialize(class EntityContext& entity, class EntitySensorComponent& component) const;
 
-    // symbol:
-    // ?buildSchema@EntitySensorDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UEntitySensorDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
     buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EntitySensorDefinition>>& root);

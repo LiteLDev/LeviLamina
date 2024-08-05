@@ -14,16 +14,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ExperienceCostCommitObject@@UEAA@XZ
+    // vIndex: 0
     virtual ~ExperienceCostCommitObject() = default;
 
-    // vIndex: 1, symbol: ?append@ExperienceCostCommitObject@@UEAA_NPEAVContainerValidationCommitObject@@@Z
+    // vIndex: 1
     virtual bool append(class ContainerValidationCommitObject* other);
 
-    // vIndex: 2, symbol: ?canCommit@ExperienceCostCommitObject@@UEBA_NAEBVContainerScreenContext@@@Z
+    // vIndex: 2
     virtual bool canCommit(class ContainerScreenContext const& screenContext) const;
 
-    // vIndex: 3, symbol: ?commit@ExperienceCostCommitObject@@UEAAXAEBVContainerScreenContext@@@Z
+    // vIndex: 3
     virtual void commit(class ContainerScreenContext const& screenContext);
 
     // NOLINTEND

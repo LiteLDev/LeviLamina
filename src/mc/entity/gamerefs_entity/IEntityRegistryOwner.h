@@ -19,7 +19,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1IEntityRegistryOwner@@MEAA@XZ
+    // vIndex: 0
     virtual ~IEntityRegistryOwner();
 
     // NOLINTEND

@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1SendEventStage@@QEAA@XZ
     MCAPI ~SendEventStage();
 
     // NOLINTEND

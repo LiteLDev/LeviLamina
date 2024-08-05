@@ -11,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getEducationLevelSettings@EducationSettingsManager@@QEBAAEBV?$optional@UEducationLevelSettings@@@std@@XZ
     MCAPI std::optional<struct EducationLevelSettings> const& getEducationLevelSettings() const;
 
-    // symbol: ?setEducationLevelSettings@EducationSettingsManager@@QEAAXUEducationLevelSettings@@@Z
     MCAPI void setEducationLevelSettings(struct EducationLevelSettings);
 
     // NOLINTEND

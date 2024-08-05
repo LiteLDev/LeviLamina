@@ -14,34 +14,32 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1StringTag@@UEAA@XZ
+    // vIndex: 0
     virtual ~StringTag();
 
-    // vIndex: 2, symbol: ?write@StringTag@@UEBAXAEAVIDataOutput@@@Z
+    // vIndex: 2
     virtual void write(class IDataOutput& dos) const;
 
-    // vIndex: 3, symbol: ?load@StringTag@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVIDataInput@@@Z
+    // vIndex: 3
     virtual class Bedrock::Result<void> load(class IDataInput& dis);
 
-    // vIndex: 4, symbol: ?toString@StringTag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 4
     virtual std::string toString() const;
 
-    // vIndex: 5, symbol: ?getId@StringTag@@UEBA?AW4Type@Tag@@XZ
+    // vIndex: 5
     virtual ::Tag::Type getId() const;
 
-    // vIndex: 6, symbol: ?equals@StringTag@@UEBA_NAEBVTag@@@Z
+    // vIndex: 6
     virtual bool equals(class Tag const& rhs) const;
 
-    // vIndex: 9, symbol: ?copy@StringTag@@UEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
+    // vIndex: 9
     virtual std::unique_ptr<class Tag> copy() const;
 
-    // vIndex: 10, symbol: ?hash@StringTag@@UEBA_KXZ
+    // vIndex: 10
     virtual uint64 hash() const;
 
-    // symbol: ??0StringTag@@QEAA@XZ
     MCAPI StringTag();
 
-    // symbol: ??0StringTag@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI explicit StringTag(std::string data);
 
     // NOLINTEND

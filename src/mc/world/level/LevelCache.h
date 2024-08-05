@@ -14,10 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0LevelCache@@QEAA@V?$OwnerPtr@VLevelData@@@@@Z
     MCAPI explicit LevelCache(class OwnerPtr<class LevelData>);
 
-    // symbol: ??1LevelCache@@QEAA@XZ
     MCAPI ~LevelCache();
 
     // NOLINTEND

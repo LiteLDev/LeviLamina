@@ -13,16 +13,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1TestAction@@UEAA@XZ
+    // vIndex: 0
     virtual ~TestAction() = default;
 
-    // vIndex: 1, symbol: ?execute@TestAction@@UEAAXAEAVServerLevel@@AEAVDimension@@@Z
+    // vIndex: 1
     virtual void execute(class ServerLevel& level, class Dimension& dimension);
 
-    // vIndex: 3, symbol: ??8TestAction@@UEBA_NAEBVIRequestAction@@@Z
+    // vIndex: 3
     virtual bool operator==(class IRequestAction const& action) const;
 
-    // symbol: ??0TestAction@@QEAA@XZ
     MCAPI TestAction();
 
     // NOLINTEND

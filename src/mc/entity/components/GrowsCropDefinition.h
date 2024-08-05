@@ -18,14 +18,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0GrowsCropDefinition@@QEAA@XZ
     MCAPI GrowsCropDefinition();
 
-    // symbol: ?initialize@GrowsCropDefinition@@QEBAXAEAVEntityContext@@AEAVGrowsCropComponent@@@Z
     MCAPI void initialize(class EntityContext&, class GrowsCropComponent& component) const;
 
-    // symbol:
-    // ?buildSchema@GrowsCropDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VGrowsCropDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void buildSchema(
         std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GrowsCropDefinition>>&
             root

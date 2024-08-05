@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ActorUseItemEvent@@QEAA@XZ
     MCAPI ~ActorUseItemEvent();
 
     // NOLINTEND

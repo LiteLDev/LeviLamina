@@ -14,10 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BastionStart@@UEAA@XZ
+    // vIndex: 0
     virtual ~BastionStart() = default;
 
-    // vIndex: 2, symbol: ?isValid@BastionStart@@UEBA_NXZ
+    // vIndex: 2
     virtual bool isValid() const;
 
     // NOLINTEND

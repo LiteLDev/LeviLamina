@@ -25,24 +25,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0ScriptSystemBeforeEvents@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@V?$not_null@PEAVServerLevel@@@gsl@@@Z
     MCAPI ScriptSystemBeforeEvents(class Scripting::WeakLifetimeScope const&, gsl::not_null<class ServerLevel*>);
 
-    // symbol:
-    // ?onBeforeWatchdogTerminate@ScriptSystemBeforeEvents@ScriptModuleMinecraft@@QEAAXV?$StrongTypedObjectHandle@UScriptWatchdogTerminateBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     MCAPI void onBeforeWatchdogTerminate(class Scripting::StrongTypedObjectHandle<
                                          struct ScriptModuleMinecraft::ScriptWatchdogTerminateBeforeEvent>);
 
-    // symbol:
-    // ?registerHandler@ScriptSystemBeforeEvents@ScriptModuleMinecraft@@QEAAXU?$TypedObjectHandle@VScriptSystemBeforeEvents@ScriptModuleMinecraft@@@Scripting@@@Z
     MCAPI void
         registerHandler(struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptSystemBeforeEvents>);
 
-    // symbol: ??1ScriptSystemBeforeEvents@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptSystemBeforeEvents();
 
-    // symbol: ?bind@ScriptSystemBeforeEvents@ScriptModuleMinecraft@@SAXAEAVModuleBindingBuilder@Scripting@@@Z
     MCAPI static void bind(class Scripting::ModuleBindingBuilder&);
 
     // NOLINTEND

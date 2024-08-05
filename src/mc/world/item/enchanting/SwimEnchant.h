@@ -14,23 +14,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SwimEnchant@@UEAA@XZ
+    // vIndex: 0
     virtual ~SwimEnchant() = default;
 
-    // vIndex: 2, symbol: ?getMinCost@SwimEnchant@@UEBAHH@Z
+    // vIndex: 2
     virtual int getMinCost(int level) const;
 
-    // vIndex: 3, symbol: ?getMaxCost@SwimEnchant@@UEBAHH@Z
+    // vIndex: 3
     virtual int getMaxCost(int level) const;
 
-    // vIndex: 5, symbol: ?getMaxLevel@SwimEnchant@@UEBAHXZ
+    // vIndex: 5
     virtual int getMaxLevel() const;
 
-    // vIndex: 16, symbol: ?_isValidEnchantmentTypeForCategory@SwimEnchant@@EEBA_NW4Type@Enchant@@@Z
+    // vIndex: 16
     virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
 
-    // symbol:
-    // ??0SwimEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_view@DU?$char_traits@D@std@@@std@@2HH@Z
     MCAPI SwimEnchant(
         ::Enchant::Type      type,
         ::Enchant::Frequency frequency,
@@ -44,7 +42,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?VALID_ENCHANTMENTS@SwimEnchant@@0V?$vector@W4Type@Enchant@@V?$allocator@W4Type@Enchant@@@std@@@std@@B
     MCAPI static std::vector<::Enchant::Type> const VALID_ENCHANTMENTS;
 
     // NOLINTEND

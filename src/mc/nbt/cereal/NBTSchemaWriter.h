@@ -28,7 +28,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1StackNode@NBTSchemaWriter@@QEAA@XZ
         MCAPI ~StackNode();
 
         // NOLINTEND
@@ -41,73 +40,69 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1NBTSchemaWriter@@UEAA@XZ
+    // vIndex: 0
     virtual ~NBTSchemaWriter();
 
-    // vIndex: 1, symbol: ?write@NBTSchemaWriter@@UEAA_N_NAEBVPropertyReader@cereal@@@Z
+    // vIndex: 1
     virtual bool write(bool, class cereal::PropertyReader const&);
 
-    // vIndex: 2, symbol: ?write@NBTSchemaWriter@@UEAA_NCAEBVPropertyReader@cereal@@@Z
+    // vIndex: 2
     virtual bool write(schar, class cereal::PropertyReader const&);
 
-    // vIndex: 3, symbol: ?write@NBTSchemaWriter@@UEAA_NEAEBVPropertyReader@cereal@@@Z
+    // vIndex: 3
     virtual bool write(uchar, class cereal::PropertyReader const&);
 
-    // vIndex: 4, symbol: ?write@NBTSchemaWriter@@UEAA_NFAEBVPropertyReader@cereal@@@Z
+    // vIndex: 4
     virtual bool write(short, class cereal::PropertyReader const&);
 
-    // vIndex: 5, symbol: ?write@NBTSchemaWriter@@UEAA_NGAEBVPropertyReader@cereal@@@Z
+    // vIndex: 5
     virtual bool write(ushort, class cereal::PropertyReader const&);
 
-    // vIndex: 6, symbol: ?write@NBTSchemaWriter@@UEAA_NHAEBVPropertyReader@cereal@@@Z
+    // vIndex: 6
     virtual bool write(int, class cereal::PropertyReader const&);
 
-    // vIndex: 7, symbol: ?write@NBTSchemaWriter@@UEAA_NIAEBVPropertyReader@cereal@@@Z
+    // vIndex: 7
     virtual bool write(uint, class cereal::PropertyReader const&);
 
-    // vIndex: 8, symbol: ?write@NBTSchemaWriter@@UEAA_N_JAEBVPropertyReader@cereal@@@Z
+    // vIndex: 8
     virtual bool write(int64, class cereal::PropertyReader const&);
 
-    // vIndex: 9, symbol: ?write@NBTSchemaWriter@@UEAA_N_KAEBVPropertyReader@cereal@@@Z
+    // vIndex: 9
     virtual bool write(uint64, class cereal::PropertyReader const&);
 
-    // vIndex: 10, symbol: ?write@NBTSchemaWriter@@UEAA_NMAEBVPropertyReader@cereal@@@Z
+    // vIndex: 10
     virtual bool write(float, class cereal::PropertyReader const&);
 
-    // vIndex: 11, symbol: ?write@NBTSchemaWriter@@UEAA_NNAEBVPropertyReader@cereal@@@Z
+    // vIndex: 11
     virtual bool write(double, class cereal::PropertyReader const&);
 
-    // vIndex: 12, symbol:
-    // ?write@NBTSchemaWriter@@UEAA_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBVPropertyReader@cereal@@@Z
+    // vIndex: 12
     virtual bool write(std::string_view, class cereal::PropertyReader const&);
 
-    // vIndex: 13, symbol:
-    // ?pushMember@NBTSchemaWriter@@UEAA_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBVPropertyReader@cereal@@@Z
+    // vIndex: 13
     virtual bool pushMember(std::string_view, class cereal::PropertyReader const&);
 
-    // vIndex: 14, symbol: ?popMember@NBTSchemaWriter@@UEAAXXZ
+    // vIndex: 14
     virtual void popMember();
 
-    // vIndex: 15, symbol: ?openObject@NBTSchemaWriter@@UEAA_NAEBVPropertyReader@cereal@@@Z
+    // vIndex: 15
     virtual bool openObject(class cereal::PropertyReader const&);
 
-    // vIndex: 16, symbol: ?openArray@NBTSchemaWriter@@UEAA_N_KAEBVPropertyReader@cereal@@@Z
+    // vIndex: 16
     virtual bool openArray(uint64, class cereal::PropertyReader const&);
 
-    // vIndex: 17, symbol: ?close@NBTSchemaWriter@@UEAAXXZ
+    // vIndex: 17
     virtual void close();
 
-    // vIndex: 18, symbol: ?isSequenceWriter@SchemaWriter@cereal@@UEBA_NXZ
+    // vIndex: 18
     virtual bool isSequenceWriter() const;
 
-    // symbol: ??0NBTSchemaWriter@@QEAA@XZ
     MCAPI NBTSchemaWriter();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_serializeTag@NBTSchemaWriter@@AEAA_NV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@@Z
     MCAPI bool _serializeTag(std::unique_ptr<class Tag> tag);
 
     // NOLINTEND

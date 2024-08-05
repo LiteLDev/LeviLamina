@@ -4,7 +4,6 @@
 
 namespace BlockPosAntiCheatSystem {
 // NOLINTBEGIN
-// symbol: ?createSystem@BlockPosAntiCheatSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createSystem();
 // NOLINTEND
 

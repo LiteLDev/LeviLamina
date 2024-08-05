@@ -45,67 +45,61 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SignBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~SignBlock() = default;
 
-    // vIndex: 5, symbol:
-    // ?getCollisionShape@SignBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // vIndex: 5
     virtual class AABB
     getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 11, symbol: ?getVisualShape@SignBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
+    // vIndex: 11
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
 
-    // vIndex: 62, symbol: ?checkIsPathable@SignBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
+    // vIndex: 62
     virtual bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
 
-    // vIndex: 85, symbol: ?mayPlace@SignBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
+    // vIndex: 85
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar face) const;
 
-    // vIndex: 93, symbol: ?neighborChanged@SignBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 93
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 96, symbol: ?asItemInstance@SignBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 148, symbol: ?tick@SignBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
-    // vIndex: 150, symbol: ?isInteractiveBlock@SignBlock@@UEBA_NXZ
+    // vIndex: 150
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 152, symbol: ?use@SignBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    // vIndex: 154, symbol: ?canSurvive@SignBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 154
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 163, symbol: ?getYRotationInDegrees@SignBlock@@UEBAMAEBVBlock@@@Z
+    // vIndex: 163
     virtual float getYRotationInDegrees(class Block const& block) const;
 
-    // vIndex: 164, symbol: ?_canSurvive@SignBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
+    // vIndex: 164
     virtual bool _canSurvive(class BlockSource& region, class BlockPos const& pos, uchar face) const;
 
-    // vIndex: 165, symbol: ?_getItemInstance@SignBlock@@MEBA?AVItemInstance@@XZ
+    // vIndex: 165
     virtual class ItemInstance _getItemInstance() const;
 
-    // symbol: ??0SignBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NW4SignType@0@@Z
     MCAPI SignBlock(std::string const& nameId, int id, bool onGround, ::SignBlock::SignType signType);
 
-    // symbol: ?getSignTextColorFromDyeItem@SignBlock@@SA?AVColor@mce@@AEBVItem@@@Z
     MCAPI static class mce::Color getSignTextColorFromDyeItem(class Item const&);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_canChangeSign@SignBlock@@CA_NAEAVSignBlockActor@@AEAVPlayer@@@Z
     MCAPI static bool _canChangeSign(class SignBlockActor& blockActor, class Player& player);
 
-    // symbol:
-    // ?_getInteractResult@SignBlock@@CA?AUSignInteractionResult@1@AEAVSignBlockActor@@W4SignTextSide@@AEAVItemStack@@AEAVPlayer@@AEBVBlockPos@@E@Z
     MCAPI static struct SignBlock::SignInteractionResult _getInteractResult(
         class SignBlockActor& blockActor,
         ::SignTextSide        side,

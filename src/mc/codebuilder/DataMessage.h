@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1DataMessage@CodeBuilder@@QEAA@XZ
     MCAPI ~DataMessage();
 
     // NOLINTEND

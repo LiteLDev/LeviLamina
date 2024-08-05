@@ -14,13 +14,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ?getJsonName@DynamicJumpControlDescription@@UEBAPEBDXZ
+    // vIndex: 0
     virtual char const* getJsonName() const;
 
-    // vIndex: 1, symbol: ??1DynamicJumpControlDescription@@UEAA@XZ
+    // vIndex: 1
     virtual ~DynamicJumpControlDescription();
 
-    // vIndex: 2, symbol: ?deserializeData@DynamicJumpControlDescription@@UEAAXUDeserializeDataParams@@@Z
+    // vIndex: 2
     virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
     // NOLINTEND

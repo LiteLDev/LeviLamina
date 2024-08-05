@@ -31,10 +31,10 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ?Complete@ActionStatusImpl@ThreadPoolImpl@OS@@UEAAXXZ
+        // vIndex: 0
         virtual void Complete();
 
-        // vIndex: 1, symbol: ?MayRunLong@ActionStatusImpl@ThreadPoolImpl@OS@@UEAAXXZ
+        // vIndex: 1
         virtual void MayRunLong();
 
         // NOLINTEND
@@ -48,7 +48,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?TPCallback@ThreadPoolImpl@OS@@CAXPEAU_TP_CALLBACK_INSTANCE@@PEAXPEAU_TP_WORK@@@Z
     MCAPI static void TPCallback(struct _TP_CALLBACK_INSTANCE*, void*, struct _TP_WORK*);
 
     // NOLINTEND

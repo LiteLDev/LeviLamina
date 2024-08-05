@@ -19,11 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?initialize@HeartbeatDefinition@@QEBAXAEAVEntityContext@@AEAVHeartbeatServerComponent@@@Z
     MCAPI void initialize(class EntityContext& entity, class HeartbeatServerComponent& component) const;
 
-    // symbol:
-    // ?buildSchema@HeartbeatDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VHeartbeatDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void buildSchema(
         std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HeartbeatDefinition>>&
             root

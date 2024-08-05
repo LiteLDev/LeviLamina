@@ -15,10 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getSimulationType@PauseManager@@SA?AW4SimulationType@@V?$StackRefResult@$$CBVPauseManager@@@@@Z
     MCAPI static ::SimulationType getSimulationType(class StackRefResult<class PauseManager const>);
 
-    // symbol: ?DEFAULT_SIMULATION_TYPE@PauseManager@@2W4SimulationType@@B
     MCAPI static ::SimulationType const DEFAULT_SIMULATION_TYPE;
 
     // NOLINTEND

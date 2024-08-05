@@ -17,19 +17,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ChestContainerManagerModel@@UEAA@XZ
+    // vIndex: 0
     virtual ~ChestContainerManagerModel() = default;
 
-    // vIndex: 16, symbol: ?isValid@ChestContainerManagerModel@@UEAA_NM@Z
+    // vIndex: 16
     virtual bool isValid(float pickRange);
 
-    // vIndex: 17, symbol: ?_postInit@ChestContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+    // vIndex: 17
     virtual class ContainerScreenContext _postInit();
 
-    // symbol: ??0ChestContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@UActorUniqueID@@@Z
     MCAPI ChestContainerManagerModel(::ContainerID containerId, class Player& player, struct ActorUniqueID uniqueID);
 
-    // symbol: ??0ChestContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@W4BlockActorType@@@Z
     MCAPI ChestContainerManagerModel(
         ::ContainerID         containerId,
         class Player&         player,

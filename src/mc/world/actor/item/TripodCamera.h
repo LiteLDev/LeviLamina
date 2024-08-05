@@ -35,44 +35,40 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 4, symbol: ?reloadHardcoded@TripodCamera@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 4
     virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: __gen_??1TripodCamera@@UEAA@XZ
+    // vIndex: 10
     virtual ~TripodCamera() = default;
 
-    // vIndex: 13, symbol: ?remove@TripodCamera@@UEAAXXZ
+    // vIndex: 13
     virtual void remove();
 
-    // vIndex: 38, symbol: ?getShadowRadius@TripodCamera@@UEBAMXZ
+    // vIndex: 38
     virtual float getShadowRadius() const;
 
-    // vIndex: 53, symbol: ?isTargetable@TripodCamera@@UEBA_NXZ
+    // vIndex: 53
     virtual bool isTargetable() const;
 
-    // vIndex: 144, symbol: ?updateEntitySpecificMolangVariables@TripodCamera@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 144
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // vIndex: 146, symbol: ?_hurt@TripodCamera@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 146
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 185, symbol: ?canExistWhenDisallowMob@TripodCamera@@UEBA_NXZ
+    // vIndex: 185
     virtual bool canExistWhenDisallowMob() const;
 
-    // symbol: ??0TripodCamera@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI TripodCamera(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?interactWithPlayer@TripodCamera@@QEAA_NAEAVPlayer@@@Z
     MCAPI bool interactWithPlayer(class Player& player);
 
-    // symbol: ?isActivated@TripodCamera@@QEBA_NXZ
     MCAPI bool isActivated() const;
 
-    // symbol: ?startTakingPicture@TripodCamera@@QEAAXAEAVPlayer@@@Z
     MCAPI void startTakingPicture(class Player& player);
 
     // NOLINTEND

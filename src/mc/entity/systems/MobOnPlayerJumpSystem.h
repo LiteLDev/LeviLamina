@@ -11,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@MobOnPlayerJumpSystem@@SA?AUTickingSystemWithInfo@@_N@Z
     MCAPI static struct TickingSystemWithInfo createSystem(bool);
 
-    // symbol: ?getPlayerJumpPendingScale@MobOnPlayerJumpSystem@@SAMH@Z
     MCAPI static float getPlayerJumpPendingScale(int jumpAmount);
 
     // NOLINTEND

@@ -27,20 +27,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SculkCatalystBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~SculkCatalystBlock() = default;
 
-    // vIndex: 129, symbol: ?getVariant@SculkCatalystBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 148, symbol: ?tick@SculkCatalystBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // symbol:
-    // ??0SculkCatalystBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI SculkCatalystBlock(std::string const& nameId, int id, class Material const& material);
 
-    // symbol: ?bloom@SculkCatalystBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandom@@@Z
     MCAPI static void
     bloom(class BlockSource& region, class BlockPos const& pos, class Block const& block, class Random&);
 

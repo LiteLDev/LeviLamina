@@ -29,21 +29,15 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1Definition@PlayDeadGoal@@UEAA@XZ
+        // vIndex: 0
         virtual ~Definition();
 
-        // symbol: ??0Definition@PlayDeadGoal@@QEAA@XZ
         MCAPI Definition();
 
-        // symbol:
-        // ?addDamageCause@Definition@PlayDeadGoal@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
         MCAPI void addDamageCause(std::string const&);
 
-        // symbol: ?initialize@Definition@PlayDeadGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext& entity, class PlayDeadGoal& goal) const;
 
-        // symbol:
-        // ?buildSchema@Definition@PlayDeadGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDefinition@PlayDeadGoal@@@JsonUtil@@@4@@Z
         MCAPI static void buildSchema(
             std::string const& name,
             std::shared_ptr<
@@ -61,26 +55,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1PlayDeadGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~PlayDeadGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@PlayDeadGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@PlayDeadGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@PlayDeadGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@PlayDeadGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@PlayDeadGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0PlayDeadGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit PlayDeadGoal(class Mob& mob);
 
     // NOLINTEND

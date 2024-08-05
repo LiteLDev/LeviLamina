@@ -21,11 +21,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ResourcePackFileUploadManager@@UEAA@XZ
+    // vIndex: 0
     virtual ~ResourcePackFileUploadManager();
 
-    // vIndex: 2, symbol:
-    // ?uploadFileToRealmStorage@ResourcePackFileUploadManager@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@H0@Z
+    // vIndex: 2
     virtual void uploadFileToRealmStorage(
         std::string const&      uploadId,
         class Core::Path const& path,
@@ -33,8 +32,6 @@ public:
         std::string const&      realmsGuid
     );
 
-    // symbol:
-    // ?uploadResourcePack@ResourcePackFileUploadManager@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVResourceLocation@@_N2W4PackType@@@Z
     MCAPI void uploadResourcePack(
         std::string const&            resourcePackName,
         class ResourceLocation const& resourceLocation,
@@ -47,13 +44,9 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_uploadPackToRealmStorage@ResourcePackFileUploadManager@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@H0@Z
     MCAPI void
     _uploadPackToRealmStorage(std::string const& uploadId, class Core::Path const& path, int slotIndex, std::string const&);
 
-    // symbol:
-    // ?_uploadResourcePackFolder@ResourcePackFileUploadManager@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVResourceLocation@@AEBVPath@Core@@AEBVValue@Json@@@Z
     MCAPI void _uploadResourcePackFolder(
         std::string const&            resourcePack,
         class ResourceLocation const& resourcePackLocation,

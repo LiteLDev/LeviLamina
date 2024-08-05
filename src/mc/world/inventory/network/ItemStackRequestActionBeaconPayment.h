@@ -15,20 +15,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ItemStackRequestActionBeaconPayment@@UEAA@XZ
+    // vIndex: 0
     virtual ~ItemStackRequestActionBeaconPayment() = default;
 
-    // vIndex: 4, symbol: ?_write@ItemStackRequestActionBeaconPayment@@MEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void _write(class BinaryStream& stream) const;
 
-    // vIndex: 5, symbol:
-    // ?_read@ItemStackRequestActionBeaconPayment@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 5
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ?getPrimaryEffectId@ItemStackRequestActionBeaconPayment@@QEBAHXZ
     MCAPI int getPrimaryEffectId() const;
 
-    // symbol: ?getSecondaryEffectId@ItemStackRequestActionBeaconPayment@@QEBAHXZ
     MCAPI int getSecondaryEffectId() const;
 
     // NOLINTEND

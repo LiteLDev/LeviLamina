@@ -30,17 +30,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BannerPatternItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~BannerPatternItem() = default;
 
-    // vIndex: 39, symbol: ?isPattern@BannerPatternItem@@UEBA_NXZ
+    // vIndex: 39
     virtual bool isPattern() const;
 
-    // vIndex: 40, symbol: ?getPatternIndex@BannerPatternItem@@UEBAHXZ
+    // vIndex: 40
     virtual int getPatternIndex() const;
 
-    // vIndex: 48, symbol:
-    // ?appendFormattedHovertext@BannerPatternItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+    // vIndex: 48
     virtual void appendFormattedHovertext(
         class ItemStackBase const& stack,
         class Level&               level,
@@ -48,11 +47,9 @@ public:
         bool                       showCategory
     ) const;
 
-    // vIndex: 83, symbol:
-    // ?buildDescriptionId@BannerPatternItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+    // vIndex: 83
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // symbol: ??0BannerPatternItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4Type@0@@Z
     MCAPI BannerPatternItem(std::string const& name, int id, ::BannerPatternItem::Type type);
 
     // NOLINTEND

@@ -24,32 +24,31 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1HistoryItem@PredictedMovementComponent@@UEAA@XZ
+        // vIndex: 0
         virtual ~HistoryItem();
 
-        // vIndex: 1, symbol: ?isValidStartItem@MoveHistoryItem@PredictedMovementComponent@@UEBA_NXZ
+        // vIndex: 1
         virtual bool isValidStartItem() const = 0;
 
-        // vIndex: 2, symbol: ?isAddedActorItem@MoveHistoryItem@PredictedMovementComponent@@UEBA_NXZ
+        // vIndex: 2
         virtual bool isAddedActorItem() const = 0;
 
-        // vIndex: 3, symbol: ?isMotionHintItem@MoveHistoryItem@PredictedMovementComponent@@UEBA_NXZ
+        // vIndex: 3
         virtual bool isMotionHintItem() const = 0;
 
-        // vIndex: 4, symbol:
-        // ?toString@HistoryItem@PredictedMovementComponent@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+        // vIndex: 4
         virtual std::string toString() const;
 
-        // vIndex: 5, symbol: ?getPos@MoveHistoryItem@PredictedMovementComponent@@UEBAAEBVVec3@@XZ
+        // vIndex: 5
         virtual class Vec3 const& getPos() const = 0;
 
-        // vIndex: 6, symbol: ?getRot@MoveHistoryItem@PredictedMovementComponent@@UEBAAEBVVec2@@XZ
+        // vIndex: 6
         virtual class Vec2 const& getRot() const = 0;
 
-        // vIndex: 7, symbol: ?getYHeadRot@MoveHistoryItem@PredictedMovementComponent@@UEBAMXZ
+        // vIndex: 7
         virtual float getYHeadRot() const = 0;
 
-        // vIndex: 8, symbol: ?isOnGround@MoveHistoryItem@PredictedMovementComponent@@UEBA_NXZ
+        // vIndex: 8
         virtual bool isOnGround() const = 0;
 
         // NOLINTEND
@@ -64,26 +63,18 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol:
-        // ?addHistory@HistoryCache@PredictedMovementComponent@@QEAAXAEBVMoveActorAbsoluteData@@AEBV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@Z
         MCAPI void addHistory(class MoveActorAbsoluteData const&, std::chrono::steady_clock::time_point const&);
 
-        // symbol:
-        // ?toString@HistoryCache@PredictedMovementComponent@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
         MCAPI std::string toString();
 
-        // symbol: ??1HistoryCache@PredictedMovementComponent@@QEAA@XZ
         MCAPI ~HistoryCache();
 
         // NOLINTEND
 
         // private:
         // NOLINTBEGIN
-        // symbol:
-        // ?_addHistoryItem@HistoryCache@PredictedMovementComponent@@AEAAXAEBV?$shared_ptr@$$CBUHistoryItem@PredictedMovementComponent@@@std@@@Z
         MCAPI void _addHistoryItem(std::shared_ptr<struct PredictedMovementComponent::HistoryItem const> const& item);
 
-        // symbol: ?_clearHistory@HistoryCache@PredictedMovementComponent@@AEAAXXZ
         MCAPI void _clearHistory();
 
         // NOLINTEND
@@ -98,7 +89,6 @@ public:
 
         // private:
         // NOLINTBEGIN
-        // symbol: ?mSequenceIdGenerator@HistoryTimestampData@PredictedMovementComponent@@0IA
         MCAPI static uint mSequenceIdGenerator;
 
         // NOLINTEND
@@ -113,28 +103,28 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __gen_??1MoveHistoryItem@PredictedMovementComponent@@UEAA@XZ
+        // vIndex: 0
         virtual ~MoveHistoryItem() = default;
 
-        // vIndex: 1, symbol: ?isValidStartItem@MoveHistoryItem@PredictedMovementComponent@@UEBA_NXZ
+        // vIndex: 1
         virtual bool isValidStartItem() const;
 
-        // vIndex: 2, symbol: ?isAddedActorItem@MoveHistoryItem@PredictedMovementComponent@@UEBA_NXZ
+        // vIndex: 2
         virtual bool isAddedActorItem() const;
 
-        // vIndex: 3, symbol: ?isMotionHintItem@MoveHistoryItem@PredictedMovementComponent@@UEBA_NXZ
+        // vIndex: 3
         virtual bool isMotionHintItem() const;
 
-        // vIndex: 5, symbol: ?getPos@MoveHistoryItem@PredictedMovementComponent@@UEBAAEBVVec3@@XZ
+        // vIndex: 5
         virtual class Vec3 const& getPos() const;
 
-        // vIndex: 6, symbol: ?getRot@MoveHistoryItem@PredictedMovementComponent@@UEBAAEBVVec2@@XZ
+        // vIndex: 6
         virtual class Vec2 const& getRot() const;
 
-        // vIndex: 7, symbol: ?getYHeadRot@MoveHistoryItem@PredictedMovementComponent@@UEBAMXZ
+        // vIndex: 7
         virtual float getYHeadRot() const;
 
-        // vIndex: 8, symbol: ?isOnGround@MoveHistoryItem@PredictedMovementComponent@@UEBA_NXZ
+        // vIndex: 8
         virtual bool isOnGround() const;
 
         // NOLINTEND
@@ -149,11 +139,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol:
-        // ?toString@PredictionDbgData@PredictedMovementComponent@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
         MCAPI std::string toString() const;
 
-        // symbol: ??1PredictionDbgData@PredictedMovementComponent@@QEAA@XZ
         MCAPI ~PredictionDbgData();
 
         // NOLINTEND
@@ -176,7 +163,6 @@ public:
 
             // private:
             // NOLINTBEGIN
-            // symbol: ?mMaxTicks@LerpedInterval@RuntimePredictionData@PredictedMovementComponent@@0IB
             MCAPI static uint const mMaxTicks;
 
             // NOLINTEND
@@ -189,13 +175,11 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __gen_??1RuntimePredictionData@PredictedMovementComponent@@UEAA@XZ
+        // vIndex: 0
         virtual ~RuntimePredictionData() = default;
 
-        // symbol: ??0RuntimePredictionData@PredictedMovementComponent@@QEAA@XZ
         MCAPI RuntimePredictionData();
 
-        // symbol: ?reset@RuntimePredictionData@PredictedMovementComponent@@QEAAXXZ
         MCAPI void reset();
 
         // NOLINTEND
@@ -208,33 +192,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0PredictedMovementComponent@@QEAA@XZ
     MCAPI PredictedMovementComponent();
 
-    // symbol: ?reset@PredictedMovementComponent@@QEAAXXZ
     MCAPI void reset();
 
-    // symbol:
-    // ?tickNextPosition@PredictedMovementComponent@@QEAAXAEAUPredictedMovementSystemParams@@AEBV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@Z
     MCAPI void tickNextPosition(struct PredictedMovementSystemParams&, std::chrono::steady_clock::time_point const&);
 
-    // symbol: ?LERP_STEP_SIZE@PredictedMovementComponent@@2IB
     MCAPI static uint const LERP_STEP_SIZE;
 
-    // symbol:
-    // ?mGlobalRuntimePredictionData@PredictedMovementComponent@@2V?$unique_ptr@URuntimePredictionData@PredictedMovementComponent@@U?$default_delete@URuntimePredictionData@PredictedMovementComponent@@@std@@@std@@A
     MCAPI static std::unique_ptr<struct PredictedMovementComponent::RuntimePredictionData> mGlobalRuntimePredictionData;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_debugLog@PredictedMovementComponent@@AEBAXAEAUPredictedMovementSystemParams@@AEBUPredictionDbgData@1@@Z
     MCAPI void
     _debugLog(struct PredictedMovementSystemParams&, struct PredictedMovementComponent::PredictionDbgData const&) const;
 
-    // symbol:
-    // ?_tryInterpolate@PredictedMovementComponent@@AEAA_NAEAUPredictedMovementSystemParams@@AEBV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@Z
     MCAPI bool _tryInterpolate(struct PredictedMovementSystemParams&, std::chrono::steady_clock::time_point const&);
 
     // NOLINTEND

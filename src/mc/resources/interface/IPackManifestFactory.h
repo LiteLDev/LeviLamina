@@ -11,11 +11,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1IPackManifestFactory@@UEAA@XZ
+    // vIndex: 0
     virtual ~IPackManifestFactory();
 
-    // vIndex: 1, symbol:
-    // ?create@PackManifestFactory@@UEAA?AV?$unique_ptr@VPackManifest@@U?$default_delete@VPackManifest@@@std@@@std@@AEAVPackAccessStrategy@@AEBVResourceLocation@@AEAVPackReport@@PEAVSubpackInfoCollection@@@Z
+    // vIndex: 1
     virtual std::unique_ptr<class PackManifest> create(
         class PackAccessStrategy&     accessStrategy,
         class ResourceLocation const& location,

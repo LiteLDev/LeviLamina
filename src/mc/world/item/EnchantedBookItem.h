@@ -26,19 +26,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1EnchantedBookItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~EnchantedBookItem() = default;
 
-    // vIndex: 38, symbol: ?isGlint@EnchantedBookItem@@UEBA_NAEBVItemStackBase@@@Z
+    // vIndex: 38
     virtual bool isGlint(class ItemStackBase const& stack) const;
 
-    // vIndex: 50, symbol: ?getEnchantSlot@EnchantedBookItem@@UEBAHXZ
+    // vIndex: 50
     virtual int getEnchantSlot() const;
 
-    // vIndex: 51, symbol: ?getEnchantValue@EnchantedBookItem@@UEBAHXZ
+    // vIndex: 51
     virtual int getEnchantValue() const;
 
-    // symbol: ??0EnchantedBookItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
     MCAPI EnchantedBookItem(std::string const& name, int id, bool isGlint);
 
     // NOLINTEND

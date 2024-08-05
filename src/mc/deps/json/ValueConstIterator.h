@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ValueConstIterator@Json@@QEAA@XZ
     MCAPI ~ValueConstIterator();
 
     // NOLINTEND

@@ -27,51 +27,46 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1FallingBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~FallingBlock();
 
-    // vIndex: 93, symbol: ?neighborChanged@FallingBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 93
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 134, symbol: ?animateTickBedrockLegacy@FallingBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 134
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // vIndex: 146, symbol: ?onPlace@FallingBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 146
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 148, symbol: ?tick@FallingBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 166, symbol: ?onLand@FallingBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 166
     virtual void onLand(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 167, symbol: ?isFreeToFall@FallingBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 167
     virtual bool isFreeToFall(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 168, symbol: ?startFalling@FallingBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@_N@Z
+    // vIndex: 168
     virtual void
     startFalling(class BlockSource& region, class BlockPos const& pos, class Block const& oldBlock, bool creative)
         const;
 
-    // symbol: ?falling@FallingBlock@@UEBA_NXZ
     MCVAPI bool falling() const;
 
-    // symbol: ??0FallingBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI FallingBlock(std::string const& nameId, int id, class Material const& material);
 
-    // symbol: ?triggerFallCheck@FallingBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void triggerFallCheck(class BlockSource& region, class BlockPos const& pos) const;
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?_tickBlocksAround2D@FallingBlock@@IEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     MCAPI void
     _tickBlocksAround2D(class BlockSource& region, class BlockPos const& pos, class Block const& oldBlock) const;
 
-    // symbol: ?checkSlide@FallingBlock@@IEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void checkSlide(class BlockSource& region, class BlockPos const& pos) const;
 
     // NOLINTEND

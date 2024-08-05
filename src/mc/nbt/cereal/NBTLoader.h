@@ -20,10 +20,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1NBTLoader@@UEAA@XZ
+    // vIndex: 0
     virtual ~NBTLoader();
 
-    // symbol: ??0NBTLoader@@QEAA@V?$not_null@PEBVTag@@@gsl@@AEBUReflectionCtx@cereal@@@Z
     MCAPI NBTLoader(gsl::not_null<class Tag const*>, struct cereal::ReflectionCtx const&);
 
     // NOLINTEND

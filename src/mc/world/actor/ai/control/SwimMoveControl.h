@@ -13,16 +13,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SwimMoveControl@@UEAA@XZ
+    // vIndex: 0
     virtual ~SwimMoveControl() = default;
 
-    // vIndex: 1, symbol: ?initializeInternal@SwimMoveControl@@UEAAXAEAVMob@@PEAUMoveControlDescription@@@Z
+    // vIndex: 1
     virtual void initializeInternal(class Mob& mob, struct MoveControlDescription* description);
 
-    // vIndex: 2, symbol: ?tick@SwimMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
+    // vIndex: 2
     virtual void tick(class MoveControlComponent& parent, class Mob& mob);
 
-    // symbol: ??0SwimMoveControl@@QEAA@XZ
     MCAPI SwimMoveControl();
 
     // NOLINTEND

@@ -21,8 +21,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?bind@ScriptNetRequestMethod@ScriptModuleMinecraftNet@@SA?AV?$EnumBindingBuilder@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VMethod@Http@Bedrock@@@Scripting@@XZ
     MCAPI static class Scripting::EnumBindingBuilder<std::string, class Bedrock::Http::Method> bind();
 
     // NOLINTEND

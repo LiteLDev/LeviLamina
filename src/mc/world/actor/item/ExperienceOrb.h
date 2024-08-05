@@ -39,53 +39,48 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 4, symbol: ?reloadHardcoded@ExperienceOrb@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 4
     virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: __gen_??1ExperienceOrb@@UEAA@XZ
+    // vIndex: 10
     virtual ~ExperienceOrb() = default;
 
-    // vIndex: 38, symbol: ?getShadowRadius@ExperienceOrb@@UEBAMXZ
+    // vIndex: 38
     virtual float getShadowRadius() const;
 
-    // vIndex: 42, symbol: ?playerTouch@ExperienceOrb@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 42
     virtual void playerTouch(class Player& player);
 
-    // vIndex: 69, symbol: ?isInvulnerableTo@ExperienceOrb@@UEBA_NAEBVActorDamageSource@@@Z
+    // vIndex: 69
     virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
-    // vIndex: 141, symbol: ?doWaterSplashEffect@ExperienceOrb@@MEAAXXZ
+    // vIndex: 141
     virtual void doWaterSplashEffect();
 
-    // vIndex: 146, symbol: ?_hurt@ExperienceOrb@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 146
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 147, symbol: ?readAdditionalSaveData@ExperienceOrb@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 148, symbol: ?addAdditionalSaveData@ExperienceOrb@@UEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 149, symbol: ?_playStepSound@ExperienceOrb@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 149
     virtual void _playStepSound(class BlockPos const& pos, class Block const& onBlock);
 
-    // symbol: ??0ExperienceOrb@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI ExperienceOrb(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?getIconIndex@ExperienceOrb@@QEBAHXZ
     MCAPI int getIconIndex() const;
 
-    // symbol: ?postNormalTick@ExperienceOrb@@QEAAXXZ
     MCAPI void postNormalTick();
 
-    // symbol: ?setValue@ExperienceOrb@@QEAAXH@Z
     MCAPI void setValue(int value);
 
-    // symbol: ?spawnOrbs@ExperienceOrb@@SAXAEAVBlockSource@@AEBVVec3@@HW4DropType@1@PEAVPlayer@@@Z
     MCAPI static void spawnOrbs(
         class BlockSource&        region,
         class Vec3 const&         pos,
@@ -94,7 +89,6 @@ public:
         class Player*             owner
     );
 
-    // symbol: ?spawnOrbs@ExperienceOrb@@SAXAEAVBlockSource@@AEBVVec3@@HHW4DropType@1@PEAVPlayer@@@Z
     MCAPI static void spawnOrbs(
         class BlockSource&        region,
         class Vec3 const&         pos,
@@ -108,16 +102,12 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_handleMending@ExperienceOrb@@AEAAXAEAVPlayer@@@Z
     MCAPI void _handleMending(class Player& player);
 
-    // symbol: ?_tryMergeExistingOrbs@ExperienceOrb@@AEAAXXZ
     MCAPI void _tryMergeExistingOrbs();
 
-    // symbol: ?_spawnOrb@ExperienceOrb@@CAXAEAVBlockSource@@AEAVLevel@@AEBVVec3@@H@Z
     MCAPI static void _spawnOrb(class BlockSource& region, class Level& level, class Vec3 const& pos, int);
 
-    // symbol: ?_tryMergeIntoExistingOrbs@ExperienceOrb@@CA_NAEAVBlockSource@@AEBVVec3@@H@Z
     MCAPI static bool _tryMergeIntoExistingOrbs(class BlockSource&, class Vec3 const&, int);
 
     // NOLINTEND

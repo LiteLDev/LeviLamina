@@ -17,20 +17,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@WitherBossPreAIStepSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_doWitherBossPreAIStepSystem@WitherBossPreAIStepSystem@@CAXAEAVStrictEntityContext@@AEAVActorOwnerComponent@@V?$EntityModifier@UWitherBossPreAIStepResultComponent@@@@@Z
     MCAPI static void
     _doWitherBossPreAIStepSystem(class StrictEntityContext&, class ActorOwnerComponent&, class EntityModifier<struct WitherBossPreAIStepResultComponent>);
 
-    // symbol:
-    // ?_tickWitherBossPreAIStepSystem@WitherBossPreAIStepSystem@@CAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@UWitherBossFlag@@@@@@VActorOwnerComponent@@@@V?$EntityModifier@UWitherBossPreAIStepResultComponent@@@@@Z
     MCAPI static void _tickWitherBossPreAIStepSystem(
         class ViewT<
             class StrictEntityContext,

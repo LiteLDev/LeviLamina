@@ -16,29 +16,28 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1HideGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~HideGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@HideGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@HideGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@HideGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@HideGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@HideGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // vIndex: 16, symbol: ?_getRepathTime@HideGoal@@MEBA_KXZ
+    // vIndex: 16
     virtual uint64 _getRepathTime() const;
 
-    // vIndex: 17, symbol: ?_getOwnedPOI@HideGoal@@MEBA?AV?$weak_ptr@VPOIInstance@@@std@@W4POIType@@@Z
+    // vIndex: 17
     virtual std::weak_ptr<class POIInstance> _getOwnedPOI(::POIType type) const;
 
     // NOLINTEND

@@ -26,28 +26,26 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ExperiencePotionItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~ExperiencePotionItem() = default;
 
-    // vIndex: 19, symbol: ?isThrowable@ExperiencePotionItem@@UEBA_NXZ
+    // vIndex: 19
     virtual bool isThrowable() const;
 
-    // vIndex: 38, symbol: ?isGlint@ExperiencePotionItem@@UEBA_NAEBVItemStackBase@@@Z
+    // vIndex: 38
     virtual bool isGlint(class ItemStackBase const& stack) const;
 
-    // vIndex: 72, symbol: ?use@ExperiencePotionItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+    // vIndex: 72
     virtual class ItemStack& use(class ItemStack& instance, class Player& player) const;
 
-    // vIndex: 73, symbol:
-    // ?createProjectileActor@ExperiencePotionItem@@UEBAPEAVActor@@AEAVBlockSource@@AEBVItemStack@@AEBVVec3@@2@Z
+    // vIndex: 73
     virtual class Actor*
     createProjectileActor(class BlockSource&, class ItemStack const&, class Vec3 const&, class Vec3 const&) const;
 
-    // vIndex: 74, symbol: ?dispense@ExperiencePotionItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 74
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
-    // symbol: ??0ExperiencePotionItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI ExperiencePotionItem(std::string const& name, int id);
 
     // NOLINTEND

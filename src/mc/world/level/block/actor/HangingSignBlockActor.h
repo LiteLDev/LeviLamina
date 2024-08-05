@@ -15,13 +15,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1HangingSignBlockActor@@UEAA@XZ
+    // vIndex: 0
     virtual ~HangingSignBlockActor() = default;
 
-    // vIndex: 19, symbol: ?getShadowRadius@HangingSignBlockActor@@UEBAMAEAVBlockSource@@@Z
+    // vIndex: 19
     virtual float getShadowRadius(class BlockSource&) const;
 
-    // symbol: ??0HangingSignBlockActor@@QEAA@AEBVBlockPos@@@Z
     MCAPI explicit HangingSignBlockActor(class BlockPos const& pos);
 
     // NOLINTEND

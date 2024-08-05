@@ -18,11 +18,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ComparatorCapacitor@@UEAA@XZ
+    // vIndex: 0
     virtual ~ComparatorCapacitor() = default;
 
-    // vIndex: 11, symbol:
-    // ?addSource@ComparatorCapacitor@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
+    // vIndex: 11
     virtual bool addSource(
         class CircuitSceneGraph&         graph,
         class CircuitTrackingInfo const& info,
@@ -30,34 +29,28 @@ public:
         bool&                            bDirectlyPowered
     );
 
-    // vIndex: 14, symbol: ?evaluate@ComparatorCapacitor@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
+    // vIndex: 14
     virtual bool evaluate(class CircuitSystem& system, class BlockPos const& pos);
 
-    // vIndex: 15, symbol: ?cacheValues@ComparatorCapacitor@@UEAAXAEAVCircuitSystem@@AEBVBlockPos@@@Z
+    // vIndex: 15
     virtual void cacheValues(class CircuitSystem& system, class BlockPos const& pos);
 
-    // vIndex: 16, symbol: ?updateDependencies@ComparatorCapacitor@@UEAAXAEAVCircuitSceneGraph@@AEBVBlockPos@@@Z
+    // vIndex: 16
     virtual void updateDependencies(class CircuitSceneGraph& system, class BlockPos const& pos);
 
-    // vIndex: 23, symbol: ?getCircuitComponentType@ComparatorCapacitor@@UEBA?AW4CircuitComponentType@@XZ
+    // vIndex: 23
     virtual ::CircuitComponentType getCircuitComponentType() const;
 
-    // symbol: ??0ComparatorCapacitor@@QEAA@XZ
     MCAPI ComparatorCapacitor();
 
-    // symbol: ?clearAnalogStrength@ComparatorCapacitor@@QEAAXE@Z
     MCAPI void clearAnalogStrength(uchar dir);
 
-    // symbol: ?getOldStrength@ComparatorCapacitor@@QEAAHXZ
     MCAPI int getOldStrength();
 
-    // symbol: ?isSubtractMode@ComparatorCapacitor@@QEAA_NXZ
     MCAPI bool isSubtractMode();
 
-    // symbol: ?setAnalogStrength@ComparatorCapacitor@@QEAAXHE@Z
     MCAPI void setAnalogStrength(int strength, uchar dir);
 
-    // symbol: ?setMode@ComparatorCapacitor@@QEAAXW4Mode@1@@Z
     MCAPI void setMode(::ComparatorCapacitor::Mode mode);
 
     // NOLINTEND

@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1NetEaseBlockComponentStorage@@QEAA@XZ
     MCAPI ~NetEaseBlockComponentStorage();
 
     // NOLINTEND

@@ -35,16 +35,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1Pig@@UEAA@XZ
+    // vIndex: 10
     virtual ~Pig() = default;
 
-    // vIndex: 146, symbol: ?_hurt@Pig@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 146
     virtual bool _hurt(class ActorDamageSource const& source, float dmg, bool knock, bool ignite);
 
-    // vIndex: 149, symbol: ?_playStepSound@Pig@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 149
     virtual void _playStepSound(class BlockPos const& pos, class Block const& onBlock);
 
-    // symbol: ??0Pig@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI
     Pig(class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,

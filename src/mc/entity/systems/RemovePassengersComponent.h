@@ -11,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4RemovePassengersComponent@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct RemovePassengersComponent& operator=(struct RemovePassengersComponent&&);
 
-    // symbol: ??1RemovePassengersComponent@@QEAA@XZ
     MCAPI ~RemovePassengersComponent();
 
     // NOLINTEND

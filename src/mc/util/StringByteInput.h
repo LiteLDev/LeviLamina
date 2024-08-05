@@ -15,13 +15,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1StringByteInput@@UEAA@XZ
+    // vIndex: 0
     virtual ~StringByteInput();
 
-    // vIndex: 9, symbol: ?readBytesResult@StringByteInput@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@PEAX_K@Z
+    // vIndex: 9
     virtual class Bedrock::Result<void> readBytesResult(void*, uint64);
 
-    // vIndex: 10, symbol: ?numBytesLeft@StringByteInput@@UEBA_KXZ
+    // vIndex: 10
     virtual uint64 numBytesLeft() const;
 
     // NOLINTEND

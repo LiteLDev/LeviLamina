@@ -18,7 +18,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0SnapshotAccessor@MovementDataExtractionUtility@@QEAA@AEBVEntityContext@@@Z
     MCAPI explicit SnapshotAccessor(class EntityContext const&);
 
     // NOLINTEND

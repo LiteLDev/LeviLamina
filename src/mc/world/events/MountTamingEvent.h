@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1MountTamingEvent@@QEAA@XZ
     MCAPI ~MountTamingEvent();
 
     // NOLINTEND

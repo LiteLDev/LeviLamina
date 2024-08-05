@@ -36,26 +36,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __gen_??1DragonFireball@@UEAA@XZ
+    // vIndex: 10
     virtual ~DragonFireball() = default;
 
-    // vIndex: 146, symbol: ?_hurt@DragonFireball@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 146
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 152, symbol: ?getTrailParticle@DragonFireball@@MEAA?AW4ParticleType@@XZ
+    // vIndex: 152
     virtual ::ParticleType getTrailParticle();
 
-    // vIndex: 153, symbol: ?shouldBurn@DragonFireball@@MEAA_NXZ
+    // vIndex: 153
     virtual bool shouldBurn();
 
-    // symbol: ??0DragonFireball@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI DragonFireball(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?SPLASH_RANGE@DragonFireball@@2MA
     MCAPI static float SPLASH_RANGE;
 
     // NOLINTEND

@@ -14,13 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0PlayerMovementSettingsManager@@QEAA@AEBV?$not_null@V?$StackRefResult@VEntityRegistry@@@@@gsl@@@Z
     MCAPI explicit PlayerMovementSettingsManager(gsl::not_null<class StackRefResult<class EntityRegistry>> const&);
 
-    // symbol: ?getPlayerMovementSettings@PlayerMovementSettingsManager@@QEBAAEBUPlayerMovementSettings@@XZ
     MCAPI struct PlayerMovementSettings const& getPlayerMovementSettings() const;
 
-    // symbol: ?setPlayerMovementSettings@PlayerMovementSettingsManager@@QEAAXAEBUPlayerMovementSettings@@@Z
     MCAPI void setPlayerMovementSettings(struct PlayerMovementSettings const&);
 
     // NOLINTEND

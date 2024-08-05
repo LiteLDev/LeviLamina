@@ -11,18 +11,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ContentTierIncompatibleReason@@QEAA@I@Z
     MCAPI explicit ContentTierIncompatibleReason(uint errorValue);
 
-    // symbol:
-    // ?getExpandedI18nErrorList@ContentTierIncompatibleReason@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@IAEBV23@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
     MCAPI static std::string getExpandedI18nErrorList(
         uint                            errorValue,
         std::string const&              i18nContextPrefix,
         std::vector<std::string> const& arguments
     );
 
-    // symbol: ?NoError@ContentTierIncompatibleReason@@2V1@A
     MCAPI static class ContentTierIncompatibleReason NoError;
 
     // NOLINTEND

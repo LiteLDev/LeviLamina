@@ -20,14 +20,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1IVillageManager@@UEAA@XZ
+    // vIndex: 0
     virtual ~IVillageManager();
 
-    // vIndex: 1, symbol: ?fetchClosestVillage@VillageManager@@UEBA?AV?$weak_ptr@VVillage@@@std@@AEBVBlockPos@@HI@Z
+    // vIndex: 1
     virtual std::weak_ptr<class Village>
     fetchClosestVillage(class BlockPos const& position, int, uint searchRadius) const = 0;
 
-    // vIndex: 2, symbol: ?getVillageByID@VillageManager@@UEBA?AV?$weak_ptr@VVillage@@@std@@AEBVUUID@mce@@@Z
+    // vIndex: 2
     virtual std::weak_ptr<class Village> getVillageByID(class mce::UUID const& villageID) const = 0;
 
     // NOLINTEND

@@ -27,42 +27,40 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BarrelBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~BarrelBlock() = default;
 
-    // vIndex: 31, symbol: ?isContainerBlock@BarrelBlock@@UEBA_NXZ
+    // vIndex: 31
     virtual bool isContainerBlock() const;
 
-    // vIndex: 47, symbol: ?isSignalSource@BarrelBlock@@UEBA_NXZ
+    // vIndex: 47
     virtual bool isSignalSource() const;
 
-    // vIndex: 111, symbol: ?hasComparatorSignal@BarrelBlock@@UEBA_NXZ
+    // vIndex: 111
     virtual bool hasComparatorSignal() const;
 
-    // vIndex: 112, symbol: ?getComparatorSignal@BarrelBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
+    // vIndex: 112
     virtual int
     getComparatorSignal(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
         const;
 
-    // vIndex: 129, symbol: ?getVariant@BarrelBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 129
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 133, symbol: ?getFaceFlip@BarrelBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
+    // vIndex: 133
     virtual ::Flip getFaceFlip(uchar face, class Block const& block) const;
 
-    // vIndex: 143, symbol: ?onRemove@BarrelBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 143
     virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 150, symbol: ?isInteractiveBlock@BarrelBlock@@UEBA_NXZ
+    // vIndex: 150
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 152, symbol: ?use@BarrelBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    // symbol: ??0BarrelBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI BarrelBlock(std::string const& nameId, int id, class Material const& material);
 
-    // symbol: ?setOpen@BarrelBlock@@SAX_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static void setOpen(bool isOpen, class BlockSource& region, class BlockPos const& pos);
 
     // NOLINTEND

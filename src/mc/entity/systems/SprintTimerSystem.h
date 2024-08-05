@@ -4,7 +4,6 @@
 
 namespace SprintTimerSystem {
 // NOLINTBEGIN
-// symbol: ?createSystem@SprintTimerSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createSystem();
 // NOLINTEND
 

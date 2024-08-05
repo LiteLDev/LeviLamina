@@ -13,16 +13,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ?getJsonName@TrailDescription@@UEBAPEBDXZ
+    // vIndex: 0
     virtual char const* getJsonName() const;
 
-    // vIndex: 1, symbol: ??1TrailDescription@@UEAA@XZ
+    // vIndex: 1
     virtual ~TrailDescription();
 
-    // vIndex: 2, symbol: ?deserializeData@TrailDescription@@UEAAXUDeserializeDataParams@@@Z
+    // vIndex: 2
     virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
-    // symbol: ??0TrailDescription@@QEAA@XZ
     MCAPI TrailDescription();
 
     // NOLINTEND

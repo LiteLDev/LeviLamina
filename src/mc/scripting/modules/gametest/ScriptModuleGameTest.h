@@ -51,8 +51,6 @@ namespace gametest { struct GameTestError; }
 
 namespace ScriptModuleGameTest {
 // NOLINTBEGIN
-// symbol:
-// ?bindLookDurationEnumV1@ScriptModuleGameTest@@YA?AV?$EnumBindingBuilder@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4LookDuration@sim@@@Scripting@@XZ
 MCAPI class Scripting::EnumBindingBuilder<std::string, ::sim::LookDuration> bindLookDurationEnumV1();
 // NOLINTEND
 

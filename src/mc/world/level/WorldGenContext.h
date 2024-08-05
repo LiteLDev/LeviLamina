@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1WorldGenContext@@QEAA@XZ
     MCAPI ~WorldGenContext();
 
     // NOLINTEND

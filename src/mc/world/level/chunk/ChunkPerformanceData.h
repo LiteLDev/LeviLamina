@@ -26,10 +26,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??0AtomicMemoryAccumulator@ChunkPerformanceData@@QEAA@XZ
         MCAPI AtomicMemoryAccumulator();
 
-        // symbol: ?getMemoryAverage@AtomicMemoryAccumulator@ChunkPerformanceData@@QEBA_KXZ
         MCAPI uint64 getMemoryAverage() const;
 
         // NOLINTEND
@@ -42,23 +40,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ChunkPerformanceData@@UEAA@XZ
+    // vIndex: 0
     virtual ~ChunkPerformanceData() = default;
 
-    // symbol: ??0ChunkPerformanceData@@QEAA@XZ
     MCAPI ChunkPerformanceData();
 
-    // symbol: ?registerForLevelChunkEvents@ChunkPerformanceData@@QEAAXAEAVILevelChunkEventManagerConnector@@@Z
     MCAPI void registerForLevelChunkEvents(class ILevelChunkEventManagerConnector&);
 
-    // symbol: ?resetAll@ChunkPerformanceData@@QEAAXXZ
     MCAPI void resetAll();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_onChunkLoaded@ChunkPerformanceData@@AEAAXAEAVChunkSource@@AEAVLevelChunk@@H@Z
     MCAPI void _onChunkLoaded(class ChunkSource&, class LevelChunk&, int);
 
     // NOLINTEND

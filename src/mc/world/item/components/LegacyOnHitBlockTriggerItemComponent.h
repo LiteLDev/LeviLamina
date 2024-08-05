@@ -19,21 +19,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LegacyOnHitBlockTriggerItemComponent@@UEAA@XZ
+    // vIndex: 0
     virtual ~LegacyOnHitBlockTriggerItemComponent() = default;
 
-    // vIndex: 9, symbol: ?_initializeComponent@LegacyOnHitBlockTriggerItemComponent@@UEAAXXZ
+    // vIndex: 9
     virtual void _initializeComponent();
 
-    // symbol: ?getIdentifier@LegacyOnHitBlockTriggerItemComponent@@SAAEBVHashedString@@XZ
     MCAPI static class HashedString const& getIdentifier();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_onHitBlock@LegacyOnHitBlockTriggerItemComponent@@AEAAXAEAVItemStack@@AEBVBlock@@AEBVBlockPos@@AEAVMob@@@Z
     MCAPI void _onHitBlock(class ItemStack&, class Block const&, class BlockPos const&, class Mob&);
 
     // NOLINTEND

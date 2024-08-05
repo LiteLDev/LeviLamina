@@ -18,16 +18,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1RamGoalItemDropperInterface@RamAttackGoalUtils@@UEAA@XZ
+    // vIndex: 0
     virtual ~RamGoalItemDropperInterface() = default;
 
-    // vIndex: 1, symbol: ?tryDropHorn@RamGoalItemDropperImpl@RamAttackGoalUtils@@UEBAXVVec3@@@Z
+    // vIndex: 1
     virtual void tryDropHorn(class Vec3) const = 0;
 
-    // vIndex: 2, symbol: ?checkForHornDropOnCollision@RamGoalItemDropperImpl@RamAttackGoalUtils@@UEAAXVVec3@@@Z
+    // vIndex: 2
     virtual void checkForHornDropOnCollision(class Vec3) = 0;
 
-    // vIndex: 3, symbol: ?dontDropHorn@RamGoalItemDropperImpl@RamAttackGoalUtils@@UEAAXXZ
+    // vIndex: 3
     virtual void dontDropHorn() = 0;
 
     // NOLINTEND

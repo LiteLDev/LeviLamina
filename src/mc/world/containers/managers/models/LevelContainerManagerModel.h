@@ -17,35 +17,32 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1LevelContainerManagerModel@@UEAA@XZ
+    // vIndex: 0
     virtual ~LevelContainerManagerModel();
 
-    // vIndex: 6, symbol:
-    // ?getItemCopies@LevelContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+    // vIndex: 6
     virtual std::vector<class ItemStack> getItemCopies() const;
 
-    // vIndex: 7, symbol: ?setSlot@LevelContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
+    // vIndex: 7
     virtual void setSlot(int slot, class ItemStack const& item, bool);
 
-    // vIndex: 8, symbol: ?getSlot@LevelContainerManagerModel@@UEBAAEBVItemStack@@H@Z
+    // vIndex: 8
     virtual class ItemStack const& getSlot(int slot) const;
 
-    // vIndex: 9, symbol: ?setData@LevelContainerManagerModel@@UEAAXHH@Z
+    // vIndex: 9
     virtual void setData(int id, int value);
 
-    // vIndex: 10, symbol: ?broadcastChanges@LevelContainerManagerModel@@UEAAXXZ
+    // vIndex: 10
     virtual void broadcastChanges();
 
-    // vIndex: 16, symbol: ?isValid@LevelContainerManagerModel@@UEAA_NM@Z
+    // vIndex: 16
     virtual bool isValid(float pickRange);
 
-    // vIndex: 17, symbol: ?_postInit@LevelContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+    // vIndex: 17
     virtual class ContainerScreenContext _postInit();
 
-    // symbol: ??0LevelContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@UActorUniqueID@@@Z
     MCAPI LevelContainerManagerModel(::ContainerID containerId, class Player& player, struct ActorUniqueID uniqueID);
 
-    // symbol: ??0LevelContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@W4BlockActorType@@@Z
     MCAPI LevelContainerManagerModel(
         ::ContainerID         containerId,
         class Player&         player,
@@ -53,20 +50,16 @@ public:
         ::BlockActorType      blockEntityType
     );
 
-    // symbol: ?getBlockPos@LevelContainerManagerModel@@QEBAAEBVBlockPos@@XZ
     MCAPI class BlockPos const& getBlockPos() const;
 
-    // symbol: ?getEntityUniqueID@LevelContainerManagerModel@@QEBA?AUActorUniqueID@@XZ
     MCAPI struct ActorUniqueID getEntityUniqueID() const;
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?_getBlockEntity@LevelContainerManagerModel@@IEAAPEAVBlockActor@@XZ
     MCAPI class BlockActor* _getBlockEntity();
 
-    // symbol: ?_getRawContainer@LevelContainerManagerModel@@IEAAPEAVContainer@@XZ
     MCAPI class Container* _getRawContainer();
 
     // NOLINTEND

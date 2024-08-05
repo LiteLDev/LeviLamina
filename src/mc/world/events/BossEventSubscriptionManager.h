@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1BossEventSubscriptionManager@@UEAA@XZ
     MCVAPI ~BossEventSubscriptionManager();
 
     // NOLINTEND

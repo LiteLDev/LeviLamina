@@ -7,7 +7,6 @@
 
 namespace ComponentItemDataValidation {
 // NOLINTBEGIN
-// symbol: ?validate@ComponentItemDataValidation@@YAXAEAV?$LoadResult@UComponentItemDataAll_Latest@@@Puv@@@Z
 MCAPI void validate(class Puv::LoadResult<struct ComponentItemDataAll_Latest>&);
 // NOLINTEND
 

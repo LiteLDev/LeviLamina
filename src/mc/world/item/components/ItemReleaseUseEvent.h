@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ItemReleaseUseEvent@@QEAA@XZ
     MCAPI ~ItemReleaseUseEvent();
 
     // NOLINTEND

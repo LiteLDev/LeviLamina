@@ -13,8 +13,6 @@ namespace Json { class Value; }
 
 namespace JsonPackUtils {
 // NOLINTBEGIN
-// symbol:
-// ?readIntAndReport@JsonPackUtils@@YAHAEBVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@5@AEAVPackReport@@_NH@Z
 MCAPI int readIntAndReport(
     class Json::Value const&  parent,
     std::string const&        element,
@@ -24,13 +22,9 @@ MCAPI int readIntAndReport(
     int                       defaultVal
 );
 
-// symbol:
-// ?readRequiredValue@JsonPackUtils@@YA?AU?$pair@$$CBVValue@Json@@W4PackParseErrorType@@@std@@AEBVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4ValueType@5@@Z
 MCAPI std::pair<class Json::Value const, ::PackParseErrorType>
       readRequiredValue(class Json::Value const& value, std::string const& propertyName, ::Json::ValueType type);
 
-// symbol:
-// ?readStringAndReport@JsonPackUtils@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVValue@Json@@AEBV23@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@AEAVPackReport@@_N@Z
 MCAPI std::string readStringAndReport(
     class Json::Value const&  parent,
     std::string const&        element,
@@ -39,8 +33,6 @@ MCAPI std::string readStringAndReport(
     bool                      optional
 );
 
-// symbol:
-// ?readStringArrayAndReport@JsonPackUtils@@YA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEAV23@AEAVPackReport@@_N@Z
 MCAPI std::vector<std::string> readStringArrayAndReport(
     class Json::Value const&  parent,
     std::string const&        element,
@@ -49,8 +41,6 @@ MCAPI std::vector<std::string> readStringArrayAndReport(
     bool                      optional
 );
 
-// symbol:
-// ?readValueAndReportErrors@JsonPackUtils@@YA?AU?$pair@$$CBVValue@Json@@W4PackParseErrorType@@@std@@AEBVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4ValueType@5@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@AEAVPackReport@@_N@Z
 MCAPI std::pair<class Json::Value const, ::PackParseErrorType> readValueAndReportErrors(
     class Json::Value const&  parent,
     std::string const&        element,
@@ -60,8 +50,6 @@ MCAPI std::pair<class Json::Value const, ::PackParseErrorType> readValueAndRepor
     bool                      optional
 );
 
-// symbol:
-// ?stringizePath@JsonPackUtils@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
 MCAPI std::string stringizePath(std::vector<std::string> const& pathElements);
 // NOLINTEND
 

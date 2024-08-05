@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1PlayerOpenContainerEvent@@QEAA@XZ
     MCAPI ~PlayerOpenContainerEvent();
 
     // NOLINTEND

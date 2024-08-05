@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1PlatformBuildInfo@Bedrock@@QEAA@XZ
     MCAPI ~PlatformBuildInfo();
 
     // NOLINTEND

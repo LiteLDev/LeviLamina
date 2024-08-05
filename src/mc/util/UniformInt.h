@@ -18,7 +18,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?generateNext@UniformInt@ValueProviders@@QEBAHAEAVRandom@@@Z
     MCAPI int generateNext(class Random& random) const;
 
     // NOLINTEND

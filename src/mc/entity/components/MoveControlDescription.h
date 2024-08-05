@@ -14,10 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 1, symbol: __gen_??1MoveControlDescription@@UEAA@XZ
+    // vIndex: 1
     virtual ~MoveControlDescription() = default;
 
-    // vIndex: 2, symbol: ?deserializeData@MoveControlDescription@@UEAAXUDeserializeDataParams@@@Z
+    // vIndex: 2
     virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
     // NOLINTEND

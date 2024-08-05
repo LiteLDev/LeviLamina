@@ -15,27 +15,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SubClientLoginPacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~SubClientLoginPacket() = default;
 
-    // vIndex: 1, symbol: ?getId@SubClientLoginPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol:
-    // ?getName@SubClientLoginPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@SubClientLoginPacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 6, symbol: ?disallowBatching@SubClientLoginPacket@@UEBA_NXZ
+    // vIndex: 6
     virtual bool disallowBatching() const;
 
-    // vIndex: 8, symbol:
-    // ?_read@SubClientLoginPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0SubClientLoginPacket@@QEAA@XZ
     MCAPI SubClientLoginPacket();
 
     // NOLINTEND

@@ -4,7 +4,6 @@
 
 namespace LegacyVanillaGoalDefinition {
 // NOLINTBEGIN
-// symbol: ?init@LegacyVanillaGoalDefinition@@YAXXZ
 MCAPI void init();
 // NOLINTEND
 

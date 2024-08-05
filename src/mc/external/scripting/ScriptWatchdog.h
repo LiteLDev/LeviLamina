@@ -18,8 +18,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0ScriptWatchdog@@QEAA@AEAVIWatchdog@Scripting@@AEAVServerLevel@@PEAVScriptPluginManager@@VWeakLifetimeScope@2@@Z
     MCAPI ScriptWatchdog(
         class Scripting::IWatchdog&,
         class ServerLevel&,
@@ -27,7 +25,6 @@ public:
         class Scripting::WeakLifetimeScope
     );
 
-    // symbol: ?disableTimingWarnings@ScriptWatchdog@@QEAAXUContextId@Scripting@@_N@Z
     MCAPI void disableTimingWarnings(struct Scripting::ContextId, bool);
 
     // NOLINTEND

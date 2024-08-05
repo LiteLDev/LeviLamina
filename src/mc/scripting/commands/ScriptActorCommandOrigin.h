@@ -23,18 +23,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptActorCommandOrigin@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptActorCommandOrigin();
 
-    // vIndex: 8, symbol: ?getEntity@ScriptActorCommandOrigin@@UEBAPEAVActor@@XZ
+    // vIndex: 8
     virtual class Actor* getEntity() const;
 
-    // vIndex: 10, symbol:
-    // ?clone@ScriptActorCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
+    // vIndex: 10
     virtual std::unique_ptr<class CommandOrigin> clone() const;
 
-    // symbol:
-    // ??0ScriptActorCommandOrigin@@QEAA@AEBVActor@@V?$function@$$A6AXH$$QEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@std@@V?$optional@W4CommandPermissionLevel@@@3@@Z
     MCAPI
     ScriptActorCommandOrigin(class Actor const&, std::function<void(int, std::string&&)>, std::optional<::CommandPermissionLevel>);
 

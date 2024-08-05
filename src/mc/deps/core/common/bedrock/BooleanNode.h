@@ -18,7 +18,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ??0BooleanNode@JSONObject@Bedrock@@AEAA@PEAVMemoryPage@12@_N@Z
     MCAPI BooleanNode(class Bedrock::JSONObject::MemoryPage*, bool value);
 
     // NOLINTEND

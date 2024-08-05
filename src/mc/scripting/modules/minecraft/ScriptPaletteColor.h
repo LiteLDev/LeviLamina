@@ -17,8 +17,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?bind@ScriptPaletteColor@ScriptModuleMinecraft@@SA?AV?$EnumBindingBuilder@W4PaletteColor@@W41@@Scripting@@XZ
     MCAPI static class Scripting::EnumBindingBuilder<::PaletteColor, ::PaletteColor> bind();
 
     // NOLINTEND

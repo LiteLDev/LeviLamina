@@ -21,16 +21,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0BuildIntent@sim@@QEAA@XZ
     MCAPI BuildIntent();
 
-    // symbol: ?execute@BuildIntent@sim@@QEAA?AW4ExecutionResult@2@AEAVSimulatedPlayer@@AEAVBlockSource@@@Z
     MCAPI ::sim::ExecutionResult execute(class SimulatedPlayer&, class BlockSource&);
 
-    // symbol: ?finalize@BuildIntent@sim@@QEAAXAEAVSimulatedPlayer@@@Z
     MCAPI void finalize(class SimulatedPlayer&);
 
-    // symbol: ?reset@BuildIntent@sim@@QEAAXXZ
     MCAPI void reset();
 
     // NOLINTEND

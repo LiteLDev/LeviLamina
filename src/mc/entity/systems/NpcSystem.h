@@ -19,22 +19,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1NpcSystem@@UEAA@XZ
+    // vIndex: 0
     virtual ~NpcSystem() = default;
 
-    // vIndex: 1, symbol: ?registerEvents@ISystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
+    // vIndex: 1
     virtual void registerEvents(entt::dispatcher&);
 
-    // vIndex: 2, symbol: ?tick@NpcSystem@@UEAAXAEAVEntityRegistry@@@Z
+    // vIndex: 2
     virtual void tick(class EntityRegistry& registry);
 
-    // vIndex: 3, symbol: ?singleTick@ITickingSystem@@UEAAXAEAVEntityRegistry@@AEAVEntityContext@@@Z
+    // vIndex: 3
     virtual void singleTick(class EntityRegistry& registry, class EntityContext& entity);
 
-    // vIndex: 4, symbol: ?singleTick@ITickingSystem@@UEAAXAEAVEntityRegistry@@AEAVStrictEntityContext@@@Z
+    // vIndex: 4
     virtual void singleTick(class EntityRegistry& registry, class StrictEntityContext& entity);
 
-    // symbol: ?tickCountdown@NpcSystem@@SAXAEAVEntityContext@@AEAULeaveMenuCountdown@NpcComponents@@@Z
     MCAPI static void tickCountdown(class EntityContext& entity, struct NpcComponents::LeaveMenuCountdown&);
 
     // NOLINTEND

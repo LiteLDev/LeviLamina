@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1PathPart@Core@@QEAA@XZ
     MCAPI ~PathPart();
 
     // NOLINTEND

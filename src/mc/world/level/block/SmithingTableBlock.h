@@ -27,20 +27,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SmithingTableBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~SmithingTableBlock() = default;
 
-    // vIndex: 32, symbol: ?isCraftingBlock@SmithingTableBlock@@UEBA_NXZ
+    // vIndex: 32
     virtual bool isCraftingBlock() const;
 
-    // vIndex: 150, symbol: ?isInteractiveBlock@SmithingTableBlock@@UEBA_NXZ
+    // vIndex: 150
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 152, symbol: ?use@SmithingTableBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    // symbol:
-    // ??0SmithingTableBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI SmithingTableBlock(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND

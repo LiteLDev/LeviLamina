@@ -11,15 +11,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createFramewiseActionOrStopSystem@FramewiseActionOrStopSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createFramewiseActionOrStopSystem();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?doFramewiseActionOrStopSystem@FramewiseActionOrStopSystem@@CAXAEBULocalMoveVelocityComponent@@AEAUActionOrStopComponent@@@Z
     MCAPI static void
     doFramewiseActionOrStopSystem(struct LocalMoveVelocityComponent const&, struct ActionOrStopComponent&);
 

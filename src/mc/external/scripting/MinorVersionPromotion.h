@@ -13,10 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0MinorVersionPromotion@Scripting@@QEAA@$$QEAU01@@Z
     MCAPI MinorVersionPromotion(struct Scripting::MinorVersionPromotion&&);
 
-    // symbol: ??1MinorVersionPromotion@Scripting@@QEAA@XZ
     MCAPI ~MinorVersionPromotion();
 
     // NOLINTEND

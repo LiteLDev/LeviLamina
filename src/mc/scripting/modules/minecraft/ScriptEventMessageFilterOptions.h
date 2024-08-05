@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ScriptEventMessageFilterOptions@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptEventMessageFilterOptions();
 
     // NOLINTEND

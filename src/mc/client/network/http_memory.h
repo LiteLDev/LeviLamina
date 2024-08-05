@@ -13,10 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?mem_alloc@http_memory@httpclient@xbox@@SAPEAX_K@Z
     MCAPI static void* mem_alloc(uint64);
 
-    // symbol: ?mem_free@http_memory@httpclient@xbox@@SAXPEAX@Z
     MCAPI static void mem_free(void*);
 
     // NOLINTEND

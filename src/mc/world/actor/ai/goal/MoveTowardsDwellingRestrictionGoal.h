@@ -15,17 +15,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MoveTowardsDwellingRestrictionGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~MoveTowardsDwellingRestrictionGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@MoveTowardsDwellingRestrictionGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@MoveTowardsDwellingRestrictionGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0MoveTowardsDwellingRestrictionGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit MoveTowardsDwellingRestrictionGoal(class Mob& mob);
 
     // NOLINTEND

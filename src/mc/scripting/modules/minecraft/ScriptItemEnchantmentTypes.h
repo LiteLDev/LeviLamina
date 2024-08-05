@@ -22,29 +22,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptItemEnchantmentTypes@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ScriptItemEnchantmentTypes();
 
-    // symbol:
-    // ?get@ScriptItemEnchantmentTypes@ScriptModuleMinecraft@@QEAA?AV?$optional@V?$StrongTypedObjectHandle@UScriptItemEnchantmentType@ScriptModuleMinecraft@@@Scripting@@@std@@AEAVWeakLifetimeScope@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z
     MCAPI
     std::optional<class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptItemEnchantmentType>>
     get(class Scripting::WeakLifetimeScope&, std::string const&);
 
-    // symbol:
-    // ?bind@ScriptItemEnchantmentTypes@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptItemEnchantmentTypes@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemEnchantmentTypes> bind();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_generateAllEnchantmentTypeHandles@ScriptItemEnchantmentTypes@ScriptModuleMinecraft@@AEAAXAEAVWeakLifetimeScope@Scripting@@@Z
     MCAPI void _generateAllEnchantmentTypeHandles(class Scripting::WeakLifetimeScope&);
 
-    // symbol:
-    // ?_generateRemainingEnchantmentTypeHandles@ScriptItemEnchantmentTypes@ScriptModuleMinecraft@@AEAAXAEAVWeakLifetimeScope@Scripting@@@Z
     MCAPI void _generateRemainingEnchantmentTypeHandles(class Scripting::WeakLifetimeScope&);
 
     // NOLINTEND

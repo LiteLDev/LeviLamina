@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1FeatureRootParseContext@FeatureLoading@@QEAA@XZ
     MCAPI ~FeatureRootParseContext();
 
     // NOLINTEND

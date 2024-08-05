@@ -20,17 +20,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SetBannerDetailsFunction@@UEAA@XZ
+    // vIndex: 0
     virtual ~SetBannerDetailsFunction() = default;
 
-    // vIndex: 1, symbol: ?apply@SetBannerDetailsFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
+    // vIndex: 1
     virtual void apply(class ItemStack& item, class Random& random, class LootTableContext& context);
 
-    // vIndex: 3, symbol: ?apply@SetBannerDetailsFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
+    // vIndex: 3
     virtual void apply(class ItemInstance& item, class Random& random, class LootTableContext& context);
 
-    // symbol:
-    // ?deserialize@SetBannerDetailsFunction@@SA?AV?$unique_ptr@VLootItemFunction@@U?$default_delete@VLootItemFunction@@@std@@@std@@VValue@Json@@AEAV?$vector@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@V?$allocator@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@@2@@3@@Z
     MCAPI static std::unique_ptr<class LootItemFunction>
     deserialize(class Json::Value object, std::vector<std::unique_ptr<class LootItemCondition>>& predicates);
 
@@ -38,11 +36,8 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_apply@SetBannerDetailsFunction@@AEBAXAEAVItemStackBase@@AEAVRandom@@AEAVLootTableContext@@@Z
     MCAPI void _apply(class ItemStackBase& item, class Random& random, class LootTableContext& context) const;
 
-    // symbol:
-    // ?_parseBannerPattern@SetBannerDetailsFunction@@CAXAEAV?$vector@U?$pair@EW4ItemColor@@@std@@V?$allocator@U?$pair@EW4ItemColor@@@std@@@2@@std@@AEBVValue@Json@@@Z
     MCAPI static void
     _parseBannerPattern(std::vector<std::pair<uchar, ::ItemColor>>& patternVec, class Json::Value const& object);
 

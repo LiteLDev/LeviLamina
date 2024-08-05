@@ -15,17 +15,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ItemStackRequestActionCreate@@UEAA@XZ
+    // vIndex: 0
     virtual ~ItemStackRequestActionCreate() = default;
 
-    // vIndex: 4, symbol: ?_write@ItemStackRequestActionCreate@@MEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void _write(class BinaryStream& stream) const;
 
-    // vIndex: 5, symbol:
-    // ?_read@ItemStackRequestActionCreate@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 5
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ?getResultsIndex@ItemStackRequestActionCreate@@QEBAEXZ
     MCAPI uchar getResultsIndex() const;
 
     // NOLINTEND

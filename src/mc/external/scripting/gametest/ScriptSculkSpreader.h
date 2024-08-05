@@ -22,30 +22,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?addCursorsWithOffset@ScriptSculkSpreader@ScriptModuleGameTest@@QEAAXAEBVVec3@@H@Z
     MCAPI void addCursorsWithOffset(class Vec3 const& offset, int charge);
 
-    // symbol: ?getCursorPosition@ScriptSculkSpreader@ScriptModuleGameTest@@QEBA?AV?$Result@VVec3@@$$V@Scripting@@H@Z
     MCAPI class Scripting::Result<class Vec3> getCursorPosition(int index) const;
 
-    // symbol: ?getMaxCharge@ScriptSculkSpreader@ScriptModuleGameTest@@QEBA?AV?$Result@H$$V@Scripting@@XZ
     MCAPI class Scripting::Result<int> getMaxCharge() const;
 
-    // symbol: ?getNumberOfCursors@ScriptSculkSpreader@ScriptModuleGameTest@@QEBA?AV?$Result@H$$V@Scripting@@XZ
     MCAPI class Scripting::Result<int> getNumberOfCursors() const;
 
-    // symbol: ?getTotalCharge@ScriptSculkSpreader@ScriptModuleGameTest@@QEBA?AV?$Result@H$$V@Scripting@@XZ
     MCAPI class Scripting::Result<int> getTotalCharge() const;
 
-    // symbol: ??4ScriptSculkSpreader@ScriptModuleGameTest@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleGameTest::ScriptSculkSpreader&
     operator=(class ScriptModuleGameTest::ScriptSculkSpreader&& rhs);
 
-    // symbol: ??1ScriptSculkSpreader@ScriptModuleGameTest@@QEAA@XZ
     MCAPI ~ScriptSculkSpreader();
 
-    // symbol:
-    // ?bind@ScriptSculkSpreader@ScriptModuleGameTest@@SA?AV?$ClassBindingBuilder@VScriptSculkSpreader@ScriptModuleGameTest@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleGameTest::ScriptSculkSpreader> bind();
 
     // NOLINTEND

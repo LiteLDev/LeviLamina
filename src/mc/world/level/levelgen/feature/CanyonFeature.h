@@ -16,11 +16,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1CanyonFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~CanyonFeature();
 
-    // vIndex: 1, symbol:
-    // ?carve@CanyonFeature@@MEBA_NAEAVBlockVolume@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVVec3@@4HHHHHHMMV?$span@$$CBM$0?0@gsl@@AEBUWorldGenContext@@@Z
+    // vIndex: 1
     virtual bool carve(
         class BlockVolume&            blocks,
         class BiomeSource const&      localBiomeSource,
@@ -40,8 +39,7 @@ public:
         struct WorldGenContext const& context
     ) const;
 
-    // vIndex: 2, symbol:
-    // ?addFeature@CanyonFeature@@MEAAXAEAVBlockVolume@@AEBVBiomeSource@@AEBUCanyonConfiguration@CanyonFeatureUtils@@AEBVChunkPos@@AEAVRandom@@HHAEBUWorldGenContext@@@Z
+    // vIndex: 2
     virtual void addFeature(
         class BlockVolume&       blocks,
         class BiomeSource const& localBiomeSource,
@@ -53,11 +51,8 @@ public:
         struct WorldGenContext const& context
     );
 
-    // symbol: ??0CanyonFeature@@QEAA@F@Z
     MCAPI explicit CanyonFeature(short seaLevel);
 
-    // symbol:
-    // ?apply@CanyonFeature@@QEAAXAEAVBlockVolume@@AEBVChunkPos@@AEBVBiomeSource@@AEBUCanyonConfiguration@CanyonFeatureUtils@@AEAVRandom@@IAEBUWorldGenContext@@@Z
     MCAPI void apply(
         class BlockVolume&       blocks,
         class ChunkPos const&    pos,
@@ -68,15 +63,12 @@ public:
         struct WorldGenContext const& context
     );
 
-    // symbol: ?isDiggable@CanyonFeature@@SA_NAEBVBlock@@0@Z
     MCAPI static bool isDiggable(class Block const& block, class Block const& above);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol:
-    // ?addTunnel@CanyonFeature@@IEBAXAEAVBlockVolume@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVVec3@@4MMMHHMAEBUWorldGenContext@@@Z
     MCAPI void addTunnel(
         class BlockVolume&            blocks,
         class BiomeSource const&      localBiomeSource,

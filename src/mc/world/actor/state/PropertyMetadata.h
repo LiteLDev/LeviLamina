@@ -15,7 +15,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1PropertyMetadata@@QEAA@XZ
     MCAPI ~PropertyMetadata();
 
     // NOLINTEND

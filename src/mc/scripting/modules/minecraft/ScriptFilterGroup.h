@@ -21,8 +21,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?bind@ScriptFilterGroup@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VActorFilterGroup@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ActorFilterGroup> bind();
 
     // NOLINTEND

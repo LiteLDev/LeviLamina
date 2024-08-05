@@ -27,11 +27,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptItemCustomComponentSignalCollection@ScriptModuleMinecraft@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptItemCustomComponentSignalCollection();
 
-    // vIndex: 12, symbol:
-    // ?subscribeToItemForComponent@ScriptItemCustomComponentSignalCollection@ScriptModuleMinecraft@@UEAAXAEAVComponentItem@@AEBVHashedString@@AEBUIScriptItemCustomComponentClosures@2@AEAVWeakLifetimeScope@Scripting@@H@Z
+    // vIndex: 12
     virtual void subscribeToItemForComponent(
         class ComponentItem&,
         class HashedString const&,
@@ -40,14 +39,11 @@ public:
         int
     );
 
-    // vIndex: 13, symbol: ?clear@ScriptItemCustomComponentSignalCollection@ScriptModuleMinecraft@@UEAAXXZ
+    // vIndex: 13
     virtual void clear();
 
-    // symbol: ??0ScriptItemCustomComponentSignalCollection@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ScriptItemCustomComponentSignalCollection();
 
-    // symbol:
-    // ?generateOrderDocumentationForVersion@ScriptItemCustomComponentSignalCollection@ScriptModuleMinecraft@@SAXAEBUModuleDescriptor@Scripting@@AEAVValue@Json@@@Z
     MCAPI static void
     generateOrderDocumentationForVersion(struct Scripting::ModuleDescriptor const&, class Json::Value&);
 

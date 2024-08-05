@@ -11,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0RopeParams@@QEAA@AEBVVec3@@0M@Z
     MCAPI RopeParams(class Vec3 const& startPin, class Vec3 const& endPin, float length);
 
-    // symbol: ?leadInit@RopeParams@@QEAAXXZ
     MCAPI void leadInit();
 
     // NOLINTEND

@@ -14,16 +14,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1CompactionListenerEnv@@UEAA@XZ
+    // vIndex: 0
     virtual ~CompactionListenerEnv() = default;
 
-    // vIndex: 14, symbol: ?Schedule@CompactionListenerEnv@@UEAAXP6AXPEAX@Z0@Z
+    // vIndex: 14
     virtual void Schedule(void (*function)(void*), void* arg);
 
-    // symbol: ??0CompactionListenerEnv@@QEAA@PEAVEnv@leveldb@@@Z
     MCAPI explicit CompactionListenerEnv(leveldb::Env* env);
 
-    // symbol: ?setCompactionCallback@CompactionListenerEnv@@QEAAXV?$function@$$A6AXW4CompactionStatus@@@Z@std@@@Z
     MCAPI void setCompactionCallback(std::function<void(::CompactionStatus)> callback);
 
     // NOLINTEND

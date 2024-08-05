@@ -19,16 +19,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ThrownPotionEffectSubcomponent@@UEAA@XZ
+    // vIndex: 0
     virtual ~ThrownPotionEffectSubcomponent() = default;
 
-    // vIndex: 2, symbol: ?writetoJSON@ThrownPotionEffectSubcomponent@@UEBAXAEAVValue@Json@@@Z
+    // vIndex: 2
     virtual void writetoJSON(class Json::Value& component) const;
 
-    // vIndex: 3, symbol: ?doOnHitEffect@ThrownPotionEffectSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
+    // vIndex: 3
     virtual void doOnHitEffect(class Actor& owner, class ProjectileComponent& component);
 
-    // vIndex: 4, symbol: ?getName@ThrownPotionEffectSubcomponent@@UEAAPEBDXZ
+    // vIndex: 4
     virtual char const* getName();
 
     // NOLINTEND

@@ -27,13 +27,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SnowBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~SnowBlock() = default;
 
-    // vIndex: 56, symbol: ?waterSpreadCausesSpawn@SnowBlock@@UEBA_NXZ
+    // vIndex: 56
     virtual bool waterSpreadCausesSpawn() const;
 
-    // symbol: ??0SnowBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI SnowBlock(std::string const& nameId, int id);
 
     // NOLINTEND

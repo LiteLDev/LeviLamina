@@ -14,10 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DefaultMobSpawner@@UEAA@XZ
+    // vIndex: 0
     virtual ~DefaultMobSpawner() = default;
 
-    // vIndex: 4, symbol: ?getPos@DefaultMobSpawner@@UEAAAEBVBlockPos@@XZ
+    // vIndex: 4
     virtual class BlockPos const& getPos();
 
     // NOLINTEND

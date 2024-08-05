@@ -24,19 +24,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ?doValidate@IntRangeConstraint@Puv@@EEBAXAEBVmeta_any@entt@@AEAVSerializerContext@cereal@@@Z
+    // vIndex: 0
     virtual void doValidate(entt::meta_any const&, class cereal::SerializerContext&) const;
 
-    // vIndex: 1, symbol: ??1IntRangeConstraint@Puv@@UEAA@XZ
+    // vIndex: 1
     virtual ~IntRangeConstraint();
 
-    // vIndex: 2, symbol: ?description@IntRangeConstraint@Puv@@UEBA?AUConstraintDescription@internal@cereal@@XZ
+    // vIndex: 2
     virtual struct cereal::internal::ConstraintDescription description() const;
 
-    // symbol: ?constraintMax@IntRangeConstraint@Puv@@QEAAAEAV12@V?$BasicNumericConstraint@N@cereal@@@Z
     MCAPI class Puv::IntRangeConstraint& constraintMax(class cereal::BasicNumericConstraint<double>);
 
-    // symbol: ?constraintMin@IntRangeConstraint@Puv@@QEAAAEAV12@V?$BasicNumericConstraint@N@cereal@@@Z
     MCAPI class Puv::IntRangeConstraint& constraintMin(class cereal::BasicNumericConstraint<double>);
 
     // NOLINTEND

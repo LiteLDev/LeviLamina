@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createDestroyWaterlilySystem@InsideWaterlilyBlockSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createDestroyWaterlilySystem();
 
     // NOLINTEND

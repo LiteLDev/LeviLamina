@@ -11,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createPassengerSystem@SetActorLinkPacketSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createPassengerSystem();
 
-    // symbol: ?createVehicleSystem@SetActorLinkPacketSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createVehicleSystem();
 
     // NOLINTEND

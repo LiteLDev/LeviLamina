@@ -14,11 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1EDUWorldsScreenCapabilities@@UEAA@XZ
+    // vIndex: 0
     virtual ~EDUWorldsScreenCapabilities() = default;
 
-    // vIndex: 1, symbol:
-    // ?isOfType@?$TypedScreenCapabilities@UEDUWorldsScreenCapabilities@@@@UEBA_NV?$typeid_t@VIScreenCapabilities@@@Bedrock@@@Z
+    // vIndex: 1
     virtual bool isOfType(class Bedrock::typeid_t<class IScreenCapabilities> type) const;
 
     // NOLINTEND

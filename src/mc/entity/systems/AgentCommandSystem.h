@@ -19,31 +19,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1AgentCommandSystem@@UEAA@XZ
+    // vIndex: 0
     virtual ~AgentCommandSystem() = default;
 
-    // vIndex: 1, symbol: ?registerEvents@ISystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
+    // vIndex: 1
     virtual void registerEvents(entt::dispatcher&);
 
-    // vIndex: 2, symbol: ?tick@AgentCommandSystem@@UEAAXAEAVEntityRegistry@@@Z
+    // vIndex: 2
     virtual void tick(class EntityRegistry& registry);
 
-    // vIndex: 3, symbol: ?singleTick@ITickingSystem@@UEAAXAEAVEntityRegistry@@AEAVEntityContext@@@Z
+    // vIndex: 3
     virtual void singleTick(class EntityRegistry& registry, class EntityContext& entity);
 
-    // vIndex: 4, symbol: ?singleTick@ITickingSystem@@UEAAXAEAVEntityRegistry@@AEAVStrictEntityContext@@@Z
+    // vIndex: 4
     virtual void singleTick(class EntityRegistry& registry, class StrictEntityContext& entity);
 
-    // symbol: ?cleanUp@AgentCommandSystem@@SAXAEAVEntityContext@@M@Z
     MCAPI static void cleanUp(class EntityContext& agent, float);
 
-    // symbol: ?initialize@AgentCommandSystem@@SAXAEAVEntityContext@@@Z
     MCAPI static void initialize(class EntityContext& entity);
 
-    // symbol: ?tickAgentCooldown@AgentCommandSystem@@SAXAEAVEntityContext@@AEAVCommandCooldown@AgentComponents@@@Z
     MCAPI static void tickAgentCooldown(class EntityContext& entity, class AgentComponents::CommandCooldown&);
 
-    // symbol: ?tickLegacy@AgentCommandSystem@@SAXAEAVEntityContext@@AEAVAgentCommandComponent@@@Z
     MCAPI static void tickLegacy(class EntityContext& entity, class AgentCommandComponent&);
 
     // NOLINTEND

@@ -14,23 +14,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ?updateDecayDelay@SculkVeinBlockBehavior@@UEBAHH@Z
+    // vIndex: 0
     virtual int updateDecayDelay(int) const;
 
-    // vIndex: 1, symbol: ?updateFacingData@SculkVeinBlockBehavior@@UEBAHHAEBVBlock@@@Z
+    // vIndex: 1
     virtual int updateFacingData(int, class Block const& block) const;
 
-    // vIndex: 2, symbol: ?canChangeBlockOnSpread@SculkVeinBlockBehavior@@UEBA_NXZ
+    // vIndex: 2
     virtual bool canChangeBlockOnSpread() const;
 
-    // vIndex: 3, symbol:
-    // ?attemptSpreadVeins@SculkVeinBlockBehavior@@UEBA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEBVBlock@@HAEAVSculkSpreader@@@Z
+    // vIndex: 3
     virtual bool
     attemptSpreadVeins(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Block const& block, int, class SculkSpreader&)
         const;
 
-    // vIndex: 4, symbol:
-    // ?attemptUseCharge@SculkVeinBlockBehavior@@UEBAHAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@2HHAEAVRandom@@AEAVSculkSpreader@@_N@Z
+    // vIndex: 4
     virtual int attemptUseCharge(
         class IBlockWorldGenAPI& target,
         class BlockSource*       region,
@@ -43,8 +41,7 @@ public:
         bool
     ) const;
 
-    // vIndex: 5, symbol:
-    // ?onDischarged@SculkVeinBlockBehavior@@UEBAXAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 5
     virtual void
     onDischarged(class IBlockWorldGenAPI& target, class BlockSource* region, class BlockPos const& pos) const;
 
@@ -52,8 +49,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_attemptPlaceSculk@SculkVeinBlockBehavior@@CA_NAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@AEAVSculkSpreader@@AEAVRandom@@@Z
     MCAPI static bool _attemptPlaceSculk(
         class IBlockWorldGenAPI& target,
         class BlockSource*       region,
@@ -62,8 +57,6 @@ public:
         class Random& random
     );
 
-    // symbol:
-    // ?_cleanUpVeinsWithSculkSubstrate@SculkVeinBlockBehavior@@CAXAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static void _cleanUpVeinsWithSculkSubstrate(
         class IBlockWorldGenAPI& target,
         class BlockSource*       region,

@@ -22,7 +22,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DelegatingRandom@NoiseUtils@@UEAA@XZ
+    // vIndex: 0
     virtual ~DelegatingRandom() = default;
 
     // NOLINTEND

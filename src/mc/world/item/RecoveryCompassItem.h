@@ -26,10 +26,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1RecoveryCompassItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~RecoveryCompassItem() = default;
 
-    // symbol: ??0RecoveryCompassItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI RecoveryCompassItem(std::string const& name, int id);
 
     // NOLINTEND

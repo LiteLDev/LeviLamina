@@ -35,39 +35,34 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 6, symbol:
-    // ?initializeComponents@ThrownPotion@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 6
     virtual void initializeComponents(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: __gen_??1ThrownPotion@@UEAA@XZ
+    // vIndex: 10
     virtual ~ThrownPotion() = default;
 
-    // vIndex: 89, symbol: ?queryEntityRenderer@ThrownPotion@@UEBAAEBVHashedString@@XZ
+    // vIndex: 89
     virtual class HashedString const& queryEntityRenderer() const;
 
-    // vIndex: 126, symbol: ?setAuxValue@ThrownPotion@@UEAAXH@Z
+    // vIndex: 126
     virtual void setAuxValue(int aux);
 
-    // vIndex: 147, symbol: ?readAdditionalSaveData@ThrownPotion@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 148, symbol: ?addAdditionalSaveData@ThrownPotion@@UEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // symbol: ??0ThrownPotion@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI ThrownPotion(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?getPotionId@ThrownPotion@@QEBAFXZ
     MCAPI short getPotionId() const;
 
-    // symbol: ?setLinger@ThrownPotion@@QEAAX_N@Z
     MCAPI void setLinger(bool linger);
 
-    // symbol: ?SPLASH_RANGE@ThrownPotion@@2MB
     MCAPI static float const SPLASH_RANGE;
 
     // NOLINTEND

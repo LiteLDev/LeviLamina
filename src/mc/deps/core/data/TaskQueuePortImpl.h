@@ -53,112 +53,97 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
+    // vIndex: 0
     virtual void __unk_vfn_0();
 
-    // vIndex: 1, symbol: ?Release@?$Api@$00UITaskQueuePort@@@@UEAAIXZ
+    // vIndex: 1
     virtual uint Release();
 
-    // vIndex: 2, symbol: ?QueryApi@?$Api@$00UITaskQueuePort@@@@UEAAJW4ApiId@@PEAPEAX@Z
+    // vIndex: 2
     virtual long QueryApi(::ApiId, void**);
 
-    // vIndex: 3, symbol: ?GetHandle@TaskQueuePortImpl@@UEAAPEAUXTaskQueuePortObject@@XZ
+    // vIndex: 3
     virtual struct XTaskQueuePortObject* GetHandle();
 
-    // vIndex: 4, symbol: ?QueueItem@TaskQueuePortImpl@@UEAAJPEAUITaskQueuePortContext@@IPEAXP6AX1_N@Z@Z
+    // vIndex: 4
     virtual long QueueItem(struct ITaskQueuePortContext*, uint, void*, void (*)(void*, bool));
 
-    // vIndex: 5, symbol:
-    // ?RegisterWaitHandle@TaskQueuePortImpl@@UEAAJPEAUITaskQueuePortContext@@PEAX1P6AX1_N@ZPEAUXTaskQueueRegistrationToken@@@Z
+    // vIndex: 5
     virtual long
     RegisterWaitHandle(struct ITaskQueuePortContext*, void*, void*, void (*)(void*, bool), struct XTaskQueueRegistrationToken*);
 
-    // vIndex: 6, symbol: ?UnregisterWaitHandle@TaskQueuePortImpl@@UEAAXUXTaskQueueRegistrationToken@@@Z
+    // vIndex: 6
     virtual void UnregisterWaitHandle(struct XTaskQueueRegistrationToken);
 
-    // vIndex: 7, symbol: ?PrepareTerminate@TaskQueuePortImpl@@UEAAJPEAUITaskQueuePortContext@@PEAXP6AX1@ZPEAPEAX@Z
+    // vIndex: 7
     virtual long PrepareTerminate(struct ITaskQueuePortContext*, void*, void (*)(void*), void**);
 
-    // vIndex: 8, symbol: ?CancelTermination@TaskQueuePortImpl@@UEAAXPEAX@Z
+    // vIndex: 8
     virtual void CancelTermination(void*);
 
-    // vIndex: 9, symbol: ?Terminate@TaskQueuePortImpl@@UEAAXPEAX@Z
+    // vIndex: 9
     virtual void Terminate(void*);
 
-    // vIndex: 10, symbol: ?Attach@TaskQueuePortImpl@@UEAAJPEAUITaskQueuePortContext@@@Z
+    // vIndex: 10
     virtual long Attach(struct ITaskQueuePortContext*);
 
-    // vIndex: 11, symbol: ?Detach@TaskQueuePortImpl@@UEAAXPEAUITaskQueuePortContext@@@Z
+    // vIndex: 11
     virtual void Detach(struct ITaskQueuePortContext*);
 
-    // vIndex: 12, symbol: ?Dispatch@TaskQueuePortImpl@@UEAA_NPEAUITaskQueuePortContext@@I@Z
+    // vIndex: 12
     virtual bool Dispatch(struct ITaskQueuePortContext*, uint);
 
-    // vIndex: 13, symbol: ?IsEmpty@TaskQueuePortImpl@@UEAA_NXZ
+    // vIndex: 13
     virtual bool IsEmpty();
 
-    // vIndex: 14, symbol: ?SuspendTermination@TaskQueuePortImpl@@UEAAJPEAUITaskQueuePortContext@@@Z
+    // vIndex: 14
     virtual long SuspendTermination(struct ITaskQueuePortContext*);
 
-    // vIndex: 15, symbol: ?ResumeTermination@TaskQueuePortImpl@@UEAAXPEAUITaskQueuePortContext@@@Z
+    // vIndex: 15
     virtual void ResumeTermination(struct ITaskQueuePortContext*);
 
-    // vIndex: 16, symbol: ?SuspendPort@TaskQueuePortImpl@@UEAAXXZ
+    // vIndex: 16
     virtual void SuspendPort();
 
-    // vIndex: 17, symbol: ?ResumePort@TaskQueuePortImpl@@UEAAXXZ
+    // vIndex: 17
     virtual void ResumePort();
 
-    // vIndex: 18, symbol: ??1TaskQueuePortImpl@@UEAA@XZ
+    // vIndex: 18
     virtual ~TaskQueuePortImpl();
 
-    // vIndex: 19, symbol: ?QueryApiImpl@?$Api@$00UITaskQueuePort@@@@MEAAPEAXW4ApiId@@@Z
+    // vIndex: 19
     virtual void* QueryApiImpl(::ApiId);
 
-    // symbol: ?Initialize@TaskQueuePortImpl@@QEAAJW4XTaskQueueDispatchMode@@@Z
     MCAPI long Initialize(::XTaskQueueDispatchMode);
 
-    // symbol: ??0TaskQueuePortImpl@@QEAA@XZ
     MCAPI TaskQueuePortImpl();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?AppendEntry@TaskQueuePortImpl@@AEAA_NAEBUQueueEntry@1@_K@Z
     MCAPI bool AppendEntry(struct TaskQueuePortImpl::QueueEntry const&, uint64);
 
-    // symbol: ?AppendWaitRegistrationEntry@TaskQueuePortImpl@@AEAA_NPEAUWaitRegistration@1@@Z
     MCAPI bool AppendWaitRegistrationEntry(struct TaskQueuePortImpl::WaitRegistration*);
 
-    // symbol: ?CancelPendingEntries@TaskQueuePortImpl@@AEAAXPEAUITaskQueuePortContext@@_N@Z
     MCAPI void CancelPendingEntries(struct ITaskQueuePortContext*, bool);
 
-    // symbol: ?DrainOneItem@TaskQueuePortImpl@@AEAA_NAEAUThreadPoolActionStatus@OS@@@Z
     MCAPI bool DrainOneItem(struct OS::ThreadPoolActionStatus&);
 
-    // symbol: ?InitializeWaitRegistration@TaskQueuePortImpl@@AEAAJPEAUWaitRegistration@1@@Z
     MCAPI long InitializeWaitRegistration(struct TaskQueuePortImpl::WaitRegistration*);
 
-    // symbol: ?NotifyItemQueued@TaskQueuePortImpl@@AEAAXXZ
     MCAPI void NotifyItemQueued();
 
-    // symbol: ?ProcessThreadPoolCallback@TaskQueuePortImpl@@AEAAXAEAUThreadPoolActionStatus@OS@@@Z
     MCAPI void ProcessThreadPoolCallback(struct OS::ThreadPoolActionStatus&);
 
-    // symbol: ?ScheduleTermination@TaskQueuePortImpl@@AEAAXPEAUTerminationEntry@1@@Z
     MCAPI void ScheduleTermination(struct TaskQueuePortImpl::TerminationEntry*);
 
-    // symbol: ?SubmitPendingCallback@TaskQueuePortImpl@@AEAAXXZ
     MCAPI void SubmitPendingCallback();
 
-    // symbol: ?Wait@TaskQueuePortImpl@@AEAA_NPEAUITaskQueuePortContext@@I@Z
     MCAPI bool Wait(struct ITaskQueuePortContext*, uint);
 
-    // symbol: ?EraseQueue@TaskQueuePortImpl@@CAXPEAV?$LocklessQueue@UQueueEntry@TaskQueuePortImpl@@@@@Z
     MCAPI static void EraseQueue(class LocklessQueue<struct TaskQueuePortImpl::QueueEntry>*);
 
-    // symbol: ?WaitCallback@TaskQueuePortImpl@@CAXPEAU_TP_CALLBACK_INSTANCE@@PEAXPEAU_TP_WAIT@@K@Z
     MCAPI static void WaitCallback(struct _TP_CALLBACK_INSTANCE*, void*, struct _TP_WAIT*, ulong);
 
     // NOLINTEND

@@ -20,27 +20,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1XoroshiroPositionalRandomFactory@@UEAA@XZ
+    // vIndex: 0
     virtual ~XoroshiroPositionalRandomFactory();
 
-    // vIndex: 1, symbol:
-    // ?forBlockPos@XoroshiroPositionalRandomFactory@@UEBA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@AEBVBlockPos@@@Z
+    // vIndex: 1
     virtual std::unique_ptr<class IRandom> forBlockPos(class BlockPos const& blockPos) const;
 
-    // vIndex: 2, symbol:
-    // ?forString@XoroshiroPositionalRandomFactory@@UEBA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+    // vIndex: 2
     virtual std::unique_ptr<class IRandom> forString(std::string const& s) const;
 
-    // symbol:
-    // ?forStringImpl@XoroshiroPositionalRandomFactory@@QEBA?AVXoroshiroRandom@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class XoroshiroRandom forStringImpl(std::string const& s) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?mThreadLocalDigest@XoroshiroPositionalRandomFactory@@0V?$ThreadLocalObject@Vmd5@Hash@Crypto@@V?$allocator@Vmd5@Hash@Crypto@@@std@@@Threading@Bedrock@@A
     MCAPI static class Bedrock::Threading::ThreadLocalObject<class Crypto::Hash::md5> mThreadLocalDigest;
 
     // NOLINTEND

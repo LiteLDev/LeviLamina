@@ -27,70 +27,59 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1AbstractCandleBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~AbstractCandleBlock();
 
-    // vIndex: 20, symbol: ?hasVariableLighting@AbstractCandleBlock@@UEBA_NXZ
+    // vIndex: 20
     virtual bool hasVariableLighting() const;
 
-    // vIndex: 33, symbol: ?isWaterBlocking@AbstractCandleBlock@@UEBA_NXZ
+    // vIndex: 33
     virtual bool isWaterBlocking() const;
 
-    // vIndex: 57, symbol: ?canContainLiquid@AbstractCandleBlock@@UEBA_NXZ
+    // vIndex: 57
     virtual bool canContainLiquid() const;
 
-    // vIndex: 93, symbol: ?neighborChanged@AbstractCandleBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 93
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
-    // vIndex: 134, symbol:
-    // ?animateTickBedrockLegacy@AbstractCandleBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 134
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // vIndex: 137, symbol: ?getLightEmission@AbstractCandleBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
+    // vIndex: 137
     virtual struct Brightness getLightEmission(class Block const& block) const;
 
-    // vIndex: 148, symbol: ?tick@AbstractCandleBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 148
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
-    // vIndex: 161, symbol:
-    // ?_onHitByActivatingAttack@AbstractCandleBlock@@EEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
+    // vIndex: 161
     virtual void _onHitByActivatingAttack(class BlockSource&, class BlockPos const&, class Actor*) const;
 
-    // vIndex: 162, symbol: ?entityInside@AbstractCandleBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
+    // vIndex: 162
     virtual void entityInside(class BlockSource& region, class BlockPos const& pos, class Actor& entity) const;
 
-    // vIndex: 164, symbol:
-    // ?_iterateCandles@AbstractCandleBlock@@MEBAXAEBVBlock@@AEBVBlockPos@@V?$function@$$A6AXAEBVVec3@@H@Z@std@@@Z
+    // vIndex: 164
     virtual void
     _iterateCandles(class Block const&, class BlockPos const&, std::function<void(class Vec3 const&, int)> callback)
         const;
 
-    // symbol: ?_getNumCandles@AbstractCandleBlock@@MEBAHAEBVBlock@@@Z
     MCVAPI int _getNumCandles(class Block const&) const;
 
-    // symbol: ?_tryLightOnFire@AbstractCandleBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
     MCVAPI void _tryLightOnFire(class BlockSource&, class BlockPos const&, class Actor*) const;
 
-    // symbol:
-    // ??0AbstractCandleBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI AbstractCandleBlock(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?_checkForWaterlogging@AbstractCandleBlock@@IEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void _checkForWaterlogging(class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ?_extinguish@AbstractCandleBlock@@IEBAXPEAVActor@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void
     _extinguish(class Actor*, class Block const& block, class BlockSource& region, class BlockPos const& pos) const;
 
-    // symbol: ?_canBeLit@AbstractCandleBlock@@KA_NAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static bool _canBeLit(class Block const& block, class BlockSource& region, class BlockPos const& pos);
 
-    // symbol: ?_isLit@AbstractCandleBlock@@KA_NAEBVBlock@@@Z
     MCAPI static bool _isLit(class Block const& block);
 
     // NOLINTEND

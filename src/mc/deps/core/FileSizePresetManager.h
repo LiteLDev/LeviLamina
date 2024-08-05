@@ -13,7 +13,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1FileSizePresetManager@Core@@UEAA@XZ
+    // vIndex: 0
     virtual ~FileSizePresetManager();
 
     // NOLINTEND

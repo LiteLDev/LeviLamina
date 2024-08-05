@@ -10,13 +10,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ServerCameraStatesComponent@@QEAA@XZ
     MCAPI ServerCameraStatesComponent();
 
-    // symbol: ??0ServerCameraStatesComponent@@QEAA@AEBVCameraPresets@@@Z
     MCAPI explicit ServerCameraStatesComponent(class CameraPresets const&);
 
-    // symbol: ??4ServerCameraStatesComponent@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct ServerCameraStatesComponent& operator=(struct ServerCameraStatesComponent&&);
 
     // NOLINTEND

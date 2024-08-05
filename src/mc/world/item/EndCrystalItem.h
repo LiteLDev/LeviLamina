@@ -26,21 +26,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1EndCrystalItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~EndCrystalItem() = default;
 
-    // vIndex: 38, symbol: ?isGlint@EndCrystalItem@@UEBA_NAEBVItemStackBase@@@Z
+    // vIndex: 38
     virtual bool isGlint(class ItemStackBase const& stack) const;
 
-    // vIndex: 44, symbol: ?isDestructive@EndCrystalItem@@UEBA_NH@Z
+    // vIndex: 44
     virtual bool isDestructive(int auxValue) const;
 
-    // vIndex: 118, symbol:
-    // ?_useOn@EndCrystalItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+    // vIndex: 118
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor&, class BlockPos pos, uchar face, class Vec3 const& clickPos) const;
 
-    // symbol: ??0EndCrystalItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI EndCrystalItem(std::string const& nameId, int id);
 
     // NOLINTEND

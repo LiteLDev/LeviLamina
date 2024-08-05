@@ -20,13 +20,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1IsOnHotBlockTest@@UEAA@XZ
+    // vIndex: 0
     virtual ~IsOnHotBlockTest() = default;
 
-    // vIndex: 2, symbol: ?evaluate@IsOnHotBlockTest@@UEBA_NAEBUFilterContext@@@Z
+    // vIndex: 2
     virtual bool evaluate(struct FilterContext const& context) const;
 
-    // vIndex: 4, symbol: ?getName@IsOnHotBlockTest@@UEBA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@XZ
+    // vIndex: 4
     virtual std::string_view getName() const;
 
     // NOLINTEND

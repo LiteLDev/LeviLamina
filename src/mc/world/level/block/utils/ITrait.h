@@ -19,17 +19,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ITrait@BlockTrait@@UEAA@XZ
+    // vIndex: 0
     virtual ~ITrait() = default;
 
-    // vIndex: 1, symbol: ?applyToBlockLegacy@PlacementDirection@BlockTrait@@UEBAXAEAVBlockLegacy@@@Z
+    // vIndex: 1
     virtual void applyToBlockLegacy(class BlockLegacy& blockLegacy) const = 0;
 
-    // vIndex: 2, symbol:
-    // ?buildNetworkTag@PlacementDirection@BlockTrait@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+    // vIndex: 2
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const = 0;
 
-    // vIndex: 3, symbol: ?initializeFromNetwork@PlacementDirection@BlockTrait@@UEAAXAEBVCompoundTag@@@Z
+    // vIndex: 3
     virtual void initializeFromNetwork(class CompoundTag const& tag) = 0;
 
     // NOLINTEND

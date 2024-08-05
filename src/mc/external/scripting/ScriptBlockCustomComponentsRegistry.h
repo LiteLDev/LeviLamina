@@ -20,57 +20,50 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ScriptBlockCustomComponentsRegistry@@UEAA@XZ
+    // vIndex: 0
     virtual ~ScriptBlockCustomComponentsRegistry() = default;
 
-    // vIndex: 1, symbol: ?onLevelTickEnd@ScriptDeferredEventListener@@UEAAXXZ
+    // vIndex: 1
     virtual void onLevelTickEnd();
 
-    // vIndex: 2, symbol: ?onRunAsyncJobs@ScriptDeferredEventListener@@UEAAXXZ
+    // vIndex: 2
     virtual void onRunAsyncJobs();
 
-    // vIndex: 3, symbol: ?onRunSystemTick@ScriptDeferredEventListener@@UEAA_NXZ
+    // vIndex: 3
     virtual bool onRunSystemTick();
 
-    // vIndex: 4, symbol: ?onFlushWorldAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
+    // vIndex: 4
     virtual bool onFlushWorldAfterEvents();
 
-    // vIndex: 5, symbol: ?onFlushSystemAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
+    // vIndex: 5
     virtual bool onFlushSystemAfterEvents();
 
-    // vIndex: 6, symbol: ?onFlushEditorExtensionContextAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
+    // vIndex: 6
     virtual bool onFlushEditorExtensionContextAfterEvents();
 
-    // vIndex: 7, symbol: ?onFlushBlockCustomComponentAfterEvents@ScriptBlockCustomComponentsRegistry@@EEAA_NXZ
+    // vIndex: 7
     virtual bool onFlushBlockCustomComponentAfterEvents();
 
-    // vIndex: 8, symbol: ?onFlushEditorDataStoreAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
+    // vIndex: 8
     virtual bool onFlushEditorDataStoreAfterEvents();
 
-    // vIndex: 9, symbol: ?onFlushItemCustomComponentAfterEvents@ScriptDeferredEventListener@@UEAA_NXZ
+    // vIndex: 9
     virtual bool onFlushItemCustomComponentAfterEvents();
 
-    // vIndex: 10, symbol: ?onPreFlushAfterEvents@ScriptBlockCustomComponentsRegistry@@EEAAXXZ
+    // vIndex: 10
     virtual void onPreFlushAfterEvents();
 
-    // vIndex: 11, symbol: ?onPostFlushAfterEvents@ScriptBlockCustomComponentsRegistry@@EEAAXXZ
+    // vIndex: 11
     virtual void onPostFlushAfterEvents();
 
-    // symbol: ??0ScriptBlockCustomComponentsRegistry@@QEAA@XZ
     MCAPI ScriptBlockCustomComponentsRegistry();
 
-    // symbol:
-    // ?getHandleToComponent@ScriptBlockCustomComponentsRegistry@@QEAA?AV?$not_null@PEAUScriptBlockCustomComponentData@@@gsl@@AEBVHashedString@@@Z
     MCAPI gsl::not_null<struct ScriptBlockCustomComponentData*> getHandleToComponent(class HashedString const&);
 
-    // symbol: ?onReload@ScriptBlockCustomComponentsRegistry@@QEAAXXZ
     MCAPI void onReload();
 
-    // symbol: ??4ScriptBlockCustomComponentsRegistry@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class ScriptBlockCustomComponentsRegistry& operator=(class ScriptBlockCustomComponentsRegistry&&);
 
-    // symbol:
-    // ?tryRegisterCustomComponent@ScriptBlockCustomComponentsRegistry@@QEAA?AV?$Result@X$$V@Scripting@@AEBVHashedString@@$$QEAUScriptBlockCustomComponentInterface@ScriptModuleMinecraft@@AEBVWeakLifetimeScope@3@@Z
     MCAPI class Scripting::Result<void>
     tryRegisterCustomComponent(class HashedString const&, struct ScriptModuleMinecraft::ScriptBlockCustomComponentInterface&&, class Scripting::WeakLifetimeScope const&);
 
@@ -78,13 +71,10 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_errorWhenComponentUsesQueuedTickClosure@ScriptBlockCustomComponentsRegistry@@AEBAXAEBVBlockCustomComponentsComponent@@AEBVHashedString@@@Z
     MCAPI void
     _errorWhenComponentUsesQueuedTickClosure(class BlockCustomComponentsComponent const&, class HashedString const&)
         const;
 
-    // symbol: ?_onScriptInitializationComplete@ScriptBlockCustomComponentsRegistry@@AEAAXXZ
     MCAPI void _onScriptInitializationComplete();
 
     // NOLINTEND

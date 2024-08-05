@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1JigsawSpace@worldgen@br@@QEAA@XZ
     MCAPI ~JigsawSpace();
 
     // NOLINTEND

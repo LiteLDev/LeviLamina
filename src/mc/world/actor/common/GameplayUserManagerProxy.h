@@ -11,17 +11,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1GameplayUserManagerProxy@@UEAA@XZ
+    // vIndex: 0
     virtual ~GameplayUserManagerProxy();
 
-    // vIndex: 1, symbol:
-    // ?validatePlayerName@GameplayUserManagerProxy@@UEBA?AV?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBVGameplayUserManager@@@Z
+    // vIndex: 1
     virtual std::optional<std::string> validatePlayerName(std::string const&, class GameplayUserManager const&) const;
 
-    // vIndex: 2, symbol: ?shouldGeneratePlayerIndex@GameplayUserManagerProxy@@UEBA_NXZ
+    // vIndex: 2
     virtual bool shouldGeneratePlayerIndex() const;
 
-    // vIndex: 3, symbol: ?reloadActor@GameplayUserManagerProxy@@UEBAXAEAVActor@@@Z
+    // vIndex: 3
     virtual void reloadActor(class Actor& actor) const;
 
     // NOLINTEND

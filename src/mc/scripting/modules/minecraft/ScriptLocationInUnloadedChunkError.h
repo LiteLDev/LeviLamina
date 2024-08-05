@@ -21,11 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptLocationInUnloadedChunkError@ScriptModuleMinecraft@@QEAA@AEBVVec3@@@Z
     MCAPI explicit ScriptLocationInUnloadedChunkError(class Vec3 const&);
 
-    // symbol:
-    // ?bind@ScriptLocationInUnloadedChunkError@ScriptModuleMinecraft@@SA?AV?$ErrorBindingBuilder@UScriptLocationInUnloadedChunkError@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ErrorBindingBuilder<struct ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError>
     bind();
 

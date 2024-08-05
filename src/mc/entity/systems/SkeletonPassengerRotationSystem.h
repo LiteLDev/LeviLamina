@@ -4,7 +4,6 @@
 
 namespace SkeletonPassengerRotationSystem {
 // NOLINTBEGIN
-// symbol: ?createSystem@SkeletonPassengerRotationSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo createSystem();
 // NOLINTEND
 

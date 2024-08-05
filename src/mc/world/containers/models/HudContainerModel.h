@@ -15,29 +15,28 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ?containerContentChanged@HudContainerModel@@UEAAXH@Z
+    // vIndex: 0
     virtual void containerContentChanged(int slot);
 
-    // vIndex: 1, symbol: __gen_??1HudContainerModel@@UEAA@XZ
+    // vIndex: 1
     virtual ~HudContainerModel() = default;
 
-    // vIndex: 7, symbol: ?getContainerWeakRef@HudContainerModel@@UEBA?AVContainerWeakRef@@XZ
+    // vIndex: 7
     virtual class ContainerWeakRef getContainerWeakRef() const;
 
-    // vIndex: 14, symbol: ?isValid@HudContainerModel@@UEAA_NXZ
+    // vIndex: 14
     virtual bool isValid();
 
-    // vIndex: 21, symbol: ?_getContainer@HudContainerModel@@EEBAPEAVContainer@@XZ
+    // vIndex: 21
     virtual class Container* _getContainer() const;
 
-    // vIndex: 23, symbol: ?_init@HudContainerModel@@EEAAXXZ
+    // vIndex: 23
     virtual void _init();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_refreshContainer@HudContainerModel@@AEAAXXZ
     MCAPI void _refreshContainer();
 
     // NOLINTEND

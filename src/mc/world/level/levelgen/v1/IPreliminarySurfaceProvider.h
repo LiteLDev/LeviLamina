@@ -14,11 +14,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1IPreliminarySurfaceProvider@@UEAA@XZ
+    // vIndex: 0
     virtual ~IPreliminarySurfaceProvider();
 
-    // vIndex: 1, symbol:
-    // ?getPreliminarySurfaceLevel@SurfaceLevelCache@@UEBA?AV?$optional@F@std@@V?$DividedPos2d@$03@@@Z
+    // vIndex: 1
     virtual std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const = 0;
 
     // NOLINTEND

@@ -15,34 +15,28 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1Igloo@@UEAA@XZ
+    // vIndex: 0
     virtual ~Igloo() = default;
 
-    // vIndex: 2, symbol: ?getType@Igloo@@UEBA?AW4StructurePieceType@@XZ
+    // vIndex: 2
     virtual ::StructurePieceType getType() const;
 
-    // vIndex: 4, symbol: ?postProcess@Igloo@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+    // vIndex: 4
     virtual bool postProcess(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 
-    // vIndex: 5, symbol: ?postProcessMobsAt@Igloo@@UEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+    // vIndex: 5
     virtual void postProcessMobsAt(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR@Igloo@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR;
 
-    // symbol:
-    // ?STRUCTURE_LOCATION_IGLOO_TRAPDOOR@Igloo@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const STRUCTURE_LOCATION_IGLOO_TRAPDOOR;
 
-    // symbol: ?STRUCTURE_LOCATION_LABORATORY@Igloo@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const STRUCTURE_LOCATION_LABORATORY;
 
-    // symbol: ?STRUCTURE_LOCATION_LADDER@Igloo@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const STRUCTURE_LOCATION_LADDER;
 
     // NOLINTEND

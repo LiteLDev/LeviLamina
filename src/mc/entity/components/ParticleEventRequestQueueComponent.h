@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ParticleEventRequestQueueComponent@@QEAA@$$QEAU0@@Z
     MCAPI ParticleEventRequestQueueComponent(struct ParticleEventRequestQueueComponent&&);
 
     // NOLINTEND

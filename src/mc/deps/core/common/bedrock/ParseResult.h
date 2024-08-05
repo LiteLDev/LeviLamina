@@ -13,7 +13,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?isError@ParseResult@JSONObject@Bedrock@@QEBA_NXZ
     MCAPI bool isError() const;
 
     // NOLINTEND

@@ -13,7 +13,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_sanitize@SanitizedFormatString@Bedrock@@AEAAXXZ
     MCAPI void _sanitize();
 
     // NOLINTEND

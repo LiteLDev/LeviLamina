@@ -20,11 +20,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1StorageAreaStateListener@Core@@UEAA@XZ
+    // vIndex: 0
     virtual ~StorageAreaStateListener();
 
-    // vIndex: 1, symbol:
-    // ?onExtendDiskSpace@StorageAreaStateListener@Core@@UEAAX_NAEAV?$weak_ptr@VFileStorageArea@Core@@@std@@_KV?$function@$$A6AXXZ@4@@Z
+    // vIndex: 1
     virtual void onExtendDiskSpace(
         bool                                        bSet,
         std::weak_ptr<class Core::FileStorageArea>& fileStorageAreaWeakPtr,
@@ -32,19 +31,17 @@ public:
         std::function<void()>                       onHandledEventCallback
     );
 
-    // vIndex: 2, symbol: ?onLowDiskSpace@StorageAreaStateListener@Core@@UEAAX_N@Z
+    // vIndex: 2
     virtual void onLowDiskSpace(bool bSet);
 
-    // vIndex: 3, symbol: ?onOutOfDiskSpace@StorageAreaStateListener@Core@@UEAAX_N@Z
+    // vIndex: 3
     virtual void onOutOfDiskSpace(bool bSet);
 
-    // vIndex: 4, symbol: ?onCriticalDiskError@StorageAreaStateListener@Core@@UEAAX_NAEBW4LevelStorageState@2@@Z
+    // vIndex: 4
     virtual void onCriticalDiskError(bool bSet, ::Core::LevelStorageState const& errorCode);
 
-    // symbol: ??0StorageAreaStateListener@Core@@QEAA@XZ
     MCAPI StorageAreaStateListener();
 
-    // symbol: ?initListener@StorageAreaStateListener@Core@@QEAAXV?$shared_ptr@VFileStorageArea@Core@@@std@@@Z
     MCAPI void initListener(std::shared_ptr<class Core::FileStorageArea> fileStorageArea);
 
     // NOLINTEND

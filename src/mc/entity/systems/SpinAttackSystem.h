@@ -16,17 +16,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?_spinAttack@SpinAttackSystem@@SAXAEAVStrictEntityContext@@AEAVActorOwnerComponent@@@Z
     MCAPI static void _spinAttack(class StrictEntityContext&, class ActorOwnerComponent& actorComponent);
 
-    // symbol:
-    // ?_tickSpinAttackSystem@SpinAttackSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@VActorOwnerComponent@@@@@Z
     MCAPI static void _tickSpinAttackSystem(class ViewT<
                                             class StrictEntityContext,
                                             struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,
                                             class ActorOwnerComponent> view);
 
-    // symbol: ?createSystem@SpinAttackSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
     // NOLINTEND

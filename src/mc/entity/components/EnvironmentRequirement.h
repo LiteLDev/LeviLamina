@@ -11,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?addBlockDescriptor@EnvironmentRequirement@@QEAAXAEBVBlockDescriptor@@@Z
     MCAPI void addBlockDescriptor(class BlockDescriptor const& blockDescriptor);
 
-    // symbol: ??1EnvironmentRequirement@@QEAA@XZ
     MCAPI ~EnvironmentRequirement();
 
     // NOLINTEND

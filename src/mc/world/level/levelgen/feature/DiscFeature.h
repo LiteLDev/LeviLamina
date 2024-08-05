@@ -14,13 +14,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DiscFeature@@UEAA@XZ
+    // vIndex: 0
     virtual ~DiscFeature() = default;
 
-    // vIndex: 3, symbol: ?place@DiscFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 3
     virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // symbol: ??0DiscFeature@@QEAA@AEBVBlock@@H@Z
     MCAPI DiscFeature(class Block const& block, int radius);
 
     // NOLINTEND

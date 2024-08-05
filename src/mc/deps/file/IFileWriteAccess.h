@@ -11,10 +11,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1IFileWriteAccess@@UEAA@XZ
+    // vIndex: 0
     virtual ~IFileWriteAccess() = default;
 
-    // vIndex: 1, symbol: ?fwrite@FileSystemFileWriteAccess@FileSystemFileAccess@@UEAA_KPEBX_K1PEAX@Z
+    // vIndex: 1
     virtual uint64 fwrite(void const* buffer, uint64 size, uint64 count, void* file) = 0;
 
     // NOLINTEND

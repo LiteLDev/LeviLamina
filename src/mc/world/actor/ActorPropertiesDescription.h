@@ -10,13 +10,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ActorPropertiesDescription@@UEAA@XZ
+    // vIndex: 0
     virtual ~ActorPropertiesDescription();
 
-    // vIndex: 1, symbol: ?getJsonName@ActorPropertiesDescription@@UEBAPEBDXZ
+    // vIndex: 1
     virtual char const* getJsonName() const;
 
-    // symbol: ??4ActorPropertiesDescription@@QEAAAEAU0@AEBU0@@Z
     MCAPI struct ActorPropertiesDescription& operator=(struct ActorPropertiesDescription const&);
 
     // NOLINTEND

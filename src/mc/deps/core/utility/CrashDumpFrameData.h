@@ -11,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0CrashDumpFrameData@@QEAA@HH_KMMMM@Z
     MCAPI CrashDumpFrameData(int, int, uint64, float, float, float, float);
 
-    // symbol: ?kFormat@CrashDumpFrameData@@2QBUCrashDumpFormatEntryImpl@@B
     MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
 
     // NOLINTEND

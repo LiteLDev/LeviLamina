@@ -20,18 +20,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1EventResponse@@UEAA@XZ
+    // vIndex: 0
     virtual ~EventResponse();
 
-    // vIndex: 1, symbol:
-    // ?getName@EventResponse@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 1
     virtual std::string const& getName() const;
 
-    // vIndex: 2, symbol: ?executeAction@DamageResponse@@UEBAXAEAVRenderParams@@@Z
+    // vIndex: 2
     virtual void executeAction(class RenderParams& params) const = 0;
 
-    // vIndex: 3, symbol:
-    // ?buildSchema@EventResponse@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UEventResponseCollection@@@JsonUtil@@@std@@AEBV?$Factory@VEventResponse@@$$V@@@Z
+    // vIndex: 3
     virtual void
     buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>>&, class Factory<class EventResponse> const&)
         const;

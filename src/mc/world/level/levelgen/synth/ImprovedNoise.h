@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?_readArea@ImprovedNoise@@QEBAXPEAMAEBVVec3@@HHH1M@Z
     MCAPI void
     _readArea(float* buffer, class Vec3 const& pos, int xSize, int ySize, int zSize, class Vec3 const& s, float pow)
         const;
@@ -20,7 +19,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_blendCubeCorners@ImprovedNoise@@AEBAXAEBVVec3@@HHHMAEAM111@Z
     MCAPI void _blendCubeCorners(
         class Vec3 const& origin,
         int               X,
@@ -33,7 +31,6 @@ public:
         float&            vv3
     ) const;
 
-    // symbol: ?_init@ImprovedNoise@@AEAAXAEBVVec3@@AEAVIRandom@@UYBlendingBugSettings@@@Z
     MCAPI void _init(class Vec3 const& origin, class IRandom& random, struct YBlendingBugSettings);
 
     // NOLINTEND

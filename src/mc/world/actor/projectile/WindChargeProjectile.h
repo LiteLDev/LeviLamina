@@ -35,31 +35,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 4, symbol:
-    // ?reloadHardcoded@WindChargeProjectile@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 4
     virtual void reloadHardcoded(::ActorInitializationMethod, class VariantParameterList const&);
 
-    // vIndex: 6, symbol:
-    // ?initializeComponents@WindChargeProjectile@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 6
     virtual void initializeComponents(::ActorInitializationMethod, class VariantParameterList const&);
 
-    // vIndex: 10, symbol: __gen_??1WindChargeProjectile@@UEAA@XZ
+    // vIndex: 10
     virtual ~WindChargeProjectile() = default;
 
-    // vIndex: 13, symbol: ?remove@WindChargeProjectile@@UEAAXXZ
+    // vIndex: 13
     virtual void remove();
 
-    // vIndex: 90, symbol: ?getSourceUniqueID@WindChargeProjectile@@UEBA?AUActorUniqueID@@XZ
+    // vIndex: 90
     virtual struct ActorUniqueID getSourceUniqueID() const;
 
-    // vIndex: 147, symbol: ?readAdditionalSaveData@WindChargeProjectile@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147
     virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
 
-    // vIndex: 148, symbol: ?addAdditionalSaveData@WindChargeProjectile@@UEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148
     virtual void addAdditionalSaveData(class CompoundTag&) const;
 
-    // symbol:
-    // ??0WindChargeProjectile@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI
     WindChargeProjectile(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
 

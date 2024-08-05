@@ -14,20 +14,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ReloadConfigCommand@@UEAA@XZ
+    // vIndex: 0
     virtual ~ReloadConfigCommand() = default;
 
-    // vIndex: 2, symbol: ?execute@ReloadConfigCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+    // vIndex: 2
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
-    // symbol: ?setup@ReloadConfigCommand@@SAXAEAVCommandRegistry@@AEAUScriptSettings@@@Z
     MCAPI static void setup(class CommandRegistry&, struct ScriptSettings&);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?sScriptSettings@ReloadConfigCommand@@0PEAUScriptSettings@@EA
     MCAPI static struct ScriptSettings* sScriptSettings;
 
     // NOLINTEND

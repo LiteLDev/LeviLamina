@@ -40,8 +40,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol:
-        // ?fromStringVector@EnabledStates@PlacementDirection@BlockTrait@@SAXAEAU123@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
         MCAPI static void fromStringVector(
             struct BlockTrait::PlacementDirection::EnabledStates& instance,
             std::vector<std::string> const&                       states
@@ -59,11 +57,10 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __gen_??1UpdateCardinalGetPlacementBlockCallback@PlacementDirection@BlockTrait@@UEAA@XZ
+        // vIndex: 0
         virtual ~UpdateCardinalGetPlacementBlockCallback() = default;
 
-        // vIndex: 1, symbol:
-        // ?getPlacementBlock@UpdateCardinalGetPlacementBlockCallback@PlacementDirection@BlockTrait@@UEBA?AV?$not_null@PEBVBlock@@@gsl@@V45@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+        // vIndex: 1
         virtual gsl::not_null<class Block const*> getPlacementBlock(
             gsl::not_null<class Block const*>,
             class Actor const&,
@@ -85,11 +82,10 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __gen_??1UpdateFacingGetPlacementBlockCallback@PlacementDirection@BlockTrait@@UEAA@XZ
+        // vIndex: 0
         virtual ~UpdateFacingGetPlacementBlockCallback() = default;
 
-        // vIndex: 1, symbol:
-        // ?getPlacementBlock@UpdateFacingGetPlacementBlockCallback@PlacementDirection@BlockTrait@@UEBA?AV?$not_null@PEBVBlock@@@gsl@@V45@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+        // vIndex: 1
         virtual gsl::not_null<class Block const*> getPlacementBlock(
             gsl::not_null<class Block const*>,
             class Actor const&,
@@ -110,33 +106,26 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1PlacementDirection@BlockTrait@@UEAA@XZ
+    // vIndex: 0
     virtual ~PlacementDirection();
 
-    // vIndex: 1, symbol: ?applyToBlockLegacy@PlacementDirection@BlockTrait@@UEBAXAEAVBlockLegacy@@@Z
+    // vIndex: 1
     virtual void applyToBlockLegacy(class BlockLegacy& blockLegacy) const;
 
-    // vIndex: 2, symbol:
-    // ?buildNetworkTag@PlacementDirection@BlockTrait@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+    // vIndex: 2
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
 
-    // vIndex: 3, symbol: ?initializeFromNetwork@PlacementDirection@BlockTrait@@UEAAXAEBVCompoundTag@@@Z
+    // vIndex: 3
     virtual void initializeFromNetwork(class CompoundTag const& tag);
 
-    // symbol: ?setRotationOffset@PlacementDirection@BlockTrait@@QEAAXAEBM@Z
     MCAPI void setRotationOffset(float const& rotation);
 
-    // symbol: ?CardinalDirection@PlacementDirection@BlockTrait@@SA?AV12@M@Z
     MCAPI static class BlockTrait::PlacementDirection CardinalDirection(float);
 
-    // symbol: ?FacingDirection@PlacementDirection@BlockTrait@@SA?AV12@M@Z
     MCAPI static class BlockTrait::PlacementDirection FacingDirection(float);
 
-    // symbol: ?bindType@PlacementDirection@BlockTrait@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
-    // symbol:
-    // ?getName@PlacementDirection@BlockTrait@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI static std::string const& getName();
 
     // NOLINTEND

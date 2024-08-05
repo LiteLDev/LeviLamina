@@ -11,10 +11,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1IDeregisterTagsFromActorProxy@@UEAA@XZ
+    // vIndex: 0
     virtual ~IDeregisterTagsFromActorProxy() = default;
 
-    // vIndex: 1, symbol: ?deregisterTagsFromActor@DeregisterTagsFromActorProxy@@UEAAXAEAVActor@@@Z
+    // vIndex: 1
     virtual void deregisterTagsFromActor(class Actor&) = 0;
 
     // NOLINTEND

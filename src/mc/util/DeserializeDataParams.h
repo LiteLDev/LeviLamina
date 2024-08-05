@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1DeserializeDataParams@@QEAA@XZ
     MCAPI ~DeserializeDataParams();
 
     // NOLINTEND

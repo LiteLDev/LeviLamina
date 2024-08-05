@@ -35,57 +35,50 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 6, symbol: ?initializeComponents@Goat@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 6
     virtual void initializeComponents(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: __gen_??1Goat@@UEAA@XZ
+    // vIndex: 10
     virtual ~Goat() = default;
 
-    // vIndex: 68, symbol: ?getAmbientSound@Goat@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 68
     virtual ::Puv::Legacy::LevelSoundEvent getAmbientSound() const;
 
-    // vIndex: 74, symbol: ?handleEntityEvent@Goat@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 74
     virtual void handleEntityEvent(::ActorEvent id, int data);
 
-    // vIndex: 144, symbol: ?updateEntitySpecificMolangVariables@Goat@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 144
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
-    // vIndex: 147, symbol: ?readAdditionalSaveData@Goat@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 147
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    // vIndex: 148, symbol: ?addAdditionalSaveData@Goat@@UEBAXAEAVCompoundTag@@@Z
+    // vIndex: 148
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
-    // vIndex: 154, symbol: ?getDeathSound@Goat@@UEAA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 154
     virtual ::Puv::Legacy::LevelSoundEvent getDeathSound();
 
-    // symbol: ??0Goat@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Goat(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?getHornCount@Goat@@QEBAHXZ
     MCAPI int getHornCount() const;
 
-    // symbol: ?isScreaming@Goat@@QEAA_NXZ
     MCAPI bool isScreaming();
 
-    // symbol: ?reduceHornCount@Goat@@QEAAXXZ
     MCAPI void reduceHornCount();
 
-    // symbol: ?getCustomHurtSound@Goat@@SA?AV?$optional@W4LevelSoundEvent@Legacy@Puv@@@std@@AEAVMob@@@Z
     MCAPI static std::optional<::Puv::Legacy::LevelSoundEvent> getCustomHurtSound(class Mob&);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?DEFAULT_HORN_COUNT@Goat@@0HA
     MCAPI static int DEFAULT_HORN_COUNT;
 
-    // symbol: ?SCREAMING_GOAT_VARIANT@Goat@@0HA
     MCAPI static int SCREAMING_GOAT_VARIANT;
 
     // NOLINTEND

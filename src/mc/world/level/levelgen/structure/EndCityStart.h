@@ -14,13 +14,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1EndCityStart@@UEAA@XZ
+    // vIndex: 0
     virtual ~EndCityStart() = default;
 
-    // vIndex: 2, symbol: ?isValid@EndCityStart@@UEBA_NXZ
+    // vIndex: 2
     virtual bool isValid() const;
 
-    // symbol: ?getYPositionForFeature@EndCityStart@@SAHAEBVChunkPos@@AEAVDimension@@@Z
     MCAPI static int getYPositionForFeature(class ChunkPos const& pos, class Dimension& dimension);
 
     // NOLINTEND

@@ -7,11 +7,8 @@
 
 namespace AgentTravelSystemImpl {
 // NOLINTBEGIN
-// symbol: ?doClientAgentTravel@AgentTravelSystemImpl@@YAXAEAVActorOwnerComponent@@AEAUAbilitiesComponent@@@Z
 MCAPI void doClientAgentTravel(class ActorOwnerComponent&, struct AbilitiesComponent&);
 
-// symbol:
-// ?doServerAgentTravel@AgentTravelSystemImpl@@YAXAEBVStrictEntityContext@@AEAVActorOwnerComponent@@AEAUAbilitiesComponent@@AEAUStateVectorComponent@@V?$EntityModifier@UMoveRequestComponent@@@@@Z
 MCAPI void
 doServerAgentTravel(class StrictEntityContext const&, class ActorOwnerComponent&, struct AbilitiesComponent&, struct StateVectorComponent&, class EntityModifier<struct MoveRequestComponent>);
 // NOLINTEND

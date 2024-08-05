@@ -26,7 +26,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1AirBlockItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~AirBlockItem() = default;
 
     // NOLINTEND

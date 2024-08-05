@@ -35,32 +35,29 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 4, symbol: ?reloadHardcoded@EyeOfEnder@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    // vIndex: 4
     virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
-    // vIndex: 10, symbol: __gen_??1EyeOfEnder@@UEAA@XZ
+    // vIndex: 10
     virtual ~EyeOfEnder() = default;
 
-    // vIndex: 24, symbol: ?lerpMotion@EyeOfEnder@@UEAAXAEBVVec3@@@Z
+    // vIndex: 24
     virtual void lerpMotion(class Vec3 const& delta);
 
-    // vIndex: 26, symbol: ?normalTick@EyeOfEnder@@UEAAXXZ
+    // vIndex: 26
     virtual void normalTick();
 
-    // vIndex: 38, symbol: ?getShadowRadius@EyeOfEnder@@UEBAMXZ
+    // vIndex: 38
     virtual float getShadowRadius() const;
 
-    // symbol: ??0EyeOfEnder@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI EyeOfEnder(
         class ActorDefinitionGroup*             definitions,
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext
     );
 
-    // symbol: ?preNormalTick@EyeOfEnder@@QEAAXXZ
     MCAPI void preNormalTick();
 
-    // symbol: ?signalTo@EyeOfEnder@@QEAAXAEBVPlayer@@AEAVBlockPos@@@Z
     MCAPI void signalTo(class Player const& player, class BlockPos& target);
 
     // NOLINTEND

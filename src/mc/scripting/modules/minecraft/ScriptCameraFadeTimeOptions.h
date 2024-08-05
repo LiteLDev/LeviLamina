@@ -16,11 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?isValid@ScriptCameraFadeTimeOptions@ScriptModuleMinecraft@@QEAA_NXZ
     MCAPI bool isValid();
 
-    // symbol:
-    // ?bind@ScriptCameraFadeTimeOptions@ScriptModuleMinecraft@@SA?AV?$InterfaceBindingBuilder@UScriptCameraFadeTimeOptions@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptCameraFadeTimeOptions>
     bind();
 

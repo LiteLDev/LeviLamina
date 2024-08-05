@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0MolangEvalStackState@@QEAA@AEAUMolangEvalParams@@@Z
     MCAPI explicit MolangEvalStackState(struct MolangEvalParams& evalParams);
 
     // NOLINTEND

@@ -32,14 +32,11 @@ public:
 
         public:
             // NOLINTBEGIN
-            // symbol: ??4Components@Dimension@DimensionDocument@@QEAAAEAU012@AEBU012@@Z
             MCAPI struct DimensionDocument::Dimension::Components&
             operator=(struct DimensionDocument::Dimension::Components const&);
 
-            // symbol: ??1Components@Dimension@DimensionDocument@@QEAA@XZ
             MCAPI ~Components();
 
-            // symbol: ?bindType@Components@Dimension@DimensionDocument@@SAXAEAUReflectionCtx@cereal@@@Z
             MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
             // NOLINTEND
@@ -54,7 +51,6 @@ public:
 
         public:
             // NOLINTBEGIN
-            // symbol: ??1Description@Dimension@DimensionDocument@@QEAA@XZ
             MCAPI ~Description();
 
             // NOLINTEND
@@ -67,16 +63,12 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??4Dimension@DimensionDocument@@QEAAAEAU01@$$QEAU01@@Z
         MCAPI struct DimensionDocument::Dimension& operator=(struct DimensionDocument::Dimension&&);
 
-        // symbol: ??4Dimension@DimensionDocument@@QEAAAEAU01@AEBU01@@Z
         MCAPI struct DimensionDocument::Dimension& operator=(struct DimensionDocument::Dimension const&);
 
-        // symbol: ??1Dimension@DimensionDocument@@QEAA@XZ
         MCAPI ~Dimension();
 
-        // symbol: ?bindType@Dimension@DimensionDocument@@SAXAEAUReflectionCtx@cereal@@@Z
         MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
         // NOLINTEND
@@ -90,10 +82,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0DimensionDocument@@QEAA@AEAUReflectionCtx@cereal@@@Z
     MCAPI explicit DimensionDocument(struct cereal::ReflectionCtx&);
 
-    // symbol: ??1DimensionDocument@@QEAA@XZ
     MCAPI ~DimensionDocument();
 
     // NOLINTEND

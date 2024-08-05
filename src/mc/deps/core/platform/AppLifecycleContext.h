@@ -10,7 +10,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0AppLifecycleContext@@QEAA@XZ
     MCAPI AppLifecycleContext();
 
     // NOLINTEND

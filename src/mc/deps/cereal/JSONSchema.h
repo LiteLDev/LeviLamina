@@ -19,14 +19,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1JSONSchema@ext@cereal@@QEAA@XZ
     MCAPI ~JSONSchema();
 
-    // symbol: ?bindType@JSONSchema@ext@cereal@@SAXAEAUReflectionCtx@3@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
-    // symbol:
-    // ?fromDescriptions@JSONSchema@ext@cereal@@SA?AU123@AEBV?$vector@USchemaDescription@cereal@@V?$allocator@USchemaDescription@cereal@@@std@@@std@@_K@Z
     MCAPI static struct cereal::ext::JSONSchema
     fromDescriptions(std::vector<struct cereal::SchemaDescription> const&, uint64);
 

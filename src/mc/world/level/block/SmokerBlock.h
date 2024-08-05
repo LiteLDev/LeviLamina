@@ -27,16 +27,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SmokerBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~SmokerBlock() = default;
 
-    // vIndex: 96, symbol: ?asItemInstance@SmokerBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 152, symbol: ?use@SmokerBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    // symbol: ??0SmokerBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
     MCAPI SmokerBlock(std::string const& nameId, int id, bool lit);
 
     // NOLINTEND

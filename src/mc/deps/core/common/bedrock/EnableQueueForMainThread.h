@@ -22,22 +22,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1EnableQueueForMainThread@Threading@Bedrock@@UEAA@XZ
+    // vIndex: 0
     virtual ~EnableQueueForMainThread();
 
-    // symbol:
-    // ??0EnableQueueForMainThread@Threading@Bedrock@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI explicit EnableQueueForMainThread(std::string name);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?flushMainThreadTasks@EnableQueueForMainThread@Threading@Bedrock@@IEAAXXZ
     MCAPI void flushMainThreadTasks();
 
-    // symbol:
-    // ?queueForMainThread@EnableQueueForMainThread@Threading@Bedrock@@IEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@$$QEAV?$function@$$A6AXXZ@5@@Z
     MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
           queueForMainThread(std::function<void()>&& callback);
 

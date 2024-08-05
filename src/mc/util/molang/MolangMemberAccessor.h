@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1MolangMemberAccessor@@QEAA@XZ
     MCAPI ~MolangMemberAccessor();
 
     // NOLINTEND

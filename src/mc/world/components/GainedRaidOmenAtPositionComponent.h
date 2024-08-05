@@ -11,10 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?addAdditionalSaveData@GainedRaidOmenAtPositionComponent@@QEBAXAEAVCompoundTag@@@Z
     MCAPI void addAdditionalSaveData(class CompoundTag&) const;
 
-    // symbol: ?readAdditionalSaveData@GainedRaidOmenAtPositionComponent@@QEAAXAEBVCompoundTag@@@Z
     MCAPI void readAdditionalSaveData(class CompoundTag const&);
 
     // NOLINTEND

@@ -12,10 +12,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0SignalReceiver@Bedrock@@QEAA@XZ
     MCAPI SignalReceiver();
 
-    // symbol: ??1SignalReceiver@Bedrock@@QEAA@XZ
     MCAPI ~SignalReceiver();
 
     // NOLINTEND

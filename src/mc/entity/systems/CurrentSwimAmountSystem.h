@@ -16,11 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createSystem@CurrentSwimAmountSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
-    // symbol:
-    // ?tick@CurrentSwimAmountSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@USwimAmountComponent@@$$CBUActorDataFlagComponent@@@@@Z
     MCAPI static void tick(class ViewT<
                            class StrictEntityContext,
                            struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,
@@ -31,8 +28,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_doCurrentSwimAmountSystem@CurrentSwimAmountSystem@@CAXAEBVStrictEntityContext@@AEAUSwimAmountComponent@@AEBUActorDataFlagComponent@@@Z
     MCAPI static void
     _doCurrentSwimAmountSystem(class StrictEntityContext const&, struct SwimAmountComponent&, struct ActorDataFlagComponent const&);
 

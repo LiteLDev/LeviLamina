@@ -24,23 +24,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MonsterAiStepSystem@@UEAA@XZ
+    // vIndex: 0
     virtual ~MonsterAiStepSystem() = default;
 
-    // vIndex: 1, symbol: __unk_vfn_1
+    // vIndex: 1
     virtual void __unk_vfn_1();
 
-    // vIndex: 2, symbol: __unk_vfn_2
+    // vIndex: 2
     virtual void __unk_vfn_2();
 
-    // vIndex: 3, symbol: __unk_vfn_3
+    // vIndex: 3
     virtual void __unk_vfn_3();
 
-    // vIndex: 4, symbol: __unk_vfn_4
+    // vIndex: 4
     virtual void __unk_vfn_4();
 
-    // vIndex: 5, symbol:
-    // ?tick@MonsterAiStepSystem@@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@UBlazeFlag@@@@V?$FlagComponent@ULavaSlimeFlag@@@@V?$FlagComponent@UMonsterFlag@@@@@@U?$Read@UAABBShapeComponent@@UDimensionTypeComponent@@UOffsetsComponent@@UStateVectorComponent@@@@U?$Write@UNoActionTimeComponent@@@@U?$AddRemove@$$V@@U?$GlobalRead@ULocalConstBlockSourceFactoryComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
+    // vIndex: 5
     virtual void tick(class StrictExecutionContext<
                       struct Filter<
                           class FlagComponent<struct ActorMovementTickNeededFlag>,
@@ -58,11 +57,8 @@ public:
                       struct GlobalWrite<>,
                       struct EntityFactoryT<>>&);
 
-    // symbol: ?createSystem@MonsterAiStepSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
-    // symbol:
-    // ?tickMonsterAiStep@MonsterAiStepSystem@@SAXAEBVStrictEntityContext@@AEBUAABBShapeComponent@@AEBUOffsetsComponent@@AEBUStateVectorComponent@@AEAUNoActionTimeComponent@@V?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UBlazeFlag@@@@@@@@V?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@ULavaSlimeFlag@@@@@@@@AEBVIConstBlockSource@@@Z
     MCAPI static void tickMonsterAiStep(
         class StrictEntityContext const& entity,
         struct AABBShapeComponent const&,

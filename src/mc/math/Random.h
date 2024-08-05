@@ -23,64 +23,56 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1Random@Core@@UEAA@XZ
+    // vIndex: 0
     virtual ~Random();
 
-    // vIndex: 1, symbol: ?nextInt@Random@Core@@UEAAHXZ
+    // vIndex: 1
     virtual int nextInt();
 
-    // vIndex: 2, symbol: ?nextInt@Random@Core@@UEAAHH@Z
+    // vIndex: 2
     virtual int nextInt(int n);
 
-    // vIndex: 3, symbol: ?nextLong@Random@Core@@UEAA_JXZ
+    // vIndex: 3
     virtual int64 nextLong();
 
-    // vIndex: 4, symbol: ?nextBoolean@Random@Core@@UEAA_NXZ
+    // vIndex: 4
     virtual bool nextBoolean();
 
-    // vIndex: 5, symbol: ?nextFloat@Random@Core@@UEAAMXZ
+    // vIndex: 5
     virtual float nextFloat();
 
-    // vIndex: 6, symbol: ?nextDouble@Random@Core@@UEAANXZ
+    // vIndex: 6
     virtual double nextDouble();
 
-    // vIndex: 7, symbol: ?nextGaussianDouble@Random@Core@@UEAANXZ
+    // vIndex: 7
     virtual double nextGaussianDouble();
 
-    // vIndex: 8, symbol: ?consumeCount@Random@Core@@UEAAXI@Z
+    // vIndex: 8
     virtual void consumeCount(uint count);
 
-    // vIndex: 9, symbol: ?fork@Random@Core@@UEAA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@XZ
+    // vIndex: 9
     virtual std::unique_ptr<class IRandom> fork();
 
-    // symbol: ??0Random@Core@@QEAA@I_N@Z
     MCAPI Random(uint, bool);
 
-    // symbol: ?nextGaussian@Random@Core@@QEAAMXZ
     MCAPI float nextGaussian();
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_genRandInt32@Random@Core@@AEAAIXZ
     MCAPI uint _genRandInt32();
 
-    // symbol: ?_genUniformRandomInt@Random@Core@@AEAAIXZ
     MCAPI uint _genUniformRandomInt();
 
-    // symbol: ?_setSeed@Random@Core@@AEAAXI@Z
     MCAPI void _setSeed(uint);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?mRandomDevice@Random@Core@@0Vrandom_device@std@@A
     MCAPI static std::random_device mRandomDevice;
 
-    // symbol:
-    // ?mThreadLocalRandom@Random@Core@@0V?$ThreadLocalObject@VRandom@Core@@V?$allocator@VRandom@Core@@@std@@@Threading@Bedrock@@A
     MCAPI static class Bedrock::Threading::ThreadLocalObject<class Core::Random> mThreadLocalRandom;
 
     // NOLINTEND

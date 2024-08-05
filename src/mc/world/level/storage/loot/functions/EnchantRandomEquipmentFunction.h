@@ -14,15 +14,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1EnchantRandomEquipmentFunction@@UEAA@XZ
+    // vIndex: 0
     virtual ~EnchantRandomEquipmentFunction() = default;
 
-    // vIndex: 1, symbol:
-    // ?apply@EnchantRandomEquipmentFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
+    // vIndex: 1
     virtual void apply(class ItemStack& item, class Random& random, class LootTableContext& context);
 
-    // vIndex: 3, symbol:
-    // ?apply@EnchantRandomEquipmentFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
+    // vIndex: 3
     virtual void apply(class ItemInstance& item, class Random& random, class LootTableContext& context);
 
     // NOLINTEND

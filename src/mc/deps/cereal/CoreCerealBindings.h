@@ -9,10 +9,8 @@ namespace cereal { struct ReflectionCtx; }
 
 namespace CoreCerealBindings {
 // NOLINTBEGIN
-// symbol: ?bindEasing@CoreCerealBindings@@YAXAEAUReflectionCtx@cereal@@@Z
 MCAPI void bindEasing(struct cereal::ReflectionCtx&);
 
-// symbol: ?bindHashedString@CoreCerealBindings@@YAXAEAUReflectionCtx@cereal@@@Z
 MCAPI void bindHashedString(struct cereal::ReflectionCtx&);
 // NOLINTEND
 

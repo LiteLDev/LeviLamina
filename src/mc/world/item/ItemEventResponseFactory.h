@@ -14,13 +14,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ItemEventResponseFactory@@UEAA@XZ
+    // vIndex: 0
     virtual ~ItemEventResponseFactory();
 
-    // vIndex: 1, symbol: ?initializeFactory@ItemEventResponseFactory@@UEAAXAEBVExperiments@@@Z
+    // vIndex: 1
     virtual void initializeFactory(class Experiments const& experiments);
 
-    // vIndex: 2, symbol: ?initSchema@ItemEventResponseFactory@@UEAAXXZ
+    // vIndex: 2
     virtual void initSchema();
 
     // NOLINTEND

@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createLadderResetFallDamageSystem@LadderResetFallDamageSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createLadderResetFallDamageSystem();
 
     // NOLINTEND

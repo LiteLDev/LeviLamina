@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1GameTestSaveData@@QEAA@XZ
     MCAPI ~GameTestSaveData();
 
     // NOLINTEND

@@ -19,14 +19,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?addGiveableTrigger@GiveableDefinition@@QEAAXAEBUGiveableTrigger@@@Z
     MCAPI void addGiveableTrigger(struct GiveableTrigger const& trigger);
 
-    // symbol: ?initialize@GiveableDefinition@@QEBAXAEAVEntityContext@@AEAVGiveableComponent@@@Z
     MCAPI void initialize(class EntityContext&, class GiveableComponent& component) const;
 
-    // symbol:
-    // ?buildSchema@GiveableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VGiveableDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void buildSchema(
         std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GiveableDefinition>>&
             root

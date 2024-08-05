@@ -11,10 +11,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LevelDbRandomAccessFile@@UEAA@XZ
+    // vIndex: 0
     virtual ~LevelDbRandomAccessFile() = default;
 
-    // vIndex: 1, symbol: ?Read@LevelDbRandomAccessFile@@UEBA?AVStatus@leveldb@@_K0PEAVSlice@3@PEAD@Z
+    // vIndex: 1
     virtual leveldb::Status Read(uint64 offset, uint64 n, leveldb::Slice* result, char* scratch) const;
 
     // NOLINTEND

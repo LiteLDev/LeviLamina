@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1ClientLevelEventCoordinator@@UEAA@XZ
+    // vIndex: 0
     virtual ~ClientLevelEventCoordinator() = default;
 
     // NOLINTEND

@@ -11,8 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?canBlockBeAscendedByJumping@BlockClimberSystem@@SA_NAEBVBlockLegacy@@AEBVIConstBlockSource@@AEBVBlockPos@@_N33@Z
     MCAPI static bool canBlockBeAscendedByJumping(
         class BlockLegacy const&,
         class IConstBlockSource const&,
@@ -22,7 +20,6 @@ public:
         bool
     );
 
-    // symbol: ?createSystem@BlockClimberSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();
 
     // NOLINTEND

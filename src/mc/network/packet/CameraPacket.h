@@ -15,25 +15,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1CameraPacket@@UEAA@XZ
+    // vIndex: 0
     virtual ~CameraPacket();
 
-    // vIndex: 1, symbol: ?getId@CameraPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1
     virtual ::MinecraftPacketIds getId() const;
 
-    // vIndex: 2, symbol: ?getName@CameraPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 2
     virtual std::string getName() const;
 
-    // vIndex: 4, symbol: ?write@CameraPacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4
     virtual void write(class BinaryStream& stream) const;
 
-    // vIndex: 8, symbol: ?_read@CameraPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
-    // symbol: ??0CameraPacket@@QEAA@XZ
     MCAPI CameraPacket();
 
-    // symbol: ??0CameraPacket@@QEAA@UActorUniqueID@@0@Z
     MCAPI CameraPacket(struct ActorUniqueID cameraId, struct ActorUniqueID targetPlayerId);
 
     // NOLINTEND

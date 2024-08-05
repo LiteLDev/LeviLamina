@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1CodeBuilderSelectorFilter@@QEAA@XZ
     MCAPI ~CodeBuilderSelectorFilter();
 
     // NOLINTEND

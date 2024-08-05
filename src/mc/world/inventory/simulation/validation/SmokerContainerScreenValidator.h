@@ -14,10 +14,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SmokerContainerScreenValidator@@UEAA@XZ
+    // vIndex: 0
     virtual ~SmokerContainerScreenValidator() = default;
 
-    // symbol: ??0SmokerContainerScreenValidator@@QEAA@XZ
     MCAPI SmokerContainerScreenValidator();
 
     // NOLINTEND

@@ -9,8 +9,6 @@ namespace Scripting { class WeakLifetimeScope; }
 
 namespace ScriptModuleMinecraft::ScriptHandleTrackerUtils {
 // NOLINTBEGIN
-// symbol:
-// ?removeAllTrackedHandles@ScriptHandleTrackerUtils@ScriptModuleMinecraft@@YAXAEBVWeakLifetimeScope@Scripting@@@Z
 MCAPI void removeAllTrackedHandles(class Scripting::WeakLifetimeScope const& scope);
 // NOLINTEND
 

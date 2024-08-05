@@ -7,8 +7,6 @@
 
 namespace MobTravelFilterSystemImpl {
 // NOLINTBEGIN
-// symbol:
-// ?addMobTravelComponent@MobTravelFilterSystemImpl@@YAXAEBVStrictEntityContext@@V?$EntityModifier@UMobTravelComponent@@@@@Z
 MCAPI void addMobTravelComponent(class StrictEntityContext const&, class EntityModifier<struct MobTravelComponent>);
 // NOLINTEND
 

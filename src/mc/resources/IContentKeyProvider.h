@@ -19,14 +19,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1IContentKeyProvider@@UEAA@XZ
+    // vIndex: 0
     virtual ~IContentKeyProvider() = default;
 
-    // symbol:
-    // ?getAlternateContentKey@IContentKeyProvider@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVContentIdentity@@@Z
     MCVAPI std::string getAlternateContentKey(class ContentIdentity const&) const;
 
-    // symbol: ?requireEncryptedReads@IContentKeyProvider@@UEBA_NXZ
     MCVAPI bool requireEncryptedReads() const;
 
     // NOLINTEND

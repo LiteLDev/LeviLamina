@@ -26,48 +26,45 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1SkullItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~SkullItem() = default;
 
-    // vIndex: 29, symbol: ?getBlockShape@SkullItem@@UEBA?AW4BlockShape@@XZ
+    // vIndex: 29
     virtual ::BlockShape getBlockShape() const;
 
-    // vIndex: 32, symbol: ?getLevelDataForAuxValue@SkullItem@@UEBAHH@Z
+    // vIndex: 32
     virtual int getLevelDataForAuxValue(int auxValue) const;
 
-    // vIndex: 50, symbol: ?getEnchantSlot@SkullItem@@UEBAHXZ
+    // vIndex: 50
     virtual int getEnchantSlot() const;
 
-    // vIndex: 56, symbol: ?isValidAuxValue@SkullItem@@UEBA_NH@Z
+    // vIndex: 56
     virtual bool isValidAuxValue(int auxValue) const;
 
-    // vIndex: 74, symbol: ?dispense@SkullItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+    // vIndex: 74
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
-    // vIndex: 83, symbol:
-    // ?buildDescriptionId@SkullItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+    // vIndex: 83
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
-    // vIndex: 97, symbol: ?getEquipLocation@SkullItem@@UEBA?AW4ActorLocation@@XZ
+    // vIndex: 97
     virtual ::ActorLocation getEquipLocation() const;
 
-    // vIndex: 98, symbol: ?getEquipSound@SkullItem@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    // vIndex: 98
     virtual ::Puv::Legacy::LevelSoundEvent getEquipSound() const;
 
-    // vIndex: 104, symbol: ?getIconInfo@SkullItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
+    // vIndex: 104
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const& item, int, bool inInventoryPane) const;
 
-    // vIndex: 113, symbol:
-    // ?getAuxValuesDescription@SkullItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 113
     virtual std::string getAuxValuesDescription() const;
 
-    // vIndex: 116, symbol: ?_calculatePlacePos@SkullItem@@EEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
+    // vIndex: 116
     virtual bool
     _calculatePlacePos(class ItemStackBase& instance, class Actor& entity, uchar& face, class BlockPos& pos) const;
 
-    // vIndex: 118, symbol:
-    // ?_useOn@SkullItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+    // vIndex: 118
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
         const;

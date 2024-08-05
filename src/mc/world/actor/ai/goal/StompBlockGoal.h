@@ -15,50 +15,49 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1StompBlockGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~StompBlockGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@StompBlockGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@StompBlockGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@StompBlockGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@StompBlockGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 6, symbol: ?tick@StompBlockGoal@@UEAAXXZ
+    // vIndex: 6
     virtual void tick();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@StompBlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // vIndex: 11, symbol: ?isValidTarget@StompBlockGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 11
     virtual bool isValidTarget(class BlockSource& region, class BlockPos const& pos);
 
-    // vIndex: 13, symbol: ?_canReach@StompBlockGoal@@MEAA_NAEBVBlockPos@@@Z
+    // vIndex: 13
     virtual bool _canReach(class BlockPos const& pos);
 
-    // vIndex: 14, symbol: ?_moveToBlock@StompBlockGoal@@MEAAXXZ
+    // vIndex: 14
     virtual void _moveToBlock();
 
-    // vIndex: 17, symbol: ?findTargetBlock@StompBlockGoal@@UEAA_NXZ
+    // vIndex: 17
     virtual bool findTargetBlock();
 
-    // vIndex: 18, symbol: ?_createBreakProgressParticles@StompBlockGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z
+    // vIndex: 18
     virtual void _createBreakProgressParticles(class Level& level, class BlockSource& region, class BlockPos pos);
 
-    // vIndex: 19, symbol: ?_createDestroyParticles@StompBlockGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z
+    // vIndex: 19
     virtual void _createDestroyParticles(class Level& level, class BlockSource& region, class BlockPos pos);
 
-    // vIndex: 20, symbol: ?_playBreakProgressSound@StompBlockGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z
+    // vIndex: 20
     virtual void _playBreakProgressSound(class Level& level, class BlockSource& region, class BlockPos pos);
 
-    // vIndex: 21, symbol: ?_playDestroySound@StompBlockGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z
+    // vIndex: 21
     virtual void _playDestroySound(class Level& level, class BlockSource& region, class BlockPos pos);
 
     // NOLINTEND

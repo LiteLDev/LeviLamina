@@ -22,11 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0Event@Events@Social@@QEAA@AEBV012@@Z
     MCAPI Event(class Social::Events::Event const&);
 
-    // symbol:
-    // ??0Event@Events@Social@@QEAA@IAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VProperty@Events@Social@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VProperty@Events@Social@@@std@@@2@@4@H@Z
     MCAPI Event(
         uint                                                              id,
         std::string const&                                                eventName,
@@ -34,8 +31,6 @@ public:
         int                                                               eventTags
     );
 
-    // symbol:
-    // ??0Event@Events@Social@@QEAA@IAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VProperty@Events@Social@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VProperty@Events@Social@@@std@@@2@@4@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@H@Z
     MCAPI Event(
         uint                                                              id,
         std::string const&                                                eventName,
@@ -44,31 +39,22 @@ public:
         int                                                               eventTags
     );
 
-    // symbol: ?addProperty@Event@Events@Social@@QEAAXAEBVProperty@23@@Z
     MCAPI void addProperty(class Social::Events::Property const& property);
 
-    // symbol: ?hasEventTags@Event@Events@Social@@QEBA_NH@Z
     MCAPI bool hasEventTags(int tags) const;
 
-    // symbol: ?hasMeasurements@Event@Events@Social@@QEBA_NXZ
     MCAPI bool hasMeasurements() const;
 
-    // symbol: ??8Event@Events@Social@@QEBA_NAEBV012@@Z
     MCAPI bool operator==(class Social::Events::Event const& other) const;
 
-    // symbol: ?passesFilter@Event@Events@Social@@QEBA_NH@Z
     MCAPI bool passesFilter(int tagsToExclude) const;
 
-    // symbol: ?propertiesAsJsonValue@Event@Events@Social@@QEBA?AVValue@Json@@XZ
     MCAPI class Json::Value propertiesAsJsonValue() const;
 
-    // symbol: ?stampWithRecord@Event@Events@Social@@QEAAXI@Z
     MCAPI void stampWithRecord(uint recordSequence);
 
-    // symbol: ?updateMeasurements@Event@Events@Social@@QEAAXAEBV123@@Z
     MCAPI void updateMeasurements(class Social::Events::Event const& event);
 
-    // symbol: ??1Event@Events@Social@@QEAA@XZ
     MCAPI ~Event();
 
     // NOLINTEND

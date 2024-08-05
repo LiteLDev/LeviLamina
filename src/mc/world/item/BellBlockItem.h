@@ -26,16 +26,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1BellBlockItem@@UEAA@XZ
+    // vIndex: 0
     virtual ~BellBlockItem() = default;
 
-    // vIndex: 118, symbol:
-    // ?_useOn@BellBlockItem@@UEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+    // vIndex: 118
     virtual class InteractionResult
     _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
         const;
 
-    // symbol: ??0BellBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI BellBlockItem(std::string const& name, int id);
 
     // NOLINTEND

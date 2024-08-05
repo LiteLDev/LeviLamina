@@ -389,56 +389,35 @@ namespace mce { class Color; }
 
 namespace ScriptModuleMinecraft {
 // NOLINTBEGIN
-// symbol: ?SetUpScriptAssertHandler@ScriptModuleMinecraft@@YAXXZ
 MCAPI void SetUpScriptAssertHandler();
 
-// symbol:
-// ?_handleDefinePropertyError@ScriptModuleMinecraft@@YA?AUError@Scripting@@W4DynamicPropertyDefinePropertyError@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
 MCAPI struct Scripting::Error _handleDefinePropertyError(::DynamicPropertyDefinePropertyError, std::string const&);
 
-// symbol: ?bindBlockLocation@ScriptModuleMinecraft@@YA?AV?$ClassBindingBuilder@VBlockPos@@@Scripting@@XZ
 MCAPI class Scripting::ClassBindingBuilder<class BlockPos> bindBlockLocation();
 
-// symbol:
-// ?bindFacingEnumV010@ScriptModuleMinecraft@@YA?AV?$EnumBindingBuilder@W4ScriptFacing@ScriptModuleMinecraft@@W412@@Scripting@@XZ
 MCAPI class Scripting::EnumBindingBuilder<::ScriptModuleMinecraft::ScriptFacing, ::ScriptModuleMinecraft::ScriptFacing>
 bindFacingEnumV010();
 
-// symbol:
-// ?bindFacingEnumV1@ScriptModuleMinecraft@@YA?AV?$EnumBindingBuilder@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ScriptFacing@ScriptModuleMinecraft@@@Scripting@@XZ
 MCAPI class Scripting::EnumBindingBuilder<std::string, ::ScriptModuleMinecraft::ScriptFacing> bindFacingEnumV1();
 
-// symbol: ?bindHudElements@ScriptModuleMinecraft@@YAXAEAVModuleBindingBuilder@Scripting@@@Z
 MCAPI void bindHudElements(class Scripting::ModuleBindingBuilder&);
 
-// symbol: ?bindHudVisibility@ScriptModuleMinecraft@@YAXAEAVModuleBindingBuilder@Scripting@@@Z
 MCAPI void bindHudVisibility(class Scripting::ModuleBindingBuilder&);
 
-// symbol:
-// ?bindItemLockMode@ScriptModuleMinecraft@@YA?AV?$EnumBindingBuilder@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ItemLockMode@@@Scripting@@XZ
 MCAPI class Scripting::EnumBindingBuilder<std::string, ::ItemLockMode> bindItemLockMode();
 
-// symbol: ?bindMoonPhases@ScriptModuleMinecraft@@YAXAEAVModuleBindingBuilder@Scripting@@@Z
 MCAPI void bindMoonPhases(class Scripting::ModuleBindingBuilder&);
 
-// symbol:
-// ?bindScriptDisplayObjectiveSlotId@ScriptModuleMinecraft@@YA?AV?$EnumBindingBuilder@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ScriptDisplayObjectiveSlotId@ScriptModuleMinecraft@@@Scripting@@XZ
 MCAPI class Scripting::EnumBindingBuilder<std::string, ::ScriptModuleMinecraft::ScriptDisplayObjectiveSlotId>
 bindScriptDisplayObjectiveSlotId();
 
-// symbol:
-// ?bindScriptEventSource@ScriptModuleMinecraft@@YA?AV?$EnumBindingBuilder@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ScriptEventSource@ScriptModuleMinecraft@@@Scripting@@XZ
 MCAPI class Scripting::EnumBindingBuilder<std::string, ::ScriptModuleMinecraft::ScriptEventSource>
 bindScriptEventSource();
 
-// symbol:
-// ?bindTimeOfDay@ScriptModuleMinecraft@@YA?AV?$EnumBindingBuilder@W4ScriptTimeOfDay@ScriptModuleMinecraft@@W412@@Scripting@@XZ
 MCAPI class Scripting::
     EnumBindingBuilder<::ScriptModuleMinecraft::ScriptTimeOfDay, ::ScriptModuleMinecraft::ScriptTimeOfDay>
     bindTimeOfDay();
 
-// symbol:
-// ?extractBlockFromVariant@ScriptModuleMinecraft@@YAPEBVBlock@@AEBV?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$StrongTypedObjectHandle@VScriptBlockType@ScriptModuleMinecraft@@@Scripting@@V?$StrongTypedObjectHandle@VScriptBlockPermutation@ScriptModuleMinecraft@@@4@@std@@@Z
 MCAPI class Block const*
 extractBlockFromVariant(std::variant<
                         std::string,
@@ -446,8 +425,6 @@ extractBlockFromVariant(std::variant<
                         class Scripting::StrongTypedObjectHandle<
                             class ScriptModuleMinecraft::ScriptBlockPermutation>> const&);
 
-// symbol:
-// ?getScriptScoreboardParticipantName@ScriptModuleMinecraft@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$variant@V?$StrongTypedObjectHandle@VScriptScoreboardIdentity@ScriptModuleMinecraft@@@Scripting@@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@3@@Z
 MCAPI std::string
       getScriptScoreboardParticipantName(std::variant<
                                          class Scripting::StrongTypedObjectHandle<
@@ -455,8 +432,6 @@ MCAPI std::string
                                          class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>,
                                          std::string> const&);
 
-// symbol:
-// ?scriptDisplayObjectiveSlotIdToString@ScriptModuleMinecraft@@YAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ScriptDisplayObjectiveSlotId@1@@Z
 MCAPI std::string const& scriptDisplayObjectiveSlotIdToString(::ScriptModuleMinecraft::ScriptDisplayObjectiveSlotId);
 // NOLINTEND
 

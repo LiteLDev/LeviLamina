@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getRoot@BehaviorTreeDefinition@@QEBAPEBVBehaviorDefinition@@XZ
     MCAPI class BehaviorDefinition const* getRoot() const;
 
     // NOLINTEND

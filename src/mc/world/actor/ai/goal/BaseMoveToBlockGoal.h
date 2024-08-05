@@ -15,22 +15,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BaseMoveToBlockGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~BaseMoveToBlockGoal();
 
-    // vIndex: 1, symbol: ?canUse@BaseMoveToBlockGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@BaseMoveToBlockGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 14, symbol: ?_moveToBlock@BaseMoveToBlockGoal@@MEAAXXZ
+    // vIndex: 14
     virtual void _moveToBlock();
 
-    // vIndex: 17, symbol: ?findTargetBlock@BaseMoveToBlockGoal@@UEAA_NXZ
+    // vIndex: 17
     virtual bool findTargetBlock();
 
-    // symbol: ??0BaseMoveToBlockGoal@@QEAA@AEAVMob@@MHHHMM@Z
     MCAPI BaseMoveToBlockGoal(
         class Mob& mob,
         float      speedModifier,

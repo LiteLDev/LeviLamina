@@ -21,15 +21,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?getPath@ScriptNavigationResult@ScriptModuleGameTest@@QEBA?AV?$vector@VVec3@@V?$allocator@VVec3@@@std@@@std@@XZ
     MCAPI std::vector<class Vec3> getPath() const;
 
-    // symbol: ??1ScriptNavigationResult@ScriptModuleGameTest@@QEAA@XZ
     MCAPI ~ScriptNavigationResult();
 
-    // symbol:
-    // ?bind@ScriptNavigationResult@ScriptModuleGameTest@@SA?AV?$ClassBindingBuilder@UScriptNavigationResult@ScriptModuleGameTest@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleGameTest::ScriptNavigationResult> bind();
 
     // NOLINTEND

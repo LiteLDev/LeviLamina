@@ -11,7 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ITreeCanopyWrapper@@QEAA@XZ
     MCAPI ~ITreeCanopyWrapper();
 
     // NOLINTEND

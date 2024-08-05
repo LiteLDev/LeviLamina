@@ -27,14 +27,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1LodestoneBlock@@UEAA@XZ
+    // vIndex: 0
     virtual ~LodestoneBlock() = default;
 
-    // symbol:
-    // ??0LodestoneBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI LodestoneBlock(std::string const& nameId, int id, class Material const& material);
 
-    // symbol: ?getBlockActor@LodestoneBlock@@SAPEAVLodestoneBlockActor@@AEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static class LodestoneBlockActor* getBlockActor(class BlockSource& region, class BlockPos const& pos);
 
     // NOLINTEND

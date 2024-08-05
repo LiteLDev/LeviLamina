@@ -16,14 +16,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ?serialize@ScriptDebuggerDiagnosticsPayload@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUReflectionCtx@cereal@@@Z
     MCAPI std::string serialize(struct cereal::ReflectionCtx const&) const;
 
-    // symbol: ??1ScriptDebuggerDiagnosticsPayload@@QEAA@XZ
     MCAPI ~ScriptDebuggerDiagnosticsPayload();
 
-    // symbol: ?bindType@ScriptDebuggerDiagnosticsPayload@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // NOLINTEND

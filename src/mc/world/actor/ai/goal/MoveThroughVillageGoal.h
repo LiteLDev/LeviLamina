@@ -15,26 +15,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1MoveThroughVillageGoal@@UEAA@XZ
+    // vIndex: 0
     virtual ~MoveThroughVillageGoal() = default;
 
-    // vIndex: 1, symbol: ?canUse@MoveThroughVillageGoal@@UEAA_NXZ
+    // vIndex: 1
     virtual bool canUse();
 
-    // vIndex: 2, symbol: ?canContinueToUse@MoveThroughVillageGoal@@UEAA_NXZ
+    // vIndex: 2
     virtual bool canContinueToUse();
 
-    // vIndex: 4, symbol: ?start@MoveThroughVillageGoal@@UEAAXXZ
+    // vIndex: 4
     virtual void start();
 
-    // vIndex: 5, symbol: ?stop@MoveThroughVillageGoal@@UEAAXXZ
+    // vIndex: 5
     virtual void stop();
 
-    // vIndex: 7, symbol:
-    // ?appendDebugInfo@MoveThroughVillageGoal@@EEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    // symbol: ??0MoveThroughVillageGoal@@QEAA@AEAVMob@@M_N@Z
     MCAPI MoveThroughVillageGoal(class Mob& mob, float speedModifier, bool onlyAtNight);
 
     // NOLINTEND
