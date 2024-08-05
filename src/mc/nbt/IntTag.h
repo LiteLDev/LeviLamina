@@ -29,7 +29,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IntTag();
+    virtual ~IntTag() = default;
 
     // vIndex: 2
     virtual void write(class IDataOutput& dos) const;

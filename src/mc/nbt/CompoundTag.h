@@ -46,7 +46,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CompoundTag();
+    virtual ~CompoundTag() = default;
 
     // vIndex: 2
     virtual void write(class IDataOutput& dos) const;

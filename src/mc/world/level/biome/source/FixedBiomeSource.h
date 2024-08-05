@@ -32,7 +32,7 @@ public:
     virtual class BiomeArea
     getBiomeArea(class BoundingBox const& area, uint scale, struct GetBiomeOptions const&) const;
 
-    // vIndex: 3, symbol: ?getBiomeArea@FixedBiomeSource@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z
+    // vIndex: 3
     virtual class BiomeArea getBiomeArea(class BoundingBox const& area, uint scale) const;
 
     // vIndex: 4

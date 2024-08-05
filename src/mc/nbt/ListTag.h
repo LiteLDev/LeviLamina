@@ -26,7 +26,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ListTag();
+    virtual ~ListTag() = default;
 
     // vIndex: 1
     virtual void deleteChildren();

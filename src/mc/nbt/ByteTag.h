@@ -33,7 +33,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ByteTag();
+    virtual ~ByteTag() = default;
 
     // vIndex: 2
     virtual void write(class IDataOutput& dos) const;
