@@ -1,19 +1,3 @@
-# Farewell, Bedrock modders!
-
-This repository will be archived because Mojang plans to remove the symbols file from their future released binaries.
-
-Despite [the community's request for full PDB files](https://feedback.minecraft.net/hc/en-us/community/posts/23093086772109-Request-for-Complete-PDB-for-Minecraft-Bedrock-Dedicated-Server), Mojang has refused and now intends to remove the symbols file from future releases.
-
-This will make it impossible to debug the server and develop mods, leading to the end of the development of LeviLamina and other mods.
-
-As a result, no important mods will be developed in the future, such as **critical bug fixes**, **anti-cheat mods**, and other feature mods that the community needs. However, those who develop cheats will still be able to do so, making it difficult for the community to create anti-cheat mods to protect the server.
-
-Mojang has not excelled in developing the server, and now they are making it impossible for the community to develop mods. This is a very poor decision.
-
-Mojang's stance against the community is **deeply disappointing**. We urge the community to take action and make our voices heard. By expressing our concerns on social media and applying pressure on Mojang, we hope they will reconsider their decision. Community unity and collective effort might encourage Mojang to change their approach.
-
-If you have any questions or comments about this notice, please contact `liteldev@liteldev.com`.
-
 # LeviLamina
 
 ![LeviLamina](https://socialify.git.ci/LiteLDev/LeviLamina/image?description=1&font=Raleway&forks=1&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FLiteLDev%2FLeviLamina%2FHEAD%2Fdocs%2Fimg%2Flogo.svg&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Auto)
