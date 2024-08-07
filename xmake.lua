@@ -24,6 +24,7 @@ add_requires("preloader v1.9.0")
 add_requires("symbolprovider v1.1.0")
 add_requires("libhat 2024.4.16")
 add_requires("bedrockdata 1.21.3.01")
+add_requires("levibuildscript 0.1.0")
 
 if has_config("tests") then
     add_requires("gtest")
@@ -59,6 +60,8 @@ option("build-platform")
     set_values("Android", "iOS", "UWP", "DedicatedWin", "DedicatedLinux")
 
 target("LeviLamina")
+    add_rules("@levibuildscript/linkrule")
+    add_rules("@levibuildscript/modpacker")
     set_languages("c++20")
     set_kind("shared")
     set_symbols("debug")
@@ -68,7 +71,6 @@ target("LeviLamina")
         "src/ll/core/**.cpp",
         "src/mc/**.cpp"
     )
-    add_rules("@bedrockdata/linkrule")
     set_configdir("$(buildir)/config")
     set_configvar("LL_WORKSPACE_FOLDER", "$(projectdir)")
     add_configfiles("src/(ll/core/Version.h.in)")
@@ -134,9 +136,6 @@ target("LeviLamina")
     end
 
     if is_config("build-platform", "Dedicated.*") then
-        if is_config("build-platform", "DedicatedWin") then
-            add_shflags("/DELAYLOAD:bedrock_server.dll")
-        end
         add_headerfiles("src-server/(ll/api/**.h)"
         -- , "src-server/(mc/**.h)"
         )
@@ -201,22 +200,4 @@ target("LeviLamina")
         target:set("configvar", "LL_VERSION_MAJOR", major)
         target:set("configvar", "LL_VERSION_MINOR", minor)
         target:set("configvar", "LL_VERSION_PATCH", patch)
-    end)
-
-    after_build(function (target)
-        local mod_packer = import("scripts.after_build")
-
-        local tag = os.iorun("git describe --tags --abbrev=0 --always")
-        local major, minor, patch, suffix = tag:match("v(%d+)%.(%d+)%.(%d+)(.*)")
-        if not major then
-            print("Failed to parse version tag, using 0.0.0")
-            major, minor, patch = 0, 0, 0
-        end
-        local mod_define = {
-            modName = target:name(),
-            modFile = path.filename(target:targetfile()),
-            modVersion = major .. "." .. minor .. "." .. patch,
-        }
-        
-        mod_packer.pack_mod(target,mod_define)
     end)
