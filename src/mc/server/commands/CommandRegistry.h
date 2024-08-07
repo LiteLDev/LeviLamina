@@ -192,6 +192,7 @@ public:
         FactoryFn*                        alloc;         // this+0x8
         std::vector<CommandParameterData> params;        // this+0x10
         int                               versionOffset; // this+0x28
+        bool                              chaining;      // this+0x2C
         std::vector<Symbol>               paramsSymbol;  // this+0x30
 
     public:
