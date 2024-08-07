@@ -23,6 +23,7 @@ add_requires("demangler v17.0.7")
 add_requires("preloader v1.9.0")
 add_requires("symbolprovider v1.1.0")
 add_requires("libhat 2024.4.16")
+add_requires("bedrockdata 1.21.3.01")
 
 if has_config("tests") then
     add_requires("gtest")
@@ -30,10 +31,6 @@ end
 
 if not has_config("vs_runtime") then
     set_runtimes("MD")
-end
-
-if is_config("build-platform", "Dedicated.*") then
-    add_requires("bdslibrary 1.21.3.01")
 end
 
 if is_config("build-platform", "DedicatedWin", "UWP") then
@@ -71,6 +68,7 @@ target("LeviLamina")
         "src/ll/core/**.cpp",
         "src/mc/**.cpp"
     )
+    add_rules("@bedrockdata/linkrule")
     set_configdir("$(buildir)/config")
     set_configvar("LL_WORKSPACE_FOLDER", "$(projectdir)")
     add_configfiles("src/(ll/core/Version.h.in)")
@@ -91,7 +89,7 @@ target("LeviLamina")
         "pcg_cpp",
         "pfr",
         "symbolprovider",
-        "bdslibrary",
+        "bedrockdata",
         {public = true}
     )
     add_defines(
@@ -136,9 +134,9 @@ target("LeviLamina")
     end
 
     if is_config("build-platform", "Dedicated.*") then
-        add_shflags("/DELAYLOAD:bedrock_server.dll")
-        add_defines("LL_PLAT_SERVER")
-        add_packages("bdslibrary", {public = true})
+        if is_config("build-platform", "DedicatedWin") then
+            add_shflags("/DELAYLOAD:bedrock_server.dll")
+        end
         add_headerfiles("src-server/(ll/api/**.h)"
         -- , "src-server/(mc/**.h)"
         )
@@ -148,8 +146,6 @@ target("LeviLamina")
             "src-server/ll/core/**.cpp"
             -- "src-server/mc/**.cpp"
         )
-    else
-        add_defines("LL_PLAT_CLIENT")
     end
 
     if has_config("tests") then
