@@ -30,20 +30,6 @@ if has_config("tests") then
     add_requires("gtest")
 end
 
-if not has_config("vs_runtime") then
-    set_runtimes("MD")
-end
-
-if is_config("build-platform", "DedicatedWin", "UWP") then
-    set_allowedarchs("windows|x64")
-elseif is_config("build-platform", "DedicatedLinux") then
-    set_allowedarchs("linux|x86_64")
-elseif is_config("build-platform", "Android") then
-    set_allowedarchs("android|arm64-v8a")
-elseif is_config("build-platform", "iOS") then
-    set_allowedarchs("iphoneos|arm64")
-end
-
 option("tests")
     set_default(false)
     set_showmenu(true)
@@ -54,10 +40,23 @@ option("use_mimalloc")
     set_showmenu(true)
     set_description("Enable mimalloc")
 
-option("build-platform")
-    set_default("DedicatedWin")
+option("operating-platform")
+    set_default("server")
     set_showmenu(true)
-    set_values("Android", "iOS", "UWP", "DedicatedWin", "DedicatedLinux")
+    set_values("server", "client")
+option_end()
+
+if is_config("operating-platform", "server") then
+    set_defaultarchs("windows|x64")
+    set_allowedarchs("windows|x64", "linux|x86_64")
+else
+    set_defaultarchs("windows|x64")
+    set_allowedarchs("windows|x64", "android|arm64-v8a", "iphoneos|arm64")
+end
+
+if not has_config("vs_runtime") and is_os("windows") then
+    set_runtimes("MD")
+end
 
 target("LeviLamina")
     add_rules("@levibuildscript/linkrule")
@@ -100,7 +99,7 @@ target("LeviLamina")
         "_HAS_CXX23=1" -- work around to enable c++23
     )
 
-    if is_config("build-platform", "DedicatedWin", "UWP") then
+    if is_os("windows") then
         add_syslinks("Version", "DbgHelp")
         add_defines(
             "_AMD64_",
@@ -136,7 +135,7 @@ target("LeviLamina")
         add_files("src/ll/core/**.rc")
     end
 
-    if is_config("build-platform", "Dedicated.*") then
+    if is_config("operating-platform", "server") then
         add_headerfiles("src-server/(ll/api/**.h)"
         -- , "src-server/(mc/**.h)"
         )
