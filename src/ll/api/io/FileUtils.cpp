@@ -11,8 +11,6 @@
 
 #include "windows.h"
 
-#pragma comment(lib, "Version.lib")
-
 namespace ll::inline utils::file_utils {
 using namespace string_utils;
 namespace fs = std::filesystem;

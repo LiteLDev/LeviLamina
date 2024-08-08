@@ -55,14 +55,6 @@ hook(FuncPtr target, FuncPtr detour, FuncPtr* originalFunc, HookPriority priorit
 
 LLAPI bool unhook(FuncPtr target, FuncPtr detour, bool suspendThreads = true);
 
-/**
- * @brief Get the pointer of a function by identifier.
- *
- * @param identifier symbol or signature
- * @return FuncPtr
- */
-LLNDAPI FuncPtr resolveIdentifier(std::string_view identifier, bool disableErrorOutput = false);
-
 template <class T>
 concept FuncPtrType = std::is_function_v<std::remove_pointer_t<T>> || std::is_member_function_pointer_v<T>;
 
@@ -74,7 +66,7 @@ constexpr FuncPtr resolveIdentifier(T identifier) {
 // redirect to resolveIdentifier(std::string_view)
 template <class T>
 constexpr FuncPtr resolveIdentifier(std::string_view identifier) {
-    return resolveIdentifier(identifier);
+    return resolveSymbol(identifier, false);
 }
 
 template <class T>

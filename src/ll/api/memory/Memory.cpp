@@ -17,21 +17,39 @@
 
 #include "memoryapi.h"
 
+#include "demangler/Demangle.h"
+
 namespace ll::memory {
 
+std::string demangleSymbol(std::string_view symbol) {
+    std::string res;
+    if (char* demangled = demangler::microsoftDemangle(
+            symbol,
+            nullptr,
+            nullptr,
+            (demangler::MSDemangleFlags)(demangler::MSDF_NoAccessSpecifier | demangler::MSDF_NoCallingConvention)
+        )) {
+        res = demangled;
+        std::free(demangled);
+    } else {
+        res = symbol;
+    }
+    return res;
+}
+
 FuncPtr resolveSymbol(char const* symbol) {
-    auto          res = pl::symbol_provider::pl_resolve_symbol_silent(symbol);
+    auto res = pl::symbol_provider::pl_resolve_symbol_silent(symbol);
     if (res == nullptr) {
-        getLogger().fatal("Could not find symbol in memory: {}", symbol);
+        getLogger().fatal("Could not find symbol in memory: {}", demangleSymbol(symbol));
         getLogger().fatal("In module: {}", sys_utils::getCallerModuleFileName());
     }
     return res;
 }
 
 FuncPtr resolveSymbol(std::string_view symbol, bool disableErrorOutput) {
-    auto          res = pl::symbol_provider::pl_resolve_symbol_silent_n(symbol.data(), symbol.size());
+    auto res = pl::symbol_provider::pl_resolve_symbol_silent_n(symbol.data(), symbol.size());
     if (!disableErrorOutput && res == nullptr) {
-        getLogger().fatal("Could not find symbol in memory: {}", symbol);
+        getLogger().fatal("Could not find symbol in memory: {}", demangleSymbol(symbol));
         getLogger().fatal("In module: {}", sys_utils::getCallerModuleFileName());
     }
     return res;

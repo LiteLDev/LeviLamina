@@ -11,7 +11,6 @@
 #include "windows.h"
 
 #include "DbgHelp.h"
-#pragma comment(lib, "DbgHelp.lib")
 
 #ifdef LL_DEBUG
 #include "ll/api/utils/StacktraceUtils.h"

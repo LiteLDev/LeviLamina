@@ -101,6 +101,7 @@ target("LeviLamina")
     )
 
     if is_config("build-platform", "DedicatedWin", "UWP") then
+        add_syslinks("Version", "DbgHelp")
         add_defines(
             "_AMD64_",
             "NOMINMAX",

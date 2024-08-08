@@ -63,6 +63,8 @@ LLNDAPI FuncPtr resolveSymbol(char const* symbol);
 
 LLNDAPI FuncPtr resolveSymbol(std::string_view symbol, bool disableErrorOutput);
 
+LLNDAPI std::string demangleSymbol(std::string_view symbol);
+
 /**
  * @brief resolve signature to function pointer from process image
  * @param signature signature

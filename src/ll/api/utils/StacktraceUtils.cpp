@@ -13,7 +13,6 @@
 #include "windows.h"
 
 #include "DbgHelp.h"
-#pragma comment(lib, "DbgHelp.lib")
 
 #include "DbgEng.h"
 
@@ -216,11 +215,7 @@ StackTraceEntryInfo getInfo(std::stacktrace_entry const& entry) {
         auto   str = pl::symbol_provider::pl_lookup_symbol_disp(entry.native_handle(), &length, &disp);
         if (length) {
             static auto processName = sys_utils::getModuleFileName(nullptr);
-            std::string demangledName(0x1000, '\0');
-            size_t      strLength =
-                UnDecorateSymbolName(str[0], demangledName.data(), (DWORD)demangledName.size(), UNDNAME_NAME_ONLY);
-            demangledName.resize(strLength);
-            StackTraceEntryInfo res{disp, processName + '!' + demangledName};
+            StackTraceEntryInfo res{disp, processName + '!' + str[0]};
             pl::symbol_provider::pl_free_lookup_result(str);
             return res;
         }

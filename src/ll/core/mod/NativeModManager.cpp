@@ -9,7 +9,6 @@
 #include <string_view>
 #include <utility>
 
-#include "demangler/Demangle.h"
 #include "fmt/core.h"
 #include "pl/dependency/DependencyWalker.h"
 
@@ -23,10 +22,7 @@
 #include "ll/api/utils/SystemUtils.h"
 #include "ll/core/LeviLamina.h"
 
-#include "errhandlingapi.h"
-#include "minwindef.h"
-#include "processenv.h"
-#include "winerror.h"
+#include "windows.h"
 
 namespace ll::mod {
 using namespace i18n_literals;
@@ -65,9 +61,8 @@ formatDependencyError(pl::dependency_walker::DependencyIssueItem const& item, st
                 stream << indent << "|- " << module << '\n';
                 for (const auto& procedure : missingProcedure) {
                     stream << indent << "|---- " << procedure << '\n';
-
-                    auto de = demangler::demangle(procedure);
-                    if (de != procedure) stream << indent << "|     " << de << '\n';
+                    auto demangledName = memory::demangleSymbol(procedure);
+                    if (demangledName != procedure) stream << indent << "|     " << demangledName << '\n';
                 }
             }
         }

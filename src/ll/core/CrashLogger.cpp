@@ -13,10 +13,9 @@
 #include "ll/core/Config.h"
 #include "ll/core/LeviLamina.h"
 
-#include <windows.h>
+#include "windows.h"
 
 #include "DbgHelp.h"
-#pragma comment(lib, "DbgHelp.lib")
 
 namespace ll {
 using namespace i18n_literals;
