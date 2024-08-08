@@ -40,7 +40,7 @@ std::string demangleSymbol(std::string_view symbol) {
 FuncPtr resolveSymbol(char const* symbol) {
     auto res = pl::symbol_provider::pl_resolve_symbol_silent(symbol);
     if (res == nullptr) {
-        getLogger().fatal("Could not find symbol in memory: {}", demangleSymbol(symbol));
+        getLogger().fatal("Couldn't find: {}", demangleSymbol(symbol));
         getLogger().fatal("In module: {}", sys_utils::getCallerModuleFileName());
     }
     return res;
@@ -49,7 +49,7 @@ FuncPtr resolveSymbol(char const* symbol) {
 FuncPtr resolveSymbol(std::string_view symbol, bool disableErrorOutput) {
     auto res = pl::symbol_provider::pl_resolve_symbol_silent_n(symbol.data(), symbol.size());
     if (!disableErrorOutput && res == nullptr) {
-        getLogger().fatal("Could not find symbol in memory: {}", demangleSymbol(symbol));
+        getLogger().fatal("Couldn't find: {}", demangleSymbol(symbol));
         getLogger().fatal("In module: {}", sys_utils::getCallerModuleFileName());
     }
     return res;
