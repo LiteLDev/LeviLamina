@@ -29,14 +29,15 @@ public:
     };
 
     /*These member variables were obtained by analyzing BDS-WIN 1.20.61 using IDA.*/
-    int                          mChunkSide;             // this+0x18
-    Level*                       mLevel;                 // this+0x20
-    Dimension*                   mDimension;             // this+0x28
-    ChunkSource*                 mParent;                // this+0x30
-    std::unique_ptr<ChunkSource> mOwnedParent;           // this+0x38
-    LevelChunkBuilderData*       mLevelChunkBuilderData; // this+0x40
-    std::atomic_bool             mShuttingDown;          // this+0x48
-    char                         filler[32];             // the other four member variables
+    int                                                     mChunkSide;             // this+0x18
+    Level*                                                  mLevel;                 // this+0x20
+    Dimension*                                              mDimension;             // this+0x28
+    ChunkSource*                                            mParent;                // this+0x30
+    std::unique_ptr<ChunkSource>                            mOwnedParent;           // this+0x38
+    LevelChunkBuilderData*                                  mLevelChunkBuilderData; // this+0x40
+    std::atomic_bool                                        mShuttingDown;          // this+0x48
+    char                                                    pad_0x0049[0x17];       // the other 3 member variables
+    std::unordered_map<ChunkPos, std::weak_ptr<LevelChunk>> chunkStorage;           // this+0x60
 
     // uchar filler[0x70 - sizeof(Bedrock::EnableNonOwnerReferences)];
 
