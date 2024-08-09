@@ -10,7 +10,9 @@ class VarIntDataOutput : public ::BytesDataOutput {
 public:
     BinaryStream* mStream;
 
-    explicit VarIntDataOutput(class BinaryStream* bs) : mStream(bs) {}
+    explicit VarIntDataOutput(BinaryStream* bs) : mStream(bs) {}
+
+    explicit VarIntDataOutput(BinaryStream& bs) : mStream(std::addressof(bs)) {}
 
     VarIntDataOutput() = delete;
 
