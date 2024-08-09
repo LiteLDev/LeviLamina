@@ -11,13 +11,13 @@ public:
 
     template <class Entity = Actor, bool IncludeRemoved = false>
     [[nodiscard]] optional_ref<Entity> tryUnwrap() const {
-        if (_hasValue()) {
-            return Entity::tryGetFromEntity(_getStackRef(), IncludeRemoved);
+        if (*this) {
+            return Entity::tryGetFromEntity(const_cast<EntityContext&>(*mContext), IncludeRemoved);
         }
         return nullptr;
     }
 
-    [[nodiscard]] inline operator bool() const { return _hasValue(); } // NOLINT
+    [[nodiscard]] inline operator bool() const { return mContext.has_value(); } // NOLINT
 
 public:
     // prevent constructor by default

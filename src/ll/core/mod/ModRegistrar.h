@@ -12,8 +12,6 @@ namespace ll::mod {
 
 class ModRegistrar {
     struct Impl;
-    struct EnableAllMods;
-    struct DisableAllMods;
 
     std::unique_ptr<Impl> impl;
 
@@ -25,7 +23,11 @@ public:
 
     [[nodiscard]] std::vector<std::string> getSortedModNames() const;
 
-    void loadAllMods();
+    void loadAllMods() noexcept;
+
+    void enableAllMods() noexcept;
+
+    void disableAllMods() noexcept;
 
     Expected<> loadMod(std::string_view name) noexcept;
 

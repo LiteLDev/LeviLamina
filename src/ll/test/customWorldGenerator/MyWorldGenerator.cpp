@@ -1,97 +1,97 @@
-//#pragma once
+// #pragma once
 //
-//#include "ll/api/utils/RandomUtils.h"
+// #include "ll/api/utils/RandomUtils.h"
 //
-//#include "ll/api/Logger.h"
-//#include "ll/api/memory/Hook.h"
-//#include "ll/api/memory/Memory.h"
-//#include "ll/api/service/Bedrock.h"
-//#include "ll/core/LeviLamina.h"
-//#include "mc/common/wrapper/WeakRef.h"
-//#include "mc/common/wrapper/optional_ref.h"
-//#include "mc/deps/core/common/bedrock/Intrusive.h"
-//#include "mc/deps/core/data/DividedPos2d.h"
-//#include "mc/deps/core/debug/log/ContentLog.h"
-//#include "mc/deps/core/mce/Math.h"
-//#include "mc/deps/core/string/HashedString.h"
-//#include "mc/deps/core/utility/buffer_span.h"
-//#include "mc/deps/json/Reader.h"
-//#include "mc/deps/json/Value.h"
-//#include "mc/deps/json/Writer.h"
-//#include "mc/entity/systems/common/BiomeSurfaceSystem.h"
-//#include "mc/server/commands/CommandOutput.h"
-//#include "mc/util/Random.h"
-//#include "mc/util/random/XoroshiroPositionalRandomFactory.h"
-//#include "mc/world/actor/player/Player.h"
-//#include "mc/world/level/BlockPalette.h"
-//#include "mc/world/level/BlockSource.h"
-//#include "mc/world/level/BlockTickingQueue.h"
-//#include "mc/world/level/BlockVolumeTarget.h"
-//#include "mc/world/level/ChunkBlockPos.h"
-//#include "mc/world/level/ChunkPos.h"
-//#include "mc/world/level/DimensionConversionData.h"
-//#include "mc/world/level/Level.h"
-//#include "mc/world/level/MolangVariableMap.h"
-//#include "mc/world/level/WorldBlockTarget.h"
-//#include "mc/world/level/WorldGenContext.h"
-//#include "mc/world/level/biome/Biome.h"
-//#include "mc/world/level/biome/VanillaBiomeNames.h"
-//#include "mc/world/level/biome/registry/BiomeRegistry.h"
-//#include "mc/world/level/biome/source/BiomeArea.h"
-//#include "mc/world/level/biome/source/FixedBiomeSource.h"
-//#include "mc/world/level/biome/surface/ISurfaceBuilder.h"
-//#include "mc/world/level/biome/surface/PerlinNoise.h"
-//#include "mc/world/level/biome/surface/PerlinSimplexNoise.h"
-//#include "mc/world/level/block/Block.h"
-//#include "mc/world/level/block/BlockVolume.h"
-//#include "mc/world/level/block/actor/EndGatewayBlockActor.h"
-//#include "mc/world/level/block/registry/BlockTypeRegistry.h"
-//#include "mc/world/level/block/utils/BedrockBlockNames.h"
-//#include "mc/world/level/block/utils/VanillaBlockTypeIds.h"
-//#include "mc/world/level/chunk/ChunkGeneratorStructureState.h"
-//#include "mc/world/level/chunk/ChunkViewSource.h"
-//#include "mc/world/level/chunk/LevelChunk.h"
-//#include "mc/world/level/chunk/LevelChunkBlockActorAccessToken.h"
-//#include "mc/world/level/chunk/PostprocessingManager.h"
-//#include "mc/world/level/chunk/VanillaLevelChunkUpgrade.h"
-//#include "mc/world/level/dimension/Dimension.h"
-//#include "mc/world/level/dimension/DimensionBrightnessRamp.h"
-//#include "mc/world/level/dimension/OverworldBrightnessRamp.h"
-//#include "mc/world/level/dimension/OverworldDimension.h"
-//#include "mc/world/level/dimension/VanillaDimensions.h"
-//#include "mc/world/level/levelgen/WorldGenerator.h"
-//#include "mc/world/level/levelgen/feature/BambooFeature.h"
-//#include "mc/world/level/levelgen/feature/DesertWellFeature.h"
-//#include "mc/world/level/levelgen/feature/FlowerFeature.h"
-//#include "mc/world/level/levelgen/feature/LakeFeature.h"
-//#include "mc/world/level/levelgen/feature/SpikeFeature.h"
-//#include "mc/world/level/levelgen/feature/VanillaTreeFeature.h"
-//#include "mc/world/level/levelgen/feature/gamerefs_feature/FeatureRefTraits.h"
-//#include "mc/world/level/levelgen/feature/helpers/RenderParams.h"
-//#include "mc/world/level/levelgen/feature/registry/FeatureRegistry.h"
-//#include "mc/world/level/levelgen/flat/FlatWorldGenerator.h"
-//#include "mc/world/level/levelgen/flat/FlatWorldGeneratorOptions.h"
-//#include "mc/world/level/levelgen/structure/EndCityFeature.h"
-//#include "mc/world/level/levelgen/structure/StructureFeatureRegistry.h"
-//#include "mc/world/level/levelgen/structure/StructureFeatureType.h"
-//#include "mc/world/level/levelgen/structure/StructureSetRegistry.h"
-//#include "mc/world/level/levelgen/structure/VillageFeature.h"
-//#include "mc/world/level/levelgen/v1/Aquifer.h"
-//#include "mc/world/level/levelgen/v1/ChunkLocalNoiseCache.h"
-//#include "mc/world/level/levelgen/v1/HardcodedSpawnAreaRegistry.h"
-//#include "mc/world/level/levelgen/v1/NetherGenerator.h"
-//#include "mc/world/level/levelgen/v1/OverworldGenerator2d.h"
-//#include "mc/world/level/levelgen/v1/OverworldGeneratorMultinoise.h"
-//#include "mc/world/level/levelgen/v1/TheEndGenerator.h"
-//#include "mc/world/level/levelgen/v1/WorldGenCache.h"
-//#include "mc/world/level/storage/LevelData.h"
+// #include "ll/api/Logger.h"
+// #include "ll/api/memory/Hook.h"
+// #include "ll/api/memory/Memory.h"
+// #include "ll/api/service/Bedrock.h"
+// #include "ll/core/LeviLamina.h"
+// #include "mc/common/wrapper/WeakRef.h"
+// #include "mc/common/wrapper/optional_ref.h"
+// #include "mc/deps/core/common/bedrock/Intrusive.h"
+// #include "mc/deps/core/data/DividedPos2d.h"
+// #include "mc/deps/core/debug/log/ContentLog.h"
+// #include "mc/deps/core/mce/Math.h"
+// #include "mc/deps/core/string/HashedString.h"
+// #include "mc/deps/core/utility/buffer_span.h"
+// #include "mc/deps/json/Reader.h"
+// #include "mc/deps/json/Value.h"
+// #include "mc/deps/json/Writer.h"
+// #include "mc/entity/systems/common/BiomeSurfaceSystem.h"
+// #include "mc/server/commands/CommandOutput.h"
+// #include "mc/util/Random.h"
+// #include "mc/util/random/XoroshiroPositionalRandomFactory.h"
+// #include "mc/world/actor/player/Player.h"
+// #include "mc/world/level/BlockPalette.h"
+// #include "mc/world/level/BlockSource.h"
+// #include "mc/world/level/BlockTickingQueue.h"
+// #include "mc/world/level/BlockVolumeTarget.h"
+// #include "mc/world/level/ChunkBlockPos.h"
+// #include "mc/world/level/ChunkPos.h"
+// #include "mc/world/level/DimensionConversionData.h"
+// #include "mc/world/level/Level.h"
+// #include "mc/world/level/MolangVariableMap.h"
+// #include "mc/world/level/WorldBlockTarget.h"
+// #include "mc/world/level/WorldGenContext.h"
+// #include "mc/world/level/biome/Biome.h"
+// #include "mc/world/level/biome/VanillaBiomeNames.h"
+// #include "mc/world/level/biome/registry/BiomeRegistry.h"
+// #include "mc/world/level/biome/source/BiomeArea.h"
+// #include "mc/world/level/biome/source/FixedBiomeSource.h"
+// #include "mc/world/level/biome/surface/ISurfaceBuilder.h"
+// #include "mc/world/level/biome/surface/PerlinNoise.h"
+// #include "mc/world/level/biome/surface/PerlinSimplexNoise.h"
+// #include "mc/world/level/block/Block.h"
+// #include "mc/world/level/block/BlockVolume.h"
+// #include "mc/world/level/block/actor/EndGatewayBlockActor.h"
+// #include "mc/world/level/block/registry/BlockTypeRegistry.h"
+// #include "mc/world/level/block/utils/BedrockBlockNames.h"
+// #include "mc/world/level/block/utils/VanillaBlockTypeIds.h"
+// #include "mc/world/level/chunk/ChunkGeneratorStructureState.h"
+// #include "mc/world/level/chunk/ChunkViewSource.h"
+// #include "mc/world/level/chunk/LevelChunk.h"
+// #include "mc/world/level/chunk/LevelChunkBlockActorAccessToken.h"
+// #include "mc/world/level/chunk/PostprocessingManager.h"
+// #include "mc/world/level/chunk/VanillaLevelChunkUpgrade.h"
+// #include "mc/world/level/dimension/Dimension.h"
+// #include "mc/world/level/dimension/DimensionBrightnessRamp.h"
+// #include "mc/world/level/dimension/OverworldBrightnessRamp.h"
+// #include "mc/world/level/dimension/OverworldDimension.h"
+// #include "mc/world/level/dimension/VanillaDimensions.h"
+// #include "mc/world/level/levelgen/WorldGenerator.h"
+// #include "mc/world/level/levelgen/feature/BambooFeature.h"
+// #include "mc/world/level/levelgen/feature/DesertWellFeature.h"
+// #include "mc/world/level/levelgen/feature/FlowerFeature.h"
+// #include "mc/world/level/levelgen/feature/LakeFeature.h"
+// #include "mc/world/level/levelgen/feature/SpikeFeature.h"
+// #include "mc/world/level/levelgen/feature/VanillaTreeFeature.h"
+// #include "mc/world/level/levelgen/feature/gamerefs_feature/FeatureRefTraits.h"
+// #include "mc/world/level/levelgen/feature/helpers/RenderParams.h"
+// #include "mc/world/level/levelgen/feature/registry/FeatureRegistry.h"
+// #include "mc/world/level/levelgen/flat/FlatWorldGenerator.h"
+// #include "mc/world/level/levelgen/flat/FlatWorldGeneratorOptions.h"
+// #include "mc/world/level/levelgen/structure/EndCityFeature.h"
+// #include "mc/world/level/levelgen/structure/StructureFeatureRegistry.h"
+// #include "mc/world/level/levelgen/structure/StructureFeatureType.h"
+// #include "mc/world/level/levelgen/structure/StructureSetRegistry.h"
+// #include "mc/world/level/levelgen/structure/VillageFeature.h"
+// #include "mc/world/level/levelgen/v1/Aquifer.h"
+// #include "mc/world/level/levelgen/v1/ChunkLocalNoiseCache.h"
+// #include "mc/world/level/levelgen/v1/HardcodedSpawnAreaRegistry.h"
+// #include "mc/world/level/levelgen/v1/NetherGenerator.h"
+// #include "mc/world/level/levelgen/v1/OverworldGenerator2d.h"
+// #include "mc/world/level/levelgen/v1/OverworldGeneratorMultinoise.h"
+// #include "mc/world/level/levelgen/v1/TheEndGenerator.h"
+// #include "mc/world/level/levelgen/v1/WorldGenCache.h"
+// #include "mc/world/level/storage/LevelData.h"
 //
-//#include "mc/entity/systems/common/BiomeDecorationSystem.h"
-//#include "mc/resources/VanillaGameVersions.h"
-//#include "mc/world/components/FeatureHelper.h"
-//#include <mc/world/level/levelgen/feature/EndIslandFeature.h>
-//#include <mc/world/level/levelgen/feature/helpers/TheEndSpikeHelper.h>
-//#include <numeric>
+// #include "mc/entity/systems/common/BiomeDecorationSystem.h"
+// #include "mc/resources/VanillaGameVersions.h"
+// #include "mc/world/components/FeatureHelper.h"
+// #include <mc/world/level/levelgen/feature/EndIslandFeature.h>
+// #include <mc/world/level/levelgen/feature/helpers/TheEndSpikeHelper.h>
+// #include <numeric>
 //
 //// namespace Bedrock {
 //// namespace Threading {
@@ -141,21 +141,20 @@
 ////     void _init();
 ////     void _destroy();
 ////     _Ty* _load();
-////     typedef std::allocator_traits<_Alloc>::rebind_alloc<Bedrock::Threading::InstancedThreadLocal<_Ty, _Alloc>::Item>
-////         AllocatorType;
-//// };
+////     typedef std::allocator_traits<_Alloc>::rebind_alloc<Bedrock::Threading::InstancedThreadLocal<_Ty,
+///_Alloc>::Item> /         AllocatorType; / };
 ////
 //// } // namespace Threading
 //// } // namespace Bedrock
 //
 //
-//class MyWorldGenerator : public WorldGenerator {
-//public:
+// class MyWorldGenerator : public WorldGenerator {
+// public:
 //    struct ThreadData {
 //        std::array<const Block*, 32768UL> mBlockBuffer;
 //    };
 //
-//public:
+// public:
 //    std::unique_ptr<PerlinNoise>        mLPerlinNoise1;
 //    std::unique_ptr<PerlinNoise>        mLPerlinNoise2;
 //    std::unique_ptr<PerlinNoise>        mPerlinNoise1;
@@ -167,7 +166,7 @@
 //    Random                            mRandom;
 //    uint                              mSeed;
 //
-//public:
+// public:
 //    MyWorldGenerator(Dimension& dimension, uint seed) : WorldGenerator(dimension), mSeed(seed) {
 //        mRandom.mRandom.mObject._setSeed(seed);
 //        mLPerlinNoise1    = std::make_unique<PerlinNoise>(mRandom, 16, 0);
@@ -187,7 +186,7 @@
 //    virtual bool isNaturalDimension() const { return 0; }
 //
 //
-//public:
+// public:
 //    bool postProcess(ChunkViewSource& neighborhood) {
 //        ChunkPos chunkPos;
 //        chunkPos.x      = neighborhood.getArea().mBounds.min.x;
@@ -267,13 +266,16 @@
 //        //    BlockPos                                                       pos;              // [rsp+40h] [rbp-C0h]
 //        //    BYREF BlockPos                                                       v83;              // [rsp+4Ch]
 //        //    [rbp-B4h] BYREF BlockPos                                                       v84;              //
-//        //    [rsp+58h] [rbp-A8h] BYREF BlockPos                                                       v85; // [rsp+64h]
+//        //    [rsp+58h] [rbp-A8h] BYREF BlockPos                                                       v85; //
+//        [rsp+64h]
 //        //    [rbp-9Ch] BYREF BlockPos                                                       target;           //
-//        //    [rsp+70h] [rbp-90h] BYREF BlockPos                                                       v87; // [rsp+7Ch]
+//        //    [rsp+70h] [rbp-90h] BYREF BlockPos                                                       v87; //
+//        [rsp+7Ch]
 //        //    [rbp-84h] BYREF TheEndGenerator*                                               v88;              //
 //        //    [rsp+88h] [rbp-78h] BYREF Feature*                                                        v89; //
 //        //    [rsp+98h] [rbp-68h] BYREF std::string                                                    name; //
-//        //    [rsp+B0h] [rbp-50h] BYREF std::string                                                    v91; // [rsp+D0h]
+//        //    [rsp+B0h] [rbp-50h] BYREF std::string                                                    v91; //
+//        [rsp+D0h]
 //        //    [rbp-30h] BYREF std::string                                                    v92;              //
 //        //    [rsp+F0h] [rbp-10h] BYREF std::string                                                    v93; //
 //        //    [rsp+110h] [rbp+10h] BYREF std::string                                                    v94; //
@@ -283,7 +285,7 @@
 //        //    std::vector<SpikeFeature::EndSpike>                            spikes;           // [rsp+1B0h] [rbp+B0h]
 //        //    BYREF EndIslandFeature                                               endIslands;       // [rsp+1C8h]
 //        //    [rbp+C8h] BYREF BlockTickingQueue                                              randomTickQueue;  //
-//        //    [rsp+200h] [rbp+100h] BYREF BlockTickingQueue                                              instaTickQueue;
+//        //    [rsp+200h] [rbp+100h] BYREF BlockTickingQueue instaTickQueue;
 //        //    // [rsp+250h] [rbp+150h] BYREF SpikeFeature                       spikeFeature; // [rsp+2F0h] [rbp+1F0h]
 //        //    BYREF Random                             v113;                                         // [rsp+4D0h]
 //        //    [rbp+3D0h] BYREF
@@ -300,7 +302,8 @@
 //        //        dimension.mPostProcessingManager->tryLock(Position, neighborhood);
 //
 //        //    if (ownsNeighborhood.has_value()) {
-//        //        std::vector<LevelChunkBlockActorAccessToken> blockEntityLock = neighborhood.enableBlockEntityAccess();
+//        //        std::vector<LevelChunkBlockActorAccessToken> blockEntityLock =
+//        neighborhood.enableBlockEntityAccess();
 //        //        Dimension&                                   ndimension      = neighborhood.getDimension();
 //        //        Level&                                       level           = neighborhood.getLevel();
 //        //        BlockSource                                  source(level, ndimension, neighborhood, 0, 1, 1);
@@ -349,7 +352,8 @@
 //        // if (_TSS3 > *(_DWORD*)(v10 + 1400)) {
 //        //    j__Init_thread_header(&_TSS3);
 //        //    if (_TSS3 == -1) {
-//        //        if (label_305._Mypair._Myval2._Myres >= 0x10) v18 = (std::string*)label_305._Mypair._Myval2._Bx._Ptr;
+//        //        if (label_305._Mypair._Myval2._Myres >= 0x10) v18 =
+//        (std::string*)label_305._Mypair._Myval2._Bx._Ptr;
 //        //        v91._Mypair._Myval2._Bx._Ptr = 0i64;
 //        //        v91._Mypair._Myval2._Mysize  = 0i64;
 //        //        v91._Mypair._Myval2._Myres   = 15i64;
@@ -403,7 +407,8 @@
 //        //    if (v22 >= 0x1000) {
 //        //        v22     += 39i64;
 //        //        Myfirst  = *(SpikeFeature::EndSpike**)&Myfirst[-1].mTopBoundingBox.max.y;
-//        //        if ((unsigned __int64)((char*)v23 - (char*)Myfirst - 8) > 0x1F) _invalid_parameter_noinfo_noreturn();
+//        //        if ((unsigned __int64)((char*)v23 - (char*)Myfirst - 8) > 0x1F)
+//        _invalid_parameter_noinfo_noreturn();
 //        //    }
 //        //    operator delete(Myfirst, v22);
 //        //}
@@ -417,7 +422,7 @@
 //        //                j__Init_thread_header(&_TSS5);
 //        //                if (_TSS5 == -1) {
 //        //                    Core::Profile::constructLabel(&label_323, "TheEndGenerator::postProcess");
-//        //                    j_atexit(TheEndGenerator::postProcess_::_45_::_dynamic_atexit_destructor_for__label_323__);
+//        // j_atexit(TheEndGenerator::postProcess_::_45_::_dynamic_atexit_destructor_for__label_323__);
 //        //                    j__Init_thread_footer(&_TSS5);
 //        //                }
 //        //            }
@@ -451,7 +456,7 @@
 //        //                        }
 //        //                        operator delete(v75, v74);
 //        //                    }
-//        //                    j_atexit(TheEndGenerator::postProcess_::_45_::_dynamic_atexit_destructor_for__token_323__);
+//        // j_atexit(TheEndGenerator::postProcess_::_45_::_dynamic_atexit_destructor_for__token_323__);
 //        //                    j__Init_thread_footer(&_TSS6);
 //        //                }
 //        //            }
@@ -600,7 +605,8 @@
 //        //}
 //        // v50 = &label_373;
 //        // BlockTickingQueue::tickAllPendingTicks(&instaTickQueue, &source, WorldGenerator::TICKING_QUEUE_PASS_LIMIT);
-//        // BlockTickingQueue::tickAllPendingTicks(&randomTickQueue, &source, WorldGenerator::TICKING_QUEUE_PASS_LIMIT);
+//        // BlockTickingQueue::tickAllPendingTicks(&randomTickQueue, &source,
+//        WorldGenerator::TICKING_QUEUE_PASS_LIMIT);
 //        // TickQueue = LevelChunk::getTickQueue(levelChunk._Ptr);
 //        // BlockTickingQueue::acquireAllTicks(TickQueue, &instaTickQueue);
 //        // v52 = LevelChunk::getRandomTickQueue(levelChunk._Ptr);
@@ -699,7 +705,8 @@
 //                        _s1 = s1;
 //                        for (x = 0; x < 8; ++x) {
 //                            offs =
-//                                (4 * yc + y) | ((8 * zc) << levelHeightBits) | ((8 * xc + x) << (levelHeightBits + 4));
+//                                (4 * yc + y) | ((8 * zc) << levelHeightBits) | ((8 * xc + x) << (levelHeightBits +
+//                                4));
 //                            val = _s0;
 //                            for (z = 0; z < 8; ++z) {
 //                                block = Block::tryGetFromRegistry("minecraft:air");
@@ -908,8 +915,8 @@
 //                        (float)((float)(subSectionX - 2 * xo) * (float)(subSectionX - 2 * xo))
 //                        + (float)((float)(subSectionZ - 2 * zo) * (float)(subSectionZ - 2 * zo))
 //                    );
-//                    newDoffs = mce::Math::clamp(float(100.0 - (float)(v7 * (float)(int)(v6 % 13 + 9))), -100.0f, 80.0f);
-//                    if (newDoffs > doffs) doffs = newDoffs;
+//                    newDoffs = mce::Math::clamp(float(100.0 - (float)(v7 * (float)(int)(v6 % 13 + 9))),
+//                    -100.0f, 80.0f); if (newDoffs > doffs) doffs = newDoffs;
 //                }
 //            }
 //        }
@@ -920,7 +927,8 @@
 //        return chunkPos->x * chunkPos->x + chunkPos->z * chunkPos->z > 4096;
 //    }
 //
-//    virtual void postProcessMobsAt(BlockSource& blockSource, int chunkWestBlock, int chunkNorthBlock, Random& random) {
+//    virtual void postProcessMobsAt(BlockSource& blockSource, int chunkWestBlock, int chunkNorthBlock, Random& random)
+//    {
 //        BlockPos pos;
 //
 //        Level&                              level  = blockSource.getLevel();
@@ -956,7 +964,7 @@
 //    }
 //};
 //
-//LL_AUTO_TYPE_INSTANCE_HOOK(
+// LL_AUTO_TYPE_INSTANCE_HOOK(
 //    OverworldDimensionCreateGeneratorHook,
 //    ll::memory::HookPriority::Normal,
 //    OverworldDimension,
@@ -993,7 +1001,8 @@
 //    // Json::Value  layer;
 //    // Json::Reader reader;
 //    // reader.parse(layerstr, layer, 0);
-//    // ll::getLogger().warn("Superflat worlds will be created based on the following option:{}", layer.toStyledString());
+//    // ll::getLogger().warn("Superflat worlds will be created based on the following option:{}",
+//    layer.toStyledString());
 //    // return std::make_unique<MyFlatWorldGenerator>(*this, level.getSeed(), layer);
 //
 //    std::unique_ptr<WorldGenerator> worldGenerator;

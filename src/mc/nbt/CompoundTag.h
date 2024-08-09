@@ -58,7 +58,7 @@ public:
     virtual std::string toString() const;
 
     // vIndex: 5
-    virtual ::Tag::Type getId() const;
+    virtual ::Tag::Type getId() const const { return Tag::Compound; }
 
     // vIndex: 6
     virtual bool equals(class Tag const& obj) const;

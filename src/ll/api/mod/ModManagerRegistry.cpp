@@ -1,5 +1,5 @@
-#include "ll/api/i18n/I18n.h"
 #include "ll/api/mod/ModManagerRegistry.h"
+#include "ll/api/i18n/I18n.h"
 
 #include "ll/core/LeviLamina.h"
 

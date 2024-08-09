@@ -57,7 +57,7 @@ void registerTimingCommand() {
             using namespace ::ll::chrono;
             using namespace chrono_literals;
             ::ll::thread::TickSyncSleep<GameTickClock> sleeper;
-            auto                                     begin = std::chrono::steady_clock::now();
+            auto                                       begin = std::chrono::steady_clock::now();
             for (size_t i = 0; i < counttick; i++) {
                 sleeper.sleepFor(1_tick);
                 {
@@ -93,7 +93,10 @@ void registerTimingCommand() {
 
             std::ranges::sort(orderdTiming, [](TimingData const& a, TimingData const& b) { return a.avg > b.avg; });
 
-            ::ll::getLogger().warn("TPS: {:.5f}", double(counttick) / std::chrono::duration<double>(end - begin).count());
+            ::ll::getLogger().warn(
+                "TPS: {:.5f}",
+                double(counttick) / std::chrono::duration<double>(end - begin).count()
+            );
             ::ll::getLogger().warn("ECS cost {:.5f}ms per tick", allTime);
 
             for (size_t i = 0; i < orderdTiming.size() && i < 20; i++) {

@@ -214,7 +214,7 @@ StackTraceEntryInfo getInfo(std::stacktrace_entry const& entry) {
         uint   disp{};
         auto   str = pl::symbol_provider::pl_lookup_symbol_disp(entry.native_handle(), &length, &disp);
         if (length) {
-            static auto processName = sys_utils::getModuleFileName(nullptr);
+            static auto         processName = sys_utils::getModuleFileName(nullptr);
             StackTraceEntryInfo res{disp, processName + '!' + str[0]};
             pl::symbol_provider::pl_free_lookup_result(str);
             return res;

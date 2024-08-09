@@ -136,14 +136,26 @@ target("LeviLamina")
     end
 
     if is_config("operating-platform", "server") then
-        add_headerfiles("src-server/(ll/api/**.h)"
-        -- , "src-server/(mc/**.h)"
+        add_headerfiles(
+        "src-server/(ll/api/**.h)"
+        -- ,"src-server/(mc/**.h)"
         )
         add_includedirs("src-server")
         add_files(
-            "src-server/ll/api/**.cpp",
-            "src-server/ll/core/**.cpp"
-            -- "src-server/mc/**.cpp"
+            "src-server/ll/api/**.cpp"
+            ,"src-server/ll/core/**.cpp"
+            -- ,"src-server/mc/**.cpp"
+        )
+    else
+        add_headerfiles(
+        -- "src-client/(ll/api/**.h)"
+        -- , "src-client/(mc/**.h)"
+        )
+        add_includedirs("src-client")
+        add_files(
+            -- "src-client/ll/api/**.cpp"
+            -- ,"src-client/ll/core/**.cpp"
+            -- ,"src-client/mc/**.cpp"
         )
     end
 

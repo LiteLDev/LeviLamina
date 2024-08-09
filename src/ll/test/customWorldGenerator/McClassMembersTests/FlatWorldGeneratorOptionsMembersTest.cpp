@@ -17,9 +17,9 @@
 //     origin(flatWorldGeneratorOptions, s);
 //
 //     ll::getLogger().warn("FlatWorldGeneratorGeneratePrototypeBlockValuesHook");
-//     ll::getLogger().warn("flatWorldGeneratorOptions.mEncodingVersion={}", flatWorldGeneratorOptions.mEncodingVersion);
-//     ll::getLogger().warn("flatWorldGeneratorOptions.mWorldVersion={}", (int)flatWorldGeneratorOptions.mWorldVersion);
-//     ll::getLogger().warn(
+//     ll::getLogger().warn("flatWorldGeneratorOptions.mEncodingVersion={}",
+//     flatWorldGeneratorOptions.mEncodingVersion); ll::getLogger().warn("flatWorldGeneratorOptions.mWorldVersion={}",
+//     (int)flatWorldGeneratorOptions.mWorldVersion); ll::getLogger().warn(
 //         "flatWorldGeneratorOptions.mStructureOptions={}",
 //         flatWorldGeneratorOptions.mStructureOptions.toStyledString()
 //     );

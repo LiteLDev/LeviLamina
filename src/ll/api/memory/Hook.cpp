@@ -15,6 +15,9 @@
 namespace ll::memory {
 
 int hook(FuncPtr target, FuncPtr detour, FuncPtr* originalFunc, HookPriority priority, bool suspendThreads) {
+    if (target == nullptr) {
+        return -1;
+    }
     std::unique_ptr<thread::GlobalThreadPauser> pauser;
     if (suspendThreads && getServerStatus() != ServerStatus::Default) {
         pauser = std::make_unique<thread::GlobalThreadPauser>();

@@ -106,7 +106,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &Se
     auto        sbbbbbb  = DataItem::create(1, s);
     auto        sbbbbbb1 = DataItem::create(1, f);
     auto        sbbbbbb2 = DataItem::create(1, str);
-    
+
     ll::getLogger().debug("DataItem {} {}", typeid(*sbbbbbb).name(), sbbbbbb->getData<int>().value());
     ll::getLogger().debug("DataItem {} {}", typeid(*sbbbbbb1).name(), sbbbbbb1->getData<float>().value());
     ll::getLogger().debug("DataItem {} {}", typeid(*sbbbbbb2).name(), sbbbbbb2->getData<std::string>().value());
@@ -125,7 +125,10 @@ LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &Se
             .toSnbt(SnbtFormat::PrettyConsolePrint | SnbtFormat::ArrayLineFeed)
     );
 
-    ll::getLogger().debug("reflection json: {}", ll::reflection::serialize<nlohmann::json>(helloReflection).value().dump(4));
+    ll::getLogger().debug(
+        "reflection json: {}",
+        ll::reflection::serialize<nlohmann::json>(helloReflection).value().dump(4)
+    );
 
     // ll::reflection::deserialize(helloReflection, ll::reflection::serialize<CompoundTagVariant>(helloReflection));
 

@@ -24,8 +24,10 @@
 #include "ll/api/utils/HashUtils.h"
 #include "ll/api/utils/SystemUtils.h"
 
+#include "mc/server/ServerInstance.h"
 #include "mc/server/common/DedicatedServer.h"
 #include "mc/server/common/commands/StopCommand.h"
+#include "mc/world/events/ServerInstanceEventCoordinator.h"
 
 #include "ll/core/Config.h"
 #include "ll/core/CrashLogger.h"
@@ -118,7 +120,7 @@ void checkOtherBdsInstance() {
 }
 
 void printWelcomeMsg() {
-    auto lock = Logger::lock();
+    auto  lock   = Logger::lock();
     auto& logger = getLogger();
     logger.info(R"(                                                                      )");
     logger.info(R"(         _               _ _                    _                     )");
@@ -257,4 +259,23 @@ LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::High, "main", int, int arg
     setServerStatus(ServerStatus::Default);
     return res;
 }
+
+LL_AUTO_TYPE_INSTANCE_HOOK(
+    EnableAllMods,
+    HookPriority::High,
+    ServerInstanceEventCoordinator,
+    &ServerInstanceEventCoordinator::sendServerThreadStarted,
+    void,
+    ::ServerInstance& ins
+) {
+    origin(ins);
+    mod::ModRegistrar::getInstance().enableAllMods();
+    setServerStatus(ServerStatus::Running);
+}
+LL_AUTO_TYPE_INSTANCE_HOOK(DisableAllMods, HookPriority::Low, ServerInstance, &ServerInstance::leaveGameSync, void) {
+    setServerStatus(ServerStatus::Stopping);
+    mod::ModRegistrar::getInstance().disableAllMods();
+    origin();
+}
+
 } // namespace ll

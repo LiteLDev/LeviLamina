@@ -24,7 +24,7 @@ public:
     virtual std::string toString() const;
 
     // vIndex: 5
-    virtual ::Tag::Type getId() const;
+    virtual ::Tag::Type getId() const { return Tag::End; }
 
     // vIndex: 6
     virtual bool equals(class Tag const& rhs) const;

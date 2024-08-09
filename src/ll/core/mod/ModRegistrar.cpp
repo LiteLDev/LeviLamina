@@ -23,7 +23,6 @@
 #include "ll/api/mod/ModManager.h"
 #include "ll/api/mod/ModManagerRegistry.h"
 #include "ll/api/reflection/Deserialization.h"
-#include "ll/api/service/ServerInfo.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/core/LeviLamina.h"
@@ -32,8 +31,6 @@
 #include "ll/api/command/CommandRegistrar.h"
 
 #include "mc/external/expected_lite/expected.h"
-#include "mc/server/ServerInstance.h"
-#include "mc/world/events/ServerInstanceEventCoordinator.h"
 
 #include "nlohmann/json.hpp"
 #include "nlohmann/json_fwd.hpp"
@@ -54,6 +51,11 @@ struct ModRegistrar::Impl {
 
 ModRegistrar::ModRegistrar() : impl(std::make_unique<Impl>()) {}
 ModRegistrar::~ModRegistrar() = default;
+
+ModRegistrar& ModRegistrar::getInstance() {
+    static ModRegistrar instance;
+    return instance;
+}
 
 static bool checkVersion(Manifest const& real, Dependency const& need) {
     if (!real.version || !need.version) {
@@ -82,12 +84,7 @@ static Expected<Manifest> loadManifest(std::filesystem::path const& dir) {
     });
 }
 
-ModRegistrar& ModRegistrar::getInstance() {
-    static ModRegistrar instance;
-    return instance;
-}
-
-void ModRegistrar::loadAllMods() {
+void ModRegistrar::loadAllMods() noexcept try {
     std::lock_guard lock(impl->mutex);
 
     std::unordered_map<std::string, Manifest> manifests;
@@ -227,11 +224,7 @@ void ModRegistrar::loadAllMods() {
     }
     auto sort = impl->deps.sort();
     for (auto& name : sort.unsorted) {
-        getLogger().error(
-            "{0} will not be loaded because the dependency are in loops"_tr(
-                name
-            )
-        );
+        getLogger().error("{0} will not be loaded because the dependency are in loops"_tr(name));
     }
     std::unordered_set<std::string> loadErrored;
     for (auto& name : sort.sorted) {
@@ -263,9 +256,10 @@ void ModRegistrar::loadAllMods() {
     for (auto& errored : std::ranges::reverse_view(sort.sorted)) {
         if (loadErrored.contains(errored)) impl->deps.erase(errored);
     }
-    static ll::memory::HookRegistrar<EnableAllMods, DisableAllMods> reg;
 
     getLogger().info("{0} mod(s) loaded"_tr(loadedCount));
+} catch (...) {
+    error_utils::printCurrentException(getLogger());
 }
 
 std::vector<std::string> ModRegistrar::getSortedModNames() const {
@@ -273,17 +267,8 @@ std::vector<std::string> ModRegistrar::getSortedModNames() const {
     return impl->deps.sort().sorted;
 }
 
-LL_TYPE_INSTANCE_HOOK(
-    ModRegistrar::EnableAllMods,
-    ll::memory::HookPriority::High,
-    ServerInstanceEventCoordinator,
-    &ServerInstanceEventCoordinator::sendServerThreadStarted,
-    void,
-    ::ServerInstance& ins
-) {
-    origin(ins);
-    auto& registrar = ModRegistrar::getInstance();
-    auto  names     = registrar.getSortedModNames();
+void ModRegistrar::enableAllMods() noexcept try {
+    auto names = getSortedModNames();
     {
         using namespace ll::command;
         CommandRegistrar::getInstance().tryRegisterSoftEnum(enum_name_v<ModNames>, names);
@@ -295,10 +280,9 @@ LL_TYPE_INSTANCE_HOOK(
         size_t count{};
         for (auto& name : names) {
             auto mod = ModManagerRegistry::getInstance().getMod(name);
-            if (!mod) continue;
-            if (mod->isEnabled()) continue;
+            if (!mod || mod->isEnabled()) continue;
             getLogger().info("Enabling {0} v{1}"_tr(name, mod->getManifest().version.value_or(data::Version{0, 0, 0})));
-            if (auto res = registrar.enableMod(name); res) {
+            if (auto res = enableMod(name); res) {
                 count++;
             } else {
                 getLogger().error("Failed to enable mod {0}"_tr(name));
@@ -313,32 +297,25 @@ LL_TYPE_INSTANCE_HOOK(
             ));
         }
     }
-    setServerStatus(ServerStatus::Running);
+} catch (...) {
+    error_utils::printCurrentException(getLogger());
 }
-LL_TYPE_INSTANCE_HOOK(
-    ModRegistrar::DisableAllMods,
-    HookPriority::Low,
-    ServerInstance,
-    &ServerInstance::leaveGameSync,
-    void
-) {
-    setServerStatus(ServerStatus::Stopping);
-    auto& registrar = ModRegistrar::getInstance();
-    auto  names     = registrar.getSortedModNames();
+void ModRegistrar::disableAllMods() noexcept try {
+    auto names = getSortedModNames();
     if (!names.empty()) {
         getLogger().info("Disabling mods..."_tr());
         for (auto& name : std::ranges::reverse_view(names)) {
             auto mod = ModManagerRegistry::getInstance().getMod(name);
-            if (!mod) continue;
-            if (mod->isDisabled()) continue;
+            if (!mod || mod->isDisabled()) continue;
             getLogger().info("Disabling {0} v{1}"_tr(name, mod->getManifest().version.value_or(data::Version{0, 0, 0}))
             );
-            if (auto res = registrar.disableMod(name); !res) {
+            if (auto res = disableMod(name); !res) {
                 res.error().log(getLogger().warn);
             }
         }
     }
-    origin();
+} catch (...) {
+    error_utils::printCurrentException(getLogger());
 }
 
 Expected<> ModRegistrar::loadMod(std::string_view name) noexcept {

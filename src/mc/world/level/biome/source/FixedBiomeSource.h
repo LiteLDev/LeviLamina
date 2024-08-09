@@ -29,7 +29,8 @@ public:
     virtual class BiomeArea getBiomeArea(class BoundingBox const& area, uint scale) const;
 
     // vIndex: 3
-    virtual class BiomeArea getBiomeArea(class BoundingBox const& area, uint scale, struct GetBiomeOptions const&) const;
+    virtual class BiomeArea
+    getBiomeArea(class BoundingBox const& area, uint scale, struct GetBiomeOptions const&) const;
 
     // vIndex: 4
     virtual bool containsOnly(int, int, int, int, gsl::span<uint64 const> allowed) const;

@@ -158,19 +158,19 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
         .execute([](CommandOrigin const&, CommandOutput& output, ParamTest3 const& param) {
             output.success("snbt: {}", param.snbt.toSnbt(SnbtFormat::PrettyChatPrint));
         });
-    cmd.overload<ParamTest3>().text("json").required("json").execute(
-        [](CommandOrigin const&, CommandOutput& output, ParamTest3 const& param) {
-            output.success("json: {}", param.json.toStyledString());
-            ll::getLogger().debug("mParseTables : {}", ll::service::getCommandRegistry()->mParseTables | std::views::keys);
-            auto& table = ll::service::getCommandRegistry()->mParseTables.begin()->second;
-            ll::getLogger().debug("first : {}", table.first | std::views::keys);
-            // ll::getLogger().debug("first : {}", table.first);
-            ll::getLogger().debug("second : {}", table.follow | std::views::keys);
+    cmd.overload<ParamTest3>().text("json").required("json").execute([](CommandOrigin const&,
+                                                                        CommandOutput&    output,
+                                                                        ParamTest3 const& param) {
+        output.success("json: {}", param.json.toStyledString());
+        ll::getLogger().debug("mParseTables : {}", ll::service::getCommandRegistry()->mParseTables | std::views::keys);
+        auto& table = ll::service::getCommandRegistry()->mParseTables.begin()->second;
+        ll::getLogger().debug("first : {}", table.first | std::views::keys);
+        // ll::getLogger().debug("first : {}", table.first);
+        ll::getLogger().debug("second : {}", table.follow | std::views::keys);
 
-            for (auto [k, v] : table.predict) {
-                if (ll::service::getCommandRegistry()->symbolToString(k.first) == "{")
-                    ll::getLogger().debug("{} : {}", k, v);
-            }
+        for (auto [k, v] : table.predict) {
+            if (ll::service::getCommandRegistry()->symbolToString(k.first) == "{")
+                ll::getLogger().debug("{} : {}", k, v);
         }
-    );
+    });
 }

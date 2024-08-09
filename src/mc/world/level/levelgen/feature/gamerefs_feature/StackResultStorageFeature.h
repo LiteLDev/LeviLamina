@@ -11,13 +11,13 @@ public:
 
     template <class T = IFeature>
     [[nodiscard]] optional_ref<T> tryUnwrap() const {
-        if (_hasValue()) {
-            return reinterpret_cast<T*>(&_getStackRef());
+        if (*this) {
+            return reinterpret_cast<T*>(mRegistry->get().mFeatureRegistry[mIndex].get());
         }
         return nullptr;
     }
 
-    [[nodiscard]] inline operator bool() const { return _hasValue(); } // NOLINT
+    [[nodiscard]] inline operator bool() const { return mRegistry.has_value(); } // NOLINT
 public:
     // prevent constructor by default
     StackResultStorageFeature& operator=(StackResultStorageFeature const&);

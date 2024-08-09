@@ -5,7 +5,7 @@
 #include "ll/api/data/Version.h"
 
 namespace ll {
-enum class ServerStatus {
+enum class ServerStatus : int {
     Default = 0,
     Starting,
     Running,
