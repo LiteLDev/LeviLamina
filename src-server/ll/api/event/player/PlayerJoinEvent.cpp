@@ -2,21 +2,28 @@
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
 
+#include "mc/network/ServerNetworkHandler.h"
+#include "mc/network/packet/SetLocalPlayerAsInitializedPacket.h"
+
 namespace ll::event::inline player {
 
 LL_TYPE_INSTANCE_HOOK(
     PlayerJoinEventHook,
     HookPriority::Normal,
-    ServerPlayer,
-    &ServerPlayer::setLocalPlayerAsInitialized,
-    void
+    ServerNetworkHandler,
+    &ServerNetworkHandler::handle,
+    void,
+    NetworkIdentifier const&                 identifier,
+    SetLocalPlayerAsInitializedPacket const& packet
 ) {
-    auto event = PlayerJoinEvent(*this);
-    EventBus::getInstance().publish(event);
-    if (event.isCancelled()) {
-        return;
+    if (auto player = getServerPlayer(identifier, packet.mClientSubId); player) {
+        auto event = PlayerJoinEvent{player};
+        EventBus::getInstance().publish(event);
+        if (event.isCancelled()) {
+            return;
+        }
     }
-    origin();
+    origin(identifier, packet);
 }
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);

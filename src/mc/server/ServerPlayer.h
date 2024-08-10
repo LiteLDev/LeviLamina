@@ -38,12 +38,62 @@ namespace mce { class Color; }
 namespace mce { class UUID; }
 // clang-format on
 
+class NetworkIdentifier;
+class Certificate;
+class UserEntityIdentifierComponent;
+class ConnectionRequest;
+
 class ServerPlayer : public ::Player {
 public:
     // prevent constructor by default
     ServerPlayer& operator=(ServerPlayer const&);
     ServerPlayer(ServerPlayer const&);
     ServerPlayer();
+
+    LLNDAPI UserEntityIdentifierComponent const& getUserEntityIdentifier() const;
+
+    LLNDAPI UserEntityIdentifierComponent& getUserEntityIdentifier();
+
+    LLNDAPI optional_ref<ConnectionRequest const> getConnectionRequest() const;
+
+    LLNDAPI NetworkIdentifier const& getNetworkIdentifier() const;
+
+    LLNDAPI optional_ref<Certificate const> getCertificate() const;
+
+    LLNDAPI SubClientId const& getClientSubId() const;
+
+    /**
+     * @brief Get the player's uuid
+     * @return Player's uuid
+     */
+    LLNDAPI mce::UUID const& getUuid() const;
+
+    /**
+     * @brief Get the player's IP and port
+     * @return player's IP and port
+     */
+    LLNDAPI std::string getIPAndPort() const;
+
+    /**
+     * @brief Determine if a player is an administrator of the server
+     * @return Returns true if the player is an administrator of the server; otherwise returns false
+     * @warning Custom permissions are not considered administrators
+     */
+    LLNDAPI bool isOperator() const;
+
+    /**
+     * @brief Get the player's lang code.
+     * @return the player's lang code.
+     */
+    LLNDAPI std::string getLocaleCode() const;
+
+    LLNDAPI std::optional<NetworkPeer::NetworkStatus> getNetworkStatus() const;
+
+    /**
+     * @brief Disconnect player's client
+     */
+    LLAPI void disconnect(std::string_view reason) const;
+
 
 public:
     // NOLINTBEGIN

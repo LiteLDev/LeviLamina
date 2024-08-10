@@ -5,11 +5,13 @@
 #include "ll/api/service/Bedrock.h"
 
 std::string NetworkIdentifier::getIPAndPort() const {
-    if (ll::service::getRakPeer()) {
-        auto address = ll::service::getRakPeer()->GetSystemAddressFromGuid(mGuid);
-        if (address != RakNet::UNASSIGNED_SYSTEM_ADDRESS) {
-            return address;
-        }
-    }
-    return "127.0.0.1:65535";
+    return ll::service::getRakPeer()
+        .and_then([&](auto& peer) -> std::optional<std::string> {
+            auto address = peer.GetSystemAddressFromGuid(mGuid);
+            if (address != RakNet::UNASSIGNED_SYSTEM_ADDRESS) {
+                return address;
+            }
+            return std::nullopt;
+        })
+        .value_or("127.0.0.1:65535");
 }

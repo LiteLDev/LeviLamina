@@ -160,6 +160,8 @@ LLNDAPI std::string tou8str(std::string_view str);
 
 LLNDAPI std::string toSnakeCase(std::string_view str);
 
+LLNDAPI std::string toLowerCase(std::string_view str);
+
 namespace CodePage {
 enum : uint {
     DefaultACP = 0,  // default to ANSI code page
@@ -259,6 +261,6 @@ template <class T, auto f, class... Args>
 [[nodiscard]] inline decltype(auto) svtold(std::string_view str, size_t* idx = nullptr) {
     return svtonum<ldouble, strtof>(str, idx);
 }
-LLNDAPI Expected<bool> strtobool(std::string const&);
+LLNDAPI Expected<bool> strtobool(std::string_view);
 
 } // namespace ll::inline utils::string_utils

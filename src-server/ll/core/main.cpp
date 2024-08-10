@@ -19,7 +19,7 @@
 #include "ll/api/mod/Mod.h"
 #include "ll/api/service/Bedrock.h"
 #include "ll/api/service/PlayerInfo.h"
-#include "ll/api/service/ServerInfo.h"
+#include "ll/api/service/ProcessStatus.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/HashUtils.h"
 #include "ll/api/utils/SystemUtils.h"
@@ -234,7 +234,7 @@ LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::High, "main", int, int arg
 #if defined(LL_DEBUG)
     static stacktrace_utils::SymbolLoader symbols{};
 #endif
-    setServerStatus(ServerStatus::Default);
+    setProcessStatus(ProcessStatus::Default);
     severStartBeginTime = std::chrono::steady_clock::now();
     for (int i = 0; i < argc; ++i) {
         switch (doHash(argv[i])) {
@@ -249,14 +249,14 @@ LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::High, "main", int, int arg
             break;
         }
     }
-    setServerStatus(ServerStatus::Starting);
+    setProcessStatus(ProcessStatus::Starting);
     try {
         leviLaminaMain();
     } catch (...) {
         error_utils::printCurrentException(getLogger());
     }
     auto res = origin(argc, argv);
-    setServerStatus(ServerStatus::Default);
+    setProcessStatus(ProcessStatus::Default);
     return res;
 }
 
@@ -270,10 +270,10 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 ) {
     origin(ins);
     mod::ModRegistrar::getInstance().enableAllMods();
-    setServerStatus(ServerStatus::Running);
+    setProcessStatus(ProcessStatus::Running);
 }
 LL_AUTO_TYPE_INSTANCE_HOOK(DisableAllMods, HookPriority::Low, ServerInstance, &ServerInstance::leaveGameSync, void) {
-    setServerStatus(ServerStatus::Stopping);
+    setProcessStatus(ProcessStatus::Stopping);
     mod::ModRegistrar::getInstance().disableAllMods();
     origin();
 }

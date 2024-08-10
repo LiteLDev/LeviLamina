@@ -47,10 +47,6 @@ namespace mce { class Color; }
 namespace mce { class UUID; }
 // clang-format on
 
-class NetworkIdentifier;
-class Certificate;
-class UserEntityIdentifierComponent;
-class ConnectionRequest;
 class Packet;
 class PlayerEventCoordinator;
 
@@ -93,57 +89,11 @@ public:
     };
 
 public:
-    LLNDAPI UserEntityIdentifierComponent const& getUserEntityIdentifier() const;
-
-    LLNDAPI UserEntityIdentifierComponent& getUserEntityIdentifier();
-
-    LLNDAPI optional_ref<ConnectionRequest const> getConnectionRequest() const;
-
-    LLNDAPI NetworkIdentifier const& getNetworkIdentifier() const;
-
-    LLNDAPI optional_ref<Certificate const> getCertificate() const;
-
-    LLNDAPI SubClientId const& getClientSubId() const;
-
-    /**
-     * @brief Get the player's uuid
-     * @return Player's uuid
-     */
-    LLNDAPI mce::UUID const& getUuid() const;
-
-    /**
-     * @brief Get the player's IP and port
-     * @return player's IP and port
-     */
-    LLNDAPI std::string getIPAndPort() const;
-
-    /**
-     * @brief Determine if a player is an administrator of the server
-     * @return Returns true if the player is an administrator of the server; otherwise returns false
-     * @warning Custom permissions are not considered administrators
-     */
-    LLNDAPI bool isOperator() const;
-
     /**
      * @brief Get the player's real in-game nickname
      * @return player's real in-game nickname
      */
     LLNDAPI std::string getRealName() const;
-
-    /**
-     * @brief Get the name of the player's langtext.
-     * @return The name of the player's langtext.
-     * @warning This is not the player's in-game nickname.
-     */
-    LLNDAPI std::string getLocaleName() const;
-
-    LLNDAPI std::optional<NetworkPeer::NetworkStatus> getNetworkStatus() const;
-
-    /**
-     * @brief Disconnect player's client
-     */
-    LLAPI void disconnect(std::string_view reason) const;
-
     /**
      * @brief Send a message to player
      */

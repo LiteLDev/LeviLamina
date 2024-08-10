@@ -6,8 +6,8 @@
 
 class ClientOrServerNetworkSystemRef {
 public:
-    using ServerRefT = std::reference_wrapper<ServerNetworkSystem>;
     using ClientRefT = std::reference_wrapper<ClientNetworkSystem>;
+    using ServerRefT = std::reference_wrapper<ServerNetworkSystem>;
 
     std::variant<ClientRefT, ServerRefT> ref;
 

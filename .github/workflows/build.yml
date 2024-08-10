@@ -3,11 +3,15 @@ on:
     paths:
       - .github/workflows/build.yml
       - src/**
+      - src-server/**
+      - src-client/**
       - xmake.lua
   pull_request:
     paths:
       - .github/workflows/build.yml
       - src/**
+      - src-server/**
+      - src-client/**
       - xmake.lua
   workflow_dispatch:
 
@@ -16,6 +20,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        # target-type:
+        #   - server
+        #   - client
         mode:
           - debug
           - release

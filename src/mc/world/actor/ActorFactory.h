@@ -47,7 +47,7 @@ public:
         struct ActorDefinitionIdentifier const& identifier,
         class Actor*                            spawner,
         class Vec3 const&                       pos,
-        class Vec2 const&                       rot = Vec2::ZERO
+        class Vec2 const&                       rot = {0, 0}
     );
 
     MCAPI class OwnerPtr<class EntityContext>
@@ -60,7 +60,7 @@ public:
         struct ActorDefinitionIdentifier const& identifier,
         class Actor*                            spawner,
         class Vec3 const&                       pos,
-        class Vec2 const&                       rot = Vec2::ZERO
+        class Vec2 const&                       rot = {0, 0}
     );
 
     MCAPI class OwnerPtr<class EntityContext> createSummonedActor(

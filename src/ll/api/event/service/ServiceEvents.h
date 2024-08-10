@@ -3,8 +3,6 @@
 #include "ll/api/event/Event.h"
 #include "ll/api/service/Service.h"
 
-#include "mc/server/ServerInstance.h"
-
 namespace ll::event::inline server {
 class ServiceEvent : public Event {
 public:

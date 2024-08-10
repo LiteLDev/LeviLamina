@@ -8,9 +8,8 @@
 #include "ll/api/base/Macro.h"
 #include "ll/api/reflection/Dispatcher.h"
 #include "ll/api/utils/SystemUtils.h"
+#include "ll/core/TargetedConfig.h"
 #include "ll/core/tweak/ForceEnableCheatCommands.h"
-#include "ll/core/tweak/SimpleServerLogger.h"
-#include "ll/core/tweak/Statistics.h"
 
 #include "mc/server/commands/CommandPermissionLevel.h"
 
@@ -34,10 +33,9 @@ struct LeviConfig {
         struct {
             bool                                                       disableAutoCompactionLog = true;
             ll::reflection::Dispatcher<bool, ForceEnableCheatCommands> forceEnableCheatCommands = true;
-            ll::reflection::Dispatcher<bool, Statistics>               enableStatitics          = true;
         } tweak{};
 
-        reflection::Dispatcher<SimpleServerLoggerConfig, SimpleServerLogger> simpleServerLogger{};
+        TargetedConfig targeted{};
 
         struct CmdSetting {
             bool                   enabled    = true;

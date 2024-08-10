@@ -2,7 +2,7 @@
 
 #include "ll/api/event/entity/MobEvent.h"
 
-#include "mc/server/ServerPlayer.h"
+#include "mc/world/actor/player/Player.h"
 
 namespace ll::event::inline player {
 
@@ -11,6 +11,6 @@ protected:
     constexpr explicit PlayerEvent(Player& player) : MobEvent(player) {}
 
 public:
-    LLNDAPI ServerPlayer& self() const;
+    LLNDAPI Player& self() const;
 };
 } // namespace ll::event::inline player

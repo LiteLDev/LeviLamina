@@ -305,25 +305,32 @@ std::string toSnakeCase(std::string_view str) {
     if (str.empty()) {
         return res;
     }
-    res.reserve(str.length());
-    res.push_back((char)tolower(str.front()));
-    str.remove_prefix(1);
-    for (auto c : str) {
-        if (isupper(c)) {
-            res.push_back('_');
-            res.push_back((char)tolower(c));
+    for (size_t i = 0; i < str.size(); ++i) {
+        if (isupper(str[i])) {
+            if (i > 0 && ((i + 1 < str.size() && !isupper(str[i + 1])) || !isupper(str[i - 1]))) {
+                res.push_back('_');
+            }
+            res.push_back((char)tolower(str[i]));
         } else {
-            res.push_back(c);
+            res.push_back(str[i]);
         }
     }
     return res;
 }
-Expected<bool> strtobool(std::string const& str) {
-    bool res = false;
-    if (Util::toBool(str, res)) {
-        return res;
-    } else {
-        return makeErrorCodeError(std::errc::invalid_argument);
+std::string toLowerCase(std::string_view str) {
+    std::string res{str};
+    std::transform(res.begin(), res.end(), res.begin(), [](char c) { return (char)std::tolower(c); });
+    return res;
+}
+Expected<bool> strtobool(std::string_view str) {
+    if (str.size() <= 4) {
+        auto lower = toLowerCase(str);
+        if (lower == "1" || lower == "y" || str == "yes" || lower == "true") {
+            return true;
+        } else if (lower == "0" || lower == "n" || str == "no" || lower == "false") {
+            return false;
+        }
     }
+    return makeErrorCodeError(std::errc::invalid_argument);
 }
 } // namespace ll::inline utils::string_utils

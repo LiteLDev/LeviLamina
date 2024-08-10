@@ -15,6 +15,7 @@
 class BinaryStream;
 class ReadOnlyBinaryStream;
 class Player;
+class ServerPlayer;
 class Actor;
 class BlockPos;
 
@@ -45,7 +46,7 @@ public:
      *
      * @param player The server player to send the packet to.
      */
-    LLAPI void sendTo(Player const& player) const;
+    LLAPI void sendTo(ServerPlayer const& player) const;
 
     /**
      * Send the packet to all relevant players in a 2D plane at a position in a given dimension.

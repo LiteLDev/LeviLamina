@@ -2,6 +2,6 @@
 
 namespace ll::event::inline player {
 
-ServerPlayer& PlayerEvent::self() const { return static_cast<ServerPlayer&>(MobEvent::self()); }
+Player& PlayerEvent::self() const { return static_cast<Player&>(MobEvent::self()); }
 
 } // namespace ll::event::inline player

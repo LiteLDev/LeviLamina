@@ -2,10 +2,9 @@
 
 #include "ll/api/command/CommandRegistrar.h"
 #include "ll/api/event/EventBus.h"
-#include "ll/api/event/server/ServerStartedEvent.h"
 #include "ll/api/i18n/I18n.h"
 #include "ll/api/service/Bedrock.h"
-#include "ll/api/service/ServerInfo.h"
+#include "ll/api/service/ProcessStatus.h"
 
 #include "pl/Config.h"
 
@@ -67,15 +66,8 @@ bool Mod::hasOnDisable() const noexcept { return mImpl->onDisable != nullptr; }
 Expected<> Mod::onLoad() noexcept {
     try {
         if (!mImpl->onLoad || mImpl->onLoad(*this)) {
-            if (getServerStatus() == ServerStatus::Running) {
-                return onEnable().transform([this] {
-                    if (service::getServerInstance()) {
-                        event::EventBus::getInstance().publish(
-                            mImpl->manifest.name,
-                            event::ServerStartedEvent{service::getServerInstance()}
-                        );
-                    }
-                });
+            if (getProcessStatus() == ProcessStatus::Running) {
+                return onEnable();
             }
             return {};
         } else {
@@ -122,7 +114,7 @@ Expected<> Mod::onDisable() noexcept {
         }
         if (!mImpl->onDisable || mImpl->onDisable(*this)) {
             setState(State::Disabled);
-            if (ll::getServerStatus() != ll::ServerStatus::Stopping) {
+            if (ll::getProcessStatus() != ll::ProcessStatus::Stopping) {
                 event::EventBus::getInstance().removeModListeners(mImpl->manifest.name);
                 command::CommandRegistrar::getInstance().disableModCommands(mImpl->manifest.name);
             }

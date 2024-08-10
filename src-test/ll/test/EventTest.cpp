@@ -16,10 +16,10 @@
 #include "ll/api/event/player/PlayerConnectEvent.h"
 #include "ll/api/event/player/PlayerDestroyBlockEvent.h"
 #include "ll/api/event/player/PlayerDieEvent.h"
+#include "ll/api/event/player/PlayerDisconnectEvent.h"
 #include "ll/api/event/player/PlayerInteractBlockEvent.h"
 #include "ll/api/event/player/PlayerJoinEvent.h"
 #include "ll/api/event/player/PlayerJumpEvent.h"
-#include "ll/api/event/player/PlayerLeaveEvent.h"
 #include "ll/api/event/player/PlayerPickUpItemEvent.h"
 #include "ll/api/event/player/PlayerPlaceBlockEvent.h"
 #include "ll/api/event/player/PlayerRespawnEvent.h"
@@ -147,9 +147,9 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
         ll::getLogger().debug("Player connect: {} {}", ev.self().getRealName(), ev.self().getIPAndPort());
     });
     bus.emplaceListener<PlayerJoinEvent>([](PlayerJoinEvent& ev) {
-        ll::getLogger().debug("Player join: {} {}", ev.self().getRealName(), ev.self().getLocaleName());
+        ll::getLogger().debug("Player join: {} {}", ev.self().getRealName(), ev.self().getLocaleCode());
     });
-    bus.emplaceListener<PlayerLeaveEvent>([](PlayerLeaveEvent& ev) {
+    bus.emplaceListener<PlayerDisconnectEvent>([](PlayerDisconnectEvent& ev) {
         ll::getLogger().debug("Player leave: {}", ev.self().getRealName());
     });
     bus.emplaceListener<PlayerAttackEvent>([](PlayerAttackEvent& ev) {

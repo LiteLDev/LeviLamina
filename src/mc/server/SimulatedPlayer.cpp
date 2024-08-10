@@ -7,10 +7,10 @@
 #include "mc/server/ServerLevel.h"
 
 optional_ref<SimulatedPlayer> SimulatedPlayer::create(
-    std::string const& name,
-    class Vec3 const&  pos,
-    DimensionType      dimId,
-    class Vec2 const&  rotation
+    std::string const&         name,
+    std::optional<Vec3> const& pos,
+    DimensionType              dimId,
+    Vec2 const&                rotation
 ) {
     if (!ll::service::getServerNetworkHandler()) {
         return nullptr;
@@ -25,16 +25,16 @@ optional_ref<SimulatedPlayer> SimulatedPlayer::create(
     }
     player->postLoad(true);
     player->getLevel().addUser(std::move(ownerPtr));
-    if (pos == Vec3::MIN) {
+    if (!pos) {
         player->setLocalPlayerAsInitialized();
         player->doInitialSpawn();
         return player;
     }
-    player->setRespawnReady(pos + Vec3{0, 1.62001, 0});
-    player->setRespawnPosition(pos, dimId);
+    player->setRespawnReady(*pos + Vec3{0, 1.62001, 0});
+    player->setRespawnPosition(*pos, dimId);
     player->setLocalPlayerAsInitialized();
     player->doInitialSpawn();
-    player->teleport(pos, dimId, rotation);
+    player->teleport(*pos, dimId, rotation);
     return player;
 }
 

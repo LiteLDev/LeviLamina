@@ -26,10 +26,11 @@ def format_all():
     subprocess.run(["clang-format", "--version"])
     pool = multiprocessing.Pool(
         processes=max(multiprocessing.cpu_count()-2, 1))
-    for root, dirs, files in os.walk("./src"):
-        for file in files:
-            if file.endswith(".h") or file.endswith(".cpp"):
-                pool.apply_async(format_file, (os.path.join(root, file),))
+    for path in ["./src", "./src-server", "./src-client", "./src-test"]:
+        for root, dirs, files in os.walk(path):
+            for file in files:
+                if file.endswith(".h") or file.endswith(".cpp"):
+                    pool.apply_async(format_file, (os.path.join(root, file),))
     pool.close()
     pool.join()
 
