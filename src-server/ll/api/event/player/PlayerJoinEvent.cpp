@@ -1,0 +1,36 @@
+#include "ll/api/event/player/PlayerJoinEvent.h"
+#include "ll/api/event/Emitter.h"
+#include "ll/api/memory/Hook.h"
+
+#include "mc/network/ServerNetworkHandler.h"
+#include "mc/network/packet/SetLocalPlayerAsInitializedPacket.h"
+
+namespace ll::event::inline player {
+
+LL_TYPE_INSTANCE_HOOK(
+    PlayerJoinEventHook,
+    HookPriority::Normal,
+    ServerNetworkHandler,
+    &ServerNetworkHandler::handle,
+    void,
+    NetworkIdentifier const&                 identifier,
+    SetLocalPlayerAsInitializedPacket const& packet
+) {
+    if (auto player = getServerPlayer(identifier, packet.mClientSubId); player) {
+        auto event = PlayerJoinEvent{player};
+        EventBus::getInstance().publish(event);
+        if (event.isCancelled()) {
+            return;
+        }
+    }
+    origin(identifier, packet);
+}
+
+static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
+class PlayerJoinEventEmitter : public Emitter<emitterFactory, PlayerJoinEvent> {
+    memory::HookRegistrar<PlayerJoinEventHook> hook;
+};
+
+static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) { return std::make_unique<PlayerJoinEventEmitter>(); }
+
+} // namespace ll::event::inline player

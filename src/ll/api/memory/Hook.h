@@ -170,9 +170,6 @@ struct __declspec(empty_bases) Hook {};
         static int hook(bool suspendThreads = true) {                                                                  \
             detector<_OriginFuncType>();                                                                               \
             _HookTarget = ::ll::memory::resolveIdentifier<_OriginFuncType>(IDENTIFIER);                                \
-            if (_HookTarget == nullptr) {                                                                              \
-                return -1;                                                                                             \
-            }                                                                                                          \
             return ::ll::memory::hook(                                                                                 \
                 _HookTarget,                                                                                           \
                 ::ll::memory::toFuncPtr(&DEF_TYPE::detour),                                                            \

@@ -24,15 +24,16 @@ void StructureTemplate::placeInWorld(
 
 
 std::unique_ptr<StructureTemplate> StructureTemplate::create(const std::string& name, CompoundTag const& tag) {
-    if (!ll::service::getLevel()) {
-        return nullptr;
-    }
-    auto res = std::make_unique<StructureTemplate>(name, ll::service::getLevel()->getUnknownBlockTypeRegistry());
-    bool success{res->load(tag)};
-    if (!success) {
-        return nullptr;
-    }
-    return res;
+    return ll::service::getLevel()
+        .transform([&](auto& level) {
+            auto res = std::make_unique<StructureTemplate>(name, level.getUnknownBlockTypeRegistry());
+            bool success{res->load(tag)};
+            if (!success) {
+                res.reset();
+            }
+            return res;
+        })
+        .value_or(nullptr);
 }
 
 std::unique_ptr<StructureTemplate> StructureTemplate::create(

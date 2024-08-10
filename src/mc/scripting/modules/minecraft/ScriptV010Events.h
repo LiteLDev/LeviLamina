@@ -101,7 +101,7 @@ public:
 
     MCVAPI void
     onPlayerLeave(class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent>&
-                      playerLeaveEvent);
+                      PlayerDisconnectEvent);
 
     MCVAPI void onWeatherChanged(class Scripting::StrongTypedObjectHandle<
                                  struct ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent>& weatherChangedEvent);

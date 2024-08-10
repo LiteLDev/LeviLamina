@@ -1,5 +1,5 @@
-#include "ll/api/i18n/I18n.h"
 #include "ll/api/mod/ModManager.h"
+#include "ll/api/i18n/I18n.h"
 
 namespace ll::mod {
 using namespace i18n_literals;

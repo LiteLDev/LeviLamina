@@ -59,7 +59,7 @@ public:
         reset(r.release());
         return *this;
     }
-    _CONSTEXPR23 UniqueTagPtr(UniqueTagPtr const& r) : ptr(r ? r->copy().release() : nullptr) {}
+    _CONSTEXPR23 UniqueTagPtr(UniqueTagPtr const& r) : ptr(r ? (r -> copy().release()) : nullptr) {}
 
     _CONSTEXPR23 UniqueTagPtr& operator=(UniqueTagPtr const& r) {
         if (r && &r != this) ptr = r->copy().release();

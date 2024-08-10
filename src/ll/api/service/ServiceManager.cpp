@@ -3,7 +3,7 @@
 #include <unordered_map>
 
 #include "ll/api/event/EventBus.h"
-#include "ll/api/event/server/ServiceEvents.h"
+#include "ll/api/event/service/ServiceEvents.h"
 
 namespace ll::service {
 std::string GetServiceError::message() const noexcept {

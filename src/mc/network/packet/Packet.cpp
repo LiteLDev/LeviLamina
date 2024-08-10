@@ -8,16 +8,17 @@
 #include "mc/world/Minecraft.h"
 #include "mc/world/level/dimension/Dimension.h"
 
-void Packet::sendTo(Player const& player) const {
+void Packet::sendTo(ServerPlayer const& player) const {
     sendToClient(player.getNetworkIdentifier(), player.getClientSubId());
 }
 
 void Packet::sendTo(BlockPos const& pos, DimensionType type, optional_ref<Player const> except) const {
-    if (auto level = ll::service::getLevel(); level) {
-        if (auto ptr = level->getDimension(type); ptr) {
+    ll::service::getLevel().transform([&](auto& level) {
+        if (auto ptr = level.getDimension(type); ptr) {
             ptr->sendPacketForPosition(pos, *this, except.as_ptr());
         }
-    }
+        return true;
+    });
 }
 
 void Packet::sendTo(Actor const& actor, optional_ref<Player const> except) const {
@@ -25,9 +26,10 @@ void Packet::sendTo(Actor const& actor, optional_ref<Player const> except) const
 }
 
 void Packet::sendToClient(NetworkIdentifier const& id, SubClientId clientId) const {
-    if (auto level = ll::service::getLevel(); level) {
-        level->getPacketSender()->sendToClient(id, *this, clientId);
-    }
+    ll::service::getLevel().transform([&](auto& level) {
+        level.getPacketSender()->sendToClient(id, *this, clientId);
+        return true;
+    });
 }
 
 void Packet::sendToClient(NetworkIdentifierWithSubId const& identifierWithSubId) const {
@@ -35,12 +37,14 @@ void Packet::sendToClient(NetworkIdentifierWithSubId const& identifierWithSubId)
 }
 
 void Packet::sendToClients() const {
-    if (auto level = ll::service::getLevel(); level) {
-        level->getPacketSender()->sendBroadcast(*this);
-    }
+    ll::service::getLevel().transform([&](auto& level) {
+        level.getPacketSender()->sendBroadcast(*this);
+        return true;
+    });
 }
 void Packet::sendToClients(NetworkIdentifier const& exceptId, ::SubClientId exceptSubid) const {
-    if (auto level = ll::service::getLevel(); level) {
-        level->getPacketSender()->sendBroadcast(exceptId, exceptSubid, *this);
-    }
+    ll::service::getLevel().transform([&](auto& level) {
+        level.getPacketSender()->sendBroadcast(exceptId, exceptSubid, *this);
+        return true;
+    });
 }

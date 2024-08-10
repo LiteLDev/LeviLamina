@@ -15,7 +15,7 @@ public:
     virtual ~EndTag() = default;
 
     // vIndex: 2
-    virtual void write(class IDataOutput& dos) const;
+    virtual void write(class IDataOutput&) const {}
 
     // vIndex: 3
     virtual class Bedrock::Result<void> load(class IDataInput& dis);
@@ -24,7 +24,7 @@ public:
     virtual std::string toString() const;
 
     // vIndex: 5
-    virtual ::Tag::Type getId() const;
+    virtual ::Tag::Type getId() const { return Tag::End; }
 
     // vIndex: 6
     virtual bool equals(class Tag const& rhs) const;

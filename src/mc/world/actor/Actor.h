@@ -94,7 +94,7 @@ public:
         bool                                                                           includeActor = true,
         bool                                                                           includeBlock = true,
         std::function<bool(class BlockSource const&, class Block const&, bool)> const& blockCheckFunction =
-            ClipDefaults::CHECK_ALL_PICKABLE_BLOCKS
+            [](auto&&...) -> bool { return true; }
     ) const;
 
     LLAPI void teleport(class Vec3 const& pos, DimensionType dimId, class Vec2 const& rotation);

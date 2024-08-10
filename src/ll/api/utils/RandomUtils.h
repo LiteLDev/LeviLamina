@@ -63,7 +63,10 @@ inline T closeIntervalRand(T min = 0, T max = 1) {
 }
 template <class T>
 inline T rightCloseIntervalRand(T min = 0, T max = 1) {
-    return rand<T>(std::nexttoward(min, std::numeric_limits<long double>::max()), std::nexttoward(max, std::numeric_limits<long double>::max()));
+    return rand<T>(
+        std::nexttoward(min, std::numeric_limits<long double>::max()),
+        std::nexttoward(max, std::numeric_limits<long double>::max())
+    );
 }
 template <class T>
 inline T leftCloseIntervalRand(T min = 0, T max = 1) {

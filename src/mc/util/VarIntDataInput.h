@@ -11,7 +11,9 @@ class VarIntDataInput : public ::BytesDataInput {
 public:
     ReadOnlyBinaryStream* mStream;
 
-    explicit VarIntDataInput(class ReadOnlyBinaryStream* bs) : mStream(bs) {}
+    explicit VarIntDataInput(ReadOnlyBinaryStream* bs) : mStream(bs) {}
+
+    explicit VarIntDataInput(ReadOnlyBinaryStream& bs) : mStream(std::addressof(bs)) {}
 
     VarIntDataInput() = delete;
 

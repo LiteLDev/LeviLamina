@@ -37,10 +37,13 @@ bool isMinimize(SnbtFormat format) {
     );
 }
 
-std::string WrapColorCode(std::string const& str, std::string const& code) { return code + str + cf::RESET; }
+std::string WrapColorCode(std::string const& str, std::string_view code) {
+    std::string res{code};
+    return res.append(str).append(cf::RESET);
+}
 
 std::string
-toDumpString(std::string const& str, fmt::color defaultc, std::string const& defaultmc, SnbtFormat format, bool key) {
+toDumpString(std::string const& str, fmt::color defaultc, std::string_view defaultmc, SnbtFormat format, bool key) {
 
     std::string res;
 
@@ -67,12 +70,13 @@ toDumpString(std::string const& str, fmt::color defaultc, std::string const& def
             res = str;
         } else {
             try {
-                res = nlohmann::json(std::move(str)).dump(
-                    -1,
-                    ' ',
-                    (bool)(format & SnbtFormat::ForceAscii),
-                    nlohmann::json::error_handler_t::strict
-                );
+                res = nlohmann::json(std::move(str))
+                          .dump(
+                              -1,
+                              ' ',
+                              (bool)(format & SnbtFormat::ForceAscii),
+                              nlohmann::json::error_handler_t::strict
+                          );
             } catch (...) {
                 base64 = true;
                 res    = "\"" + ll::base64_utils::encode(str) + "\"";

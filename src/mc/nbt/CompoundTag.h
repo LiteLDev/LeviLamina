@@ -43,6 +43,12 @@ public:
     LLNDAPI std::string                      toNetworkNbt() const;
     LLNDAPI static ll::Expected<CompoundTag> fromNetworkNbt(std::string const& data) noexcept;
 
+    size_t size() const { return mTags.size(); }
+
+    bool contains(std::string_view name) const;
+
+    bool contains(std::string_view name, ::Tag::Type type) const;
+
 public:
     // NOLINTBEGIN
     // vIndex: 0
@@ -58,7 +64,7 @@ public:
     virtual std::string toString() const;
 
     // vIndex: 5
-    virtual ::Tag::Type getId() const;
+    virtual ::Tag::Type getId() const { return Tag::Compound; }
 
     // vIndex: 6
     virtual bool equals(class Tag const& obj) const;
@@ -79,10 +85,6 @@ public:
     MCAPI void clear();
 
     MCAPI std::unique_ptr<class CompoundTag> clone() const;
-
-    MCAPI bool contains(std::string_view name) const;
-
-    MCAPI bool contains(std::string_view name, ::Tag::Type type) const;
 
     [[deprecated]] MCAPI void deepCopy(class CompoundTag const& other);
 
@@ -162,9 +164,16 @@ public:
 
     MCAPI void rename(std::string_view name, std::string newName);
 
-    MCAPI uint64 size() const;
-
     // NOLINTEND
 };
 
 #include "mc/nbt/CompoundTagVariant.h"
+
+inline bool CompoundTag::contains(std::string_view name) const { return mTags.find(name) != mTags.end(); }
+
+inline bool CompoundTag::contains(std::string_view name, ::Tag::Type type) const {
+    if (auto iter = mTags.find(name); iter != mTags.end()) {
+        return iter->second.getId() == type;
+    }
+    return false;
+}

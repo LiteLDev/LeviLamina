@@ -43,10 +43,10 @@ namespace mce { class UUID; }
 class SimulatedPlayer : public ::ServerPlayer {
 public:
     LLAPI static optional_ref<SimulatedPlayer> create(
-        std::string const& name,
-        class Vec3 const&  pos      = Vec3::MIN,
-        DimensionType      dimId    = 0,
-        class Vec2 const&  rotation = Vec2::ZERO
+        std::string const&         name,
+        std::optional<Vec3> const& pos      = std::nullopt,
+        DimensionType              dimId    = 0,
+        Vec2 const&                rotation = {0, 0}
     );
 
     [[nodiscard]] inline bool simulateSneaking() {

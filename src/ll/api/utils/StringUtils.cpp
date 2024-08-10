@@ -15,6 +15,7 @@
 
 #include "ll/api/base/StdInt.h"
 
+#include "mc/common/ColorFormat.h"
 #include "mc/deps/core/mce/Color.h"
 #include "mc/deps/core/utility/Util.h"
 #include "mc/deps/snappy/snappy.h"
@@ -22,6 +23,8 @@
 #include "stringapiset.h"
 
 namespace ll::inline utils::string_utils {
+
+namespace cf = ColorFormat;
 
 std::string compress(std::string_view sv) {
     std::string res;
@@ -35,41 +38,41 @@ std::string decompress(std::string_view sv) {
 }
 
 fmt::text_style getTextStyleFromCode(std::string_view code) {
-    if (code.starts_with("§")) {
+    if (code.starts_with(cf::ESCAPE)) {
         switch (code[2]) {
             // clang-format off
         default :
-        case 'f': return fmt::fg(fmt::terminal_color::bright_white);
-        case '0': return fmt::fg(fmt::terminal_color::black);
-        case '1': return fmt::fg(fmt::rgb(0x0000AA));
-        case '2': return fmt::fg(fmt::rgb(0x00AA00));
-        case '3': return fmt::fg(fmt::rgb(0x00AAAA));
-        case '4': return fmt::fg(fmt::rgb(0xAA0000));
-        case '5': return fmt::fg(fmt::rgb(0xAA00AA));
-        case '6': return fmt::fg(fmt::rgb(0xFFAA00));
-        case '7': return fmt::fg(fmt::rgb(0xAAAAAA));
-        case '8': return fmt::fg(fmt::rgb(0x555555));
-        case '9': return fmt::fg(fmt::rgb(0x5555FF));
-        case 'a': return fmt::fg(fmt::rgb(0x55FF55));
-        case 'b': return fmt::fg(fmt::rgb(0x55FFFF));
-        case 'c': return fmt::fg(fmt::rgb(0xFF5555));
-        case 'd': return fmt::fg(fmt::rgb(0xFF55FF));
-        case 'e': return fmt::fg(fmt::rgb(0xFFFF55));
-        case 'g': return fmt::fg(fmt::rgb(0xDDD605));
-        case 'h': return fmt::fg(fmt::rgb(0xE3D4D1));
-        case 'i': return fmt::fg(fmt::rgb(0xCECACA));
-        case 'j': return fmt::fg(fmt::rgb(0x443A3B));
-        case 'm': return fmt::fg(fmt::rgb(0x971607));
-        case 'n': return fmt::fg(fmt::rgb(0xB4684D));
-        case 'p': return fmt::fg(fmt::rgb(0xDEB12D));
-        case 'q': return fmt::fg(fmt::rgb(0x47A036));
-        case 's': return fmt::fg(fmt::rgb(0x2CBAA8));
-        case 't': return fmt::fg(fmt::rgb(0x21497B));
-        case 'u': return fmt::fg(fmt::rgb(0x9A5CC6));
-        case 'k': return fmt::emphasis::blink;
-        case 'l': return fmt::emphasis::bold;
-        case 'o': return fmt::emphasis::italic;
-        case 'r': return {};
+        case cf::WHITE.back():              return fmt::fg(fmt::terminal_color::bright_white);
+        case cf::BLACK.back():              return fmt::fg(fmt::terminal_color::black);
+        case cf::DARK_BLUE.back():          return fmt::fg(fmt::rgb(0x0000AA));
+        case cf::DARK_GREEN.back():         return fmt::fg(fmt::rgb(0x00AA00));
+        case cf::DARK_AQUA.back():          return fmt::fg(fmt::rgb(0x00AAAA));
+        case cf::DARK_RED.back():           return fmt::fg(fmt::rgb(0xAA0000));
+        case cf::DARK_PURPLE.back():        return fmt::fg(fmt::rgb(0xAA00AA));
+        case cf::GOLD.back():               return fmt::fg(fmt::rgb(0xFFAA00));
+        case cf::GRAY.back():               return fmt::fg(fmt::rgb(0xAAAAAA));
+        case cf::DARK_GRAY.back():          return fmt::fg(fmt::rgb(0x555555));
+        case cf::BLUE.back():               return fmt::fg(fmt::rgb(0x5555FF));
+        case cf::GREEN.back():              return fmt::fg(fmt::rgb(0x55FF55));
+        case cf::AQUA.back():               return fmt::fg(fmt::rgb(0x55FFFF));
+        case cf::RED.back():                return fmt::fg(fmt::rgb(0xFF5555));
+        case cf::LIGHT_PURPLE.back():       return fmt::fg(fmt::rgb(0xFF55FF));
+        case cf::YELLOW.back():             return fmt::fg(fmt::rgb(0xFFFF55));
+        case cf::MINECOIN_GOLD.back():      return fmt::fg(fmt::rgb(0xDDD605));
+        case cf::MATERIAL_QUARTZ.back():    return fmt::fg(fmt::rgb(0xE3D4D1));
+        case cf::MATERIAL_IRON.back():      return fmt::fg(fmt::rgb(0xCECACA));
+        case cf::MATERIAL_NETHERITE.back(): return fmt::fg(fmt::rgb(0x443A3B));
+        case cf::MATERIAL_REDSTONE.back():  return fmt::fg(fmt::rgb(0x971607));
+        case cf::MATERIAL_COPPER.back():    return fmt::fg(fmt::rgb(0xB4684D));
+        case cf::MATERIAL_GOLD.back():      return fmt::fg(fmt::rgb(0xDEB12D));
+        case cf::MATERIAL_EMERALD.back():   return fmt::fg(fmt::rgb(0x47A036));
+        case cf::MATERIAL_DIAMOND.back():   return fmt::fg(fmt::rgb(0x2CBAA8));
+        case cf::MATERIAL_LAPIS.back():     return fmt::fg(fmt::rgb(0x21497B));
+        case cf::MATERIAL_AMETHYST.back():  return fmt::fg(fmt::rgb(0x9A5CC6));
+        case cf::OBFUSCATED.back():         return fmt::emphasis::blink;
+        case cf::BOLD.back():               return fmt::emphasis::bold;
+        case cf::ITALIC.back():             return fmt::emphasis::italic;
+        case cf::RESET.back():              return {};
             // clang-format on
         }
     } else if (code.starts_with('\x1B')) {
@@ -125,13 +128,13 @@ std::string getMcCodeFromTextStyle(fmt::text_style style) {
     if (style.has_emphasis()) {
         hasMcStyle = true;
         if ((uchar)(fmt::emphasis::blink) & (uchar)(style.get_emphasis())) {
-            res += "§k";
+            res += cf::OBFUSCATED;
         }
         if ((uchar)(fmt::emphasis::bold) & (uchar)(style.get_emphasis())) {
-            res += "§l";
+            res += cf::BOLD;
         }
         if ((uchar)(fmt::emphasis::italic) & (uchar)(style.get_emphasis())) {
-            res += "§o";
+            res += cf::ITALIC;
         }
     }
     if (style.has_foreground()) {
@@ -140,14 +143,21 @@ std::string getMcCodeFromTextStyle(fmt::text_style style) {
         if (fg.is_rgb) {
             auto color = mce::Color(fg.value.rgb_color);
             // clang-format off
-            static const std::unordered_map<std::string_view, mce::Color> carr{
-                {"§0", 0x000000}, {"§1", 0x0000AA}, {"§2", 0x00AA00}, {"§3", 0x00AAAA},
-                {"§4", 0xAA0000}, {"§5", 0xAA00AA}, {"§6", 0xFFAA00}, {"§7", 0xAAAAAA},
-                {"§8", 0x555555}, {"§9", 0x5555FF}, {"§a", 0x55FF55}, {"§b", 0x55FFFF},
-                {"§c", 0xFF5555}, {"§d", 0xFF55FF}, {"§e", 0xFFFF55}, {"§g", 0xDDD605},
-                {"§h", 0xE3D4D1}, {"§i", 0xCECACA}, {"§j", 0x443A3B}, {"§m", 0x971607},
-                {"§n", 0xB4684D}, {"§p", 0xDEB12D}, {"§q", 0x47A036}, {"§s", 0x2CBAA8},
-                {"§t", 0x21497B}, {"§u", 0x9A5CC6}, {"§f", 0xFFFFFF}
+            constexpr const auto carr  = std::array{
+                std::pair{cf::BLACK             , mce::Color(0x000000)}, std::pair{cf::DARK_BLUE        , mce::Color(0x0000AA)},
+                std::pair{cf::DARK_GREEN        , mce::Color(0x00AA00)}, std::pair{cf::DARK_AQUA        , mce::Color(0x00AAAA)},
+                std::pair{cf::DARK_RED          , mce::Color(0xAA0000)}, std::pair{cf::DARK_PURPLE      , mce::Color(0xAA00AA)},
+                std::pair{cf::GOLD              , mce::Color(0xFFAA00)}, std::pair{cf::GRAY             , mce::Color(0xAAAAAA)},
+                std::pair{cf::DARK_GRAY         , mce::Color(0x555555)}, std::pair{cf::BLUE             , mce::Color(0x5555FF)},
+                std::pair{cf::GREEN             , mce::Color(0x55FF55)}, std::pair{cf::AQUA             , mce::Color(0x55FFFF)},
+                std::pair{cf::RED               , mce::Color(0xFF5555)}, std::pair{cf::LIGHT_PURPLE     , mce::Color(0xFF55FF)},
+                std::pair{cf::YELLOW            , mce::Color(0xFFFF55)}, std::pair{cf::MINECOIN_GOLD    , mce::Color(0xDDD605)},
+                std::pair{cf::MATERIAL_QUARTZ   , mce::Color(0xE3D4D1)}, std::pair{cf::MATERIAL_IRON    , mce::Color(0xCECACA)},
+                std::pair{cf::MATERIAL_NETHERITE, mce::Color(0x443A3B)}, std::pair{cf::MATERIAL_REDSTONE, mce::Color(0x971607)},
+                std::pair{cf::MATERIAL_COPPER   , mce::Color(0xB4684D)}, std::pair{cf::MATERIAL_GOLD    , mce::Color(0xDEB12D)},
+                std::pair{cf::MATERIAL_EMERALD  , mce::Color(0x47A036)}, std::pair{cf::MATERIAL_DIAMOND , mce::Color(0x2CBAA8)},
+                std::pair{cf::MATERIAL_LAPIS    , mce::Color(0x21497B)}, std::pair{cf::MATERIAL_AMETHYST, mce::Color(0x9A5CC6)},
+                std::pair{cf::WHITE             , mce::Color(0xFFFFFF)}
             };
             // clang-format on
             double           minDis = std::numeric_limits<double>::max();
@@ -163,23 +173,23 @@ std::string getMcCodeFromTextStyle(fmt::text_style style) {
         } else {
             switch ((fmt::terminal_color)(fg.value.term_color)) {
                 // clang-format off
-            case fmt::terminal_color::black:          res += "§0"; break;
-            case fmt::terminal_color::red:            res += "§4"; break;
-            case fmt::terminal_color::green:          res += "§2"; break;
-            case fmt::terminal_color::yellow:         res += "§6"; break;
-            case fmt::terminal_color::blue:           res += "§1"; break;
-            case fmt::terminal_color::magenta:        res += "§5"; break;
-            case fmt::terminal_color::cyan:           res += "§3"; break;
-            case fmt::terminal_color::white:          res += "§7"; break;
-            case fmt::terminal_color::bright_black:   res += "§8"; break;
-            case fmt::terminal_color::bright_red:     res += "§c"; break;
-            case fmt::terminal_color::bright_green:   res += "§a"; break;
-            case fmt::terminal_color::bright_yellow:  res += "§e"; break;
-            case fmt::terminal_color::bright_blue:    res += "§9"; break;
-            case fmt::terminal_color::bright_magenta: res += "§d"; break;
-            case fmt::terminal_color::bright_cyan:    res += "§b"; break;
+            case fmt::terminal_color::black:          res += cf::BLACK; break;
+            case fmt::terminal_color::red:            res += cf::DARK_RED; break;
+            case fmt::terminal_color::green:          res += cf::DARK_GREEN; break;
+            case fmt::terminal_color::yellow:         res += cf::GOLD; break;
+            case fmt::terminal_color::blue:           res += cf::DARK_BLUE; break;
+            case fmt::terminal_color::magenta:        res += cf::DARK_PURPLE; break;
+            case fmt::terminal_color::cyan:           res += cf::DARK_AQUA; break;
+            case fmt::terminal_color::white:          res += cf::GRAY; break;
+            case fmt::terminal_color::bright_black:   res += cf::DARK_GRAY; break;
+            case fmt::terminal_color::bright_red:     res += cf::RED; break;
+            case fmt::terminal_color::bright_green:   res += cf::GREEN; break;
+            case fmt::terminal_color::bright_yellow:  res += cf::YELLOW; break;
+            case fmt::terminal_color::bright_blue:    res += cf::BLUE; break;
+            case fmt::terminal_color::bright_magenta: res += cf::LIGHT_PURPLE; break;
+            case fmt::terminal_color::bright_cyan:    res += cf::AQUA; break;
             case fmt::terminal_color::bright_white:
-            default :                                 res += "§f"; break;
+            default :                                 res += cf::WHITE; break;
                 // clang-format on
             }
         }
@@ -187,10 +197,10 @@ std::string getMcCodeFromTextStyle(fmt::text_style style) {
     if (style.has_background()) {
         hasMcStyle = true;
     }
-    if (hasMcStyle) {
-        return res;
+    if (!hasMcStyle) {
+        res = cf::RESET;
     }
-    return "§r";
+    return res;
 }
 
 std::string getAnsiCodeFromTextStyle(fmt::text_style style) {
@@ -295,25 +305,32 @@ std::string toSnakeCase(std::string_view str) {
     if (str.empty()) {
         return res;
     }
-    res.reserve(str.length());
-    res.push_back((char)tolower(str.front()));
-    str.remove_prefix(1);
-    for (auto c : str) {
-        if (isupper(c)) {
-            res.push_back('_');
-            res.push_back((char)tolower(c));
+    for (size_t i = 0; i < str.size(); ++i) {
+        if (isupper(str[i])) {
+            if (i > 0 && ((i + 1 < str.size() && !isupper(str[i + 1])) || !isupper(str[i - 1]))) {
+                res.push_back('_');
+            }
+            res.push_back((char)tolower(str[i]));
         } else {
-            res.push_back(c);
+            res.push_back(str[i]);
         }
     }
     return res;
 }
-Expected<bool> strtobool(std::string const& str) {
-    bool res = false;
-    if (Util::toBool(str, res)) {
-        return res;
-    } else {
-        return makeErrorCodeError(std::errc::invalid_argument);
+std::string toLowerCase(std::string_view str) {
+    std::string res{str};
+    std::transform(res.begin(), res.end(), res.begin(), [](char c) { return (char)std::tolower(c); });
+    return res;
+}
+Expected<bool> strtobool(std::string_view str) {
+    if (str.size() <= 4) {
+        auto lower = toLowerCase(str);
+        if (lower == "1" || lower == "y" || str == "yes" || lower == "true") {
+            return true;
+        } else if (lower == "0" || lower == "n" || str == "no" || lower == "false") {
+            return false;
+        }
     }
+    return makeErrorCodeError(std::errc::invalid_argument);
 }
 } // namespace ll::inline utils::string_utils

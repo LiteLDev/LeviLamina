@@ -4,7 +4,7 @@
 
 #include "ll/api/event/EventBus.h"
 #include "ll/api/event/MultiListener.h"
-#include "ll/api/event/server/ServiceEvents.h"
+#include "ll/api/event/service/ServiceEvents.h"
 #include "ll/api/mod/NativeMod.h"
 #include "ll/api/service/Service.h"
 #include "ll/api/service/ServiceId.h"

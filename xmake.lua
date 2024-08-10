@@ -40,13 +40,13 @@ option("use_mimalloc")
     set_showmenu(true)
     set_description("Enable mimalloc")
 
-option("operating-platform")
+option("target-type")
     set_default("server")
     set_showmenu(true)
     set_values("server", "client")
 option_end()
 
-if is_config("operating-platform", "server") then
+if is_config("target-type", "server") then
     set_defaultarchs("windows|x64")
     set_allowedarchs("windows|x64", "linux|x86_64")
 else
@@ -65,11 +65,7 @@ target("LeviLamina")
     set_kind("shared")
     set_symbols("debug")
     set_exceptions("none")
-    add_files(
-        "src/ll/api/**.cpp",
-        "src/ll/core/**.cpp",
-        "src/mc/**.cpp"
-    )
+    add_files("src/**.cpp")
     set_configdir("$(buildir)/config")
     set_configvar("LL_WORKSPACE_FOLDER", "$(projectdir)")
     add_configfiles("src/(ll/core/Version.h.in)")
@@ -135,34 +131,41 @@ target("LeviLamina")
         add_files("src/ll/core/**.rc")
     end
 
-    if is_config("operating-platform", "server") then
-        add_headerfiles("src-server/(ll/api/**.h)"
-        -- , "src-server/(mc/**.h)"
+    if is_config("target-type", "server") then
+        add_headerfiles(
+        "src-server/(ll/api/**.h)"
+        -- ,"src-server/(mc/**.h)"
         )
         add_includedirs("src-server")
         add_files(
-            "src-server/ll/api/**.cpp",
-            "src-server/ll/core/**.cpp"
-            -- "src-server/mc/**.cpp"
+            "src-server/**.cpp"
         )
+    else
+        add_headerfiles(
+        "src-client/(ll/api/**.h)"
+        -- , "src-client/(mc/**.h)"
+        )
+        add_includedirs("src-client")
+        add_files("src-client/**.cpp")
     end
 
     if has_config("tests") then
         add_defines("LL_DEBUG")
         add_packages("gtest")
-        add_files("src/ll/test/**.cpp")
+        add_includedirs("src-test")
+        add_files("src-test/ll/test/**.cpp")
 
         before_build(function (target)
             headers = ""
             for _,x in ipairs(os.files("src/**.h")) do
                 headers = headers.."#include \""..path.relative(x, "src/").."\"\n"
             end
-            file = io.open("src/ll/test/include_all.cpp", "w")
+            file = io.open("src-test/ll/test/include_all.cpp", "w")
             file:write(headers)
             file:close()
         end)
         after_build(function (target)
-            io.writefile("src/ll/test/include_all.cpp", "// auto gen when build test\n")
+            io.writefile("src-test/ll/test/include_all.cpp", "// auto gen when build test\n")
         end)
     end
 
