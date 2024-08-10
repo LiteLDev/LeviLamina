@@ -33,7 +33,7 @@ public:
     virtual std::unique_ptr<class Tag> copy() const;
 
     // vIndex: 10
-    virtual uint64 hash() const;
+    virtual uint64 hash() const { return 0; }
 
     // NOLINTEND
 };
