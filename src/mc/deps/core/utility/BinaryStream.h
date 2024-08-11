@@ -11,10 +11,6 @@ public:
     std::string  mOwnedBuffer;
     std::string* mBuffer;
 
-    // prevent constructor by default
-    BinaryStream& operator=(BinaryStream const&);
-    BinaryStream(BinaryStream const&);
-
     template <typename T>
     inline void writeType(T const& x, char const* = nullptr, char const* = nullptr) {
         serialize<T>::write(x, *this);
@@ -25,16 +21,24 @@ public:
     MCTAPI void writeType(class NetworkItemInstanceDescriptor const&, char const*, char const*);
     MCTAPI void writeType(struct PropertySyncData const&, char const*, char const*);
 
+    BinaryStream() : mBuffer(std::addressof(mOwnedBuffer)) { ReadOnlyBinaryStream::mBuffer = mBuffer; }
+
+    BinaryStream(std::string& buffer, bool copyBuffer) {
+        if (copyBuffer) {
+            mOwnedBuffer = buffer;
+            mBuffer      = std::addressof(mOwnedBuffer);
+        } else {
+            mBuffer = std::addressof(buffer);
+        }
+        ReadOnlyBinaryStream::mBuffer = mBuffer;
+    }
+
+    std::string getAndReleaseData() { return std::move(*mBuffer); }
+
 public:
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BinaryStream();
-
-    MCAPI BinaryStream();
-
-    MCAPI BinaryStream(std::string& buffer, bool copyBuffer);
-
-    MCAPI std::string getAndReleaseData();
+    virtual ~BinaryStream() = default;
 
     MCAPI void reset();
 

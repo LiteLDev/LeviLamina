@@ -35,12 +35,12 @@ public:
 
     [[nodiscard]] inline StructureSettings(BlockPos const& size, bool ignoreBlocks, bool ignoreEntities)
     : StructureSettings() {
-        setIgnoreBlocks(ignoreBlocks);
-        setIgnoreEntities(ignoreEntities);
-        setStructureSize(size);
-        setStructureOffset({0});
-        setAllowNonTickingPlayerAndTickingAreaChunks(true);
-        mIsWaterLogged = true;
+        mIgnoreBlocks                              = ignoreBlocks;
+        mIgnoreEntities                            = ignoreEntities;
+        mStructureSize                             = size;
+        mStructureOffset                           = 0;
+        mAllowNonTickingPlayerAndTickingAreaChunks = true;
+        mIsWaterLogged                             = true;
     };
 
 public:

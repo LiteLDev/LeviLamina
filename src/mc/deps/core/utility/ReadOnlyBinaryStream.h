@@ -8,10 +8,10 @@
 
 class ReadOnlyBinaryStream {
 public:
-    size_t             mReadPointer;   // this+0x8
-    bool               mHasOverflowed; // this+0x10
-    std::string        mOwnedBuffer;   // this+0x18
-    const std::string* mBuffer;        // this+0x38
+    size_t             mReadPointer{};   // this+0x8
+    bool               mHasOverflowed{}; // this+0x10
+    std::string        mOwnedBuffer;     // this+0x18
+    const std::string* mBuffer;          // this+0x38
 
     template <typename T>
     inline Bedrock::Result<void> readType(T& x) {
@@ -30,22 +30,33 @@ public:
     MCTAPI Bedrock::Result<void> readType(class StructureSettings&);
     MCTAPI Bedrock::Result<void> readType(std::vector<std::unique_ptr<class DataItem>>&);
 
-    // prevent constructor by default
-    ReadOnlyBinaryStream& operator=(ReadOnlyBinaryStream const&);
-    ReadOnlyBinaryStream(ReadOnlyBinaryStream const&);
-    ReadOnlyBinaryStream();
+    explicit ReadOnlyBinaryStream() : mBuffer(std::addressof(mOwnedBuffer)) {}
+
+    explicit ReadOnlyBinaryStream(std::string&& buffer)
+    : mOwnedBuffer(std::move(buffer)),
+      mBuffer(std::addressof(mOwnedBuffer)) {}
+
+    ReadOnlyBinaryStream(std::string const& buffer, bool copyBuffer) {
+        if (copyBuffer) {
+            mOwnedBuffer = buffer;
+            mBuffer      = std::addressof(mOwnedBuffer);
+        } else {
+            mBuffer = std::addressof(buffer);
+        }
+    }
+
+    ReadOnlyBinaryStream& operator=(ReadOnlyBinaryStream const&) = delete;
+    ReadOnlyBinaryStream(ReadOnlyBinaryStream const&)            = delete;
+    ReadOnlyBinaryStream& operator=(ReadOnlyBinaryStream&&)      = delete;
+    ReadOnlyBinaryStream(ReadOnlyBinaryStream&&)                 = delete;
 
 public:
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ReadOnlyBinaryStream();
+    virtual ~ReadOnlyBinaryStream() = default;
 
     // vIndex: 1
     virtual class Bedrock::Result<void> read(void* target, uint64 num);
-
-    MCAPI explicit ReadOnlyBinaryStream(std::string&& buffer);
-
-    MCAPI ReadOnlyBinaryStream(std::string const& buffer, bool copyBuffer);
 
     MCAPI bool canReadBool() const;
 
