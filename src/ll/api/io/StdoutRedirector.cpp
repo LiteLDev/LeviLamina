@@ -70,10 +70,9 @@ std::string StdoutRedirector::read() {
 
         fSuccess = ReadFile(hRead, buf, sizeof(buf), &cbRead, NULL);
 
-        result.append(buf, cbRead);
+        if (cbRead > 0) result.append(buf, cbRead);
 
-        if (!fSuccess && GetLastError() != ERROR_MORE_DATA) break;
-    } while (!fSuccess); // repeat loop if ERROR_MORE_DATA
+    } while (GetLastError() == ERROR_MORE_DATA); // repeat loop if ERROR_MORE_DATA
     return result;
 }
 } // namespace ll::io
