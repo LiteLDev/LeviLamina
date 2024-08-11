@@ -12,7 +12,9 @@
 #include "ll/api/command/CommandHandle.h"
 #include "ll/api/command/OverloadData.h"
 #include "ll/api/service/Bedrock.h"
+#include "ll/api/service/ProcessStatus.h"
 #include "ll/api/utils/StringUtils.h"
+#include "ll/core/mod/ModRegistrar.h"
 
 #include "mc/deps/core/common/bedrock/typeid_t.h"
 #include "mc/server/commands/CommandFlag.h"
@@ -25,12 +27,25 @@ struct CommandRegistrar::Impl {
     std::recursive_mutex              mutex;
 };
 
-CommandRegistrar::CommandRegistrar() : impl(std::make_unique<Impl>()) {}
+CommandRegistrar::CommandRegistrar() : impl(std::make_unique<Impl>()) {
+    auto& reg = mod::ModManagerRegistry::getInstance();
+    reg.executeOnModDisable([this](std::string_view name) {
+        if (getProcessStatus() == ProcessStatus::Running) {
+            disableModCommands(name);
+        }
+    });
+    reg.executeOnModLoad([this](std::string_view name) {
+        if (ll::service::getCommandRegistry()) {
+            addSoftEnumValues(std::string{mod::modsEnumName}, {std::string{name}});
+        }
+    });
+}
 
 CommandRegistrar& CommandRegistrar::getInstance() {
     static CommandRegistrar instance;
     return instance;
 }
+
 CommandRegistry& CommandRegistrar::getRegistry() const { return *ll::service::getCommandRegistry(); }
 
 CommandHandle& CommandRegistrar::getOrCreateCommand(

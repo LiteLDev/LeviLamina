@@ -46,5 +46,13 @@ public:
     LLNDAPI std::string getModType(std::string_view name) const;
 
     LLNDAPI std::shared_ptr<Mod> getMod(std::string_view name) const;
+
+    LLAPI void executeOnModLoad(std::function<void(std::string_view name)>&& fn);
+
+    LLAPI void executeOnModUnload(std::function<void(std::string_view name)>&& fn);
+
+    LLAPI void executeOnModEnable(std::function<void(std::string_view name)>&& fn);
+
+    LLAPI void executeOnModDisable(std::function<void(std::string_view name)>&& fn);
 };
 } // namespace ll::mod

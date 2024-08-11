@@ -72,12 +72,6 @@ replaceContent(std::string& str, std::string_view before, std::string_view after
     return true;
 }
 
-// use snappy to compress
-LLNDAPI std::string compress(std::string_view);
-
-// use snappy to decompress
-LLNDAPI std::string decompress(std::string_view);
-
 /**
  * @brief Integer to hex string.
  *

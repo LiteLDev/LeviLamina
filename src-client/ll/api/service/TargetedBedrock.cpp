@@ -18,6 +18,7 @@
 #include "mc/server/common/DedicatedServer.h"
 #include "mc/server/common/PropertiesSettings.h"
 #include "mc/server/common/commands/AllowListCommand.h"
+#include "mc/world/GameSession.h"
 #include "mc/world/Minecraft.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 
@@ -40,27 +41,30 @@ LL_INSTANCE_HOOK(MinecraftDestructor, HookPriority::High, "??1Minecraft@@UEAA@XZ
 optional_ref<Minecraft> getMinecraft() { return minecraft.load(); }
 
 optional_ref<Level> getLevel() {
-    return getMinecraft().and_then([](auto& minecraft) { return optional_ref{minecraft.getLevel()}; });
+    return getMinecraft().and_then([](auto& minecraft) { return optional_ref{minecraft.mGameSession->mLevel.get()}; });
 }
 
 optional_ref<ServerNetworkHandler> getServerNetworkHandler() {
     return getMinecraft().and_then([](auto& minecraft) {
-        return optional_ref{minecraft.getServerNetworkHandler().get()};
+        return optional_ref{minecraft.mGameSession->mServerNetworkHandler.get()};
     });
 }
-
 optional_ref<RakNet::RakPeer> getRakPeer() { return nullptr; }
 
 optional_ref<NetworkSystem> getNetworkSystem() {
     return getMinecraft().transform([](auto& minecraft) -> NetworkSystem& {
-        return (NetworkSystem&)(minecraft.getClientNetworkSystem());
+        return (NetworkSystem&)(minecraft.mNetwork.toClientNetworkSystem());
     });
 }
 
 optional_ref<CommandRegistry> getCommandRegistry() {
     return getMinecraft().transform([](auto& minecraft) -> CommandRegistry& {
-        return minecraft.getCommands().getRegistry();
+        return *minecraft.mCommands->mRegistry;
     });
 }
+
+using HookReg = memory::HookRegistrar<MinecraftInit, MinecraftDestructor>;
+
+// static HookReg hookRegister;
 
 } // namespace ll::service::inline bedrock

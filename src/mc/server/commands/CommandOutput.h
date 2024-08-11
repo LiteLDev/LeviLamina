@@ -33,11 +33,29 @@ public:
         error(fmt::vformat(fmt.get(), fmt::make_format_args(_args, args...)));
     }
 
-    void success(char const* str) { success(std::string{str}); }
-    void error(char const* str) { error(std::string{str}); }
+    void error(std::string_view str) { mMessages.emplace_back(CommandOutputMessageType::Error, std::string{str}); }
+    void success(std::string_view str) {
+        mMessages.emplace_back(CommandOutputMessageType::Success, std::string{str});
+        mSuccessCount++;
+    }
 
-    void success(std::string_view str) { success(std::string{str}); }
-    void error(std::string_view str) { error(std::string{str}); }
+    void error(std::string_view msgId, std::vector<class CommandOutputParameter> const& params) {
+        std::vector<std::string> args;
+        args.reserve(params.size());
+        for (auto& param : params) {
+            args.emplace_back(param);
+        }
+        mMessages.emplace_back(CommandOutputMessageType::Error, std::string{msgId}, std::move(args));
+    }
+    void success(std::string_view msgId, std::vector<class CommandOutputParameter> const& params) {
+        std::vector<std::string> args;
+        args.reserve(params.size());
+        for (auto& param : params) {
+            args.emplace_back(param);
+        }
+        mMessages.emplace_back(CommandOutputMessageType::Success, std::string{msgId}, std::move(args));
+        mSuccessCount++;
+    }
 
 public:
     // NOLINTBEGIN
@@ -50,8 +68,6 @@ public:
     MCAPI void addToResultList(std::string const& key, std::string const& element);
 
     MCAPI bool empty() const;
-
-    MCAPI void error(std::string const& msgId, std::vector<class CommandOutputParameter> const& params = {});
 
     MCAPI void forceOutput(std::string const& msgId, std::vector<class CommandOutputParameter> const& params);
 
@@ -75,8 +91,6 @@ public:
     MCAPI void setHasPlayerText();
 
     MCAPI void success();
-
-    MCAPI void success(std::string const& msgId, std::vector<class CommandOutputParameter> const& params = {});
 
     MCAPI bool wantsData() const;
 

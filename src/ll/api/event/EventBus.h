@@ -22,7 +22,6 @@ namespace ll::event {
 class EmitterBase;
 
 class EventBus {
-    friend mod::Mod;
     class EventBusImpl;
     std::unique_ptr<EventBusImpl> impl;
     EventBus();

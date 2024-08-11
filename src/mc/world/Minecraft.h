@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/ClientOrServerNetworkSystemRef.h"
 
 // auto generated inclusion list
 #include "mc/common/wrapper/OwnerPtr.h"
@@ -19,6 +20,35 @@ namespace mce { class UUID; }
 
 class Minecraft : public ::IEntityRegistryOwner {
 public:
+    // from https://github.com/EndstoneMC/endstone/blob/main/include/bedrock/world/minecraft.h
+    class GameCallbacks&                               mGameCallbacks;         // this+0x18
+    class IMinecraftEventing&                          mEventing;              // this+0x20
+    std::unique_ptr<class ResourcePackManager>         mResourceLoader;        // this+0x28
+    std::unique_ptr<class StructureManager>            mStructureManager;      // this+0x30
+    std::shared_ptr<class GameModuleServer>            mGameModuleServer;      // this+0x38
+    class AllowList&                                   mAllowList;             // this+0x48
+    class PermissionsFile*                             mPermissionsFile;       // this+0x50
+    std::unique_ptr<class PrivateKeyManager>           mServerKeys;            // this+0x58
+    std::string const                                  mSaveGamePath;          // this+0x60
+    Bedrock::NotNullNonOwnerPtr<Core::FilePathManager> mFilePathManager;       // this+0x80
+    class ServerMetrics*                               mServerMetrics;         // this+0x90
+    bool                                               mCorruptionDetected;    // this+0x98
+    bool                                               mFireOnLevelCorrupt;    // this+0x99
+    double                                             mFrameDuration;         // this+0xa0
+    double                                             mLastFrameStart;        // this+0xa8
+    std::chrono::seconds                               mMaxPlayerIdleTime;     // this+0xb0
+    std::unique_ptr<class MinecraftCommands>           mCommands;              // this+0xb8
+    std::unique_ptr<class GameSession>                 mGameSession;           // this+0xc0
+    std::unique_ptr<class GameTestLevelListener>       mGameTestLevelListener; // this+0xc8
+    std::unique_ptr<class MinecraftGameTest>           mGameTest;              // this+0xd0
+    class Timer&                                       mSimTimer;              // this+0xd8
+    class Timer&                                       mRealTimer;             // this+0xe0
+    ClientOrServerNetworkSystemRef                     mNetwork;               // this+0xe8
+    class PacketSender&                                mPacketSender;          // this+0xf0
+    class IMinecraftApp&                               mApp;                   // this+0xf8
+    SubClientId                                        mClientSubId;           // this+0x100
+    OwnerPtr<class EntityRegistry>                     mEntityRegistry;        // this+0x108
+
     // prevent constructor by default
     Minecraft& operator=(Minecraft const&);
     Minecraft(Minecraft const&);

@@ -24,6 +24,8 @@
 #include "ll/api/utils/HashUtils.h"
 #include "ll/api/utils/SystemUtils.h"
 
+#include "ll/api/command/CommandRegistrar.h"
+
 #include "mc/server/ServerInstance.h"
 #include "mc/server/common/DedicatedServer.h"
 #include "mc/server/common/commands/StopCommand.h"
@@ -269,10 +271,23 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     ::ServerInstance& ins
 ) {
     origin(ins);
+
+    command::CommandRegistrar::getInstance().tryRegisterSoftEnum(
+        std::string{mod::modsEnumName},
+        mod::ModRegistrar::getInstance().getSortedModNames()
+    );
+
     mod::ModRegistrar::getInstance().enableAllMods();
+
     setProcessStatus(ProcessStatus::Running);
 }
-LL_AUTO_TYPE_INSTANCE_HOOK(DisableAllModsHook, HookPriority::Low, ServerInstance, &ServerInstance::leaveGameSync, void) {
+LL_AUTO_TYPE_INSTANCE_HOOK(
+    DisableAllModsHook,
+    HookPriority::Low,
+    ServerInstance,
+    &ServerInstance::leaveGameSync,
+    void
+) {
     setProcessStatus(ProcessStatus::Stopping);
     mod::ModRegistrar::getInstance().disableAllMods();
     origin();

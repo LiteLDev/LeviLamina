@@ -30,6 +30,10 @@ if has_config("tests") then
     add_requires("gtest")
 end
 
+if is_config("target-type", "client") then
+    add_requires("imgui v1.91.0-docking", {configs = {dx11 = true, dx12 = true}})
+end
+
 option("tests")
     set_default(false)
     set_showmenu(true)
@@ -141,12 +145,27 @@ target("LeviLamina")
             "src-server/**.cpp"
         )
     else
+        add_packages("imgui")
         add_headerfiles(
         "src-client/(ll/api/**.h)"
         -- , "src-client/(mc/**.h)"
         )
         add_includedirs("src-client")
         add_files("src-client/**.cpp")
+        remove_files( -- remove when everything fine
+            "src/mc/**.cpp",
+            "src/ll/api/chrono/**.cpp",
+            "src/ll/api/command/**.cpp",
+            "src/ll/core/command/**.cpp",
+            "src/ll/api/event/**.cpp",
+            "src/ll/api/Versions.cpp",
+            "src/ll/api/service/ServiceManager.cpp",
+            "src/ll/api/utils/CryptoUtils.cpp",
+            "src/ll/api/thread/TickSyncSleep.cpp",
+            "src/ll/api/thread/TickSyncTaskPool.cpp",
+            "src/ll/core/plugin-abi/**.cpp",
+            "src/ll/core/tweak/ModifyMemoryAllocator.cpp"
+        )
     end
 
     if has_config("tests") then

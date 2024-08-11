@@ -10,6 +10,8 @@
 
 namespace ll::mod {
 
+constexpr inline std::string_view modsEnumName = "ll::mod::mod_names";
+
 class ModRegistrar {
     struct Impl;
 

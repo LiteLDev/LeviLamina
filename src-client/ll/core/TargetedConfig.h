@@ -1,5 +1,5 @@
 #pragma once
 
 struct TargetedConfig {
-    bool showDebugWindow = false;
+    bool showOutputWindow = false;
 };

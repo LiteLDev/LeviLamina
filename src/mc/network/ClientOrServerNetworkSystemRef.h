@@ -11,6 +11,8 @@ public:
 
     std::variant<ClientRefT, ServerRefT> ref;
 
+    ClientNetworkSystem& toClientNetworkSystem() { return std::get<ClientRefT>(ref).get(); }
+
 public:
     // NOLINTBEGIN
     MCAPI class ServerNetworkSystem& toServerNetworkSystem();

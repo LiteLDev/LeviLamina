@@ -13,6 +13,7 @@
 #include "ll/api/base/StdInt.h"
 #include "ll/api/command/EnumName.h"
 #include "ll/api/command/SoftEnum.h"
+#include "ll/api/mod/ModManagerRegistry.h"
 #include "ll/api/mod/NativeMod.h"
 
 #include "mc/deps/core/common/bedrock/typeid_t.h"
@@ -29,7 +30,6 @@ namespace ll::command {
 class CommandHandle;
 
 class CommandRegistrar {
-    friend mod::Mod;
     friend CommandHandle;
     struct Impl;
     std::unique_ptr<Impl> impl;

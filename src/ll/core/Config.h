@@ -9,7 +9,6 @@
 #include "ll/api/reflection/Dispatcher.h"
 #include "ll/api/utils/SystemUtils.h"
 #include "ll/core/TargetedConfig.h"
-#include "ll/core/tweak/ForceEnableCheatCommands.h"
 
 #include "mc/server/commands/CommandPermissionLevel.h"
 
@@ -17,7 +16,7 @@ namespace ll {
 
 struct LeviConfig {
 
-    int version = 26;
+    int version = 27;
 
     std::string language = "system";
     struct {
@@ -29,11 +28,6 @@ struct LeviConfig {
             std::string dumpPrefix   = "minidump_";
             std::string logPrefix    = "trace_";
         } crashLogger{};
-
-        struct {
-            bool                                                       disableAutoCompactionLog = true;
-            ll::reflection::Dispatcher<bool, ForceEnableCheatCommands> forceEnableCheatCommands = true;
-        } tweak{};
 
         TargetedConfig targeted{};
 

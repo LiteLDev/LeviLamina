@@ -28,18 +28,12 @@
 #include "ll/core/LeviLamina.h"
 #include "ll/core/mod/NativeModManager.h"
 
-#include "ll/api/command/CommandRegistrar.h"
-
 #include "mc/external/expected_lite/expected.h"
 
 #include "nlohmann/json.hpp"
 #include "nlohmann/json_fwd.hpp"
 
 #include "pl/Config.h"
-
-namespace ll::command {
-enum class ModNames {};
-}
 
 namespace ll::mod {
 using namespace ::ll::i18n_literals;
@@ -269,34 +263,31 @@ std::vector<std::string> ModRegistrar::getSortedModNames() const {
 
 void ModRegistrar::enableAllMods() noexcept try {
     auto names = getSortedModNames();
-    {
-        using namespace ll::command;
-        CommandRegistrar::getInstance().tryRegisterSoftEnum(enum_name_v<ModNames>, names);
+    if (names.empty()) {
+        return;
     }
-    if (!names.empty()) {
-        getLogger().info("Enabling mods..."_tr());
+    getLogger().info("Enabling mods..."_tr());
 
-        auto   begin = std::chrono::steady_clock::now();
-        size_t count{};
-        for (auto& name : names) {
-            auto mod = ModManagerRegistry::getInstance().getMod(name);
-            if (!mod || mod->isEnabled()) continue;
-            getLogger().info("Enabling {0} v{1}"_tr(name, mod->getManifest().version.value_or(data::Version{0, 0, 0})));
-            if (auto res = enableMod(name); res) {
-                count++;
-            } else {
-                getLogger().error("Failed to enable mod {0}"_tr(name));
-                res.error().log(getLogger().error);
-            }
-        }
-        if (count > 0) {
-            getLogger().info("{0} mod(s) enabled in ({1:.1f}s)"_tr(
-                count,
-                std::chrono::duration_cast<std::chrono::duration<double>>(std::chrono::steady_clock::now() - begin)
-                    .count()
-            ));
+    auto   begin = std::chrono::steady_clock::now();
+    size_t count{};
+    for (auto& name : names) {
+        auto mod = ModManagerRegistry::getInstance().getMod(name);
+        if (!mod || mod->isEnabled()) continue;
+        getLogger().info("Enabling {0} v{1}"_tr(name, mod->getManifest().version.value_or(data::Version{0, 0, 0})));
+        if (auto res = enableMod(name); res) {
+            count++;
+        } else {
+            getLogger().error("Failed to enable mod {0}"_tr(name));
+            res.error().log(getLogger().error);
         }
     }
+    if (count > 0) {
+        getLogger().info("{0} mod(s) enabled in ({1:.1f}s)"_tr(
+            count,
+            std::chrono::duration_cast<std::chrono::duration<double>>(std::chrono::steady_clock::now() - begin).count()
+        ));
+    }
+
 } catch (...) {
     error_utils::printCurrentException(getLogger());
 }
@@ -353,13 +344,7 @@ Expected<> ModRegistrar::loadMod(std::string_view name) noexcept {
             }
         }
     }
-    return reg.loadMod(std::move(manifest)).transform([&, this]() {
-        impl->deps.emplace(std::string{name});
-        {
-            using namespace ll::command;
-            CommandRegistrar::getInstance().addSoftEnumValues(enum_name_v<ModNames>, {std::string{name}});
-        }
-    });
+    return reg.loadMod(std::move(manifest)).transform([&, this]() { impl->deps.emplace(std::string{name}); });
 }
 Expected<> ModRegistrar::unloadMod(std::string_view name) noexcept {
     std::lock_guard lock(impl->mutex);

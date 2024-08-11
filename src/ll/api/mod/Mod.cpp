@@ -1,9 +1,6 @@
 #include "ll/api/mod/Mod.h"
 
-#include "ll/api/command/CommandRegistrar.h"
-#include "ll/api/event/EventBus.h"
 #include "ll/api/i18n/I18n.h"
-#include "ll/api/service/Bedrock.h"
 #include "ll/api/service/ProcessStatus.h"
 
 #include "pl/Config.h"
@@ -81,7 +78,6 @@ Expected<> Mod::onLoad() noexcept {
 Expected<> Mod::onUnload() noexcept {
     try {
         if (!mImpl->onUnload || mImpl->onUnload(*this)) {
-            event::EventBus::getInstance().removeModEventEmitters(mImpl->manifest.name);
             return {};
         } else {
             return makeStringError("The mod cannot be unloaded"_tr());
@@ -114,10 +110,6 @@ Expected<> Mod::onDisable() noexcept {
         }
         if (!mImpl->onDisable || mImpl->onDisable(*this)) {
             setState(State::Disabled);
-            if (ll::getProcessStatus() != ll::ProcessStatus::Stopping) {
-                event::EventBus::getInstance().removeModListeners(mImpl->manifest.name);
-                command::CommandRegistrar::getInstance().disableModCommands(mImpl->manifest.name);
-            }
             return {};
         } else {
             return makeStringError("The mod cannot be disabled"_tr());

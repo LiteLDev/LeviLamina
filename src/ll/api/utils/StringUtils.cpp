@@ -18,24 +18,12 @@
 #include "mc/common/ColorFormat.h"
 #include "mc/deps/core/mce/Color.h"
 #include "mc/deps/core/utility/Util.h"
-#include "mc/deps/snappy/snappy.h"
 
 #include "stringapiset.h"
 
 namespace ll::inline utils::string_utils {
 
 namespace cf = ColorFormat;
-
-std::string compress(std::string_view sv) {
-    std::string res;
-    snappy::Compress(sv.data(), sv.size(), &res);
-    return res;
-}
-std::string decompress(std::string_view sv) {
-    std::string res;
-    snappy::Uncompress(sv.data(), sv.size(), &res);
-    return res;
-}
 
 fmt::text_style getTextStyleFromCode(std::string_view code) {
     if (code.starts_with(cf::ESCAPE)) {

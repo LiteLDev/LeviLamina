@@ -10,6 +10,10 @@
 
 class MinecraftCommands {
 public:
+    std::unique_ptr<class CommandOutputSender> mOutputSender; // this+0x8
+    std::unique_ptr<class CommandRegistry>     mRegistry;     // this+0x10
+    // ...
+
     // prevent constructor by default
     MinecraftCommands& operator=(MinecraftCommands const&);
     MinecraftCommands(MinecraftCommands const&);
