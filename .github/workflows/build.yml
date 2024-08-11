@@ -20,9 +20,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # target-type:
-        #   - server
-        #   - client
+        target_type:
+          - server
+          - client
         mode:
           - debug
           - release
@@ -53,7 +53,7 @@ jobs:
           xmake repo -u
 
       - run: |
-          xmake f -a x64 -m ${{ matrix.mode }} -p windows -v -y --use_mimalloc=${{ matrix.use_mimalloc }}
+          xmake f -a x64 -m ${{ matrix.mode }} -p windows -v -y --use_mimalloc=${{ matrix.use_mimalloc }} --target_type=${{ matrix.target_type }}
 
       - run: |
           xmake -v -w -y
@@ -63,7 +63,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: levilamina-${{ matrix.mode }}${{ matrix.use_mimalloc == false && '-nonmimalloc' || '' }}-windows-x64-${{ github.sha }}
+          name: levilamina-${{ matrix.target_type }}-${{ matrix.mode }}${{ matrix.use_mimalloc == false && '-nonmimalloc' || '' }}-windows-x64-${{ github.sha }}
           path: |
             bin/
 

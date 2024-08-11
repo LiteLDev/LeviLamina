@@ -30,7 +30,7 @@ if has_config("tests") then
     add_requires("gtest")
 end
 
-if is_config("target-type", "client") then
+if is_config("target_type", "client") then
     add_requires("imgui v1.91.0-docking", {configs = {dx11 = true, dx12 = true}})
 end
 
@@ -44,13 +44,13 @@ option("use_mimalloc")
     set_showmenu(true)
     set_description("Enable mimalloc")
 
-option("target-type")
+option("target_type")
     set_default("server")
     set_showmenu(true)
     set_values("server", "client")
 option_end()
 
-if is_config("target-type", "server") then
+if is_config("target_type", "server") then
     set_defaultarchs("windows|x64")
     set_allowedarchs("windows|x64", "linux|x86_64")
 else
@@ -135,7 +135,7 @@ target("LeviLamina")
         add_files("src/ll/core/**.rc")
     end
 
-    if is_config("target-type", "server") then
+    if is_config("target_type", "server") then
         add_headerfiles(
         "src-server/(ll/api/**.h)"
         -- ,"src-server/(mc/**.h)"
