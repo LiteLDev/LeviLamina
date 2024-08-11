@@ -16,9 +16,9 @@ void StructureTemplate::placeInWorld(
     bool            ignoreBlocks,
     bool            ignoreEntities
 ) const {
-    auto setting    = StructureSettings(getSize(), ignoreBlocks, ignoreEntities);
-    setting.mMirror = mirror;
-    setting.setRotation(rotation);
+    auto setting      = StructureSettings(mStructureTemplateData.mSize, ignoreBlocks, ignoreEntities);
+    setting.mMirror   = mirror;
+    setting.mRotation = rotation;
     placeInWorld(blockSource, blockSource.getLevel().getBlockPalette(), minCorner, setting);
 }
 

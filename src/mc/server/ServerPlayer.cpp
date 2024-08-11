@@ -45,8 +45,6 @@ mce::UUID const& ServerPlayer::getUuid() const { return getUserEntityIdentifier(
 
 std::string ServerPlayer::getIPAndPort() const { return getNetworkIdentifier().getIPAndPort(); }
 
-bool ServerPlayer::isOperator() const { return getPlayerPermissionLevel() == PlayerPermissionLevel::Operator; }
-
 std::string ServerPlayer::getLocaleCode() const {
     if (auto request = getConnectionRequest()) {
         return request->mRawToken->mDataInfo["LanguageCode"].asString({});

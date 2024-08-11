@@ -102,6 +102,13 @@ public:
     LLAPI void setAbility(::AbilitiesIndex index, bool value);
 
     /**
+     * @brief Determine if a player is an administrator of the server
+     * @return Returns true if the player is an administrator of the server; otherwise returns false
+     * @warning Custom permissions are not considered administrators
+     */
+    LLNDAPI bool isOperator() const;
+
+    /**
      * @brief Give player item and refresh.
      * @return Whether it is a complete success
      *         (e.g. returning false if the quantity of items given to the player does not match the expectation).

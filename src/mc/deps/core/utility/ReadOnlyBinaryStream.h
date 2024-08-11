@@ -20,9 +20,8 @@ public:
             x = res.value();
             return {};
         }
-        return res;
+        return nonstd::make_unexpected(res.error());
     }
-    MCTAPI Bedrock::Result<void> readType(class CompoundTag&);
     MCTAPI Bedrock::Result<void> readType(struct CommandOriginData&);
     MCTAPI Bedrock::Result<void> readType(class Experiments&);
     MCTAPI Bedrock::Result<void> readType(struct ItemStackRequestSlotInfo&);

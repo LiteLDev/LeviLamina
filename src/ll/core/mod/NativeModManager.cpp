@@ -48,7 +48,7 @@ static void
 formatDependencyError(pl::dependency_walker::DependencyIssueItem const& item, std::ostream& stream, size_t depth = 0) {
     std::string indent(depth * 3 + 3, ' ');
     if (item.mContainsError) {
-        stream << indent << "module: "_tr() << string_utils::u8str2str(item.mPath.u8string()) << '\n';
+        stream << indent << "module: "_tr() << string_utils::u8str2str(item.mPath.filename().u8string()) << '\n';
         if (!item.mMissingModule.empty()) {
             stream << indent << "missing module:"_tr() << '\n';
             for (const auto& missingModule : item.mMissingModule) {
@@ -60,9 +60,7 @@ formatDependencyError(pl::dependency_walker::DependencyIssueItem const& item, st
             for (const auto& [module, missingProcedure] : item.mMissingProcedure) {
                 stream << indent << "|- " << module << '\n';
                 for (const auto& procedure : missingProcedure) {
-                    stream << indent << "|---- " << procedure << '\n';
-                    auto demangledName = memory::demangleSymbol(procedure);
-                    if (demangledName != procedure) stream << indent << "|     " << demangledName << '\n';
+                    stream << indent << "|---- " << memory::demangleSymbol(procedure) << '\n';
                 }
             }
         }

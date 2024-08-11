@@ -15,4 +15,5 @@ LLNDAPI optional_ref<PropertiesSettings> getPropertiesSettings();
 LLNDAPI optional_ref<ResourcePackRepository> getResourcePackRepository();
 
 LLNDAPI optional_ref<ServerInstance> getServerInstance();
+
 } // namespace ll::service::inline bedrock

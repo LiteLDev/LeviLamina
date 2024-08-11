@@ -56,6 +56,8 @@ LLAPI void Player::setAbility(::AbilitiesIndex index, bool value) {
     UpdateAdventureSettingsPacket{}.sendTo(*this);
 }
 
+bool Player::isOperator() const { return getPlayerPermissionLevel() == PlayerPermissionLevel::Operator; }
+
 bool Player::addAndRefresh(class ItemStack& item) {
     auto rtn = add(item);
     refreshInventory();

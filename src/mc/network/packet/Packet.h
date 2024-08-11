@@ -105,7 +105,7 @@ public:
     virtual bool disallowBatching() const;
 
     // vIndex: 7
-    virtual bool isValid() const;
+    virtual bool isValid() const { return true; }
 
     // vIndex: 8
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream) = 0;

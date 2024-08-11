@@ -261,7 +261,7 @@ LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::High, "main", int, int arg
 }
 
 LL_AUTO_TYPE_INSTANCE_HOOK(
-    EnableAllMods,
+    EnableAllModsHook,
     HookPriority::High,
     ServerInstanceEventCoordinator,
     &ServerInstanceEventCoordinator::sendServerThreadStarted,
@@ -272,7 +272,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     mod::ModRegistrar::getInstance().enableAllMods();
     setProcessStatus(ProcessStatus::Running);
 }
-LL_AUTO_TYPE_INSTANCE_HOOK(DisableAllMods, HookPriority::Low, ServerInstance, &ServerInstance::leaveGameSync, void) {
+LL_AUTO_TYPE_INSTANCE_HOOK(DisableAllModsHook, HookPriority::Low, ServerInstance, &ServerInstance::leaveGameSync, void) {
     setProcessStatus(ProcessStatus::Stopping);
     mod::ModRegistrar::getInstance().disableAllMods();
     origin();
