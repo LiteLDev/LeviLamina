@@ -16,12 +16,12 @@ public:
         ItemInteract = 2,
     };
 
-    uint64_t                   actorId{};    // this+0x00
-    ActionType                 actionType{}; // this+0x08
-    int32_t                    slot{};       // this+0x0C
-    NetworkItemStackDescriptor itemInHand{}; // this+0x10
-    Vec3                       playerPos{};  // this+0x20
-    Vec3                       clickPos{};   // this+0x2C
+    uint64_t                   mActorId{};    // this+0x00
+    ActionType                 mActionType{}; // this+0x08
+    int32_t                    mSlot{};       // this+0x0C
+    NetworkItemStackDescriptor mItemInHand{}; // this+0x10
+    Vec3                       mPlayerPos{};  // this+0x20
+    Vec3                       mClickPos{};   // this+0x2C
 
 public:
     // prevent constructor by default
