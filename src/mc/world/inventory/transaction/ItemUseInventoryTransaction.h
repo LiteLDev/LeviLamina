@@ -17,14 +17,14 @@ public:
         Destroy = 2,
     };
 
-    ActionType                 actionType{};           // this+0x0
-    BlockPos                   blockPos{};             // this+0x4
-    uint32_t                   targetBlockRuntimeId{}; // this+0x10
-    uint8_t                    face{};                 // this+0x14
-    int32_t                    slot{};                 // this+0x18
-    NetworkItemStackDescriptor itemInHand{};           // this+0x20
-    Vec3                       playerPos{};            // this+0x30
-    Vec3                       clickPos{};             // this+0x3C
+    ActionType                 mActionType{};           // this+0x0
+    BlockPos                   mBlockPos{};             // this+0x4
+    uint32_t                   mTargetBlockRuntimeId{}; // this+0x10
+    uint8_t                    mFace{};                 // this+0x14
+    int32_t                    mSlot{};                 // this+0x18
+    NetworkItemStackDescriptor mItemInHand{};           // this+0x20
+    Vec3                       mPlayerPos{};            // this+0x30
+    Vec3                       mClickPos{};             // this+0x3C
          
 public:
     // prevent constructor by default
