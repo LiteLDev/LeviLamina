@@ -10,7 +10,15 @@
 class ItemReleaseInventoryTransaction : public ::ComplexInventoryTransaction {
 public:
     // ItemReleaseInventoryTransaction inner types define
-    enum class ActionType {};
+    enum class ActionType : int32_t {
+        Release = 0,
+        Use     = 1,
+    };
+
+    ActionType                 actionType{}; // this+0x00
+    int32_t                    slot{};       // this+0x04
+    NetworkItemStackDescriptor itemInHand{}; // this+0x08
+    Vec3                       headPos{};    // this+0x18
 
 public:
     // prevent constructor by default

@@ -11,8 +11,21 @@
 class ItemUseInventoryTransaction : public ::ComplexInventoryTransaction {
 public:
     // ItemUseInventoryTransaction inner types define
-    enum class ActionType {};
+    enum class ActionType {
+        Place   = 0,
+        Use     = 1,
+        Destroy = 2,
+    };
 
+    ActionType                 actionType{};           // this+0x0
+    BlockPos                   blockPos{};             // this+0x4
+    uint32_t                   targetBlockRuntimeId{}; // this+0x10
+    uint8_t                    face{};                 // this+0x14
+    int32_t                    slot{};                 // this+0x18
+    NetworkItemStackDescriptor itemInHand{};           // this+0x20
+    Vec3                       playerPos{};            // this+0x30
+    Vec3                       clickPos{};             // this+0x3C
+         
 public:
     // prevent constructor by default
     ItemUseInventoryTransaction();

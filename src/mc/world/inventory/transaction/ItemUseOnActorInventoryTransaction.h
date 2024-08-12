@@ -10,7 +10,18 @@
 class ItemUseOnActorInventoryTransaction : public ::ComplexInventoryTransaction {
 public:
     // ItemUseOnActorInventoryTransaction inner types define
-    enum class ActionType {};
+    enum class ActionType : int32_t {
+        Interact     = 0,
+        Attack       = 1,
+        ItemInteract = 2,
+    };
+
+    uint64_t                   actorId{};    // this+0x00
+    ActionType                 actionType{}; // this+0x08
+    int32_t                    slot{};       // this+0x0C
+    NetworkItemStackDescriptor itemInHand{}; // this+0x10
+    Vec3                       playerPos{};  // this+0x20
+    Vec3                       clickPos{};   // this+0x2C
 
 public:
     // prevent constructor by default
