@@ -4,9 +4,8 @@
 
 struct DirtyTicksCounter {
 public:
-    // prevent constructor by default
-    DirtyTicksCounter& operator=(DirtyTicksCounter const&);
-    DirtyTicksCounter(DirtyTicksCounter const&);
+    int totalTime;  // this+0x0
+    int lastChange; // this+0x4
 
 public:
     // NOLINTBEGIN

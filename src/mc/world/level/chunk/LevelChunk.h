@@ -71,13 +71,13 @@ public:
     /*These member variables were obtained by analyzing CLIENT-WIN 1.21.2 using IDA.*/
 
     // Align member variables by adding padding to match their respective offsets
-    int32_t                     mChunkPosX;     // this+0x78
-    int32_t                     mChunkPosY;     // this+0x7C
-    int8_t                      mLoadingStage;  // this+0xD8
-    int32_t                     mLastTick;      // this+0x120
-    std::vector<class SubChunk> mSubChunks;     // this+0x138
-    int32_t                     mLoadCompleted; // this+0xDE4
-    bool                        mIsLoading;     // this+0x11BB
+    // Cannot be used before adding padding
+    // ChunkPos                    mPosition;      // this+0x78
+    // int8_t                      mLoadingStage;  // this+0xD8
+    // int32_t                     mLastTick;      // this+0x120
+    // std::vector<class SubChunk> mSubChunks;     // this+0x138
+    // int32_t                     mLoadCompleted; // this+0xDE4
+    // bool                        mIsLoading;     // this+0x11BB
 public:
     // prevent constructor by default
     LevelChunk& operator=(LevelChunk const&);

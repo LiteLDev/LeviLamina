@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/chunk/DirtyTicksCounter.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/LockGuard.h"
@@ -8,6 +9,8 @@
 #include "mc/world/level/chunk/PruneType.h"
 #include "mc/world/level/chunk/SubChunkBrightnessStorage.h"
 #include "mc/world/level/chunk/SubChunkStorage.h"
+
+class Block;
 
 struct SubChunk {
 public:
@@ -30,14 +33,22 @@ public:
         RequestFinished            = 7,
     };
 
-    /*These member variables were obtained by analyzing CLIENT-WIN 1.21.2 using IDA.*/
+    DirtyTicksCounter                                      mDirtyTicksCounter;                // this+0x80
+    std::unique_ptr<SubChunkBrightnessStorage>             mSkyLight;                         // this+0x88
+    std::unique_ptr<SubChunkBrightnessStorage>             mBlockLight;                       // this+0x10
+    bool                                                   mHasMaxSkyLight;                   // this+0x18
+    SubChunkState                                          mSubChunkState;                    // this+0x1C
+    bool                                                   mNeedsInitLighting;                // this+0x20
+    bool                                                   mNeedsClientLighting;              // this+0x21
+    std::array<std::unique_ptr<SubChunkStorage<Block>>, 2> mBlocks;                           // this+0x28
+    std::array<SubChunkStorage<Block>*, 2>                 mBlocksReadPtr;                    // this+0x38
+    SpinLock*                                              mWriteLock;                        // this+0x58
+    Util::XXHash::Digest                                   mHash;                             // this+0x50
+    bool                                                   mHashDirty;                        // this+0x58
+    int8_t                                                 mAbsoluteIndex;                    // this+0x59
+    bool                                                   mIsReplacementSubChunk;            // this+0x5A
+    uint8_t                                                mRenderChunkTrackingVersionNumber; // this+0x5B
 
-    // Align member variables by adding padding to match their respective offsets
-    bool                                                 mNeedsInitLighting;   // this+0x0020
-    bool                                                 mNeedsClientLighting; // this+0x0021
-    std::unique_ptr<class SubChunkStorage<class Block>>* mBlocks;              // this+0x0028
-    class SubChunkBlockStorage*                          mBlockReadPtr;        // this+0x0038
-    int8_t                                               mSubChunkIndex;       // this+0x0059
 public:
     // prevent constructor by default
     SubChunk& operator=(SubChunk const&);
