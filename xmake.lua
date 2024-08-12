@@ -163,7 +163,7 @@ target("LeviLamina")
             -- "src/ll/api/command/**.cpp",
             "src/ll/core/command/**.cpp",
             -- "src/ll/api/event/**.cpp",
-            "src/ll/api/Versions.cpp",
+            -- "src/ll/api/Versions.cpp",
             -- "src/ll/api/service/ServiceManager.cpp",
             -- "src/ll/api/utils/CryptoUtils.cpp",
             -- "src/ll/api/thread/TickSyncSleep.cpp",

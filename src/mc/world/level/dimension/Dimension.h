@@ -92,9 +92,9 @@ public:
     ILevel&                                          mLevel;                      // this+0xC0
     DimensionHeightRange                             mHeightRange;                // this+0xC4
     short                                            mSeaLevel;                   // this+0xCC
-    uchar                                            mBlockSource[8];             // this+0xCE
-    float                                            mMobsPerChunkSurface[8];     // this+0xE0
-    float                                            mMobsPerChunkUnderground[8]; // this+0xF8
+    OwnerPtr<BlockSource>                            mBlockSource;                // this+0xCE
+    float                                            mMobsPerChunkSurface[7];     // this+0xE0
+    float                                            mMobsPerChunkUnderground[7]; // this+0xF8
     BrightnessPair                                   mDefaultBrightness;          // this+0x118
     std::unique_ptr<BaseLightTextureImageBuilder>    mLightTextureImageBuilder;   // this+0x120
     std::unique_ptr<DimensionBrightnessRamp>         mDimensionBrightnessRamp;    // this+0x128
