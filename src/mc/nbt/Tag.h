@@ -84,10 +84,10 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Tag();
+    virtual ~Tag() = default;
 
     // vIndex: 1
-    virtual void deleteChildren();
+    virtual void deleteChildren() {}
 
     // vIndex: 2
     virtual void write(class IDataOutput& dos) const = 0;
@@ -102,7 +102,7 @@ public:
     virtual ::Tag::Type getId() const = 0;
 
     // vIndex: 6
-    virtual bool equals(class Tag const& rhs) const;
+    virtual bool equals(class Tag const& rhs) const { return getId() == rhs.getId(); }
 
     // vIndex: 7
     virtual void print(class PrintStream& out) const;
@@ -119,8 +119,6 @@ public:
     MCAPI static std::string getTagName(::Tag::Type);
 
     MCAPI static class Bedrock::Result<std::unique_ptr<class Tag>> newTag(::Tag::Type type);
-
-    MCAPI static std::string const NullString;
 
     // NOLINTEND
 };

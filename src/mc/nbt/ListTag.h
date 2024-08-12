@@ -29,7 +29,7 @@ public:
     virtual ~ListTag() = default;
 
     // vIndex: 1
-    virtual void deleteChildren();
+    virtual void deleteChildren() { clear(); }
 
     // vIndex: 2
     virtual void write(class IDataOutput& dos) const;
