@@ -15,10 +15,10 @@ public:
         Use     = 1,
     };
 
-    ActionType                 actionType{}; // this+0x00
-    int32_t                    slot{};       // this+0x04
-    NetworkItemStackDescriptor itemInHand{}; // this+0x08
-    Vec3                       headPos{};    // this+0x18
+    ActionType                 mActionType{}; // this+0x00
+    int32_t                    mSlot{};       // this+0x04
+    NetworkItemStackDescriptor mItemInHand{}; // this+0x08
+    Vec3                       mHeadPos{};    // this+0x18
 
 public:
     // prevent constructor by default
