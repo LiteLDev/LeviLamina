@@ -30,6 +30,14 @@ public:
         RequestFinished            = 7,
     };
 
+    /*These member variables were obtained by analyzing CLIENT-WIN 1.21.2 using IDA.*/
+
+    // Align member variables by adding padding to match their respective offsets
+    bool                                                 mNeedsInitLighting;   // this+0x0020
+    bool                                                 mNeedsClientLighting; // this+0x0021
+    std::unique_ptr<class SubChunkStorage<class Block>>* mBlocks;              // this+0x0028
+    class SubChunkBlockStorage*                          mBlockReadPtr;        // this+0x0038
+    int8_t                                               mSubChunkIndex;       // this+0x0059
 public:
     // prevent constructor by default
     SubChunk& operator=(SubChunk const&);
