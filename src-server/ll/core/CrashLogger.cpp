@@ -12,6 +12,7 @@
 #include "ll/api/utils/SystemUtils.h"
 #include "ll/core/Config.h"
 #include "ll/core/LeviLamina.h"
+#include "ll/core/io/Output.h"
 
 #include "windows.h"
 
@@ -242,7 +243,7 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
         crashInfo.processId              = GetCurrentProcessId();
         crashInfo.threadId               = GetCurrentThreadId();
 
-        fmt::print("\n");
+        io::defaultOutput("\n");
 
         crashInfo.logger.info("Process Crashed! Generating Stacktrace and MiniDump...");
         try {

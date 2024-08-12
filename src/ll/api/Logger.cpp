@@ -22,6 +22,7 @@
 #include "ll/api/utils/StringUtils.h"
 #include "ll/api/utils/SystemUtils.h"
 #include "ll/core/Config.h"
+#include "ll/core/io/Output.h"
 
 #include "pl/Config.h"
 
@@ -54,7 +55,7 @@ void OutputStream::print(std::string_view s) const noexcept {
             if (!(bool)pl::pl_color_log) {
                 str = removeEscapeCode(str);
             }
-            fmt::print("{}\n", str);
+            io::defaultOutput(fmt::format("{}\n", str));
         }
         if (logger->getFile().is_open() && checkLogLevel(logger->fileLevel, level)) {
             logger->getFile() << removeEscapeCode(fmt::format(
@@ -81,14 +82,14 @@ void OutputStream::print(std::string_view s) const noexcept {
         }
     } catch (...) {
         try {
-            fmt::print(
+            io::defaultOutput(fmt::format(
                 "\x1b[31mERROR IN LOGGER API:\n{}\x1b[91m\n{}\x1b[0m\n",
                 error_utils::makeExceptionString(std::current_exception()),
                 tou8str(s)
-            );
+            ));
         } catch (...) {
             try {
-                fmt::print("\x1b[31mUNKNOWN ERROR IN LOGGER API\x1b[0m\n");
+                io::defaultOutput(fmt::format("\x1b[31mUNKNOWN ERROR IN LOGGER API\x1b[0m\n"));
             } catch (...) {}
         }
     }

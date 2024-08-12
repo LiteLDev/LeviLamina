@@ -1,14 +1,19 @@
 #include "ll/core/LeviLamina.h"
 #include "ll/api/Versions.h"
+#include "ll/api/i18n/I18n.h"
 #include "ll/core/Version.h"
+
 namespace ll {
+using namespace i18n_literals;
+
 std::shared_ptr<mod::NativeMod> const& getSelfModIns() {
     static auto llSelf = std::make_shared<mod::NativeMod>(
         mod::Manifest{
-            .entry{"LeviLamina.dll"},
-            .name{selfModName},
-            .type{mod::NativeModManagerName},
-            .version{getLoaderVersion()}
+            "LeviLamina.dll",
+            std::string{selfModName},
+            std::string{mod::NativeModManagerName},
+            {},
+            getLoaderVersion()
         },
         sys_utils::getCurrentModuleHandle()
     );
@@ -31,4 +36,24 @@ data::Version getLoaderVersion() {
     }();
     return ver;
 }
+
+
+void printWelcomeMsg() {
+    auto  lock   = Logger::lock();
+    auto& logger = getLogger();
+    logger.info(R"(                                                                      )");
+    logger.info(R"(         _               _ _                    _                     )");
+    logger.info(R"(        | |    _____   _(_) |    __ _ _ __ ___ (_)_ __   __ _         )");
+    logger.info(R"(        | |   / _ \ \ / / | |   / _` | '_ ` _ \| | '_ \ / _` |        )");
+    logger.info(R"(        | |__|  __/\ V /| | |__| (_| | | | | | | | | | | (_| |        )");
+    logger.info(R"(        |_____\___| \_/ |_|_____\__,_|_| |_| |_|_|_| |_|\__,_|        )");
+    logger.info(R"(                                                                      )");
+    logger.info(R"(        ------------   Light-Weight Mod Loader   -------------        )");
+    logger.info(R"(                                                                      )");
+    logger.info(R"(                                                                      )");
+
+    logger.info("LeviLamina is a free software licensed under {0}"_tr("LGPLv3"));
+    logger.info("Help us translate & improve text -> {0}"_tr("https://translate.liteldev.com/"));
+}
+
 } // namespace ll

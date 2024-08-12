@@ -25,7 +25,7 @@ public:
     NetworkItemStackDescriptor mItemInHand{};           // this+0x20
     Vec3                       mPlayerPos{};            // this+0x30
     Vec3                       mClickPos{};             // this+0x3C
-         
+
 public:
     // prevent constructor by default
     ItemUseInventoryTransaction();

@@ -164,7 +164,8 @@ template <FixedString Fmt>
         static detail::TrString<Fmt> e{};
 #endif
         [[maybe_unused]] static constexpr auto checker = fmt::format_string<Args...>(std::string_view{Fmt});
-        return fmt::vformat(::ll::i18n::getInstance()->get(Fmt), fmt::make_format_args(args...));
+        auto&                                  ins     = ::ll::i18n::getInstance();
+        return fmt::vformat(ins ? ins->get(Fmt) : std::string_view{Fmt}, fmt::make_format_args(args...));
     };
 }
 } // namespace ll::i18n_literals

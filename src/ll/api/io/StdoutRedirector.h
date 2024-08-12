@@ -2,11 +2,11 @@
 
 #include <string>
 
-#include "ll/api/base/Macro.h"
+#include "ll/api/io/Pipe.h"
 
 namespace ll::io {
 
-class StdoutRedirector {
+class StdoutRedirector : public Pipe {
 public:
     enum ProcessChannel { StandardOutput = 1, StandardError = 2 };
 
@@ -14,11 +14,6 @@ public:
 
     LLAPI ~StdoutRedirector();
 
-    LLNDAPI std::string read();
-
     ProcessChannel m_channels;
-
-    void* hRead;
-    void* hWrite;
 };
 } // namespace ll::io

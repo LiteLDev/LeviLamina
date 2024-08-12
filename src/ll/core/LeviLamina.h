@@ -3,7 +3,13 @@
 #include "ll/api/Logger.h"
 #include "ll/api/mod/NativeMod.h"
 namespace ll {
+
+constexpr const std::string_view selfModName = "LeviLamina";
+
 std::shared_ptr<mod::NativeMod> const& getSelfModIns();
-Logger&                                getLogger();
-constexpr const std::string_view       selfModName = "LeviLamina";
+
+Logger& getLogger();
+
+void printWelcomeMsg();
+
 } // namespace ll

@@ -35,6 +35,7 @@
 #include "ll/core/CrashLogger.h"
 #include "ll/core/Version.h"
 #include "ll/core/command/BuiltinCommands.h"
+#include "ll/core/io/Output.h"
 #include "ll/core/mod/ModRegistrar.h"
 
 #include <windows.h>
@@ -119,24 +120,6 @@ void checkOtherBdsInstance() {
             CloseHandle(handle);
         }
     }
-}
-
-void printWelcomeMsg() {
-    auto  lock   = Logger::lock();
-    auto& logger = getLogger();
-    logger.info(R"(                                                                      )");
-    logger.info(R"(         _               _ _                    _                     )");
-    logger.info(R"(        | |    _____   _(_) |    __ _ _ __ ___ (_)_ __   __ _         )");
-    logger.info(R"(        | |   / _ \ \ / / | |   / _` | '_ ` _ \| | '_ \ / _` |        )");
-    logger.info(R"(        | |__|  __/\ V /| | |__| (_| | | | | | | | | | | (_| |        )");
-    logger.info(R"(        |_____\___| \_/ |_|_____\__,_|_| |_| |_|_|_| |_|\__,_|        )");
-    logger.info(R"(                                                                      )");
-    logger.info(R"(        ------------   Light-Weight Mod Loader   -------------        )");
-    logger.info(R"(                                                                      )");
-    logger.info(R"(                                                                      )");
-
-    logger.info("LeviLamina is a free software licensed under {0}"_tr("LGPLv3"));
-    logger.info("Help us translate & improve text -> {0}"_tr("https://translate.liteldev.com/"));
 }
 
 void checkProtocolVersion() {
@@ -242,10 +225,10 @@ LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::High, "main", int, int arg
         switch (doHash(argv[i])) {
         case "-v"_h:
         case "--version"_h:
-            fmt::print("{}", getGameVersion().to_string());
+            io::defaultOutput(fmt::format("{}", getGameVersion().to_string()));
             return 0;
         case "--protocolversion"_h:
-            fmt::print("{}", getNetworkProtocolVersion());
+            io::defaultOutput(fmt::format("{}", getNetworkProtocolVersion()));
             return 0;
         default:
             break;
