@@ -12,20 +12,16 @@ namespace Core {
 
 class Path {
 public:
-    class PathPart mPath;
-    explicit Path(std::filesystem::path const& path) : Path(path.u8string()) {}
-    explicit Path(std::u8string const& path) { mPath.mUtf8StdString = *reinterpret_cast<std::string const*>(&path); }
-    explicit Path(std::string const& path) { mPath.mUtf8StdString = path; }
+    PathPart mPath;
+    Path(std::filesystem::path const& path) : Path(path.u8string()) {}
+    Path(std::u8string const& path) { mPath.mUtf8StdString = *reinterpret_cast<std::string const*>(&path); }
+    Path(std::string const& path) { mPath.mUtf8StdString = path; }
+    Path(char const* path) { mPath.mUtf8StdString = path; }
+    Path() = default;
 
 public:
     // NOLINTBEGIN
-    MCAPI Path();
-
-    MCAPI explicit Path(char const*);
-
     MCAPI bool operator==(class Core::Path const&) const;
-
-    MCAPI ~Path();
 
     MCAPI static class Core::Result makeFailure(char const* format, class Core::Path&& path);
 

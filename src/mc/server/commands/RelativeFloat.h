@@ -4,12 +4,13 @@
 
 class RelativeFloat {
 public:
-    float mOffset;
-    bool  mRelative;
+    float mOffset{};
+    bool  mRelative{};
+
+    RelativeFloat() = default;
 
 public:
     // NOLINTBEGIN
-    MCAPI RelativeFloat();
 
     MCAPI RelativeFloat(float value, bool relative = true);
 

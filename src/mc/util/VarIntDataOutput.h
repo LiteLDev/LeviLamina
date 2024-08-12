@@ -19,7 +19,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~VarIntDataOutput();
+    virtual ~VarIntDataOutput() = default;
 
     // vIndex: 1
     virtual void writeString(std::string_view v);

@@ -195,11 +195,7 @@ public:
         bool                              chaining;      // this+0x2C
         std::vector<Symbol>               paramsSymbol;  // this+0x30
 
-    public:
-        // NOLINTBEGIN
-        MCAPI Overload(class CommandVersion, std::unique_ptr<class Command> (*)(void));
-
-        // NOLINTEND
+        Overload(CommandVersion, std::unique_ptr<class Command> (*)(void));
     };
 
     class Symbol {
@@ -216,6 +212,8 @@ public:
 
         Symbol() = default;
 
+        Symbol(uint64 idx) : mValue((int)idx) {}
+
         Symbol(Symbol const& other) : mValue(other.mValue) {}
 
         Symbol(HardNonTerminal data) : mValue(static_cast<int>(data)) {}
@@ -227,13 +225,10 @@ public:
             return *this;
         }
 
-
         [[nodiscard]] inline bool operator==(Symbol const& other) const { return mValue == other.mValue; }
 
     public:
         // NOLINTBEGIN
-        MCAPI Symbol(uint64);
-
         MCAPI uint64 toIndex() const;
 
         MCAPI int value() const;

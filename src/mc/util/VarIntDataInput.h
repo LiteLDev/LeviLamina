@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~VarIntDataInput();
+    virtual ~VarIntDataInput() = default;
 
     // vIndex: 1
     virtual class Bedrock::Result<std::string> readStringResult();

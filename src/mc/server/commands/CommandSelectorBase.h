@@ -117,8 +117,6 @@ public:
 
     MCAPI void setVersion(int version);
 
-    MCAPI ~CommandSelectorBase();
-
     // NOLINTEND
 
     // protected:

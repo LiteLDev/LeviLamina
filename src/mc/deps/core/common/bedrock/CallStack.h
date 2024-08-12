@@ -28,8 +28,6 @@ public:
         // NOLINTBEGIN
         MCAPI Context(std::string value, std::optional<::Bedrock::LogLevel>, std::optional<::LogAreaID> logArea);
 
-        MCAPI ~Context();
-
         // NOLINTEND
     };
 
@@ -50,23 +48,20 @@ public:
             std::optional<struct Bedrock::CallStack::Context>&& context
         );
 
-        MCAPI ~FrameWithContext();
-
         // NOLINTEND
     };
 
 public:
     std::vector<Bedrock::CallStack::FrameWithContext> vector;
 
+    CallStack(struct Bedrock::CallStack const&)            = default;
+    CallStack& operator=(struct Bedrock::CallStack const&) = default;
+
 public:
     // NOLINTBEGIN
     MCAPI explicit CallStack(std::vector<struct Bedrock::CallStack::FrameWithContext>&& frames);
 
-    MCAPI CallStack(struct Bedrock::CallStack const&);
-
     MCAPI explicit CallStack(struct Bedrock::CallStack::FrameWithContext&& frame);
-
-    MCAPI ~CallStack();
 
     // NOLINTEND
 };

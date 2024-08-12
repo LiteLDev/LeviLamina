@@ -14,24 +14,24 @@ public:
     Command& operator=(Command const&);
     Command(Command const&);
 
-    int                      mVersion;         // this+0x8
-    CommandRegistry const*   mRegistry;        // this+0x10
-    int                      mCommandSymbol;   // this+0x18
-    ::CommandPermissionLevel mPermissionLevel; // this+0x1C
-    CommandFlag              mFlags;           // this+0x1E
+    int                      mVersion{-1};       // this+0x8
+    CommandRegistry const*   mRegistry{};        // this+0x10
+    int                      mCommandSymbol{-1}; // this+0x18
+    ::CommandPermissionLevel mPermissionLevel;   // this+0x1C
+    CommandFlag              mFlags;             // this+0x1E
+
+    Command() = default;
 
 public:
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Command();
+    virtual ~Command() = default;
 
     // vIndex: 1
-    virtual bool collectOptionalArguments();
+    virtual bool collectOptionalArguments() { return true; }
 
     // vIndex: 2
     virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const = 0;
-
-    MCAPI Command();
 
     MCAPI std::string getCommandName() const;
 

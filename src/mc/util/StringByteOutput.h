@@ -14,7 +14,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~StringByteOutput();
+    virtual ~StringByteOutput() = default;
 
     // vIndex: 9
     virtual void writeBytes(void const* data, uint64 bytes);

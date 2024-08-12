@@ -14,10 +14,10 @@ public:
         uint64 mVersionId; // this+0x0
     };
 
+    CommandItem() : mVersionId() {}
+
 public:
     // NOLINTBEGIN
-    MCAPI CommandItem();
-
     MCAPI explicit CommandItem(uint64);
 
     MCAPI CommandItem(int id, short version, bool);

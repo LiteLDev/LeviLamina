@@ -17,6 +17,8 @@ public:
     using Tag::operator==;
 
 public:
+    [[nodiscard]] constexpr ListTag() = default;
+
     [[nodiscard]] constexpr ListTag(List tags) : List(std::move(tags)) {
         if (!empty()) mType = front().getId();
     }
@@ -54,8 +56,6 @@ public:
 
     // vIndex: 10
     virtual uint64 hash() const;
-
-    MCAPI ListTag();
 
     MCAPI void add(std::unique_ptr<class Tag> tag);
 

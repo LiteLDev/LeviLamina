@@ -8,13 +8,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI CommandFilePath();
-
     MCAPI int findInvalidCharacter() const;
 
     MCAPI std::string const& getText() const;
-
-    MCAPI ~CommandFilePath();
 
     // NOLINTEND
 };

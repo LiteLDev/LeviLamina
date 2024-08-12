@@ -3,12 +3,13 @@
 #include "ll/core/LeviLamina.h"
 
 #include "mc/server/commands/CommandOutput.h"
+#include "mc/server/commands/CommandRegistry.h"
 
 namespace ll::command::detail {
 void printCommandError(::Command const& command, ::CommandOutput& output) noexcept {
     auto lock = ll::Logger::lock();
     try {
-        getLogger().error("Error in command {}:", command.getCommandName());
+        getLogger().error("Error in command {}:", command.mRegistry->symbolToString(command.mCommandSymbol));
         output.error("command threw an exception");
     } catch (...) {}
     error_utils::printCurrentException(getLogger());

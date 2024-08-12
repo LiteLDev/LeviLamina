@@ -97,8 +97,8 @@ LLNDAPI std::vector<std::string> lookupSymbol(FuncPtr func);
 LLAPI void modify(void* ptr, size_t len, const std::function<void()>& callback);
 
 template <class T>
-inline void modify(T& ref, std::function<void(std::remove_cvref_t<T>&)> const& f) {
-    modify((void*)std::addressof(ref), sizeof(T), [&] { f((std::remove_cvref_t<T>&)(ref)); });
+inline void modify(T& ref, std::function<void(std::remove_cv_t<T>&)> const& f) {
+    modify((void*)std::addressof(ref), sizeof(T), [&] { f((std::remove_cv_t<T>&)(ref)); });
 }
 
 template <class RTN = void, class... Args>

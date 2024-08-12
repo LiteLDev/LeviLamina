@@ -4,15 +4,16 @@
 
 class CommandIntegerRange {
 public:
-    int  mMinValue; // this+0x0
-    int  mMaxValue; // this+0x4
-    bool mInvert;   // this+0x8
+    int  mMinValue{}; // this+0x0
+    int  mMaxValue{}; // this+0x4
+    bool mInvert{};   // this+0x8
+
+    CommandIntegerRange() = default;
 
 public:
     // NOLINTBEGIN
-    MCAPI CommandIntegerRange();
-
-    MCAPI CommandIntegerRange(int, int, bool, bool);
+    MCAPI
+    CommandIntegerRange(int, int, bool, bool);
 
     MCAPI bool isWithinRange(int value) const;
 

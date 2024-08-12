@@ -38,28 +38,14 @@ public:
         int                                flagOffset
     );
 
+    CommandParameterData& addOptions(::CommandParameterOption options) {
+        mOptions = (CommandParameterOption)((uchar)mOptions | (uchar)options);
+        return *this;
+    }
+
     LLNDAPI bool operator==(CommandParameterData const& other) const;
 
-public:
-    // NOLINTBEGIN
-    MCAPI CommandParameterData(class CommandParameterData const& p);
-
-    MCAPI CommandParameterData(
-        class Bedrock::typeid_t<class CommandRegistry> typeIndex,
-        ParseFn                                        parser,
-        char const*                                    name,
-        ::CommandParameterDataType                     paramType,
-        char const*                                    enumNameOrPostfix,
-        char const*                                    subchain,
-        int                                            offset,
-        bool                                           optional,
-        int                                            flagOffset
-    );
-
-    MCAPI class CommandParameterData&
-    addOptions(::CommandParameterOption options = CommandParameterOption::EnumAutocompleteExpansion);
-
-    MCAPI ~CommandParameterData();
-
+    CommandParameterData(CommandParameterData const&)            = default;
+    CommandParameterData& operator=(CommandParameterData const&) = default;
     // NOLINTEND
 };

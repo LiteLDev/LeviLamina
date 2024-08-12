@@ -14,9 +14,9 @@ public:
     std::string  mFullName;      // 96
     HashedString mCanonicalName; // 128
 
-    // NOLINTBEGIN
-    MCAPI ActorDefinitionIdentifier();
+    ActorDefinitionIdentifier() = default;
 
+    // NOLINTBEGIN
     MCAPI explicit ActorDefinitionIdentifier(char const* fullName);
 
     MCAPI explicit ActorDefinitionIdentifier(std::string const& fullName);
@@ -58,8 +58,6 @@ public:
     MCAPI void setIdentifier(std::string const& identifier);
 
     MCAPI void setInitEvent(std::string const& initEvent);
-
-    MCAPI ~ActorDefinitionIdentifier();
 
     // NOLINTEND
 

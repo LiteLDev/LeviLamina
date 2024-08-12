@@ -33,8 +33,6 @@ public:
 
     MCAPI bool setBlockState(class Block const**, class CommandOutput& output) const;
 
-    MCAPI ~BlockStateCommandParam();
-
     // NOLINTEND
 
     // private:

@@ -11,7 +11,7 @@ public:
 
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BigEndianStringByteOutput();
+    virtual ~BigEndianStringByteOutput() = default;
 
     // vIndex: 3
     virtual void writeFloat(float v);

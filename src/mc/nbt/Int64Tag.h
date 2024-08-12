@@ -52,8 +52,6 @@ public:
     // vIndex: 10
     virtual uint64 hash() const;
 
-    MCAPI explicit Int64Tag(int64 data);
-
     // NOLINTEND
 };
 

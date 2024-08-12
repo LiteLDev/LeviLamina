@@ -12,7 +12,7 @@ public:
 
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BigEndianStringByteInput();
+    virtual ~BigEndianStringByteInput() = default;
 
     // vIndex: 3
     virtual class Bedrock::Result<float> readFloatResult();

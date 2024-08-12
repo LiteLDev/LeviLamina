@@ -18,7 +18,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~StringByteInput();
+    virtual ~StringByteInput() = default;
 
     // vIndex: 9
     virtual class Bedrock::Result<void> readBytesResult(void*, uint64);

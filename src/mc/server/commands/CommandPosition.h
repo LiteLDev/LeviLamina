@@ -12,10 +12,10 @@ public:
     bool mRelativeZ;
     bool mLocal;
 
+    CommandPosition() = default;
+
 public:
     // NOLINTBEGIN
-    MCAPI CommandPosition();
-
     MCAPI explicit CommandPosition(class Vec3 const&);
 
     MCAPI class BlockPos getBlockPos(class Vec3 const& ref, class Vec3 const& offsetFromBase = {}) const;

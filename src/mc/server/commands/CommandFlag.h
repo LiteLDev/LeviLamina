@@ -44,6 +44,8 @@ struct CommandFlag {
 public:
     CommandFlagValue value;
 
+    CommandFlag() = default;
+
     CommandFlag(CommandFlagValue value) : value(value) {} // NOLINT
 
     [[nodiscard]] constexpr bool operator==(CommandFlag const& rhs) const noexcept { return value == rhs.value; }

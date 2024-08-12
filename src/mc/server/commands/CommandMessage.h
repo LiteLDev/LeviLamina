@@ -35,11 +35,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI CommandMessage();
-
     MCAPI struct GenerateMessageResult generateMessage(class CommandOrigin const&, int) const;
-
-    MCAPI ~CommandMessage();
 
     // NOLINTEND
 };
