@@ -21,7 +21,11 @@ public:
     HashType               mHashType;
     std::unique_ptr<IHash> mHash;
 
-    [[nodiscard]] inline std::string toString() { return ll::string_utils::strToHexStr(final()); }
+    [[nodiscard]] inline std::string toString() {
+        auto data = std::string(resultSize(), '\0');
+        final((uchar*)data.data());
+        return ll::string_utils::strToHexStr(data);
+    }
 
     inline void update(std::string_view data) {
         constexpr const auto max = std::numeric_limits<uint>::max();
@@ -35,7 +39,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Hash();
+    virtual ~Hash() = default;
 
     // vIndex: 1
     virtual void reset();

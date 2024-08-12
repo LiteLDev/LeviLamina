@@ -21,16 +21,18 @@ add_requires("pcg_cpp v1.0.0")
 add_requires("pfr 2.1.1")
 add_requires("demangler v17.0.7")
 add_requires("preloader v1.9.0")
-add_requires("symbolprovider v1.1.0")
+add_requires("symbolprovider v1.2.0")
 add_requires("libhat 2024.4.16")
-add_requires("bedrockdata 1.21.3.01")
-add_requires("levibuildscript 0.1.0")
+add_requires("levibuildscript 0.2.0")
 
 if has_config("tests") then
     add_requires("gtest")
 end
 
-if is_config("target_type", "client") then
+if is_config("target_type", "server") then
+    add_requires("bedrockdata 1.21.3-01-server")
+else
+    add_requires("bedrockdata 1.21.0-03-client")
     add_requires("imgui v1.91.0-docking", {configs = {dx11 = true, dx12 = true}})
 end
 
@@ -58,7 +60,7 @@ else
     set_allowedarchs("windows|x64", "android|arm64-v8a", "iphoneos|arm64")
 end
 
-if not has_config("vs_runtime") and is_os("windows") then
+if not has_config("vs_runtime") and is_plat("windows") then
     set_runtimes("MD")
 end
 
@@ -154,17 +156,17 @@ target("LeviLamina")
         add_files("src-client/**.cpp")
         remove_files( -- remove when everything fine
             "src/mc/**.cpp",
-            "src/ll/api/chrono/**.cpp",
+            -- "src/ll/api/chrono/**.cpp",
             "src/ll/api/command/**.cpp",
             "src/ll/core/command/**.cpp",
-            "src/ll/api/event/**.cpp",
+            -- "src/ll/api/event/**.cpp",
             "src/ll/api/Versions.cpp",
-            "src/ll/api/service/ServiceManager.cpp",
-            "src/ll/api/utils/CryptoUtils.cpp",
-            "src/ll/api/thread/TickSyncSleep.cpp",
-            "src/ll/api/thread/TickSyncTaskPool.cpp",
-            "src/ll/core/plugin-abi/**.cpp",
-            "src/ll/core/tweak/ModifyMemoryAllocator.cpp"
+            -- "src/ll/api/service/ServiceManager.cpp",
+            -- "src/ll/api/utils/CryptoUtils.cpp",
+            -- "src/ll/api/thread/TickSyncSleep.cpp",
+            -- "src/ll/api/thread/TickSyncTaskPool.cpp",
+            "src/ll/core/plugin-abi/**.cpp"
+            -- "src/ll/core/tweak/ModifyMemoryAllocator.cpp"
         )
     end
 

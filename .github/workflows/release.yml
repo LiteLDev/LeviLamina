@@ -43,8 +43,8 @@ jobs:
       - run: |
           xmake -v -w -y
 
-      - run: |
-          xmake package -v -y
+    #   - run: |
+    #       xmake package -v -y
 
       - uses: actions/upload-artifact@v4
         with:
