@@ -7,10 +7,13 @@
 
 #include "ll/api/Expected.h"
 #include "ll/api/mod/ModManagerRegistry.h"
+#include "ll/api/command/EnumName.h"
 
 namespace ll::mod {
 
-constexpr inline std::string_view modsEnumName = "ll::mod::mod_names";
+enum class ModNames;
+
+constexpr inline std::string_view modsEnumName = command::enum_name_v<ModNames>;
 
 class ModRegistrar {
     struct Impl;

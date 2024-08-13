@@ -26,8 +26,6 @@
 namespace ll::command {
 using namespace ll::i18n_literals;
 
-enum class ModNames;
-
 enum LeviCommandOperation : int {
     unload,
     reload,
@@ -39,15 +37,15 @@ enum LeviCommandOperation2 : int {
     show,
 };
 struct LeviCommand {
-    LeviCommandOperation operation;
-    SoftEnum<ModNames>   mod;
+    LeviCommandOperation    operation;
+    SoftEnum<mod::ModNames> mod;
 };
 struct LeviCommand2 {
-    LeviCommandOperation2 operation;
-    SoftEnum<ModNames>    mod;
+    LeviCommandOperation2   operation;
+    SoftEnum<mod::ModNames> mod;
 };
 struct LeviCommand3 {
-    SoftEnum<ModNames> mod;
+    SoftEnum<mod::ModNames> mod;
 };
 
 void registerModManageCommand() {
@@ -55,6 +53,10 @@ void registerModManageCommand() {
     if (!config.enabled) {
         return;
     }
+    command::CommandRegistrar::getInstance().tryRegisterSoftEnum(
+        std::string{mod::modsEnumName},
+        mod::ModRegistrar::getInstance().getSortedModNames()
+    );
     auto& cmd = CommandRegistrar::getInstance().getOrCreateCommand(
         Util::toLower(selfModName),
         "LeviLamina's main command"_tr(),

@@ -17,7 +17,7 @@ std::atomic_ushort& Bedrock::typeid_t<CommandRegistry>::_getCounter() {
         if (!id) {                                                                                                     \
             static auto* fn = (Bedrock::typeid_t<CommandRegistry>(*)())ll::memory::resolveSymbol(                      \
                 "??$type_id@VCommandRegistry@@" SYMBOL "@Bedrock@@YA?AV?$typeid_t@VCommandRegistry@@@0@XZ",            \
-                true                                                                                                   \
+                false                                                                                                  \
             );                                                                                                         \
             if (fn) {                                                                                                  \
                 return fn();                                                                                           \

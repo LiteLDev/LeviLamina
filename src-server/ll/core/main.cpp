@@ -254,11 +254,6 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 ) {
     origin(ins);
 
-    command::CommandRegistrar::getInstance().tryRegisterSoftEnum(
-        std::string{mod::modsEnumName},
-        mod::ModRegistrar::getInstance().getSortedModNames()
-    );
-
     mod::ModRegistrar::getInstance().enableAllMods();
 
     setGamingStatus(GamingStatus::Running);

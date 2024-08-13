@@ -86,10 +86,11 @@ Expected<> NativeModManager::load(Manifest manifest) {
     struct Remover {
         ~Remover() { currentLoadingMod = nullptr; };
     } r;
-
-    auto modDir =
-        std::filesystem::canonical(getModsRoot() / string_utils::sv2u8sv(currentLoadingMod->getManifest().name));
-
+    std::error_code ec;
+    auto            modDir = getModsRoot() / string_utils::sv2u8sv(currentLoadingMod->getManifest().name);
+    if (auto c = std::filesystem::canonical(modDir, ec); ec.value() == 0) {
+        modDir = c;
+    }
     if (auto res = sys_utils::adaptFixedSizeToAllocatedResult(
             [](wchar_t* value, size_t valueLength, size_t& valueLengthNeededWithNul) -> bool {
                 ::SetLastError(ERROR_SUCCESS);
