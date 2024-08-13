@@ -7,6 +7,8 @@
 
 class AppPlatformListener {
 public:
+    bool mListenerRegistered; // this+0x8
+
     // prevent constructor by default
     AppPlatformListener& operator=(AppPlatformListener const&);
     AppPlatformListener(AppPlatformListener const&);

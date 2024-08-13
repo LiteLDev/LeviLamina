@@ -7,7 +7,7 @@
 #include "pl/SymbolProvider.h"
 
 #include "ll/api/Logger.h"
-#include "ll/api/service/ProcessStatus.h"
+#include "ll/api/service/GamingStatus.h"
 #include "ll/api/thread/GlobalThreadPauser.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/api/utils/SystemUtils.h"
@@ -80,7 +80,7 @@ std::vector<std::string> lookupSymbol(FuncPtr func) {
 
 void modify(void* ptr, size_t len, const std::function<void()>& callback) {
     std::unique_ptr<thread::GlobalThreadPauser> pauser;
-    if (getProcessStatus() != ProcessStatus::Default) {
+    if (getGamingStatus() != GamingStatus::Default) {
         pauser = std::make_unique<thread::GlobalThreadPauser>();
     }
     DWORD oldProtect;

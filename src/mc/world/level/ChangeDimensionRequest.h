@@ -37,8 +37,5 @@ public:
     MCAPI ChangeDimensionRequest(DimensionType, DimensionType, class Vec3, class Vec3, bool, bool);
 
     MCAPI class ChangeDimensionRequest& operator=(class ChangeDimensionRequest&&);
-
-    MCAPI ~ChangeDimensionRequest();
-
     // NOLINTEND
 };

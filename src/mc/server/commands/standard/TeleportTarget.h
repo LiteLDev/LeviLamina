@@ -15,13 +15,7 @@ public:
         int  mEntityType;       // this+0x14
     };
 
-    std::optional<Vec2>                           mRotation;      // this+0x0
-    std::optional<struct TeleportData>            mData;          // this+0xC
-    std::unique_ptr<class ChangeDimensionRequest> mChangeRequest; // this+0x28
-
-public:
-    // NOLINTBEGIN
-    MCAPI ~TeleportTarget();
-
-    // NOLINTEND
+    std::optional<Vec2>                     mRotation;      // this+0x0
+    std::optional<TeleportData>             mData;          // this+0xC
+    std::unique_ptr<ChangeDimensionRequest> mChangeRequest; // this+0x28
 };

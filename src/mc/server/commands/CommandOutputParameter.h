@@ -54,7 +54,5 @@ public:
 
     MCAPI class CommandOutputParameter& operator=(class CommandOutputParameter&& rhs);
 
-    MCAPI ~CommandOutputParameter();
-
     // NOLINTEND
 };

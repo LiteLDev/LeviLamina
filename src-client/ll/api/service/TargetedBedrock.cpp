@@ -15,6 +15,7 @@
 #include "mc/server/ServerLevel.h"
 #include "mc/server/commands/CommandRegistry.h"
 #include "mc/server/commands/MinecraftCommands.h"
+#include "mc/server/commands/standard/TeleportCommand.h"
 #include "mc/server/common/DedicatedServer.h"
 #include "mc/server/common/PropertiesSettings.h"
 #include "mc/server/common/commands/AllowListCommand.h"
@@ -22,23 +23,32 @@
 #include "mc/world/Minecraft.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 
+#include "ll/core/LeviLamina.h"
+
 namespace ll::service::inline bedrock {
 
-using namespace ll::memory;
+std::atomic<CommandRegistry*> commandRegistry;
 
-// Minecraft
-static std::atomic<Minecraft*> minecraft;
+LL_AUTO_STATIC_HOOK(
+    registerTpdimCommands,
+    memory::HookPriority::High,
+    TeleportCommand::setup,
+    void,
+    CommandRegistry& registry
+) {
+    getLogger().debug("TeleportCommand::setup");
 
-LL_TYPE_INSTANCE_HOOK(MinecraftInit, HookPriority::High, Minecraft, &Minecraft::init, void) {
-    minecraft = this;
-    origin();
+    commandRegistry = std::addressof(registry);
+    origin(registry);
 }
-LL_INSTANCE_HOOK(MinecraftDestructor, HookPriority::High, "??1Minecraft@@UEAA@XZ", void) {
-    minecraft = nullptr;
-    origin();
-}
 
-optional_ref<Minecraft> getMinecraft() { return minecraft.load(); }
+std::atomic<ServerInstance*> serverInstance;
+
+optional_ref<ServerInstance> getServerInstance() { return serverInstance.load(); }
+
+optional_ref<Minecraft> getMinecraft() {
+    return getServerInstance().and_then([](auto& server) { return optional_ref{server.mMinecraft.get()}; });
+}
 
 optional_ref<Level> getLevel() {
     return getMinecraft().and_then([](auto& minecraft) { return optional_ref{minecraft.mGameSession->mLevel.get()}; });
@@ -58,13 +68,9 @@ optional_ref<NetworkSystem> getNetworkSystem() {
 }
 
 optional_ref<CommandRegistry> getCommandRegistry() {
-    return getMinecraft().transform([](auto& minecraft) -> CommandRegistry& {
-        return *minecraft.mCommands->mRegistry;
-    });
+    // return getMinecraft().transform([](auto& minecraft) -> CommandRegistry& {
+    //     return *minecraft.mCommands->mRegistry;
+    // });
+    return commandRegistry.load();
 }
-
-using HookReg = memory::HookRegistrar<MinecraftInit, MinecraftDestructor>;
-
-// static HookReg hookRegister;
-
 } // namespace ll::service::inline bedrock

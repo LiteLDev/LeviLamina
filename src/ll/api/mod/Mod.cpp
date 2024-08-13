@@ -1,7 +1,7 @@
 #include "ll/api/mod/Mod.h"
 
 #include "ll/api/i18n/I18n.h"
-#include "ll/api/service/ProcessStatus.h"
+#include "ll/api/service/GamingStatus.h"
 
 #include "pl/Config.h"
 
@@ -63,7 +63,7 @@ bool Mod::hasOnDisable() const noexcept { return mImpl->onDisable != nullptr; }
 Expected<> Mod::onLoad() noexcept {
     try {
         if (!mImpl->onLoad || mImpl->onLoad(*this)) {
-            if (getProcessStatus() == ProcessStatus::Running) {
+            if (getGamingStatus() == GamingStatus::Running) {
                 return onEnable();
             }
             return {};

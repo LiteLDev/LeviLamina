@@ -4,15 +4,15 @@
 
 namespace ll {
 
-enum class ProcessStatus : int {
+enum class GamingStatus : int {
     Default = 0,
     Starting,
     Running,
     Stopping,
 };
 
-LLNDAPI ProcessStatus getProcessStatus();
+LLNDAPI GamingStatus getGamingStatus();
 
-void setProcessStatus(ProcessStatus);
+void setGamingStatus(GamingStatus);
 
 } // namespace ll

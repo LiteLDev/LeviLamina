@@ -10,7 +10,7 @@ LL_TYPE_INSTANCE_HOOK(
     registerBuiltinCommands,
     ll::memory::HookPriority::Highest,
     ServerInstanceEventCoordinator,
-    &ServerInstanceEventCoordinator::sendServerThreadStarted,
+    &ServerInstanceEventCoordinator::sendServerInitializeEnd,
     void,
     ::ServerInstance& ins
 ) {

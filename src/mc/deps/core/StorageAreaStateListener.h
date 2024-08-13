@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/common/bedrock/Mutex.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/LevelStorageState.h"
@@ -14,6 +15,9 @@ namespace Core {
 
 class StorageAreaStateListener {
 public:
+    std::shared_ptr<Core::FileStorageArea> mFileStorageArea; // this+0x8
+    Bedrock::Threading::Mutex              mMutex;           // this+0x18
+
     // prevent constructor by default
     StorageAreaStateListener& operator=(StorageAreaStateListener const&);
     StorageAreaStateListener(StorageAreaStateListener const&);

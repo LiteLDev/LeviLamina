@@ -8,7 +8,7 @@
 #include "ll/api/Logger.h"
 #include "ll/api/event/EmitterBase.h"
 #include "ll/api/mod/ModManagerRegistry.h"
-#include "ll/api/service/ProcessStatus.h"
+#include "ll/api/service/GamingStatus.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/core/LeviLamina.h"
 
@@ -132,7 +132,7 @@ EventBus::EventBus() : impl(std::make_unique<EventBusImpl>()) {
     auto& reg = mod::ModManagerRegistry::getInstance();
     reg.executeOnModUnload([this](std::string_view name) { removeModEventEmitters(name); });
     reg.executeOnModDisable([this](std::string_view name) {
-        if (getProcessStatus() == ProcessStatus::Running) {
+        if (getGamingStatus() == GamingStatus::Running) {
             removeModListeners(name);
         }
     });

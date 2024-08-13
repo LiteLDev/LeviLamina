@@ -11,9 +11,9 @@ struct MolangQueryFunctionPtr {
     using QueryFunctionAccessor =
         std::function<MolangScriptArg const&(RenderParams&, std::vector<ExpressionNode> const&)>;
 
-    MolangQueryFunctionReturnType mReturnType;       // location=0x0
-    QueryFunctionAccessor const*  mQueryFunctionPtr; // location=0x8
-    HashedString                  mName;             // location=0x10
+    MolangQueryFunctionReturnType mReturnType;       // this+0x0
+    QueryFunctionAccessor const*  mQueryFunctionPtr; // this+0x8
+    HashedString                  mName;             // this+0x10
 
 public:
     // NOLINTBEGIN

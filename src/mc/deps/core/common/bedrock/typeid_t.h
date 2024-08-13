@@ -13,14 +13,14 @@ template <typename>
 class CommandSelector;
 template <typename>
 class WildcardCommandSelector;
+class CommandPosition;
+class CommandPositionFloat;
 
 namespace Bedrock {
 
 template <typename Category>
 class typeid_t {
 public:
-    constexpr static ushort count = 0;
-
     ushort value{};
     [[nodiscard]] constexpr typeid_t(typeid_t const& other) : value(other.value) {}
     constexpr typeid_t& operator=(typeid_t const& other) {

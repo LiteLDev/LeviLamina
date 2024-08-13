@@ -17,17 +17,6 @@ public:
     RelativeFloat       mRotX;
     RelativeFloat       mRotY;
     std::optional<Vec2> mCommandOriginRotation;
-
-    RotationData() = delete;
-
-public:
-    // NOLINTBEGIN
-    MCAPI RotationData(
-        class RelativeFloat const&       x,
-        class RelativeFloat const&       y,
-        std::optional<class Vec2> const& originRot = std::nullopt
-    );
-    // NOLINTEND
 };
 
 }; // namespace RotationCommandUtils

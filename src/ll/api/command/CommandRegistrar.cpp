@@ -12,7 +12,7 @@
 #include "ll/api/command/CommandHandle.h"
 #include "ll/api/command/OverloadData.h"
 #include "ll/api/service/Bedrock.h"
-#include "ll/api/service/ProcessStatus.h"
+#include "ll/api/service/GamingStatus.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/core/mod/ModRegistrar.h"
 
@@ -30,7 +30,7 @@ struct CommandRegistrar::Impl {
 CommandRegistrar::CommandRegistrar() : impl(std::make_unique<Impl>()) {
     auto& reg = mod::ModManagerRegistry::getInstance();
     reg.executeOnModDisable([this](std::string_view name) {
-        if (getProcessStatus() == ProcessStatus::Running) {
+        if (getGamingStatus() == GamingStatus::Running) {
             disableModCommands(name);
         }
     });
@@ -44,6 +44,12 @@ CommandRegistrar::CommandRegistrar() : impl(std::make_unique<Impl>()) {
 CommandRegistrar& CommandRegistrar::getInstance() {
     static CommandRegistrar instance;
     return instance;
+}
+
+void CommandRegistrar::clear() {
+    std::lock_guard lock{impl->mutex};
+    impl->commands.clear();
+    impl->textWithRef.clear();
 }
 
 CommandRegistry& CommandRegistrar::getRegistry() const { return *ll::service::getCommandRegistry(); }

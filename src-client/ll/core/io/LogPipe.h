@@ -2,6 +2,6 @@
 
 #include "ll/api/io/Pipe.h"
 
-namespace ll {
+namespace ll::io {
 ll::io::Pipe& getDefaultLogPipe();
-} // namespace ll
+} // namespace ll::io

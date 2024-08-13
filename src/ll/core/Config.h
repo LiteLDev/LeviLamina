@@ -16,21 +16,10 @@ namespace ll {
 
 struct LeviConfig {
 
-    int version = 27;
+    int version = 29;
 
     std::string language = "system";
     struct {
-        struct {
-            bool        enabled      = true;
-            bool        useBuiltin   = false;
-            std::string externalpath = "CrashLogger.exe";
-            std::string logPath      = R"(.\logs\crash)";
-            std::string dumpPrefix   = "minidump_";
-            std::string logPrefix    = "trace_";
-        } crashLogger{};
-
-        TargetedConfig targeted{};
-
         struct CmdSetting {
             bool                   enabled    = true;
             CommandPermissionLevel permission = CommandPermissionLevel::GameDirectors;
@@ -45,13 +34,11 @@ struct LeviConfig {
             CmdSetting modManageCommand{true, CommandPermissionLevel::Admin};
         } command{};
 
-        bool checkRunningBDS = true;
-
-        struct {
-            bool alwaysLaunch = false;
-        } playerInfo{};
+        bool disableAutoCompactionLog = true;
 
     } modules{};
+
+    TargetedConfig targeted{};
 };
 
 LeviConfig& getLeviConfig();

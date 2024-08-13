@@ -9,7 +9,7 @@
 
 #include "ImGuiHooks.h"
 
-#include "ll/core/tweak/ModifyInfomation.h"
+#include "ll/core/io/LogPipe.h"
 
 namespace ll::gui {
 class LogWindow {
@@ -124,7 +124,7 @@ void updateImGui() {
     static bool showLog         = true;
     static bool showDemo        = true;
 
-    logWindow.addLog(ll::getDefaultLogPipe().read());
+    logWindow.addLog(io::getDefaultLogPipe().read());
 
     auto& io = ImGui::GetIO();
     ImGui::NewFrame();

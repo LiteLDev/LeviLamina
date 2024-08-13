@@ -1,8 +1,5 @@
-#include "ll/api/Versions.h"
-#include "ll/api/io/FunctionStream.h"
-#include "ll/api/io/StreamRedirector.h"
+#include "ll/core/tweak/ModifyInfomation.h"
 #include "ll/api/memory/Hook.h"
-#include "ll/api/service/ServerInfo.h"
 #include "ll/core/Config.h"
 #include "ll/core/LeviLamina.h"
 #include "ll/core/Version.h"
@@ -14,8 +11,6 @@
 MCAPI void BedrockLogOut(uint priority, char const* pszFormat, ...); // NOLINT
 
 namespace ll {
-extern std::chrono::steady_clock::time_point severStartBeginTime;
-extern std::chrono::steady_clock::time_point severStartEndTime;
 
 // disable auto compaction log
 LL_STATIC_HOOK(
@@ -33,7 +28,7 @@ LL_STATIC_HOOK(
     char const*               pszFormat,
     char*                     va
 ) {
-    if (ll::getLeviConfig().modules.targeted.disableAutoCompactionLog
+    if (ll::getLeviConfig().modules.disableAutoCompactionLog
         && std::string_view{func}.starts_with("DBStorage::_scheduleNextAutoCompaction")) {
         static_assert(&DBStorage::_scheduleNextAutoCompaction); // make sure function exist
         return;
@@ -49,30 +44,6 @@ static std::unordered_map<uint, decltype((serverLogger.debug))&> loggerMap = {
     {4u, serverLogger.warn },
     {8u, serverLogger.error}
 };
-
-static bool serverStarted = false;
-
-void tryModifyServerStartInfo(std::string& s) {
-    if (s != "Server started.") {
-        if (s.starts_with("Version: ")) {
-            s += fmt::format(
-                "(ProtocolVersion {}) with {}",
-                ll::getNetworkProtocolVersion(),
-                fmt::format(fg(fmt::color::light_sky_blue), "LeviLamina-{}", ll::getLoaderVersion())
-            );
-        }
-        return;
-    }
-    serverStarted = true;
-
-    ll::severStartEndTime = std::chrono::steady_clock::now();
-
-    s = fmt::format(
-        R"(Server started in ({:.1f}s)! For help, type "help" or "?")",
-        std::chrono::duration_cast<std::chrono::duration<double>>(ll::severStartEndTime - ll::severStartBeginTime)
-            .count()
-    );
-}
 
 LL_STATIC_HOOK(
     BedrockLogOutHook,
@@ -115,7 +86,7 @@ LL_STATIC_HOOK(
 
     std::string line;
     while (std::getline(iss, line)) {
-        if (!serverStarted) tryModifyServerStartInfo(line);
+        if (!tryModifyBedrockLogInfo(priority, line)) continue;
         if (!knownPriority) {
             line = fmt::format("<LVL|{}> {}", priority, line);
         }

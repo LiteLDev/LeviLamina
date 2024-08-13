@@ -14,17 +14,16 @@
 
 #include "ll/api/Logger.h"
 #include "ll/api/Versions.h"
+#include "ll/api/command/CommandRegistrar.h"
 #include "ll/api/i18n/I18n.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/mod/Mod.h"
 #include "ll/api/service/Bedrock.h"
+#include "ll/api/service/GamingStatus.h"
 #include "ll/api/service/PlayerInfo.h"
-#include "ll/api/service/ProcessStatus.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/HashUtils.h"
 #include "ll/api/utils/SystemUtils.h"
-
-#include "ll/api/command/CommandRegistrar.h"
 
 #include "mc/server/ServerInstance.h"
 #include "mc/server/common/DedicatedServer.h"
@@ -184,14 +183,14 @@ void leviLaminaMain() {
 
     checkProtocolVersion();
 
-    if (config.modules.checkRunningBDS) {
+    if (config.targeted.checkRunningBDS) {
         checkOtherBdsInstance();
     }
-    if (config.modules.playerInfo.alwaysLaunch) {
+    if (config.targeted.playerInfo.alwaysLaunch) {
         service::PlayerInfo::getInstance();
     }
-    if (config.modules.crashLogger.enabled) {
-        if (config.modules.crashLogger.useBuiltin) {
+    if (config.targeted.crashLogger.enabled) {
+        if (config.targeted.crashLogger.useBuiltin) {
             static CrashLoggerNew crashLogger{};
         } else {
             CrashLogger::initCrashLogger();
@@ -219,7 +218,7 @@ LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::High, "main", int, int arg
 #if defined(LL_DEBUG)
     static stacktrace_utils::SymbolLoader symbols{};
 #endif
-    setProcessStatus(ProcessStatus::Default);
+    setGamingStatus(GamingStatus::Default);
     severStartBeginTime = std::chrono::steady_clock::now();
     for (int i = 0; i < argc; ++i) {
         switch (doHash(argv[i])) {
@@ -234,14 +233,14 @@ LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::High, "main", int, int arg
             break;
         }
     }
-    setProcessStatus(ProcessStatus::Starting);
+    setGamingStatus(GamingStatus::Starting);
     try {
         leviLaminaMain();
     } catch (...) {
         error_utils::printCurrentException(getLogger());
     }
     auto res = origin(argc, argv);
-    setProcessStatus(ProcessStatus::Default);
+    setGamingStatus(GamingStatus::Default);
     return res;
 }
 
@@ -262,7 +261,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 
     mod::ModRegistrar::getInstance().enableAllMods();
 
-    setProcessStatus(ProcessStatus::Running);
+    setGamingStatus(GamingStatus::Running);
 }
 LL_AUTO_TYPE_INSTANCE_HOOK(
     DisableAllModsHook,
@@ -271,7 +270,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     &ServerInstance::leaveGameSync,
     void
 ) {
-    setProcessStatus(ProcessStatus::Stopping);
+    setGamingStatus(GamingStatus::Stopping);
     mod::ModRegistrar::getInstance().disableAllMods();
     origin();
 }

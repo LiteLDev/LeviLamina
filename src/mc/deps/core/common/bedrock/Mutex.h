@@ -4,18 +4,9 @@
 
 namespace Bedrock::Threading {
 
-class Mutex {
+class Mutex : public std::mutex {
 public:
-    // prevent constructor by default
-    Mutex& operator=(Mutex const&);
-    Mutex(Mutex const&);
-    Mutex();
-
-public:
-    // NOLINTBEGIN
-    MCAPI ~Mutex();
-
-    // NOLINTEND
+    using std::mutex::mutex;
 };
 
 }; // namespace Bedrock::Threading

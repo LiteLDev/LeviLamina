@@ -1,6 +1,11 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/common/AppPlatformListener.h"
+#include "mc/deps/core/StorageAreaStateListener.h"
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include "mc/world/GameCallbacks.h"
+#include "mc/world/Minecraft.h"
 
 // auto generated inclusion list
 #include "mc/common/wrapper/OwnerPtr.h"
@@ -18,8 +23,16 @@ namespace cereal { struct ReflectionCtx; }
 namespace mce { class UUID; }
 // clang-format on
 
-class ServerInstance {
+class ServerInstance : public ::Bedrock::EnableNonOwnerReferences,
+                       public ::AppPlatformListener,
+                       public ::GameCallbacks,
+                       public ::Core::StorageAreaStateListener {
 public:
+    std::chrono::steady_clock::time_point mLastSyncTime;
+    class IMinecraftApp const&            mApp;
+    std::unique_ptr<Minecraft>            mMinecraft;
+    // other...
+
     // prevent constructor by default
     ServerInstance& operator=(ServerInstance const&);
     ServerInstance(ServerInstance const&);
@@ -86,6 +99,8 @@ public:
     MCAPI bool isRealmsStoriesEnabled() const;
 
     MCAPI void leaveGameSync();
+
+    MCAPI void startLeaveGame();
 
     MCAPI void queueForServerThread(std::function<void()> command);
 

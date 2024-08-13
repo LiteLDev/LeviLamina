@@ -87,11 +87,11 @@ Logger& Plugin::getLogger() const { return Mod::getLogger(); }
 
 #pragma comment(                                                                                                       \
     linker,                                                                                                            \
-    "/export:?getServerStatus@ll@@YA?AW4ServerStatus@1@XZ=?getProcessStatus@ll@@YA?AW4ProcessStatus@1@XZ"              \
+    "/export:?getServerStatus@ll@@YA?AW4ServerStatus@1@XZ=?getGamingStatus@ll@@YA?AW4GamingStatus@1@XZ"                \
 )
 #pragma comment(                                                                                                       \
     linker,                                                                                                            \
-    "/export:?setServerStatus@ll@@YAXW4ServerStatus@1@@Z=?setProcessStatus@ll@@YAXW4ProcessStatus@1@@Z"                \
+    "/export:?setServerStatus@ll@@YAXW4ServerStatus@1@@Z=?setGamingStatus@ll@@YAXW4GamingStatus@1@@Z"                  \
 )
 #pragma comment(                                                                                                                \
     linker,                                                                                                                     \

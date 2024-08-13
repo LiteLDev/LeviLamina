@@ -9,10 +9,10 @@ public:
 
     RelativeFloat() = default;
 
+    RelativeFloat(float value, bool relative = true) : mOffset(value), mRelative(relative) {}
+
 public:
     // NOLINTBEGIN
-
-    MCAPI RelativeFloat(float value, bool relative = true);
 
     MCAPI float getValue(float center = 0) const;
 

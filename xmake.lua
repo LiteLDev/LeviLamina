@@ -157,12 +157,13 @@ target("LeviLamina")
         add_files("src-client/**.cpp")
         remove_files( -- remove when everything fine
             "src/mc/world/**.cpp",
+            -- "src/mc/world/level/**.cpp",
             "src/mc/network/**.cpp",
             "src/mc/server/*.cpp",
             -- "src/mc/nbt/**.cpp",
             -- "src/ll/api/chrono/**.cpp",
             -- "src/ll/api/command/**.cpp",
-            "src/ll/core/command/**.cpp",
+            -- "src/ll/core/command/**.cpp",
             -- "src/ll/api/event/**.cpp",
             -- "src/ll/api/Versions.cpp",
             -- "src/ll/api/service/ServiceManager.cpp",
