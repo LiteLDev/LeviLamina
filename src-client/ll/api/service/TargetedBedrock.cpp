@@ -32,7 +32,7 @@ std::atomic<CommandRegistry*> commandRegistry;
 LL_AUTO_STATIC_HOOK(
     registerTpdimCommands,
     memory::HookPriority::High,
-    TeleportCommand::setup,
+    &TeleportCommand::setup,
     void,
     CommandRegistry& registry
 ) {

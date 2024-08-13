@@ -23,7 +23,7 @@ LL_TYPE_INSTANCE_HOOK(
 LL_STATIC_HOOK(
     registerTpdimCommands,
     ll::memory::HookPriority::Normal,
-    TeleportCommand::setup,
+    &TeleportCommand::setup,
     void,
     CommandRegistry& registry
 ) {
