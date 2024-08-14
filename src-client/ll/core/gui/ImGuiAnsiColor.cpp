@@ -43,10 +43,6 @@ static constexpr uint colors256[] = {
     0xffd0d0d0, 0xffdadada, 0xffe4e4e4, 0xffeeeeee
 };
 
-static const int kMaxChar = 100000;
-static ImU32     col_buf[kMaxChar];
-static bool      char_skip[kMaxChar];
-
 bool parseColor(const char* s, ImU32* col, int* skipChars) {
     if (s[0] != '\033' || s[1] != '[') {
         return false;
@@ -152,6 +148,7 @@ void ImFont_RenderAnsiText(
         text_end = text_begin + strlen(text_begin); // ImGui functions generally already provides a valid text_end,
     // so this is merely to handle direct calls.
 
+
     // Align to be pixel perfect
     pos.x   = (float)(int)pos.x;
     pos.y   = (float)(int)pos.y;
@@ -198,10 +195,9 @@ void ImFont_RenderAnsiText(
     ImDrawIdx*   idx_write       = draw_list->_IdxWritePtr;
     unsigned int vtx_current_idx = draw_list->_VtxCurrentIdx;
 
+    auto col_buf   = std::vector<ImU32>(text_end - text_begin, col);
+    auto char_skip = std::vector<bool>(text_end - text_begin, false);
     {
-        for (int i = 0; i < text_end - text_begin; i++) {
-            char_skip[i] = false;
-        }
         int         index     = 0;
         int         skipChars = 0;
         const char* sLocal    = s;
@@ -221,6 +217,7 @@ void ImFont_RenderAnsiText(
             }
         }
     }
+
 
     const char* s1 = s;
     while (s < text_end) {
