@@ -147,7 +147,9 @@ target("LeviLamina")
             "src-server/**.cpp"
         )
     else
-        add_syslinks("dxgi", "runtimeobject")
+        if is_os("windows") then
+            add_syslinks("dxgi", "runtimeobject", "gdi32", "dwrite")
+        end
         add_packages("imgui")
         add_headerfiles(
         "src-client/(ll/api/**.h)"

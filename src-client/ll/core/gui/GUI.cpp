@@ -4,12 +4,108 @@
 #include <string>
 #include <vector>
 
+#include <dwrite.h>
+#include <windows.h>
+#include <wingdi.h>
+#include <winuser.h>
+
+#pragma warning(push)
+#pragma warning(disable : 5204)
+#include <atlbase.h>
+#pragma warning(pop)
+
 #include "imgui.h"
-#include "imgui_internal.h"
 
 #include "ImGuiAnsiColor.h"
 #include "ImGuiHooks.h"
+#include "ll/api/utils/StringUtils.h"
 #include "ll/core/io/LogPipe.h"
+
+static bool isValidFontFileType(DWRITE_FONT_FILE_TYPE fileType) {
+    return fileType == DWRITE_FONT_FILE_TYPE_CFF || fileType == DWRITE_FONT_FILE_TYPE_TRUETYPE
+        || fileType == DWRITE_FONT_FILE_TYPE_OPENTYPE_COLLECTION
+        || fileType == DWRITE_FONT_FILE_TYPE_TRUETYPE_COLLECTION;
+}
+
+static std::vector<std::wstring> getFilePathFromIDWriteFontFace(IDWriteFontFace* fontFace) {
+    std::vector<std::wstring> result;
+
+    UINT32 fileCount = 0;
+    fontFace->GetFiles(&fileCount, nullptr);
+
+    std::unique_ptr<IDWriteFontFile*[]> fontFiles = std::make_unique<IDWriteFontFile*[]>(fileCount);
+    fontFace->GetFiles(&fileCount, fontFiles.get());
+    for (unsigned int i = 0; i < fileCount; i++) {
+        IDWriteFontFile* fontFile = fontFiles[i];
+
+        void*  refKey     = nullptr;
+        UINT32 refKeySize = 0;
+        fontFile->GetReferenceKey((const void**)&refKey, &refKeySize);
+
+        CComPtr<IDWriteFontFileLoader> loader;
+        fontFile->GetLoader(&loader);
+
+        CComPtr<IDWriteLocalFontFileLoader> localLoader;
+        loader->QueryInterface(&localLoader);
+
+        BOOL                  isSupportedFontType = false;
+        DWRITE_FONT_FILE_TYPE fontFileType        = DWRITE_FONT_FILE_TYPE_UNKNOWN;
+        DWRITE_FONT_FACE_TYPE fontFaceType        = DWRITE_FONT_FACE_TYPE_UNKNOWN;
+        UINT32                numberOfFaces       = 0;
+        fontFile->Analyze(&isSupportedFontType, &fontFileType, &fontFaceType, &numberOfFaces);
+        if (!isValidFontFileType(fontFileType)) {
+            continue;
+        }
+
+        UINT pathLen = 0;
+        localLoader->GetFilePathLengthFromKey(refKey, refKeySize, &pathLen);
+
+        std::unique_ptr<wchar_t[]> buffer = std::make_unique<wchar_t[]>(pathLen + 1);
+        localLoader->GetFilePathFromKey(refKey, refKeySize, buffer.get(), pathLen + 1);
+
+        std::wstring filePath{buffer.get()};
+        result.push_back(filePath);
+    }
+    for (unsigned int i = 0; i < fileCount; i++) {
+        fontFiles[i]->Release();
+    }
+    return result;
+}
+
+static std::vector<std::wstring> getFilePathFromLogFontW(const LOGFONTW* lf) {
+    CComPtr<IDWriteFactory> dwriteFactory;
+    DWriteCreateFactory(
+        DWRITE_FACTORY_TYPE_ISOLATED,
+        __uuidof(IDWriteFactory),
+        reinterpret_cast<IUnknown**>(&dwriteFactory)
+    );
+
+    CComPtr<IDWriteGdiInterop> gdiInterop;
+    dwriteFactory->GetGdiInterop(&gdiInterop);
+
+    HDC     dc     = CreateCompatibleDC(nullptr);
+    HFONT   hFont  = CreateFontIndirectW(lf);
+    HGDIOBJ oldObj = SelectObject(dc, hFont);
+
+    CComPtr<IDWriteFontFace> fontFace = nullptr;
+    gdiInterop->CreateFontFaceFromHdc(dc, &fontFace);
+    std::vector<std::wstring> result = getFilePathFromIDWriteFontFace(fontFace);
+    fontFace.Release();
+
+    SelectObject(dc, oldObj);
+    DeleteObject(hFont);
+    DeleteDC(dc);
+    return result;
+}
+
+static std::vector<std::wstring> getSystemDefaultMessageFontPaths() {
+    NONCLIENTMETRICSW nonClientMetrics;
+    nonClientMetrics.cbSize = sizeof(nonClientMetrics);
+    if (SystemParametersInfoW(SPI_GETNONCLIENTMETRICS, sizeof(nonClientMetrics), &nonClientMetrics, 0)) {
+        return getFilePathFromLogFontW(&nonClientMetrics.lfMessageFont);
+    }
+    return {};
+}
 
 namespace ll::gui {
 class LogWindow {
@@ -43,7 +139,11 @@ public:
     }
 
     void draw() {
-        if (!open || !ImGui::Begin(title.c_str(), &open)) {
+        if (!open) {
+            return;
+        }
+
+        if (!ImGui::Begin(title.c_str(), &open)) {
             ImGui::End();
             return;
         }
@@ -69,8 +169,8 @@ public:
             const char* bufBegin = this->buf.begin();
             const char* bufEnd   = this->buf.end();
             if (filter.IsActive()) {
-                // Don't use the clipper when Filter is enabled because we don't have random access to the result of the
-                // filter
+                // Don't use the clipper when Filter is enabled because we don't have random access
+                // to the result of the filter
                 for (int lineNum = 0; lineNum < lineOffsets.size(); lineNum++) {
                     const char* lineStart = bufBegin + lineOffsets[lineNum];
                     const char* lineEnd =
@@ -121,7 +221,6 @@ void initializeImGui() {
 
 void updateImGui() {
     static bool showPerformance = true;
-    static bool showLog         = true;
     static bool showDemo        = true;
 
     logWindow.addLog(io::getDefaultLogPipe().read());
@@ -182,8 +281,23 @@ void updateScaling(float dpi) {
     memcpy(style.Colors, styleold.Colors, sizeof(style.Colors));
 
     io.Fonts->Clear();
-    ImFontConfig fontCfg;
-    fontCfg.SizePixels = 13.0f * scale;
-    io.Fonts->AddFontDefault(&fontCfg);
+    ImFont* font = nullptr;
+
+    auto sysFontPaths = getSystemDefaultMessageFontPaths();
+    if (!sysFontPaths.empty()) {
+        auto path = ll::string_utils::wstr2str(sysFontPaths[0]);
+        font      = io.Fonts->AddFontFromFileTTF(
+            path.c_str(),
+            16.0f * scale,
+            nullptr,
+            io.Fonts->GetGlyphRangesChineseSimplifiedCommon()
+        );
+    }
+
+    if (!font) {
+        ImFontConfig fontCfg;
+        fontCfg.SizePixels = 13.0f * scale;
+        io.Fonts->AddFontDefault(&fontCfg);
+    }
 }
 } // namespace ll::gui

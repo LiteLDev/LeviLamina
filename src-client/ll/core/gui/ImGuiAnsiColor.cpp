@@ -43,7 +43,7 @@ static constexpr uint colors256[] = {
     0xffd0d0d0, 0xffdadada, 0xffe4e4e4, 0xffeeeeee
 };
 
-static const int kMaxChar = 10000;
+static const int kMaxChar = 100000;
 static ImU32     col_buf[kMaxChar];
 static bool      char_skip[kMaxChar];
 
@@ -128,7 +128,7 @@ bool parseColor(const char* s, ImU32* col, int* skipChars) {
             }
             break;
         default:
-            return false;
+            break;
         }
     }
 
