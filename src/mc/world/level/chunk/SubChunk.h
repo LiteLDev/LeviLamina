@@ -11,6 +11,7 @@
 #include "mc/world/level/chunk/SubChunkStorage.h"
 
 class Block;
+class SpinLock;
 
 struct SubChunk {
 public:
@@ -43,11 +44,11 @@ public:
     std::array<std::unique_ptr<SubChunkStorage<Block>>, 2> mBlocks;                           // this+0x28
     std::array<SubChunkStorage<Block>*, 2>                 mBlocksReadPtr;                    // this+0x38
     SpinLock*                                              mWriteLock;                        // this+0x58
-    Util::XXHash::Digest                                   mHash;                             // this+0x50
+    uint64                                                 mHash;                             // this+0x50
     bool                                                   mHashDirty;                        // this+0x58
-    int8_t                                                 mAbsoluteIndex;                    // this+0x59
+    int8                                                   mAbsoluteIndex;                    // this+0x59
     bool                                                   mIsReplacementSubChunk;            // this+0x5A
-    uint8_t                                                mRenderChunkTrackingVersionNumber; // this+0x5B
+    uint8                                                  mRenderChunkTrackingVersionNumber; // this+0x5B
 
 public:
     // prevent constructor by default
