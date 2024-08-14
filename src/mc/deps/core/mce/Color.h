@@ -253,6 +253,14 @@ public:
 
     [[nodiscard]] inline double distanceTo(Color const& dst) const noexcept { return deltaE00(dst); }
 
+    int toABGR() const {
+        return ((uint)(a * 255) << 24) | ((uint)(b * 255) << 16) | ((uint)(g * 255) << 8) | ((uint)(r * 255) << 0);
+    }
+
+    int toARGB() const {
+        return ((uint)(a * 255) << 24) | ((uint)(r * 255) << 16) | ((uint)(g * 255) << 8) | ((uint)(b * 255) << 0);
+    }
+
 private:
     [[nodiscard]] constexpr uchar static hexToNum(char hex) noexcept {
         if ('A' <= hex && hex <= 'F') {
@@ -270,10 +278,6 @@ private:
 public:
     // NOLINTBEGIN
     MCAPI bool operator==(class mce::Color const& c) const;
-
-    MCAPI int toABGR() const;
-
-    MCAPI int toARGB() const;
 
     MCAPI std::string toHexString() const;
 

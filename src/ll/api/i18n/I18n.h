@@ -22,6 +22,8 @@
 
 namespace ll::i18n {
 
+LLNDAPI std::string& getDefaultLocaleName();
+
 class I18N {
 
 public:

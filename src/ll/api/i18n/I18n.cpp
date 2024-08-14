@@ -7,11 +7,13 @@ namespace fs = std::filesystem;
 
 using ll::file_utils::u8path;
 using ll::string_utils::splitByPattern;
-using ll::sys_utils::getSystemLocaleName;
 
 namespace ll::i18n {
 
-std::string globalDefaultLocaleName = getSystemLocaleName();
+std::string& getDefaultLocaleName() {
+    static std::string name = sys_utils::getSystemLocaleName();
+    return name;
+}
 
 const std::array<std::string, 2> GENERAL_LANGUAGES = {"en", "zh"};
 
@@ -49,7 +51,7 @@ bool findTranslation(
 std::string_view I18N::get(std::string_view key, std::string_view localeName) {
     if (localeName.empty()) {
         if (mDefaultLocaleName.empty()) {
-            localeName = globalDefaultLocaleName;
+            localeName = getDefaultLocaleName();
         } else {
             localeName = mDefaultLocaleName;
         }
@@ -164,7 +166,8 @@ void MultiFileI18N::load(std::filesystem::path const& dirPath) {
         if (!f.is_regular_file() || f.path().extension() != ".json") {
             continue;
         }
-        auto           langName = f.path().stem().string();
+        auto langName = f.path().stem().string();
+        std::replace(langName.begin(), langName.end(), '_', '-');
         std::fstream   file(f.path().wstring(), std::ios::in);
         nlohmann::json j;
         file >> j;
@@ -177,7 +180,10 @@ void MultiFileI18N::save(bool nested) {
     if (!fs::exists(mDirPath)) {
         fs::create_directories(mDirPath);
         for (auto& [lc, lv] : this->mDefaultLangData) {
-            auto         fileName = mDirPath.append(lc + ".json").wstring();
+            auto langName = lc;
+            std::replace(langName.begin(), langName.end(), '-', '_');
+
+            auto         fileName = mDirPath.append(langName + ".json").wstring();
             std::fstream file;
             if (fs::exists(fileName)) {
                 file.open(fileName, std::ios::out | std::ios::ate);

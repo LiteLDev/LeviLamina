@@ -18,94 +18,11 @@
 
 #include "ImGuiAnsiColor.h"
 #include "ImGuiHooks.h"
+#include "ll/api/utils/FontUtils.h"
 #include "ll/api/utils/StringUtils.h"
+#include "ll/core/gui/ImguiConfig.h"
+#include "ll/core/gui/styles/ImguiSpectrum.h"
 #include "ll/core/io/LogPipe.h"
-
-static bool isValidFontFileType(DWRITE_FONT_FILE_TYPE fileType) {
-    return fileType == DWRITE_FONT_FILE_TYPE_CFF || fileType == DWRITE_FONT_FILE_TYPE_TRUETYPE
-        || fileType == DWRITE_FONT_FILE_TYPE_OPENTYPE_COLLECTION
-        || fileType == DWRITE_FONT_FILE_TYPE_TRUETYPE_COLLECTION;
-}
-
-static std::vector<std::wstring> getFilePathFromIDWriteFontFace(IDWriteFontFace* fontFace) {
-    std::vector<std::wstring> result;
-
-    UINT32 fileCount = 0;
-    fontFace->GetFiles(&fileCount, nullptr);
-
-    std::unique_ptr<IDWriteFontFile*[]> fontFiles = std::make_unique<IDWriteFontFile*[]>(fileCount);
-    fontFace->GetFiles(&fileCount, fontFiles.get());
-    for (unsigned int i = 0; i < fileCount; i++) {
-        IDWriteFontFile* fontFile = fontFiles[i];
-
-        void*  refKey     = nullptr;
-        UINT32 refKeySize = 0;
-        fontFile->GetReferenceKey((const void**)&refKey, &refKeySize);
-
-        CComPtr<IDWriteFontFileLoader> loader;
-        fontFile->GetLoader(&loader);
-
-        CComPtr<IDWriteLocalFontFileLoader> localLoader;
-        loader->QueryInterface(&localLoader);
-
-        BOOL                  isSupportedFontType = false;
-        DWRITE_FONT_FILE_TYPE fontFileType        = DWRITE_FONT_FILE_TYPE_UNKNOWN;
-        DWRITE_FONT_FACE_TYPE fontFaceType        = DWRITE_FONT_FACE_TYPE_UNKNOWN;
-        UINT32                numberOfFaces       = 0;
-        fontFile->Analyze(&isSupportedFontType, &fontFileType, &fontFaceType, &numberOfFaces);
-        if (!isValidFontFileType(fontFileType)) {
-            continue;
-        }
-
-        UINT pathLen = 0;
-        localLoader->GetFilePathLengthFromKey(refKey, refKeySize, &pathLen);
-
-        std::unique_ptr<wchar_t[]> buffer = std::make_unique<wchar_t[]>(pathLen + 1);
-        localLoader->GetFilePathFromKey(refKey, refKeySize, buffer.get(), pathLen + 1);
-
-        std::wstring filePath{buffer.get()};
-        result.push_back(filePath);
-    }
-    for (unsigned int i = 0; i < fileCount; i++) {
-        fontFiles[i]->Release();
-    }
-    return result;
-}
-
-static std::vector<std::wstring> getFilePathFromLogFontW(const LOGFONTW* lf) {
-    CComPtr<IDWriteFactory> dwriteFactory;
-    DWriteCreateFactory(
-        DWRITE_FACTORY_TYPE_ISOLATED,
-        __uuidof(IDWriteFactory),
-        reinterpret_cast<IUnknown**>(&dwriteFactory)
-    );
-
-    CComPtr<IDWriteGdiInterop> gdiInterop;
-    dwriteFactory->GetGdiInterop(&gdiInterop);
-
-    HDC     dc     = CreateCompatibleDC(nullptr);
-    HFONT   hFont  = CreateFontIndirectW(lf);
-    HGDIOBJ oldObj = SelectObject(dc, hFont);
-
-    CComPtr<IDWriteFontFace> fontFace = nullptr;
-    gdiInterop->CreateFontFaceFromHdc(dc, &fontFace);
-    std::vector<std::wstring> result = getFilePathFromIDWriteFontFace(fontFace);
-    fontFace.Release();
-
-    SelectObject(dc, oldObj);
-    DeleteObject(hFont);
-    DeleteDC(dc);
-    return result;
-}
-
-static std::vector<std::wstring> getSystemDefaultMessageFontPaths() {
-    NONCLIENTMETRICSW nonClientMetrics;
-    nonClientMetrics.cbSize = sizeof(nonClientMetrics);
-    if (SystemParametersInfoW(SPI_GETNONCLIENTMETRICS, sizeof(nonClientMetrics), &nonClientMetrics, 0)) {
-        return getFilePathFromLogFontW(&nonClientMetrics.lfMessageFont);
-    }
-    return {};
-}
 
 namespace ll::gui {
 class LogWindow {
@@ -259,45 +176,99 @@ void updateImGui() {
 }
 
 void updateScaling(float dpi) {
-    float    scale = dpi / 96.0f;
-    ImGuiIO& io    = ImGui::GetIO();
+    float scale = dpi / 96.0f;
 
-    ImGuiStyle& style       = ImGui::GetStyle();
-    ImGuiStyle  styleold    = style;
-    style                   = ImGuiStyle();
-    style.WindowBorderSize  = 1.0f;
-    style.ChildBorderSize   = 1.0f;
-    style.PopupBorderSize   = 1.0f;
-    style.FrameBorderSize   = 1.0f;
-    style.TabBorderSize     = 1.0f;
-    style.WindowRounding    = 0.0f;
-    style.ChildRounding     = 0.0f;
-    style.PopupRounding     = 0.0f;
-    style.FrameRounding     = 0.0f;
-    style.ScrollbarRounding = 0.0f;
-    style.GrabRounding      = 0.0f;
-    style.TabRounding       = 0.0f;
+    getLeviImguiConfig().style.applyToImgui();
+
+    ImGuiStyle& style = ImGui::GetStyle();
+
     style.ScaleAllSizes(scale);
-    memcpy(style.Colors, styleold.Colors, sizeof(style.Colors));
 
+    updateFonts(scale);
+}
+
+void updateFonts(float scale) {
+    using namespace font_utils;
+    ImGuiIO& io = ImGui::GetIO();
     io.Fonts->Clear();
-    ImFont* font = nullptr;
-
-    auto sysFontPaths = getSystemDefaultMessageFontPaths();
-    if (!sysFontPaths.empty()) {
-        auto path = ll::string_utils::wstr2str(sysFontPaths[0]);
-        font      = io.Fonts->AddFontFromFileTTF(
-            path.c_str(),
-            16.0f * scale,
-            nullptr,
-            io.Fonts->GetGlyphRangesChineseSimplifiedCommon()
-        );
-    }
-
-    if (!font) {
+    auto& settings = getLeviImguiConfig().fontSettings;
+    auto  size     = settings.size;
+    auto& fonts    = settings.fonts;
+    if (fonts.empty()) {
         ImFontConfig fontCfg;
-        fontCfg.SizePixels = 13.0f * scale;
+        fontCfg.SizePixels        = size * scale;
+        fontCfg.RasterizerDensity = scale;
         io.Fonts->AddFontDefault(&fontCfg);
+        return;
+    }
+    bool first = true;
+    for (auto& font : fonts) {
+        ImFontConfig config;
+        config.MergeMode         = true;
+        config.SizePixels        = size * scale;
+        config.RasterizerDensity = scale;
+        switch (font.range) {
+        case LeviImguiConfig::Font::GlyphRange::Greek:
+            config.GlyphRanges = io.Fonts->GetGlyphRangesGreek();
+            break;
+        case LeviImguiConfig::Font::GlyphRange::Korean:
+            config.GlyphRanges = io.Fonts->GetGlyphRangesKorean();
+            break;
+        case LeviImguiConfig::Font::GlyphRange::Japanese:
+            config.GlyphRanges = io.Fonts->GetGlyphRangesJapanese();
+            break;
+        case LeviImguiConfig::Font::GlyphRange::ChineseFull:
+            config.GlyphRanges = io.Fonts->GetGlyphRangesChineseFull();
+            break;
+        case LeviImguiConfig::Font::GlyphRange::ChineseSimplifiedCommon:
+            config.GlyphRanges = io.Fonts->GetGlyphRangesChineseSimplifiedCommon();
+            break;
+        case LeviImguiConfig::Font::GlyphRange::Cyrillic:
+            config.GlyphRanges = io.Fonts->GetGlyphRangesCyrillic();
+            break;
+        case LeviImguiConfig::Font::GlyphRange::Thai:
+            config.GlyphRanges = io.Fonts->GetGlyphRangesThai();
+            break;
+        case LeviImguiConfig::Font::GlyphRange::Vietnamese:
+            config.GlyphRanges = io.Fonts->GetGlyphRangesVietnamese();
+            break;
+        default:
+            config.GlyphRanges = io.Fonts->GetGlyphRangesDefault();
+        }
+        if (font.width) {
+            if (*font.width == LeviImguiConfig::Font::Width::Half) {
+                config.GlyphMaxAdvanceX = config.SizePixels * 0.5f;
+                config.GlyphMinAdvanceX = config.SizePixels * 0.5f;
+            } else if (*font.width == LeviImguiConfig::Font::Width::Full) {
+                config.GlyphMaxAdvanceX = config.SizePixels;
+                config.GlyphMinAdvanceX = config.SizePixels;
+            }
+        }
+        if (first) {
+            first            = false;
+            config.MergeMode = false;
+        }
+        if (font.name == "default") {
+            io.Fonts->AddFontDefault(&config);
+        } else {
+            std::optional<std::string> name;
+            if (font.name == "system") {
+                name = getSystemDefaultFontName();
+            } else {
+                name = font.name;
+            }
+            if (name) {
+                auto paths =
+                    getFilePathFromFontName(*name, (uint&)config.FontNo, font.weight, font.stretch, font.style);
+                if (!paths.empty())
+                    io.Fonts->AddFontFromFileTTF(
+                        (char const*)(paths.front().u8string().c_str()),
+                        config.SizePixels,
+                        &config,
+                        config.GlyphRanges
+                    );
+            }
+        }
     }
 }
 } // namespace ll::gui

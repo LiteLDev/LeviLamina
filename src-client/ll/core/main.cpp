@@ -22,10 +22,6 @@
 namespace ll {
 using namespace i18n_literals;
 
-namespace i18n {
-extern std::string globalDefaultLocaleName;
-}
-
 void leviLaminaMain() {
     error_utils::setSehTranslator();
 
@@ -36,7 +32,7 @@ void leviLaminaMain() {
     auto& config = getLeviConfig();
 
     if (config.language != "system") {
-        i18n::globalDefaultLocaleName = config.language;
+        ::ll::i18n::getDefaultLocaleName() = config.language;
     }
     printWelcomeMsg();
 

@@ -14,20 +14,19 @@
 
 #include "psapi.h"
 
-using namespace ll::string_utils;
 namespace ll::inline utils::sys_utils {
+using namespace ll::string_utils;
 
 std::string getSystemLocaleName() {
     wchar_t buf[LOCALE_NAME_MAX_LENGTH]{};
-    GetSystemDefaultLocaleName(buf, LOCALE_NAME_MAX_LENGTH);
+    GetUserDefaultLocaleName(buf, LOCALE_NAME_MAX_LENGTH);
     auto str = wstr2str(buf);
-    std::replace(str.begin(), str.end(), '-', '_');
     return str;
 }
 std::string const& getSystemName() {
     static std::string result = []() {
         std::string name{"Unknown"};
-        HMODULE     hMod = LoadLibraryEx(L"winbrand.dll", NULL, LOAD_LIBRARY_SEARCH_SYSTEM32);
+        HMODULE     hMod = LoadLibraryEx(L"winbrand.dll", nullptr, LOAD_LIBRARY_SEARCH_SYSTEM32);
         if (hMod) {
             PWSTR(WINAPI * pfnBrandingFormatString)(PCWSTR pstrFormat);
             (FARPROC&)pfnBrandingFormatString = GetProcAddress(hMod, "BrandingFormatString");

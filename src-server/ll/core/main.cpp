@@ -165,10 +165,6 @@ void unixSignalHandler(int signum) {
     }
 }
 
-namespace i18n {
-extern std::string globalDefaultLocaleName;
-}
-
 void leviLaminaMain() {
     error_utils::setSehTranslator();
 
@@ -178,7 +174,7 @@ void leviLaminaMain() {
 
     // Update default language
     if (config.language != "system") {
-        i18n::globalDefaultLocaleName = config.language;
+        i18n::getDefaultLocaleName() = config.language;
     }
 
     checkProtocolVersion();
