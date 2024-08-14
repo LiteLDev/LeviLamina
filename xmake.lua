@@ -30,9 +30,9 @@ if has_config("tests") then
 end
 
 if is_config("target_type", "server") then
-    add_requires("bedrockdata 1.21.3-01-server")
+    add_requires("bedrockdata 1.21.3.1-server")
 else
-    add_requires("bedrockdata 1.21.0-03-client")
+    add_requires("bedrockdata 1.21.0.3-client")
     add_requires("imgui v1.91.0-docking", {configs = {dx11 = true, dx12 = true}})
 end
 
