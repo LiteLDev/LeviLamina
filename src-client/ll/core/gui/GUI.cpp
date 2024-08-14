@@ -76,7 +76,7 @@ public:
                     const char* lineEnd =
                         (lineNum + 1 < lineOffsets.size()) ? (bufBegin + lineOffsets[lineNum + 1] - 1) : bufEnd;
                     if (filter.PassFilter(lineStart, lineEnd)) {
-                        ImGui::TextAnsiUnformatted(lineStart, lineEnd);
+                        textAnsiUnformatted(lineStart, lineEnd);
                     }
                 }
             } else {
@@ -88,7 +88,7 @@ public:
                         const char* lineStart = bufBegin + lineOffsets[lineNum];
                         const char* lineEnd =
                             (lineNum + 1 < lineOffsets.size()) ? (bufBegin + lineOffsets[lineNum + 1] - 1) : bufEnd;
-                        ImGui::TextAnsiUnformatted(lineStart, lineEnd);
+                        textAnsiUnformatted(lineStart, lineEnd);
                     }
                 }
                 clipper.End();

@@ -7,22 +7,11 @@
 #include "imgui_internal.h"
 #include "ll/api/utils/StringUtils.h"
 
-namespace jet {
-std::vector<std::string> split(const std::string& str, const std::string& delim = " ") {
-    std::vector<std::string> res;
-    std::size_t              current, previous = 0;
-    current = str.find(delim);
-    while (current != std::string::npos) {
-        res.push_back(str.substr(previous, current - previous));
-        previous = current + delim.length();
-        current  = str.find(delim, previous);
-    }
-    res.push_back(str.substr(previous, current - previous));
-    return res;
-}
-} // namespace jet
+namespace ll::gui {
 
-unsigned int colors256[] = {
+using namespace ImGui;
+
+static constexpr uint colors256[] = {
     0xff000000, 0xff000080, 0xff008000, 0xff008080, 0xff800000, 0xff800080, 0xff808000, 0xffc0c0c0, 0xff808080,
     0xff0000ff, 0xff00ff00, 0xff00ffff, 0xffff0000, 0xffff00ff, 0xffffff00, 0xffffffff, 0xff000000, 0xff5f0000,
     0xff870000, 0xffaf0000, 0xffd70000, 0xffff0000, 0xff005f00, 0xff5f5f00, 0xff875f00, 0xffaf5f00, 0xffd75f00,
@@ -54,12 +43,11 @@ unsigned int colors256[] = {
     0xffd0d0d0, 0xffdadada, 0xffe4e4e4, 0xffeeeeee
 };
 
-namespace ImGui {
 static const int kMaxChar = 10000;
 static ImU32     col_buf[kMaxChar];
 static bool      char_skip[kMaxChar];
 
-bool ParseColor(const char* s, ImU32* col, int* skipChars) {
+bool parseColor(const char* s, ImU32* col, int* skipChars) {
     if (s[0] != '\033' || s[1] != '[') {
         return false;
     }
@@ -81,11 +69,11 @@ bool ParseColor(const char* s, ImU32* col, int* skipChars) {
         seqEnd++;
     }
 
-    std::string              seq{&s[2], seqEnd};
-    std::string              colorStr;
-    char                     colorArgsType = 0;
-    std::vector<std::string> colorArgs;
-    for (const auto& el : jet::split(seq, ";")) {
+    std::string                   seq{&s[2], seqEnd};
+    std::string                   colorStr;
+    char                          colorArgsType = 0;
+    std::vector<std::string_view> colorArgs;
+    for (const auto& el : string_utils::splitByPattern(seq, ";")) {
         if (colorStr.empty()) {
             if (el.size() == 2 && el[0] == '3') { // 30-39
                 colorStr = el;
@@ -219,7 +207,7 @@ void ImFont_RenderAnsiText(
         const char* sLocal    = s;
         ImU32       temp_col  = col;
         while (sLocal < text_end) {
-            if (sLocal <= text_end - 4 && ParseColor(sLocal, &temp_col, &skipChars)) {
+            if (sLocal <= text_end - 4 && parseColor(sLocal, &temp_col, &skipChars)) {
                 sLocal += skipChars;
                 for (int i = 0; i < skipChars; i++) {
                     char_skip[index + i] = true;
@@ -480,7 +468,7 @@ void RenderAnsiTextWrapped(ImVec2 pos, const char* text, const char* text_end, f
     }
 }
 
-void TextAnsiUnformatted(const char* text, const char* text_end) {
+void textAnsiUnformatted(const char* text, const char* text_end) {
     ImGuiWindow* window = GetCurrentWindow();
     if (window->SkipItems) return;
 
@@ -571,33 +559,4 @@ void TextAnsiUnformatted(const char* text, const char* text_end) {
         RenderAnsiTextWrapped(bb.Min, text_begin, text_end, wrap_width);
     }
 }
-
-void TextAnsiV(const char* fmt, va_list args) {
-    ImGuiWindow* window = GetCurrentWindow();
-    if (window->SkipItems) return;
-
-    const char *text, *text_end;
-    ImFormatStringToTempBufferV(&text, &text_end, fmt, args);
-    TextAnsiUnformatted(text, text_end);
-}
-
-void TextAnsi(const char* fmt, ...) {
-    va_list args;
-    va_start(args, fmt);
-    TextAnsiV(fmt, args);
-    va_end(args);
-}
-
-void TextAnsiColoredV(const ImVec4& col, const char* fmt, va_list args) {
-    PushStyleColor(ImGuiCol_Text, col);
-    TextAnsiV(fmt, args);
-    PopStyleColor();
-}
-
-void TextAnsiColored(const ImVec4& col, const char* fmt, ...) {
-    va_list args;
-    va_start(args, fmt);
-    TextAnsiColoredV(col, fmt, args);
-    va_end(args);
-}
-} // namespace ImGui
+} // namespace ll::gui
