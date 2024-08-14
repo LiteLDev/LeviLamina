@@ -21,10 +21,7 @@ void registerVersionCommand() {
     auto& cmd = CommandRegistrar::getInstance()
                     .getOrCreateCommand("version", "Query serverversion information"_tr(), config.permission);
     cmd.overload().execute([&](CommandOrigin const&, CommandOutput& output) {
-        output.success("This server is running game version {0} with §bLeviLamina-{1}§r."_tr(
-            ll::getGameVersion(),
-            ll::getLoaderVersion()
-        ));
+        output.success("Game version {0} with §bLeviLamina-{1}§r."_tr(ll::getGameVersion(), ll::getLoaderVersion()));
     });
 }
 } // namespace ll::command
