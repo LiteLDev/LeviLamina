@@ -4,45 +4,51 @@
 #pragma warning(push)
 #pragma warning(disable : 4265)
 #pragma warning(disable : 5204)
+#include <Windows.Graphics.Display.h>
 #include <Windows.UI.Core.h>
 #include <wrl.h>
 #pragma warning(pop)
 
+#include <EventToken.h>
+#include <inspectable.h>
+
 #include "imgui.h"
 
 class ImGuiInputEventHandler {
+    using ICoreWindow                 = ABI::Windows::UI::Core::ICoreWindow;
+    using IDisplayInformation         = ABI::Windows::Graphics::Display::IDisplayInformation;
+    using IKeyEventArgs               = ABI::Windows::UI::Core::IKeyEventArgs;
+    using IPointerEventArgs           = ABI::Windows::UI::Core::IPointerEventArgs;
+    using ICharacterReceivedEventArgs = ABI::Windows::UI::Core::ICharacterReceivedEventArgs;
+
 public:
-    ImGuiInputEventHandler(ABI::Windows::UI::Core::ICoreWindow* window);
+    ImGuiInputEventHandler(ICoreWindow* window);
     ~ImGuiInputEventHandler();
 
 private:
-    Microsoft::WRL::ComPtr<ABI::Windows::UI::Core::ICoreWindow>                  window;
-    Microsoft::WRL::ComPtr<ABI::Windows::Graphics::Display::IDisplayInformation> displayInfo;
-    EventRegistrationToken pointerMovedToken, pointerExitedToken, pointerPressedToken, pointerReleasedToken,
-        pointerWheelChangedToken;
-    EventRegistrationToken keyDownToken, keyUpToken;
-    EventRegistrationToken characterReceivedToken;
-    EventRegistrationToken dpiChangedToken;
-    float                  dpi;
+    Microsoft::WRL::ComPtr<ICoreWindow>         window;
+    Microsoft::WRL::ComPtr<IDisplayInformation> displayInfo;
+    EventRegistrationToken                      pointerMovedToken;
+    EventRegistrationToken                      pointerExitedToken;
+    EventRegistrationToken                      pointerPressedToken;
+    EventRegistrationToken                      pointerReleasedToken;
+    EventRegistrationToken                      pointerWheelChangedToken;
+    EventRegistrationToken                      keyDownToken;
+    EventRegistrationToken                      keyUpToken;
+    EventRegistrationToken                      characterReceivedToken;
+    EventRegistrationToken                      dpiChangedToken;
+    float                                       dpi;
 
-    void updateMouseButtonState(ABI::Windows::UI::Core::IPointerEventArgs* args);
-    HRESULT
-    onPointerMoved(ABI::Windows::UI::Core::ICoreWindow* sender, ABI::Windows::UI::Core::IPointerEventArgs* args);
-    HRESULT
-    onPointerExited(ABI::Windows::UI::Core::ICoreWindow* sender, ABI::Windows::UI::Core::IPointerEventArgs* args);
-    HRESULT
-    onPointerPressed(ABI::Windows::UI::Core::ICoreWindow* sender, ABI::Windows::UI::Core::IPointerEventArgs* args);
-    HRESULT
-    onPointerReleased(ABI::Windows::UI::Core::ICoreWindow* sender, ABI::Windows::UI::Core::IPointerEventArgs* args);
-    HRESULT
-    onPointerWheelChanged(ABI::Windows::UI::Core::ICoreWindow* sender, ABI::Windows::UI::Core::IPointerEventArgs* args);
-    HRESULT onKeyDown(ABI::Windows::UI::Core::ICoreWindow* sender, ABI::Windows::UI::Core::IKeyEventArgs* args);
-    HRESULT onKeyUp(ABI::Windows::UI::Core::ICoreWindow* sender, ABI::Windows::UI::Core::IKeyEventArgs* args);
-    HRESULT onCharacterReceived(
-        ABI::Windows::UI::Core::ICoreWindow*                 sender,
-        ABI::Windows::UI::Core::ICharacterReceivedEventArgs* args
-    );
-    HRESULT onDpiChanged(ABI::Windows::Graphics::Display::IDisplayInformation* sender, IInspectable* args);
+    void    updateMouseButtonState(IPointerEventArgs* args);
+    HRESULT onPointerMoved(ICoreWindow* sender, IPointerEventArgs* args);
+    HRESULT onPointerExited(ICoreWindow* sender, IPointerEventArgs* args);
+    HRESULT onPointerPressed(ICoreWindow* sender, IPointerEventArgs* args);
+    HRESULT onPointerReleased(ICoreWindow* sender, IPointerEventArgs* args);
+    HRESULT onPointerWheelChanged(ICoreWindow* sender, IPointerEventArgs* args);
+    HRESULT onKeyDown(ICoreWindow* sender, IKeyEventArgs* args);
+    HRESULT onKeyUp(ICoreWindow* sender, IKeyEventArgs* args);
+    HRESULT onCharacterReceived(ICoreWindow* sender, ICharacterReceivedEventArgs* args);
+    HRESULT onDpiChanged(IDisplayInformation* sender, IInspectable* args);
 };
 
 struct ImGui_ImplWinRT_Data {

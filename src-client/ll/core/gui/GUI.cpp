@@ -1,14 +1,14 @@
 ﻿#include "GUI.h"
 
-#include <memory>
+#include <cstring>
 #include <string>
 #include <vector>
 
 #include "imgui.h"
 #include "imgui_internal.h"
 
+#include "ImGuiAnsiColor.h"
 #include "ImGuiHooks.h"
-
 #include "ll/core/io/LogPipe.h"
 
 namespace ll::gui {
@@ -43,7 +43,7 @@ public:
     }
 
     void draw() {
-        if (!ImGui::Begin(title.c_str(), &open)) {
+        if (!open || !ImGui::Begin(title.c_str(), &open)) {
             ImGui::End();
             return;
         }
@@ -76,7 +76,7 @@ public:
                     const char* lineEnd =
                         (lineNum + 1 < lineOffsets.size()) ? (bufBegin + lineOffsets[lineNum + 1] - 1) : bufEnd;
                     if (filter.PassFilter(lineStart, lineEnd)) {
-                        ImGui::TextUnformatted(lineStart, lineEnd);
+                        ImGui::TextAnsiUnformatted(lineStart, lineEnd);
                     }
                 }
             } else {
@@ -88,7 +88,7 @@ public:
                         const char* lineStart = bufBegin + lineOffsets[lineNum];
                         const char* lineEnd =
                             (lineNum + 1 < lineOffsets.size()) ? (bufBegin + lineOffsets[lineNum + 1] - 1) : bufEnd;
-                        ImGui::TextUnformatted(lineStart, lineEnd);
+                        ImGui::TextAnsiUnformatted(lineStart, lineEnd);
                     }
                 }
                 clipper.End();
@@ -147,9 +147,11 @@ void updateImGui() {
         }
     }
 
-    ImGui::SetNextWindowPos(ImVec2(10, 200), ImGuiCond_FirstUseEver);
-    ImGui::SetNextWindowSize(ImVec2(860, 480), ImGuiCond_FirstUseEver);
-    logWindow.draw();
+    if (logWindow.isOpen()) {
+        ImGui::SetNextWindowPos(ImVec2(10, 200), ImGuiCond_FirstUseEver);
+        ImGui::SetNextWindowSize(ImVec2(860, 480), ImGuiCond_FirstUseEver);
+        logWindow.draw();
+    }
 
     if (showDemo) {
         ImGui::ShowDemoWindow(&showDemo);
