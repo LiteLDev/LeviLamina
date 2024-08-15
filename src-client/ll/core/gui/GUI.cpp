@@ -133,6 +133,13 @@ void initializeImGui() {
     ImGuiIO& io    = ImGui::GetIO();
     io.IniFilename = nullptr;
 
+    io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
+    
+    // io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
+    // io.BackendFlags |= ImGuiBackendFlags_PlatformHasViewports;
+    // io.BackendFlags |= ImGuiBackendFlags_HasMouseHoveredViewport;
+    // io.BackendFlags |= ImGuiBackendFlags_RendererHasViewports;
+
     logWindow.setOpen(true);
 }
 
