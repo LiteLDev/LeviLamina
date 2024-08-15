@@ -29,7 +29,7 @@ bool tryModifyBedrockLogInfo(uint32_t, std::string& line) {
     ll::severStartEndTime = std::chrono::steady_clock::now();
 
     line = fmt::format(
-        R"(Server started in ({:.1f}line)! For help, type "help" or "?")",
+        R"(Server started in ({:.1f}s)! For help, type "help" or "?")",
         std::chrono::duration_cast<std::chrono::duration<double>>(ll::severStartEndTime - ll::severStartBeginTime)
             .count()
     );
