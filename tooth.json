@@ -10,11 +10,11 @@
     },
     "asset_url": "https://github.com/LiteLDev/LeviLamina/releases/download/v0.13.5/levilamina-release-windows-x64.zip",
     "dependencies": {
-        "github.com/LiteLDev/bds": ">=1.21.2 <1.21.10",
+        "github.com/LiteLDev/bds": ">=1.21.20 <1.21.30",
         "github.com/LiteLDev/CrashLogger": "1.1.x",
         "github.com/LiteLDev/levilamina-loc": "1.5.x",
-        "github.com/LiteLDev/PeEditor": "3.7.x",
-        "github.com/LiteLDev/PreLoader": "1.9.x"
+        "github.com/LiteLDev/PeEditor": "3.8.x",
+        "github.com/LiteLDev/PreLoader": "1.10.x"
     },
     "files": {
         "place": [
