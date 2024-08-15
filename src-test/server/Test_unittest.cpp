@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
 
-#include "ll/test/Test.h"
-#include "ll/test/TestManager.h"
+#include "Test.h"
+#include "TestManager.h"
 
 namespace {
 
