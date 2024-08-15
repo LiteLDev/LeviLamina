@@ -55,9 +55,21 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 ) {
     if (mBindCallbacks.find(versionHash) != mBindCallbacks.end()) {
         mBindCallbacks.erase(versionHash);
+        auto gameVer   = getGameVersion();
+        auto loaderVer = getLoaderVersion();
         origin(
             version,
-            []() -> auto { return fmt::format("v{}/LeviLamina-{}", ll::getGameVersion(), ll::getLoaderVersion()); },
+            [=]() -> auto {
+                return fmt::format(
+                    "v{}.{}.{}/LL-{}.{}.{}",
+                    gameVer.major,
+                    gameVer.minor,
+                    gameVer.patch,
+                    loaderVer.major,
+                    loaderVer.minor,
+                    loaderVer.patch
+                );
+            },
             []() -> auto { return true; }
         );
     }
