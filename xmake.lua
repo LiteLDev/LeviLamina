@@ -101,8 +101,8 @@ target("LeviLamina")
         "_HAS_CXX23=1" -- work around to enable c++23
     )
 
-    if is_os("windows") then
-        add_syslinks("Version", "DbgHelp")
+    if is_plat("windows") then
+        add_syslinks("Version", "DbgHelp", "dwrite")
         add_defines(
             "_AMD64_",
             "NOMINMAX",
@@ -147,8 +147,8 @@ target("LeviLamina")
             "src-server/**.cpp"
         )
     else
-        if is_os("windows") then
-            add_syslinks("dxgi", "runtimeobject", "gdi32", "dwrite")
+        if is_plat("windows") then
+            add_syslinks("dxgi", "runtimeobject", "gdi32")
         end
         add_packages("imgui")
         add_headerfiles(
