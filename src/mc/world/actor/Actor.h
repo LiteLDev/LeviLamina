@@ -56,7 +56,7 @@ public:
     };
 
     // vptr 8
-    uchar filler[1096 - 8]; // IDA BDS-WIN 1.20.61.01 ItemActor::ItemActor line=29
+    uchar filler[1032 - 8]; // IDA BDS-WIN 1.21.20 ItemActor::ItemActor line=23
 
 public:
     LLNDAPI class EntityContext&       getEntityContext();
