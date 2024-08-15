@@ -175,25 +175,55 @@ target("LeviLamina")
             "src/ll/core/plugin-abi/**.cpp"
             -- "src/ll/core/tweak/ModifyMemoryAllocator.cpp"
         )
+        add_cxflags("/wd4273")
+        add_shflags("/IGNORE:4217")
     end
 
     if has_config("tests") then
         add_defines("LL_DEBUG")
         add_packages("gtest")
-        add_includedirs("src-test")
-        add_files("src-test/ll/test/**.cpp")
-
+            add_includedirs("src-test/common/")
+            add_files("src-test/common/**.cpp")
+        if is_config("target_type", "server") then
+            add_includedirs("src-test/server/")
+            add_files("src-test/server/**.cpp")
+        else
+            add_includedirs("src-test/client/")
+            add_files("src-test/client/**.cpp")
+        end
         before_build(function (target)
             headers = ""
             for _,x in ipairs(os.files("src/**.h")) do
                 headers = headers.."#include \""..path.relative(x, "src/").."\"\n"
             end
-            file = io.open("src-test/ll/test/include_all.cpp", "w")
+            file = io.open("src-test/common/include_all.cpp", "w")
             file:write(headers)
             file:close()
+        if is_config("target_type", "server") then
+            headers = ""
+            for _,x in ipairs(os.files("src-server/**.h")) do
+                headers = headers.."#include \""..path.relative(x, "src-server/").."\"\n"
+            end
+            file = io.open("src-test/server/include_all.cpp", "w")
+            file:write(headers)
+            file:close()
+        else
+            headers = ""
+            for _,x in ipairs(os.files("src-client/**.h")) do
+                headers = headers.."#include \""..path.relative(x, "src-client/").."\"\n"
+            end
+            file = io.open("src-test/client/include_all.cpp", "w")
+            file:write(headers)
+            file:close()
+        end
         end)
         after_build(function (target)
-            io.writefile("src-test/ll/test/include_all.cpp", "// auto gen when build test\n")
+            io.writefile("src-test/common/include_all.cpp", "// auto gen when build test\n")
+        if is_config("target_type", "server") then
+            io.writefile("src-test/server/include_all.cpp", "// auto gen when build test\n")
+        else
+            io.writefile("src-test/client/include_all.cpp", "// auto gen when build test\n")
+        end
         end)
     end
 

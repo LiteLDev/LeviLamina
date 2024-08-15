@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/ChunkPos.h"
 
 // auto generated inclusion list
 #include "mc/enums/Mirror.h"
