@@ -77,6 +77,7 @@ public:
     std::optional<std::ofstream> ofs          = std::nullopt;
     int                          consoleLevel = -1;
     int                          fileLevel    = -1;
+    int                          filler;
 
     OutputStream debug;
     OutputStream info;
