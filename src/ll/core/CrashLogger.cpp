@@ -14,6 +14,8 @@
 #include "ll/core/LeviLamina.h"
 #include "ll/core/io/Output.h"
 
+#include "pl/Config.h"
+
 #include "windows.h"
 
 #include "DbgHelp.h"
@@ -24,10 +26,28 @@ using namespace utils;
 using namespace string_utils;
 Logger crashLogger("CrashLogger");
 
-void CrashLogger::initCrashLogger() {
+class CrashLoggerNew {
+    void* previous{};
 
+public:
+    CrashLoggerNew();
+    ~CrashLoggerNew();
+};
+
+static std::unique_ptr<CrashLoggerNew> cln;
+
+void CrashLogger::init() {
+    auto& config = getLeviConfig();
+
+    if (!config.modules.crashLogger.enabled) {
+        return;
+    }
     if (IsDebuggerPresent()) {
         crashLogger.warn("Debugger detected, CrashLogger will not be enabled"_tr());
+        return;
+    }
+    if (config.modules.crashLogger.useBuiltin) {
+        cln = std::make_unique<CrashLoggerNew>();
         return;
     }
 
@@ -43,7 +63,7 @@ void CrashLogger::initCrashLogger() {
 
     std::wstring cmd = string_utils::str2wstr(fmt::format(
         "{} {} \"{}\"",
-        getSelfModIns()->getModDir() / sv2u8sv(getLeviConfig().targeted.crashLogger.externalpath),
+        getSelfModIns()->getModDir() / sv2u8sv(config.modules.crashLogger.externalpath.value_or("CrashLogger.exe")),
         GetCurrentProcessId(),
         ll::getGameVersion().to_string()
     ));
@@ -68,7 +88,7 @@ static struct CrashInfo {
     std::string                                       date;
     Logger                                            logger{"CrashLogger"};
     std::filesystem::path                             path{};
-    decltype(ll::getLeviConfig().targeted.crashLogger) settings{};
+    decltype(ll::getLeviConfig().modules.crashLogger) settings{};
 } crashInfo;
 
 static void dumpSystemInfo() {
@@ -180,8 +200,7 @@ static BOOL CALLBACK dumpModules(
 
 static bool genMiniDumpFile(PEXCEPTION_POINTERS e) {
 
-    auto dumpFilePath =
-        crashInfo.path / string_utils::str2u8str(crashInfo.settings.dumpPrefix + crashInfo.date + ".dmp");
+    auto dumpFilePath = crashInfo.path / string_utils::str2u8str("minidump_" + crashInfo.date + ".dmp");
 
     auto hDumpFile =
         CreateFileW(dumpFilePath.c_str(), GENERIC_WRITE, 0, nullptr, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, nullptr);
@@ -229,11 +248,9 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
             {},
             {},
         };
-        crashInfo.settings = ll::getLeviConfig().targeted.crashLogger;
-        crashInfo.path     = file_utils::u8path(crashInfo.settings.logPath);
-        crashInfo.logger.setFile(
-            u8str2str((crashInfo.path / (crashInfo.settings.logPrefix + crashInfo.date + ".log")).u8string())
-        );
+        crashInfo.settings = ll::getLeviConfig().modules.crashLogger;
+        crashInfo.path     = file_utils::u8path(pl::pl_log_path) / u8"crash";
+        crashInfo.logger.setFile(u8str2str((crashInfo.path / ("trace_" + crashInfo.date + ".log")).u8string()));
         crashInfo.logger.ofs.value() << std::unitbuf;
 
         crashInfo.logger.info.fileFormat = {"{0} [{1}] {3}", "{:%F %T}.{:0>3}", "{}", "", "{}"};
@@ -308,14 +325,10 @@ static LONG uncatchableExceptionHandler(_In_ struct _EXCEPTION_POINTERS* e) {
 }
 
 CrashLoggerNew::CrashLoggerNew() {
-    if (IsDebuggerPresent()) {
-        crashLogger.warn("Debugger detected, CrashLogger will not be enabled"_tr());
-    } else {
-        AddVectoredExceptionHandler(0, uncatchableExceptionHandler);
+    AddVectoredExceptionHandler(0, uncatchableExceptionHandler);
 
-        previous = SetUnhandledExceptionFilter(unhandledExceptionFilter);
-        crashLogger.info("CrashLogger enabled successfully"_tr());
-    }
+    previous = SetUnhandledExceptionFilter(unhandledExceptionFilter);
+    crashLogger.info("CrashLogger enabled successfully"_tr());
 }
 
 CrashLoggerNew::~CrashLoggerNew() { SetUnhandledExceptionFilter((LPTOP_LEVEL_EXCEPTION_FILTER)previous); }

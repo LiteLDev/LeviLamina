@@ -16,7 +16,7 @@ namespace ll {
 
 struct LeviConfig {
 
-    int version = 29;
+    int version = 30;
 
     std::string language = "system";
     struct {
@@ -33,6 +33,11 @@ struct LeviConfig {
             CmdSetting memstatsCommand{true, CommandPermissionLevel::Host};
             CmdSetting modManageCommand{true, CommandPermissionLevel::Admin};
         } command{};
+        struct {
+            bool                       enabled    = true;
+            bool                       useBuiltin = true;
+            std::optional<std::string> externalpath;
+        } crashLogger{};
 
         bool disableAutoCompactionLog = true;
 

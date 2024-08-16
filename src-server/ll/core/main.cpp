@@ -185,13 +185,7 @@ void leviLaminaMain() {
     if (config.targeted.playerInfo.alwaysLaunch) {
         service::PlayerInfo::getInstance();
     }
-    if (config.targeted.crashLogger.enabled) {
-        if (config.targeted.crashLogger.useBuiltin) {
-            static CrashLoggerNew crashLogger{};
-        } else {
-            CrashLogger::initCrashLogger();
-        }
-    }
+    CrashLogger::init();
 
     // Register Exit Event Handler.
     SetConsoleCtrlHandler(ConsoleExitHandler, true);

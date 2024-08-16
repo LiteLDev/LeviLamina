@@ -9,6 +9,7 @@
 #include "ll/api/utils/ErrorUtils.h"
 
 #include "ll/core/Config.h"
+#include "ll/core/CrashLogger.h"
 #include "ll/core/command/BuiltinCommands.h"
 #include "ll/core/gui/ImGuiHooks.h"
 #include "ll/core/mod/ModRegistrar.h"
@@ -34,6 +35,8 @@ void leviLaminaMain() {
     if (config.language != "system") {
         ::ll::i18n::getDefaultLocaleName() = config.language;
     }
+    CrashLogger::init();
+
     printWelcomeMsg();
 
     command::registerCommands();
