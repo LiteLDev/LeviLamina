@@ -73,10 +73,6 @@ public:
 
 class Logger {
 public:
-    using player_output_fn = std::function<void(std::string_view)>;
-
-
-public:
     std::string                  title;
     std::optional<std::ofstream> ofs          = std::nullopt;
     int                          consoleLevel = -1;
@@ -99,8 +95,6 @@ public:
     LLAPI bool setFile(std::filesystem::path const& logFile, bool appendMode = true);
 
     LLAPI static bool setDefaultFile(std::filesystem::path const& logFile, bool appendMode);
-
-    LLAPI static void setDefaultPlayerOutputFunc(player_output_fn const& func);
 
     LLAPI std::ofstream& getFile();
 

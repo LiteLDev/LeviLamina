@@ -30,7 +30,6 @@ using namespace ll::string_utils;
 
 namespace ll {
 static std::ofstream            defaultFile(file_utils::u8path(pl::pl_log_path) / u8"latest.log", std::ios::out);
-static Logger::player_output_fn defaultPlayerOutputCallback;
 
 static bool checkLogLevel(int level, int outLevel) {
     if (level >= outLevel) return true;
@@ -185,8 +184,6 @@ bool Logger::setDefaultFile(std::filesystem::path const& logFile, bool appendMod
     defaultFile.open(logFile, appendMode ? std::ios::app : std::ios::out);
     return defaultFile.is_open();
 }
-
-void Logger::setDefaultPlayerOutputFunc(player_output_fn const& func) { defaultPlayerOutputCallback = func; }
 
 std::lock_guard<std::recursive_mutex> Logger::lock() {
     static std::recursive_mutex mutex;
