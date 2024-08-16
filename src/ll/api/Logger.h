@@ -77,7 +77,6 @@ public:
     std::optional<std::ofstream> ofs          = std::nullopt;
     int                          consoleLevel = -1;
     int                          fileLevel    = -1;
-    int                          playerLevel  = -1;
 
     OutputStream debug;
     OutputStream info;
