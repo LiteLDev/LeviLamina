@@ -44,23 +44,18 @@ private:
     LLAPI void print(std::string_view) const noexcept;
 
 public:
-    using player_output_fn = std::function<void(std::string_view)>;
-
     Logger*                        logger;
     std::string                    levelPrefix;
     int                            level;
     std::array<fmt::text_style, 4> style;
     std::array<std::string, 5>     consoleFormat;
     std::array<std::string, 5>     fileFormat;
-    std::array<std::string, 5>     playerFormat;
-    player_output_fn               playerOutputCallback;
 
     LLAPI explicit OutputStream(
         Logger&                               logger,
         std::string                           levelPrefix,
         int                                   level,
         std::array<fmt::text_style, 4> const& style         = {{}},
-        std::array<std::string, 5> const&     playerFormat  = {"<{2}|{1}> [{0}] {3}", "{:%T}", "{}", "{}", "{}"},
         std::array<std::string, 5> const&     consoleFormat = {"{0} {1} {2} {3}", "{:%T}.{:0>3}", "{}", "[{}]", "{}"},
         std::array<std::string, 5> const&     fileFormat = {"[{0} {1}][{2}] {3}", "{:%F %T}.{:0>3}", "{}", "{}", "{}"}
     );
@@ -74,8 +69,6 @@ public:
     void operator()(S const& msg) const {
         print(msg);
     }
-
-    void setPlayerOutputFunc(player_output_fn const& func) { playerOutputCallback = func; }
 };
 
 class Logger {
@@ -104,14 +97,6 @@ public:
 
     LLAPI void resetFile();
     LLAPI bool setFile(std::filesystem::path const& logFile, bool appendMode = true);
-
-    void setPlayerOutputFunc(player_output_fn const& func) {
-        debug.setPlayerOutputFunc(func);
-        info.setPlayerOutputFunc(func);
-        warn.setPlayerOutputFunc(func);
-        error.setPlayerOutputFunc(func);
-        fatal.setPlayerOutputFunc(func);
-    }
 
     LLAPI static bool setDefaultFile(std::filesystem::path const& logFile, bool appendMode);
 

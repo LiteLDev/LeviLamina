@@ -64,21 +64,7 @@ void OutputStream::print(std::string_view s) const noexcept {
                 fmt::format(fmt::runtime(fileFormat[2]), levelPrefix),
                 fmt::format(fmt::runtime(fileFormat[3]), logger->title),
                 fmt::format(fmt::runtime(fileFormat[4]), s)
-            )) << std::endl;
-        }
-        if ((playerOutputCallback || defaultPlayerOutputCallback) && checkLogLevel(logger->playerLevel, level)) {
-            std::string str = replaceAnsiToMcCode(fmt::format(
-                fmt::runtime(playerFormat[0]),
-                applyTextStyle(style[0], fmt::format(fmt::runtime(playerFormat[1]), time, ms)),
-                applyTextStyle(style[1], fmt::format(fmt::runtime(playerFormat[2]), levelPrefix)),
-                applyTextStyle(style[2], fmt::format(fmt::runtime(playerFormat[3]), logger->title)),
-                applyTextStyle(style[3], fmt::format(fmt::runtime(playerFormat[4]), s))
             ));
-            if (playerOutputCallback) {
-                playerOutputCallback(str);
-            } else {
-                defaultPlayerOutputCallback(str);
-            }
         }
     } catch (...) {
         try {
@@ -99,7 +85,6 @@ OutputStream::OutputStream(
     std::string                           levelPrefix,
     int                                   level,
     std::array<fmt::text_style, 4> const& style,
-    std::array<std::string, 5> const&     playerFormat,
     std::array<std::string, 5> const&     consoleFormat,
     std::array<std::string, 5> const&     fileFormat
 )
@@ -108,9 +93,7 @@ OutputStream::OutputStream(
   level(level),
   style(style),
   consoleFormat(consoleFormat),
-  fileFormat(fileFormat),
-  playerFormat(playerFormat),
-  playerOutputCallback(nullptr) {}
+  fileFormat(fileFormat) {}
 
 Logger::Logger(std::string_view title)
 : title(title),
