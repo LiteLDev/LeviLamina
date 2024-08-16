@@ -95,11 +95,11 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     uint64_t max = stack.getItem()->getMaxDamage();
     if (max != 0) {
         uint64_t current = max - stack.getDamageValue();
-        hovertext.append(fmt::format("/n§7耐久: {} / {}§r", current, max));
+        hovertext.append(fmt::format("\n§7耐久: {} / {}§r", current, max));
     }
 
     if (stack.mChargedItem && stack.mItem && stack.getTypeName() == "minecraft:crossbow") {
-        hovertext.append(fmt::format("/n§7弹药: {}§r", stack.mChargedItem->toString()));
+        hovertext.append(fmt::format("\n§7弹药: {}§r", stack.mChargedItem->toString()));
     }
 
     auto foodComp = (stack.mItem->getFood());
@@ -108,8 +108,8 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
         auto hunger             = ll::memory::dAccess<int>(foodComp, 16);
         auto saturationModifier = ll::memory::dAccess<float>(foodComp, 20);
         auto saturation         = saturationModifier * 2.0f * static_cast<float>(hunger);
-        hovertext.append(fmt::format("/n§7饥饿值: {}§r", hunger));
-        hovertext.append(fmt::format("/n§7饱和度: {:.2f}§r", saturation));
+        hovertext.append(fmt::format("\n§7饥饿值: {}§r", hunger));
+        hovertext.append(fmt::format("\n§7饱和度: {:.2f}§r", saturation));
     }
 }
 } // namespace ll::test_jsonui
