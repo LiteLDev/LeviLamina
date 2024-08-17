@@ -5,9 +5,6 @@
 
 #include "Windows.h"
 
-#include "fcntl.h"
-#include "io.h"
-
 namespace ll::io {
 
 static void createWinPipe(HANDLE& hRead, HANDLE& hWrite, size_t size, bool nowait) {

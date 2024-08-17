@@ -27,7 +27,7 @@ namespace ll {
 using namespace i18n_literals;
 
 void leviLaminaMain() {
-    error_utils::setSehTranslator();
+    error_utils::initExceptionTranslator();
 
     gui::init();
 

@@ -47,11 +47,11 @@ public:
 
     [[nodiscard]] constexpr CompoundTagVariant(CompoundTagVariant&&) = default;
 
-    LL_CLANG_CEXPR CompoundTagVariant& operator=(CompoundTagVariant&&) = default;
+    LL_MAY_CONSTEXPR CompoundTagVariant& operator=(CompoundTagVariant&&) = default;
 
     [[nodiscard]] constexpr CompoundTagVariant(CompoundTagVariant const&) = default;
 
-    LL_CLANG_CEXPR CompoundTagVariant& operator=(CompoundTagVariant const&) = default;
+    LL_MAY_CONSTEXPR CompoundTagVariant& operator=(CompoundTagVariant const&) = default;
 
     template <class T>
         requires(requires(T o) { mTagStorage = std::move(o); })
@@ -174,7 +174,7 @@ public:
         case Tag::End:
             return 0;
         default:
-            _STL_UNREACHABLE;
+            ll::internal::unreachable();
         }
     }
 
@@ -401,7 +401,7 @@ template <std::derived_from<Tag> T>
     case Tag::End:
         return 0;
     default:
-        _STL_UNREACHABLE;
+        ll::internal::unreachable();
     }
 }
 [[nodiscard]] inline UniqueTagPtr::operator std::string const&() const { return get<StringTag>(); }

@@ -19,7 +19,7 @@
 #include "mc/deps/core/mce/Color.h"
 #include "mc/deps/core/utility/Util.h"
 
-#include "stringapiset.h"
+#include "Windows.h"
 
 namespace ll::inline utils::string_utils {
 

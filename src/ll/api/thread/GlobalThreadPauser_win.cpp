@@ -10,7 +10,7 @@ namespace ll::thread {
 GlobalThreadPauser::GlobalThreadPauser() {
     HANDLE h = CreateToolhelp32Snapshot(TH32CS_SNAPTHREAD, 0);
     if (h == INVALID_HANDLE_VALUE) {
-        throw error_utils::getWinLastError();
+        throw error_utils::getLastSystemError();
     }
     static auto processId = GetCurrentProcessId();
     auto        threadId  = GetCurrentThreadId();

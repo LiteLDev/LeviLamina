@@ -32,29 +32,7 @@
 #include "nlohmann/json.hpp"
 #include "nlohmann/json_fwd.hpp"
 
-#include <chrono>
-#include <condition_variable>
-#include <exception>
-#include <filesystem>
-#include <ios>
-#include <memory>
-#include <minwindef.h>
-#include <mutex>
-#include <random>
-#include <sstream>
-#include <string>
-#include <string_view>
-#include <sysinfoapi.h>
-#include <unordered_map>
-#include <variant>
-
 namespace ll {
-
-static DWORD getCpuCoreCount() {
-    SYSTEM_INFO systemInfo;
-    GetSystemInfo(&systemInfo);
-    return systemInfo.dwNumberOfProcessors;
-}
 
 static nlohmann::json addSimplePie(std::string_view key, std::variant<std::string, int> value) {
     nlohmann::json json;
@@ -179,7 +157,7 @@ struct Statistics::Impl {
         json["osName"]    = ll::sys_utils::isWine() ? "Linux(wine)" : "Windows";
         json["osArch"]    = "amd64";
         json["osVersion"] = "";
-        json["coreCount"] = getCpuCoreCount();
+        json["coreCount"] = std::thread::hardware_concurrency();
 
         scheduler.add<ll::schedule::DelayTask>(1.0min * ll::random_utils::rand(3.0, 6.0), [this]() {
             submitData();

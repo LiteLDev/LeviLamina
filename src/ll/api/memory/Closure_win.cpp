@@ -10,12 +10,26 @@
 #include "ll/api/memory/Memory.h"
 #include "ll/core/LeviLamina.h"
 
-#include <memoryapi.h>
-#include <winnt.h>
+#include "Windows.h"
 
 namespace ll::memory::detail {
+
+#pragma pack(push, 1)
+//    ...    [data]
+// push rax
+// mov  rax, [addr]
+// jmp  rax
+struct NativeClosurePrologue {
+    uintptr_t data;
+    uint8_t   push_rax;
+    uint8_t   mov_rax[2];
+    uintptr_t addr;
+    uint8_t   jmp_rax[2];
+};
+#pragma pack(pop)
+
 size_t getVolatileOffset(void* impl) {
-    impl = unwrapFuncPtrJmp(impl);
+    impl = unwrapFuncAddress(impl);
     for (size_t offset = 0; offset < 4096; offset++) {
         if (*(uintptr_t*)((uintptr_t)impl + offset) == (uintptr_t)closureMagicNumber) {
             return offset;
@@ -25,8 +39,9 @@ size_t getVolatileOffset(void* impl) {
     return 0;
 };
 using T = NativeClosure<void*()>;
-void initNativeClosure(void* t, void* impl, size_t offset, size_t size) {
-    impl      = unwrapFuncPtrJmp(impl);
+void initNativeClosure(void* t, void* impl, size_t offset) {
+    auto size = offset + sizeof(NativeClosurePrologue);
+    impl      = unwrapFuncAddress(impl);
     auto self = (T*)t;
 
     self->closure = VirtualAlloc(nullptr, size, MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);
@@ -44,7 +59,7 @@ void initNativeClosure(void* t, void* impl, size_t offset, size_t size) {
     ulong _;
     VirtualProtect(self->closure, size, PAGE_EXECUTE_READ, &_);
 }
-void releaseNativeClosure(void* t, size_t) {
+void releaseNativeClosure(void* t) {
     auto self = (T*)t;
     if (self->closure != nullptr) {
         VirtualFree(self->closure, 0, MEM_RELEASE);

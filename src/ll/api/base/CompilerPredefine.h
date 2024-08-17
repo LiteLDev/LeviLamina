@@ -2,6 +2,25 @@
 
 #include "ll/api/base/StdInt.h"
 
+#ifdef _MSC_VER
+
+#include "intrin.h"
+
+#ifndef LL_SHARED_EXPORT
+#define LL_SHARED_EXPORT __declspec(dllexport)
+#endif
+#ifndef LL_SHARED_IMPORT
+#define LL_SHARED_IMPORT __declspec(dllimport)
+#endif
+
+#ifndef LL_EBO
+#define LL_EBO __declspec(empty_bases)
+#endif
+
+#ifndef LL_CONSTEXPR23
+#define LL_CONSTEXPR23 _CONSTEXPR23
+#endif
+
 // MSVC has customized some functions and classes inside the compiler, but they are not included in IntelliSense. This
 // header file is only used for IntelliSense.
 #if defined(__INTELLISENSE__) || defined(__clang__) || defined(__clangd__)
@@ -122,8 +141,8 @@ extern "C" void* __cdecl __RTCastToVoid(void*);
 #endif
 
 // No one guarantees that the compiler's internal definitions are correct
-namespace RealInternal {
-#if defined(_WIN64) && !(defined(__INTELLISENSE__) || defined(__clangd__))
+namespace ll::internal {
+#if !(defined(__INTELLISENSE__) || defined(__clangd__))
 #pragma pack(push, 4)
 struct CatchableType {
     uint properties;
@@ -143,4 +162,17 @@ struct ThrowInfo {
 using CatchableType = ::_CatchableType;
 using ThrowInfo     = ::_ThrowInfo;
 #endif
-} // namespace RealInternal
+
+constexpr inline auto virtualFunctionPattern = "::`vcall'{";
+
+extern "C" struct _IMAGE_DOS_HEADER __ImageBase; // NOLINT(bugprone-reserved-identifier)
+
+[[nodiscard]] __forceinline void* getCurrentModuleHandle() { return &__ImageBase; }
+
+[[nodiscard]] __forceinline void* returnAddress() { return _ReturnAddress(); }
+
+[[noreturn]] __forceinline void unreachable() { _STL_UNREACHABLE; }
+
+} // namespace ll::internal
+
+#endif

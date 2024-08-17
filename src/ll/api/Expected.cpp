@@ -30,7 +30,7 @@ struct ExceptionError : ErrorInfoBase {
     std::stacktrace    stacktrace;
     ExceptionError(std::exception_ptr const& exc) noexcept
     : exc(exc),
-      stacktrace(error_utils::stacktraceFromCurrExc()) {}
+      stacktrace(error_utils::stacktraceFromCurrentException()) {}
     std::string message() const noexcept override {
         auto res = error_utils::makeExceptionString(exc);
         if (!stacktrace.empty()) {
@@ -55,7 +55,7 @@ struct ExceptionError : ErrorInfoBase {
 ErrorInfoBase::~ErrorInfoBase() = default;
 
 Unexpected makeExceptionError(std::exception_ptr const& exc) noexcept {
-    auto err = error_utils::UntypedExceptionRef(exc).tryGet<nonstd::bad_expected_access<Error>>();
+    auto err = error_utils::AnyExceptionRef(exc).tryGet<nonstd::bad_expected_access<Error>>();
     if (err) {
         return forwardError(err->error());
     }

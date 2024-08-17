@@ -13,7 +13,7 @@ std::string GetServiceError::message() const noexcept {
     case VersionMismatch:
         return fmt::format("service version mismatch [{}]", version);
     default:
-        _STL_UNREACHABLE;
+        internal::unreachable();
     }
 }
 

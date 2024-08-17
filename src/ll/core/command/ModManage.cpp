@@ -112,7 +112,7 @@ void registerModManageCommand() {
                 }
                 break;
             default:
-                _STL_UNREACHABLE;
+                internal::unreachable();
             }
         });
     cmd.overload<LeviCommand2>()
@@ -163,7 +163,7 @@ void registerModManageCommand() {
                 break;
             }
             default:
-                _STL_UNREACHABLE;
+                internal::unreachable();
             }
         });
     cmd.overload().text("list").execute([](CommandOrigin const&, CommandOutput& output) {

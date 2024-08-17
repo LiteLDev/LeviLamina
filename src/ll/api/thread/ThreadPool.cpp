@@ -20,7 +20,7 @@ struct ThreadPool::Impl {
     Impl(size_t nThreads) {
         for (size_t i = 0; i < nThreads; ++i) {
             workers.emplace_back([this] {
-                ll::error_utils::setSehTranslator();
+                ll::error_utils::initExceptionTranslator();
                 for (;;) {
                     std::function<void()> task;
                     {

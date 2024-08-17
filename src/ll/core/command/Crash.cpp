@@ -5,8 +5,6 @@
 #include "ll/api/i18n/I18n.h"
 #include "ll/core/Config.h"
 
-#include "errhandlingapi.h"
-
 namespace ll::command {
 
 using namespace ll::i18n_literals;
@@ -24,7 +22,8 @@ void registerCrashCommand() {
     cmd.overload<Code>()
         .optional("exceptionCode")
         .execute([&](CommandOrigin const&, CommandOutput&, Code const& params) {
-            std::thread([&] { RaiseException(params.exceptionCode, 0, 0, nullptr); }).detach();
+            std::thread([&] { throw std::system_error(std::error_code{params.exceptionCode, std::system_category()}); }
+            ).detach();
         });
 }
 } // namespace ll::command

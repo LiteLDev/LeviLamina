@@ -22,8 +22,6 @@
 #include "ll/api/utils/SystemUtils.h"
 #include "ll/core/LeviLamina.h"
 
-#include "windows.h"
-
 namespace ll::mod {
 using namespace i18n_literals;
 
@@ -90,27 +88,11 @@ Expected<> NativeModManager::load(Manifest manifest) {
     auto            modDir = getModsRoot() / string_utils::sv2u8sv(currentLoadingMod->getManifest().name);
     if (auto c = std::filesystem::canonical(modDir, ec); ec.value() == 0) {
         modDir = c;
+    } else {
+        modDir = modDir.lexically_normal();
     }
-    if (auto res = sys_utils::adaptFixedSizeToAllocatedResult(
-            [](wchar_t* value, size_t valueLength, size_t& valueLengthNeededWithNul) -> bool {
-                ::SetLastError(ERROR_SUCCESS);
-                valueLengthNeededWithNul = ::GetEnvironmentVariableW(L"PATH", value, static_cast<DWORD>(valueLength));
-                if (valueLengthNeededWithNul == 0 && ::GetLastError() != ERROR_SUCCESS) {
-                    return false;
-                }
-                if (valueLengthNeededWithNul < valueLength) {
-                    valueLengthNeededWithNul++; // It fit, account for the null.
-                }
-                return true;
-            }
-        );
-        res) {
-        if (!res->empty()) {
-            *res += L";";
-        }
-        *res += modDir.wstring();
-        SetEnvironmentVariableW(L"PATH", res->c_str());
-    }
+    sys_utils::addOrSetEnvironmentVariable("PATH", string_utils::u8sv2sv(modDir.u8string()));
+
     auto entry = modDir / string_utils::sv2u8sv(currentLoadingMod->getManifest().entry);
     if (auto e = currentLoadingMod->getDynamicLibrary().load(entry); e) {
         Expected<> error{makeExceptionError(std::make_exception_ptr(e))};

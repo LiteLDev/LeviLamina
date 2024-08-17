@@ -1,17 +1,19 @@
-#include <windows.h>
+#include "ll/core/gui/ImGuiHooks.h"
 
-#include <psapi.h>
+#include "windows.h"
+
+#include "psapi.h"
 
 #pragma warning(push)
 #pragma warning(disable : 5204)
-#include <atlbase.h>
+#include "atlbase.h"
 #pragma warning(pop)
 
-#include <initguid.h>
+#include "initguid.h"
 
-#include <d3d12.h>
+#include "d3d12.h"
 
-#include <d3d11.h>
+#include "d3d11.h"
 
 #include <memory>
 #include <string>
@@ -22,7 +24,8 @@
 
 #include "backends/imgui_impl_winrt.h"
 
-#include "ImGuiHooks.h"
+#include "dxgi1_6.h"
+
 #include "ll/api/memory/Hook.h"
 #include "ll/api/utils/StringUtils.h"
 
@@ -30,6 +33,37 @@
 
 
 namespace ll::gui {
+typedef HRESULT(STDMETHODCALLTYPE* PFN_CreateDXGIFactory1)(REFIID riid, _COM_Outptr_ void** ppFactory);
+// 16
+typedef HRESULT(STDMETHODCALLTYPE* PFN_IDXGIFactory2_CreateSwapChainForCoreWindow)(
+    IDXGIFactory2* This,
+    /* [annotation][in] */
+    _In_ IUnknown* pDevice,
+    /* [annotation][in] */
+    _In_ IUnknown* pWindow,
+    /* [annotation][in] */
+    _In_ const DXGI_SWAP_CHAIN_DESC1* pDesc,
+    /* [annotation][in] */
+    _In_opt_ IDXGIOutput* pRestrictToOutput,
+    /* [annotation][out] */
+    _COM_Outptr_ IDXGISwapChain1** ppSwapChain
+);
+// 8
+typedef HRESULT(STDMETHODCALLTYPE* PFN_IDXGISwapChain_Present)(
+    IDXGISwapChain* This,
+    /* [in] */ UINT SyncInterval,
+    /* [in] */ UINT Flags
+);
+// 13
+typedef HRESULT(STDMETHODCALLTYPE* PFN_IDXGISwapChain_ResizeBuffers)(
+    IDXGISwapChain*        This,
+    /* [in] */ UINT        BufferCount,
+    /* [in] */ UINT        Width,
+    /* [in] */ UINT        Height,
+    /* [in] */ DXGI_FORMAT NewFormat,
+    /* [in] */ UINT        SwapChainFlags
+);
+
 static IDXGIFactory2* factory;
 static IUnknown*      coreWindow;
 static bool           imguiInitialized = false;

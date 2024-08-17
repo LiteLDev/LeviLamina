@@ -18,17 +18,70 @@
 
 namespace ll::inline utils::error_utils {
 
-UntypedExceptionRef::UntypedExceptionRef(std::exception_ptr const& ptr)
-: UntypedExceptionRef(*(((std::shared_ptr<EXCEPTION_RECORD const>*)(&ptr))->get())) {}
+class seh_exception : public std::system_error {
+private:
+    _EXCEPTION_POINTERS* expPtr;
 
-UntypedExceptionRef::UntypedExceptionRef(EXCEPTION_RECORD const& er)
+public:
+    seh_exception(uint ntStatus, _EXCEPTION_POINTERS* expPtr);
+
+    _EXCEPTION_POINTERS* getExceptionPointer() const noexcept { return expPtr; }
+};
+[[noreturn]] inline void translateSEHtoCE(uint ntStatus, struct _EXCEPTION_POINTERS* expPtr) {
+    throw seh_exception(ntStatus, expPtr);
+}
+
+struct MsvcExceptionRef {
+    static constexpr uint msc                = 0x6D7363; // 'msc'
+    static constexpr uint exceptionCodeOfCpp = (msc | 0xE0000000);
+
+    void*                      exceptionObject;
+    ::_EXCEPTION_RECORD const* exc;
+    void*                      handle    = nullptr;
+    internal::ThrowInfo const* throwInfo = nullptr;
+    _CatchableTypeArray const* cArray    = nullptr;
+
+    MsvcExceptionRef(::_EXCEPTION_RECORD const& er);
+
+    [[nodiscard]] uint getNumCatchableTypes() const { return cArray ? cArray->nCatchableTypes : 0u; }
+
+    [[nodiscard]] internal::CatchableType const* cType(uint i) const {
+        return rva2va<internal::CatchableType const*>(reinterpret_cast<uint const*>(cArray->arrayOfCatchableTypes)[i]);
+    }
+
+    [[nodiscard]] std::type_info const* getTypeInfo(uint i) const {
+        return rva2va<std::type_info const*>(cType(i)->pType);
+    }
+    [[nodiscard]] uint getThisDisplacement(uint i) const { return cType(i)->thisDisplacement.mdisp; }
+
+    template <class T>
+    [[nodiscard]] T rva2va(auto addr) const {
+        return reinterpret_cast<T>((uintptr_t)handle + (uintptr_t)(addr));
+    }
+};
+MsvcExceptionRef::MsvcExceptionRef(EXCEPTION_RECORD const& er)
 : exceptionObject(reinterpret_cast<void*>(er.ExceptionInformation[1])),
   exc(&er) {
     if (exc->NumberParameters >= 3) {
         handle    = (exc->NumberParameters >= 4) ? (void*)exc->ExceptionInformation[3] : nullptr;
-        throwInfo = (RealInternal::ThrowInfo const*)exc->ExceptionInformation[2];
+        throwInfo = (internal::ThrowInfo const*)exc->ExceptionInformation[2];
         if (throwInfo) cArray = rva2va<_CatchableTypeArray const*>(throwInfo->pCatchableTypeArray);
     }
+}
+AnyExceptionRef::AnyExceptionRef(std::exception_ptr const& ptr)
+: impl((void*)(((std::shared_ptr<EXCEPTION_RECORD const>*)(&ptr))->get())) {}
+
+AnyExceptionRef::~AnyExceptionRef() = default;
+
+void* AnyExceptionRef::typeCast(std::type_info const& typeInfo) const {
+    auto exp = MsvcExceptionRef(*reinterpret_cast<EXCEPTION_RECORD*>(impl));
+
+    for (uint i = 0, e = exp.getNumCatchableTypes(); i < e; i++) {
+        if ((*exp.getTypeInfo(i)) == typeInfo) {
+            return reinterpret_cast<char*>(exp.exceptionObject) + exp.getThisDisplacement(i);
+        }
+    }
+    return nullptr;
 }
 
 struct u8system_category : public std::_System_error_category {
@@ -105,9 +158,9 @@ seh_exception::seh_exception(uint ntStatus, _EXCEPTION_POINTERS* expPtr)
 : std::system_error(std::error_code{(int)ntStatus, ntstatus_category()}),
   expPtr(expPtr) {}
 
-void setSehTranslator() { _set_se_translator(error_utils::translateSEHtoCE); }
+void initExceptionTranslator() { _set_se_translator(error_utils::translateSEHtoCE); }
 
-std::system_error getWinLastError() noexcept { return std::error_code{(int)GetLastError(), u8system_category()}; }
+std::system_error getLastSystemError() noexcept { return std::error_code{(int)GetLastError(), u8system_category()}; }
 
 extern "C" PEXCEPTION_RECORD* __current_exception();         // NOLINT
 extern "C" PCONTEXT*          __current_exception_context(); // NOLINT
@@ -115,13 +168,12 @@ extern "C" PCONTEXT*          __current_exception_context(); // NOLINT
 optional_ref<::_EXCEPTION_RECORD> current_exception_record() noexcept { return **__current_exception(); }
 optional_ref<_CONTEXT>            current_exception_context() noexcept { return **__current_exception_context(); }
 
-std::exception_ptr createExceptionPtr(_EXCEPTION_RECORD const& rec) noexcept {
-    auto               realType = std::make_shared<_EXCEPTION_RECORD>(rec);
+std::exception_ptr createExceptionPtr(void* rec) noexcept {
+    auto               realType = std::make_shared<_EXCEPTION_RECORD>(*(PEXCEPTION_RECORD)rec);
     std::exception_ptr res;
     __ExceptionPtrAssign(&res, &realType);
     return res;
 }
-
 std::stacktrace stacktraceFromContext(optional_ref<_CONTEXT const> context, size_t skip, size_t maxDepth) {
     if (!context) {
         return {};
@@ -170,6 +222,9 @@ std::stacktrace stacktraceFromContext(optional_ref<_CONTEXT const> context, size
     }
     return *reinterpret_cast<std::stacktrace*>(&realStacktrace);
 }
+std::stacktrace stacktraceFromCurrentException(size_t skip, size_t maxDepth) {
+    return stacktraceFromContext(current_exception_context(), skip, maxDepth);
+}
 
 template <class T>
 static std::exception_ptr getNested(T const& e) {
@@ -197,9 +252,9 @@ std::string makeExceptionString(std::exception_ptr ePtr) noexcept {
 
         auto& rt = *(std::shared_ptr<EXCEPTION_RECORD const>*)(&ePtr);
 
-        if (rt->ExceptionCode == UntypedExceptionRef::exceptionCodeOfCpp) {
+        if (rt->ExceptionCode == MsvcExceptionRef::exceptionCodeOfCpp) {
             try {
-                UntypedExceptionRef exc{*rt};
+                MsvcExceptionRef exc{*rt};
                 std::string         handleName =
                     sys_utils::getModulePath(exc.handle)
                         .transform([](auto&& path) { return string_utils::u8str2str(path.stem().u8string()); })
@@ -280,7 +335,7 @@ void printCurrentException(ll::OutputStream& stream, std::exception_ptr const& e
     try {
 #if defined(LL_DEBUG)
         std::string res;
-        auto        stacktrace = stacktraceFromCurrExc();
+        auto        stacktrace = stacktraceFromCurrentException();
         if (stacktrace.empty()) {
             stacktrace = std::stacktrace::current(2);
             if (!stacktrace.empty()) {

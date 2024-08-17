@@ -171,7 +171,7 @@ SymbolLoader::SymbolLoader() : handle(GetCurrentProcess()) {
         return;
     }
     if (!SymInitializeW(handle, nullptr, true)) {
-        throw error_utils::getWinLastError();
+        throw error_utils::getLastSystemError();
     }
     count++;
     DWORD options  = SymGetOptions();
@@ -183,7 +183,7 @@ SymbolLoader::SymbolLoader(std::string_view extra) : handle(GetCurrentProcess())
         return;
     }
     if (!SymInitializeW(handle, string_utils::str2wstr(extra).c_str(), true)) {
-        throw error_utils::getWinLastError();
+        throw error_utils::getLastSystemError();
     }
     count++;
     DWORD options  = SymGetOptions();

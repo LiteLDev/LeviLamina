@@ -3,7 +3,9 @@
 #pragma warning(disable : 4099) // for MOJANG : type name first seen using 'class' now seen using 'struct'
 #pragma warning(disable : 4201) // for MOJANG : nonstandard extension used : nameless struct/union
 
-#define MCAPI  __declspec(dllimport)
+#include "ll/api/base/Macro.h"
+
+#define MCAPI  LL_SHARED_IMPORT
 #define MCVAPI MCAPI
 
 #define MCTAPI                                                                                                         \
@@ -94,7 +96,6 @@
 #include "rapidjson/stringbuffer.h"
 #include "rapidjson/writer.h"
 
-#include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
 #include "ll/api/memory/Memory.h"
 

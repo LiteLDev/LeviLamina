@@ -138,6 +138,36 @@ std::pair<std::tm, int> getLocalTime() {
     return {time, sysTime.wMilliseconds};
 }
 
+std::string getEnvironmentVariable(std::string_view name) {
+    auto wName = str2wstr(name);
+    return wstr2str(adaptFixedSizeToAllocatedResult(
+                        [&wName](wchar_t* value, size_t valueLength, size_t& valueLengthNeededWithNul) -> bool {
+                            ::SetLastError(ERROR_SUCCESS);
+                            valueLengthNeededWithNul =
+                                ::GetEnvironmentVariableW(wName.c_str(), value, static_cast<DWORD>(valueLength));
+                            if (valueLengthNeededWithNul == 0 && ::GetLastError() != ERROR_SUCCESS) {
+                                return false;
+                            }
+                            if (valueLengthNeededWithNul < valueLength) {
+                                valueLengthNeededWithNul++; // It fit, account for the null.
+                            }
+                            return true;
+                        }
+    ).value_or(L""));
+}
+bool setEnvironmentVariable(std::string_view name, std::string_view value) {
+    return (bool)SetEnvironmentVariableW(str2wstr(name).c_str(), str2wstr(value).c_str());
+}
+
+bool addOrSetEnvironmentVariable(std::string_view name, std::string_view value) {
+    auto oldValue = getEnvironmentVariable(name);
+    if (!oldValue.empty()) {
+        oldValue += ";";
+    }
+    oldValue += value;
+    return setEnvironmentVariable(name, oldValue);
+}
+
 bool isStdoutSupportAnsi() {
     DWORD mode;
     if (GetConsoleMode(GetStdHandle(STD_OUTPUT_HANDLE), &mode)) {
@@ -152,13 +182,13 @@ std::optional<std::system_error> DynamicLibrary::load(std::filesystem::path cons
     }
     lib = LoadLibrary(path.c_str());
     if (!lib) {
-        return error_utils::getWinLastError();
+        return error_utils::getLastSystemError();
     }
     return {};
 }
 std::optional<std::system_error> DynamicLibrary::free() noexcept {
     if (!FreeLibrary((HMODULE)lib)) {
-        return error_utils::getWinLastError();
+        return error_utils::getLastSystemError();
     }
     return {};
 }

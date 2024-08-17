@@ -6,11 +6,11 @@
 template <int T0>
 class DividedPos2d : public ::Pos2d {
 public:
-    [[nodiscard]] constexpr DividedPos2d() noexcept                      = default;
-    [[nodiscard]] constexpr DividedPos2d(DividedPos2d&&) noexcept        = default;
-    LL_CLANG_CEXPR DividedPos2d& operator=(DividedPos2d&&) noexcept      = default;
-    [[nodiscard]] constexpr DividedPos2d(DividedPos2d const&) noexcept   = default;
-    LL_CLANG_CEXPR DividedPos2d& operator=(DividedPos2d const&) noexcept = default;
+    [[nodiscard]] constexpr DividedPos2d() noexcept                        = default;
+    [[nodiscard]] constexpr DividedPos2d(DividedPos2d&&) noexcept          = default;
+    LL_MAY_CONSTEXPR DividedPos2d& operator=(DividedPos2d&&) noexcept      = default;
+    [[nodiscard]] constexpr DividedPos2d(DividedPos2d const&) noexcept     = default;
+    LL_MAY_CONSTEXPR DividedPos2d& operator=(DividedPos2d const&) noexcept = default;
 
     [[nodiscard]] constexpr DividedPos2d(int x, int z) noexcept : Pos2d(x, z) {}
 

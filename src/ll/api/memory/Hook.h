@@ -13,6 +13,7 @@
 #include "ll/api/memory/Memory.h"
 #include "ll/api/reflection/TypeName.h"
 #include "ll/api/thread/GlobalThreadPauser.h"
+#include "ll/api/base/CompilerPredefine.h"
 
 namespace ll::memory {
 
@@ -85,7 +86,7 @@ consteval bool virtualDetector() noexcept {
 }
 template <class T, T f>
 consteval bool virtualDetector() noexcept {
-    return reflection::getRawName<f>().find("::`vcall'{") != std::string::npos;
+    return reflection::getRawName<f>().find(internal::virtualFunctionPattern) != std::string::npos;
 }
 
 template <class... Ts>

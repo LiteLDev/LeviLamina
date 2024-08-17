@@ -15,9 +15,12 @@
 
 #include "mc/deps/core/common/bedrock/IMemoryAllocator.h"
 
-#include "memoryapi.h"
-
 #include "demangler/Demangle.h"
+
+#include "Windows.h"
+
+__declspec(noreturn) void __scrt_throw_std_bad_alloc();
+__declspec(noreturn) void __scrt_throw_std_bad_array_new_length();
 
 namespace ll::memory {
 
@@ -77,7 +80,12 @@ std::vector<std::string> lookupSymbol(FuncPtr func) {
     if (result) pl::symbol_provider::pl_free_lookup_result(result);
     return symbols;
 }
-
+void* unwrapFuncAddress(void* ptr) noexcept {
+    if (*(char*)ptr == '\xE9') {
+        (uintptr_t&)(ptr) += *(int*)((uintptr_t)ptr + 1);
+    }
+    return ptr;
+}
 void modify(void* ptr, size_t len, const std::function<void()>& callback) {
     std::unique_ptr<thread::GlobalThreadPauser> pauser;
     if (getGamingStatus() != GamingStatus::Default) {
@@ -91,4 +99,11 @@ void modify(void* ptr, size_t len, const std::function<void()>& callback) {
 
 size_t getUsableSize(void* ptr) { return getDefaultAllocator().getUsableSize(ptr); }
 
+void throwMemoryException(size_t size) {
+    if (size == SIZE_MAX) {
+        __scrt_throw_std_bad_array_new_length();
+    } else {
+        __scrt_throw_std_bad_alloc();
+    }
+}
 } // namespace ll::memory

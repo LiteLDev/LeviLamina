@@ -4,6 +4,7 @@
 #include <type_traits>
 #include <utility>
 
+#include "ll/api/base/CompilerPredefine.h"
 #include "ll/api/base/Concepts.h"
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
@@ -59,7 +60,7 @@ struct VisitStrategy<N, 0> {
         if constexpr ((n) < N) {                                                                                       \
             return std::forward<Fn>(fn).template operator()<(n)>(std::forward<Args>(args)...);                         \
         }                                                                                                              \
-        _STL_UNREACHABLE;                                                                                              \
+        internal::unreachable();                                                                                       \
         [[fallthrough]]
 
 #define LL_VISIT_STAMP(stamper, n)                                                                                     \
@@ -67,7 +68,7 @@ struct VisitStrategy<N, 0> {
     switch (idx) {                                                                                                     \
         stamper(0, LL_VISIT_CASE);                                                                                     \
     default:                                                                                                           \
-        _STL_UNREACHABLE;                                                                                              \
+        internal::unreachable();                                                                                       \
     }
 
 #define LL_STAMP4(n, x)                                                                                                \

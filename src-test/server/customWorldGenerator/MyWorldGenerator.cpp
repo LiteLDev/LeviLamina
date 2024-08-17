@@ -89,8 +89,8 @@
 // #include "mc/entity/systems/common/BiomeDecorationSystem.h"
 // #include "mc/resources/VanillaGameVersions.h"
 // #include "mc/world/components/FeatureHelper.h"
-// #include <mc/world/level/levelgen/feature/EndIslandFeature.h>
-// #include <mc/world/level/levelgen/feature/helpers/TheEndSpikeHelper.h>
+// #include "mc/world/level/levelgen/feature/EndIslandFeature.h"
+// #include "mc/world/level/levelgen/feature/helpers/TheEndSpikeHelper.h"
 // #include <numeric>
 //
 //// namespace Bedrock {

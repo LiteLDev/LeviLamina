@@ -37,53 +37,53 @@ class UniqueTagPtr {
         IntArrayTag>;
 
 public:
-    _CONSTEXPR23 UniqueTagPtr() noexcept {}
+    LL_CONSTEXPR23 UniqueTagPtr() noexcept {}
 
-    _CONSTEXPR23 UniqueTagPtr(nullptr_t) noexcept {}
+    LL_CONSTEXPR23 UniqueTagPtr(nullptr_t) noexcept {}
 
-    _CONSTEXPR23 UniqueTagPtr& operator=(nullptr_t) noexcept {
+    LL_CONSTEXPR23 UniqueTagPtr& operator=(nullptr_t) noexcept {
         reset();
         return *this;
     }
-    _CONSTEXPR23 explicit UniqueTagPtr(Tag* p) noexcept : ptr(p) {}
+    LL_CONSTEXPR23 explicit UniqueTagPtr(Tag* p) noexcept : ptr(p) {}
 
-    _CONSTEXPR23 UniqueTagPtr(UniqueTagPtr&& r) noexcept : ptr(r.release()) {}
+    LL_CONSTEXPR23 UniqueTagPtr(UniqueTagPtr&& r) noexcept : ptr(r.release()) {}
 
-    _CONSTEXPR23 UniqueTagPtr(std::unique_ptr<Tag>&& ptr) noexcept : ptr(ptr.release()) {}
+    LL_CONSTEXPR23 UniqueTagPtr(std::unique_ptr<Tag>&& ptr) noexcept : ptr(ptr.release()) {}
 
-    _CONSTEXPR23 UniqueTagPtr& operator=(UniqueTagPtr&& r) noexcept {
+    LL_CONSTEXPR23 UniqueTagPtr& operator=(UniqueTagPtr&& r) noexcept {
         reset(r.release());
         return *this;
     }
-    _CONSTEXPR23 UniqueTagPtr& operator=(std::unique_ptr<Tag>&& r) noexcept {
+    LL_CONSTEXPR23 UniqueTagPtr& operator=(std::unique_ptr<Tag>&& r) noexcept {
         reset(r.release());
         return *this;
     }
-    _CONSTEXPR23 UniqueTagPtr(UniqueTagPtr const& r) : ptr(r ? (r -> copy().release()) : nullptr) {}
+    LL_CONSTEXPR23 UniqueTagPtr(UniqueTagPtr const& r) : ptr(r ? (r->copy().release()) : nullptr) {}
 
-    _CONSTEXPR23 UniqueTagPtr& operator=(UniqueTagPtr const& r) {
+    LL_CONSTEXPR23 UniqueTagPtr& operator=(UniqueTagPtr const& r) {
         if (r && &r != this) ptr = r->copy().release();
         return *this;
     }
-    _CONSTEXPR23 void swap(UniqueTagPtr& r) noexcept { std::swap(ptr, r.ptr); }
+    LL_CONSTEXPR23 void swap(UniqueTagPtr& r) noexcept { std::swap(ptr, r.ptr); }
 
-    _CONSTEXPR23 ~UniqueTagPtr() noexcept { delete ptr; }
+    LL_CONSTEXPR23 ~UniqueTagPtr() noexcept { delete ptr; }
 
-    [[nodiscard]] _CONSTEXPR23 Tag& operator*() const noexcept { return *ptr; }
+    [[nodiscard]] LL_CONSTEXPR23 Tag& operator*() const noexcept { return *ptr; }
 
-    [[nodiscard]] _CONSTEXPR23 Tag* operator->() const noexcept { return ptr; }
+    [[nodiscard]] LL_CONSTEXPR23 Tag* operator->() const noexcept { return ptr; }
 
-    [[nodiscard]] _CONSTEXPR23 Tag* get() const noexcept { return ptr; }
+    [[nodiscard]] LL_CONSTEXPR23 Tag* get() const noexcept { return ptr; }
 
-    _CONSTEXPR23 explicit operator bool() const noexcept { return static_cast<bool>(ptr); }
+    LL_CONSTEXPR23 explicit operator bool() const noexcept { return static_cast<bool>(ptr); }
 
-    _CONSTEXPR23 operator std::unique_ptr<Tag>() && noexcept { return std::unique_ptr<Tag>{release()}; }
+    LL_CONSTEXPR23 operator std::unique_ptr<Tag>() && noexcept { return std::unique_ptr<Tag>{release()}; }
 
-    _CONSTEXPR23 operator std::unique_ptr<Tag>() const& noexcept { return ptr ? ptr->copy() : nullptr; }
+    LL_CONSTEXPR23 operator std::unique_ptr<Tag>() const& noexcept { return ptr ? ptr->copy() : nullptr; }
 
-    _CONSTEXPR23 Tag* release() noexcept { return std::exchange(ptr, nullptr); }
+    LL_CONSTEXPR23 Tag* release() noexcept { return std::exchange(ptr, nullptr); }
 
-    _CONSTEXPR23 void reset(Tag* p = nullptr) noexcept {
+    LL_CONSTEXPR23 void reset(Tag* p = nullptr) noexcept {
         Tag* old = std::exchange(ptr, p);
         delete old;
     }

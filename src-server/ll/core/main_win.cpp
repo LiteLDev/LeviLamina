@@ -37,19 +37,9 @@
 #include "ll/core/io/Output.h"
 #include "ll/core/mod/ModRegistrar.h"
 
-#include <windows.h>
+#include "windows.h"
 
-#include <consoleapi.h>
-#include <errhandlingapi.h>
-#include <handleapi.h>
-#include <libloaderapi.h>
-#include <minwindef.h>
-#include <processenv.h>
-#include <processthreadsapi.h>
-#include <psapi.h>
-#include <tlhelp32.h>
-#include <winbase.h>
-#include <winnt.h>
+#include "tlhelp32.h"
 
 #if defined(LL_DEBUG)
 #include "ll/api/utils/StacktraceUtils.h"
@@ -166,7 +156,7 @@ void unixSignalHandler(int signum) {
 }
 
 void leviLaminaMain() {
-    error_utils::setSehTranslator();
+    error_utils::initExceptionTranslator();
 
     ::ll::i18n::load(getSelfModIns()->getLangDir());
 

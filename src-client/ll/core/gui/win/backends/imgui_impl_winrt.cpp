@@ -4,7 +4,7 @@
 #include <cmath>
 #include <cstdio>
 
-#include <CoreWindow.h>
+#include "CoreWindow.h"
 
 using ABI::Windows::UI::Core::ICharacterReceivedEventArgs;
 using ABI::Windows::UI::Core::ICoreWindow;

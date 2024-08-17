@@ -1,23 +1,23 @@
-﻿#include "GUI.h"
+﻿#include "ll/core/gui/GUI.h"
 
 #include <cstring>
 #include <string>
 #include <vector>
 
-#include <dwrite.h>
-#include <windows.h>
-#include <wingdi.h>
-#include <winuser.h>
+#include "dwrite.h"
+#include "windows.h"
+#include "wingdi.h"
+#include "winuser.h"
 
 #pragma warning(push)
 #pragma warning(disable : 5204)
-#include <atlbase.h>
+#include "atlbase.h"
 #pragma warning(pop)
 
 #include "imgui.h"
 
-#include "ImGuiAnsiColor.h"
-#include "ImGuiHooks.h"
+#include "ll/core/gui/ImGuiAnsiColor.h"
+#include "ll/core/gui/ImGuiHooks.h"
 #include "ll/api/utils/FontUtils.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/core/gui/ImguiConfig.h"

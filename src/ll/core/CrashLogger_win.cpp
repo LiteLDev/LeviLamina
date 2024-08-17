@@ -20,6 +20,10 @@
 
 #include "DbgHelp.h"
 
+namespace ll::inline utils::error_utils {
+std::stacktrace stacktraceFromContext(optional_ref<_CONTEXT const> context, size_t skip = 0, size_t maxDepth = ~0ui64);
+}
+
 namespace ll {
 using namespace i18n_literals;
 using namespace utils;
@@ -69,7 +73,7 @@ void CrashLogger::init() {
     ));
     if (!CreateProcess(nullptr, cmd.data(), &sa, &sa, true, 0, nullptr, nullptr, &si, &pi)) {
         crashLogger.error("Couldn't Create CrashLogger Daemon Process"_tr());
-        error_utils::printException(crashLogger, error_utils::getWinLastError());
+        error_utils::printException(crashLogger, error_utils::getLastSystemError());
         return;
     }
 
@@ -202,10 +206,17 @@ static bool genMiniDumpFile(PEXCEPTION_POINTERS e) {
 
     auto dumpFilePath = crashInfo.path / string_utils::str2u8str("minidump_" + crashInfo.date + ".dmp");
 
+    std::error_code ec;
+    if (auto c = std::filesystem::canonical(dumpFilePath, ec); ec.value() == 0) {
+        dumpFilePath = c;
+    } else {
+        dumpFilePath = dumpFilePath.lexically_normal();
+    }
+
     auto hDumpFile =
         CreateFileW(dumpFilePath.c_str(), GENERIC_WRITE, 0, nullptr, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, nullptr);
     if (hDumpFile == INVALID_HANDLE_VALUE || hDumpFile == nullptr) {
-        throw error_utils::getWinLastError();
+        throw error_utils::getLastSystemError();
     }
 
     MINIDUMP_EXCEPTION_INFORMATION dumpInfo;
@@ -225,11 +236,9 @@ static bool genMiniDumpFile(PEXCEPTION_POINTERS e) {
             nullptr
         )) {
         CloseHandle(hDumpFile);
-        throw error_utils::getWinLastError();
+        throw error_utils::getLastSystemError();
     }
     CloseHandle(hDumpFile);
-    std::error_code ec;
-    dumpFilePath = canonical(dumpFilePath, ec);
     crashInfo.logger.info("MiniDump generated at {}", u8str2str(dumpFilePath.u8string()));
     return true;
 }
@@ -276,7 +285,7 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
 
         crashInfo.logger.info("Exception:");
         try {
-            auto str = error_utils::makeExceptionString(error_utils::createExceptionPtr(*e->ExceptionRecord));
+            auto str = error_utils::makeExceptionString(error_utils::createExceptionPtr(e->ExceptionRecord));
             for (auto& sv : string_utils::splitByPattern(str, "\n")) {
                 crashInfo.logger.info("  |{}", sv);
             }
@@ -298,7 +307,7 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
         crashInfo.logger.info("");
         crashInfo.logger.info("Modules:");
         if (!EnumerateLoadedModulesW64(crashInfo.process, dumpModules, nullptr)) {
-            throw error_utils::getWinLastError();
+            throw error_utils::getLastSystemError();
         }
     } catch (...) {
         crashInfo.logger.error("!!! Error in CrashLogger !!!");

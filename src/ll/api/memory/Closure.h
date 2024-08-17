@@ -12,23 +12,9 @@ namespace ll::memory {
 namespace detail {
 static constexpr size_t closureMagicNumber = 0x58ffffbffdffffafui64;
 
-#pragma pack(push, 1)
-//    ...    [data]
-// push rax
-// mov  rax, [addr]
-// jmp  rax
-struct NativeClosurePrologue {
-    uintptr_t data;
-    uint8_t   push_rax;
-    uint8_t   mov_rax[2];
-    uintptr_t addr;
-    uint8_t   jmp_rax[2];
-};
-#pragma pack(pop)
-
 LLAPI size_t getVolatileOffset(void*);
-LLAPI void   initNativeClosure(void* self, void* impl, size_t offset, size_t size);
-LLAPI void   releaseNativeClosure(void* self, size_t size);
+LLAPI void   initNativeClosure(void* self, void* impl, size_t offset);
+LLAPI void   releaseNativeClosure(void* self);
 } // namespace detail
 
 //                The principle of NativeClosure
@@ -66,7 +52,6 @@ class NativeClosure<Ret(Args...)> {
         return stored->func(stored->data, std::forward<Args>(args)...);
     }
     static inline size_t implOffset  = detail::getVolatileOffset(closureImpl);
-    static inline size_t closureSize = implOffset + sizeof(detail::NativeClosurePrologue);
 
 public:
     using origin_fn  = Ret(uintptr_t, Args...);
@@ -80,12 +65,12 @@ public:
     void* closure;
 
     NativeClosure(origin_fn* func, uintptr_t data) : stored({func, data}) {
-        detail::initNativeClosure(this, closureImpl, implOffset, closureSize);
+        detail::initNativeClosure(this, closureImpl, implOffset);
     }
 
     closure_fn* get() const { return (closure_fn*)closure; }
 
-    ~NativeClosure() { detail::releaseNativeClosure(this, closureSize); }
+    ~NativeClosure() { detail::releaseNativeClosure(this); }
 
     NativeClosure(NativeClosure&&)                 = delete;
     NativeClosure(NativeClosure const&)            = delete;

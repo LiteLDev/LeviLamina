@@ -7,8 +7,7 @@
 #include <span>
 #include <string>
 
-#include <intrin.h>
-
+#include "ll/api/base/CompilerPredefine.h"
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
 
@@ -16,9 +15,7 @@ namespace ll::inline utils::sys_utils {
 
 using HandleT = void*;
 
-extern "C" struct _IMAGE_DOS_HEADER __ImageBase; // NOLINT(bugprone-reserved-identifier)
-
-[[nodiscard]] inline HandleT getCurrentModuleHandle() { return &__ImageBase; }
+[[nodiscard]] inline HandleT getCurrentModuleHandle() { return internal::getCurrentModuleHandle(); }
 
 LLNDAPI HandleT getModuleHandle(void* addr);
 
@@ -26,7 +23,7 @@ LLNDAPI std::optional<std::filesystem::path> getModulePath(HandleT handle, Handl
 
 LLNDAPI std::string getModuleFileName(HandleT handle, HandleT process = nullptr);
 
-[[nodiscard]] inline std::string getCallerModuleFileName(void* addr = _ReturnAddress()) {
+[[nodiscard]] inline std::string getCallerModuleFileName(void* addr = internal::returnAddress()) {
     return getModuleFileName(getModuleHandle(addr));
 }
 LLNDAPI std::span<std::byte> getImageRange(std::string_view name = "");
@@ -36,6 +33,12 @@ LLNDAPI std::string getSystemLocaleName();
 LLNDAPI std::string const& getSystemName();
 
 LLNDAPI std::pair<std::tm, int> getLocalTime(); // tm & ms
+
+LLNDAPI std::string getEnvironmentVariable(std::string_view name);
+
+LLAPI bool setEnvironmentVariable(std::string_view name, std::string_view value);
+
+LLAPI bool addOrSetEnvironmentVariable(std::string_view name, std::string_view value);
 
 LLNDAPI bool isStdoutSupportAnsi();
 

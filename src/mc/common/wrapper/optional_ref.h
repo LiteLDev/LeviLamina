@@ -49,11 +49,11 @@ public:
 
     [[nodiscard]] constexpr optional_ref(optional_ref&&) noexcept = default;
 
-    LL_CLANG_CEXPR optional_ref& operator=(optional_ref&&) noexcept = default;
+    LL_MAY_CONSTEXPR optional_ref& operator=(optional_ref&&) noexcept = default;
 
     [[nodiscard]] constexpr optional_ref(optional_ref const&) noexcept = default;
 
-    LL_CLANG_CEXPR optional_ref& operator=(optional_ref const&) noexcept = default;
+    LL_MAY_CONSTEXPR optional_ref& operator=(optional_ref const&) noexcept = default;
 
     [[nodiscard]] constexpr explicit operator bool() const noexcept { return mPtr != nullptr; }
 

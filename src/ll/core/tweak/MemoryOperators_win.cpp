@@ -15,8 +15,6 @@
 
 #include "Psapi.h"
 
-#include "heapapi.h"
-
 #ifdef LL_USE_MIMALLOC
 #define LL_DEFALUT_MEMORY_ALLOCATOR MimallocMemoryAllocator
 #else
@@ -151,9 +149,9 @@ struct MemSize {
 template <typename T>
 class debugAllocator : public std::allocator<T> {
 public:
-    _CONSTEXPR20 void deallocate(T* const _Ptr, const size_t) { free(_Ptr); }
+    constexpr void deallocate(T* const _Ptr, const size_t) { free(_Ptr); }
 
-    _NODISCARD_RAW_PTR_ALLOC _CONSTEXPR20 __declspec(allocator) T* allocate(_CRT_GUARDOVERFLOW const size_t _Count) {
+    _NODISCARD_RAW_PTR_ALLOC constexpr __declspec(allocator) T* allocate(_CRT_GUARDOVERFLOW const size_t _Count) {
         return static_cast<T*>(malloc(std::_Get_size_of_n<sizeof(T)>(_Count)));
     }
 };

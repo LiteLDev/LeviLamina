@@ -95,7 +95,7 @@
 //     &BlockDefinitionGroup::registerBlocks,
 //     void
 //) {
-//     ll::error_utils::printException(ll::getLogger(), ll::error_utils::getWinLastError());
+//     ll::error_utils::printException(ll::getLogger(), ll::error_utils::getLastSystemError());
 //
 //     try {
 //         char* pp = (char*)(0x123);

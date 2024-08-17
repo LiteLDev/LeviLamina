@@ -33,7 +33,9 @@ if is_config("target_type", "server") then
     add_requires("bedrockdata 1.21.3.1-server")
 else
     add_requires("bedrockdata 1.21.0.3-client")
-    add_requires("imgui v1.91.0-docking", {configs = {dx11 = true, dx12 = true}})
+    if is_plat("windows") then
+        add_requires("imgui v1.91.0-docking", {configs = {dx11 = true, dx12 = true}})
+    end
 end
 
 option("tests")
@@ -72,6 +74,7 @@ target("LeviLamina")
     set_symbols("debug")
     set_exceptions("none")
     add_files("src/**.cpp")
+    add_files("src/**.rc")
     set_configdir("$(buildir)/config")
     set_configvar("LL_WORKSPACE_FOLDER", "$(projectdir)")
     add_configfiles("src/(ll/core/Version.h.in)")
@@ -133,8 +136,7 @@ target("LeviLamina")
             "-Wno-potentially-evaluated-expression",
             "-Wno-pragma-system-header-outside-header",
             {tools = {"clang_cl"}}
-        ) 
-        add_files("src/ll/core/**.rc")
+        )
     end
 
     if is_config("target_type", "server") then
@@ -233,6 +235,27 @@ target("LeviLamina")
 
     if is_mode("debug") then
         add_defines("LL_DEBUG")
+    end
+
+    if not is_plat("windows") then
+    remove_files("/**/*_win.*")
+    remove_files("/**/win/**.*")
+    remove_headerfiles("/**/win/**.*")
+    end
+    if not is_plat("linux") then
+    remove_files("/**/*_linux.*")
+    remove_files("/**/linux/**.*")
+    remove_headerfiles("/**/linux/**.*")
+    end
+    if not is_plat("android") then
+    remove_files("/**/*_android.*")
+    remove_files("/**/android/**.*")
+    remove_headerfiles("/**/android/**.*")
+    end
+    if not is_plat("iphoneos") then
+    remove_files("/**/*_ios.*")
+    remove_files("/**/ios/**.*")
+    remove_headerfiles("/**/ios/**.*")
     end
 
     on_config(function (target)

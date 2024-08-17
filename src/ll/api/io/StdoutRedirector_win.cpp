@@ -1,10 +1,7 @@
 #include "ll/api/io/StdoutRedirector.h"
+#include "ll/api/utils/ErrorUtils.h"
 
 #include "Windows.h"
-
-#include "fcntl.h"
-#include "io.h"
-#include "ll/api/utils/ErrorUtils.h"
 
 namespace ll::io {
 

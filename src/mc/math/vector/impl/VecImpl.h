@@ -31,10 +31,10 @@
             TYPE y, g, t, z, b, p;                                                                                     \
         };                                                                                                             \
                                                                                                                        \
-        [[nodiscard]] constexpr NAME(NAME&&) noexcept        = default;                                                \
-        LL_CLANG_CEXPR NAME& operator=(NAME&&) noexcept      = default;                                                \
-        [[nodiscard]] constexpr NAME(NAME const&) noexcept   = default;                                                \
-        LL_CLANG_CEXPR NAME& operator=(NAME const&) noexcept = default;                                                \
+        [[nodiscard]] constexpr NAME(NAME&&) noexcept          = default;                                              \
+        LL_MAY_CONSTEXPR NAME& operator=(NAME&&) noexcept      = default;                                              \
+        [[nodiscard]] constexpr NAME(NAME const&) noexcept     = default;                                              \
+        LL_MAY_CONSTEXPR NAME& operator=(NAME const&) noexcept = default;                                              \
                                                                                                                        \
         [[nodiscard]] constexpr NAME(TYPE all = 0) noexcept : x(all), z(all) {}                                        \
                                                                                                                        \
@@ -72,10 +72,10 @@
         LL_VEC_Y_MEMBER(TYPE);                                                                                         \
         LL_VEC_Z_MEMBER(TYPE);                                                                                         \
                                                                                                                        \
-        [[nodiscard]] constexpr NAME(NAME&&)        = default;                                                         \
-        LL_CLANG_CEXPR NAME& operator=(NAME&&)      = default;                                                         \
-        [[nodiscard]] constexpr NAME(NAME const&)   = default;                                                         \
-        LL_CLANG_CEXPR NAME& operator=(NAME const&) = default;                                                         \
+        [[nodiscard]] constexpr NAME(NAME&&)          = default;                                                       \
+        LL_MAY_CONSTEXPR NAME& operator=(NAME&&)      = default;                                                       \
+        [[nodiscard]] constexpr NAME(NAME const&)     = default;                                                       \
+        LL_MAY_CONSTEXPR NAME& operator=(NAME const&) = default;                                                       \
                                                                                                                        \
         [[nodiscard]] constexpr NAME(TYPE all = 0) noexcept : x(all), y(all), z(all) {}                                \
                                                                                                                        \
@@ -115,10 +115,10 @@
         LL_VEC_Z_MEMBER(TYPE);                                                                                         \
         LL_VEC_W_MEMBER(TYPE);                                                                                         \
                                                                                                                        \
-        [[nodiscard]] constexpr NAME(NAME&&)        = default;                                                         \
-        LL_CLANG_CEXPR NAME& operator=(NAME&&)      = default;                                                         \
-        [[nodiscard]] constexpr NAME(NAME const&)   = default;                                                         \
-        LL_CLANG_CEXPR NAME& operator=(NAME const&) = default;                                                         \
+        [[nodiscard]] constexpr NAME(NAME&&)          = default;                                                       \
+        LL_MAY_CONSTEXPR NAME& operator=(NAME&&)      = default;                                                       \
+        [[nodiscard]] constexpr NAME(NAME const&)     = default;                                                       \
+        LL_MAY_CONSTEXPR NAME& operator=(NAME const&) = default;                                                       \
                                                                                                                        \
         [[nodiscard]] constexpr NAME(TYPE all = 0) noexcept : x(all), y(all), z(all), w(all) {}                        \
                                                                                                                        \

@@ -132,14 +132,11 @@ constexpr auto construct(void* ptr, ptrdiff_t off, Types&&... args) {
     );
 }
 
-constexpr void* unwrapFuncPtrJmp(void* ptr) noexcept { // only used for unstriped symbol
-    if (*(char*)ptr == '\xE9') {
-        (uintptr_t&)(ptr) += *(int*)((uintptr_t)ptr + 1);
-    }
-    return ptr;
-}
+LLNDAPI void* unwrapFuncAddress(void* ptr) noexcept;
 
 LLNDAPI ::Bedrock::Memory::IMemoryAllocator& getDefaultAllocator();
+
+[[noreturn]] LLAPI void throwMemoryException(size_t);
 
 LLNDAPI size_t getUsableSize(void* ptr);
 
@@ -151,6 +148,7 @@ template <class T, class D>
     return getUsableSize(ptr.get());
 }
 
+#ifdef _MSC_VER
 template <template <class> class P, class T>
 [[nodiscard]] inline size_t getUsableSize(P<T>& ptr)
     requires(std::derived_from<P<T>, std::_Ptr_base<T>>)
@@ -178,6 +176,7 @@ template <template <class> class P, class T>
     );
     // clang-format on
 }
+#endif
 
 template <FixedString symbol>
 inline FuncPtr symbolCache = resolveSymbol(symbol, false);
