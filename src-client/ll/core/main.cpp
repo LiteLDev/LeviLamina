@@ -18,6 +18,9 @@
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 #include "mc/world/level/Level.h"
 
+#include "mc/deps/core/string/StringHash.h"
+#include "mc/gui/screens/controllers/StartMenuScreenController.h"
+
 #include "windows.h"
 
 namespace ll {
@@ -82,6 +85,33 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 
     setGamingStatus(GamingStatus::Stopping); // must after disable
 
+    origin();
+}
+
+LL_AUTO_TYPE_INSTANCE_HOOK(
+    PatchVersionBinding,
+    HookPriority::Normal,
+    StartMenuScreenController,
+    &StartMenuScreenController::_registerBindings,
+    void
+) {
+    bindString(
+        StringHash("#version"),
+        []() -> auto {
+            auto gameVer   = getGameVersion();
+            auto loaderVer = getLoaderVersion();
+            return fmt::format(
+                "v{}.{}.{}/LL-{}.{}.{}",
+                gameVer.major,
+                gameVer.minor,
+                gameVer.patch,
+                loaderVer.major,
+                loaderVer.minor,
+                loaderVer.patch
+            );
+        },
+        []() -> auto { return true; }
+    );
     origin();
 }
 } // namespace ll
