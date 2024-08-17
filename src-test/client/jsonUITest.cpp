@@ -9,12 +9,19 @@
 
 
 class StringHash {
-    const unsigned int m_hash;
+    uint mHash{2166136261u};
 
 public:
-    StringHash(unsigned int hash) : m_hash(hash) {}
-    [[nodiscard]] unsigned int getHash() const { return m_hash; }
-    operator unsigned int() const { return m_hash; }
+    template <size_t N>
+    consteval StringHash(char const (&str)[N]) : StringHash(std::string_view{str}) {}
+    constexpr StringHash(std::string_view str) {
+        for (auto c : str) {
+            mHash ^= c;
+            mHash *= 16777619u;
+        }
+    }
+    [[nodiscard]] uint hash() const { return mHash; }
+    operator uint() const { return mHash; }
 };
 
 class PropertyBag {
@@ -27,8 +34,11 @@ class UIPropertyBag : public PropertyBag {};
 
 class ScreenController {
 public:
-    char                                                                                           pad_0x0000[2512];
-    std::unordered_map<unsigned int, std::function<void(int, std::string const&, UIPropertyBag&)>> mBindCallbacks;
+    char                                                                                   pad_0x0000[2512];
+    std::unordered_map<uint, std::function<void(std::string const&, UIPropertyBag&)>>      mBindCallbacks;
+    std::unordered_map<uint, std::function<void(int, std::string const&, UIPropertyBag&)>> mCollectionBindCallbacks;
+    std::unordered_map<uint, std::function<void(std::string const&, int, std::string const&, UIPropertyBag&)>>
+        mAnyCollectionBindCallbacks;
 
 public:
     MCAPI void bindString(
@@ -40,8 +50,7 @@ public:
 
 namespace ll::test_jsonui {
 
-uint versionHash = 3295792350;
-auto version     = StringHash(versionHash);
+auto version = StringHash("#version");
 
 LL_AUTO_TYPE_INSTANCE_HOOK(
     TESTOOKVERSION,
@@ -49,12 +58,12 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     ScreenController,
     &ScreenController::bindString,
     void,
-    class StringHash const&                       bindingName,
-    class std::function<std::string(void)> const& callback,
-    class std::function<bool(void)> const&        condition
+    StringHash const&                       bindingName,
+    std::function<std::string(void)> const& callback,
+    std::function<bool(void)> const&        condition
 ) {
-    if (mBindCallbacks.find(versionHash) != mBindCallbacks.end()) {
-        mBindCallbacks.erase(versionHash);
+    if (mBindCallbacks.find(version) != mBindCallbacks.end()) {
+        mBindCallbacks.erase(version);
         auto gameVer   = getGameVersion();
         auto loaderVer = getLoaderVersion();
         origin(
@@ -72,8 +81,9 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
             },
             []() -> auto { return true; }
         );
+    } else {
+        origin(bindingName, callback, condition);
     }
-    origin(bindingName, callback, condition);
 }
 
 
@@ -90,7 +100,6 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     std::string&               hovertext,
     bool                       showCategory
 ) {
-
     origin(stack, level, hovertext, showCategory);
     uint64_t max = stack.getItem()->getMaxDamage();
     if (max != 0) {
