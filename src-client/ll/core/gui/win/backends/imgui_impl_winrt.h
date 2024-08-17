@@ -3,7 +3,6 @@
 
 #pragma warning(push)
 #pragma warning(disable : 4265)
-#pragma warning(disable : 5204)
 #include "Windows.Graphics.Display.h"
 #include "Windows.UI.Core.h"
 #include "wrl.h"

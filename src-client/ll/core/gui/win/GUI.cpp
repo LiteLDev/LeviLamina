@@ -9,10 +9,7 @@
 #include "wingdi.h"
 #include "winuser.h"
 
-#pragma warning(push)
-#pragma warning(disable : 5204)
 #include "atlbase.h"
-#pragma warning(pop)
 
 #include "imgui.h"
 

@@ -12,8 +12,6 @@ struct _TP_CALLBACK_INSTANCE;
 struct _TP_WORK;
 // clang-format on
 
-#pragma warning(push)
-#pragma warning(disable : 5204)
 namespace OS {
 
 class ThreadPoolImpl {
@@ -56,4 +54,3 @@ public:
 };
 
 }; // namespace OS
-#pragma warning(pop)

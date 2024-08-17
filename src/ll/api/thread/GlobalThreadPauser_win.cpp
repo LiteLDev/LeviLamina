@@ -25,7 +25,7 @@ GlobalThreadPauser::GlobalThreadPauser() {
                     HANDLE thread = OpenThread(THREAD_SUSPEND_RESUME, false, te.th32ThreadID);
                     if (thread != nullptr) {
                         if ((int)SuspendThread(thread) != -1) {
-                            pausedIds.emplace_back(te.th32ThreadID);
+                            pausedIds.push_back(std::bit_cast<std::thread::id>(te.th32ThreadID));
                         }
                         CloseHandle(thread);
                     }
@@ -38,7 +38,7 @@ GlobalThreadPauser::GlobalThreadPauser() {
 }
 GlobalThreadPauser::~GlobalThreadPauser() {
     for (auto id : pausedIds) {
-        HANDLE thread = OpenThread(THREAD_SUSPEND_RESUME, false, id);
+        HANDLE thread = OpenThread(THREAD_SUSPEND_RESUME, false, std::bit_cast<DWORD>(id));
         if (thread != nullptr) {
             ResumeThread(thread);
             CloseHandle(thread);

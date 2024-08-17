@@ -28,7 +28,7 @@
 #include "ll/core/LeviLamina.h"
 #include "ll/core/mod/NativeModManager.h"
 
-#include "mc/external/expected_lite/expected.h"
+#include "ll/api/Expected.h"
 
 #include "nlohmann/json.hpp"
 #include "nlohmann/json_fwd.hpp"
