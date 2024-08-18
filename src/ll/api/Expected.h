@@ -49,7 +49,7 @@ public:
 
     template <class T>
     bool isA() noexcept {
-        return mInfo ? typeid(T) == typeid(*mInfo) : false;
+        return mInfo ? typeid(T) == typeid(mInfo.get()) : false;
     }
     template <class T>
     auto as() noexcept {
