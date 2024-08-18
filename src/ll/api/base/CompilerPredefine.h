@@ -2,6 +2,10 @@
 
 #include "ll/api/base/StdInt.h"
 
+#include <optional>
+#include <span>
+#include <utility>
+
 #ifdef _MSC_VER
 
 #include "intrin.h"
@@ -15,6 +19,10 @@
 
 #ifndef LL_EBO
 #define LL_EBO __declspec(empty_bases)
+#endif
+
+#ifndef LL_FORCEINLINE
+#define LL_FORCEINLINE __forceinline
 #endif
 
 #ifndef LL_CONSTEXPR23
@@ -167,11 +175,54 @@ constexpr inline auto virtualFunctionPattern = "::`vcall'{";
 
 extern "C" struct _IMAGE_DOS_HEADER __ImageBase; // NOLINT(bugprone-reserved-identifier)
 
-[[nodiscard]] __forceinline void* getCurrentModuleHandle() { return &__ImageBase; }
+[[nodiscard]] LL_FORCEINLINE void* getCurrentModuleHandle() { return &__ImageBase; }
 
-[[nodiscard]] __forceinline void* returnAddress() { return _ReturnAddress(); }
+[[nodiscard]] LL_FORCEINLINE void* returnAddress() { return _ReturnAddress(); }
 
-[[noreturn]] __forceinline void unreachable() { _STL_UNREACHABLE; }
+[[noreturn]] LL_FORCEINLINE void unreachable() { _STL_UNREACHABLE; }
+
+using std_optional_construct_from_invoke_tag = std::_Construct_from_invoke_result_tag;
+
+} // namespace ll::internal
+
+#else
+
+#ifndef LL_SHARED_EXPORT
+#define LL_SHARED_EXPORT __attribute__((visibility("default")))
+#endif
+
+#ifndef LL_SHARED_IMPORT
+#define LL_SHARED_IMPORT
+#endif
+
+#ifndef LL_EBO
+#define LL_EBO
+#endif
+
+#ifndef LL_FORCEINLINE
+#define LL_FORCEINLINE inline __attribute__((always_inline))
+#endif
+
+#ifndef LL_CONSTEXPR23
+#if defined(__cpp_constexpr) && __cpp_constexpr >= 202211L
+#define LL_CONSTEXPR23 constexpr
+#else
+#define LL_CONSTEXPR23
+#endif
+#endif
+
+namespace ll::internal {
+
+[[nodiscard]] LL_FORCEINLINE void* getCurrentModuleHandle(); // Implemented in SystemUtils_linux.cpp
+
+[[nodiscard]] LL_FORCEINLINE void* returnAddress() { return __builtin_return_address(0); }
+
+[[noreturn]] LL_FORCEINLINE void unreachable() { __builtin_unreachable(); }
+
+using std_optional_construct_from_invoke_tag = std::__optional_construct_from_invoke_tag;
+
+template <class T>
+inline constexpr bool std_is_array_t = std::__is_std_array<T>::value;
 
 } // namespace ll::internal
 
