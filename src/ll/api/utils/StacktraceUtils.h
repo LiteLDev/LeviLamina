@@ -1,6 +1,6 @@
 #pragma once
 
-#if _HAS_CXX23
+#ifdef __cpp_lib_stacktrace
 #include <atomic>
 #include <optional>
 #include <stacktrace>

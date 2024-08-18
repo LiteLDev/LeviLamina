@@ -237,24 +237,24 @@ target("LeviLamina")
     end
 
     if not is_plat("windows") then
-    remove_files("/**/*_win.*")
-    remove_files("/**/win/**.*")
-    remove_headerfiles("/**/win/**.*")
+        remove_files("./**/*_win.*")
+        remove_files("./**/win/**.*")
+        remove_headerfiles("./**/win/**.*")
     end
     if not is_plat("linux") then
-    remove_files("/**/*_linux.*")
-    remove_files("/**/linux/**.*")
-    remove_headerfiles("/**/linux/**.*")
+        remove_files("./**/*_linux.*")
+        remove_files("./**/linux/**.*")
+        remove_headerfiles("./**/linux/**.*")
     end
     if not is_plat("android") then
-    remove_files("/**/*_android.*")
-    remove_files("/**/android/**.*")
-    remove_headerfiles("/**/android/**.*")
+        remove_files("./**/*_android.*")
+        remove_files("./**/android/**.*")
+        remove_headerfiles("./**/android/**.*")
     end
     if not is_plat("iphoneos") then
-    remove_files("/**/*_ios.*")
-    remove_files("/**/ios/**.*")
-    remove_headerfiles("/**/ios/**.*")
+        remove_files("./**/*_ios.*")
+        remove_files("./**/ios/**.*")
+        remove_headerfiles("./**/ios/**.*")
     end
 
     on_config(function (target)

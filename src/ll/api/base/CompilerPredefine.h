@@ -5,6 +5,7 @@
 #ifdef _MSC_VER
 
 #include "intrin.h"
+#include <utility>
 
 #ifndef LL_SHARED_EXPORT
 #define LL_SHARED_EXPORT __declspec(dllexport)
@@ -172,6 +173,11 @@ extern "C" struct _IMAGE_DOS_HEADER __ImageBase; // NOLINT(bugprone-reserved-ide
 [[nodiscard]] __forceinline void* returnAddress() { return _ReturnAddress(); }
 
 [[noreturn]] __forceinline void unreachable() { _STL_UNREACHABLE; }
+
+template <class T>
+constexpr inline bool is_std_array_v = ::std::_Is_std_array_v<T>;
+template <class T>
+constexpr inline bool is_subrange_v = ::std::_Is_subrange_v<T>;
 
 } // namespace ll::internal
 
