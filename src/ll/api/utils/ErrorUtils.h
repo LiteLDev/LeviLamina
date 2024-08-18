@@ -3,7 +3,7 @@
 #include <system_error>
 #include <typeinfo>
 
-#if _HAS_CXX23
+#ifdef __cpp_lib_stacktrace
 #include <stacktrace>
 #endif
 
@@ -47,7 +47,7 @@ LLAPI void initExceptionTranslator();
 LLNDAPI std::system_error getLastSystemError() noexcept;
 
 LLNDAPI std::exception_ptr createExceptionPtr(void*) noexcept;
-#if _HAS_CXX23
+#ifdef __cpp_lib_stacktrace
 LLNDAPI std::stacktrace stacktraceFromCurrentException(size_t skip = 0, size_t maxDepth = ~0ui64);
 #endif
 LLNDAPI std::string makeExceptionString(std::exception_ptr ePtr) noexcept;

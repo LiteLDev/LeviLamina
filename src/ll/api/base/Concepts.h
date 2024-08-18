@@ -118,8 +118,8 @@ concept Specializes = is_specialization_of_v<T, Z>;
 
 template <class T>
 inline constexpr bool tuple_like_impl =
-    is_specialization_of_v<T, ::std::tuple> || is_specialization_of_v<T, ::std::pair> || ::std::_Is_std_array_v<T>
-    || ::std::_Is_subrange_v<T>;
+    is_specialization_of_v<T, ::std::tuple> || is_specialization_of_v<T, ::std::pair> || internal::is_std_array_v<T>
+    || internal::is_subrange_v<T>;
 
 template <class T>
 concept TupleLike = tuple_like_impl<std::remove_cvref_t<T>> || (!Rangeable<T> && requires(T t) {
