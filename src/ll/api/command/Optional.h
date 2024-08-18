@@ -108,7 +108,7 @@ public:
         }
         return static_cast<T&&>(std::forward<U>(right));
     }
-#if _HAS_CXX23
+#if LL_HAS_CXX23
     template <class Fn>
     constexpr auto and_then(Fn&& fn) & {
         using Ret = std::invoke_result_t<Fn, T&>;
@@ -154,7 +154,7 @@ public:
         using Ret = std::remove_cv_t<std::invoke_result_t<Fn, T&>>;
         if (has_value()) {
             return std::optional<Ret>{
-                std::_Construct_from_invoke_result_tag{},
+                ll::internal::std_optional_construct_from_invoke_tag{},
                 std::forward<Fn>(fn),
                 static_cast<T&>(mValue)
             };
@@ -168,7 +168,7 @@ public:
         using Ret = std::remove_cv_t<std::invoke_result_t<Fn, T const&>>;
         if (has_value()) {
             return std::optional<Ret>{
-                std::_Construct_from_invoke_result_tag{},
+                ll::internal::std_optional_construct_from_invoke_tag{},
                 std::forward<Fn>(fn),
                 static_cast<T const&>(mValue)
             };
@@ -182,7 +182,7 @@ public:
         using Ret = std::remove_cv_t<std::invoke_result_t<Fn, T>>;
         if (has_value()) {
             return std::optional<Ret>{
-                std::_Construct_from_invoke_result_tag{},
+                ll::internal::std_optional_construct_from_invoke_tag{},
                 std::forward<Fn>(fn),
                 static_cast<T&&>(mValue)
             };
@@ -196,7 +196,7 @@ public:
         using Ret = std::remove_cv_t<std::invoke_result_t<Fn, T const>>;
         if (has_value()) {
             return std::optional<Ret>{
-                std::_Construct_from_invoke_result_tag{},
+                ll::internal::std_optional_construct_from_invoke_tag{},
                 std::forward<Fn>(fn),
                 static_cast<T const&&>(mValue)
             };
@@ -223,7 +223,7 @@ public:
             return std::invoke(std::forward<Fn>(fn));
         }
     }
-#endif // _HAS_CXX23
+#endif // LL_HAS_CXX23
 
     [[nodiscard]] constexpr T const&& value_or_default() const&& { return std::move(value()); }
     [[nodiscard]] constexpr T&&       value_or_default() && { return std::move(value()); }

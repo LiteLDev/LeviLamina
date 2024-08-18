@@ -114,7 +114,7 @@ public:
     [[nodiscard]] constexpr decltype(auto) crend() const { return (get().crend()); }
     [[nodiscard]] constexpr decltype(auto) crbegin() const { return (get().crbegin()); }
 
-#if _HAS_CXX23
+#if LL_HAS_CXX23
     template <class Fn>
     constexpr auto and_then(Fn&& fn) const {
         using Ret = std::invoke_result_t<Fn, T&>;
@@ -138,7 +138,7 @@ public:
             using UnwrapT = std::remove_cv_t<Ret>;
             if (has_value()) {
                 return std::optional<UnwrapT>{
-                    std::_Construct_from_invoke_result_tag{},
+                    ll::internal::std_optional_construct_from_invoke_tag{},
                     std::forward<Fn>(fn),
                     static_cast<T&>(*mPtr)
                 };
@@ -155,7 +155,7 @@ public:
             return std::invoke(std::forward<Fn>(fn));
         }
     }
-#endif // _HAS_CXX23
+#endif // LL_HAS_CXX23
 };
 // NOLINTEND
 template <typename T>
