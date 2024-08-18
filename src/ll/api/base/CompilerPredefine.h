@@ -3,8 +3,6 @@
 #include "ll/api/base/StdInt.h"
 
 #include <optional>
-#include <span>
-#include <utility>
 
 #ifdef _MSC_VER
 
@@ -220,9 +218,6 @@ namespace ll::internal {
 [[noreturn]] LL_FORCEINLINE void unreachable() { __builtin_unreachable(); }
 
 using std_optional_construct_from_invoke_tag = std::__optional_construct_from_invoke_tag;
-
-template <class T>
-inline constexpr bool std_is_array_t = std::__is_std_array<T>::value;
 
 } // namespace ll::internal
 
