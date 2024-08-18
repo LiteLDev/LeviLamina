@@ -2,6 +2,14 @@ add_rules("mode.release", "mode.debug")
 
 add_repositories("liteldev-repo https://github.com/LiteLDev/xmake-repo.git")
 
+local is_windows  = is_plat("windows")
+local is_linux    = is_plat("linux")
+local is_android  = is_plat("android")
+local is_iphoneos = is_plat("iphoneos")
+
+local is_server = is_config("target_type", "server")
+local is_client = is_config("target_type", "client")
+
 -- Dependencies from xmake-repo.
 add_requires("ctre 3.8.1")
 add_requires("entt 41aab920b083aa424ac1d27666ce287eeaff6ceb") -- master
@@ -13,27 +21,35 @@ add_requires("magic_enum v0.9.5")
 add_requires("nlohmann_json v3.11.3")
 add_requires("rapidjson v1.1.0")
 add_requires("mimalloc 2.1.2")
-add_requires("openssl 1.1.1-w", {configs = {shared = false}})
+-- add_requires("openssl 1.1.1-w", {configs = {shared = false}})
 add_requires("cpp-httplib 0.14.3", {configs = {ssl = true}})
+add_requires("boost 1.86.0", {configs = {stacktrace = true}})
 
 -- Dependencies from liteldev-repo.
 add_requires("pcg_cpp v1.0.0")
 add_requires("pfr 2.1.1")
 add_requires("demangler v17.0.7")
-add_requires("preloader v1.9.0")
-add_requires("symbolprovider v1.2.0")
-add_requires("libhat 2024.4.16")
 add_requires("levibuildscript 0.2.0")
+
+if is_windows then
+    add_requires("preloader v1.9.0")
+    add_requires("symbolprovider v1.2.0")
+    add_requires("libhat 2024.4.16")
+end
 
 if has_config("tests") then
     add_requires("gtest")
 end
 
-if is_config("target_type", "server") then
-    add_requires("bedrockdata 1.21.3.1-server")
+if is_server then
+    if is_windows then
+        add_requires("bedrockdata 1.21.3.1-server")
+    end
 else
-    add_requires("bedrockdata 1.21.0.3-client")
-    if is_plat("windows") then
+    if is_windows then
+        add_requires("bedrockdata 1.21.0.3-client")
+    end
+    if is_windows then
         add_requires("imgui v1.91.0-docking", {configs = {dx11 = true, dx12 = true}})
     end
 end
@@ -54,16 +70,20 @@ option("target_type")
     set_values("server", "client")
 option_end()
 
-if is_config("target_type", "server") then
+if is_server then
     set_defaultarchs("windows|x64")
     set_allowedarchs("windows|x64", "linux|x86_64")
-else
+elseif is_client then
     set_defaultarchs("windows|x64")
     set_allowedarchs("windows|x64", "android|arm64-v8a", "iphoneos|arm64")
 end
 
-if not has_config("vs_runtime") and is_plat("windows") then
+if is_windows and not has_config("vs_runtime") then
     set_runtimes("MD")
+end
+
+if is_linux then 
+    set_runtimes("c++_shared")
 end
 
 target("LeviLamina")
@@ -81,7 +101,10 @@ target("LeviLamina")
     add_headerfiles("src/(ll/api/**.h)", "src/(mc/**.h)")
     add_includedirs("src", "$(buildir)/config")
     set_pcxxheader("src/ll/api/Global.h")
-    add_packages("demangler", "mimalloc", "preloader", "cpp-httplib", "libhat")
+    add_packages("demangler", "mimalloc", "cpp-httplib")
+    if is_windows then 
+        add_packages("libhat", "preloader")
+    end
     add_packages(
         "entt",
         "expected-lite",
@@ -94,17 +117,29 @@ target("LeviLamina")
         "ctre",
         "pcg_cpp",
         "pfr",
-        "symbolprovider",
-        "bedrockdata",
+        "boost",
         {public = true}
     )
+    if is_windows then 
+        add_packages("symbolprovider", "bedrockdata", {public = true})
+    end
     add_defines(
         "ENTT_PACKED_PAGE=128", -- public = true
         "LL_EXPORT",
-        "_HAS_CXX23=1" -- work around to enable c++23
+        "LL_HAS_CXX23"
     )
 
-    if is_plat("windows") then
+    -- work around to enable c++23
+
+    if is_windows then
+        -- msstl
+        add_defines("_HAS_CXX23=1")
+        -- libstdc++
+    else
+        add_defines("_LIBCPP_STD_VER=23")
+    end
+
+    if is_windows then
         add_syslinks("Version", "DbgHelp", "dwrite")
         add_defines(
             "_AMD64_",
@@ -138,7 +173,7 @@ target("LeviLamina")
         )
     end
 
-    if is_config("target_type", "server") then
+    if is_server then
         add_headerfiles(
         "src-server/(ll/api/**.h)"
         -- ,"src-server/(mc/**.h)"
@@ -147,8 +182,8 @@ target("LeviLamina")
         add_files(
             "src-server/**.cpp"
         )
-    else
-        if is_plat("windows") then
+    elseif is_client then
+        if is_windows then
             add_syslinks("dxgi", "runtimeobject", "gdi32")
         end
         add_packages("imgui")
@@ -185,7 +220,7 @@ target("LeviLamina")
         add_packages("gtest")
             add_includedirs("src-test/common/")
             add_files("src-test/common/**.cpp")
-        if is_config("target_type", "server") then
+        if is_server then
             add_includedirs("src-test/server/")
             add_files("src-test/server/**.cpp")
         else
@@ -200,7 +235,7 @@ target("LeviLamina")
             file = io.open("src-test/common/include_all.cpp", "w")
             file:write(headers)
             file:close()
-        if is_config("target_type", "server") then
+        if is_server then
             headers = ""
             for _,x in ipairs(os.files("src-server/**.h")) do
                 headers = headers.."#include \""..path.relative(x, "src-server/").."\"\n"
@@ -220,11 +255,11 @@ target("LeviLamina")
         end)
         after_build(function (target)
             io.writefile("src-test/common/include_all.cpp", "// auto gen when build test\n")
-        if is_config("target_type", "server") then
-            io.writefile("src-test/server/include_all.cpp", "// auto gen when build test\n")
-        else
-            io.writefile("src-test/client/include_all.cpp", "// auto gen when build test\n")
-        end
+            if is_server then
+                io.writefile("src-test/server/include_all.cpp", "// auto gen when build test\n")
+            else
+                io.writefile("src-test/client/include_all.cpp", "// auto gen when build test\n")
+            end
         end)
     end
 
@@ -236,22 +271,22 @@ target("LeviLamina")
         add_defines("LL_DEBUG")
     end
 
-    if not is_plat("windows") then
+    if not is_windows then
         remove_files("./**/*_win.*")
         remove_files("./**/win/**.*")
         remove_headerfiles("./**/win/**.*")
     end
-    if not is_plat("linux") then
+    if not is_linux then
         remove_files("./**/*_linux.*")
         remove_files("./**/linux/**.*")
         remove_headerfiles("./**/linux/**.*")
     end
-    if not is_plat("android") then
+    if not is_android then
         remove_files("./**/*_android.*")
         remove_files("./**/android/**.*")
         remove_headerfiles("./**/android/**.*")
     end
-    if not is_plat("iphoneos") then
+    if not is_iphoneos then
         remove_files("./**/*_ios.*")
         remove_files("./**/ios/**.*")
         remove_headerfiles("./**/ios/**.*")
