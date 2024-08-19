@@ -1,13 +1,13 @@
 #pragma once
 
-#ifdef __cpp_lib_stacktrace
 #include <atomic>
 #include <optional>
-#include <stacktrace>
 #include <string>
 
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
+
+#include "boost/stacktrace.hpp"
 
 namespace ll::inline utils::stacktrace_utils {
 class SymbolLoader {
@@ -31,9 +31,7 @@ struct StackTraceEntryInfo {
 };
 
 LLNDAPI uintptr_t           tryGetSymbolAddress(std::string_view);
-LLNDAPI StackTraceEntryInfo getInfo(std::stacktrace_entry const&);
-LLNDAPI std::string toString(std::stacktrace_entry const&);
-LLNDAPI std::string toString(std::stacktrace const&);
+LLNDAPI StackTraceEntryInfo getInfo(boost::stacktrace::frame const&);
+LLNDAPI std::string toString(boost::stacktrace::frame const&);
+LLNDAPI std::string toString(boost::stacktrace::stacktrace const&);
 } // namespace ll::inline utils::stacktrace_utils
-
-#endif

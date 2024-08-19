@@ -21,7 +21,8 @@
 #include "DbgHelp.h"
 
 namespace ll::inline utils::error_utils {
-std::stacktrace stacktraceFromContext(optional_ref<_CONTEXT const> context, size_t skip = 0, size_t maxDepth = ~0ull);
+boost::stacktrace::stacktrace
+stacktraceFromContext(optional_ref<_CONTEXT const> context, size_t skip = 0, size_t maxDepth = ~0ull);
 }
 
 namespace ll {
@@ -334,7 +335,7 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
         crashInfo.logger.error("!!! Error in CrashLogger !!!");
         ll::error_utils::printCurrentException(crashInfo.logger);
         crashInfo.logger.error("");
-        crashInfo.logger.error("\n{}", ll::stacktrace_utils::toString(std::stacktrace::current()));
+        crashInfo.logger.error("\n{}", ll::stacktrace_utils::toString(boost::stacktrace::stacktrace()));
     }
     std::exit((int)e->ExceptionRecord->ExceptionCode);
 }

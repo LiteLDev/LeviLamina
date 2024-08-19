@@ -5,6 +5,8 @@
 
 #include "mc/server/commands/CommandOutput.h"
 
+#include "boost/stacktrace.hpp"
+
 #ifdef LL_DEBUG
 #include "ll/api/utils/StacktraceUtils.h"
 #endif
@@ -12,7 +14,7 @@
 namespace ll {
 #if defined(LL_DEBUG)
 struct ErrorInfoBase::Impl {
-    std::stacktrace stacktrace = std::stacktrace::current(1);
+    boost::stacktrace::stacktrace stacktrace = boost::stacktrace::stacktrace(1, 15);
 };
 ErrorInfoBase::ErrorInfoBase() noexcept : impl(std::make_unique<Impl>()) {}
 std::string Error::message() const noexcept {
@@ -26,12 +28,12 @@ std::string Error::message() const noexcept {
 }
 
 struct ExceptionError : ErrorInfoBase {
-    std::exception_ptr exc;
-    std::stacktrace    stacktrace;
+    std::exception_ptr            exc;
+    boost::stacktrace::stacktrace stacktrace;
     ExceptionError(std::exception_ptr const& exc) noexcept
     : exc(exc),
       stacktrace(error_utils::stacktraceFromCurrentException()) {}
-    std::string message() const noexcept override {
+    [[nodiscard]] std::string message() const noexcept override {
         auto res = error_utils::makeExceptionString(exc);
         if (!stacktrace.empty()) {
             res += "\nexception stacktrace:\n";
@@ -64,8 +66,8 @@ Unexpected makeExceptionError(std::exception_ptr const& exc) noexcept {
 
 struct ErrorList : ErrorInfoBase {
     std::vector<std::shared_ptr<ErrorInfoBase>> errors;
-    ErrorList() noexcept {}
-    std::string message() const noexcept override {
+    ErrorList() noexcept = default;
+    [[nodiscard]] std::string message() const noexcept override {
         std::string result;
 
         for (size_t i = 0; i < errors.size(); i++) {

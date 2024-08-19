@@ -204,15 +204,15 @@ uintptr_t tryGetSymbolAddress(std::string_view symbol) {
     return data.getSymbol(symbol);
 }
 
-StackTraceEntryInfo getInfo(std::stacktrace_entry const& entry) {
+StackTraceEntryInfo getInfo(boost::stacktrace::frame const& entry) {
     DbgEngData data;
 
     static auto processRange = sys_utils::getImageRange();
 
-    if (&*processRange.begin() <= entry.native_handle() && entry.native_handle() < &*processRange.end()) {
+    if (&*processRange.begin() <= entry.address() && entry.address() < &*processRange.end()) {
         size_t length{};
         uint   disp{};
-        auto   str = pl::symbol_provider::pl_lookup_symbol_disp(entry.native_handle(), &length, &disp);
+        auto   str = pl::symbol_provider::pl_lookup_symbol_disp(entry.address(), &length, &disp);
         if (length) {
             static auto         processName = sys_utils::getModuleFileName(nullptr);
             StackTraceEntryInfo res{disp, processName + '!' + str[0]};
@@ -223,11 +223,11 @@ StackTraceEntryInfo getInfo(std::stacktrace_entry const& entry) {
     if (!data.tryInit()) {
         return {};
     }
-    return data.getInfo(entry.native_handle());
+    return data.getInfo(entry.address());
 }
 
-std::string toString(std::stacktrace_entry const& entry) {
-    std::string res                       = fmt::format("at: 0x{:0>12X}", (uint64)entry.native_handle());
+std::string toString(boost::stacktrace::frame const& entry) {
+    std::string res                       = fmt::format("at: 0x{:0>12X}", (uint64)entry.address());
     auto [displacement, name, line, file] = getInfo(entry);
     std::string module;
     std::string function;
@@ -251,7 +251,7 @@ std::string toString(std::stacktrace_entry const& entry) {
     return res;
 }
 
-std::string toString(std::stacktrace const& t) {
+std::string toString(boost::stacktrace::stacktrace const& t) {
     std::string res;
     auto        maxsize = std::to_string(t.size() - 1).size();
     for (size_t i = 0; i < t.size(); i++) {

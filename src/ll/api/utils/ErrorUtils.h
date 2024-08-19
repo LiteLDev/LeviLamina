@@ -3,9 +3,7 @@
 #include <system_error>
 #include <typeinfo>
 
-#ifdef __cpp_lib_stacktrace
-#include <stacktrace>
-#endif
+#include "boost/stacktrace.hpp"
 
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
@@ -47,9 +45,9 @@ LLAPI void initExceptionTranslator();
 LLNDAPI std::system_error getLastSystemError() noexcept;
 
 LLNDAPI std::exception_ptr createExceptionPtr(void*) noexcept;
-#ifdef __cpp_lib_stacktrace
-LLNDAPI std::stacktrace stacktraceFromCurrentException(size_t skip = 0, size_t maxDepth = ~0ull);
-#endif
+
+LLNDAPI boost::stacktrace::stacktrace stacktraceFromCurrentException(size_t skip = 0, size_t maxDepth = ~0ull);
+
 LLNDAPI std::string makeExceptionString(std::exception_ptr ePtr) noexcept;
 
 LLAPI void printCurrentException(ll::Logger& l, std::exception_ptr const& = std::current_exception()) noexcept;
