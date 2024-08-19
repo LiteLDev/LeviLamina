@@ -174,23 +174,23 @@ class DebugAllocator : public T {
 public:
     virtual void* allocate(uint64 size) {
         auto res = T::allocate(size);
-        getDebugMap()[_ReturnAddress()].alloc(T::getUsableSize(res));
+        getDebugMap()[LL_RETURN_ADDRESS].alloc(T::getUsableSize(res));
         return res;
     }
 
     virtual void release(void* ptr) {
-        getDebugMap()[_ReturnAddress()].free(T::getUsableSize(ptr));
+        getDebugMap()[LL_RETURN_ADDRESS].free(T::getUsableSize(ptr));
         T::release(ptr);
     }
 
     virtual void* alignedAllocate(uint64 size, uint64 alignment) {
         auto res = T::alignedAllocate(size, alignment);
-        getDebugMap()[_ReturnAddress()].alloc(T::getUsableSize(res));
+        getDebugMap()[LL_RETURN_ADDRESS].alloc(T::getUsableSize(res));
         return res;
     }
 
     virtual void alignedRelease(void* ptr) {
-        getDebugMap()[_ReturnAddress()].free(T::getUsableSize(ptr));
+        getDebugMap()[LL_RETURN_ADDRESS].free(T::getUsableSize(ptr));
         T::alignedRelease(ptr);
     }
 
@@ -218,9 +218,9 @@ public:
     }
 
     virtual void* _realloc(gsl::not_null<void*> ptr, uint64 newSize) {
-        getDebugMap()[_ReturnAddress()].free(T::getUsableSize(ptr));
+        getDebugMap()[LL_RETURN_ADDRESS].free(T::getUsableSize(ptr));
         auto res = T::_realloc(ptr, newSize);
-        getDebugMap()[_ReturnAddress()].alloc(T::getUsableSize(res));
+        getDebugMap()[LL_RETURN_ADDRESS].alloc(T::getUsableSize(res));
         return res;
     }
 };

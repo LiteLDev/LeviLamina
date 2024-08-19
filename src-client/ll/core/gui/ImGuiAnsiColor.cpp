@@ -426,7 +426,6 @@ void RenderAnsiText(ImVec2 pos, const char* text, const char* text_end, bool hid
     if (hide_text_after_hash) {
         text_display_end = FindRenderedTextEnd(text, text_end);
     } else {
-        if (!text_end) text_end = text + strlen(text); // FIXME-OPT
         text_display_end = text_end;
     }
 
@@ -448,8 +447,6 @@ void RenderAnsiTextWrapped(ImVec2 pos, const char* text, const char* text_end, f
     ImGuiContext& g      = *GImGui;
     ImGuiWindow*  window = g.CurrentWindow;
 
-    if (!text_end) text_end = text + strlen(text); // FIXME-OPT
-
     if (text != text_end) {
         ImDrawList_AddAnsiText(
             window->DrawList,
@@ -465,14 +462,15 @@ void RenderAnsiTextWrapped(ImVec2 pos, const char* text, const char* text_end, f
     }
 }
 
-void textAnsiUnformatted(const char* text, const char* text_end) {
+void textAnsiUnformatted(std::string_view view) {
+    auto text = &*view.begin(), text_end = &*view.end();
+
     ImGuiWindow* window = GetCurrentWindow();
     if (window->SkipItems) return;
 
     ImGuiContext& g = *GImGui;
     IM_ASSERT(text != nullptr);
     const char* text_begin = text;
-    if (text_end == nullptr) text_end = text + strlen(text); // FIXME-OPT
 
     const ImVec2 text_pos(window->DC.CursorPos.x, window->DC.CursorPos.y + window->DC.CurrLineTextBaseOffset);
     const float  wrap_pos_x   = window->DC.TextWrapPos;

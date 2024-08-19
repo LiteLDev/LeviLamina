@@ -218,7 +218,7 @@ static BOOL CALLBACK dumpModules(
         ModuleBase,
         ModuleSize,
         wstr2str(wcsrchr(ModuleName, TEXT('\\')) + 1),
-        file_utils::getVersion(ModuleName).to_string()
+        file_utils::getVersion(ModuleName).value_or(data::Version{}).to_string()
     );
     return TRUE;
 }

@@ -4,12 +4,6 @@
 
 #include <optional>
 
-#if defined(_WIN32)
-#define LL_WIN32
-#elif defined(__linux__)
-#define LL_LINUX
-#endif
-
 #ifdef _MSC_VER
 
 #include "intrin.h"
@@ -45,13 +39,17 @@
 #define LL_UNREACHABLE _STL_UNREACHABLE
 #endif
 
+#ifndef LL_RETURN_ADDRESS
+#define LL_RETURN_ADDRESS _ReturnAddress()
+#endif
+
 // MSVC has customized some functions and classes inside the compiler, but they are not included in IntelliSense. This
 // header file is only used for IntelliSense.
 #if defined(__INTELLISENSE__) || defined(__clang__) || defined(__clangd__)
 // NOLINTBEGIN
 #pragma pack(push, ehdata, 4)
 
-typedef struct _PMD {
+    typedef struct _PMD {
     int mdisp; // Offset of intended data within base
     int pdisp; // Displacement to virtual base pointer
     int vdisp; // Index within vbTable to offset of base
@@ -193,9 +191,9 @@ extern "C" struct _IMAGE_DOS_HEADER __ImageBase; // NOLINT(bugprone-reserved-ide
 
 [[nodiscard]] LL_FORCEINLINE void* getCurrentModuleHandle() noexcept { return &__ImageBase; }
 
-[[nodiscard]] LL_FORCEINLINE void* returnAddress() noexcept { return _ReturnAddress(); }
-
 using std_optional_construct_from_invoke_tag = std::_Construct_from_invoke_result_tag;
+
+using FileHandleT = void*;
 
 } // namespace ll::internal
 
@@ -237,13 +235,17 @@ using std_optional_construct_from_invoke_tag = std::_Construct_from_invoke_resul
 #define LL_UNREACHABLE __builtin_unreachable()
 #endif
 
+#ifndef LL_RETURN_ADDRESS
+#define LL_RETURN_ADDRESS __builtin_return_address(0)
+#endif
+
 namespace ll::internal {
 
 [[nodiscard]] LL_FORCEINLINE void* getCurrentModuleHandle() noexcept; // Implemented in SystemUtils_linux.cpp
 
-[[nodiscard]] LL_FORCEINLINE void* returnAddress() noexcept { return __builtin_return_address(0); }
-
 using std_optional_construct_from_invoke_tag = std::__optional_construct_from_invoke_tag;
+
+using FileHandleT = int;
 
 } // namespace ll::internal
 

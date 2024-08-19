@@ -2,32 +2,24 @@
 
 #include <string>
 
+#include "ll/api/base/Macro.h"
+
 namespace ll::io {
 
 class StdoutRedirector {
+
 public:
     enum ProcessChannel { StandardOutput = 1, StandardError = 2 };
-#if defined(LL_WIN32)
+
     LLNDAPI explicit StdoutRedirector(
-        void*          outputHandle,
-        ProcessChannel channels = (ProcessChannel)(StandardOutput | StandardError)
+        internal::FileHandleT outputHandle,
+        ProcessChannel        channels = (ProcessChannel)(StandardOutput | StandardError)
     );
 
     LLAPI ~StdoutRedirector();
 
-    ProcessChannel channels;
-    void*          outputHandle;
-#elif defined(LL_LINUX)
-    StdoutRedirector(int outputFd, ProcessChannel channels);
-
-    ~StdoutRedirector();
-
-    ProcessChannel channels;
-    int            outputFd;
-
 private:
-    int oldStdout;
-    int oldStderr;
-#endif
+    int oldStdout{-1};
+    int oldStderr{-1};
 };
 } // namespace ll::io

@@ -5,30 +5,28 @@
 
 namespace ll::io {
 
-StdoutRedirector::StdoutRedirector(void* outputHandle, ProcessChannel channels)
-: outputHandle(outputHandle),
-  channels(channels) {
+StdoutRedirector::StdoutRedirector(internal::FileHandleT outputHandle, ProcessChannel channels) {
+    int fd = _open_osfhandle((intptr_t)outputHandle, _O_WRONLY | _O_U8TEXT);
     if (channels & StandardOutput) {
+        oldStdout = _dup(_fileno(stdout));
         setvbuf(stdout, nullptr, _IONBF, 0);
-        ::SetStdHandle(STD_OUTPUT_HANDLE, outputHandle);
+        _dup2(fd, 1);
     }
     if (channels & StandardError) {
+        oldStderr = _dup(_fileno(stderr));
         setvbuf(stderr, nullptr, _IONBF, 0);
-        ::SetStdHandle(STD_ERROR_HANDLE, outputHandle);
+        _dup2(fd, 2);
     }
-    int fd = _open_osfhandle((intptr_t)outputHandle, _O_WRONLY | _O_U8TEXT);
-    if (channels & StandardOutput) _dup2(fd, 1);
-    if (channels & StandardError) _dup2(fd, 2);
     _close(fd);
 }
 StdoutRedirector::~StdoutRedirector() {
-    if (channels & StandardOutput) {
-        FILE* s;
-        freopen_s(&s, "CONOUT$", "w+t", stdout);
+    if (oldStdout != -1) {
+        _dup2(oldStdout, _fileno(stdout));
+        _close(oldStdout);
     }
-    if (channels & StandardError) {
-        FILE* s;
-        freopen_s(&s, "CONOUT$", "w+t", stderr);
+    if (oldStderr != -1) {
+        _dup2(oldStderr, _fileno(stderr));
+        _close(oldStderr);
     }
 }
 } // namespace ll::io

@@ -23,7 +23,7 @@ LLNDAPI std::optional<std::filesystem::path> getModulePath(HandleT handle, Handl
 
 LLNDAPI std::string getModuleFileName(HandleT handle, HandleT process = nullptr);
 
-[[nodiscard]] inline std::string getCallerModuleFileName(void* addr = internal::returnAddress()) {
+[[nodiscard]] inline std::string getCallerModuleFileName(void* addr = LL_RETURN_ADDRESS) {
     return getModuleFileName(getModuleHandle(addr));
 }
 LLNDAPI std::span<std::byte> getImageRange(std::string_view name = "");

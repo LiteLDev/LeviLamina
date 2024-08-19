@@ -6,7 +6,7 @@
 
 namespace ll::io {
 
-StdoutRedirector::StdoutRedirector(int outputFd, ProcessChannel channels) : outputFd(outputFd), channels(channels) {
+StdoutRedirector::StdoutRedirector(internal::FileHandleT outputFd, ProcessChannel channels) {
     if (channels & StandardOutput) {
         oldStdout = dup(STDOUT_FILENO);
         setvbuf(stdout, nullptr, _IONBF, 0);
@@ -18,16 +18,14 @@ StdoutRedirector::StdoutRedirector(int outputFd, ProcessChannel channels) : outp
         dup2(outputFd, STDERR_FILENO);
     }
 }
-
 StdoutRedirector::~StdoutRedirector() {
-    if (channels & StandardOutput) {
-        dup2(oldStdout, STDOUT_FILENO);
-        close(oldStdout);
+    if (oldStdout != -1) {
+        !dup2(oldStdout, STDOUT_FILENO);
+        !close(oldStdout);
     }
-    if (channels & StandardError) {
-        dup2(oldStderr, STDERR_FILENO);
-        close(oldStderr);
+    if (oldStderr != -1) {
+        !dup2(oldStderr, STDERR_FILENO);
+        !close(oldStderr);
     }
 }
-
 } // namespace ll::io

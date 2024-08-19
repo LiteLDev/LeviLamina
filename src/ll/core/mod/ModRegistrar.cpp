@@ -60,7 +60,7 @@ static bool checkVersion(Manifest const& real, Dependency const& need) {
 static Expected<Manifest> loadManifest(std::filesystem::path const& dir) {
     auto content = file_utils::readFile(dir / u8"manifest.json");
     if (!content || content->empty()) {
-        return makeSuccessError();
+        return makeSuccessed();
     }
     auto json = nlohmann::json::parse(*content, nullptr, false, true);
     if (json.is_discarded()) {
@@ -69,7 +69,7 @@ static Expected<Manifest> loadManifest(std::filesystem::path const& dir) {
     return ::ll::reflection::deserialize_to<Manifest>(json).and_then([&](auto&& manifest) -> Expected<Manifest> {
         using namespace pl;
         if (manifest.type == pl::pl_mod_manager_name) {
-            return makeSuccessError(); // bypass preloader mod
+            return makeSuccessed(); // bypass preloader mod
         }
         if (std::string dirName = string_utils::u8str2str(dir.filename().u8string()); manifest.name != dirName) {
             return makeStringError("Mod name {0} do not match folder {1}"_tr(manifest.name, dirName));
@@ -314,7 +314,9 @@ Expected<> ModRegistrar::loadMod(std::string_view name) noexcept {
     auto            res = loadManifest(getModsRoot() / string_utils::sv2u8sv(name));
     if (!res) {
         if (res.error()) {
-            return forwardError(makeStringError("Failed to load manifest for {0}"_tr(name)).value().join(res.error()));
+            return forwardError(
+                makeStringError("Failed to load manifest for {0}"_tr(name)).error().join(std::move(res.error()))
+            );
         } else {
             return makeStringError("Mod does not exist, or the manifest is empty"_tr());
         }

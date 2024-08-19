@@ -13,7 +13,7 @@ local is_client = is_config("target_type", "client")
 -- Dependencies from xmake-repo.
 add_requires("ctre 3.8.1")
 add_requires("entt 41aab920b083aa424ac1d27666ce287eeaff6ceb") -- master
-add_requires("expected-lite v0.7.0")
+add_requires("expected-lite v0.8.0")
 add_requires("fmt 10.2.1")
 add_requires("gsl v4.0.0")
 add_requires("leveldb 1.23")

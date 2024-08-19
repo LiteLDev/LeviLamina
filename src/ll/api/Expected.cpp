@@ -7,6 +7,8 @@
 
 #include "boost/stacktrace.hpp"
 
+#include <stacktrace>
+
 #ifdef LL_DEBUG
 #include "ll/api/utils/StacktraceUtils.h"
 #endif
@@ -90,17 +92,17 @@ Error& Error::join(Error err) noexcept {
     }
     if (isA<ErrorList>()) {
         if (err.isA<ErrorList>()) {
-            as<ErrorList>()->errors.append_range(std::move(err.as<ErrorList>()->errors));
+            as<ErrorList>().errors.append_range(std::move(err.as<ErrorList>().errors));
         } else {
-            as<ErrorList>()->errors.emplace_back(std::move(err.mInfo));
+            as<ErrorList>().errors.emplace_back(std::move(err.mInfo));
         }
     } else {
         if (err.isA<ErrorList>()) {
-            auto ptr = err.as<ErrorList>();
-            ptr->errors.insert(ptr->errors.begin(), std::move(mInfo));
+            auto& list = err.as<ErrorList>();
+            list.errors.insert(list.errors.begin(), std::move(mInfo));
             mInfo = std::move(err.mInfo);
         } else {
-            auto list = std::make_shared<ErrorList>();
+            auto list = std::make_unique<ErrorList>();
             list->errors.emplace_back(std::move(mInfo));
             list->errors.emplace_back(std::move(err.mInfo));
             mInfo = std::move(list);

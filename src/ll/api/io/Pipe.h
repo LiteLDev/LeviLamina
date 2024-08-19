@@ -17,13 +17,7 @@ public:
 
     LLAPI void write(std::string_view);
 
-private:
-#if defined(LL_WIN32)
-    void* hRead;
-    void* hWrite;
-#elif defined(LL_LINUX)
-    int fdRead{};
-    int fdWrite{};
-#endif
+    internal::FileHandleT hRead;
+    internal::FileHandleT hWrite;
 };
 } // namespace ll::io

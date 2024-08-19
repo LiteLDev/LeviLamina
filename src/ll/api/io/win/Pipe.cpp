@@ -1,5 +1,6 @@
 #include "ll/api/io/Pipe.h"
 
+#include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/RandomUtils.h"
 #include "ll/api/utils/StringUtils.h"
 
@@ -21,6 +22,9 @@ static void createWinPipe(HANDLE& hRead, HANDLE& hWrite, size_t size, bool nowai
         0,
         &attributes
     );
+    if (hRead == INVALID_HANDLE_VALUE) {
+        throw error_utils::getLastSystemError();
+    }
     SECURITY_ATTRIBUTES attributes2 = {sizeof(SECURITY_ATTRIBUTES), 0, true};
     hWrite =
         ::CreateFile(pipeName.c_str(), GENERIC_WRITE, 0, &attributes2, OPEN_EXISTING, FILE_FLAG_OVERLAPPED, nullptr);

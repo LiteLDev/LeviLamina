@@ -1,5 +1,7 @@
 #pragma once
 
+#include <string_view>
+
 namespace ll::gui {
-void textAnsiUnformatted(const char* text, const char* text_end);
+void textAnsiUnformatted(std::string_view view);
 } // namespace ll::gui

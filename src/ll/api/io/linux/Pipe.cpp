@@ -10,7 +10,7 @@ namespace ll::io {
 static void createUnixPipe(int& fdRead, int& fdWrite, size_t size, bool nowait) {
     int pipefd[2];
     if (pipe(pipefd) == -1) {
-        throw std::runtime_error("Failed to create pipe.");
+        throw error_utils::getLastSystemError();
     }
 
     fdRead  = pipefd[0];
@@ -24,11 +24,11 @@ static void createUnixPipe(int& fdRead, int& fdWrite, size_t size, bool nowait) 
     }
 }
 
-Pipe::Pipe(size_t size, bool nowait) { createUnixPipe(fdRead, fdWrite, size, nowait); }
+Pipe::Pipe(size_t size, bool nowait) { createUnixPipe(hRead, hWrite, size, nowait); }
 
 Pipe::~Pipe() {
-    close(fdRead);
-    close(fdWrite);
+    close(hRead);
+    close(hWrite);
 }
 
 std::string Pipe::read() {
@@ -37,7 +37,7 @@ std::string Pipe::read() {
     size_t      bytesRead{};
 
     do {
-        bytesRead = ::read(fdRead, buf, sizeof(buf));
+        bytesRead = ::read(hRead, buf, sizeof(buf));
         if (bytesRead > 0) {
             result.append(buf, bytesRead);
         }
@@ -51,17 +51,15 @@ void Pipe::write(std::string_view data) {
     size_t totalBytesWritten{};
 
     while (totalBytesWritten < data.size()) {
-        lastBytesWritten = ::write(fdWrite, data.data() + totalBytesWritten, data.size() - totalBytesWritten);
+        lastBytesWritten = ::write(hWrite, data.data() + totalBytesWritten, data.size() - totalBytesWritten);
 
         if (lastBytesWritten == -1) {
             if (errno != EAGAIN && errno != EWOULDBLOCK) {
-                throw std::runtime_error("Failed to write to pipe.");
+                return;
             }
             continue;
         }
-
         totalBytesWritten += lastBytesWritten;
     }
 }
-
 } // namespace ll::io

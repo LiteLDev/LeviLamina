@@ -13,10 +13,10 @@ class SerializationError : public ErrorInfoBase {
 public:
     SerializationError(std::string field, Error&& err) noexcept {
         if (err.isA<SerializationError>()) {
-            auto ptr  = err.as<SerializationError>();
-            mField    = std::move(field);
-            mField   += std::move(ptr->mField);
-            mMsg      = std::move(ptr->mMsg);
+            auto& serr  = err.as<SerializationError>();
+            mField      = std::move(field);
+            mField     += std::move(serr.mField);
+            mMsg        = std::move(serr.mMsg);
         } else {
             if (field.ends_with('.')) {
                 field.pop_back();

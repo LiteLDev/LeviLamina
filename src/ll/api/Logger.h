@@ -50,6 +50,8 @@ public:
     std::array<fmt::text_style, 4> style;
     std::array<std::string, 5>     consoleFormat;
     std::array<std::string, 5>     fileFormat;
+    std::array<std::string, 5>     playerFormat;         // TODO: remove in release
+    std::function<void()>          playerOutputCallback; // TODO: remove in release
 
     LLAPI explicit OutputStream(
         Logger&                               logger,
@@ -77,7 +79,7 @@ public:
     std::optional<std::ofstream> ofs          = std::nullopt;
     int                          consoleLevel = -1;
     int                          fileLevel    = -1;
-    int                          filler;
+    int                          filler; // TODO: remove in release
 
     OutputStream debug;
     OutputStream info;

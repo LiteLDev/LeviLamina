@@ -16,6 +16,12 @@ class CommandOutput;
 namespace ll {
 class OutputStream;
 class Error;
+
+template <class T = void>
+using Expected = ::nonstd::expected<T, ::ll::Error>;
+
+using Unexpected = ::nonstd::unexpected_type<::ll::Error>;
+
 class ErrorInfoBase {
     friend Error;
     struct Impl;
@@ -28,22 +34,26 @@ public:
     virtual std::string message() const noexcept = 0;
 };
 class Error {
-    std::shared_ptr<ErrorInfoBase> mInfo;
+    std::unique_ptr<ErrorInfoBase> mInfo;
 
 public:
     Error& operator=(Error&&) noexcept         = default;
-    Error& operator=(Error const&) noexcept    = default;
+    Error& operator=(Error const&) noexcept    = delete;
     [[nodiscard]] Error(Error&&) noexcept      = default;
-    [[nodiscard]] Error(Error const&) noexcept = default;
+    [[nodiscard]] Error(Error const&) noexcept = delete;
 
-    Error() noexcept  = default;
-    ~Error() noexcept = default;
+    LL_CONSTEXPR23 Error() noexcept  = default;
+    LL_CONSTEXPR23 ~Error() noexcept = default;
 
-    Error(std::shared_ptr<ErrorInfoBase> i) noexcept : mInfo(std::move(i)) {}
+    LL_CONSTEXPR23 Error(std::unique_ptr<ErrorInfoBase> i) noexcept : mInfo(std::move(i)) {}
 
-    Error(::nonstd::unexpected_type<::ll::Error> i) noexcept : Error(std::move(i.value())) {}
+    LL_CONSTEXPR23 Error(::nonstd::unexpected_type<::ll::Error> i) noexcept : Error(std::move(i.value())) {}
 
-    operator bool() const noexcept { return mInfo != nullptr; }
+    LL_CONSTEXPR23 operator bool() const noexcept { return mInfo != nullptr; }
+
+    constexpr operator Unexpected() noexcept {
+        return ::nonstd::make_unexpected<Error>(std::in_place, std::move(mInfo));
+    }
 
     LLNDAPI std::string message() const noexcept;
 
@@ -52,8 +62,8 @@ public:
         return mInfo ? typeid(T) == typeid(mInfo.get()) : false;
     }
     template <class T>
-    auto as() noexcept {
-        return std::static_pointer_cast<T>(mInfo);
+    T& as() noexcept {
+        return *static_cast<T*>(mInfo.get());
     }
     LLAPI Error& join(Error) noexcept;
 
@@ -65,11 +75,6 @@ public:
 
     Error const& log(CommandOutput& s) const noexcept { return const_cast<Error*>(this)->log(s); }
 };
-
-template <class T = void>
-using Expected = ::nonstd::expected<T, ::ll::Error>;
-
-using Unexpected = ::nonstd::unexpected_type<::ll::Error>;
 
 struct StringError : ErrorInfoBase {
     std::string str;
@@ -83,11 +88,11 @@ struct ErrorCodeError : ErrorInfoBase {
 };
 inline Unexpected forwardError(::ll::Error& err) noexcept { return ::nonstd::make_unexpected(std::move(err)); }
 
-inline Unexpected makeSuccessError() noexcept { return ::nonstd::make_unexpected(Error{}); }
+inline Unexpected makeSuccessed() noexcept { return ::nonstd::make_unexpected(Error{}); }
 
 template <std::derived_from<::ll::ErrorInfoBase> T, class... Args>
 inline Unexpected makeError(Args&&... args) noexcept {
-    return ::nonstd::make_unexpected(::ll::Error{std::make_shared<T>(std::forward<Args>(args)...)});
+    return ::nonstd::make_unexpected<Error>(std::in_place, std::make_unique<T>(std::forward<Args>(args)...));
 }
 inline Unexpected makeStringError(std::string str) noexcept { return makeError<StringError>(std::move(str)); }
 
@@ -102,20 +107,26 @@ LLNDAPI Unexpected makeExceptionError(std::exception_ptr const& exc = std::curre
 namespace nonstd::expected_lite {
 template <>
 class bad_expected_access<::ll::Error> : public bad_expected_access<void> {
-    ::ll::Error mError;
-    std::string mMessage;
+    std::shared_ptr<::ll::Error> mError;
+    std::string                  mMessage;
 
 public:
-    explicit bad_expected_access(::ll::Error const& e) noexcept : mError(e), mMessage(mError.message()) {}
+    explicit bad_expected_access(::ll::Error& e) noexcept
+    : mError(::std::make_shared<::ll::Error>(::std::move(e))),
+      mMessage(mError->message()) {}
 
     char const* what() const noexcept override { return mMessage.c_str(); }
 
-    constexpr ::ll::Error& error() & { return mError; }
+    ::ll::Error& error() & { return *mError; }
 
-    constexpr ::ll::Error const& error() const& { return mError; }
+    ::ll::Error const& error() const& { return *mError; }
 
-    constexpr ::ll::Error&& error() && { return ::std::move(mError); }
+    ::ll::Error&& error() && { return ::std::move(*mError); }
 
-    constexpr ::ll::Error const&& error() const&& { return ::std::move(mError); }
+    ::ll::Error const&& error() const&& { return ::std::move(*mError); }
+};
+template <>
+struct error_traits<::ll::Error> {
+    static void rethrow(::ll::Error const& e) { throw bad_expected_access<::ll::Error>{const_cast<::ll::Error&>(e)}; }
 };
 } // namespace nonstd::expected_lite

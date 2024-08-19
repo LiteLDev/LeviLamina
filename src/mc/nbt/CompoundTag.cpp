@@ -45,11 +45,11 @@ std::string CompoundTag::toBinaryNbt(bool isLittleEndian) const {
 ll::Expected<CompoundTag> CompoundTag::fromBinaryNbt(std::string_view dataView, bool isLittleEndian) noexcept try {
     if (isLittleEndian) {
         auto io = StringByteInput{dataView};
-        return NbtIo::read(io).transform_error([](auto&& err) { return ll::makeErrorCodeError(err.code()).value(); }
+        return NbtIo::read(io).transform_error([](auto&& err) { return ll::makeErrorCodeError(err.code()).error(); }
         ).transform([](auto&& val) { return std::move(*val); });
     } else {
         auto io = BigEndianStringByteInput{dataView};
-        return NbtIo::read(io).transform_error([](auto&& err) { return ll::makeErrorCodeError(err.code()).value(); }
+        return NbtIo::read(io).transform_error([](auto&& err) { return ll::makeErrorCodeError(err.code()).error(); }
         ).transform([](auto&& val) { return std::move(*val); });
     }
 } catch (...) {

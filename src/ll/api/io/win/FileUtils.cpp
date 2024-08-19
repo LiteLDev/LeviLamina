@@ -44,7 +44,7 @@ getFileVersion(std::wstring_view filePath, ushort& ver1, ushort& ver2, ushort& v
     return true;
 }
 
-data::Version getVersion(fs::path const& filePath) {
+std::optional<data::Version> getVersion(fs::path const& filePath) {
     data::Version version;
     ushort        build_ver{};
     uint          flag{};
