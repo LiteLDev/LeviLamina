@@ -7,7 +7,7 @@ namespace ll::io {
 class StdoutRedirector {
 public:
     enum ProcessChannel { StandardOutput = 1, StandardError = 2 };
-#ifdef WIN32
+#if defined(LL_WIN32)
     LLNDAPI explicit StdoutRedirector(
         void*          outputHandle,
         ProcessChannel channels = (ProcessChannel)(StandardOutput | StandardError)
@@ -17,8 +17,7 @@ public:
 
     ProcessChannel channels;
     void*          outputHandle;
-#endif
-#ifdef __linux__
+#elif defined(LL_LINUX)
     StdoutRedirector(int outputFd, ProcessChannel channels);
 
     ~StdoutRedirector();
