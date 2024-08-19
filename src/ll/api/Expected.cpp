@@ -7,8 +7,6 @@
 
 #include "boost/stacktrace.hpp"
 
-#include <stacktrace>
-
 #ifdef LL_DEBUG
 #include "ll/api/utils/StacktraceUtils.h"
 #endif
