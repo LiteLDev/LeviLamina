@@ -3,6 +3,9 @@
 #include <optional>
 #include <vector>
 
+#if defined(LL_WIN32)
+#include "libhat.hpp"
+#endif
 #include "pl/SymbolProvider.h"
 
 #include "ll/api/Logger.h"
@@ -15,6 +18,10 @@
 #include "mc/deps/core/common/bedrock/IMemoryAllocator.h"
 
 #include "demangler/Demangle.h"
+
+#if defined(LL_WIN32)
+#include "Windows.h"
+#endif
 
 // * Not compilable under Linux
 // * Cross-platform work on this source is WIP.
