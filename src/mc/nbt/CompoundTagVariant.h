@@ -174,7 +174,7 @@ public:
         case Tag::End:
             return 0;
         default:
-            ll::internal::unreachable();
+            LL_UNREACHABLE;
         }
     }
 
@@ -401,7 +401,7 @@ template <std::derived_from<Tag> T>
     case Tag::End:
         return 0;
     default:
-        ll::internal::unreachable();
+        LL_UNREACHABLE;
     }
 }
 [[nodiscard]] inline UniqueTagPtr::operator std::string const&() const { return get<StringTag>(); }

@@ -49,7 +49,7 @@ public:
     class MyPair {
     public:
         std::string typo          = "hellotype";
-        long long   I_am_a_number = 12415276547;
+        llong       I_am_a_number = 12415276547;
     };
 
     int version = 2;

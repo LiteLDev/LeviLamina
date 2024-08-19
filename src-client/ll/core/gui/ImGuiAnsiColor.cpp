@@ -191,9 +191,9 @@ void ImFont_RenderAnsiText(
     const int idx_expected_size = draw_list->IdxBuffer.Size + idx_count_max;
     draw_list->PrimReserve(idx_count_max, vtx_count_max);
 
-    ImDrawVert*  vtx_write       = draw_list->_VtxWritePtr;
-    ImDrawIdx*   idx_write       = draw_list->_IdxWritePtr;
-    unsigned int vtx_current_idx = draw_list->_VtxCurrentIdx;
+    ImDrawVert* vtx_write       = draw_list->_VtxWritePtr;
+    ImDrawIdx*  idx_write       = draw_list->_IdxWritePtr;
+    uint        vtx_current_idx = draw_list->_VtxCurrentIdx;
 
     auto col_buf   = std::vector<ImU32>(text_end - text_begin, col);
     auto char_skip = std::vector<bool>(text_end - text_begin, false);
@@ -258,7 +258,7 @@ void ImFont_RenderAnsiText(
         }
 
         // Decode and advance source
-        unsigned int c = (unsigned int)*s;
+        uint c = (uint)*s;
         if (c < 0x80) {
             s += 1;
         } else {
@@ -368,7 +368,7 @@ void ImFont_RenderAnsiText(
     draw_list->CmdBuffer[draw_list->CmdBuffer.Size - 1].ElemCount -= (idx_expected_size - draw_list->IdxBuffer.Size);
     draw_list->_VtxWritePtr                                        = vtx_write;
     draw_list->_IdxWritePtr                                        = idx_write;
-    draw_list->_VtxCurrentIdx                                      = (unsigned int)draw_list->VtxBuffer.Size;
+    draw_list->_VtxCurrentIdx                                      = (uint)draw_list->VtxBuffer.Size;
 }
 
 void ImDrawList_AddAnsiText(

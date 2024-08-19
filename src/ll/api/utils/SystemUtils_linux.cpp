@@ -3,10 +3,10 @@
 #include <sstream>
 #include <string>
 
-namespace ll::inline utils::sys_utils {
+namespace ll::internal {
 
 // Defined in CompilerPredefine.h
-void* getCurrentModuleHandle() {
+void* getCurrentModuleHandle() noexcept {
     std::ifstream maps("/proc/self/maps");
     std::string   line;
 
@@ -21,4 +21,4 @@ void* getCurrentModuleHandle() {
     return nullptr;
 }
 
-} // namespace ll::inline utils::sys_utils
+} // namespace ll::internal

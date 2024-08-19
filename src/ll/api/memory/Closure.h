@@ -51,7 +51,7 @@ class NativeClosure<Ret(Args...)> {
         auto               stored = (PackedData*)data;
         return stored->func(stored->data, std::forward<Args>(args)...);
     }
-    static inline size_t implOffset  = detail::getVolatileOffset(closureImpl);
+    static inline size_t implOffset = detail::getVolatileOffset(closureImpl);
 
 public:
     using origin_fn  = Ret(uintptr_t, Args...);

@@ -8,6 +8,14 @@
 
 #include "intrin.h"
 
+#ifndef LL_HAS_CXX23
+#if _HAS_CXX23
+#define LL_HAS_CXX23 1
+#else
+#define LL_HAS_CXX23 0
+#endif
+#endif
+
 #ifndef LL_SHARED_EXPORT
 #define LL_SHARED_EXPORT __declspec(dllexport)
 #endif
@@ -25,6 +33,10 @@
 
 #ifndef LL_CONSTEXPR23
 #define LL_CONSTEXPR23 _CONSTEXPR23
+#endif
+
+#ifndef LL_UNREACHABLE
+#define LL_UNREACHABLE _STL_UNREACHABLE
 #endif
 
 // MSVC has customized some functions and classes inside the compiler, but they are not included in IntelliSense. This
@@ -173,17 +185,23 @@ constexpr inline auto virtualFunctionPattern = "::`vcall'{";
 
 extern "C" struct _IMAGE_DOS_HEADER __ImageBase; // NOLINT(bugprone-reserved-identifier)
 
-[[nodiscard]] LL_FORCEINLINE void* getCurrentModuleHandle() { return &__ImageBase; }
+[[nodiscard]] LL_FORCEINLINE void* getCurrentModuleHandle() noexcept { return &__ImageBase; }
 
-[[nodiscard]] LL_FORCEINLINE void* returnAddress() { return _ReturnAddress(); }
-
-[[noreturn]] LL_FORCEINLINE void unreachable() { _STL_UNREACHABLE; }
+[[nodiscard]] LL_FORCEINLINE void* returnAddress() noexcept { return _ReturnAddress(); }
 
 using std_optional_construct_from_invoke_tag = std::_Construct_from_invoke_result_tag;
 
 } // namespace ll::internal
 
 #else
+
+#ifndef LL_HAS_CXX23
+#if _LIBCPP_STD_VER >= 23
+#define LL_HAS_CXX23 1
+#else
+#define LL_HAS_CXX23 0
+#endif
+#endif
 
 #ifndef LL_SHARED_EXPORT
 #define LL_SHARED_EXPORT __attribute__((visibility("default")))
@@ -205,17 +223,19 @@ using std_optional_construct_from_invoke_tag = std::_Construct_from_invoke_resul
 #if defined(__cpp_constexpr) && __cpp_constexpr >= 202211L
 #define LL_CONSTEXPR23 constexpr
 #else
-#define LL_CONSTEXPR23
+#define LL_CONSTEXPR23 inline
 #endif
+#endif
+
+#ifndef LL_UNREACHABLE
+#define LL_UNREACHABLE __builtin_unreachable()
 #endif
 
 namespace ll::internal {
 
-[[nodiscard]] LL_FORCEINLINE void* getCurrentModuleHandle(); // Implemented in SystemUtils_linux.cpp
+[[nodiscard]] LL_FORCEINLINE void* getCurrentModuleHandle() noexcept; // Implemented in SystemUtils_linux.cpp
 
-[[nodiscard]] LL_FORCEINLINE void* returnAddress() { return __builtin_return_address(0); }
-
-[[noreturn]] LL_FORCEINLINE void unreachable() { __builtin_unreachable(); }
+[[nodiscard]] LL_FORCEINLINE void* returnAddress() noexcept { return __builtin_return_address(0); }
 
 using std_optional_construct_from_invoke_tag = std::__optional_construct_from_invoke_tag;
 

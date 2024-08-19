@@ -60,7 +60,7 @@ struct VisitStrategy<N, 0> {
         if constexpr ((n) < N) {                                                                                       \
             return std::forward<Fn>(fn).template operator()<(n)>(std::forward<Args>(args)...);                         \
         }                                                                                                              \
-        internal::unreachable();                                                                                       \
+        LL_UNREACHABLE;                                                                                                \
         [[fallthrough]]
 
 #define LL_VISIT_STAMP(stamper, n)                                                                                     \
@@ -68,7 +68,7 @@ struct VisitStrategy<N, 0> {
     switch (idx) {                                                                                                     \
         stamper(0, LL_VISIT_CASE);                                                                                     \
     default:                                                                                                           \
-        internal::unreachable();                                                                                       \
+        LL_UNREACHABLE;                                                                                                \
     }
 
 #define LL_STAMP4(n, x)                                                                                                \
@@ -164,7 +164,7 @@ struct Overloaded : Ts... {
     using Ts::operator()...;
 };
 
-template <unsigned N>
+template <size_t N>
 struct PriorityTag : PriorityTag<N - 1> {};
 template <>
 struct PriorityTag<0> {};

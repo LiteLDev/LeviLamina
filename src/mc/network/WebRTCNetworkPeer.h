@@ -23,7 +23,7 @@ public:
     bool                                                  mWasConnected;            // this+0x68
     bool                                                  mConnectionLost;          // this+0x69
     NetworkPeer::NetworkStatus                            mNetherNetNetworkStatus;  // this+0x70
-    unsigned int                                          mNumNetworkStatusUpdates; // this+0xA8
+    uint                                                  mNumNetworkStatusUpdates; // this+0xA8
 
 public:
     // NOLINTBEGIN

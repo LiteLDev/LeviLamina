@@ -18,7 +18,7 @@ public:
     std::shared_mutex                                             mCacheMutex;                 // this+80
     std::unordered_set<ChunkPos>                                  mVisitedPositions;           // this+88
     SpinLock                                                      mVisitedPositionsMutex;      // this+152
-    unsigned int                                                  mRadius;                     // this+184
+    uint                                                          mRadius;                     // this+184
     int                                                           mXScale;                     // this+188
     int                                                           mZScale;                     // this+192
     std::mutex                                                    mCreateBlueprintsMutex;      // this+200

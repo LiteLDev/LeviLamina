@@ -30,7 +30,7 @@ static std::vector<std::filesystem::path> getFilePathFromIDWriteFontFace(IDWrite
     }
     std::unique_ptr<IDWriteFontFile*[]> fontFiles = std::make_unique_for_overwrite<IDWriteFontFile*[]>(fileCount);
     hr                                            = fontFace.GetFiles(&fileCount, fontFiles.get());
-    for (unsigned int i = 0; i < fileCount; i++) {
+    for (uint i = 0; i < fileCount; i++) {
         IDWriteFontFile* fontFile = fontFiles[i];
 
         void*  refKey{};
@@ -66,7 +66,7 @@ static std::vector<std::filesystem::path> getFilePathFromIDWriteFontFace(IDWrite
         }
         result.push_back(std::move(filePath));
     }
-    for (unsigned int i = 0; i < fileCount; i++) {
+    for (uint i = 0; i < fileCount; i++) {
         fontFiles[i]->Release();
     }
     return result;

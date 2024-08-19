@@ -55,7 +55,7 @@ LL_TYPE_INSTANCE_HOOK(
     SemanticConstraint              constraint
 ) {
     constraint = static_cast<SemanticConstraint>(
-        static_cast<unsigned char>(constraint) & ~static_cast<unsigned char>(SemanticConstraint::RequiresCheatsEnabled)
+        static_cast<uchar>(constraint) & ~static_cast<uchar>(SemanticConstraint::RequiresCheatsEnabled)
     );
     return origin(enumName, enumValues, constraint);
 }

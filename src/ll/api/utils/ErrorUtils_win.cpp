@@ -255,7 +255,7 @@ std::string makeExceptionString(std::exception_ptr ePtr) noexcept {
         if (rt->ExceptionCode == MsvcExceptionRef::exceptionCodeOfCpp) {
             try {
                 MsvcExceptionRef exc{*rt};
-                std::string         handleName =
+                std::string      handleName =
                     sys_utils::getModulePath(exc.handle)
                         .transform([](auto&& path) { return string_utils::u8str2str(path.stem().u8string()); })
                         .value_or("unknown module");

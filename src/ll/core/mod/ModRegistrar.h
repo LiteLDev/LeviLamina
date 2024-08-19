@@ -6,8 +6,8 @@
 #include <vector>
 
 #include "ll/api/Expected.h"
-#include "ll/api/mod/ModManagerRegistry.h"
 #include "ll/api/command/EnumName.h"
+#include "ll/api/mod/ModManagerRegistry.h"
 
 namespace ll::mod {
 

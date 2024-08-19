@@ -125,8 +125,7 @@ target("LeviLamina")
     end
     add_defines(
         "ENTT_PACKED_PAGE=128", -- public = true
-        "LL_EXPORT",
-        "LL_HAS_CXX23"
+        "LL_EXPORT"
     )
 
     -- work around to enable c++23
@@ -134,8 +133,8 @@ target("LeviLamina")
     if is_windows then
         -- msstl
         add_defines("_HAS_CXX23=1")
-        -- libstdc++
     else
+        -- libstdc++
         add_defines("_LIBCPP_STD_VER=23")
     end
 

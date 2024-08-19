@@ -17,7 +17,7 @@ public:
 
     std::string_view                      name;             // this+0x0
     std::thread::id                       affinity;         // this+0x10
-    unsigned int                          priority;         // this+0x14
+    uint                                  priority;         // this+0x14
     int                                   priorityBackDown; // this+0x18
     TaskOptions                           options;          // this+0x1C
     std::chrono::steady_clock::time_point startAtTime;      // this+0x20

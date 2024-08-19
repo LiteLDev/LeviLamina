@@ -29,7 +29,7 @@
 using namespace ll::string_utils;
 
 namespace ll {
-static std::ofstream            defaultFile(file_utils::u8path(pl::pl_log_path) / u8"latest.log", std::ios::out);
+static std::ofstream defaultFile(file_utils::u8path(pl::pl_log_path) / u8"latest.log", std::ios::out);
 
 static bool checkLogLevel(int level, int outLevel) {
     if (level >= outLevel) return true;

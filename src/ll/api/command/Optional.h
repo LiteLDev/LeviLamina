@@ -6,6 +6,8 @@
 #include <stdexcept>
 #include <type_traits>
 
+#include "ll/api/base/Macro.h"
+
 namespace ll::command {
 
 template <class T>
