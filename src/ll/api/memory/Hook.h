@@ -84,10 +84,7 @@ template <class, FixedString>
 consteval bool virtualDetector() noexcept {
     return false;
 }
-template <class T, T f>
-consteval bool virtualDetector() noexcept {
-    return reflection::getRawName<f>().find(internal::virtualFunctionPattern) != std::string::npos;
-}
+using ::ll::internal::virtualDetector;
 
 template <class... Ts>
 class HookRegistrar {

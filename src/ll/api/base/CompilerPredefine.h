@@ -1,8 +1,10 @@
 #pragma once
 
-#include "ll/api/base/StdInt.h"
-
 #include <optional>
+#include <type_traits>
+
+#include "ll/api/base/StdInt.h"
+#include "ll/api/reflection/TypeName.h"
 
 #ifdef _MSC_VER
 
@@ -185,11 +187,14 @@ using CatchableType = ::_CatchableType;
 using ThrowInfo     = ::_ThrowInfo;
 #endif
 
-constexpr inline auto virtualFunctionPattern = "::`vcall'{";
-
 extern "C" struct _IMAGE_DOS_HEADER __ImageBase; // NOLINT(bugprone-reserved-identifier)
 
 [[nodiscard]] LL_FORCEINLINE void* getCurrentModuleHandle() noexcept { return &__ImageBase; }
+
+template <class T, T f>
+consteval bool virtualDetector() noexcept {
+    return reflection::getRawName<f>().find("::`vcall'{") != std::string::npos;
+}
 
 using std_optional_construct_from_invoke_tag = std::_Construct_from_invoke_result_tag;
 
@@ -246,6 +251,17 @@ namespace ll::internal {
 using std_optional_construct_from_invoke_tag = std::__optional_construct_from_invoke_tag;
 
 using FileHandleT = int;
+
+template <class T, T v1, T v2, class = std::integral_constant<bool, true>>
+struct CanCompare : std::false_type {};
+
+template <class T, T v1, T v2>
+struct CanCompare<T, v1, v2, std::integral_constant<bool, v1 == v2>> : std::true_type {};
+
+template <class T, T f>
+consteval bool virtualDetector() noexcept {
+    return !CanCompare<T, f, f>::value;
+}
 
 } // namespace ll::internal
 
