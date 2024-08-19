@@ -3,18 +3,16 @@
 #include <cstddef>
 #include <cstdint>
 #include <functional>
-#include <memory>
 
 #include "ll/api/base/Macro.h"
-#include "ll/api/base/StdInt.h"
 
 namespace ll::memory {
 namespace detail {
 static constexpr size_t closureMagicNumber = 0x58ffffbffdffffafull;
 
 LLAPI size_t getVolatileOffset(void*);
-LLAPI void   initNativeClosure(void* self, void* impl, size_t offset);
-LLAPI void   releaseNativeClosure(void* self);
+LLAPI void   initNativeClosure(void* self_, void* impl, size_t offset);
+LLAPI void   releaseNativeClosure(void* self_);
 } // namespace detail
 
 //                The principle of NativeClosure
@@ -62,7 +60,7 @@ public:
         uintptr_t  data;
     } stored;
 
-    void* closure;
+    void* closure{};
 
     NativeClosure(origin_fn* func, uintptr_t data) : stored({func, data}) {
         detail::initNativeClosure(this, closureImpl, implOffset);

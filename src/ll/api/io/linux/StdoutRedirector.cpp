@@ -1,6 +1,5 @@
 #include "ll/api/io/StdoutRedirector.h"
 
-#include <cstdio>
 #include <fcntl.h>
 #include <unistd.h>
 

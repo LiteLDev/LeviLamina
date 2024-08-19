@@ -3,14 +3,16 @@
 #include <cstddef>
 #include <cstdint>
 #include <cstring>
-#include <memory>
-#include <stdexcept>
 
 #include "ll/api/base/StdInt.h"
 #include "ll/api/memory/Memory.h"
 #include "ll/core/LeviLamina.h"
 
+#if defined(LL_WIN32)
 #include "Windows.h"
+#elif defined(LL_LINUX)
+#include <sys/mman.h>
+#endif
 
 namespace ll::memory::detail {
 
@@ -39,12 +41,16 @@ size_t getVolatileOffset(void* impl) {
     return 0;
 };
 using T = NativeClosure<void*()>;
-void initNativeClosure(void* t, void* impl, size_t offset) {
+void initNativeClosure(void* self_, void* impl, size_t offset) {
     auto size = offset + sizeof(NativeClosurePrologue);
     impl      = unwrapFuncAddress(impl);
-    auto self = (T*)t;
+    auto self = (T*)self_;
 
+#if defined(LL_WIN32)
     self->closure = VirtualAlloc(nullptr, size, MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);
+#elif defined(LL_LINUX)
+    self->closure = mmap(nullptr, size, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
+#endif
 
     memcpy(self->closure, impl, offset);
 
@@ -57,12 +63,21 @@ void initNativeClosure(void* t, void* impl, size_t offset) {
     };
 
     ulong _;
+
+#if defined(LL_WIN32)
     VirtualProtect(self->closure, size, PAGE_EXECUTE_READ, &_);
+#elif defined(LL_LINUX)
+    mprotect(self->closure, size, PROT_READ | PROT_EXEC);
+#endif
 }
-void releaseNativeClosure(void* t) {
-    auto self = (T*)t;
+void releaseNativeClosure(void* self_) {
+    auto self = (T*)self_;
     if (self->closure != nullptr) {
+#if defined(LL_WIN32)
         VirtualFree(self->closure, 0, MEM_RELEASE);
+#elif defined(LL_LINUX)
+        munmap(self->closure, 0);
+#endif
         self->closure = nullptr;
     }
 }
