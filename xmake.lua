@@ -21,8 +21,7 @@ add_requires("magic_enum v0.9.5")
 add_requires("nlohmann_json v3.11.3")
 add_requires("rapidjson v1.1.0")
 add_requires("mimalloc 2.1.2")
--- add_requires("openssl 1.1.1-w", {configs = {shared = false}})
-add_requires("cpp-httplib 0.14.3", {configs = {ssl = true}})
+add_requires("cpr 1.10.5", {configs = {ssl = true}})
 add_requires("boost 1.86.0", {configs = {stacktrace = true}})
 
 -- Dependencies from liteldev-repo.
@@ -117,6 +116,7 @@ target("LeviLamina")
         "ctre",
         "pcg_cpp",
         "pfr",
+        "cpr",
         "boost",
         {public = true}
     )

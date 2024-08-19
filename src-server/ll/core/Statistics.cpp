@@ -27,7 +27,7 @@
 #include "mc/world/actor/player/Player.h"
 #include "mc/world/level/Level.h"
 
-#include "httplib.h"
+#include "cpr/cpr.h"
 #include "magic_enum.hpp"
 #include "nlohmann/json.hpp"
 #include "nlohmann/json_fwd.hpp"
@@ -47,12 +47,12 @@ static nlohmann::json addSimplePie(std::string_view key, std::variant<std::strin
     return json;
 }
 
-static nlohmann::json addAdvancedPie(std::string_view key, std::unordered_map<std::string_view, int> value) {
+static nlohmann::json addAdvancedPie(std::string_view key, const std::unordered_map<std::string_view, int>& value) {
     nlohmann::json json;
     json["chartId"] = key;
     nlohmann::json json2;
     nlohmann::json valuesBuilder;
-    for (auto [string, integer] : std::move(value)) {
+    for (auto [string, integer] : value) {
         valuesBuilder[string] = integer;
     }
     json2["values"] = valuesBuilder;
@@ -94,7 +94,7 @@ static nlohmann::json getCustomCharts() {
         });
         return true;
     });
-    res.emplace_back(addAdvancedPie("player_platform", std::move(platforms)));
+    res.emplace_back(addAdvancedPie("player_platform", platforms));
 
     return res;
 }
@@ -102,18 +102,7 @@ static nlohmann::json getCustomCharts() {
 struct Statistics::Impl {
     ll::schedule::SystemTimeScheduler scheduler;
     ll::thread::TickSyncTaskPool      pool;
-
-    httplib::Client client{"https://bstats.org"};
-
-    nlohmann::json json;
-
-    httplib::Headers header = {
-        {"Accept-Encoding", "gzip"             },
-        {"Accept",          "application/json" },
-        {"Connection",      "close"            },
-        {"Content-Length",  "0"                },
-        {"User-Agent",      "Metrics-Service/1"}
-    };
+    nlohmann::json                    json;
 
     void submitData() {
         pool.addTask([this]() {
@@ -124,9 +113,18 @@ struct Statistics::Impl {
             }
         ).wait();
         try {
-            auto body                             = json.dump();
-            header.find("Content-Length")->second = std::to_string(body.size());
-            client.Post("/submitData/server-implementation", header, body, "application/json");
+            auto body = json.dump();
+            cpr::Post(
+                cpr::Url{
+                    "https://bstats.org/submitData/server-implementation"
+            },
+                cpr::Body{body},
+                cpr::Header{
+                    {"Accept", "application/json"},
+                    {"Content-Type", "application/json"},
+                    {"User-Agent", "Metrics-Service/1"}
+                }
+            )
         } catch (...) {}
     }
 
