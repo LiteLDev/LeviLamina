@@ -3,7 +3,6 @@
 #include <optional>
 #include <vector>
 
-#include "libhat.hpp"
 #include "pl/SymbolProvider.h"
 
 #include "ll/api/Logger.h"
@@ -17,25 +16,28 @@
 
 #include "demangler/Demangle.h"
 
-#include "Windows.h"
-
-__declspec(noreturn) void __scrt_throw_std_bad_alloc();
-__declspec(noreturn) void __scrt_throw_std_bad_array_new_length();
+// * Not compilable under Linux
+// * Cross-platform work on this source is WIP.
 
 namespace ll::memory {
 
 std::string demangleSymbol(std::string_view symbol) {
     std::string res;
-    if (char* demangled = demangler::microsoftDemangle(
-            symbol,
-            nullptr,
-            nullptr,
-            (demangler::MSDemangleFlags)(demangler::MSDF_NoAccessSpecifier | demangler::MSDF_NoCallingConvention)
-        )) {
-        res = demangled;
-        std::free(demangled);
+    if (demangler::nonMicrosoftDemangle(symbol, res)) return res;
+    else if (symbol.starts_with("_")) { // some platform's external symbol style...
+        demangler::nonMicrosoftDemangle(symbol.substr(1), res);
     } else {
-        res = symbol;
+        if (char* demangled = demangler::microsoftDemangle(
+                symbol,
+                nullptr,
+                nullptr,
+                (demangler::MSDemangleFlags)(demangler::MSDF_NoAccessSpecifier | demangler::MSDF_NoCallingConvention)
+            )) {
+            res = demangled;
+            std::free(demangled);
+        } else {
+            res = symbol;
+        }
     }
     return res;
 }
@@ -60,6 +62,7 @@ FuncPtr resolveSymbol(std::string_view symbol, bool disableErrorOutput) {
 
 FuncPtr resolveSignature(std::string_view signature) { return resolveSignature(signature, sys_utils::getImageRange()); }
 
+// TODO
 FuncPtr resolveSignature(std::string_view signature, std::span<std::byte> range) {
     if (range.empty()) {
         return nullptr;
@@ -70,6 +73,7 @@ FuncPtr resolveSignature(std::string_view signature, std::span<std::byte> range)
         return const_cast<std::byte*>(hat::find_pattern(range.begin(), range.end(), res.value()).get());
     }
 }
+
 std::vector<std::string> lookupSymbol(FuncPtr func) {
     std::vector<std::string> symbols;
     size_t                   length;
@@ -80,12 +84,15 @@ std::vector<std::string> lookupSymbol(FuncPtr func) {
     if (result) pl::symbol_provider::pl_free_lookup_result(result);
     return symbols;
 }
+
 void* unwrapFuncAddress(void* ptr) noexcept {
     if (*(char*)ptr == '\xE9') {
         (uintptr_t&)(ptr) += *(int*)((uintptr_t)ptr + 1);
     }
     return ptr;
 }
+
+// TODO
 void modify(void* ptr, size_t len, const std::function<void()>& callback) {
     std::unique_ptr<thread::GlobalThreadPauser> pauser;
     if (getGamingStatus() != GamingStatus::Default) {
@@ -99,11 +106,12 @@ void modify(void* ptr, size_t len, const std::function<void()>& callback) {
 
 size_t getUsableSize(void* ptr) { return getDefaultAllocator().getUsableSize(ptr); }
 
-void throwMemoryException(size_t size) {
-    if (size == SIZE_MAX) {
-        __scrt_throw_std_bad_array_new_length();
+[[noreturn]] void throwMemoryException(size_t size) {
+    if (size == std::numeric_limits<size_t>::max()) {
+        throw std::bad_array_new_length();
     } else {
-        __scrt_throw_std_bad_alloc();
+        throw std::bad_alloc();
     }
 }
+
 } // namespace ll::memory

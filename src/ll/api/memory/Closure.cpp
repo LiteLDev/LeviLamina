@@ -76,7 +76,7 @@ void releaseNativeClosure(void* self_) {
 #if defined(LL_WIN32)
         VirtualFree(self->closure, 0, MEM_RELEASE);
 #elif defined(LL_LINUX)
-        munmap(self->closure, 0);
+        munmap(self->closure, sizeof(self->closure));
 #endif
         self->closure = nullptr;
     }
