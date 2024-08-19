@@ -7,26 +7,26 @@ namespace ll::io {
 
 StdoutRedirector::StdoutRedirector(void* outputHandle, ProcessChannel channels)
 : outputHandle(outputHandle),
-  m_channels(channels) {
-    if (m_channels & StandardOutput) {
+  channels(channels) {
+    if (channels & StandardOutput) {
         setvbuf(stdout, nullptr, _IONBF, 0);
         ::SetStdHandle(STD_OUTPUT_HANDLE, outputHandle);
     }
-    if (m_channels & StandardError) {
+    if (channels & StandardError) {
         setvbuf(stderr, nullptr, _IONBF, 0);
         ::SetStdHandle(STD_ERROR_HANDLE, outputHandle);
     }
     int fd = _open_osfhandle((intptr_t)outputHandle, _O_WRONLY | _O_U8TEXT);
-    if (m_channels & StandardOutput) _dup2(fd, 1);
-    if (m_channels & StandardError) _dup2(fd, 2);
+    if (channels & StandardOutput) _dup2(fd, 1);
+    if (channels & StandardError) _dup2(fd, 2);
     _close(fd);
 }
 StdoutRedirector::~StdoutRedirector() {
-    if (m_channels & StandardOutput) {
+    if (channels & StandardOutput) {
         FILE* s;
         freopen_s(&s, "CONOUT$", "w+t", stdout);
     }
-    if (m_channels & StandardError) {
+    if (channels & StandardError) {
         FILE* s;
         freopen_s(&s, "CONOUT$", "w+t", stderr);
     }
