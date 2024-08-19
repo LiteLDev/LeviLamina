@@ -124,7 +124,7 @@ struct Statistics::Impl {
                     {"Content-Type", "application/json"},
                     {"User-Agent", "Metrics-Service/1"}
                 }
-            )
+            );
         } catch (...) {}
     }
 
