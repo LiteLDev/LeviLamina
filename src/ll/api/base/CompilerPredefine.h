@@ -6,6 +6,12 @@
 #include "ll/api/base/StdInt.h"
 #include "ll/api/reflection/TypeName.h"
 
+#if defined(_WIN32)
+#define LL_WIN32
+#elif defined(__linux__)
+#define LL_LINUX
+#endif
+
 #ifdef _MSC_VER
 
 #include "intrin.h"
@@ -51,7 +57,7 @@
 // NOLINTBEGIN
 #pragma pack(push, ehdata, 4)
 
-    typedef struct _PMD {
+typedef struct _PMD {
     int mdisp; // Offset of intended data within base
     int pdisp; // Displacement to virtual base pointer
     int vdisp; // Index within vbTable to offset of base
