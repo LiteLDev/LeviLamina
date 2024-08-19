@@ -11,7 +11,7 @@ namespace ll::inline utils::hash_utils {
 
 template <class T>
 constexpr void hashCombine(T const& v, size_t& seed) {
-    seed ^= v + 0x9e3779b9ULL + (seed << 6ULL) + (seed >> 2ULL);
+    seed ^= v + 0x9e3779b9ull + (seed << 6ull) + (seed >> 2ull);
 }
 
 [[nodiscard]] constexpr uint64 doHash(std::string_view x) {

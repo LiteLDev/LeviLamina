@@ -84,7 +84,7 @@ public:
 
     virtual void alignedRelease(void* ptr) { _aligned_free(ptr); }
 
-    virtual uint64 getUsableSize(void* ptr) { return ptr ? _msize(ptr) : 0ui64; }
+    virtual uint64 getUsableSize(void* ptr) { return ptr ? _msize(ptr) : 0ull; }
 
     virtual void logCurrentState() {
         HEAP_SUMMARY summary{.cb = sizeof(HEAP_SUMMARY)};
@@ -125,7 +125,7 @@ public:
         if (mi_is_in_heap_region(ptr)) [[likely]] {
             return mi_usable_size(ptr);
         } else {
-            return ptr ? _msize(ptr) : 0ui64;
+            return ptr ? _msize(ptr) : 0ull;
         }
     }
 

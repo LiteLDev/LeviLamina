@@ -22,9 +22,10 @@ static void createWinPipe(HANDLE& hRead, HANDLE& hWrite, size_t size, bool nowai
         &attributes
     );
     SECURITY_ATTRIBUTES attributes2 = {sizeof(SECURITY_ATTRIBUTES), 0, true};
-    hWrite = ::CreateFile(pipeName.c_str(), GENERIC_WRITE, 0, &attributes2, OPEN_EXISTING, FILE_FLAG_OVERLAPPED, NULL);
+    hWrite =
+        ::CreateFile(pipeName.c_str(), GENERIC_WRITE, 0, &attributes2, OPEN_EXISTING, FILE_FLAG_OVERLAPPED, nullptr);
 
-    ::ConnectNamedPipe(hRead, NULL);
+    ::ConnectNamedPipe(hRead, nullptr);
 }
 
 Pipe::Pipe(size_t size, bool nowait) { createWinPipe(hRead, hWrite, size, nowait); }
@@ -39,7 +40,7 @@ std::string Pipe::read() {
         DWORD cbRead{0};
 
         // Read from the pipe.
-        fSuccess = ReadFile(hRead, buf, sizeof(buf), &cbRead, NULL);
+        fSuccess = ReadFile(hRead, buf, sizeof(buf), &cbRead, nullptr);
 
         if (cbRead > 0) result.append(buf, cbRead);
 

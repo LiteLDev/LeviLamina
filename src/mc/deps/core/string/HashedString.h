@@ -10,9 +10,9 @@ public:
 
     [[nodiscard]] constexpr static uint64 computeHash(std::string_view str) {
         if (str.empty()) return 0;
-        uint64 hash = 0xCBF29CE484222325ULL;
+        uint64 hash = 0xCBF29CE484222325ull;
         for (char s : str) {
-            hash = s ^ (0x100000001B3ULL * hash);
+            hash = s ^ (0x100000001B3ull * hash);
         }
         return hash;
     }

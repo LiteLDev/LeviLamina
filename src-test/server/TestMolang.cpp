@@ -33,7 +33,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
         MolangQueryFunctionReturnType::Bool,
         "default",
         0,
-        ~0ui64,
+        ~0ull,
         {}
     );
     ExpressionNode::registerQueryFunction(
@@ -46,7 +46,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
         MolangQueryFunctionReturnType::Number,
         "default",
         0,
-        ~0ui64,
+        ~0ull,
         {}
     );
     auto parm = RenderParams();

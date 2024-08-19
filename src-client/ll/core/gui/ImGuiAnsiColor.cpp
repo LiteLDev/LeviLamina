@@ -159,7 +159,7 @@ void ImFont_RenderAnsiText(
     const float scale             = size / font->FontSize;
     const float line_height       = font->FontSize * scale;
     const bool  word_wrap_enabled = (wrap_width > 0.0f);
-    const char* word_wrap_eol     = NULL;
+    const char* word_wrap_eol     = nullptr;
 
     // Fast-forward to first visible line
     const char* s = text_begin;
@@ -239,7 +239,7 @@ void ImFont_RenderAnsiText(
             if (s >= word_wrap_eol) {
                 x              = pos.x;
                 y             += line_height;
-                word_wrap_eol  = NULL;
+                word_wrap_eol  = nullptr;
 
                 // Wrapping skips upcoming blanks
                 while (s < text_end) {
@@ -378,17 +378,17 @@ void ImDrawList_AddAnsiText(
     const ImVec2& pos,
     ImU32         col,
     const char*   text_begin,
-    const char*   text_end           = NULL,
+    const char*   text_end           = nullptr,
     float         wrap_width         = 0.0f,
-    const ImVec4* cpu_fine_clip_rect = NULL
+    const ImVec4* cpu_fine_clip_rect = nullptr
 ) {
     if ((col & IM_COL32_A_MASK) == 0) return;
 
-    if (text_end == NULL) text_end = text_begin + strlen(text_begin);
+    if (text_end == nullptr) text_end = text_begin + strlen(text_begin);
     if (text_begin == text_end) return;
 
     // Pull default font/size from the shared ImDrawListSharedData instance
-    if (font == NULL) font = drawList->_Data->Font;
+    if (font == nullptr) font = drawList->_Data->Font;
     if (font_size == 0.0f) font_size = drawList->_Data->FontSize;
 
     IM_ASSERT(font->ContainerAtlas->TexID == drawList->_TextureIdStack.back()); // Use high-level ImGui::PushFont()
@@ -413,7 +413,7 @@ void ImDrawList_AddAnsiText(
         text_begin,
         text_end,
         wrap_width,
-        cpu_fine_clip_rect != NULL
+        cpu_fine_clip_rect != nullptr
     );
 }
 
@@ -470,9 +470,9 @@ void textAnsiUnformatted(const char* text, const char* text_end) {
     if (window->SkipItems) return;
 
     ImGuiContext& g = *GImGui;
-    IM_ASSERT(text != NULL);
+    IM_ASSERT(text != nullptr);
     const char* text_begin = text;
-    if (text_end == NULL) text_end = text + strlen(text); // FIXME-OPT
+    if (text_end == nullptr) text_end = text + strlen(text); // FIXME-OPT
 
     const ImVec2 text_pos(window->DC.CursorPos.x, window->DC.CursorPos.y + window->DC.CurrLineTextBaseOffset);
     const float  wrap_pos_x   = window->DC.TextWrapPos;

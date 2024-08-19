@@ -48,7 +48,7 @@ LLNDAPI std::system_error getLastSystemError() noexcept;
 
 LLNDAPI std::exception_ptr createExceptionPtr(void*) noexcept;
 #ifdef __cpp_lib_stacktrace
-LLNDAPI std::stacktrace stacktraceFromCurrentException(size_t skip = 0, size_t maxDepth = ~0ui64);
+LLNDAPI std::stacktrace stacktraceFromCurrentException(size_t skip = 0, size_t maxDepth = ~0ull);
 #endif
 LLNDAPI std::string makeExceptionString(std::exception_ptr ePtr) noexcept;
 

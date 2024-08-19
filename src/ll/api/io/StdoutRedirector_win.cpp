@@ -9,11 +9,11 @@ StdoutRedirector::StdoutRedirector(void* outputHandle, ProcessChannel channels)
 : outputHandle(outputHandle),
   m_channels(channels) {
     if (m_channels & StandardOutput) {
-        setvbuf(stdout, NULL, _IONBF, 0);
+        setvbuf(stdout, nullptr, _IONBF, 0);
         ::SetStdHandle(STD_OUTPUT_HANDLE, outputHandle);
     }
     if (m_channels & StandardError) {
-        setvbuf(stderr, NULL, _IONBF, 0);
+        setvbuf(stderr, nullptr, _IONBF, 0);
         ::SetStdHandle(STD_ERROR_HANDLE, outputHandle);
     }
     int fd = _open_osfhandle((intptr_t)outputHandle, _O_WRONLY | _O_U8TEXT);

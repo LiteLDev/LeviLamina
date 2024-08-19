@@ -327,7 +327,7 @@
 //        // v113.mRandom.mObject.mTest_OnlyUsedDeterministically                                        = 0;
 //        // Core::Random::_setSeed(&v113.mRandom.mObject, (unsigned int)v12);
 //        // v113.mRandom.mThreadIdInitialized     = 0;
-//        //*(_QWORD*)&v113.mRandom.mThreadId._Id = 0i64;
+//        //*(_QWORD*)&v113.mRandom.mThreadId._Id = 0ll;
 //        // LODWORD(v12)                          = this->mLevel->getSeed(this->mLevel);
 //        // Bedrock::Application::ThreadOwner<Core::Random>::_assertSameThreadID(&v113.mRandom);
 //        // Core::Random::_setSeed(&v113.mRandom.mObject, (unsigned int)v12);
@@ -354,10 +354,10 @@
 //        //    if (_TSS3 == -1) {
 //        //        if (label_305._Mypair._Myval2._Myres >= 0x10) v18 =
 //        (std::string*)label_305._Mypair._Myval2._Bx._Ptr;
-//        //        v91._Mypair._Myval2._Bx._Ptr = 0i64;
-//        //        v91._Mypair._Myval2._Mysize  = 0i64;
-//        //        v91._Mypair._Myval2._Myres   = 15i64;
-//        //        v25                          = -1i64;
+//        //        v91._Mypair._Myval2._Bx._Ptr = 0ll;
+//        //        v91._Mypair._Myval2._Mysize  = 0ll;
+//        //        v91._Mypair._Myval2._Myres   = 15ll;
+//        //        v25                          = -1ll;
 //        //        do ++v25;
 //        //        while (Core::Profile::Area::CHUNK_LOAD_SYSTEM_2[v25]);
 //        //        std::string::assign(&v91, "Chunk load system", v25);
@@ -405,7 +405,7 @@
 //        //    v22 = 44 * (spikes._Mypair._Myval2._Myend - Myfirst);
 //        //    v23 = Myfirst;
 //        //    if (v22 >= 0x1000) {
-//        //        v22     += 39i64;
+//        //        v22     += 39ll;
 //        //        Myfirst  = *(SpikeFeature::EndSpike**)&Myfirst[-1].mTopBoundingBox.max.y;
 //        //        if ((unsigned __int64)((char*)v23 - (char*)Myfirst - 8) > 0x1F)
 //        _invalid_parameter_noinfo_noreturn();
@@ -431,10 +431,10 @@
 //        //                if (_TSS6 == -1) {
 //        //                    if (label_323._Mypair._Myval2._Myres >= 0x10)
 //        //                        v27 = (std::string*)label_323._Mypair._Myval2._Bx._Ptr;
-//        //                    v92._Mypair._Myval2._Bx._Ptr = 0i64;
-//        //                    v92._Mypair._Myval2._Mysize  = 0i64;
-//        //                    v92._Mypair._Myval2._Myres   = 15i64;
-//        //                    v31                          = -1i64;
+//        //                    v92._Mypair._Myval2._Bx._Ptr = 0ll;
+//        //                    v92._Mypair._Myval2._Mysize  = 0ll;
+//        //                    v92._Mypair._Myval2._Myres   = 15ll;
+//        //                    v31                          = -1ll;
 //        //                    do ++v31;
 //        //                    while (Core::Profile::Area::CHUNK_LOAD_SYSTEM_2[v31]);
 //        //                    std::string::assign(&v92, "Chunk load system", v31);
@@ -471,7 +471,7 @@
 //        //            featurePlacement.y = v29 + origin.y;
 //        //            featurePlacement.z = (v30 & 0xF) + 8 + origin.z;
 //        //            memset(&endIslands, 0, sizeof(endIslands));
-//        //            Feature::Feature(&endIslands, 0i64);
+//        //            Feature::Feature(&endIslands, 0ll);
 //        //            endIslands.__vftable = (EndIslandFeature_vtbl*)EndIslandFeature::`vftable';
 //        //            EndIslandFeature::place(
 //        //                &endIslands,
@@ -501,10 +501,10 @@
 //        //            if (_TSS8 == -1) {
 //        //                if (label_338._Mypair._Myval2._Myres >= 0x10)
 //        //                    v32 = (std::string*)label_338._Mypair._Myval2._Bx._Ptr;
-//        //                v93._Mypair._Myval2._Bx._Ptr = 0i64;
-//        //                v93._Mypair._Myval2._Mysize  = 0i64;
-//        //                v93._Mypair._Myval2._Myres   = 15i64;
-//        //                v57                          = -1i64;
+//        //                v93._Mypair._Myval2._Bx._Ptr = 0ll;
+//        //                v93._Mypair._Myval2._Mysize  = 0ll;
+//        //                v93._Mypair._Myval2._Myres   = 15ll;
+//        //                v57                          = -1ll;
 //        //                do ++v57;
 //        //                while (Core::Profile::Area::CHUNK_LOAD_SYSTEM_2[v57]);
 //        //                std::string::assign(&v93, "Chunk load system", v57);
@@ -549,7 +549,7 @@
 //        //                        v85.y = v38 + origin.y;
 //        //                        v85.z = v36 + origin.z;
 //        //                        v39   = BlockSource::getBlock(&source, &v85)->mLegacyBlock.ptr_;
-//        //                        if (!v39) gsl::details::terminate(0i64);
+//        //                        if (!v39) gsl::details::terminate(0ll);
 //        //                        Hash = HashedString::getHash(&v39->mNameInfo.mFullName);
 //        //                        if (Hash == HashedString::getHash(&VanillaBlockTypeIds::EndStone)) {
 //        //                            target.x = v35 + origin.x;
@@ -582,7 +582,7 @@
 //        //                gatewayPos.y = v45 + v46 % 7 + 3 + origin.y;
 //        //                gatewayPos.z = v43 + origin.z;
 //        //                memset(&v89, 0, sizeof(v89));
-//        //                Feature::Feature(&v89, 0i64);
+//        //                Feature::Feature(&v89, 0ll);
 //        //                v89.__vftable = (Feature_vtbl*)EndGatewayFeature::`vftable'; EndGatewayFeature::place(
 //        //                    (EndGatewayFeature*)&v89,
 //        //                    &source,
@@ -960,7 +960,7 @@
 //
 //    void
 //    prepareHeights(TheEndGenerator* this, BlockVolume* box, const ChunkPos* chunkPos, bool factorInBeardsAndShavers) {
-//        TheEndGenerator::_prepareHeights(this, box, chunkPos, factorInBeardsAndShavers, 0i64, 0);
+//        TheEndGenerator::_prepareHeights(this, box, chunkPos, factorInBeardsAndShavers, 0ll, 0);
 //    }
 //};
 //

@@ -21,7 +21,7 @@
 #include "DbgHelp.h"
 
 namespace ll::inline utils::error_utils {
-std::stacktrace stacktraceFromContext(optional_ref<_CONTEXT const> context, size_t skip = 0, size_t maxDepth = ~0ui64);
+std::stacktrace stacktraceFromContext(optional_ref<_CONTEXT const> context, size_t skip = 0, size_t maxDepth = ~0ull);
 }
 
 namespace ll {

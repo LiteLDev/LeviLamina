@@ -10,7 +10,7 @@
 
 namespace ll::memory {
 namespace detail {
-static constexpr size_t closureMagicNumber = 0x58ffffbffdffffafui64;
+static constexpr size_t closureMagicNumber = 0x58ffffbffdffffafull;
 
 LLAPI size_t getVolatileOffset(void*);
 LLAPI void   initNativeClosure(void* self, void* impl, size_t offset);

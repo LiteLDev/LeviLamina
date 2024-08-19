@@ -18,14 +18,14 @@ LL_AUTO_TYPE_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serve
     auto nbt = CompoundTag{
         {"anull",     nullptr                                                           },
         {"string?",   R"(streee _ _o-ix 我超, utf8 "\asfa%"*)##q)$\\"\Q34\\""'':)"_tag},
-        {"1num",       1                                                                 },
-        {"nums",      3i16                                                              },
-        {"byte",      127i8                                                             },
+        {"1num",      1                                                                 },
+        {"nums",      (int16)3                                                          },
+        {"byte",      (int8)127                                                         },
         {"list",      ListTag{5_b, ByteTag{true}, ByteTag{false}, -2_b}                 },
         {"compound",
          CompoundTag{
              {"float", 0.1f},
-             {"long", 10000ui64},
+             {"long", 10000ull},
              {"double", 0.3},
              {"sdouble", 1.0},
          }                                                                              },
@@ -38,9 +38,9 @@ LL_AUTO_TYPE_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serve
 
 
     nlohmann::json j{
-        {"num",  1    },
-        {"nums", 3i16 },
-        {"byte", 127i8}
+        {"num",  1        },
+        {"nums", (int16)3 },
+        {"byte", (int8)127}
     };
     j["some"]["new"]["json"] = 2;
 
@@ -108,7 +108,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serve
             "{}, at: \"{}\"",
             nbt2.error().message(),
             std::string_view{
-                snbt2.data() + std::max(0i64, (int64)iter - 8i64),
+                snbt2.data() + std::max(0ll, (int64)iter - 8ll),
                 snbt2.data() + std::min(snbt2.size() - 1, iter + 8)
             }
         );
