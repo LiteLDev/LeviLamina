@@ -174,8 +174,7 @@ std::exception_ptr createExceptionPtr(void* rec) noexcept {
     __ExceptionPtrAssign(&res, &realType);
     return res;
 }
-boost::stacktrace::stacktrace
-stacktraceFromContext(optional_ref<_CONTEXT const> context, size_t skip, size_t maxDepth) {
+stacktrace stacktraceFromContext(optional_ref<_CONTEXT const> context, size_t skip, size_t maxDepth) {
     if (!context) {
         return {};
     }
@@ -191,11 +190,10 @@ stacktraceFromContext(optional_ref<_CONTEXT const> context, size_t skip, size_t 
 
     struct RealStacktrace {
         std::vector<decltype(sf.AddrPC.Offset)> addresses;
-        ulong                                   hash{};
     } realStacktrace;
 
-    static_assert(sizeof(RealStacktrace) == sizeof(boost::stacktrace::stacktrace));
-    static_assert(sizeof(boost::stacktrace::frame) == sizeof(sf.AddrPC.Offset));
+    static_assert(sizeof(RealStacktrace) == sizeof(stacktrace));
+    static_assert(sizeof(stacktrace_entry) == sizeof(sf.AddrPC.Offset));
 
     constexpr auto machine = IMAGE_FILE_MACHINE_AMD64;
 
@@ -218,12 +216,11 @@ stacktraceFromContext(optional_ref<_CONTEXT const> context, size_t skip, size_t 
         if (i < skip) {
             continue;
         }
-        realStacktrace.hash += (ulong)sf.AddrPC.Offset;
         realStacktrace.addresses.push_back(sf.AddrPC.Offset);
     }
-    return *reinterpret_cast<boost::stacktrace::stacktrace*>(&realStacktrace);
+    return *reinterpret_cast<stacktrace*>(&realStacktrace);
 }
-boost::stacktrace::stacktrace stacktraceFromCurrentException(size_t skip, size_t maxDepth) {
+stacktrace stacktraceFromCurrentException(size_t skip, size_t maxDepth) {
     return stacktraceFromContext(current_exception_context(), skip, maxDepth);
 }
 
@@ -338,7 +335,7 @@ void printCurrentException(ll::OutputStream& stream, std::exception_ptr const& e
         std::string res;
         auto        stacktrace = stacktraceFromCurrentException();
         if (stacktrace.empty()) {
-            stacktrace = boost::stacktrace::stacktrace(2, 15);
+            stacktrace = ::ll::stacktrace{};
             if (!stacktrace.empty()) {
                 res = "\ncurrent stacktrace:\n" + stacktrace_utils::toString(stacktrace);
             }

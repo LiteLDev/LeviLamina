@@ -3,14 +3,12 @@
 #include <system_error>
 #include <typeinfo>
 
-#include "boost/stacktrace.hpp"
-
+#include "ll/api/utils/StacktraceUtils.h"
+#include "ll/api/base/CompilerPredefine.h"
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
 
 #include "mc/common/wrapper/optional_ref.h"
-
-#include "ll/api/base/CompilerPredefine.h"
 
 namespace ll {
 class Logger;
@@ -46,7 +44,7 @@ LLNDAPI std::system_error getLastSystemError() noexcept;
 
 LLNDAPI std::exception_ptr createExceptionPtr(void*) noexcept;
 
-LLNDAPI boost::stacktrace::stacktrace stacktraceFromCurrentException(size_t skip = 0, size_t maxDepth = ~0ull);
+LLNDAPI stacktrace stacktraceFromCurrentException(size_t skip = 0, size_t maxDepth = ~0ull);
 
 LLNDAPI std::string makeExceptionString(std::exception_ptr ePtr) noexcept;
 

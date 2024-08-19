@@ -9,6 +9,11 @@
 
 #include "boost/stacktrace.hpp"
 
+namespace ll {
+using stacktrace       = ::boost::stacktrace::stacktrace;
+using stacktrace_entry = ::boost::stacktrace::frame;
+} // namespace ll
+
 namespace ll::inline utils::stacktrace_utils {
 class SymbolLoader {
     void*                     handle;
@@ -31,7 +36,7 @@ struct StackTraceEntryInfo {
 };
 
 LLNDAPI uintptr_t           tryGetSymbolAddress(std::string_view);
-LLNDAPI StackTraceEntryInfo getInfo(boost::stacktrace::frame const&);
-LLNDAPI std::string toString(boost::stacktrace::frame const&);
-LLNDAPI std::string toString(boost::stacktrace::stacktrace const&);
+LLNDAPI StackTraceEntryInfo getInfo(stacktrace_entry const&);
+LLNDAPI std::string toString(stacktrace_entry const&);
+LLNDAPI std::string toString(stacktrace const&);
 } // namespace ll::inline utils::stacktrace_utils

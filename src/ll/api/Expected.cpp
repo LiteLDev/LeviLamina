@@ -14,7 +14,7 @@
 namespace ll {
 #if defined(LL_DEBUG)
 struct ErrorInfoBase::Impl {
-    boost::stacktrace::stacktrace stacktrace = boost::stacktrace::stacktrace(1, 15);
+    stacktrace stacktrace{};
 };
 ErrorInfoBase::ErrorInfoBase() noexcept : impl(std::make_unique<Impl>()) {}
 std::string Error::message() const noexcept {
@@ -28,8 +28,8 @@ std::string Error::message() const noexcept {
 }
 
 struct ExceptionError : ErrorInfoBase {
-    std::exception_ptr            exc;
-    boost::stacktrace::stacktrace stacktrace;
+    std::exception_ptr exc;
+    stacktrace         stacktrace;
     ExceptionError(std::exception_ptr const& exc) noexcept
     : exc(exc),
       stacktrace(error_utils::stacktraceFromCurrentException()) {}
