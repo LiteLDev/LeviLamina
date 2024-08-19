@@ -18,8 +18,10 @@ LLNDAPI std::optional<std::string> readFile(std::filesystem::path const& filePat
 
 LLAPI bool writeFile(std::filesystem::path const& filePath, std::string_view content, bool isBinary = false);
 
+#ifdef WIN32
 /// Gets the version property of the file.
 /// @note Typically, version properties exist in .exe, .dll, .msi, .cpl, .sys, .chm files.
 LLNDAPI data::Version getVersion(std::filesystem::path const& filePath);
+#endif
 
 } // namespace ll::inline utils::file_utils
