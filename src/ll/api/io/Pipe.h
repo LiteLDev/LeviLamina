@@ -17,7 +17,16 @@ public:
 
     LLAPI void write(std::string_view);
 
+private:
+// win32 handle
+#if WIN32
     void* hRead;
     void* hWrite;
+#endif
+// linux file descriptor
+#ifdef __linux__
+    int fdRead{};
+    int fdWrite{};
+#endif
 };
 } // namespace ll::io
