@@ -64,9 +64,9 @@ void modify(void* ptr, size_t len, const std::function<void()>& callback) {
         pauser = std::make_unique<thread::GlobalThreadPauser>();
     }
     int oldProtect = readMemProtection(ptr);
-    mprotect(self->closure, size, PROT_READ | PROT_WRITE | PROT_EXEC);
+    mprotect(ptr, len, PROT_READ | PROT_WRITE | PROT_EXEC);
     callback();
-    mprotect(self->closure, size, oldProtect);
+    mprotect(ptr, len, oldProtect);
 }
 void VirtualMemory::alloc(size_t size, AccessMode mode) {
     free();
