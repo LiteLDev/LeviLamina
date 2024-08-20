@@ -3,9 +3,6 @@
 #include <optional>
 #include <vector>
 
-#if defined(LL_WIN32)
-#include "libhat.hpp"
-#endif
 #include "pl/SymbolProvider.h"
 
 #include "ll/api/Logger.h"
@@ -18,13 +15,6 @@
 #include "mc/deps/core/common/bedrock/IMemoryAllocator.h"
 
 #include "demangler/Demangle.h"
-
-#if defined(LL_WIN32)
-#include "Windows.h"
-#endif
-
-// * Not compilable under Linux
-// * Cross-platform work on this source is WIP.
 
 namespace ll::memory {
 
@@ -48,7 +38,6 @@ std::string demangleSymbol(std::string_view symbol) {
     }
     return res;
 }
-
 FuncPtr resolveSymbol(char const* symbol) {
     auto res = pl::symbol_provider::pl_resolve_symbol_silent(symbol);
     if (res == nullptr) {
@@ -57,7 +46,6 @@ FuncPtr resolveSymbol(char const* symbol) {
     }
     return res;
 }
-
 FuncPtr resolveSymbol(std::string_view symbol, bool disableErrorOutput) {
     auto res = pl::symbol_provider::pl_resolve_symbol_silent_n(symbol.data(), symbol.size());
     if (!disableErrorOutput && res == nullptr) {
@@ -66,20 +54,7 @@ FuncPtr resolveSymbol(std::string_view symbol, bool disableErrorOutput) {
     }
     return res;
 }
-
 FuncPtr resolveSignature(std::string_view signature) { return resolveSignature(signature, sys_utils::getImageRange()); }
-
-// TODO
-FuncPtr resolveSignature(std::string_view signature, std::span<std::byte> range) {
-    if (range.empty()) {
-        return nullptr;
-    }
-    if (auto res = hat::parse_signature(signature); !res.has_value()) {
-        return nullptr;
-    } else {
-        return const_cast<std::byte*>(hat::find_pattern(range.begin(), range.end(), res.value()).get());
-    }
-}
 
 std::vector<std::string> lookupSymbol(FuncPtr func) {
     std::vector<std::string> symbols;
@@ -91,26 +66,6 @@ std::vector<std::string> lookupSymbol(FuncPtr func) {
     if (result) pl::symbol_provider::pl_free_lookup_result(result);
     return symbols;
 }
-
-void* unwrapFuncAddress(void* ptr) noexcept {
-    if (*(char*)ptr == '\xE9') {
-        (uintptr_t&)(ptr) += *(int*)((uintptr_t)ptr + 1);
-    }
-    return ptr;
-}
-
-// TODO
-void modify(void* ptr, size_t len, const std::function<void()>& callback) {
-    std::unique_ptr<thread::GlobalThreadPauser> pauser;
-    if (getGamingStatus() != GamingStatus::Default) {
-        pauser = std::make_unique<thread::GlobalThreadPauser>();
-    }
-    DWORD oldProtect;
-    VirtualProtect(ptr, len, PAGE_EXECUTE_READWRITE, &oldProtect);
-    callback();
-    VirtualProtect(ptr, len, oldProtect, &oldProtect);
-}
-
 size_t getUsableSize(void* ptr) { return getDefaultAllocator().getUsableSize(ptr); }
 
 [[noreturn]] void throwMemoryException(size_t size) {
@@ -120,5 +75,4 @@ size_t getUsableSize(void* ptr) { return getDefaultAllocator().getUsableSize(ptr
         throw std::bad_alloc();
     }
 }
-
 } // namespace ll::memory

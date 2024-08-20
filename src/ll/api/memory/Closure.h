@@ -4,7 +4,7 @@
 #include <cstdint>
 #include <functional>
 
-#include "ll/api/base/Macro.h"
+#include "ll/api/memory/Memory.h"
 
 namespace ll::memory {
 namespace detail {
@@ -60,13 +60,13 @@ public:
         uintptr_t  data;
     } stored;
 
-    void* closure{};
+    VirtualMemory closure{};
 
     NativeClosure(origin_fn* func, uintptr_t data) : stored({func, data}) {
         detail::initNativeClosure(this, closureImpl, implOffset);
     }
 
-    closure_fn* get() const { return (closure_fn*)closure; }
+    closure_fn* get() const { return closure.get<closure_fn>(); }
 
     ~NativeClosure() { detail::releaseNativeClosure(this); }
 

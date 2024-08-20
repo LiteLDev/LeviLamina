@@ -178,6 +178,46 @@ template <template <class> class P, class T>
 }
 #endif
 
+enum class AccessMode {
+    Read    = 1 << 0,
+    Write   = 1 << 1,
+    Execute = 1 << 2,
+};
+
+[[nodiscard]] constexpr AccessMode operator|(const AccessMode l, const AccessMode r) noexcept {
+    return static_cast<AccessMode>(
+        static_cast<std::underlying_type_t<AccessMode>>(l) | static_cast<std::underlying_type_t<AccessMode>>(r)
+    );
+}
+[[nodiscard]] constexpr AccessMode operator&(const AccessMode l, const AccessMode r) noexcept {
+    return static_cast<AccessMode>(
+        static_cast<std::underlying_type_t<AccessMode>>(l) & static_cast<std::underlying_type_t<AccessMode>>(r)
+    );
+}
+class VirtualMemory {
+    void*  pointer{};
+    size_t memSize{};
+
+public:
+    LLAPI void alloc(size_t size, AccessMode mode);
+    LLAPI void free();
+
+    VirtualMemory() = default;
+
+    VirtualMemory(size_t size, AccessMode mode) { alloc(size, mode); }
+
+    ~VirtualMemory() { free(); }
+
+    size_t size() const { return memSize; }
+
+    void* get() const { return pointer; }
+
+    template <class T>
+    T* get() const {
+        return reinterpret_cast<T*>(pointer);
+    }
+};
+
 template <FixedString symbol>
 inline FuncPtr symbolCache = resolveSymbol(symbol, false);
 

@@ -8,12 +8,6 @@
 #include "ll/api/memory/Memory.h"
 #include "ll/core/LeviLamina.h"
 
-#if defined(LL_WIN32)
-#include "Windows.h"
-#elif defined(LL_LINUX)
-#include <sys/mman.h>
-#endif
-
 namespace ll::memory::detail {
 
 #pragma pack(push, 1)
@@ -46,39 +40,22 @@ void initNativeClosure(void* self_, void* impl, size_t offset) {
     impl      = unwrapFuncAddress(impl);
     auto self = (T*)self_;
 
-#if defined(LL_WIN32)
-    self->closure = VirtualAlloc(nullptr, size, MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);
-#elif defined(LL_LINUX)
-    self->closure = mmap(nullptr, size, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
-#endif
+    self->closure.alloc(size, AccessMode::Execute | AccessMode::Read);
 
-    memcpy(self->closure, impl, offset);
+    modify(self->closure.get(), size, [&]() {
+        memcpy(self->closure.get(), impl, offset);
 
-    new ((char*)(self->closure) + offset) NativeClosurePrologue{
-        .data     = (uintptr_t)&self->stored,
-        .push_rax = 0x50,
-        .mov_rax  = {0x48, 0xB8},
-        .addr     = (uintptr_t)impl + offset + sizeof(uintptr_t) - 1, // -1 for 0x58 in magic
-        .jmp_rax  = {0xFF, 0xE0}
-    };
-
-    ulong _;
-
-#if defined(LL_WIN32)
-    VirtualProtect(self->closure, size, PAGE_EXECUTE_READ, &_);
-#elif defined(LL_LINUX)
-    mprotect(self->closure, size, PROT_READ | PROT_EXEC);
-#endif
+        new ((char*)(self->closure.get()) + offset) NativeClosurePrologue{
+            .data     = (uintptr_t)&self->stored,
+            .push_rax = 0x50,
+            .mov_rax  = {0x48, 0xB8},
+            .addr     = (uintptr_t)impl + offset + sizeof(uintptr_t) - 1, // -1 for 0x58 in magic
+            .jmp_rax  = {0xFF, 0xE0}
+        };
+    });
 }
 void releaseNativeClosure(void* self_) {
     auto self = (T*)self_;
-    if (self->closure != nullptr) {
-#if defined(LL_WIN32)
-        VirtualFree(self->closure, 0, MEM_RELEASE);
-#elif defined(LL_LINUX)
-        munmap(self->closure, sizeof(self->closure));
-#endif
-        self->closure = nullptr;
-    }
+    self->closure.free();
 }
 } // namespace ll::memory::detail
