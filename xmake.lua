@@ -6,6 +6,8 @@ local is_windows  = is_plat("windows")
 local is_linux    = is_plat("linux")
 local is_android  = is_plat("android")
 local is_iphoneos = is_plat("iphoneos")
+local is_x64      = is_arch("x64", "x86_64")
+local is_arm64    = is_arch("arm64", "arm64-v8a")
 
 local is_server = is_config("target_type", "server")
 local is_client = is_config("target_type", "client")
@@ -196,7 +198,7 @@ target("LeviLamina")
             "src/mc/world/**.cpp",
             -- "src/mc/world/level/**.cpp",
             "src/mc/network/**.cpp",
-            "src/mc/server/*.cpp",
+            "src/mc/server/*.cpp"
             -- "src/mc/nbt/**.cpp",
             -- "src/ll/api/chrono/**.cpp",
             -- "src/ll/api/command/**.cpp",
@@ -207,7 +209,6 @@ target("LeviLamina")
             -- "src/ll/api/utils/CryptoUtils.cpp",
             -- "src/ll/api/thread/TickSyncSleep.cpp",
             -- "src/ll/api/thread/TickSyncTaskPool.cpp",
-            "src/ll/core/plugin-abi/**.cpp"
             -- "src/ll/core/tweak/ModifyMemoryAllocator.cpp"
         )
         add_cxflags("/wd4273")
@@ -290,6 +291,16 @@ target("LeviLamina")
         remove_files("./**/*_ios.*")
         remove_files("./**/ios/**.*")
         remove_headerfiles("./**/ios/**.*")
+    end
+    if not is_x64 then
+        remove_files("./**/*_x64.*")
+        remove_files("./**/x64/**.*")
+        remove_headerfiles("./**/x64/**.*")
+    end
+    if not is_arm64 then
+        remove_files("./**/*_arm64.*")
+        remove_files("./**/arm64/**.*")
+        remove_headerfiles("./**/arm64/**.*")
     end
 
     on_config(function (target)

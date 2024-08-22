@@ -18,7 +18,6 @@
 
 namespace ll::memory {
 
-// TODO
 FuncPtr resolveSignature(std::string_view signature, std::span<std::byte> range) {
     if (range.empty()) {
         return nullptr;
@@ -29,16 +28,10 @@ FuncPtr resolveSignature(std::string_view signature, std::span<std::byte> range)
         return const_cast<std::byte*>(hat::find_pattern(range.begin(), range.end(), res.value()).get());
     }
 }
-void* unwrapFuncAddress(void* ptr) noexcept {
-    if (*(char*)ptr == '\xE9') {
-        (uintptr_t&)(ptr) += *(int*)((uintptr_t)ptr + 1);
-    }
-    return ptr;
-}
-void modify(void* ptr, size_t len, const std::function<void()>& callback) {
-    std::unique_ptr<thread::GlobalThreadPauser> pauser;
+void modify(void* ptr, size_t len, std::function<void()> const& callback) {
+    std::optional<thread::GlobalThreadPauser> pauser;
     if (getGamingStatus() != GamingStatus::Default) {
-        pauser = std::make_unique<thread::GlobalThreadPauser>();
+        pauser.emplace();
     }
     DWORD oldProtect;
     VirtualProtect(ptr, len, PAGE_EXECUTE_READWRITE, &oldProtect);
@@ -48,7 +41,6 @@ void modify(void* ptr, size_t len, const std::function<void()>& callback) {
 void VirtualMemory::alloc(size_t size, AccessMode mode) {
     free();
     memSize = size;
-
     DWORD fProtect{PAGE_NOACCESS};
     if ((bool)(mode & AccessMode::Read) && (bool)(mode & AccessMode::Write)) {
         fProtect = PAGE_READWRITE;

@@ -35,18 +35,18 @@ size_t getVolatileOffset(void* impl) {
     return 0;
 };
 using T = NativeClosure<void*()>;
-void initNativeClosure(void* self_, void* impl, size_t offset) {
-    auto size = offset + sizeof(NativeClosurePrologue);
-    impl      = unwrapFuncAddress(impl);
-    auto self = (T*)self_;
+void initNativeClosure(void* self, void* impl, size_t offset) {
+    auto size  = offset + sizeof(NativeClosurePrologue);
+    impl       = unwrapFuncAddress(impl);
+    auto tSelf = (T*)self;
 
-    self->closure.alloc(size, AccessMode::Execute | AccessMode::Read);
+    tSelf->closure.alloc(size, AccessMode::Execute | AccessMode::Read);
 
-    modify(self->closure.get(), size, [&]() {
-        memcpy(self->closure.get(), impl, offset);
+    modify(tSelf->closure.get(), size, [&]() {
+        memcpy(tSelf->closure.get(), impl, offset);
 
-        new ((char*)(self->closure.get()) + offset) NativeClosurePrologue{
-            .data     = (uintptr_t)&self->stored,
+        new ((char*)(tSelf->closure.get()) + offset) NativeClosurePrologue{
+            .data     = (uintptr_t)&tSelf->stored,
             .push_rax = 0x50,
             .mov_rax  = {0x48, 0xB8},
             .addr     = (uintptr_t)impl + offset + sizeof(uintptr_t) - 1, // -1 for 0x58 in magic
@@ -54,8 +54,6 @@ void initNativeClosure(void* self_, void* impl, size_t offset) {
         };
     });
 }
-void releaseNativeClosure(void* self_) {
-    auto self = (T*)self_;
-    self->closure.free();
-}
+void releaseNativeClosure(void* /*self*/) {}
+
 } // namespace ll::memory::detail

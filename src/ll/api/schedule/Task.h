@@ -24,6 +24,7 @@ LLAPI void   printScheduleError(TaskBase&) noexcept;
 LLAPI uint64 nextTaskId() noexcept;
 LLNDAPI std::chrono::system_clock::time_point parseTime(std::string_view);
 } // namespace detail
+
 inline namespace task {
 class TaskBase {
     uint64                id;

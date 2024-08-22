@@ -11,8 +11,8 @@ namespace detail {
 static constexpr size_t closureMagicNumber = 0x58ffffbffdffffafull;
 
 LLAPI size_t getVolatileOffset(void*);
-LLAPI void   initNativeClosure(void* self_, void* impl, size_t offset);
-LLAPI void   releaseNativeClosure(void* self_);
+LLAPI void   initNativeClosure(void* self, void* impl, size_t offset);
+LLAPI void   releaseNativeClosure(void* self);
 } // namespace detail
 
 //                The principle of NativeClosure

@@ -71,16 +71,6 @@ mono_crash.*
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
-x64/
-x86/
-[Ww][Ii][Nn]32/
-[Aa][Rr][Mm]/
-[Aa][Rr][Mm]64/
-bld/
-[Bb]in/
-[Oo]bj/
-[Ll]og/
-[Ll]ogs/
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
@@ -561,5 +551,5 @@ fabric.properties
 # Test
 src-test/**/include_all.cpp
 
-/bin/
-/src/ll/test/include_all.cpp
+bin/
+src/ll/test/include_all.cpp

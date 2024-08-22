@@ -13,6 +13,7 @@
 #include "pl/SymbolProvider.h"
 
 #include "sys/mman.h"
+#include "unistd.h"
 
 namespace ll::memory {
 
@@ -27,41 +28,50 @@ FuncPtr resolveSignature(std::string_view signature, std::span<std::byte> range)
     //     return const_cast<std::byte*>(hat::find_pattern(range.begin(), range.end(), res.value()).get());
     // }
 }
-void* unwrapFuncAddress(void* ptr) noexcept {
-    if (*(char*)ptr == '\xE9') {
-        (uintptr_t&)(ptr) += *(int*)((uintptr_t)ptr + 1);
-    }
-    return ptr;
-}
 static int readMemProtection(void* addr) {
-    int            a;
-    int            res = 0;
-    FILE*          f   = fopen("/proc/self/maps", "r");
-    struct buffer* b   = _new_buffer(1024);
-    while ((a = fgetc(f)) >= 0) {
-        if (_buf_putchar(b, a) || a == '\n') {
-            char*         end0  = (void*)0;
-            unsigned long addr0 = strtoul(b->mem, &end0, 0x10);
-            char*         end1  = (void*)0;
-            unsigned long addr1 = strtoul(end0 + 1, &end1, 0x10);
-            if ((void*)addr0 < addr && addr < (void*)addr1) {
-                res |= (end1 + 1)[0] == 'r' ? PROT_READ : 0;
-                res |= (end1 + 1)[1] == 'w' ? PROT_WRITE : 0;
-                res |= (end1 + 1)[2] == 'x' ? PROT_EXEC : 0;
-                break;
-            }
-            _buf_reset(b);
-        }
+    int fd = open("/proc/self/maps", O_RDONLY);
+    if (fd < 0) {
+        return 0;
     }
-    free(b);
-    fclose(f);
-    return res;
-}
+    char    buffer[4096];
+    ssize_t len = read(fd, buffer, sizeof(buffer) - 1);
+    close(fd);
+    if (len <= 0) {
+        return 0;
+    }
+    buffer[len] = '\0';
 
-void modify(void* ptr, size_t len, const std::function<void()>& callback) {
-    std::unique_ptr<thread::GlobalThreadPauser> pauser;
+    auto uintptr = reinterpret_cast<uintptr_t>(addr);
+
+    char* line = strtok(buffer, "\n");
+    while (line != nullptr) {
+        char* startPtr = line;
+        char* endPtr   = strchr(line, '-');
+        char* permPtr  = strchr(line, ' ') + 1;
+
+        if (endPtr == nullptr || permPtr == nullptr) {
+            line = strtok(nullptr, "\n");
+            continue;
+        }
+        *endPtr         = '\0';
+        uintptr_t start = strtoull(startPtr, nullptr, 16);
+        uintptr_t end   = strtoull(endPtr + 1, nullptr, 16);
+
+        if (uintptr >= start && uintptr < end) {
+            int prot = 0;
+            if (permPtr[0] == 'r') prot |= PROT_READ;
+            if (permPtr[1] == 'w') prot |= PROT_WRITE;
+            if (permPtr[2] == 'x') prot |= PROT_EXEC;
+            return prot;
+        }
+        line = strtok(nullptr, "\n");
+    }
+    return 0;
+}
+void modify(void* ptr, size_t len, std::function<void()> const& callback) {
+    std::optional<thread::GlobalThreadPauser> pauser;
     if (getGamingStatus() != GamingStatus::Default) {
-        pauser = std::make_unique<thread::GlobalThreadPauser>();
+        pauser.emplace();
     }
     int oldProtect = readMemProtection(ptr);
     mprotect(ptr, len, PROT_READ | PROT_WRITE | PROT_EXEC);
@@ -71,8 +81,7 @@ void modify(void* ptr, size_t len, const std::function<void()>& callback) {
 void VirtualMemory::alloc(size_t size, AccessMode mode) {
     free();
     memSize = size;
-
-    int fProtect {}
+    int fProtect{};
     if ((bool)(mode & AccessMode::Read)) fProtect |= PROT_READ;
     if ((bool)(mode & AccessMode::Write)) fProtect |= PROT_WRITE;
     if ((bool)(mode & AccessMode::Execute)) fProtect |= PROT_EXEC;

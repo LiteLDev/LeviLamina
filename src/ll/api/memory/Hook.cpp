@@ -18,19 +18,17 @@ int hook(FuncPtr target, FuncPtr detour, FuncPtr* originalFunc, HookPriority pri
     if (target == nullptr) {
         return -1;
     }
-    std::unique_ptr<thread::GlobalThreadPauser> pauser;
+    std::optional<thread::GlobalThreadPauser> pauser;
     if (suspendThreads && getGamingStatus() != GamingStatus::Default) {
-        pauser = std::make_unique<thread::GlobalThreadPauser>();
+        pauser.emplace();
     }
     return pl::hook::pl_hook(target, detour, originalFunc, static_cast<pl::hook::Priority>(priority));
 }
-
 bool unhook(FuncPtr target, FuncPtr detour, bool suspendThreads) {
-    std::unique_ptr<thread::GlobalThreadPauser> pauser;
+    std::optional<thread::GlobalThreadPauser> pauser;
     if (suspendThreads && getGamingStatus() != GamingStatus::Default) {
-        pauser = std::make_unique<thread::GlobalThreadPauser>();
+        pauser.emplace();
     }
     return pl::hook::pl_unhook(target, detour);
 }
-
 } // namespace ll::memory
