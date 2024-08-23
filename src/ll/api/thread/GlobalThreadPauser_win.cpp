@@ -12,8 +12,8 @@ GlobalThreadPauser::GlobalThreadPauser() {
     if (h == INVALID_HANDLE_VALUE) {
         throw error_utils::getLastSystemError();
     }
-    static auto processId = GetCurrentProcessId();
-    auto        threadId  = GetCurrentThreadId();
+    auto processId = GetCurrentProcessId();
+    auto threadId  = GetCurrentThreadId();
 
     THREADENTRY32 te;
     te.dwSize = sizeof(te);

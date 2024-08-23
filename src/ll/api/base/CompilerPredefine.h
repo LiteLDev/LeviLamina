@@ -193,7 +193,7 @@ extern "C" struct _IMAGE_DOS_HEADER __ImageBase; // NOLINT(bugprone-reserved-ide
 
 template <class T, T f>
 consteval bool virtualDetector() noexcept {
-    return reflection::getRawName<f>().find("::`vcall'{") != std::string::npos;
+    return reflection::getRawName<f>().find("::`vcall'{") != std::string_view::npos;
 }
 
 using std_optional_construct_from_invoke_tag = std::_Construct_from_invoke_result_tag;

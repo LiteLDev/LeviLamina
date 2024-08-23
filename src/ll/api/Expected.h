@@ -34,7 +34,7 @@ public:
     virtual std::string message() const noexcept = 0;
 };
 class Error {
-    std::unique_ptr<ErrorInfoBase> mInfo;
+    mutable std::unique_ptr<ErrorInfoBase> mInfo;
 
 public:
     Error& operator=(Error&&) noexcept         = default;
