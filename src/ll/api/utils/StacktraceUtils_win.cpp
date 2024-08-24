@@ -16,6 +16,21 @@
 
 #include "DbgEng.h"
 
+#include <stacktrace>
+
+namespace ll {
+LLNDAPI Stacktrace Stacktrace::current(size_t skip, size_t maxDepth) {
+    auto       s = std::stacktrace::current(skip + 1, maxDepth);
+    Stacktrace res;
+    res.entries.reserve(s.size());
+    for (auto& entry : s) {
+        res.entries.push_back({entry.native_handle()});
+    }
+    res.hash = std::hash<std::stacktrace>{}(s);
+    return res;
+}
+} // namespace ll
+
 namespace ll::inline utils::stacktrace_utils {
 namespace detail {
 static void lockRelease() noexcept;
@@ -204,15 +219,15 @@ uintptr_t tryGetSymbolAddress(std::string_view symbol) {
     return data.getSymbol(symbol);
 }
 
-StackTraceEntryInfo getInfo(stacktrace_entry const& entry) {
+StackTraceEntryInfo getInfo(StacktraceEntry const& entry) {
     DbgEngData data;
 
     static auto processRange = sys_utils::getImageRange();
 
-    if (&*processRange.begin() <= entry.address() && entry.address() < &*processRange.end()) {
+    if (&*processRange.begin() <= entry.native_handle() && entry.native_handle() < &*processRange.end()) {
         size_t length{};
         uint   disp{};
-        auto   str = pl::symbol_provider::pl_lookup_symbol_disp((void*)entry.address(), &length, &disp);
+        auto   str = pl::symbol_provider::pl_lookup_symbol_disp(entry.native_handle(), &length, &disp);
         if (length) {
             static auto         processName = sys_utils::getModuleFileName(nullptr);
             StackTraceEntryInfo res{disp, processName + '!' + str[0]};
@@ -223,11 +238,11 @@ StackTraceEntryInfo getInfo(stacktrace_entry const& entry) {
     if (!data.tryInit()) {
         return {};
     }
-    return data.getInfo(entry.address());
+    return data.getInfo(entry.native_handle());
 }
 
-std::string toString(stacktrace_entry const& entry) {
-    std::string res                       = fmt::format("at: 0x{:0>12X}", (uint64)entry.address());
+std::string toString(StacktraceEntry const& entry) {
+    std::string res                       = fmt::format("at: 0x{:0>12X}", (uint64)entry.native_handle());
     auto [displacement, name, line, file] = getInfo(entry);
     std::string module;
     std::string function;
@@ -251,7 +266,7 @@ std::string toString(stacktrace_entry const& entry) {
     return res;
 }
 
-std::string toString(stacktrace const& t) {
+std::string toString(Stacktrace const& t) {
     std::string res;
     auto        maxsize = std::to_string(t.size() - 1).size();
     for (size_t i = 0; i < t.size(); i++) {

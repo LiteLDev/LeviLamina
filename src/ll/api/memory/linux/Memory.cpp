@@ -17,17 +17,6 @@
 
 namespace ll::memory {
 
-// TODO
-FuncPtr resolveSignature(std::string_view signature, std::span<std::byte> range) {
-    if (range.empty()) {
-        return nullptr;
-    }
-    // if (auto res = hat::parse_signature(signature); !res.has_value()) {
-    //     return nullptr;
-    // } else {
-    //     return const_cast<std::byte*>(hat::find_pattern(range.begin(), range.end(), res.value()).get());
-    // }
-}
 static int readMemProtection(void* addr) {
     int fd = open("/proc/self/maps", O_RDONLY);
     if (fd < 0) {

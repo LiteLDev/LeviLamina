@@ -10,24 +10,12 @@
 #include "ll/api/utils/SystemUtils.h"
 #include "ll/core/LeviLamina.h"
 
-#include "libhat.hpp"
-
 #include "pl/SymbolProvider.h"
 
 #include "Windows.h"
 
 namespace ll::memory {
 
-FuncPtr resolveSignature(std::string_view signature, std::span<std::byte> range) {
-    if (range.empty()) {
-        return nullptr;
-    }
-    if (auto res = hat::parse_signature(signature); !res.has_value()) {
-        return nullptr;
-    } else {
-        return const_cast<std::byte*>(hat::find_pattern(range.begin(), range.end(), res.value()).get());
-    }
-}
 void modify(void* ptr, size_t len, std::function<void()> const& callback) {
     std::optional<thread::GlobalThreadPauser> pauser;
     if (getGamingStatus() != GamingStatus::Default) {

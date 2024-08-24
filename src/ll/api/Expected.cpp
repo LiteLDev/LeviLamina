@@ -5,8 +5,6 @@
 
 #include "mc/server/commands/CommandOutput.h"
 
-#include "boost/stacktrace.hpp"
-
 #ifdef LL_DEBUG
 #include "ll/api/utils/StacktraceUtils.h"
 #endif
@@ -14,9 +12,9 @@
 namespace ll {
 #if defined(LL_DEBUG)
 struct ErrorInfoBase::Impl {
-    stacktrace stacktrace{};
+    Stacktrace stacktrace;
 };
-ErrorInfoBase::ErrorInfoBase() noexcept : impl(std::make_unique<Impl>()) {}
+ErrorInfoBase::ErrorInfoBase() noexcept : impl(std::make_unique<Impl>(Stacktrace::current(1))) {}
 std::string Error::message() const noexcept {
     if (!mInfo) {
         return "success";
@@ -29,7 +27,7 @@ std::string Error::message() const noexcept {
 
 struct ExceptionError : ErrorInfoBase {
     std::exception_ptr exc;
-    stacktrace         stacktrace;
+    Stacktrace         stacktrace;
     ExceptionError(std::exception_ptr const& exc) noexcept
     : exc(exc),
       stacktrace(error_utils::stacktraceFromCurrentException()) {}

@@ -24,7 +24,6 @@ add_requires("nlohmann_json v3.11.3")
 add_requires("rapidjson v1.1.0")
 add_requires("mimalloc 2.1.2")
 add_requires("cpr 1.10.5", {configs = {ssl = true}})
-add_requires("boost 1.86.0", {configs = {stacktrace = true}})
 add_requires("parallel-hashmap v1.3.12")
 
 -- Dependencies from liteldev-repo.
@@ -32,12 +31,8 @@ add_requires("pcg_cpp v1.0.0")
 add_requires("pfr 2.1.1")
 add_requires("demangler v17.0.7")
 add_requires("levibuildscript 0.2.0")
-
-if is_windows then
-    add_requires("preloader v1.9.0")
-    add_requires("symbolprovider v1.2.0")
-    add_requires("libhat 2024.4.16")
-end
+add_requires("preloader v1.9.0")
+add_requires("symbolprovider v1.2.0")
 
 if has_config("tests") then
     add_requires("gtest")
@@ -103,10 +98,7 @@ target("LeviLamina")
     add_headerfiles("src/(ll/api/**.h)", "src/(mc/**.h)")
     add_includedirs("src", "$(buildir)/config")
     set_pcxxheader("src/ll/api/Global.h")
-    add_packages("demangler", "mimalloc", "cpp-httplib")
-    if is_windows then 
-        add_packages("libhat", "preloader")
-    end
+    add_packages("demangler", "mimalloc", "ctre", "cpr", "preloader")
     add_packages(
         "entt",
         "expected-lite",
@@ -116,17 +108,13 @@ target("LeviLamina")
         "magic_enum",
         "nlohmann_json",
         "rapidjson",
-        "ctre",
         "pcg_cpp",
         "pfr",
-        "cpr",
-        "boost",
+        "symbolprovider",
+        "bedrockdata",
         "parallel-hashmap",
         {public = true}
     )
-    if is_windows then 
-        add_packages("symbolprovider", "bedrockdata", {public = true})
-    end
     add_defines(
         "ENTT_PACKED_PAGE=128", -- public = true
         "LL_EXPORT"

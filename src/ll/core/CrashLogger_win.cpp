@@ -6,6 +6,7 @@
 #include "ll/api/Versions.h"
 #include "ll/api/data/Version.h"
 #include "ll/api/i18n/I18n.h"
+#include "ll/api/io/FileUtils.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/StacktraceUtils.h"
 #include "ll/api/utils/StringUtils.h"
@@ -21,7 +22,7 @@
 #include "DbgHelp.h"
 
 namespace ll::inline utils::error_utils {
-stacktrace stacktraceFromContext(optional_ref<_CONTEXT const> context, size_t skip = 0, size_t maxDepth = ~0ull);
+Stacktrace stacktraceFromContext(optional_ref<_CONTEXT const> context, size_t skip = 0, size_t maxDepth = ~0ull);
 }
 
 namespace ll {
@@ -334,7 +335,7 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
         crashInfo.logger.error("!!! Error in CrashLogger !!!");
         ll::error_utils::printCurrentException(crashInfo.logger);
         crashInfo.logger.error("");
-        crashInfo.logger.error("\n{}", ll::stacktrace_utils::toString(stacktrace()));
+        crashInfo.logger.error("\n{}", ll::stacktrace_utils::toString(Stacktrace::current()));
     }
     std::exit((int)e->ExceptionRecord->ExceptionCode);
 }

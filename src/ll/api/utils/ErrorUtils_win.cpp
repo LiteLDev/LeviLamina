@@ -174,7 +174,7 @@ std::exception_ptr createExceptionPtr(void* rec) noexcept {
     __ExceptionPtrAssign(&res, &realType);
     return res;
 }
-stacktrace stacktraceFromContext(optional_ref<_CONTEXT const> context, size_t skip, size_t maxDepth) {
+Stacktrace stacktraceFromContext(optional_ref<_CONTEXT const> context, size_t skip, size_t maxDepth) {
     if (!context) {
         return {};
     }
@@ -190,10 +190,11 @@ stacktrace stacktraceFromContext(optional_ref<_CONTEXT const> context, size_t sk
 
     struct RealStacktrace {
         std::vector<decltype(sf.AddrPC.Offset)> addresses;
+        size_t                                  hash;
     } realStacktrace;
 
-    static_assert(sizeof(RealStacktrace) == sizeof(stacktrace));
-    static_assert(sizeof(stacktrace_entry) == sizeof(sf.AddrPC.Offset));
+    static_assert(sizeof(RealStacktrace) == sizeof(Stacktrace));
+    static_assert(sizeof(StacktraceEntry) == sizeof(sf.AddrPC.Offset));
 
     constexpr auto machine = IMAGE_FILE_MACHINE_AMD64;
 
@@ -216,11 +217,12 @@ stacktrace stacktraceFromContext(optional_ref<_CONTEXT const> context, size_t sk
         if (i < skip) {
             continue;
         }
+        realStacktrace.hash += sf.AddrPC.Offset;
         realStacktrace.addresses.push_back(sf.AddrPC.Offset);
     }
-    return *reinterpret_cast<stacktrace*>(&realStacktrace);
+    return *reinterpret_cast<Stacktrace*>(&realStacktrace);
 }
-stacktrace stacktraceFromCurrentException(size_t skip, size_t maxDepth) {
+Stacktrace stacktraceFromCurrentException(size_t skip, size_t maxDepth) {
     return stacktraceFromContext(current_exception_context(), skip, maxDepth);
 }
 
@@ -335,7 +337,7 @@ void printCurrentException(ll::OutputStream& stream, std::exception_ptr const& e
         std::string res;
         auto        stacktrace = stacktraceFromCurrentException();
         if (stacktrace.empty()) {
-            stacktrace = ::ll::stacktrace{};
+            stacktrace = Stacktrace::current(1);
             if (!stacktrace.empty()) {
                 res = "\ncurrent stacktrace:\n" + stacktrace_utils::toString(stacktrace);
             }
