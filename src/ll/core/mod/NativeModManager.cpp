@@ -95,7 +95,7 @@ Expected<> NativeModManager::load(Manifest manifest) {
 
     auto entry = modDir / string_utils::sv2u8sv(currentLoadingMod->getManifest().entry);
     if (auto e = currentLoadingMod->getDynamicLibrary().load(entry); e) {
-        Expected<> error{makeExceptionError(std::make_exception_ptr(e))};
+        Expected<> error{makeExceptionError(std::make_exception_ptr(e.value()))};
         if (e->code().value() == 126 || e->code().value() == 127) {
             error.error().join(makeStringError(diagnosticDependency(entry)));
         }
