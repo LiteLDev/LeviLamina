@@ -3,9 +3,9 @@
 namespace ll::plugin {
 
 struct PluginManager::Impl {
-    std::string                                 type;
-    std::recursive_mutex                        mutex;
-    UnorderedStringMap<std::shared_ptr<Plugin>> plugins;
+    std::string                        type;
+    std::recursive_mutex               mutex;
+    StringMap<std::shared_ptr<Plugin>> plugins;
     explicit Impl(std::string type) : type(std::move(type)) {}
 };
 

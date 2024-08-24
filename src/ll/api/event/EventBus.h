@@ -26,30 +26,31 @@ class EventBus {
     std::unique_ptr<EventBusImpl> impl;
     EventBus();
 
-    size_t removeModListeners(std::string_view modName);
+    void removeModListeners(std::string_view modName);
 
-    size_t removeModEventEmitters(std::string_view modName);
+    void clearMod(std::string_view modName);
 
 public:
+    using FactoryFn = std::function<std::unique_ptr<EmitterBase>()>;
+
     LLNDAPI static EventBus& getInstance();
 
     LLAPI void publish(Event&, EventId);
 
     LLAPI void publish(std::string_view modName, Event&, EventId);
 
-    LLAPI void setEventEmitter(
+    LLAPI bool setEventEmitter(FactoryFn fn, EventId eventId, std::weak_ptr<mod::Mod> mod = mod::NativeMod::current());
+
+    template <std::derived_from<Event> T>
+    bool setEventEmitter(FactoryFn fn, std::weak_ptr<mod::Mod> mod = mod::NativeMod::current()) {
+        return setEventEmitter(std::move(fn), getEventId<T>, std::move(mod));
+    }
+
+    [[deprecated]] LLAPI void setEventEmitter(
         std::function<std::unique_ptr<EmitterBase>(ListenerBase&)> fn,
         EventId                                                    eventId,
         std::weak_ptr<mod::Mod>                                    mod = mod::NativeMod::current()
     );
-
-    template <std::derived_from<Event> T>
-    void setEventEmitter(
-        std::function<std::unique_ptr<EmitterBase>(ListenerBase&)> fn,
-        std::weak_ptr<mod::Mod>                                    mod = mod::NativeMod::current()
-    ) {
-        setEventEmitter(std::move(fn), getEventId<T>, mod);
-    }
 
     template <class T>
         requires(std::derived_from<std::remove_cvref_t<T>, Event>)

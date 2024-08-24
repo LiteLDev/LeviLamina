@@ -23,7 +23,7 @@ void printScheduleError(TaskBase& task) noexcept {
         getLogger().error(
             "Error in schedule task[{}] of {}:",
             task.getId(),
-            task.modPtr.expired() ? "unknown mod" : task.modPtr.lock()->getManifest().name
+            task.modPtr.expired() ? "unknown mod" : task.modPtr.lock()->getName()
         );
     } catch (...) {}
     error_utils::printCurrentException(getLogger());

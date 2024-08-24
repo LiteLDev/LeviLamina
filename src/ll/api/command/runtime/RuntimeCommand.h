@@ -14,13 +14,13 @@ public:
     using Executor = std::function<void(CommandOrigin const&, CommandOutput&, RuntimeCommand const&)>;
 
 private:
-    uint64                            placeholder{};
-    Executor const&                   executor;
-    UnorderedStringMap<uint64> const& paramIndexMap;
-    size_t                            paramCount;
+    uint64                   placeholder{};
+    Executor const&          executor;
+    StringMap<uint64> const& paramIndexMap;
+    size_t                   paramCount;
 
     LLAPI RuntimeCommand(
-        UnorderedStringMap<uint64> const&                         map,
+        StringMap<uint64> const&                                  map,
         std::vector<std::pair<std::string, ParamKindType>> const& params,
         Executor const&                                           executor
     );

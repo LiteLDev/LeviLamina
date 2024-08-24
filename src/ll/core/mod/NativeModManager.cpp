@@ -85,7 +85,7 @@ Expected<> NativeModManager::load(Manifest manifest) {
         ~Remover() { currentLoadingMod = nullptr; };
     } r;
     std::error_code ec;
-    auto            modDir = getModsRoot() / string_utils::sv2u8sv(currentLoadingMod->getManifest().name);
+    auto            modDir = getModsRoot() / string_utils::sv2u8sv(currentLoadingMod->getName());
     if (auto c = std::filesystem::canonical(modDir, ec); ec.value() == 0) {
         modDir = c;
     } else {
@@ -106,7 +106,7 @@ Expected<> NativeModManager::load(Manifest manifest) {
         using namespace i18n_literals;
         return makeStringError(
             "{0} will not be loaded because it isn't using the unified memory allocation operator"_tr(
-                currentLoadingMod->getManifest().name
+                currentLoadingMod->getName()
             )
         );
     }
@@ -123,7 +123,7 @@ Expected<> NativeModManager::load(Manifest manifest) {
         currentLoadingMod->onDisable(lib.getAddress<Mod::callback_t*>("ll_mod_disable"));
     }
     return currentLoadingMod->onLoad().transform([&, this] {
-        addMod(currentLoadingMod->getManifest().name, currentLoadingMod);
+        addMod(currentLoadingMod->getName(), currentLoadingMod);
         handleMap[lib.handle()] = currentLoadingMod;
     });
 }

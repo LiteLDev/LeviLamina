@@ -83,8 +83,6 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 
     service::bedrock::serverInstance = nullptr;
 
-    setGamingStatus(GamingStatus::Stopping); // must after disable
-
     origin();
 }
 

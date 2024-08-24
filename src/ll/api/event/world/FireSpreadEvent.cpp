@@ -50,12 +50,12 @@ LL_TYPE_INSTANCE_HOOK(
     return res;
 }
 
-static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
+static std::unique_ptr<EmitterBase> emitterFactory();
 class FireSpreadEventEmitter : public Emitter<emitterFactory, FireSpreadEvent> {
     memory::HookRegistrar<FireSpreadEventHook1> hook1;
     memory::HookRegistrar<FireSpreadEventHook2> hook2;
 };
 
-static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) { return std::make_unique<FireSpreadEventEmitter>(); }
+static std::unique_ptr<EmitterBase> emitterFactory() { return std::make_unique<FireSpreadEventEmitter>(); }
 
 } // namespace ll::event::inline world

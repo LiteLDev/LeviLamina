@@ -27,11 +27,11 @@ LL_TYPE_INSTANCE_HOOK(
     return origin(source);
 }
 
-static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
+static std::unique_ptr<EmitterBase> emitterFactory();
 class MobDieEventEmitter : public Emitter<emitterFactory, MobDieEvent> {
     memory::HookRegistrar<MobDieEventHook> hook;
 };
 
-static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) { return std::make_unique<MobDieEventEmitter>(); }
+static std::unique_ptr<EmitterBase> emitterFactory() { return std::make_unique<MobDieEventEmitter>(); }
 
 } // namespace ll::event::inline entity

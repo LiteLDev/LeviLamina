@@ -12,13 +12,11 @@ LL_TYPE_INSTANCE_HOOK(PlayerRespawnEventHook, HookPriority::Normal, Player, "?re
     origin();
 }
 
-static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
+static std::unique_ptr<EmitterBase> emitterFactory();
 class PlayerRespawnEventEmitter : public Emitter<emitterFactory, PlayerRespawnEvent> {
     memory::HookRegistrar<PlayerRespawnEventHook> hook;
 };
 
-static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {
-    return std::make_unique<PlayerRespawnEventEmitter>();
-}
+static std::unique_ptr<EmitterBase> emitterFactory() { return std::make_unique<PlayerRespawnEventEmitter>(); }
 
 } // namespace ll::event::inline player

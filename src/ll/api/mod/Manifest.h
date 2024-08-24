@@ -37,10 +37,10 @@ struct Manifest {
     std::optional<data::Version>                                version{};
     std::optional<std::string>                                  author{};
     std::optional<std::string>                                  description{};
+    std::optional<std::unordered_map<std::string, std::string>> extraInfo{};
     std::optional<std::unordered_set<Dependency>>               dependencies{};
     std::optional<std::unordered_set<Dependency>>               optionalDependencies{};
     std::optional<std::unordered_set<Dependency>>               conflicts{};
     std::optional<std::unordered_set<Dependency>>               loadBefore{};
-    std::optional<std::unordered_map<std::string, std::string>> extraInfo{};
 };
 } // namespace ll::mod

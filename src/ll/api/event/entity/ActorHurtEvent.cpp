@@ -45,11 +45,11 @@ LL_TYPE_INSTANCE_HOOK(
     return origin(source, damage, knock, ignite);
 }
 
-static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
+static std::unique_ptr<EmitterBase> emitterFactory();
 class ActorHurtEventEmitter : public Emitter<emitterFactory, ActorHurtEvent> {
     memory::HookRegistrar<ActorHurtEventHook> hook;
 };
 
-static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) { return std::make_unique<ActorHurtEventEmitter>(); }
+static std::unique_ptr<EmitterBase> emitterFactory() { return std::make_unique<ActorHurtEventEmitter>(); }
 
 } // namespace ll::event::inline entity

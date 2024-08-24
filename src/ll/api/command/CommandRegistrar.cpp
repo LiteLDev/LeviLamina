@@ -22,9 +22,9 @@
 
 namespace ll::command {
 struct CommandRegistrar::Impl {
-    UnorderedStringMap<CommandHandle> commands;
-    UnorderedStringMap<uint64>        textWithRef;
-    std::recursive_mutex              mutex;
+    StringNodeMap<CommandHandle> commands;
+    StringNodeMap<uint64>        textWithRef;
+    std::recursive_mutex     mutex;
 };
 
 CommandRegistrar::CommandRegistrar() : impl(std::make_unique<Impl>()) {

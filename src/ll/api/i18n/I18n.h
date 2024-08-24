@@ -25,10 +25,15 @@ namespace ll::i18n {
 LLNDAPI std::string& getDefaultLocaleName();
 
 class I18N {
+    struct char_pointer_hash {
+        auto operator()(char const* ptr) const noexcept { return ::std::hash<::std::string_view>{}(ptr); }
+    };
+    using transparent_string_hash =
+        TransparentOverloaded<::std::hash<::std::string>, ::std::hash<::std::string_view>, char_pointer_hash>;
 
 public:
-    using SubLangData = UnorderedStringMap<std::string>;
-    using LangData    = UnorderedStringMap<SubLangData>;
+    using SubLangData = std::unordered_map<std::string, std::string, transparent_string_hash, ::std::equal_to<>>;
+    using LangData    = std::unordered_map<std::string, SubLangData, transparent_string_hash, ::std::equal_to<>>;
 
     enum class Type : schar {
         None,

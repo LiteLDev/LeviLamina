@@ -31,13 +31,11 @@ LL_TYPE_INSTANCE_HOOK(
     return origin(item);
 }
 
-static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
+static std::unique_ptr<EmitterBase> emitterFactory();
 class PlayerUseItemEventEmitter : public Emitter<emitterFactory, PlayerUseItemEvent> {
     memory::HookRegistrar<PlayerUseItemEventHook> hook;
 };
 
-static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {
-    return std::make_unique<PlayerUseItemEventEmitter>();
-}
+static std::unique_ptr<EmitterBase> emitterFactory() { return std::make_unique<PlayerUseItemEventEmitter>(); }
 
 } // namespace ll::event::inline player

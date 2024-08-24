@@ -9,9 +9,9 @@ namespace ll::plugin {
 using namespace i18n_literals;
 
 struct PluginManagerRegistry::Impl {
-    std::recursive_mutex                               mutex;
-    UnorderedStringMap<std::shared_ptr<PluginManager>> managers;
-    UnorderedStringMap<std::string>                    loadedPlugins; // k, v: name, type
+    std::recursive_mutex                      mutex;
+    StringMap<std::shared_ptr<PluginManager>> managers;
+    StringMap<std::string>                    loadedPlugins; // k, v: name, type
 };
 
 PluginManagerRegistry::PluginManagerRegistry() : impl(std::make_unique<Impl>()) {}
@@ -112,7 +112,7 @@ std::shared_ptr<PluginManager> PluginManagerRegistry::getManagerForPlugin(std::s
 bool PluginManagerRegistry::eraseManager(std::string_view type) {
     std::lock_guard lock(impl->mutex);
     if (auto i = impl->managers.find(type); i != impl->managers.end()) {
-        std::erase_if(impl->loadedPlugins, [type](auto& item) { return item.second == type; });
+        erase_if(impl->loadedPlugins, [type](auto& item) { return item.second == type; });
         impl->managers.erase(i);
         return true;
     }

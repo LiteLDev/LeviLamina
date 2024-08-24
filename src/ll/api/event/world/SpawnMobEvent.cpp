@@ -87,22 +87,18 @@ LL_TYPE_INSTANCE_HOOK(
 }
 
 
-static std::unique_ptr<EmitterBase> spawningEmitterFactory(ListenerBase&);
+static std::unique_ptr<EmitterBase> spawningEmitterFactory();
 class SpawningMobEventEmitter : public Emitter<spawningEmitterFactory, SpawningMobEvent> {
     memory::HookRegistrar<SpawningMobEventHook> hook;
 };
 
-static std::unique_ptr<EmitterBase> spawningEmitterFactory(ListenerBase&) {
-    return std::make_unique<SpawningMobEventEmitter>();
-}
+static std::unique_ptr<EmitterBase> spawningEmitterFactory() { return std::make_unique<SpawningMobEventEmitter>(); }
 
-static std::unique_ptr<EmitterBase> spawnedEmitterFactory(ListenerBase&);
+static std::unique_ptr<EmitterBase> spawnedEmitterFactory();
 class SpawnedMobEventEmitter : public Emitter<spawnedEmitterFactory, SpawnedMobEvent> {
     memory::HookRegistrar<SpawnedMobEventHook> hook;
 };
 
-static std::unique_ptr<EmitterBase> spawnedEmitterFactory(ListenerBase&) {
-    return std::make_unique<SpawnedMobEventEmitter>();
-}
+static std::unique_ptr<EmitterBase> spawnedEmitterFactory() { return std::make_unique<SpawnedMobEventEmitter>(); }
 
 } // namespace ll::event::inline world

@@ -44,6 +44,8 @@ Mod::~Mod() = default;
 
 Manifest const& Mod::getManifest() const { return mImpl->manifest; }
 
+std::string const& Mod::getName() const { return getManifest().name; }
+
 std::filesystem::path const& Mod::getModDir() const { return mImpl->modDir; }
 
 std::filesystem::path const& Mod::getDataDir() const { return mImpl->dataDir; }

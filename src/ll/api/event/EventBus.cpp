@@ -18,18 +18,22 @@ class CallbackStream {
     struct ListenerComparator {
         bool operator()(ListenerPtr const& lhs, ListenerPtr const& rhs) const { return *lhs < *rhs; }
     };
-
-    std::set<ListenerPtr, ListenerComparator> listeners;
-    std::recursive_mutex                      mutex;
+    std::mutex                                  mutex;
+    OrderedSet<ListenerPtr, ListenerComparator> listeners;
 
 public:
     std::unique_ptr<EmitterBase> emitter;
 
-    [[nodiscard]] size_t count() const { return listeners.size(); }
+    CallbackStream(std::unique_ptr<EmitterBase> emitter) : emitter(std::move(emitter)) {}
 
     void publish(Event& event) {
-        std::lock_guard lock(mutex);
-        for (auto& l : listeners) {
+        std::vector<ListenerPtr> tempList;
+        {
+            std::lock_guard lock(mutex);
+            tempList.reserve(listeners.size());
+            tempList.assign_range(listeners);
+        }
+        for (auto& l : tempList) {
             try {
                 l->call(event);
             } catch (...) {
@@ -39,7 +43,7 @@ public:
                         "Error in Listener<{}>[{}] of {}:",
                         event.getId().name,
                         l->getId(),
-                        l->modPtr.expired() ? "unknown mod" : l->modPtr.lock()->getManifest().name
+                        l->modPtr.expired() ? "unknown mod" : l->modPtr.lock()->getName()
                     );
                 } catch (...) {}
                 error_utils::printCurrentException(getLogger());
@@ -47,13 +51,18 @@ public:
         }
     }
     void publish(std::string_view modName, Event& event) {
-        std::lock_guard lock(mutex);
-        for (auto& l : listeners) {
+        std::vector<ListenerPtr> tempList;
+        {
+            std::lock_guard lock(mutex);
+            tempList.reserve(listeners.size());
+            tempList.assign_range(listeners);
+        }
+        for (auto& l : tempList) {
             if (l->modPtr.expired()) {
                 continue;
             }
             auto ptr = l->modPtr.lock();
-            if (!ptr || ptr->getManifest().name != modName) {
+            if (!ptr || ptr->getName() != modName) {
                 continue;
             }
             try {
@@ -75,62 +84,70 @@ public:
         std::lock_guard lock(mutex);
         return listeners.erase(listener);
     }
+    auto removeAllListeners() {
+        std::lock_guard lock(mutex);
+        return std::move(listeners);
+    }
+    [[nodiscard]] size_t count() const { return listeners.size(); }
+    [[nodiscard]] bool   empty() const { return listeners.empty(); }
+};
 
-    [[nodiscard]] bool empty() const { return listeners.empty(); }
+class EventStorage {
+    EventBus::FactoryFn             factory;
+    std::shared_ptr<CallbackStream> stream;
+
+public:
+    EventStorage(EventBus::FactoryFn factory) : factory(std::move(factory)) {}
+
+    optional_ref<CallbackStream> getStream() const { return stream.get(); }
+
+    auto& getSharedStream() const { return stream; }
+
+    void removeStream() { stream.reset(); }
+
+    CallbackStream& getOrCreateStream() {
+        if (!stream) {
+            stream = std::make_shared<CallbackStream>(factory());
+        }
+        return *stream;
+    }
+};
+struct ModInfo {
+    std::vector<EventId>      ownedEvents;
+    SmallDenseSet<ListenerId> listeners;
+};
+struct ListenerInfo {
+    std::weak_ptr<ListenerBase> weak;
+    SmallDenseSet<EventId>      attachedEvents;
 };
 
 class EventBus::EventBusImpl {
 public:
-    struct Factory {
-        std::function<std::unique_ptr<EmitterBase>(ListenerBase&)> func;
-        std::weak_ptr<ll::mod::Mod>                                mod;
-    };
+    ParallelMap<EventId, EventStorage> events;
 
-    std::unordered_map<EventId, Factory> emitterFactory;
+    std::recursive_mutex               infoMutex;
+    DenseMap<std::string, ModInfo>     modInfos;
+    DenseMap<ListenerId, ListenerInfo> listenerInfos;
 
-    std::unordered_map<EventId, CallbackStream> streams;
-
-    std::recursive_mutex mutex;
-
-    struct ListenerInfo {
-        std::weak_ptr<ll::mod::Mod> mod;
-        std::weak_ptr<ListenerBase> listener;
-        std::unordered_set<EventId> watches;
-    };
-
-    std::unordered_map<ListenerId, ListenerInfo> listeners;
-
-    bool addListener(ListenerPtr const& listener, EventId eventId) {
-        if (auto i = streams.find(eventId); i != streams.end()) {
-            return i->second.addListener(listener);
-        } else {
-            if (streams[eventId].addListener(listener)) {
-                if (auto fac = emitterFactory.find(eventId); fac != emitterFactory.end()) {
-                    streams[eventId].emitter = fac->second.func(*listener);
-                    return true;
+    bool removeListenerImpl(ListenerPtr const& listener, EventId eventId) {
+        bool result{false};
+        events.modify_if(eventId, [&](auto& pair) {
+            if (pair.second.getStream()
+                    .transform([&](CallbackStream& stream) { return stream.removeListener(listener); })
+                    .value_or(false)) {
+                if (pair.second.getStream()->empty()) {
+                    pair.second.removeStream();
                 }
+                result = true;
             }
-            return false;
-        }
-    }
-
-    bool removeListener(ListenerPtr const& listener, EventId eventId) {
-        if (auto i = streams.find(eventId); i != streams.end()) {
-            auto& stream = i->second;
-            if (stream.removeListener(listener)) {
-                if (stream.empty()) {
-                    streams.erase(i);
-                }
-                return true;
-            }
-        }
-        return false;
+        });
+        return result;
     }
 };
 
 EventBus::EventBus() : impl(std::make_unique<EventBusImpl>()) {
     auto& reg = mod::ModManagerRegistry::getInstance();
-    reg.executeOnModUnload([this](std::string_view name) { removeModEventEmitters(name); });
+    reg.executeOnModUnload([this](std::string_view name) { clearMod(name); });
     reg.executeOnModDisable([this](std::string_view name) {
         if (getGamingStatus() == GamingStatus::Running) {
             removeModListeners(name);
@@ -147,127 +164,147 @@ void EventBus::setEventEmitter(
     EventId                                                    eventId,
     std::weak_ptr<mod::Mod>                                    mod
 ) {
-    std::lock_guard lock(impl->mutex);
-
-    impl->emitterFactory.try_emplace(eventId, std::move(fn), std::move(mod));
+    setEventEmitter([fn = std::move(fn)]() { return fn(*(ListenerBase*)(nullptr)); }, eventId, std::move(mod));
 }
-void EventBus::publish(Event& event, EventId eventId) {
-    optional_ref<CallbackStream> callback = nullptr;
-    {
-        std::lock_guard lock(impl->mutex);
-        if (auto i = impl->streams.find(eventId); i != impl->streams.end()) {
-            callback = i->second;
-        } else {
-            return;
-        }
-    }
-    callback->publish(event);
-}
-void EventBus::publish(std::string_view modName, Event& event, EventId eventId) {
-    optional_ref<CallbackStream> callback = nullptr;
-    {
-        std::lock_guard lock(impl->mutex);
-        if (auto i = impl->streams.find(eventId); i != impl->streams.end()) {
-            callback = i->second;
-        } else {
-            return;
-        }
-    }
-    callback->publish(modName, event);
-}
-size_t EventBus::getListenerCount(EventId eventId) {
-    if (auto i = impl->streams.find(eventId); i != impl->streams.end()) {
-        return i->second.count();
-    }
-    return 0;
-}
-bool EventBus::addListener(ListenerPtr const& listener, EventId eventId) {
-    if (!listener) {
-        return false;
-    }
-    std::lock_guard lock(impl->mutex);
-    if (impl->addListener(listener, eventId)) {
-        auto& info    = impl->listeners[listener->getId()];
-        info.mod      = listener->modPtr;
-        info.listener = listener;
-        info.watches.emplace(eventId);
-        return true;
+bool EventBus::setEventEmitter(FactoryFn fn, EventId eventId, std::weak_ptr<mod::Mod> weakMod) {
+    if (auto mod = weakMod.lock(); mod) {
+        std::lock_guard lock(impl->infoMutex);
+        return impl->events.lazy_emplace_l(
+            eventId,
+            [](auto&&...) {},
+            [&](auto const& ctor) {
+                ctor(eventId, std::move(fn));
+                impl->modInfos[mod->getName()].ownedEvents.emplace_back(eventId);
+            }
+        );
     }
     return false;
+}
+void EventBus::publish(Event& event, EventId eventId) {
+    std::shared_ptr<CallbackStream> stream;
+    impl->events.if_contains(eventId, [&](auto& pair) { stream = pair.second.getSharedStream(); });
+    if (stream) {
+        stream->publish(event);
+    }
+}
+void EventBus::publish(std::string_view modName, Event& event, EventId eventId) {
+    std::shared_ptr<CallbackStream> stream;
+    impl->events.if_contains(eventId, [&](auto& pair) { stream = pair.second.getSharedStream(); });
+    if (stream) {
+        stream->publish(modName, event);
+    }
+}
+size_t EventBus::getListenerCount(EventId eventId) {
+    if (eventId == EmptyEventId) {
+        return impl->listenerInfos.size();
+    }
+    size_t result{0};
+    impl->events.if_contains(eventId, [&](auto& pair) {
+        pair.second.getStream().transform([&](CallbackStream& stream) {
+            result = stream.count();
+            return true;
+        });
+    });
+    return result;
+}
+bool EventBus::addListener(ListenerPtr const& listener, EventId eventId) {
+    if (!listener || eventId == EmptyEventId) {
+        return false;
+    }
+    auto mod = listener->modPtr.lock();
+    if (!mod) {
+        return false;
+    }
+    bool            result{false};
+    std::lock_guard lock(impl->infoMutex);
+    impl->events.modify_if(eventId, [&](auto& pair) {
+        result = pair.second.getOrCreateStream().addListener(listener);
+    });
+    if (result) {
+        auto id = listener->getId();
+        impl->modInfos[mod->getName()].listeners.emplace(id);
+        impl->listenerInfos.lazy_emplace(
+                               id,
+                               [&](auto const& ctor) { ctor(id, listener); }
+        )->second.attachedEvents.emplace(eventId);
+    }
+    return result;
 }
 bool EventBus::removeListener(ListenerPtr const& listener, EventId eventId) {
     if (!listener) {
         return false;
     }
-    bool            res = false;
-    std::lock_guard lock(impl->mutex);
-    if (eventId == EmptyEventId) {
-        auto& watches = impl->listeners[listener->getId()].watches;
-        for (auto& eid : watches) {
-            res |= impl->removeListener(listener, eid);
-        }
-        impl->listeners.erase(listener->getId());
-    } else {
-        res = impl->removeListener(listener, eventId);
-        if (res) {
-            auto& watches = impl->listeners[listener->getId()].watches;
-            watches.erase(eventId);
-            if (watches.empty()) {
-                impl->listeners.erase(listener->getId());
-            }
-        }
+    auto mod = listener->modPtr.lock();
+    if (!mod) {
+        return false;
     }
-    return res;
+    auto            id = listener->getId();
+    bool            result{false};
+    std::lock_guard lock(impl->infoMutex);
+    if (impl->listenerInfos.erase_if(id, [&](auto& pair) {
+            auto& listenerInfo = pair.second;
+            if (eventId == EmptyEventId) {
+                for (auto& event : listenerInfo.attachedEvents) {
+                    impl->removeListenerImpl(listener, event);
+                }
+                result = true;
+                return true;
+            } else if (listenerInfo.attachedEvents.contains(eventId)) {
+                impl->removeListenerImpl(listener, eventId);
+                listenerInfo.attachedEvents.erase(eventId);
+                result = true;
+            }
+            return listenerInfo.attachedEvents.empty();
+        })) {
+        impl->modInfos[mod->getName()].listeners.erase(id);
+    }
+    return result;
 }
 ListenerPtr EventBus::getListener(ListenerId id) const {
-    std::lock_guard lock(impl->mutex);
-    if (!impl->listeners.contains(id)) {
-        return nullptr;
-    }
-    return impl->listeners[id].listener.lock();
+    std::lock_guard lock(impl->infoMutex);
+    ListenerPtr     result;
+    impl->listenerInfos.if_contains(id, [&](auto& pair) { result = pair.second.weak.lock(); });
+    return result;
 }
 bool EventBus::hasListener(ListenerId id, EventId eventId) const {
-    std::lock_guard lock(impl->mutex);
-    if (!impl->listeners.contains(id)) {
+    std::lock_guard lock(impl->infoMutex);
+    if (!impl->listenerInfos.contains(id)) {
         return false;
     }
     if (eventId == EmptyEventId) {
         return true;
     } else {
-        return impl->listeners[id].watches.contains(eventId);
+        return impl->listenerInfos.at(id).attachedEvents.contains(eventId);
     }
 }
-size_t EventBus::removeModListeners(std::string_view modName) {
-    std::lock_guard lock(impl->mutex);
-    size_t          count{};
-    for (auto& [id, listener] : impl->listeners) {
-        if (listener.mod.expired()) {
-            count += removeListener(id);
-            continue;
+void EventBus::removeModListeners(std::string_view modName) {
+    std::lock_guard lock(impl->infoMutex);
+    impl->modInfos.modify_if(modName, [&](auto& pair) {
+        auto tempList = std::vector(pair.second.listeners.begin(), pair.second.listeners.end());
+        for (auto& id : tempList) {
+            removeListener(getListener(id));
         }
-        if (auto mod = listener.mod.lock()) {
-            if (mod->getManifest().name != modName) {
-                continue;
-            }
-        }
-        count += removeListener(id);
-    }
-    return count;
+    });
 }
-size_t EventBus::removeModEventEmitters(std::string_view modName) {
-    std::lock_guard lock(impl->mutex);
-    size_t          count{};
-    for (auto& [id, factory] : impl->emitterFactory) {
-        if (factory.mod.expired()) {
-            count += impl->emitterFactory.erase(id);
+void EventBus::clearMod(std::string_view modName) {
+    std::lock_guard lock(impl->infoMutex);
+    impl->modInfos.erase_if(modName, [&](auto& pair) {
+        removeModListeners(modName);
+        for (auto& eventId : pair.second.ownedEvents) {
+            impl->events.erase_if(eventId, [&](auto& epair) {
+                epair.second.getStream().transform([&](auto& stream) {
+                    for (auto& listener : stream.removeAllListeners()) {
+                        impl->listenerInfos.erase_if(listener->getId(), [&](auto& lpair) {
+                            lpair.second.attachedEvents.erase(eventId);
+                            return lpair.second.attachedEvents.empty();
+                        });
+                    }
+                    return true;
+                });
+                return true;
+            });
         }
-        if (auto mod = factory.mod.lock()) {
-            if (mod->getManifest().name != modName) {
-                continue;
-            }
-        }
-        count += impl->emitterFactory.erase(id);
-    }
-    return count;
+        return true;
+    });
 }
 } // namespace ll::event

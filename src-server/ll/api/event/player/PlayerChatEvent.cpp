@@ -40,13 +40,11 @@ LL_TYPE_INSTANCE_HOOK(
     origin(identifier, packet);
 }
 
-static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
+static std::unique_ptr<EmitterBase> emitterFactory();
 class PlayerSendMessageEventEmitter : public Emitter<emitterFactory, PlayerChatEvent> {
     memory::HookRegistrar<PlayerSendMessageEventHook> hook;
 };
 
-static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {
-    return std::make_unique<PlayerSendMessageEventEmitter>();
-}
+static std::unique_ptr<EmitterBase> emitterFactory() { return std::make_unique<PlayerSendMessageEventEmitter>(); }
 
 } // namespace ll::event::inline player

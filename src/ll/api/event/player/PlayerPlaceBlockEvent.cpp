@@ -64,22 +64,20 @@ LL_TYPE_INSTANCE_HOOK(
 }
 
 
-static std::unique_ptr<EmitterBase> placingEmitterFactory(ListenerBase&);
+static std::unique_ptr<EmitterBase> placingEmitterFactory();
 class PlayerPlacingBlockEventEmitter : public Emitter<placingEmitterFactory, PlayerPlacingBlockEvent> {
     memory::HookRegistrar<PlayerPlacingBlockEventHook> hook;
 };
 
-static std::unique_ptr<EmitterBase> placingEmitterFactory(ListenerBase&) {
+static std::unique_ptr<EmitterBase> placingEmitterFactory() {
     return std::make_unique<PlayerPlacingBlockEventEmitter>();
 }
 
-static std::unique_ptr<EmitterBase> placedEmitterFactory(ListenerBase&);
+static std::unique_ptr<EmitterBase> placedEmitterFactory();
 class PlayerPlacedBlockEventEmitter : public Emitter<placedEmitterFactory, PlayerPlacedBlockEvent> {
     memory::HookRegistrar<PlayerPlacedBlockEventHook> hook;
 };
 
-static std::unique_ptr<EmitterBase> placedEmitterFactory(ListenerBase&) {
-    return std::make_unique<PlayerPlacedBlockEventEmitter>();
-}
+static std::unique_ptr<EmitterBase> placedEmitterFactory() { return std::make_unique<PlayerPlacedBlockEventEmitter>(); }
 
 } // namespace ll::event::inline player

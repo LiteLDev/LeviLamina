@@ -18,8 +18,7 @@ struct CommandHandle::Impl {
     CommandRegistry::Signature& signature;
     std::recursive_mutex        mutex;
 
-    std::unordered_set<std::string, ::ll::detail::transparent_string_hash, std::equal_to<>>
-        storedStr; // uset keep pointer stable
+    DenseNodeSet<std::string> storedStr; // keep pointer stable
 
     std::vector<OverloadData> overloads;
 
@@ -37,11 +36,11 @@ size_t CommandHandle::disableModOverloads(std::string_view modName) {
     if (modName.empty()) {
         return 0;
     }
-    return std::erase_if(impl->overloads, [&](auto& overload) -> bool {
-        if (!overload.getMod().expired() && (overload.getMod().lock()->getManifest().name != modName)) {
+    return erase_if(impl->overloads, [&](auto& overload) -> bool {
+        if (!overload.getMod().expired() && (overload.getMod().lock()->getName() != modName)) {
             return false;
         }
-        std::erase_if(impl->signature.overloads, [&](auto& o) {
+        erase_if(impl->signature.overloads, [&](auto& o) {
             if (o.params == overload.getParams()) {
                 impl->disabledOverloads.emplace_back(std::move(o));
                 return true;
@@ -54,7 +53,7 @@ size_t CommandHandle::disableModOverloads(std::string_view modName) {
 void CommandHandle::registerOverload(OverloadData& d) {
     std::lock_guard lock{impl->mutex};
     auto&           data = impl->overloads.emplace_back(std::move(d));
-    if (std::erase_if(impl->disabledOverloads, [&](auto& o) {
+    if (erase_if(impl->disabledOverloads, [&](auto& o) {
             if (o.params == data.getParams()) {
                 impl->signature.overloads.emplace_back(std::move(o)).alloc = data.getFactory();
                 return true;

@@ -8,6 +8,7 @@
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 
 #include "ll/api/event/DynamicListener.h"
+#include "ll/api/event/Emitter.h"
 #include "ll/api/event/MultiListener.h"
 #include "ll/api/event/command/ExecuteCommandEvent.h"
 #include "ll/api/event/entity/ActorHurtEvent.h"
@@ -71,6 +72,9 @@ public:
 class TestEvent3 final : public ll::event::Event {
 public:
 };
+
+class TestEventEmitter : public ll::event::Emitter<[](auto&&...) { return nullptr; }, TestEvent1, TestEvent2, TestEvent3> {};
+
 
 using namespace ll::schedule;
 using namespace ll::chrono_literals;

@@ -90,8 +90,8 @@ RuntimeOverload& RuntimeOverload::deoption(CommandParameterOption option) {
 void RuntimeOverload::execute(RuntimeCommand::Executor fn) {
     std::lock_guard l{lock()};
 
-    UnorderedStringMap<uint64> map;
-    size_t                     idx{0};
+    StringMap<uint64> map;
+    size_t            idx{0};
 
     for (auto& [name, k] : impl->params) {
         map.try_emplace(name, idx++);

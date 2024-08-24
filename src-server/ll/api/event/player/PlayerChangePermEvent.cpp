@@ -38,13 +38,11 @@ LL_TYPE_INSTANCE_HOOK(
     origin(perm);
 }
 
-static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
+static std::unique_ptr<EmitterBase> emitterFactory();
 class PlayerChangePermEventEmitter : public Emitter<emitterFactory, PlayerChangePermEvent> {
     memory::HookRegistrar<PlayerChangePermEventHook> hook;
 };
 
-static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {
-    return std::make_unique<PlayerChangePermEventEmitter>();
-}
+static std::unique_ptr<EmitterBase> emitterFactory() { return std::make_unique<PlayerChangePermEventEmitter>(); }
 
 } // namespace ll::event::inline player

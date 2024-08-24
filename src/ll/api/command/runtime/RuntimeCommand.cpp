@@ -5,7 +5,7 @@
 namespace ll::command {
 
 RuntimeCommand::RuntimeCommand(
-    UnorderedStringMap<uint64> const&                         map,
+    StringMap<uint64> const&                                  map,
     std::vector<std::pair<std::string, ParamKindType>> const& params,
     Executor const&                                           executor
 )
@@ -43,7 +43,7 @@ void RuntimeCommand::execute(class CommandOrigin const& origin, class CommandOut
 ParamStorageType const& RuntimeCommand::operator[](std::string_view name) const {
     auto iter = paramIndexMap.find(name);
     if (iter == paramIndexMap.end()) {
-        std::_Xout_of_range("invalid runtime_command param key");
+        throw std::out_of_range("invalid runtime_command param key");
     }
     return reinterpret_cast<ParamStorageType*>(
         reinterpret_cast<uintptr_t>(this) + sizeof(RuntimeCommand)
@@ -51,7 +51,7 @@ ParamStorageType const& RuntimeCommand::operator[](std::string_view name) const 
 }
 ParamStorageType const& RuntimeCommand::operator[](size_t idx) const {
     if (idx >= paramCount) {
-        std::_Xout_of_range("invalid runtime_command index");
+        throw std::out_of_range("invalid runtime_command index");
     }
     return reinterpret_cast<ParamStorageType*>(reinterpret_cast<uintptr_t>(this) + sizeof(RuntimeCommand))[idx];
 }

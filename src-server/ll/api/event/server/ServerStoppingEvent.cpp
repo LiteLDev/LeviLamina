@@ -24,12 +24,10 @@ LL_TYPE_INSTANCE_HOOK(
     origin();
 }
 
-static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
+static std::unique_ptr<EmitterBase> emitterFactory();
 class ServerStoppingEventEmitter : public Emitter<emitterFactory, ServerStoppingEvent> {
     memory::HookRegistrar<ServerStoppingEventHook> hook;
 };
 
-static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {
-    return std::make_unique<ServerStoppingEventEmitter>();
-}
+static std::unique_ptr<EmitterBase> emitterFactory() { return std::make_unique<ServerStoppingEventEmitter>(); }
 } // namespace ll::event::inline server

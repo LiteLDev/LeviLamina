@@ -192,5 +192,5 @@ std::optional<std::system_error> DynamicLibrary::free() noexcept {
     }
     return {};
 }
-void* DynamicLibrary::getAddress(char const* symbol) noexcept { return GetProcAddress((HMODULE)lib, symbol); }
+void* DynamicLibrary::getAddress(char const* name) noexcept { return GetProcAddress((HMODULE)lib, name); }
 } // namespace ll::inline utils::sys_utils

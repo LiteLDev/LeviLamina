@@ -156,12 +156,12 @@ public:
 
     bool remove(task_ptr const& task) {
         std::lock_guard l{mutex};
-        return std::erase_if(tasks, [&](auto& t) { return t.second == task; });
+        return erase_if(tasks, [&](auto& t) { return t.second == task; });
     }
 
     bool remove(uint64 id) {
         std::lock_guard l{mutex};
-        return std::erase_if(tasks, [&](auto& t) { return t.second->getId() == id; });
+        return erase_if(tasks, [&](auto& t) { return t.second->getId() == id; });
     }
 
     void clear() {

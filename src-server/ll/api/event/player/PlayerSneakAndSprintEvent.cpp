@@ -52,40 +52,32 @@ LL_TYPE_INSTANCE_HOOK(
     origin(id, packet);
 }
 
-static std::unique_ptr<EmitterBase> startSprintEmitterFactory(ListenerBase&);
+static std::unique_ptr<EmitterBase> startSprintEmitterFactory();
 class PlayerStartSprintEventEmitter : public Emitter<startSprintEmitterFactory, PlayerSprintingEvent> {
     ll::memory::HookRegistrar<PlayerActionEventHook> hook;
 };
 
-static std::unique_ptr<EmitterBase> stopSprintEmitterFactory(ListenerBase&);
+static std::unique_ptr<EmitterBase> stopSprintEmitterFactory();
 class PlayerStopSprintEventEmitter : public Emitter<stopSprintEmitterFactory, PlayerSprintedEvent> {
     ll::memory::HookRegistrar<PlayerActionEventHook> hook;
 };
 
-static std::unique_ptr<EmitterBase> startSneakEmitterFactory(ListenerBase&);
+static std::unique_ptr<EmitterBase> startSneakEmitterFactory();
 class PlayerStartSneakEventEmitter : public Emitter<startSneakEmitterFactory, PlayerSneakingEvent> {
     ll::memory::HookRegistrar<PlayerActionEventHook> hook;
 };
 
-static std::unique_ptr<EmitterBase> stopSneakEmitterFactory(ListenerBase&);
+static std::unique_ptr<EmitterBase> stopSneakEmitterFactory();
 class PlayerStopSneakEventEmitter : public Emitter<stopSneakEmitterFactory, PlayerSneakedEvent> {
     ll::memory::HookRegistrar<PlayerActionEventHook> hook;
 };
 
-std::unique_ptr<EmitterBase> startSprintEmitterFactory(ListenerBase&) {
-    return std::make_unique<PlayerStartSprintEventEmitter>();
-}
+std::unique_ptr<EmitterBase> startSprintEmitterFactory() { return std::make_unique<PlayerStartSprintEventEmitter>(); }
 
-std::unique_ptr<EmitterBase> stopSprintEmitterFactory(ListenerBase&) {
-    return std::make_unique<PlayerStopSprintEventEmitter>();
-}
+std::unique_ptr<EmitterBase> stopSprintEmitterFactory() { return std::make_unique<PlayerStopSprintEventEmitter>(); }
 
-std::unique_ptr<EmitterBase> startSneakEmitterFactory(ListenerBase&) {
-    return std::make_unique<PlayerStartSneakEventEmitter>();
-}
+std::unique_ptr<EmitterBase> startSneakEmitterFactory() { return std::make_unique<PlayerStartSneakEventEmitter>(); }
 
-std::unique_ptr<EmitterBase> stopSneakEmitterFactory(ListenerBase&) {
-    return std::make_unique<PlayerStartSneakEventEmitter>();
-}
+std::unique_ptr<EmitterBase> stopSneakEmitterFactory() { return std::make_unique<PlayerStartSneakEventEmitter>(); }
 
 } // namespace ll::event::inline player

@@ -70,7 +70,7 @@ public:
             return false;
         }
 
-        auto info = std::make_unique<ServiceInfo>(id, mod ? mod->getManifest().name : "", service);
+        auto info = std::make_unique<ServiceInfo>(id, mod ? mod->getName() : "", service);
         modServices[info->modName].insert(info.get());
         services.emplace(info->name, std::move(info));
 
@@ -138,7 +138,7 @@ bool ServiceManager::unregisterService(ServiceId const& id) {
 
 void ServiceManager::unregisterService(mod::Mod const& mod) {
     std::lock_guard lock(impl->mutex);
-    impl->removeService(mod.getManifest().name);
+    impl->removeService(mod.getName());
 }
 
 bool ServiceManager::registerService(std::shared_ptr<Service> const& service, std::shared_ptr<mod::Mod> const& mod) {

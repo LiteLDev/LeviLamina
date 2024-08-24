@@ -362,7 +362,7 @@ Expected<> ModRegistrar::enableMod(std::string_view name) noexcept {
     std::lock_guard lock(impl->mutex);
     auto&           registry   = ModManagerRegistry::getInstance();
     auto            dependents = impl->deps.dependentOn(std::string{name});
-    std::erase_if(dependents, [&](auto& name) {
+    erase_if(dependents, [&](auto& name) {
         if (auto ptr = registry.getMod(name); ptr) {
             return ptr->isEnabled();
         }
@@ -377,7 +377,7 @@ Expected<> ModRegistrar::disableMod(std::string_view name) noexcept {
     std::lock_guard lock(impl->mutex);
     auto&           registry   = ModManagerRegistry::getInstance();
     auto            dependents = impl->deps.dependentBy(std::string{name});
-    std::erase_if(dependents, [&](auto& name) {
+    erase_if(dependents, [&](auto& name) {
         if (auto ptr = registry.getMod(name); ptr) {
             return ptr->isDisabled();
         }

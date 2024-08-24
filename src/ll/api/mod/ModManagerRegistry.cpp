@@ -8,8 +8,8 @@ using namespace i18n_literals;
 
 struct ModManagerRegistry::Impl {
     std::recursive_mutex                               mutex;
-    UnorderedStringMap<std::shared_ptr<ModManager>>    managers;
-    UnorderedStringMap<std::string>                    loadedMods; // k, v: name, type
+    StringMap<std::shared_ptr<ModManager>>             managers;
+    StringMap<std::string>                             loadedMods; // k, v: name, type
     std::vector<std::function<void(std::string_view)>> onModLoad;
     std::vector<std::function<void(std::string_view)>> onModUnload;
     std::vector<std::function<void(std::string_view)>> onModEnable;
@@ -127,7 +127,7 @@ std::shared_ptr<ModManager> ModManagerRegistry::getManagerForMod(std::string_vie
 bool ModManagerRegistry::eraseManager(std::string_view type) {
     std::lock_guard lock(impl->mutex);
     if (auto i = impl->managers.find(type); i != impl->managers.end()) {
-        std::erase_if(impl->loadedMods, [type](auto& item) { return item.second == type; });
+        erase_if(impl->loadedMods, [type](auto& item) { return item.second == type; });
         impl->managers.erase(i);
         return true;
     }

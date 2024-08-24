@@ -9,13 +9,11 @@ LL_TYPE_INSTANCE_HOOK(PlayerDisconnectEventHook, HookPriority::Normal, ServerPla
     origin();
 }
 
-static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
+static std::unique_ptr<EmitterBase> emitterFactory();
 class PlayerDisconnectEventEmitter : public Emitter<emitterFactory, PlayerDisconnectEvent> {
     memory::HookRegistrar<PlayerDisconnectEventHook> hook;
 };
 
-static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {
-    return std::make_unique<PlayerDisconnectEventEmitter>();
-}
+static std::unique_ptr<EmitterBase> emitterFactory() { return std::make_unique<PlayerDisconnectEventEmitter>(); }
 
 } // namespace ll::event::inline player

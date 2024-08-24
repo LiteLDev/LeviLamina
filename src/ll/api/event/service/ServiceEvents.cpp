@@ -14,6 +14,6 @@ ServiceUnregisterEvent::ServiceUnregisterEvent(std::shared_ptr<service::Service>
 : ServiceEvent(std::move(service)) {}
 
 class ServiceEventEmitter
-: public Emitter<[](auto&&) { return nullptr; }, ServiceRegisterEvent, ServiceUnregisterEvent> {};
+: public Emitter<[](auto&&...) { return nullptr; }, ServiceRegisterEvent, ServiceUnregisterEvent> {};
 
 } // namespace ll::event::inline server

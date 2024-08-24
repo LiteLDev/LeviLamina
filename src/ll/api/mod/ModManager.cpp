@@ -5,9 +5,9 @@ namespace ll::mod {
 using namespace i18n_literals;
 
 struct ModManager::Impl {
-    std::string                              type;
-    std::recursive_mutex                     mutex;
-    UnorderedStringMap<std::shared_ptr<Mod>> mods;
+    std::string                     type;
+    std::recursive_mutex            mutex;
+    StringMap<std::shared_ptr<Mod>> mods;
     explicit Impl(std::string type) : type(std::move(type)) {}
 };
 

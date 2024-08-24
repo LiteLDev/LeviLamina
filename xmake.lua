@@ -25,6 +25,7 @@ add_requires("rapidjson v1.1.0")
 add_requires("mimalloc 2.1.2")
 add_requires("cpr 1.10.5", {configs = {ssl = true}})
 add_requires("boost 1.86.0", {configs = {stacktrace = true}})
+add_requires("parallel-hashmap v1.3.12")
 
 -- Dependencies from liteldev-repo.
 add_requires("pcg_cpp v1.0.0")
@@ -120,6 +121,7 @@ target("LeviLamina")
         "pfr",
         "cpr",
         "boost",
+        "parallel-hashmap",
         {public = true}
     )
     if is_windows then 

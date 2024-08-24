@@ -32,6 +32,8 @@ public:
 
     LLNDAPI Manifest const& getManifest() const;
 
+    LLNDAPI std::string const& getName() const;
+
     LLNDAPI std::filesystem::path const& getModDir() const;
 
     LLNDAPI std::filesystem::path const& getDataDir() const;

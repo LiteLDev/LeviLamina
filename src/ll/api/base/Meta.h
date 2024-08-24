@@ -159,11 +159,6 @@ struct TypeCounter {
 };
 } // namespace detail
 
-template <class... Ts>
-struct Overloaded : Ts... {
-    using Ts::operator()...;
-};
-
 template <size_t N>
 struct PriorityTag : PriorityTag<N - 1> {};
 template <>

@@ -52,13 +52,11 @@ LL_TYPE_INSTANCE_HOOK(
     return origin(item, blockPos, face, clickPos, block);
 }
 
-static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
+static std::unique_ptr<EmitterBase> emitterFactory();
 class PlayerInteractBlockEventEmitter : public Emitter<emitterFactory, PlayerInteractBlockEvent> {
     memory::HookRegistrar<PlayerInteractBlockEventHook> hook;
 };
 
-static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {
-    return std::make_unique<PlayerInteractBlockEventEmitter>();
-}
+static std::unique_ptr<EmitterBase> emitterFactory() { return std::make_unique<PlayerInteractBlockEventEmitter>(); }
 
 } // namespace ll::event::inline player

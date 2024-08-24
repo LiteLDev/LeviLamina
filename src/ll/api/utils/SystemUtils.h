@@ -62,11 +62,11 @@ public:
     LLAPI std::optional<std::system_error> load(std::filesystem::path const& path) noexcept;
     LLAPI std::optional<std::system_error> free() noexcept;
 
-    LLNDAPI void* getAddress(char const* symbol) noexcept;
+    LLNDAPI void* getAddress(char const* name) noexcept;
 
     template <class T>
-    T getAddress(char const* symbol) noexcept {
-        return reinterpret_cast<T>(getAddress(symbol));
+    T getAddress(char const* name) noexcept {
+        return reinterpret_cast<T>(getAddress(name));
     }
 
     [[nodiscard]] constexpr HandleT handle() const noexcept { return lib; }

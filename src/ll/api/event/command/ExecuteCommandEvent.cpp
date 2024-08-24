@@ -62,22 +62,20 @@ LL_TYPE_INSTANCE_HOOK(
 }
 
 
-static std::unique_ptr<EmitterBase> executingEmitterFactory(ListenerBase&);
+static std::unique_ptr<EmitterBase> executingEmitterFactory();
 class ExecutingCommandEventEmitter : public Emitter<executingEmitterFactory, ExecutingCommandEvent> {
     memory::HookRegistrar<ExecutingCommandEventHook> hook;
 };
 
-static std::unique_ptr<EmitterBase> executingEmitterFactory(ListenerBase&) {
+static std::unique_ptr<EmitterBase> executingEmitterFactory() {
     return std::make_unique<ExecutingCommandEventEmitter>();
 }
 
-static std::unique_ptr<EmitterBase> executedEmitterFactory(ListenerBase&);
+static std::unique_ptr<EmitterBase> executedEmitterFactory();
 class ExecutedCommandEventEmitter : public Emitter<executedEmitterFactory, ExecutedCommandEvent> {
     memory::HookRegistrar<ExecutedCommandEventHook> hook;
 };
 
-static std::unique_ptr<EmitterBase> executedEmitterFactory(ListenerBase&) {
-    return std::make_unique<ExecutedCommandEventEmitter>();
-}
+static std::unique_ptr<EmitterBase> executedEmitterFactory() { return std::make_unique<ExecutedCommandEventEmitter>(); }
 
 } // namespace ll::event::inline command

@@ -107,7 +107,7 @@ struct Statistics::Impl {
     void submitData() {
         pool.addTask([this]() {
                 nlohmann::json pluginInfo;
-                pluginInfo["pluginName"]   = getSelfModIns()->getManifest().name;
+                pluginInfo["pluginName"]   = getSelfModIns()->getName();
                 pluginInfo["customCharts"] = getCustomCharts();
                 json["plugins"].emplace_back(pluginInfo);
             }

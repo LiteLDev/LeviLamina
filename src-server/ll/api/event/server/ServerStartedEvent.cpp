@@ -27,12 +27,10 @@ LL_TYPE_INSTANCE_HOOK(
     EventBus::getInstance().publish(ServerStartedEvent(ins));
 }
 
-static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
+static std::unique_ptr<EmitterBase> emitterFactory();
 class ServerStartedEventEmitter : public Emitter<emitterFactory, ServerStartedEvent> {
     memory::HookRegistrar<ServerStartedEventHook> hook;
 };
 
-static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {
-    return std::make_unique<ServerStartedEventEmitter>();
-}
+static std::unique_ptr<EmitterBase> emitterFactory() { return std::make_unique<ServerStartedEventEmitter>(); }
 } // namespace ll::event::inline server
