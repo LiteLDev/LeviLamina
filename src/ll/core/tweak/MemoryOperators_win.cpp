@@ -7,6 +7,7 @@
 #include "mc/deps/core/common/bedrock/IMemoryAllocator.h"
 #include "mc/deps/core/common/bedrock/Memory.h"
 
+#include "ll/api/base/Containers.h"
 #include "ll/api/utils/SystemUtils.h"
 
 #include "mimalloc.h"
@@ -157,7 +158,7 @@ public:
 };
 
 static auto& getDebugMap() {
-    static std::unordered_map<
+    static DenseMap<
         void*,
         MemSize,
         std::hash<void*>,
@@ -197,7 +198,7 @@ public:
     virtual void logCurrentState() {
         T::logCurrentState();
 
-        std::unordered_map<std::string, MemSize> res;
+        DenseMap<std::string, MemSize> res;
 
         for (auto& [fn, mem] : getDebugMap()) {
             auto name = sys_utils::getModuleFileName(sys_utils::getModuleHandle(fn));

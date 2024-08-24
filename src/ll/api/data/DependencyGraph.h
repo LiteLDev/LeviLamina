@@ -1,18 +1,18 @@
 #pragma once
 
 #include <cstddef>
-#include <unordered_map>
-#include <unordered_set>
 #include <vector>
+
+#include "ll/api/base/Containers.h"
 
 namespace ll::data {
 template <class T>
 class DependencyGraph {
     struct Data {
-        std::unordered_set<T> dependBy;
-        std::unordered_set<T> dependOn;
+        SmallDenseSet<T> dependBy;
+        SmallDenseSet<T> dependOn;
     };
-    std::unordered_map<T, Data> data;
+    DenseMap<T, Data> data;
 
 public:
     struct SortResult {
@@ -41,7 +41,7 @@ public:
         if (contains(node)) {
             auto& deps = data.at(node);
             if (deps.dependBy.size() == 0) {
-                for (auto& dependency : std::unordered_set<T>{deps.dependOn}) {
+                for (auto& dependency : SmallDenseSet<T>{deps.dependOn}) {
                     eraseDependency(node, dependency);
                 }
                 data.erase(node);
@@ -80,13 +80,13 @@ public:
         }
         return false;
     }
-    std::unordered_set<T> dependentBy(T const& node) const {
+    SmallDenseSet<T> dependentBy(T const& node) const {
         if (!contains(node)) {
             return {};
         }
         return data.at(node).dependBy;
     }
-    std::unordered_set<T> dependentOn(T const& node) const {
+    SmallDenseSet<T> dependentOn(T const& node) const {
         if (!contains(node)) {
             return {};
         }
@@ -96,7 +96,7 @@ public:
         std::vector<T> sorted;
         std::vector<T> unsorted;
 
-        std::unordered_map<T, size_t> csize;
+        DenseMap<T, size_t> csize;
         for (auto& [node, deps] : data) {
             csize[node] = deps.dependOn.size();
         }

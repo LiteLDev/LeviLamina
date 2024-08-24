@@ -5,7 +5,6 @@
 #include <cstdint>
 #include <string>
 #include <string_view>
-#include <unordered_map>
 
 #include "ctre/ctre-unicode.hpp"
 #include "fmt/color.h"

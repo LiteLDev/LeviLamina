@@ -1,4 +1,5 @@
 #include "ll/core/tweak/ModifyInfomation.h"
+#include "ll/api/base/Containers.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/core/Config.h"
 #include "ll/core/LeviLamina.h"
@@ -38,11 +39,11 @@ LL_STATIC_HOOK(
 
 ll::Logger serverLogger("Server");
 
-static std::unordered_map<uint, decltype((serverLogger.debug))&> loggerMap = {
-    {1u, serverLogger.debug},
-    {2u, serverLogger.info },
-    {4u, serverLogger.warn },
-    {8u, serverLogger.error}
+static SmallDenseMap<uint, decltype(serverLogger.debug)*> loggerMap = {
+    {1u, &serverLogger.debug},
+    {2u, &serverLogger.info },
+    {4u, &serverLogger.warn },
+    {8u, &serverLogger.error}
 };
 
 LL_STATIC_HOOK(
@@ -82,7 +83,7 @@ LL_STATIC_HOOK(
 
     bool knownPriority = loggerMap.contains(priority);
 
-    auto& slogger = knownPriority ? loggerMap.at(priority) : serverLogger.warn;
+    auto& slogger = knownPriority ? *loggerMap.at(priority) : serverLogger.warn;
 
     std::string line;
     while (std::getline(iss, line)) {

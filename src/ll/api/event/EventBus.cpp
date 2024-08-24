@@ -1,9 +1,6 @@
 #include "ll/api/event/EventBus.h"
 
 #include <mutex>
-#include <set>
-#include <unordered_map>
-#include <unordered_set>
 
 #include "ll/api/Logger.h"
 #include "ll/api/event/EmitterBase.h"

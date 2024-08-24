@@ -98,7 +98,7 @@ void CustomFormHandler::handle(
         return;
     }
 
-    CustomFormResult result{std::unordered_map<std::string, CustomFormElementResult>{}};
+    CustomFormResult result{std::in_place};
 
     for (size_t i = 0; i < mFormElements.size(); ++i) {
         auto& element = mFormElements[i];
@@ -125,13 +125,13 @@ void ModalFormHandler::handle(
         }
         return;
     }
-    bool selected = data == true;
+    bool selected = data.has_value();
     if (mCallback) {
         mCallback(player, (ll::form::ModalFormSelectedButton)selected, cancelReason);
     }
 }
 
-std::unordered_map<uint, std::unique_ptr<FormHandler>> formHandlers = {};
+ParallelMap<uint, std::unique_ptr<FormHandler>> formHandlers = {};
 
 bool handleFormPacket(
     Player&                              player,

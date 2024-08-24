@@ -1,8 +1,8 @@
 #pragma once
 
 #include <typeindex>
-#include <unordered_map>
 
+#include "ll/api/base/Containers.h"
 #include "ll/api/event/Event.h"
 #include "ll/api/event/Listener.h"
 
@@ -40,6 +40,6 @@ public:
     }
 
 private:
-    std::unordered_map<EventId, callback_fn> callback;
+    SmallDenseMap<EventId, callback_fn> callback;
 };
 } // namespace ll::event

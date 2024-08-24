@@ -3,7 +3,6 @@
 #include <memory>
 #include <string>
 #include <string_view>
-#include <unordered_map>
 #include <utility>
 #include <vector>
 
@@ -24,7 +23,7 @@ namespace ll::command {
 struct CommandRegistrar::Impl {
     StringNodeMap<CommandHandle> commands;
     StringNodeMap<uint64>        textWithRef;
-    std::recursive_mutex     mutex;
+    std::recursive_mutex         mutex;
 };
 
 CommandRegistrar::CommandRegistrar() : impl(std::make_unique<Impl>()) {

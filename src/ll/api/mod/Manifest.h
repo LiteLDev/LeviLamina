@@ -2,9 +2,8 @@
 
 #include <optional>
 #include <string>
-#include <unordered_map>
-#include <unordered_set>
 
+#include "ll/api/base/Containers.h"
 #include "ll/api/data/Version.h"
 #include "ll/api/utils/HashUtils.h"
 
@@ -30,17 +29,17 @@ struct hash<ll::mod::Dependency> {
 } // namespace std
 namespace ll::mod {
 struct Manifest {
-    std::string                                                 entry;
-    std::string                                                 name;
-    std::string                                                 type;
-    std::optional<bool>                                         passive{};
-    std::optional<data::Version>                                version{};
-    std::optional<std::string>                                  author{};
-    std::optional<std::string>                                  description{};
-    std::optional<std::unordered_map<std::string, std::string>> extraInfo{};
-    std::optional<std::unordered_set<Dependency>>               dependencies{};
-    std::optional<std::unordered_set<Dependency>>               optionalDependencies{};
-    std::optional<std::unordered_set<Dependency>>               conflicts{};
-    std::optional<std::unordered_set<Dependency>>               loadBefore{};
+    std::string                                            entry;
+    std::string                                            name;
+    std::string                                            type;
+    std::optional<bool>                                    passive{};
+    std::optional<data::Version>                           version{};
+    std::optional<std::string>                             author{};
+    std::optional<std::string>                             description{};
+    std::optional<SmallDenseMap<std::string, std::string>> extraInfo{};
+    std::optional<SmallDenseSet<Dependency>>               dependencies{};
+    std::optional<SmallDenseSet<Dependency>>               optionalDependencies{};
+    std::optional<SmallDenseSet<Dependency>>               conflicts{};
+    std::optional<SmallDenseSet<Dependency>>               loadBefore{};
 };
 } // namespace ll::mod

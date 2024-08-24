@@ -1,11 +1,12 @@
 #pragma once
 
 #include <type_traits>
-#include <unordered_map>
 
 #include "gtest/gtest.h"
 
 #include "Test.h"
+
+#include "ll/api/base/Containers.h"
 
 namespace ll::test {
 class TestManager {
@@ -17,7 +18,7 @@ class TestManager {
         Failed,
     };
 
-    std::unordered_map<Test*, TestStatus> testStatus;
+    DenseMap<Test*, TestStatus> testStatus;
 
 public:
     void registerTest(Test* test);

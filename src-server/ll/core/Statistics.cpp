@@ -2,6 +2,7 @@
 
 
 #include "ll/api/Versions.h"
+#include "ll/api/base/Containers.h"
 #include "ll/api/chrono/GameChrono.h"
 #include "ll/api/event/EventBus.h"
 #include "ll/api/event/server/ServerStartedEvent.h"
@@ -47,7 +48,7 @@ static nlohmann::json addSimplePie(std::string_view key, std::variant<std::strin
     return json;
 }
 
-static nlohmann::json addAdvancedPie(std::string_view key, const std::unordered_map<std::string_view, int>& value) {
+static nlohmann::json addAdvancedPie(std::string_view key, SmallDenseMap<std::string_view, int> const& value) {
     nlohmann::json json;
     json["chartId"] = key;
     nlohmann::json json2;
@@ -81,7 +82,7 @@ static nlohmann::json getCustomCharts() {
         "online_mode",
         ll::service::getPropertiesSettings().value().useOnlineAuthentication() ? "true" : "false"
     ));
-    std::unordered_map<std::string_view, int> platforms;
+    SmallDenseMap<std::string_view, int> platforms;
     ll::service::getLevel().transform([&platforms](auto& level) {
         level.forEachPlayer([&platforms](Player& player) {
             std::string_view platformName = magic_enum::enum_name(player.getPlatform());

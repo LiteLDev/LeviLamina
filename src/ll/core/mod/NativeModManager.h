@@ -2,8 +2,8 @@
 
 #include <memory>
 #include <string_view>
-#include <unordered_map>
 
+#include "ll/api/base/Containers.h"
 #include "ll/api/mod/Manifest.h"
 #include "ll/api/mod/ModManager.h"
 #include "ll/api/mod/NativeMod.h"
@@ -24,6 +24,6 @@ protected:
     Expected<> unload(std::string_view name) override;
 
 private:
-    std::unordered_map<Handle, std::shared_ptr<NativeMod>> handleMap;
+    DenseMap<Handle, std::shared_ptr<NativeMod>> handleMap;
 };
 } // namespace ll::mod

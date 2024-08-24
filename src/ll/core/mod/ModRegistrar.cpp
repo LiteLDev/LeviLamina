@@ -8,11 +8,11 @@
 #include <ranges>
 #include <string>
 #include <string_view>
-#include <unordered_map>
-#include <unordered_set>
 #include <utility>
 #include <vector>
 
+#include "ll/api/Expected.h"
+#include "ll/api/base/Containers.h"
 #include "ll/api/data/DependencyGraph.h"
 #include "ll/api/data/Version.h"
 #include "ll/api/i18n/I18n.h"
@@ -25,10 +25,9 @@
 #include "ll/api/reflection/Deserialization.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/StringUtils.h"
+
 #include "ll/core/LeviLamina.h"
 #include "ll/core/mod/NativeModManager.h"
-
-#include "ll/api/Expected.h"
 
 #include "nlohmann/json.hpp"
 #include "nlohmann/json_fwd.hpp"
@@ -81,7 +80,7 @@ static Expected<Manifest> loadManifest(std::filesystem::path const& dir) {
 void ModRegistrar::loadAllMods() noexcept try {
     std::lock_guard lock(impl->mutex);
 
-    std::unordered_map<std::string, Manifest> manifests;
+    DenseMap<std::string, Manifest> manifests;
 
     getLogger().info("Loading mods..."_tr());
 
@@ -110,9 +109,9 @@ void ModRegistrar::loadAllMods() noexcept try {
         }
     }
 
-    std::unordered_set<std::string> loadingQueueHash;
-    std::vector<std::string>        pendingRemoved;
-    std::queue<std::string>         loadingQueue;
+    DenseSet<std::string>    loadingQueueHash;
+    std::vector<std::string> pendingRemoved;
+    std::queue<std::string>  loadingQueue;
 
     for (auto& [name, manifest] : manifests) {
         if (manifest.passive == true) {
@@ -220,7 +219,7 @@ void ModRegistrar::loadAllMods() noexcept try {
     for (auto& name : sort.unsorted) {
         getLogger().error("{0} will not be loaded because the dependency are in loops"_tr(name));
     }
-    std::unordered_set<std::string> loadErrored;
+    DenseSet<std::string> loadErrored;
     for (auto& name : sort.sorted) {
         auto& manifest = manifests.at(name);
         if (manifest.dependencies) {

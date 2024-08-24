@@ -4,7 +4,6 @@
 #include <mutex>
 #include <string>
 #include <thread>
-#include <unordered_map>
 
 #include "ll/api/Logger.h"
 #include "ll/api/base/StdInt.h"
@@ -53,7 +52,7 @@ void registerTimingCommand() {
                 ::ll::getLogger().warn("EnableTimingCapture");
             }
 
-            std::unordered_map<uint, DefaultEntitySystemsCollection::ECSTiming> timings{};
+            DenseMap<uint, DefaultEntitySystemsCollection::ECSTiming> timings{};
             using namespace ::ll::chrono;
             using namespace chrono_literals;
             ::ll::thread::TickSyncSleep<GameTickClock> sleeper;

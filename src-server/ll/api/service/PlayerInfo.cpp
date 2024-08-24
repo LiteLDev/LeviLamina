@@ -2,6 +2,7 @@
 
 #include <mutex>
 
+#include "ll/api/base/Containers.h"
 #include "ll/api/data/KeyValueDB.h"
 #include "ll/api/event/EventBus.h"
 #include "ll/api/event/player/PlayerJoinEvent.h"
@@ -13,10 +14,10 @@
 namespace ll::service {
 class PlayerInfo::Impl {
 public:
-    std::recursive_mutex                                                   mutex;
-    std::unordered_map<mce::UUID, std::shared_ptr<PlayerInfoEntry>>        uuids;
-    std::unordered_map<std::string_view, std::shared_ptr<PlayerInfoEntry>> xuids;
-    std::unordered_map<std::string_view, std::shared_ptr<PlayerInfoEntry>> names;
+    std::recursive_mutex                                         mutex;
+    DenseMap<mce::UUID, std::shared_ptr<PlayerInfoEntry>>        uuids;
+    DenseMap<std::string_view, std::shared_ptr<PlayerInfoEntry>> xuids;
+    DenseMap<std::string_view, std::shared_ptr<PlayerInfoEntry>> names;
     data::KeyValueDB   storage{getSelfModIns()->getDataDir() / u8"playerinfo"};
     event::ListenerPtr listener;
 

@@ -1,7 +1,6 @@
 #include "ll/api/service/ServiceManager.h"
 
-#include <unordered_map>
-
+#include "ll/api/base/Containers.h"
 #include "ll/api/event/EventBus.h"
 #include "ll/api/event/service/ServiceEvents.h"
 
@@ -59,9 +58,9 @@ class ServiceManager::Impl {
 public:
     std::recursive_mutex mutex;
 
-    std::unordered_map<std::string_view, std::unique_ptr<ServiceInfo>> services;
+    DenseMap<std::string_view, std::unique_ptr<ServiceInfo>> services;
 
-    std::unordered_map<std::string_view, std::unordered_set<ServiceInfo*>> modServices; // mod name -> services
+    DenseMap<std::string_view, SmallDenseSet<ServiceInfo*>> modServices; // mod name -> services
 
     bool addService(std::shared_ptr<Service> const& service, std::shared_ptr<mod::Mod> const& mod) {
         std::lock_guard lock(mutex);
