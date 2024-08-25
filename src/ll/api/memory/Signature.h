@@ -59,8 +59,8 @@ public:
 
     [[nodiscard]] constexpr size_t size() const { return elements.size(); }
 
-    LLNDAPI void* resolve() const;
-    LLNDAPI void* resolve(std::span<std::byte> range) const;
+    LLNDAPI void* resolve(bool disableErrorOutput = false) const;
+    LLNDAPI void* resolve(std::span<std::byte> range, bool disableErrorOutput = false) const;
 
     LLNDAPI std::string toString(bool alignWildcard = true, bool upperCase = true) const;
 };

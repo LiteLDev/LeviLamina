@@ -187,4 +187,5 @@ LL_AUTO_TYPE_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serve
     );
 
     ll::getLogger().debug("signature {}", "48 8D 05 ? ? ? ? E8"_sig.toString(false, false));
+    ll::getLogger().debug("resolve   {}", "48 8D 05 ? ? ? ? E8"_sig.resolve());
 }

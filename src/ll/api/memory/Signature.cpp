@@ -3,12 +3,19 @@
 #include <execution>
 
 #include "ll/api/utils/SystemUtils.h"
+#include "ll/core/LeviLamina.h"
 
 namespace ll::memory {
 
-void* SignatureView::resolve() const { return resolve(sys_utils::getImageRange()); }
-
-void* SignatureView::resolve(std::span<std::byte> range) const {
+void* SignatureView::resolve(bool disableErrorOutput) const {
+    auto res = resolve(sys_utils::getImageRange(), true);
+    if (!res && !disableErrorOutput) {
+        getLogger().fatal("Couldn't find: {}", toString());
+        getLogger().fatal("In module: {}", sys_utils::getCallerModuleFileName());
+    }
+    return res;
+}
+void* SignatureView::resolve(std::span<std::byte> range, bool disableErrorOutput) const {
     const auto firstByte = *elements.front();
     const auto scanEnd   = range.end() - elements.size() + 1;
 
@@ -20,6 +27,10 @@ void* SignatureView::resolve(std::span<std::byte> range) const {
         if (std::equal(elements.begin() + 1, elements.end(), i + 1, std::equal_to<>{})) [[unlikely]] {
             return &*i;
         }
+    }
+    if (!disableErrorOutput) {
+        getLogger().fatal("Couldn't find: {}", toString());
+        getLogger().fatal("In module: {}", sys_utils::getCallerModuleFileName());
     }
     return nullptr;
 }
