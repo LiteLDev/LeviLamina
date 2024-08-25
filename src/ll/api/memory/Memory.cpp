@@ -76,6 +76,30 @@ FuncPtr resolveSignature(std::string_view signature, std::span<std::byte> range)
             return nullptr;
         }
     }
+    // const auto signature = context.signature;
+    // const auto firstByte = *signature[0];
+    // const auto scanEnd   = end - signature.size() + 1;
+
+    // for (auto i = begin; i != scanEnd; i++) {
+    //     // Use std::find to efficiently find the first byte
+    //     if LIBHAT_IF_CONSTEVAL {
+    //         i = std::find(i, scanEnd, firstByte);
+    //     } else {
+    //         i = std::find(std::execution::unseq, i, scanEnd, firstByte);
+    //     }
+    //     if (i == scanEnd) LIBHAT_UNLIKELY {
+    //             break;
+    //         }
+    //     // Compare everything after the first byte
+    //     auto match = std::equal(signature.begin() + 1, signature.end(), i + 1, [](auto opt, auto byte) {
+    //         return !opt.has_value() || *opt == byte;
+    //     });
+    //     if (match) LIBHAT_UNLIKELY {
+    //             return i;
+    //         }
+    // }
+    // return nullptr;
+
     if (pattern.empty()) {
         return nullptr;
     }

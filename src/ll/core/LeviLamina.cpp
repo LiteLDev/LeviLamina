@@ -4,8 +4,6 @@
 #include "ll/core/Version.h"
 
 namespace ll {
-using namespace i18n_literals;
-
 std::shared_ptr<mod::NativeMod> const& getSelfModIns() {
     static auto llSelf = std::make_shared<mod::NativeMod>(
         mod::Manifest{

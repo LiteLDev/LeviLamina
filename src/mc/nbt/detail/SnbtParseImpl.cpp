@@ -12,8 +12,6 @@ Unexpected makeSnbtError(SnbtErrorCode);
 bool isTrivialNbtStringChar(char c) { return isalnum(c) || c == '-' || c == '+' || c == '_' || c == '.'; }
 } // namespace ll::nbt::detail
 namespace ll {
-
-using namespace hash_literals;
 using namespace nbt::detail;
 
 Expected<> scanComment(std::string_view& s) noexcept {

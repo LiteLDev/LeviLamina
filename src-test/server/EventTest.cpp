@@ -43,7 +43,6 @@
 #include "ll/api/utils/HashUtils.h"
 
 using namespace ll::hash_utils;
-using namespace ll::hash_literals;
 
 class TestEventB : public ll::event::Event {
 protected:
@@ -77,7 +76,6 @@ class TestEventEmitter : public ll::event::Emitter<[](auto&&...) { return nullpt
 
 
 using namespace ll::schedule;
-using namespace ll::chrono_literals;
 
 SystemTimeScheduler remover;
 

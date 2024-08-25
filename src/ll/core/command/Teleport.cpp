@@ -17,9 +17,6 @@
 #include "mc/world/level/dimension/VanillaDimensions.h"
 
 namespace ll::command {
-
-using namespace ll::i18n_literals;
-
 struct TpSelf {
     DimensionType        dimension;
     CommandPositionFloat destination;

@@ -24,8 +24,6 @@
 
 
 namespace ll::command {
-using namespace ll::i18n_literals;
-
 enum LeviCommandOperation : int {
     unload,
     reload,

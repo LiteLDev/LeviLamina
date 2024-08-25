@@ -2,8 +2,6 @@
 #include "ll/api/i18n/I18n.h"
 
 namespace ll::mod {
-using namespace i18n_literals;
-
 struct ModManager::Impl {
     std::string                     type;
     std::recursive_mutex            mutex;

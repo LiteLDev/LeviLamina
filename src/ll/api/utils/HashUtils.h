@@ -51,6 +51,6 @@ template <class T>
 }
 } // namespace ll::inline utils::hash_utils
 
-namespace ll::hash_literals {
-[[nodiscard]] constexpr uint64 operator""_h(char const* x, size_t len) { return ll::hash_utils::doHash({x, len}); }
-} // namespace ll::hash_literals
+namespace ll::inline literals::inline hash_literals {
+[[nodiscard]] consteval uint64 operator""_h(char const* x, size_t len) { return ll::hash_utils::doHash({x, len}); }
+} // namespace ll::inline literals::inline hash_literals

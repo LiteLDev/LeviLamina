@@ -6,7 +6,6 @@
 #include "ll/api/i18n/I18n.h"
 
 namespace ll::nbt::detail {
-using namespace ::ll::i18n_literals;
 struct snbt_category : public std::error_category {
     constexpr snbt_category() noexcept : error_category() {}
     [[nodiscard]] std::string message(int errCode) const override {

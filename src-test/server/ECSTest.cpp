@@ -53,9 +53,7 @@ void registerTimingCommand() {
             }
 
             DenseMap<uint, DefaultEntitySystemsCollection::ECSTiming> timings{};
-            using namespace ::ll::chrono;
-            using namespace chrono_literals;
-            ::ll::thread::TickSyncSleep<GameTickClock> sleeper;
+            ::ll::thread::TickSyncSleep<chrono::GameTickClock> sleeper;
             auto                                       begin = std::chrono::steady_clock::now();
             for (size_t i = 0; i < counttick; i++) {
                 sleeper.sleepFor(1_tick);

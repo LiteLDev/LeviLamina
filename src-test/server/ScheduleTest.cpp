@@ -11,8 +11,6 @@
 
 using namespace ll::schedule;
 
-using namespace ll::chrono_literals;
-
 ll::Logger schedulelogger("Schedule");
 
 SystemTimeScheduler      s;

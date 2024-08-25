@@ -23,8 +23,6 @@
 #include "ll/core/LeviLamina.h"
 
 namespace ll::mod {
-using namespace i18n_literals;
-
 NativeModManager::NativeModManager() : ModManager(NativeModManagerName) {
     handleMap[sys_utils::getCurrentModuleHandle()] = NativeMod::current();
 }
@@ -103,7 +101,6 @@ Expected<> NativeModManager::load(Manifest manifest) {
     }
     auto& lib = currentLoadingMod->getDynamicLibrary();
     if (!lib.getAddress("ll_memory_operator_overrided")) {
-        using namespace i18n_literals;
         return makeStringError(
             "{0} will not be loaded because it isn't using the unified memory allocation operator"_tr(
                 currentLoadingMod->getName()

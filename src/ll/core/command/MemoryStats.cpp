@@ -8,9 +8,6 @@
 #include "mc/deps/core/common/bedrock/IMemoryAllocator.h"
 
 namespace ll::command {
-
-using namespace ll::i18n_literals;
-
 void registerMemstatsCommand() {
     auto config = ll::getLeviConfig().modules.command.modManageCommand;
     if (!config.enabled) {

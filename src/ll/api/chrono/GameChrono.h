@@ -38,10 +38,10 @@ struct GameTickClock {
 
 } // namespace ll::chrono
 
-namespace ll::chrono_literals {
+namespace ll::inline literals::inline chrono_literals {
 
 using namespace std::literals::chrono_literals;
 
 constexpr ll::chrono::ticks operator""_tick(::uint64 val) noexcept { return ll::chrono::ticks{val}; }
 
-} // namespace ll::chrono_literals
+} // namespace ll::inline literals::inline chrono_literals

@@ -4,8 +4,6 @@
 #include "ll/core/LeviLamina.h"
 
 namespace ll::mod {
-using namespace i18n_literals;
-
 struct ModManagerRegistry::Impl {
     std::recursive_mutex                               mutex;
     StringMap<std::shared_ptr<ModManager>>             managers;

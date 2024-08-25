@@ -6,8 +6,6 @@
 #include "ll/api/mod/ModManagerRegistry.h"
 
 namespace ll::plugin {
-using namespace i18n_literals;
-
 struct PluginManagerRegistry::Impl {
     std::recursive_mutex                      mutex;
     StringMap<std::shared_ptr<PluginManager>> managers;

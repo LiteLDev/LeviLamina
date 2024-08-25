@@ -47,6 +47,6 @@ public:
 
     // NOLINTEND
 };
-namespace ll::nbt_literals {
+namespace ll::inline literals::inline nbt_literals {
 [[nodiscard]] inline FloatTag operator""_f(ldouble num) { return FloatTag{(float)num}; }
-} // namespace ll::nbt_literals
+} // namespace ll::inline literals::inline nbt_literals

@@ -44,7 +44,7 @@ inline bool load(std::filesystem::path const& path) { return getInstance().load(
 #ifdef LL_I18N_COLLECT_STRINGS
 #include "ll/api/reflection/TypeName.h"
 
-namespace ll::i18n_literals {
+namespace ll::inline literals::inline i18n_literals {
 namespace detail {
 template <FixedString str>
 struct TrString {
@@ -54,9 +54,9 @@ struct TrString {
     }();
 };
 } // namespace detail
-} // namespace ll::i18n_literals
+} // namespace ll::inline literals::inline i18n_literals
 #endif
-namespace ll::i18n_literals {
+namespace ll::inline literals::inline i18n_literals {
 template <FixedString Fmt>
 [[nodiscard]] constexpr auto operator""_tr() {
     return [=]<class... Args>(Args&&... args) {
@@ -67,4 +67,4 @@ template <FixedString Fmt>
         return fmt::vformat(i18n::getInstance().get(Fmt), fmt::make_format_args(args...));
     };
 }
-} // namespace ll::i18n_literals
+} // namespace ll::inline literals::inline i18n_literals

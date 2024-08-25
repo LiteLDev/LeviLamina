@@ -191,7 +191,10 @@ extern "C" struct _IMAGE_DOS_HEADER __ImageBase; // NOLINT(bugprone-reserved-ide
 
 [[nodiscard]] LL_FORCEINLINE void* getCurrentModuleHandle() noexcept { return &__ImageBase; }
 
-template <class T, T f>
+template <class T>
+concept MemFuncPtrT = std::is_member_function_pointer_v<T>;
+
+template <MemFuncPtrT T, T f>
 consteval bool virtualDetector() noexcept {
     return reflection::getRawName<f>().find("::`vcall'{") != std::string_view::npos;
 }
@@ -258,7 +261,10 @@ struct CanCompare : std::false_type {};
 template <class T, T v1, T v2>
 struct CanCompare<T, v1, v2, std::integral_constant<bool, v1 == v2>> : std::true_type {};
 
-template <class T, T f>
+template <class T>
+concept MemFuncPtrT = std::is_member_function_pointer_v<T>;
+
+template <MemFuncPtrT T, T f>
 consteval bool virtualDetector() noexcept {
     return !CanCompare<T, f, f>::value;
 }

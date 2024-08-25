@@ -10,9 +10,6 @@
 #include "mc/server/commands/CommandOutput.h"
 
 namespace ll::command {
-
-using namespace ll::i18n_literals;
-
 void registerVersionCommand() {
     auto config = ll::getLeviConfig().modules.command.versionCommand;
     if (!config.enabled) {

@@ -24,8 +24,6 @@
 #include "windows.h"
 
 namespace ll {
-using namespace i18n_literals;
-
 void leviLaminaMain() {
     error_utils::initExceptionTranslator();
 

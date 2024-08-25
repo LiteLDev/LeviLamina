@@ -130,8 +130,6 @@ struct Statistics::Impl {
     }
 
     Impl() {
-        using namespace ll::i18n_literals;
-        using namespace ll::chrono_literals;
         namespace fs = std::filesystem;
 
         auto& dataDir = getSelfModIns()->getDataDir();

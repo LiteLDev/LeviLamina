@@ -26,8 +26,6 @@ Stacktrace stacktraceFromContext(optional_ref<_CONTEXT const> context, size_t sk
 }
 
 namespace ll {
-using namespace i18n_literals;
-using namespace utils;
 using namespace string_utils;
 Logger crashLogger("CrashLogger");
 

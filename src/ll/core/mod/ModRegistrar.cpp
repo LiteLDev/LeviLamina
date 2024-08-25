@@ -35,8 +35,6 @@
 #include "pl/Config.h"
 
 namespace ll::mod {
-using namespace ::ll::i18n_literals;
-
 struct ModRegistrar::Impl {
     std::recursive_mutex               mutex;
     data::DependencyGraph<std::string> deps;

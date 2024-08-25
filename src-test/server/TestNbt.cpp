@@ -10,8 +10,6 @@
 
 #include "nlohmann/json.hpp"
 
-using namespace ll::nbt_literals;
-
 LL_AUTO_TYPE_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &ServerInstance::startServerThread, void) {
     origin();
 

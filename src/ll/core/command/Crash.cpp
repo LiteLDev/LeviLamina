@@ -6,9 +6,6 @@
 #include "ll/core/Config.h"
 
 namespace ll::command {
-
-using namespace ll::i18n_literals;
-
 struct Code {
     int exceptionCode{0};
 };

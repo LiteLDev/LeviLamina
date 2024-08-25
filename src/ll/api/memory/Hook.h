@@ -9,7 +9,6 @@
 
 #include "ll/api/base/CompilerPredefine.h"
 #include "ll/api/base/Concepts.h" // IWYU pragma: keep
-#include "ll/api/base/FixedString.h"
 #include "ll/api/base/Macro.h"
 #include "ll/api/memory/Memory.h"
 #include "ll/api/reflection/TypeName.h"
@@ -80,7 +79,10 @@ constexpr FuncPtr resolveIdentifier(void* address) {
     return address;
 }
 
-template <class, FixedString>
+template <class T>
+concept NonMemFuncPtrT = !std::is_member_function_pointer_v<T>;
+
+template <NonMemFuncPtrT, auto>
 consteval bool virtualDetector() noexcept {
     return false;
 }
@@ -116,6 +118,9 @@ struct LL_EBO Hook {};
 
 #define LL_HOOK_IMPL(REGISTER, FUNC_PTR, STATIC, CALL, DEF_TYPE, TYPE, PRIORITY, IDENTIFIER, RET_TYPE, ...)            \
     struct DEF_TYPE : public TYPE {                                                                                    \
+        inline static std::atomic_uint _AutoHookCount{};                                                               \
+                                                                                                                       \
+    private:                                                                                                           \
         using _FuncPtr          = ::ll::memory::FuncPtr;                                                               \
         using HookPriority      = ::ll::memory::HookPriority;                                                          \
         using _RawFuncType      = RET_TYPE FUNC_PTR(__VA_ARGS__);                                                      \
@@ -144,8 +149,6 @@ struct LL_EBO Hook {};
         inline static _FuncPtr        _HookTarget{};                                                                   \
         inline static _OriginFuncType _OriginalFunc{};                                                                 \
                                                                                                                        \
-        inline static std::atomic_uint _AutoHookCount{};                                                               \
-                                                                                                                       \
         template <class T>                                                                                             \
         static consteval void detector() {                                                                             \
             if constexpr (requires { ::ll::memory::virtualDetector<T, IDENTIFIER>(); }) {                              \
@@ -158,6 +161,7 @@ struct LL_EBO Hook {};
             }                                                                                                          \
         }                                                                                                              \
                                                                                                                        \
+    public:                                                                                                            \
         template <class... Args>                                                                                       \
         STATIC RET_TYPE origin(Args&&... params) {                                                                     \
             return CALL(std::forward<Args>(params)...);                                                                \
