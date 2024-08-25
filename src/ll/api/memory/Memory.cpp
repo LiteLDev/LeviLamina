@@ -1,5 +1,6 @@
 #include "ll/api/memory/Memory.h"
 
+#include <execution>
 #include <optional>
 #include <vector>
 
@@ -54,72 +55,6 @@ FuncPtr resolveSymbol(std::string_view symbol, bool disableErrorOutput) {
     }
     return res;
 }
-FuncPtr resolveSignature(std::string_view signature) { return resolveSignature(signature, sys_utils::getImageRange()); }
-
-// TODO: Find a better cross-platform search library
-FuncPtr resolveSignature(std::string_view signature, std::span<std::byte> range) {
-    if (range.empty()) {
-        return nullptr;
-    }
-    std::span<uchar> span = *(std::span<uchar>*)&range;
-
-    std::vector<std::optional<uchar>> pattern;
-    for (size_t i = 0; i < signature.size(); ++i) {
-        auto& c = signature[i];
-        if (c == ' ') {
-            continue;
-        } else if (c == '?') {
-            pattern.emplace_back(std::nullopt);
-        } else if (isxdigit(c) && (++i < signature.size() && isxdigit(signature[i]))) {
-            pattern.emplace_back(string_utils::svtouc(signature.substr(i - 1, 2), nullptr, 16).value());
-        } else {
-            return nullptr;
-        }
-    }
-    // const auto signature = context.signature;
-    // const auto firstByte = *signature[0];
-    // const auto scanEnd   = end - signature.size() + 1;
-
-    // for (auto i = begin; i != scanEnd; i++) {
-    //     // Use std::find to efficiently find the first byte
-    //     if LIBHAT_IF_CONSTEVAL {
-    //         i = std::find(i, scanEnd, firstByte);
-    //     } else {
-    //         i = std::find(std::execution::unseq, i, scanEnd, firstByte);
-    //     }
-    //     if (i == scanEnd) LIBHAT_UNLIKELY {
-    //             break;
-    //         }
-    //     // Compare everything after the first byte
-    //     auto match = std::equal(signature.begin() + 1, signature.end(), i + 1, [](auto opt, auto byte) {
-    //         return !opt.has_value() || *opt == byte;
-    //     });
-    //     if (match) LIBHAT_UNLIKELY {
-    //             return i;
-    //         }
-    // }
-    // return nullptr;
-
-    if (pattern.empty()) {
-        return nullptr;
-    }
-    for (size_t i = 0; i < span.size() - pattern.size(); ++i) {
-        bool   match = true;
-        size_t iter  = 0;
-        for (auto& c : pattern) {
-            if (span[i + iter] != c) {
-                match = false;
-                break;
-            }
-            iter++;
-        }
-        if (match) {
-            return &span[i];
-        }
-    }
-    return nullptr;
-}
-
 std::vector<std::string> lookupSymbol(FuncPtr func) {
     std::vector<std::string> symbols;
     size_t                   length;

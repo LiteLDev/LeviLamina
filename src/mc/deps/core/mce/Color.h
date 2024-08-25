@@ -4,6 +4,8 @@
 #include "mc/math/Vec2.h"
 #include "mc/math/Vec3.h"
 
+#include "ll/api/utils/StringUtils.h"
+
 namespace mce {
 
 class Color;
@@ -36,20 +38,22 @@ public:
             hex = hex.substr(1);
         }
 
+        using ll::string_utils::digitFromChar;
+
         switch (hex.length()) {
         case 4:
-            a = static_cast<float>(hexToNum(hex[3]) * 17) / 255.0f;
+            a = static_cast<float>(digitFromChar(hex[3]) * 17) / 255.0f;
         case 3:
-            r = static_cast<float>(hexToNum(hex[0]) * 17) / 255.0f;
-            g = static_cast<float>(hexToNum(hex[1]) * 17) / 255.0f;
-            b = static_cast<float>(hexToNum(hex[2]) * 17) / 255.0f;
+            r = static_cast<float>(digitFromChar(hex[0]) * 17) / 255.0f;
+            g = static_cast<float>(digitFromChar(hex[1]) * 17) / 255.0f;
+            b = static_cast<float>(digitFromChar(hex[2]) * 17) / 255.0f;
             break;
         case 8:
-            a = static_cast<float>(16 * hexToNum(hex[6]) + hexToNum(hex[7])) / 255.0f;
+            a = static_cast<float>(16 * digitFromChar(hex[6]) + digitFromChar(hex[7])) / 255.0f;
         case 6:
-            r = static_cast<float>(16 * hexToNum(hex[0]) + hexToNum(hex[1])) / 255.0f;
-            g = static_cast<float>(16 * hexToNum(hex[2]) + hexToNum(hex[3])) / 255.0f;
-            b = static_cast<float>(16 * hexToNum(hex[4]) + hexToNum(hex[5])) / 255.0f;
+            r = static_cast<float>(16 * digitFromChar(hex[0]) + digitFromChar(hex[1])) / 255.0f;
+            g = static_cast<float>(16 * digitFromChar(hex[2]) + digitFromChar(hex[3])) / 255.0f;
+            b = static_cast<float>(16 * digitFromChar(hex[4]) + digitFromChar(hex[5])) / 255.0f;
             break;
         default:
             return;
@@ -259,20 +263,6 @@ public:
 
     int toARGB() const {
         return ((uint)(a * 255) << 24) | ((uint)(r * 255) << 16) | ((uint)(g * 255) << 8) | ((uint)(b * 255) << 0);
-    }
-
-private:
-    [[nodiscard]] constexpr uchar static hexToNum(char hex) noexcept {
-        if ('A' <= hex && hex <= 'F') {
-            return 10 + (hex - 'A');
-        }
-        if ('a' <= hex && hex <= 'f') {
-            return 10 + (hex - 'a');
-        }
-        if ('0' <= hex && hex <= '9') {
-            return (hex - '0');
-        }
-        return 0;
     }
 
 public:

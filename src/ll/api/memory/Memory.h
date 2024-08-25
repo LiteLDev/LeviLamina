@@ -7,9 +7,9 @@
 #include <type_traits>
 #include <vector>
 
-
 #include "ll/api/base/FixedString.h"
 #include "ll/api/base/Macro.h"
+#include "ll/api/memory/Signature.h"
 
 namespace Bedrock::Memory {
 class IMemoryAllocator;
@@ -64,22 +64,6 @@ LLNDAPI FuncPtr resolveSymbol(char const* symbol);
 LLNDAPI FuncPtr resolveSymbol(std::string_view symbol, bool disableErrorOutput);
 
 LLNDAPI std::string demangleSymbol(std::string_view symbol);
-
-/**
- * @brief resolve signature to function pointer from process image
- * @param signature signature
- * @return function pointer
- */
-LLNDAPI FuncPtr resolveSignature(std::string_view signature);
-
-/**
- * @brief resolve signature to function pointer from given range
- * @param signature signature
- * @param range search range
- * @return function pointer
- */
-LLNDAPI FuncPtr resolveSignature(std::string_view signature, std::span<std::byte> range);
-
 /**
  * @brief lookup symbol name of a function address
  * @param func Function address
@@ -222,7 +206,7 @@ template <FixedString symbol>
 inline FuncPtr symbolCache = resolveSymbol(symbol, false);
 
 template <FixedString signature>
-inline FuncPtr signatureCache = resolveSignature(signature);
+inline FuncPtr signatureResultCache = signatureCache.view().resolve();
 
 } // namespace ll::memory
 

@@ -13,6 +13,8 @@
 LL_AUTO_TYPE_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &ServerInstance::startServerThread, void) {
     origin();
 
+    using namespace ll::literals;
+
     auto nbt = CompoundTag{
         {"anull",     nullptr                                                           },
         {"string?",   R"(streee _ _o-ix 我超, utf8 "\asfa%"*)##q)$\\"\Q34\\""'':)"_tag},
@@ -183,4 +185,6 @@ LL_AUTO_TYPE_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serve
 })")
             ->toSnbt(SnbtFormat::PrettyConsolePrint)
     );
+
+    ll::getLogger().debug("signature {}", "48 8D 05 ? ? ? ? E8"_sig.toString(false, false));
 }

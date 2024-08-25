@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cerrno>
+#include <charconv>
 #include <cstddef>
 #include <cstdlib>
 #include <stdexcept>
@@ -12,6 +13,7 @@
 
 #include "fmt/color.h"
 
+#include "ll/api/base/Concepts.h"
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
 
@@ -20,23 +22,33 @@
 namespace ll::inline utils::string_utils {
 
 // "2021-03-24"  ->  ["2021", "03", "24"]  (use '-' as split pattern)
-template <class T>
-[[nodiscard]] constexpr auto splitByPattern(T&& str, std::string_view pattern, bool keepEmpty = false) -> decltype(auto
-                                                                                                       ) {
-    using ReturnTypeElement = std::conditional_t<std::is_same_v<T&&, std::string&&>, std::string, std::string_view>;
-    using ReturnType        = std::vector<ReturnTypeElement>;
-    std::string_view s{str};
-    if (s.empty()) return ReturnType{};
+template <std::invocable<std::string_view> Fn>
+constexpr void splitByPattern(Fn&& fn, std::string_view s, std::string_view pattern, bool keepEmpty = false) {
+    if (s.empty()) return;
     size_t pos  = s.find(pattern);
     size_t size = s.size();
-
-    ReturnType ret;
     while (pos != std::string::npos) {
-        if (keepEmpty || pos != 0) ret.push_back(ReturnTypeElement{s.substr(0, pos)});
+        if (keepEmpty || pos != 0) {
+            if (!std::invoke(std::forward<Fn>(fn), s.substr(0, pos))) return;
+        }
         s   = s.substr(pos + pattern.size(), size - pos - pattern.size());
         pos = s.find(pattern);
     }
-    if (keepEmpty || !s.empty()) ret.push_back(ReturnTypeElement{s});
+    if (keepEmpty || !s.empty()) std::invoke(std::forward<Fn>(fn), s);
+}
+template <concepts::IsString T>
+[[nodiscard]] constexpr decltype(auto) splitByPattern(T&& str, std::string_view pattern, bool keepEmpty = false) {
+    using ReturnTypeElement = std::conditional_t<std::is_same_v<T&&, std::string&&>, std::string, std::string_view>;
+    std::vector<ReturnTypeElement> ret;
+    splitByPattern(
+        [&](std::string_view sv) {
+            ret.push_back(ReturnTypeElement{sv});
+            return true;
+        },
+        str,
+        pattern,
+        keepEmpty
+    );
     return ret;
 }
 
@@ -72,6 +84,30 @@ replaceContent(std::string& str, std::string_view before, std::string_view after
     return true;
 }
 
+constexpr inline uchar digitFromByte[] = {
+    255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255,
+    255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255,
+    255, 255, 255, 255, 0,   1,   2,   3,   4,   5,   6,   7,   8,   9,   255, 255, 255, 255, 255, 255, 255, 10,
+    11,  12,  13,  14,  15,  16,  17,  18,  19,  20,  21,  22,  23,  24,  25,  26,  27,  28,  29,  30,  31,  32,
+    33,  34,  35,  255, 255, 255, 255, 255, 255, 10,  11,  12,  13,  14,  15,  16,  17,  18,  19,  20,  21,  22,
+    23,  24,  25,  26,  27,  28,  29,  30,  31,  32,  33,  34,  35,  255, 255, 255, 255, 255, 255, 255, 255, 255,
+    255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255,
+    255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255,
+    255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255,
+    255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255,
+    255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255,
+    255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255
+};
+static_assert(sizeof(digitFromByte) == 256);
+
+[[nodiscard]] constexpr uchar digitFromChar(char chr) noexcept { return digitFromByte[static_cast<uchar>(chr)]; }
+
+constexpr inline char charconvDigits[2][37] = {
+    "0123456789abcdefghijklmnopqrstuvwxyz",
+    "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+};
+
+[[nodiscard]] constexpr char charFromInt(bool upper, uchar i) { return charconvDigits[upper][i]; }
 /**
  * @brief Integer to hex string.
  *
@@ -95,13 +131,12 @@ intToHexStr(T value, bool upperCase = true, bool no0x = true, bool noLeadingZero
     std::string result;
     if (value < 0) result += '-';
     if (!no0x) result += "0x";
-    constexpr char hexStr[2][17] = {"0123456789abcdef", "0123456789ABCDEF"};
-    bool           leadingZero   = true;
+    bool leadingZero = true;
     for (int i = sizeof(T) * 2; i > 0; --i) {
         auto hex = (value >> (i - 1) * 4) & 0xF;
         if (noLeadingZero && leadingZero && hex == 0) continue;
         leadingZero  = false;
-        result      += hexStr[upperCase][hex];
+        result      += charFromInt(upperCase, hex);
     }
     return result;
 }
@@ -111,8 +146,8 @@ intToHexStr(T value, bool upperCase = true, bool no0x = true, bool noLeadingZero
     std::string    hex;
     hex.reserve(value.size() * (addSpace ? 3 : 2));
     for (uchar x : value) {
-        hex += hexStr[upperCase][x / 16];
-        hex += hexStr[upperCase][x % 16];
+        hex += charFromInt(upperCase, x / 16);
+        hex += charFromInt(upperCase, x % 16);
         if (addSpace) hex += ' ';
     }
     if (addSpace && hex.ends_with(' ')) hex.pop_back();
@@ -198,63 +233,62 @@ LLNDAPI std::string
 [[nodiscard]] inline std::u8string_view sv2u8sv(std::string_view str) {
     return {reinterpret_cast<const char8_t*>(str.data()), str.size()};
 }
-template <class T, auto f, class... Args>
-[[nodiscard]] inline Expected<T> svtonum(std::string_view str, size_t* idx, Args&&... args) {
-    int&        errnoRef = errno;
-    char const* ptr      = str.data();
-    char*       eptr{};
-    errnoRef       = 0;
-    const auto ans = f(ptr, &eptr, std::forward<Args>(args)...);
-    if (ptr == eptr) {
-        return makeErrorCodeError(std::errc::invalid_argument);
-    }
-    if (errnoRef == ERANGE) {
-        return makeErrorCodeError(std::errc::result_out_of_range);
+
+LLNDAPI Expected<bool> svtobool(std::string_view);
+
+template <class T, class... Args>
+[[nodiscard]] LL_CONSTEXPR23 Expected<T> svtonum(std::string_view str, size_t* idx, Args&&... args) {
+    T          result;
+    const auto ans = ::std::from_chars(&*str.begin(), &*str.end(), result, std::forward<Args>(args)...);
+    if (ans.ec != std::errc{}) {
+        return makeErrorCodeError(ans.ec);
     }
     if (idx) {
-        *idx = static_cast<size_t>(eptr - ptr);
+        *idx = static_cast<size_t>(ans.ptr - &*str.begin());
     }
-    return static_cast<T>(ans);
+    return result;
 }
 [[nodiscard]] inline decltype(auto) svtoc(std::string_view str, size_t* idx = nullptr, int base = 10) {
-    return svtonum<schar, strtol>(str, idx, base);
+    return svtonum<schar>(str, idx, base);
 }
 [[nodiscard]] inline decltype(auto) svtouc(std::string_view str, size_t* idx = nullptr, int base = 10) {
-    return svtonum<uchar, strtoul>(str, idx, base);
+    return svtonum<uchar>(str, idx, base);
 }
 [[nodiscard]] inline decltype(auto) svtos(std::string_view str, size_t* idx = nullptr, int base = 10) {
-    return svtonum<short, strtol>(str, idx, base);
+    return svtonum<short>(str, idx, base);
 }
 [[nodiscard]] inline decltype(auto) svtous(std::string_view str, size_t* idx = nullptr, int base = 10) {
-    return svtonum<ushort, strtoul>(str, idx, base);
+    return svtonum<ushort>(str, idx, base);
 }
 [[nodiscard]] inline decltype(auto) svtoi(std::string_view str, size_t* idx = nullptr, int base = 10) {
-    return svtonum<int, strtol>(str, idx, base);
+    return svtonum<int>(str, idx, base);
 }
 [[nodiscard]] inline decltype(auto) svtoui(std::string_view str, size_t* idx = nullptr, int base = 10) {
-    return svtonum<uint, strtoul>(str, idx, base);
+    return svtonum<uint>(str, idx, base);
 }
 [[nodiscard]] inline decltype(auto) svtol(std::string_view str, size_t* idx = nullptr, int base = 10) {
-    return svtonum<long, strtol>(str, idx, base);
+    return svtonum<long>(str, idx, base);
 }
 [[nodiscard]] inline decltype(auto) svtoul(std::string_view str, size_t* idx = nullptr, int base = 10) {
-    return svtonum<ulong, strtoul>(str, idx, base);
+    return svtonum<ulong>(str, idx, base);
 }
 [[nodiscard]] inline decltype(auto) svtoll(std::string_view str, size_t* idx = nullptr, int base = 10) {
-    return svtonum<int64, strtoll>(str, idx, base);
+    return svtonum<int64>(str, idx, base);
 }
 [[nodiscard]] inline decltype(auto) svtoull(std::string_view str, size_t* idx = nullptr, int base = 10) {
-    return svtonum<uint64, strtoull>(str, idx, base);
+    return svtonum<uint64>(str, idx, base);
 }
-[[nodiscard]] inline decltype(auto) svtof(std::string_view str, size_t* idx = nullptr) {
-    return svtonum<float, strtof>(str, idx);
+[[nodiscard]] inline decltype(auto)
+svtof(std::string_view str, size_t* idx = nullptr, std::chars_format format = std::chars_format::general) {
+    return svtonum<float>(str, idx, format);
 }
-[[nodiscard]] inline decltype(auto) svtod(std::string_view str, size_t* idx = nullptr) {
-    return svtonum<double, strtof>(str, idx);
+[[nodiscard]] inline decltype(auto)
+svtod(std::string_view str, size_t* idx = nullptr, std::chars_format format = std::chars_format::general) {
+    return svtonum<double>(str, idx, format);
 }
-[[nodiscard]] inline decltype(auto) svtold(std::string_view str, size_t* idx = nullptr) {
-    return svtonum<ldouble, strtof>(str, idx);
+[[nodiscard]] inline decltype(auto)
+svtold(std::string_view str, size_t* idx = nullptr, std::chars_format format = std::chars_format::general) {
+    return svtonum<ldouble>(str, idx, format);
 }
-LLNDAPI Expected<bool> strtobool(std::string_view);
 
 } // namespace ll::inline utils::string_utils

@@ -309,7 +309,7 @@ std::string toLowerCase(std::string_view str) {
     std::transform(res.begin(), res.end(), res.begin(), [](char c) { return (char)std::tolower(c); });
     return res;
 }
-Expected<bool> strtobool(std::string_view str) {
+Expected<bool> svtobool(std::string_view str) {
     if (str.size() <= 4) {
         auto lower = toLowerCase(str);
         if (lower == "1" || lower == "y" || str == "yes" || lower == "true") {

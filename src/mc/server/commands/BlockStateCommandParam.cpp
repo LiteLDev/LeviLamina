@@ -8,7 +8,7 @@ ll::Expected<Block::BlockStateValueType> BlockStateCommandParam::toStateValue() 
     case Type::Float:
         return ll::string_utils::svtof(mValue);
     case Type::Bool:
-        return ll::string_utils::strtobool(mValue);
+        return ll::string_utils::svtobool(mValue);
     case Type::String:
         return mValue;
     default:

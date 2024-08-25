@@ -63,10 +63,15 @@ constexpr FuncPtr resolveIdentifier(T identifier) {
     return toFuncPtr(identifier);
 }
 
-// redirect to resolveIdentifier(std::string_view)
+// TODO: remove in release
 template <class T>
 constexpr FuncPtr resolveIdentifier(std::string_view identifier) {
     return resolveSymbol(identifier, false);
+}
+
+template <class T>
+constexpr FuncPtr resolveIdentifier(SignatureView identifier) {
+    return identifier.resolve();
 }
 
 template <class T>

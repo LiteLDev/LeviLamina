@@ -22,8 +22,8 @@ public:
     void* native_handle() const { return address; }
 };
 class Stacktrace {
-    std::vector<StacktraceEntry>  entries;
-    uint64                        hash;
+    std::vector<StacktraceEntry> entries;
+    uint64                       hash;
 
 public:
     LLNDAPI static Stacktrace current(size_t skip = 0, size_t maxDepth = ~0ull);

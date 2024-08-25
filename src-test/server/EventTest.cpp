@@ -72,7 +72,8 @@ class TestEvent3 final : public ll::event::Event {
 public:
 };
 
-class TestEventEmitter : public ll::event::Emitter<[](auto&&...) { return nullptr; }, TestEvent1, TestEvent2, TestEvent3> {};
+class TestEventEmitter
+: public ll::event::Emitter<[](auto&&...) { return nullptr; }, TestEvent1, TestEvent2, TestEvent3> {};
 
 
 using namespace ll::schedule;
