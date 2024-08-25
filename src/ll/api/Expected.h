@@ -51,18 +51,18 @@ public:
 
     LL_CONSTEXPR23 operator bool() const noexcept { return mInfo != nullptr; }
 
-    constexpr operator Unexpected() noexcept {
+    LL_CONSTEXPR23 operator Unexpected() noexcept {
         return ::nonstd::make_unexpected<Error>(std::in_place, std::move(mInfo));
     }
 
     LLNDAPI std::string message() const noexcept;
 
     template <class T>
-    bool isA() noexcept {
+    LL_CONSTEXPR23 bool isA() noexcept {
         return mInfo ? typeid(T) == typeid(mInfo.get()) : false;
     }
     template <class T>
-    T& as() noexcept {
+    LL_CONSTEXPR23 T& as() noexcept {
         return *static_cast<T*>(mInfo.get());
     }
     LLAPI Error& join(Error) noexcept;

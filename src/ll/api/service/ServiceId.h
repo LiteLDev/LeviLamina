@@ -10,9 +10,9 @@ struct auto_name_t {};
 
 class ServiceId {
 public:
-    std::string name;
-    size_t      version{};
-    size_t      hash{};
+    std::string_view name;
+    size_t           version{};
+    size_t           hash{};
 
     [[nodiscard]] constexpr ServiceId(std::string_view name, size_t version) noexcept
     : name(name),

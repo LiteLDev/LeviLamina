@@ -15,14 +15,6 @@ constexpr void hashCombine(T const& v, size_t& seed) {
 }
 
 [[nodiscard]] constexpr uint64 doHash(std::string_view x) {
-    uint64 rval = 0;
-    for (size_t i = 0; i < x.size(); i++) {
-        rval ^= ((i & 1) == 0) ? (~((rval << 7) ^ x[i] ^ (rval >> 3))) : (~((rval << 11) ^ x[i] ^ (rval >> 5)));
-    }
-    return rval;
-}
-
-[[nodiscard]] constexpr uint64 doHash2(std::string_view x) {
     // hash_64_fnv1a
     uint64           hash  = 0xcbf29ce484222325;
     constexpr uint64 prime = 0x100000001b3;
@@ -31,6 +23,14 @@ constexpr void hashCombine(T const& v, size_t& seed) {
         hash *= prime;
     }
     return hash;
+}
+
+[[nodiscard]] constexpr uint64 doHash2(std::string_view x) {
+    uint64 rval = 0;
+    for (size_t i = 0; i < x.size(); i++) {
+        rval ^= ((i & 1) == 0) ? (~((rval << 7) ^ x[i] ^ (rval >> 3))) : (~((rval << 11) ^ x[i] ^ (rval >> 5)));
+    }
+    return rval;
 }
 
 [[nodiscard]] constexpr uint64 doHash3(std::string_view x) {
