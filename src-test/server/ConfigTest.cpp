@@ -33,6 +33,8 @@
 
 #include "mc/world/actor/DataItem.h"
 
+#include "ll/api/memory/IndirectValue.h"
+
 // [0, 8, 16, 96, 97, 98, 104, 136, 144, 160, 176, 184, 196, 208, 232, 248, 304, 328, 360, 392, 408]
 
 // ["structure", "version", "ver", "someFlag", "eeeeFlag", "ssbbFlag", "str", "plain", "amap", "bmap", "vec2", "vec3",
@@ -95,10 +97,24 @@ public:
     } hi;
 };
 
+
+struct Test {
+    template <class... Args>
+    Test(Args&&...) {
+        ll::getLogger().debug("Test {}", sizeof...(Args));
+    }
+    ~Test() { ll::getLogger().debug("~Test"); }
+};
+struct TestD : public Test {
+    template <class... Args>
+    TestD(Args&&...) {
+        ll::getLogger().debug("TestD {}", sizeof...(Args));
+    }
+    ~TestD() { ll::getLogger().debug("~TestD"); }
+};
+
 LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &ServerInstance::startServerThread, void) {
     origin();
-
-    auto lock = ll::Logger::lock();
 
     int         s        = 1;
     float       f        = 1.0f;
@@ -147,7 +163,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &Se
 
     ll::reflection::deserialize(helloReflection, CompoundTagVariant::parse(R"({"structure":{"hello":""}})").value())
         .error()
-        .log(ll::getLogger().error);
+        .log(ll::getLogger());
 
     ll::getLogger().debug("789\xDB\xFE");
     ll::getLogger().debug("789\xDB\xFE");
@@ -155,4 +171,9 @@ LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &Se
     Vec3 v1{2};
 
     ll::getLogger().debug("{}", 3 / v1);
+
+
+    auto indirect = ll::memory::makeIndirect<Test>();
+    indirect      = ll::memory::makeIndirect<TestD>(13, 23);
+    auto indirect2 = indirect;
 }

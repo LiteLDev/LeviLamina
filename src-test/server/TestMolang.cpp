@@ -8,7 +8,7 @@
 #include "mc/server/commands/CommandOutput.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 
-#include "ll/api/Logger.h"
+#include "ll/api/io/Logger.h"
 #include "mc/server/commands/CommandBlockName.h"
 #include "mc/world/AutomaticID.h"
 
@@ -22,7 +22,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     void,
     ::ServerInstance& ins
 ) {
-    static ll::Logger logger("MolangTest");
+    static ll::io::Logger logger("MolangTest");
     ExpressionNode::registerQueryFunction(
         "query.is_levilamina",
         [&](RenderParams&, const std::vector<ExpressionNode>&) -> MolangScriptArg const& {

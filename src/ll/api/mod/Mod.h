@@ -5,8 +5,8 @@
 #include <memory>
 
 #include "ll/api/Expected.h"
-#include "ll/api/Logger.h"
 #include "ll/api/base/Macro.h"
+#include "ll/api/io/Logger.h"
 #include "ll/api/mod/Manifest.h"
 
 namespace ll::mod {
@@ -42,7 +42,7 @@ public:
 
     LLNDAPI std::filesystem::path const& getLangDir() const;
 
-    LLNDAPI Logger& getLogger() const;
+    LLNDAPI io::Logger& getLogger() const;
 
     [[nodiscard]] bool isEnabled() const { return getState() == State::Enabled; }
 

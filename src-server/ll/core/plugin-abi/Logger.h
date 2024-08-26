@@ -50,8 +50,8 @@ public:
     std::array<fmt::text_style, 4> style;
     std::array<std::string, 5>     consoleFormat;
     std::array<std::string, 5>     fileFormat;
-    std::array<std::string, 5>     playerFormat;         // TODO: remove in release
-    std::function<void()>          playerOutputCallback; // TODO: remove in release
+    std::array<std::string, 5>     playerFormat = {"<{2}|{1}> [{0}] {3}", "{:%T}", "{}", "{}", "{}"};
+    std::function<void()>          playerOutputCallback;
 
     LLAPI explicit OutputStream(
         Logger&                               logger,
@@ -79,7 +79,7 @@ public:
     std::optional<std::ofstream> ofs          = std::nullopt;
     int                          consoleLevel = -1;
     int                          fileLevel    = -1;
-    int                          filler; // TODO: remove in release
+    int                          filler;
 
     OutputStream debug;
     OutputStream info;
@@ -89,16 +89,12 @@ public:
 
     LLNDAPI explicit Logger(std::string_view title = __builtin_FUNCTION());
 
-    LLNDAPI Logger(std::string_view, bool); // TODO: remove in release
+    LLNDAPI Logger(std::string_view, bool);
 
     ~Logger() { resetFile(); }
 
     LLAPI void resetFile();
     LLAPI bool setFile(std::filesystem::path const& logFile, bool appendMode = true);
-
-    LLAPI static bool setDefaultFile(std::filesystem::path const& logFile, bool appendMode);
-
-    LLAPI std::ofstream& getFile();
 
     LLAPI static std::lock_guard<std::recursive_mutex> lock();
 };

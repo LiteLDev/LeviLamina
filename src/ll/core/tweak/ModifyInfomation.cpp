@@ -29,7 +29,7 @@ LL_STATIC_HOOK(
     char const*               pszFormat,
     char*                     va
 ) {
-    if (ll::getLeviConfig().modules.disableAutoCompactionLog
+    if (getLeviConfig().modules.disableAutoCompactionLog
         && std::string_view{func}.starts_with("DBStorage::_scheduleNextAutoCompaction")) {
         static_assert(&DBStorage::_scheduleNextAutoCompaction); // make sure function exist
         return;
@@ -37,14 +37,7 @@ LL_STATIC_HOOK(
     origin(category, channelMask, rule, area, priority, func, line, pszFormat, va);
 }
 
-ll::Logger serverLogger("Server");
-
-static SmallDenseMap<uint, decltype(serverLogger.debug)*> loggerMap = {
-    {1u, &serverLogger.debug},
-    {2u, &serverLogger.info },
-    {4u, &serverLogger.warn },
-    {8u, &serverLogger.error}
-};
+io::Logger serverLogger("Server");
 
 LL_STATIC_HOOK(
     BedrockLogOutHook,
@@ -81,9 +74,26 @@ LL_STATIC_HOOK(
     }
     std::istringstream iss(std::move(buffer));
 
-    bool knownPriority = loggerMap.contains(priority);
+    bool knownPriority{true};
 
-    auto& slogger = knownPriority ? *loggerMap.at(priority) : serverLogger.warn;
+    io::LogLevel level;
+
+    switch (priority) {
+    case 1:
+        level = io::LogLevel::Debug;
+        break;
+    case 2:
+        level = io::LogLevel::Info;
+        break;
+    case 8:
+        level = io::LogLevel::Error;
+        break;
+    case 4:
+    default:
+        knownPriority = false;
+        level         = io::LogLevel::Warn;
+        break;
+    }
 
     std::string line;
     while (std::getline(iss, line)) {
@@ -91,7 +101,7 @@ LL_STATIC_HOOK(
         if (!knownPriority) {
             line = fmt::format("<LVL|{}> {}", priority, line);
         }
-        slogger(line);
+        serverLogger.log(level, line);
     }
 }
 

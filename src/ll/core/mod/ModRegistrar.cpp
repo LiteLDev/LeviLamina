@@ -101,7 +101,7 @@ void ModRegistrar::loadAllMods() noexcept try {
                 getLogger().error(
                     "Failed to load manifest for {0}"_tr(string_utils::u8str2str(file.path().stem().u8string()))
                 );
-                res.error().log(getLogger().error);
+                res.error().log(getLogger());
             }
             continue;
         }
@@ -239,7 +239,7 @@ void ModRegistrar::loadAllMods() noexcept try {
         } else {
             loadErrored.emplace(name);
             getLogger().error("Failed to load mod {0}"_tr(name));
-            res.error().log(getLogger().error);
+            res.error().log(getLogger());
         }
     }
     size_t loadedCount = sort.sorted.size() - loadErrored.size();
@@ -275,7 +275,7 @@ void ModRegistrar::enableAllMods() noexcept try {
             count++;
         } else {
             getLogger().error("Failed to enable mod {0}"_tr(name));
-            res.error().log(getLogger().error);
+            res.error().log(getLogger());
         }
     }
     if (count > 0) {
@@ -298,7 +298,7 @@ void ModRegistrar::disableAllMods() noexcept try {
             getLogger().info("Disabling {0} v{1}"_tr(name, mod->getManifest().version.value_or(data::Version{0, 0, 0}))
             );
             if (auto res = disableMod(name); !res) {
-                res.error().log(getLogger().warn);
+                res.error().log(getLogger(), io::LogLevel::Warn);
             }
         }
     }

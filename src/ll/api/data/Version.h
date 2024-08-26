@@ -5,7 +5,6 @@
 #include <compare>
 #include <cstddef>
 #include <cstdint>
-#include <format>
 #include <limits>
 #include <optional>
 #include <stdexcept>
@@ -18,6 +17,8 @@
 
 #include "ll/api/utils/HashUtils.h"
 #include "ll/api/utils/StringUtils.h"
+
+#include "fmt/core.h"
 
 namespace ll::data {
 
@@ -250,7 +251,7 @@ struct Version {
 
     [[nodiscard]] std::string to_string() const {
         std::string str;
-        str = std::format("{}.{}.{}", major, minor, patch);
+        str = fmt::format("{}.{}.{}", major, minor, patch);
         if (preRelease) {
             str += '-';
             str += preRelease->to_string();

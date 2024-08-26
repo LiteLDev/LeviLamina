@@ -5,9 +5,10 @@
 #include <memory>
 
 #include "ll/api/Expected.h"
-#include "ll/api/Logger.h"
 #include "ll/api/base/Macro.h"
+#include "ll/api/io/Logger.h"
 #include "ll/api/mod/Mod.h"
+#include "ll/core/plugin-abi/Logger.h"
 #include "ll/core/plugin-abi/Manifest.h"
 
 namespace ll::plugin {

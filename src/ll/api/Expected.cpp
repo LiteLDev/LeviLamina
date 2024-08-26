@@ -1,5 +1,5 @@
 #include "ll/api/Expected.h"
-#include "ll/api/Logger.h"
+#include "ll/api/io/Logger.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/StringUtils.h"
 
@@ -106,7 +106,7 @@ Error& Error::join(Error err) noexcept {
     }
     return *this;
 }
-LLAPI Error& Error::log(::ll::OutputStream& stream) noexcept {
+LLAPI Error const& Error::log(io::Logger& l, io::LogLevel level) const noexcept {
     auto msg = message();
     for (auto& sv : string_utils::splitByPattern(msg, "\n")) {
         if (sv.ends_with('\r')) {
@@ -115,11 +115,11 @@ LLAPI Error& Error::log(::ll::OutputStream& stream) noexcept {
         if (sv.starts_with('\r')) {
             sv.remove_prefix(1);
         }
-        stream(sv);
+        l.log(level, sv);
     }
     return *this;
 }
-LLAPI Error& Error::log(CommandOutput& stream) noexcept {
+LLAPI Error const& Error::log(CommandOutput& stream, CommandOutputMessageType type) const noexcept {
     auto msg = message();
     for (auto& sv : string_utils::splitByPattern(msg, "\n")) {
         if (sv.ends_with('\r')) {
@@ -128,7 +128,11 @@ LLAPI Error& Error::log(CommandOutput& stream) noexcept {
         if (sv.starts_with('\r')) {
             sv.remove_prefix(1);
         }
-        stream.error(sv);
+        if (type == CommandOutputMessageType::Error) {
+            stream.error(sv);
+        } else {
+            stream.success(sv);
+        }
     }
     return *this;
 }

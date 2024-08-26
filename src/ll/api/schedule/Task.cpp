@@ -10,7 +10,7 @@
 
 #include <spanstream>
 
-#include "ll/api/Logger.h"
+#include "ll/api/io/Logger.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/core/LeviLamina.h"
 
@@ -18,7 +18,6 @@
 
 namespace ll::schedule::detail {
 void printScheduleError(TaskBase& task) noexcept {
-    auto lock = ll::Logger::lock();
     try {
         getLogger().error(
             "Error in schedule task[{}] of {}:",

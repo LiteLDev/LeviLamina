@@ -1,11 +1,11 @@
 #include "ll/core/tweak/SimpleServerLogger.h"
 
-#include "ll/api/Logger.h"
 #include "ll/api/event/EventBus.h"
 #include "ll/api/event/command/ExecuteCommandEvent.h"
 #include "ll/api/event/player/PlayerChangePermEvent.h"
 #include "ll/api/event/player/PlayerChatEvent.h"
 #include "ll/api/event/player/ServerPlayerEvent.h"
+#include "ll/api/io/Logger.h"
 
 #include "magic_enum.hpp"
 
@@ -29,7 +29,7 @@ void SimpleServerLogger::call(SimpleServerLoggerConfig const& config) {
         auto& bus = EventBus::getInstance();
         if (config.playerChat && !impl->playerChat) {
             impl->playerChat = bus.emplaceListener<PlayerChatEvent>([](PlayerChatEvent& ev) {
-                static Logger logger("PlayerChat");
+                static io::Logger logger("PlayerChat");
                 logger.info("<{}> {}", ev.self().getRealName(), ev.message());
             });
         }
@@ -39,7 +39,7 @@ void SimpleServerLogger::call(SimpleServerLoggerConfig const& config) {
                 if (context.getCommandOrigin().getOriginType() != CommandOriginType::Player) {
                     return;
                 }
-                static Logger logger("PlayerCmd");
+                static io::Logger logger("PlayerCmd");
                 logger.info(
                     "<{}> {}",
                     ((Player*)(context.getCommandOrigin().getEntity()))->getRealName(),
@@ -49,7 +49,7 @@ void SimpleServerLogger::call(SimpleServerLoggerConfig const& config) {
         }
         if (config.playerPermission && !impl->playerPermission) {
             impl->playerPermission = bus.emplaceListener<PlayerChangePermEvent>([](PlayerChangePermEvent& ev) {
-                static Logger logger("PlayerPerm");
+                static io::Logger logger("PlayerPerm");
                 logger.info(
                     "<{}> {}({}) -> {}({})",
                     ev.self().getRealName(),

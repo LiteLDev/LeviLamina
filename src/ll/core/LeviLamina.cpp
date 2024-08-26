@@ -17,7 +17,7 @@ std::shared_ptr<mod::NativeMod> const& getSelfModIns() {
     );
     return llSelf;
 }
-Logger& getLogger() { return getSelfModIns()->getLogger(); }
+io::Logger& getLogger() { return getSelfModIns()->getLogger(); }
 
 data::Version getLoaderVersion() {
     static auto ver = [] {
@@ -37,7 +37,6 @@ data::Version getLoaderVersion() {
 
 
 void printWelcomeMsg() {
-    auto  lock   = Logger::lock();
     auto& logger = getLogger();
     logger.info(R"(                                                                      )");
     logger.info(R"(         _               _ _                    _                     )");

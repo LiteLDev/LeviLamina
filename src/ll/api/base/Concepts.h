@@ -1,6 +1,5 @@
 #pragma once
 
-#include <format>
 #include <string>
 #include <tuple>
 #include <type_traits>
@@ -56,10 +55,6 @@ concept IsString = is_string_v<T>;
 
 template <class T, template <class> class Z>
 concept Require = Z<T>::value;
-
-template <class T>
-concept Formattable =
-    requires(T const& v, std::format_context ctx) { std::formatter<std::remove_cvref_t<T>>().format(v, ctx); };
 
 template <class T>
 concept IsExpected = requires(T e) {

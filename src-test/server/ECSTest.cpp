@@ -5,7 +5,7 @@
 #include <string>
 #include <thread>
 
-#include "ll/api/Logger.h"
+#include "ll/api/io/Logger.h"
 #include "ll/api/base/StdInt.h"
 #include "ll/api/command/CommandHandle.h"
 #include "ll/api/command/CommandRegistrar.h"
@@ -19,7 +19,7 @@
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/server/commands/ServerCommands.h"
 
-#include "ll/api/Logger.h"
+#include "ll/api/io/Logger.h"
 #include "ll/api/service/Bedrock.h"
 #include "ll/core/LeviLamina.h"
 #include "mc/server/commands/ServerCommands.h"

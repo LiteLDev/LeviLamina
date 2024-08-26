@@ -122,7 +122,7 @@ std::string getModuleFileName(void* handle, void* process) {
         .value_or("unknown module");
 }
 
-std::pair<std::tm, int> getLocalTime() {
+std::pair<std::tm, ushort> getLocalTime() {
     SYSTEMTIME sysTime;
     GetLocalTime(&sysTime);
     std::tm time{

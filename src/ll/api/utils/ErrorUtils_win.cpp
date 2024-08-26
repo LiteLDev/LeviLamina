@@ -2,7 +2,7 @@
 
 #include <filesystem>
 
-#include "ll/api/Logger.h"
+#include "ll/api/io/Logger.h"
 #include "ll/api/memory/Memory.h"
 #include "ll/api/reflection/Reflection.h"
 #include "ll/api/utils/StringUtils.h"
@@ -331,7 +331,7 @@ std::string makeExceptionString(std::exception_ptr ePtr) noexcept {
     return "unknown error when make exception string";
 }
 
-void printCurrentException(ll::OutputStream& stream, std::exception_ptr const& e) noexcept {
+void printCurrentException(io::Logger& logger, io::LogLevel level, std::exception_ptr const& e) noexcept {
     try {
 #if defined(LL_DEBUG)
         std::string res;
@@ -349,14 +349,11 @@ void printCurrentException(ll::OutputStream& stream, std::exception_ptr const& e
         auto res = makeExceptionString(e);
 #endif
         for (auto& sv : string_utils::splitByPattern(res, "\n")) {
-            stream(sv);
+            logger.log(level, sv);
         }
         return;
     } catch (...) {}
-    stream("unknown error");
-}
-void printCurrentException(ll::Logger& l, std::exception_ptr const& ptr) noexcept {
-    printCurrentException(l.error, ptr);
+    logger.log(level, "unknown error");
 }
 
 } // namespace ll::inline utils::error_utils

@@ -45,9 +45,21 @@ void Plugin::setState(State state) const { return Mod::setState((Mod::State)stat
 
 Plugin::State Plugin::getState() const { return (State)Mod::getState(); }
 
-Logger& Plugin::getLogger() const { return Mod::getLogger(); }
+static StringNodeMap<Logger> oldLoggers;
+
+Logger& Plugin::getLogger() const {
+    return oldLoggers.lazy_emplace(
+                         Mod::getName(),
+                         [&](auto const& ctor) { ctor(Mod::getName(), Mod::getName()); }
+    )->second;
+}
 
 } // namespace ll::plugin
+
+#pragma comment(                                                                                                       \
+    linker,                                                                                                            \
+    "/export:?getLogger@Mod@mod@ll@@QEBAAEAVLogger@3@XZ=?getLogger@Plugin@plugin@ll@@QEBAAEAVLogger@3@XZ"              \
+)
 
 #pragma comment(                                                                                                                                                                                                                                                                                                                                                                                                                                          \
     linker,                                                                                                                                                                                                                                                                                                                                                                                                                                               \

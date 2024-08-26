@@ -3,7 +3,7 @@
 #include <optional>
 #include <vector>
 
-#include "ll/api/Logger.h"
+#include "ll/api/io/Logger.h"
 #include "ll/api/service/GamingStatus.h"
 #include "ll/api/thread/GlobalThreadPauser.h"
 #include "ll/api/utils/StringUtils.h"

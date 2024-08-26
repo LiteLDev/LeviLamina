@@ -2,12 +2,12 @@
 #include <string>
 #include <variant>
 
-#include "ll/api/Logger.h"
 #include "ll/api/command/CommandHandle.h"
 #include "ll/api/command/CommandRegistrar.h"
 #include "ll/api/form/CustomForm.h"
 #include "ll/api/form/ModalForm.h"
 #include "ll/api/form/SimpleForm.h"
+#include "ll/api/io/Logger.h"
 #include "ll/api/memory/Hook.h"
 #include "mc/server/commands/CommandFlag.h"
 #include "mc/server/commands/CommandOrigin.h"
@@ -23,7 +23,7 @@ struct TestFormParam {
 };
 
 void registerFormTestCommand() {
-    static ll::Logger logger{"FormTest"};
+    static ll::io::Logger logger{"FormTest"};
     auto&             cmd =
         ll::command::CommandRegistrar::getInstance()
             .getOrCreateCommand("formtest", "formtest", CommandPermissionLevel::GameDirectors, CommandFlagValue::None);

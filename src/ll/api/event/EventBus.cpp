@@ -2,8 +2,8 @@
 
 #include <mutex>
 
-#include "ll/api/Logger.h"
 #include "ll/api/event/EmitterBase.h"
+#include "ll/api/io/Logger.h"
 #include "ll/api/mod/ModManagerRegistry.h"
 #include "ll/api/service/GamingStatus.h"
 #include "ll/api/utils/ErrorUtils.h"
@@ -34,7 +34,6 @@ public:
             try {
                 l->call(event);
             } catch (...) {
-                auto llock = ll::Logger::lock();
                 try {
                     getLogger().error(
                         "Error in Listener<{}>[{}] of {}:",
@@ -65,7 +64,6 @@ public:
             try {
                 l->call(event);
             } catch (...) {
-                auto llock = ll::Logger::lock();
                 try {
                     getLogger().error("Error in Listener<{}>[{}] of {}:", event.getId().name, l->getId(), modName);
                 } catch (...) {}

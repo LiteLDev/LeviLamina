@@ -12,10 +12,10 @@
 
 #include "fmt/core.h"
 
-#include "ll/api/Logger.h"
 #include "ll/api/Versions.h"
 #include "ll/api/command/CommandRegistrar.h"
 #include "ll/api/i18n/I18n.h"
+#include "ll/api/io/Logger.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/mod/Mod.h"
 #include "ll/api/service/Bedrock.h"
@@ -158,7 +158,7 @@ void leviLaminaMain() {
 
     if (auto res = ::ll::i18n::getInstance().load(getSelfModIns()->getLangDir()); !res) {
         getLogger().error("i18n load failed");
-        res.error().log(getLogger().error);
+        res.error().log(getLogger());
     }
 
     auto& config = getLeviConfig();

@@ -1,5 +1,5 @@
 
-#include "ll/api/Logger.h"
+#include "ll/api/io/Logger.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/schedule/Scheduler.h"
 #include "ll/api/utils/RandomUtils.h"
@@ -11,7 +11,7 @@
 
 using namespace ll::schedule;
 
-ll::Logger schedulelogger("Schedule");
+ll::io::Logger schedulelogger("Schedule");
 
 SystemTimeScheduler      s;
 ServerTimeAsyncScheduler s2;
@@ -34,8 +34,6 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     void,
     ::ServerInstance& ins
 ) {
-    auto l = ll::Logger::lock();
-
     ll::data::DependencyGraph<std::string> dep;
     dep.emplaceDependencies("a", {"b", "c", "e"});
     dep.emplaceDependencies("b", {"c"});
@@ -47,7 +45,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 
     for (auto k : {1, 4, 6}) {
         ll::meta::visitIndex<10>(k, []<size_t N> {
-            static ll::Logger lo;
+            static ll::io::Logger lo;
             lo.warn("template N = {}", N);
             return N;
         });

@@ -2,11 +2,11 @@
 
 #include <chrono>
 
-#include "ll/api/Logger.h"
 #include "ll/api/Versions.h"
 #include "ll/api/data/Version.h"
 #include "ll/api/i18n/I18n.h"
 #include "ll/api/io/FileUtils.h"
+#include "ll/api/io/Logger.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/StacktraceUtils.h"
 #include "ll/api/utils/StringUtils.h"
@@ -27,7 +27,7 @@ Stacktrace stacktraceFromContext(optional_ref<_CONTEXT const> context, size_t sk
 
 namespace ll {
 using namespace string_utils;
-Logger crashLogger("CrashLogger");
+io::Logger crashLogger("CrashLogger");
 
 class CrashLoggerNew {
     void* previous{};
@@ -93,7 +93,7 @@ void CrashLogger::init() {
     ));
     if (!CreateProcess(nullptr, cmd.data(), &sa, &sa, true, 0, nullptr, nullptr, &si, &pi)) {
         crashLogger.error("Couldn't Create CrashLogger Daemon Process"_tr());
-        error_utils::printException(crashLogger, error_utils::getLastSystemError());
+        error_utils::printException(error_utils::getLastSystemError(), crashLogger);
         return;
     }
 
@@ -110,7 +110,7 @@ static struct CrashInfo {
     DWORD                                             processId{};
     DWORD                                             threadId{};
     std::string                                       date;
-    Logger                                            logger{"CrashLogger"};
+    io::Logger                                        logger{"CrashLogger"};
     std::filesystem::path                             path{};
     decltype(ll::getLeviConfig().modules.crashLogger) settings{};
 } crashInfo;
@@ -264,29 +264,28 @@ static bool genMiniDumpFile(PEXCEPTION_POINTERS e) {
 }
 
 static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
-    auto lock = Logger::lock();
     try {
-        crashInfo.date                      = fmt::format("{:%Y-%m-%d_%H-%M-%S}", fmt::localtime(_time64(nullptr)));
-        crashInfo.logger.fileLevel          = std::numeric_limits<int>::max();
-        crashInfo.logger.consoleLevel       = std::numeric_limits<int>::max();
-        crashInfo.logger.info.consoleFormat = {"{0} [{1}] {3}", "{:%T}.{:0>3}", "{}", "", "{}"};
-        crashInfo.logger.info.style         = {
-            fmt::fg(fmt::color::light_blue),
-            fmt::fg(fmt::color::light_green),
-            {},
-            {},
-        };
+        crashInfo.date = fmt::format("{:%Y-%m-%d_%H-%M-%S}", fmt::localtime(_time64(nullptr)));
+        // crashInfo.logger.fileLevel          = std::numeric_limits<int>::max();
+        // crashInfo.logger.consoleLevel       = std::numeric_limits<int>::max();
+        // crashInfo.logger.info.consoleFormat = {"{0} [{1}] {3}", "{:%T}.{:0>3}", "{}", "", "{}"};
+        // crashInfo.logger.info.style         = {
+        //     fmt::fg(fmt::color::light_blue),
+        //     fmt::fg(fmt::color::light_green),
+        //     {},
+        //     {},
+        // };
         crashInfo.settings = ll::getLeviConfig().modules.crashLogger;
         crashInfo.path     = file_utils::u8path(pl::pl_log_path) / u8"crash";
-        crashInfo.logger.setFile(u8str2str((crashInfo.path / ("trace_" + crashInfo.date + ".log")).u8string()));
-        crashInfo.logger.ofs.value() << std::unitbuf;
+        // crashInfo.logger.setFile(u8str2str((crashInfo.path / ("trace_" + crashInfo.date + ".log")).u8string()));
+        // crashInfo.logger.ofs.value() << std::unitbuf;
 
-        crashInfo.logger.info.fileFormat = {"{0} [{1}] {3}", "{:%F %T}.{:0>3}", "{}", "", "{}"};
-        crashInfo.logger.error           = crashInfo.logger.info;
-        crashInfo.process                = GetCurrentProcess();
-        crashInfo.thread                 = GetCurrentThread();
-        crashInfo.processId              = GetCurrentProcessId();
-        crashInfo.threadId               = GetCurrentThreadId();
+        // crashInfo.logger.info.fileFormat = {"{0} [{1}] {3}", "{:%F %T}.{:0>3}", "{}", "", "{}"};
+        // crashInfo.logger.error           = crashInfo.logger.info;
+        crashInfo.process   = GetCurrentProcess();
+        crashInfo.thread    = GetCurrentThread();
+        crashInfo.processId = GetCurrentProcessId();
+        crashInfo.threadId  = GetCurrentThreadId();
 
         io::defaultOutput("\n");
 

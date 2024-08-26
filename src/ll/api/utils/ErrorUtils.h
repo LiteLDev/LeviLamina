@@ -8,12 +8,9 @@
 #include "ll/api/base/StdInt.h"
 #include "ll/api/utils/StacktraceUtils.h"
 
-#include "mc/common/wrapper/optional_ref.h"
+#include "ll/api/io/LogLevel.h"
 
-namespace ll {
-class Logger;
-class OutputStream;
-} // namespace ll
+#include "mc/common/wrapper/optional_ref.h"
 
 namespace ll::inline utils::error_utils {
 
@@ -48,19 +45,15 @@ LLNDAPI Stacktrace stacktraceFromCurrentException(size_t skip = 0, size_t maxDep
 
 LLNDAPI std::string makeExceptionString(std::exception_ptr ePtr) noexcept;
 
-LLAPI void printCurrentException(ll::Logger& l, std::exception_ptr const& = std::current_exception()) noexcept;
-
-LLAPI void
-printCurrentException(ll::OutputStream& stream, std::exception_ptr const& = std::current_exception()) noexcept;
+LLAPI void printCurrentException(
+    io::Logger&  logger,
+    io::LogLevel level        = io::LogLevel::Error,
+    std::exception_ptr const& = std::current_exception()
+) noexcept;
 
 template <class T>
     requires(!std::is_same_v<T, std::exception_ptr>)
-inline void printException(ll::Logger& l, T const& e) noexcept {
-    printCurrentException(l, std::make_exception_ptr(e));
-}
-template <class T>
-    requires(!std::is_same_v<T, std::exception_ptr>)
-inline void printException(ll::OutputStream& stream, T const& e) noexcept {
-    printCurrentException(stream, std::make_exception_ptr(e));
+inline void printException(T const& e, io::Logger& logger, io::LogLevel level = io::LogLevel::Error) noexcept {
+    printCurrentException(logger, level, std::make_exception_ptr(e));
 }
 } // namespace ll::inline utils::error_utils

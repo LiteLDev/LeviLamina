@@ -2,7 +2,6 @@
 
 #include <concepts>
 #include <cstddef>
-#include <format>
 #include <functional>
 #include <string>
 #include <string_view>
@@ -13,6 +12,8 @@
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/Meta.h"
 #include "ll/api/utils/HashUtils.h"
+
+#include "fmt/core.h"
 
 namespace ll::math {
 
@@ -62,7 +63,7 @@ struct LL_EBO VectorBase : concepts::VectorBaseTag {
     [[nodiscard]] constexpr std::string toString() const noexcept {
         std::string res("(");
         forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            res  = std::format("{}{}", res, static_cast<T const*>(this)->template get<axis_type>(iter));
+            res  = fmt::format("{}{}", res, static_cast<T const*>(this)->template get<axis_type>(iter));
             res += ((iter < size() - 1) ? ", " : ")");
         });
         return res;
@@ -141,9 +142,9 @@ struct LL_EBO VectorBase : concepts::VectorBaseTag {
 
 namespace std {
 
-template <ll::concepts::IsVectorBase T, typename CharT>
-struct formatter<T, CharT> : public std::formatter<string_view, CharT> {
-    template <typename FormatContext>
+template <ll::concepts::IsVectorBase T, class CharT>
+struct formatter<T, CharT> : public std::formatter<basic_string_view<CharT>, CharT> {
+    template <class FormatContext>
     auto format(T const& t, FormatContext& ctx) const noexcept {
         return std::formatter<string_view>::format(t.toString(), ctx);
     }
@@ -155,5 +156,14 @@ struct hash<T> {
 };
 
 } // namespace std
+
+// fmt support
+template <ll::concepts::IsVectorBase T, class CharT>
+struct fmt::formatter<T, CharT> : fmt::formatter<std::basic_string_view<CharT>, CharT> {
+    template <class FormatContext>
+    auto format(T const& t, FormatContext& ctx) const {
+        return fmt::formatter<std::string_view>::format(t.toString(), ctx);
+    }
+};
 
 // NOLINTEND

@@ -10,11 +10,13 @@
 #include <string_view>
 
 #include "ll/api/base/Macro.h"
+#include "ll/api/io/LogLevel.h"
+
+#include "mc/server/commands/CommandOutputMessageType.h"
 
 class CommandOutput;
 
 namespace ll {
-class OutputStream;
 class Error;
 
 template <class T = void>
@@ -67,13 +69,9 @@ public:
     }
     LLAPI Error& join(Error) noexcept;
 
-    LLAPI Error& log(::ll::OutputStream&) noexcept;
+    LLAPI Error const& log(io::Logger&, io::LogLevel = io::LogLevel::Error) const noexcept;
 
-    LLAPI Error& log(CommandOutput&) noexcept;
-
-    Error const& log(::ll::OutputStream& s) const noexcept { return const_cast<Error*>(this)->log(s); }
-
-    Error const& log(CommandOutput& s) const noexcept { return const_cast<Error*>(this)->log(s); }
+    LLAPI Error const& log(CommandOutput&, CommandOutputMessageType = CommandOutputMessageType::Error) const noexcept;
 };
 
 struct StringError : ErrorInfoBase {

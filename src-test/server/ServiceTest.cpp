@@ -17,7 +17,6 @@ public:
 };
 
 void test() {
-    auto lock = ll::Logger::lock();
     ll::getLogger().warn("Testing service manager");
     auto  service = std::make_shared<SimpleService>();
     auto& sm      = ServiceManager::getInstance();

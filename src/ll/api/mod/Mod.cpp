@@ -16,7 +16,7 @@ struct Mod::Impl {
 
     State state;
 
-    Logger logger;
+    io::Logger logger;
 
     CallbackFn onLoad;
     CallbackFn onUnload;
@@ -30,13 +30,13 @@ struct Mod::Impl {
 };
 
 Mod::Mod(Manifest manifest) : mImpl(std::make_unique<Impl>()) {
-    mImpl->manifest     = std::move(manifest);
-    mImpl->state        = State::Disabled;
-    mImpl->logger.title = mImpl->manifest.name;
-    mImpl->modDir       = getModsRoot() / string_utils::sv2u8sv(mImpl->manifest.name);
-    mImpl->dataDir      = mImpl->modDir / u8"data";
-    mImpl->configDir    = mImpl->modDir / u8"config";
-    mImpl->langDir      = mImpl->modDir / u8"lang";
+    mImpl->manifest = std::move(manifest);
+    mImpl->state    = State::Disabled;
+    mImpl->logger.setTitle(mImpl->manifest.name);
+    mImpl->modDir    = getModsRoot() / string_utils::sv2u8sv(mImpl->manifest.name);
+    mImpl->dataDir   = mImpl->modDir / u8"data";
+    mImpl->configDir = mImpl->modDir / u8"config";
+    mImpl->langDir   = mImpl->modDir / u8"lang";
 }
 Mod::~Mod() = default;
 
@@ -131,6 +131,6 @@ void Mod::setState(State state) const { mImpl->state = state; }
 
 Mod::State Mod::getState() const { return mImpl->state; }
 
-Logger& Mod::getLogger() const { return mImpl->logger; }
+io::Logger& Mod::getLogger() const { return mImpl->logger; }
 
 } // namespace ll::mod

@@ -32,7 +32,7 @@ LLNDAPI std::string getSystemLocaleCode();
 
 LLNDAPI std::string const& getSystemName();
 
-LLNDAPI std::pair<std::tm, int> getLocalTime(); // tm & ms
+LLNDAPI std::pair<std::tm, ushort> getLocalTime(); // tm & ms
 
 LLNDAPI std::string getEnvironmentVariable(std::string_view name);
 

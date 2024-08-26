@@ -1,7 +1,8 @@
 #pragma once
 
-#include <format>
 #include <string>
+
+#include "fmt/format.h"
 
 namespace ll {
 class SourceLocation {
@@ -27,7 +28,7 @@ public:
     [[nodiscard]] char const* function() const noexcept { return mFunction; }
 
     [[nodiscard]] std::string toString() const {
-        return std::format("{} at {}({}:{})", mFunction, mFile, mLine, mColumn);
+        return fmt::format("{} at {}({}:{})", mFunction, mFile, mLine, mColumn);
     }
 
 private:

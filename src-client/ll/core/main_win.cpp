@@ -31,7 +31,7 @@ void leviLaminaMain() {
 
     if (auto res = ::ll::i18n::getInstance().load(getSelfModIns()->getLangDir()); !res) {
         getLogger().error("i18n load failed");
-        res.error().log(getLogger().error);
+        res.error().log(getLogger());
     }
 
     auto& config = getLeviConfig();
