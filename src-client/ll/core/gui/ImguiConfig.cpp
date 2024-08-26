@@ -23,7 +23,7 @@ LL_CONFIG_IMPL(LeviImguiConfig, u8"ImguiConfig.json");
 
 
 std::vector<LeviImguiConfig::Font> LeviImguiConfig::getDefaultFonts() {
-    if (i18n::getDefaultLocaleName().starts_with("zh")) {
+    if (i18n::getDefaultLocaleCode().starts_with("zh")) {
         return {
             {"default", Font::GlyphRange::Latins,      Font::Width::Half},
             {"system",  Font::GlyphRange::ChineseFull, Font::Width::Full}

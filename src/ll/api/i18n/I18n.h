@@ -2,6 +2,7 @@
 
 #include "ll/api/base/Concepts.h"
 #include "ll/api/base/FixedString.h"
+#include "ll/api/Expected.h"
 
 #include <string>
 
@@ -17,7 +18,9 @@
 
 namespace ll::i18n {
 
-LLNDAPI std::string& getDefaultLocaleName();
+std::string& defaultLocaleCode();
+
+LLNDAPI std::string_view getDefaultLocaleCode();
 
 class I18n {
     struct Impl;
@@ -27,17 +30,19 @@ public:
     LLNDAPI I18n();
     LLAPI ~I18n();
 
-    LLNDAPI bool load(std::filesystem::path const& path);
+    LLNDAPI Expected<> load(std::filesystem::path const& path) noexcept;
 
-    LLNDAPI std::string_view get(std::string_view key, std::string_view localeName = {});
+    LLNDAPI void clear();
+
+    LLNDAPI void set(std::string_view localeCode, std::string_view key, std::string_view value);
+
+    LLNDAPI std::string_view get(std::string_view key, std::string_view localeCode) const;
 };
 
 inline I18n& getInstance() {
     static I18n ins{};
     return ins;
 }
-
-inline bool load(std::filesystem::path const& path) { return getInstance().load(path); }
 
 } // namespace ll::i18n
 
@@ -64,7 +69,7 @@ template <FixedString Fmt>
         static detail::TrString<Fmt> e{};
 #endif
         [[maybe_unused]] static constexpr auto checker = fmt::format_string<Args...>(std::string_view{Fmt});
-        return fmt::vformat(i18n::getInstance().get(Fmt), fmt::make_format_args(args...));
+        return fmt::vformat(i18n::getInstance().get(Fmt, {}), fmt::make_format_args(args...));
     };
 }
 } // namespace ll::inline literals::inline i18n_literals

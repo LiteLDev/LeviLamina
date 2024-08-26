@@ -137,12 +137,12 @@ static void dumpSystemInfo() {
             return "Unknown";
         }
         std::string osVersion =
-            std::to_string(osVersionInfoW.dwMajorVersion) + "." + std::to_string(osVersionInfoW.dwMinorVersion);
+            std::to_string(osVersionInfoW.dwMajorVersion) + '.' + std::to_string(osVersionInfoW.dwMinorVersion);
         if (osVersionInfoW.dwBuildNumber != 0) {
-            osVersion += "." + std::to_string(osVersionInfoW.dwBuildNumber);
+            osVersion += '.' + std::to_string(osVersionInfoW.dwBuildNumber);
         }
         if (osVersionInfoW.szCSDVersion[0] != 0) {
-            osVersion += " " + wstr2str(osVersionInfoW.szCSDVersion);
+            osVersion += ' ' + wstr2str(osVersionInfoW.szCSDVersion);
         }
         return osVersion;
     }() + (sys_utils::isWine() ? " (wine)" : ""));

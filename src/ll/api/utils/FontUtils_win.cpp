@@ -156,7 +156,7 @@ std::vector<std::string> getSystemFontNames() {
     if (SUCCEEDED(hr)) {
         familyCount = pFontCollection->GetFontFamilyCount();
     }
-    std::wstring             localeName = str2wstr(i18n::getDefaultLocaleName());
+    std::wstring             localeCode = str2wstr(i18n::getDefaultLocaleCode());
     std::vector<std::string> result;
     result.reserve(familyCount);
     for (UINT32 i = 0; i < familyCount; ++i) {
@@ -175,7 +175,7 @@ std::vector<std::string> getSystemFontNames() {
 
         if (SUCCEEDED(hr)) {
             // If the default locale is returned, find that locale name, otherwise use "en-us".
-            hr = pFamilyNames->FindLocaleName(localeName.c_str(), &index, &exists);
+            hr = pFamilyNames->FindLocaleName(localeCode.c_str(), &index, &exists);
 
             if (SUCCEEDED(hr) && !exists) // if the above find did not find a match, retry with US English
             {

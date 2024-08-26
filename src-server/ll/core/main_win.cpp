@@ -156,13 +156,16 @@ void unixSignalHandler(int signum) {
 void leviLaminaMain() {
     error_utils::initExceptionTranslator();
 
-    ::ll::i18n::load(getSelfModIns()->getLangDir());
+    if (auto res = ::ll::i18n::getInstance().load(getSelfModIns()->getLangDir()); !res) {
+        getLogger().error("i18n load failed");
+        res.error().log(getLogger().error);
+    }
 
     auto& config = getLeviConfig();
 
     // Update default language
     if (config.language != "system") {
-        i18n::getDefaultLocaleName() = config.language;
+        i18n::defaultLocaleCode() = config.language;
     }
 
     checkProtocolVersion();

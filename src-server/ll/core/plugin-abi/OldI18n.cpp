@@ -153,7 +153,7 @@ bool findTranslation(
 std::string_view I18N::get(std::string_view key, std::string_view localeName) {
     if (localeName.empty()) {
         if (mDefaultLocaleName.empty()) {
-            localeName = getDefaultLocaleName();
+            localeName = getDefaultLocaleCode();
         } else {
             localeName = mDefaultLocaleName;
         }

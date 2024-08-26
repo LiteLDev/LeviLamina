@@ -29,12 +29,15 @@ void leviLaminaMain() {
 
     gui::init();
 
-    ::ll::i18n::load(getSelfModIns()->getLangDir());
+    if (auto res = ::ll::i18n::getInstance().load(getSelfModIns()->getLangDir()); !res) {
+        getLogger().error("i18n load failed");
+        res.error().log(getLogger().error);
+    }
 
     auto& config = getLeviConfig();
 
     if (config.language != "system") {
-        ::ll::i18n::getDefaultLocaleName() = config.language;
+        ::ll::i18n::defaultLocaleCode() = config.language;
     }
     CrashLogger::init();
 

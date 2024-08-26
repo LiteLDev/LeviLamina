@@ -79,7 +79,7 @@ toDumpString(std::string const& str, fmt::color defaultc, std::string_view defau
                           );
             } catch (...) {
                 base64 = true;
-                res    = "\"" + ll::base64_utils::encode(str) + "\"";
+                res    = '\"' + ll::base64_utils::encode(str) + '\"';
             }
         }
     }

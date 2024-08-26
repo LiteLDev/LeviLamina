@@ -17,7 +17,7 @@
 namespace ll::inline utils::sys_utils {
 using namespace ll::string_utils;
 
-std::string getSystemLocaleName() {
+std::string getSystemLocaleCode() {
     wchar_t buf[LOCALE_NAME_MAX_LENGTH]{};
     GetUserDefaultLocaleName(buf, LOCALE_NAME_MAX_LENGTH);
     auto str = wstr2str(buf);
