@@ -186,9 +186,9 @@ LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &Se
     ll::getLogger().debug("{}", 3 / v1);
 
 
-    auto indirect = ll::memory::makeIndirect<Test>();
-    indirect      = ll::memory::makeIndirect<TestD>(13, 23);
+    auto indirect = ll::memory::makePolymorphic<Test>();
+    indirect      = ll::memory::makePolymorphic<TestD>(13, 23);
 
-    ll::memory::IndirectValue<Test> indirect2 = indirect;
-    ll::memory::IndirectValue<Test> indirect3 = indirect;
+    auto indirect2 = indirect;
+    auto indirect3 = indirect;
 }

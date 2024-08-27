@@ -37,15 +37,7 @@ struct virtualCloneCopy {
     constexpr T* operator()(T const& t) const noexcept { return static_cast<T*>(t.clone().release()); }
 };
 
-template <class T>
-struct CopyCtorType {
-    using type = std::conditional_t<
-        std::is_polymorphic_v<T>,
-        std::conditional_t<concepts::is_virtual_cloneable_v<T>, virtualCloneCopy<T>, polymorphicCopy<T>>,
-        defaultCopy<T>>;
-};
-
-template <class T, class CopyCtor = typename CopyCtorType<T>::type, class Deleter = std::default_delete<T>>
+template <class T, class CopyCtor, class Deleter = std::default_delete<T>>
 class IndirectValue {
     template <class U, class C2, class D2>
     friend class IndirectValue;
@@ -65,25 +57,42 @@ public:
     constexpr Deleter&       getDeleter() noexcept { return unique().get_deleter(); }
     constexpr Deleter const& getDeleter() const noexcept { return unique().get_deleter(); }
 
+    constexpr T* release() noexcept { return unique().release(); }
+
+    constexpr void reset(T* ptr = nullptr) noexcept { return unique().reset(ptr); }
+
+    constexpr explicit operator bool() const noexcept { return get(); }
+
+    template <class... Args>
+    constexpr T& emplace(Args&&... args) {
+        reset(new T(std::forward<Args>(args)...));
+        return *get();
+    }
+
 private:
     std::unique_ptr<T, Deleter> clone() const noexcept {
         if (get()) {
             return std::unique_ptr<T, Deleter>{getCopyCtor()(*get()), getDeleter()};
         }
-        return nullptr;
+        return std::unique_ptr<T, Deleter>{nullptr, getDeleter()};
     }
 
 public:
-    constexpr IndirectValue(std::nullptr_t) noexcept = delete;
+    constexpr IndirectValue(std::nullptr_t) noexcept {}
 
     constexpr IndirectValue(T* ptr) noexcept : storage(data::zeroThenVariadicArgs, ptr) {}
 
+    constexpr IndirectValue() noexcept {}
+
+    template <class... Args>
+    constexpr IndirectValue(std::in_place_t, Args&&... args)
+    : storage(data::zeroThenVariadicArgs, new T(std::forward<Args>(args)...)) {}
+
     constexpr IndirectValue(IndirectValue const& other) noexcept(std::is_nothrow_copy_constructible_v<T>)
-        requires(std::is_copy_constructible_v<T>)
     : storage(data::oneThenVariadicArgs, other.getCopyCtor(), other.clone()) {}
 
     template <class U, class C2, class D2>
-        requires(std::is_copy_constructible_v<U> && ((std::is_polymorphic_v<T> && std::is_convertible_v<U*, T*>) || std::is_same_v<U, T>) && std::is_constructible_v<CopyCtor, C2 const&>)
+        requires(std::is_convertible_v<U*, T*> && std::is_constructible_v<CopyCtor, C2 const&>)
     constexpr IndirectValue(IndirectValue<U, C2, D2> const& other) noexcept(std::is_nothrow_copy_constructible_v<U>)
     : storage(data::oneThenVariadicArgs, other.getCopyCtor(), other.clone()) {}
 
@@ -91,13 +100,11 @@ public:
     : storage(data::oneThenVariadicArgs, std::move(other.getCopyCtor()), std::move(other.unique())) {}
 
     template <class U, class C2, class D2>
-        requires(((std::is_polymorphic_v<T> && std::is_convertible_v<U*, T*>) || std::is_same_v<U, T>) && std::is_constructible_v<CopyCtor, C2 &&>)
+        requires(std::is_convertible_v<U*, T*> && std::is_constructible_v<CopyCtor, C2 &&>)
     constexpr IndirectValue(IndirectValue<U, C2, D2>&& other) noexcept
     : storage(data::oneThenVariadicArgs, std::move(other.getCopyCtor()), std::move(other.unique())) {}
 
-    constexpr IndirectValue& operator=(IndirectValue const& other) noexcept(std::is_nothrow_copy_constructible_v<T>)
-        requires(std::is_copy_constructible_v<T>)
-    {
+    constexpr IndirectValue& operator=(IndirectValue const& other) noexcept(std::is_nothrow_copy_constructible_v<T>) {
         if (std::addressof(other) == this) {
             return *this;
         }
@@ -106,7 +113,7 @@ public:
         return *this;
     }
     template <class U, class C2, class D2>
-        requires(std::is_copy_constructible_v<U> && ((std::is_polymorphic_v<T> && std::is_convertible_v<U*, T*>) || std::is_same_v<U, T>) && std::is_constructible_v<CopyCtor, C2 const&>)
+        requires(std::is_convertible_v<U*, T*> && std::is_constructible_v<CopyCtor, C2 const&>)
     constexpr IndirectValue& operator=(IndirectValue<U, C2, D2> const& other
     ) noexcept(std::is_nothrow_copy_constructible_v<U>) {
         if constexpr (std::is_same_v<U, T>) {
@@ -128,7 +135,7 @@ public:
         return *this;
     }
     template <class U, class C2, class D2>
-        requires(((std::is_polymorphic_v<T> && std::is_convertible_v<U*, T*>) || std::is_same_v<U, T>) && std::is_constructible_v<CopyCtor, C2 const&>)
+        requires(std::is_convertible_v<U*, T*> && std::is_constructible_v<CopyCtor, C2 const&>)
     constexpr IndirectValue& operator=(IndirectValue<U, C2, D2>&& other) noexcept {
         if constexpr (std::is_same_v<U, T>) {
             if (std::addressof(other) == this) {
@@ -148,9 +155,23 @@ public:
     constexpr T const&& operator*() const&& noexcept { return std::forward<T const>(*get()); }
 };
 
+template <class T, class D = std::default_delete<T>>
+using Indirect = IndirectValue<T, defaultCopy<T>, D>;
+
+template <
+    class T,
+    class C = std::conditional_t<concepts::is_virtual_cloneable_v<T>, virtualCloneCopy<T>, polymorphicCopy<T>>,
+    class D = std::default_delete<T>>
+using Polymorphic = IndirectValue<T, C, D>;
+
 template <class T, class... Args>
-IndirectValue<T> makeIndirect(Args&&... args) {
-    return IndirectValue<T>(new T(std::forward<Args>(args)...));
+Indirect<T> makeIndirect(Args&&... args) {
+    return Indirect<T>(new T(std::forward<Args>(args)...));
+}
+
+template <class T, class... Args>
+Polymorphic<T> makePolymorphic(Args&&... args) {
+    return Polymorphic<T>(new T(std::forward<Args>(args)...));
 }
 
 } // namespace ll::memory
