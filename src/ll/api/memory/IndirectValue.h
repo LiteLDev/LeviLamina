@@ -59,7 +59,10 @@ public:
 
     constexpr T* release() noexcept { return unique().release(); }
 
-    constexpr void reset(T* ptr = nullptr) noexcept { return unique().reset(ptr); }
+    constexpr void reset(T* ptr = nullptr, CopyCtor const& copy = CopyCtor{}) noexcept {
+        getCopyCtor() = copy;
+        return unique().reset(ptr);
+    }
 
     constexpr explicit operator bool() const noexcept { return get(); }
 
