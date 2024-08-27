@@ -152,6 +152,13 @@ template <class...>
 inline constexpr bool always_false = false;
 
 template <class T>
+inline constexpr bool is_virtual_cloneable_v =
+    std::is_polymorphic_v<T> && requires(T const& t) { static_cast<T*>(t.clone().release()); };
+
+template <class T>
+concept VirtualCloneable = is_virtual_cloneable_v<T>;
+
+template <class T>
 concept Stringable = requires(T t) {
     requires requires {
         { t.toString() } -> IsString;

@@ -103,14 +103,27 @@ struct Test {
     Test(Args&&...) {
         ll::getLogger().debug("Test {}", sizeof...(Args));
     }
-    ~Test() { ll::getLogger().debug("~Test"); }
+    virtual ~Test() { ll::getLogger().debug("~Test"); }
+
+    // virtual std::unique_ptr<Test> clone() const {
+
+    //     // return nullptr;
+    //     ll::getLogger().debug("Test::clone");
+    //     return std::make_unique<Test>(*this);
+    // }
 };
 struct TestD : public Test {
     template <class... Args>
     TestD(Args&&...) {
         ll::getLogger().debug("TestD {}", sizeof...(Args));
     }
-    ~TestD() { ll::getLogger().debug("~TestD"); }
+    virtual ~TestD() { ll::getLogger().debug("~TestD"); }
+
+    // virtual std::unique_ptr<Test> clone() const {
+    //     ll::getLogger().debug("TestD::clone");
+    //     return std::make_unique<TestD>(*this);
+    //     // return nullptr;
+    // }
 };
 
 LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &ServerInstance::startServerThread, void) {
@@ -175,5 +188,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &Se
 
     auto indirect = ll::memory::makeIndirect<Test>();
     indirect      = ll::memory::makeIndirect<TestD>(13, 23);
-    auto indirect2 = indirect;
+
+    ll::memory::IndirectValue<Test> indirect2 = indirect;
+    ll::memory::IndirectValue<Test> indirect3 = indirect;
 }
