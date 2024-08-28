@@ -270,7 +270,7 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
         crashInfo.date       = fmt::format("{:%Y-%m-%d_%H-%M-%S}", fmt::localtime(_time64(nullptr)));
         crashInfo.settings   = ll::getLeviConfig().modules.crashLogger;
         crashInfo.path       = file_utils::u8path(pl::pl_log_path) / u8"crash";
-        auto formatter       = makePolymorphic<io::PatternFormatter>("{tm:.3%T.} [{lvl}] {msg}");
+        auto formatter       = makePolymorphic<io::PatternFormatter>("{tm:.3%T.} [{lvl}] {msg}", pl::pl_color_log);
         formatter->styles[1] = {
             {
              {},
