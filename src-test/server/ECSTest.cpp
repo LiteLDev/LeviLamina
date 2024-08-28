@@ -5,10 +5,10 @@
 #include <string>
 #include <thread>
 
-#include "ll/api/io/Logger.h"
 #include "ll/api/base/StdInt.h"
 #include "ll/api/command/CommandHandle.h"
 #include "ll/api/command/CommandRegistrar.h"
+#include "ll/api/io/Logger.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/thread/TickSyncSleep.h"
 #include "mc/entity/systems/DefaultEntitySystemsCollection.h"

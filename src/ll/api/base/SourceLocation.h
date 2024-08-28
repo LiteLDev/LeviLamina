@@ -2,21 +2,25 @@
 
 #include <string>
 
+#include "ll/api/base/CompilerPredefine.h"
+
 #include "fmt/format.h"
 
 namespace ll {
 class SourceLocation {
 public:
     static consteval SourceLocation current(
-        int         line     = __builtin_LINE(),
-        int         column   = __builtin_COLUMN(),
-        char const* file     = __builtin_FILE(),
-        char const* function = __builtin_FUNCTION()
+        char const* file     = LL_CURRENT_FILE,
+        char const* function = LL_CURRENT_FUNCTION,
+        int         line     = LL_CURRENT_LINE,
+        int         column   = LL_CURRENT_COLUMN
     ) noexcept {
-        return {line, column, file, function};
+        return {file, function, line, column};
     }
 
-    consteval SourceLocation(int line, int column, char const* file, char const* function) noexcept
+    static consteval SourceLocation unknown() noexcept { return {"", "", 0, 0}; }
+
+    consteval SourceLocation(char const* file, char const* function, int line, int column) noexcept
     : mLine(line),
       mColumn(column),
       mFile(file),
@@ -32,9 +36,9 @@ public:
     }
 
 private:
-    int         mLine;
-    int         mColumn;
     char const* mFile;
     char const* mFunction;
+    int         mLine;
+    int         mColumn;
 };
 } // namespace ll

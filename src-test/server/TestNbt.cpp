@@ -166,8 +166,11 @@ LL_AUTO_TYPE_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serve
 
     using namespace ll::string_utils;
 
-    ll::getLogger().debug("\n{}", replaceAnsiToMcCode(nbt.toSnbt(SnbtFormat::Colored | SnbtFormat::Console)));
-    ll::getLogger().debug("\n{}", (nbt2.value().toSnbt(SnbtFormat::Colored)));
+    ll::getLogger().debug(
+        "\n{}",
+        replaceMcToAnsiCode(replaceAnsiToMcCode(nbt.toSnbt(SnbtFormat::Colored | SnbtFormat::Console)))
+    );
+    ll::getLogger().debug("\n{}", replaceMcToAnsiCode(nbt2.value().toSnbt(SnbtFormat::Colored)));
 
 
     ll::getLogger().debug(

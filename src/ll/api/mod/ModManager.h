@@ -17,6 +17,8 @@ namespace ll::mod {
 class ModManagerRegistry;
 class ModManager {
     friend ModManagerRegistry;
+    struct Impl;
+    std::unique_ptr<Impl> impl;
 
 public:
     LLNDAPI std::string const& getType() const;
@@ -30,9 +32,6 @@ public:
     LLAPI void forEachMod(std::function<bool(std::string_view name, Mod&)> const& fn);
 
 protected:
-    struct Impl;
-    std::unique_ptr<Impl> impl;
-
     LLNDAPI std::lock_guard<std::recursive_mutex> lock();
 
     LLNDAPI explicit ModManager(std::string_view type);

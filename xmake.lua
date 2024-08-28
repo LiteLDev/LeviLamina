@@ -116,6 +116,7 @@ target("LeviLamina")
         {public = true}
     )
     add_defines(
+        "FMT_USE_FULL_CACHE_DRAGONBOX=1",
         "ENTT_PACKED_PAGE=128", -- public = true
         "LL_EXPORT"
     )

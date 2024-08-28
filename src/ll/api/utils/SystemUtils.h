@@ -10,6 +10,7 @@
 #include "ll/api/base/CompilerPredefine.h"
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
+#include "ll/api/data/TmWithMs.h"
 
 namespace ll::inline utils::sys_utils {
 
@@ -32,7 +33,7 @@ LLNDAPI std::string getSystemLocaleCode();
 
 LLNDAPI std::string const& getSystemName();
 
-LLNDAPI std::pair<std::tm, ushort> getLocalTime(); // tm & ms
+LLNDAPI data::TmWithMs getLocalTime(); // tm & ms
 
 LLNDAPI std::string getEnvironmentVariable(std::string_view name);
 

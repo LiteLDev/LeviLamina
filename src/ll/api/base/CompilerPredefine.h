@@ -45,6 +45,22 @@
 #define LL_RETURN_ADDRESS _ReturnAddress()
 #endif
 
+#ifndef LL_CURRENT_LINE
+#define LL_CURRENT_LINE __builtin_LINE()
+#endif
+
+#ifndef LL_CURRENT_COLUMN
+#define LL_CURRENT_COLUMN __builtin_COLUMN()
+#endif
+
+#ifndef LL_CURRENT_FILE
+#define LL_CURRENT_FILE __builtin_FILE()
+#endif
+
+#ifndef LL_CURRENT_FUNCTION
+#define LL_CURRENT_FUNCTION __builtin_FUNCTION()
+#endif
+
 // MSVC has customized some functions and classes inside the compiler, but they are not included in IntelliSense. This
 // header file is only used for IntelliSense.
 #if defined(__INTELLISENSE__) || defined(__clang__) || defined(__clangd__)
@@ -246,6 +262,22 @@ using FileHandleT = void*;
 
 #ifndef LL_RETURN_ADDRESS
 #define LL_RETURN_ADDRESS __builtin_return_address(0)
+#endif
+
+#ifndef LL_CURRENT_LINE
+#define LL_CURRENT_LINE __builtin_LINE()
+#endif
+
+#ifndef LL_CURRENT_COLUMN
+#define LL_CURRENT_COLUMN 0
+#endif
+
+#ifndef LL_CURRENT_FILE
+#define LL_CURRENT_FILE __builtin_FILE()
+#endif
+
+#ifndef LL_CURRENT_FUNCTION
+#define LL_CURRENT_FUNCTION __builtin_FUNCTION()
 #endif
 
 namespace ll::internal {

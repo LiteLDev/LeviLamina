@@ -7,7 +7,7 @@
 #include "ll/api/base/Concepts.h"
 #include "ll/api/data/TightPair.h"
 
-namespace ll::memory {
+namespace ll::data {
 
 template <class T>
 struct defaultCopy {
@@ -150,22 +150,48 @@ public:
         return *this;
     }
 
-    constexpr T*        operator->() noexcept { return get(); }
-    constexpr T const*  operator->() const noexcept { return get(); }
-    constexpr T&        operator*() & noexcept { return *get(); }
-    constexpr T const&  operator*() const& noexcept { return *get(); }
-    constexpr T&&       operator*() && noexcept { return std::forward<T>(*get()); }
-    constexpr T const&& operator*() const&& noexcept { return std::forward<T const>(*get()); }
+    [[nodiscard]] constexpr T*        operator->() noexcept { return get(); }
+    [[nodiscard]] constexpr T const*  operator->() const noexcept { return get(); }
+    [[nodiscard]] constexpr T&        operator*() & noexcept { return *get(); }
+    [[nodiscard]] constexpr T const&  operator*() const& noexcept { return *get(); }
+    [[nodiscard]] constexpr T&&       operator*() && noexcept { return std::forward<T>(*get()); }
+    [[nodiscard]] constexpr T const&& operator*() const&& noexcept { return std::forward<T const>(*get()); }
 };
+template <class T, class C, class D>
+[[nodiscard]] constexpr bool operator==(IndirectValue<T, C, D> const& lhs, IndirectValue<T, C, D> const& rhs) {
+    return lhs.get() == rhs.get();
+}
+template <class T, class C, class D>
+[[nodiscard]] constexpr auto operator<=>(IndirectValue<T, C, D> const& lhs, IndirectValue<T, C, D> const& rhs) {
+    return lhs.get() <=> rhs.get();
+}
+template <class T, class C, class D>
+[[nodiscard]] constexpr bool operator==(IndirectValue<T, C, D> const& lhs, std::nullptr_t) {
+    return lhs.get() == nullptr;
+}
+template <class T, class C, class D>
+[[nodiscard]] constexpr auto operator<=>(IndirectValue<T, C, D> const& lhs, std::nullptr_t) {
+    return lhs.get() <=> nullptr;
+}
+} // namespace ll::data
 
+namespace std {
+template <class T, class C, class D>
+struct hash<::ll::data::IndirectValue<T, C, D>> {
+    std::size_t operator()(::ll::data::IndirectValue<T, C, D> const& value) const { return hash<T*>{}(value.get()); }
+};
+} // namespace std
+
+namespace ll {
 template <class T, class D = std::default_delete<T>>
-using Indirect = IndirectValue<T, defaultCopy<T>, D>;
+using Indirect = data::IndirectValue<T, data::defaultCopy<T>, D>;
 
 template <
     class T,
-    class C = std::conditional_t<concepts::is_virtual_cloneable_v<T>, virtualCloneCopy<T>, polymorphicCopy<T>>,
+    class C =
+        std::conditional_t<concepts::is_virtual_cloneable_v<T>, data::virtualCloneCopy<T>, data::polymorphicCopy<T>>,
     class D = std::default_delete<T>>
-using Polymorphic = IndirectValue<T, C, D>;
+using Polymorphic = data::IndirectValue<T, C, D>;
 
 template <class T, class... Args>
 Indirect<T> makeIndirect(Args&&... args) {
@@ -176,5 +202,4 @@ template <class T, class... Args>
 Polymorphic<T> makePolymorphic(Args&&... args) {
     return Polymorphic<T>(new T(std::forward<Args>(args)...));
 }
-
-} // namespace ll::memory
+} // namespace ll

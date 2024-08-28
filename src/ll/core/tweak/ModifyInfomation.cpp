@@ -1,6 +1,8 @@
 #include "ll/core/tweak/ModifyInfomation.h"
 #include "ll/api/base/Containers.h"
 #include "ll/api/memory/Hook.h"
+#include "ll/api/utils/ErrorUtils.h"
+#include "ll/api/utils/StringUtils.h"
 #include "ll/core/Config.h"
 #include "ll/core/LeviLamina.h"
 #include "ll/core/Version.h"
@@ -39,15 +41,8 @@ LL_STATIC_HOOK(
 
 io::Logger serverLogger("Server");
 
-LL_STATIC_HOOK(
-    BedrockLogOutHook,
-    HookPriority::Normal,
-    BedrockLogOut,
-    void,
-    uint        priority,
-    char const* pszFormat,
-    ...
-) {
+LL_STATIC_HOOK(BedrockLogOutHook, HookPriority::Normal, BedrockLogOut, void, uint priority, char const* pszFormat, ...)
+try {
     bool        success = false;
     std::string buffer;
     va_list     va;
@@ -101,8 +96,13 @@ LL_STATIC_HOOK(
         if (!knownPriority) {
             line = fmt::format("<LVL|{}> {}", priority, line);
         }
-        serverLogger.log(level, line);
+        serverLogger.log(level, string_utils::replaceMcToAnsiCode(line));
     }
+} catch (...) {
+    try {
+        serverLogger.fatal("Fail to format [{}] {}", priority, pszFormat);
+        error_utils::printCurrentException(serverLogger, io::LogLevel::Fatal);
+    } catch (...) {}
 }
 
 // Block from adding LOG metadata

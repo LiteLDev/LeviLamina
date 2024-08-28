@@ -122,20 +122,22 @@ std::string getModuleFileName(void* handle, void* process) {
         .value_or("unknown module");
 }
 
-std::pair<std::tm, ushort> getLocalTime() {
+data::TmWithMs getLocalTime() {
     SYSTEMTIME sysTime;
     GetLocalTime(&sysTime);
-    std::tm time{
-        .tm_sec   = sysTime.wSecond,      // seconds after the minute - [0, 60] including leap second
-        .tm_min   = sysTime.wMinute,      // minutes after the hour - [0, 59]
-        .tm_hour  = sysTime.wHour,        // hours since midnight - [0, 23]
-        .tm_mday  = sysTime.wDay,         // day of the month - [1, 31]
-        .tm_mon   = sysTime.wMonth - 1,   // months since January - [0, 11]
-        .tm_year  = sysTime.wYear - 1900, // years since 1900
-        .tm_wday  = sysTime.wDayOfWeek,   // days since Sunday - [0, 6]
-        .tm_isdst = -1                    // daylight savings time flag
+    return data::TmWithMs{
+        {
+         .tm_sec   = sysTime.wSecond,      // seconds after the minute - [0, 60] including leap second
+            .tm_min   = sysTime.wMinute,      // minutes after the hour - [0, 59]
+            .tm_hour  = sysTime.wHour,        // hours since midnight - [0, 23]
+            .tm_mday  = sysTime.wDay,         // day of the month - [1, 31]
+            .tm_mon   = sysTime.wMonth - 1,   // months since January - [0, 11]
+            .tm_year  = sysTime.wYear - 1900, // years since 1900
+            .tm_wday  = sysTime.wDayOfWeek,   // days since Sunday - [0, 6]
+            .tm_isdst = -1                    // daylight savings time flag
+        },
+        sysTime.wMilliseconds
     };
-    return {time, sysTime.wMilliseconds};
 }
 
 std::string getEnvironmentVariable(std::string_view name) {

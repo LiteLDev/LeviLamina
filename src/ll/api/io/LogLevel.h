@@ -2,7 +2,8 @@
 
 namespace ll::io {
 class Logger;
-enum class LogLevel {
+enum class LogLevel : int {
+    Off = -1,
     Fatal,
     Error,
     Warn,

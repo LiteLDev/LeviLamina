@@ -1,11 +1,6 @@
 #pragma once
 
-#include <array>
-#include <filesystem>
-#include <fstream>
 #include <functional>
-#include <mutex>
-#include <optional>
 #include <string>
 #include <string_view>
 #include <utility>
@@ -13,6 +8,7 @@
 #include "ll/api/base/Concepts.h" // IWYU pragma: keep
 #include "ll/api/base/Macro.h"
 #include "ll/api/io/LogLevel.h"
+#include "ll/api/io/Sink.h"
 
 #include "fmt/chrono.h" // IWYU pragma: keep
 #include "fmt/color.h"
@@ -25,7 +21,8 @@
 
 namespace ll::io {
 class Logger {
-    LLAPI void print(LogLevel, std::string_view) const noexcept;
+    LLAPI void printStr(LogLevel, std::string&&) const noexcept;
+    LLAPI void printView(LogLevel, std::string_view) const noexcept;
 
     struct Impl;
 
@@ -34,72 +31,96 @@ class Logger {
 public:
     template <typename... Args>
     void log(LogLevel level, fmt::format_string<Args...> fmt, Args&&... args) const {
-        print(level, fmt::vformat(fmt.get(), fmt::make_format_args(args...)));
+        printStr(level, fmt::vformat(fmt.get(), fmt::make_format_args(args...)));
     }
+    void log(LogLevel level, std::string&& msg) const { printStr(level, std::move(msg)); }
     template <ll::concepts::IsString S>
     void log(LogLevel level, S const& msg) const {
-        print(level, msg);
+        printView(level, msg);
     }
 
     template <typename... Args>
     void fatal(fmt::format_string<Args...> fmt, Args&&... args) const {
-        print(LogLevel::Fatal, fmt::vformat(fmt.get(), fmt::make_format_args(args...)));
+        printStr(LogLevel::Fatal, fmt::vformat(fmt.get(), fmt::make_format_args(args...)));
     }
+    void fatal(std::string&& msg) const { printStr(LogLevel::Fatal, std::move(msg)); }
     template <ll::concepts::IsString S>
     void fatal(S const& msg) const {
-        print(LogLevel::Fatal, msg);
+        printView(LogLevel::Fatal, msg);
     }
 
     template <typename... Args>
     void error(fmt::format_string<Args...> fmt, Args&&... args) const {
-        print(LogLevel::Error, fmt::vformat(fmt.get(), fmt::make_format_args(args...)));
+        printStr(LogLevel::Error, fmt::vformat(fmt.get(), fmt::make_format_args(args...)));
     }
+    void error(std::string&& msg) const { printStr(LogLevel::Error, std::move(msg)); }
     template <ll::concepts::IsString S>
     void error(S const& msg) const {
-        print(LogLevel::Error, msg);
+        printView(LogLevel::Error, msg);
     }
 
     template <typename... Args>
     void warn(fmt::format_string<Args...> fmt, Args&&... args) const {
-        print(LogLevel::Warn, fmt::vformat(fmt.get(), fmt::make_format_args(args...)));
+        printStr(LogLevel::Warn, fmt::vformat(fmt.get(), fmt::make_format_args(args...)));
     }
+    void warn(std::string&& msg) const { printStr(LogLevel::Warn, std::move(msg)); }
     template <ll::concepts::IsString S>
     void warn(S const& msg) const {
-        print(LogLevel::Warn, msg);
+        printView(LogLevel::Warn, msg);
     }
 
     template <typename... Args>
     void info(fmt::format_string<Args...> fmt, Args&&... args) const {
-        print(LogLevel::Info, fmt::vformat(fmt.get(), fmt::make_format_args(args...)));
+        printStr(LogLevel::Info, fmt::vformat(fmt.get(), fmt::make_format_args(args...)));
     }
+    void info(std::string&& msg) const { printStr(LogLevel::Info, std::move(msg)); }
     template <ll::concepts::IsString S>
     void info(S const& msg) const {
-        print(LogLevel::Info, msg);
+        printView(LogLevel::Info, msg);
     }
 
     template <typename... Args>
     void debug(fmt::format_string<Args...> fmt, Args&&... args) const {
-        print(LogLevel::Debug, fmt::vformat(fmt.get(), fmt::make_format_args(args...)));
+        printStr(LogLevel::Debug, fmt::vformat(fmt.get(), fmt::make_format_args(args...)));
     }
+    void debug(std::string&& msg) const { printStr(LogLevel::Debug, std::move(msg)); }
     template <ll::concepts::IsString S>
     void debug(S const& msg) const {
-        print(LogLevel::Debug, msg);
+        printView(LogLevel::Debug, msg);
     }
 
     template <typename... Args>
     void trace(fmt::format_string<Args...> fmt, Args&&... args) const {
-        print(LogLevel::Trace, fmt::vformat(fmt.get(), fmt::make_format_args(args...)));
+        printStr(LogLevel::Trace, fmt::vformat(fmt.get(), fmt::make_format_args(args...)));
     }
+    void trace(std::string&& msg) const { printStr(LogLevel::Trace, std::move(msg)); }
     template <ll::concepts::IsString S>
     void trace(S const& msg) const {
-        print(LogLevel::Trace, msg);
+        printView(LogLevel::Trace, msg);
     }
 
-    LLNDAPI explicit Logger();
     LLAPI ~Logger();
+
+    LLNDAPI explicit Logger();
 
     LLNDAPI explicit Logger(std::string_view title);
 
     LLAPI void setTitle(std::string_view title);
+
+    LLAPI void setLevel(LogLevel level);
+
+    LLAPI void setFlushLevel(LogLevel level);
+
+    LLAPI void setFormatter(Polymorphic<Formatter> formatter);
+
+    LLAPI void flush() const;
+
+    LLAPI void clearSink() const;
+
+    LLAPI size_t addSink(std::shared_ptr<SinkBase> sink) const;
+
+    LLAPI std::shared_ptr<SinkBase> getSink(size_t index) const;
+
+    LLAPI void forEachSink(std::function<bool(SinkBase&)> const& fn) const;
 };
 } // namespace ll::io

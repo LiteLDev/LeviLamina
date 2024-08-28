@@ -33,7 +33,7 @@
 
 #include "mc/world/actor/DataItem.h"
 
-#include "ll/api/memory/IndirectValue.h"
+#include "ll/api/data/IndirectValue.h"
 
 // [0, 8, 16, 96, 97, 98, 104, 136, 144, 160, 176, 184, 196, 208, 232, 248, 304, 328, 360, 392, 408]
 
@@ -186,8 +186,8 @@ LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &Se
     ll::getLogger().debug("{}", 3 / v1);
 
 
-    auto indirect = ll::memory::makePolymorphic<Test>();
-    indirect      = ll::memory::makePolymorphic<TestD>(13, 23);
+    auto indirect = ll::makePolymorphic<Test>();
+    indirect      = ll::makePolymorphic<TestD>(13, 23);
 
     auto indirect2 = indirect;
     auto indirect3 = indirect;

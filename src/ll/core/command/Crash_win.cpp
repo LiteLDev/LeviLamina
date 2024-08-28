@@ -5,6 +5,8 @@
 #include "ll/api/i18n/I18n.h"
 #include "ll/core/Config.h"
 
+#include "windows.h"
+
 namespace ll::command {
 struct Code {
     int exceptionCode{0};
@@ -19,8 +21,7 @@ void registerCrashCommand() {
     cmd.overload<Code>()
         .optional("exceptionCode")
         .execute([&](CommandOrigin const&, CommandOutput&, Code const& params) {
-            std::thread([&] { throw std::system_error(std::error_code{params.exceptionCode, std::system_category()}); }
-            ).detach();
+            std::thread([&] { RaiseException(params.exceptionCode, 0, 0, nullptr); }).detach();
         });
 }
 } // namespace ll::command
