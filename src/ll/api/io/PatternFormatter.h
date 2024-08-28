@@ -3,7 +3,6 @@
 #include <array>
 #include <bitset>
 
-#include "ll/api/base/Macro.h"
 #include "ll/api/io/Formatter.h"
 
 #include "fmt/color.h"
@@ -51,7 +50,7 @@ public:
         }
     };
 
-    PatternFormatter(std::string pattern, bool colored = true, std::bitset<4> const& bracketed = 0)
+    PatternFormatter(std::string pattern, bool colored = supportColorLog(), std::bitset<4> const& bracketed = 0)
     : pattern(std::move(pattern)),
       bracketed(bracketed),
       colored(colored) {}

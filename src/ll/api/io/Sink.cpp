@@ -1,7 +1,5 @@
 #include "ll/api/io/Sink.h"
 
-#include "pl/Config.h"
-
 namespace ll::io {
 Sink::~Sink() = default;
 Sink::Sink(Polymorphic<Formatter> formatter) : formatter(std::move(formatter)) {}

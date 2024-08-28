@@ -19,7 +19,7 @@ DefaultSink::Impl& DefaultSink::getImpl() {
 }
 
 DefaultSink::DefaultSink()
-: Sink(makePolymorphic<PatternFormatter>("{tm:.3%T.} {lvl} {tit} {msg}", pl::pl_color_log, 0b0010)),
+: Sink(makePolymorphic<PatternFormatter>("{tm:.3%T.} {lvl} {tit} {msg}", Formatter::supportColorLog(), 0b0010)),
   impl(getImpl()) {}
 
 DefaultSink::~DefaultSink() = default;
