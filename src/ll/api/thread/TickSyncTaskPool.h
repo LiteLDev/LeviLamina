@@ -26,7 +26,6 @@ public:
     }
 
 private:
-    struct Worker;
     struct Impl;
     std::unique_ptr<Impl> impl;
 

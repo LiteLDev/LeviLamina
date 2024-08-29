@@ -4,11 +4,10 @@
 #include <memory>
 #include <utility>
 
-#include "ll/api/memory/Hook.h"
+#include "ll/api/event/EventBus.h"
+#include "ll/api/event/world/LevelTickEvent.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/core/LeviLamina.h"
-
-#include "mc/server/ServerLevel.h"
 
 #include "concurrent_queue.h"
 
@@ -16,24 +15,24 @@ namespace ll::thread {
 
 static Concurrency::concurrent_queue<std::function<void()>> works;
 
-LL_TYPE_INSTANCE_HOOK(TickSyncTaskPool::Worker, HookPriority::Low, ServerLevel, &ServerLevel::_subTick, void) {
-    std::function<void()> f;
-    while (works.try_pop(f)) {
-        try {
-            f();
-        } catch (...) {
-            getLogger().error("Error in TickSyncTaskPool:");
-            error_utils::printCurrentException(getLogger());
-        }
-    }
-    origin();
+struct TickSyncTaskPool::Impl {};
+
+TickSyncTaskPool::TickSyncTaskPool() : impl(std::make_unique<Impl>()) {
+    static auto worker = event::EventBus::getInstance().emplaceListener<event::LevelTickEvent>(
+        [](auto&) {
+            std::function<void()> f;
+            while (works.try_pop(f)) {
+                try {
+                    f();
+                } catch (...) {
+                    getLogger().error("Error in TickSyncTaskPool:");
+                    error_utils::printCurrentException(getLogger());
+                }
+            }
+        },
+        event::EventPriority::Low
+    );
 }
-
-struct TickSyncTaskPool::Impl {
-    ::ll::memory::HookRegistrar<Worker> reg;
-};
-
-TickSyncTaskPool::TickSyncTaskPool() : impl(std::make_unique<Impl>()) {}
 TickSyncTaskPool::~TickSyncTaskPool() {}
 
 void TickSyncTaskPool::addTaskImpl(std::function<void()> f) { works.push(std::move(f)); }

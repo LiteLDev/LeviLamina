@@ -172,7 +172,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &Se
     );
 
     ll::getLogger().debug("{}", ll::reflection::getRawName<&FillCommand::execute>());
-    ll::getLogger().debug("{}", ll::reflection::getRawName<&ServerLevel::_subTick>());
+    ll::getLogger().debug("{}", ll::reflection::getRawName<&ServerLevel::_initializeMapDataManager>());
 
     ll::reflection::deserialize(helloReflection, CompoundTagVariant::parse(R"({"structure":{"hello":""}})").value())
         .error()
