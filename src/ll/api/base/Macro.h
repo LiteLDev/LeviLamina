@@ -1,5 +1,4 @@
 #pragma once
-#pragma warning(error : 4834)
 
 #include "ll/api/base/CompilerPredefine.h"
 

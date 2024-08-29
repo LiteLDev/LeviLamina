@@ -1,7 +1,7 @@
 #pragma once
 
-#include "ll/api/io/LogMessage.h"
 #include "ll/api/base/Macro.h"
+#include "ll/api/io/LogMessage.h"
 
 namespace ll::io {
 class Formatter {

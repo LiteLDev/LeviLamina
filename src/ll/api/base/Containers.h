@@ -7,6 +7,9 @@
 #include <string>
 #include <string_view>
 
+#include "ll/api/data/ConcurrentQueue.h"
+#include "ll/api/data/IndirectValue.h"
+
 #include "parallel_hashmap/btree.h"
 #include "parallel_hashmap/phmap.h"
 
@@ -67,28 +70,28 @@ template <
     class Hash  = ::phmap::priv::hash_default_hash<Key>,
     class Eq    = ::phmap::priv::hash_default_eq<Key>,
     class Alloc = ::phmap::priv::Allocator<Key>>
-using ParallelSet = ::phmap::parallel_flat_hash_set<Key, Hash, Eq, Alloc, 4, std::shared_mutex>;
+using ConcurrentDenseSet = ::phmap::parallel_flat_hash_set<Key, Hash, Eq, Alloc, 4, std::shared_mutex>;
 template <
     class Key,
     class Value,
     class Hash  = ::phmap::priv::hash_default_hash<Key>,
     class Eq    = ::phmap::priv::hash_default_eq<Key>,
     class Alloc = ::phmap::priv::Allocator<::phmap::priv::Pair<Key const, Value>>>
-using ParallelMap = ::phmap::parallel_flat_hash_map<Key, Value, Hash, Eq, Alloc, 4, std::shared_mutex>;
+using ConcurrentDenseMap = ::phmap::parallel_flat_hash_map<Key, Value, Hash, Eq, Alloc, 4, std::shared_mutex>;
 
 template <
     class Key,
     class Hash  = ::phmap::priv::hash_default_hash<Key>,
     class Eq    = ::phmap::priv::hash_default_eq<Key>,
     class Alloc = ::phmap::priv::Allocator<Key>>
-using ParallelNodeSet = ::phmap::parallel_node_hash_set<Key, Hash, Eq, Alloc, 4, std::shared_mutex>;
+using ConcurrentDenseNodeSet = ::phmap::parallel_node_hash_set<Key, Hash, Eq, Alloc, 4, std::shared_mutex>;
 template <
     class Key,
     class Value,
     class Hash  = ::phmap::priv::hash_default_hash<Key>,
     class Eq    = ::phmap::priv::hash_default_eq<Key>,
     class Alloc = ::phmap::priv::Allocator<::phmap::priv::Pair<Key const, Value>>>
-using ParallelNodeMap = ::phmap::parallel_node_hash_map<Key, Value, Hash, Eq, Alloc, 4, std::shared_mutex>;
+using ConcurrentDenseNodeMap = ::phmap::parallel_node_hash_map<Key, Value, Hash, Eq, Alloc, 4, std::shared_mutex>;
 
 template <class Value>
 using StringMap = DenseMap<::std::string, Value>;
@@ -98,5 +101,30 @@ template <class Value>
 using StringNodeMap = DenseNodeMap<::std::string, Value>;
 template <class Value>
 using SmallStringNodeMap = SmallDenseNodeMap<::std::string, Value>;
+
+
+template <typename T, typename A = std::allocator<T>>
+using ConcurrentQueue = data::concurrent_queue<T, A>;
+
+
+template <class T, class D = std::default_delete<T>>
+using Indirect = data::IndirectValue<T, data::defaultCopy<T>, D>;
+
+template <
+    class T,
+    class C =
+        std::conditional_t<concepts::is_virtual_cloneable_v<T>, data::virtualCloneCopy<T>, data::polymorphicCopy<T>>,
+    class D = std::default_delete<T>>
+using Polymorphic = data::IndirectValue<T, C, D>;
+
+template <class T, class... Args>
+Indirect<T> makeIndirect(Args&&... args) {
+    return Indirect<T>(new T(std::forward<Args>(args)...));
+}
+
+template <class T, class... Args>
+Polymorphic<T> makePolymorphic(Args&&... args) {
+    return Polymorphic<T>(new T(std::forward<Args>(args)...));
+}
 
 } // namespace ll

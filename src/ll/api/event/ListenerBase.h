@@ -42,7 +42,6 @@ public:
     [[nodiscard]] constexpr EventPriority getPriority() const { return priority; }
 
     [[nodiscard]] constexpr bool operator==(ListenerBase const& other) const noexcept { return id == other.id; }
-    [[nodiscard]] constexpr bool operator!=(ListenerBase const& other) const noexcept { return id != other.id; }
 
     [[nodiscard]] constexpr std::strong_ordering operator<=>(ListenerBase const& other) const noexcept {
         if (priority != other.priority) {

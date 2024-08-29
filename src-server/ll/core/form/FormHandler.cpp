@@ -131,7 +131,7 @@ void ModalFormHandler::handle(
     }
 }
 
-ParallelMap<uint, std::unique_ptr<FormHandler>> formHandlers = {};
+ConcurrentDenseMap<uint, std::unique_ptr<FormHandler>> formHandlers = {};
 
 bool handleFormPacket(
     Player&                              player,

@@ -118,7 +118,7 @@ struct ListenerInfo {
 
 class EventBus::EventBusImpl {
 public:
-    ParallelMap<EventId, EventStorage> events;
+    ConcurrentDenseMap<EventId, EventStorage> events;
 
     std::recursive_mutex               infoMutex;
     DenseMap<std::string, ModInfo>     modInfos;

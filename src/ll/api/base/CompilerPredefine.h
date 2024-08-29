@@ -61,6 +61,10 @@
 #define LL_CURRENT_FUNCTION __builtin_FUNCTION()
 #endif
 
+#ifndef LL_MACHINE_PAUSE
+#define LL_MACHINE_PAUSE _mm_pause()
+#endif
+
 // MSVC has customized some functions and classes inside the compiler, but they are not included in IntelliSense. This
 // header file is only used for IntelliSense.
 #if defined(__INTELLISENSE__) || defined(__clang__) || defined(__clangd__)

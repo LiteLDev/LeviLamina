@@ -1,9 +1,9 @@
 #pragma once
 
-#include "gsl/gsl"
-#include "ll/api/data/IndirectValue.h"
-#include "ll/api/io/Formatter.h"
 #include <memory>
+
+#include "ll/api/base/Containers.h"
+#include "ll/api/io/Formatter.h"
 
 namespace ll::io {
 class SinkBase : public std::enable_shared_from_this<SinkBase> {

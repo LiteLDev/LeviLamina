@@ -9,11 +9,11 @@
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/core/LeviLamina.h"
 
-#include "concurrent_queue.h"
+#include "ll/api/base/Containers.h"
 
 namespace ll::thread {
 
-static Concurrency::concurrent_queue<std::function<void()>> works;
+static ConcurrentQueue<std::function<void()>> works;
 
 struct TickSyncTaskPool::Impl {};
 
