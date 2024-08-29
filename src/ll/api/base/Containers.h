@@ -69,29 +69,37 @@ template <
     class Key,
     class Hash  = ::phmap::priv::hash_default_hash<Key>,
     class Eq    = ::phmap::priv::hash_default_eq<Key>,
-    class Alloc = ::phmap::priv::Allocator<Key>>
-using ConcurrentDenseSet = ::phmap::parallel_flat_hash_set<Key, Hash, Eq, Alloc, 4, std::shared_mutex>;
+    class Alloc = ::phmap::priv::Allocator<Key>,
+    size_t N    = 4,
+    class Mutex = std::shared_mutex>
+using ConcurrentDenseSet = ::phmap::parallel_flat_hash_set<Key, Hash, Eq, Alloc, N, Mutex>;
 template <
     class Key,
     class Value,
     class Hash  = ::phmap::priv::hash_default_hash<Key>,
     class Eq    = ::phmap::priv::hash_default_eq<Key>,
-    class Alloc = ::phmap::priv::Allocator<::phmap::priv::Pair<Key const, Value>>>
-using ConcurrentDenseMap = ::phmap::parallel_flat_hash_map<Key, Value, Hash, Eq, Alloc, 4, std::shared_mutex>;
+    class Alloc = ::phmap::priv::Allocator<::phmap::priv::Pair<Key const, Value>>,
+    size_t N    = 4,
+    class Mutex = std::shared_mutex>
+using ConcurrentDenseMap = ::phmap::parallel_flat_hash_map<Key, Value, Hash, Eq, Alloc, N, Mutex>;
 
 template <
     class Key,
     class Hash  = ::phmap::priv::hash_default_hash<Key>,
     class Eq    = ::phmap::priv::hash_default_eq<Key>,
-    class Alloc = ::phmap::priv::Allocator<Key>>
-using ConcurrentDenseNodeSet = ::phmap::parallel_node_hash_set<Key, Hash, Eq, Alloc, 4, std::shared_mutex>;
+    class Alloc = ::phmap::priv::Allocator<Key>,
+    size_t N    = 4,
+    class Mutex = std::shared_mutex>
+using ConcurrentDenseNodeSet = ::phmap::parallel_node_hash_set<Key, Hash, Eq, Alloc, N, Mutex>;
 template <
     class Key,
     class Value,
     class Hash  = ::phmap::priv::hash_default_hash<Key>,
     class Eq    = ::phmap::priv::hash_default_eq<Key>,
-    class Alloc = ::phmap::priv::Allocator<::phmap::priv::Pair<Key const, Value>>>
-using ConcurrentDenseNodeMap = ::phmap::parallel_node_hash_map<Key, Value, Hash, Eq, Alloc, 4, std::shared_mutex>;
+    class Alloc = ::phmap::priv::Allocator<::phmap::priv::Pair<Key const, Value>>,
+    size_t N    = 4,
+    class Mutex = std::shared_mutex>
+using ConcurrentDenseNodeMap = ::phmap::parallel_node_hash_map<Key, Value, Hash, Eq, Alloc, N, Mutex>;
 
 template <class Value>
 using StringMap = DenseMap<::std::string, Value>;
@@ -109,7 +117,6 @@ using ConcurrentQueue = data::concurrent_queue<T, A>;
 
 template <class T, class D = std::default_delete<T>>
 using Indirect = data::IndirectValue<T, data::defaultCopy<T>, D>;
-
 template <
     class T,
     class C =
@@ -121,7 +128,6 @@ template <class T, class... Args>
 Indirect<T> makeIndirect(Args&&... args) {
     return Indirect<T>(new T(std::forward<Args>(args)...));
 }
-
 template <class T, class... Args>
 Polymorphic<T> makePolymorphic(Args&&... args) {
     return Polymorphic<T>(new T(std::forward<Args>(args)...));

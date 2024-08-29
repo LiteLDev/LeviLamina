@@ -218,7 +218,6 @@ protected:
     using page_allocator_traits = std::allocator_traits<page_allocator_type>;
 
 public:
-    using item_constructor_type                = void (*)(value_type* location, const void* src);
     micro_queue()                              = default;
     micro_queue(const micro_queue&)            = delete;
     micro_queue& operator=(const micro_queue&) = delete;
@@ -298,8 +297,8 @@ public:
         }
         return success;
     }
-
-    micro_queue& assign(const micro_queue& src, queue_allocator_type& allocator, item_constructor_type construct_item) {
+    template <bool Move>
+    micro_queue& assign(const micro_queue& src, queue_allocator_type& allocator) {
         head_counter.store(src.head_counter.load(std::memory_order_relaxed), std::memory_order_relaxed);
         tail_counter.store(src.tail_counter.load(std::memory_order_relaxed), std::memory_order_relaxed);
 
@@ -317,7 +316,7 @@ public:
 
             try_call([&] {
                 head_page.store(
-                    make_copy(allocator, srcp, index, end_in_first_page, g_index, construct_item),
+                    make_assign<Move>(allocator, srcp, index, end_in_first_page, g_index),
                     std::memory_order_relaxed
                 );
             }).on_exception([&] {
@@ -329,7 +328,7 @@ public:
             try_call([&] {
                 if (srcp != src.tail_page.load(std::memory_order_relaxed)) {
                     for (srcp = srcp->next; srcp != src.tail_page.load(std::memory_order_relaxed); srcp = srcp->next) {
-                        cur_page->next = make_copy(allocator, srcp, 0, items_per_page, g_index, construct_item);
+                        cur_page->next = make_assign<Move>(allocator, srcp, 0, items_per_page, g_index);
                         cur_page       = cur_page->next;
                     }
                     size_type last_index = modulo_power_of_two(
@@ -338,7 +337,7 @@ public:
                     );
                     if (last_index == 0) last_index = items_per_page;
 
-                    cur_page->next = make_copy(allocator, srcp, 0, last_index, g_index, construct_item);
+                    cur_page->next = make_assign<Move>(allocator, srcp, 0, last_index, g_index);
                     cur_page       = cur_page->next;
                 }
                 tail_page.store(cur_page, std::memory_order_relaxed);
@@ -353,13 +352,13 @@ public:
         return *this;
     }
 
-    padded_page* make_copy(
+    template <bool Move>
+    padded_page* make_assign(
         queue_allocator_type& allocator,
         const padded_page*    src_page,
         size_type             begin_in_page,
         size_type             end_in_page,
-        ticket_type&          g_index,
-        item_constructor_type construct_item
+        ticket_type&          g_index
     ) {
         page_allocator_type page_allocator(allocator);
         padded_page*        new_page = page_allocator_traits::allocate(page_allocator, 1);
@@ -367,7 +366,7 @@ public:
         new_page->mask.store(src_page->mask.load(std::memory_order_relaxed), std::memory_order_relaxed);
         for (; begin_in_page != end_in_page; ++begin_in_page, ++g_index) {
             if (new_page->mask.load(std::memory_order_relaxed) & uintptr_t(1) << begin_in_page) {
-                copy_item(*new_page, begin_in_page, *src_page, begin_in_page, construct_item);
+                construct_item<Move>(*new_page, begin_in_page, *src_page, begin_in_page);
             }
         }
         return new_page;
@@ -436,15 +435,15 @@ private:
         ~destroyer() { my_value.~T(); }
     };
 
-    void copy_item(
-        padded_page&          dst,
-        size_type             dindex,
-        const padded_page&    src,
-        size_type             sindex,
-        item_constructor_type construct_item
-    ) {
+
+    template <bool Move>
+    void construct_item(padded_page& dst, size_type dindex, const padded_page& src, size_type sindex) {
         auto& src_item = src[sindex];
-        construct_item(&dst[dindex], static_cast<const void*>(&src_item));
+        if constexpr (Move) {
+            std::construct_at(&dst[dindex], std::move(src_item));
+        } else {
+            std::construct_at(&dst[dindex], std::as_const(src_item));
+        }
     }
 
     void assign_and_destroy_item(void* dst, padded_page& src, size_type index) {
@@ -527,7 +526,6 @@ struct concurrent_queue_rep {
     using allocator_traits_type = std::allocator_traits<allocator_type>;
     using padded_page           = typename micro_queue_type::padded_page;
     using page_allocator_type   = typename micro_queue_type::page_allocator_type;
-    using item_constructor_type = typename micro_queue_type::item_constructor_type;
 
 private:
     using page_allocator_traits = std::allocator_traits<page_allocator_type>;
@@ -555,7 +553,8 @@ public:
         n_invalid_entries.store(0, std::memory_order_relaxed);
     }
 
-    void assign(const concurrent_queue_rep& src, queue_allocator_type& alloc, item_constructor_type construct_item) {
+    template <bool Move>
+    void assign(const concurrent_queue_rep& src, queue_allocator_type& alloc) {
         head_counter.store(src.head_counter.load(std::memory_order_relaxed), std::memory_order_relaxed);
         tail_counter.store(src.tail_counter.load(std::memory_order_relaxed), std::memory_order_relaxed);
         n_invalid_entries.store(src.n_invalid_entries.load(std::memory_order_relaxed), std::memory_order_relaxed);
@@ -564,7 +563,7 @@ public:
         size_type queue_idx = 0;
         try_call([&] {
             for (; queue_idx < n_queue; ++queue_idx) {
-                array[queue_idx].assign(src.array[queue_idx], alloc, construct_item);
+                array[queue_idx].template assign<Move>(src.array[queue_idx], alloc);
             }
         }).on_exception([&] {
             for (size_type i = 0; i < queue_idx + 1; ++i) {
@@ -805,12 +804,12 @@ public:
     : concurrent_queue(init.begin(), init.end(), alloc) {}
 
     concurrent_queue(const concurrent_queue& src, const allocator_type& a) : concurrent_queue(a) {
-        my_queue_representation->assign(*src.my_queue_representation, my_allocator, copy_construct_item);
+        my_queue_representation->assign<false>(*src.my_queue_representation, my_allocator);
     }
 
     concurrent_queue(const concurrent_queue& src)
     : concurrent_queue(queue_allocator_traits::select_on_container_copy_construction(src.get_allocator())) {
-        my_queue_representation->assign(*src.my_queue_representation, my_allocator, copy_construct_item);
+        my_queue_representation->assign<false>(*src.my_queue_representation, my_allocator);
     }
 
     // Move constructors
@@ -823,7 +822,7 @@ public:
             internal_swap(src);
         } else {
             // allocators are different => performing per-element move
-            my_queue_representation->assign(*src.my_queue_representation, my_allocator, move_construct_item);
+            my_queue_representation->assign<true>(*src.my_queue_representation, my_allocator);
             src.clear();
         }
     }
@@ -841,7 +840,7 @@ public:
         if (my_queue_representation != other.my_queue_representation) {
             clear();
             my_allocator = other.my_allocator;
-            my_queue_representation->assign(*other.my_queue_representation, my_allocator, copy_construct_item);
+            my_queue_representation->assign<false>(*other.my_queue_representation, my_allocator);
         }
         return *this;
     }
@@ -853,8 +852,7 @@ public:
             if (my_allocator == other.my_allocator) {
                 internal_swap(other);
             } else {
-                my_queue_representation
-                    ->assign(*other.my_queue_representation, other.my_allocator, move_construct_item);
+                my_queue_representation->assign<true>(*other.my_queue_representation, other.my_allocator);
                 other.clear();
                 my_allocator = std::move(other.my_allocator);
             }
@@ -871,7 +869,7 @@ public:
     void assign(InputIterator first, InputIterator last) {
         concurrent_queue src(first, last);
         clear();
-        my_queue_representation->assign(*src.my_queue_representation, my_allocator, move_construct_item);
+        my_queue_representation->assign<true>(*src.my_queue_representation, my_allocator);
     }
 
     void assign(std::initializer_list<value_type> init) { assign(init.begin(), init.end()); }
@@ -937,18 +935,6 @@ private:
 
     template <typename Container, typename Value, typename A>
     friend class concurrent_queue_iterator;
-
-    static void copy_construct_item(T* location, const void* src) {
-        queue_allocator_traits::construct(my_allocator, location, *static_cast<value_type const*>(src));
-    }
-
-    static void move_construct_item(T* location, const void* src) {
-        queue_allocator_traits::construct(
-            my_allocator,
-            location,
-            std::move(*static_cast<value_type*>(const_cast<void*>(src)))
-        );
-    }
 
     queue_allocator_type       my_allocator;
     queue_representation_type* my_queue_representation;
