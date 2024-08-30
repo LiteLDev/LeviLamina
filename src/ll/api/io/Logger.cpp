@@ -26,6 +26,12 @@ static void printLogError(std::string_view msg) noexcept try {
     } catch (...) {}
 }
 
+static std::shared_ptr<thread::ThreadPool> const& getLogPool() {
+    static std::shared_ptr<thread::ThreadPool> p =
+        std::make_shared<thread::ThreadPool>(1); // logger need keep some order
+    return p;
+}
+
 struct Logger::Impl {
     std::string title;
     LogLevel    level;
@@ -38,7 +44,7 @@ struct Logger::Impl {
 };
 Logger::~Logger() = default;
 
-Logger::Logger(std::string_view title) : impl(std::make_unique<Impl>(title, thread::ThreadPool::getDefault())) {
+Logger::Logger(std::string_view title) : impl(std::make_unique<Impl>(title, getLogPool())) {
     impl->level = (LogLevel)(std::clamp(pl::pl_log_level - 1, 0, 5));
     impl->sinks = std::make_shared<std::vector<std::shared_ptr<SinkBase>>>();
     impl->sinks->push_back(std::make_shared<DefaultSink>());
