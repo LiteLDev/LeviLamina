@@ -6,7 +6,7 @@
 namespace ll::io {
 class Formatter {
 public:
-    static LLNDAPI bool supportColorLog();
+    LLNDAPI static bool supportColorLog();
 
     virtual ~Formatter() = default;
 

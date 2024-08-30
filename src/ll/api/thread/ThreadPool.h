@@ -9,10 +9,11 @@
 
 namespace ll::thread {
 class ThreadPool {
-
 public:
     LLAPI explicit ThreadPool(size_t nThreads = 1);
     LLAPI ~ThreadPool();
+
+    LLNDAPI static std::shared_ptr<ThreadPool> getDefault();
 
     LLAPI void resize(size_t nThreads = 1);
     LLAPI void destroy();
