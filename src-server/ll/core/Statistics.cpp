@@ -102,17 +102,17 @@ static nlohmann::json getCustomCharts() {
 
 struct Statistics::Impl {
     ll::schedule::SystemTimeScheduler scheduler;
-    ll::thread::TickSyncTaskPool      pool;
     nlohmann::json                    json;
 
     void submitData() {
-        pool.addTask([this]() {
+        ll::thread::TickSyncTaskPool::getDefault()
+            ->addTask([this]() {
                 nlohmann::json pluginInfo;
                 pluginInfo["pluginName"]   = getSelfModIns()->getName();
                 pluginInfo["customCharts"] = getCustomCharts();
                 json["plugins"].emplace_back(pluginInfo);
-            }
-        ).wait();
+            })
+            .wait();
         try {
             auto body = json.dump();
             cpr::Post(

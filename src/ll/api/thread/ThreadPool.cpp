@@ -61,7 +61,7 @@ void ThreadPool::addTaskImpl(std::function<void()> task) {
     }
     impl->condition.notify_one();
 }
-std::shared_ptr<ThreadPool> ThreadPool::getDefault() {
+std::shared_ptr<ThreadPool> const& ThreadPool::getDefault() {
     static std::shared_ptr<ThreadPool> p =
         std::make_shared<ThreadPool>(std::max((int)std::thread::hardware_concurrency() - 2, 2));
     return p;

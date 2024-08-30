@@ -14,6 +14,8 @@ public:
 
     LLAPI ~TickSyncTaskPool();
 
+    LLNDAPI static std::shared_ptr<TickSyncTaskPool> const& getDefault();
+
     template <class F, class... Args>
     decltype(auto) addTask(F&& f, Args&&... args) {
         auto task =
