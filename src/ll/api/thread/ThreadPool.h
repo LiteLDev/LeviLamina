@@ -1,38 +1,24 @@
 #pragma once
 
-#include <functional>
-#include <future>
-#include <memory>
-#include <type_traits>
-
 #include "ll/api/base/Macro.h"
+#include "ll/api/thread/TaskPool.h"
 
 namespace ll::thread {
-class ThreadPool {
+class ThreadPool : public TaskPool {
+    struct Impl;
+    std::unique_ptr<Impl> impl;
+
+protected:
+    LLAPI void addTaskImpl(std::function<void()> f) override;
+
 public:
     LLAPI explicit ThreadPool(size_t nThreads = 1);
-    LLAPI ~ThreadPool();
 
-    LLNDAPI static std::shared_ptr<ThreadPool> const& getDefault();
+    LLAPI ~ThreadPool() override;
 
     LLAPI void resize(size_t nThreads = 1);
     LLAPI void destroy();
 
-    template <class F, class... Args>
-    decltype(auto) addTask(F&& f, Args&&... args) {
-        auto task =
-            std::make_shared<std::packaged_task<std::invoke_result_t<F, Args...>()>>([f = std::forward<F>(f), args...] {
-                return f(args...);
-            });
-        auto res = task->get_future();
-        addTaskImpl([task] { (*task)(); });
-        return res;
-    }
-
-private:
-    struct Impl;
-    std::unique_ptr<Impl> impl;
-
-    LLAPI void addTaskImpl(std::function<void()>);
+    LLNDAPI static std::shared_ptr<ThreadPool> const& getDefault();
 };
 } // namespace ll::thread

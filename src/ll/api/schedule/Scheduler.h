@@ -53,12 +53,12 @@ private:
     using task_ptr   = std::shared_ptr<Task<Clock>>;
     using tasks_type = std::multimap<time_point, task_ptr>;
 
-    std::recursive_mutex mutex;
-    tasks_type           tasks;
-    std::atomic<bool>    done;
-    Sleeper              sleeper;
-    Pool                 workers;
-    std::thread          manager;
+    std::recursive_mutex              mutex;
+    tasks_type                        tasks;
+    std::atomic<bool>                 done;
+    Sleeper                           sleeper;
+    std::shared_ptr<thread::TaskPool> workers;
+    std::thread                       manager;
 
     task_ptr addTask(task_ptr t) {
         if (t->isCancelled()) {
@@ -91,7 +91,7 @@ private:
                 continue;
             }
             if (task->interval()) {
-                workers.addTask([this, task] {
+                workers->addTask([this, task] {
                     try {
                         task->call();
                     } catch (...) {
@@ -100,7 +100,7 @@ private:
                     addTask(task);
                 });
             } else {
-                workers.addTask([task] {
+                workers->addTask([task] {
                     try {
                         task->call();
                     } catch (...) {
@@ -127,9 +127,9 @@ public:
     Scheduler& operator=(Scheduler&&)      = delete;
     Scheduler& operator=(Scheduler const&) = delete;
 
-    template <class... Args>
-    explicit Scheduler(Args&&... args) : done(false),
-                                         workers(std::forward<Args>(args)...) {
+    explicit Scheduler(std::shared_ptr<thread::TaskPool> pool = Pool::getDefault())
+    : done(false),
+      workers(std::move(pool)) {
         manager = std::thread([this] {
             while (!done) {
                 if (tasks.empty()) {
