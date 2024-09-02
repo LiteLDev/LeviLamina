@@ -199,7 +199,7 @@ target("LeviLamina")
             -- "src/ll/api/service/ServiceManager.cpp",
             -- "src/ll/api/utils/CryptoUtils.cpp",
             -- "src/ll/api/thread/TickSyncSleep.cpp",
-            -- "src/ll/api/thread/TickSyncTaskPool.cpp",
+            -- "src/ll/api/thread/ServerThreadExecuter.cpp",
             -- "src/ll/core/tweak/ModifyMemoryAllocator.cpp"
         )
         add_cxflags("/wd4273")

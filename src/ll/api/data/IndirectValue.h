@@ -85,7 +85,7 @@ public:
 
     constexpr IndirectValue(T* ptr) noexcept : storage(zeroThenVariadicArgs, ptr) {}
 
-    constexpr IndirectValue() noexcept {}
+    constexpr IndirectValue() noexcept : storage(zeroThenVariadicArgs) {}
 
     template <class... Args>
     constexpr IndirectValue(std::in_place_t, Args&&... args)

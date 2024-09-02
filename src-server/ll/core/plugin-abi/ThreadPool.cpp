@@ -1,6 +1,6 @@
-#include "ll/api/thread/ThreadPool.h"
 
 #include <condition_variable>
+#include <functional>
 #include <mutex>
 #include <queue>
 #include <stdexcept>
@@ -8,6 +8,22 @@
 #include <vector>
 
 #include "ll/api/utils/ErrorUtils.h"
+
+namespace ll::thread {
+class ThreadPool {
+    struct Impl;
+    std::unique_ptr<Impl> impl;
+
+    LLAPI void addTaskImpl(std::function<void()>);
+
+public:
+    LLAPI explicit ThreadPool(size_t nThreads = 1);
+    LLAPI ~ThreadPool();
+
+    LLAPI void resize(size_t nThreads = 1);
+    LLAPI void destroy();
+};
+} // namespace ll::thread
 
 namespace ll::thread {
 
@@ -60,10 +76,5 @@ void ThreadPool::addTaskImpl(std::function<void()> task) {
         impl->tasks.emplace(std::move(task));
     }
     impl->condition.notify_one();
-}
-std::shared_ptr<ThreadPool> const& ThreadPool::getDefault() {
-    static std::shared_ptr<ThreadPool> p =
-        std::make_shared<ThreadPool>(std::max((int)std::thread::hardware_concurrency() - 2, 2));
-    return p;
 }
 } // namespace ll::thread

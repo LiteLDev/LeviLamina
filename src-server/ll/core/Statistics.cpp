@@ -105,8 +105,8 @@ struct Statistics::Impl {
     nlohmann::json                    json;
 
     void submitData() {
-        ll::thread::TickSyncTaskPool::getDefault()
-            ->addTask([this]() {
+        ll::thread::ServerThreadExecuter::getDefault()
+            ->addPackagedTask([this]() {
                 nlohmann::json pluginInfo;
                 pluginInfo["pluginName"]   = getSelfModIns()->getName();
                 pluginInfo["customCharts"] = getCustomCharts();

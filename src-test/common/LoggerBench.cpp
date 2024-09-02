@@ -34,7 +34,7 @@
 
 //     //  sync  1 thread 19.7099s
 //     //  sync 10 thread 22.6127s
-//     // async 10 thread  0.4128s
+//     // async 10 thread  0.4010s
 
 //     return true;
 // });

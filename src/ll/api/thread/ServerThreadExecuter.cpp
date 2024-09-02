@@ -1,4 +1,4 @@
-#include "ll/api/thread/TickSyncTaskPool.h"
+#include "ll/api/thread/ServerThreadExecuter.h"
 
 #include <functional>
 #include <memory>
@@ -13,12 +13,12 @@
 
 namespace ll::thread {
 
-struct TickSyncTaskPool::Impl {
+struct ServerThreadExecuter::Impl {
     ConcurrentQueue<std::function<void()>> works;
     event::ListenerPtr                     worker;
 };
 
-TickSyncTaskPool::TickSyncTaskPool() : impl(std::make_unique<Impl>()) {
+ServerThreadExecuter::ServerThreadExecuter() : impl(std::make_unique<Impl>()) {
     impl->worker = event::EventBus::getInstance().emplaceListener<event::LevelTickEvent>(
         [this](auto&) {
             std::function<void()> f;
@@ -26,7 +26,7 @@ TickSyncTaskPool::TickSyncTaskPool() : impl(std::make_unique<Impl>()) {
                 try {
                     f();
                 } catch (...) {
-                    getLogger().error("Error in TickSyncTaskPool:");
+                    getLogger().error("Error in ServerThreadExecuter:");
                     error_utils::printCurrentException(getLogger());
                 }
             }
@@ -34,14 +34,14 @@ TickSyncTaskPool::TickSyncTaskPool() : impl(std::make_unique<Impl>()) {
         event::EventPriority::Low
     );
 }
-TickSyncTaskPool::~TickSyncTaskPool() {
+ServerThreadExecuter::~ServerThreadExecuter() {
     event::EventBus::getInstance().removeListener<event::LevelTickEvent>(impl->worker);
 }
 
-void TickSyncTaskPool::addTaskImpl(std::function<void()> f) { impl->works.push(std::move(f)); }
+void ServerThreadExecuter::addTask(std::function<void()> f) { impl->works.push(std::move(f)); }
 
-std::shared_ptr<TickSyncTaskPool> const& TickSyncTaskPool::getDefault() {
-    static std::shared_ptr<TickSyncTaskPool> p = std::make_shared<TickSyncTaskPool>();
+std::shared_ptr<ServerThreadExecuter> const& ServerThreadExecuter::getDefault() {
+    static std::shared_ptr<ServerThreadExecuter> p = std::make_shared<ServerThreadExecuter>();
     return p;
 }
 } // namespace ll::thread

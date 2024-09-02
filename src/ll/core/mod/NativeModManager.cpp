@@ -52,7 +52,7 @@ formatDependencyError(pl::dependency_walker::DependencyIssueItem const& item, st
             }
         }
         if (!item.mMissingProcedure.empty()) {
-            stream << indent << "missing procedure:"_tr() << '\n';
+            stream << indent << "missing content:"_tr() << '\n';
             for (const auto& [module, missingProcedure] : item.mMissingProcedure) {
                 stream << indent << "|- " << module << '\n';
                 for (const auto& procedure : missingProcedure) {

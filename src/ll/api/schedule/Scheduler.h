@@ -11,9 +11,9 @@
 #include "ll/api/chrono/GameChrono.h"
 #include "ll/api/schedule/Task.h"
 #include "ll/api/thread/InterruptableSleep.h"
-#include "ll/api/thread/ThreadPool.h"
+#include "ll/api/thread/ServerThreadExecuter.h"
+#include "ll/api/thread/ThreadPoolExecuter.h"
 #include "ll/api/thread/TickSyncSleep.h"
-#include "ll/api/thread/TickSyncTaskPool.h"
 
 namespace ll::schedule {
 
@@ -34,18 +34,18 @@ struct SleeperType<ll::chrono::GameTickClock> {
 
 template <
     concepts::Require<std::chrono::is_clock> Clock,
-    class Pool    = ll::thread::ThreadPool,
-    class Sleeper = SleeperType<Clock>::type>
+    class Executer = ll::thread::ThreadPoolExecuter,
+    class Sleeper  = SleeperType<Clock>::type>
 class Scheduler;
 
 using ServerTimeAsyncScheduler = Scheduler<ll::chrono::ServerClock>;
 using GameTickAsyncScheduler   = Scheduler<ll::chrono::GameTickClock>;
 using SystemTimeScheduler      = Scheduler<std::chrono::system_clock>;
 
-using ServerTimeScheduler = Scheduler<ll::chrono::ServerClock, ll::thread::TickSyncTaskPool>;
-using GameTickScheduler   = Scheduler<ll::chrono::GameTickClock, ll::thread::TickSyncTaskPool>;
+using ServerTimeScheduler = Scheduler<ll::chrono::ServerClock, ll::thread::ServerThreadExecuter>;
+using GameTickScheduler   = Scheduler<ll::chrono::GameTickClock, ll::thread::ServerThreadExecuter>;
 
-template <concepts::Require<std::chrono::is_clock> Clock, class Pool, class Sleeper>
+template <concepts::Require<std::chrono::is_clock> Clock, class Executer, class Sleeper>
 class Scheduler {
 private:
     using time_point = typename Clock::time_point;
@@ -53,12 +53,12 @@ private:
     using task_ptr   = std::shared_ptr<Task<Clock>>;
     using tasks_type = std::multimap<time_point, task_ptr>;
 
-    std::recursive_mutex              mutex;
-    tasks_type                        tasks;
-    std::atomic<bool>                 done;
-    Sleeper                           sleeper;
-    std::shared_ptr<thread::TaskPool> workers;
-    std::thread                       manager;
+    std::recursive_mutex                  mutex;
+    tasks_type                            tasks;
+    std::atomic<bool>                     done;
+    Sleeper                               sleeper;
+    std::shared_ptr<thread::TaskExecuter> workers;
+    std::thread                           manager;
 
     task_ptr addTask(task_ptr t) {
         if (t->isCancelled()) {
@@ -127,7 +127,7 @@ public:
     Scheduler& operator=(Scheduler&&)      = delete;
     Scheduler& operator=(Scheduler const&) = delete;
 
-    explicit Scheduler(std::shared_ptr<thread::TaskPool> pool = Pool::getDefault())
+    explicit Scheduler(std::shared_ptr<thread::TaskExecuter> pool = Executer::getDefault())
     : done(false),
       workers(std::move(pool)) {
         manager = std::thread([this] {
