@@ -2,56 +2,28 @@
 
 #include <string>
 #include <tuple>
-#include <type_traits>
 #include <utility>
 
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
+#include "ll/api/base/TypeTraits.h"
 
 namespace ll::concepts {
 
 template <class T, class U>
-struct is_in_types;
-
-template <class T, template <class...> class U, class... Ts>
-struct is_in_types<T, U<Ts...>> : std::bool_constant<(std::is_same_v<T, Ts> || ...)> {};
-
-template <class T, class U>
-inline constexpr bool is_in_types_v = is_in_types<T, U>::value;
-
-template <class T, class U>
-concept IsInTypes = is_in_types_v<T, U>;
+concept IsInTypes = traits::is_in_types_v<T, U>;
 
 template <class T, class... Ts>
-inline constexpr bool is_one_of_v = (std::is_same_v<T, Ts> || ...);
+concept IsOneOf = traits::is_one_of_v<T, Ts...>;
 
 template <class T, class... Ts>
-struct is_one_of : std::bool_constant<is_one_of_v<T, Ts...>> {};
-
-template <class T, class... Ts>
-concept IsOneOf = is_one_of_v<T, Ts...>;
-
-template <class T, class... Ts>
-inline constexpr bool is_all_same_v = (std::is_same_v<T, Ts> && ...);
-
-template <class T, class... Ts>
-struct is_all_same : std::bool_constant<is_all_same_v<T, Ts...>> {};
-
-template <class T, class... Ts>
-concept IsAllSame = is_all_same_v<T, Ts...>;
+concept IsAllSame = traits::is_all_same_v<T, Ts...>;
 
 template <class T>
-inline constexpr bool is_string_v = std::is_constructible_v<std::string, T>;
+concept IsNonCharIntegral = traits::is_non_char_integral_v<T>;
 
 template <class T>
-inline constexpr bool is_non_char_integral_v =
-    is_one_of_v<std::remove_cv_t<T>, bool, schar, uchar, short, ushort, int, uint, long, ulong, int64, uint64>;
-
-template <class T>
-concept IsNonCharIntegral = is_non_char_integral_v<T>;
-
-template <class T>
-concept IsString = is_string_v<T>;
+concept IsString = traits::is_string_v<T>;
 
 template <class T, template <class> class Z>
 concept Require = Z<T>::value;
@@ -100,32 +72,12 @@ template <typename T>
 concept IsVectorBase = std::is_base_of_v<VectorBaseTag, T>;
 
 template <class T, template <class...> class Z>
-inline constexpr bool is_specialization_of_v = false;
-
-template <template <class...> class Z, class... Args>
-inline constexpr bool is_specialization_of_v<Z<Args...>, Z> = true;
-
-template <class T, template <class...> class Z>
-struct is_specialization_of : std::bool_constant<is_specialization_of_v<T, Z>> {};
-
-template <class T, template <class...> class Z>
-concept Specializes = is_specialization_of_v<T, Z>;
-
-template <class>
-inline constexpr bool is_std_array_v = false;
-
-template <class T, size_t N>
-inline constexpr bool is_std_array_v<::std::array<T, N>> = true;
-
-template <class>
-inline constexpr bool is_subrange_v = false;
-
-template <class I, class S, ::std::ranges::subrange_kind K>
-constexpr bool is_subrange_v<::std::ranges::subrange<I, S, K>> = true;
+concept Specializes = traits::is_specialization_of_v<T, Z>;
 
 template <class T>
-inline constexpr bool tuple_like_impl = is_specialization_of_v<T, ::std::tuple>
-                                     || is_specialization_of_v<T, ::std::pair> || is_std_array_v<T> || is_subrange_v<T>;
+inline constexpr bool tuple_like_impl =
+    traits::is_specialization_of_v<T, ::std::tuple> || traits::is_specialization_of_v<T, ::std::pair>
+    || traits::is_std_array_v<T> || traits::is_subrange_v<T>;
 
 template <class T>
 concept TupleLike = tuple_like_impl<std::remove_cvref_t<T>> || (!Rangeable<T> && requires(T t) {
@@ -136,27 +88,11 @@ concept TupleLike = tuple_like_impl<std::remove_cvref_t<T>> || (!Rangeable<T> &&
 template <class T>
 concept ArrayLike = Rangeable<T> && !requires { typename std::remove_cvref_t<T>::mapped_type; };
 
-template <template <class...> class T, class... Ts>
-void DerivedFromSpecializationImpl(T<Ts...> const&);
-
 template <class T, template <class...> class Z>
-concept DerivedFromSpecializes = requires(T const& t) { DerivedFromSpecializationImpl<Z>(t); };
-
-template <class T, template <class...> class Z>
-inline constexpr bool is_derived_from_specialization_of_v = DerivedFromSpecializes<T, Z>;
-
-template <class T, template <class...> class Z>
-struct is_derived_from_specialization_of : std::bool_constant<is_derived_from_specialization_of_v<T, Z>> {};
-
-template <class...>
-inline constexpr bool always_false = false;
+concept DerivedFromSpecializes = traits::is_derived_from_specialization_of_v<T, Z>;
 
 template <class T>
-inline constexpr bool is_virtual_cloneable_v =
-    std::is_polymorphic_v<T> && requires(T const& t) { static_cast<T*>(t.clone().release()); };
-
-template <class T>
-concept VirtualCloneable = is_virtual_cloneable_v<T>;
+concept VirtualCloneable = traits::is_virtual_cloneable_v<T>;
 
 template <class T>
 concept Stringable = requires(T t) {

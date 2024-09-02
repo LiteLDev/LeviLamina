@@ -187,7 +187,7 @@ inline Expected<J> serialize_impl(T&& obj, meta::PriorityTag<1>)
                 res = makeSerMemberError(std::string{name}, v.error());
             }
         } else {
-            static_assert(concepts::always_false<member_type>, "this type can't serialize");
+            static_assert(traits::always_false<member_type>, "this type can't serialize");
         }
     });
     return res;

@@ -181,7 +181,7 @@ inline Expected<> deserialize_impl(T& obj, J const& j, meta::PriorityTag<1>) {
                 res = deserialize<member_type>(member, j[sname]);
                 if (!res) res = makeSerMemberError(sname, res.error());
             } else {
-                static_assert(concepts::always_false<member_type>, "this type can't deserialize");
+                static_assert(traits::always_false<member_type>, "this type can't deserialize");
             }
         } else {
             if constexpr (!concepts::IsOptional<member_type>) {

@@ -95,7 +95,7 @@ public:
     : storage(oneThenVariadicArgs, other.getCopyCtor(), other.clone()) {}
 
     template <class U, class C2, class D2>
-        requires(std::is_convertible_v<U*, T*> && std::is_constructible_v<CopyCtor, C2 const&>)
+        requires(std::is_convertible_v<U*, T*>)
     constexpr IndirectValue(IndirectValue<U, C2, D2> const& other) noexcept(std::is_nothrow_copy_constructible_v<U>)
     : storage(oneThenVariadicArgs, other.getCopyCtor(), other.clone()) {}
 
@@ -103,7 +103,7 @@ public:
     : storage(oneThenVariadicArgs, std::move(other.getCopyCtor()), std::move(other.unique())) {}
 
     template <class U, class C2, class D2>
-        requires(std::is_convertible_v<U*, T*> && std::is_constructible_v<CopyCtor, C2 &&>)
+        requires(std::is_convertible_v<U*, T*>)
     constexpr IndirectValue(IndirectValue<U, C2, D2>&& other) noexcept
     : storage(oneThenVariadicArgs, std::move(other.getCopyCtor()), std::move(other.unique())) {}
 
@@ -116,7 +116,7 @@ public:
         return *this;
     }
     template <class U, class C2, class D2>
-        requires(std::is_convertible_v<U*, T*> && std::is_constructible_v<CopyCtor, C2 const&>)
+        requires(std::is_convertible_v<U*, T*>)
     constexpr IndirectValue& operator=(IndirectValue<U, C2, D2> const& other
     ) noexcept(std::is_nothrow_copy_constructible_v<U>) {
         if constexpr (std::is_same_v<U, T>) {
@@ -138,7 +138,7 @@ public:
         return *this;
     }
     template <class U, class C2, class D2>
-        requires(std::is_convertible_v<U*, T*> && std::is_constructible_v<CopyCtor, C2 const&>)
+        requires(std::is_convertible_v<U*, T*>)
     constexpr IndirectValue& operator=(IndirectValue<U, C2, D2>&& other) noexcept {
         if constexpr (std::is_same_v<U, T>) {
             if (std::addressof(other) == this) {

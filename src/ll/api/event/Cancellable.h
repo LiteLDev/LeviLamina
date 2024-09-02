@@ -10,7 +10,7 @@ protected:
     using T::T;
 
     static_assert(
-        !concepts::is_derived_from_specialization_of_v<T, Cancellable>,
+        !traits::is_derived_from_specialization_of_v<T, Cancellable>,
         "can't be derived from Cancellable twice"
     );
 

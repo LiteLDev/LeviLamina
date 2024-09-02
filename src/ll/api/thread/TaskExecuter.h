@@ -10,7 +10,6 @@ class TaskExecuter {
 public:
     virtual ~TaskExecuter() = default;
 
-public:
     virtual void addTask(std::function<void()>) = 0;
 
     template <class F, class... Args>

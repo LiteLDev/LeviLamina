@@ -48,7 +48,7 @@ constexpr ServiceId getServiceId = []() -> ServiceId {
     if constexpr (requires { self::ServiceId; } && self::ServiceId != EmptyServiceId) {
         return self::ServiceId;
     } else {
-        static_assert(ll::concepts::always_false<T>, "ServiceId not defined for type");
+        static_assert(traits::always_false<T>, "ServiceId not defined for type");
     }
 }();
 } // namespace ll::service

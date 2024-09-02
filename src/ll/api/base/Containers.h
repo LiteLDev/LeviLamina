@@ -120,7 +120,7 @@ using Indirect = data::IndirectValue<T, data::defaultCopy<T>, D>;
 template <
     class T,
     class C =
-        std::conditional_t<concepts::is_virtual_cloneable_v<T>, data::virtualCloneCopy<T>, data::polymorphicCopy<T>>,
+        std::conditional_t<traits::is_virtual_cloneable_v<T>, data::virtualCloneCopy<T>, data::polymorphicCopy<T>>,
     class D = std::default_delete<T>>
 using Polymorphic = data::IndirectValue<T, C, D>;
 

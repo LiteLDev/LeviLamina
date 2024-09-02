@@ -1,13 +1,13 @@
 #pragma once
 
 #include <cstddef>
-#include <type_traits>
 #include <utility>
 
 #include "ll/api/base/CompilerPredefine.h"
 #include "ll/api/base/Concepts.h"
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
+#include "ll/api/base/TypeTraits.h"
 
 namespace ll::meta {
 namespace detail {
@@ -22,7 +22,7 @@ struct VisitStrategy;
 template <size_t N>
 struct VisitStrategy<N, -1> {
     // Fallback strategy for visitations with too many total states for the following "switch" strategies.
-    template <typename T, typename... Ts>
+    template <class T, class... Ts>
     static constexpr std::array<std::decay_t<T>, sizeof...(Ts) + 1> makeVisitorArray(T&& t, Ts&&... ts) {
         return {
             {std::forward<T>(t), std::forward<Ts>(ts)...}
@@ -198,38 +198,6 @@ constexpr Ret visitIndex(size_t index, Fn&& fn, Args&&... args) {
     return Strategy::template impl<Ret>(index, std::forward<Fn>(fn), std::forward<Args>(args)...);
 }
 
-template <size_t N, class T, class... Types>
-struct get_type {
-    using type = typename get_type<N - 1, Types...>::type;
-};
-
-template <class T, class... Types>
-struct get_type<0, T, Types...> {
-    using type = T;
-};
-
-template <size_t N, class... Types>
-using get_type_t = typename get_type<N, Types...>::type;
-
-template <class T, class U, class... Args>
-struct max_type {
-    using type = typename max_type<T, typename max_type<U, Args...>::type>::type;
-};
-
-template <class T, class U>
-struct max_type<T, U> {
-    using type = typename std::conditional<(sizeof(T) < sizeof(U)), U, T>::type;
-};
-
-template <class T, class... Ts>
-struct index_of;
-
-template <class T, class... Ts>
-struct index_of<T, T, Ts...> : std::integral_constant<size_t, 0> {};
-
-template <class T, class U, class... Ts>
-struct index_of<T, U, Ts...> : std::integral_constant<size_t, 1 + index_of<T, Ts...>::value> {};
-
 template <class... TL>
 class TypeList {
 public:
@@ -257,7 +225,7 @@ public:
     using push_front = TypeList<T, TL...>;
 
     template <size_t N>
-    using get = get_type_t<N + 1, void, TL...>;
+    using get = traits::get_type_t<N + 1, void, TL...>;
 
     template <template <class...> class U>
     using to = U<TL...>;
@@ -273,7 +241,7 @@ public:
     }
 
     template <class T>
-    static constexpr size_t index = index_of<T, TL...>::value;
+    static constexpr size_t index = traits::index_of<T, TL...>::value;
 };
 
 template <class Group, class T, auto Id = int64{}>

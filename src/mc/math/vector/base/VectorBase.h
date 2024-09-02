@@ -49,7 +49,7 @@ class boolN;
 
 template <typename T, typename... Components>
 struct LL_EBO VectorBase : concepts::VectorBaseTag {
-    using first_type = typename ll::meta::max_type<Components...>::type;
+    using first_type = typename ll::traits::max_type<Components...>::type;
 
     using size_type = size_t;
 

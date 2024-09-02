@@ -46,13 +46,13 @@ class Overload : private OverloadData {
             using RemoveOptionalType = remove_optional_t<OriginalType>;
 
             using ParamType = std::conditional_t<
-                concepts::is_specialization_of_v<RemoveOptionalType, SoftEnum>,
+                traits::is_specialization_of_v<RemoveOptionalType, SoftEnum>,
                 std::string,
                 RemoveOptionalType>;
 
             int offset     = (int)(size_t)std::addressof(val);
             int flagOffset = -1;
-            if constexpr (concepts::is_specialization_of_v<OriginalType, Optional>) {
+            if constexpr (traits::is_specialization_of_v<OriginalType, Optional>) {
                 flagOffset = offset + OptionalOffsetGetter<ParamType>::value;
             }
 
@@ -60,7 +60,7 @@ class Overload : private OverloadData {
             if constexpr (std::is_enum_v<ParamType>) {
                 paramType = CommandParameterDataType::Enum;
                 CommandRegistrar::getInstance().template tryRegisterEnum<ParamType>();
-            } else if constexpr (concepts::is_specialization_of_v<RemoveOptionalType, SoftEnum>) {
+            } else if constexpr (traits::is_specialization_of_v<RemoveOptionalType, SoftEnum>) {
                 paramType = CommandParameterDataType::SoftEnum;
                 CommandRegistrar::getInstance().template tryRegisterSoftEnum<RemoveOptionalType>();
             }
