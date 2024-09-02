@@ -159,7 +159,7 @@ struct LL_EBO Hook {};
             if constexpr (requires { ::ll::memory::virtualDetector<T, IDENTIFIER>(); }) {                              \
                 if constexpr (::ll::memory::virtualDetector<T, IDENTIFIER>()) {                                        \
                     static_assert(                                                                                     \
-                        ::ll::traits::always_false<T>,                                                               \
+                        ::ll::traits::always_false<T>,                                                                 \
                         #IDENTIFIER " is a virtual function, you need use prefix $ workaround to hook it."             \
                     );                                                                                                 \
                 }                                                                                                      \

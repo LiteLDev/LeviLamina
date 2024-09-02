@@ -124,7 +124,7 @@ public:
 };
 
 template <FixedString str>
-constexpr inline auto signatureCache = []() {
+constexpr auto signatureCache = []() {
     constexpr size_t N = []() {
         size_t i = 0;
         string_utils::splitByPattern(

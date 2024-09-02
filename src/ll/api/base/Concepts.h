@@ -75,7 +75,7 @@ template <class T, template <class...> class Z>
 concept Specializes = traits::is_specialization_of_v<T, Z>;
 
 template <class T>
-inline constexpr bool tuple_like_impl =
+constexpr bool tuple_like_impl =
     traits::is_specialization_of_v<T, ::std::tuple> || traits::is_specialization_of_v<T, ::std::pair>
     || traits::is_std_array_v<T> || traits::is_subrange_v<T>;
 

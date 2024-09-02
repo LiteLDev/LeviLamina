@@ -25,7 +25,7 @@ public:
     }
 };
 
-static inline constexpr EventId EmptyEventId{{}};
+static constexpr inline EventId EmptyEventId{{}};
 
 template <class T>
 constexpr EventId getEventId = []() -> EventId {

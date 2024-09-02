@@ -78,23 +78,23 @@ constexpr std::string_view typeNameStem(std::string_view s) noexcept {
 
 
 template <class T>
-inline constexpr std::string_view type_raw_name_v = getRawName<T>();
+constexpr std::string_view type_raw_name_v = getRawName<T>();
 
 template <class T>
-inline constexpr std::string_view type_unprefix_name_v = removeTypePrefix(type_raw_name_v<T>);
+constexpr std::string_view type_unprefix_name_v = removeTypePrefix(type_raw_name_v<T>);
 
 template <class T>
-inline constexpr std::string_view type_name_v = removeTypeSuffix(type_unprefix_name_v<T>);
+constexpr std::string_view type_name_v = removeTypeSuffix(type_unprefix_name_v<T>);
 
 template <class T>
-inline constexpr std::string_view type_stem_name_v = removeTypeNamespace(type_name_v<T>);
+constexpr std::string_view type_stem_name_v = removeTypeNamespace(type_name_v<T>);
 
 template <class T>
-inline constexpr bool is_template_v = type_raw_name_v<T>.find("<") != std::string_view::npos;
+constexpr bool is_template_v = type_raw_name_v<T>.find("<") != std::string_view::npos;
 
 template <class T>
-inline constexpr bool is_class_v = std::is_class_v<T> && type_raw_name_v<T>.starts_with("class ");
+constexpr bool is_class_v = std::is_class_v<T> && type_raw_name_v<T>.starts_with("class ");
 
 template <class T>
-inline constexpr bool is_struct_v = std::is_class_v<T> && type_raw_name_v<T>.starts_with("struct ");
+constexpr bool is_struct_v = std::is_class_v<T> && type_raw_name_v<T>.starts_with("struct ");
 } // namespace ll::reflection

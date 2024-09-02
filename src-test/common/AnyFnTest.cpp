@@ -14,9 +14,9 @@ static bool run = [] {
 
     auto vec = std::vector<float>{0.7f, 0.7f, 0.7f};
 
-    fn = AnyFunction([](std::string const& par, int i, std::vector<float>&& fs) {
+    fn = [](std::string const& par, int i, std::vector<float>&& fs) {
         ll::getLogger().info("{} | {} | {}", par, i, fs);
-    });
+    };
 
     fn(std::string{"hmmmmm"}, 17, std::ref(vec));
 

@@ -36,7 +36,7 @@ struct from_chars_result : std::from_chars_result {
 };
 
 // Min version string length = 1(<major>) + 1(.) + 1(<minor>) + 1(.) + 1(<patch>) = 5.
-inline constexpr auto min_version_string_length = 5;
+constexpr inline auto min_version_string_length = 5;
 
 constexpr bool is_digit(char c) noexcept { return c >= '0' && c <= '9'; }
 
