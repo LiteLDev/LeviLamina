@@ -69,7 +69,7 @@ public:
     AnyFunction(AnyFunction const&)            = default;
     AnyFunction& operator=(AnyFunction const&) = default;
     AnyFunction(AnyFunction&&)                 = default;
-    AnyFunction& operator=(AAnyFunctio&&)        = default;
+    AnyFunction& operator=(AAnyFunctio&&)      = default;
 
     AnyFunction(std::nullptr_t) {}
 
