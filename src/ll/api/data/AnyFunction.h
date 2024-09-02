@@ -49,10 +49,10 @@ class AnyFunctionData : public AnyFunctionDataBase {
     template <std::size_t... I>
     std::any invokeImpl(std::span<std::any> args, std::index_sequence<I...>) {
         if constexpr (std::is_void_v<Ret>) {
-            (void)fn(getArg<Args>(args[I])...);
+            (void)std::invoke(std::forward<decltype(fn)>(fn), getArg<Args>(args[I])...);
             return {};
         } else {
-            return std::make_any<Ret>(fn(getArg<Args>(args[I])...));
+            return std::make_any<Ret>(std::invoke(std::forward<decltype(fn)>(fn), getArg<Args>(args[I])...));
         }
     }
 
@@ -112,12 +112,12 @@ class alignas(std::max_align_t) AnyFunction {
             dataPtr = nullptr;
         }
     }
-    void resetCopy(AnyFunction const& other) {
+    void copy(AnyFunction const& other) {
         if (other) {
             dataPtr = other.dataPtr->copy(&soo);
         }
     }
-    void resetMove(AnyFunction&& other) noexcept {
+    void move(AnyFunction&& other) noexcept {
         if (other) {
             if (other.isLarge()) {
                 dataPtr       = other.dataPtr;
@@ -129,7 +129,7 @@ class alignas(std::max_align_t) AnyFunction {
         }
     }
     template <class Fn, class Ret, class... Args>
-    void reset(Fn&& fn) {
+    void construct(Fn&& fn) {
         if constexpr (std::is_pointer_v<Fn> || traits::is_specialization_of_v<Fn, std::function>
                       || std::is_member_pointer_v<Fn>) {
             if (!fn) {
@@ -144,20 +144,20 @@ public:
     AnyFunction(std::nullptr_t) {}
     ~AnyFunction() { tidy(); }
 
-    AnyFunction(AnyFunction const& other) { resetCopy(other); }
-    AnyFunction(AnyFunction&& other) noexcept { resetMove(std::move(other)); }
+    AnyFunction(AnyFunction const& other) { copy(other); }
+    AnyFunction(AnyFunction&& other) noexcept { move(std::move(other)); }
 
     AnyFunction& operator=(AnyFunction const& other) {
         if (this != std::addressof(other)) {
             tidy();
-            resetCopy(other);
+            copy(other);
         }
         return *this;
     }
     AnyFunction& operator=(AnyFunction&& other) noexcept {
         if (this != std::addressof(other)) {
             tidy();
-            resetMove(std::move(other));
+            move(std::move(other));
         }
         return *this;
     }
@@ -166,16 +166,16 @@ public:
             std::swap(dataPtr, other.dataPtr);
         } else {
             AnyFunction temp;
-            temp.resetMove(std::move(*this));
-            resetMove(std::move(other));
-            other.resetMove(std::move(temp));
+            temp.move(std::move(*this));
+            move(std::move(other));
+            other.move(std::move(temp));
         }
     }
 
     template <class Fn, class Ret, class... Args>
         requires(std::invocable<Fn, Args...>)
     AnyFunction(std::in_place_type_t<Ret(Args...)>, Fn&& fn) {
-        reset<Fn, Ret, Args...>(std::forward<Fn>(fn));
+        construct<Fn, Ret, Args...>(std::forward<Fn>(fn));
     }
 
     template <class Fn>
