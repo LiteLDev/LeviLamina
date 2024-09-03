@@ -19,7 +19,7 @@ private:
     int                   precision{0};
 
 public:
-    FMT_CONSTEXPR formatter() { this->format_str_ = detail::string_literal<Char, '%', 'T'>{}; }
+    constexpr formatter() { this->format_str_ = detail::string_literal<Char, '%', 'T'>{}; }
 
     template <typename FormatContext>
     auto format(ll::data::TmWithMs const& val, FormatContext& ctx) const -> decltype(ctx.out()) {
