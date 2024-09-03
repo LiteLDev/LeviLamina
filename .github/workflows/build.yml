@@ -5,6 +5,7 @@ on:
       - src/**
       - src-server/**
       - src-client/**
+      - src-test/**
       - xmake.lua
   pull_request:
     paths:
@@ -12,6 +13,7 @@ on:
       - src/**
       - src-server/**
       - src-client/**
+      - src-test/**
       - xmake.lua
   workflow_dispatch:
 
@@ -27,6 +29,9 @@ jobs:
           - debug
           - release
         use_mimalloc:
+          - true
+          - false
+        tests:
           - true
           - false
     runs-on: windows-latest
@@ -53,17 +58,14 @@ jobs:
           xmake repo -u
 
       - run: |
-          xmake f -a x64 -m ${{ matrix.mode }} -p windows -v -y --use_mimalloc=${{ matrix.use_mimalloc }} --target_type=${{ matrix.target_type }}
+          xmake f -a x64 -m ${{ matrix.mode }} -p windows -v -y --use_mimalloc=${{ matrix.use_mimalloc }} --target_type=${{ matrix.target_type }} --tests=${{ matrix.tests }}
 
       - run: |
           xmake -v -w -y
 
-    #   - run: |
-    #       xmake package -v -y
-
       - uses: actions/upload-artifact@v4
         with:
-          name: levilamina-${{ matrix.target_type }}-${{ matrix.mode }}${{ matrix.use_mimalloc == false && '-nonmimalloc' || '' }}-windows-x64-${{ github.sha }}
+          name: levilamina-${{ matrix.target_type }}-${{ matrix.mode }}${{ matrix.use_mimalloc == false && '-nonmimalloc' || '' }}${{ matrix.tests == false && '-tests' || '' }}-windows-x64-${{ github.sha }}
           path: |
             bin/
 
