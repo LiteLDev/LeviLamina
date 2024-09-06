@@ -108,11 +108,11 @@ constexpr void destruct(void* ptr, ptrdiff_t off) noexcept {
     std::destroy_at(std::launder(reinterpret_cast<T*>((uintptr_t)((uintptr_t)ptr + off))));
 }
 
-template <class T, class... Types>
-constexpr auto construct(void* ptr, ptrdiff_t off, Types&&... args) {
+template <class T, class... Args>
+constexpr auto construct(void* ptr, ptrdiff_t off, Args&&... args) {
     return std::construct_at(
         std::launder(reinterpret_cast<T*>((uintptr_t)((uintptr_t)ptr + off))),
-        std::forward<Types>(args)...
+        std::forward<Args>(args)...
     );
 }
 

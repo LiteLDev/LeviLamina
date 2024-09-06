@@ -6,18 +6,18 @@
 
 namespace ll::traits {
 
-template <size_t N, class T, class... Types>
+template <size_t N, class T, class... Ts>
 struct get_type {
-    using type = typename get_type<N - 1, Types...>::type;
+    using type = typename get_type<N - 1, Ts...>::type;
 };
 
-template <class T, class... Types>
-struct get_type<0, T, Types...> {
+template <class T, class... Ts>
+struct get_type<0, T, Ts...> {
     using type = T;
 };
 
-template <size_t N, class... Types>
-using get_type_t = typename get_type<N, Types...>::type;
+template <size_t N, class... Ts>
+using get_type_t = typename get_type<N, Ts...>::type;
 
 template <class T, class U, class... Args>
 struct max_type {
@@ -40,27 +40,28 @@ struct index_of<T, U, Ts...> : std::integral_constant<size_t, 1 + index_of<T, Ts
 
 
 template <class>
-struct function_signature;
+struct function_traits;
 
 template <class Ret, class... Args>
-struct function_signature<Ret(Args...)> {
-    using type = Ret(Args...);
+struct function_traits<Ret(Args...)> {
+    using common_type = Ret(Args...);
 };
 
 template <class Ret, class... Args>
-struct function_signature<Ret (*)(Args...)> : function_signature<Ret(Args...)> {};
+struct function_traits<Ret (*)(Args...)> : function_traits<Ret(Args...)> {};
 
 template <class F>
-struct function_signature : function_signature<decltype(&F::operator())> {};
+struct function_traits : function_traits<decltype(&F::operator())> {};
 
 template <class Ret, class Cls, class... Args>
-struct function_signature<Ret (Cls::*)(Args...)> : function_signature<Ret(Args...)> {};
+struct function_traits<Ret (Cls::*)(Args...)> : function_traits<Ret(Args...)> {};
 
+#ifndef LL_BUILD_FUNCTION_SIGNATURE
 #define LL_BUILD_FUNCTION_SIGNATURE(...)                                                                               \
     template <class Ret, class Cls, class... Args>                                                                     \
-    struct function_signature<Ret (Cls::*)(Args...) __VA_ARGS__> : function_signature<Ret(Args...) __VA_ARGS__> {};    \
+    struct function_traits<Ret (Cls::*)(Args...) __VA_ARGS__> : function_traits<Ret(Args...) __VA_ARGS__> {};          \
     template <class Ret, class... Args>                                                                                \
-    struct function_signature<Ret(Args...) __VA_ARGS__> : function_signature<Ret(Args...)> {};
+    struct function_traits<Ret(Args...) __VA_ARGS__> : function_traits<Ret(Args...)> {};
 
 LL_BUILD_FUNCTION_SIGNATURE(const)
 LL_BUILD_FUNCTION_SIGNATURE(volatile)
@@ -86,9 +87,7 @@ LL_BUILD_FUNCTION_SIGNATURE(const&& noexcept)
 LL_BUILD_FUNCTION_SIGNATURE(volatile&& noexcept)
 LL_BUILD_FUNCTION_SIGNATURE(const volatile&& noexcept)
 #undef LL_BUILD_FUNCTION_SIGNATURE
-
-template <class T>
-using function_signature_t = typename function_signature<T>::type;
+#endif
 
 template <class T, class U>
 struct is_in_types;

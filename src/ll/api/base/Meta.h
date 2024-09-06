@@ -55,6 +55,7 @@ struct VisitStrategy<N, 0> {
     }
 };
 
+#ifndef LL_VISIT_CASE
 #define LL_VISIT_CASE(n)                                                                                               \
     case (n):                                                                                                          \
         if constexpr ((n) < N) {                                                                                       \
@@ -137,6 +138,7 @@ struct VisitStrategy<N, 4> {
 #undef LL_STAMP64
 #undef LL_STAMP16
 #undef LL_STAMP4
+#endif
 
 template <class Fn, class... Args>
 using VisitIndexResultT = decltype((std::declval<Fn>().template operator()<0>(std::declval<Args>()...)));
@@ -198,50 +200,50 @@ constexpr Ret visitIndex(size_t index, Fn&& fn, Args&&... args) {
     return Strategy::template impl<Ret>(index, std::forward<Fn>(fn), std::forward<Args>(args)...);
 }
 
-template <class... TL>
+template <class... Ts>
 class TypeList {
 public:
     template <class T>
-    static constexpr bool contains = (std::is_same_v<T, TL> || ...);
+    static constexpr bool contains = (std::is_same_v<T, Ts> || ...);
 
     template <template <class> class T>
-    static constexpr bool all = (T<TL>::value && ...);
+    static constexpr bool all = (T<Ts>::value && ...);
 
     template <template <class> class T>
-    static constexpr bool any = (T<TL>::value || ...);
+    static constexpr bool any = (T<Ts>::value || ...);
 
-    static constexpr size_t size = sizeof...(TL);
+    static constexpr size_t size = sizeof...(Ts);
 
     template <template <class> class W>
-    using wrap = TypeList<W<TL>...>;
+    using wrap = TypeList<W<Ts>...>;
 
     template <template <class> class M>
-    using map = TypeList<typename M<TL>::type...>;
+    using map = TypeList<typename M<Ts>::type...>;
 
     template <class T>
-    using push_back = TypeList<TL..., T>;
+    using push_back = TypeList<Ts..., T>;
 
     template <class T>
-    using push_front = TypeList<T, TL...>;
+    using push_front = TypeList<T, Ts...>;
 
     template <size_t N>
-    using get = traits::get_type_t<N + 1, void, TL...>;
+    using get = traits::get_type_t<N + 1, void, Ts...>;
 
     template <template <class...> class U>
-    using to = U<TL...>;
+    using to = U<Ts...>;
 
     template <class Func>
     static void constexpr forEach(Func&& func) {
-        unrollWithArgsNoIndex<TL...>(func);
+        unrollWithArgsNoIndex<Ts...>(func);
     }
 
     template <class Func>
     static void constexpr forEachIndexed(Func&& func) {
-        unrollWithArgs<TL...>(func);
+        unrollWithArgs<Ts...>(func);
     }
 
     template <class T>
-    static constexpr size_t index = traits::index_of<T, TL...>::value;
+    static constexpr size_t index = traits::index_of<T, Ts...>::value;
 };
 
 template <class Group, class T, auto Id = int64{}>

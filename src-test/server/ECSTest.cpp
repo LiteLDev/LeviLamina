@@ -37,7 +37,7 @@
 namespace ll::test::ecstest {
 
 void registerTimingCommand() {
-    constexpr static size_t counttick = 100;
+    static constexpr size_t counttick = 100;
     auto&                   cmd =
         ::ll::command::CommandRegistrar::getInstance()
             .getOrCreateCommand("timing", "timing", CommandPermissionLevel::GameDirectors, CommandFlagValue::None);

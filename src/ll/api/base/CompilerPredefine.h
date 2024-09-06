@@ -33,6 +33,10 @@
 #define LL_FORCEINLINE __forceinline
 #endif
 
+#ifndef LL_NOINLINE
+#define LL_NOINLINE __declspec(noinline)
+#endif
+
 #ifndef LL_CONSTEXPR23
 #define LL_CONSTEXPR23 _CONSTEXPR23
 #endif
@@ -250,6 +254,10 @@ using FileHandleT = void*;
 
 #ifndef LL_FORCEINLINE
 #define LL_FORCEINLINE inline __attribute__((always_inline))
+#endif
+
+#ifndef LL_NOINLINE
+#define LL_NOINLINE __attribute__((noinline))
 #endif
 
 #ifndef LL_CONSTEXPR23

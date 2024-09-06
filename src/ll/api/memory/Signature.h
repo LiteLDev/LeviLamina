@@ -71,7 +71,7 @@ class Signature {
     [[nodiscard]] constexpr Signature(std::vector<SignatureElement> vec) : elements(std::move(vec)) {}
 
 public:
-    [[nodiscard]] constexpr static Signature parse(std::string_view str) {
+    [[nodiscard]] static constexpr Signature parse(std::string_view str) {
         std::vector<SignatureElement> elements;
         string_utils::splitByPattern(
             [&](std::string_view sv) {

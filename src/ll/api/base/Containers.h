@@ -8,7 +8,6 @@
 #include <string_view>
 
 #include "ll/api/data/ConcurrentQueue.h"
-#include "ll/api/data/IndirectValue.h"
 
 #include "parallel_hashmap/btree.h"
 #include "parallel_hashmap/phmap.h"
@@ -110,27 +109,7 @@ using StringNodeMap = DenseNodeMap<::std::string, Value>;
 template <class Value>
 using SmallStringNodeMap = SmallDenseNodeMap<::std::string, Value>;
 
-
 template <typename T, typename A = std::allocator<T>>
 using ConcurrentQueue = data::concurrent_queue<T, A>;
-
-
-template <class T, class D = std::default_delete<T>>
-using Indirect = data::IndirectValue<T, data::defaultCopy<T>, D>;
-template <
-    class T,
-    class C =
-        std::conditional_t<traits::is_virtual_cloneable_v<T>, data::virtualCloneCopy<T>, data::polymorphicCopy<T>>,
-    class D = std::default_delete<T>>
-using Polymorphic = data::IndirectValue<T, C, D>;
-
-template <class T, class... Args>
-Indirect<T> makeIndirect(Args&&... args) {
-    return Indirect<T>(new T(std::forward<Args>(args)...));
-}
-template <class T, class... Args>
-Polymorphic<T> makePolymorphic(Args&&... args) {
-    return Polymorphic<T>(new T(std::forward<Args>(args)...));
-}
 
 } // namespace ll

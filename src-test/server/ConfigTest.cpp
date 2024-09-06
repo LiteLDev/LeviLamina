@@ -34,6 +34,7 @@
 #include "mc/world/actor/DataItem.h"
 
 #include "ll/api/base/Containers.h"
+#include "ll/api/data/IndirectValue.h"
 
 // [0, 8, 16, 96, 97, 98, 104, 136, 144, 160, 176, 184, 196, 208, 232, 248, 304, 328, 360, 392, 408]
 

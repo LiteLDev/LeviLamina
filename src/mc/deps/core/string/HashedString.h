@@ -8,7 +8,7 @@ public:
     std::string                 str;
     mutable HashedString const* lastMatch;
 
-    [[nodiscard]] constexpr static uint64 computeHash(std::string_view str) {
+    [[nodiscard]] static constexpr uint64 computeHash(std::string_view str) {
         if (str.empty()) return 0;
         uint64 hash = 0xCBF29CE484222325ull;
         for (char s : str) {

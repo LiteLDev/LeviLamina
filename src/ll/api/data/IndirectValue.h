@@ -81,7 +81,7 @@ private:
     }
 
 public:
-    constexpr IndirectValue(std::nullptr_t) noexcept {}
+    constexpr IndirectValue(std::nullptr_t) noexcept : storage(zeroThenVariadicArgs) {}
 
     constexpr IndirectValue(T* ptr) noexcept : storage(zeroThenVariadicArgs, ptr) {}
 
@@ -181,3 +181,24 @@ struct hash<::ll::data::IndirectValue<T, C, D>> {
     std::size_t operator()(::ll::data::IndirectValue<T, C, D> const& value) const { return hash<T*>{}(value.get()); }
 };
 } // namespace std
+
+namespace ll {
+    template <class T, class D = std::default_delete<T>>
+using Indirect = data::IndirectValue<T, data::defaultCopy<T>, D>;
+template <
+    class T,
+    class C =
+        std::conditional_t<traits::is_virtual_cloneable_v<T>, data::virtualCloneCopy<T>, data::polymorphicCopy<T>>,
+    class D = std::default_delete<T>>
+using Polymorphic = data::IndirectValue<T, C, D>;
+
+template <class T, class... Args>
+Indirect<T> makeIndirect(Args&&... args) {
+    return Indirect<T>(new T(std::forward<Args>(args)...));
+}
+template <class T, class... Args>
+Polymorphic<T> makePolymorphic(Args&&... args) {
+    return Polymorphic<T>(new T(std::forward<Args>(args)...));
+}
+
+} // namespace ll

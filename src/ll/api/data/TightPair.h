@@ -25,22 +25,22 @@ public:
     : Base(),
       sec(std::forward<Ts2>(val2)...) {}
 
-    template <class Ts1, class... Ts2>
+    template <class T1, class... Ts2>
     constexpr TightPair(
         OneThenVariadicArgsT,
-        Ts1&& val1,
+        T1&& val1,
         Ts2&&... val2
-    ) noexcept(std::is_nothrow_constructible_v<Base, Ts1> && std::is_nothrow_constructible_v<Other, Ts2...>)
-    : Base(std::forward<Ts1>(val1)),
+    ) noexcept(std::is_nothrow_constructible_v<Base, T1> && std::is_nothrow_constructible_v<Other, Ts2...>)
+    : Base(std::forward<T1>(val1)),
       sec(std::forward<Ts2>(val2)...) {}
 
     constexpr first_type& first() noexcept { return *this; }
 
-    constexpr const first_type& first() const noexcept { return *this; }
+    constexpr first_type const& first() const noexcept { return *this; }
 
     constexpr second_type& second() noexcept { return sec; }
 
-    constexpr const second_type& second() const noexcept { return sec; }
+    constexpr second_type const& second() const noexcept { return sec; }
 };
 
 template <class Base, class Other>
@@ -60,21 +60,21 @@ public:
     : fst(),
       sec(std::forward<Ts2>(val2)...) {}
 
-    template <class Ts1, class... Ts2>
+    template <class T1, class... Ts2>
     constexpr TightPair(
         OneThenVariadicArgsT,
-        Ts1&& val1,
+        T1&& val1,
         Ts2&&... val2
-    ) noexcept(std::is_nothrow_constructible_v<Base, Ts1> && std::is_nothrow_constructible_v<Other, Ts2...>)
-    : fst(std::forward<Ts1>(val1)),
+    ) noexcept(std::is_nothrow_constructible_v<Base, T1> && std::is_nothrow_constructible_v<Other, Ts2...>)
+    : fst(std::forward<T1>(val1)),
       sec(std::forward<Ts2>(val2)...) {}
 
     constexpr first_type& first() noexcept { return fst; }
 
-    constexpr const first_type& first() const noexcept { return fst; }
+    constexpr first_type const& first() const noexcept { return fst; }
 
     constexpr second_type& second() noexcept { return sec; }
 
-    constexpr const second_type& second() const noexcept { return sec; }
+    constexpr second_type const& second() const noexcept { return sec; }
 };
 } // namespace ll::data
