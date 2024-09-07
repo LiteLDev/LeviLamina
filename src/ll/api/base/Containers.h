@@ -112,4 +112,7 @@ using SmallStringNodeMap = SmallDenseNodeMap<::std::string, Value>;
 template <typename T, typename A = std::allocator<T>>
 using ConcurrentQueue = data::concurrent_queue<T, A>;
 
+template <typename T, typename C = std::less<T>, typename A = std::allocator<T>>
+using ConcurrentPriorityQueue = data::concurrent_priority_queue<T, C, A>;
+
 } // namespace ll
