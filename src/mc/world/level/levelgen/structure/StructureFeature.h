@@ -23,8 +23,8 @@ public:
     int                                                           mZScale;                     // this+192
     std::mutex                                                    mCreateBlueprintsMutex;      // this+200
     std::condition_variable                                       mBlueprintWaitVar;           // this+280
-    std::atomic<int>                                              mActiveBlueprintCreateCount; // this+352
-    std::atomic<bool>                                             mBlueprintsFinished;         // this+356
+    std::atomic_int                                               mActiveBlueprintCreateCount; // this+352
+    std::atomic_bool                                              mBlueprintsFinished;         // this+356
 public:
     // prevent constructor by default
     StructureFeature& operator=(StructureFeature const&);

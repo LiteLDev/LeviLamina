@@ -106,7 +106,7 @@ struct Statistics::Impl {
 
     void submitData() {
         ll::thread::ServerThreadExecuter::getDefault()
-            ->addPackagedTask([this]() {
+            .addPackagedTask([this]() {
                 nlohmann::json pluginInfo;
                 pluginInfo["pluginName"]   = getSelfModIns()->getName();
                 pluginInfo["customCharts"] = getCustomCharts();

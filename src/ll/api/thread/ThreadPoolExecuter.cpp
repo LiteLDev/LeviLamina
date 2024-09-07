@@ -12,6 +12,8 @@
 
 namespace ll::thread {
 
+struct ScheduledWorker {};
+
 struct ThreadPoolExecuter::Impl {
     std::vector<std::thread>          workers;
     std::queue<std::function<void()>> tasks;
@@ -68,9 +70,15 @@ void ThreadPoolExecuter::addTask(std::function<void()> task) {
     }
     impl->condition.notify_one();
 }
-std::shared_ptr<ThreadPoolExecuter> const& ThreadPoolExecuter::getDefault() {
+void ThreadPoolExecuter::addTaskAfter(std::function<void()> f, Duration us) {
+    if (us <= Duration{0}) {
+        addTask(std::move(f));
+    } // TODO:
+}
+
+ThreadPoolExecuter& ThreadPoolExecuter::getDefault() {
     static std::shared_ptr<ThreadPoolExecuter> p =
         std::make_shared<ThreadPoolExecuter>(std::max((int)std::thread::hardware_concurrency() - 2, 2));
-    return p;
+    return *p;
 }
 } // namespace ll::thread

@@ -26,8 +26,8 @@ static void printLogError(std::string_view msg) noexcept try {
     } catch (...) {}
 }
 
-static std::shared_ptr<thread::ThreadPoolExecuter> const& getLogPool() {
-    static std::shared_ptr<thread::ThreadPoolExecuter> p =
+static std::shared_ptr<thread::TaskExecuter> const& getLogPool() {
+    static std::shared_ptr<thread::TaskExecuter> p =
         std::make_shared<thread::ThreadPoolExecuter>(1); // logger need keep some order
     return p;
 }

@@ -16,8 +16,10 @@ public:
     LLAPI void resize(size_t nThreads = 1);
     LLAPI void destroy();
 
-    LLAPI void addTask(std::function<void()> f) override;
+    LLAPI void addTask(std::function<void()>) override;
 
-    LLNDAPI static std::shared_ptr<ThreadPoolExecuter> const& getDefault();
+    LLAPI void addTaskAfter(std::function<void()>, Duration) override;
+
+    LLNDAPI static ThreadPoolExecuter& getDefault();
 };
 } // namespace ll::thread

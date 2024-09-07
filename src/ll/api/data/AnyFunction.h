@@ -84,8 +84,7 @@ class AnyFunction {
 
     void tidy() noexcept {
         if (hasValue()) {
-            dataPtr->tidy();
-            dataPtr = nullptr;
+            std::exchange(dataPtr, nullptr)->tidy();
         }
     }
     void copy(AnyFunction const& other) {
@@ -96,8 +95,7 @@ class AnyFunction {
     void move(AnyFunction&& other) noexcept {
         if (other.hasValue()) {
             if (other.isLarge()) {
-                dataPtr       = other.dataPtr;
-                other.dataPtr = nullptr;
+                dataPtr = std::exchange(other.dataPtr, nullptr);
             } else {
                 dataPtr = other.dataPtr->move(&soo);
                 other.tidy();

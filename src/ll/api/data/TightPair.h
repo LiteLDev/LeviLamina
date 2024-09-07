@@ -4,9 +4,9 @@
 
 namespace ll::data {
 
-constexpr inline struct ZeroThenVariadicArgsT {
+constexpr inline struct ZeroThenVariadicArgs {
 } zeroThenVariadicArgs;
-constexpr inline struct OneThenVariadicArgsT {
+constexpr inline struct OneThenVariadicArgs {
 } oneThenVariadicArgs;
 
 template <class Base, class Other, bool = std::is_empty_v<Base> && !std::is_final_v<Base>>
@@ -19,7 +19,7 @@ public:
 
     template <class... Ts2>
     constexpr explicit TightPair(
-        ZeroThenVariadicArgsT,
+        ZeroThenVariadicArgs,
         Ts2&&... val2
     ) noexcept(std::is_nothrow_default_constructible_v<Base> && std::is_nothrow_constructible_v<Other, Ts2...>)
     : Base(),
@@ -27,7 +27,7 @@ public:
 
     template <class T1, class... Ts2>
     constexpr TightPair(
-        OneThenVariadicArgsT,
+        OneThenVariadicArgs,
         T1&& val1,
         Ts2&&... val2
     ) noexcept(std::is_nothrow_constructible_v<Base, T1> && std::is_nothrow_constructible_v<Other, Ts2...>)
@@ -54,7 +54,7 @@ public:
 
     template <class... Ts2>
     constexpr explicit TightPair(
-        ZeroThenVariadicArgsT,
+        ZeroThenVariadicArgs,
         Ts2&&... val2
     ) noexcept(std::is_nothrow_default_constructible_v<Base> && std::is_nothrow_constructible_v<Other, Ts2...>)
     : fst(),
@@ -62,7 +62,7 @@ public:
 
     template <class T1, class... Ts2>
     constexpr TightPair(
-        OneThenVariadicArgsT,
+        OneThenVariadicArgs,
         T1&& val1,
         Ts2&&... val2
     ) noexcept(std::is_nothrow_constructible_v<Base, T1> && std::is_nothrow_constructible_v<Other, Ts2...>)

@@ -9,12 +9,14 @@ class ServerThreadExecuter : public TaskExecuter {
     std::unique_ptr<Impl> impl;
 
 public:
-    LLAPI ServerThreadExecuter();
+    LLAPI ServerThreadExecuter(Duration maxOnceDuration, size_t checkPack);
 
     LLAPI ~ServerThreadExecuter() override;
 
-    LLAPI void addTask(std::function<void()> f) override;
+    LLAPI void addTask(std::function<void()>) override;
 
-    LLNDAPI static std::shared_ptr<ServerThreadExecuter> const& getDefault();
+    LLAPI void addTaskAfter(std::function<void()>, Duration) override;
+
+    LLNDAPI static ServerThreadExecuter& getDefault();
 };
 } // namespace ll::thread
