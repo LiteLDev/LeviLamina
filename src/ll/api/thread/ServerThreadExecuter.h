@@ -1,6 +1,5 @@
 #pragma once
 
-#include "ll/api/base/Macro.h"
 #include "ll/api/thread/TaskExecuter.h"
 
 namespace ll::thread {
@@ -9,14 +8,16 @@ class ServerThreadExecuter : public TaskExecuter {
     std::unique_ptr<Impl> impl;
 
 public:
-    LLAPI ServerThreadExecuter(Duration maxOnceDuration, size_t checkPack);
+    LLAPI ServerThreadExecuter(std::string_view name, Duration maxOnceDuration, size_t checkPack);
 
     LLAPI ~ServerThreadExecuter() override;
 
-    LLAPI void addTask(std::function<void()>) override;
+    LLAPI void addTask(std::function<void()>) const override;
 
-    LLAPI void addTaskAfter(std::function<void()>, Duration) override;
+    LLAPI SchId addTaskAfter(std::function<void()>, Duration) const override;
 
-    LLNDAPI static ServerThreadExecuter& getDefault();
+    LLAPI bool removeFromSch(SchId) const override;
+
+    LLNDAPI static ServerThreadExecuter const& getDefault();
 };
 } // namespace ll::thread

@@ -1072,9 +1072,13 @@ public:
 
     using allocator_type = Allocator;
 
+protected:
+    using vector_type = std::vector<value_type, allocator_type>;
+
+public:
     concurrent_priority_queue() : concurrent_priority_queue(allocator_type{}) {}
 
-    explicit concurrent_priority_queue(const allocator_type& alloc) : mark(0), my_size(0), my_compare(), data(alloc) {
+    explicit concurrent_priority_queue(const allocator_type& alloc) : mark(0), my_size(0), my_compare(), c(alloc) {
         my_aggregator.initialize_handler(functor{this});
     }
 
@@ -1082,7 +1086,7 @@ public:
     : mark(0),
       my_size(0),
       my_compare(compare),
-      data(alloc) {
+      c(alloc) {
         my_aggregator.initialize_handler(functor{this});
     }
 
@@ -1090,8 +1094,8 @@ public:
     : mark(0),
       my_size(0),
       my_compare(),
-      data(alloc) {
-        data.reserve(init_capacity);
+      c(alloc) {
+        c.reserve(init_capacity);
         my_aggregator.initialize_handler(functor{this});
     }
 
@@ -1103,8 +1107,8 @@ public:
     : mark(0),
       my_size(0),
       my_compare(compare),
-      data(alloc) {
-        data.reserve(init_capacity);
+      c(alloc) {
+        c.reserve(init_capacity);
         my_aggregator.initialize_handler(functor{this});
     }
 
@@ -1117,10 +1121,10 @@ public:
     )
     : mark(0),
       my_compare(compare),
-      data(begin, end, alloc) {
+      c(begin, end, alloc) {
         my_aggregator.initialize_handler(functor{this});
         heapify();
-        my_size.store(data.size(), std::memory_order_relaxed);
+        my_size.store(c.size(), std::memory_order_relaxed);
     }
 
     template <typename InputIterator>
@@ -1141,7 +1145,7 @@ public:
     : mark(other.mark),
       my_size(other.my_size.load(std::memory_order_relaxed)),
       my_compare(other.my_compare),
-      data(other.data) {
+      c(other.c) {
         my_aggregator.initialize_handler(functor{this});
     }
 
@@ -1149,7 +1153,7 @@ public:
     : mark(other.mark),
       my_size(other.my_size.load(std::memory_order_relaxed)),
       my_compare(other.my_compare),
-      data(other.data, alloc) {
+      c(other.c, alloc) {
         my_aggregator.initialize_handler(functor{this});
     }
 
@@ -1157,7 +1161,7 @@ public:
     : mark(other.mark),
       my_size(other.my_size.load(std::memory_order_relaxed)),
       my_compare(other.my_compare),
-      data(std::move(other.data)) {
+      c(std::move(other.c)) {
         my_aggregator.initialize_handler(functor{this});
     }
 
@@ -1165,13 +1169,13 @@ public:
     : mark(other.mark),
       my_size(other.my_size.load(std::memory_order_relaxed)),
       my_compare(other.my_compare),
-      data(std::move(other.data), alloc) {
+      c(std::move(other.c), alloc) {
         my_aggregator.initialize_handler(functor{this});
     }
 
     concurrent_priority_queue& operator=(const concurrent_priority_queue& other) {
         if (this != &other) {
-            data = other.data;
+            c    = other.c;
             mark = other.mark;
             my_size.store(other.my_size.load(std::memory_order_relaxed), std::memory_order_relaxed);
         }
@@ -1180,7 +1184,7 @@ public:
 
     concurrent_priority_queue& operator=(concurrent_priority_queue&& other) {
         if (this != &other) {
-            data = std::move(other.data);
+            c    = std::move(other.c);
             mark = other.mark;
             my_size.store(other.my_size.load(std::memory_order_relaxed), std::memory_order_relaxed);
         }
@@ -1194,13 +1198,21 @@ public:
 
     template <typename InputIterator>
     void assign(InputIterator begin, InputIterator end) {
-        data.assign(begin, end);
+        c.assign(begin, end);
         mark = 0;
-        my_size.store(data.size(), std::memory_order_relaxed);
+        my_size.store(c.size(), std::memory_order_relaxed);
         heapify();
     }
 
     void assign(std::initializer_list<value_type> init) { assign(init.begin(), init.end()); }
+
+    concurrent_priority_queue& operator=(vector_type&& vec) {
+        c    = std::move(vec);
+        mark = 0;
+        my_size.store(c.size(), std::memory_order_relaxed);
+        heapify();
+        return *this;
+    }
 
     /* Returned value may not reflect results of pending operations.
        This operation reads shared data and will trigger a race condition. */
@@ -1251,7 +1263,7 @@ public:
 
     // This operation affects the whole container => it is not thread-safe
     void clear() {
-        data.clear();
+        c.clear();
         mark = 0;
         my_size.store(0, std::memory_order_relaxed);
     }
@@ -1260,7 +1272,7 @@ public:
     void swap(concurrent_priority_queue& other) {
         if (this != &other) {
             using std::swap;
-            swap(data, other.data);
+            swap(c, other.c);
             swap(mark, other.mark);
 
             size_type sz = my_size.load(std::memory_order_relaxed);
@@ -1269,7 +1281,7 @@ public:
         }
     }
 
-    allocator_type get_allocator() const { return data.get_allocator(); }
+    allocator_type get_allocator() const { return c.get_allocator(); }
 
 private:
     enum operation_type { PUSH_OP, PUSH_RVALUE_OP, POP_OP, POP_FN_OP };
@@ -1319,7 +1331,7 @@ private:
             case PUSH_OP:
                 try {
                     if constexpr (std::is_copy_constructible_v<value_type>) {
-                        data.push_back(*(tmp->elem));
+                        c.push_back(*(tmp->elem));
                     }
                     my_size.store(my_size.load(std::memory_order_relaxed) + 1, std::memory_order_relaxed);
                     tmp->status.store(uintptr_t(SUCCEEDED), std::memory_order_release);
@@ -1329,7 +1341,7 @@ private:
                 break;
             case PUSH_RVALUE_OP:
                 try {
-                    data.push_back(std::move(*(tmp->elem)));
+                    c.push_back(std::move(*(tmp->elem)));
                     my_size.store(my_size.load(std::memory_order_relaxed) + 1, std::memory_order_relaxed);
                     tmp->status.store(uintptr_t(SUCCEEDED), std::memory_order_release);
                 } catch (...) {
@@ -1337,26 +1349,26 @@ private:
                 }
                 break;
             case POP_OP:
-                if (mark < data.size() && my_compare(data[0], data.back())) {
+                if (mark < c.size() && my_compare(c[0], c.back())) {
                     // there are newly pushed elems and the last one is higher than top
-                    *(tmp->elem) = std::move(data.back());
+                    *(tmp->elem) = std::move(c.back());
                     my_size.store(my_size.load(std::memory_order_relaxed) - 1, std::memory_order_relaxed);
                     tmp->status.store(uintptr_t(SUCCEEDED), std::memory_order_release);
 
-                    data.pop_back();
+                    c.pop_back();
                 } else { // no convenient item to pop; postpone
                     tmp->next.store(pop_list, std::memory_order_relaxed);
                     pop_list = tmp;
                 }
                 break;
             case POP_FN_OP:
-                if (mark < data.size() && my_compare(data[0], data.back())) {
+                if (mark < c.size() && my_compare(c[0], c.back())) {
                     // there are newly pushed elems and the last one is higher than top
-                    if ((*(tmp->fn))(data.back())) {
+                    if ((*(tmp->fn))(c.back())) {
                         my_size.store(my_size.load(std::memory_order_relaxed) - 1, std::memory_order_relaxed);
                         tmp->status.store(uintptr_t(SUCCEEDED), std::memory_order_release);
 
-                        data.pop_back();
+                        c.pop_back();
                     }
                 } else { // no convenient item to pop; postpone
                     tmp->next.store(pop_list, std::memory_order_relaxed);
@@ -1372,19 +1384,19 @@ private:
         while (pop_list) {
             tmp      = pop_list;
             pop_list = pop_list->next.load(std::memory_order_relaxed);
-            if (data.empty()) {
+            if (c.empty()) {
                 tmp->status.store(uintptr_t(FAILED), std::memory_order_release);
             } else {
-                if (mark < data.size() && my_compare(data[0], data.back())) {
+                if (mark < c.size() && my_compare(c[0], c.back())) {
                     // there are newly pushed elems and the last one is higher than top
-                    if (tmp->type == POP_FN_OP ? ((*(tmp->fn))(data.back()))
-                                               : (*(tmp->elem) = std::move(data.back()), true)) {
+                    if (tmp->type == POP_FN_OP ? ((*(tmp->fn))(c.back()))
+                                               : (*(tmp->elem) = std::move(c.back()), true)) {
                         my_size.store(my_size.load(std::memory_order_relaxed) - 1, std::memory_order_relaxed);
                         tmp->status.store(uintptr_t(SUCCEEDED), std::memory_order_release);
-                        data.pop_back();
+                        c.pop_back();
                     }
                 } else { // extract top and push last element down heap
-                    if (tmp->type == POP_FN_OP ? ((*(tmp->fn))(data[0])) : (*(tmp->elem) = std::move(data[0]), true)) {
+                    if (tmp->type == POP_FN_OP ? ((*(tmp->fn))(c[0])) : (*(tmp->elem) = std::move(c[0]), true)) {
                         my_size.store(my_size.load(std::memory_order_relaxed) - 1, std::memory_order_relaxed);
                         tmp->status.store(uintptr_t(SUCCEEDED), std::memory_order_release);
                         reheap();
@@ -1395,23 +1407,23 @@ private:
 
         // heapify any leftover pushed elements before doing the next
         // batch of operations
-        if (mark < data.size()) heapify();
+        if (mark < c.size()) heapify();
     }
 
     // Merge unsorted elements into heap
     void heapify() {
-        if (!mark && data.size() > 0) mark = 1;
-        for (; mark < data.size(); ++mark) {
+        if (!mark && c.size() > 0) mark = 1;
+        for (; mark < c.size(); ++mark) {
             // for each unheapified element under size
             size_type  cur_pos  = mark;
-            value_type to_place = std::move(data[mark]);
+            value_type to_place = std::move(c[mark]);
             do { // push to_place up the heap
                 size_type parent = (cur_pos - 1) >> 1;
-                if (!my_compare(data[parent], to_place)) break;
-                data[cur_pos] = std::move(data[parent]);
-                cur_pos       = parent;
+                if (!my_compare(c[parent], to_place)) break;
+                c[cur_pos] = std::move(c[parent]);
+                cur_pos    = parent;
             } while (cur_pos);
-            data[cur_pos] = std::move(to_place);
+            c[cur_pos] = std::move(to_place);
         }
     }
 
@@ -1422,16 +1434,16 @@ private:
 
         while (child < mark) {
             size_type target = child;
-            if (child + 1 < mark && my_compare(data[child], data[child + 1])) ++target;
+            if (child + 1 < mark && my_compare(c[child], c[child + 1])) ++target;
             // target now has the higher priority child
-            if (my_compare(data[target], data.back())) break;
-            data[cur_pos] = std::move(data[target]);
-            cur_pos       = target;
-            child         = (cur_pos << 1) + 1;
+            if (my_compare(c[target], c.back())) break;
+            c[cur_pos] = std::move(c[target]);
+            cur_pos    = target;
+            child      = (cur_pos << 1) + 1;
         }
-        if (cur_pos != data.size() - 1) data[cur_pos] = std::move(data.back());
-        data.pop_back();
-        if (mark > data.size()) mark = data.size();
+        if (cur_pos != c.size() - 1) c[cur_pos] = std::move(c.back());
+        c.pop_back();
+        if (mark > c.size()) mark = c.size();
     }
 
     using aggregator_type = aggregator<functor, cpq_operation>;
@@ -1465,11 +1477,11 @@ private:
         that have not yet been inserted into the heap, in positions
         mark through my_size-1. */
 
-    using vector_type = std::vector<value_type, allocator_type>;
-    vector_type data;
+protected:
+    vector_type c;
 
     friend bool operator==(const concurrent_priority_queue& lhs, const concurrent_priority_queue& rhs) {
-        return lhs.data == rhs.data;
+        return lhs.c == rhs.c;
     }
 }; // class concurrent_priority_queue
 

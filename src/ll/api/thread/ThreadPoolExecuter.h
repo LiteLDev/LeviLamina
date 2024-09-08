@@ -1,6 +1,5 @@
 #pragma once
 
-#include "ll/api/base/Macro.h"
 #include "ll/api/thread/TaskExecuter.h"
 
 namespace ll::thread {
@@ -9,17 +8,19 @@ class ThreadPoolExecuter : public TaskExecuter {
     std::unique_ptr<Impl> impl;
 
 public:
-    LLAPI explicit ThreadPoolExecuter(size_t nThreads = 1);
+    LLAPI explicit ThreadPoolExecuter(std::string_view name, size_t nThreads = 1);
 
     LLAPI ~ThreadPoolExecuter() override;
 
     LLAPI void resize(size_t nThreads = 1);
     LLAPI void destroy();
 
-    LLAPI void addTask(std::function<void()>) override;
+    LLAPI void addTask(std::function<void()>) const override;
 
-    LLAPI void addTaskAfter(std::function<void()>, Duration) override;
+    LLAPI SchId addTaskAfter(std::function<void()>, Duration) const override;
 
-    LLNDAPI static ThreadPoolExecuter& getDefault();
+    LLAPI bool removeFromSch(SchId) const override;
+
+    LLNDAPI static ThreadPoolExecuter const& getDefault();
 };
 } // namespace ll::thread
