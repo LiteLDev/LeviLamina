@@ -1,10 +1,14 @@
 #pragma once
 
 #include <array>
+#include <concepts>
 #include <type_traits>
 #include <utility>
 
 namespace ll::traits {
+
+template <class T, template <class> class Z>
+concept Require = Z<T>::value;
 
 template <size_t N, class T, class... Ts>
 struct get_type {
@@ -155,5 +159,34 @@ constexpr bool always_false = false;
 template <class T>
 constexpr bool is_virtual_cloneable_v =
     std::is_polymorphic_v<T> && requires(T const& t) { static_cast<T*>(t.clone().release()); };
+
+template <class T>
+constexpr bool is_awaiter_v = requires(std::remove_cv_t<T>& t) {
+    { t.await_ready() } -> std::same_as<bool>;
+    t.await_resume();
+};
+template <class T>
+struct is_awaiter : std::bool_constant<is_awaiter_v<T>> {};
+
+template <class T>
+constexpr bool has_member_operator_co_await_v = requires(T&& t) {
+    { std::forward<T>(t).operator co_await() } -> Require<is_awaiter>;
+};
+template <class T>
+struct has_member_operator_co_await : std::bool_constant<has_member_operator_co_await_v<T>> {};
+
+template <class T>
+constexpr bool has_non_member_operator_co_await_v = requires(T&& t) {
+    { operator co_await(std::forward<T>(t)) } -> Require<is_awaiter>;
+};
+template <class T>
+struct has_non_member_operator_co_await : std::bool_constant<has_non_member_operator_co_await_v<T>> {};
+
+template <class T>
+constexpr bool is_awaitable_v =
+    has_member_operator_co_await_v<T> || has_non_member_operator_co_await_v<T> || is_awaiter_v<T>;
+
+template <class T>
+struct is_awaitable : std::bool_constant<is_awaitable_v<T>> {};
 
 } // namespace ll::traits

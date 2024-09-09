@@ -39,12 +39,14 @@ struct Scheduler::Impl {
                 startWork();
                 pair.second = worker->addTaskAfter(
                     [&, task] {
-                        if (task->nextAfterCall()) {
-                            task->call();
-                            addTaskImpl(task);
-                        } else {
-                            addTaskImpl(task);
-                            task->call();
+                        if (!task->isCancelled()) {
+                            if (task->nextAfterCall()) {
+                                task->call();
+                                addTaskImpl(task);
+                            } else {
+                                addTaskImpl(task);
+                                task->call();
+                            }
                         }
                         endWork();
                     },

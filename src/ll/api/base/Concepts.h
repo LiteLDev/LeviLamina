@@ -10,6 +10,8 @@
 
 namespace ll::concepts {
 
+using traits::Require;
+
 template <class T, class U>
 concept IsInTypes = traits::is_in_types_v<T, U>;
 
@@ -24,9 +26,6 @@ concept IsNonCharIntegral = traits::is_non_char_integral_v<T>;
 
 template <class T>
 concept IsString = traits::is_string_v<T>;
-
-template <class T, template <class> class Z>
-concept Require = Z<T>::value;
 
 template <class T>
 concept IsExpected = requires(T e) {
