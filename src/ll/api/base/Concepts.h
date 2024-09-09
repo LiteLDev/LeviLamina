@@ -8,6 +8,9 @@
 #include "ll/api/base/StdInt.h"
 #include "ll/api/base/TypeTraits.h"
 
+namespace ll {
+class Error;
+}
 namespace ll::concepts {
 
 using traits::Require;
@@ -36,6 +39,10 @@ concept IsExpected = requires(T e) {
     e.error();
     requires std::is_same_v<void, typename std::remove_cvref_t<T>::value_type> || requires(T e) { e.value(); };
 };
+
+template <class T>
+concept IsLeviExpected = IsExpected<T> &&
+   std::same_as<typename std::remove_cvref_t<T>::error_type, Error>;
 
 template <class T>
 concept IsOptional = !IsExpected<T> && requires(T o) {
@@ -91,9 +98,6 @@ template <class T, template <class...> class Z>
 concept DerivedFromSpecializes = traits::is_derived_from_specialization_of_v<T, Z>;
 
 template <class T>
-concept VirtualCloneable = traits::is_virtual_cloneable_v<T>;
-
-template <class T>
 concept Stringable = requires(T t) {
     requires requires {
         { t.toString() } -> IsString;
@@ -101,5 +105,11 @@ concept Stringable = requires(T t) {
         { t.to_string() } -> IsString;
     };
 };
+
+template <class T>
+concept VirtualCloneable = traits::is_virtual_cloneable_v<T>;
+
+template <class T>
+concept Awaitable = traits::is_awaitable_v<T>;
 
 } // namespace ll::concepts

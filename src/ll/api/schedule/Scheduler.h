@@ -10,7 +10,7 @@ class Scheduler {
     std::unique_ptr<Impl> impl;
 
 public:
-    LLNDAPI explicit Scheduler(std::shared_ptr<thread::TaskExecuter const> pool);
+    LLNDAPI explicit Scheduler(std::shared_ptr<thread::TaskExecutor const> pool);
 
     LLNDAPI static Scheduler fromDefaultServerThread();
     LLNDAPI static Scheduler fromDefaultThreadPool();

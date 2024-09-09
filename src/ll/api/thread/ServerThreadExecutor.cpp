@@ -1,4 +1,4 @@
-#include "ll/api/thread/ServerThreadExecuter.h"
+#include "ll/api/thread/ServerThreadExecutor.h"
 
 #include <functional>
 #include <memory>
@@ -14,7 +14,7 @@
 
 namespace ll::thread {
 
-struct ServerThreadExecuter::Impl {
+struct ServerThreadExecutor::Impl {
     struct ScheduledWork {
         SchId                 id;
         uint64                time;
@@ -58,8 +58,8 @@ struct ServerThreadExecuter::Impl {
     std::atomic<SchId>          schId{0};
     event::ListenerPtr          worker;
 };
-ServerThreadExecuter::ServerThreadExecuter(std::string_view name, Duration maxOnceDuration, size_t checkPack)
-: TaskExecuter(name),
+ServerThreadExecutor::ServerThreadExecutor(std::string_view name, Duration maxOnceDuration, size_t checkPack)
+: TaskExecutor(name),
   impl(std::make_unique<Impl>(std::make_shared<Impl::SharedImpl>())) {
     impl->worker = event::EventBus::getInstance().emplaceListener<event::LevelTickEvent>(
         [name = getName(), maxOnceDuration, checkPack, weak = std::weak_ptr{impl->shared}](auto&&) {
@@ -73,7 +73,7 @@ ServerThreadExecuter::ServerThreadExecuter(std::string_view name, Duration maxOn
                 try {
                     f();
                 } catch (...) {
-                    getLogger().error("Error in ServerThreadExecuter({}):", name);
+                    getLogger().error("Error in ServerThreadExecutor({}):", name);
                     error_utils::printCurrentException(getLogger());
                 }
                 if (++i % checkPack == 0 && Clock::now() - begin > maxOnceDuration) {
@@ -85,12 +85,12 @@ ServerThreadExecuter::ServerThreadExecuter(std::string_view name, Duration maxOn
         event::EventPriority::Low
     );
 }
-ServerThreadExecuter::~ServerThreadExecuter() {
+ServerThreadExecutor::~ServerThreadExecutor() {
     event::EventBus::getInstance().removeListener<event::LevelTickEvent>(impl->worker);
 }
-void ServerThreadExecuter::addTask(std::function<void()> f) const { impl->shared->works.push(std::move(f)); }
+void ServerThreadExecutor::addTask(std::function<void()> f) const { impl->shared->works.push(std::move(f)); }
 
-TaskExecuter::SchId ServerThreadExecuter::addTaskAfter(std::function<void()> f, Duration dur) const {
+TaskExecutor::SchId ServerThreadExecutor::addTaskAfter(std::function<void()> f, Duration dur) const {
     auto tick = std::chrono::ceil<chrono::ticks>(dur).count();
     if (tick <= 0) {
         impl->shared->works.push(std::move(f));
@@ -113,7 +113,7 @@ static auto& getUnderlyingContainer(Q<Ts...>& q) {
     return Tmp::getter(q);
 }
 
-bool ServerThreadExecuter::removeFromSch(SchId id) const {
+bool ServerThreadExecutor::removeFromSch(SchId id) const {
     if (id == 0) {
         return false;
     }
@@ -130,9 +130,9 @@ bool ServerThreadExecuter::removeFromSch(SchId id) const {
     return found;
 }
 
-ServerThreadExecuter const& ServerThreadExecuter::getDefault() {
-    static std::shared_ptr<ServerThreadExecuter> p =
-        std::make_shared<ServerThreadExecuter>("default", std::chrono::milliseconds{30}, 16);
+ServerThreadExecutor const& ServerThreadExecutor::getDefault() {
+    static std::shared_ptr<ServerThreadExecutor> p =
+        std::make_shared<ServerThreadExecutor>("default", std::chrono::milliseconds{30}, 16);
     return *p;
 }
 } // namespace ll::thread

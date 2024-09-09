@@ -10,7 +10,7 @@
 
 #include "pl/Config.h"
 
-#include "ll/api/thread/ThreadPoolExecuter.h"
+#include "ll/api/thread/ThreadPoolExecutor.h"
 
 namespace ll::io {
 
@@ -26,9 +26,9 @@ static void printLogError(std::string_view msg) noexcept try {
     } catch (...) {}
 }
 
-static std::shared_ptr<thread::TaskExecuter> const& getLogPool() {
-    static std::shared_ptr<thread::TaskExecuter> p =
-        std::make_shared<thread::ThreadPoolExecuter>("logger", 1); // logger need keep some order
+static std::shared_ptr<thread::TaskExecutor> const& getLogPool() {
+    static std::shared_ptr<thread::TaskExecutor> p =
+        std::make_shared<thread::ThreadPoolExecutor>("logger", 1); // logger need keep some order
     return p;
 }
 
@@ -38,9 +38,9 @@ struct Logger::Impl {
 
     std::shared_ptr<std::vector<std::shared_ptr<SinkBase>>> sinks;
 
-    std::shared_ptr<thread::TaskExecuter> pool;
+    std::shared_ptr<thread::TaskExecutor> pool;
 
-    Impl(std::string_view title, std::shared_ptr<thread::TaskExecuter> pool) : title(title), pool(std::move(pool)) {}
+    Impl(std::string_view title, std::shared_ptr<thread::TaskExecutor> pool) : title(title), pool(std::move(pool)) {}
 };
 Logger::~Logger() = default;
 

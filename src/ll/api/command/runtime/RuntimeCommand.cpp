@@ -7,7 +7,7 @@ namespace ll::command {
 RuntimeCommand::RuntimeCommand(
     StringMap<uint64> const&                                  map,
     std::vector<std::pair<std::string, ParamKindType>> const& params,
-    Executor const&                                           executor
+    Fn const&                                                 executor
 )
 : executor(executor),
   paramIndexMap(map),

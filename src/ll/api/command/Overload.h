@@ -119,14 +119,6 @@ public:
         return *this;
     }
 
-    template <auto Executor>
-    [[deprecated("deprecated: please put the function as a parameter in the bracket")]] void constexpr execute() {
-        using E = std::remove_cvref_t<decltype((Executor))>;
-        setFactory([&]() -> std::unique_ptr<::Command> {
-            return std::unique_ptr<Command<Params, E>>(new Command<Params, E>{Executor});
-        });
-    }
-
     template <class Fn>
     void constexpr execute(Fn&& fn) {
         using E = std::remove_cvref_t<Fn>;

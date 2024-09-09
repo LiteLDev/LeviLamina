@@ -14,7 +14,7 @@
 #include "ll/api/schedule/Task.h"
 #include "ll/api/service/Bedrock.h"
 #include "ll/api/service/ServerInfo.h"
-#include "ll/api/thread/ServerThreadExecuter.h"
+#include "ll/api/thread/ServerThreadExecutor.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/RandomUtils.h"
 #include "ll/api/utils/StringUtils.h"
@@ -106,7 +106,7 @@ struct Statistics::Impl {
     nlohmann::json      json;
 
     void submitData() {
-        thread::ServerThreadExecuter::getDefault()
+        thread::ServerThreadExecutor::getDefault()
             .addPackagedTask([this]() {
                 nlohmann::json pluginInfo;
                 pluginInfo["pluginName"]   = getSelfModIns()->getName();

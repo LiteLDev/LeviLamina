@@ -14,7 +14,7 @@
 #include "ll/api/base/StdInt.h"
 #include "ll/api/mod/Mod.h"
 #include "ll/api/mod/NativeMod.h"
-#include "ll/api/thread/TaskExecuter.h"
+#include "ll/api/thread/TaskExecutor.h"
 
 
 namespace ll::schedule {
@@ -42,7 +42,7 @@ private:
 public:
     std::weak_ptr<mod::Mod> modPtr;
 
-    using Duration = thread::TaskExecuter::Duration;
+    using Duration = thread::TaskExecutor::Duration;
 
     Task(std::function<void()> fn, bool isNextAfterCall, std::weak_ptr<mod::Mod> mod = mod::NativeMod::current())
     : id(detail::nextTaskId()),

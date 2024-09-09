@@ -2,26 +2,28 @@
 
 #include <coroutine>
 
-#include "ll/api/thread/TaskExecuter.h"
+#include "ll/api/coro/Executor.h"
 
 namespace ll::coro {
 class SleepWaiter {
-    using Duration = thread::TaskExecuter::Duration;
 
-    thread::TaskExecuter& exec;
-    Duration              dur;
+    ExecutorRef exec;
+    Duration    dur;
 
 public:
     template <class R, class P>
-    SleepWaiter(thread::TaskExecuter& exec, std::chrono::duration<R, P> dur)
+    constexpr SleepWaiter(std::chrono::duration<R, P> dur, ExecutorRef exec = nullptr)
     : exec(exec),
       dur(std::chrono::duration_cast<Duration>(dur)) {}
 
     template <class C, class D>
-    SleepWaiter(thread::TaskExecuter& exec, std::chrono::time_point<C, D> time) : SleepWaiter(exec, time - C::now()) {}
+    constexpr SleepWaiter(std::chrono::time_point<C, D> time, ExecutorRef exec = nullptr)
+    : SleepWaiter(time - C::now(), exec) {}
 
-    bool await_ready() const noexcept { return false; }
-    void await_suspend(std::coroutine_handle<> handle) { exec.addTaskAfter(handle, dur); }
-    void await_resume() const noexcept {}
+    constexpr void setExecutor(ExecutorRef ex) { exec = ex; }
+
+    constexpr bool await_ready() const noexcept { return false; }
+    void           await_suspend(std::coroutine_handle<> handle) { exec->addTaskAfter(handle, dur); }
+    constexpr void await_resume() const noexcept {}
 };
 } // namespace ll::coro

@@ -1,16 +1,16 @@
 #pragma once
 
-#include "ll/api/thread/TaskExecuter.h"
+#include "ll/api/thread/TaskExecutor.h"
 
 namespace ll::thread {
-class ThreadPoolExecuter : public TaskExecuter {
+class ThreadPoolExecutor : public TaskExecutor {
     struct Impl;
     std::unique_ptr<Impl> impl;
 
 public:
-    LLAPI explicit ThreadPoolExecuter(std::string_view name, size_t nThreads = 1);
+    LLAPI explicit ThreadPoolExecutor(std::string_view name, size_t nThreads = 1);
 
-    LLAPI ~ThreadPoolExecuter() override;
+    LLAPI ~ThreadPoolExecutor() override;
 
     LLAPI void resize(size_t nThreads = 1);
     LLAPI void destroy();
@@ -21,6 +21,6 @@ public:
 
     LLAPI bool removeFromSch(SchId) const override;
 
-    LLNDAPI static ThreadPoolExecuter const& getDefault();
+    LLNDAPI static ThreadPoolExecutor const& getDefault();
 };
 } // namespace ll::thread

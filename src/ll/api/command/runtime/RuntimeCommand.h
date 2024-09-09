@@ -11,18 +11,18 @@ class RuntimeCommand : public ::Command {
     friend RuntimeOverload;
 
 public:
-    using Executor = std::function<void(CommandOrigin const&, CommandOutput&, RuntimeCommand const&)>;
+    using Fn = std::function<void(CommandOrigin const&, CommandOutput&, RuntimeCommand const&)>;
 
 private:
     uint64                   placeholder{};
-    Executor const&          executor;
+    Fn const&                executor;
     StringMap<uint64> const& paramIndexMap;
     size_t                   paramCount;
 
     LLAPI RuntimeCommand(
         StringMap<uint64> const&                                  map,
         std::vector<std::pair<std::string, ParamKindType>> const& params,
-        Executor const&                                           executor
+        Fn const&                                                 executor
     );
 
 public:

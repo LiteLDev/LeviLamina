@@ -6,13 +6,13 @@
 
 #include "ll/api/base/Containers.h"
 #include "ll/api/base/StdInt.h"
-#include "ll/api/thread/ServerThreadExecuter.h"
-#include "ll/api/thread/ThreadPoolExecuter.h"
+#include "ll/api/thread/ServerThreadExecutor.h"
+#include "ll/api/thread/ThreadPoolExecutor.h"
 
 namespace ll::schedule {
 struct Scheduler::Impl {
-    std::shared_ptr<thread::TaskExecuter const>               worker;
-    ConcurrentDenseMap<Task::Id, thread::TaskExecuter::SchId> tasks;
+    std::shared_ptr<thread::TaskExecutor const>               worker;
+    ConcurrentDenseMap<Task::Id, thread::TaskExecutor::SchId> tasks;
     std::atomic_size_t                                        workingCount{0};
     std::atomic_bool                                          done{true};
 
@@ -58,7 +58,7 @@ struct Scheduler::Impl {
         return nullptr;
     }
 
-    Impl(std::shared_ptr<thread::TaskExecuter const> pool) : worker(std::move(pool)) {}
+    Impl(std::shared_ptr<thread::TaskExecutor const> pool) : worker(std::move(pool)) {}
     ~Impl() { done.wait(false); }
 };
 
@@ -66,14 +66,14 @@ Scheduler::~Scheduler()                               = default;
 Scheduler::Scheduler(Scheduler&&) noexcept            = default;
 Scheduler& Scheduler::operator=(Scheduler&&) noexcept = default;
 
-Scheduler::Scheduler(std::shared_ptr<thread::TaskExecuter const> pool)
+Scheduler::Scheduler(std::shared_ptr<thread::TaskExecutor const> pool)
 : impl(std::make_unique<Impl>(std::move(pool))) {}
 
 Scheduler Scheduler::fromDefaultServerThread() {
-    return Scheduler{thread::ServerThreadExecuter::getDefault().shared_from_this()};
+    return Scheduler{thread::ServerThreadExecutor::getDefault().shared_from_this()};
 }
 Scheduler Scheduler::fromDefaultThreadPool() {
-    return Scheduler{thread::ThreadPoolExecuter::getDefault().shared_from_this()};
+    return Scheduler{thread::ThreadPoolExecutor::getDefault().shared_from_this()};
 }
 std::shared_ptr<Task> Scheduler::addTask(std::shared_ptr<Task> task) {
     if (impl->tasks.try_emplace(task->getId(), 0).second) {

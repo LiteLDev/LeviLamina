@@ -36,7 +36,7 @@ public:
 
     LLNDAPI RuntimeOverload& deoption(CommandParameterOption option);
 
-    LLAPI void execute(RuntimeCommand::Executor fn);
+    LLAPI void execute(RuntimeCommand::Fn);
 
     LLAPI RuntimeOverload(RuntimeOverload&&);
     LLAPI ~RuntimeOverload();

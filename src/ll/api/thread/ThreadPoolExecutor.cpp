@@ -1,4 +1,4 @@
-#include "ll/api/thread/ThreadPoolExecuter.h"
+#include "ll/api/thread/ThreadPoolExecutor.h"
 
 #include <condition_variable>
 #include <mutex>
@@ -15,7 +15,7 @@
 
 namespace ll::thread {
 
-struct ThreadPoolExecuter::Impl {
+struct ThreadPoolExecutor::Impl {
     struct ScheduledWork {
         SchId                                 id;
         std::chrono::steady_clock::time_point time;
@@ -31,10 +31,10 @@ struct ThreadPoolExecuter::Impl {
         std::priority_queue<ScheduledWork, std::vector<ScheduledWork>, SwCmp> works;
         std::atomic_bool                                                      working{true};
         std::atomic<SchId>                                                    schId{0};
-        ScheduledWorker(TaskExecuter const& e) {
+        ScheduledWorker(TaskExecutor const& e) {
             schtrd = std::thread{[this, &e]() {
                 ll::error_utils::initExceptionTranslator();
-                setThreadName(fmt::format("ll::ThreadPoolExecuter({})[sch]", e.getName()));
+                setThreadName(fmt::format("ll::ThreadPoolExecutor({})[sch]", e.getName()));
                 while (working) {
                     if (works.empty()) {
                         sleeper.sleep();
@@ -72,18 +72,18 @@ struct ThreadPoolExecuter::Impl {
     std::optional<ScheduledWorker>    scheduledWorker;
     bool                              stop{false};
 
-    ScheduledWorker& getScheduledWorker(TaskExecuter const& e) {
+    ScheduledWorker& getScheduledWorker(TaskExecutor const& e) {
         std::lock_guard lock{mutex};
         if (!scheduledWorker) {
             scheduledWorker.emplace(e);
         }
         return *scheduledWorker;
     }
-    Impl(TaskExecuter& self, size_t nThreads) {
+    Impl(TaskExecutor& self, size_t nThreads) {
         for (size_t i = 0; i < nThreads; ++i) {
             workers.emplace_back([this, &self, i] {
                 ll::error_utils::initExceptionTranslator();
-                setThreadName(fmt::format("ll::ThreadPoolExecuter({})[{}]", self.getName(), i));
+                setThreadName(fmt::format("ll::ThreadPoolExecutor({})[{}]", self.getName(), i));
                 for (;;) {
                     std::function<void()> task;
                     {
@@ -96,7 +96,7 @@ struct ThreadPoolExecuter::Impl {
                     try {
                         task();
                     } catch (...) {
-                        getLogger().error("Error in ThreadPoolExecuter({})[{}]:", self.getName(), i);
+                        getLogger().error("Error in ThreadPoolExecutor({})[{}]:", self.getName(), i);
                         error_utils::printCurrentException(getLogger());
                     }
                 }
@@ -114,24 +114,24 @@ struct ThreadPoolExecuter::Impl {
         }
     }
 };
-ThreadPoolExecuter::~ThreadPoolExecuter() = default;
+ThreadPoolExecutor::~ThreadPoolExecutor() = default;
 
-ThreadPoolExecuter::ThreadPoolExecuter(std::string_view name, size_t nThreads)
-: TaskExecuter(name),
+ThreadPoolExecutor::ThreadPoolExecutor(std::string_view name, size_t nThreads)
+: TaskExecutor(name),
   impl(std::make_unique<Impl>(*this, nThreads)) {}
 
-void ThreadPoolExecuter::resize(size_t nThreads) { impl = std::make_unique<Impl>(*this, nThreads); }
+void ThreadPoolExecutor::resize(size_t nThreads) { impl = std::make_unique<Impl>(*this, nThreads); }
 
-void ThreadPoolExecuter::destroy() { impl.reset(); }
+void ThreadPoolExecutor::destroy() { impl.reset(); }
 
-void ThreadPoolExecuter::addTask(std::function<void()> f) const {
+void ThreadPoolExecutor::addTask(std::function<void()> f) const {
     {
         std::lock_guard lock{impl->mutex};
         impl->tasks.emplace(std::move(f));
     }
     impl->condition.notify_one();
 }
-TaskExecuter::SchId ThreadPoolExecuter::addTaskAfter(std::function<void()> f, Duration dur) const {
+TaskExecutor::SchId ThreadPoolExecutor::addTaskAfter(std::function<void()> f, Duration dur) const {
     if (dur <= Duration{0}) {
         addTask(std::move(f));
         return 0;
@@ -155,7 +155,7 @@ static auto& getUnderlyingContainer(Q<Ts...>& q) {
     return Tmp::getter(q);
 }
 
-bool ThreadPoolExecuter::removeFromSch(SchId id) const {
+bool ThreadPoolExecutor::removeFromSch(SchId id) const {
     if (id == 0) {
         return false;
     }
@@ -173,9 +173,9 @@ bool ThreadPoolExecuter::removeFromSch(SchId id) const {
     return found;
 }
 
-ThreadPoolExecuter const& ThreadPoolExecuter::getDefault() {
-    static std::shared_ptr<ThreadPoolExecuter> p =
-        std::make_shared<ThreadPoolExecuter>("default", std::max((int)std::thread::hardware_concurrency() - 2, 2));
+ThreadPoolExecutor const& ThreadPoolExecutor::getDefault() {
+    static std::shared_ptr<ThreadPoolExecutor> p =
+        std::make_shared<ThreadPoolExecutor>("default", std::max((int)std::thread::hardware_concurrency() - 2, 2));
     return *p;
 }
 } // namespace ll::thread

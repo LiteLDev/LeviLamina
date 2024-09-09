@@ -12,7 +12,7 @@
 #include "ll/api/base/StdInt.h"
 
 namespace ll::thread {
-class TaskExecuter : public std::enable_shared_from_this<TaskExecuter> {
+class TaskExecutor : public std::enable_shared_from_this<TaskExecutor> {
     struct Impl;
     std::unique_ptr<Impl> impl;
 
@@ -21,11 +21,11 @@ public:
 
     using SchId = uint64;
 
-    LLNDAPI TaskExecuter(std::string_view name);
+    LLNDAPI TaskExecutor(std::string_view name);
 
     LLNDAPI std::string const& getName() const;
 
-    LLAPI virtual ~TaskExecuter();
+    LLAPI virtual ~TaskExecutor();
 
     virtual void addTask(std::function<void()>) const = 0;
 

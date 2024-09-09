@@ -87,7 +87,7 @@ RuntimeOverload& RuntimeOverload::deoption(CommandParameterOption option) {
     back().mOptions = (CommandParameterOption)((uchar)(back().mOptions) & (!(uchar)option));
     return *this;
 }
-void RuntimeOverload::execute(RuntimeCommand::Executor fn) {
+void RuntimeOverload::execute(RuntimeCommand::Fn fn) {
     std::lock_guard l{lock()};
 
     StringMap<uint64> map;
