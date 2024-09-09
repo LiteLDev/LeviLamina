@@ -77,7 +77,7 @@ public:
                 constexpr std::suspend_never initial_suspend() noexcept { return {}; }
                 constexpr std::suspend_never final_suspend() noexcept { return {}; }
                 constexpr void               return_void() noexcept {}
-                constexpr void               unhandled_exception() {}
+                constexpr void               unhandled_exception() { std::rethrow_exception(std::current_exception()); }
                 constexpr Launcher           get_return_object() noexcept { return {}; }
             };
         };
