@@ -76,11 +76,7 @@ char const* CommandHandle::addText(std::string_view text) { return impl->registr
 
 char const* CommandHandle::storeStr(std::string_view str) {
     std::lock_guard lock{impl->mutex};
-    if (auto iter = impl->storedStr.find(str); iter != impl->storedStr.end()) {
-        return iter->c_str();
-    } else {
-        return impl->storedStr.emplace(str).first->c_str();
-    }
+    return impl->storedStr.lazy_emplace(str, [&](auto const& ctor) { ctor(std::string{str}); })->c_str();
 }
 
 RuntimeOverload CommandHandle::runtimeOverload(std::weak_ptr<mod::Mod> mod) {

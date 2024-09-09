@@ -19,13 +19,19 @@ CommandParameterData::CommandParameterData(
   mOffset(offset),
   mSettedOffset(flagOffset),
   mIsOptional(optional),
-  mOptions(CommandParameterOption::None){};
+  mOptions(CommandParameterOption::None) {}
 
 bool CommandParameterData::operator==(CommandParameterData const& other) const {
-    return mTypeIndex == other.mTypeIndex && mName == other.mName
-        && ((mEnumNameOrPostfix == other.mEnumNameOrPostfix)
-            || (mEnumNameOrPostfix && other.mEnumNameOrPostfix
-                && strcmp(mEnumNameOrPostfix, other.mEnumNameOrPostfix) == 0))
-        && ((mSubChain == other.mSubChain) || (mSubChain && other.mSubChain && strcmp(mSubChain, other.mSubChain) == 0))
-        && mParamType == other.mParamType && mIsOptional == other.mIsOptional && mOptions == other.mOptions;
+    if (mTypeIndex != other.mTypeIndex || mName != other.mName || mOffset != other.mOffset
+        || mSettedOffset != other.mSettedOffset) {
+        return false;
+    }
+    if (mParamType == CommandParameterDataType::Postfix && other.mParamType == mParamType) {
+        if (!((mEnumNameOrPostfix == other.mEnumNameOrPostfix)
+              || (mEnumNameOrPostfix && other.mEnumNameOrPostfix
+                  && strcmp(mEnumNameOrPostfix, other.mEnumNameOrPostfix) == 0))) {
+            return false;
+        }
+    }
+    return true;
 }
