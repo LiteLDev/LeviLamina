@@ -75,11 +75,6 @@ public:
 class TestEventEmitter
 : public ll::event::Emitter<[](auto&&...) { return nullptr; }, TestEvent1, TestEvent2, TestEvent3> {};
 
-
-using namespace ll::schedule;
-
-SystemTimeScheduler remover;
-
 LL_AUTO_TYPE_INSTANCE_HOOK(
     EventTestH,
     ll::memory::HookPriority::Normal,

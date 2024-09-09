@@ -1,172 +1,43 @@
 #pragma once
 
-#include <atomic>
-#include <chrono>
-#include <map>
 #include <memory>
-#include <mutex>
-#include <thread>
 
-#include "ll/api/base/StdInt.h"
-#include "ll/api/chrono/GameChrono.h"
 #include "ll/api/schedule/Task.h"
-#include "ll/api/thread/InterruptableSleep.h"
-#include "ll/api/thread/ServerThreadExecuter.h"
-#include "ll/api/thread/ThreadPoolExecuter.h"
-#include "ll/api/thread/TickSyncSleep.h"
 
 namespace ll::schedule {
-
-template <class Clock>
-struct SleeperType {
-    using type = ll::thread::InterruptableSleep;
-};
-
-template <>
-struct SleeperType<ll::chrono::ServerClock> {
-    using type = ll::thread::TickSyncSleep<ll::chrono::ServerClock>;
-};
-
-template <>
-struct SleeperType<ll::chrono::GameTickClock> {
-    using type = ll::thread::TickSyncSleep<ll::chrono::GameTickClock>;
-};
-
-template <
-    concepts::Require<std::chrono::is_clock> Clock,
-    class Executer = ll::thread::ThreadPoolExecuter,
-    class Sleeper  = SleeperType<Clock>::type>
-class Scheduler;
-
-using ServerTimeAsyncScheduler = Scheduler<ll::chrono::ServerClock>;
-using GameTickAsyncScheduler   = Scheduler<ll::chrono::GameTickClock>;
-using SystemTimeScheduler      = Scheduler<std::chrono::system_clock>;
-
-using ServerTimeScheduler = Scheduler<ll::chrono::ServerClock, ll::thread::ServerThreadExecuter>;
-using GameTickScheduler   = Scheduler<ll::chrono::GameTickClock, ll::thread::ServerThreadExecuter>;
-
-template <concepts::Require<std::chrono::is_clock> Clock, class Executer, class Sleeper>
 class Scheduler {
-private:
-    using time_point = typename Clock::time_point;
-    using duration   = typename Clock::duration;
-    using task_ptr   = std::shared_ptr<Task<Clock>>;
-    using tasks_type = std::multimap<time_point, task_ptr>;
-
-    std::recursive_mutex                        mutex;
-    tasks_type                                  tasks;
-    std::atomic_bool                            done;
-    Sleeper                                     sleeper;
-    std::shared_ptr<thread::TaskExecuter const> workers;
-    std::thread                                 manager;
-
-    task_ptr addTask(task_ptr t) {
-        if (t->isCancelled()) {
-            return t;
-        }
-
-        auto time = t->getFirstTime();
-        if (!time) {
-            return t;
-        }
-        {
-            std::lock_guard l{mutex};
-            tasks.emplace(*time, t);
-            sleeper.interrupt();
-        }
-        return t;
-    }
-
-    void manageTasks() {
-        std::lock_guard l{mutex};
-        auto            end = tasks.upper_bound(Clock::now());
-        if (end == tasks.begin()) {
-            return;
-        }
-        tasks_type temp;
-
-        for (auto i = tasks.begin(); i != end; ++i) {
-            auto& task = i->second;
-            if (task->isCancelled()) {
-                continue;
-            }
-            if (task->interval()) {
-                workers->addTask([this, task] {
-                    try {
-                        task->call();
-                    } catch (...) {
-                        detail::printScheduleError(*task);
-                    }
-                    addTask(task);
-                });
-            } else {
-                workers->addTask([task] {
-                    try {
-                        task->call();
-                    } catch (...) {
-                        detail::printScheduleError(*task);
-                    }
-                });
-                if (task->isCancelled()) {
-                    continue;
-                }
-                auto time = task->getNextTime();
-                if (time) {
-                    temp.emplace(*time, std::move(task));
-                }
-            }
-        }
-        tasks.erase(tasks.begin(), end);
-
-        for (auto& task : temp) tasks.emplace(task.first, std::move(task.second));
-    }
+    struct Impl;
+    std::unique_ptr<Impl> impl;
 
 public:
-    Scheduler(Scheduler&&)                 = delete;
+    LLNDAPI explicit Scheduler(std::shared_ptr<thread::TaskExecuter const> pool);
+
+    LLNDAPI static Scheduler fromDefaultServerThread();
+    LLNDAPI static Scheduler fromDefaultThreadPool();
+
+    LLAPI            Scheduler(Scheduler&&) noexcept;
+    LLAPI Scheduler& operator=(Scheduler&&) noexcept;
+
     Scheduler(Scheduler const&)            = delete;
-    Scheduler& operator=(Scheduler&&)      = delete;
     Scheduler& operator=(Scheduler const&) = delete;
 
-    explicit Scheduler(std::shared_ptr<thread::TaskExecuter const> pool = Executer::getDefault().shared_from_this())
-    : done(false),
-      workers(std::move(pool)) {
-        manager = std::thread([this] {
-            while (!done) {
-                if (tasks.empty()) {
-                    sleeper.sleep();
-                } else {
-                    sleeper.sleepUntil(tasks.begin()->first);
-                }
-                manageTasks();
-            }
-        });
+    LLAPI ~Scheduler();
+
+    LLAPI std::shared_ptr<Task> addTask(std::shared_ptr<Task> task);
+
+    template <class T, class... Args>
+        requires(std::derived_from<T, Task>)
+    std::shared_ptr<Task> add(Args&&... args) {
+        return addTask(std::make_shared<T>(std::forward<Args>(args)...));
     }
 
-    ~Scheduler() {
-        done = true;
-        sleeper.interrupt();
-        if (manager.joinable()) manager.join();
-    }
+    LLAPI void clear();
 
-    template <template <class> class T, class... Args>
-        requires(std::derived_from<T<Clock>, Task<Clock>>)
-    task_ptr add(Args&&... args) {
-        return addTask(std::make_shared<T<Clock>>(std::forward<Args>(args)...));
-    }
+    LLAPI bool remove(Task::Id id);
 
-    bool remove(task_ptr const& task) {
-        std::lock_guard l{mutex};
-        return erase_if(tasks, [&](auto& t) { return t.second == task; });
-    }
-
-    bool remove(uint64 id) {
-        std::lock_guard l{mutex};
-        return erase_if(tasks, [&](auto& t) { return t.second->getId() == id; });
-    }
-
-    void clear() {
-        std::lock_guard l{mutex};
-        tasks.clear();
+    bool remove(std::shared_ptr<Task> const& task) {
+        if (!task) return false;
+        return remove(task->getId());
     }
 };
 } // namespace ll::schedule

@@ -9,13 +9,16 @@
 
 // #include "ll/api/thread/GlobalThreadPauser.h"
 
-using namespace ll::schedule;
+using namespace ll;
 
-ll::io::Logger schedulelogger("Schedule");
+io::Logger schedulelogger("Schedule");
 
-SystemTimeScheduler      s;
-ServerTimeAsyncScheduler s2;
-GameTickScheduler        s3;
+schedule::Scheduler s  = schedule::Scheduler::fromDefaultServerThread();
+schedule::Scheduler s2 = schedule::Scheduler::fromDefaultThreadPool();
+
+using namespace ll::schedule::task;
+
+using namespace std::literals;
 
 #include "mc/network/packet/TextPacket.h"
 
@@ -50,6 +53,25 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
             return N;
         });
     }
+
+    // s.add<IntervalTask>(5s, [&]() {
+    //     auto t = s2.add<RepeatTask<std::chrono::steady_clock>>(
+    //         1s,
+    //         [&] {
+    //             schedulelogger.info(
+    //                 "fromDefaultThreadPool: {}, {}",
+    //                 std::chrono::system_clock::now(),
+    //                 std::this_thread::get_id()
+    //             );
+    //         },
+    //         10
+    //     );
+    //     s2.add<DelayTask>(2.5s, [t] { s2.remove(t); });
+
+
+    //     schedulelogger
+    //         .info("fromDefaultServerThread: {}, {}", std::chrono::system_clock::now(), std::this_thread::get_id());
+    // });
 
     return origin(ins);
 }

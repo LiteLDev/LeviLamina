@@ -73,6 +73,7 @@ struct ThreadPoolExecuter::Impl {
     bool                              stop{false};
 
     ScheduledWorker& getScheduledWorker(TaskExecuter const& e) {
+        std::lock_guard lock{mutex};
         if (!scheduledWorker) {
             scheduledWorker.emplace(e);
         }
@@ -123,10 +124,10 @@ void ThreadPoolExecuter::resize(size_t nThreads) { impl = std::make_unique<Impl>
 
 void ThreadPoolExecuter::destroy() { impl.reset(); }
 
-void ThreadPoolExecuter::addTask(std::function<void()> task) const {
+void ThreadPoolExecuter::addTask(std::function<void()> f) const {
     {
         std::lock_guard lock{impl->mutex};
-        impl->tasks.emplace(std::move(task));
+        impl->tasks.emplace(std::move(f));
     }
     impl->condition.notify_one();
 }
@@ -135,9 +136,8 @@ TaskExecuter::SchId ThreadPoolExecuter::addTaskAfter(std::function<void()> f, Du
         addTask(std::move(f));
         return 0;
     } else {
-        std::lock_guard lock{impl->mutex};
-        auto&           worker = impl->getScheduledWorker(*this);
-        auto            id     = ++worker.schId;
+        auto& worker = impl->getScheduledWorker(*this);
+        auto  id     = ++worker.schId;
         {
             std::lock_guard l{worker.mutex};
             worker.works.emplace(id, std::chrono::steady_clock::now() + dur, std::move(f));
@@ -159,7 +159,6 @@ bool ThreadPoolExecuter::removeFromSch(SchId id) const {
     if (id == 0) {
         return false;
     }
-    std::lock_guard lock{impl->mutex};
     auto&           worker = impl->getScheduledWorker(*this);
     std::lock_guard l{worker.mutex};
 

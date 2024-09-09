@@ -17,7 +17,7 @@ class TaskExecuter : public std::enable_shared_from_this<TaskExecuter> {
     std::unique_ptr<Impl> impl;
 
 public:
-    using Duration = std::chrono::microseconds;
+    using Duration = std::chrono::high_resolution_clock::duration;
 
     using SchId = uint64;
 

@@ -56,6 +56,11 @@ Logger& Plugin::getLogger() const {
 
 } // namespace ll::plugin
 
+#pragma comment(                                                                                                                                \
+    linker,                                                                                                                                     \
+    "/export:?printScheduleError@detail@schedule@ll@@YAXAEAVTaskBase@task@23@@Z=?printScheduleError@detail@schedule@ll@@YAXAEAVTask@task@23@@Z" \
+)
+
 #pragma comment(                                                                                                       \
     linker,                                                                                                            \
     "/export:?getLogger@Mod@mod@ll@@QEBAAEAVLogger@3@XZ=?getLogger@Plugin@plugin@ll@@QEBAAEAVLogger@3@XZ"              \

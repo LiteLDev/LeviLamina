@@ -14,9 +14,9 @@ std::optional<std::string> getThreadName(std::thread::id id) {
     if (!thread) {
         return res;
     }
-    PWSTR   data;
+    PWSTR   data{};
     HRESULT hr = GetThreadDescription(thread, &data);
-    if (SUCCEEDED(hr)) {
+    if (SUCCEEDED(hr) && data) {
         res = string_utils::wstr2str(data);
         LocalFree(data);
     }

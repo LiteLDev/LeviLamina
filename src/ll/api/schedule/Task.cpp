@@ -17,7 +17,7 @@
 #include "fmt/std.h" // IWYU pragma: keep
 
 namespace ll::schedule::detail {
-void printScheduleError(TaskBase& task) noexcept {
+void printScheduleError(Task& task) noexcept {
     try {
         getLogger().error(
             "Error in schedule task[{}] of {}:",

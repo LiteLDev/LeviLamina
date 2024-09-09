@@ -132,7 +132,7 @@ bool ServerThreadExecuter::removeFromSch(SchId id) const {
 
 ServerThreadExecuter const& ServerThreadExecuter::getDefault() {
     static std::shared_ptr<ServerThreadExecuter> p =
-        std::make_shared<ServerThreadExecuter>("default", std::chrono::milliseconds{40}, 16);
+        std::make_shared<ServerThreadExecuter>("default", std::chrono::milliseconds{30}, 16);
     return *p;
 }
 } // namespace ll::thread

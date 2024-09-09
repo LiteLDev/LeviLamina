@@ -14,6 +14,7 @@
 #include "ll/api/schedule/Task.h"
 #include "ll/api/service/Bedrock.h"
 #include "ll/api/service/ServerInfo.h"
+#include "ll/api/thread/ServerThreadExecuter.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/RandomUtils.h"
 #include "ll/api/utils/StringUtils.h"
@@ -72,18 +73,18 @@ static nlohmann::json addSingleLineChart(std::string_view key, const int value) 
 
 static nlohmann::json getCustomCharts() {
     nlohmann::json res;
-    res.emplace_back(addSimplePie("levilamina_version", ll::getLoaderVersion().to_string()));
+    res.emplace_back(addSimplePie("levilamina_version", getLoaderVersion().to_string()));
     res.emplace_back(addSimplePie("minecraft_version", Common::getBuildInfo().mBuildId));
     res.emplace_back(addSingleLineChart(
         "players",
-        ll::service::getLevel().transform([](auto& level) { return level.getActivePlayerCount(); }).value_or(0)
+        service::getLevel().transform([](auto& level) { return level.getActivePlayerCount(); }).value_or(0)
     ));
     res.emplace_back(addSimplePie(
         "online_mode",
-        ll::service::getPropertiesSettings().value().useOnlineAuthentication() ? "true" : "false"
+        service::getPropertiesSettings().value().useOnlineAuthentication() ? "true" : "false"
     ));
     SmallDenseMap<std::string_view, int> platforms;
-    ll::service::getLevel().transform([&platforms](auto& level) {
+    service::getLevel().transform([&platforms](auto& level) {
         level.forEachPlayer([&platforms](Player& player) {
             std::string_view platformName = magic_enum::enum_name(player.getPlatform());
             if (platforms.find(platformName) == platforms.end()) {
@@ -101,11 +102,11 @@ static nlohmann::json getCustomCharts() {
 }
 
 struct Statistics::Impl {
-    ll::schedule::SystemTimeScheduler scheduler;
-    nlohmann::json                    json;
+    schedule::Scheduler scheduler = schedule::Scheduler::fromDefaultThreadPool();
+    nlohmann::json      json;
 
     void submitData() {
-        ll::thread::ServerThreadExecuter::getDefault()
+        thread::ServerThreadExecuter::getDefault()
             .addPackagedTask([this]() {
                 nlohmann::json pluginInfo;
                 pluginInfo["pluginName"]   = getSelfModIns()->getName();
@@ -141,29 +142,29 @@ struct Statistics::Impl {
         if (!fs::exists(uuidPath)) {
             std::string uuid   = mce::UUID::random().asString();
             json["serverUUID"] = uuid;
-            ll::file_utils::writeFile(uuidPath, uuid);
+            file_utils::writeFile(uuidPath, uuid);
         } else {
-            auto uuidFile = ll::file_utils::readFile(uuidPath);
+            auto uuidFile = file_utils::readFile(uuidPath);
             if (uuidFile.has_value()) {
                 json["serverUUID"] = uuidFile.value();
             } else {
                 std::string uuid = mce::UUID::random().asString();
-                ll::file_utils::writeFile(uuidPath, uuid);
+                file_utils::writeFile(uuidPath, uuid);
             }
         }
-        json["osName"]    = ll::sys_utils::isWine() ? "Linux(wine)" : "Windows";
+        json["osName"]    = sys_utils::isWine() ? "Linux(wine)" : "Windows";
         json["osArch"]    = "amd64";
         json["osVersion"] = "";
         json["coreCount"] = std::thread::hardware_concurrency();
 
-        scheduler.add<ll::schedule::DelayTask>(1.0min * ll::random_utils::rand(3.0, 6.0), [this]() {
+        scheduler.add<schedule::DelayTask>(1.0min * random_utils::rand(3.0, 6.0), [this]() {
             submitData();
-            scheduler.add<ll::schedule::DelayTask>(1.0min * ll::random_utils::rand(1.0, 30.0), [this]() {
+            scheduler.add<schedule::DelayTask>(1.0min * random_utils::rand(1.0, 30.0), [this]() {
                 submitData();
-                scheduler.add<ll::schedule::RepeatTask>(30min, [this]() { submitData(); });
+                scheduler.add<schedule::IntervalTask>(30min, [this]() { submitData(); });
             });
         });
-        ll::getLogger().info("Statistics has been enabled, you can disable statistics in configuration file"_tr());
+        getLogger().info("Statistics has been enabled, you can disable statistics in configuration file"_tr());
     }
 };
 
