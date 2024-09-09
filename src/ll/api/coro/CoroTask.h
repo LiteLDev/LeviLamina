@@ -86,14 +86,18 @@ public:
         }(std::move(*this), std::forward<F>(callback));
     }
 
-    ExpectedT syncLaunch(Executor const& executor) {
-        std::binary_semaphore cond{0};
-        ExpectedT             value;
-        launch(executor, [&](ExpectedT&& result) {
-            value = std::move(result);
-            cond.release();
-        });
-        cond.acquire();
+    ExpectedT syncLaunch(Executor const& executor) noexcept {
+        ExpectedT value;
+        try {
+            std::binary_semaphore cond{0};
+            launch(executor, [&](ExpectedT&& result) {
+                value = std::move(result);
+                cond.release();
+            });
+            cond.acquire();
+        } catch (...) {
+            value = makeExceptionError();
+        }
         return value;
     }
 };
