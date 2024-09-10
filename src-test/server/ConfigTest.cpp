@@ -10,7 +10,6 @@
 
 #include "mc/server/ServerInstance.h"
 
-// #include "ll/api/schedule/Scheduler.h"
 // #include "ll/api/service/Bedrock.h"
 // #include "mc/world/level/BlockPos.h"
 // #include "mc/world/level/Level.h"

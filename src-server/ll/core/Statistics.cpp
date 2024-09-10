@@ -4,17 +4,17 @@
 #include "ll/api/Versions.h"
 #include "ll/api/base/Containers.h"
 #include "ll/api/chrono/GameChrono.h"
+#include "ll/api/coro/CoroTask.h"
 #include "ll/api/event/EventBus.h"
 #include "ll/api/event/server/ServerStartedEvent.h"
 #include "ll/api/i18n/I18n.h"
 #include "ll/api/io/FileUtils.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/mod/ModManagerRegistry.h"
-#include "ll/api/schedule/Scheduler.h"
-#include "ll/api/schedule/Task.h"
 #include "ll/api/service/Bedrock.h"
 #include "ll/api/service/ServerInfo.h"
 #include "ll/api/thread/ServerThreadExecutor.h"
+#include "ll/api/thread/ThreadPoolExecutor.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/RandomUtils.h"
 #include "ll/api/utils/StringUtils.h"
@@ -102,18 +102,17 @@ static nlohmann::json getCustomCharts() {
 }
 
 struct Statistics::Impl {
-    schedule::Scheduler scheduler = schedule::Scheduler::fromDefaultThreadPool();
-    nlohmann::json      json;
+    nlohmann::json json;
 
     void submitData() {
-        thread::ServerThreadExecutor::getDefault()
-            .addPackagedTask([this]() {
-                nlohmann::json pluginInfo;
-                pluginInfo["pluginName"]   = getSelfModIns()->getName();
-                pluginInfo["customCharts"] = getCustomCharts();
-                json["plugins"].emplace_back(pluginInfo);
-            })
-            .wait();
+        auto charts = [](auto& self) -> coro::CoroTask<> {
+            nlohmann::json pluginInfo;
+            pluginInfo["pluginName"]   = getSelfModIns()->getName();
+            pluginInfo["customCharts"] = getCustomCharts();
+            self.json["plugins"].emplace_back(pluginInfo);
+            co_return;
+        }(*this);
+        charts.syncLaunch(thread::ServerThreadExecutor::getDefault());
         try {
             auto body = json.dump();
             cpr::Post(
@@ -157,13 +156,17 @@ struct Statistics::Impl {
         json["osVersion"] = "";
         json["coreCount"] = std::thread::hardware_concurrency();
 
-        scheduler.add<schedule::DelayTask>(1.0min * random_utils::rand(3.0, 6.0), [this]() {
-            submitData();
-            scheduler.add<schedule::DelayTask>(1.0min * random_utils::rand(1.0, 30.0), [this]() {
-                submitData();
-                scheduler.add<schedule::IntervalTask>(30min, [this]() { submitData(); });
-            });
-        });
+        auto submit = [](auto& self) -> coro::CoroTask<> {
+            co_await (1.0min * random_utils::rand(3.0, 6.0));
+            self.submitData();
+            co_await (1.0min * random_utils::rand(1.0, 30.0));
+            self.submitData();
+            while (true) {
+                co_await 30min;
+                self.submitData();
+            }
+        }(*this);
+        submit.launch(thread::ThreadPoolExecutor::getDefault());
         getLogger().info("Statistics has been enabled, you can disable statistics in configuration file"_tr());
     }
 };

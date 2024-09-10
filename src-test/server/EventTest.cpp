@@ -1,7 +1,6 @@
 #include "ll/api/event/Cancellable.h"
 #include "ll/api/event/EventBus.h"
 #include "ll/api/memory/Hook.h"
-#include "ll/api/schedule/Scheduler.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/core/LeviLamina.h"
 #include "mc/server/ServerInstance.h"

@@ -2,6 +2,7 @@
 
 #include <semaphore>
 
+#include "ll/api/coro/Collect.h"
 #include "ll/api/coro/CoroPromise.h"
 #include "ll/api/coro/CoroTaskWaiter.h"
 
@@ -46,11 +47,6 @@ public:
 
     CoroTask(CoroTask&& other) noexcept : handle(std::exchange(other.handle, nullptr)) {}
 
-    constexpr CoroTask& operator=(CoroTask&& other) noexcept {
-        std::swap(handle, other.handle);
-        return *this;
-    }
-
     constexpr ~CoroTask() {
         if (handle) {
             std::exchange(handle, nullptr).destroy();
@@ -67,8 +63,8 @@ public:
 
     auto tryGet() { return ExpectedAwaiter(std::exchange(handle, nullptr)); }
 
-    template <class F = decltype([](auto&&) {})>
-    void launch(Executor const& executor, F&& callback = {})
+    template <class F>
+    void launch(Executor const& executor, F&& callback)
         requires(std::is_invocable_v<F, ExpectedT>)
     {
         setExecutor(executor);
@@ -86,6 +82,9 @@ public:
         }(std::move(*this), std::forward<F>(callback));
     }
 
+    void launch(Executor const& executor) {
+        launch(executor, [](auto&&) {});
+    }
     ExpectedT syncLaunch(Executor const& executor) noexcept {
         ExpectedT value;
         try {
@@ -108,5 +107,15 @@ constexpr CoroTask<T> CoroPromise<T>::get_return_object() noexcept {
 }
 constexpr CoroTask<void> CoroPromise<void>::get_return_object() noexcept {
     return CoroTask<void>(CoroTask<void>::Handle::from_promise(*this));
+}
+template <class T, class Alloc>
+inline auto collectAll(std::vector<CoroTask<T>, Alloc>&& tasks) {
+    return CollectAllAwaiter<std::vector<CoroTask<T>, Alloc>>(std::move(tasks));
+}
+template <typename... Ts>
+inline auto collectAll(CoroTask<Ts>... tasks)
+    requires(sizeof...(Ts) > 0)
+{
+    return CollectAllTupleAwaiter<CoroTask, Ts...>(std::move(tasks)...);
 }
 } // namespace ll::coro
