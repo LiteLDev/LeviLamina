@@ -1354,7 +1354,6 @@ private:
                     *(tmp->elem) = std::move(c.back());
                     my_size.store(my_size.load(std::memory_order_relaxed) - 1, std::memory_order_relaxed);
                     tmp->status.store(uintptr_t(SUCCEEDED), std::memory_order_release);
-
                     c.pop_back();
                 } else { // no convenient item to pop; postpone
                     tmp->next.store(pop_list, std::memory_order_relaxed);
@@ -1367,8 +1366,9 @@ private:
                     if ((*(tmp->fn))(c.back())) {
                         my_size.store(my_size.load(std::memory_order_relaxed) - 1, std::memory_order_relaxed);
                         tmp->status.store(uintptr_t(SUCCEEDED), std::memory_order_release);
-
                         c.pop_back();
+                    } else {
+                        tmp->status.store(uintptr_t(FAILED), std::memory_order_release);
                     }
                 } else { // no convenient item to pop; postpone
                     tmp->next.store(pop_list, std::memory_order_relaxed);
@@ -1394,12 +1394,16 @@ private:
                         my_size.store(my_size.load(std::memory_order_relaxed) - 1, std::memory_order_relaxed);
                         tmp->status.store(uintptr_t(SUCCEEDED), std::memory_order_release);
                         c.pop_back();
+                    } else {
+                        tmp->status.store(uintptr_t(FAILED), std::memory_order_release);
                     }
                 } else { // extract top and push last element down heap
                     if (tmp->type == POP_FN_OP ? ((*(tmp->fn))(c[0])) : (*(tmp->elem) = std::move(c[0]), true)) {
                         my_size.store(my_size.load(std::memory_order_relaxed) - 1, std::memory_order_relaxed);
                         tmp->status.store(uintptr_t(SUCCEEDED), std::memory_order_release);
                         reheap();
+                    } else {
+                        tmp->status.store(uintptr_t(FAILED), std::memory_order_release);
                     }
                 }
             }
