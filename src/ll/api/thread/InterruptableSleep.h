@@ -1,49 +1,32 @@
 #pragma once
 
-#include <chrono>
-#include <mutex>
+#include <semaphore>
 
 namespace ll::thread {
 class InterruptableSleep {
 private:
-    bool                    interrupted{false};
-    std::mutex              mutex;
-    std::condition_variable cv;
+    std::binary_semaphore semaphore{0};
 
 public:
-    InterruptableSleep(InterruptableSleep&&)                 = delete;
     InterruptableSleep(InterruptableSleep const&)            = delete;
-    InterruptableSleep& operator=(InterruptableSleep&&)      = delete;
     InterruptableSleep& operator=(InterruptableSleep const&) = delete;
 
-    InterruptableSleep() = default;
+    constexpr InterruptableSleep() = default;
 
-    ~InterruptableSleep() = default;
+    constexpr ~InterruptableSleep() = default;
 
     template <class R, class P>
     void sleepFor(std::chrono::duration<R, P> duration) {
-        std::unique_lock lock{mutex};
-        cv.wait_for(lock, duration, [this] { return interrupted; });
-        interrupted = false;
+        (void)semaphore.try_acquire_for(duration);
     }
 
     template <class C, class D>
     void sleepUntil(std::chrono::time_point<C, D> time) {
-        std::unique_lock lock{mutex};
-        cv.wait_until(lock, time, [this] { return interrupted; });
-        interrupted = false;
+        (void)semaphore.try_acquire_until(time);
     }
 
-    void sleep() {
-        std::unique_lock lock{mutex};
-        cv.wait(lock, [this] { return interrupted; });
-        interrupted = false;
-    }
+    void sleep() { semaphore.acquire(); }
 
-    void interrupt() {
-        std::lock_guard lg(mutex);
-        interrupted = true;
-        cv.notify_one();
-    }
+    void interrupt() { semaphore.release(); }
 };
 } // namespace ll::thread

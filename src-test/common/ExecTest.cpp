@@ -24,7 +24,7 @@ CoroTask<Expected<int>> coroutine() {
     for (size_t i = 0;; i++) {
         getLogger().info(
             "coroutine: {}, thread: {}",
-            chrono::GameTickClock::now().time_since_epoch(),
+            std::chrono::system_clock::now(),
             std::this_thread::get_id()
         );
         co_await 2_tick;
