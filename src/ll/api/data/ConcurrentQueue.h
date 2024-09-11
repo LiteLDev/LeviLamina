@@ -8,7 +8,6 @@
 */
 
 #include <atomic>
-#include <functional>
 #include <memory>
 #include <thread>
 #include <utility>
@@ -958,7 +957,7 @@ public:
 
     std::atomic<Derived*> next;
     aggregated_operation() : status{}, next(nullptr) {}
-}; // class aggregated_operation
+};
 
 // Aggregator base class
 /* An aggregator for collecting operations coming from multiple sources and executing
@@ -1046,7 +1045,7 @@ private:
     std::atomic<OperationType*> pending_operations;
     // Controls threads access to handle_operations
     std::atomic<uintptr_t> handler_busy;
-}; // class aggregator_generic
+};
 
 template <typename HandlerType, typename OperationType>
 class aggregator : public aggregator_generic<OperationType> {
@@ -1058,7 +1057,7 @@ public:
     void initialize_handler(HandlerType h) { handle_operations = h; }
 
     void execute(OperationType* op) { aggregator_generic<OperationType>::execute(op, handle_operations); }
-}; // class aggregator
+};
 
 template <typename T, typename Compare = std::less<T>, typename Allocator = std::allocator<T>>
 class concurrent_priority_queue {
@@ -1255,8 +1254,12 @@ public:
         return op_data.status == SUCCEEDED;
     }
 
-    bool try_pop_if(std::function<bool(value_type&)> const& fn) {
-        cpq_operation op_data(fn, POP_FN_OP);
+    template <class F>
+    bool try_pop_if(F&& fn) {
+        function_data fn_data{(void*)std::addressof(fn), +[](void* f, value_type& value) -> bool {
+                                  return std::invoke(static_cast<F&&>(*((F*)f)), value);
+                              }};
+        cpq_operation op_data(fn_data, POP_FN_OP);
         my_aggregator.execute(&op_data);
         return op_data.status == SUCCEEDED;
     }
@@ -1287,19 +1290,25 @@ private:
     enum operation_type { PUSH_OP, PUSH_RVALUE_OP, POP_OP, POP_FN_OP };
     enum operation_status { WAIT = 0, SUCCEEDED, FAILED };
 
+    struct function_data {
+        using function_type = bool(void*, value_type&);
+        void*          data;
+        function_type* func;
+
+        bool operator()(value_type& val) const { return func(data, val); }
+    };
+
     class cpq_operation : public aggregated_operation<cpq_operation> {
     public:
         operation_type type;
         union {
-            std::function<bool(value_type&)> const* fn;
-
-            value_type* elem;
-            size_type   sz;
+            function_data const* fn;
+            value_type*          elem;
         };
         cpq_operation(const value_type& value, operation_type t) : type(t), elem(const_cast<value_type*>(&value)) {}
 
-        cpq_operation(std::function<bool(value_type&)> const& f, operation_type t) : type(t), fn(&f) {}
-    }; // class cpq_operation
+        cpq_operation(function_data const& f, operation_type t) : type(t), fn(&f) {}
+    };
 
     class functor {
         concurrent_priority_queue* my_cpq;
@@ -1309,7 +1318,7 @@ private:
         functor(concurrent_priority_queue* cpq) : my_cpq(cpq) {}
 
         void operator()(cpq_operation* op_list) { my_cpq->handle_operations(op_list); }
-    }; // class functor
+    };
 
     void handle_operations(cpq_operation* op_list) {
         cpq_operation *tmp, *pop_list = nullptr;
@@ -1487,7 +1496,7 @@ protected:
     friend bool operator==(const concurrent_priority_queue& lhs, const concurrent_priority_queue& rhs) {
         return lhs.c == rhs.c;
     }
-}; // class concurrent_priority_queue
+};
 
 } // namespace detail
 
