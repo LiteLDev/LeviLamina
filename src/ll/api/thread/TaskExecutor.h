@@ -10,6 +10,7 @@
 
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
+#include "ll/api/thread/CancellableCallback.h"
 
 namespace ll::thread {
 class TaskExecutor : public std::enable_shared_from_this<TaskExecutor> {
@@ -19,8 +20,6 @@ class TaskExecutor : public std::enable_shared_from_this<TaskExecutor> {
 public:
     using Duration = std::chrono::high_resolution_clock::duration;
 
-    using SchId = uint64;
-
     LLNDAPI TaskExecutor(std::string_view name);
 
     LLNDAPI std::string const& getName() const;
@@ -29,9 +28,7 @@ public:
 
     virtual void addTask(std::function<void()>) const = 0;
 
-    virtual SchId addTaskAfter(std::function<void()>, Duration) const = 0;
-
-    virtual bool removeFromSch(SchId) const = 0;
+    virtual std::shared_ptr<CancellableCallback> addTaskAfter(std::function<void()>, Duration) const = 0;
 
     template <class F, class... Args>
     auto addPackagedTask(F&& f, Args&&... args) const {

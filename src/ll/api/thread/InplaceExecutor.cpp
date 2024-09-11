@@ -10,13 +10,11 @@ InplaceExecutor::~InplaceExecutor() = default;
 
 void InplaceExecutor::addTask(std::function<void()> f) const { f(); }
 
-TaskExecutor::SchId InplaceExecutor::addTaskAfter(std::function<void()> f, Duration dur) const {
+std::shared_ptr<CancellableCallback> InplaceExecutor::addTaskAfter(std::function<void()> f, Duration dur) const {
     std::this_thread::sleep_for(dur);
     f();
-    return 0;
+    return nullptr;
 }
-
-bool InplaceExecutor::removeFromSch(SchId) const { return false; }
 
 InplaceExecutor const& InplaceExecutor::getDefault() {
     static std::shared_ptr<InplaceExecutor> p = std::make_shared<InplaceExecutor>("default");

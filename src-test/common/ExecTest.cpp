@@ -22,18 +22,14 @@ CoroTask<float> val2() {
 
 CoroTask<Expected<int>> coroutine() {
     for (size_t i = 0;; i++) {
-        getLogger().info(
-            "coroutine: {}, thread: {}",
-            std::chrono::system_clock::now(),
-            std::this_thread::get_id()
-        );
+        getLogger().info("coroutine: {}, thread: {}", std::chrono::system_clock::now(), std::this_thread::get_id());
         co_await 2_tick;
         if (i > 10) {
             break;
             // throw std::runtime_error("test coroutine");
         }
     }
-    auto parbegin = std::chrono::steady_clock::now();
+    auto parbegin    = std::chrono::steady_clock::now();
     auto [v1, v2, _] = co_await collectAll(val1(), val2(), val2());
     getLogger().info(
         "coroutine: collectAll use {}",

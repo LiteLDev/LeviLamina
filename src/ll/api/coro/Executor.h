@@ -10,6 +10,8 @@ using Executor = thread::TaskExecutor;
 
 using ExecutorRef = optional_ref<Executor const>;
 
+using NonNullExecutorRef = Executor const&;
+
 using Duration = Executor::Duration;
 
 constexpr inline struct CurrentExecutor {

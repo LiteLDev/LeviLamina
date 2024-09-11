@@ -41,8 +41,7 @@ concept IsExpected = requires(T e) {
 };
 
 template <class T>
-concept IsLeviExpected = IsExpected<T> &&
-   std::same_as<typename std::remove_cvref_t<T>::error_type, Error>;
+concept IsLeviExpected = IsExpected<T> && std::same_as<typename std::remove_cvref_t<T>::error_type, Error>;
 
 template <class T>
 concept IsOptional = !IsExpected<T> && requires(T o) {

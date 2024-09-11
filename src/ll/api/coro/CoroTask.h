@@ -64,7 +64,7 @@ public:
     auto tryGet() { return ExpectedAwaiter(std::exchange(handle, nullptr)); }
 
     template <class F>
-    void launch(Executor const& executor, F&& callback)
+    void launch(NonNullExecutorRef executor, F&& callback)
         requires(std::is_invocable_v<F, ExpectedT>)
     {
         setExecutor(executor);
@@ -82,10 +82,10 @@ public:
         }(std::move(*this), std::forward<F>(callback));
     }
 
-    void launch(Executor const& executor) {
+    void launch(NonNullExecutorRef executor) {
         launch(executor, [](auto&&) {});
     }
-    ExpectedT syncLaunch(Executor const& executor) noexcept {
+    ExpectedT syncLaunch(NonNullExecutorRef executor) noexcept {
         ExpectedT value;
         try {
             std::binary_semaphore cond{0};

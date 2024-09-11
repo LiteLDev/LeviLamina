@@ -36,8 +36,8 @@ public:
 
     template <std::derived_from<CoroPromiseBase> P>
     void await_suspend(std::coroutine_handle<P> h) {
-        handle           = h;
-        ExecutorRef exec = h.promise().exec;
+        handle                  = h;
+        NonNullExecutorRef exec = h.promise().exec;
         for (size_t i = 0; i < tasks.size(); ++i) {
             tasks[i].launch(exec, [this, i](auto&& res) {
                 try {
@@ -76,8 +76,8 @@ public:
 
     template <std::derived_from<CoroPromiseBase> P>
     void await_suspend(std::coroutine_handle<P> h) {
-        handle           = h;
-        ExecutorRef exec = h.promise().exec;
+        handle                  = h;
+        NonNullExecutorRef exec = h.promise().exec;
         [&]<size_t... I>(std::index_sequence<I...>) {
             (
                 [&](auto& task, auto& result) {

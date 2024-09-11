@@ -183,7 +183,7 @@ struct hash<::ll::data::IndirectValue<T, C, D>> {
 } // namespace std
 
 namespace ll {
-    template <class T, class D = std::default_delete<T>>
+template <class T, class D = std::default_delete<T>>
 using Indirect = data::IndirectValue<T, data::defaultCopy<T>, D>;
 template <
     class T,

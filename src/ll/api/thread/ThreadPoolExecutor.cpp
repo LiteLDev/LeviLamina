@@ -17,38 +17,37 @@ namespace ll::thread {
 
 struct ThreadPoolExecutor::Impl {
     struct ScheduledWork {
-        SchId                                 id;
         std::chrono::steady_clock::time_point time;
-        std::function<void()>                 fn;
+        std::shared_ptr<CancellableCallback>  callback;
     };
     struct SwCmp {
         bool operator()(ScheduledWork const& x, ScheduledWork const& y) { return x.time > y.time; }
     };
     struct ScheduledWorker {
-        std::shared_mutex                             schMutex;
         std::thread                                   schtrd;
         ConcurrentPriorityQueue<ScheduledWork, SwCmp> works;
         InterruptableSleep                            sleeper;
         std::atomic_bool                              working{true};
-        std::atomic<SchId>                            schId{0};
         ScheduledWorker(TaskExecutor const& e) {
             schtrd = std::thread{[this, &e]() {
                 ll::error_utils::initExceptionTranslator();
                 setThreadName(fmt::format("ll::ThreadPoolExecutor({})[sch]", e.getName()));
                 while (working) {
                     std::optional<std::chrono::steady_clock::duration> frontTime{};
-                    {
-                        std::shared_lock l{schMutex};
-                        auto             now = std::chrono::steady_clock::now();
-                        while (works.try_pop_if([&](Impl::ScheduledWork& w) {
-                            if (w.time <= now) {
-                                e.addTask(std::move(w.fn));
+
+                    auto now = std::chrono::steady_clock::now();
+                    while (works.try_pop_if([&](Impl::ScheduledWork& w) {
+                        if (w.time <= now) {
+                            w.callback->moveTo([&](auto&& fn) {
+                                e.addTask(std::move(fn));
                                 return true;
-                            }
-                            frontTime = w.time - now;
-                            return false;
-                        })) {}
-                    }
+                            });
+                            return true;
+                        }
+                        frontTime = w.time - now;
+                        return false;
+                    })) {}
+
                     if (!frontTime) {
                         sleeper.sleep();
                     } else {
@@ -126,48 +125,18 @@ void ThreadPoolExecutor::addTask(std::function<void()> f) const {
     impl->tasks.push(std::move(f));
     impl->taskCount.release();
 }
-TaskExecutor::SchId ThreadPoolExecutor::addTaskAfter(std::function<void()> f, Duration dur) const {
+std::shared_ptr<CancellableCallback> ThreadPoolExecutor::addTaskAfter(std::function<void()> f, Duration dur) const {
     if (dur <= Duration{0}) {
         addTask(std::move(f));
-        return 0;
+        return nullptr;
     } else {
         auto& worker = impl->getScheduledWorker(*this);
-        auto  id     = ++worker.schId;
-        {
-            std::shared_lock l{worker.schMutex};
-            worker.works.emplace(id, std::chrono::steady_clock::now() + dur, std::move(f));
-            worker.sleeper.interrupt();
-        }
-        return id;
+        auto  res    = std::make_shared<CancellableCallback>(std::move(f));
+        worker.works.emplace(std::chrono::steady_clock::now() + dur, res);
+        worker.sleeper.interrupt();
+        return res;
     }
 }
-
-template <template <class...> class Q, class... Ts>
-static auto& getUnderlyingContainer(Q<Ts...>& q) {
-    struct Tmp : private Q<Ts...> {
-        static auto& getter(Q<Ts...>& q) { return q.*&Tmp::c; }
-    };
-    return Tmp::getter(q);
-}
-
-bool ThreadPoolExecutor::removeFromSch(SchId id) const {
-    if (id == 0) {
-        return false;
-    }
-    auto&           worker = impl->getScheduledWorker(*this);
-    std::lock_guard l{worker.schMutex};
-
-    auto& vec   = getUnderlyingContainer(worker.works);
-    bool  found = erase_if(vec, [&](auto& w) { return w.id == id; });
-
-    std::vector<Impl::ScheduledWork> templist;
-    std::swap(templist, vec);
-
-    worker.works = std::move(templist);
-
-    return found;
-}
-
 ThreadPoolExecutor const& ThreadPoolExecutor::getDefault() {
     static std::shared_ptr<ThreadPoolExecutor> p =
         std::make_shared<ThreadPoolExecutor>("default", std::max((int)std::thread::hardware_concurrency() - 2, 2));

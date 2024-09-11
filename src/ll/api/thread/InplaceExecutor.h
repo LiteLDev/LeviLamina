@@ -11,9 +11,8 @@ public:
 
     LLAPI void addTask(std::function<void()>) const override;
 
-    LLAPI SchId addTaskAfter(std::function<void()>, Duration) const override;
-
-    LLAPI bool removeFromSch(SchId) const override;
+    LLAPI
+    std::shared_ptr<CancellableCallback> addTaskAfter(std::function<void()>, Duration) const override;
 
     LLNDAPI static InplaceExecutor const& getDefault();
 };

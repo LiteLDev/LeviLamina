@@ -16,9 +16,8 @@ namespace ll::thread {
 
 struct ServerThreadExecutor::Impl {
     struct ScheduledWork {
-        SchId                 id;
-        uint64                time;
-        std::function<void()> fn;
+        uint64                               time;
+        std::shared_ptr<CancellableCallback> callback;
     };
     struct SwCmp {
         bool operator()(ScheduledWork const& x, ScheduledWork const& y) { return x.time > y.time; }
@@ -26,23 +25,23 @@ struct ServerThreadExecutor::Impl {
     struct SharedImpl {
         ConcurrentQueue<std::function<void()>> works;
 
-        std::shared_mutex                             schMutex;
         ConcurrentPriorityQueue<ScheduledWork, SwCmp> scheduledWorks;
         std::atomic_uint64_t                          frame{0};
 
         template <class F>
         void update(F&& exec) {
             auto now = frame.load();
-            {
-                std::shared_lock l{schMutex};
-                while (scheduledWorks.try_pop_if([&](Impl::ScheduledWork& w) {
-                    if (w.time <= now) {
-                        works.push(std::move(w.fn));
+            while (scheduledWorks.try_pop_if([&](Impl::ScheduledWork& w) {
+                if (w.time <= now) {
+                    w.callback->moveTo([&](auto&& fn) {
+                        works.push(std::move(fn));
                         return true;
-                    }
-                    return false;
-                })) {}
-            }
+                    });
+                    return true;
+                }
+                return false;
+            })) {}
+
             std::function<void()> f;
 
             size_t i{};
@@ -55,7 +54,6 @@ struct ServerThreadExecutor::Impl {
         }
     };
     std::shared_ptr<SharedImpl> shared;
-    std::atomic<SchId>          schId{0};
     event::ListenerPtr          worker;
 };
 ServerThreadExecutor::ServerThreadExecutor(std::string_view name, Duration maxOnceDuration, size_t checkPack)
@@ -90,44 +88,16 @@ ServerThreadExecutor::~ServerThreadExecutor() {
 }
 void ServerThreadExecutor::addTask(std::function<void()> f) const { impl->shared->works.push(std::move(f)); }
 
-TaskExecutor::SchId ServerThreadExecutor::addTaskAfter(std::function<void()> f, Duration dur) const {
+std::shared_ptr<CancellableCallback> ServerThreadExecutor::addTaskAfter(std::function<void()> f, Duration dur) const {
     auto tick = std::chrono::ceil<chrono::ticks>(dur).count();
     if (tick <= 0) {
         impl->shared->works.push(std::move(f));
-        return 0;
+        return nullptr;
     } else {
-        auto id = ++impl->schId;
-        {
-            std::shared_lock l{impl->shared->schMutex};
-            impl->shared->scheduledWorks.emplace(id, impl->shared->frame.load() + tick, std::move(f));
-        }
-        return id;
+        auto res = std::make_shared<CancellableCallback>(std::move(f));
+        impl->shared->scheduledWorks.emplace(impl->shared->frame.load() + tick, res);
+        return res;
     }
-}
-
-template <template <class...> class Q, class... Ts>
-static auto& getUnderlyingContainer(Q<Ts...>& q) {
-    struct Tmp : private Q<Ts...> {
-        static auto& getter(Q<Ts...>& q) { return q.*&Tmp::c; }
-    };
-    return Tmp::getter(q);
-}
-
-bool ServerThreadExecutor::removeFromSch(SchId id) const {
-    if (id == 0) {
-        return false;
-    }
-    std::lock_guard l{impl->shared->schMutex};
-
-    auto& vec   = getUnderlyingContainer(impl->shared->scheduledWorks);
-    bool  found = erase_if(vec, [&](auto& w) { return w.id == id; });
-
-    std::vector<Impl::ScheduledWork> templist;
-    std::swap(templist, vec);
-
-    impl->shared->scheduledWorks = std::move(templist);
-
-    return found;
 }
 
 ServerThreadExecutor const& ServerThreadExecutor::getDefault() {
