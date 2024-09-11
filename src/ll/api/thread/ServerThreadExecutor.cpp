@@ -74,7 +74,7 @@ ServerThreadExecutor::ServerThreadExecutor(std::string_view name, Duration maxOn
                     getLogger().error("Error in ServerThreadExecutor({}):", name);
                     error_utils::printCurrentException(getLogger());
                 }
-                if (++i % checkPack == 0 && Clock::now() - begin > maxOnceDuration) {
+                if (i % checkPack == 0 && Clock::now() - begin > maxOnceDuration) {
                     return false;
                 }
                 return true;
