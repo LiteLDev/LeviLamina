@@ -21,31 +21,31 @@ public:
 
     template <class U>
         requires(std::is_convertible_v<U*, T*>)
-    [[nodiscard]] constexpr optional_ref(std::optional<U>& o) : mPtr(o ? &*o : nullptr) {}
+    [[nodiscard]] constexpr optional_ref(std::optional<U>& o) noexcept : mPtr(o ? std::addressof(*o) : nullptr) {}
 
 
     template <class U>
         requires(std::is_convertible_v<U*, T*>)
-    [[nodiscard]] constexpr optional_ref(U* p) : mPtr(p) {}
+    [[nodiscard]] constexpr optional_ref(U* p) noexcept : mPtr(p) {}
 
 
     template <class U>
         requires(std::is_convertible_v<U*, T*>)
-    [[nodiscard]] constexpr optional_ref(U& r) : mPtr(std::addressof(r)) {}
+    [[nodiscard]] constexpr optional_ref(U& r) noexcept : mPtr(std::addressof(r)) {}
 
 
     template <class U>
         requires(std::is_convertible_v<U*, T*>)
-    [[nodiscard]] constexpr optional_ref(U const& r) : mPtr(std::addressof(r)) {}
+    [[nodiscard]] constexpr optional_ref(U const& r) noexcept : mPtr(std::addressof(r)) {}
 
 
     template <class U>
         requires(std::is_convertible_v<U*, T*>)
-    [[nodiscard]] constexpr optional_ref(const std::optional<U>& o) : mPtr(o ? &*o : nullptr) {}
+    [[nodiscard]] constexpr optional_ref(const std::optional<U>& o) noexcept : mPtr(o ? &*o : nullptr) {}
 
     template <typename U>
         requires(std::is_convertible_v<U*, T*>)
-    [[nodiscard]] constexpr optional_ref(optional_ref<U> rhs) : mPtr(rhs.as_ptr()) {}
+    [[nodiscard]] constexpr optional_ref(optional_ref<U> rhs) noexcept : mPtr(rhs.as_ptr()) {}
 
     [[nodiscard]] constexpr optional_ref(optional_ref&&) noexcept = default;
 
@@ -69,10 +69,19 @@ public:
     }
 
     [[nodiscard]] constexpr T& get() const { return value(); }
-    [[nodiscard]] constexpr T& operator*() const { return *as_ptr(); }
-    [[nodiscard]] constexpr T* operator->() const { return as_ptr(); }
-    [[nodiscard]] constexpr    operator T&() const { return value(); }
-    [[nodiscard]] constexpr    operator T*() const { return as_ptr(); }
+    [[nodiscard]] constexpr T& operator*() const noexcept { return *as_ptr(); }
+    [[nodiscard]] constexpr T* operator->() const noexcept { return as_ptr(); }
+    template <class U>
+        requires(std::is_same_v<T, U> || std::is_base_of_v<U, T>)
+    [[nodiscard]] constexpr operator U&() const {
+        return value();
+    }
+    template <class U>
+        requires(std::is_same_v<T, U> || std::is_base_of_v<U, T>)
+    [[nodiscard]] constexpr operator U*() const noexcept {
+        return as_ptr();
+    }
+    [[nodiscard]] operator void*() const noexcept { return (void*)(as_ptr()); }
 
     template <class U>
     [[nodiscard]] constexpr T& value_or(U& right) const& {
