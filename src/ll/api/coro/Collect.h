@@ -9,16 +9,16 @@ namespace ll::coro {
 template <class Container>
 struct CollectAllAwaiter {
 public:
-    using ExpectedT = typename Container::value_type::ExpectedT;
+    using ExpectedResult = typename Container::value_type::ExpectedResult;
 
     using allocator_type =
-        typename std::allocator_traits<typename Container::allocator_type>::template rebind_alloc<ExpectedT>;
+        typename std::allocator_traits<typename Container::allocator_type>::template rebind_alloc<ExpectedResult>;
 
 private:
-    std::coroutine_handle<>                handle;
-    Container                              tasks;
-    std::vector<ExpectedT, allocator_type> results;
-    std::atomic_size_t                     counter;
+    std::coroutine_handle<>                     handle;
+    Container                                   tasks;
+    std::vector<ExpectedResult, allocator_type> results;
+    std::atomic_size_t                          counter;
 
 public:
     CollectAllAwaiter(const CollectAllAwaiter&)            = delete;
@@ -56,7 +56,7 @@ template <template <class> class T, class... Ts>
 class CollectAllTupleAwaiter {
 public:
     using Input  = std::tuple<T<Ts>...>;
-    using Result = std::tuple<typename T<Ts>::ExpectedT...>;
+    using Result = std::tuple<typename T<Ts>::ExpectedResult...>;
 
 private:
     std::coroutine_handle<> handle;
@@ -92,7 +92,7 @@ public:
                 }(std::get<I>(tasks), std::get<I>(results)),
                 ...
             );
-        }(std::make_index_sequence<sizeof...(Ts)>());
+        }(std::index_sequence_for<Ts...>());
     }
 
     constexpr auto await_resume() { return std::move(results); }

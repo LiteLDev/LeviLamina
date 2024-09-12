@@ -54,9 +54,9 @@ struct CoroPromiseBase {
 };
 template <class T>
 struct CoroPromise : public CoroPromiseBase {
-    using ExpectedT = std::conditional_t<concepts::IsLeviExpected<T>, T, Expected<T>>;
+    using ExpectedResult = std::conditional_t<concepts::IsLeviExpected<T>, T, Expected<T>>;
 
-    ExpectedT result{};
+    ExpectedResult result{};
 
     constexpr CoroPromise() noexcept = default;
 
@@ -64,8 +64,8 @@ struct CoroPromise : public CoroPromiseBase {
     void return_value(V&& value) noexcept(std::is_nothrow_constructible_v<T, V>)
         requires(std::is_constructible_v<T, V>)
     {
-        if constexpr (std::is_same_v<T, ExpectedT>) {
-            result = T{std::forward<V>(value)};
+        if constexpr (std::is_same_v<T, ExpectedResult>) {
+            result = std::forward<V>(value);
         } else {
             result.emplace(std::forward<V>(value));
         }
@@ -76,9 +76,9 @@ struct CoroPromise : public CoroPromiseBase {
 };
 template <>
 struct CoroPromise<void> : public CoroPromiseBase {
-    using ExpectedT = Expected<>;
+    using ExpectedResult = Expected<>;
 
-    ExpectedT result{std::in_place};
+    ExpectedResult result{std::in_place};
 
     constexpr CoroPromise() noexcept = default;
 

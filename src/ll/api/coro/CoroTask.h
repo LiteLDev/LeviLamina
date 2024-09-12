@@ -14,7 +14,9 @@ public:
     using promise_type = CoroPromise<T>;
     using Handle       = std::coroutine_handle<promise_type>;
 
-    using ExpectedT = typename CoroPromise<T>::ExpectedT;
+    using Result = T;
+
+    using ExpectedResult = typename CoroPromise<T>::ExpectedResult;
 
     friend promise_type;
 
@@ -28,13 +30,13 @@ private:
 public:
     struct ExpectedAwaiter : public WaiterBase {
         constexpr ExpectedAwaiter(Handle h) : WaiterBase(h) {}
-        constexpr ExpectedT await_resume() noexcept { return WaiterBase::getResult(); };
+        constexpr ExpectedResult await_resume() noexcept { return WaiterBase::getResult(); };
     };
 
     struct ValueAwaiter : public WaiterBase {
         constexpr ValueAwaiter(Handle h) : WaiterBase(h) {}
         constexpr T await_resume() {
-            if constexpr (std::is_same_v<T, ExpectedT>) {
+            if constexpr (std::is_same_v<T, ExpectedResult>) {
                 return WaiterBase::getResult();
             } else {
                 return WaiterBase::getResult().value();
@@ -65,7 +67,7 @@ public:
 
     template <class F>
     void launch(NonNullExecutorRef executor, F&& callback)
-        requires(std::is_invocable_v<F, ExpectedT>)
+        requires(std::is_invocable_v<F, ExpectedResult>)
     {
         setExecutor(executor);
         struct Launcher {
@@ -85,11 +87,11 @@ public:
     void launch(NonNullExecutorRef executor) {
         launch(executor, [](auto&&) {});
     }
-    ExpectedT syncLaunch(NonNullExecutorRef executor) noexcept {
-        ExpectedT value;
+    ExpectedResult syncLaunch(NonNullExecutorRef executor) noexcept {
+        ExpectedResult value;
         try {
             std::binary_semaphore cond{0};
-            launch(executor, [&](ExpectedT&& result) {
+            launch(executor, [&](ExpectedResult&& result) {
                 value = std::move(result);
                 cond.release();
             });
@@ -118,4 +120,10 @@ inline auto collectAll(CoroTask<Ts>... tasks)
 {
     return CollectAllTupleAwaiter<CoroTask, Ts...>(std::move(tasks)...);
 }
+template <class F, class... Args>
+    requires(traits::is_specialization_of_v<std::invoke_result_t<F, Args...>, CoroTask>)
+auto keepThis(F&& f, Args&&... args) noexcept -> std::invoke_result_t<F, Args...> {
+    co_return co_await std::invoke(std::forward<F>(f), std::forward<Args>(args)...);
+}
+
 } // namespace ll::coro

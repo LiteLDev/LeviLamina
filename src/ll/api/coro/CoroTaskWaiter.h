@@ -7,7 +7,7 @@ template <typename T>
 struct CoroTaskWaiter {
     using Handle = std::coroutine_handle<CoroPromise<T>>;
 
-    using ExpectedT = typename CoroPromise<T>::ExpectedT;
+    using ExpectedResult = typename CoroPromise<T>::ExpectedResult;
 
     Handle handle;
 
@@ -38,8 +38,8 @@ struct CoroTaskWaiter {
         promise.exec->execute(handle);
     }
 
-    constexpr ExpectedT getResult() noexcept {
-        ExpectedT ret = std::move(handle.promise().result);
+    constexpr ExpectedResult getResult() noexcept {
+        ExpectedResult ret = std::move(handle.promise().result);
         std::exchange(handle, nullptr).destroy();
         return ret;
     }

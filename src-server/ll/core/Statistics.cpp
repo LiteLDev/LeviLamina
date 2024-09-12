@@ -105,14 +105,13 @@ struct Statistics::Impl {
     nlohmann::json json;
 
     void submitData() {
-        auto charts = [](auto& self) -> coro::CoroTask<> {
+        coro::keepThis([&]() -> coro::CoroTask<> {
             nlohmann::json pluginInfo;
             pluginInfo["pluginName"]   = getSelfModIns()->getName();
             pluginInfo["customCharts"] = getCustomCharts();
-            self.json["plugins"].emplace_back(pluginInfo);
+            json["plugins"].emplace_back(pluginInfo);
             co_return;
-        }(*this);
-        charts.syncLaunch(thread::ServerThreadExecutor::getDefault());
+        }).syncLaunch(thread::ServerThreadExecutor::getDefault());
         try {
             auto body = json.dump();
             cpr::Post(
@@ -156,17 +155,16 @@ struct Statistics::Impl {
         json["osVersion"] = "";
         json["coreCount"] = std::thread::hardware_concurrency();
 
-        auto submit = [](auto& self) -> coro::CoroTask<> {
+        coro::keepThis([&]() -> coro::CoroTask<> {
             co_await (1.0min * random_utils::rand(3.0, 6.0));
-            self.submitData();
+            submitData();
             co_await (1.0min * random_utils::rand(1.0, 30.0));
-            self.submitData();
+            submitData();
             while (true) {
                 co_await 30min;
-                self.submitData();
+                submitData();
             }
-        }(*this);
-        submit.launch(thread::ThreadPoolExecutor::getDefault());
+        }).launch(thread::ThreadPoolExecutor::getDefault());
         getLogger().info("Statistics has been enabled, you can disable statistics in configuration file"_tr());
     }
 };
