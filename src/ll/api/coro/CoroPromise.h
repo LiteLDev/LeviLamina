@@ -39,7 +39,7 @@ struct CoroPromiseBase {
         return std::forward<T>(awaitable);
     }
 
-    constexpr ForwardAwaiter<NonNullExecutorRef> await_transform(CurrentExecutor) { return {exec.get()}; }
+    constexpr ForwardAwaiter<NonNullExecutorRef> await_transform(CurrentExecutor) { return {exec.value()}; }
 
     constexpr YieldAwaiter await_transform(Yield) { return {exec}; }
 

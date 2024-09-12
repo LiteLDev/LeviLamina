@@ -17,7 +17,7 @@ namespace ll::thread {
 
 struct ThreadPoolExecutor::Impl {
     struct ScheduledWork {
-        Clock::time_point                    time;
+        Clock::time_point                          time;
         std::shared_ptr<data::CancellableCallback> callback;
     };
     struct SwCmp {
@@ -112,8 +112,8 @@ struct ThreadPoolExecutor::Impl {
 };
 ThreadPoolExecutor::~ThreadPoolExecutor() = default;
 
-ThreadPoolExecutor::ThreadPoolExecutor(std::string_view name, size_t nThreads)
-: Executor(name),
+ThreadPoolExecutor::ThreadPoolExecutor(std::string name, size_t nThreads)
+: Executor(std::move(name)),
   impl(std::make_unique<Impl>(*this, nThreads)) {}
 
 void ThreadPoolExecutor::resize(size_t nThreads) { impl = std::make_unique<Impl>(*this, nThreads); }
@@ -138,8 +138,7 @@ ThreadPoolExecutor::executeAfter(std::function<void()> f, Duration dur) const {
     }
 }
 ThreadPoolExecutor const& ThreadPoolExecutor::getDefault() {
-    static std::shared_ptr<ThreadPoolExecutor> p =
-        std::make_shared<ThreadPoolExecutor>("default", std::max((int)std::thread::hardware_concurrency() - 2, 2));
-    return *p;
+    static ThreadPoolExecutor ins("default_thread_pool", std::max((int)std::thread::hardware_concurrency() - 2, 2));
+    return ins;
 }
 } // namespace ll::thread

@@ -8,7 +8,7 @@ class ThreadPoolExecutor final : public coro::Executor {
     std::unique_ptr<Impl> impl;
 
 public:
-    LLAPI explicit ThreadPoolExecutor(std::string_view name, size_t nThreads = 1);
+    LLAPI explicit ThreadPoolExecutor(std::string name, size_t nThreads = 1);
 
     LLAPI ~ThreadPoolExecutor() override;
 

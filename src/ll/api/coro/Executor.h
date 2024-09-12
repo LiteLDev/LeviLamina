@@ -14,19 +14,18 @@
 #include "mc/common/wrapper/optional_ref.h"
 
 namespace ll::coro {
-class Executor : public std::enable_shared_from_this<Executor> {
-    struct Impl;
-    std::unique_ptr<Impl> impl;
+class Executor {
+    std::string name;
 
 public:
     using Clock    = std::chrono::steady_clock;
     using Duration = Clock::duration;
 
-    LLNDAPI Executor(std::string_view name);
+    Executor(std::string name) : name(std::move(name)) {}
 
-    LLNDAPI std::string const& getName() const;
+    std::string const& getName() const { return name; }
 
-    LLAPI virtual ~Executor();
+    virtual ~Executor() = default;
 
     virtual void execute(std::function<void()>) const = 0;
 

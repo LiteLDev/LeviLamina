@@ -26,10 +26,9 @@ static void printLogError(std::string_view msg) noexcept try {
     } catch (...) {}
 }
 
-static std::shared_ptr<thread::ThreadPoolExecutor> const& getLogPool() {
-    static std::shared_ptr<thread::ThreadPoolExecutor> p =
-        std::make_shared<thread::ThreadPoolExecutor>("logger", 1); // logger need keep some order
-    return p;
+static thread::ThreadPoolExecutor& getLogPool() {
+    static thread::ThreadPoolExecutor ins("logger", 1); // logger need keep some order
+    return ins;
 }
 
 struct Logger::Impl {
@@ -38,11 +37,9 @@ struct Logger::Impl {
 
     std::shared_ptr<std::vector<std::shared_ptr<SinkBase>>> sinks;
 
-    std::shared_ptr<thread::ThreadPoolExecutor> pool;
+    thread::ThreadPoolExecutor& pool;
 
-    Impl(std::string_view title, std::shared_ptr<thread::ThreadPoolExecutor> pool)
-    : title(title),
-      pool(std::move(pool)) {}
+    Impl(std::string_view title, thread::ThreadPoolExecutor& pool) : title(title), pool(pool) {}
 };
 Logger::~Logger() = default;
 
@@ -65,8 +62,8 @@ void Logger::printStr(LogLevel level, std::string&& msg) const noexcept try {
     if (level > impl->level) {
         return;
     }
-    impl->pool->execute([sinks = impl->sinks,
-                         msg   = LogMessage{std::move(msg), impl->title, level, sys_utils::getLocalTime()}] {
+    impl->pool.execute([sinks = impl->sinks,
+                        msg   = LogMessage{std::move(msg), impl->title, level, sys_utils::getLocalTime()}] {
         try {
             for (auto& sink : *sinks) {
                 sink->append(msg);

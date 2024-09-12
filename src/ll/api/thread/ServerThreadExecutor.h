@@ -8,7 +8,7 @@ class ServerThreadExecutor final : public coro::Executor {
     std::unique_ptr<Impl> impl;
 
 public:
-    LLAPI ServerThreadExecutor(std::string_view name, Duration maxOnceDuration, size_t checkPack);
+    LLAPI ServerThreadExecutor(std::string name, Duration maxOnceDuration, size_t checkPack);
 
     LLAPI ~ServerThreadExecutor() override;
 

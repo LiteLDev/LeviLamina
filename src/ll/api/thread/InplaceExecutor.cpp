@@ -4,7 +4,7 @@
 
 namespace ll::thread {
 
-InplaceExecutor::InplaceExecutor(std::string_view name) : Executor(name) {}
+InplaceExecutor::InplaceExecutor(std::string name) : Executor(std::move(name)) {}
 
 InplaceExecutor::~InplaceExecutor() = default;
 
@@ -17,7 +17,7 @@ std::shared_ptr<data::CancellableCallback> InplaceExecutor::executeAfter(std::fu
 }
 
 InplaceExecutor const& InplaceExecutor::getDefault() {
-    static std::shared_ptr<InplaceExecutor> p = std::make_shared<InplaceExecutor>("default");
-    return *p;
+    static InplaceExecutor ins("default_inplace");
+    return ins;
 }
 } // namespace ll::thread

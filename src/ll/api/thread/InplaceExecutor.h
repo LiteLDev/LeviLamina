@@ -5,7 +5,7 @@
 namespace ll::thread {
 class InplaceExecutor final : public coro::Executor {
 public:
-    LLAPI InplaceExecutor(std::string_view name);
+    LLAPI InplaceExecutor(std::string name);
 
     LLAPI ~InplaceExecutor() override;
 

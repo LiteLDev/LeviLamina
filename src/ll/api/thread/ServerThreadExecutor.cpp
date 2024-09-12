@@ -16,7 +16,7 @@ namespace ll::thread {
 
 struct ServerThreadExecutor::Impl {
     struct ScheduledWork {
-        uint64                               time;
+        uint64                                     time;
         std::shared_ptr<data::CancellableCallback> callback;
     };
     struct SwCmp {
@@ -59,8 +59,8 @@ struct ServerThreadExecutor::Impl {
     std::shared_ptr<SharedImpl> shared;
     event::ListenerPtr          worker;
 };
-ServerThreadExecutor::ServerThreadExecutor(std::string_view name, Duration maxOnceDuration, size_t checkPack)
-: Executor(name),
+ServerThreadExecutor::ServerThreadExecutor(std::string name, Duration maxOnceDuration, size_t checkPack)
+: Executor(std::move(name)),
   impl(std::make_unique<Impl>(std::make_shared<Impl::SharedImpl>())) {
     impl->worker = event::EventBus::getInstance().emplaceListener<event::LevelTickEvent>(
         [name = getName(), maxOnceDuration, checkPack, weak = std::weak_ptr{impl->shared}](auto&&) {
@@ -104,8 +104,7 @@ ServerThreadExecutor::executeAfter(std::function<void()> f, Duration dur) const 
 }
 
 ServerThreadExecutor const& ServerThreadExecutor::getDefault() {
-    static std::shared_ptr<ServerThreadExecutor> p =
-        std::make_shared<ServerThreadExecutor>("default", std::chrono::milliseconds{30}, 16);
-    return *p;
+    static ServerThreadExecutor ins("default_server_thread", std::chrono::milliseconds{30}, 16);
+    return ins;
 }
 } // namespace ll::thread
