@@ -1,6 +1,7 @@
 #include "ll/api/mod/Mod.h"
 
 #include "ll/api/i18n/I18n.h"
+#include "ll/api/mod/ModManagerRegistry.h"
 #include "ll/api/service/GamingStatus.h"
 
 #include "pl/Config.h"
@@ -63,6 +64,9 @@ bool Mod::hasOnDisable() const noexcept { return mImpl->onDisable != nullptr; }
 Expected<> Mod::onLoad() noexcept {
     try {
         if (!mImpl->onLoad || mImpl->onLoad(*this)) {
+            if (auto res = ModManagerRegistry::getInstance().onModLoad(getName()); !res) {
+                return res;
+            }
             if (getGamingStatus() == GamingStatus::Running) {
                 return onEnable();
             }
@@ -76,9 +80,12 @@ Expected<> Mod::onLoad() noexcept {
 }
 
 Expected<> Mod::onUnload() noexcept {
+    if (auto d = onDisable(); !d) {
+        return d;
+    }
     try {
         if (!mImpl->onUnload || mImpl->onUnload(*this)) {
-            return {};
+            return ModManagerRegistry::getInstance().onModUnload(getName());
         } else {
             return makeStringError("The mod cannot be unloaded"_tr());
         }
@@ -93,6 +100,9 @@ Expected<> Mod::onEnable() noexcept {
             return {};
         }
         if (!mImpl->onEnable || mImpl->onEnable(*this)) {
+            if (auto res = ModManagerRegistry::getInstance().onModEnable(getName()); !res) {
+                return res;
+            }
             setState(State::Enabled);
             return {};
         } else {
@@ -109,6 +119,9 @@ Expected<> Mod::onDisable() noexcept {
             return {};
         }
         if (!mImpl->onDisable || mImpl->onDisable(*this)) {
+            if (auto res = ModManagerRegistry::getInstance().onModDisable(getName()); !res) {
+                return res;
+            }
             setState(State::Disabled);
             return {};
         } else {

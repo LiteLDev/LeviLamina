@@ -9,6 +9,7 @@ namespace ll::mod {
 class ModRegistrar;
 class ModManagerRegistry {
     friend ModRegistrar;
+    friend Mod;
     struct Impl;
     std::unique_ptr<Impl> impl;
 
@@ -22,6 +23,14 @@ class ModManagerRegistry {
     Expected<> enableMod(std::string_view name) const noexcept;
 
     Expected<> disableMod(std::string_view name) const noexcept;
+
+    Expected<> onModLoad(std::string_view name) const noexcept;
+
+    Expected<> onModUnload(std::string_view name) const noexcept;
+
+    Expected<> onModEnable(std::string_view name) const noexcept;
+
+    Expected<> onModDisable(std::string_view name) const noexcept;
 
 public:
     LLNDAPI static ModManagerRegistry& getInstance();
@@ -47,12 +56,12 @@ public:
 
     LLNDAPI std::shared_ptr<Mod> getMod(std::string_view name) const;
 
-    LLAPI void executeOnModLoad(std::function<void(std::string_view name)>&& fn);
+    LLAPI void executeOnModLoad(std::function<void(std::string_view name)>&& fn) noexcept;
 
-    LLAPI void executeOnModUnload(std::function<void(std::string_view name)>&& fn);
+    LLAPI void executeOnModUnload(std::function<void(std::string_view name)>&& fn) noexcept;
 
-    LLAPI void executeOnModEnable(std::function<void(std::string_view name)>&& fn);
+    LLAPI void executeOnModEnable(std::function<void(std::string_view name)>&& fn) noexcept;
 
-    LLAPI void executeOnModDisable(std::function<void(std::string_view name)>&& fn);
+    LLAPI void executeOnModDisable(std::function<void(std::string_view name)>&& fn) noexcept;
 };
 } // namespace ll::mod

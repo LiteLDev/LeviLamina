@@ -56,7 +56,7 @@ template <class T>
 struct CoroPromise : public CoroPromiseBase {
     using ExpectedResult = std::conditional_t<concepts::IsLeviExpected<T>, T, Expected<T>>;
 
-    ExpectedResult result{};
+    std::optional<ExpectedResult> res{};
 
     constexpr CoroPromise() noexcept = default;
 
@@ -64,28 +64,32 @@ struct CoroPromise : public CoroPromiseBase {
     void return_value(V&& value) noexcept(std::is_nothrow_constructible_v<T, V>)
         requires(std::is_constructible_v<T, V>)
     {
-        if constexpr (std::is_same_v<T, ExpectedResult>) {
-            result = std::forward<V>(value);
-        } else {
-            result.emplace(std::forward<V>(value));
-        }
+        res.emplace(std::forward<V>(value));
     }
-    void unhandled_exception() noexcept { result = makeExceptionError(); }
+    void unhandled_exception() noexcept { res.emplace(makeExceptionError()); }
 
     constexpr CoroTask<T> get_return_object() noexcept;
+
+    constexpr ExpectedResult& result() noexcept { return *res; }
+
+    constexpr ExpectedResult const& result() const noexcept { return *res; }
 };
 template <>
 struct CoroPromise<void> : public CoroPromiseBase {
     using ExpectedResult = Expected<>;
 
-    ExpectedResult result{std::in_place};
+    ExpectedResult res{};
 
     constexpr CoroPromise() noexcept = default;
 
     void return_void() noexcept {}
 
-    void unhandled_exception() noexcept { result = makeExceptionError(); }
+    void unhandled_exception() noexcept { res = makeExceptionError(); }
 
     constexpr CoroTask<void> get_return_object() noexcept;
+
+    constexpr ExpectedResult& result() noexcept { return res; }
+
+    constexpr ExpectedResult const& result() const noexcept { return res; }
 };
 } // namespace ll::coro

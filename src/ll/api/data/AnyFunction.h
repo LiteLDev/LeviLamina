@@ -150,7 +150,7 @@ public:
 
     template <class Fn>
     AnyFunction(Fn&& fn)
-    : AnyFunction(std::in_place_type<typename traits::function_traits<Fn>::common_type>, std::forward<Fn>(fn)) {}
+    : AnyFunction(std::in_place_type<typename traits::function_traits<Fn>::function_type>, std::forward<Fn>(fn)) {}
 
     std::any invoke(std::span<std::any> args) const { return dataPtr->invoke(args); }
 

@@ -1,6 +1,8 @@
 #include "mc/deps/core/common/bedrock/typeid_t.h"
 #include "mc/server/commands/CommandRegistry.h"
 
+#include "ll/api/base/Containers.h"
+
 template <>
 std::atomic_ushort& Bedrock::typeid_t<CommandRegistry>::_getCounter() {
     return *(std::atomic_ushort*)LL_RESOLVE_SYMBOL(
@@ -29,3 +31,17 @@ std::atomic_ushort& Bedrock::typeid_t<CommandRegistry>::_getCounter() {
 
 LL_TYPEID_STORAGE_SYMBOL(CommandIntegerRange, "VCommandIntegerRange@@");
 LL_TYPEID_STORAGE_SYMBOL(ActorDefinitionIdentifier const*, "PEBUActorDefinitionIdentifier@@");
+
+ushort Bedrock::crtypidImpl(size_t type) {
+    static ll::ConcurrentDenseMap<size_t, ushort> map;
+    ushort                                        res;
+    map.lazy_emplace_l(
+        type,
+        [&](auto& pair) { res = pair.second; },
+        [&](auto const& ctor) {
+            res = ++typeid_t<CommandRegistry>::_getCounter();
+            ctor(type, res);
+        }
+    );
+    return res;
+}

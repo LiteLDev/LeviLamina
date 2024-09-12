@@ -131,7 +131,7 @@ Expected<> NativeModManager::unload(std::string_view name) {
     if (!ptr->hasOnUnload()) {
         return makeStringError("The mod does not register an unload function"_tr());
     }
-    if (auto res = ptr->onDisable().and_then([&] { return ptr->onUnload(); }); !res) {
+    if (auto res = ptr->onUnload(); !res) {
         return res;
     }
     if (auto err = ptr->getDynamicLibrary().free(); err) {

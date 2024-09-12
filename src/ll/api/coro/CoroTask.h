@@ -122,7 +122,7 @@ inline auto collectAll(CoroTask<Ts>... tasks)
 }
 template <class F, class... Args>
     requires(traits::is_specialization_of_v<std::invoke_result_t<F, Args...>, CoroTask>)
-auto keepThis(F&& f, Args&&... args) noexcept -> std::invoke_result_t<F, Args...> {
+auto keepThis(F&& f, Args&&... args) -> std::invoke_result_t<F, Args...> {
     co_return co_await std::invoke(std::forward<F>(f), std::forward<Args>(args)...);
 }
 

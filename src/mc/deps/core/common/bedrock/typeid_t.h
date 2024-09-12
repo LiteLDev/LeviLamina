@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+#include "ll/api/reflection/TypeName.h"
+#include "ll/api/utils/HashUtils.h"
+
 namespace Json {
 class Value;
 }
@@ -45,10 +48,17 @@ public:
 template <>
 LLAPI std::atomic_ushort& typeid_t<CommandRegistry>::_getCounter();
 
+// if dll reload, typeid can't keep, so we need a static implementation
+LLAPI ushort crtypidImpl(size_t Type);
+
 template <typename Category, typename Type>
 typeid_t<Category> type_id() {
-    static typeid_t<Category> id{++typeid_t<Category>::_getCounter()};
-    return id;
+    if constexpr (std::is_same_v<Category, CommandRegistry>) {
+        return crtypidImpl(ll::hash_utils::doHash(ll::reflection::type_raw_name_v<Type>));
+    } else {
+        static typeid_t<Category> id{++typeid_t<Category>::_getCounter()};
+        return id;
+    }
 }
 
 }; // namespace Bedrock

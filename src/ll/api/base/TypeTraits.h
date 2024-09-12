@@ -47,49 +47,53 @@ template <class>
 struct function_traits;
 
 template <class Ret, class... Args>
-struct function_traits<Ret(Args...)> {
-    using common_type = Ret(Args...);
-};
-
-template <class Ret, class... Args>
 struct function_traits<Ret (*)(Args...)> : function_traits<Ret(Args...)> {};
 
 template <class F>
 struct function_traits : function_traits<decltype(&F::operator())> {};
 
-template <class Ret, class Cls, class... Args>
-struct function_traits<Ret (Cls::*)(Args...)> : function_traits<Ret(Args...)> {};
-
 #ifndef LL_BUILD_FUNCTION_SIGNATURE
-#define LL_BUILD_FUNCTION_SIGNATURE(...)                                                                               \
-    template <class Ret, class Cls, class... Args>                                                                     \
-    struct function_traits<Ret (Cls::*)(Args...) __VA_ARGS__> : function_traits<Ret(Args...) __VA_ARGS__> {};          \
+#define LL_BUILD_FUNCTION_SIGNATURE(CVREF, NOEXCEPT)                                                                   \
     template <class Ret, class... Args>                                                                                \
-    struct function_traits<Ret(Args...) __VA_ARGS__> : function_traits<Ret(Args...)> {};
+    struct function_traits<Ret(Args...) CVREF noexcept(NOEXCEPT)> {                                                    \
+        using function_type = Ret(Args...);                                                                            \
+        template <class T>                                                                                             \
+        using cvref                               = T       CVREF;                                                     \
+        static constexpr bool is_noexcept         = NOEXCEPT;                                                          \
+        static constexpr bool is_const            = std::is_const_v<cvref<void>>;                                      \
+        static constexpr bool is_volatile         = std::is_volatile_v<cvref<void>>;                                   \
+        static constexpr bool is_reference        = std::is_reference_v<cvref<void>>;                                  \
+        static constexpr bool is_lvalue_reference = std::is_lvalue_reference_v<cvref<void>>;                           \
+        static constexpr bool is_rvalue_reference = std::is_rvalue_reference_v<cvref<void>>;                           \
+    };                                                                                                                 \
+    template <class Ret, class Cls, class... Args>                                                                     \
+    struct function_traits<Ret (Cls::*)(Args...) CVREF noexcept(NOEXCEPT)>                                             \
+    : function_traits<Ret(Args...) CVREF noexcept(NOEXCEPT)> {};
 
-LL_BUILD_FUNCTION_SIGNATURE(const)
-LL_BUILD_FUNCTION_SIGNATURE(volatile)
-LL_BUILD_FUNCTION_SIGNATURE(const volatile)
-LL_BUILD_FUNCTION_SIGNATURE(noexcept)
-LL_BUILD_FUNCTION_SIGNATURE(const noexcept)
-LL_BUILD_FUNCTION_SIGNATURE(volatile noexcept)
-LL_BUILD_FUNCTION_SIGNATURE(const volatile noexcept)
-LL_BUILD_FUNCTION_SIGNATURE(&)
-LL_BUILD_FUNCTION_SIGNATURE(const&)
-LL_BUILD_FUNCTION_SIGNATURE(volatile&)
-LL_BUILD_FUNCTION_SIGNATURE(const volatile&)
-LL_BUILD_FUNCTION_SIGNATURE(& noexcept)
-LL_BUILD_FUNCTION_SIGNATURE(const& noexcept)
-LL_BUILD_FUNCTION_SIGNATURE(volatile& noexcept)
-LL_BUILD_FUNCTION_SIGNATURE(const volatile& noexcept)
-LL_BUILD_FUNCTION_SIGNATURE(&&)
-LL_BUILD_FUNCTION_SIGNATURE(const&&)
-LL_BUILD_FUNCTION_SIGNATURE(volatile&&)
-LL_BUILD_FUNCTION_SIGNATURE(const volatile&&)
-LL_BUILD_FUNCTION_SIGNATURE(&& noexcept)
-LL_BUILD_FUNCTION_SIGNATURE(const&& noexcept)
-LL_BUILD_FUNCTION_SIGNATURE(volatile&& noexcept)
-LL_BUILD_FUNCTION_SIGNATURE(const volatile&& noexcept)
+LL_BUILD_FUNCTION_SIGNATURE(, false)
+LL_BUILD_FUNCTION_SIGNATURE(const, false)
+LL_BUILD_FUNCTION_SIGNATURE(volatile, false)
+LL_BUILD_FUNCTION_SIGNATURE(const volatile, false)
+LL_BUILD_FUNCTION_SIGNATURE(, true)
+LL_BUILD_FUNCTION_SIGNATURE(const, true)
+LL_BUILD_FUNCTION_SIGNATURE(volatile, true)
+LL_BUILD_FUNCTION_SIGNATURE(const volatile, true)
+LL_BUILD_FUNCTION_SIGNATURE(&, false)
+LL_BUILD_FUNCTION_SIGNATURE(const&, false)
+LL_BUILD_FUNCTION_SIGNATURE(volatile&, false)
+LL_BUILD_FUNCTION_SIGNATURE(const volatile&, false)
+LL_BUILD_FUNCTION_SIGNATURE(&, true)
+LL_BUILD_FUNCTION_SIGNATURE(const&, true)
+LL_BUILD_FUNCTION_SIGNATURE(volatile&, true)
+LL_BUILD_FUNCTION_SIGNATURE(const volatile&, true)
+LL_BUILD_FUNCTION_SIGNATURE(&&, false)
+LL_BUILD_FUNCTION_SIGNATURE(const&&, false)
+LL_BUILD_FUNCTION_SIGNATURE(volatile&&, false)
+LL_BUILD_FUNCTION_SIGNATURE(const volatile&&, false)
+LL_BUILD_FUNCTION_SIGNATURE(&&, true)
+LL_BUILD_FUNCTION_SIGNATURE(const&&, true)
+LL_BUILD_FUNCTION_SIGNATURE(volatile&&, true)
+LL_BUILD_FUNCTION_SIGNATURE(const volatile&&, true)
 #undef LL_BUILD_FUNCTION_SIGNATURE
 #endif
 

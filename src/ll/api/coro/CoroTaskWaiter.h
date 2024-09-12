@@ -39,7 +39,7 @@ struct CoroTaskWaiter {
     }
 
     constexpr ExpectedResult getResult() noexcept {
-        ExpectedResult ret = std::move(handle.promise().result);
+        ExpectedResult ret = std::move(handle.promise().result());
         std::exchange(handle, nullptr).destroy();
         return ret;
     }

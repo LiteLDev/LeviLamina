@@ -5,9 +5,11 @@
 
 namespace ll::mod {
 struct ModManagerRegistry::Impl {
-    std::recursive_mutex                               mutex;
-    StringMap<std::shared_ptr<ModManager>>             managers;
-    StringMap<std::string>                             loadedMods; // k, v: name, type
+    std::recursive_mutex                   modMtx;
+    StringMap<std::shared_ptr<ModManager>> managers;
+    StringMap<std::string>                 loadedMods; // k, v: name, type
+
+    std::recursive_mutex                               fnMtx;
     std::vector<std::function<void(std::string_view)>> onModLoad;
     std::vector<std::function<void(std::string_view)>> onModUnload;
     std::vector<std::function<void(std::string_view)>> onModEnable;
@@ -24,7 +26,7 @@ ModManagerRegistry& ModManagerRegistry::getInstance() {
 }
 
 Expected<> ModManagerRegistry::loadMod(Manifest manifest) noexcept try {
-    std::lock_guard lock(impl->mutex);
+    std::lock_guard lock(impl->modMtx);
     if (hasManager(manifest.type)) {
         if (hasMod(manifest.name)) {
             return makeStringError("Mod {0} already loaded"_tr(manifest.name));
@@ -33,9 +35,6 @@ Expected<> ModManagerRegistry::loadMod(Manifest manifest) noexcept try {
         std::string type = manifest.type;
         return getManager(type)->load(std::move(manifest)).transform([&, this] {
             auto iter = impl->loadedMods.insert_or_assign(std::move(name), std::move(type)).first;
-            for (auto& fn : impl->onModLoad) {
-                fn(iter->first);
-            }
         });
     } else {
         return makeStringError("Unrecognized mod type: {0}"_tr(manifest.type));
@@ -45,56 +44,43 @@ Expected<> ModManagerRegistry::loadMod(Manifest manifest) noexcept try {
 }
 
 Expected<> ModManagerRegistry::unloadMod(std::string_view name) noexcept try {
-    std::lock_guard lock(impl->mutex);
+    std::lock_guard lock(impl->modMtx);
     if (!hasMod(name)) {
         return makeStringError("Mod {0} not found"_tr(name));
     }
-    return getManagerForMod(name)->unload(name).transform([&, this] {
-        impl->loadedMods.erase(std::string{name});
-        for (auto& fn : impl->onModUnload) {
-            fn(name);
-        }
-    });
+    return getManagerForMod(name)->unload(name).transform([&, this] { impl->loadedMods.erase(std::string{name}); });
 } catch (...) {
     return makeExceptionError();
 }
 
 Expected<> ModManagerRegistry::enableMod(std::string_view name) const noexcept try {
-    std::lock_guard lock(impl->mutex);
+    std::lock_guard lock(impl->modMtx);
     if (!hasMod(name)) {
         return makeStringError("Mod {0} not found"_tr(name));
     }
     if (getMod(name)->isEnabled()) {
         return makeStringError("Mod {0} already enabled"_tr(name));
     }
-    return getManagerForMod(name)->enable(name).transform([&, this] {
-        for (auto& fn : impl->onModEnable) {
-            fn(name);
-        }
-    });
+    return getManagerForMod(name)->enable(name);
 } catch (...) {
     return makeExceptionError();
 }
 
 Expected<> ModManagerRegistry::disableMod(std::string_view name) const noexcept try {
-    std::lock_guard lock(impl->mutex);
+    std::lock_guard lock(impl->modMtx);
     if (!hasMod(name)) {
         return makeStringError("Mod {0} not found"_tr(name));
     }
     if (getMod(name)->isDisabled()) {
         return makeStringError("Mod {0} already disabled"_tr(name));
     }
-    return getManagerForMod(name)->disable(name).transform([&, this] {
-        for (auto& fn : impl->onModDisable) {
-            fn(name);
-        }
-    });
+    return getManagerForMod(name)->disable(name);
 } catch (...) {
     return makeExceptionError();
 }
 
 bool ModManagerRegistry::addManager(std::shared_ptr<ModManager> const& manager) {
-    std::lock_guard lock(impl->mutex);
+    std::lock_guard lock(impl->modMtx);
     if (!manager) {
         return false;
     }
@@ -102,12 +88,12 @@ bool ModManagerRegistry::addManager(std::shared_ptr<ModManager> const& manager) 
 }
 
 bool ModManagerRegistry::hasManager(std::string_view type) const {
-    std::lock_guard lock(impl->mutex);
+    std::lock_guard lock(impl->modMtx);
     return impl->managers.contains(type);
 }
 
 std::shared_ptr<ModManager> ModManagerRegistry::getManager(std::string_view type) const {
-    std::lock_guard lock(impl->mutex);
+    std::lock_guard lock(impl->modMtx);
     if (hasManager(type)) {
         return impl->managers.find(type)->second;
     }
@@ -115,7 +101,7 @@ std::shared_ptr<ModManager> ModManagerRegistry::getManager(std::string_view type
 }
 
 std::shared_ptr<ModManager> ModManagerRegistry::getManagerForMod(std::string_view name) const {
-    std::lock_guard lock(impl->mutex);
+    std::lock_guard lock(impl->modMtx);
     if (hasMod(name)) {
         return getManager(impl->loadedMods.find(name)->second);
     }
@@ -123,7 +109,7 @@ std::shared_ptr<ModManager> ModManagerRegistry::getManagerForMod(std::string_vie
 }
 
 bool ModManagerRegistry::eraseManager(std::string_view type) {
-    std::lock_guard lock(impl->mutex);
+    std::lock_guard lock(impl->modMtx);
     if (auto i = impl->managers.find(type); i != impl->managers.end()) {
         erase_if(impl->loadedMods, [type](auto& item) { return item.second == type; });
         impl->managers.erase(i);
@@ -133,7 +119,7 @@ bool ModManagerRegistry::eraseManager(std::string_view type) {
 }
 
 void ModManagerRegistry::forEachManager(std::function<bool(std::string_view type, ModManager&)> const& fn) const {
-    std::lock_guard lock(impl->mutex);
+    std::lock_guard lock(impl->modMtx);
     for (auto& [type, manager] : impl->managers) {
         if (!fn(type, *manager)) {
             return;
@@ -144,7 +130,7 @@ void ModManagerRegistry::forEachManager(std::function<bool(std::string_view type
 void ModManagerRegistry::forEachModWithType(
     std::function<bool(std::string_view type, std::string_view name, Mod&)> const& fn
 ) const {
-    std::lock_guard lock(impl->mutex);
+    std::lock_guard lock(impl->modMtx);
     bool            interrupted = false;
     forEachManager([&](std::string_view type, ModManager& manager) {
         manager.forEachMod([&](std::string_view name, Mod& mod) {
@@ -158,12 +144,12 @@ void ModManagerRegistry::forEachModWithType(
 }
 
 bool ModManagerRegistry::hasMod(std::string_view name) const {
-    std::lock_guard lock(impl->mutex);
+    std::lock_guard lock(impl->modMtx);
     return impl->loadedMods.contains(name) && hasManager(impl->loadedMods.find(name)->second);
 }
 
 std::string ModManagerRegistry::getModType(std::string_view name) const {
-    std::lock_guard lock(impl->mutex);
+    std::lock_guard lock(impl->modMtx);
     if (hasMod(name)) {
         return impl->loadedMods.find(name)->second;
     }
@@ -171,28 +157,69 @@ std::string ModManagerRegistry::getModType(std::string_view name) const {
 }
 
 std::shared_ptr<Mod> ModManagerRegistry::getMod(std::string_view name) const {
-    std::lock_guard lock(impl->mutex);
+    std::lock_guard lock(impl->modMtx);
     if (!hasMod(name)) {
         return {};
     }
     return getManagerForMod(name)->getMod(name);
 }
 
-void ModManagerRegistry::executeOnModLoad(std::function<void(std::string_view name)>&& fn) {
-    std::lock_guard lock(impl->mutex);
+void ModManagerRegistry::executeOnModLoad(std::function<void(std::string_view name)>&& fn) noexcept{
+    std::lock_guard lock(impl->fnMtx);
     impl->onModLoad.push_back(std::move(fn));
 }
-void ModManagerRegistry::executeOnModUnload(std::function<void(std::string_view name)>&& fn) {
-    std::lock_guard lock(impl->mutex);
+void ModManagerRegistry::executeOnModUnload(std::function<void(std::string_view name)>&& fn)noexcept {
+    std::lock_guard lock(impl->fnMtx);
     impl->onModUnload.push_back(std::move(fn));
 }
-void ModManagerRegistry::executeOnModEnable(std::function<void(std::string_view name)>&& fn) {
-    std::lock_guard lock(impl->mutex);
+void ModManagerRegistry::executeOnModEnable(std::function<void(std::string_view name)>&& fn) noexcept{
+    std::lock_guard lock(impl->fnMtx);
     impl->onModEnable.push_back(std::move(fn));
 }
-void ModManagerRegistry::executeOnModDisable(std::function<void(std::string_view name)>&& fn) {
-    std::lock_guard lock(impl->mutex);
+void ModManagerRegistry::executeOnModDisable(std::function<void(std::string_view name)>&& fn) noexcept {
+    std::lock_guard lock(impl->fnMtx);
     impl->onModDisable.push_back(std::move(fn));
+}
+
+
+Expected<> ModManagerRegistry::onModLoad(std::string_view name) const noexcept try {
+    std::lock_guard lock(impl->fnMtx);
+    for (auto& fn : impl->onModLoad) {
+        fn(name);
+    }
+    return {};
+} catch (...) {
+    return makeExceptionError();
+}
+
+Expected<> ModManagerRegistry::onModUnload(std::string_view name) const noexcept try {
+    std::lock_guard lock(impl->fnMtx);
+    for (auto& fn : impl->onModUnload) {
+        fn(name);
+    }
+    return {};
+} catch (...) {
+    return makeExceptionError();
+}
+
+Expected<> ModManagerRegistry::onModEnable(std::string_view name) const noexcept try {
+    std::lock_guard lock(impl->fnMtx);
+    for (auto& fn : impl->onModEnable) {
+        fn(name);
+    }
+    return {};
+} catch (...) {
+    return makeExceptionError();
+}
+
+Expected<> ModManagerRegistry::onModDisable(std::string_view name) const noexcept try {
+    std::lock_guard lock(impl->fnMtx);
+    for (auto& fn : impl->onModDisable) {
+        fn(name);
+    }
+    return {};
+} catch (...) {
+    return makeExceptionError();
 }
 
 } // namespace ll::mod
