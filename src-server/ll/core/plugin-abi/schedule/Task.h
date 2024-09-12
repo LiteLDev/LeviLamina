@@ -14,8 +14,6 @@
 #include "ll/api/base/StdInt.h"
 #include "ll/api/mod/Mod.h"
 #include "ll/api/mod/NativeMod.h"
-#include "ll/api/thread/TaskExecutor.h"
-
 
 namespace ll::schedule {
 inline namespace task {
@@ -41,8 +39,6 @@ private:
 
 public:
     std::weak_ptr<mod::Mod> modPtr;
-
-    using Duration = thread::TaskExecutor::Duration;
 
     Task(std::function<void()> fn, bool isNextAfterCall, std::weak_ptr<mod::Mod> mod = mod::NativeMod::current())
     : id(detail::nextTaskId()),
@@ -70,121 +66,6 @@ public:
 
     virtual ~Task() = default;
 
-    virtual std::optional<Duration> getNextTime() = 0;
-};
-
-template <class Clock>
-class RepeatTask : public Task {
-private:
-    using time_point = typename Clock::time_point;
-    using duration   = typename Clock::duration;
-    time_point     time;
-    duration const dur;
-    size_t         count;
-    bool const     forever;
-
-public:
-    template <class R, class P>
-    RepeatTask(
-        std::chrono::duration<R, P> dur,
-        std::function<void()>       fn,
-        size_t                      count = 0,
-        std::weak_ptr<mod::Mod>     mod   = mod::NativeMod::current()
-    )
-    : Task(std::move(fn), false, std::move(mod)),
-      time(Clock::now()),
-      dur(std::chrono::duration_cast<duration>(dur)),
-      count(count),
-      forever(count == 0) {}
-
-    std::optional<Duration> getNextTime() override {
-        if (!forever) {
-            if (count > 0) {
-                count--;
-            } else {
-                return std::nullopt;
-            }
-        }
-        auto res  = time;
-        time     += dur;
-        return res - Clock::now();
-    }
-};
-
-class IntervalTask : public Task {
-private:
-    Duration const dur;
-    size_t         count;
-    bool const     forever;
-
-    bool first{true};
-
-public:
-    template <class R, class P>
-    IntervalTask(
-        std::chrono::duration<R, P> dur,
-        std::function<void()>       fn,
-        size_t                      count = 0,
-        std::weak_ptr<mod::Mod>     mod   = mod::NativeMod::current()
-    )
-    : Task(std::move(fn), true, std::move(mod)),
-      dur(std::chrono::duration_cast<Duration>(dur)),
-      count(count - 1),
-      forever(count == 0) {}
-
-    std::optional<Duration> getNextTime() override {
-        if (first) {
-            first = false;
-            return Duration{0};
-        }
-        if (!forever) {
-            if (count > 0) {
-                count--;
-            } else {
-                return std::nullopt;
-            }
-        }
-        return dur;
-    }
-};
-
-class DelayTask : public Task {
-private:
-    Duration const dur;
-
-    bool first{true};
-
-public:
-    template <class C, class D>
-    DelayTask(
-        std::chrono::time_point<C, D> time,
-        std::function<void()>         fn,
-        std::weak_ptr<mod::Mod>       mod = mod::NativeMod::current()
-    )
-    : DelayTask(time - C::now(), std::move(fn), std::move(mod)) {}
-
-    template <class R, class P>
-    DelayTask(
-        std::chrono::duration<R, P> dur,
-        std::function<void()>       fn,
-        std::weak_ptr<mod::Mod>     mod = mod::NativeMod::current()
-    )
-    : Task(std::move(fn), false, std::move(mod)),
-      dur(std::chrono::duration_cast<Duration>(dur)) {}
-
-    DelayTask(
-        std::string_view        timestr,
-        std::function<void()>   fn,
-        std::weak_ptr<mod::Mod> mod = mod::NativeMod::current()
-    )
-    : DelayTask(detail::parseTime(timestr), std::move(fn), std::move(mod)) {}
-
-    std::optional<Duration> getNextTime() override {
-        if (first) {
-            first = false;
-            return dur;
-        }
-        return std::nullopt;
-    }
+    virtual std::optional<size_t> getNextTime() = 0;
 };
 } // namespace ll::schedule::inline task

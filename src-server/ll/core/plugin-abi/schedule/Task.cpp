@@ -14,8 +14,6 @@
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/core/LeviLamina.h"
 
-#include "fmt/std.h" // IWYU pragma: keep
-
 namespace ll::schedule::detail {
 void printScheduleError(Task& task) noexcept {
     try {

@@ -57,7 +57,7 @@ struct ServerThreadExecutor::Impl {
     event::ListenerPtr          worker;
 };
 ServerThreadExecutor::ServerThreadExecutor(std::string_view name, Duration maxOnceDuration, size_t checkPack)
-: TaskExecutor(name),
+: Executor(name),
   impl(std::make_unique<Impl>(std::make_shared<Impl::SharedImpl>())) {
     impl->worker = event::EventBus::getInstance().emplaceListener<event::LevelTickEvent>(
         [name = getName(), maxOnceDuration, checkPack, weak = std::weak_ptr{impl->shared}](auto&&) {
@@ -65,7 +65,6 @@ ServerThreadExecutor::ServerThreadExecutor(std::string_view name, Duration maxOn
             if (!impl) {
                 return;
             }
-            using Clock = std::chrono::steady_clock;
             auto begin  = Clock::now();
             impl->update([&](auto& f, size_t i) {
                 try {
@@ -86,9 +85,9 @@ ServerThreadExecutor::ServerThreadExecutor(std::string_view name, Duration maxOn
 ServerThreadExecutor::~ServerThreadExecutor() {
     event::EventBus::getInstance().removeListener<event::LevelTickEvent>(impl->worker);
 }
-void ServerThreadExecutor::addTask(std::function<void()> f) const { impl->shared->works.push(std::move(f)); }
+void ServerThreadExecutor::execute(std::function<void()> f) const { impl->shared->works.push(std::move(f)); }
 
-std::shared_ptr<CancellableCallback> ServerThreadExecutor::addTaskAfter(std::function<void()> f, Duration dur) const {
+std::shared_ptr<CancellableCallback> ServerThreadExecutor::executeAfter(std::function<void()> f, Duration dur) const {
     auto tick = std::chrono::ceil<chrono::ticks>(dur).count();
     if (tick <= 0) {
         impl->shared->works.push(std::move(f));

@@ -35,7 +35,7 @@ struct CoroTaskWaiter {
         auto& promise  = handle.promise();
         promise.handle = h;
         promise.local  = h.promise().local;
-        promise.exec->addTask(handle);
+        promise.exec->execute(handle);
     }
 
     constexpr ExpectedT getResult() noexcept {

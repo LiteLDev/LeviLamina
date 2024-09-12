@@ -1,12 +1,12 @@
 #pragma once
 
-#include "ll/api/thread/TaskExecutor.h"
+#include "ll/api/thread/Executor.h"
 
 #include "mc/common/wrapper/optional_ref.h"
 
 namespace ll::coro {
 
-using Executor = thread::TaskExecutor;
+using thread::Executor;
 
 using ExecutorRef = optional_ref<Executor const>;
 

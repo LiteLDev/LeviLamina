@@ -23,7 +23,7 @@ public:
     constexpr void setExecutor(ExecutorRef ex) { exec = ex; }
 
     constexpr bool await_ready() const noexcept { return false; }
-    void           await_suspend(std::coroutine_handle<> handle) { exec->addTaskAfter(handle, dur); }
+    void           await_suspend(std::coroutine_handle<> handle) { exec->executeAfter(handle, dur); }
     constexpr void await_resume() const noexcept {}
 };
 } // namespace ll::coro

@@ -1,9 +1,9 @@
 #pragma once
 
-#include "ll/api/thread/TaskExecutor.h"
+#include "ll/api/thread/Executor.h"
 
 namespace ll::thread {
-class ThreadPoolExecutor : public TaskExecutor {
+class ThreadPoolExecutor : public Executor {
     struct Impl;
     std::unique_ptr<Impl> impl;
 
@@ -15,9 +15,9 @@ public:
     LLAPI void resize(size_t nThreads = 1);
     LLAPI void destroy();
 
-    LLAPI void addTask(std::function<void()>) const override;
+    LLAPI void execute(std::function<void()>) const override;
 
-    LLAPI std::shared_ptr<CancellableCallback> addTaskAfter(std::function<void()>, Duration) const override;
+    LLAPI std::shared_ptr<CancellableCallback> executeAfter(std::function<void()>, Duration) const override;
 
     LLNDAPI static ThreadPoolExecutor const& getDefault();
 };

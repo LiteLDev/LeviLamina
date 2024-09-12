@@ -9,7 +9,7 @@
 // static auto run = ll::event::EventBus::getInstance().emplaceListener<ll::event::ServerStartedEvent>([](auto&) {
 //     auto& logger = ll::getLogger();
 
-//     using clock = std::chrono::high_resolution_clock;
+//     using clock = std::chrono::steady_clock;
 
 
 //     std::vector<std::thread> threads;

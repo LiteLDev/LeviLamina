@@ -17,8 +17,8 @@ namespace ll::thread {
 
 struct ThreadPoolExecutor::Impl {
     struct ScheduledWork {
-        std::chrono::steady_clock::time_point time;
-        std::shared_ptr<CancellableCallback>  callback;
+        Clock::time_point                    time;
+        std::shared_ptr<CancellableCallback> callback;
     };
     struct SwCmp {
         bool operator()(ScheduledWork const& x, ScheduledWork const& y) { return x.time > y.time; }
@@ -28,18 +28,18 @@ struct ThreadPoolExecutor::Impl {
         ConcurrentPriorityQueue<ScheduledWork, SwCmp> works;
         InterruptableSleep                            sleeper;
         std::atomic_bool                              working{true};
-        ScheduledWorker(TaskExecutor const& e) {
+        ScheduledWorker(Executor const& e) {
             schtrd = std::thread{[this, &e]() {
                 ll::error_utils::initExceptionTranslator();
                 setThreadName(fmt::format("ll::ThreadPoolExecutor({})[sch]", e.getName()));
                 while (working) {
-                    std::optional<std::chrono::steady_clock::duration> frontTime{};
+                    std::optional<Clock::duration> frontTime{};
 
-                    auto now = std::chrono::steady_clock::now();
+                    auto now = Clock::now();
                     while (works.try_pop_if([&](Impl::ScheduledWork& w) {
                         if (w.time <= now) {
                             w.callback->moveTo([&](auto&& fn) {
-                                e.addTask(std::move(fn));
+                                e.execute(std::move(fn));
                                 return true;
                             });
                             return true;
@@ -72,13 +72,13 @@ struct ThreadPoolExecutor::Impl {
     std::atomic_bool                       hasSchWorker{false};
     std::atomic_bool                       stop{false};
 
-    ScheduledWorker& getScheduledWorker(TaskExecutor const& e) {
+    ScheduledWorker& getScheduledWorker(Executor const& e) {
         if (!hasSchWorker.exchange(true)) {
             scheduledWorker.emplace(e);
         }
         return *scheduledWorker;
     }
-    Impl(TaskExecutor& self, size_t nThreads) {
+    Impl(Executor& self, size_t nThreads) {
         for (size_t i = 0; i < nThreads; ++i) {
             workers.emplace_back([this, &self, i] {
                 ll::error_utils::initExceptionTranslator();
@@ -114,25 +114,25 @@ struct ThreadPoolExecutor::Impl {
 ThreadPoolExecutor::~ThreadPoolExecutor() = default;
 
 ThreadPoolExecutor::ThreadPoolExecutor(std::string_view name, size_t nThreads)
-: TaskExecutor(name),
+: Executor(name),
   impl(std::make_unique<Impl>(*this, nThreads)) {}
 
 void ThreadPoolExecutor::resize(size_t nThreads) { impl = std::make_unique<Impl>(*this, nThreads); }
 
 void ThreadPoolExecutor::destroy() { impl.reset(); }
 
-void ThreadPoolExecutor::addTask(std::function<void()> f) const {
+void ThreadPoolExecutor::execute(std::function<void()> f) const {
     impl->tasks.push(std::move(f));
     impl->taskCount.release();
 }
-std::shared_ptr<CancellableCallback> ThreadPoolExecutor::addTaskAfter(std::function<void()> f, Duration dur) const {
+std::shared_ptr<CancellableCallback> ThreadPoolExecutor::executeAfter(std::function<void()> f, Duration dur) const {
     if (dur <= Duration{0}) {
-        addTask(std::move(f));
+        execute(std::move(f));
         return nullptr;
     } else {
         auto& worker = impl->getScheduledWorker(*this);
         auto  res    = std::make_shared<CancellableCallback>(std::move(f));
-        worker.works.emplace(std::chrono::steady_clock::now() + dur, res);
+        worker.works.emplace(Clock::now() + dur, res);
         worker.sleeper.interrupt();
         return res;
     }

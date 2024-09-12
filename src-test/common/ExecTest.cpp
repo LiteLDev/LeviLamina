@@ -53,7 +53,7 @@ CoroTask<Expected<int>> coroutine() {
 static bool run = [] {
     using namespace ll;
 
-    thread::ServerThreadExecutor::getDefault().addTask([&] {
+    thread::ServerThreadExecutor::getDefault().execute([&] {
         auto val = coroutine().syncLaunch(thread::ThreadPoolExecutor::getDefault());
         getLogger().info("coroutine done, {}", val.value());
     });
