@@ -9,7 +9,7 @@ class CancellableCallback {
     std::atomic_bool      available{true};
 
 public:
-    CancellableCallback(std::function<void()> callback) : callback(callback) {}
+    CancellableCallback(std::function<void()>&& callback) : callback(std::move(callback)) {}
 
     bool cancel() { return available.exchange(false); }
 
