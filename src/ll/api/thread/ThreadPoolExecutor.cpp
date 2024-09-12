@@ -31,7 +31,7 @@ struct ThreadPoolExecutor::Impl {
         ScheduledWorker(Executor const& e) {
             schtrd = std::thread{[this, &e]() {
                 ll::error_utils::initExceptionTranslator();
-                setThreadName(fmt::format("ll::ThreadPoolExecutor({})[sch]", e.getName()));
+                setThreadName(fmt::format("{}[sch]", e.getName()));
                 while (working) {
                     std::optional<Clock::duration> frontTime{};
 
@@ -69,20 +69,18 @@ struct ThreadPoolExecutor::Impl {
     ConcurrentQueue<std::function<void()>> tasks;
     std::counting_semaphore<>              taskCount{0};
     std::optional<ScheduledWorker>         scheduledWorker;
-    std::atomic_bool                       hasSchWorker{false};
+    std::once_flag                         hasSchWorker;
     std::atomic_bool                       stop{false};
 
     ScheduledWorker& getScheduledWorker(Executor const& e) {
-        if (!hasSchWorker.exchange(true)) {
-            scheduledWorker.emplace(e);
-        }
+        std::call_once(hasSchWorker, [&]() { scheduledWorker.emplace(e); });
         return *scheduledWorker;
     }
     Impl(Executor& self, size_t nThreads) {
         for (size_t i = 0; i < nThreads; ++i) {
             workers.emplace_back([this, &self, i] {
                 ll::error_utils::initExceptionTranslator();
-                setThreadName(fmt::format("ll::ThreadPoolExecutor({})[{}]", self.getName(), i));
+                setThreadName(fmt::format("{}[{}]", self.getName(), i));
                 decltype(tasks)::consumer_token_t token{tasks};
                 for (;;) {
                     std::function<void()> task;
@@ -95,7 +93,7 @@ struct ThreadPoolExecutor::Impl {
                     try {
                         task();
                     } catch (...) {
-                        getLogger().error("Error in ThreadPoolExecutor({})[{}]:", self.getName(), i);
+                        getLogger().error("Error in {}[{}]:", self.getName(), i);
                         error_utils::printCurrentException(getLogger());
                     }
                 }
@@ -138,7 +136,7 @@ ThreadPoolExecutor::executeAfter(std::function<void()> f, Duration dur) const {
     }
 }
 ThreadPoolExecutor const& ThreadPoolExecutor::getDefault() {
-    static ThreadPoolExecutor ins("default_thread_pool", std::max((int)std::thread::hardware_concurrency() - 2, 2));
+    static ThreadPoolExecutor ins("ll_default_thread_pool", std::max((int)std::thread::hardware_concurrency() - 2, 2));
     return ins;
 }
 } // namespace ll::thread

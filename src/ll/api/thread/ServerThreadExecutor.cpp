@@ -73,7 +73,7 @@ ServerThreadExecutor::ServerThreadExecutor(std::string name, Duration maxOnceDur
                 try {
                     f();
                 } catch (...) {
-                    getLogger().error("Error in ServerThreadExecutor({}):", name);
+                    getLogger().error("Error in {}:", name);
                     error_utils::printCurrentException(getLogger());
                 }
                 if (i % checkPack == 0 && Clock::now() - begin > maxOnceDuration) {
@@ -104,7 +104,7 @@ ServerThreadExecutor::executeAfter(std::function<void()> f, Duration dur) const 
 }
 
 ServerThreadExecutor const& ServerThreadExecutor::getDefault() {
-    static ServerThreadExecutor ins("default_server_thread", std::chrono::milliseconds{30}, 16);
+    static ServerThreadExecutor ins("ll_default_server_thread", std::chrono::milliseconds{30}, 16);
     return ins;
 }
 } // namespace ll::thread

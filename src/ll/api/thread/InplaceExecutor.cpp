@@ -17,7 +17,7 @@ std::shared_ptr<data::CancellableCallback> InplaceExecutor::executeAfter(std::fu
 }
 
 InplaceExecutor const& InplaceExecutor::getDefault() {
-    static InplaceExecutor ins("default_inplace");
+    static InplaceExecutor ins("ll_default_inplace");
     return ins;
 }
 } // namespace ll::thread
