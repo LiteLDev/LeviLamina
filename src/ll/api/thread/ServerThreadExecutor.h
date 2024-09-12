@@ -1,9 +1,9 @@
 #pragma once
 
-#include "ll/api/thread/Executor.h"
+#include "ll/api/coro/Executor.h"
 
 namespace ll::thread {
-class ServerThreadExecutor : public Executor {
+class ServerThreadExecutor final : public coro::Executor {
     struct Impl;
     std::unique_ptr<Impl> impl;
 
@@ -14,7 +14,7 @@ public:
 
     LLAPI void execute(std::function<void()>) const override;
 
-    LLAPI std::shared_ptr<CancellableCallback> executeAfter(std::function<void()>, Duration) const override;
+    LLAPI std::shared_ptr<data::CancellableCallback> executeAfter(std::function<void()>, Duration) const override;
 
     LLNDAPI static ServerThreadExecutor const& getDefault();
 };

@@ -38,10 +38,9 @@ CoroTask<Expected<int>> coroutine() {
     );
     parbegin = std::chrono::steady_clock::now();
     std::vector<ll::coro::CoroTask<int>> tasks{};
-    tasks.emplace_back(val1());
-    tasks.emplace_back(val1());
-    tasks.emplace_back(val1());
-    tasks.emplace_back(val1());
+    for (size_t i = 0; i < 10000000; i++) {
+        tasks.emplace_back(val1());
+    }
     auto vec = co_await collectAll(std::move(tasks));
     getLogger().info(
         "coroutine: collectAll use {}",

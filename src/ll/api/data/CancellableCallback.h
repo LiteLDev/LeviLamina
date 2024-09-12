@@ -3,7 +3,7 @@
 #include <atomic>
 #include <functional>
 
-namespace ll::thread {
+namespace ll::data {
 class CancellableCallback {
     std::function<void()> callback;
     std::atomic_bool      available{true};
@@ -24,4 +24,4 @@ public:
         return false;
     }
 };
-} // namespace ll::thread
+} // namespace ll::data

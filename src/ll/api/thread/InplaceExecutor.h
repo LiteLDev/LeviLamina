@@ -1,9 +1,9 @@
 #pragma once
 
-#include "ll/api/thread/Executor.h"
+#include "ll/api/coro/Executor.h"
 
 namespace ll::thread {
-class InplaceExecutor : public Executor {
+class InplaceExecutor final : public coro::Executor {
 public:
     LLAPI InplaceExecutor(std::string_view name);
 
@@ -12,7 +12,7 @@ public:
     LLAPI void execute(std::function<void()>) const override;
 
     LLAPI
-    std::shared_ptr<CancellableCallback> executeAfter(std::function<void()>, Duration) const override;
+    std::shared_ptr<data::CancellableCallback> executeAfter(std::function<void()>, Duration) const override;
 
     LLNDAPI static InplaceExecutor const& getDefault();
 };

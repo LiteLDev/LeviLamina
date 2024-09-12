@@ -18,7 +18,7 @@ namespace ll::thread {
 struct ThreadPoolExecutor::Impl {
     struct ScheduledWork {
         Clock::time_point                    time;
-        std::shared_ptr<CancellableCallback> callback;
+        std::shared_ptr<data::CancellableCallback> callback;
     };
     struct SwCmp {
         bool operator()(ScheduledWork const& x, ScheduledWork const& y) { return x.time > y.time; }
@@ -83,15 +83,14 @@ struct ThreadPoolExecutor::Impl {
             workers.emplace_back([this, &self, i] {
                 ll::error_utils::initExceptionTranslator();
                 setThreadName(fmt::format("ll::ThreadPoolExecutor({})[{}]", self.getName(), i));
+                decltype(tasks)::consumer_token_t token{tasks};
                 for (;;) {
                     std::function<void()> task;
                     taskCount.acquire();
-                    if (!tasks.try_pop(task)) {
+                    while (!tasks.try_dequeue(token, task)) {
                         if (stop.load(std::memory_order_relaxed)) {
                             return;
                         }
-                        taskCount.release();
-                        continue;
                     }
                     try {
                         task();
@@ -122,16 +121,17 @@ void ThreadPoolExecutor::resize(size_t nThreads) { impl = std::make_unique<Impl>
 void ThreadPoolExecutor::destroy() { impl.reset(); }
 
 void ThreadPoolExecutor::execute(std::function<void()> f) const {
-    impl->tasks.push(std::move(f));
+    impl->tasks.enqueue(std::move(f));
     impl->taskCount.release();
 }
-std::shared_ptr<CancellableCallback> ThreadPoolExecutor::executeAfter(std::function<void()> f, Duration dur) const {
+std::shared_ptr<data::CancellableCallback>
+ThreadPoolExecutor::executeAfter(std::function<void()> f, Duration dur) const {
     if (dur <= Duration{0}) {
         execute(std::move(f));
         return nullptr;
     } else {
         auto& worker = impl->getScheduledWorker(*this);
-        auto  res    = std::make_shared<CancellableCallback>(std::move(f));
+        auto  res    = std::make_shared<data::CancellableCallback>(std::move(f));
         worker.works.emplace(Clock::now() + dur, res);
         worker.sleeper.interrupt();
         return res;

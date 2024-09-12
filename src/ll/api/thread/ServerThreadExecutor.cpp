@@ -17,16 +17,19 @@ namespace ll::thread {
 struct ServerThreadExecutor::Impl {
     struct ScheduledWork {
         uint64                               time;
-        std::shared_ptr<CancellableCallback> callback;
+        std::shared_ptr<data::CancellableCallback> callback;
     };
     struct SwCmp {
         bool operator()(ScheduledWork const& x, ScheduledWork const& y) { return x.time > y.time; }
     };
     struct SharedImpl {
         ConcurrentQueue<std::function<void()>> works;
+        decltype(works)::consumer_token_t      token;
 
         ConcurrentPriorityQueue<ScheduledWork, SwCmp> scheduledWorks;
         std::atomic_uint64_t                          frame{0};
+
+        SharedImpl() : token(works) {}
 
         template <class F>
         void update(F&& exec) {
@@ -34,7 +37,7 @@ struct ServerThreadExecutor::Impl {
             while (scheduledWorks.try_pop_if([&](Impl::ScheduledWork& w) {
                 if (w.time <= now) {
                     w.callback->moveTo([&](auto&& fn) {
-                        works.push(std::move(fn));
+                        works.enqueue(std::move(fn));
                         return true;
                     });
                     return true;
@@ -45,7 +48,7 @@ struct ServerThreadExecutor::Impl {
             std::function<void()> f;
 
             size_t i{};
-            while (works.try_pop(f)) {
+            while (works.try_dequeue(token, f)) {
                 if (!exec(f, ++i)) {
                     break;
                 }
@@ -65,7 +68,7 @@ ServerThreadExecutor::ServerThreadExecutor(std::string_view name, Duration maxOn
             if (!impl) {
                 return;
             }
-            auto begin  = Clock::now();
+            auto begin = Clock::now();
             impl->update([&](auto& f, size_t i) {
                 try {
                     f();
@@ -85,15 +88,16 @@ ServerThreadExecutor::ServerThreadExecutor(std::string_view name, Duration maxOn
 ServerThreadExecutor::~ServerThreadExecutor() {
     event::EventBus::getInstance().removeListener<event::LevelTickEvent>(impl->worker);
 }
-void ServerThreadExecutor::execute(std::function<void()> f) const { impl->shared->works.push(std::move(f)); }
+void ServerThreadExecutor::execute(std::function<void()> f) const { impl->shared->works.enqueue(std::move(f)); }
 
-std::shared_ptr<CancellableCallback> ServerThreadExecutor::executeAfter(std::function<void()> f, Duration dur) const {
+std::shared_ptr<data::CancellableCallback>
+ServerThreadExecutor::executeAfter(std::function<void()> f, Duration dur) const {
     auto tick = std::chrono::ceil<chrono::ticks>(dur).count();
     if (tick <= 0) {
-        impl->shared->works.push(std::move(f));
+        execute(std::move(f));
         return nullptr;
     } else {
-        auto res = std::make_shared<CancellableCallback>(std::move(f));
+        auto res = std::make_shared<data::CancellableCallback>(std::move(f));
         impl->shared->scheduledWorks.emplace(impl->shared->frame.load() + tick, res);
         return res;
     }

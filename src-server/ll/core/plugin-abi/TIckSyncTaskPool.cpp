@@ -34,7 +34,7 @@ TickSyncTaskPool::TickSyncTaskPool() : impl(std::make_unique<Impl>()) {
     static auto worker = event::EventBus::getInstance().emplaceListener<event::LevelTickEvent>(
         [](auto&) {
             std::function<void()> f;
-            while (works.try_pop(f)) {
+            while (works.try_dequeue(f)) {
                 try {
                     f();
                 } catch (...) {
@@ -48,6 +48,6 @@ TickSyncTaskPool::TickSyncTaskPool() : impl(std::make_unique<Impl>()) {
 }
 TickSyncTaskPool::~TickSyncTaskPool() {}
 
-void TickSyncTaskPool::addTaskImpl(std::function<void()> f) { works.push(std::move(f)); }
+void TickSyncTaskPool::addTaskImpl(std::function<void()> f) { works.enqueue(std::move(f)); }
 
 } // namespace ll::thread

@@ -10,7 +10,7 @@ InplaceExecutor::~InplaceExecutor() = default;
 
 void InplaceExecutor::execute(std::function<void()> f) const { f(); }
 
-std::shared_ptr<CancellableCallback> InplaceExecutor::executeAfter(std::function<void()> f, Duration dur) const {
+std::shared_ptr<data::CancellableCallback> InplaceExecutor::executeAfter(std::function<void()> f, Duration dur) const {
     std::this_thread::sleep_for(dur);
     f();
     return nullptr;

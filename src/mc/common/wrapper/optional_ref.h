@@ -61,18 +61,18 @@ public:
 
     [[nodiscard]] constexpr T* as_ptr() const noexcept { return mPtr; }
 
-    [[nodiscard]] constexpr T& get() const {
+    [[nodiscard]] constexpr T& value() const {
         if (!has_value()) {
             throw std::runtime_error{"bad optional_ref access"};
         }
         return *mPtr;
     }
 
-    [[nodiscard]] constexpr T& value() const { return get(); }
-    [[nodiscard]] constexpr T& operator*() const { return get(); }
-    [[nodiscard]] constexpr T* operator->() const { return &get(); }
-    [[nodiscard]] constexpr    operator T&() const { return get(); }
-    [[nodiscard]] constexpr    operator T*() const { return &get(); }
+    [[nodiscard]] constexpr T& get() const { return value(); }
+    [[nodiscard]] constexpr T& operator*() const { return *as_ptr(); }
+    [[nodiscard]] constexpr T* operator->() const { return as_ptr(); }
+    [[nodiscard]] constexpr    operator T&() const { return value(); }
+    [[nodiscard]] constexpr    operator T*() const { return as_ptr(); }
 
     template <class U>
     [[nodiscard]] constexpr T& value_or(U& right) const& {
@@ -98,21 +98,21 @@ public:
 
     template <class... Types>
     constexpr decltype(auto) operator()(Types&&... args) const
-        noexcept(noexcept(std::invoke(get(), static_cast<Types&&>(args)...))) {
-        return (std::invoke(get(), static_cast<Types&&>(args)...));
+        noexcept(noexcept(std::invoke(value(), static_cast<Types&&>(args)...))) {
+        return (std::invoke(value(), static_cast<Types&&>(args)...));
     }
     template <class Arg>
     [[nodiscard]] constexpr decltype(auto) operator[](Arg&& index) const {
-        return (get()[std::forward<Arg>(index)]);
+        return (value()[std::forward<Arg>(index)]);
     }
-    [[nodiscard]] constexpr decltype(auto) end() const { return (get().end()); }
-    [[nodiscard]] constexpr decltype(auto) begin() const { return (get().begin()); }
-    [[nodiscard]] constexpr decltype(auto) cend() const { return (get().cend()); }
-    [[nodiscard]] constexpr decltype(auto) cbegin() const { return (get().cbegin()); }
-    [[nodiscard]] constexpr decltype(auto) rend() const { return (get().rend()); }
-    [[nodiscard]] constexpr decltype(auto) rbegin() const { return (get().rbegin()); }
-    [[nodiscard]] constexpr decltype(auto) crend() const { return (get().crend()); }
-    [[nodiscard]] constexpr decltype(auto) crbegin() const { return (get().crbegin()); }
+    [[nodiscard]] constexpr decltype(auto) end() const { return (value().end()); }
+    [[nodiscard]] constexpr decltype(auto) begin() const { return (value().begin()); }
+    [[nodiscard]] constexpr decltype(auto) cend() const { return (value().cend()); }
+    [[nodiscard]] constexpr decltype(auto) cbegin() const { return (value().cbegin()); }
+    [[nodiscard]] constexpr decltype(auto) rend() const { return (value().rend()); }
+    [[nodiscard]] constexpr decltype(auto) rbegin() const { return (value().rbegin()); }
+    [[nodiscard]] constexpr decltype(auto) crend() const { return (value().crend()); }
+    [[nodiscard]] constexpr decltype(auto) crbegin() const { return (value().crbegin()); }
 
 #if LL_HAS_CXX23
     template <class Fn>

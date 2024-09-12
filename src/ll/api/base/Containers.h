@@ -7,8 +7,9 @@
 #include <string>
 #include <string_view>
 
-#include "ll/api/data/ConcurrentQueue.h"
+#include "ll/api/data/ConcurrentPriorityQueue.h"
 
+#include "concurrentqueue.h"
 #include "parallel_hashmap/btree.h"
 #include "parallel_hashmap/phmap.h"
 
@@ -109,8 +110,8 @@ using StringNodeMap = DenseNodeMap<::std::string, Value>;
 template <class Value>
 using SmallStringNodeMap = SmallDenseNodeMap<::std::string, Value>;
 
-template <typename T, typename A = std::allocator<T>>
-using ConcurrentQueue = data::concurrent_queue<T, A>;
+template <typename T>
+using ConcurrentQueue = moodycamel::ConcurrentQueue<T>;
 
 template <typename T, typename C = std::less<T>, typename A = std::allocator<T>>
 using ConcurrentPriorityQueue = data::concurrent_priority_queue<T, C, A>;
