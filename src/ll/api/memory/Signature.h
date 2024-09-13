@@ -41,10 +41,16 @@ public:
 };
 
 class SignatureView {
-    std::span<SignatureElement const> const elements;
+    std::span<SignatureElement const> elements;
 
 public:
     [[nodiscard]] constexpr SignatureView() = default;
+
+    [[nodiscard]] constexpr SignatureView(SignatureView&&) noexcept          = default;
+    LL_MAY_CONSTEXPR SignatureView& operator=(SignatureView&&) noexcept      = default;
+    [[nodiscard]] constexpr SignatureView(SignatureView const&) noexcept     = default;
+    LL_MAY_CONSTEXPR SignatureView& operator=(SignatureView const&) noexcept = default;
+
     [[nodiscard]] constexpr SignatureView(std::span<SignatureElement const> span) : elements(span) {}
 
     [[nodiscard]] constexpr SignatureView(Signature const& signature);
@@ -66,7 +72,7 @@ public:
 };
 
 class Signature {
-    std::vector<SignatureElement> const elements;
+    std::vector<SignatureElement> elements;
 
     [[nodiscard]] constexpr Signature(std::vector<SignatureElement> vec) : elements(std::move(vec)) {}
 
@@ -123,7 +129,11 @@ public:
     [[nodiscard]] constexpr SignatureView view() const { return {std::span{elements}}; }
 };
 
-template <FixedString str>
+template <size_t N>
+[[nodiscard]] constexpr SignatureView::SignatureView(FixedSignature<N> const& signature)
+: SignatureView(signature.view()) {}
+
+template <FixedString signature>
 constexpr auto signatureCache = []() {
     constexpr size_t N = []() {
         size_t i = 0;
@@ -132,24 +142,27 @@ constexpr auto signatureCache = []() {
                 i++;
                 return true;
             },
-            str,
+            signature,
             " "
         );
         return i;
     }();
-    FixedSignature<N> res{Signature::parse(str)};
+    FixedSignature<N> res{Signature::parse(signature)};
     return res;
 }();
 
-template <size_t N>
-[[nodiscard]] constexpr SignatureView::SignatureView(FixedSignature<N> const& signature)
-: SignatureView(signature.view()) {}
+template <FixedString signature>
+inline void* signatureAddressCache = signatureCache<signature>.view().resolve();
 
 } // namespace ll::memory
 
 namespace ll::inline literals::inline memory_literals {
-template <FixedString str>
-consteval memory::SignatureView operator""_sig() noexcept {
-    return memory::signatureCache<str>.view();
+template <FixedString signature>
+consteval memory::SignatureView operator""_sigv() noexcept {
+    return memory::signatureCache<signature>.view();
+}
+template <FixedString signature>
+constexpr void* operator""_sig() noexcept {
+    return memory::signatureAddressCache<signature>;
 }
 } // namespace ll::inline literals::inline memory_literals

@@ -211,14 +211,6 @@ SymbolLoader::~SymbolLoader() {
     }
 }
 
-uintptr_t tryGetSymbolAddress(std::string_view symbol) {
-    DbgEngData data;
-    if (!data.tryInit()) {
-        return 0;
-    }
-    return data.getSymbol(symbol);
-}
-
 StackTraceEntryInfo getInfo(StacktraceEntry const& entry) {
     DbgEngData data;
 

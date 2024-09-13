@@ -72,7 +72,6 @@ struct StackTraceEntryInfo {
     std::string           file;
 };
 
-LLNDAPI uintptr_t           tryGetSymbolAddress(std::string_view);
 LLNDAPI StackTraceEntryInfo getInfo(StacktraceEntry const&);
 LLNDAPI std::string toString(StacktraceEntry const&);
 LLNDAPI std::string toString(Stacktrace const&);

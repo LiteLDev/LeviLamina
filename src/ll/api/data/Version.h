@@ -25,10 +25,8 @@ namespace ll::data {
 namespace detail {
 
 struct from_chars_result : std::from_chars_result {
-    [[nodiscard]] constexpr operator bool() const noexcept { // NOLINT(google-explicit-constructor)
-        return ec == std::errc{};
-    }
-    constexpr void value() const {
+    [[nodiscard]] constexpr operator bool() const noexcept { return ec == std::errc{}; }
+    constexpr void          value() const {
         if (ec != std::errc{}) {
             throw std::system_error{std::make_error_code(ec)};
         }

@@ -27,4 +27,13 @@ LLNDAPI FuncPtr resolveSignature(std::string_view signature, std::span<std::byte
 LLNDAPI FuncPtr resolveSignature(std::string_view signature) {
     return resolveSignature(signature, sys_utils::getImageRange());
 }
+LLAPI FuncPtr resolveSymbol(std::string_view symbol, bool disableErrorOutput) {
+    auto sym = SymbolView{symbol};
+    auto res = sym.resolve(true);
+    if (!disableErrorOutput && res == nullptr) {
+        getLogger().fatal("Couldn't find: {}", sym.toString());
+        getLogger().fatal("In module: {}", sys_utils::getCallerModuleFileName());
+    }
+    return res;
+}
 } // namespace ll::memory

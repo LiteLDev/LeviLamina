@@ -10,6 +10,7 @@
 #include "ll/api/base/FixedString.h"
 #include "ll/api/base/Macro.h"
 #include "ll/api/memory/Signature.h"
+#include "ll/api/memory/Symbol.h"
 
 namespace Bedrock::Memory {
 class IMemoryAllocator;
@@ -53,24 +54,6 @@ template <class T>
 inline void memcpy_t(void* dst, void const* src) {
     memcpy(dst, src, sizeof(T));
 }
-
-/**
- * @brief resolve symbol to function pointer
- * @param symbol Symbol
- * @return function pointer
- */
-LLNDAPI FuncPtr resolveSymbol(char const* symbol);
-
-LLNDAPI FuncPtr resolveSymbol(std::string_view symbol, bool disableErrorOutput);
-
-LLNDAPI std::string demangleSymbol(std::string_view symbol);
-/**
- * @brief lookup symbol name of a function address
- * @param func Function address
- * @return symbols
- */
-LLNDAPI std::vector<std::string> lookupSymbol(FuncPtr func);
-
 /**
  * @brief make a region of memory writable and executable, then call the
  * callback, and finally restore the region.
@@ -83,6 +66,11 @@ LLAPI void modify(void* ptr, size_t len, const std::function<void()>& callback);
 template <class T>
 inline void modify(T& ref, std::function<void(std::remove_cv_t<T>&)> const& f) {
     modify((void*)std::addressof(ref), sizeof(T), [&] { f((std::remove_cv_t<T>&)(ref)); });
+}
+
+template <class RTN = void, class... Args>
+constexpr auto addressCall(void const* address, auto&&... args) -> RTN {
+    return ((RTN(*)(Args...))address)(std::forward<decltype((args))>(args)...);
 }
 
 template <class RTN = void, class... Args>
@@ -201,21 +189,4 @@ public:
         return reinterpret_cast<T*>(pointer);
     }
 };
-
-template <FixedString symbol>
-inline FuncPtr symbolCache = resolveSymbol(symbol, false);
-
-template <FixedString signature>
-inline FuncPtr signatureResultCache = signatureCache.view().resolve();
-
 } // namespace ll::memory
-
-#define LL_RESOLVE_SYMBOL(symbol) (ll::memory::symbolCache<symbol>)
-
-#define LL_RESOLVE_SIGNATURE(signature) (ll::memory::signatureCache<signature>)
-
-#define LL_SYMBOL_CALL(symbol, Ret, ...) ((Ret(*)(__VA_ARGS__))(ll::memory::symbolCache<symbol>))
-
-#define LL_ADDRESS_CALL(address, Ret, ...) ((Ret(*)(__VA_ARGS__))(address))
-
-#define LL_SIGNATURE_CALL(signature, Ret, ...) ((Ret(*)(__VA_ARGS__))(ll::memory::signatureCache<signature>))

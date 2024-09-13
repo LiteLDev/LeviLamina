@@ -22,10 +22,11 @@ struct magic_enum::customize::enum_range<MinecraftPacketIds> {
 };
 
 std::string getVTableName(void* vtable) {
-    auto res = ll::memory::lookupSymbol(*((void**)vtable));
+    auto res = ll::memory::Symbol::fromAddress(*((void**)vtable));
 
     if (res.size() == 1) {
-        return res[0].substr(4, res[0].size() - 9);
+        auto str = res[0].view().raw();
+        return std::string{str.substr(4, str.size() - 9)};
     } else {
         throw std::runtime_error("cannot get symbol");
     }

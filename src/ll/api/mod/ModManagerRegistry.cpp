@@ -164,15 +164,15 @@ std::shared_ptr<Mod> ModManagerRegistry::getMod(std::string_view name) const {
     return getManagerForMod(name)->getMod(name);
 }
 
-void ModManagerRegistry::executeOnModLoad(std::function<void(std::string_view name)>&& fn) noexcept{
+void ModManagerRegistry::executeOnModLoad(std::function<void(std::string_view name)>&& fn) noexcept {
     std::lock_guard lock(impl->fnMtx);
     impl->onModLoad.push_back(std::move(fn));
 }
-void ModManagerRegistry::executeOnModUnload(std::function<void(std::string_view name)>&& fn)noexcept {
+void ModManagerRegistry::executeOnModUnload(std::function<void(std::string_view name)>&& fn) noexcept {
     std::lock_guard lock(impl->fnMtx);
     impl->onModUnload.push_back(std::move(fn));
 }
-void ModManagerRegistry::executeOnModEnable(std::function<void(std::string_view name)>&& fn) noexcept{
+void ModManagerRegistry::executeOnModEnable(std::function<void(std::string_view name)>&& fn) noexcept {
     std::lock_guard lock(impl->fnMtx);
     impl->onModEnable.push_back(std::move(fn));
 }

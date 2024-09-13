@@ -66,11 +66,16 @@ constexpr FuncPtr resolveIdentifier(T identifier) {
 // TODO: remove in release
 template <class T>
 constexpr FuncPtr resolveIdentifier(std::string_view identifier) {
-    return resolveSymbol(identifier, false);
+    return SymbolView{identifier}.resolve();
 }
 
 template <class T>
 constexpr FuncPtr resolveIdentifier(SignatureView identifier) {
+    return identifier.resolve();
+}
+
+template <class T>
+constexpr FuncPtr resolveIdentifier(SymbolView identifier) {
     return identifier.resolve();
 }
 
@@ -176,7 +181,7 @@ struct LL_EBO Hook {};
                                                                                                                        \
         static int hook(bool suspendThreads = true) {                                                                  \
             detector<_OriginFuncType>();                                                                               \
-            _HookTarget = ::ll::memory::resolveIdentifier<_OriginFuncType>(IDENTIFIER);                                \
+            if (!_HookTarget) _HookTarget = ::ll::memory::resolveIdentifier<_OriginFuncType>(IDENTIFIER);              \
             return ::ll::memory::hook(                                                                                 \
                 _HookTarget,                                                                                           \
                 ::ll::memory::toFuncPtr(&DEF_TYPE::detour),                                                            \

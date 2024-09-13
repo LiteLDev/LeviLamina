@@ -86,14 +86,13 @@ public:
     [[nodiscard]] constexpr T const* operator->() const { return &get(); }
     [[nodiscard]] constexpr T*       operator->() { return &get(); }
 
-    // NOLINTNEXTLINE(google-explicit-constructor)
     [[nodiscard]] constexpr operator T const&&() const&& { return std::move(get()); }
-    [[nodiscard]] constexpr operator T&&() && { return std::move(get()); } // NOLINT(google-explicit-constructor)
-    [[nodiscard]] constexpr operator T const&() const& { return get(); }   // NOLINT(google-explicit-constructor)
-    [[nodiscard]] constexpr operator T&() & { return get(); }              // NOLINT(google-explicit-constructor)
+    [[nodiscard]] constexpr operator T&&() && { return std::move(get()); }
+    [[nodiscard]] constexpr operator T const&() const& { return get(); }
+    [[nodiscard]] constexpr operator T&() & { return get(); }
 
-    [[nodiscard]] constexpr operator T const*() const { return &get(); } // NOLINT(google-explicit-constructor)
-    [[nodiscard]] constexpr operator T*() { return &get(); }             // NOLINT(google-explicit-constructor)
+    [[nodiscard]] constexpr operator T const*() const { return &get(); }
+    [[nodiscard]] constexpr operator T*() { return &get(); }
 
     template <class U>
     [[nodiscard]] constexpr T value_or(U&& right) const& {

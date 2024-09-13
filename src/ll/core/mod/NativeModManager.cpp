@@ -56,7 +56,7 @@ formatDependencyError(pl::dependency_walker::DependencyIssueItem const& item, st
             for (const auto& [module, missingProcedure] : item.mMissingProcedure) {
                 stream << indent << "|- " << module << '\n';
                 for (const auto& procedure : missingProcedure) {
-                    stream << indent << "|---- " << memory::demangleSymbol(procedure) << '\n';
+                    stream << indent << "|---- " << memory::SymbolView(procedure).toString() << '\n';
                 }
             }
         }

@@ -9,13 +9,14 @@ template <size_t N>
 struct FixedString {
     char buf[N + 1]{};
     consteval FixedString() = default;
-    // NOLINTBEGIN(google-explicit-constructor)
     consteval FixedString(std::string_view s) { std::copy_n(s.data(), s.size(), buf); }
     consteval FixedString(char const* s) { std::copy_n(s, N, buf); }
     consteval operator char const*() const { return buf; }
     consteval operator std::string_view() const { return buf; }
     constexpr operator std::string() const { return buf; }
-    // NOLINTEND(google-explicit-constructor)
+
+    [[nodiscard]] constexpr char const& operator[](size_t idx) const { return buf[idx]; }
+    [[nodiscard]] constexpr char&       operator[](size_t idx) { return buf[idx]; }
 
     template <size_t Ny>
     consteval auto operator+(const FixedString<Ny>& other) {
@@ -29,13 +30,11 @@ struct FixedString {
 struct StringView {
     char const* data;
     size_t      size;
-    consteval StringView(std::string_view v) { // NOLINT
+    consteval StringView(std::string_view v) {
         data = v.data();
         size = v.size();
     }
-    consteval operator std::string_view() const { // NOLINT
-        return std::string_view{data, size};
-    }
+    consteval operator std::string_view() const { return std::string_view{data, size}; }
 };
 
 template <StringView s>
