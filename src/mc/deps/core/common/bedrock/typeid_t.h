@@ -54,7 +54,8 @@ LLAPI ushort crtypidImpl(size_t Type);
 template <typename Category, typename Type>
 typeid_t<Category> type_id() {
     if constexpr (std::is_same_v<Category, CommandRegistry>) {
-        return crtypidImpl(ll::hash_utils::doHash(ll::reflection::type_raw_name_v<Type>));
+        constexpr size_t hash = ll::hash_utils::doHash(ll::reflection::type_raw_name_v<Type>);
+        return crtypidImpl(hash);
     } else {
         static typeid_t<Category> id{++typeid_t<Category>::_getCounter()};
         return id;
