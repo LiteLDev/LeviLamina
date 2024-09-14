@@ -17,24 +17,20 @@ namespace fs = std::filesystem;
 static bool
 getFileVersion(std::wstring_view filePath, ushort& ver1, ushort& ver2, ushort& ver3, ushort& ver4, uint& flag) {
 
-    DWORD dwHandle = 0;
-    DWORD dwLen    = GetFileVersionInfoSizeW(filePath.data(), &dwHandle);
+    DWORD dwLen = GetFileVersionInfoSizeW(filePath.data(), nullptr);
     if (0 >= dwLen) {
         return false;
     }
+    std::string data(dwLen, '\0');
 
-    std::wstring data(dwLen, '\0');
-
-    if (!GetFileVersionInfoW(filePath.data(), dwHandle, dwLen, data.data())) {
+    if (!GetFileVersionInfoW(filePath.data(), 0, dwLen, data.data())) {
         return false;
     }
-
     VS_FIXEDFILEINFO* lpBuffer;
     uint              uLen = 0;
     if (!VerQueryValueW(data.c_str(), L"\\", (void**)&lpBuffer, &uLen)) {
         return false;
     }
-
     ver1 = (lpBuffer->dwFileVersionMS >> 16) & 0x0000FFFF;
     ver2 = lpBuffer->dwFileVersionMS & 0x0000FFFF;
     ver3 = (lpBuffer->dwFileVersionLS >> 16) & 0x0000FFFF;

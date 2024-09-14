@@ -11,20 +11,20 @@ public:
     short data;
 
     template <std::integral T>
-    constexpr ShortTag& operator=(T value) {
+    constexpr ShortTag& operator=(T value) noexcept {
         data = (short)value;
         return *this;
     }
 
     template <std::integral T>
-    [[nodiscard]] constexpr operator T() const {
+    [[nodiscard]] constexpr operator T() const noexcept {
         return (T)data;
     }
 
     template <std::integral T>
-    [[nodiscard]] constexpr explicit ShortTag(T value = 0) : data((short)value) {}
+    [[nodiscard]] constexpr explicit ShortTag(T value = 0) noexcept : data((short)value) {}
 
-    [[nodiscard]] ShortTag operator-() const { return ShortTag{(short)-data}; }
+    [[nodiscard]] ShortTag operator-() const noexcept { return ShortTag{(short)-data}; }
 
 public:
     // NOLINTBEGIN
@@ -55,5 +55,5 @@ public:
     // NOLINTEND
 };
 namespace ll::inline literals::inline nbt_literals {
-[[nodiscard]] inline ShortTag operator""_s(uint64 num) { return ShortTag{(short)num}; }
+[[nodiscard]] inline ShortTag operator""_s(uint64 num) noexcept { return ShortTag{(short)num}; }
 } // namespace ll::inline literals::inline nbt_literals

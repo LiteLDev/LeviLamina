@@ -10,14 +10,14 @@ class FloatTag : public ::Tag {
 public:
     float data;
 
-    constexpr FloatTag& operator=(float value) {
+    constexpr FloatTag& operator=(float value) noexcept {
         data = value;
         return *this;
     }
 
-    constexpr operator float() const { return data; } // NOLINT
+    constexpr operator float() const noexcept { return data; } // NOLINT
 
-    [[nodiscard]] constexpr explicit FloatTag(float value = 0) : data(value) {}
+    [[nodiscard]] constexpr explicit FloatTag(float value = 0) noexcept : data(value) {}
 
 public:
     // NOLINTBEGIN
@@ -48,5 +48,5 @@ public:
     // NOLINTEND
 };
 namespace ll::inline literals::inline nbt_literals {
-[[nodiscard]] inline FloatTag operator""_f(ldouble num) { return FloatTag{(float)num}; }
+[[nodiscard]] inline FloatTag operator""_f(ldouble num) noexcept { return FloatTag{(float)num}; }
 } // namespace ll::inline literals::inline nbt_literals

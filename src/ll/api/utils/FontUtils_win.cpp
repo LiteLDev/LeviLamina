@@ -16,8 +16,7 @@ using namespace string_utils;
 
 static bool isValidFontFileType(DWRITE_FONT_FILE_TYPE fileType) {
     return fileType == DWRITE_FONT_FILE_TYPE_CFF || fileType == DWRITE_FONT_FILE_TYPE_TRUETYPE
-        || fileType == DWRITE_FONT_FILE_TYPE_OPENTYPE_COLLECTION
-        || fileType == DWRITE_FONT_FILE_TYPE_TRUETYPE_COLLECTION;
+        || fileType == DWRITE_FONT_FILE_TYPE_OPENTYPE_COLLECTION;
 }
 
 static std::vector<std::filesystem::path> getFilePathFromIDWriteFontFace(IDWriteFontFace& fontFace) {

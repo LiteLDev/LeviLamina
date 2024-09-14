@@ -10,14 +10,14 @@ class DoubleTag : public ::Tag {
 public:
     double data;
 
-    constexpr DoubleTag& operator=(double value) {
+    constexpr DoubleTag& operator=(double value) noexcept{
         data = value;
         return *this;
     }
 
-    [[nodiscard]] constexpr operator double() const { return data; } // NOLINT
+    [[nodiscard]] constexpr operator double() const noexcept { return data; } // NOLINT
 
-    [[nodiscard]] constexpr explicit DoubleTag(double value = 0) : data(value) {}
+    [[nodiscard]] constexpr explicit DoubleTag(double value = 0) noexcept : data(value) {}
 
 public:
     // NOLINTBEGIN
@@ -48,5 +48,5 @@ public:
     // NOLINTEND
 };
 namespace ll::inline literals::inline nbt_literals {
-[[nodiscard]] inline DoubleTag operator""_d(ldouble num) { return DoubleTag{(double)num}; }
+[[nodiscard]] inline DoubleTag operator""_d(ldouble num) noexcept { return DoubleTag{(double)num}; }
 } // namespace ll::inline literals::inline nbt_literals

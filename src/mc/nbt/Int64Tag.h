@@ -11,20 +11,20 @@ public:
     int64 data;
 
     template <std::integral T>
-    constexpr Int64Tag& operator=(int64 value) {
+    constexpr Int64Tag& operator=(int64 value) noexcept {
         data = (int64)value;
         return *this;
     }
 
     template <std::integral T>
-    [[nodiscard]] constexpr operator T() const {
+    [[nodiscard]] constexpr operator T() const noexcept {
         return (T)data;
     }
 
     template <std::integral T>
-    [[nodiscard]] constexpr explicit Int64Tag(T value = 0) : data((int64)value) {}
+    [[nodiscard]] constexpr explicit Int64Tag(T value = 0) noexcept : data((int64)value) {}
 
-    [[nodiscard]] Int64Tag operator-() const { return Int64Tag{(int64)-data}; }
+    [[nodiscard]] Int64Tag operator-() const noexcept { return Int64Tag{(int64)-data}; }
 
 public:
     // NOLINTBEGIN
@@ -56,5 +56,5 @@ public:
 };
 
 namespace ll::inline literals::inline nbt_literals {
-[[nodiscard]] inline Int64Tag operator""_l(uint64 num) { return Int64Tag{(int64)num}; }
+[[nodiscard]] inline Int64Tag operator""_l(uint64 num) noexcept { return Int64Tag{(int64)num}; }
 } // namespace ll::inline literals::inline nbt_literals

@@ -9,7 +9,7 @@ class UUID {
 public:
     uint64 a, b;
 
-    [[nodiscard]] constexpr UUID(uint64 a = 0, uint64 b = 0) : a(a), b(b) {}
+    [[nodiscard]] constexpr UUID(uint64 a = 0, uint64 b = 0) noexcept : a(a), b(b) {}
 
     [[nodiscard]] inline UUID(std::string const& uuidStr) : UUID(fromString(uuidStr)) {} // NOLINT
 

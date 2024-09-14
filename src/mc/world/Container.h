@@ -34,8 +34,8 @@ public:
     [[nodiscard]] ItemStack const& operator[](int index) const { return this->getItem(index); }
 
 public:
-    using Iterator      = ContainerIterator<Container, false>;
-    using ConstIterator = ContainerIterator<Container, true>;
+    using Iterator      = ContainerIterator<Container>;
+    using ConstIterator = ContainerIterator<Container const>;
 
     using ReverseIterator      = std::reverse_iterator<Iterator>;
     using ConstReverseIterator = std::reverse_iterator<ConstIterator>;

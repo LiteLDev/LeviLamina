@@ -612,16 +612,16 @@ private:
 
     using aggregator_type = aggregator<functor, cpq_operation>;
 
-    aggregator_type my_aggregator;
+    alignas(max_nfs_size) aggregator_type my_aggregator;
     // Padding added to avoid false sharing
-    char padding1[max_nfs_size - sizeof(aggregator_type)];
+    char padding1[max_nfs_size - sizeof(aggregator_type) % max_nfs_size];
     // The point at which unsorted elements begin
     size_type              mark;
     std::atomic<size_type> my_size;
     Compare                my_compare;
 
     // Padding added to avoid false sharing
-    char padding2[max_nfs_size - (2 * sizeof(size_type)) - sizeof(Compare)];
+    char padding2[max_nfs_size - (2 * sizeof(size_type)) - sizeof(Compare) % max_nfs_size];
     //! Storage for the heap of elements in queue, plus unheapified elements
     /** data has the following structure:
 

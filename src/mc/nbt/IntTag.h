@@ -11,20 +11,20 @@ public:
     int data;
 
     template <std::integral T>
-    constexpr IntTag& operator=(int value) {
+    constexpr IntTag& operator=(int value) noexcept {
         data = (int)value;
         return *this;
     }
 
     template <std::integral T>
-    [[nodiscard]] constexpr operator T() const {
+    [[nodiscard]] constexpr operator T() const noexcept {
         return (T)data;
     }
 
     template <std::integral T>
-    [[nodiscard]] constexpr explicit IntTag(T value = 0) : data((int)value) {}
+    [[nodiscard]] constexpr explicit IntTag(T value = 0) noexcept : data((int)value) {}
 
-    [[nodiscard]] IntTag operator-() const { return IntTag{-data}; }
+    [[nodiscard]] IntTag operator-() const noexcept { return IntTag{-data}; }
 
 public:
     // NOLINTBEGIN
@@ -55,5 +55,5 @@ public:
     // NOLINTEND
 };
 namespace ll::inline literals::inline nbt_literals {
-[[nodiscard]] inline IntTag operator""_i(uint64 num) { return IntTag{(int)num}; }
+[[nodiscard]] inline IntTag operator""_i(uint64 num) noexcept { return IntTag{(int)num}; }
 } // namespace ll::inline literals::inline nbt_literals

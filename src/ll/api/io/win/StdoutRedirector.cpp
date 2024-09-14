@@ -10,22 +10,22 @@ StdoutRedirector::StdoutRedirector(internal::FileHandleT outputHandle, ProcessCh
     if (channels & StandardOutput) {
         oldStdout = _dup(_fileno(stdout));
         setvbuf(stdout, nullptr, _IONBF, 0);
-        _dup2(fd, 1);
+        (void)_dup2(fd, 1);
     }
     if (channels & StandardError) {
         oldStderr = _dup(_fileno(stderr));
         setvbuf(stderr, nullptr, _IONBF, 0);
-        _dup2(fd, 2);
+        (void)_dup2(fd, 2);
     }
     _close(fd);
 }
 StdoutRedirector::~StdoutRedirector() {
     if (oldStdout != -1) {
-        _dup2(oldStdout, _fileno(stdout));
+        (void)_dup2(oldStdout, _fileno(stdout));
         _close(oldStdout);
     }
     if (oldStderr != -1) {
-        _dup2(oldStderr, _fileno(stderr));
+        (void)_dup2(oldStderr, _fileno(stderr));
         _close(oldStderr);
     }
 }

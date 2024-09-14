@@ -21,9 +21,6 @@ concept IsInTypes = traits::is_in_types_v<T, U>;
 template <class T, class... Ts>
 concept IsOneOf = traits::is_one_of_v<T, Ts...>;
 
-template <class T, class... Ts>
-concept IsAllSame = traits::is_all_same_v<T, Ts...>;
-
 template <class T>
 concept IsNonCharIntegral = traits::is_non_char_integral_v<T>;
 
@@ -52,13 +49,16 @@ concept IsOptional = !IsExpected<T> && requires(T o) {
 };
 
 template <class T>
-concept Rangeable = requires(T t) {
+concept RangeLoopable = std::is_bounded_array_v<std::remove_cvref_t<T>> || requires(T t) {
     t.begin();
     t.end();
+} || requires(T t) {
+    begin(t);
+    end(t);
 };
 
 template <class T>
-concept Associative = Rangeable<T> && requires {
+concept Associative = RangeLoopable<T> && requires {
     typename std::remove_cvref_t<T>::key_type;
     typename std::remove_cvref_t<T>::mapped_type;
 };
@@ -80,18 +80,13 @@ template <class T, template <class...> class Z>
 concept Specializes = traits::is_specialization_of_v<T, Z>;
 
 template <class T>
-constexpr bool tuple_like_impl =
-    traits::is_specialization_of_v<T, ::std::tuple> || traits::is_specialization_of_v<T, ::std::pair>
-    || traits::is_std_array_v<T> || traits::is_subrange_v<T>;
+concept TupleLike = requires(T t) {
+    std::tuple_size<std::remove_cvref_t<T>>::value;
+    std::get<0>(t);
+};
 
 template <class T>
-concept TupleLike = tuple_like_impl<std::remove_cvref_t<T>> || (!Rangeable<T> && requires(T t) {
-                        std::tuple_size<std::remove_cvref_t<T>>::value;
-                        std::get<0>(t);
-                    });
-
-template <class T>
-concept ArrayLike = Rangeable<T> && !requires { typename std::remove_cvref_t<T>::mapped_type; };
+concept ArrayLike = RangeLoopable<T> && !requires { typename std::remove_cvref_t<T>::mapped_type; };
 
 template <class T, template <class...> class Z>
 concept DerivedFromSpecializes = traits::is_derived_from_specialization_of_v<T, Z>;

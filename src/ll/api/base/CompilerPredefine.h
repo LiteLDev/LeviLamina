@@ -9,6 +9,7 @@
 #ifdef _MSC_VER
 
 #include "intrin.h"
+#include "sal.h"
 
 #ifndef LL_HAS_CXX23
 #if _HAS_CXX23
@@ -27,6 +28,14 @@
 
 #ifndef LL_EBO
 #define LL_EBO __declspec(empty_bases)
+#endif
+
+#ifndef LL_ALLOCATOR
+#define LL_ALLOCATOR _Ret_notnull_ _Post_writable_byte_size_(size) _VCRT_ALLOCATOR
+#endif
+
+#ifndef LL_NOTHROW_ALLOCATOR
+#define LL_NOTHROW_ALLOCATOR _Ret_maybenull_ _Success_(return != NULL) _Post_writable_byte_size_(size) _VCRT_ALLOCATOR
 #endif
 
 #ifndef LL_FORCEINLINE
@@ -250,6 +259,10 @@ using FileHandleT = void*;
 
 #ifndef LL_EBO
 #define LL_EBO
+#endif
+
+#ifndef LL_ALLOCATOR
+#define LL_ALLOCATOR
 #endif
 
 #ifndef LL_FORCEINLINE

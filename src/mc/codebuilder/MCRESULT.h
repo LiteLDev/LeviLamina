@@ -9,7 +9,7 @@ public:
     enum class MCCATEGORY mCategory;
     ushort                mCode;
 
-    operator bool() const { return mSuccess; } // NOLINT
+    operator bool() const noexcept { return mSuccess; } // NOLINT
 
 public:
     // NOLINTBEGIN

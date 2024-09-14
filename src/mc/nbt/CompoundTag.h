@@ -43,7 +43,7 @@ public:
     LLNDAPI std::string                      toNetworkNbt() const;
     LLNDAPI static ll::Expected<CompoundTag> fromNetworkNbt(std::string const& data) noexcept;
 
-    size_t size() const { return mTags.size(); }
+    size_t size() const noexcept { return mTags.size(); }
 
     bool contains(std::string_view name) const;
 

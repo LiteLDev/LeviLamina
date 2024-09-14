@@ -37,33 +37,35 @@ void operator delete(void* p, std::size_t, std::align_val_t alignment) noexcept 
 
 void operator delete[](void* p, std::size_t, std::align_val_t alignment) noexcept { operator delete[](p, alignment); };
 
-[[nodiscard]] void* operator new(std::size_t size) {
+[[nodiscard]] LL_ALLOCATOR void* operator new(std::size_t size) {
     if (void* const block = ::ll::memory::getDefaultAllocator().allocate(size)) {
         return block;
     }
     ::ll::memory::throwMemoryException(size);
 }
-[[nodiscard]] void* operator new(std::size_t size, std::nothrow_t const&) noexcept {
+[[nodiscard]] LL_NOTHROW_ALLOCATOR void* operator new(std::size_t size, std::nothrow_t const&) noexcept {
     return ::ll::memory::getDefaultAllocator().allocate(size);
 }
-[[nodiscard]] void* operator new[](std::size_t size) { return operator new(size); }
+[[nodiscard]] LL_ALLOCATOR void* operator new[](std::size_t size) { return operator new(size); }
 
-[[nodiscard]] void* operator new[](std::size_t size, std::nothrow_t const& tag) noexcept {
+[[nodiscard]] LL_NOTHROW_ALLOCATOR void* operator new[](std::size_t size, std::nothrow_t const& tag) noexcept {
     return operator new(size, tag);
 }
-[[nodiscard]] void* operator new(std::size_t size, std::align_val_t alignment) {
+[[nodiscard]] LL_ALLOCATOR void* operator new(std::size_t size, std::align_val_t alignment) {
     if (void* const block = ::ll::memory::getDefaultAllocator().alignedAllocate(size, static_cast<size_t>(alignment))) {
         return block;
     }
     ::ll::memory::throwMemoryException(size);
 }
-[[nodiscard]] void* operator new(std::size_t size, std::align_val_t alignment, std::nothrow_t const&) noexcept {
+[[nodiscard]] LL_NOTHROW_ALLOCATOR void*
+operator new(std::size_t size, std::align_val_t alignment, std::nothrow_t const&) noexcept {
     return ::ll::memory::getDefaultAllocator().alignedAllocate(size, static_cast<size_t>(alignment));
 }
-[[nodiscard]] void* operator new[](std::size_t size, std::align_val_t alignment) {
+[[nodiscard]] LL_ALLOCATOR void* operator new[](std::size_t size, std::align_val_t alignment) {
     return operator new(size, alignment);
 }
-[[nodiscard]] void* operator new[](std::size_t size, std::align_val_t alignment, std::nothrow_t const& tag) noexcept {
+[[nodiscard]] LL_NOTHROW_ALLOCATOR void*
+operator new[](std::size_t size, std::align_val_t alignment, std::nothrow_t const& tag) noexcept {
     return operator new(size, alignment, tag);
 }
 #endif

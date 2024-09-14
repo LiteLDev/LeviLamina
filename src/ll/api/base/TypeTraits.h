@@ -173,15 +173,15 @@ template <class T>
 struct is_awaiter : std::bool_constant<is_awaiter_v<T>> {};
 
 template <class T>
-constexpr bool has_member_operator_co_await_v = requires(T&& t) {
-    { std::forward<T>(t).operator co_await() } -> Require<is_awaiter>;
+constexpr bool has_member_operator_co_await_v = requires(T t) {
+    { t.operator co_await() } -> Require<is_awaiter>;
 };
 template <class T>
 struct has_member_operator_co_await : std::bool_constant<has_member_operator_co_await_v<T>> {};
 
 template <class T>
-constexpr bool has_non_member_operator_co_await_v = requires(T&& t) {
-    { operator co_await(std::forward<T>(t)) } -> Require<is_awaiter>;
+constexpr bool has_non_member_operator_co_await_v = requires(T t) {
+    { operator co_await(t) } -> Require<is_awaiter>;
 };
 template <class T>
 struct has_non_member_operator_co_await : std::bool_constant<has_non_member_operator_co_await_v<T>> {};

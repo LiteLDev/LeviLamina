@@ -38,16 +38,14 @@ Pipe::~Pipe() { ::DisconnectNamedPipe(hRead); }
 
 std::string Pipe::read() {
     std::string result;
-    BOOL        fSuccess;
     do {
         char  buf[4096];
         DWORD cbRead{0};
 
         // Read from the pipe.
-        fSuccess = ReadFile(hRead, buf, sizeof(buf), &cbRead, nullptr);
-
-        if (cbRead > 0) result.append(buf, cbRead);
-
+        if (ReadFile(hRead, buf, sizeof(buf), &cbRead, nullptr) && cbRead > 0) {
+            result.append(buf, cbRead);
+        }
     } while (GetLastError() == ERROR_MORE_DATA); // repeat loop if ERROR_MORE_DATA
     return result;
 }

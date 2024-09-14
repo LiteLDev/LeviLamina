@@ -11,7 +11,7 @@
 
 namespace ll::math {
 template <typename T, typename... Components>
-    requires ll::concepts::IsAllSame<bool, Components...>
+    requires(traits::is_all_same_v<bool, Components...>)
 class LL_EBO BoolN : public CommutativeGroup<T, Components...>, public BoolNTag {
 public:
     using first_type = bool;

@@ -17,7 +17,8 @@ public:
         return nullptr;
     }
 
-    [[nodiscard]] inline operator bool() const { return mContext.has_value(); } // NOLINT
+    [[nodiscard]] inline operator bool() const noexcept { return mContext.has_value(); }
+
 public:
     StackResultStorageEntity& operator=(StackResultStorageEntity const&) = delete;
     StackResultStorageEntity(StackResultStorageEntity const&)            = delete;

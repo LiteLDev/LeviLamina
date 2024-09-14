@@ -17,7 +17,7 @@ public:
         return nullptr;
     }
 
-    [[nodiscard]] inline operator bool() const { return mContext.has_value(); } // NOLINT
+    [[nodiscard]] inline operator bool() const noexcept { return mContext.has_value(); }
 
 public:
     // prevent constructor by default

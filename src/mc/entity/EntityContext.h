@@ -34,9 +34,9 @@ public:
     entt::basic_registry<EntityId>& mEnttRegistry;
     EntityId                        mEntity;
 
-    [[nodiscard]] inline entt::basic_registry<EntityId>& getRegistry() { return mEnttRegistry; }
+    [[nodiscard]] inline entt::basic_registry<EntityId>& getRegistry() noexcept { return mEnttRegistry; }
 
-    [[nodiscard]] inline entt::basic_registry<EntityId> const& getRegistry() const { return mEnttRegistry; }
+    [[nodiscard]] inline entt::basic_registry<EntityId> const& getRegistry() const noexcept { return mEnttRegistry; }
 
     template <class T>
     [[nodiscard]] inline optional_ref<T const> tryGetComponent() const {
