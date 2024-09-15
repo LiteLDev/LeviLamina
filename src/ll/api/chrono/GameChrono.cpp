@@ -21,7 +21,6 @@ ServerClock::time_point ServerClock::now() noexcept {
     return time_point(duration(servertime.load()));
 }
 
-// TODO: make sure this is thread safe
 GameTickClock::time_point GameTickClock::now() noexcept {
     return ll::service::getLevel().transform([](auto& level) { return fromTick(level.getCurrentTick()); }
     ).value_or(time_point::min());

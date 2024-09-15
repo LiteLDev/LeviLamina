@@ -60,11 +60,11 @@ struct function_traits : function_traits<decltype(&F::operator())> {};
         template <class T>                                                                                             \
         using cvref                               = T       CVREF;                                                     \
         static constexpr bool is_noexcept         = NOEXCEPT;                                                          \
-        static constexpr bool is_const            = std::is_const_v<cvref<void>>;                                      \
-        static constexpr bool is_volatile         = std::is_volatile_v<cvref<void>>;                                   \
-        static constexpr bool is_reference        = std::is_reference_v<cvref<void>>;                                  \
-        static constexpr bool is_lvalue_reference = std::is_lvalue_reference_v<cvref<void>>;                           \
-        static constexpr bool is_rvalue_reference = std::is_rvalue_reference_v<cvref<void>>;                           \
+        static constexpr bool is_const            = std::is_const_v<cvref<int>>;                                       \
+        static constexpr bool is_volatile         = std::is_volatile_v<cvref<int>>;                                    \
+        static constexpr bool is_reference        = std::is_reference_v<cvref<int>>;                                   \
+        static constexpr bool is_lvalue_reference = std::is_lvalue_reference_v<cvref<int>>;                            \
+        static constexpr bool is_rvalue_reference = std::is_rvalue_reference_v<cvref<int>>;                            \
     };                                                                                                                 \
     template <class Ret, class Cls, class... Args>                                                                     \
     struct function_traits<Ret (Cls::*)(Args...) CVREF noexcept(NOEXCEPT)>                                             \

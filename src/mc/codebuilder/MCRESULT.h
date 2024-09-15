@@ -5,9 +5,9 @@
 
 struct MCRESULT {
 public:
-    bool                  mSuccess;
-    enum class MCCATEGORY mCategory;
-    ushort                mCode;
+    bool         mSuccess;
+    ::MCCATEGORY mCategory;
+    ushort       mCode;
 
     operator bool() const noexcept { return mSuccess; } // NOLINT
 

@@ -32,9 +32,9 @@ public:
 
     LLNDAPI Expected<> load(std::filesystem::path const& path) noexcept;
 
-    LLNDAPI void clear();
+    LLAPI void clear();
 
-    LLNDAPI void set(std::string_view localeCode, std::string_view key, std::string_view value);
+    LLAPI void set(std::string_view localeCode, std::string_view key, std::string_view value);
 
     LLNDAPI std::string_view get(std::string_view key, std::string_view localeCode) const;
 };

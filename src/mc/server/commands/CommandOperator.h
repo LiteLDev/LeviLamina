@@ -16,4 +16,4 @@ enum class CommandOperator : schar {
     Swap         = 0x9,
 };
 
-MCTAPI class Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<class CommandRegistry, enum class CommandOperator>();
+MCTAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, CommandOperator>();

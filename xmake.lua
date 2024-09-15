@@ -35,6 +35,10 @@ add_requires("levibuildscript 0.2.0")
 add_requires("preloader v1.9.0")
 add_requires("symbolprovider v1.2.0")
 
+if is_linux then
+set_toolchains("clang")
+end
+
 if has_config("tests") then
     add_requires("gtest")
 end
@@ -90,7 +94,6 @@ target("LeviLamina")
     set_languages("c++20")
     set_kind("shared")
     set_symbols("debug")
-    set_exceptions("none")
     add_files("src/**.cpp")
     add_files("src/**.rc")
     set_configdir("$(buildir)/config")
@@ -123,13 +126,24 @@ target("LeviLamina")
         "LL_EXPORT"
     )
 
+    if not is_windows then
+        remove_files("src-server/ll/core/plugin-abi/**.cpp")
+        add_cxxflags("clang::-Wno-invalid-offsetof")
+        add_defines(
+            "__GCC_DESTRUCTIVE_SIZE=64",
+            "__GCC_CONSTRUCTIVE_SIZE=64",
+            {tools = {"clang"}}
+        )
+    end
+
     -- work around to enable c++23
 
     if is_windows then
         -- msstl
         add_defines("_HAS_CXX23=1")
     else
-        -- libstdc++
+        -- libc++
+        add_cxxflags("clang::-stdlib=libc++")
         add_defines("_LIBCPP_STD_VER=23")
     end
 
@@ -141,6 +155,7 @@ target("LeviLamina")
             "UNICODE",
             "WIN32_LEAN_AND_MEAN"
         )
+        set_exceptions("none")
         add_cxflags(
             "/utf-8",
             "/permissive-",

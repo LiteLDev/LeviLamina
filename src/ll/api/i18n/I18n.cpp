@@ -68,7 +68,7 @@ static void addNestedData(I18n& i18n, std::string_view code, nlohmann::json cons
         if (val.is_object()) {
             addNestedData(i18n, code, val, prefix + key + '.');
         } else if (val.is_string()) {
-            i18n.set(code, prefix + key, val);
+            i18n.set(code, prefix + key, (std::string const&)val);
         }
     }
 }

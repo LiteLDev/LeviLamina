@@ -1,7 +1,5 @@
 #include "ll/api/memory/Signature.h"
 
-#include <execution>
-
 #include "ll/api/utils/SystemUtils.h"
 #include "ll/core/LeviLamina.h"
 
@@ -12,7 +10,7 @@ void* SignatureView::resolve(std::span<std::byte> range, bool disableErrorOutput
     const auto scanEnd   = range.end() - elements.size() + 1;
 
     for (auto i = range.begin(); i != scanEnd; i++) {
-        i = std::find(std::execution::unseq, i, scanEnd, firstByte);
+        i = std::find( i, scanEnd, firstByte);
         if (i == scanEnd) [[unlikely]] {
             break;
         }

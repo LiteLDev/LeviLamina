@@ -1,3 +1,5 @@
+#include "ll/api/utils/SystemUtils.h"
+
 #include <cstdint>
 #include <fstream>
 #include <sstream>
@@ -6,7 +8,7 @@
 namespace ll::internal {
 
 // Defined in CompilerPredefine.h
-void* getCurrentModuleHandle() noexcept {
+LLAPI void* getCurrentModuleHandle() noexcept {
     std::ifstream maps("/proc/self/maps");
     std::string   line;
 

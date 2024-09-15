@@ -9,4 +9,4 @@ enum class AnimationMode : schar {
     Blocks = 0x2,
 };
 
-MCTAPI class Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<class CommandRegistry, enum class AnimationMode>();
+MCTAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, AnimationMode>();

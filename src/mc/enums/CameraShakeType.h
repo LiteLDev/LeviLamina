@@ -5,4 +5,4 @@
 
 enum class CameraShakeType {};
 
-MCTAPI class Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<class CommandRegistry, enum class CameraShakeType>();
+MCTAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, CameraShakeType>();

@@ -53,7 +53,7 @@ public:
 
     LL_CONSTEXPR23 Error(std::unique_ptr<ErrorInfoBase> i) noexcept : mInfo(std::move(i)) {}
 
-    LL_CONSTEXPR23 Error(::nonstd::unexpected_type<::ll::Error> i) noexcept : Error(std::move(i.value())) {}
+    LL_CONSTEXPR23 Error(::nonstd::unexpected_type<::ll::Error> i) noexcept : Error(std::move(i.error())) {}
 
     LL_CONSTEXPR23 operator bool() const noexcept { return mInfo != nullptr; }
 

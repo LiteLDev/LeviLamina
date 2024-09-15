@@ -32,6 +32,8 @@ public:
     LevelStorageWriteBatch& operator=(LevelStorageWriteBatch const&);
     LevelStorageWriteBatch(LevelStorageWriteBatch const&);
 
+    using BatchEntryMap = std::map<std::string, BatchEntry>;
+
 public:
     // NOLINTBEGIN
     // vIndex: 0
@@ -63,18 +65,11 @@ public:
 
     MCAPI void clear();
 
-    MCAPI void erase(
-        std::_Tree_const_iterator<std::_Tree_val<
-            std::_Tree_simple_types<std::pair<std::string const, struct LevelStorageWriteBatch::BatchEntry>>>> const& it
-    );
+    MCAPI void erase(BatchEntryMap::const_iterator const& it);
 
-    MCAPI std::_Tree_const_iterator<std::_Tree_val<
-        std::_Tree_simple_types<std::pair<std::string const, struct LevelStorageWriteBatch::BatchEntry>>>>
-          find(std::string const& key) const;
+    MCAPI BatchEntryMap::const_iterator find(std::string const& key) const;
 
-    MCAPI std::_Tree_iterator<std::_Tree_val<
-        std::_Tree_simple_types<std::pair<std::string const, struct LevelStorageWriteBatch::BatchEntry>>>>
-          find(std::string const& key);
+    MCAPI BatchEntryMap::iterator find(std::string const& key);
 
     // NOLINTEND
 

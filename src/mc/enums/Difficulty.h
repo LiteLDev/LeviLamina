@@ -12,4 +12,4 @@ enum class Difficulty : int {
     Unknown  = 0x5,
 };
 
-MCTAPI class Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<class CommandRegistry, enum class Difficulty>();
+MCTAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, Difficulty>();

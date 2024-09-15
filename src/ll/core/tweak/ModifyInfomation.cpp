@@ -41,6 +41,16 @@ LL_STATIC_HOOK(
 
 io::Logger serverLogger("Server");
 
+// int _vscprintf(const char* format, va_list pargs) { // TODO: move to predefine
+//     int     retval;
+//     va_list argcopy;
+//     va_copy(argcopy, pargs);
+//     retval = vsnprintf(nullptr, 0, format, argcopy);
+//     va_end(argcopy);
+//     return retval;
+// }
+// vsnprintf(buffer.data(), buffer.size(), pszFormat, va);
+
 LL_STATIC_HOOK(BedrockLogOutHook, HookPriority::Normal, BedrockLogOut, void, uint priority, char const* pszFormat, ...)
 try {
     bool        success = false;

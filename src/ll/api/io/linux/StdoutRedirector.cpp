@@ -19,12 +19,12 @@ StdoutRedirector::StdoutRedirector(internal::FileHandleT outputFd, ProcessChanne
 }
 StdoutRedirector::~StdoutRedirector() {
     if (oldStdout != -1) {
-        !dup2(oldStdout, STDOUT_FILENO);
-        !close(oldStdout);
+        dup2(oldStdout, STDOUT_FILENO);
+        close(oldStdout);
     }
     if (oldStderr != -1) {
-        !dup2(oldStderr, STDERR_FILENO);
-        !close(oldStderr);
+        dup2(oldStderr, STDERR_FILENO);
+        close(oldStderr);
     }
 }
 } // namespace ll::io

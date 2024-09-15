@@ -49,7 +49,7 @@ class NativeClosure<Ret(Args...)> {
         auto               stored = (PackedData*)data;
         return stored->func(stored->data, std::forward<Args>(args)...);
     }
-    static inline size_t implOffset = detail::getVolatileOffset(closureImpl);
+    static inline size_t implOffset = detail::getVolatileOffset((void*)closureImpl);
 
 public:
     using origin_fn  = Ret(uintptr_t, Args...);
@@ -63,7 +63,7 @@ public:
     VirtualMemory closure{};
 
     NativeClosure(origin_fn* func, uintptr_t data) : stored({func, data}) {
-        detail::initNativeClosure(this, closureImpl, implOffset);
+        detail::initNativeClosure(this, (void*)closureImpl, implOffset);
     }
 
     closure_fn* get() const { return closure.get<closure_fn>(); }

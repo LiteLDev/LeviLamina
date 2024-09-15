@@ -304,7 +304,7 @@ template <class T, class J>
     requires(std::same_as<T, Version>)
 {
     if (j.is_string()) {
-        if (auto res = ver.from_string_noexcept(j); res) {
+        if (auto res = ver.from_string_noexcept((std::string const&)j); res) {
             return {};
         } else {
             return makeErrorCodeError(res.ec);

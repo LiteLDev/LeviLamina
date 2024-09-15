@@ -20,8 +20,8 @@ class CommandSelectorBase {
 public:
     static const uint64                                                              Unlimited = 0xFFFFFFFF; // constant
     int                                                                              mVersion;               // this+0x0
-    enum class CommandSelectionType                                                  mType;                  // this+0x4
-    enum class CommandSelectionOrder                                                 mOrder;                 // this+0x8
+    ::CommandSelectionType                                                           mType;                  // this+0x4
+    ::CommandSelectionOrder                                                          mOrder;                 // this+0x8
     std::vector<InvertableFilter<std::string>>                                       mNameFilters;          // this+0x10
     std::vector<InvertableFilter<ActorDefinitionIdentifier>>                         mTypeFilters;          // this+0x28
     std::vector<InvertableFilter<HashedString>>                                      mFamilyFilters;        // this+0x40

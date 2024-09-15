@@ -16,4 +16,4 @@ enum class ActorLocation : int {
     Count             = 0x9,
 };
 
-MCTAPI class Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<class CommandRegistry, enum class ActorLocation>();
+MCTAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, ActorLocation>();

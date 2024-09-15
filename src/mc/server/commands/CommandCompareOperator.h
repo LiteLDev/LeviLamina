@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/common/bedrock/typeid_t.h"
 
-enum CommandCompareOperator : char {
+enum class CommandCompareOperator : char {
     Invalid           = 0x0,
     Equals            = 0x1,
     LessThan          = 0x2,
@@ -12,4 +12,4 @@ enum CommandCompareOperator : char {
     GreaterThanEquals = 0x5,
 };
 
-MCTAPI class Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<class CommandRegistry, enum CommandCompareOperator>();
+MCTAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, CommandCompareOperator>();

@@ -4,6 +4,7 @@
 #include <unistd.h>
 
 #include "ll/api/io/Pipe.h"
+#include "ll/api/utils/ErrorUtils.h"
 
 namespace ll::io {
 

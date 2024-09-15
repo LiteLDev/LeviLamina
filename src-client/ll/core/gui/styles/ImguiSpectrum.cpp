@@ -7,8 +7,6 @@ namespace Spectrum {
 namespace { // Unnamed namespace, since we only use this here.
 uint Color(uint c) {
     // add alpha.
-    // also swap red and blue channel for some reason.
-    // todo: figure out why, and fix it.
     const short a = 0xFF;
     const short r = (c >> 16) & 0xFF;
     const short g = (c >> 8) & 0xFF;

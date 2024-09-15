@@ -307,7 +307,7 @@ using FileHandleT = void*;
 
 namespace ll::internal {
 
-[[nodiscard]] LL_FORCEINLINE void* getCurrentModuleHandle() noexcept; // Implemented in SystemUtils_linux.cpp
+[[nodiscard]] void* getCurrentModuleHandle() noexcept; // Implemented in SystemUtils_linux.cpp
 
 #if LL_HAS_CXX23
 using std_optional_construct_from_invoke_tag = std::__optional_construct_from_invoke_tag;

@@ -22,7 +22,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MinecraftCommands() = default;
+    virtual ~MinecraftCommands();
 
     MCAPI explicit MinecraftCommands(class Minecraft& minecraft);
 

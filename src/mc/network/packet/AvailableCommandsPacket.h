@@ -37,13 +37,13 @@ public:
 
     struct CommandData {
     public:
-        std::string                       name;           // 0
-        std::string                       description;    // 32
-        struct CommandFlag                flag;           // 64
-        enum class CommandPermissionLevel perm;           // 66
-        std::vector<OverloadData>         overloads;      // 72
-        std::vector<int>                  chainedOffsets; // 96
-        int                               aliasEnumIndex; // 120
+        std::string               name;           // 0
+        std::string               description;    // 32
+        struct CommandFlag        flag;           // 64
+        ::CommandPermissionLevel  perm;           // 66
+        std::vector<OverloadData> overloads;      // 72
+        std::vector<int>          chainedOffsets; // 96
+        int                       aliasEnumIndex; // 120
 
     public:
         // NOLINTBEGIN

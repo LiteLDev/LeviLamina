@@ -42,4 +42,4 @@ enum class ActorDamageCause : int {
     All             = 0x22,
 };
 
-MCTAPI class Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<class CommandRegistry, enum class ActorDamageCause>();
+MCTAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, ActorDamageCause>();

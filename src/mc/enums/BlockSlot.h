@@ -9,4 +9,4 @@ enum class BlockSlot : int {
     Count     = 1,
 };
 
-MCTAPI class Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<class CommandRegistry, enum class BlockSlot>();
+MCTAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, BlockSlot>();

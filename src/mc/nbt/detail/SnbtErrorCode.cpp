@@ -49,6 +49,9 @@ struct snbt_category : public std::error_category {
     }
     [[nodiscard]] char const* name() const noexcept override { return "snbt"; }
 };
+
+// TODO: move to predefine  [[_Clang::__require_constant_initialization__]]
+
 inline std::error_category const& snbt_category() noexcept {
     return std::_Immortalize_memcpy_image<struct snbt_category>();
 }

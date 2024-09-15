@@ -183,11 +183,8 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    MCAPI std::pair<
-        class LevelStorageWriteBatch*,
-        std::_Tree_iterator<std::_Tree_val<
-            std::_Tree_simple_types<std::pair<std::string const, struct LevelStorageWriteBatch::BatchEntry>>>>>
-    _findCacheEntry(std::string const& key);
+    MCAPI std::pair<class LevelStorageWriteBatch*, LevelStorageWriteBatch::BatchEntryMap::iterator>
+          _findCacheEntry(std::string const& key);
 
     MCAPI std::map<std::string, struct DBStorage::PendingWriteResult> _getAllPendingWrites() const;
 

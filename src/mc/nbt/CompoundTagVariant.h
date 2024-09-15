@@ -149,7 +149,7 @@ public:
 
     template <std::derived_from<Tag> T>
     [[nodiscard]] bool contains(std::string_view key) const noexcept {
-        constexpr size_t idx = std::_Meta_find_unique_index<Variant, T>::value;
+        constexpr size_t idx = Types::index<T>;
         return contains(key, (Tag::Type)idx);
     }
 

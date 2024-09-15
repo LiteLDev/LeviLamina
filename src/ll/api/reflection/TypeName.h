@@ -12,13 +12,14 @@ inline std::string_view getDynamicRawName(T const& value) noexcept {
 
 template <auto f>
 consteval std::string_view getRawName() noexcept {
+#if defined(_MSC_VER)
     constexpr std::string_view n{__FUNCSIG__};
-#if defined(__clang__)
-    constexpr std::string_view k{"[f = "};
-    constexpr std::string_view l{"]"};
-#else
-    constexpr std::string_view k{"getRawName<"};
+    constexpr std::string_view k{"name_of_impl<"};
     constexpr std::string_view l{">(void) noexcept"};
+#else
+    constexpr std::string_view n{__PRETTY_FUNCTION__};
+    constexpr std::string_view k{"[T = "};
+    constexpr std::string_view l{"]"};
 #endif
     constexpr auto p = n.find(k) + k.size();
 
@@ -27,13 +28,14 @@ consteval std::string_view getRawName() noexcept {
 
 template <class f>
 consteval std::string_view getRawName() noexcept {
+#if defined(_MSC_VER)
     constexpr std::string_view n{__FUNCSIG__};
-#if defined(__clang__)
-    constexpr std::string_view k{"[f = "};
-    constexpr std::string_view l{"]"};
-#else
-    constexpr std::string_view k{"getRawName<"};
+    constexpr std::string_view k{"name_of_impl<"};
     constexpr std::string_view l{">(void) noexcept"};
+#else
+    constexpr std::string_view n{__PRETTY_FUNCTION__};
+    constexpr std::string_view k{"[T = "};
+    constexpr std::string_view l{"]"};
 #endif
     constexpr auto p = n.find(k) + k.size();
 
