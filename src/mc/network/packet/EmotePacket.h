@@ -10,7 +10,11 @@
 
 class EmotePacket : public ::Packet {
 public:
-    enum Flags : uchar { Invalid = 0x0, ServerSide = 0x1, MuteChat = 0x2 };
+    enum class Flags : uchar {
+        Invalid    = 0x0,
+        ServerSide = 0x1,
+        MuteChat   = 0x2,
+    };
 
     ActorRuntimeID mRuntimeId;  // this+0x30
     std::string    mPieceId;    // this+0x38
