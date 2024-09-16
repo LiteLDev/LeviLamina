@@ -16,7 +16,7 @@ public:
     int            mPageIndex2; // this+0x3C
     std::string    mText1;      // this+0x40
     std::string    mText2;      // this+0x60
-    std::string    mText3;      // this+0x80
+    std::string    mXuid;       // this+0x80
 
     // prevent constructor by default
     BookEditPacket& operator=(BookEditPacket const&);
