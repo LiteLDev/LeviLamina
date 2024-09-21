@@ -65,10 +65,8 @@ public:
 
     auto tryGet() { return ExpectedAwaiter(std::exchange(handle, nullptr)); }
 
-    template <class F>
-    void launch(NonNullExecutorRef executor, F&& callback)
-        requires(std::is_invocable_v<F, ExpectedResult>)
-    {
+    template <std::invocable<ExpectedResult> F>
+    void launch(NonNullExecutorRef executor, F&& callback) noexcept try {
         setExecutor(executor);
         struct Launcher {
             struct promise_type : public CoroPromiseBase {
@@ -80,25 +78,22 @@ public:
             };
         };
         [](CoroTask lazy, std::decay_t<F> cb) -> Launcher {
-            cb(co_await lazy.tryGet());
+            std::invoke(cb, co_await lazy.tryGet());
         }(std::move(*this), std::forward<F>(callback));
+    } catch (...) {
+        std::invoke(std::forward<F>(callback), makeExceptionError());
     }
-
-    void launch(NonNullExecutorRef executor) {
+    void launch(NonNullExecutorRef executor) noexcept {
         launch(executor, [](auto&&) {});
     }
     ExpectedResult syncLaunch(NonNullExecutorRef executor) noexcept {
-        ExpectedResult value;
-        try {
-            std::binary_semaphore cond{0};
-            launch(executor, [&](ExpectedResult&& result) {
-                value = std::move(result);
-                cond.release();
-            });
-            cond.acquire();
-        } catch (...) {
-            value = makeExceptionError();
-        }
+        ExpectedResult        value;
+        std::binary_semaphore cond{0};
+        launch(executor, [&](ExpectedResult&& result) {
+            value = std::move(result);
+            cond.release();
+        });
+        cond.acquire();
         return value;
     }
 };
