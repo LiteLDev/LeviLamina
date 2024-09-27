@@ -27,21 +27,6 @@ struct FixedString {
     }
 };
 
-struct StringView {
-    char const* data;
-    size_t      size;
-    consteval StringView(std::string_view v) {
-        data = v.data();
-        size = v.size();
-    }
-    consteval operator std::string_view() const { return std::string_view{data, size}; }
-};
-
-template <StringView s>
-consteval auto toFixedString() {
-    return FixedString<s.size>(s.data);
-}
-
 template <size_t N>
 FixedString(char const (&)[N]) -> FixedString<N - 1>;
 } // namespace ll

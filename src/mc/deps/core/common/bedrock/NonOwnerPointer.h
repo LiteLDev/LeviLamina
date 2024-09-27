@@ -9,7 +9,9 @@ template <typename T>
 class NonOwnerPointer {
 public:
     std::shared_ptr<Bedrock::EnableNonOwnerReferences::ControlBlock> mControlBlock;
-    NonOwnerPointer(std::nullptr_t) noexcept {} // NOLINT
+    NonOwnerPointer(std::shared_ptr<Bedrock::EnableNonOwnerReferences::ControlBlock> cb)
+    : mControlBlock(std::move(cb)) {}
+    NonOwnerPointer(std::nullptr_t) noexcept {}
     T*       get() const { return reinterpret_cast<T*>(mControlBlock.get()); }
     explicit operator bool() const noexcept { return get() != nullptr; }
 
@@ -35,4 +37,10 @@ template <class T1, class T2>
 [[nodiscard]] std::strong_ordering operator<=>(NonOwnerPointer<T1> const& l, NonOwnerPointer<T2> const& r) noexcept {
     return l.get() <=> r.get();
 }
+
+template <std::derived_from<EnableNonOwnerReferences> Self>
+[[nodiscard]] inline NotNullNonOwnerPtr<Self> EnableNonOwnerReferences::getNonOwnerRef() {
+    return {mControlBlock};
+}
+
 }; // namespace Bedrock

@@ -12,8 +12,8 @@ public:
 
     std::shared_ptr<ControlBlock> mControlBlock; // this+0x8
 
-    // prevent constructor by default
-    EnableNonOwnerReferences& operator=(EnableNonOwnerReferences const&);
+    template <std::derived_from<EnableNonOwnerReferences> Self>
+    [[nodiscard]] inline NotNullNonOwnerPtr<Self> getNonOwnerRef();
 
 public:
     // NOLINTBEGIN
@@ -21,8 +21,6 @@ public:
     virtual ~EnableNonOwnerReferences();
 
     MCAPI EnableNonOwnerReferences();
-
-    MCAPI EnableNonOwnerReferences(class Bedrock::EnableNonOwnerReferences const&);
 
     // NOLINTEND
 };
