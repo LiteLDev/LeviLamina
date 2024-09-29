@@ -29,14 +29,15 @@ LLAPI void   releaseNativeClosure(void* self);
 // | the function itself, but replace the value of that      |
 // | variable with what we want Incoming data.               |
 //--------------------------------------------------------------
-// |from compiler|        <copy from mem>        >write by hand<
+// |from compiler|         <copy to mem>         >write by hand<
 //--------------------------------------------------------------
 //      |..... pargs .....|            <..... pargs .....>
 //      |mov  rax , [mgic]|            <mov  rax>, [data]<
-// addr |mov qword ptr    |    --->    >push rax         <
-//      |  [rbp-8], rax   |            >mov  rax , [addr]<
-//      |    ...   ...    |            >jmp  rax         <
-//      |.... orifunc ....|       addr |    ...   ...    |
+// addr |0x58 (magic head)|    --->    >push rax         <
+//      |mov qword ptr    |            >mov  rax , [addr]<
+//      |  [rbp-8], rax   |            >jmp  rax         <
+//      |    ...   ...    |       addr |0x58   (pop  rax)|
+//      |.... orifunc ....|            |    ...   ...    |
 //--------------------------------------------------------------
 template <class... Args>
 class NativeClosure {
@@ -92,12 +93,12 @@ public:
     using closure = Ret(Args...);
     std::function<closure> func;
 
-    FunctionalClosure(std::function<closure> const& func)
+    FunctionalClosure(std::function<closure> func)
     : NativeClosure<Ret(Args...)>(closureImpl, (uintptr_t)this),
-      func(func) {}
+      func(std::move(func)) {}
 };
 template <class Ret, class... Args>
 FunctionalClosure(Ret (*)(Args...)) -> FunctionalClosure<Ret(Args...)>;
 template <class T>
-FunctionalClosure(std::function<T> const&) -> FunctionalClosure<T>;
+FunctionalClosure(std::function<T>) -> FunctionalClosure<T>;
 } // namespace ll::memory
