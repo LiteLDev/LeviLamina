@@ -1,11 +1,24 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/block/Block.h"
+#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/levelgen/feature/ReplaceRule.h"
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
 class OreFeature : public ::IFeature {
+public:
+    int                      mCount;
+    float                    mCountf;
+    float                    mCountfInv;
+    float                    mDiscardChanceOnAirExposure;
+    std::vector<ReplaceRule> mReplaceRules;
+
+    // Bedrock::Threading::InstancedThreadLocal<OreFeature::Helper, std::allocator<OreFeature::Helper>>;
+    char mHelper[0xE0 - 48];
+
 public:
     // OreFeature inner types declare
     // clang-format off
@@ -15,6 +28,9 @@ public:
     // OreFeature inner types define
     class ReplaceRulesAccelerator {
     public:
+        std::vector<std::pair<Block const*, std::vector<BlockLegacy const*>>> mRules;
+
+    public:
         // prevent constructor by default
         ReplaceRulesAccelerator& operator=(ReplaceRulesAccelerator const&);
         ReplaceRulesAccelerator(ReplaceRulesAccelerator const&);
@@ -22,7 +38,7 @@ public:
 
     public:
         // NOLINTBEGIN
-        MCAPI void setRules(std::vector<struct ReplaceRule> const&);
+        MCAPI void setRules(std::vector<struct ReplaceRule> const& replaceRules);
 
         // NOLINTEND
     };
@@ -50,7 +66,7 @@ public:
 
     MCAPI OreFeature();
 
-    MCAPI OreFeature(int count, std::vector<struct ReplaceRule>&&);
+    MCAPI OreFeature(int count, std::vector<struct ReplaceRule>&& replaceRules);
 
     // NOLINTEND
 };

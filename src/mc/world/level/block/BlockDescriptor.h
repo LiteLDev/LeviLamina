@@ -14,6 +14,9 @@ namespace cereal { struct ReflectionCtx; }
 
 class BlockDescriptor {
 public:
+    char filler[0xB8];
+
+public:
     // BlockDescriptor inner types declare
     // clang-format off
     class ResolveHelper;
