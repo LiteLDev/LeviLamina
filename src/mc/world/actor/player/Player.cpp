@@ -1,6 +1,7 @@
 #include "mc/world/actor/player/Player.h"
 
 #include "ll/api/memory/Memory.h"
+#include "ll/api/service/Bedrock.h"
 
 #include "mc/certificates/ExtendedCertificate.h"
 #include "mc/certificates/WebToken.h"
@@ -22,6 +23,48 @@
 #include "mc/world/level/AdventureSettings.h"
 #include "mc/world/level/LayeredAbilities.h"
 
+UserEntityIdentifierComponent const& Player::getUserEntityIdentifier() const {
+    return *(getEntityContext().tryGetComponent<UserEntityIdentifierComponent>());
+}
+
+UserEntityIdentifierComponent& Player::getUserEntityIdentifier() {
+    return *(getEntityContext().tryGetComponent<UserEntityIdentifierComponent>());
+}
+
+optional_ref<ConnectionRequest const> Player::getConnectionRequest() const {
+    if (isSimulatedPlayer()) {
+        return std::nullopt;
+    }
+    return ll::service::getServerNetworkHandler()->fetchConnectionRequest(getNetworkIdentifier());
+}
+
+NetworkIdentifier const& Player::getNetworkIdentifier() const { return getUserEntityIdentifier().mNetworkId; }
+
+optional_ref<Certificate const> Player::getCertificate() const { return getUserEntityIdentifier().mCertificate.get(); }
+
+SubClientId const& Player::getClientSubId() const { return getUserEntityIdentifier().mClientSubId; }
+
+mce::UUID const& Player::getUuid() const { return getUserEntityIdentifier().mClientUUID; }
+
+std::string Player::getIPAndPort() const { return getNetworkIdentifier().getIPAndPort(); }
+
+std::string Player::getLocaleName() const {
+    if (auto request = getConnectionRequest()) {
+        return request->mRawToken->mDataInfo["LanguageCode"].asString({});
+    }
+    return {};
+}
+
+std::optional<NetworkPeer::NetworkStatus> Player::getNetworkStatus() const {
+    if (!ll::service::getNetworkSystem()) {
+        return std::nullopt;
+    }
+    auto peer = ll::service::getNetworkSystem()->getPeerForUser(getNetworkIdentifier());
+    if (!peer) {
+        return std::nullopt;
+    }
+    return peer->getNetworkStatus();
+}
 
 std::string Player::getRealName() const {
     return getEntityContext()
@@ -29,6 +72,18 @@ std::string Player::getRealName() const {
         .and_then([&](auto& identifier) { return optional_ref{identifier.mCertificate.get()}; })
         .transform([](auto& certificate) { return ExtendedCertificate::getIdentityName(certificate); })
         .value_or(getName());
+}
+
+void Player::disconnect(std::string_view reason) const {
+    if (!ll::service::getServerNetworkHandler()) {
+        return;
+    }
+    ll::service::getServerNetworkHandler()->disconnectClient(
+        getNetworkIdentifier(),
+        Connection::DisconnectFailReason::Unknown,
+        std::string{reason},
+        false
+    );
 }
 
 void Player::sendMessage(std::string_view msg) const { TextPacket::createRawMessage(msg).sendTo(*this); }
