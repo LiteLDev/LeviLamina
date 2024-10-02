@@ -72,4 +72,14 @@ template <FixedString Fmt>
         return fmt::vformat(i18n::getInstance().get(Fmt, {}), fmt::make_format_args(args...));
     };
 }
+template <FixedString Fmt>
+[[nodiscard]] constexpr auto operator""_trl() {
+    return [=]<class... Args>(std::string_view localeCode, Args&&... args) {
+#ifdef LL_I18N_COLLECT_STRINGS
+        static detail::TrString<Fmt> e{};
+#endif
+        [[maybe_unused]] static constexpr auto checker = fmt::format_string<Args...>(std::string_view{Fmt});
+        return fmt::vformat(i18n::getInstance().get(Fmt, localeCode), fmt::make_format_args(args...));
+    };
+}
 } // namespace ll::inline literals::inline i18n_literals
