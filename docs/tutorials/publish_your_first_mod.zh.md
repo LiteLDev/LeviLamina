@@ -65,7 +65,7 @@
 !!! note
     `dependencies`在安装模组时，会自动安装依赖的模组，在卸载模组时，会自动卸载依赖的模组。但是`prerequisites`不会自动安装，而是在缺少依赖时报错。一般来说，`prerequisites`中的模组应当是一些基础性的、框架级别的包，例如`github.com/LiteLDev/LeviLamina`，以避免模组的卸载过程中误卸载了这些包。
 
-更多关于`tooth.json`的信息，请参考<https://docs.lippkg.com/zh/reference/tooth_json_file_reference/>。
+更多关于`tooth.json`的信息，请参考<https://lip.futrime.com/zh/reference/tooth_json_file_reference/>。
 
 ### 尝试打包和安装模组
 
@@ -77,4 +77,4 @@
 
 然后你就可以通过`lip install github.com/my-github-username/mod-name`来安装你的模组了。由于版本列表同步延迟，这个命令可能会在刚发布的一段时间内报错，你可以指定版本号来安装模组，例如`lip install github.com/my-github-username/mod-name@0.1.0`。
 
-在一段时间后，你也可以在LipUI和<www.lippkg.com>查看到你的模组了。
+在一段时间后，你也可以在LipUI和<bedrinth.com>查看到你的模组了。

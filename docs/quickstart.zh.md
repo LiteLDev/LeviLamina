@@ -2,7 +2,7 @@
 
 ## 开始之前
 
-我们强烈推荐你使用 [lip](https://docs.lippkg.com/zh/install/) 来进行模组安装。如果您尚未在本地安装，请前往查看。
+我们强烈推荐你使用 [lip](https://lip.futrime.com/zh/install/) 来进行模组安装。如果您尚未在本地安装，请前往查看。
 
 以下内容针对使用 lip 的情况下进行快速入门。
 
@@ -83,11 +83,11 @@ lip install github.com/LiteLDev/LeviLamina
 
 ## 查找模组
 
-在安装模组之前，您需要找到想要安装的模组。最好的地方是 [lip index](https://www.lippkg.com)，即 lip 的官方模组注册表，但您也可以在 [MineBBS](https://www.minebbs.com/) 和其他网站上找到许多模组。
+在安装模组之前，您需要找到想要安装的模组。最好的地方是 [Bedrinth](https://bedrinth.com)，即 lip 的官方模组注册表，但您也可以在 [MineBBS](https://www.minebbs.com/) 和其他网站上找到许多模组。
 
 ## 安装模组
 
-对于大多数模组，特别是在 lip index 上的模组，安装就像运行 `lip install <mod>` 一样简单。
+对于大多数模组，特别是在 Bedrinth 上的模组，安装就像运行 `lip install <mod>` 一样简单。
 
 例如，要安装 [levianticheat](https://github.com/LiteLDev/LeviAntiCheat)，您可以运行：
 

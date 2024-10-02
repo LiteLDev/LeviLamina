@@ -22,7 +22,7 @@
 - 调用Minecraft函数
 
 !!! info
-    本教程的所有源码可以在[futrime/better-suicide](https://github.com/futrime/better-suicide)找到。我们建议你一边看源码一边看教程。如果你已经安装了[lip](https://docs.lippkg.com)，你还可以直接运行以下代码在LeviLamina实例环境中安装本教程中实现的模组。
+    本教程的所有源码可以在[futrime/better-suicide](https://github.com/futrime/better-suicide)找到。我们建议你一边看源码一边看教程。如果你已经安装了[lip](https://lip.futrime.com)，你还可以直接运行以下代码在LeviLamina实例环境中安装本教程中实现的模组。
 
     ```shell
     lip install github.com/futrime/better-suicide
@@ -74,7 +74,7 @@
 target("better-suicide") -- Change this to your mod name.
 ```
 
-接着，修改`tooth.json`的内容。`tooth.json`为lip安装模组包提供了相关信息，正确配置后，你的模组将会被[lip Index](https://lippkg.com)收录，并能被全世界的用户下载安装。将`tooth`字段的值改为这个模组的GitHub仓库地址，填写`info`中各个信息字段，然后根据仓库release地址填写`asset_url`字段，修改依赖的LeviLamina版本，并根据在`xmake.lua`中填写的模组名修改`place`的`src`和`dest`。对于本文的模组，以下是一个可行的参考：
+接着，修改`tooth.json`的内容。`tooth.json`为lip安装模组包提供了相关信息，正确配置后，你的模组将会被[Bedrinth](https://bedrinth.com)收录，并能被全世界的用户下载安装。将`tooth`字段的值改为这个模组的GitHub仓库地址，填写`info`中各个信息字段，然后根据仓库release地址填写`asset_url`字段，修改依赖的LeviLamina版本，并根据在`xmake.lua`中填写的模组名修改`place`的`src`和`dest`。对于本文的模组，以下是一个可行的参考：
 
 ```json
 {

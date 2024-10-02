@@ -31,7 +31,7 @@ Simply download and run [LipUI](https://github.com/lippkg/LipUI), and then insta
 
 ### Install via lip
 
-If you have not installed lip, you can install it following the instructions in [lip installation guide](https://docs.lippkg.com/install/).
+If you have not installed lip, you can install it following the instructions in [lip installation guide](https://lip.futrime.com/install/).
 
 After installing lip, you can install LeviLamina by running the following command:
 

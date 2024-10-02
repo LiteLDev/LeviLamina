@@ -65,7 +65,7 @@ Replace the value of the `tooth` field with the GitHub repository address of you
 !!! note
     The `dependencies` section automatically installs the required mods when installing the mod and uninstalls them when uninstalling the mod. However, the `prerequisites` section does not automatically install the required mods; instead, it throws an error if the dependencies are missing. Generally, the mods listed in the `prerequisites` section should be fundamental and framework-level packages, such as `github.com/LiteLDev/LeviLamina`, to avoid accidentally uninstalling them during the mod uninstallation process.
 
-For more information about `tooth.json`, please refer to <https://docs.lippkg.com/reference/tooth_json_file_reference/>.
+For more information about `tooth.json`, please refer to <https://lip.futrime.com/reference/tooth_json_file_reference/>.
 
 ### Try Packing and Installing the Mod
 
@@ -77,4 +77,4 @@ Commit your changes to the GitHub repository, then click on "Releases" in the re
 
 You can then install your mod using `lip install github.com/my-github-username/mod-name`. Due to synchronization delays in the version listing, this command may throw an error in the initial period after the release. In such cases, you can specify the version number to install the mod, for example, `lip install github.com/my-github-username/mod-name@0.1.0`.
 
-After some time, you will also be able to see your mod in LipUI and <www.lippkg.com>.
+After some time, you will also be able to see your mod in LipUI and <bedrinth.com>.

@@ -2,7 +2,7 @@
 
 ## Before You Begin
 
-We strongly recommend using [lip](https://docs.lippkg.com/install/) for mod installation. If you have not installed it locally yet, please go ahead and check it out.
+We strongly recommend using [lip](https://lip.futrime.com/install/) for mod installation. If you have not installed it locally yet, please go ahead and check it out.
 
 The following content is for a quick start with using lip.
 
@@ -38,11 +38,11 @@ Don't update LeviLamina in the same location when it comes to data security. Ins
 
 ## Finding Mods
 
-Before installing a mod, you'll need to find what you want to install. The best place to find mods is [lip index](https://www.lippkg.com), lip's official mod registry, but you can also find many mods on [MineBBS](https://www.minebbs.com/) and other places around the web.
+Before installing a mod, you'll need to find what you want to install. The best place to find mods is [Bedrinth](https://bedrinth.com), lip's official mod registry, but you can also find many mods on [MineBBS](https://www.minebbs.com/) and other places around the web.
 
 ## Installing Mods
 
-For most mods, especially those on lip index, installation is as simple as running `lip install <mod>`.
+For most mods, especially those on Bedrinth, installation is as simple as running `lip install <mod>`.
 
 For example, to install [levianticheat](https://github.com/LiteLDev/LeviAntiCheat), you would run:
 

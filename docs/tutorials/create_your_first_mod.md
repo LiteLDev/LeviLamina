@@ -22,7 +22,7 @@ This tutorial covers the following topics:
 - Calling Minecraft functions
 
 !!! info
-    All the source code for this tutorial can be found at [futrime/better-suicide](https://github.com/futrime/better-suicide). We recommend that you look at the source code while reading the tutorial. If you have installed [lip](https://docs.lippkg.com), you can also run the following code to install the mod implemented in this tutorial in the LeviLamina instance environment.
+    All the source code for this tutorial can be found at [futrime/better-suicide](https://github.com/futrime/better-suicide). We recommend that you look at the source code while reading the tutorial. If you have installed [lip](https://lip.futrime.com), you can also run the following code to install the mod implemented in this tutorial in the LeviLamina instance environment.
 
     ```shell
     lip install github.com/futrime/better-suicide
@@ -74,7 +74,7 @@ First, you need to modify the mod name information in `xmake.lua`. Modify the mo
 target("better-suicide") -- Change this to your mod name.
 ```
 
-Next, modify the contents of `tooth.json`. `tooth.json` provides relevant information for lip to install mod packages. After proper configuration, your mod will be included in the [lip Index](https://lippkg.com) and can be downloaded and installed by users around the world. Change the value of the `tooth` field to the GitHub repository address of this mod, fill in the information fields in `info`, and then fill in the `asset_url` field according to the release address of the repository, modify the dependent LeviLamina version, and modify the `place` of `src` and `dest` according to the mod name filled in `xmake.lua`. For the mod in this article, the following is a feasible reference:
+Next, modify the contents of `tooth.json`. `tooth.json` provides relevant information for lip to install mod packages. After proper configuration, your mod will be included in the [Bedrinth](https://bedrinth.com) and can be downloaded and installed by users around the world. Change the value of the `tooth` field to the GitHub repository address of this mod, fill in the information fields in `info`, and then fill in the `asset_url` field according to the release address of the repository, modify the dependent LeviLamina version, and modify the `place` of `src` and `dest` according to the mod name filled in `xmake.lua`. For the mod in this article, the following is a feasible reference:
 
 ```json
 {
