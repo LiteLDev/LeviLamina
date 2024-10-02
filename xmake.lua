@@ -35,6 +35,10 @@ add_requires("levibuildscript 0.2.0")
 add_requires("preloader v1.9.0")
 add_requires("symbolprovider v1.2.0")
 
+if is_windows then
+add_requires("libhat 2024.9.22")
+end
+
 if is_linux then
 set_toolchains("clang")
 end
@@ -148,6 +152,7 @@ target("LeviLamina")
     end
 
     if is_windows then
+        add_packages("libhat")
         add_syslinks("Version", "DbgHelp", "dwrite")
         add_defines(
             "_AMD64_",
