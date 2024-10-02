@@ -127,7 +127,7 @@ public:
      * @return The name of the player's langtext.
      * @warning This is not the player's in-game nickname.
      */
-    LLNDAPI std::string getLocaleName() const;
+    LLNDAPI std::string getLocaleCode() const;
 
     LLNDAPI std::optional<NetworkPeer::NetworkStatus> getNetworkStatus() const;
 

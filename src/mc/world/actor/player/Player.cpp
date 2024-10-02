@@ -48,7 +48,7 @@ mce::UUID const& Player::getUuid() const { return getUserEntityIdentifier().mCli
 
 std::string Player::getIPAndPort() const { return getNetworkIdentifier().getIPAndPort(); }
 
-std::string Player::getLocaleName() const {
+std::string Player::getLocaleCode() const {
     if (auto request = getConnectionRequest()) {
         return request->mRawToken->mDataInfo["LanguageCode"].asString({});
     }
