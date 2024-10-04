@@ -47,28 +47,28 @@ public:
 
     [[nodiscard]] constexpr T const& get() const& {
         if (!has_value()) {
-            throw std::runtime_error{"bad Optional access"};
+            throw std::bad_optional_access{};
         }
         return mValue;
     }
 
     [[nodiscard]] constexpr T& get() & {
         if (!has_value()) {
-            throw std::runtime_error{"bad Optional access"};
+            throw std::bad_optional_access{};
         }
         return mValue;
     }
 
     [[nodiscard]] constexpr T const&& get() const&& {
         if (!has_value()) {
-            throw std::runtime_error{"bad Optional access"};
+            throw std::bad_optional_access{};
         }
         return std::move(mValue);
     }
 
     [[nodiscard]] constexpr T&& get() && {
         if (!has_value()) {
-            throw std::runtime_error{"bad Optional access"};
+            throw std::bad_optional_access{};
         }
         return std::move(mValue);
     }

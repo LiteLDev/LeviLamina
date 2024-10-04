@@ -14,7 +14,7 @@ template <auto f>
 consteval std::string_view getRawName() noexcept {
 #if defined(_MSC_VER)
     constexpr std::string_view n{__FUNCSIG__};
-    constexpr std::string_view k{"name_of_impl<"};
+    constexpr std::string_view k{"getRawName<"};
     constexpr std::string_view l{">(void) noexcept"};
 #else
     constexpr std::string_view n{__PRETTY_FUNCTION__};
@@ -30,7 +30,7 @@ template <class f>
 consteval std::string_view getRawName() noexcept {
 #if defined(_MSC_VER)
     constexpr std::string_view n{__FUNCSIG__};
-    constexpr std::string_view k{"name_of_impl<"};
+    constexpr std::string_view k{"getRawName<"};
     constexpr std::string_view l{">(void) noexcept"};
 #else
     constexpr std::string_view n{__PRETTY_FUNCTION__};

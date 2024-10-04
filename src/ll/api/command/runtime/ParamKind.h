@@ -53,6 +53,7 @@ enum Kind : ParamKindType {
     FilePath,
     WildcardInt,
     WildcardActor,
+    // New types can only be added here, to keep the ABI stable.
     Count,
 };
 } // namespace ParamKind
@@ -82,7 +83,9 @@ using ParamKindList = meta::TypeList<
     CommandIntegerRange,
     CommandFilePath,
     CommandWildcardInt,
-    WildcardCommandSelector<Actor>>;
+    WildcardCommandSelector<Actor>
+    // New types can only be added here, to keep the ABI stable.
+    >;
 
 class ParamStorageType : public Optional<ParamKindList::to<std::variant>> {
 public:

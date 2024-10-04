@@ -56,14 +56,9 @@ std::string Player::getLocaleCode() const {
 }
 
 std::optional<NetworkPeer::NetworkStatus> Player::getNetworkStatus() const {
-    if (!ll::service::getNetworkSystem()) {
-        return std::nullopt;
-    }
-    auto peer = ll::service::getNetworkSystem()->getPeerForUser(getNetworkIdentifier());
-    if (!peer) {
-        return std::nullopt;
-    }
-    return peer->getNetworkStatus();
+    return ll::service::getNetworkSystem()
+        .transform([&](auto& system) { return system.getPeerForUser(getNetworkIdentifier()); })
+        .transform([](auto& peer) { return peer.getNetworkStatus(); });
 }
 
 std::string Player::getRealName() const {
@@ -75,15 +70,15 @@ std::string Player::getRealName() const {
 }
 
 void Player::disconnect(std::string_view reason) const {
-    if (!ll::service::getServerNetworkHandler()) {
-        return;
-    }
-    ll::service::getServerNetworkHandler()->disconnectClient(
-        getNetworkIdentifier(),
-        Connection::DisconnectFailReason::Unknown,
-        std::string{reason},
-        false
-    );
+    ll::service::getServerNetworkHandler().and_then([&](auto& handler) {
+        handler.disconnectClient(
+            getNetworkIdentifier(),
+            Connection::DisconnectFailReason::Unknown,
+            std::string{reason},
+            false
+        );
+        return true;
+    });
 }
 
 void Player::sendMessage(std::string_view msg) const { TextPacket::createRawMessage(msg).sendTo(*this); }

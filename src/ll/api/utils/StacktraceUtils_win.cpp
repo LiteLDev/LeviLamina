@@ -214,23 +214,25 @@ SymbolLoader::~SymbolLoader() {
 StackTraceEntryInfo getInfo(StacktraceEntry const& entry) {
     DbgEngData data;
 
+    if (!data.tryInit()) {
+        return {};
+    }
+    auto res = data.getInfo(entry.native_handle());
+    if (res.name.contains('!')) {
+        return res;
+    }
     static auto processRange = sys_utils::getImageRange();
-
     if (&*processRange.begin() <= entry.native_handle() && entry.native_handle() < &*processRange.end()) {
         size_t length{};
         uint   disp{};
         auto   str = pl::symbol_provider::pl_lookup_symbol_disp(entry.native_handle(), &length, &disp);
         if (length) {
-            static auto         processName = sys_utils::getModuleFileName(nullptr);
-            StackTraceEntryInfo res{disp, processName + '!' + str[0]};
+            static auto processName = sys_utils::getModuleFileName(nullptr);
+            res                     = {disp, processName + '!' + str[0]};
             pl::symbol_provider::pl_free_lookup_result(str);
-            return res;
         }
     }
-    if (!data.tryInit()) {
-        return {};
-    }
-    return data.getInfo(entry.native_handle());
+    return res;
 }
 
 std::string toString(StacktraceEntry const& entry) {

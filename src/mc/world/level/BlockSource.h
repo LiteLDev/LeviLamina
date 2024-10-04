@@ -63,78 +63,78 @@ public:
     virtual ~BlockSource();
 
     // vIndex: 1
-    virtual class Block const& getBlock(int x, int y, int z) const;
+    MCVAPI class Block const& getBlock(int x, int y, int z) const;
 
     // vIndex: 2
-    virtual class Block const& getBlock(class BlockPos const& pos) const;
+    MCVAPI class Block const& getBlock(class BlockPos const& pos) const;
 
     // vIndex: 3
-    virtual class Block const& getBlock(class BlockPos const& pos, uint layer) const;
+    MCVAPI class Block const& getBlock(class BlockPos const& pos, uint layer) const;
 
     // vIndex: 4
-    virtual class BlockActor const* getBlockEntity(class BlockPos const& pos) const;
+    MCVAPI class BlockActor const* getBlockEntity(class BlockPos const& pos) const;
 
     // vIndex: 5
-    virtual class Block const& getExtraBlock(class BlockPos const& p) const;
+    MCVAPI class Block const& getExtraBlock(class BlockPos const& p) const;
 
     // vIndex: 6
-    virtual class Block const& getLiquidBlock(class BlockPos const& p) const;
+    MCVAPI class Block const& getLiquidBlock(class BlockPos const& p) const;
 
     // vIndex: 7
-    virtual bool hasBlock(class BlockPos const& pos) const;
+    MCVAPI bool hasBlock(class BlockPos const& pos) const;
 
     // vIndex: 8
-    virtual bool removeBlock(class BlockPos const& pos);
+    MCVAPI bool removeBlock(class BlockPos const& pos);
 
     // vIndex: 9
-    virtual bool containsAnyLiquid(class AABB const& box) const;
+    MCVAPI bool containsAnyLiquid(class AABB const& box) const;
 
     // vIndex: 10
-    virtual bool containsMaterial(class AABB const& box, ::MaterialType material) const;
+    MCVAPI bool containsMaterial(class AABB const& box, ::MaterialType material) const;
 
     // vIndex: 11
-    virtual bool isUnderWater(class Vec3 const& pos, class Block const& block) const;
+    MCVAPI bool isUnderWater(class Vec3 const& pos, class Block const& block) const;
 
     // vIndex: 12
-    virtual class Material const& getMaterial(class BlockPos const& pos) const;
+    MCVAPI class Material const& getMaterial(class BlockPos const& pos) const;
 
     // vIndex: 13
-    virtual class Material const& getMaterial(int x, int y, int z) const;
+    MCVAPI class Material const& getMaterial(int x, int y, int z) const;
 
     // vIndex: 14
-    virtual bool hasBorderBlock(class BlockPos pos) const;
+    MCVAPI bool hasBorderBlock(class BlockPos pos) const;
 
     // vIndex: 15
-    virtual class LevelChunk* getChunkAt(class BlockPos const& pos) const;
+    MCVAPI class LevelChunk* getChunkAt(class BlockPos const& pos) const;
 
     // vIndex: 16
-    virtual bool hasChunksAt(struct Bounds const& bounds, bool) const;
+    MCVAPI bool hasChunksAt(struct Bounds const& bounds, bool) const;
 
     // vIndex: 17
-    virtual bool hasChunksAt(class BlockPos const& pos, int r, bool) const;
+    MCVAPI bool hasChunksAt(class BlockPos const& pos, int r, bool) const;
 
     // vIndex: 18
-    virtual bool hasChunksAt(class AABB const& bb, bool) const;
+    MCVAPI bool hasChunksAt(class AABB const& bb, bool) const;
 
     // vIndex: 19
-    virtual DimensionType getDimensionId() const;
+    MCVAPI DimensionType getDimensionId() const;
 
     // vIndex: 20
-    virtual void
+    MCVAPI void
     fetchAABBs(std::vector<class AABB>&, class AABB const& intersectTestBox, bool withUnloadedChunks) const;
 
     // vIndex: 21
-    virtual void
+    MCVAPI void
     fetchCollisionShapes(std::vector<class AABB>&, class AABB const&, bool, class optional_ref<class GetCollisionShapeInterface const>, std::vector<class AABB>*)
         const;
 
     // vIndex: 22
-    virtual void
+    MCVAPI void
     fetchCollisionShapesAndBlocks(std::vector<struct BlockSourceVisitor::CollisionShape>&, class AABB const&, bool, class optional_ref<class GetCollisionShapeInterface const>, std::vector<class AABB>*)
         const;
 
     // vIndex: 23
-    virtual class AABB getTallestCollisionShape(
+    MCVAPI class AABB getTallestCollisionShape(
         class AABB const&                                          intersectTestBox,
         float*                                                     actualSurfaceOffset,
         bool                                                       withUnloadedChunks,
@@ -142,10 +142,10 @@ public:
     ) const;
 
     // vIndex: 24
-    virtual float getBrightness(class BlockPos const& pos) const;
+    MCVAPI float getBrightness(class BlockPos const& pos) const;
 
     // vIndex: 25
-    virtual void postGameEvent(
+    MCVAPI void postGameEvent(
         class Actor* source,
         class GameEvent const&,
         class BlockPos const& origin,
@@ -153,62 +153,62 @@ public:
     );
 
     // vIndex: 26
-    virtual std::vector<class AABB>& fetchAABBs(class AABB const& intersectTestBox, bool withUnloadedChunks);
+    MCVAPI std::vector<class AABB>& fetchAABBs(class AABB const& intersectTestBox, bool withUnloadedChunks);
 
     // vIndex: 27
-    virtual std::vector<class AABB>&
+    MCVAPI std::vector<class AABB>&
     fetchCollisionShapes(class AABB const&, bool, std::optional<class EntityContext const>, std::vector<class AABB>*);
 
     // vIndex: 28
-    virtual class WeakRef<class BlockSource> getWeakRef();
+    MCVAPI class WeakRef<class BlockSource> getWeakRef();
 
     // vIndex: 29
-    virtual void addListener(class BlockSourceListener& l);
+    MCVAPI void addListener(class BlockSourceListener& l);
 
     // vIndex: 30
-    virtual void removeListener(class BlockSourceListener& l);
+    MCVAPI void removeListener(class BlockSourceListener& l);
 
     // vIndex: 31
-    virtual gsl::span<gsl::not_null<class Actor*>>
+    MCVAPI gsl::span<gsl::not_null<class Actor*>>
     fetchEntities(class Actor const* except, class AABB const& bb, bool useHitbox, bool);
 
     // vIndex: 32
-    virtual gsl::span<gsl::not_null<class Actor*>>
+    MCVAPI gsl::span<gsl::not_null<class Actor*>>
     fetchEntities(::ActorType, class AABB const&, class Actor const*, std::function<bool(class Actor*)>);
 
     // vIndex: 33
-    virtual bool
+    MCVAPI bool
     setBlock(class BlockPos const& pos, class Block const& block, int updateFlags, struct ActorBlockSyncMessage const* syncMsg, class Actor*);
 
     // vIndex: 34
-    virtual short getMinHeight() const;
+    MCVAPI short getMinHeight() const;
 
     // vIndex: 35
-    virtual short getMaxHeight() const;
+    MCVAPI short getMaxHeight() const;
 
     // vIndex: 36
-    virtual class Dimension& getDimension() const;
+    MCVAPI class Dimension& getDimension() const;
 
     // vIndex: 37
-    virtual class Dimension& getDimension();
+    MCVAPI class Dimension& getDimension();
 
     // vIndex: 38
-    virtual class Dimension const& getDimensionConst() const;
+    MCVAPI class Dimension const& getDimensionConst() const;
 
     // vIndex: 39
-    virtual class LevelChunk* getChunk(int x, int z) const;
+    MCVAPI class LevelChunk* getChunk(int x, int z) const;
 
     // vIndex: 40
-    virtual class LevelChunk* getChunk(class ChunkPos const& pos) const;
+    MCVAPI class LevelChunk* getChunk(class ChunkPos const& pos) const;
 
     // vIndex: 41
-    virtual class Level& getLevel();
+    MCVAPI class Level& getLevel();
 
     // vIndex: 42
-    virtual class ILevel& getILevel() const;
+    MCVAPI class ILevel& getILevel() const;
 
     // vIndex: 43
-    virtual class HitResult clip(
+    MCVAPI class HitResult clip(
         class Vec3 const&                                                              startPos,
         class Vec3 const&                                                              endPos,
         bool                                                                           checkAgainstLiquid,
@@ -221,31 +221,31 @@ public:
     ) const;
 
     // vIndex: 44
-    virtual class ChunkSource& getChunkSource();
+    MCVAPI class ChunkSource& getChunkSource();
 
     // vIndex: 45
-    virtual bool isSolidBlockingBlock(class BlockPos const& p) const;
+    MCVAPI bool isSolidBlockingBlock(class BlockPos const& p) const;
 
     // vIndex: 46
-    virtual bool isSolidBlockingBlock(int x, int y, int z) const;
+    MCVAPI bool isSolidBlockingBlock(int x, int y, int z) const;
 
     // vIndex: 47
-    virtual bool areChunksFullyLoaded(class BlockPos const& pos, int r) const;
+    MCVAPI bool areChunksFullyLoaded(class BlockPos const& pos, int r) const;
 
     // vIndex: 48
-    virtual bool canDoBlockDrops() const;
+    MCVAPI bool canDoBlockDrops() const;
 
     // vIndex: 49
-    virtual bool canDoContainedItemDrops() const;
+    MCVAPI bool canDoContainedItemDrops() const;
 
     // vIndex: 50
-    virtual bool isInstaticking(class BlockPos const& pos) const;
+    MCVAPI bool isInstaticking(class BlockPos const& pos) const;
 
     // vIndex: 51
-    virtual void updateCheckForValidityState(bool);
+    MCVAPI void updateCheckForValidityState(bool);
 
     // vIndex: 52
-    virtual bool checkBlockPermissions(
+    MCVAPI bool checkBlockPermissions(
         class Actor&               entity,
         class BlockPos const&      blockPos,
         uchar                      face,

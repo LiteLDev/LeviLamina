@@ -12,14 +12,10 @@ optional_ref<SimulatedPlayer> SimulatedPlayer::create(
     DimensionType              dimId,
     Vec2 const&                rotation
 ) {
-    if (!ll::service::getServerNetworkHandler()) {
-        return nullptr;
-    }
-    auto ownerPtr = ll::service::getServerNetworkHandler()->createSimulatedPlayer(
-        name,
-        std::to_string(ll::random_utils::rand<int64>(INT64_MIN, -1))
-    );
-    auto player = ownerPtr.tryUnwrap<SimulatedPlayer>();
+    auto ownerPtr = ll::service::getServerNetworkHandler().and_then([&](auto& handler) {
+        return handler.createSimulatedPlayer(name, std::to_string(ll::random_utils::rand<int64>(INT64_MIN, -1)));
+    });
+    auto player   = ownerPtr.tryUnwrap<SimulatedPlayer>();
     if (!player) {
         return nullptr;
     }

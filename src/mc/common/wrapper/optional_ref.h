@@ -63,7 +63,7 @@ public:
 
     [[nodiscard]] constexpr T& value() const {
         if (!has_value()) {
-            throw std::runtime_error{"bad optional_ref access"};
+            throw std::bad_optional_access{};
         }
         return *mPtr;
     }
