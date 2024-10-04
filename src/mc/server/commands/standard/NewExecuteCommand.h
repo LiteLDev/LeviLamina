@@ -19,7 +19,21 @@ public:
     class ExecuteChainedSubcommand : public ::CommandChainedSubcommand {
     public:
         // ExecuteChainedSubcommand inner types define
-        enum class Subcommand {};
+        enum class Subcommand {
+            None       = 0,
+            As         = 0x1,
+            At         = 0x2,
+            In         = 0x3,
+            Positioned = 0x4,
+            Rotated    = 0x5,
+            Facing     = 0x6,
+            Entity     = 0x7,
+            Align      = 0x8,
+            Anchored   = 0x9,
+            If         = 0xa,
+            Unless     = 0xb,
+            Run        = 0xc,
+        };
 
     public:
         // prevent constructor by default

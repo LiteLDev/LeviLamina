@@ -1,19 +1,21 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/Command.h"
 
 class CommandChainedSubcommand {
 public:
-    // prevent constructor by default
-    CommandChainedSubcommand& operator=(CommandChainedSubcommand const&);
-    CommandChainedSubcommand(CommandChainedSubcommand const&);
-    CommandChainedSubcommand();
+    std::unique_ptr<Command> mCommand; // this+0x8
 
 public:
     // NOLINTBEGIN
     MCAPI class Command const* getCommand() const;
 
-    MCAPI void setCommand(std::unique_ptr<class Command> command);
+    // vIndex: 0
+    virtual ~ExecuteChainedSubcommand() = default;
+
+    // vIndex: 1
+    virtual std::string getCommandName() const = 0;
 
     // NOLINTEND
 };

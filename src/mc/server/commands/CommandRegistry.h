@@ -32,6 +32,7 @@ class CommandPositionFloat;
 class CommandRawText;
 class CommandWildcardInt;
 class BlockStateCommandParam;
+class CommandChainedSubcommand;
 class Packet;
 class RelativeFloat;
 
@@ -161,10 +162,10 @@ public:
 
     struct ChainedSubcommand {
     public:
-        // prevent constructor by default
-        ChainedSubcommand& operator=(ChainedSubcommand const&);
-        ChainedSubcommand(ChainedSubcommand const&);
-        ChainedSubcommand();
+        std::string                          name;   // this+0x0
+        Bedrock::typeid_t<CommandRegistry>   type;   // this+0x18
+        ParseFn                              parse;  // this+0x20
+        std::vector<std::pair<uint64, uint>> values; // this+0x30
 
     public:
         // NOLINTBEGIN
@@ -275,8 +276,10 @@ public:
         Symbol family;        // this+0x48
         Symbol score;         // this+0x4C
         Symbol tag;           // this+0x50
-        Symbol haspermission; // this+0x54
-        Symbol has_property;  // this+0x58
+        Symbol hasitem;       // this+0x54
+        Symbol haspermission; // this+0x58
+        Symbol hasproperty;   // this+0x5C
+        Symbol codebuilder;   // this+0x60
 
     public:
         // NOLINTBEGIN
@@ -329,19 +332,21 @@ public:
 
     struct Signature {
         // size 160
-        std::string            name;                 // this+0x0
-        std::string            desc;                 // this+0x20
-        std::vector<Overload>  overloads;            // this+0x40
-        std::vector<void*>     mUnknown;             // this+0x58  // ChainedSubcommand
-        CommandPermissionLevel perm;                 // this+0x70
-        Symbol                 mainSymbol;           // this+0x74
-        Symbol                 altSymbol;            // this+0x78
-        CommandFlag            flag;                 // this+0x7C
-        int                    firstRule{};          // this+0x80
-        int                    firstFactorization{}; // this+0x84
-        int                    firstOptional{};      // this+0x88
-        bool                   runnable{};           // this+0x8C
-        size_t                 ruleCounter{};        // this+0x90
+        std::string            name;                          // this+0x0
+        std::string            desc;                          // this+0x20
+        std::vector<Overload>  overloads;                     // this+0x40
+        std::vector<uint>      chainedSubcommandIndexes;      // this+0x58
+        CommandPermissionLevel perm;                          // this+0x70
+        Symbol                 mainSymbol;                    // this+0x74
+        Symbol                 altSymbol;                     // this+0x78
+        CommandFlag            flag;                          // this+0x7C
+        int                    firstRule{};                   // this+0x80
+        int                    firstFactorization{};          // this+0x84
+        int                    firstOptional{};               // this+0x88
+        bool                   runnable{};                    // this+0x8C
+        bool                   hasChainedSubcommands{};       // this+0x8D
+        bool                   finalizedChainedSubcommands{}; // this+0x8E
+        size_t                 ruleCounter{};                 // this+0x90
 
     public:
         // NOLINTBEGIN
@@ -405,17 +410,22 @@ public:
 
     struct RegistryState {
     public:
-        uint              signatureCount;        // this+0x0
-        uint              enumValueCount;        // this+0x4
-        uint              postfixCount;          // this+0x8
-        uint              enumCount;             // this+0xC
-        uint              factorizationCount;    // this+0x10
-        uint              optionalCount;         // this+0x14
-        uint              ruleCount;             // this+0x18
-        uint              softEnumCount;         // this+0x1C
-        uint              constraintCount;       // this+0x20
-        std::vector<uint> constrainedValueCount; // this+0x28
-        std::vector<uint> softEnumValuesCount;   // this+0x40
+        uint              signatureCount;              // this+0x0
+        uint              enumValueCount;              // this+0x4
+        uint              postfixCount;                // this+0x8
+        uint              enumCount;                   // this+0xc
+        uint              enumLookupCount;             // this+0x10
+        uint              typeLookupCount;             // this+0x14
+        uint              factorizationCount;          // this+0x18
+        uint              optionalCount;               // this+0x1c
+        uint              ruleCount;                   // this+0x20
+        uint              softEnumCount;               // this+0x24
+        uint              constraintCount;             // this+0x28
+        uint              chainedSubcommandCount;      // this+0x2c
+        uint              chainedSubcommandValueCount; // this+0x30
+        std::vector<uint> enumValuesCount;             // this+0x38
+        std::vector<uint> constrainedValueCount;       // this+0x50
+        std::vector<uint> softEnumValuesCount;         // this+0x68
 
     public:
         // NOLINTBEGIN
@@ -491,7 +501,7 @@ public:
     std::unordered_map<uchar, uchar>                            mAllowEmptySymbols;            // this+0x310
     std::function<void(CommandFlag&, std::string const&)>       mCommandOverrideFunctor;       // this+0x350
 
-    template <typename T>
+    template <class T>
     bool parse(
         void*                              storage,
         CommandRegistry::ParseToken const& token,
@@ -507,6 +517,16 @@ public:
             return false;
         }
     }
+
+    template <class E, class C>
+    bool parseEnum(
+        void*                              storage,
+        CommandRegistry::ParseToken const& token,
+        CommandOrigin const&               origin,
+        int                                version,
+        std::string&                       error,
+        std::vector<std::string>&          errorParams
+    ) const;
 
 public:
     // prevent constructor by default
@@ -921,6 +941,11 @@ MCTAPI bool CommandRegistry::parse<std::unique_ptr<
 
 MCTAPI bool CommandRegistry::parse<std::vector<
     BlockStateCommandParam>>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
+    const;
+
+MCTAPI bool CommandRegistry::parseEnum<
+    CommandChainedSubcommand,
+    void>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
     const;
 
 template <>
