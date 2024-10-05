@@ -78,21 +78,25 @@ char const* CommandHandle::storeStr(std::string_view str) {
     std::lock_guard lock{impl->mutex};
     return impl->storedStr.lazy_emplace(str, [&](auto const& ctor) { ctor(std::string{str}); })->c_str();
 }
-
 RuntimeOverload CommandHandle::runtimeOverload(std::weak_ptr<mod::Mod> mod) {
     return RuntimeOverload{*this, std::move(mod)};
 }
-
-void CommandHandle::alias(std::string_view alias) {
+CommandHandle& CommandHandle::alias(std::string_view alias) {
     std::lock_guard lock{impl->mutex};
     std::string     str{alias};
-    if (impl->registrar.getRegistry().findCommand(str)) {
-        return;
+    if (!impl->registrar.getRegistry().findCommand(str)) {
+        impl->registrar.getRegistry().registerAlias(impl->signature.name, std::move(str));
     }
-    impl->registrar.getRegistry().registerAlias(impl->signature.name, std::move(str));
+    return *this;
 }
 std::vector<std::string> CommandHandle::alias() const {
     std::lock_guard lock{impl->mutex};
     return impl->registrar.getRegistry().getAliases(impl->signature.name);
+}
+CommandHandle& CommandHandle::finalizeChainedSubcommandOverloadRules() {
+    if (!impl->signature.finalizedChainedSubcommands) {
+        impl->registrar.getRegistry().finalizeChainedSubcommandOverloadRules(impl->signature.name.c_str());
+    }
+    return *this;
 }
 } // namespace ll::command

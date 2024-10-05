@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/common/bedrock/ConditionVariable.h"
+#include "mc/deps/core/common/bedrock/Mutex.h"
 #include "mc/deps/core/threading/SpinLock.h"
 #include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/levelgen/structure/StructureStart.h"
@@ -21,8 +23,8 @@ public:
     uint                                                          mRadius;                     // this+184
     int                                                           mXScale;                     // this+188
     int                                                           mZScale;                     // this+192
-    std::mutex                                                    mCreateBlueprintsMutex;      // this+200
-    std::condition_variable                                       mBlueprintWaitVar;           // this+280
+    Bedrock::Threading::Mutex                                     mCreateBlueprintsMutex;      // this+200
+    Bedrock::Threading::ConditionVariable                         mBlueprintWaitVar;           // this+280
     std::atomic_int                                               mActiveBlueprintCreateCount; // this+352
     std::atomic_bool                                              mBlueprintsFinished;         // this+356
 public:

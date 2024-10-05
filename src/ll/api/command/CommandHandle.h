@@ -35,11 +35,12 @@ public:
     [[nodiscard]] auto overload(std::weak_ptr<mod::Mod> mod = mod::NativeMod::current()) -> Overload<Params> {
         return Overload<Params>{*this, std::move(mod)};
     }
-
     LLNDAPI RuntimeOverload runtimeOverload(std::weak_ptr<mod::Mod> mod = mod::NativeMod::current());
 
-    LLAPI void alias(std::string_view alias);
-
     LLNDAPI std::vector<std::string> alias() const;
+
+    LLAPI CommandHandle& alias(std::string_view alias);
+
+    LLAPI CommandHandle& finalizeChainedSubcommandOverloadRules();
 };
 } // namespace ll::command

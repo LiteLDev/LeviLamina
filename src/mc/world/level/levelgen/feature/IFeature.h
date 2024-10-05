@@ -9,10 +9,8 @@ class RenderParams;
 
 class IFeature {
 public:
-    // prevent constructor by default
-    IFeature& operator=(IFeature const&);
-    IFeature(IFeature const&);
-    IFeature();
+    bool mInternal;              // this+0x8
+    bool mCanUseInternalFeature; // this+0x9
 
 public:
     // NOLINTBEGIN

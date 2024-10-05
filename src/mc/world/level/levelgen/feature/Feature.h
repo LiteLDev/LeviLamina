@@ -10,9 +10,9 @@ class WorldChangeTransaction;
 
 class Feature : public ::IFeature {
 public:
-    short                   mUnknown;     // this+0x8  Feature::Feature -> *((_WORD *)this + 4) = 257;
     ActorUniqueID           mPlacerID;    // this+0x10
     WorldChangeTransaction* mTransaction; // this+0x18
+
 public:
     // prevent constructor by default
     Feature& operator=(Feature const&);

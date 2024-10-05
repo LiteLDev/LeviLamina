@@ -15,6 +15,11 @@ public:
     // ScatterParams inner types define
     class ChanceInformation {
     public:
+        ExpressionNode mChancePercent;
+        int            mNumerator;
+        int            mDenominator;
+
+    public:
         // prevent constructor by default
         ChanceInformation& operator=(ChanceInformation const&);
         ChanceInformation(ChanceInformation const&);
@@ -85,6 +90,20 @@ public:
 
         // NOLINTEND
     };
+
+    enum class CoordinateEvalOrder : int {
+        xzy = 0x1,
+        yxz = 0x2,
+        yzx = 0x3,
+        zxy = 0x4,
+        zyx = 0x5,
+    };
+
+public:
+    CoordinateRange     mCoordinateRanges[3]; // this+0x0
+    CoordinateEvalOrder mEvalOrder;           // this+0x5B8
+    ChanceInformation   mScatterChance;       // this+0x5C0
+    ExpressionNode      mIterations;          // this+0x6B0
 
 public:
     // prevent constructor by default

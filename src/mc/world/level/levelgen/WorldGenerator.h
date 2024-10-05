@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/common/bedrock/ConditionVariable.h"
+#include "mc/deps/core/common/bedrock/Mutex.h"
 #include "mc/deps/core/threading/SpinLock.h"
 #include "mc/world/level/chunk/ChunkSource.h"
 #include "mc/world/level/levelgen/v1/IPreliminarySurfaceProvider.h"
@@ -29,13 +31,13 @@ public:
         uint mHeight; // this+0x8
     };
 
-    std::unique_ptr<HardcodedSpawnAreaRegistry> mHardcodedSpawnTypes;      // this+0x78
-    std::unique_ptr<StructureFeatureRegistry>   mStructureFeatureRegistry; // this+0x80
-    uchar                                       mUnknown1[160];            // this+0x88
-
-    // mUnknown2 is std::unordered_map but unknown key and value
-    uchar    mUnknown2[64]; // this+0x128
-    SpinLock mSpinLock;     // this+0x168
+    std::unique_ptr<HardcodedSpawnAreaRegistry> mHardcodedSpawnTypes;           // this+0x78
+    std::unique_ptr<StructureFeatureRegistry>   mStructureFeatureRegistry;      // this+0x80
+    Bedrock::Threading::Mutex                   mCreateStructureInstancesMutex; // location=0x80
+    Bedrock::Threading::ConditionVariable       mStructureInstanceWaitVar;      // location=0xa8
+    std::atomic<int>                            mActiveStructureInstanceCreateCount;
+    std::unordered_set<ChunkPos>                visitedPositions;
+    SpinLock                                    visitedPositionsMutex; // this+0x168
 
 public:
     // prevent constructor by default

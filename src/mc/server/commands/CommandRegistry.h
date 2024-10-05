@@ -477,14 +477,14 @@ public:
     std::vector<OptionalParameterChain>                         mOptionals;                    // this+0xB0
     std::vector<std::string>                                    mEnumValues;                   // this+0xC8
     std::vector<Enum>                                           mEnums;                        // this+0xE0
-    std::vector<int>                                            mUnknown1;                     // this+0xF8
-    std::vector<int>                                            mUnknown2;                     // this+0x110
+    std::vector<std::string>                                    mChainedSubcommandValues;      // this+0xF8
+    std::vector<ChainedSubcommand>                              mChainedSubcommands;           // this+0x110
     std::vector<Factorization>                                  mFactorizations;               // this+0x128
     std::vector<std::string>                                    mPostfixes;                    // this+0x140
     std::map<std::string, uint>                                 mEnumLookup;                   // this+0x158
     std::map<std::string, uint64>                               mEnumValueLookup;              // this+0x168
-    std::map<std::string, int>                                  mUnknown3;                     // this+0x178
-    std::map<std::string, int>                                  mChainedSubcommandLookUp;      // this+0x188
+    std::map<std::string, uint>                                 mChainedSubcommandLookUp;      // this+0x178
+    std::map<std::string, uint64>                               mChainedSubcommandValueLookup; // this+0x188
     std::vector<Symbol>                                         mCommandSymbols;               // this+0x198
     std::map<std::string, Signature>                            mSignatures;                   // this+0x1B0
     std::map<Bedrock::typeid_t<CommandRegistry>, int>           mTypeLookup;                   // this+0x1C0

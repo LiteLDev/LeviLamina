@@ -31,9 +31,9 @@ public:
     float                    mLastBarrier;               // this+0x20
     FluidSample::FluidType   mFluidType;                 // this+0x24
     bool                     mShouldScheduleFluidUpdate; // this+0x25
-    BlockPos                 mUnknown0;                  // this+0x28
-    BlockPos                 mUnknown1;                  // this+0x34
-    std::vector<FluidSample> mUnknown2;                  // this+0x40
+    BlockPos                 mMinGrid;                   // this+0x28
+    BlockPos                 mGridSize;                  // this+0x34
+    std::vector<FluidSample> mFluidLevelCache;           // this+0x40
     Block const&             mWaterBlock;                // this+0x58 Aquifer::getLastFluidBlockType
     Block const&             mLavaBlock;                 // this+0x60
     Block const&             mFlowingWaterBlock;         // this+0x68

@@ -4,10 +4,12 @@
 
 class SpinLock {
 public:
-    char unk[0x20];
-    // prevent constructor by default
-    SpinLock& operator=(SpinLock const&);
-    SpinLock(SpinLock const&);
+    static constexpr uint const LOOP_LIMIT_BEFORE_YIELD = 3000;
+
+    std::hash<std::thread::id> mThreadHasher;  // location=0x0
+    size_t const               mNoThreadId;    // location=0x8
+    std::atomic_size_t         mOwnerThread;   // location=0x10
+    uint                       mOwnerRefCount; // location=0x18
 
 public:
     // NOLINTBEGIN

@@ -11,7 +11,6 @@
 class NetworkSettingsPacket : public ::Packet {
 public:
     NetworkSettingOptions mNetworkSettings; // this+0x30
-    bool                  mUnknown;         // this+0x40
 
     // prevent constructor by default
     NetworkSettingsPacket& operator=(NetworkSettingsPacket const&);

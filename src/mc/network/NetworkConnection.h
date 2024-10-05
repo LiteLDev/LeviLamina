@@ -42,13 +42,14 @@ public:
     NetworkConnection(NetworkConnection const&);
     NetworkConnection();
 
-    NetworkIdentifier                        mId;                    // this+0x0
-    NetworkConnectionType                    mType;                  // this+0xA0
-    std::weak_ptr<NetworkPeer>               mUnknown;               // this+0xA8
-    std::weak_ptr<EncryptedNetworkPeer>      mEncryptedPeer;         // this+0xB8
-    std::weak_ptr<CompressedNetworkPeer>     mCompressedPeer;        // this+0xC8
-    std::weak_ptr<BatchedNetworkPeer>        mBatchedPeer;           // this+0xD8
-    std::shared_ptr<NetworkPeer>             mPeer;                  // this+0xE8
+    NetworkIdentifier                    mId;                    // this+0x0
+    NetworkConnectionType                mType;                  // this+0xA0
+    std::weak_ptr<NetworkPeer>           mNetworkPacketRecorder; // this+0xA8
+    std::weak_ptr<EncryptedNetworkPeer>  mEncryptedPeer;         // this+0xB8
+    std::weak_ptr<CompressedNetworkPeer> mCompressedPeer;        // this+0xC8
+    std::weak_ptr<BatchedNetworkPeer>    mBatchedPeer;           // this+0xD8
+    std::shared_ptr<NetworkPeer>         mPeer;                  // this+0xE8
+    // std::shared_ptr<NetworkPeer>             mTransportPeer;
     std::chrono::steady_clock::time_point    mLastPacketTime;        // this+0xF8
     std::chrono::steady_clock::time_point    mClosedTime;            // this+0x100
     bool                                     mShouldCloseConnection; // this+0x108

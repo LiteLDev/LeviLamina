@@ -23,7 +23,7 @@ public:
     uchar                                               mStructureVersion;      // this+0xD8
     Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry> mUnknownBlockRegistry;  // this+0xE0
     uchar                                               mRemovable;             // this+0xF0
-    std::map<Block const*, int>                         mUnknown0;              // this+0xF8
+    std::map<Block const*, int>                         mBlockToIndex;          // this+0xF8
     uchar                                               mUnoptimized;           // this+0x108
 
     inline bool load(class CompoundTag const& nbt) { return mStructureTemplateData.load(nbt); }
