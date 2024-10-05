@@ -13,9 +13,7 @@ public:
     using reference         = value_type&;
     using iterator_category = std::random_access_iterator_tag;
 
-    [[nodiscard]] constexpr ContainerIterator(T* container, int position)
-    : mContainer(container),
-      mSlot(position) {}
+    [[nodiscard]] constexpr ContainerIterator(T* container, int position) : mContainer(container), mSlot(position) {}
 
     [[nodiscard]] constexpr bool operator==(const ContainerIterator& other) const {
         return mSlot == other.mSlot && mContainer == other.mContainer;
@@ -30,7 +28,7 @@ public:
             return mContainer->getItemNonConst(mSlot);
         }
     }
-    [[nodiscard]] constexpr pointer   operator->() const {
+    [[nodiscard]] constexpr pointer operator->() const {
         if constexpr (std::is_const_v<T>) {
             return &mContainer->getItem(mSlot);
         } else {

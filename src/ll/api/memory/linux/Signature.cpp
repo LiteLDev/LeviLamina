@@ -10,7 +10,7 @@ void* SignatureView::resolve(std::span<std::byte> range, bool disableErrorOutput
     const auto scanEnd   = range.end() - elements.size() + 1;
 
     for (auto i = range.begin(); i != scanEnd; i++) {
-        i = std::find( i, scanEnd, firstByte);
+        i = std::find(i, scanEnd, firstByte);
         if (i == scanEnd) [[unlikely]] {
             break;
         }

@@ -30,27 +30,18 @@ class Overload : private OverloadData {
         uint64 placeholder{};
         Params params;
     };
-    static inline auto ParamOffset       = offsetof(Overload<Params>::TestOffset, params);
-    static inline auto PlaceholderOffset = offsetof(Overload<Params>::TestOffset, placeholder);
+    static constexpr auto paramOffset       = offsetof(Overload<Params>::TestOffset, params);
+    static constexpr auto placeholderOffset = offsetof(Overload<Params>::TestOffset, placeholder);
 
-    constexpr Overload& addParam(std::string_view name) {
-        bool hasName{};
-        reflection::forEachMember((*(Params*)ParamOffset), [&, this](std::string_view param, auto& val) {
-            if (name != param) {
-                return;
-            }
-            hasName = true;
-
-            using OriginalType = std::remove_cvref_t<decltype((val))>;
-
+    constexpr Overload& addParam(std::string_view name, int index) {
+        meta::visitIndex<reflection::member_count_v<Params>>(index, [&, this]<size_t I>() {
+            using OriginalType       = typename reflection::member_t<I, Params>;
             using RemoveOptionalType = remove_optional_t<OriginalType>;
-
-            using ParamType = std::conditional_t<
-                traits::is_specialization_of_v<RemoveOptionalType, SoftEnum>,
-                std::string,
-                RemoveOptionalType>;
-
-            int offset     = (int)(size_t)std::addressof(val);
+            using ParamType          = std::conditional_t<
+                         traits::is_specialization_of_v<RemoveOptionalType, SoftEnum>,
+                         std::string,
+                         RemoveOptionalType>;
+            int offset     = (int)(paramOffset + reflection::member_offset_v<I, Params>);
             int flagOffset = -1;
             if constexpr (traits::is_specialization_of_v<OriginalType, Optional>) {
                 flagOffset = offset + OptionalOffsetGetter<ParamType>::value;
@@ -76,25 +67,44 @@ class Overload : private OverloadData {
                 true
             );
         });
-        if (!hasName) {
-            throw std::invalid_argument("invalid param " + std::string(name));
-        }
         return *this;
     }
 
     explicit Overload(CommandHandle& handle, std::weak_ptr<mod::Mod> mod) : OverloadData(handle, std::move(mod)) {}
 
+    class ParamName : public std::string_view {
+        std::string_view str;
+        int              idx;
+
+        constexpr int indexSearcher(std::string_view s) {
+            int i{};
+            for (auto& member : reflection::member_name_array_v<Params>) {
+                if (member == s) return i;
+                i++;
+            }
+            throw std::invalid_argument("invalid param " + std::string(str));
+        }
+
+    public:
+        template <class S>
+            requires(std::is_constructible_v<std::string_view, S const&>)
+        consteval ParamName(S const& s) : str(s),
+                                          idx(indexSearcher(s)) {}
+        constexpr std::string_view get() const { return str; }
+        constexpr int              index() const { return idx; }
+    };
+
 public:
-    [[nodiscard]] constexpr Overload& optional(std::string_view name) {
-        addParam(name).back().mIsOptional = true;
+    [[nodiscard]] constexpr Overload& optional(ParamName const name) {
+        addParam(name.get(), name.index()).back().mIsOptional = true;
         return *this;
     }
-    [[nodiscard]] constexpr Overload& required(std::string_view name) {
-        addParam(name).back().mIsOptional = false;
+    [[nodiscard]] constexpr Overload& required(ParamName const name) {
+        addParam(name.get(), name.index()).back().mIsOptional = false;
         return *this;
     }
     [[nodiscard]] constexpr Overload& text(std::string_view text) {
-        addTextImpl(text, (int)PlaceholderOffset);
+        addTextImpl(text, (int)placeholderOffset);
         return *this;
     }
     template <class Fn>

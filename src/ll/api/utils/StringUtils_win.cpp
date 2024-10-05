@@ -130,7 +130,7 @@ std::string getMcCodeFromTextStyle(fmt::text_style style) {
         if (fg.is_rgb) {
             auto color = mce::Color(fg.value.rgb_color);
             // clang-format off
-            constexpr const auto carr  = std::array{
+            constexpr const std::array carr{
                 std::pair{cf::BLACK             , mce::Color(0x000000)}, std::pair{cf::DARK_BLUE        , mce::Color(0x0000AA)},
                 std::pair{cf::DARK_GREEN        , mce::Color(0x00AA00)}, std::pair{cf::DARK_AQUA        , mce::Color(0x00AAAA)},
                 std::pair{cf::DARK_RED          , mce::Color(0xAA0000)}, std::pair{cf::DARK_PURPLE      , mce::Color(0xAA00AA)},

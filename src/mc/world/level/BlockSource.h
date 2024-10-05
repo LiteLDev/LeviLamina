@@ -120,8 +120,7 @@ public:
     MCVAPI DimensionType getDimensionId() const;
 
     // vIndex: 20
-    MCVAPI void
-    fetchAABBs(std::vector<class AABB>&, class AABB const& intersectTestBox, bool withUnloadedChunks) const;
+    MCVAPI void fetchAABBs(std::vector<class AABB>&, class AABB const& intersectTestBox, bool withUnloadedChunks) const;
 
     // vIndex: 21
     MCVAPI void
@@ -170,11 +169,11 @@ public:
 
     // vIndex: 31
     MCVAPI gsl::span<gsl::not_null<class Actor*>>
-    fetchEntities(class Actor const* except, class AABB const& bb, bool useHitbox, bool);
+           fetchEntities(class Actor const* except, class AABB const& bb, bool useHitbox, bool);
 
     // vIndex: 32
     MCVAPI gsl::span<gsl::not_null<class Actor*>>
-    fetchEntities(::ActorType, class AABB const&, class Actor const*, std::function<bool(class Actor*)>);
+           fetchEntities(::ActorType, class AABB const&, class Actor const*, std::function<bool(class Actor*)>);
 
     // vIndex: 33
     MCVAPI bool

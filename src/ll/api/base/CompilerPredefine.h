@@ -196,6 +196,7 @@ extern "C" void* __cdecl __RTCastToVoid(void*);
 #pragma pack(pop, rttidata)
 // NOLINTEND
 #endif
+struct _IMAGE_DOS_HEADER;
 
 // No one guarantees that the compiler's internal definitions are correct
 namespace ll::internal {
@@ -220,7 +221,7 @@ using CatchableType = ::_CatchableType;
 using ThrowInfo     = ::_ThrowInfo;
 #endif
 
-extern "C" struct _IMAGE_DOS_HEADER __ImageBase; // NOLINT(bugprone-reserved-identifier)
+extern "C" ::_IMAGE_DOS_HEADER __ImageBase; // NOLINT(bugprone-reserved-identifier)
 
 [[nodiscard]] LL_FORCEINLINE void* getCurrentModuleHandle() noexcept { return &__ImageBase; }
 

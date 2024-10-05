@@ -10,7 +10,7 @@ class DoubleTag : public ::Tag {
 public:
     double data;
 
-    constexpr DoubleTag& operator=(double value) noexcept{
+    constexpr DoubleTag& operator=(double value) noexcept {
         data = value;
         return *this;
     }

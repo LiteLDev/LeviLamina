@@ -14,8 +14,6 @@ class Color : public ll::math::floatN4<Color> {
 public:
     [[nodiscard]] constexpr Color() noexcept = default;
 
-    [[nodiscard]] constexpr Color(uint hex) noexcept : Color((hex >> 16) & 0xFF, (hex >> 8) & 0xFF, hex & 0xFF) {}
-
     template <std::integral T0, std::integral T1, std::integral T2, std::integral T3 = uint>
     [[nodiscard]] constexpr Color(T0 const& ir, T1 const& ig, T2 const& ib, T3 const& ia = 255) noexcept
     : floatN4(
@@ -32,6 +30,8 @@ public:
     [[nodiscard]] constexpr Color(V const& v, A const& a = 1) noexcept // NOLINT
         requires(V::size() == 3)
     : floatN4(v.r, v.g, v.b, a) {}
+
+    [[nodiscard]] constexpr Color(uint hex) noexcept : Color((hex >> 16) & 0xFF, (hex >> 8) & 0xFF, hex & 0xFF) {}
 
     [[nodiscard]] constexpr Color(std::string_view hex) noexcept : floatN4(0, 0, 0, 1) { // NOLINT
         if (hex[0] == '#') {
