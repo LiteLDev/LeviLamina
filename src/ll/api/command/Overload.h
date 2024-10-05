@@ -6,19 +6,9 @@
 #include <string_view>
 #include <type_traits>
 
-#include "ll/api/base/StdInt.h"
 #include "ll/api/command/Command.h"
-#include "ll/api/command/CommandRegistrar.h"
-#include "ll/api/command/EnumName.h"
-#include "ll/api/command/Optional.h"
 #include "ll/api/command/OverloadData.h"
-#include "ll/api/command/SoftEnum.h"
-
-#include "mc/deps/core/common/bedrock/typeid_t.h"
-#include "mc/server/commands/CommandParameterDataType.h"
-#include "mc/server/commands/CommandParameterOption.h"
-#include "mc/server/commands/CommandRegistry.h"
-#include "mc/world/level/Command.h"
+#include "ll/api/command/ParamTraits.h"
 
 namespace ll::command {
 
@@ -33,43 +23,28 @@ class Overload : private OverloadData {
     static constexpr auto paramOffset       = offsetof(Overload<Params>::TestOffset, params);
     static constexpr auto placeholderOffset = offsetof(Overload<Params>::TestOffset, placeholder);
 
-    constexpr Overload& addParam(std::string_view name, int index) {
-        meta::visitIndex<reflection::member_count_v<Params>>(index, [&, this]<size_t I>() {
-            using OriginalType       = typename reflection::member_t<I, Params>;
-            using RemoveOptionalType = remove_optional_t<OriginalType>;
-            using ParamType          = std::conditional_t<
-                         traits::is_specialization_of_v<RemoveOptionalType, SoftEnum>,
-                         std::string,
-                         RemoveOptionalType>;
-            int offset     = (int)(paramOffset + reflection::member_offset_v<I, Params>);
-            int flagOffset = -1;
-            if constexpr (traits::is_specialization_of_v<OriginalType, Optional>) {
-                flagOffset = offset + OptionalOffsetGetter<ParamType>::value;
-            }
-
-            CommandParameterDataType paramType = CommandParameterDataType::Basic;
-            if constexpr (std::is_enum_v<ParamType>) {
-                paramType = CommandParameterDataType::Enum;
-                CommandRegistrar::getInstance().template tryRegisterEnum<ParamType>();
-            } else if constexpr (traits::is_specialization_of_v<RemoveOptionalType, SoftEnum>) {
-                paramType = CommandParameterDataType::SoftEnum;
-                CommandRegistrar::getInstance().template tryRegisterSoftEnum<RemoveOptionalType>();
-            }
-
-            addParamImpl(
-                Bedrock::type_id<CommandRegistry, ParamType>(),
-                &CommandRegistry::parse<ParamType>,
-                name,
-                paramType,
-                enum_name_v<RemoveOptionalType>,
-                offset,
-                flagOffset,
-                true
-            );
-        });
-        return *this;
+    template <size_t I, bool Opt>
+    constexpr void addParam(std::string_view name) {
+        using OriginalType       = std::remove_cvref_t<typename reflection::member_t<I, Params>>;
+        using RemoveOptionalType = remove_optional_t<OriginalType>;
+        int offset               = (int)(paramOffset + reflection::member_offset_v<I, Params>);
+        int flagOffset           = -1;
+        if constexpr (traits::is_specialization_of_v<OriginalType, Optional>) {
+            flagOffset = offset + OptionalOffsetGetter<RemoveOptionalType>::value;
+        }
+        using Traits = ParamTraits<RemoveOptionalType>;
+        Traits::transformData(addParamImpl(
+            Traits::typeId(),
+            Traits::parser(),
+            name,
+            Traits::dataType(),
+            Traits::enumNameOrPostfix(),
+            Traits::subChain(),
+            offset,
+            flagOffset,
+            Opt
+        ));
     }
-
     explicit Overload(CommandHandle& handle, std::weak_ptr<mod::Mod> mod) : OverloadData(handle, std::move(mod)) {}
 
     class ParamName : public std::string_view {
@@ -82,7 +57,11 @@ class Overload : private OverloadData {
                 if (member == s) return i;
                 i++;
             }
+#ifndef __INTELLISENSE__
             throw std::invalid_argument("invalid param " + std::string(str));
+#else
+            return -1;
+#endif
         }
 
     public:
@@ -96,11 +75,15 @@ class Overload : private OverloadData {
 
 public:
     [[nodiscard]] constexpr Overload& optional(ParamName const name) {
-        addParam(name.get(), name.index()).back().mIsOptional = true;
+        meta::visitIndex<reflection::member_count_v<Params>>(name.index(), [&]<size_t I>() {
+            addParam<I, true>(name.get());
+        });
         return *this;
     }
     [[nodiscard]] constexpr Overload& required(ParamName const name) {
-        addParam(name.get(), name.index()).back().mIsOptional = false;
+        meta::visitIndex<reflection::member_count_v<Params>>(name.index(), [&]<size_t I>() {
+            addParam<I, false>(name.get());
+        });
         return *this;
     }
     [[nodiscard]] constexpr Overload& text(std::string_view text) {

@@ -33,6 +33,7 @@ public:
         std::string                        name,
         ::CommandParameterDataType         type,
         char const*                        enumNameOrPostfix,
+        char const*                        subChain,
         int                                offset,
         bool                               optional,
         int                                flagOffset

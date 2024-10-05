@@ -11,10 +11,12 @@ struct unprefix_name_for_c {
     static constexpr auto stored_name =
         FixedString<ll::reflection::type_unprefix_name_v<T>.size()>{ll::reflection::type_unprefix_name_v<T>};
 };
-
 template <class T>
-struct enum_name {
-    static constexpr char const* value = std::is_enum_v<T> ? (char const*)unprefix_name_for_c<T>::stored_name : nullptr;
+struct enum_name;
+
+template <concepts::Require<std::is_enum> T>
+struct enum_name<T> {
+    static constexpr char const* value = unprefix_name_for_c<T>::stored_name;
 };
 template <class T>
 struct enum_name<SoftEnum<T>> {

@@ -6,6 +6,7 @@ CommandParameterData::CommandParameterData(
     std::string                        name,
     ::CommandParameterDataType         type,
     char const*                        enumNameOrPostfix,
+    char const*                        subChain,
     int                                offset,
     bool                               optional,
     int                                flagOffset
@@ -14,7 +15,7 @@ CommandParameterData::CommandParameterData(
   mParse(parser),
   mName(std::move(name)),
   mEnumNameOrPostfix(enumNameOrPostfix),
-  mSubChain(nullptr),
+  mSubChain(subChain),
   mParamType(type),
   mOffset(offset),
   mSettedOffset(flagOffset),

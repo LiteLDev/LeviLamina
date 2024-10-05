@@ -55,12 +55,39 @@ CommandParameterData& OverloadData::addParamImpl(
     int                                flagOffset,
     bool                               optional
 ) {
+    //TODO: remove in release
+    return addParamImpl(id, parser, name, type, enumNameOrPostfix, nullptr, offset, flagOffset, optional);
+}
+
+CommandParameterData& OverloadData::addParamImpl(
+    Bedrock::typeid_t<CommandRegistry> id,
+    CommandRegistry::ParseFn           parser,
+    std::string_view                   name,
+    CommandParameterDataType           type,
+    char const*                        enumNameOrPostfix,
+    char const*                        subChain,
+    int                                offset,
+    int                                flagOffset,
+    bool                               optional
+) {
     std::lock_guard lock{impl->mutex};
     if (enumNameOrPostfix) {
         enumNameOrPostfix = storeStr(enumNameOrPostfix);
     }
-    auto& param =
-        impl->params.emplace_back(id, parser, std::string{name}, type, enumNameOrPostfix, offset, optional, flagOffset);
+    if (subChain) {
+        subChain = storeStr(subChain);
+    }
+    auto& param = impl->params.emplace_back(
+        id,
+        parser,
+        std::string{name},
+        type,
+        enumNameOrPostfix,
+        subChain,
+        offset,
+        optional,
+        flagOffset
+    );
     if (id == Bedrock::type_id<CommandRegistry, CommandBlockName>()
         || id == Bedrock::type_id<CommandRegistry, CommandItem>()) {
         param.addOptions(CommandParameterOption::HasSemanticConstraint);

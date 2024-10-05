@@ -28,6 +28,7 @@ void RuntimeOverload::addParam(std::string_view name, ParamKindType kind, Comman
             name,
             type,
             nullptr,
+            nullptr,
             offset,
             offset + OptionalOffsetGetter<ParamStorageType::value_type>::value,
             true

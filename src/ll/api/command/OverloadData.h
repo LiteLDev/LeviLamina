@@ -50,6 +50,18 @@ protected:
         bool                               optional
     );
 
+    LLAPI CommandParameterData& addParamImpl(
+        Bedrock::typeid_t<CommandRegistry> id,
+        CommandRegistry::ParseFn           parser,
+        std::string_view                   name,
+        CommandParameterDataType           type,
+        char const*                        enumNameOrPostfix,
+        char const*                        subChain,
+        int                                offset,
+        int                                flagOffset,
+        bool                               optional
+    );
+
     LLAPI CommandParameterData& addTextImpl(std::string_view text, int offset);
 
     LLAPI void setFactory(std::function<std::unique_ptr<::Command>()>&& fn);
