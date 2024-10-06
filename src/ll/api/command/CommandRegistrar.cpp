@@ -101,7 +101,8 @@ bool CommandRegistrar::tryRegisterEnum(
     CommandRegistry::ParseFn                    parser
 ) {
     auto& registry = getRegistry();
-    if (registry.mEnumLookup.contains(name)) {
+    if (auto iter = registry.mEnumLookup.find(name); iter != registry.mEnumLookup.end()) {
+        registry.mEnums[iter->second].parse = parser;
         return false;
     }
     registry._addEnumValuesInternal(name, toLower(values), type, parser);
