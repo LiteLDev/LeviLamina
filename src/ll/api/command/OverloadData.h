@@ -55,8 +55,8 @@ protected:
         CommandRegistry::ParseFn           parser,
         std::string_view                   name,
         CommandParameterDataType           type,
-        char const*                        enumNameOrPostfix,
-        char const*                        subChain,
+        std::string_view                   enumNameOrPostfix,
+        std::string_view                   subChain,
         int                                offset,
         int                                flagOffset,
         bool                               optional

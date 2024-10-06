@@ -39,7 +39,12 @@ std::vector<CommandParameterData>& OverloadData::getParams() { return impl->para
 CommandHandle&                     OverloadData::getHandle() { return impl->handle; }
 std::weak_ptr<mod::Mod>&           OverloadData::getMod() { return impl->mod; }
 
-char const* OverloadData::storeStr(std::string_view str) { return impl->handle.storeStr(str); }
+char const* OverloadData::storeStr(std::string_view str) {
+    if (str.empty()) {
+        return nullptr;
+    }
+    return impl->handle.storeStr(str);
+}
 
 std::lock_guard<std::recursive_mutex> OverloadData::lock() { return std::lock_guard{impl->mutex}; }
 
@@ -55,8 +60,18 @@ CommandParameterData& OverloadData::addParamImpl(
     int                                flagOffset,
     bool                               optional
 ) {
-    //TODO: remove in release
-    return addParamImpl(id, parser, name, type, enumNameOrPostfix, nullptr, offset, flagOffset, optional);
+    // TODO: remove in release
+    return addParamImpl(
+        id,
+        parser,
+        name,
+        type,
+        enumNameOrPostfix ? enumNameOrPostfix : "",
+        {},
+        offset,
+        flagOffset,
+        optional
+    );
 }
 
 CommandParameterData& OverloadData::addParamImpl(
@@ -64,26 +79,20 @@ CommandParameterData& OverloadData::addParamImpl(
     CommandRegistry::ParseFn           parser,
     std::string_view                   name,
     CommandParameterDataType           type,
-    char const*                        enumNameOrPostfix,
-    char const*                        subChain,
+    std::string_view                   enumNameOrPostfix,
+    std::string_view                   subChain,
     int                                offset,
     int                                flagOffset,
     bool                               optional
 ) {
     std::lock_guard lock{impl->mutex};
-    if (enumNameOrPostfix) {
-        enumNameOrPostfix = storeStr(enumNameOrPostfix);
-    }
-    if (subChain) {
-        subChain = storeStr(subChain);
-    }
-    auto& param = impl->params.emplace_back(
+    auto&           param = impl->params.emplace_back(
         id,
         parser,
         std::string{name},
         type,
-        enumNameOrPostfix,
-        subChain,
+        storeStr(enumNameOrPostfix),
+        storeStr(subChain),
         offset,
         optional,
         flagOffset
