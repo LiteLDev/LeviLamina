@@ -9,13 +9,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI class Command const* getCommand() const;
-
     // vIndex: 0
-    virtual ~ExecuteChainedSubcommand() = default;
+    virtual ~CommandChainedSubcommand() = default;
 
     // vIndex: 1
     virtual std::string getCommandName() const = 0;
+
+    MCAPI class Command const* getCommand() const;
 
     // NOLINTEND
 };

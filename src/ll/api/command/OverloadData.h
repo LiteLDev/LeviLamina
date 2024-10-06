@@ -59,7 +59,8 @@ protected:
         std::string_view                   subChain,
         int                                offset,
         int                                flagOffset,
-        bool                               optional
+        bool                               optional,
+        CommandParameterOption             options
     );
 
     LLAPI CommandParameterData& addTextImpl(std::string_view text, int offset);

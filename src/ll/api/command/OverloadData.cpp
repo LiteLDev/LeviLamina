@@ -61,7 +61,7 @@ CommandParameterData& OverloadData::addParamImpl(
     bool                               optional
 ) {
     // TODO: remove in release
-    return addParamImpl(
+    auto& param = addParamImpl(
         id,
         parser,
         name,
@@ -70,8 +70,15 @@ CommandParameterData& OverloadData::addParamImpl(
         {},
         offset,
         flagOffset,
-        optional
+        optional,
+        type == CommandParameterDataType::Enum ? CommandParameterOption::EnumAutocompleteExpansion
+                                               : CommandParameterOption::None
     );
+    if (id == Bedrock::type_id<CommandRegistry, CommandBlockName>()
+        || id == Bedrock::type_id<CommandRegistry, CommandItem>()) {
+        param.addOptions(CommandParameterOption::HasSemanticConstraint);
+    }
+    return param;
 }
 
 CommandParameterData& OverloadData::addParamImpl(
@@ -83,10 +90,11 @@ CommandParameterData& OverloadData::addParamImpl(
     std::string_view                   subChain,
     int                                offset,
     int                                flagOffset,
-    bool                               optional
+    bool                               optional,
+    CommandParameterOption             options
 ) {
     std::lock_guard lock{impl->mutex};
-    auto&           param = impl->params.emplace_back(
+    return impl->params.emplace_back(
         id,
         parser,
         std::string{name},
@@ -95,16 +103,9 @@ CommandParameterData& OverloadData::addParamImpl(
         storeStr(subChain),
         offset,
         optional,
-        flagOffset
+        flagOffset,
+        options
     );
-    if (id == Bedrock::type_id<CommandRegistry, CommandBlockName>()
-        || id == Bedrock::type_id<CommandRegistry, CommandItem>()) {
-        param.addOptions(CommandParameterOption::HasSemanticConstraint);
-    }
-    if (type == CommandParameterDataType::Enum) {
-        param.addOptions(CommandParameterOption::EnumAutocompleteExpansion);
-    }
-    return param;
 }
 CommandParameterData& OverloadData::addTextImpl(std::string_view text, int offset) {
     std::lock_guard lock{impl->mutex};

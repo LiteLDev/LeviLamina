@@ -9,7 +9,8 @@ CommandParameterData::CommandParameterData(
     char const*                        subChain,
     int                                offset,
     bool                               optional,
-    int                                flagOffset
+    int                                flagOffset,
+    CommandParameterOption             options
 )
 : mTypeIndex(typeIndex),
   mParse(parser),
@@ -20,7 +21,7 @@ CommandParameterData::CommandParameterData(
   mOffset(offset),
   mSettedOffset(flagOffset),
   mIsOptional(optional),
-  mOptions(CommandParameterOption::None) {}
+  mOptions(options) {}
 
 bool CommandParameterData::operator==(CommandParameterData const& other) const {
     if (mTypeIndex != other.mTypeIndex || mName != other.mName || mOffset != other.mOffset

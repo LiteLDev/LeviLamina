@@ -2,6 +2,8 @@
 
 #include "ll/api/base/Meta.h"
 #include "ll/api/command/Optional.h"
+#include "ll/api/command/ParamTraits.h"
+#include "ll/api/command/Runtime/RuntimeEnum.h"
 
 #include "mc/deps/core/common/bedrock/typeid_t.h"
 #include "mc/server/commands/BlockStateCommandParam.h"
@@ -64,8 +66,8 @@ using ParamKindList = meta::TypeList<
     float,
     ::DimensionType,
     std::string,
-    std::pair<std::string, uint64>,
-    std::string,
+    RuntimeEnum,
+    RuntimeSoftEnum,
     CommandSelector<Actor>,
     CommandSelector<Player>,
     CommandPosition,

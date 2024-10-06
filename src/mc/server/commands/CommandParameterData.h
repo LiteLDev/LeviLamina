@@ -36,7 +36,8 @@ public:
         char const*                        subChain,
         int                                offset,
         bool                               optional,
-        int                                flagOffset
+        int                                flagOffset,
+        CommandParameterOption             options
     );
 
     CommandParameterData& addOptions(::CommandParameterOption options) {

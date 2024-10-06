@@ -18,21 +18,24 @@ RuntimeOverload::RuntimeOverload(CommandHandle& handle, std::weak_ptr<mod::Mod> 
 RuntimeOverload::RuntimeOverload(RuntimeOverload&&) = default;
 RuntimeOverload::~RuntimeOverload()                 = default;
 
-void RuntimeOverload::addParam(std::string_view name, ParamKindType kind, CommandParameterDataType type) {
+void RuntimeOverload::addParam(std::string_view name, ParamKindType kind, bool optional) {
     int offset = (int)(sizeof(RuntimeCommand) + impl->params.size() * sizeof(ParamStorageType));
     meta::visitIndex<ParamKind::Count>(kind, [&]<size_t N> {
         using ParamType = ParamKindList::get<N>;
-        addParamImpl(
-            Bedrock::type_id<CommandRegistry, ParamType>(),
-            &CommandRegistry::parse<ParamType>,
+
+        using Traits = ParamTraits<ParamType>;
+        Traits::transformData(addParamImpl(
+            Traits::typeId(),
+            Traits::parseFn(),
             name,
-            type,
-            {},
-            {},
+            Traits::dataType(),
+            Traits::enumNameOrPostfix(),
+            Traits::subChain(),
             offset,
             offset + OptionalOffsetGetter<ParamStorageType::value_type>::value,
-            true
-        );
+            optional,
+            Traits::options()
+        ));
     });
     impl->params.emplace_back(name, kind);
 }
@@ -41,12 +44,15 @@ RuntimeOverload& RuntimeOverload::optional(std::string_view name, ParamKindType 
     if (kind == ParamKind::Enum || kind == ParamKind::SoftEnum) {
         throw std::invalid_argument("enum kind need enum name");
     }
-    addParam(name, kind, CommandParameterDataType::Basic);
+    addParam(name, kind, true);
     return *this;
 }
 RuntimeOverload& RuntimeOverload::required(std::string_view name, ParamKindType kind) {
     std::lock_guard l{lock()};
-    optional(name, kind).back().mIsOptional = false;
+    if (kind == ParamKind::Enum || kind == ParamKind::SoftEnum) {
+        throw std::invalid_argument("enum kind need enum name");
+    }
+    addParam(name, kind, false);
     return *this;
 }
 RuntimeOverload& RuntimeOverload::optional(std::string_view name, ParamKindType enumKind, std::string_view enumName) {
@@ -54,17 +60,17 @@ RuntimeOverload& RuntimeOverload::optional(std::string_view name, ParamKindType 
     if (enumKind != ParamKind::Enum && enumKind != ParamKind::SoftEnum) {
         throw std::invalid_argument("invalid enum kind");
     }
-    if (enumKind == ParamKind::Enum) {
-        addParam(name, enumKind, CommandParameterDataType::Enum);
-    } else {
-        addParam(name, enumKind, CommandParameterDataType::SoftEnum);
-    }
+    addParam(name, enumKind, true);
     back().mEnumNameOrPostfix = storeStr(enumName);
     return *this;
 }
 RuntimeOverload& RuntimeOverload::required(std::string_view name, ParamKindType enumKind, std::string_view enumName) {
     std::lock_guard l{lock()};
-    optional(name, enumKind, enumName).back().mIsOptional = false;
+    if (enumKind != ParamKind::Enum && enumKind != ParamKind::SoftEnum) {
+        throw std::invalid_argument("invalid enum kind");
+    }
+    addParam(name, enumKind, false);
+    back().mEnumNameOrPostfix = storeStr(enumName);
     return *this;
 }
 RuntimeOverload& RuntimeOverload::text(std::string_view text) {

@@ -17,7 +17,7 @@ class RuntimeOverload : private OverloadData {
 
     RuntimeOverload(CommandHandle&, std::weak_ptr<mod::Mod> mod);
 
-    void addParam(std::string_view name, ParamKindType kind, CommandParameterDataType type);
+    void addParam(std::string_view name, ParamKindType kind, bool optional);
 
 public:
     LLNDAPI RuntimeOverload& optional(std::string_view name, ParamKindType kind);

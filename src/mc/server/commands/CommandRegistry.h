@@ -505,18 +505,11 @@ public:
     bool parse(
         void*                              storage,
         CommandRegistry::ParseToken const& token,
-        CommandOrigin const& /*origin*/,
-        int /*version*/,
-        std::string& /*error*/,
-        std::vector<std::string>& /*errorParams*/
-    ) const {
-        if constexpr (std::is_enum_v<T>) {
-            *(T*)storage = (T)getEnumData(token);
-            return true;
-        } else {
-            return false;
-        }
-    }
+        CommandOrigin const&               origin,
+        int                                version,
+        std::string&                       error,
+        std::vector<std::string>&          errorParams
+    ) const;
 
     template <class E, class C>
     bool parseEnum(
@@ -947,12 +940,3 @@ MCTAPI bool CommandRegistry::parseEnum<
     CommandChainedSubcommand,
     void>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
     const;
-
-template <>
-inline bool CommandRegistry::parse<std::pair<
-    std::string,
-    uint64>>(void* target, CommandRegistry::ParseToken const& token, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const {
-    *(std::pair<std::string, uint64>*)target = {token.toString(), getEnumData(token)};
-    return true;
-}

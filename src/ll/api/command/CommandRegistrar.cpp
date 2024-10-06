@@ -10,6 +10,7 @@
 #include "ll/api/base/StdInt.h"
 #include "ll/api/command/CommandHandle.h"
 #include "ll/api/command/OverloadData.h"
+#include "ll/api/command/runtime/RuntimeEnum.h"
 #include "ll/api/service/Bedrock.h"
 #include "ll/api/service/GamingStatus.h"
 #include "ll/api/utils/StringUtils.h"
@@ -122,13 +123,13 @@ bool CommandRegistrar::tryRegisterRuntimeEnum(
     std::string const&                          name,
     std::vector<std::pair<std::string, uint64>> values
 ) {
-    return tryRegisterEnum(name, std::move(values), Bedrock::type_id<CommandRegistry, std::pair<std::string, uint64>>(), &CommandRegistry::parse<std::pair<std::string, uint64>>);
+    return tryRegisterEnum(name, std::move(values), Bedrock::type_id<CommandRegistry, RuntimeEnum>(), &CommandRegistry::parse<RuntimeEnum>);
 }
 bool CommandRegistrar::addRuntimeEnumValues(
     std::string const&                          name,
     std::vector<std::pair<std::string, uint64>> values
 ) {
-    return addEnumValues(name, std::move(values), Bedrock::type_id<CommandRegistry, std::pair<std::string, uint64>>());
+    return addEnumValues(name, std::move(values), Bedrock::type_id<CommandRegistry, RuntimeEnum>());
 }
 bool CommandRegistrar::hasSoftEnum(std::string const& name) { return getRegistry().mSoftEnumLookup.contains(name); }
 
