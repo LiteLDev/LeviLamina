@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/agent/Command.h"
+#include "mc/world/actor/agent/agent_commands/Command.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,26 +12,23 @@ namespace AgentCommands { class Command; }
 
 namespace AgentCommands {
 
-class GetItemSpaceCommand : public ::AgentCommands::Command {
+class PlaceCommand : public ::AgentCommands::Command {
 public:
     // prevent constructor by default
-    GetItemSpaceCommand& operator=(GetItemSpaceCommand const&);
-    GetItemSpaceCommand(GetItemSpaceCommand const&);
-    GetItemSpaceCommand();
+    PlaceCommand& operator=(PlaceCommand const&);
+    PlaceCommand(PlaceCommand const&);
+    PlaceCommand();
 
 public:
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~GetItemSpaceCommand() = default;
+    virtual ~PlaceCommand() = default;
 
     // vIndex: 1
     virtual void execute();
 
     // vIndex: 2
     virtual bool isDone();
-
-    // vIndex: 4
-    virtual void fireCommandDoneEvent();
 
     // NOLINTEND
 };

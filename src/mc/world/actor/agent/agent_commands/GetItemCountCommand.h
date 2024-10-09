@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/agent/Command.h"
+#include "mc/world/actor/agent/agent_commands/Command.h"
 
 // auto generated forward declare list
 // clang-format off

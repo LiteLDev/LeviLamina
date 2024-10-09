@@ -3,35 +3,44 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/agent/Command.h"
+#include "mc/world/actor/agent/agent_components/Direction.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace AgentCommands { class Command; }
+class Vec3;
 // clang-format on
 
 namespace AgentCommands {
 
-class InspectDataCommand : public ::AgentCommands::Command {
+class Command {
 public:
     // prevent constructor by default
-    InspectDataCommand& operator=(InspectDataCommand const&);
-    InspectDataCommand(InspectDataCommand const&);
-    InspectDataCommand();
+    Command& operator=(Command const&);
+    Command(Command const&);
+    Command();
 
 public:
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~InspectDataCommand() = default;
+    virtual ~Command();
 
     // vIndex: 1
     virtual void execute();
 
     // vIndex: 2
-    virtual bool isDone();
+    virtual bool isDone() = 0;
+
+    // vIndex: 3
+    virtual void tick();
 
     // vIndex: 4
     virtual void fireCommandDoneEvent();
+
+    // NOLINTEND
+
+    // protected:
+    // NOLINTBEGIN
+    MCAPI class Vec3 _getNextPosFromDirection(::AgentComponents::Direction dir);
 
     // NOLINTEND
 };

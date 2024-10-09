@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/threading/ApiId.h"
 #include "mc/deps/core/threading/LocklessQueue.h"
 #include "mc/deps/core/threading/XTaskQueueDispatchMode.h"
-#include "mc/enums/ApiId.h"
 
 // auto generated forward declare list
 // clang-format off

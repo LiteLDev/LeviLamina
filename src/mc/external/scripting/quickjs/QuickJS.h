@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/scripting/DebuggerLogLevel.h"
 #include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/external/scripting/lifetime_registry/TypedObjectHandle.h"
 #include "mc/external/scripting/quickjs/NativeObjectOwnership.h"
@@ -11,6 +10,7 @@
 #include "mc/external/scripting/reflection/Privilege.h"
 #include "mc/external/scripting/runtime/FutureStatus.h"
 #include "mc/external/scripting/runtime/Result.h"
+#include "mc/scripting/debugger/DebuggerLogLevel.h"
 
 // auto generated forward declare list
 // clang-format off

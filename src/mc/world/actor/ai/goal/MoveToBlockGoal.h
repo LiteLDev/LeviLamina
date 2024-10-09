@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/enums/TargetSelectionMethod.h"
 #include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/TargetSelectionMethod.h"
 
 class MoveToBlockGoal : public ::Goal {
 public:

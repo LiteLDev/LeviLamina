@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/scripting/DebuggerLogLevel.h"
 #include "mc/external/scripting/LogLevel.h"
 #include "mc/external/scripting/binding_type/EnumBinding.h"
 #include "mc/external/scripting/lifetime_registry/ObjectHandleValue.h"
@@ -14,6 +13,7 @@
 #include "mc/external/scripting/reflection/Privilege.h"
 #include "mc/external/scripting/runtime/FutureStatus.h"
 #include "mc/external/scripting/runtime/Result.h"
+#include "mc/scripting/debugger/DebuggerLogLevel.h"
 
 // auto generated forward declare list
 // clang-format off

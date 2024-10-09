@@ -3,44 +3,35 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/components/agent_components/Direction.h"
+#include "mc/world/actor/agent/agent_commands/Command.h"
 
 // auto generated forward declare list
 // clang-format off
-class Vec3;
+namespace AgentCommands { class Command; }
 // clang-format on
 
 namespace AgentCommands {
 
-class Command {
+class GetItemSpaceCommand : public ::AgentCommands::Command {
 public:
     // prevent constructor by default
-    Command& operator=(Command const&);
-    Command(Command const&);
-    Command();
+    GetItemSpaceCommand& operator=(GetItemSpaceCommand const&);
+    GetItemSpaceCommand(GetItemSpaceCommand const&);
+    GetItemSpaceCommand();
 
 public:
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Command();
+    virtual ~GetItemSpaceCommand() = default;
 
     // vIndex: 1
     virtual void execute();
 
     // vIndex: 2
-    virtual bool isDone() = 0;
-
-    // vIndex: 3
-    virtual void tick();
+    virtual bool isDone();
 
     // vIndex: 4
     virtual void fireCommandDoneEvent();
-
-    // NOLINTEND
-
-    // protected:
-    // NOLINTBEGIN
-    MCAPI class Vec3 _getNextPosFromDirection(::AgentComponents::Direction dir);
 
     // NOLINTEND
 };
