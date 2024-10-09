@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/codebuilder/CodeStatus.h"
+#include "mc/world/level/code_builder_execution_state/CodeStatus.h"
 
 namespace CodeBuilderExecutionState {
 // NOLINTBEGIN
