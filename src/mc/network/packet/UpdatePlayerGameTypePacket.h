@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/GameType.h"
-#include "mc/world/ActorUniqueID.h"
+#include "mc/common/ActorUniqueID.h"
+#include "mc/world/level/GameType.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"

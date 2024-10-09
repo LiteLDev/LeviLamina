@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/containers/managers/models/ItemEnchantOption.h"
+#include "mc/world/item/enchanting/ItemEnchantOption.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"

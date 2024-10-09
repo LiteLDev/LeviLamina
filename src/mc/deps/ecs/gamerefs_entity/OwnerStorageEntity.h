@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/entity/EntityContext.h"
+#include "mc/deps/ecs/gamerefs_entity/EntityContext.h"
 
 class Actor;
 

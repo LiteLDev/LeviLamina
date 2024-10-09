@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/item/crafting/MerchantRecipe.h"
+#include "mc/world/item/trading/MerchantRecipe.h"
 
 // auto generated inclusion list
 #include "mc/world/inventory/network/TypedServerNetId.h"

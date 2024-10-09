@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/InvertableFilter.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/server/commands/CommandPosition.h"
 #include "mc/server/commands/CommandSelectionOrder.h"

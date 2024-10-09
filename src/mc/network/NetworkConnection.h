@@ -1,10 +1,10 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/NetworkConnectionType.h"
 #include "mc/network/BatchedNetworkPeer.h"
 #include "mc/network/CompressedNetworkPeer.h"
 #include "mc/network/EncryptedNetworkPeer.h"
-#include "mc/network/NetworkConnectionType.h"
 #include "mc/network/NetworkIdentifier.h"
 
 // auto generated inclusion list

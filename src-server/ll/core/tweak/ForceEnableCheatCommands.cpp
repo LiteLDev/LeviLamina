@@ -1,11 +1,11 @@
 #include "ll/core/tweak/ForceEnableCheatCommands.h"
 
-#include "mc/enums/SemanticConstraint.h"
 #include "mc/server/commands/CommandFlag.h"
 #include "mc/server/commands/CommandOrigin.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/server/commands/CommandRegistry.h"
 #include "mc/server/commands/CommandSelectorBase.h"
+#include "mc/server/commands/SemanticConstraint.h"
 
 #include "ll/api/memory/Hook.h"
 #include <memory>

@@ -30,10 +30,10 @@
 #include "ll/api/event/world/BlockChangedEvent.h"
 #include "ll/api/event/world/SpawnMobEvent.h"
 #include "ll/api/io/FileUtils.h"
-#include "mc/codebuilder/MCRESULT.h"
+#include "mc/deps/core/utility/MCRESULT.h"
 #include "mc/nbt/CompoundTag.h"
 #include "mc/world/actor/ActorDamageSource.h"
-#include "mc/world/item/registry/ItemStack.h"
+#include "mc/world/item/ItemStack.h"
 #include "mc/world/level/dimension/Dimension.h"
 
 

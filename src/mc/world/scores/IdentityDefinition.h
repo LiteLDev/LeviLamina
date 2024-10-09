@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/ActorUniqueID.h"
+#include "mc/common/ActorUniqueID.h"
 #include "mc/world/scores/PlayerScoreboardId.h"
 #include "mc/world/scores/ScoreboardId.h"
 

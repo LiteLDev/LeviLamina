@@ -1,12 +1,12 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/common/ActorRuntimeID.h"
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/entity/components/PlayerPositionModeComponent.h"
-#include "mc/entity/utilities/ActorType.h"
 #include "mc/events/MinecraftEventing.h"
-#include "mc/math/Vec2.h"
-#include "mc/math/Vec3.h"
-#include "mc/world/ActorRuntimeID.h"
+#include "mc/world/actor/ActorType.h"
 #include "mc/world/level/Tick.h"
 
 // auto generated inclusion list

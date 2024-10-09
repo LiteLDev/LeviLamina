@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world//actor/common/CameraPreset.h"
+#include "mc/world/level/camera/CameraPreset.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"

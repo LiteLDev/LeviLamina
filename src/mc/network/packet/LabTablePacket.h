@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/LabTableReactionType.h"
 #include "mc/world/level/BlockPos.h"
 
 // auto generated inclusion list

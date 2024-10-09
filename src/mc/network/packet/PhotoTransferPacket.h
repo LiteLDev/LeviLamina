@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/PhotoType.h"
-#include "mc/world/ActorUniqueID.h"
+#include "mc/common/ActorUniqueID.h"
+#include "mc/world/level/storage/PhotoType.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"

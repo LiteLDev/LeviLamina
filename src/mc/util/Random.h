@@ -1,9 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-#include "mc/deps/core/common/bedrock/ThreadOwner.h"
-#include "mc/math/Random.h"
+#include "mc/deps/application/common/utility/ThreadOwner.h"
+#include "mc/deps/core/math/Random.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 // auto generated inclusion list
 #include "mc/platform/threading/ThreadLocalObject.h"

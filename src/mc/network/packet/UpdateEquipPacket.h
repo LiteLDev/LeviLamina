@@ -1,10 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/common/ActorUniqueID.h"
 #include "mc/nbt/CompoundTag.h"
-#include "mc/world/ActorUniqueID.h"
-#include "mc/world/containers/ContainerID.h"
-#include "mc/world/containers/ContainerType.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"

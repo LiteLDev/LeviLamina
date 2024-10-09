@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/wrapper/StackRefResult.h"
+#include "mc/deps/game_refs/StackRefResult.h"
 
 template <typename T>
 class WeakRef {

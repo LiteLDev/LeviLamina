@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/ActorRuntimeID.h"
-#include "mc/world/ActorUniqueID.h"
+#include "mc/common/ActorRuntimeID.h"
+#include "mc/common/ActorUniqueID.h"
 #include "mc/world/actor/DataItem.h"
 #include "mc/world/actor/SynchedActorDataEntityWrapper.h"
 #include "mc/world/item/NetworkItemStackDescriptor.h"

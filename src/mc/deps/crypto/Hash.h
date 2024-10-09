@@ -2,6 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+#include "ll/api/utils/StringUtils.h"
+
 // auto generated inclusion list
 #include "mc/deps/crypto/hash/HashType.h"
 #include "mc/deps/crypto/hash/IHash.h"
@@ -16,15 +18,28 @@ namespace Crypto::Hash {
 
 class Hash : public ::Crypto::Hash::IHash {
 public:
-    // prevent constructor by default
-    Hash& operator=(Hash const&);
-    Hash(Hash const&);
-    Hash();
+    HashType               mHashType;
+    std::unique_ptr<IHash> mHash;
+
+    [[nodiscard]] inline std::string toString() {
+        auto data = std::string(resultSize(), '\0');
+        final((uchar*)data.data());
+        return ll::string_utils::strToHexStr(data);
+    }
+
+    inline void update(std::string_view data) {
+        constexpr const auto max = std::numeric_limits<uint>::max();
+        while (data.size() > max) {
+            update(data.data(), max);
+            data.remove_prefix(max);
+        }
+        update(data.data(), (uint)data.size());
+    }
 
 public:
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Hash();
+    virtual ~Hash() = default;
 
     // vIndex: 1
     virtual void reset();

@@ -1,8 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/ActorRuntimeID.h"
-#include "mc/world/containers/ContainerID.h"
+#include "mc/common/ActorRuntimeID.h"
 #include "mc/world/item/NetworkItemStackDescriptor.h"
 
 // auto generated inclusion list

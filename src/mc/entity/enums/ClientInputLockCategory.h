@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/common/bedrock/typeid_t.h"
+#include "mc/deps/core/utility/typeid_t.h"
 
 enum class ClientInputLockCategory {};
 

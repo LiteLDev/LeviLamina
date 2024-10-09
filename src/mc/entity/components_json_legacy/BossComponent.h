@@ -1,9 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/mce/UUID.h"
-#include "mc/enums/BossBarColor.h"
-#include "mc/enums/BossBarOverlay.h"
+#include "mc/platform/UUID.h"
 
 // auto generated inclusion list
 #include "mc/network/packet/types/world/actor/ai/util/BossBarColor.h"

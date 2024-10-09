@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/common/bedrock/CallStack.h"
+#include "mc/platform/CallStack.h"
 
 namespace Bedrock {
 

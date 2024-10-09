@@ -1,11 +1,10 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/AnimationMode.h"
-#include "mc/enums/Mirror.h"
-#include "mc/enums/Rotation.h"
-#include "mc/math/Vec3.h"
-#include "mc/world/ActorUniqueID.h"
+#include "mc/common/ActorUniqueID.h"
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/util/Mirror.h"
+#include "mc/util/Rotation.h"
 #include "mc/world/level/BlockPos.h"
 
 // auto generated inclusion list

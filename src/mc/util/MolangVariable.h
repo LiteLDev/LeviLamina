@@ -2,8 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/string/HashedString.h"
-#include "mc/util/molang/MolangScriptArg.h"
-#include "mc/util/molang/MolangVariableSettings.h"
+#include "mc/util/MolangScriptArg.h"
+#include "mc/util/MolangVariableSettings.h"
 
 // auto generated inclusion list
 #include "mc/util/MolangVariableIndex.h"

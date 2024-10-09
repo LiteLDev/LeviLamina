@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/util/ExpressionNode.h"
-#include "mc/util/molang/MolangQueryFunctionReturnType.h"
+#include "mc/util/MolangQueryFunctionReturnType.h"
 
 struct MolangScriptArg;
 

@@ -1,13 +1,13 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/client/services/persona/ArmSize.h"
-#include "mc/deps/core/mce/Color.h"
+#include "mc/deps/core/math/Color.h"
 #include "mc/deps/core/sem_ver/SemVersion.h"
 #include "mc/deps/core_graphics/helpers/TintMapColor.h"
 #include "mc/deps/json/Value.h"
 #include "mc/world/actor/player/AnimatedImageData.h"
 #include "mc/world/actor/player/SerializedPersonaPieceHandle.h"
+#include "mc/world/actor/player/persona/ArmSize.h"
 
 
 // auto generated inclusion list

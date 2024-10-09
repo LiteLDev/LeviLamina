@@ -3,7 +3,7 @@
 #include "ll/api/memory/Hook.h"
 
 #include "mc/nbt/CompoundTag.h"
-#include "mc/world/level/BlockEventCoordinator.h"
+#include "mc/world/events/BlockEventCoordinator.h"
 #include "mc/world/level/BlockSource.h"
 
 

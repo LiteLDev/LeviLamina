@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/AbilitiesIndex.h"
+#include "mc/world/actor/player/AbilitiesIndex.h"
 
 namespace PlayerCapabilities {
 

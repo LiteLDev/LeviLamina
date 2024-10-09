@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/resource/PackInstanceId.h"
 #include "mc/resources/BaseGameVersion.h"
-#include "mc/world/level/PackInstanceId.h"
 #include "mc/world/level/storage/ExperimentStorage.h"
 
 // auto generated inclusion list

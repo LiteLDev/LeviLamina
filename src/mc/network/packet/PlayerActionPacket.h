@@ -1,9 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/common/ActorRuntimeID.h"
 #include "mc/network/NetworkBlockPosition.h"
-#include "mc/world/ActorRuntimeID.h"
-#include "mc/world/actor/player/PlayerActionType.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"

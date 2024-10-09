@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/mce/Color.h"
-#include "mc/math/Vec3.h"
+#include "mc/deps/core/math/Color.h"
+#include "mc/deps/core/math/Vec3.h"
 
 
 // auto generated inclusion list

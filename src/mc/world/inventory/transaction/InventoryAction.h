@@ -2,8 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/world/inventory/transaction/InventorySource.h"
+#include "mc/world/item/ItemStack.h"
 #include "mc/world/item/NetworkItemStackDescriptor.h"
-#include "mc/world/item/registry/ItemStack.h"
 
 class InventoryAction {
 public:
@@ -35,7 +35,7 @@ public:
       mFromItemDescriptor(fromItemDescriptor),
       mToItemDescriptor(toItemDescriptor),
       mFromItem(),
-      mToItem(){};
+      mToItem() {}
 
 public:
     // NOLINTBEGIN

@@ -2,8 +2,8 @@
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
 
-#include "mc/common/wrapper/InteractionResult.h"
 #include "mc/world/gamemode/GameMode.h"
+#include "mc/world/gamemode/InteractionResult.h"
 
 #include "mc/nbt/CompoundTag.h"
 

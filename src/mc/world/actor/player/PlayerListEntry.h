@@ -1,9 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/mce/UUID.h"
-#include "mc/enums/BuildPlatform.h"
-#include "mc/world/ActorUniqueID.h"
+#include "mc/common/ActorUniqueID.h"
+#include "mc/deps/core/platform/BuildPlatform.h"
+#include "mc/platform/UUID.h"
 #include "mc/world/actor/player/SerializedSkin.h"
 
 // auto generated inclusion list

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/mce/UUID.h"
+#include "mc/platform/UUID.h"
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"

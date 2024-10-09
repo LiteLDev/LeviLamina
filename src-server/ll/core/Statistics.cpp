@@ -24,8 +24,8 @@
 
 #include "mc/common/BuildInfo.h"
 #include "mc/common/Common.h"
-#include "mc/deps/core/mce/UUID.h"
-#include "mc/server/common/PropertiesSettings.h"
+#include "mc/platform/UUID.h"
+#include "mc/server/PropertiesSettings.h"
 #include "mc/world/actor/player/Player.h"
 #include "mc/world/level/Level.h"
 

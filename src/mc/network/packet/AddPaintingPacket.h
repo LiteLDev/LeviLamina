@@ -1,9 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/math/Vec3.h"
-#include "mc/world/ActorRuntimeID.h"
-#include "mc/world/ActorUniqueID.h"
+#include "mc/common/ActorRuntimeID.h"
+#include "mc/common/ActorUniqueID.h"
+#include "mc/deps/core/math/Vec3.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"

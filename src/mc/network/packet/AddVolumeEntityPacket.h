@@ -2,10 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/sem_ver/SemVersion.h"
-#include "mc/entity/EntityNetId.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/ecs/EntityNetId.h"
 #include "mc/nbt/CompoundTag.h"
 #include "mc/network/NetworkBlockPosition.h"
-#include "mc/world/AutomaticID.h"
 #include "mc/world/level/dimension/Dimension.h"
 
 // auto generated inclusion list

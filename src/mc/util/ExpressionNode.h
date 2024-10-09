@@ -2,7 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/string/HashedString.h"
-#include "mc/util/molang/MolangVersion.h"
 
 // auto generated inclusion list
 #include "mc/molang/MolangVersion.h"

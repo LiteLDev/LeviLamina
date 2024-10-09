@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/ScorePacketType.h"
 #include "mc/network/packet/ScorePacketInfo.h"
 
 // auto generated inclusion list

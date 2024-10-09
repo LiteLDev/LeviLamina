@@ -2,7 +2,7 @@
 
 #include "ll/api/base/StdInt.h"
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/external/scripting/WatchdogSettings.h"
+#include "mc/external/scripting/runtime/watchdog/WatchdogSettings.h"
 #include "mc/scripting/ScriptPackConfigurationManager.h"
 
 struct ScriptSettings {

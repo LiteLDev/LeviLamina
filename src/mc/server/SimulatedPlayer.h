@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/math/Vec2.h"
-#include "mc/math/Vec3.h"
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/core/math/Vec3.h"
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"

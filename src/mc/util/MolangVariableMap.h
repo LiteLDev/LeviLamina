@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/util/molang/MolangVariable.h"
+#include "mc/util/MolangVariable.h"
 
 // auto generated inclusion list
 #include "mc/util/MolangVariableIndex.h"

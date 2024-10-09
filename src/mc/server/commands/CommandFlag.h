@@ -1,14 +1,14 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/server/commands/flags/CommandAsyncFlag.h"
-#include "mc/server/commands/flags/CommandCheatFlag.h"
-#include "mc/server/commands/flags/CommandEditorFlag.h"
-#include "mc/server/commands/flags/CommandExecuteFlag.h"
-#include "mc/server/commands/flags/CommandSyncFlag.h"
-#include "mc/server/commands/flags/CommandTypeFlag.h"
-#include "mc/server/commands/flags/CommandUsageFlag.h"
-#include "mc/server/commands/flags/CommandVisibilityFlag.h"
+#include "mc/server/commands/CommandAsyncFlag.h"
+#include "mc/server/commands/CommandCheatFlag.h"
+#include "mc/server/commands/CommandEditorFlag.h"
+#include "mc/server/commands/CommandExecuteFlag.h"
+#include "mc/server/commands/CommandSyncFlag.h"
+#include "mc/server/commands/CommandTypeFlag.h"
+#include "mc/server/commands/CommandUsageFlag.h"
+#include "mc/server/commands/CommandVisibilityFlag.h"
 
 
 enum class CommandFlagValue : ushort {

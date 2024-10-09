@@ -1,11 +1,11 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/Compressibility.h"
+#include "mc/deps/raknet/PacketPriority.h"
+#include "mc/network/Compressibility.h"
 #include "mc/network/IPacketHandlerDispatcher.h"
 #include "mc/network/NetworkIdentifierWithSubId.h"
 #include "mc/network/NetworkPeer.h"
-#include "mc/resources/PacketPriority.h"
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"

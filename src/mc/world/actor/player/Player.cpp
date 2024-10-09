@@ -20,8 +20,8 @@
 #include "mc/network/packet/UpdateAdventureSettingsPacket.h"
 #include "mc/server/ServerLevel.h"
 #include "mc/world/Minecraft.h"
-#include "mc/world/level/AdventureSettings.h"
-#include "mc/world/level/LayeredAbilities.h"
+#include "mc/world/actor/player/LayeredAbilities.h"
+#include "mc/world/level/storage/AdventureSettings.h"
 
 UserEntityIdentifierComponent const& Player::getUserEntityIdentifier() const {
     return *(getEntityContext().tryGetComponent<UserEntityIdentifierComponent>());

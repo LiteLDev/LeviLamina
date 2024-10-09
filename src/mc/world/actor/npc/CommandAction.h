@@ -1,9 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/server/commands/StoredCommand.h"
 #include "mc/world/actor/npc/ActionValue.h"
 #include "mc/world/actor/npc/Button.h"
+#include "mc/world/actor/npc/StoredCommand.h"
 
 namespace npc {
 

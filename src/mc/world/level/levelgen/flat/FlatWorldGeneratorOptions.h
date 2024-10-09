@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/json/Value.h"
-#include "mc/enums/WorldVersion.h"
+#include "mc/world/level/WorldVersion.h"
 
 // auto generated forward declare list
 // clang-format off

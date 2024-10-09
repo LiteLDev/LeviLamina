@@ -2,8 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/common/AppPlatformListener.h"
-#include "mc/deps/core/StorageAreaStateListener.h"
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include "mc/deps/core/file/StorageAreaStateListener.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/world/GameCallbacks.h"
 #include "mc/world/Minecraft.h"
 

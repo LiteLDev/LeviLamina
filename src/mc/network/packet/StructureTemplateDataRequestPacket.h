@@ -2,8 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/network/NetworkBlockPosition.h"
+#include "mc/network/packet/StructureTemplateRequestOperation.h"
 #include "mc/world/level/levelgen/structure/StructureSettings.h"
-#include "mc/world/level/levelgen/structure/StructureTemplateRequestOperation.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"

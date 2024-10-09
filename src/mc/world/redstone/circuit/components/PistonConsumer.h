@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/FacingID.h"
+#include "mc/common/FacingID.h"
 
 // auto generated inclusion list
 #include "mc/world/redstone/circuit/components/CircuitComponentType.h"

@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/entity/utilities/ActorLinkType.h"
-#include "mc/world/ActorUniqueID.h"
+#include "mc/common/ActorUniqueID.h"
+#include "mc/network/packet/types/world/actor/ActorLinkType.h"
 
 struct ActorLink {
     ActorLinkType mType;               // this+0x0

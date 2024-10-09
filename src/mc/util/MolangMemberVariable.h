@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/string/HashedString.h"
-#include "mc/util/molang/MolangScriptArg.h"
+#include "mc/util/MolangScriptArg.h"
 
 struct MolangScriptArg;
 

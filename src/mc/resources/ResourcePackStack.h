@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/levelgen/structure/PackInstance.h"
+#include "mc/resources/PackInstance.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"

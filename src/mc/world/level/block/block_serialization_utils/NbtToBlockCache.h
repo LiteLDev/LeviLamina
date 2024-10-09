@@ -1,14 +1,16 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/block/utils/NBTState.h"
+#include "mc/world/level/block/block_serialization_utils/NBTState.h"
+
+class Block;
 
 namespace BlockSerializationUtils {
 
 struct NbtToBlockCache {
 public:
-    std::map<uint64, std::pair<BlockSerializationUtils::NBTState, const class Block*>> mCache;
-    std::mutex                                                                         mMutex;
+    std::map<uint64, std::pair<NBTState, Block const*>> mCache;
+    std::mutex                                          mMutex;
 
 public:
     // NOLINTBEGIN

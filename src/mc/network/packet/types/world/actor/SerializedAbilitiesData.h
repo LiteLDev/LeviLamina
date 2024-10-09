@@ -1,9 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/common/ActorUniqueID.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/ActorUniqueID.h"
-#include "mc/world/actor/player/PlayerPermissionLevel.h"
+#include "mc/server/commands/PlayerPermissionLevel.h"
 
 
 struct SerializedAbilitiesData {

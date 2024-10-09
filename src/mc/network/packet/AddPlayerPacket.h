@@ -1,19 +1,19 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/mce/UUID.h"
-#include "mc/enums/BuildPlatform.h"
-#include "mc/enums/GameType.h"
-#include "mc/math/Vec2.h"
-#include "mc/math/Vec3.h"
-#include "mc/network/packet/ActorLink.h"
-#include "mc/world/ActorRuntimeID.h"
-#include "mc/world/ActorUniqueID.h"
+#include "mc/common/ActorRuntimeID.h"
+#include "mc/common/ActorUniqueID.h"
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/core/platform/BuildPlatform.h"
+#include "mc/network/packet/types/world/actor/ActorLink.h"
+#include "mc/platform/UUID.h"
 #include "mc/world/actor/DataItem.h"
 #include "mc/world/actor/SynchedActorDataEntityWrapper.h"
+#include "mc/world/actor/player/LayeredAbilities.h"
 #include "mc/world/actor/state/PropertySyncData.h"
 #include "mc/world/item/NetworkItemStackDescriptor.h"
-#include "mc/world/level/LayeredAbilities.h"
+#include "mc/world/level/GameType.h"
 
 
 // auto generated inclusion list

@@ -4,7 +4,7 @@
 
 #include "ll/api/base/Macro.h"
 
-#include "mc/deps/core/mce/UUID.h"
+#include "mc/platform/UUID.h"
 
 namespace ll::service {
 class PlayerInfo {

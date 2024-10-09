@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/LimboEntitiesVersion.h"
+#include "mc/world/level/dimension/LimboEntitiesVersion.h"
 
 // clang-format off
 namespace mce { class Color; }

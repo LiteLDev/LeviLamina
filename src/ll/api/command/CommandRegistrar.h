@@ -16,7 +16,7 @@
 #include "ll/api/mod/ModManagerRegistry.h"
 #include "ll/api/mod/NativeMod.h"
 
-#include "mc/deps/core/common/bedrock/typeid_t.h"
+#include "mc/deps/core/utility/typeid_t.h"
 #include "mc/server/commands/CommandFlag.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/server/commands/CommandRegistry.h"

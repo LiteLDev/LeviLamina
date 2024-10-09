@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/entity/systems/Dependencies.h"
+#include "mc/deps/ecs/systems/Dependencies.h"
 
 struct SystemInfo {
     std::string  mName;

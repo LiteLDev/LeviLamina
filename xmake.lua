@@ -113,6 +113,7 @@ target("LeviLamina")
         "expected-lite",
         "fmt",
         "gsl",
+        "glm",
         "leveldb",
         "magic_enum",
         "nlohmann_json",

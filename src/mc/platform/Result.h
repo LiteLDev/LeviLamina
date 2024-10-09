@@ -2,7 +2,7 @@
 
 #include "ll/api/Expected.h"
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/common/bedrock/ErrorInfo.h"
+#include "mc/platform/ErrorInfo.h"
 
 namespace Bedrock {
 template <typename T, typename Err>

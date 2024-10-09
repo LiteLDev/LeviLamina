@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/network/packet/SerializedAbilitiesData.h"
+#include "mc/network/packet/types/world/actor/SerializedAbilitiesData.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"

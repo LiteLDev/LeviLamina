@@ -31,7 +31,7 @@ public:
     );
 
     virtual std::unique_ptr<class WorldGenerator>
-           createGenerator(class br::worldgen::StructureSetRegistry const& structureSetRegistry);
+    createGenerator(class br::worldgen::StructureSetRegistry const& structureSetRegistry);
 
     virtual void fixWallChunk(class ChunkSource& source, class LevelChunk& lc);
 

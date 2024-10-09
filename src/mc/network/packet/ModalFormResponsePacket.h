@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/json/Value.h"
-#include "mc/enums/ModalFormCancelReason.h"
+#include "mc/network/packet/ModalFormCancelReason.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"

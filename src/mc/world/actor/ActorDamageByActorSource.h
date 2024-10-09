@@ -1,9 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/entity/utilities/ActorCategory.h"
-#include "mc/entity/utilities/ActorType.h"
-#include "mc/world/ActorUniqueID.h"
+#include "mc/common/ActorUniqueID.h"
 
 // auto generated inclusion list
 #include "mc/network/packet/types/world/actor/ActorCategory.h"

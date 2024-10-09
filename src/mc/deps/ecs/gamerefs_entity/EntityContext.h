@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/entity/EntityId.h"
-#include "mc/entity/gamerefs_entity/EntityRegistry.h"
+#include "mc/deps/ecs/EntityId.h"
+#include "mc/deps/ecs/gamerefs_entity/EntityRegistry.h"
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"

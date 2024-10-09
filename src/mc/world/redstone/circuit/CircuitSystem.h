@@ -1,10 +1,10 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/CircuitComponentType.h"
-#include "mc/enums/FacingID.h"
+#include "mc/common/FacingID.h"
 #include "mc/world/redstone/circuit/CircuitSceneGraph.h"
 #include "mc/world/redstone/circuit/components/BaseCircuitComponent.h"
+#include "mc/world/redstone/circuit/components/CircuitComponentType.h"
 
 class CircuitSystem {
 public:

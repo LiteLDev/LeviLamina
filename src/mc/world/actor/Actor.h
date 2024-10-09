@@ -2,10 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/dataloadhelper/DefaultDataLoadHelper.h"
-#include "mc/entity/utilities/ActorDamageCause.h"
-#include "mc/math/Vec3.h"
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/world/actor/ActorDamageCause.h"
 #include "mc/world/actor/DistanceSortedActor.h"
-#include "mc/world/actor/common/ClipDefaults.h"
+#include "mc/world/level/ClipDefaults.h"
 #include "mc/world/phys/HitResult.h"
 
 // auto generated inclusion list

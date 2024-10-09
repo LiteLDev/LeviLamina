@@ -41,7 +41,7 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    MCAPI static Proxy::constIterator _getSizeInfoIteratorByType(::persona::ArmSize::TypearmSizeType);
+    MCAPI static Proxy::constIterator _getSizeInfoIteratorByType(::persona::ArmSize::Type armSizeType);
 
     // NOLINTEND
 

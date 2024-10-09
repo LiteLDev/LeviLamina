@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/codebuilder/MCRESULT.h"
+#include "mc/deps/core/utility/MCRESULT.h"
 #include "mc/server/commands/CommandContext.h"
 
 // auto generated inclusion list

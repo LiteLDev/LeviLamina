@@ -3,7 +3,7 @@
 #include "ll/api/base/Containers.h"
 #include "ll/api/command/runtime/ParamKind.h"
 
-#include "mc/world/level/Command.h"
+#include "mc/server/commands/Command.h"
 
 namespace ll::command {
 class RuntimeOverload;

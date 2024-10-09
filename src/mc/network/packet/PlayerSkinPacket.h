@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/mce/UUID.h"
+#include "mc/platform/UUID.h"
 #include "mc/world/actor/player/SerializedSkin.h"
 
 // auto generated inclusion list

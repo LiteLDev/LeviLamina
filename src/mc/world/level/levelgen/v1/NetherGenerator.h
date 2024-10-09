@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/biome/surface/PerlinNoise.h"
-#include "mc/world/level/biome/surface/PerlinSimplexNoise.h"
+#include "mc/world/level/levelgen/synth/PerlinNoise.h"
+#include "mc/world/level/levelgen/synth/PerlinSimplexNoise.h"
 
 // auto generated inclusion list
 #include "mc/util/MultidimensionalArray.h"

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/services/ServiceReference.h"
+#include "mc/deps/core/utility/ServiceReference.h"
 
 template <typename T>
 class ServiceLocator {

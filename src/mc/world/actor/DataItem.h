@@ -2,11 +2,11 @@
 
 #include "ll/api/base/Meta.h"
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/entity/utilities/ActorDataIDs.h"
-#include "mc/enums/DataItemType.h"
-#include "mc/math/Vec2.h"
-#include "mc/math/Vec3.h"
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/nbt/CompoundTag.h"
+#include "mc/world/actor/ActorDataIDs.h"
+#include "mc/world/actor/DataItemType.h"
 #include "mc/world/level/BlockPos.h"
 
 class DataItem {

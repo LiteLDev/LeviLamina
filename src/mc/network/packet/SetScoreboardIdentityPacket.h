@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/ScoreboardIdentityPacketType.h"
 #include "mc/network/packet/ScoreboardIdentityPacketInfo.h"
+#include "mc/network/packet/ScoreboardIdentityPacketType.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"

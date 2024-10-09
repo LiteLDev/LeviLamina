@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/levelgen/GeneratorType.h"
+#include "mc/world/level/GeneratorType.h"
 
 // auto generated inclusion list
 #include "mc/world/level/dimension/DimensionDocument.h"

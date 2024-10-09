@@ -1,12 +1,12 @@
 #pragma once
 
-#include "mc/common/wrapper/OwnerPtr.h"
-#include "mc/common/wrapper/StackRefResult.h"
-#include "mc/common/wrapper/WeakRef.h"
+#include "mc/deps/game_refs/OwnerPtr.h"
+#include "mc/deps/game_refs/StackRefResult.h"
+#include "mc/deps/game_refs/WeakRef.h"
 
-#include "mc/entity/gamerefs_entity/OwnerStorageEntity.h"
-#include "mc/entity/gamerefs_entity/StackResultStorageEntity.h"
-#include "mc/entity/gamerefs_entity/WeakStorageEntity.h"
+#include "mc/deps/ecs/gamerefs_entity/OwnerStorageEntity.h"
+#include "mc/deps/ecs/gamerefs_entity/StackResultStorageEntity.h"
+#include "mc/deps/ecs/gamerefs_entity/WeakStorageEntity.h"
 
 class EntityContext;
 

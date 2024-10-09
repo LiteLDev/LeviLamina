@@ -2,8 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/common/BrightnessPair.h"
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-#include "mc/enums/StorageVersion.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/network/packet/UpdateSubChunkBlocksPacket.h"
 #include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/LevelListener.h"
@@ -16,6 +15,7 @@
 #include "mc/world/level/dimension/IDimension.h"
 #include "mc/world/level/levelgen/v1/FeatureTerrainAdjustments.h"
 #include "mc/world/level/saveddata/SavedData.h"
+#include "mc/world/level/storage/StorageVersion.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"

@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/mce/UUID.h"
-#include "mc/world/ActorRuntimeID.h"
+#include "mc/common/ActorRuntimeID.h"
+#include "mc/platform/UUID.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"

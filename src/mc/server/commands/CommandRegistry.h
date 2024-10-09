@@ -633,30 +633,30 @@ public:
         std::string const&                               name,
         std::vector<std::pair<std::string, uint>> const& strings,
         class Bedrock::typeid_t<class CommandRegistry>   type,
-        ParseFn parse,
-        struct CommandRegistry::Signature* signature
+        ParseFn                                          parse,
+        struct CommandRegistry::Signature*               signature
     );
 
     MCAPI class CommandRegistry::Symbol _addChainedSubcommandValuesInternal(
         std::string const&                             name,
         std::vector<std::pair<uint64, uint>> const&    values,
         class Bedrock::typeid_t<class CommandRegistry> type,
-        ParseFn parse,
-        struct CommandRegistry::Signature* signature
+        ParseFn                                        parse,
+        struct CommandRegistry::Signature*             signature
     );
 
     MCAPI class CommandRegistry::Symbol _addEnumValuesInternal(
         std::string const&                                 name,
         std::vector<std::pair<std::string, uint64>> const& strings,
         class Bedrock::typeid_t<class CommandRegistry>     type,
-        ParseFn parse
+        ParseFn                                            parse
     );
 
     MCAPI class CommandRegistry::Symbol _addEnumValuesInternal(
         std::string const&                             name,
         std::vector<std::pair<uint64, uint64>> const&  values,
         class Bedrock::typeid_t<class CommandRegistry> type,
-        ParseFn parse
+        ParseFn                                        parse
     );
 
     MCAPI class CommandRegistry::Symbol _addFunctionSoftEnum();

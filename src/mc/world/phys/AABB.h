@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/math/Vec3.h"
+#include "mc/deps/core/math/Vec3.h"
 
 class BoundingBox;
 
@@ -14,9 +14,9 @@ public:
         Vec3 max, y, g, t, z, b, p;
     };
 
-    [[nodiscard]] constexpr AABB() noexcept : min(0), max(0){};
-    [[nodiscard]] constexpr AABB(class AABB const& k) noexcept : min(k.min), max(k.max){};
-    [[nodiscard]] constexpr AABB(class Vec3 const& min, class Vec3 const& max) noexcept : min(min), max(max){};
+    [[nodiscard]] constexpr AABB() noexcept : min(0), max(0) {};
+    [[nodiscard]] constexpr AABB(class AABB const& k) noexcept : min(k.min), max(k.max) {};
+    [[nodiscard]] constexpr AABB(class Vec3 const& min, class Vec3 const& max) noexcept : min(min), max(max) {};
 
     inline AABB& merge(AABB const& a) noexcept {
         *this = AABB{ll::math::min(a.min, min), ll::math::max(a.max, max)};

@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/network/packet/PlayerListEntry.h"
-#include "mc/world/actor/player/PlayerListPacketType.h"
+#include "mc/network/packet/PlayerListPacketType.h"
+#include "mc/world/actor/player/PlayerListEntry.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"

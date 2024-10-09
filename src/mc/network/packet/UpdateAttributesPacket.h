@@ -1,10 +1,10 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/common/ActorRuntimeID.h"
 #include "mc/deps/core/string/HashedString.h"
-#include "mc/world/ActorRuntimeID.h"
-#include "mc/world/actor/monster/AttributeModifier.h"
 #include "mc/world/attribute/AttributeData.h"
+#include "mc/world/attribute/AttributeModifier.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"

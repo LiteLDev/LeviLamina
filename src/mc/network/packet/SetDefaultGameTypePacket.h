@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/GameType.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"

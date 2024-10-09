@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/BlockUpdateFlag.h"
 #include "mc/network/NetworkBlockPosition.h"
 
 // auto generated inclusion list
@@ -15,6 +14,16 @@ public:
         Standard = 0,
         Extra    = 1,
         Count    = 2,
+    };
+    enum class BlockUpdateFlag : uchar {
+        None                = 0,
+        Neighbors           = 1 << 0,
+        Network             = 1 << 1,
+        NoGraphic           = 1 << 2,
+        Priority            = 1 << 3,
+        ForceNoticeListener = 1 << 4,
+        All                 = Neighbors | Network, // default value
+        AllPriority         = All | Priority,
     };
 
     static const bool          SHARE_WITH_HANDLER = true; // constant

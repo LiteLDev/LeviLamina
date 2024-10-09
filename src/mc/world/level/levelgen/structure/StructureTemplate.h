@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/Mirror.h"
-#include "mc/enums/Rotation.h"
+#include "mc/util/Mirror.h"
+#include "mc/util/Rotation.h"
 #include "mc/world/level/block/registry/IUnknownBlockTypeRegistry.h"
 #include "mc/world/level/levelgen/structure/BoundingBox.h"
 #include "mc/world/level/levelgen/structure/StructureTemplateData.h"

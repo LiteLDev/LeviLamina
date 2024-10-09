@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/wrapper/OwnerPtr.h"
+#include "mc/deps/game_refs/OwnerPtr.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"

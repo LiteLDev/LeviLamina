@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/ServerAuthMovementMode.h"
+#include "mc/entity/components/ServerAuthMovementMode.h"
 
 struct SyncedPlayerMovementSettings {
 public:

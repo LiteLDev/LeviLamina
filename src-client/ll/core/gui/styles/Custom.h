@@ -1,8 +1,8 @@
 #pragma once
 
 #include "ll/api/Expected.h"
-#include "mc/deps/core/mce/Color.h"
-#include "mc/math/Vec2.h"
+#include "mc/deps/core/math/Color.h"
+#include "mc/deps/core/math/Vec2.h"
 #include "nlohmann/json.hpp"
 
 namespace ll::gui {

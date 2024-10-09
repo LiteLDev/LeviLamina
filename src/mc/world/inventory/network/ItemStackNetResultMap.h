@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/item/components/ItemStackNetResult.h"
 
 // auto generated inclusion list
 #include "mc/util/BidirectionalUnorderedMap.h"

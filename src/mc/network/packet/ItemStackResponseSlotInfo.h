@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/network/TypedServerNetId.h"
-#include "mc/world/item/components/ItemStackNetIdTag.h"
+#include "mc/world/inventory/network/ItemStackNetIdTag.h"
+#include "mc/world/inventory/network/TypedServerNetId.h"
 
 struct ItemStackResponseSlotInfo {
 public:

@@ -1,8 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/events/LevelSoundEvent.h"
-#include "mc/math/Vec3.h"
+#include "mc/deps/core/math/Vec3.h"
 
 // auto generated inclusion list
 #include "mc/deps/puv/LevelSoundEvent.h"

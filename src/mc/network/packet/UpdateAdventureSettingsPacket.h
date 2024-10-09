@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/AdventureSettings.h"
+#include "mc/world/level/storage/AdventureSettings.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"

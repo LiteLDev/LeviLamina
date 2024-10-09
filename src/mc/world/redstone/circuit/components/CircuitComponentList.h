@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/FacingID.h"
+#include "mc/common/FacingID.h"
 #include "mc/world/level/BlockPos.h"
 
 class CircuitComponentList {

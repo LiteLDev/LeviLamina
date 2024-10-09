@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/PathPart.h"
+#include "mc/deps/core/file/PathPart.h"
 
 // auto generated forward declare list
 // clang-format off

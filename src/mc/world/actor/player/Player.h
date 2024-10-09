@@ -2,9 +2,9 @@
 
 #include "ll/api/base/Macro.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/entity/components/UserEntityIdentifierComponent.h"
 #include "mc/network/NetworkPeer.h"
-#include "mc/server/volume/UserEntityIdentifierComponent.h"
-#include "mc/world/actor/player/EnderChestContainer.h"
+#include "mc/world/inventory/EnderChestContainer.h"
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"

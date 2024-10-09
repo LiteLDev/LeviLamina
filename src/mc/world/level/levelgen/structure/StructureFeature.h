@@ -1,9 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/common/bedrock/ConditionVariable.h"
-#include "mc/deps/core/common/bedrock/Mutex.h"
-#include "mc/deps/core/threading/SpinLock.h"
+#include "mc/platform/threading/ConditionVariable.h"
+#include "mc/platform/threading/Mutex.h"
+#include "mc/platform/threading/SpinLock.h"
 #include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/levelgen/structure/StructureStart.h"
 

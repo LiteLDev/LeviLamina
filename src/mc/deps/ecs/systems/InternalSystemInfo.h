@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/entity/systems/SystemInfo.h"
+#include "mc/deps/ecs/systems/SystemInfo.h"
 
 struct InternalSystemInfo : public SystemInfo {
 public:

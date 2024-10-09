@@ -2,7 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/json/Value.h"
-#include "mc/enums/AgentActionType.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"

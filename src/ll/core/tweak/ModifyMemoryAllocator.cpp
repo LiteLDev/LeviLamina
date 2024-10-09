@@ -1,7 +1,7 @@
 #include "ll/api/memory/Hook.h"
 
-#include "mc/deps/core/common/bedrock/IMemoryAllocator.h"
-#include "mc/deps/core/common/bedrock/Memory.h"
+#include "mc/deps/core/memory/IMemoryAllocator.h"
+#include "mc/deps/core/memory/Memory.h"
 
 namespace ll::memory {
 

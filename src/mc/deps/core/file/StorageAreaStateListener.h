@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/common/bedrock/Mutex.h"
+#include "mc/platform/threading/Mutex.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/file/LevelStorageState.h"

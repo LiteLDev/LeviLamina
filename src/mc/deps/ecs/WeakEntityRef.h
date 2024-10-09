@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/entity/gamerefs_entity/EntityRefTraits.h"
+#include "mc/deps/ecs/gamerefs_entity/EntityRefTraits.h"
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"

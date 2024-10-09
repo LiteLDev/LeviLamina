@@ -1,9 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/item/components/ItemStackLegacyRequestIdTag.h"
-#include "mc/world/item/components/ItemStackNetIdTag.h"
-#include "mc/world/item/components/ItemStackRequestIdTag.h"
+#include "mc/world/inventory/network/ItemStackLegacyRequestIdTag.h"
+#include "mc/world/inventory/network/ItemStackNetIdTag.h"
+#include "mc/world/inventory/network/ItemStackRequestIdTag.h"
 
 // auto generated inclusion list
 #include "mc/platform/Result.h"

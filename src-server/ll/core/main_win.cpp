@@ -25,9 +25,9 @@
 #include "ll/api/utils/HashUtils.h"
 #include "ll/api/utils/SystemUtils.h"
 
+#include "mc/server/DedicatedServer.h"
 #include "mc/server/ServerInstance.h"
-#include "mc/server/common/DedicatedServer.h"
-#include "mc/server/common/commands/StopCommand.h"
+#include "mc/server/commands/StopCommand.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 
 #include "ll/core/Config.h"

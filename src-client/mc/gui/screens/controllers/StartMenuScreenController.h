@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/gui/screens/controllers/MainMenuScreenController.h"
-
-// auto generated inclusion list
-#include "mc/entity/flags/DirtyFlag.h"
-#include "mc/enums/ui/SceneType.h"
-#include "mc/enums/ui/ViewRequest.h"
 #include "mc/world/events/GameEventNotification.h"
 
 // auto generated forward declare list
@@ -15,7 +10,7 @@ namespace Json { class Value; }
 namespace Social { class User; }
 // clang-format on
 
-class StartMenuScreenController : public MainMenuScreenController {
+class StartMenuScreenController : public ::MainMenuScreenController {
 public:
     // StartMenuScreenController inner types declare
     // clang-format off

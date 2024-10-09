@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/math/Vec3.h"
-#include "mc/world/ActorRuntimeID.h"
+#include "mc/common/ActorRuntimeID.h"
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/world/level/Tick.h"
 
 // auto generated inclusion list

@@ -1,9 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/mce/UUID.h"
 #include "mc/deps/core/sem_ver/SemVersion.h"
-#include "mc/resources/PackType.h"
+#include "mc/platform/UUID.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/resource/PackType.h"

@@ -10,7 +10,7 @@
 
 #include "ll/api/io/LogLevel.h"
 
-#include "mc/common/wrapper/optional_ref.h"
+#include "mc/deps/core/utility/optional_ref.h"
 
 namespace ll::inline utils::error_utils {
 

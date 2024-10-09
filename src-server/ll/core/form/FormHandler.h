@@ -6,7 +6,7 @@
 #include "ll/api/form/SimpleForm.h"
 #include "ll/core/form/CustomFormElement.h"
 #include "mc/deps/json/Value.h"
-#include "mc/enums/ModalFormCancelReason.h"
+#include "mc/network/packet/ModalFormCancelReason.h"
 #include "mc/world/actor/player/Player.h"
 #include <optional>
 

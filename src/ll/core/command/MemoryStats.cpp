@@ -5,7 +5,7 @@
 #include "ll/api/i18n/I18n.h"
 #include "ll/core/Config.h"
 
-#include "mc/deps/core/common/bedrock/IMemoryAllocator.h"
+#include "mc/deps/core/memory/IMemoryAllocator.h"
 
 namespace ll::command {
 void registerMemstatsCommand() {

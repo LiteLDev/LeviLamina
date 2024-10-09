@@ -1,9 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/wrapper/OwnerPtr.h"
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-#include "mc/entity/events/EcsEventDispatcher.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/deps/ecs/events/EcsEventDispatcher.h"
+#include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/entity/systems/DefaultEntitySystemsCollection.h"
 #include "mc/entity/systems/IEntitySystems.h"
 #include "mc/entity/systems/PlayerInteractionSystem.h"

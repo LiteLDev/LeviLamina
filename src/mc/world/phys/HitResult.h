@@ -1,9 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/entity/WeakEntityRef.h"
-#include "mc/enums/FacingID.h"
-#include "mc/math/Vec3.h"
+#include "mc/common/FacingID.h"
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/phys/HitResultType.h"
 

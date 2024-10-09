@@ -4,13 +4,14 @@
 
 namespace Util {
 
-template <typename T0, int T1, int T2, int T3>
-class MultidimensionalArray : public std::array<T0, T1 * T2 * T3> {
+template <typename T, size_t... Ns>
+class MultidimensionalArray : public std::array<T, [] {
+    size_t v = 1;
+    ((v *= Ns), ...);
+    return v;
+}()> {
 public:
-    // prevent constructor by default
-    MultidimensionalArray& operator=(MultidimensionalArray const&);
-    MultidimensionalArray(MultidimensionalArray const&);
-    MultidimensionalArray();
+    consteval size_t dim() const { return sizeof...(Ns); }
 };
 
 }; // namespace Util

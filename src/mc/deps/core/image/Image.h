@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/mce/Blob.h"
+#include "mc/deps/core/container/Blob.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/image/ImageFormat.h"

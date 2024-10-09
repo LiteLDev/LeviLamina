@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/trim/TrimMaterial.h"
-#include "mc/world/trim/TrimPattern.h"
+#include "mc/world/item/registry/TrimMaterial.h"
+#include "mc/world/item/registry/TrimPattern.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"

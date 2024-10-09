@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/util/molang/MolangVariableIndex.h"
+#include "mc/util/MolangVariableIndex.h"
 
 struct MolangVariableSettings {
     enum AccessSpecifier : int {

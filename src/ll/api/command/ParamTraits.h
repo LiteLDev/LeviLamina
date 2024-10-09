@@ -12,7 +12,7 @@
 #include "ll/api/command/Optional.h"
 #include "ll/api/command/SoftEnum.h"
 
-#include "mc/deps/core/common/bedrock/typeid_t.h"
+#include "mc/deps/core/utility/typeid_t.h"
 #include "mc/server/commands/CommandParameterData.h"
 #include "mc/server/commands/CommandParameterDataType.h"
 #include "mc/server/commands/CommandParameterOption.h"

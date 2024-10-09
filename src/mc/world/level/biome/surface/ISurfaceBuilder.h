@@ -4,9 +4,9 @@
 #include "mc/util/Random.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/biome/Biome.h"
-#include "mc/world/level/biome/surface/PerlinSimplexNoise.h"
 #include "mc/world/level/block/BlockVolume.h"
 #include "mc/world/level/chunk/HeightmapWrapper.h"
+#include "mc/world/level/levelgen/synth/PerlinSimplexNoise.h"
 
 class ISurfaceBuilder {
 public:

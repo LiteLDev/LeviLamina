@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/entity/systems/common/ResourceFileSystem.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"

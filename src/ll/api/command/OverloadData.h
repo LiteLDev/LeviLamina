@@ -9,7 +9,7 @@
 #include "ll/api/base/StdInt.h"
 #include "ll/api/mod/NativeMod.h"
 
-#include "mc/deps/core/common/bedrock/typeid_t.h"
+#include "mc/deps/core/utility/typeid_t.h"
 #include "mc/server/commands/CommandParameterData.h"
 #include "mc/server/commands/CommandParameterDataType.h"
 #include "mc/server/commands/CommandRegistry.h"

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/network/packet/ActorLink.h"
+#include "mc/network/packet/types/world/actor/ActorLink.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"

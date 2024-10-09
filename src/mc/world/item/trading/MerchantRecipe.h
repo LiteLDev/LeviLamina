@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/network/RecipeNetIdTag.h"
-#include "mc/network/TypedServerNetId.h"
+#include "mc/world/inventory/network/TypedServerNetId.h"
+#include "mc/world/inventory/network/crafting/RecipeNetIdTag.h"
 #include "mc/world/item/ItemInstance.h"
 
 class MerchantRecipe {

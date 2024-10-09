@@ -3,14 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/gui/controls/UIPropertyBag.h"
 
-// auto generated inclusion list
-#include "mc/entity/flags/DirtyFlag.h"
-#include "mc/enums/ButtonState.h"
-#include "mc/enums/ui/SceneType.h"
-#include "mc/enums/ui/ViewRequest.h"
-#include "mc/external/glm/tvec2.h"
-#include "mc/world/events/GameEventNotification.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }

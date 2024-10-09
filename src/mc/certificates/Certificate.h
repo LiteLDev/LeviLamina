@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/network/UnverifiedCertificate.h"
+#include "mc/certificates/UnverifiedCertificate.h"
 
 // auto generated forward declare list
 // clang-format off

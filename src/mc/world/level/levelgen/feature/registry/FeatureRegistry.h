@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/wrapper/OwnerPtr.h"
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
 // auto generated inclusion list

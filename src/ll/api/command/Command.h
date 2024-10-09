@@ -5,7 +5,7 @@
 #include "ll/api/base/StdInt.h"
 #include "ll/api/reflection/Reflection.h" // IWYU pragma: keep
 
-#include "mc/world/level/Command.h"
+#include "mc/server/commands/Command.h"
 
 namespace ll::command {
 

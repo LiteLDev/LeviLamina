@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/util/ExpressionNode.h"
-#include "mc/util/molang/MolangScriptArg.h"
+#include "mc/util/MolangScriptArg.h"
 
 class RenderParams;
 

@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/network/packet/SubChunkPacket.h"
-#include "mc/world/AutomaticID.h"
 #include "mc/world/level/SubChunkPos.h"
 #include "mc/world/level/dimension/Dimension.h"
 

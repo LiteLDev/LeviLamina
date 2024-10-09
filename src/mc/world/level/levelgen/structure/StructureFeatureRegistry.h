@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/chunk/ChunkGeneratorStructureState.h"
-#include "mc/world/level/levelgen/structure/StructureCache.h"
+#include "mc/world/level/levelgen/v2/ChunkGeneratorStructureState.h"
+#include "mc/world/level/levelgen/v2/StructureCache.h"
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/StructureFeatureType.h"

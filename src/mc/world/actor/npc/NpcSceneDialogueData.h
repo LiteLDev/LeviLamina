@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/entity/WeakEntityRef.h"
+#include "mc/deps/ecs/WeakEntityRef.h"
 
 // auto generated inclusion list
 #include "mc/world/actor/npc/INpcDialogueData.h"

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/utility/MultidimensionalArray.h"
+#include "mc/util/MultidimensionalArray.h"
 #include "mc/world/level/levelgen/feature/CanyonFeature.h"
 #include "mc/world/level/levelgen/feature/MonsterRoomFeature.h"
 #include "mc/world/level/levelgen/feature/UnderwaterCanyonFeature.h"
@@ -86,7 +86,7 @@ public:
 
     // vIndex: 51
     virtual std::unique_ptr<class Aquifer>
-           tryMakeAquifer(class ChunkPos const&, class SurfaceLevelCache const&, short, short, short) const;
+    tryMakeAquifer(class ChunkPos const&, class SurfaceLevelCache const&, short, short, short) const;
 
     // vIndex: 52
     virtual class ChunkLocalNoiseCache createNoiseCache(class ChunkPos chunkPos) const;

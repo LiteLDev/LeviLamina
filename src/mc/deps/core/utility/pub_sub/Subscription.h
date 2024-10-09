@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/common/bedrock/pubsub/SubscriptionBase.h"
+#include "mc/deps/core/utility/pub_sub/SubscriptionBase.h"
 
 namespace Bedrock::PubSub {
 

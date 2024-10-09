@@ -1,8 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/util/molang/MolangVersion.h"
-#include "mc/world/ActorRuntimeID.h"
+#include "mc/common/ActorRuntimeID.h"
 
 // auto generated inclusion list
 #include "mc/molang/MolangVersion.h"

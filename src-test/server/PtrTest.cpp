@@ -1,5 +1,5 @@
 // #include "ll/api/memory/Hook.h"
-// #include "mc/entity/gamerefs_entity/EntityRegistry.h"
+// #include "mc/deps/ecs/gamerefs_entity/EntityRegistry.h"
 // #include "mc/server/ServerInstance.h"
 // #include "mc/world/events/ServerInstanceEventCoordinator.h"
 // #include "mc/world/level/block/Block.h"

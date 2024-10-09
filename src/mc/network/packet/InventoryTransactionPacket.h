@@ -1,10 +1,10 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/network/TypedClientNetId.h"
 #include "mc/world/containers/ContainerEnumName.h"
+#include "mc/world/inventory/network/ItemStackLegacyRequestIdTag.h"
+#include "mc/world/inventory/network/TypedClientNetId.h"
 #include "mc/world/inventory/transaction/ComplexInventoryTransaction.h"
-#include "mc/world/item/components/ItemStackLegacyRequestIdTag.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"

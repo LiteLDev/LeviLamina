@@ -1,12 +1,12 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/math/Vec2.h"
-#include "mc/math/Vec3.h"
-#include "mc/network/packet/ActorLink.h"
+#include "mc/common/ActorRuntimeID.h"
+#include "mc/common/ActorUniqueID.h"
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/network/packet/SyncedAttribute.h"
-#include "mc/world/ActorRuntimeID.h"
-#include "mc/world/ActorUniqueID.h"
+#include "mc/network/packet/types/world/actor/ActorLink.h"
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
 #include "mc/world/actor/SynchedActorDataEntityWrapper.h"
 #include "mc/world/actor/state/PropertySyncData.h"

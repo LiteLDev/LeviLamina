@@ -1,8 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/CameraShakeAction.h"
-#include "mc/enums/CameraShakeType.h"
 
 // auto generated inclusion list
 #include "mc/deps/minecraft_camera/CameraShakeAction.h"

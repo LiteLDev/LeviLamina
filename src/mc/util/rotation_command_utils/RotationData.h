@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/math/Vec2.h"
+#include "mc/deps/core/math/Vec2.h"
 #include "mc/server/commands/RelativeFloat.h"
 
 // auto generated forward declare list

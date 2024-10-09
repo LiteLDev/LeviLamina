@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/data/MovePriorityQueue.h"
+#include "mc/deps/core/threading/MovePriorityQueue.h"
 #include "mc/world/level/TickNextTickData.h"
 
 class BlockTickingQueue {

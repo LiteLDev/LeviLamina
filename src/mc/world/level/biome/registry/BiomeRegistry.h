@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/biome/VanillaBiomeTypes.h"
+#include "mc/world/level/biome/components/vanilla/VanillaBiomeTypes.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"

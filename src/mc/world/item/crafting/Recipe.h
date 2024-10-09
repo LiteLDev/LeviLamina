@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/mce/UUID.h"
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/platform/UUID.h"
 #include "mc/world/item/crafting/RecipeIngredient.h"
 #include "mc/world/item/crafting/RecipeUnlockingRequirement.h"
 

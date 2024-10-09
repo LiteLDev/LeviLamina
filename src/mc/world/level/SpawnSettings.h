@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/AutomaticID.h"
-#include "mc/world/level/biome/SpawnBiomeType.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/world/level/SpawnBiomeType.h"
 
 struct SpawnSettings {
 public:

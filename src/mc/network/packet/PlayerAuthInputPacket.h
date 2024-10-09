@@ -1,14 +1,14 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/common/ActorUniqueID.h"
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/input/InputMode.h"
 #include "mc/entity/components/PackedItemUseLegacyInventoryTransaction.h"
 #include "mc/entity/components/PlayerBlockActions.h"
-#include "mc/enums/ClientPlayMode.h"
-#include "mc/enums/InputMode.h"
-#include "mc/enums/NewInteractionModel.h"
-#include "mc/math/Vec2.h"
-#include "mc/math/Vec3.h"
-#include "mc/world/ActorUniqueID.h"
+#include "mc/input/ClientPlayMode.h"
+#include "mc/input/NewInteractionModel.h"
 #include "mc/world/inventory/network/ItemStackRequestAction.h"
 #include "mc/world/inventory/network/ItemStackRequestData.h"
 

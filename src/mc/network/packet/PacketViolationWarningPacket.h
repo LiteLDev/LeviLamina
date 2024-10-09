@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/resources/PacketViolationSeverity.h"
-#include "mc/resources/PacketViolationType.h"
+#include "mc/network/packet/PacketViolationSeverity.h"
+#include "mc/network/packet/PacketViolationType.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"

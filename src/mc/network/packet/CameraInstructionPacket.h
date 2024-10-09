@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/actor/common/CameraInstruction.h"
+#include "mc/deps/minecraft_camera/CameraInstruction.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"

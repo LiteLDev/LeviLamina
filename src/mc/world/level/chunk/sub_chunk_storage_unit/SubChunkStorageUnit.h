@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/chunk/Type.h"
+#include "mc/world/level/chunk/sub_chunk_storage_unit/Type.h"
 
 namespace SubChunkStorageUnit {
 union SubChunkStorageFormat {

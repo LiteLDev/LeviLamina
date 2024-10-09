@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/entity/utilities/ActorType.h"
 #include "mc/world/level/IBlockSource.h"
 
 // auto generated inclusion list
@@ -120,7 +119,8 @@ public:
     MCVAPI DimensionType getDimensionId() const;
 
     // vIndex: 20
-    MCVAPI void fetchAABBs(std::vector<class AABB>& shapes, class AABB const& intersectTestBox, bool withUnloadedChunks) const;
+    MCVAPI void
+    fetchAABBs(std::vector<class AABB>& shapes, class AABB const& intersectTestBox, bool withUnloadedChunks) const;
 
     // vIndex: 21
     MCVAPI void fetchCollisionShapes(
@@ -184,8 +184,8 @@ public:
            fetchEntities(class Actor const* except, class AABB const& bb, bool useHitbox, bool getDisplayEntities);
 
     // vIndex: 32
-    MCVAPI gsl::span<gsl::not_null<class Actor*>>
-           fetchEntities(::ActorTypeentityTypeId,
+    MCVAPI gsl::span<gsl::not_null<class Actor*>> fetchEntities(
+        ::ActorType                       entityTypeId,
         class AABB const&                 bb,
         class Actor const*                except,
         std::function<bool(class Actor*)> selector

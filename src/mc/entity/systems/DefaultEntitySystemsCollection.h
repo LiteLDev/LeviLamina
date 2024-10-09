@@ -1,11 +1,11 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/entity/systems/ComponentInfo.h"
-#include "mc/entity/systems/IEntitySystemsCollection.h"
-#include "mc/entity/systems/ISystem.h"
-#include "mc/entity/systems/InternalSystemInfo.h"
-#include "mc/entity/systems/SystemTiming.h"
+#include "mc/deps/ecs/systems/ComponentInfo.h"
+#include "mc/deps/ecs/systems/IEntitySystemsCollection.h"
+#include "mc/deps/ecs/systems/ISystem.h"
+#include "mc/deps/ecs/systems/InternalSystemInfo.h"
+#include "mc/deps/ecs/systems/SystemTiming.h"
 
 class DefaultEntitySystemsCollection : public IEntitySystemsCollection {
 public:

@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/common/bedrock/pubsub/PublisherDisconnector.h"
-#include "mc/deps/core/common/bedrock/pubsub/SubscriptionContext.h"
+#include "mc/deps/core/utility/pub_sub/SubscriptionContext.h"
+#include "mc/deps/core/utility/pub_sub/detail/PublisherDisconnector.h"
 
 // auto generated forward declare list
 // clang-format off

@@ -1,9 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/entity/gamerefs_entity/EntityRefTraits.h"
-#include "mc/math/Vec2.h"
-#include "mc/math/Vec3.h"
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/ecs/gamerefs_entity/EntityRefTraits.h"
 #include "mc/world/level/BlockPos.h"
 
 // auto generated inclusion list

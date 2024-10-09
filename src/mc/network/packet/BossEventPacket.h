@@ -1,9 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/BossBarColor.h"
-#include "mc/enums/BossBarOverlay.h"
-#include "mc/world/ActorUniqueID.h"
+#include "mc/common/ActorUniqueID.h"
+#include "mc/network/packet/types/world/actor/ai/util/BossBarColor.h"
+#include "mc/network/packet/types/world/actor/ai/util/BossBarOverlay.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"

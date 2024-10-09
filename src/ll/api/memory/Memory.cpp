@@ -7,7 +7,7 @@
 #include "ll/api/utils/SystemUtils.h"
 #include "ll/core/LeviLamina.h"
 
-#include "mc/deps/core/common/bedrock/IMemoryAllocator.h"
+#include "mc/deps/core/memory/IMemoryAllocator.h"
 
 namespace ll::memory {
 

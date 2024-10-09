@@ -5,7 +5,7 @@
 //
 // This header should be included in only one source file!
 
-#include "mc/deps/core/common/bedrock/IMemoryAllocator.h"
+#include "mc/deps/core/memory/IMemoryAllocator.h"
 
 #include "ll/api/memory/Memory.h"
 

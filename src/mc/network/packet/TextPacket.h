@@ -1,9 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/config/IPlayerData.h"
-#include "mc/config/ISharedController.h"
-#include "mc/enums/TextPacketType.h"
+#include "mc/config/player_capabilities/IPlayerData.h"
+#include "mc/config/player_capabilities/ISharedController.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"

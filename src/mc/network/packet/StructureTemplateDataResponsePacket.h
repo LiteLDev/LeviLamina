@@ -2,7 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/nbt/CompoundTag.h"
-#include "mc/world/level/levelgen/structure/StructureTemplateResponseType.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/biome/Parameter.h"
+#include "mc/world/level/biome/climate_utils/Parameter.h"
 
 // auto generated forward declare list
 // clang-format off

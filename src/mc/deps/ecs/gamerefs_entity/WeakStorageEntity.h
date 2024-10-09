@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/wrapper/WeakRef.h"
-#include "mc/entity/gamerefs_entity/StackResultStorageEntity.h"
+#include "mc/deps/ecs/gamerefs_entity/StackResultStorageEntity.h"
+#include "mc/deps/game_refs/WeakRef.h"
 
 class Actor;
 class EntityRegistry;
