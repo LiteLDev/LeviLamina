@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/agent/Command.h"
+#include "mc/world/actor/agent/agent_commands/Command.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,17 +12,17 @@ namespace AgentCommands { class Command; }
 
 namespace AgentCommands {
 
-class TransferToCommand : public ::AgentCommands::Command {
+class AttackCommand : public ::AgentCommands::Command {
 public:
     // prevent constructor by default
-    TransferToCommand& operator=(TransferToCommand const&);
-    TransferToCommand(TransferToCommand const&);
-    TransferToCommand();
+    AttackCommand& operator=(AttackCommand const&);
+    AttackCommand(AttackCommand const&);
+    AttackCommand();
 
 public:
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~TransferToCommand() = default;
+    virtual ~AttackCommand() = default;
 
     // vIndex: 1
     virtual void execute();

@@ -7,8 +7,8 @@
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/NumberConversionResult.h"
 #include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/entity/components/agent_components/Direction.h"
 #include "mc/util/BidirectionalUnorderedMap.h"
+#include "mc/world/actor/agent/agent_components/Direction.h"
 #include "mc/world/actor/animation/BoneTransformType.h"
 
 // auto generated forward declare list

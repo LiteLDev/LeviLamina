@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/codebuilder/VolumeOf.h"
 #include "mc/deps/core/utility/buffer_span.h"
 #include "mc/deps/core/utility/buffer_span_mut.h"
 #include "mc/network/packet/SubChunkPacket.h"
 #include "mc/platform/threading/UniqueLock.h"
 #include "mc/world/actor/ActorType.h"
+#include "mc/world/level/block/client_block_pipeline/VolumeOf.h"
 #include "mc/world/level/chunk/ChunkState.h"
 #include "mc/world/level/chunk/ChunkTerrainDataState.h"
 #include "mc/world/level/chunk/LevelChunkFormat.h"

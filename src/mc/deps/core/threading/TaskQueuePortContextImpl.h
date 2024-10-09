@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/threading/ApiId.h"
 #include "mc/deps/core/threading/ITaskQueuePortContext.h"
+#include "mc/deps/core/threading/TaskQueuePortStatus.h"
 #include "mc/deps/core/threading/XTaskQueuePort.h"
-#include "mc/enums/ApiId.h"
-#include "mc/enums/TaskQueuePortStatus.h"
 
 class TaskQueuePortContextImpl : public ::ITaskQueuePortContext {
 public:

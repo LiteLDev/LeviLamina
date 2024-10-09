@@ -8,8 +8,8 @@
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/enums/KnownPackType.h"
 #include "mc/resources/IResourcePackRepository.h"
+#include "mc/resources/KnownPackType.h"
 
 // auto generated forward declare list
 // clang-format off
