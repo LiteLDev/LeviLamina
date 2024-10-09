@@ -17,7 +17,12 @@ public:
     // NOLINTBEGIN
     MCAPI UpdateSubChunkBlocksChangedInfo();
 
-    MCAPI void add(class BlockPos const&, uint, class Block const&, int, struct ActorBlockSyncMessage const*);
+    MCAPI void
+    add(class BlockPos const&               pos,
+        uint                                layer,
+        class Block const&                  block,
+        int                                 updateFlags,
+        struct ActorBlockSyncMessage const* syncMsg);
 
     MCAPI ~UpdateSubChunkBlocksChangedInfo();
 

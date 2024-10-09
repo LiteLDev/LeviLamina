@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/PathBuffer.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/resource/ResourceLoader.h"
-#include "mc/resources/ResourcePackStackType.h"
+#include "mc/deps/core/resource/ResourcePackStackType.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 class ResourcePackManager : public ::ResourceLoader {
 public:
@@ -51,14 +51,15 @@ public:
     ) const;
 
     // vIndex: 7
-    virtual class Core::PathBuffer<std::string> getPath(class ResourceLocation const&) const;
+    virtual class Core::PathBuffer<std::string> getPath(class ResourceLocation const& resourceLocation) const;
 
     // vIndex: 8
     virtual class Core::PathBuffer<std::string>
     getPath(class ResourceLocation const& resourceLocation, std::vector<std::string> const& extensionList) const;
 
     // vIndex: 9
-    virtual class Core::PathBuffer<std::string> getPathContainingResource(class ResourceLocation const&) const;
+    virtual class Core::PathBuffer<std::string> getPathContainingResource(class ResourceLocation const& resourceLocation
+    ) const;
 
     // vIndex: 10
     virtual class Core::PathBuffer<std::string> getPathContainingResource(

@@ -24,7 +24,7 @@ public:
 
     MCAPI int getValueInclusive(class Random& random) const;
 
-    MCAPI int getValueInclusive(class Randomize&) const;
+    MCAPI int getValueInclusive(class Randomize& randomize) const;
 
     MCAPI bool isInRangeInclusive(int value) const;
 

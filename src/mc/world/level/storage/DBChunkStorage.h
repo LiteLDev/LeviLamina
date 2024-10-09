@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/ThreadLocalObject.h"
-#include "mc/entity/utilities/ActorDigestFormat.h"
-#include "mc/world/AutomaticID.h"
-#include "mc/world/level/LevelChunkFormat.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/platform/threading/ThreadLocalObject.h"
+#include "mc/world/level/chunk/ActorDigestFormat.h"
 #include "mc/world/level/chunk/ChunkSource.h"
 #include "mc/world/level/chunk/LevelChunk.h"
+#include "mc/world/level/chunk/LevelChunkFormat.h"
 #include "mc/world/level/storage/ConsoleChunkBlender.h"
 
 class DBChunkStorage : public ::ChunkSource {
@@ -51,11 +51,13 @@ public:
     virtual void writeEntityChunkTransfer(class LevelChunk& lc);
 
     // vIndex: 15
-    virtual void
-    writeEntityChunkTransfersToUnloadedChunk(class ChunkKey const&, std::vector<struct ActorUnloadedChunkTransferEntry> const&);
+    virtual void writeEntityChunkTransfersToUnloadedChunk(
+        class ChunkKey const&                                      chunkKey,
+        std::vector<struct ActorUnloadedChunkTransferEntry> const& transfers
+    );
 
     // vIndex: 16
-    virtual void deserializeActorStorageToLevelChunk(class LevelChunk&);
+    virtual void deserializeActorStorageToLevelChunk(class LevelChunk& levelChunk);
 
     // vIndex: 17
     virtual void hintDiscardBatchBegin();
@@ -91,19 +93,29 @@ public:
     MCAPI static ::ConsoleChunkBlender::BlenderMode
     _getBlenderMode(class LevelChunk const& lc, class Experiments const& experiments);
 
-    MCAPI static std::string
-    deserializeActorStorageToString(bool, std::string const&, std::function<bool(std::string_view, std::string&)>);
+    MCAPI static std::string deserializeActorStorageToString(
+        bool                                                hasActorDigestVersionTag,
+        std::string const&                                  storageKeyDigestBuffer,
+        std::function<bool(std::string_view, std::string&)> loadDataCallback
+    );
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    MCAPI std::pair<bool, std::shared_ptr<class BlendingData>>
-          _cacheSeamlessChunkBlendingData(class ChunkPos chunkPos, bool, std::shared_ptr<class BlendingData>);
+    MCAPI std::pair<bool, std::shared_ptr<class BlendingData>> _cacheSeamlessChunkBlendingData(
+        class ChunkPos                      chunkPos,
+        bool                                isCompleted,
+        std::shared_ptr<class BlendingData> blendingData
+    );
 
-    MCAPI bool _checkSubChunksUseAbsoluteIndices(class DBChunkStorageKey key, class LevelChunk const& lc, bool&) const;
+    MCAPI bool _checkSubChunksUseAbsoluteIndices(
+        class DBChunkStorageKey key,
+        class LevelChunk const& lc,
+        bool&                   flatworldsNeedFixup
+    ) const;
 
-    MCAPI void _deserializeIndependentActorStorage(class LevelChunk& lc, std::string const&);
+    MCAPI void _deserializeIndependentActorStorage(class LevelChunk& lc, std::string const& storageKeyDigestBuffer);
 
     MCAPI class LevelChunk::Neighbors _getChunkNeighbors(class ChunkPos lc, DimensionType dimensionType);
 
@@ -114,7 +126,7 @@ public:
     MCAPI bool _hasChunkUncached(class DBChunkStorageKey const& key);
 
     MCAPI std::pair<bool, std::unique_ptr<struct PersistentBlendData>>
-          _levelChunkCanBeUsedForBlending(class DBChunkStorageKey const&);
+          _levelChunkCanBeUsedForBlending(class DBChunkStorageKey const& lcKey);
 
     MCAPI void
     _loadAndBlendFromDB(class LevelChunk& lc, class LevelChunk& generatedChunk, class ChunkViewSource& neighborhood);
@@ -129,25 +141,36 @@ public:
         struct PersistentBlendData    data
     ) const;
 
-    MCAPI void _serializeChunk(class LevelChunk& lc, class LevelStorageWriteBatch& batch, bool);
+    MCAPI void
+    _serializeChunk(class LevelChunk& lc, class LevelStorageWriteBatch& batch, bool markEntitiesProcesedOnChunkDiscard);
 
-    MCAPI void _serializeEntities(class LevelChunk& lc, class LevelStorageWriteBatch& batch, std::string& buffer, bool);
+    MCAPI void _serializeEntities(
+        class LevelChunk&             lc,
+        class LevelStorageWriteBatch& batch,
+        std::string&                  buffer,
+        bool                          markEntitiesProcesedOnChunkDiscard
+    );
 
-    MCAPI std::pair<bool, std::shared_ptr<class BlendingData>> _tryGetBlendingDataForChunk(class ChunkPos const&);
+    MCAPI std::pair<bool, std::shared_ptr<class BlendingData>>
+          _tryGetBlendingDataForChunk(class ChunkPos const& checkPosition);
 
-    MCAPI std::string _upgradeActorStorage(class ChunkKey, std::string_view&);
+    MCAPI std::string _upgradeActorStorage(class ChunkKey chunkKey, std::string_view& legacyActorData);
 
-    MCAPI void _writeActorDigest(class LevelStorageWriteBatch& batch, class ChunkKey const&, std::string const&);
+    MCAPI void _writeActorDigest(
+        class LevelStorageWriteBatch& batch,
+        class ChunkKey const&         chunkKey,
+        std::string const&            digestBuffer
+    );
 
     MCAPI void _writeActorDigestFormatVersion(
         class LevelStorageWriteBatch& batch,
-        class ChunkKey const&,
-        ::ActorDigestFormat formatVersion
+        class ChunkKey const&         chunkKey,
+        ::ActorDigestFormat           formatVersion
     );
 
     MCAPI void _writeDiscardChunksBatch();
 
-    MCAPI static std::vector<std::string> _deserializeChunkActorStorageKeys(class IDataInput&);
+    MCAPI static std::vector<std::string> _deserializeChunkActorStorageKeys(class IDataInput& digestStream);
 
     // NOLINTEND
 

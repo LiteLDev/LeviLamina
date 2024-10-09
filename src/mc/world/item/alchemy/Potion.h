@@ -18,7 +18,7 @@ public:
 public:
     // NOLINTBEGIN
     MCAPI void appendFormattedPotionText(
-        std::string&            hovertext,
+        std::string&            inOutHovertext,
         ::Potion::PotionType    potionType,
         ::Potion::PotionVariant potionVariant,
         class Player const&     player,
@@ -27,7 +27,7 @@ public:
 
     MCAPI std::string getDescriptionId() const;
 
-    MCAPI std::string getDescriptionId(::Potion::PotionType) const;
+    MCAPI std::string getDescriptionId(::Potion::PotionType potionType) const;
 
     MCAPI class MobEffectInstance const& getMobEffect() const;
 
@@ -35,7 +35,7 @@ public:
 
     MCAPI std::vector<class MobEffectInstance> const& getMobEffects() const;
 
-    MCAPI std::string getPotencyDescription(::Potion::PotionType, float) const;
+    MCAPI std::string getPotencyDescription(::Potion::PotionType potionType, float timeMod) const;
 
     MCAPI int getPotionId() const;
 
@@ -45,16 +45,27 @@ public:
 
     MCAPI ~Potion();
 
-    MCAPI static void appendMobEffectText(std::string&, ::Potion::PotionVariant, uint, int, class Player const&);
-
-    MCAPI static std::string effectDurationToString(::Potion::PotionType, float, class MobEffectInstance const&);
-
-    MCAPI static std::string effectPotencyToString(class MobEffectInstance const&);
-
-    MCAPI static std::string getBasePotion(::Potion::PotionType);
+    MCAPI static void appendMobEffectText(
+        std::string&            inOutHovertext,
+        ::Potion::PotionVariant potionVariant,
+        uint                    mobEffectId,
+        int                     amplifier,
+        class Player const&     player
+    );
 
     MCAPI static std::string
-    getPotencyDescription(::Potion::PotionType, float, std::string_view, class MobEffectInstance const&);
+    effectDurationToString(::Potion::PotionType potionType, float timeMod, class MobEffectInstance const& effect);
+
+    MCAPI static std::string effectPotencyToString(class MobEffectInstance const& effect);
+
+    MCAPI static std::string getBasePotion(::Potion::PotionType type);
+
+    MCAPI static std::string getPotencyDescription(
+        ::Potion::PotionType           potionType,
+        float                          timeMod,
+        std::string_view               descID,
+        class MobEffectInstance const& effect
+    );
 
     MCAPI static std::shared_ptr<class Potion const> getPotion(std::string_view potionNameId);
 
@@ -62,7 +73,7 @@ public:
 
     MCAPI static int getPotionCount();
 
-    MCAPI static void initPotions(class BaseGameVersion const&, class Experiments const&);
+    MCAPI static void initPotions(class BaseGameVersion const& baseGameVersion, class Experiments const& experiments);
 
     MCAPI static void shutdownPotions();
 
@@ -178,9 +189,9 @@ public:
         ::Potion::PotionVariant              var
     );
 
-    MCAPI std::string _getDescriptionIdCombiningStrings(::Potion::PotionType) const;
+    MCAPI std::string _getDescriptionIdCombiningStrings(::Potion::PotionType potiontype) const;
 
-    MCAPI std::string _getDescriptionIdSingleString(::Potion::PotionType) const;
+    MCAPI std::string _getDescriptionIdSingleString(::Potion::PotionType potionType) const;
 
     MCAPI static void addPotion(std::shared_ptr<class Potion const> potion);
 

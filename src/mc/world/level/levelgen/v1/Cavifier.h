@@ -11,9 +11,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI Cavifier(class CavifierNoises const&, float, float);
+    MCAPI Cavifier(class CavifierNoises const& cavifierNoises, float minCellY, float densityBoost);
 
-    MCAPI float cavify(class Vec3 pos, int, float) const;
+    MCAPI float cavify(class Vec3 pos, int, float density) const;
 
     // NOLINTEND
 

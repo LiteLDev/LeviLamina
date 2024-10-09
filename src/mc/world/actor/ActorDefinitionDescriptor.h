@@ -57,7 +57,7 @@ public:
         class VariantParameterList const&                             list
     );
 
-    MCAPI static bool hasEvent(class Actor const&, std::string const&);
+    MCAPI static bool hasEvent(class Actor const& entity, std::string const& name);
 
     // NOLINTEND
 

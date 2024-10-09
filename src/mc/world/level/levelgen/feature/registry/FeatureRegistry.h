@@ -6,7 +6,7 @@
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/WeakRef.h"
+#include "mc/deps/game_refs/WeakRef.h"
 
 class FeatureRegistry {
 public:
@@ -60,9 +60,13 @@ public:
 
     MCAPI std::vector<std::string> getSmallFeaturePasses() const;
 
-    MCAPI bool isFeaturePassDefined(std::string const&) const;
+    MCAPI bool isFeaturePassDefined(std::string const& featurePass) const;
 
-    MCAPI void loadFromDefinitions(class IWorldRegistriesProvider&, class ResourcePackManager const&, bool);
+    MCAPI void loadFromDefinitions(
+        class IWorldRegistriesProvider&  worldRegistries,
+        class ResourcePackManager const& rpm,
+        bool                             clientSideGenEnabled
+    );
 
     MCAPI class WeakRef<class IFeature> lookupByName(std::string const& name) const;
 
@@ -70,11 +74,11 @@ public:
 
     MCAPI class WeakRef<class IFeature> reserveFeature(std::string const& name);
 
-    MCAPI std::string const& reverseLookupString(class IFeature const&) const;
+    MCAPI std::string const& reverseLookupString(class IFeature const& feature) const;
 
-    MCAPI void setLargeFeaturePasses(std::vector<std::string>);
+    MCAPI void setLargeFeaturePasses(std::vector<std::string> largeFeaturePasses);
 
-    MCAPI void setSmallFeaturePasses(std::vector<std::string>);
+    MCAPI void setSmallFeaturePasses(std::vector<std::string> smallFeaturePasses);
 
     MCAPI static std::string const AFTER_SKY_PASS;
 
@@ -109,13 +113,13 @@ public:
     MCAPI void _registerFeature(std::string const& name, std::unique_ptr<class IFeature> featurePtr);
 
     MCAPI bool _setupFeature(
-        class IWorldRegistriesProvider&,
-        bool,
-        class ResourcePackManager const&,
-        std::string const&,
-        std::string const&,
-        class SemVersion const&,
-        bool
+        class IWorldRegistriesProvider&  worldRegistries,
+        bool                             isBasePack,
+        class ResourcePackManager const& rpm,
+        std::string const&               featureName,
+        std::string const&               jsonDefinition,
+        class SemVersion const&          engineVersion,
+        bool                             serializeFeatures
     );
 
     // NOLINTEND

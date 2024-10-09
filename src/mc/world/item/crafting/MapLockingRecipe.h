@@ -24,7 +24,7 @@ public:
 
     // vIndex: 1
     virtual std::vector<class ItemInstance> const&
-    assemble(class CraftingContainer& craftSlots, class CraftingContext&) const;
+    assemble(class CraftingContainer& craftSlots, class CraftingContext& craftingContext) const;
 
     // vIndex: 2
     virtual int getCraftingSize() const;
@@ -33,7 +33,7 @@ public:
     virtual class RecipeIngredient const& getIngredient(int x, int y) const;
 
     // vIndex: 5
-    virtual bool matches(class CraftingContainer const& craftSlots, class CraftingContext const&) const;
+    virtual bool matches(class CraftingContainer const& craftSlots, class CraftingContext const& craftingContext) const;
 
     // vIndex: 6
     virtual int size() const;
@@ -41,7 +41,7 @@ public:
     // vIndex: 8
     virtual std::vector<class ItemInstance> const& getResultItems() const;
 
-    MCAPI MapLockingRecipe(std::string const&, class mce::UUID const&);
+    MCAPI MapLockingRecipe(std::string const& recipeId, class mce::UUID const& id);
 
     MCAPI static class mce::UUID const CartographyTableID;
 

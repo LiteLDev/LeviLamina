@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/AbilitiesIndex.h"
-#include "mc/enums/SubClientId.h"
+#include "mc/common/SubClientId.h"
 #include "mc/server/commands/CommandOrigin.h"
 #include "mc/server/commands/CommandOriginType.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
+#include "mc/world/actor/player/AbilitiesIndex.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -66,15 +66,15 @@ public:
     virtual ::CommandOriginType getOriginType() const;
 
     // vIndex: 26
-    virtual void handleCommandOutputCallback(int, std::string&&) const;
+    virtual void handleCommandOutputCallback(int successCount, std::string&& messages) const;
 
     // vIndex: 30
     virtual bool isValid() const;
 
     MCAPI ScriptCommandOrigin(
-        class ServerLevel& origin,
-        class Dimension*   dimension,
-        std::function<void(int, std::string&&)>,
+        class ServerLevel&                      origin,
+        class Dimension*                        dimension,
+        std::function<void(int, std::string&&)> outputCallback,
         std::optional<::CommandPermissionLevel> permissionLevel
     );
 

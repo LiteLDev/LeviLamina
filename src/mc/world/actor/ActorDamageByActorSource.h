@@ -6,10 +6,10 @@
 #include "mc/world/ActorUniqueID.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorCategory.h"
-#include "mc/entity/utilities/ActorDamageCause.h"
-#include "mc/entity/utilities/ActorType.h"
+#include "mc/network/packet/types/world/actor/ActorCategory.h"
+#include "mc/world/actor/ActorDamageCause.h"
 #include "mc/world/actor/ActorDamageSource.h"
+#include "mc/world/actor/ActorType.h"
 
 class ActorDamageByActorSource : public ::ActorDamageSource {
 public:

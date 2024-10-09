@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/containers/ContainerEnumName.h"
-#include "mc/world/inventory/simulation/ContainerScreenValidatorBase.h"
+#include "mc/world/inventory/simulation/validation/ContainerScreenValidatorBase.h"
 
 class CartographyContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
@@ -21,8 +21,11 @@ public:
     virtual bool isCraftingImplemented();
 
     // vIndex: 3
-    virtual struct ContainerValidationCraftResult
-    getCraftResult(class ContainerScreenContext const& screenContext, class ContainerScreenValidation&, std::unique_ptr<struct ContainerValidationCraftInputs>);
+    virtual struct ContainerValidationCraftResult getCraftResult(
+        class ContainerScreenContext const&                    screenContext,
+        class ContainerScreenValidation&                       screenValidation,
+        std::unique_ptr<struct ContainerValidationCraftInputs> craftInputs
+    );
 
     MCAPI CartographyContainerScreenValidator();
 

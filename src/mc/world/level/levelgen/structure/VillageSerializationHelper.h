@@ -4,7 +4,7 @@
 
 namespace VillageSerializationHelper {
 // NOLINTBEGIN
-MCAPI bool shouldParseAndTruncateDimension(std::string&, class Dimension const&);
+MCAPI bool shouldParseAndTruncateDimension(std::string& currBuffer, class Dimension const& dimension);
 // NOLINTEND
 
 }; // namespace VillageSerializationHelper

@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/external/scripting/GenericModuleBindingFactory.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/external/scripting/binding_factory/GenericModuleBindingFactory.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -30,8 +30,9 @@ public:
     // vIndex: 0
     virtual ~ScriptMinecraftServerAdminModuleFactory() = default;
 
-    MCAPI explicit ScriptMinecraftServerAdminModuleFactory(class Bedrock::NonOwnerPointer<
-                                                           class ScriptPackConfigurationManager>);
+    MCAPI explicit ScriptMinecraftServerAdminModuleFactory(
+        class Bedrock::NonOwnerPointer<class ScriptPackConfigurationManager> packConfigManager
+    );
 
     MCAPI static std::string getModuleUUIDAsString();
 
@@ -39,8 +40,12 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI struct Scripting::ModuleBinding
-    _generateBindings(class Scripting::ModuleBindingBuilder&, std::optional<struct Scripting::ContextConfig>, bool, std::vector<std::string> const&);
+    MCAPI struct Scripting::ModuleBinding _generateBindings(
+        class Scripting::ModuleBindingBuilder&         moduleBuilder,
+        std::optional<struct Scripting::ContextConfig> contextConfig,
+        bool                                           allowUntagged,
+        std::vector<std::string> const&                allowedTags
+    );
 
     // NOLINTEND
 

@@ -58,7 +58,7 @@ public:
 
     MCAPI void update(class BlockSource& region, class BlockPos const& pos);
 
-    MCAPI static std::string getLootTableFromVariant(::BrushableBlockActor::Placement);
+    MCAPI static std::string getLootTableFromVariant(::BrushableBlockActor::Placement state);
 
     MCAPI static class BrushableBlockActor* tryGet(class BlockSource& region, class BlockPos const& pos);
 

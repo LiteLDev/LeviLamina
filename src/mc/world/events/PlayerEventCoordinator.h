@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/CoordinatorResult.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/events/MinecraftEventing.h"
-#include "mc/events/MutablePlayerGameplayEvent.h"
-#include "mc/events/PlayerGameplayEvent.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/gameplayhandlers/CoordinatorResult.h"
 #include "mc/world/events/EventRef.h"
+#include "mc/world/events/MutablePlayerGameplayEvent.h"
+#include "mc/world/events/PlayerGameplayEvent.h"
 
 class PlayerEventCoordinator {
 public:
@@ -51,13 +51,13 @@ public:
 
     MCAPI void sendPlayerPortalUsed(class Player& player, DimensionType fromDimension, DimensionType toDimension);
 
-    MCAPI void sendPlayerPoweredBeacon(class Player const&, int);
+    MCAPI void sendPlayerPoweredBeacon(class Player const& player, int level);
 
     MCAPI void sendPlayerSlide(class Player& player);
 
     MCAPI void sendPlayerTeleported(class Player& player);
 
-    MCAPI void sendPlayerTeleported(class Player&, float);
+    MCAPI void sendPlayerTeleported(class Player& player, float metersTravelled);
 
     MCAPI void sendPlayerTick(class Player& player);
 

@@ -56,7 +56,7 @@ public:
 
     MCAPI class HitResult& operator=(class HitResult const&);
 
-    MCAPI void setIsHitLiquid(bool, class HitResult const&);
+    MCAPI void setIsHitLiquid(bool isHit, class HitResult const& liquidHit);
 
     MCAPI ~HitResult();
 

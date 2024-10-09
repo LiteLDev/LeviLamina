@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/Compressibility.h"
+#include "mc/network/Compressibility.h"
 
 class NetworkPeer {
 public:
@@ -70,7 +70,7 @@ public:
 
     // vIndex: 2
     virtual ::NetworkPeer::DataStatus
-    receivePacket(std::string& outData, std::shared_ptr<PacketRecvTimepoint> const&) = 0;
+    receivePacket(std::string& outData, std::shared_ptr<PacketRecvTimepoint> const& timepointPtr) = 0;
 
     // vIndex: 3
     virtual struct NetworkStatus getNetworkStatus() const = 0;

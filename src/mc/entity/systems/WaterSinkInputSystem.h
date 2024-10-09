@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/Include.h"
-#include "mc/common/wrapper/ViewT.h"
-#include "mc/world/components/FlagComponent.h"
+#include "mc/deps/ecs/ViewT.h"
+#include "mc/deps/ecs/strict/Include.h"
+#include "mc/entity/components/FlagComponent.h"
 
 class WaterSinkInputSystem {
 public:
@@ -18,8 +18,11 @@ public:
     // NOLINTBEGIN
     MCAPI static struct TickingSystemWithInfo createWaterSinkInputSystem();
 
-    MCAPI static void
-    doInWaterSinkInputSystem(struct MovementAbilitiesComponent const&, struct MoveInputComponent const&, struct StateVectorComponent&);
+    MCAPI static void doInWaterSinkInputSystem(
+        struct MovementAbilitiesComponent const& abilitiesComponent,
+        struct MoveInputComponent const&         moveInputComponent,
+        struct StateVectorComponent&             stateVectorComponent
+    );
 
     MCAPI static void tickWaterSinkInputSystem(class ViewT<
                                                class StrictEntityContext,

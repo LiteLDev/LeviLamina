@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCVAPI ::EventResult onLevelAddedPlayer(class Level& level, class Player& player);
+    MCVAPI ::EventResult onLevelAddedPlayer(class Level&, class Player& player);
 
     MCVAPI void tick(class EntityRegistry& registry);
 

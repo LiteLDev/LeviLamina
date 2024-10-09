@@ -6,9 +6,9 @@
 #include "mc/world/item/components/ItemStackRequestIdTag.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/network/TypedClientNetId.h"
-#include "mc/network/TypedServerNetId.h"
+#include "mc/platform/Result.h"
+#include "mc/world/inventory/network/TypedClientNetId.h"
+#include "mc/world/inventory/network/TypedServerNetId.h"
 
 struct ItemStackNetIdVariant {
 public:

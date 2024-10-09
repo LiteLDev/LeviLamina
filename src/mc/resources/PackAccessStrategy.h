@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/PackAccessAssetGenerationResult.h"
-#include "mc/deps/core/PathBuffer.h"
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/resources/PackAccessAssetGenerationResult.h"
 #include "mc/resources/PackAccessStrategyType.h"
 
 // auto generated forward declare list
@@ -42,7 +42,8 @@ public:
     virtual bool isTrusted() const = 0;
 
     // vIndex: 7
-    virtual bool hasAsset(class Core::Path const& packRelativePath, bool trustedContentOnly, bool) const = 0;
+    virtual bool
+    hasAsset(class Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const = 0;
 
     // vIndex: 8
     virtual bool hasFolder(class Core::Path const& packRelativePath) const = 0;
@@ -52,7 +53,7 @@ public:
     getAsset(class Core::Path const& packRelativePath, std::string& result, bool trustedContentOnly) const = 0;
 
     // vIndex: 10
-    virtual bool deleteAsset(class Core::Path const&) = 0;
+    virtual bool deleteAsset(class Core::Path const& packRelativePath) = 0;
 
     // vIndex: 11
     virtual bool writeAsset(class Core::Path const& packRelativePath, std::string const& fileContent) = 0;
@@ -103,7 +104,7 @@ public:
     // NOLINTBEGIN
     MCAPI void _addToAssetSet(class Core::Path const& path);
 
-    MCAPI void _deleteFromAssetSet(class Core::Path const&);
+    MCAPI void _deleteFromAssetSet(class Core::Path const& path);
 
     MCAPI bool _isInAssetSet(class Core::Path const& path) const;
 

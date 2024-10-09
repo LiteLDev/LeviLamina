@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class RiseToLiquidLevelGoal : public ::Goal {
@@ -27,7 +27,7 @@ public:
     // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    MCAPI RiseToLiquidLevelGoal(class Mob& mob, float, float, float);
+    MCAPI RiseToLiquidLevelGoal(class Mob& mob, float liquidYOffset, float riseDelta, float sinkDelta);
 
     // NOLINTEND
 };

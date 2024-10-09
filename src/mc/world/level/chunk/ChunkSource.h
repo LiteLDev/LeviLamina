@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-#include "mc/deps/core/data/GridArea.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/buffer_span.h"
 #include "mc/deps/core/utility/buffer_span_mut.h"
-#include "mc/world/level/LevelChunkGridAreaElement.h"
+#include "mc/util/GridArea.h"
 #include "mc/world/level/chunk/ChunkSourceViewGenerateMode.h"
 #include "mc/world/level/chunk/ChunkState.h"
+#include "mc/world/level/chunk/LevelChunkGridAreaElement.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -98,11 +98,13 @@ public:
     virtual void writeEntityChunkTransfer(class LevelChunk& levelChunk);
 
     // vIndex: 15
-    virtual void
-    writeEntityChunkTransfersToUnloadedChunk(class ChunkKey const&, std::vector<struct ActorUnloadedChunkTransferEntry> const&);
+    virtual void writeEntityChunkTransfersToUnloadedChunk(
+        class ChunkKey const&                                      chunkKey,
+        std::vector<struct ActorUnloadedChunkTransferEntry> const& transfers
+    );
 
     // vIndex: 16
-    virtual void deserializeActorStorageToLevelChunk(class LevelChunk&);
+    virtual void deserializeActorStorageToLevelChunk(class LevelChunk& levelChunk);
 
     // vIndex: 17
     virtual void hintDiscardBatchBegin();
@@ -158,8 +160,13 @@ public:
 
     MCAPI void checkAndLaunchChunkGenerationTasks(bool calledFromTask);
 
-    MCAPI class GridArea<std::shared_ptr<class LevelChunk>>
-    createEmptyView(::ChunkSource::LoadMode lm, bool circle, std::function<void(class buffer_span_mut<std::shared_ptr<class LevelChunk>>, class buffer_span<uint>)> add, ::ChunkSourceViewGenerateMode, float const*);
+    MCAPI class GridArea<std::shared_ptr<class LevelChunk>> createEmptyView(
+        ::ChunkSource::LoadMode                                                                                lm,
+        bool                                                                                                   circle,
+        std::function<void(class buffer_span_mut<std::shared_ptr<class LevelChunk>>, class buffer_span<uint>)> add,
+        ::ChunkSourceViewGenerateMode chunkViewGenerateMode,
+        float const*                  serverBuildRatio
+    );
 
     MCAPI std::shared_ptr<class LevelChunk> getAvailableChunk(class ChunkPos const& cp);
 
@@ -173,11 +180,11 @@ public:
 
     MCAPI class Level& getLevel() const;
 
-    MCAPI void initializeWithLevelStorageManager(class LevelStorageManager&);
+    MCAPI void initializeWithLevelStorageManager(class LevelStorageManager& levelStorageManager);
 
     MCAPI void setShuttingDown(bool value);
 
-    MCAPI bool shouldServerGeneratePos(class ChunkPos const& chunkPos, float, int);
+    MCAPI bool shouldServerGeneratePos(class ChunkPos const& chunkPos, float serverBuildRatio, int viewRadius);
 
     MCAPI static bool gPerfIsClientSide;
 
@@ -207,9 +214,9 @@ public:
 
     MCAPI bool _chunkAtStage(std::weak_ptr<class LevelChunk> lcwp, ::ChunkState stateToCheck);
 
-    MCAPI void _createOrReplaceGridAreaMap(std::shared_ptr<class LevelChunk> lc, bool);
+    MCAPI void _createOrReplaceGridAreaMap(std::shared_ptr<class LevelChunk> lc, bool createNeighbourGridsIfMissing);
 
-    MCAPI void _freeChunkGenerationGridMap(class ChunkPos const& cp, bool);
+    MCAPI void _freeChunkGenerationGridMap(class ChunkPos const& cp, bool isLevelChunkDeletion);
 
     MCAPI void _launchGenerationTask(std::shared_ptr<class LevelChunk> const& lc, bool areInTask);
 

@@ -21,8 +21,7 @@ public:
     // NOLINTBEGIN
     MCAPI Bounds(class ChunkPos const&, class ChunkPos const&);
 
-    MCAPI
-    Bounds(class BlockPos const& minBlock, class BlockPos const& maxBlock, int side, ::Bounds::Option buildOption);
+    MCAPI Bounds(class BlockPos const&, class BlockPos const&, int, ::Bounds::Option);
 
     // NOLINTEND
 };

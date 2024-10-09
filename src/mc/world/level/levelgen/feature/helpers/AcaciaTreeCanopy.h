@@ -32,9 +32,9 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI void _placeLeaf(
-        class IBlockWorldGenAPI& target,
-        class BlockPos const&    pos,
-        gsl::not_null<class Block const*>,
+        class IBlockWorldGenAPI&             target,
+        class BlockPos const&                pos,
+        gsl::not_null<class Block const*>    leavesBlock,
         struct TreeHelper::TreeParams const& treeParams
     ) const;
 

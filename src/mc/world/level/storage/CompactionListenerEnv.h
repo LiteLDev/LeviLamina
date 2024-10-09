@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/CompactionStatus.h"
+#include "mc/common/CompactionStatus.h"
 
 class CompactionListenerEnv {
 public:

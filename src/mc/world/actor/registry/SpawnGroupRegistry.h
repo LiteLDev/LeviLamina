@@ -30,8 +30,11 @@ public:
     virtual bool processPopulationControl(std::string const&, std::string const&);
 
     // vIndex: 4
-    virtual void
-    readResourceFiles(class ResourcePackManager&, class MobSpawnRules const&, std::unordered_map<std::string, struct ActorSpawnRuleData>&);
+    virtual void readResourceFiles(
+        class ResourcePackManager&                                  resourcePackManager,
+        class MobSpawnRules const&                                  baseSpawnRules,
+        std::unordered_map<std::string, struct ActorSpawnRuleData>& dataMap
+    );
 
     MCAPI explicit SpawnGroupRegistry(class ResourcePackManager& resourcePackManager);
 

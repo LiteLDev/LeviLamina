@@ -22,7 +22,7 @@ public:
     // vIndex: 0
     virtual ~ParserBase();
 
-    MCAPI ParserBase(class SemVersion, class Puv::VersionRange);
+    MCAPI ParserBase(class SemVersion parserVersion, class Puv::VersionRange supportedVersions);
 
     MCAPI class SemVersion const& parserVersion() const;
 

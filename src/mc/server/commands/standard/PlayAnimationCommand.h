@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/util/molang/MolangVersion.h"
-#include "mc/world/level/Command.h"
+#include "mc/molang/MolangVersion.h"
+#include "mc/server/commands/Command.h"
 
 class PlayAnimationCommand : public ::Command {
 public:

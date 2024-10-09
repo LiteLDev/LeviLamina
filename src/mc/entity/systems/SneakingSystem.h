@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/GlobalRead.h"
-#include "mc/common/GlobalWrite.h"
-#include "mc/common/StrictExecutionContext.h"
-#include "mc/common/wrapper/AddRemove.h"
-#include "mc/deps/core/data/Filter.h"
-#include "mc/deps/core/data/Read.h"
-#include "mc/deps/core/data/Write.h"
-#include "mc/entity/EntityFactoryT.h"
-#include "mc/world/components/FlagComponent.h"
+#include "mc/deps/ecs/strict/AddRemove.h"
+#include "mc/deps/ecs/strict/EntityFactoryT.h"
+#include "mc/deps/ecs/strict/Filter.h"
+#include "mc/deps/ecs/strict/GlobalRead.h"
+#include "mc/deps/ecs/strict/GlobalWrite.h"
+#include "mc/deps/ecs/strict/Read.h"
+#include "mc/deps/ecs/strict/StrictExecutionContext.h"
+#include "mc/deps/ecs/strict/Write.h"
+#include "mc/entity/components/FlagComponent.h"
 
 class SneakingSystem {
 public:
@@ -47,8 +47,12 @@ public:
                       struct GlobalWrite<>,
                       struct EntityFactoryT<>>& context);
 
-    MCAPI static void
-    _tickSneakingSystem(class StrictEntityContext&, class FlagComponent<struct PlayerComponentFlag> const&, struct SneakingComponent& sneaking, class ActorOwnerComponent&);
+    MCAPI static void _tickSneakingSystem(
+        class StrictEntityContext&,
+        class FlagComponent<struct PlayerComponentFlag> const& playerTag,
+        struct SneakingComponent&                              sneaking,
+        class ActorOwnerComponent&                             actorOwner
+    );
 
     MCAPI static struct TickingSystemWithInfo createSystem();
 

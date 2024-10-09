@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/POIType.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/BaseMoveToGoal.h"
+#include "mc/world/actor/ai/village/POIType.h"
 
 class MoveToPOIGoal : public ::BaseMoveToGoal {
 public:

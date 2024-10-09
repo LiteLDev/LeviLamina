@@ -4,10 +4,10 @@
 #include "mc/entity/utilities/ActorType.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/entity/utilities/ActorType.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
+#include "mc/world/actor/ActorType.h"
 
 class SetLastHurtByPacket : public ::Packet {
 public:

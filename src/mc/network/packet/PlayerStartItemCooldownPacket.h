@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
 
 class PlayerStartItemCooldownPacket : public ::Packet {
 public:
@@ -35,7 +35,7 @@ public:
 
     MCAPI PlayerStartItemCooldownPacket();
 
-    MCAPI PlayerStartItemCooldownPacket(std::string const&, int durationTicks);
+    MCAPI PlayerStartItemCooldownPacket(std::string const& itemCategory, int durationTicks);
 
     // NOLINTEND
 };

@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/json/JsonSchemaObjectNode.h"
-#include "mc/enums/CurrentCmdVersion.h"
+#include "mc/server/commands/CurrentCmdVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -42,10 +42,10 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI void _loadActorAnimationController(
-        std::string const&,
-        class Core::Path const&,
-        class SemVersion const&,
-        ::CurrentCmdVersion
+        std::string const&      fileData,
+        class Core::Path const& filenameWithExtension,
+        class SemVersion const& engineVersion,
+        ::CurrentCmdVersion     packCommandVersion
     );
 
     MCAPI static std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<

@@ -4,9 +4,9 @@
 #include "mc/network/packet/SerializedAbilitiesData.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
 
 class UpdateAbilitiesPacket : public ::Packet {
 public:
@@ -35,7 +35,7 @@ public:
 
     MCAPI UpdateAbilitiesPacket();
 
-    MCAPI UpdateAbilitiesPacket(struct ActorUniqueID, class LayeredAbilities const&);
+    MCAPI UpdateAbilitiesPacket(struct ActorUniqueID targetPlayer, class LayeredAbilities const& layeredAbilities);
 
     // NOLINTEND
 };

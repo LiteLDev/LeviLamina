@@ -27,7 +27,10 @@ public:
     // vIndex: 3
     virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    MCAPI LakeFeature(class Block const& block, std::optional<class XoroshiroPositionalRandomFactory>);
+    MCAPI LakeFeature(
+        class Block const&                                    block,
+        std::optional<class XoroshiroPositionalRandomFactory> xoroshiroPositionalRandomFactory
+    );
 
     // NOLINTEND
 

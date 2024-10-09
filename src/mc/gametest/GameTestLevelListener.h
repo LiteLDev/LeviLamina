@@ -23,7 +23,7 @@ public:
 
     MCVAPI void onLevelTickEnd();
 
-    MCAPI explicit GameTestLevelListener(class gametest::GameTestTicker&);
+    MCAPI explicit GameTestLevelListener(class gametest::GameTestTicker& testTicker);
 
     // NOLINTEND
 };

@@ -7,8 +7,11 @@
 
 namespace MobEffectPacketUtils {
 // NOLINTBEGIN
-MCAPI std::optional<class MobEffectPacket>
-      createPacket(::MobEffectPacket::Event, class MobEffectInstance const&, class EntityContext const&);
+MCAPI std::optional<class MobEffectPacket> createPacket(
+    ::MobEffectPacket::Event       eventType,
+    class MobEffectInstance const& effect,
+    class EntityContext const&     sourceEntity
+);
 // NOLINTEND
 
 }; // namespace MobEffectPacketUtils

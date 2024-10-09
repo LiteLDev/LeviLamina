@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/social/GamePublishSetting.h"
-#include "mc/deps/core/PathBuffer.h"
-#include "mc/enums/Difficulty.h"
-#include "mc/enums/EducationEditionOffer.h"
-#include "mc/enums/GameType.h"
-#include "mc/enums/StorageVersion.h"
-#include "mc/server/editor/WorldType.h"
+#include "mc/common/editor/WorldType.h"
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/network/GamePublishSetting.h"
+#include "mc/options/EducationEditionOffer.h"
+#include "mc/world/Difficulty.h"
+#include "mc/world/level/GameType.h"
+#include "mc/world/level/storage/StorageVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -31,7 +31,35 @@ public:
         bool                    isBetaRetailLevel
     );
 
-    MCAPI LevelSummary(std::string const&, std::string const&, int64, ::GameType, bool, ::Difficulty, class LevelSeed64, int, uint64, bool, bool, bool, ::Social::GamePublishSetting, bool, ::EducationEditionOffer, class GameVersion const&, class GameVersion const&, ::StorageVersion, class Core::Path const&, class ContentIdentity const&, std::string const&, bool, struct EduSharedUriResource const&, class Experiments const&, class BaseGameVersion const&, ::Editor::WorldType, std::optional<class CloudSaveLevelInfo>);
+    MCAPI LevelSummary(
+        std::string const&                      id,
+        std::string const&                      name,
+        int64                                   lastSaved,
+        ::GameType                              gameType,
+        bool                                    isHardcore,
+        ::Difficulty                            gameDifficulty,
+        class LevelSeed64                       seed,
+        int                                     npv,
+        uint64                                  sizeOnDisk,
+        bool                                    confirmedPlatformLockedContent,
+        bool                                    isMultiplayerEnabled,
+        bool                                    lanBroadcastIntent,
+        ::Social::GamePublishSetting            xblBroadcastIntent,
+        bool                                    commandsEnabled,
+        ::EducationEditionOffer                 eduOffer,
+        class GameVersion const&                lastLoadedWithGameVersion,
+        class GameVersion const&                minCompatibleClientVersion,
+        ::StorageVersion                        storageVersion,
+        class Core::Path const&                 path,
+        class ContentIdentity const&            premiumContentIdentity,
+        std::string const&                      educationOid,
+        bool                                    isSingleUseWorld,
+        struct EduSharedUriResource const&      eduSharedUriResource,
+        class Experiments const&                experiments,
+        class BaseGameVersion const&            baseGameVersion,
+        ::Editor::WorldType                     editorWorldType,
+        std::optional<class CloudSaveLevelInfo> cloudSaveInfo
+    );
 
     MCAPI struct LevelSummary& operator=(struct LevelSummary const&);
 
@@ -43,9 +71,9 @@ public:
 
     MCAPI ~LevelSummary();
 
-    MCAPI static class Core::PathBuffer<std::string> buildCustomIconPath(class Core::Path const&);
+    MCAPI static class Core::PathBuffer<std::string> buildCustomIconPath(class Core::Path const& worldDirectory);
 
-    MCAPI static class Core::PathBuffer<std::string> buildWorldIconPath(class Core::Path const&);
+    MCAPI static class Core::PathBuffer<std::string> buildWorldIconPath(class Core::Path const& worldDirectory);
 
     MCAPI static class Core::PathBuffer<std::string> const CUSTOM_ICON_FILENAME;
 

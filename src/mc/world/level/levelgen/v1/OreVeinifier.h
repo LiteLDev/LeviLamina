@@ -11,9 +11,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI explicit OreVeinifier(class OreVeinifierNoises const&);
+    MCAPI explicit OreVeinifier(class OreVeinifierNoises const& noiseSource);
 
-    MCAPI class Block const* getVeinBlockOrFallback(class Vec3 pos, class Block const*) const;
+    MCAPI class Block const* getVeinBlockOrFallback(class Vec3 pos, class Block const* defaultBlock) const;
 
     // NOLINTEND
 };

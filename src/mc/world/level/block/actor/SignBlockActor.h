@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/enums/SignTextSide.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/actor/BlockActor.h"
-#include "mc/world/level/block/utils/BlockActorType.h"
+#include "mc/world/level/block/actor/BlockActorType.h"
+#include "mc/world/level/block/actor/SignTextSide.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -76,17 +76,17 @@ public:
 
         MCAPI bool const isGlowing() const;
 
-        MCAPI void load(class CompoundTag const& tag, ::SignBlockActor::Text::LoadMode);
+        MCAPI void load(class CompoundTag const& tag, ::SignBlockActor::Text::LoadMode load);
 
         MCAPI bool save(class CompoundTag& tag) const;
 
         MCAPI void setColor(class mce::Color const& color);
 
-        MCAPI void setEditedBy(std::string const&);
+        MCAPI void setEditedBy(std::string const& playerXuid);
 
-        MCAPI void setGlowing(bool);
+        MCAPI void setGlowing(bool glowing);
 
-        MCAPI void setHideGlowOutline(bool);
+        MCAPI void setHideGlowOutline(bool hideGlowOutline);
 
         MCAPI void setMessage(class TextObjectRoot message);
 
@@ -136,10 +136,10 @@ public:
     virtual float getShadowRadius(class BlockSource& region) const;
 
     // vIndex: 28
-    virtual std::string getImmersiveReaderText(class BlockSource&);
+    virtual std::string getImmersiveReaderText(class BlockSource& region);
 
     // vIndex: 37
-    virtual std::vector<std::string> getUgcStrings(class CompoundTag const&) const;
+    virtual std::vector<std::string> getUgcStrings(class CompoundTag const& tag) const;
 
     // vIndex: 38
     virtual void setUgcStrings(class CompoundTag& tag, std::vector<std::string> const& list) const;
@@ -153,7 +153,7 @@ public:
     // vIndex: 42
     virtual bool _playerCanUpdate(class Player const& fromPlayer) const;
 
-    MCAPI SignBlockActor(class BlockPos const& pos, ::BlockActorType blockActorType, std::string const&);
+    MCAPI SignBlockActor(class BlockPos const& pos, ::BlockActorType blockActorType, std::string const& typeString);
 
     MCAPI bool getIsGlowing(::SignTextSide side) const;
 
@@ -161,7 +161,7 @@ public:
 
     MCAPI bool getIsWaxed() const;
 
-    MCAPI std::string const& getMessage(::SignTextSide) const;
+    MCAPI std::string const& getMessage(::SignTextSide side) const;
 
     MCAPI ::SignTextSide getSideFacingPlayer(class Player const& player) const;
 
@@ -173,7 +173,7 @@ public:
 
     MCAPI void serverOnlySetIsLockedForEditing(class Player& player);
 
-    MCAPI void setHideGlowOutline(::SignTextSide, bool);
+    MCAPI void setHideGlowOutline(::SignTextSide side, bool hideGlowOutline);
 
     MCAPI void setIsGlowing(::SignTextSide side, bool isGlowing);
 
@@ -183,7 +183,7 @@ public:
 
     MCAPI void setSignTextColor(::SignTextSide side, class mce::Color const& color);
 
-    MCAPI void setWaxed(bool);
+    MCAPI void setWaxed(bool waxed);
 
     // NOLINTEND
 

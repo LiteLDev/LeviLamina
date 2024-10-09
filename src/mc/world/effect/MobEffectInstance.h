@@ -4,7 +4,7 @@
 #include "mc/world/effect/MobEffect.h"
 
 // auto generated inclusion list
-#include "mc/enums/Difficulty.h"
+#include "mc/world/Difficulty.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -55,7 +55,7 @@ public:
         bool displayAnimation
     );
 
-    MCAPI void applyEffects(class Actor&);
+    MCAPI void applyEffects(class Actor& mob);
 
     MCAPI bool displaysOnScreenTextureAnimation() const;
 
@@ -83,11 +83,11 @@ public:
 
     MCAPI bool isEffectVisible() const;
 
-    MCAPI void onActorHurt(class Actor&, class ActorDamageSource const&, float) const;
+    MCAPI void onActorHurt(class Actor& mob, class ActorDamageSource const& source, float damage) const;
 
-    MCAPI void onActorRemovedAfterDeath(class Actor&) const;
+    MCAPI void onActorRemovedAfterDeath(class Actor& mob) const;
 
-    MCAPI void onEffectsExpired(class Actor&) const;
+    MCAPI void onEffectsExpired(class Actor& mob) const;
 
     MCAPI bool operator!=(class MobEffectInstance const& obj) const;
 
@@ -95,7 +95,7 @@ public:
 
     MCAPI class MobEffectInstance& operator=(class MobEffectInstance const&);
 
-    MCAPI void removeEffects(class BaseAttributeMap&) const;
+    MCAPI void removeEffects(class BaseAttributeMap& attributeMapToRemoveFrom) const;
 
     MCAPI std::unique_ptr<class CompoundTag> save() const;
 
@@ -113,7 +113,7 @@ public:
 
     MCAPI ~MobEffectInstance();
 
-    MCAPI static class mce::Color getAverageColorValue(std::vector<class MobEffectInstance> const&);
+    MCAPI static class mce::Color getAverageColorValue(std::vector<class MobEffectInstance> const& effects);
 
     MCAPI static class MobEffectInstance load(class CompoundTag const& tag);
 

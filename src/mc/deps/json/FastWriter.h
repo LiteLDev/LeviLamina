@@ -26,7 +26,7 @@ public:
     virtual ~FastWriter();
 
     // vIndex: 1
-    virtual std::string write(class Json::Value const&);
+    virtual std::string write(class Json::Value const& root);
 
     MCAPI FastWriter();
 

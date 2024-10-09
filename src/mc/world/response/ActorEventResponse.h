@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/data/Factory.h"
 #include "mc/deps/json/JsonSchemaObjectNode.h"
+#include "mc/util/Factory.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -27,7 +27,7 @@ public:
     virtual std::string const& getName() const;
 
     // vIndex: 2
-    virtual void executeAction(class RenderParams&) const = 0;
+    virtual void executeAction(class RenderParams& params) const = 0;
 
     // vIndex: 3
     virtual void

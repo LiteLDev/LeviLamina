@@ -7,11 +7,11 @@
 #include "mc/world/containers/ContainerType.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
-#include "mc/world/containers/ContainerID.h"
-#include "mc/world/containers/ContainerType.h"
+#include "mc/platform/Result.h"
+#include "mc/world/ContainerID.h"
+#include "mc/world/ContainerType.h"
 
 class ContainerOpenPacket : public ::Packet {
 public:

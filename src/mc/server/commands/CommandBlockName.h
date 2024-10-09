@@ -10,7 +10,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI explicit CommandBlockName(uint64);
+    MCAPI explicit CommandBlockName(uint64 blockNameHash);
 
     MCAPI std::string getDescriptionId() const;
 

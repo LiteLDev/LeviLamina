@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/InterfaceBindingBuilder.h"
+#include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -24,8 +24,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI
-    ScriptBlockRaycastHit(class BlockSource&, class BlockPos const&, uchar, class Vec3 const&, class Scripting::WeakLifetimeScope const&);
+    MCAPI ScriptBlockRaycastHit(
+        class BlockSource&                        source,
+        class BlockPos const&                     pos,
+        uchar                                     face,
+        class Vec3 const&                         faceLocation,
+        class Scripting::WeakLifetimeScope const& scope
+    );
 
     MCAPI ~ScriptBlockRaycastHit();
 

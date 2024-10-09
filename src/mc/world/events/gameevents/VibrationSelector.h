@@ -12,10 +12,10 @@ public:
 public:
     // NOLINTBEGIN
     MCAPI void addCandidate(
-        struct Tick currentTick,
-        class GameEvent const&,
-        struct GameEventContext const&,
-        class BlockPos const& destinationPos
+        struct Tick                    currentTick,
+        class GameEvent const&         gameEvent,
+        struct GameEventContext const& gameEventContext,
+        class BlockPos const&          destinationPos
     );
 
     // NOLINTEND

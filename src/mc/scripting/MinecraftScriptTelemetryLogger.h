@@ -18,10 +18,10 @@ public:
     virtual ~MinecraftScriptTelemetryLogger() = default;
 
     // vIndex: 1
-    virtual void onPluginDiscovery(class ScriptPluginResult const&);
+    virtual void onPluginDiscovery(class ScriptPluginResult const& pluginResult);
 
     // vIndex: 2
-    virtual void onPluginRun(class ScriptPluginResult const&, std::chrono::microseconds);
+    virtual void onPluginRun(class ScriptPluginResult const& pluginResult, std::chrono::microseconds runDuration);
 
     // vIndex: 3
     virtual void onDebuggerListen();
@@ -29,7 +29,7 @@ public:
     // vIndex: 4
     virtual void onDebuggerConnect();
 
-    MCAPI MinecraftScriptTelemetryLogger(class IMinecraftEventing& eventing, bool);
+    MCAPI MinecraftScriptTelemetryLogger(class IMinecraftEventing& eventing, bool isClientside);
 
     // NOLINTEND
 };

@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/Include.h"
-#include "mc/common/wrapper/ViewT.h"
-#include "mc/world/components/FlagComponent.h"
+#include "mc/deps/ecs/ViewT.h"
+#include "mc/deps/ecs/strict/Include.h"
+#include "mc/entity/components/FlagComponent.h"
 
 class FallingBlockNormalTickSystem {
 public:
@@ -22,8 +22,11 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI static void
-    _doFallingBlockNormalTickSystem(class StrictEntityContext const&, class ActorOwnerComponent&, class ITickDelegate&);
+    MCAPI static void _doFallingBlockNormalTickSystem(
+        class StrictEntityContext const&,
+        class ActorOwnerComponent& actorOwnerComponent,
+        class ITickDelegate&       onLand
+    );
 
     MCAPI static void _tickFallingBlockNormalTickSystem(class ViewT<
                                                         class StrictEntityContext,

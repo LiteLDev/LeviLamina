@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/world/level/block/VaultBlockState.h"
 #include "mc/world/level/block/actor/BlockActor.h"
-#include "mc/world/level/block/states/VaultBlockState.h"
 
 class VaultBlockActor : public ::BlockActor {
 public:
@@ -44,15 +44,21 @@ public:
 
     public:
         // NOLINTBEGIN
-        MCAPI static void
-        emitConnectedParticles(class BlockSource&, class BlockPos, struct VaultBlockActor::VaultSharedData const&);
+        MCAPI static void emitConnectedParticles(
+            class BlockSource&                             region,
+            class BlockPos                                 pos,
+            struct VaultBlockActor::VaultSharedData const& sharedData
+        );
 
-        MCAPI static void
-        emitIdleParticles(class BlockSource const&, struct VaultBlockActor::VaultSharedData const&, class BlockPos);
+        MCAPI static void emitIdleParticles(
+            class BlockSource const&                       region,
+            struct VaultBlockActor::VaultSharedData const& sharedData,
+            class BlockPos                                 pos
+        );
 
-        MCAPI static class Vec3 randomPosInsideCage(class BlockPos, class Random&);
+        MCAPI static class Vec3 randomPosInsideCage(class BlockPos pos, class Random& random);
 
-        MCAPI static void removeDisplayEntity(struct VaultBlockActor::VaultClientData&);
+        MCAPI static void removeDisplayEntity(struct VaultBlockActor::VaultClientData& clientData);
 
         // NOLINTEND
     };
@@ -80,47 +86,74 @@ public:
 
     public:
         // NOLINTBEGIN
-        MCAPI static void
-        cycleDisplayItemFromLootTable(class BlockSource&, ::VaultBlockState, struct VaultBlockActor::VaultConfig const&, struct VaultBlockActor::VaultSharedData&);
+        MCAPI static void cycleDisplayItemFromLootTable(
+            class BlockSource&                         region,
+            ::VaultBlockState                          blockState,
+            struct VaultBlockActor::VaultConfig const& config,
+            struct VaultBlockActor::VaultSharedData&   sharedData
+        );
 
-        MCAPI static class ItemStack getRandomDisplayItemFromLootTable(class BlockSource&, std::string const&);
+        MCAPI static class ItemStack
+        getRandomDisplayItemFromLootTable(class BlockSource& region, std::string const& lootTable);
 
-        MCAPI static std::vector<class ItemStack>
-        getRandomLootTableItems(class Level&, DimensionType, std::string const&, class Player&);
+        MCAPI static std::vector<class ItemStack> getRandomLootTableItems(
+            class Level&       level,
+            DimensionType      dimensionType,
+            std::string const& lootTableName,
+            class Player&      player
+        );
 
         MCAPI static void onTransitionBetweenStates(
-            class BlockSource&,
-            class BlockPos,
-            struct VaultBlockActor::VaultConfig const&,
-            struct VaultBlockActor::VaultSharedData&,
-            ::VaultBlockState,
-            ::VaultBlockState
+            class BlockSource&                         region,
+            class BlockPos                             pos,
+            struct VaultBlockActor::VaultConfig const& config,
+            struct VaultBlockActor::VaultSharedData&   sharedData,
+            ::VaultBlockState                          oldState,
+            ::VaultBlockState                          newState
         );
 
-        MCAPI static void
-        setVaultState(class BlockSource&, class BlockPos, class Block const&, ::VaultBlockState, ::VaultBlockState, struct VaultBlockActor::VaultConfig const&, struct VaultBlockActor::VaultSharedData&);
+        MCAPI static void setVaultState(
+            class BlockSource&                         region,
+            class BlockPos                             pos,
+            class Block const&                         oldBlock,
+            ::VaultBlockState                          newState,
+            ::VaultBlockState                          currentState,
+            struct VaultBlockActor::VaultConfig const& config,
+            struct VaultBlockActor::VaultSharedData&   sharedData
+        );
 
-        MCAPI static void
-        tick(class BlockSource&, class BlockPos, struct VaultBlockActor::VaultConfig const&, struct VaultBlockActor::VaultServerData&, struct VaultBlockActor::VaultSharedData&);
+        MCAPI static void tick(
+            class BlockSource&                         region,
+            class BlockPos                             pos,
+            struct VaultBlockActor::VaultConfig const& config,
+            struct VaultBlockActor::VaultServerData&   serverData,
+            struct VaultBlockActor::VaultSharedData&   sharedData
+        );
 
         MCAPI static ::VaultBlockState tickStateAndGetNext(
-            class BlockSource&,
-            class BlockPos,
-            struct VaultBlockActor::VaultConfig const&,
-            struct VaultBlockActor::VaultServerData&,
-            struct VaultBlockActor::VaultSharedData&,
-            ::VaultBlockState
+            class BlockSource&                         region,
+            class BlockPos                             pos,
+            struct VaultBlockActor::VaultConfig const& config,
+            struct VaultBlockActor::VaultServerData&   serverData,
+            struct VaultBlockActor::VaultSharedData&   sharedData,
+            ::VaultBlockState                          oldState
         );
 
-        MCAPI static void
-        tryInsertKey(class BlockSource&, class Player&, class BlockPos, struct VaultBlockActor::VaultConfig const&, struct VaultBlockActor::VaultSharedData&, struct VaultBlockActor::VaultServerData&);
+        MCAPI static void tryInsertKey(
+            class BlockSource&                         region,
+            class Player&                              player,
+            class BlockPos                             pos,
+            struct VaultBlockActor::VaultConfig const& config,
+            struct VaultBlockActor::VaultSharedData&   sharedData,
+            struct VaultBlockActor::VaultServerData&   serverData
+        );
 
         MCAPI static void updateConnectedPlayersWithinRange(
-            class BlockSource&,
-            class BlockPos,
-            struct VaultBlockActor::VaultServerData const&,
-            struct VaultBlockActor::VaultSharedData&,
-            float
+            class BlockSource&                             region,
+            class BlockPos                                 pos,
+            struct VaultBlockActor::VaultServerData const& serverData,
+            struct VaultBlockActor::VaultSharedData&       sharedData,
+            float                                          range
         );
 
         // NOLINTEND
@@ -166,33 +199,39 @@ public:
     virtual ~VaultBlockActor();
 
     // vIndex: 1
-    virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
+    virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 2
-    virtual bool save(class CompoundTag&) const;
+    virtual bool save(class CompoundTag& tag) const;
 
     // vIndex: 7
-    virtual void tick(class BlockSource&);
+    virtual void tick(class BlockSource& region);
 
     // vIndex: 40
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
     // vIndex: 41
-    virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
+    virtual void _onUpdatePacket(class CompoundTag const& tag, class BlockSource& region);
 
-    MCAPI explicit VaultBlockActor(class BlockPos const&);
+    MCAPI explicit VaultBlockActor(class BlockPos const& pos);
 
-    MCAPI void tryInsertKey(class BlockSource&, class Player&);
+    MCAPI void tryInsertKey(class BlockSource& region, class Player& player);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    MCAPI static ::VaultBlockState _getCurrentState(class Block const&);
+    MCAPI static ::VaultBlockState _getCurrentState(class Block const& block);
 
-    MCAPI static bool _isOminous(class BlockSource const&, class BlockPos);
+    MCAPI static bool _isOminous(class BlockSource const& region, class BlockPos pos);
 
-    MCAPI static void _javaSpawnItem(class BlockSource&, class ItemStack const&, int, uchar, class Vec3);
+    MCAPI static void _javaSpawnItem(
+        class BlockSource&     region,
+        class ItemStack const& item,
+        int                    accuracy,
+        uchar                  direction,
+        class Vec3             position
+    );
 
     // NOLINTEND
 };

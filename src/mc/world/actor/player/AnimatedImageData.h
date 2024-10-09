@@ -6,8 +6,8 @@
 #include "mc/deps/core/mce/Image.h"
 
 // auto generated inclusion list
-#include "mc/client/services/persona/AnimatedTextureType.h"
-#include "mc/client/services/persona/AnimationExpression.h"
+#include "mc/world/actor/player/persona/AnimatedTextureType.h"
+#include "mc/world/actor/player/persona/AnimationExpression.h"
 
 // auto generated forward declare list
 // clang-format off

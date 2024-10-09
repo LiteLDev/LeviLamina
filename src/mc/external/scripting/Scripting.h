@@ -3,17 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/DebuggerLogLevel.h"
-#include "mc/external/scripting/EnumBinding.h"
-#include "mc/external/scripting/FutureStatus.h"
+#include "mc/enums/scripting/DebuggerLogLevel.h"
 #include "mc/external/scripting/LogLevel.h"
-#include "mc/external/scripting/ObjectHandleValue.h"
-#include "mc/external/scripting/Privilege.h"
-#include "mc/external/scripting/Result.h"
-#include "mc/external/scripting/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/TypedObjectHandle.h"
+#include "mc/external/scripting/binding_type/EnumBinding.h"
+#include "mc/external/scripting/lifetime_registry/ObjectHandleValue.h"
+#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/external/scripting/lifetime_registry/TypedObjectHandle.h"
 #include "mc/external/scripting/quickjs/NativeObjectOwnership.h"
-#include "mc/external/scripting/quickjs/ParseContext.h"
+#include "mc/external/scripting/quickjs/context/ParseContext.h"
+#include "mc/external/scripting/reflection/Privilege.h"
+#include "mc/external/scripting/runtime/FutureStatus.h"
+#include "mc/external/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -115,9 +115,9 @@ namespace Scripting::internal { struct FetchAsAnyComponent; }
 
 namespace Scripting {
 // NOLINTBEGIN
-MCAPI uint GetDefaultArgCount(std::vector<struct Scripting::ArgumentDetails> const&);
+MCAPI uint GetDefaultArgCount(std::vector<struct Scripting::ArgumentDetails> const& details);
 
-MCAPI uint GetInjectedArgCount(class Scripting::Reflection::IFunction*);
+MCAPI uint GetInjectedArgCount(class Scripting::Reflection::IFunction* function);
 
 MCAPI void LogMessage(::Scripting::LogLevel, char const*, uint, char const*, ...);
 

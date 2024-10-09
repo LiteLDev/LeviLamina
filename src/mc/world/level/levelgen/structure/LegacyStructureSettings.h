@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/Mirror.h"
-#include "mc/enums/Projection.h"
-#include "mc/enums/Rotation.h"
+#include "mc/util/Mirror.h"
+#include "mc/util/Rotation.h"
+#include "mc/world/level/levelgen/structure/Projection.h"
 
 class LegacyStructureSettings {
 public:

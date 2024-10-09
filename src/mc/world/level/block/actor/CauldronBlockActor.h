@@ -19,7 +19,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
+    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
     MCVAPI void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
 

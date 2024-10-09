@@ -17,8 +17,11 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI static void
-    _doIllagerBeastPostAIStepSystem(class StrictEntityContext const&, struct StateVectorComponent const&, struct SubBBsComponent&);
+    MCAPI static void _doIllagerBeastPostAIStepSystem(
+        class StrictEntityContext const&,
+        struct StateVectorComponent const& stateVectorComponent,
+        struct SubBBsComponent&            subBBsComponent
+    );
 
     // NOLINTEND
 };

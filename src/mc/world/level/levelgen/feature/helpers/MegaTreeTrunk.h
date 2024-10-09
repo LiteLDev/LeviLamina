@@ -20,9 +20,15 @@ public:
     virtual ~MegaTreeTrunk() = default;
 
     // vIndex: 1
-    virtual std::optional<class BlockPos>
-    placeTrunk(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random, int treeHeight, class RenderParams& renderParams, struct TreeHelper::TreeParams const& treeParams, class ITreeCanopy const*)
-        const;
+    virtual std::optional<class BlockPos> placeTrunk(
+        class IBlockWorldGenAPI&             target,
+        class BlockPos const&                pos,
+        class Random&                        random,
+        int                                  treeHeight,
+        class RenderParams&                  renderParams,
+        struct TreeHelper::TreeParams const& treeParams,
+        class ITreeCanopy const*             canopy
+    ) const;
 
     // vIndex: 2
     virtual int getTreeHeight(class Random& random) const;

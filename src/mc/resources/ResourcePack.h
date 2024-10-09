@@ -7,10 +7,10 @@
 #include "mc/resources/ResourceSignature.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/PathBuffer.h"
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-#include "mc/resources/PackCategory.h"
-#include "mc/resources/PackOrigin.h"
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/resource/PackCategory.h"
+#include "mc/deps/core/resource/PackOrigin.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -70,7 +70,7 @@ public:
 
     MCAPI int getSubpackCount() const;
 
-    MCAPI std::string const& getSubpackFolderName(int) const;
+    MCAPI std::string const& getSubpackFolderName(int subpackIndex) const;
 
     MCAPI int getSubpackIndex(std::string const& name) const;
 

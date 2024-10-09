@@ -11,7 +11,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static class GameEvent const* creatorNameToEvent(std::string const&);
+    MCAPI static class GameEvent const* creatorNameToEvent(std::string const& name);
 
     // NOLINTEND
 

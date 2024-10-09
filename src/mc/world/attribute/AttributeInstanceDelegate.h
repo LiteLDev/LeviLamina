@@ -18,13 +18,13 @@ public:
     virtual void tick();
 
     // vIndex: 2
-    virtual void notify(int64 type);
+    virtual void notify(int64);
 
     // vIndex: 3
-    virtual bool willChange(float oldValue, float newValue, class AttributeBuff const& buff);
+    virtual bool willChange(float, float, class AttributeBuff const&);
 
     // vIndex: 4
-    virtual float change(float oldValue, float newValue, class AttributeBuff const& buff);
+    virtual float change(float, float newValue, class AttributeBuff const&);
 
     // vIndex: 5
     virtual float getBuffValueWithModifiers(class AttributeBuff const& buff) const;

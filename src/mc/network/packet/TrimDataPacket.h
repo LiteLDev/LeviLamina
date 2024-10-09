@@ -5,9 +5,9 @@
 #include "mc/world/trim/TrimPattern.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
 
 class TrimDataPacket : public ::Packet {
 public:
@@ -37,8 +37,10 @@ public:
 
     MCAPI TrimDataPacket();
 
-    MCAPI static class TrimDataPacket
-    prepareFromRegistries(class TrimPatternRegistry const&, class TrimMaterialRegistry const&);
+    MCAPI static class TrimDataPacket prepareFromRegistries(
+        class TrimPatternRegistry const&  patternRegistry,
+        class TrimMaterialRegistry const& materialRegistry
+    );
 
     // NOLINTEND
 };

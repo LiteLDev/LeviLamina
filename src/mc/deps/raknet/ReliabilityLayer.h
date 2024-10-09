@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/raknet/PacketPriority.h"
+#include "mc/deps/raknet/PacketReliability.h"
 #include "mc/deps/raknet/data_structures/List.h"
-#include "mc/resources/PacketPriority.h"
-#include "mc/resources/PacketReliability.h"
 
 // auto generated forward declare list
 // clang-format off

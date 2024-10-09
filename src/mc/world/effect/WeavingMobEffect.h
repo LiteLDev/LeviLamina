@@ -18,7 +18,7 @@ public:
     virtual ~WeavingMobEffect() = default;
 
     // vIndex: 4
-    virtual void onActorRemovedAfterDeath(class Actor&, int) const;
+    virtual void onActorRemovedAfterDeath(class Actor& target, int amplifier) const;
 
     MCAPI static class Vec3 const COBWEB_SLOWDOWN_OVERRIDE;
 

@@ -4,9 +4,9 @@
 #include "mc/world/level/Tick.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/WeakPtr.h"
+#include "mc/common/WeakPtr.h"
 #include "mc/deps/puv/UseAnimation.h"
-#include "mc/enums/ArmorSlot.h"
+#include "mc/world/item/ArmorSlot.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -90,7 +90,7 @@ public:
 
     MCAPI bool canPlaceOn(class Block const* block) const;
 
-    MCAPI bool clearAllDynamicProperties(std::string const&);
+    MCAPI bool clearAllDynamicProperties(std::string const& collection);
 
     MCAPI void clearChargedItem();
 
@@ -138,10 +138,13 @@ public:
 
     MCAPI class ItemDescriptor getDescriptor() const;
 
-    MCAPI std::unique_ptr<class DynamicProperties> getDynamicProperties(struct cereal::ReflectionCtx const&) const;
+    MCAPI std::unique_ptr<class DynamicProperties> getDynamicProperties(struct cereal::ReflectionCtx const& ctx) const;
 
-    MCAPI std::optional<std::variant<double, float, bool, std::string, class Vec3>>
-          getDynamicProperty(std::string const&, std::string const&, struct cereal::ReflectionCtx const&) const;
+    MCAPI std::optional<std::variant<double, float, bool, std::string, class Vec3>> getDynamicProperty(
+        std::string const&                  key,
+        std::string const&                  collectionName,
+        struct cereal::ReflectionCtx const& ctx
+    ) const;
 
     MCAPI std::string getEffectName() const;
 
@@ -249,11 +252,16 @@ public:
 
     MCAPI bool isOffhandItem() const;
 
-    MCAPI bool isOneOfBlockInstances(std::initializer_list<std::reference_wrapper<class HashedString const>>) const;
+    MCAPI bool isOneOfBlockInstances(std::initializer_list<std::reference_wrapper<class HashedString const>> blocks
+    ) const;
 
-    MCAPI bool isOneOfBlockInstances(std::vector<std::reference_wrapper<class HashedString const>> const&) const;
+    MCAPI bool isOneOfBlockInstances(std::vector<std::reference_wrapper<class HashedString const>> const& blockTypeIds
+    ) const;
 
-    MCAPI bool isOneOfInstances(std::initializer_list<std::reference_wrapper<class HashedString const>>, bool) const;
+    MCAPI bool isOneOfInstances(
+        std::initializer_list<std::reference_wrapper<class HashedString const>> items,
+        bool                                                                    useItemLookup
+    ) const;
 
     MCAPI bool isPattern() const;
 
@@ -289,7 +297,7 @@ public:
 
     MCAPI void removeDamageValue();
 
-    MCAPI bool removeDynamicProperty(std::string const&, std::string const&);
+    MCAPI bool removeDynamicProperty(std::string const& key, std::string const& collectionName);
 
     MCAPI void removeEnchants();
 
@@ -317,9 +325,9 @@ public:
 
     MCAPI void setBlockingTick(struct Tick blockingTick);
 
-    MCAPI bool setCanDestroy(std::vector<std::string> const&);
+    MCAPI bool setCanDestroy(std::vector<std::string> const& blockIds);
 
-    MCAPI bool setCanPlaceOn(std::vector<std::string> const&);
+    MCAPI bool setCanPlaceOn(std::vector<std::string> const& blockIds);
 
     MCAPI void setChargedItem(class ItemInstance const& instance, bool isSwapping);
 
@@ -329,8 +337,12 @@ public:
 
     MCAPI void setDamageValue(short newDamage);
 
-    MCAPI void
-    setDynamicProperty(std::string const&, std::variant<double, float, bool, std::string, class Vec3> const&, std::string const&, struct cereal::ReflectionCtx const&);
+    MCAPI void setDynamicProperty(
+        std::string const&                                                key,
+        std::variant<double, float, bool, std::string, class Vec3> const& value,
+        std::string const&                                                collectionName,
+        struct cereal::ReflectionCtx const&                               ctx
+    );
 
     MCAPI void setJustBrewed(bool crafted);
 
@@ -344,7 +356,7 @@ public:
 
     MCAPI void setUserData(std::unique_ptr<class CompoundTag> tag);
 
-    MCAPI void setWasPickedUp(bool);
+    MCAPI void setWasPickedUp(bool wasPickedUp);
 
     MCAPI bool shouldInteractionWithBlockBypassLiquid(class Block const& block) const;
 
@@ -414,7 +426,8 @@ public:
 
     MCAPI void _loadItem(class CompoundTag const& compoundTag);
 
-    MCAPI bool _setBlockList(std::vector<class BlockLegacy const*>& blockList, std::vector<std::string> const&);
+    MCAPI bool
+    _setBlockList(std::vector<class BlockLegacy const*>& blockList, std::vector<std::string> const& blockIds);
 
     MCAPI void _setChargedItem(class ItemInstance const& item);
 

@@ -39,8 +39,10 @@ public:
     MCAPI class DefinitionInstanceGroup
     getFilteredDefinitionsForServer(class DefinitionInstanceGroup const& definitionGroup) const;
 
-    MCAPI struct ComponentNetRelevancyRegistry::NetSerializationCallbacks&
-    registerNetSerialization(class HashedString const& definitionName, std::function<bool(class DefinitionInstanceGroup const&, class CompoundTag&)>);
+    MCAPI struct ComponentNetRelevancyRegistry::NetSerializationCallbacks& registerNetSerialization(
+        class HashedString const&                                                     definitionName,
+        std::function<bool(class DefinitionInstanceGroup const&, class CompoundTag&)> serializationCallback
+    );
 
     MCAPI bool serializeComponentDefinitionsForClient(
         class DefinitionInstanceGroup const& definitionGroup,

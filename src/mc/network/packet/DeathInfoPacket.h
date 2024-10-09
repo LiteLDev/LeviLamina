@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
 
 class DeathInfoPacket : public ::Packet {
 public:
@@ -34,7 +34,7 @@ public:
 
     MCAPI DeathInfoPacket();
 
-    MCAPI explicit DeathInfoPacket(std::pair<std::string, std::vector<std::string>> const&);
+    MCAPI explicit DeathInfoPacket(std::pair<std::string, std::vector<std::string>> const& deathCauseMessage);
 
     // NOLINTEND
 };

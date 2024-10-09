@@ -13,7 +13,7 @@ public:
 public:
     // NOLINTBEGIN
     MCAPI
-    CommandIntegerRange(int, int, bool, bool);
+    CommandIntegerRange(int minVal, int maxVal, bool invert, bool inclusive);
 
     MCAPI bool isWithinRange(int value) const;
 

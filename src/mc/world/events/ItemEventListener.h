@@ -49,7 +49,7 @@ public:
     onItemSmelted(class Player& player, class ItemDescriptor const& item, class ItemDescriptor const& lastFuelItem);
 
     // vIndex: 10
-    virtual ::EventResult onItemSpawningActor(class Actor const&);
+    virtual ::EventResult onItemSpawningActor(class Actor const& spawningActor);
 
     // vIndex: 11
     virtual ::EventResult onItemSpawnedActor(class ItemStackBase const& item, class Actor const& spawnedActor);

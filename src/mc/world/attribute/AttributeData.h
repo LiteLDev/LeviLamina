@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/platform/Result.h"
 
 struct AttributeData {
 public:
@@ -14,13 +14,13 @@ public:
     // NOLINTBEGIN
     MCAPI AttributeData();
 
-    MCAPI explicit AttributeData(class AttributeInstance const&);
+    MCAPI explicit AttributeData(class AttributeInstance const& instance);
 
     MCAPI AttributeData(struct AttributeData const&);
 
-    MCAPI class Bedrock::Result<void> read(class ReadOnlyBinaryStream&);
+    MCAPI class Bedrock::Result<void> read(class ReadOnlyBinaryStream& stream);
 
-    MCAPI void write(class BinaryStream&) const;
+    MCAPI void write(class BinaryStream& stream) const;
 
     MCAPI ~AttributeData();
 

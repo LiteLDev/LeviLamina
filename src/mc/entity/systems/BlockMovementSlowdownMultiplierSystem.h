@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/EntityModifier.h"
+#include "mc/deps/ecs/strict/EntityModifier.h"
 
 namespace BlockMovementSlowdownMultiplierSystem {
 // NOLINTBEGIN
@@ -21,19 +21,35 @@ MCAPI struct TickingSystemWithInfo createImmuneWitherBossSystem();
 
 MCAPI struct TickingSystemWithInfo createWeavingMobSystem();
 
-MCAPI void tickAdjustFallDistance(struct BlockMovementSlowdownAppliedComponent const&, struct FallDistanceComponent&);
+MCAPI void tickAdjustFallDistance(
+    struct BlockMovementSlowdownAppliedComponent const& applied,
+    struct FallDistanceComponent&                       fallDistanceComponent
+);
 
-MCAPI void
-tickApplySlowdownOnMove(struct BlockMovementSlowdownMultiplierComponent&, struct MoveRequestComponent&, struct StateVectorComponent&);
+MCAPI void tickApplySlowdownOnMove(
+    struct BlockMovementSlowdownMultiplierComponent& blockMovementSlowdownMultiplierComponent,
+    struct MoveRequestComponent&                     moveRequestComponent,
+    struct StateVectorComponent&                     stateComponent
+);
 
-MCAPI void
-tickImmunePlayer(class StrictEntityContext const&, struct BlockMovementSlowdownMultiplierComponent&, struct MovementAbilitiesComponent const&, class EntityModifier<struct BlockMovementSlowdownAppliedComponent>);
+MCAPI void tickImmunePlayer(
+    class StrictEntityContext const&                                   entity,
+    struct BlockMovementSlowdownMultiplierComponent&                   blockMovementSlowdownMultiplierComponent,
+    struct MovementAbilitiesComponent const&                           abilitiesComponent,
+    class EntityModifier<struct BlockMovementSlowdownAppliedComponent> modifier
+);
 
-MCAPI void
-tickImmuneSlowdown(class StrictEntityContext const&, struct BlockMovementSlowdownMultiplierComponent&, class EntityModifier<struct BlockMovementSlowdownAppliedComponent>);
+MCAPI void tickImmuneSlowdown(
+    class StrictEntityContext const&                                   entity,
+    struct BlockMovementSlowdownMultiplierComponent&                   blockMovementSlowdownMultiplierComponent,
+    class EntityModifier<struct BlockMovementSlowdownAppliedComponent> modifier
+);
 
-MCAPI void
-tickWeavingSlowdownOverride(class StrictEntityContext const&, struct BlockMovementSlowdownMultiplierComponent&, struct MobEffectsComponent const&);
+MCAPI void tickWeavingSlowdownOverride(
+    class StrictEntityContext const&,
+    struct BlockMovementSlowdownMultiplierComponent& blockMovementSlowdownMultiplierComponent,
+    struct MobEffectsComponent const&                mobEffectsComponent
+);
 // NOLINTEND
 
 }; // namespace BlockMovementSlowdownMultiplierSystem

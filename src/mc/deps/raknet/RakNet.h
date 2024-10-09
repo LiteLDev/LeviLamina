@@ -5,6 +5,8 @@
 // auto generated inclusion list
 #include "mc/deps/raknet/ConnectionAttemptResult.h"
 #include "mc/deps/raknet/ConnectionState.h"
+#include "mc/deps/raknet/PacketPriority.h"
+#include "mc/deps/raknet/PacketReliability.h"
 #include "mc/deps/raknet/RNS2BindResult.h"
 #include "mc/deps/raknet/RNS2Type.h"
 #include "mc/deps/raknet/RakPeer.h"
@@ -13,8 +15,6 @@
 #include "mc/deps/raknet/StartupResult.h"
 #include "mc/deps/raknet/data_structures/LinkedList.h"
 #include "mc/deps/raknet/data_structures/List.h"
-#include "mc/resources/PacketPriority.h"
-#include "mc/resources/PacketReliability.h"
 
 // auto generated forward declare list
 // clang-format off

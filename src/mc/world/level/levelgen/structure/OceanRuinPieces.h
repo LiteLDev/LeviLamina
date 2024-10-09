@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/enums/OceanTempCategory.h"
-#include "mc/enums/Rotation.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/util/Rotation.h"
+#include "mc/world/level/biome/OceanTempCategory.h"
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
 #include "mc/world/level/levelgen/structure/TemplateStructurePiece.h"
 

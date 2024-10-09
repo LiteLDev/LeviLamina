@@ -13,7 +13,7 @@ public:
     // NOLINTBEGIN
     MCAPI std::optional<uint64> getTicksSinceLastVibration(class ILevel const& level) const;
 
-    MCAPI void setLastVibrationTick(struct Tick);
+    MCAPI void setLastVibrationTick(struct Tick lastVibrationTick);
 
     // NOLINTEND
 };

@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/entity/systems/ITickingSystem.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/ecs/systems/ITickingSystem.h"
 
 class EntityExitVolumeSystem : public ::ITickingSystem {
 public:
@@ -19,7 +19,7 @@ public:
     virtual ~EntityExitVolumeSystem() = default;
 
     // vIndex: 1
-    virtual void registerEvents(entt::dispatcher&);
+    virtual void registerEvents(entt::dispatcher& dispatcher);
 
     // vIndex: 2
     virtual void tick(class EntityRegistry& registry);
@@ -28,7 +28,7 @@ public:
     virtual void singleTick(class EntityRegistry& registry, class EntityContext& entity);
 
     // vIndex: 4
-    virtual void singleTick(class EntityRegistry& registry, class StrictEntityContext& entity);
+    virtual void singleTick(class EntityRegistry& registry, class StrictEntityContext& entityContext);
 
     MCAPI explicit EntityExitVolumeSystem(Bedrock::NotNullNonOwnerPtr<class ILevel const> level);
 
@@ -36,8 +36,11 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI void
-    _tick(class EntityContext& entity, class VolumeBoundsComponent& bounds, class EntitiesInsideVolumeComponent&) const;
+    MCAPI void _tick(
+        class EntityContext&                 entity,
+        class VolumeBoundsComponent&         bounds,
+        class EntitiesInsideVolumeComponent& entitiesInsideVolume
+    ) const;
 
     // NOLINTEND
 };

@@ -11,9 +11,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem(class BaseGameVersion const&, bool);
+    MCAPI static struct TickingSystemWithInfo createSystem(class BaseGameVersion const& version, bool isClientSide);
 
-    MCAPI static void synchronousUpdateSize(class EntityContext&, class BaseGameVersion const&, bool);
+    MCAPI static void
+    synchronousUpdateSize(class EntityContext& entity, class BaseGameVersion const& version, bool isClientSide);
 
     // NOLINTEND
 };

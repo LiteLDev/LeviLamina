@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class BarterGoal : public ::Goal {
@@ -38,7 +38,7 @@ public:
     // NOLINTBEGIN
     MCAPI class Vec3 _getThrowVector();
 
-    MCAPI void _sendBarterEventPacket(class BarterComponent*);
+    MCAPI void _sendBarterEventPacket(class BarterComponent* barterComponent);
 
     // NOLINTEND
 };

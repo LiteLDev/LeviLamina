@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/FocusImpact.h"
+#include "mc/deps/input/enums/FocusImpact.h"
 
 class ActionEvent {
 public:

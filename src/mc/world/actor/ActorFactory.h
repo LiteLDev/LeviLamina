@@ -7,9 +7,9 @@
 #include "mc/world/level/BlockPos.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/OwnerPtr.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/entity/utilities/ActorType.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/game_refs/OwnerPtr.h"
+#include "mc/world/actor/ActorType.h"
 
 class ActorFactory {
 public:
@@ -31,7 +31,7 @@ public:
     MCAPI void applyEntityInitializer(std::unique_ptr<class Actor> actor, class EntityContext& entity) const;
 
     MCAPI std::vector<std::pair<std::string, struct ActorDefinitionIdentifier const*>>
-          buildSummonEntityTypeEnum(class Experiments const&) const;
+          buildSummonEntityTypeEnum(class Experiments const& experiments) const;
 
     MCAPI void clearDefinitionGroup();
 
@@ -76,10 +76,13 @@ public:
 
     MCAPI void init(class Experiments const& experiments);
 
-    MCAPI class OwnerPtr<class EntityContext> loadActor(class CompoundTag*, class DataLoadHelper&);
+    MCAPI class OwnerPtr<class EntityContext> loadActor(class CompoundTag* tag, class DataLoadHelper& dataLoadHelper);
 
-    MCAPI class OwnerPtr<class EntityContext>
-    loadActor(class CompoundTag*, class DataLoadHelper&, class DimensionHeightRange const&);
+    MCAPI class OwnerPtr<class EntityContext> loadActor(
+        class CompoundTag*                tag,
+        class DataLoadHelper&             dataLoadHelper,
+        class DimensionHeightRange const& heightRange
+    );
 
     MCAPI class OwnerPtr<class EntityContext> loadActor(
         class CompoundTag*                tag,
@@ -97,10 +100,10 @@ public:
     MCAPI static void clearEntityMappings();
 
     MCAPI static void fillFactoryData(
-        struct ActorDefinitionIdentifier const& identifier,
-        struct ActorDefinitionIdentifier const& baseIdentifier,
-        std::unordered_map<std::string, struct ActorFactoryData> const&,
-        struct ActorFactoryData& data
+        struct ActorDefinitionIdentifier const&                         identifier,
+        struct ActorDefinitionIdentifier const&                         baseIdentifier,
+        std::unordered_map<std::string, struct ActorFactoryData> const& factoryFunctions,
+        struct ActorFactoryData&                                        data
     );
 
     MCAPI static class Actor* fixLegacyEntity(class BlockSource& region, class CompoundTag const* tag);
@@ -121,9 +124,12 @@ public:
         std::function<void(std::string const&, struct ActorFactoryData const&)> callback
     ) const;
 
-    MCAPI class OwnerPtr<class EntityContext>
-    _constructActor(struct ActorDefinitionIdentifier const& identifier, class Vec3 const& position, class Vec2 const& rotation, std::vector<std::string> const*)
-        const;
+    MCAPI class OwnerPtr<class EntityContext> _constructActor(
+        struct ActorDefinitionIdentifier const& identifier,
+        class Vec3 const&                       position,
+        class Vec2 const&                       rotation,
+        std::vector<std::string> const*         previousDefinitions
+    ) const;
 
     MCAPI void _loadDefinitionGroups(class ActorDefinitionGroup* group);
 

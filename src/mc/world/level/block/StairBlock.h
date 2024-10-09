@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/optional_ref.h"
-#include "mc/enums/FertilizerType.h"
-#include "mc/enums/Flip.h"
-#include "mc/enums/ShapeType.h"
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
+#include "mc/world/Flip.h"
+#include "mc/world/item/FertilizerType.h"
+#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/utils/BlockProperty.h"
-#include "mc/world/level/block/utils/BlockRenderLayer.h"
-#include "mc/world/level/block/utils/BlockSupportType.h"
+#include "mc/world/level/block/BlockProperty.h"
+#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -32,18 +32,13 @@ public:
 
     // vIndex: 4
     virtual class HitResult
-    clip(class Block const&, class BlockSource const&, class BlockPos const&, class Vec3 const&, class Vec3 const&, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>)
+    clip(class Block const& block, class BlockSource const&, class BlockPos const& pos, class Vec3 const& A, class Vec3 const& B, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
     // vIndex: 7
-    virtual bool addCollisionShapes(
-        class Block const&                                         block,
-        class IConstBlockSource const&                             region,
-        class BlockPos const&                                      pos,
-        class AABB const*                                          intersectTestBox,
-        std::vector<class AABB>&                                   inoutBoxes,
-        class optional_ref<class GetCollisionShapeInterface const> entity
-    ) const;
+    virtual bool
+    addCollisionShapes(class Block const& block, class IConstBlockSource const& region, class BlockPos const& pos, class AABB const* intersectTestBox, std::vector<class AABB>& inoutBoxes, class optional_ref<class GetCollisionShapeInterface const>)
+        const;
 
     // vIndex: 8
     virtual void addAABBs(
@@ -56,10 +51,16 @@ public:
 
     // vIndex: 9
     virtual class AABB const&
-    getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
+    getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const& pos, class AABB& bufferValue)
+        const;
 
     // vIndex: 13
-    virtual bool getLiquidClipVolume(class Block const&, class BlockSource&, class BlockPos const&, class AABB&) const;
+    virtual bool getLiquidClipVolume(
+        class Block const&    block,
+        class BlockSource&    region,
+        class BlockPos const& pos,
+        class AABB&           includeBox
+    ) const;
 
     // vIndex: 19
     virtual bool liquidCanFlowIntoFromDirection(
@@ -69,10 +70,10 @@ public:
     ) const;
 
     // vIndex: 23
-    virtual bool canProvideSupport(class Block const& block, uchar face, ::BlockSupportType type) const;
+    virtual bool canProvideSupport(class Block const& block, uchar face, ::BlockSupportType) const;
 
     // vIndex: 25
-    virtual bool canConnect(class Block const& otherBlock, uchar toOther, class Block const& thisBlock) const;
+    virtual bool canConnect(class Block const&, uchar toOther, class Block const& thisBlock) const;
 
     // vIndex: 38
     virtual bool isStairBlock() const;
@@ -87,10 +88,10 @@ public:
     virtual bool mayPick(class BlockSource const& region, class Block const& block, bool liquid) const;
 
     // vIndex: 85
-    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar face) const;
+    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar) const;
 
     // vIndex: 90
-    virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
+    virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion version) const;
 
     // vIndex: 91
     virtual void
@@ -99,21 +100,22 @@ public:
 
     // vIndex: 98
     virtual class Block const& getPlacementBlock(
-        class Actor const&    by,
-        class BlockPos const& pos,
-        uchar                 face,
-        class Vec3 const&     clickPos,
-        int                   itemValue
+        class Actor const& by,
+        class BlockPos const&,
+        uchar             face,
+        class Vec3 const& clickPos,
+        int               itemValue
     ) const;
 
     // vIndex: 101
     virtual bool attack(class Player* player, class BlockPos const& pos) const;
 
     // vIndex: 129
-    virtual int getVariant(class Block const& block) const;
+    virtual int getVariant(class Block const&) const;
 
     // vIndex: 134
-    virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void
+    animateTickBedrockLegacy(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 135
     virtual void animateTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
@@ -136,7 +138,7 @@ public:
     // vIndex: 152
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    MCAPI StairBlock(std::string const&, int, class BlockLegacy const&);
+    MCAPI StairBlock(std::string const& nameId, int id, class BlockLegacy const& base);
 
     MCAPI bool setInnerPieceShape(
         class Block const&             block,
@@ -154,7 +156,7 @@ public:
         bool                           shrink
     ) const;
 
-    MCAPI static uchar stairDirectionToFacing(int);
+    MCAPI static uchar stairDirectionToFacing(int stairDirection);
 
     // NOLINTEND
 

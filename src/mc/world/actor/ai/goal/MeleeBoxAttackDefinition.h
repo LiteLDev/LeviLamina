@@ -24,10 +24,13 @@ public:
 
     MCAPI MeleeBoxAttackDefinition();
 
-    MCAPI void initialize(class EntityContext&, class MeleeBoxAttackGoal&) const;
+    MCAPI void initialize(class EntityContext& entity, class MeleeBoxAttackGoal& goal) const;
 
-    MCAPI static void
-    buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MeleeBoxAttackDefinition>>&);
+    MCAPI static void buildSchema(
+        std::string const& name,
+        std::shared_ptr<
+            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MeleeBoxAttackDefinition>>& root
+    );
 
     // NOLINTEND
 };

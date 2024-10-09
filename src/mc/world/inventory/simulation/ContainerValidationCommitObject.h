@@ -11,8 +11,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static void
-    append(std::shared_ptr<class ContainerValidationCommitObject>, std::vector<std::shared_ptr<class ContainerValidationCommitObject>>&);
+    MCAPI static void append(
+        std::shared_ptr<class ContainerValidationCommitObject>               commitObject,
+        std::vector<std::shared_ptr<class ContainerValidationCommitObject>>& objectList
+    );
 
     // NOLINTEND
 };

@@ -6,9 +6,9 @@
 #include "mc/world/level/storage/ExperimentStorage.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
 
 class ResourcePackStackPacket : public ::Packet {
 public:
@@ -43,12 +43,12 @@ public:
     MCAPI ResourcePackStackPacket();
 
     MCAPI ResourcePackStackPacket(
-        std::vector<struct PackInstanceId>,
-        std::vector<struct PackInstanceId>,
-        class BaseGameVersion const&,
-        bool,
-        class Experiments const&,
-        bool
+        std::vector<struct PackInstanceId> addOnIdsAndVersions,
+        std::vector<struct PackInstanceId> texturePackIdsAndVersions,
+        class BaseGameVersion const&       baseGameVersion,
+        bool                               texturePackRequired,
+        class Experiments const&           experiments,
+        bool                               includeEditorPacks
     );
 
     // NOLINTEND

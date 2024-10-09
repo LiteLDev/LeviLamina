@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/AppPlatformListener.h"
-#include "mc/enums/OperationMode.h"
+#include "mc/deps/core/platform/OperationMode.h"
 
 class RandomThreadCheckManager : public ::AppPlatformListener {
 public:

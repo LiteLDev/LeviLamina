@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     MCAPI class ScriptPluginResult&
-    getOrCreatePluginResults(struct PackIdVersion, struct Scripting::ModuleDescriptor const&);
+    getOrCreatePluginResults(struct PackIdVersion packId, struct Scripting::ModuleDescriptor const& descriptor);
 
     MCAPI void logMessages() const;
 

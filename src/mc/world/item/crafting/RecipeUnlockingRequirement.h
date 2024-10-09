@@ -28,7 +28,7 @@ public:
     // NOLINTBEGIN
     MCAPI RecipeUnlockingRequirement();
 
-    MCAPI explicit RecipeUnlockingRequirement(std::vector<class RecipeIngredient>);
+    MCAPI explicit RecipeUnlockingRequirement(std::vector<class RecipeIngredient> unlockingIngredients);
 
     MCAPI bool canBeUnlockedByContext(::RecipeUnlockingRequirement::UnlockingContext context) const;
 

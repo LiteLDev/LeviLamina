@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/debug/log/ContentLogEndPoint.h"
-#include "mc/enums/LogArea.h"
-#include "mc/enums/LogLevel.h"
+#include "mc/deps/core/debug/log/LogArea.h"
+#include "mc/deps/core/debug/log/LogLevel.h"
 
 class WorldSessionEndPoint : public ::ContentLogEndPoint {
 public:

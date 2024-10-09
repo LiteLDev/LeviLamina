@@ -6,10 +6,10 @@
 #include "mc/enums/TextPacketType.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
-#include "mc/enums/TextPacketType.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/network/packet/TextPacketType.h"
+#include "mc/platform/Result.h"
 
 class TextPacket : public ::Packet {
 public:
@@ -63,8 +63,13 @@ public:
         std::string const& platformId
     );
 
-    MCAPI static class TextPacket
-    createChat(std::string const&, std::string const&, std::optional<std::string>, std::string const&, std::string const&);
+    MCAPI static class TextPacket createChat(
+        std::string const&         author,
+        std::string const&         message,
+        std::optional<std::string> filteredMessage,
+        std::string const&         xuid,
+        std::string const&         platformId
+    );
 
     MCAPI static class TextPacket
     createJukeboxPopup(std::string const& message, std::vector<std::string> const& params);
@@ -108,8 +113,16 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI
-    TextPacket(::TextPacketType, std::string const&, std::string const&, std::optional<std::string>, std::vector<std::string> const&, bool, std::string const&, std::string const&);
+    MCAPI TextPacket(
+        ::TextPacketType                type,
+        std::string const&              author,
+        std::string const&              message,
+        std::optional<std::string>      filteredMessage,
+        std::vector<std::string> const& params,
+        bool                            localize_,
+        std::string const&              xuid,
+        std::string const&              platformId
+    );
 
     // NOLINTEND
 };

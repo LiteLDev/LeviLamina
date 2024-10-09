@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/RespawnAnimation.h"
+#include "mc/world/level/dimension/end/RespawnAnimation.h"
 
 class EndDragonFight {
 public:

@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/ClientInputLockCategory.h"
-#include "mc/external/scripting/EnumBindingBuilder.h"
+#include "mc/entity/enums/ClientInputLockCategory.h"
+#include "mc/external/scripting/binding_type/EnumBindingBuilder.h"
 
 namespace ScriptModuleMinecraft {
 

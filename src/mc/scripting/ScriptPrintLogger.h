@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/IPrinter.h"
+#include "mc/external/scripting/runtime/IPrinter.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -39,7 +39,7 @@ public:
     virtual bool shouldPrintException(struct Scripting::ContextId, entt::meta_any const& e) const;
 
     // vIndex: 6
-    virtual void onPromiseRejection(struct Scripting::ContextId, std::string_view message, bool) const;
+    virtual void onPromiseRejection(struct Scripting::ContextId, std::string_view message, bool isHandled) const;
 
     // NOLINTEND
 };

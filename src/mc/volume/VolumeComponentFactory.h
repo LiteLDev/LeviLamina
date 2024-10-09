@@ -14,7 +14,7 @@ public:
     // vIndex: 0
     virtual ~VolumeComponentFactory() = default;
 
-    MCAPI void registerVolumeComponentDefinitions(bool);
+    MCAPI void registerVolumeComponentDefinitions(bool registerServerDefinitions);
 
     // NOLINTEND
 };

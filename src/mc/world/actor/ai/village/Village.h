@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/DwellerRole.h"
-#include "mc/enums/POIType.h"
-#include "mc/events/LevelSoundEvent.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/entity/components_json_legacy/DwellerRole.h"
+#include "mc/world/actor/ai/village/POIType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -69,7 +69,7 @@ public:
 
     MCAPI bool addPOI(std::weak_ptr<class POIInstance> pi);
 
-    MCAPI void addVillager(struct ActorUniqueID const&);
+    MCAPI void addVillager(struct ActorUniqueID const& villagerID);
 
     MCAPI bool checkNeedMoreVillagers() const;
 
@@ -131,7 +131,7 @@ public:
 
     MCAPI void tick(struct Tick tick, class BlockSource& region);
 
-    MCAPI void tickRaid(struct Tick);
+    MCAPI void tickRaid(struct Tick gameTick);
 
     MCAPI void triggerRaid();
 
@@ -175,7 +175,7 @@ public:
 
     MCAPI void _createRaid();
 
-    MCAPI void _deleteOldDataIfNeeded(class LevelStorage&, std::string const&) const;
+    MCAPI void _deleteOldDataIfNeeded(class LevelStorage& levelStorage, std::string const& key) const;
 
     MCAPI bool _findAvailablePOI(uint64 index, class Level& level, class Random& random, struct ActorUniqueID id);
 
@@ -206,23 +206,23 @@ public:
 
     MCAPI void _loadVillagePOIs(class CompoundTag const& tag);
 
-    MCAPI void _playSoundFrom(class Vec3 const&, ::Puv::Legacy::LevelSoundEvent);
+    MCAPI void _playSoundFrom(class Vec3 const& soundOrigin, ::Puv::Legacy::LevelSoundEvent sound);
 
     MCAPI void _readyRaidGroup(std::unordered_set<struct ActorUniqueID>& spawnedMobs);
 
     MCAPI void _ringBells(class BlockSource& region, class Random& random) const;
 
-    MCAPI void _saveVillageData(class LevelStorage&) const;
+    MCAPI void _saveVillageData(class LevelStorage& levelStorage) const;
 
-    MCAPI void _saveVillageDwellers(class LevelStorage&) const;
+    MCAPI void _saveVillageDwellers(class LevelStorage& levelStorage) const;
 
-    MCAPI void _saveVillagePOIs(class LevelStorage&) const;
+    MCAPI void _saveVillagePOIs(class LevelStorage& levelStorage) const;
 
-    MCAPI void _saveVillagePOIsToTag(class CompoundTag&) const;
+    MCAPI void _saveVillagePOIsToTag(class CompoundTag& tag) const;
 
-    MCAPI void _saveVillagePlayerStanding(class LevelStorage&) const;
+    MCAPI void _saveVillagePlayerStanding(class LevelStorage& levelStorage) const;
 
-    MCAPI void _saveVillageRaid(class LevelStorage&) const;
+    MCAPI void _saveVillageRaid(class LevelStorage& levelStorage) const;
 
     MCAPI void _spawnPassiveDwellers(class BlockSource& region, int);
 
@@ -230,7 +230,7 @@ public:
     _spawnRaidGroup(class Vec3 spawnPosition, uchar groupNumber, std::unordered_set<struct ActorUniqueID>& spawnedMobs)
         const;
 
-    MCAPI void _tryAddPoiToVillage(struct ActorUniqueID const&, std::weak_ptr<class POIInstance>);
+    MCAPI void _tryAddPoiToVillage(struct ActorUniqueID const& villager, std::weak_ptr<class POIInstance> pi);
 
     MCAPI void _tryShiftStandingsTowardNeutral(struct Tick& updateTick, uint64 updateInterval, bool positiveShift);
 

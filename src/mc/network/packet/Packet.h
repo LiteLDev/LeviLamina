@@ -8,9 +8,9 @@
 #include "mc/resources/PacketPriority.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
-#include "mc/enums/SubClientId.h"
+#include "mc/common/SubClientId.h"
+#include "mc/network/MinecraftPacketIds.h"
+#include "mc/platform/Result.h"
 
 class BinaryStream;
 class ReadOnlyBinaryStream;
@@ -93,7 +93,7 @@ public:
     virtual std::string getName() const = 0;
 
     // vIndex: 3
-    virtual class Bedrock::Result<void> checkSize(uint64, bool) const;
+    virtual class Bedrock::Result<void> checkSize(uint64 packetSize, bool receiverIsServer) const;
 
     // vIndex: 4
     virtual void write(class BinaryStream& stream) const = 0;
@@ -116,7 +116,7 @@ public:
         std::shared_ptr<class Packet>& packet
     );
 
-    MCAPI class Bedrock::Result<void> readNoHeader(class ReadOnlyBinaryStream&, ::SubClientId const&);
+    MCAPI class Bedrock::Result<void> readNoHeader(class ReadOnlyBinaryStream& bitstream, ::SubClientId const& subid);
 
     MCAPI void writeWithHeader(::SubClientId subClientId, class BinaryStream& bitstream) const;
 

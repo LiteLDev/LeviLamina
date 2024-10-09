@@ -15,7 +15,7 @@ public:
 
     MCAPI void addDefinition(std::string const& def);
 
-    MCAPI void addPendingPropertyChange(uint64, std::variant<int, float, bool, uint64> value);
+    MCAPI void addPendingPropertyChange(uint64 overallPropertyIndex, std::variant<int, float, bool, uint64> value);
 
     MCAPI class ActorDefinitionDescriptor buildAdditiveDescriptionFrom(uint64 start, uint64 end) const;
 
@@ -23,7 +23,7 @@ public:
 
     MCAPI void clearDefinitions();
 
-    MCAPI std::string definitionListToString(std::string const& delimiter) const;
+    MCAPI std::string definitionListToString(std::string const&) const;
 
     MCAPI class DefinitionInstanceGroup const& getAddedDefinitionGroup() const;
 

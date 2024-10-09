@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/IDependencyLoader.h"
+#include "mc/external/scripting/runtime/IDependencyLoader.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -29,12 +29,20 @@ public:
 
     // vIndex: 1
     virtual std::optional<struct Scripting::ScriptData>
-    onLoadScript(std::string const& name, std::optional<std::vector<struct Scripting::ModuleBinding>>);
+    onLoadScript(std::string const& name, std::optional<std::vector<struct Scripting::ModuleBinding>> moduleBindings);
 
     MCAPI ScriptPlugin(class ScriptPlugin&& rhs);
 
-    MCAPI
-    ScriptPlugin(std::shared_ptr<class IScriptPluginSource>, struct Scripting::ModuleDescriptor&&, std::vector<struct Scripting::ModuleDescriptor>&&, struct Scripting::Capabilities&&, std::string const&, struct PackIdVersion const&, std::string const&, std::string const&);
+    MCAPI ScriptPlugin(
+        std::shared_ptr<class IScriptPluginSource>        pluginSource,
+        struct Scripting::ModuleDescriptor&&              moduleDesc,
+        std::vector<struct Scripting::ModuleDescriptor>&& moduleDependencies,
+        struct Scripting::Capabilities&&                  capabilities,
+        std::string const&                                engineVersion,
+        struct PackIdVersion const&                       packId,
+        std::string const&                                runtimeName,
+        std::string const&                                mainScriptFilePath
+    );
 
     MCAPI struct Scripting::ModuleDescriptor const& getModuleDescriptor() const;
 

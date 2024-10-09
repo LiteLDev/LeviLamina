@@ -26,7 +26,7 @@ public:
     // vIndex: 3
     virtual void commit(class ContainerScreenContext const& screenContext);
 
-    MCAPI explicit ExperienceRewardCommitObject(int);
+    MCAPI explicit ExperienceRewardCommitObject(int experienceReward);
 
     // NOLINTEND
 };

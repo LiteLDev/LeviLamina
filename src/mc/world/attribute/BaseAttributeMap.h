@@ -38,7 +38,7 @@ public:
 
     MCAPI class AttributeInstance& registerAttribute(class Attribute const& baseAttribute);
 
-    MCAPI class AttributeInstance& registerNoSyncAttribute(class Attribute const&);
+    MCAPI class AttributeInstance& registerNoSyncAttribute(class Attribute const& baseAttribute);
 
     MCAPI ~BaseAttributeMap();
 

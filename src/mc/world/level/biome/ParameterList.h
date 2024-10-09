@@ -18,11 +18,11 @@ public:
 
     MCAPI explicit ParameterList(std::vector<struct BiomeNoiseTarget> const& targets);
 
-    MCAPI class Biome* findTarget(struct TargetPoint const& current, struct RTree::Hint*) const;
+    MCAPI class Biome* findTarget(struct TargetPoint const& current, struct RTree::Hint* hint) const;
 
-    MCAPI bool hasBiome(uint64) const;
+    MCAPI bool hasBiome(uint64 id) const;
 
-    MCAPI bool hasBiomeByHashId(uint64) const;
+    MCAPI bool hasBiomeByHashId(uint64 id) const;
 
     MCAPI ~ParameterList();
 

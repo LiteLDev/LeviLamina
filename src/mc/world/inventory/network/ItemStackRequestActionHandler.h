@@ -4,11 +4,11 @@
 #include "mc/world/actor/player/Player.h"
 
 // auto generated inclusion list
-#include "mc/network/TypedClientNetId.h"
-#include "mc/network/TypedServerNetId.h"
-#include "mc/world/TypedRuntimeId.h"
+#include "mc/util/TypedRuntimeId.h"
 #include "mc/world/containers/ContainerEnumName.h"
-#include "mc/world/item/components/ItemStackNetResult.h"
+#include "mc/world/inventory/network/ItemStackNetResult.h"
+#include "mc/world/inventory/network/TypedClientNetId.h"
+#include "mc/world/inventory/network/TypedServerNetId.h"
 
 class ItemStackRequestActionHandler {
 public:
@@ -99,7 +99,7 @@ public:
     MCAPI ::ItemStackNetResult _handleRemove(
         class ItemStackRequestActionTransferBase const& requestAction,
         class ItemStack&                                removedItem,
-        ::ItemStackRequestActionHandler::RemoveType
+        ::ItemStackRequestActionHandler::RemoveType     removeType
     );
 
     MCAPI void _initScreen(class ItemStackNetManagerScreen& screen);
@@ -112,7 +112,7 @@ public:
     MCAPI std::tuple<::ItemStackNetResult, std::vector<struct ItemStackResponseContainerInfo>>
           endRequest(::ItemStackNetResult currentResult);
 
-    MCAPI std::vector<std::string> const& getFilteredStrings(ItemStackRequestId) const;
+    MCAPI std::vector<std::string> const& getFilteredStrings(ItemStackRequestId requestId) const;
 
     MCAPI ItemStackRequestId const& getRequestId() const;
 
@@ -122,7 +122,7 @@ public:
 
     MCAPI bool isValidationCraftingImplemented();
 
-    MCAPI std::vector<class ItemInstance> tryCraft(std::unique_ptr<struct ContainerValidationCraftInputs>);
+    MCAPI std::vector<class ItemInstance> tryCraft(std::unique_ptr<struct ContainerValidationCraftInputs> craftInputs);
 
     // NOLINTEND
 

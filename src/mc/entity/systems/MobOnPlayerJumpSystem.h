@@ -11,7 +11,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem(bool);
+    MCAPI static struct TickingSystemWithInfo createSystem(bool isClientSide);
 
     MCAPI static float getPlayerJumpPendingScale(int jumpAmount);
 

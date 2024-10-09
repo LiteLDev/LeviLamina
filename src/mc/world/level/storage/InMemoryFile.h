@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/PathBuffer.h"
+#include "mc/deps/core/file/PathBuffer.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -29,7 +29,7 @@ public:
 
     MCAPI bool isReadyForFlush() const;
 
-    MCAPI bool isSafeToDelete(std::string&) const;
+    MCAPI bool isSafeToDelete(std::string& outReasonString) const;
 
     MCAPI void markForDelete();
 

@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/nbt/Tag.h"
+#include "mc/platform/Result.h"
 
 class ByteArrayTag : public ::Tag, public std::vector<uchar> {
 public:

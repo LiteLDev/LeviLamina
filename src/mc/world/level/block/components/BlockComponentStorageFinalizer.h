@@ -11,11 +11,11 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI void _finalizeBlockEventComponents(class Block&);
+    MCAPI void _finalizeBlockEventComponents(class Block& block);
 
-    MCAPI void addRemainingComponents(class Block&);
+    MCAPI void addRemainingComponents(class Block& block);
 
-    MCAPI void finalizeComponentData(class Block&);
+    MCAPI void finalizeComponentData(class Block& block);
 
     // NOLINTEND
 };

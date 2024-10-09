@@ -26,7 +26,7 @@ public:
     virtual ~ScriptScriptingEventListener() = default;
 
     // vIndex: 1
-    virtual ::EventResult onEvent(struct ScriptCommandMessageEvent const&);
+    virtual ::EventResult onEvent(struct ScriptCommandMessageEvent const& scriptCommandMessageEvent);
 
     // vIndex: 2
     virtual ::EventResult onEvent(struct ScriptingNotificationEvent const& event);

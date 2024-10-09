@@ -20,9 +20,9 @@ public:
     // vIndex: 0
     virtual ~OnFallOnTrigger() = default;
 
-    MCAPI void finalize(gsl::not_null<class BlockEvents::BlockFallOnEventComponent*>);
+    MCAPI void finalize(gsl::not_null<class BlockEvents::BlockFallOnEventComponent*> comp);
 
-    MCAPI void onFallOn(struct BlockEvents::BlockFallOnEvent&) const;
+    MCAPI void onFallOn(struct BlockEvents::BlockFallOnEvent& eventData) const;
 
     // NOLINTEND
 };

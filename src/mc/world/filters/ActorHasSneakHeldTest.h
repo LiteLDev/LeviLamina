@@ -24,7 +24,7 @@ public:
     virtual ~ActorHasSneakHeldTest();
 
     // vIndex: 2
-    virtual bool evaluate(struct FilterContext const&) const;
+    virtual bool evaluate(struct FilterContext const& context) const;
 
     // vIndex: 4
     virtual std::string_view getName() const;

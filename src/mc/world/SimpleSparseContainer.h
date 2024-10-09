@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/containers/SparseContainerBackingSetType.h"
+#include "mc/world/inventory/simulation/SparseContainerBackingSetType.h"
 
 class SimpleSparseContainer {
 public:
@@ -34,8 +34,12 @@ public:
 
     MCVAPI void stopOpen(class Player& player);
 
-    MCAPI
-    SimpleSparseContainer(class Container& backingContainer, ::SparseContainerBackingSetType backingSetType, std::unique_ptr<class ISparseContainerSetListener>, std::unique_ptr<class IPlayerContainerSetter>);
+    MCAPI SimpleSparseContainer(
+        class Container&                                   backingContainer,
+        ::SparseContainerBackingSetType                    backingSetType,
+        std::unique_ptr<class ISparseContainerSetListener> sparseContainerSetListener,
+        std::unique_ptr<class IPlayerContainerSetter>      playerSetter
+    );
 
     MCAPI void clearItem(int slot);
 

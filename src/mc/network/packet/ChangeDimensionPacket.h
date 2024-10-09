@@ -5,10 +5,10 @@
 #include "mc/world/level/dimension/Dimension.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/platform/Result.h"
 
 class ChangeDimensionPacket : public ::Packet {
 public:

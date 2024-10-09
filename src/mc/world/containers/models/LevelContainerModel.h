@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/containers/ContainerCategory.h"
 #include "mc/world/containers/ContainerEnumName.h"
-#include "mc/world/level/block/utils/BlockActorType.h"
+#include "mc/world/containers/models/ContainerCategory.h"
+#include "mc/world/level/block/actor/BlockActorType.h"
 
 class LevelContainerModel {
 public:
@@ -28,7 +28,7 @@ public:
 
     MCVAPI class ContainerWeakRef getContainerWeakRef() const;
 
-    MCVAPI bool isSlotDisabled(int) const;
+    MCVAPI bool isSlotDisabled(int slot) const;
 
     MCVAPI bool isValid();
 

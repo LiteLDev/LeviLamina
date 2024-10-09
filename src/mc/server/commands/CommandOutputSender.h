@@ -30,7 +30,7 @@ public:
         ::CommandPermissionLevel   opPermLevel
     );
 
-    MCAPI static std::vector<std::string> translate(std::vector<std::string> const& in);
+    MCAPI static std::vector<std::string> translate(std::vector<std::string> const&);
 
     // NOLINTEND
 };

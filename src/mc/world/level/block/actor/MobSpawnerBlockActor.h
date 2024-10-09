@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
 class MobSpawnerBlockActor : public ::BlockActor {
@@ -40,7 +40,8 @@ public:
 
     MCAPI class BaseMobSpawner& getSpawner();
 
-    MCAPI void setMob(class BlockSource&, struct ActorDefinitionIdentifier const&, class Actor*);
+    MCAPI void
+    setMob(class BlockSource& region, struct ActorDefinitionIdentifier const& identifier, class Actor* usingActor);
 
     // NOLINTEND
 };

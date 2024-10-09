@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/MaterialType.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/BaseMoveToBlockGoal.h"
+#include "mc/world/level/material/MaterialType.h"
 
 class MoveToLiquidGoal : public ::BaseMoveToBlockGoal {
 public:

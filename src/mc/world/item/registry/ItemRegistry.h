@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/SharedPtr.h"
-#include "mc/common/wrapper/WeakPtr.h"
-#include "mc/resources/PackType.h"
-#include "mc/world/item/components/ItemVersion.h"
+#include "mc/common/SharedPtr.h"
+#include "mc/common/WeakPtr.h"
+#include "mc/deps/core/resource/PackType.h"
+#include "mc/world/item/registry/ItemVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -70,18 +70,39 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI void _loadItemData(
-        class ResourcePackManager&,
+        class ResourcePackManager& resourcePackManager,
         std::function<
-            void(class WeakPtr<class Item>&, class Json::Value const&, class SemVersion const&, bool, class Experiments const&)>,
-        class Experiments const&,
-        ::ItemVersion
+            void(class WeakPtr<class Item>&, class Json::Value const&, class SemVersion const&, bool, class Experiments const&)>
+                                 initCallback,
+        class Experiments const& experiments,
+        ::ItemVersion            itemVersion
     );
 
-    MCAPI void
-    _loadItemDefinition(class Json::Value const&, bool, std::function<void(class WeakPtr<class Item>&, class Json::Value const&, class SemVersion const&, bool, class Experiments const&)>, class Experiments const&, ::ItemVersion, ::PackType, class SemVersion const&, struct cereal::ReflectionCtx&);
+    MCAPI void _loadItemDefinition(
+        class Json::Value const& root,
+        bool                     isBaseGamePack,
+        std::function<
+            void(class WeakPtr<class Item>&, class Json::Value const&, class SemVersion const&, bool, class Experiments const&)>
+                                      initCallback,
+        class Experiments const&      experiments,
+        ::ItemVersion                 itemVersion,
+        ::PackType                    packType,
+        class SemVersion const&       documentVersion,
+        struct cereal::ReflectionCtx& ctx
+    );
 
-    MCAPI std::string
-    _parseItemDefinition(std::string, bool, std::function<void(class WeakPtr<class Item>&, class Json::Value const&, class SemVersion const&, bool, class Experiments const&)>, class Experiments const&, ::ItemVersion, ::PackType, class Core::Path const&, struct cereal::ReflectionCtx&);
+    MCAPI std::string _parseItemDefinition(
+        std::string jsonData,
+        bool        isBaseGamePack,
+        std::function<
+            void(class WeakPtr<class Item>&, class Json::Value const&, class SemVersion const&, bool, class Experiments const&)>
+                                      initCallback,
+        class Experiments const&      experiments,
+        ::ItemVersion                 itemVersion,
+        ::PackType                    packType,
+        class Core::Path const&       filenameWithExtension,
+        struct cereal::ReflectionCtx& ctx
+    );
 
     MCAPI void addItemToTagMap(class Item const& item);
 
@@ -92,7 +113,7 @@ public:
     MCAPI void finishedRegistration();
 
     MCAPI std::vector<std::reference_wrapper<class HashedString const>> const&
-          getComplexAliasSplitNames(class HashedString const&) const;
+          getComplexAliasSplitNames(class HashedString const& oldName) const;
 
     MCAPI class WeakPtr<class Item> getItem(class HashedString const& id);
 
@@ -102,8 +123,12 @@ public:
 
     MCAPI class ItemRegistryRef getRef();
 
-    MCAPI void
-    init(struct cereal::ReflectionCtx&, class Experiments const&, class BaseGameVersion const&, class ResourcePackManager*);
+    MCAPI void init(
+        struct cereal::ReflectionCtx& ctx,
+        class Experiments const&      experiments,
+        class BaseGameVersion const&  baseGameVersion,
+        class ResourcePackManager*    rpm
+    );
 
     MCAPI void initCreativeItemsServer(
         class ActorInfoRegistry*    actorInfoRegistry,
@@ -115,8 +140,11 @@ public:
             registerCallback
     );
 
-    MCAPI void
-    initServerData(class ResourcePackManager& resourcePackManager, class Experiments const& experiments, ::ItemVersion);
+    MCAPI void initServerData(
+        class ResourcePackManager& resourcePackManager,
+        class Experiments const&   experiments,
+        ::ItemVersion              itemVersion
+    );
 
     MCAPI class WeakPtr<class Item> lookupByName(class HashedString const& inString) const;
 
@@ -133,7 +161,7 @@ public:
     );
 
     MCAPI class WeakPtr<class Item>
-    registerComplexAlias(class HashedString const& alias, struct ItemRegistryComplexAlias const&);
+    registerComplexAlias(class HashedString const& alias, struct ItemRegistryComplexAlias const& complexAlias);
 
     MCAPI void registerItem(class SharedPtr<class Item> item);
 
@@ -150,9 +178,9 @@ public:
     MCAPI std::vector<std::string>
           validateServerItemComponents(std::vector<std::pair<std::string, class CompoundTag>> const& items);
 
-    MCAPI static short getBlockItemId(class Block const&);
+    MCAPI static short getBlockItemId(class Block const& block);
 
-    MCAPI static short getBlockItemId(class BlockLegacy const&);
+    MCAPI static short getBlockItemId(class BlockLegacy const& block);
 
     // NOLINTEND
 };

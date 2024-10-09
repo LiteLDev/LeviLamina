@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/actor/BlockActorType.h"
 #include "mc/world/level/block/states/BlockStateVariant.h"
-#include "mc/world/level/block/utils/BlockActorType.h"
 
 class ItemFrameBlockActor : public ::BlockActor {
 public:
@@ -36,10 +36,10 @@ public:
     virtual void onRemoved(class BlockSource& region);
 
     // vIndex: 19
-    virtual float getShadowRadius(class BlockSource& region) const;
+    virtual float getShadowRadius(class BlockSource&) const;
 
     // vIndex: 40
-    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
+    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
     // vIndex: 41
     virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
@@ -48,17 +48,17 @@ public:
 
     MCAPI ItemFrameBlockActor(class BlockPos pos, ::BlockActorType type, std::string const& id);
 
-    MCAPI void actuallyDropItem(class BlockSource&, bool, class Actor*);
+    MCAPI void actuallyDropItem(class BlockSource& region, bool dropItem, class Actor* entitySource);
 
-    MCAPI void dropFramedItem(class BlockSource&, bool, class Actor*);
+    MCAPI void dropFramedItem(class BlockSource& region, bool dropItem, class Actor* entitySource);
 
     MCAPI class ItemInstance const& getFramedItem() const;
 
     MCAPI float getRotation();
 
-    MCAPI void rotateFramedItem(class BlockSource&, class Actor&);
+    MCAPI void rotateFramedItem(class BlockSource& region, class Actor& entitySource);
 
-    MCAPI void setItem(class BlockSource&, class ItemInstance const&, class Actor*);
+    MCAPI void setItem(class BlockSource& region, class ItemInstance const& item, class Actor* entitySource);
 
     MCAPI void updateNameTag();
 
@@ -70,8 +70,11 @@ public:
     // NOLINTBEGIN
     MCAPI void _checkMapRemoval(class BlockSource& region, class ItemInstance& item);
 
-    MCAPI void
-    _updateBit(class BlockSource& region, class BlockStateVariant<bool> const&, class HashedString const& itemName);
+    MCAPI void _updateBit(
+        class BlockSource&                   region,
+        class BlockStateVariant<bool> const& vanillaState,
+        class HashedString const&            itemName
+    );
 
     // NOLINTEND
 };

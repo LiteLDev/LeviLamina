@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/WeakPtr.h"
-#include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/common/WeakPtr.h"
+#include "mc/platform/Result.h"
 #include "mc/world/item/ItemDescriptor.h"
 
 // auto generated forward declare list

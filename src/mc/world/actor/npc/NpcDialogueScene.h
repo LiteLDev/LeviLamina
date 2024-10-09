@@ -19,7 +19,7 @@ public:
     MCAPI ~NpcDialogueScene();
 
     MCAPI static struct NpcDialogueScene
-    parse(class Json::Value const&, std::string const& fileName, int packCommandVersion);
+    parse(class Json::Value const& sceneNode, std::string const& fileName, int packCommandVersion);
 
     // NOLINTEND
 };

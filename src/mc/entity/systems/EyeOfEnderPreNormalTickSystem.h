@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/Include.h"
-#include "mc/common/wrapper/ViewT.h"
-#include "mc/world/components/FlagComponent.h"
+#include "mc/deps/ecs/ViewT.h"
+#include "mc/deps/ecs/strict/Include.h"
+#include "mc/entity/components/FlagComponent.h"
 
 class EyeOfEnderPreNormalTickSystem {
 public:
@@ -22,7 +22,8 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI static void _doEyeOfEnderPreNormalTickSystem(class StrictEntityContext const&, class ActorOwnerComponent&);
+    MCAPI static void
+    _doEyeOfEnderPreNormalTickSystem(class StrictEntityContext const&, class ActorOwnerComponent& actorOwnerComponent);
 
     MCAPI static void _tickEyeOfEnderPreNormalTickSystem(class ViewT<
                                                          class StrictEntityContext,

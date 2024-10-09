@@ -29,7 +29,7 @@ public:
 
     MCAPI ~LoadResultAny();
 
-    MCAPI static class Puv::LoadResultAny makeError(class Puv::Logger);
+    MCAPI static class Puv::LoadResultAny makeError(class Puv::Logger log);
 
     // NOLINTEND
 };

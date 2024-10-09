@@ -4,9 +4,9 @@
 #include "mc/deps/core/common/bedrock/typeid_t.h"
 
 // auto generated inclusion list
+#include "mc/server/commands/Command.h"
 #include "mc/server/commands/CommandChainedSubcommand.h"
 #include "mc/server/commands/CommandSelector.h"
-#include "mc/world/level/Command.h"
 
 class NewExecuteCommand : public ::Command {
 public:
@@ -49,7 +49,8 @@ public:
         // vIndex: 1
         virtual std::string getCommandName() const;
 
-        MCAPI static std::string getSubcommandName(::NewExecuteCommand::ExecuteChainedSubcommand::Subcommand);
+        MCAPI static std::string getSubcommandName(::NewExecuteCommand::ExecuteChainedSubcommand::Subcommand subcommand
+        );
 
         MCAPI static void setup(class CommandRegistry& registry);
 
@@ -133,19 +134,21 @@ public:
 
     MCAPI NewExecuteCommand();
 
-    MCAPI static void setup(class CommandRegistry& registry, int);
+    MCAPI static void setup(class CommandRegistry& registry, int newExecuteStartVersion);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    MCAPI void _commandOutputFail(class CommandOutput& output, std::optional<int> const&) const;
+    MCAPI void _commandOutputFail(class CommandOutput& output, std::optional<int> const& testPassCount) const;
 
-    MCAPI void _commandOutputSuccess(class CommandOutput& output, std::optional<int> const&) const;
+    MCAPI void _commandOutputSuccess(class CommandOutput& output, std::optional<int> const& testPassCount) const;
 
-    MCAPI bool
-    _detectConditionSubcommand(class CommandOrigin const& origin, class CommandOutput& output, std::optional<int>&)
-        const;
+    MCAPI bool _detectConditionSubcommand(
+        class CommandOrigin const& origin,
+        class CommandOutput&       output,
+        std::optional<int>&        testPassCount
+    ) const;
 
     MCAPI std::optional<struct ScoreInfo> _getScoreFromSelectorOnObjective(
         class Scoreboard const&                   scoreboard,

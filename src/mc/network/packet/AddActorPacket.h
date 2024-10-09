@@ -14,9 +14,9 @@
 
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/AddActorBasePacket.h"
+#include "mc/platform/Result.h"
 
 class AddActorPacket : public ::AddActorBasePacket {
 public:

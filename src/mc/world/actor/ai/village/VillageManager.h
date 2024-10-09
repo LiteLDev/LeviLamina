@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/IVillageManager.h"
+#include "mc/world/actor/ai/village/IVillageManager.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -62,15 +62,18 @@ public:
 
     // vIndex: 1
     virtual std::weak_ptr<class Village>
-    fetchClosestVillage(class BlockPos const& position, int, uint searchRadius) const;
+    fetchClosestVillage(class BlockPos const& position, int maxDistFromVillageBounds, uint searchRadius) const;
 
     // vIndex: 2
     virtual std::weak_ptr<class Village> getVillageByID(class mce::UUID const& villageID) const;
 
     MCAPI explicit VillageManager(class Dimension& dimension);
 
-    MCAPI std::weak_ptr<class Village>
-          fetchClosestVillageMostSuitableForDweller(class BlockPos const& position, int, uint searchRadius) const;
+    MCAPI std::weak_ptr<class Village> fetchClosestVillageMostSuitableForDweller(
+        class BlockPos const& position,
+        int                   maxDistFromVillageBounds,
+        uint                  searchRadius
+    ) const;
 
     MCAPI std::weak_ptr<class Village> getClosestVillageWithRaid(class BlockPos const& pos);
 
@@ -78,7 +81,7 @@ public:
 
     MCAPI class HashedString getPOIInitEventFromName(class HashedString const& name) const;
 
-    MCAPI void initializeWithLevelStorageManager(class LevelStorageManager&);
+    MCAPI void initializeWithLevelStorageManager(class LevelStorageManager& levelStorageManager);
 
     MCAPI void insertPOI(std::shared_ptr<class POIInstance>&& poi);
 
@@ -121,7 +124,7 @@ public:
 
     MCAPI void _removeVillage(class Village& village);
 
-    MCAPI void _saveAllVillages(class LevelStorage&);
+    MCAPI void _saveAllVillages(class LevelStorage& levelStorage);
 
     MCAPI void _tryAssignPOIOrCreateVillage(std::shared_ptr<class POIInstance>&& pi);
 

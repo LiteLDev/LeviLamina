@@ -33,14 +33,19 @@ public:
     // NOLINTBEGIN
     MCAPI DimensionDefinitionGroup(class DimensionDefinitionGroup const&);
 
-    MCAPI DimensionDefinitionGroup(struct cereal::ReflectionCtx&, class ResourcePackManager* const, bool);
+    MCAPI DimensionDefinitionGroup(
+        struct cereal::ReflectionCtx&    ctx,
+        class ResourcePackManager* const rpm,
+        bool                             cavesAndCliffsExperimentIsEnabled
+    );
 
     MCAPI std::optional<struct DimensionDefinitionGroup::DimensionDefinition>
-          getDimensionDefinition(std::string const&) const;
+          getDimensionDefinition(std::string const& dimensionName) const;
 
     MCAPI bool isEmpty() const;
 
-    MCAPI bool tryAddDimensionDefinitionByString(struct cereal::ReflectionCtx&, std::string const&);
+    MCAPI bool
+    tryAddDimensionDefinitionByString(struct cereal::ReflectionCtx& ctx, std::string const& dimensionDefinitionJSON);
 
     MCAPI ~DimensionDefinitionGroup();
 

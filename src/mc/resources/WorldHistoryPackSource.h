@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/PathBuffer.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/resources/PackOrigin.h"
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/resource/PackOrigin.h"
+#include "mc/deps/core/resource/PackType.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/resources/PackSource.h"
-#include "mc/resources/PackType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -48,7 +48,8 @@ public:
 
     MCAPI class Core::PathBuffer<std::string> const& getPathToWorld() const;
 
-    MCAPI static class Core::PathBuffer<std::string> generateHistoryFilePath(class Core::Path const&, ::PackType);
+    MCAPI static class Core::PathBuffer<std::string>
+    generateHistoryFilePath(class Core::Path const& pathToWorld, ::PackType type);
 
     // NOLINTEND
 

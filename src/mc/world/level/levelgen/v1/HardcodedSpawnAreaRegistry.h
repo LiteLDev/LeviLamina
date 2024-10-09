@@ -4,7 +4,7 @@
 #include "mc/world/level/biome/MobSpawnerData.h"
 
 // auto generated inclusion list
-#include "mc/enums/HardcodedSpawnAreaType.h"
+#include "mc/world/level/levelgen/v1/HardcodedSpawnAreaType.h"
 
 class HardcodedSpawnAreaRegistry {
 public:

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/ThermalState.h"
+#include "mc/platform/thermal/ThermalState.h"
 
 class ThermalMonitorInterface {
 public:

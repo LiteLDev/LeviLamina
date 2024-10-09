@@ -5,7 +5,7 @@
 #include "mc/world/redstone/circuit/components/CircuitComponentList.h"
 
 // auto generated inclusion list
-#include "mc/enums/CircuitComponentType.h"
+#include "mc/world/redstone/circuit/components/CircuitComponentType.h"
 
 class CircuitSceneGraph {
 public:

@@ -17,7 +17,7 @@ public:
     virtual ~GameTestRuleHelper() = default;
 
     // vIndex: 1
-    virtual void addRuleToClear(int);
+    virtual void addRuleToClear(int ruleID);
 
     // vIndex: 2
     virtual void clearRules();

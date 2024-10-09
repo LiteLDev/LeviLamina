@@ -5,8 +5,8 @@
 #include "mc/world/scores/ScoreboardId.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-#include "mc/world/actor/player/PlayerScoreSetFunction.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/world/scores/PlayerScoreSetFunction.h"
 
 // auto generated forward declare list
 // clang-format off

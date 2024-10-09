@@ -29,13 +29,13 @@ public:
     virtual bool isNetworkComponent() const;
 
     // vIndex: 4
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const&) const;
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const& ctx) const;
 
     // vIndex: 5
-    virtual bool initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx const&);
+    virtual bool initializeFromNetwork(class CompoundTag const& tag, struct cereal::ReflectionCtx const& ctx);
 
     // vIndex: 6
-    virtual void handleVersionBasedInitialization(class SemVersion const&);
+    virtual void handleVersionBasedInitialization(class SemVersion const& originalJsonVersion);
 
     // vIndex: 7
     virtual bool _canUseOn(class ItemStack const&, class Actor&, class BlockPos const&, uchar) const;

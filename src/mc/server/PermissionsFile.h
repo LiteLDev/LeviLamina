@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/FileReadResult.h"
+#include "mc/server/FileReadResult.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/actor/player/PlayerPermissionLevel.h"
+#include "mc/server/commands/PlayerPermissionLevel.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -25,19 +25,21 @@ public:
     MCAPI explicit PermissionsFile(class Core::Path const& filePath);
 
     MCAPI void applyPlayerPermissionsFromDisk(
-        class Player& player,
-        class UserEntityIdentifierComponent const&,
-        ::CommandPermissionLevel opCommandPermissionLevel
+        class Player&                              player,
+        class UserEntityIdentifierComponent const& userIdentifier,
+        ::CommandPermissionLevel                   opCommandPermissionLevel
     );
 
     MCAPI std::unordered_map<std::string, ::PlayerPermissionLevel> const& getPermissions() const;
 
-    MCAPI std::vector<std::string> getXUIDsByPermission(::PlayerPermissionLevel) const;
+    MCAPI std::vector<std::string> getXUIDsByPermission(::PlayerPermissionLevel permission) const;
 
     MCAPI bool isPermissionsSet(std::string const& xuid, ::PlayerPermissionLevel permission) const;
 
-    MCAPI void
-    persistPlayerPermissionsToDisk(class UserEntityIdentifierComponent const&, ::PlayerPermissionLevel permission);
+    MCAPI void persistPlayerPermissionsToDisk(
+        class UserEntityIdentifierComponent const& userIdentifier,
+        ::PlayerPermissionLevel                    permission
+    );
 
     MCAPI void persistPlayerPermissionsToDisk(std::string const& xuid, ::PlayerPermissionLevel permission);
 

@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/WeakPtr.h"
-#include "mc/deps/core/common/bedrock/pubsub/Connector.h"
+#include "mc/common/WeakPtr.h"
+#include "mc/deps/core/utility/pub_sub/Connector.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -46,22 +46,22 @@ public:
 
     MCAPI ItemRegistryRef(class ItemRegistryRef const&);
 
-    MCAPI explicit ItemRegistryRef(std::weak_ptr<class ItemRegistry>);
+    MCAPI explicit ItemRegistryRef(std::weak_ptr<class ItemRegistry> registry);
 
     MCAPI void addItemToTagMap(class Item const& item) const;
 
     MCAPI class TagUpdateToken allowTagUpdate() const;
 
-    MCAPI void alterAvailableCreativeItems(class ActorInfoRegistry*, class LevelData& levelData) const;
+    MCAPI void alterAvailableCreativeItems(class ActorInfoRegistry* infoRegistry, class LevelData& levelData) const;
 
     MCAPI bool canAddTags() const;
 
     MCAPI void clearDeadItemRegistry() const;
 
-    MCAPI void digestServerItemComponents(std::vector<std::pair<std::string, class CompoundTag>> const&) const;
+    MCAPI void digestServerItemComponents(std::vector<std::pair<std::string, class CompoundTag>> const& itemTags) const;
 
     MCAPI std::vector<std::reference_wrapper<class HashedString const>> const&
-          getComplexAliasSplitNames(class HashedString const&) const;
+          getComplexAliasSplitNames(class HashedString const& oldName) const;
 
     MCAPI class WeakPtr<class Item> getItem(class HashedString const& id) const;
 
@@ -77,9 +77,12 @@ public:
 
     MCAPI class BaseGameVersion getWorldBaseGameVersion() const;
 
-    MCAPI void
-    init(struct cereal::ReflectionCtx&, class Experiments const&, class BaseGameVersion const&, class ResourcePackManager*)
-        const;
+    MCAPI void init(
+        struct cereal::ReflectionCtx& ctx,
+        class Experiments const&      experiments,
+        class BaseGameVersion const&  baseGameVersion,
+        class ResourcePackManager*    rpm
+    ) const;
 
     MCAPI void initCreativeItemsServer(
         class ActorInfoRegistry*    actorInfoRegistry,
@@ -91,7 +94,7 @@ public:
             registerCallback
     ) const;
 
-    MCAPI bool isComplexAlias(class HashedString const&) const;
+    MCAPI bool isComplexAlias(class HashedString const& oldName) const;
 
     MCAPI bool isCreativeItem(class ItemInstance const& itemInstance) const;
 
@@ -126,7 +129,7 @@ public:
     ) const;
 
     MCAPI class WeakPtr<class Item>
-    registerComplexAlias(class HashedString const& alias, struct ItemRegistryComplexAlias const&) const;
+    registerComplexAlias(class HashedString const& alias, struct ItemRegistryComplexAlias const& complexAlias) const;
 
     MCAPI void registerExtraItemInitCallback(std::function<void(class ItemRegistryRef)> callback) const;
 
@@ -153,7 +156,7 @@ public:
     MCAPI void unregisterItem(class HashedString const& itemName) const;
 
     MCAPI std::vector<std::string>
-          validateServerItemComponents(std::vector<std::pair<std::string, class CompoundTag>> const&) const;
+          validateServerItemComponents(std::vector<std::pair<std::string, class CompoundTag>> const& itemTags) const;
 
     MCAPI ~ItemRegistryRef();
 

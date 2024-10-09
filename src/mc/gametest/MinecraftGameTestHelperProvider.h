@@ -26,7 +26,7 @@ public:
 
     // vIndex: 1
     virtual std::unique_ptr<class gametest::BaseGameTestHelper>
-    createGameTestHelper(class gametest::BaseGameTestInstance&);
+    createGameTestHelper(class gametest::BaseGameTestInstance& testInstance);
 
     // vIndex: 2
     virtual std::unique_ptr<class gametest::IGameTestHelperProvider> clone();

@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/json/JsonSchemaObjectNode.h"
-#include "mc/world/AutomaticID.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
@@ -75,7 +75,7 @@ public:
     // NOLINTBEGIN
     MCAPI void _dropItem(class ItemStack const& item) const;
 
-    MCAPI void _sendMobEquipmentPacket(class MobEquipmentPacket) const;
+    MCAPI void _sendMobEquipmentPacket(class MobEquipmentPacket packet) const;
 
     // NOLINTEND
 };

@@ -4,9 +4,9 @@
 #include "mc/math/Vec3.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
 
 class UpdateClientInputLocksPacket : public ::Packet {
 public:
@@ -36,7 +36,10 @@ public:
 
     MCAPI UpdateClientInputLocksPacket();
 
-    MCAPI UpdateClientInputLocksPacket(struct ClientInputLockComponent const&, class Vec3 const&);
+    MCAPI UpdateClientInputLocksPacket(
+        struct ClientInputLockComponent const& inputLockComponent,
+        class Vec3 const&                      serverPos
+    );
 
     // NOLINTEND
 };

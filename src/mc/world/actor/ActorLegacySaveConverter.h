@@ -25,17 +25,17 @@ public:
 
     MCAPI static void convertCreeper(class Actor& entity, class CompoundTag const& tag);
 
-    MCAPI static void convertEnderman(class Actor& entity, class CompoundTag const& tag);
+    MCAPI static void convertEnderman(class Actor& entity, class CompoundTag const&);
 
     MCAPI static void convertHorse(class Actor& entity, class CompoundTag const& tag);
 
     MCAPI static void convertIronGolem(class Actor& entity, class CompoundTag const& tag);
 
-    MCAPI static void convertMinecart(class Actor& entity, class CompoundTag const& tag);
+    MCAPI static void convertMinecart(class Actor& entity, class CompoundTag const&);
 
-    MCAPI static void convertMinecartHopper(class Actor& entity, class CompoundTag const& tag);
+    MCAPI static void convertMinecartHopper(class Actor& entity, class CompoundTag const&);
 
-    MCAPI static void convertMinecartTNT(class Actor& entity, class CompoundTag const& tag);
+    MCAPI static void convertMinecartTNT(class Actor& entity, class CompoundTag const&);
 
     MCAPI static void convertOcelot(class Actor& entity, class CompoundTag const& tag);
 
@@ -45,7 +45,7 @@ public:
 
     MCAPI static void convertSheep(class Actor& entity, class CompoundTag const& tag);
 
-    MCAPI static void convertSilverfish(class Actor& entity, class CompoundTag const& tag);
+    MCAPI static void convertSilverfish(class Actor& entity, class CompoundTag const&);
 
     MCAPI static void convertSkeleton(class Actor& entity, class CompoundTag const& tag);
 

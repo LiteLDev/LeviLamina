@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/MeleeAttackBaseGoal.h"
 
 class MeleeBoxAttackGoal : public ::MeleeAttackBaseGoal {
@@ -22,9 +22,9 @@ public:
     virtual void tick();
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
-    MCAPI explicit MeleeBoxAttackGoal(class Mob&);
+    MCAPI explicit MeleeBoxAttackGoal(class Mob& mob);
 
     // NOLINTEND
 };

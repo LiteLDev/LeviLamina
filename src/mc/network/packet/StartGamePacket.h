@@ -14,10 +14,10 @@
 #include "mc/world/level/LevelSettings.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/GameType.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
+#include "mc/world/level/GameType.h"
 
 class StartGamePacket : public ::Packet {
 public:
@@ -71,27 +71,27 @@ public:
     MCAPI StartGamePacket();
 
     MCAPI StartGamePacket(
-        class ItemRegistryRef,
-        class LevelSettings const&        settings,
-        struct ActorUniqueID              entityId,
-        class ActorRuntimeID              runtimeId,
-        ::GameType                        entityGameType,
-        bool                              enableItemStackNetManager,
-        class Vec3 const&                 pos,
-        class Vec2 const&                 rot,
-        std::string const&                levelId,
-        std::string const&                levelName,
-        class ContentIdentity const&      premiumTemplateContentIdentity,
-        std::string const&                multiplayerCorrelationId,
-        class BlockDefinitionGroup const& blockDefinitionGroup,
-        bool                              isTrial,
-        class CompoundTag,
+        class ItemRegistryRef                itemRegistry,
+        class LevelSettings const&           settings,
+        struct ActorUniqueID                 entityId,
+        class ActorRuntimeID                 runtimeId,
+        ::GameType                           entityGameType,
+        bool                                 enableItemStackNetManager,
+        class Vec3 const&                    pos,
+        class Vec2 const&                    rot,
+        std::string const&                   levelId,
+        std::string const&                   levelName,
+        class ContentIdentity const&         premiumTemplateContentIdentity,
+        std::string const&                   multiplayerCorrelationId,
+        class BlockDefinitionGroup const&    blockDefinitionGroup,
+        bool                                 isTrial,
+        class CompoundTag                    playerPropertyData,
         struct PlayerMovementSettings const& movementSettings,
-        std::string const&,
-        class mce::UUID const& worldTemplateId,
-        uint64                 levelCurrentTime,
-        int                    enchantmentSeed,
-        uint64
+        std::string const&                   serverVersion,
+        class mce::UUID const&               worldTemplateId,
+        uint64                               levelCurrentTime,
+        int                                  enchantmentSeed,
+        uint64                               blockTypeRegistryChecksum
     );
 
     // NOLINTEND

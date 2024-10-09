@@ -36,7 +36,7 @@ public:
 
     MCAPI class InsideBlockEventMap& operator=(class InsideBlockEventMap const&);
 
-    MCAPI void setCurrentlyInside(bool);
+    MCAPI void setCurrentlyInside(bool isInside);
 
     MCAPI void setWasInside(bool wasInside);
 

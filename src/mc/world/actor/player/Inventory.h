@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/FillingContainer.h"
+#include "mc/world/inventory/FillingContainer.h"
 
 class Inventory : public ::FillingContainer {
 public:

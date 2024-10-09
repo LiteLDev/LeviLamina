@@ -3,24 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/input/InputMode.h"
 #include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/entity/utilities/ActorDamageCause.h"
-#include "mc/entity/utilities/ActorFlags.h"
-#include "mc/entity/utilities/ActorInitializationMethod.h"
-#include "mc/entity/utilities/ActorType.h"
-#include "mc/enums/ArmorMaterialType.h"
-#include "mc/enums/ArmorSlot.h"
-#include "mc/enums/HandSlot.h"
-#include "mc/enums/InputMode.h"
-#include "mc/enums/MaterialType.h"
-#include "mc/enums/MinecartType.h"
-#include "mc/enums/NewInteractionModel.h"
-#include "mc/events/ActorEvent.h"
-#include "mc/events/LevelSoundEvent.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/input/NewInteractionModel.h"
+#include "mc/network/packet/types/world/actor/ActorEvent.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/AutomaticID.h"
 #include "mc/world/actor/Actor.h"
-#include "mc/world/item/components/ItemUseMethod.h"
+#include "mc/world/actor/ActorDamageCause.h"
+#include "mc/world/actor/ActorFlags.h"
+#include "mc/world/actor/ActorInitializationMethod.h"
+#include "mc/world/actor/ActorType.h"
+#include "mc/world/actor/ArmorMaterialType.h"
+#include "mc/world/actor/item/MinecartType.h"
+#include "mc/world/item/ArmorSlot.h"
+#include "mc/world/item/HandSlot.h"
+#include "mc/world/item/ItemUseMethod.h"
+#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -46,7 +46,7 @@ public:
     virtual ~Minecart();
 
     // vIndex: 17
-    virtual float getInterpolatedBodyYaw(float a) const;
+    virtual float getInterpolatedBodyYaw(float) const;
 
     // vIndex: 38
     virtual float getShadowRadius() const;
@@ -61,16 +61,16 @@ public:
     virtual void kill();
 
     // vIndex: 146
-    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool, bool);
 
     // vIndex: 147
-    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper&);
 
     // vIndex: 148
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // vIndex: 151
-    virtual void destroy(class ActorDamageSource const& source, bool dropMinecartComponents);
+    virtual void destroy(class ActorDamageSource const&, bool dropMinecartComponents);
 
     // vIndex: 152
     virtual ::MinecartType getType() = 0;
@@ -82,7 +82,7 @@ public:
     virtual int getDefaultDisplayOffset() const;
 
     // vIndex: 155
-    virtual void applyNaturalSlowdown(class BlockSource& region);
+    virtual void applyNaturalSlowdown(class BlockSource&);
 
     // vIndex: 156
     virtual void _lazyInitDisplayBlock();
@@ -93,9 +93,9 @@ public:
         class EntityContext&                    entityContext
     );
 
-    MCAPI void dropMinecartWithContentsAndRemove(std::string_view, bool dropMinecartComponents);
+    MCAPI void dropMinecartWithContentsAndRemove(std::string_view vanillaMinecartName, bool dropMinecartComponents);
 
-    MCAPI void postNormalTick(class BlockPos const&);
+    MCAPI void postNormalTick(class BlockPos const& preNormalTickBlockPos);
 
     MCAPI class BlockPos preNormalTick();
 
@@ -103,7 +103,7 @@ public:
 
     MCAPI void setDisplayBlock(class Block const& block);
 
-    MCAPI static float getHeightOffset(struct AABBShapeComponent const&);
+    MCAPI static float getHeightOffset(struct AABBShapeComponent const& aabb);
 
     // NOLINTEND
 

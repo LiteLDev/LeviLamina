@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/JumpType.h"
 #include "mc/world/actor/ai/control/JumpControl.h"
+#include "mc/world/actor/ai/control/JumpType.h"
 
 class DynamicJumpControl : public ::JumpControl {
 public:

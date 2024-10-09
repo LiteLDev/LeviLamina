@@ -4,7 +4,7 @@
 #include "mc/world/level/BlockPos.h"
 
 // auto generated inclusion list
-#include "mc/enums/Rotation.h"
+#include "mc/util/Rotation.h"
 
 class AABB;
 

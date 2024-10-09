@@ -25,8 +25,11 @@ public:
 
     MCVAPI void onRunAsyncJobs();
 
-    MCAPI
-    ScriptTickListener(class Scripting::ScriptEngine&, class ScriptAsyncJobCoordinator&, class ScriptFormPromiseTracker&);
+    MCAPI ScriptTickListener(
+        class Scripting::ScriptEngine&   scriptEngine,
+        class ScriptAsyncJobCoordinator& asyncJobCoordinator,
+        class ScriptFormPromiseTracker&  formPromiseTracker
+    );
 
     // NOLINTEND
 };

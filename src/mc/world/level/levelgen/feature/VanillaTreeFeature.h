@@ -5,8 +5,8 @@
 // auto generated inclusion list
 #include "mc/deps/json/JsonParseState.h"
 #include "mc/deps/json/JsonSchemaObjectNode.h"
-#include "mc/world/level/levelgen/feature/ConcreteFeatureHolder.h"
 #include "mc/world/level/levelgen/feature/ITreeFeature.h"
+#include "mc/world/level/levelgen/feature/feature_loading/ConcreteFeatureHolder.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -57,8 +57,13 @@ public:
             canopyAccessor
     );
 
-    MCAPI static void
-    _buildVanillaRootVariants(class JsonUtil::JsonSchemaObjectNode<class JsonUtil::JsonParseState<class JsonUtil::EmptyClass, struct FeatureLoading::FeatureRootParseContext>, struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>>& schemaNode, std::function<class ITreeRootWrapper&(struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>*)>);
+    MCAPI static void _buildVanillaRootVariants(
+        class JsonUtil::JsonSchemaObjectNode<
+            class JsonUtil::JsonParseState<class JsonUtil::EmptyClass, struct FeatureLoading::FeatureRootParseContext>,
+            struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>>& schemaNode,
+        std::function<class ITreeRootWrapper&(struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>*)>
+            rootAccessor
+    );
 
     MCAPI static void _buildVanillaTrunkVariants(
         class JsonUtil::JsonSchemaObjectNode<

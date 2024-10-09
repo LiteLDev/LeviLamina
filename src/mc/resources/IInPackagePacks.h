@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/resources/PackCategory.h"
+#include "mc/deps/core/resource/PackCategory.h"
 
 // auto generated forward declare list
 // clang-format off

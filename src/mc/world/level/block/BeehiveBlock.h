@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/optional_ref.h"
-#include "mc/enums/FertilizerType.h"
-#include "mc/enums/Flip.h"
-#include "mc/enums/ShapeType.h"
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
+#include "mc/world/Flip.h"
+#include "mc/world/item/FertilizerType.h"
+#include "mc/world/level/ShapeType.h"
+#include "mc/world/level/block/BlockProperty.h"
+#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/FaceDirectionalActorBlock.h"
-#include "mc/world/level/block/utils/BlockProperty.h"
-#include "mc/world/level/block/utils/BlockRenderLayer.h"
-#include "mc/world/level/block/utils/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -50,9 +50,7 @@ public:
     virtual bool hasComparatorSignal() const;
 
     // vIndex: 112
-    virtual int
-    getComparatorSignal(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
-        const;
+    virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const& block, uchar) const;
 
     // vIndex: 129
     virtual int getVariant(class Block const& block) const;
@@ -61,10 +59,10 @@ public:
     virtual uchar getMappedFace(uchar face, class Block const& block) const;
 
     // vIndex: 134
-    virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void animateTickBedrockLegacy(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
     // vIndex: 152
-    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar) const;
 
     MCAPI BeehiveBlock(std::string const& nameId, int id);
 
@@ -76,7 +74,8 @@ public:
 
     MCAPI static void deliverNectar(class BlockSource& region, class Block const& block, class BlockPos const& pos);
 
-    MCAPI static class ItemStack getHiveItemWithOccupants(class Block const&, class BeehiveBlockActor const*);
+    MCAPI static class ItemStack
+    getHiveItemWithOccupants(class Block const& block, class BeehiveBlockActor const* beehiveBlockActor);
 
     MCAPI static bool hasHoneyToHarvest(class Block const& block);
 

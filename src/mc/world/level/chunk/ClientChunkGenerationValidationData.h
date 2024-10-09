@@ -11,13 +11,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI void captureServerChunkData(class ChunkSource&);
+    MCAPI void captureServerChunkData(class ChunkSource& serverChunkSource);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    MCAPI void _captureChunkData(std::map<class ChunkPos, std::vector<std::string>>& data, class ChunkSource&);
+    MCAPI void
+    _captureChunkData(std::map<class ChunkPos, std::vector<std::string>>& data, class ChunkSource& chunkSource);
 
     // NOLINTEND
 };

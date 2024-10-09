@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/d_b_helpers/Category.h"
+#include "mc/world/level/storage/db_helpers/Category.h"
 
 class LevelStorageWriteBatch {
 public:
@@ -65,7 +65,7 @@ public:
 
     MCAPI void clear();
 
-    MCAPI void erase(BatchEntryMap::const_iterator const& it);
+    MCAPI void erase(BatchEntryMap::const_iterator const&);
 
     MCAPI BatchEntryMap::const_iterator find(std::string const& key) const;
 

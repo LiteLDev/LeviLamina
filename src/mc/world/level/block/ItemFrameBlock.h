@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/optional_ref.h"
-#include "mc/enums/FertilizerType.h"
-#include "mc/enums/Flip.h"
-#include "mc/enums/ShapeType.h"
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
+#include "mc/world/Flip.h"
+#include "mc/world/item/FertilizerType.h"
+#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/ActorBlock.h"
-#include "mc/world/level/block/utils/BlockProperty.h"
-#include "mc/world/level/block/utils/BlockRenderLayer.h"
-#include "mc/world/level/block/utils/BlockSupportType.h"
+#include "mc/world/level/block/BlockProperty.h"
+#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -36,7 +36,7 @@ public:
         const;
 
     // vIndex: 11
-    virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
+    virtual class AABB const& getVisualShape(class Block const& block, class AABB& bufferAABB) const;
 
     // vIndex: 33
     virtual bool isWaterBlocking() const;
@@ -66,17 +66,12 @@ public:
 
     // vIndex: 97
     virtual void
-    spawnAfterBreak(class BlockSource&, class Block const&, class BlockPos const&, struct ResourceDropsContext const&)
+    spawnAfterBreak(class BlockSource& region, class Block const&, class BlockPos const& pos, struct ResourceDropsContext const&)
         const;
 
     // vIndex: 98
-    virtual class Block const& getPlacementBlock(
-        class Actor const&    by,
-        class BlockPos const& pos,
-        uchar                 face,
-        class Vec3 const&     clickPos,
-        int                   itemValue
-    ) const;
+    virtual class Block const&
+    getPlacementBlock(class Actor const&, class BlockPos const&, uchar face, class Vec3 const&, int) const;
 
     // vIndex: 101
     virtual bool attack(class Player* player, class BlockPos const& pos) const;
@@ -102,7 +97,7 @@ public:
     virtual bool isInteractiveBlock() const;
 
     // vIndex: 152
-    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar) const;
 
     // vIndex: 154
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;

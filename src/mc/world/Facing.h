@@ -3,9 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/WeirdoDirection.h"
-#include "mc/external/glm/mat.h"
 #include "mc/world/Direction.h"
+#include "mc/world/level/block/WeirdoDirection.h"
 
 class Facing {
 public:
@@ -86,9 +85,10 @@ public:
 
     MCAPI static class Vec3 getFaceLocation(uchar face, float u, float v);
 
-    MCAPI static uchar getFacingDirection(class Vec3 const& currentPos, class Vec3 const&);
+    MCAPI static uchar getFacingDirection(class Vec3 const& currentPos, class Vec3 const& TargetPos);
 
-    MCAPI static std::vector<uchar> getMostPrioritizedFacingDirection(class Vec2 const& viewVector, uchar, bool);
+    MCAPI static std::vector<uchar>
+    getMostPrioritizedFacingDirection(class Vec2 const& viewVector, uchar clickedFace, bool isReplacingABlock);
 
     MCAPI static std::array<uchar, 6> getMostPrioritizedFacingDirectionFromViewVector(class Vec2 const& viewVector);
 
@@ -98,7 +98,7 @@ public:
 
     MCAPI static int getRandomFaceHorizontal(class Random& random);
 
-    MCAPI static struct glm::mat<3, 3, float, 0> getRotationMatrix(uchar facing, ::Facing::Rotation rotation);
+    MCAPI static glm::mat3x3 getRotationMatrix(uchar facing, ::Facing::Rotation rotation);
 
     MCAPI static std::vector<uchar> getShuffledDirections();
 
@@ -112,7 +112,7 @@ public:
 
     MCAPI static bool isValidDirection(int face);
 
-    MCAPI static std::array<uchar, 6> makeDirectionArray(uchar, uchar, uchar);
+    MCAPI static std::array<uchar, 6> makeDirectionArray(uchar axis1, uchar axis2, uchar axis3);
 
     MCAPI static uchar rotateFace(uchar face, ::Facing::Rotation rot);
 

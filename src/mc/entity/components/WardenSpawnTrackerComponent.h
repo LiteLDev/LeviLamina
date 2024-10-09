@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/events/LevelSoundEvent.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
 
 class WardenSpawnTrackerComponent {
 public:
@@ -19,16 +19,15 @@ public:
 
     MCAPI bool canIncreaseThreatLevel() const;
 
-    MCAPI void copyDataFrom(class WardenSpawnTrackerComponent const&);
+    MCAPI void copyDataFrom(class WardenSpawnTrackerComponent const& copyFrom);
 
-    MCAPI void
-    readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const& tag, class DataLoadHelper&);
 
     MCAPI void tick();
 
     MCAPI int tryIncreaseThreatLevel();
 
-    MCAPI static std::optional<::Puv::Legacy::LevelSoundEvent> getSoundEventForThreatLevel(int);
+    MCAPI static std::optional<::Puv::Legacy::LevelSoundEvent> getSoundEventForThreatLevel(int threatLevel);
 
     MCAPI static bool hasNearbyWarden(class BlockSource& region, class BlockPos const& pos);
 

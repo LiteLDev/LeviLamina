@@ -14,7 +14,7 @@ public:
 
     MCAPI GameEventListenerComponent(class GameEventListenerComponent&& other);
 
-    MCAPI bool initialize(std::unique_ptr<class GameEventDynamicRegistration>);
+    MCAPI bool initialize(std::unique_ptr<class GameEventDynamicRegistration> registration);
 
     MCAPI class GameEventListenerComponent& operator=(class GameEventListenerComponent&& other);
 

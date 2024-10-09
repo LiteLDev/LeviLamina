@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/deps/core/utility/ReadOnlyBinaryStream.h"
+#include "mc/platform/Result.h"
 
 class BinaryStream : public ::ReadOnlyBinaryStream {
 public:
@@ -42,53 +42,53 @@ public:
 
     MCAPI void reset();
 
-    MCAPI void writeBool(bool data, char const* docName = nullptr, char const* docDesc = nullptr);
+    MCAPI void writeBool(bool value, char const* = nullptr, char const* = nullptr);
 
-    MCAPI void writeByte(uchar data, char const* docName = nullptr, char const* docDesc = nullptr);
+    MCAPI void writeByte(uchar value, char const* = nullptr, char const* = nullptr);
 
-    MCAPI void writeDouble(double data, char const* docName = nullptr, char const* docDesc = nullptr);
+    MCAPI void writeDouble(double value, char const* = nullptr, char const* = nullptr);
 
-    MCAPI void writeFloat(float data, char const* docName = nullptr, char const* docDesc = nullptr);
+    MCAPI void writeFloat(float value, char const* = nullptr, char const* = nullptr);
 
-    MCAPI void writeSignedBigEndianInt(int data, char const* docName = nullptr, char const* docDesc = nullptr);
+    MCAPI void writeSignedBigEndianInt(int value, char const* = nullptr, char const* = nullptr);
 
-    MCAPI void writeSignedInt(int data, char const* docName = nullptr, char const* docDesc = nullptr);
+    MCAPI void writeSignedInt(int value, char const* = nullptr, char const* = nullptr);
 
-    MCAPI void writeSignedInt64(int64 data, char const* docName = nullptr, char const* docDesc = nullptr);
+    MCAPI void writeSignedInt64(int64 value, char const* = nullptr, char const* = nullptr);
 
-    MCAPI void writeSignedShort(short data, char const* docName = nullptr, char const* docDesc = nullptr);
+    MCAPI void writeSignedShort(short value, char const* = nullptr, char const* = nullptr);
 
-    MCAPI void writeString(std::string_view data, char const* docName = nullptr, char const* docDesc = nullptr);
+    MCAPI void writeString(std::string_view value, char const* = nullptr, char const* = nullptr);
 
-    MCAPI void writeUnsignedChar(uchar data, char const* docName = nullptr, char const* docDesc = nullptr);
+    MCAPI void writeUnsignedChar(uchar value, char const* = nullptr, char const* = nullptr);
 
-    MCAPI void writeUnsignedInt(uint data, char const* docName = nullptr, char const* docDesc = nullptr);
+    MCAPI void writeUnsignedInt(uint value, char const* = nullptr, char const* = nullptr);
 
-    MCAPI void writeUnsignedInt64(uint64 data, char const* docName = nullptr, char const* docDesc = nullptr);
+    MCAPI void writeUnsignedInt64(uint64 value, char const* = nullptr, char const* = nullptr);
 
-    MCAPI void writeUnsignedShort(ushort data, char const* docName = nullptr, char const* docDesc = nullptr);
+    MCAPI void writeUnsignedShort(ushort value, char const* = nullptr, char const* = nullptr);
 
-    MCAPI void writeUnsignedVarInt(uint data, char const* docName = nullptr, char const* docDesc = nullptr);
+    MCAPI void writeUnsignedVarInt(uint uvalue, char const* = nullptr, char const* = nullptr);
 
-    MCAPI void writeUnsignedVarInt64(uint64 data, char const* docName = nullptr, char const* docDesc = nullptr);
+    MCAPI void writeUnsignedVarInt64(uint64 uvalue, char const* = nullptr, char const* = nullptr);
 
-    MCAPI void writeVarInt(int data, char const* docName = nullptr, char const* docDesc = nullptr);
+    MCAPI void writeVarInt(int value, char const* = nullptr, char const* = nullptr);
 
-    MCAPI void writeVarInt64(int64 data, char const* docName = nullptr, char const* docDesc = nullptr);
+    MCAPI void writeVarInt64(int64 value, char const* = nullptr, char const* = nullptr);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    MCAPI void _writeInteger(int, char const*, char const*);
+    MCAPI void _writeInteger(int value, char const* = nullptr, char const* = nullptr);
 
-    MCAPI void _writeInteger(short, char const*, char const*);
+    MCAPI void _writeInteger(short value, char const* = nullptr, char const* = nullptr);
 
-    MCAPI void _writeInteger(uchar, char const*, char const*);
+    MCAPI void _writeInteger(uchar value, char const* = nullptr, char const* = nullptr);
 
-    MCAPI void _writeInteger(uint, char const*, char const*);
+    MCAPI void _writeInteger(uint value, char const* = nullptr, char const* = nullptr);
 
-    MCAPI void _writeInteger(ushort, char const*, char const*);
+    MCAPI void _writeInteger(ushort value, char const* = nullptr, char const* = nullptr);
 
     MCAPI void write(void const* origin, uint64 num);
 

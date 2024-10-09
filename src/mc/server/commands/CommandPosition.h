@@ -16,7 +16,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI explicit CommandPosition(class Vec3 const&);
+    MCAPI explicit CommandPosition(class Vec3 const& absoluteOffset);
 
     MCAPI class BlockPos getBlockPos(class Vec3 const& ref, class Vec3 const& offsetFromBase = {}) const;
 

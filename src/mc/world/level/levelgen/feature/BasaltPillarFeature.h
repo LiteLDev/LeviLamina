@@ -24,9 +24,13 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI bool
-    _growColumn(class BlockSource& region, class BlockPos const& pos, class Random& random, float placeChance, class Block const&)
-        const;
+    MCAPI bool _growColumn(
+        class BlockSource&    region,
+        class BlockPos const& pos,
+        class Random&         random,
+        float                 placeChance,
+        class Block const&    basalt
+    ) const;
 
     // NOLINTEND
 };

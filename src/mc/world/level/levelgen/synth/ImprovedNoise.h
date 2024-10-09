@@ -37,7 +37,7 @@ public:
         float&            vv3
     ) const;
 
-    MCAPI void _init(class Vec3 const& origin, class IRandom& random, struct YBlendingBugSettings);
+    MCAPI void _init(class Vec3 const& origin, class IRandom& random, struct YBlendingBugSettings yBlendingSettings);
 
     // NOLINTEND
 };

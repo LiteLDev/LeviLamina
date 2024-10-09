@@ -20,9 +20,9 @@ public:
     // vIndex: 0
     virtual ~OnPlayerPlacingTrigger() = default;
 
-    MCAPI void finalize(gsl::not_null<class BlockEvents::BlockPlayerPlacingEventComponent*>);
+    MCAPI void finalize(gsl::not_null<class BlockEvents::BlockPlayerPlacingEventComponent*> comp);
 
-    MCAPI void onPlayerPlacing(struct BlockEvents::BlockPlayerPlacingEvent&) const;
+    MCAPI void onPlayerPlacing(struct BlockEvents::BlockPlayerPlacingEvent& eventData) const;
 
     // NOLINTEND
 };

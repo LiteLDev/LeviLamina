@@ -17,8 +17,11 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI static void
-    _doResetJumpRidingScaleSystem(class StrictEntityContext const&, struct JumpRidingScaleComponent&, struct VanillaClientGameplayComponent&);
+    MCAPI static void _doResetJumpRidingScaleSystem(
+        class StrictEntityContext const&,
+        struct JumpRidingScaleComponent&       jumpRidingScaleComponent,
+        struct VanillaClientGameplayComponent& vanillaClientGameplayComponent
+    );
 
     // NOLINTEND
 };

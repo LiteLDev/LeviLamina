@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/AdjustmentEffect.h"
-#include "mc/enums/Rotation.h"
+#include "mc/util/Rotation.h"
+#include "mc/world/level/levelgen/v1/AdjustmentEffect.h"
 
 class LegacyJigsawPlacement {
 public:
@@ -67,7 +67,7 @@ public:
     );
 
     MCAPI static std::shared_ptr<bool> _setTerrainAdjustment(
-        ::AdjustmentEffect,
+        ::AdjustmentEffect           adjustmentEffect,
         class BoundingBox const&     bb,
         struct JigsawJunction const& junction,
         class Dimension&             dimension

@@ -18,22 +18,34 @@ public:
     virtual ~OceanRuinFeature() = default;
 
     // vIndex: 3
-    virtual bool
-    getNearestGeneratedFeature(class Dimension&, class BiomeSource const&, class BlockPos const&, class BlockPos&, class IPreliminarySurfaceProvider const&, bool, std::optional<class HashedString> const&);
+    virtual bool getNearestGeneratedFeature(
+        class Dimension&                         dimension,
+        class BiomeSource const&                 biomeSource,
+        class BlockPos const&                    origin,
+        class BlockPos&                          pos,
+        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        bool                                     mustBeInNewChunks,
+        std::optional<class HashedString> const& biomeTag
+    );
 
     // vIndex: 5
     virtual bool isFeatureChunk(
-        class BiomeSource const& biomeSource,
-        class Random&            random,
-        class ChunkPos const&    lc,
-        uint                     levelSeed,
-        class IPreliminarySurfaceProvider const&,
-        class Dimension const& dimension
+        class BiomeSource const&                 biomeSource,
+        class Random&                            random,
+        class ChunkPos const&                    lc,
+        uint                                     levelSeed,
+        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        class Dimension const&                   dimension
     );
 
     // vIndex: 6
-    virtual std::unique_ptr<class StructureStart>
-    createStructureStart(class Dimension& generator, class BiomeSource const& biomeSource, class Random& random, class ChunkPos const& lc, class IPreliminarySurfaceProvider const&);
+    virtual std::unique_ptr<class StructureStart> createStructureStart(
+        class Dimension&                         generator,
+        class BiomeSource const&                 biomeSource,
+        class Random&                            random,
+        class ChunkPos const&                    lc,
+        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+    );
 
     MCAPI
     OceanRuinFeature(class OceanMonumentFeature& monument, uint seed, class BaseGameVersion const& baseGameVersion);

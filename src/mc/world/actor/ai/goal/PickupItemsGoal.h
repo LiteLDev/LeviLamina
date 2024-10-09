@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class PickupItemsGoal : public ::Goal {
@@ -36,8 +36,20 @@ public:
     // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    MCAPI
-    PickupItemsGoal(class Mob& mob, float speedModifier, bool trackTarget, int searchRange, int searchHeight, float goalRadius, bool, bool canPickupAnyItem, int, bool canPickupToHandOrEquipment, bool, std::vector<class ItemDescriptor> const&);
+    MCAPI PickupItemsGoal(
+        class Mob&                               mob,
+        float                                    speedModifier,
+        bool                                     trackTarget,
+        int                                      searchRange,
+        int                                      searchHeight,
+        float                                    goalRadius,
+        bool                                     pickupBasedOnChance,
+        bool                                     canPickupAnyItem,
+        int                                      timeoutAfterBeingAttacked,
+        bool                                     canPickupToHandOrEquipment,
+        bool                                     pickupSameItemsAsInHand,
+        std::vector<class ItemDescriptor> const& excludedItemsList
+    );
 
     // NOLINTEND
 

@@ -13,13 +13,13 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ActorPermutationEventHandler(class Actor& actor);
 
-    MCAPI void checkActiveComponents(std::shared_ptr<class ActorPermutation>);
+    MCAPI void checkActiveComponents(std::shared_ptr<class ActorPermutation> permutation);
 
     MCAPI class ActorDefinitionDescriptor* getPermutationDescriptor();
 
     MCAPI bool hasChanged();
 
-    MCAPI void initPermutations(std::vector<std::shared_ptr<class ActorPermutation>>&);
+    MCAPI void initPermutations(std::vector<std::shared_ptr<class ActorPermutation>>& permutations);
 
     MCAPI void reload(class RenderParams& params);
 

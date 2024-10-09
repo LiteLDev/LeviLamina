@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/components/agent/Direction.h"
+#include "mc/entity/components/agent_components/Direction.h"
 
 // auto generated forward declare list
 // clang-format off

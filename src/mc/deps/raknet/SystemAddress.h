@@ -50,7 +50,7 @@ public:
 
     MCAPI SystemAddress(char const* str, ushort port);
 
-    MCAPI std::string ToString(char = ':') const;
+    MCAPI std::string ToString(char portDelineator = ':') const;
 
     MCAPI void ToString(bool writePort, char* dest, char portDelineator) const;
 

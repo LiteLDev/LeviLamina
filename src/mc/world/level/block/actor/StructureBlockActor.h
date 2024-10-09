@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
 // auto generated forward declare list
@@ -42,7 +42,7 @@ public:
 
     MCAPI class StructureEditorData const& getStructureData() const;
 
-    MCAPI void setIsWaterlogged(bool);
+    MCAPI void setIsWaterlogged(bool waterlogged);
 
     MCAPI void
     setPowered(class BlockSource& region, class BlockPos const& pos, bool shouldTrigger, bool redstoneTriggered);

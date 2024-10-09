@@ -12,19 +12,19 @@ public:
 public:
     // NOLINTBEGIN
     MCAPI void post(
-        class BlockSource& region,
-        class Actor*       source,
-        class GameEvent const&,
-        class BlockPos const& origin,
-        class Block const*    affectedBlock
+        class BlockSource&     region,
+        class Actor*           source,
+        class GameEvent const& gameEvent,
+        class BlockPos const&  origin,
+        class Block const*     affectedBlock
     );
 
     MCAPI void post(
-        class BlockSource& region,
-        class Actor*       source,
-        class GameEvent const&,
-        class Vec3 const&  origin,
-        class Block const* affectedBlock
+        class BlockSource&     region,
+        class Actor*           source,
+        class GameEvent const& gameEvent,
+        class Vec3 const&      origin,
+        class Block const*     affectedBlock
     );
 
     // NOLINTEND

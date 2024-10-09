@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/enums/PostProcessSettings.h"
-#include "mc/enums/Projection.h"
-#include "mc/enums/Rotation.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/util/Rotation.h"
+#include "mc/world/level/levelgen/structure/PostProcessSettings.h"
+#include "mc/world/level/levelgen/structure/Projection.h"
 #include "mc/world/level/levelgen/structure/structurepools/StructurePoolElementType.h"
 
 class StructurePoolElement {
@@ -142,11 +142,11 @@ public:
 
     MCAPI static std::function<
         class StructurePoolElement const&(struct StructureTemplateRegistrationContext, ::Projection)>
-        single(std::string_view);
+    single(std::string_view location);
 
     MCAPI static std::function<
         class StructurePoolElement const&(struct StructureTemplateRegistrationContext, ::Projection)>
-    single(std::string_view, std::vector<std::unique_ptr<class StructurePoolBlockRule>> const*);
+    single(std::string_view location, std::vector<std::unique_ptr<class StructurePoolBlockRule>> const* blockRules);
 
     // NOLINTEND
 

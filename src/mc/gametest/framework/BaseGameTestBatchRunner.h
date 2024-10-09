@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/Rotation.h"
+#include "mc/util/Rotation.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -34,12 +34,12 @@ public:
 
     // vIndex: 2
     virtual void
-    _runTest(std::shared_ptr<class gametest::BaseGameTestInstance> test, class gametest::GameTestTicker&) = 0;
+    _runTest(std::shared_ptr<class gametest::BaseGameTestInstance> test, class gametest::GameTestTicker& ticker) = 0;
 
     MCAPI BaseGameTestBatchRunner(
-        std::vector<class gametest::GameTestBatch>&&,
-        class gametest::GameTestTicker&,
-        struct gametest::TestParameters&& params
+        std::vector<class gametest::GameTestBatch>&& batches,
+        class gametest::GameTestTicker&              testTicker,
+        struct gametest::TestParameters&&            params
     );
 
     MCAPI void start();
@@ -49,14 +49,14 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI void _addTestInstanceWithRotation(
-        std::vector<std::shared_ptr<class gametest::BaseGameTestInstance>>&,
-        std::shared_ptr<class gametest::BaseGameTestFunction>,
-        ::Rotation rotation
+        std::vector<std::shared_ptr<class gametest::BaseGameTestInstance>>& instances,
+        std::shared_ptr<class gametest::BaseGameTestFunction>               testFunction,
+        ::Rotation                                                          rotation
     );
 
     MCAPI void _resetBatchTracker();
 
-    MCAPI void _runBatch(int);
+    MCAPI void _runBatch(int batchIndex);
 
     // NOLINTEND
 };

@@ -8,10 +8,10 @@
 // auto generated inclusion list
 #include "mc/deps/raknet/ConnectionAttemptResult.h"
 #include "mc/deps/raknet/ConnectionState.h"
+#include "mc/deps/raknet/PacketPriority.h"
+#include "mc/deps/raknet/PacketReliability.h"
 #include "mc/deps/raknet/StartupResult.h"
 #include "mc/deps/raknet/data_structures/List.h"
-#include "mc/resources/PacketPriority.h"
-#include "mc/resources/PacketReliability.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -236,7 +236,7 @@ public:
 
     MCVAPI uint IncrementNextSendReceipt();
 
-    MCVAPI void InitializeConfiguration(std::unique_ptr<class RakNet::ShadowBanList>);
+    MCVAPI void InitializeConfiguration(std::unique_ptr<class RakNet::ShadowBanList> banList);
 
     MCVAPI bool InitializeSecurity(char const* public_key, char const* private_key, bool bRequireClientKey);
 
@@ -313,7 +313,7 @@ public:
 
     MCVAPI void SendTTL(char const* host, ushort remotePort, int ttl, uint connectionSocketIndex);
 
-    MCVAPI bool SetApplicationHandshakeCompleted(struct RakNet::AddressOrGUID);
+    MCVAPI bool SetApplicationHandshakeCompleted(struct RakNet::AddressOrGUID systemIdentifier);
 
     MCVAPI void SetIncomingDatagramEventHandler(bool (*_incomingDatagramEventHandler)(struct RakNet::RNS2RecvStruct*));
 

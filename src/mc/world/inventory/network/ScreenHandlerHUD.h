@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/inventory/network/ItemStackNetResult.h"
 #include "mc/world/inventory/network/ScreenHandlerBase.h"
-#include "mc/world/item/components/ItemStackNetResult.h"
 
 class ScreenHandlerHUD : public ::ScreenHandlerBase {
 public:

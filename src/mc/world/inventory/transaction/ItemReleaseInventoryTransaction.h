@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/InventoryTransactionError.h"
+#include "mc/platform/Result.h"
 #include "mc/world/inventory/transaction/ComplexInventoryTransaction.h"
+#include "mc/world/inventory/transaction/InventoryTransactionError.h"
 
 class ItemReleaseInventoryTransaction : public ::ComplexInventoryTransaction {
 public:

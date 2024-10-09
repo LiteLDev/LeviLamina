@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/codebuilder/ProtocolVersion.h"
-#include "mc/entity/utilities/ActorDigestFormat.h"
-#include "mc/enums/BlendVersion.h"
-#include "mc/enums/StorageVersion.h"
-#include "mc/world/level/LevelChunkFormat.h"
+#include "mc/world/level/chunk/ActorDigestFormat.h"
+#include "mc/world/level/chunk/BlendVersion.h"
+#include "mc/world/level/chunk/LevelChunkFormat.h"
 #include "mc/world/level/chunk/SubChunkFormat.h"
+#include "mc/world/level/storage/StorageVersion.h"
 
 class SemVersion;
 class GameVersion;

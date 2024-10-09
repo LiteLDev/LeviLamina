@@ -18,7 +18,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI void add(std::unique_ptr<class GameTestClearTask>);
+    MCAPI void add(std::unique_ptr<class GameTestClearTask> clearTask);
 
     MCAPI void clear();
 

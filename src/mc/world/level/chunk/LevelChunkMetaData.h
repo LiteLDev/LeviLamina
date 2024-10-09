@@ -10,7 +10,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI LevelChunkMetaData(class LevelChunkMetaData const&);
+    MCAPI LevelChunkMetaData(class LevelChunkMetaData const& otherMetaData);
 
     MCAPI uint64 getCurrentHash() const;
 

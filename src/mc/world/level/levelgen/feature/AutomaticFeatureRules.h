@@ -40,12 +40,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI void attachAutomaticFeatures(class ResourcePackManager&, class IWorldRegistriesProvider&) const;
+    MCAPI void attachAutomaticFeatures(
+        class ResourcePackManager&      resourcePackManager,
+        class IWorldRegistriesProvider& worldRegistries
+    ) const;
 
     MCAPI std::unordered_map<
         std::string,
         std::unordered_map<class HashedString, struct AutomaticFeatureRules::AutomaticFeatureRule>>
-    parseAutomaticFeatures(class ResourcePackManager&, class IWorldRegistriesProvider&) const;
+    parseAutomaticFeatures(
+        class ResourcePackManager&      resourcePackManager,
+        class IWorldRegistriesProvider& worldRegistries
+    ) const;
 
     // NOLINTEND
 
@@ -57,15 +63,16 @@ public:
             std::tuple<
                 std::reference_wrapper<std::string>,
                 std::reference_wrapper<struct AutomaticFeatureRules::AutomaticFeatureRule>,
-                std::reference_wrapper<class IWorldRegistriesProvider>>> const&,
-        std::string const&,
-        std::string const&,
-        class SemVersion const&,
-        class IWorldRegistriesProvider&,
+                std::reference_wrapper<class IWorldRegistriesProvider>>> const& schema,
+        std::string const&                                                      filename,
+        std::string const&                                                      input,
+        class SemVersion const&                                                 engineVersion,
+        class IWorldRegistriesProvider&                                         worldRegistries,
         std::unordered_map<
             std::string,
-            std::unordered_map<class HashedString, struct AutomaticFeatureRules::AutomaticFeatureRule>>&,
-        bool
+            std::unordered_map<class HashedString, struct AutomaticFeatureRules::AutomaticFeatureRule>>&
+             bucketedFeatures,
+        bool isBasePack
     ) const;
 
     // NOLINTEND

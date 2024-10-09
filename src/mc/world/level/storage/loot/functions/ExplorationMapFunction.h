@@ -23,10 +23,10 @@ public:
     virtual ~ExplorationMapFunction() = default;
 
     // vIndex: 1
-    virtual void apply(class ItemStack& item, class Random& random, class LootTableContext& context);
+    virtual void apply(class ItemStack& item, class Random&, class LootTableContext& context);
 
     // vIndex: 3
-    virtual void apply(class ItemInstance& item, class Random& random, class LootTableContext& context);
+    virtual void apply(class ItemInstance& item, class Random&, class LootTableContext& context);
 
     MCAPI static std::unique_ptr<class LootItemFunction>
     deserialize(class Json::Value object, std::vector<std::unique_ptr<class LootItemCondition>>& predicates);

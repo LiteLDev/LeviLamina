@@ -5,8 +5,8 @@
 #include "mc/world/level/WorldGenContext.h"
 
 // auto generated inclusion list
+#include "mc/world/level/BlockDataFetchResult.h"
 #include "mc/world/level/IBlockWorldGenAPI.h"
-#include "mc/world/level/block/utils/BlockDataFetchResult.h"
 
 class WorldBlockTarget : public ::IBlockWorldGenAPI {
 public:
@@ -48,7 +48,7 @@ public:
     fetchBlocksInBox(class BoundingBox const& box, std::function<bool(class Block const&)> predicate);
 
     // vIndex: 8
-    virtual bool hasBiomeTag(uint64, class BlockPos const& pos) const;
+    virtual bool hasBiomeTag(uint64 tagNameHash, class BlockPos const& pos) const;
 
     // vIndex: 9
     virtual bool setBlock(class BlockPos const& pos, class Block const& newBlock, int updateFlags);

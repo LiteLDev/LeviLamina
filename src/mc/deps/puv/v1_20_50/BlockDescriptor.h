@@ -25,16 +25,16 @@ public:
 
     public:
         // NOLINTBEGIN
-        MCAPI void fromInt(int);
+        MCAPI void fromInt(int i);
 
-        MCAPI void fromString(std::string);
+        MCAPI void fromString(std::string str);
 
         MCAPI struct Puv::v1_20_50::BlockDescriptor::Compound&
         operator=(struct Puv::v1_20_50::BlockDescriptor::Compound const&);
 
         MCAPI ~Compound();
 
-        MCAPI static void bindType(struct cereal::ReflectionCtx&);
+        MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
         // NOLINTEND
     };
@@ -53,7 +53,7 @@ public:
 
     MCAPI ~BlockDescriptor();
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx&);
+    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
     // NOLINTEND
 };

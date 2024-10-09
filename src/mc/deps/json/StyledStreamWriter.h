@@ -20,7 +20,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit StyledStreamWriter(std::string indentation);
 
-    MCAPI void write(std::ostream&, class Json::Value const&);
+    MCAPI void write(std::ostream& out, class Json::Value const& root);
 
     MCAPI ~StyledStreamWriter();
 

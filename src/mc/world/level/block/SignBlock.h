@@ -3,16 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/optional_ref.h"
-#include "mc/enums/FertilizerType.h"
-#include "mc/enums/Flip.h"
-#include "mc/enums/ShapeType.h"
-#include "mc/enums/SignTextSide.h"
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
+#include "mc/world/Flip.h"
+#include "mc/world/item/FertilizerType.h"
+#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/ActorBlock.h"
-#include "mc/world/level/block/utils/BlockProperty.h"
-#include "mc/world/level/block/utils/BlockRenderLayer.h"
-#include "mc/world/level/block/utils/BlockSupportType.h"
+#include "mc/world/level/block/BlockProperty.h"
+#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/BlockSupportType.h"
+#include "mc/world/level/block/actor/SignTextSide.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -54,7 +54,7 @@ public:
         const;
 
     // vIndex: 11
-    virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
+    virtual class AABB const& getVisualShape(class Block const& block, class AABB& bufferAABB) const;
 
     // vIndex: 62
     virtual bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
@@ -92,7 +92,7 @@ public:
 
     MCAPI SignBlock(std::string const& nameId, int id, bool onGround, ::SignBlock::SignType signType);
 
-    MCAPI static class mce::Color getSignTextColorFromDyeItem(class Item const&);
+    MCAPI static class mce::Color getSignTextColorFromDyeItem(class Item const& dyeItem);
 
     // NOLINTEND
 

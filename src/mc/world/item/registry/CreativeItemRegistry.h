@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-#include "mc/enums/CreativeItemCategory.h"
-#include "mc/network/TypedServerNetId.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/world/inventory/network/TypedServerNetId.h"
+#include "mc/world/item/CreativeItemCategory.h"
 
 // auto generated forward declare list
 // clang-format off

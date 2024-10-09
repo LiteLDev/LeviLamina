@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/ViewT.h"
-#include "mc/entity/EntityModifier.h"
-#include "mc/world/components/FlagComponent.h"
+#include "mc/deps/ecs/ViewT.h"
+#include "mc/deps/ecs/strict/EntityModifier.h"
+#include "mc/entity/components/FlagComponent.h"
 
 class InLavaSensingSystem {
 public:
@@ -19,16 +19,21 @@ public:
     MCAPI static struct TickingSystemWithInfo createSystem();
 
     MCAPI static void doInLavaSensing(
-        class StrictEntityContext const& entity,
-        struct UpdateWaterStateRequestComponent const&,
+        class StrictEntityContext const&                             entity,
+        struct UpdateWaterStateRequestComponent const&               updateWaterStateRequestComponent,
         class EntityModifier<class FlagComponent<struct InLavaFlag>> mod
     );
 
-    MCAPI static void
-    singleTickSystem(class StrictEntityContext&, class ViewT<class StrictEntityContext, struct UpdateWaterStateRequestComponent const>, class EntityModifier<class FlagComponent<struct InLavaFlag>>);
+    MCAPI static void singleTickSystem(
+        class StrictEntityContext&                                                            entity,
+        class ViewT<class StrictEntityContext, struct UpdateWaterStateRequestComponent const> view,
+        class EntityModifier<class FlagComponent<struct InLavaFlag>>                          mod
+    );
 
-    MCAPI static void
-        tickSystem(class ViewT<class StrictEntityContext, struct UpdateWaterStateRequestComponent const>, class EntityModifier<class FlagComponent<struct InLavaFlag>>);
+    MCAPI static void tickSystem(
+        class ViewT<class StrictEntityContext, struct UpdateWaterStateRequestComponent const> view,
+        class EntityModifier<class FlagComponent<struct InLavaFlag>>                          mod
+    );
 
     // NOLINTEND
 };

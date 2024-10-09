@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/CorrectionMethod.h"
+#include "mc/entity/components/CorrectionMethod.h"
 
 struct MovementCorrection {
 public:
@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI MovementCorrection(::CorrectionMethod method, class Vec3 const&);
+    MCAPI MovementCorrection(::CorrectionMethod method, class Vec3 const& acceptPos);
 
     // NOLINTEND
 };

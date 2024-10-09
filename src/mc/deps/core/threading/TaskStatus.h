@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/AsyncStatus.h"
+#include "mc/deps/core/threading/AsyncStatus.h"
 
 class TaskStatus {
 public:

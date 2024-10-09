@@ -4,7 +4,7 @@
 #include "mc/world/level/ChunkPos.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 
 class ChunkKey {
 public:

@@ -6,7 +6,7 @@
 #include "mc/external/spsc_queue/SPSCQueue.h"
 
 // auto generated inclusion list
-#include "mc/enums/Compressibility.h"
+#include "mc/network/Compressibility.h"
 #include "mc/network/NetworkPeer.h"
 
 class BatchedNetworkPeer : public ::NetworkPeer {
@@ -68,7 +68,7 @@ public:
 
     // vIndex: 2
     virtual ::NetworkPeer::DataStatus
-    receivePacket(std::string& outData, std::shared_ptr<std::chrono::steady_clock::time_point> const&);
+    receivePacket(std::string& outData, std::shared_ptr<std::chrono::steady_clock::time_point> const& timepointPtr);
 
     // vIndex: 3
     virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const;

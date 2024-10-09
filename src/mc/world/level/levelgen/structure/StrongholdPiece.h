@@ -89,8 +89,11 @@ public:
         int                                                 zOff
     );
 
-    MCAPI static void
-    forceAddPortalRoom(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
+    MCAPI static void forceAddPortalRoom(
+        class StructurePiece&                               startPiece,
+        std::vector<std::unique_ptr<class StructurePiece>>& pieces,
+        class Random&                                       random
+    );
 
     // NOLINTEND
 };

@@ -3,8 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/ExecutionResult.h"
-#include "mc/external/glm/vec.h"
+#include "mc/server/sim/ExecutionResult.h"
 #include "mc/server/sim/LookDuration.h"
 
 // auto generated forward declare list
@@ -25,11 +24,12 @@ namespace sim { struct VoidMoveIntent; }
 
 namespace sim {
 // NOLINTBEGIN
-MCAPI struct sim::LookAtIntent lookAt(class SimulatedPlayer&, class EntityContext&, ::sim::LookDuration);
+MCAPI struct sim::LookAtIntent
+lookAt(class SimulatedPlayer& player, class EntityContext& entity, ::sim::LookDuration duration);
 
-MCAPI struct sim::LookAtIntent lookAt(class SimulatedPlayer&, struct glm::vec<3, float, 0>, ::sim::LookDuration);
+MCAPI struct sim::LookAtIntent lookAt(class SimulatedPlayer& player, glm::vec3 position, ::sim::LookDuration duration);
 
-MCAPI struct sim::BuildIntent startBuild(class SimulatedPlayer&, class BlockSource&, int);
+MCAPI struct sim::BuildIntent startBuild(class SimulatedPlayer& player, class BlockSource& region, int slot);
 // NOLINTEND
 
 }; // namespace sim

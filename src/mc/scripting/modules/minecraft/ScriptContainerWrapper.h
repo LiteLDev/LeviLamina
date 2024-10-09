@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/Result.h"
-#include "mc/external/scripting/StrongTypedObjectHandle.h"
+#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/external/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -24,11 +24,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI explicit ScriptContainerWrapper(std::unique_ptr<class ScriptModuleMinecraft::ScriptContainer>);
+    MCAPI explicit ScriptContainerWrapper(std::unique_ptr<class ScriptModuleMinecraft::ScriptContainer> scriptContainer
+    );
 
     MCAPI class Scripting::Result<
         std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>>
-    addItem(class ScriptModuleMinecraft::ScriptItemStack const&) const;
+    addItem(class ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
 
     MCAPI class Scripting::Result<void> clearAll() const;
 
@@ -44,17 +45,18 @@ public:
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptContainerSlot>>
     getSlot(int slot) const;
 
-    MCAPI class Scripting::Result<void> moveItem(int, int, class ScriptModuleMinecraft::ScriptContainerWrapper&) const;
+    MCAPI class Scripting::Result<void>
+    moveItem(int fromSlot, int toSlot, class ScriptModuleMinecraft::ScriptContainerWrapper& toScriptContainer) const;
 
     MCAPI class Scripting::Result<void>
-    setItem(int slot, std::optional<class ScriptModuleMinecraft::ScriptItemStack> const&) const;
+    setItem(int slot, std::optional<class ScriptModuleMinecraft::ScriptItemStack> const& scriptItemStack) const;
 
     MCAPI class Scripting::Result<void>
-    swapItems(int slot, int, class ScriptModuleMinecraft::ScriptContainerWrapper&) const;
+    swapItems(int slot, int otherSlot, class ScriptModuleMinecraft::ScriptContainerWrapper& otherScriptContainer) const;
 
     MCAPI class Scripting::Result<
         std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>>
-    transferItem(int, class ScriptModuleMinecraft::ScriptContainerWrapper&) const;
+    transferItem(int fromSlot, class ScriptModuleMinecraft::ScriptContainerWrapper& toScriptContainer) const;
 
     // NOLINTEND
 };

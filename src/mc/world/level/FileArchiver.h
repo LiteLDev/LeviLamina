@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-#include "mc/deps/core/common/bedrock/IAsyncResult.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -94,11 +94,11 @@ public:
         class ILevelListCache&                                            levelListCache,
         Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const&   pathManager,
         Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository> const& resourcePackRepository,
-        bool,
-        std::unique_ptr<class FileArchiver::IWorldConverter>,
-        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> keyProvider,
-        Bedrock::NotNullNonOwnerPtr<class LevelDbEnv>                levelDbEnv,
-        std::function<void(std::string const&)>                      displayMessageFunction
+        bool                                                              isEditorModeEnabled,
+        std::unique_ptr<class FileArchiver::IWorldConverter>              worldConverter,
+        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const>      keyProvider,
+        Bedrock::NotNullNonOwnerPtr<class LevelDbEnv>                     levelDbEnv,
+        std::function<void(std::string const&)>                           displayMessageFunction
     );
 
     MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<struct FileArchiver::Result>>

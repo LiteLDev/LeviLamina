@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/DebuggerLogLevel.h"
+#include "mc/enums/scripting/DebuggerLogLevel.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -29,24 +29,30 @@ public:
 
     MCVAPI bool isStatPublisherEnabled() const;
 
-    MCVAPI bool listen(ushort, std::chrono::seconds);
+    MCVAPI bool listen(ushort port, std::chrono::seconds duration);
 
-    MCVAPI void publishStats(std::vector<struct ScriptStat> const&);
+    MCVAPI void publishStats(std::vector<struct ScriptStat> const& stats);
 
     MCVAPI void startProfiler();
 
     MCVAPI void stopProfiler(std::string const& savePath);
 
-    MCAPI
-    ScriptDebugger(struct ScriptDebuggerSettings, struct cereal::ReflectionCtx&, class Scripting::ScriptEngine&, class ScriptPluginManager&, class IScriptDebuggerWatchdog&, std::unique_ptr<class IScriptTelemetryLogger>);
+    MCAPI ScriptDebugger(
+        struct ScriptDebuggerSettings                 settings,
+        struct cereal::ReflectionCtx&                 ctx,
+        class Scripting::ScriptEngine&                scriptEngine,
+        class ScriptPluginManager&                    scriptPluginManager,
+        class IScriptDebuggerWatchdog&                debuggerWatchdog,
+        std::unique_ptr<class IScriptTelemetryLogger> telemetryLogger
+    );
 
     MCAPI bool checkConnections();
 
     MCAPI bool isConnected() const;
 
-    MCAPI void sendLog(::Scripting::DebuggerLogLevel, std::string_view);
+    MCAPI void sendLog(::Scripting::DebuggerLogLevel logLevel, std::string_view message);
 
-    MCAPI void waitAutoAttach(std::chrono::seconds, std::chrono::seconds);
+    MCAPI void waitAutoAttach(std::chrono::seconds waitDuration, std::chrono::seconds listenDuration);
 
     // NOLINTEND
 
@@ -58,7 +64,7 @@ public:
 
     MCAPI std::string _sanitizeHostName(std::string const&) const;
 
-    MCAPI ushort _sanitizePort(uint) const;
+    MCAPI ushort _sanitizePort(uint port) const;
 
     // NOLINTEND
 };

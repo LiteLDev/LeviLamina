@@ -4,7 +4,7 @@
 #include "mc/deps/core/common/bedrock/IAsyncResult.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/IAsyncResult.h"
+#include "mc/deps/core/threading/IAsyncResult.h"
 
 class TaskResult {
 public:

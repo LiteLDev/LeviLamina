@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorAnimationType.h"
-#include "mc/enums/SkeletalHierarchyIndex.h"
+#include "mc/world/actor/SkeletalHierarchyIndex.h"
 #include "mc/world/actor/animation/ActorAnimationPlayer.h"
+#include "mc/world/actor/animation/ActorAnimationType.h"
 
 class ActorAnimationControllerStatePlayer : public ::ActorAnimationPlayer {
 public:
@@ -47,7 +47,14 @@ public:
     // vIndex: 9
     virtual class HashedString const& getRawName() const;
 
-    MCAPI ActorAnimationControllerStatePlayer(class HashedString const& friendlyName, class ActorAnimationControllerPlayer& owner, std::shared_ptr<class ActorAnimationControllerState> animationControllerState, class AnimationComponent& animationComponent, class ExpressionNode const& blendExpression, std::set<class HashedString, std::hash<class HashedString>>&);
+    MCAPI ActorAnimationControllerStatePlayer(
+        class HashedString const&                                    friendlyName,
+        class ActorAnimationControllerPlayer&                        owner,
+        std::shared_ptr<class ActorAnimationControllerState>         animationControllerState,
+        class AnimationComponent&                                    animationComponent,
+        class ExpressionNode const&                                  blendExpression,
+        std::set<class HashedString, std::hash<class HashedString>>& animationControllerNameStack
+    );
 
     MCAPI bool allAnimationsFinished() const;
 

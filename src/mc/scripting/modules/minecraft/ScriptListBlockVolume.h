@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/ClassBindingBuilder.h"
-#include "mc/external/scripting/StrongTypedObjectHandle.h"
+#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/ScriptBlockVolumeBase.h"
 
 // auto generated forward declare list
@@ -26,27 +26,27 @@ public:
 
     // vIndex: 1
     virtual class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockLocationIterator>
-        getBlockLocationIterator(class Scripting::WeakLifetimeScope);
+    getBlockLocationIterator(class Scripting::WeakLifetimeScope scope);
 
     MCAPI ScriptListBlockVolume();
 
-    MCAPI ScriptListBlockVolume(class ScriptModuleMinecraft::ScriptListBlockVolume&&);
+    MCAPI ScriptListBlockVolume(class ScriptModuleMinecraft::ScriptListBlockVolume&& rhs);
 
-    MCAPI ScriptListBlockVolume(class ScriptModuleMinecraft::ScriptListBlockVolume const&);
+    MCAPI ScriptListBlockVolume(class ScriptModuleMinecraft::ScriptListBlockVolume const& rhs);
 
-    MCAPI explicit ScriptListBlockVolume(std::vector<class BlockPos> const&);
+    MCAPI explicit ScriptListBlockVolume(std::vector<class BlockPos> const& locations);
 
-    MCAPI explicit ScriptListBlockVolume(std::vector<class Vec3> const&);
+    MCAPI explicit ScriptListBlockVolume(std::vector<class Vec3> const& locations);
 
-    MCAPI void add(std::vector<class Vec3> const&);
-
-    MCAPI class ScriptModuleMinecraft::ScriptListBlockVolume&
-    operator=(class ScriptModuleMinecraft::ScriptListBlockVolume&&);
+    MCAPI void add(std::vector<class Vec3> const& locations);
 
     MCAPI class ScriptModuleMinecraft::ScriptListBlockVolume&
-    operator=(class ScriptModuleMinecraft::ScriptListBlockVolume const&);
+    operator=(class ScriptModuleMinecraft::ScriptListBlockVolume&& rhs);
 
-    MCAPI void remove(std::vector<class Vec3> const&);
+    MCAPI class ScriptModuleMinecraft::ScriptListBlockVolume&
+    operator=(class ScriptModuleMinecraft::ScriptListBlockVolume const& rhs);
+
+    MCAPI void remove(std::vector<class Vec3> const& locations);
 
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptListBlockVolume> bind();
 

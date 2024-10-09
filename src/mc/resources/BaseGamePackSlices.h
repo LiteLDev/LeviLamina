@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -47,9 +47,11 @@ public:
         class mce::UUID const&                                                  packId
     );
 
-    MCAPI void
-    applyPackSlices(class BaseGameVersion const&, Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository const> const&, class ResourcePackStack&)
-        const;
+    MCAPI void applyPackSlices(
+        class BaseGameVersion const&                                            baseGameVersion,
+        Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository const> const& resourcePackRepository,
+        class ResourcePackStack&                                                packStack
+    ) const;
 
     MCAPI ~BaseGamePackSlices();
 

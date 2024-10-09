@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/containers/ContainerValidationOperationType.h"
-#include "mc/world/containers/ContainerValidationOutcome.h"
+#include "mc/world/inventory/simulation/ContainerValidationOperationType.h"
+#include "mc/world/inventory/simulation/ContainerValidationOutcome.h"
 
 struct ContainerValidationResult {
 public:

@@ -1,12 +1,12 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/levelgen/feature/registry/FeatureRegistry.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
-#include "mc/world/level/levelgen/feature/registry/FeatureRegistry.h"
+#include "mc/platform/Result.h"
 
 class FeatureRegistryPacket : public ::Packet {
 public:

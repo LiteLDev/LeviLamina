@@ -4,7 +4,7 @@
 #include "mc/server/commands/CommandRegistry.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/typeid_t.h"
+#include "mc/deps/core/utility/typeid_t.h"
 #include "mc/server/commands/CommandParameterDataType.h"
 #include "mc/server/commands/CommandParameterOption.h"
 
@@ -38,6 +38,18 @@ public:
         bool                               optional,
         int                                flagOffset,
         CommandParameterOption             options
+    );
+
+    MCAPI CommandParameterData(
+        Bedrock::typeid_t<CommandRegistry> typeIndex,
+        ParseFn                            parse,
+        char const*                        name,
+        ::CommandParameterDataType         paramType,
+        char const*                        enumNameOrPostfix,
+        char const*                        chainedSubcommand,
+        int                                offset,
+        bool                               optional,
+        int                                setOffset
     );
 
     CommandParameterData& addOptions(::CommandParameterOption options) {

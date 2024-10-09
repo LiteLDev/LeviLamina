@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/QueueRequestResult.h"
+#include "mc/world/level/chunk/QueueRequestResult.h"
 
 class DelayActionList {
 public:
@@ -23,7 +23,7 @@ public:
         class ServerLevel& level,
         class Dimension&   dimension,
         uint64             currentTick,
-        bool
+        bool               allowDuplicates
     );
 
     MCAPI void tick(class ServerLevel& level, class Dimension& dimension, uint64 currentTick);

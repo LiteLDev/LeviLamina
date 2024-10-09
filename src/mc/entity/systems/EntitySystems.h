@@ -9,7 +9,7 @@
 #include "mc/entity/systems/PlayerInteractionSystem.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/typeid_t.h"
+#include "mc/deps/core/utility/typeid_t.h"
 
 class EntitySystems : public IEntitySystems, public ::Bedrock::EnableNonOwnerReferences {
 public:
@@ -26,19 +26,19 @@ public:
     virtual ~EntitySystems();
 
     MCVAPI void registerTickingSystem(
-        gsl::span<class Bedrock::typeid_t<struct SystemCategory> const>,
-        std::unique_ptr<class ITickingSystem>,
-        struct SystemInfo const&,
-        struct EntitySystemTickingMode
+        gsl::span<class Bedrock::typeid_t<struct SystemCategory> const> categories,
+        std::unique_ptr<class ITickingSystem>                           system,
+        struct SystemInfo const&                                        info,
+        struct EntitySystemTickingMode                                  tickingMode
     );
 
     MCVAPI void tickMovementCatchup(class EntityRegistry& registry);
 
-    MCVAPI void tickMovementCorrectionReplay(class EntityRegistry&);
+    MCVAPI void tickMovementCorrectionReplay(class EntityRegistry& registry);
 
     MCAPI explicit EntitySystems(std::string name);
 
-    MCAPI EntitySystems(std::unique_ptr<struct IEntitySystemsCollection>, std::string name);
+    MCAPI EntitySystems(std::unique_ptr<struct IEntitySystemsCollection> systems, std::string name);
 
     MCAPI class PlayerInteractionSystem& getPlayerInteractionSystem();
 
@@ -62,13 +62,16 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI bool _hasSingleTickCategory(class Bedrock::typeid_t<struct SystemCategory>) const;
+    MCAPI bool _hasSingleTickCategory(class Bedrock::typeid_t<struct SystemCategory> category) const;
 
     MCAPI void
     _singleTickCategory(class Bedrock::typeid_t<struct SystemCategory> category, class EntityContext& context);
 
-    MCAPI void
-    _singleTickCategory(class Bedrock::typeid_t<struct SystemCategory>, class StrictEntityContext&, class EntityRegistry&);
+    MCAPI void _singleTickCategory(
+        class Bedrock::typeid_t<struct SystemCategory> category,
+        class StrictEntityContext&                     entity,
+        class EntityRegistry&                          registry
+    );
 
     // NOLINTEND
 };

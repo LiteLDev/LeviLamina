@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-#include "mc/entity/utilities/ActorDefinitionParseStatus.h"
-#include "mc/enums/CurrentCmdVersion.h"
-#include "mc/enums/LogArea.h"
+#include "mc/deps/core/debug/log/LogArea.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/server/commands/CurrentCmdVersion.h"
+#include "mc/world/actor/ActorDefinitionParseStatus.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -65,8 +65,11 @@ public:
 
     MCAPI class ActorDefinitionPtr tryGetDefinitionGroup(std::string const& base, std::string const& definitionId);
 
-    MCAPI static void
-    forEachComponentOf(class Json::Value&, std::string const&, std::function<void(class Json::Value&, class Json::Value&)> const&);
+    MCAPI static void forEachComponentOf(
+        class Json::Value&                                                 entityValue,
+        std::string const&                                                 componentName,
+        std::function<void(class Json::Value&, class Json::Value&)> const& callback
+    );
 
     MCAPI static bool loadActorDefinitionIdentifier(
         class Json::Value const& root,
@@ -101,26 +104,26 @@ public:
     MCAPI void _getResources(class Level& level);
 
     MCAPI struct ActorDefinitionGroup::LoadActorResult _loadActorDefinition(
-        class Level&,
-        class SemVersion const&,
-        std::string const&,
-        ::CurrentCmdVersion const&,
-        class Json::Value&,
-        std::unordered_set<std::string>&,
-        bool,
-        ::LogArea
+        class Level&                     level,
+        class SemVersion const&          engineVersion,
+        std::string const&               relativeResourceFilepath,
+        ::CurrentCmdVersion const&       commandVersion,
+        class Json::Value&               root,
+        std::unordered_set<std::string>& definitions,
+        bool                             isBaseGamePack,
+        ::LogArea                        logArea
     );
 
     MCAPI bool _loadDefinitionFromJSON(
-        class SemVersion const&,
-        class SemVersion const&,
-        ::CurrentCmdVersion const&,
-        std::string const&,
-        class Json::Value&,
-        std::string const&,
-        class Level&,
-        bool,
-        ::LogArea
+        class SemVersion const&    formatVersion,
+        class SemVersion const&    engineVersion,
+        ::CurrentCmdVersion const& commandVersion,
+        std::string const&         relativeResourceFilepath,
+        class Json::Value&         minecraftEntityNode,
+        std::string const&         identifier,
+        class Level&               level,
+        bool                       isBaseGamePack,
+        ::LogArea                  logArea
     );
 
     MCAPI ::ActorDefinitionParseStatus

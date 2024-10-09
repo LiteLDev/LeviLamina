@@ -5,11 +5,11 @@
 #include "mc/world/actor/player/PlayerPermissionLevel.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/AbilitiesIndex.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
-#include "mc/world/actor/player/PlayerPermissionLevel.h"
+#include "mc/platform/Result.h"
+#include "mc/server/commands/PlayerPermissionLevel.h"
+#include "mc/world/actor/player/AbilitiesIndex.h"
 
 class RequestPermissionsPacket : public ::Packet {
 public:

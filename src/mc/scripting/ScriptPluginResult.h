@@ -72,7 +72,7 @@ public:
 
     MCAPI void addInfo(std::string const& info);
 
-    MCAPI void addWarning(std::string const&);
+    MCAPI void addWarning(std::string const& warning);
 
     MCAPI std::vector<struct ScriptPluginResult::Error> const& getErrors() const;
 

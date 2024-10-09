@@ -25,9 +25,9 @@ public:
     MCAPI void parseExpressionNodeFloat(
         class CompoundTag const& tag,
         std::string const&       tagName,
-        std::string const&,
-        class ExpressionNode& node,
-        float                 defaultValue
+        std::string const&       tagNameType,
+        class ExpressionNode&    node,
+        float                    defaultValue
     );
 
     // NOLINTEND

@@ -28,7 +28,7 @@ public:
     virtual std::string const& getName() const;
 
     // vIndex: 3
-    virtual void initializeComponent(class BlockComponentStorage&) const;
+    virtual void initializeComponent(class BlockComponentStorage& blockComponentSortage) const;
 
     // vIndex: 7
     virtual bool isNetworkComponent() const;
@@ -37,9 +37,9 @@ public:
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const&) const;
 
     // vIndex: 9
-    virtual void initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx const&);
+    virtual void initializeFromNetwork(class CompoundTag const& tag, struct cereal::ReflectionCtx const&);
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx&);
+    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
     MCAPI static std::string const NameID;
 

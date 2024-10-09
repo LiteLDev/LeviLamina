@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/systems/common/ResourceFileSystem.h"
+#include "mc/deps/core/resource/ResourceFileSystem.h"
 
 class ResourceUtil {
 public:

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/EntityModifier.h"
+#include "mc/deps/ecs/strict/EntityModifier.h"
 
 class NoClipOrNoBlockMoveFilterSystem {
 public:
@@ -16,8 +16,17 @@ public:
     // NOLINTBEGIN
     MCAPI static struct TickingSystemWithInfo create();
 
-    MCAPI static void
-    tick(class StrictEntityContext const&, struct MoveRequestComponent const&, struct OffsetsComponent const&, struct ActorDataFlagComponent const&, struct AABBShapeComponent&, struct StateVectorComponent&, struct SubBBsComponent&, class EntityModifier<struct MoveRequestComponent>, class IConstBlockSource const&);
+    MCAPI static void tick(
+        class StrictEntityContext const&                  context,
+        struct MoveRequestComponent const&                moveRequest,
+        struct OffsetsComponent const&                    offsets,
+        struct ActorDataFlagComponent const&              actorData,
+        struct AABBShapeComponent&                        aabb,
+        struct StateVectorComponent&                      state,
+        struct SubBBsComponent&                           subBBs,
+        class EntityModifier<struct MoveRequestComponent> mod,
+        class IConstBlockSource const&                    region
+    );
 
     // NOLINTEND
 };

@@ -4,9 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/world/containers/ContainerEnumName.h"
+#include "mc/world/inventory/network/ItemStackNetResult.h"
+#include "mc/world/inventory/network/ItemStackRequestActionType.h"
 #include "mc/world/inventory/network/crafting/CraftHandlerBase.h"
-#include "mc/world/item/components/ItemStackNetResult.h"
-#include "mc/world/item/components/ItemStackRequestActionType.h"
 
 class CraftHandlerLoom : public ::CraftHandlerBase {
 public:

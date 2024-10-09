@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/PathBuffer.h"
+#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/sound/SoundPlayerInterface.h"
 
 // auto generated forward declare list
@@ -24,25 +24,25 @@ public:
     virtual ~NullSoundPlayer() = default;
 
     // vIndex: 1
-    virtual uint64 play(std::string const& name, class Vec3 const& pos, float volume, float pitch);
+    virtual uint64 play(std::string const&, class Vec3 const&, float, float);
 
     // vIndex: 2
-    virtual uint64 playUI(std::string const& name, float volume, float pitch);
+    virtual uint64 playUI(std::string const&, float, float);
 
     // vIndex: 3
-    virtual void playMusic(std::string const& name, float volume, uint& index);
+    virtual void playMusic(std::string const&, float, uint&);
 
     // vIndex: 4
-    virtual void playMusic(std::string const& name, float volume);
+    virtual void playMusic(std::string const&, float);
 
     // vIndex: 5
     virtual bool isLoadingMusic() const;
 
     // vIndex: 6
-    virtual bool isPlayingMusicEvent(std::string const& name) const;
+    virtual bool isPlayingMusicEvent(std::string const&) const;
 
     // vIndex: 7
-    virtual bool isPlayingMusic(class Core::Path const& soundName) const;
+    virtual bool isPlayingMusic(class Core::Path const&) const;
 
     // vIndex: 8
     virtual void fadeToStopMusic(float);
@@ -51,16 +51,16 @@ public:
     virtual void setMusicVolumeMultiplier(float);
 
     // vIndex: 10
-    virtual void fadeOut(uint64 handle, float duration);
+    virtual void fadeOut(uint64, float);
 
     // vIndex: 11
     virtual void stopMusic();
 
     // vIndex: 12
-    virtual void stop(std::string const& name);
+    virtual void stop(std::string const&);
 
     // vIndex: 13
-    virtual void stop(uint64 handle);
+    virtual void stop(uint64);
 
     // vIndex: 14
     virtual void stopAllSounds();
@@ -69,36 +69,31 @@ public:
     virtual class Core::PathBuffer<std::string> const getCurrentlyPlayingMusicName();
 
     // vIndex: 16
-    virtual bool
-    getItem(std::string const& eventName, class Core::Path const& soundName, class SoundItem& soundItem) const;
+    virtual bool getItem(std::string const&, class Core::Path const&, class SoundItem&) const;
 
     // vIndex: 17
-    virtual uint64
-    registerLoop(std::string const& name, std::function<void(struct LoopingSoundState&)> getSoundState, float, float);
+    virtual uint64 registerLoop(std::string const&, std::function<void(struct LoopingSoundState&)>, float, float);
 
     // vIndex: 18
-    virtual void unregisterLoop(uint64 handle, bool);
+    virtual void unregisterLoop(uint64, bool);
 
     // vIndex: 19
-    virtual bool isPlayingSound(uint64 handle) const;
+    virtual bool isPlayingSound(uint64) const;
 
     // vIndex: 20
     virtual bool isPlayingSound(class Core::Path const&) const;
 
     // vIndex: 21
-    virtual uint64 playAttached(
-        std::string const&                                     eventName,
-        std::function<void(struct SoundInstanceProperties&)>&& getSoundProperties
-    );
+    virtual uint64 playAttached(std::string const&, std::function<void(struct SoundInstanceProperties&)>&&);
 
     // vIndex: 22
     virtual void stopAllDelayedSoundActions();
 
     // vIndex: 23
-    virtual std::optional<struct PlayingSoundAttributes> tryGetPlayingSoundAttributes(uint64 handle) const;
+    virtual std::optional<struct PlayingSoundAttributes> tryGetPlayingSoundAttributes(uint64) const;
 
     // vIndex: 24
-    virtual std::optional<struct LoopingSoundAttributes> tryGetLoopingSoundAttributes(uint64 handle) const;
+    virtual std::optional<struct LoopingSoundAttributes> tryGetLoopingSoundAttributes(uint64) const;
 
     // NOLINTEND
 };

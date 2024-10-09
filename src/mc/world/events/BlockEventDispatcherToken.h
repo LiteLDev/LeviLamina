@@ -15,7 +15,7 @@ public:
     // NOLINTBEGIN
     MCAPI BlockEventDispatcherToken();
 
-    MCAPI BlockEventDispatcherToken(class BlockEventDispatcherToken&&);
+    MCAPI BlockEventDispatcherToken(class BlockEventDispatcherToken&& rhs);
 
     MCAPI class BlockEventDispatcher* getDispatcher() const;
 

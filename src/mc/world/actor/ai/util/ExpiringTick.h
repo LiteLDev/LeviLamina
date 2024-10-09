@@ -11,7 +11,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI ExpiringTick(struct Tick currentTick, ushort);
+    MCAPI ExpiringTick(struct Tick currentTick, ushort ticksUntilExpire);
 
     MCAPI struct Tick getExpireAtTick() const;
 

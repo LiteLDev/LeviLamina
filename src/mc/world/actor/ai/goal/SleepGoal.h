@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/POIType.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/MoveToPOIGoal.h"
+#include "mc/world/actor/ai/village/POIType.h"
 
 class SleepGoal : public ::MoveToPOIGoal {
 public:
@@ -45,10 +45,10 @@ public:
         float      walkSpeed,
         float      sleepColliderHeight,
         float      sleepColliderWidth,
-        bool,
-        float sleepYOffset,
-        int   cooldown,
-        float cooldownTimeout
+        bool       canSleepWhileRiding,
+        float      sleepYOffset,
+        int        cooldown,
+        float      cooldownTimeout
     );
 
     // NOLINTEND

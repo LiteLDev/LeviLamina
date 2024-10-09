@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/PathBuffer.h"
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -54,14 +54,15 @@ public:
     ) const;
 
     // vIndex: 7
-    virtual class Core::PathBuffer<std::string> getPath(class ResourceLocation const&) const;
+    virtual class Core::PathBuffer<std::string> getPath(class ResourceLocation const& resourceLocation) const;
 
     // vIndex: 8
     virtual class Core::PathBuffer<std::string>
     getPath(class ResourceLocation const& resourceLocation, std::vector<std::string> const& extensions) const;
 
     // vIndex: 9
-    virtual class Core::PathBuffer<std::string> getPathContainingResource(class ResourceLocation const&) const;
+    virtual class Core::PathBuffer<std::string> getPathContainingResource(class ResourceLocation const& resourceLocation
+    ) const;
 
     // vIndex: 10
     virtual class Core::PathBuffer<std::string> getPathContainingResource(

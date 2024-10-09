@@ -5,9 +5,9 @@
 
 // auto generated inclusion list
 #include "mc/dataloadhelper/DataLoadHelper.h"
-#include "mc/enums/DataLoadHelperType.h"
-#include "mc/enums/Mirror.h"
-#include "mc/enums/Rotation.h"
+#include "mc/dataloadhelper/DataLoadHelperType.h"
+#include "mc/util/Mirror.h"
+#include "mc/util/Rotation.h"
 #include "mc/world/Direction.h"
 #include "mc/world/actor/InternalComponentRegistry.h"
 

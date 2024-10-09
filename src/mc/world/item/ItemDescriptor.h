@@ -4,7 +4,7 @@
 #include "mc/world/item/ItemTag.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/WeakPtr.h"
+#include "mc/common/WeakPtr.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -57,10 +57,10 @@ public:
         virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> clone() const = 0;
 
         // vIndex: 1
-        virtual bool sameItems(struct ItemDescriptor::BaseDescriptor const&, bool) const;
+        virtual bool sameItems(struct ItemDescriptor::BaseDescriptor const& otherDescriptor, bool compareAux) const;
 
         // vIndex: 2
-        virtual bool sameItem(struct ItemDescriptor::ItemEntry const&, bool) const = 0;
+        virtual bool sameItem(struct ItemDescriptor::ItemEntry const& otherItem, bool) const = 0;
 
         // vIndex: 3
         virtual std::string const& getFullName() const;
@@ -129,9 +129,9 @@ public:
 
     MCAPI explicit ItemDescriptor(class ReadOnlyBinaryStream& stream);
 
-    MCAPI explicit ItemDescriptor(struct ItemTag const&);
+    MCAPI explicit ItemDescriptor(struct ItemTag const& itemTag);
 
-    MCAPI explicit ItemDescriptor(struct Puv::Legacy::ItemDescriptor const&);
+    MCAPI explicit ItemDescriptor(struct Puv::Legacy::ItemDescriptor const& desc);
 
     MCAPI ItemDescriptor(class Item const& item, int auxValue);
 
@@ -165,7 +165,7 @@ public:
 
     MCAPI bool isNull() const;
 
-    MCAPI bool isValid(bool) const;
+    MCAPI bool isValid(bool shouldResolve) const;
 
     MCAPI void operator=(class ItemDescriptor&& rhs);
 
@@ -173,13 +173,13 @@ public:
 
     MCAPI bool operator==(class ItemDescriptor const& rhs) const;
 
-    MCAPI bool sameItem(class ItemDescriptor const& otherItemDescriptor, bool) const;
+    MCAPI bool sameItem(class ItemDescriptor const& otherItemDescriptor, bool compareAux) const;
 
-    MCAPI bool sameItem(class ItemStack const& item, bool) const;
+    MCAPI bool sameItem(class ItemStack const& item, bool compareAux) const;
 
     MCAPI std::optional<class CompoundTag> save() const;
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx&);
+    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
     // NOLINTEND
 
@@ -187,7 +187,7 @@ public:
     // NOLINTBEGIN
     MCAPI void _resolve() const;
 
-    MCAPI static struct Puv::Legacy::ItemDescriptor toPuv(class ItemDescriptor const&);
+    MCAPI static struct Puv::Legacy::ItemDescriptor toPuv(class ItemDescriptor const& id);
 
     // NOLINTEND
 };

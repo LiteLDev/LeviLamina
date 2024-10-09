@@ -6,7 +6,7 @@
 #include "mc/math/Random.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/ThreadLocalObject.h"
+#include "mc/platform/threading/ThreadLocalObject.h"
 
 class Random : public IRandom, public Bedrock::EnableNonOwnerReferences {
 public:

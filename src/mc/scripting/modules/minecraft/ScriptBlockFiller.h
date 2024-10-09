@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/Result.h"
-#include "mc/external/scripting/StrongTypedObjectHandle.h"
+#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/external/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -33,18 +33,26 @@ public:
 public:
     // NOLINTBEGIN
     MCAPI ScriptBlockFiller(
-        struct ScriptModuleMinecraft::ScriptBlockFillOptions const&,
-        gsl::not_null<class Dimension*>,
-        class Scripting::WeakLifetimeScope
+        struct ScriptModuleMinecraft::ScriptBlockFillOptions const& options,
+        gsl::not_null<class Dimension*>                             dimension,
+        class Scripting::WeakLifetimeScope                          scope
     );
 
-    MCAPI class Scripting::
-        Result<
-            class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptListBlockVolume>,
-            struct ScriptModuleMinecraft::ScriptUnloadedChunksError,
-            struct Scripting::EngineError,
-            struct Scripting::Error>
-        fillBlocks(std::variant<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockVolumeBase>, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptCompoundBlockVolume>> const&, std::variant<std::string, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockType>, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>> const&);
+    MCAPI class Scripting::Result<
+        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptListBlockVolume>,
+        struct ScriptModuleMinecraft::ScriptUnloadedChunksError,
+        struct Scripting::EngineError,
+        struct Scripting::Error>
+    fillBlocks(
+        std::variant<
+            class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockVolumeBase>,
+            class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptCompoundBlockVolume>> const&
+            volume,
+        std::variant<
+            std::string,
+            class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockType>,
+            class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>> const& block
+    );
 
     MCAPI ~ScriptBlockFiller();
 

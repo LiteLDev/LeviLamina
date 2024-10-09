@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
 class MovingBlockActor : public ::BlockActor {
@@ -43,7 +43,7 @@ public:
     virtual class PistonBlockActor* getOwningPiston(class BlockSource& region);
 
     // vIndex: 40
-    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
+    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
     // vIndex: 41
     virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
@@ -60,7 +60,8 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI std::pair<class AABB, class AABB> _getWrappedBlockCollisionShapes(class IConstBlockSource const&) const;
+    MCAPI std::pair<class AABB, class AABB> _getWrappedBlockCollisionShapes(class IConstBlockSource const& region
+    ) const;
 
     MCAPI bool _validPistonPos(class IConstBlockSource const& region) const;
 

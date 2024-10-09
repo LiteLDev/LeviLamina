@@ -46,7 +46,7 @@ public:
         int                                                 depth
     );
 
-    MCAPI void setPlanksBlock(class BlockSource& region, class Block const&, int x, int y, int z);
+    MCAPI void setPlanksBlock(class BlockSource& region, class Block const& planksBlock, int x, int y, int z);
 
     // NOLINTEND
 };

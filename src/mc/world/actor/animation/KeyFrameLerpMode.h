@@ -3,8 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/KeyFrameLerpStyle.h"
-#include "mc/external/glm/mat.h"
+#include "mc/world/actor/animation/KeyFrameLerpStyle.h"
 
 class KeyFrameLerpMode {
 public:
@@ -14,7 +13,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI struct glm::mat<4, 4, float, 0> const& getPrecomputedCubicCoeffs() const;
+    MCAPI glm::mat4x4 const& getPrecomputedCubicCoeffs() const;
 
     MCAPI class KeyFrameLerpMode& operator=(class KeyFrameLerpMode const&);
 

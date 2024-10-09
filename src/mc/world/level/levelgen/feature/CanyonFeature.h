@@ -44,26 +44,26 @@ public:
 
     // vIndex: 2
     virtual void addFeature(
-        class BlockVolume&       blocks,
-        class BiomeSource const& localBiomeSource,
-        struct CanyonFeatureUtils::CanyonConfiguration const&,
-        class ChunkPos const&         pos,
-        class Random&                 random,
-        int                           x,
-        int                           z,
-        struct WorldGenContext const& context
+        class BlockVolume&                                    blocks,
+        class BiomeSource const&                              localBiomeSource,
+        struct CanyonFeatureUtils::CanyonConfiguration const& canyonConfig,
+        class ChunkPos const&                                 pos,
+        class Random&                                         random,
+        int                                                   x,
+        int                                                   z,
+        struct WorldGenContext const&                         context
     );
 
     MCAPI explicit CanyonFeature(short seaLevel);
 
     MCAPI void apply(
-        class BlockVolume&       blocks,
-        class ChunkPos const&    pos,
-        class BiomeSource const& biomeSource,
-        struct CanyonFeatureUtils::CanyonConfiguration const&,
-        class Random&                 random,
-        uint                          levelSeed,
-        struct WorldGenContext const& context
+        class BlockVolume&                                    blocks,
+        class ChunkPos const&                                 pos,
+        class BiomeSource const&                              biomeSource,
+        struct CanyonFeatureUtils::CanyonConfiguration const& canyonConfig,
+        class Random&                                         random,
+        uint                                                  levelSeed,
+        struct WorldGenContext const&                         context
     );
 
     MCAPI static bool isDiggable(class Block const& block, class Block const& above);

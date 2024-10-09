@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/events/GameEventType.h"
+#include "mc/world/events/gameevents/game_event_config/GameEventType.h"
 
 class GameEvent {
 public:

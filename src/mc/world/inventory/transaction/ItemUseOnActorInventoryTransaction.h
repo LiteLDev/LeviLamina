@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/InventoryTransactionError.h"
+#include "mc/platform/Result.h"
 #include "mc/world/inventory/transaction/ComplexInventoryTransaction.h"
+#include "mc/world/inventory/transaction/InventoryTransactionError.h"
 
 class ItemUseOnActorInventoryTransaction : public ::ComplexInventoryTransaction {
 public:
@@ -47,7 +47,7 @@ public:
     virtual ::InventoryTransactionError handle(class Player& player, bool isSenderAuthority) const;
 
     // vIndex: 5
-    virtual void onTransactionError(class Player& player, ::InventoryTransactionError error) const;
+    virtual void onTransactionError(class Player& player, ::InventoryTransactionError) const;
 
     MCAPI class ItemUseOnActorInventoryTransaction& setSelectedItem(class ItemStack const& item);
 

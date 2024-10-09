@@ -4,8 +4,8 @@
 #include "mc/scripting/ScriptPackConfiguration.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/PathBuffer.h"
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -31,11 +31,11 @@ public:
 
     MCAPI ScriptPackConfigurationManager(class ScriptPackConfigurationManager const&);
 
-    MCAPI explicit ScriptPackConfigurationManager(std::optional<class Core::PathBuffer<std::string>>);
+    MCAPI explicit ScriptPackConfigurationManager(std::optional<class Core::PathBuffer<std::string>> configDirectory);
 
     MCAPI std::optional<class Core::PathBuffer<std::string>> const& getConfigPath() const;
 
-    MCAPI class ScriptPackConfiguration const& getPackConfiguration(std::string const&) const;
+    MCAPI class ScriptPackConfiguration const& getPackConfiguration(std::string const& packIdentifier) const;
 
     MCAPI void loadPackConfigs();
 

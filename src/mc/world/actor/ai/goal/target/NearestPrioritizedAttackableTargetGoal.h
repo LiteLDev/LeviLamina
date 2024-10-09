@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/target/NearestAttackableTargetGoal.h"
 
 class NearestPrioritizedAttackableTargetGoal : public ::NearestAttackableTargetGoal {
@@ -28,16 +28,16 @@ public:
         class Mob&                               mob,
         std::vector<struct MobDescriptor> const& targetTypes,
         float                                    within,
-        int,
-        bool  mustSee,
-        int   mustSeeForgetTicks,
-        bool  mustReach,
-        bool  reselectTargets,
-        int   scanInterval,
-        float targetSearchHeight,
-        bool  attackOwner,
-        int   persistTargetTicks,
-        bool
+        int                                      attackInterval,
+        bool                                     mustSee,
+        int                                      mustSeeForgetTicks,
+        bool                                     mustReach,
+        bool                                     reselectTargets,
+        int                                      scanInterval,
+        float                                    targetSearchHeight,
+        bool                                     attackOwner,
+        int                                      persistTargetTicks,
+        bool                                     setPersistent
     );
 
     // NOLINTEND

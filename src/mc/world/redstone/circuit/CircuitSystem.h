@@ -48,7 +48,12 @@ public:
 
     MCAPI bool isAvailableAt(class BlockPos const& pos);
 
-    MCAPI bool isConnectionAllowed(class BaseCircuitComponent&, class BlockPos const&, uchar, bool);
+    MCAPI bool isConnectionAllowed(
+        class BaseCircuitComponent& component,
+        class BlockPos const&       componentPos,
+        uchar                       connectionDirection,
+        bool                        directilyPowered
+    );
 
     MCAPI void preSetupPoweredBlocks(class ChunkPos const& chunkPos);
 

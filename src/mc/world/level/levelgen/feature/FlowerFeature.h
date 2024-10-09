@@ -32,7 +32,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool _placeMushroom(
         class BlockSource&    region,
-        class BlockPos const& pos,
+        class BlockPos const& origin,
         class Block const&    mushroom,
         class Random&         random
     ) const;

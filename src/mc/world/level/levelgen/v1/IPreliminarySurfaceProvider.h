@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/data/DividedPos2d.h"
+#include "mc/world/level/DividedPos2d.h"
 
 class IPreliminarySurfaceProvider {
 public:
@@ -18,7 +18,7 @@ public:
     virtual ~IPreliminarySurfaceProvider();
 
     // vIndex: 1
-    virtual std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const = 0;
+    virtual std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4> worldQuartPos) const = 0;
 
     // NOLINTEND
 };

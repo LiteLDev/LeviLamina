@@ -12,8 +12,12 @@ public:
     // NOLINTBEGIN
     MCAPI WorldTemplateLevelData();
 
-    MCAPI
-    WorldTemplateLevelData(bool isFromWorldTemplate, bool isWorldTemplateOptionLocked, class BaseGameVersion const& baseGameVersion, class BaseGameVersion const&);
+    MCAPI WorldTemplateLevelData(
+        bool                         isFromWorldTemplate,
+        bool                         isWorldTemplateOptionLocked,
+        class BaseGameVersion const& baseGameVersion,
+        class BaseGameVersion const& maxBaseGameVersion
+    );
 
     MCAPI class BaseGameVersion const& getBaseGameVersion() const;
 
@@ -33,7 +37,7 @@ public:
 
     MCAPI void setIsWorldTemplateOptionLocked(bool isWorldTemplateOptionLocked);
 
-    MCAPI void setMaxBaseGameVersion(class BaseGameVersion const&);
+    MCAPI void setMaxBaseGameVersion(class BaseGameVersion const& maxBaseGameVersion);
 
     MCAPI void setTagData(class CompoundTag& tag) const;
 

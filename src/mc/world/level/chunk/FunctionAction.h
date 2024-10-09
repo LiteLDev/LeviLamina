@@ -26,7 +26,7 @@ public:
     // vIndex: 3
     virtual bool operator==(class IRequestAction const& action) const;
 
-    MCAPI FunctionAction(std::string const& filePath, std::unique_ptr<class CommandOrigin>);
+    MCAPI FunctionAction(std::string const& filePath, std::unique_ptr<class CommandOrigin> commandOrigin);
 
     MCAPI static std::unique_ptr<class FunctionAction>
     load(class CompoundTag const& tag, class ICommandOriginLoader& loader);

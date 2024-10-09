@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/Exclude.h"
-#include "mc/common/wrapper/Include.h"
-#include "mc/common/wrapper/Optional.h"
-#include "mc/common/wrapper/ViewT.h"
-#include "mc/entity/EntityModifier.h"
-#include "mc/world/components/FlagComponent.h"
+#include "mc/deps/ecs/Optional.h"
+#include "mc/deps/ecs/ViewT.h"
+#include "mc/deps/ecs/strict/EntityModifier.h"
+#include "mc/deps/ecs/strict/Exclude.h"
+#include "mc/deps/ecs/strict/Include.h"
+#include "mc/entity/components/FlagComponent.h"
 
 class TryExitVehicleSystem {
 public:
@@ -27,7 +27,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void _tickTryExitVehicle(
         class StrictEntityContext const& entity,
-        struct PassengerComponent const&,
+        struct PassengerComponent const& passengerComponent,
         class ViewT<
             class StrictEntityContext,
             struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,
@@ -36,7 +36,7 @@ public:
             struct MovementAttributesComponent const,
             struct VehicleComponent const,
             struct ActorDataFlagComponent const,
-            struct ActorDataControllingSeatIndexComponent const>,
+            struct ActorDataControllingSeatIndexComponent const> vehiclesPlayerIsJumping,
         class EntityModifier<
             class FlagComponent<struct StopRidingRequestFlag>,
             class FlagComponent<struct ExitFromPassengerFlag>>& modifier

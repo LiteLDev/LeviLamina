@@ -45,7 +45,7 @@ public:
 
     MCAPI static ::ResourceInformation::ResourceType ResourceTypeFromString(std::string const& value);
 
-    MCAPI static std::string const& StringFromResourceType(::ResourceInformation::ResourceType);
+    MCAPI static std::string const& StringFromResourceType(::ResourceInformation::ResourceType value);
 
     // NOLINTEND
 };

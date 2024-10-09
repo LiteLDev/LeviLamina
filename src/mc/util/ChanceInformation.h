@@ -17,7 +17,7 @@ public:
 
     MCAPI void set(float value);
 
-    MCAPI void set(uint, uint);
+    MCAPI void set(uint numerator, uint denominator);
 
     // NOLINTEND
 };

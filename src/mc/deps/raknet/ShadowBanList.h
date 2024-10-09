@@ -18,9 +18,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI ShadowBanList(std::function<void(std::string const&)>, std::chrono::seconds, std::chrono::seconds);
+    MCAPI ShadowBanList(
+        std::function<void(std::string const&)> addBanCallback,
+        std::chrono::seconds                    banExpiryDuration,
+        std::chrono::seconds                    appHandshakeGracePeriod
+    );
 
-    MCAPI ushort addBan(struct RakNet::SystemAddress const&, std::chrono::seconds);
+    MCAPI ushort addBan(struct RakNet::SystemAddress const& addr, std::chrono::seconds time);
 
     // NOLINTEND
 };

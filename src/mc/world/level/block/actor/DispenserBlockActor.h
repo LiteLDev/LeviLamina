@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/block/actor/BlockActorType.h"
 #include "mc/world/level/block/actor/RandomizableBlockActorContainer.h"
-#include "mc/world/level/block/utils/BlockActorType.h"
 
 class DispenserBlockActor : public ::RandomizableBlockActorContainer {
 public:

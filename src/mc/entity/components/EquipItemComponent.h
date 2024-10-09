@@ -11,7 +11,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI void onEquipItemPickedUp(class ItemStack item, int);
+    MCAPI void onEquipItemPickedUp(class ItemStack item, int countToPickup);
 
     MCAPI ~EquipItemComponent();
 

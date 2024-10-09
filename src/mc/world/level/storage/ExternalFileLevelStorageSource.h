@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/OwnerPtr.h"
-#include "mc/deps/core/PathBuffer.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/world/level/storage/LevelStorageSource.h"
 
 // auto generated forward declare list
@@ -40,9 +40,15 @@ public:
     virtual void getLevelList(std::vector<class Core::PathBuffer<std::string>>& paths);
 
     // vIndex: 5
-    virtual class
-        OwnerPtr<class LevelStorage>
-        createLevelStorage(class Scheduler& scheduler, std::string const& levelId, class ContentIdentity const& contentIdentity, Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider, std::chrono::nanoseconds const& writeFlushInterval, Bedrock::NotNullNonOwnerPtr<class LevelDbEnv> levelDbEnv, std::unique_ptr<class LevelStorageEventing>);
+    virtual class OwnerPtr<class LevelStorage> createLevelStorage(
+        class Scheduler&                                                    scheduler,
+        std::string const&                                                  levelId,
+        class ContentIdentity const&                                        contentIdentity,
+        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider,
+        std::chrono::nanoseconds const&                                     writeFlushInterval,
+        Bedrock::NotNullNonOwnerPtr<class LevelDbEnv>                       levelDbEnv,
+        std::unique_ptr<class LevelStorageEventing>                         levelStorageEventing
+    );
 
     // vIndex: 6
     virtual std::unique_ptr<class LevelLooseFileStorage> createLevelLooseStorage(
@@ -72,7 +78,7 @@ public:
     virtual bool isLevelPartiallyCopied(class Core::Path const& levelPath) const;
 
     // vIndex: 13
-    virtual class Core::PathBuffer<std::string> getLevelDatFoundPath(class Core::Path const&) const;
+    virtual class Core::PathBuffer<std::string> getLevelDatFoundPath(class Core::Path const& levelPath) const;
 
     // vIndex: 14
     virtual class Core::PathBuffer<std::string> const getBasePath() const;

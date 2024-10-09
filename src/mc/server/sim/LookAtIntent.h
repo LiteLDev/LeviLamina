@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/ExecutionResult.h"
+#include "mc/server/sim/ExecutionResult.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -32,11 +32,11 @@ public:
                                 struct sim::LookAtPositionIntent,
                                 struct sim::ContinuousLookAtPositionIntent,
                                 struct sim::LookAtEntityIntent,
-                                struct sim::ContinuousLookAtEntityIntent>);
+                                struct sim::ContinuousLookAtEntityIntent> type);
 
-    MCAPI ::sim::ExecutionResult execute(class SimulatedPlayer&);
+    MCAPI ::sim::ExecutionResult execute(class SimulatedPlayer& player);
 
-    MCAPI void finalize(class SimulatedPlayer&);
+    MCAPI void finalize(class SimulatedPlayer& player);
 
     MCAPI void reset();
 

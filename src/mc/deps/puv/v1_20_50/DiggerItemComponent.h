@@ -45,7 +45,7 @@ public:
 
     MCAPI ~DiggerItemComponent();
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx&);
+    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
     // NOLINTEND
 };

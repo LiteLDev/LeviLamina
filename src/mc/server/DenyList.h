@@ -46,7 +46,7 @@ public:
 
     MCAPI ::DenyList::Duration getDuration(struct DenyList::Entry const& entry) const;
 
-    MCAPI std::string const& getMessage(struct DenyList::Entry const&) const;
+    MCAPI std::string const& getMessage(struct DenyList::Entry const& entry) const;
 
     MCAPI bool isBlocked(struct DenyList::Entry const& entry) const;
 

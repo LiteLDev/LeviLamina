@@ -31,7 +31,7 @@ public:
     // vIndex: 10
     virtual bool hasDataDrivenResult() const;
 
-    MCAPI MultiRecipe(std::string const&, class HashedString);
+    MCAPI MultiRecipe(std::string const& recipeId, class HashedString tag);
 
     // NOLINTEND
 };

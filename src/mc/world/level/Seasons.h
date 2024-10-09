@@ -11,9 +11,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI explicit Seasons(class Dimension& d);
+    MCAPI explicit Seasons(class Dimension& dimension);
 
-    MCAPI void postProcess(class LevelChunk& lc, class BlockSource& region, class ChunkPos const& cp);
+    MCAPI void postProcess(class LevelChunk& levelChunk, class BlockSource& region, class ChunkPos const& chunkPos);
 
     MCAPI void tick();
 

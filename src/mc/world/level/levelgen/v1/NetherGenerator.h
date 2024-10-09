@@ -5,7 +5,7 @@
 #include "mc/world/level/biome/surface/PerlinSimplexNoise.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/MultidimensionalArray.h"
+#include "mc/util/MultidimensionalArray.h"
 #include "mc/world/level/levelgen/WorldGenerator.h"
 
 class NetherGenerator : public ::WorldGenerator {
@@ -91,7 +91,7 @@ public:
     // vIndex: 37
     virtual void prepareHeights(class BlockVolume& box, class ChunkPos const& chunkPos, bool factorInBeardsAndShavers);
 
-    MCAPI NetherGenerator(class Dimension&, uint, class Biome const*);
+    MCAPI NetherGenerator(class Dimension& dimension, uint seed, class Biome const* biomeOverride);
 
     MCAPI void buildSurfaces(class BlockVolume& blocks, class LevelChunk& levelChunk, class ChunkPos const& chunkPos);
 

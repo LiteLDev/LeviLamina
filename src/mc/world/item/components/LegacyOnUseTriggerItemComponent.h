@@ -31,7 +31,7 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI void _use(bool&, class ItemStack&, class Player&);
+    MCAPI void _use(bool& result, class ItemStack& item, class Player& player);
 
     // NOLINTEND
 };

@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/BossBarColor.h"
-#include "mc/world/events/BossEventUpdateType.h"
+#include "mc/network/packet/types/world/actor/ai/util/BossBarColor.h"
+#include "mc/network/packet/types/world/actor/ai/util/BossEventUpdateType.h"
 
 class RaidBossComponent {
 public:

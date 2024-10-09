@@ -4,9 +4,9 @@
 #include "mc/world/inventory/transaction/InventoryTransaction.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/deps/core/data/BidirectionalUnorderedMap.h"
-#include "mc/enums/InventoryTransactionError.h"
+#include "mc/platform/Result.h"
+#include "mc/util/BidirectionalUnorderedMap.h"
+#include "mc/world/inventory/transaction/InventoryTransactionError.h"
 
 class ComplexInventoryTransaction {
 public:
@@ -34,7 +34,7 @@ public:
     virtual ~ComplexInventoryTransaction();
 
     // vIndex: 1
-    virtual class Bedrock::Result<void> read(class ReadOnlyBinaryStream& stream);
+    virtual class Bedrock::Result<void> read(class ReadOnlyBinaryStream&);
 
     // vIndex: 2
     virtual void write(class BinaryStream& stream) const;
@@ -55,13 +55,13 @@ public:
     MCAPI static std::unique_ptr<class ComplexInventoryTransaction>
     fromType(::ComplexInventoryTransaction::Type type, class InventoryTransaction const& transaction);
 
-    MCAPI static std::string const getTransactionTypeName(::ComplexInventoryTransaction::Type);
+    MCAPI static std::string const getTransactionTypeName(::ComplexInventoryTransaction::Type type);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    MCAPI void _setDepenetrationOverride(class EntityContext&) const;
+    MCAPI void _setDepenetrationOverride(class EntityContext& entity) const;
 
     // NOLINTEND
 

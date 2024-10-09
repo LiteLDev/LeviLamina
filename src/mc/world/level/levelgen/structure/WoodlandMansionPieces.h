@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/enums/Mirror.h"
-#include "mc/enums/Rotation.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/util/Mirror.h"
+#include "mc/util/Rotation.h"
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
 #include "mc/world/level/levelgen/structure/TemplateStructurePiece.h"
 
@@ -38,25 +38,25 @@ public:
         virtual ~FloorRoomCollection() = default;
 
         // vIndex: 1
-        virtual std::string get1x1(class Random&) = 0;
+        virtual std::string get1x1(class Random& random) = 0;
 
         // vIndex: 2
-        virtual std::string get1x1Secret(class Random&) = 0;
+        virtual std::string get1x1Secret(class Random& random) = 0;
 
         // vIndex: 3
-        virtual std::string get1x2SideEntrance(class Random&, bool) = 0;
+        virtual std::string get1x2SideEntrance(class Random& random, bool isStairsRoom) = 0;
 
         // vIndex: 4
-        virtual std::string get1x2FrontEntrance(class Random&, bool) = 0;
+        virtual std::string get1x2FrontEntrance(class Random& random, bool isStairsRoom) = 0;
 
         // vIndex: 5
-        virtual std::string get1x2Secret(class Random&) = 0;
+        virtual std::string get1x2Secret(class Random& random) = 0;
 
         // vIndex: 6
-        virtual std::string get2x2(class Random&) = 0;
+        virtual std::string get2x2(class Random& random) = 0;
 
         // vIndex: 7
-        virtual std::string get2x2Secret(class Random&) = 0;
+        virtual std::string get2x2Secret(class Random& random) = 0;
 
         // NOLINTEND
     };
@@ -74,25 +74,25 @@ public:
         virtual ~FirstFloorRoomCollection() = default;
 
         // vIndex: 1
-        virtual std::string get1x1(class Random&);
+        virtual std::string get1x1(class Random& random);
 
         // vIndex: 2
-        virtual std::string get1x1Secret(class Random&);
+        virtual std::string get1x1Secret(class Random& random);
 
         // vIndex: 3
-        virtual std::string get1x2SideEntrance(class Random&, bool);
+        virtual std::string get1x2SideEntrance(class Random& random, bool isStairsRoom);
 
         // vIndex: 4
-        virtual std::string get1x2FrontEntrance(class Random&, bool);
+        virtual std::string get1x2FrontEntrance(class Random& random, bool isStairsRoom);
 
         // vIndex: 5
-        virtual std::string get1x2Secret(class Random&);
+        virtual std::string get1x2Secret(class Random& random);
 
         // vIndex: 6
-        virtual std::string get2x2(class Random&);
+        virtual std::string get2x2(class Random& random);
 
         // vIndex: 7
-        virtual std::string get2x2Secret(class Random&);
+        virtual std::string get2x2Secret(class Random& random);
 
         // NOLINTEND
     };
@@ -158,25 +158,25 @@ public:
         virtual ~SecondFloorRoomCollection() = default;
 
         // vIndex: 1
-        virtual std::string get1x1(class Random&);
+        virtual std::string get1x1(class Random& random);
 
         // vIndex: 2
-        virtual std::string get1x1Secret(class Random&);
+        virtual std::string get1x1Secret(class Random& random);
 
         // vIndex: 3
-        virtual std::string get1x2SideEntrance(class Random&, bool);
+        virtual std::string get1x2SideEntrance(class Random& random, bool isStairsRoom);
 
         // vIndex: 4
-        virtual std::string get1x2FrontEntrance(class Random&, bool);
+        virtual std::string get1x2FrontEntrance(class Random& random, bool isStairsRoom);
 
         // vIndex: 5
-        virtual std::string get1x2Secret(class Random&);
+        virtual std::string get1x2Secret(class Random& random);
 
         // vIndex: 6
-        virtual std::string get2x2(class Random&);
+        virtual std::string get2x2(class Random& random);
 
         // vIndex: 7
-        virtual std::string get2x2Secret(class Random&);
+        virtual std::string get2x2Secret(class Random& random);
 
         // NOLINTEND
     };

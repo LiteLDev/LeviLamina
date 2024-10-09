@@ -34,9 +34,13 @@ public:
     // NOLINTBEGIN
     MCAPI bool _isExposedDirection(class IBlockWorldGenAPI& target, class BlockPos const& pos, uchar direction) const;
 
-    MCAPI std::vector<class BlockPos>
-    _placeGroundPatch(class IBlockWorldGenAPI& target, class Random& random, class BlockPos const& origin, int, int)
-        const;
+    MCAPI std::vector<class BlockPos> _placeGroundPatch(
+        class IBlockWorldGenAPI& target,
+        class Random&            random,
+        class BlockPos const&    origin,
+        int                      xRadius,
+        int                      zRadius
+    ) const;
 
     // NOLINTEND
 };

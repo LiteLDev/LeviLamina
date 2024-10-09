@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/OperationGraphResult.h"
-#include "mc/deps/core/data/OperationNode.h"
 #include "mc/world/level/biome/BiomeTemperatureCategory.h"
-#include "mc/world/level/newbiome/WorkingData.h"
+#include "mc/world/level/newbiome/OperationGraphResult.h"
+#include "mc/world/level/newbiome/OperationNode.h"
+#include "mc/world/level/newbiome/operation_node_details/WorkingData.h"
 
 class OceanMixerOperationNode {
 public:
@@ -28,11 +28,11 @@ public:
 
     // vIndex: 3
     virtual void _fillArea(
-        class OperationNodeDetails::WorkingData<class Biome const*, class Biome const*>&,
-        class Pos2d const&                                     origin,
-        class Pos2d const&                                     size,
-        int                                                    pw,
-        class OperationGraphResult<::BiomeTemperatureCategory> oceanData
+        class OperationNodeDetails::WorkingData<class Biome const*, class Biome const*>& operationNodeData,
+        class Pos2d const&                                                               origin,
+        class Pos2d const&                                                               size,
+        int                                                                              pw,
+        class OperationGraphResult<::BiomeTemperatureCategory>                           oceanData
     ) const;
 
     // vIndex: 4

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/RedefinitionMode.h"
+#include "mc/world/attribute/RedefinitionMode.h"
 
 class Attribute {
 public:

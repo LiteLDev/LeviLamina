@@ -26,13 +26,13 @@ public:
     virtual class PackManifest const& getManifest();
 
     // vIndex: 2
-    virtual std::vector<std::string> enumerateScripts(std::string const&);
+    virtual std::vector<std::string> enumerateScripts(std::string const& extension);
 
     // vIndex: 3
-    virtual std::optional<std::string> loadScript(std::string const&);
+    virtual std::optional<std::string> loadScript(std::string const& path);
 
     // vIndex: 4
-    virtual std::string removeRootFromPath(std::string const& path);
+    virtual std::string removeRootFromPath(std::string const&);
 
     // NOLINTEND
 

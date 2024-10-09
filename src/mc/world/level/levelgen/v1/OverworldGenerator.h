@@ -85,13 +85,8 @@ public:
     virtual std::optional<class XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory() const = 0;
 
     // vIndex: 51
-    virtual std::unique_ptr<class Aquifer> tryMakeAquifer(
-        class ChunkPos const&          chunkPos,
-        class SurfaceLevelCache const& surfaceLevelCache,
-        short                          minHeight,
-        short                          levelGenHeight,
-        short                          seaLevel
-    ) const;
+    virtual std::unique_ptr<class Aquifer>
+           tryMakeAquifer(class ChunkPos const&, class SurfaceLevelCache const&, short, short, short) const;
 
     // vIndex: 52
     virtual class ChunkLocalNoiseCache createNoiseCache(class ChunkPos chunkPos) const;
@@ -119,7 +114,7 @@ public:
 
     virtual ~OverworldGenerator();
 
-    MCAPI OverworldGenerator(class Dimension&, bool);
+    MCAPI OverworldGenerator(class Dimension& dimension, bool isLegacyWorld);
 
     MCAPI void buildSurfaces(
         struct OverworldGenerator::ThreadData& thread,

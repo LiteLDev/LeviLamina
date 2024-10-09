@@ -30,11 +30,18 @@ public:
     _canKickPlayerOrGenerateFailureOutput(class Player const& player, class CommandOutput& output, class Level* level)
         const;
 
-    MCAPI class Player const*
-    _findTarget(class CommandOrigin const& origin, class CommandOutput& output, class Level& level, std::string const& message, std::string const& reason, std::string const&)
-        const;
+    MCAPI class Player const* _findTarget(
+        class CommandOrigin const& origin,
+        class CommandOutput&       output,
+        class Level&               level,
+        std::string const&         message,
+        std::string const&         reason,
+        std::string const&         idOrName
+    ) const;
 
-    MCAPI void _generateSuccessOutput(class CommandOutput& output, std::string const&, std::string const& reason) const;
+    MCAPI void
+    _generateSuccessOutput(class CommandOutput& output, std::string const& playerNameTag, std::string const& reason)
+        const;
 
     MCAPI class Player const* _loopPlayers(
         class CommandOrigin const&,

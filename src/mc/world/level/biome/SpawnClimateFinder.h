@@ -26,8 +26,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI
-    SpawnClimateFinder(std::vector<struct ClimateParameters>, struct OverworldNoises3d const&, class DimensionHeightRange const&);
+    MCAPI SpawnClimateFinder(
+        std::vector<struct ClimateParameters> targetClimates,
+        struct OverworldNoises3d const&       noiseSampler,
+        class DimensionHeightRange const&     dimensionHeightRange
+    );
 
     MCAPI class BlockPos findSpawnPosition() const;
 
@@ -40,7 +43,7 @@ public:
     MCAPI int64 _calculateClimateFitness(class BlockPos pos) const;
 
     MCAPI struct SpawnClimateFinder::ResultDetails
-    _radialSearch(struct SpawnClimateFinder::ResultDetails workingData, int, int) const;
+    _radialSearch(struct SpawnClimateFinder::ResultDetails workingData, int maxRadius, int radiusIncrement) const;
 
     // NOLINTEND
 };

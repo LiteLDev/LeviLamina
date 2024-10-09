@@ -4,8 +4,8 @@
 #include "mc/nbt/CompoundTag.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/StructureBlockPaletteLoadResult.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/world/level/levelgen/structure/StructureBlockPaletteLoadResult.h"
 
 class BlockPalette;
 
@@ -63,9 +63,11 @@ public:
     MCAPI std::unordered_map<uint64, struct StructureBlockPalette::BlockPositionData> const&
           getAllBlockPositionData() const;
 
-    MCAPI class Block const&
-    getBlock(class BlockPalette const& blockPalette, uint64, class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry>)
-        const;
+    MCAPI class Block const& getBlock(
+        class BlockPalette const&                                       blockPalette,
+        uint64                                                          paletteId,
+        class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry> unknownBlockRegistry
+    ) const;
 
     MCAPI struct StructureBlockPalette::BlockPositionData const* getBlockPositionData(uint64 blockIndex) const;
 
@@ -73,11 +75,14 @@ public:
 
     MCAPI bool load(class CompoundTag const& tag, int formatVersion);
 
-    MCAPI void removeBlockPositionData(uint64);
+    MCAPI void removeBlockPositionData(uint64 id);
 
     MCAPI std::unique_ptr<class CompoundTag> save() const;
 
-    MCAPI class Block const* tryGetBlock(uint64, class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry>) const;
+    MCAPI class Block const* tryGetBlock(
+        uint64                                                          paletteId,
+        class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry> unknownBlockRegistry
+    ) const;
 
     MCAPI ~StructureBlockPalette();
 

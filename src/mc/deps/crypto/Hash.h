@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/crypto/hash/HashType.h"
+#include "mc/deps/crypto/hash/IHash.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,14 +13,38 @@ namespace mce { class UUID; }
 // clang-format on
 
 namespace Crypto::Hash {
-// NOLINTBEGIN
-MCAPI class mce::UUID generateUUID(std::string const&, ::Crypto::Hash::HashType);
 
-MCAPI class mce::UUID generateUUID(void const* in, uint size, ::Crypto::Hash::HashType type);
+class Hash : public ::Crypto::Hash::IHash {
+public:
+    // prevent constructor by default
+    Hash& operator=(Hash const&);
+    Hash(Hash const&);
+    Hash();
 
-MCAPI std::string hash(::Crypto::Hash::HashType type, std::string const& in);
+public:
+    // NOLINTBEGIN
+    // vIndex: 0
+    virtual ~Hash();
 
-MCAPI std::string hash(::Crypto::Hash::HashType, void const*, uint);
-// NOLINTEND
+    // vIndex: 1
+    virtual void reset();
+
+    // vIndex: 2
+    virtual void update(void const* data, uint size);
+
+    // vIndex: 3
+    virtual void final(uchar* result);
+
+    // vIndex: 4
+    virtual uint64 resultSize() const;
+
+    MCAPI explicit Hash(::Crypto::Hash::HashType type);
+
+    MCAPI std::string final();
+
+    MCAPI class mce::UUID getUUID();
+
+    // NOLINTEND
+};
 
 }; // namespace Crypto::Hash

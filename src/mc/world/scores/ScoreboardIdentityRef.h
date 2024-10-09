@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/player/PlayerScoreSetFunction.h"
 #include "mc/world/scores/IdentityDefinition.h"
+#include "mc/world/scores/PlayerScoreSetFunction.h"
 
 class ScoreboardIdentityRef {
 public:

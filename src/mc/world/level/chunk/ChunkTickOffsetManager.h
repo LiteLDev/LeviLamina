@@ -18,9 +18,9 @@ public:
 
     MCAPI std::vector<class ChunkPos> const& getTickingOffsets() const;
 
-    MCAPI void initialize(uint);
+    MCAPI void initialize(uint serverTickRange);
 
-    MCAPI void shuffleTickingOffsets(class Random&);
+    MCAPI void shuffleTickingOffsets(class Random& random);
 
     MCAPI ~ChunkTickOffsetManager();
 

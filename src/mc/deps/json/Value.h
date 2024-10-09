@@ -93,13 +93,13 @@ public:
         // NOLINTBEGIN
         MCAPI CZString();
 
-        MCAPI CZString(char const*);
+        MCAPI CZString(char const* cstr);
 
         MCAPI CZString(class Json::Value::CZString&& other);
 
         MCAPI CZString(class Json::Value::CZString const& other);
 
-        MCAPI CZString(char*, bool);
+        MCAPI CZString(char* cstr, bool duplicate);
 
         MCAPI ~CZString();
 
@@ -115,7 +115,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        MCAPI bool operator()(class Json::Value::CZString const&, class Json::Value::CZString const&) const;
+        MCAPI bool
+        operator()(class Json::Value::CZString const& czstring1, class Json::Value::CZString const& czstring2) const;
 
         // NOLINTEND
     };
@@ -143,11 +144,11 @@ public:
 
     MCAPI Value(char const* value);
 
-    MCAPI Value(class Json::Value&&);
+    MCAPI Value(class Json::Value&& other);
 
     MCAPI Value(class Json::Value const& other);
 
-    MCAPI Value(class Json::Value::CZString*);
+    MCAPI Value(class Json::Value::CZString* str);
 
     MCAPI Value(std::string const& value);
 
@@ -161,7 +162,7 @@ public:
 
     MCAPI Value(uint value);
 
-    MCAPI class Json::Value& append(class Json::Value&&);
+    MCAPI class Json::Value& append(class Json::Value&& value);
 
     MCAPI class Json::Value& append(class Json::Value const& value);
 
@@ -181,7 +182,7 @@ public:
 
     MCAPI uint64 asLargestUInt() const;
 
-    MCAPI std::string asString(std::string const& defaultValue) const;
+    MCAPI std::string asString(std::string const&) const;
 
     MCAPI uint asUInt(uint defaultValue) const;
 
@@ -235,7 +236,7 @@ public:
 
     MCAPI bool operator<(class Json::Value const& other) const;
 
-    MCAPI class Json::Value& operator=(class Json::Value&&);
+    MCAPI class Json::Value& operator=(class Json::Value&& other);
 
     MCAPI class Json::Value& operator=(class Json::Value const& other);
 
@@ -295,9 +296,9 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI void _insert(class Json::Value::CZString&&, class Json::Value&&, bool);
+    MCAPI void _insert(class Json::Value::CZString&& key, class Json::Value&& value, bool overwrite);
 
-    MCAPI class Json::Value& _resolveReference(char const*);
+    MCAPI class Json::Value& _resolveReference(char const* key);
 
     // NOLINTEND
 };

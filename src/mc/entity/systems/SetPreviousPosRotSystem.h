@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/EntityModifier.h"
-#include "mc/world/components/FlagComponent.h"
+#include "mc/deps/ecs/strict/EntityModifier.h"
+#include "mc/entity/components/FlagComponent.h"
 
 class SetPreviousPosRotSystem {
 public:
@@ -16,9 +16,9 @@ public:
 public:
     // NOLINTBEGIN
     MCAPI static void _setPreviousPosRot(
-        class StrictEntityContext& entity,
-        struct StateVectorComponent&,
-        struct ActorRotationComponent&,
+        class StrictEntityContext&                                                  entity,
+        struct StateVectorComponent&                                                stateVectorComponent,
+        struct ActorRotationComponent&                                              actorRotationComponent,
         class EntityModifier<class FlagComponent<struct PrevPosRotSetThisTickFlag>> modifier
     );
 

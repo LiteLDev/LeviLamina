@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/TaskGroupState.h"
+#include "mc/deps/core/threading/TaskGroupState.h"
 
 class BackgroundTaskBase {
 public:
@@ -64,7 +64,7 @@ public:
         bool                                       isAsync
     );
 
-    MCAPI bool canBeRunBy(std::thread::id workerId) const;
+    MCAPI bool canBeRunBy(std::thread::id) const;
 
     MCAPI class IBackgroundTaskOwner* getGroup();
 

@@ -4,11 +4,18 @@
 
 namespace RenderParamUtils {
 // NOLINTBEGIN
-MCAPI void
-fillRenderParamsWithSourceContextBlockAtPosBlockSourceAndActor(class RenderParams&, class BlockSource&, class BlockPos const&, class Actor*);
+MCAPI void fillRenderParamsWithSourceContextBlockAtPosBlockSourceAndActor(
+    class RenderParams&   params,
+    class BlockSource&    region,
+    class BlockPos const& pos,
+    class Actor*          actor
+);
 
-MCAPI void
-fillRenderParamsWithSourceContextItemActorAndActorTarget(class RenderParams&, class ItemStack&, class Actor&);
+MCAPI void fillRenderParamsWithSourceContextItemActorAndActorTarget(
+    class RenderParams& params,
+    class ItemStack&    item,
+    class Actor&        actor
+);
 // NOLINTEND
 
 }; // namespace RenderParamUtils

@@ -24,7 +24,7 @@ public:
     virtual ~RakTcpProxy() = default;
 
     // vIndex: 1
-    virtual bool start(ushort port, ushort, ushort);
+    virtual bool start(ushort port, ushort maxIncomming, ushort maxOutgoing);
 
     // vIndex: 2
     virtual struct RakNet::SystemAddress connect(std::string const& host, ushort port);

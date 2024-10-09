@@ -58,7 +58,7 @@ public:
         int                                       height,
         int                                       depth,
         class Block const&                        initBlock,
-        int
+        int                                       dimensionBottom
     );
 
     MCAPI struct BlockVolume::BlockVolumeIter begin() const;

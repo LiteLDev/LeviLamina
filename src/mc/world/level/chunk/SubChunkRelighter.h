@@ -19,9 +19,9 @@ public:
         bool                  useFullyDarkSubchunk
     );
 
-    MCAPI void _checkEdgeForSubtractiveBlockLightProcessing(struct SubChunkLightIndex const&);
+    MCAPI void _checkEdgeForSubtractiveBlockLightProcessing(struct SubChunkLightIndex const& coordIndex);
 
-    MCAPI void _checkEdgeForSubtractiveSkyLightProcessing(struct SubChunkLightIndex const&);
+    MCAPI void _checkEdgeForSubtractiveSkyLightProcessing(struct SubChunkLightIndex const& coordIndex);
 
     MCAPI struct SubChunk* _getAbsorption(struct SubChunkLightIndex coordIndex, uchar& absorption) const;
 
@@ -63,8 +63,11 @@ public:
         struct Brightness         newAbsorption
     );
 
-    MCAPI void
-    relightSubChunk(class LevelChunk const&, std::vector<struct SubChunkLightUpdate> const&, std::vector<class BlockPos>&);
+    MCAPI void relightSubChunk(
+        class LevelChunk const&                        levelChunk,
+        std::vector<struct SubChunkLightUpdate> const& alteredBlockList,
+        std::vector<class BlockPos>&                   brightnessChangedList
+    );
 
     MCAPI void setBlockLight(
         class Pos const&  pos,

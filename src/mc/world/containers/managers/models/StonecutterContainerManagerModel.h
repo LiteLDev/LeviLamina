@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/containers/ContainerID.h"
-#include "mc/world/containers/ContainerType.h"
+#include "mc/world/ContainerID.h"
+#include "mc/world/ContainerType.h"
 #include "mc/world/containers/managers/models/ContainerManagerModel.h"
 
 class StonecutterContainerManagerModel : public ::ContainerManagerModel {
@@ -29,7 +29,7 @@ public:
     virtual class ItemStack const& getSlot(int slot) const;
 
     // vIndex: 9
-    virtual void setData(int id, int value);
+    virtual void setData(int, int);
 
     // vIndex: 10
     virtual void broadcastChanges();

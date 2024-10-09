@@ -114,7 +114,7 @@ public:
     virtual void __unk_vfn_32();
 
     // vIndex: 33
-    virtual ::EventResult onEvent(struct ActorEquippedArmorEvent const&);
+    virtual ::EventResult onEvent(struct ActorEquippedArmorEvent const& actorEquippedArmorEvent);
 
     // NOLINTEND
 };

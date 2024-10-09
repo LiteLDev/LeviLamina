@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/ClassBindingBuilder.h"
-#include "mc/external/scripting/Result.h"
-#include "mc/external/scripting/StrongTypedObjectHandle.h"
+#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/external/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -34,11 +34,11 @@ public:
 
     // vIndex: 1
     virtual class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockLocationIterator>
-        getBlockLocationIterator(class Scripting::WeakLifetimeScope) = 0;
+    getBlockLocationIterator(class Scripting::WeakLifetimeScope scope) = 0;
 
-    MCAPI explicit ScriptBlockVolumeBase(std::unique_ptr<class BlockVolumeBase>);
+    MCAPI explicit ScriptBlockVolumeBase(std::unique_ptr<class BlockVolumeBase> blockVolumeBase);
 
-    MCAPI void forEach(std::function<bool(class BlockPos const&)>) const;
+    MCAPI void forEach(std::function<bool(class BlockPos const&)> callback) const;
 
     MCAPI class Scripting::Result<class BoundingBox> getBoundingBox() const;
 
@@ -50,9 +50,9 @@ public:
 
     MCAPI class Vec3 getSpan() const;
 
-    MCAPI bool isInside(class Vec3 const&) const;
+    MCAPI bool isInside(class Vec3 const& location) const;
 
-    MCAPI void translate(class Vec3 const&);
+    MCAPI void translate(class Vec3 const& delta);
 
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockVolumeBase> bind();
 

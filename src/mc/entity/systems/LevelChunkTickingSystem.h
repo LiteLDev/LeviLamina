@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/systems/ITickingSystem.h"
+#include "mc/deps/ecs/systems/ITickingSystem.h"
 
 class LevelChunkTickingSystem : public ::ITickingSystem {
 public:
@@ -18,7 +18,7 @@ public:
     virtual ~LevelChunkTickingSystem() = default;
 
     // vIndex: 1
-    virtual void registerEvents(entt::dispatcher&);
+    virtual void registerEvents(entt::dispatcher& dispatcher);
 
     // vIndex: 2
     virtual void tick(class EntityRegistry& registry);
@@ -27,25 +27,31 @@ public:
     virtual void singleTick(class EntityRegistry& registry, class EntityContext& entity);
 
     // vIndex: 4
-    virtual void singleTick(class EntityRegistry& registry, class StrictEntityContext& entity);
+    virtual void singleTick(class EntityRegistry& registry, class StrictEntityContext& entityContext);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI static void _determineLevelChunksToTick(
-        class Actor const& actor,
-        class BlockSource& region,
-        class LoadedChunksComponent&,
-        std::vector<std::shared_ptr<class LevelChunk>>&,
-        std::vector<std::shared_ptr<class LevelChunk>>&,
-        struct Tick const& currentTick
+        class Actor const&                              actor,
+        class BlockSource&                              region,
+        class LoadedChunksComponent&                    loadedChunksComponent,
+        std::vector<std::shared_ptr<class LevelChunk>>& levelChunksToTick,
+        std::vector<std::shared_ptr<class LevelChunk>>& levelChunksBlockEntitiesToTick,
+        struct Tick const&                              currentTick
     );
 
-    MCAPI static void
-    _tickLevelChunksAroundActor(class Actor& actor, class BlockSource& region, class LoadedChunksComponent&);
+    MCAPI static void _tickLevelChunksAroundActor(
+        class Actor&                 actor,
+        class BlockSource&           region,
+        class LoadedChunksComponent& loadedChunksComponent
+    );
 
-    MCAPI static void _tickLevelChunksAroundActorView(class ActorOwnerComponent&, class LoadedChunksComponent&);
+    MCAPI static void _tickLevelChunksAroundActorView(
+        class ActorOwnerComponent&   actorOwnerComponent,
+        class LoadedChunksComponent& loadedChunksComponent
+    );
 
     // NOLINTEND
 };

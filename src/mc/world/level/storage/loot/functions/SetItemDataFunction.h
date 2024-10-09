@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/WeakPtr.h"
+#include "mc/common/WeakPtr.h"
 #include "mc/world/level/storage/loot/functions/LootItemFunction.h"
 
 // auto generated forward declare list
@@ -42,18 +42,22 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI ::SetItemDataFunction::ApplyForComplexAliasBlockResult
-    _applyImplForComplexAliasBlock(class Item const*&, std::string const&, class Random& random, int&);
+    MCAPI ::SetItemDataFunction::ApplyForComplexAliasBlockResult _applyImplForComplexAliasBlock(
+        class Item const*& inOutItemDef,
+        std::string const& originalItemName,
+        class Random&      random,
+        int&               outResultAux
+    );
 
     MCAPI ::SetItemDataFunction::ApplyForItemResult _applyImplForItem(
-        std::string const&,
-        std::string const&,
-        class Random& random,
-        int&,
+        std::string const&         originalItemName,
+        std::string const&         itemRawNameId,
+        class Random&              random,
+        int&                       outAux,
         class WeakPtr<class Item>& outItem
     );
 
-    MCAPI void _applyImplForNormalBlock(class Block const*&, class Random& random);
+    MCAPI void _applyImplForNormalBlock(class Block const*& inOutBlock, class Random& random);
 
     // NOLINTEND
 };

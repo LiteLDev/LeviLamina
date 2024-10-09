@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/StrongTypedObjectHandle.h"
+#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -24,7 +24,7 @@ public:
 public:
     // NOLINTBEGIN
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptGameRules>
-    getHandle(class Scripting::WeakLifetimeScope&, class Level&);
+    getHandle(class Scripting::WeakLifetimeScope& scope, class Level& level);
 
     // NOLINTEND
 };

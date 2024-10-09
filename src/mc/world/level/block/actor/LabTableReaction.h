@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/LabTableReactionType.h"
+#include "mc/world/level/block/actor/LabTableReactionType.h"
 
 class LabTableReaction {
 public:

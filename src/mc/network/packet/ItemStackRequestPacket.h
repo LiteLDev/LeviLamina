@@ -4,9 +4,9 @@
 #include "mc/world/inventory/network/ItemStackRequestBatch.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
 
 class ItemStackRequestPacket : public ::Packet {
 public:

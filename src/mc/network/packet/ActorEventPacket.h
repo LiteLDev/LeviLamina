@@ -4,10 +4,10 @@
 #include "mc/world/ActorRuntimeID.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
-#include "mc/events/ActorEvent.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/network/packet/types/world/actor/ActorEvent.h"
+#include "mc/platform/Result.h"
 
 class ActorEventPacket : public ::Packet {
 public:

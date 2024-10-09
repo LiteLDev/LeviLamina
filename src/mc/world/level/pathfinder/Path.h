@@ -6,8 +6,8 @@
 #include "mc/world/level/BlockPos.h"
 
 // auto generated inclusion list
-#include "mc/enums/NodeType.h"
-#include "mc/enums/PathCompletionType.h"
+#include "mc/world/level/pathfinder/NodeType.h"
+#include "mc/world/level/pathfinder/PathCompletionType.h"
 
 class Path {
 public:

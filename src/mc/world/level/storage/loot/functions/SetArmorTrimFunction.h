@@ -23,19 +23,19 @@ public:
     virtual ~SetArmorTrimFunction() = default;
 
     // vIndex: 1
-    virtual void apply(class ItemStack&, class Random&, class LootTableContext&);
+    virtual void apply(class ItemStack& item, class Random&, class LootTableContext& context);
 
     // vIndex: 3
-    virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
+    virtual void apply(class ItemInstance& item, class Random&, class LootTableContext& context);
 
     MCAPI static std::unique_ptr<class LootItemFunction>
-    deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>>&);
+    deserialize(class Json::Value object, std::vector<std::unique_ptr<class LootItemCondition>>& predicates);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    MCAPI void _apply(class ItemStackBase&, class LootTableContext const&) const;
+    MCAPI void _apply(class ItemStackBase& item, class LootTableContext const& context) const;
 
     // NOLINTEND
 };

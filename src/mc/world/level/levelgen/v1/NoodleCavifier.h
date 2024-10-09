@@ -11,7 +11,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI NoodleCavifier(class NoodleCavifierNoises const&, short);
+    MCAPI NoodleCavifier(class NoodleCavifierNoises const& noises, short minWorldHeight);
 
     // NOLINTEND
 };

@@ -17,7 +17,11 @@ public:
     // vIndex: 0
     virtual ~BlockCerealSchemaUpgrade();
 
-    MCAPI BlockCerealSchemaUpgrade(class SemVersion, std::string const&, std::string const&);
+    MCAPI BlockCerealSchemaUpgrade(
+        class SemVersion   targetVersion,
+        std::string const& mSchemaKey,
+        std::string const& mJsonMemberName
+    );
 
     // NOLINTEND
 };

@@ -4,9 +4,9 @@
 #include "mc/network/NetworkSettingOptions.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
 
 class NetworkSettingsPacket : public ::Packet {
 public:
@@ -35,7 +35,7 @@ public:
 
     MCAPI NetworkSettingsPacket();
 
-    MCAPI explicit NetworkSettingsPacket(struct NetworkSettingOptions const&);
+    MCAPI explicit NetworkSettingsPacket(struct NetworkSettingOptions const& options);
 
     // NOLINTEND
 };

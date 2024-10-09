@@ -6,10 +6,10 @@
 #include "mc/world/ActorUniqueID.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
-#include "mc/world/events/BossEventUpdateType.h"
+#include "mc/network/packet/types/world/actor/ai/util/BossEventUpdateType.h"
+#include "mc/platform/Result.h"
 
 class BossEventPacket : public ::Packet {
 public:

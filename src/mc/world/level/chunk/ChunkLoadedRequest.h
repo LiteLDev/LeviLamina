@@ -31,14 +31,14 @@ public:
     MCAPI ChunkLoadedRequest(
         std::string const&                    tickingAreaName,
         std::unique_ptr<class IRequestAction> requestAction,
-        bool                                  allowNonPlayerTicking
+        bool                                  allowNonTickingPlayerAndTickingAreaChunks
     );
 
     MCAPI ChunkLoadedRequest(
         struct Bounds const&                  bounds,
         std::unique_ptr<class IRequestAction> requestAction,
-        bool                                  isCircle,
-        bool                                  allowNonPlayerTicking
+        bool                                  isCircleArea,
+        bool                                  allowNonTickingPlayerAndTickingAreaChunks
     );
 
     MCAPI ::ChunksLoadedStatus areAllChunksLoaded(class Dimension& dimension, struct Tick currentLevelTick) const;

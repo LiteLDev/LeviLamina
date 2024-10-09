@@ -47,7 +47,7 @@ public:
     // NOLINTBEGIN
     MCAPI void acquireAllRandomTicks(class LevelChunk& lc);
 
-    MCAPI void acquireAllTicks(class BlockTickingQueue&);
+    MCAPI void acquireAllTicks(class BlockTickingQueue& otherQueue);
 
     MCAPI void acquireAllTicks(class LevelChunk& lc);
 
@@ -91,7 +91,7 @@ public:
 
     MCAPI void setOwningChunk(class LevelChunk* owningChunk);
 
-    MCAPI void tickAllPendingTicks(class BlockSource& region, uint64);
+    MCAPI void tickAllPendingTicks(class BlockSource& region, uint64 maximumTicksAllowed);
 
     MCAPI bool tickPendingTicks(class BlockSource& region, struct Tick const& until, int max, bool instaTick_);
 
@@ -109,7 +109,7 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI void _acquireAllTicks(class BlockTickingQueue&);
+    MCAPI void _acquireAllTicks(class BlockTickingQueue& otherChunkQueue);
 
     MCAPI void
     _addToNextTickQueue(class BlockPos const& pos, class Block const& block, int tickDelay, int priorityOffset);

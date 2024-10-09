@@ -30,9 +30,12 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI std::optional<class BlockPos>
-    _placeBlockIfPossible(class BlockSource& region, class BlockPos const& pos, class Random& random, std::vector<uchar> const&)
-        const;
+    MCAPI std::optional<class BlockPos> _placeBlockIfPossible(
+        class BlockSource&        region,
+        class BlockPos const&     pos,
+        class Random&             random,
+        std::vector<uchar> const& placementDirections
+    ) const;
 
     MCAPI static std::vector<uchar> _getShuffledDirections(std::vector<uchar> faces);
 

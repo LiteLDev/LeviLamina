@@ -4,7 +4,7 @@
 
 namespace LightningRodUtil {
 // NOLINTBEGIN
-MCAPI void emitLightningRodParticles(class BlockSource& region, class BlockPos const& pos, int);
+MCAPI void emitLightningRodParticles(class BlockSource& region, class BlockPos const& pos, int sparkCount);
 // NOLINTEND
 
 }; // namespace LightningRodUtil

@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/server/commands/FacingResult.h"
 #include "mc/server/commands/ServerCommand.h"
+#include "mc/util/rotation_command_utils/FacingResult.h"
 
 class SummonCommand : public ::ServerCommand {
 public:

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/CrashDumpLogStringID.h"
+#include "mc/deps/core/utility/CrashDumpLogStringID.h"
 
 struct CrashDumpKeyValueData {
 public:

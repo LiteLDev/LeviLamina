@@ -4,9 +4,9 @@
 #include "mc/world/actor/common/CameraPresets.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
 
 class CameraPresetsPacket : public ::Packet {
 public:
@@ -38,7 +38,7 @@ public:
 
     MCAPI CameraPresetsPacket();
 
-    MCAPI explicit CameraPresetsPacket(class CameraPresets const&);
+    MCAPI explicit CameraPresetsPacket(class CameraPresets const& cameraPresets);
 
     // NOLINTEND
 };

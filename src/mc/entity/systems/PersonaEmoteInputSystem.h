@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/Include.h"
-#include "mc/common/wrapper/ViewT.h"
-#include "mc/entity/EntityModifier.h"
+#include "mc/deps/ecs/ViewT.h"
+#include "mc/deps/ecs/strict/EntityModifier.h"
+#include "mc/deps/ecs/strict/Include.h"
 
 class PersonaEmoteInputSystem {
 public:
@@ -23,10 +23,10 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI static void _personaEmoteInputSystem(
-        class StrictEntityContext const& entity,
-        struct EventingDispatcherComponent const&,
-        struct EmotePlayedTelemetryDataComponent const&,
-        class ViewT<class StrictEntityContext, struct EventingRequestQueueComponent>,
+        class StrictEntityContext const&                                             entity,
+        struct EventingDispatcherComponent const&                                    eventingDispatcherComponent,
+        struct EmotePlayedTelemetryDataComponent const&                              emotePlayedTelemetryDataComponent,
+        class ViewT<class StrictEntityContext, struct EventingRequestQueueComponent> requestQueueView,
         class EntityModifier<struct EmotePlayedTelemetryDataComponent, struct ShouldStopEmotingRequestComponent>
             modifier
     );
@@ -36,8 +36,8 @@ public:
             class StrictEntityContext,
             struct Include<struct ShouldStopEmotingRequestComponent>,
             struct EventingDispatcherComponent const,
-            struct EmotePlayedTelemetryDataComponent const> view,
-        class ViewT<class StrictEntityContext, struct EventingRequestQueueComponent>,
+            struct EmotePlayedTelemetryDataComponent const>                          view,
+        class ViewT<class StrictEntityContext, struct EventingRequestQueueComponent> requestQueueView,
         class EntityModifier<struct EmotePlayedTelemetryDataComponent, struct ShouldStopEmotingRequestComponent>
             modifier
     );

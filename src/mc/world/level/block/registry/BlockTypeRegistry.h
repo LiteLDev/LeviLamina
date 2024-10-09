@@ -5,8 +5,8 @@
 #include "mc/resources/BaseGameVersion.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/SharedPtr.h"
-#include "mc/common/wrapper/WeakPtr.h"
+#include "mc/common/SharedPtr.h"
+#include "mc/common/WeakPtr.h"
 
 class BlockTypeRegistry {
 public:
@@ -77,7 +77,7 @@ public:
 
     public:
         // NOLINTBEGIN
-        MCAPI LookupByNameImplReturnType(class Block const* block, bool);
+        MCAPI LookupByNameImplReturnType(class Block const* block, bool resolveBlockLegacy);
 
         MCAPI LookupByNameImplReturnType(class WeakPtr<class BlockLegacy const> blockLegacy, class Block const* block);
 
@@ -101,20 +101,20 @@ public:
 
     MCAPI static void finalizeBlockComponentStorage();
 
-    MCAPI static void finalizeBlockCustomComponentEvents(class ServerScriptManager const&);
+    MCAPI static void finalizeBlockCustomComponentEvents(class ServerScriptManager const& scriptManager);
 
     MCAPI static void forEachBlock(std::function<bool(class BlockLegacy const&)> callback);
 
     MCAPI static class HashedString const& getBlockNameFromNameHash(uint64 hash);
 
     MCAPI static std::vector<std::reference_wrapper<class HashedString const>> const&
-    getComplexAliasPostSplitBlockNames(class HashedString const&);
+    getComplexAliasPostSplitBlockNames(class HashedString const& oldName);
 
     MCAPI static class Block const& getDefaultBlockState(class HashedString const& name, bool logNotFound = false);
 
     MCAPI static struct BlockTypeRegistry::DirectAccessBlocks const& getDirectAccessBlocks();
 
-    MCAPI static void initHardCodedBlockComponents(class Experiments const&);
+    MCAPI static void initHardCodedBlockComponents(class Experiments const& experiments);
 
     MCAPI static void initRWLock();
 
@@ -135,8 +135,12 @@ public:
 
     MCAPI static void registerAlias(class HashedString const& alias, class HashedString const& name);
 
-    MCAPI static void
-    registerComplexAlias(class HashedString const& alias, std::function<class Block const*(int)> callback, std::vector<std::reference_wrapper<class HashedString const>> const&, class BaseGameVersion const&);
+    MCAPI static void registerComplexAlias(
+        class HashedString const&                                            alias,
+        std::function<class Block const*(int)>                               callback,
+        std::vector<std::reference_wrapper<class HashedString const>> const& postSplitBlockNames,
+        class BaseGameVersion const&                                         minRequiredVersion
+    );
 
     MCAPI static void setupDirectAccessBlocks();
 

@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/data/BidirectionalUnorderedMap.h"
-#include "mc/enums/ParticleType.h"
+#include "mc/util/BidirectionalUnorderedMap.h"
+#include "mc/world/actor/ParticleType.h"
 
 class ParticleTypeMap {
 public:
@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static class HashedString const& getParticleName(::ParticleType);
+    MCAPI static class HashedString const& getParticleName(::ParticleType type);
 
     MCAPI static ::ParticleType getParticleTypeId(std::string const& str);
 

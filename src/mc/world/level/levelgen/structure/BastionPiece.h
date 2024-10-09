@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/AdjustmentEffect.h"
-#include "mc/world/level/biome/VanillaBiomeTypes.h"
+#include "mc/world/level/biome/components/vanilla/VanillaBiomeTypes.h"
 #include "mc/world/level/levelgen/structure/PoolElementStructurePiece.h"
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
+#include "mc/world/level/levelgen/v1/AdjustmentEffect.h"
 
 class BastionPiece : public ::PoolElementStructurePiece {
 public:
@@ -33,7 +33,7 @@ public:
     getSupportBlock(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
 
     // vIndex: 15
-    virtual class Block const& getBeardStabilizeBlock(class Block const&) const;
+    virtual class Block const& getBeardStabilizeBlock(class Block const& foundationBlock) const;
 
     // vIndex: 16
     virtual ::AdjustmentEffect getTerrainAdjustmentEffect() const;

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/item/components/ItemUseMethod.h"
+#include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/components/LegacyTriggerItemComponent.h"
 
 // auto generated forward declare list
@@ -32,8 +32,13 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI void
-    _onUseTimeDepleted(::ItemUseMethod&, class ItemStack const&, class ItemStack&, class Player&, class Level&);
+    MCAPI void _onUseTimeDepleted(
+        ::ItemUseMethod& itemUseMethod,
+        class ItemStack const&,
+        class ItemStack& item,
+        class Player&    player,
+        class Level&     level
+    );
 
     // NOLINTEND
 };

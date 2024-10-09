@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/codebuilder/IMessenger.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/enums/AgentActionType.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/network/packet/AgentActionType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -151,7 +151,7 @@ public:
         int                         traderEmeraldCount
     ) const;
 
-    MCAPI explicit Messenger(class Bedrock::NonOwnerPointer<class CodeBuilder::IClient>);
+    MCAPI explicit Messenger(class Bedrock::NonOwnerPointer<class CodeBuilder::IClient> codeBuilderClient);
 
     // NOLINTEND
 };

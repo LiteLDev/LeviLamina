@@ -16,9 +16,9 @@ MCAPI extern struct Util::Url::Components const EMPTY_URL;
 
 MCAPI std::string addUrlSchemeIfNotPresent(std::string const& url, std::string const& scheme);
 
-MCAPI std::string anonymizeIPAddress(std::string const& ipAddress);
+MCAPI std::string anonymizeIPAddress(std::string const&);
 
-MCAPI std::string anonymizeIPv6Address(std::string const& ipAddress);
+MCAPI std::string anonymizeIPv6Address(std::string const&);
 
 MCAPI bool isValidIP(std::string_view ipAddrStr, bool considerIPv4Valid, bool considerIPv6Valid);
 

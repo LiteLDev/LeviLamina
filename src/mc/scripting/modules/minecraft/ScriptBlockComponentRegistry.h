@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/Result.h"
+#include "mc/external/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -27,10 +27,10 @@ public:
 public:
     // NOLINTBEGIN
     MCAPI class Scripting::Result<void, struct Scripting::EngineError, struct Scripting::Error> registerCustomComponent(
-        class Scripting::WeakLifetimeScope&,
-        class Scripting::DependencyLocator&,
-        std::string const&,
-        struct ScriptModuleMinecraft::ScriptBlockCustomComponentInterface
+        class Scripting::WeakLifetimeScope&                               scope,
+        class Scripting::DependencyLocator&                               locator,
+        std::string const&                                                compName,
+        struct ScriptModuleMinecraft::ScriptBlockCustomComponentInterface closures
     );
 
     MCAPI static struct Scripting::ClassBinding bind();

@@ -11,8 +11,8 @@
 
 
 // auto generated inclusion list
-#include "mc/client/services/persona/AnimatedTextureType.h"
-#include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/platform/Result.h"
+#include "mc/world/actor/player/persona/AnimatedTextureType.h"
 
 class SerializedSkin {
 public:

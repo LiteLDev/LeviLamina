@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/events/MobEventsIndex.h"
+#include "mc/world/level/MobEventsIndex.h"
 
 class MobEvents {
 public:
@@ -25,7 +25,7 @@ public:
 
     MCAPI ::MobEventsIndex getIndexFromName(std::string const& name) const;
 
-    MCAPI void initializeWithLevelStorageManager(class LevelStorageManager&);
+    MCAPI void initializeWithLevelStorageManager(class LevelStorageManager& levelStorageManager);
 
     MCAPI bool isEnabled(::MobEventsIndex eventIndex) const;
 

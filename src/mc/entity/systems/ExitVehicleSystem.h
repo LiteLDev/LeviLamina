@@ -11,7 +11,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem(class BaseGameVersion const&, bool);
+    MCAPI static struct TickingSystemWithInfo createSystem(class BaseGameVersion const& version, bool isClient);
 
     // NOLINTEND
 };

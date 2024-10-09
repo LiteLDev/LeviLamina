@@ -19,14 +19,14 @@ public:
     MCAPI explicit ProjectileFactory(class Level& level);
 
     MCAPI class Actor* shootProjectileFromDefinition(
-        struct ActorDefinitionIdentifier const&,
-        class Mob*,
-        class Vec3,
-        int,
-        float,
-        bool,
-        bool,
-        class Vec3
+        struct ActorDefinitionIdentifier const& identifier,
+        class Mob*                              owner,
+        class Vec3                              targetDir,
+        int                                     auxValue,
+        float                                   throwPower,
+        bool                                    useUnmodifiedDirection,
+        bool                                    overrideSpawnPosition,
+        class Vec3                              spawnPosition
     );
 
     MCAPI static std::unique_ptr<class OnHitSubcomponent>

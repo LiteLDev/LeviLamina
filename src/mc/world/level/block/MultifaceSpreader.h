@@ -22,21 +22,25 @@ public:
     virtual bool _canSpreadFrom(class Block const& block, uchar facing) const;
 
     // vIndex: 2
-    virtual bool
-    _canSpreadInto(class IBlockWorldGenAPI& target, class Block const& self, class BlockPos const& pos, uchar) const;
+    virtual bool _canSpreadInto(
+        class IBlockWorldGenAPI& target,
+        class Block const&       self,
+        class BlockPos const&    pos,
+        uchar                    placementDirection
+    ) const;
 
     // vIndex: 3
     virtual bool _isOtherBlockValidAsSource(class Block const&) const;
 
-    MCAPI explicit MultifaceSpreader(std::vector<::MultifaceSpreader::SpreadType> const&);
+    MCAPI explicit MultifaceSpreader(std::vector<::MultifaceSpreader::SpreadType> const& spreadTypes);
 
     MCAPI std::optional<std::pair<class BlockPos const, uchar const>> getSpreadFromFaceTowardDirection(
         class IBlockWorldGenAPI& target,
         class Block const&       self,
         class Block const&       block,
         class BlockPos const&    pos,
-        uchar,
-        uchar
+        uchar                    startingFace,
+        uchar                    spreadDirection
     ) const;
 
     MCAPI int spreadFromAllFacesTowardAllDirections(
@@ -51,8 +55,8 @@ public:
         class Block const&    self,
         class Block const&    block,
         class BlockPos const& pos,
-        uchar,
-        uchar
+        uchar                 startingFace,
+        uchar                 spreadDirection
     ) const;
 
     MCAPI bool spreadFromFaceTowardDirectionWorldGen(
@@ -60,8 +64,8 @@ public:
         class Block const&       self,
         class Block const&       block,
         class BlockPos const&    pos,
-        uchar,
-        uchar
+        uchar                    startingFace,
+        uchar                    spreadDirection
     ) const;
 
     MCAPI bool spreadFromFaceTowardRandomDirection(
@@ -69,7 +73,7 @@ public:
         class Block const&       self,
         class Block const&       block,
         class BlockPos const&    pos,
-        uchar
+        uchar                    startingFace
     ) const;
 
     MCAPI bool spreadFromRandomFaceTowardRandomDirection(
@@ -87,8 +91,12 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    MCAPI bool
-    _canSpreadToFace(class IBlockWorldGenAPI& target, class Block const& self, class BlockPos const& pos, uchar) const;
+    MCAPI bool _canSpreadToFace(
+        class IBlockWorldGenAPI& target,
+        class Block const&       self,
+        class BlockPos const&    pos,
+        uchar                    faceDirection
+    ) const;
 
     // NOLINTEND
 };

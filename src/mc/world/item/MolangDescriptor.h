@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/util/molang/MolangVersion.h"
+#include "mc/molang/MolangVersion.h"
+#include "mc/platform/Result.h"
 #include "mc/world/item/ItemDescriptor.h"
 
 // auto generated forward declare list
@@ -25,10 +25,10 @@ public:
     virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> clone() const;
 
     // vIndex: 1
-    virtual bool sameItems(struct ItemDescriptor::BaseDescriptor const&, bool) const;
+    virtual bool sameItems(struct ItemDescriptor::BaseDescriptor const& otherDescriptor, bool compareAux) const;
 
     // vIndex: 2
-    virtual bool sameItem(struct ItemDescriptor::ItemEntry const&, bool) const;
+    virtual bool sameItem(struct ItemDescriptor::ItemEntry const& otherItem, bool) const;
 
     // vIndex: 3
     virtual std::string const& getFullName() const;
@@ -55,7 +55,7 @@ public:
     virtual ~MolangDescriptor() = default;
 
     MCAPI static class Bedrock::Result<std::unique_ptr<struct MolangDescriptor>>
-    deserialize(class ReadOnlyBinaryStream&);
+    deserialize(class ReadOnlyBinaryStream& stream);
 
     MCAPI static std::unique_ptr<struct MolangDescriptor>
     fromExpressionTag(std::string const& tagExpression, ::MolangVersion molangVersion);

@@ -28,29 +28,41 @@ public:
     MCAPI void _blendChunkNether4J(class LevelChunk& generatedChunk, class LevelChunk& lc);
 
     MCAPI void _blendChunkOverworld(
-        class LevelChunk& generatedChunk,
-        class LevelChunk& lc,
-        ::ConsoleChunkBlender::ShiftBlockTypes
+        class LevelChunk&                      generatedChunk,
+        class LevelChunk&                      lc,
+        ::ConsoleChunkBlender::ShiftBlockTypes shiftBlockType
     );
 
     MCAPI void
     _copyColumnFromGeneratedChunkNether(class LevelChunk& generatedChunk, class LevelChunk& lc, int x, int z);
 
     MCAPI void _copyColumnFromGeneratedChunkOverworld(
-        class LevelChunk& generatedChunk,
-        class LevelChunk& lc,
-        int               x,
-        int               z,
-        ::ConsoleChunkBlender::ShiftBlockTypes
+        class LevelChunk&                      generatedChunk,
+        class LevelChunk&                      lc,
+        int                                    x,
+        int                                    z,
+        ::ConsoleChunkBlender::ShiftBlockTypes shiftBlockType
     );
 
-    MCAPI class ChunkLocalHeight
-    _findTopMostWaterHeight(class LevelChunk& lc, int x, int z, std::unordered_set<class BlockLegacy const*> const&);
+    MCAPI class ChunkLocalHeight _findTopMostWaterHeight(
+        class LevelChunk&                                   lc,
+        int                                                 x,
+        int                                                 z,
+        std::unordered_set<class BlockLegacy const*> const& waterBlocks
+    );
 
     MCAPI void _prepInterpTable();
 
-    MCAPI void
-    _shiftColumnBySetBlocks(class LevelChunk& lc, int x, int z, int adj, bool, class ChunkLocalHeight, ::ConsoleChunkBlender::ShiftBlockTypes, struct OverworldBlendRules const&);
+    MCAPI void _shiftColumnBySetBlocks(
+        class LevelChunk&                      lc,
+        int                                    x,
+        int                                    z,
+        int                                    adj,
+        bool                                   isSeaBlock,
+        class ChunkLocalHeight                 topSeaBlockHeight,
+        ::ConsoleChunkBlender::ShiftBlockTypes shiftBlockType,
+        struct OverworldBlendRules const&      blendRules
+    );
 
     // NOLINTEND
 };

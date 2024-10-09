@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/POIType.h"
+#include "mc/world/actor/ai/village/POIType.h"
 
 class POIInstance {
 public:
@@ -63,7 +63,7 @@ public:
 
     MCAPI void resetArrivalFailureCount();
 
-    MCAPI void save(class CompoundTag&) const;
+    MCAPI void save(class CompoundTag& tag) const;
 
     MCAPI void setVillage(class Village* value);
 

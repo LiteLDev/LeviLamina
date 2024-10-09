@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorType.h"
-#include "mc/world/level/block/utils/GetCollisionShapeInterface.h"
+#include "mc/world/actor/ActorType.h"
+#include "mc/world/level/block/GetCollisionShapeInterface.h"
 
 class GetCollisionShapeActorProxy : public ::GetCollisionShapeInterface {
 public:
@@ -48,7 +48,7 @@ public:
     // vIndex: 10
     virtual bool hasPassenger() const;
 
-    MCAPI explicit GetCollisionShapeActorProxy(class Actor const&);
+    MCAPI explicit GetCollisionShapeActorProxy(class Actor const& actor);
 
     // NOLINTEND
 };

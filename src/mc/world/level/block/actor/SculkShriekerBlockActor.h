@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
 class SculkShriekerBlockActor : public ::BlockActor {
@@ -34,7 +34,7 @@ public:
 
     MCAPI void tryRespond(class BlockSource& region, class BlockPos const& pos);
 
-    MCAPI bool tryShriek(class BlockSource& region, class BlockPos pos, class Player&);
+    MCAPI bool tryShriek(class BlockSource& region, class BlockPos pos, class Player& provokingPlayer);
 
     MCAPI static class SculkShriekerBlockActor* tryGet(class BlockSource& region, class BlockPos blockPos);
 

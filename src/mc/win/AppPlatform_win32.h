@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/PathBuffer.h"
-#include "mc/enums/BuildPlatform.h"
-#include "mc/enums/FullscreenMode.h"
-#include "mc/enums/OsVersion.h"
-#include "mc/enums/PlatformType.h"
-#include "mc/enums/UIScalingRules.h"
+#include "mc/deps/application/OsVersion.h"
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/platform/BuildPlatform.h"
+#include "mc/deps/core/platform/FullscreenMode.h"
+#include "mc/deps/core/platform/PlatformType.h"
+#include "mc/deps/core/platform/UIScalingRules.h"
 
 // auto generated forward declare list
 // clang-format off

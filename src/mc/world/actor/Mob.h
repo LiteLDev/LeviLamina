@@ -3,25 +3,25 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/input/InputMode.h"
 #include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/entity/utilities/ActorDamageCause.h"
-#include "mc/entity/utilities/ActorFlags.h"
-#include "mc/entity/utilities/ActorInitializationMethod.h"
-#include "mc/entity/utilities/ActorType.h"
-#include "mc/enums/ArmorMaterialType.h"
-#include "mc/enums/ArmorSlot.h"
-#include "mc/enums/HandSlot.h"
-#include "mc/enums/InputMode.h"
-#include "mc/enums/MaterialType.h"
-#include "mc/enums/MobSpawnMethod.h"
-#include "mc/enums/NewInteractionModel.h"
-#include "mc/enums/TravelType.h"
-#include "mc/events/ActorEvent.h"
-#include "mc/events/LevelSoundEvent.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/input/NewInteractionModel.h"
+#include "mc/network/packet/types/world/actor/ActorEvent.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/AutomaticID.h"
 #include "mc/world/actor/Actor.h"
-#include "mc/world/item/components/ItemUseMethod.h"
+#include "mc/world/actor/ActorDamageCause.h"
+#include "mc/world/actor/ActorFlags.h"
+#include "mc/world/actor/ActorInitializationMethod.h"
+#include "mc/world/actor/ActorType.h"
+#include "mc/world/actor/ArmorMaterialType.h"
+#include "mc/world/actor/MobSpawnMethod.h"
+#include "mc/world/actor/TravelType.h"
+#include "mc/world/item/ArmorSlot.h"
+#include "mc/world/item/HandSlot.h"
+#include "mc/world/item/ItemUseMethod.h"
+#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -79,7 +79,8 @@ public:
     virtual void blockedByShield(class ActorDamageSource const& source, class Actor& blocker);
 
     // vIndex: 23
-    virtual void teleportTo(class Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool);
+    virtual void
+    teleportTo(class Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
 
     // vIndex: 26
     virtual void normalTick();
@@ -88,10 +89,10 @@ public:
     virtual void baseTick();
 
     // vIndex: 29
-    virtual bool startRiding(class Actor&);
+    virtual bool startRiding(class Actor& vehicle);
 
     // vIndex: 30
-    virtual void addPassenger(class Actor&);
+    virtual void addPassenger(class Actor& newPassenger);
 
     // vIndex: 43
     virtual bool isImmobile() const;
@@ -133,13 +134,13 @@ public:
     virtual ::ArmorMaterialType getArmorMaterialTypeInSlot(::ArmorSlot slot) const;
 
     // vIndex: 79
-    virtual int getArmorTextureIndexInSlot(::ArmorSlot) const;
+    virtual int getArmorTextureIndexInSlot(::ArmorSlot slot) const;
 
     // vIndex: 80
     virtual float getArmorColorInSlot(::ArmorSlot slot, int channelRGBA) const;
 
     // vIndex: 81
-    virtual void setEquippedSlot(::Puv::Legacy::EquipmentSlot, class ItemStack const&);
+    virtual void setEquippedSlot(::Puv::Legacy::EquipmentSlot slot, class ItemStack const& item);
 
     // vIndex: 91
     virtual bool canFreeze() const;
@@ -148,7 +149,7 @@ public:
     virtual bool canChangeDimensionsUsingPortal() const;
 
     // vIndex: 98
-    virtual float causeFallDamageToActor(float, float, class ActorDamageSource);
+    virtual float causeFallDamageToActor(float distance, float multiplier, class ActorDamageSource source);
 
     // vIndex: 102
     virtual bool canBePulledIntoVehicle() const;
@@ -181,7 +182,7 @@ public:
     virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
     // vIndex: 146
-    virtual bool _hurt(class ActorDamageSource const& source, float dmg, bool knock, bool);
+    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool);
 
     // vIndex: 147
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
@@ -193,7 +194,8 @@ public:
     virtual void _playStepSound(class BlockPos const& pos, class Block const& onBlock);
 
     // vIndex: 151
-    virtual void knockback(class Actor* source, int dmg, float xd, float zd, float, float, float heightCap);
+    virtual void
+    knockback(class Actor*, int, float xd, float zd, float horizontalPower, float verticalPower, float heightCap);
 
     // vIndex: 152
     virtual void spawnAnim();
@@ -220,7 +222,7 @@ public:
     virtual void pushActors();
 
     // vIndex: 160
-    virtual bool checkSpawnRules(bool fromSpawner);
+    virtual bool checkSpawnRules(bool);
 
     // vIndex: 161
     virtual bool checkSpawnObstruction() const;
@@ -238,7 +240,7 @@ public:
     virtual float getMaxHeadXRot();
 
     // vIndex: 166
-    virtual bool isAlliedTo(class Mob* other);
+    virtual bool isAlliedTo(class Mob*);
 
     // vIndex: 167
     virtual bool doHurtTarget(class Actor* target, ::ActorDamageCause const& cause);
@@ -253,7 +255,7 @@ public:
     virtual void setDamagedArmor(::ArmorSlot slot, class ItemStack const& item);
 
     // vIndex: 171
-    virtual void sendArmorDamage(std::bitset<4> damagedSlots);
+    virtual void sendArmorDamage(std::bitset<4>);
 
     // vIndex: 172
     virtual void sendArmor(std::bitset<4> armorSlots);
@@ -265,7 +267,7 @@ public:
     virtual std::vector<class ItemStack const*> getAllEquipment() const;
 
     // vIndex: 175
-    virtual void dropEquipmentOnDeath(class ActorDamageSource const&);
+    virtual void dropEquipmentOnDeath(class ActorDamageSource const& source);
 
     // vIndex: 176
     virtual void dropEquipmentOnDeath();
@@ -274,7 +276,7 @@ public:
     virtual void clearVanishEnchantedItemsOnDeath();
 
     // vIndex: 178
-    virtual void sendInventory(bool shouldSelectSlot);
+    virtual void sendInventory(bool);
 
     // vIndex: 179
     virtual float getDamageAfterEnchantReduction(class ActorDamageSource const& source, float damage) const;
@@ -283,16 +285,16 @@ public:
     virtual bool createAIGoals();
 
     // vIndex: 181
-    virtual void onBorn(class Actor& parentLeft, class Actor& parentRight);
+    virtual void onBorn(class Actor&, class Actor&);
 
     // vIndex: 182
-    virtual bool setItemSlot(::Puv::Legacy::EquipmentSlot, class ItemStack const&);
+    virtual bool setItemSlot(::Puv::Legacy::EquipmentSlot slot, class ItemStack const& item);
 
     // vIndex: 183
     virtual void setTransitioningSitting(bool value);
 
     // vIndex: 184
-    virtual float _getWalkTargetValue(class BlockPos const& pos);
+    virtual float _getWalkTargetValue(class BlockPos const&);
 
     // vIndex: 185
     virtual bool canExistWhenDisallowMob() const;
@@ -307,7 +309,7 @@ public:
     virtual void tickDeath();
 
     // vIndex: 189
-    virtual class AABB _getAdjustedAABBForSpawnCheck(class AABB const& aabb, class Vec3 const& mobPos) const;
+    virtual class AABB _getAdjustedAABBForSpawnCheck(class AABB const& aabb, class Vec3 const&) const;
 
     MCAPI Mob(class Level& level, class EntityContext& entityContext);
 
@@ -323,7 +325,7 @@ public:
 
     MCAPI float calcMoveRelativeSpeed(::TravelType travelType);
 
-    MCAPI bool checkForPostHitDamageImmunity(float damage, class ActorDamageSource const& source);
+    MCAPI bool checkForPostHitDamageImmunity(float damageDifference, class ActorDamageSource const& source);
 
     MCAPI bool checkTotemDeathProtection(class ActorDamageSource const& killingDamage);
 
@@ -353,9 +355,9 @@ public:
 
     MCAPI float getDamageAfterArmorReduction(class ActorDamageSource const& source, float damage) const;
 
-    MCAPI float getDamageAfterDamageSensorComponentAdjustments(class ActorDamageSource const&, float);
+    MCAPI float getDamageAfterDamageSensorComponentAdjustments(class ActorDamageSource const& source, float damage);
 
-    MCAPI float getDamageAfterPostHitDamageImmunityReduction(class ActorDamageSource const&, float) const;
+    MCAPI float getDamageAfterPostHitDamageImmunityReduction(class ActorDamageSource const& source, float damage) const;
 
     MCAPI float getDamageAfterResistanceEffect(class ActorDamageSource const& source, float damage) const;
 
@@ -367,7 +369,7 @@ public:
 
     MCAPI int getGlidingTicks() const;
 
-    MCAPI class ItemStack const& getItemSlot(::Puv::Legacy::EquipmentSlot) const;
+    MCAPI class ItemStack const& getItemSlot(::Puv::Legacy::EquipmentSlot slot) const;
 
     MCAPI float getJumpEffectAmplifierValue();
 
@@ -409,9 +411,9 @@ public:
 
     MCAPI void joinCaravan(class Mob* head);
 
-    MCAPI void knockback(class Actor*, int, float, float);
+    MCAPI void knockback(class Actor* source, int dmg, float xd, float zd);
 
-    MCAPI void knockback(class Actor*, int, float, float, float, float);
+    MCAPI void knockback(class Actor* source, int dmg, float xd, float zd, float horizontalPower, float verticalPower);
 
     MCAPI void leaveCaravan();
 
@@ -453,7 +455,7 @@ public:
 
     MCAPI void setYBodyRotation(float rotation);
 
-    MCAPI void setYBodyRotations(float rotation, float);
+    MCAPI void setYBodyRotations(float rotation, float oldRotation);
 
     MCAPI bool shouldApplyWaterGravity();
 
@@ -521,7 +523,7 @@ public:
 
     MCAPI int getCurrentSwingDuration();
 
-    MCAPI void jumpFromGround(class IConstBlockSource const& region);
+    MCAPI void jumpFromGround(class IConstBlockSource const&);
 
     MCAPI std::unique_ptr<class ListTag> saveOffhand() const;
 
@@ -539,7 +541,11 @@ public:
 
     MCAPI void _initialize(class EntityContext& entityContext, bool isClientSide);
 
-    MCAPI void _logMobComponentInitializationError(std::string const&, std::string const&, char const*);
+    MCAPI void _logMobComponentInitializationError(
+        std::string const& typeName,
+        std::string const& existingName,
+        char const*        descriptionJsonName
+    );
 
     MCAPI class GoalSelectorComponent* _tryGetGoalSelectorComponent();
 
@@ -547,7 +553,7 @@ public:
 
     MCAPI void _verifyAttributes();
 
-    MCAPI static char const* _getDescriptionJsonName(struct Description const*);
+    MCAPI static char const* _getDescriptionJsonName(struct Description const* description);
 
     // NOLINTEND
 

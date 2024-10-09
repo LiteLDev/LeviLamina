@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/enums/TargetSelectionMethod.h"
-#include "mc/world/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class MoveToBlockGoal : public ::Goal {
@@ -37,7 +37,22 @@ public:
     // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    MCAPI MoveToBlockGoal(class Mob& mob, float speedModifier, int searchRange, int searchHeight, int tickInterval, int stayDurationTicks, float goalRadius, class Vec3 targetPositionOffset, float chanceToStart, ::TargetSelectionMethod targetSelectionMethod, std::vector<class ActorDefinitionTrigger> onReachTriggers, std::vector<class ActorDefinitionTrigger> onStayCompletedTriggers, std::vector<class ItemDescriptor> targetBlocks, class ActorFilterGroup const&);
+    MCAPI MoveToBlockGoal(
+        class Mob&                                mob,
+        float                                     speedModifier,
+        int                                       searchRange,
+        int                                       searchHeight,
+        int                                       tickInterval,
+        int                                       stayDurationTicks,
+        float                                     goalRadius,
+        class Vec3                                targetPositionOffset,
+        float                                     chanceToStart,
+        ::TargetSelectionMethod                   targetSelectionMethod,
+        std::vector<class ActorDefinitionTrigger> onReachTriggers,
+        std::vector<class ActorDefinitionTrigger> onStayCompletedTriggers,
+        std::vector<class ItemDescriptor>         targetBlocks,
+        class ActorFilterGroup const&             targetBlockFilter
+    );
 
     // NOLINTEND
 

@@ -26,7 +26,7 @@ public:
 
     MCAPI class BlockState const& getState() const;
 
-    MCAPI std::string const& getString(int) const;
+    MCAPI std::string const& getString(int index) const;
 
     MCAPI ::Tag::Type const getType() const;
 

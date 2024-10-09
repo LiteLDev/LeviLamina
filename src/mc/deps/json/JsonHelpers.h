@@ -9,13 +9,13 @@ namespace Json { class Value; }
 
 namespace JsonHelpers {
 // NOLINTBEGIN
-MCAPI void addObjectField(class Json::Value&, std::string const& fieldName, class Json::Value const& object);
+MCAPI void addObjectField(class Json::Value& rootValue, std::string const& fieldName, class Json::Value const& object);
 
-MCAPI void addStringField(class Json::Value&, std::string const& fieldName, std::string const& value);
+MCAPI void addStringField(class Json::Value& rootValue, std::string const& fieldName, std::string const& value);
 
 MCAPI bool parseJson(std::string const& str, class Json::Value& root);
 
-MCAPI std::string serialize(class Json::Value const&);
+MCAPI std::string serialize(class Json::Value const& root);
 // NOLINTEND
 
 }; // namespace JsonHelpers

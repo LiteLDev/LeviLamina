@@ -32,7 +32,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI explicit ScriptBindingReleaseList(std::vector<struct ScriptBindingReleaseList::ReleaseDetails>);
+    MCAPI explicit ScriptBindingReleaseList(std::vector<struct ScriptBindingReleaseList::ReleaseDetails> releaseList);
 
     // NOLINTEND
 };

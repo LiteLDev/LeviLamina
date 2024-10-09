@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/world/level/block/BannerBlockType.h"
 #include "mc/world/level/block/actor/BlockActor.h"
-#include "mc/world/level/block/utils/BannerBlockType.h"
 
 class BannerBlockActor : public ::BlockActor {
 public:
@@ -32,7 +32,7 @@ public:
     virtual void onPlace(class BlockSource& region);
 
     // vIndex: 40
-    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
+    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
     // vIndex: 41
     virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);

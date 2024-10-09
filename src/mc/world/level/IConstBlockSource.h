@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/MaterialType.h"
+#include "mc/world/level/material/MaterialType.h"
 
 class Material;
 class AABB;

@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/resource/PackType.h"
 #include "mc/resources/IInPackagePacks.h"
-#include "mc/resources/PackType.h"
 
 class VanillaInPackagePacks : public ::IInPackagePacks {
 public:

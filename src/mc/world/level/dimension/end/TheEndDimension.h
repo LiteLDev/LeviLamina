@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/LimboEntitiesVersion.h"
-#include "mc/enums/StorageVersion.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/level/dimension/Dimension.h"
+#include "mc/world/level/dimension/LimboEntitiesVersion.h"
+#include "mc/world/level/storage/StorageVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -29,7 +29,8 @@ public:
         ::StorageVersion                   levelVersion
     );
 
-    MCVAPI std::unique_ptr<class WorldGenerator> createGenerator(class br::worldgen::StructureSetRegistry const&);
+    MCVAPI std::unique_ptr<class WorldGenerator>
+           createGenerator(class br::worldgen::StructureSetRegistry const& structureSetRegistry);
 
     MCVAPI void deserialize(class CompoundTag const& tag);
 
@@ -49,7 +50,7 @@ public:
 
     MCVAPI bool hasGround() const;
 
-    MCVAPI void init(class br::worldgen::StructureSetRegistry const&);
+    MCVAPI void init(class br::worldgen::StructureSetRegistry const& structureSetRegistry);
 
     MCVAPI bool isDay() const;
 

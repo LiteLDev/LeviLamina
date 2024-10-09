@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorLocation.h"
-#include "mc/enums/InHandUpdateType.h"
-#include "mc/events/LevelSoundEvent.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/world/actor/ActorLocation.h"
+#include "mc/world/item/InHandUpdateType.h"
+#include "mc/world/item/ItemColor.h"
+#include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/components/ComponentItem.h"
-#include "mc/world/item/components/ItemColor.h"
-#include "mc/world/item/components/ItemUseMethod.h"
-#include "mc/world/level/block/utils/BlockShape.h"
+#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -42,26 +42,32 @@ public:
     virtual bool isValidAuxValue(int auxValue) const;
 
     // vIndex: 73
-    virtual class Actor*
-    createProjectileActor(class BlockSource&, class ItemStack const&, class Vec3 const&, class Vec3 const&) const;
+    virtual class Actor* createProjectileActor(
+        class BlockSource&     region,
+        class ItemStack const& stack,
+        class Vec3 const&      pos,
+        class Vec3 const&      direction
+    ) const;
 
     // vIndex: 74
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
     // vIndex: 83
-    virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
+    virtual std::string
+    buildDescriptionId(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
 
     // vIndex: 84
-    virtual std::string buildEffectDescriptionName(class ItemStackBase const&) const;
+    virtual std::string buildEffectDescriptionName(class ItemStackBase const& stack) const;
 
     // vIndex: 103
     virtual class Item& setIconInfo(std::string const& name, int id);
 
     // vIndex: 104
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const& item, int, bool inInventoryPane) const;
+    virtual struct ResolvedItemIconInfo
+    getIconInfo(class ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCAPI ArrowItem(std::string const&, int, struct cereal::ReflectionCtx&);
+    MCAPI ArrowItem(std::string const& name, int id, struct cereal::ReflectionCtx& ctx);
 
     MCAPI void applyEffect(class Arrow* arrow, class ItemInstance const& slotItem) const;
 

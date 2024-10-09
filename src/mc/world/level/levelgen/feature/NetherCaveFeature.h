@@ -24,22 +24,52 @@ public:
     virtual ~NetherCaveFeature() = default;
 
     // vIndex: 1
-    virtual std::optional<class BlockPos>
-    place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    virtual std::optional<class BlockPos> place(
+        class IBlockWorldGenAPI& target,
+        class BlockPos const&    pos,
+        class Random&            random,
+        class RenderParams&      renderParams
+    ) const;
 
     // vIndex: 3
-    virtual void
-    addRoom(class IBlockWorldGenAPI&, struct CaveFeatureUtils::CarverConfiguration const&, class Random&, class ChunkPos const&, class Vec3 const&, class RenderParams&, struct CaveFeatureUtils::CarvingParameters const&, std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams>&)
-        const;
+    virtual void addRoom(
+        class IBlockWorldGenAPI&                                               blocks,
+        struct CaveFeatureUtils::CarverConfiguration const&                    configuration,
+        class Random&                                                          random,
+        class ChunkPos const&                                                  chunkPos,
+        class Vec3 const&                                                      room,
+        class RenderParams&                                                    renderParams,
+        struct CaveFeatureUtils::CarvingParameters const&                      carveValues,
+        std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
+    ) const;
 
     // vIndex: 4
-    virtual void addTunnel(class IBlockWorldGenAPI&, struct CaveFeatureUtils::CarverConfiguration const&, class Random&, class ChunkPos const&, class Vec3 const&, float, float, float, int, int, float, class RenderParams&, struct CaveFeatureUtils::CarvingParameters const&, std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams>&)
-        const;
+    virtual void addTunnel(
+        class IBlockWorldGenAPI&                                               blocks,
+        struct CaveFeatureUtils::CarverConfiguration const&                    configuration,
+        class Random&                                                          _random,
+        class ChunkPos const&                                                  chunkPos,
+        class Vec3 const&                                                      startPos,
+        float                                                                  thickness,
+        float                                                                  yRot,
+        float                                                                  xRot,
+        int                                                                    step,
+        int                                                                    dist,
+        float                                                                  yScale,
+        class RenderParams&                                                    renderParams,
+        struct CaveFeatureUtils::CarvingParameters const&                      carveValues,
+        std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
+    ) const;
 
     // vIndex: 6
-    virtual void
-    addFeature(class IBlockWorldGenAPI&, class ChunkPos const&, class Random&, class ChunkPos const&, class RenderParams&, std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams>&)
-        const;
+    virtual void addFeature(
+        class IBlockWorldGenAPI&                                               blocks,
+        class ChunkPos const&                                                  chunkPos,
+        class Random&                                                          random,
+        class ChunkPos const&                                                  startChunk,
+        class RenderParams&                                                    renderParams,
+        std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
+    ) const;
 
     // NOLINTEND
 };

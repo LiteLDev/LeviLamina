@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/actor/BlockActor.h"
-#include "mc/world/level/block/utils/BlockActorType.h"
+#include "mc/world/level/block/actor/BlockActorType.h"
 
 class SculkSensorBlockActor : public ::BlockActor {
 public:
@@ -33,8 +33,13 @@ public:
 
     MCAPI explicit SculkSensorBlockActor(class BlockPos const& pos);
 
-    MCAPI
-    SculkSensorBlockActor(::BlockActorType type, class BlockPos const& pos, std::string const& id, uint, std::unique_ptr<class SculkSensorVibrationConfig>&&);
+    MCAPI SculkSensorBlockActor(
+        ::BlockActorType                                    type,
+        class BlockPos const&                               pos,
+        std::string const&                                  id,
+        uint                                                listenerRange,
+        std::unique_ptr<class SculkSensorVibrationConfig>&& vibrationConfig
+    );
 
     MCAPI int getLatestReceivedVibrationFrequency() const;
 

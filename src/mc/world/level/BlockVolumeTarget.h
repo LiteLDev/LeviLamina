@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/world/level/BlockDataFetchResult.h"
 #include "mc/world/level/IBlockWorldGenAPI.h"
-#include "mc/world/level/block/utils/BlockDataFetchResult.h"
 
 class BlockVolumeTarget : public ::IBlockWorldGenAPI {
 public:
@@ -42,7 +42,7 @@ public:
     fetchBlocksInBox(class BoundingBox const&, std::function<bool(class Block const&)>);
 
     // vIndex: 8
-    virtual bool hasBiomeTag(uint64, class BlockPos const& pos) const;
+    virtual bool hasBiomeTag(uint64 tagNameHash, class BlockPos const& pos) const;
 
     // vIndex: 9
     virtual bool setBlock(class BlockPos const& pos, class Block const& newBlock, int);

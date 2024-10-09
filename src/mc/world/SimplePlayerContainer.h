@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/ContainerType.h"
 #include "mc/world/SimpleContainer.h"
-#include "mc/world/containers/ContainerType.h"
 
 class SimplePlayerContainer : public ::SimpleContainer {
 public:

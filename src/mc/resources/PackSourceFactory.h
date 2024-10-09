@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/PathBuffer.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/resources/PackOrigin.h"
-#include "mc/resources/PackType.h"
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/resource/PackOrigin.h"
+#include "mc/deps/core/resource/PackType.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -76,7 +76,7 @@ public:
     virtual class InPackagePackSource* getDynamicPackagePackSource(::PackType packType);
 
     // vIndex: 13
-    virtual void setDynamicPackagePacks(std::shared_ptr<class IDynamicPackagePacks> const&);
+    virtual void setDynamicPackagePacks(std::shared_ptr<class IDynamicPackagePacks> const& dynamicPackagePacks);
 
     // vIndex: 14
     virtual void setDynamicPackageRoot(class Core::PathBuffer<std::string> path);

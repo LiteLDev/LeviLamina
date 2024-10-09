@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/events/LevelSoundEvent.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
 #include "mc/world/level/block/actor/RandomizableBlockActorContainer.h"
 
 class JukeboxBlockActor : public ::RandomizableBlockActorContainer {
@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
+    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
     MCVAPI void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
 
@@ -29,7 +29,7 @@ public:
 
     MCVAPI int getContainerSize() const;
 
-    MCVAPI class ItemStack const& getItem(int slot) const;
+    MCVAPI class ItemStack const& getItem(int) const;
 
     MCVAPI int getMaxStackSize() const;
 
@@ -39,15 +39,12 @@ public:
 
     MCVAPI bool save(class CompoundTag& tag) const;
 
-    MCVAPI void serverInitItemStackIds(
-        int                                              containerSlot,
-        int                                              count,
-        std::function<void(int, class ItemStack const&)> onNetIdChanged
-    );
+    MCVAPI void
+    serverInitItemStackIds(int containerSlot, int, std::function<void(int, class ItemStack const&)> onNetIdChanged);
 
     MCVAPI void setItem(int slot, class ItemStack const& item);
 
-    MCVAPI void startOpen(class Player& player);
+    MCVAPI void startOpen(class Player&);
 
     MCVAPI void stopOpen(class Player&);
 
@@ -67,7 +64,7 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI void _onChanged(class BlockSource&, ::Puv::Legacy::LevelSoundEvent);
+    MCAPI void _onChanged(class BlockSource& region, ::Puv::Legacy::LevelSoundEvent sound);
 
     MCAPI void _spawnMusicParticles(class Level& level, float recordDuration);
 

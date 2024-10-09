@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/data/BidirectionalUnorderedMap.h"
-#include "mc/world/containers/SparseContainer.h"
+#include "mc/util/BidirectionalUnorderedMap.h"
+#include "mc/world/inventory/network/SparseContainer.h"
 
 class SparseContainerClient : public ::SparseContainer {
 public:

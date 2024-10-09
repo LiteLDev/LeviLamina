@@ -14,7 +14,7 @@ public:
     // NOLINTBEGIN
     MCAPI BeardKernel();
 
-    MCAPI static float getContribution(int, int, int);
+    MCAPI static float getContribution(int dx, int dy, int dz);
 
     // NOLINTEND
 };

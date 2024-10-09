@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/block/actor/BlockActorRendererId.h"
+#include "mc/world/level/block/actor/BlockActorType.h"
 #include "mc/world/level/block/actor/ChestBlockActor.h"
-#include "mc/world/level/block/utils/BlockActorRendererId.h"
-#include "mc/world/level/block/utils/BlockActorType.h"
 
 class ShulkerBoxBlockActor : public ::ChestBlockActor {
 public:
@@ -16,9 +16,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCVAPI bool _detectEntityObstruction(class BlockSource& region) const;
+    MCVAPI bool _detectEntityObstruction(class BlockSource&) const;
 
-    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
+    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
     MCVAPI void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
 
@@ -40,9 +40,9 @@ public:
 
     MCVAPI bool save(class CompoundTag& tag) const;
 
-    MCVAPI void startOpen(class Player&);
+    MCVAPI void startOpen(class Player& player);
 
-    MCVAPI void stopOpen(class Player&);
+    MCVAPI void stopOpen(class Player& player);
 
     MCVAPI void tick(class BlockSource& region);
 
@@ -55,15 +55,15 @@ public:
 
     MCAPI void setFacingDir(uchar facing);
 
-    MCAPI void setupRedstoneComponent(class BlockSource&) const;
+    MCAPI void setupRedstoneComponent(class BlockSource& region) const;
 
-    MCAPI static bool itemAllowedInSlot(int slot, class ItemStackBase const& item, int amount);
+    MCAPI static bool itemAllowedInSlot(int, class ItemStackBase const& item, int);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    MCAPI void _addRedstoneComponent(class BlockSource&) const;
+    MCAPI void _addRedstoneComponent(class BlockSource& region) const;
 
     MCAPI void _calculateBB();
 

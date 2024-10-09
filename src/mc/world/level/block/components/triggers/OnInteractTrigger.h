@@ -20,9 +20,9 @@ public:
     // vIndex: 0
     virtual ~OnInteractTrigger() = default;
 
-    MCAPI void finalize(gsl::not_null<class BlockEvents::BlockPlayerInteractEventComponent*>);
+    MCAPI void finalize(gsl::not_null<class BlockEvents::BlockPlayerInteractEventComponent*> comp);
 
-    MCAPI void onInteract(struct BlockEvents::BlockPlayerInteractEvent&) const;
+    MCAPI void onInteract(struct BlockEvents::BlockPlayerInteractEvent& eventData) const;
 
     // NOLINTEND
 };

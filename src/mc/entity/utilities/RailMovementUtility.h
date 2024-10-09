@@ -33,22 +33,35 @@ public:
         class Vec3                     posDelta
     );
 
-    MCAPI static class Vec3
-    calculateMoveVelocity(class Block const& block, int, float, bool, class Vec3& posDelta, bool&, bool&, std::function<bool(class Vec3&)> const&);
+    MCAPI static class Vec3 calculateMoveVelocity(
+        class Block const&                      block,
+        int                                     railDirection,
+        float                                   maxSpeed,
+        bool                                    hasPassenger,
+        class Vec3&                             posDelta,
+        bool&                                   haltTrack,
+        bool&                                   powerTrack,
+        std::function<bool(class Vec3&)> const& calculateAllPassengersInputFunc
+    );
 
-    MCAPI static bool calculatePassengerRailMovementInput(class Vec3& posDelta, float forward, float);
+    MCAPI static bool
+    calculatePassengerRailMovementInput(class Vec3& posDelta, float forward, float passengerRotationY);
 
     MCAPI static class Vec3 calculatePostRailMovementMinecartPosition(
         class IConstBlockSource const& region,
-        class Vec3 const&,
-        class Vec3            entityPos,
-        class BlockPos const& pos,
-        int,
-        class Vec3& posDelta
+        class Vec3 const&              originalEntityPosition,
+        class Vec3                     entityPos,
+        class BlockPos const&          pos,
+        int                            railDirection,
+        class Vec3&                    posDelta
     );
 
-    MCAPI static class Vec3
-    calculatePreRailMovementMinecartPosition(class Vec3 entityPos, class BlockPos const& pos, int, float heightOffset);
+    MCAPI static class Vec3 calculatePreRailMovementMinecartPosition(
+        class Vec3            entityPos,
+        class BlockPos const& pos,
+        int                   railDirection,
+        float                 heightOffset
+    );
 
     MCAPI static bool getPos(class IConstBlockSource const& region, class Vec3& valueVec, class Vec3 pos);
 

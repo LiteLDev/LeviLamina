@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 
 class StructureAnimationData {
 public:
@@ -47,13 +47,13 @@ public:
 
     MCAPI class CompoundTag& serialize(class CompoundTag& tag);
 
-    MCAPI void setBlocksPlaced(uint);
+    MCAPI void setBlocksPlaced(uint blocksPlaced);
 
     MCAPI void setCmdArea(std::unique_ptr<class CommandArea> cmdArea);
 
-    MCAPI void setQueueID(uint);
+    MCAPI void setQueueID(uint queueID);
 
-    MCAPI void setTargetDimension(DimensionType const&);
+    MCAPI void setTargetDimension(DimensionType const& targetDimension);
 
     MCAPI ~StructureAnimationData();
 

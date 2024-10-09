@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/MaterialType.h"
-#include "mc/world/level/block/utils/SpawnBlockRequirements.h"
+#include "mc/world/level/SpawnBlockRequirements.h"
 #include "mc/world/level/chunk/LevelChunk.h"
+#include "mc/world/level/material/MaterialType.h"
 
 class Spawner {
 public:
@@ -91,8 +91,15 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    MCAPI void
-    _postProcessSpawnMobs(class BlockSource& region, int xo, int zo, class Randomize& randomize, bool, std::function<void(class BlockPos const&, class SpawnConditions&)> const& spawnMobClusterCallback, std::function<bool(class BlockSource const&, class BlockPos)> const&);
+    MCAPI void _postProcessSpawnMobs(
+        class BlockSource&                                                        region,
+        int                                                                       xo,
+        int                                                                       zo,
+        class Randomize&                                                          randomize,
+        bool                                                                      doMobSpawning,
+        std::function<void(class BlockPos const&, class SpawnConditions&)> const& spawnMobClusterCallback,
+        std::function<bool(class BlockSource const&, class BlockPos)> const&      hardcodedAllowStructureMobSpawns
+    );
 
     MCAPI void _spawnMobInCluster(
         class BlockSource&                      region,
@@ -109,8 +116,13 @@ public:
         class SpawnConditions const&                    structureConditions
     );
 
-    MCAPI void
-    _tickSpawnMobClusters(class BlockSource& region, class LevelChunk const& chunk, class BlockPos pos, std::function<void(class BlockPos const&, class SpawnConditions&)> const& spawnMobClusterCallback, std::function<bool(class BlockSource const&, class BlockPos)> const&);
+    MCAPI void _tickSpawnMobClusters(
+        class BlockSource&                                                        region,
+        class LevelChunk const&                                                   chunk,
+        class BlockPos                                                            pos,
+        std::function<void(class BlockPos const&, class SpawnConditions&)> const& spawnMobClusterCallback,
+        std::function<bool(class BlockSource const&, class BlockPos)> const&      hardcodedAllowStructureMobSpawns
+    );
 
     MCAPI void _tickSpawnStructureMobs(
         class BlockSource&      region,
@@ -147,7 +159,7 @@ public:
     MCAPI void
     _updateMobCounts(struct ActorDefinitionIdentifier const& actualId, class SpawnConditions const& conditions);
 
-    MCAPI static bool _hardcodedAllowStructureMobSpawns(class BlockSource const&, class BlockPos);
+    MCAPI static bool _hardcodedAllowStructureMobSpawns(class BlockSource const& region, class BlockPos pos);
 
     // NOLINTEND
 

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/Command.h"
+#include "mc/server/commands/Command.h"
 
 class VolumeAreaCommand : public ::Command {
 public:
@@ -27,31 +27,34 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI void _add(
-        class CommandOrigin const& origin,
-        class CommandOutput&       output,
-        class Dimension const&     dimension,
-        class VolumeEntityManagerServer&,
-        class PacketSender& packetSender
+        class CommandOrigin const&       origin,
+        class CommandOutput&             output,
+        class Dimension const&           dimension,
+        class VolumeEntityManagerServer& volumeManager,
+        class PacketSender&              packetSender
     ) const;
 
-    MCAPI void
-    _list(class CommandOutput& output, class Level const& level, class Dimension const& dimension, class VolumeEntityManagerServer const&)
-        const;
+    MCAPI void _list(
+        class CommandOutput&                   output,
+        class Level const&                     level,
+        class Dimension const&                 dimension,
+        class VolumeEntityManagerServer const& volumeManager
+    ) const;
 
     MCAPI void _remove(
-        class CommandOrigin const& origin,
-        class CommandOutput&       output,
-        class Dimension const&     dimension,
-        class VolumeEntityManagerServer&,
-        class PacketSender& packetSender
+        class CommandOrigin const&       origin,
+        class CommandOutput&             output,
+        class Dimension const&           dimension,
+        class VolumeEntityManagerServer& volumeManager,
+        class PacketSender&              packetSender
     ) const;
 
     MCAPI void _removeAll(
-        class CommandOrigin const& origin,
-        class CommandOutput&       output,
-        class Dimension const&     dimension,
-        class VolumeEntityManagerServer&,
-        class PacketSender& packetSender
+        class CommandOrigin const&       origin,
+        class CommandOutput&             output,
+        class Dimension const&           dimension,
+        class VolumeEntityManagerServer& volumeManager,
+        class PacketSender&              packetSender
     ) const;
 
     // NOLINTEND

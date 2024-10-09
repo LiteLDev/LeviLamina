@@ -10,8 +10,11 @@ namespace ScriptModuleMinecraft { struct ScriptMusicOptions; }
 
 namespace ScriptModuleMinecraft::ScriptSoundUtils {
 // NOLINTBEGIN
-MCAPI std::unique_ptr<class LevelEventGenericPacket>
-      createPlayMusicPacket(std::string const&, std::optional<struct ScriptModuleMinecraft::ScriptMusicOptions>, bool);
+MCAPI std::unique_ptr<class LevelEventGenericPacket> createPlayMusicPacket(
+    std::string const&                                              trackId,
+    std::optional<struct ScriptModuleMinecraft::ScriptMusicOptions> musicOptions,
+    bool                                                            shouldQueue
+);
 
 MCAPI std::unique_ptr<class LevelEventGenericPacket> createStopMusicPacket();
 // NOLINTEND

@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/block/actor/BlockActorRendererId.h"
+#include "mc/world/level/block/actor/BlockActorType.h"
 #include "mc/world/level/block/actor/ChestBlockActor.h"
-#include "mc/world/level/block/utils/BlockActorRendererId.h"
-#include "mc/world/level/block/utils/BlockActorType.h"
 
 class EnderChestBlockActor : public ::ChestBlockActor {
 public:
@@ -22,7 +22,7 @@ public:
 
     MCVAPI std::string getName() const;
 
-    MCVAPI void openBy(class Player&);
+    MCVAPI void openBy(class Player& p);
 
     MCVAPI void playCloseSound(class BlockSource& region);
 

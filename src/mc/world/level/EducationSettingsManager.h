@@ -13,7 +13,7 @@ public:
     // NOLINTBEGIN
     MCAPI std::optional<struct EducationLevelSettings> const& getEducationLevelSettings() const;
 
-    MCAPI void setEducationLevelSettings(struct EducationLevelSettings);
+    MCAPI void setEducationLevelSettings(struct EducationLevelSettings settings);
 
     // NOLINTEND
 };

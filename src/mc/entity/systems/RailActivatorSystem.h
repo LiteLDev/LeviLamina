@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/systems/ITickingSystem.h"
+#include "mc/deps/ecs/systems/ITickingSystem.h"
 
 class RailActivatorSystem : public ::ITickingSystem {
 public:
@@ -18,7 +18,7 @@ public:
     virtual ~RailActivatorSystem() = default;
 
     // vIndex: 1
-    virtual void registerEvents(entt::dispatcher&);
+    virtual void registerEvents(entt::dispatcher& dispatcher);
 
     // vIndex: 2
     virtual void tick(class EntityRegistry& registry);
@@ -27,15 +27,15 @@ public:
     virtual void singleTick(class EntityRegistry& registry, class EntityContext& entity);
 
     // vIndex: 4
-    virtual void singleTick(class EntityRegistry& registry, class StrictEntityContext& entity);
+    virtual void singleTick(class EntityRegistry& registry, class StrictEntityContext& entityContext);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI static void _tickComponent(
-        class EntityContext& entity,
-        class ActorOwnerComponent&,
+        class EntityContext&          entity,
+        class ActorOwnerComponent&    actorOwnerComponent,
         class RailActivatorComponent& railActivatorComponent
     );
 

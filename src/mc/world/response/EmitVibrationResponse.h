@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/data/Factory.h"
 #include "mc/deps/json/JsonSchemaObjectNode.h"
+#include "mc/util/Factory.h"
 #include "mc/world/response/ActorEventResponse.h"
 
 // auto generated forward declare list
@@ -28,12 +28,15 @@ public:
     virtual std::string const& getName() const;
 
     // vIndex: 2
-    virtual void executeAction(class RenderParams&) const;
+    virtual void executeAction(class RenderParams& params) const;
 
     // vIndex: 3
-    virtual void
-    buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ActorEventResponseCollection>>&, class Factory<class ActorEventResponse> const&)
-        const;
+    virtual void buildSchema(
+        std::shared_ptr<
+            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ActorEventResponseCollection>>&
+                                                       root,
+        class Factory<class ActorEventResponse> const& factory
+    ) const;
 
     MCAPI static std::string const NameID;
 

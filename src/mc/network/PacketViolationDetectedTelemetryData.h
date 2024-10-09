@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/MinecraftPacketIds.h"
-#include "mc/resources/PacketViolationResponse.h"
+#include "mc/network/MinecraftPacketIds.h"
+#include "mc/network/PacketViolationResponse.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,8 +20,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI
-    PacketViolationDetectedTelemetryData(uint64, std::string, ::PacketViolationResponse, ::MinecraftPacketIds, class NetworkIdentifier const&);
+    MCAPI PacketViolationDetectedTelemetryData(
+        uint64                         readResult,
+        std::string                    readResultContext,
+        ::PacketViolationResponse      violationResponse,
+        ::MinecraftPacketIds           violatingPacketId,
+        class NetworkIdentifier const& netId
+    );
 
     MCAPI void WriteEventData(class Social::Events::Event& event) const;
 

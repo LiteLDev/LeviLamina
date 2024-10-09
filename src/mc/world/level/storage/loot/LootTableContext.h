@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 
 class LootTableContext {
 public:
@@ -38,7 +38,7 @@ public:
 
         MCAPI class LootTableContext::Builder& withThisEntity(class Actor* actor);
 
-        MCAPI class LootTableContext::Builder& withTool(class ItemStack const*);
+        MCAPI class LootTableContext::Builder& withTool(class ItemStack const* tool);
 
         MCAPI ~Builder();
 
@@ -53,8 +53,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI
-    LootTableContext(float luck, class ILevel* level, struct ActorUniqueID, class Player* player, class Actor*, class ActorDamageSource const* deathSource, float explosionRadius, DimensionType dimensionId, class ItemStack const*);
+    MCAPI LootTableContext(
+        float                          luck,
+        class ILevel*                  level,
+        struct ActorUniqueID           thisEntityID,
+        class Player*                  player,
+        class Actor*                   killedActor,
+        class ActorDamageSource const* deathSource,
+        float                          explosionRadius,
+        DimensionType                  dimensionId,
+        class ItemStack const*         tool
+    );
 
     MCAPI class Actor* getKillerEntity() const;
 
@@ -62,7 +71,7 @@ public:
 
     MCAPI void removeVisitedTable(class LootTable const* table);
 
-    MCAPI void setOriginalItemName(std::string const&);
+    MCAPI void setOriginalItemName(std::string const& originalItemName);
 
     MCAPI ~LootTableContext();
 

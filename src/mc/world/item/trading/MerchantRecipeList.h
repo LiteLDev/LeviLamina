@@ -4,7 +4,7 @@
 #include "mc/world/item/crafting/MerchantRecipe.h"
 
 // auto generated inclusion list
-#include "mc/network/TypedServerNetId.h"
+#include "mc/world/inventory/network/TypedServerNetId.h"
 
 class MerchantRecipeList {
 public:
