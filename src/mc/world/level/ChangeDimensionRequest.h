@@ -45,7 +45,5 @@ public:
 
     MCAPI class ChangeDimensionRequest& operator=(class ChangeDimensionRequest&& other);
 
-    MCAPI ~ChangeDimensionRequest();
-
     // NOLINTEND
 };
