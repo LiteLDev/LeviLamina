@@ -55,7 +55,12 @@ public:
         PlayersSleepingPercentage = 0x22,
         ProjectilesCanBreakBlocks = 0x23,
         TntExplosionDropDecay     = 0x24,
-        EduGameRuleCount          = 0x25,
+        VanillaGameRuleCount      = 0x25,
+        GlobalMute                = 0x25,
+        AllowDestructiveObjects   = 0x26,
+        AllowMobs                 = 0x27,
+        CodeBuilder               = 0x28,
+        EduGameRuleCount          = 0x29,
     };
 
     using GameRuleList   = std::vector<class GameRule>;
