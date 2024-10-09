@@ -27,7 +27,11 @@ public:
     virtual ~VibrationListener() = default;
 
     // vIndex: 1
-    virtual void handleGameEvent(class GameEvent const&, struct GameEventContext const&, class BlockSource& region);
+    virtual void handleGameEvent(
+        class GameEvent const&         gameEvent,
+        struct GameEventContext const& gameEventContext,
+        class BlockSource&             region
+    );
 
     // vIndex: 2
     virtual class GameEvents::PositionSource const& getPositionSource() const;
@@ -40,9 +44,9 @@ public:
 
     MCAPI VibrationListener(
         std::unique_ptr<class VibrationListenerConfig>&& config,
-        class GameEvents::PositionSource,
-        uint                           range,
-        ::VibrationListener::OwnerType ownerType
+        class GameEvents::PositionSource                 positionSource,
+        uint                                             range,
+        ::VibrationListener::OwnerType                   ownerType
     );
 
     MCAPI class GameEvent const& getLatestReceivedVibration() const;
@@ -57,18 +61,25 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI void _requestVibrationParticle(class BlockSource& region, class BlockPos const& origin, float);
+    MCAPI void _requestVibrationParticle(class BlockSource& region, class BlockPos const& origin, float timeToLive);
 
-    MCAPI bool _tryAdvanceInFlightVibration(class BlockSource&);
+    MCAPI bool _tryAdvanceInFlightVibration(class BlockSource& region);
 
-    MCAPI void
-    _trySendSneakCloseToSculkSensorEventPacket(class BlockSource& region, class GameEvent const&, struct GameEventContext const&, class Vec3 const&);
+    MCAPI void _trySendSneakCloseToSculkSensorEventPacket(
+        class BlockSource&             region,
+        class GameEvent const&         gameEvent,
+        struct GameEventContext const& gameEventContext,
+        class Vec3 const&              sensorPos
+    );
 
     MCAPI static bool
     _isVibrationOccluded(class BlockSource& region, class Vec3 const& origin, class Vec3 const& targetPos);
 
-    MCAPI static bool
-    _shouldIgnoreVibration(class BlockSource& region, class GameEvent const&, struct GameEventContext const&);
+    MCAPI static bool _shouldIgnoreVibration(
+        class BlockSource&             region,
+        class GameEvent const&         gameEvent,
+        struct GameEventContext const& gameEventContext
+    );
 
     // NOLINTEND
 };

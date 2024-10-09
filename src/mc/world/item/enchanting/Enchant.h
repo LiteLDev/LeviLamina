@@ -119,7 +119,7 @@ public:
 
     MCAPI static void shutdownEnchants();
 
-    MCAPI static std::string stringFromEnchantSlot(::Enchant::Slot const&);
+    MCAPI static std::string stringFromEnchantSlot(::Enchant::Slot const& enchantSlot);
 
     MCAPI static std::unordered_map<class HashedString, ::Enchant::Type> mEnchantNameToType;
 

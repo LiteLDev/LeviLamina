@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/events/gameevents/GameEventListener.h"
-#include "mc/world/level/block/utils/BlockActorType.h"
+#include "mc/world/level/block/actor/BlockActorType.h"
 
 // auto generated forward declare list
 // clang-format off

@@ -47,8 +47,11 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI std::optional<struct RectLayoutFeature::FeatureArea>
-          _tryPlaceFeature(class Vec2 const&, int, std::array<std::array<uchar, 16>, 16> const&) const;
+    MCAPI std::optional<struct RectLayoutFeature::FeatureArea> _tryPlaceFeature(
+        class Vec2 const&                            areaStartingPoint,
+        int                                          featureIndex,
+        std::array<std::array<uchar, 16>, 16> const& placementOccupancyGrid
+    ) const;
 
     // NOLINTEND
 };

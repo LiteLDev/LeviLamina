@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/CompoundTagUpdaterResult.h"
+#include "mc/util/CompoundTagUpdaterResult.h"
 
 class CompoundTagUpdaterContext {
 public:

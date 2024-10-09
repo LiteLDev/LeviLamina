@@ -19,10 +19,10 @@ public:
 
     // vIndex: 1
     virtual void
-    onSignalReceive(class BlockSource& region, class BlockPos const&, class GameEvent const&, class Actor*, float, uint, class Actor*);
+    onSignalReceive(class BlockSource& region, class BlockPos const& vibrationSourcePos, class GameEvent const& gameEvent, class Actor*, float, uint, class Actor*);
 
     // vIndex: 2
-    virtual bool isValidVibration(class GameEvent const&);
+    virtual bool isValidVibration(class GameEvent const& gameEvent);
 
     // vIndex: 3
     virtual bool shouldListen(class BlockSource&, class GameEvent const&, struct GameEventContext const&);

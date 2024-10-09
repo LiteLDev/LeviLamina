@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/enums/TrackerType.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/network/PacketObserver.h"
+#include "mc/network/TrackerType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -39,8 +39,12 @@ public:
     // vIndex: 5
     virtual void reset();
 
-    MCAPI
-    NetworkStatistics(class ServerNetworkSystem& network, ::TrackerType type, std::function<bool(struct RakNet::RakNetStatistics&)>&& getRakNetStatsReading, Bedrock::NotNullNonOwnerPtr<class NetworkDebugManager>);
+    MCAPI NetworkStatistics(
+        class ServerNetworkSystem&                              server,
+        ::TrackerType                                           type,
+        std::function<bool(struct RakNet::RakNetStatistics&)>&& getRakNetStatsReading,
+        Bedrock::NotNullNonOwnerPtr<class NetworkDebugManager>  networkDebugManager
+    );
 
     MCAPI std::string getVerboseInfo() const;
 
@@ -48,8 +52,12 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI
-    NetworkStatistics(class ClientOrServerNetworkSystemRef&& network, ::TrackerType type, std::function<bool(struct RakNet::RakNetStatistics&)>&& getRakNetStatsReading, Bedrock::NotNullNonOwnerPtr<class NetworkDebugManager>);
+    MCAPI NetworkStatistics(
+        class ClientOrServerNetworkSystemRef&&                  network,
+        ::TrackerType                                           type,
+        std::function<bool(struct RakNet::RakNetStatistics&)>&& getRakNetStatsReading,
+        Bedrock::NotNullNonOwnerPtr<class NetworkDebugManager>  networkDebugManager
+    );
 
     MCAPI void _clearCSVStats();
 

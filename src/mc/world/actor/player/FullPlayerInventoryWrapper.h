@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/containers/ContainerID.h"
+#include "mc/world/ContainerID.h"
 
 class FullPlayerInventoryWrapper {
 public:
@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI explicit FullPlayerInventoryWrapper(class Player&);
+    MCAPI explicit FullPlayerInventoryWrapper(class Player& player);
 
     MCAPI int clearAllItems();
 

@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
 
 class GameTestResultsPacket : public ::Packet {
 public:
@@ -32,7 +32,7 @@ public:
 
     MCAPI GameTestResultsPacket();
 
-    MCAPI GameTestResultsPacket(std::string const&, std::string const& error, bool succeeded);
+    MCAPI GameTestResultsPacket(std::string const& testName, std::string const& error, bool succeeded);
 
     // NOLINTEND
 };

@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/server/commands/Command.h"
 #include "mc/server/commands/CommandSelectorResults.h"
-#include "mc/world/level/Command.h"
 
 class DamageCommand : public ::Command {
 public:

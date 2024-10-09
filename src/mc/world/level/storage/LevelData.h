@@ -3,17 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/social/GamePublishSetting.h"
-#include "mc/enums/ChatRestrictionLevel.h"
-#include "mc/enums/DaylightCycle.h"
-#include "mc/enums/Difficulty.h"
-#include "mc/enums/EducationEditionOffer.h"
-#include "mc/enums/GameType.h"
-#include "mc/enums/StorageVersion.h"
-#include "mc/enums/WorldVersion.h"
-#include "mc/network/NetherWorldType.h"
-#include "mc/server/editor/WorldType.h"
-#include "mc/world/level/levelgen/GeneratorType.h"
+#include "mc/common/editor/WorldType.h"
+#include "mc/config/ChatRestrictionLevel.h"
+#include "mc/network/GamePublishSetting.h"
+#include "mc/options/EducationEditionOffer.h"
+#include "mc/world/Difficulty.h"
+#include "mc/world/level/DaylightCycle.h"
+#include "mc/world/level/GameType.h"
+#include "mc/world/level/GeneratorType.h"
+#include "mc/world/level/NetherWorldType.h"
+#include "mc/world/level/WorldVersion.h"
+#include "mc/world/level/storage/StorageVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -243,13 +243,13 @@ public:
 
     MCAPI void recordStartUp();
 
-    MCAPI void setAdventureModeOverridesEnabled(bool);
+    MCAPI void setAdventureModeOverridesEnabled(bool overridesEnabled);
 
     MCAPI void setBaseGameVersion(class BaseGameVersion const& baseGameVersion);
 
     MCAPI void setBonusChestSpawned(bool bonusChestSpawned);
 
-    MCAPI void setChatRestrictionLevel(::ChatRestrictionLevel);
+    MCAPI void setChatRestrictionLevel(::ChatRestrictionLevel chatRestrictionLevel);
 
     MCAPI void setCommandsEnabled(bool commandsEnabled);
 
@@ -257,7 +257,7 @@ public:
 
     MCAPI void setDataDrivenGenerator(::GeneratorType type);
 
-    MCAPI void setEduSharedUriResource(struct EduSharedUriResource const&);
+    MCAPI void setEduSharedUriResource(struct EduSharedUriResource const& eduSharedUriResource);
 
     MCAPI void setEducationEditionOffer(::EducationEditionOffer offer);
 
@@ -279,7 +279,7 @@ public:
 
     MCAPI void setHasLockedResourcePack(bool hasLockedPack);
 
-    MCAPI void setIsHardcore(bool);
+    MCAPI void setIsHardcore(bool value);
 
     MCAPI void setLANBroadcast(bool broadcast);
 

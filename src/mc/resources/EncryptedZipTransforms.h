@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/deps/file/FileAccessTransforms.h"
+#include "mc/deps/core/file/file_system/FileAccessTransforms.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 class EncryptedZipTransforms : public ::FileAccessTransforms {
 public:

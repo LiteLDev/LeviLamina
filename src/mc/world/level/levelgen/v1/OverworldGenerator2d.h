@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/MultidimensionalArray.h"
+#include "mc/util/MultidimensionalArray.h"
 #include "mc/world/level/levelgen/v1/OverworldGenerator.h"
 
 class OverworldGenerator2d : public ::OverworldGenerator {
@@ -48,7 +48,8 @@ public:
 
     MCVAPI std::optional<class XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory() const;
 
-    MCAPI OverworldGenerator2d(class Dimension&, uint, bool, class Biome const*);
+    MCAPI
+    OverworldGenerator2d(class Dimension& dimension, uint seed, bool isLegacyWorld, class Biome const* biomeOverride);
 
     // NOLINTEND
 

@@ -18,7 +18,7 @@ public:
 
     MCAPI MeleeAttackBaseDefinition();
 
-    MCAPI void initialize(class EntityContext&, class MeleeAttackBaseGoal&) const;
+    MCAPI void initialize(class EntityContext& entity, class MeleeAttackBaseGoal& goal) const;
 
     // NOLINTEND
 };

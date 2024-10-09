@@ -18,7 +18,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI DefinitionTrigger(std::string, ::Puv::Legacy::FilterSubject, class ExpressionNode);
+    MCAPI DefinitionTrigger(std::string type, ::Puv::Legacy::FilterSubject target, class ExpressionNode condition);
 
     MCAPI bool canTrigger(class RenderParams& params) const;
 
@@ -28,7 +28,7 @@ public:
 
     MCAPI ~DefinitionTrigger();
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx&);
+    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
     // NOLINTEND
 };

@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/TagRegistry.h"
-#include "mc/common/wrapper/IDType.h"
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/util/IDType.h"
+#include "mc/util/TagRegistry.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -50,9 +50,9 @@ public:
 
     MCAPI void forEachBiome(std::function<void(class Biome const&)> callback) const;
 
-    MCAPI void forEachNonConstBiome(std::function<void(class Biome&)>);
+    MCAPI void forEachNonConstBiome(std::function<void(class Biome&)> callback);
 
-    MCAPI std::vector<class Biome const*> getBiomesInDimension(DimensionType) const;
+    MCAPI std::vector<class Biome const*> getBiomesInDimension(DimensionType type) const;
 
     MCAPI class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>>&
     getTagRegistry();
@@ -60,7 +60,7 @@ public:
     MCAPI class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> const&
     getTagRegistry() const;
 
-    MCAPI void initializeWithLevelStorageManager(class LevelStorageManager&);
+    MCAPI void initializeWithLevelStorageManager(class LevelStorageManager& levelStorageManager);
 
     MCAPI bool isRegistrationFinished() const;
 
@@ -72,8 +72,11 @@ public:
 
     MCAPI class Biome& registerBiome(std::string const& name);
 
-    MCAPI static struct BiomeRegistry::LoadedBiome
-    upgradeJsonComponents(std::string const&, class Json::Value&, class SemVersion const&);
+    MCAPI static struct BiomeRegistry::LoadedBiome upgradeJsonComponents(
+        std::string const&      biomeName,
+        class Json::Value&      parsedJson,
+        class SemVersion const& engineVersion
+    );
 
     // NOLINTEND
 
@@ -81,10 +84,10 @@ public:
     // NOLINTBEGIN
     MCAPI void _initTagRegistry();
 
-    MCAPI void _save(class LevelStorage&) const;
+    MCAPI void _save(class LevelStorage& levelStorage) const;
 
     MCAPI static struct BiomeRegistry::LoadedBiome
-    _loadSingleBiome(class ResourcePackManager&, std::string const&, bool);
+    _loadSingleBiome(class ResourcePackManager& loader, std::string const& biomeName, bool loadFromPacks);
 
     // NOLINTEND
 };

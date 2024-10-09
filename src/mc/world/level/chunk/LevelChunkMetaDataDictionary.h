@@ -11,19 +11,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI void checkAndSerialize(std::function<void(std::string const&)>) const;
+    MCAPI void checkAndSerialize(std::function<void(std::string const&)> postSerializeWriteCallback) const;
 
     MCAPI void deserialize(class IDataInput& stream);
 
-    MCAPI std::shared_ptr<class LevelChunkMetaData const> getMetaData(uint64) const;
+    MCAPI std::shared_ptr<class LevelChunkMetaData const> getMetaData(uint64 metaDataHash) const;
 
-    MCAPI std::shared_ptr<class LevelChunkMetaData> registerMetaData(class LevelChunkMetaData const&);
+    MCAPI std::shared_ptr<class LevelChunkMetaData> registerMetaData(class LevelChunkMetaData const& candidateMetaData);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    MCAPI std::shared_ptr<class LevelChunkMetaData> _registerMetaData(class LevelChunkMetaData const&);
+    MCAPI std::shared_ptr<class LevelChunkMetaData> _registerMetaData(class LevelChunkMetaData const& candidateMetaData
+    );
 
     // NOLINTEND
 };

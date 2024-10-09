@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/AdvanceFrameResult.h"
 #include "mc/entity/components/IReplayStatePolicy.h"
+#include "mc/input/AdvanceFrameResult.h"
 
 class ServerCorrectionPolicy : public ::IReplayStatePolicy {
 public:
@@ -26,7 +26,7 @@ public:
 
     // vIndex: 3
     virtual struct MovementCorrection
-    shouldCorrectMovement(class EntityContext&, class PlayerAuthInputPacket const&, uint64);
+    shouldCorrectMovement(class EntityContext& entity, class PlayerAuthInputPacket const& packet, uint64 frame);
 
     // vIndex: 4
     virtual void flagUnsupportedMovement(uint64);
@@ -35,7 +35,7 @@ public:
     virtual void storeCurrentFrameSupported(uint64, class EntityContext&);
 
     // vIndex: 6
-    virtual void notifyOfExternalCorrection(uint64);
+    virtual void notifyOfExternalCorrection(uint64 frame);
 
     // NOLINTEND
 };

@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/CurrentCmdVersion.h"
-#include "mc/external/scripting/ClassBindingBuilder.h"
-#include "mc/external/scripting/Promise.h"
-#include "mc/external/scripting/Result.h"
-#include "mc/external/scripting/StrongTypedObjectHandle.h"
+#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/script_engine/Promise.h"
+#include "mc/server/commands/CurrentCmdVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -81,7 +81,12 @@ public:
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptActionFormResponse>,
         class ScriptModuleMinecraftServerUI::ScriptFormRejectError,
         void>>
-    show(struct Scripting::ContextConfig const&, class Scripting::ScriptObjectFactory& factory, class Scripting::DependencyLocator& locator, class ScriptModuleMinecraft::ScriptPlayer&);
+    show(
+        struct Scripting::ContextConfig const&     config,
+        class Scripting::ScriptObjectFactory&      factory,
+        class Scripting::DependencyLocator&        locator,
+        class ScriptModuleMinecraft::ScriptPlayer& scriptPlayer
+    );
 
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptActionFormData>
     title(std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface> title);
@@ -97,7 +102,8 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI class Scripting::Result<class Json::Value> _buildJson(class Player&, ::CurrentCmdVersion) const;
+    MCAPI class Scripting::Result<class Json::Value>
+    _buildJson(class Player& forPlayer, ::CurrentCmdVersion commandVersion) const;
 
     // NOLINTEND
 };

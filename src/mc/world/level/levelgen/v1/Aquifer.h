@@ -29,9 +29,9 @@ public:
     MCAPI Aquifer(
         class ChunkPos const&           chunkPos,
         class AquiferNoises const&      aquiferNoises,
-        struct OverworldNoises3d const& overworldNoises,
+        struct OverworldNoises3d const& terrainNoises,
         class SurfaceLevelCache const&  surfaceLevelCache,
-        int                             minHeight,
+        int                             dimensionMinHeight,
         int                             levelGenHeight,
         int                             seaLevel
     );
@@ -40,7 +40,7 @@ public:
 
     MCAPI float getLastBarrier() const;
 
-    MCAPI class Block const* getLastFluidBlockType(bool) const;
+    MCAPI class Block const* getLastFluidBlockType(bool canTickUpdate) const;
 
     MCAPI int getLastFluidLevel() const;
 
@@ -50,7 +50,7 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI struct Aquifer::FluidSample _computeAquifer(class BlockPos const&) const;
+    MCAPI struct Aquifer::FluidSample _computeAquifer(class BlockPos const& cellCenter) const;
 
     // NOLINTEND
 

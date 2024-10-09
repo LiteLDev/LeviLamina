@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/json/JsonSchemaObjectNode.h"
+#include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
-#include "mc/world/level/block/utils/BlockRenderLayer.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -28,10 +28,10 @@ public:
     virtual std::string const& getName() const;
 
     // vIndex: 3
-    virtual void initializeComponent(class BlockComponentStorage&) const;
+    virtual void initializeComponent(class BlockComponentStorage& blockComponentStorage) const;
 
     // vIndex: 5
-    virtual void initializeComponentFromCode(class BlockComponentStorage&) const;
+    virtual void initializeComponentFromCode(class BlockComponentStorage& blockComponentStorage) const;
 
     // vIndex: 7
     virtual bool isNetworkComponent() const;
@@ -40,17 +40,22 @@ public:
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const&) const;
 
     // vIndex: 9
-    virtual void initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx const&);
+    virtual void initializeFromNetwork(class CompoundTag const& tag, struct cereal::ReflectionCtx const&);
 
     MCAPI BlockMaterialInstancesDescription(struct BlockMaterialInstancesDescription&&);
 
     MCAPI BlockMaterialInstancesDescription(struct BlockMaterialInstancesDescription const&);
 
-    MCAPI BlockMaterialInstancesDescription(std::string const& textureName, ::BlockRenderLayer, bool, bool faceDimming);
+    MCAPI BlockMaterialInstancesDescription(
+        std::string const& textureName,
+        ::BlockRenderLayer renderLayer,
+        bool               ambientOcclusion,
+        bool               faceDimming
+    );
 
     MCAPI struct BlockMaterialInstancesDescription& operator=(struct BlockMaterialInstancesDescription&&);
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx&);
+    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
     MCAPI static std::string const NameID;
 

@@ -27,10 +27,12 @@ public:
 
     MCAPI ~IconItemComponent();
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx&);
+    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
-    MCAPI static void
-    upgrade(std::optional<struct Puv::v1_20_50::IconItemComponent>&, std::optional<struct Puv::v1_20_60::IconItemComponent>&);
+    MCAPI static void upgrade(
+        std::optional<struct Puv::v1_20_50::IconItemComponent>& oldDefinition,
+        std::optional<struct Puv::v1_20_60::IconItemComponent>& newDefinition
+    );
 
     // NOLINTEND
 };

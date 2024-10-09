@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/CurrentCmdVersion.h"
-#include "mc/external/scripting/ClassBindingBuilder.h"
-#include "mc/external/scripting/Promise.h"
-#include "mc/external/scripting/Result.h"
-#include "mc/external/scripting/StrongTypedObjectHandle.h"
+#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/script_engine/Promise.h"
+#include "mc/server/commands/CurrentCmdVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -57,11 +57,14 @@ public:
 
     MCAPI ScriptModalFormData(class ScriptModuleMinecraftServerUI::ScriptModalFormData&&);
 
-    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptModalFormData>
-    dropdown(std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface> label, std::vector<std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>> options, std::optional<int>);
+    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptModalFormData> dropdown(
+        std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>              label,
+        std::vector<std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>> options,
+        std::optional<int> defaultValueIndex
+    );
 
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptModalFormData>
-    dropdownV010(std::string const& label, std::vector<std::string> options, std::optional<int>);
+    dropdownV010(std::string const& label, std::vector<std::string> options, std::optional<int> defaultValueIndex);
 
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptModalFormData>
     iconV0(std::string path);
@@ -73,7 +76,12 @@ public:
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptModalFormResponse>,
         class ScriptModuleMinecraftServerUI::ScriptFormRejectError,
         void>>
-    show(struct Scripting::ContextConfig const&, class Scripting::ScriptObjectFactory& factory, class Scripting::DependencyLocator& locator, class ScriptModuleMinecraft::ScriptPlayer&);
+    show(
+        struct Scripting::ContextConfig const&     config,
+        class Scripting::ScriptObjectFactory&      factory,
+        class Scripting::DependencyLocator&        locator,
+        class ScriptModuleMinecraft::ScriptPlayer& scriptPlayer
+    );
 
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptModalFormData> slider(
         std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface> label,
@@ -87,16 +95,20 @@ public:
     sliderV010(std::string const& label, float minValue, float maxValue, float step, std::optional<float> defaultValue);
 
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptModalFormData>
-        submitButton(std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>);
+    submitButton(std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface> label);
 
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptModalFormData> textField(
         std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface> label,
-        std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>,
+        std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface> placeholderText,
         std::optional<std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>> defaultValue
     );
 
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptModalFormData>
-    textFieldV010(std::string const& label, std::string const&, std::optional<std::string> defaultValue);
+    textFieldV010(
+        std::string const&         label,
+        std::string const&         placeholderText,
+        std::optional<std::string> defaultValue
+    );
 
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptModalFormData>
     title(std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface> title);
@@ -120,7 +132,8 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI class Scripting::Result<class Json::Value> _buildJson(class Player&, ::CurrentCmdVersion) const;
+    MCAPI class Scripting::Result<class Json::Value>
+    _buildJson(class Player& forPlayer, ::CurrentCmdVersion commandVersion) const;
 
     // NOLINTEND
 };

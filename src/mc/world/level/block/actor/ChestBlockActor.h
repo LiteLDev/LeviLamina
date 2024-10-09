@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/block/actor/BlockActorRendererId.h"
+#include "mc/world/level/block/actor/BlockActorType.h"
 #include "mc/world/level/block/actor/RandomizableBlockActorFillingContainer.h"
-#include "mc/world/level/block/utils/BlockActorRendererId.h"
-#include "mc/world/level/block/utils/BlockActorType.h"
 
 class ChestBlockActor : public ::RandomizableBlockActorFillingContainer {
 public:
@@ -66,7 +66,7 @@ public:
 
     MCVAPI void onPlace(class BlockSource& region);
 
-    MCVAPI void onRemoved(class BlockSource&);
+    MCVAPI void onRemoved(class BlockSource& region);
 
     MCVAPI void openBy(class Player& p);
 

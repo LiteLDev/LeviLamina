@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/cereal/SerializerContext.h"
 #include "mc/deps/puv/CerealUpgraderBase.h"
+#include "mc/external/cereal/SerializerContext.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,7 +20,7 @@ namespace cereal { struct ReflectionCtx; }
 
 namespace Puv::internal {
 // NOLINTBEGIN
-MCAPI entt::meta_any& getAny(class Puv::LoadResultAny&);
+MCAPI entt::meta_any& getAny(class Puv::LoadResultAny& res);
 // NOLINTEND
 
 }; // namespace Puv::internal

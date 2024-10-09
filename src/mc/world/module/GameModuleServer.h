@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 class GameModuleServer {
 public:
@@ -21,22 +21,30 @@ public:
 
     // vIndex: 2
     virtual void initializeBehaviorStack(
-        class Experiments const&,
-        Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository> const&,
-        class ResourcePackStack&,
-        class BaseGameVersion const&,
-        bool
+        class Experiments const&                                          experiments,
+        Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository> const& repo,
+        class ResourcePackStack&                                          stack,
+        class BaseGameVersion const&                                      baseGameVersion,
+        bool                                                              includeEditorPacks
     ) = 0;
 
     // vIndex: 3
-    virtual void
-    configureLevel(Bedrock::NotNullNonOwnerPtr<class Level> const&, class Experiments const&, class ResourcePackManager&, class BaseGameVersion const&, std::optional<gsl::not_null<class ServerScriptManager const*>>) = 0;
+    virtual void configureLevel(
+        Bedrock::NotNullNonOwnerPtr<class Level> const&                level,
+        class Experiments const&                                       experiments,
+        class ResourcePackManager&                                     resourcePackManager,
+        class BaseGameVersion const&                                   baseGameVersion,
+        std::optional<gsl::not_null<class ServerScriptManager const*>> scriptManager
+    ) = 0;
 
     // vIndex: 4
     virtual void configureNewPlayer(class Player& player) = 0;
 
     // vIndex: 5
-    virtual void configureDocumentation(class IGameModuleDocumentation& moduleDocumentation, class ItemRegistryRef) = 0;
+    virtual void configureDocumentation(
+        class IGameModuleDocumentation& moduleDocumentation,
+        class ItemRegistryRef           docItemRegistry
+    ) = 0;
 
     // vIndex: 6
     virtual void tick() = 0;

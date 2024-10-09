@@ -4,25 +4,25 @@
 
 // auto generated inclusion list
 #include "mc/client/social/MultiplayerServiceIdentifier.h"
-#include "mc/deps/core/FileAccessType.h"
-#include "mc/deps/core/PathBuffer.h"
-#include "mc/deps/core/StackString.h"
-#include "mc/deps/core/common/bedrock/IAsyncResult.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/entity/systems/common/ResourceFileSystem.h"
-#include "mc/enums/ARVRPlatform.h"
-#include "mc/enums/AppFocusState.h"
-#include "mc/enums/AssertDialogResponse.h"
-#include "mc/enums/BuildPlatform.h"
-#include "mc/enums/DeviceSunsetTier.h"
-#include "mc/enums/FullscreenMode.h"
-#include "mc/enums/InputMode.h"
-#include "mc/enums/OperationMode.h"
-#include "mc/enums/OsVersion.h"
-#include "mc/enums/PlatformType.h"
-#include "mc/enums/UIScalingRules.h"
-#include "mc/enums/VRControllerType.h"
-#include "mc/network/NetworkConnectionType.h"
+#include "mc/deps/application/DeviceSunsetTier.h"
+#include "mc/deps/application/OsVersion.h"
+#include "mc/deps/core/NetworkConnectionType.h"
+#include "mc/deps/core/debug/AssertDialogResponse.h"
+#include "mc/deps/core/file/FileAccessType.h"
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/platform/ARVRPlatform.h"
+#include "mc/deps/core/platform/AppFocusState.h"
+#include "mc/deps/core/platform/BuildPlatform.h"
+#include "mc/deps/core/platform/FullscreenMode.h"
+#include "mc/deps/core/platform/OperationMode.h"
+#include "mc/deps/core/platform/PlatformType.h"
+#include "mc/deps/core/platform/UIScalingRules.h"
+#include "mc/deps/core/resource/ResourceFileSystem.h"
+#include "mc/deps/core/string/StackString.h"
+#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/input/InputMode.h"
+#include "mc/deps/input/VRControllerType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -106,7 +106,7 @@ public:
 
     MCVAPI bool copyAssetFile(class Core::Path const& filename, class Core::Path const& destination);
 
-    MCVAPI class Core::PathBuffer<std::string> copyImportFileToTempFolder(class Core::Path const&);
+    MCVAPI class Core::PathBuffer<std::string> copyImportFileToTempFolder(class Core::Path const& filePath);
 
     MCVAPI std::shared_ptr<class Core::FileStorageArea>
            createLoggingStorageArea(::Core::FileAccessType fileAccessType, class Core::Path const& loggingPath);
@@ -129,7 +129,7 @@ public:
 
     MCVAPI class AppLifecycleContext& getAppLifecycleContext();
 
-    MCVAPI class Core::PathBuffer<std::string> getAssetFileFullPath(class Core::Path const&);
+    MCVAPI class Core::PathBuffer<std::string> getAssetFileFullPath(class Core::Path const& filename);
 
     MCVAPI std::vector<std::string> getBroadcastAddresses();
 
@@ -234,7 +234,7 @@ public:
 
     MCVAPI int getPlatformDpi() const;
 
-    MCVAPI std::string getPlatformStringVar(int);
+    MCVAPI std::string getPlatformStringVar(int stringId);
 
     MCVAPI bool getPlatformTTSEnabled() const;
 
@@ -393,7 +393,7 @@ public:
 
     MCVAPI bool platformRequiresControllerApplet() const;
 
-    MCVAPI std::string readAssetFile(class Core::Path const&);
+    MCVAPI std::string readAssetFile(class Core::Path const& filename);
 
     MCVAPI void registerExperimentsActiveCrashDump(std::vector<std::string> const& activeExperiments) const;
 
@@ -406,7 +406,7 @@ public:
     MCVAPI void removeListener(class AppPlatformListener* l);
 
     MCVAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<struct IntegrityTokenResult>>
-           requestIntegrityToken(std::string const&);
+           requestIntegrityToken(std::string const& nonceToken);
 
     MCVAPI void requestMulticastReceivePermission();
 
@@ -430,9 +430,9 @@ public:
 
     MCVAPI void setFullscreenMode(::FullscreenMode fullscreenMode);
 
-    MCVAPI void setIntegrityToken(std::string const&);
+    MCVAPI void setIntegrityToken(std::string const& integrityToken);
 
-    MCVAPI void setIntegrityTokenErrorMessage(std::string const&);
+    MCVAPI void setIntegrityTokenErrorMessage(std::string const& errorMessage);
 
     MCVAPI void setKeepScreenOnFlag(bool);
 

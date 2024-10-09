@@ -29,10 +29,10 @@ public:
             float                                            depthValue,
             short                                            seaLevel,
             std::unique_ptr<class PerlinSimplexNoise> const& materialAdjNoise,
-            ::ISurfaceBuilder::WaterLevelStrategy,
-            int,
-            class HeightmapWrapper const&,
-            bool
+            ::ISurfaceBuilder::WaterLevelStrategy            waterLevelStrategy,
+            int                                              lowerLimit,
+            class HeightmapWrapper const&                    preWorldGenHeightmap,
+            bool                                             useCCOrLater
         );
 
         // NOLINTEND

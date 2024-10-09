@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/FunctionQueueOrder.h"
+#include "mc/server/commands/functions/FunctionQueueOrder.h"
 #include "mc/server/commands/functions/IFunctionEntry.h"
 
 class CommandFunctionEntry : public ::IFunctionEntry {

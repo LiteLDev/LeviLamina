@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/nbt/Tag.h"
+#include "mc/platform/Result.h"
 
 class ByteArrayTag : public ::Tag {
 public:
@@ -39,7 +39,7 @@ public:
     // vIndex: 10
     virtual uint64 hash() const;
 
-    MCAPI explicit ByteArrayTag(std::vector<uchar>);
+    MCAPI explicit ByteArrayTag(std::vector<uchar> data);
 
     // NOLINTEND
 };

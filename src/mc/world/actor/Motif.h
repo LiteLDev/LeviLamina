@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/external/glm/vec.h"
-
 class Motif {
 public:
     // Motif inner types declare
@@ -24,9 +21,9 @@ public:
         // NOLINTBEGIN
         MCAPI void clear();
 
-        MCAPI class Motif const& getMotifByName(std::string const&) const;
+        MCAPI class Motif const& getMotifByName(std::string const& name) const;
 
-        MCAPI void init(class BaseGameVersion const&);
+        MCAPI void init(class BaseGameVersion const& baseGameVersion);
 
         MCAPI static class Motif::Registry& get();
 
@@ -49,7 +46,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI Motif(std::string, int, int, struct glm::vec<4, float, 0>, bool, bool);
+    MCAPI Motif(std::string name, int w, int h, glm::vec4 UVs, bool isPublic, bool isSplitMeshPainting);
 
     MCAPI std::string const getName() const;
 

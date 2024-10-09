@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/OwnerPtr.h"
-#include "mc/common/wrapper/WeakRef.h"
-#include "mc/enums/LimboEntitiesVersion.h"
-#include "mc/world/AutomaticID.h"
-#include "mc/world/level/block/utils/BlockChangedEventTarget.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/game_refs/OwnerPtr.h"
+#include "mc/deps/game_refs/WeakRef.h"
+#include "mc/world/level/BlockChangedEventTarget.h"
+#include "mc/world/level/dimension/LimboEntitiesVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -86,9 +86,9 @@ public:
 
     MCVAPI bool hasPrecipitationFog() const;
 
-    MCVAPI void init(class br::worldgen::StructureSetRegistry const&);
+    MCVAPI void init(class br::worldgen::StructureSetRegistry const& structureSetRegistry);
 
-    MCVAPI void initializeWithLevelStorageManager(class LevelStorageManager&);
+    MCVAPI void initializeWithLevelStorageManager(class LevelStorageManager& levelStorageManager);
 
     MCVAPI bool is2DPositionRelevantForPlayer(class BlockPos const& position, class Player& player) const;
 
@@ -146,10 +146,10 @@ public:
     );
 
     MCAPI void addActorUnloadedChunkTransferToQueue(
-        class ChunkPos const&,
-        class ChunkPos const&,
-        DimensionType dimId,
-        std::string&,
+        class ChunkPos const&              fromChunkPos,
+        class ChunkPos const&              toChunkPos,
+        DimensionType                      dimId,
+        std::string&                       actorStorageKey,
         std::unique_ptr<class CompoundTag> entityTag
     );
 
@@ -161,7 +161,7 @@ public:
 
     MCAPI float distanceToNearestPlayerSqr2D(class Vec3 origin);
 
-    MCAPI class Player* fetchAnyInteractablePlayer(class Vec3 const&, float maxDist) const;
+    MCAPI class Player* fetchAnyInteractablePlayer(class Vec3 const& searchPos, float maxDist) const;
 
     MCAPI class Player* fetchNearestAttackablePlayer(class Actor& source, float maxDist) const;
 
@@ -170,10 +170,14 @@ public:
 
     MCAPI class Player* fetchNearestInteractablePlayer(class Actor& source, float maxDist) const;
 
-    MCAPI class Player* fetchNearestInteractablePlayer(class Vec3 const&, float maxDist) const;
+    MCAPI class Player* fetchNearestInteractablePlayer(class Vec3 const& searchPos, float maxDist) const;
 
-    MCAPI class Player*
-    fetchNearestPlayer(class Vec3 const&, float maxDist, bool, std::function<bool(class Player const&)>) const;
+    MCAPI class Player* fetchNearestPlayer(
+        class Vec3 const&                        searchPos,
+        float                                    maxDist,
+        bool                                     isFetchAny,
+        std::function<bool(class Player const&)> playerFilter
+    ) const;
 
     MCAPI class Player* findPlayer(std::function<bool(class Player const&)> pred) const;
 
@@ -257,7 +261,7 @@ public:
 
     MCAPI bool isRedstoneTick();
 
-    MCAPI bool isSubChunkHeightWithinRange(short const&) const;
+    MCAPI bool isSubChunkHeightWithinRange(short const& subChunkHeight) const;
 
     MCAPI bool isUltraWarm() const;
 
@@ -284,19 +288,19 @@ public:
     MCAPI void setUltraWarm(bool warm);
 
     MCAPI void transferEntity(
-        class ChunkPos const&,
+        class ChunkPos const&              fromChunkPos,
         class Vec3 const&                  spawnPos,
         std::unique_ptr<class CompoundTag> entityTag,
-        bool
+        bool                               ignorePortal
     );
 
-    MCAPI void transferEntityToUnloadedChunk(class Actor& actor, class LevelChunk*);
+    MCAPI void transferEntityToUnloadedChunk(class Actor& actor, class LevelChunk* fromChunk);
 
     MCAPI void transferEntityToUnloadedChunk(
-        class ChunkPos const&,
-        class ChunkPos const&,
-        DimensionType dimId,
-        std::string&,
+        class ChunkPos const&              fromChunkPos,
+        class ChunkPos const&              toChunkPos,
+        DimensionType                      dimId,
+        std::string&                       actorStorageKey,
         std::unique_ptr<class CompoundTag> entityTag
     );
 
@@ -304,7 +308,7 @@ public:
 
     MCAPI void tryLoadLimboEntities(class ChunkPos const& loadPos);
 
-    MCAPI void unregisterDisplayEntity(class WeakRef<class EntityContext>);
+    MCAPI void unregisterDisplayEntity(class WeakRef<class EntityContext> entityRef);
 
     MCAPI void unregisterEntity(struct ActorUniqueID const& actorID);
 
@@ -331,7 +335,7 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    MCAPI void _completeEntityTransfer(class OwnerPtr<class EntityContext>, bool);
+    MCAPI void _completeEntityTransfer(class OwnerPtr<class EntityContext> entity, bool ignorePortal);
 
     // NOLINTEND
 

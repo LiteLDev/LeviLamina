@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorDamageCause.h"
+#include "mc/world/actor/ActorDamageCause.h"
 
 namespace PanicGoalConstants {
 // NOLINTBEGIN

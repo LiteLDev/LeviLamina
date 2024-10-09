@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/ObjectiveRenderType.h"
+#include "mc/world/scores/ObjectiveRenderType.h"
 
 class ObjectiveCriteria {
 public:

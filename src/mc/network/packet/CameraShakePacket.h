@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/CameraShakeAction.h"
-#include "mc/enums/CameraShakeType.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/deps/minecraft_camera/CameraShakeAction.h"
+#include "mc/deps/minecraft_camera/CameraShakeType.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
 
 class CameraShakePacket : public ::Packet {
 public:
@@ -34,9 +34,9 @@ public:
 
     MCAPI CameraShakePacket();
 
-    MCAPI explicit CameraShakePacket(::CameraShakeAction);
+    MCAPI explicit CameraShakePacket(::CameraShakeAction shakeAction);
 
-    MCAPI CameraShakePacket(float intensity, float seconds, ::CameraShakeType);
+    MCAPI CameraShakePacket(float intensity, float seconds, ::CameraShakeType shakeType);
 
     // NOLINTEND
 };

@@ -46,7 +46,7 @@ public:
     MCAPI static class AttributeInstance*
     _legacyGetInstance(class BaseAttributeMap& attributes, std::string const& attributeName);
 
-    MCAPI static std::string const& _legacyGetName(std::string const& attributeName);
+    MCAPI static std::string const& _legacyGetName(std::string const&);
 
     MCAPI static void _loadAttribute(class AttributeInstance& instance, class CompoundTag const* tag);
 

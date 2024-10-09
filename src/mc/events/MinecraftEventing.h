@@ -3,53 +3,53 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/certificates/identity/ActiveDirectoryAction.h"
+#include "mc/certificates/identity/LastClickedSource.h"
+#include "mc/certificates/identity/edu/Role.h"
+#include "mc/client/game/edu_cloud/Operation.h"
 #include "mc/client/network/realms/RealmsPurchaseFailureReason.h"
 #include "mc/client/network/realms/RealmsPurchaseIntent.h"
-#include "mc/client/social/IdentitySignInTrigger.h"
 #include "mc/client/social/MultiplayerServiceIdentifier.h"
 #include "mc/client/social/MultiplayerState.h"
-#include "mc/client/social/SignInResult.h"
-#include "mc/deps/core/LevelStorageState.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/deps/core/common/bedrock/StorageMigrationType.h"
+#include "mc/client/store/iap/PurchasePath.h"
+#include "mc/client/store/iap/transactions/TransactionStatus.h"
+#include "mc/common/SubClientId.h"
+#include "mc/deps/application/storage_migration/StorageMigrationType.h"
+#include "mc/deps/core/file/LevelStorageState.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/ValidationStatus.h"
 #include "mc/deps/core/utility/buffer_span.h"
-#include "mc/entity/utilities/ActorDamageCause.h"
-#include "mc/entity/utilities/ActorType.h"
-#include "mc/enums/ActiveDirectoryAction.h"
+#include "mc/deps/input/InputMode.h"
 #include "mc/enums/ClassroomSetting.h"
-#include "mc/enums/Difficulty.h"
 #include "mc/enums/DiskStatus.h"
-#include "mc/enums/EduControlPanelUpdateType.h"
 #include "mc/enums/EduShareMethodType.h"
 #include "mc/enums/EduShareUriType.h"
-#include "mc/enums/FileArchiverOutcome.h"
-#include "mc/enums/GameType.h"
-#include "mc/enums/InputMode.h"
-#include "mc/enums/LastClickedSource.h"
-#include "mc/enums/LoadingState.h"
-#include "mc/enums/MinecraftPacketIds.h"
-#include "mc/enums/OpenCodeMethod.h"
-#include "mc/enums/PurchasePath.h"
 #include "mc/enums/RawInputType.h"
 #include "mc/enums/SettingsScreenMode.h"
-#include "mc/enums/SubClientId.h"
-#include "mc/enums/TransactionStatus.h"
-#include "mc/enums/TransportLayer.h"
-#include "mc/enums/UserGeneratedUriSource.h"
-#include "mc/enums/connection/DisconnectFailReason.h"
-#include "mc/enums/edu/Role.h"
-#include "mc/enums/edu_cloud/Operation.h"
-#include "mc/enums/identity/EduSignInStage.h"
-#include "mc/enums/safety/ChatFloodingAction.h"
+#include "mc/events/ConnectedStorageEventType.h"
+#include "mc/events/EduControlPanelUpdateType.h"
 #include "mc/events/IConnectionEventing.h"
 #include "mc/events/IMinecraftEventing.h"
-#include "mc/resources/PacketViolationResponse.h"
+#include "mc/events/OpenCodeMethod.h"
+#include "mc/events/TextProcessingEventOrigin.h"
+#include "mc/events/UserGeneratedUriSource.h"
+#include "mc/events/identity/EduSignInStage.h"
+#include "mc/identity/IdentitySignInTrigger.h"
+#include "mc/identity/SignInResult.h"
+#include "mc/network/MinecraftPacketIds.h"
+#include "mc/network/PacketViolationResponse.h"
+#include "mc/network/TransportLayer.h"
+#include "mc/network/connection/DisconnectFailReason.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/actor/player/PlayerPermissionLevel.h"
-#include "mc/world/events/ConnectedStorageEventType.h"
-#include "mc/world/events/TextProcessingEventOrigin.h"
-#include "mc/world/item/components/ItemUseMethod.h"
+#include "mc/server/commands/PlayerPermissionLevel.h"
+#include "mc/server/safety/ChatFloodingAction.h"
+#include "mc/world/Difficulty.h"
+#include "mc/world/actor/ActorDamageCause.h"
+#include "mc/world/actor/ActorType.h"
+#include "mc/world/actor/player/LoadingState.h"
+#include "mc/world/item/ItemUseMethod.h"
+#include "mc/world/level/FileArchiverOutcome.h"
+#include "mc/world/level/GameType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -115,11 +115,23 @@ public:
     MCVAPI void
     fileEventCloudWorldPullFailed(std::string const& reason, std::string const& worldID, bool localLevelDatUsed);
 
-    MCVAPI void
-    fireBannedSkinVerificationEvent(uint const&, std::string const&, std::string const&, bool, int, std::string const&);
+    MCVAPI void fireBannedSkinVerificationEvent(
+        uint const&        userId,
+        std::string const& serverType,
+        std::string const& skinData,
+        bool               wasApproved,
+        int                eventCode,
+        std::string const& message
+    );
 
-    MCVAPI void
-    fireCDNDownloadEvent(std::string const&, std::string const&, std::string const&, ::IMinecraftEventing::CDNDownloadResult const&, ::IMinecraftEventing::CDNDownloadEventOrigin const&, float const&);
+    MCVAPI void fireCDNDownloadEvent(
+        std::string const&                                  packId,
+        std::string const&                                  versionNumber,
+        std::string const&                                  hostUrl,
+        ::IMinecraftEventing::CDNDownloadResult const&      downloadResult,
+        ::IMinecraftEventing::CDNDownloadEventOrigin const& origin,
+        float const&                                        elapsedTime
+    );
 
     MCVAPI void fireChatUsedEvent(uint chatLength, bool isSlashCommand);
 
@@ -176,11 +188,16 @@ public:
         std::string const& achievementId
     );
 
-    MCVAPI void fireEventActorMovementCorrectionDivergence(::ActorType, std::vector<float> const&);
+    MCVAPI void
+    fireEventActorMovementCorrectionDivergence(::ActorType actorType, std::vector<float> const& divergences);
 
     MCVAPI void fireEventActorValueValidationFailed(std::string const& invalidValue, char const* caller);
 
-    MCVAPI void fireEventAddedFriend(std::string const&, ::IMinecraftEventing::AddedFriendLocation, bool);
+    MCVAPI void fireEventAddedFriend(
+        std::string const&                        addedXuid,
+        ::IMinecraftEventing::AddedFriendLocation location,
+        bool                                      success
+    );
 
     MCVAPI void fireEventAndroidHelpRequest();
 
@@ -212,7 +229,7 @@ public:
         std::string const& serverVersion
     );
 
-    MCVAPI void fireEventBlockUser(std::string const&, bool, bool);
+    MCVAPI void fireEventBlockUser(std::string const& xuid, bool isSuccess, bool isBlocked);
 
     MCVAPI void fireEventBoardTextUpdated(class ChalkboardBlockActor& board);
 
@@ -232,7 +249,11 @@ public:
 
     MCVAPI void fireEventCameraUsed(bool isSelfie);
 
-    MCVAPI void fireEventChatFloodingActionTaken(std::string const&, ::Safety::ChatFloodingAction, std::string const&);
+    MCVAPI void fireEventChatFloodingActionTaken(
+        std::string const&           authorXuid,
+        ::Safety::ChatFloodingAction action,
+        std::string const&           message
+    );
 
     MCVAPI void fireEventChatSettingsUpdated(
         class Player const*                                player,
@@ -247,13 +268,32 @@ public:
 
     MCVAPI void fireEventClientLeftGameDueToUnrecoverableError(std::string const& reason, bool isServer);
 
-    MCVAPI void fireEventCloudMyWorldsSummary(int, int, int, int, int);
+    MCVAPI void fireEventCloudMyWorldsSummary(
+        int totalWorldsCount,
+        int placeholderCount,
+        int needsUploadCount,
+        int ctagMismatchCount,
+        int conflictCount
+    );
 
-    MCVAPI void
-    fireEventCloudOperationEndedEdu(::EduCloud::Operation, std::string const&, std::chrono::milliseconds, uint, uint64, std::optional<std::string> const&, std::optional<std::string> const&, std::optional<std::string> const&, std::optional<std::string> const&);
+    MCVAPI void fireEventCloudOperationEndedEdu(
+        ::EduCloud::Operation             operation,
+        std::string const&                cloudCorrelationId,
+        std::chrono::milliseconds         elapsedTime,
+        uint                              status,
+        uint64                            size,
+        std::optional<std::string> const& driveItemId,
+        std::optional<std::string> const& errorCode,
+        std::optional<std::string> const& errorMessage,
+        std::optional<std::string> const& error
+    );
 
-    MCVAPI void
-    fireEventCloudOperationStartedEdu(::EduCloud::Operation, std::string const&, uint64, std::optional<std::string> const&);
+    MCVAPI void fireEventCloudOperationStartedEdu(
+        ::EduCloud::Operation             operation,
+        std::string const&                cloudCorrelationId,
+        uint64                            size,
+        std::optional<std::string> const& driveItemId
+    );
 
     MCVAPI void fireEventCodeBuilderClosed() const;
 
@@ -303,7 +343,7 @@ public:
 
     MCVAPI void fireEventCrashSystemFailedToInit();
 
-    MCVAPI void fireEventDedicatedServerDiscoveryResponse(int, int);
+    MCVAPI void fireEventDedicatedServerDiscoveryResponse(int status, int retryAttempt);
 
     MCVAPI void
     fireEventDefaultCastSelected(int previewIndex, class mce::UUID appearanceId, std::string const& appearanceName);
@@ -329,7 +369,13 @@ public:
 
     MCVAPI void fireEventDiskStatus(::DiskStatus status, ::Core::LevelStorageState errorCode, uint64 freeSpace);
 
-    MCVAPI void fireEventDlcStorageFull(std::string const&, uint64, uint64, uint64, uint64);
+    MCVAPI void fireEventDlcStorageFull(
+        std::string const& productId,
+        uint64             dlcSize,
+        uint64             onDiskScratchSpace,
+        uint64             scratchSpace,
+        uint64             premiumSpace
+    );
 
     MCVAPI void fireEventEduContentVerificationFailed() const;
 
@@ -354,7 +400,7 @@ public:
 
     MCVAPI void fireEventEmptyLibraryCategoryError(std::string const& categoryTitle) const;
 
-    MCVAPI void fireEventEncyclopediaTopicChanged(std::string const&, ::InputMode);
+    MCVAPI void fireEventEncyclopediaTopicChanged(std::string const& topicName, ::InputMode inputMode);
 
     MCVAPI void fireEventEntitlementCacheLoadTimeout();
 
@@ -371,7 +417,7 @@ public:
 
     MCVAPI void fireEventGameRulesUpdated(int oldValue, int newValue, std::string const& gameRuleName);
 
-    MCVAPI void fireEventGameTip(int, int, int, ::InputMode);
+    MCVAPI void fireEventGameTip(int gameTipId, int gameTipEventType, int gameTipTestGroup, ::InputMode inputMode);
 
     MCVAPI void fireEventGoogleAccountHoldWarning(bool navigatedToSubscription);
 
@@ -416,7 +462,7 @@ public:
         std::unordered_map<std::string, std::string> const& additionalProperties
     );
 
-    MCVAPI void fireEventInboxSummary(struct Social::Events::InboxSummaryData const&);
+    MCVAPI void fireEventInboxSummary(struct Social::Events::InboxSummaryData const& data);
 
     MCVAPI void fireEventJoinByCode(std::string const&);
 
@@ -446,25 +492,38 @@ public:
 
     MCVAPI void fireEventLockedItemGiven();
 
-    MCVAPI void
-    fireEventMessageReceived(std::string const&, std::string const&, std::string const&, std::string const&, bool);
-
-    MCVAPI void fireEventMessageServiceImpression(
-        std::string const&,
-        std::string const&,
-        std::string const&,
-        std::string const&,
-        bool
+    MCVAPI void fireEventMessageReceived(
+        std::string const& messageId,
+        std::string const& messageSessionId,
+        std::string const& Surface,
+        std::string const& Template,
+        bool               isControl
     );
 
-    MCVAPI void fireEventModalShown(std::string const&, std::unordered_map<std::string, std::string> const&) const;
+    MCVAPI void fireEventMessageServiceImpression(
+        std::string const& messageId,
+        std::string const& messageSessionId,
+        std::string const& Surface,
+        std::string const& Template,
+        bool               isControl
+    );
 
-    MCVAPI void
-    fireEventMultiplayerClientConnectionStateChanged(std::string const&, uint, uint, uint, std::string const&);
+    MCVAPI void fireEventModalShown(
+        std::string const&                                  modalName,
+        std::unordered_map<std::string, std::string> const& details
+    ) const;
 
-    MCVAPI void fireEventMultiplayerSessionUpdate(class Bedrock::NonOwnerPointer<class MultiPlayerLevel>);
+    MCVAPI void fireEventMultiplayerClientConnectionStateChanged(
+        std::string const& connectionType,
+        uint               fromState,
+        uint               toState,
+        uint               port,
+        std::string const& status
+    );
 
-    MCVAPI void fireEventMuteUser(std::string const&, bool, bool);
+    MCVAPI void fireEventMultiplayerSessionUpdate(class Bedrock::NonOwnerPointer<class MultiPlayerLevel> level);
+
+    MCVAPI void fireEventMuteUser(std::string const& xuid, bool isSuccess, bool isMuted);
 
     MCVAPI void fireEventNewContentCheckCompleted(std::string const& newContentPrefix, bool hasNewStoreContent);
 
@@ -473,26 +532,38 @@ public:
     MCVAPI void
     fireEventOfferRated(std::string const& productId, int rating, int previous_rating, int count, double timeElapsed);
 
-    MCVAPI void fireEventOnAppResume(std::vector<struct SerialWorkListLogEntry> const&);
+    MCVAPI void fireEventOnAppResume(std::vector<struct SerialWorkListLogEntry> const& performanceCountsAndTimings);
 
-    MCVAPI void fireEventOnAppStart(std::vector<struct SerialWorkListLogEntry> const&);
+    MCVAPI void fireEventOnAppStart(std::vector<struct SerialWorkListLogEntry> const& performanceCountsAndTimings);
 
-    MCVAPI void fireEventOnAppSuspend(std::vector<struct SerialWorkListLogEntry> const&, bool);
-
-    MCVAPI void fireEventOnClientDisconnect(::SubClientId, bool, ::Connection::DisconnectFailReason);
-
-    MCVAPI void fireEventOnDeviceLost(std::vector<struct SerialWorkListLogEntry> const&);
+    MCVAPI void fireEventOnAppSuspend(
+        std::vector<struct SerialWorkListLogEntry> const& performanceCountsAndTimings,
+        bool                                              forceDisableEvents
+    );
 
     MCVAPI void
-    fireEventOnServerDisconnect(::Connection::DisconnectFailReason, std::string const&, ::SubClientId, std::string const&, uint64, std::string const&);
+    fireEventOnClientDisconnect(::SubClientId subId, bool isNetworked, ::Connection::DisconnectFailReason reason);
 
-    MCVAPI void fireEventOnSuccessfulClientLogin(class MultiPlayerLevel const*);
+    MCVAPI void fireEventOnDeviceLost(std::vector<struct SerialWorkListLogEntry> const& performanceCountsAndTimings);
 
-    MCVAPI void fireEventOnboardingWorldCreationUsage(bool, bool, bool);
+    MCVAPI void fireEventOnServerDisconnect(
+        ::Connection::DisconnectFailReason reason,
+        std::string const&                 disconnectedClientId,
+        ::SubClientId                      subId,
+        std::string const&                 reasonContext,
+        uint64                             clientCount,
+        std::string const&                 firstTimeStamp
+    );
 
-    MCVAPI void fireEventOneDSPlayerReportPayload(std::string const&, std::string const&);
+    MCVAPI void fireEventOnSuccessfulClientLogin(class MultiPlayerLevel const* level);
 
-    MCVAPI void fireEventOptionsChanged(std::string const&, std::unordered_map<std::string, int> const&) const;
+    MCVAPI void
+    fireEventOnboardingWorldCreationUsage(bool onboardingWorldCreationUsed, bool hasWorlds, bool hasOnlyBaseGamePacks);
+
+    MCVAPI void fireEventOneDSPlayerReportPayload(std::string const& reportPayloadJson, std::string const& reportID);
+
+    MCVAPI void
+    fireEventOptionsChanged(std::string const& optionGroup, std::unordered_map<std::string, int> const& events) const;
 
     MCVAPI void fireEventOptionsUpdated(class Options& options, ::InputMode inputMode, bool onStartup);
 
@@ -507,15 +578,15 @@ public:
     MCVAPI void fireEventPackUpgradeAttempt(class PackManifest const& manifest, class PackReport const& report);
 
     MCVAPI void fireEventPacketViolationDetected(
-        uint64,
-        std::string,
-        ::PacketViolationResponse,
-        ::MinecraftPacketIds,
-        class NetworkIdentifier const&,
-        uint,
-        ::SubClientId,
-        ::SubClientId,
-        uint
+        uint64                         readResult,
+        std::string                    readResultContext,
+        ::PacketViolationResponse      violationResponse,
+        ::MinecraftPacketIds           violatingPacketId,
+        class NetworkIdentifier const& netId,
+        uint                           numViolations,
+        ::SubClientId                  clientSubId,
+        ::SubClientId                  senderSubId,
+        uint                           packetStreamLength
     );
 
     MCVAPI void fireEventPerformanceContext(class PerfContextTrackerReport const& perfContextReport);
@@ -574,7 +645,7 @@ public:
 
     MCVAPI void fireEventPersonaLoadingPieces(uint piecesLoaded, double timeToLoadInSeconds);
 
-    MCVAPI void fireEventPersonaOfferClicked(class Social::eventData::PersonaOfferClickedData const&);
+    MCVAPI void fireEventPersonaOfferClicked(class Social::eventData::PersonaOfferClickedData const& eventData);
 
     MCVAPI void fireEventPersonaSkinChanged(
         std::string const& personaProfile,
@@ -602,10 +673,14 @@ public:
         bool               personaUsesClassicSkin
     );
 
-    MCVAPI void
-    fireEventPlayIntegrityCheck(std::string const&, std::string const&, std::string const&, std::string const&);
+    MCVAPI void fireEventPlayIntegrityCheck(
+        std::string const& result,
+        std::string const& appRecognitionVerdict,
+        std::string const& deviceIntegrity,
+        std::string const& appLicensingVerdict
+    );
 
-    MCVAPI void fireEventPlayerActionComparisonFailed(std::string const&);
+    MCVAPI void fireEventPlayerActionComparisonFailed(std::string const& message);
 
     MCVAPI void fireEventPlayerAttemptingExploit(class Player* player, ::IMinecraftEventing::ExploitType exploitType);
 
@@ -616,18 +691,18 @@ public:
     MCVAPI void fireEventPlayerDamaged(class Player* player, ::ActorDamageCause damageCause);
 
     MCVAPI void fireEventPlayerJoinWorld(
-        uint const&,
-        ::SubClientId,
-        bool,
-        std::optional<bool>,
-        ::IConnectionEventing::PlayerJoinWorldAttemptState,
-        int,
-        ::Connection::DisconnectFailReason,
-        ::TransportLayer,
-        ::IMinecraftEventing::NetworkType,
-        ::Social::MultiplayerState,
-        bool,
-        ::Social::MultiplayerServiceIdentifier
+        uint const&                                        userId,
+        ::SubClientId                                      subId,
+        bool                                               isJoiningLocalServer,
+        std::optional<bool>                                isUsingTURN,
+        ::IConnectionEventing::PlayerJoinWorldAttemptState JoinState,
+        int                                                attemptId,
+        ::Connection::DisconnectFailReason                 failReason,
+        ::TransportLayer                                   transportLayer,
+        ::IMinecraftEventing::NetworkType                  networkTypeOverride,
+        ::Social::MultiplayerState                         multiplayerState,
+        bool                                               isConnectedToApplicationLayer,
+        ::Social::MultiplayerServiceIdentifier             multiplayerServiceIdentifier
     );
 
     MCVAPI void fireEventPlayerKicked(std::string const& sessionType, std::string const& kickedPlayer);
@@ -644,7 +719,12 @@ public:
     MCVAPI void
     fireEventPlayerMessageTitle(std::string const& fromName, std::string const& toName, std::string const& message);
 
-    MCVAPI void fireEventPlayerReportSent(bool, std::string const&, std::string const&, std::string const&);
+    MCVAPI void fireEventPlayerReportSent(
+        bool               successfulReportSent,
+        std::string const& failureSource,
+        std::string const& failureReason,
+        std::string const& reportID
+    );
 
     MCVAPI void fireEventPlayerTravelled(class Player* player, float metersTravelledSinceLastEvent);
 
@@ -660,7 +740,7 @@ public:
 
     MCVAPI void fireEventPortfolioExported(int imageCount, int captionedCount);
 
-    MCVAPI void fireEventProfanityFilter(bool, bool, bool);
+    MCVAPI void fireEventProfanityFilter(bool localFilter, bool remoteFilter, bool playerFilter);
 
     MCVAPI void fireEventProgressionsSet(std::vector<std::string> const& progressions);
 
@@ -702,7 +782,7 @@ public:
 
     MCVAPI void fireEventPushNotificationReceived(class PushNotificationMessage const& msg);
 
-    MCVAPI void fireEventQueryPurchasesResult(std::string const&, int, bool);
+    MCVAPI void fireEventQueryPurchasesResult(std::string const& storeID, int NumberOfPurchases, bool QuerySucceeded);
 
     MCVAPI void fireEventRealmDownload(
         std::string const& correlationId,
@@ -731,7 +811,12 @@ public:
 
     MCVAPI void fireEventRealmUrlGenerated(std::string const& url, struct Realms::RealmId const& worldId);
 
-    MCVAPI void fireEventRealmsStoriesOptIn(std::string const&, std::string const&, std::string const&, bool);
+    MCVAPI void fireEventRealmsStoriesOptIn(
+        std::string const& correlationId,
+        std::string const& action,
+        std::string const& realmId,
+        bool               isOwner
+    );
 
     MCVAPI void fireEventRealmsSubscriptionPurchaseFailed(
         struct ProductSku const&      productSku,
@@ -753,9 +838,9 @@ public:
 
     MCVAPI void fireEventRespondedToAcceptContent(struct PacksInfoData const& data, bool accepted);
 
-    MCVAPI void fireEventSafetyHTTPRequest(std::string const&, std::string const&, int);
+    MCVAPI void fireEventSafetyHTTPRequest(std::string const& method, std::string const& url, int responseCode);
 
-    MCVAPI void fireEventSaveDataExpansion(uint64, uint64, uint64);
+    MCVAPI void fireEventSaveDataExpansion(uint64 preExpansionSize, uint64 postExpansionSize, uint64 levelUsedSize);
 
     MCVAPI void fireEventScreenChanged(
         uint const&                                         userId,
@@ -816,7 +901,11 @@ public:
         int                     imageCount
     );
 
-    MCVAPI void fireEventServerPlayerJoinedGame(class NetworkIdentifier const&, ::SubClientId, std::string const&);
+    MCVAPI void fireEventServerPlayerJoinedGame(
+        class NetworkIdentifier const& id,
+        ::SubClientId                  subId,
+        std::string const&             firstConnectionTime
+    );
 
     MCVAPI void fireEventServerRespawnSearchTime(class Player& player, class PlayerRespawnTelemetryData const& data);
 
@@ -850,11 +939,25 @@ public:
         std::vector<std::pair<std::string, std::string>> const& details
     );
 
-    MCVAPI void
-    fireEventSignInToIdentity(::IMinecraftEventing::SignInAccountType, ::Social::IdentitySignInTrigger, std::string const&, bool, ::IMinecraftEventing::SignInStage, ::Social::SignInResult, int, struct Social::PlayerIDs, std::string const&);
+    MCVAPI void fireEventSignInToIdentity(
+        ::IMinecraftEventing::SignInAccountType accountType,
+        ::Social::IdentitySignInTrigger         trigger,
+        std::string const&                      signInSource,
+        bool                                    signInUIShown,
+        ::IMinecraftEventing::SignInStage       stage,
+        ::Social::SignInResult                  result,
+        int                                     retryCount,
+        struct Social::PlayerIDs                ids,
+        std::string const&                      errorCode
+    );
 
-    MCVAPI void
-    fireEventSignOutEdu(std::string const&, ::edu::Role, std::string const&, std::string const&, std::string const&);
+    MCVAPI void fireEventSignOutEdu(
+        std::string const& mutsUserId,
+        ::edu::Role        role,
+        std::string const& tenantType,
+        std::string const& action,
+        std::string const& error
+    );
 
     MCVAPI void fireEventSignOutOfIdentity(
         ::IMinecraftEventing::SignInAccountType accountType,
@@ -863,8 +966,13 @@ public:
         std::string const&                      errorCode
     );
 
-    MCVAPI void
-    fireEventSignalServiceConnect(::IConnectionEventing::SignalServiceConnectState, bool, int, uint64, std::string const&);
+    MCVAPI void fireEventSignalServiceConnect(
+        ::IConnectionEventing::SignalServiceConnectState connectionAction,
+        bool                                             bIsSigningInAsHost,
+        int                                              errorCode,
+        uint64                                           netherNetId,
+        std::string const&                               correlationId
+    );
 
     MCVAPI void fireEventSplitScreenUpdated(class IClientInstance const& client);
 
@@ -878,8 +986,11 @@ public:
         ::Social::MultiplayerServiceIdentifier friendWorldType
     );
 
-    MCVAPI void
-    fireEventStartupPerformance(std::vector<struct SerialWorkListLogEntry> const&, std::vector<struct SerialWorkListLogEntry> const&, std::vector<struct SerialWorkListLogEntry> const&);
+    MCVAPI void fireEventStartupPerformance(
+        std::vector<struct SerialWorkListLogEntry> const& preLoadingBar,
+        std::vector<struct SerialWorkListLogEntry> const& loadingBar,
+        std::vector<struct SerialWorkListLogEntry> const& postLoadingBar
+    );
 
     MCVAPI void fireEventStorage(int state, std::string const& extra);
 
@@ -896,9 +1007,9 @@ public:
 
     MCVAPI void fireEventStoreLocalizationBinaryFetchResponse(int status, uint currentFetchAttempt);
 
-    MCVAPI void fireEventStoreOfferClicked(class Social::eventData::StoreOfferClickedData const&);
+    MCVAPI void fireEventStoreOfferClicked(class Social::eventData::StoreOfferClickedData const& eventData);
 
-    MCVAPI void fireEventStoreOfferClicked(std::string, std::string const&);
+    MCVAPI void fireEventStoreOfferClicked(std::string telemetryId, std::string const& productId);
 
     MCVAPI void fireEventStorePlayFabRequestResponse(ushort status);
 
@@ -919,11 +1030,16 @@ public:
 
     MCVAPI void fireEventTagButtonPressed(std::string const& tag, bool showMore) const;
 
-    MCVAPI void fireEventTextProcessorShadowban(std::string const&, std::string const&, uint, uint);
+    MCVAPI void fireEventTextProcessorShadowban(
+        std::string const& authorId,
+        std::string const& message,
+        uint               hashesInMessage,
+        uint               hashesToDrop
+    );
 
-    MCVAPI void fireEventTextProcessorStartupFailed(std::string const&, int, int);
+    MCVAPI void fireEventTextProcessorStartupFailed(std::string const& stage, int retryCount, int maxRetryCount);
 
-    MCVAPI void fireEventTrackDeeplinks(std::string const&, std::string const&);
+    MCVAPI void fireEventTrackDeeplinks(std::string const& deeplinkDestination, std::string const& deeplinkSource);
 
     MCVAPI void fireEventTreatmentPackApplied(class PackManifest const& manifest);
 
@@ -945,7 +1061,7 @@ public:
 
     MCVAPI void fireEventTreatmentsCleared();
 
-    MCVAPI void fireEventTreatmentsSet(std::vector<std::string> const&, std::string const&);
+    MCVAPI void fireEventTreatmentsSet(std::vector<std::string> const& treatments, std::string const& treatmentContext);
 
     MCVAPI void fireEventTrialDeviceIdCorrelation(
         int64              myTime,
@@ -954,22 +1070,22 @@ public:
         std::string const& theirLastSessionId
     );
 
-    MCVAPI void fireEventTrialStatusFailed(int);
+    MCVAPI void fireEventTrialStatusFailed(int errorCode);
 
     MCVAPI void fireEventUgcAcquisitionStateChanged(
-        std::string const&,
-        uint64,
-        double,
-        bool,
-        int,
-        bool,
-        int,
-        std::string const&,
-        std::string const&,
-        int
+        std::string const& ugcProductId,
+        uint64             downloadSize,
+        double             elapsedTime,
+        bool               isUpdate,
+        int                retries,
+        bool               silent,
+        int                numContentTrackers,
+        std::string const& result,
+        std::string const& resultDetails,
+        int                httpStatus
     );
 
-    MCVAPI void fireEventUnfulfilledPurchaseFound(struct PlatformOfferPurchaseDetails&);
+    MCVAPI void fireEventUnfulfilledPurchaseFound(struct PlatformOfferPurchaseDetails& unfulfilledPurchase);
 
     MCVAPI void fireEventUnknownBlockReceived(struct NewBlockID const& blockId, ushort data);
 
@@ -987,7 +1103,7 @@ public:
 
     MCVAPI void fireEventVRModeChanged(bool isVRModeEnabled);
 
-    MCVAPI void fireEventVehiclePositionComparisonFailed(class Vec3 const&, class Vec3 const&);
+    MCVAPI void fireEventVehiclePositionComparisonFailed(class Vec3 const& clientPos, class Vec3 const& serverPos);
 
     MCVAPI void fireEventVideoPlayed(std::string const& productId, std::string const& videoUrl);
 
@@ -1016,7 +1132,7 @@ public:
 
     MCVAPI void fireEventWorldImported(int64 worldSeed, uint64 worldSize);
 
-    MCVAPI void fireEventWorldImportedResult(::FileArchiverOutcome);
+    MCVAPI void fireEventWorldImportedResult(::FileArchiverOutcome importResult);
 
     MCVAPI void fireEventWorldLoaded(
         class Player*      player,
@@ -1094,7 +1210,11 @@ public:
 
     MCVAPI void firePackSettingsEvent(class PackSettings const& packSettings, class PackManifest const& manifest);
 
-    MCVAPI void firePassthroughTextProcessEvent(std::string const&, ::TextProcessingEventOrigin, std::string const&);
+    MCVAPI void firePassthroughTextProcessEvent(
+        std::string const&          authorId,
+        ::TextProcessingEventOrigin eventOrigin,
+        std::string const&          message
+    );
 
     MCVAPI void firePerfTestEvent(
         std::string const&                                testArtifact,
@@ -1114,17 +1234,17 @@ public:
     );
 
     MCVAPI void firePlayerAccountMetadata(
-        struct Social::PermissionCheckResult,
-        struct Social::PermissionCheckResult,
-        struct Social::PermissionCheckResult,
-        struct Social::PermissionCheckResult,
-        struct Social::PermissionCheckResult,
-        struct Social::PermissionCheckResult,
-        bool,
-        bool
+        struct Social::PermissionCheckResult multiPlayerAllowed,
+        struct Social::PermissionCheckResult chatAllowed,
+        struct Social::PermissionCheckResult addFriendAllowed,
+        struct Social::PermissionCheckResult ugcAllowed,
+        struct Social::PermissionCheckResult clubsAllowed,
+        struct Social::PermissionCheckResult viewProfilesAllowed,
+        bool                                 isChildAccount,
+        bool                                 isGuest
     );
 
-    MCVAPI void firePlayerUnexpectedFallDamage(float, bool, float);
+    MCVAPI void firePlayerUnexpectedFallDamage(float fallDistance, bool isVehicle, float divergenceAmount);
 
     MCVAPI void fireQueryOfferResult(std::string const& storeID, int NumberOfOffers, bool QuerySucceeded);
 
@@ -1146,17 +1266,17 @@ public:
     MCVAPI void fireRealmConnectionEventStart(::IMinecraftEventing::RealmConnectionFlow realmConnectionFlow);
 
     MCVAPI void fireSafetyServiceTextProcessEvent(
-        std::string const&,
-        ::TextProcessingEventOrigin,
-        ushort,
-        std::string const&,
-        bool,
-        double,
-        char,
-        char,
-        class Json::Value const&,
-        std::string const&,
-        bool
+        std::string const&          authorId,
+        ::TextProcessingEventOrigin eventOrigin,
+        ushort                      responseCode,
+        std::string const&          message,
+        bool                        wasFlagged,
+        double                      responseTime,
+        char                        risk,
+        char                        trustLevel,
+        class Json::Value const&    events,
+        std::string const&          serverId,
+        bool                        isProcessorOffline
     );
 
     MCVAPI void fireScreenLoadTimeUpdateEvent(
@@ -1169,13 +1289,21 @@ public:
     MCVAPI void
     fireServerConnectionAttemptEvent(std::string const& creatorName, bool isTransfer, std::string const& serverAddress);
 
-    MCVAPI void
-    fireServerConnectionEvent(::IConnectionEventing::ServerConnectionOutcome, uint, double, std::string const&, std::string const&);
+    MCVAPI void fireServerConnectionEvent(
+        ::IConnectionEventing::ServerConnectionOutcome outcome,
+        uint                                           pingLatency,
+        double                                         timeElapsed,
+        std::string const&                             creatorName,
+        std::string const&                             worldId
+    );
 
     MCVAPI void fireServerShutdown(std::string const& serverId);
 
-    MCVAPI void
-    fireServerStarted(::IMinecraftEventing::ServerType, std::string const&, std::unordered_map<std::string, std::string> const&);
+    MCVAPI void fireServerStarted(
+        ::IMinecraftEventing::ServerType                    serverType,
+        std::string const&                                  serverId,
+        std::unordered_map<std::string, std::string> const& propertiesChanged
+    );
 
     MCVAPI void fireShareButtonPressed(
         std::string const&   location,
@@ -1263,7 +1391,7 @@ public:
 
     MCVAPI void registerOptionsObserver(std::shared_ptr<class Options> options);
 
-    MCVAPI void registerSecondaryUserCommonProperties(uint const&, class Social::Identity&) const;
+    MCVAPI void registerSecondaryUserCommonProperties(uint const& userId, class Social::Identity& identity) const;
 
     MCVAPI void removeTestBuildIdTag();
 
@@ -1277,8 +1405,13 @@ public:
 
     MCVAPI void sendCrashTelemetryNow(std::shared_ptr<class Bedrock::SessionInfo> session);
 
-    MCVAPI void
-    setServerIdsforClient(std::string const&, std::string const&, std::string const&, std::string, std::string);
+    MCVAPI void setServerIdsforClient(
+        std::string const& multiplayerCorrelationId,
+        std::string const& serverVersion,
+        std::string const& serverId,
+        std::string        worldId,
+        std::string        scenarioId
+    );
 
     MCVAPI void setShouldHaveAchievementsEnabled(bool value);
 
@@ -1297,7 +1430,7 @@ public:
         std::vector<std::pair<std::string, float>> progressHandlerLoadTimes
     );
 
-    MCVAPI void unregisterSecondaryUserCommonProperties(uint const&) const;
+    MCVAPI void unregisterSecondaryUserCommonProperties(uint const& userId) const;
 
     MCVAPI void updateEditionType();
 
@@ -1315,7 +1448,10 @@ public:
 
     MCAPI void init(class Bedrock::NonOwnerPointer<class AppPlatform> const& appPlatform);
 
-    MCAPI void initForDedicatedServer(class Bedrock::NonOwnerPointer<class AppPlatform> const&, bool);
+    MCAPI void initForDedicatedServer(
+        class Bedrock::NonOwnerPointer<class AppPlatform> const& appPlatform,
+        bool                                                     eventRecordingEnabled
+    );
 
     MCAPI static void
     fireEventAwardAchievement(class Player* player, ::MinecraftEventing::AchievementIds achievementId);
@@ -1349,7 +1485,7 @@ public:
     MCAPI static void
     fireEventJukeboxUsed(class Player* player, class ItemDescriptor const& disc, std::string const& biome);
 
-    MCAPI static void fireEventMobDied(class Mob&, int);
+    MCAPI static void fireEventMobDied(class Mob& mob, int causeOfDeath);
 
     MCAPI static void fireEventMobEffectChanged(
         class Mob&                      mob,
@@ -1357,7 +1493,7 @@ public:
         ::MinecraftEventing::ChangeType change
     );
 
-    MCAPI static void fireEventMobTeleportedToOwner(class Mob&);
+    MCAPI static void fireEventMobTeleportedToOwner(class Mob& mob);
 
     MCAPI static void fireEventPlayerTeleported(
         class Player*                           player,
@@ -1376,7 +1512,12 @@ public:
         std::string const& errorList
     );
 
-    MCAPI static void fireEventWolfArmorDamageValueChanged(class Actor&, class ItemDescriptor const&, int, int);
+    MCAPI static void fireEventWolfArmorDamageValueChanged(
+        class Actor&                owner,
+        class ItemDescriptor const& item,
+        int                         oldDamageValue,
+        int                         newDamageValue
+    );
 
     // NOLINTEND
 
@@ -1400,7 +1541,7 @@ public:
         std::string const& messageType
     );
 
-    MCAPI void firePlayerTelemetryEvent(class Social::Events::PlayerTelemetry const&);
+    MCAPI void firePlayerTelemetryEvent(class Social::Events::PlayerTelemetry const& playerTelemetry);
 
     // NOLINTEND
 

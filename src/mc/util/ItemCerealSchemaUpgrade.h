@@ -17,7 +17,11 @@ public:
     // vIndex: 0
     virtual ~ItemCerealSchemaUpgrade();
 
-    MCAPI ItemCerealSchemaUpgrade(class SemVersion, std::string const&, std::string const&);
+    MCAPI ItemCerealSchemaUpgrade(
+        class SemVersion   targetVersion,
+        std::string const& mSchemaKey,
+        std::string const& mJsonMemberName
+    );
 
     // NOLINTEND
 };

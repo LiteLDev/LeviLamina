@@ -13,7 +13,7 @@ public:
     // NOLINTBEGIN
     MCAPI static struct TickingSystemWithInfo createSystem();
 
-    MCAPI static void pushActors(class ActorOwnerComponent&);
+    MCAPI static void pushActors(class ActorOwnerComponent& actorOwnerComponent);
 
     // NOLINTEND
 };

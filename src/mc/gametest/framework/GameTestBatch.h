@@ -19,8 +19,11 @@ public:
     // NOLINTBEGIN
     MCAPI GameTestBatch(class gametest::GameTestBatch const&);
 
-    MCAPI
-    GameTestBatch(std::string name, std::vector<std::shared_ptr<class gametest::BaseGameTestFunction>>, std::function<void()>);
+    MCAPI GameTestBatch(
+        std::string                                                        name,
+        std::vector<std::shared_ptr<class gametest::BaseGameTestFunction>> testFunctions,
+        std::function<void()>                                              beforeBatchFunction
+    );
 
     MCAPI ~GameTestBatch();
 

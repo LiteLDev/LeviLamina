@@ -24,10 +24,10 @@ public:
     virtual void appendBlock(class Block const& block);
 
     // vIndex: 3
-    virtual class Block const& getBlock(uint const&) const;
+    virtual class Block const& getBlock(uint const& networkId) const;
 
     // vIndex: 4
-    virtual void assignBlockNetworkId(class Block const& block, uint64) const;
+    virtual void assignBlockNetworkId(class Block const& block, uint64 networkId) const;
 
     MCAPI explicit BlockHashPalette(class Level& level);
 

@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/server/commands/CommandBlockMode.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/world/level/block/CommandBlockMode.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
 class CommandBlockActor : public ::BlockActor {
@@ -45,7 +45,8 @@ public:
     virtual std::string const& getCustomName() const;
 
     // vIndex: 25
-    virtual std::string const& getFilteredCustomName(Bedrock::NotNullNonOwnerPtr<class UIProfanityContext> const&);
+    virtual std::string const&
+    getFilteredCustomName(Bedrock::NotNullNonOwnerPtr<class UIProfanityContext> const& context);
 
     // vIndex: 27
     virtual void setCustomName(std::string const& str);

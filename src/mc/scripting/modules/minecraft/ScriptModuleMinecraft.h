@@ -3,73 +3,73 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/StackRefResult.h"
-#include "mc/common/wrapper/WeakRef.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/math/EasingType.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/game_refs/StackRefResult.h"
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/entity/utilities/ActorDamageCause.h"
-#include "mc/entity/utilities/ActorInitializationMethod.h"
-#include "mc/entity/utilities/ActorSelectorType.h"
-#include "mc/enums/AnimationMode.h"
-#include "mc/enums/ClientInputLockCategory.h"
-#include "mc/enums/CurrentCmdVersion.h"
-#include "mc/enums/DynamicPropertyDefinePropertyError.h"
-#include "mc/enums/EasingType.h"
-#include "mc/enums/GameType.h"
-#include "mc/enums/HudElement.h"
-#include "mc/enums/HudVisibility.h"
-#include "mc/enums/Mirror.h"
-#include "mc/enums/ObjectiveSortOrder.h"
-#include "mc/enums/PaletteColor.h"
-#include "mc/enums/PistonState.h"
-#include "mc/enums/Rotation.h"
-#include "mc/enums/SignTextSide.h"
-#include "mc/enums/WatchdogTerminateReason.h"
-#include "mc/external/scripting/ClassBindingBuilder.h"
-#include "mc/external/scripting/ClassBindingBuilderReadOnly.h"
-#include "mc/external/scripting/Closure.h"
-#include "mc/external/scripting/EnumBindingBuilder.h"
-#include "mc/external/scripting/ErrorBindingBuilder.h"
-#include "mc/external/scripting/Generator.h"
-#include "mc/external/scripting/InterfaceBindingBuilder.h"
-#include "mc/external/scripting/Promise.h"
-#include "mc/external/scripting/Result.h"
-#include "mc/external/scripting/ScriptItemCustomComponentConnectors.h"
-#include "mc/external/scripting/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/TypedObjectHandle.h"
-#include "mc/external/scripting/WeakTypedObjectHandle.h"
-#include "mc/scripting/modules/minecraft/ScriptActorLifetimeState.h"
-#include "mc/scripting/modules/minecraft/ScriptAsyncEventMetadata.h"
-#include "mc/scripting/modules/minecraft/ScriptBlockCustomComponentEntityFallOnAfterEvent.h"
-#include "mc/scripting/modules/minecraft/ScriptBlockCustomComponentOnPlaceAfterEvent.h"
-#include "mc/scripting/modules/minecraft/ScriptBlockCustomComponentPlayerDestroyAfterEvent.h"
-#include "mc/scripting/modules/minecraft/ScriptBlockCustomComponentPlayerInteractAfterEvent.h"
-#include "mc/scripting/modules/minecraft/ScriptBlockCustomComponentRandomTickAfterEvent.h"
-#include "mc/scripting/modules/minecraft/ScriptBlockCustomComponentStepOffAfterEvent.h"
-#include "mc/scripting/modules/minecraft/ScriptBlockCustomComponentStepOnAfterEvent.h"
-#include "mc/scripting/modules/minecraft/ScriptBlockCustomComponentTickAfterEvent.h"
-#include "mc/scripting/modules/minecraft/ScriptComponentType.h"
-#include "mc/scripting/modules/minecraft/ScriptDisplayObjectiveSlotId.h"
-#include "mc/scripting/modules/minecraft/ScriptEventSource.h"
+#include "mc/entity/enums/ClientInputLockCategory.h"
+#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/external/scripting/binding_type/ClassBindingBuilderReadOnly.h"
+#include "mc/external/scripting/binding_type/EnumBindingBuilder.h"
+#include "mc/external/scripting/binding_type/ErrorBindingBuilder.h"
+#include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
+#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/external/scripting/lifetime_registry/TypedObjectHandle.h"
+#include "mc/external/scripting/lifetime_registry/WeakTypedObjectHandle.h"
+#include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/script_engine/Closure.h"
+#include "mc/external/scripting/script_engine/Generator.h"
+#include "mc/external/scripting/script_engine/Promise.h"
 #include "mc/scripting/modules/minecraft/ScriptFacing.h"
-#include "mc/scripting/modules/minecraft/ScriptFluidType.h"
-#include "mc/scripting/modules/minecraft/ScriptObjectiveSortOrderType.h"
-#include "mc/scripting/modules/minecraft/ScriptScoreboardIdentityType_t.h"
-#include "mc/scripting/modules/minecraft/ScriptTickSignal.h"
 #include "mc/scripting/modules/minecraft/ScriptTimeOfDay.h"
 #include "mc/scripting/modules/minecraft/ScriptWeatherType.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/scripting/modules/minecraft/actor/ScriptActorLifetimeState.h"
+#include "mc/scripting/modules/minecraft/block/ScriptFluidType.h"
+#include "mc/scripting/modules/minecraft/components/ScriptComponentType.h"
+#include "mc/scripting/modules/minecraft/events/ScriptBlockCustomComponentEntityFallOnAfterEvent.h"
+#include "mc/scripting/modules/minecraft/events/ScriptBlockCustomComponentOnPlaceAfterEvent.h"
+#include "mc/scripting/modules/minecraft/events/ScriptBlockCustomComponentPlayerDestroyAfterEvent.h"
+#include "mc/scripting/modules/minecraft/events/ScriptBlockCustomComponentPlayerInteractAfterEvent.h"
+#include "mc/scripting/modules/minecraft/events/ScriptBlockCustomComponentRandomTickAfterEvent.h"
+#include "mc/scripting/modules/minecraft/events/ScriptBlockCustomComponentStepOffAfterEvent.h"
+#include "mc/scripting/modules/minecraft/events/ScriptBlockCustomComponentStepOnAfterEvent.h"
+#include "mc/scripting/modules/minecraft/events/ScriptBlockCustomComponentTickAfterEvent.h"
+#include "mc/scripting/modules/minecraft/events/ScriptEventSource.h"
+#include "mc/scripting/modules/minecraft/events/ScriptItemCustomComponentConnectors.h"
+#include "mc/scripting/modules/minecraft/events/ScriptTickSignal.h"
+#include "mc/scripting/modules/minecraft/events/metadata/ScriptAsyncEventMetadata.h"
+#include "mc/scripting/modules/minecraft/scoreboard/ScriptDisplayObjectiveSlotId.h"
+#include "mc/scripting/modules/minecraft/scoreboard/ScriptObjectiveSortOrderType.h"
+#include "mc/scripting/modules/minecraft/scoreboard/ScriptScoreboardIdentityType_t.h"
+#include "mc/server/commands/CurrentCmdVersion.h"
+#include "mc/util/AnimationMode.h"
+#include "mc/util/HudElement.h"
+#include "mc/util/HudVisibility.h"
+#include "mc/util/Mirror.h"
+#include "mc/util/Rotation.h"
+#include "mc/world/actor/ActorDamageCause.h"
+#include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/FeedItem.h"
-#include "mc/world/actor/player/PlayerScoreSetFunction.h"
+#include "mc/world/actor/PaletteColor.h"
+#include "mc/world/actor/selectors/ActorSelectorType.h"
 #include "mc/world/events/EventResult.h"
-#include "mc/world/item/components/ItemColor.h"
-#include "mc/world/item/components/ItemLockMode.h"
-#include "mc/world/item/components/ItemUseMethod.h"
+#include "mc/world/events/WatchdogTerminateReason.h"
+#include "mc/world/item/ItemColor.h"
+#include "mc/world/item/ItemLockMode.h"
+#include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/enchanting/Enchant.h"
-#include "mc/world/level/block/utils/CompoundBlockVolumeAction.h"
-#include "mc/world/level/block/utils/CompoundBlockVolumePositionRelativity.h"
-#include "mc/world/level/block/utils/SimpleBlockVolume.h"
+#include "mc/world/level/GameType.h"
+#include "mc/world/level/block/CompoundBlockVolumeAction.h"
+#include "mc/world/level/block/CompoundBlockVolumePositionRelativity.h"
+#include "mc/world/level/block/SimpleBlockVolume.h"
+#include "mc/world/level/block/actor/PistonState.h"
+#include "mc/world/level/block/actor/SignTextSide.h"
 #include "mc/world/level/levelgen/structure/StructureRedstoneSaveMode.h"
+#include "mc/world/persistence/DynamicPropertyDefinePropertyError.h"
+#include "mc/world/scores/ObjectiveSortOrder.h"
+#include "mc/world/scores/PlayerScoreSetFunction.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -391,7 +391,8 @@ namespace ScriptModuleMinecraft {
 // NOLINTBEGIN
 MCAPI void SetUpScriptAssertHandler();
 
-MCAPI struct Scripting::Error _handleDefinePropertyError(::DynamicPropertyDefinePropertyError, std::string const&);
+MCAPI struct Scripting::Error
+_handleDefinePropertyError(::DynamicPropertyDefinePropertyError error, std::string const& identifier);
 
 MCAPI class Scripting::ClassBindingBuilder<class BlockPos> bindBlockLocation();
 
@@ -400,13 +401,13 @@ bindFacingEnumV010();
 
 MCAPI class Scripting::EnumBindingBuilder<std::string, ::ScriptModuleMinecraft::ScriptFacing> bindFacingEnumV1();
 
-MCAPI void bindHudElements(class Scripting::ModuleBindingBuilder&);
+MCAPI void bindHudElements(class Scripting::ModuleBindingBuilder& moduleBuilder);
 
-MCAPI void bindHudVisibility(class Scripting::ModuleBindingBuilder&);
+MCAPI void bindHudVisibility(class Scripting::ModuleBindingBuilder& moduleBuilder);
 
 MCAPI class Scripting::EnumBindingBuilder<std::string, ::ItemLockMode> bindItemLockMode();
 
-MCAPI void bindMoonPhases(class Scripting::ModuleBindingBuilder&);
+MCAPI void bindMoonPhases(class Scripting::ModuleBindingBuilder& moduleBuilder);
 
 MCAPI class Scripting::EnumBindingBuilder<std::string, ::ScriptModuleMinecraft::ScriptDisplayObjectiveSlotId>
 bindScriptDisplayObjectiveSlotId();
@@ -418,21 +419,21 @@ MCAPI class Scripting::
     EnumBindingBuilder<::ScriptModuleMinecraft::ScriptTimeOfDay, ::ScriptModuleMinecraft::ScriptTimeOfDay>
     bindTimeOfDay();
 
-MCAPI class Block const*
-extractBlockFromVariant(std::variant<
-                        std::string,
-                        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockType>,
-                        class Scripting::StrongTypedObjectHandle<
-                            class ScriptModuleMinecraft::ScriptBlockPermutation>> const&);
+MCAPI class Block const* extractBlockFromVariant(
+    std::variant<
+        std::string,
+        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockType>,
+        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>> const& block
+);
 
-MCAPI std::string
-      getScriptScoreboardParticipantName(std::variant<
-                                         class Scripting::StrongTypedObjectHandle<
-                                             class ScriptModuleMinecraft::ScriptScoreboardIdentity>,
-                                         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>,
-                                         std::string> const&);
+MCAPI std::string getScriptScoreboardParticipantName(
+    std::variant<
+        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardIdentity>,
+        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>,
+        std::string> const& participant
+);
 
-MCAPI std::string const& scriptDisplayObjectiveSlotIdToString(::ScriptModuleMinecraft::ScriptDisplayObjectiveSlotId);
+MCAPI std::string const& scriptDisplayObjectiveSlotIdToString(::ScriptModuleMinecraft::ScriptDisplayObjectiveSlotId id);
 // NOLINTEND
 
 }; // namespace ScriptModuleMinecraft

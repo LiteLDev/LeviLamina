@@ -28,7 +28,7 @@ public:
 
     MCAPI explicit StructurePoolBlockPredicateBlockMatch(class Block const& block);
 
-    MCAPI explicit StructurePoolBlockPredicateBlockMatch(std::vector<class HashedString>);
+    MCAPI explicit StructurePoolBlockPredicateBlockMatch(std::vector<class HashedString> blockMatchings);
 
     // NOLINTEND
 };

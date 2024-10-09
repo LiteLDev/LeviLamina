@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/StorageVersion.h"
 #include "mc/world/level/chunk/ChunkSource.h"
+#include "mc/world/level/storage/StorageVersion.h"
 
 class LegacyChunkStorage : public ::ChunkSource {
 public:

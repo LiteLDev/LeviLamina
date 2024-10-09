@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/CircuitComponentType.h"
 #include "mc/world/redstone/circuit/components/CircuitComponentList.h"
+#include "mc/world/redstone/circuit/components/CircuitComponentType.h"
 
 class BaseCircuitComponent {
 public:
@@ -30,7 +30,7 @@ public:
     virtual void setDirection(uchar direction);
 
     // vIndex: 5
-    virtual void setConsumePowerAnyDirection(bool);
+    virtual void setConsumePowerAnyDirection(bool canConsumePowerAnyDirection);
 
     // vIndex: 6
     virtual bool canConsumePowerAnyDirection() const;
@@ -103,8 +103,13 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    MCAPI bool
-    trackPowerSource(class CircuitTrackingInfo const& info, int dampening, bool directlyPowered, int data, bool);
+    MCAPI bool trackPowerSource(
+        class CircuitTrackingInfo const& info,
+        int                              dampening,
+        bool                             directlyPowered,
+        int                              data,
+        bool                             isDirectional
+    );
 
     // NOLINTEND
 };

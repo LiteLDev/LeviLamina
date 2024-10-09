@@ -52,7 +52,7 @@ public:
     virtual int
     getContainerSize(class ContainerScreenContext const& screenContext, class Container const& container) const;
 
-    MCAPI explicit Trade1Ingredient2ContainerValidation(bool);
+    MCAPI explicit Trade1Ingredient2ContainerValidation(bool isServerSide);
 
     // NOLINTEND
 };

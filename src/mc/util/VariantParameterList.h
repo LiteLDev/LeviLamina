@@ -15,7 +15,7 @@ public:
     // NOLINTBEGIN
     MCAPI VariantParameterList();
 
-    MCAPI bool hasParameter(::Puv::Legacy::FilterSubject) const;
+    MCAPI bool hasParameter(::Puv::Legacy::FilterSubject parameter) const;
 
     // NOLINTEND
 };

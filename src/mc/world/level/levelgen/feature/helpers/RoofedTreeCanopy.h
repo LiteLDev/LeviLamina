@@ -31,8 +31,11 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI std::optional<class BlockPos>
-    _placeLeafAt(class IBlockWorldGenAPI& target, class BlockPos const& pos, gsl::not_null<class Block const*>) const;
+    MCAPI std::optional<class BlockPos> _placeLeafAt(
+        class IBlockWorldGenAPI&          target,
+        class BlockPos const&             pos,
+        gsl::not_null<class Block const*> leavesBlock
+    ) const;
 
     // NOLINTEND
 };

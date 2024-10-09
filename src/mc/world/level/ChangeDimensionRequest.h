@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 
 class ChangeDimensionRequest {
 public:
@@ -15,11 +15,18 @@ public:
     // NOLINTBEGIN
     MCAPI ChangeDimensionRequest();
 
-    MCAPI ChangeDimensionRequest(class ChangeDimensionRequest&&);
+    MCAPI ChangeDimensionRequest(class ChangeDimensionRequest&& other);
 
-    MCAPI ChangeDimensionRequest(DimensionType, DimensionType, class Vec3, class Vec3, bool, bool);
+    MCAPI ChangeDimensionRequest(
+        DimensionType fromId,
+        DimensionType toId,
+        class Vec3    fromLocation,
+        class Vec3    toLocation,
+        bool          usePortal,
+        bool          respawn
+    );
 
-    MCAPI class ChangeDimensionRequest& operator=(class ChangeDimensionRequest&&);
+    MCAPI class ChangeDimensionRequest& operator=(class ChangeDimensionRequest&& other);
 
     MCAPI ~ChangeDimensionRequest();
 

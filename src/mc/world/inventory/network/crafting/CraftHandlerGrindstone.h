@@ -4,9 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/world/containers/ContainerEnumName.h"
+#include "mc/world/inventory/network/ItemStackNetResult.h"
+#include "mc/world/inventory/network/ItemStackRequestActionType.h"
 #include "mc/world/inventory/network/crafting/CraftHandlerBase.h"
-#include "mc/world/item/components/ItemStackNetResult.h"
-#include "mc/world/item/components/ItemStackRequestActionType.h"
 
 class CraftHandlerGrindstone : public ::CraftHandlerBase {
 public:
@@ -27,7 +27,7 @@ public:
     virtual void _postCraftRequest(bool wasSuccess);
 
     MCAPI static std::pair<class ItemStack, struct ItemStackNetIdVariant>
-    getResultItem(class ItemStack const&, class ItemStack const&);
+    getResultItem(class ItemStack const& input, class ItemStack const& additional);
 
     // NOLINTEND
 
@@ -35,10 +35,14 @@ public:
     // NOLINTBEGIN
     MCAPI int _getExperienceFromItem(class ItemStack const& stack) const;
 
-    MCAPI bool _resolveNetIdAndValidate(::ContainerEnumName, uchar slot, struct ItemStackNetIdVariant const& netId);
+    MCAPI bool
+    _resolveNetIdAndValidate(::ContainerEnumName containerNetId, uchar slot, struct ItemStackNetIdVariant const& netId);
 
-    MCAPI static class ItemStack
-    _getResultItemWithNoEnchants(class ItemStack&, std::vector<class ItemStack> const&, bool&);
+    MCAPI static class ItemStack _getResultItemWithNoEnchants(
+        class ItemStack&                    result,
+        std::vector<class ItemStack> const& inputItems,
+        bool&                               onlyHasCurses
+    );
 
     // NOLINTEND
 };

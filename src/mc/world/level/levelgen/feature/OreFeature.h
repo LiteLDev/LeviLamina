@@ -22,7 +22,7 @@ public:
 
     public:
         // NOLINTBEGIN
-        MCAPI void setRules(std::vector<struct ReplaceRule> const&);
+        MCAPI void setRules(std::vector<struct ReplaceRule> const& replaceRules);
 
         // NOLINTEND
     };
@@ -50,7 +50,7 @@ public:
 
     MCAPI OreFeature();
 
-    MCAPI OreFeature(int count, std::vector<struct ReplaceRule>&&);
+    MCAPI OreFeature(int count, std::vector<struct ReplaceRule>&& replaceRules);
 
     // NOLINTEND
 };

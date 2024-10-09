@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/AnimationMode.h"
-#include "mc/enums/Mirror.h"
-#include "mc/enums/Rotation.h"
-#include "mc/world/level/levelgen/structure/StructureBlockType.h"
+#include "mc/util/AnimationMode.h"
+#include "mc/util/Mirror.h"
+#include "mc/util/Rotation.h"
+#include "mc/world/level/block/StructureBlockType.h"
 #include "mc/world/level/levelgen/structure/StructureRedstoneSaveMode.h"
 
 class StructureEditorData {
@@ -60,11 +60,11 @@ public:
 
     MCAPI void save(class CompoundTag& tag) const;
 
-    MCAPI void setAllowNonTickingPlayerAndTickingAreaChunks(bool allowNonPlayerTicking);
+    MCAPI void setAllowNonTickingPlayerAndTickingAreaChunks(bool allowNonTickingPlayerAndTickingAreaChunks);
 
-    MCAPI void setAnimationMode(::AnimationMode);
+    MCAPI void setAnimationMode(::AnimationMode animationMode);
 
-    MCAPI void setAnimationSeconds(float);
+    MCAPI void setAnimationSeconds(float animationSeconds);
 
     MCAPI void setAnimationTicks(uint animationTicks);
 
@@ -76,7 +76,7 @@ public:
 
     MCAPI void setIntegrityValue(float integrityValue);
 
-    MCAPI void setIsWaterLogged(bool);
+    MCAPI void setIsWaterLogged(bool waterLogged);
 
     MCAPI void setLastTouchedByPlayerID(struct ActorUniqueID lastTouchedByPlayerID);
 

@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/Exclude.h"
-#include "mc/common/wrapper/Include.h"
-#include "mc/common/wrapper/Optional.h"
-#include "mc/common/wrapper/ViewT.h"
-#include "mc/entity/EntityModifier.h"
-#include "mc/world/components/FlagComponent.h"
+#include "mc/deps/ecs/Optional.h"
+#include "mc/deps/ecs/ViewT.h"
+#include "mc/deps/ecs/strict/EntityModifier.h"
+#include "mc/deps/ecs/strict/Exclude.h"
+#include "mc/deps/ecs/strict/Include.h"
+#include "mc/entity/components/FlagComponent.h"
 
 class MinecartComeOffRailSystem {
 public:
@@ -19,8 +19,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static void
-    _minecartComeOffRailSystem(class StrictEntityContext&, class RailMovementComponent const&, struct StateVectorComponent&, class Optional<struct OnGroundFlagComponent const>, class EntityModifier<struct MoveRequestComponent>);
+    MCAPI static void _minecartComeOffRailSystem(
+        class StrictEntityContext&                         context,
+        class RailMovementComponent const&                 railMovementComponent,
+        struct StateVectorComponent&                       stateVectorComponent,
+        class Optional<struct OnGroundFlagComponent const> onGroundFlagComponent,
+        class EntityModifier<struct MoveRequestComponent>  mod
+    );
 
     MCAPI static struct TickingSystemWithInfo createSystem();
 

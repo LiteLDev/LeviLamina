@@ -13,8 +13,13 @@ public:
     // NOLINTBEGIN
     MCAPI static struct TickingSystemWithInfo createGlideInputSystem();
 
-    MCAPI static void
-    doGlideInputSystem(struct MovementAbilitiesComponent const&, struct MoveInputComponent const&, struct ActorDataFlagComponent const&, struct FallFlyTicksComponent&, struct StateVectorComponent&);
+    MCAPI static void doGlideInputSystem(
+        struct MovementAbilitiesComponent const& abilitiesComponent,
+        struct MoveInputComponent const&         moveInputComponent,
+        struct ActorDataFlagComponent const&     synchedActorDataComponent,
+        struct FallFlyTicksComponent&            fallFlyTicksComponent,
+        struct StateVectorComponent&             stateVectorComponent
+    );
 
     // NOLINTEND
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/events/EventResult.h"
 
 // auto generated forward declare list
@@ -37,7 +37,7 @@ public:
     );
 
     // vIndex: 4
-    virtual ::EventResult onServerLevelInitialized(class ServerInstance&, class Level&);
+    virtual ::EventResult onServerLevelInitialized(class ServerInstance&, class Level& level);
 
     // vIndex: 5
     virtual ::EventResult onServerUpdateStart(class ServerInstance&);
@@ -61,21 +61,23 @@ public:
     virtual ::EventResult onStartLeaveGame(class ServerInstance& instance);
 
     // vIndex: 12
-    virtual ::EventResult onEvent(struct ServerInstanceRequestResourceReload const&);
+    virtual ::EventResult onEvent(struct ServerInstanceRequestResourceReload const& reloadEvent);
 
     // vIndex: 13
     virtual ::EventResult onEvent(struct ServerInstanceNotificationEvent const& event);
 
     MCAPI ServerScriptManager(
-        struct ScriptSettings,
-        class Bedrock::NonOwnerPointer<class Scheduler>,
-        class IMinecraftEventing&,
-        class ItemRegistryRef
+        struct ScriptSettings                           scriptSettings,
+        class Bedrock::NonOwnerPointer<class Scheduler> serverScheduler,
+        class IMinecraftEventing&                       minecraftEventings,
+        class ItemRegistryRef                           itemRegistry
     );
 
-    MCAPI void
-    addModuleFilter(std::function<
-                    bool(class PackManifest const&, struct Scripting::ModuleDescriptor const&, struct Scripting::ModuleDescriptor const&, class ScriptPluginResult&)> const&);
+    MCAPI void addModuleFilter(
+        std::function<
+            bool(class PackManifest const&, struct Scripting::ModuleDescriptor const&, struct Scripting::ModuleDescriptor const&, class ScriptPluginResult&)> const&
+            moduleFilter
+    );
 
     MCAPI class ScriptBlockCustomComponentsRegistry& getBlockCustomComponentRegistry() const;
 
@@ -85,13 +87,14 @@ public:
 
     MCAPI void onMainThreadStartLeaveGame();
 
-    MCAPI void shouldInitializeEditorModules(bool);
+    MCAPI void shouldInitializeEditorModules(bool shouldInitialize);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    MCAPI bool _loadAndRunAllPlugins(class ServerInstance&, class ServerLevel&, bool);
+    MCAPI bool
+    _loadAndRunAllPlugins(class ServerInstance& serverInstance, class ServerLevel& serverLevel, bool isReload);
 
     MCAPI void _registerEventHandlers(class Level& level) const;
 

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/cereal/BasicSaver.h"
+#include "mc/external/cereal/BasicSaver.h"
 
 // auto generated forward declare list
 // clang-format off

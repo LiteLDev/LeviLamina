@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/MeleeAttackBaseGoal.h"
 
 class MeleeAttackGoal : public ::MeleeAttackBaseGoal {
@@ -26,13 +26,29 @@ public:
 
     MCAPI explicit MeleeAttackGoal(class Mob& mob);
 
-    MCAPI static bool _canReachTarget(class Mob const&, class Vec3 const&, float, float, float, float, int);
+    MCAPI static bool _canReachTarget(
+        class Mob const&  mob,
+        class Vec3 const& targetPosition,
+        float             attackReachSq,
+        float             targetMinY,
+        float             targetMaxY,
+        float             targetDistanceSqXZ,
+        int               attackTicks
+    );
 
-    MCAPI static bool _canReachTargetLegacy(class Mob const&, class Vec3 const&, float, float, float, float, int);
+    MCAPI static bool _canReachTargetLegacy(
+        class Mob const&  mob,
+        class Vec3 const& targetPosition,
+        float             attackReachSq,
+        float             targetMinY,
+        float             targetMaxY,
+        float             targetDistanceSqXZ,
+        int               attackTicks
+    );
 
-    MCAPI static bool _isTargetInLineOfSight(class Mob const&, class Actor const&);
+    MCAPI static bool _isTargetInLineOfSight(class Mob const& mob, class Actor const& target);
 
-    MCAPI static bool _isTargetInLineOfSightLegacy(class Mob const&, class Actor const&);
+    MCAPI static bool _isTargetInLineOfSightLegacy(class Mob const& mob, class Actor const& target);
 
     // NOLINTEND
 

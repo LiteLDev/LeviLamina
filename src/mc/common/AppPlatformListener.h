@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/OperationMode.h"
+#include "mc/deps/core/platform/OperationMode.h"
 
 class AppPlatformListener {
 public:
@@ -74,7 +74,7 @@ public:
     // vIndex: 19
     virtual void onClipboardPaste(std::string const&);
 
-    MCAPI explicit AppPlatformListener(bool);
+    MCAPI explicit AppPlatformListener(bool doInit);
 
     MCAPI void initListener(float priority);
 

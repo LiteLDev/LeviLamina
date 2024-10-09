@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/AnimationMode.h"
-#include "mc/enums/Mirror.h"
-#include "mc/enums/Rotation.h"
+#include "mc/util/AnimationMode.h"
+#include "mc/util/Mirror.h"
+#include "mc/util/Rotation.h"
 
 class StructureSettings {
 public:
@@ -50,9 +50,9 @@ public:
 
     MCAPI class StructureSettings& operator=(class StructureSettings const&);
 
-    MCAPI void setAllowNonTickingPlayerAndTickingAreaChunks(bool allowNonPlayerTicking);
+    MCAPI void setAllowNonTickingPlayerAndTickingAreaChunks(bool allowNonTickingPlayerAndTickingAreaChunks);
 
-    MCAPI void setAnimationMode(::AnimationMode);
+    MCAPI void setAnimationMode(::AnimationMode animationMode);
 
     MCAPI void setAnimationSeconds(float seconds);
 
@@ -68,7 +68,7 @@ public:
 
     MCAPI void setIntegrityValue(float integrityValue);
 
-    MCAPI void setIsWaterLogged(bool);
+    MCAPI void setIsWaterLogged(bool waterLogged);
 
     MCAPI void setLastTouchedByPlayerID(struct ActorUniqueID lastTouchedByPlayerID);
 
@@ -76,7 +76,7 @@ public:
 
     MCAPI void setPivotFromStructureSize();
 
-    MCAPI void setReloadActorEquipment(bool);
+    MCAPI void setReloadActorEquipment(bool reloadActorEquipment);
 
     MCAPI void setRotation(::Rotation rotation);
 

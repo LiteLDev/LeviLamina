@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/optional_ref.h"
-#include "mc/enums/FertilizerType.h"
-#include "mc/enums/Flip.h"
-#include "mc/enums/ShapeType.h"
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
-#include "mc/world/actor/item/FallingBlock.h"
-#include "mc/world/level/block/utils/BlockProperty.h"
-#include "mc/world/level/block/utils/BlockRenderLayer.h"
-#include "mc/world/level/block/utils/BlockSupportType.h"
+#include "mc/world/Flip.h"
+#include "mc/world/item/FertilizerType.h"
+#include "mc/world/level/ShapeType.h"
+#include "mc/world/level/block/BlockProperty.h"
+#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/BlockSupportType.h"
+#include "mc/world/level/block/FallingBlock.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -31,16 +31,16 @@ public:
     virtual ~DragonEggBlock() = default;
 
     // vIndex: 90
-    virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
+    virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
 
     // vIndex: 101
     virtual bool attack(class Player* player, class BlockPos const& pos) const;
 
     // vIndex: 152
-    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar) const;
 
     // vIndex: 163
-    virtual class mce::Color getDustColor(class Block const& block) const;
+    virtual class mce::Color getDustColor(class Block const&) const;
 
     // vIndex: 164
     virtual std::string getDustParticleName(class Block const&) const;
@@ -51,7 +51,7 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI static void _attemptTeleport(class BlockSource&, class Random&, class BlockPos const&);
+    MCAPI static void _attemptTeleport(class BlockSource& region, class Random& random, class BlockPos const& pos);
 
     // NOLINTEND
 };

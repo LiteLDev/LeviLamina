@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/network/TypedServerNetId.h"
 #include "mc/world/containers/ContainerEnumName.h"
+#include "mc/world/inventory/network/ItemStackNetResult.h"
+#include "mc/world/inventory/network/ItemStackRequestActionType.h"
+#include "mc/world/inventory/network/TypedServerNetId.h"
 #include "mc/world/inventory/network/crafting/CraftHandlerBase.h"
-#include "mc/world/item/components/ItemStackNetResult.h"
-#include "mc/world/item/components/ItemStackRequestActionCraft.h"
-#include "mc/world/item/components/ItemStackRequestActionType.h"
+#include "mc/world/inventory/network/crafting/ItemStackRequestActionCraft.h"
 
 class CraftHandlerCrafting : public ::CraftHandlerBase {
 public:
@@ -27,7 +27,7 @@ public:
     handleConsumedItem(::ContainerEnumName openContainerNetId, uchar slot, class ItemStack const& consumedItem);
 
     // vIndex: 2
-    virtual ::ItemStackNetResult preHandleAction(::ItemStackRequestActionType);
+    virtual ::ItemStackNetResult preHandleAction(::ItemStackRequestActionType requestActionType);
 
     // vIndex: 4
     virtual ::ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const& requestAction);
@@ -41,7 +41,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::ItemStackNetResult _handleAutoCraft(class ItemStackRequestActionCraftRecipeAuto const& requestAction);
 
-    MCAPI void _handleCarefulRestoration(class ItemInstance const&) const;
+    MCAPI void _handleCarefulRestoration(class ItemInstance const& itemInstance) const;
 
     MCAPI ::ItemStackNetResult
     _handleCraftOutput(class ItemStackRequestActionCraft<RecipeNetId, 12> const& requestAction);

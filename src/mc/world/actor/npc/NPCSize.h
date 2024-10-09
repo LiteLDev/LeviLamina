@@ -4,7 +4,7 @@
 
 namespace NPCSize {
 // NOLINTBEGIN
-MCAPI void updateSize(struct AABBShapeComponent const&, struct OffsetsComponent&);
+MCAPI void updateSize(struct AABBShapeComponent const& aabbShape, struct OffsetsComponent& offsets);
 // NOLINTEND
 
 }; // namespace NPCSize

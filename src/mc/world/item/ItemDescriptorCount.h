@@ -35,7 +35,7 @@ public:
 
     MCAPI ItemDescriptorCount(class ItemDescriptor const& descriptor, ushort stackSize);
 
-    MCAPI ItemDescriptorCount(struct ItemTag const&, ushort stackSize);
+    MCAPI ItemDescriptorCount(struct ItemTag const& itemTag, ushort stackSize);
 
     MCAPI ItemDescriptorCount(class Item const& item, int auxValue, ushort stackSize);
 

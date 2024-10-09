@@ -24,9 +24,17 @@ public:
     virtual ~UnderwaterCaveFeature() = default;
 
     // vIndex: 5
-    virtual bool
-    carveEllipsoidVolume(class IBlockWorldGenAPI& target, struct CaveFeatureUtils::CarverConfiguration const& configuration, class Random& random, class ChunkPos const& pos, class Vec3 const& startPos, class BoundingBox const& volume, float rad, float yRad, struct CaveFeatureUtils::CarvingParameters const&)
-        const;
+    virtual bool carveEllipsoidVolume(
+        class IBlockWorldGenAPI&                            target,
+        struct CaveFeatureUtils::CarverConfiguration const& configuration,
+        class Random&                                       random,
+        class ChunkPos const&                               pos,
+        class Vec3 const&                                   startPos,
+        class BoundingBox const&                            volume,
+        float                                               rad,
+        float                                               yRad,
+        struct CaveFeatureUtils::CarvingParameters const&   carveValues
+    ) const;
 
     MCAPI static bool isDiggable(class Block const& block);
 

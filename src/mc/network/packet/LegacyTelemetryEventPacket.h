@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/entity/utilities/ActorDamageCause.h"
-#include "mc/entity/utilities/ActorType.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/events/MinecraftEventing.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
-#include "mc/world/AutomaticID.h"
-#include "mc/world/item/components/ItemUseMethod.h"
+#include "mc/platform/Result.h"
+#include "mc/world/actor/ActorDamageCause.h"
+#include "mc/world/actor/ActorType.h"
+#include "mc/world/item/ItemUseMethod.h"
 
 class LegacyTelemetryEventPacket : public ::Packet {
 public:
@@ -54,61 +54,84 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 4
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     MCAPI LegacyTelemetryEventPacket();
 
-    MCAPI LegacyTelemetryEventPacket(class Player const&, std::string const&);
+    MCAPI LegacyTelemetryEventPacket(class Player const& player, std::string const& codebuilderRuntimeAction);
 
-    MCAPI LegacyTelemetryEventPacket(class Player const*, DimensionType);
+    MCAPI LegacyTelemetryEventPacket(class Player const* player, DimensionType portalBuiltInDimension);
 
-    MCAPI LegacyTelemetryEventPacket(class Player const*, gsl::not_null<class Mob const*>);
+    MCAPI LegacyTelemetryEventPacket(class Player const* player, gsl::not_null<class Mob const*> baby);
 
-    MCAPI LegacyTelemetryEventPacket(class Player const*, struct LegacyTelemetryEventPacket::Data const&);
+    MCAPI LegacyTelemetryEventPacket(class Player const* player, struct LegacyTelemetryEventPacket::Data const& data);
 
-    MCAPI LegacyTelemetryEventPacket(class Player const&, std::string const&, int);
+    MCAPI LegacyTelemetryEventPacket(class Player const& player, std::string const& objective, int score);
 
-    MCAPI LegacyTelemetryEventPacket(class Player const*, DimensionType, DimensionType);
+    MCAPI
+    LegacyTelemetryEventPacket(class Player const* player, DimensionType fromDimension, DimensionType toDimension);
 
-    MCAPI LegacyTelemetryEventPacket(class Player const*, class Raid const&, bool);
+    MCAPI LegacyTelemetryEventPacket(class Player const* player, class Raid const& raid, bool success);
 
     MCAPI LegacyTelemetryEventPacket(
-        class Player const*,
-        gsl::not_null<class Actor const*>,
-        ::MinecraftEventing::InteractionType
+        class Player const*                  player,
+        gsl::not_null<class Actor const*>    interactedEntity,
+        ::MinecraftEventing::InteractionType interactionType
     );
 
-    MCAPI LegacyTelemetryEventPacket(class Player const*, ::MinecraftEventing::AchievementIds, bool);
-
-    MCAPI LegacyTelemetryEventPacket(class Player const*, int, gsl::not_null<class Actor const*>);
-
-    MCAPI LegacyTelemetryEventPacket(class Player const&, class ItemStackBase const&, ::ItemUseMethod, int);
-
-    MCAPI LegacyTelemetryEventPacket(class Player const*, short, uint, short);
-
     MCAPI LegacyTelemetryEventPacket(
-        class Player const*,
-        class Actor const*,
-        gsl::not_null<class Mob const*>,
-        ::ActorDamageCause,
-        ::ActorType
+        class Player const*                 player,
+        ::MinecraftEventing::AchievementIds achievementId,
+        bool                                usePlayerID
     );
 
-    MCAPI LegacyTelemetryEventPacket(class Player const*, std::string const&, int, int, std::string const&);
-
-    MCAPI LegacyTelemetryEventPacket(class Player const*, int, int, ::ActorDamageCause, bool);
+    MCAPI LegacyTelemetryEventPacket(class Player const* player, int partySize, gsl::not_null<class Actor const*> e);
 
     MCAPI LegacyTelemetryEventPacket(
-        class Player const*,
-        class Actor const*,
-        gsl::not_null<class Mob const*>,
-        ::ActorDamageCause,
-        std::string,
-        int,
-        ::ActorType
+        class Player const&        player,
+        class ItemStackBase const& item,
+        ::ItemUseMethod            useMethod,
+        int                        useCount
+    );
+
+    MCAPI
+    LegacyTelemetryEventPacket(class Player const* player, short contentsType, uint contentsColor, short fillLevel);
+
+    MCAPI LegacyTelemetryEventPacket(
+        class Player const*             player,
+        class Actor const*              killerEntity,
+        gsl::not_null<class Mob const*> killedMob,
+        ::ActorDamageCause              cause,
+        ::ActorType                     damageChildType
+    );
+
+    MCAPI LegacyTelemetryEventPacket(
+        class Player const* player,
+        std::string const&  commandName,
+        int                 successCount,
+        int                 errorCount,
+        std::string const&  errorList
+    );
+
+    MCAPI LegacyTelemetryEventPacket(
+        class Player const* player,
+        int                 killerId,
+        int                 killerVariant,
+        ::ActorDamageCause  cause,
+        bool                inRaid
+    );
+
+    MCAPI LegacyTelemetryEventPacket(
+        class Player const*             player,
+        class Actor const*              killerEntity,
+        gsl::not_null<class Mob const*> killedMob,
+        ::ActorDamageCause              cause,
+        std::string                     traderName,
+        int                             traderTier,
+        ::ActorType                     damageChildType
     );
 
     MCAPI class LegacyTelemetryEventPacket& operator=(class LegacyTelemetryEventPacket&&);

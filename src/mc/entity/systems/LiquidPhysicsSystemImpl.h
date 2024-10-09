@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/MaterialType.h"
+#include "mc/world/level/material/MaterialType.h"
 
 class LiquidPhysicsSystemImpl {
 public:
@@ -17,9 +17,9 @@ public:
     MCAPI static void _applyFlow(struct StateVectorComponent&, class Vec3, ::MaterialType);
 
     MCAPI static bool _hasAdjacentFlowingBlock(
-        std::vector<struct LiquidBlockEntry> const&,
-        class IConstBlockSource const& region,
-        ::MaterialType                 liquidType
+        std::vector<struct LiquidBlockEntry> const& liquidBlocks,
+        class IConstBlockSource const&              region,
+        ::MaterialType                              liquidType
     );
 
     MCAPI static bool _hasFlowingBlock(std::vector<struct LiquidBlockEntry> const&);

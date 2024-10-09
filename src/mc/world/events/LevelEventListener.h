@@ -20,7 +20,7 @@ public:
 
     MCVAPI ::EventResult onLevelInitialized(class Level& level);
 
-    MCVAPI ::EventResult onLevelRemovedActor(class Actor&);
+    MCVAPI ::EventResult onLevelRemovedActor(class Actor& actor);
 
     MCVAPI ::EventResult onLevelRemovedPlayer(class Level& level, class Player& player);
 

@@ -36,7 +36,7 @@ public:
     virtual bool isShapeless() const;
 
     // vIndex: 5
-    virtual bool matches(class CraftingContainer const& craftSlots, class CraftingContext const&) const;
+    virtual bool matches(class CraftingContainer const& craftSlots, class CraftingContext const& craftingContext) const;
 
     // vIndex: 6
     virtual int size() const;
@@ -44,7 +44,7 @@ public:
     // vIndex: 8
     virtual std::vector<class ItemInstance> const& getResultItems() const;
 
-    MCAPI ShieldRecipe(std::string const&, class mce::UUID const*);
+    MCAPI ShieldRecipe(std::string const& recipeId, class mce::UUID const* uuid);
 
     MCAPI static class mce::UUID ID;
 

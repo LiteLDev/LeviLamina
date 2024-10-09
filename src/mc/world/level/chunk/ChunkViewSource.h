@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/data/GridArea.h"
 #include "mc/deps/core/utility/buffer_span.h"
 #include "mc/deps/core/utility/buffer_span_mut.h"
-#include "mc/world/level/LevelChunkGridAreaElement.h"
+#include "mc/util/GridArea.h"
 #include "mc/world/level/chunk/ChunkSource.h"
 #include "mc/world/level/chunk/ChunkSourceViewGenerateMode.h"
+#include "mc/world/level/chunk/LevelChunkGridAreaElement.h"
 
 class ChunkViewSource : public ::ChunkSource {
 public:
@@ -40,7 +40,7 @@ public:
     // vIndex: 30
     virtual void setLevelChunk(std::shared_ptr<class LevelChunk> lc);
 
-    MCAPI ChunkViewSource(class ChunkViewSource const&);
+    MCAPI ChunkViewSource(class ChunkViewSource const& otherChunkViewSource);
 
     MCAPI ChunkViewSource(class ChunkSource& mainSource, ::ChunkSource::LoadMode parentLoadMode);
 
@@ -58,14 +58,31 @@ public:
 
     MCAPI class GridArea<std::shared_ptr<class LevelChunk>>& getArea();
 
-    MCAPI void
-    move(struct Bounds const& bounds, bool isCircle, ::ChunkSourceViewGenerateMode, std::function<void(class buffer_span_mut<std::shared_ptr<class LevelChunk>>, class buffer_span<uint>)> add, float const*);
+    MCAPI void move(
+        struct Bounds const&          bounds,
+        bool                          isCircle,
+        ::ChunkSourceViewGenerateMode chunkViewGenerateMode,
+        std::function<void(class buffer_span_mut<std::shared_ptr<class LevelChunk>>, class buffer_span<uint>)> add,
+        float const* serverBuildRatio
+    );
 
-    MCAPI void
-    move(class BlockPos const& blockMin, class BlockPos const& blockMax, bool isCircle, ::ChunkSourceViewGenerateMode, std::function<void(class buffer_span_mut<std::shared_ptr<class LevelChunk>>, class buffer_span<uint>)> add, float const*);
+    MCAPI void move(
+        class BlockPos const&         blockMin,
+        class BlockPos const&         blockMax,
+        bool                          isCircle,
+        ::ChunkSourceViewGenerateMode chunkViewGenerateMode,
+        std::function<void(class buffer_span_mut<std::shared_ptr<class LevelChunk>>, class buffer_span<uint>)> add,
+        float const* serverBuildRatio
+    );
 
-    MCAPI void
-    move(class BlockPos const& center, int radius, bool isCircle, ::ChunkSourceViewGenerateMode, std::function<void(class buffer_span_mut<std::shared_ptr<class LevelChunk>>, class buffer_span<uint>)> add, float const*);
+    MCAPI void move(
+        class BlockPos const&         center,
+        int                           radius,
+        bool                          isCircle,
+        ::ChunkSourceViewGenerateMode chunkViewGenerateMode,
+        std::function<void(class buffer_span_mut<std::shared_ptr<class LevelChunk>>, class buffer_span<uint>)> add,
+        float const* serverBuildRatio
+    );
 
     MCAPI void rebuildSpecificArea(
         struct Bounds const& bounds,
@@ -73,7 +90,7 @@ public:
         std::function<void(class buffer_span_mut<std::shared_ptr<class LevelChunk>>, class buffer_span<uint>)> add
     );
 
-    MCAPI static ::ChunkSourceViewGenerateMode getGenerateMode(bool isClientSide, bool);
+    MCAPI static ::ChunkSourceViewGenerateMode getGenerateMode(bool isClientSide, bool isClientSideGenerationEnabled);
 
     // NOLINTEND
 };

@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
 
 class UpdateSubChunkBlocksPacket : public ::Packet {
 public:
@@ -32,8 +32,10 @@ public:
 
     MCAPI UpdateSubChunkBlocksPacket();
 
-    MCAPI
-    UpdateSubChunkBlocksPacket(std::vector<struct UpdateSubChunkNetworkBlockInfo> const&, std::vector<struct UpdateSubChunkNetworkBlockInfo> const&);
+    MCAPI UpdateSubChunkBlocksPacket(
+        std::vector<struct UpdateSubChunkNetworkBlockInfo> const& blocksChanged,
+        std::vector<struct UpdateSubChunkNetworkBlockInfo> const& extraBlocksChanged
+    );
 
     MCAPI void setSubChunkPosition(class SubChunkPos const& subChunkPos);
 

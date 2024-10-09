@@ -24,7 +24,7 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    MCAPI bool _load(class Json::Value const&, class LevelData const&);
+    MCAPI bool _load(class Json::Value const& root, class LevelData const& levelData);
 
     // NOLINTEND
 };

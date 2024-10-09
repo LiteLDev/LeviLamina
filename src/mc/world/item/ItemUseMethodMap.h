@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/data/BidirectionalUnorderedMap.h"
-#include "mc/world/item/components/ItemUseMethod.h"
+#include "mc/util/BidirectionalUnorderedMap.h"
+#include "mc/world/item/ItemUseMethod.h"
 
 class ItemUseMethodMap {
 public:
@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static std::string const& getItemUseMethodName(::ItemUseMethod);
+    MCAPI static std::string const& getItemUseMethodName(::ItemUseMethod useMethod);
 
     // NOLINTEND
 

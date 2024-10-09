@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/Include.h"
-#include "mc/common/wrapper/ViewT.h"
-#include "mc/world/components/FlagComponent.h"
+#include "mc/deps/ecs/ViewT.h"
+#include "mc/deps/ecs/strict/Include.h"
+#include "mc/entity/components/FlagComponent.h"
 
 class PassengerFreezeMovementSystem {
 public:
@@ -18,7 +18,7 @@ public:
     // NOLINTBEGIN
     MCAPI static struct TickingSystemWithInfo createSystem();
 
-    MCAPI static void freezeMovement(class StrictEntityContext&, struct StateVectorComponent&);
+    MCAPI static void freezeMovement(class StrictEntityContext&, struct StateVectorComponent& stateVector);
 
     MCAPI static void tickPassengerFreezeMovementSystem(
         class ViewT<

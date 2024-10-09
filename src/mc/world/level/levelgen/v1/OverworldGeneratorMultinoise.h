@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/data/DividedPos2d.h"
-#include "mc/deps/core/utility/MultidimensionalArray.h"
+#include "mc/util/MultidimensionalArray.h"
+#include "mc/world/level/DividedPos2d.h"
 #include "mc/world/level/levelgen/v1/OverworldGenerator.h"
 
 class OverworldGeneratorMultinoise : public ::OverworldGenerator {
@@ -35,7 +35,8 @@ public:
         // NOLINTBEGIN
         MCAPI ~Noises();
 
-        MCAPI static struct OverworldGeneratorMultinoise::Noises make(class XoroshiroPositionalRandomFactory const&);
+        MCAPI static struct OverworldGeneratorMultinoise::Noises
+        make(class XoroshiroPositionalRandomFactory const& randomFactory);
 
         // NOLINTEND
     };
@@ -97,22 +98,30 @@ public:
 
     MCVAPI ~OverworldGeneratorMultinoise();
 
-    MCAPI OverworldGeneratorMultinoise(class Dimension&, class LevelSeed64, class Biome const*);
+    MCAPI
+    OverworldGeneratorMultinoise(class Dimension& dimension, class LevelSeed64 seed, class Biome const* biomeOverride);
 
-    MCAPI static float _applySlides(class DimensionHeightRange const& heightRange, float, uchar);
+    MCAPI static float _applySlides(class DimensionHeightRange const& heightRange, float noiseValue, uchar cellYIndex);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    MCAPI struct TerrainInfo _attenuateOffsetAndFactor(class DividedPos2d<4>, struct TerrainInfo) const;
+    MCAPI struct TerrainInfo
+    _attenuateOffsetAndFactor(class DividedPos2d<4> worldQuartPos, struct TerrainInfo defaultTerrainInfo) const;
 
-    MCAPI class Util::MultidimensionalArray<float, 5, 5, 41>
-    _generateDensityCellsForChunk(class ChunkPos const& chunkPos, class WorldGenCache const&, class NoodleCavifier*, class OreVeinifier*)
-        const;
+    MCAPI class Util::MultidimensionalArray<float, 5, 5, 41> _generateDensityCellsForChunk(
+        class ChunkPos const&      chunkPos,
+        class WorldGenCache const& worldGenCache,
+        class NoodleCavifier*      noodleCavifier,
+        class OreVeinifier*        oreVeinifier
+    ) const;
 
-    MCAPI std::unique_ptr<class BiomeSource>
-    _makeBiomeSource(class XoroshiroPositionalRandomFactory const&, class BiomeRegistry const& biomeRegistry, class Biome const*);
+    MCAPI std::unique_ptr<class BiomeSource> _makeBiomeSource(
+        class XoroshiroPositionalRandomFactory const&,
+        class BiomeRegistry const& biomeRegistry,
+        class Biome const*         overrideBiome
+    );
 
     // NOLINTEND
 };

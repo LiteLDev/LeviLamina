@@ -9,8 +9,10 @@ class BlockDescriptor;
 
 namespace ScriptModuleMinecraft::ScriptBlockUtils {
 // NOLINTBEGIN
-MCAPI class BlockDescriptor
-    createBlockDescriptor(std::string, std::optional<std::unordered_map<std::string, std::variant<int, std::string, bool>>>);
+MCAPI class BlockDescriptor createBlockDescriptor(
+    std::string                                                                          blockName,
+    std::optional<std::unordered_map<std::string, std::variant<int, std::string, bool>>> properties
+);
 // NOLINTEND
 
 }; // namespace ScriptModuleMinecraft::ScriptBlockUtils

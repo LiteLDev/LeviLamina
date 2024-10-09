@@ -40,7 +40,7 @@ public:
     // NOLINTBEGIN
     MCAPI CommandMessage();
 
-    MCAPI struct GenerateMessageResult generateMessage(class CommandOrigin const&, int) const;
+    MCAPI struct GenerateMessageResult generateMessage(class CommandOrigin const& origin, int maxLength) const;
 
     MCAPI ~CommandMessage();
 

@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/WSConnectionResult.h"
-#include "mc/enums/CloseStatusCode.h"
-#include "mc/enums/OpCode.h"
+#include "mc/websockets/CloseStatusCode.h"
+#include "mc/websockets/OpCode.h"
+#include "mc/websockets/WSConnectionResult.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -67,7 +67,7 @@ public:
 
     MCAPI void _fail(std::string const& error, ::CloseStatusCode code);
 
-    MCAPI std::string _generateBase64SHA1Key(std::string const& key);
+    MCAPI std::string _generateBase64SHA1Key(std::string const&);
 
     MCAPI void _invokeOnCloseHandler();
 

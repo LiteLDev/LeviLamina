@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorAnimationType.h"
-#include "mc/enums/SkeletalHierarchyIndex.h"
+#include "mc/world/actor/SkeletalHierarchyIndex.h"
 #include "mc/world/actor/animation/ActorAnimationPlayer.h"
+#include "mc/world/actor/animation/ActorAnimationType.h"
 
 class ActorSkeletalAnimationPlayer : public ::ActorAnimationPlayer {
 public:

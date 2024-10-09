@@ -38,7 +38,7 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI bool _isInsideBorderBlock(class AABB const&, class BlockSource const&, float) const;
+    MCAPI bool _isInsideBorderBlock(class AABB const& aabb, class BlockSource const& region, float grow) const;
 
     // NOLINTEND
 };

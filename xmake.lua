@@ -8,6 +8,7 @@ end
 
 add_requires("entt")
 add_requires("gsl")
+add_requires("glm")
 add_requires("leveldb")
 add_requires("rapidjson v1.1.0")
 
@@ -23,4 +24,4 @@ target("bdsheader")
     add_defines("UNICODE", "WIN32_LEAN_AND_MEAN", "_AMD64_", "NOMINMAX", "_CRT_SECURE_NO_WARNINGS")
     add_shflags("/DELAYLOAD:bedrock_server.dll")
     add_files("test/**.cpp")
-    add_packages("gsl", "entt", "leveldb", "rapidjson")
+    add_packages("gsl", "entt", "leveldb", "rapidjson", "glm")

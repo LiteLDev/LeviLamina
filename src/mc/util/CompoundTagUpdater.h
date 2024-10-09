@@ -38,7 +38,7 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI bool _update(struct CompoundTagUpdater::Node const&, class CompoundTag&) const;
+    MCAPI bool _update(struct CompoundTagUpdater::Node const& node, class CompoundTag& tag) const;
 
     // NOLINTEND
 };

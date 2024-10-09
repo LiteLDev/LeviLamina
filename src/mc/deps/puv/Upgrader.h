@@ -22,13 +22,13 @@ public:
     // vIndex: 0
     virtual ~Upgrader();
 
-    MCAPI Upgrader(class SemVersion, class SemVersion);
+    MCAPI Upgrader(class SemVersion from, class SemVersion to);
 
     MCAPI class SemVersion const& sourceVersion() const;
 
     MCAPI class SemVersion const& targetVersion() const;
 
-    MCAPI class Puv::LoadResultAny upgrade(class Puv::LoadResultAny) const;
+    MCAPI class Puv::LoadResultAny upgrade(class Puv::LoadResultAny source) const;
 
     // NOLINTEND
 };

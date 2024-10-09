@@ -31,7 +31,8 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    MCAPI bool _finalize(class BlockSource& region, class IRandom& random, std::function<void(class BlockPos&)>);
+    MCAPI bool
+    _finalize(class BlockSource& region, class IRandom& random, std::function<void(class BlockPos&)> applyToBlocks);
 
     // NOLINTEND
 };

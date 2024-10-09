@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/ScalarOptional.h"
-#include "mc/world/level/block/utils/BlendingBlockType.h"
+#include "mc/world/level/ScalarOptional.h"
+#include "mc/world/level/storage/BlendingBlockType.h"
 
 class BlendingData {
 public:
@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI class ScalarOptional<uchar> getBiome(int cellX, int cellZ, int) const;
+    MCAPI class ScalarOptional<uchar> getBiome(int cellX, int cellZ, int quartY) const;
 
     MCAPI ::BlendingBlockType getBlockType(int cellX, int cellZ, int cellY) const;
 

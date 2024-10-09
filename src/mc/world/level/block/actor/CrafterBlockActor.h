@@ -37,37 +37,39 @@ public:
     // NOLINTBEGIN
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
-    MCVAPI void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
+    MCVAPI void _onUpdatePacket(class CompoundTag const& data, class BlockSource&);
 
-    MCVAPI bool canPushInItem(int, int, class ItemStack const&) const;
+    MCVAPI bool canPushInItem(int slot, int, class ItemStack const& item) const;
 
     MCVAPI std::string getName() const;
 
-    MCVAPI bool isSlotDisabled(int) const;
+    MCVAPI bool isSlotDisabled(int slot) const;
 
-    MCVAPI void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
+    MCVAPI void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    MCVAPI bool save(class CompoundTag&) const;
+    MCVAPI bool save(class CompoundTag& tag) const;
 
-    MCVAPI void tick(class BlockSource&);
+    MCVAPI void tick(class BlockSource& region);
 
-    MCAPI explicit CrafterBlockActor(class BlockPos);
+    MCAPI explicit CrafterBlockActor(class BlockPos pos);
 
     MCAPI int getDisabledSlotsCount() const;
 
-    MCAPI void onDisabledSlotToggleRequested(class BlockSource&, int, bool);
+    MCAPI void onDisabledSlotToggleRequested(class BlockSource& region, int slot, bool shouldDisable);
 
-    MCAPI void setToCraftingVisualState(class BlockSource&);
+    MCAPI void setToCraftingVisualState(class BlockSource& region);
 
-    MCAPI bool tryMoveItemsIntoContainer(class BlockSource&, std::vector<class ItemInstance>&);
+    MCAPI bool tryMoveItemsIntoContainer(class BlockSource& region, std::vector<class ItemInstance>& items);
 
-    MCAPI static std::vector<class ItemInstance> getCraftableItem(class CraftingContainer&, class Level&);
+    MCAPI static std::vector<class ItemInstance>
+    getCraftableItem(class CraftingContainer& craftingGrid, class Level& level);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    MCAPI static std::vector<class Recipe const*> _getRecipesForCraftingGrid(class Level&, class CraftingContainer&);
+    MCAPI static std::vector<class Recipe const*>
+    _getRecipesForCraftingGrid(class Level& level, class CraftingContainer& craftingContainer);
 
     // NOLINTEND
 };

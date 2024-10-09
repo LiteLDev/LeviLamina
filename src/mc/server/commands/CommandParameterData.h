@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/typeid_t.h"
+#include "mc/deps/core/utility/typeid_t.h"
 #include "mc/server/commands/CommandParameterDataType.h"
 #include "mc/server/commands/CommandParameterOption.h"
 #include "mc/server/commands/CommandRegistry.h"
@@ -19,16 +19,17 @@ public:
     MCAPI CommandParameterData(class CommandParameterData const& p);
 
     MCAPI CommandParameterData(
-        class Bedrock::typeid_t<class CommandRegistry>,
-        bool (CommandRegistry::*)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&)
+        class Bedrock::typeid_t<class CommandRegistry> typeIndex,
+        bool (CommandRegistry::*
+                  parse)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&)
             const,
-        char const*,
-        ::CommandParameterDataType,
-        char const*,
-        char const*,
-        int,
-        bool,
-        int
+        char const*                name,
+        ::CommandParameterDataType paramType,
+        char const*                enumNameOrPostfix,
+        char const*                chainedSubcommand,
+        int                        offset,
+        bool                       optional,
+        int                        setOffset
     );
 
     MCAPI class CommandParameterData& addOptions(::CommandParameterOption options);

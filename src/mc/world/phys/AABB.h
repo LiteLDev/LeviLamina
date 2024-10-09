@@ -90,7 +90,8 @@ public:
 
     MCAPI class AABB& translateCenterTo(class Vec3 const&);
 
-    MCAPI static struct ClipCollideResult clipCollide(class AABB const&, class AABB const&, class Vec3 const&);
+    MCAPI static struct ClipCollideResult
+    clipCollide(class AABB const& stationary, class AABB const& moving, class Vec3 const& velocity);
 
     MCAPI static class AABB fromPoints(class Vec3 const&, class Vec3 const&);
 

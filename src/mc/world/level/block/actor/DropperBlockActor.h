@@ -25,7 +25,7 @@ public:
     MCAPI bool pushOutItems(class BlockSource& region);
 
     MCAPI static bool
-    addItemsToContainerAndDepleteStack(class Container& container, class ItemStack& item, int, int face);
+    addItemsToContainerAndDepleteStack(class Container& container, class ItemStack& item, int stackSizeLimit, int face);
 
     MCAPI static class Container* getContainerAt(class BlockSource& region, class Vec3 const& pos);
 

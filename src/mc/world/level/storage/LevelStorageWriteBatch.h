@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/d_b_helpers/Category.h"
+#include "mc/world/level/storage/db_helpers/Category.h"
 
 class LevelStorageWriteBatch {
 public:
@@ -63,10 +63,8 @@ public:
 
     MCAPI void clear();
 
-    MCAPI void erase(
-        std::_Tree_const_iterator<std::_Tree_val<
-            std::_Tree_simple_types<std::pair<std::string const, struct LevelStorageWriteBatch::BatchEntry>>>> const& it
-    );
+    MCAPI void erase(std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<
+                         std::pair<std::string const, struct LevelStorageWriteBatch::BatchEntry>>>> const&);
 
     MCAPI std::_Tree_const_iterator<std::_Tree_val<
         std::_Tree_simple_types<std::pair<std::string const, struct LevelStorageWriteBatch::BatchEntry>>>>

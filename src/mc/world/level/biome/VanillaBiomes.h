@@ -16,9 +16,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static void initAdditionalCommonComponents(class BiomeRegistry&);
+    MCAPI static void initAdditionalCommonComponents(class BiomeRegistry& registry);
 
-    MCAPI static void initBiomeComponentGlue(class BiomeComponentFactory&);
+    MCAPI static void initBiomeComponentGlue(class BiomeComponentFactory& factory);
 
     MCAPI static void initBiomeComponents(class BiomeComponentFactory& factory);
 

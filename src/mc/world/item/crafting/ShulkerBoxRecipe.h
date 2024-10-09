@@ -30,7 +30,7 @@ public:
     // vIndex: 12
     virtual bool itemsMatch(class ItemDescriptor const& lhs, class ItemDescriptor const& rhs) const;
 
-    MCAPI explicit ShulkerBoxRecipe(struct Recipe::ConstructionContext&&);
+    MCAPI explicit ShulkerBoxRecipe(struct Recipe::ConstructionContext&& context);
 
     MCAPI static class mce::UUID const ID;
 

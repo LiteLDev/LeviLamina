@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/PathBuffer.h"
-#include "mc/deps/core/StackString.h"
+#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/secure_storage/SecureStorage.h"
+#include "mc/deps/core/string/StackString.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -87,24 +87,24 @@ public:
     virtual bool get(std::string const& key, std::string& outValue);
 
     MCAPI FileSecureStorage(
-        class Core::PathBuffer<std::string> const&,
-        class Core::PathBuffer<class Core::StackString<char, 1024>> const&,
-        class ISecureStorageKeySystem*,
-        class Core::Path const&,
-        class FileSecureStorage::StorageSystem* storage
+        class Core::PathBuffer<std::string> const&                         settingsPath,
+        class Core::PathBuffer<class Core::StackString<char, 1024>> const& baseSettingsPath,
+        class ISecureStorageKeySystem*                                     sskSystem,
+        class Core::Path const&                                            userDataPath,
+        class FileSecureStorage::StorageSystem*                            storage
     );
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    MCAPI bool _init(bool);
+    MCAPI bool _init(bool expectedFailure);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    MCAPI std::string _contentKeyObfuscator(std::string const&, std::string const& identifier);
+    MCAPI std::string _contentKeyObfuscator(std::string const& codedData, std::string const& identifier);
 
     MCAPI class SecureStorageKey _getSecureStorageKey() const;
 

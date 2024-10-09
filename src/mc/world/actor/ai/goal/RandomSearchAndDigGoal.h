@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/json/JsonSchemaObjectNode.h"
-#include "mc/world/AutomaticID.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
@@ -36,7 +36,7 @@ public:
 
         MCAPI Definition();
 
-        MCAPI void addBlockDescriptor(class BlockDescriptor const&);
+        MCAPI void addBlockDescriptor(class BlockDescriptor const& blockDescriptor);
 
         MCAPI void initialize(class EntityContext& entity, class RandomSearchAndDigGoal& goal) const;
 
@@ -89,9 +89,9 @@ public:
     // NOLINTBEGIN
     MCAPI void _digUpItems();
 
-    MCAPI bool _isValidTarget(class BlockSource const&, class BlockPos) const;
+    MCAPI bool _isValidTarget(class BlockSource const& region, class BlockPos pos) const;
 
-    MCAPI void _triggerEvent(class ActorDefinitionTrigger const&) const;
+    MCAPI void _triggerEvent(class ActorDefinitionTrigger const& eventTrigger) const;
 
     // NOLINTEND
 };

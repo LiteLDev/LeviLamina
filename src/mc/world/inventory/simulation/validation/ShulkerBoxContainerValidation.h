@@ -25,12 +25,9 @@ public:
     ) const;
 
     // vIndex: 2
-    virtual bool isItemAllowedInSlot(
-        class ContainerScreenContext const& screenContext,
-        int                                 slot,
-        class ItemStackBase const&          item,
-        int                                 amount
-    ) const;
+    virtual bool
+    isItemAllowedInSlot(class ContainerScreenContext const&, int slot, class ItemStackBase const& item, int amount)
+        const;
 
     // vIndex: 3
     virtual int getAvailableSetCount(int slot, class ItemStackBase const& item) const;
@@ -52,8 +49,7 @@ public:
     virtual int getContainerOffset(class ContainerScreenContext const& screenContext) const;
 
     // vIndex: 9
-    virtual int
-    getContainerSize(class ContainerScreenContext const& screenContext, class Container const& container) const;
+    virtual int getContainerSize(class ContainerScreenContext const&, class Container const& container) const;
 
     // NOLINTEND
 };

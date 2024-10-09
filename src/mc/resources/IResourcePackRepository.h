@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/PathBuffer.h"
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/resource/PackCategory.h"
+#include "mc/deps/core/resource/PackOrigin.h"
+#include "mc/deps/core/resource/PackType.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/enums/KnownPackType.h"
-#include "mc/resources/PackCategory.h"
-#include "mc/resources/PackOrigin.h"
-#include "mc/resources/PackType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -68,10 +68,10 @@ public:
     virtual class ResourcePack* getVanillaPack() const = 0;
 
     // vIndex: 12
-    virtual bool setServicePacks(std::vector<struct PackIdVersion>) = 0;
+    virtual bool setServicePacks(std::vector<struct PackIdVersion> servicePackIds) = 0;
 
     // vIndex: 13
-    virtual bool hasServicePacks(std::vector<struct PackIdVersion> const&) const = 0;
+    virtual bool hasServicePacks(std::vector<struct PackIdVersion> const& servicePacksIds) const = 0;
 
     // vIndex: 14
     virtual std::vector<struct PackIdVersion> const& getServicePacks() const = 0;
@@ -120,7 +120,7 @@ public:
     virtual class Core::PathBuffer<std::string> const getTreatmentPacksPath() const = 0;
 
     // vIndex: 28
-    virtual class Core::PathBuffer<std::string> const getKnownPacksPath(::KnownPackType) const = 0;
+    virtual class Core::PathBuffer<std::string> const getKnownPacksPath(::KnownPackType type) const = 0;
 
     // vIndex: 29
     virtual class Core::PathBuffer<std::string> const getKnownValidPacksPath() const = 0;
@@ -159,7 +159,7 @@ public:
     virtual std::vector<class ResourcePack*> getPacksByType(::PackType type) const = 0;
 
     // vIndex: 41
-    virtual std::vector<class ResourcePack*> getPacksByCategory(::PackCategory) const = 0;
+    virtual std::vector<class ResourcePack*> getPacksByCategory(::PackCategory category) const = 0;
 
     // vIndex: 42
     virtual void addKnownPackFromImport(class PackManifest const& pack) = 0;

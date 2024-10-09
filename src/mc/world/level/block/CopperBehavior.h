@@ -19,7 +19,12 @@ public:
 
     MCAPI bool tryDecrementAge(class BlockSource& region, class BlockPos const& pos) const;
 
-    MCAPI bool tryIncrementAge(class BlockSource& region, class BlockPos const& pos, float, float) const;
+    MCAPI bool tryIncrementAge(
+        class BlockSource&    region,
+        class BlockPos const& pos,
+        float                 generatedDailyChance,
+        float                 generatedOxidizeChance
+    ) const;
 
     MCAPI bool use(class Player& player, class BlockPos const& pos, uchar) const;
 

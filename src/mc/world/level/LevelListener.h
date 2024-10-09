@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/ParticleType.h"
-#include "mc/events/LevelEvent.h"
+#include "mc/world/actor/ParticleType.h"
+#include "mc/world/level/BlockChangedEventTarget.h"
 #include "mc/world/level/BlockSourceListener.h"
-#include "mc/world/level/block/utils/BlockChangedEventTarget.h"
+#include "mc/world/level/block/LevelEvent.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -61,8 +61,11 @@ public:
     );
 
     // vIndex: 14
-    virtual void
-    addBreakingItemParticleEffect(class Vec3 const& pos, ::ParticleType type, struct ResolvedItemIconInfo const&);
+    virtual void addBreakingItemParticleEffect(
+        class Vec3 const&                  pos,
+        ::ParticleType                     type,
+        struct ResolvedItemIconInfo const& textureInfo
+    );
 
     // vIndex: 15
     virtual void playMusic(std::string const& name, class Vec3 const& pos, float songOffset, float volume);
@@ -83,7 +86,12 @@ public:
     virtual void onChunkReloaded(class ChunkSource& source, class LevelChunk& lc);
 
     // vIndex: 21
-    virtual void onSubChunkLoaded(class ChunkSource& source, class LevelChunk& lc, short, bool);
+    virtual void onSubChunkLoaded(
+        class ChunkSource& source,
+        class LevelChunk&  lc,
+        short              absoluteSubChunkIndex,
+        bool               subChunkVisibilityChanged
+    );
 
     // vIndex: 22
     virtual void onChunkUnloaded(class LevelChunk& lc);

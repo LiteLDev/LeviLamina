@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/CurrentCmdVersion.h"
+#include "mc/server/commands/CurrentCmdVersion.h"
 
 class NpcDialogueStorage {
 public:
@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI struct NpcDialogueScene const* getScene(std::string const&) const;
+    MCAPI struct NpcDialogueScene const* getScene(std::string const& sceneName) const;
 
     MCAPI void init(class ResourcePackManager& resourcePackManager);
 

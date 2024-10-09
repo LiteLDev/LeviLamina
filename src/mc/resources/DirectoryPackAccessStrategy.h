@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/PackAccessAssetGenerationResult.h"
-#include "mc/deps/core/PathBuffer.h"
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/resources/PackAccessAssetGenerationResult.h"
 #include "mc/resources/PackAccessStrategy.h"
 #include "mc/resources/PackAccessStrategyType.h"
 
@@ -44,7 +44,7 @@ public:
     virtual bool isTrusted() const;
 
     // vIndex: 7
-    virtual bool hasAsset(class Core::Path const& packRelativePath, bool trustedContentOnly, bool) const;
+    virtual bool hasAsset(class Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const;
 
     // vIndex: 8
     virtual bool hasFolder(class Core::Path const& packRelativePath) const;
@@ -53,7 +53,7 @@ public:
     virtual bool getAsset(class Core::Path const& packRelativePath, std::string& result, bool trustedContentOnly) const;
 
     // vIndex: 10
-    virtual bool deleteAsset(class Core::Path const&);
+    virtual bool deleteAsset(class Core::Path const& packRelativePath);
 
     // vIndex: 11
     virtual bool writeAsset(class Core::Path const& packRelativePath, std::string const& fileContent);

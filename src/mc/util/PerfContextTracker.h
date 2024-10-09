@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/events/PerfContextEvent.h"
+#include "mc/util/PerfContextEvent.h"
 
 class PerfContextTracker {
 public:
@@ -76,9 +76,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI void incrementPacketReceivedInfo(uint);
+    MCAPI void incrementPacketReceivedInfo(uint packetSize);
 
-    MCAPI void incrementPacketSentInfo(uint);
+    MCAPI void incrementPacketSentInfo(uint packetSize);
 
     MCAPI static class PerfContextTracker& getInstance();
 

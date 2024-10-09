@@ -19,13 +19,13 @@ namespace Json { class Writer; }
 
 namespace Json {
 // NOLINTBEGIN
-MCAPI std::string valueToQuotedString(char const*);
+MCAPI std::string valueToQuotedString(char const* value);
 
-MCAPI std::string valueToString(int64);
+MCAPI std::string valueToString(int64 value);
 
-MCAPI std::string valueToString(double);
+MCAPI std::string valueToString(double value);
 
-MCAPI std::string valueToString(uint64);
+MCAPI std::string valueToString(uint64 value);
 // NOLINTEND
 
 }; // namespace Json

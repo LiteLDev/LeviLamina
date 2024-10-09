@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
 
 class NpcDialoguePacket : public ::Packet {
 public:
@@ -36,16 +36,19 @@ public:
 
     MCAPI NpcDialoguePacket();
 
-    MCAPI explicit NpcDialoguePacket(struct ActorUniqueID);
+    MCAPI explicit NpcDialoguePacket(struct ActorUniqueID npcID);
 
-    MCAPI static bool
-    initializePacket(class NpcDialoguePacket&, class NpcDialogueStorage const* storage, std::string const&);
+    MCAPI static bool initializePacket(
+        class NpcDialoguePacket&        outPacket,
+        class NpcDialogueStorage const* storage,
+        std::string const&              sceneName
+    );
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    MCAPI class Bedrock::Result<void> _verifyJson(std::string const&) const;
+    MCAPI class Bedrock::Result<void> _verifyJson(std::string const& actionJSON) const;
 
     // NOLINTEND
 };

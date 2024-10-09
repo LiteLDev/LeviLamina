@@ -3,17 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/WeakPtr.h"
-#include "mc/common/wrapper/optional_ref.h"
-#include "mc/enums/FertilizerType.h"
-#include "mc/enums/Flip.h"
-#include "mc/enums/OldLogType.h"
-#include "mc/enums/ShapeType.h"
+#include "mc/common/WeakPtr.h"
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
+#include "mc/world/Flip.h"
+#include "mc/world/item/FertilizerType.h"
+#include "mc/world/level/ShapeType.h"
+#include "mc/world/level/block/BlockProperty.h"
+#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/LogBlock.h"
-#include "mc/world/level/block/utils/BlockProperty.h"
-#include "mc/world/level/block/utils/BlockRenderLayer.h"
-#include "mc/world/level/block/utils/BlockSupportType.h"
+#include "mc/world/level/block/OldLogType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -33,11 +33,11 @@ public:
     virtual ~OldLogBlock() = default;
 
     MCAPI OldLogBlock(
-        std::string const& nameId,
-        int                id,
-        class WeakPtr<class BlockLegacy const>,
+        std::string const&                      nameId,
+        int                                     id,
+        class WeakPtr<class BlockLegacy const>  strippedBlockLegacy,
         std::optional<struct LogBlockMapColors> mapColors,
-        ::OldLogType
+        ::OldLogType                            oldLogType
     );
 
     // NOLINTEND

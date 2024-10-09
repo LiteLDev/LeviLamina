@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/WeakRef.h"
-#include "mc/enums/TickingAreaLoadMode.h"
+#include "mc/deps/game_refs/WeakRef.h"
+#include "mc/world/level/ticking/TickingAreaLoadMode.h"
 
 // auto generated forward declare list
 // clang-format off

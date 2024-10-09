@@ -13,9 +13,9 @@ public:
     // NOLINTBEGIN
     MCAPI BeardAndShaverDescription(
         class BeardingDescriptionCache cache,
-        struct BeardKernel const&,
-        float minBeardWidth,
-        float maxBeardWidth
+        struct BeardKernel const&      beardKernel,
+        float                          minBeardWidth,
+        float                          maxBeardWidth
     );
 
     MCAPI float calculateContribution(class BlockPos const& pos) const;

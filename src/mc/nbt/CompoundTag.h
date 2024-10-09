@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/nbt/Tag.h"
+#include "mc/platform/Result.h"
 
 class CompoundTag : public ::Tag {
 public:
@@ -103,7 +103,7 @@ public:
 
     MCAPI class ShortTag const* getShortTag(std::string_view name) const;
 
-    MCAPI std::string const& getString(std::string_view) const;
+    MCAPI std::string const& getString(std::string_view name) const;
 
     MCAPI class StringTag const* getStringTag(std::string_view name) const;
 
@@ -119,7 +119,7 @@ public:
 
     MCAPI uchar& putByte(std::string name, uchar value);
 
-    MCAPI std::vector<uchar>& putByteArray(std::string, std::vector<uchar>);
+    MCAPI std::vector<uchar>& putByteArray(std::string name, std::vector<uchar> mem);
 
     MCAPI class CompoundTag& putCompound(std::string name, class CompoundTag value);
 
@@ -133,7 +133,7 @@ public:
 
     MCAPI short& putShort(std::string name, short value);
 
-    MCAPI std::string& putString(std::string name, std::string value);
+    MCAPI std::string& putString(std::string, std::string);
 
     MCAPI std::map<std::string, class CompoundTagVariant, std::less<void>> const& rawView() const;
 

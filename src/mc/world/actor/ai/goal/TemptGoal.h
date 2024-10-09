@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/events/LevelSoundEvent.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class TemptGoal : public ::Goal {
@@ -47,7 +47,7 @@ public:
         bool                                     canGetScared,
         float                                    temptDistance,
         bool                                     canTemptVertically,
-        bool
+        bool                                     canTemptWhileRidden
     );
 
     // NOLINTEND

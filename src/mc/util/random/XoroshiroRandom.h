@@ -35,9 +35,9 @@ public:
 
     MCVAPI int64 seed64() const;
 
-    MCVAPI void setSeed(struct Seed128Bit);
+    MCVAPI void setSeed(struct Seed128Bit seed);
 
-    MCVAPI void setSeed(int64);
+    MCVAPI void setSeed(int64 seed);
 
     MCVAPI ~XoroshiroRandom();
 

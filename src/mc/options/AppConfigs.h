@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/enums/EducationEditionOffer.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/options/EducationEditionOffer.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -118,7 +118,7 @@ public:
     virtual void setCanAccessWorldCallback(class IMinecraftGame& minecraftGame);
 
     // vIndex: 31
-    virtual std::vector<struct PackIdVersion> getAdditionalClientPacks(bool) const;
+    virtual std::vector<struct PackIdVersion> getAdditionalClientPacks(bool enteringLevel) const;
 
     // vIndex: 32
     virtual std::unique_ptr<class IScreenCapabilities> getScreenCapabilities(std::string const& screenName) const;

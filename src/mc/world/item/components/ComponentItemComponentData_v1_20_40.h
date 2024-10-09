@@ -22,7 +22,7 @@ public:
 
     MCAPI ~ComponentItemComponentData_v1_20_40();
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx&);
+    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
     // NOLINTEND
 };

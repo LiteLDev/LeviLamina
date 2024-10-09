@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/AbilitiesIndex.h"
+#include "mc/world/actor/player/AbilitiesIndex.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -31,8 +31,11 @@ public:
     // vIndex: 3
     virtual bool canChangePermission(class mce::UUID const& playerId, class ServerPlayer const& player) const;
 
-    MCAPI
-    ServerNetworkController(bool isDedicatedServer, class mce::UUID const&, std::function<bool(class ServerPlayer const&, ::AbilitiesIndex)>);
+    MCAPI ServerNetworkController(
+        bool                                                             isDedicatedServer,
+        class mce::UUID const&                                           hostID,
+        std::function<bool(class ServerPlayer const&, ::AbilitiesIndex)> canUseAbility
+    );
 
     // NOLINTEND
 };

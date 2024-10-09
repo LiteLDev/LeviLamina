@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/PathBuffer.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/resources/PackType.h"
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/resource/PackType.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 class ResourcePackStack {
 public:
@@ -31,16 +31,19 @@ public:
 
     // vIndex: 3
     virtual bool loadAllVersionsOf(
-        class ResourceLocation const& resourceLocation,
-        std::function<bool(class PackInstance const&)> const&,
-        class ResourcePackMergeStrategy& mergeStrategy
+        class ResourceLocation const&                         resourceLocation,
+        std::function<bool(class PackInstance const&)> const& packInstanceFilter,
+        class ResourcePackMergeStrategy&                      mergeStrategy
     ) const;
 
-    MCAPI void add(class PackInstance, Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository const> const&, bool);
+    MCAPI void
+    add(class PackInstance                                                      packInstance,
+        Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository const> const& repo,
+        bool                                                                    isDependent);
 
     MCAPI void generateAssetSet();
 
-    MCAPI std::vector<std::string> getPackTelemetryNamesWithVersion(::PackType) const;
+    MCAPI std::vector<std::string> getPackTelemetryNamesWithVersion(::PackType type) const;
 
     MCAPI void getSplitStacks(class ResourcePackStack& clientStack, class ResourcePackStack& serverStack) const;
 
@@ -57,17 +60,17 @@ public:
     MCAPI void removeInvalidPacks();
 
     MCAPI static std::unique_ptr<class ResourcePackStack>
-    deserialize(std::istream&, Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository const> const&);
+    deserialize(std::istream& fileStream, Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository const> const& repo);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI static void _populateDependencies(
-        std::vector<class PackInstance>&,
-        class PackInstance&,
-        Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository const> const&,
-        bool
+        std::vector<class PackInstance>&                                        packStack,
+        class PackInstance&                                                     packInstance,
+        Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository const> const& repo,
+        bool                                                                    isDependent
     );
 
     // NOLINTEND

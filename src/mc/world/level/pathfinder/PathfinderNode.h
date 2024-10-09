@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/NodeType.h"
+#include "mc/world/level/pathfinder/NodeType.h"
 
 class PathfinderNode {
 public:

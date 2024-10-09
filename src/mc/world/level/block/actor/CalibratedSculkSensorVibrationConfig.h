@@ -18,7 +18,11 @@ public:
     virtual ~CalibratedSculkSensorVibrationConfig() = default;
 
     // vIndex: 3
-    virtual bool shouldListen(class BlockSource& region, class GameEvent const&, struct GameEventContext const&);
+    virtual bool shouldListen(
+        class BlockSource&             region,
+        class GameEvent const&         gameEvent,
+        struct GameEventContext const& gameEventContext
+    );
 
     // NOLINTEND
 };

@@ -43,7 +43,7 @@ public:
     // vIndex: 8
     virtual std::vector<class ItemInstance> const& getResultItems() const;
 
-    MCAPI FireworksRecipe(std::string const&, class mce::UUID const*);
+    MCAPI FireworksRecipe(std::string const& recipeId, class mce::UUID const* uuid);
 
     MCAPI static class mce::UUID ID;
 

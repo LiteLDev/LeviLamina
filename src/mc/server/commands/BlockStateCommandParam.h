@@ -18,9 +18,9 @@ public:
     MCAPI BlockStateCommandParam(std::string state, std::string value, ::BlockStateCommandParam::Type type);
 
     MCAPI std::optional<std::pair<class HashedString, int>>
-          getNameAndValue(class CommandOutput& output, class Block const&) const;
+          getNameAndValue(class CommandOutput& output, class Block const& defaultNewBlock) const;
 
-    MCAPI bool setBlockState(class Block const**, class CommandOutput& output) const;
+    MCAPI bool setBlockState(class Block const** inputBlock, class CommandOutput& output) const;
 
     MCAPI ~BlockStateCommandParam();
 

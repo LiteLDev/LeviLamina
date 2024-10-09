@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/data/BidirectionalUnorderedMap.h"
-#include "mc/world/item/components/ItemStackNetResult.h"
+#include "mc/util/BidirectionalUnorderedMap.h"
+#include "mc/world/inventory/network/ItemStackNetResult.h"
 
 class ItemStackNetResultMap {
 public:
@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static std::string const& getItemStackNetResultName(::ItemStackNetResult);
+    MCAPI static std::string const& getItemStackNetResultName(::ItemStackNetResult result);
 
     // NOLINTEND
 

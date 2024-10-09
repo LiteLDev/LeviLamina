@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/UploadError.h"
 #include "mc/util/IFileChunkUploader.h"
+#include "mc/util/UploadError.h"
 
 // auto generated forward declare list
 // clang-format off

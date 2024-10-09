@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/ErrorBindingBuilder.h"
+#include "mc/external/scripting/binding_type/ErrorBindingBuilder.h"
 #include "mc/gametest/framework/GameTestErrorType.h"
 
 namespace gametest {

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/network/TypedServerNetId.h"
+#include "mc/world/inventory/network/TypedServerNetId.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -42,7 +42,7 @@ public:
 
     public:
         // NOLINTBEGIN
-        MCAPI explicit Results(std::vector<class ItemInstance> const&);
+        MCAPI explicit Results(std::vector<class ItemInstance> const& results);
 
         MCAPI ~Results();
 
@@ -68,7 +68,7 @@ public:
     virtual int getCraftingSize() const = 0;
 
     // vIndex: 3
-    virtual class RecipeIngredient const& getIngredient(int x, int y) const = 0;
+    virtual class RecipeIngredient const& getIngredient(int, int) const = 0;
 
     // vIndex: 4
     virtual bool isShapeless() const = 0;
@@ -128,7 +128,7 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    MCAPI explicit Recipe(struct Recipe::ConstructionContext&&);
+    MCAPI explicit Recipe(struct Recipe::ConstructionContext&& context);
 
     // NOLINTEND
 };

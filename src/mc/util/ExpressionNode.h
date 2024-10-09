@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/MolangCompileResult.h"
-#include "mc/enums/ExpressionOp.h"
-#include "mc/util/molang/MolangQueryFunctionReturnType.h"
-#include "mc/util/molang/MolangVariableIndex.h"
-#include "mc/util/molang/MolangVersion.h"
+#include "mc/molang/MolangVersion.h"
+#include "mc/util/ExpressionOp.h"
+#include "mc/util/MolangCompileResult.h"
+#include "mc/util/MolangQueryFunctionReturnType.h"
+#include "mc/util/MolangVariableIndex.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -72,7 +72,7 @@ public:
 
     MCAPI bool hasMadd() const;
 
-    MCAPI bool hasSideEffects(bool) const;
+    MCAPI bool hasSideEffects(bool countRandomAsSideEffect) const;
 
     MCAPI bool isInitialized() const;
 
@@ -84,7 +84,7 @@ public:
 
     MCAPI void moveConstantChildToValueIfFloatOrHashType(int firstConstChildIndex);
 
-    MCAPI class ExpressionNode& operator=(class ExpressionNode&&);
+    MCAPI class ExpressionNode& operator=(class ExpressionNode&& rhs);
 
     MCAPI class ExpressionNode& operator=(class ExpressionNode const& rhs);
 
@@ -97,7 +97,7 @@ public:
 
     MCAPI ~ExpressionNode();
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx&);
+    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
     MCAPI static void buildExpressionOpTable();
 
@@ -147,15 +147,15 @@ public:
 
     MCAPI bool _checkAllOperationsAreValid() const;
 
-    MCAPI bool
-    _hasDisallowedQueryPtrs(std::vector<std::function<
-                                struct
-                                MolangScriptArg const&(class RenderParams&, std::vector<class ExpressionNode> const&)> const*> const&)
-        const;
+    MCAPI bool _hasDisallowedQueryPtrs(
+        std::vector<std::function<
+            struct MolangScriptArg const&(class RenderParams&, std::vector<class ExpressionNode> const&)> const*> const&
+            allowedQueryPtrs
+    ) const;
 
     MCAPI void _logEvaluatedToNan() const;
 
-    MCAPI bool _optimize(::MolangVersion version, class RenderParams& outRenderParams, int);
+    MCAPI bool _optimize(::MolangVersion version, class RenderParams& outRenderParams, int recursionDepth);
 
     MCAPI bool _processBinaryExpressions(std::function<bool(::ExpressionOp)> predicate);
 

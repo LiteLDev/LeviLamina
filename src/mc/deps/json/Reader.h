@@ -59,7 +59,7 @@ public:
 
     MCAPI std::string getFormattedErrorMessages() const;
 
-    MCAPI bool parse(std::istream&, class Json::Value&, bool);
+    MCAPI bool parse(std::istream& sin, class Json::Value& root, bool collectComments);
 
     MCAPI bool parse(std::string const& document, class Json::Value& root, bool collectComments);
 
@@ -73,13 +73,13 @@ public:
     // NOLINTBEGIN
     MCAPI bool addError(std::string const& message, class Json::Reader::Token& token, char const* extra);
 
-    MCAPI class Json::Value decodeDouble(class Json::Reader::Token&, bool&);
+    MCAPI class Json::Value decodeDouble(class Json::Reader::Token& token, bool& successful);
 
-    MCAPI class Json::Value decodeNumber(class Json::Reader::Token&, bool&);
+    MCAPI class Json::Value decodeNumber(class Json::Reader::Token& token, bool& successful);
 
-    MCAPI bool decodeString(class Json::Reader::Token&, char*);
+    MCAPI bool decodeString(class Json::Reader::Token& token, char* decoded);
 
-    MCAPI class Json::Value::CZString decodeString(class Json::Reader::Token&, bool&);
+    MCAPI class Json::Value::CZString decodeString(class Json::Reader::Token& token, bool& successful);
 
     MCAPI bool
     decodeUnicodeCodePoint(class Json::Reader::Token& token, char const*& current, char const* end, uint& unicode);
@@ -87,17 +87,17 @@ public:
     MCAPI bool
     decodeUnicodeEscapeSequence(class Json::Reader::Token& token, char const*& current, char const* end, uint& unicode);
 
-    MCAPI std::string getLocationLineAndColumn(char const*) const;
+    MCAPI std::string getLocationLineAndColumn(char const* location) const;
 
-    MCAPI bool parse(char const* beginDoc, char const* endDoc, class Json::Value& root, bool collectComments);
+    MCAPI bool parse(char const* beginDoc, char const* endDoc, class Json::Value& root, bool);
 
-    MCAPI class Json::Value readArray(class Json::Reader::Token&, bool&);
+    MCAPI class Json::Value readArray(class Json::Reader::Token&, bool& ok);
 
-    MCAPI class Json::Value readObject(class Json::Reader::Token&, bool&);
+    MCAPI class Json::Value readObject(class Json::Reader::Token&, bool& successful);
 
     MCAPI bool readToken(class Json::Reader::Token& token);
 
-    MCAPI class Json::Value readValue(bool&);
+    MCAPI class Json::Value readValue(bool& successful);
 
     MCAPI bool recoverFromError(::Json::Reader::TokenType skipUntilToken);
 

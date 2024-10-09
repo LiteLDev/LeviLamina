@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/events/ServerInstanceGameplayEvent.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/events/EventRef.h"
+#include "mc/world/events/ServerInstanceGameplayEvent.h"
 
 class ServerInstanceEventCoordinator {
 public:

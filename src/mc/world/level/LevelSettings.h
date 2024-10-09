@@ -3,18 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/social/GamePublishSetting.h"
-#include "mc/enums/ChatRestrictionLevel.h"
-#include "mc/enums/DaylightCycle.h"
-#include "mc/enums/Difficulty.h"
-#include "mc/enums/EducationEditionOffer.h"
-#include "mc/enums/GameType.h"
-#include "mc/enums/WorldVersion.h"
-#include "mc/network/NetherWorldType.h"
-#include "mc/server/editor/WorldType.h"
-#include "mc/world/AutomaticID.h"
-#include "mc/world/actor/player/PlayerPermissionLevel.h"
-#include "mc/world/level/levelgen/GeneratorType.h"
+#include "mc/common/editor/WorldType.h"
+#include "mc/config/ChatRestrictionLevel.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/network/GamePublishSetting.h"
+#include "mc/options/EducationEditionOffer.h"
+#include "mc/server/commands/PlayerPermissionLevel.h"
+#include "mc/world/Difficulty.h"
+#include "mc/world/level/DaylightCycle.h"
+#include "mc/world/level/GameType.h"
+#include "mc/world/level/GeneratorType.h"
+#include "mc/world/level/NetherWorldType.h"
+#include "mc/world/level/WorldVersion.h"
 
 class LevelSettings {
 public:
@@ -161,23 +161,23 @@ public:
 
     MCAPI void overrideSavedSettings(class LevelData& data) const;
 
-    MCAPI class LevelSettings& setAdventureModeOverridesEnabled(bool);
+    MCAPI class LevelSettings& setAdventureModeOverridesEnabled(bool adventureModeOverridesEnabled);
 
     MCAPI class LevelSettings& setBaseGameVersion(class BaseGameVersion const& baseGameVersion);
 
-    MCAPI class LevelSettings& setChatRestrictionLevel(::ChatRestrictionLevel);
+    MCAPI class LevelSettings& setChatRestrictionLevel(::ChatRestrictionLevel chatRestrictionLevel);
 
     MCAPI class LevelSettings& setCommandsEnabled(bool commandsEnabled);
 
     MCAPI class LevelSettings& setCustomSkinsDisabled(bool val);
 
-    MCAPI class LevelSettings& setDefaultPlayerPermissions(::PlayerPermissionLevel);
+    MCAPI class LevelSettings& setDefaultPlayerPermissions(::PlayerPermissionLevel playerPermissionLevel);
 
     MCAPI class LevelSettings& setDifficulty(::Difficulty difficulty);
 
-    MCAPI class LevelSettings& setDisablePlayerInteractions(bool);
+    MCAPI class LevelSettings& setDisablePlayerInteractions(bool disableInteractions);
 
-    MCAPI class LevelSettings& setEduSharedUriResource(struct EduSharedUriResource const&);
+    MCAPI class LevelSettings& setEduSharedUriResource(struct EduSharedUriResource const& eduSharedUriResource);
 
     MCAPI class LevelSettings& setEducationEditionOffer(::EducationEditionOffer offer);
 
@@ -205,11 +205,11 @@ public:
 
     MCAPI class LevelSettings& setRandomSeed(class LevelSeed64 seed);
 
-    MCAPI class LevelSettings& setScenarioId(std::string);
+    MCAPI class LevelSettings& setScenarioId(std::string scenarioId);
 
     MCAPI class LevelSettings& setServerChunkTickRange(uint serverChunkTickRange);
 
-    MCAPI class LevelSettings& setServerId(std::string);
+    MCAPI class LevelSettings& setServerId(std::string serverId);
 
     MCAPI class LevelSettings& setSpawnSettings(struct SpawnSettings spawnSettings);
 
@@ -217,7 +217,7 @@ public:
 
     MCAPI class LevelSettings& setUseMsaGamertagsOnly(bool useMsaGamertagsOnly);
 
-    MCAPI class LevelSettings& setWorldId(std::string);
+    MCAPI class LevelSettings& setWorldId(std::string worldId);
 
     MCAPI class LevelSettings& setXblBroadcastIntent(::Social::GamePublishSetting xblBroadcastIntent);
 
@@ -227,7 +227,7 @@ public:
 
     MCAPI ~LevelSettings();
 
-    MCAPI static std::optional<class LevelSeed64> parseSeedString(std::string const&);
+    MCAPI static std::optional<class LevelSeed64> parseSeedString(std::string const& seedInput);
 
     // NOLINTEND
 };

@@ -40,13 +40,21 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI ::RandomBlockStateFunction::RemapComplexAliasBlockResult
-    _remapComplexAliasBlock(int, class Block const*&, std::string const&);
+    _remapComplexAliasBlock(int randomInt, class Block const*& inOutItemBlock, std::string const& originalNameStr);
 
-    MCAPI ::RandomBlockStateFunction::RemapComplexAliasBlockResult
-    _tryRemapComplexAliasBlock(class ItemInstance& item, int, class Block const*&, std::string const& originalName);
+    MCAPI ::RandomBlockStateFunction::RemapComplexAliasBlockResult _tryRemapComplexAliasBlock(
+        class ItemInstance& item,
+        int                 randomInt,
+        class Block const*& inOutItemBlock,
+        std::string const&  originalName
+    );
 
-    MCAPI ::RandomBlockStateFunction::RemapComplexAliasBlockResult
-    _tryRemapComplexAliasBlock(class ItemStack& item, int, class Block const*&, std::string const& originalName);
+    MCAPI ::RandomBlockStateFunction::RemapComplexAliasBlockResult _tryRemapComplexAliasBlock(
+        class ItemStack&    item,
+        int                 randomInt,
+        class Block const*& inOutItemBlock,
+        std::string const&  originalName
+    );
 
     // NOLINTEND
 };

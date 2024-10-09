@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI explicit PackCapabilityRegistry(std::initializer_list<class PackCapability> const&);
+    MCAPI explicit PackCapabilityRegistry(std::initializer_list<class PackCapability> const& packCapabilities);
 
     MCAPI std::variant<
         struct PackCapability::ValidationResult::Succeeded,

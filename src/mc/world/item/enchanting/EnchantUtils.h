@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/EquipmentFilter.h"
 #include "mc/world/item/enchanting/Enchant.h"
+#include "mc/world/item/enchanting/EquipmentFilter.h"
 
 class EnchantUtils {
 public:
@@ -15,7 +15,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static void appendEnchantToFormattedText(::Enchant::Type type, std::string_view, std::string&);
+    MCAPI static void appendEnchantToFormattedText(
+        ::Enchant::Type  type,
+        std::string_view enchantName,
+        std::string&     formattedEnchantmentText
+    );
 
     MCAPI static bool
     applyEnchant(class ItemStackBase& out, class EnchantmentInstance const& enchant, bool allowNonVanilla);
@@ -24,7 +28,11 @@ public:
 
     MCAPI static int applyEnchant(class ItemStackBase& out, class ItemEnchants const& enchants, bool allowNonVanilla);
 
-    MCAPI static float calculateAfterBreachArmorFraction(struct ActorUniqueID const&, class Mob const&, float);
+    MCAPI static float calculateAfterBreachArmorFraction(
+        struct ActorUniqueID const& attackerID,
+        class Mob const&            target,
+        float                       armorFraction
+    );
 
     MCAPI static struct EnchantResult
     canEnchant(class ItemStackBase const& item, class EnchantmentInstance const& enchant, bool allowNonVanilla);
@@ -47,7 +55,11 @@ public:
 
     MCAPI static void doPostHurtEffects(class Mob& victim, class Mob& attacker);
 
-    MCAPI static void doPostItemHurtActorEffects(class Actor&, class Actor&, class ItemEnchants const&);
+    MCAPI static void doPostItemHurtActorEffects(
+        class Actor&              victim,
+        class Actor&              attacker,
+        class ItemEnchants const& preHurtEnchantments
+    );
 
     MCAPI static class ItemInstance generateEnchantedBook(class EnchantmentInstance const& enchant);
 
@@ -64,7 +76,7 @@ public:
 
     MCAPI static int getEnchantLevel(::Enchant::Type enchantType, class ItemStackBase const& stack);
 
-    MCAPI static std::string getEnchantNameAndLevel(::Enchant::Type, int);
+    MCAPI static std::string getEnchantNameAndLevel(::Enchant::Type id, int level);
 
     MCAPI static std::vector<class Vec3> getEnchantingTablePositions(class BlockSource& source, class Vec3 const& pos);
 

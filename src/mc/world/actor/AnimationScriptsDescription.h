@@ -21,7 +21,7 @@ public:
     virtual ~AnimationScriptsDescription();
 
     // vIndex: 2
-    virtual void deserializeData(struct DeserializeDataParams);
+    virtual void deserializeData(struct DeserializeDataParams nonConstDeserializeDataParams);
 
     // NOLINTEND
 };

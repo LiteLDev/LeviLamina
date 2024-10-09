@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/AdjustmentEffect.h"
-#include "mc/enums/Rotation.h"
-#include "mc/world/level/levelgen/structure/PoolAliasBinding.h"
+#include "mc/util/Rotation.h"
+#include "mc/world/level/levelgen/structure/structurepools/alias/PoolAliasBinding.h"
+#include "mc/world/level/levelgen/v1/AdjustmentEffect.h"
 
 class JigsawPlacement {
 public:
@@ -29,8 +29,13 @@ public:
         class Dimension&                     dimension
     );
 
-    MCAPI void
-    addPieces(class StructurePoolElement const&, class BlockPos const&, ::Rotation const&, std::string_view, class PoolAliasBinding::PoolAliasLookup const&);
+    MCAPI void addPieces(
+        class StructurePoolElement const&              initialElement,
+        class BlockPos const&                          startPosition,
+        ::Rotation const&                              rotation,
+        std::string_view                               startAnchorName,
+        class PoolAliasBinding::PoolAliasLookup const& poolAliasLookup
+    );
 
     MCAPI ~JigsawPlacement();
 
@@ -38,21 +43,38 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI void
-    _addPiece(class PoolElementStructurePiece const&, class BlockPos const&, ::Rotation const&, class BlockPos const&, uint64, class PoolAliasBinding::PoolAliasLookup const&);
+    MCAPI void _addPiece(
+        class PoolElementStructurePiece const&         sourcePiece,
+        class BlockPos const&                          position,
+        ::Rotation const&                              rotation,
+        class BlockPos const&                          refPos,
+        uint64                                         contextDepth,
+        class PoolAliasBinding::PoolAliasLookup const& poolAliasLookup
+    );
 
     MCAPI class BlockPos _findLocalAnchorOffset(
         class StructurePoolElement const& initialElement,
-        class BlockPos const&,
-        ::Rotation const& rotation,
-        std::string_view
+        class BlockPos const&             pieceCornerPosition,
+        ::Rotation const&                 rotation,
+        std::string_view                  startAnchorName
     ) const;
 
-    MCAPI std::shared_ptr<bool>
-    _setTerrainAdjustment(::AdjustmentEffect, class BoundingBox const& bb, struct JigsawJunction const& junction) const;
+    MCAPI std::shared_ptr<bool> _setTerrainAdjustment(
+        ::AdjustmentEffect           adjustmentEffect,
+        class BoundingBox const&     bb,
+        struct JigsawJunction const& junction
+    ) const;
 
-    MCAPI bool
-    _tryPlacingPiece(class PoolElementStructurePiece const&, class BoundingBox const&, class JigsawBlockInfo const&, class BlockPos const&, class StructureTemplatePool const*, class BlockPos const&, uint64, class PoolAliasBinding::PoolAliasLookup const&);
+    MCAPI bool _tryPlacingPiece(
+        class PoolElementStructurePiece const&         sourcePiece,
+        class BoundingBox const&                       sourceBB,
+        class JigsawBlockInfo const&                   sourceJigsaw,
+        class BlockPos const&                          attachPos,
+        class StructureTemplatePool const*             targetPool,
+        class BlockPos const&                          refPos,
+        uint64                                         contextDepth,
+        class PoolAliasBinding::PoolAliasLookup const& poolAliasLookup
+    );
 
     // NOLINTEND
 };

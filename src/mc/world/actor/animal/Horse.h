@@ -3,24 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/input/InputMode.h"
 #include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/entity/utilities/ActorDamageCause.h"
-#include "mc/entity/utilities/ActorFlags.h"
-#include "mc/entity/utilities/ActorInitializationMethod.h"
-#include "mc/entity/utilities/ActorType.h"
-#include "mc/enums/ArmorMaterialType.h"
-#include "mc/enums/ArmorSlot.h"
-#include "mc/enums/HandSlot.h"
-#include "mc/enums/HorseFlags.h"
-#include "mc/enums/InputMode.h"
-#include "mc/enums/MaterialType.h"
-#include "mc/enums/NewInteractionModel.h"
-#include "mc/events/ActorEvent.h"
-#include "mc/events/LevelSoundEvent.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/input/NewInteractionModel.h"
+#include "mc/network/packet/types/world/actor/ActorEvent.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/world/actor/ActorDamageCause.h"
+#include "mc/world/actor/ActorFlags.h"
+#include "mc/world/actor/ActorInitializationMethod.h"
+#include "mc/world/actor/ActorType.h"
+#include "mc/world/actor/ArmorMaterialType.h"
 #include "mc/world/actor/animal/Animal.h"
-#include "mc/world/item/components/ItemUseMethod.h"
+#include "mc/world/actor/animal/HorseFlags.h"
+#include "mc/world/item/ArmorSlot.h"
+#include "mc/world/item/HandSlot.h"
+#include "mc/world/item/ItemUseMethod.h"
+#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -67,7 +67,7 @@ public:
     virtual struct ActorUniqueID getControllingPlayer() const;
 
     // vIndex: 98
-    virtual float causeFallDamageToActor(float, float, class ActorDamageSource);
+    virtual float causeFallDamageToActor(float fallDistance, float multiplier, class ActorDamageSource source);
 
     // vIndex: 99
     virtual void onSynchedDataUpdate(int dataId);
@@ -122,23 +122,28 @@ public:
     MCAPI void postNormalTick();
 
     MCAPI static class Vec3 getInterpolatedRidingOffset(
-        struct RenderRotationComponent const&,
-        struct StandAnimationComponent const&,
-        float alpha
+        struct RenderRotationComponent const& renderRotationComponent,
+        struct StandAnimationComponent const& standAnimationComponent,
+        float                                 alpha
     );
 
-    MCAPI static class Vec3 getInterpolatedRidingOffset(class Vec2 const&, float, float, float alpha);
+    MCAPI static class Vec3
+    getInterpolatedRidingOffset(class Vec2 const& renderRot, float standAnimO, float standAnim, float alpha);
 
     MCAPI static class Vec3 getNewPassengerPos(
-        struct RenderPositionComponent const&,
-        struct RenderRotationComponent const&,
-        struct StandAnimationComponent const&,
-        float alpha,
-        float
+        struct RenderPositionComponent const& horseRenderPosComponent,
+        struct RenderRotationComponent const& horseRenderRotComponent,
+        struct StandAnimationComponent const& horseStandAnimComponent,
+        float                                 alpha,
+        float                                 passengerPosY
     );
 
-    MCAPI static void
-    setHorseFlag(struct ActorDataHorseFlagComponent&, struct ActorDataDirtyFlagsComponent&, ::HorseFlags, bool);
+    MCAPI static void setHorseFlag(
+        struct ActorDataHorseFlagComponent&  actorDataHorseFlag,
+        struct ActorDataDirtyFlagsComponent& actorDataDirtyFlags,
+        ::HorseFlags                         flag,
+        bool                                 shouldAddFlag
+    );
 
     // NOLINTEND
 
@@ -146,7 +151,7 @@ public:
     // NOLINTBEGIN
     MCAPI void _openMouth();
 
-    MCAPI void _setHorseFlag(::HorseFlags flag, bool value);
+    MCAPI void _setHorseFlag(::HorseFlags flag, bool shouldAddFlag);
 
     MCAPI bool _setHorseType(::ActorType actorType);
 

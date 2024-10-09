@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/debug/log/ContentLogEndPoint.h"
-#include "mc/enums/LogArea.h"
-#include "mc/enums/LogLevel.h"
+#include "mc/deps/core/debug/log/LogArea.h"
+#include "mc/deps/core/debug/log/LogLevel.h"
 #include "mc/resources/ResourcePackListener.h"
 
 // auto generated forward declare list
@@ -64,7 +64,7 @@ public:
 
     MCVAPI void setEnabled(bool newState);
 
-    MCAPI explicit DebugEndPoint(std::optional<::LogLevel>);
+    MCAPI explicit DebugEndPoint(std::optional<::LogLevel> minLogLevel);
 
     MCAPI void initializeContentLogging(class ResourcePackManager& mgr, class Core::Path const& levelPath);
 

@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorDefinitionParseStatus.h"
-#include "mc/enums/LogArea.h"
+#include "mc/deps/core/debug/log/LogArea.h"
+#include "mc/world/actor/ActorDefinitionParseStatus.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -42,13 +42,13 @@ public:
     );
 
     MCAPI void parsePermutations(
-        class Json::Value&,
+        class Json::Value&      permutations,
         class SemVersion const& formatVersion,
         class SemVersion const& engineVersion,
         class ActorFactory&     actorFactory
     );
 
-    MCAPI bool validatePermutationJson(class Json::Value&);
+    MCAPI bool validatePermutationJson(class Json::Value& permutationValue);
 
     MCAPI ~ActorDefinition();
 

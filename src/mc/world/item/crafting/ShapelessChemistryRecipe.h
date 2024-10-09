@@ -23,7 +23,7 @@ public:
     virtual ~ShapelessChemistryRecipe() = default;
 
     // vIndex: 5
-    virtual bool matches(class CraftingContainer const& craftSlots, class CraftingContext const&) const;
+    virtual bool matches(class CraftingContainer const& craftSlots, class CraftingContext const& craftingContext) const;
 
     // vIndex: 7
     virtual class mce::UUID const& getId() const;

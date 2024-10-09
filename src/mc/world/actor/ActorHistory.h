@@ -34,13 +34,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI explicit ActorHistory(uint64);
+    MCAPI explicit ActorHistory(uint64 historyWindow);
 
-    MCAPI void addCorrectionToFrame(std::shared_ptr<struct IMovementCorrection>, uint64);
+    MCAPI void addCorrectionToFrame(std::shared_ptr<struct IMovementCorrection> correction, uint64 frame);
 
-    MCAPI bool addFrame(class EntityContext&, uint64, class EntityRegistry&);
+    MCAPI bool addFrame(class EntityContext& entity, uint64 frame, class EntityRegistry& registry);
 
-    MCAPI void addInputToFrontOfFrame(std::shared_ptr<struct IReplayableActorInput>, uint64);
+    MCAPI void addInputToFrontOfFrame(std::shared_ptr<struct IReplayableActorInput> input, uint64 frame);
 
     MCAPI void clearFrames();
 
@@ -48,11 +48,11 @@ public:
 
     MCAPI uint64 getOldestFrame() const;
 
-    MCAPI void queueCorrection(std::shared_ptr<struct IMovementCorrection>);
+    MCAPI void queueCorrection(std::shared_ptr<struct IMovementCorrection> correction);
 
-    MCAPI void queueInputSimulation(std::unique_ptr<struct IReplayableActorInput>);
+    MCAPI void queueInputSimulation(std::unique_ptr<struct IReplayableActorInput> input);
 
-    MCAPI void setSnapshotAsCorrection(uint64);
+    MCAPI void setSnapshotAsCorrection(uint64 frame);
 
     MCAPI ~ActorHistory();
 

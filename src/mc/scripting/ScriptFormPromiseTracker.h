@@ -45,7 +45,7 @@ public:
 
     MCAPI ScriptFormPromiseTracker();
 
-    MCAPI void handleFormResponse(uint formId, class Json::Value const&);
+    MCAPI void handleFormResponse(uint formId, class Json::Value const& formResponse);
 
     MCAPI void handlePlayerQuit(class NetworkIdentifier const& playerId);
 

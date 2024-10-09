@@ -40,7 +40,7 @@ public:
     // vIndex: 6
     virtual int size() const;
 
-    MCAPI explicit ShapelessRecipe(struct Recipe::ConstructionContext&&);
+    MCAPI explicit ShapelessRecipe(struct Recipe::ConstructionContext&& context);
 
     // NOLINTEND
 };

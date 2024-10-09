@@ -22,7 +22,7 @@ public:
 
     MCAPI bool isPlanting() const;
 
-    MCAPI void setPlanting(bool);
+    MCAPI void setPlanting(bool planting);
 
     MCAPI bool useOn(
         class ItemStack&      instance,

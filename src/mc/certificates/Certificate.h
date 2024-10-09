@@ -31,7 +31,7 @@ public:
 
     MCAPI std::string toString() const;
 
-    MCAPI bool validate(int64, bool);
+    MCAPI bool validate(int64 currentTime, bool isSelfSigned);
 
     MCAPI ~Certificate();
 

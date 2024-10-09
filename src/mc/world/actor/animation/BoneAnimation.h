@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/BoneAnimationRelativeMode.h"
-#include "mc/enums/BoneTransformType.h"
+#include "mc/world/actor/animation/BoneAnimationRelativeMode.h"
+#include "mc/world/actor/animation/BoneTransformType.h"
 
 class BoneAnimation {
 public:

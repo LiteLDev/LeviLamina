@@ -30,7 +30,7 @@ public:
 
     MCAPI void moveInsideHeights(class Random& random, short lowestAllowed, short highestAllowed);
 
-    MCAPI void moveToBelowSeaLevel(short seaLevel, short, class Random& random, int offset);
+    MCAPI void moveToBelowSeaLevel(short seaLevel, short minYPos, class Random& random, int offset);
 
     // NOLINTEND
 };

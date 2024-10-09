@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/SolidityCheckType.h"
+#include "mc/world/actor/ai/util/SolidityCheckType.h"
 
 class RandomPos {
 public:

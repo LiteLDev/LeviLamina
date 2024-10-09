@@ -28,7 +28,7 @@ public:
 
     MCAPI MoveControl();
 
-    MCAPI static class Vec3 getDiffVector(class Vec3 const&, class Mob const& mob);
+    MCAPI static class Vec3 getDiffVector(class Vec3 const& wantedPosition, class Mob const& mob);
 
     MCAPI static float const MIN_DELTA_TO_JUMP;
 

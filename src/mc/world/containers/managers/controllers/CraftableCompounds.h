@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/CompoundType.h"
-#include "mc/enums/LabTableReactionType.h"
-#include "mc/world/containers/CompoundContainerType.h"
+#include "mc/world/item/CompoundContainerType.h"
+#include "mc/world/item/CompoundType.h"
+#include "mc/world/level/block/actor/LabTableReactionType.h"
 
 class CraftableCompounds {
 public:
@@ -40,7 +40,7 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    MCAPI std::string _getCompoundId(std::vector<class ItemStack> const&);
+    MCAPI std::string _getCompoundId(std::vector<class ItemStack> const& input);
 
     MCAPI void _registerCompound(
         std::vector<struct ChemistryIngredient> const& input,

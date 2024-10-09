@@ -38,7 +38,7 @@ public:
     virtual class Json::Value _serializeValue() const;
 
     // vIndex: 7
-    virtual bool _isExpectedItem(std::vector<class ItemStack const*> const&) const;
+    virtual bool _isExpectedItem(std::vector<class ItemStack const*> const& itemList) const;
 
     // NOLINTEND
 };

@@ -6,8 +6,8 @@
 #include "mc/codebuilder/GameContext.h"
 #include "mc/codebuilder/RequestPurpose.h"
 #include "mc/codebuilder/ResponsePurpose.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/enums/AgentActionType.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/network/packet/AgentActionType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -36,25 +36,25 @@ namespace CodeBuilder {
 // NOLINTBEGIN
 MCAPI struct MCRESULT deserialize(class Json::Value const& json, struct CodeBuilder::RequestHeader& result);
 
-MCAPI bool fromString(std::string const&, ::CodeBuilder::RequestPurpose&);
+MCAPI bool fromString(std::string const& messagePurpose, ::CodeBuilder::RequestPurpose& outPurpose);
 
-MCAPI std::string serialize(struct CodeBuilder::AgentMessage const&);
+MCAPI std::string serialize(struct CodeBuilder::AgentMessage const& message);
 
-MCAPI std::string serialize(struct CodeBuilder::ChatMessage const&);
+MCAPI std::string serialize(struct CodeBuilder::ChatMessage const& message);
 
-MCAPI std::string serialize(struct CodeBuilder::CommandMessage const&);
+MCAPI std::string serialize(struct CodeBuilder::CommandMessage const& message);
 
-MCAPI std::string serialize(struct CodeBuilder::DataMessage const&);
+MCAPI std::string serialize(struct CodeBuilder::DataMessage const& message);
 
-MCAPI std::string serialize(struct CodeBuilder::EncryptionResult const&);
+MCAPI std::string serialize(struct CodeBuilder::EncryptionResult const& message);
 
-MCAPI std::string serialize(struct CodeBuilder::ErrorMessage const&);
+MCAPI std::string serialize(struct CodeBuilder::ErrorMessage const& message);
 
-MCAPI std::string serialize(struct CodeBuilder::EventMessage const&);
+MCAPI std::string serialize(struct CodeBuilder::EventMessage const& message);
 
 MCAPI std::string serialize(struct CodeBuilder::ChatMessage const& message, std::string const& requestId);
 
-MCAPI std::string toString(::CodeBuilder::ResponsePurpose);
+MCAPI std::string toString(::CodeBuilder::ResponsePurpose purpose);
 // NOLINTEND
 
 }; // namespace CodeBuilder

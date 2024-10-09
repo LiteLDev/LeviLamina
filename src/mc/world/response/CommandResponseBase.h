@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/systems/common/CommandOriginSystem.h"
+#include "mc/world/level/CommandOriginSystem.h"
 
 class CommandResponseBase {
 public:

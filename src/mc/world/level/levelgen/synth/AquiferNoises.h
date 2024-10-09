@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/components/MultiOctaveNoiseImpl.h"
-#include "mc/world/components/NormalNoiseImpl.h"
-#include "mc/world/components/ParityImprovedNoiseImpl.h"
+#include "mc/world/level/levelgen/synth/MultiOctaveNoiseImpl.h"
+#include "mc/world/level/levelgen/synth/NormalNoiseImpl.h"
+#include "mc/world/level/levelgen/synth/ParityImprovedNoiseImpl.h"
 
 class AquiferNoises {
 public:
@@ -19,7 +19,7 @@ public:
 
     MCAPI ~AquiferNoises();
 
-    MCAPI static class AquiferNoises make(class XoroshiroPositionalRandomFactory const&);
+    MCAPI static class AquiferNoises make(class XoroshiroPositionalRandomFactory const& positionalRandom);
 
     // NOLINTEND
 

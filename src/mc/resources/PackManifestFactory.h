@@ -30,17 +30,18 @@ public:
         class SubpackInfoCollection*  subpackInfoStack
     );
 
-    MCAPI PackManifestFactory(class PackCapabilityRegistry const&, class IPackTelemetry& eventing);
+    MCAPI
+    PackManifestFactory(class PackCapabilityRegistry const& packCapabilityRegistry, class IPackTelemetry& eventing);
 
     MCAPI std::unique_ptr<class PackManifest> create(
-        class PackAccessStrategy& accessStrategy,
-        std::string const&        manifestContent,
-        class PackReport&         report,
-        std::unique_ptr<class PackManifest>,
-        class SubpackInfoCollection* subpackInfoStack
+        class PackAccessStrategy&           accessStrategy,
+        std::string const&                  manifestContent,
+        class PackReport&                   report,
+        std::unique_ptr<class PackManifest> sourceManifest,
+        class SubpackInfoCollection*        subpackInfoStack
     );
 
-    MCAPI static std::string contentKeyLookup(std::string const& packIdentity);
+    MCAPI static std::string contentKeyLookup(std::string const&);
 
     MCAPI static class Core::Path const MANIFEST_LOG_PATH;
 

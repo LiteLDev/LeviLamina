@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
-#include "mc/enums/ShowStoreOfferRedirectType.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/network/packet/ShowStoreOfferRedirectType.h"
+#include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -38,7 +38,7 @@ public:
 
     MCAPI ShowStoreOfferPacket();
 
-    MCAPI ShowStoreOfferPacket(class mce::UUID const&, ::ShowStoreOfferRedirectType);
+    MCAPI ShowStoreOfferPacket(class mce::UUID const& offerId, ::ShowStoreOfferRedirectType redirectType);
 
     // NOLINTEND
 };

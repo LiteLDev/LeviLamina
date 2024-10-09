@@ -16,9 +16,9 @@ public:
     MCAPI std::unique_ptr<class CommandArea> findArea(
         class BlockPos const& min,
         class BlockPos const& max,
-        bool                  allowNonPlayerTicking,
+        bool                  allowNonTickingPlayerAndTickingAreaChunks,
         bool                  allowUnloadedChunks,
-        bool
+        bool                  allowPlayerChunks
     ) const;
 
     MCAPI std::unique_ptr<class CommandArea> findAreaWithBuffer(
@@ -26,7 +26,7 @@ public:
         class BlockPos const& max,
         int                   commandVersion,
         bool                  allowUnloadedChunks,
-        bool
+        bool                  allowPlayerChunks
     ) const;
 
     MCAPI static bool shouldAllowNonTickingPlayerAndTickingAreaChunks(int commandVersion);
@@ -35,8 +35,12 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI std::unique_ptr<class CommandArea>
-          _getArea(struct Bounds const& requiredArea, bool allowNonPlayerTicking, bool allowUnloadedChunks, bool) const;
+    MCAPI std::unique_ptr<class CommandArea> _getArea(
+        struct Bounds const& requiredArea,
+        bool                 allowNonTickingPlayerAndTickingAreaChunks,
+        bool                 allowUnloadedChunks,
+        bool                 allowPlayerChunks
+    ) const;
 
     // NOLINTEND
 };

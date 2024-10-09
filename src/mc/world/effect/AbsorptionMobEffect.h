@@ -21,7 +21,7 @@ public:
     virtual void applyEffects(class Actor& target, int durationTicks, int amplification) const;
 
     // vIndex: 2
-    virtual void removeEffects(class BaseAttributeMap&);
+    virtual void removeEffects(class BaseAttributeMap& attributeMapToRemoveFrom);
 
     // NOLINTEND
 };

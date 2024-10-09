@@ -20,7 +20,7 @@ public:
     virtual char const* name() const;
 
     // vIndex: 2
-    virtual std::string message(int) const;
+    virtual std::string message(int _Errval) const;
 
     // vIndex: 3
     virtual std::error_condition default_error_condition(int) const;

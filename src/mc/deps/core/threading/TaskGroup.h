@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/IAsyncResult.h"
-#include "mc/deps/core/common/bedrock/UniqueLock.h"
+#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/TaskGroupState.h"
 #include "mc/deps/core/threading/TaskStartInfoEx.h"
-#include "mc/enums/TaskGroupState.h"
+#include "mc/platform/threading/UniqueLock.h"
 
 // auto generated forward declare list
 // clang-format off

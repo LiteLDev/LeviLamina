@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/BodyControl.h"
+#include "mc/world/actor/ai/control/BodyControl.h"
 
 class LegacyBodyControl : public ::BodyControl {
 public:

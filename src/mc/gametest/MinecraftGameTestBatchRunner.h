@@ -30,7 +30,8 @@ public:
     _createGameTestInstance(class gametest::BaseGameTestFunction& function);
 
     // vIndex: 2
-    virtual void _runTest(std::shared_ptr<class gametest::BaseGameTestInstance> test, class gametest::GameTestTicker&);
+    virtual void
+    _runTest(std::shared_ptr<class gametest::BaseGameTestInstance> test, class gametest::GameTestTicker& ticker);
 
     // NOLINTEND
 };

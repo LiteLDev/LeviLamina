@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/PathBuffer.h"
-#include "mc/entity/systems/common/ResourceFileSystem.h"
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/resource/ResourceFileSystem.h"
 
 // auto generated forward declare list
 // clang-format off

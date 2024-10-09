@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class RandomLookAroundGoal : public ::Goal {
@@ -33,7 +33,14 @@ public:
     // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    MCAPI RandomLookAroundGoal(class Mob& mob, int minLookTime, int maxLookTime, float, float, float probability);
+    MCAPI RandomLookAroundGoal(
+        class Mob& mob,
+        int        minLookTime,
+        int        maxLookTime,
+        float      minAngleOfView,
+        float      maxAngleOfView,
+        float      probability
+    );
 
     // NOLINTEND
 

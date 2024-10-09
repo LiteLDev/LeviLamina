@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/json/JsonSchemaObjectNode.h"
-#include "mc/world/AutomaticID.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
@@ -90,7 +90,7 @@ public:
 
     MCAPI bool _findCandidateBlocks(class NavigationComponent& navigation);
 
-    MCAPI bool _findJumpableBlocks(bool);
+    MCAPI bool _findJumpableBlocks(bool useOnlyPreferredBlocksIfAny);
 
     MCAPI bool _findTargetBlock();
 

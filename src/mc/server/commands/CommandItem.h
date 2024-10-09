@@ -12,9 +12,9 @@ public:
     // NOLINTBEGIN
     MCAPI CommandItem();
 
-    MCAPI explicit CommandItem(uint64);
+    MCAPI explicit CommandItem(uint64 versionId);
 
-    MCAPI CommandItem(int id, short version, bool);
+    MCAPI CommandItem(int id, short version, bool overrideAux);
 
     MCAPI std::optional<class ItemInstance>
           createInstance(int count, int aux, class CommandOutput& output, bool requireExactAux) const;

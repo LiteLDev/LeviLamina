@@ -23,8 +23,11 @@ public:
     // vIndex: 0
     virtual ~TradeWithPlayerDefinition() = default;
 
-    MCAPI static void
-    buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TradeWithPlayerDefinition>>&);
+    MCAPI static void buildSchema(
+        std::string const& name,
+        std::shared_ptr<
+            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TradeWithPlayerDefinition>>& root
+    );
 
     // NOLINTEND
 };

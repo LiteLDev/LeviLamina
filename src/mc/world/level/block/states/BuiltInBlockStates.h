@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/VerticalHalfEnum.h"
 #include "mc/world/Direction.h"
+#include "mc/world/level/block/VerticalHalfEnum.h"
 #include "mc/world/level/block/states/BuiltInBlockStateVariant.h"
 
 namespace BuiltInBlockStates {

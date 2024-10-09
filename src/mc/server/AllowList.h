@@ -28,9 +28,9 @@ public:
 
     public:
         // NOLINTBEGIN
-        MCAPI AllowListEntryMatcher(std::string name, std::string xuid);
+        MCAPI AllowListEntryMatcher(std::string, std::string);
 
-        MCAPI bool operator()(class AllowListEntry&);
+        MCAPI bool operator()(class AllowListEntry& entry);
 
         MCAPI ~AllowListEntryMatcher();
 

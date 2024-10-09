@@ -25,7 +25,7 @@ public:
 
     MCAPI class JigsawStructureElementRegistry& getJigsawStructureElementRegistry();
 
-    MCAPI void initialize(class BaseGameVersion const&, class Experiments const&);
+    MCAPI void initialize(class BaseGameVersion const& baseGameVersion, class Experiments const& experiments);
 
     MCAPI class StructureTemplatePool const* lookupByName(std::string name) const;
 

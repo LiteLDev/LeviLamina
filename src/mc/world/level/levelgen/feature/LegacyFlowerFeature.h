@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/FlowerPlacementType.h"
 #include "mc/world/level/levelgen/feature/Feature.h"
+#include "mc/world/level/levelgen/feature/helpers/FlowerPlacementType.h"
 
 class LegacyFlowerFeature : public ::Feature {
 public:

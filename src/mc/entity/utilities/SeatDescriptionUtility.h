@@ -11,21 +11,27 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static struct SeatDescription const&
-    getSeatDescriptionOfPassenger(std::vector<struct SeatDescription> const&, int, int);
+    MCAPI static struct SeatDescription const& getSeatDescriptionOfPassenger(
+        std::vector<struct SeatDescription> const& seats,
+        int                                        passengerCount,
+        int                                        passengerIndex
+    );
 
-    MCAPI static struct SeatDescription const&
-    getSeatDescriptionOfPassenger(std::vector<struct SeatDescription> const&, struct VehicleComponent const&, class StrictEntityContext const&);
+    MCAPI static struct SeatDescription const& getSeatDescriptionOfPassenger(
+        std::vector<struct SeatDescription> const& seats,
+        struct VehicleComponent const&             vehicleComponent,
+        class StrictEntityContext const&           passengerContext
+    );
 
-    MCAPI static float getSeatRidingHeightOffset(float, float, float);
+    MCAPI static float getSeatRidingHeightOffset(float seatYPosition, float seatScale, float ridingHeight);
 
     MCAPI static void setValuesToSynchedActorData(
-        struct ActorDataSeatOffsetComponent&,
-        struct ActorDataDirtyFlagsComponent&,
-        class SynchedActorDataWriter,
-        class Vec3 const&,
-        struct SeatDescription const&,
-        float
+        struct ActorDataSeatOffsetComponent& seatOffsetComponent,
+        struct ActorDataDirtyFlagsComponent& dirtyFlagsComponent,
+        class SynchedActorDataWriter         synchedActorData,
+        class Vec3 const&                    offset,
+        struct SeatDescription const&        seat,
+        float                                seatRotation
     );
 
     // NOLINTEND

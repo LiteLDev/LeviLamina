@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/Container.h"
-#include "mc/world/containers/ContainerType.h"
+#include "mc/world/ContainerType.h"
 
 class SimpleContainer : public ::Container {
 public:

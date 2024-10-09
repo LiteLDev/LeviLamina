@@ -33,7 +33,7 @@ public:
     ) const;
 
     // vIndex: 3
-    virtual int getAvailableSetCount(int slot, class ItemStackBase const& item) const;
+    virtual int getAvailableSetCount(int, class ItemStackBase const&) const;
 
     // vIndex: 4
     virtual bool isItemAllowedToAdd(class ItemStack const& item) const;

@@ -18,7 +18,7 @@ public:
     virtual ~ServerContentKeyProvider() = default;
 
     // vIndex: 1
-    virtual std::string getContentKey(class ContentIdentity const&) const;
+    virtual std::string getContentKey(class ContentIdentity const& contentIdentity) const;
 
     // vIndex: 2
     virtual std::string getAlternateContentKey(class ContentIdentity const&) const;

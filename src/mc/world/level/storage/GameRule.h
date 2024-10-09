@@ -38,7 +38,7 @@ public:
 
     MCAPI GameRule(class GameRule const&);
 
-    MCAPI GameRule(std::string const& name, bool);
+    MCAPI GameRule(std::string const& name, bool canBeModifiedByPlayer);
 
     MCAPI bool allowUseInCommand() const;
 
@@ -75,7 +75,7 @@ public:
     MCAPI bool setInt(int value, bool* pValidated, class GameRule::ValidationError* errorOutput);
 
     MCAPI class GameRule&
-        setTagDataNotFoundCallback(std::function<void(class GameRule&, class BaseGameVersion const&)>);
+    setTagDataNotFoundCallback(std::function<void(class GameRule&, class BaseGameVersion const&)> cb);
 
     MCAPI class GameRule&
     setValidateValueCallback(std::function<bool(union GameRule::Value const&, class GameRule::ValidationError*)> cb);

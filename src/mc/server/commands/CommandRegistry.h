@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/InvertableFilter.h"
-#include "mc/deps/core/common/bedrock/typeid_t.h"
-#include "mc/enums/SemanticConstraint.h"
+#include "mc/deps/core/utility/typeid_t.h"
 #include "mc/server/commands/CommandLexer.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/server/commands/CommandSelector.h"
 #include "mc/server/commands/CommandStatus.h"
-#include "mc/server/commands/flags/CommandTypeFlag.h"
+#include "mc/server/commands/CommandTypeFlag.h"
+#include "mc/server/commands/SemanticConstraint.h"
+#include "mc/world/actor/selectors/InvertableFilter.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -91,7 +91,7 @@ public:
         // NOLINTBEGIN
         MCAPI Overload(struct CommandRegistry::Overload&&);
 
-        MCAPI Overload(class CommandVersion version_, std::unique_ptr<class Command> (*alloc_)());
+        MCAPI Overload(class CommandVersion, std::unique_ptr<class Command> (*)());
 
         MCAPI ~Overload();
 
@@ -273,7 +273,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI explicit CommandRegistry(bool);
+    MCAPI explicit CommandRegistry(bool isEduMode);
 
     MCAPI void addEnumValueConstraints(
         std::string const&              enumName,
@@ -292,17 +292,17 @@ public:
 
     MCAPI bool enabledInEditor(std::string const& nameIn) const;
 
-    MCAPI void finalizeChainedSubcommandOverloadRules(char const*);
+    MCAPI void finalizeChainedSubcommandOverloadRules(char const* command);
 
     MCAPI void fireCommandParseTableTelemetry(class IMinecraftEventing const& eventing, bool isServer) const;
 
-    MCAPI class Json::Value generateDocumentationMetadata(bool) const;
+    MCAPI class Json::Value generateDocumentationMetadata(bool generateInternalMetadata) const;
 
     MCAPI std::vector<std::string> getAliases(std::string const& command) const;
 
-    MCAPI std::vector<std::string> getAlphabeticalLookup(class CommandOrigin const&) const;
+    MCAPI std::vector<std::string> getAlphabeticalLookup(class CommandOrigin const& origin) const;
 
-    MCAPI std::string getCommandName(std::string const& commandLine) const;
+    MCAPI std::string getCommandName(std::string const&) const;
 
     MCAPI struct CommandSyntaxInformation
     getCommandOverloadSyntaxInformation(class CommandOrigin const& origin, std::string const& commandName) const;
@@ -373,15 +373,25 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI class
-        CommandRegistry::
-            Symbol
-            _addChainedSubcommandValuesInternal(std::string const&, std::vector<std::pair<std::string, uint>> const&, class Bedrock::typeid_t<class CommandRegistry>, bool (CommandRegistry::*)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&) const, struct CommandRegistry::Signature*);
+    MCAPI class CommandRegistry::Symbol _addChainedSubcommandValuesInternal(
+        std::string const&                               name,
+        std::vector<std::pair<std::string, uint>> const& strings,
+        class Bedrock::typeid_t<class CommandRegistry>   type,
+        bool (CommandRegistry::*
+                  parse)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&)
+            const,
+        struct CommandRegistry::Signature* signature
+    );
 
-    MCAPI class
-        CommandRegistry::
-            Symbol
-            _addChainedSubcommandValuesInternal(std::string const&, std::vector<std::pair<uint64, uint>> const&, class Bedrock::typeid_t<class CommandRegistry>, bool (CommandRegistry::*)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&) const, struct CommandRegistry::Signature*);
+    MCAPI class CommandRegistry::Symbol _addChainedSubcommandValuesInternal(
+        std::string const&                             name,
+        std::vector<std::pair<uint64, uint>> const&    values,
+        class Bedrock::typeid_t<class CommandRegistry> type,
+        bool (CommandRegistry::*
+                  parse)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&)
+            const,
+        struct CommandRegistry::Signature* signature
+    );
 
     MCAPI class CommandRegistry::Symbol _addEnumValuesInternal(
         std::string const&                                 name,
@@ -414,7 +424,7 @@ public:
         ::SemanticConstraint                 requiredConstraints
     ) const;
 
-    MCAPI void addChainedSubcommandValuesToExisting(uint, std::vector<std::pair<uint64, uint>> const&);
+    MCAPI void addChainedSubcommandValuesToExisting(uint index, std::vector<std::pair<uint64, uint>> const& values);
 
     MCAPI void addEnumValuesToExisting(uint index, std::vector<std::pair<uint64, uint64>> const& values);
 
@@ -456,9 +466,9 @@ public:
         uint64                                         count
     );
 
-    MCAPI void buildParseTable(uint) const;
+    MCAPI void buildParseTable(uint version) const;
 
-    MCAPI void buildPredictTable(struct CommandRegistry::ParseTable&, uint) const;
+    MCAPI void buildPredictTable(struct CommandRegistry::ParseTable& table, uint version) const;
 
     MCAPI class CommandRegistry::Symbol buildRules(
         struct CommandRegistry::Signature&                                   signature,
@@ -480,9 +490,9 @@ public:
         std::vector<std::string>&                 errorParams
     ) const;
 
-    MCAPI std::string describe(class CommandParameterData const&) const;
+    MCAPI std::string describe(class CommandParameterData const& param) const;
 
-    MCAPI std::string describe(class CommandRegistry::Symbol) const;
+    MCAPI std::string describe(class CommandRegistry::Symbol symbol) const;
 
     MCAPI std::string describe(
         struct CommandRegistry::Signature const& command,
@@ -507,7 +517,8 @@ public:
 
     MCAPI uint64 getEnumData(struct CommandRegistry::ParseToken const& token) const;
 
-    MCAPI struct InvertableFilter<std::string> getInvertableFilter(struct CommandRegistry::ParseToken const&) const;
+    MCAPI struct InvertableFilter<std::string> getInvertableFilter(struct CommandRegistry::ParseToken const& token
+    ) const;
 
     MCAPI bool isValid(class CommandRegistry::Symbol symbol) const;
 
@@ -537,13 +548,13 @@ public:
     MCAPI void
     registerOverloadInternal(struct CommandRegistry::Signature& signature, struct CommandRegistry::Overload& overload);
 
-    MCAPI void setupChainedSubcommandOverloadRules(struct CommandRegistry::Signature&);
+    MCAPI void setupChainedSubcommandOverloadRules(struct CommandRegistry::Signature& signature);
 
     MCAPI void setupOverloadRules(struct CommandRegistry::Signature& signature);
 
-    MCAPI std::string symbolToString(class CommandRegistry::Symbol) const;
+    MCAPI std::string symbolToString(class CommandRegistry::Symbol symbol) const;
 
-    MCAPI static std::string _removeStringQuotes(std::string const& str);
+    MCAPI static std::string _removeStringQuotes(std::string const&);
 
     MCAPI static void addNonEpsilonSymbols(
         entt::dense_set<class CommandRegistry::Symbol, struct CommandRegistry::SymbolHasher>&       destination,
@@ -602,8 +613,12 @@ public:
         std::vector<std::string>&                 errorParams
     );
 
-    MCAPI static bool
-    readString(std::string&, struct CommandRegistry::ParseToken const&, std::string&, std::vector<std::string>&);
+    MCAPI static bool readString(
+        std::string&                              value,
+        struct CommandRegistry::ParseToken const& token,
+        std::string&                              error,
+        std::vector<std::string>&                 errorParams
+    );
 
     // NOLINTEND
 

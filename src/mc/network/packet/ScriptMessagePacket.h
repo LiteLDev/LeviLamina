@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
 
 class ScriptMessagePacket : public ::Packet {
 public:
@@ -32,7 +32,7 @@ public:
 
     MCAPI ScriptMessagePacket();
 
-    MCAPI ScriptMessagePacket(std::string const& messageId, std::string const&);
+    MCAPI ScriptMessagePacket(std::string const& messageId, std::string const& messageValue);
 
     MCAPI std::string const& getMessageId() const;
 

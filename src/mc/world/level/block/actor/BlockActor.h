@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/world/level/block/utils/BlockActorType.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/world/level/block/actor/BlockActorType.h"
 
 class BlockActor {
 public:
@@ -91,7 +91,8 @@ public:
     virtual std::string const& getCustomName() const;
 
     // vIndex: 25
-    virtual std::string const& getFilteredCustomName(Bedrock::NotNullNonOwnerPtr<class UIProfanityContext> const&);
+    virtual std::string const&
+    getFilteredCustomName(Bedrock::NotNullNonOwnerPtr<class UIProfanityContext> const& context);
 
     // vIndex: 26
     virtual std::string getName() const;
@@ -142,9 +143,9 @@ public:
     virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
 
     // vIndex: 42
-    virtual bool _playerCanUpdate(class Player const& fromPlayer) const;
+    virtual bool _playerCanUpdate(class Player const&) const;
 
-    MCAPI BlockActor(::BlockActorType type, class BlockPos const& pos, std::string const& id);
+    MCAPI BlockActor(::BlockActorType type, class BlockPos const& pos, std::string const&);
 
     MCAPI class AABB const& getAABB() const;
 

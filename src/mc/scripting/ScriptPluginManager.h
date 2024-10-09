@@ -22,10 +22,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI ScriptPluginManager(class Scripting::ScriptEngine&, std::unique_ptr<class IScriptTelemetryLogger>);
+    MCAPI ScriptPluginManager(
+        class Scripting::ScriptEngine&                scriptEngine,
+        std::unique_ptr<class IScriptTelemetryLogger> logger
+    );
 
-    MCAPI class ScriptPluginManagerResult
-    discoverPlugins(::ResourceInformation::ResourceType, class IScriptPluginSourceEnumerator&, class ScriptPackConfigurationManager const&, class Scripting::DependencyLocator*, std::vector<std::function<bool(class PackManifest const&, struct Scripting::ModuleDescriptor const&, struct Scripting::ModuleDescriptor const&, class ScriptPluginResult&)>> const&);
+    MCAPI class ScriptPluginManagerResult discoverPlugins(
+        ::ResourceInformation::ResourceType         moduleType,
+        class IScriptPluginSourceEnumerator&        pluginEnumerator,
+        class ScriptPackConfigurationManager const& packConfigManager,
+        class Scripting::DependencyLocator*         dependencyLocator,
+        std::vector<std::function<
+            bool(class PackManifest const&, struct Scripting::ModuleDescriptor const&, struct Scripting::ModuleDescriptor const&, class ScriptPluginResult&)>> const&
+            moduleFilters
+    );
 
     MCAPI std::vector<struct ScriptPluginStats> getPluginStats() const;
 
@@ -35,7 +45,7 @@ public:
 
     MCAPI void releasePlugins();
 
-    MCAPI class ScriptPluginManagerResult runAll(std::vector<std::string>);
+    MCAPI class ScriptPluginManagerResult runAll(std::vector<std::string> excludeModuleIDs);
 
     MCAPI ~ScriptPluginManager();
 
@@ -45,16 +55,23 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI std::vector<struct Scripting::ModuleDescriptor>
-    _generateModuleDependencies(std::vector<struct ModuleIdentifier> const&, std::vector<struct PackIdVersion> const&)
-        const;
+    MCAPI std::vector<struct Scripting::ModuleDescriptor> _generateModuleDependencies(
+        std::vector<struct ModuleIdentifier> const& moduleDeps,
+        std::vector<struct PackIdVersion> const&    packDeps
+    ) const;
 
-    MCAPI void _reportContextResults(struct Scripting::ScriptContextResult const&, class ScriptPluginResult&);
+    MCAPI void _reportContextResults(
+        struct Scripting::ScriptContextResult const& contextResult,
+        class ScriptPluginResult&                    pluginResult
+    );
 
-    MCAPI void _runPlugin(class ScriptPlugin&, class ScriptPluginResult&);
+    MCAPI void _runPlugin(class ScriptPlugin& plugin, class ScriptPluginResult& pluginResult);
 
-    MCAPI void
-    _tryAddRuntime(class ScriptPlugin const&, class ScriptPluginResult&, class Scripting::DependencyLocator*);
+    MCAPI void _tryAddRuntime(
+        class ScriptPlugin const&           plugin,
+        class ScriptPluginResult&           pluginResult,
+        class Scripting::DependencyLocator* dependencyLocator
+    );
 
     // NOLINTEND
 };

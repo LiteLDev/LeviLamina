@@ -17,13 +17,13 @@ public:
     virtual ~OpenSSLSymmetricInterface() = default;
 
     // vIndex: 1
-    virtual void init(std::string const& key, std::string const&);
+    virtual void init(std::string const& key, std::string const& IV);
 
     // vIndex: 2
-    virtual void encrypt(std::string const&, std::string& out);
+    virtual void encrypt(std::string const& plaintext, std::string& out);
 
     // vIndex: 3
-    virtual void decrypt(std::string const&, std::string& out);
+    virtual void decrypt(std::string const& ciphertext, std::string& out);
 
     // vIndex: 4
     virtual uint64 getKeySize() const;
@@ -32,10 +32,10 @@ public:
     virtual uint64 getBlockSize() const;
 
     // vIndex: 6
-    virtual uint64 getEncryptionBufferSize(uint64) const;
+    virtual uint64 getEncryptionBufferSize(uint64 inputSize) const;
 
     // vIndex: 7
-    virtual bool encryptToBuffer(gsl::span<char const> input, gsl::span<char> output, uint64& bytesWritten);
+    virtual bool encryptToBuffer(gsl::span<char const>, gsl::span<char>, uint64&);
 
     // NOLINTEND
 };

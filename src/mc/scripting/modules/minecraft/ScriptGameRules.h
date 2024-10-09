@@ -19,7 +19,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static void bind(class Scripting::ModuleBindingBuilder&, class Level const&);
+    MCAPI static void bind(class Scripting::ModuleBindingBuilder& moduleBuilder, class Level const& level);
 
     // NOLINTEND
 };

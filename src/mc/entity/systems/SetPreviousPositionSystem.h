@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/Include.h"
-#include "mc/common/wrapper/ViewT.h"
-#include "mc/world/components/FlagComponent.h"
+#include "mc/deps/ecs/ViewT.h"
+#include "mc/deps/ecs/strict/Include.h"
+#include "mc/entity/components/FlagComponent.h"
 
 class SetPreviousPositionSystem {
 public:
@@ -22,7 +22,8 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI static void _doSetPreviousPositionSystem(class StrictEntityContext const&, struct StateVectorComponent&);
+    MCAPI static void
+    _doSetPreviousPositionSystem(class StrictEntityContext const&, struct StateVectorComponent& stateVectorComponent);
 
     MCAPI static void _tickSetPreviousPositionSystem(class ViewT<
                                                      class StrictEntityContext,

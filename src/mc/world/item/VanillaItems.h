@@ -16,13 +16,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static void registerHardCodedItemTags(class ItemRegistryRef);
+    MCAPI static void registerHardCodedItemTags(class ItemRegistryRef itemRegistry);
 
-    MCAPI static void
-    registerItems(struct cereal::ReflectionCtx&, class ItemRegistryRef, class BaseGameVersion const&, class Experiments const&);
+    MCAPI static void registerItems(
+        struct cereal::ReflectionCtx& ctx,
+        class ItemRegistryRef         itemRegistry,
+        class BaseGameVersion const&  baseGameVersion,
+        class Experiments const&      experiments
+    );
 
     MCAPI static void serverInitCreativeItemsCallback(
-        class ItemRegistryRef,
+        class ItemRegistryRef itemRegistry,
         class ActorInfoRegistry*,
         class BlockDefinitionGroup*  blockDefinitionGroup,
         class CreativeItemRegistry*  creativeItemRegistry,
@@ -36,27 +40,23 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI static void
-    _addCommandOnlyCategory(class CreativeItemRegistry* creativeItemRegistry, class ItemRegistryRef, class BaseGameVersion const&, class Experiments const&);
+    _addCommandOnlyCategory(class CreativeItemRegistry* creativeItemRegistry, class ItemRegistryRef itemRegistry, class BaseGameVersion const&, class Experiments const&);
 
     MCAPI static void
-    _addConstructionCategory(class CreativeItemRegistry* creativeItemRegistry, class ItemRegistryRef, class BaseGameVersion const&, class Experiments const&);
+    _addConstructionCategory(class CreativeItemRegistry* creativeItemRegistry, class ItemRegistryRef itemRegistry, class BaseGameVersion const&, class Experiments const&);
 
     MCAPI static void _addEquipmentCategory(
-        class CreativeItemRegistry* creativeItemRegistry,
-        class ItemRegistryRef,
+        class CreativeItemRegistry*  creativeItemRegistry,
+        class ItemRegistryRef        itemRegistry,
         class BaseGameVersion const& worldVersion,
         class Experiments const&     experiments
     );
 
     MCAPI static void
-    _addItemsCategory(class CreativeItemRegistry* creativeItemRegistry, class ItemRegistryRef, class BaseGameVersion const& worldVersion, class Experiments const&);
+    _addItemsCategory(class CreativeItemRegistry* creativeItemRegistry, class ItemRegistryRef itemRegistry, class BaseGameVersion const& worldVersion, class Experiments const&);
 
-    MCAPI static void _addNatureCategory(
-        class CreativeItemRegistry* creativeItemRegistry,
-        class ItemRegistryRef,
-        class BaseGameVersion const& worldVersion,
-        class Experiments const&     experiments
-    );
+    MCAPI static void
+    _addNatureCategory(class CreativeItemRegistry* creativeItemRegistry, class ItemRegistryRef itemRegistry, class BaseGameVersion const& worldVersion, class Experiments const&);
 
     // NOLINTEND
 };

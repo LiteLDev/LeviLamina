@@ -82,14 +82,14 @@ public:
     ) const;
 
     MCAPI class Biome* _pickBadlandsBiome(
-        int                                   humidityIdx,
+        int                                   humidityIndex,
         struct ClimateUtils::Parameter const& weirdness,
         class BiomeRegistry const&            biomeRegistry
     ) const;
 
     MCAPI class Biome* _pickShatteredCoastBiome(
-        int                                   temperatureIdx,
-        int                                   humidityIdx,
+        int                                   temperatureIndex,
+        int                                   humidityIndex,
         struct ClimateUtils::Parameter const& weirdness,
         class BiomeRegistry const&            biomeRegistry
     ) const;

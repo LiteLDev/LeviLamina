@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class StalkAndPounceOnTargetGoal : public ::Goal {
@@ -50,7 +50,7 @@ public:
         float                         strikeDistance,
         float                         interestedTime,
         float                         stuckTime,
-        bool
+        bool                          setPersistent
     );
 
     // NOLINTEND

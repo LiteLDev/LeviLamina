@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/Difficulty.h"
+#include "mc/world/Difficulty.h"
 
 namespace DifficultyUtils {
 // NOLINTBEGIN
-MCAPI float getSpecialMultiplier(::Difficulty, int, float);
+MCAPI float getSpecialMultiplier(::Difficulty base, int totalGameTime, float moonBrightness);
 // NOLINTEND
 
 }; // namespace DifficultyUtils

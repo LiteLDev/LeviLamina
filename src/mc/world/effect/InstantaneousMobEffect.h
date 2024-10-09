@@ -23,14 +23,7 @@ public:
     // vIndex: 9
     virtual bool isDurationEffectTick(int remainingDuration, int) const;
 
-    MCAPI InstantaneousMobEffect(
-        uint               _id,
-        std::string const& resourceName,
-        std::string const& locName,
-        bool               isHarmful,
-        int                color,
-        int                icon
-    );
+    MCAPI InstantaneousMobEffect(uint, std::string const&, std::string const&, bool, int, int);
 
     // NOLINTEND
 };

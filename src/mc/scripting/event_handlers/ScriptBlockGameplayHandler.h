@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/CoordinatorResult.h"
-#include "mc/common/wrapper/GameplayHandlerResult.h"
-#include "mc/common/wrapper/HandlerResult.h"
-#include "mc/events/MutableBlockGameplayEvent.h"
-#include "mc/external/scripting/TypedObjectHandle.h"
-#include "mc/world/level/block/utils/BlockGameplayEvent.h"
+#include "mc/external/scripting/lifetime_registry/TypedObjectHandle.h"
+#include "mc/gameplayhandlers/CoordinatorResult.h"
+#include "mc/gameplayhandlers/GameplayHandlerResult.h"
+#include "mc/gameplayhandlers/HandlerResult.h"
+#include "mc/world/events/BlockGameplayEvent.h"
+#include "mc/world/events/MutableBlockGameplayEvent.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -29,17 +29,20 @@ public:
     virtual ~ScriptBlockGameplayHandler() = default;
 
     // vIndex: 1
-    virtual struct GameplayHandlerResult<::CoordinatorResult> handleEvent(struct BlockTryPlaceByPlayerEvent const&);
+    virtual struct GameplayHandlerResult<::CoordinatorResult>
+    handleEvent(struct BlockTryPlaceByPlayerEvent const& eventData);
 
     // vIndex: 2
     virtual struct GameplayHandlerResult<std::optional<std::string>>
     handleEvent(struct CraftUISetResultNameEvent const&);
 
     // vIndex: 3
-    virtual struct GameplayHandlerResult<::CoordinatorResult> handleEvent(struct ExplosionStartedEvent&);
+    virtual struct GameplayHandlerResult<::CoordinatorResult>
+    handleEvent(struct ExplosionStartedEvent& explosionStartedEvent);
 
     // vIndex: 4
-    virtual struct GameplayHandlerResult<::CoordinatorResult> handleEvent(struct BlockTryDestroyByPlayerEvent&);
+    virtual struct GameplayHandlerResult<::CoordinatorResult> handleEvent(struct BlockTryDestroyByPlayerEvent& eventData
+    );
 
     // vIndex: 5
     virtual ::HandlerResult handleEvent(struct BlockGameplayEvent<void> const&);
@@ -60,17 +63,26 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI bool
-    _handleBlockTryDestroyByPlayerEvent(struct BlockTryDestroyByPlayerEvent&, class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>)
-        const;
+    MCAPI bool _handleBlockTryDestroyByPlayerEvent(
+        struct BlockTryDestroyByPlayerEvent&      eventData,
+        class Scripting::WeakLifetimeScope const& scope,
+        struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>
+            scriptLevelEventsHandle
+    ) const;
 
-    MCAPI bool
-    _handleBlockTryPlaceByPlayerEvent(struct BlockTryPlaceByPlayerEvent const&, class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>)
-        const;
+    MCAPI bool _handleBlockTryPlaceByPlayerEvent(
+        struct BlockTryPlaceByPlayerEvent const&  eventData,
+        class Scripting::WeakLifetimeScope const& scope,
+        struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>
+            scriptLevelEventsHandle
+    ) const;
 
-    MCAPI bool
-    _handleExplosionStartedEvent(struct ExplosionStartedEvent&, class Scripting::WeakLifetimeScope const& scope, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>)
-        const;
+    MCAPI bool _handleExplosionStartedEvent(
+        struct ExplosionStartedEvent&             explosionStartedEvent,
+        class Scripting::WeakLifetimeScope const& scope,
+        struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>
+            scriptLevelEventsHandle
+    ) const;
 
     // NOLINTEND
 };

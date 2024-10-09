@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/LogArea.h"
-#include "mc/enums/LogAreaID.h"
-#include "mc/enums/LogLevel.h"
+#include "mc/deps/core/debug/log/LogArea.h"
+#include "mc/deps/core/debug/log/LogLevel.h"
+#include "mc/diagnostics/LogAreaID.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -31,7 +31,7 @@ public:
 
     public:
         // NOLINTBEGIN
-        MCAPI explicit ContentLogEndPointData(gsl::not_null<class ContentLogEndPoint*>);
+        MCAPI explicit ContentLogEndPointData(gsl::not_null<class ContentLogEndPoint*> contentLogEndPoint);
 
         // NOLINTEND
     };
@@ -45,7 +45,7 @@ public:
 
     public:
         // NOLINTBEGIN
-        MCAPI explicit ContentLogScope(class Bedrock::StaticOptimizedString);
+        MCAPI explicit ContentLogScope(class Bedrock::StaticOptimizedString scope);
 
         MCAPI ~ContentLogScope();
 

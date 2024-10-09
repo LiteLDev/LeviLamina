@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/ThreadLocalObject.h"
-#include "mc/math/IPositionalRandomFactory.h"
+#include "mc/deps/core/math/IPositionalRandomFactory.h"
+#include "mc/platform/threading/ThreadLocalObject.h"
 
 // auto generated forward declare list
 // clang-format off

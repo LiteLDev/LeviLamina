@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorCategory.h"
-#include "mc/entity/utilities/ActorType.h"
+#include "mc/network/packet/types/world/actor/ActorCategory.h"
+#include "mc/world/actor/ActorType.h"
 
 class ActorClassTree {
 public:

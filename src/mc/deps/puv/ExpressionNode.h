@@ -18,11 +18,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI ExpressionNode(std::string, int);
+    MCAPI ExpressionNode(std::string string, int molangVersion);
 
     MCAPI ~ExpressionNode();
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx&);
+    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
     // NOLINTEND
 };

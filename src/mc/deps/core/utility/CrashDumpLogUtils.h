@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/CrashDumpLogStringID.h"
+#include "mc/deps/core/utility/CrashDumpLogStringID.h"
 
 class CrashDumpLogUtils {
 public:
@@ -14,7 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static ::CrashDumpLogStringID getTagFromOptions(uint64, gsl::span<::CrashDumpLogStringID const> options);
+    MCAPI static ::CrashDumpLogStringID
+    getTagFromOptions(uint64 choice, gsl::span<::CrashDumpLogStringID const> options);
 
     // NOLINTEND
 };

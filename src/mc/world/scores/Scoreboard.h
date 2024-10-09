@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/ObjectiveSortOrder.h"
 #include "mc/server/commands/CommandOperator.h"
-#include "mc/world/actor/player/PlayerScoreSetFunction.h"
+#include "mc/world/scores/ObjectiveSortOrder.h"
+#include "mc/world/scores/PlayerScoreSetFunction.h"
 
 class Scoreboard {
 public:
@@ -131,7 +131,7 @@ public:
 
     MCAPI int modifyPlayerScore(
         bool&                        success,
-        class ScoreboardIdentityRef* id,
+        class ScoreboardIdentityRef* identityRef,
         class Objective&             objective,
         int                          scoreValue,
         ::PlayerScoreSetFunction     action
@@ -164,7 +164,8 @@ public:
 
     MCAPI void resetPlayerScore(struct ScoreboardId const& id);
 
-    MCAPI std::optional<struct ScoreInfo> tryGetIdScore(struct ScoreboardId const&, uint64 const&) const;
+    MCAPI std::optional<struct ScoreInfo>
+          tryGetIdScore(struct ScoreboardId const& id, uint64 const& objectiveHash) const;
 
     MCAPI static std::string const DEFAULT_CRITERIA;
 

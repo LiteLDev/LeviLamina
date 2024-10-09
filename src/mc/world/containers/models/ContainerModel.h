@@ -4,9 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/world/ContainerContentChangeListener.h"
-#include "mc/world/containers/ContainerCategory.h"
 #include "mc/world/containers/ContainerEnumName.h"
-#include "mc/world/containers/ContainerExpandStatus.h"
+#include "mc/world/containers/models/ContainerCategory.h"
+#include "mc/world/containers/models/ContainerExpandStatus.h"
 
 class ContainerModel : public ::ContainerContentChangeListener {
 public:
@@ -72,7 +72,7 @@ public:
     virtual ::ContainerExpandStatus getItemExpandStatus(int itemId) const;
 
     // vIndex: 18
-    virtual std::string const& getItemGroupName(int) const;
+    virtual std::string const& getItemGroupName(int itemId) const;
 
     // vIndex: 19
     virtual void switchItemExpando(int itemId);

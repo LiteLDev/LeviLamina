@@ -23,12 +23,12 @@ public:
     virtual ~LegacyOnDigTriggerItemComponent() = default;
 
     // vIndex: 6
-    virtual void handleVersionBasedInitialization(class SemVersion const&);
+    virtual void handleVersionBasedInitialization(class SemVersion const& originalJsonVersion);
 
     // vIndex: 9
     virtual void _initializeComponent();
 
-    MCAPI explicit LegacyOnDigTriggerItemComponent(struct LegacyOnDigTriggerItemComponentData&&);
+    MCAPI explicit LegacyOnDigTriggerItemComponent(struct LegacyOnDigTriggerItemComponentData&& componentData);
 
     MCAPI static class HashedString const& getIdentifier();
 
@@ -36,7 +36,15 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI void _onMineBlock(bool&, class ItemStack&, class Block const&, int, int, int, class Actor&);
+    MCAPI void _onMineBlock(
+        bool&              result,
+        class ItemStack&   item,
+        class Block const& block,
+        int                x,
+        int                y,
+        int                z,
+        class Actor&       owner
+    );
 
     // NOLINTEND
 };

@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/StackRefResult.h"
-#include "mc/enums/SimulationType.h"
+#include "mc/deps/game_refs/StackRefResult.h"
+#include "mc/world/SimulationType.h"
 
 class PauseManager {
 public:
@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static ::SimulationType getSimulationType(class StackRefResult<class PauseManager const>);
+    MCAPI static ::SimulationType getSimulationType(class StackRefResult<class PauseManager const> pauseManager);
 
     MCAPI static ::SimulationType const DEFAULT_SIMULATION_TYPE;
 

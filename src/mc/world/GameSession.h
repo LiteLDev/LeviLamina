@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/OwnerPtr.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/enums/SubClientId.h"
+#include "mc/common/SubClientId.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/game_refs/OwnerPtr.h"
 
 class GameSession {
 public:
@@ -17,17 +17,17 @@ public:
 public:
     // NOLINTBEGIN
     MCAPI GameSession(
-        class ServerNetworkSystem&                  network,
-        std::unique_ptr<class ServerNetworkHandler> serverNetworkHandler,
-        class LoopbackPacketSender&                 loopbackPacketSender,
-        std::unique_ptr<class NetEventCallback>     clientNetworkHandler,
-        std::pair<std::unique_ptr<class Level>, class OwnerPtr<class EntityContext>>,
-        ::SubClientId subid
+        class ServerNetworkSystem&                                                   network,
+        std::unique_ptr<class ServerNetworkHandler>                                  serverNetworkHandler,
+        class LoopbackPacketSender&                                                  loopbackPacketSender,
+        std::unique_ptr<class NetEventCallback>                                      clientNetworkHandler,
+        std::pair<std::unique_ptr<class Level>, class OwnerPtr<class EntityContext>> levelEntity,
+        ::SubClientId                                                                subid
     );
 
     MCAPI class Bedrock::NonOwnerPointer<class ServerNetworkHandler> getServerNetworkHandler();
 
-    MCAPI void setLevel(std::pair<std::unique_ptr<class Level>, class OwnerPtr<class EntityContext>>);
+    MCAPI void setLevel(std::pair<std::unique_ptr<class Level>, class OwnerPtr<class EntityContext>> levelEntity);
 
     // NOLINTEND
 };

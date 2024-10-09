@@ -27,7 +27,7 @@ public:
 
     public:
         // NOLINTBEGIN
-        MCAPI void initialize(class EntityContext& entity, class AttackCooldownComponent&) const;
+        MCAPI void initialize(class EntityContext& entity, class AttackCooldownComponent& cooldownComponent) const;
 
         MCAPI static void buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
                                           class JsonUtil::EmptyClass,

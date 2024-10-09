@@ -11,7 +11,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI explicit EntityStorageKeyComponent(std::string const&);
+    MCAPI explicit EntityStorageKeyComponent(std::string const& storageKey);
 
     MCAPI void addAdditionalSaveData(class Actor const& owner, class CompoundTag& tag) const;
 

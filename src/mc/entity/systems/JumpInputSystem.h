@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/Include.h"
-#include "mc/common/wrapper/ViewT.h"
-#include "mc/entity/EntityModifier.h"
-#include "mc/world/components/FlagComponent.h"
+#include "mc/deps/ecs/ViewT.h"
+#include "mc/deps/ecs/strict/EntityModifier.h"
+#include "mc/deps/ecs/strict/Include.h"
+#include "mc/entity/components/FlagComponent.h"
 
 class JumpInputSystem {
 public:
@@ -19,8 +19,14 @@ public:
     // NOLINTBEGIN
     MCAPI static struct TickingSystemWithInfo createJumpInputSystem();
 
-    MCAPI static void
-        tickJumpInputSystem(class ViewT<class StrictEntityContext, struct Include<struct PlayerInputRequestComponent>, struct MovementAbilitiesComponent const, struct MoveInputComponent const>, class EntityModifier<class FlagComponent<struct MobIsJumpingFlag>>);
+    MCAPI static void tickJumpInputSystem(
+        class ViewT<
+            class StrictEntityContext,
+            struct Include<struct PlayerInputRequestComponent>,
+            struct MovementAbilitiesComponent const,
+            struct MoveInputComponent const>                               view,
+        class EntityModifier<class FlagComponent<struct MobIsJumpingFlag>> mod
+    );
 
     // NOLINTEND
 };

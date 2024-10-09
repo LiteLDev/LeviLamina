@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/StompBlockGoal.h"
 
 class StompEggGoal : public ::StompBlockGoal {
@@ -28,10 +28,10 @@ public:
     virtual void _createDestroyParticles(class Level& level, class BlockSource& region, class BlockPos pos);
 
     // vIndex: 20
-    virtual void _playBreakProgressSound(class Level& level, class BlockSource& region, class BlockPos pos);
+    virtual void _playBreakProgressSound(class Level&, class BlockSource&, class BlockPos pos);
 
     // vIndex: 21
-    virtual void _playDestroySound(class Level& level, class BlockSource& region, class BlockPos pos);
+    virtual void _playDestroySound(class Level&, class BlockSource&, class BlockPos pos);
 
     MCAPI StompEggGoal(
         class Mob& mob,

@@ -16,7 +16,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI explicit PlayerDeathManager(std::unique_ptr<class IPlayerDeathManagerProxy>);
+    MCAPI explicit PlayerDeathManager(std::unique_ptr<class IPlayerDeathManagerProxy> playerDeathManagerProxy);
 
     MCAPI void playerDied(class Player& player, class ActorDamageSource const& source);
 

@@ -30,9 +30,9 @@ public:
 
     MCAPI class SynchedActorData& operator=(class SynchedActorData&& rhs);
 
-    MCAPI std::vector<std::unique_ptr<class DataItem>> packAll(class EntityContext const&) const;
+    MCAPI std::vector<std::unique_ptr<class DataItem>> packAll(class EntityContext const& entity) const;
 
-    MCAPI std::vector<std::unique_ptr<class DataItem>> packDirty(class EntityContext&);
+    MCAPI std::vector<std::unique_ptr<class DataItem>> packDirty(class EntityContext& entity);
 
     MCAPI ~SynchedActorData();
 

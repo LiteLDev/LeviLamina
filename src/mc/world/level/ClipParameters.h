@@ -13,8 +13,11 @@ public:
     // NOLINTBEGIN
     MCAPI ClipParameters(class Vec3 const& a, class Vec3 const& b);
 
-    MCAPI
-    ClipParameters(class Vec3 const& a, class Vec3 const& b, std::function<bool(class BlockSource const&, class Block const&, bool)> const&);
+    MCAPI ClipParameters(
+        class Vec3 const&                                                              a,
+        class Vec3 const&                                                              b,
+        std::function<bool(class BlockSource const&, class Block const&, bool)> const& shouldCheckBlock
+    );
 
     MCAPI ~ClipParameters();
 

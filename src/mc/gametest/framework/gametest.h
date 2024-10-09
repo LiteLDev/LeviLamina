@@ -3,16 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/ArmorSlot.h"
-#include "mc/enums/GameType.h"
-#include "mc/enums/Mirror.h"
-#include "mc/enums/Rotation.h"
-#include "mc/external/scripting/EnumBindingBuilder.h"
-#include "mc/external/scripting/ErrorBindingBuilder.h"
-#include "mc/external/scripting/InterfaceBindingBuilder.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/external/scripting/binding_type/EnumBindingBuilder.h"
+#include "mc/external/scripting/binding_type/ErrorBindingBuilder.h"
+#include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
 #include "mc/gametest/framework/GameTestErrorType.h"
 #include "mc/scripting/modules/minecraft/ScriptFacing.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/util/Mirror.h"
+#include "mc/util/Rotation.h"
+#include "mc/world/item/ArmorSlot.h"
+#include "mc/world/level/GameType.h"
 
 // auto generated forward declare list
 // clang-format off

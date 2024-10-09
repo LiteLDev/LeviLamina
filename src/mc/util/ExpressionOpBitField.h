@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/ExpressionOp.h"
+#include "mc/util/ExpressionOp.h"
 
 struct ExpressionOpBitField {
 public:

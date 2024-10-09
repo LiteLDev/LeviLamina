@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI CommandBlockNameResult(class HashedString const& originalName, class Block const* block, bool);
+    MCAPI CommandBlockNameResult(class HashedString const& originalName, class Block const* block, bool isComplexAlias);
 
     MCAPI class Block const* getBlock() const;
 
@@ -23,7 +23,7 @@ public:
 
     MCAPI bool isComplexAlias() const;
 
-    MCAPI bool isSameBlock(class Block const& rhs, bool) const;
+    MCAPI bool isSameBlock(class Block const& rhs, bool onlyCompareBlockLegacy) const;
 
     MCAPI ~CommandBlockNameResult();
 

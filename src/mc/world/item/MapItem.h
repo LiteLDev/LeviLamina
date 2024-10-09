@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorLocation.h"
-#include "mc/enums/InHandUpdateType.h"
-#include "mc/events/LevelSoundEvent.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/world/actor/ActorLocation.h"
 #include "mc/world/item/ComplexItem.h"
-#include "mc/world/item/components/ItemColor.h"
-#include "mc/world/item/components/ItemUseMethod.h"
-#include "mc/world/level/block/utils/BlockShape.h"
+#include "mc/world/item/InHandUpdateType.h"
+#include "mc/world/item/ItemColor.h"
+#include "mc/world/item/ItemUseMethod.h"
+#include "mc/world/level/block/BlockShape.h"
 #include "mc/world/level/saveddata/maps/MapItemSavedData.h"
 
 // auto generated forward declare list
@@ -31,19 +31,15 @@ public:
     virtual ~MapItem() = default;
 
     // vIndex: 48
-    virtual void appendFormattedHovertext(
-        class ItemStackBase const& stack,
-        class Level&               level,
-        std::string&               hovertext,
-        bool                       showCategory
-    ) const;
+    virtual void
+    appendFormattedHovertext(class ItemStackBase const& stack, class Level& level, std::string& hovertext, bool) const;
 
     // vIndex: 83
-    virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
+    virtual std::string
+    buildDescriptionId(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
 
     // vIndex: 88
-    virtual bool
-    inventoryTick(class ItemStack& item, class Level& level, class Actor& owner, int slot, bool selected) const;
+    virtual bool inventoryTick(class ItemStack& item, class Level& level, class Actor& owner, int, bool selected) const;
 
     // vIndex: 89
     virtual void refreshedInContainer(class ItemStackBase const& stack, class Level& level) const;
@@ -74,12 +70,21 @@ public:
 
     MCAPI static struct ActorUniqueID getMapId(class CompoundTag const* tag);
 
-    MCAPI static void markForRegeneration(class ItemStackBase&);
+    MCAPI static void markForRegeneration(class ItemStackBase& item);
 
     MCAPI static void renderBiomePreviewMap(class Dimension& dimension, class MapItemSavedData& data);
 
-    MCAPI static bool
-    sampleMapData(class BlockSource& region, int blocksPerTexel, class BlockPos const& worldOrigin, class BlockPos const& updateOrigin, int imageWidth, int imageHeight, std::vector<struct MapSample>* output, class MapItemSavedData* mapData, std::vector<struct ClientTerrainPixel>*);
+    MCAPI static bool sampleMapData(
+        class BlockSource&                      region,
+        int                                     blocksPerTexel,
+        class BlockPos const&                   worldOrigin,
+        class BlockPos const&                   updateOrigin,
+        int                                     imageWidth,
+        int                                     imageHeight,
+        std::vector<struct MapSample>*          output,
+        class MapItemSavedData*                 mapData,
+        std::vector<struct ClientTerrainPixel>* clientPixels
+    );
 
     MCAPI static void serializeMapData(std::vector<struct MapSample> const& mapSamples, std::string& output);
 

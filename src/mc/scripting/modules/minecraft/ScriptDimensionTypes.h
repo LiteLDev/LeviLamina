@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/StrongTypedObjectHandle.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -26,21 +26,21 @@ public:
 public:
     // NOLINTBEGIN
     MCAPI std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptDimensionType>>
-          get(class Scripting::WeakLifetimeScope, std::string const&);
+          get(class Scripting::WeakLifetimeScope scope, std::string const& identifier);
 
     MCAPI static std::unordered_map<std::string, std::string> _getDimensionStringNames();
 
-    MCAPI static void bind(class Scripting::ModuleBindingBuilder&);
+    MCAPI static void bind(class Scripting::ModuleBindingBuilder& moduleBuilder);
 
     MCAPI static DimensionType fromString(std::string const& name);
 
-    MCAPI static std::string toString(DimensionType const&);
+    MCAPI static std::string toString(DimensionType const& type);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    MCAPI void registerTypes(class Scripting::WeakLifetimeScope);
+    MCAPI void registerTypes(class Scripting::WeakLifetimeScope scope);
 
     // NOLINTEND
 

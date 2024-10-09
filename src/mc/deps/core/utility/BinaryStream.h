@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/deps/core/utility/ReadOnlyBinaryStream.h"
+#include "mc/platform/Result.h"
 
 class BinaryStream : public ::ReadOnlyBinaryStream {
 public:
@@ -25,53 +25,53 @@ public:
 
     MCAPI void reset();
 
-    MCAPI void writeBool(bool, char const*, char const*);
+    MCAPI void writeBool(bool value, char const*, char const*);
 
-    MCAPI void writeByte(uchar, char const*, char const*);
+    MCAPI void writeByte(uchar value, char const*, char const*);
 
-    MCAPI void writeDouble(double, char const*, char const*);
+    MCAPI void writeDouble(double value, char const*, char const*);
 
-    MCAPI void writeFloat(float, char const*, char const*);
+    MCAPI void writeFloat(float value, char const*, char const*);
 
-    MCAPI void writeSignedBigEndianInt(int, char const*, char const*);
+    MCAPI void writeSignedBigEndianInt(int value, char const*, char const*);
 
-    MCAPI void writeSignedInt(int, char const*, char const*);
+    MCAPI void writeSignedInt(int value, char const*, char const*);
 
-    MCAPI void writeSignedInt64(int64, char const*, char const*);
+    MCAPI void writeSignedInt64(int64 value, char const*, char const*);
 
-    MCAPI void writeSignedShort(short, char const*, char const*);
+    MCAPI void writeSignedShort(short value, char const*, char const*);
 
-    MCAPI void writeString(std::string_view, char const*, char const*);
+    MCAPI void writeString(std::string_view value, char const*, char const*);
 
-    MCAPI void writeUnsignedChar(uchar, char const*, char const*);
+    MCAPI void writeUnsignedChar(uchar value, char const*, char const*);
 
-    MCAPI void writeUnsignedInt(uint, char const*, char const*);
+    MCAPI void writeUnsignedInt(uint value, char const*, char const*);
 
-    MCAPI void writeUnsignedInt64(uint64, char const*, char const*);
+    MCAPI void writeUnsignedInt64(uint64 value, char const*, char const*);
 
-    MCAPI void writeUnsignedShort(ushort, char const*, char const*);
+    MCAPI void writeUnsignedShort(ushort value, char const*, char const*);
 
-    MCAPI void writeUnsignedVarInt(uint, char const*, char const*);
+    MCAPI void writeUnsignedVarInt(uint uvalue, char const*, char const*);
 
-    MCAPI void writeUnsignedVarInt64(uint64, char const*, char const*);
+    MCAPI void writeUnsignedVarInt64(uint64 uvalue, char const*, char const*);
 
-    MCAPI void writeVarInt(int, char const*, char const*);
+    MCAPI void writeVarInt(int value, char const*, char const*);
 
-    MCAPI void writeVarInt64(int64, char const*, char const*);
+    MCAPI void writeVarInt64(int64 value, char const*, char const*);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    MCAPI void _writeInteger(int, char const*, char const*);
+    MCAPI void _writeInteger(int value, char const*, char const*);
 
-    MCAPI void _writeInteger(short, char const*, char const*);
+    MCAPI void _writeInteger(short value, char const*, char const*);
 
-    MCAPI void _writeInteger(uchar, char const*, char const*);
+    MCAPI void _writeInteger(uchar value, char const*, char const*);
 
-    MCAPI void _writeInteger(uint, char const*, char const*);
+    MCAPI void _writeInteger(uint value, char const*, char const*);
 
-    MCAPI void _writeInteger(ushort, char const*, char const*);
+    MCAPI void _writeInteger(ushort value, char const*, char const*);
 
     MCAPI void write(void const* origin, uint64 num);
 

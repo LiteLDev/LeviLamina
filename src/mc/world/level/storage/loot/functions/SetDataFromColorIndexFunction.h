@@ -27,7 +27,12 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI bool _applyImpl(class Item const*&, class Actor const* thisEntity, std::string const&, int&);
+    MCAPI bool _applyImpl(
+        class Item const*& inOutItemDef,
+        class Actor const* thisEntity,
+        std::string const& originalItemName,
+        int&               outResultAux
+    );
 
     // NOLINTEND
 };

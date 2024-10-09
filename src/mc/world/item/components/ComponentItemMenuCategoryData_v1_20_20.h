@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/CreativeItemCategory.h"
+#include "mc/world/item/CreativeItemCategory.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -26,10 +26,12 @@ public:
 
     MCAPI ~ComponentItemMenuCategoryData_v1_20_20();
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx&);
+    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
-    MCAPI static void
-    upgrade(std::optional<::CreativeItemCategory>&, std::optional<struct ComponentItemMenuCategoryData_v1_20_20>&);
+    MCAPI static void upgrade(
+        std::optional<::CreativeItemCategory>&                        oldData,
+        std::optional<struct ComponentItemMenuCategoryData_v1_20_20>& newData
+    );
 
     // NOLINTEND
 };

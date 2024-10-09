@@ -3,30 +3,30 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/StackRefResult.h"
-#include "mc/common/wrapper/WeakRef.h"
-#include "mc/common/wrapper/optional_ref.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/core/utility/optional_ref.h"
+#include "mc/deps/game_refs/StackRefResult.h"
+#include "mc/deps/game_refs/WeakRef.h"
+#include "mc/deps/input/InputMode.h"
 #include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/entity/utilities/ActorCategory.h"
-#include "mc/entity/utilities/ActorDamageCause.h"
-#include "mc/entity/utilities/ActorFlags.h"
-#include "mc/entity/utilities/ActorInitializationMethod.h"
-#include "mc/entity/utilities/ActorLocation.h"
-#include "mc/entity/utilities/ActorStatusProvider.h"
-#include "mc/entity/utilities/ActorType.h"
-#include "mc/enums/AnimationComponentGroupType.h"
-#include "mc/enums/ArmorMaterialType.h"
-#include "mc/enums/ArmorSlot.h"
-#include "mc/enums/HandSlot.h"
-#include "mc/enums/InputMode.h"
-#include "mc/enums/MaterialType.h"
-#include "mc/enums/NewInteractionModel.h"
-#include "mc/enums/PaletteColor.h"
-#include "mc/events/ActorEvent.h"
-#include "mc/events/LevelSoundEvent.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/input/NewInteractionModel.h"
+#include "mc/network/packet/types/world/actor/ActorCategory.h"
+#include "mc/network/packet/types/world/actor/ActorEvent.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/AutomaticID.h"
-#include "mc/world/item/components/ItemUseMethod.h"
+#include "mc/world/actor/ActorDamageCause.h"
+#include "mc/world/actor/ActorFlags.h"
+#include "mc/world/actor/ActorInitializationMethod.h"
+#include "mc/world/actor/ActorLocation.h"
+#include "mc/world/actor/ActorType.h"
+#include "mc/world/actor/ArmorMaterialType.h"
+#include "mc/world/actor/PaletteColor.h"
+#include "mc/world/actor/animation/AnimationComponentGroupType.h"
+#include "mc/world/actor/provider/ActorStatusProvider.h"
+#include "mc/world/item/ArmorSlot.h"
+#include "mc/world/item/HandSlot.h"
+#include "mc/world/item/ItemUseMethod.h"
+#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -55,16 +55,16 @@ public:
     virtual void outOfWorld();
 
     // vIndex: 4
-    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
+    virtual void reloadHardcoded(::ActorInitializationMethod, class VariantParameterList const&);
 
     // vIndex: 5
-    virtual void reloadHardcodedClient(::ActorInitializationMethod method, class VariantParameterList const& params);
+    virtual void reloadHardcodedClient(::ActorInitializationMethod, class VariantParameterList const&);
 
     // vIndex: 6
-    virtual void initializeComponents(::ActorInitializationMethod method, class VariantParameterList const& params);
+    virtual void initializeComponents(::ActorInitializationMethod method, class VariantParameterList const&);
 
     // vIndex: 7
-    virtual void reloadComponents(::ActorInitializationMethod method, class VariantParameterList const& params);
+    virtual void reloadComponents(::ActorInitializationMethod, class VariantParameterList const&);
 
     // vIndex: 8
     virtual void _serverInitItemStackIds();
@@ -76,7 +76,7 @@ public:
     virtual ~Actor();
 
     // vIndex: 11
-    virtual void resetUserPos(bool clearMore);
+    virtual void resetUserPos(bool);
 
     // vIndex: 12
     virtual ::ActorType getOwnerEntityType();
@@ -112,7 +112,7 @@ public:
     virtual bool canDisableShield();
 
     // vIndex: 23
-    virtual void teleportTo(class Vec3 const& pos, bool shouldStopRiding, int cause, int entityType, bool);
+    virtual void teleportTo(class Vec3 const& pos, bool shouldStopRiding, int, int, bool keepVelocity);
 
     // vIndex: 24
     virtual void lerpMotion(class Vec3 const& delta);
@@ -130,10 +130,10 @@ public:
     virtual void passengerTick();
 
     // vIndex: 29
-    virtual bool startRiding(class Actor&);
+    virtual bool startRiding(class Actor& vehicle);
 
     // vIndex: 30
-    virtual void addPassenger(class Actor&);
+    virtual void addPassenger(class Actor& passenger);
 
     // vIndex: 31
     virtual std::string getExitTip(std::string const& kind, ::InputMode mode, ::NewInteractionModel scheme) const;
@@ -169,7 +169,7 @@ public:
     virtual float getBrightness(float a, class IConstBlockSource const& region) const;
 
     // vIndex: 42
-    virtual void playerTouch(class Player& player);
+    virtual void playerTouch(class Player&);
 
     // vIndex: 43
     virtual bool isImmobile() const;
@@ -181,7 +181,7 @@ public:
     virtual bool isSleeping() const;
 
     // vIndex: 46
-    virtual void setSleeping(bool val);
+    virtual void setSleeping(bool);
 
     // vIndex: 47
     virtual void setSneaking(bool value);
@@ -190,7 +190,7 @@ public:
     virtual bool isBlocking() const;
 
     // vIndex: 49
-    virtual bool isDamageBlocked(class ActorDamageSource const& source) const;
+    virtual bool isDamageBlocked(class ActorDamageSource const&) const;
 
     // vIndex: 50
     virtual bool isAlive() const;
@@ -205,19 +205,19 @@ public:
     virtual bool isTargetable() const;
 
     // vIndex: 54
-    virtual bool canAttack(class Actor* entity, bool allowInvulnerable) const;
+    virtual bool canAttack(class Actor* entity, bool) const;
 
     // vIndex: 55
     virtual void setTarget(class Actor* entity);
 
     // vIndex: 56
-    virtual bool isValidTarget(class Actor* attacker) const;
+    virtual bool isValidTarget(class Actor*) const;
 
     // vIndex: 57
-    virtual bool attack(class Actor& target, ::ActorDamageCause const& cause);
+    virtual bool attack(class Actor& target, ::ActorDamageCause const&);
 
     // vIndex: 58
-    virtual void performRangedAttack(class Actor& target, float power);
+    virtual void performRangedAttack(class Actor& target, float);
 
     // vIndex: 59
     virtual void setOwner(struct ActorUniqueID ownerId);
@@ -331,7 +331,7 @@ public:
     virtual void changeDimension(DimensionType toId);
 
     // vIndex: 96
-    virtual void changeDimension(class ChangeDimensionPacket const& packet);
+    virtual void changeDimension(class ChangeDimensionPacket const&);
 
     // vIndex: 97
     virtual struct ActorUniqueID getControllingPlayer() const;
@@ -343,10 +343,10 @@ public:
     virtual void onSynchedDataUpdate(int dataId);
 
     // vIndex: 100
-    virtual bool canAddPassenger(class Actor&) const;
+    virtual bool canAddPassenger(class Actor& passenger) const;
 
     // vIndex: 101
-    virtual bool canPickupItem(class ItemStack const& item) const;
+    virtual bool canPickupItem(class ItemStack const&) const;
 
     // vIndex: 102
     virtual bool canBePulledIntoVehicle() const;
@@ -355,7 +355,7 @@ public:
     virtual bool inCaravan() const;
 
     // vIndex: 104
-    virtual void sendMotionPacketIfNeeded(struct PlayerMovementSettings const&);
+    virtual void sendMotionPacketIfNeeded(struct PlayerMovementSettings const& playerMovementSettings);
 
     // vIndex: 105
     virtual bool canSynchronizeNewEntity() const;
@@ -367,7 +367,7 @@ public:
     virtual void stopSwimming();
 
     // vIndex: 108
-    virtual void buildDebugInfo(std::string& out) const;
+    virtual void buildDebugInfo(std::string&) const;
 
     // vIndex: 109
     virtual ::CommandPermissionLevel getCommandPermissionLevel() const;
@@ -406,7 +406,7 @@ public:
     virtual float getMapDecorationRotation() const;
 
     // vIndex: 121
-    virtual float getPassengerYRotation(class Actor const&) const;
+    virtual float getPassengerYRotation(class Actor const& passenger) const;
 
     // vIndex: 122
     virtual bool add(class ItemStack& item);
@@ -415,13 +415,13 @@ public:
     virtual bool drop(class ItemStack const& item, bool randomly);
 
     // vIndex: 124
-    virtual bool getInteraction(class Player& player, class ActorInteraction& interaction, class Vec3 const& location);
+    virtual bool getInteraction(class Player& player, class ActorInteraction& interaction, class Vec3 const&);
 
     // vIndex: 125
-    virtual bool canDestroyBlock(class Block const& block) const;
+    virtual bool canDestroyBlock(class Block const&) const;
 
     // vIndex: 126
-    virtual void setAuxValue(int val);
+    virtual void setAuxValue(int);
 
     // vIndex: 127
     virtual void startSpinAttack();
@@ -430,7 +430,7 @@ public:
     virtual void stopSpinAttack();
 
     // vIndex: 129
-    virtual void renderDebugServerState(class Options const& options);
+    virtual void renderDebugServerState(class Options const&);
 
     // vIndex: 130
     virtual void kill();
@@ -446,7 +446,7 @@ public:
     applySnapshot(class EntityContext const& snapshotEntity, class EntityContext const& originalSnapshotEntity);
 
     // vIndex: 134
-    virtual float getNextStep(float);
+    virtual float getNextStep(float moveDist);
 
     // vIndex: 135
     virtual void onPush(class Actor&);
@@ -482,7 +482,7 @@ public:
     virtual bool shouldTryMakeStepSound();
 
     // vIndex: 146
-    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool, bool);
 
     // vIndex: 147
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
@@ -494,7 +494,7 @@ public:
     virtual void _playStepSound(class BlockPos const& pos, class Block const& onBlock);
 
     // vIndex: 150
-    virtual void _doAutoAttackOnTouch(class Actor& entity);
+    virtual void _doAutoAttackOnTouch(class Actor&);
 
     MCAPI Actor(class ILevel& level, class EntityContext& entityContext);
 
@@ -518,7 +518,7 @@ public:
 
     MCAPI bool addTag(std::string const& tag);
 
-    MCAPI void applyImpulse(class Vec3 const&);
+    MCAPI void applyImpulse(class Vec3 const& impulse);
 
     MCAPI void buildDebugGroupInfo(std::string& out) const;
 
@@ -548,7 +548,7 @@ public:
 
     MCAPI void celebrateHunt(int duration, bool special);
 
-    MCAPI void checkFallDamage(float, bool, bool);
+    MCAPI void checkFallDamage(float ya, bool onGround, bool recheckLiquid);
 
     MCAPI void chorusFruitTeleport(class Vec3 const& range);
 
@@ -556,7 +556,7 @@ public:
 
     MCAPI bool closerThan(class Actor const& e, float distance) const;
 
-    MCAPI bool closerThan(class Actor const& e, float, float) const;
+    MCAPI bool closerThan(class Actor const& e, float distanceXZ, float distanceY) const;
 
     MCAPI void consumeItem(class ItemActor& itemActor, int count);
 
@@ -580,21 +580,21 @@ public:
 
     MCAPI void dropTowards(class ItemStack const& item, class Vec3 towards);
 
-    MCAPI void equip(std::string const&);
+    MCAPI void equip(std::string const& lootTableFilePath);
 
-    MCAPI void equip(struct EquipmentTable const&);
+    MCAPI void equip(struct EquipmentTable const& equipmentTable);
 
     MCAPI void equipFromEquipmentDefinition();
 
-    MCAPI float evaluateSeatRotation(class RideableComponent const& rideable, bool);
+    MCAPI float evaluateSeatRotation(class RideableComponent const& rideable, bool useVehicleRenderParams);
 
     MCAPI bool executeEvent(std::string const& name, class VariantParameterList const& list);
 
-    MCAPI void exitVehicle(bool, bool actorIsBeingDestroyed, bool);
+    MCAPI void exitVehicle(bool exitFromPassenger, bool actorIsBeingDestroyed, bool wasEjectedByActivatorRail);
 
     MCAPI class FishingHook* fetchFishingHook();
 
-    MCAPI std::vector<struct DistanceSortedActor> fetchNearbyActorsSorted(class Vec3 const&);
+    MCAPI std::vector<struct DistanceSortedActor> fetchNearbyActorsSorted(class Vec3 const& distance);
 
     MCAPI std::vector<struct DistanceSortedActor>
           fetchNearbyActorsSorted(class Vec3 const& distance, ::ActorType actorTypeId);
@@ -611,9 +611,9 @@ public:
 
     MCAPI class ItemStack const& getArmor(::ArmorSlot slot) const;
 
-    MCAPI class Vec3 getAttachPos(::ActorLocation) const;
+    MCAPI class Vec3 getAttachPos(::ActorLocation location) const;
 
-    MCAPI class Vec3 getAttachPos(::ActorLocation location, float a) const;
+    MCAPI class Vec3 getAttachPos(::ActorLocation location, float alpha) const;
 
     MCAPI class AttributeInstance const& getAttribute(class Attribute const& attribute) const;
 
@@ -621,7 +621,7 @@ public:
 
     MCAPI gsl::not_null<class BaseAttributeMap const*> getAttributes() const;
 
-    MCAPI class BlockPos getBlockPosCurrentlyStandingOn(class Actor const* entity) const;
+    MCAPI class BlockPos getBlockPosCurrentlyStandingOn(class Actor const* actor) const;
 
     MCAPI class BlockPos getBlockTarget() const;
 
@@ -681,13 +681,13 @@ public:
 
     MCAPI ::Puv::Legacy::EquipmentSlot getEquipmentSlotForItem(class ItemStack const& item) const;
 
-    MCAPI class ItemStack const& getEquippedSlot(::Puv::Legacy::EquipmentSlot) const;
+    MCAPI class ItemStack const& getEquippedSlot(::Puv::Legacy::EquipmentSlot slot) const;
 
     MCAPI class Vec3 getEyePos() const;
 
     MCAPI float getFallDistance() const;
 
-    MCAPI bool getFirstAvailableSeatPos(class Actor&, class Vec3& result) const;
+    MCAPI bool getFirstAvailableSeatPos(class Actor& potentialPassenger, class Vec3& result) const;
 
     MCAPI class Actor* getFirstPassenger() const;
 
@@ -773,7 +773,7 @@ public:
 
     MCAPI struct ActorUniqueID const getOwnerId() const;
 
-    MCAPI int getPassengerIndex(class Actor const&) const;
+    MCAPI int getPassengerIndex(class Actor const& passenger) const;
 
     MCAPI std::unique_ptr<class CompoundTag> getPersistingTradeOffers();
 
@@ -849,13 +849,13 @@ public:
 
     MCAPI struct InterpolationPair getYHeadRotationsNewOld() const;
 
-    MCAPI void handleFallDamage(float, float, class ActorDamageSource);
+    MCAPI void handleFallDamage(float fallDistance, float multiplier, class ActorDamageSource source);
 
-    MCAPI void handleLeftoverFallDamage(float, class ActorDamageSource);
+    MCAPI void handleLeftoverFallDamage(float damage, class ActorDamageSource source);
 
     MCAPI bool hasAnyEffects() const;
 
-    MCAPI bool hasBeenHurtByMobInLastTicks(int) const;
+    MCAPI bool hasBeenHurtByMobInLastTicks(int numberOfTicks) const;
 
     MCAPI bool hasCategory(::ActorCategory categories) const;
 
@@ -897,7 +897,7 @@ public:
 
     MCAPI void heal(int heal);
 
-    MCAPI void healEffects(int amountHealed);
+    MCAPI void healEffects(int);
 
     MCAPI bool hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
@@ -911,7 +911,7 @@ public:
 
     MCAPI bool intersects(class Vec3 const& pos1, class Vec3 const& pos2) const;
 
-    MCAPI bool isActorLocationInMaterial(::ActorLocation, ::MaterialType type) const;
+    MCAPI bool isActorLocationInMaterial(::ActorLocation actorLocation, ::MaterialType type) const;
 
     MCAPI bool isAdventure() const;
 
@@ -1011,7 +1011,7 @@ public:
 
     MCAPI bool isPacified() const;
 
-    MCAPI bool isPassenger(class Actor const&) const;
+    MCAPI bool isPassenger(class Actor const& passenger) const;
 
     MCAPI bool isPersistent() const;
 
@@ -1029,7 +1029,7 @@ public:
 
     MCAPI bool isRiding() const;
 
-    MCAPI bool isRiding(class Actor*) const;
+    MCAPI bool isRiding(class Actor* targetVehicle) const;
 
     MCAPI bool isSheared() const;
 
@@ -1089,7 +1089,7 @@ public:
 
     MCAPI void migrateUniqueID(struct ActorUniqueID id);
 
-    MCAPI void move(class Vec3 const& posIn);
+    MCAPI void move(class Vec3 const& posDelta);
 
     MCAPI void moveRelative(float xa, float ya, float za, float speed);
 
@@ -1113,7 +1113,7 @@ public:
 
     MCAPI void playSound(::Puv::Legacy::LevelSoundEvent type, class Vec3 const& pos, class Block const& block);
 
-    MCAPI void playSound(::Puv::Legacy::LevelSoundEvent, class Vec3 const&, int);
+    MCAPI void playSound(::Puv::Legacy::LevelSoundEvent type, class Vec3 const& pos, int data);
 
     MCAPI void playSynchronizedSound(
         ::Puv::Legacy::LevelSoundEvent type,
@@ -1127,7 +1127,8 @@ public:
 
     MCAPI void positionAllPassengers();
 
-    MCAPI void postGameEvent(class GameEvent const&, class Vec3 const&, class Block const*);
+    MCAPI void
+    postGameEvent(class GameEvent const& gameEvent, class Vec3 const& origin, class Block const* affectedBlock);
 
     MCAPI void postSplashGameEvent();
 
@@ -1145,7 +1146,7 @@ public:
 
     MCAPI void removeAllEffects();
 
-    MCAPI void removeAllPassengers(bool);
+    MCAPI void removeAllPassengers(bool beingDestroyed);
 
     MCAPI void removeDefinitionGroup(std::string const& name);
 
@@ -1183,7 +1184,7 @@ public:
 
     MCAPI void setBlockTarget(class BlockPos const& target);
 
-    MCAPI void setBodyRotationBlocked(bool);
+    MCAPI void setBodyRotationBlocked(bool value);
 
     MCAPI void setBreakingObstruction(bool breaking);
 
@@ -1207,9 +1208,9 @@ public:
 
     MCAPI void setDancing(bool dancing);
 
-    MCAPI void setDead(bool);
+    MCAPI void setDead(bool isDead);
 
-    MCAPI void setDimension(class WeakRef<class Dimension>);
+    MCAPI void setDimension(class WeakRef<class Dimension> weakDimension);
 
     MCAPI void setDoorBreaker(bool breaker);
 
@@ -1233,7 +1234,7 @@ public:
 
     MCAPI void setInvisible(bool value);
 
-    MCAPI void setIsExperienceDropEnabled(bool);
+    MCAPI void setIsExperienceDropEnabled(bool isExperienceDropEnabled);
 
     MCAPI void setJumping(bool jump);
 
@@ -1249,15 +1250,15 @@ public:
 
     MCAPI void setLeashHolder(struct ActorUniqueID leashHolder);
 
-    MCAPI void setLimitedLifetimeTicks(int);
+    MCAPI void setLimitedLifetimeTicks(int lifetimeTicks);
 
     MCAPI void setMarkVariant(int value);
 
-    MCAPI void setMovedToLimbo(bool);
+    MCAPI void setMovedToLimbo(bool moveToLimbo);
 
-    MCAPI void setMovedToUnloadedChunk(bool);
+    MCAPI void setMovedToUnloadedChunk(bool movedToUnloadedChunk);
 
-    MCAPI void setMovementSoundDistanceOffset(float);
+    MCAPI void setMovementSoundDistanceOffset(float movementSoundDistanceOffset);
 
     MCAPI void setMoving(bool value);
 
@@ -1325,7 +1326,7 @@ public:
 
     MCAPI void setVariant(int value);
 
-    MCAPI void setVelocity(class Vec3 const&);
+    MCAPI void setVelocity(class Vec3 const& vel);
 
     MCAPI void setWASDControlled(bool value);
 
@@ -1333,7 +1334,7 @@ public:
 
     MCAPI void setYHeadRot(float yHeadRot);
 
-    MCAPI void setYHeadRotations(float yHeadRot, float);
+    MCAPI void setYHeadRotations(float yHeadRot, float oldYHeadRot);
 
     MCAPI bool shouldOrphan(class BlockSource& source);
 
@@ -1347,9 +1348,9 @@ public:
 
     MCAPI void spinAttack();
 
-    MCAPI void stopRiding(bool, bool actorIsBeingDestroyed, bool);
+    MCAPI void stopRiding(bool exitFromPassenger, bool actorIsBeingDestroyed, bool switchingVehicles);
 
-    MCAPI void synchronousSetSize(float, float);
+    MCAPI void synchronousSetSize(float w, float h);
 
     MCAPI void teleportPassengersTo(class Vec3 const& pos, int cause, int entityType);
 
@@ -1387,9 +1388,9 @@ public:
 
     MCAPI void wobble();
 
-    MCAPI static void _moveRelative(class Vec3& posDelta, float, float xa, float ya, float za, float speed);
+    MCAPI static void _moveRelative(class Vec3& posDelta, float yRotDegrees, float xa, float ya, float za, float speed);
 
-    MCAPI static class Vec3 buildForward(class Vec2);
+    MCAPI static class Vec3 buildForward(class Vec2 rotation);
 
     MCAPI static class BlockPos getBlockPosCurrentlyStandingOn(
         class Vec3 const&                                          pos,
@@ -1398,41 +1399,50 @@ public:
         class optional_ref<class GetCollisionShapeInterface const> other
     );
 
-    MCAPI static class Vec3
-    getCenter(float a, struct AABBShapeComponent const&, struct StateVectorComponent const&, float heightOffset);
+    MCAPI static class Vec3 getCenter(
+        float                              a,
+        struct AABBShapeComponent const&   aabbShapeComponent,
+        struct StateVectorComponent const& stateVectorComponent,
+        float                              heightOffset
+    );
 
     MCAPI static class MobEffectInstance const*
     getEffect(std::vector<class MobEffectInstance> const& effects, class MobEffect const& effect);
 
-    MCAPI static class Vec3 getInterpolatedPosition(float a, struct StateVectorComponent const&);
+    MCAPI static class Vec3 getInterpolatedPosition(float a, struct StateVectorComponent const& stateVectorComponent);
 
-    MCAPI static class Vec2 getInterpolatedRotation(class Vec2 const&, class Vec2 const& rot, float a);
+    MCAPI static class Vec2 getInterpolatedRotation(class Vec2 const& prevRot, class Vec2 const& rot, float a);
 
     MCAPI static class AABB getLiquidAABB(class AABB const& aabb, ::MaterialType liquidType);
 
     MCAPI static float getLiquidFlowStrength(::MaterialType liquidType);
 
-    MCAPI static class Vec3 getViewVector(struct ActorRotationComponent const&, float);
+    MCAPI static class Vec3 getViewVector(struct ActorRotationComponent const& actorRotation, float a);
 
-    MCAPI static class Vec3 getViewVector(class Vec2 const&, class Vec2 const& rot, float a);
+    MCAPI static class Vec3 getViewVector(class Vec2 const& prevRot, class Vec2 const& rot, float a);
 
-    MCAPI static bool isImmobile(class EntityContext const&);
+    MCAPI static bool isImmobile(class EntityContext const& entity);
 
-    MCAPI static bool
-    isInLiquid(::MaterialType liquidType, class IConstBlockSource const& region, class AABB const&, std::vector<class AABB> const&);
+    MCAPI static bool isInLiquid(
+        ::MaterialType                 liquidType,
+        class IConstBlockSource const& region,
+        class AABB const&              mainAABB,
+        std::vector<class AABB> const& subAABBs
+    );
 
-    MCAPI static class Actor* tryGetFromComponent(class ActorOwnerComponent& component, bool);
+    MCAPI static class Actor* tryGetFromComponent(class ActorOwnerComponent& component, bool includeRemoved);
 
-    MCAPI static class Actor const* tryGetFromComponent(class ActorOwnerComponent const& component, bool);
+    MCAPI static class Actor const*
+    tryGetFromComponent(class ActorOwnerComponent const& component, bool includeRemoved);
 
-    MCAPI static class Actor* tryGetFromEntity(class EntityContext& entity, bool);
+    MCAPI static class Actor* tryGetFromEntity(class EntityContext& entity, bool includeRemoved);
 
-    MCAPI static class Actor* tryGetFromEntity(class StackRefResult<class EntityContext>, bool);
+    MCAPI static class Actor* tryGetFromEntity(class StackRefResult<class EntityContext> entity, bool includeRemoved);
 
     MCAPI static class Actor*
-    tryGetFromEntity(class StrictEntityContext const& entity, class EntityRegistry& registry, bool);
+    tryGetFromEntity(class StrictEntityContext const& entity, class EntityRegistry& registry, bool includeRemoved);
 
-    MCAPI static class Actor const* tryGetFromEntity(class EntityContext const& entity, bool);
+    MCAPI static class Actor const* tryGetFromEntity(class EntityContext const& entity, bool includeRemoved);
 
     // NOLINTEND
 
@@ -1447,7 +1457,7 @@ public:
         ::AnimationComponentGroupType              group
     );
 
-    MCAPI void _initializeMaxAutoStep(float);
+    MCAPI void _initializeMaxAutoStep(float maxAutoStep);
 
     MCAPI bool _isDeathLootAllowed() const;
 

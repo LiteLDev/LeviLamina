@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
 
 class UnlockedRecipesPacket : public ::Packet {
 public:
@@ -36,7 +36,7 @@ public:
 
     MCAPI UnlockedRecipesPacket();
 
-    MCAPI UnlockedRecipesPacket(std::vector<std::string>, ::UnlockedRecipesPacket::PacketType type);
+    MCAPI UnlockedRecipesPacket(std::vector<std::string> unlockedRecipes, ::UnlockedRecipesPacket::PacketType type);
 
     // NOLINTEND
 };

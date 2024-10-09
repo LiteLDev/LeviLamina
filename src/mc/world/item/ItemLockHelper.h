@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/item/components/ItemLockMode.h"
+#include "mc/world/item/ItemLockMode.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -29,7 +29,7 @@ public:
 
     MCAPI static bool isItemLockedInSlot(class ItemStackBase const& item);
 
-    MCAPI static void setItemLockMode(class ItemStackBase& item, ::ItemLockMode);
+    MCAPI static void setItemLockMode(class ItemStackBase& item, ::ItemLockMode lockMode);
 
     MCAPI static void setKeepOnDeath(class ItemStackBase& item, bool value);
 

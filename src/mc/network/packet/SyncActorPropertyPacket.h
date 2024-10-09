@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
 
 class SyncActorPropertyPacket : public ::Packet {
 public:
@@ -32,7 +32,10 @@ public:
 
     MCAPI SyncActorPropertyPacket();
 
-    MCAPI SyncActorPropertyPacket(class HashedString const&, class PropertyGroupManager const&);
+    MCAPI SyncActorPropertyPacket(
+        class HashedString const&         actorCanonicalName,
+        class PropertyGroupManager const& propertyGroupManager
+    );
 
     // NOLINTEND
 };

@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-#include "mc/enums/SubClientId.h"
+#include "mc/common/SubClientId.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -30,7 +30,8 @@ public:
     virtual void sendToServer(class Packet& packet) = 0;
 
     // vIndex: 3
-    virtual void sendToClient(class UserEntityIdentifierComponent const*, class Packet const& packet) = 0;
+    virtual void
+    sendToClient(class UserEntityIdentifierComponent const* userIdentifier, class Packet const& packet) = 0;
 
     // vIndex: 4
     virtual void sendToClient(class NetworkIdentifier const& id, class Packet const& packet, ::SubClientId subid) = 0;

@@ -33,7 +33,7 @@ public:
 
     MCAPI RecipeIngredient(class ItemDescriptor const& descriptor, ushort stackSize);
 
-    MCAPI RecipeIngredient(struct ItemTag const&, ushort stackSize);
+    MCAPI RecipeIngredient(struct ItemTag const& itemTag, ushort stackSize);
 
     MCAPI RecipeIngredient(class Item const& item, int auxValue, ushort stackSize);
 

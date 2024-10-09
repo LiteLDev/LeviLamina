@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/GameType.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
+#include "mc/world/level/GameType.h"
 
 class UpdatePlayerGameTypePacket : public ::Packet {
 public:
@@ -33,7 +33,7 @@ public:
 
     MCAPI UpdatePlayerGameTypePacket();
 
-    MCAPI UpdatePlayerGameTypePacket(::GameType, struct ActorUniqueID const&, uint64);
+    MCAPI UpdatePlayerGameTypePacket(::GameType playerGameType, struct ActorUniqueID const& targetPlayer, uint64 tick);
 
     // NOLINTEND
 };

@@ -42,7 +42,7 @@ public:
 
     MCAPI ~VolumeDefinition();
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx&);
+    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
     MCAPI static class SemVersion const& getMaxSupportedVersion();
 

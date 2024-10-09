@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/TagRegistry.h"
-#include "mc/common/wrapper/IDType.h"
 #include "mc/deps/core/utility/buffer_span.h"
+#include "mc/util/IDType.h"
+#include "mc/util/TagRegistry.h"
 #include "mc/world/level/levelgen/structure/StructureFeatureType.h"
 
 class StructureFeature {
@@ -27,11 +27,18 @@ public:
     virtual bool shouldPostProcessMobs() const;
 
     // vIndex: 3
-    virtual bool
-    getNearestGeneratedFeature(class Dimension&, class BiomeSource const&, class BlockPos const&, class BlockPos&, class IPreliminarySurfaceProvider const&, bool, std::optional<class HashedString> const&);
+    virtual bool getNearestGeneratedFeature(
+        class Dimension&                         dimension,
+        class BiomeSource const&                 biomeSource,
+        class BlockPos const&                    origin,
+        class BlockPos&                          pos,
+        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        bool                                     mustBeInNewChunks,
+        std::optional<class HashedString> const& biomeTag
+    );
 
     // vIndex: 4
-    virtual void initMobSpawnTypes(class HardcodedSpawnAreaRegistry& spawnAreas);
+    virtual void initMobSpawnTypes(class HardcodedSpawnAreaRegistry&);
 
     // vIndex: 5
     virtual bool
@@ -44,14 +51,22 @@ public:
     // vIndex: 7
     virtual class StructureStart* getStructureAt(int cellX, int cellY, int cellZ);
 
-    MCAPI StructureFeature(uint seed, ::StructureFeatureType);
+    MCAPI StructureFeature(uint seed, ::StructureFeatureType structureFeatureType);
 
     MCAPI void addHardcodedSpawnAreas(class LevelChunk& lc);
 
-    MCAPI class BlockPos chunkStartAtSurfaceLevel(class IPreliminarySurfaceProvider const&, class ChunkPos pos, int);
+    MCAPI class BlockPos chunkStartAtSurfaceLevel(
+        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        class ChunkPos                           pos,
+        int                                      defaultYLevel
+    );
 
-    MCAPI void
-    createBlueprints(class Dimension& dimension, class ChunkPos const& cp, class BiomeSource const& biomeSource, class IPreliminarySurfaceProvider const&);
+    MCAPI void createBlueprints(
+        class Dimension&                         dimension,
+        class ChunkPos const&                    cp,
+        class BiomeSource const&                 biomeSource,
+        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+    );
 
     MCAPI void debugRender();
 
@@ -75,32 +90,35 @@ public:
     MCAPI void waitForFeatureBlueprints();
 
     MCAPI static bool findNearestFeaturePositionBySpacing(
-        class Dimension&,
-        class IPreliminarySurfaceProvider const&,
-        class StructureFeature&,
-        std::optional<class HashedString> const&,
-        class BiomeSource const&,
-        class BlockPos const&,
-        class BlockPos&,
-        int,
-        int,
-        int,
-        bool,
-        int,
-        bool
+        class Dimension&                         dimension,
+        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        class StructureFeature&                  feature,
+        std::optional<class HashedString> const& biomeTag,
+        class BiomeSource const&                 biomeSource,
+        class BlockPos const&                    origin,
+        class BlockPos&                          result,
+        int                                      featureSpacing,
+        int                                      minFeatureSeparation,
+        int                                      randomSalt,
+        bool                                     tiltedSpacing,
+        int                                      maxSearchRadius,
+        bool                                     mustBeInNewChunks
     );
 
-    MCAPI static std::pair<class BlockPos const, class Biome const*>
-    getBiomeForFeatureGeneration(class BiomeSource const&, class ChunkPos const&, class IPreliminarySurfaceProvider const&);
+    MCAPI static std::pair<class BlockPos const, class Biome const*> getBiomeForFeatureGeneration(
+        class BiomeSource const&                 biomeSource,
+        class ChunkPos const&                    chunkPos,
+        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+    );
 
     MCAPI static class ChunkPos getChunkPosInSpace(
         class ChunkPos const& cp,
         class Random&         random,
         uint                  levelSeed,
         int                   spacing,
-        int,
-        int  salt,
-        bool tiltedSpacing
+        int                   separation,
+        int                   salt,
+        bool                  tiltedSpacing
     );
 
     MCAPI static void setRandomSeedFor(class Random& result, int x, int z, int salt, uint levelSeed);
@@ -109,15 +127,26 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    MCAPI void
-    addFeature(class Dimension& dimension, class Random& random, class ChunkPos const& cp, class BiomeSource const& biomeSource, class IPreliminarySurfaceProvider const&);
+    MCAPI void addFeature(
+        class Dimension&                         dimension,
+        class Random&                            random,
+        class ChunkPos const&                    cp,
+        class BiomeSource const&                 biomeSource,
+        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+    );
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    MCAPI static bool
-    _doesBiomeHaveTag(class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> const&, class BiomeSource const&, class ChunkPos const&, class IPreliminarySurfaceProvider const&, class HashedString const&);
+    MCAPI static bool _doesBiomeHaveTag(
+        class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> const&
+                                                 biomeTagRegistry,
+        class BiomeSource const&                 biomeSource,
+        class ChunkPos const&                    chunkPos,
+        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        class HashedString const&                biomeTag
+    );
 
     // NOLINTEND
 };

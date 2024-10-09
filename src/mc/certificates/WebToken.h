@@ -24,8 +24,11 @@ public:
 
     MCAPI ~WebToken();
 
-    MCAPI static std::unique_ptr<class WebToken>
-    createFromData(class Json::Value const&, class PrivateKeyManager const&, std::variant<struct PublicKeySignatureType, struct CertificateThumbprintSignatureType>);
+    MCAPI static std::unique_ptr<class WebToken> createFromData(
+        class Json::Value const&                                                               dataInfo,
+        class PrivateKeyManager const&                                                         manager,
+        std::variant<struct PublicKeySignatureType, struct CertificateThumbprintSignatureType> signatureType
+    );
 
     // NOLINTEND
 

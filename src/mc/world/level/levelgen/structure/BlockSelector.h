@@ -15,7 +15,7 @@ public:
     virtual ~BlockSelector();
 
     // vIndex: 1
-    virtual class Block const& next(class Random& random, int worldX, int worldY, int worldZ, bool isEdge) const = 0;
+    virtual class Block const& next(class Random& random, int, int, int, bool) const = 0;
 
     // NOLINTEND
 };

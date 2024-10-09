@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/AbilitiesIndex.h"
-#include "mc/enums/SubClientId.h"
+#include "mc/common/SubClientId.h"
 #include "mc/server/commands/CommandOriginType.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/server/commands/PlayerCommandOrigin.h"
+#include "mc/world/actor/player/AbilitiesIndex.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -52,8 +52,12 @@ public:
 
     MCAPI AutomationPlayerCommandOrigin(std::string const& requestId, class Player& origin);
 
-    MCAPI
-    AutomationPlayerCommandOrigin(struct ActorUniqueID, class Level&, std::string const&, class NetworkIdentifier const&);
+    MCAPI AutomationPlayerCommandOrigin(
+        struct ActorUniqueID           playerId,
+        class Level&                   level,
+        std::string const&             requestId,
+        class NetworkIdentifier const& sourceId
+    );
 
     // NOLINTEND
 };

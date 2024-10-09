@@ -24,11 +24,14 @@ public:
     virtual std::string const& getFileType();
 
     // vIndex: 3
-    virtual bool processPopulationControl(std::string const&, std::string const&);
+    virtual bool processPopulationControl(std::string const& id, std::string const& populationControl);
 
     // vIndex: 4
-    virtual void
-    readResourceFiles(class ResourcePackManager&, class MobSpawnRules const&, std::unordered_map<std::string, struct ActorSpawnRuleData>&);
+    virtual void readResourceFiles(
+        class ResourcePackManager&                                  resourcePackManager,
+        class MobSpawnRules const&                                  baseSpawnRules,
+        std::unordered_map<std::string, struct ActorSpawnRuleData>& dataMap
+    );
 
     MCAPI
     ActorSpawnRuleGroup(class ResourcePackManager& resourcePackManager, class IWorldRegistriesProvider& registries);

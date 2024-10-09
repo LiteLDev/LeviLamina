@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorCategory.h"
-#include "mc/entity/utilities/ActorDamageCause.h"
-#include "mc/entity/utilities/ActorType.h"
+#include "mc/network/packet/types/world/actor/ActorCategory.h"
+#include "mc/world/actor/ActorDamageCause.h"
+#include "mc/world/actor/ActorType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -95,20 +95,20 @@ public:
     MCAPI void setCause(::ActorDamageCause cause);
 
     MCAPI static std::vector<std::pair<std::string, ::ActorDamageCause>>
-        generateDamageCauseCommandEnum(std::optional<struct Scripting::Version>);
+    generateDamageCauseCommandEnum(std::optional<struct Scripting::Version> scriptVersion);
 
     MCAPI static std::vector<std::pair<std::string, ::ActorDamageCause>>
-        generateNewDamageCauseCommandEnum(std::optional<struct Scripting::Version>);
+    generateNewDamageCauseCommandEnum(std::optional<struct Scripting::Version> scriptVersion);
 
     MCAPI static std::vector<class VersionedActorDamageCause> generateVersionedDamageCauseCommandEnum();
 
-    MCAPI static ::ActorDamageCause getCauseMapVersionCutoffInclusive(struct Scripting::Version);
+    MCAPI static ::ActorDamageCause getCauseMapVersionCutoffInclusive(struct Scripting::Version scriptingVersion);
 
     MCAPI static bool isDamageCausedByMob(::ActorDamageCause cause);
 
     MCAPI static ::ActorDamageCause lookupCause(std::string const& name);
 
-    MCAPI static std::string const& lookupCauseName(::ActorDamageCause);
+    MCAPI static std::string const& lookupCauseName(::ActorDamageCause cause);
 
     // NOLINTEND
 };

@@ -49,7 +49,7 @@ public:
     virtual bool canDestroy(class ContainerScreenContext const& screenContext) const;
 
     // vIndex: 8
-    virtual int getContainerOffset(class ContainerScreenContext const& screenContext) const;
+    virtual int getContainerOffset(class ContainerScreenContext const&) const;
 
     // vIndex: 9
     virtual int

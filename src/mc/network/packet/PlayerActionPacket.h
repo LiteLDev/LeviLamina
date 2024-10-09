@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
-#include "mc/world/actor/player/PlayerActionType.h"
+#include "mc/network/packet/PlayerActionType.h"
+#include "mc/platform/Result.h"
 
 class PlayerActionPacket : public ::Packet {
 public:
@@ -50,14 +50,14 @@ public:
     MCAPI PlayerActionPacket(
         ::PlayerActionType    action,
         class BlockPos const& pos,
-        class BlockPos const&,
-        int                  data,
-        class ActorRuntimeID runtimeId
+        class BlockPos const& resultPos,
+        int                   data,
+        class ActorRuntimeID  runtimeId
     );
 
     MCAPI bool getIsFromServerPlayerMovementSystem() const;
 
-    MCAPI void setFromServerPlayerMovementSystem(bool);
+    MCAPI void setFromServerPlayerMovementSystem(bool value);
 
     // NOLINTEND
 };

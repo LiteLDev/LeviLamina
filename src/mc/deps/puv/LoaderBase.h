@@ -21,9 +21,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI void registerParser(std::unique_ptr<class Puv::ParserBase>);
+    MCAPI void registerParser(std::unique_ptr<class Puv::ParserBase> parser);
 
-    MCAPI void registerUpgrader(std::unique_ptr<class Puv::Upgrader>);
+    MCAPI void registerUpgrader(std::unique_ptr<class Puv::Upgrader> upgrader);
 
     MCAPI ~LoaderBase();
 
@@ -31,7 +31,7 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    MCAPI class Puv::LoadResultAny doLoad(std::string const&, class SemVersion const&) const;
+    MCAPI class Puv::LoadResultAny doLoad(std::string const& input, class SemVersion const& parserVersion) const;
 
     // NOLINTEND
 };

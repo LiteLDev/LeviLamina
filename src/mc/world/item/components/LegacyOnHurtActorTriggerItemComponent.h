@@ -31,7 +31,7 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI void _onHurtActor(int&, class ItemStack&, class Actor&, class Mob&);
+    MCAPI void _onHurtActor(int& durabilityDamage, class ItemStack& item, class Actor& actor, class Mob& attacker);
 
     // NOLINTEND
 };

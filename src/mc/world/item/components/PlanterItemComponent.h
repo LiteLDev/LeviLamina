@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/AllExperiments.h"
+#include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -31,13 +31,13 @@ public:
     virtual bool isNetworkComponent() const;
 
     // vIndex: 4
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const&) const;
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const& ctx) const;
 
     // vIndex: 5
-    virtual bool initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx const&);
+    virtual bool initializeFromNetwork(class CompoundTag const& tag, struct cereal::ReflectionCtx const& ctx);
 
     // vIndex: 6
-    virtual void handleVersionBasedInitialization(class SemVersion const&);
+    virtual void handleVersionBasedInitialization(class SemVersion const& originalJsonVersion);
 
     // vIndex: 7
     virtual bool
@@ -55,7 +55,7 @@ public:
     // vIndex: 9
     virtual void _initializeComponent();
 
-    MCAPI explicit PlanterItemComponent(class Block const&);
+    MCAPI explicit PlanterItemComponent(class Block const& block);
 
     MCAPI bool
     calculatePlacePos(class ItemStackBase const& instance, class Actor& entity, uchar& face, class BlockPos& pos) const;
@@ -64,8 +64,11 @@ public:
 
     MCAPI class PlanterItemComponent& operator=(class PlanterItemComponent const&);
 
-    MCAPI static void
-    bindType(struct cereal::ReflectionCtx&, std::vector<::AllExperiments> const&, std::optional<class SemVersion>);
+    MCAPI static void bindType(
+        struct cereal::ReflectionCtx&        ctx,
+        std::vector<::AllExperiments> const& requiredToggles,
+        std::optional<class SemVersion>      releasedMinFormatVersion
+    );
 
     MCAPI static class HashedString const& getIdentifier();
 
@@ -73,9 +76,14 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI bool
-    _placeBlock(class ItemStack&, class Actor&, class Block const&, class BlockPos const&, uchar, class Vec3 const&)
-        const;
+    MCAPI bool _placeBlock(
+        class ItemStack&      item,
+        class Actor&          entity,
+        class Block const&    block,
+        class BlockPos const& placePos,
+        uchar                 face,
+        class Vec3 const&     clickPos
+    ) const;
 
     // NOLINTEND
 };

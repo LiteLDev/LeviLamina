@@ -23,7 +23,7 @@ public:
 
     MCAPI explicit PrivateKeyManager(::Crypto::Asymmetric::System system);
 
-    MCAPI std::string computeSecret(class KeyManager const&) const;
+    MCAPI std::string computeSecret(class KeyManager const& peer) const;
 
     // NOLINTEND
 };

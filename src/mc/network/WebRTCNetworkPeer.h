@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/enums/Compressibility.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/network/Compressibility.h"
 #include "mc/network/NetworkPeer.h"
 
 class WebRTCNetworkPeer : public ::NetworkPeer {
@@ -24,7 +24,7 @@ public:
 
     // vIndex: 2
     virtual ::NetworkPeer::DataStatus
-    receivePacket(std::string& outData, std::shared_ptr<std::chrono::steady_clock::time_point> const&);
+    receivePacket(std::string& outData, std::shared_ptr<std::chrono::steady_clock::time_point> const& timepointPtr);
 
     // vIndex: 3
     virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const;
@@ -38,7 +38,7 @@ public:
     // vIndex: 7
     virtual bool isEncrypted() const;
 
-    MCAPI WebRTCNetworkPeer(class Bedrock::NonOwnerPointer<struct NetherNetConnector>&&, uint64);
+    MCAPI WebRTCNetworkPeer(class Bedrock::NonOwnerPointer<struct NetherNetConnector>&& connector, uint64 peerId);
 
     MCAPI uint64 getPeerId() const;
 

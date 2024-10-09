@@ -18,7 +18,7 @@ public:
     virtual ~EndGatewayFeature();
 
     // vIndex: 3
-    virtual bool place(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
+    virtual bool place(class BlockSource& region, class BlockPos const& origin, class Random&) const;
 
     // NOLINTEND
 };

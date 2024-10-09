@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/AllExperiments.h"
 #include "mc/world/item/components/ItemComponent.h"
+#include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -28,7 +28,7 @@ public:
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const&) const;
 
     // vIndex: 5
-    virtual bool initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx const&);
+    virtual bool initializeFromNetwork(class CompoundTag const& tag, struct cereal::ReflectionCtx const&);
 
     // vIndex: 9
     virtual void _initializeComponent();
@@ -37,8 +37,11 @@ public:
 
     MCAPI class InteractButtonItemComponent& operator=(class InteractButtonItemComponent const&);
 
-    MCAPI static void
-    bindType(struct cereal::ReflectionCtx&, std::vector<::AllExperiments> const&, std::optional<class SemVersion>);
+    MCAPI static void bindType(
+        struct cereal::ReflectionCtx&        ctx,
+        std::vector<::AllExperiments> const& requiredToggles,
+        std::optional<class SemVersion>      releasedMinFormatVersion
+    );
 
     MCAPI static class HashedString const& getIdentifier();
 

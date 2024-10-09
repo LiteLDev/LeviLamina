@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/optional_ref.h"
-#include "mc/enums/FertilizerType.h"
-#include "mc/enums/Flip.h"
-#include "mc/enums/ShapeType.h"
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
+#include "mc/world/Flip.h"
+#include "mc/world/item/FertilizerType.h"
+#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/utils/BlockProperty.h"
-#include "mc/world/level/block/utils/BlockRenderLayer.h"
-#include "mc/world/level/block/utils/BlockSupportType.h"
+#include "mc/world/level/block/BlockProperty.h"
+#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -33,26 +33,27 @@ public:
 
     // vIndex: 5
     virtual class AABB
-    getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
+    getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const& pos, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
     // vIndex: 11
-    virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
+    virtual class AABB const& getVisualShape(class Block const&, class AABB& bufferAABB) const;
 
     // vIndex: 142
     virtual void _addHardCodedBlockComponents(class Experiments const&);
 
     // vIndex: 145
-    virtual void onStandOn(class EntityContext& entity, class BlockPos const& pos) const;
+    virtual void onStandOn(class EntityContext& entity, class BlockPos const&) const;
 
     // vIndex: 157
     virtual int getExtraRenderLayers() const;
 
     MCAPI HoneyBlock(std::string const& nameId, int id, class Material const& material);
 
-    MCAPI void onFallOn(struct BlockEvents::BlockFallOnEvent&) const;
+    MCAPI void onFallOn(struct BlockEvents::BlockFallOnEvent& eventData) const;
 
-    MCAPI static void triggerSlidingDownEffects(class Actor& entity, class BlockPos const& pos, class Block const&);
+    MCAPI static void
+    triggerSlidingDownEffects(class Actor& entity, class BlockPos const& pos, class Block const& honeyBlock);
 
     // NOLINTEND
 };

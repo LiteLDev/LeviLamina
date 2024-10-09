@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/events/MinecraftEventing.h"
-#include "mc/world/AutomaticID.h"
-#include "mc/world/actor/player/PlayerActionType.h"
+#include "mc/network/packet/PlayerActionType.h"
 #include "mc/world/events/EventResult.h"
 
 class PlayerEventListener {
@@ -22,7 +22,7 @@ public:
 
     MCVAPI ::EventResult onCameraSetPlayerRot(class Player&, class Vec2 const&);
 
-    MCVAPI ::EventResult onEvent(struct PlayerNotificationEvent const&);
+    MCVAPI ::EventResult onEvent(struct PlayerNotificationEvent const& event);
 
     MCVAPI ::EventResult onLocalPlayerDeath(class IClientInstance& client, class LocalPlayer& player);
 
@@ -93,7 +93,7 @@ public:
     MCVAPI ::EventResult
     onPlayerPortalUsed(class Player& player, DimensionType fromDimension, DimensionType toDimension);
 
-    MCVAPI ::EventResult onPlayerPoweredBeacon(class Player const&, int);
+    MCVAPI ::EventResult onPlayerPoweredBeacon(class Player const& player, int level);
 
     MCVAPI ::EventResult onPlayerSaved(class Player& player);
 

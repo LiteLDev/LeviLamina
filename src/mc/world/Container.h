@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/data/BidirectionalUnorderedMap.h"
-#include "mc/world/TypedRuntimeId.h"
-#include "mc/world/containers/ContainerType.h"
+#include "mc/util/BidirectionalUnorderedMap.h"
+#include "mc/util/TypedRuntimeId.h"
+#include "mc/world/ContainerType.h"
 
 class Container {
 public:
@@ -35,10 +35,10 @@ public:
     virtual void removeContentChangeListener(class ContainerContentChangeListener* listener);
 
     // vIndex: 5
-    virtual void addRemovedListener(class ContainerRemovedListener*);
+    virtual void addRemovedListener(class ContainerRemovedListener* listener);
 
     // vIndex: 6
-    virtual void removeRemovedListener(class ContainerRemovedListener*);
+    virtual void removeRemovedListener(class ContainerRemovedListener* listener);
 
     // vIndex: 7
     virtual class ItemStack const& getItem(int slot) const = 0;
@@ -74,7 +74,7 @@ public:
     virtual void containerRemoved();
 
     // vIndex: 18
-    virtual void dropSlotContent(class BlockSource&, class Vec3 const&, bool, int);
+    virtual void dropSlotContent(class BlockSource& region, class Vec3 const& pos, bool randomizeDrop, int slot);
 
     // vIndex: 19
     virtual void dropContents(class BlockSource& region, class Vec3 const& pos, bool randomizeDrop);
@@ -89,7 +89,7 @@ public:
     virtual void startOpen(class Player& player) = 0;
 
     // vIndex: 23
-    virtual void stopOpen(class Player&);
+    virtual void stopOpen(class Player& player);
 
     // vIndex: 24
     virtual std::vector<class ItemStack> getSlotCopies() const;
@@ -151,7 +151,7 @@ public:
 
     MCAPI Container(::ContainerType type, std::string const& name, bool customName);
 
-    MCAPI void addCloseListener(class ContainerCloseListener*);
+    MCAPI void addCloseListener(class ContainerCloseListener* listener);
 
     MCAPI ::ContainerType getContainerType() const;
 
@@ -167,7 +167,7 @@ public:
 
     MCAPI void initRuntimeId();
 
-    MCAPI void removeCloseListener(class ContainerCloseListener*);
+    MCAPI void removeCloseListener(class ContainerCloseListener* listener);
 
     MCAPI void serverInitItemStackIdsAll(std::function<void(int, class ItemStack const&)> onNetIdChanged);
 
@@ -177,13 +177,19 @@ public:
 
     MCAPI static ::ContainerType getContainerTypeId(std::string const& name);
 
-    MCAPI static std::string const& getContainerTypeName(::ContainerType);
+    MCAPI static std::string const& getContainerTypeName(::ContainerType type);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    MCAPI void _dropSlotContent(class BlockSource&, class Random&, class Vec3 const&, bool, int);
+    MCAPI void _dropSlotContent(
+        class BlockSource& region,
+        class Random&      random,
+        class Vec3 const&  pos,
+        bool               randomizeDrop,
+        int                slot
+    );
 
     MCAPI int _getEmptySlotsCount(int start, int end) const;
 

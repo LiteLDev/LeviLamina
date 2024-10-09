@@ -11,7 +11,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI SimplexNoise(class IRandom& random, bool);
+    MCAPI SimplexNoise(class IRandom& random, bool parityInitialization);
 
     MCAPI float _getValue(class Vec2 const& vin) const;
 

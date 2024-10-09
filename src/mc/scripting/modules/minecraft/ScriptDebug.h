@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/Result.h"
+#include "mc/external/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -22,8 +22,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static class Scripting::Result<void>
-    disableWatchdogTimingWarnings(class Scripting::WeakLifetimeScope&, class Scripting::DependencyLocator&, bool);
+    MCAPI static class Scripting::Result<void> disableWatchdogTimingWarnings(
+        class Scripting::WeakLifetimeScope& scope,
+        class Scripting::DependencyLocator& locator,
+        bool                                disable
+    );
 
     // NOLINTEND
 };

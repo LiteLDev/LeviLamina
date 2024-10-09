@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/CloseStatusCode.h"
+#include "mc/websockets/CloseStatusCode.h"
 
 // auto generated forward declare list
 // clang-format off

@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/UpdateBlockPacket.h"
+#include "mc/platform/Result.h"
 
 class UpdateBlockSyncedPacket : public ::UpdateBlockPacket {
 public:

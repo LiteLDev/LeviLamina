@@ -11,7 +11,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI bool operator()(class ItemInstance const&, class ItemInstance const&) const;
+    MCAPI bool operator()(class ItemInstance const& lhs, class ItemInstance const& rhs) const;
 
     // NOLINTEND
 };

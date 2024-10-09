@@ -67,7 +67,7 @@ public:
 
     MCAPI ~GameContext();
 
-    MCAPI static std::unique_ptr<class CodeBuilder::GameContext> create(std::function<class ILevel*()>);
+    MCAPI static std::unique_ptr<class CodeBuilder::GameContext> create(std::function<class ILevel*()> levelGetter);
 
     // NOLINTEND
 };

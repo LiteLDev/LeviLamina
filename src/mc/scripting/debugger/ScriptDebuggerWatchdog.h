@@ -21,7 +21,7 @@ public:
     virtual bool requireClose() const;
 
     // vIndex: 2
-    virtual void startListenTimeout(std::chrono::seconds);
+    virtual void startListenTimeout(std::chrono::seconds duration);
 
     // vIndex: 3
     virtual bool listenTimeoutExpired() const;

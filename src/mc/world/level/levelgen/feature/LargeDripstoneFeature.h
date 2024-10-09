@@ -27,12 +27,16 @@ public:
 
     public:
         // NOLINTBEGIN
-        MCAPI bool
-        moveBackUntilBaseIsInsideStoneAndShrinkRadiusIfNecessary(class IBlockWorldGenAPI& target, class DripstoneUtils::WindOffsetter const&);
+        MCAPI bool moveBackUntilBaseIsInsideStoneAndShrinkRadiusIfNecessary(
+            class IBlockWorldGenAPI&                   target,
+            class DripstoneUtils::WindOffsetter const& wind
+        );
 
-        MCAPI void
-        placeBlocks(class IBlockWorldGenAPI& target, class Random& random, class DripstoneUtils::WindOffsetter const&)
-            const;
+        MCAPI void placeBlocks(
+            class IBlockWorldGenAPI&                   target,
+            class Random&                              random,
+            class DripstoneUtils::WindOffsetter const& wind
+        ) const;
 
         // NOLINTEND
     };
@@ -49,12 +53,8 @@ public:
     virtual ~LargeDripstoneFeature() = default;
 
     // vIndex: 1
-    virtual std::optional<class BlockPos> place(
-        class IBlockWorldGenAPI& target,
-        class BlockPos const&    pos,
-        class Random&            random,
-        class RenderParams&      renderParams
-    ) const;
+    virtual std::optional<class BlockPos>
+    place(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random, class RenderParams&) const;
 
     // vIndex: 2
     virtual bool isValidPlacement(std::string const&);

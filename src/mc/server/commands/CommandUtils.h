@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorType.h"
+#include "mc/world/actor/ActorType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -48,7 +48,7 @@ MCAPI void displayLocalizableMessage(
     std::vector<std::string> const& params
 );
 
-MCAPI std::string getActorName(class Actor const&);
+MCAPI std::string getActorName(class Actor const& actor);
 
 MCAPI class BlockPos getFeetBlockPos(class Actor const* entity);
 
@@ -56,13 +56,13 @@ MCAPI class Vec3 getFeetPos(class Actor const* entity);
 
 MCAPI std::vector<::ActorType> getInvalidCommandEntities();
 
-MCAPI std::vector<::ActorType> getInvalidCommandEntities(bool, bool);
+MCAPI std::vector<::ActorType> getInvalidCommandEntities(bool isChemistryEnabled, bool isCodeBuilderEnabled);
 
-MCAPI std::string getTelemetryErrorList(class CommandOutput const&);
+MCAPI std::string getTelemetryErrorList(class CommandOutput const& output);
 
 MCAPI bool isActiveTickingChunk(class LevelChunk const& chunk);
 
-MCAPI bool isActiveTickingChunk(struct Tick currentLevelTick, struct Tick);
+MCAPI bool isActiveTickingChunk(struct Tick currentLevelTick, struct Tick chunkLastTick);
 
 MCAPI bool
 isFunctionValid(class CommandOutput& output, class FunctionEntry& functionEntry, std::string const& resolvedPath);
@@ -83,7 +83,7 @@ MCAPI class Actor* spawnEntityAt(
 
 MCAPI std::string toJsonResult(std::string const& commandName, class Json::Value const& rawData);
 
-MCAPI std::string const validatePath(class CommandOutput&, class CommandFilePath const&);
+MCAPI std::string const validatePath(class CommandOutput& output, class CommandFilePath const& filePath);
 // NOLINTEND
 
 }; // namespace CommandUtils

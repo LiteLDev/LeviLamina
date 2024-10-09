@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/ThreadLocalObject.h"
+#include "mc/platform/threading/ThreadLocalObject.h"
 
 class Random {
 public:
@@ -35,7 +35,7 @@ public:
 
     MCAPI Random();
 
-    MCAPI Random(uint seed, bool);
+    MCAPI Random(uint seed, bool onlyUsedDeterministically);
 
     MCAPI float nextFloat(float, float);
 

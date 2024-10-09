@@ -61,6 +61,7 @@
 
 #include "entt/entt.hpp" // Entity Component System Library
 #include "entt/fwd.hpp"  // Entity Component Forward Declarations
+#include "glm/glm.hpp"   // OpenGL Mathematics Library
 #include "gsl/gsl"       // Guideline Support Library
 
 // LevelDB C++ Library

@@ -29,7 +29,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCVAPI class ChunkLocalNoiseCache createNoiseCache(class ChunkPos chunkPos) const;
+    MCVAPI class ChunkLocalNoiseCache createNoiseCache(class ChunkPos) const;
 
     MCVAPI class WorldGenCache createWorldGenCache(class ChunkPos chunkPos) const;
 
@@ -59,17 +59,12 @@ public:
 
     MCVAPI void prepareHeights(class BlockVolume& box, class ChunkPos const& chunkPos, bool factorInBeardsAndShavers);
 
-    MCVAPI std::unique_ptr<class Aquifer> tryMakeAquifer(
-        class ChunkPos const&          chunkPos,
-        class SurfaceLevelCache const& surfaceLevelCache,
-        short                          minHeight,
-        short                          levelGenHeight,
-        short                          seaLevel
-    ) const;
+    MCVAPI std::unique_ptr<class Aquifer>
+           tryMakeAquifer(class ChunkPos const&, class SurfaceLevelCache const&, short, short, short) const;
 
     MCVAPI ~OverworldGenerator();
 
-    MCAPI OverworldGenerator(class Dimension&, bool);
+    MCAPI OverworldGenerator(class Dimension& dimension, bool isLegacyWorld);
 
     MCAPI void buildSurfaces(
         struct OverworldGenerator::ThreadData& thread,

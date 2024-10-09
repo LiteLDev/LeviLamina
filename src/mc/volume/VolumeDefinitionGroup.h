@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -29,7 +29,7 @@ public:
 
     MCAPI ~VolumeDefinitionGroup();
 
-    MCAPI static void bindVolumeDefinitions(struct cereal::ReflectionCtx&);
+    MCAPI static void bindVolumeDefinitions(struct cereal::ReflectionCtx& ctx);
 
     // NOLINTEND
 
@@ -45,9 +45,9 @@ public:
         rapidjson::GenericDocument<
             rapidjson::UTF8<char>,
             rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>,
-            rapidjson::CrtAllocator>&,
-        class SemVersion const& engineVersion,
-        std::string const&      filePath
+            rapidjson::CrtAllocator>& doc,
+        class SemVersion const&       engineVersion,
+        std::string const&            filePath
     );
 
     // NOLINTEND

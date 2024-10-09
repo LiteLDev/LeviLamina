@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/PistonState.h"
 #include "mc/world/events/EventResult.h"
+#include "mc/world/level/block/actor/PistonState.h"
 
 class BlockEventListener {
 public:
@@ -28,7 +28,7 @@ public:
 
     // vIndex: 2
     virtual ::EventResult
-    onBlockDestroyedByPlayer(class Player&, class Block const&, class BlockPos const&, class ItemStackBase const&, class ItemStackBase const&);
+    onBlockDestroyedByPlayer(class Player& player, class Block const& destroyedBlock, class BlockPos const& pos, class ItemStackBase const&, class ItemStackBase const&);
 
     // vIndex: 3
     virtual ::EventResult onBlockInPosWillBeDestroyedByPlayer(class Player& player, class BlockPos const& pos);

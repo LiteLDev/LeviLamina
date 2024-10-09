@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/events/LevelSoundEvent.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class AdmireItemGoal : public ::Goal {
@@ -37,14 +37,22 @@ public:
     // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    MCAPI
-    AdmireItemGoal(class Mob& mob, ::Puv::Legacy::LevelSoundEvent sound, struct FloatRange soundIntervalRange, class ActorDefinitionTrigger const&, class ActorDefinitionTrigger const&);
+    MCAPI AdmireItemGoal(
+        class Mob&                          mob,
+        ::Puv::Legacy::LevelSoundEvent      sound,
+        struct FloatRange                   soundIntervalRange,
+        class ActorDefinitionTrigger const& onAdmireItemStart,
+        class ActorDefinitionTrigger const& onAdmireItemStop
+    );
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    MCAPI void _tryPlaceItemInInventory(class ContainerComponent& containerComponent, class ShareableComponent const&);
+    MCAPI void _tryPlaceItemInInventory(
+        class ContainerComponent&       containerComponent,
+        class ShareableComponent const& shareableComponent
+    );
 
     // NOLINTEND
 };

@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/WSConnectionResult.h"
-#include "mc/enums/CloseStatusCode.h"
+#include "mc/websockets/CloseStatusCode.h"
 #include "mc/websockets/RakWebSocket.h"
+#include "mc/websockets/WSConnectionResult.h"
 
 class RakWebSocketClient : public ::RakWebSocket {
 public:

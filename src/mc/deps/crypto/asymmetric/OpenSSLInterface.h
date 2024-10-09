@@ -27,22 +27,22 @@ public:
 
     // vIndex: 2
     virtual std::string encryptData(
-        std::string const& publicKey,
-        std::string const& data,
-        ::Crypto::Asymmetric::Padding,
-        ::Crypto::Asymmetric::PubKeyFormat
+        std::string const&                 publicKey,
+        std::string const&                 data,
+        ::Crypto::Asymmetric::Padding      paddingType,
+        ::Crypto::Asymmetric::PubKeyFormat keyFormat
     );
 
     // vIndex: 3
     virtual std::string
-    decryptData(std::string const& privateKey, std::string const& data, ::Crypto::Asymmetric::Padding);
+    decryptData(std::string const& privateKey, std::string const& data, ::Crypto::Asymmetric::Padding paddingType);
 
     // vIndex: 4
     virtual std::string signData(
-        std::string const&,
-        std::string const&,
-        ::Crypto::Hash::HashType,
-        ::Crypto::Asymmetric::PrivateKeySigningFormat
+        std::string const&                            privateKey,
+        std::string const&                            data,
+        ::Crypto::Hash::HashType                      hash,
+        ::Crypto::Asymmetric::PrivateKeySigningFormat format
     );
 
     // vIndex: 5
@@ -54,22 +54,22 @@ public:
     );
 
     // vIndex: 6
-    virtual std::string computeSharedSecret(std::string const&, std::string const&);
+    virtual std::string computeSharedSecret(std::string const& myPrivateKey, std::string const& peerPublicKey);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    MCAPI std::string _computeSharedSecretECC(std::string const&, std::string const&);
+    MCAPI std::string _computeSharedSecretECC(std::string const& myPrivateKey, std::string const& peerPublicKey);
 
     MCAPI std::string
-          _decryptDataRSA(std::string const& privateKey, std::string const& data, ::Crypto::Asymmetric::Padding);
+    _decryptDataRSA(std::string const& privateKey, std::string const& data, ::Crypto::Asymmetric::Padding paddingType);
 
     MCAPI std::string _encryptDataRSA(
-        std::string const& publicKey,
-        std::string const& data,
-        ::Crypto::Asymmetric::Padding,
-        ::Crypto::Asymmetric::PubKeyFormat
+        std::string const&                 publicKey,
+        std::string const&                 data,
+        ::Crypto::Asymmetric::Padding      paddingType,
+        ::Crypto::Asymmetric::PubKeyFormat keyFormat
     );
 
     MCAPI bool _generateKeyPairECC(std::string& privateKey, std::string& publicKey);

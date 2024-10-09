@@ -22,9 +22,9 @@ public:
     // vIndex: 0
     virtual ~StorageItemComponent() = default;
 
-    MCAPI uint calculateAddableCount(class ItemStack const& item, class ItemStackBase const&) const;
+    MCAPI uint calculateAddableCount(class ItemStack const& item, class ItemStackBase const& newItemStack) const;
 
-    MCAPI bool tryAddItemStack(class ItemStack& item, class ItemStack&) const;
+    MCAPI bool tryAddItemStack(class ItemStack& item, class ItemStack& newItemStack) const;
 
     MCAPI void tryGenerateUserData(class ItemStack& item) const;
 
@@ -40,15 +40,17 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI uint _calculateAddableCountForBasicStorage(class ItemStack const& item, class ItemStackBase const&) const;
+    MCAPI uint
+    _calculateAddableCountForBasicStorage(class ItemStack const& item, class ItemStackBase const& newItemStack) const;
 
     MCAPI uint _getItemListSize(class ItemStack& item) const;
 
-    MCAPI uint _getPerItemCost(class ItemStack const&, class ItemStackBase const&) const;
+    MCAPI uint _getPerItemCost(class ItemStack const&, class ItemStackBase const& newItemStack) const;
 
-    MCAPI void _storeItemInNewOrExistingSlot(class ItemStack& item, class ItemStack&, uint) const;
+    MCAPI void
+    _storeItemInNewOrExistingSlot(class ItemStack& item, class ItemStack& newItemStack, uint addableCount) const;
 
-    MCAPI void _updateRemainingWeight(class ItemStack& item, class ItemStack const&, int count) const;
+    MCAPI void _updateRemainingWeight(class ItemStack& item, class ItemStack const& newItemStack, int count) const;
 
     // NOLINTEND
 };

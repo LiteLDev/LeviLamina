@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-#include "mc/enums/MinecraftPacketIds.h"
-#include "mc/enums/ShowStoreOfferRedirectType.h"
-#include "mc/enums/SubClientId.h"
-#include "mc/enums/connection/DisconnectFailReason.h"
-#include "mc/resources/PacketViolationResponse.h"
+#include "mc/common/SubClientId.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/network/MinecraftPacketIds.h"
+#include "mc/network/PacketViolationResponse.h"
+#include "mc/network/connection/DisconnectFailReason.h"
+#include "mc/network/packet/ShowStoreOfferRedirectType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -43,8 +43,13 @@ public:
     virtual void onStoreOfferReceive(::ShowStoreOfferRedirectType, std::string const& offerID);
 
     // vIndex: 6
-    virtual void
-    onDisconnect(class NetworkIdentifier const&, ::Connection::DisconnectFailReason, std::string const&, bool, std::string const&);
+    virtual void onDisconnect(
+        class NetworkIdentifier const&,
+        ::Connection::DisconnectFailReason,
+        std::string const& message,
+        bool               skipMessage,
+        std::string const& telemetryOverride
+    );
 
     // vIndex: 7
     virtual void __unk_vfn_7() = 0;

@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/deps/core/data/BidirectionalUnorderedMap.h"
-#include "mc/world/item/components/ItemStackRequestActionType.h"
+#include "mc/platform/Result.h"
+#include "mc/util/BidirectionalUnorderedMap.h"
+#include "mc/world/inventory/network/ItemStackRequestActionType.h"
 
 class ItemStackRequestAction {
 public:
@@ -40,7 +40,7 @@ public:
 
     MCAPI void write(class BinaryStream& stream) const;
 
-    MCAPI static std::string const getActionTypeName(::ItemStackRequestActionType);
+    MCAPI static std::string const getActionTypeName(::ItemStackRequestActionType type);
 
     MCAPI static class Bedrock::Result<std::unique_ptr<class ItemStackRequestAction>>
     read(class ReadOnlyBinaryStream& stream);

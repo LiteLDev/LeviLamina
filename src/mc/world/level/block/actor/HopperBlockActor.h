@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/containers/ContainerType.h"
+#include "mc/world/ContainerType.h"
 
 class HopperBlockActor {
 public:
@@ -14,9 +14,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
+    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
-    MCVAPI void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
+    MCVAPI void _onUpdatePacket(class CompoundTag const& data, class BlockSource&);
 
     MCVAPI class Container* getContainer();
 
@@ -34,7 +34,7 @@ public:
 
     MCVAPI void onMove();
 
-    MCVAPI void onNeighborChanged(class BlockSource& region, class BlockPos const& position);
+    MCVAPI void onNeighborChanged(class BlockSource& region, class BlockPos const&);
 
     MCVAPI void onRemoved(class BlockSource&);
 

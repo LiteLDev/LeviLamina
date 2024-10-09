@@ -24,11 +24,21 @@ public:
     virtual void unregisterForUpdates(uint handle) = 0;
 
     // vIndex: 4
-    virtual void setPlayerInfluence(uint handle, class ChunkPos const& playerPosition, class Vec3 const&) = 0;
+    virtual void setPlayerInfluence(
+        uint                  handle,
+        class ChunkPos const& playerPosition,
+        class Vec3 const&     playerMovementDirection
+    ) = 0;
 
     // vIndex: 5
-    virtual void
-    setTickingAreaInfluence(uint handle, class ChunkPos const&, int sizeX, int sizeZ, bool isCircle, bool) = 0;
+    virtual void setTickingAreaInfluence(
+        uint                  handle,
+        class ChunkPos const& tickingAreaPosition,
+        int                   sizeX,
+        int                   sizeZ,
+        bool                  isCircle,
+        bool                  preload
+    ) = 0;
 
     // vIndex: 6
     virtual void updateInfluences() = 0;

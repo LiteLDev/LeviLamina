@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/OwnerPtr.h"
-#include "mc/deps/core/LevelStorageState.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/network/ForceBlockNetworkIdsAreHashes.h"
+#include "mc/deps/core/file/LevelStorageState.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/game_refs/OwnerPtr.h"
+#include "mc/world/level/ForceBlockNetworkIdsAreHashes.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -33,7 +33,7 @@ public:
 
     MCVAPI void onCriticalDiskError(bool bSet, ::Core::LevelStorageState const& errorCode);
 
-    MCVAPI void onCriticalScriptError(char const*, char const*);
+    MCVAPI void onCriticalScriptError(char const* clientDisconnectMessage, char const* logMessage);
 
     MCVAPI void onGameModeChanged();
 
@@ -80,8 +80,60 @@ public:
 
     MCAPI class Bedrock::NonOwnerPointer<class ServerTextSettings> getServerTextSettings() const;
 
-    MCAPI bool
-    initializeServer(class IMinecraftApp&, class AllowList&, class PermissionsFile*, Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const&, std::chrono::seconds, std::string, std::string, std::string, class LevelSettings, int, bool, struct ConnectionDefinition, bool, std::vector<std::string> const&, std::string, class mce::UUID const&, class IMinecraftEventing&, Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository> const&, Bedrock::NotNullNonOwnerPtr<class IContentTierManager const> const&, class ResourcePackManager&, std::function<class OwnerPtr<class LevelStorage>(class Scheduler&)>, std::string const&, class LevelData*, std::string, std::string, std::string, std::string, std::string, std::unique_ptr<class EducationOptions>, class ResourcePackManager*, std::function<void()>, std::function<void()>, class ServerMetrics*, class DebugEndPoint*, bool, std::shared_ptr<class Core::FileStorageArea>, struct NetworkSettingOptions const&, bool, bool, bool, std::optional<struct PlayerMovementSettings>, std::optional<struct ScriptSettings>, class Experiments const&, bool, float, std::optional<bool>, ::ForceBlockNetworkIdsAreHashes, struct NetworkPermissions const&, Bedrock::NotNullNonOwnerPtr<class NetworkSessionOwner>, class Bedrock::NonOwnerPointer<class CDNConfig>, struct cereal::ReflectionCtx&, class Bedrock::NonOwnerPointer<class ServerTextSettings>);
+    MCAPI bool initializeServer(
+        class IMinecraftApp&                                                app,
+        class AllowList&                                                    allowList,
+        class PermissionsFile*                                              permissionsFile,
+        Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const&     pathManager,
+        std::chrono::seconds                                                maxPlayerIdleTime,
+        std::string                                                         levelId,
+        std::string                                                         levelName,
+        std::string                                                         serverName,
+        class LevelSettings                                                 levelSettings,
+        int                                                                 maxChunkRadius,
+        bool                                                                shouldAnnounce,
+        struct ConnectionDefinition                                         connectionDefinition,
+        bool                                                                requireTrustedAuthentication,
+        std::vector<std::string> const&                                     extraTrustedKeys,
+        std::string                                                         serverType,
+        class mce::UUID const&                                              localPlayerId,
+        class IMinecraftEventing&                                           eventing,
+        Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository> const&   resourcePackRepository,
+        Bedrock::NotNullNonOwnerPtr<class IContentTierManager const> const& contentTierManager,
+        class ResourcePackManager&                                          clientResourcePackManager,
+        std::function<class OwnerPtr<class LevelStorage>(class Scheduler&)> createLevelStorageCallback,
+        std::string const&                                                  basePath,
+        class LevelData*                                                    levelData,
+        std::string                                                         playerSafetyServiceTextProcessorConfig,
+        std::string                                                         serverId,
+        std::string                                                         applicationId,
+        std::string                                                         applicationSecret,
+        std::string                                                         applicationTenantId,
+        std::unique_ptr<class EducationOptions>                             educationOptions,
+        class ResourcePackManager*                                          localServerResourcePackManager,
+        std::function<void()>                                               criticalSaveCallback,
+        std::function<void()>                                               compactionCallback,
+        class ServerMetrics*                                                serverMetrics,
+        class DebugEndPoint*                                                debugEndPoint,
+        bool                                                                enableWorldSessionEndPoint,
+        std::shared_ptr<class Core::FileStorageArea>                        storageAreaForLevel,
+        struct NetworkSettingOptions const&                                 networkSettings,
+        bool                                                                enableItemStackNetManager,
+        bool                                                                enableItemTransactionLogger,
+        bool                                                                enableRealmsStories,
+        std::optional<struct PlayerMovementSettings>                        playerMovementSettings,
+        std::optional<struct ScriptSettings>                                scriptSettings,
+        class Experiments const&                                            levelExperiments,
+        bool                                                                isServerVisibleToLanDiscovery,
+        float                                                               worldSizeMB,
+        std::optional<bool>                                                 clientSideGenerationEnabled,
+        ::ForceBlockNetworkIdsAreHashes                                     blockNetworkIdsAreHashes,
+        struct NetworkPermissions const&                                    networkPermissions,
+        Bedrock::NotNullNonOwnerPtr<class NetworkSessionOwner>              networkSessionOwner,
+        class Bedrock::NonOwnerPointer<class CDNConfig>                     cdnConfig,
+        struct cereal::ReflectionCtx&                                       ctx,
+        class Bedrock::NonOwnerPointer<class ServerTextSettings>            serverTextSettings
+    );
 
     MCAPI bool isRealmsStoriesEnabled() const;
 
@@ -97,7 +149,7 @@ public:
 
     MCAPI void startServerThread();
 
-    MCAPI static bool forceOffClientChunkGeneration(class LevelData&);
+    MCAPI static bool forceOffClientChunkGeneration(class LevelData& levelData);
 
     MCAPI static std::chrono::nanoseconds const SERVER_MAX_DELAY_BEFORE_SLOWDOWN;
 

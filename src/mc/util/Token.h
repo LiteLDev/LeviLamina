@@ -13,7 +13,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit Token(std::string const& str);
 
-    MCAPI std::string const& getText(std::string const& defaultValue) const;
+    MCAPI std::string const& getText(std::string const&) const;
 
     MCAPI ~Token();
 

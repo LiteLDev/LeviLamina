@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/OwnerPtr.h"
-#include "mc/common/wrapper/StackRefResult.h"
-#include "mc/common/wrapper/WeakRef.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/game_refs/OwnerPtr.h"
+#include "mc/deps/game_refs/StackRefResult.h"
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/volume/VolumeEntityManager.h"
-#include "mc/world/AutomaticID.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -30,13 +30,22 @@ public:
     // vIndex: 0
     virtual ~VolumeEntityManagerServer() = default;
 
-    MCAPI VolumeEntityManagerServer(class StackRefResult<class EntityRegistry>, struct cereal::ReflectionCtx&);
+    MCAPI
+    VolumeEntityManagerServer(class StackRefResult<class EntityRegistry> registry, struct cereal::ReflectionCtx& ctx);
 
     MCAPI std::pair<::VolumeEntityManagerServer::CreateVolumeResult, class StackRefResult<class EntityContext>>
-    createVolume(class LevelStorage& levelStorage, class PacketSender& packetSender, std::string const&, class BlockPos const&, class BlockPos const&, DimensionType dimensionType, std::string const&);
+          createVolume(
+              class LevelStorage&   levelStorage,
+              class PacketSender&   packetSender,
+              std::string const&    volumeIdentifier,
+              class BlockPos const& minBounds,
+              class BlockPos const& maxBounds,
+              DimensionType         dimensionType,
+              std::string const&    volumeName
+          );
 
     MCAPI std::vector<class WeakRef<class EntityContext>>
-          getAllVolumesOverlappingChunkPosition(class ChunkPos const& pos, DimensionType) const;
+          getAllVolumesOverlappingChunkPosition(class ChunkPos const& pos, DimensionType chunkDimension) const;
 
     MCAPI void loadVolumeFiles(class ResourcePackManager const& resourcePackManager, bool isExperimentalEnabled);
 
@@ -60,16 +69,16 @@ public:
     );
 
     MCAPI void sendAllVolumesToClient(
-        class UserEntityIdentifierComponent const&,
-        class NetworkIdentifier const& source,
-        class PacketSender&            packetSender
+        class UserEntityIdentifierComponent const& userIdentifier,
+        class NetworkIdentifier const&             source,
+        class PacketSender&                        packetSender
     ) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    MCAPI std::string _findUsableName(DimensionType) const;
+    MCAPI std::string _findUsableName(DimensionType dimension) const;
 
     // NOLINTEND
 };

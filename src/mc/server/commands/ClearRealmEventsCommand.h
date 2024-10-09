@@ -20,7 +20,7 @@ public:
     // vIndex: 2
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
-    MCAPI static void setup(class CommandRegistry&);
+    MCAPI static void setup(class CommandRegistry& registry);
 
     // NOLINTEND
 

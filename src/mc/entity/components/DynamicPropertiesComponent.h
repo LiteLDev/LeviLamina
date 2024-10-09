@@ -13,7 +13,7 @@ public:
     // NOLINTBEGIN
     MCAPI DynamicPropertiesComponent(class DynamicPropertiesComponent&&);
 
-    MCAPI void addAdditionalSaveData(class CompoundTag&, class ILevel&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag& tag, class ILevel& level) const;
 
     MCAPI class DynamicProperties& getProperties();
 

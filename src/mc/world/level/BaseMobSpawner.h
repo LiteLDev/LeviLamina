@@ -26,11 +26,11 @@ public:
     // vIndex: 4
     virtual class BlockPos const& getPos() = 0;
 
-    MCAPI explicit BaseMobSpawner(struct ActorDefinitionIdentifier);
+    MCAPI explicit BaseMobSpawner(struct ActorDefinitionIdentifier actorDefId);
 
     MCAPI void removeDisplayEntity();
 
-    MCAPI void setEntityId(struct ActorDefinitionIdentifier);
+    MCAPI void setEntityId(struct ActorDefinitionIdentifier actorDefId);
 
     MCAPI void setNextSpawnData(std::unique_ptr<class SpawnData> nextSpawnData);
 

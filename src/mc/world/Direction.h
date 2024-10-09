@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/Mirror.h"
-#include "mc/enums/Rotation.h"
+#include "mc/util/Mirror.h"
+#include "mc/util/Rotation.h"
 
 class Direction {
 public:
@@ -23,9 +23,9 @@ public:
 
     MCAPI static ::Direction::Type getDirection(float xd, float zd);
 
-    MCAPI static ::Direction::Type mirrorDirection(::Mirror, ::Direction::Type);
+    MCAPI static ::Direction::Type mirrorDirection(::Mirror mirror, ::Direction::Type direction);
 
-    MCAPI static ::Direction::Type rotateDirection(::Direction::Type, ::Rotation);
+    MCAPI static ::Direction::Type rotateDirection(::Direction::Type direction, ::Rotation rotation);
 
     MCAPI static ::Direction::Type const DIRECTION_CLOCKWISE[];
 

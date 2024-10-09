@@ -3,10 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/cereal/BasicNumericConstraint.h"
-#include "mc/deps/cereal/ResultCode.h"
-#include "mc/deps/cereal/SerializerContext.h"
 #include "mc/deps/puv/CerealUpgraderBase.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
 #include "mc/deps/puv/Logger.h"
 #include "mc/deps/puv/LoggerIterator.h"
 #include "mc/deps/puv/RangeType.h"
@@ -14,7 +12,9 @@
 #include "mc/deps/puv/v1_20_50/RepairableItemComponent.h"
 #include "mc/deps/puv/v1_20_50/ShooterItemComponent.h"
 #include "mc/deps/puv/v1_20_60/BlockCulling.h"
-#include "mc/events/LevelSoundEvent.h"
+#include "mc/external/cereal/BasicNumericConstraint.h"
+#include "mc/external/cereal/ResultCode.h"
+#include "mc/external/cereal/SerializerContext.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -52,7 +52,7 @@ namespace cereal::internal { struct ConstraintDescription; }
 
 namespace Puv {
 // NOLINTBEGIN
-MCAPI class SemVersion pickFormatVersion(std::string const&);
+MCAPI class SemVersion pickFormatVersion(std::string const& input);
 // NOLINTEND
 
 }; // namespace Puv

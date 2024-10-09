@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/enums/Mirror.h"
-#include "mc/enums/Rotation.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/util/Mirror.h"
+#include "mc/util/Rotation.h"
 
 class StructureTemplate {
 public:
@@ -28,12 +28,17 @@ public:
     // vIndex: 3
     virtual bool _allowReadActor(class Actor const& actor) const;
 
-    MCAPI
-    StructureTemplate(class StructureTemplate const& temp, class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry>);
+    MCAPI StructureTemplate(
+        class StructureTemplate const&                                  temp,
+        class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry> unknownBlockRegistry
+    );
 
-    MCAPI StructureTemplate(std::string_view name, class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry>);
+    MCAPI StructureTemplate(
+        std::string_view                                                name,
+        class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry> unknownBlockRegistry
+    );
 
-    MCAPI void fillEmpty(class BlockPos const&);
+    MCAPI void fillEmpty(class BlockPos const& size);
 
     MCAPI void fillFromWorld(
         class BlockSource&             region,
@@ -54,9 +59,9 @@ public:
 
     MCAPI bool isLoaded() const;
 
-    MCAPI bool const isWaterlogged(class BlockPos const&) const;
+    MCAPI bool const isWaterlogged(class BlockPos const& pos) const;
 
-    MCAPI void optimizePalette(std::string const&);
+    MCAPI void optimizePalette(std::string const& paletteName);
 
     MCAPI void placeInWorld(
         class BlockSource&                  region,
@@ -74,15 +79,18 @@ public:
 
     MCAPI std::unique_ptr<class CompoundTag> save() const;
 
-    MCAPI bool setBlock(class BlockPos const&, class Block const*, bool);
+    MCAPI bool setBlock(class BlockPos const& pos, class Block const* block, bool waterlogged);
 
     MCAPI void setStructureTemplateData(class StructureTemplateData const& data);
 
-    MCAPI bool
-    structureTemplateDataIsValid(class BlockSource const&, std::string const&, class BlockPos const&, class StructureSettings const&)
-        const;
+    MCAPI bool structureTemplateDataIsValid(
+        class BlockSource const&       region,
+        std::string const&             structureName,
+        class BlockPos const&          capturePosition,
+        class StructureSettings const& structureSettings
+    ) const;
 
-    MCAPI class Block const* tryGetBlockAtPos(class BlockPos const&) const;
+    MCAPI class Block const* tryGetBlockAtPos(class BlockPos const& pos) const;
 
     MCAPI static class BlockPos const INVALID_POSITION;
 
@@ -102,7 +110,11 @@ public:
     MCAPI void
     _fillEntityList(class BlockSource& region, class BlockPos const& minCorner, class BlockPos const& maxCorner);
 
-    MCAPI int _getOrCreateIndex(class Block const&, std::map<class Block const*, int>&, class StructureBlockPalette&);
+    MCAPI int _getOrCreateIndex(
+        class Block const&                 block,
+        std::map<class Block const*, int>& indexMap,
+        class StructureBlockPalette&       palette
+    );
 
     MCAPI void _placeEntitiesInWorld(
         class BlockSource&    region,

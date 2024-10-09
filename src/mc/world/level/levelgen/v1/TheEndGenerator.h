@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/data/DividedPos2d.h"
-#include "mc/deps/core/utility/MultidimensionalArray.h"
+#include "mc/util/MultidimensionalArray.h"
+#include "mc/world/level/DividedPos2d.h"
 #include "mc/world/level/levelgen/WorldGenerator.h"
 
 class TheEndGenerator : public ::WorldGenerator {
@@ -58,7 +58,7 @@ public:
 
     MCVAPI void prepareHeights(class BlockVolume& box, class ChunkPos const& chunkPos, bool factorInBeardsAndShavers);
 
-    MCAPI TheEndGenerator(class Dimension&, uint, class Biome const*);
+    MCAPI TheEndGenerator(class Dimension& dimension, uint seed, class Biome const* overrideBiome);
 
     MCAPI void buildSurfaces(class BlockVolume& box, class ChunkPos const& chunkPos, class LevelChunk& levelChunk);
 
@@ -79,7 +79,7 @@ public:
         int                   skipTopN
     );
 
-    MCAPI float getIslandHeightValue(int chunkX, int chunkZ, int, int) const;
+    MCAPI float getIslandHeightValue(int chunkX, int chunkZ, int cellOffsetX, int cellOffsetZ) const;
 
     // NOLINTEND
 };

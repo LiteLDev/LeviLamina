@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/network/TypedServerNetId.h"
+#include "mc/platform/Result.h"
+#include "mc/world/inventory/network/TypedServerNetId.h"
 #include "mc/world/item/ItemDescriptorCount.h"
 
 // auto generated forward declare list
@@ -33,7 +33,7 @@ public:
 
     MCAPI class Bedrock::Result<void> read(class ReadOnlyBinaryStream& stream);
 
-    MCAPI void setIncludeNetIds(bool) const;
+    MCAPI void setIncludeNetIds(bool includeNetIds) const;
 
     MCAPI ItemStackNetId const* tryGetServerNetId() const;
 

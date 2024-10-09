@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
 
 class SetActorDataPacket : public ::Packet {
 public:
@@ -35,9 +35,9 @@ public:
     MCAPI SetActorDataPacket(
         class ActorRuntimeID                 id,
         class SynchedActorDataEntityWrapper& entityData,
-        class PropertyComponent*,
-        uint64 tick,
-        bool
+        class PropertyComponent*             propertyComponent,
+        uint64                               tick,
+        bool                                 packAll
     );
 
     // NOLINTEND

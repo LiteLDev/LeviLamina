@@ -18,11 +18,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI AddressOrGUID(struct RakNet::AddressOrGUID const&);
+    MCAPI AddressOrGUID(struct RakNet::AddressOrGUID const& input);
 
-    MCAPI explicit AddressOrGUID(struct RakNet::RakNetGUID const&);
+    MCAPI explicit AddressOrGUID(struct RakNet::RakNetGUID const& input);
 
-    MCAPI explicit AddressOrGUID(struct RakNet::SystemAddress const&);
+    MCAPI explicit AddressOrGUID(struct RakNet::SystemAddress const& input);
 
     MCAPI bool IsUndefined() const;
 

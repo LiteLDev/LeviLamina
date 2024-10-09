@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/resources/PackType.h"
+#include "mc/deps/core/resource/PackType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -34,7 +34,7 @@ public:
 
     MCAPI ~PackIdVersion();
 
-    MCAPI static struct PackIdVersion fromString(std::string const&);
+    MCAPI static struct PackIdVersion fromString(std::string const& inputStr);
 
     // NOLINTEND
 };

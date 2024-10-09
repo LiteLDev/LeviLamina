@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/CanJumpIntoNode.h"
-#include "mc/enums/NodeType.h"
+#include "mc/world/level/pathfinder/CanJumpIntoNode.h"
+#include "mc/world/level/pathfinder/NodeType.h"
 
 class PathNavigation {
 public:

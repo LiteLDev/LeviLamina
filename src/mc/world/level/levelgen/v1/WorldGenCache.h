@@ -11,7 +11,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI WorldGenCache(class ChunkLocalNoiseCache, class SurfaceLevelCache surfaceLevelCache);
+    MCAPI WorldGenCache(class ChunkLocalNoiseCache chunkLocalNoiseCache, class SurfaceLevelCache surfaceLevelCache);
 
     MCAPI class ChunkLocalNoiseCache const& getChunkLocalNoiseCache() const;
 

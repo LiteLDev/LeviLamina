@@ -3,29 +3,29 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/social/GamePublishSetting.h"
-#include "mc/common/TagRegistry.h"
-#include "mc/common/wrapper/IDType.h"
-#include "mc/common/wrapper/OwnerPtr.h"
-#include "mc/common/wrapper/OwnerPtrFactory.h"
-#include "mc/common/wrapper/StackRefResult.h"
-#include "mc/common/wrapper/WeakRef.h"
-#include "mc/deps/core/PathBuffer.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/deps/core/data/Factory.h"
-#include "mc/entity/systems/common/CommandOriginSystem.h"
-#include "mc/enums/CanJumpIntoNode.h"
-#include "mc/enums/CurrentCmdVersion.h"
-#include "mc/enums/Difficulty.h"
-#include "mc/enums/GameType.h"
-#include "mc/enums/NodeType.h"
-#include "mc/enums/ParticleType.h"
-#include "mc/enums/StorageVersion.h"
-#include "mc/enums/SubClientId.h"
-#include "mc/events/ActorEvent.h"
-#include "mc/events/LevelEvent.h"
-#include "mc/events/LevelSoundEvent.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/common/SubClientId.h"
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/game_refs/OwnerPtr.h"
+#include "mc/deps/game_refs/StackRefResult.h"
+#include "mc/deps/game_refs/WeakRef.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/network/GamePublishSetting.h"
+#include "mc/network/packet/types/world/actor/ActorEvent.h"
+#include "mc/server/commands/CurrentCmdVersion.h"
+#include "mc/util/Factory.h"
+#include "mc/util/IDType.h"
+#include "mc/util/OwnerPtrFactory.h"
+#include "mc/util/TagRegistry.h"
+#include "mc/world/Difficulty.h"
+#include "mc/world/actor/ParticleType.h"
+#include "mc/world/level/CommandOriginSystem.h"
+#include "mc/world/level/GameType.h"
+#include "mc/world/level/block/LevelEvent.h"
+#include "mc/world/level/pathfinder/CanJumpIntoNode.h"
+#include "mc/world/level/pathfinder/NodeType.h"
+#include "mc/world/level/storage/StorageVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -54,7 +54,7 @@ public:
 
     MCVAPI void _subTick();
 
-    MCVAPI class Actor* addAutonomousEntity(class BlockSource&, class OwnerPtr<class EntityContext>);
+    MCVAPI class Actor* addAutonomousEntity(class BlockSource& region, class OwnerPtr<class EntityContext> entity);
 
     MCVAPI void addBlockSourceForValidityTracking(class BlockSource* blockSource);
 
@@ -68,9 +68,9 @@ public:
 
     MCVAPI class Actor* addDisplayEntity(class BlockSource&, class OwnerPtr<class EntityContext>);
 
-    MCVAPI class Actor* addEntity(class BlockSource&, class OwnerPtr<class EntityContext>);
+    MCVAPI class Actor* addEntity(class BlockSource& region, class OwnerPtr<class EntityContext> entity);
 
-    MCVAPI class Actor* addGlobalEntity(class BlockSource&, class OwnerPtr<class EntityContext>);
+    MCVAPI class Actor* addGlobalEntity(class BlockSource& region, class OwnerPtr<class EntityContext> entity);
 
     MCVAPI void addListener(class LevelListener& listener);
 
@@ -110,13 +110,13 @@ public:
     MCVAPI void
     addTickingAreaList(DimensionType dimensionId, std::shared_ptr<class TickingAreaList> const& tickingAreas);
 
-    MCVAPI void addUser(class OwnerPtr<class EntityContext>);
+    MCVAPI void addUser(class OwnerPtr<class EntityContext> userEntity);
 
     MCVAPI class Level* asLevel();
 
     MCVAPI bool blockNetworkIdsAreHashes();
 
-    MCVAPI void broadcastActorEvent(class Actor& e, ::ActorEvent eventId, int data) const;
+    MCVAPI void broadcastActorEvent(class Actor& actor, ::ActorEvent eventId, int data) const;
 
     MCVAPI void broadcastLevelEvent(
         ::LevelEvent                               type,
@@ -221,11 +221,11 @@ public:
         bool               allowUnderwater
     );
 
-    MCVAPI bool extinguishFire(class BlockSource&, class BlockPos const&, uchar, class Actor*);
+    MCVAPI bool extinguishFire(class BlockSource& region, class BlockPos const& pos, uchar face, class Actor* source);
 
     MCVAPI class Actor* fetchEntity(struct ActorUniqueID actorId, bool getRemoved) const;
 
-    MCVAPI class StrictEntityContext fetchStrictEntity(struct ActorUniqueID, bool) const;
+    MCVAPI class StrictEntityContext fetchStrictEntity(struct ActorUniqueID actorId, bool getRemoved) const;
 
     MCVAPI std::unique_ptr<class Path>
            findPath(class Actor& from, class Actor& to, class NavigationComponent& navigation);
@@ -497,9 +497,9 @@ public:
 
     MCVAPI struct PlayerMovementSettings const& getPlayerMovementSettings() const;
 
-    MCVAPI std::string const& getPlayerPlatformOnlineId(class mce::UUID const&) const;
+    MCVAPI std::string const& getPlayerPlatformOnlineId(class mce::UUID const& uuid) const;
 
-    MCVAPI std::string const& getPlayerXUID(class mce::UUID const&) const;
+    MCVAPI std::string const& getPlayerXUID(class mce::UUID const& uuid) const;
 
     MCVAPI class PortalForcer& getPortalForcer();
 
@@ -661,7 +661,7 @@ public:
 
     MCVAPI bool isPlayerSuspended(class Player& player) const;
 
-    MCVAPI void levelCleanupQueueEntityRemoval(class OwnerPtr<class EntityContext>);
+    MCVAPI void levelCleanupQueueEntityRemoval(class OwnerPtr<class EntityContext> entity);
 
     MCVAPI void loadBlockDefinitionGroup(class Experiments const& experiments);
 
@@ -727,7 +727,7 @@ public:
 
     MCVAPI void potionSplash(class Vec3 const& pos, class mce::Color const& color, bool instantaneousEffect);
 
-    MCVAPI void queueEntityDestruction(class OwnerPtr<class EntityContext>);
+    MCVAPI void queueEntityDestruction(class OwnerPtr<class EntityContext> entity);
 
     MCVAPI void registerTemporaryPointer(class _TickPtr& ptr);
 
@@ -747,7 +747,7 @@ public:
 
     MCVAPI void requestMapInfo(struct ActorUniqueID uuid, bool forceUpdate);
 
-    MCVAPI void requestPlayerChangeDimension(class Player&, class ChangeDimensionRequest&&);
+    MCVAPI void requestPlayerChangeDimension(class Player& player, class ChangeDimensionRequest&& changeRequest);
 
     MCVAPI std::shared_ptr<void*> requestTimedStorageDeferment();
 
@@ -870,8 +870,26 @@ public:
 
     MCVAPI ~Level();
 
-    MCAPI
-    Level(Bedrock::NotNullNonOwnerPtr<class SoundPlayerInterface> const&, class OwnerPtr<class LevelStorage>, class IMinecraftEventing&, bool, ::SubClientId, class Scheduler&, Bedrock::NotNullNonOwnerPtr<class StructureManager>, class ResourcePackManager&, Bedrock::NotNullNonOwnerPtr<class IEntityRegistryOwner> const&, class WeakRef<class EntityContext>, std::unique_ptr<class BlockComponentFactory>, std::unique_ptr<class BlockDefinitionGroup>, class ItemRegistryRef, std::weak_ptr<class BlockTypeRegistry>, bool, bool, struct NetworkPermissions const&, std::optional<class DimensionDefinitionGroup>);
+    MCAPI Level(
+        Bedrock::NotNullNonOwnerPtr<class SoundPlayerInterface> const& soundPlayer,
+        class OwnerPtr<class LevelStorage>                             levelStorage,
+        class IMinecraftEventing&                                      eventing,
+        bool                                                           isClientSide,
+        ::SubClientId                                                  subClientId,
+        class Scheduler&                                               callbackContext,
+        Bedrock::NotNullNonOwnerPtr<class StructureManager>            structureManager,
+        class ResourcePackManager&                                     addOnResourcePackManager,
+        Bedrock::NotNullNonOwnerPtr<class IEntityRegistryOwner> const& entityRegistryOwner,
+        class WeakRef<class EntityContext>                             levelEntity,
+        std::unique_ptr<class BlockComponentFactory>                   blockComponentFactory,
+        std::unique_ptr<class BlockDefinitionGroup>                    blockDefinitionGroup,
+        class ItemRegistryRef                                          itemRegistry,
+        std::weak_ptr<class BlockTypeRegistry>                         blockRegistry,
+        bool                                                           clientSideChunkGenerationEnabled,
+        bool                                                           blockNetworkIdsAreHashes,
+        struct NetworkPermissions const&                               networkPermissions,
+        std::optional<class DimensionDefinitionGroup>                  dimensionDefinitionGroup
+    );
 
     MCAPI bool canChangeDimension(class Actor& actor, DimensionType toId);
 
@@ -908,7 +926,7 @@ public:
 
     MCAPI static bool isUsableLevel(class ILevel const& level);
 
-    MCAPI static class LevelSeed64 parseLevelSeed64(std::string const&);
+    MCAPI static class LevelSeed64 parseLevelSeed64(std::string const& seedString);
 
     MCAPI static char const IS_SLEEPING_POSSIBLE[];
 
@@ -962,40 +980,64 @@ public:
 
     MCAPI void _initializeParticleProvider();
 
-    MCAPI void _onAddBreakingItemParticleEffect(class Vec3 const&, ::ParticleType, struct ResolvedItemIconInfo const&);
+    MCAPI void _onAddBreakingItemParticleEffect(
+        class Vec3 const&                  pos,
+        ::ParticleType                     type,
+        struct ResolvedItemIconInfo const& textureInfo
+    );
 
-    MCAPI void
-    _onAddTerrainParticleEffect(class BlockPos const&, class Block const&, class Vec3 const&, float, float, float);
+    MCAPI void _onAddTerrainParticleEffect(
+        class BlockPos const& pos,
+        class Block const&    block,
+        class Vec3 const&     emitterPosition,
+        float                 intensity,
+        float                 velocityScalar,
+        float                 emitterRadius
+    );
 
-    MCAPI void
-    _onAddTerrainSlideEffect(class BlockPos const&, class Block const&, class Vec3 const&, float, float, float);
+    MCAPI void _onAddTerrainSlideEffect(
+        class BlockPos const& pos,
+        class Block const&    block,
+        class Vec3 const&     emitterPosition,
+        float                 intensity,
+        float                 velocityScalar,
+        float                 emitterRadius
+    );
 
     MCAPI void _onAnyGameplayUsersRemoved();
 
-    MCAPI void _onChunkDiscarded(class LevelChunk&);
+    MCAPI void _onChunkDiscarded(class LevelChunk& levelChunk);
 
-    MCAPI void _onChunkLoaded(class ChunkSource&, class LevelChunk&, int);
+    MCAPI void _onChunkLoaded(class ChunkSource& chunkSource, class LevelChunk& levelChunk, int);
 
-    MCAPI void _onChunkReloaded(class ChunkSource&, class LevelChunk&);
+    MCAPI void _onChunkReloaded(class ChunkSource& chunkSource, class LevelChunk& levelChunk);
 
     MCAPI void _onGameplayUserAdded(class EntityContext& entity);
 
     MCAPI void _onGameplayUserRemoved(class EntityContext& entity);
 
-    MCAPI void _onLevelEventCompoundTag(::LevelEvent, class CompoundTag const&);
+    MCAPI void _onLevelEventCompoundTag(::LevelEvent type, class CompoundTag const& data);
 
-    MCAPI void _onLevelEventData(::LevelEvent, class Vec3 const&, int);
+    MCAPI void _onLevelEventData(::LevelEvent type, class Vec3 const& pos, int data);
 
-    MCAPI void _onPictureTaken(class cg::ImageBuffer&, class Actor*, class Actor*, struct ScreenshotOptions&);
+    MCAPI void _onPictureTaken(
+        class cg::ImageBuffer&    outImage,
+        class Actor*              camera,
+        class Actor*              target,
+        struct ScreenshotOptions& screenshotOptions
+    );
 
     MCAPI void _onRemoveActorEntityReferences(class Actor& actor);
 
     MCAPI void _onSaveLevelData(class LevelStorage& levelStorage);
 
-    MCAPI void _onSendServerLegacyParticle(::ParticleType, class Vec3 const&, class Vec3 const&, int);
+    MCAPI void _onSendServerLegacyParticle(::ParticleType id, class Vec3 const& pos, class Vec3 const& dir, int data);
 
-    MCAPI static std::unique_ptr<class LevelStorageManager>
-    _createLevelStorageManager(class OwnerPtr<class LevelStorage>, class Scheduler&, class IMinecraftEventing&);
+    MCAPI static std::unique_ptr<class LevelStorageManager> _createLevelStorageManager(
+        class OwnerPtr<class LevelStorage> levelStorage,
+        class Scheduler&                   scheduler,
+        class IMinecraftEventing&          eventing
+    );
 
     // NOLINTEND
 };

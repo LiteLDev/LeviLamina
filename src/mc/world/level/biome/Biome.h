@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/TagRegistry.h"
-#include "mc/common/wrapper/IDType.h"
-#include "mc/world/level/biome/VanillaBiomeTypes.h"
+#include "mc/util/IDType.h"
+#include "mc/util/TagRegistry.h"
+#include "mc/world/level/biome/components/vanilla/VanillaBiomeTypes.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -55,7 +55,7 @@ public:
 
     MCAPI int getMapEvergreenFoliageColor(class BlockPos const& pos) const;
 
-    MCAPI int getMapFoliageColor(class BlockPos const& pos) const;
+    MCAPI int getMapFoliageColor(class BlockPos const&) const;
 
     MCAPI int getMapGrassColor(class BlockPos const& pos) const;
 

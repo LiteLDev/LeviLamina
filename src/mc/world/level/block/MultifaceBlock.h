@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/optional_ref.h"
-#include "mc/enums/FertilizerType.h"
-#include "mc/enums/Flip.h"
-#include "mc/enums/ShapeType.h"
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
+#include "mc/world/Flip.h"
+#include "mc/world/item/FertilizerType.h"
+#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/utils/BlockProperty.h"
-#include "mc/world/level/block/utils/BlockRenderLayer.h"
-#include "mc/world/level/block/utils/BlockSupportType.h"
+#include "mc/world/level/block/BlockProperty.h"
+#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -32,7 +32,7 @@ public:
 
     // vIndex: 4
     virtual class HitResult
-    clip(class Block const&, class BlockSource const&, class BlockPos const&, class Vec3 const&, class Vec3 const&, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>)
+    clip(class Block const& block, class BlockSource const&, class BlockPos const& pos, class Vec3 const& origin, class Vec3 const& end, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
     // vIndex: 5
@@ -41,12 +41,20 @@ public:
         const;
 
     // vIndex: 9
-    virtual class AABB const&
-    getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
+    virtual class AABB const& getOutline(
+        class Block const&             block,
+        class IConstBlockSource const& region,
+        class BlockPos const&          pos,
+        class AABB&                    bufferValue
+    ) const;
 
     // vIndex: 10
-    virtual class AABB const&
-    getVisualShapeInWorld(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
+    virtual class AABB const& getVisualShapeInWorld(
+        class Block const& block,
+        class IConstBlockSource const&,
+        class BlockPos const&,
+        class AABB& bufferAABB
+    ) const;
 
     // vIndex: 33
     virtual bool isWaterBlocking() const;
@@ -55,23 +63,17 @@ public:
     virtual bool isMultifaceBlock() const;
 
     // vIndex: 52
-    virtual class Block const& sanitizeFillBlock(class Block const&) const;
+    virtual class Block const& sanitizeFillBlock(class Block const& block) const;
 
     // vIndex: 85
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 93
-    virtual void
-    neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
+    virtual void neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
 
     // vIndex: 98
-    virtual class Block const& getPlacementBlock(
-        class Actor const&    by,
-        class BlockPos const& pos,
-        uchar                 face,
-        class Vec3 const&     clickPos,
-        int                   itemValue
-    ) const;
+    virtual class Block const&
+    getPlacementBlock(class Actor const& by, class BlockPos const& pos, uchar face, class Vec3 const&, int) const;
 
     // vIndex: 148
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
@@ -86,20 +88,20 @@ public:
         class BlockSource*       region,
         class Block const&       block,
         class BlockPos const&    pos,
-        uchar,
-        bool
+        uchar                    faceDirection,
+        bool                     canSpawnParticles
     ) const;
 
-    MCAPI static int _getNumSides(class Block const&);
+    MCAPI static int _getNumSides(class Block const& block);
 
-    MCAPI static int convertOldMultifaceToNewMultifaceValue(int);
+    MCAPI static int convertOldMultifaceToNewMultifaceValue(int oldMultifaceDirections);
 
     MCAPI static class Block const& getBlockForPlacement(
         class Block const&    oldBlock,
         class Block const&    placementBlock,
         class BlockSource&    region,
         class BlockPos const& placementPos,
-        uchar
+        uchar                 placementDirection
     );
 
     MCAPI static class Block const& getBlockForPlacementWorldGen(
@@ -107,12 +109,12 @@ public:
         class Block const&       placementBlock,
         class IBlockWorldGenAPI& region,
         class BlockPos const&    placementPos,
-        uchar
+        uchar                    placementDirection
     );
 
     MCAPI static int getMultifaceValueFromFace(uchar face);
 
-    MCAPI static bool hasFace(class Block const& block, uchar);
+    MCAPI static bool hasFace(class Block const& block, uchar faceDirection);
 
     MCAPI static int const MULTIFACE_ALL;
 
@@ -135,14 +137,19 @@ public:
     // protected:
     // NOLINTBEGIN
     MCAPI bool
-    _canSpread(class IBlockWorldGenAPI& target, class Block const& block, class BlockPos const& pos, uchar) const;
+    _canSpread(class IBlockWorldGenAPI& target, class Block const& block, class BlockPos const& pos, uchar startingFace)
+        const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    MCAPI void
-    _removeBlock(class IBlockWorldGenAPI& target, class BlockSource* region, class BlockPos const& pos, bool) const;
+    MCAPI void _removeBlock(
+        class IBlockWorldGenAPI& target,
+        class BlockSource*       region,
+        class BlockPos const&    pos,
+        bool                     canSpawnParticles
+    ) const;
 
     // NOLINTEND
 };

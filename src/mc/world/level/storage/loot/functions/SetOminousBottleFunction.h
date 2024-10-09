@@ -18,10 +18,10 @@ public:
     virtual ~SetOminousBottleFunction() = default;
 
     // vIndex: 1
-    virtual void apply(class ItemStack&, class Random&, class LootTableContext&);
+    virtual void apply(class ItemStack& item, class Random& random, class LootTableContext&);
 
     // vIndex: 3
-    virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
+    virtual void apply(class ItemInstance& itemInstance, class Random& random, class LootTableContext&);
 
     // NOLINTEND
 };

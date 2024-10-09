@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/buffer_span.h"
-#include "mc/world/AutomaticID.h"
 #include "mc/world/level/saveddata/maps/MapDecoration.h"
 #include "mc/world/level/saveddata/maps/MapItemTrackedActor.h"
 
@@ -37,7 +37,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI MapItemSavedData(struct ActorUniqueID mapId, bool);
+    MCAPI MapItemSavedData(struct ActorUniqueID mapId, bool isDLCworld);
 
     MCAPI std::shared_ptr<class MapItemTrackedActor>
           addTrackedMapEntity(class Actor& entity, ::MapDecoration::Type decorationType);
@@ -72,10 +72,10 @@ public:
 
     MCAPI std::shared_ptr<class MapItemTrackedActor> getTrackedMapEntity(class Actor& entity);
 
-    MCAPI std::unique_ptr<class Packet> getUpdatePacket(class Level& level, class BlockPos const& pos) const;
+    MCAPI std::unique_ptr<class Packet> getUpdatePacket(class Level&, class BlockPos const& pos) const;
 
     MCAPI std::unique_ptr<class Packet>
-          getUpdatePacket(class ItemStack const& itemInstance, class Level& level, class Actor& entity) const;
+          getUpdatePacket(class ItemStack const&, class Level&, class Actor& entity) const;
 
     MCAPI bool hasParentMap() const;
 
@@ -118,7 +118,7 @@ public:
 
     MCAPI void setScale(int mapScale);
 
-    MCAPI void setScaleAndParentMapId(int mapScale, struct ActorUniqueID);
+    MCAPI void setScaleAndParentMapId(int mapScale, struct ActorUniqueID parentMapId);
 
     MCAPI void tickByBlock(class BlockPos const& pos, class BlockSource& region);
 
@@ -128,15 +128,15 @@ public:
 
     MCAPI ~MapItemSavedData();
 
-    MCAPI static std::string getSerializationKey(struct ActorUniqueID);
+    MCAPI static std::string getSerializationKey(struct ActorUniqueID id);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI void _addDecoration(
-        ::MapDecoration::Type                       type,
-        class Level&                                level,
+        ::MapDecoration::Type type,
+        class Level&,
         struct MapItemTrackedActor::UniqueId const& key,
         class Vec3 const&                           position,
         std::string const&                          label,
@@ -155,7 +155,8 @@ public:
 
     MCAPI void _removeTrackedMapEntity(struct MapItemTrackedActor::UniqueId const& key);
 
-    MCAPI bool _updateTrackedEntityDecoration(class BlockSource& region, std::shared_ptr<class MapItemTrackedActor>);
+    MCAPI bool
+    _updateTrackedEntityDecoration(class BlockSource& region, std::shared_ptr<class MapItemTrackedActor> trackedActor);
 
     MCAPI void _updateTrackedEntityDecorations(class BlockSource& region);
 

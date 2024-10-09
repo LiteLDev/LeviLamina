@@ -23,9 +23,9 @@ public:
     // vIndex: 0
     virtual ~BlockRandomTickingComponent() = default;
 
-    MCAPI void finalize(gsl::not_null<class BlockEvents::BlockRandomTickEventComponent*>);
+    MCAPI void finalize(gsl::not_null<class BlockEvents::BlockRandomTickEventComponent*> comp);
 
-    MCAPI void onTick(struct BlockEvents::BlockRandomTickEvent const&) const;
+    MCAPI void onTick(struct BlockEvents::BlockRandomTickEvent const& eventData) const;
 
     // NOLINTEND
 };

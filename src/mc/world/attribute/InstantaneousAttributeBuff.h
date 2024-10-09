@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/AttributeBuffType.h"
 #include "mc/world/attribute/AttributeBuff.h"
+#include "mc/world/attribute/AttributeBuffType.h"
 
 class InstantaneousAttributeBuff : public ::AttributeBuff {
 public:

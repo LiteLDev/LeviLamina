@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/LogArea.h"
-#include "mc/world/item/components/ItemColor.h"
-#include "mc/world/level/block/utils/BannerBlockType.h"
+#include "mc/deps/core/debug/log/LogArea.h"
+#include "mc/world/item/ItemColor.h"
+#include "mc/world/level/block/BannerBlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -29,7 +29,7 @@ LogUnknownChildSchemaOption(std::string const& childName, ::LogArea area, class 
 
 MCAPI void eraseSchema(class HashedString const& name, class SemVersion const& version);
 
-MCAPI class BlockLegacy const* getBlockLegacy(std::string const&);
+MCAPI class BlockLegacy const* getBlockLegacy(std::string const& name);
 
 MCAPI class Json::Value& getMemberByCaseInsensitiveName(class Json::Value& node, std::string_view const& memberName);
 
@@ -50,7 +50,7 @@ MCAPI bool parseItemColor(::ItemColor& outColor, class Json::Value const& root);
 
 MCAPI bool parseRange(class Json::Value const& root, int& outMin, int& outMax);
 
-MCAPI bool parseVec2(class Vec2&, class Json::Value const&);
+MCAPI bool parseVec2(class Vec2& outVec, class Json::Value const& root);
 
 MCAPI bool parseVec3(class Vec3& outVec, class Json::Value const& root);
 

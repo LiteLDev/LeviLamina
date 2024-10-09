@@ -18,9 +18,9 @@ public:
     virtual ~NetherSpringFeature();
 
     // vIndex: 3
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    MCAPI NetherSpringFeature(class Block const&, bool);
+    MCAPI NetherSpringFeature(class Block const& block, bool insideRock);
 
     // NOLINTEND
 };

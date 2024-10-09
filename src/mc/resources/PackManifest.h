@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/ManifestOrigin.h"
-#include "mc/enums/ManifestType.h"
-#include "mc/resources/PackCategory.h"
+#include "mc/deps/core/resource/PackCategory.h"
+#include "mc/deps/core/resource/PackOrigin.h"
+#include "mc/deps/core/resource/PackType.h"
+#include "mc/resources/ManifestOrigin.h"
+#include "mc/resources/ManifestType.h"
 #include "mc/resources/PackManifestFormat.h"
-#include "mc/resources/PackOrigin.h"
 #include "mc/resources/PackScope.h"
-#include "mc/resources/PackType.h"
 
 // auto generated forward declare list
 // clang-format off

@@ -27,7 +27,7 @@ public:
     virtual std::string_view getName() const;
 
     // vIndex: 7
-    virtual bool _isExpectedItem(std::vector<class ItemStack const*> const&) const;
+    virtual bool _isExpectedItem(std::vector<class ItemStack const*> const& itemList) const;
 
     // NOLINTEND
 };

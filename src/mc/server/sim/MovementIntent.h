@@ -28,9 +28,9 @@ public:
                                   struct sim::MoveInDirectionIntent,
                                   struct sim::MoveToPositionIntent,
                                   struct sim::NavigateToPositionsIntent,
-                                  struct sim::NavigateToEntityIntent>);
+                                  struct sim::NavigateToEntityIntent> type);
 
-    MCAPI void finalize(class SimulatedPlayer&);
+    MCAPI void finalize(class SimulatedPlayer& player);
 
     MCAPI ~MovementIntent();
 

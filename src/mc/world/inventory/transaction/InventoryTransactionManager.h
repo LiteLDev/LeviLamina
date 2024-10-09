@@ -11,7 +11,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI explicit InventoryTransactionManager(class Player&);
+    MCAPI explicit InventoryTransactionManager(class Player& player);
 
     MCAPI void _createServerSideAction(class ItemStack const& oldItem, class ItemStack const& newItem);
 

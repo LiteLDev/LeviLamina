@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
-#include "mc/enums/TextPacketType.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/network/packet/TextPacketType.h"
+#include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -40,8 +40,10 @@ public:
 
     MCAPI class TextPacket& operator=(class TextPacket const&);
 
-    MCAPI static bool const
-    _shouldHandleTextPacketForPlayer(struct PlayerCapabilities::IPlayerData&, struct PlayerCapabilities::ISharedController const&);
+    MCAPI static bool const _shouldHandleTextPacketForPlayer(
+        struct PlayerCapabilities::IPlayerData&             playerData,
+        struct PlayerCapabilities::ISharedController const& sharedController
+    );
 
     MCAPI static class TextPacket createAnnouncement(
         std::string const& author,
@@ -50,8 +52,13 @@ public:
         std::string const& platformId
     );
 
-    MCAPI static class TextPacket
-    createChat(std::string const&, std::string const&, std::optional<std::string>, std::string const&, std::string const&);
+    MCAPI static class TextPacket createChat(
+        std::string const&         author,
+        std::string const&         message,
+        std::optional<std::string> filteredMessage,
+        std::string const&         xuid,
+        std::string const&         platformId
+    );
 
     MCAPI static class TextPacket
     createJukeboxPopup(std::string const& message, std::vector<std::string> const& params);
@@ -60,8 +67,11 @@ public:
 
     MCAPI static class TextPacket createSystemMessage(std::string const& message);
 
-    MCAPI static class TextPacket
-    createTextObjectMessage(class ResolvedTextObject const& resolvedTextObject, std::string, std::string);
+    MCAPI static class TextPacket createTextObjectMessage(
+        class ResolvedTextObject const& resolvedTextObject,
+        std::string                     fromXuid,
+        std::string                     fromPlatformId
+    );
 
     MCAPI static class TextPacket createTextObjectWhisperMessage(
         class ResolvedTextObject const& resolvedTextObject,
@@ -92,8 +102,16 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI
-    TextPacket(::TextPacketType, std::string const&, std::string const&, std::optional<std::string>, std::vector<std::string> const&, bool, std::string const&, std::string const&);
+    MCAPI TextPacket(
+        ::TextPacketType                type,
+        std::string const&              author,
+        std::string const&              message,
+        std::optional<std::string>      filteredMessage,
+        std::vector<std::string> const& params,
+        bool                            localize_,
+        std::string const&              xuid,
+        std::string const&              platformId
+    );
 
     // NOLINTEND
 };

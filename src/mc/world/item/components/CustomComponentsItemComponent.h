@@ -23,7 +23,7 @@ public:
     // vIndex: 0
     virtual ~CustomComponentsItemComponent() = default;
 
-    MCAPI explicit CustomComponentsItemComponent(struct Puv::v1_20_80::CustomComponentsItemComponent);
+    MCAPI explicit CustomComponentsItemComponent(struct Puv::v1_20_80::CustomComponentsItemComponent component);
 
     MCAPI std::vector<std::string> const& getComponentNames() const;
 

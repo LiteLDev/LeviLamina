@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/IDebuggerTransport.h"
+#include "mc/external/scripting/runtime/IDebuggerTransport.h"
 
 // auto generated forward declare list
 // clang-format off

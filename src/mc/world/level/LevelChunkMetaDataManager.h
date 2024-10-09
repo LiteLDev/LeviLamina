@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
-#include "mc/world/level/levelgen/GeneratorType.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/world/level/GeneratorType.h"
 
 class LevelChunkMetaDataManager {
 public:
@@ -17,32 +17,54 @@ public:
     // NOLINTBEGIN
     MCAPI std::shared_ptr<class LevelChunkMetaDataDictionary> getLevelChunkMetaDataDictionary() const;
 
-    MCAPI void registerForLevelChunkEvents(class ILevelChunkEventManagerConnector&);
+    MCAPI void registerForLevelChunkEvents(class ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
 
-    MCAPI void registerOnNewDimensionCreated(class DimensionManager&);
+    MCAPI void registerOnNewDimensionCreated(class DimensionManager& dimensionManager);
 
     MCAPI void tick();
 
-    MCAPI void
-    updateLevelChunkMetaDataForSaving(class LevelChunk&, class BaseGameVersion const&, class DimensionHeightRange const&);
+    MCAPI void updateLevelChunkMetaDataForSaving(
+        class LevelChunk&                 lc,
+        class BaseGameVersion const&      currentBaseGameVersion,
+        class DimensionHeightRange const& dimensionHeightRange
+    );
 
     MCAPI ~LevelChunkMetaDataManager();
 
-    MCAPI static void
-    inferInitialMetaDataAfterDeserialization(class LevelChunk&, class LevelSeed64, ::GeneratorType, std::string const&, DimensionType, class DimensionHeightRange const&, class BaseGameVersion const&, class LevelChunkMetaData&);
+    MCAPI static void inferInitialMetaDataAfterDeserialization(
+        class LevelChunk&                 lc,
+        class LevelSeed64                 generationSeed,
+        ::GeneratorType                   generatorType,
+        std::string const&                dimensionName,
+        DimensionType                     dimensionId,
+        class DimensionHeightRange const& dimensionHeightRange,
+        class BaseGameVersion const&      currentBaseGameVersion,
+        class LevelChunkMetaData&         metaData
+    );
 
-    MCAPI static void inferTargetMetaData(class BaseGameVersion const&, DimensionType, class LevelChunkMetaData&);
+    MCAPI static void inferTargetMetaData(
+        class BaseGameVersion const& version,
+        DimensionType                dimensionID,
+        class LevelChunkMetaData&    metaData
+    );
 
-    MCAPI static std::shared_ptr<class LevelChunkMetaData>
-    initializeLevelChunkMetaData(DimensionType, std::string const&, class DimensionHeightRange const&, bool, class LevelSeed64, ::GeneratorType, class BaseGameVersion const&);
+    MCAPI static std::shared_ptr<class LevelChunkMetaData> initializeLevelChunkMetaData(
+        DimensionType                     dimensionId,
+        std::string const&                dimensionName,
+        class DimensionHeightRange const& dimensionHeightRange,
+        bool                              use3DBiomeMaps,
+        class LevelSeed64                 levelSeed,
+        ::GeneratorType                   generatorType,
+        class BaseGameVersion const&      baseGameVersion
+    );
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    MCAPI void _consolidateLevelChunkMetaData(class LevelChunk&);
+    MCAPI void _consolidateLevelChunkMetaData(class LevelChunk& levelChunk);
 
-    MCAPI void _onNewDimensionCreated(class Dimension&);
+    MCAPI void _onNewDimensionCreated(class Dimension& dimension);
 
     // NOLINTEND
 };

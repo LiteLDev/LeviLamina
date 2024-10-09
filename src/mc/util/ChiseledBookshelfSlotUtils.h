@@ -4,7 +4,7 @@
 
 namespace ChiseledBookshelfSlotUtils {
 // NOLINTBEGIN
-MCAPI std::optional<int> calculateHitSlot(class Vec3 const&, class Block const& block, uchar);
+MCAPI std::optional<int> calculateHitSlot(class Vec3 const& blockHit, class Block const& block, uchar hitFace);
 // NOLINTEND
 
 }; // namespace ChiseledBookshelfSlotUtils

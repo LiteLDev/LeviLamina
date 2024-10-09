@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/data/DividedPos2d.h"
 #include "mc/deps/core/utility/buffer_span.h"
+#include "mc/world/level/DividedPos2d.h"
 #include "mc/world/level/levelgen/structure/StructureFeatureType.h"
 
 class WorldGenerator {
@@ -35,14 +35,19 @@ public:
 
     MCVAPI void debugRender();
 
-    MCVAPI bool
-    findNearestStructureFeature(::StructureFeatureType, class BlockPos const&, class BlockPos&, bool, std::optional<class HashedString>);
+    MCVAPI bool findNearestStructureFeature(
+        ::StructureFeatureType            feature,
+        class BlockPos const&             origin,
+        class BlockPos&                   pos,
+        bool                              mustBeInNewChunks,
+        std::optional<class HashedString> biomeTag
+    );
 
     MCVAPI ::StructureFeatureType findStructureFeatureTypeAt(class BlockPos const& pos);
 
     MCVAPI void garbageCollectBlueprints(class buffer_span<class ChunkPos> activeChunks);
 
-    MCVAPI std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4> worldPos) const;
+    MCVAPI std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
 
     MCVAPI void init();
 
@@ -55,7 +60,10 @@ public:
 
     MCAPI explicit WorldGenerator(class Dimension& dimension);
 
-    MCAPI WorldGenerator(class Dimension& dimension, std::unique_ptr<class StructureFeatureRegistry>);
+    MCAPI WorldGenerator(
+        class Dimension&                                dimension,
+        std::unique_ptr<class StructureFeatureRegistry> structureFeatureRegistry
+    );
 
     MCAPI std::vector<short> computeChunkHeightMap(class ChunkPos const& pos);
 
@@ -67,12 +75,17 @@ public:
     // NOLINTBEGIN
     MCAPI void postProcessStructureFeatures(class BlockSource& region, class Random& random, int chunkX, int chunkZ);
 
-    MCAPI void postProcessStructures(class BlockSource&, class Random&, int, int);
-
-    MCAPI void preProcessStructures(class Dimension&, class ChunkPos const&, class BiomeSource const&);
+    MCAPI void postProcessStructures(class BlockSource& region, class Random& random, int chunkX, int chunkZ);
 
     MCAPI void
-    prepareStructureFeatureBlueprints(class Dimension& dimension, class ChunkPos const& cp, class BiomeSource const& biomeSource, class IPreliminarySurfaceProvider const&);
+    preProcessStructures(class Dimension& dimension, class ChunkPos const& cp, class BiomeSource const& biomeSource);
+
+    MCAPI void prepareStructureFeatureBlueprints(
+        class Dimension&                         dimension,
+        class ChunkPos const&                    cp,
+        class BiomeSource const&                 biomeSource,
+        class IPreliminarySurfaceProvider const& preliminarySurfaceProvider
+    );
 
     MCAPI void waitForStructures();
 

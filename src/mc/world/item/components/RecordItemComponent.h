@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/AllExperiments.h"
-#include "mc/events/LevelSoundEvent.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -33,13 +33,13 @@ public:
     virtual bool isNetworkComponent() const;
 
     // vIndex: 4
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const&) const;
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const& ctx) const;
 
     // vIndex: 5
-    virtual bool initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx const&);
+    virtual bool initializeFromNetwork(class CompoundTag const& tag, struct cereal::ReflectionCtx const& ctx);
 
     // vIndex: 6
-    virtual void handleVersionBasedInitialization(class SemVersion const&);
+    virtual void handleVersionBasedInitialization(class SemVersion const& originalJsonVersion);
 
     // vIndex: 7
     virtual bool _canUseOn(class ItemStack const&, class Actor&, class BlockPos const&, uchar) const;
@@ -50,7 +50,7 @@ public:
     // vIndex: 9
     virtual void _initializeComponent();
 
-    MCAPI RecordItemComponent(::Puv::Legacy::LevelSoundEvent, float, int);
+    MCAPI RecordItemComponent(::Puv::Legacy::LevelSoundEvent soundEvent, float duration, int comparatorSignal);
 
     MCAPI void appendFormattedHovertext(std::string& hovertext) const;
 
@@ -62,12 +62,15 @@ public:
 
     MCAPI ::Puv::Legacy::LevelSoundEvent getSound() const;
 
-    MCAPI static void
-    bindType(struct cereal::ReflectionCtx&, std::vector<::AllExperiments> const&, std::optional<class SemVersion>);
+    MCAPI static void bindType(
+        struct cereal::ReflectionCtx&        ctx,
+        std::vector<::AllExperiments> const& requiredToggles,
+        std::optional<class SemVersion>      releasedMinFormatVersion
+    );
 
     MCAPI static class HashedString const& getIdentifier();
 
-    MCAPI static std::string getRecordNameNoPrefix(::Puv::Legacy::LevelSoundEvent);
+    MCAPI static std::string getRecordNameNoPrefix(::Puv::Legacy::LevelSoundEvent sound);
 
     // NOLINTEND
 };

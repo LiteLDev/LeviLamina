@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/SoftEnumUpdateType.h"
+#include "mc/network/packet/SoftEnumUpdateType.h"
 
 class CommandSoftEnumRegistry {
 public:

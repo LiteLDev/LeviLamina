@@ -45,7 +45,7 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI void _say(std::string const& text, std::string const&) const;
+    MCAPI void _say(std::string const& text, std::string const& chatColor) const;
 
     MCAPI void _showTestSummaryIfAllDone() const;
 

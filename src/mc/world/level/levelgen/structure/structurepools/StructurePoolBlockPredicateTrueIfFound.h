@@ -26,7 +26,7 @@ public:
     // vIndex: 3
     virtual bool finalize(class BlockSource&, class IRandom&);
 
-    MCAPI StructurePoolBlockPredicateTrueIfFound(std::set<class Block const*> const&, float probability);
+    MCAPI StructurePoolBlockPredicateTrueIfFound(std::set<class Block const*> const& replacable, float probability);
 
     // NOLINTEND
 };

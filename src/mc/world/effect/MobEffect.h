@@ -50,7 +50,7 @@ public:
     virtual void applyEffects(class Actor& target, int durationTicks, int amplification) const;
 
     // vIndex: 2
-    virtual void removeEffects(class BaseAttributeMap&);
+    virtual void removeEffects(class BaseAttributeMap& attributeMapToRemoveFrom);
 
     // vIndex: 3
     virtual void onEffectExpired(class Actor&) const;
@@ -76,14 +76,24 @@ public:
     // vIndex: 8
     virtual float getAttributeModifierValue(int amplifier, class AttributeModifier const& modifier) const;
 
-    MCAPI MobEffect(uint, std::string const&, std::string const&, bool, int, int, std::string const&, bool);
+    MCAPI MobEffect(
+        uint               id,
+        std::string const& resourceName,
+        std::string const& locName,
+        bool               isHarmful,
+        int                color,
+        int                icon,
+        std::string const& iconName,
+        bool               drawParticles
+    );
 
     MCAPI void addAttributeBuff(class Attribute const& attribute, std::shared_ptr<class AttributeBuff> buff);
 
     MCAPI void
     addAttributeModifier(class Attribute const& attribute, std::shared_ptr<class AttributeModifier> modifier);
 
-    MCAPI void applyModsAndBuffs(class BaseAttributeMap&, int, int) const;
+    MCAPI void
+    applyModsAndBuffs(class BaseAttributeMap& attributeMapToRemoveFrom, int durationTicks, int amplification) const;
 
     MCAPI class mce::Color const& getColor() const;
 
@@ -93,7 +103,7 @@ public:
 
     MCAPI uint getId() const;
 
-    MCAPI class HashedString const& getParticleEffect(bool) const;
+    MCAPI class HashedString const& getParticleEffect(bool isAmbient) const;
 
     MCAPI std::string const& getResourceName() const;
 
@@ -114,9 +124,9 @@ public:
 
     MCAPI static class MobEffect* getByName(std::string const& name);
 
-    MCAPI static std::string getNameById(uint);
+    MCAPI static std::string getNameById(uint effectId);
 
-    MCAPI static void initEffects(class BaseGameVersion const&, class Experiments const&);
+    MCAPI static void initEffects(class BaseGameVersion const& baseGameVersion, class Experiments const& experiments);
 
     MCAPI static void shutdownEffects();
 
@@ -211,13 +221,14 @@ public:
     MCAPI class TemporalAttributeBuff
     _createTemporalBuff(class AttributeBuff const& baseBuff, int duration, int amplification) const;
 
-    MCAPI void _setParticleEffectIds(char const*, char const*);
+    MCAPI void _setParticleEffectIds(char const* particleEffectId, char const* particleEffectAmbientId);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    MCAPI static void darknessEffectFactorUpdate(struct MobEffect::FactorCalculationData&, int duration);
+    MCAPI static void
+    darknessEffectFactorUpdate(struct MobEffect::FactorCalculationData& factorCalculationData, int duration);
 
     // NOLINTEND
 };

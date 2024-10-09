@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/WeakRef.h"
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/world/level/chunk/ILevelChunkSaveManagerProxy.h"
 
 class LevelChunkSaveManagerProxy : public ::ILevelChunkSaveManagerProxy {
@@ -19,30 +19,37 @@ public:
     virtual ~LevelChunkSaveManagerProxy() = default;
 
     // vIndex: 1
-    virtual class WeakRef<class Dimension> getRandomDimension(class DimensionManager&) const;
+    virtual class WeakRef<class Dimension> getRandomDimension(class DimensionManager& dimensionManager) const;
 
     // vIndex: 2
-    virtual std::shared_ptr<class LevelChunk> getRandomChunk(class Dimension&) const;
+    virtual std::shared_ptr<class LevelChunk> getRandomChunk(class Dimension& dimension) const;
 
     // vIndex: 3
-    virtual std::shared_ptr<class LevelChunk> getChunk(class Dimension&, class ChunkPos const&) const;
+    virtual std::shared_ptr<class LevelChunk>
+    getChunk(class Dimension& dimension, class ChunkPos const& chunkPos) const;
 
     // vIndex: 4
-    virtual bool doesNonActorDataInLevelChunkNeedSaving(class LevelChunk const&, int, int) const;
+    virtual bool doesNonActorDataInLevelChunkNeedSaving(
+        class LevelChunk const& levelChunk,
+        int                     minTicksBeforeLiveSave,
+        int                     maxTicksBeforeLiveSave
+    ) const;
 
     // vIndex: 5
-    virtual bool doesLevelChunkNeedSaving(class LevelChunk const&, int, int) const;
+    virtual bool
+    doesLevelChunkNeedSaving(class LevelChunk const& levelChunk, int minTicksBeforeLiveSave, int maxTicksBeforeLiveSave)
+        const;
 
     // vIndex: 6
-    virtual void saveLiveChunk(class Dimension&, class LevelChunk&);
+    virtual void saveLiveChunk(class Dimension& dimension, class LevelChunk& levelChunk);
 
     // vIndex: 7
-    virtual void queueTaskForChunkSave(std::function<class TaskResult()>);
+    virtual void queueTaskForChunkSave(std::function<class TaskResult()> task);
 
     // vIndex: 8
     virtual void startLeaveGame();
 
-    MCAPI LevelChunkSaveManagerProxy(class Random&, class Scheduler&);
+    MCAPI LevelChunkSaveManagerProxy(class Random& random, class Scheduler& scheduler);
 
     // NOLINTEND
 };

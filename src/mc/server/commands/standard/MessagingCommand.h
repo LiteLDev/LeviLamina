@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/events/TextFilteringEvent.h"
 #include "mc/server/commands/ServerCommand.h"
+#include "mc/server/safety/TextFilteringEvent.h"
 
 class MessagingCommand : public ::ServerCommand {
 public:
@@ -26,11 +26,16 @@ public:
 
     MCAPI bool checkChatPermissions(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    MCAPI static void
-    checkAndHandleTextProcessorEvents(class Player const&, std::vector<::Safety::TextFilteringEvent> const&);
+    MCAPI static void checkAndHandleTextProcessorEvents(
+        class Player const&                              player,
+        std::vector<::Safety::TextFilteringEvent> const& events
+    );
 
-    MCAPI static void
-    checkAndHandleTextProcessorEvents(struct CommandOriginIdentity const&, class Level const&, std::vector<::Safety::TextFilteringEvent> const&);
+    MCAPI static void checkAndHandleTextProcessorEvents(
+        struct CommandOriginIdentity const&              identity,
+        class Level const&                               level,
+        std::vector<::Safety::TextFilteringEvent> const& events
+    );
 
     // NOLINTEND
 };

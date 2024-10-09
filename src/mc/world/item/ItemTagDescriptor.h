@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/platform/Result.h"
 #include "mc/world/item/ItemDescriptor.h"
 
 // auto generated forward declare list
@@ -24,10 +24,10 @@ public:
     virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> clone() const;
 
     // vIndex: 1
-    virtual bool sameItems(struct ItemDescriptor::BaseDescriptor const&, bool) const;
+    virtual bool sameItems(struct ItemDescriptor::BaseDescriptor const& otherDescriptor, bool) const;
 
     // vIndex: 2
-    virtual bool sameItem(struct ItemDescriptor::ItemEntry const&, bool) const;
+    virtual bool sameItem(struct ItemDescriptor::ItemEntry const& otherItem, bool) const;
 
     // vIndex: 4
     virtual struct ItemDescriptor::ItemEntry getItem() const;

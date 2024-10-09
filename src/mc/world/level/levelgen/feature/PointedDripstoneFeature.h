@@ -18,12 +18,8 @@ public:
     virtual ~PointedDripstoneFeature() = default;
 
     // vIndex: 1
-    virtual std::optional<class BlockPos> place(
-        class IBlockWorldGenAPI& target,
-        class BlockPos const&    pos,
-        class Random&            random,
-        class RenderParams&      renderParams
-    ) const;
+    virtual std::optional<class BlockPos>
+    place(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random, class RenderParams&) const;
 
     // vIndex: 2
     virtual bool isValidPlacement(std::string const&);
@@ -33,7 +29,7 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI static void
-    _createBaseDripstonePatch(class IBlockWorldGenAPI& target, class Random& random, class BlockPos const&);
+    _createBaseDripstonePatch(class IBlockWorldGenAPI& target, class Random& random, class BlockPos const& rootPos);
 
     // NOLINTEND
 };

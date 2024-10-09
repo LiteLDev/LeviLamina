@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/nbt/Tag.h"
+#include "mc/platform/Result.h"
 
 class ListTag : public ::Tag {
 public:
@@ -68,7 +68,7 @@ public:
 
     MCAPI int64 getInt64(int index) const;
 
-    MCAPI std::string const& getString(int) const;
+    MCAPI std::string const& getString(int index) const;
 
     MCAPI void popBack();
 

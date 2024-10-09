@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/Include.h"
-#include "mc/common/wrapper/OptionalGlobal.h"
-#include "mc/common/wrapper/ViewT.h"
-#include "mc/world/components/FlagComponent.h"
+#include "mc/deps/ecs/ViewT.h"
+#include "mc/deps/ecs/strict/Include.h"
+#include "mc/deps/ecs/strict/OptionalGlobal.h"
+#include "mc/entity/components/FlagComponent.h"
 
 class EntitySensorSystem {
 public:
@@ -23,11 +23,21 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI static void
-        _tick(class OptionalGlobal<struct CurrentTickComponent const>, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct ActorTickedFlag> const>, class ActorOwnerComponent, class EntitySensorComponent>);
+    MCAPI static void _tick(
+        class OptionalGlobal<struct CurrentTickComponent const> currentTickComponent,
+        class ViewT<
+            class StrictEntityContext,
+            struct Include<class FlagComponent<struct ActorTickedFlag> const>,
+            class ActorOwnerComponent,
+            class EntitySensorComponent> view
+    );
 
-    MCAPI static void
-    _tickEntitySensorComponent(class StrictEntityContext&, class ActorOwnerComponent&, class EntitySensorComponent&, struct CurrentTickComponent const&);
+    MCAPI static void _tickEntitySensorComponent(
+        class StrictEntityContext&,
+        class ActorOwnerComponent&         actorOwnerComponent,
+        class EntitySensorComponent&       entitySensorComponent,
+        struct CurrentTickComponent const& currentTickComponent
+    );
 
     // NOLINTEND
 };

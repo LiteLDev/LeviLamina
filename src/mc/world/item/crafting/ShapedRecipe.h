@@ -40,11 +40,11 @@ public:
     // vIndex: 6
     virtual int size() const;
 
-    MCAPI ShapedRecipe(struct Recipe::ConstructionContext&&, int, int, bool);
+    MCAPI ShapedRecipe(struct Recipe::ConstructionContext&& context, int width, int height, bool assumeSymmetry);
 
     MCAPI bool assumeSymmetry() const;
 
-    MCAPI uint64 getIngredientsHashOffset(int, int, int offsetX, int offsetY) const;
+    MCAPI uint64 getIngredientsHashOffset(int simulatedWidth, int simulatedHeight, int offsetX, int offsetY) const;
 
     // NOLINTEND
 

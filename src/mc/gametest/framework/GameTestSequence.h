@@ -25,7 +25,7 @@ public:
     thenExecuteAfter(int tickDelay, std::function<std::optional<struct gametest::GameTestError>()> fn);
 
     MCAPI class gametest::GameTestSequence&
-    thenExecuteFor(int, std::function<std::optional<struct gametest::GameTestError>()> fn);
+    thenExecuteFor(int tickCount, std::function<std::optional<struct gametest::GameTestError>()> fn);
 
     MCAPI void thenFail(struct gametest::GameTestError error);
 

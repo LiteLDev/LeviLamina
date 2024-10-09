@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/InputMode.h"
+#include "mc/deps/input/InputMode.h"
 #include "mc/world/gamemode/GameMode.h"
 
 class SurvivalMode : public ::GameMode {
@@ -28,7 +28,7 @@ public:
     virtual void startBuildBlock(class BlockPos const& pos, uchar face);
 
     // vIndex: 6
-    virtual bool buildBlock(class BlockPos const& pos, uchar face, bool);
+    virtual bool buildBlock(class BlockPos const& pos, uchar face, bool isSimTick);
 
     // vIndex: 9
     virtual void tick();

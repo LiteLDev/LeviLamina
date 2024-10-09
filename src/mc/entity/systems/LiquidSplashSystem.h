@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/Include.h"
-#include "mc/common/wrapper/ViewT.h"
-#include "mc/world/components/FlagComponent.h"
+#include "mc/deps/ecs/ViewT.h"
+#include "mc/deps/ecs/strict/Include.h"
+#include "mc/entity/components/FlagComponent.h"
 
 class LiquidSplashSystem {
 public:
@@ -23,13 +23,30 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI static void
-    _emitWaterSplashEffect(class ActorOwnerComponent&, struct WaterSplashEffectRequestComponent const&);
+    _emitWaterSplashEffect(class ActorOwnerComponent& owner, struct WaterSplashEffectRequestComponent const& c);
 
-    MCAPI static void
-    _singleTickLiquidSplash(class StrictEntityContext const&, class ViewT<class StrictEntityContext, struct WaterSplashEffectRequestComponent const, class ActorOwnerComponent>, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct PostSplashGameEventRequestFlag>>, class ActorOwnerComponent>);
+    MCAPI static void _singleTickLiquidSplash(
+        class StrictEntityContext const& entity,
+        class ViewT<
+            class StrictEntityContext,
+            struct WaterSplashEffectRequestComponent const,
+            class ActorOwnerComponent> splashEffects,
+        class ViewT<
+            class StrictEntityContext,
+            struct Include<class FlagComponent<struct PostSplashGameEventRequestFlag>>,
+            class ActorOwnerComponent> gameEvents
+    );
 
-    MCAPI static void
-        _tickLiquidSplash(class ViewT<class StrictEntityContext, struct WaterSplashEffectRequestComponent const, class ActorOwnerComponent>, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct PostSplashGameEventRequestFlag>>, class ActorOwnerComponent>);
+    MCAPI static void _tickLiquidSplash(
+        class ViewT<
+            class StrictEntityContext,
+            struct WaterSplashEffectRequestComponent const,
+            class ActorOwnerComponent> waterSplashEffects,
+        class ViewT<
+            class StrictEntityContext,
+            struct Include<class FlagComponent<struct PostSplashGameEventRequestFlag>>,
+            class ActorOwnerComponent> splashGameEvents
+    );
 
     // NOLINTEND
 };

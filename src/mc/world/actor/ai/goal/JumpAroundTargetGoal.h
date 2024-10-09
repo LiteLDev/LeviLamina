@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/json/JsonSchemaObjectNode.h"
-#include "mc/world/AutomaticID.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
@@ -34,10 +34,14 @@ public:
         // vIndex: 0
         virtual ~Definition();
 
-        MCAPI void initialize(class EntityContext&, class JumpAroundTargetGoal&) const;
+        MCAPI void initialize(class EntityContext& entity, class JumpAroundTargetGoal& goal) const;
 
-        MCAPI static void
-        buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class JumpAroundTargetGoal::Definition>>&);
+        MCAPI static void buildSchema(
+            std::string const&                            name,
+            std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                class JsonUtil::EmptyClass,
+                class JumpAroundTargetGoal::Definition>>& root
+        );
 
         // NOLINTEND
     };
@@ -80,17 +84,18 @@ public:
     virtual void tick();
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
-    MCAPI explicit JumpAroundTargetGoal(class Mob&);
+    MCAPI explicit JumpAroundTargetGoal(class Mob& mob);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    MCAPI std::optional<struct JumpAroundTargetGoal::Jump> _calculateOptimalJumpVector(class Vec3 const&) const;
+    MCAPI std::optional<struct JumpAroundTargetGoal::Jump> _calculateOptimalJumpVector(class Vec3 const& targetPosition
+    ) const;
 
-    MCAPI std::optional<class BlockPos> _snapToSurface(class Vec3 const&) const;
+    MCAPI std::optional<class BlockPos> _snapToSurface(class Vec3 const& targetPosition) const;
 
     // NOLINTEND
 };

@@ -21,8 +21,8 @@ public:
     virtual void execute(class CommandOrigin const&, class CommandOutput& output) const;
 
     MCAPI static void setup(
-        class CommandRegistry& registry,
-        class IScriptDebugger*,
+        class CommandRegistry&                      registry,
+        class IScriptDebugger*                      debugger,
         std::optional<struct ScriptSettings> const& settings
     );
 

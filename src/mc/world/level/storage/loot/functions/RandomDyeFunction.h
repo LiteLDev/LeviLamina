@@ -23,10 +23,10 @@ public:
     virtual ~RandomDyeFunction() = default;
 
     // vIndex: 1
-    virtual void apply(class ItemStack& item, class Random& random, class LootTableContext& context);
+    virtual void apply(class ItemStack& item, class Random& random, class LootTableContext&);
 
     // vIndex: 3
-    virtual void apply(class ItemInstance& item, class Random& random, class LootTableContext& context);
+    virtual void apply(class ItemInstance& item, class Random& random, class LootTableContext&);
 
     // NOLINTEND
 

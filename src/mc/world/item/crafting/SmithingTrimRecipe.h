@@ -23,20 +23,22 @@ public:
     virtual ~SmithingTrimRecipe() = default;
 
     // vIndex: 1
-    virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&, class CraftingContext&) const;
+    virtual std::vector<class ItemInstance> const&
+    assemble(class CraftingContainer& craftingContainer, class CraftingContext& craftingContext) const;
 
     // vIndex: 5
-    virtual bool matches(class CraftingContainer const&, class CraftingContext const&) const;
+    virtual bool
+    matches(class CraftingContainer const& craftingContainer, class CraftingContext const& craftingContext) const;
 
     // vIndex: 10
     virtual bool hasDataDrivenResult() const;
 
     MCAPI SmithingTrimRecipe(
-        std::string const& recipeId,
-        class RecipeIngredient const&,
-        class RecipeIngredient const&,
-        class RecipeIngredient const&,
-        class HashedString const& tag
+        std::string const&            recipeId,
+        class RecipeIngredient const& templateIngredient,
+        class RecipeIngredient const& baseIngredient,
+        class RecipeIngredient const& additionIngredient,
+        class HashedString const&     tag
     );
 
     MCAPI class RecipeIngredient const& getAdditionIngredient() const;

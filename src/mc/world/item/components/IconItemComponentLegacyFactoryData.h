@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/AllExperiments.h"
+#include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -22,8 +22,11 @@ public:
     // vIndex: 0
     virtual ~IconItemComponentLegacyFactoryData();
 
-    MCAPI static void
-    bindType(struct cereal::ReflectionCtx&, std::vector<::AllExperiments> const&, std::optional<class SemVersion>);
+    MCAPI static void bindType(
+        struct cereal::ReflectionCtx&        ctx,
+        std::vector<::AllExperiments> const& requiredToggles,
+        std::optional<class SemVersion>      releasedMinFormatVersion
+    );
 
     // NOLINTEND
 };

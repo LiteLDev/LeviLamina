@@ -47,7 +47,7 @@ public:
 
     MCAPI struct Puv::v1_20_50::ShooterItemComponent& operator=(struct Puv::v1_20_50::ShooterItemComponent const&);
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx&);
+    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
     // NOLINTEND
 };

@@ -69,7 +69,7 @@ public:
     // NOLINTBEGIN
     MCAPI uint _numberOfBooksStored() const;
 
-    MCAPI void _setItemInternal(int, class ItemStack const&, bool);
+    MCAPI void _setItemInternal(int slot, class ItemStack const& item, bool isLoading);
 
     // NOLINTEND
 };

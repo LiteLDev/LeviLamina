@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/events/LevelSoundEvent.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
 #include "mc/world/actor/ai/goal/target/NearestAttackableTargetGoal.h"
 
 class DefendTrustedTargetGoal : public ::NearestAttackableTargetGoal {
@@ -32,11 +32,11 @@ public:
         class Mob&                               mob,
         std::vector<struct MobDescriptor> const& targetTypes,
         float                                    within,
-        int,
-        bool                                mustSee,
-        int                                 mustSeeForgetTicks,
-        ::Puv::Legacy::LevelSoundEvent      sound,
-        class ActorDefinitionTrigger const& onStartEvent
+        int                                      attackInterval,
+        bool                                     mustSee,
+        int                                      mustSeeForgetTicks,
+        ::Puv::Legacy::LevelSoundEvent           sound,
+        class ActorDefinitionTrigger const&      onStartEvent
     );
 
     // NOLINTEND

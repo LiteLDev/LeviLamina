@@ -26,7 +26,13 @@ public:
     // vIndex: 3
     virtual bool finalize(class BlockSource&, class IRandom&);
 
-    MCAPI StructurePoolBlockPredicateAxisAlignedPosition(float minChance, float maxChance, int, int, uchar axis);
+    MCAPI StructurePoolBlockPredicateAxisAlignedPosition(
+        float minChance,
+        float maxChance,
+        int   mMinDistance,
+        int   mMaxDistance,
+        uchar axis
+    );
 
     // NOLINTEND
 };

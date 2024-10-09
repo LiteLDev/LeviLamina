@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/ToFloatFunction.h"
+#include "mc/world/level/biome/ToFloatFunction.h"
 
 class TerrainShaper {
 public:
@@ -61,22 +61,46 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI static class ToFloatFunction<struct TerrainShaper::Point>
-    buildErosionJaggednessSpline(float, float, float, float);
+    MCAPI static class ToFloatFunction<struct TerrainShaper::Point> buildErosionJaggednessSpline(
+        float jaggednessFactorAtPeakRidgeAndErosionIndex0,
+        float jaggednessFactorAtPeakRidgeAndErosionIndex1,
+        float jaggednessFactorAtHighRidgeAndErosionIndex0,
+        float jaggednessFactorAtHighRidgeAndErosionIndex1
+    );
+
+    MCAPI static class ToFloatFunction<struct TerrainShaper::Point> buildErosionOffsetSpline(
+        std::string const& name,
+        float              lowValley,
+        float              hill,
+        float              tallHill,
+        float              mountainFactor,
+        float              plain,
+        float              swamp,
+        bool               includeExtremeHills,
+        bool               saddle
+    );
 
     MCAPI static class ToFloatFunction<struct TerrainShaper::Point>
-    buildErosionOffsetSpline(std::string const& name, float, float, float, float, float, float, bool, bool);
-
-    MCAPI static class ToFloatFunction<struct TerrainShaper::Point> buildMountainRidgeSplineWithPoints(float, bool);
-
-    MCAPI static class ToFloatFunction<struct TerrainShaper::Point> buildRidgeJaggednessSpline(float, float);
-
-    MCAPI static class ToFloatFunction<struct TerrainShaper::Point> buildWeirdnessJaggednessSpline(float);
-
-    MCAPI static class ToFloatFunction<struct TerrainShaper::Point> getErosionFactor(float, bool);
+    buildMountainRidgeSplineWithPoints(float modulation, bool saddle);
 
     MCAPI static class ToFloatFunction<struct TerrainShaper::Point>
-    ridgeSpline(std::string const& name, float, float low, float, float high, float, float);
+    buildRidgeJaggednessSpline(float jaggednessFactorAtPeakRidge, float jaggednessFactorAtHighRidge);
+
+    MCAPI static class ToFloatFunction<struct TerrainShaper::Point>
+    buildWeirdnessJaggednessSpline(float jaggednessFactor);
+
+    MCAPI static class ToFloatFunction<struct TerrainShaper::Point>
+    getErosionFactor(float baseValue, bool shatteredTerrain);
+
+    MCAPI static class ToFloatFunction<struct TerrainShaper::Point> ridgeSpline(
+        std::string const& name,
+        float              valley,
+        float              low,
+        float              mid,
+        float              high,
+        float              peaks,
+        float              minValleySteepness
+    );
 
     // NOLINTEND
 };

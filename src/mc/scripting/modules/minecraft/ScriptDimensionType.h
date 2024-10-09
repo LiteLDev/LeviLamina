@@ -20,7 +20,7 @@ public:
     // NOLINTBEGIN
     MCAPI std::string getTypeId() const;
 
-    MCAPI static void bind(class Scripting::ModuleBindingBuilder&);
+    MCAPI static void bind(class Scripting::ModuleBindingBuilder& module);
 
     // NOLINTEND
 };

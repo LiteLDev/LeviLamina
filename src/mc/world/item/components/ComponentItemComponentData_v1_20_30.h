@@ -22,7 +22,7 @@ public:
 
     MCAPI ~ComponentItemComponentData_v1_20_30();
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx&);
+    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
     MCAPI static class SemVersion const FIRST_VERSION;
 

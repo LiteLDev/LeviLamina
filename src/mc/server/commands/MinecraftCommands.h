@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/CurrentCmdVersion.h"
 #include "mc/server/commands/CommandOutputType.h"
+#include "mc/server/commands/CurrentCmdVersion.h"
 
 class MinecraftCommands {
 public:
@@ -37,7 +37,7 @@ public:
     MCAPI void
     enqueueDeferredCompiledCommand(gsl::not_null<class Command*> command, std::unique_ptr<class CommandOrigin> origin);
 
-    MCAPI bool enqueueDeferredScriptCommand(std::unique_ptr<class DeferredScriptCommand>);
+    MCAPI bool enqueueDeferredScriptCommand(std::unique_ptr<class DeferredScriptCommand> scriptCommand);
 
     MCAPI struct MCRESULT executeCommand(class CommandContext& context, bool suppressOutput) const;
 
@@ -46,14 +46,18 @@ public:
     MCAPI void handleOutput(class CommandOrigin const& origin, class CommandOutput const& output) const;
 
     MCAPI void initCoreEnums(
-        class ItemRegistryRef,
-        class Level const&           registries,
+        class ItemRegistryRef        itemRegistry,
+        class Level const&           level,
         class ActorFactory const&    actorFactory,
         class Experiments const&     experiments,
         class BaseGameVersion const& worldBaseGameVersion
     );
 
-    MCAPI void initCoreEnumsServer(class ActorDefinitionGroup const&, class CameraPresets const&, class Recipes const&);
+    MCAPI void initCoreEnumsServer(
+        class ActorDefinitionGroup const& actorDefinitionGroup,
+        class CameraPresets const&        cameraPresets,
+        class Recipes const&              recipes
+    );
 
     MCAPI struct MCRESULT requestCommandExecution(class CommandContext& context, bool suppressOutput);
 
@@ -76,19 +80,19 @@ public:
         class Experiments const&  experiments
     );
 
-    MCAPI static void initEntityPropertyEnum(class CommandRegistry&, class Level const&);
+    MCAPI static void initEntityPropertyEnum(class CommandRegistry& registry, class Level const& level);
 
     MCAPI static void initItemEnum(
-        class ItemRegistryRef,
+        class ItemRegistryRef        itemRegistry,
         class CommandRegistry&       registry,
         class BaseGameVersion const& worldBaseGameVersion
     );
 
-    MCAPI static void initItemTagEnum(class ItemRegistryRef, class CommandRegistry& registry);
+    MCAPI static void initItemTagEnum(class ItemRegistryRef itemRegistry, class CommandRegistry& registry);
 
-    MCAPI static void initStructureFeatureEnum(class CommandRegistry&, class Experiments const&);
+    MCAPI static void initStructureFeatureEnum(class CommandRegistry& registry, class Experiments const& experiments);
 
-    MCAPI static void initUnlockableRecipesEnum(class CommandRegistry&, class Recipes const&);
+    MCAPI static void initUnlockableRecipesEnum(class CommandRegistry& registry, class Recipes const& recipes);
 
     MCAPI static void registerSharedClientServerEnums(class CommandRegistry& registry);
 

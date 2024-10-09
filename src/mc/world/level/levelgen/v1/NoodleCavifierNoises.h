@@ -14,7 +14,7 @@ public:
 
     MCAPI ~NoodleCavifierNoises();
 
-    MCAPI static class NoodleCavifierNoises make(class XoroshiroPositionalRandomFactory const&);
+    MCAPI static class NoodleCavifierNoises make(class XoroshiroPositionalRandomFactory const& randomFactory);
 
     // NOLINTEND
 };

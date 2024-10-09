@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/platform/Result.h"
 
 class IDataInput {
 public:
@@ -42,14 +42,14 @@ public:
     virtual class Bedrock::Result<int64> readLongLongResult() = 0;
 
     // vIndex: 9
-    virtual class Bedrock::Result<void> readBytesResult(void*, uint64) = 0;
+    virtual class Bedrock::Result<void> readBytesResult(void* data, uint64 bytes) = 0;
 
     // vIndex: 10
     virtual uint64 numBytesLeft() const = 0;
 
     MCAPI uchar readByte();
 
-    MCAPI bool readBytes(void*, uint64);
+    MCAPI bool readBytes(void* data, uint64 bytes);
 
     MCAPI int readInt();
 

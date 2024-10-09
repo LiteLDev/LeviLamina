@@ -27,7 +27,7 @@ public:
 
     MCAPI short getShort(ushort id) const;
 
-    MCAPI std::string const& getString(ushort) const;
+    MCAPI std::string const& getString(ushort id) const;
 
     MCAPI class Vec3 getVec3(ushort id) const;
 

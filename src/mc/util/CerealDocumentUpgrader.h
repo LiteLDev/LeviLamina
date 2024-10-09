@@ -20,28 +20,43 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI explicit CerealDocumentUpgrader(class SemVersion);
+    MCAPI explicit CerealDocumentUpgrader(class SemVersion terminus);
 
     MCAPI void clear();
 
-    MCAPI ::
-        CerealDocumentUpgrader::
-            ParseAndUpgradeResult
-            parseJsonAndUpgrade(std::string const&, class SemVersion&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&, class Core::Path const&, bool, std::optional<class SemVersion> const&, std::function<bool(class SemVersion const&)> const&)
-                const;
+    MCAPI ::CerealDocumentUpgrader::ParseAndUpgradeResult parseJsonAndUpgrade(
+        std::string const& json,
+        class SemVersion&  outDocumentVersion,
+        rapidjson::GenericDocument<
+            rapidjson::UTF8<char>,
+            rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>,
+            rapidjson::CrtAllocator>&                       document,
+        class Core::Path const&                             resourceName,
+        bool                                                allowMissingVersionAsZero,
+        std::optional<class SemVersion> const&              minVersion,
+        std::function<bool(class SemVersion const&)> const& shouldUpgrade
+    ) const;
 
-    MCAPI void registerUpgrade(std::shared_ptr<class CerealSchemaUpgrade>);
+    MCAPI void registerUpgrade(std::shared_ptr<class CerealSchemaUpgrade> upgrade);
 
-    MCAPI bool
-    upgradeJson(std::string&, class SemVersion&, rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&, class Core::Path const&, std::optional<class SemVersion> const&, std::function<bool(class SemVersion const&)> const&)
-        const;
+    MCAPI bool upgradeJson(
+        std::string&      json,
+        class SemVersion& outDocumentVersion,
+        rapidjson::GenericDocument<
+            rapidjson::UTF8<char>,
+            rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>,
+            rapidjson::CrtAllocator>&                       document,
+        class Core::Path const&                             resourceName,
+        std::optional<class SemVersion> const&              minVersion,
+        std::function<bool(class SemVersion const&)> const& shouldUpgrade
+    ) const;
 
     MCAPI ~CerealDocumentUpgrader();
 
     MCAPI static std::string getVersion(rapidjson::GenericDocument<
                                         rapidjson::UTF8<char>,
                                         rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>,
-                                        rapidjson::CrtAllocator> const&);
+                                        rapidjson::CrtAllocator> const& document);
 
     // NOLINTEND
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/Difficulty.h"
+#include "mc/world/Difficulty.h"
 
 class Raid {
 public:
@@ -14,13 +14,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI Raid(int raidPreparationTime, int groupCompleteDelayInTicks, int locationHelpDelayInTicks, int, ::Difficulty difficulty, uchar allowedSpawnFailures, std::function<bool(uint64, class Vec3&)>&& pickSpawnPointCallback, std::function<bool(uint64, class Vec3, uchar, std::unordered_set<struct ActorUniqueID>&)>&& spawnGroupCallback, std::function<bool(struct ActorUniqueID const&)>&& doesActorExistCallback, std::function<bool()>&&);
+    MCAPI Raid(
+        int                                        raidPreparationTime,
+        int                                        groupCompleteDelayInTicks,
+        int                                        locationHelpDelayInTicks,
+        int                                        finishedDelayInTicks,
+        ::Difficulty                               difficulty,
+        uchar                                      allowedSpawnFailures,
+        std::function<bool(uint64, class Vec3&)>&& pickSpawnPointCallback,
+        std::function<bool(uint64, class Vec3, uchar, std::unordered_set<struct ActorUniqueID>&)>&& spawnGroupCallback,
+        std::function<bool(struct ActorUniqueID const&)>&& doesActorExistCallback,
+        std::function<bool()>&&                            isVillageDefeatedCallback
+    );
 
     MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
 
     MCAPI void addPlayerToHeroList(class Actor const& actor);
 
-    MCAPI void addRaider(struct ActorUniqueID const&, float);
+    MCAPI void addRaider(struct ActorUniqueID const& actor, float maxHealth);
 
     MCAPI void appendDebugInfo(std::string& infoString) const;
 

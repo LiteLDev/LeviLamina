@@ -20,9 +20,9 @@ public:
     // vIndex: 0
     virtual ~OnStepOffTrigger() = default;
 
-    MCAPI void finalize(gsl::not_null<class BlockEvents::BlockStepOffEventComponent*>);
+    MCAPI void finalize(gsl::not_null<class BlockEvents::BlockStepOffEventComponent*> comp);
 
-    MCAPI void onStepOff(struct BlockEvents::BlockStepOffEvent const&) const;
+    MCAPI void onStepOff(struct BlockEvents::BlockStepOffEvent const& eventData) const;
 
     // NOLINTEND
 };

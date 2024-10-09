@@ -44,8 +44,8 @@ public:
         // NOLINTBEGIN
         MCAPI ServerData(
             class CommandRegistry::Parser& parser,
-            class CommandOrigin const&,
-            class Scoreboard const& scoreboard
+            class CommandOrigin const&     commandOrigin,
+            class Scoreboard const&        scoreboard
         );
 
         // NOLINTEND

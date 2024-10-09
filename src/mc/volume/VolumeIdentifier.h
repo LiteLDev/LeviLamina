@@ -24,7 +24,7 @@ public:
 
     public:
         // NOLINTBEGIN
-        MCAPI static void bindType(struct cereal::ReflectionCtx&);
+        MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
         // NOLINTEND
     };
@@ -39,7 +39,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool operator==(struct VolumeIdentifier const&) const;
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx&);
+    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
     // NOLINTEND
 };

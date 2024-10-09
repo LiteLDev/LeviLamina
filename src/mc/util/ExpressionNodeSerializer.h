@@ -9,9 +9,9 @@ namespace Puv::Legacy { struct ExpressionNode; }
 
 namespace ExpressionNodeSerializer {
 // NOLINTBEGIN
-MCAPI void fromPuv(class ExpressionNode&, struct Puv::Legacy::ExpressionNode const&);
+MCAPI void fromPuv(class ExpressionNode& instance, struct Puv::Legacy::ExpressionNode const& expr);
 
-MCAPI struct Puv::Legacy::ExpressionNode toPuv(class ExpressionNode const&);
+MCAPI struct Puv::Legacy::ExpressionNode toPuv(class ExpressionNode const& node);
 // NOLINTEND
 
 }; // namespace ExpressionNodeSerializer

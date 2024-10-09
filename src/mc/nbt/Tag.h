@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/platform/Result.h"
 
 class Tag {
 public:
@@ -51,7 +51,7 @@ public:
     // vIndex: 10
     virtual uint64 hash() const = 0;
 
-    MCAPI static std::string getTagName(::Tag::Type);
+    MCAPI static std::string getTagName(::Tag::Type type);
 
     MCAPI static class Bedrock::Result<std::unique_ptr<class Tag>> newTag(::Tag::Type type);
 

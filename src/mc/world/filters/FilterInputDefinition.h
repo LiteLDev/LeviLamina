@@ -11,7 +11,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI FilterInputDefinition(class FilterInput f, std::string const& d);
+    MCAPI FilterInputDefinition(class FilterInput, std::string const&);
 
     MCAPI ~FilterInputDefinition();
 

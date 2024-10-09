@@ -17,8 +17,10 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI static void
-    doFramewiseActionOrStopSystem(struct LocalMoveVelocityComponent const&, struct ActionOrStopComponent&);
+    MCAPI static void doFramewiseActionOrStopSystem(
+        struct LocalMoveVelocityComponent const& localMoveVelocityComponent,
+        struct ActionOrStopComponent&            actionOrStopComponent
+    );
 
     // NOLINTEND
 };

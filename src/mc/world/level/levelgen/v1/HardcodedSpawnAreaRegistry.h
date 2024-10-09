@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/HardcodedSpawnAreaType.h"
+#include "mc/world/level/levelgen/v1/HardcodedSpawnAreaType.h"
 
 class HardcodedSpawnAreaRegistry {
 public:

@@ -25,12 +25,8 @@ public:
     ) const;
 
     // vIndex: 2
-    virtual bool isItemAllowedInSlot(
-        class ContainerScreenContext const& screenContext,
-        int                                 slot,
-        class ItemStackBase const&          item,
-        int                                 amount
-    ) const;
+    virtual bool
+    isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const& item, int) const;
 
     // vIndex: 3
     virtual int getAvailableSetCount(int slot, class ItemStackBase const& item) const;
@@ -49,7 +45,7 @@ public:
     virtual bool canDestroy(class ContainerScreenContext const& screenContext) const;
 
     // vIndex: 8
-    virtual int getContainerOffset(class ContainerScreenContext const& screenContext) const;
+    virtual int getContainerOffset(class ContainerScreenContext const&) const;
 
     // vIndex: 9
     virtual int
