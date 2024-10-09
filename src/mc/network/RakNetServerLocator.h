@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/raknet/RakNetServerLANVisibility.h"
 #include "mc/network/LocatorStateChangeRequest.h"
 #include "mc/network/PermissionIPv6.h"
 #include "mc/network/PermissionLAN.h"
+#include "mc/network/RakNetServerLANVisibility.h"
 #include "mc/network/RakPeerHelper.h"
 #include "mc/network/ServerConnectivityTestResult.h"
 #include "mc/network/ServerLocator.h"
