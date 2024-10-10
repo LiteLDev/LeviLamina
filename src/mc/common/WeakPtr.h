@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/wrapper/SharedCounter.h"
+#include "mc/common/SharedCounter.h"
 
 template <typename T>
 class SharedPtr;
