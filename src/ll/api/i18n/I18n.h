@@ -60,7 +60,7 @@ struct TrStrOut;
     template <LL_I18N_STRING_LITERAL_TYPE str>
     struct TrStrOut {
     static inline int _ = [] {
-        fmt::print("\"{0}\": \"{0}\", // at {1}\n", str.sv(), str.loc.toString());
+        fmt::print("\"{0}\": \"{0}\", // at {1}\n", str.sv(), str.loc().toString());
         return 0;
     }();
 };
