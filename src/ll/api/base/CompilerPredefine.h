@@ -74,6 +74,10 @@
 #define LL_CURRENT_FUNCTION __builtin_FUNCTION()
 #endif
 
+#ifndef LL_CURRENT_FUNCSIG
+#define LL_CURRENT_FUNCSIG __builtin_FUNCSIG()
+#endif
+
 #ifndef LL_MACHINE_PAUSE
 #define LL_MACHINE_PAUSE _mm_pause()
 #endif
@@ -295,7 +299,7 @@ using FileHandleT = void*;
 #endif
 
 #ifndef LL_CURRENT_COLUMN
-#define LL_CURRENT_COLUMN 0
+#define LL_CURRENT_COLUMN (0)
 #endif
 
 #ifndef LL_CURRENT_FILE
@@ -304,6 +308,10 @@ using FileHandleT = void*;
 
 #ifndef LL_CURRENT_FUNCTION
 #define LL_CURRENT_FUNCTION __builtin_FUNCTION()
+#endif
+
+#ifndef LL_CURRENT_FUNCSIG
+#define LL_CURRENT_FUNCSIG __builtin_FUNCTION()
 #endif
 
 namespace ll::internal {

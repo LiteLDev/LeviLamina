@@ -49,37 +49,47 @@ inline I18n& getInstance() {
 #ifdef LL_I18N_COLLECT_STRINGS
 #include "ll/api/reflection/TypeName.h"
 
-namespace ll::inline literals::inline i18n_literals {
-namespace detail {
-template <FixedString str>
-struct TrString {
-    static inline int output = [] {
-        fmt::print("\"{0}\": \"{0}\",\n", (std::string_view)str);
+#ifndef LL_I18N_STRING_LITERAL_TYPE
+#define LL_I18N_STRING_LITERAL_TYPE ::ll::FixedStrWithLoc
+#endif
+
+namespace ll::i18n::detail {
+template <LL_I18N_STRING_LITERAL_TYPE str>
+struct TrStrOut;
+#ifndef LL_I18N_COLLECT_STRINGS_CUSTOM
+    template <LL_I18N_STRING_LITERAL_TYPE str>
+    struct TrStrOut {
+    static inline int _ = [] {
+        fmt::print("\"{0}\": \"{0}\", // at {1}\n", str.sv(), str.loc.toString());
         return 0;
     }();
 };
-} // namespace detail
-} // namespace ll::inline literals::inline i18n_literals
+#endif
+} // namespace ll::i18n::detail
+#else
+#ifndef LL_I18N_STRING_LITERAL_TYPE
+#define LL_I18N_STRING_LITERAL_TYPE ::ll::FixedString
+#endif
 #endif
 namespace ll::inline literals::inline i18n_literals {
-template <FixedString Fmt>
+template <LL_I18N_STRING_LITERAL_TYPE Fmt>
 [[nodiscard]] constexpr auto operator""_tr() {
-    return [=]<class... Args>(Args&&... args) {
 #ifdef LL_I18N_COLLECT_STRINGS
-        static detail::TrString<Fmt> e{};
+    static i18n::detail::TrStrOut<Fmt> e{};
 #endif
-        [[maybe_unused]] static constexpr auto checker = fmt::format_string<Args...>(std::string_view{Fmt});
-        return fmt::vformat(i18n::getInstance().get(Fmt, {}), fmt::make_format_args(args...));
+    return [=]<class... Args>(Args&&... args) {
+        [[maybe_unused]] static constexpr auto checker = fmt::format_string<Args...>(Fmt.sv());
+        return fmt::vformat(i18n::getInstance().get(Fmt.sv(), {}), fmt::make_format_args(args...));
     };
 }
-template <FixedString Fmt>
+template <LL_I18N_STRING_LITERAL_TYPE Fmt>
 [[nodiscard]] constexpr auto operator""_trl() {
-    return [=]<class... Args>(std::string_view localeCode, Args&&... args) {
 #ifdef LL_I18N_COLLECT_STRINGS
-        static detail::TrString<Fmt> e{};
+    static i18n::detail::TrStrOut<Fmt> e{};
 #endif
-        [[maybe_unused]] static constexpr auto checker = fmt::format_string<Args...>(std::string_view{Fmt});
-        return fmt::vformat(i18n::getInstance().get(Fmt, localeCode), fmt::make_format_args(args...));
+    return [=]<class... Args>(std::string_view localeCode, Args&&... args) {
+        [[maybe_unused]] static constexpr auto checker = fmt::format_string<Args...>(Fmt.sv());
+        return fmt::vformat(i18n::getInstance().get(Fmt.sv(), localeCode), fmt::make_format_args(args...));
     };
 }
 } // namespace ll::inline literals::inline i18n_literals
