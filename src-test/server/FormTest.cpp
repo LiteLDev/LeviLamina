@@ -31,7 +31,8 @@ void registerFormTestCommand() {
         [](CommandOrigin const& ori, CommandOutput&, TestFormParam const& param) {
             switch (param.type) {
             case TestFormParam::FormType::custom: {
-                ll::form::CustomForm form;
+                ll::form::CustomForm     form;
+                std::vector<std::string> names;
                 form.setTitle("CustomForm")
                     .appendLabel("label")
                     .appendInput("input1", "input")
@@ -39,6 +40,7 @@ void registerFormTestCommand() {
                     .appendSlider("slider", "slider", 0, 100, 1)
                     .appendStepSlider("stepSlider", "stepSlider", {"a", "b", "c"})
                     .appendDropdown("dropdown", "dropdown", {"a", "b", "c"})
+                    .appendDropdown("emptydropdown", "empty dropdown", names)
                     .sendTo(
                         *(Player*)ori.getEntity(),
                         [](Player&, ll::form::CustomFormResult const& data, ll::form::FormCancelReason) {
