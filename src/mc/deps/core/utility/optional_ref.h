@@ -71,17 +71,9 @@ public:
     [[nodiscard]] constexpr T& get() const { return value(); }
     [[nodiscard]] constexpr T& operator*() const noexcept { return *as_ptr(); }
     [[nodiscard]] constexpr T* operator->() const noexcept { return as_ptr(); }
-    template <class U>
-        requires(std::is_same_v<T, U> || std::is_base_of_v<U, T>)
-    [[nodiscard]] constexpr operator U&() const {
-        return value();
-    }
-    template <class U>
-        requires(std::is_same_v<T, U> || std::is_base_of_v<U, T>)
-    [[nodiscard]] constexpr operator U*() const noexcept {
-        return as_ptr();
-    }
-    [[nodiscard]] operator void*() const noexcept { return (void*)(as_ptr()); }
+
+    [[nodiscard]] constexpr operator T&() const { return value(); }
+    [[nodiscard]] constexpr operator T*() const noexcept { return as_ptr(); }
 
     template <class U>
     [[nodiscard]] constexpr T& value_or(U& right) const& {
@@ -147,7 +139,7 @@ public:
             using UnwrapT = std::remove_cv_t<Ret>;
             if (has_value()) {
                 return std::optional<UnwrapT>{
-                    ll::internal::std_optional_construct_from_invoke_tag{},
+                    ll::internal::stdOptionalConstructFromInvokeTag{},
                     std::forward<Fn>(fn),
                     static_cast<T&>(*mPtr)
                 };

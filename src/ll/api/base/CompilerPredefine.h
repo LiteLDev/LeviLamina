@@ -237,7 +237,7 @@ consteval bool virtualDetector() noexcept {
     return reflection::getRawName<f>().find("::`vcall'{") != std::string_view::npos;
 }
 #if LL_HAS_CXX23
-using std_optional_construct_from_invoke_tag = std::_Construct_from_invoke_result_tag;
+using stdOptionalConstructFromInvokeTag = std::_Construct_from_invoke_result_tag;
 #endif
 
 using FileHandleT = void*;
@@ -319,7 +319,7 @@ namespace ll::internal {
 [[nodiscard]] void* getCurrentModuleHandle() noexcept; // Implemented in SystemUtils_linux.cpp
 
 #if LL_HAS_CXX23
-using std_optional_construct_from_invoke_tag = std::__optional_construct_from_invoke_tag;
+using stdOptionalConstructFromInvokeTag = std::__optional_construct_from_invoke_tag;
 #endif
 
 using FileHandleT = int;
