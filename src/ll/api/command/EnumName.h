@@ -23,5 +23,5 @@ struct enum_name<SoftEnum<T>> {
     static constexpr char const* value = unprefix_name_for_c<T>::stored_name.c_str();
 };
 template <class T>
-static constexpr char const* enum_name_v = enum_name<T>::value;
+constexpr char const* enum_name_v = enum_name<T>::value;
 } // namespace ll::command
