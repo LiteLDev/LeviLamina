@@ -11,9 +11,10 @@ public:
     PathString(PathString const&);
     PathString();
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static char mPreferedSeparator;
+    MCAPI static char& mPreferedSeparator();
 
     // NOLINTEND
 };

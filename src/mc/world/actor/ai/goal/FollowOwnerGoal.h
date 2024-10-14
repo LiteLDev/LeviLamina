@@ -48,4 +48,25 @@ public:
     MCAPI std::optional<class Vec3> _tryToGetTeleportPosition(class Mob& owner) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void onPlayerDimensionChanged$(class Player* player, DimensionType fromDimension, DimensionType toDimension);
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
+
+    MCAPI void tick$();
+
+    // NOLINTEND
 };

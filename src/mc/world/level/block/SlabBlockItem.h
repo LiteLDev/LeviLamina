@@ -48,4 +48,23 @@ public:
     _canConvertToDoubleBlock(class ItemStackBase& instance, class Actor&, uchar& face, class Block const& block) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool
+    _calculatePlacePos$(class ItemStackBase& instance, class Actor& actor, uchar& face, class BlockPos& pos) const;
+
+    MCAPI class InteractionResult
+    _useOn$(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const& clickPos)
+        const;
+
+    // NOLINTEND
 };

@@ -63,7 +63,17 @@ public:
 
         MCAPI void setNeighbor(::LevelChunkNeighbor neighbor, bool value);
 
-        MCAPI static std::array<std::pair<::LevelChunkNeighbor, class ChunkPos>, 8> const sOffsetMap;
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        MCAPI static std::array<std::pair<::LevelChunkNeighbor, class ChunkPos>, 8> const& sOffsetMap();
 
         // NOLINTEND
     };
@@ -618,9 +628,17 @@ public:
 
     // NOLINTEND
 
-    // protected:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int const UPDATE_MAP_BIT_SHIFT;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static int const& UPDATE_MAP_BIT_SHIFT();
 
     // NOLINTEND
 };

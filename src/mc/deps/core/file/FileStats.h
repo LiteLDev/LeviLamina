@@ -29,6 +29,16 @@ public:
     MCAPI void setFileSystemUsedSize(int64 newSize, int64 newAllocatedSize);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    // NOLINTEND
 };
 
 }; // namespace Core

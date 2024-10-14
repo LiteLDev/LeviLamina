@@ -90,9 +90,53 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class BlockPos const ARM_DIRECTION_OFFSETS[];
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool breaksFallingBlocks$(class Block const&, class BaseGameVersion) const;
+
+    MCAPI bool canContainLiquid$() const;
+
+    MCAPI bool canProvideSupport$(class Block const&, uchar, ::BlockSupportType) const;
+
+    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI uchar getMappedFace$(uchar face, class Block const& block) const;
+
+    MCAPI class Block const&
+    getPlacementBlock$(class Actor const& by, class BlockPos const& pos, uchar, class Vec3 const&, int) const;
+
+    MCAPI bool
+    getSecondPart$(class IConstBlockSource const& region, class BlockPos const& pos, class BlockPos& out) const;
+
+    MCAPI int getVariant$(class Block const&) const;
+
+    MCAPI bool isValidAuxValue$(int value) const;
+
+    MCAPI void
+    neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
+
+    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void onRedstoneUpdate$(class BlockSource&, class BlockPos const&, int, bool) const;
+
+    MCAPI bool pushesUpFallingBlocks$() const;
+
+    MCAPI void setupRedstoneComponent$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool
+    shouldConnectToRedstone$(class BlockSource& region, class BlockPos const& pos, ::Direction::Type direction) const;
+
+    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+
+    MCAPI static ::ll::CArrayT<class BlockPos const>& ARM_DIRECTION_OFFSETS();
 
     // NOLINTEND
 };

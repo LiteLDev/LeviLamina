@@ -18,4 +18,11 @@ public:
     virtual ~BlockBakedMaterialDataComponent() = default;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };

@@ -49,11 +49,33 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int const mRotatedX[];
+    MCAPI static void** $vftable();
 
-    MCAPI static int const mRotatedZ[];
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI class ItemInstance asItemInstance$(class Block const& block, class BlockActor const*) const;
+
+    MCAPI uchar getMappedFace$(uchar face, class Block const& block) const;
+
+    MCAPI class Block const& getPlacementBlock$(
+        class Actor const&    by,
+        class BlockPos const& pos,
+        uchar                 face,
+        class Vec3 const&     clickPos,
+        int                   itemValue
+    ) const;
+
+    MCAPI static ::ll::CArrayT<int const>& mRotatedX();
+
+    MCAPI static ::ll::CArrayT<int const>& mRotatedZ();
 
     // NOLINTEND
 };

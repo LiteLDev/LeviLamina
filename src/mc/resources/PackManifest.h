@@ -128,8 +128,6 @@ public:
 
     MCAPI void setSourceIdentity(class ContentIdentity const& contentIdentity);
 
-    MCAPI static std::string const MarioPackId;
-
     // NOLINTEND
 
     // private:
@@ -144,9 +142,23 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::unordered_map<std::string, ::PackScope> const STRING_TO_PACK_SCOPE;
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI std::unique_ptr<class PackManifest> clone$() const;
+
+    MCAPI static std::string const& MarioPackId();
+
+    MCAPI static std::unordered_map<std::string, ::PackScope> const& STRING_TO_PACK_SCOPE();
 
     // NOLINTEND
 };

@@ -47,15 +47,36 @@ public:
 
     MCAPI bool setItem(class BlockSource&, class ItemInstance const& item);
 
-    MCAPI static int const MAX_SMOKE_THRESHOLD_COUNTER;
-
-    MCAPI static int const MIN_SMOKE_THRESHOLD_COUNTER;
-
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI void _finishCooking(class BlockSource& region, int slot);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource&);
+
+    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
+
+    MCAPI float getShadowRadius$(class BlockSource&) const;
+
+    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void onChanged$(class BlockSource& region);
+
+    MCAPI bool save$(class CompoundTag& tag) const;
+
+    MCAPI void tick$(class BlockSource& region);
+
+    MCAPI static int const& MAX_SMOKE_THRESHOLD_COUNTER();
+
+    MCAPI static int const& MIN_SMOKE_THRESHOLD_COUNTER();
 
     // NOLINTEND
 };

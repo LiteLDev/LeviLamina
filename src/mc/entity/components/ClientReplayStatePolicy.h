@@ -42,4 +42,24 @@ public:
     MCAPI static bool _isSupportedMovementMode(class EntityContext const& entity);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool canRewindToFrame$(class EntityContext const& entity, uint64 rewindFrame);
+
+    MCAPI void flagUnsupportedMovement$(uint64 frame);
+
+    MCAPI bool isReplayNeeded$(::AdvanceFrameResult result) const;
+
+    MCAPI void notifyOfExternalCorrection$(uint64);
+
+    MCAPI struct MovementCorrection
+    shouldCorrectMovement$(class EntityContext&, class PlayerAuthInputPacket const&, uint64);
+
+    MCAPI void storeCurrentFrameSupported$(uint64 currentFrame, class EntityContext& entity);
+
+    // NOLINTEND
 };

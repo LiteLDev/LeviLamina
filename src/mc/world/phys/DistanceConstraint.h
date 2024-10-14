@@ -18,4 +18,14 @@ public:
     MCAPI void solve(class Vec3& velA, class Vec3& velB);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    // NOLINTEND
 };

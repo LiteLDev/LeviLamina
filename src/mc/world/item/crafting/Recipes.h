@@ -39,6 +39,13 @@ public:
         MCAPI ~FurnaceRecipeKey();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     struct NormalizedRectangularRecipeResults {
@@ -56,6 +63,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~NormalizedRectangularRecipeResults();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -83,6 +97,18 @@ public:
         MCAPI Type(class Recipes::Type&&);
 
         MCAPI ~Type();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -300,6 +326,18 @@ public:
         std::string const&                     recipeId,
         std::vector<class HashedString> const& tags
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

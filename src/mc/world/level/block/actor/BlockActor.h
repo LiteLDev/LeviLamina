@@ -199,11 +199,106 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::map<::BlockActorType, std::string> const mClassIdMap;
+    MCAPI static void** $vftable();
 
-    MCAPI static std::map<std::string, ::BlockActorType> const mIdClassMap;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource&);
+
+    MCAPI void _onUpdatePacket$(class CompoundTag const&, class BlockSource&);
+
+    MCAPI bool _playerCanUpdate$(class Player const&) const;
+
+    MCAPI void clearCache$();
+
+    MCAPI void eraseLootTable$();
+
+    MCAPI void fixupOnLoad$(class LevelChunk&);
+
+    MCAPI class AABB getCollisionShape$(class IConstBlockSource const&) const;
+
+    MCAPI class Container const* getContainer$() const;
+
+    MCAPI class Container* getContainer$();
+
+    MCAPI class BlockActor* getCrackEntity$(class BlockSource&, class BlockPos const&);
+
+    MCAPI std::string const& getCustomName$() const;
+
+    MCAPI void getDebugText$(std::vector<std::string>& outputInfo, class BlockPos const& debugPos);
+
+    MCAPI std::string const& getFilteredCustomName$(Bedrock::NotNullNonOwnerPtr<class UIProfanityContext> const& context
+    );
+
+    MCAPI std::string getImmersiveReaderText$(class BlockSource&);
+
+    MCAPI std::string getName$() const;
+
+    MCAPI class PistonBlockActor const* getOwningPiston$(class BlockSource&) const;
+
+    MCAPI class PistonBlockActor* getOwningPiston$(class BlockSource&);
+
+    MCAPI int getRepairCost$() const;
+
+    MCAPI float getShadowRadius$(class BlockSource&) const;
+
+    MCAPI std::vector<std::string> getUgcStrings$(class CompoundTag const&) const;
+
+    MCAPI bool hasAlphaLayer$() const;
+
+    MCAPI bool isCustomNameSaved$();
+
+    MCAPI bool isMovable$(class BlockSource&);
+
+    MCAPI bool isPreserved$(class BlockSource&) const;
+
+    MCAPI void load$(class Level&, class CompoundTag const& tag, class DataLoadHelper&);
+
+    MCAPI void loadBlockData$(class CompoundTag const&, class BlockSource&, class DataLoadHelper&);
+
+    MCAPI void onChanged$(class BlockSource&);
+
+    MCAPI void onChunkLoaded$(class LevelChunk&);
+
+    MCAPI void onChunkUnloaded$(class LevelChunk&);
+
+    MCAPI void onCustomTagLoadDone$(class BlockSource&);
+
+    MCAPI void onMove$();
+
+    MCAPI void onNeighborChanged$(class BlockSource&, class BlockPos const&);
+
+    MCAPI void onPlace$(class BlockSource&);
+
+    MCAPI void onRemoved$(class BlockSource&);
+
+    MCAPI bool save$(class CompoundTag& tag) const;
+
+    MCAPI void saveBlockData$(class CompoundTag&, class BlockSource&) const;
+
+    MCAPI bool saveItemInstanceData$(class CompoundTag& tag) const;
+
+    MCAPI void setCustomName$(std::string const& name);
+
+    MCAPI void setUgcStrings$(class CompoundTag&, std::vector<std::string> const&) const;
+
+    MCAPI bool shouldPreserve$(class BlockSource&);
+
+    MCAPI void tick$(class BlockSource& region);
+
+    MCAPI void triggerEvent$(int, int);
+
+    MCAPI static std::map<::BlockActorType, std::string> const& mClassIdMap();
+
+    MCAPI static std::map<std::string, ::BlockActorType> const& mIdClassMap();
 
     // NOLINTEND
 };

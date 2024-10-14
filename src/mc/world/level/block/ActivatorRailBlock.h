@@ -39,4 +39,20 @@ public:
     MCAPI ActivatorRailBlock(std::string const& nameId, int id);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI int getVariant$(class Block const& block) const;
+
+    MCAPI void onRedstoneUpdate$(class BlockSource& source, class BlockPos const& pos, int strength, bool) const;
+
+    // NOLINTEND
 };

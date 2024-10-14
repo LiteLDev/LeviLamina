@@ -75,4 +75,45 @@ public:
     MCAPI DirtBlock(std::string const& nameId, int id);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void _addHardCodedBlockComponents$(class Experiments const& experiments);
+
+    MCAPI class ItemInstance asItemInstance$(class Block const& block, class BlockActor const*) const;
+
+    MCAPI std::string buildDescriptionId$(class Block const& block) const;
+
+    MCAPI bool canBeFertilized$(class BlockSource&, class BlockPos const&, class Block const& aboveBlock) const;
+
+    MCAPI bool canBeOriginalSurface$() const;
+
+    MCAPI class mce::Color
+    getMapColor$(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
+
+    MCAPI int getVariant$(class Block const& block) const;
+
+    MCAPI bool isAuxValueRelevantForPicking$() const;
+
+    MCAPI bool isValidAuxValue$(int value) const;
+
+    MCAPI bool mayConsumeFertilizer$(class BlockSource&) const;
+
+    MCAPI bool
+    onFertilized$(class BlockSource& region, class BlockPos const& pos, class Actor*, ::FertilizerType) const;
+
+    MCAPI bool
+    tryToTill$(class BlockSource& region, class BlockPos const& pos, class Actor& entity, class ItemStack& item) const;
+
+    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar face) const;
+
+    // NOLINTEND
 };

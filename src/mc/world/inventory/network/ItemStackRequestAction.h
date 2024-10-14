@@ -48,9 +48,25 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class BidirectionalUnorderedMap<::ItemStackRequestActionType, std::string> const actionTypeMap;
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI class ItemStackRequestActionCraftBase const* getCraftAction$() const;
+
+    MCAPI int getFilteredStringIndex$() const;
+
+    MCAPI void postLoadItems_DEPRECATEDASKTYLAING$(class BlockPalette& blockPalette, bool isClientSide);
+
+    MCAPI static class BidirectionalUnorderedMap<::ItemStackRequestActionType, std::string> const& actionTypeMap();
 
     // NOLINTEND
 };

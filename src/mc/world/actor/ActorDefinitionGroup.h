@@ -35,6 +35,13 @@ public:
         MCAPI ~LoadActorResult();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -132,6 +139,18 @@ public:
     MCAPI void _setupCommonResourceDefinitionMap(class ActorDefinition& def, class Level& level);
 
     MCAPI void _setupPropertyGroups(class Level& level);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
     // NOLINTEND
 };

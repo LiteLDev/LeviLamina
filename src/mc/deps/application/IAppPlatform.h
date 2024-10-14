@@ -23,4 +23,11 @@ public:
     virtual ~IAppPlatform();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

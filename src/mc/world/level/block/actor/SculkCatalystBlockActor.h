@@ -44,15 +44,49 @@ public:
 
     MCAPI class SculkSpreader& getSculkSpreader();
 
-    MCAPI static ::BlockActorType const TypeId;
-
-    MCAPI static std::string const TypeString;
-
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI void _tryConsumeOnDeathExperience(class Level& level, class Actor& actor);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForBlockActor();
+
+    MCAPI static void** $vftableForGameEventListener();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI ::GameEventListener::DeliveryMode getDeliveryMode$() const;
+
+    MCAPI class GameEvents::PositionSource const& getPositionSource$() const;
+
+    MCAPI uint getRange$() const;
+
+    MCAPI void handleGameEvent$(
+        class GameEvent const&         gameEvent,
+        struct GameEventContext const& gameEventContext,
+        class BlockSource&             region
+    );
+
+    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void onRemoved$(class BlockSource& region);
+
+    MCAPI bool save$(class CompoundTag& tag) const;
+
+    MCAPI void tick$(class BlockSource& region);
+
+    MCAPI static ::BlockActorType const& TypeId();
+
+    MCAPI static std::string const& TypeString();
 
     // NOLINTEND
 };

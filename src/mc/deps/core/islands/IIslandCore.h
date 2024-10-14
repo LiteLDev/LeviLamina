@@ -43,6 +43,15 @@ public:
     virtual void processActivationArguments(class Bedrock::ActivationArguments const& args) = 0;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock

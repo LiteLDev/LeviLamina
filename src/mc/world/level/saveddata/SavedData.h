@@ -19,4 +19,13 @@ public:
     virtual void serialize(class CompoundTag& tag) const = 0;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

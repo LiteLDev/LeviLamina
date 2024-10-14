@@ -48,4 +48,26 @@ public:
     MCAPI UnderwaterTorchBlock(std::string const& nameId, int id);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void animateTickBedrockLegacy$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+
+    MCAPI bool canBeUsedInCommands$(class BaseGameVersion const&) const;
+
+    MCAPI bool canContainLiquid$() const;
+
+    MCAPI bool isWaterBlocking$() const;
+
+    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    // NOLINTEND
 };

@@ -60,4 +60,26 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+
+    MCAPI void aiStep$();
+
+    MCAPI bool checkSpawnRules$(bool fromSpawner);
+
+    MCAPI void normalTick$();
+
+    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    // NOLINTEND
 };

@@ -42,13 +42,28 @@ public:
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptHealthComponent>
     bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
 
-    MCAPI static char const* ComponentId;
-
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI void notifyHealthChange(float oldValue, float newValue) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI class Scripting::Result<void> resetToDefaultValue$() const;
+
+    MCAPI class Scripting::Result<void> resetToMaxValue$() const;
+
+    MCAPI class Scripting::Result<void> resetToMinValue$() const;
+
+    MCAPI class Scripting::Result<bool> setCurrent$(float const& value) const;
+
+    MCAPI static char const* const& ComponentId();
 
     // NOLINTEND
 };

@@ -37,6 +37,22 @@ public:
     MCAPI explicit Manager(class IMinecraftApp& minecraftApp);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI Bedrock::NotNullNonOwnerPtr<class Automation::AutomationClient> getAutomationClient$() const;
+
+    MCAPI Bedrock::NotNullNonOwnerPtr<class CodeBuilder::IMessenger> getEventing$() const;
+
+    // NOLINTEND
 };
 
 }; // namespace CodeBuilder

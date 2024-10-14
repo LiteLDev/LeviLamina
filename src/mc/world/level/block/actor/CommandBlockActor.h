@@ -113,4 +113,39 @@ public:
     MCAPI void _setAutomatic(class BlockSource& region, bool alwaysActive, ::CommandBlockMode currentMode);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource& region);
+
+    MCAPI void _onUpdatePacket$(class CompoundTag const& tag, class BlockSource& region);
+
+    MCAPI bool _playerCanUpdate$(class Player const& player) const;
+
+    MCAPI std::string const& getCustomName$() const;
+
+    MCAPI std::string const& getFilteredCustomName$(Bedrock::NotNullNonOwnerPtr<class UIProfanityContext> const& context
+    );
+
+    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void
+    loadBlockData$(class CompoundTag const& tag, class BlockSource& region, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void onChanged$(class BlockSource& region);
+
+    MCAPI void onCustomTagLoadDone$(class BlockSource& region);
+
+    MCAPI void onPlace$(class BlockSource& region);
+
+    MCAPI bool save$(class CompoundTag& tag) const;
+
+    MCAPI void saveBlockData$(class CompoundTag& tag, class BlockSource& region) const;
+
+    MCAPI void setCustomName$(std::string const& str);
+
+    // NOLINTEND
 };

@@ -16,6 +16,13 @@ public:
     MCAPI ~ScriptData();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace Scripting

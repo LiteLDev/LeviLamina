@@ -46,6 +46,27 @@ public:
     virtual uint64 hash() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI std::unique_ptr<class Tag> copy$() const;
+
+    MCAPI bool equals$(class Tag const& rhs) const;
+
+    MCAPI ::Tag::Type getId$() const;
+
+    MCAPI uint64 hash$() const;
+
+    MCAPI class Bedrock::Result<void> load$(class IDataInput& dis);
+
+    MCAPI std::string toString$() const;
+
+    MCAPI void write$(class IDataOutput& dos) const;
+
+    // NOLINTEND
 };
 namespace ll::inline literals::inline nbt_literals {
 [[nodiscard]] inline DoubleTag operator""_d(ldouble num) noexcept { return DoubleTag{(double)num}; }

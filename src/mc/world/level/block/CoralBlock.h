@@ -44,9 +44,29 @@ public:
 
     MCAPI CoralBlock(std::string const& nameId, int id);
 
-    MCAPI static int const DEAD_CORAL_BIT;
+    // NOLINTEND
 
-    MCAPI static int const DEAD_CORAL_OFFSET;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool mayPlaceOn$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
+
+    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+
+    MCAPI static int const& DEAD_CORAL_BIT();
+
+    MCAPI static int const& DEAD_CORAL_OFFSET();
 
     // NOLINTEND
 };

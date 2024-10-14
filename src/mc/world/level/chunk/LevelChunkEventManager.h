@@ -40,4 +40,23 @@ public:
     MCAPI void onChunkReloaded(class ChunkSource& chunkSource, class LevelChunk& levelChunk);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class Bedrock::PubSub::Connector<void(class LevelChunk&)>& getOnChunkDiscardedConnector$();
+
+    MCAPI class Bedrock::PubSub::Connector<void(class ChunkSource&, class LevelChunk&, int)>&
+    getOnChunkLoadedConnector$();
+
+    MCAPI class Bedrock::PubSub::Connector<void(class ChunkSource&, class LevelChunk&)>& getOnChunkReloadedConnector$();
+
+    // NOLINTEND
 };

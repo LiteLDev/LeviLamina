@@ -44,4 +44,15 @@ public:
     virtual void updateInfluences() = 0;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI uint registerForUpdates$();
+
+    // NOLINTEND
 };

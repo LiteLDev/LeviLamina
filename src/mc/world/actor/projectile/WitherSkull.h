@@ -64,4 +64,28 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+
+    MCAPI bool canDestroyBlock$(class Block const& block) const;
+
+    MCAPI float getInertia$();
+
+    MCAPI void initializeComponents$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI bool isOnFire$() const;
+
+    MCAPI bool shouldBurn$();
+
+    // NOLINTEND
 };

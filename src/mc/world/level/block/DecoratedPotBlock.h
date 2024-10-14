@@ -75,4 +75,40 @@ public:
     MCAPI static bool isShatteringItem(class ItemStack const& item);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const* blockActor) const;
+
+    MCAPI bool canContainLiquid$() const;
+
+    MCAPI bool canProvideSupport$(class Block const&, uchar face, ::BlockSupportType type) const;
+
+    MCAPI bool checkIsPathable$(class Actor&, class BlockPos const&, class BlockPos const&) const;
+
+    MCAPI int
+    getComparatorSignal$(class BlockSource& region, class BlockPos const& pos, class Block const&, uchar) const;
+
+    MCAPI bool hasComparatorSignal$() const;
+
+    MCAPI bool isInteractiveBlock$() const;
+
+    MCAPI void onProjectileHit$(class BlockSource& region, class BlockPos const& pos, class Actor const&) const;
+
+    MCAPI void onRemove$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI class Block const*
+    playerWillDestroy$(class Player& player, class BlockPos const& pos, class Block const& block) const;
+
+    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar) const;
+
+    // NOLINTEND
 };

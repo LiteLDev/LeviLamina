@@ -10,10 +10,13 @@ namespace LegacyBlockIdMappingUtils {
 MCAPI void addLegacyBlockIdMapping(class BlockLegacy const& legacyBlock, uint64 legacyId);
 
 MCAPI void addLegacyBlockIdMappings();
+// NOLINTEND
 
-MCAPI extern std::unordered_map<uint, class WeakPtr<class BlockLegacy const>> mBlockIdToVanillaBlockTypesMap;
+// thunks
+// NOLINTBEGIN
+MCAPI std::unordered_map<uint, class WeakPtr<class BlockLegacy const>>& mBlockIdToVanillaBlockTypesMap();
 
-MCAPI extern std::unordered_map<std::string, int> mBlockNameToBlockIdMap;
+MCAPI std::unordered_map<std::string, int>& mBlockNameToBlockIdMap();
 // NOLINTEND
 
 }; // namespace LegacyBlockIdMappingUtils

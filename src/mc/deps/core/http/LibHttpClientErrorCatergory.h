@@ -41,6 +41,23 @@ public:
     MCAPI static class Bedrock::Http::Response makeErrorResponse(long);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI std::error_condition default_error_condition$(int) const;
+
+    MCAPI bool equivalent$(int, std::error_condition const&) const;
+
+    MCAPI bool equivalent$(std::error_code const&, int) const;
+
+    MCAPI std::string message$(int condition) const;
+
+    MCAPI char const* name$() const;
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::Http

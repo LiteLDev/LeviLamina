@@ -70,9 +70,31 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class mce::UUID const SPEED_MODIFIER_ATTACK_UUID;
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool canBeAffected$(uint effectId) const;
+
+    MCAPI bool canFreeze$() const;
+
+    MCAPI void die$(class ActorDamageSource const& source);
+
+    MCAPI bool doHurtTarget$(class Actor* target, ::ActorDamageCause const& cause);
+
+    MCAPI void getDebugText$(std::vector<std::string>& outputInfo);
+
+    MCAPI void normalTick$();
+
+    MCAPI void setTarget$(class Actor* target);
+
+    MCAPI static class mce::UUID const& SPEED_MODIFIER_ATTACK_UUID();
 
     // NOLINTEND
 };

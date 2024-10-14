@@ -175,4 +175,30 @@ public:
     MCAPI void tickSimtime(int nTick, int maxTick);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI class StackRefResult<class EntityRegistry> getEntityRegistry$();
+
+    MCAPI class StackRefResult<class EntityRegistry const> getEntityRegistry$() const;
+
+    MCAPI bool getSimPaused$() const;
+
+    MCAPI bool isOnlineClient$() const;
+
+    MCAPI void setSimTimePause$(bool pause);
+
+    MCAPI void setSimTimeScale$(float scale);
+
+    // NOLINTEND
 };

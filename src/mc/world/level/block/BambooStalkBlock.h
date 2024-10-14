@@ -110,4 +110,59 @@ public:
     MCAPI ::StalkThickness _getStalkThickness(class Block const& block) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool canBeFertilized$(class BlockSource&, class BlockPos const&, class Block const&) const;
+
+    MCAPI bool canContainLiquid$() const;
+
+    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI class AABB
+    getCollisionShape$(class Block const& block, class IConstBlockSource const&, class BlockPos const& pos, class optional_ref<class GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI class AABB const& getOutline$(
+        class Block const& block,
+        class IConstBlockSource const&,
+        class BlockPos const& pos,
+        class AABB&           bufferValue
+    ) const;
+
+    MCAPI class Block const&
+    getPlacementBlock$(class Actor const& by, class BlockPos const& pos, uchar, class Vec3 const&, int) const;
+
+    MCAPI class AABB const& getVisualShape$(class Block const& block, class AABB&) const;
+
+    MCAPI bool isValidAuxValue$(int auxValue) const;
+
+    MCAPI bool isWaterBlocking$() const;
+
+    MCAPI bool mayConsumeFertilizer$(class BlockSource&) const;
+
+    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
+
+    MCAPI bool
+    onFertilized$(class BlockSource& region, class BlockPos const& pos, class Actor*, ::FertilizerType) const;
+
+    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void randomTick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI class Vec3 randomlyModifyPosition$(class BlockPos const& pos) const;
+
+    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+
+    // NOLINTEND
 };

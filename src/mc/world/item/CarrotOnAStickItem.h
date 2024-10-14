@@ -47,4 +47,26 @@ public:
     MCAPI CarrotOnAStickItem(std::string const& name, short id);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI int getEnchantSlot$() const;
+
+    MCAPI int getEnchantValue$() const;
+
+    MCAPI void hurtActor$(class ItemStack&, class Actor&, class Mob&) const;
+
+    MCAPI bool isHandEquipped$() const;
+
+    MCAPI bool requiresInteract$() const;
+
+    // NOLINTEND
 };

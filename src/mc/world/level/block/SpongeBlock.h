@@ -73,4 +73,34 @@ public:
     MCAPI void _spawnAbsorbParticles(class BlockSource& region, class BlockPos const& pos) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void
+    animateTickBedrockLegacy$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI class ItemInstance asItemInstance$(class Block const& block, class BlockActor const*) const;
+
+    MCAPI std::string buildDescriptionId$(class Block const& block) const;
+
+    MCAPI bool isAuxValueRelevantForPicking$() const;
+
+    MCAPI bool isValidAuxValue$(int value) const;
+
+    MCAPI void
+    neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
+
+    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    // NOLINTEND
 };

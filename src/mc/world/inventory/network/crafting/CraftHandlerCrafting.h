@@ -47,4 +47,20 @@ public:
     _handleCraftOutput(class ItemStackRequestActionCraft<RecipeNetId, 12> const& requestAction);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI class Recipes const* _getLevelRecipes$() const;
+
+    MCAPI ::ItemStackNetResult _handleCraftAction$(class ItemStackRequestActionCraftBase const& requestAction);
+
+    MCAPI ::ItemStackNetResult
+    handleConsumedItem$(::ContainerEnumName openContainerNetId, uchar slot, class ItemStack const& consumedItem);
+
+    MCAPI ::ItemStackNetResult preHandleAction$(::ItemStackRequestActionType requestActionType);
+
+    // NOLINTEND
 };

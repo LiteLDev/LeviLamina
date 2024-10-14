@@ -46,4 +46,17 @@ public:
     MCAPI void _visualizeFailedTest(struct gametest::GameTestError const& error, class BlockSource&);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void onTestFailed$(class gametest::BaseGameTestInstance& testInstance);
+
+    MCAPI void onTestPassed$(class gametest::BaseGameTestInstance& testInstance);
+
+    MCAPI void onTestStructureLoaded$(class gametest::BaseGameTestInstance& testInstance);
+
+    // NOLINTEND
 };

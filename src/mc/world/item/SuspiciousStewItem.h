@@ -45,4 +45,16 @@ public:
     MCAPI static std::array<class MobEffectInstance, 11> const& _getStewEffects();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool uniqueAuxValues$() const;
+
+    MCAPI ::ItemUseMethod
+    useTimeDepleted$(class ItemStack& inoutInstance, class Level* level, class Player* player) const;
+
+    // NOLINTEND
 };

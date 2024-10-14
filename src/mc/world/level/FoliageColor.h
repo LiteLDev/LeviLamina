@@ -42,27 +42,28 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class mce::Color const FOLIAGE_BOTTOM_LEFT;
+    MCAPI static class mce::Color const& FOLIAGE_BOTTOM_LEFT();
 
-    MCAPI static class mce::Color const FOLIAGE_BOTTOM_RIGHT;
+    MCAPI static class mce::Color const& FOLIAGE_BOTTOM_RIGHT();
 
-    MCAPI static class mce::Color const FOLIAGE_TOP_LEFT;
+    MCAPI static class mce::Color const& FOLIAGE_TOP_LEFT();
 
-    MCAPI static class mce::Color const FOLIAGE_TOP_RIGHT;
+    MCAPI static class mce::Color const& FOLIAGE_TOP_RIGHT();
 
-    MCAPI static class mce::Color const GRASS_BOTTOM_LEFT;
+    MCAPI static class mce::Color const& GRASS_BOTTOM_LEFT();
 
-    MCAPI static class mce::Color const GRASS_BOTTOM_RIGHT;
+    MCAPI static class mce::Color const& GRASS_BOTTOM_RIGHT();
 
-    MCAPI static class mce::Color const GRASS_TOP_LEFT;
+    MCAPI static class mce::Color const& GRASS_TOP_LEFT();
 
-    MCAPI static class mce::Color const GRASS_TOP_RIGHT;
+    MCAPI static class mce::Color const& GRASS_TOP_RIGHT();
 
-    MCAPI static std::array<std::unique_ptr<std::array<int, 65536>>, 5> mFoliagePalettes;
+    MCAPI static std::array<std::unique_ptr<std::array<int, 65536>>, 5>& mFoliagePalettes();
 
-    MCAPI static std::array<std::unique_ptr<std::array<int, 65536>>, 5> mGrassPalettes;
+    MCAPI static std::array<std::unique_ptr<std::array<int, 65536>>, 5>& mGrassPalettes();
 
     // NOLINTEND
 };

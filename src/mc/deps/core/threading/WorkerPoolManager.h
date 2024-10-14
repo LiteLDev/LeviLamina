@@ -16,6 +16,13 @@ public:
     MCVAPI ~WorkerPoolManager();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock

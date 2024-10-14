@@ -139,4 +139,91 @@ public:
     MCAPI AppConfigs();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI bool allowGameArguments$() const;
+
+    MCAPI void applyLevelDataOverride$(class LevelData&) const;
+
+    MCAPI bool areEmotesSupported$() const;
+
+    MCAPI bool arePremiumSkinPacksAllowed$() const;
+
+    MCAPI bool areResourcePacksAllowed$() const;
+
+    MCAPI bool canUseAzureNotebooks$() const;
+
+    MCAPI ::AppConfigs::MaelstromEduUsabilityStatus canUseMaelstrom$() const;
+
+    MCAPI std::unique_ptr<class IContentAccessibilityProvider>
+          createContentAccessibility$(Bedrock::NotNullNonOwnerPtr<class IEntitlementManager> entitlementManager) const;
+
+    MCAPI bool gameArgumentsNeedAuthentication$() const;
+
+    MCAPI std::vector<struct PackIdVersion> getAdditionalClientPacks$(bool enteringLevel) const;
+
+    MCAPI struct ConnectionDefinition getConnectionDefinition$() const;
+
+    MCAPI ::EducationEditionOffer getEducationEditionOffering$() const;
+
+    MCAPI std::string getFeedbackURL$() const;
+
+    MCAPI std::string getHelpCenterURL$() const;
+
+    MCAPI std::unique_ptr<class IScreenCapabilities> getScreenCapabilities$(std::string const& screenName) const;
+
+    MCAPI bool isChatScreenAllowed$() const;
+
+    MCAPI bool isCoursesCacheEnabled$() const;
+
+    MCAPI bool isExternalPlayerCommunicationAllowed$() const;
+
+    MCAPI bool isGameTabShownInSettings$() const;
+
+    MCAPI bool isPlayScreenAllowed$() const;
+
+    MCAPI bool isSaveToCloudOn$() const;
+
+    MCAPI void loadFromData$(class IAppConfigData const&);
+
+    MCAPI bool muteByDefault$() const;
+
+    MCAPI bool requireEduLevelSettings$() const;
+
+    MCAPI bool requireTrustedContent$() const;
+
+    MCAPI bool sendPermissionsTelemetry$() const;
+
+    MCAPI void setCanAccessWorldCallback$(class IMinecraftGame& minecraftGame);
+
+    MCAPI bool shouldPromptBeforeExit$() const;
+
+    MCAPI bool supports3DExport$() const;
+
+    MCAPI bool supportsChangingMultiplayerDuringPlay$() const;
+
+    MCAPI bool useEduDemoUpsellDialog$() const;
+
+    MCAPI bool useFullScreenByDefault$() const;
+
+    MCAPI bool useNormalizedFontSize$() const;
+
+    MCAPI bool webSocketsDisabled$() const;
+
+    MCAPI bool worldBuilderDisabled$() const;
+
+    MCAPI bool worldsAreSingleUse$() const;
+
+    // NOLINTEND
 };

@@ -42,6 +42,25 @@ public:
     MCAPI void setData(gsl::span<uchar const>);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void cancel$();
+
+    MCAPI gsl::span<uchar const> getLoggableData$() const;
+
+    MCAPI std::string const& getLoggableSource$() const;
+
+    MCAPI uint64 getSize$();
+
+    MCAPI struct Bedrock::Http::Internal::IRequestBody::ReadResult read$(gsl::span<uchar>);
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::Http

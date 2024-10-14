@@ -91,4 +91,34 @@ public:
     MCAPI void _avoidSnowBury();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+
+    MCAPI ::Puv::Legacy::LevelSoundEvent getAmbientSound$() const;
+
+    MCAPI void handleEntityEvent$(::ActorEvent id, int data);
+
+    MCAPI bool isAlliedTo$(class Mob* other);
+
+    MCAPI bool load$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void newServerAiStep$();
+
+    MCAPI void onBorn$(class Actor&, class Actor& parentRight);
+
+    MCAPI void onSynchedDataUpdate$(int dataId);
+
+    MCAPI void setSitting$(bool value);
+
+    // NOLINTEND
 };

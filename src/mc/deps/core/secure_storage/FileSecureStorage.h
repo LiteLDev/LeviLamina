@@ -40,6 +40,17 @@ public:
         virtual ~StorageSystem() = default;
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        MCAPI bool getData$(std::string& output, class Core::Path path);
+
+        MCAPI void setData$(std::string const& data, class Core::Path path);
+
+        // NOLINTEND
     };
 
     class FileStorageSystem : public ::FileSecureStorage::StorageSystem {
@@ -59,6 +70,17 @@ public:
 
         // vIndex: 2
         virtual ~FileStorageSystem() = default;
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        MCAPI bool getData$(std::string& output, class Core::Path path);
+
+        MCAPI void setData$(std::string const& data, class Core::Path path);
 
         // NOLINTEND
     };
@@ -111,6 +133,26 @@ public:
     MCAPI void _initalizeSymmetricEncyrption(std::string& symmetricKey, bool force);
 
     MCAPI void _rebuildSecureStorageFile();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool add$(std::string const& key, std::string const& value);
+
+    MCAPI bool addOrUpdate$(std::string const& key, std::string const& value);
+
+    MCAPI bool get$(std::string const& key, std::string& outValue);
+
+    MCAPI bool remove$(std::string const& key);
 
     // NOLINTEND
 };

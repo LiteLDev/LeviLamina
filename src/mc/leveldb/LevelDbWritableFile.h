@@ -40,4 +40,24 @@ public:
     MCAPI leveldb::Status SyncDirIfManifest();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI leveldb::Status Append$(leveldb::Slice const& slice);
+
+    MCAPI leveldb::Status Close$();
+
+    MCAPI leveldb::Status Flush$();
+
+    MCAPI leveldb::Status Sync$();
+
+    // NOLINTEND
 };

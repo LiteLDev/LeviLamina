@@ -52,4 +52,40 @@ public:
     MCAPI LevelChunkSaveManagerProxy(class Random& random, class Scheduler& scheduler);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool doesLevelChunkNeedSaving$(
+        class LevelChunk const& levelChunk,
+        int                     minTicksBeforeLiveSave,
+        int                     maxTicksBeforeLiveSave
+    ) const;
+
+    MCAPI bool doesNonActorDataInLevelChunkNeedSaving$(
+        class LevelChunk const& levelChunk,
+        int                     minTicksBeforeLiveSave,
+        int                     maxTicksBeforeLiveSave
+    ) const;
+
+    MCAPI std::shared_ptr<class LevelChunk> getChunk$(class Dimension& dimension, class ChunkPos const& chunkPos) const;
+
+    MCAPI std::shared_ptr<class LevelChunk> getRandomChunk$(class Dimension& dimension) const;
+
+    MCAPI class WeakRef<class Dimension> getRandomDimension$(class DimensionManager& dimensionManager) const;
+
+    MCAPI void queueTaskForChunkSave$(std::function<class TaskResult()> task);
+
+    MCAPI void saveLiveChunk$(class Dimension& dimension, class LevelChunk& levelChunk);
+
+    MCAPI void startLeaveGame$();
+
+    // NOLINTEND
 };

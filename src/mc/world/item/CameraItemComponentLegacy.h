@@ -81,4 +81,42 @@ public:
     ) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI float blackBarsDuration$() const;
+
+    MCAPI float blackBarsScreenRatio$() const;
+
+    MCAPI bool
+    canPlace$(class ItemStack const& instance, class Actor& actor, class BlockPos const& blockPos, uchar face) const;
+
+    MCAPI float pictureDuration$() const;
+
+    MCAPI void registerCallbacks$(class CameraCallbacks* callbacks);
+
+    MCAPI void releaseUsing$(class ItemStack& instance, class Player& player, int durationLeft);
+
+    MCAPI float shutterDuration$() const;
+
+    MCAPI float shutterScreenRatio$() const;
+
+    MCAPI float slideAwayDuration$() const;
+
+    MCAPI void takePictureNow$(class Player& player, class Actor* camera, class Actor* target);
+
+    MCAPI void use$(class ItemStack& instance, class Player& player);
+
+    MCAPI bool
+    useOn$(class ItemStack& instance, class Actor& actor, class BlockPos const& blockPos, uchar face, class Vec3 const&);
+
+    // NOLINTEND
 };

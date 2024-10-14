@@ -17,7 +17,12 @@ public:
 
     MCAPI static struct ActorUniqueID fromUUID(class mce::UUID const& uuid);
 
-    MCAPI static struct ActorUniqueID const INVALID_ID;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static struct ActorUniqueID const& INVALID_ID();
 
     // NOLINTEND
 };

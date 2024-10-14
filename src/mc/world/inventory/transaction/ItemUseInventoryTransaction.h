@@ -64,10 +64,30 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class BidirectionalUnorderedMap<::ItemUseInventoryTransaction::ActionType, std::string> const
-        actionTypeMap;
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI ::InventoryTransactionError handle$(class Player& player, bool isSenderAuthority) const;
+
+    MCAPI void onTransactionError$(class Player& player, ::InventoryTransactionError error) const;
+
+    MCAPI void postLoadItems$(class BlockPalette& blockPalette, bool isClientSide);
+
+    MCAPI class Bedrock::Result<void> read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI void write$(class BinaryStream& stream) const;
+
+    MCAPI static class BidirectionalUnorderedMap<::ItemUseInventoryTransaction::ActionType, std::string> const&
+    actionTypeMap();
 
     // NOLINTEND
 };

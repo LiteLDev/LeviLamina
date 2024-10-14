@@ -34,6 +34,13 @@ public:
         MCAPI ~ValidationError();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     using TagDataNotFoundCallback = std::function<void(GameRule&)>;
@@ -116,6 +123,18 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI bool _set(union GameRule::Value const& v, bool* pValidated, class GameRule::ValidationError* errorOutput);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

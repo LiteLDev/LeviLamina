@@ -33,4 +33,13 @@ public:
     virtual void fixupCommon(class ItemStackBase& stack) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void fixupCommon$(class ItemStackBase& stack) const;
+
+    // NOLINTEND
 };

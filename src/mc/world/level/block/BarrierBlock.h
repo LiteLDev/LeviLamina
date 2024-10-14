@@ -42,4 +42,22 @@ public:
     MCAPI BarrierBlock(std::string const& nameId, int id);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool canConnect$(class Block const& otherBlock, uchar toOther, class Block const& thisBlock) const;
+
+    MCAPI bool canContainLiquid$() const;
+
+    MCAPI float getShadeBrightness$(class Block const&) const;
+
+    // NOLINTEND
 };

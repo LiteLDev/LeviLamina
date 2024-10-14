@@ -200,6 +200,29 @@ public:
     virtual ::EventResult onEvent(struct PlayerInitialSpawnEvent const& initialSpawnEvent);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI ::EventResult onEvent$(struct PlayerGameModeChangeEvent const& playerGameModeChangeEvent);
+
+    MCAPI ::EventResult onEvent$(struct PlayerNotificationEvent const& event);
+
+    MCAPI ::EventResult onEvent$(struct PlayerDimensionChangeAfterEvent const& playerDimensionChangeEvent);
+
+    MCAPI ::EventResult onEvent$(struct PlayerInteractWithEntityAfterEvent const& playerInteractWithEntityEvent);
+
+    MCAPI ::EventResult onEvent$(struct PlayerInteractWithBlockAfterEvent const& playerInteractWithBlockEvent);
+
+    MCAPI ::EventResult onEvent$(struct PlayerInputPermissionCategoryChangeEvent const& event);
+
+    MCAPI ::EventResult onEvent$(struct PlayerRespawnEvent const& respawnEvent);
+
+    MCAPI ::EventResult onEvent$(struct PlayerInitialSpawnEvent const& initialSpawnEvent);
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

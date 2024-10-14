@@ -231,4 +231,35 @@ public:
     MCAPI bool _trySwing();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::shared_ptr<class ChunkViewSource> _createChunkSource$(class ChunkSource& mainChunkSource);
+
+    MCAPI int _getSpawnChunkLimit$() const;
+
+    MCAPI void _updateChunkPublisherView$(class Vec3 const&, float);
+
+    MCAPI void aiStep$();
+
+    MCAPI struct PlayerMovementSettings const& getMovementSettings$() const;
+
+    MCAPI std::string getXuid$() const;
+
+    MCAPI void initializeComponents$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI bool isSimulated$() const;
+
+    MCAPI void
+    teleportTo$(class Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
+
+    // NOLINTEND
 };

@@ -30,13 +30,21 @@ public:
 
     MCAPI static std::string const& getRealmEventInternalName(::RealmEventId eventId);
 
-    MCAPI static std::string const REALMS_STORIES_PREFIX;
-
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::map<::RealmEventId, std::string> const mRealmEventInternalNames;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static std::string const& REALMS_STORIES_PREFIX();
+
+    MCAPI static std::map<::RealmEventId, std::string> const& mRealmEventInternalNames();
 
     // NOLINTEND
 };

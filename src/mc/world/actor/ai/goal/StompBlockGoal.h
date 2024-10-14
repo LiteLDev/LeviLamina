@@ -61,4 +61,39 @@ public:
     virtual void _playDestroySound(class Level& level, class BlockSource& region, class BlockPos pos);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool _canReach$(class BlockPos const& pos);
+
+    MCAPI void _createBreakProgressParticles$(class Level& level, class BlockSource& region, class BlockPos pos);
+
+    MCAPI void _createDestroyParticles$(class Level& level, class BlockSource& region, class BlockPos pos);
+
+    MCAPI void _moveToBlock$();
+
+    MCAPI void _playBreakProgressSound$(class Level& level, class BlockSource& region, class BlockPos pos);
+
+    MCAPI void _playDestroySound$(class Level& level, class BlockSource& region, class BlockPos pos);
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI bool findTargetBlock$();
+
+    MCAPI bool isValidTarget$(class BlockSource& region, class BlockPos const& pos);
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
+
+    MCAPI void tick$();
+
+    // NOLINTEND
 };

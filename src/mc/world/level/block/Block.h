@@ -473,10 +473,6 @@ public:
 
     MCAPI bool waterSpreadCausesSpawn() const;
 
-    MCAPI static std::string const BLOCK_DESCRIPTION_PREFIX;
-
-    MCAPI static float const SIZE_OFFSET;
-
     // NOLINTEND
 
     // protected:
@@ -499,6 +495,24 @@ public:
     MCAPI void _removeFromTickingQueues(class BlockSource& region, class BlockPos const& pos) const;
 
     MCAPI void entityInside(class BlockSource& region, class BlockPos const& pos, class Actor& entity) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI ::BlockRenderLayer getRenderLayer$() const;
+
+    MCAPI static std::string const& BLOCK_DESCRIPTION_PREFIX();
+
+    MCAPI static float const& SIZE_OFFSET();
 
     // NOLINTEND
 };

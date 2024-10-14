@@ -35,4 +35,19 @@ public:
     createMapSavedData(struct ActorUniqueID const& uuid, class BlockPos const& origin, DimensionType dimension);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI class Level* asLevel$();
+
+    MCAPI class MultiPlayerLevel* asMultiPlayerLevel$();
+
+    MCAPI class TradeTables* getTradeTables$();
+
+    // NOLINTEND
 };

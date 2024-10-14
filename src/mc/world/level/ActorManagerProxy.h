@@ -17,4 +17,11 @@ public:
     MCVAPI void removeActor(class Actor& actor);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void removeActor$(class Actor& actor);
+
+    // NOLINTEND
 };

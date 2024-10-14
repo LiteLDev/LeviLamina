@@ -45,4 +45,37 @@ public:
     MCAPI NetherFortressFeature(uint& seed, class BaseGameVersion const& baseGameVersion);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::unique_ptr<class StructureStart> createStructureStart$(
+        class Dimension&                         generator,
+        class BiomeSource const&                 biomeSource,
+        class Random&                            random,
+        class ChunkPos const&                    cp,
+        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+    );
+
+    MCAPI void initMobSpawnTypes$(class HardcodedSpawnAreaRegistry& spawnAreas);
+
+    MCAPI bool isFeatureChunk$(
+        class BiomeSource const&                 biomeSource,
+        class Random&                            random,
+        class ChunkPos const&                    chunkPos,
+        uint                                     levelSeed,
+        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        class Dimension const&                   dimension
+    );
+
+    MCAPI bool shouldAddHardcodedSpawnAreas$() const;
+
+    // NOLINTEND
 };

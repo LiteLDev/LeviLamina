@@ -32,6 +32,17 @@ public:
     virtual void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const& parameters) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void buildSurfaceAt$(struct ISurfaceBuilder::BuildParameters const& parameters) const;
+
+    MCAPI void init$(class Biome& biome, uint);
+
+    // NOLINTEND
 };
 
 }; // namespace VanillaSurfaceBuilders

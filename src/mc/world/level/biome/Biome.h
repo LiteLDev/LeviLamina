@@ -109,17 +109,29 @@ public:
 
     MCAPI static void buildCachedTemperatureNoise(class LevelChunk& chunk);
 
-    MCAPI static std::string_view const BACKCOMPAT_FOG_NAME;
+    // NOLINTEND
 
-    MCAPI static class mce::Color const DEFAULT_FOG_COLOR;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
 
-    MCAPI static std::string_view const DEFAULT_FOG_ID;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static class mce::Color const DEFAULT_UNDERWATER_COLOR;
+    MCAPI static std::string_view const& BACKCOMPAT_FOG_NAME();
 
-    MCAPI static class mce::Color const DEFAULT_WATER_COLOR;
+    MCAPI static class mce::Color const& DEFAULT_FOG_COLOR();
 
-    MCAPI static float const RAIN_TEMP_THRESHOLD;
+    MCAPI static std::string_view const& DEFAULT_FOG_ID();
+
+    MCAPI static class mce::Color const& DEFAULT_UNDERWATER_COLOR();
+
+    MCAPI static class mce::Color const& DEFAULT_WATER_COLOR();
+
+    MCAPI static float const& RAIN_TEMP_THRESHOLD();
 
     // NOLINTEND
 };

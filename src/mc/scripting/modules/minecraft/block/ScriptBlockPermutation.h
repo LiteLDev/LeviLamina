@@ -96,6 +96,13 @@ public:
     _createPropertyV010(std::string const& propertyName);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

@@ -94,4 +94,24 @@ public:
     MCAPI void unpackLootTable(class Level& level, DimensionType dimensionId);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForContainerCloseListener();
+
+    MCAPI static void** $vftableForContainerContentChangeListener();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void containerClosed$(class Player& player);
+
+    MCAPI void containerContentChanged$(int iSlot);
+
+    // NOLINTEND
 };

@@ -53,4 +53,31 @@ public:
     MCAPI CarrotBlock(std::string const& nameId, int id);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class ItemInstance const getBaseSeed$() const;
+
+    MCAPI class AABB const& getOutline$(
+        class Block const& block,
+        class IConstBlockSource const&,
+        class BlockPos const& pos,
+        class AABB&           bufferValue
+    ) const;
+
+    MCAPI ::BlockRenderLayer getRenderLayer$() const;
+
+    MCAPI ::BlockRenderLayer getRenderLayer$(class Block const&, class BlockSource&, class BlockPos const&) const;
+
+    MCAPI int getVariant$(class Block const& block) const;
+
+    // NOLINTEND
 };

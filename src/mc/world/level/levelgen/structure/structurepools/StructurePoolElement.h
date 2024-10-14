@@ -42,6 +42,16 @@ public:
         );
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        // NOLINTEND
     };
 
 public:
@@ -153,6 +163,66 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI class StructurePoolElement::LazyTemplate const& _getTemplate() const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI class BoundingBox getBoundingBox$(class BlockPos position, ::Rotation rotation) const;
+
+    MCAPI std::vector<class JigsawBlockInfo> getJigsawMarkers$(class BlockPos position, ::Rotation rotation) const;
+
+    MCAPI std::vector<class JigsawBlockInfo>
+          getJigsawMarkers$(class BlockPos position, class LegacyStructureSettings& settings, class BlockSource* region)
+        const;
+
+    MCAPI ::PostProcessSettings getPostProcessSettings$() const;
+
+    MCAPI ::Projection getProjection$() const;
+
+    MCAPI class BlockPos getSize$(::Rotation rotation) const;
+
+    MCAPI void handleDataMarker$(
+        class BlockSource&                                                                   region,
+        class BlockPos                                                                       markerPos,
+        std::string                                                                          markerData,
+        std::unordered_map<class BlockPos, std::optional<struct ActorDefinitionIdentifier>>& entitiesToPlace
+    ) const;
+
+    MCAPI void handleJigsawBlock$(
+        class BlockSource&             region,
+        class JigsawBlockInfo&         jigsawBlock,
+        class LegacyStructureSettings& settings
+    ) const;
+
+    MCAPI bool isValid$() const;
+
+    MCAPI bool place$(
+        class BlockSource&                                                                   region,
+        class BlockPos                                                                       position,
+        ::Rotation                                                                           rotation,
+        class BoundingBox                                                                    chunkBB,
+        class Random&                                                                        random,
+        std::unordered_map<class BlockPos, std::optional<struct ActorDefinitionIdentifier>>& entitiesToPlace,
+        class BlockPos                                                                       refPos
+    ) const;
+
+    MCAPI void
+    placeActors$(class BlockSource& region, class BlockPos position, ::Rotation rotation, class Random& random) const;
+
+    MCAPI void setProjection$(::Projection projection);
+
+    MCAPI ::StructurePoolElementType type$() const;
 
     // NOLINTEND
 };

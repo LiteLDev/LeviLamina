@@ -68,4 +68,43 @@ public:
     MCAPI CarpetBlock(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI class ItemInstance asItemInstance$(class Block const& block, class BlockActor const*) const;
+
+    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool checkIsPathable$(class Actor&, class BlockPos const&, class BlockPos const&) const;
+
+    MCAPI class AABB getCollisionShape$(
+        class Block const&                                         block,
+        class IConstBlockSource const&                             region,
+        class BlockPos const&                                      pos,
+        class optional_ref<class GetCollisionShapeInterface const> entity
+    ) const;
+
+    MCAPI class AABB const& getVisualShape$(class Block const&, class AABB& bufferAABB) const;
+
+    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
+
+    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+
+    MCAPI bool waterSpreadCausesSpawn$() const;
+
+    // NOLINTEND
 };

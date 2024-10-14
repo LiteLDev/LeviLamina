@@ -42,6 +42,13 @@ public:
         );
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        // NOLINTEND
     };
 
 public:
@@ -76,6 +83,26 @@ public:
     MCAPI void _dropItem(class ItemStack const& item) const;
 
     MCAPI void _sendMobEquipmentPacket(class MobEquipmentPacket packet) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void tick$();
 
     // NOLINTEND
 };

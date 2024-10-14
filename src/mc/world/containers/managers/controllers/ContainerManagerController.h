@@ -11,9 +11,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static std::string_view const TRANSFER_NO_DESTINATION;
+    // NOLINTEND
 
-    MCAPI static std::string_view const TRANSFER_NO_ORIGIN;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static std::string_view const& TRANSFER_NO_DESTINATION();
+
+    MCAPI static std::string_view const& TRANSFER_NO_ORIGIN();
 
     // NOLINTEND
 };

@@ -46,4 +46,14 @@ public:
     _getDistanceUntilEdge(class BlockPos const& pos, ::Facing::Name direction, class BlockSource const& source) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    // NOLINTEND
 };

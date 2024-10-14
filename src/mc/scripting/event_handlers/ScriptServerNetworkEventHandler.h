@@ -45,4 +45,16 @@ public:
     ) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI struct GameplayHandlerResult<::CoordinatorResult> handleEvent$(struct ChatEvent& chatEvent);
+
+    MCAPI struct GameplayHandlerResult<::CoordinatorResult>
+    handleEvent$(struct MutableServerNetworkGameplayEvent<::CoordinatorResult>& event);
+
+    // NOLINTEND
 };

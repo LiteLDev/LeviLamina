@@ -53,10 +53,6 @@ public:
 
     MCAPI static bool canPortalReplaceBlock(class BlockSource& region, class BlockPos const& blockPos);
 
-    MCAPI static class BaseGameVersion const MIN_PORTAL_REPLACE_BLOCK_FIX_VERSION;
-
-    MCAPI static std::string const PORTAL_FILE_ID;
-
     // NOLINTEND
 
     // private:
@@ -67,6 +63,26 @@ public:
         int                   radius,
         class BlockPos&       targetBlockPos
     ) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void deserialize$(class CompoundTag const& tag);
+
+    MCAPI void serialize$(class CompoundTag& tag) const;
+
+    MCAPI static class BaseGameVersion const& MIN_PORTAL_REPLACE_BLOCK_FIX_VERSION();
+
+    MCAPI static std::string const& PORTAL_FILE_ID();
 
     // NOLINTEND
 };

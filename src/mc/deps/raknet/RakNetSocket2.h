@@ -46,6 +46,15 @@ public:
     MCAPI static void GetMyIP(struct RakNet::SystemAddress* const addresses);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void SetMulticastInterface$(int interfaceIndex);
+
+    // NOLINTEND
 };
 
 }; // namespace RakNet

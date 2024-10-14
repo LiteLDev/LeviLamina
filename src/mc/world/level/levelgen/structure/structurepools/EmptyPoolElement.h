@@ -44,4 +44,29 @@ public:
     MCAPI explicit EmptyPoolElement(Bedrock::NotNullNonOwnerPtr<class StructureManager> manager);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class BoundingBox getBoundingBox$(class BlockPos, ::Rotation) const;
+
+    MCAPI std::vector<class JigsawBlockInfo> getJigsawMarkers$(class BlockPos, ::Rotation) const;
+
+    MCAPI std::vector<class JigsawBlockInfo>
+          getJigsawMarkers$(class BlockPos, class LegacyStructureSettings&, class BlockSource*) const;
+
+    MCAPI class BlockPos getSize$(::Rotation) const;
+
+    MCAPI bool isValid$() const;
+
+    MCAPI ::StructurePoolElementType type$() const;
+
+    // NOLINTEND
 };

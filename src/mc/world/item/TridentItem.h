@@ -68,15 +68,50 @@ public:
     // vIndex: 78
     virtual void hurtActor(class ItemStack& item, class Actor& actor, class Mob& attacker) const;
 
-    MCAPI static int const CHARGE_THRESHOLD_TIME;
-
-    MCAPI static int const THROW_THRESHOLD_TIME;
-
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI class Actor* _setupProjectile(class Actor* trident, class ItemStack item, bool creative) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void appendFormattedHovertext$(
+        class ItemStackBase const& stack,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       showCategory
+    ) const;
+
+    MCAPI bool canDestroyInCreative$() const;
+
+    MCAPI bool
+    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+
+    MCAPI int getAttackDamage$() const;
+
+    MCAPI int getEnchantSlot$() const;
+
+    MCAPI int getEnchantValue$() const;
+
+    MCAPI short getMaxDamage$() const;
+
+    MCAPI void hurtActor$(class ItemStack& item, class Actor& actor, class Mob& attacker) const;
+
+    MCAPI bool isThrowable$() const;
+
+    MCAPI void releaseUsing$(class ItemStack& item, class Player* player, int durationLeft) const;
+
+    MCAPI class ItemStack& use$(class ItemStack& instance, class Player& player) const;
+
+    MCAPI static int const& CHARGE_THRESHOLD_TIME();
+
+    MCAPI static int const& THROW_THRESHOLD_TIME();
 
     // NOLINTEND
 };

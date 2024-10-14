@@ -26,4 +26,11 @@ public:
     MCAPI ~CraftingDataEntry();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

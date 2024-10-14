@@ -78,4 +78,34 @@ public:
     MCAPI void postAiStep();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI float _getWalkTargetValue$(class BlockPos const& pos);
+
+    MCAPI void _playStepSound$(class BlockPos const& pos, class Block const& onBlock);
+
+    MCAPI bool canBePulledIntoVehicle$() const;
+
+    MCAPI ::Puv::Legacy::LevelSoundEvent getAmbientSound$() const;
+
+    MCAPI float getShadowRadius$() const;
+
+    MCAPI bool isInvulnerableTo$(class ActorDamageSource const& source) const;
+
+    MCAPI void playAmbientSound$();
+
+    MCAPI void reloadHardcodedClient$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI void setSitting$(bool value);
+
+    // NOLINTEND
 };

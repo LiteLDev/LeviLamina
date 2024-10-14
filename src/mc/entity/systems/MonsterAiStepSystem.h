@@ -71,4 +71,28 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void tick$(class StrictExecutionContext<
+                     struct Filter<
+                         class FlagComponent<struct ActorMovementTickNeededFlag>,
+                         class FlagComponent<struct BlazeFlag>,
+                         class FlagComponent<struct LavaSlimeFlag>,
+                         class FlagComponent<struct MonsterFlag>>,
+                     struct Read<
+                         struct AABBShapeComponent,
+                         struct DimensionTypeComponent,
+                         struct OffsetsComponent,
+                         struct StateVectorComponent>,
+                     struct Write<struct NoActionTimeComponent>,
+                     struct AddRemove<>,
+                     struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>,
+                     struct GlobalWrite<>,
+                     struct EntityFactoryT<>>& strictContext);
+
+    // NOLINTEND
 };

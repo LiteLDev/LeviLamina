@@ -60,4 +60,31 @@ public:
     MCAPI void _updateConnectionStatus();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI struct NetworkPeer::NetworkStatus getNetworkStatus$() const;
+
+    MCAPI bool isEncrypted$() const;
+
+    MCAPI bool isLocal$() const;
+
+    MCAPI ::NetworkPeer::DataStatus
+    receivePacket$(std::string& outData, std::shared_ptr<std::chrono::steady_clock::time_point> const& timepointPtr);
+
+    MCAPI void sendPacket$(std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility);
+
+    MCAPI void update$();
+
+    // NOLINTEND
 };

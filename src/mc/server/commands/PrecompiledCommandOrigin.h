@@ -84,4 +84,49 @@ public:
     virtual bool isValid() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool canUseAbility$(::AbilitiesIndex abilityIndex) const;
+
+    MCAPI bool canUseCommandsWithoutCheatsEnabled$() const;
+
+    MCAPI std::unique_ptr<class CommandOrigin> clone$() const;
+
+    MCAPI class BlockPos getBlockPosition$() const;
+
+    MCAPI class Dimension* getDimension$() const;
+
+    MCAPI class Actor* getEntity$() const;
+
+    MCAPI class Level* getLevel$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI ::CommandOriginType getOriginType$() const;
+
+    MCAPI ::CommandPermissionLevel getPermissionsLevel$() const;
+
+    MCAPI std::string const& getRequestId$() const;
+
+    MCAPI std::optional<class Vec2> getRotation$() const;
+
+    MCAPI class Vec3 getWorldPosition$() const;
+
+    MCAPI bool hasChatPerms$() const;
+
+    MCAPI bool hasTellPerms$() const;
+
+    MCAPI bool isSelectorExpansionAllowed$() const;
+
+    MCAPI bool isValid$() const;
+
+    MCAPI bool isWorldBuilder$() const;
+
+    MCAPI class CompoundTag serialize$() const;
+
+    // NOLINTEND
 };

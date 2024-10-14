@@ -36,6 +36,17 @@ public:
         virtual void MayRunLong();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        MCAPI void Complete$();
+
+        MCAPI void MayRunLong$();
+
+        // NOLINTEND
     };
 
 public:

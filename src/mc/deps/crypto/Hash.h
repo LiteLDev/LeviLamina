@@ -60,6 +60,28 @@ public:
     MCAPI class mce::UUID getUUID();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void final$(uchar* result);
+
+    MCAPI void reset$();
+
+    MCAPI uint64 resultSize$() const;
+
+    MCAPI void update$(void const* data, uint size);
+
+    // NOLINTEND
 };
 
 }; // namespace Crypto::Hash

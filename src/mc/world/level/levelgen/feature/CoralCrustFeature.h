@@ -49,4 +49,13 @@ public:
     _placeSideDecorations(class BlockSource& region, class BlockPos const& pos, class Random& random, uchar dir) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool place$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    // NOLINTEND
 };

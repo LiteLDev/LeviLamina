@@ -39,6 +39,13 @@ public:
         make(class XoroshiroPositionalRandomFactory const& randomFactory);
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
     char mUnknow[2800];
 
@@ -123,6 +130,69 @@ public:
         class BiomeRegistry const& biomeRegistry,
         class Biome const*         overrideBiome
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForChunkSource();
+
+    MCAPI static void** $vftableForIPreliminarySurfaceProvider();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void _prepareHeights$(
+        class BlockVolume&                                                    box,
+        class ChunkPos const&                                                 chunkPos,
+        class WorldGenCache const&                                            worldGenCache,
+        class Aquifer*                                                        aquiferPtr,
+        std::function<void(class BlockPos const&, class Block const&, int)>&& tickUpdateFn,
+        bool                                                                  factorInBeardsAndShavers,
+        std::vector<short>*                                                   ZXheights,
+        int                                                                   skipTopN
+    );
+
+    MCAPI bool chunkPosNeedsBlending$(class ChunkPos const& cp);
+
+    MCAPI class ChunkLocalNoiseCache createNoiseCache$(class ChunkPos chunkPos) const;
+
+    MCAPI void decorateWorldGenPostProcess$(
+        class Biome const&,
+        class LevelChunk&  lc,
+        class BlockSource& source,
+        class Random&      random
+    ) const;
+
+    MCAPI class BlockPos findSpawnPosition$() const;
+
+    MCAPI class Util::MultidimensionalArray<float, 5, 5, 41>
+    generateDensityCellsForChunk$(class ChunkPos const& chunkPos) const;
+
+    MCAPI class BiomeSource const& getBiomeSource$() const;
+
+    MCAPI int getLevelGenHeight$() const;
+
+    MCAPI std::unique_ptr<class PerlinSimplexNoise> const& getMaterialAdjNoise$() const;
+
+    MCAPI std::optional<short> getPreliminarySurfaceLevel$(class DividedPos2d<4> worldQuartPos) const;
+
+    MCAPI class PerlinSimplexNoise const& getSurfaceNoise$();
+
+    MCAPI std::optional<class XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory$() const;
+
+    MCAPI std::unique_ptr<class Aquifer> tryMakeAquifer$(
+        class ChunkPos const&          chunkPos,
+        class SurfaceLevelCache const& surfaceLevelCache,
+        short                          minHeight,
+        short                          levelGenHeight,
+        short                          seaLevel
+    ) const;
 
     // NOLINTEND
 };

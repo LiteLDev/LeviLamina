@@ -51,6 +51,21 @@ public:
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptListBlockVolume> bind();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockLocationIterator>
+    getBlockLocationIterator$(class Scripting::WeakLifetimeScope scope);
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

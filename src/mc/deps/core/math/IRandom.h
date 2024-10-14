@@ -45,4 +45,15 @@ public:
     virtual std::unique_ptr<class IPositionalRandomFactory> forkPositional();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI std::unique_ptr<class IPositionalRandomFactory> forkPositional$();
+
+    // NOLINTEND
 };

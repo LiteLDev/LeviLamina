@@ -19,4 +19,11 @@ public:
     virtual ~ChestContainerScreenValidator() = default;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };

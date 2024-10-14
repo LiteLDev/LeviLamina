@@ -134,20 +134,6 @@ public:
 
     MCAPI void setTagData(class CompoundTag& tag) const;
 
-    MCAPI static uint const DEFAULT_PLAYER_SPAWN_RADIUS;
-
-    MCAPI static int const DEFAULT_RANDOMTICKSPEED;
-
-    MCAPI static int const MAX_FUNCTIONCOMMANDLIMIT;
-
-    MCAPI static uint const MAX_PLAYER_SPAWN_RADIUS;
-
-    MCAPI static int const MAX_RANDOMTICKSPEED;
-
-    MCAPI static uint const MIN_PLAYER_SPAWN_RADIUS;
-
-    MCAPI static std::string const WORLD_POLICY_TAG_NAME;
-
     // NOLINTEND
 
     // private:
@@ -177,6 +163,34 @@ public:
     );
 
     MCAPI static std::map<struct GameRuleId, class GameRule> const& _getMarketplaceGameRulesDefaultMap();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static uint const& DEFAULT_PLAYER_SPAWN_RADIUS();
+
+    MCAPI static int const& DEFAULT_RANDOMTICKSPEED();
+
+    MCAPI static int const& MAX_FUNCTIONCOMMANDLIMIT();
+
+    MCAPI static uint const& MAX_PLAYER_SPAWN_RADIUS();
+
+    MCAPI static int const& MAX_RANDOMTICKSPEED();
+
+    MCAPI static uint const& MIN_PLAYER_SPAWN_RADIUS();
+
+    MCAPI static std::string const& WORLD_POLICY_TAG_NAME();
 
     // NOLINTEND
 };

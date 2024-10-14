@@ -29,4 +29,11 @@ public:
     MCAPI void _removeComponent(class Bedrock::typeid_t<void> typeId);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

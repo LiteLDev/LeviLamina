@@ -63,4 +63,28 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void addAdditionalSaveData$(class CompoundTag&) const;
+
+    MCAPI struct ActorUniqueID getSourceUniqueID$() const;
+
+    MCAPI bool isOnFire$() const;
+
+    MCAPI void normalTick$();
+
+    MCAPI void readAdditionalSaveData$(class CompoundTag const&, class DataLoadHelper&);
+
+    MCAPI void reloadHardcoded$(::ActorInitializationMethod, class VariantParameterList const&);
+
+    // NOLINTEND
 };

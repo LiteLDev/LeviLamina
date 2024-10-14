@@ -37,6 +37,13 @@ public:
         MCAPI ~EduCloudImportInfo();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     class IWorldConverter {
@@ -61,6 +68,19 @@ public:
         MCVAPI ~ProgressReporter();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftableForBedrockEnableNonOwnerReferences();
+
+        MCAPI static void** $vftableForCoreZipUtilsZipProgress();
+
+        MCAPI void dtor$();
+
+        MCAPI void clear$();
+
+        // NOLINTEND
     };
 
     struct Result {
@@ -74,6 +94,18 @@ public:
         MCAPI Result();
 
         MCAPI ~Result();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -112,25 +144,37 @@ public:
 
     MCAPI void setWorldConverter(std::unique_ptr<class FileArchiver::IWorldConverter>);
 
-    MCAPI static std::string const EXTENSION_ADDON;
-
-    MCAPI static std::string const EXTENSION_EDITOR_ADDON;
-
-    MCAPI static std::string const EXTENSION_PROJECT;
-
-    MCAPI static std::string const EXTENSION_RESOURCEPACK;
-
-    MCAPI static std::string const EXTENSION_TEMPLATE;
-
-    MCAPI static std::string const EXTENSION_VANILLA;
-
-    MCAPI static std::string const IMPORT_LOCK_FILE;
-
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI void _printLevelResultMessage(struct FileArchiver::Result const& result);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI static std::string const& EXTENSION_ADDON();
+
+    MCAPI static std::string const& EXTENSION_EDITOR_ADDON();
+
+    MCAPI static std::string const& EXTENSION_PROJECT();
+
+    MCAPI static std::string const& EXTENSION_RESOURCEPACK();
+
+    MCAPI static std::string const& EXTENSION_TEMPLATE();
+
+    MCAPI static std::string const& EXTENSION_VANILLA();
+
+    MCAPI static std::string const& IMPORT_LOCK_FILE();
 
     // NOLINTEND
 };

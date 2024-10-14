@@ -20,4 +20,15 @@ public:
     MCAPI float getBrightnessRampValue(int index) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void buildBrightnessRamp$();
+
+    MCAPI float getBaseAmbientValue$() const;
+
+    // NOLINTEND
 };

@@ -27,9 +27,10 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::function<std::vector<std::string>()> mPlatformAdapterOverride;
+    MCAPI static std::function<std::vector<std::string>()>& mPlatformAdapterOverride();
 
     // NOLINTEND
 };

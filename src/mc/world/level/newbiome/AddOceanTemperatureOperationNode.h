@@ -32,4 +32,19 @@ public:
     ) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void _fillArea$(
+        class OperationNodeDetails::WorkingData<::BiomeTemperatureCategory, char>& operationNodeData,
+        class Pos2d const&                                                         origin,
+        class Pos2d const&                                                         size
+    ) const;
+
+    MCAPI void init$(int64 seed);
+
+    // NOLINTEND
 };

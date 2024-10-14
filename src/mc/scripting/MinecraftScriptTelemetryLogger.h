@@ -32,4 +32,24 @@ public:
     MCAPI MinecraftScriptTelemetryLogger(class IMinecraftEventing& eventing, bool isClientside);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void onDebuggerConnect$();
+
+    MCAPI void onDebuggerListen$();
+
+    MCAPI void onPluginDiscovery$(class ScriptPluginResult const& pluginResult);
+
+    MCAPI void onPluginRun$(class ScriptPluginResult const& pluginResult, std::chrono::microseconds runDuration);
+
+    // NOLINTEND
 };

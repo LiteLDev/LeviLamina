@@ -26,4 +26,20 @@ public:
     MCAPI explicit BlockPileFeature(class Block const& block);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class Block const& getBlockToPlace$(class Random& random) const;
+
+    MCAPI bool place$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    // NOLINTEND
 };

@@ -39,4 +39,21 @@ public:
     MCAPI AuxDataBlockItem(std::string const& name, int id, class Block const* parentBlock);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::string
+          buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
+
+    MCAPI int getLevelDataForAuxValue$(int auxValue) const;
+
+    // NOLINTEND
 };

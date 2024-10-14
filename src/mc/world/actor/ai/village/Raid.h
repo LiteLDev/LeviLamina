@@ -47,8 +47,6 @@ public:
 
     MCAPI ~Raid();
 
-    MCAPI static class Vec3 const INVALID_SPAWN_POINT;
-
     // NOLINTEND
 
     // private:
@@ -63,13 +61,23 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static uchar const NUM_GROUPS_ON_EASY;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static uchar const NUM_GROUPS_ON_HARD;
+    MCAPI void dtor$();
 
-    MCAPI static uchar const NUM_GROUPS_ON_NORMAL;
+    MCAPI static class Vec3 const& INVALID_SPAWN_POINT();
+
+    MCAPI static uchar const& NUM_GROUPS_ON_EASY();
+
+    MCAPI static uchar const& NUM_GROUPS_ON_HARD();
+
+    MCAPI static uchar const& NUM_GROUPS_ON_NORMAL();
 
     // NOLINTEND
 };

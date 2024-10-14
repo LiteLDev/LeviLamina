@@ -54,4 +54,24 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI float _getWalkTargetValue$(class BlockPos const& pos);
+
+    MCAPI bool isInvulnerableTo$(class ActorDamageSource const& source) const;
+
+    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    // NOLINTEND
 };

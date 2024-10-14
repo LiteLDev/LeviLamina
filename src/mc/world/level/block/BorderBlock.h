@@ -63,4 +63,38 @@ public:
     MCAPI BorderBlock(std::string const& nameId, int id);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void
+    animateTickBedrockLegacy$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI std::string buildDescriptionId$(class Block const&) const;
+
+    MCAPI int getVariant$(class Block const&) const;
+
+    MCAPI class AABB const& getVisualShape$(class Block const&, class AABB& bufferAABB) const;
+
+    MCAPI class AABB const& getVisualShapeInWorld$(
+        class Block const& block,
+        class IConstBlockSource const&,
+        class BlockPos const&,
+        class AABB& bufferAABB
+    ) const;
+
+    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void onRemove$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void setupRedstoneComponent$(class BlockSource& region, class BlockPos const& pos) const;
+
+    // NOLINTEND
 };

@@ -61,4 +61,11 @@ public:
     MCAPI void _onGameplayUserAdded(class EntityContext& entity);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };

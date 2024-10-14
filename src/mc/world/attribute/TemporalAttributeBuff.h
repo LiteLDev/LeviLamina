@@ -46,4 +46,28 @@ public:
     MCAPI class TemporalAttributeBuff& operator=(class TemporalAttributeBuff const&);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI bool isComplete$() const;
+
+    MCAPI bool isInstantaneous$() const;
+
+    MCAPI bool isSerializable$() const;
+
+    MCAPI void setDurationAmplifier$(std::shared_ptr<class Amplifier> amplifier);
+
+    MCAPI bool shouldBuff$() const;
+
+    // NOLINTEND
 };

@@ -32,6 +32,13 @@ public:
     MCAPI bool _loadDispatchTargets(class Bedrock::PubSub::Detail::DispatchTargets& targets) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::PubSub::Detail

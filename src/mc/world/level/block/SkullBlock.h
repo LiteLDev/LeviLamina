@@ -84,4 +84,42 @@ public:
     MCAPI void _updatedDragonCircuit(class BlockSource& region, class BlockPos const& pos) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const* blockActor) const;
+
+    MCAPI std::string buildDescriptionId$(class Block const& block) const;
+
+    MCAPI bool canContainLiquid$() const;
+
+    MCAPI bool canProvideSupport$(class Block const& block, uchar face, ::BlockSupportType type) const;
+
+    MCAPI class Block const& getPlacementBlock$(
+        class Actor const&    by,
+        class BlockPos const& pos,
+        uchar                 face,
+        class Vec3 const&     clickPos,
+        int                   itemValue
+    ) const;
+
+    MCAPI class AABB const& getVisualShape$(class Block const& block, class AABB& bufferAABB) const;
+
+    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void setupRedstoneComponent$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool waterSpreadCausesSpawn$() const;
+
+    // NOLINTEND
 };

@@ -36,4 +36,22 @@ public:
     MCAPI static class Json::Value asJsonValue(std::string const& textField);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class Json::Value asJsonValue$() const;
+
+    MCAPI std::string asString$() const;
+
+    MCAPI class Json::Value resolve$(struct ResolveData const& resolveData) const;
+
+    // NOLINTEND
 };

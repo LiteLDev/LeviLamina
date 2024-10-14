@@ -37,4 +37,24 @@ public:
     MCAPI explicit CompressedBiomeDefinitionListPacket(class CompoundTag biomeData);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI ::MinecraftPacketIds getId$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI class Bedrock::Result<void> read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI void write$(class BinaryStream& stream) const;
+
+    // NOLINTEND
 };

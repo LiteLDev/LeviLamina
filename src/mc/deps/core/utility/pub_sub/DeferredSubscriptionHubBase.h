@@ -52,6 +52,29 @@ public:
     virtual bool _runOneEvent() = 0;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void _join$(class Bedrock::PubSub::DeferredSubscription&& subscription);
+
+    MCAPI void clear$();
+
+    MCAPI bool empty$() const;
+
+    MCAPI uint64 erase$(class Bedrock::PubSub::RawSubscription& subscription);
+
+    MCAPI uint64 runDeferredEvents$(uint64 maxToRun);
+
+    MCAPI uint64 runDeferredEventsForDuration$(std::chrono::milliseconds msec);
+
+    MCAPI uint64 size$() const;
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::PubSub

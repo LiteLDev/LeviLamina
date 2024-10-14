@@ -20,9 +20,15 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class BaseGameVersion const WATER_BUCKET_USEABLE_VERSION;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI static class BaseGameVersion const& WATER_BUCKET_USEABLE_VERSION();
 
     // NOLINTEND
 };

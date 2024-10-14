@@ -75,4 +75,44 @@ public:
     MCAPI static void OnTerminationCallback(void*);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool CanClose$();
+
+    MCAPI bool CanTerminate$();
+
+    MCAPI struct XTaskQueueObject* GetHandle$();
+
+    MCAPI long GetPortContext$(::XTaskQueuePort, struct ITaskQueuePortContext**);
+
+    MCAPI long QueryApi$(::ApiId, void**);
+
+    MCAPI void* QueryApiImpl$(::ApiId);
+
+    MCAPI long
+    RegisterSubmitCallback$(void*, void (*)(void*, struct XTaskQueueObject*, ::XTaskQueuePort), struct XTaskQueueRegistrationToken*);
+
+    MCAPI long
+    RegisterWaitHandle$(::XTaskQueuePort, void*, void*, void (*)(void*, bool), struct XTaskQueueRegistrationToken*);
+
+    MCAPI uint Release$();
+
+    MCAPI void RundownObject$();
+
+    MCAPI long Terminate$(bool, void*, void (*)(void*));
+
+    MCAPI void UnregisterSubmitCallback$(struct XTaskQueueRegistrationToken);
+
+    MCAPI void UnregisterWaitHandle$(struct XTaskQueueRegistrationToken);
+
+    // NOLINTEND
 };

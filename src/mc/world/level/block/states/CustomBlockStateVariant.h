@@ -24,4 +24,15 @@ public:
     virtual bool fromNBT(class CompoundTag const& tag, int& outValue) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool fromNBT$(class CompoundTag const& tag, int& outValue) const;
+
+    MCAPI void toNBT$(class CompoundTag& tag, int val) const;
+
+    // NOLINTEND
 };

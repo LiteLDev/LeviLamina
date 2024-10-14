@@ -39,7 +39,23 @@ public:
 
     MCAPI PlanksBlock(std::string const& nameId, int id, ::WoodType woodType);
 
-    MCAPI static std::array<std::string, 9> const WOOD_NAMES;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void _addHardCodedBlockComponents$(class Experiments const& experiments);
+
+    MCAPI std::string buildDescriptionId$(class Block const&) const;
+
+    MCAPI static std::array<std::string, 9> const& WOOD_NAMES();
 
     // NOLINTEND
 };

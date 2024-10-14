@@ -58,17 +58,22 @@ public:
         class Core::Path const&     targetDirectoryPath
     );
 
-    MCAPI static uint64 const FLAT_FILE_CURRENT_VERSION;
+    // NOLINTEND
 
-    MCAPI static std::string const FLAT_FILE_EMPTY_MANIFEST_FILE;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static uint64 const& FLAT_FILE_CURRENT_VERSION();
 
-    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const FLAT_FILE_EXTENSION;
+    MCAPI static std::string const& FLAT_FILE_EMPTY_MANIFEST_FILE();
 
-    MCAPI static uint64 const FLAT_FILE_INVALID_VERSION;
+    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const& FLAT_FILE_EXTENSION();
 
-    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const FLAT_FILE_MANIFEST_EXTENSION;
+    MCAPI static uint64 const& FLAT_FILE_INVALID_VERSION();
 
-    MCAPI static uint64 const FLAT_FILE_WRITE_CHUNK_SIZE;
+    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const& FLAT_FILE_MANIFEST_EXTENSION();
+
+    MCAPI static uint64 const& FLAT_FILE_WRITE_CHUNK_SIZE();
 
     // NOLINTEND
 };

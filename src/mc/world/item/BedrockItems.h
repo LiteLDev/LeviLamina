@@ -18,7 +18,12 @@ public:
 
     MCAPI static void unregisterItems(class ItemRegistryRef itemRegistry);
 
-    MCAPI static class WeakPtr<class Item> mAir;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static class WeakPtr<class Item>& mAir();
 
     // NOLINTEND
 };

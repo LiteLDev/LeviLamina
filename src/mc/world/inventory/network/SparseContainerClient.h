@@ -23,10 +23,11 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class BidirectionalUnorderedMap<::SparseContainerClient::PushSlotPredictionResult, std::string> const
-        pushSlotPredictionResultMap;
+    MCAPI static class BidirectionalUnorderedMap<::SparseContainerClient::PushSlotPredictionResult, std::string> const&
+    pushSlotPredictionResultMap();
 
     // NOLINTEND
 };

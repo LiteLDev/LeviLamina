@@ -96,8 +96,6 @@ public:
 
     MCAPI bool hasGeneratedAssetSet() const;
 
-    MCAPI static class Core::PathBuffer<std::string> const PACK_IMPORT_LOCK_FILE;
-
     // NOLINTEND
 
     // protected:
@@ -109,6 +107,34 @@ public:
     MCAPI bool _isInAssetSet(class Core::Path const& path) const;
 
     MCAPI bool _isInAssetSetCaseInsensative(class Core::Path const& path) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI bool canRecurse$() const;
+
+    MCAPI void forEachInAssetSet$(class Core::Path const&, std::function<void(class Core::Path const&)>) const;
+
+    MCAPI ::PackAccessAssetGenerationResult generateAssetSet$();
+
+    MCAPI class Core::PathBuffer<std::string> const& getSubPath$() const;
+
+    MCAPI bool hasUpgradeFiles$() const;
+
+    MCAPI class ContentIdentity readContentIdentity$() const;
+
+    MCAPI static class Core::PathBuffer<std::string> const& PACK_IMPORT_LOCK_FILE();
 
     // NOLINTEND
 };

@@ -34,6 +34,22 @@ public:
     MCAPI explicit StructureHeightProvider(class br::worldgen::UniformHeight provider);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI int sample$(class IRandom& randomSource, class br::worldgen::WorldGenContext const& heightAccessor) const;
+
+    // NOLINTEND
 };
 
 }; // namespace br::worldgen

@@ -126,4 +126,72 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI bool addSource$(
+        class CircuitSceneGraph&         graph,
+        class CircuitTrackingInfo const& info,
+        int&                             dampening,
+        bool&                            bDirectlyPowered
+    );
+
+    MCAPI bool
+    allowConnection$(class CircuitSceneGraph& graph, class CircuitTrackingInfo const& info, bool& bDirectlyPowered);
+
+    MCAPI bool allowIndirect$() const;
+
+    MCAPI void cacheValues$(class CircuitSystem& system, class BlockPos const& pos);
+
+    MCAPI bool canConsumePowerAnyDirection$() const;
+
+    MCAPI bool canConsumerPower$() const;
+
+    MCAPI bool canStopPower$() const;
+
+    MCAPI void checkLock$(class CircuitSystem& system, class BlockPos const& pos);
+
+    MCAPI bool evaluate$(class CircuitSystem& system, class BlockPos const& pos);
+
+    MCAPI ::CircuitComponentType getCircuitComponentGroupType$() const;
+
+    MCAPI ::CircuitComponentType getCircuitComponentType$() const;
+
+    MCAPI int getDirection$() const;
+
+    MCAPI int getStrength$() const;
+
+    MCAPI bool hasChildrenSource$() const;
+
+    MCAPI bool hasSource$(class BaseCircuitComponent const& source) const;
+
+    MCAPI bool isHalfPulse$() const;
+
+    MCAPI bool isSecondaryPowered$() const;
+
+    MCAPI void removeFromAnySourceList$(class BaseCircuitComponent const* component);
+
+    MCAPI void removeSource$(class BlockPos const& posSource, class BaseCircuitComponent const* pComponent);
+
+    MCAPI void setConsumePowerAnyDirection$(bool canConsumePowerAnyDirection);
+
+    MCAPI void setDirection$(uchar direction);
+
+    MCAPI void setStopPower$(bool bPower);
+
+    MCAPI void setStrength$(int strength);
+
+    MCAPI void updateDependencies$(class CircuitSceneGraph& system, class BlockPos const& pos);
+
+    // NOLINTEND
 };

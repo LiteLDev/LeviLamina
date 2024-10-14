@@ -46,9 +46,14 @@ public:
 
     MCAPI static class mce::UUID fromString(std::string const& in);
 
-    MCAPI static class mce::UUID EMPTY;
+    // NOLINTEND
 
-    MCAPI static uint64 STRING_LENGTH;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static class mce::UUID& EMPTY();
+
+    MCAPI static uint64& STRING_LENGTH();
 
     // NOLINTEND
 };

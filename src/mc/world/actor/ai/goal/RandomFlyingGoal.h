@@ -36,4 +36,22 @@ public:
     MCAPI bool _getTreePos(class Vec3& result) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool _setWantedPosition$();
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canUse$();
+
+    // NOLINTEND
 };

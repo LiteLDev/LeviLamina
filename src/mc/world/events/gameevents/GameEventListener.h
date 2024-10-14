@@ -18,4 +18,11 @@ public:
     MCVAPI ::GameEventListener::DeliveryMode getDeliveryMode() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI ::GameEventListener::DeliveryMode getDeliveryMode$() const;
+
+    // NOLINTEND
 };

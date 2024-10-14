@@ -31,7 +31,17 @@ public:
 
     MCAPI static bool hasNearbyWarden(class BlockSource& region, class BlockPos const& pos);
 
-    MCAPI static int const MAX_THREAT_LEVEL;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI static int const& MAX_THREAT_LEVEL();
 
     // NOLINTEND
 };

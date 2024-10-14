@@ -122,6 +122,57 @@ public:
     MCAPI StorageArea_windows(::Core::FileAccessType, class Core::Path const&, bool);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void attemptExtendSize$(int64 const&, std::function<void()>);
+
+    MCAPI bool canExtendSize$() const;
+
+    MCAPI void clearUsedSizeOverride$();
+
+    MCAPI std::unique_ptr<class Core::FileSystemImpl> createTransaction$(::Core::FileAccessType);
+
+    MCAPI uint64 getAvailableUserStorageSize$();
+
+    MCAPI class Core::Result getExtendSizeThreshold$(uint64&) const;
+
+    MCAPI struct Core::FileStorageArea::StorageAreaSpaceInfo getStorageAreaSpaceInfo$();
+
+    MCAPI uint64 getTotalSize$() const;
+
+    MCAPI class Core::Result getUsedSize$(uint64&);
+
+    MCAPI void notifyChangeInFileSize$(int64 changeInSize, int64 changeInAllocatedSize);
+
+    MCAPI void preemptiveExtendSize$(uint64, std::function<void()>, std::function<void()>);
+
+    MCAPI void resetCanAttemptExtendSize$();
+
+    MCAPI void setUsedSizeOverride$(uint64);
+
+    MCAPI bool shouldAllowCommit$() const;
+
+    MCAPI bool supportsExtendSize$() const;
+
+    MCAPI bool supportsSizeQuery$() const;
+
+    MCAPI void
+    trackBytesWritten$(class Core::Path const& targetPath, uint64 amount, ::Core::WriteOperation writeOperation);
+
+    MCAPI void trackWriteOperation$(class Core::Path const& targetPath, ::Core::WriteOperation writeOperation);
+
+    MCAPI void unloadFlatFileManifests$(bool shouldClearManifests);
+
+    // NOLINTEND
 };
 
 }; // namespace Core

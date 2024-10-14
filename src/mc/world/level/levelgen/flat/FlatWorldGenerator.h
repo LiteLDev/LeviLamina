@@ -85,4 +85,50 @@ public:
     MCAPI void _generatePrototypeBlockValues(class FlatWorldGeneratorOptions const& layersDesc, short);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForChunkSource();
+
+    MCAPI static void** $vftableForIPreliminarySurfaceProvider();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void
+    decorateWorldGenLoadChunk$(class Biome const&, class LevelChunk&, class BlockVolumeTarget&, class Random&, class ChunkPos const&)
+        const;
+
+    MCAPI void
+    decorateWorldGenPostProcess$(class Biome const&, class LevelChunk&, class BlockSource&, class Random&) const;
+
+    MCAPI bool
+    findNearestStructureFeature$(::StructureFeatureType, class BlockPos const&, class BlockPos&, bool, std::optional<class HashedString>);
+
+    MCAPI class BlockPos findSpawnPosition$() const;
+
+    MCAPI ::StructureFeatureType findStructureFeatureTypeAt$(class BlockPos const&);
+
+    MCAPI void garbageCollectBlueprints$(class buffer_span<class ChunkPos>);
+
+    MCAPI class BiomeArea getBiomeArea$(class BoundingBox const& area, uint scale) const;
+
+    MCAPI class BiomeSource const& getBiomeSource$() const;
+
+    MCAPI struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions$() const;
+
+    MCAPI bool isStructureFeatureTypeAt$(class BlockPos const&, ::StructureFeatureType) const;
+
+    MCAPI void loadChunk$(class LevelChunk& lc, bool forceImmediateReplacementDataLoad);
+
+    MCAPI bool postProcess$(class ChunkViewSource& neighborhood);
+
+    MCAPI void prepareAndComputeHeights$(class BlockVolume&, class ChunkPos const&, std::vector<short>&, bool, int);
+
+    MCAPI void prepareHeights$(class BlockVolume&, class ChunkPos const&, bool);
+
+    // NOLINTEND
 };

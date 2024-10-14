@@ -61,4 +61,31 @@ public:
     fromExpressionTag(std::string const& tagExpression, ::MolangVersion molangVersion);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI std::unique_ptr<struct ItemDescriptor::BaseDescriptor> clone$() const;
+
+    MCAPI std::string const& getFullName$() const;
+
+    MCAPI uint64 getHash$() const;
+
+    MCAPI ::ItemDescriptor::InternalType getType$() const;
+
+    MCAPI bool sameItem$(struct ItemDescriptor::ItemEntry const& otherItem, bool) const;
+
+    MCAPI bool sameItems$(struct ItemDescriptor::BaseDescriptor const& otherDescriptor, bool compareAux) const;
+
+    MCAPI std::optional<class CompoundTag> save$() const;
+
+    MCAPI void serialize$(class Json::Value& val) const;
+
+    MCAPI void serialize$(class BinaryStream& stream) const;
+
+    MCAPI std::map<std::string, std::string> toMap$() const;
+
+    // NOLINTEND
 };

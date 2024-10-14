@@ -86,9 +86,50 @@ public:
 
     // NOLINTEND
 
-    // protected:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class BaseGameVersion const SHULKER_BOX_DOESNT_BREAK_FALLING_BLOCK_VERSION;
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class ItemInstance asItemInstance$(class Block const& block, class BlockActor const*) const;
+
+    MCAPI bool breaksFallingBlocks$(class Block const&, class BaseGameVersion version) const;
+
+    MCAPI bool canProvideSupport$(class Block const&, uchar, ::BlockSupportType) const;
+
+    MCAPI bool
+    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+
+    MCAPI class AABB getCollisionShape$(
+        class Block const&                                         block,
+        class IConstBlockSource const&                             region,
+        class BlockPos const&                                      pos,
+        class optional_ref<class GetCollisionShapeInterface const> entity
+    ) const;
+
+    MCAPI int getColor$(class Block const&) const;
+
+    MCAPI class AABB const& getOutline$(
+        class Block const&             block,
+        class IConstBlockSource const& region,
+        class BlockPos const&          pos,
+        class AABB&                    bufferValue
+    ) const;
+
+    MCAPI class Block const&
+    getPlacementBlock$(class Actor const&, class BlockPos const&, uchar, class Vec3 const&, int itemValue) const;
+
+    MCAPI class Block const*
+    playerWillDestroy$(class Player& player, class BlockPos const& pos, class Block const& block) const;
+
+    MCAPI void setupRedstoneComponent$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI static class BaseGameVersion const& SHULKER_BOX_DOESNT_BREAK_FALLING_BLOCK_VERSION();
 
     // NOLINTEND
 };

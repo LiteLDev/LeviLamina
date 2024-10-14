@@ -40,13 +40,33 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static float SITTING_ATTACK_VIEW_RANGE;
+    MCAPI static void** $vftable();
 
-    MCAPI static float SITTING_CHARGE_VIEW_RANGE;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static int SITTING_SCANNING_IDLE_TICKS;
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
+
+    MCAPI void tick$();
+
+    MCAPI static float& SITTING_ATTACK_VIEW_RANGE();
+
+    MCAPI static float& SITTING_CHARGE_VIEW_RANGE();
+
+    MCAPI static int& SITTING_SCANNING_IDLE_TICKS();
 
     // NOLINTEND
 };

@@ -76,4 +76,49 @@ public:
     MCAPI void setAttackDamage(int damage);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void appendFormattedHovertext$(
+        class ItemStackBase const& stack,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       showCategory
+    ) const;
+
+    MCAPI bool canDestroyInCreative$() const;
+
+    MCAPI bool canDestroySpecial$(class Block const& block) const;
+
+    MCAPI int getAttackDamage$() const;
+
+    MCAPI float getDestroySpeed$(class ItemStackBase const& item, class Block const& block) const;
+
+    MCAPI int getEnchantSlot$() const;
+
+    MCAPI int getEnchantValue$() const;
+
+    MCAPI void hurtActor$(class ItemStack& item, class Actor& actor, class Mob& attacker) const;
+
+    MCAPI bool isHandEquipped$() const;
+
+    MCAPI bool isValidRepairItem$(
+        class ItemStackBase const&,
+        class ItemStackBase const&   repairItem,
+        class BaseGameVersion const& baseGameVersion
+    ) const;
+
+    MCAPI class ItemStack& use$(class ItemStack& instance, class Player& player) const;
+
+    // NOLINTEND
 };

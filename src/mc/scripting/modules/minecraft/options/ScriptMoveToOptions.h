@@ -29,11 +29,16 @@ public:
 
     MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleGameTest::ScriptMoveToOptions> bindV1();
 
-    MCAPI static bool const FACE_TARGET_DEFAULT;
+    // NOLINTEND
 
-    MCAPI static float const SPEED_DEFAULT;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static bool const& FACE_TARGET_DEFAULT();
 
-    MCAPI static float const SPEED_MIN;
+    MCAPI static float const& SPEED_DEFAULT();
+
+    MCAPI static float const& SPEED_MIN();
 
     // NOLINTEND
 };

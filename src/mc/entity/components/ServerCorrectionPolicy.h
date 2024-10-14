@@ -38,4 +38,24 @@ public:
     virtual void notifyOfExternalCorrection(uint64 frame);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool canRewindToFrame$(class EntityContext const&, uint64);
+
+    MCAPI void flagUnsupportedMovement$(uint64);
+
+    MCAPI bool isReplayNeeded$(::AdvanceFrameResult) const;
+
+    MCAPI void notifyOfExternalCorrection$(uint64 frame);
+
+    MCAPI struct MovementCorrection
+    shouldCorrectMovement$(class EntityContext& entity, class PlayerAuthInputPacket const& packet, uint64 frame);
+
+    MCAPI void storeCurrentFrameSupported$(uint64, class EntityContext&);
+
+    // NOLINTEND
 };

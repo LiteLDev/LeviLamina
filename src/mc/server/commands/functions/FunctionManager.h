@@ -32,6 +32,13 @@ public:
         MCAPI ~OriginMapping();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -89,6 +96,18 @@ public:
     );
 
     MCAPI void _removeOriginReference(class CommandOrigin const& origin, uint amount);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
     // NOLINTEND
 };

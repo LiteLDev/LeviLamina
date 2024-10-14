@@ -49,4 +49,20 @@ public:
     _getWallHangingSignBlock(class Actor const& entity, uchar const& face, class BlockPos const& pos) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool _calculatePlacePos$(class ItemStackBase&, class Actor& entity, uchar& face, class BlockPos& pos) const;
+
+    MCAPI class Block const* getBlockToPlace$(uchar face, class Actor const& entity, class BlockPos pos) const;
+
+    // NOLINTEND
 };

@@ -25,6 +25,16 @@ public:
         MCAPI explicit Impl(Bedrock::NotNullNonOwnerPtr<class ILevel> level);
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        // NOLINTEND
     };
 
 public:
@@ -38,6 +48,18 @@ public:
     MCAPI explicit CraftingContext(Bedrock::NotNullNonOwnerPtr<class ILevel> level);
 
     MCAPI ~CraftingContext();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

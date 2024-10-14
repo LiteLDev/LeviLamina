@@ -46,17 +46,25 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static bool mHasSetWatermark;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static std::unordered_map<::MolangVariableIndex, class HashedString> mIndexToVariableNameMap;
+    MCAPI void dtor$();
 
-    MCAPI static std::unordered_map<::MolangVariableIndex, class HashedString> mIndexToVariableNameMap_LowWaterMark;
+    MCAPI static bool& mHasSetWatermark();
 
-    MCAPI static std::unordered_map<uint64, ::MolangVariableIndex> mVariableNameToIndexMap;
+    MCAPI static std::unordered_map<::MolangVariableIndex, class HashedString>& mIndexToVariableNameMap();
 
-    MCAPI static std::unordered_map<uint64, ::MolangVariableIndex> mVariableNameToIndexMap_LowWaterMark;
+    MCAPI static std::unordered_map<::MolangVariableIndex, class HashedString>& mIndexToVariableNameMap_LowWaterMark();
+
+    MCAPI static std::unordered_map<uint64, ::MolangVariableIndex>& mVariableNameToIndexMap();
+
+    MCAPI static std::unordered_map<uint64, ::MolangVariableIndex>& mVariableNameToIndexMap_LowWaterMark();
 
     // NOLINTEND
 };

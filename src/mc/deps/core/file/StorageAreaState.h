@@ -37,6 +37,13 @@ public:
     MCAPI ~StorageAreaState();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace Core

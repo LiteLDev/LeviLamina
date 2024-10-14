@@ -43,6 +43,21 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::unique_ptr<class gametest::IGameTestFunctionRunResult>
+          run$(class gametest::BaseGameTestHelper&, class gametest::IGameTestFunctionContext& fnContext) const;
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleGameTest

@@ -30,16 +30,6 @@ public:
 
     MCAPI static class Vec3 getDiffVector(class Vec3 const& wantedPosition, class Mob const& mob);
 
-    MCAPI static float const MIN_DELTA_TO_JUMP;
-
-    MCAPI static float const MIN_DELTA_TO_JUMP_UNDERWATER;
-
-    MCAPI static float const MIN_DELTA_TO_MOVE;
-
-    MCAPI static float const MIN_SPEED;
-
-    MCAPI static float const MIN_SPEED_SQR;
-
     // NOLINTEND
 
     // protected:
@@ -57,6 +47,37 @@ public:
         class Vec3 const&                 positionDifference,
         float                             maxMoveSpeed
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void initializeInternal$(class Mob& mob, struct MoveControlDescription* description);
+
+    MCAPI void
+    setWantedPosition$(class MoveControlComponent& parent, class Mob&, class Vec3 const& position, float speed);
+
+    MCAPI void tick$(class MoveControlComponent& parent, class Mob& mob);
+
+    MCAPI static float const& MIN_DELTA_TO_JUMP();
+
+    MCAPI static float const& MIN_DELTA_TO_JUMP_UNDERWATER();
+
+    MCAPI static float const& MIN_DELTA_TO_MOVE();
+
+    MCAPI static float const& MIN_SPEED();
+
+    MCAPI static float const& MIN_SPEED_SQR();
 
     // NOLINTEND
 };

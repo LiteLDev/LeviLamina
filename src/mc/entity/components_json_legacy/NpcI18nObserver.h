@@ -35,4 +35,17 @@ public:
     MCAPI void _loadNpcData();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void onLanguageChanged$(std::string const& code, bool languageSystemInitializing);
+
+    MCAPI void onLanguageKeywordsLoadedFromPack$(class PackManifest const& manifest);
+
+    MCAPI void onLanguagesLoaded$();
+
+    // NOLINTEND
 };

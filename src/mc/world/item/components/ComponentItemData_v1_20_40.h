@@ -25,7 +25,19 @@ public:
     MCAPI static void
     moveDeprecatedData(struct ComponentItemData_v1_20_30& oldData, struct ComponentItemData_v1_20_40& newData);
 
-    MCAPI static class Puv::VersionRange const SUPPORTED_VERSIONS;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static class Puv::VersionRange const& SUPPORTED_VERSIONS();
 
     // NOLINTEND
 };

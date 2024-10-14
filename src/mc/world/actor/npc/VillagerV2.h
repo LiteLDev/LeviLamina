@@ -66,4 +66,30 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void buildDebugInfo$(std::string& out) const;
+
+    MCAPI void die$(class ActorDamageSource const& source);
+
+    MCAPI bool getInteraction$(class Player& player, class ActorInteraction& interaction, class Vec3 const& location);
+
+    MCAPI void newServerAiStep$();
+
+    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI void remove$();
+
+    MCAPI void updateEntitySpecificMolangVariables$(class RenderParams& renderParams);
+
+    // NOLINTEND
 };

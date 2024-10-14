@@ -52,7 +52,29 @@ public:
 
     MCAPI static bool shouldSpawnParticles(class Actor const& entity);
 
-    MCAPI static class mce::UUID const SOUL_SPEED_BOOST_UUID;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI int getMaxCost$(int level) const;
+
+    MCAPI int getMaxLevel$() const;
+
+    MCAPI int getMinCost$(int level) const;
+
+    MCAPI bool isDiscoverable$() const;
+
+    MCAPI bool isTreasureOnly$() const;
+
+    MCAPI static class mce::UUID const& SOUL_SPEED_BOOST_UUID();
 
     // NOLINTEND
 };

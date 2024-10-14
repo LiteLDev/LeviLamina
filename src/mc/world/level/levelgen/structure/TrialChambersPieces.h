@@ -3,8 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace TrialChambersPieces {
+// thunks
 // NOLINTBEGIN
-MCAPI extern std::vector<std::shared_ptr<class PoolAliasBinding>> const ALIAS_BINDINGS;
+MCAPI std::vector<std::shared_ptr<class PoolAliasBinding>> const& ALIAS_BINDINGS();
 // NOLINTEND
 
 }; // namespace TrialChambersPieces

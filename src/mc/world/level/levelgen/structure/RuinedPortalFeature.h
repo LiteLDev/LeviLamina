@@ -44,4 +44,37 @@ public:
     MCAPI RuinedPortalFeature(uint seed, bool nether);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::unique_ptr<class StructureStart> createStructureStart$(
+        class Dimension&         dimension,
+        class BiomeSource const& biomeSource,
+        class Random&,
+        class ChunkPos const&                    cp,
+        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+    );
+
+    MCAPI bool getNearestGeneratedFeature$(
+        class Dimension&                         dimension,
+        class BiomeSource const&                 biomeSource,
+        class BlockPos const&                    origin,
+        class BlockPos&                          pos,
+        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        bool                                     mustBeInNewChunks,
+        std::optional<class HashedString> const& biomeTag
+    );
+
+    MCAPI bool
+    isFeatureChunk$(class BiomeSource const&, class Random& random, class ChunkPos const& pos, uint levelSeed, class IPreliminarySurfaceProvider const&, class Dimension const&);
+
+    // NOLINTEND
 };

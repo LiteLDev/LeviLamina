@@ -32,6 +32,16 @@ public:
     send(class Bedrock::Http::Request&& request);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response>>
+          send$(class Bedrock::Http::Request&& request);
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::Http

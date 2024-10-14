@@ -52,4 +52,30 @@ public:
     MCAPI CocoaBeanItem(std::string const& name, int id, bool allowLegacyUseAsDye);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class InteractionResult
+    _useOn$(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const& clickPos)
+        const;
+
+    MCAPI std::string buildDescriptionId$(class ItemDescriptor const&, class CompoundTag const*) const;
+
+    MCAPI ::ItemColor getItemColor$() const;
+
+    MCAPI bool isDye$() const;
+
+    MCAPI bool isValidAuxValue$(int auxValue) const;
+
+    MCAPI class Item& setIconInfo$(std::string const& name, int id);
+
+    // NOLINTEND
 };

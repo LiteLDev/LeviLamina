@@ -34,4 +34,22 @@ public:
     MCAPI MultiRecipe(std::string const& recipeId, class HashedString tag);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool hasDataDrivenResult$() const;
+
+    MCAPI bool isMultiRecipe$() const;
+
+    MCAPI bool isShapeless$() const;
+
+    // NOLINTEND
 };

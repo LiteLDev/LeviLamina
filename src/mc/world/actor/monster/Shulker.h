@@ -101,10 +101,6 @@ public:
 
     MCAPI static void setShulkerAttachPos(class SynchedActorDataWriter data, class BlockPos const& pos);
 
-    MCAPI static std::shared_ptr<class AttributeModifier> COVERED_ARMOR_MODIFIER;
-
-    MCAPI static class mce::UUID const COVERED_ARMOR_MODIFIER_UUID;
-
     // NOLINTEND
 
     // protected:
@@ -132,6 +128,52 @@ public:
     MCAPI void _trySpawnShulker();
 
     MCAPI bool _tryTeleportSomewhere();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void _doInitialMove$();
+
+    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+
+    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+
+    MCAPI bool canAttack$(class Actor* actor, bool allowInvulnerable) const;
+
+    MCAPI bool checkSpawnRules$(bool);
+
+    MCAPI int getArmorValue$() const;
+
+    MCAPI float getMaxHeadXRot$();
+
+    MCAPI float getShadowRadius$() const;
+
+    MCAPI std::unique_ptr<class BodyControl> initBodyControl$();
+
+    MCAPI bool isInWall$() const;
+
+    MCAPI bool isInvulnerableTo$(class ActorDamageSource const& source) const;
+
+    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI bool shouldRender$() const;
+
+    MCAPI void updateEntitySpecificMolangVariables$(class RenderParams&);
+
+    MCAPI static std::shared_ptr<class AttributeModifier>& COVERED_ARMOR_MODIFIER();
+
+    MCAPI static class mce::UUID const& COVERED_ARMOR_MODIFIER_UUID();
 
     // NOLINTEND
 };

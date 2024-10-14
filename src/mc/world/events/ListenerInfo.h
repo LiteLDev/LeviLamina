@@ -15,9 +15,10 @@ public:
     class Vec3                                                                         mPosition;  // this+0x40
     float                                                                              mRadiusSqr; // this+0x4C
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static float const SQRT_FLT_MAX;
+    MCAPI static float const& SQRT_FLT_MAX();
 
     // NOLINTEND
 };

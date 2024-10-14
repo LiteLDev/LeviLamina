@@ -143,8 +143,6 @@ public:
 
     MCAPI static bool canDestroy(class Block const& block, ::WitherBoss::WitherAttackType attackType);
 
-    MCAPI static class mce::UUID const MAX_HEALTH_CAP_UUID;
-
     // NOLINTEND
 
     // private:
@@ -165,9 +163,57 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int const TIME_BEFORE_MOVING;
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+
+    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+
+    MCAPI void aiStep$();
+
+    MCAPI bool canBeAffected$(uint effectId) const;
+
+    MCAPI bool canBeAffectedByArrow$(class MobEffectInstance const& effect) const;
+
+    MCAPI bool canFreeze$() const;
+
+    MCAPI float causeFallDamageToActor$(float, float, class ActorDamageSource);
+
+    MCAPI void die$(class ActorDamageSource const& source);
+
+    MCAPI int getArmorValue$() const;
+
+    MCAPI class Vec3 getFiringPos$() const;
+
+    MCAPI void handleEntityEvent$(::ActorEvent id, int data);
+
+    MCAPI void hurtEffects$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+
+    MCAPI bool isInvulnerableTo$(class ActorDamageSource const& source) const;
+
+    MCAPI void newServerAiStep$();
+
+    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI void reloadHardcodedClient$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI void remove$();
+
+    MCAPI bool startRiding$(class Actor& vehicle);
+
+    MCAPI static class mce::UUID const& MAX_HEALTH_CAP_UUID();
+
+    MCAPI static int const& TIME_BEFORE_MOVING();
 
     // NOLINTEND
 };

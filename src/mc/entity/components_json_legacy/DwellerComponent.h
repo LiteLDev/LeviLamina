@@ -107,11 +107,19 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::unordered_map<std::string, ::DwellerRole> const DWELLING_ROLES;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static std::unordered_map<std::string, ::DwellerComponent::DwellingType> const DWELLING_TYPES;
+    MCAPI void dtor$();
+
+    MCAPI static std::unordered_map<std::string, ::DwellerRole> const& DWELLING_ROLES();
+
+    MCAPI static std::unordered_map<std::string, ::DwellerComponent::DwellingType> const& DWELLING_TYPES();
 
     // NOLINTEND
 };

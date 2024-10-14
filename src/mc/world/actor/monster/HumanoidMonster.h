@@ -55,15 +55,31 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static float const MAX_ENCHANTED_ARMOR_CHANCE;
+    MCAPI static void** $vftable();
 
-    MCAPI static float const MAX_ENCHANTED_WEAPON_CHANCE;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static float const MAX_PICKUP_LOOT_CHANCE;
+    MCAPI void dtor$();
 
-    MCAPI static float const MAX_WEARING_ARMOR_CHANCE;
+    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+
+    MCAPI int getItemUseDuration$() const;
+
+    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI static float const& MAX_ENCHANTED_ARMOR_CHANCE();
+
+    MCAPI static float const& MAX_ENCHANTED_WEAPON_CHANCE();
+
+    MCAPI static float const& MAX_PICKUP_LOOT_CHANCE();
+
+    MCAPI static float const& MAX_WEARING_ARMOR_CHANCE();
 
     // NOLINTEND
 };

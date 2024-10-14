@@ -52,4 +52,32 @@ public:
     MCAPI void _refreshSlot(int modelSlot);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class Container* _getContainer$() const;
+
+    MCAPI int _getContainerOffset$() const;
+
+    MCAPI void _onItemChanged$(int modelSlot, class ItemStack const& oldItem, class ItemStack const& newItem);
+
+    MCAPI void containerContentChanged$(int slot);
+
+    MCAPI class ContainerWeakRef getContainerWeakRef$() const;
+
+    MCAPI bool isValid$();
+
+    MCAPI void postInit$();
+
+    MCAPI void releaseResources$();
+
+    // NOLINTEND
 };

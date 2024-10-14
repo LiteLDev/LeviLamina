@@ -44,4 +44,23 @@ public:
     MCAPI ActorBlock(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void
+    neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
+
+    MCAPI void triggerEvent$(class BlockSource& region, class BlockPos const& pos, int b0, int b1) const;
+
+    // NOLINTEND
 };

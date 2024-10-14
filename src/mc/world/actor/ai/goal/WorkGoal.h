@@ -52,11 +52,35 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int const RAIN_CHECK_MAX_COOLDOWN;
+    MCAPI static void** $vftable();
 
-    MCAPI static int const WORK_TIMESTAMP_UPDATE_INVERVAL;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
+
+    MCAPI void tick$();
+
+    MCAPI void useWorkstation$();
+
+    MCAPI static int const& RAIN_CHECK_MAX_COOLDOWN();
+
+    MCAPI static int const& WORK_TIMESTAMP_UPDATE_INVERVAL();
 
     // NOLINTEND
 };

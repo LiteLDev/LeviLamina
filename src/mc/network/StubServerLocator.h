@@ -68,4 +68,53 @@ public:
     MCAPI StubServerLocator();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void addCustomServer$(class AsynchronousIPResolver const& futureIP, int port);
+
+    MCAPI void addCustomServer$(std::string const& address, int port);
+
+    MCAPI void checkCanConnectToCustomServerAsync$(
+        std::string                                         hostIpAddress,
+        int                                                 port,
+        std::function<void(::ServerConnectivityTestResult)> callback
+    );
+
+    MCAPI void clearServerList$();
+
+    MCAPI float getPingTimeForGUID$(std::string const& guid);
+
+    MCAPI std::vector<struct PingedCompatibleServer> getServerList$() const;
+
+    MCAPI void startAnnouncingServer$(
+        std::string const&                                playerName,
+        std::string const&                                worldName,
+        class Bedrock::NonOwnerPointer<class AppPlatform> appPlatform,
+        ::GameType                                        gameType,
+        int                                               numPlayers,
+        int                                               maxNumPlayers,
+        bool                                              isJoinableThroughServerScreen,
+        bool                                              isEditorWorld
+    );
+
+    MCAPI void startServerDiscovery$(struct PortPair ports);
+
+    MCAPI void stopAnnouncingServer$(class Bedrock::NonOwnerPointer<class AppPlatform> appPlatform);
+
+    MCAPI void stopServerDiscovery$();
+
+    MCAPI void update$();
+
+    // NOLINTEND
 };

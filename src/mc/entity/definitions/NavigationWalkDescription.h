@@ -21,4 +21,15 @@ public:
     virtual ~NavigationWalkDescription();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI char const* getJsonName$() const;
+
+    // NOLINTEND
 };

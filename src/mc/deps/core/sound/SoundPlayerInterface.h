@@ -97,4 +97,11 @@ public:
     virtual std::optional<struct LoopingSoundAttributes> tryGetLoopingSoundAttributes(uint64) const = 0;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };

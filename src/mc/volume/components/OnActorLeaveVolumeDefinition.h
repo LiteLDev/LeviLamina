@@ -23,4 +23,11 @@ public:
     MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

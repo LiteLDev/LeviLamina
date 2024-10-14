@@ -93,4 +93,50 @@ public:
     _forEachCandle(class Block const&, class BlockPos const& pos, std::function<void(class Vec3 const&, int)> callback);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI int _getNumCandles$(class Block const&) const;
+
+    MCAPI void _iterateCandles$(
+        class Block const&                          block,
+        class BlockPos const&                       pos,
+        std::function<void(class Vec3 const&, int)> callback
+    ) const;
+
+    MCAPI void _tryLightOnFire$(class BlockSource& region, class BlockPos const& pos, class Actor* sourceActor) const;
+
+    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const*) const;
+
+    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool
+    checkIsPathable$(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
+
+    MCAPI int
+    getComparatorSignal$(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
+        const;
+
+    MCAPI class AABB const& getVisualShape$(class Block const&, class AABB& bufferAABB) const;
+
+    MCAPI bool hasComparatorSignal$() const;
+
+    MCAPI bool isCandleCakeBlock$() const;
+
+    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos, uchar face) const;
+
+    MCAPI void
+    neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
+
+    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar face) const;
+
+    // NOLINTEND
 };

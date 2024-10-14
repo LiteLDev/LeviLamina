@@ -30,6 +30,13 @@ public:
         MCAPI ~ChanceInformation();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     struct CoordinateRange {
@@ -71,6 +78,18 @@ public:
         MCAPI int _eval(int evaluatedMin, int evaluatedMax, uint& stepIndex, class Random& random) const;
 
         MCAPI ~CoordinateRange();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -142,6 +161,18 @@ public:
         class ExpressionNode&    node,
         float                    defaultValue
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

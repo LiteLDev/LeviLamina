@@ -16,6 +16,13 @@ public:
     MCAPI ~RequestHeader();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace CodeBuilder

@@ -43,9 +43,34 @@ public:
 
     MCAPI MapCloningRecipe(std::string const& recipeId, class mce::UUID const& uuid);
 
-    MCAPI static class mce::UUID const CartographyTableID;
+    // NOLINTEND
 
-    MCAPI static class mce::UUID const CraftingTableID;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::vector<class ItemInstance> const&
+          assemble$(class CraftingContainer& craftSlots, class CraftingContext&) const;
+
+    MCAPI int getCraftingSize$() const;
+
+    MCAPI class RecipeIngredient const& getIngredient$(int x, int y) const;
+
+    MCAPI std::vector<class ItemInstance> const& getResultItems$() const;
+
+    MCAPI bool matches$(class CraftingContainer const& craftSlots, class CraftingContext const&) const;
+
+    MCAPI int size$() const;
+
+    MCAPI static class mce::UUID const& CartographyTableID();
+
+    MCAPI static class mce::UUID const& CraftingTableID();
 
     // NOLINTEND
 };

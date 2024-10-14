@@ -88,4 +88,46 @@ public:
     MCAPI static bool _isLit(class Block const& block);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI int _getNumCandles$(class Block const&) const;
+
+    MCAPI void
+    _iterateCandles$(class Block const&, class BlockPos const&, std::function<void(class Vec3 const&, int)> callback)
+        const;
+
+    MCAPI void _onHitByActivatingAttack$(class BlockSource& region, class BlockPos const& pos, class Actor*) const;
+
+    MCAPI void _tryLightOnFire$(class BlockSource&, class BlockPos const&, class Actor*) const;
+
+    MCAPI void
+    animateTickBedrockLegacy$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI bool canContainLiquid$() const;
+
+    MCAPI void entityInside$(class BlockSource& region, class BlockPos const& pos, class Actor& entity) const;
+
+    MCAPI struct Brightness getLightEmission$(class Block const& block) const;
+
+    MCAPI bool hasVariableLighting$() const;
+
+    MCAPI bool isWaterBlocking$() const;
+
+    MCAPI void
+    neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
+
+    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+
+    // NOLINTEND
 };

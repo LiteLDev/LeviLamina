@@ -44,4 +44,48 @@ public:
     MCAPI explicit SimpleRandom(int64 seed);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForIRandom();
+
+    MCAPI static void** $vftableForIRandomSeeded();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void consumeCount$(uint count);
+
+    MCAPI std::unique_ptr<class IRandom> fork$();
+
+    MCAPI std::unique_ptr<class IPositionalRandomFactory> forkPositional$();
+
+    MCAPI bool nextBoolean$();
+
+    MCAPI double nextDouble$();
+
+    MCAPI float nextFloat$();
+
+    MCAPI double nextGaussianDouble$();
+
+    MCAPI int nextInt$();
+
+    MCAPI int nextInt$(int bound);
+
+    MCAPI int64 nextLong$();
+
+    MCAPI struct Seed128Bit seed128$() const;
+
+    MCAPI int64 seed64$() const;
+
+    MCAPI void setSeed$(struct Seed128Bit seed);
+
+    MCAPI void setSeed$(int64 seed);
+
+    // NOLINTEND
 };

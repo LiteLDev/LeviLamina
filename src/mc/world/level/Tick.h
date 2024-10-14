@@ -18,7 +18,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static struct Tick const MAX;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static struct Tick const& MAX();
 
     // NOLINTEND
 };

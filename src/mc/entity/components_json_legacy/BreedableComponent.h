@@ -22,6 +22,13 @@ public:
         MCAPI ~MatingResult();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -89,6 +96,16 @@ public:
     MCAPI void _spawnLoveParticles(class Actor& owner);
 
     MCAPI void _useBreedItem(class Actor& owner, class Player& player, class ItemStack const&);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
     // NOLINTEND
 };

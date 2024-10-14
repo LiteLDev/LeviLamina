@@ -130,7 +130,16 @@ public:
     // vIndex: 29
     virtual bool isPackKeyword(std::string const& key) = 0;
 
-    MCAPI static char const NeutralLangCode[];
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI static ::ll::CArrayT<char const>& NeutralLangCode();
 
     // NOLINTEND
 };

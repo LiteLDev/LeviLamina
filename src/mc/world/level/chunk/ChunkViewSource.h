@@ -98,4 +98,31 @@ public:
     MCAPI static ::ChunkSourceViewGenerateMode getGenerateMode(bool isClientSide, bool isClientSideGenerationEnabled);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void acquireDiscarded$(std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter> ptr);
+
+    MCAPI std::shared_ptr<class LevelChunk>
+          createNewChunk$(class ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
+
+    MCAPI std::shared_ptr<class LevelChunk> getExistingChunk$(class ChunkPos const& pos);
+
+    MCAPI std::shared_ptr<class LevelChunk> getRandomChunk$(class Random& random);
+
+    MCAPI bool isWithinWorldLimit$(class ChunkPos const& cp) const;
+
+    MCAPI void setLevelChunk$(std::shared_ptr<class LevelChunk> lc);
+
+    // NOLINTEND
 };

@@ -66,4 +66,43 @@ public:
     MCAPI IFileChunkUploader();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void confirmChunkReceived$(struct FileInfo const& file, struct FileChunkInfo const& chunk);
+
+    MCAPI struct FileChunkInfo getChunkInfo$(struct FileInfo const& file, int chunkID) const;
+
+    MCAPI void getServerMissingChunks$(
+        struct FileInfo const&                                 file,
+        std::function<void(std::vector<struct FileChunkInfo>)> callback
+    ) const;
+
+    MCAPI void update$();
+
+    MCAPI void uploadChunk$(
+        struct FileInfo const&      file,
+        struct FileChunkInfo const& chunk,
+        std::vector<uchar> const&   data,
+        std::function<void(bool)>   onCompleteCallback
+    );
+
+    MCAPI void uploadStream$(
+        struct FileInfo const&                                        file,
+        uint64                                                        streamSize,
+        std::string const&                                            boundary,
+        std::function<void(::IFileChunkUploader::UploadStreamResult)> onCompleteCallback
+    );
+
+    // NOLINTEND
 };

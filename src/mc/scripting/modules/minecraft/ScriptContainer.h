@@ -101,6 +101,54 @@ public:
     MCAPI static std::optional<struct Scripting::Error> _isSlotInvalid(class Container& container, int slot);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class Scripting::Result<void> addItemV010$(class ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack
+    ) const;
+
+    MCAPI class Scripting::Result<void> clearAll$() const;
+
+    MCAPI class Scripting::Result<int> getEmptySlotsCount$() const;
+
+    MCAPI class Scripting::Result<
+        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>>
+    getItem$(int slot) const;
+
+    MCAPI class Scripting::Result<int> getSize$() const;
+
+    MCAPI class Scripting::Result<
+        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptContainerSlot>>
+    getSlot$(int slot) const;
+
+    MCAPI class Scripting::Result<void>
+    moveItem$(int fromSlot, int toSlot, class ScriptModuleMinecraft::ScriptContainerWrapper& toScriptContainer) const;
+
+    MCAPI class Scripting::Result<void>
+    setItem$(int slot, std::optional<class ScriptModuleMinecraft::ScriptItemStack> const& scriptItemStack) const;
+
+    MCAPI class Scripting::Result<void>
+    setItemV010$(int slot, class ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
+
+    MCAPI class Scripting::Result<void>
+    swapItems$(int slot, int otherSlot, class ScriptModuleMinecraft::ScriptContainerWrapper& otherScriptContainer)
+        const;
+
+    MCAPI class Scripting::Result<bool>
+    swapItemsV010$(int slot, int otherSlot, class ScriptModuleMinecraft::ScriptContainer& otherScriptContainer) const;
+
+    MCAPI class Scripting::Result<bool>
+    transferItemV010$(int fromSlot, int toSlot, class ScriptModuleMinecraft::ScriptContainer& toScriptContainer) const;
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

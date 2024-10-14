@@ -30,4 +30,11 @@ public:
     MCAPI void onTick(struct BlockEvents::BlockQueuedTickEvent const& eventData) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };

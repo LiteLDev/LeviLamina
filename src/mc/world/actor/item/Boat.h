@@ -82,4 +82,38 @@ public:
     MCAPI void postNormalTick();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+
+    MCAPI bool canAddPassenger$(class Actor& passenger) const;
+
+    MCAPI void destroy$(class Actor* source);
+
+    MCAPI struct ActorUniqueID getControllingPlayer$() const;
+
+    MCAPI std::string getExitTip$(std::string const& kind, ::InputMode mode, ::NewInteractionModel scheme) const;
+
+    MCAPI float getPassengerYRotation$(class Actor const& passenger) const;
+
+    MCAPI float getShadowRadius$() const;
+
+    MCAPI bool isInvulnerableTo$(class ActorDamageSource const& source) const;
+
+    MCAPI void normalTick$();
+
+    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI void reloadHardcodedClient$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    // NOLINTEND
 };

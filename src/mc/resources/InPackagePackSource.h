@@ -41,4 +41,29 @@ public:
     MCAPI InPackagePackSource(std::shared_ptr<class IInPackagePacks> const& packs, ::PackType packType);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void forEachPack$(std::function<void(class Pack&)> callback);
+
+    MCAPI void forEachPackConst$(std::function<void(class Pack const&)> callback) const;
+
+    MCAPI ::PackOrigin getPackOrigin$() const;
+
+    MCAPI ::PackType getPackType$() const;
+
+    MCAPI class PackSourceReport load$(
+        class IPackManifestFactory&                                         manifestFactory,
+        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider
+    );
+
+    // NOLINTEND
 };

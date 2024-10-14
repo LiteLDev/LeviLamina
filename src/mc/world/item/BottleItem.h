@@ -58,4 +58,25 @@ public:
     ) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class InteractionResult
+    _useOn$(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar, class Vec3 const& clickPos)
+        const;
+
+    MCAPI bool
+    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+
+    MCAPI bool isLiquidClipItem$() const;
+
+    // NOLINTEND
 };

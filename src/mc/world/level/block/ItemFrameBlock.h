@@ -114,4 +114,69 @@ public:
     MCAPI void _checkAchievements(class Player& player, class BlockPos const& currentPos) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const* blockActor) const;
+
+    MCAPI bool attack$(class Player* player, class BlockPos const& pos) const;
+
+    MCAPI bool canContainLiquid$() const;
+
+    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI class AABB
+    getCollisionShape$(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI int
+    getComparatorSignal$(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
+        const;
+
+    MCAPI bool getIgnoresDestroyPermissions$(class Actor& entity, class BlockPos const& pos) const;
+
+    MCAPI class Block const&
+    getPlacementBlock$(class Actor const&, class BlockPos const&, uchar face, class Vec3 const&, int) const;
+
+    MCAPI class HashedString getSpawnedItemName$() const;
+
+    MCAPI class AABB const& getVisualShape$(class Block const& block, class AABB& bufferAABB) const;
+
+    MCAPI bool hasComparatorSignal$() const;
+
+    MCAPI bool isInteractiveBlock$() const;
+
+    MCAPI bool isWaterBlocking$() const;
+
+    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos, uchar face) const;
+
+    MCAPI void
+    neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
+
+    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void onRemove$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI class Block const*
+    playerWillDestroy$(class Player& player, class BlockPos const& pos, class Block const& block) const;
+
+    MCAPI void
+    spawnAfterBreak$(class BlockSource& region, class Block const&, class BlockPos const& pos, struct ResourceDropsContext const&)
+        const;
+
+    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+
+    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar) const;
+
+    MCAPI bool waterSpreadCausesSpawn$() const;
+
+    // NOLINTEND
 };

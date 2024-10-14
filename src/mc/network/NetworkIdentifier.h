@@ -64,13 +64,23 @@ public:
 
     MCAPI static std::string hyphenateId(uint64 id);
 
-    MCAPI static class NetworkIdentifier INVALID_ID;
-
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI bool equalsTypeData(class NetworkIdentifier const& other) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI static class NetworkIdentifier& INVALID_ID();
 
     // NOLINTEND
 };

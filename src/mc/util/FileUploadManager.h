@@ -31,6 +31,13 @@ public:
         MCAPI ~MultiPartStreamHelper();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -88,15 +95,23 @@ public:
 
     // NOLINTEND
 
-    // protected:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int const CHUNK_UPLOAD_SIZE;
+    MCAPI static void** $vftable();
 
-    // NOLINTEND
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static std::string const BOUNDARY;
+    MCAPI void dtor$();
+
+    MCAPI float getUploadProgress$() const;
+
+    MCAPI static std::string const& BOUNDARY();
+
+    MCAPI static int const& CHUNK_UPLOAD_SIZE();
 
     // NOLINTEND
 };

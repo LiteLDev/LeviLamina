@@ -15,4 +15,14 @@ public:
     TargetPoint(float temperature, float humidity, float continentalness, float erosion, float depth, float weirdness);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    // NOLINTEND
 };

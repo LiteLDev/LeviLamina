@@ -23,4 +23,11 @@ public:
     MCAPI ~ChunkGenerationManager();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

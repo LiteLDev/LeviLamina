@@ -63,4 +63,24 @@ public:
     MCAPI void _dealDamageTo(class Mob& entity);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI float getShadowRadius$() const;
+
+    MCAPI struct ActorUniqueID getSourceUniqueID$() const;
+
+    MCAPI void handleEntityEvent$(::ActorEvent id, int data);
+
+    MCAPI void normalTick$();
+
+    // NOLINTEND
 };

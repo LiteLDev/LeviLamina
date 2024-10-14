@@ -67,6 +67,45 @@ public:
     virtual void onPostLifetimeScopeDestroy(class Scripting::LifetimeRegistry&);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void onDestroyObject$(
+        class Scripting::LifetimeRegistry& registry,
+        struct Scripting::ObjectHandle     handle,
+        entt::meta_type const&             type,
+        uint
+    );
+
+    MCAPI void
+    onMakeObject$(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle, entt::meta_type const&, uint);
+
+    MCAPI void onObjectPromotedToMultipleOwners$(
+        class Scripting::LifetimeRegistry& registry,
+        struct Scripting::ObjectHandle     handle
+    );
+
+    MCAPI void
+    onObjectReducedToSingleOwner$(class Scripting::LifetimeRegistry& registry, struct Scripting::ObjectHandle handle);
+
+    MCAPI void onPostLifetimeScopeDestroy$(class Scripting::LifetimeRegistry&);
+
+    MCAPI void onPreLifetimeScopeDestroy$(class Scripting::LifetimeRegistry& registry);
+
+    MCAPI void
+    onTrackObject$(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle, entt::meta_type const&, uint);
+
+    MCAPI void onUntrackObject$(
+        class Scripting::LifetimeRegistry& registry,
+        struct Scripting::ObjectHandle     handle,
+        entt::meta_type const&             type,
+        uint
+    );
+
+    // NOLINTEND
 };
 
 }; // namespace Scripting::QuickJS

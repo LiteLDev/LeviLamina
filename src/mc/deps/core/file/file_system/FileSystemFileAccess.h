@@ -38,6 +38,15 @@ public:
         virtual uint64 fread(void* buffer, uint64 size, uint64 count, void* file) const;
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        MCAPI uint64 fread$(void* buffer, uint64 size, uint64 count, void* file) const;
+
+        // NOLINTEND
     };
 
     class FileSystemFileWriteAccess : public ::IFileWriteAccess {
@@ -54,6 +63,15 @@ public:
 
         // vIndex: 1
         virtual uint64 fwrite(void const* buffer, uint64 size, uint64 count, void* file);
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        MCAPI uint64 fwrite$(void const* buffer, uint64 size, uint64 count, void* file);
 
         // NOLINTEND
     };
@@ -91,6 +109,32 @@ public:
     virtual void unload();
 
     MCAPI explicit FileSystemFileAccess(::FileSystemMode mode);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI int fclose$(void* file);
+
+    MCAPI void* fopen$(class Core::Path const& filePath, std::string const& mode);
+
+    MCAPI int fseek$(void* file, int64 offset, int origin);
+
+    MCAPI int64 ftell$(void* file);
+
+    MCAPI class IFileReadAccess const* getReadInterface$() const;
+
+    MCAPI class IFileWriteAccess* getWriteInterface$();
+
+    MCAPI void unload$();
 
     // NOLINTEND
 };

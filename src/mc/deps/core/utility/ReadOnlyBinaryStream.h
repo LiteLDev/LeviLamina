@@ -103,4 +103,20 @@ public:
     MCAPI class Bedrock::Result<void> readVectorList(std::vector<uint>& list);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI class Bedrock::Result<void> read$(void* target, uint64 num);
+
+    // NOLINTEND
 };

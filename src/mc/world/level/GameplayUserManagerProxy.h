@@ -24,4 +24,19 @@ public:
     virtual void reloadActor(class Actor& actor) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void reloadActor$(class Actor& actor) const;
+
+    MCAPI bool shouldGeneratePlayerIndex$() const;
+
+    MCAPI std::optional<std::string> validatePlayerName$(std::string const&, class GameplayUserManager const&) const;
+
+    // NOLINTEND
 };

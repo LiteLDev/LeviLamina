@@ -17,6 +17,13 @@ public:
     MCAPI ~NbtToBlockCache();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace BlockSerializationUtils

@@ -167,4 +167,36 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI bool getNearestGeneratedFeature$(
+        class Dimension&                         dimension,
+        class BiomeSource const&                 biomeSource,
+        class BlockPos const&                    origin,
+        class BlockPos&                          pos,
+        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        bool                                     mustBeInNewChunks,
+        std::optional<class HashedString> const& biomeTag
+    );
+
+    MCAPI class StructureStart* getStructureAt$(int cellX, int cellY, int cellZ);
+
+    MCAPI void initMobSpawnTypes$(class HardcodedSpawnAreaRegistry&);
+
+    MCAPI bool shouldAddHardcodedSpawnAreas$() const;
+
+    MCAPI bool shouldPostProcessMobs$() const;
+
+    // NOLINTEND
 };

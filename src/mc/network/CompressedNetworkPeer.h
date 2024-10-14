@@ -40,4 +40,24 @@ public:
     MCAPI void setCompressionEnabled(bool val, struct NetworkSettingOptions options);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI struct NetworkPeer::NetworkStatus getNetworkStatus$() const;
+
+    MCAPI ::NetworkPeer::DataStatus
+    receivePacket$(std::string& outData, std::shared_ptr<std::chrono::steady_clock::time_point> const& timepointPtr);
+
+    MCAPI void
+    sendPacket$(std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility compressible);
+
+    // NOLINTEND
 };

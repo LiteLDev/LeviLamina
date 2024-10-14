@@ -66,6 +66,40 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool onFlushBlockCustomComponentAfterEvents$();
+
+    MCAPI bool onFlushEditorDataStoreAfterEvents$();
+
+    MCAPI bool onFlushEditorExtensionContextAfterEvents$();
+
+    MCAPI bool onFlushItemCustomComponentAfterEvents$();
+
+    MCAPI bool onFlushSystemAfterEvents$();
+
+    MCAPI bool onFlushWorldAfterEvents$();
+
+    MCAPI void onLevelTickEnd$();
+
+    MCAPI void onPostFlushAfterEvents$();
+
+    MCAPI void onPreFlushAfterEvents$();
+
+    MCAPI void onRunAsyncJobs$();
+
+    MCAPI bool onRunSystemTick$();
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

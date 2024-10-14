@@ -38,4 +38,11 @@ public:
     MCAPI ~CircuitComponentList();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

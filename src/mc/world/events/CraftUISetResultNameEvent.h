@@ -14,4 +14,11 @@ public:
     MCAPI ~CraftUISetResultNameEvent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

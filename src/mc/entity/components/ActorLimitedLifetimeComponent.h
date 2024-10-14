@@ -21,4 +21,14 @@ public:
     MCAPI static bool needsLegacyConversion(class CompoundTag const& tag);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    // NOLINTEND
 };

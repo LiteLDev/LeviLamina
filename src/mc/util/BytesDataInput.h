@@ -37,4 +37,15 @@ public:
     virtual class Bedrock::Result<int64> readLongLongResult();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI class Bedrock::Result<uchar> readByteResult$();
+
+    MCAPI class Bedrock::Result<std::string> readLongStringResult$();
+
+    MCAPI class Bedrock::Result<std::string> readStringResult$();
+
+    // NOLINTEND
 };

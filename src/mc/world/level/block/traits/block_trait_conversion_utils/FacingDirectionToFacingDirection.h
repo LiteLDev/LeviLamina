@@ -8,8 +8,9 @@ namespace BlockTraitConversionUtils { struct ConvertedSet; }
 // clang-format on
 
 namespace BlockTraitConversionUtils::FacingDirectionToFacingDirection {
+// thunks
 // NOLINTBEGIN
-MCAPI extern struct BlockTraitConversionUtils::ConvertedSet R20U2;
+MCAPI struct BlockTraitConversionUtils::ConvertedSet& R20U2();
 // NOLINTEND
 
 }; // namespace BlockTraitConversionUtils::FacingDirectionToFacingDirection

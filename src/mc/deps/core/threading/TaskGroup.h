@@ -98,4 +98,37 @@ public:
     MCAPI static class IBackgroundTaskOwner* getCurrentTaskGroup();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI ::TaskGroupState getState$() const;
+
+    MCAPI void processCoroutines$();
+
+    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queue$(
+        struct TaskStartInfoEx<void> const& startInfo,
+        std::function<class TaskResult()>&& task,
+        std::function<void()>&&             callback
+    );
+
+    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
+          queueSync$(struct TaskStartInfoEx<void> const& startInfo, std::function<class TaskResult()>&& task);
+
+    MCAPI void requeueTask$(std::shared_ptr<class BackgroundTaskBase> task, bool queueImmediate);
+
+    MCAPI void taskComplete$(gsl::not_null<class BackgroundTaskBase*> task);
+
+    MCAPI void taskRegister$(std::shared_ptr<class BackgroundTaskBase> task);
+
+    // NOLINTEND
 };

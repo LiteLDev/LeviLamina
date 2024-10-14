@@ -165,11 +165,19 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static char const* BEHAVIOR_PACK_STRUCTURES_FOLDER;
+    MCAPI static void** $vftable();
 
-    MCAPI static char const* LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI static char const* const& BEHAVIOR_PACK_STRUCTURES_FOLDER();
+
+    MCAPI static char const* const& LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX();
 
     // NOLINTEND
 };

@@ -45,9 +45,10 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static SizeInfoList const mInfoList;
+    MCAPI static SizeInfoList const& mInfoList();
 
     // NOLINTEND
 };

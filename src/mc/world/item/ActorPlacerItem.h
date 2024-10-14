@@ -99,15 +99,51 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int const EGG_MASK_ID;
+    MCAPI static void** $vftable();
 
-    MCAPI static int const NUM_SPAWN_EGG_TEXTURES;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static std::unordered_map<uint, std::string> mCustomSpawnEggs;
+    MCAPI class InteractionResult
+    _useOn$(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const&) const;
 
-    MCAPI static std::unordered_map<class HashedString, struct ResolvedItemIconInfo> mEggTextureInfoMap;
+    MCAPI std::string buildDescriptionId$(class ItemDescriptor const&, class CompoundTag const*) const;
+
+    MCAPI bool
+    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+
+    MCAPI struct ActorDefinitionIdentifier getActorIdentifier$(class ItemStack const&) const;
+
+    MCAPI class mce::Color getBaseColor$(class ItemStack const&) const;
+
+    MCAPI struct ResolvedItemIconInfo getIconInfo$(class ItemStackBase const&, int, bool) const;
+
+    MCAPI class mce::Color getSecondaryColor$(class ItemStack const&) const;
+
+    MCAPI bool isActorPlacerItem$() const;
+
+    MCAPI bool isLiquidClipItem$() const;
+
+    MCAPI bool isMultiColorTinted$(class ItemStack const&) const;
+
+    MCAPI bool isValidAuxValue$(int auxValue) const;
+
+    MCAPI bool shouldInteractionWithBlockBypassLiquid$(class Block const& block) const;
+
+    MCAPI void tearDown$();
+
+    MCAPI static int const& EGG_MASK_ID();
+
+    MCAPI static int const& NUM_SPAWN_EGG_TEXTURES();
+
+    MCAPI static std::unordered_map<uint, std::string>& mCustomSpawnEggs();
+
+    MCAPI static std::unordered_map<class HashedString, struct ResolvedItemIconInfo>& mEggTextureInfoMap();
 
     // NOLINTEND
 };

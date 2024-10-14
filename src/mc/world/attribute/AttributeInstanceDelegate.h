@@ -30,4 +30,21 @@ public:
     virtual float getBuffValueWithModifiers(class AttributeBuff const& buff) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI float change$(float, float newValue, class AttributeBuff const&);
+
+    MCAPI float getBuffValueWithModifiers$(class AttributeBuff const& buff) const;
+
+    MCAPI void notify$(int64);
+
+    MCAPI void tick$();
+
+    MCAPI bool willChange$(float, float, class AttributeBuff const&);
+
+    // NOLINTEND
 };

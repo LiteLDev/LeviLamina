@@ -19,8 +19,6 @@ namespace mce { struct Radian; }
 
 namespace mce {
 // NOLINTBEGIN
-MCAPI extern std::unordered_map<std::string, ::mce::RenderState> const& featuresMap;
-
 MCAPI struct mce::Radian operator*(struct mce::Radian lhs, float rhs);
 
 MCAPI struct mce::Degree operator-(struct mce::Degree lhs, float rhs);

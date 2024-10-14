@@ -29,45 +29,54 @@ public:
 
     MCAPI static void setup(class CommandRegistry& registry);
 
-    MCAPI static char const* ENUM_OPTION_CLEAR;
+    // NOLINTEND
 
-    MCAPI static char const* ENUM_OPTION_COLOR;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
 
-    MCAPI static char const* ENUM_OPTION_DEFAULT;
+    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    MCAPI static char const* ENUM_OPTION_EASE;
+    MCAPI static char const* const& ENUM_OPTION_CLEAR();
 
-    MCAPI static char const* ENUM_OPTION_FACING;
+    MCAPI static char const* const& ENUM_OPTION_COLOR();
 
-    MCAPI static char const* ENUM_OPTION_FADE;
+    MCAPI static char const* const& ENUM_OPTION_DEFAULT();
 
-    MCAPI static char const* ENUM_OPTION_POS;
+    MCAPI static char const* const& ENUM_OPTION_EASE();
 
-    MCAPI static char const* ENUM_OPTION_ROT;
+    MCAPI static char const* const& ENUM_OPTION_FACING();
 
-    MCAPI static char const* ENUM_OPTION_SET;
+    MCAPI static char const* const& ENUM_OPTION_FADE();
 
-    MCAPI static char const* ENUM_OPTION_TIME;
+    MCAPI static char const* const& ENUM_OPTION_POS();
 
-    MCAPI static char const* OPTION_CLEAR;
+    MCAPI static char const* const& ENUM_OPTION_ROT();
 
-    MCAPI static char const* OPTION_COLOR;
+    MCAPI static char const* const& ENUM_OPTION_SET();
 
-    MCAPI static char const* OPTION_DEFAULT;
+    MCAPI static char const* const& ENUM_OPTION_TIME();
 
-    MCAPI static char const* OPTION_EASE;
+    MCAPI static char const* const& OPTION_CLEAR();
 
-    MCAPI static char const* OPTION_FACING;
+    MCAPI static char const* const& OPTION_COLOR();
 
-    MCAPI static char const* OPTION_FADE;
+    MCAPI static char const* const& OPTION_DEFAULT();
 
-    MCAPI static char const* OPTION_POS;
+    MCAPI static char const* const& OPTION_EASE();
 
-    MCAPI static char const* OPTION_ROT;
+    MCAPI static char const* const& OPTION_FACING();
 
-    MCAPI static char const* OPTION_SET;
+    MCAPI static char const* const& OPTION_FADE();
 
-    MCAPI static char const* OPTION_TIME;
+    MCAPI static char const* const& OPTION_POS();
+
+    MCAPI static char const* const& OPTION_ROT();
+
+    MCAPI static char const* const& OPTION_SET();
+
+    MCAPI static char const* const& OPTION_TIME();
 
     // NOLINTEND
 };

@@ -43,4 +43,24 @@ public:
     MCAPI bool _shouldRemove(class BlockSource& region, class BlockPos pos) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class InteractionResult _useOn$(
+        class ItemStack&  instance,
+        class Actor&      spawningActor,
+        class BlockPos    pos,
+        uchar             face,
+        class Vec3 const& clickPos
+    ) const;
+
+    // NOLINTEND
 };

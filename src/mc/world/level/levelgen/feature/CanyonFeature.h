@@ -89,4 +89,48 @@ public:
     ) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void addFeature$(
+        class BlockVolume&                                    blocks,
+        class BiomeSource const&                              localBiomeSource,
+        struct CanyonFeatureUtils::CanyonConfiguration const& canyonConfig,
+        class ChunkPos const&                                 pos,
+        class Random&                                         random,
+        int                                                   x,
+        int                                                   z,
+        struct WorldGenContext const&                         context
+    );
+
+    MCAPI bool carve$(
+        class BlockVolume&            blocks,
+        class BiomeSource const&      localBiomeSource,
+        class Random&                 random,
+        class ChunkPos const&         pos,
+        class Vec3 const&             startPos,
+        class Vec3 const&             originalStartPos,
+        int                           x0,
+        int                           x1,
+        int                           y0,
+        int                           y1,
+        int                           z0,
+        int                           z1,
+        float                         rad,
+        float                         yRad,
+        gsl::span<float const>        rs,
+        struct WorldGenContext const& context
+    ) const;
+
+    // NOLINTEND
 };

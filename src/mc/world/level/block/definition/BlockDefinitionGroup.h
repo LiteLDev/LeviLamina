@@ -34,6 +34,13 @@ public:
         MCAPI ~BlockResource();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -132,6 +139,18 @@ public:
     );
 
     MCAPI ::CreativeItemCategory _stringToCreativeItemCategory(std::string const& str);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

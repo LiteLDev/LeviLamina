@@ -63,4 +63,26 @@ public:
     MCAPI static bool hasRestingBlockAbove(class Vec3 const& batPos, class BlockSource const& region);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+
+    MCAPI void addAdditionalSaveData$(class CompoundTag& entityTag) const;
+
+    MCAPI void newServerAiStep$();
+
+    MCAPI void pushActors$();
+
+    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    // NOLINTEND
 };

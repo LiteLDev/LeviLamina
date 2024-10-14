@@ -43,4 +43,24 @@ public:
     MCAPI class ResolvedTextObject resolveRoot(class Actor const& actor, class Scoreboard const& scoreboard) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI class Json::Value asJsonValue$() const;
+
+    MCAPI std::string asString$() const;
+
+    MCAPI class Json::Value resolve$(struct ResolveData const& resolveData) const;
+
+    // NOLINTEND
 };

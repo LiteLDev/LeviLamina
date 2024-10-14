@@ -43,4 +43,26 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void _createBreakProgressParticles$(class Level& level, class BlockSource& region, class BlockPos pos);
+
+    MCAPI void _createDestroyParticles$(class Level& level, class BlockSource& region, class BlockPos pos);
+
+    MCAPI void _playBreakProgressSound$(class Level&, class BlockSource&, class BlockPos pos);
+
+    MCAPI void _playDestroySound$(class Level&, class BlockSource&, class BlockPos pos);
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    // NOLINTEND
 };

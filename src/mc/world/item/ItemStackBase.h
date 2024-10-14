@@ -368,22 +368,6 @@ public:
 
     MCAPI static bool isValidComponent(std::string const& name);
 
-    MCAPI static struct ItemStackBase::ComparisonOptions const COMPARISONOPTIONS_RELEVANTUSERDATA;
-
-    MCAPI static std::string const TAG_CAN_DESTROY;
-
-    MCAPI static std::string const TAG_CAN_PLACE_ON;
-
-    MCAPI static std::string const TAG_DISPLAY;
-
-    MCAPI static std::string const TAG_DISPLAY_NAME;
-
-    MCAPI static std::string const TAG_ENCHANTS;
-
-    MCAPI static std::string const TAG_LORE;
-
-    MCAPI static std::string const TAG_REPAIR_COST;
-
     // NOLINTEND
 
     // protected:
@@ -440,19 +424,53 @@ public:
 
     // NOLINTEND
 
-    // protected:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::string const TAG_CHARGED_ITEM;
+    MCAPI static void** $vftable();
 
-    MCAPI static std::string const TAG_STORE_CAN_DESTROY;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static std::string const TAG_STORE_CAN_PLACE_ON;
+    MCAPI void dtor$();
 
-    // NOLINTEND
+    MCAPI void reinit$(class Item const& item, int count, int auxValue);
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static int const MAX_STACK_SIZE;
+    MCAPI void reinit$(class BlockLegacy const& block, int count);
+
+    MCAPI void reinit$(std::string_view name, int count, int auxValue);
+
+    MCAPI void setNull$(std::optional<std::string> reason);
+
+    MCAPI std::string toDebugString$() const;
+
+    MCAPI std::string toString$() const;
+
+    MCAPI static struct ItemStackBase::ComparisonOptions const& COMPARISONOPTIONS_RELEVANTUSERDATA();
+
+    MCAPI static int const& MAX_STACK_SIZE();
+
+    MCAPI static std::string const& TAG_CAN_DESTROY();
+
+    MCAPI static std::string const& TAG_CAN_PLACE_ON();
+
+    MCAPI static std::string const& TAG_CHARGED_ITEM();
+
+    MCAPI static std::string const& TAG_DISPLAY();
+
+    MCAPI static std::string const& TAG_DISPLAY_NAME();
+
+    MCAPI static std::string const& TAG_ENCHANTS();
+
+    MCAPI static std::string const& TAG_LORE();
+
+    MCAPI static std::string const& TAG_REPAIR_COST();
+
+    MCAPI static std::string const& TAG_STORE_CAN_DESTROY();
+
+    MCAPI static std::string const& TAG_STORE_CAN_PLACE_ON();
 
     // NOLINTEND
 };

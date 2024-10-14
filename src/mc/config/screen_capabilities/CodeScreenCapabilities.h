@@ -21,4 +21,15 @@ public:
     virtual bool isOfType(class Bedrock::typeid_t<class IScreenCapabilities> type) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI bool isOfType$(class Bedrock::typeid_t<class IScreenCapabilities> type) const;
+
+    // NOLINTEND
 };

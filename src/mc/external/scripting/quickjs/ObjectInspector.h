@@ -38,6 +38,21 @@ public:
     getPropertyValue(struct Scripting::ObjectHandle handle, char const* name, entt::meta_type expectedType) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI std::optional<class Scripting::ResultAny>
+    getPropertyValue$(struct Scripting::ObjectHandle handle, char const* name, entt::meta_type expectedType) const;
+
+    MCAPI bool
+    hasBooleanPropertyValue$(struct Scripting::ObjectHandle handle, char const* name, bool expectedValue) const;
+
+    MCAPI bool isSameObject$(struct Scripting::ObjectHandle handleA, struct Scripting::ObjectHandle handleB) const;
+
+    // NOLINTEND
 };
 
 }; // namespace Scripting::QuickJS

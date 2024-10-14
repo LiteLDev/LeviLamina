@@ -135,11 +135,57 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class BaseGameVersion const COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION;
+    MCAPI static void** $vftable();
 
-    MCAPI static class Vec3 const PARTICLE_OFFSET;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void addAABBs$(
+        class Block const& block,
+        class IConstBlockSource const&,
+        class BlockPos const&    pos,
+        class AABB const*        intersectTestBox,
+        std::vector<class AABB>& inoutBoxes
+    ) const;
+
+    MCAPI bool
+    addCollisionShapes$(class Block const& block, class IConstBlockSource const& region, class BlockPos const& pos, class AABB const* intersectTestBox, std::vector<class AABB>& inoutBoxes, class optional_ref<class GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI bool breaksFallingBlocks$(class Block const&, class BaseGameVersion version) const;
+
+    MCAPI bool canContainLiquid$() const;
+
+    MCAPI bool canProvideSupport$(class Block const&, uchar face, ::BlockSupportType type) const;
+
+    MCAPI class HitResult
+    clip$(class Block const& block, class BlockSource const& region, class BlockPos const& pos, class Vec3 const& A, class Vec3 const& B, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI int getComparatorSignal$(class BlockSource&, class BlockPos const&, class Block const& block, uchar) const;
+
+    MCAPI int getVariant$(class Block const&) const;
+
+    MCAPI bool hasComparatorSignal$() const;
+
+    MCAPI void onMove$(class BlockSource& region, class BlockPos const& from, class BlockPos const&) const;
+
+    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void onRemove$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar) const;
+
+    MCAPI static class BaseGameVersion const& COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION();
+
+    MCAPI static class Vec3 const& PARTICLE_OFFSET();
 
     // NOLINTEND
 };

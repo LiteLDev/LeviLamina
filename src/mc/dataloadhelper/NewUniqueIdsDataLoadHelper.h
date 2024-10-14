@@ -78,4 +78,55 @@ public:
     MCAPI explicit NewUniqueIdsDataLoadHelper(class ILevel& level);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI ::DataLoadHelperType getType$() const;
+
+    MCAPI struct InternalComponentRegistry::ComponentInfo const* loadActorInternalComponentInfo$(
+        std::unordered_map<class HashedString, struct InternalComponentRegistry::ComponentInfo> const& registry,
+        std::string const&                                                                             componentName
+    );
+
+    MCAPI struct ActorUniqueID loadActorUniqueID$(struct ActorUniqueID id);
+
+    MCAPI class BlockPos loadBlockPosition$(class BlockPos const& blockPos);
+
+    MCAPI class BlockPos loadBlockPositionOffset$(class BlockPos const& blockPosOffset);
+
+    MCAPI class Vec3 loadDirection$(class Vec3 const& direction);
+
+    MCAPI ::Direction::Type loadDirection$(::Direction::Type direction);
+
+    MCAPI uchar loadFacingID$(uchar facing);
+
+    MCAPI ::Mirror loadMirror$(::Mirror mirror);
+
+    MCAPI struct ActorUniqueID loadOwnerID$(struct ActorUniqueID id);
+
+    MCAPI class Vec3 loadPosition$(class Vec3 const& position);
+
+    MCAPI ::Rotation loadRotation$(::Rotation rotation);
+
+    MCAPI float loadRotationDegreesX$(float x);
+
+    MCAPI float loadRotationDegreesY$(float y);
+
+    MCAPI float loadRotationRadiansX$(float x);
+
+    MCAPI float loadRotationRadiansY$(float y);
+
+    MCAPI bool shouldResetTime$();
+
+    // NOLINTEND
 };

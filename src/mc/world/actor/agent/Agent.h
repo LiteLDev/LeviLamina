@@ -154,4 +154,56 @@ public:
     MCAPI bool _isOnGround(class AABB const& aabb);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+
+    MCAPI void baseTick$();
+
+    MCAPI bool canBeAffected$(uint) const;
+
+    MCAPI bool canBePulledIntoVehicle$() const;
+
+    MCAPI bool canExistWhenDisallowMob$() const;
+
+    MCAPI bool canShowNameTag$() const;
+
+    MCAPI bool createAIGoals$();
+
+    MCAPI class mce::Color getNameTagTextColor$() const;
+
+    MCAPI void handleEntityEvent$(::ActorEvent id, int data);
+
+    MCAPI std::unique_ptr<class BodyControl> initBodyControl$();
+
+    MCAPI void initializeComponents$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI bool isInvisible$() const;
+
+    MCAPI bool isTargetable$() const;
+
+    MCAPI void kill$();
+
+    MCAPI void knockback$(class Actor*, int, float, float, float, float, float);
+
+    MCAPI void normalTick$();
+
+    MCAPI void setCarriedItem$(class ItemStack const& item);
+
+    MCAPI void setOwner$(struct ActorUniqueID id);
+
+    MCAPI void teleportTo$(class Vec3 const& pos, bool shouldStopRiding, int cause, int entityType, bool keepVelocity);
+
+    MCAPI void updateEntitySpecificMolangVariables$(class RenderParams& renderParams);
+
+    // NOLINTEND
 };

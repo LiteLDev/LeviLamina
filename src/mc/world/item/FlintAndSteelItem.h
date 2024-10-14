@@ -54,4 +54,32 @@ public:
     MCAPI FlintAndSteelItem(std::string const& name, int id);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool
+    _calculatePlacePos$(class ItemStackBase& instance, class Actor& entity, uchar& face, class BlockPos& pos) const;
+
+    MCAPI class InteractionResult
+    _useOn$(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
+        const;
+
+    MCAPI bool
+    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+
+    MCAPI int getEnchantSlot$() const;
+
+    MCAPI void hurtActor$(class ItemStack& item, class Actor& actor, class Mob& attacker) const;
+
+    MCAPI bool isDestructive$(int auxValue) const;
+
+    // NOLINTEND
 };

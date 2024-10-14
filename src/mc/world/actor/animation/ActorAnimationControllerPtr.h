@@ -21,7 +21,14 @@ public:
 
     MCAPI ~ActorAnimationControllerPtr();
 
-    MCAPI static class ActorAnimationControllerPtr const NONE;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    MCAPI static class ActorAnimationControllerPtr const& NONE();
 
     // NOLINTEND
 };

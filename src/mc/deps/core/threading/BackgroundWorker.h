@@ -66,9 +66,23 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class BackgroundWorker* gLocalWorkerMappingSingleton;
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI bool canTaskRunAgain$() const;
+
+    MCAPI bool isAsync$() const;
+
+    MCAPI static class BackgroundWorker*& gLocalWorkerMappingSingleton();
 
     // NOLINTEND
 };

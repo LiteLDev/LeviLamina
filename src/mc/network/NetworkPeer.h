@@ -88,4 +88,21 @@ public:
     virtual bool isEncrypted() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void flush$(std::function<void()>&& callback);
+
+    MCAPI bool isEncrypted$() const;
+
+    MCAPI bool isLocal$() const;
+
+    MCAPI void update$();
+
+    // NOLINTEND
 };

@@ -65,6 +65,15 @@ public:
     MCAPI static long SetGlobalProxyForHSession(void*, char const*);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace xbox::httpclient

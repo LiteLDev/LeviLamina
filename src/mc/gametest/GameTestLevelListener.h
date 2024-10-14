@@ -26,4 +26,22 @@ public:
     MCAPI explicit GameTestLevelListener(class gametest::GameTestTicker& testTicker);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForLevelEventListener();
+
+    MCAPI static void** $vftableForScriptDeferredEventListener();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI ::EventResult onEvent$(struct LevelNotificationEvent const& event);
+
+    MCAPI void onLevelTickEnd$();
+
+    // NOLINTEND
 };

@@ -33,6 +33,13 @@ public:
         MCAPI ~DwellerTestVillageInfo();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     class VillageInfo {
@@ -45,6 +52,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~VillageInfo();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -101,8 +115,6 @@ public:
 
     MCAPI std::shared_ptr<class POIInstance> tryCreatePOI(class BlockPos const& position, class Block const& block);
 
-    MCAPI static int const MAX_POI_TOLERANCE_DIST;
-
     // NOLINTEND
 
     // private:
@@ -132,13 +144,28 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static uint64 const MAX_POI_QUERIES;
+    MCAPI static void** $vftable();
 
-    MCAPI static int const MAX_QUERY_SCAN_ITERATIONS;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static int const VILLAGE_HERO_EFFECT_DURATION;
+    MCAPI std::weak_ptr<class Village>
+          fetchClosestVillage$(class BlockPos const& position, int maxDistFromVillageBounds, uint searchRadius) const;
+
+    MCAPI std::weak_ptr<class Village> getVillageByID$(class mce::UUID const& villageID) const;
+
+    MCAPI static uint64 const& MAX_POI_QUERIES();
+
+    MCAPI static int const& MAX_POI_TOLERANCE_DIST();
+
+    MCAPI static int const& MAX_QUERY_SCAN_ITERATIONS();
+
+    MCAPI static int const& VILLAGE_HERO_EFFECT_DURATION();
 
     // NOLINTEND
 };

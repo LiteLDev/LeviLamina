@@ -31,6 +31,23 @@ public:
     MCVAPI void onTestStructureLoaded(class gametest::BaseGameTestInstance&);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void onTestFailed$(class gametest::BaseGameTestInstance&);
+
+    MCAPI void onTestPassed$(class gametest::BaseGameTestInstance&);
+
+    MCAPI void onTestRetryFinished$(class gametest::BaseGameTestInstance&);
+
+    MCAPI void onTestRetryStarted$(class gametest::BaseGameTestInstance&);
+
+    MCAPI void onTestStarted$(class gametest::BaseGameTestInstance&);
+
+    MCAPI void onTestStructureLoaded$(class gametest::BaseGameTestInstance&);
+
+    // NOLINTEND
 };
 
 }; // namespace gametest

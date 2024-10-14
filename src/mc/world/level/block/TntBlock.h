@@ -76,4 +76,42 @@ public:
     MCAPI static bool tryLightTnt(class Player& player, class BlockPos const& pos);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::string buildDescriptionId$(class Block const& block) const;
+
+    MCAPI void
+    destroy$(class BlockSource& region, class BlockPos const& pos, class Block const& block, class Actor* entitySource)
+        const;
+
+    MCAPI bool
+    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+
+    MCAPI int getVariant$(class Block const& block) const;
+
+    MCAPI bool isAuxValueRelevantForPicking$() const;
+
+    MCAPI void onExploded$(class BlockSource& region, class BlockPos const& pos, class Actor* entitySource) const;
+
+    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void
+    onRedstoneUpdate$(class BlockSource& region, class BlockPos const& pos, int strength, bool isFirstTime) const;
+
+    MCAPI void setupRedstoneComponent$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool shouldDispense$(class BlockSource& region, class Container& container) const;
+
+    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar face) const;
+
+    // NOLINTEND
 };

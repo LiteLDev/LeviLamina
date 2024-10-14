@@ -21,8 +21,9 @@ namespace Social::Events { class Property; }
 // clang-format on
 
 namespace Social {
+// thunks
 // NOLINTBEGIN
-MCAPI extern class Social::GameConnectionInfo const INVALID_CONNECTION;
+MCAPI class Social::GameConnectionInfo const& INVALID_CONNECTION();
 // NOLINTEND
 
 }; // namespace Social

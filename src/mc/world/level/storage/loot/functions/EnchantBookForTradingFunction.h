@@ -30,6 +30,13 @@ public:
         MCAPI ~EnchantmentOption();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -68,6 +75,21 @@ public:
 
     MCAPI static std::optional<struct EnchantBookForTradingFunction::EnchantmentOption>
     _parseEnchantmentOption(class Json::Value const& enchantOptionData);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void apply$(class ItemStack& item, class Random& random, class LootTableContext&);
+
+    MCAPI int apply$(class ItemStack& item, class Random& random, struct Trade const&, class LootTableContext&);
+
+    MCAPI void apply$(class ItemInstance& item, class Random& random, class LootTableContext&);
+
+    MCAPI int apply$(class ItemInstance& item, class Random& random, struct Trade const&, class LootTableContext&);
 
     // NOLINTEND
 };

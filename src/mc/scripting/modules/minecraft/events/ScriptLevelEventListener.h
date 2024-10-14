@@ -73,6 +73,41 @@ public:
     virtual ::EventResult onEvent(struct ScriptingInitializeEvent const& scriptingInitializedEvent);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI ::EventResult onEvent$(struct LevelNotificationEvent const& event);
+
+    MCAPI ::EventResult onEvent$(struct LevelStartLeaveGameEvent const&);
+
+    MCAPI ::EventResult onEvent$(struct LevelGameRuleChangeEvent const& event);
+
+    MCAPI ::EventResult onEvent$(struct ScriptingInitializeEvent const& scriptingInitializedEvent);
+
+    MCAPI ::EventResult onLevelAddedPlayer$(class Level&, class Player& player);
+
+    MCAPI ::EventResult onLevelInitialized$(class Level& level);
+
+    MCAPI ::EventResult onLevelRemovedActor$(class Actor& actor);
+
+    MCAPI ::EventResult onLevelRemovedPlayer$(class Level&, class Player& player);
+
+    MCAPI ::EventResult onLevelTick$(class Level&);
+
+    MCAPI ::EventResult onLevelTickStart$(class Level&);
+
+    MCAPI ::EventResult onLevelWeatherChange$(
+        std::string const& dimension,
+        bool               wasRaining,
+        bool               wasLightning,
+        bool               isRaining,
+        bool               isLightning
+    );
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

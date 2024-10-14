@@ -25,6 +25,15 @@ public:
     virtual ~NonStrictJsonLoader();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace cereal

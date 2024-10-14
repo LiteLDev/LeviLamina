@@ -93,6 +93,52 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
+
+    MCAPI void singleTick$(
+        class StrictExecutionContext<
+            struct Filter<
+                class FlagComponent<struct ActorMovementTickNeededFlag>,
+                class FlagComponent<struct BoatFlag>,
+                class FlagComponent<struct HorseFlag>,
+                class FlagComponent<struct PlayerComponentFlag>,
+                class FlagComponent<struct RecalculateControlledByLocalInstanceRequestFlag>>,
+            struct Read<
+                struct VehicleComponent,
+                struct ActorDataFlagComponent,
+                class FlagComponent<struct LocalPlayerComponentFlag>>,
+            struct Write<>,
+            struct AddRemove<class FlagComponent<struct ControlledByLocalInstanceFlag>>,
+            struct GlobalRead<>,
+            struct GlobalWrite<>,
+            struct EntityFactoryT<>>& strictContext,
+        class StrictEntityContext&    entity
+    );
+
+    MCAPI void tick$(class StrictExecutionContext<
+                     struct Filter<
+                         class FlagComponent<struct ActorMovementTickNeededFlag>,
+                         class FlagComponent<struct BoatFlag>,
+                         class FlagComponent<struct HorseFlag>,
+                         class FlagComponent<struct PlayerComponentFlag>,
+                         class FlagComponent<struct RecalculateControlledByLocalInstanceRequestFlag>>,
+                     struct Read<
+                         struct VehicleComponent,
+                         struct ActorDataFlagComponent,
+                         class FlagComponent<struct LocalPlayerComponentFlag>>,
+                     struct Write<>,
+                     struct AddRemove<class FlagComponent<struct ControlledByLocalInstanceFlag>>,
+                     struct GlobalRead<>,
+                     struct GlobalWrite<>,
+                     struct EntityFactoryT<>>& strictContext);
+
+    // NOLINTEND
 };
 
 }; // namespace ControlledByLocalInstanceSystemImpl

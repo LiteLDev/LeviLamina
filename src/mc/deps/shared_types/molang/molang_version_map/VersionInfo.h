@@ -16,6 +16,13 @@ public:
     MCAPI ~VersionInfo();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace MolangVersionMap

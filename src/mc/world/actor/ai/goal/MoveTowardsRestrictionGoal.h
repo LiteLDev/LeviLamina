@@ -31,4 +31,15 @@ public:
     MCAPI bool _randomizeWantedPositionTowardsRestriction(class Vec3 const& restrictionCenter);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI void start$();
+
+    // NOLINTEND
 };

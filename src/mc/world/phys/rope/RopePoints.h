@@ -14,4 +14,11 @@ public:
     MCAPI ~RopePoints();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

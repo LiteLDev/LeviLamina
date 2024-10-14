@@ -23,4 +23,13 @@ public:
     MCAPI static int getYPositionForFeature(class ChunkPos const& pos, class Dimension& dimension);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool isValid$() const;
+
+    // NOLINTEND
 };

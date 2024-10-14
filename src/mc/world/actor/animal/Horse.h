@@ -156,4 +156,64 @@ public:
     MCAPI bool _setHorseType(::ActorType actorType);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool _hurt$(class ActorDamageSource const& source, float dmg, bool knock, bool ignite);
+
+    MCAPI void _playStepSound$(class BlockPos const& pos, class Block const& _onBlock);
+
+    MCAPI bool canFreeze$() const;
+
+    MCAPI float causeFallDamageToActor$(float fallDistance, float multiplier, class ActorDamageSource source);
+
+    MCAPI void die$(class ActorDamageSource const& damagesource);
+
+    MCAPI void feed$(int itemId);
+
+    MCAPI struct ActorUniqueID getControllingPlayer$() const;
+
+    MCAPI class Vec3 getInterpolatedRidingOffset$(float a, int) const;
+
+    MCAPI float getShadowRadius$() const;
+
+    MCAPI float getStandAnim$(float a) const;
+
+    MCAPI int getType$() const;
+
+    MCAPI bool isHorseEating$() const;
+
+    MCAPI bool isImmobile$() const;
+
+    MCAPI bool isMouthOpen$() const;
+
+    MCAPI void makeMad$();
+
+    MCAPI void onFailedTame$();
+
+    MCAPI void onSynchedDataUpdate$(int dataId);
+
+    MCAPI void openContainerComponent$(class Player& player);
+
+    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI void setHorseEating$(bool state);
+
+    MCAPI void setStanding$(bool value);
+
+    MCAPI void setType$(int i);
+
+    MCAPI bool tameToPlayer$(class Player& player, bool tamingParticles);
+
+    MCAPI void updateEntitySpecificMolangVariables$(class RenderParams& renderParams);
+
+    // NOLINTEND
 };

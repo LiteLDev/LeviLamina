@@ -20,7 +20,14 @@ public:
 
     MCAPI static void write(struct PageContent const& page, class CompoundTag& tag);
 
-    MCAPI static struct PageContent const BLANK_PAGE;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    MCAPI static struct PageContent const& BLANK_PAGE();
 
     // NOLINTEND
 };

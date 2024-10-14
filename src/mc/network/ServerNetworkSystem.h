@@ -58,4 +58,24 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI static void** $vftableForNetworkEnableDisableListener();
+
+    MCAPI static void** $vftableForRakNetConnectorConnectionCallbacks();
+
+    MCAPI static void** $vftableForRakPeerHelperIPSupportInterface();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

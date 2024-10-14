@@ -63,11 +63,23 @@ public:
 
     MCAPI ~LegacyStructureSettings();
 
-    MCAPI static float const INTEGRITY_MAX;
+    // NOLINTEND
 
-    MCAPI static float const INTEGRITY_MIN;
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static int const MAX_STRUCTURE_SIZE;
+    MCAPI void dtor$();
+
+    MCAPI static float const& INTEGRITY_MAX();
+
+    MCAPI static float const& INTEGRITY_MIN();
+
+    MCAPI static int const& MAX_STRUCTURE_SIZE();
 
     // NOLINTEND
 };

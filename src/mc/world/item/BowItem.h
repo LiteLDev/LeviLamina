@@ -45,4 +45,25 @@ public:
     MCAPI BowItem(std::string const& name, int id);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void enchantProjectile$(class ItemStackBase const& weapon, class Actor& projectile) const;
+
+    MCAPI int getEnchantSlot$() const;
+
+    MCAPI struct ResolvedItemIconInfo
+    getIconInfo$(class ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+
+    MCAPI class Item& setIconInfo$(std::string const& name, int id);
+
+    // NOLINTEND
 };

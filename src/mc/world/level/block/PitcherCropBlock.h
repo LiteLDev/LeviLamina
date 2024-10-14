@@ -90,4 +90,50 @@ public:
     MCAPI bool _grow(class BlockSource& region, class BlockPos const& pos, bool instantGrowth) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const*) const;
+
+    MCAPI bool canBeFertilized$(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
+
+    MCAPI bool canContainLiquid$() const;
+
+    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool checkIsPathable$(class Actor& entity, class BlockPos const&, class BlockPos const& pathPos) const;
+
+    MCAPI class AABB
+    getCollisionShape$(class Block const& block, class IConstBlockSource const&, class BlockPos const& pos, class optional_ref<class GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI bool
+    getSecondPart$(class IConstBlockSource const& region, class BlockPos const& pos, class BlockPos& out) const;
+
+    MCAPI class AABB const& getVisualShape$(class Block const& block, class AABB& bufferAABB) const;
+
+    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos, uchar) const;
+
+    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool mayPlaceOn$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
+
+    MCAPI bool
+    onFertilized$(class BlockSource& region, class BlockPos const& pos, class Actor*, ::FertilizerType fType) const;
+
+    MCAPI void randomTick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+
+    // NOLINTEND
 };

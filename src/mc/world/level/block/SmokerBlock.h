@@ -39,4 +39,20 @@ public:
     MCAPI SmokerBlock(std::string const& nameId, int id, bool lit);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const*) const;
+
+    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar face) const;
+
+    // NOLINTEND
 };

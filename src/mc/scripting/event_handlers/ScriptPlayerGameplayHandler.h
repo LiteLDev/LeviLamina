@@ -128,4 +128,21 @@ public:
     ) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI ::HandlerResult handleEvent$(struct PlayerGameplayEvent<void> const& event);
+
+    MCAPI struct GameplayHandlerResult<::CoordinatorResult>
+    handleEvent$(struct PlayerGameplayEvent<::CoordinatorResult> const& event);
+
+    MCAPI struct GameplayHandlerResult<::CoordinatorResult>
+    handleEvent$(struct MutablePlayerGameplayEvent<::CoordinatorResult>& event);
+
+    MCAPI ::HandlerResult handleEvent$(struct PlayerDisconnectEvent const& playerDisconnectEvent);
+
+    // NOLINTEND
 };

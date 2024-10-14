@@ -43,7 +43,27 @@ public:
 
     MCAPI EnderpearlItem(std::string const& nameId, int id);
 
-    MCAPI static class HashedString const ENDER_PEARL_COOLDOWN;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI int getCooldownTime$() const;
+
+    MCAPI class HashedString const& getCooldownType$() const;
+
+    MCAPI bool isThrowable$() const;
+
+    MCAPI class ItemStack& use$(class ItemStack& item, class Player& player) const;
+
+    MCAPI static class HashedString const& ENDER_PEARL_COOLDOWN();
 
     // NOLINTEND
 };

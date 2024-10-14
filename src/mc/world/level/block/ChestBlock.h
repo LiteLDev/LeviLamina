@@ -98,4 +98,58 @@ public:
     MCAPI void updateSignalStrength(class BlockSource& region, class BlockPos const& pos, int strength) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI bool breaksFallingBlocks$(class Block const&, class BaseGameVersion) const;
+
+    MCAPI bool canProvideSupport$(class Block const&, uchar face, ::BlockSupportType type) const;
+
+    MCAPI bool detachesOnPistonMove$(class BlockSource&, class BlockPos const&) const;
+
+    MCAPI bool
+    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar) const;
+
+    MCAPI int
+    getComparatorSignal$(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
+        const;
+
+    MCAPI uchar getMappedFace$(uchar face, class Block const& block) const;
+
+    MCAPI bool
+    getSecondPart$(class IConstBlockSource const& region, class BlockPos const& pos, class BlockPos& out) const;
+
+    MCAPI bool hasComparatorSignal$() const;
+
+    MCAPI class BlockLegacy& init$();
+
+    MCAPI bool isContainerBlock$() const;
+
+    MCAPI bool isInteractiveBlock$() const;
+
+    MCAPI bool isSignalSource$() const;
+
+    MCAPI void onMove$(class BlockSource& region, class BlockPos const& from, class BlockPos const& to) const;
+
+    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void onRemove$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void setupRedstoneComponent$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool shouldConnectToRedstone$(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
+
+    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar face) const;
+
+    // NOLINTEND
 };

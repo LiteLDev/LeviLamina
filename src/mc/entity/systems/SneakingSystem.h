@@ -57,4 +57,20 @@ public:
     MCAPI static struct TickingSystemWithInfo createSystem();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void tick$(class StrictExecutionContext<
+                     struct Filter<class FlagComponent<struct ActorTickedFlag>>,
+                     struct Read<class FlagComponent<struct PlayerComponentFlag>>,
+                     struct Write<struct SneakingComponent, class ActorOwnerComponent>,
+                     struct AddRemove<>,
+                     struct GlobalRead<>,
+                     struct GlobalWrite<>,
+                     struct EntityFactoryT<>>& context);
+
+    // NOLINTEND
 };

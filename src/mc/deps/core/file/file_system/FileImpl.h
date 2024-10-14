@@ -116,11 +116,21 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::vector<class Core::FileImpl*> sAllFiles;
+    MCAPI static void** $vftable();
 
-    MCAPI static class Bedrock::Threading::Mutex sAllFilesLock;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static std::vector<class Core::FileImpl*>& sAllFiles();
+
+    MCAPI static class Bedrock::Threading::Mutex& sAllFilesLock();
 
     // NOLINTEND
 };

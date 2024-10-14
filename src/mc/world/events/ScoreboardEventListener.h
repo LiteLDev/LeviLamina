@@ -30,4 +30,21 @@ public:
     virtual ::EventResult onScoreChanged(struct ScoreboardId const&, std::string const&, int);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI ::EventResult onObjectiveAdded$(std::string const&);
+
+    MCAPI ::EventResult onObjectiveRemoved$(std::string const&);
+
+    MCAPI ::EventResult onScoreChanged$(struct ScoreboardId const&, std::string const&, int);
+
+    MCAPI ::EventResult onScoreboardIdentityRemoved$(struct ScoreboardId const&);
+
+    // NOLINTEND
 };

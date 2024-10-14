@@ -104,6 +104,18 @@ public:
         MCAPI ~CZString();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     struct CZStringCompare {
@@ -272,26 +284,6 @@ public:
 
     MCAPI ~Value();
 
-    MCAPI static int const maxInt;
-
-    MCAPI static int64 const maxInt64;
-
-    MCAPI static int64 const maxLargestInt;
-
-    MCAPI static uint64 const maxLargestUInt;
-
-    MCAPI static uint const maxUInt;
-
-    MCAPI static uint64 const maxUInt64;
-
-    MCAPI static int const minInt;
-
-    MCAPI static int64 const minInt64;
-
-    MCAPI static int64 const minLargestInt;
-
-    MCAPI static class Json::Value const null;
-
     // NOLINTEND
 
     // private:
@@ -299,6 +291,38 @@ public:
     MCAPI void _insert(class Json::Value::CZString&& key, class Json::Value&& value, bool overwrite);
 
     MCAPI class Json::Value& _resolveReference(char const* key);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static int const& maxInt();
+
+    MCAPI static int64 const& maxInt64();
+
+    MCAPI static int64 const& maxLargestInt();
+
+    MCAPI static uint64 const& maxLargestUInt();
+
+    MCAPI static uint const& maxUInt();
+
+    MCAPI static uint64 const& maxUInt64();
+
+    MCAPI static int const& minInt();
+
+    MCAPI static int64 const& minInt64();
+
+    MCAPI static int64 const& minLargestInt();
+
+    MCAPI static class Json::Value const& null();
 
     // NOLINTEND
 };

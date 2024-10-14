@@ -55,4 +55,20 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void uploadFileToRealmStorage$(
+        std::string const&      uploadId,
+        class Core::Path const& path,
+        int                     slotIndex,
+        std::string const&      realmsGuid
+    );
+
+    // NOLINTEND
 };

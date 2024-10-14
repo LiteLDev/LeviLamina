@@ -71,6 +71,40 @@ public:
     MCAPI bool _tryAddCommand(struct CodeBuilder::CommandRequest&& commandRequest);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForCodeBuilderIClient();
+
+    MCAPI static void** $vftableForLevelListener();
+
+    MCAPI static void** $vftableForUriListener();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void onLevelDestruction$(std::string const&);
+
+    MCAPI void onUri$(class ActivationUri const& uri);
+
+    MCAPI void playerListChanged$();
+
+    MCAPI void send$(struct CodeBuilder::CommandMessage const& message);
+
+    MCAPI void send$(struct CodeBuilder::ErrorMessage const& message);
+
+    MCAPI void send$(struct CodeBuilder::ChatMessage const& message);
+
+    MCAPI void send$(struct CodeBuilder::AgentMessage const& message);
+
+    MCAPI void send$(struct CodeBuilder::EventMessage const& message);
+
+    MCAPI void tick$();
+
+    // NOLINTEND
 };
 
 }; // namespace Automation

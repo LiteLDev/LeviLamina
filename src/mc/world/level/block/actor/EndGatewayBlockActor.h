@@ -59,18 +59,44 @@ public:
         int                   searchRadius
     );
 
-    MCAPI static int const COOLDOWN_TIME;
-
-    MCAPI static int const EVENT_COOLDOWN;
-
-    MCAPI static int const SPAWN_TIME;
-
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI static int
     _getHighestSection(class WorldGenerator& endGenerator, class BlockVolume& box, class BlockPos const& pos);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource& region);
+
+    MCAPI bool hasAlphaLayer$() const;
+
+    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void onChanged$(class BlockSource& region);
+
+    MCAPI bool save$(class CompoundTag& tag) const;
+
+    MCAPI void tick$(class BlockSource& region);
+
+    MCAPI void triggerEvent$(int b0, int b1);
+
+    MCAPI static int const& COOLDOWN_TIME();
+
+    MCAPI static int const& EVENT_COOLDOWN();
+
+    MCAPI static int const& SPAWN_TIME();
 
     // NOLINTEND
 };

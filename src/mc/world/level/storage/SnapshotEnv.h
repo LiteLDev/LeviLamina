@@ -30,6 +30,13 @@ public:
         MCAPI ~DeleteFileEntry();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -72,6 +79,30 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI bool _isQueuedForRemoval(class Core::PathBuffer<std::string> const& file);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI leveldb::Status DeleteFileA$(std::string const&);
+
+    MCAPI leveldb::Status NewAppendableFile$(std::string const& f, leveldb::WritableFile** r);
+
+    MCAPI leveldb::Status NewRandomAccessFile$(std::string const& f, leveldb::RandomAccessFile** r);
+
+    MCAPI leveldb::Status NewSequentialFile$(std::string const& f, leveldb::SequentialFile** r);
+
+    MCAPI leveldb::Status NewWritableFile$(std::string const& f, leveldb::WritableFile** r);
+
+    MCAPI leveldb::Status RenameFile$(std::string const& from, std::string const& to);
 
     // NOLINTEND
 };

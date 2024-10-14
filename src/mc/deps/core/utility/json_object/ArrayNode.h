@@ -32,6 +32,18 @@ public:
     MCAPI explicit ArrayNode(class Bedrock::JSONObject::MemoryPage* owningPage);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::JSONObject

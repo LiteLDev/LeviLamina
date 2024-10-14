@@ -48,4 +48,22 @@ public:
     MCAPI bool const _isTierOneBlock(class BlockLegacy const& block) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool canDestroySpecial$(class Block const& block) const;
+
+    MCAPI float getDestroySpeed$(class ItemStackBase const& item, class Block const& block) const;
+
+    MCAPI int getEnchantSlot$() const;
+
+    // NOLINTEND
 };

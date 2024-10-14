@@ -31,6 +31,13 @@ public:
         MCAPI ~ErrorLocalization();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     struct ServerData {
@@ -47,6 +54,16 @@ public:
             class CommandOrigin const&     commandOrigin,
             class Scoreboard const&        scoreboard
         );
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
 
         // NOLINTEND
     };
@@ -74,28 +91,6 @@ public:
         class TextObjectRoot& parsedObject,
         std::string&          errorMsg
     );
-
-    MCAPI static std::string const RAW_TEXT_ERROR_NOT_ARRAY;
-
-    MCAPI static std::string const RAW_TEXT_ERROR_NOT_OBJECT;
-
-    MCAPI static std::string const RAW_TEXT_ERROR_NO_DATA;
-
-    MCAPI static std::string const RAW_TEXT_ERROR_PARSE_FAILED;
-
-    MCAPI static std::string const RAW_TEXT_ERROR_SCORE_NAME_NOT_STRING;
-
-    MCAPI static std::string const RAW_TEXT_ERROR_SCORE_NOT_OBJECT;
-
-    MCAPI static std::string const RAW_TEXT_ERROR_SCORE_OBJECTIVE_NOT_STRING;
-
-    MCAPI static std::string const RAW_TEXT_ERROR_SELECTOR_NOT_STRING;
-
-    MCAPI static std::string const RAW_TEXT_ERROR_TEXT_NOT_STRING;
-
-    MCAPI static std::string const RAW_TEXT_ERROR_TRANSLATE_NOT_STRING;
-
-    MCAPI static std::string const RAW_TEXT_ERROR_WITH_NOT_ARRAY_OR_RAW_TEXT;
 
     // NOLINTEND
 
@@ -135,6 +130,33 @@ public:
         struct TextObjectParser::ServerData*        serverData,
         struct TextObjectParser::ErrorLocalization& errorLocalization
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static std::string const& RAW_TEXT_ERROR_NOT_ARRAY();
+
+    MCAPI static std::string const& RAW_TEXT_ERROR_NOT_OBJECT();
+
+    MCAPI static std::string const& RAW_TEXT_ERROR_NO_DATA();
+
+    MCAPI static std::string const& RAW_TEXT_ERROR_PARSE_FAILED();
+
+    MCAPI static std::string const& RAW_TEXT_ERROR_SCORE_NAME_NOT_STRING();
+
+    MCAPI static std::string const& RAW_TEXT_ERROR_SCORE_NOT_OBJECT();
+
+    MCAPI static std::string const& RAW_TEXT_ERROR_SCORE_OBJECTIVE_NOT_STRING();
+
+    MCAPI static std::string const& RAW_TEXT_ERROR_SELECTOR_NOT_STRING();
+
+    MCAPI static std::string const& RAW_TEXT_ERROR_TEXT_NOT_STRING();
+
+    MCAPI static std::string const& RAW_TEXT_ERROR_TRANSLATE_NOT_STRING();
+
+    MCAPI static std::string const& RAW_TEXT_ERROR_WITH_NOT_ARRAY_OR_RAW_TEXT();
 
     // NOLINTEND
 };

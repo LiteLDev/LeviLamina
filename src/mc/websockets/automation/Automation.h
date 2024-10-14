@@ -23,10 +23,11 @@ namespace CodeBuilder { struct EventMessage; }
 // clang-format on
 
 namespace Automation {
+// thunks
 // NOLINTBEGIN
-MCAPI extern char const* BodyData;
+MCAPI char const* const& BodyData();
 
-MCAPI extern char const* HeaderData;
+MCAPI char const* const& HeaderData();
 // NOLINTEND
 
 }; // namespace Automation

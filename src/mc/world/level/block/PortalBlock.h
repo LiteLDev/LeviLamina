@@ -94,4 +94,55 @@ public:
     MCAPI static bool trySpawnPortal(class BlockSource& region, class BlockPos const& pos);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void
+    animateTickBedrockLegacy$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const*) const;
+
+    MCAPI bool canContainLiquid$() const;
+
+    MCAPI void entityInside$(class BlockSource&, class BlockPos const& pos, class Actor& entity) const;
+
+    MCAPI class AABB
+    getCollisionShape$(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI class AABB const&
+    getOutline$(class Block const&, class IConstBlockSource const&, class BlockPos const& pos, class AABB& bufferValue)
+        const;
+
+    MCAPI class AABB const& getVisualShapeInWorld$(
+        class Block const&             block,
+        class IConstBlockSource const& region,
+        class BlockPos const&          pos,
+        class AABB&                    bufferAABB
+    ) const;
+
+    MCAPI bool isWaterBlocking$() const;
+
+    MCAPI bool mayPick$(class BlockSource const& region, class Block const&, bool) const;
+
+    MCAPI void
+    neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
+
+    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void onRemove$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI bool waterSpreadCausesSpawn$() const;
+
+    // NOLINTEND
 };

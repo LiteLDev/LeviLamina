@@ -25,4 +25,11 @@ public:
     MCAPI void onFallOn(struct BlockEvents::BlockFallOnEvent& eventData) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };

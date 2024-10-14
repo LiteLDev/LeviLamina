@@ -63,11 +63,45 @@ public:
     MCAPI static class ItemStack const&
     initFireworksRocketItem(class ItemStack& item, std::vector<class ItemStack> const& charges, int sulphurCount);
 
-    MCAPI static std::string const TAG_EXPLOSIONS;
+    // NOLINTEND
 
-    MCAPI static std::string const TAG_E_FLIGHT;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
 
-    MCAPI static std::string const TAG_FIREWORKS;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class InteractionResult _useOn$(
+        class ItemStack& instance,
+        class Actor&     spawningActor,
+        class BlockPos   pos,
+        uchar,
+        class Vec3 const& clickPos
+    ) const;
+
+    MCAPI void appendFormattedHovertext$(
+        class ItemStackBase const& stack,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       advancedToolTips
+    ) const;
+
+    MCAPI bool
+    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+
+    MCAPI bool isDestructive$(int) const;
+
+    MCAPI class ItemStack& use$(class ItemStack& item, class Player& player) const;
+
+    MCAPI static std::string const& TAG_EXPLOSIONS();
+
+    MCAPI static std::string const& TAG_E_FLIGHT();
+
+    MCAPI static std::string const& TAG_FIREWORKS();
 
     // NOLINTEND
 };

@@ -78,4 +78,26 @@ public:
     MCAPI void _addParticlesAroundSelf(::ParticleType particleType);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+
+    MCAPI void handleEntityEvent$(::ActorEvent event, int data);
+
+    MCAPI void onLightningHit$();
+
+    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    // NOLINTEND
 };

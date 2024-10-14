@@ -30,4 +30,11 @@ public:
     MCAPI std::shared_ptr<class RakWebSocketDataFrame> _failReadFrame(std::string const& error, ::CloseStatusCode code);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

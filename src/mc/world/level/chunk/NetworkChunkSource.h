@@ -46,4 +46,34 @@ public:
     MCAPI explicit NetworkChunkSource(class Dimension& dimension);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void acquireDiscarded$(std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter> ptr);
+
+    MCAPI bool canCreateViews$() const;
+
+    MCAPI bool canLaunchTasks$() const;
+
+    MCAPI std::shared_ptr<class LevelChunk>
+          createNewChunk$(class ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
+
+    MCAPI std::unordered_map<class ChunkPos, std::weak_ptr<class LevelChunk>> const* getChunkMap$();
+
+    MCAPI std::shared_ptr<class LevelChunk> getExistingChunk$(class ChunkPos const& cp);
+
+    MCAPI std::shared_ptr<class LevelChunk>
+          getOrLoadChunk$(class ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
+
+    MCAPI std::unordered_map<class ChunkPos, std::weak_ptr<class LevelChunk>> const& getStorage$() const;
+
+    // NOLINTEND
 };

@@ -49,4 +49,18 @@ public:
     _matchesAuxValueTrade2(class ItemStackBase const& consumedItem, class ItemStackBase const& expected) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI ::ItemStackNetResult _handleCraftAction$(class ItemStackRequestActionCraftBase const& requestAction);
+
+    MCAPI void _postCraftRequest$(bool wasSuccess);
+
+    MCAPI ::ItemStackNetResult
+    handleConsumedItem$(::ContainerEnumName openContainerNetId, uchar slot, class ItemStack const& consumedItem);
+
+    // NOLINTEND
 };

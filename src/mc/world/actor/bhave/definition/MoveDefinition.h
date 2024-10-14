@@ -26,4 +26,15 @@ public:
     virtual void load(class Json::Value value, class BehaviorFactory const& factory);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void load$(class Json::Value value, class BehaviorFactory const& factory);
+
+    // NOLINTEND
 };

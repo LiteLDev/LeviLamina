@@ -35,6 +35,13 @@ public:
         MCAPI ~ConstructionContext();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     class Results {
@@ -49,6 +56,18 @@ public:
         MCAPI explicit Results(std::vector<class ItemInstance> const& results);
 
         MCAPI ~Results();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -143,6 +162,38 @@ public:
     // protected:
     // NOLINTBEGIN
     MCAPI explicit Recipe(struct Recipe::ConstructionContext&& context);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI class mce::UUID const& getId$() const;
+
+    MCAPI uint64 getIngredientsHash$() const;
+
+    MCAPI std::vector<class ItemInstance> const& getResultItems$() const;
+
+    MCAPI bool hasDataDrivenResult$() const;
+
+    MCAPI bool isMultiRecipe$() const;
+
+    MCAPI bool itemValidForRecipe$(class ItemDescriptor const& recipeItem, class ItemStack const& item) const;
+
+    MCAPI bool itemsMatch$(class ItemDescriptor const& lhs, class ItemDescriptor const& rhs) const;
+
+    MCAPI bool
+    itemsMatch$(class ItemDescriptor const& lhs, class ItemDescriptor const& rhs, class CompoundTag const* rhsTag)
+        const;
 
     // NOLINTEND
 };

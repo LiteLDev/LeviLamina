@@ -66,11 +66,29 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::unordered_map<int, int> mIdToSpecialCompound;
+    MCAPI static void** $vftable();
 
-    MCAPI static std::unordered_map<int, class ItemInstance> mTypeToSpecialCompound;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::string
+          buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
+
+    MCAPI struct ResolvedItemIconInfo
+    getIconInfo$(class ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+
+    MCAPI bool isValidAuxValue$(int auxValue) const;
+
+    MCAPI class Item& setIconInfo$(std::string const& name, int id);
+
+    MCAPI static std::unordered_map<int, int>& mIdToSpecialCompound();
+
+    MCAPI static std::unordered_map<int, class ItemInstance>& mTypeToSpecialCompound();
 
     // NOLINTEND
 };

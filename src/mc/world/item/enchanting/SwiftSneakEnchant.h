@@ -46,4 +46,26 @@ public:
     MCAPI static int getLevel(class Actor const& entity);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI int getMaxCost$(int level) const;
+
+    MCAPI int getMaxLevel$() const;
+
+    MCAPI int getMinCost$(int level) const;
+
+    MCAPI bool isDiscoverable$() const;
+
+    MCAPI bool isTreasureOnly$() const;
+
+    // NOLINTEND
 };

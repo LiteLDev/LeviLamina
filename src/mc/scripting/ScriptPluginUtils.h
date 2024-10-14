@@ -7,17 +7,9 @@
 
 namespace ScriptPluginUtils {
 // NOLINTBEGIN
-MCAPI extern std::string const BETA_RELEASE;
-
 MCAPI ::ScriptRuntimeType GetRuntimeType(std::string const& runtimeName);
 
 MCAPI ::ScriptRuntimeType GetRuntimeTypeFromFileExtension(std::string const& fileExt);
-
-MCAPI extern std::string const INTERNAL_RELEASE;
-
-MCAPI extern std::string const JAVA_SCRIPT_RUNTIME_EXTENSION;
-
-MCAPI extern std::string const JAVA_SCRIPT_RUNTIME_NAME;
 
 MCAPI std::string JavaScriptModuleNameNormalizer(
     std::string_view const&         baseName,
@@ -26,6 +18,17 @@ MCAPI std::string JavaScriptModuleNameNormalizer(
 );
 
 MCAPI std::vector<std::string> ValidatePlugin(class ScriptPlugin const& plugin);
+// NOLINTEND
+
+// thunks
+// NOLINTBEGIN
+MCAPI std::string const& BETA_RELEASE();
+
+MCAPI std::string const& INTERNAL_RELEASE();
+
+MCAPI std::string const& JAVA_SCRIPT_RUNTIME_EXTENSION();
+
+MCAPI std::string const& JAVA_SCRIPT_RUNTIME_NAME();
 // NOLINTEND
 
 }; // namespace ScriptPluginUtils

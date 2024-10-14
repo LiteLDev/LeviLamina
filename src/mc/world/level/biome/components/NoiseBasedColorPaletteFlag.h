@@ -15,4 +15,11 @@ public:
     virtual ~NoiseBasedColorPaletteFlag() = default;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };

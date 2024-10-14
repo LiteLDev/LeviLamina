@@ -38,4 +38,13 @@ public:
     MCAPI static void _fillCobblestone(class BlockPos const& startPos, class BlockSource& region);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool postProcess$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+
+    // NOLINTEND
 };

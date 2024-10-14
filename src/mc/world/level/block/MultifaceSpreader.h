@@ -83,10 +83,6 @@ public:
         class BlockPos const&    pos
     ) const;
 
-    MCAPI static std::vector<::MultifaceSpreader::SpreadType> const ALL_SPREAD_TYPES;
-
-    MCAPI static std::vector<::MultifaceSpreader::SpreadType> const SAME_POSITION_ONLY;
-
     // NOLINTEND
 
     // protected:
@@ -97,6 +93,33 @@ public:
         class BlockPos const&    pos,
         uchar                    faceDirection
     ) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool _canSpreadFrom$(class Block const& block, uchar facing) const;
+
+    MCAPI bool _canSpreadInto$(
+        class IBlockWorldGenAPI& target,
+        class Block const&       self,
+        class BlockPos const&    pos,
+        uchar                    placementDirection
+    ) const;
+
+    MCAPI bool _isOtherBlockValidAsSource$(class Block const&) const;
+
+    MCAPI static std::vector<::MultifaceSpreader::SpreadType> const& ALL_SPREAD_TYPES();
+
+    MCAPI static std::vector<::MultifaceSpreader::SpreadType> const& SAME_POSITION_ONLY();
 
     // NOLINTEND
 };

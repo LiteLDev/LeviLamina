@@ -41,4 +41,25 @@ public:
     virtual std::weak_ptr<class POIInstance> _getOwnedPOI(::POIType type) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI std::weak_ptr<class POIInstance> _getOwnedPOI$(::POIType type) const;
+
+    MCAPI uint64 _getRepathTime$() const;
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
+
+    // NOLINTEND
 };

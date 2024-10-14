@@ -49,4 +49,27 @@ public:
     MCAPI void _refreshContainer(bool initial);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI class Container* _getContainer$() const;
+
+    MCAPI int _getContainerOffset$() const;
+
+    MCAPI void _onItemChanged$(int modelSlot, class ItemStack const& oldItem, class ItemStack const& newItem);
+
+    MCAPI void containerContentChanged$(int slot);
+
+    MCAPI class ContainerWeakRef getContainerWeakRef$() const;
+
+    MCAPI bool isValid$();
+
+    MCAPI void postInit$();
+
+    MCAPI void releaseResources$();
+
+    // NOLINTEND
 };

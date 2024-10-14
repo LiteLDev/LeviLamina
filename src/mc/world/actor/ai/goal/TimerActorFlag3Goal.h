@@ -28,6 +28,13 @@ public:
         virtual ~Definition() = default;
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        // NOLINTEND
     };
 
 public:
@@ -40,6 +47,13 @@ public:
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~TimerActorFlag3Goal() = default;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
 
     // NOLINTEND
 };

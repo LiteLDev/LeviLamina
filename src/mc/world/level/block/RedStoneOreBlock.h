@@ -63,4 +63,32 @@ public:
     MCAPI void _poofParticles(class BlockSource& region, class BlockPos const& pos) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void _lightUpBlock$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void animateTickBedrockLegacy$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+
+    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const*) const;
+
+    MCAPI bool attack$(class Player* player, class BlockPos const& pos) const;
+
+    MCAPI bool canBeOriginalSurface$() const;
+
+    MCAPI void onStandOn$(class EntityContext& entity, class BlockPos const& pos) const;
+
+    MCAPI void randomTick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+
+    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar face) const;
+
+    // NOLINTEND
 };

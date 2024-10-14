@@ -26,4 +26,11 @@ public:
     MCAPI ~ScriptPluginManagerResult();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

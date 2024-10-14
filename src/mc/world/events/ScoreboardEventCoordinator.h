@@ -23,4 +23,13 @@ public:
     MCAPI void sendOnScoreboardIdentityRemoved(struct ScoreboardId const& id);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

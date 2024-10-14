@@ -121,13 +121,16 @@ MCAPI uint GetInjectedArgCount(class Scripting::Reflection::IFunction* function)
 
 MCAPI void LogMessage(::Scripting::LogLevel, char const*, uint, char const*, ...);
 
-MCAPI extern char const* RED_COLOR_FORMAT;
-
 MCAPI std::vector<std::string> _versionSplit(std::string const& str, char delim);
 
 MCAPI void defaultLogFunction(void*, ::Scripting::LogLevel level, char const*, uint, char const* message);
+// NOLINTEND
 
-MCAPI extern void* logUserData;
+// thunks
+// NOLINTBEGIN
+MCAPI char const* const& RED_COLOR_FORMAT();
+
+MCAPI void*& logUserData();
 // NOLINTEND
 
 }; // namespace Scripting

@@ -39,6 +39,16 @@ public:
     MCAPI void _generateRemainingEnchantmentTypeHandles(class Scripting::WeakLifetimeScope& scope);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

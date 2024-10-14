@@ -32,7 +32,24 @@ public:
 
     MCAPI explicit ShulkerBoxRecipe(struct Recipe::ConstructionContext&& context);
 
-    MCAPI static class mce::UUID const ID;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::vector<class ItemInstance> const&
+          assemble$(class CraftingContainer& craftSlots, class CraftingContext&) const;
+
+    MCAPI bool itemsMatch$(class ItemDescriptor const& lhs, class ItemDescriptor const& rhs) const;
+
+    MCAPI static class mce::UUID const& ID();
 
     // NOLINTEND
 };

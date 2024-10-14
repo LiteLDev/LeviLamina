@@ -110,6 +110,15 @@ public:
     MCAPI static void read_next_response_chunk(class xbox::httpclient::WinHttpConnection*, ulong);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace xbox::httpclient

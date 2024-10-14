@@ -45,4 +45,35 @@ public:
     virtual void onDischarged(class IBlockWorldGenAPI&, class BlockSource*, class BlockPos const&) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool
+    attemptSpreadVeins$(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Block const& block, int facingData, class SculkSpreader&)
+        const;
+
+    MCAPI int attemptUseCharge$(
+        class IBlockWorldGenAPI&,
+        class BlockSource*,
+        class BlockPos const&,
+        class BlockPos const&,
+        int charge,
+        int decayDelay,
+        class Random&,
+        class SculkSpreader&,
+        bool
+    ) const;
+
+    MCAPI bool canChangeBlockOnSpread$() const;
+
+    MCAPI void onDischarged$(class IBlockWorldGenAPI&, class BlockSource*, class BlockPos const&) const;
+
+    MCAPI int updateDecayDelay$(int currentValue) const;
+
+    MCAPI int updateFacingData$(int currentValue, class Block const&) const;
+
+    // NOLINTEND
 };

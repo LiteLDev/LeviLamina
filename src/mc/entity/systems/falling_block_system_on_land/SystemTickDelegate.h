@@ -35,6 +35,19 @@ public:
     virtual void breakBlock(class FallingBlockActor& fallingBlock);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void breakBlock$(class FallingBlockActor& fallingBlock);
+
+    MCAPI void onLand$(class FallingBlock const& block, class IBlockSource& region, class BlockPos const& pos);
+
+    // NOLINTEND
 };
 
 }; // namespace FallingBlockSystemOnLand

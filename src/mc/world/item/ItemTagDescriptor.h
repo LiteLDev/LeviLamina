@@ -60,4 +60,33 @@ public:
     deserialize(class ReadOnlyBinaryStream& stream);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI std::unique_ptr<struct ItemDescriptor::BaseDescriptor> clone$() const;
+
+    MCAPI bool forEachItemUntil$(std::function<bool(class Item const&, short)> func) const;
+
+    MCAPI uint64 getHash$() const;
+
+    MCAPI struct ItemDescriptor::ItemEntry getItem$() const;
+
+    MCAPI ::ItemDescriptor::InternalType getType$() const;
+
+    MCAPI bool sameItem$(struct ItemDescriptor::ItemEntry const& otherItem, bool) const;
+
+    MCAPI bool sameItems$(struct ItemDescriptor::BaseDescriptor const& otherDescriptor, bool) const;
+
+    MCAPI std::optional<class CompoundTag> save$() const;
+
+    MCAPI void serialize$(class Json::Value& val) const;
+
+    MCAPI void serialize$(class BinaryStream& stream) const;
+
+    MCAPI std::map<std::string, std::string> toMap$() const;
+
+    // NOLINTEND
 };

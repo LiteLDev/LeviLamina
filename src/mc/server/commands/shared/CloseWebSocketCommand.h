@@ -24,9 +24,14 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class IMinecraftApp* mApp;
+    MCAPI static void** $vftable();
+
+    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput&) const;
+
+    MCAPI static class IMinecraftApp*& mApp();
 
     // NOLINTEND
 };

@@ -40,4 +40,31 @@ public:
     MCAPI explicit SculkSensorVibrationConfig(class BlockPos const& pos);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool canReceiveOnlyIfAdjacentChunksAreTicking$() const;
+
+    MCAPI bool isValidVibration$(class GameEvent const& gameEvent);
+
+    MCAPI void onSerializableDataChanged$(class BlockSource& region);
+
+    MCAPI void
+    onSignalReceive$(class BlockSource& region, class BlockPos const&, class GameEvent const& gameEvent, class Actor* source, float distance, uint listenerRange, class Actor*);
+
+    MCAPI bool shouldListen$(
+        class BlockSource&             region,
+        class GameEvent const&         gameEvent,
+        struct GameEventContext const& gameEventContext
+    );
+
+    // NOLINTEND
 };

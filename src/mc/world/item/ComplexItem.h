@@ -39,4 +39,23 @@ public:
     MCAPI ComplexItem(std::string const& nameId, int id);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI std::unique_ptr<class Packet>
+          getUpdatePacket$(class ItemStack const& item, class Level& level, class Actor& player) const;
+
+    MCAPI bool isComplex$() const;
+
+    // NOLINTEND
 };

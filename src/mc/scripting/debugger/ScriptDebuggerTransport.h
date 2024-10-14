@@ -53,4 +53,31 @@ public:
     virtual void send(char const* buffer, uint64 length);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void close$();
+
+    MCAPI bool connect$(std::string const& host, ushort port);
+
+    MCAPI bool connected$() const;
+
+    MCAPI bool listen$(ushort port);
+
+    MCAPI bool lostConnection$() const;
+
+    MCAPI bool peek$() const;
+
+    MCAPI bool readyClose$() const;
+
+    MCAPI bool receive$(char* buffer, uint64 length);
+
+    MCAPI bool selectClient$();
+
+    MCAPI void send$(char const* buffer, uint64 length);
+
+    // NOLINTEND
 };

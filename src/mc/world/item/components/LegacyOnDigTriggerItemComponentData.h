@@ -14,4 +14,11 @@ public:
     MCAPI ~LegacyOnDigTriggerItemComponentData();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

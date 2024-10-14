@@ -57,4 +57,29 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool breaksFallingBlocks$(class Block const&, class BaseGameVersion) const;
+
+    MCAPI bool canBeUsedInCommands$(class BaseGameVersion const& requiredBaseGameVersion) const;
+
+    MCAPI bool canConnect$(class Block const& otherBlock, uchar toOther, class Block const& thisBlock) const;
+
+    MCAPI bool getCollisionShapeForCamera$(
+        class AABB&                    outAABB,
+        class Block const&             block,
+        class IConstBlockSource const& region,
+        class BlockPos const&          pos
+    ) const;
+
+    // NOLINTEND
 };

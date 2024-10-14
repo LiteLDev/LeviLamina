@@ -49,9 +49,31 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::vector<::Enchant::Type> const VALID_ENCHANTMENTS;
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool _isValidEnchantmentTypeForCategory$(::Enchant::Type type) const;
+
+    MCAPI void doPostAttack$(class Actor& attacker, class Actor& victim, int level) const;
+
+    MCAPI float getDamageBonus$(int level, class Actor const& target, class Actor const&) const;
+
+    MCAPI int getMaxCost$(int level) const;
+
+    MCAPI int getMaxLevel$() const;
+
+    MCAPI int getMinCost$(int level) const;
+
+    MCAPI bool isMeleeDamageEnchant$() const;
+
+    MCAPI static std::vector<::Enchant::Type> const& VALID_ENCHANTMENTS();
 
     // NOLINTEND
 };

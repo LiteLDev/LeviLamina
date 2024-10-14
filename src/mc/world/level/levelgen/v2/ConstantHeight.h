@@ -29,6 +29,15 @@ public:
     MCAPI static class br::worldgen::ConstantHeight of(class br::worldgen::VerticalAnchor value);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI int sample$(class IRandom&, class br::worldgen::WorldGenContext const& heightAccessor) const;
+
+    // NOLINTEND
 };
 
 }; // namespace br::worldgen

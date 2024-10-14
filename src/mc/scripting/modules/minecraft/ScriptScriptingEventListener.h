@@ -32,6 +32,17 @@ public:
     virtual ::EventResult onEvent(struct ScriptingNotificationEvent const& event);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI ::EventResult onEvent$(struct ScriptCommandMessageEvent const& scriptCommandMessageEvent);
+
+    MCAPI ::EventResult onEvent$(struct ScriptingNotificationEvent const& event);
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

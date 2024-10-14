@@ -9,9 +9,10 @@ public:
     LodestoneCompassComponentCalculator(LodestoneCompassComponentCalculator const&);
     LodestoneCompassComponentCalculator();
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static float COOLDOWN_TIME_SECONDS;
+    MCAPI static float& COOLDOWN_TIME_SECONDS();
 
     // NOLINTEND
 };

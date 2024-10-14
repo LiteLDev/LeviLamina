@@ -35,15 +35,25 @@ public:
 
     MCAPI static class Actor* getBalloonForActor(class Actor const& actor);
 
-    MCAPI static std::string const ATTACHED_TAG;
+    // NOLINTEND
 
-    MCAPI static float const FENCE_BALLOON_RANGE;
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static float const MAX_BALLOON_RANGE;
+    MCAPI static std::string const& ATTACHED_TAG();
 
-    MCAPI static std::string const MAX_HEIGHT_TAG;
+    MCAPI static float const& FENCE_BALLOON_RANGE();
 
-    MCAPI static std::string const SHOULD_DROP_TAG;
+    MCAPI static float const& MAX_BALLOON_RANGE();
+
+    MCAPI static std::string const& MAX_HEIGHT_TAG();
+
+    MCAPI static std::string const& SHOULD_DROP_TAG();
 
     // NOLINTEND
 };

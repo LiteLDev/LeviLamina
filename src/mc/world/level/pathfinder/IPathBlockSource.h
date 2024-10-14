@@ -30,4 +30,11 @@ public:
     virtual bool isSolidBlock(class BlockPos const& blockPos) const = 0;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };

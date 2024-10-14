@@ -44,6 +44,20 @@ public:
     MCAPI class Scripting::GeneratorIteratorAny& operator=(class Scripting::GeneratorIteratorAny const& rhs);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace Scripting

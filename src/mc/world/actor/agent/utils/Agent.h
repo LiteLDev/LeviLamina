@@ -16,10 +16,6 @@ namespace Util::Agent { struct SimulatedMoveResult; }
 
 namespace Util::Agent {
 // NOLINTBEGIN
-MCAPI extern float const COMMAND_INTERVAL;
-
-MCAPI extern float const MOVE_EPSILON;
-
 MCAPI struct AgentComponents::BlockQueryResult
 getNextBlock(class BlockSource& source, class Vec3 curPos, float bodyRot, ::AgentComponents::Direction direction);
 
@@ -45,6 +41,13 @@ getNextPosFromDirection(class Vec3 const& startPosition, float bodyRotation, ::A
 
 MCAPI struct Util::Agent::SimulatedMoveResult
 simulateMove(class EntityContext& entity, ::AgentComponents::Direction dir, class Vec3 destination);
+// NOLINTEND
+
+// thunks
+// NOLINTBEGIN
+MCAPI float const& COMMAND_INTERVAL();
+
+MCAPI float const& MOVE_EPSILON();
 // NOLINTEND
 
 }; // namespace Util::Agent

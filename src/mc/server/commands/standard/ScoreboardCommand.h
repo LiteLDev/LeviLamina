@@ -29,6 +29,16 @@ public:
         MCAPI explicit InitProxy(class ServerLevel& level);
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        // NOLINTEND
     };
 
     struct SetScoreOutput {
@@ -41,6 +51,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~SetScoreOutput();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -178,6 +195,17 @@ public:
     MCAPI static std::vector<std::string> _getNonSortableDisplaySlots(class Scoreboard& scoreboard);
 
     MCAPI static std::vector<std::string> _getSortableDisplaySlots(class Scoreboard& scoreboard);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // NOLINTEND
 };

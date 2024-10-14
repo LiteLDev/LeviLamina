@@ -84,4 +84,18 @@ public:
     MCAPI static void rebuildTopSnowToDepth(class BlockSource& region, class BlockPos const& testPos, int desiredDepth);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void levelEvent$(::LevelEvent type, class Vec3 const&, int data);
+
+    // NOLINTEND
 };

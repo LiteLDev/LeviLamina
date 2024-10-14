@@ -46,4 +46,30 @@ public:
     virtual bool hasByHashId(uint64 id) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool containsOnly$(int, int, int, int, gsl::span<uint64 const>) const;
+
+    MCAPI void fillBiomes$(class LevelChunk& levelChunk, class ChunkLocalNoiseCache const& chunkLocalNoiseCache) const;
+
+    MCAPI class Biome const* getBiome$(class BlockPos const& blockPos) const;
+
+    MCAPI class Biome const* getBiome$(struct GetBiomeOptions const& getBiomeOptions) const;
+
+    MCAPI class Biome const* getBiome$(int blockX, int blockY, int blockZ) const;
+
+    MCAPI class BiomeArea getBiomeArea$(class BoundingBox const& box, uint scale) const;
+
+    MCAPI class BiomeArea
+    getBiomeArea$(class BoundingBox const& box, uint scale, struct GetBiomeOptions const& getBiomeOptionsIn) const;
+
+    MCAPI bool has$(uint64 id) const;
+
+    MCAPI bool hasByHashId$(uint64 id) const;
+
+    // NOLINTEND
 };

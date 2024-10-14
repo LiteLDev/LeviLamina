@@ -14,4 +14,11 @@ public:
     MCAPI ~PlayerActionAcceptanceComponent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

@@ -81,4 +81,14 @@ public:
     MCAPI bool _tryAddItemsFromPos(class BlockSource& region, class Container& toContainer, class Vec3 const& pos);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    // NOLINTEND
 };

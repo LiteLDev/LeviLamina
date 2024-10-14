@@ -27,6 +27,13 @@ public:
     fromDescriptions(std::vector<struct cereal::SchemaDescription> const& descriptions, uint64 pos);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace cereal::ext

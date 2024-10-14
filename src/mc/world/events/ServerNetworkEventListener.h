@@ -24,4 +24,15 @@ public:
     virtual ::EventResult onMessage(struct MessageEvent const&);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI ::EventResult onEvent$(struct ServerNetworkGameplayNotificationEvent const&);
+
+    MCAPI ::EventResult onMessage$(struct MessageEvent const&);
+
+    // NOLINTEND
 };

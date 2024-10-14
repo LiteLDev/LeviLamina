@@ -60,6 +60,22 @@ public:
     MCAPI static struct TickingSystemWithInfo createSystem(std::string&& message);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void tick$(class StrictExecutionContext<
+                     struct Filter<class FlagComponent<struct PlayerComponentFlag>>,
+                     struct Read<struct StateVectorComponent>,
+                     struct Write<class ActorOwnerComponent>,
+                     struct AddRemove<>,
+                     struct GlobalRead<>,
+                     struct GlobalWrite<>,
+                     struct EntityFactoryT<>>& context);
+
+    // NOLINTEND
 };
 
 }; // namespace PlayerValidation

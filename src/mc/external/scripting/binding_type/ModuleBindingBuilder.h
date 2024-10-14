@@ -126,13 +126,21 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static struct Scripting::ConstantFactory mEmptyConstantFactory;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static struct Scripting::FunctionBinding mEmptyFunctionBinding;
+    MCAPI void dtor$();
 
-    MCAPI static struct Scripting::ObjectFactory mEmptyObjectFactory;
+    MCAPI static struct Scripting::ConstantFactory& mEmptyConstantFactory();
+
+    MCAPI static struct Scripting::FunctionBinding& mEmptyFunctionBinding();
+
+    MCAPI static struct Scripting::ObjectFactory& mEmptyObjectFactory();
 
     // NOLINTEND
 };

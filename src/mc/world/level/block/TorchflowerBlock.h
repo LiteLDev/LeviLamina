@@ -77,4 +77,46 @@ public:
     MCAPI TorchflowerBlock(std::string const& nameId, int id);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool canBeFertilized$(class BlockSource&, class BlockPos const&, class Block const&) const;
+
+    MCAPI int getAlternateSignal$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI class ItemInstance const getBaseSeed$() const;
+
+    MCAPI int getInputSignal$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI class Block const* getOffBlock$(class Block const* block) const;
+
+    MCAPI class Block const* getOnBlock$(class Block const* block) const;
+
+    MCAPI int getOutputSignal$(class Block const& block) const;
+
+    MCAPI int getTurnOffDelay$(class Block const& block) const;
+
+    MCAPI int getTurnOnDelay$(class Block const& block) const;
+
+    MCAPI bool isAlternateInput$(class Block const& block) const;
+
+    MCAPI bool isFreeToFall$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool onFertilized$(class BlockSource&, class BlockPos const&, class Actor*, ::FertilizerType) const;
+
+    MCAPI void onLand$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void
+    startFalling$(class BlockSource& region, class BlockPos const& pos, class Block const& oldBlock, bool creative)
+        const;
+
+    // NOLINTEND
 };

@@ -20,4 +20,15 @@ public:
     MCAPI void println(std::string const&);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void print$(std::string const&);
+
+    // NOLINTEND
 };

@@ -18,4 +18,13 @@ public:
     virtual char const* getJsonName() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI char const* getJsonName$() const;
+
+    // NOLINTEND
 };

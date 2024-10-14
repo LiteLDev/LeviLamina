@@ -21,4 +21,13 @@ public:
     virtual class BlockPos const& getSharedSpawnPosition() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI class BlockPos const& getSharedSpawnPosition$() const;
+
+    // NOLINTEND
 };

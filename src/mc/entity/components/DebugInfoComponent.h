@@ -26,6 +26,13 @@ public:
         MCAPI ~Listener();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -162,6 +169,22 @@ public:
 
     MCAPI void
     removeListener(class HashedString const&, class NetworkIdentifier networkIdentifier, ::SubClientId subClientId);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI ::EventResult onEvent$(struct ActorNotificationEvent const& event);
+
+    MCAPI ::EventResult onEvent$(struct ActorDefinitionTriggeredEvent const& actorDefinitionEvent);
 
     // NOLINTEND
 };

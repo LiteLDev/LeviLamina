@@ -57,4 +57,39 @@ public:
     virtual void onBlockEvent(class BlockSource& source, int x, int y, int z, int b0, int b1);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void onAreaChanged$(class BlockSource& source, class BlockPos const& min, class BlockPos const& max);
+
+    MCAPI void onBlockChanged$(
+        class BlockSource&                  source,
+        class BlockPos const&               pos,
+        uint                                layer,
+        class Block const&                  block,
+        class Block const&                  oldBlock,
+        int                                 updateFlags,
+        struct ActorBlockSyncMessage const* syncMsg,
+        ::BlockChangedEventTarget           eventTarget,
+        class Actor*                        blockChangeSource
+    );
+
+    MCAPI void onBlockEntityChanged$(class BlockSource& source, class BlockActor& te);
+
+    MCAPI void onBlockEvent$(class BlockSource& source, int x, int y, int z, int b0, int b1);
+
+    MCAPI void onBrightnessChanged$(class BlockSource& source, class BlockPos const& pos);
+
+    MCAPI void onEntityChanged$(class BlockSource& source, class Actor& entity);
+
+    MCAPI void onSourceCreated$(class BlockSource& source);
+
+    MCAPI void onSourceDestroyed$(class BlockSource& source);
+
+    // NOLINTEND
 };

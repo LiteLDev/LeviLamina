@@ -48,4 +48,24 @@ public:
     MCAPI static bool isLocatorMap(class ItemStack const& map);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::string buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const*) const;
+
+    MCAPI std::string getInteractText$(class Player const&) const;
+
+    MCAPI bool requiresInteract$() const;
+
+    MCAPI class ItemStack& use$(class ItemStack& item, class Player& player) const;
+
+    // NOLINTEND
 };

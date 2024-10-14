@@ -30,6 +30,20 @@ public:
     MCAPI explicit MetaDataPropertyReader(entt::meta_data const& metaData);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI entt::meta_prop getProperty$(std::string_view name) const;
+
+    // NOLINTEND
 };
 
 }; // namespace cereal

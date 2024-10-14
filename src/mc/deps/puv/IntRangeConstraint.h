@@ -38,6 +38,19 @@ public:
     MCAPI class Puv::IntRangeConstraint& constraintMin(class cereal::BasicNumericConstraint<double> constraint);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI struct cereal::internal::ConstraintDescription description$() const;
+
+    MCAPI void doValidate$(entt::meta_any const& any, class cereal::SerializerContext& context) const;
+
+    // NOLINTEND
 };
 
 }; // namespace Puv

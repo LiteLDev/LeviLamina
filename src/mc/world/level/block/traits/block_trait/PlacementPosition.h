@@ -71,6 +71,22 @@ public:
         ) const;
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        MCAPI gsl::not_null<class Block const*> getPlacementBlock$(
+            gsl::not_null<class Block const*> block,
+            class Actor const&,
+            class BlockPos const&,
+            uchar face,
+            class Vec3 const&,
+            int
+        ) const;
+
+        // NOLINTEND
     };
 
     class UpdateVerticalHalfGetPlacementBlockCallback : public ::BlockTrait::IGetPlacementBlockCallback {
@@ -87,6 +103,22 @@ public:
 
         // vIndex: 1
         virtual gsl::not_null<class Block const*> getPlacementBlock(
+            gsl::not_null<class Block const*> block,
+            class Actor const&,
+            class BlockPos const&,
+            uchar             face,
+            class Vec3 const& clickPos,
+            int
+        ) const;
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        MCAPI gsl::not_null<class Block const*> getPlacementBlock$(
             gsl::not_null<class Block const*> block,
             class Actor const&,
             class BlockPos const&,
@@ -127,6 +159,26 @@ public:
     MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
     MCAPI static std::string const& getName();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void applyToBlockLegacy$(class BlockLegacy& blockLegacy) const;
+
+    MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag$() const;
+
+    MCAPI void initializeFromNetwork$(class CompoundTag const& tag);
 
     // NOLINTEND
 };

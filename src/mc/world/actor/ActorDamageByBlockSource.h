@@ -30,4 +30,23 @@ public:
     MCAPI ActorDamageByBlockSource(class Block const& block, ::ActorDamageCause cause);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::unique_ptr<class ActorDamageSource> clone$() const;
+
+    MCAPI std::pair<std::string, std::vector<std::string>>
+          getDeathMessage$(std::string deadName, class Actor* dead) const;
+
+    MCAPI bool isBlockSource$() const;
+
+    // NOLINTEND
 };

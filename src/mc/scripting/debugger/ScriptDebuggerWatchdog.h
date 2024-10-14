@@ -27,4 +27,17 @@ public:
     virtual bool listenTimeoutExpired() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool listenTimeoutExpired$() const;
+
+    MCAPI bool requireClose$() const;
+
+    MCAPI void startListenTimeout$(std::chrono::seconds duration);
+
+    // NOLINTEND
 };

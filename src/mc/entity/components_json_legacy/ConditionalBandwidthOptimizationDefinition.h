@@ -32,4 +32,11 @@ public:
                                       class ConditionalBandwidthOptimizationDefinition>>& root);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

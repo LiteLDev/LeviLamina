@@ -32,6 +32,15 @@ public:
     MCAPI static class Scripting::InterfaceBindingBuilder<class ScriptModuleMinecraft::ScriptRGB> bind();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool isValid$() const;
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

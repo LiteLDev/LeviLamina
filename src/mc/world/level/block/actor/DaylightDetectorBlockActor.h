@@ -22,4 +22,13 @@ public:
     virtual void tick(class BlockSource& region);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void tick$(class BlockSource& region);
+
+    // NOLINTEND
 };

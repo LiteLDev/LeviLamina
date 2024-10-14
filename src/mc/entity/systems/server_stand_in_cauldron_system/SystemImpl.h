@@ -75,6 +75,36 @@ public:
     MCAPI static void _checkInsideCauldron(class ActorOwnerComponent& actorOwner);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
+
+    MCAPI void singleTick$(
+        class StrictExecutionContext<
+            struct Filter<struct UpdateWaterStateRequestComponent>,
+            struct Read<class ActorOwnerComponent>,
+            struct Write<>,
+            struct AddRemove<>,
+            struct GlobalRead<>,
+            struct GlobalWrite<>,
+            struct EntityFactoryT<>>& executionContext,
+        class StrictEntityContext&    entityContext
+    );
+
+    MCAPI void tick$(class StrictExecutionContext<
+                     struct Filter<struct UpdateWaterStateRequestComponent>,
+                     struct Read<class ActorOwnerComponent>,
+                     struct Write<>,
+                     struct AddRemove<>,
+                     struct GlobalRead<>,
+                     struct GlobalWrite<>,
+                     struct EntityFactoryT<>>& executionContext);
+
+    // NOLINTEND
 };
 
 }; // namespace ServerStandInCauldronSystem

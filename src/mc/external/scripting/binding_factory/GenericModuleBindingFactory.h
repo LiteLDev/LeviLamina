@@ -48,6 +48,18 @@ public:
         MCAPI ~ModuleData();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -113,6 +125,35 @@ public:
         std::vector<struct Scripting::ModuleDescriptor>& dependencies,
         struct Scripting::Version                        runtimeVersion
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI std::optional<struct Scripting::ModuleBinding> createModuleBinding$(
+        struct Scripting::Version                             version,
+        std::optional<struct Scripting::ContextConfig> const& config
+    );
+
+    MCAPI std::vector<struct Scripting::ModuleDescriptor> getDependencies$(struct Scripting::Version version) const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI std::vector<struct Scripting::Version> getSupportedVersions$() const;
+
+    MCAPI struct Scripting::UUID getUUID$() const;
+
+    MCAPI bool hasAlias$(std::string const& alias) const;
 
     // NOLINTEND
 };

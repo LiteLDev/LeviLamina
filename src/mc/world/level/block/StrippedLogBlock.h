@@ -40,4 +40,21 @@ public:
     MCAPI StrippedLogBlock(std::string const& nameId, int id, std::optional<struct LogBlockMapColors> mapColors);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class mce::Color
+    getMapColor$(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
+
+    MCAPI int getVariant$(class Block const&) const;
+
+    // NOLINTEND
 };

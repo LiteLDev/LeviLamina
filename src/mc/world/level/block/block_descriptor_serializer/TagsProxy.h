@@ -18,6 +18,13 @@ public:
     MCAPI ~TagsProxy();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace BlockDescriptorSerializer

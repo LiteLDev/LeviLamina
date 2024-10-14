@@ -22,4 +22,11 @@ public:
     MCAPI void finalizeComponents();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

@@ -72,4 +72,30 @@ public:
     MCAPI void startTakingPicture(class Player& player);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+
+    MCAPI bool canExistWhenDisallowMob$() const;
+
+    MCAPI float getShadowRadius$() const;
+
+    MCAPI bool isTargetable$() const;
+
+    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI void remove$();
+
+    MCAPI void updateEntitySpecificMolangVariables$(class RenderParams& renderParams);
+
+    // NOLINTEND
 };

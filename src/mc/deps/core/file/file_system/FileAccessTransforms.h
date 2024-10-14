@@ -21,4 +21,15 @@ public:
     virtual bool writeTransform(std::vector<uchar>& stream) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool readTransform$(std::vector<uchar>& stream) const;
+
+    MCAPI bool writeTransform$(std::vector<uchar>& stream) const;
+
+    // NOLINTEND
 };

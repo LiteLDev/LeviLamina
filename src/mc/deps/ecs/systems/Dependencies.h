@@ -18,4 +18,11 @@ public:
     MCAPI ~Dependencies();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

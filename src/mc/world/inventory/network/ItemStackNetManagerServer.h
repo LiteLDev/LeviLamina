@@ -94,4 +94,26 @@ public:
     MCAPI bool _tryFilterText(class ItemStackRequestData const* requestData);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void _initScreen$(class ItemStackNetManagerScreen& screen);
+
+    MCAPI bool allowInventoryTransactionManager$() const;
+
+    MCAPI ItemStackRequestId getRequestId$() const;
+
+    MCAPI void onContainerScreenOpen$(class ContainerScreenContext const& screenContext);
+
+    MCAPI bool retainSetItemStackNetIdVariant$() const;
+
+    // NOLINTEND
 };

@@ -17,9 +17,10 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::unique_ptr<class Scheduler> mInstance;
+    MCAPI static std::unique_ptr<class Scheduler>& mInstance();
 
     // NOLINTEND
 };

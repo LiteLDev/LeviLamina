@@ -109,9 +109,66 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class BaseGameVersion const HOPPER_DOESNT_BREAK_FALLING_BLOCK_VERSION;
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void addAABBs$(
+        class Block const& block,
+        class IConstBlockSource const&,
+        class BlockPos const&    pos,
+        class AABB const*        intersectTestBox,
+        std::vector<class AABB>& inoutBoxes
+    ) const;
+
+    MCAPI bool
+    addCollisionShapes$(class Block const& block, class IConstBlockSource const& region, class BlockPos const& pos, class AABB const* intersectTestBox, std::vector<class AABB>& inoutBoxes, class optional_ref<class GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI bool allowStateMismatchOnPlacement$(class Block const& clientTarget, class Block const& serverTarget) const;
+
+    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const*) const;
+
+    MCAPI bool breaksFallingBlocks$(class Block const&, class BaseGameVersion version) const;
+
+    MCAPI bool canProvideSupport$(class Block const&, uchar face, ::BlockSupportType) const;
+
+    MCAPI class HitResult
+    clip$(class Block const& block, class BlockSource const&, class BlockPos const& pos, class Vec3 const& origin, class Vec3 const& end, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI int
+    getComparatorSignal$(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
+        const;
+
+    MCAPI class Block const&
+    getPlacementBlock$(class Actor const&, class BlockPos const&, uchar face, class Vec3 const&, int) const;
+
+    MCAPI ::BlockProperty getRedstoneProperty$(class BlockSource&, class BlockPos const&) const;
+
+    MCAPI bool hasComparatorSignal$() const;
+
+    MCAPI bool isContainerBlock$() const;
+
+    MCAPI bool isInteractiveBlock$() const;
+
+    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void onRedstoneUpdate$(class BlockSource& region, class BlockPos const& pos, int strength, bool) const;
+
+    MCAPI void onRemove$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void setupRedstoneComponent$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool use$(class Player&, class BlockPos const&, uchar) const;
+
+    MCAPI static class BaseGameVersion const& HOPPER_DOESNT_BREAK_FALLING_BLOCK_VERSION();
 
     // NOLINTEND
 };

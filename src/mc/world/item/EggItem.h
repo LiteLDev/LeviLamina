@@ -48,4 +48,25 @@ public:
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI class Actor* createProjectileActor$(
+        class BlockSource& region,
+        class ItemStack const&,
+        class Vec3 const& pos,
+        class Vec3 const& direction
+    ) const;
+
+    MCAPI bool
+    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+
+    MCAPI bool isThrowable$() const;
+
+    MCAPI class ItemStack& use$(class ItemStack& instance, class Player& player) const;
+
+    // NOLINTEND
 };

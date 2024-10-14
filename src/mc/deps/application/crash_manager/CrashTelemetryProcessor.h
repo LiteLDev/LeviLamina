@@ -17,6 +17,13 @@ public:
     virtual ~CrashTelemetryProcessor() = default;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock

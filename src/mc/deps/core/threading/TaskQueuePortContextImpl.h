@@ -54,4 +54,35 @@ public:
     virtual bool RemoveSuspend();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI uint AddRef$();
+
+    MCAPI bool AddSuspend$();
+
+    MCAPI struct ITaskQueuePort* GetPort$();
+
+    MCAPI struct ITaskQueue* GetQueue$();
+
+    MCAPI ::TaskQueuePortStatus GetStatus$();
+
+    MCAPI ::XTaskQueuePort GetType$();
+
+    MCAPI void ItemQueued$();
+
+    MCAPI long QueryApi$(::ApiId, void**);
+
+    MCAPI uint Release$();
+
+    MCAPI bool RemoveSuspend$();
+
+    MCAPI void SetStatus$(::TaskQueuePortStatus);
+
+    MCAPI bool TrySetStatus$(::TaskQueuePortStatus, ::TaskQueuePortStatus);
+
+    // NOLINTEND
 };

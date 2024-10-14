@@ -39,4 +39,25 @@ public:
     virtual void onTickingStopped(class LevelChunk& levelChunk);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI int getClosestPlayerDistanceSquared$(class LevelChunk const& levelChunk) const;
+
+    MCAPI bool isOwnedByTickingThread$(class LevelChunk const& levelChunk) const;
+
+    MCAPI bool isReadOnly$(class LevelChunk const& levelChunk) const;
+
+    MCAPI void onTickingStarted$(class LevelChunk& levelChunk);
+
+    MCAPI void onTickingStopped$(class LevelChunk& levelChunk);
+
+    MCAPI bool setOnChunkLoadedCalled$(class LevelChunk& levelChunk);
+
+    MCAPI void setupRedstoneCircuit$(class ChunkSource& chunkSource, class LevelChunk& levelChunk);
+
+    // NOLINTEND
 };

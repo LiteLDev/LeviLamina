@@ -84,4 +84,51 @@ public:
     _generateDensityCellsForChunk(class ChunkPos const& chunkPos) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForChunkSource();
+
+    MCAPI static void** $vftableForIPreliminarySurfaceProvider();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void _prepareHeights$(
+        class BlockVolume&                                                    box,
+        class ChunkPos const&                                                 chunkPos,
+        class WorldGenCache const&                                            worldGenCache,
+        class Aquifer*                                                        aquiferPtr,
+        std::function<void(class BlockPos const&, class Block const&, int)>&& tickUpdateFn,
+        bool                                                                  factorInBeardsAndShavers,
+        std::vector<short>*                                                   ZXheights,
+        int                                                                   skipTopN
+    );
+
+    MCAPI void decorateWorldGenPostProcess$(
+        class Biome const& biome,
+        class LevelChunk&  lc,
+        class BlockSource& source,
+        class Random&      random
+    ) const;
+
+    MCAPI class BlockPos findSpawnPosition$() const;
+
+    MCAPI class Util::MultidimensionalArray<float, 5, 5, 41>
+    generateDensityCellsForChunk$(class ChunkPos const& chunkPos) const;
+
+    MCAPI class BiomeSource const& getBiomeSource$() const;
+
+    MCAPI int getLevelGenHeight$() const;
+
+    MCAPI std::unique_ptr<class PerlinSimplexNoise> const& getMaterialAdjNoise$() const;
+
+    MCAPI class PerlinSimplexNoise const& getSurfaceNoise$();
+
+    MCAPI std::optional<class XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory$() const;
+
+    // NOLINTEND
 };

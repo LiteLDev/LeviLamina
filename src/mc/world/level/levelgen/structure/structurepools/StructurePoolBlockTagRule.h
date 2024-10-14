@@ -20,4 +20,14 @@ public:
     MCAPI bool processRule(class Block const& sourceBlock, class CompoundTag& sourceTag) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    // NOLINTEND
 };

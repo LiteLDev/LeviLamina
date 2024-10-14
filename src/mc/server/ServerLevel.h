@@ -152,4 +152,75 @@ public:
     MCAPI void _postReloadActorAdded(class Actor& actor, ::ActorInitializationMethod initializationMethod);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForBlockSourceListener();
+
+    MCAPI static void** $vftableForILevel();
+
+    MCAPI static void** $vftableForIWorldRegistriesProvider();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI class MapDataManager& _getMapDataManager$();
+
+    MCAPI class PlayerDeathManager* _getPlayerDeathManager$();
+
+    MCAPI void _initializeMapDataManager$();
+
+    MCAPI void _subTick$();
+
+    MCAPI void
+    decrementTagCache$(std::string const& tag, class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>>&);
+
+    MCAPI class ResourcePackManager* getClientResourcePackManager$() const;
+
+    MCAPI class LevelChunkMetaDataManager* getLevelChunkMetaDataManager$();
+
+    MCAPI class PlayerSleepManager const& getPlayerSleepManager$() const;
+
+    MCAPI class PlayerSleepManager& getPlayerSleepManager$();
+
+    MCAPI class PositionTrackingDB::PositionTrackingDBServer* getPositionTrackerDBServer$() const;
+
+    MCAPI class ResourcePackManager* getServerResourcePackManager$() const;
+
+    MCAPI class Random& getThreadRandom$() const;
+
+    MCAPI class TradeTables* getTradeTables$();
+
+    MCAPI void
+    incrementTagCache$(std::string const& tag, class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>>&);
+
+    MCAPI bool initialize$(
+        std::string const&         levelName,
+        class LevelSettings const& levelSettings,
+        class LevelData*           levelData,
+        class Experiments const&   experiments,
+        std::string const*         levelId
+    );
+
+    MCAPI void loadFunctionManager$();
+
+    MCAPI void runCommand$(class Command& command, class CommandOrigin& origin, ::CommandOriginSystem originSystem);
+
+    MCAPI void runCommand$(
+        class HashedString const& commandStr,
+        class CommandOrigin&      origin,
+        ::CommandOriginSystem     originSystem,
+        ::CurrentCmdVersion       commandVersion
+    );
+
+    MCAPI void setCommandsEnabled$(bool commandsEnabled);
+
+    MCAPI void setWorldTemplateOptionsUnlocked$();
+
+    // NOLINTEND
 };

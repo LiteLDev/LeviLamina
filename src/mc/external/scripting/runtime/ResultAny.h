@@ -20,6 +20,13 @@ public:
     MCAPI static class Scripting::ResultAny makeResultFromAny(entt::meta_any const& resultAny);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace Scripting

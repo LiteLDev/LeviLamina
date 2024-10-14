@@ -8,8 +8,9 @@ namespace Scripting { struct Version; }
 // clang-format on
 
 namespace ScriptModuleMinecraft::Internals {
+// thunks
 // NOLINTBEGIN
-MCAPI extern struct Scripting::Version const CURRENT;
+MCAPI struct Scripting::Version const& CURRENT();
 // NOLINTEND
 
 }; // namespace ScriptModuleMinecraft::Internals

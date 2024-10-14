@@ -163,9 +163,17 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::unordered_set<class ChunkPos> const SPAWN_RING_OFFSETS;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static std::unordered_set<class ChunkPos> const& SPAWN_RING_OFFSETS();
 
     // NOLINTEND
 };

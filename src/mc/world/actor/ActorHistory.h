@@ -24,6 +24,18 @@ public:
         MCAPI ~Snapshot();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -55,6 +67,18 @@ public:
     MCAPI void setSnapshotAsCorrection(uint64 frame);
 
     MCAPI ~ActorHistory();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

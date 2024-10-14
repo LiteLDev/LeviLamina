@@ -31,6 +31,18 @@ public:
     findValidGenerationPoint(struct br::worldgen::GenerationContext& context) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI std::optional<class br::worldgen::GenerationStub>
+          findValidGenerationPoint$(struct br::worldgen::GenerationContext& context) const;
+
+    // NOLINTEND
 };
 
 }; // namespace br::worldgen

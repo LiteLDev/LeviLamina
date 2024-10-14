@@ -83,4 +83,36 @@ public:
     MCAPI void _pushScreen(class ContainerScreenContext screenContext);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void
+    _addLegacyTransactionRequestSetItemSlot$(class ItemStackNetManagerScreen&, ::ContainerType containerType, int slot);
+
+    MCAPI void _initScreen$(class ItemStackNetManagerScreen&);
+
+    MCAPI gsl::final_action<std::function<void()>> _tryBeginClientLegacyTransactionRequest$();
+
+    MCAPI class SparseContainer*
+    initOpenContainer$(class BlockSource&, ::ContainerEnumName, class ContainerWeakRef const&);
+
+    MCAPI bool isEnabled$() const;
+
+    MCAPI void onContainerScreenClose$();
+
+    MCAPI void onContainerScreenOpen$(class ContainerScreenContext const& screenContext);
+
+    MCAPI bool retainSetItemStackNetIdVariant$() const;
+
+    // NOLINTEND
 };

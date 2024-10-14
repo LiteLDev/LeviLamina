@@ -30,8 +30,6 @@ public:
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockRecordPlayerComponentV010>
     bind();
 
-    MCAPI static char const* ComponentId;
-
     // NOLINTEND
 
     // protected:
@@ -41,6 +39,15 @@ public:
     MCAPI class Scripting::Result<bool> isPlaying();
 
     MCAPI class Scripting::Result<void> setRecord(class ScriptModuleMinecraft::ScriptItemType const& itemType);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI static char const* const& ComponentId();
 
     // NOLINTEND
 };

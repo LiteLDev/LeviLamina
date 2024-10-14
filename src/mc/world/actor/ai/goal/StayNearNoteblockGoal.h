@@ -41,6 +41,15 @@ public:
         );
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -77,6 +86,25 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI std::optional<class BlockPos> const _hasLastVibrationAtNoteblock();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
+
+    MCAPI void tick$();
 
     // NOLINTEND
 };

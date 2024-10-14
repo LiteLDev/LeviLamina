@@ -60,4 +60,22 @@ public:
     MCAPI void _dropChestContents(class Vec3 const& pos);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void destroy$(class Actor* sourceActor);
+
+    MCAPI std::string getEntityLocNameString$() const;
+
+    MCAPI void kill$();
+
+    // NOLINTEND
 };

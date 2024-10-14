@@ -18,4 +18,11 @@ public:
     MCAPI ~GenerateMessageResult();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

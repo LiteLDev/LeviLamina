@@ -29,6 +29,13 @@ public:
         MCAPI ~Error();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     struct Info {
@@ -43,6 +50,13 @@ public:
         MCAPI ~Info();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     struct Warning {
@@ -55,6 +69,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~Warning();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -81,6 +102,18 @@ public:
     MCAPI std::vector<struct ScriptPluginResult::Warning> const& getWarnings() const;
 
     MCAPI ~ScriptPluginResult();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

@@ -38,6 +38,19 @@ public:
     MCAPI class RakNet::SocketLayerOverride* GetSocketLayerOverride();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI ::RakNet::RNS2BindResult Bind$(struct RakNet::RNS2_BerkleyBindParameters*, char const*, uint);
+
+    MCAPI int Send$(struct RakNet::RNS2_SendParameters*, char const*, uint);
+
+    MCAPI void SetMulticastInterface$(int interfaceIndex);
+
+    // NOLINTEND
 };
 
 }; // namespace RakNet

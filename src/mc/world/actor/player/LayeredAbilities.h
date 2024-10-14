@@ -69,13 +69,23 @@ public:
 
     MCAPI void setPlayerPermissions(::PlayerPermissionLevel permissions);
 
-    MCAPI static std::string const DIFF_LAYER_AT;
-
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI void _handlePlayerPermissionsChange(::PlayerPermissionLevel from, ::PlayerPermissionLevel to);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI static std::string const& DIFF_LAYER_AT();
 
     // NOLINTEND
 };

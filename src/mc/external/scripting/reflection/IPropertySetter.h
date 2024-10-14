@@ -29,6 +29,15 @@ public:
     virtual bool isMemberFunction() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool isMemberFunction$() const;
+
+    // NOLINTEND
 };
 
 }; // namespace Scripting::Reflection

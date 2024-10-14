@@ -45,4 +45,24 @@ public:
     MCAPI StoneBricksBlock(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class ItemInstance asItemInstance$(class Block const& block, class BlockActor const*) const;
+
+    MCAPI std::string buildDescriptionId$(class Block const& block) const;
+
+    MCAPI bool isAuxValueRelevantForPicking$() const;
+
+    MCAPI class Block const* tryGetInfested$(class Block const& block) const;
+
+    // NOLINTEND
 };

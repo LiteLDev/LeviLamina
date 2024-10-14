@@ -66,4 +66,42 @@ public:
     MCAPI static class HashedString const& getIdentifier();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI bool _canUseOn$(class ItemStack const&, class Actor&, class BlockPos const&, uchar) const;
+
+    MCAPI void _initializeComponent$();
+
+    MCAPI bool _useOn$(
+        class ItemStack&      itemInstance,
+        class Actor&          entity,
+        class BlockPos const& blockPos,
+        uchar                 face,
+        class Vec3 const&     clickPos
+    ) const;
+
+    MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag$(struct cereal::ReflectionCtx const& ctx) const;
+
+    MCAPI bool checkComponentDataForContentErrors$() const;
+
+    MCAPI void handleVersionBasedInitialization$(class SemVersion const& originalJsonVersion);
+
+    MCAPI bool initializeFromNetwork$(class CompoundTag const& tag, struct cereal::ReflectionCtx const& ctx);
+
+    MCAPI bool isNetworkComponent$() const;
+
+    MCAPI void writeSettings$();
+
+    // NOLINTEND
 };

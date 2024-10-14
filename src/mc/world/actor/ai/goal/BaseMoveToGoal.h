@@ -78,4 +78,38 @@ public:
     MCAPI void setInterval(int interval);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI bool _canReach$(class BlockPos const& pos);
+
+    MCAPI uint64 _getRepathTime$() const;
+
+    MCAPI class Vec3 _getTargetPosition$() const;
+
+    MCAPI int _nextStartTick$();
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI bool hasReachedTarget$() const;
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
+
+    MCAPI void tick$();
+
+    // NOLINTEND
 };

@@ -40,4 +40,17 @@ public:
     MCAPI ::ItemStackNetResult _handleEnchant(class ItemStackRequestActionCraft<RecipeNetId, 12> const& requestAction);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI ::ItemStackNetResult _handleCraftAction$(class ItemStackRequestActionCraftBase const& requestAction);
+
+    MCAPI void _postCraftRequest$(bool wasSuccess);
+
+    MCAPI void endRequestBatch$();
+
+    // NOLINTEND
 };

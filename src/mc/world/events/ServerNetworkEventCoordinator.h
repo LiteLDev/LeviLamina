@@ -29,4 +29,11 @@ public:
     MCAPI void sendMessage(struct MessageEvent& messageEvent);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };

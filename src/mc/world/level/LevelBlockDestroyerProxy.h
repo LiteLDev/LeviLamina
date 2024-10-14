@@ -26,4 +26,20 @@ public:
     virtual void dropResources(class BlockSource& region, class BlockPos const& pos, class Block const& block);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dropResources$(class BlockSource& region, class BlockPos const& pos, class Block const& block);
+
+    MCAPI void sendEvents$(
+        class LevelEventManager& levelEventManager,
+        class BlockSource&       region,
+        class BlockPos const&    pos,
+        class Block const&       block
+    );
+
+    // NOLINTEND
 };

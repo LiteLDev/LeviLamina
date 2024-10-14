@@ -43,6 +43,29 @@ public:
     MCAPI StringPayload(std::string scriptName, std::string scriptData);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI class Scripting::ResultAny
+    runOn$(struct Scripting::ContextId, class Scripting::NativeRuntime&, std::optional<::Scripting::Privilege>);
+
+    MCAPI class Scripting::ResultAny runOn$(
+        struct Scripting::ContextId           contextId,
+        class Scripting::StringBasedRuntime&  runtime,
+        std::optional<::Scripting::Privilege> privilege
+    );
+
+    // NOLINTEND
 };
 
 }; // namespace Scripting

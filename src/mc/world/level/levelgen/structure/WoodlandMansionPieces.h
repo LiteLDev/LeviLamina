@@ -59,6 +59,13 @@ public:
         virtual std::string get2x2Secret(class Random& random) = 0;
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        // NOLINTEND
     };
 
     class FirstFloorRoomCollection : public ::WoodlandMansionPieces::FloorRoomCollection {
@@ -95,6 +102,27 @@ public:
         virtual std::string get2x2Secret(class Random& random);
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        MCAPI std::string get1x1$(class Random& random);
+
+        MCAPI std::string get1x1Secret$(class Random& random);
+
+        MCAPI std::string get1x2FrontEntrance$(class Random& random, bool isStairsRoom);
+
+        MCAPI std::string get1x2Secret$(class Random& random);
+
+        MCAPI std::string get1x2SideEntrance$(class Random& random, bool isStairsRoom);
+
+        MCAPI std::string get2x2$(class Random& random);
+
+        MCAPI std::string get2x2Secret$(class Random& random);
+
+        // NOLINTEND
     };
 
     class MansionGrid {
@@ -129,6 +157,16 @@ public:
         MCAPI void _setupThirdFloor();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        // NOLINTEND
     };
 
     struct PlacementData {
@@ -141,6 +179,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~PlacementData();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -177,6 +222,27 @@ public:
 
         // vIndex: 7
         virtual std::string get2x2Secret(class Random& random);
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        MCAPI std::string get1x1$(class Random& random);
+
+        MCAPI std::string get1x1Secret$(class Random& random);
+
+        MCAPI std::string get1x2FrontEntrance$(class Random& random, bool isStairsRoom);
+
+        MCAPI std::string get1x2Secret$(class Random& random);
+
+        MCAPI std::string get1x2SideEntrance$(class Random& random, bool isStairsRoom);
+
+        MCAPI std::string get2x2$(class Random& random);
+
+        MCAPI std::string get2x2Secret$(class Random& random);
 
         // NOLINTEND
     };
@@ -291,6 +357,13 @@ public:
         virtual ~ThirdFloorRoomCollection() = default;
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        // NOLINTEND
     };
 
     class WoodlandMansionPiece : public ::TemplateStructurePiece {
@@ -349,6 +422,33 @@ public:
         );
 
         MCAPI void _loadTemplate();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        MCAPI void dtor$();
+
+        MCAPI void _handleDataMarker$(
+            std::string const&       markerId,
+            class BlockPos const&    position,
+            class BlockSource&       region,
+            class Random&            random,
+            class BoundingBox const& chunkBB
+        );
+
+        MCAPI ::StructurePieceType getType$() const;
+
+        MCAPI void
+        postProcessMobsAt$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 
         // NOLINTEND
     };

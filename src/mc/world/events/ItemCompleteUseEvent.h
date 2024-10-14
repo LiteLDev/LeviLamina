@@ -14,4 +14,11 @@ public:
     MCAPI ~ItemCompleteUseEvent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

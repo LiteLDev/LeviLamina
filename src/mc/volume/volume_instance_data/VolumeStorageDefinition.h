@@ -28,6 +28,13 @@ public:
     MCAPI static struct VolumeInstanceData::VolumeStorageDefinition fromEntity(class EntityContext const& entity);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace VolumeInstanceData

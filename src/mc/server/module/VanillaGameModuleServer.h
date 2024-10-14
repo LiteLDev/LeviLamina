@@ -86,4 +86,48 @@ public:
     MCAPI void _registerListeners(Bedrock::NotNullNonOwnerPtr<class Level> const& level, bool realmsStoriesEnabled);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void
+    configureDocumentation$(class IGameModuleDocumentation& moduleDocumentation, class ItemRegistryRef docItemRegistry);
+
+    MCAPI void configureLevel$(
+        Bedrock::NotNullNonOwnerPtr<class Level> const&                level,
+        class Experiments const&                                       experiments,
+        class ResourcePackManager&                                     resourcePackManager,
+        class BaseGameVersion const&                                   baseGameVersion,
+        std::optional<gsl::not_null<class ServerScriptManager const*>> scriptManager
+    );
+
+    MCAPI void configureNewPlayer$(class Player& player);
+
+    MCAPI void configureServerNetworkHandler$(
+        class ServerInstance&                                   server,
+        Bedrock::NotNullNonOwnerPtr<class ServerNetworkHandler> handler
+    );
+
+    MCAPI void init$(class ServerInstance& server, Bedrock::NotNullNonOwnerPtr<class Level> const& level);
+
+    MCAPI void initializeBehaviorStack$(
+        class Experiments const&                                          experiments,
+        Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository> const& repo,
+        class ResourcePackStack&                                          stack,
+        class BaseGameVersion const&                                      baseGameVersion,
+        bool                                                              includeEditorPacks
+    );
+
+    MCAPI void setupCommands$(class CommandRegistry& commandRegistry);
+
+    MCAPI void tick$();
+
+    // NOLINTEND
 };

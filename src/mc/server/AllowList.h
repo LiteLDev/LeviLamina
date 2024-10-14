@@ -35,6 +35,18 @@ public:
         MCAPI ~AllowListEntryMatcher();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -65,6 +77,17 @@ public:
     MCAPI bool removeByName(std::string const& name);
 
     MCAPI void tryUpdateEntries(class mce::UUID const& uuid, std::string const& xuid, std::string const& name);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void deserialize$(class Json::Value& root);
+
+    MCAPI void serialize$(class Json::Value& root);
 
     // NOLINTEND
 };

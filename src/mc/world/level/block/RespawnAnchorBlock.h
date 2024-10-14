@@ -91,4 +91,38 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void
+    animateTickBedrockLegacy$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI bool canSpawnAt$(class BlockSource const& region, class BlockPos const& pos) const;
+
+    MCAPI int
+    getComparatorSignal$(class BlockSource& region, class BlockPos const& pos, class Block const&, uchar) const;
+
+    MCAPI struct Brightness getLightEmission$(class Block const& block) const;
+
+    MCAPI int getVariant$(class Block const& block) const;
+
+    MCAPI bool hasComparatorSignal$() const;
+
+    MCAPI bool isInteractiveBlock$() const;
+
+    MCAPI void notifySpawnedAt$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool use$(class Player& player, class BlockPos const& anchorBlockPos, uchar) const;
+
+    // NOLINTEND
 };

@@ -245,4 +245,16 @@ public:
     MCAPI static std::optional<class LevelSeed64> parseSeedString(std::string const& seedInput);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

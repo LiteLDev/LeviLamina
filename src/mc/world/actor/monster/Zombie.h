@@ -65,11 +65,29 @@ public:
 
     // NOLINTEND
 
-    // protected:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class mce::UUID const SPAWN_BONUS_UUID;
+    MCAPI static void** $vftable();
 
-    MCAPI static class Attribute const SPAWN_REINFORCEMENTS_CHANCE;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI bool canPickupItem$(class ItemStack const& item) const;
+
+    MCAPI bool checkSpawnRules$(bool fromSpawner);
+
+    MCAPI int getArmorValue$() const;
+
+    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI static class mce::UUID const& SPAWN_BONUS_UUID();
+
+    MCAPI static class Attribute const& SPAWN_REINFORCEMENTS_CHANCE();
 
     // NOLINTEND
 };

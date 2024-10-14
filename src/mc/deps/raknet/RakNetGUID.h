@@ -24,6 +24,16 @@ public:
     MCAPI static ulong ToUint32(struct RakNet::RakNetGUID const& g);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    // NOLINTEND
 };
 
 }; // namespace RakNet

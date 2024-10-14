@@ -58,11 +58,21 @@ public:
 
     // NOLINTEND
 
-    // protected:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class SmallSet<class WorkerPool*> sAllPools;
+    MCAPI static void** $vftable();
 
-    MCAPI static class Bedrock::Threading::Mutex sAllPoolsMutex;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static class SmallSet<class WorkerPool*>& sAllPools();
+
+    MCAPI static class Bedrock::Threading::Mutex& sAllPoolsMutex();
 
     // NOLINTEND
 };

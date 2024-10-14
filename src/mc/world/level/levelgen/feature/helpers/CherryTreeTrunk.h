@@ -58,4 +58,23 @@ public:
     ) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI int getTreeHeight$(class Random& random) const;
+
+    MCAPI std::optional<class BlockPos> placeTrunk$(
+        class IBlockWorldGenAPI&             target,
+        class BlockPos const&                pos,
+        class Random&                        random,
+        int                                  treeHeight,
+        class RenderParams&                  renderParams,
+        struct TreeHelper::TreeParams const& treeParams,
+        class ITreeCanopy const*             canopy
+    ) const;
+
+    // NOLINTEND
 };

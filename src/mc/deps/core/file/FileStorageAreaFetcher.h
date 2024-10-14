@@ -34,6 +34,18 @@ public:
     ) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI class Core::Result getStorageAreaForPath$(
+        std::shared_ptr<class Core::FileStorageArea>& fileStorageArea,
+        class Core::Path const&                       path
+    ) const;
+
+    // NOLINTEND
 };
 
 }; // namespace Core

@@ -24,7 +24,12 @@ public:
     // vIndex: 0
     virtual ~BlockPartVisibilityDescription() = default;
 
-    MCAPI static std::string const NameID;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static std::string const& NameID();
 
     // NOLINTEND
 };

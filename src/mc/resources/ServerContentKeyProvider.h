@@ -36,4 +36,23 @@ public:
     virtual bool canAccess(class ContentIdentity const& contentIdentity) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool canAccess$(class ContentIdentity const& contentIdentity) const;
+
+    MCAPI void clearTempContentKeys$();
+
+    MCAPI std::string getAlternateContentKey$(class ContentIdentity const&) const;
+
+    MCAPI std::string getContentKey$(class ContentIdentity const& contentIdentity) const;
+
+    MCAPI bool requireEncryptedReads$() const;
+
+    MCAPI void setTempContentKeys$(std::unordered_map<class ContentIdentity, std::string> const&);
+
+    // NOLINTEND
 };

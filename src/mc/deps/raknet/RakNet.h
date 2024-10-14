@@ -80,10 +80,6 @@ MCAPI bool ProcessOfflineNetworkPacket(
 
 MCAPI int SplitPacketChannelComp(ushort const& key, struct RakNet::SplitPacketChannel* const& data);
 
-MCAPI extern struct RakNet::RakNetGUID const UNASSIGNED_RAKNET_GUID;
-
-MCAPI extern struct RakNet::SystemAddress const UNASSIGNED_SYSTEM_ADDRESS;
-
 MCAPI uint UpdateNetworkLoop(void* arguments);
 
 MCAPI uint UpdateTCPInterfaceLoop(void* arguments);
@@ -105,6 +101,13 @@ MCAPI void* _RakMalloc_Ex(uint64 size, char const* file, uint line);
 MCAPI void* _RakRealloc(void* p, uint64 size);
 
 MCAPI void* _RakRealloc_Ex(void* p, uint64 size, char const* file, uint line);
+// NOLINTEND
+
+// thunks
+// NOLINTBEGIN
+MCAPI struct RakNet::RakNetGUID const& UNASSIGNED_RAKNET_GUID();
+
+MCAPI struct RakNet::SystemAddress const& UNASSIGNED_SYSTEM_ADDRESS();
 // NOLINTEND
 
 }; // namespace RakNet

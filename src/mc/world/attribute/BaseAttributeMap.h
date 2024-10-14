@@ -42,21 +42,29 @@ public:
 
     MCAPI ~BaseAttributeMap();
 
-    MCAPI static std::string const DIFF_ATTRIBUTES;
-
-    MCAPI static std::string const DIFF_ATTRIBUTES_SIZE;
-
-    MCAPI static std::string const DIFF_DIRTY_ATTRIBUTES;
-
-    MCAPI static std::string const DIFF_DIRTY_ATTRIBUTES_SIZE;
-
-    MCAPI static std::string const DIFF_NO_ATTRIBUTES;
-
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class AttributeInstance mInvalidInstance;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static std::string const& DIFF_ATTRIBUTES();
+
+    MCAPI static std::string const& DIFF_ATTRIBUTES_SIZE();
+
+    MCAPI static std::string const& DIFF_DIRTY_ATTRIBUTES();
+
+    MCAPI static std::string const& DIFF_DIRTY_ATTRIBUTES_SIZE();
+
+    MCAPI static std::string const& DIFF_NO_ATTRIBUTES();
+
+    MCAPI static class AttributeInstance& mInvalidInstance();
 
     // NOLINTEND
 };

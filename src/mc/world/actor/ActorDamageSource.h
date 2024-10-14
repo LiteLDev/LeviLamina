@@ -108,4 +108,59 @@ public:
     MCAPI static std::string const& lookupCauseName(::ActorDamageCause cause);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::unique_ptr<class ActorDamageSource> clone$() const;
+
+    MCAPI ::ActorCategory getDamagingEntityCategories$() const;
+
+    MCAPI bool getDamagingEntityIsCreative$() const;
+
+    MCAPI bool getDamagingEntityIsWorldBuilder$() const;
+
+    MCAPI ::ActorType getDamagingEntityType$() const;
+
+    MCAPI struct ActorUniqueID getDamagingEntityUniqueID$() const;
+
+    MCAPI std::pair<std::string, std::vector<std::string>>
+          getDeathMessage$(std::string deadName, class Actor* dead) const;
+
+    MCAPI ::ActorCategory getEntityCategories$() const;
+
+    MCAPI ::ActorType getEntityType$() const;
+
+    MCAPI struct ActorUniqueID getEntityUniqueID$() const;
+
+    MCAPI bool getIsCreative$() const;
+
+    MCAPI bool getIsWorldBuilder$() const;
+
+    MCAPI bool isBlockSource$() const;
+
+    MCAPI bool isChildEntitySource$() const;
+
+    MCAPI bool isEntitySource$() const;
+
+    MCAPI bool isFallDamage$() const;
+
+    MCAPI bool isFallingBlockDamage$() const;
+
+    MCAPI bool isFire$() const;
+
+    MCAPI bool isReducedByArmorReduction$() const;
+
+    MCAPI bool isReducedByEnchantReduction$() const;
+
+    MCAPI bool isReducedByResistanceEffect$() const;
+
+    // NOLINTEND
 };

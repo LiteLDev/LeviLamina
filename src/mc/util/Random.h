@@ -56,9 +56,39 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class Bedrock::Threading::ThreadLocalObject<class Random> mThreadLocalRandom;
+    MCAPI static void** $vftableForBedrockEnableNonOwnerReferences();
+
+    MCAPI static void** $vftableForIRandom();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void consumeCount$(uint count);
+
+    MCAPI std::unique_ptr<class IRandom> fork$();
+
+    MCAPI bool nextBoolean$();
+
+    MCAPI double nextDouble$();
+
+    MCAPI float nextFloat$();
+
+    MCAPI double nextGaussianDouble$();
+
+    MCAPI int nextInt$();
+
+    MCAPI int nextInt$(int n);
+
+    MCAPI int64 nextLong$();
+
+    MCAPI static class Bedrock::Threading::ThreadLocalObject<class Random>& mThreadLocalRandom();
 
     // NOLINTEND
 };

@@ -51,4 +51,27 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool _needsPostProcessing$(class BlockSource& region);
+
+    MCAPI int generateHeightAtPosition$(
+        class BlockPos const&                                                    pos,
+        class Dimension&                                                         dim,
+        class BlockVolume&                                                       box,
+        std::unordered_map<class ChunkPos, std::unique_ptr<std::vector<short>>>& chunkHeightCache
+    ) const;
+
+    MCAPI class Block const& getBeardStabilizeBlock$(class Block const& foundationBlock) const;
+
+    MCAPI class Block const*
+    getSupportBlock$(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
+
+    MCAPI ::AdjustmentEffect getTerrainAdjustmentEffect$() const;
+
+    // NOLINTEND
 };

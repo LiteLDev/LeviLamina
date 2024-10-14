@@ -121,4 +121,21 @@ public:
     MCAPI void writeWithHeader(::SubClientId subClientId, class BinaryStream& bitstream) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI class Bedrock::Result<void> checkSize$(uint64 packetSize, bool receiverIsServer) const;
+
+    MCAPI bool disallowBatching$() const;
+
+    MCAPI bool isValid$() const;
+
+    MCAPI class Bedrock::Result<void> read$(class ReadOnlyBinaryStream& bitStream);
+
+    // NOLINTEND
 };

@@ -40,6 +40,24 @@ public:
     MCAPI explicit PlayerData(class Player const& player);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool isAbilityEnabled$(::AbilitiesIndex ability) const;
+
+    MCAPI bool isOperator$() const;
+
+    MCAPI bool isTeacher$() const;
+
+    // NOLINTEND
 };
 
 }; // namespace PlayerCapabilities

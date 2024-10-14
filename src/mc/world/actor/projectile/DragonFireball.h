@@ -54,7 +54,25 @@ public:
         class EntityContext&                    entityContext
     );
 
-    MCAPI static float SPLASH_RANGE;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool _hurt$(class ActorDamageSource const&, float, bool, bool);
+
+    MCAPI ::ParticleType getTrailParticle$();
+
+    MCAPI bool shouldBurn$();
+
+    MCAPI static float& SPLASH_RANGE();
 
     // NOLINTEND
 };

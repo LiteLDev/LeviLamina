@@ -68,4 +68,37 @@ public:
     MCAPI int _findStrongestStrength(class BlockPos const& targetPos, class CircuitSystem&, bool& bPowerFromSelf);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool
+    addSource$(class CircuitSceneGraph&, class CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
+
+    MCAPI bool allowConnection$(class CircuitSceneGraph&, class CircuitTrackingInfo const& info, bool&);
+
+    MCAPI void cacheValues$(class CircuitSystem& system, class BlockPos const& pos);
+
+    MCAPI bool evaluate$(class CircuitSystem&, class BlockPos const&);
+
+    MCAPI ::CircuitComponentType getCircuitComponentType$() const;
+
+    MCAPI uchar getPoweroutDirection$() const;
+
+    MCAPI int getStrength$() const;
+
+    MCAPI bool isHalfPulse$() const;
+
+    MCAPI void removeSource$(class BlockPos const& posSource, class BaseCircuitComponent const* pComponent);
+
+    MCAPI void updateDependencies$(class CircuitSceneGraph& system, class BlockPos const&);
+
+    // NOLINTEND
 };

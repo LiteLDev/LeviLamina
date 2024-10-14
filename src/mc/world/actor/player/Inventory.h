@@ -52,4 +52,32 @@ public:
     MCAPI void tick(int selectedSlot);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool add$(class ItemStack& item);
+
+    MCAPI bool canAdd$(class ItemStack const& item) const;
+
+    MCAPI int getEmptySlotsCount$() const;
+
+    MCAPI int getFirstEmptySlot$() const;
+
+    MCAPI void init$();
+
+    MCAPI void setContainerSize$(int size);
+
+    MCAPI void setItem$(int slot, class ItemStack const& item);
+
+    MCAPI void setItemWithForceBalance$(int slot, class ItemStack const& item, bool forceBalanced);
+
+    // NOLINTEND
 };

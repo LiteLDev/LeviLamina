@@ -65,9 +65,31 @@ public:
     // vIndex: 108
     virtual struct Brightness getLightEmission(int auxValue) const;
 
-    MCAPI static struct SparklerItem::ColorInfo const COLORS[];
+    // NOLINTEND
 
-    MCAPI static int const MAX_ACTIVE_TICKS;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI std::string
+          buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
+
+    MCAPI struct ResolvedItemIconInfo
+    getIconInfo$(class ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+
+    MCAPI struct Brightness getLightEmission$(int auxValue) const;
+
+    MCAPI bool
+    inventoryTick$(class ItemStack& item, class Level& level, class Actor& owner, int slot, bool selected) const;
+
+    MCAPI bool isHandEquipped$() const;
+
+    MCAPI class Item& setIconInfo$(std::string const& name, int id);
+
+    MCAPI static ::ll::CArrayT<struct SparklerItem::ColorInfo const>& COLORS();
+
+    MCAPI static int const& MAX_ACTIVE_TICKS();
 
     // NOLINTEND
 };

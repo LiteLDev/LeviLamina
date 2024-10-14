@@ -25,6 +25,20 @@ public:
            presetInitialSizeForFile(class Core::Path const& filePath, uint64 initialFileSize);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForBedrockEnableNonOwnerReferences();
+
+    MCAPI static void** $vftableForCoreFileSizePresetManager();
+
+    MCAPI std::optional<uint64> checkFileInitialSize$(class Core::Path const& filePath);
+
+    MCAPI std::unique_ptr<class Core::FileSizePresetToken>
+          presetInitialSizeForFile$(class Core::Path const& filePath, uint64 initialFileSize);
+
+    // NOLINTEND
 };
 
 }; // namespace Core

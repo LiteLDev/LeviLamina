@@ -50,4 +50,31 @@ public:
     MCAPI static std::string _playerXuidsToString(std::set<std::string> const& xuids);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForEventListenerDispatcherActorEventListener();
+
+    MCAPI static void** $vftableForEventListenerDispatcherPlayerEventListener();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI ::EventResult onEvent$(struct ActorKilledEvent const& actorKilledEvent);
+
+    MCAPI ::EventResult onEvent$(struct ActorAcquiredItemEvent const& actorAcquiredItemEvent);
+
+    MCAPI ::EventResult onPlayerMove$(class Player& player);
+
+    MCAPI ::EventResult onPlayerPortalBuilt$(class Player& player, DimensionType);
+
+    MCAPI ::EventResult
+    onPlayerPortalUsed$(class Player& player, DimensionType fromDimension, DimensionType toDimension);
+
+    MCAPI ::EventResult onPlayerPoweredBeacon$(class Player const& player, int);
+
+    // NOLINTEND
 };

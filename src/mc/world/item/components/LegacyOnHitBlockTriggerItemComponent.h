@@ -35,4 +35,13 @@ public:
     _onHitBlock(class ItemStack& item, class Block const&, class BlockPos const& blockPos, class Mob& attacker);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void _initializeComponent$();
+
+    // NOLINTEND
 };

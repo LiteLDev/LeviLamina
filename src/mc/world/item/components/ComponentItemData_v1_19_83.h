@@ -18,9 +18,16 @@ public:
     // NOLINTBEGIN
     MCAPI ~ComponentItemData_v1_19_83();
 
-    MCAPI static class SemVersion const PARSER_VERSION;
+    // NOLINTEND
 
-    MCAPI static class Puv::VersionRange const SUPPORTED_VERSIONS;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    MCAPI static class SemVersion const& PARSER_VERSION();
+
+    MCAPI static class Puv::VersionRange const& SUPPORTED_VERSIONS();
 
     // NOLINTEND
 };

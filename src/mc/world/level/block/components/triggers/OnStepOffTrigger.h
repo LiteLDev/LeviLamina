@@ -25,4 +25,11 @@ public:
     MCAPI void onStepOff(struct BlockEvents::BlockStepOffEvent const& eventData) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };

@@ -86,6 +86,41 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI class Core::Result _close$();
+
+    MCAPI class Core::Result _flush$();
+
+    MCAPI uint64 _getBlockSize$() const;
+
+    MCAPI class Core::PathBuffer<std::string> _getPath$() const;
+
+    MCAPI class Core::Result _getPosition$(uint64*);
+
+    MCAPI class Core::Result _getRemainingSize$(uint64*);
+
+    MCAPI class Core::Result _getSize$(uint64*);
+
+    MCAPI bool _isOpen$();
+
+    MCAPI class Core::Result _read$(void*, uint64, uint64*);
+
+    MCAPI class Core::Result _readAtPosition$(uint64, void*, uint64, uint64*);
+
+    MCAPI class Core::Result _readExactly$(void*, uint64);
+
+    MCAPI class Core::Result _setPosition$(uint64);
+
+    MCAPI class Core::Result _skip$(uint64);
+
+    MCAPI class Core::Result _write$(void const*, uint64);
+
+    // NOLINTEND
 };
 
 }; // namespace Core

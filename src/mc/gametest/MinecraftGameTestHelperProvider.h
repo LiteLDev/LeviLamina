@@ -32,4 +32,16 @@ public:
     virtual std::unique_ptr<class gametest::IGameTestHelperProvider> clone();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI std::unique_ptr<class gametest::IGameTestHelperProvider> clone$();
+
+    MCAPI std::unique_ptr<class gametest::BaseGameTestHelper>
+          createGameTestHelper$(class gametest::BaseGameTestInstance& testInstance);
+
+    // NOLINTEND
 };

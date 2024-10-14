@@ -39,4 +39,22 @@ public:
     MCAPI AmethystBlock(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI bool isSilentWhenJumpingOff$() const;
+
+    MCAPI void onProjectileHit$(class BlockSource& region, class BlockPos const& pos, class Actor const&) const;
+
+    // NOLINTEND
 };

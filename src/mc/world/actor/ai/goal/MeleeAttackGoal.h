@@ -58,11 +58,25 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class BaseGameVersion const min3DAttackVersion;
+    MCAPI static void** $vftable();
 
-    MCAPI static class BaseGameVersion const minHitThroughWallFixVersion;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI void tick$();
+
+    MCAPI static class BaseGameVersion const& min3DAttackVersion();
+
+    MCAPI static class BaseGameVersion const& minHitThroughWallFixVersion();
 
     // NOLINTEND
 };

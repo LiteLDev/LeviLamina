@@ -42,9 +42,12 @@ public:
 
     // NOLINTEND
 
-    // protected:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class Minecraft* mGame;
+    MCAPI void dtor$();
+
+    MCAPI static class Minecraft*& mGame();
 
     // NOLINTEND
 };

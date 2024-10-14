@@ -28,7 +28,12 @@ public:
 
     MCAPI static std::unique_ptr<class CompoundTag> serialize(class ScoreboardIdentityRef const& toSave);
 
-    MCAPI static class ScoreboardIdentityRef const Undefined;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static class ScoreboardIdentityRef const& Undefined();
 
     // NOLINTEND
 };

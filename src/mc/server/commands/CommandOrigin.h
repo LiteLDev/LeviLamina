@@ -142,9 +142,55 @@ public:
 
     // NOLINTEND
 
-    // protected:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class NetworkIdentifier sUnknownSource;
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void _setUUID$(class mce::UUID const& uuid);
+
+    MCAPI bool canUseAbility$(::AbilitiesIndex ability) const;
+
+    MCAPI bool canUseCommandsWithoutCheatsEnabled$() const;
+
+    MCAPI std::optional<class BlockPos> getCursorHitBlockPos$() const;
+
+    MCAPI std::optional<class Vec3> getCursorHitPos$() const;
+
+    MCAPI class Vec3 const getExecutePosition$(int version, class CommandPositionFloat const& commandPosition) const;
+
+    MCAPI struct CommandOriginIdentity getIdentity$() const;
+
+    MCAPI class CommandOrigin const& getOutputReceiver$() const;
+
+    MCAPI class NetworkIdentifier const& getSourceId$() const;
+
+    MCAPI ::SubClientId getSourceSubId$() const;
+
+    MCAPI class mce::UUID const& getUUID$() const;
+
+    MCAPI void handleCommandOutputCallback$(int, std::string&&) const;
+
+    MCAPI bool hasChatPerms$() const;
+
+    MCAPI bool hasTellPerms$() const;
+
+    MCAPI bool isSelectorExpansionAllowed$() const;
+
+    MCAPI bool isWorldBuilder$() const;
+
+    MCAPI class CompoundTag serialize$() const;
+
+    MCAPI struct CommandOriginData toCommandOriginData$() const;
+
+    MCAPI void updateValues$();
+
+    MCAPI static class NetworkIdentifier& sUnknownSource();
 
     // NOLINTEND
 };

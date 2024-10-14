@@ -17,4 +17,11 @@ public:
     MCAPI ~ItemStackRequestSlotInfo();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

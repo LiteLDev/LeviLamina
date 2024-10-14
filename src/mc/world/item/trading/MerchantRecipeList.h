@@ -50,4 +50,33 @@ public:
     MCAPI bool isRequiredItem(class ItemInstance const& offer, class ItemInstance const& requiredItem);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void addIfNewOrBetter$(class MerchantRecipe* toMatch);
+
+    MCAPI std::unique_ptr<class CompoundTag> createTag$(bool includeNetInfo) const;
+
+    MCAPI class MerchantRecipe* getMatchingRecipeFor$(
+        class ItemInstance const& buyA,
+        class ItemInstance const& buyB,
+        class ItemInstance const& sell
+    );
+
+    MCAPI class MerchantRecipe* getMatchingRecipeFor$(class MerchantRecipe const& recipe);
+
+    MCAPI class MerchantRecipe*
+    getRecipeFor$(class ItemInstance const& buyA, class ItemInstance const& buyB, int selectionHint);
+
+    MCAPI void load$(class CompoundTag const& tag);
+
+    // NOLINTEND
 };

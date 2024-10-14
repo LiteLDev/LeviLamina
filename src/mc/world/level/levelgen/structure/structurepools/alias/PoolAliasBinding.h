@@ -29,6 +29,13 @@ public:
         MCAPI ~PoolAliasLookup();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -70,6 +77,13 @@ public:
         class BlockPos const&                                       structureStartPosition,
         int64                                                       levelSeed
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
 
     // NOLINTEND
 };

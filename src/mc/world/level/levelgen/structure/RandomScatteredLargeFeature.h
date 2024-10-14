@@ -59,4 +59,49 @@ public:
     MCAPI explicit RandomScatteredLargeFeature(uint seed);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::unique_ptr<class StructureStart> createStructureStart$(
+        class Dimension&                         dimension,
+        class BiomeSource const&                 biomeSource,
+        class Random&                            random,
+        class ChunkPos const&                    cp,
+        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+    );
+
+    MCAPI bool getNearestGeneratedFeature$(
+        class Dimension&                         dimension,
+        class BiomeSource const&                 biomeSource,
+        class BlockPos const&                    origin,
+        class BlockPos&                          pos,
+        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        bool                                     mustBeInNewChunks,
+        std::optional<class HashedString> const& biomeTag
+    );
+
+    MCAPI void initMobSpawnTypes$(class HardcodedSpawnAreaRegistry& spawnAreas);
+
+    MCAPI bool isFeatureChunk$(
+        class BiomeSource const&                 biomeSource,
+        class Random&                            random,
+        class ChunkPos const&                    pos,
+        uint                                     levelSeed,
+        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        class Dimension const&                   dimension
+    );
+
+    MCAPI bool shouldAddHardcodedSpawnAreas$() const;
+
+    MCAPI bool shouldPostProcessMobs$() const;
+
+    // NOLINTEND
 };

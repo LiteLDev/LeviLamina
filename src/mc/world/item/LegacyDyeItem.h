@@ -35,4 +35,18 @@ public:
     MCAPI LegacyDyeItem(std::string const& name, int id, ::ItemColor color, bool allowLegacyUseAsDye);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool isDye$() const;
+
+    // NOLINTEND
 };

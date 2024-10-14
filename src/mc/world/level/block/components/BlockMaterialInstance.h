@@ -20,10 +20,17 @@ public:
 
     MCAPI ~BlockMaterialInstance();
 
-    MCAPI static std::initializer_list<std::pair<std::string const, ::BlockRenderLayer>> const
-        blockRenderLayerEnumValues;
+    // NOLINTEND
 
-    MCAPI static class BidirectionalUnorderedMap<std::string, ::BlockRenderLayer> const renderLayerNameBiMap;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    MCAPI static std::initializer_list<std::pair<std::string const, ::BlockRenderLayer>> const&
+    blockRenderLayerEnumValues();
+
+    MCAPI static class BidirectionalUnorderedMap<std::string, ::BlockRenderLayer> const& renderLayerNameBiMap();
 
     // NOLINTEND
 };

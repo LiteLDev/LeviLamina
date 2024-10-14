@@ -53,7 +53,36 @@ public:
 
     MCAPI FireChargeItem(std::string const& name, int id);
 
-    MCAPI static int const LEVEL_SOUND_EVENT_VOLUME;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool _calculatePlacePos$(class ItemStackBase&, class Actor& actor, uchar& face, class BlockPos& pos) const;
+
+    MCAPI class InteractionResult
+    _useOn$(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const&) const;
+
+    MCAPI class Actor* createProjectileActor$(
+        class BlockSource& region,
+        class ItemStack const&,
+        class Vec3 const& pos,
+        class Vec3 const& direction
+    ) const;
+
+    MCAPI bool
+    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+
+    MCAPI bool isDestructive$(int) const;
+
+    MCAPI static int const& LEVEL_SOUND_EVENT_VOLUME();
 
     // NOLINTEND
 };

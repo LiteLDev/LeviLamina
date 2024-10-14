@@ -49,4 +49,17 @@ public:
     MCAPI static void swapPages(class ItemStack& book, int page1, int page2);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI std::string getInteractText$(class Player const& player) const;
+
+    MCAPI bool requiresInteract$() const;
+
+    MCAPI class ItemStack& use$(class ItemStack& instance, class Player& player) const;
+
+    // NOLINTEND
 };

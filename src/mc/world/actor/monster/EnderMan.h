@@ -78,17 +78,43 @@ public:
 
     MCAPI static void shutdown();
 
-    MCAPI static std::shared_ptr<class AttributeModifier> SPEED_MODIFIER_ATTACKING;
-
-    MCAPI static class mce::UUID const SPEED_MODIFIER_ATTACKING_UUID;
-
-    MCAPI static std::set<class Block const*> mMayTake;
-
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static bool mMayTakeIsSetup;
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+
+    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+
+    MCAPI bool canBeAffectedByArrow$(class MobEffectInstance const&) const;
+
+    MCAPI ::Puv::Legacy::LevelSoundEvent getAmbientSound$() const;
+
+    MCAPI void hurtEffects$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+
+    MCAPI void newServerAiStep$();
+
+    MCAPI void normalTick$();
+
+    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI bool shouldRender$() const;
+
+    MCAPI static std::shared_ptr<class AttributeModifier>& SPEED_MODIFIER_ATTACKING();
+
+    MCAPI static class mce::UUID const& SPEED_MODIFIER_ATTACKING_UUID();
+
+    MCAPI static std::set<class Block const*>& mMayTake();
+
+    MCAPI static bool& mMayTakeIsSetup();
 
     // NOLINTEND
 };

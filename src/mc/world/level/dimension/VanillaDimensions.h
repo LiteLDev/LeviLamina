@@ -35,21 +35,22 @@ public:
 
     MCAPI static std::string const toString(DimensionType const& type);
 
-    MCAPI static DimensionType const Nether;
-
-    MCAPI static DimensionType const Overworld;
-
-    MCAPI static DimensionType const TheEnd;
-
-    MCAPI static class Vec3 const TheEndSpawnPoint;
-
-    MCAPI static DimensionType const Undefined;
-
     // NOLINTEND
 
-    // protected:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class BidirectionalUnorderedMap<std::string, DimensionType> const DimensionMap;
+    MCAPI static class BidirectionalUnorderedMap<std::string, DimensionType> const& DimensionMap();
+
+    MCAPI static DimensionType const& Nether();
+
+    MCAPI static DimensionType const& Overworld();
+
+    MCAPI static DimensionType const& TheEnd();
+
+    MCAPI static class Vec3 const& TheEndSpawnPoint();
+
+    MCAPI static DimensionType const& Undefined();
 
     // NOLINTEND
 };

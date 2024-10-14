@@ -111,4 +111,36 @@ public:
     _growTree(class BlockSource& region, class BlockPos const& pos, class Random& random, bool useRandom) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI bool
+    canBeFertilized$(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
+
+    MCAPI bool canContainLiquid$() const;
+
+    MCAPI ::BlockRenderLayer getRenderLayer$() const;
+
+    MCAPI ::BlockRenderLayer
+    getRenderLayer$(class Block const& block, class BlockSource&, class BlockPos const& pos) const;
+
+    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool
+    onFertilized$(class BlockSource& region, class BlockPos const& pos, class Actor* actor, ::FertilizerType fType)
+        const;
+
+    MCAPI void randomTick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    // NOLINTEND
 };

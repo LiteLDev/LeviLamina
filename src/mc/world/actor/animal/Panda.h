@@ -66,4 +66,22 @@ public:
     MCAPI void updateSitting();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI ::Puv::Legacy::LevelSoundEvent getAmbientSound$() const;
+
+    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void setTransitioningSitting$(bool value);
+
+    // NOLINTEND
 };

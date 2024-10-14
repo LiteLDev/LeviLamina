@@ -19,4 +19,15 @@ public:
     virtual void writeBytes(void const* data, uint64 bytes);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void writeBytes$(void const* data, uint64 bytes);
+
+    // NOLINTEND
 };

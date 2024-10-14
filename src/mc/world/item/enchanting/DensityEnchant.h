@@ -30,4 +30,19 @@ public:
     virtual float getDamageBonus(int level, class Actor const&, class Actor const& attacker) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI float getDamageBonus$(int level, class Actor const&, class Actor const& attacker) const;
+
+    MCAPI int getMaxCost$(int level) const;
+
+    MCAPI int getMaxLevel$() const;
+
+    MCAPI int getMinCost$(int level) const;
+
+    // NOLINTEND
 };

@@ -70,9 +70,31 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int const DEFAULT_FUSE_LENGTH;
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+
+    MCAPI float causeFallDamageToActor$(float distance, float, class ActorDamageSource);
+
+    MCAPI void destroy$(class ActorDamageSource const& source, bool dropMinecartComponents);
+
+    MCAPI class Block const* getDefaultDisplayBlock$() const;
+
+    MCAPI ::MinecartType getType$();
+
+    MCAPI void handleEntityEvent$(::ActorEvent eventId, int data);
+
+    MCAPI void normalTick$();
+
+    MCAPI static int const& DEFAULT_FUSE_LENGTH();
 
     // NOLINTEND
 };

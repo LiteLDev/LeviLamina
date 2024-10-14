@@ -70,4 +70,32 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void _lazyInitDisplayBlock$();
+
+    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+
+    MCAPI void applyNaturalSlowdown$(class BlockSource& region);
+
+    MCAPI bool canShowNameTag$() const;
+
+    MCAPI class Block const* getDefaultDisplayBlock$() const;
+
+    MCAPI ::MinecartType getType$();
+
+    MCAPI void initializeComponents$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    // NOLINTEND
 };

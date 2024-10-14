@@ -136,4 +136,62 @@ public:
     MCAPI void _updateLanguageSubpacks();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI std::pair<int, std::string const&> getPackStackIndexOfResource$(
+        class ResourceLocation const&   resourceLocation,
+        std::vector<std::string> const& extensionList
+    ) const;
+
+    MCAPI class Core::PathBuffer<std::string> getPath$(class ResourceLocation const& resourceLocation) const;
+
+    MCAPI class Core::PathBuffer<std::string>
+    getPath$(class ResourceLocation const& resourceLocation, std::vector<std::string> const& extensionList) const;
+
+    MCAPI class Core::PathBuffer<std::string> getPathContainingResource$(class ResourceLocation const& resourceLocation
+    ) const;
+
+    MCAPI class Core::PathBuffer<std::string> getPathContainingResource$(
+        class ResourceLocation const& resourceLocation,
+        std::vector<std::string>      extensionList
+    ) const;
+
+    MCAPI bool hasCapability$(std::string_view requiredCapability) const;
+
+    MCAPI bool isInStreamableLocation$(class ResourceLocation const& resourceLocation) const;
+
+    MCAPI bool isInStreamableLocation$(
+        class ResourceLocation const&   resourceLocation,
+        std::vector<std::string> const& extensionList
+    ) const;
+
+    MCAPI bool load$(class ResourceLocation const& resourceLocation, std::string& resourceStream) const;
+
+    MCAPI bool load$(
+        class ResourceLocation const&   resourceLocation,
+        std::string&                    resourceStream,
+        std::vector<std::string> const& extensionList
+    ) const;
+
+    MCAPI bool load$(
+        class ResourceLocationPair const& resourceLocationPair,
+        std::string&                      resourceStream,
+        std::vector<std::string> const&   extensionList
+    ) const;
+
+    MCAPI std::vector<class LoadedResourceData> loadAllVersionsOf$(class ResourceLocation const& resourceLocation
+    ) const;
+
+    // NOLINTEND
 };

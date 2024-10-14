@@ -16,6 +16,13 @@ public:
     MCAPI ~DataStoreInfo();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::DataStoreDetail

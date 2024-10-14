@@ -54,11 +54,12 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static bool mInitialized;
+    MCAPI static bool& mInitialized();
 
-    MCAPI static std::vector<std::unique_ptr<class Material>> mMaterials;
+    MCAPI static std::vector<std::unique_ptr<class Material>>& mMaterials();
 
     // NOLINTEND
 };

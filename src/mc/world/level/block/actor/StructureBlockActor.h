@@ -49,14 +49,6 @@ public:
 
     MCAPI void setStructureData(class StructureEditorData const& data);
 
-    MCAPI static float const MAX_WIREFRAME_RENDER_DISTANCE;
-
-    MCAPI static class mce::Color const X_AXIS_COLOR;
-
-    MCAPI static class mce::Color const Y_AXIS_COLOR;
-
-    MCAPI static class mce::Color const Z_AXIS_COLOR;
-
     // NOLINTEND
 
     // private:
@@ -72,6 +64,36 @@ public:
         class BaseGameVersion const& version,
         bool                         redstoneTriggered
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource& region);
+
+    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
+
+    MCAPI void load$(class Level& level, class CompoundTag const& base, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void onChanged$(class BlockSource& region);
+
+    MCAPI bool save$(class CompoundTag& tag) const;
+
+    MCAPI static float const& MAX_WIREFRAME_RENDER_DISTANCE();
+
+    MCAPI static class mce::Color const& X_AXIS_COLOR();
+
+    MCAPI static class mce::Color const& Y_AXIS_COLOR();
+
+    MCAPI static class mce::Color const& Z_AXIS_COLOR();
 
     // NOLINTEND
 };

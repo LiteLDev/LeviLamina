@@ -31,4 +31,26 @@ public:
     MCAPI void _connect(std::string const& address);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForBedrockThreadingEnableQueueForMainThread();
+
+    MCAPI static void** $vftableForNetEventCallback();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool allowIncomingPacketId$(class NetworkIdentifier const& id, ::MinecraftPacketIds packetId);
+
+    MCAPI void onWebsocketRequest$(
+        std::string const&    serverAddress,
+        std::string const&    payload,
+        std::function<void()> errorCallback
+    );
+
+    // NOLINTEND
 };

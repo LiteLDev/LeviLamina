@@ -96,12 +96,6 @@ public:
 
     MCAPI void unregisterDeleteCallback(void* owner);
 
-    MCAPI static class Core::PathBuffer<std::string> const RESOURCE_PACK_BUG_ICON_PATH;
-
-    MCAPI static class Core::PathBuffer<std::string> const RESOURCE_PACK_ICON_PATH;
-
-    MCAPI static class Core::PathBuffer<std::string> const TEXTURES_LIST_PATH;
-
     // NOLINTEND
 
     // private:
@@ -111,6 +105,26 @@ public:
     MCAPI void _createSubpacks();
 
     MCAPI void _generateIconPath();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static class Core::PathBuffer<std::string> const& RESOURCE_PACK_BUG_ICON_PATH();
+
+    MCAPI static class Core::PathBuffer<std::string> const& RESOURCE_PACK_ICON_PATH();
+
+    MCAPI static class Core::PathBuffer<std::string> const& TEXTURES_LIST_PATH();
 
     // NOLINTEND
 };

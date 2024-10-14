@@ -53,4 +53,22 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class InteractionResult
+    _useOn$(class ItemStack& item, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
+        const;
+
+    MCAPI int getAnimationFrameFor$(class Mob* holder, bool, class ItemStack const* item, bool) const;
+
+    // NOLINTEND
 };

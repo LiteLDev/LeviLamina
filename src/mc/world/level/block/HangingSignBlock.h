@@ -77,4 +77,34 @@ public:
     MCAPI static bool _isHangingSign(class Block const& block);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class ItemInstance _getItemInstance$() const;
+
+    MCAPI bool canProvideSupport$(class Block const&, uchar face, ::BlockSupportType type) const;
+
+    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool checkIsPathable$(class Actor& entity, class BlockPos const&, class BlockPos const& pathPos) const;
+
+    MCAPI class AABB
+    getCollisionShape$(class Block const& block, class IConstBlockSource const&, class BlockPos const& pos, class optional_ref<class GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI class AABB const& getVisualShape$(class Block const& block, class AABB& bufferAABB) const;
+
+    MCAPI float getYRotationInDegrees$(class Block const& block) const;
+
+    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos, uchar face) const;
+
+    // NOLINTEND
 };

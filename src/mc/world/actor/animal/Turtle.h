@@ -54,4 +54,22 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI float _getWalkTargetValue$(class BlockPos const& pos);
+
+    MCAPI void die$(class ActorDamageSource const& source);
+
+    MCAPI float getShadowRadius$() const;
+
+    // NOLINTEND
 };

@@ -31,6 +31,13 @@ public:
         MCAPI ~StackNode();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -104,6 +111,56 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI bool _serializeTag(std::unique_ptr<class Tag> tag);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void close$();
+
+    MCAPI bool isSequenceWriter$() const;
+
+    MCAPI bool openArray$(uint64, class cereal::PropertyReader const&);
+
+    MCAPI bool openObject$(class cereal::PropertyReader const&);
+
+    MCAPI void popMember$();
+
+    MCAPI bool pushMember$(std::string_view memberName, class cereal::PropertyReader const&);
+
+    MCAPI bool write$(bool value, class cereal::PropertyReader const&);
+
+    MCAPI bool write$(schar value, class cereal::PropertyReader const&);
+
+    MCAPI bool write$(uchar value, class cereal::PropertyReader const&);
+
+    MCAPI bool write$(short value, class cereal::PropertyReader const&);
+
+    MCAPI bool write$(ushort value, class cereal::PropertyReader const&);
+
+    MCAPI bool write$(int value, class cereal::PropertyReader const&);
+
+    MCAPI bool write$(uint value, class cereal::PropertyReader const&);
+
+    MCAPI bool write$(int64, class cereal::PropertyReader const&);
+
+    MCAPI bool write$(uint64, class cereal::PropertyReader const&);
+
+    MCAPI bool write$(float value, class cereal::PropertyReader const&);
+
+    MCAPI bool write$(double value, class cereal::PropertyReader const&);
+
+    MCAPI bool write$(std::string_view value, class cereal::PropertyReader const&);
 
     // NOLINTEND
 };

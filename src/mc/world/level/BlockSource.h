@@ -680,4 +680,178 @@ public:
     _removeFromTickingQueue(class BlockPos const& pos, class Block const& block, ::TickingQueueType queueType);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void addListener$(class BlockSourceListener& l);
+
+    MCAPI bool areChunksFullyLoaded$(class BlockPos const& pos, int r) const;
+
+    MCAPI bool canDoBlockDrops$() const;
+
+    MCAPI bool canDoContainedItemDrops$() const;
+
+    MCAPI bool checkBlockPermissions$(
+        class Actor&               entity,
+        class BlockPos const&      blockPos,
+        uchar                      face,
+        class ItemStackBase const& item,
+        bool                       generateParticle
+    );
+
+    MCAPI class HitResult clip$(
+        class Vec3 const&                                                              A,
+        class Vec3 const&                                                              B,
+        bool                                                                           checkAgainstLiquid,
+        ::ShapeType                                                                    shapeType,
+        int                                                                            maxDistance,
+        bool                                                                           ignoreBorderBlocks,
+        bool                                                                           fullOnly,
+        class Actor*                                                                   actor,
+        std::function<bool(class BlockSource const&, class Block const&, bool)> const& shouldCheckBlock
+    ) const;
+
+    MCAPI bool containsAnyLiquid$(class AABB const& box) const;
+
+    MCAPI bool containsMaterial$(class AABB const& box, ::MaterialType material) const;
+
+    MCAPI void
+    fetchAABBs$(std::vector<class AABB>& shapes, class AABB const& intersectTestBox, bool withUnloadedChunks) const;
+
+    MCAPI std::vector<class AABB>& fetchAABBs$(class AABB const& intersectTestBox, bool withUnloadedChunks);
+
+    MCAPI void fetchCollisionShapes$(
+        std::vector<class AABB>&                                   shapes,
+        class AABB const&                                          intersectTestBox,
+        bool                                                       withUnloadedChunks,
+        class optional_ref<class GetCollisionShapeInterface const> entity,
+        std::vector<class AABB>*                                   tempShapes
+    ) const;
+
+    MCAPI std::vector<class AABB>& fetchCollisionShapes$(
+        class AABB const&                        intersectTestBox,
+        bool                                     withUnloadedChunks,
+        std::optional<class EntityContext const> entity,
+        std::vector<class AABB>*                 tempShapes
+    );
+
+    MCAPI void fetchCollisionShapesAndBlocks$(
+        std::vector<struct BlockSourceVisitor::CollisionShape>&    shapes,
+        class AABB const&                                          intersectTestBox,
+        bool                                                       withUnloadedChunks,
+        class optional_ref<class GetCollisionShapeInterface const> entity,
+        std::vector<class AABB>*                                   tempShapes
+    ) const;
+
+    MCAPI gsl::span<gsl::not_null<class Actor*>>
+          fetchEntities$(class Actor const* except, class AABB const& bb, bool useHitbox, bool getDisplayEntities);
+
+    MCAPI gsl::span<gsl::not_null<class Actor*>> fetchEntities$(
+        ::ActorType                       entityTypeId,
+        class AABB const&                 bb,
+        class Actor const*                except,
+        std::function<bool(class Actor*)> selector
+    );
+
+    MCAPI class Block const& getBlock$(int x, int y, int z) const;
+
+    MCAPI class Block const& getBlock$(class BlockPos const& pos) const;
+
+    MCAPI class Block const& getBlock$(class BlockPos const& pos, uint layer) const;
+
+    MCAPI class BlockActor const* getBlockEntity$(class BlockPos const& pos) const;
+
+    MCAPI float getBrightness$(class BlockPos const& pos) const;
+
+    MCAPI class LevelChunk* getChunk$(int x, int z) const;
+
+    MCAPI class LevelChunk* getChunk$(class ChunkPos const& pos) const;
+
+    MCAPI class LevelChunk* getChunkAt$(class BlockPos const& pos) const;
+
+    MCAPI class ChunkSource& getChunkSource$();
+
+    MCAPI class Dimension& getDimension$() const;
+
+    MCAPI class Dimension& getDimension$();
+
+    MCAPI class Dimension const& getDimensionConst$() const;
+
+    MCAPI DimensionType getDimensionId$() const;
+
+    MCAPI class Block const& getExtraBlock$(class BlockPos const& p) const;
+
+    MCAPI class ILevel& getILevel$() const;
+
+    MCAPI class Level& getLevel$();
+
+    MCAPI class Block const& getLiquidBlock$(class BlockPos const& p) const;
+
+    MCAPI class Material const& getMaterial$(class BlockPos const& pos) const;
+
+    MCAPI class Material const& getMaterial$(int x, int y, int z) const;
+
+    MCAPI short getMaxHeight$() const;
+
+    MCAPI short getMinHeight$() const;
+
+    MCAPI class AABB getTallestCollisionShape$(
+        class AABB const&                                          intersectTestBox,
+        float*                                                     actualSurfaceOffset,
+        bool                                                       withUnloadedChunks,
+        class optional_ref<class GetCollisionShapeInterface const> entity
+    ) const;
+
+    MCAPI class WeakRef<class BlockSource> getWeakRef$();
+
+    MCAPI bool hasBlock$(class BlockPos const& pos) const;
+
+    MCAPI bool hasBorderBlock$(class BlockPos pos) const;
+
+    MCAPI bool hasChunksAt$(struct Bounds const& bounds, bool ignoreClientChunk) const;
+
+    MCAPI bool hasChunksAt$(class BlockPos const& pos, int r, bool ignoreClientChunk) const;
+
+    MCAPI bool hasChunksAt$(class AABB const& bb, bool ignoreClientChunk) const;
+
+    MCAPI bool isInstaticking$(class BlockPos const& pos) const;
+
+    MCAPI bool isSolidBlockingBlock$(class BlockPos const& p) const;
+
+    MCAPI bool isSolidBlockingBlock$(int x, int y, int z) const;
+
+    MCAPI bool isUnderWater$(class Vec3 const& pos, class Block const& block) const;
+
+    MCAPI void postGameEvent$(
+        class Actor*           source,
+        class GameEvent const& gameEvent,
+        class BlockPos const&  origin,
+        class Block const*     affectedBlock
+    );
+
+    MCAPI bool removeBlock$(class BlockPos const& pos);
+
+    MCAPI void removeListener$(class BlockSourceListener& l);
+
+    MCAPI bool setBlock$(
+        class BlockPos const&               pos,
+        class Block const&                  block,
+        int                                 updateFlags,
+        struct ActorBlockSyncMessage const* syncMsg,
+        class Actor*                        blockChangeSource
+    );
+
+    MCAPI void updateCheckForValidityState$(bool checkForValidity);
+
+    // NOLINTEND
 };

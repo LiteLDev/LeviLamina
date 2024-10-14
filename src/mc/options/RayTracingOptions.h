@@ -11,9 +11,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static std::string_view const PBR_TAG;
+    // NOLINTEND
 
-    MCAPI static std::string_view const RAY_TRACING_TAG;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static std::string_view const& PBR_TAG();
+
+    MCAPI static std::string_view const& RAY_TRACING_TAG();
 
     // NOLINTEND
 };

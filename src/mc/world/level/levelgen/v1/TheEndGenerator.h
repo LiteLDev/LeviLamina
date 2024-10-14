@@ -67,7 +67,7 @@ public:
 
     // vIndex: 12
     virtual void
-    postProcessMobsAt(class BlockSource& blockSource, int chunkWestBlock, int chunkNorthBlock, class Random& random);
+    postProcessMobsAt(class BlockSource& region, int chunkWestBlock, int chunkNorthBlock, class Random& random);
 
     // vIndex: 38
     virtual void prepareAndComputeHeights(
@@ -103,6 +103,62 @@ public:
     );
 
     MCAPI float getIslandHeightValue(int chunkX, int chunkZ, int cellOffsetX, int cellOffsetZ) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForChunkSource();
+
+    MCAPI static void** $vftableForIPreliminarySurfaceProvider();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void decorateWorldGenLoadChunk$(
+        class Biome const&       biome,
+        class LevelChunk&        lc,
+        class BlockVolumeTarget& target,
+        class Random&            random,
+        class ChunkPos const&    pos
+    ) const;
+
+    MCAPI void decorateWorldGenPostProcess$(
+        class Biome const& biome,
+        class LevelChunk&  lc,
+        class BlockSource& source,
+        class Random&      random
+    ) const;
+
+    MCAPI class BlockPos findSpawnPosition$() const;
+
+    MCAPI class BiomeArea getBiomeArea$(class BoundingBox const& area, uint scale) const;
+
+    MCAPI class BiomeSource const& getBiomeSource$() const;
+
+    MCAPI struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions$() const;
+
+    MCAPI std::optional<short> getPreliminarySurfaceLevel$(class DividedPos2d<4> worldQuartPos) const;
+
+    MCAPI void loadChunk$(class LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad);
+
+    MCAPI bool postProcess$(class ChunkViewSource& neighborhood);
+
+    MCAPI void
+    postProcessMobsAt$(class BlockSource& region, int chunkWestBlock, int chunkNorthBlock, class Random& random);
+
+    MCAPI void prepareAndComputeHeights$(
+        class BlockVolume&    box,
+        class ChunkPos const& chunkPos,
+        std::vector<short>&   ZXheights,
+        bool                  factorInBeardsAndShavers,
+        int                   skipTopN
+    );
+
+    MCAPI void prepareHeights$(class BlockVolume& box, class ChunkPos const& chunkPos, bool factorInBeardsAndShavers);
 
     // NOLINTEND
 };

@@ -39,4 +39,24 @@ public:
     virtual class Recipes const* _getLevelRecipes() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI class Recipes const* _getLevelRecipes$() const;
+
+    MCAPI void _postCraftRequest$(bool wasSuccess);
+
+    MCAPI void endRequestBatch$();
+
+    MCAPI ::ItemStackNetResult
+    handleConsumedItem$(::ContainerEnumName openContainerNetId, uchar slot, class ItemStack const& consumedItem);
+
+    MCAPI ::ItemStackNetResult preHandleAction$(::ItemStackRequestActionType requestActionType);
+
+    // NOLINTEND
 };

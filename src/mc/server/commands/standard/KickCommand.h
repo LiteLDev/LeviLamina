@@ -56,4 +56,13 @@ public:
     _kickPlayer(class Minecraft* game, class Player const& matchingPlayer, std::string const& message);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
+
+    // NOLINTEND
 };

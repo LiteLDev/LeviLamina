@@ -14,4 +14,11 @@ public:
     MCAPI ~TradeTier();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

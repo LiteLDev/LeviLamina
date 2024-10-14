@@ -26,4 +26,13 @@ public:
     virtual bool requiresNetworkOutageMessaging() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool requiresNetworkOutageMessaging$() const;
+
+    // NOLINTEND
 };

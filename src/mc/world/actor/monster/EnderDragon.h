@@ -154,15 +154,53 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int GROWL_INTERVAL_MAX;
+    MCAPI static void** $vftable();
 
-    MCAPI static int GROWL_INTERVAL_MIN;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static int MAX_PATH_RADIUS;
+    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    MCAPI static float SITTING_ALLOWED_DAMAGE_PERCENTAGE;
+    MCAPI bool canBeAffected$(uint) const;
+
+    MCAPI bool canBePulledIntoVehicle$() const;
+
+    MCAPI bool canChangeDimensionsUsingPortal$() const;
+
+    MCAPI void die$(class ActorDamageSource const& source);
+
+    MCAPI class Vec3 getHeadLookVector$(float a) const;
+
+    MCAPI float getShadowRadius$() const;
+
+    MCAPI void handleEntityEvent$(::ActorEvent id, int data);
+
+    MCAPI bool isImmobile$() const;
+
+    MCAPI bool isInvulnerableTo$(class ActorDamageSource const& source) const;
+
+    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI void remove$();
+
+    MCAPI void setSitting$(bool value);
+
+    MCAPI void tickDeath$();
+
+    MCAPI void updateEntitySpecificMolangVariables$(class RenderParams& renderParams);
+
+    MCAPI static int& GROWL_INTERVAL_MAX();
+
+    MCAPI static int& GROWL_INTERVAL_MIN();
+
+    MCAPI static int& MAX_PATH_RADIUS();
+
+    MCAPI static float& SITTING_ALLOWED_DAMAGE_PERCENTAGE();
 
     // NOLINTEND
 };

@@ -31,6 +31,16 @@ public:
         MCAPI uint64 getMemoryAverage() const;
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        // NOLINTEND
     };
 
 public:
@@ -54,6 +64,18 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI void _onChunkLoaded(class ChunkSource&, class LevelChunk& levelChunk, int);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
     // NOLINTEND
 };

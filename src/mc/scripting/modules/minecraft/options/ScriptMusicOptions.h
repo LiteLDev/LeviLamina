@@ -34,15 +34,20 @@ public:
 
     MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptMusicOptions> bindV1();
 
-    MCAPI static float const FADE_DEFAULT;
+    // NOLINTEND
 
-    MCAPI static float const FADE_MIN;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static float const& FADE_DEFAULT();
 
-    MCAPI static bool const LOOP_DEFAULT;
+    MCAPI static float const& FADE_MIN();
 
-    MCAPI static float const VOLUME_DEFAULT;
+    MCAPI static bool const& LOOP_DEFAULT();
 
-    MCAPI static float const VOLUME_MIN;
+    MCAPI static float const& VOLUME_DEFAULT();
+
+    MCAPI static float const& VOLUME_MIN();
 
     // NOLINTEND
 };

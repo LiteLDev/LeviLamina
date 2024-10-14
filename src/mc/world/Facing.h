@@ -50,7 +50,12 @@ public:
 
     public:
         // NOLINTBEGIN
-        MCAPI static std::vector<uchar> const HORIZONTAL;
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static std::vector<uchar> const& HORIZONTAL();
 
         // NOLINTEND
     };
@@ -121,35 +126,40 @@ public:
 
     MCAPI static std::string_view toString(uchar face);
 
-    MCAPI static std::array<std::vector<uchar>, 6> const ALL_EXCEPT;
+    // NOLINTEND
 
-    MCAPI static std::array<std::vector<uchar>, 6> const ALL_EXCEPT_AXIS_Y;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static std::array<std::vector<uchar>, 6> const& ALL_EXCEPT();
 
-    MCAPI static std::vector<uchar> const ALL_FACES;
+    MCAPI static std::array<std::vector<uchar>, 6> const& ALL_EXCEPT_AXIS_Y();
 
-    MCAPI static ::Facing::Name const BY2DDATA[];
+    MCAPI static std::vector<uchar> const& ALL_FACES();
 
-    MCAPI static ::Facing::Name const DIRECTIONS[];
+    MCAPI static ::ll::CArrayT<::Facing::Name const>& BY2DDATA();
 
-    MCAPI static class BlockPos const DIRECTION[];
+    MCAPI static ::ll::CArrayT<class BlockPos const>& DIRECTION();
 
-    MCAPI static uchar const FACINGMASK[];
+    MCAPI static ::ll::CArrayT<::Facing::Name const>& DIRECTIONS();
 
-    MCAPI static uchar const FACINGMASK_INV[];
+    MCAPI static ::ll::CArrayT<uchar const>& FACINGMASK();
 
-    MCAPI static std::unordered_map<std::string, uchar> const FROM_STRING_MAP;
+    MCAPI static ::ll::CArrayT<uchar const>& FACINGMASK_INV();
 
-    MCAPI static class Vec3 const NORMAL[];
+    MCAPI static std::unordered_map<std::string, uchar> const& FROM_STRING_MAP();
 
-    MCAPI static uchar const OPPOSITE_FACING[];
+    MCAPI static ::ll::CArrayT<class Vec3 const>& NORMAL();
 
-    MCAPI static int const STEP_X[];
+    MCAPI static ::ll::CArrayT<uchar const>& OPPOSITE_FACING();
 
-    MCAPI static int const STEP_Y[];
+    MCAPI static ::ll::CArrayT<int const>& STEP_X();
 
-    MCAPI static int const STEP_Z[];
+    MCAPI static ::ll::CArrayT<int const>& STEP_Y();
 
-    MCAPI static std::array<std::string, 6> const TO_STRING_ARR;
+    MCAPI static ::ll::CArrayT<int const>& STEP_Z();
+
+    MCAPI static std::array<std::string, 6> const& TO_STRING_ARR();
 
     // NOLINTEND
 };

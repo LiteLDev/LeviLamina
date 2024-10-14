@@ -27,4 +27,11 @@ public:
     virtual bool isLowBatteryModeEnabled() const = 0;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };

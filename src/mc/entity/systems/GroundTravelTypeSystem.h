@@ -24,9 +24,10 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class BaseGameVersion const FRICTION_FIX_VERSION;
+    MCAPI static class BaseGameVersion const& FRICTION_FIX_VERSION();
 
     // NOLINTEND
 };

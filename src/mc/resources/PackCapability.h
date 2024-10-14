@@ -32,6 +32,13 @@ public:
             MCAPI ~Failed();
 
             // NOLINTEND
+
+            // thunks
+        public:
+            // NOLINTBEGIN
+            MCAPI void dtor$();
+
+            // NOLINTEND
         };
 
         struct NotFound {
@@ -54,6 +61,13 @@ public:
             MCAPI ~Succeeded();
 
             // NOLINTEND
+
+            // thunks
+        public:
+            // NOLINTBEGIN
+            MCAPI void dtor$();
+
+            // NOLINTEND
         };
 
     public:
@@ -72,6 +86,13 @@ public:
 public:
     // NOLINTBEGIN
     MCAPI ~PackCapability();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

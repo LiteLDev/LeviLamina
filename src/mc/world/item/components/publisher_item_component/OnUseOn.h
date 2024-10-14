@@ -30,6 +30,28 @@ public:
     MCAPI static class HashedString const& getIdentifier();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI static void** $vftableForBedrockPubSubConnector();
+
+    MCAPI static void** $vftableForBedrockPubSubDetailDispatchingPublisherBase();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag$(struct cereal::ReflectionCtx const& ctx) const;
+
+    MCAPI bool initializeFromNetwork$(class CompoundTag const& tag, struct cereal::ReflectionCtx const&);
+
+    MCAPI bool isNetworkComponent$() const;
+
+    // NOLINTEND
 };
 
 }; // namespace PublisherItemComponent

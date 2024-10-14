@@ -314,6 +314,13 @@ public:
     _callClosure(class Scripting::Closure<void()> const& closure);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleGameTest

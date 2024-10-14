@@ -25,4 +25,22 @@ public:
     MCAPI void tick();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForBedrockEnableNonOwnerReferences();
+
+    MCAPI static void** $vftableForNetworkEnableDisableListener();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void _onDisable$();
+
+    MCAPI void _onEnable$();
+
+    // NOLINTEND
 };

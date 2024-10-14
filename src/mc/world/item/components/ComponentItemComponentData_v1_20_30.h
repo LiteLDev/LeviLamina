@@ -24,9 +24,21 @@ public:
 
     MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
-    MCAPI static class SemVersion const FIRST_VERSION;
+    // NOLINTEND
 
-    MCAPI static class SemVersion const LAST_VERSION;
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static class SemVersion const& FIRST_VERSION();
+
+    MCAPI static class SemVersion const& LAST_VERSION();
 
     // NOLINTEND
 };

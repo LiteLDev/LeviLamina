@@ -16,6 +16,13 @@ public:
     MCAPI ~Till();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace AgentComponents::Actions

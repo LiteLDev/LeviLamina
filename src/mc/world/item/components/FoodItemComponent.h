@@ -55,4 +55,38 @@ public:
     MCAPI static class HashedString const& getIdentifier();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForIFoodItemComponent();
+
+    MCAPI static void** $vftableForNetworkedItemComponent();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void _initializeComponent$();
+
+    MCAPI bool canAlwaysEat$() const;
+
+    MCAPI class Item const* eatItem$(class ItemStack& instance, class Actor& actor, class Level& level);
+
+    MCAPI int getNutrition$() const;
+
+    MCAPI float getSaturationModifier$() const;
+
+    MCAPI bool use$(class ItemStack& instance, class Player& player);
+
+    MCAPI class Item const* useTimeDepleted$(
+        ::ItemUseMethod&       itemUseMethod,
+        class ItemStack const& initialInstance,
+        class ItemStack&       instance,
+        class Player&          player,
+        class Level&           level
+    );
+
+    // NOLINTEND
 };

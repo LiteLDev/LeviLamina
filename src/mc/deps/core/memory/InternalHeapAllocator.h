@@ -40,6 +40,27 @@ public:
     virtual void* _realloc(gsl::not_null<void*> p, uint64 newSize);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void* _realloc$(gsl::not_null<void*> p, uint64 newSize);
+
+    MCAPI void* alignedAllocate$(uint64 size, uint64 alignment);
+
+    MCAPI void alignedRelease$(void* ptr);
+
+    MCAPI void* allocate$(uint64 size);
+
+    MCAPI uint64 getUsableSize$(void* ptr);
+
+    MCAPI void logCurrentState$();
+
+    MCAPI void release$(void* ptr);
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::Memory

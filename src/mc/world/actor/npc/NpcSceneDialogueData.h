@@ -62,4 +62,40 @@ public:
     MCAPI NpcSceneDialogueData(class WeakEntityRef npc, std::string const& sceneName);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI struct npc::ActionContainer const* getActionsContainer$() const;
+
+    MCAPI struct npc::ActionContainer* getActionsContainer$();
+
+    MCAPI class Actor const* getActor$() const;
+
+    MCAPI class Actor* getActor$();
+
+    MCAPI struct ActorUniqueID getActorUniqueID$();
+
+    MCAPI std::string const& getDialogueText$() const;
+
+    MCAPI std::string const& getNameRawText$() const;
+
+    MCAPI std::string const& getNameText$() const;
+
+    MCAPI std::string const& getRawDialogueText$() const;
+
+    MCAPI std::string const& getSceneName$() const;
+
+    MCAPI bool isRemoteFire$();
+
+    // NOLINTEND
 };

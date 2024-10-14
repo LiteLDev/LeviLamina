@@ -36,4 +36,35 @@ public:
     MCAPI BossEventSubscriptionManagerImpl();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForBedrockEnableNonOwnerReferences();
+
+    MCAPI static void** $vftableForBedrockImplBase();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool areBossEventSubscribersReady$() const;
+
+    MCAPI void broadcastBossEvent$(::BossEventUpdateType type);
+
+    MCAPI void broadcastBossEvent$(
+        ::BossEventUpdateType        type,
+        struct ActorUniqueID const&  id,
+        class BossEventPacket const& packet
+    );
+
+    MCAPI class Bedrock::PubSub::Subscription subscribeToBossEvent$(std::function<void(::BossEventUpdateType)> callback
+    );
+
+    MCAPI class Bedrock::PubSub::Subscription subscribeToBossEvent$(
+        std::function<void(::BossEventUpdateType, struct ActorUniqueID const&, class BossEventPacket const&)> callback
+    );
+
+    // NOLINTEND
 };

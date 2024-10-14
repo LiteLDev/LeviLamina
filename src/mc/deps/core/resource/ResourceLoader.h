@@ -77,4 +77,44 @@ public:
     ) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI std::pair<int, std::string const&> getPackStackIndexOfResource$(
+        class ResourceLocation const&   resourceLocation,
+        std::vector<std::string> const& extensions
+    ) const;
+
+    MCAPI class Core::PathBuffer<std::string> getPath$(class ResourceLocation const& resourceLocation) const;
+
+    MCAPI class Core::PathBuffer<std::string>
+    getPath$(class ResourceLocation const& resourceLocation, std::vector<std::string> const& extensions) const;
+
+    MCAPI class Core::PathBuffer<std::string> getPathContainingResource$(class ResourceLocation const& resourceLocation
+    ) const;
+
+    MCAPI class Core::PathBuffer<std::string> getPathContainingResource$(
+        class ResourceLocation const& resourceLocation,
+        std::vector<std::string>      extensions
+    ) const;
+
+    MCAPI bool isInStreamableLocation$(class ResourceLocation const& resourceLocation) const;
+
+    MCAPI bool isInStreamableLocation$(
+        class ResourceLocation const&   resourceLocation,
+        std::vector<std::string> const& extensions
+    ) const;
+
+    MCAPI bool load$(
+        class ResourceLocationPair const& resourceLocation,
+        std::string&                      resourceStream,
+        std::vector<std::string> const&   extensions
+    ) const;
+
+    // NOLINTEND
 };

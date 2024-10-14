@@ -50,6 +50,18 @@ public:
     MCAPI void loadImpl(struct cereal::SchemaReader& reader, entt::meta_any instance, entt::meta_any const& udata);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace cereal::internal

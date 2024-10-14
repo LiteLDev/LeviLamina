@@ -29,11 +29,16 @@ public:
     // vIndex: 0
     virtual ~PhotoItem() = default;
 
-    MCAPI static std::string const TAG_PHOTO_NAME;
+    // NOLINTEND
 
-    MCAPI static std::string const TAG_PHOTO_OWNER;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static std::string const& TAG_PHOTO_NAME();
 
-    MCAPI static std::string const TAG_PHOTO_UUID;
+    MCAPI static std::string const& TAG_PHOTO_OWNER();
+
+    MCAPI static std::string const& TAG_PHOTO_UUID();
 
     // NOLINTEND
 };

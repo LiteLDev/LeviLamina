@@ -22,11 +22,23 @@ public:
 
     MCAPI FileStream();
 
-    MCAPI FileStream(class Core::Path const&, int);
+    MCAPI FileStream(class Core::Path const& filename, int openMode);
 
     MCAPI void close();
 
     MCAPI void open(class Core::Path const& filename, int om);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
     // NOLINTEND
 };

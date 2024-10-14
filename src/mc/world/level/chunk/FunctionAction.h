@@ -40,4 +40,20 @@ public:
     MCAPI void _printOutput(class ServerLevel& level, int successCount);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void execute$(class ServerLevel& level, class Dimension& dimension);
+
+    MCAPI void serialize$(class CompoundTag& tag);
+
+    // NOLINTEND
 };

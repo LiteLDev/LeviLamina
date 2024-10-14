@@ -73,4 +73,34 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool checkSpawnRules$(bool fromSpawner);
+
+    MCAPI class OwnerPtr<class EntityContext> createChild$(int i);
+
+    MCAPI void decreaseSquish$();
+
+    MCAPI bool doPlayLandSound$();
+
+    MCAPI int getArmorValue$() const;
+
+    MCAPI float getBrightness$(float, class IConstBlockSource const&) const;
+
+    MCAPI bool isDarkEnoughToSpawn$() const;
+
+    MCAPI bool isOnFire$() const;
+
+    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    // NOLINTEND
 };

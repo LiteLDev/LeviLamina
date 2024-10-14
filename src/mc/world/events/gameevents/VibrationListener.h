@@ -82,4 +82,28 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI ::GameEventListener::DeliveryMode getDeliveryMode$() const;
+
+    MCAPI class GameEvents::PositionSource const& getPositionSource$() const;
+
+    MCAPI uint getRange$() const;
+
+    MCAPI void handleGameEvent$(
+        class GameEvent const&         gameEvent,
+        struct GameEventContext const& gameEventContext,
+        class BlockSource&             region
+    );
+
+    // NOLINTEND
 };

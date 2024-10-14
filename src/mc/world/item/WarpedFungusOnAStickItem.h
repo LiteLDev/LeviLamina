@@ -45,4 +45,24 @@ public:
     MCAPI WarpedFungusOnAStickItem(std::string const& name, int id, struct cereal::ReflectionCtx& ctx);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI int getEnchantSlot$() const;
+
+    MCAPI int getEnchantValue$() const;
+
+    MCAPI bool isHandEquipped$() const;
+
+    MCAPI bool requiresInteract$() const;
+
+    // NOLINTEND
 };

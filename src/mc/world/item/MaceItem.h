@@ -47,4 +47,26 @@ public:
     MCAPI MaceItem(std::string const& name, int id, class Item::Tier const& tier);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI float getAttackDamageBonus$(class Actor const& attacker, float) const;
+
+    MCAPI int getEnchantSlot$() const;
+
+    MCAPI void hurtActor$(class ItemStack& item, class Actor& actor, class Mob& attacker) const;
+
+    MCAPI bool
+    isValidRepairItem$(class ItemStackBase const&, class ItemStackBase const& repairItem, class BaseGameVersion const&)
+        const;
+
+    // NOLINTEND
 };

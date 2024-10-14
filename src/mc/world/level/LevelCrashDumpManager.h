@@ -22,4 +22,15 @@ public:
     virtual void setCrashDumpLogStringID(::CrashDumpLogStringID crashDumpLogStringID) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void setCrashDumpLogStringID$(::CrashDumpLogStringID crashDumpLogStringID) const;
+
+    // NOLINTEND
 };

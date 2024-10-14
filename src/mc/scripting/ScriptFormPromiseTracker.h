@@ -32,6 +32,13 @@ public:
         MCAPI ~FromRequest();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -57,6 +64,24 @@ public:
     MCAPI void handlePlayerQuit(class NetworkIdentifier const& playerId);
 
     MCAPI void rejectAllForShutdown();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForBedrockEnableNonOwnerReferences();
+
+    MCAPI static void** $vftableForEventListenerDispatcherPlayerEventListener();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI ::EventResult onEvent$(struct PlayerFormResponseEvent const& formResponseEvent);
+
+    MCAPI ::EventResult onEvent$(struct PlayerFormCloseEvent const& formCloseEvent);
 
     // NOLINTEND
 };

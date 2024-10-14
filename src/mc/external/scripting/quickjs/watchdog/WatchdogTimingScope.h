@@ -16,6 +16,13 @@ public:
     MCAPI ~WatchdogTimingScope();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace Scripting::QuickJS

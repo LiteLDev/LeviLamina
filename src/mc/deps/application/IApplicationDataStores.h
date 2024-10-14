@@ -29,6 +29,13 @@ public:
     virtual ~IApplicationDataStores();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock

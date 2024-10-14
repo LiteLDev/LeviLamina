@@ -38,4 +38,28 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool previousSchema$(rapidjson::GenericValue<
+                               rapidjson::UTF8<char>,
+                               rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>> const&) const;
+
+    MCAPI void upgradeToNext$(
+        rapidjson::GenericDocument<
+            rapidjson::UTF8<char>,
+            rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>,
+            rapidjson::CrtAllocator>& document,
+        class SemVersion const&       documentOriginalVersion
+    ) const;
+
+    // NOLINTEND
 };

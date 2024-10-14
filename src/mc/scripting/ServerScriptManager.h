@@ -119,4 +119,47 @@ public:
     MCAPI void _unregisterEventHandlers(class Level& level) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI ::EventResult onEvent$(struct ServerInstanceRequestResourceReload const& reloadEvent);
+
+    MCAPI ::EventResult onEvent$(struct ServerInstanceNotificationEvent const& event);
+
+    MCAPI ::EventResult onServerInitializeEnd$(class ServerInstance& instance);
+
+    MCAPI ::EventResult onServerInitializeStart$(class ServerInstance& instance);
+
+    MCAPI ::EventResult onServerLevelInitialized$(class ServerInstance&, class Level& level);
+
+    MCAPI ::EventResult onServerMinecraftInitialized$(
+        class ServerInstance&                               instance,
+        Bedrock::NotNullNonOwnerPtr<class Minecraft> const& minecraft
+    );
+
+    MCAPI ::EventResult onServerResume$(class ServerInstance& instance);
+
+    MCAPI ::EventResult onServerSuspend$(class ServerInstance& instance);
+
+    MCAPI ::EventResult onServerThreadStarted$(class ServerInstance& instance);
+
+    MCAPI ::EventResult onServerThreadStopped$(class ServerInstance& serverInstance);
+
+    MCAPI ::EventResult onServerUpdateEnd$(class ServerInstance& instance);
+
+    MCAPI ::EventResult onServerUpdateStart$(class ServerInstance&);
+
+    MCAPI ::EventResult onStartLeaveGame$(class ServerInstance& instance);
+
+    // NOLINTEND
 };

@@ -59,17 +59,23 @@ public:
 
     MCAPI static ::AbilitiesIndex nameToAbilityIndex(std::string const& name);
 
-    MCAPI static std::string const DIFF_ABILITIY_AT;
-
-    MCAPI static class Ability INVALID_ABILITY;
-
-    MCAPI static std::string const SERIALIZATION_TAG;
-
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::array<char const*, 19> ABILITY_NAMES;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI static std::array<char const*, 19>& ABILITY_NAMES();
+
+    MCAPI static std::string const& DIFF_ABILITIY_AT();
+
+    MCAPI static class Ability& INVALID_ABILITY();
+
+    MCAPI static std::string const& SERIALIZATION_TAG();
 
     // NOLINTEND
 };

@@ -21,4 +21,13 @@ public:
     virtual bool validateMobType(class Mob& mob) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool validateMobType$(class Mob& mob) const;
+
+    // NOLINTEND
 };

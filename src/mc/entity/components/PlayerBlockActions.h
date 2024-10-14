@@ -30,4 +30,11 @@ public:
     MCAPI static void write(class PlayerBlockActions const& val, class BinaryStream& stream);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

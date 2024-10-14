@@ -41,4 +41,19 @@ public:
         const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool _calculatePlacePos$(class ItemStackBase&, class Actor&, uchar& face, class BlockPos& pos) const;
+
+    MCAPI class InteractionResult
+    _useOn$(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const& clickPos)
+        const;
+
+    MCAPI bool isLiquidClipItem$() const;
+
+    // NOLINTEND
 };

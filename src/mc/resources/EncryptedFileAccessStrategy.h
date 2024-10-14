@@ -79,4 +79,34 @@ public:
     MCAPI static void _transformStream(std::string& stream, std::string const& key, uint64 offset);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::unique_ptr<class PackAccessStrategy> createSubPack$(class Core::Path const& subPath) const;
+
+    MCAPI bool deleteAsset$(class Core::Path const& packRelativePath);
+
+    MCAPI ::PackAccessAssetGenerationResult generateAssetSet$();
+
+    MCAPI bool getAsset$(class Core::Path const& packRelativePath, std::string& result, bool trustedContentOnly) const;
+
+    MCAPI bool hasAsset$(class Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const;
+
+    MCAPI bool isTrusted$() const;
+
+    MCAPI bool isWritable$() const;
+
+    MCAPI class ContentIdentity readContentIdentity$() const;
+
+    MCAPI bool writeAsset$(class Core::Path const& packRelativePath, std::string const& fileContent);
+
+    // NOLINTEND
 };

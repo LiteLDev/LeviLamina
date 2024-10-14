@@ -59,4 +59,29 @@ public:
     _tryTouchWater(class BlockSource& region, class BlockPos const& pos, std::optional<class HashedString> name) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class ItemInstance asItemInstance$(class Block const& block, class BlockActor const*) const;
+
+    MCAPI class mce::Color getDustColor$(class Block const& block) const;
+
+    MCAPI std::string getDustParticleName$(class Block const& block) const;
+
+    MCAPI void
+    neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
+
+    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool shouldStopFalling$(class Actor& entity) const;
+
+    // NOLINTEND
 };

@@ -38,4 +38,20 @@ public:
     MCAPI ClientRequestPlaceholderBlock(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class HitResult
+    clip$(class Block const&, class BlockSource const&, class BlockPos const&, class Vec3 const& A, class Vec3 const& B, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>)
+        const;
+
+    // NOLINTEND
 };

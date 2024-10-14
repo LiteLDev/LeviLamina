@@ -24,8 +24,9 @@ namespace Social::Events { class Property; }
 // clang-format on
 
 namespace Social::Events {
+// thunks
 // NOLINTBEGIN
-MCAPI extern int eventSequenceNumber;
+MCAPI int& eventSequenceNumber();
 // NOLINTEND
 
 }; // namespace Social::Events

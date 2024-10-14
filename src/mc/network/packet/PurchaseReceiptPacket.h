@@ -34,7 +34,27 @@ public:
 
     MCAPI PurchaseReceiptPacket();
 
-    MCAPI static uint64 const sMaxReceiptsPerPacket;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI ::MinecraftPacketIds getId$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void write$(class BinaryStream& stream) const;
+
+    MCAPI static uint64 const& sMaxReceiptsPerPacket();
 
     // NOLINTEND
 };

@@ -38,4 +38,17 @@ public:
         const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI class InteractionResult
+    _useOn$(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const& clickPos)
+        const;
+
+    MCAPI int getLevelDataForAuxValue$(int auxValue) const;
+
+    // NOLINTEND
 };

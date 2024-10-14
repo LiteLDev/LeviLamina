@@ -62,6 +62,13 @@ public:
     MCAPI static struct br::worldgen::ChunkGeneratorStructureState createVoid(int64 levelSeed);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace br::worldgen

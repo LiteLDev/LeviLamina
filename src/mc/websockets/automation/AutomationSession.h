@@ -98,6 +98,48 @@ public:
     MCAPI bool _tryHandleMessage(struct CodeBuilder::ErrorMessage const& message);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForCodeBuilderIRequestHandler();
+
+    MCAPI static void** $vftableForWebviewObserver();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void agentCommand$(std::string const& requestId, struct CodeBuilder::CommandRequest&& request);
+
+    MCAPI void chatSubscribe$(std::string const& requestId, struct CodeBuilder::ChatSubscription&& subscription);
+
+    MCAPI void chatUnsubscribe$(std::string const&, std::string const& subscriptionId);
+
+    MCAPI void chatUnsubscribeAll$(std::string const&);
+
+    MCAPI void command$(std::string const& requestId, struct CodeBuilder::CommandRequest&& request);
+
+    MCAPI void dataBlock$(std::string const& requestId);
+
+    MCAPI void dataItem$(std::string const& requestId);
+
+    MCAPI void dataMob$(std::string const& requestId);
+
+    MCAPI bool encryptConnection$(std::string const& requestId, struct CodeBuilder::EncryptionRequest const& request);
+
+    MCAPI void error$(std::string const&, struct CodeBuilder::ErrorMessage const& message);
+
+    MCAPI void onMessageRecieved$(std::string const& message);
+
+    MCAPI void subscribe$(std::string const& requestId, std::string const& eventId);
+
+    MCAPI void unsubscribe$(std::string const& requestId, std::string const& eventId);
+
+    // NOLINTEND
 };
 
 }; // namespace Automation

@@ -25,6 +25,13 @@ public:
         MCAPI ~LruCache();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -70,6 +77,36 @@ public:
     // NOLINTBEGIN
     MCAPI static std::vector<class Recipe const*>
     _getRecipesForCraftingGrid(class Level& level, class CraftingContainer& craftingContainer);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForContainer();
+
+    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource&);
+
+    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource&);
+
+    MCAPI bool canPushInItem$(int slot, int, class ItemStack const& item) const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI bool isSlotDisabled$(int slot) const;
+
+    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI bool save$(class CompoundTag& tag) const;
+
+    MCAPI void tick$(class BlockSource& region);
 
     // NOLINTEND
 };

@@ -14,4 +14,11 @@ public:
     MCAPI ~ActorSoundEffectEvent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

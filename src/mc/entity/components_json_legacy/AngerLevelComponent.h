@@ -25,6 +25,13 @@ public:
         MCAPI ~ConditionalSound();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -61,16 +68,6 @@ public:
 
     MCAPI ~AngerLevelComponent();
 
-    MCAPI static float const DEFAULT_ANGER_DECREMENT_INTERVAL_SECONDS;
-
-    MCAPI static int const DEFAULT_ANGRY_BOOST;
-
-    MCAPI static int const DEFAULT_ANGRY_THRESHOLD;
-
-    MCAPI static int const DEFAULT_MAX_ANGER_LEVEL;
-
-    MCAPI static bool const DEFAULT_SHOULD_REMOVE_TARGET;
-
     // NOLINTEND
 
     // private:
@@ -78,6 +75,28 @@ public:
     MCAPI void _createOrModifyAngerLevel(class Actor const& nuisanceSource, std::function<int(int)> const& modifyingFn);
 
     MCAPI std::optional<::Puv::Legacy::LevelSoundEvent> _getListeningSoundEvent(class Actor& actor) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static float const& DEFAULT_ANGER_DECREMENT_INTERVAL_SECONDS();
+
+    MCAPI static int const& DEFAULT_ANGRY_BOOST();
+
+    MCAPI static int const& DEFAULT_ANGRY_THRESHOLD();
+
+    MCAPI static int const& DEFAULT_MAX_ANGER_LEVEL();
+
+    MCAPI static bool const& DEFAULT_SHOULD_REMOVE_TARGET();
 
     // NOLINTEND
 };

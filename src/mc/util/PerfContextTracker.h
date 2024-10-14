@@ -32,6 +32,22 @@ public:
         MCAPI Duration();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        MCAPI void dtor$();
+
+        MCAPI void reset$();
+
+        // NOLINTEND
     };
 
     class EventScope {
@@ -46,6 +62,18 @@ public:
         MCAPI explicit EventScope(::PerfContextEvent eventType);
 
         MCAPI ~EventScope();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -64,6 +92,15 @@ public:
 
         // vIndex: 1
         virtual void reset();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        MCAPI void reset$();
 
         // NOLINTEND
     };

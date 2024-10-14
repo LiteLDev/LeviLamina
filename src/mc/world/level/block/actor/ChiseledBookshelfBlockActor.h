@@ -72,4 +72,60 @@ public:
     MCAPI void _setItemInternal(int slot, class ItemStack const& item, bool isLoading);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForBlockActor();
+
+    MCAPI static void** $vftableForContainer();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource&);
+
+    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
+
+    MCAPI bool addItemToFirstEmptySlot$(class ItemStack const& item);
+
+    MCAPI bool canPullOutItem$(int slot, int, class ItemStack const&) const;
+
+    MCAPI bool canPushInItem$(int slot, int, class ItemStack const& item) const;
+
+    MCAPI class Container* getContainer$();
+
+    MCAPI class Container const* getContainer$() const;
+
+    MCAPI int getContainerSize$() const;
+
+    MCAPI class ItemStack const& getItem$(int slot) const;
+
+    MCAPI int getMaxStackSize$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI bool isEmpty$() const;
+
+    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void onChanged$(class BlockSource& region);
+
+    MCAPI bool save$(class CompoundTag& tag) const;
+
+    MCAPI void serverInitItemStackIds$(
+        int                                              containerSlot,
+        int                                              count,
+        std::function<void(int, class ItemStack const&)> onNetIdChanged
+    );
+
+    MCAPI void setItem$(int slot, class ItemStack const& item);
+
+    MCAPI void startOpen$(class Player&);
+
+    MCAPI void stopOpen$(class Player&);
+
+    // NOLINTEND
 };

@@ -27,4 +27,13 @@ public:
     virtual bool get(std::string const& key, std::string& outValue) = 0;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

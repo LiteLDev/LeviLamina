@@ -25,4 +25,16 @@ public:
     virtual bool shouldGeneratePlayerIndex() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool shouldGeneratePlayerIndex$() const;
+
+    MCAPI std::optional<std::string>
+    validatePlayerName$(std::string const& playerName, class GameplayUserManager const& gameplayUserManager) const;
+
+    // NOLINTEND
 };

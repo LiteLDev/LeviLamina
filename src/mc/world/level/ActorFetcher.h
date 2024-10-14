@@ -23,4 +23,14 @@ public:
     MCAPI class StrictEntityContext fetchStrictActorAllDimensions(struct ActorUniqueID actorId, bool getRemoved) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    // NOLINTEND
 };

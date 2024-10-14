@@ -20,4 +20,11 @@ public:
     MCAPI ~SystemTiming();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

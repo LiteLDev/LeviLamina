@@ -18,4 +18,13 @@ public:
     virtual void Logv(char const*, char*);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void Logv$(char const*, char*);
+
+    // NOLINTEND
 };

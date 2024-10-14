@@ -56,4 +56,28 @@ public:
     triggerSlidingDownEffects(class Actor& entity, class BlockPos const& pos, class Block const& honeyBlock);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void _addHardCodedBlockComponents$(class Experiments const&);
+
+    MCAPI class AABB
+    getCollisionShape$(class Block const&, class IConstBlockSource const&, class BlockPos const& pos, class optional_ref<class GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI int getExtraRenderLayers$() const;
+
+    MCAPI class AABB const& getVisualShape$(class Block const&, class AABB& bufferAABB) const;
+
+    MCAPI void onStandOn$(class EntityContext& entity, class BlockPos const&) const;
+
+    // NOLINTEND
 };

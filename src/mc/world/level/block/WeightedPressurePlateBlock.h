@@ -74,9 +74,51 @@ public:
 
     MCAPI WeightedPressurePlateBlock(std::string const& nameId, int id, class Material const& material, int maxWeight);
 
-    MCAPI static int const MAX_WEIGHT_HEAVY;
+    // NOLINTEND
 
-    MCAPI static int const MAX_WEIGHT_LIGHT;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const*) const;
+
+    MCAPI int getAlternateSignal$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI int getInputSignal$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI class Block const* getOffBlock$(class Block const* block) const;
+
+    MCAPI class Block const* getOnBlock$(class Block const* block) const;
+
+    MCAPI int getOutputSignal$(class Block const& block) const;
+
+    MCAPI int getRedstoneSignal$(int signal) const;
+
+    MCAPI int getSignalForData$(int data) const;
+
+    MCAPI int getSignalStrength$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI int getTickDelay$() const;
+
+    MCAPI int getTurnOffDelay$(class Block const& block) const;
+
+    MCAPI int getTurnOnDelay$(class Block const& block) const;
+
+    MCAPI bool isAlternateInput$(class Block const& block) const;
+
+    MCAPI void
+    startFalling$(class BlockSource& region, class BlockPos const& pos, class Block const& oldBlock, bool creative)
+        const;
+
+    MCAPI static int const& MAX_WEIGHT_HEAVY();
+
+    MCAPI static int const& MAX_WEIGHT_LIGHT();
 
     // NOLINTEND
 };

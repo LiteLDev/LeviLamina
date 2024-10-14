@@ -20,4 +20,13 @@ public:
     MCAPI class IJsonDefinitionSerializer* tryGetDefinitionSerializer(std::string const& name) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

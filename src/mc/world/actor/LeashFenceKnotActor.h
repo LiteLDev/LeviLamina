@@ -86,4 +86,41 @@ public:
     MCAPI void removeAnimals();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void addAdditionalSaveData$(class CompoundTag&) const;
+
+    MCAPI void dropItem$();
+
+    MCAPI int getHeight$() const;
+
+    MCAPI bool getInteraction$(class Player&, class ActorInteraction& interaction, class Vec3 const&);
+
+    MCAPI float getShadowRadius$() const;
+
+    MCAPI int getWidth$() const;
+
+    MCAPI void readAdditionalSaveData$(class CompoundTag const&, class DataLoadHelper&);
+
+    MCAPI void reloadHardcoded$(::ActorInitializationMethod, class VariantParameterList const&);
+
+    MCAPI void reloadHardcodedClient$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI void remove$();
+
+    MCAPI void
+    teleportTo$(class Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
+
+    MCAPI bool wouldSurvive$(class BlockSource& region);
+
+    // NOLINTEND
 };

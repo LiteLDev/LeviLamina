@@ -31,4 +31,16 @@ public:
     MCAPI class Block const* _mayAttach(class IBlockWorldGenAPI& target, class BlockPos const& pos) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool isValidPlacement$(std::string const&);
+
+    MCAPI std::optional<class BlockPos>
+          place$(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random&, class RenderParams&) const;
+
+    // NOLINTEND
 };

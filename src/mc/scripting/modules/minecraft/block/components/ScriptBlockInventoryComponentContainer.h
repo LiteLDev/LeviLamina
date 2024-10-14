@@ -41,6 +41,19 @@ public:
     virtual class ItemContext _getItemContext(int slot) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI class ItemContext _getItemContext$(int slot) const;
+
+    MCAPI class Container* _tryGetContainer$() const;
+
+    MCAPI class Scripting::Result<int> getEmptySlotsCount$() const;
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

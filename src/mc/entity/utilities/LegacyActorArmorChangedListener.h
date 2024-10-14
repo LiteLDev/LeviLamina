@@ -25,4 +25,13 @@ public:
     MCAPI static void initializeEntity(class EntityContext& entity);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void containerContentChanged$(int);
+
+    // NOLINTEND
 };

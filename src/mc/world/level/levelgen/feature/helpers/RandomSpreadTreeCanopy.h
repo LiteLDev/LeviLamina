@@ -30,6 +30,13 @@ public:
         MCAPI ~WeightedBlockReference();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -53,6 +60,27 @@ public:
     ) const;
 
     MCAPI RandomSpreadTreeCanopy();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::optional<class BlockPos> placeCanopy$(
+        class IBlockWorldGenAPI&             target,
+        class BlockPos const&                pos,
+        class Random&                        random,
+        class RenderParams&                  renderParams,
+        struct TreeHelper::TreeParams const& treeParams,
+        std::vector<class BlockPos> const&   attachmentPositions
+    ) const;
 
     // NOLINTEND
 };

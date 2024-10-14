@@ -62,8 +62,6 @@ public:
 
     MCAPI void updateNameTag();
 
-    MCAPI static float const ROTATION_DEGREES;
-
     // NOLINTEND
 
     // private:
@@ -75,6 +73,38 @@ public:
         class BlockStateVariant<bool> const& vanillaState,
         class HashedString const&            itemName
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource&);
+
+    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
+
+    MCAPI float getShadowRadius$(class BlockSource&) const;
+
+    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void onChanged$(class BlockSource& region);
+
+    MCAPI void onRemoved$(class BlockSource& region);
+
+    MCAPI bool save$(class CompoundTag& tag) const;
+
+    MCAPI void tick$(class BlockSource& region);
+
+    MCAPI static float const& ROTATION_DEGREES();
 
     // NOLINTEND
 };

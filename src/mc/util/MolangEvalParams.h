@@ -58,9 +58,12 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class Bedrock::Threading::ThreadLocalObject<struct MolangEvalParams> mThreadLocalMolangEvalParams;
+    MCAPI void dtor$();
+
+    MCAPI static class Bedrock::Threading::ThreadLocalObject<struct MolangEvalParams>& mThreadLocalMolangEvalParams();
 
     // NOLINTEND
 };

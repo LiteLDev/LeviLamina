@@ -31,6 +31,13 @@ public:
     virtual void dontDropHorn() = 0;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };
 
 }; // namespace RamAttackGoalUtils

@@ -44,6 +44,13 @@ public:
         MCAPI ~ComponentInfo();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -88,6 +95,34 @@ public:
     MCAPI void _tryRegisterItem(class Item* item);
 
     MCAPI void _tryRegisterLoadedItems();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class ScriptDeferredEventListener& getEventListener$();
+
+    MCAPI void onReload$();
+
+    MCAPI class Scripting::Result<
+        void,
+        struct ScriptModuleMinecraft::ScriptItemCustomComponentAlreadyRegisteredError,
+        struct ScriptModuleMinecraft::ScriptItemCustomComponentReloadVersionError,
+        struct ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewEventError,
+        struct ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewComponentError>
+    tryRegisterComponent$(
+        class Scripting::WeakLifetimeScope&                                     scope,
+        class HashedString const&                                               componentName,
+        struct ScriptModuleMinecraft::IScriptItemCustomComponentClosures const& closures
+    );
 
     // NOLINTEND
 };

@@ -71,4 +71,39 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void appendFormattedHovertext$(
+        class ItemStackBase const& stack,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       showCategory
+    ) const;
+
+    MCAPI int getAttackDamage$() const;
+
+    MCAPI float getDestroySpeed$(class ItemStackBase const& item, class Block const& block) const;
+
+    MCAPI int getEnchantValue$() const;
+
+    MCAPI bool isHandEquipped$() const;
+
+    MCAPI bool isValidRepairItem$(
+        class ItemStackBase const&,
+        class ItemStackBase const&   repairItem,
+        class BaseGameVersion const& baseGameVersion
+    ) const;
+
+    // NOLINTEND
 };

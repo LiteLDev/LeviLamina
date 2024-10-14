@@ -114,9 +114,63 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class BaseGameVersion const FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION;
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool
+    addCollisionShapes$(class Block const& block, class IConstBlockSource const& region, class BlockPos const& pos, class AABB const* intersectTestBox, std::vector<class AABB>& inoutBoxes, class optional_ref<class GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI class ItemInstance asItemInstance$(class Block const& block, class BlockActor const*) const;
+
+    MCAPI bool breaksFallingBlocks$(class Block const&, class BaseGameVersion version) const;
+
+    MCAPI std::string buildDescriptionId$(class Block const& block) const;
+
+    MCAPI bool canConnect$(class Block const& otherBlock, uchar, class Block const&) const;
+
+    MCAPI bool canContainLiquid$() const;
+
+    MCAPI bool canProvideSupport$(class Block const&, uchar face, ::BlockSupportType type) const;
+
+    MCAPI class HitResult
+    clip$(class Block const& block, class BlockSource const& region, class BlockPos const& pos, class Vec3 const& origin, class Vec3 const& end, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI class AABB
+    getCollisionShape$(class Block const& block, class IConstBlockSource const& region, class BlockPos const& pos, class optional_ref<class GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI bool getLiquidClipVolume$(class Block const&, class BlockSource&, class BlockPos const&, class AABB&) const;
+
+    MCAPI class AABB const& getOutline$(
+        class Block const&             block,
+        class IConstBlockSource const& region,
+        class BlockPos const&          pos,
+        class AABB&                    bufferValue
+    ) const;
+
+    MCAPI class AABB const& getVisualShapeInWorld$(
+        class Block const&             block,
+        class IConstBlockSource const& region,
+        class BlockPos const&          pos,
+        class AABB&                    bufferAABB
+    ) const;
+
+    MCAPI bool isFenceBlock$() const;
+
+    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar) const;
+
+    MCAPI static class BaseGameVersion const& FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION();
 
     // NOLINTEND
 };

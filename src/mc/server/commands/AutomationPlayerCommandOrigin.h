@@ -60,4 +60,32 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::unique_ptr<class CommandOrigin> clone$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI ::CommandOriginType getOriginType$() const;
+
+    MCAPI std::string const& getRequestId$() const;
+
+    MCAPI class NetworkIdentifier const& getSourceId$() const;
+
+    MCAPI bool isValid$() const;
+
+    MCAPI class CompoundTag serialize$() const;
+
+    MCAPI struct CommandOriginData toCommandOriginData$() const;
+
+    // NOLINTEND
 };

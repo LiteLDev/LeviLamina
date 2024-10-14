@@ -45,4 +45,31 @@ public:
     virtual void onMessageRecieved(std::string const&);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void onDownloadBegin$(struct WebviewDownloadInfo const&);
+
+    MCAPI void onDownloadCanceled$(struct WebviewDownloadInfo const&);
+
+    MCAPI void onDownloadComplete$(struct WebviewDownloadInfo const&);
+
+    MCAPI void onDownloadUpdate$(struct WebviewDownloadInfo const&);
+
+    MCAPI void onError$(struct WebviewError const&);
+
+    MCAPI void onLoadingBegin$();
+
+    MCAPI void onLoadingEnd$();
+
+    MCAPI void onMessageRecieved$(std::string const&);
+
+    MCAPI void onWebviewChanged$();
+
+    // NOLINTEND
 };

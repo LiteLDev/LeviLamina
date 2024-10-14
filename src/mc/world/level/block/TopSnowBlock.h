@@ -150,16 +150,6 @@ public:
     MCAPI static class Block const&
     getSnowBlockToBuild(class BlockSource const& region, class BlockPos const& pos, int height, bool additive);
 
-    MCAPI static int const HALF_HEIGHT;
-
-    MCAPI static int const HEIGHT_IMPASSABLE;
-
-    MCAPI static int const MAX_HEIGHT;
-
-    MCAPI static class BaseGameVersion const TOP_SNOW_JAVA_PARITY_VERSION;
-
-    MCAPI static float const TOP_SNOW_LAYER_HEIGHT;
-
     // NOLINTEND
 
     // private:
@@ -167,6 +157,103 @@ public:
     MCAPI bool _canBeBuiltOver(class BlockSource& region, class BlockPos const& pos, class BlockItem const* item) const;
 
     MCAPI bool _canSurvive(class BlockSource& region, class BlockPos const& pos) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool breaksFallingBlocks$(class Block const& block, class BaseGameVersion) const;
+
+    MCAPI bool canBeBuiltOver$(class BlockSource& region, class BlockPos const& pos, class BlockItem const& item) const;
+
+    MCAPI bool canBeBuiltOver$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool canBeDestroyedByWaterSpread$() const;
+
+    MCAPI bool canContainLiquid$() const;
+
+    MCAPI bool canHaveExtraData$() const;
+
+    MCAPI bool
+    checkIsPathable$(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
+
+    MCAPI class AABB getCollisionShape$(
+        class Block const& block,
+        class IConstBlockSource const&,
+        class BlockPos const&                                      pos,
+        class optional_ref<class GetCollisionShapeInterface const> entity
+    ) const;
+
+    MCAPI bool getCollisionShapeForCamera$(
+        class AABB&        outAABB,
+        class Block const& block,
+        class IConstBlockSource const&,
+        class BlockPos const& pos
+    ) const;
+
+    MCAPI class mce::Color getDustColor$(class Block const&) const;
+
+    MCAPI std::string getDustParticleName$(class Block const&) const;
+
+    MCAPI class Block const&
+    getPlacementBlock$(class Actor const& by, class BlockPos const& pos, uchar, class Vec3 const&, int) const;
+
+    MCAPI class AABB const& getVisualShape$(class Block const& block, class AABB& bufferAABB) const;
+
+    MCAPI bool isFreeToFall$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool isPreservingMediumWhenPlaced$(class BlockLegacy const* medium) const;
+
+    MCAPI bool isWaterBlocking$() const;
+
+    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void
+    neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
+
+    MCAPI void onExploded$(class BlockSource& region, class BlockPos const& pos, class Actor* entitySource) const;
+
+    MCAPI void onPlace$(class BlockSource&, class BlockPos const&) const;
+
+    MCAPI class Block const*
+    playerWillDestroy$(class Player& player, class BlockPos const& pos, class Block const& block) const;
+
+    MCAPI void randomTick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI bool shouldStopFalling$(class Actor& entity) const;
+
+    MCAPI void
+    startFalling$(class BlockSource& region, class BlockPos const& pos, class Block const& oldBlock, bool creative)
+        const;
+
+    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI bool tryToPlace$(
+        class BlockSource&                  region,
+        class BlockPos const&               pos,
+        class Block const&                  block,
+        struct ActorBlockSyncMessage const* syncMsg
+    ) const;
+
+    MCAPI bool waterSpreadCausesSpawn$() const;
+
+    MCAPI static int const& HALF_HEIGHT();
+
+    MCAPI static int const& HEIGHT_IMPASSABLE();
+
+    MCAPI static int const& MAX_HEIGHT();
+
+    MCAPI static class BaseGameVersion const& TOP_SNOW_JAVA_PARITY_VERSION();
+
+    MCAPI static float const& TOP_SNOW_LAYER_HEIGHT();
 
     // NOLINTEND
 };

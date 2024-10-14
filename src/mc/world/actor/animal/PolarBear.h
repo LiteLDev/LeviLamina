@@ -54,9 +54,21 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static float const STAND_ANIMATION_TICKS;
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool canFreeze$() const;
+
+    MCAPI void normalTick$();
+
+    MCAPI static float const& STAND_ANIMATION_TICKS();
 
     // NOLINTEND
 };

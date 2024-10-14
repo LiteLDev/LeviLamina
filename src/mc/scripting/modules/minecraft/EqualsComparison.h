@@ -21,6 +21,13 @@ public:
     MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::EqualsComparison> bind();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

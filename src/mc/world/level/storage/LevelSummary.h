@@ -75,21 +75,33 @@ public:
 
     MCAPI static class Core::PathBuffer<std::string> buildWorldIconPath(class Core::Path const& worldDirectory);
 
-    MCAPI static class Core::PathBuffer<std::string> const CUSTOM_ICON_FILENAME;
-
-    MCAPI static std::string const DEFAULT_EDU_CLOUD_WORLD_ICON_FILENAME;
-
-    MCAPI static std::string const DEFAULT_WORLD_ICON_FILENAME;
-
-    MCAPI static std::string const INVALID_LEVEL_ID;
-
-    MCAPI static class Core::PathBuffer<std::string> const WORLD_ICON_FILENAME;
-
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI void _initializeWorldIconPath(class Core::Path const& directory);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static class Core::PathBuffer<std::string> const& CUSTOM_ICON_FILENAME();
+
+    MCAPI static std::string const& DEFAULT_EDU_CLOUD_WORLD_ICON_FILENAME();
+
+    MCAPI static std::string const& DEFAULT_WORLD_ICON_FILENAME();
+
+    MCAPI static std::string const& INVALID_LEVEL_ID();
+
+    MCAPI static class Core::PathBuffer<std::string> const& WORLD_ICON_FILENAME();
 
     // NOLINTEND
 };

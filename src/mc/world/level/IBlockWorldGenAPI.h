@@ -19,4 +19,13 @@ public:
     MCVAPI class LevelChunk* getChunk(class ChunkPos const& pos);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI bool canGetChunk$() const;
+
+    MCAPI class LevelChunk* getChunk$(class ChunkPos const& pos);
+
+    // NOLINTEND
 };

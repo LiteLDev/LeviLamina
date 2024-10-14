@@ -21,7 +21,7 @@ public:
 
     MCVAPI bool canPullOutItem(int, int, class ItemStack const&) const;
 
-    MCVAPI bool canPushInItem(int, int, class ItemStack const& itemStack) const;
+    MCVAPI bool canPushInItem(int, int, class ItemStack const& item) const;
 
     MCVAPI class Container* getContainer();
 
@@ -67,6 +67,55 @@ public:
     MCAPI void _onChanged(class BlockSource& region, ::Puv::Legacy::LevelSoundEvent sound);
 
     MCAPI void _spawnMusicParticles(class Level& level, float recordDuration);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForContainer();
+
+    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource&);
+
+    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
+
+    MCAPI bool canPullOutItem$(int, int, class ItemStack const&) const;
+
+    MCAPI bool canPushInItem$(int, int, class ItemStack const& item) const;
+
+    MCAPI class Container* getContainer$();
+
+    MCAPI class Container const* getContainer$() const;
+
+    MCAPI int getContainerSize$() const;
+
+    MCAPI class ItemStack const& getItem$(int) const;
+
+    MCAPI int getMaxStackSize$() const;
+
+    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void onChanged$(class BlockSource& region);
+
+    MCAPI bool save$(class CompoundTag& tag) const;
+
+    MCAPI void
+    serverInitItemStackIds$(int containerSlot, int, std::function<void(int, class ItemStack const&)> onNetIdChanged);
+
+    MCAPI void setItem$(int slot, class ItemStack const& item);
+
+    MCAPI void startOpen$(class Player&);
+
+    MCAPI void stopOpen$(class Player&);
+
+    MCAPI void tick$(class BlockSource& region);
 
     // NOLINTEND
 };

@@ -15,4 +15,11 @@ public:
     virtual ~BlockSelectionBoxComponent() = default;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };

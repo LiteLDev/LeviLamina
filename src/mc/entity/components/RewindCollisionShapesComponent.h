@@ -14,4 +14,11 @@ public:
     MCAPI ~RewindCollisionShapesComponent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

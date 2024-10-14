@@ -36,4 +36,27 @@ public:
     virtual class Bedrock::Result<void> readBigEndianBytesResult(void* data, uint64 bytes);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI class Bedrock::Result<void> readBigEndianBytesResult$(void* data, uint64 bytes);
+
+    MCAPI class Bedrock::Result<void> readBytesResult$(void* data, uint64 bytes);
+
+    MCAPI class Bedrock::Result<double> readDoubleResult$();
+
+    MCAPI class Bedrock::Result<float> readFloatResult$();
+
+    MCAPI class Bedrock::Result<int> readIntResult$();
+
+    MCAPI class Bedrock::Result<int64> readLongLongResult$();
+
+    MCAPI class Bedrock::Result<short> readShortResult$();
+
+    // NOLINTEND
 };

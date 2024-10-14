@@ -21,4 +21,13 @@ public:
     virtual float getPlayerSleepPercentageGoal() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI float getPlayerSleepPercentageGoal$() const;
+
+    // NOLINTEND
 };

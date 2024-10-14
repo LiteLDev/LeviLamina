@@ -44,8 +44,6 @@ public:
 
     MCAPI static struct Scripting::ObjectHandle release(class Scripting::StrongObjectHandle&& handleRef);
 
-    MCAPI static class Scripting::StrongObjectHandle const InvalidHandle;
-
     // NOLINTEND
 
     // protected:
@@ -53,6 +51,20 @@ public:
     MCAPI StrongObjectHandle();
 
     MCAPI void _addReference();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static class Scripting::StrongObjectHandle const& InvalidHandle();
 
     // NOLINTEND
 };

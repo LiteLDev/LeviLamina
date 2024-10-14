@@ -15,4 +15,11 @@ public:
     virtual ~BiomeTagAttributes() = default;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };

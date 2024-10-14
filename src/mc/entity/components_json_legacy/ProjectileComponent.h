@@ -124,8 +124,6 @@ public:
     MCAPI static class Vec2
     dampenShooterAngle(class Vec2 const& angle, float angleOffset, class BaseGameVersion const& currVer);
 
-    MCAPI static uint const DELAY_ON_HIT;
-
     // NOLINTEND
 
     // private:
@@ -135,6 +133,20 @@ public:
     MCAPI void _selectNextMoveDirection(class Actor const& owner, ::ProjectileComponent::EAxis avoidAxis);
 
     MCAPI bool _tryReflect(class Actor& owner, class Level& level);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static uint const& DELAY_ON_HIT();
 
     // NOLINTEND
 };

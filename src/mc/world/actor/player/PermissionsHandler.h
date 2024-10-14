@@ -33,9 +33,19 @@ public:
 
     MCAPI static std::string playerPermissionLevelToString(::PlayerPermissionLevel const& permission);
 
-    MCAPI static std::string const DIFF_COMMAND_PERMISSION;
+    // NOLINTEND
 
-    MCAPI static std::string const DIFF_PLAYER_PERMISSION;
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI static std::string const& DIFF_COMMAND_PERMISSION();
+
+    MCAPI static std::string const& DIFF_PLAYER_PERMISSION();
 
     // NOLINTEND
 };

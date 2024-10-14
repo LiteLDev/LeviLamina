@@ -19,4 +19,11 @@ public:
     virtual ~ItemStackRequestActionConsume() = default;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };

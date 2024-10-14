@@ -73,6 +73,35 @@ public:
         virtual void onPostFlushAfterEvents();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        MCAPI bool onFlushBlockCustomComponentAfterEvents$();
+
+        MCAPI bool onFlushEditorDataStoreAfterEvents$();
+
+        MCAPI bool onFlushEditorExtensionContextAfterEvents$();
+
+        MCAPI bool onFlushItemCustomComponentAfterEvents$();
+
+        MCAPI bool onFlushSystemAfterEvents$();
+
+        MCAPI bool onFlushWorldAfterEvents$();
+
+        MCAPI void onLevelTickEnd$();
+
+        MCAPI void onPostFlushAfterEvents$();
+
+        MCAPI void onPreFlushAfterEvents$();
+
+        MCAPI void onRunAsyncJobs$();
+
+        MCAPI bool onRunSystemTick$();
+
+        // NOLINTEND
     };
 
 public:
@@ -111,10 +140,19 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
     MCAPI static struct ScriptModuleMinecraft::ScriptAsyncEventMetadata<
-        class ScriptModuleMinecraft::ScriptSystemAfterEvents> const mMetadata;
+        class ScriptModuleMinecraft::ScriptSystemAfterEvents> const&
+    mMetadata();
 
     // NOLINTEND
 };

@@ -25,9 +25,10 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::string const mIsExperienceDropEnabledTag;
+    MCAPI static std::string const& mIsExperienceDropEnabledTag();
 
     // NOLINTEND
 };

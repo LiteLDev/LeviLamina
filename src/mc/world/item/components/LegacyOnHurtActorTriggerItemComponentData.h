@@ -14,4 +14,11 @@ public:
     MCAPI ~LegacyOnHurtActorTriggerItemComponentData();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

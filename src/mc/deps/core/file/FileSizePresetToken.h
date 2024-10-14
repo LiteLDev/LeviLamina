@@ -17,6 +17,13 @@ public:
     virtual ~FileSizePresetToken() = default;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };
 
 }; // namespace Core

@@ -25,6 +25,13 @@ public:
         MCAPI ~UnlockingInstruction();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -84,11 +91,21 @@ public:
 
     MCAPI void resetUsedContexts();
 
-    MCAPI static std::string const COMPONENT_TAG;
+    // NOLINTEND
 
-    MCAPI static std::string const UNLOCKED_RECIPES_TAG;
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static std::string const USED_CONTEXTS_TAG;
+    MCAPI static std::string const& COMPONENT_TAG();
+
+    MCAPI static std::string const& UNLOCKED_RECIPES_TAG();
+
+    MCAPI static std::string const& USED_CONTEXTS_TAG();
 
     // NOLINTEND
 };

@@ -71,4 +71,42 @@ public:
     MCAPI void onFallOn(struct BlockEvents::BlockFallOnEvent& eventData) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void _addHardCodedBlockComponents$(class Experiments const&);
+
+    MCAPI bool addCollisionShapes$(
+        class Block const&                                         block,
+        class IConstBlockSource const&                             region,
+        class BlockPos const&                                      pos,
+        class AABB const*                                          intersectTestBox,
+        std::vector<class AABB>&                                   inoutBoxes,
+        class optional_ref<class GetCollisionShapeInterface const> entity
+    ) const;
+
+    MCAPI void
+    animateTickBedrockLegacy$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const*) const;
+
+    MCAPI bool canContainLiquid$() const;
+
+    MCAPI bool canRenderSelectionOverlay$(::BlockRenderLayer) const;
+
+    MCAPI void entityInside$(class BlockSource& region, class BlockPos const& pos, class Actor& entity) const;
+
+    MCAPI bool isWaterBlocking$() const;
+
+    MCAPI bool waterSpreadCausesSpawn$() const;
+
+    // NOLINTEND
 };

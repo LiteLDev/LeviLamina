@@ -38,6 +38,19 @@ public:
     virtual bool canOpenChat(struct PlayerCapabilities::IPlayerData const& player) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool canChat$(struct PlayerCapabilities::IPlayerData const& player) const;
+
+    MCAPI bool canOpenChat$(struct PlayerCapabilities::IPlayerData const& player) const;
+
+    MCAPI bool canTell$(struct PlayerCapabilities::IPlayerData const& player) const;
+
+    // NOLINTEND
 };
 
 }; // namespace PlayerCapabilities

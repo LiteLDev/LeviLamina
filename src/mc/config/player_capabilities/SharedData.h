@@ -36,6 +36,17 @@ public:
     virtual ::ChatRestrictionLevel getChatRestrictionLevel() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI ::ChatRestrictionLevel getChatRestrictionLevel$() const;
+
+    MCAPI std::optional<bool> isGameRuleEnabled$(struct GameRuleId rule) const;
+
+    // NOLINTEND
 };
 
 }; // namespace PlayerCapabilities

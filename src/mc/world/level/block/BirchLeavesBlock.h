@@ -48,4 +48,25 @@ public:
     MCAPI BirchLeavesBlock(std::string const& nameId, int id, class WeakPtr<class BlockLegacy const> sapling);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI int getColor$(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
+
+    MCAPI class mce::Color getMapColor$(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
+
+    MCAPI ::BlockRenderLayer
+    getRenderLayer$(class Block const& block, class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI int getVariant$(class Block const&) const;
+
+    // NOLINTEND
 };

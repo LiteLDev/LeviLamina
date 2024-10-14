@@ -52,4 +52,27 @@ public:
     MCAPI void onFallOn(struct BlockEvents::BlockFallOnEvent& eventData) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void _addHardCodedBlockComponents$(class Experiments const&);
+
+    MCAPI int getExtraRenderLayers$() const;
+
+    MCAPI bool isBounceBlock$() const;
+
+    MCAPI void onStandOn$(class EntityContext& entity, class BlockPos const&) const;
+
+    MCAPI void
+    updateEntityAfterFallOn$(class BlockPos const& pos, struct UpdateEntityAfterFallOnInterface& entity) const;
+
+    // NOLINTEND
 };

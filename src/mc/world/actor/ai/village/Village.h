@@ -38,17 +38,22 @@ public:
 
     public:
         // NOLINTBEGIN
-        MCAPI static int const GOLEM_DEATH_PENALTY;
+        // NOLINTEND
 
-        MCAPI static int const LARGE_PENALTY;
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static int const& GOLEM_DEATH_PENALTY();
 
-        MCAPI static int const LARGE_REWARD;
+        MCAPI static int const& LARGE_PENALTY();
 
-        MCAPI static int const MEDIUM_PENALTY;
+        MCAPI static int const& LARGE_REWARD();
 
-        MCAPI static int const SMALL_PENALTY;
+        MCAPI static int const& MEDIUM_PENALTY();
 
-        MCAPI static int const SMALL_REWARD;
+        MCAPI static int const& SMALL_PENALTY();
+
+        MCAPI static int const& SMALL_REWARD();
 
         // NOLINTEND
     };
@@ -149,20 +154,6 @@ public:
 
     MCAPI static bool isVillagePOI(class VillageManager const& villageManager, class Block const& block);
 
-    MCAPI static bool DEBUG_DRAWING;
-
-    MCAPI static float const DWELLER_REMOVAL_TOLERANCE;
-
-    MCAPI static int const MAX_VILLAGE_STANDING;
-
-    MCAPI static int const MIN_VILLAGE_STANDING;
-
-    MCAPI static std::string const STORAGE_KEY_PREFIX;
-
-    MCAPI static char const STORAGE_KEY_SEPARATOR;
-
-    MCAPI static int const VILLAGE_START_XZ_BOUNDS;
-
     // NOLINTEND
 
     // private:
@@ -244,61 +235,81 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static float const ACHIEVEMENT_SOUND_THE_ALARM_TOLERANCE;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static std::string const CELEBRATION_EVENT;
+    MCAPI static float const& ACHIEVEMENT_SOUND_THE_ALARM_TOLERANCE();
 
-    MCAPI static class Vec3 const RAID_BOUNDS_PADDING;
+    MCAPI static std::string const& CELEBRATION_EVENT();
 
-    MCAPI static std::string const RAID_EXPIRY_EVENT;
+    MCAPI static bool& DEBUG_DRAWING();
 
-    MCAPI static int const RAID_FINISHED_DELAY_IN_TICKS;
+    MCAPI static float const& DWELLER_REMOVAL_TOLERANCE();
 
-    MCAPI static int const RAID_GROUP_COMPLETE_DELAY_IN_TICKS;
+    MCAPI static int const& MAX_VILLAGE_STANDING();
 
-    MCAPI static int const RAID_LOCATION_HELP_DELAY_IN_TICKS;
+    MCAPI static int const& MIN_VILLAGE_STANDING();
 
-    MCAPI static uchar const RAID_MAX_SPAWN_FAILURES;
+    MCAPI static class Vec3 const& RAID_BOUNDS_PADDING();
 
-    MCAPI static int const RAID_PREP_TIME_IN_TICKS;
+    MCAPI static std::string const& RAID_EXPIRY_EVENT();
 
-    MCAPI static struct Tick const RAID_TIMEOUT_IN_TICKS;
+    MCAPI static int const& RAID_FINISHED_DELAY_IN_TICKS();
 
-    MCAPI static uint64 const STANDING_DECAY_INTERVAL_BAD;
+    MCAPI static int const& RAID_GROUP_COMPLETE_DELAY_IN_TICKS();
 
-    MCAPI static uint64 const STANDING_DECAY_INTERVAL_GOOD;
+    MCAPI static int const& RAID_LOCATION_HELP_DELAY_IN_TICKS();
 
-    MCAPI static std::string const STORAGE_KEY_DWELLERS;
+    MCAPI static uchar const& RAID_MAX_SPAWN_FAILURES();
 
-    MCAPI static std::string const STORAGE_KEY_PLAYERS;
+    MCAPI static int const& RAID_PREP_TIME_IN_TICKS();
 
-    MCAPI static std::string const STORAGE_KEY_POI;
+    MCAPI static struct Tick const& RAID_TIMEOUT_IN_TICKS();
 
-    MCAPI static std::string const STORAGE_KEY_RAID;
+    MCAPI static uint64 const& STANDING_DECAY_INTERVAL_BAD();
 
-    MCAPI static std::string const STORAGE_KEY_VILLAGE;
+    MCAPI static uint64 const& STANDING_DECAY_INTERVAL_GOOD();
 
-    MCAPI static int const UNINITIALIZED_VILLAGE_LIFETIME_MAX_TICKS;
+    MCAPI static std::string const& STORAGE_KEY_DWELLERS();
 
-    MCAPI static int64 const VILLAGER_EXPECTED_WORK_INTERVAL;
+    MCAPI static std::string const& STORAGE_KEY_PLAYERS();
 
-    MCAPI static int const VILLAGE_HERO_BESTOW_TIME;
+    MCAPI static std::string const& STORAGE_KEY_POI();
 
-    MCAPI static uint64 const VILLAGE_POI_PURGE_TIME;
+    MCAPI static std::string const& STORAGE_KEY_PREFIX();
 
-    MCAPI static float const VILLAGE_RADIUS_APPROX_SCALAR;
+    MCAPI static std::string const& STORAGE_KEY_RAID();
 
-    MCAPI static uint64 const VILLAGE_SAVE_TICK_DELAY;
+    MCAPI static char const& STORAGE_KEY_SEPARATOR();
 
-    MCAPI static int const VILLAGE_START_HEIGHT;
+    MCAPI static std::string const& STORAGE_KEY_VILLAGE();
 
-    MCAPI static int const VILLAGE_UNCLAIMED_POI_CAP;
+    MCAPI static int const& UNINITIALIZED_VILLAGE_LIFETIME_MAX_TICKS();
 
-    MCAPI static uint64 const VILLAGE_UPDATE_TICK_DELAY;
+    MCAPI static int64 const& VILLAGER_EXPECTED_WORK_INTERVAL();
 
-    MCAPI static uchar const VILLAGE_VERSION_CURRENT;
+    MCAPI static int const& VILLAGE_HERO_BESTOW_TIME();
+
+    MCAPI static uint64 const& VILLAGE_POI_PURGE_TIME();
+
+    MCAPI static float const& VILLAGE_RADIUS_APPROX_SCALAR();
+
+    MCAPI static uint64 const& VILLAGE_SAVE_TICK_DELAY();
+
+    MCAPI static int const& VILLAGE_START_HEIGHT();
+
+    MCAPI static int const& VILLAGE_START_XZ_BOUNDS();
+
+    MCAPI static int const& VILLAGE_UNCLAIMED_POI_CAP();
+
+    MCAPI static uint64 const& VILLAGE_UPDATE_TICK_DELAY();
+
+    MCAPI static uchar const& VILLAGE_VERSION_CURRENT();
 
     // NOLINTEND
 };

@@ -50,6 +50,30 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void clear$();
+
+    MCAPI void subscribeToItemForComponent$(
+        class ComponentItem&                                                    item,
+        class HashedString const&                                               componentName,
+        struct ScriptModuleMinecraft::IScriptItemCustomComponentClosures const& closures,
+        class Scripting::WeakLifetimeScope&                                     scope,
+        int                                                                     priority
+    );
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

@@ -115,13 +115,25 @@ public:
 
     MCAPI ~MobSpawnRules();
 
-    MCAPI static int const LOW_END_MAX_SPAWN_DISTANCE;
+    // NOLINTEND
 
-    MCAPI static int const MAX_DEFAULT_SPAWN_DISTANCE;
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static uint64 const MAX_WORLD_AGE;
+    MCAPI void dtor$();
 
-    MCAPI static int const MIN_DEFAULT_SPAWN_DISTANCE;
+    MCAPI static int const& LOW_END_MAX_SPAWN_DISTANCE();
+
+    MCAPI static int const& MAX_DEFAULT_SPAWN_DISTANCE();
+
+    MCAPI static uint64 const& MAX_WORLD_AGE();
+
+    MCAPI static int const& MIN_DEFAULT_SPAWN_DISTANCE();
 
     // NOLINTEND
 };

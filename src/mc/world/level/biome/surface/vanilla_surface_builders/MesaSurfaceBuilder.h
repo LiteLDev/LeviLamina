@@ -62,6 +62,17 @@ public:
     MCAPI void makeBands(class Random& random, int baseWidth, ::BlockColor color);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void buildSurfaceAt$(struct ISurfaceBuilder::BuildParameters const& parameters) const;
+
+    MCAPI void init$(class Biome& biome, uint levelSeed);
+
+    // NOLINTEND
 };
 
 }; // namespace VanillaSurfaceBuilders

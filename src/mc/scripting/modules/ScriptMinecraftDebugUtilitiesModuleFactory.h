@@ -44,11 +44,19 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static char const* ModuleName;
+    MCAPI static void** $vftable();
 
-    MCAPI static class mce::UUID const ModuleUUID;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI static char const* const& ModuleName();
+
+    MCAPI static class mce::UUID const& ModuleUUID();
 
     // NOLINTEND
 };

@@ -30,4 +30,11 @@ public:
     MCAPI ~MolangQueryFunction();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

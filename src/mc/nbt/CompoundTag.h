@@ -165,6 +165,36 @@ public:
     MCAPI void rename(std::string_view name, std::string newName);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI std::unique_ptr<class Tag> copy$() const;
+
+    MCAPI bool equals$(class Tag const& obj) const;
+
+    MCAPI ::Tag::Type getId$() const;
+
+    MCAPI uint64 hash$() const;
+
+    MCAPI class Bedrock::Result<void> load$(class IDataInput& dis);
+
+    MCAPI void print$(std::string const& prefix_, class PrintStream& out) const;
+
+    MCAPI std::string toString$() const;
+
+    MCAPI void write$(class IDataOutput& dos) const;
+
+    // NOLINTEND
 };
 
 #include "mc/nbt/CompoundTagVariant.h"

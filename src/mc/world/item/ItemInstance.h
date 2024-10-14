@@ -40,7 +40,27 @@ public:
 
     MCAPI static class ItemInstance fromTag(class CompoundTag const& tag);
 
-    MCAPI static class ItemInstance const EMPTY_ITEM;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void reinit$(class Item const& item, int count, int auxValue);
+
+    MCAPI void reinit$(class BlockLegacy const& block, int count);
+
+    MCAPI void reinit$(std::string_view name, int count, int auxValue);
+
+    MCAPI static class ItemInstance const& EMPTY_ITEM();
 
     // NOLINTEND
 };

@@ -112,12 +112,6 @@ public:
     MCAPI static class ItemEnchants
     selectEnchantments(class Item const* item, int enchantCost, int valueBuff, bool treasure);
 
-    MCAPI static int const MAX_EXP_REPAIR_COST;
-
-    MCAPI static int const PROTECTIONFACTOR_PRIMARYCAP;
-
-    MCAPI static int const PROTECTIONFACTOR_SECONDARYCAP;
-
     // NOLINTEND
 
     // private:
@@ -126,9 +120,16 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::vector<std::string> mEnchantmentNames;
+    MCAPI static int const& MAX_EXP_REPAIR_COST();
+
+    MCAPI static int const& PROTECTIONFACTOR_PRIMARYCAP();
+
+    MCAPI static int const& PROTECTIONFACTOR_SECONDARYCAP();
+
+    MCAPI static std::vector<std::string>& mEnchantmentNames();
 
     // NOLINTEND
 };

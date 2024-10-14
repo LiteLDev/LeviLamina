@@ -51,4 +51,29 @@ public:
     MCAPI GlowLichenBlock(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool
+    canBeFertilized$(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
+
+    MCAPI class Block const& getMultifaceBlock$() const;
+
+    MCAPI class MultifaceSpreader const& getMultifaceSpreader$() const;
+
+    MCAPI class BlockLegacy& init$();
+
+    MCAPI bool
+    onFertilized$(class BlockSource& region, class BlockPos const& pos, class Actor* entity, ::FertilizerType fType)
+        const;
+
+    // NOLINTEND
 };

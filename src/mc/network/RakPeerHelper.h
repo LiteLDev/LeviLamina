@@ -39,6 +39,15 @@ public:
         virtual ~IPSupportInterface();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -88,6 +97,16 @@ public:
         int&                                           socketCount,
         int                                            ipv6Index
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
     // NOLINTEND
 };

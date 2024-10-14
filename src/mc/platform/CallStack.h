@@ -30,6 +30,18 @@ public:
         Context(std::string value, std::optional<::Bedrock::LogLevel> logLevel, std::optional<::LogAreaID> logArea);
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     struct Frame {
@@ -50,6 +62,18 @@ public:
         );
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -63,6 +87,18 @@ public:
     MCAPI explicit CallStack(std::vector<struct Bedrock::CallStack::FrameWithContext>&& frames);
 
     MCAPI explicit CallStack(struct Bedrock::CallStack::FrameWithContext&& frame);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

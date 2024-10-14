@@ -15,13 +15,18 @@ public:
     // NOLINTBEGIN
     MCAPI explicit operator int() const;
 
-    MCAPI static class Bedrock::Threading::OSThreadPriority const Elevated;
+    // NOLINTEND
 
-    MCAPI static class Bedrock::Threading::OSThreadPriority const High;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static class Bedrock::Threading::OSThreadPriority const& Elevated();
 
-    MCAPI static class Bedrock::Threading::OSThreadPriority const Low;
+    MCAPI static class Bedrock::Threading::OSThreadPriority const& High();
 
-    MCAPI static class Bedrock::Threading::OSThreadPriority const Normal;
+    MCAPI static class Bedrock::Threading::OSThreadPriority const& Low();
+
+    MCAPI static class Bedrock::Threading::OSThreadPriority const& Normal();
 
     // NOLINTEND
 };

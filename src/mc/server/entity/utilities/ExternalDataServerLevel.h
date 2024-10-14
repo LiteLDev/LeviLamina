@@ -42,4 +42,28 @@ public:
     MCAPI explicit ExternalDataServerLevel(Bedrock::NotNullNonOwnerPtr<class ILevel const> level);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI struct AdventureSettings const& getAdventureSettings$() const;
+
+    MCAPI ::GameType getDefaultGameType$() const;
+
+    MCAPI ::InputMode getInputMode$() const;
+
+    MCAPI ::ClientPlayMode getPlayMode$() const;
+
+    MCAPI float getSmoothRotationSpeed$() const;
+
+    MCAPI bool isInWorldAndNotShowingAnyMenuScreens$() const;
+
+    // NOLINTEND
 };

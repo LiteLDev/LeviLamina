@@ -48,7 +48,33 @@ public:
 
     MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
-    MCAPI static std::string const NameID;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag$(struct cereal::ReflectionCtx const&) const;
+
+    MCAPI std::string const& getName$() const;
+
+    MCAPI void initializeComponent$(class BlockComponentStorage& blockComponentStorage) const;
+
+    MCAPI void initializeComponentFromCode$(class BlockComponentStorage& blockComponentStorage) const;
+
+    MCAPI void initializeFromNetwork$(class CompoundTag const& tag, struct cereal::ReflectionCtx const&);
+
+    MCAPI bool isNetworkComponent$() const;
+
+    MCAPI static std::string const& NameID();
 
     // NOLINTEND
 };

@@ -36,13 +36,18 @@ public:
 
         MCAPI static float getWeirdness(struct TerrainShaper::Point const& point);
 
-        MCAPI static class ToFloatFunction<struct TerrainShaper::Point> CONTINENTS_EXTRACTOR;
+        // NOLINTEND
 
-        MCAPI static class ToFloatFunction<struct TerrainShaper::Point> EROSION_EXTRACTOR;
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static class ToFloatFunction<struct TerrainShaper::Point>& CONTINENTS_EXTRACTOR();
 
-        MCAPI static class ToFloatFunction<struct TerrainShaper::Point> RIDGES_EXTRACTOR;
+        MCAPI static class ToFloatFunction<struct TerrainShaper::Point>& EROSION_EXTRACTOR();
 
-        MCAPI static class ToFloatFunction<struct TerrainShaper::Point> WEIRDNESS_EXTRACTOR;
+        MCAPI static class ToFloatFunction<struct TerrainShaper::Point>& RIDGES_EXTRACTOR();
+
+        MCAPI static class ToFloatFunction<struct TerrainShaper::Point>& WEIRDNESS_EXTRACTOR();
 
         // NOLINTEND
     };

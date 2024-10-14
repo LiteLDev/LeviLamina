@@ -112,4 +112,48 @@ public:
     MCAPI void _registerLoopingSounds();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool, bool);
+
+    MCAPI void _lazyInitDisplayBlock$();
+
+    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+
+    MCAPI void applyNaturalSlowdown$(class BlockSource&);
+
+    MCAPI void destroy$(class ActorDamageSource const&, bool dropMinecartComponents);
+
+    MCAPI struct ActorUniqueID getControllingPlayer$() const;
+
+    MCAPI class Block const* getDefaultDisplayBlock$() const;
+
+    MCAPI int getDefaultDisplayOffset$() const;
+
+    MCAPI float getInterpolatedBodyYaw$(float) const;
+
+    MCAPI float getShadowRadius$() const;
+
+    MCAPI bool isInvulnerableTo$(class ActorDamageSource const& source) const;
+
+    MCAPI void kill$();
+
+    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper&);
+
+    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI void reloadHardcodedClient$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    // NOLINTEND
 };

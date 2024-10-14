@@ -35,6 +35,13 @@ public:
     toMap(struct BlockDescriptorSerializer::StatesProxy const& instance);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace BlockDescriptorSerializer

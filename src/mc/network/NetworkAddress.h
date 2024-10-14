@@ -14,4 +14,11 @@ public:
     MCAPI ~NetworkAddress();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

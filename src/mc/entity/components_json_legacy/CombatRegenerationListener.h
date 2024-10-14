@@ -26,4 +26,13 @@ public:
     virtual ::EventResult onEvent(struct ActorNotificationEvent const& event);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI ::EventResult onEvent$(struct ActorNotificationEvent const& event);
+
+    // NOLINTEND
 };

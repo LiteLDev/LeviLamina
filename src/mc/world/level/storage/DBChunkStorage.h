@@ -174,11 +174,60 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class Bedrock::Threading::ThreadLocalObject<class LevelStorageWriteBatch> threadBatch;
+    MCAPI static void** $vftable();
 
-    MCAPI static class Bedrock::Threading::ThreadLocalObject<std::string> threadBuffer;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void acquireDiscarded$(std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter> ptr);
+
+    MCAPI void checkAndReplaceChunk$(class ChunkViewSource& neighborhood, class LevelChunk& lc);
+
+    MCAPI bool chunkPosNeedsBlending$(class ChunkPos const& cp);
+
+    MCAPI void deserializeActorStorageToLevelChunk$(class LevelChunk& levelChunk);
+
+    MCAPI void flushPendingDiscardedChunkWrites$();
+
+    MCAPI void flushThreadBatch$();
+
+    MCAPI void hintDiscardBatchBegin$();
+
+    MCAPI void hintDiscardBatchEnd$();
+
+    MCAPI bool isChunkKnown$(class ChunkPos const& chunkPos);
+
+    MCAPI bool isChunkSaved$(class ChunkPos const& chunkPos);
+
+    MCAPI bool isShutdownDone$();
+
+    MCAPI void loadChunk$(class LevelChunk& lc, bool forceImmediateReplacementDataLoad);
+
+    MCAPI std::shared_ptr<class LevelChunkMetaDataDictionary> loadLevelChunkMetaDataDictionary$();
+
+    MCAPI bool postProcess$(class ChunkViewSource& neighborhood);
+
+    MCAPI bool saveLiveChunk$(class LevelChunk& lc);
+
+    MCAPI void shutdown$();
+
+    MCAPI std::unique_ptr<class BlendingDataProvider> tryGetBlendingDataProvider$();
+
+    MCAPI void writeEntityChunkTransfer$(class LevelChunk& lc);
+
+    MCAPI void writeEntityChunkTransfersToUnloadedChunk$(
+        class ChunkKey const&                                      chunkKey,
+        std::vector<struct ActorUnloadedChunkTransferEntry> const& transfers
+    );
+
+    MCAPI static class Bedrock::Threading::ThreadLocalObject<class LevelStorageWriteBatch>& threadBatch();
+
+    MCAPI static class Bedrock::Threading::ThreadLocalObject<std::string>& threadBuffer();
 
     // NOLINTEND
 };

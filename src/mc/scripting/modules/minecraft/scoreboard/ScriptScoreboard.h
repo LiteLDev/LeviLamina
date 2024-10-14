@@ -115,6 +115,18 @@ public:
     _getOrCreateScoreboardObjective(class Objective const& objective);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

@@ -23,4 +23,14 @@ public:
     execute(class FunctionManager& functionManager, class CommandOrigin const& origin, ::FunctionQueueOrder order);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void
+    execute$(class FunctionManager& functionManager, class CommandOrigin const& origin, ::FunctionQueueOrder order);
+
+    // NOLINTEND
 };

@@ -9,9 +9,10 @@ public:
     BackwardsCompatTextureGroup(BackwardsCompatTextureGroup const&);
     BackwardsCompatTextureGroup();
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class BackwardsCompatTextureInfo const invalidInfo;
+    MCAPI static class BackwardsCompatTextureInfo const& invalidInfo();
 
     // NOLINTEND
 };

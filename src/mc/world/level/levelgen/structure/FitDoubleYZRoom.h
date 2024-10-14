@@ -25,4 +25,16 @@ public:
     create(int& orientation, std::shared_ptr<class RoomDefinition> definition, class Random& random);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI std::unique_ptr<class OceanMonumentPiece>
+          create$(int& orientation, std::shared_ptr<class RoomDefinition> definition, class Random& random);
+
+    MCAPI bool fits$(class RoomDefinition const& definition) const;
+
+    // NOLINTEND
 };

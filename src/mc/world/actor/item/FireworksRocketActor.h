@@ -95,4 +95,28 @@ public:
     MCAPI void initTagData(class Random& random);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+
+    MCAPI float getShadowRadius$() const;
+
+    MCAPI void handleEntityEvent$(::ActorEvent eventId, int data);
+
+    MCAPI void lerpMotion$(class Vec3 const& delta);
+
+    MCAPI void onSynchedDataUpdate$(int);
+
+    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper&);
+
+    // NOLINTEND
 };

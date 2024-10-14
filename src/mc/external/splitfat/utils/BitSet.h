@@ -13,7 +13,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static uint64 const npos;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static uint64 const& npos();
 
     // NOLINTEND
 };

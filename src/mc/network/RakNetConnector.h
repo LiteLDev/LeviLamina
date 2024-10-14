@@ -63,6 +63,13 @@ public:
         virtual ~ConnectionCallbacks() = default;
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        // NOLINTEND
     };
 
     struct PingCallbackData {
@@ -75,6 +82,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~PingCallbackData();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -97,6 +111,13 @@ public:
         public:
             // NOLINTBEGIN
             MCAPI ~ReadBufferData();
+
+            // NOLINTEND
+
+            // thunks
+        public:
+            // NOLINTBEGIN
+            MCAPI void dtor$();
 
             // NOLINTEND
         };
@@ -140,6 +161,28 @@ public:
         virtual bool isEncrypted() const;
 
         MCAPI void newData(std::string);
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        MCAPI struct NetworkPeer::NetworkStatus getNetworkStatus$() const;
+
+        MCAPI bool isEncrypted$() const;
+
+        MCAPI bool isLocal$() const;
+
+        MCAPI ::NetworkPeer::DataStatus receivePacket$(
+            std::string&                                                  outData,
+            std::shared_ptr<std::chrono::steady_clock::time_point> const& timepointPtr
+        );
+
+        MCAPI void sendPacket$(std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility);
+
+        MCAPI void update$();
 
         // NOLINTEND
     };
@@ -237,6 +280,85 @@ public:
     MCAPI void _pingNatService(bool isInitialPing);
 
     MCAPI void _storeLocalIP();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForBedrockEnableNonOwnerReferences();
+
+    MCAPI static void** $vftableForConnector();
+
+    MCAPI static void** $vftableForNetworkEnableDisableListener();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void _onDisable$();
+
+    MCAPI void _onEnable$();
+
+    MCAPI void addConnectionStateListener$(class Connector::ConnectionStateListener* listener);
+
+    MCAPI void closeNetworkConnection$(class NetworkIdentifier const& id);
+
+    MCAPI bool connect$(
+        class Social::GameConnectionInfo const& primaryConnection,
+        class Social::GameConnectionInfo const& backupConnection
+    );
+
+    MCAPI void disconnect$();
+
+    MCAPI class Social::GameConnectionInfo const& getConnectedGameInfo$() const;
+
+    MCAPI ushort getIPv4Port$() const;
+
+    MCAPI ushort getIPv6Port$() const;
+
+    MCAPI std::string getLocalIp$();
+
+    MCAPI std::vector<std::string> getLocalIps$() const;
+
+    MCAPI struct Connector::NatPunchInfo getNatPunchInfo$() const;
+
+    MCAPI class NetworkIdentifier getNetworkIdentifier$() const;
+
+    MCAPI ::TransportLayer getNetworkType$() const;
+
+    MCAPI class RakNet::RakPeerInterface* getPeer$();
+
+    MCAPI class RakNet::RakPeerInterface const* getPeer$() const;
+
+    MCAPI ushort getPort$() const;
+
+    MCAPI std::vector<struct RakNet::SystemAddress> getRefinedLocalIps$() const;
+
+    MCAPI bool host$(struct ConnectionDefinition const& definition);
+
+    MCAPI bool isConnected$(class NetworkIdentifier const& id) const;
+
+    MCAPI bool isIPv4Supported$() const;
+
+    MCAPI bool isIPv6Supported$() const;
+
+    MCAPI bool isServer$() const;
+
+    MCAPI void removeConnectionStateListener$(class Connector::ConnectionStateListener* listener);
+
+    MCAPI void runEvents$();
+
+    MCAPI bool setApplicationHandshakeCompleted$(class NetworkIdentifier const& id);
+
+    MCAPI void setupNatPunch$(bool connectToClient);
+
+    MCAPI void startNatPunchingClient$(std::string const& address, ushort port);
+
+    MCAPI void tick$();
 
     // NOLINTEND
 };

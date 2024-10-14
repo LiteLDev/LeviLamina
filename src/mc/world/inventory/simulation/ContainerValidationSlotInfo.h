@@ -14,4 +14,11 @@ public:
     MCAPI ~ContainerValidationSlotInfo();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

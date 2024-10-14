@@ -44,4 +44,32 @@ public:
     MCAPI DynamicJumpControl();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::unique_ptr<class JumpControl> clone$() const;
+
+    MCAPI int getJumpDelay$(class JumpControlComponent const& parent) const;
+
+    MCAPI float getJumpPower$(class JumpControlComponent const& parent) const;
+
+    MCAPI ::JumpType getJumpType$(class JumpControlComponent const& parent) const;
+
+    MCAPI void initializeInternal$(class Mob& mob, struct JumpControlDescription* description);
+
+    MCAPI void resetSpeedModifier$(class JumpControlComponent const& parent, class Mob& mob);
+
+    MCAPI void setJumpType$(class JumpControlComponent& parent, ::JumpType type);
+
+    MCAPI void tick$(class JumpControlComponent& parent, class Mob& mob);
+
+    // NOLINTEND
 };

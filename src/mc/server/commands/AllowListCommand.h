@@ -24,9 +24,14 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class AllowListFile* mAllowListFile;
+    MCAPI static void** $vftable();
+
+    MCAPI void execute$(class CommandOrigin const&, class CommandOutput& output) const;
+
+    MCAPI static class AllowListFile*& mAllowListFile();
 
     // NOLINTEND
 };

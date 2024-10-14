@@ -26,4 +26,20 @@ public:
     MCAPI explicit PlayerDeathManagerProxy(class ServerLevel& serverLevel);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class Actor* fetchActor$(struct ActorUniqueID actorUniqueID) const;
+
+    MCAPI bool shouldShowDeathMessages$() const;
+
+    // NOLINTEND
 };

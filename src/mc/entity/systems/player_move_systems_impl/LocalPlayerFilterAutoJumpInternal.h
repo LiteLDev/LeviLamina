@@ -250,6 +250,94 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
+
+    MCAPI void singleTick$(
+        class StrictExecutionContext<
+            struct Filter<
+                class FlagComponent<struct CanStandOnSnowFlag>,
+                class FlagComponent<struct HasLightweightFamilyFlag>,
+                class FlagComponent<struct HorseFlag>,
+                class FlagComponent<struct MobFlag>,
+                class FlagComponent<struct ParrotFlag>,
+                struct VehicleComponent,
+                class FlagComponent<struct CamelFlag>,
+                class FlagComponent<struct PlayerComponentFlag>,
+                class FlagComponent<struct ActorMovementTickNeededFlag>,
+                class FlagComponent<struct LocalPlayerComponentFlag>>,
+            struct Read<
+                struct AABBShapeComponent,
+                struct MovementAbilitiesComponent,
+                struct ActorTypeComponent,
+                struct FallDistanceComponent,
+                struct PassengerComponent,
+                struct ActorGameTypeComponent,
+                struct ActorDataFlagComponent,
+                struct VehicleComponent,
+                struct ActorRotationComponent,
+                struct MobBodyRotationComponent,
+                struct RenderRotationComponent,
+                struct StandAnimationComponent,
+                struct OffsetsComponent,
+                struct VanillaOffsetComponent,
+                struct PassengerRenderingRidingOffsetComponent,
+                struct MovementAttributesComponent,
+                struct DimensionTypeComponent,
+                struct OnGroundFlagComponent,
+                struct StateVectorComponent>,
+            struct Write<struct MoveInputComponent>,
+            struct AddRemove<>,
+            struct GlobalRead<struct ExternalDataComponent, struct LocalConstBlockSourceFactoryComponent>,
+            struct GlobalWrite<>,
+            struct EntityFactoryT<>>& context,
+        class StrictEntityContext&    entity
+    );
+
+    MCAPI void tick$(class StrictExecutionContext<
+                     struct Filter<
+                         class FlagComponent<struct CanStandOnSnowFlag>,
+                         class FlagComponent<struct HasLightweightFamilyFlag>,
+                         class FlagComponent<struct HorseFlag>,
+                         class FlagComponent<struct MobFlag>,
+                         class FlagComponent<struct ParrotFlag>,
+                         struct VehicleComponent,
+                         class FlagComponent<struct CamelFlag>,
+                         class FlagComponent<struct PlayerComponentFlag>,
+                         class FlagComponent<struct ActorMovementTickNeededFlag>,
+                         class FlagComponent<struct LocalPlayerComponentFlag>>,
+                     struct Read<
+                         struct AABBShapeComponent,
+                         struct MovementAbilitiesComponent,
+                         struct ActorTypeComponent,
+                         struct FallDistanceComponent,
+                         struct PassengerComponent,
+                         struct ActorGameTypeComponent,
+                         struct ActorDataFlagComponent,
+                         struct VehicleComponent,
+                         struct ActorRotationComponent,
+                         struct MobBodyRotationComponent,
+                         struct RenderRotationComponent,
+                         struct StandAnimationComponent,
+                         struct OffsetsComponent,
+                         struct VanillaOffsetComponent,
+                         struct PassengerRenderingRidingOffsetComponent,
+                         struct MovementAttributesComponent,
+                         struct DimensionTypeComponent,
+                         struct OnGroundFlagComponent,
+                         struct StateVectorComponent>,
+                     struct Write<struct MoveInputComponent>,
+                     struct AddRemove<>,
+                     struct GlobalRead<struct ExternalDataComponent, struct LocalConstBlockSourceFactoryComponent>,
+                     struct GlobalWrite<>,
+                     struct EntityFactoryT<>>& context);
+
+    // NOLINTEND
 };
 
 }; // namespace PlayerMoveSystemsImpl

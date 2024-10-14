@@ -16,6 +16,13 @@ public:
     MCAPI ~Components();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace Util::Url

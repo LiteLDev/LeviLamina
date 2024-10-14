@@ -16,4 +16,13 @@ public:
     MCVAPI bool isRemoteFire();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI std::string const& getRawDialogueText$() const;
+
+    MCAPI bool isRemoteFire$();
+
+    // NOLINTEND
 };

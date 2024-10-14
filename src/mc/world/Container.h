@@ -239,9 +239,90 @@ public:
 
     // NOLINTEND
 
-    // protected:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class BidirectionalUnorderedMap<::ContainerType, std::string> const containerTypeMap;
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void addAdditionalSaveData$(class CompoundTag& tag);
+
+    MCAPI void addContentChangeListener$(class ContainerContentChangeListener* listener);
+
+    MCAPI bool addItem$(class ItemStack& item);
+
+    MCAPI bool addItemToFirstEmptySlot$(class ItemStack const& item);
+
+    MCAPI bool addItemWithForceBalance$(class ItemStack& item);
+
+    MCAPI void addRemovedListener$(class ContainerRemovedListener* listener);
+
+    MCAPI bool canPullOutItem$(int, int, class ItemStack const&) const;
+
+    MCAPI bool canPushInItem$(int, int, class ItemStack const&) const;
+
+    MCAPI void containerRemoved$();
+
+    MCAPI void createTransactionContext$(
+        std::function<void(class Container&, int, class ItemStack const&, class ItemStack const&)> callback,
+        std::function<void()>                                                                      execute
+    );
+
+    MCAPI void dropContents$(class BlockSource& region, class Vec3 const& pos, bool randomizeDrop);
+
+    MCAPI void dropSlotContent$(class BlockSource& region, class Vec3 const& pos, bool randomizeDrop, int slot);
+
+    MCAPI int findFirstSlotForItem$(class ItemStack const& item) const;
+
+    MCAPI int getEmptySlotsCount$() const;
+
+    MCAPI int getItemCount$(class ItemStack const& compare) const;
+
+    MCAPI std::vector<class ItemStack> getSlotCopies$() const;
+
+    MCAPI std::vector<class ItemStack const*> const getSlots$() const;
+
+    MCAPI bool hasCustomName$() const;
+
+    MCAPI bool hasRoomForItem$(class ItemStack const& item);
+
+    MCAPI void init$();
+
+    MCAPI void initializeContainerContents$(class BlockSource& region);
+
+    MCAPI bool isEmpty$() const;
+
+    MCAPI bool isSlotDisabled$(int) const;
+
+    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag);
+
+    MCAPI void removeAllItems$();
+
+    MCAPI void removeAllItemsWithForceBalance$();
+
+    MCAPI void removeContentChangeListener$(class ContainerContentChangeListener* listener);
+
+    MCAPI void removeItem$(int slot, int count);
+
+    MCAPI void removeRemovedListener$(class ContainerRemovedListener* listener);
+
+    MCAPI void setContainerChanged$(int slot);
+
+    MCAPI void setContainerMoved$();
+
+    MCAPI void setCustomName$(std::string const& name);
+
+    MCAPI void setItemWithForceBalance$(int slot, class ItemStack const& item, bool forceBalanced);
+
+    MCAPI void stopOpen$(class Player& player);
+
+    MCAPI static class BidirectionalUnorderedMap<::ContainerType, std::string> const& containerTypeMap();
 
     // NOLINTEND
 };

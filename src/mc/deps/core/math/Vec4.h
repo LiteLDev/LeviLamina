@@ -8,13 +8,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static class Vec4 const MAX;
+    // NOLINTEND
 
-    MCAPI static class Vec4 const MIN;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static class Vec4 const& MAX();
 
-    MCAPI static class Vec4 const ONE;
+    MCAPI static class Vec4 const& MIN();
 
-    MCAPI static class Vec4 const ZERO;
+    MCAPI static class Vec4 const& ONE();
+
+    MCAPI static class Vec4 const& ZERO();
 
     // NOLINTEND
 };

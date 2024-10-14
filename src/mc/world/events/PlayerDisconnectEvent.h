@@ -14,4 +14,11 @@ public:
     MCAPI ~PlayerDisconnectEvent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

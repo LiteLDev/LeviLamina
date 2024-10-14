@@ -93,9 +93,18 @@ public:
     // vIndex: 17
     virtual bool isBetaRetailLevel(std::string const& levelId) const = 0;
 
-    MCAPI static std::chrono::nanoseconds const WORLD_SAVE_FLUSH_INTERVAL;
+    // NOLINTEND
 
-    MCAPI static std::chrono::nanoseconds const WORLD_SAVE_MENU_FLUSH_INTERVAL;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI static std::chrono::nanoseconds const& WORLD_SAVE_FLUSH_INTERVAL();
+
+    MCAPI static std::chrono::nanoseconds const& WORLD_SAVE_MENU_FLUSH_INTERVAL();
 
     // NOLINTEND
 };

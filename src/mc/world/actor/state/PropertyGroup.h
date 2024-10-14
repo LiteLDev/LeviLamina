@@ -46,10 +46,6 @@ public:
     MCAPI static std::shared_ptr<class PropertyGroup const>
     loadPropertiesFromJson(class Json::Value const& root, class SemVersion const& engineVersion);
 
-    MCAPI static uint64 const MAX_ENUM_SIZE;
-
-    MCAPI static uint64 const MAX_ENUM_VALUE_SIZE;
-
     // NOLINTEND
 
     // private:
@@ -88,6 +84,22 @@ public:
 
     MCAPI static bool
     _tryGetClientSync(std::string const& propertyName, class Json::Value const& propertyNode, bool& clientSyncOut);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static uint64 const& MAX_ENUM_SIZE();
+
+    MCAPI static uint64 const& MAX_ENUM_VALUE_SIZE();
 
     // NOLINTEND
 };

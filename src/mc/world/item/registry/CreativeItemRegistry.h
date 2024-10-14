@@ -56,8 +56,6 @@ public:
 
     MCAPI static void setCurrentRegistry(std::unique_ptr<class CreativeItemRegistry>&& registry);
 
-    MCAPI static class Bedrock::Threading::Mutex mCreativeListMutex;
-
     // NOLINTEND
 
     // private:
@@ -66,9 +64,21 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::unique_ptr<class CreativeItemRegistry> mCurrentRegistry;
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static class Bedrock::Threading::Mutex& mCreativeListMutex();
+
+    MCAPI static std::unique_ptr<class CreativeItemRegistry>& mCurrentRegistry();
 
     // NOLINTEND
 };

@@ -36,4 +36,13 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool validate$(class Mob& mob) const;
+
+    // NOLINTEND
 };

@@ -498,14 +498,6 @@ public:
 
     MCAPI void updateDimensionBlockSourceTick();
 
-    MCAPI static ::LimboEntitiesVersion const CurrentLimboEntitiesVersion;
-
-    MCAPI static uint const LOW_CPU_PACKET_BLOCK_LIMIT;
-
-    MCAPI static float const MOON_BRIGHTNESS_PER_PHASE[];
-
-    MCAPI static std::chrono::seconds const STRUCTURE_PRUNE_INTERVAL;
-
     // NOLINTEND
 
     // protected:
@@ -523,6 +515,123 @@ public:
     MCAPI void _sendBlocksChangedPackets();
 
     MCAPI void _tickEntityChunkMoves();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForBedrockEnableNonOwnerReferences();
+
+    MCAPI static void** $vftableForIDimension();
+
+    MCAPI static void** $vftableForLevelListener();
+
+    MCAPI static void** $vftableForSavedData();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI std::unique_ptr<class ChunkBuildOrderPolicyBase> _createChunkBuildOrderPolicy$();
+
+    MCAPI void deserialize$(class CompoundTag const& tag);
+
+    MCAPI class Actor* fetchEntity$(struct ActorUniqueID actorID, bool getRemoved) const;
+
+    MCAPI void flushLevelChunkGarbageCollector$();
+
+    MCAPI void forEachPlayer$(std::function<bool(class Player&)> callback) const;
+
+    MCAPI bool forceCheckAllNeighChunkSavedStat$() const;
+
+    MCAPI class BiomeRegistry const& getBiomeRegistry$() const;
+
+    MCAPI class BiomeRegistry& getBiomeRegistry$();
+
+    MCAPI class mce::Color getBrightnessDependentFogColor$(class mce::Color const& baseColor, float brightness) const;
+
+    MCAPI class DimensionBrightnessRamp const& getBrightnessRamp$() const;
+
+    MCAPI short getCloudHeight$() const;
+
+    MCAPI class HashedString getDefaultBiome$() const;
+
+    MCAPI DimensionType getDimensionId$() const;
+
+    MCAPI class BaseLightTextureImageBuilder* getLightTextureImageBuilder$() const;
+
+    MCAPI class BlockPos getSpawnPos$() const;
+
+    MCAPI int getSpawnYPosition$() const;
+
+    MCAPI float getSunIntensity$(float a, class Vec3 const& viewVector, float minInfluenceAngle) const;
+
+    MCAPI float getTimeOfDay$(int time, float a) const;
+
+    MCAPI bool hasGround$() const;
+
+    MCAPI bool hasPrecipitationFog$() const;
+
+    MCAPI void init$(class br::worldgen::StructureSetRegistry const& structureSetRegistry);
+
+    MCAPI void initializeWithLevelStorageManager$(class LevelStorageManager& levelStorageManager);
+
+    MCAPI bool is2DPositionRelevantForPlayer$(class BlockPos const& position, class Player& player) const;
+
+    MCAPI bool isActorRelevantForPlayer$(class Player& player, class Actor const& actor) const;
+
+    MCAPI bool isDay$() const;
+
+    MCAPI bool isNaturalDimension$() const;
+
+    MCAPI bool isValidSpawn$(int x, int z) const;
+
+    MCAPI bool mayRespawnViaBed$() const;
+
+    MCAPI void onBlockChanged$(
+        class BlockSource&                  source,
+        class BlockPos const&               pos,
+        uint                                layer,
+        class Block const&                  block,
+        class Block const&                  oldBlock,
+        int                                 updateFlags,
+        struct ActorBlockSyncMessage const* syncMsg,
+        ::BlockChangedEventTarget           eventTarget,
+        class Actor*                        blockChangeSource
+    );
+
+    MCAPI void onBlockEvent$(class BlockSource& source, int x, int y, int z, int b0, int b1);
+
+    MCAPI void onChunkLoaded$(class ChunkSource& source, class LevelChunk& lc);
+
+    MCAPI void onLevelDestruction$(std::string const&);
+
+    MCAPI void sendBroadcast$(class Packet const& packet, class Player* except);
+
+    MCAPI void
+    sendPacketForPosition$(class BlockPos const& position, class Packet const& packet, class Player const* except);
+
+    MCAPI void serialize$(class CompoundTag& tag) const;
+
+    MCAPI bool showSky$() const;
+
+    MCAPI void startLeaveGame$();
+
+    MCAPI void tick$();
+
+    MCAPI void tickRedstone$();
+
+    MCAPI static ::LimboEntitiesVersion const& CurrentLimboEntitiesVersion();
+
+    MCAPI static uint const& LOW_CPU_PACKET_BLOCK_LIMIT();
+
+    MCAPI static ::ll::CArrayT<float const>& MOON_BRIGHTNESS_PER_PHASE();
+
+    MCAPI static std::chrono::seconds const& STRUCTURE_PRUNE_INTERVAL();
 
     // NOLINTEND
 };

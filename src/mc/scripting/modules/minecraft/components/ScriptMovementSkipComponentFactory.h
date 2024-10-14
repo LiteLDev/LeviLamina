@@ -36,6 +36,21 @@ public:
     virtual bool hasComponent(class WeakEntityRef entity) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActorComponent> createComponent$(
+        class WeakEntityRef                       entity,
+        class Scripting::WeakLifetimeScope const& scope,
+        std::string const&                        id
+    );
+
+    MCAPI bool hasComponent$(class WeakEntityRef entity) const;
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

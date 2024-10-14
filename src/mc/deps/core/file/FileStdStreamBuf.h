@@ -71,6 +71,43 @@ public:
     MCAPI int _flushoutput();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void _Lock$();
+
+    MCAPI void _Unlock$();
+
+    MCAPI void imbue$(std::locale const&);
+
+    MCAPI int overflow$(int c);
+
+    MCAPI int pbackfail$(int);
+
+    MCAPI std::fpos<struct _Mbstatet> seekoff$(int64, int, int);
+
+    MCAPI std::fpos<struct _Mbstatet> seekpos$(std::fpos<struct _Mbstatet>, int);
+
+    MCAPI std::streambuf* setbuf$(char*, int64);
+
+    MCAPI int64 showmanyc$();
+
+    MCAPI int sync$();
+
+    MCAPI int uflow$();
+
+    MCAPI int underflow$();
+
+    MCAPI int64 xsgetn$(char*, int64);
+
+    MCAPI int64 xsputn$(char const*, int64);
+
+    // NOLINTEND
 };
 
 }; // namespace Core

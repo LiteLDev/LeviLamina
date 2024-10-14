@@ -12,9 +12,10 @@ public:
     LoadingProgressTickingSystem(LoadingProgressTickingSystem const&);
     LoadingProgressTickingSystem();
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::vector<class ChunkPos> const mChunksNeededForLoadOffsets;
+    MCAPI static std::vector<class ChunkPos> const& mChunksNeededForLoadOffsets();
 
     // NOLINTEND
 };

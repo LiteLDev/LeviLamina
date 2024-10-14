@@ -47,4 +47,35 @@ public:
     MCAPI static bool isDiggable(class Block const& block);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool carve$(
+        class BlockVolume&            blocks,
+        class BiomeSource const&      localBiomeSource,
+        class Random&                 random,
+        class ChunkPos const&         pos,
+        class Vec3 const&             startPos,
+        class Vec3 const&             originalStartPos,
+        int                           x0,
+        int                           x1,
+        int                           y0,
+        int                           y1,
+        int                           z0,
+        int                           z1,
+        float                         rad,
+        float                         yRad,
+        gsl::span<float const>        rs,
+        struct WorldGenContext const& context
+    ) const;
+
+    // NOLINTEND
 };

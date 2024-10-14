@@ -34,4 +34,13 @@ public:
     MCAPI void _use(bool& result, class ItemStack& item, class Player& player);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void _initializeComponent$();
+
+    // NOLINTEND
 };

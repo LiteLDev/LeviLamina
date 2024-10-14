@@ -43,13 +43,25 @@ public:
 
     MCAPI void writeToLevelStorage();
 
-    MCAPI static std::string const EVENTS_ENABLED_STRING;
-
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI void _onSaveEvent(class LevelStorage&);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI static std::string const& EVENTS_ENABLED_STRING();
 
     // NOLINTEND
 };

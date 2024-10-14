@@ -29,6 +29,13 @@ public:
         MCAPI ~PendingSubscribe();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     struct PendingUnsubscribe {
@@ -51,6 +58,18 @@ public:
         MCAPI Slot(struct ScriptModuleMinecraft::ScriptTickSignal::Slot&&);
 
         MCAPI ~Slot();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        MCAPI void dtor$();
 
         // NOLINTEND
     };

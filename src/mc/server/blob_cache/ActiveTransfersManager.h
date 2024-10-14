@@ -38,6 +38,13 @@ public:
         MCAPI ~TransferTracker();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -75,6 +82,20 @@ public:
     // NOLINTBEGIN
     MCAPI std::shared_ptr<class ClientBlobCache::Server::Blob>
           rememberBlob(uint64 id, std::string& data, bool isChunkInTickRange);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

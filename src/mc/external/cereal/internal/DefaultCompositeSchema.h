@@ -77,6 +77,48 @@ public:
     MCAPI struct cereal::SchemaDescription makeDescriptionForType(entt::meta_type const& type) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void
+    addMember$(std::string_view name, std::unique_ptr<class cereal::internal::BasicSchema> member, bool required);
+
+    MCAPI void addParent$(std::unique_ptr<class cereal::internal::BasicSchema> parent);
+
+    MCAPI void addSetter$(
+        std::unique_ptr<class cereal::internal::BasicSchema> setter,
+        entt::meta_type (*resolve)(entt::meta_ctx const&)
+    );
+
+    MCAPI void customError$(std::string const& memberName, std::string customMessage);
+
+    MCAPI void doLoad$(
+        struct cereal::SchemaReader&     value,
+        entt::meta_any&                  any,
+        entt::meta_any const&            udata,
+        class cereal::SerializerContext& context
+    ) const;
+
+    MCAPI void
+    doSave$(struct cereal::SchemaWriter& value, entt::meta_any const& any, class cereal::SerializerContext& context)
+        const;
+
+    MCAPI void unpack$(
+        std::vector<std::reference_wrapper<struct cereal::internal::BasicSchema::SetterDescriptor const>>& setters,
+        entt::dense_map<
+            std::string_view,
+            std::reference_wrapper<struct cereal::internal::BasicSchema::MemberDescriptor const>>& members
+    ) const;
+
+    // NOLINTEND
 };
 
 }; // namespace cereal::internal

@@ -51,4 +51,22 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI int getRedstoneSignal$(int signal) const;
+
+    MCAPI int getSignalForData$(int data) const;
+
+    MCAPI int getSignalStrength$(class BlockSource& region, class BlockPos const& pos) const;
+
+    // NOLINTEND
 };

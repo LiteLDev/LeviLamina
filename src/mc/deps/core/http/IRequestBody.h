@@ -31,6 +31,13 @@ public:
     MCVAPI ~IRequestBody();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::Http::Internal

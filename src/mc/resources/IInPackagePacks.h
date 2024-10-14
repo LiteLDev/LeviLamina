@@ -30,6 +30,16 @@ public:
         MCAPI MetaData(class Core::Path const& path, bool isHidden, ::PackCategory packCategory);
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        // NOLINTEND
     };
 
 public:

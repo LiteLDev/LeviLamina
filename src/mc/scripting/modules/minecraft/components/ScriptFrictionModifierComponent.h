@@ -19,9 +19,18 @@ public:
     // vIndex: 1
     virtual bool _isValid() const;
 
-    MCAPI static std::string const sClassName;
+    // NOLINTEND
 
-    MCAPI static char const* sComponentId;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool _isValid$() const;
+
+    MCAPI static std::string const& sClassName();
+
+    MCAPI static char const* const& sComponentId();
 
     // NOLINTEND
 };

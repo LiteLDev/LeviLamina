@@ -44,6 +44,28 @@ public:
     MCAPI explicit DispatcherProcess(std::shared_ptr<class Bedrock::Http::DispatcherProcess> childProcess);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void initialize$();
+
+    MCAPI void resume$();
+
+    MCAPI void shutdown$();
+
+    MCAPI void suspend$();
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::Http

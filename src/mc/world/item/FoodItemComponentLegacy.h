@@ -31,6 +31,13 @@ public:
         MCAPI ~Effect();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -83,6 +90,31 @@ public:
     MCAPI void _loadEffects(class Json::Value const& effectsData);
 
     MCAPI void _loadRemoveEffects(class Json::Value const& removeEffectsData);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool canAlwaysEat$() const;
+
+    MCAPI class Item const* eatItem$(class ItemStack& instance, class Actor& actor, class Level& level);
+
+    MCAPI int getNutrition$() const;
+
+    MCAPI float getSaturationModifier$() const;
+
+    MCAPI bool use$(class ItemStack& instance, class Player& player);
+
+    MCAPI class Item const* useTimeDepleted$(
+        ::ItemUseMethod& itemUseMethod,
+        class ItemStack const&,
+        class ItemStack& instance,
+        class Player&    player,
+        class Level&     level
+    );
 
     // NOLINTEND
 };

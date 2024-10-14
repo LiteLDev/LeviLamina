@@ -55,7 +55,37 @@ public:
 
     MCAPI IceBombItem(std::string const& nameId, int id);
 
-    MCAPI static class HashedString const ICE_BOMB_COOLDOWN;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class Actor* createProjectileActor$(
+        class BlockSource& region,
+        class ItemStack const&,
+        class Vec3 const& pos,
+        class Vec3 const& direction
+    ) const;
+
+    MCAPI bool
+    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+
+    MCAPI int getCooldownTime$() const;
+
+    MCAPI class HashedString const& getCooldownType$() const;
+
+    MCAPI bool isThrowable$() const;
+
+    MCAPI class ItemStack& use$(class ItemStack& item, class Player& player) const;
+
+    MCAPI static class HashedString const& ICE_BOMB_COOLDOWN();
 
     // NOLINTEND
 };

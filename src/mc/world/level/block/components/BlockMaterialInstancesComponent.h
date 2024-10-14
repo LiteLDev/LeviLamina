@@ -21,4 +21,11 @@ public:
     MCAPI ::BlockRenderLayer getRenderLayer() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };

@@ -40,6 +40,13 @@ public:
         MCAPI ~BlockCustomComponentAfterEventQueueHandle();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -92,6 +99,18 @@ public:
     MCAPI void _onStepOff(struct BlockEvents::BlockStepOffEvent const& eventData) const;
 
     MCAPI void _onStepOn(struct BlockEvents::BlockStepOnEvent const& eventData) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
     // NOLINTEND
 };

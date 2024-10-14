@@ -56,4 +56,38 @@ public:
     MCAPI explicit ClassroomModeListener(class IMinecraftEventing& eventing);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void onAreaChanged$(class BlockSource& source, class BlockPos const& min, class BlockPos const& max);
+
+    MCAPI void onBlockChanged$(
+        class BlockSource&                  source,
+        class BlockPos const&               pos,
+        uint                                layer,
+        class Block const&                  block,
+        class Block const&                  oldBlock,
+        int                                 updateFlags,
+        struct ActorBlockSyncMessage const* syncMsg,
+        ::BlockChangedEventTarget           eventTarget,
+        class Actor*                        blockChangeSource
+    );
+
+    MCAPI void onChunkLoaded$(class ChunkSource& source, class LevelChunk& lc);
+
+    MCAPI void onChunkUnloaded$(class LevelChunk& lc);
+
+    MCAPI void onEntityAdded$(class Actor& entity);
+
+    MCAPI void onEntityRemoved$(class Actor& entity);
+
+    // NOLINTEND
 };

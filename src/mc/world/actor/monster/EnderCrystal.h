@@ -67,7 +67,31 @@ public:
     MCAPI void
     setCrystalDamagedCallback(std::function<void(class EnderCrystal&, class ActorDamageSource const&)> onDamaged);
 
-    MCAPI static float const HEAL_DISTANCE;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+
+    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+
+    MCAPI float getShadowRadius$() const;
+
+    MCAPI bool isInvulnerableTo$(class ActorDamageSource const& source) const;
+
+    MCAPI void normalTick$();
+
+    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI static float const& HEAL_DISTANCE();
 
     // NOLINTEND
 };

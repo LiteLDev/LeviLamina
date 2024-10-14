@@ -47,7 +47,24 @@ public:
 
     MCAPI class RecipeIngredient const& getTemplateIngredient() const;
 
-    MCAPI static class mce::UUID const ID;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::vector<class ItemInstance> const&
+          assemble$(class CraftingContainer& craftingContainer, class CraftingContext&) const;
+
+    MCAPI bool matches$(class CraftingContainer const& craftingContainer, class CraftingContext const&) const;
+
+    MCAPI static class mce::UUID const& ID();
 
     // NOLINTEND
 };

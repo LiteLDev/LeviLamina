@@ -23,13 +23,19 @@ public:
 
     MCAPI std::string const toString() const;
 
-    MCAPI static class PositionTrackingId const INVALID_ID;
-
     // NOLINTEND
 
-    // protected:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static uint sNextId;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI static class PositionTrackingId const& INVALID_ID();
+
+    MCAPI static uint& sNextId();
 
     // NOLINTEND
 };

@@ -28,7 +28,19 @@ public:
 
     MCAPI static class HashedString const& getIdentifier();
 
-    MCAPI static std::array<::ArmorSlot, 1> const VALID_SLOTS;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI static std::array<::ArmorSlot, 1> const& VALID_SLOTS();
 
     // NOLINTEND
 };

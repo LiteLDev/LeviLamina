@@ -6,8 +6,9 @@
 #include "mc/common/WeakPtr.h"
 
 namespace CopperSlabInternal {
+// thunks
 // NOLINTBEGIN
-MCAPI extern class WeakPtr<class BlockLegacy const> BlockLegacy_nullptr;
+MCAPI class WeakPtr<class BlockLegacy const>& BlockLegacy_nullptr();
 // NOLINTEND
 
 }; // namespace CopperSlabInternal

@@ -45,8 +45,6 @@ public:
 
     MCAPI static bool validRange(int input, int low, int high, class CommandOutput& output);
 
-    MCAPI static std::string const WILDCARD_TOKEN;
-
     // NOLINTEND
 
     // protected:
@@ -64,6 +62,24 @@ public:
     MCAPI static bool isWildcard(class CommandSelectorBase const& selector);
 
     MCAPI static bool validData(int input, ushort& data, class CommandOutput& output);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI bool collectOptionalArguments$();
+
+    MCAPI static std::string const& WILDCARD_TOKEN();
 
     // NOLINTEND
 };

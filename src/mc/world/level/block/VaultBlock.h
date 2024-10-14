@@ -58,4 +58,33 @@ public:
     MCAPI VaultBlock(std::string const& nameId, int id);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI ::Flip getFaceFlip$(uchar face, class Block const& block) const;
+
+    MCAPI struct Brightness getLightEmission$(class Block const& block) const;
+
+    MCAPI uchar getMappedFace$(uchar face, class Block const& block) const;
+
+    MCAPI class Block const&
+    getPlacementBlock$(class Actor const& by, class BlockPos const& pos, uchar, class Vec3 const&, int) const;
+
+    MCAPI class Block const& getRenderBlock$() const;
+
+    MCAPI int getVariant$(class Block const& block) const;
+
+    MCAPI bool isInteractiveBlock$() const;
+
+    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar) const;
+
+    // NOLINTEND
 };

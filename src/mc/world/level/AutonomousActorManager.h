@@ -39,10 +39,6 @@ public:
 
     MCAPI ~AutonomousActorManager();
 
-    MCAPI static std::string_view const AUTONOMOUS_ACTOR_KEY;
-
-    MCAPI static std::string_view const AUTONOMOUS_ACTOR_LIST_KEY;
-
     // NOLINTEND
 
     // private:
@@ -56,6 +52,22 @@ public:
     MCAPI void _saveAllAutonomousActors(class LevelStorage& levelStorage);
 
     MCAPI static void _deduplicateDuplicateActorsFromList(class ListTag& listTag);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static std::string_view const& AUTONOMOUS_ACTOR_KEY();
+
+    MCAPI static std::string_view const& AUTONOMOUS_ACTOR_LIST_KEY();
 
     // NOLINTEND
 };

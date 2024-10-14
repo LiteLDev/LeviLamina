@@ -62,4 +62,26 @@ public:
     MCAPI void preAiStep();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool canAttack$(class Actor* actor, bool allowInvulnerable) const;
+
+    MCAPI float getDamageAfterEnchantReduction$(class ActorDamageSource const& source, float damage) const;
+
+    MCAPI class Vec3 getFiringPos$() const;
+
+    MCAPI void handleEntityEvent$(::ActorEvent id, int data);
+
+    MCAPI void updateEntitySpecificMolangVariables$(class RenderParams& renderParams);
+
+    // NOLINTEND
 };

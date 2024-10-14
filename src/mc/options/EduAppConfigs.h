@@ -14,7 +14,12 @@ public:
     // vIndex: 0
     virtual ~EduAppConfigs() = default;
 
-    MCAPI static struct PackIdVersion const EDUResourcePack;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static struct PackIdVersion const& EDUResourcePack();
 
     // NOLINTEND
 };

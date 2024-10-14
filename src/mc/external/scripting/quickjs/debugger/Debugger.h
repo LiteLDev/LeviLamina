@@ -73,6 +73,29 @@ public:
     MCAPI static uint64 TransportWrite(void* udata, char const* buffer, uint64 length);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool closed$() const;
+
+    MCAPI bool connect$(std::string const& host, ushort port);
+
+    MCAPI void disconnect$();
+
+    MCAPI bool isListening$() const;
+
+    MCAPI bool listen$(ushort port);
+
+    MCAPI void pollConnections$();
+
+    MCAPI void sendLog$(::Scripting::DebuggerLogLevel logLevel, std::string_view message) const;
+
+    MCAPI void sendMessage$(std::string const& message) const;
+
+    // NOLINTEND
 };
 
 }; // namespace Scripting::QuickJS

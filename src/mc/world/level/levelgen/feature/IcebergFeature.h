@@ -71,4 +71,13 @@ public:
     MCAPI float signedDistanceEllipse(int xo, int zo, class BlockPos const& origin, int a, int c, float angle) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool place$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    // NOLINTEND
 };

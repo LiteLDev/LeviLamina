@@ -26,4 +26,20 @@ public:
     MCAPI InstantaneousMobEffect(uint, std::string const&, std::string const&, bool, int, int);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool isDurationEffectTick$(int remainingDuration, int) const;
+
+    MCAPI bool isInstantaneous$() const;
+
+    // NOLINTEND
 };

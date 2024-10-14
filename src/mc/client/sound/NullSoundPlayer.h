@@ -96,4 +96,59 @@ public:
     virtual std::optional<struct LoopingSoundAttributes> tryGetLoopingSoundAttributes(uint64) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void fadeOut$(uint64, float);
+
+    MCAPI void fadeToStopMusic$(float);
+
+    MCAPI class Core::PathBuffer<std::string> const getCurrentlyPlayingMusicName$();
+
+    MCAPI bool getItem$(std::string const&, class Core::Path const&, class SoundItem&) const;
+
+    MCAPI bool isLoadingMusic$() const;
+
+    MCAPI bool isPlayingMusic$(class Core::Path const&) const;
+
+    MCAPI bool isPlayingMusicEvent$(std::string const&) const;
+
+    MCAPI bool isPlayingSound$(uint64) const;
+
+    MCAPI bool isPlayingSound$(class Core::Path const&) const;
+
+    MCAPI uint64 play$(std::string const&, class Vec3 const&, float, float);
+
+    MCAPI uint64 playAttached$(std::string const&, std::function<void(struct SoundInstanceProperties&)>&&);
+
+    MCAPI void playMusic$(std::string const&, float, uint&);
+
+    MCAPI void playMusic$(std::string const&, float);
+
+    MCAPI uint64 playUI$(std::string const&, float, float);
+
+    MCAPI uint64 registerLoop$(std::string const&, std::function<void(struct LoopingSoundState&)>, float, float);
+
+    MCAPI void setMusicVolumeMultiplier$(float);
+
+    MCAPI void stop$(std::string const&);
+
+    MCAPI void stop$(uint64);
+
+    MCAPI void stopAllDelayedSoundActions$();
+
+    MCAPI void stopAllSounds$();
+
+    MCAPI void stopMusic$();
+
+    MCAPI std::optional<struct LoopingSoundAttributes> tryGetLoopingSoundAttributes$(uint64) const;
+
+    MCAPI std::optional<struct PlayingSoundAttributes> tryGetPlayingSoundAttributes$(uint64) const;
+
+    MCAPI void unregisterLoop$(uint64, bool);
+
+    // NOLINTEND
 };

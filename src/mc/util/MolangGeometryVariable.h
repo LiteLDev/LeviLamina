@@ -10,4 +10,11 @@ public:
     MCAPI ~MolangGeometryVariable();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

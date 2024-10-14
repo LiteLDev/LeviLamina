@@ -91,4 +91,51 @@ public:
     MCAPI bool _randomWalk(class BlockSource& region, int& xx, int& yy, int& zz, int j) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void _addHardCodedBlockComponents$(class Experiments const& experiments);
+
+    MCAPI class ItemInstance asItemInstance$(class Block const& block, class BlockActor const*) const;
+
+    MCAPI bool canBeFertilized$(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
+
+    MCAPI bool canContainLiquid$() const;
+
+    MCAPI class AABB
+    getCollisionShape$(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI class mce::Color
+    getMapColor$(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
+
+    MCAPI class AABB const& getOutline$(
+        class Block const& block,
+        class IConstBlockSource const&,
+        class BlockPos const& pos,
+        class AABB&           bufferValue
+    ) const;
+
+    MCAPI ::BlockRenderLayer getRenderLayer$() const;
+
+    MCAPI ::BlockRenderLayer getRenderLayer$(class Block const&, class BlockSource&, class BlockPos const&) const;
+
+    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool mayPlaceOn$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool
+    onFertilized$(class BlockSource& region, class BlockPos const& pos, class Actor*, ::FertilizerType) const;
+
+    MCAPI class Vec3 randomlyModifyPosition$(class BlockPos const& pos) const;
+
+    // NOLINTEND
 };

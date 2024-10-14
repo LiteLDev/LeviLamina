@@ -23,4 +23,13 @@ public:
     MCAPI void createMonument(class Dimension& dim, class Random& random, int x, int z);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool postProcess$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+
+    // NOLINTEND
 };

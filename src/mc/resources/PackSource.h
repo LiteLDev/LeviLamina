@@ -45,4 +45,17 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI ::PackOrigin getPackOrigin$() const;
+
+    MCAPI ::PackType getPackType$() const;
+
+    // NOLINTEND
 };

@@ -24,4 +24,17 @@ public:
     virtual int getTickInterval(int amplification) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI float getAmount$(int amplification, float scale) const;
+
+    MCAPI int getTickInterval$(int amplification) const;
+
+    MCAPI bool shouldBuff$(int remainingDuration, int amplification) const;
+
+    // NOLINTEND
 };

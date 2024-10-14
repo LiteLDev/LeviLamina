@@ -59,6 +59,13 @@ public:
         MCAPI ~UnhandledPromiseRejectionEntry();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -185,6 +192,18 @@ public:
     );
 
     MCAPI static int _moduleInitializer(struct JSContext* ctx, struct JSModuleDef* jsModuleDef);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

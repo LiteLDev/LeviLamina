@@ -14,4 +14,11 @@ public:
     MCAPI ~MolangContextVariableMapWithCleanup();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

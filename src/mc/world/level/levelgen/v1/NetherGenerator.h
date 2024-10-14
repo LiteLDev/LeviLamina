@@ -111,4 +111,55 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForChunkSource();
+
+    MCAPI static void** $vftableForIPreliminarySurfaceProvider();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void decorateWorldGenLoadChunk$(
+        class Biome const&       biome,
+        class LevelChunk&        lc,
+        class BlockVolumeTarget& target,
+        class Random&            random,
+        class ChunkPos const&    pos
+    ) const;
+
+    MCAPI void decorateWorldGenPostProcess$(
+        class Biome const& biome,
+        class LevelChunk&  lc,
+        class BlockSource& source,
+        class Random&      random
+    ) const;
+
+    MCAPI class BlockPos findSpawnPosition$() const;
+
+    MCAPI class BiomeArea getBiomeArea$(class BoundingBox const& area, uint scale) const;
+
+    MCAPI class BiomeSource const& getBiomeSource$() const;
+
+    MCAPI struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions$() const;
+
+    MCAPI void loadChunk$(class LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad);
+
+    MCAPI bool postProcess$(class ChunkViewSource& neighborhood);
+
+    MCAPI void prepareAndComputeHeights$(
+        class BlockVolume&    box,
+        class ChunkPos const& chunkPos,
+        std::vector<short>&   ZXheights,
+        bool                  factorInBeardsAndShavers,
+        int                   skipTopN
+    );
+
+    MCAPI void prepareHeights$(class BlockVolume& box, class ChunkPos const& chunkPos, bool factorInBeardsAndShavers);
+
+    // NOLINTEND
 };

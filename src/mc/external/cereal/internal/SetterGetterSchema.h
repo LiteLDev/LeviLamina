@@ -63,6 +63,37 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void doLoad$(
+        struct cereal::SchemaReader&     reader,
+        entt::meta_any&                  any,
+        entt::meta_any const&            udata,
+        class cereal::SerializerContext& context
+    ) const;
+
+    MCAPI void
+    doSave$(struct cereal::SchemaWriter& value, entt::meta_any const& any, class cereal::SerializerContext& context)
+        const;
+
+    MCAPI bool doVerifyInitialization$(entt::meta_any const& any) const;
+
+    MCAPI void enumMapping$(class cereal::SerializerEnumMapping serializerEnumMapping);
+
+    MCAPI class cereal::SerializerEnumMapping const* enumMapping$() const;
+
+    MCAPI struct cereal::SchemaDescription makeDescription$() const;
+
+    // NOLINTEND
 };
 
 }; // namespace cereal::internal

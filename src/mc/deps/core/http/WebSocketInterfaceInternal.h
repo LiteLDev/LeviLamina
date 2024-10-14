@@ -44,6 +44,24 @@ public:
     virtual long disconnect(gsl::not_null<struct HC_WEBSOCKET_OBSERVER*> websocket, ::HCWebSocketCloseStatus status);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI long
+    connect$(char const*, char const*, gsl::not_null<struct HC_WEBSOCKET_OBSERVER*>, gsl::not_null<struct XAsyncBlock*>, struct HC_PERFORM_ENV*);
+
+    MCAPI long disconnect$(gsl::not_null<struct HC_WEBSOCKET_OBSERVER*> websocket, ::HCWebSocketCloseStatus status);
+
+    MCAPI long
+        sendBinaryMessage$(gsl::not_null<struct HC_WEBSOCKET_OBSERVER*>, gsl::span<uchar const>, gsl::not_null<struct XAsyncBlock*>);
+
+    MCAPI long
+        sendMessage$(gsl::not_null<struct HC_WEBSOCKET_OBSERVER*>, std::string_view, gsl::not_null<struct XAsyncBlock*>);
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::Http

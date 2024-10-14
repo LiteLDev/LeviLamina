@@ -35,17 +35,31 @@ public:
 
     MCAPI class Core::PathBuffer<std::string> getWorldsPath() const;
 
-    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const ARCHIVE_DIR;
+    // NOLINTEND
 
-    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const HOME_DIR;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
 
-    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const PERSONA_TEST_DIR;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const REALM_WORLDS_DIR;
+    MCAPI void dtor$();
 
-    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const RESOURCE_PACKS_DIR;
+    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const& ARCHIVE_DIR();
 
-    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const WORLDS_DIR;
+    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const& HOME_DIR();
+
+    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const& PERSONA_TEST_DIR();
+
+    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const& REALM_WORLDS_DIR();
+
+    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const& RESOURCE_PACKS_DIR();
+
+    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const& WORLDS_DIR();
 
     // NOLINTEND
 };

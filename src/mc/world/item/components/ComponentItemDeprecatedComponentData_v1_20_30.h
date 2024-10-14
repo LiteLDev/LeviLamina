@@ -16,4 +16,11 @@ public:
     MCAPI ~ComponentItemDeprecatedComponentData_v1_20_30();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

@@ -16,6 +16,13 @@ public:
     MCAPI ~FlatFileSearchResult();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace Core

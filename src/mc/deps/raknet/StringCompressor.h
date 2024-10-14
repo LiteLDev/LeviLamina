@@ -19,11 +19,12 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class RakNet::StringCompressor* instance;
+    MCAPI static class RakNet::StringCompressor*& instance();
 
-    MCAPI static int referenceCount;
+    MCAPI static int& referenceCount();
 
     // NOLINTEND
 };

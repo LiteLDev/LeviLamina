@@ -13,9 +13,10 @@ public:
     ItemAcquisitionMethodMap(ItemAcquisitionMethodMap const&);
     ItemAcquisitionMethodMap();
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class BidirectionalUnorderedMap<::ItemAcquisitionMethod, std::string> const mMap;
+    MCAPI static class BidirectionalUnorderedMap<::ItemAcquisitionMethod, std::string> const& mMap();
 
     // NOLINTEND
 };

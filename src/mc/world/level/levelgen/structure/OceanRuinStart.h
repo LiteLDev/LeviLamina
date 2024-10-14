@@ -20,4 +20,11 @@ public:
     MCAPI void createRuin(class Dimension& dim, class Random& random, int x, int z);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };

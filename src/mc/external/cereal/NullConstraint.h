@@ -33,6 +33,19 @@ public:
     virtual struct cereal::internal::ConstraintDescription description() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI struct cereal::internal::ConstraintDescription description$() const;
+
+    MCAPI void doValidate$(entt::meta_any const&, class cereal::SerializerContext&) const;
+
+    // NOLINTEND
 };
 
 }; // namespace cereal

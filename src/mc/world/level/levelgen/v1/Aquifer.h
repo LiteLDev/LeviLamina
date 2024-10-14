@@ -75,9 +75,15 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::array<std::pair<int, int>, 13> const chunkOffset;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI static std::array<std::pair<int, int>, 13> const& chunkOffset();
 
     // NOLINTEND
 };

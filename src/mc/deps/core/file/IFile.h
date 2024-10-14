@@ -32,6 +32,13 @@ public:
     virtual class Core::Result getSize(uint64* pSize) = 0;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };
 
 }; // namespace Core

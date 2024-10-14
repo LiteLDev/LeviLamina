@@ -96,4 +96,41 @@ public:
     MCAPI void _playBottleSound(class BlockSource& region, class BlockPos const& pos) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void animateTickBedrockLegacy$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+
+    MCAPI void executeEvent$(
+        class BlockSource&    region,
+        class BlockPos const& pos,
+        class Block const&,
+        std::string const& eventName,
+        class Actor&       sourceEntity
+    ) const;
+
+    MCAPI int getComparatorSignal$(class BlockSource&, class BlockPos const&, class Block const& block, uchar) const;
+
+    MCAPI uchar getMappedFace$(uchar face, class Block const& block) const;
+
+    MCAPI class Block const* getNextBlockPermutation$(class Block const& currentBlock) const;
+
+    MCAPI int getVariant$(class Block const& block) const;
+
+    MCAPI bool hasComparatorSignal$() const;
+
+    MCAPI class Block const*
+    playerWillDestroy$(class Player& player, class BlockPos const& pos, class Block const& block) const;
+
+    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar) const;
+
+    // NOLINTEND
 };

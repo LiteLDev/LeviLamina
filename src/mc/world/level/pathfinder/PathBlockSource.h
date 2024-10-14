@@ -33,4 +33,23 @@ public:
     virtual bool isSolidBlock(class BlockPos const& blockPos) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI bool isInLava$() const;
+
+    MCAPI bool isInWater$() const;
+
+    MCAPI bool isLavaBlock$(class BlockPos const& blockPos) const;
+
+    MCAPI bool isSolidBlock$(class BlockPos const& blockPos) const;
+
+    MCAPI bool isWaterBlock$(class BlockPos const& blockPos) const;
+
+    // NOLINTEND
 };

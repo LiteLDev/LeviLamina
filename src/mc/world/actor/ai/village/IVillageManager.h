@@ -31,4 +31,13 @@ public:
     virtual std::weak_ptr<class Village> getVillageByID(class mce::UUID const& villageID) const = 0;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

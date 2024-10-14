@@ -66,4 +66,38 @@ public:
     MCAPI void _displayHeightLimitErrorMessages(class Actor& actor, int y, bool displayClientSideOnly) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI bool
+    _calculatePlacePos$(class ItemStackBase& instance, class Actor& entity, uchar& face, class BlockPos& pos) const;
+
+    MCAPI class InteractionResult
+    _useOn$(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const& clickPos)
+        const;
+
+    MCAPI std::string
+          buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
+
+    MCAPI struct ResolvedItemIconInfo getIconInfo$(class ItemStackBase const& item, int, bool) const;
+
+    MCAPI int getIconYOffset$() const;
+
+    MCAPI struct Brightness getLightEmission$(int data) const;
+
+    MCAPI bool isDestructive$(int auxValue) const;
+
+    MCAPI bool isValidAuxValue$(int auxValue) const;
+
+    // NOLINTEND
 };

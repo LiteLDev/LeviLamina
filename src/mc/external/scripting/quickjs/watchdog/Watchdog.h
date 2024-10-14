@@ -65,6 +65,30 @@ public:
     MCAPI static int _timeoutHandler(struct JSContext* ctx, void* runtimeOpaque);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void beginTiming$(struct Scripting::ContextId contextId);
+
+    MCAPI std::chrono::microseconds collectTotalFrameTime$() const;
+
+    MCAPI void endFrame$();
+
+    MCAPI void endTiming$(struct Scripting::ContextId contextId);
+
+    MCAPI void resetTimings$();
+
+    MCAPI void setWatchdogEventHandler$(std::function<void(struct Scripting::WatchdogEvent)> watchdogEventHandler);
+
+    // NOLINTEND
 };
 
 }; // namespace Scripting::QuickJS

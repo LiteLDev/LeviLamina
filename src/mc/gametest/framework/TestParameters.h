@@ -26,6 +26,13 @@ public:
     MCAPI ~TestParameters();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace gametest

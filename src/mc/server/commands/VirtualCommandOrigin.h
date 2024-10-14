@@ -122,4 +122,62 @@ public:
     load(class CompoundTag const& tag, class ServerLevel& level);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool canUseAbility$(::AbilitiesIndex abilityIndex) const;
+
+    MCAPI bool canUseCommandsWithoutCheatsEnabled$() const;
+
+    MCAPI std::unique_ptr<class CommandOrigin> clone$() const;
+
+    MCAPI class BlockPos getBlockPosition$() const;
+
+    MCAPI class Dimension* getDimension$() const;
+
+    MCAPI class Actor* getEntity$() const;
+
+    MCAPI class Vec3 const getExecutePosition$(int version, class CommandPositionFloat const& commandPosition) const;
+
+    MCAPI struct CommandOriginIdentity getIdentity$() const;
+
+    MCAPI class Level* getLevel$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI ::CommandOriginType getOriginType$() const;
+
+    MCAPI class CommandOrigin const& getOutputReceiver$() const;
+
+    MCAPI ::CommandPermissionLevel getPermissionsLevel$() const;
+
+    MCAPI std::string const& getRequestId$() const;
+
+    MCAPI std::optional<class Vec2> getRotation$() const;
+
+    MCAPI class NetworkIdentifier const& getSourceId$() const;
+
+    MCAPI class Vec3 getWorldPosition$() const;
+
+    MCAPI bool hasChatPerms$() const;
+
+    MCAPI bool hasTellPerms$() const;
+
+    MCAPI bool isSelectorExpansionAllowed$() const;
+
+    MCAPI bool isValid$() const;
+
+    MCAPI class CompoundTag serialize$() const;
+
+    MCAPI void updateValues$();
+
+    // NOLINTEND
 };

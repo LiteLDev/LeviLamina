@@ -32,12 +32,6 @@ public:
     MCAPI static void
     clearAll(std::unordered_map<std::string, std::unique_ptr<class ActorDefinition>> const& definitionList);
 
-    MCAPI static uint64 const ACTOR_TOTAL_DYNAMIC_PROPERTY_SIZE_LIMIT;
-
-    MCAPI static uint64 const IDENTIFIER_SIZE_LIMIT;
-
-    MCAPI static uint64 const WORLD_TOTAL_DYNAMIC_PROPERTY_SIZE_LIMIT;
-
     // NOLINTEND
 
     // private:
@@ -48,6 +42,19 @@ public:
         uint64                                   sizeLimit,
         std::string&                             error
     ) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    MCAPI static uint64 const& ACTOR_TOTAL_DYNAMIC_PROPERTY_SIZE_LIMIT();
+
+    MCAPI static uint64 const& IDENTIFIER_SIZE_LIMIT();
+
+    MCAPI static uint64 const& WORLD_TOTAL_DYNAMIC_PROPERTY_SIZE_LIMIT();
 
     // NOLINTEND
 };

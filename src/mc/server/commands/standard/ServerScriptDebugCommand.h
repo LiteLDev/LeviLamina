@@ -28,11 +28,16 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::optional<ushort> sForcedPort;
+    MCAPI static void** $vftable();
 
-    MCAPI static class IScriptDebugger* sServerScriptDebugger;
+    MCAPI void execute$(class CommandOrigin const&, class CommandOutput& output) const;
+
+    MCAPI static std::optional<ushort>& sForcedPort();
+
+    MCAPI static class IScriptDebugger*& sServerScriptDebugger();
 
     // NOLINTEND
 };

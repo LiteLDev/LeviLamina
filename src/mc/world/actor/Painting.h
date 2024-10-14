@@ -74,4 +74,34 @@ public:
     MCAPI class Motif const& getCurrentMotif() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+
+    MCAPI void dropItem$();
+
+    MCAPI int getHeight$() const;
+
+    MCAPI float getShadowRadius$() const;
+
+    MCAPI int getWidth$() const;
+
+    MCAPI bool placeHangingEntity$(class BlockSource& region, int direction);
+
+    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void remove$();
+
+    MCAPI std::unique_ptr<class AddActorBasePacket> tryCreateAddActorPacket$();
+
+    // NOLINTEND
 };

@@ -61,4 +61,24 @@ public:
     MCAPI void signalTo(class Player const& player, class BlockPos& target);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI float getShadowRadius$() const;
+
+    MCAPI void lerpMotion$(class Vec3 const& delta);
+
+    MCAPI void normalTick$();
+
+    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    // NOLINTEND
 };

@@ -35,6 +35,13 @@ public:
         MCAPI ~TickDataSet();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -115,6 +122,13 @@ public:
     _addToNextTickQueue(class BlockPos const& pos, class Block const& block, int tickDelay, int priorityOffset);
 
     MCAPI void _eliminateTicksForZeroAndAbove(class BlockTickingQueue::TickDataSet& queue);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

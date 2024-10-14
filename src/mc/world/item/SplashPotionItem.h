@@ -71,4 +71,42 @@ public:
     virtual ::Potion::PotionType getPotionType() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void appendFormattedHovertext$(
+        class ItemStackBase const& stack,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       showCategory
+    ) const;
+
+    MCAPI std::string
+          buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
+
+    MCAPI class Actor* createProjectileActor$(
+        class BlockSource&     region,
+        class ItemStack const& stack,
+        class Vec3 const&      pos,
+        class Vec3 const&      direction
+    ) const;
+
+    MCAPI bool
+    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+
+    MCAPI struct ResolvedItemIconInfo
+    getIconInfo$(class ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+
+    MCAPI ::Potion::PotionType getPotionType$() const;
+
+    MCAPI bool isThrowable$() const;
+
+    MCAPI class Item& setIconInfo$(std::string const& name, int id);
+
+    MCAPI class ItemStack& use$(class ItemStack& instance, class Player& player) const;
+
+    // NOLINTEND
 };

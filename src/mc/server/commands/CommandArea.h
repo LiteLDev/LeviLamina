@@ -16,4 +16,11 @@ public:
     MCAPI ~CommandArea();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

@@ -16,6 +16,13 @@ public:
     MCAPI ~StoredCommand();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace npc

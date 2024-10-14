@@ -46,9 +46,24 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::string const GAME_TEST_INSTANCE_PREFIX;
+    MCAPI static void** $vftable();
+
+    MCAPI void onTestFailed$(class gametest::BaseGameTestInstance&);
+
+    MCAPI void onTestPassed$(class gametest::BaseGameTestInstance&);
+
+    MCAPI void onTestRetryFinished$(class gametest::BaseGameTestInstance&);
+
+    MCAPI void onTestRetryStarted$(class gametest::BaseGameTestInstance&);
+
+    MCAPI void onTestStarted$(class gametest::BaseGameTestInstance&);
+
+    MCAPI void onTestStructureLoaded$(class gametest::BaseGameTestInstance& testInstance);
+
+    MCAPI static std::string const& GAME_TEST_INSTANCE_PREFIX();
 
     // NOLINTEND
 };

@@ -41,4 +41,24 @@ public:
     MCAPI void _delay(class BlockSource& source);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void load$(class CompoundTag const& data);
+
+    MCAPI void save$(class CompoundTag& tag);
+
+    MCAPI void tick$(class BlockSource& source);
+
+    // NOLINTEND
 };

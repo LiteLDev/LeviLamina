@@ -72,12 +72,6 @@ public:
         int                   maxHorizontalSpread
     );
 
-    MCAPI static int const BRANCH_DIRECTIONS;
-
-    MCAPI static ushort const DEAD_AGE;
-
-    MCAPI static int const GROW_RATE;
-
     // NOLINTEND
 
     // private:
@@ -94,6 +88,46 @@ public:
         int                   maxHorizontalSpread,
         int                   depth
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool canBeDestroyedByWaterSpread$() const;
+
+    MCAPI bool canContainLiquid$() const;
+
+    MCAPI bool canProvideSupport$(class Block const&, uchar face, ::BlockSupportType type) const;
+
+    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI int getVariant$(class Block const& block) const;
+
+    MCAPI bool isWaterBlocking$() const;
+
+    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
+
+    MCAPI void onProjectileHit$(class BlockSource& region, class BlockPos const& pos, class Actor const&) const;
+
+    MCAPI void randomTick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+
+    MCAPI static int const& BRANCH_DIRECTIONS();
+
+    MCAPI static ushort const& DEAD_AGE();
+
+    MCAPI static int const& GROW_RATE();
 
     // NOLINTEND
 };

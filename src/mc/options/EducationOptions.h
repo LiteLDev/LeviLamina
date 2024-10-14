@@ -36,9 +36,23 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class EducationOptions DEFAULT_OPTION;
+    MCAPI static void** $vftableForBedrockEnableNonOwnerReferences();
+
+    MCAPI static void** $vftableForResourcePackListener();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void onActiveResourcePacksChanged$(class ResourcePackManager& manager);
+
+    MCAPI static class EducationOptions& DEFAULT_OPTION();
 
     // NOLINTEND
 };

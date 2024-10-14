@@ -19,4 +19,20 @@ public:
     MCAPI explicit SmokerBlockActor(class BlockPos const& blockPos);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForBlockActor();
+
+    MCAPI static void** $vftableForContainer();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::string getName$() const;
+
+    // NOLINTEND
 };

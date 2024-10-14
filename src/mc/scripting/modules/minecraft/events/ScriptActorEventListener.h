@@ -162,6 +162,40 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI ::EventResult onActorCreated$(class Actor& actor, ::ActorInitializationMethod initializationMethod);
+
+    MCAPI ::EventResult onEvent$(struct ActorRemoveEffectEvent const& actorRemoveEffectEvent);
+
+    MCAPI ::EventResult onEvent$(struct ActorNotificationEvent const& event);
+
+    MCAPI ::EventResult onEvent$(struct ActorAddEffectEvent const& actorAddEffectEvent);
+
+    MCAPI ::EventResult onEvent$(struct ProjectileHitEvent const& projectileHitEvent);
+
+    MCAPI ::EventResult onEvent$(struct ActorRemovedEvent const& actorRemovedEvent);
+
+    MCAPI ::EventResult onEvent$(struct ActorHurtEvent const& actorHurtEvent);
+
+    MCAPI ::EventResult onEvent$(struct ActorHealthChangedEvent const& actorHealthChangedEvent);
+
+    MCAPI ::EventResult onEvent$(struct ActorDefinitionEndedEvent const& actorDefintionEvent);
+
+    MCAPI ::EventResult onEvent$(struct ActorDiedEvent const& actorDiedEvent);
+
+    MCAPI ::EventResult onEvent$(struct ActorAttackEvent const& actorAttackEvent);
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

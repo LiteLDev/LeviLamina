@@ -30,4 +30,19 @@ public:
     virtual void registerServerInstanceHandler(class ServerInstanceEventCoordinator& serverInstanceCoordinator);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI std::unique_ptr<class GameModuleServer> createGameModuleServer$();
+
+    MCAPI std::shared_ptr<class IInPackagePacks> createInPackagePacks$();
+
+    MCAPI void registerMolangQueries$();
+
+    MCAPI void registerServerInstanceHandler$(class ServerInstanceEventCoordinator& serverInstanceCoordinator);
+
+    // NOLINTEND
 };

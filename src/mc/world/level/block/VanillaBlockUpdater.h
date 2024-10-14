@@ -67,9 +67,10 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::unique_ptr<class CompoundTagUpdaterContext> mContext;
+    MCAPI static std::unique_ptr<class CompoundTagUpdaterContext>& mContext();
 
     // NOLINTEND
 };

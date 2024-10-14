@@ -18,4 +18,13 @@ public:
     virtual leveldb::Status Read(uint64 offset, uint64 n, leveldb::Slice* result, char* scratch) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI leveldb::Status Read$(uint64 offset, uint64 n, leveldb::Slice* result, char* scratch) const;
+
+    // NOLINTEND
 };

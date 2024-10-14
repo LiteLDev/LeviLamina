@@ -61,13 +61,43 @@ public:
 
     MCAPI SoulSandBlock(std::string const& nameId, int id);
 
-    MCAPI static class AABB BLOCK_AABB;
-
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class BaseGameVersion const SOUL_SAND_BREAKS_FALLING_BLOCK_VERSION;
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool breaksFallingBlocks$(class Block const&, class BaseGameVersion version) const;
+
+    MCAPI class AABB
+    getCollisionShape$(class Block const&, class IConstBlockSource const&, class BlockPos const& pos, class optional_ref<class GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI bool getCollisionShapeForCamera$(
+        class AABB& outAABB,
+        class Block const&,
+        class IConstBlockSource const&,
+        class BlockPos const& pos
+    ) const;
+
+    MCAPI void
+    neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
+
+    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void randomTick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+
+    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+
+    MCAPI static class AABB& BLOCK_AABB();
+
+    MCAPI static class BaseGameVersion const& SOUL_SAND_BREAKS_FALLING_BLOCK_VERSION();
 
     // NOLINTEND
 };

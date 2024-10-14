@@ -1584,13 +1584,324 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int const DAMAGE_NEARBY_MOBS_DURATION;
+    MCAPI static void** $vftable();
 
-    MCAPI static float const DEFAULT_MAX_DISTANCE_OPTIMIZATION;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static uint64 const DEFAULT_MAX_TICK_DELAY_OPTIMIZATION;
+    MCAPI void dtor$();
+
+    MCAPI void _doAutoAttackOnTouch$(class Actor&);
+
+    MCAPI void _doInitialMove$();
+
+    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool, bool);
+
+    MCAPI void _playStepSound$(class BlockPos const& pos, class Block const& onBlock);
+
+    MCAPI void _serverInitItemStackIds$();
+
+    MCAPI bool _shouldProvideFeedbackOnArmorSet$(::ArmorSlot slot, class ItemStack const& item) const;
+
+    MCAPI bool _shouldProvideFeedbackOnHandContainerItemSet$(::HandSlot handSlot, class ItemStack const& item) const;
+
+    MCAPI bool add$(class ItemStack& item);
+
+    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+
+    MCAPI void addPassenger$(class Actor& passenger);
+
+    MCAPI void
+    applySnapshot$(class EntityContext const& snapshotEntity, class EntityContext const& originalSnapshotEntity);
+
+    MCAPI bool attack$(class Actor& target, ::ActorDamageCause const&);
+
+    MCAPI void baseTick$();
+
+    MCAPI void blockedByShield$(class ActorDamageSource const& source, class Actor& blocker);
+
+    MCAPI void buildDebugInfo$(std::string&) const;
+
+    MCAPI bool canAddPassenger$(class Actor& passenger) const;
+
+    MCAPI bool canAttack$(class Actor* entity, bool) const;
+
+    MCAPI bool canBeAffected$(uint id) const;
+
+    MCAPI bool canBeAffectedByArrow$(class MobEffectInstance const& effect) const;
+
+    MCAPI bool canBePulledIntoVehicle$() const;
+
+    MCAPI bool canChangeDimensionsUsingPortal$() const;
+
+    MCAPI bool canDestroyBlock$(class Block const&) const;
+
+    MCAPI bool canDisableShield$();
+
+    MCAPI bool canFreeze$() const;
+
+    MCAPI bool canInteractWithOtherEntitiesInGame$() const;
+
+    MCAPI bool canObstructSpawningAndBlockPlacement$() const;
+
+    MCAPI bool canPickupItem$(class ItemStack const&) const;
+
+    MCAPI bool canPowerJump$() const;
+
+    MCAPI bool canShowNameTag$() const;
+
+    MCAPI bool canSynchronizeNewEntity$() const;
+
+    MCAPI float causeFallDamageToActor$(float, float, class ActorDamageSource);
+
+    MCAPI void changeDimension$(DimensionType toId);
+
+    MCAPI void changeDimension$(class ChangeDimensionPacket const&);
+
+    MCAPI bool consumeTotem$();
+
+    MCAPI void despawn$();
+
+    MCAPI void die$(class ActorDamageSource const& source);
+
+    MCAPI void doEnterWaterSplashEffect$();
+
+    MCAPI void doExitWaterSplashEffect$();
+
+    MCAPI bool doFireHurt$(int amount);
+
+    MCAPI void doWaterSplashEffect$();
+
+    MCAPI bool drop$(class ItemStack const& item, bool randomly);
+
+    MCAPI void feed$(int itemId);
+
+    MCAPI class HashedString const& getActorRendererId$() const;
+
+    MCAPI ::Puv::Legacy::LevelSoundEvent getAmbientSound$() const;
+
+    MCAPI class AnimationComponent& getAnimationComponent$();
+
+    MCAPI float getArmorColorInSlot$(::ArmorSlot, int) const;
+
+    MCAPI ::ArmorMaterialType getArmorMaterialTypeInSlot$(::ArmorSlot) const;
+
+    MCAPI int getArmorTextureIndexInSlot$(::ArmorSlot) const;
+
+    MCAPI ::ActorDamageCause getBlockDamageCause$(class Block const& block) const;
+
+    MCAPI float getBrightness$(float a, class IConstBlockSource const& region) const;
+
+    MCAPI class ItemStack const& getCarriedItem$() const;
+
+    MCAPI ::CommandPermissionLevel getCommandPermissionLevel$() const;
+
+    MCAPI struct ActorUniqueID getControllingPlayer$() const;
+
+    MCAPI int getDeathTime$() const;
+
+    MCAPI void getDebugText$(std::vector<std::string>& outputInfo);
+
+    MCAPI std::string getEntityLocNameString$() const;
+
+    MCAPI class ItemStack const& getEquippedTotem$() const;
+
+    MCAPI std::string getExitTip$(std::string const& kind, ::InputMode mode, ::NewInteractionModel scheme) const;
+
+    MCAPI class Vec3 getFiringPos$() const;
+
+    MCAPI std::string getFormattedNameTag$() const;
+
+    MCAPI class Vec3 getHeadLookVector$(float a) const;
+
+    MCAPI bool getInteraction$(class Player& player, class ActorInteraction& interaction, class Vec3 const&);
+
+    MCAPI float getInterpolatedBodyRot$(float a) const;
+
+    MCAPI float getInterpolatedBodyYaw$(float) const;
+
+    MCAPI float getInterpolatedHeadRot$(float) const;
+
+    MCAPI class Vec3 getInterpolatedRidingOffset$(float, int) const;
+
+    MCAPI std::optional<DimensionType> getLastDeathDimension$() const;
+
+    MCAPI std::optional<class BlockPos> getLastDeathPos$() const;
+
+    MCAPI class AABB getLiquidAABB$(::MaterialType liquidType) const;
+
+    MCAPI float getMapDecorationRotation$() const;
+
+    MCAPI class mce::Color getNameTagTextColor$() const;
+
+    MCAPI float getNextStep$(float moveDist);
+
+    MCAPI ::ActorType getOwnerEntityType$();
+
+    MCAPI float getPassengerYRotation$(class Actor const& passenger) const;
+
+    MCAPI float getShadowRadius$() const;
+
+    MCAPI struct ActorUniqueID getSourceUniqueID$() const;
+
+    MCAPI bool getStatusFlag$(::ActorFlags flag) const;
+
+    MCAPI float getYawSpeedInDegreesPerSecond$() const;
+
+    MCAPI void handleEntityEvent$(::ActorEvent eventId, int data);
+
+    MCAPI void handleInsidePortal$(class BlockPos const& portalPos);
+
+    MCAPI bool hasComponent$(class HashedString const& name) const;
+
+    MCAPI bool hasDiedBefore$() const;
+
+    MCAPI bool inCaravan$() const;
+
+    MCAPI void initializeComponents$(::ActorInitializationMethod method, class VariantParameterList const&);
+
+    MCAPI bool isAlive$() const;
+
+    MCAPI bool isBlocking$() const;
+
+    MCAPI bool isDamageBlocked$(class ActorDamageSource const&) const;
+
+    MCAPI bool isEnchanted$() const;
+
+    MCAPI bool isFireImmune$() const;
+
+    MCAPI bool isImmobile$() const;
+
+    MCAPI bool isInWall$() const;
+
+    MCAPI bool isInvisible$() const;
+
+    MCAPI bool isInvulnerableTo$(class ActorDamageSource const& source) const;
+
+    MCAPI bool isOnFire$() const;
+
+    MCAPI bool isSilentObserver$() const;
+
+    MCAPI bool isSleeping$() const;
+
+    MCAPI bool isSurfaceMob$() const;
+
+    MCAPI bool isTargetable$() const;
+
+    MCAPI bool isValidTarget$(class Actor*) const;
+
+    MCAPI void kill$();
+
+    MCAPI void lerpMotion$(class Vec3 const& delta);
+
+    MCAPI bool load$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void normalTick$();
+
+    MCAPI void onEffectRemoved$(class MobEffectInstance& effect);
+
+    MCAPI void onFailedTame$();
+
+    MCAPI void onLightningHit$();
+
+    MCAPI void onPush$(class Actor&);
+
+    MCAPI void onSynchedDataUpdate$(int dataId);
+
+    MCAPI void onTame$();
+
+    MCAPI void openContainerComponent$(class Player& player);
+
+    MCAPI void outOfWorld$();
+
+    MCAPI void passengerTick$();
+
+    MCAPI void performRangedAttack$(class Actor& target, float);
+
+    MCAPI void playAmbientSound$();
+
+    MCAPI void playerTouch$(class Player&);
+
+    MCAPI class HashedString const& queryEntityRenderer$() const;
+
+    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void reloadComponents$(::ActorInitializationMethod, class VariantParameterList const&);
+
+    MCAPI void reloadHardcoded$(::ActorInitializationMethod, class VariantParameterList const&);
+
+    MCAPI void reloadHardcodedClient$(::ActorInitializationMethod, class VariantParameterList const&);
+
+    MCAPI void remove$();
+
+    MCAPI void renderDebugServerState$(class Options const&);
+
+    MCAPI void resetUserPos$(bool);
+
+    MCAPI bool save$(class CompoundTag& entityTag) const;
+
+    MCAPI void sendMotionPacketIfNeeded$(struct PlayerMovementSettings const& playerMovementSettings);
+
+    MCAPI void setArmor$(::ArmorSlot slot, class ItemStack const& item);
+
+    MCAPI void setAuxValue$(int);
+
+    MCAPI void setCarriedItem$(class ItemStack const& item);
+
+    MCAPI void setEquippedSlot$(::Puv::Legacy::EquipmentSlot, class ItemStack const&);
+
+    MCAPI void setOffhandSlot$(class ItemStack const& item);
+
+    MCAPI void setOwner$(struct ActorUniqueID ownerId);
+
+    MCAPI void setSitting$(bool value);
+
+    MCAPI void setSleeping$(bool);
+
+    MCAPI void setSneaking$(bool value);
+
+    MCAPI void setStanding$(bool value);
+
+    MCAPI void setStatusFlag$(::ActorFlags flag, bool value);
+
+    MCAPI void setTarget$(class Actor* entity);
+
+    MCAPI bool shouldDropDeathLoot$() const;
+
+    MCAPI bool shouldRender$() const;
+
+    MCAPI bool shouldTryMakeStepSound$();
+
+    MCAPI bool startRiding$(class Actor& vehicle);
+
+    MCAPI void startSpinAttack$();
+
+    MCAPI void startSwimming$();
+
+    MCAPI void stopSpinAttack$();
+
+    MCAPI void stopSwimming$();
+
+    MCAPI void swing$();
+
+    MCAPI void teleportTo$(class Vec3 const& pos, bool shouldStopRiding, int, int, bool keepVelocity);
+
+    MCAPI std::unique_ptr<class AddActorBasePacket> tryCreateAddActorPacket$();
+
+    MCAPI void updateEntitySpecificMolangVariables$(class RenderParams&);
+
+    MCAPI void useItem$(class ItemStackBase& item, ::ItemUseMethod itemUseMethod, bool consumeItem);
+
+    MCAPI static int const& DAMAGE_NEARBY_MOBS_DURATION();
+
+    MCAPI static float const& DEFAULT_MAX_DISTANCE_OPTIMIZATION();
+
+    MCAPI static uint64 const& DEFAULT_MAX_TICK_DELAY_OPTIMIZATION();
 
     // NOLINTEND
 };

@@ -61,4 +61,36 @@ public:
     getPatternAndColorPairsFromItemStack(class ItemStackBase const& item);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class InteractionResult
+    _useOn$(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const& clickPos)
+        const;
+
+    MCAPI void appendFormattedHovertext$(
+        class ItemStackBase const& stack,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       showCategory
+    ) const;
+
+    MCAPI std::string
+          buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
+
+    MCAPI void fixupCommon$(class ItemStackBase& item) const;
+
+    MCAPI bool isValidAuxValue$(int auxValue) const;
+
+    MCAPI bool isWearableThroughLootTable$(class CompoundTag const* userData) const;
+
+    // NOLINTEND
 };

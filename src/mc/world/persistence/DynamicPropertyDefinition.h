@@ -14,4 +14,11 @@ public:
     MCAPI ~DynamicPropertyDefinition();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

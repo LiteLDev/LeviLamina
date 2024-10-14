@@ -27,6 +27,16 @@ public:
         Occupant(struct ActorDefinitionIdentifier actorIdentifier, class CompoundTag saveData, uint ticksLeftToStay);
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        // NOLINTEND
     };
 
 public:
@@ -57,8 +67,6 @@ public:
 
     MCAPI bool tryAdmit(class Actor& actor);
 
-    MCAPI static uint const MAX_OCCUPANCY;
-
     // NOLINTEND
 
     // private:
@@ -69,6 +77,21 @@ public:
     MCAPI bool _tickOccupant(class BlockSource& region, struct BeehiveBlockActor::Occupant& occupant);
 
     MCAPI void _trySpawnBees(class BlockSource& region);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI bool save$(class CompoundTag& tag) const;
+
+    MCAPI void tick$(class BlockSource& region);
+
+    MCAPI static uint const& MAX_OCCUPANCY();
 
     // NOLINTEND
 };

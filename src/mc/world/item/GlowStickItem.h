@@ -41,9 +41,28 @@ public:
 
     MCAPI GlowStickItem(std::string const& name, int id);
 
-    MCAPI static ::ItemColor const COLORS[];
+    // NOLINTEND
 
-    MCAPI static int const MAX_ACTIVE_TICKS;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::string
+          buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
+
+    MCAPI struct Brightness getLightEmission$(int auxValue) const;
+
+    MCAPI bool isValidAuxValue$(int auxValue) const;
+
+    MCAPI static ::ll::CArrayT<::ItemColor const>& COLORS();
+
+    MCAPI static int const& MAX_ACTIVE_TICKS();
 
     // NOLINTEND
 };

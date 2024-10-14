@@ -71,6 +71,13 @@ public:
         MCAPI ~SpatialQueries();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -220,6 +227,98 @@ public:
                                       struct LocalSpatialEntityFetcherFactoryComponent>,
                                   struct GlobalWrite<>,
                                   struct EntityFactoryT<>>&);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
+
+    MCAPI void singleTick$(
+        class StrictExecutionContext<
+            struct Filter<
+                class FlagComponent<struct CanStandOnSnowFlag>,
+                class FlagComponent<struct HasLightweightFamilyFlag>,
+                class FlagComponent<struct HorseFlag>,
+                class FlagComponent<struct MobFlag>,
+                class FlagComponent<struct ParrotFlag>,
+                struct VehicleComponent,
+                class FlagComponent<struct CamelFlag>,
+                class FlagComponent<struct PlayerComponentFlag>,
+                class FlagComponent<struct CollidableMobFlag>,
+                class FlagComponent<struct FallingBlockFlag>>,
+            struct Read<
+                struct AABBShapeComponent,
+                struct MovementAbilitiesComponent,
+                struct ActorTypeComponent,
+                struct FallDistanceComponent,
+                struct PassengerComponent,
+                struct ActorGameTypeComponent,
+                struct ActorDataFlagComponent,
+                struct VehicleComponent,
+                struct ActorRotationComponent,
+                struct MobBodyRotationComponent,
+                struct RenderRotationComponent,
+                struct StandAnimationComponent,
+                struct OffsetsComponent,
+                struct VanillaOffsetComponent,
+                struct PassengerRenderingRidingOffsetComponent,
+                struct DimensionTypeComponent,
+                struct MaxAutoStepComponent,
+                class FlagComponent<struct CollidableMobNearFlag>>,
+            struct Write<struct MoveRequestComponent>,
+            struct AddRemove<>,
+            struct GlobalRead<
+                struct ExternalDataComponent,
+                struct LocalConstBlockSourceFactoryComponent,
+                struct LocalSpatialEntityFetcherFactoryComponent>,
+            struct GlobalWrite<>,
+            struct EntityFactoryT<>>& executionContext,
+        class StrictEntityContext&    entityContext
+    );
+
+    MCAPI void tick$(class StrictExecutionContext<
+                     struct Filter<
+                         class FlagComponent<struct CanStandOnSnowFlag>,
+                         class FlagComponent<struct HasLightweightFamilyFlag>,
+                         class FlagComponent<struct HorseFlag>,
+                         class FlagComponent<struct MobFlag>,
+                         class FlagComponent<struct ParrotFlag>,
+                         struct VehicleComponent,
+                         class FlagComponent<struct CamelFlag>,
+                         class FlagComponent<struct PlayerComponentFlag>,
+                         class FlagComponent<struct CollidableMobFlag>,
+                         class FlagComponent<struct FallingBlockFlag>>,
+                     struct Read<
+                         struct AABBShapeComponent,
+                         struct MovementAbilitiesComponent,
+                         struct ActorTypeComponent,
+                         struct FallDistanceComponent,
+                         struct PassengerComponent,
+                         struct ActorGameTypeComponent,
+                         struct ActorDataFlagComponent,
+                         struct VehicleComponent,
+                         struct ActorRotationComponent,
+                         struct MobBodyRotationComponent,
+                         struct RenderRotationComponent,
+                         struct StandAnimationComponent,
+                         struct OffsetsComponent,
+                         struct VanillaOffsetComponent,
+                         struct PassengerRenderingRidingOffsetComponent,
+                         struct DimensionTypeComponent,
+                         struct MaxAutoStepComponent,
+                         class FlagComponent<struct CollidableMobNearFlag>>,
+                     struct Write<struct MoveRequestComponent>,
+                     struct AddRemove<>,
+                     struct GlobalRead<
+                         struct ExternalDataComponent,
+                         struct LocalConstBlockSourceFactoryComponent,
+                         struct LocalSpatialEntityFetcherFactoryComponent>,
+                     struct GlobalWrite<>,
+                     struct EntityFactoryT<>>& context);
 
     // NOLINTEND
 };
